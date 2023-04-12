@@ -24,6 +24,7 @@ pipeline {
    
     environment {
         HUGO_VERSION = '0.111.3'
+        HUGO_HASH = 'b382aacb522a470455ab771d0e8296e42488d3ea4e61fe49c11c32ec7fb6ee8b'
         DEPLOY_BRANCH = 'asf-site'
     }
 
@@ -36,13 +37,14 @@ pipeline {
 
                     // Setup Hugo
                     env.HUGO_DIR = sh(script:'mktemp -d', returnStdout: true).trim()
-                    sh """
-                        mkdir -p ${env.HUGO_DIR}/bin
-                        cd ${env.HUGO_DIR}
-                        wget --no-verbose -O hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
-                        tar xfzv hugo.tar.gz
-                        mv hugo ${env.HUGO_DIR}/bin/
-                    """
+                    sh "mkdir -p ${env.HUGO_DIR}/bin"
+                    sh "cd ${env.HUGO_DIR}"
+                    sh "wget --no-verbose -O hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz"
+                    // Verify the checksum
+                    def hugo_hash = sha256 file: "${env.HUGO_DIR}/hugo.tar.gz"
+                    assert hugo_hash == "${HUGO_HASH}"
+                    sh "tar xfzv hugo.tar.gz"
+                    sh "mv hugo ${env.HUGO_DIR}/bin/"
 
                     // Setup directory structure for generated content
                     env.TMP_DIR = sh(script:'mktemp -d', returnStdout: true).trim()
