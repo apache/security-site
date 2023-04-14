@@ -7,4 +7,5 @@ description: The Apache Security Team provides help and advice to Apache project
   <a class="button primary big" href="https://www.apache.org/security">Report issues</a>
   <a class="button outline big" href="https://www.apache.org/security/projects.html">Projects</a>
   <a class="button outline big" href="/blog">Blog</a>
+  <a class="button outline big" href="/mailinglist">Mailinglist</a>
 </div>
