@@ -41,5 +41,11 @@ continuously generate and serve the website on `localhost:1313`.
 
 ## Publish the website
 
-Jenkins is used for generating the website and committing the generated site to the `asf-site` branch.
+Jenkins will be used for generating the website and committing the generated site to the `asf-site` branch once we obtain the authorization to create that job.
 
+Until then this is a manual process:
+
+* run `hugo` to generate the site
+* switch to the `asf-site` branch
+* copy the `public/` resources into the root of the repo
+* commit and push
