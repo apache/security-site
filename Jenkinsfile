@@ -77,8 +77,8 @@ pipeline {
                     
                     // Remove the content of the target branch and replace it with the content of the temp folder
                     sh """
-                        git rm -r --cached ${WORKSPACE}/*
-                        cp -rT ${env.TMP_DIR}/* ${WORKSPACE}
+                        git rm -r --ignore-unmatch --cached ${WORKSPACE}/*
+                        cp -rT ${env.OUT_DIR}/* ${WORKSPACE}
                     """
                     
                     // Commit the changes to the target branch
