@@ -35,20 +35,15 @@ pipeline {
                     // Capture last commit hash for final commit message
                     env.LAST_SHA = sh(script:'git log -n 1 --pretty=format:\'%H\'', returnStdout: true).trim()
 
-                    // Setup Hugo
+                    // Download Hugo
                     env.HUGO_DIR = sh(script:'mktemp -d', returnStdout: true).trim()
                     sh "mkdir -p ${env.HUGO_DIR}/bin"
-                    sh "cd ${env.HUGO_DIR}"
-                    sh "wget --no-verbose -O hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz"
+                    sh "wget --no-verbose -O ${env.HUGO_DIR}/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz"
                     // Verify the checksum
                     def hugo_hash = sha256 file: "${env.HUGO_DIR}/hugo.tar.gz"
-                    sh "pwd"
-                    sh "ls ${env.HUGO_DIR}/hugo.tar.gz"
-                    sh "echo ${env.HUGO_HASH}."
-                    sh "echo ${hugo_hash}."
                     assert hugo_hash == "${HUGO_HASH}"
-                    sh "tar xfzv hugo.tar.gz"
-                    sh "mv hugo ${env.HUGO_DIR}/bin/"
+                    // Unpack Hugo
+                    sh "tar -C ${env.HUGO_DIR}/bin -xkf ${env.HUGO_DIR}/hugo.tar.gz"
 
                     // Setup directory structure for generated content
                     env.TMP_DIR = sh(script:'mktemp -d', returnStdout: true).trim()
@@ -61,9 +56,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    withEnv(["PATH+HUGO=${env.HUGO_DIR}/bin"]) {
-                        sh "hugo --destination ${env.OUT_DIR}"
-                    }
+                    sh "${HUGO_DIR}/bin/hugo --destination ${env.OUT_DIR}"
                 }
             }
         }
