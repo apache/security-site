@@ -42,6 +42,8 @@ pipeline {
                     sh "wget --no-verbose -O hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz"
                     // Verify the checksum
                     def hugo_hash = sha256 file: "${env.HUGO_DIR}/hugo.tar.gz"
+                    sh "echo ${env.HUGO_HASH}."
+                    sh "echo ${hugo_hash}."
                     assert hugo_hash == "${HUGO_HASH}"
                     sh "tar xfzv hugo.tar.gz"
                     sh "mv hugo ${env.HUGO_DIR}/bin/"
@@ -67,6 +69,7 @@ pipeline {
             when {
                 anyOf {
                     branch 'main'
+                    branch 'test-deploy'
                 }
             }
             steps {
