@@ -77,16 +77,14 @@ pipeline {
                     
                     // Remove the content of the target branch and replace it with the content of the temp folder
                     sh """
-                        rm -rf ${WORKSPACE}/content
-                        git rm -r --cached content/*
-                        mkdir -p ${WORKSPACE}/content
-                        cp -rT ${env.TMP_DIR}/* ${WORKSPACE}/content
+                        git rm -r --cached ${WORKSPACE}/*
+                        cp -rT ${env.TMP_DIR}/* ${WORKSPACE}
                     """
                     
                     // Commit the changes to the target branch
                     env.COMMIT_MESSAGE = "Updated site from ${BRANCH_NAME} (${env.LAST_SHA})"
                     sh """
-                        git add content/
+                        git add ${WORKSPACE}
                         git commit -m "${env.COMMIT_MESSAGE}" | true
                     """
                     
