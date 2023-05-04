@@ -84,7 +84,7 @@ pipeline {
                     env.COMMIT_MESSAGE = "Updated site from ${BRANCH_NAME} (${env.LAST_SHA})"
                     sh """
                         git add ${WORKSPACE}
-                        git commit -m "${env.COMMIT_MESSAGE}" | true
+                        git commit -m "${env.COMMIT_MESSAGE}" -m "built by https://ci-builds.apache.org/job/Security/job/site/job/main/" | true
                     """
                     
                     // Push the generated content for deployment
