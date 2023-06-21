@@ -22,3 +22,29 @@ Do you want disclose a potential security issue for Apache NiFi? You can read mo
 ### Description
 
 <div>The ExtractCCDAAttributes Processor in Apache NiFi 1.2.0 through 1.19.1 does not restrict XML External Entity references.</div><div>Flow configurations that include the ExtractCCDAAttributes Processor are vulnerable to malicious XML documents that contain Document Type Declarations with XML External Entity references.</div><div>The resolution disables Document Type Declarations and disallows XML External Entity resolution in the ExtractCCDAAttributes Processor.</div>
+
+## Potential Deserialization of Untrusted Data with JNDI in JMS Components ## { #CVE-2023-34212 }
+
+[CVE-2023-34212](./CVE-2023-34212.cve.json)
+
+### Affected
+
+* Apache NiFi versions 1.8.0 including 1.21.0
+
+
+### Description
+
+<div>The JndiJmsConnectionFactoryProvider Controller Service, along with the ConsumeJMS and PublishJMS Processors, in Apache NiFi 1.8.0 through 1.21.0 allow an authenticated and authorized user to configure URL and library properties that enable deserialization of untrusted data from a remote location.</div><div>The resolution validates the JNDI URL and restricts locations to a set of allowed schemes.</div><div>You are recommended to upgrade to version 1.22.0 or later which fixes this issue.<br></div>
+
+## Potential Code Injection with Database Services using H2 ## { #CVE-2023-34468 }
+
+[CVE-2023-34468](./CVE-2023-34468.cve.json)
+
+### Affected
+
+* Apache NiFi versions 0.0.2 including 1.21.0
+
+
+### Description
+
+<div>The DBCPConnectionPool and HikariCPConnectionPool Controller Services in Apache NiFi 0.0.2 through 1.21.0 allow an authenticated and authorized user to configure a Database URL with the H2 driver that enables custom code execution.</div><div>The resolution validates the Database URL and rejects H2 JDBC locations.</div><div>You are recommended to upgrade to version 1.22.0 or later which fixes this issue.<br></div>

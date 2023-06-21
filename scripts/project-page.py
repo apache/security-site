@@ -17,7 +17,7 @@ with open('committees.json', 'r') as cs:
 with open('podlings.json', 'r') as ps:
     project_committees = {**project_committees, **(json.load(ps))}
 
-# fetched from cveprocess
+# fetched from https://cveprocess.apache.org/publicjson
 with open('publicjson', 'r') as p:
     advisories = defaultdict(list)
     for advisory in json.load(p):

@@ -36,6 +36,23 @@ Do you want disclose a potential security issue for Apache Sling? You can read m
 
 An improper neutralization of input during web page generation ('Cross-site Scripting') [CWE-79] vulnerability in Sling App CMS version 1.1.2 and prior may allow an authenticated remote attacker to perform a reflected cross-site scripting (XSS) attack in the site group feature.<br><br><span style="background-color: rgb(255, 255, 255);">Upgrade to Apache Sling App CMS &gt;= 1.1.4</span> <br>
 
+## Multiple parsing problems in the Apache Sling Commons JSON module ## { #CVE-2022-47937 }
+
+[CVE-2022-47937](./CVE-2022-47937.cve.json)
+
+### Affected
+
+* org.apache.sling.commons.json versions  including 2.0.20
+
+
+### Description
+
+<div>** UNSUPPORTED WHEN ASSIGNED ** <br></div><div><br></div><div>Improper input validation in the Apache Sling Commons JSON bundle allows an attacker to trigger unexpected errors by supplying specially-crafted input.</div><div><br></div><div><div>NOTE: This vulnerability 
+only affects products that are no longer supported by the maintainer</div><div><br></div><div>The org.apache.sling.commons.json bundle has been deprecated as of March
+ 2017 and should not be used anymore. Consumers are encouraged to 
+consider the Apache Sling Commons Johnzon OSGi bundle provided by the 
+Apache Sling project, but may of course use other JSON libraries.<br></div></div>
+
 ## XSS in CMS Reference / UI Components ## { #CVE-2023-22849 }
 
 [CVE-2023-22849](./CVE-2023-22849.cve.json)

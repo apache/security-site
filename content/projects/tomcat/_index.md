@@ -38,3 +38,30 @@ The JsonErrorReportValve in Apache Tomcat 8.5.83, 9.0.40 to 9.0.68 and 10.1.0-M1
 <div>
 <p>When using the RemoteIpFilter with requests received from a    reverse proxy via HTTP that include the X-Forwarded-Proto    header set to https, session cookies created by Apache Tomcat 11.0.0-M1 to 11.0.0.-M2, 10.1.0-M1 to 10.1.5, 9.0.0-M1 to 9.0.71 and 8.5.0 to 8.5.85 did not&nbsp;include the secure attribute. This could result in the user agent&nbsp;<span style="background-color: var(--wht);">transmitting the session cookie over an insecure channel.</span></p></div>
 </div>
+
+
+## Fix for CVE-2023-24998 is incomplete ## { #CVE-2023-28709 }
+
+[CVE-2023-28709](./CVE-2023-28709.cve.json)
+
+### Affected
+
+* Apache Tomcat versions 11.0.0-M2 including 11.0.0-M410.1.5 including 10.1.79.0.71 including 9.0.738.5.85 including 8.5.87
+
+
+### Description
+
+<div><p>The fix for CVE-2023-24998 was incomplete for Apache Tomcat 11.0.0-M2 to 11.0.0-M4, 10.1.5 to 10.1.7, 9.0.71 to 9.0.73 and 8.5.85 to 8.5.87. If non-default HTTP       connector settings were used such that the maxParameterCount&nbsp;could be reached using query string parameters and a request was       submitted that supplied exactly maxParameterCount parameters&nbsp;<span style="background-color: var(--wht);">in the query string, the limit for uploaded request parts could be&nbsp;</span><span style="background-color: var(--wht);">bypassed with the potential for a denial of service to occur.</span></p></div><br>
+
+## AJP response header mix-up ## { #CVE-2023-34981 }
+
+[CVE-2023-34981](./CVE-2023-34981.cve.json)
+
+### Affected
+
+* Apache Tomcat versions 11.0.0-M510.1.89.0.748.5.88
+
+
+### Description
+
+A regression in the fix for bug 66512 in Apache Tomcat 11.0.0-M5, 10.1.8, 9.0.74 and 8.5.88 meant that, if a response did not include any HTTP headers no AJP SEND_HEADERS messare woudl be sent for the response which in turn meant that at least one AJP proxy (mod_proxy_ajp) would use the response headers from the previous request leading to an information leak.

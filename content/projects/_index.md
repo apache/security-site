@@ -10,6 +10,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 
 | Project security page | Contact | |
 | --- | --- | --- |
+| Apache Accumulo |  [Apache Security Team](mailto:security@apache.org) | [Advisories](accumulo) |
 | Apache AGE |  [Apache Security Team](mailto:security@apache.org) | [Advisories](age) |
 | Apache Airflow |  [Apache Security Team](mailto:security@apache.org) | [Advisories](airflow) |
 | [Apache Ambari](None) |  [Apache Ambari Security Team](mailto:security@ambari.apache.org) | |
@@ -18,7 +19,9 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Archiva |  [Apache Security Team](mailto:security@apache.org) | [Advisories](archiva) |
 | Apache Atlas |  [Apache Security Team](mailto:security@apache.org) | [Advisories](atlas) |
 | Apache BookKeeper |  [Apache Security Team](mailto:security@apache.org) | [Advisories](bookkeeper) |
+| Apache bRPC |  [Apache Security Team](mailto:security@apache.org) | [Advisories](brpc) |
 | [Apache Camel](https://camel.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Cassandra |  [Apache Security Team](mailto:security@apache.org) | [Advisories](cassandra) |
 | [Apache CloudStack](https://cloudstack.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Commons](https://commons.apache.org/security.html) |  [Apache Commons Security Team](mailto:security@commons.apache.org) | [Advisories](commons) |
 | [Apache CouchDB](None) |  [Apache CouchDB Security Team](mailto:security@couchdb.apache.org) | [Advisories](couchdb) |
@@ -30,7 +33,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Fineract](https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report) |  [Apache Fineract Security Team](mailto:security@fineract.apache.org) | [Advisories](fineract) |
 | [Apache Geronimo](https://geronimo.apache.org/security-reports.html) |  [Apache Geronimo Security Team](mailto:security@geronimo.apache.org) | |
 | [Apache Pulsar](https://github.com/apache/pulsar/security/policy) |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache Guacamole](https://guacamole.apache.org/security/) |  [Apache Guacamole Security Team](mailto:security@guacamole.apache.org) | |
+| [Apache Guacamole](https://guacamole.apache.org/security/) |  [Apache Guacamole Security Team](mailto:security@guacamole.apache.org) | [Advisories](guacamole) |
 | [Apache Hadoop](https://hadoop.apache.org/mailing_lists.html) |  [Apache Hadoop Security Team](mailto:security@hadoop.apache.org) | |
 | Apache Helix |  [Apache Security Team](mailto:security@apache.org) | [Advisories](helix) |
 | [Apache Hive](https://hive.apache.org/mailing_lists.html) |  [Apache Hive Security Team](mailto:security@hive.apache.org) | |
@@ -42,6 +45,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache James |  [Apache Security Team](mailto:security@apache.org) | [Advisories](james) |
 | Apache Jena |  [Apache Security Team](mailto:security@apache.org) | [Advisories](jena) |
 | [Apache JMeter](https://jmeter.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache JSPWiki |  [Apache Security Team](mailto:security@apache.org) | [Advisories](jspwiki) |
 | [Apache Kafka](https://kafka.apache.org/project-security.html) |  [Apache Kafka Security Team](mailto:security@kafka.apache.org) | [Advisories](kafka) |
 | Apache Karaf |  [Apache Security Team](mailto:security@apache.org) | [Advisories](karaf) |
 | Apache Kylin |  [Apache Security Team](mailto:security@apache.org) | [Advisories](kylin) |
@@ -59,6 +63,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache ORC](https://orc.apache.org/security/) |  [Apache ORC Security Team](mailto:security@orc.apache.org) | |
 | [Apache PDFBox](https://pdfbox.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Ranger |  [Apache Security Team](mailto:security@apache.org) | [Advisories](ranger) |
+| Apache RocketMQ |  [Apache Security Team](mailto:security@apache.org) | [Advisories](rocketmq) |
 | [Apache Santuario](https://santuario.apache.org/secadv.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Sentry](https://cwiki.apache.org/confluence/display/SENTRY/Vulnerabilities+found+in+Apache+Sentry) |  [Apache Sentry Security Team](mailto:security@sentry.apache.org) | |
 | [Apache ShardingSphere](https://shardingsphere.apache.org/community/en/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](shardingsphere) |
@@ -70,7 +75,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache SpamAssassin](https://cwiki.apache.org/confluence/display/SPAMASSASSIN/SecurityPolicy) |  [Apache SpamAssassin Security Team](mailto:security@spamassassin.apache.org) | |
 | [Apache Spark](https://spark.apache.org/security.html) |  [Apache Spark Security Team](mailto:security@spark.apache.org) | [Advisories](spark) |
 | Apache StreamPark (Incubating) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](streampark) |
-| [Apache Struts](https://struts.apache.org/security.html) |  [Apache Struts Security Team](mailto:security@struts.apache.org) | |
+| [Apache Struts](https://struts.apache.org/security.html) |  [Apache Struts Security Team](mailto:security@struts.apache.org) | [Advisories](struts) |
 | [Apache Subversion](https://subversion.apache.org/security/) |  [Apache Subversion Security Team](mailto:security@subversion.apache.org) | |
 | Apache Superset |  [Apache Security Team](mailto:security@apache.org) | [Advisories](superset) |
 | [Apache Tomcat](https://tomcat.apache.org/security.html) |  [Apache Tomcat Security Team](mailto:security@tomcat.apache.org) | [Advisories](tomcat) |

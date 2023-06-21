@@ -52,3 +52,42 @@ Improper Check for Unusual or Exceptional Conditions vulnerability in handling t
 ### Description
 
 Improper Input Validation vulnerability for the xdebug plugin in Apache Software Foundation Apache Traffic Server can lead to cross site scripting and cache poisoning attacks.<p>This issue affects Apache Traffic Server: 9.0.0 to 9.1.3. Users should upgrade to 9.1.4 or later versions.<br></p>
+
+## The TRACE method can be use to disclose network information ## { #CVE-2022-47184 }
+
+[CVE-2022-47184](./CVE-2022-47184.cve.json)
+
+### Affected
+
+* Apache Traffic Server versions 8.0.0 including 9.2.0
+
+
+### Description
+
+Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Software Foundation Apache Traffic Server.<p>This issue affects Apache Traffic Server: 8.0.0 to 9.2.0.</p>
+
+## Configuration option to block the PUSH method in ATS didn't work ## { #CVE-2023-30631 }
+
+[CVE-2023-30631](./CVE-2023-30631.cve.json)
+
+### Affected
+
+* Apache Traffic Server versions 8.0.0 including 9.2.0
+
+
+### Description
+
+Improper Input Validation vulnerability in Apache Software Foundation Apache Traffic Server.&nbsp; The configuration option&nbsp;proxy.config.http.push_method_enabled didn't function.&nbsp; However, by default the PUSH method is blocked in the ip_allow configuration file.<p>This issue affects Apache Traffic Server: from 8.0.0 through 9.2.0.</p><p>8.x users should upgrade to 8.1.7 or later versions<br>9.x users should upgrade to 9.2.1 or later versions<br></p>
+
+## s3_auth plugin problem with hash calculation ## { #CVE-2023-33933 }
+
+[CVE-2023-33933](./CVE-2023-33933.cve.json)
+
+### Affected
+
+* Apache Traffic Server versions 8.0.0 including 9.2.0
+
+
+### Description
+
+Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Software Foundation Apache Traffic Server.<p>This issue affects Apache Traffic Server: from 8.0.0 through 9.2.0.</p><p>8.x users should upgrade to 8.1.7 or later versions<br>9.x users should upgrade to 9.2.1 or later versions<br></p>

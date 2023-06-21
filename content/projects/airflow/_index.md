@@ -102,6 +102,19 @@ Generation of Error Message Containing Sensitive Information vulnerability in Ap
 
 Improper Input Validation vulnerability in the Apache Airflow Hive Provider.<br><br><p>This issue affects Apache Airflow Hive Provider versions before 5.1.3.</p>
 
+## Privilege escalation using airflow logs ## { #CVE-2023-25754 }
+
+[CVE-2023-25754](./CVE-2023-25754.cve.json)
+
+### Affected
+
+* Apache Airflow versions  before 2.6.0
+
+
+### Description
+
+Privilege Context Switching Error vulnerability in Apache Software Foundation Apache Airflow.<p>This issue affects Apache Airflow: before 2.6.0.</p>
+
 ## Arbitrary file read via AWS provider ## { #CVE-2023-25956 }
 
 [CVE-2023-25956](./CVE-2023-25956.cve.json)
@@ -153,3 +166,42 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Air
 ### Description
 
 Improper Input Validation vulnerability in Apache Software Foundation Apache Airflow Spark Provider.<p>This issue affects Apache Airflow Spark Provider: before 4.0.1.</p>
+
+## Stored XSS on Apache Airflow ## { #CVE-2023-29247 }
+
+[CVE-2023-29247](./CVE-2023-29247.cve.json)
+
+### Affected
+
+* Apache Airflow versions  before 2.6.0
+
+
+### Description
+
+Task instance details page in the UI is vulnerable to a stored XSS.<p>This issue affects Apache Airflow: before 2.6.0.</p><br>
+
+## KubernetesPodOperator RCE via connection configuration ## { #CVE-2023-33234 }
+
+[CVE-2023-33234](./CVE-2023-33234.cve.json)
+
+### Affected
+
+* Apache Airflow CNCF Kubernetes Provider versions 5.0.0 including 6.1.0
+
+
+### Description
+
+Arbitrary code execution in Apache Airflow CNCF Kubernetes provider version 5.0.0 allows user to change xcom sidecar image and resources via Airflow connection.<br><br>In order to exploit this weakness, a user would already need elevated permissions (Op or Admin) to change the connection object in this manner.&nbsp; Operators should upgrade to provider version 7.0.0 which has removed the vulnerability.<br><br>
+
+## Information disclosure on configuration view ## { #CVE-2023-35005 }
+
+[CVE-2023-35005](./CVE-2023-35005.cve.json)
+
+### Affected
+
+* Apache Airflow versions 2.5.0 before 2.6.2
+
+
+### Description
+
+<div>In Apache Airflow, some potentially sensitive values were being shown to the user in certain situations.</div><div>This vulnerability is mitigated by the fact configuration is not shown in the UI by default (only if `[webserver] expose_config` is set to `non-sensitive-only`), and not all uncensored values are actually sentitive.</div><br><div>This issue affects Apache Airflow: from 2.5.0 before 2.6.2. Users are recommended to update to version 2.6.2 or later.<br></div>
