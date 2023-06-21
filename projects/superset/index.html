@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.111.3">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Apache Superset security advisories </title>
+
+  
+  <meta name="description" content="Security information for Apache Superset"> 
+  
+  
+  
+  
+  
+  <meta name="robots" content="noindex">
+  
+
+  
+
+  <meta name="author" content="">
+
+
+  <meta property="og:title" content="Apache Superset security advisories" />
+<meta property="og:description" content="Security information for Apache Superset" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://security.apache.org/projects/superset/" />
+
+  
+
+
+
+
+  
+  
+  
+  
+   <link href="/projects/superset/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
+
+  <link rel="canonical" href="https://security.apache.org/projects/superset/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Apache Security Team</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Apache Security Team</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog" >Blog</a></li>
+    
+    <li><a href="https://www.apache.org/licenses/" >License</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
+    
+    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
+    
+    <li><a href="https://www.apache.org" >Apache</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+
+<div id="hero" class="wrap">
+  <h1>Apache Superset security advisories</h1>
+    <p>Security information for Apache Superset</p>
+</div>
+<div id="project-box">
+<div id="project">
+
+ <h1 id="reporting">Reporting</h1>
+<p>Do you want disclose a potential security issue for Apache Superset? Send your report to the  <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<h1 id="advisories">Advisories</h1>
+<h2 id="CVE-2022-45438">Dashboard metadata information leak</h2>
+<p><a href="./CVE-2022-45438.cve.json">CVE-2022-45438</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>When explicitly enabling the feature flag DASHBOARD_CACHE (disabled by default), the system allowed for an unauthenticated user to access dashboard configuration metadata using a REST API Get endpoint. <span style="background-color: rgb(255, 255, 255);">This issue affects Apache Superset version 1.5.2 and prior versions and version 2.0.0.</span><br></p>
+<h2 id="CVE-2022-41703">SQL injection vulnerability in adhoc clauses</h2>
+<p><a href="./CVE-2022-41703.cve.json">CVE-2022-41703</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>A vulnerability in the SQL Alchemy connector of Apache Superset allows an authenticated user with read access to a specific database to add subqueries to the WHERE and HAVING fields referencing tables on the same database that the user should not have access to, despite the user having the feature flag &ldquo;ALLOW_ADHOC_SUBQUERY&rdquo; disabled (default value).  <span style="background-color: rgb(255, 255, 255);">This issue affects Apache Superset version 1.5.2 and prior versions and version 2.0.0.
+</span><br><br></p>
+<h2 id="CVE-2022-43717">Cross-Site Scripting on dashboards</h2>
+<p><a href="./CVE-2022-43717.cve.json">CVE-2022-43717</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Dashboard rendering does not sufficiently sanitize the content of markdown components leading to possible XSS attack vectors that can be performed by authenticated users with create dashboard permissions. This issue affects Apache Superset version 1.5.2 and prior versions and version 2.0.0.</p>
+<h2 id="CVE-2022-43718">Cross-Site Scripting vulnerability on upload forms</h2>
+<p><a href="./CVE-2022-43718.cve.json">CVE-2022-43718</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Upload data forms do not correctly render user input leading to possible XSS attack vectors that can be performed by authenticated users with database connection update permissions. <span style="background-color: rgb(255, 255, 255);">This issue affects Apache Superset version 1.5.2 and prior versions and version 2.0.0.</span><br></p>
+<h2 id="CVE-2022-43719">Cross Site Request Forgery (CSRF) on accept, request access API</h2>
+<p><a href="./CVE-2022-43719.cve.json">CVE-2022-43719</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Two legacy REST API endpoints for approval and request access are vulnerable to cross site request forgery. <span style="background-color: rgb(255, 255, 255);">This issue affects Apache Superset version 1.5.2 and prior versions and version 2.0.0.
+</span><br><br></p>
+<h2 id="CVE-2022-43720">Improper rendering of user input</h2>
+<p><a href="./CVE-2022-43720.cve.json">CVE-2022-43720</a></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>An authenticated attacker with write CSS template permissions can create a record with specific HTML tags that will not get properly escaped by the toast message displayed when a user deletes that specific CSS template record. <span style="background-color: rgb(255, 255, 255);">This issue affects Apache Superset version 1.5.2 and prior versions and version 2.0.0.</span><br></p>
+<h2 id="CVE-2022-43721">Open Redirect Vulnerability</h2>
+<p><a href="./CVE-2022-43721.cve.json">CVE-2022-43721</a></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>An authenticated attacker with update datasets permission could change a dataset link to an untrusted site, users could be redirected to this site when clicking on that specific dataset. <span style="background-color: rgb(255, 255, 255);">This issue affects Apache Superset version 1.5.2 and prior versions and version 2.0.0.</span><br></p>
+<h2 id="CVE-2023-25504">Possible SSRF on import datasets</h2>
+<p><a href="./CVE-2023-25504.cve.json">CVE-2023-25504</a></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache Superset versions  including 2.0.1</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p><span style="background-color: rgb(255, 255, 255);">A malicious actor who has been authenticated and granted specific permissions in Apache Superset may use the import dataset feature in order to conduct Server-Side Request Forgery
+attacks and query internal resources on behalf of the server where Superset
+is deployed. This vulnerability exists </span>in Apache Superset versions up to and including 2.0.1.<br></p>
+<h2 id="CVE-2023-27524">Session validation vulnerability when using provided default SECRET_KEY</h2>
+<p><a href="./CVE-2023-27524.cve.json">CVE-2023-27524</a></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Superset versions  including 2.0.1</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>Session Validation attacks in Apache Superset versions up to and including 2.0.1. Installations that have not altered the default configured SECRET_KEY according to installation instructions allow for an attacker to authenticate and access unauthorized resources. This does not affect Superset administrators who have changed the default value for SECRET_KEY config.</p>
+<h2 id="CVE-2023-27525">Incorrect default permissions for Gamma role</h2>
+<p><a href="./CVE-2023-27525.cve.json">CVE-2023-27525</a></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache Superset versions  including 2.0.1</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>An authenticated user with Gamma role authorization could have access to metadata information using non trivial methods in Apache Superset up to and including 2.0.1<br><br></p>
+<h2 id="CVE-2023-30776">Database connection password leak</h2>
+<p><a href="./CVE-2023-30776.cve.json">CVE-2023-30776</a></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache Superset versions 1.3.0 including 2.0.1</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<p>An authenticated user with specific data permissions could access database connections stored passwords by requesting a specific REST API. This issue affects Apache Superset version 1.3.0 up to 2.0.1.</p>
+
+  
+</div>
+</div>
+</main>
+  <footer> 
+    <footer id="footer">
+    <p>&copy; 2023 The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+  </footer>
+ 
+</footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/main.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

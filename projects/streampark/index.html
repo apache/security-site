@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.111.3">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Apache StreamPark (Incubating) security advisories </title>
+
+  
+  <meta name="description" content="Security information for Apache StreamPark (Incubating)"> 
+  
+  
+  
+  
+  
+  <meta name="robots" content="noindex">
+  
+
+  
+
+  <meta name="author" content="">
+
+
+  <meta property="og:title" content="Apache StreamPark (Incubating) security advisories" />
+<meta property="og:description" content="Security information for Apache StreamPark (Incubating)" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://security.apache.org/projects/streampark/" />
+
+  
+
+
+
+
+  
+  
+  
+  
+   <link href="/projects/streampark/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
+
+  <link rel="canonical" href="https://security.apache.org/projects/streampark/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Apache Security Team</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Apache Security Team</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog" >Blog</a></li>
+    
+    <li><a href="https://www.apache.org/licenses/" >License</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
+    
+    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
+    
+    <li><a href="https://www.apache.org" >Apache</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+
+<div id="hero" class="wrap">
+  <h1>Apache StreamPark (Incubating) security advisories</h1>
+    <p>Security information for Apache StreamPark (Incubating)</p>
+</div>
+<div id="project-box">
+<div id="project">
+
+ <h1 id="reporting">Reporting</h1>
+<p>Do you want disclose a potential security issue for Apache StreamPark (Incubating)? Send your report to the  <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<h1 id="advisories">Advisories</h1>
+<h2 id="CVE-2022-45801">LDAP Injection Vulnerability</h2>
+<p><a href="./CVE-2022-45801.cve.json">CVE-2022-45801</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache StreamPark (incubating) versions 1.0.0 before 2.0.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<div><div><span style="background-color: rgb(255, 255, 255);">Apache StreamPark 1.0.0 to 2.0.0 have a LDAP injection vulnerability.</span><br><span style="background-color: rgb(255, 255, 255);">LDAP Injection is an attack used to exploit web based applications</span><br><span style="background-color: rgb(255, 255, 255);">that construct LDAP statements based on user input. When an</span><br><span style="background-color: rgb(255, 255, 255);">application fails to properly sanitize user input, it's possible to</span><br><span style="background-color: rgb(255, 255, 255);">modify LDAP statements through techniques similar to SQL Injection.</span><br><span style="background-color: rgb(255, 255, 255);">LDAP injection attacks could result in the granting of permissions to</span><br><span style="background-color: rgb(255, 255, 255);">unauthorized queries, and content modification inside the LDAP tree.</span><br><span style="background-color: rgb(255, 255, 255);">This risk may only occur when the user logs in with ldap, and the user</span><br><span style="background-color: rgb(255, 255, 255);">name and password login will not be affected, Users of the affected</span><br><span style="background-color: rgb(255, 255, 255);">versions should upgrade to Apache StreamPark 2.0.0 or later.</span><br><br></div></div><br>
+<h2 id="CVE-2022-45802">Upload any file to any directory</h2>
+<p><a href="./CVE-2022-45802.cve.json">CVE-2022-45802</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache StreamPark (incubating) versions 1.0.0 before 2.0.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<div><div><span style="background-color: var(--wht);">Streampark allows any users to upload a jar as application, but there is no mandatory verification of the uploaded file type, causing users to upload some high-risk files, and may upload them to any directory,&nbsp;</span><span style="background-color: var(--wht);">Users of the affected versions should upgrade to Apache StreamPark 2.0.0 or later</span></div><br></div><br><br>
+<h2 id="CVE-2022-46365">Logic error causing any account reset</h2>
+<p><a href="./CVE-2022-46365.cve.json">CVE-2022-46365</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache StreamPark (incubating) versions 1.0.0 before 2.0.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);"><div><div>Apache StreamPark 1.0.0 <span style="background-color: rgb(255, 255, 255);">before</span> 2.0.0 When the user successfully logs in, to modify his profile, the username will be passed to the server-layer as a parameter, but not verified whether the user name is the currently logged user and whether the user is legal, This will allow malicious attackers to send any username to modify and reset the account, <span style="background-color: rgb(255, 255, 255);">Users of the affected </span><span style="background-color: rgb(255, 255, 255);">versions should upgrade to Apache StreamPark 2.0.0 or later.</span></div></div></span></span><br></p>
+
+  
+</div>
+</div>
+</main>
+  <footer> 
+    <footer id="footer">
+    <p>&copy; 2023 The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+  </footer>
+ 
+</footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/main.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

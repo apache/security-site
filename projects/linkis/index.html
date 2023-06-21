@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.111.3">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Apache Linkis security advisories </title>
+
+  
+  <meta name="description" content="Security information for Apache Linkis"> 
+  
+  
+  
+  
+  
+  <meta name="robots" content="noindex">
+  
+
+  
+
+  <meta name="author" content="">
+
+
+  <meta property="og:title" content="Apache Linkis security advisories" />
+<meta property="og:description" content="Security information for Apache Linkis" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://security.apache.org/projects/linkis/" />
+
+  
+
+
+
+
+  
+  
+  
+  
+   <link href="/projects/linkis/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
+
+  <link rel="canonical" href="https://security.apache.org/projects/linkis/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Apache Security Team</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Apache Security Team</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog" >Blog</a></li>
+    
+    <li><a href="https://www.apache.org/licenses/" >License</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
+    
+    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
+    
+    <li><a href="https://www.apache.org" >Apache</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+
+<div id="hero" class="wrap">
+  <h1>Apache Linkis security advisories</h1>
+    <p>Security information for Apache Linkis</p>
+</div>
+<div id="project-box">
+<div id="project">
+
+ <h1 id="reporting">Reporting</h1>
+<p>Do you want disclose a potential security issue for Apache Linkis? Send your report to the  <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<h1 id="advisories">Advisories</h1>
+<h2 id="CVE-2022-44645">The DatasourceManager module has a serialization attack vulnerability</h2>
+<p><a href="./CVE-2022-44645.cve.json">CVE-2022-44645</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Linkis (incubating) versions  including 1.3.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>In Apache Linkis &lt;=1.3.0 when used with the MySQL Connector/J in the data source module, a deserialization vulnerability with possible remote code execution impact exists when an attacker has to write access to a database and configures new data source with a MySQL data source and malicious parameters. Therefore, the parameters in the JDBC URL should be blacklisted. Versions of Apache Linkis &lt;= 1.3.0 will be affected.<br><br>We recommend users upgrade the version of Linkis to version 1.3.1.<br></p>
+<h2 id="CVE-2022-44644">The DatasourceManager module has a Local File Read Vulnerability</h2>
+<p><a href="./CVE-2022-44644.cve.json">CVE-2022-44644</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Linkis (incubating) versions  before 1.3.1</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>In Apache Linkis &lt;=1.3.0 when used with the MySQL Connector/J in the data source module, an authenticated attacker could read arbitrary local files by connecting a rogue MySQL server, By adding allowLoadLocalInfile to true in the JDBC parameter. Therefore, the parameters in the JDBC URL should be blacklisted. Versions of Apache Linkis &lt;= 1.3.0 will be affected. <br><br><span style="background-color: rgb(255, 255, 255);">We recommend users upgrade the version of Linkis to version 1.3.1</span><br></p>
+<h2 id="CVE-2023-27602">Apache Linkis publicsercice module unrestricted upload of file</h2>
+<p><a href="./CVE-2023-27602.cve.json">CVE-2023-27602</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Linkis versions  including 1.3.1</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<span style="background-color: rgb(255, 255, 255);">
+<p>In Apache Linkis &lt;=1.3.1, The PublicService module uploads </span><span style="background-color: rgb(255, 255, 255);">files without restrictions on the path to the uploaded </span><span style="background-color: rgb(255, 255, 255);">files, and file types.<br></p>
+<p>We recommend users upgrade the version of Linkis to version 1.3.2. <br></span></p>
+<h2 id="CVE-2023-27603">Apache Linkis Mangaer module engineConn material upload exists Zip Slip issue</h2>
+<p><a href="./CVE-2023-27603.cve.json">CVE-2023-27603</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Linkis versions  including 1.3.1</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<span style="background-color: rgb(255, 255, 255);">
+<p>In Apache Linkis &lt;=1.3.1, due to the Manager module engineConn material upload does not check the zip path, This is a Zip Slip issue, which will lead to a </span><span style="background-color: rgb(255, 255, 255);">potential RCE vulnerability.<br></p>
+<p>We recommend users upgrade the version of Linkis to version 1.3.2.</p>
+</span>
+<h2 id="CVE-2023-27987">Apache Linkis gateway module token authentication bypass</h2>
+<p><a href="./CVE-2023-27987.cve.json">CVE-2023-27987</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Linkis versions  including 1.3.1</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>In Apache Linkis &lt;=1.3.1, due to the default token generated by Linkis Gateway deployment being too simple, it is easy for attackers to obtain the default token for the attack. Generation rules should add random values.<br></p>
+<p>We recommend users upgrade the version of Linkis to version 1.3.2 And modify the default token value. You can refer to Token authorization[1]<br><a target="_blank" rel="nofollow" href="https://linkis.apache.org/docs/latest/auth/token"><a href="https://linkis.apache.org/docs/latest/auth/token">https://linkis.apache.org/docs/latest/auth/token</a></a></p>
+<br>
+<h2 id="CVE-2023-29215">Apache Linkis JDBC EngineCon  has a deserialization command execution</h2>
+<p><a href="./CVE-2023-29215.cve.json">CVE-2023-29215</a></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Linkis versions  including 1.3.1</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>In Apache Linkis &lt;=1.3.1, due to the lack of effective filtering
+of parameters, an attacker configuring malicious Mysql JDBC parameters in JDBC EengineConn Module will trigger a
+deserialization vulnerability and eventually lead to remote code execution. Therefore, the parameters in the Mysql JDBC URL should be blacklisted. Versions of Apache Linkis &lt;= 1.3.0 will be affected.<br>We recommend users upgrade the version of Linkis to version 1.3.2.</p>
+<br>
+<h2 id="CVE-2023-29216">Apache Linkis DatasourceManager module has a deserialization command execution</h2>
+<p><a href="./CVE-2023-29216.cve.json">CVE-2023-29216</a></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Linkis versions  including 1.3.1</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>In Apache Linkis &lt;=1.3.1, because the parameters are not
+effectively filtered, the attacker uses the MySQL data source and malicious parameters to
+configure a new data source to trigger a deserialization vulnerability, eventually leading to
+remote code execution.<br> Versions of Apache Linkis &lt;= 1.3.0 will be affected.<br>We recommend users upgrade the version of Linkis to version 1.3.2.</p>
+<br>
+  
+</div>
+</div>
+</main>
+  <footer> 
+    <footer id="footer">
+    <p>&copy; 2023 The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+  </footer>
+ 
+</footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/main.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

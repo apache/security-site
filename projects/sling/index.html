@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.111.3">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Apache Sling security advisories </title>
+
+  
+  <meta name="description" content="Security information for Apache Sling"> 
+  
+  
+  
+  
+  
+  <meta name="robots" content="noindex">
+  
+
+  
+
+  <meta name="author" content="">
+
+
+  <meta property="og:title" content="Apache Sling security advisories" />
+<meta property="og:description" content="Security information for Apache Sling" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://security.apache.org/projects/sling/" />
+
+  
+
+
+
+
+  
+  
+  
+  
+   <link href="/projects/sling/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
+
+  <link rel="canonical" href="https://security.apache.org/projects/sling/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Apache Security Team</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Apache Security Team</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog" >Blog</a></li>
+    
+    <li><a href="https://www.apache.org/licenses/" >License</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
+    
+    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
+    
+    <li><a href="https://www.apache.org" >Apache</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+
+<div id="hero" class="wrap">
+  <h1>Apache Sling security advisories</h1>
+    <p>Security information for Apache Sling</p>
+</div>
+<div id="project-box">
+<div id="project">
+
+ <h1 id="reporting">Reporting</h1>
+<p>Do you want disclose a potential security issue for Apache Sling? You can read more about the projects&rsquo; security policy on their <a href="https://sling.apache.org/site/security.html">security page</a>, and email your report to the  <a href="mailto:security@sling.apache.org">Apache Sling Security Team</a>.</p>
+<h1 id="advisories">Advisories</h1>
+<h2 id="CVE-2022-45064">Include-based XSS</h2>
+<p><a href="./CVE-2022-45064.cve.json">CVE-2022-45064</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Sling Engine versions   before 2.14.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<div>The SlingRequestDispatcher doesn't correctly implement the RequestDispatcher API resulting in a generic type of include-based cross-site scripting issues on the Apache Sling level. The vulnerability is exploitable by an attacker that is able to include a resource with specific content-type and control the include path (i.e. writing content). The impact of a successful attack is privilege escalation to administrative power.</div><div><br></div><div>Please update to Apache Sling Engine &gt;= 2.14.0 and enable the "Check Content-Type overrides" configuration option.<br><br><br></div>
+<h2 id="CVE-2022-46769">XSS in CMS Site Group Detail</h2>
+<p><a href="./CVE-2022-46769.cve.json">CVE-2022-46769</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Sling App CMS versions  before 1.1.4</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>An improper neutralization of input during web page generation (&lsquo;Cross-site Scripting&rsquo;) [CWE-79] vulnerability in Sling App CMS version 1.1.2 and prior may allow an authenticated remote attacker to perform a reflected cross-site scripting (XSS) attack in the site group feature.<br><br><span style="background-color: rgb(255, 255, 255);">Upgrade to Apache Sling App CMS &gt;= 1.1.4</span> <br></p>
+<h2 id="CVE-2023-22849">XSS in CMS Reference / UI Components</h2>
+<p><a href="./CVE-2023-22849.cve.json">CVE-2023-22849</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Sling App CMS versions  before 1.1.6</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>An improper neutralization of input during web page generation (&lsquo;Cross-site Scripting&rsquo;) [CWE-79] vulnerability in Sling App CMS version 1.1.4 and prior may allow an authenticated remote attacker to perform a reflected cross-site scripting (XSS) attack in multiple features.<br><br><span style="background-color: rgb(255, 255, 255);">Upgrade to Apache Sling App CMS &gt;= 1.1.6</span><br></p>
+<h2 id="CVE-2023-25141">JNDI injection into Apache sling-org-apache-sling-jcr-base</h2>
+<p><a href="./CVE-2023-25141.cve.json">CVE-2023-25141</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Sling JCR Base versions 2.0.6 before 3.1.12</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<div>Apache Sling JCR Base &lt; 3.1.12 has a critical injection vulnerability when running on old JDK versions (JDK 1.8.191 or earlier) through utility functions in RepositoryAccessor. The functions getRepository and getRepositoryFromURL allow an application to access data stored in a remote location via JDNI and RMI.</div><div><br></div><div>Users of Apache Sling JCR Base are recommended to upgrade to Apache Sling JCR Base 3.1.12 or later, or to run on a more recent JDK.</div>
+<h2 id="CVE-2023-25621">Apache Sling does not allow to handle i18n content in a secure way</h2>
+<p><a href="./CVE-2023-25621.cve.json">CVE-2023-25621</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Sling versions Apache Sling i18n including 2.5.18</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Privilege Escalation vulnerability in Apache Software Foundation Apache Sling.<br>Any content author is able to create i18n dictionaries in the repository in a location the author has write access to. As these translations are used across the whole product, it allows an author to change any text or dialog in the product. For example an attacker might fool someone by changing the text on a delete button to &ldquo;Info&rdquo;.<br><p>This issue affects the i18n module of Apache Sling up to version 2.5.18. Version 2.6.2 and higher limit by default i18m dictionaries to certain paths in the repository (/libs and /apps).</p><p>Users of the module are advised to update to version 2.6.2 or higher, check the configuration for resource loading and then adjust the access permissions for the configured path accordingly.<br></p></p>
+<h2 id="CVE-2023-26513">Requests to certain paths managed by the Apache Sling Resource Merger can lead to DoS</h2>
+<p><a href="./CVE-2023-26513.cve.json">CVE-2023-26513</a></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Sling Resource Merger versions 1.2.0 before 1.4.2</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Excessive Iteration vulnerability in Apache Software Foundation Apache Sling Resource Merger.<p>This issue affects Apache Sling Resource Merger: from 1.2.0 before 1.4.2.</p></p>
+
+  
+</div>
+</div>
+</main>
+  <footer> 
+    <footer id="footer">
+    <p>&copy; 2023 The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+  </footer>
+ 
+</footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/main.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

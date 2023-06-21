@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.111.3">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Apache AGE security advisories </title>
+
+  
+  <meta name="description" content="Security information for Apache AGE"> 
+  
+  
+  
+  
+  
+  <meta name="robots" content="noindex">
+  
+
+  
+
+  <meta name="author" content="">
+
+
+  <meta property="og:title" content="Apache AGE security advisories" />
+<meta property="og:description" content="Security information for Apache AGE" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://security.apache.org/projects/age/" />
+
+  
+
+
+
+
+  
+  
+  
+  
+   <link href="/projects/age/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
+
+  <link rel="canonical" href="https://security.apache.org/projects/age/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Apache Security Team</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Apache Security Team</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog" >Blog</a></li>
+    
+    <li><a href="https://www.apache.org/licenses/" >License</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
+    
+    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
+    
+    <li><a href="https://www.apache.org" >Apache</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+
+<div id="hero" class="wrap">
+  <h1>Apache AGE security advisories</h1>
+    <p>Security information for Apache AGE</p>
+</div>
+<div id="project-box">
+<div id="project">
+
+ <h1 id="reporting">Reporting</h1>
+<p>Do you want disclose a potential security issue for Apache AGE? Send your report to the  <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<h1 id="advisories">Advisories</h1>
+<h2 id="CVE-2022-45786">Python and Golang drivers allow data manipulation and exposure due to SQL injection</h2>
+<p><a href="./CVE-2022-45786.cve.json">CVE-2022-45786</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache AGE versions Apache AGE for PostgreSQL 12 including 1.1.0Apache AGE for PostgreSQL 11 including 1.1.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>There are issues with the AGE drivers for Golang and Python that enable SQL injections to occur. This impacts AGE for PostgreSQL 11 &amp; AGE for PostgreSQL 12, all versions up-to-and-including 1.1.0, when using those drivers.<br><br>The fix is to update to the latest Golang and Python drivers in addition to the latest version of AGE that is used for PostgreSQL 11 or  PostgreSQL 12.<br><br>The update of AGE will add a new function to enable parameterization of the cypher() function, which, in conjunction with the driver updates, will resolve this issue.<br><br><u>Background (for those who want more information):</u><br><br>After thoroughly researching this issue, we found that due to the nature of the cypher() function, it was not easy to parameterize the values passed into it. This enabled SQL injections, if the developer of the driver wasn&rsquo;t careful. The developer of the Golang and Pyton drivers didn&rsquo;t fully utilize parameterization, likely because of this, thus enabling SQL injections.<br><br>The obvious fix to this issue is to use parameterization in the drivers for all PG SQL queries. However, parameterizing all PG queries is complicated by the fact that the cypher() function call itself cannot be parameterized directly, as it isn&rsquo;t a real function. At least, not the parameters that would take the graph name and cypher query.<br><br>The reason the cypher() function cannot have those values parameterized is because the function is a placeholder and never actually runs. The cypher() function node, created by PG in the query tree, is transformed and replaced with a query tree for the actual cypher query during the analyze phase. The problem is that parameters - that would be passed in and that the cypher() function transform needs to be resolved - are only resolved in the execution phase, which is much later. Since the transform of the cypher() function needs to know the graph name and cypher query prior to execution, they can&rsquo;t be passed as parameters.<br><br>The fix that we are testing right now, and are proposing to use, is to create a function that will be called prior to the execution of the cypher() function transform. This new function will allow values to be passed as parameters for the graph name and cypher query. As this command will be executed prior to the cypher() function transform, its values will be resolved. These values can then be cached for the immediately following cypher() function transform to use. As added features, the cached values will store the calling session&rsquo;s pid, for validation. And, the cypher() function transform will clear this cached information after function invocation, regardless of whether it was used.<br><br>This method will allow the parameterizing of the cypher() function indirectly and provide a way to lock out SQL injection attacks.</p>
+
+  
+</div>
+</div>
+</main>
+  <footer> 
+    <footer id="footer">
+    <p>&copy; 2023 The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+  </footer>
+ 
+</footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/main.js" type="text/javascript">
+  </script>
+</body>
+
+</html>
