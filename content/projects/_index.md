@@ -75,6 +75,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache SpamAssassin](https://cwiki.apache.org/confluence/display/SPAMASSASSIN/SecurityPolicy) |  [Apache SpamAssassin Security Team](mailto:security@spamassassin.apache.org) | |
 | [Apache Spark](https://spark.apache.org/security.html) |  [Apache Spark Security Team](mailto:security@spark.apache.org) | [Advisories](spark) |
 | Apache StreamPark (Incubating) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](streampark) |
+| Apache StreamPipes |  [Apache Security Team](mailto:security@apache.org) | [Advisories](streampipes) |
 | [Apache Struts](https://struts.apache.org/security.html) |  [Apache Struts Security Team](mailto:security@struts.apache.org) | [Advisories](struts) |
 | [Apache Subversion](https://subversion.apache.org/security/) |  [Apache Subversion Security Team](mailto:security@subversion.apache.org) | |
 | Apache Superset |  [Apache Security Team](mailto:security@apache.org) | [Advisories](superset) |
