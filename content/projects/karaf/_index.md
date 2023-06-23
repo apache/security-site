@@ -10,6 +10,10 @@ Do you want disclose a potential security issue for Apache Karaf? Send your repo
 
 # Advisories
 
+This page is experimental: it provides consistent access to the advisories for Apache Karaf since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. 
+
+If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+
 ## JDBC JAAS LDAP injection ## { #CVE-2022-40145 }
 
 [CVE-2022-40145](./CVE-2022-40145.cve.json)

@@ -10,6 +10,10 @@ Do you want disclose a potential security issue for Apache Commons? You can read
 
 # Advisories
 
+This page is experimental: it provides consistent access to the advisories for Apache Commons since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the [project security page](https://commons.apache.org/security.html).
+
+If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+
 ## FileUpload DoS with excessive parts ## { #CVE-2023-24998 }
 
 [CVE-2023-24998](./CVE-2023-24998.cve.json)

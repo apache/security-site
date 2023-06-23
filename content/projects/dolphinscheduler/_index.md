@@ -10,6 +10,10 @@ Do you want disclose a potential security issue for Apache DolphinScheduler? Sen
 
 # Advisories
 
+This page is experimental: it provides consistent access to the advisories for Apache DolphinScheduler since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. 
+
+If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+
 ## Remote command execution Vulnerability in script alert plugin ## { #CVE-2022-45875 }
 
 [CVE-2022-45875](./CVE-2022-45875.cve.json)

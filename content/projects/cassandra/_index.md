@@ -10,6 +10,10 @@ Do you want disclose a potential security issue for Apache Cassandra? Send your 
 
 # Advisories
 
+This page is experimental: it provides consistent access to the advisories for Apache Cassandra since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. 
+
+If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+
 ## Privilege escalation when enabling FQL/Audit logs ## { #CVE-2023-30601 }
 
 [CVE-2023-30601](./CVE-2023-30601.cve.json)

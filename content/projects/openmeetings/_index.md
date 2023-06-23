@@ -10,6 +10,10 @@ Do you want disclose a potential security issue for Apache OpenMeetings? You can
 
 # Advisories
 
+This page is experimental: it provides consistent access to the advisories for Apache OpenMeetings since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the [project security page](https://openmeetings.apache.org/security.html).
+
+If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+
 ## allows user impersonation ## { #CVE-2023-28326 }
 
 [CVE-2023-28326](./CVE-2023-28326.cve.json)

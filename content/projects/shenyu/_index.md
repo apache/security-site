@@ -10,6 +10,10 @@ Do you want disclose a potential security issue for Apache ShenYu? Send your rep
 
 # Advisories
 
+This page is experimental: it provides consistent access to the advisories for Apache ShenYu since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. 
+
+If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+
 ## Apache ShenYu Admin ultra vires ## { #CVE-2022-42735 }
 
 [CVE-2022-42735](./CVE-2022-42735.cve.json)

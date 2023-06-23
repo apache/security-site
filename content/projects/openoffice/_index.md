@@ -10,6 +10,10 @@ Do you want disclose a potential security issue for Apache OpenOffice? You can r
 
 # Advisories
 
+This page is experimental: it provides consistent access to the advisories for Apache OpenOffice since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the [project security page](https://openoffice.apache.org/security).
+
+If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+
 ## Empty entry in Java class path ## { #CVE-2022-38745 }
 
 [CVE-2022-38745](./CVE-2022-38745.cve.json)

@@ -10,6 +10,10 @@ Do you want disclose a potential security issue for Apache Accumulo? Send your r
 
 # Advisories
 
+This page is experimental: it provides consistent access to the advisories for Apache Accumulo since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. 
+
+If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+
 ## Accumulo 2.1.0 may incorrectly validate cached credentials ## { #CVE-2023-34340 }
 
 [CVE-2023-34340](./CVE-2023-34340.cve.json)

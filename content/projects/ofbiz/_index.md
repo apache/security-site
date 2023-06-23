@@ -10,6 +10,10 @@ Do you want disclose a potential security issue for Apache OFBiz? You can read m
 
 # Advisories
 
+This page is experimental: it provides consistent access to the advisories for Apache OFBiz since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the [project security page](https://ofbiz.apache.org/download.html#security).
+
+If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+
 ## Arbitrary file reading vulnerability ## { #CVE-2022-47501 }
 
 [CVE-2022-47501](./CVE-2022-47501.cve.json)

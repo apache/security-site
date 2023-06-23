@@ -90,6 +90,16 @@ layout: single
         project_page.write(' [%s Security Team](mailto:%s).' % (p['name'], p['contact']))
 
     project_page.write('\n\n# Advisories')
+
+    project_page.write('\n\nThis page is experimental: it provides consistent access to the advisories for %s since 2023 in text and CVE JSON format. ' % p['name'])
+    project_page.write('It may lag slighly behind the official CVE publications. ')
+    if 'link' in p.keys():
+        project_page.write('It may also lack details found on the [project security page](%s).' % p['link'])
+
+    project_page.write('\n\nIf you have any feedback on how you would like this data to be presented, ')
+    project_page.write('you are welcome to reach out on our public [mailinglist](/mailinglist) or privately ')
+    project_page.write('on [security@apache.org](mailto:security@apache.org)')
+
     for advisory in advisories[pmc]:
         cve = advisory['ID']
         project_page.write("\n\n## %s ## { #%s }\n\n" % (advisory['title'], cve))

@@ -10,6 +10,10 @@ Do you want disclose a potential security issue for Apache Guacamole? You can re
 
 # Advisories
 
+This page is experimental: it provides consistent access to the advisories for Apache Guacamole since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the [project security page](https://guacamole.apache.org/security/).
+
+If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+
 ## Incorrect calculation of Guacamole protocol element lengths ## { #CVE-2023-30575 }
 
 [CVE-2023-30575](./CVE-2023-30575.cve.json)

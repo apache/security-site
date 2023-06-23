@@ -10,6 +10,10 @@ Do you want disclose a potential security issue for Apache Struts? You can read 
 
 # Advisories
 
+This page is experimental: it provides consistent access to the advisories for Apache Struts since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the [project security page](https://struts.apache.org/security.html).
+
+If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+
 ## DoS via OOM owing to not properly checking of list bounds ## { #CVE-2023-34149 }
 
 [CVE-2023-34149](./CVE-2023-34149.cve.json)

@@ -10,6 +10,10 @@ Do you want disclose a potential security issue for Apache Traffic Server? You c
 
 # Advisories
 
+This page is experimental: it provides consistent access to the advisories for Apache Traffic Server since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the [project security page](None).
+
+If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+
 ## Improperly handled requests can cause crashes in specific plugins ## { #CVE-2022-32749 }
 
 [CVE-2022-32749](./CVE-2022-32749.cve.json)

@@ -10,6 +10,10 @@ Do you want disclose a potential security issue for Apache RocketMQ? Send your r
 
 # Advisories
 
+This page is experimental: it provides consistent access to the advisories for Apache RocketMQ since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. 
+
+If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+
 ## Possible remote code execution vulnerability when using the update configuration function ## { #CVE-2023-33246 }
 
 [CVE-2023-33246](./CVE-2023-33246.cve.json)

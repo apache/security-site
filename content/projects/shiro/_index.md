@@ -10,6 +10,10 @@ Do you want disclose a potential security issue for Apache Shiro? You can read m
 
 # Advisories
 
+This page is experimental: it provides consistent access to the advisories for Apache Shiro since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the [project security page](https://shiro.apache.org/security-reports.html).
+
+If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+
 ## Apache Shiro before 1.11.0, when used with Spring Boot 2.6+, may allow authentication bypass through a specially crafted HTTP request ## { #CVE-2023-22602 }
 
 [CVE-2023-22602](./CVE-2023-22602.cve.json)

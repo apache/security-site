@@ -10,6 +10,10 @@ Do you want disclose a potential security issue for Apache Airflow? Send your re
 
 # Advisories
 
+This page is experimental: it provides consistent access to the advisories for Apache Airflow since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. 
+
+If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+
 ## Hive Provider RCE vulnerability with hive_cli_params ## { #CVE-2022-46421 }
 
 [CVE-2022-46421](./CVE-2022-46421.cve.json)
