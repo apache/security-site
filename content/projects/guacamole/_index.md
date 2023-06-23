@@ -27,6 +27,10 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 Apache Guacamole 1.5.1 and older may incorrectly calculate the lengths of instruction elements sent during the Guacamole protocol handshake, potentially allowing an attacker to inject Guacamole instructions during the handshake through specially-crafted data.<br><br>
 
+### References
+* https://lists.apache.org/thread/tn63n2lon0h5p45oft834t1dqvvxownv
+
+
 ## Use-after-free in handling of RDP audio input buffer ## { #CVE-2023-30576 }
 
 [CVE-2023-30576](./CVE-2023-30576.cve.json)
@@ -39,3 +43,6 @@ Apache Guacamole 1.5.1 and older may incorrectly calculate the lengths of instru
 ### Description
 
 Apache Guacamole 0.9.10 through 1.5.1 may continue to reference a freed RDP audio input buffer. Depending on timing, this may allow an attacker to execute arbitrary code with the privileges of the guacd process.<br><br>
+
+### References
+* https://lists.apache.org/thread/vgtvxb3w7mm84hx6v8dfc0onsoz05gb6

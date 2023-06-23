@@ -26,3 +26,6 @@ If you have any feedback on how you would like this data to be presented, you ar
 ### Description
 
 A vulnerability in import module of Apache Atlas allows an authenticated user to write to web server filesystem.  This issue affects Apache Atlas versions from 0.8.4 to 2.2.0.
+
+### References
+* https://lists.apache.org/thread/0rqvcxo6brmos9w3lzfsdn2lsmlblpw3

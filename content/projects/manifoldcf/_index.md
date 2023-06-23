@@ -26,3 +26,6 @@ If you have any feedback on how you would like this data to be presented, you ar
 ### Description
 
 Improper neutralization of special elements used in an LDAP query ('LDAP Injection') vulnerability in ActiveDirectory and Sharepoint ActiveDirectory authority connectors of Apache ManifoldCF allows an attacker to manipulate the LDAP search queries (DoS, additional queries, filter manipulation) during user lookup, if the username or the domain string are passed to the UserACLs servlet without validation.<br><br>This issue affects Apache ManifoldCF version 2.23 and prior versions.
+
+### References
+* https://lists.apache.org/thread/m693p0dq6jvwwvmy2wnhj6k854z0s444

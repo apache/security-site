@@ -29,6 +29,10 @@ If you have any feedback on how you would like this data to be presented, you ar
 spark.submit.proxyUser.allowCustomClasspathInClusterMode is set to its 
 default of "false", and is not overridden by submitted applications.<br></div>
 
+### References
+* https://lists.apache.org/thread/yllfl25xh5tbotjmg93zrq4bzwhqc0gv
+
+
 ## Shell command injection via Spark UI ## { #CVE-2023-32007 }
 
 [CVE-2023-32007](./CVE-2023-32007.cve.json)
@@ -41,3 +45,8 @@ default of "false", and is not overridden by submitted applications.<br></div>
 ### Description
 
 <div>** UNSUPPORTED WHEN ASSIGNED ** The Apache Spark UI offers the possibility to enable ACLs via the configuration option spark.acls.enable. With an authentication filter, this checks whether a user has access permissions to view or modify the application. If ACLs are enabled, a code path in HttpSecurityFilter can allow someone to perform impersonation by providing an arbitrary user name. A malicious user might then be able to reach a permission check function that will ultimately build a Unix shell command based on their input, and execute it. This will result in arbitrary shell command execution as the user Spark is currently running as. This issue was disclosed earlier as CVE-2022-33891, but incorrectly claimed version 3.1.3 (which has since gone EOL) would not be affected.</div><div>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</div><div>Users are recommended to upgrade to a supported version of Apache Spark, such as version 3.4.0.<br></div>
+
+### References
+* https://www.cve.org/CVERecord?id=CVE-2022-33891
+* https://spark.apache.org/security.html
+* https://lists.apache.org/thread/poxgnxhhnzz735kr1wos366l5vdbb0nv

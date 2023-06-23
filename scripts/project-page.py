@@ -132,6 +132,12 @@ layout: single
             for desc in cna['descriptions']:
                 for media in desc['supportingMedia']:
                     project_page.write(media['value'])
+
+            if 'references' in cna.keys():
+                project_page.write('\n\n### References\n')
+                for reference in cna['references']:
+                    project_page.write('* %s\n' % reference['url'])
+
             with open(staticdir + cve + '.cve.json', 'w') as cveFile:
                 cve_doc = {
                     "containers": details['containers'],

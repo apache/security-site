@@ -27,6 +27,10 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 <div>Integer Overflow or Wraparound vulnerability in apr_base64 functions of Apache Portable Runtime Utility (APR-util) allows an attacker to write beyond bounds of a buffer.</div><div><br></div><div>This issue affects Apache Portable Runtime Utility (APR-util) 1.6.1 and prior versions.</div>
 
+### References
+* https://lists.apache.org/thread/np5gjqlohc4f62lr09vrn61vl44cylh8
+
+
 ## out-of-bound writes in the apr_encode family of functions  ## { #CVE-2022-24963 }
 
 [CVE-2022-24963](./CVE-2022-24963.cve.json)
@@ -40,6 +44,10 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 Integer Overflow or Wraparound vulnerability in apr_encode functions of Apache Portable Runtime (APR) allows an attacker to write beyond bounds of a buffer.<br>This issue affects Apache Portable Runtime (APR) version 1.7.0.
 
+### References
+* https://lists.apache.org/thread/fw9p6sdncwsjkstwc066vz57xqzfksq9
+
+
 ##  Windows out-of-bounds write in apr_socket_sendv function ## { #CVE-2022-28331 }
 
 [CVE-2022-28331](./CVE-2022-28331.cve.json)
@@ -52,3 +60,6 @@ Integer Overflow or Wraparound vulnerability in apr_encode functions of Apache P
 ### Description
 
 On Windows, Apache Portable Runtime 1.7.0 and earlier may write beyond the end of a stack based buffer in apr_socket_sendv(). This is a result of integer overflow.
+
+### References
+* https://lists.apache.org/thread/5pfdfn7h0vsdo5xzjn97vghp0x42jj2r

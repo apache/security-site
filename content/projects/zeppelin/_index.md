@@ -27,6 +27,10 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 The improper Input Validation vulnerability in "”Move folder to Trash” feature of Apache Zeppelin allows an attacker to delete the arbitrary files.  This issue affects Apache Zeppelin Apache Zeppelin version 0.9.0 and prior versions.
 
+### References
+* https://lists.apache.org/thread/bxs056g3xlsofz0jb3wny9dw4llwptd2
+
+
 ## Stored XSS in note permissions ## { #CVE-2022-46870 }
 
 [CVE-2022-46870](./CVE-2022-46870.cve.json)
@@ -39,3 +43,6 @@ The improper Input Validation vulnerability in "”Move folder to Trash” featu
 ### Description
 
 An Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache Zeppelin allows logged-in users to execute arbitrary javascript in other users' browsers.<br><p>This issue affects Apache Zeppelin before 0.8.2. Users are recommended to upgrade to a supported version of Zeppelin.<br></p>
+
+### References
+* https://lists.apache.org/thread/gb1wdnrm1095xw6qznpsycfrht4lwbwc

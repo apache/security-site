@@ -26,3 +26,6 @@ If you have any feedback on how you would like this data to be presented, you ar
 ### Description
 
 There is insufficient checking of user queries in Apache Jena versions 4.7.0 and earlier, when invoking custom scripts. It allows a remote user to execute arbitrary javascript via a SPARQL query.
+
+### References
+* https://lists.apache.org/thread/s0dmpsxcwqs57l4qfs415klkgmhdxq7s

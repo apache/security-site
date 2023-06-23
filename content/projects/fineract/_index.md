@@ -27,6 +27,10 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 Server-Side Request Forgery (SSRF) vulnerability in Apache Software Foundation Apache Fineract.<br><p>Authorized users with limited permissions can gain access to server and may be able to use server for any outbound traffic.&nbsp;</p><p>This issue affects Apache Fineract: from 1.4 through 1.8.3.</p>
 
+### References
+* https://lists.apache.org/thread/m58fdjmtkfp9h4c0r4l48rv995w3qhb6
+
+
 ## SQL injection vulnerability  ## { #CVE-2023-25196 }
 
 [CVE-2023-25196](./CVE-2023-25196.cve.json)
@@ -40,6 +44,10 @@ Server-Side Request Forgery (SSRF) vulnerability in Apache Software Foundation A
 
 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Software Foundation Apache Fineract.<br><p>Authorized users may be able to change or add data in certain components. &nbsp;</p><p>This issue affects Apache Fineract: from 1.4 through 1.8.2.</p>
 
+### References
+* https://lists.apache.org/thread/m9x3vpn3bry4fympkzxnnz4qx0oc0w8m
+
+
 ## SQL injection vulnerability in certain procedure calls  ## { #CVE-2023-25197 }
 
 [CVE-2023-25197](./CVE-2023-25197.cve.json)
@@ -52,3 +60,6 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 ### Description
 
 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Software Foundation apache fineract.<br><p>Authorized users may be able to exploit this for limited impact on components. &nbsp;</p><p>This issue affects apache fineract: from 1.4 through 1.8.2.</p>
+
+### References
+* https://lists.apache.org/thread/v0q9x86sx6f6l2nzr1z0nwm3y9qlng04

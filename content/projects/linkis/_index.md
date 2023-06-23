@@ -29,6 +29,10 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 In Apache Linkis &lt;=1.3.0 when used with the MySQL Connector/J in the data source module, a deserialization vulnerability with possible remote code execution impact exists when an attacker has to write access to a database and configures new data source with a MySQL data source and malicious parameters. Therefore, the parameters in the JDBC URL should be blacklisted. Versions of Apache Linkis &lt;= 1.3.0 will be affected.<br><br>We recommend users upgrade the version of Linkis to version 1.3.1.<br>
 
+### References
+* https://lists.apache.org/thread/zlcfmvt65blqc4n6fxypg6f0ns8fqfz4
+
+
 ## The DatasourceManager module has a Local File Read Vulnerability ## { #CVE-2022-44644 }
 
 [CVE-2022-44644](./CVE-2022-44644.cve.json)
@@ -41,6 +45,10 @@ In Apache Linkis &lt;=1.3.0 when used with the MySQL Connector/J in the data sou
 ### Description
 
 In Apache Linkis &lt;=1.3.0 when used with the MySQL Connector/J in the data source module, an authenticated attacker could read arbitrary local files by connecting a rogue MySQL server, By adding allowLoadLocalInfile to true in the JDBC parameter. Therefore, the parameters in the JDBC URL should be blacklisted. Versions of Apache Linkis &lt;= 1.3.0 will be affected.&nbsp;<br><br><span style="background-color: rgb(255, 255, 255);">We recommend users upgrade the version of Linkis to version 1.3.1</span><br>
+
+### References
+* https://lists.apache.org/thread/hwq9ytq6y1kdh9lz5znptkcrdll9x85h
+
 
 ## Apache Linkis publicsercice module unrestricted upload of file ## { #CVE-2023-27602 }
 
@@ -60,6 +68,10 @@ In Apache Linkis &lt;=1.3.0 when used with the MySQL Connector/J in the data sou
 In Apache Linkis &lt;=1.3.1, The PublicService module uploads&nbsp;</span><span style="background-color: rgb(255, 255, 255);">files without restrictions on the path to the uploaded&nbsp;</span><span style="background-color: rgb(255, 255, 255);">files, and file types.<br>
 
 We recommend users upgrade the version of Linkis to version 1.3.2.&nbsp;<br></span>
+
+### References
+* https://lists.apache.org/thread/wt70jfc0yfs6s5g0wg5dr5klnc48nsp1
+
 
 ## Apache Linkis Mangaer module engineConn material upload exists Zip Slip issue ## { #CVE-2023-27603 }
 
@@ -82,6 +94,11 @@ We recommend users upgrade the version of Linkis to version 1.3.2.
 
 </span>
 
+
+
+### References
+* https://lists.apache.org/thread/6n1vlvnyn441rm02zdqc0wnpckj8ltn8
+* https://www.openwall.com/lists/oss-security/2023/04/10/2
 
 
 ## Apache Linkis gateway module token authentication bypass ## { #CVE-2023-27987 }
@@ -107,6 +124,11 @@ We recommend users upgrade the version of Linkis to version 1.3.2 And modify the
 
 <br>
 
+### References
+* https://lists.apache.org/thread/3cr1cz3210wzwngldwrqzm43vwhghp0p
+* https://www.openwall.com/lists/oss-security/2023/04/10/3
+
+
 ## Apache Linkis JDBC EngineCon  has a deserialization command execution ## { #CVE-2023-29215 }
 
 [CVE-2023-29215](./CVE-2023-29215.cve.json)
@@ -123,6 +145,10 @@ of parameters, an attacker configuring malicious Mysql JDBC parameters in JDBC E
 deserialization vulnerability and eventually lead to remote code execution. Therefore, the parameters in the Mysql JDBC URL should be blacklisted. Versions of Apache Linkis &lt;= 1.3.0 will be affected.<br>We recommend users upgrade the version of Linkis to version 1.3.2.
 
 <br>
+
+### References
+* https://lists.apache.org/thread/o682wz1ggq491ybvjwokxvcdtnzo76ls
+
 
 ## Apache Linkis DatasourceManager module has a deserialization command execution ## { #CVE-2023-29216 }
 
@@ -143,3 +169,6 @@ configure a new data source to trigger a deserialization vulnerability, eventual
 remote code execution.<br> Versions of Apache Linkis &lt;= 1.3.0 will be affected.<br>We recommend users upgrade the version of Linkis to version 1.3.2.
 
 <br>
+
+### References
+* https://lists.apache.org/thread/18vv0m32oy51nzk8tbz13qdl5569y55l

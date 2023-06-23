@@ -32,3 +32,6 @@ If you have any feedback on how you would like this data to be presented, you ar
 <div>Apache Commons FileUpload before 1.5 does not limit the number of request parts to be processed resulting in the possibility of an attacker triggering a DoS with a malicious upload or series of uploads.</div><div><br></div><div>Note that, like all of the file upload limits, the
           new configuration option (FileUploadBase#setFileCountMax) is not
           enabled by default and must be explicitly configured.<br></div>
+
+### References
+* https://lists.apache.org/thread/4xl4l09mhwg4vgsk7dxqogcjrobrrdoy

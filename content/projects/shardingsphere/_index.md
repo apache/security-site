@@ -26,3 +26,6 @@ If you have any feedback on how you would like this data to be presented, you ar
 ### Description
 
 Apache ShardingSphere-Proxy prior to 5.3.0 when using MySQL as database backend didn't cleanup the database session completely after client authentication failed, which allowed an attacker to execute normal commands by constructing a special MySQL client. This vulnerability has been fixed in Apache ShardingSphere 5.3.0.
+
+### References
+* https://lists.apache.org/thread/l5rz7j4rg10o7ywtgknh2f5hxnv6yw3l

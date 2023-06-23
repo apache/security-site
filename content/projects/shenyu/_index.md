@@ -30,3 +30,6 @@ Improper Privilege Management vulnerability in Apache Software Foundation Apache
 <span style="background-color: rgb(255, 255, 255);">ShenYu Admin allows low-privilege low-level administrators create users with higher privileges than their own.</span>
 
 <p>This issue affects Apache ShenYu: 2.5.0.</p><p>Upgrade to Apache ShenYu 2.5.1 or apply patch <a target="_blank" rel="nofollow" href="https://github.com/apache/shenyu/pull/3958">https://github.com/apache/shenyu/pull/3958</a>.<br></p>
+
+### References
+* https://lists.apache.org/thread/2k8764jmckmc19qc8x51nlnngq71pcf7

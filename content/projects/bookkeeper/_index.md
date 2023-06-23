@@ -27,3 +27,6 @@ If you have any feedback on how you would like this data to be presented, you ar
 ### Description
 
 <span style="background-color: rgb(255, 255, 255);">The Apache Bookkeeper Java Client (before 4.14.6 and also 4.15.0) does not close the connection to the</span><span style="background-color: rgb(255, 255, 255);"> bookkeeper server when TLS hostname verification fails. This leaves</span><br><span style="background-color: rgb(255, 255, 255);">the bookkeeper client vulnerable to a man in the middle attack.<br></span><br>The problem affects BookKeeper client prior to versions 4.14.6 and 4.15.1.
+
+### References
+* https://lists.apache.org/thread/xyk2lfc7lzof8mksmwyympbqxts1b5s9

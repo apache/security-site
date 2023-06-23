@@ -27,3 +27,6 @@ If you have any feedback on how you would like this data to be presented, you ar
 ### Description
 
 Privilege escalation when enabling FQL/Audit logs allows user with JMX access to run arbitrary commands as the user running Apache Cassandra<br><p>This issue affects Apache Cassandra: from 4.0.0 through 4.0.9, from 4.1.0 through 4.1.1.</p>WORKAROUND<br>The vulnerability requires nodetool/JMX access to be exploitable, disable access for any non-trusted users.<br><br>MITIGATION<br>Upgrade to 4.0.10 or 4.1.2 and leave the new FQL/Auditlog configuration property&nbsp;allow_nodetool_archive_command as false.
+
+### References
+* https://lists.apache.org/thread/f74p9jdhmmp7vtrqd8lgm8bq3dhxl8vn

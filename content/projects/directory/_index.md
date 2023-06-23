@@ -26,3 +26,6 @@ If you have any feedback on how you would like this data to be presented, you ar
 ### Description
 
 An LDAP Injection vulnerability exists in the&nbsp;LdapIdentityBackend of Apache Kerby before 2.0.3.&nbsp;
+
+### References
+* https://lists.apache.org/thread/ynz3hhbbq6d980fzpncwbh5jd8mkyt5y

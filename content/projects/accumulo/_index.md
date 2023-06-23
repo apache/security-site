@@ -26,3 +26,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 ### Description
 
 Improper Authentication vulnerability in Apache Software Foundation Apache Accumulo.<br><p>This issue affects Apache Accumulo: 2.1.0.<br><br><span style="background-color: rgb(255, 255, 255);">Accumulo 2.1.0 contains a defect in the user authentication process that </span><span style="background-color: rgb(255, 255, 255);">may succeed when invalid credentials are provided. Users are advised to </span><span style="background-color: rgb(255, 255, 255);">upgrade to 2.1.1.</span><br></p>
+
+### References
+* https://lists.apache.org/thread/syy6jftvy9l6tlhn33o0rzwhh4rd0z4t
+* https://accumulo.apache.org/release/accumulo-2.1.1/

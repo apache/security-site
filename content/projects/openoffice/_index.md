@@ -27,6 +27,11 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 <div>Apache OpenOffice versions before 4.1.14 may be configured to add an empty entry to the Java class path. This may lead to run arbitrary Java code from the current directory.<br></div>
 
+### References
+* https://lists.apache.org/thread/q3noq7m681kvtb29m28x74q8cnwnzzo0
+* https://www.openoffice.org/security/cves/CVE-2022-38745.html
+
+
 ## Macro URL arbitrary script execution ## { #CVE-2022-47502 }
 
 [CVE-2022-47502](./CVE-2022-47502.cve.json)
@@ -39,3 +44,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 ### Description
 
 <p>Apache OpenOffice documents can contain links that call internal macros with arbitrary arguments. Several URI Schemes are defined for this purpose.<br></p><p>Links can be activated by clicks, or by automatic document events.</p><p>The execution of such links must be subject to user approval.</p><p>In the affected versions of OpenOffice, approval for certain links is not   requested; when activated, such links could therefore result in arbitrary script execution.<br></p>
+
+### References
+* https://lists.apache.org/thread/xr6tl91jj2jgcq8pdbrc4d8w13s6xn80
+* https://www.openoffice.org/security/cves/CVE-2022-47502.html

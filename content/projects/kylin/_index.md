@@ -27,6 +27,10 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 In the fix for CVE-2022-24697, a blacklist is used to filter user input commands. But there is a risk of being bypassed. The user can control the command by controlling the&nbsp;kylin.engine.spark-cmd&nbsp;parameter of conf.
 
+### References
+* https://lists.apache.org/thread/ob2ks04zl5ms0r44cd74y1xdl1rzfd1r
+
+
 ## Command injection by Diagnosis Controller ## { #CVE-2022-44621 }
 
 [CVE-2022-44621](./CVE-2022-44621.cve.json)
@@ -39,3 +43,6 @@ In the fix for CVE-2022-24697, a blacklist is used to filter user input commands
 ### Description
 
 Diagnosis Controller miss parameter validation, so user may attacked by command injection via HTTP Request.
+
+### References
+* https://lists.apache.org/thread/7ctchj24dofgsj9g1rg1245cms9myb34

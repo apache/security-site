@@ -28,6 +28,10 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 Allocation of Resources Without Limits or Throttling vulnerability in Apache Software Foundation Apache Struts.<p>This issue affects Apache Struts: through 2.5.30, through 6.1.2.</p><p>Upgrade to Struts 2.5.31 or 6.1.2.1 or greater.<br></p>
 
+### References
+* https://cwiki.apache.org/confluence/display/WW/S2-063
+
+
 ## DoS via OOM owing to no sanity limit on normal form fields in multipart forms ## { #CVE-2023-34396 }
 
 [CVE-2023-34396](./CVE-2023-34396.cve.json)
@@ -41,3 +45,6 @@ Allocation of Resources Without Limits or Throttling vulnerability in Apache Sof
 ### Description
 
 Allocation of Resources Without Limits or Throttling vulnerability in Apache Software Foundation Apache Struts.<p>This issue affects Apache Struts: through 2.5.30, through 6.1.2.</p><p>Upgrade to Struts 2.5.31 or 6.1.2.1 or greater<br></p>
+
+### References
+* https://cwiki.apache.org/confluence/display/WW/S2-064

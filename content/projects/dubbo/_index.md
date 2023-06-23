@@ -28,3 +28,6 @@ If you have any feedback on how you would like this data to be presented, you ar
 ### Description
 
 A deserialization vulnerability existed when dubbo generic invoke, which could lead to malicious code execution. <br><br>This issue affects Apache Dubbo 2.7.x version 2.7.21 and prior versions; Apache Dubbo 3.0.x version 3.0.13 and prior versions; Apache Dubbo 3.1.x version 3.1.5 and prior versions. 
+
+### References
+* https://lists.apache.org/thread/8h6zscfzj482z512d2v5ft63hdhzm0cb

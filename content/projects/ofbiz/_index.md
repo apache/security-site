@@ -27,3 +27,8 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 Arbitrary file reading vulnerability in Apache Software Foundation Apache OFBiz when using the Solr plugin. This is a&nbsp;
 pre-authentication attack.<br><p>This issue affects Apache OFBiz: before 18.12.07.</p>
+
+### References
+* https://lists.apache.org/thread/k8s76l0whydy45bfm4b69vq0mf94p3wc
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html

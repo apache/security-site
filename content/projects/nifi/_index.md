@@ -27,6 +27,11 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 <div>The ExtractCCDAAttributes Processor in Apache NiFi 1.2.0 through 1.19.1 does not restrict XML External Entity references.</div><div>Flow configurations that include the ExtractCCDAAttributes Processor are vulnerable to malicious XML documents that contain Document Type Declarations with XML External Entity references.</div><div>The resolution disables Document Type Declarations and disallows XML External Entity resolution in the ExtractCCDAAttributes Processor.</div>
 
+### References
+* https://nifi.apache.org/security.html#CVE-2023-22832
+* https://lists.apache.org/thread/b51qs6y7b7r58vovddkv6wc16g2xbl3w
+
+
 ## Potential Deserialization of Untrusted Data with JNDI in JMS Components ## { #CVE-2023-34212 }
 
 [CVE-2023-34212](./CVE-2023-34212.cve.json)
@@ -40,6 +45,11 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 <div>The JndiJmsConnectionFactoryProvider Controller Service, along with the ConsumeJMS and PublishJMS Processors, in Apache NiFi 1.8.0 through 1.21.0 allow an authenticated and authorized user to configure URL and library properties that enable deserialization of untrusted data from a remote location.</div><div>The resolution validates the JNDI URL and restricts locations to a set of allowed schemes.</div><div>You are recommended to upgrade to version 1.22.0 or later which fixes this issue.<br></div>
 
+### References
+* https://nifi.apache.org/security.html#CVE-2023-34212
+* https://lists.apache.org/thread/w5rm46fxmvxy216tglf0dv83wo6gnzr5
+
+
 ## Potential Code Injection with Database Services using H2 ## { #CVE-2023-34468 }
 
 [CVE-2023-34468](./CVE-2023-34468.cve.json)
@@ -52,3 +62,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 ### Description
 
 <div>The DBCPConnectionPool and HikariCPConnectionPool Controller Services in Apache NiFi 0.0.2 through 1.21.0 allow an authenticated and authorized user to configure a Database URL with the H2 driver that enables custom code execution.</div><div>The resolution validates the Database URL and rejects H2 JDBC locations.</div><div>You are recommended to upgrade to version 1.22.0 or later which fixes this issue.<br></div>
+
+### References
+* https://nifi.apache.org/security.html#CVE-2023-34468
+* https://lists.apache.org/thread/7b82l4f5blmpkfcynf3y6z4x1vqo59h8

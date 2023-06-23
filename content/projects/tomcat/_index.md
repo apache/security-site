@@ -29,6 +29,10 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 The JsonErrorReportValve in Apache Tomcat 8.5.83, 9.0.40 to 9.0.68 and 10.1.0-M1 to 10.1.1 did not escape the type, message or description values. In some circumstances these are constructed from user provided data and it was therefore possible for users to supply values that invalidated or manipulated the JSON output.
 
+### References
+* https://lists.apache.org/thread/yqkd183xrw3wqvnpcg3osbcryq85fkzj
+
+
 ## JSESSIONID Cookie missing secure attribute in some configurations ## { #CVE-2023-28708 }
 
 [CVE-2023-28708](./CVE-2023-28708.cve.json)
@@ -49,6 +53,10 @@ The JsonErrorReportValve in Apache Tomcat 8.5.83, 9.0.40 to 9.0.68 and 10.1.0-M1
 </div>
 
 
+### References
+* https://lists.apache.org/thread/hdksc59z3s7tm39x0pp33mtwdrt8qr67
+
+
 ## Fix for CVE-2023-24998 is incomplete ## { #CVE-2023-28709 }
 
 [CVE-2023-28709](./CVE-2023-28709.cve.json)
@@ -65,6 +73,10 @@ The JsonErrorReportValve in Apache Tomcat 8.5.83, 9.0.40 to 9.0.68 and 10.1.0-M1
 
 <div><p>The fix for CVE-2023-24998 was incomplete for Apache Tomcat 11.0.0-M2 to 11.0.0-M4, 10.1.5 to 10.1.7, 9.0.71 to 9.0.73 and 8.5.85 to 8.5.87. If non-default HTTP       connector settings were used such that the maxParameterCount&nbsp;could be reached using query string parameters and a request was       submitted that supplied exactly maxParameterCount parameters&nbsp;<span style="background-color: var(--wht);">in the query string, the limit for uploaded request parts could be&nbsp;</span><span style="background-color: var(--wht);">bypassed with the potential for a denial of service to occur.</span></p></div><br>
 
+### References
+* https://lists.apache.org/thread/7wvxonzwb7k9hx9jt3q33cmy7j97jo3j
+
+
 ## AJP response header mix-up ## { #CVE-2023-34981 }
 
 [CVE-2023-34981](./CVE-2023-34981.cve.json)
@@ -80,3 +92,6 @@ The JsonErrorReportValve in Apache Tomcat 8.5.83, 9.0.40 to 9.0.68 and 10.1.0-M1
 ### Description
 
 A regression in the fix for bug 66512 in Apache Tomcat 11.0.0-M5, 10.1.8, 9.0.74 and 8.5.88 meant that, if a response did not include any HTTP headers no AJP SEND_HEADERS messare woudl be sent for the response which in turn meant that at least one AJP proxy (mod_proxy_ajp) would use the response headers from the previous request leading to an information leak.
+
+### References
+* https://lists.apache.org/thread/j1ksjh9m9gx1q60rtk1sbzmxhvj5h5qz

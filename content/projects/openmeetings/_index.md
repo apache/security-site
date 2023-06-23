@@ -27,6 +27,10 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 <p>Vendor: The Apache Software Foundation</p><p>Versions Affected: Apache OpenMeetings from 2.0.0 before 7.0.0</p><p>Description: Attacker can elevate their privileges in any room</p><br>
 
+### References
+* https://lists.apache.org/thread/r9vn12dp5yofn1h3wd5x4h7c3vmmr5d9
+
+
 ## insufficient check of invitation hash ## { #CVE-2023-28936 }
 
 [CVE-2023-28936](./CVE-2023-28936.cve.json)
@@ -39,6 +43,10 @@ If you have any feedback on how you would like this data to be presented, you ar
 ### Description
 
 Attacker can access arbitrary recording/room<br><br>Vendor: The Apache Software Foundation<br><br>Versions&nbsp;Affected: Apache OpenMeetings from 2.0.0 before 7.1.0<br>
+
+### References
+* https://lists.apache.org/thread/y6vng44c22ll221rtvsv208x1pbjmdoc
+
 
 ## allows bypass authentication ## { #CVE-2023-29032 }
 
@@ -53,6 +61,10 @@ Attacker can access arbitrary recording/room<br><br>Vendor: The Apache Software 
 
 <span style="background-color: rgb(255, 255, 255);">An attacker that has gained access to certain private information can use this to act as other user.</span><br><br>Vendor: The Apache Software Foundation<br><br>Versions Affected: Apache OpenMeetings from 3.1.3 before 7.1.0
 
+### References
+* https://lists.apache.org/thread/j2d6mg3rzcphfd8vvvk09d8p4o9lvnqp
+
+
 ## allows null-byte Injection ## { #CVE-2023-29246 }
 
 [CVE-2023-29246](./CVE-2023-29246.cve.json)
@@ -65,3 +77,6 @@ Attacker can access arbitrary recording/room<br><br>Vendor: The Apache Software 
 ### Description
 
 <span style="background-color: rgb(255, 255, 255);">An attacker who has gained access to an admin account can perform RCE via null-byte injection</span><br><br>Vendor: The Apache Software Foundation<br><br>Versions Affected: Apache OpenMeetings from 2.0.0 before 7.1.0
+
+### References
+* https://lists.apache.org/thread/230plvhbdx26m43b0sy942wlwt6kkmmr
