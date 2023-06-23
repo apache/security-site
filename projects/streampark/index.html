@@ -106,30 +106,44 @@
  <h1 id="reporting">Reporting</h1>
 <p>Do you want disclose a potential security issue for Apache StreamPark (Incubating)? Send your report to the  <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
+<p>This page is experimental: it provides consistent access to the advisories for Apache StreamPark (Incubating) since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications.</p>
+<p>If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
 <h2 id="CVE-2022-45801">LDAP Injection Vulnerability</h2>
 <p><a href="./CVE-2022-45801.cve.json">CVE-2022-45801</a></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache StreamPark (incubating) versions 1.0.0 before 2.0.0</li>
+<li>Apache StreamPark (incubating) from 1.0.0 before 2.0.0</li>
 </ul>
 <h3 id="description">Description</h3>
 <div><div><span style="background-color: rgb(255, 255, 255);">Apache StreamPark 1.0.0 to 2.0.0 have a LDAP injection vulnerability.</span><br><span style="background-color: rgb(255, 255, 255);">LDAP Injection is an attack used to exploit web based applications</span><br><span style="background-color: rgb(255, 255, 255);">that construct LDAP statements based on user input. When an</span><br><span style="background-color: rgb(255, 255, 255);">application fails to properly sanitize user input, it's possible to</span><br><span style="background-color: rgb(255, 255, 255);">modify LDAP statements through techniques similar to SQL Injection.</span><br><span style="background-color: rgb(255, 255, 255);">LDAP injection attacks could result in the granting of permissions to</span><br><span style="background-color: rgb(255, 255, 255);">unauthorized queries, and content modification inside the LDAP tree.</span><br><span style="background-color: rgb(255, 255, 255);">This risk may only occur when the user logs in with ldap, and the user</span><br><span style="background-color: rgb(255, 255, 255);">name and password login will not be affected, Users of the affected</span><br><span style="background-color: rgb(255, 255, 255);">versions should upgrade to Apache StreamPark 2.0.0 or later.</span><br><br></div></div><br>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/xbkwwpkp3n2rs2wcxg8l26mhsftxwwr9">https://lists.apache.org/thread/xbkwwpkp3n2rs2wcxg8l26mhsftxwwr9</a></li>
+</ul>
 <h2 id="CVE-2022-45802">Upload any file to any directory</h2>
 <p><a href="./CVE-2022-45802.cve.json">CVE-2022-45802</a></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache StreamPark (incubating) versions 1.0.0 before 2.0.0</li>
+<li>Apache StreamPark (incubating) from 1.0.0 before 2.0.0</li>
 </ul>
 <h3 id="description-1">Description</h3>
 <div><div><span style="background-color: var(--wht);">Streampark allows any users to upload a jar as application, but there is no mandatory verification of the uploaded file type, causing users to upload some high-risk files, and may upload them to any directory,&nbsp;</span><span style="background-color: var(--wht);">Users of the affected versions should upgrade to Apache StreamPark 2.0.0 or later</span></div><br></div><br><br>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/thwl1v2h6r3c21x1qwff08o57qzjnst6">https://lists.apache.org/thread/thwl1v2h6r3c21x1qwff08o57qzjnst6</a></li>
+</ul>
 <h2 id="CVE-2022-46365">Logic error causing any account reset</h2>
 <p><a href="./CVE-2022-46365.cve.json">CVE-2022-46365</a></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache StreamPark (incubating) versions 1.0.0 before 2.0.0</li>
+<li>Apache StreamPark (incubating) from 1.0.0 before 2.0.0</li>
 </ul>
 <h3 id="description-2">Description</h3>
 <p><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);"><div><div>Apache StreamPark 1.0.0 <span style="background-color: rgb(255, 255, 255);">before</span> 2.0.0 When the user successfully logs in, to modify his profile, the username will be passed to the server-layer as a parameter, but not verified whether the user name is the currently logged user and whether the user is legal, This will allow malicious attackers to send any username to modify and reset the account, <span style="background-color: rgb(255, 255, 255);">Users of the affected </span><span style="background-color: rgb(255, 255, 255);">versions should upgrade to Apache StreamPark 2.0.0 or later.</span></div></div></span></span><br></p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/f68lcwrp8pcdc4yrbpcm8j7m0f5mjn7h">https://lists.apache.org/thread/f68lcwrp8pcdc4yrbpcm8j7m0f5mjn7h</a></li>
+</ul>
 
   
 </div>

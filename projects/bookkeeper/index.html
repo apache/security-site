@@ -106,14 +106,21 @@
  <h1 id="reporting">Reporting</h1>
 <p>Do you want disclose a potential security issue for Apache BookKeeper? Send your report to the  <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
+<p>This page is experimental: it provides consistent access to the advisories for Apache BookKeeper since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications.</p>
+<p>If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
 <h2 id="CVE-2022-32531">Java Client Uses Connection to Host that Failed Hostname Verification</h2>
 <p><a href="./CVE-2022-32531.cve.json">CVE-2022-32531</a></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache BookKeeper versions  including 4.14.54.15.0</li>
+<li>Apache BookKeeper through 4.14.5</li>
+<li>Apache BookKeeper at 4.15.0</li>
 </ul>
 <h3 id="description">Description</h3>
 <p><span style="background-color: rgb(255, 255, 255);">The Apache Bookkeeper Java Client (before 4.14.6 and also 4.15.0) does not close the connection to the</span><span style="background-color: rgb(255, 255, 255);"> bookkeeper server when TLS hostname verification fails. This leaves</span><br><span style="background-color: rgb(255, 255, 255);">the bookkeeper client vulnerable to a man in the middle attack.<br></span><br>The problem affects BookKeeper client prior to versions 4.14.6 and 4.15.1.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/xyk2lfc7lzof8mksmwyympbqxts1b5s9">https://lists.apache.org/thread/xyk2lfc7lzof8mksmwyympbqxts1b5s9</a></li>
+</ul>
 
   
 </div>

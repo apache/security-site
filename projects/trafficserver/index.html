@@ -106,55 +106,81 @@
  <h1 id="reporting">Reporting</h1>
 <p>Do you want disclose a potential security issue for Apache Traffic Server? You can read more about the projects&rsquo; security policy on their <a href="None">security page</a>, and email your report to the  <a href="mailto:security@trafficserver.apache.org">Apache Traffic Server Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
+<p>This page is experimental: it provides consistent access to the advisories for Apache Traffic Server since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the <a href="None">project security page</a>.</p>
+<p>If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
 <h2 id="CVE-2022-32749">Improperly handled requests can cause crashes in specific plugins</h2>
 <p><a href="./CVE-2022-32749.cve.json">CVE-2022-32749</a></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Traffic Server versions 8.0.0 including 9.1.3</li>
+<li>Apache Traffic Server from 8.0.0 through 9.1.3</li>
 </ul>
 <h3 id="description">Description</h3>
 <p>Improper Check for Unusual or Exceptional Conditions vulnerability handling requests in Apache Traffic Server allows an attacker to crash the server under certain conditions.</p>
 <p>This issue affects Apache Traffic Server: from 8.0.0 through 9.1.3.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/mrj2lg4s0hf027rk7gz8t7hbn9xpfg02">https://lists.apache.org/thread/mrj2lg4s0hf027rk7gz8t7hbn9xpfg02</a></li>
+</ul>
 <h2 id="CVE-2022-37392">Improperly reading the client requests</h2>
 <p><a href="./CVE-2022-37392.cve.json">CVE-2022-37392</a></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache Traffic Server versions 8.0.0 including 9.1.3</li>
+<li>Apache Traffic Server from 8.0.0 through 9.1.3</li>
 </ul>
 <h3 id="description-1">Description</h3>
 <p>Improper Check for Unusual or Exceptional Conditions vulnerability in handling the requests to Apache Traffic Server.  This issue affects Apache Traffic Server 8.0.0 to 9.1.2.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/mrj2lg4s0hf027rk7gz8t7hbn9xpfg02">https://lists.apache.org/thread/mrj2lg4s0hf027rk7gz8t7hbn9xpfg02</a></li>
+</ul>
 <h2 id="CVE-2022-40743">Security issues with the xdebug plugin</h2>
 <p><a href="./CVE-2022-40743.cve.json">CVE-2022-40743</a></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache Traffic Server versions 9.0.0 including 9.1.3</li>
+<li>Apache Traffic Server from 9.0.0 through 9.1.3</li>
 </ul>
 <h3 id="description-2">Description</h3>
 <p>Improper Input Validation vulnerability for the xdebug plugin in Apache Software Foundation Apache Traffic Server can lead to cross site scripting and cache poisoning attacks.<p>This issue affects Apache Traffic Server: 9.0.0 to 9.1.3. Users should upgrade to 9.1.4 or later versions.<br></p></p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/mrj2lg4s0hf027rk7gz8t7hbn9xpfg02">https://lists.apache.org/thread/mrj2lg4s0hf027rk7gz8t7hbn9xpfg02</a></li>
+</ul>
 <h2 id="CVE-2022-47184">The TRACE method can be use to disclose network information</h2>
 <p><a href="./CVE-2022-47184.cve.json">CVE-2022-47184</a></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache Traffic Server versions 8.0.0 including 9.2.0</li>
+<li>Apache Traffic Server from 8.0.0 through 9.2.0</li>
 </ul>
 <h3 id="description-3">Description</h3>
 <p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Software Foundation Apache Traffic Server.<p>This issue affects Apache Traffic Server: 8.0.0 to 9.2.0.</p></p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/tns2b4khyyncgs5v5p9y35pobg9z2bvs">https://lists.apache.org/thread/tns2b4khyyncgs5v5p9y35pobg9z2bvs</a></li>
+</ul>
 <h2 id="CVE-2023-30631">Configuration option to block the PUSH method in ATS didn&rsquo;t work</h2>
 <p><a href="./CVE-2023-30631.cve.json">CVE-2023-30631</a></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache Traffic Server versions 8.0.0 including 9.2.0</li>
+<li>Apache Traffic Server from 8.0.0 through 9.2.0</li>
 </ul>
 <h3 id="description-4">Description</h3>
 <p>Improper Input Validation vulnerability in Apache Software Foundation Apache Traffic Server.  The configuration option proxy.config.http.push_method_enabled didn&rsquo;t function.  However, by default the PUSH method is blocked in the ip_allow configuration file.<p>This issue affects Apache Traffic Server: from 8.0.0 through 9.2.0.</p><p>8.x users should upgrade to 8.1.7 or later versions<br>9.x users should upgrade to 9.2.1 or later versions<br></p></p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/tns2b4khyyncgs5v5p9y35pobg9z2bvs">https://lists.apache.org/thread/tns2b4khyyncgs5v5p9y35pobg9z2bvs</a></li>
+</ul>
 <h2 id="CVE-2023-33933">s3_auth plugin problem with hash calculation</h2>
 <p><a href="./CVE-2023-33933.cve.json">CVE-2023-33933</a></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
-<li>Apache Traffic Server versions 8.0.0 including 9.2.0</li>
+<li>Apache Traffic Server from 8.0.0 through 9.2.0</li>
 </ul>
 <h3 id="description-5">Description</h3>
 <p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Software Foundation Apache Traffic Server.<p>This issue affects Apache Traffic Server: from 8.0.0 through 9.2.0.</p><p>8.x users should upgrade to 8.1.7 or later versions<br>9.x users should upgrade to 9.2.1 or later versions<br></p></p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/tns2b4khyyncgs5v5p9y35pobg9z2bvs">https://lists.apache.org/thread/tns2b4khyyncgs5v5p9y35pobg9z2bvs</a></li>
+</ul>
 
   
 </div>

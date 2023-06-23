@@ -106,98 +106,151 @@
  <h1 id="reporting">Reporting</h1>
 <p>Do you want disclose a potential security issue for Apache Superset? Send your report to the  <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
+<p>This page is experimental: it provides consistent access to the advisories for Apache Superset since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications.</p>
+<p>If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
 <h2 id="CVE-2022-45438">Dashboard metadata information leak</h2>
 <p><a href="./CVE-2022-45438.cve.json">CVE-2022-45438</a></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2</li>
+<li>Apache Superset from 2.0.0 before 2.0.1</li>
+<li>Apache Superset through 1.5.2</li>
 </ul>
 <h3 id="description">Description</h3>
 <p>When explicitly enabling the feature flag DASHBOARD_CACHE (disabled by default), the system allowed for an unauthenticated user to access dashboard configuration metadata using a REST API Get endpoint. <span style="background-color: rgb(255, 255, 255);">This issue affects Apache Superset version 1.5.2 and prior versions and version 2.0.0.</span><br></p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/snxbkf2x9kww7s0wkmydct9nhqqn9rv9">https://lists.apache.org/thread/snxbkf2x9kww7s0wkmydct9nhqqn9rv9</a></li>
+</ul>
 <h2 id="CVE-2022-41703">SQL injection vulnerability in adhoc clauses</h2>
 <p><a href="./CVE-2022-41703.cve.json">CVE-2022-41703</a></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2</li>
+<li>Apache Superset from 2.0.0 before 2.0.1</li>
+<li>Apache Superset through 1.5.2</li>
 </ul>
 <h3 id="description-1">Description</h3>
 <p>A vulnerability in the SQL Alchemy connector of Apache Superset allows an authenticated user with read access to a specific database to add subqueries to the WHERE and HAVING fields referencing tables on the same database that the user should not have access to, despite the user having the feature flag &ldquo;ALLOW_ADHOC_SUBQUERY&rdquo; disabled (default value).  <span style="background-color: rgb(255, 255, 255);">This issue affects Apache Superset version 1.5.2 and prior versions and version 2.0.0.
 </span><br><br></p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/g7jjw0okxjk5y57pbbxy19ydw42kqcos">https://lists.apache.org/thread/g7jjw0okxjk5y57pbbxy19ydw42kqcos</a></li>
+</ul>
 <h2 id="CVE-2022-43717">Cross-Site Scripting on dashboards</h2>
 <p><a href="./CVE-2022-43717.cve.json">CVE-2022-43717</a></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2</li>
+<li>Apache Superset from 2.0.0 before 2.0.1</li>
+<li>Apache Superset through 1.5.2</li>
 </ul>
 <h3 id="description-2">Description</h3>
 <p>Dashboard rendering does not sufficiently sanitize the content of markdown components leading to possible XSS attack vectors that can be performed by authenticated users with create dashboard permissions. This issue affects Apache Superset version 1.5.2 and prior versions and version 2.0.0.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/g6zy6vkpvkbj5mj32vmyzwol5ldtg9pl">https://lists.apache.org/thread/g6zy6vkpvkbj5mj32vmyzwol5ldtg9pl</a></li>
+</ul>
 <h2 id="CVE-2022-43718">Cross-Site Scripting vulnerability on upload forms</h2>
 <p><a href="./CVE-2022-43718.cve.json">CVE-2022-43718</a></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2</li>
+<li>Apache Superset from 2.0.0 before 2.0.1</li>
+<li>Apache Superset through 1.5.2</li>
 </ul>
 <h3 id="description-3">Description</h3>
 <p>Upload data forms do not correctly render user input leading to possible XSS attack vectors that can be performed by authenticated users with database connection update permissions. <span style="background-color: rgb(255, 255, 255);">This issue affects Apache Superset version 1.5.2 and prior versions and version 2.0.0.</span><br></p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/8615608jt2x7b3rmqrtngldy8pn3nz2r">https://lists.apache.org/thread/8615608jt2x7b3rmqrtngldy8pn3nz2r</a></li>
+</ul>
 <h2 id="CVE-2022-43719">Cross Site Request Forgery (CSRF) on accept, request access API</h2>
 <p><a href="./CVE-2022-43719.cve.json">CVE-2022-43719</a></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2</li>
+<li>Apache Superset from 2.0.0 before 2.0.1</li>
+<li>Apache Superset through 1.5.2</li>
 </ul>
 <h3 id="description-4">Description</h3>
 <p>Two legacy REST API endpoints for approval and request access are vulnerable to cross site request forgery. <span style="background-color: rgb(255, 255, 255);">This issue affects Apache Superset version 1.5.2 and prior versions and version 2.0.0.
 </span><br><br></p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/xc309h2dphrkg33154djf3nqlh2xc1c0">https://lists.apache.org/thread/xc309h2dphrkg33154djf3nqlh2xc1c0</a></li>
+</ul>
 <h2 id="CVE-2022-43720">Improper rendering of user input</h2>
 <p><a href="./CVE-2022-43720.cve.json">CVE-2022-43720</a></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
-<li>Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2</li>
+<li>Apache Superset from 2.0.0 before 2.0.1</li>
+<li>Apache Superset through 1.5.2</li>
 </ul>
 <h3 id="description-5">Description</h3>
 <p>An authenticated attacker with write CSS template permissions can create a record with specific HTML tags that will not get properly escaped by the toast message displayed when a user deletes that specific CSS template record. <span style="background-color: rgb(255, 255, 255);">This issue affects Apache Superset version 1.5.2 and prior versions and version 2.0.0.</span><br></p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/jts6x56kghr9mbowb653bk70pl81jp8l">https://lists.apache.org/thread/jts6x56kghr9mbowb653bk70pl81jp8l</a></li>
+</ul>
 <h2 id="CVE-2022-43721">Open Redirect Vulnerability</h2>
 <p><a href="./CVE-2022-43721.cve.json">CVE-2022-43721</a></p>
 <h3 id="affected-6">Affected</h3>
 <ul>
-<li>Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2</li>
+<li>Apache Superset from 2.0.0 before 2.0.1</li>
+<li>Apache Superset through 1.5.2</li>
 </ul>
 <h3 id="description-6">Description</h3>
 <p>An authenticated attacker with update datasets permission could change a dataset link to an untrusted site, users could be redirected to this site when clicking on that specific dataset. <span style="background-color: rgb(255, 255, 255);">This issue affects Apache Superset version 1.5.2 and prior versions and version 2.0.0.</span><br></p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/s6sqt5jmcv6qxtvdot1t5tpt57v439kg">https://lists.apache.org/thread/s6sqt5jmcv6qxtvdot1t5tpt57v439kg</a></li>
+</ul>
 <h2 id="CVE-2023-25504">Possible SSRF on import datasets</h2>
 <p><a href="./CVE-2023-25504.cve.json">CVE-2023-25504</a></p>
 <h3 id="affected-7">Affected</h3>
 <ul>
-<li>Apache Superset versions  including 2.0.1</li>
+<li>Apache Superset through 2.0.1</li>
 </ul>
 <h3 id="description-7">Description</h3>
 <p><span style="background-color: rgb(255, 255, 255);">A malicious actor who has been authenticated and granted specific permissions in Apache Superset may use the import dataset feature in order to conduct Server-Side Request Forgery
 attacks and query internal resources on behalf of the server where Superset
 is deployed. This vulnerability exists </span>in Apache Superset versions up to and including 2.0.1.<br></p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/tdnzkocfsqg2sbbornnp9g492fn4zhtx">https://lists.apache.org/thread/tdnzkocfsqg2sbbornnp9g492fn4zhtx</a></li>
+</ul>
 <h2 id="CVE-2023-27524">Session validation vulnerability when using provided default SECRET_KEY</h2>
 <p><a href="./CVE-2023-27524.cve.json">CVE-2023-27524</a></p>
 <h3 id="affected-8">Affected</h3>
 <ul>
-<li>Apache Superset versions  including 2.0.1</li>
+<li>Apache Superset through 2.0.1</li>
 </ul>
 <h3 id="description-8">Description</h3>
 <p>Session Validation attacks in Apache Superset versions up to and including 2.0.1. Installations that have not altered the default configured SECRET_KEY according to installation instructions allow for an attacker to authenticate and access unauthorized resources. This does not affect Superset administrators who have changed the default value for SECRET_KEY config.</p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/n0ftx60sllf527j7g11kmt24wvof8xyk">https://lists.apache.org/thread/n0ftx60sllf527j7g11kmt24wvof8xyk</a></li>
+</ul>
 <h2 id="CVE-2023-27525">Incorrect default permissions for Gamma role</h2>
 <p><a href="./CVE-2023-27525.cve.json">CVE-2023-27525</a></p>
 <h3 id="affected-9">Affected</h3>
 <ul>
-<li>Apache Superset versions  including 2.0.1</li>
+<li>Apache Superset through 2.0.1</li>
 </ul>
 <h3 id="description-9">Description</h3>
 <p>An authenticated user with Gamma role authorization could have access to metadata information using non trivial methods in Apache Superset up to and including 2.0.1<br><br></p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/wpv7b17zjg2pmvpfkdd6nn8sco8y2q77">https://lists.apache.org/thread/wpv7b17zjg2pmvpfkdd6nn8sco8y2q77</a></li>
+</ul>
 <h2 id="CVE-2023-30776">Database connection password leak</h2>
 <p><a href="./CVE-2023-30776.cve.json">CVE-2023-30776</a></p>
 <h3 id="affected-10">Affected</h3>
 <ul>
-<li>Apache Superset versions 1.3.0 including 2.0.1</li>
+<li>Apache Superset from 1.3.0 through 2.0.1</li>
 </ul>
 <h3 id="description-10">Description</h3>
 <p>An authenticated user with specific data permissions could access database connections stored passwords by requesting a specific REST API. This issue affects Apache Superset version 1.3.0 up to 2.0.1.</p>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/s9w9w10mt2sngk3solwnmq5k7md53tsz">https://lists.apache.org/thread/s9w9w10mt2sngk3solwnmq5k7md53tsz</a></li>
+</ul>
 
   
 </div>
