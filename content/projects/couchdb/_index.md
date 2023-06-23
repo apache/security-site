@@ -20,8 +20,8 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache CouchDB versions  including 3.3.1
-* IBM Cloudant versions  including 8349
+* Apache CouchDB through 3.3.1
+* IBM Cloudant through 8349
 
 
 ### Description

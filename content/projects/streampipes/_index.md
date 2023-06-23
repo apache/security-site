@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache StreamPipes versions 0.69.0 including 0.91.0
+* Apache StreamPipes from 0.69.0 through 0.91.0
 
 
 ### Description

@@ -20,7 +20,8 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Struts versions  including 2.5.30 including 6.1.2
+* Apache Struts through 2.5.30
+* Apache Struts through 6.1.2
 
 
 ### Description
@@ -33,7 +34,8 @@ Allocation of Resources Without Limits or Throttling vulnerability in Apache Sof
 
 ### Affected
 
-* Apache Struts versions  including 2.5.30 including 6.1.2
+* Apache Struts through 2.5.30
+* Apache Struts through 6.1.2
 
 
 ### Description

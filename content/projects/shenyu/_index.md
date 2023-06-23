@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache ShenYu versions  including 2.5.0
+* Apache ShenYu through 2.5.0
 
 
 ### Description

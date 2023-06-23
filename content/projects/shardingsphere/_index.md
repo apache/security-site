@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache ShardingSphere-Proxy versions  before 5.3.0
+* Apache ShardingSphere-Proxy before 5.3.0
 
 
 ### Description

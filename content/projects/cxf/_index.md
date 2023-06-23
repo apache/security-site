@@ -20,7 +20,8 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache CXF versions 3.5 before 3.5.53.4 before 3.4.10
+* Apache CXF from 3.5 before 3.5.5
+* Apache CXF from 3.4 before 3.4.10
 
 
 ### Description
@@ -33,7 +34,8 @@ A vulnerability in Apache CXF before versions 3.5.5 and 3.4.10 allows an attacke
 
 ### Affected
 
-* Apache CXF versions  before 3.5.5 before 3.4.10
+* Apache CXF before 3.5.5
+* Apache CXF before 3.4.10
 
 
 ### Description

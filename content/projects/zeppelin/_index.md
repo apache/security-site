@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Zeppelin versions  including 0.9.0
+* Apache Zeppelin through 0.9.0
 
 
 ### Description
@@ -33,7 +33,7 @@ The improper Input Validation vulnerability in "”Move folder to Trash” featu
 
 ### Affected
 
-* Apache Zeppelin versions  before 0.8.2
+* Apache Zeppelin before 0.8.2
 
 
 ### Description

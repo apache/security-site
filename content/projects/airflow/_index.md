@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Airflow Hive Provider versions  before 5.0.0
+* Apache Airflow Hive Provider before 5.0.0
 
 
 ### Description
@@ -33,8 +33,8 @@ Improper Neutralization of Special Elements used in a Command ('Command Injectio
 
 ### Affected
 
-* Apache Airflow versions  before 2.5.1
-* Apache Airflow MySQL Provider versions  before 4.0.0
+* Apache Airflow before 2.5.1
+* Apache Airflow MySQL Provider before 4.0.0
 
 
 ### Description
@@ -47,7 +47,7 @@ Improper Neutralization of Special Elements used in a Command ('Command Injectio
 
 ### Affected
 
-* Apache Airflow Google Provider versions  before 8.10.0
+* Apache Airflow Google Provider before 8.10.0
 
 
 ### Description
@@ -60,7 +60,7 @@ Improper Input Validation vulnerability in the Apache Airflow Google Provider.<b
 
 ### Affected
 
-* Apache Airflow Google Provider versions  before 8.10.0
+* Apache Airflow Google Provider before 8.10.0
 
 
 ### Description
@@ -73,7 +73,7 @@ Improper Input Validation vulnerability in the Apache Airflow Google Provider.<b
 
 ### Affected
 
-* Apache Airflow Sqoop Provider versions  before 3.1.1
+* Apache Airflow Sqoop Provider before 3.1.1
 
 
 ### Description
@@ -86,7 +86,7 @@ Improper Input Validation vulnerability in the Apache Airflow Sqoop Provider.<br
 
 ### Affected
 
-* Apache Airflow versions  before 2.5.2
+* Apache Airflow before 2.5.2
 
 
 ### Description
@@ -99,7 +99,7 @@ Generation of Error Message Containing Sensitive Information vulnerability in Ap
 
 ### Affected
 
-* Apache Airflow Hive Provider versions  before 5.1.3
+* Apache Airflow Hive Provider before 5.1.3
 
 
 ### Description
@@ -112,7 +112,7 @@ Improper Input Validation vulnerability in the Apache Airflow Hive Provider.<br>
 
 ### Affected
 
-* Apache Airflow versions  before 2.6.0
+* Apache Airflow before 2.6.0
 
 
 ### Description
@@ -125,7 +125,7 @@ Privilege Context Switching Error vulnerability in Apache Software Foundation Ap
 
 ### Affected
 
-* Apache Airflow AWS Provider versions  before 7.2.1
+* Apache Airflow AWS Provider before 7.2.1
 
 
 ### Description
@@ -138,7 +138,7 @@ Generation of Error Message Containing Sensitive Information vulnerability in th
 
 ### Affected
 
-* Apache Airflow Hive Provider versions  before 6.0.0
+* Apache Airflow Hive Provider before 6.0.0
 
 
 ### Description
@@ -151,7 +151,7 @@ Improper Control of Generation of Code ('Code Injection') vulnerability in Apach
 
 ### Affected
 
-* Apache Airflow Drill Provider versions  before 2.3.2
+* Apache Airflow Drill Provider before 2.3.2
 
 
 ### Description
@@ -164,7 +164,7 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Air
 
 ### Affected
 
-* Apache Airflow Spark Provider versions  before 4.0.1
+* Apache Airflow Spark Provider before 4.0.1
 
 
 ### Description
@@ -177,7 +177,7 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Air
 
 ### Affected
 
-* Apache Airflow versions  before 2.6.0
+* Apache Airflow before 2.6.0
 
 
 ### Description
@@ -190,7 +190,7 @@ Task instance details page in the UI is vulnerable to a stored XSS.<p>This issue
 
 ### Affected
 
-* Apache Airflow CNCF Kubernetes Provider versions 5.0.0 including 6.1.0
+* Apache Airflow CNCF Kubernetes Provider from 5.0.0 through 6.1.0
 
 
 ### Description
@@ -203,7 +203,7 @@ Arbitrary code execution in Apache Airflow CNCF Kubernetes provider version 5.0.
 
 ### Affected
 
-* Apache Airflow versions 2.5.0 before 2.6.2
+* Apache Airflow from 2.5.0 before 2.6.2
 
 
 ### Description

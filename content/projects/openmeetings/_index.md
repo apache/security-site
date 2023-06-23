@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache OpenMeetings versions 2.0.0 before 7.0.0
+* Apache OpenMeetings from 2.0.0 before 7.0.0
 
 
 ### Description
@@ -33,7 +33,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache OpenMeetings versions 2.0.0 before 7.1.0
+* Apache OpenMeetings from 2.0.0 before 7.1.0
 
 
 ### Description
@@ -46,7 +46,7 @@ Attacker can access arbitrary recording/room<br><br>Vendor: The Apache Software 
 
 ### Affected
 
-* Apache OpenMeetings versions 3.1.3 before 7.1.0
+* Apache OpenMeetings from 3.1.3 before 7.1.0
 
 
 ### Description
@@ -59,7 +59,7 @@ Attacker can access arbitrary recording/room<br><br>Vendor: The Apache Software 
 
 ### Affected
 
-* Apache OpenMeetings versions 2.0.0 before 7.1.0
+* Apache OpenMeetings from 2.0.0 before 7.1.0
 
 
 ### Description

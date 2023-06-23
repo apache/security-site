@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache InLong versions 1.1.0 including 1.5.0
+* Apache InLong from 1.1.0 through 1.5.0
 
 
 ### Description
@@ -33,7 +33,7 @@ Out-of-bounds Read vulnerability in Apache Software Foundation Apache InLong.<p>
 
 ### Affected
 
-* Apache InLong versions 1.1.0 including 1.5.0
+* Apache InLong from 1.1.0 through 1.5.0
 
 
 ### Description
@@ -46,7 +46,7 @@ Deserialization of Untrusted Data vulnerability in Apache Software Foundation Ap
 
 ### Affected
 
-* Apache InLong versions 1.1.0 including 1.5.0
+* Apache InLong from 1.1.0 through 1.5.0
 
 
 ### Description
@@ -65,7 +65,7 @@ Deserialization of Untrusted Data vulnerability in Apache Software Foundation Ap
 
 ### Affected
 
-* Apache InLong versions 1.4.0 including 1.5.0
+* Apache InLong from 1.4.0 through 1.5.0
 
 
 ### Description
@@ -80,7 +80,7 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 
 ### Affected
 
-* Apache InLong versions 1.4.0 including 1.6.0
+* Apache InLong from 1.4.0 through 1.6.0
 
 
 ### Description
@@ -96,7 +96,7 @@ Deserialization of Untrusted Data Vulnerability in Apache Software Foundation Ap
 
 ### Affected
 
-* Apache InLong versions 1.2.0 including 1.6.0
+* Apache InLong from 1.2.0 through 1.6.0
 
 
 ### Description
@@ -113,7 +113,7 @@ using the returned cookie<span style="background-color: rgb(255, 255, 255);">.</
 
 ### Affected
 
-* Apache InLong versions 1.2.0 including 1.6.0
+* Apache InLong from 1.2.0 through 1.6.0
 
 
 ### Description
@@ -126,7 +126,7 @@ Files or Directories Accessible to External Parties vulnerability in Apache Soft
 
 ### Affected
 
-* Apache InLong versions 1.4.0 including 1.6.0
+* Apache InLong from 1.4.0 through 1.6.0
 
 
 ### Description
@@ -147,7 +147,7 @@ Users are advised to upgrade to Apache InLong's 1.7.0 or cherry-pick <a target="
 
 ### Affected
 
-* Apache InLong versions 1.4.0 including 1.6.0
+* Apache InLong from 1.4.0 through 1.6.0
 
 
 ### Description
@@ -160,7 +160,7 @@ Files or Directories Accessible to External Parties vulnerability in Apache Soft
 
 ### Affected
 
-* Apache InLong versions 1.1.0 including 1.6.0
+* Apache InLong from 1.1.0 through 1.6.0
 
 
 ### Description
@@ -176,7 +176,7 @@ symbol), attackers can easily guess the user's password and access the account.<
 
 ### Affected
 
-* Apache InLong versions 1.5.0 including 1.6.0
+* Apache InLong from 1.5.0 through 1.6.0
 
 
 ### Description
@@ -189,7 +189,7 @@ Insecure Default Initialization of Resource Vulnerability in Apache Software Fou
 
 ### Affected
 
-* Apache InLong versions 1.4.0 including 1.6.0
+* Apache InLong from 1.4.0 through 1.6.0
 
 
 ### Description
@@ -203,7 +203,7 @@ Attackers can change the immutable name and type of cluster of InLong.&nbsp;User
 
 ### Affected
 
-* Apache InLong versions 1.4.0 including 1.6.0
+* Apache InLong from 1.4.0 through 1.6.0
 
 
 ### Description
@@ -216,7 +216,7 @@ Exposure of Resource to Wrong Sphere Vulnerability in Apache Software Foundation
 
 ### Affected
 
-* Apache InLong versions 1.2.0 including 1.6.0
+* Apache InLong from 1.2.0 through 1.6.0
 
 
 ### Description
@@ -236,7 +236,7 @@ of the deleted subscription</span><span style="background-color: rgb(255, 255, 2
 
 ### Affected
 
-* Apache InLong versions 1.2.0 including 1.6.0
+* Apache InLong from 1.2.0 through 1.6.0
 
 
 ### Description

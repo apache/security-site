@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Kylin versions Apache Kylin 4 including 4.0.2
+* Apache Kylin from Apache Kylin 4 through 4.0.2
 
 
 ### Description
@@ -33,7 +33,7 @@ In the fix for CVE-2022-24697, a blacklist is used to filter user input commands
 
 ### Affected
 
-* Apache Kylin versions Apache Kylin 4  including 4.0.2
+* Apache Kylin from Apache Kylin 4  through 4.0.2
 
 
 ### Description

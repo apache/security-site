@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Shiro versions  before 1.11.0
+* Apache Shiro before 1.11.0
 
 
 ### Description

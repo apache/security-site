@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache IoTDB Workbench versions 0.13.0 before 0.13.3
+* Apache IoTDB Workbench from 0.13.0 before 0.13.3
 
 
 ### Description
@@ -33,7 +33,7 @@ Incorrect Authorization vulnerability in Apache Software Foundation Apache IoTDB
 
 ### Affected
 
-* Apache IoTDB Workbench versions 0.13.0 before 0.13.3
+* Apache IoTDB Workbench from 0.13.0 before 0.13.3
 
 
 ### Description
@@ -46,7 +46,7 @@ Improper Authentication vulnerability in Apache Software Foundation Apache IoTDB
 
 ### Affected
 
-* Apache IoTDB versions 0.13.0 including 0.13.3
+* Apache IoTDB from 0.13.0 through 0.13.3
 
 
 ### Description
@@ -59,7 +59,7 @@ Improper Authentication vulnerability in Apache Software Foundation Apache IoTDB
 
 ### Affected
 
-* Apache IoTDB Workbench versions 0.13.3 before 0.13.4
+* Apache IoTDB Workbench from 0.13.3 before 0.13.4
 
 
 ### Description

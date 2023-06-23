@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Accumulo versions 2.1.0 before 2.1.1
+* Apache Accumulo from 2.1.0 before 2.1.1
 
 
 ### Description

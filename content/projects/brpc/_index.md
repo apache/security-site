@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache bRPC versions 0.9.0 before 1.5.0
+* Apache bRPC from 0.9.0 before 1.5.0
 
 
 ### Description

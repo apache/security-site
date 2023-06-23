@@ -20,8 +20,11 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Commons FileUpload versions  before 1.5
-* Apache Tomcat versions 11.0.0-M110.0.0-M1 including 10.1.49.0.0-M1 including 9.0.708.5.0 including 8.5.84
+* Apache Commons FileUpload before 1.5
+* Apache Tomcat at 11.0.0-M1
+* Apache Tomcat from 10.0.0-M1 through 10.1.4
+* Apache Tomcat from 9.0.0-M1 through 9.0.70
+* Apache Tomcat from 8.5.0 through 8.5.84
 
 
 ### Description

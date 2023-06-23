@@ -20,7 +20,9 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Tomcat versions 10.1.0-M1 including 10.1.19.0.40 including 9.0.688.5.83
+* Apache Tomcat from 10.1.0-M1 through 10.1.1
+* Apache Tomcat from 9.0.40 through 9.0.68
+* Apache Tomcat at 8.5.83
 
 
 ### Description
@@ -33,7 +35,10 @@ The JsonErrorReportValve in Apache Tomcat 8.5.83, 9.0.40 to 9.0.68 and 10.1.0-M1
 
 ### Affected
 
-* Apache Tomcat versions 11.0.0-M1 including 11.0.0-M210.1.0-M1 including 10.1.59.0.0-M1 including 9.0.718.5.0 including 8.5.85
+* Apache Tomcat from 11.0.0-M1 through 11.0.0-M2
+* Apache Tomcat from 10.1.0-M1 through 10.1.5
+* Apache Tomcat from 9.0.0-M1 through 9.0.71
+* Apache Tomcat from 8.5.0 through 8.5.85
 
 
 ### Description
@@ -50,7 +55,10 @@ The JsonErrorReportValve in Apache Tomcat 8.5.83, 9.0.40 to 9.0.68 and 10.1.0-M1
 
 ### Affected
 
-* Apache Tomcat versions 11.0.0-M2 including 11.0.0-M410.1.5 including 10.1.79.0.71 including 9.0.738.5.85 including 8.5.87
+* Apache Tomcat from 11.0.0-M2 through 11.0.0-M4
+* Apache Tomcat from 10.1.5 through 10.1.7
+* Apache Tomcat from 9.0.71 through 9.0.73
+* Apache Tomcat from 8.5.85 through 8.5.87
 
 
 ### Description
@@ -63,7 +71,10 @@ The JsonErrorReportValve in Apache Tomcat 8.5.83, 9.0.40 to 9.0.68 and 10.1.0-M1
 
 ### Affected
 
-* Apache Tomcat versions 11.0.0-M510.1.89.0.748.5.88
+* Apache Tomcat at 11.0.0-M5
+* Apache Tomcat at 10.1.8
+* Apache Tomcat at 9.0.74
+* Apache Tomcat at 8.5.88
 
 
 ### Description

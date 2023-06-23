@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache OpenOffice versions  before 4.1.14
+* Apache OpenOffice before 4.1.14
 
 
 ### Description
@@ -33,7 +33,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache OpenOffice versions  including 4.1.13
+* Apache OpenOffice through 4.1.13
 
 
 ### Description

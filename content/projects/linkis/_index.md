@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Linkis (incubating) versions  including 1.3.0
+* Apache Linkis (incubating) through 1.3.0
 
 
 ### Description
@@ -35,7 +35,7 @@ In Apache Linkis &lt;=1.3.0 when used with the MySQL Connector/J in the data sou
 
 ### Affected
 
-* Apache Linkis (incubating) versions  before 1.3.1
+* Apache Linkis (incubating) before 1.3.1
 
 
 ### Description
@@ -48,7 +48,7 @@ In Apache Linkis &lt;=1.3.0 when used with the MySQL Connector/J in the data sou
 
 ### Affected
 
-* Apache Linkis versions  including 1.3.1
+* Apache Linkis through 1.3.1
 
 
 ### Description
@@ -67,7 +67,7 @@ We recommend users upgrade the version of Linkis to version 1.3.2.&nbsp;<br></sp
 
 ### Affected
 
-* Apache Linkis versions  including 1.3.1
+* Apache Linkis through 1.3.1
 
 
 ### Description
@@ -90,7 +90,7 @@ We recommend users upgrade the version of Linkis to version 1.3.2.
 
 ### Affected
 
-* Apache Linkis versions  including 1.3.1
+* Apache Linkis through 1.3.1
 
 
 ### Description
@@ -113,7 +113,7 @@ We recommend users upgrade the version of Linkis to version 1.3.2 And modify the
 
 ### Affected
 
-* Apache Linkis versions  including 1.3.1
+* Apache Linkis through 1.3.1
 
 
 ### Description
@@ -130,7 +130,7 @@ deserialization vulnerability and eventually lead to remote code execution. Ther
 
 ### Affected
 
-* Apache Linkis versions  including 1.3.1
+* Apache Linkis through 1.3.1
 
 
 ### Description

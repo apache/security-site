@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Kafka versions 2.3.0 before 3.4.0
+* Apache Kafka from 2.3.0 before 3.4.0
 
 
 ### Description

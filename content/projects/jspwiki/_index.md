@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache JSPWiki versions  before Apache JSPWiki up to 2.12.0 
+* Apache JSPWiki before Apache JSPWiki up to 2.12.0 
 
 
 ### Description

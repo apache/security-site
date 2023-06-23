@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Archiva versions 2.0 before 2.2.10
+* Apache Archiva from 2.0 before 2.2.10
 
 
 ### Description

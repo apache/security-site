@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache James server versions  including 3.7.2
+* Apache James server through 3.7.2
 
 
 ### Description
@@ -33,7 +33,7 @@ Usage of temporary files with insecure permissions by the Apache James server al
 
 ### Affected
 
-* Apache James MIME4J versions  including 0.8.8
+* Apache James MIME4J through 0.8.8
 
 
 ### Description
@@ -46,7 +46,7 @@ Unproper laxist permissions on the temporary files used by MIME4J TempFileStorag
 
 ### Affected
 
-* Apache James server versions  including 3.7.3
+* Apache James server through 3.7.3
 
 
 ### Description

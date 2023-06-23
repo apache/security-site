@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache ManifoldCF versions  including 2.23
+* Apache ManifoldCF through 2.23
 
 
 ### Description

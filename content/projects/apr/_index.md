@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Portable Runtime Utility (APR-util) versions  including 1.6.1
+* Apache Portable Runtime Utility (APR-util) through 1.6.1
 
 
 ### Description
@@ -33,7 +33,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Portable Runtime (APR) versions 1.7.0
+* Apache Portable Runtime (APR) at 1.7.0
 
 
 ### Description
@@ -46,7 +46,7 @@ Integer Overflow or Wraparound vulnerability in apr_encode functions of Apache P
 
 ### Affected
 
-* Apache Portable Runtime (APR) versions  including 1.7.0
+* Apache Portable Runtime (APR) through 1.7.0
 
 
 ### Description

@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Helix versions 0.8.0 including 1.0.4
+* Apache Helix from 0.8.0 through 1.0.4
 
 
 ### Description

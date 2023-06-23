@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Spark versions  before 3.4.0
+* Apache Spark before 3.4.0
 
 
 ### Description
@@ -35,7 +35,7 @@ default of "false", and is not overridden by submitted applications.<br></div>
 
 ### Affected
 
-* Apache Spark versions 3.1.1 before 3.2.2
+* Apache Spark from 3.1.1 before 3.2.2
 
 
 ### Description

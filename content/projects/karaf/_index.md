@@ -20,7 +20,8 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Karaf versions 4.4.0 before 4.4.2 before 4.3.8
+* Apache Karaf from 4.4.0 before 4.4.2
+* Apache Karaf before 4.3.8
 
 
 ### Description

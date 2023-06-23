@@ -20,7 +20,8 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache DolphinScheduler versions 3.0 including 3.0.13.1 including 3.1.0
+* Apache DolphinScheduler from 3.0 through 3.0.1
+* Apache DolphinScheduler from 3.1 through 3.1.0
 
 
 ### Description
@@ -33,7 +34,7 @@ Improper validation of script alert plugin parameters in Apache DolphinScheduler
 
 ### Affected
 
-* Apache DolphinScheduler versions 3.0.0 before 3.1.2
+* Apache DolphinScheduler from 3.0.0 before 3.1.2
 
 
 ### Description

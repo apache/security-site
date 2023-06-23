@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Kerby versions  before 2.0.3
+* Apache Kerby before 2.0.3
 
 
 ### Description

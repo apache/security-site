@@ -20,7 +20,8 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache AGE versions Apache AGE for PostgreSQL 12 including 1.1.0Apache AGE for PostgreSQL 11 including 1.1.0
+* Apache AGE from Apache AGE for PostgreSQL 12 through 1.1.0
+* Apache AGE from Apache AGE for PostgreSQL 11 through 1.1.0
 
 
 ### Description

@@ -20,7 +20,9 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Dubbo versions Apache Dubbo 2.7.x including 2.7.21Apache Dubbo 3.0.x including 3.0.13Apache Dubbo 3.1.x including 3.1.5
+* Apache Dubbo from Apache Dubbo 2.7.x through 2.7.21
+* Apache Dubbo from Apache Dubbo 3.0.x through 3.0.13
+* Apache Dubbo from Apache Dubbo 3.1.x through 3.1.5
 
 
 ### Description

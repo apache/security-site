@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache NiFi versions 1.2.0 including 1.19.1
+* Apache NiFi from 1.2.0 through 1.19.1
 
 
 ### Description
@@ -33,7 +33,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache NiFi versions 1.8.0 including 1.21.0
+* Apache NiFi from 1.8.0 through 1.21.0
 
 
 ### Description
@@ -46,7 +46,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache NiFi versions 0.0.2 including 1.21.0
+* Apache NiFi from 0.0.2 through 1.21.0
 
 
 ### Description

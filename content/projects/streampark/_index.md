@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache StreamPark (incubating) versions 1.0.0 before 2.0.0
+* Apache StreamPark (incubating) from 1.0.0 before 2.0.0
 
 
 ### Description
@@ -33,7 +33,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache StreamPark (incubating) versions 1.0.0 before 2.0.0
+* Apache StreamPark (incubating) from 1.0.0 before 2.0.0
 
 
 ### Description
@@ -46,7 +46,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache StreamPark (incubating) versions 1.0.0 before 2.0.0
+* Apache StreamPark (incubating) from 1.0.0 before 2.0.0
 
 
 ### Description

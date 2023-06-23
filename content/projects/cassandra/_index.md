@@ -20,7 +20,8 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Cassandra versions 4.0.0 including 4.0.94.1.0 including 4.1.1
+* Apache Cassandra from 4.0.0 through 4.0.9
+* Apache Cassandra from 4.1.0 through 4.1.1
 
 
 ### Description

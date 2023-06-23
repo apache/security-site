@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache RocketMQ versions  including 5.1.0
+* Apache RocketMQ through 5.1.0
 
 
 ### Description

@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Fineract versions 1.4 including 1.8.3
+* Apache Fineract from 1.4 through 1.8.3
 
 
 ### Description
@@ -33,7 +33,7 @@ Server-Side Request Forgery (SSRF) vulnerability in Apache Software Foundation A
 
 ### Affected
 
-* Apache Fineract versions 1.4 including 1.8.2
+* Apache Fineract from 1.4 through 1.8.2
 
 
 ### Description
@@ -46,7 +46,7 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 
 ### Affected
 
-* apache fineract versions 1.4 including 1.8.2
+* apache fineract from 1.4 through 1.8.2
 
 
 ### Description

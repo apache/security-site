@@ -20,7 +20,8 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Log4j versions 1.0.4 before 22 including *
+* Apache Log4j from 1.0.4 before 2
+* Apache Log4j from 2 through *
 
 
 ### Description
@@ -34,7 +35,7 @@ hashmap or hashtable (depending on which logging component is in use) to be proc
 
 ### Affected
 
-* Apache Log4cxx versions 0.9.0 before 1.1.0
+* Apache Log4cxx from 0.9.0 before 1.1.0
 
 
 ### Description

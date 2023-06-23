@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Atlas versions 0.8.4 before 2.3.0
+* Apache Atlas from 0.8.4 before 2.3.0
 
 
 ### Description

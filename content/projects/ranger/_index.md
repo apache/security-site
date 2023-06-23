@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Ranger versions 2.3.0
+* Apache Ranger at 2.3.0
 
 
 ### Description
@@ -33,7 +33,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Ranger Hive Plugin versions 2.0.0 including 2.3.0
+* Apache Ranger Hive Plugin from 2.0.0 through 2.3.0
 
 
 ### Description

@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Sling Engine versions   before 2.14.0
+* Apache Sling Engine from   before 2.14.0
 
 
 ### Description
@@ -33,7 +33,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Sling App CMS versions  before 1.1.4
+* Apache Sling App CMS before 1.1.4
 
 
 ### Description
@@ -46,7 +46,7 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 
 ### Affected
 
-* org.apache.sling.commons.json versions  including 2.0.20
+* org.apache.sling.commons.json through 2.0.20
 
 
 ### Description
@@ -63,7 +63,7 @@ Apache Sling project, but may of course use other JSON libraries.<br></div></div
 
 ### Affected
 
-* Apache Sling App CMS versions  before 1.1.6
+* Apache Sling App CMS before 1.1.6
 
 
 ### Description
@@ -76,7 +76,7 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 
 ### Affected
 
-* Apache Sling JCR Base versions 2.0.6 before 3.1.12
+* Apache Sling JCR Base from 2.0.6 before 3.1.12
 
 
 ### Description
@@ -89,7 +89,7 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 
 ### Affected
 
-* Apache Sling versions Apache Sling i18n including 2.5.18
+* Apache Sling from Apache Sling i18n through 2.5.18
 
 
 ### Description
@@ -102,7 +102,7 @@ Privilege Escalation vulnerability in Apache Software Foundation Apache Sling.<b
 
 ### Affected
 
-* Apache Sling Resource Merger versions 1.2.0 before 1.4.2
+* Apache Sling Resource Merger from 1.2.0 before 1.4.2
 
 
 ### Description

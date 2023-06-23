@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Jena versions  including 4.7.0
+* Apache Jena through 4.7.0
 
 
 ### Description

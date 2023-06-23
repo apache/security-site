@@ -20,7 +20,8 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache BookKeeper versions  including 4.14.54.15.0
+* Apache BookKeeper through 4.14.5
+* Apache BookKeeper at 4.15.0
 
 
 ### Description

@@ -20,7 +20,8 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2
+* Apache Superset from 2.0.0 before 2.0.1
+* Apache Superset through 1.5.2
 
 
 ### Description
@@ -33,7 +34,8 @@ When explicitly enabling the feature flag DASHBOARD_CACHE (disabled by default),
 
 ### Affected
 
-* Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2
+* Apache Superset from 2.0.0 before 2.0.1
+* Apache Superset through 1.5.2
 
 
 ### Description
@@ -47,7 +49,8 @@ A vulnerability in the SQL Alchemy connector of Apache Superset allows an authen
 
 ### Affected
 
-* Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2
+* Apache Superset from 2.0.0 before 2.0.1
+* Apache Superset through 1.5.2
 
 
 ### Description
@@ -60,7 +63,8 @@ Dashboard rendering does not sufficiently sanitize the content of markdown compo
 
 ### Affected
 
-* Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2
+* Apache Superset from 2.0.0 before 2.0.1
+* Apache Superset through 1.5.2
 
 
 ### Description
@@ -73,7 +77,8 @@ Upload data forms do not correctly render user input leading to possible XSS att
 
 ### Affected
 
-* Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2
+* Apache Superset from 2.0.0 before 2.0.1
+* Apache Superset through 1.5.2
 
 
 ### Description
@@ -87,7 +92,8 @@ Two legacy REST API endpoints for approval and request access are vulnerable to 
 
 ### Affected
 
-* Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2
+* Apache Superset from 2.0.0 before 2.0.1
+* Apache Superset through 1.5.2
 
 
 ### Description
@@ -100,7 +106,8 @@ An authenticated attacker with write CSS template permissions can create a recor
 
 ### Affected
 
-* Apache Superset versions 2.0.0 before 2.0.1 including 1.5.2
+* Apache Superset from 2.0.0 before 2.0.1
+* Apache Superset through 1.5.2
 
 
 ### Description
@@ -113,7 +120,7 @@ An authenticated attacker with update datasets permission could change a dataset
 
 ### Affected
 
-* Apache Superset versions  including 2.0.1
+* Apache Superset through 2.0.1
 
 
 ### Description
@@ -128,7 +135,7 @@ is deployed. This vulnerability exists&nbsp;</span>in Apache Superset versions u
 
 ### Affected
 
-* Apache Superset versions  including 2.0.1
+* Apache Superset through 2.0.1
 
 
 ### Description
@@ -141,7 +148,7 @@ Session Validation attacks in Apache Superset versions up to and including 2.0.1
 
 ### Affected
 
-* Apache Superset versions  including 2.0.1
+* Apache Superset through 2.0.1
 
 
 ### Description
@@ -154,7 +161,7 @@ An authenticated user with Gamma role authorization could have access to metadat
 
 ### Affected
 
-* Apache Superset versions 1.3.0 including 2.0.1
+* Apache Superset from 1.3.0 through 2.0.1
 
 
 ### Description

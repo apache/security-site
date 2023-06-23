@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache OFBiz versions 18.12.06 before 18.12.07
+* Apache OFBiz from 18.12.06 before 18.12.07
 
 
 ### Description

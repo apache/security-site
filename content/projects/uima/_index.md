@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache UIMA DUCC versions  including *
+* Apache UIMA DUCC through *
 
 
 ### Description

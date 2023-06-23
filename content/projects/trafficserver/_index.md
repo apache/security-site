@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Traffic Server versions 8.0.0 including 9.1.3
+* Apache Traffic Server from 8.0.0 through 9.1.3
 
 
 ### Description
@@ -37,7 +37,7 @@ Improper Check for Unusual or Exceptional Conditions vulnerability handling requ
 
 ### Affected
 
-* Apache Traffic Server versions 8.0.0 including 9.1.3
+* Apache Traffic Server from 8.0.0 through 9.1.3
 
 
 ### Description
@@ -50,7 +50,7 @@ Improper Check for Unusual or Exceptional Conditions vulnerability in handling t
 
 ### Affected
 
-* Apache Traffic Server versions 9.0.0 including 9.1.3
+* Apache Traffic Server from 9.0.0 through 9.1.3
 
 
 ### Description
@@ -63,7 +63,7 @@ Improper Input Validation vulnerability for the xdebug plugin in Apache Software
 
 ### Affected
 
-* Apache Traffic Server versions 8.0.0 including 9.2.0
+* Apache Traffic Server from 8.0.0 through 9.2.0
 
 
 ### Description
@@ -76,7 +76,7 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ### Affected
 
-* Apache Traffic Server versions 8.0.0 including 9.2.0
+* Apache Traffic Server from 8.0.0 through 9.2.0
 
 
 ### Description
@@ -89,7 +89,7 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Tra
 
 ### Affected
 
-* Apache Traffic Server versions 8.0.0 including 9.2.0
+* Apache Traffic Server from 8.0.0 through 9.2.0
 
 
 ### Description

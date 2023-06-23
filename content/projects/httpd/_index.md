@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache HTTP Server versions  before 2.4.55
+* Apache HTTP Server before 2.4.55
 
 
 ### Description
@@ -33,7 +33,7 @@ Prior to Apache HTTP Server 2.4.55, a malicious backend can cause the response h
 
 ### Affected
 
-* Apache HTTP Server versions 2.4 including 2.4.54
+* Apache HTTP Server from 2.4 through 2.4.54
 
 
 ### Description
@@ -46,7 +46,7 @@ Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling') vulnerab
 
 ### Affected
 
-* Apache HTTP Server versions 2.4 including 2.4.54
+* Apache HTTP Server from 2.4 through 2.4.54
 
 
 ### Description
@@ -59,7 +59,7 @@ A carefully crafted If: request header can cause a memory read, or write of a si
 
 ### Affected
 
-* Apache HTTP Server versions 2.4.0 including 2.4.55
+* Apache HTTP Server from 2.4.0 through 2.4.55
 
 
 ### Description
@@ -76,7 +76,7 @@ substitution. For example, something like:</div><div><br></div><div>RewriteEngin
 
 ### Affected
 
-* Apache HTTP Server versions 2.4.30 including 2.4.55
+* Apache HTTP Server from 2.4.30 through 2.4.55
 
 
 ### Description

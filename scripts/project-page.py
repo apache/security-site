@@ -115,15 +115,19 @@ layout: single
             cna = details['containers']['cna']
             project_page.write("### Affected\n\n")
             for affected in cna['affected']:
-                project_page.write('* ' + affected['product'] + ' versions ')
                 for version in affected['versions']:
+                    project_page.write('* ' + affected['product'])
                     if version['version'] != '0':
+                        if 'lessThan' in version.keys() or 'lessThanOrEqual' in version.keys():
+                            project_page.write(' from ')
+                        else:
+                            project_page.write(' at ')
                         project_page.write(version['version'])
                     if 'lessThan' in version.keys():
                         project_page.write(' before ' + version['lessThan'])
                     if 'lessThanOrEqual' in version.keys():
-                        project_page.write(' including ' + version['lessThanOrEqual'])
-                project_page.write('\n')
+                        project_page.write(' through ' + version['lessThanOrEqual'])
+                    project_page.write('\n')
             project_page.write('\n\n### Description\n\n')
             for desc in cna['descriptions']:
                 for media in desc['supportingMedia']:

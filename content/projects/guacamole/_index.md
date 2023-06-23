@@ -20,7 +20,7 @@ If you have any feedback on how you would like this data to be presented, you ar
 
 ### Affected
 
-* Apache Guacamole versions  including 1.5.1
+* Apache Guacamole through 1.5.1
 
 
 ### Description
@@ -33,7 +33,7 @@ Apache Guacamole 1.5.1 and older may incorrectly calculate the lengths of instru
 
 ### Affected
 
-* Apache Guacamole versions 0.9.10 including 1.5.1
+* Apache Guacamole from 0.9.10 through 1.5.1
 
 
 ### Description
