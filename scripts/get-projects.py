@@ -7,6 +7,14 @@ import re
 lines = [line for line in open('projects.html', 'r').readlines() if line.startswith('<td')]
 pairs = zip(lines[::2], lines[1::2])
 
+advisory_links = {
+  'httpd': 'https://httpd.apache.org/security/vulnerabilities_24.html',
+  'openoffice': 'https://www.openoffice.org/security/bulletin.html',
+  'solr': 'https://solr.apache.org/security.html#recent-cve-reports-for-apache-solr',
+  'subversion': 'https://subversion.apache.org/security/',
+  'tomcat': 'https://tomcat.apache.org/security.html',
+};
+
 def parsePair(pair):
     leftre = re.compile('^<td>(<a href="([^"]+)">)?([^<]+).*')
     l = leftre.match(pair[0])
@@ -55,11 +63,17 @@ def parsePair(pair):
     rightre = re.compile('^<td><a href="mailto:([^"]+)')
     r = rightre.match(pair[1])
 
+    if pmc in advisory_links.keys():
+        advisory_link = advisory_links[pmc]
+    else:
+        advisory_link = None
+
     return [
         pmc,
         {
-            'name': l[3],
-            'link': l[2],
+            'name': name,
+            'link': link,
+            'advisory_link': advisory_link,
             'contact': r[1]
         }
     ]

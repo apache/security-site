@@ -58,10 +58,12 @@ for pmc in sorted(set(list(project_coordinates.keys()) + list(advisories.keys())
     else:
         projects_page.write(' [%s Security Team](mailto:%s) |' % (p['name'], p['contact']))
 
-    #if len(advisories[pmc]) > 0:
+    if 'advisory_link' in p.keys() and p['advisory_link']:
+        projects_page.write(' [Advisories](%s) |\n' % (p['advisory_link']))
+    #elif len(advisories[pmc]) > 0:
     #    projects_page.write(' [Advisories](%s) |\n' % pmc)
-    #else:
-    projects_page.write(' |\n')
+    else:
+        projects_page.write(' |\n')
 
 for pmc in advisories.keys():
     basedir = '%s/../content/projects/%s/' % (dirname(realpath(__file__)), pmc)
