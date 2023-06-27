@@ -13,7 +13,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Accumulo |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache AGE |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Airflow |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache Ambari](None) |  [Apache Ambari Security Team](mailto:security@ambari.apache.org) | |
+| Apache Ambari |  [Apache Ambari Security Team](mailto:security@ambari.apache.org) | |
 | [Apache Ant](https://ant.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Portable Runtime (APR)](https://apr.apache.org/security_report.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Archiva |  [Apache Security Team](mailto:security@apache.org) | |
@@ -24,7 +24,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Cassandra |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache CloudStack](https://cloudstack.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Commons](https://commons.apache.org/security.html) |  [Apache Commons Security Team](mailto:security@commons.apache.org) | |
-| [Apache CouchDB](None) |  [Apache CouchDB Security Team](mailto:security@couchdb.apache.org) | |
+| Apache CouchDB |  [Apache CouchDB Security Team](mailto:security@couchdb.apache.org) | |
 | Apache CXF |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Directory |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache DolphinScheduler |  [Apache Security Team](mailto:security@apache.org) | |
@@ -38,10 +38,10 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Helix |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Hive](https://hive.apache.org/mailing_lists.html) |  [Apache Hive Security Team](mailto:security@hive.apache.org) | |
 | [Apache HTTP Server](https://httpd.apache.org/security_report.html) |  [Apache HTTP Server Security Team](mailto:security@httpd.apache.org) | |
-| [Apache Ignite](None) |  [Apache Ignite Security Team](mailto:security@ignite.apache.org) | |
+| Apache Ignite |  [Apache Ignite Security Team](mailto:security@ignite.apache.org) | |
 | Apache InLong |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache IoTDB |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache Jackrabbit](None) |  [Apache Jackrabbit Security Team](mailto:security@jackrabbit.apache.org) | |
+| Apache Jackrabbit |  [Apache Jackrabbit Security Team](mailto:security@jackrabbit.apache.org) | |
 | Apache James |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Jena |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache JMeter](https://jmeter.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
@@ -51,11 +51,11 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Kylin |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Libcloud](https://libcloud.apache.org/security.html) |  [Apache Libcloud Security Team](mailto:security@libcloud.apache.org) | |
 | Apache Linkis |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache Logging](None) |  [Apache Logging Security Team](mailto:security@logging.apache.org) | |
-| [Apache Lucene](None) |  [Apache Lucene Security Team](mailto:security@lucene.apache.org) | |
+| Apache Logging |  [Apache Logging Security Team](mailto:security@logging.apache.org) | |
+| Apache Lucene |  [Apache Lucene Security Team](mailto:security@lucene.apache.org) | |
 | Apache ManifoldCF |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Maven](https://maven.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache Metron](None) |  [Apache Metron Security Team](mailto:security@metron.apache.org) | |
+| Apache Metron |  [Apache Metron Security Team](mailto:security@metron.apache.org) | |
 | [Apache NiFi](https://nifi.apache.org/security.html) |  [Apache NiFi Security Team](mailto:security@nifi.apache.org) | |
 | [Apache OFBiz](https://ofbiz.apache.org/download.html#security) |  [Apache OFBiz Security Team](mailto:security@ofbiz.apache.org) | |
 | [Apache OpenMeetings](https://openmeetings.apache.org/security.html) |  [Apache OpenMeetings Security Team](mailto:security@openmeetings.apache.org) | |
@@ -81,8 +81,8 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Superset |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Tomcat](https://tomcat.apache.org/security.html) |  [Apache Tomcat Security Team](mailto:security@tomcat.apache.org) | |
 | [Apache Traffic Control](https://trafficcontrol.apache.org/security/index.html) |  [Apache Traffic Control Security Team](mailto:security@trafficcontrol.apache.org) | |
-| [Apache Traffic Server](None) |  [Apache Traffic Server Security Team](mailto:security@trafficserver.apache.org) | |
-| [Apache Trafodion](None) |  [Apache Trafodion Security Team](mailto:security@trafodion.apache.org) | |
+| Apache Traffic Server |  [Apache Traffic Server Security Team](mailto:security@trafficserver.apache.org) | |
+| Apache Trafodion |  [Apache Trafodion Security Team](mailto:security@trafodion.apache.org) | |
 | Apache UIMA |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache XML Graphics](https://xmlgraphics.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Zeppelin](https://zeppelin.apache.org/security.html) |  [Apache Zeppelin Security Team](mailto:security@zeppelin.apache.org) | |

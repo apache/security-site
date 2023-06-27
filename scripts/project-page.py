@@ -48,7 +48,7 @@ def coordinates(pmc):
 for pmc in sorted(set(list(project_coordinates.keys()) + list(advisories.keys()))):
     p = coordinates(pmc)
     assert p, 'All projects with advisories, including [%s], should have coordinates' % pmc
-    if 'link' in p.keys():
+    if 'link' in p.keys() and p['link']:
         projects_page.write('| [%s](%s) | ' % (p['name'], p['link']))
     else:
         projects_page.write("| %s | " % p['name'])
