@@ -93,14 +93,15 @@ layout: single
 
     project_page.write('\n\n# Advisories')
 
-    project_page.write('\n\nThis page is experimental: it provides consistent access to the advisories for %s since 2023 in text and CVE JSON format. ' % p['name'])
-    project_page.write('It may lag slighly behind the official CVE publications. ')
+    project_page.write('\n\nThis section is experimental: it provides advisories since 2023 and ')
+    project_page.write('may lag behind the official CVE publications. ')
     if 'link' in p.keys():
-        project_page.write('It may also lack details found on the [project security page](%s).' % p['link'])
+        project_page.write('It may also lack details found on the [project security page](%s). ' % p['link'])
 
-    project_page.write('\n\nIf you have any feedback on how you would like this data to be presented, ')
+    project_page.write('If you have any feedback on how you would like this data to be provided, ')
     project_page.write('you are welcome to reach out on our public [mailinglist](/mailinglist) or privately ')
     project_page.write('on [security@apache.org](mailto:security@apache.org)')
+    project_page.write('\n{.bg-warning}')
 
     for advisory in advisories[pmc]:
         cve = advisory['ID']

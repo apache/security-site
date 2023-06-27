@@ -8,6 +8,7 @@ lines = [line for line in open('projects.html', 'r').readlines() if line.startsw
 pairs = zip(lines[::2], lines[1::2])
 
 advisory_links = {
+  'camel': 'https://camel.apache.org/security/',
   'httpd': 'https://httpd.apache.org/security/vulnerabilities_24.html',
   'openoffice': 'https://www.openoffice.org/security/bulletin.html',
   'solr': 'https://solr.apache.org/security.html#recent-cve-reports-for-apache-solr',
