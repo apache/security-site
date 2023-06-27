@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Java Client Uses Connection to Host that Failed Hostname Verification ## { #CVE-2022-32531 }
 
-[CVE-2022-32531](./CVE-2022-32531.cve.json)
+CVE-2022-32531 [\[CVE json\]](./CVE-2022-32531.cve.json)
 
 ### Affected
 

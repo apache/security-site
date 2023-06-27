@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## SSRF template type vulnerability in certain authenticated users ## { #CVE-2023-25195 }
 
-[CVE-2023-25195](./CVE-2023-25195.cve.json)
+CVE-2023-25195 [\[CVE json\]](./CVE-2023-25195.cve.json)
 
 ### Affected
 
@@ -32,7 +32,7 @@ Server-Side Request Forgery (SSRF) vulnerability in Apache Software Foundation A
 
 ## SQL injection vulnerability  ## { #CVE-2023-25196 }
 
-[CVE-2023-25196](./CVE-2023-25196.cve.json)
+CVE-2023-25196 [\[CVE json\]](./CVE-2023-25196.cve.json)
 
 ### Affected
 
@@ -49,7 +49,7 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 
 ## SQL injection vulnerability in certain procedure calls  ## { #CVE-2023-25197 }
 
-[CVE-2023-25197](./CVE-2023-25197.cve.json)
+CVE-2023-25197 [\[CVE json\]](./CVE-2023-25197.cve.json)
 
 ### Affected
 

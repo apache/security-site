@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## code execution vulnerability in policy expressions ## { #CVE-2022-45048 }
 
-[CVE-2022-45048](./CVE-2022-45048.cve.json)
+CVE-2022-45048 [\[CVE json\]](./CVE-2022-45048.cve.json)
 
 ### Affected
 
@@ -32,7 +32,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Permissions problem in the Apache Ranger Hive Plugin ## { #CVE-2021-40331 }
 
-[CVE-2021-40331](./CVE-2021-40331.cve.json)
+CVE-2021-40331 [\[CVE json\]](./CVE-2021-40331.cve.json)
 
 ### Affected
 

@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Log4j 1.x (EOL) allows DoS in Chainsaw and SocketAppender ## { #CVE-2023-26464 }
 
-[CVE-2023-26464](./CVE-2023-26464.cve.json)
+CVE-2023-26464 [\[CVE json\]](./CVE-2023-26464.cve.json)
 
 ### Affected
 
@@ -34,7 +34,7 @@ hashmap or hashtable (depending on which logging component is in use) to be proc
 
 ## SQL injection when using ODBC appender ## { #CVE-2023-31038 }
 
-[CVE-2023-31038](./CVE-2023-31038.cve.json)
+CVE-2023-31038 [\[CVE json\]](./CVE-2023-31038.cve.json)
 
 ### Affected
 

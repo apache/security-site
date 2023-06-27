@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Privilege escalation through non-admin user ## { #CVE-2023-31469 }
 
-[CVE-2023-31469](./CVE-2023-31469.cve.json)
+CVE-2023-31469 [\[CVE json\]](./CVE-2023-31469.cve.json)
 
 ### Affected
 

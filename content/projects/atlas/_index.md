@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## zip path traversal in import functionality ## { #CVE-2022-34271 }
 
-[CVE-2022-34271](./CVE-2022-34271.cve.json)
+CVE-2022-34271 [\[CVE json\]](./CVE-2022-34271.cve.json)
 
 ### Affected
 

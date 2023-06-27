@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Empty entry in Java class path ## { #CVE-2022-38745 }
 
-[CVE-2022-38745](./CVE-2022-38745.cve.json)
+CVE-2022-38745 [\[CVE json\]](./CVE-2022-38745.cve.json)
 
 ### Affected
 
@@ -33,7 +33,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Macro URL arbitrary script execution ## { #CVE-2022-47502 }
 
-[CVE-2022-47502](./CVE-2022-47502.cve.json)
+CVE-2022-47502 [\[CVE json\]](./CVE-2022-47502.cve.json)
 
 ### Affected
 

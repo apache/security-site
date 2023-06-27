@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Shiro before 1.11.0, when used with Spring Boot 2.6+, may allow authentication bypass through a specially crafted HTTP request ## { #CVE-2023-22602 }
 
-[CVE-2023-22602](./CVE-2023-22602.cve.json)
+CVE-2023-22602 [\[CVE json\]](./CVE-2023-22602.cve.json)
 
 ### Affected
 

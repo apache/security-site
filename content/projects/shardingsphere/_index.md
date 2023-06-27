@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## MySQL authentication bypass ## { #CVE-2022-45347 }
 
-[CVE-2022-45347](./CVE-2022-45347.cve.json)
+CVE-2022-45347 [\[CVE json\]](./CVE-2022-45347.cve.json)
 
 ### Affected
 

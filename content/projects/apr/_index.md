@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## out-of-bounds writes in the apr_base64 family of functions ## { #CVE-2022-25147 }
 
-[CVE-2022-25147](./CVE-2022-25147.cve.json)
+CVE-2022-25147 [\[CVE json\]](./CVE-2022-25147.cve.json)
 
 ### Affected
 
@@ -32,7 +32,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## out-of-bound writes in the apr_encode family of functions  ## { #CVE-2022-24963 }
 
-[CVE-2022-24963](./CVE-2022-24963.cve.json)
+CVE-2022-24963 [\[CVE json\]](./CVE-2022-24963.cve.json)
 
 ### Affected
 
@@ -49,7 +49,7 @@ Integer Overflow or Wraparound vulnerability in apr_encode functions of Apache P
 
 ##  Windows out-of-bounds write in apr_socket_sendv function ## { #CVE-2022-28331 }
 
-[CVE-2022-28331](./CVE-2022-28331.cve.json)
+CVE-2022-28331 [\[CVE json\]](./CVE-2022-28331.cve.json)
 
 ### Affected
 

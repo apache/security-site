@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## FileUpload DoS with excessive parts ## { #CVE-2023-24998 }
 
-[CVE-2023-24998](./CVE-2023-24998.cve.json)
+CVE-2023-24998 [\[CVE json\]](./CVE-2023-24998.cve.json)
 
 ### Affected
 

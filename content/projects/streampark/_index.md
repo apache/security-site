@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## LDAP Injection Vulnerability ## { #CVE-2022-45801 }
 
-[CVE-2022-45801](./CVE-2022-45801.cve.json)
+CVE-2022-45801 [\[CVE json\]](./CVE-2022-45801.cve.json)
 
 ### Affected
 
@@ -32,7 +32,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Upload any file to any directory ## { #CVE-2022-45802 }
 
-[CVE-2022-45802](./CVE-2022-45802.cve.json)
+CVE-2022-45802 [\[CVE json\]](./CVE-2022-45802.cve.json)
 
 ### Affected
 
@@ -49,7 +49,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Logic error causing any account reset ## { #CVE-2022-46365 }
 
-[CVE-2022-46365](./CVE-2022-46365.cve.json)
+CVE-2022-46365 [\[CVE json\]](./CVE-2022-46365.cve.json)
 
 ### Affected
 

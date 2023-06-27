@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## apache/iotdb-web-workbench: forge the JWTToken to access workbench ## { #CVE-2023-24829 }
 
-[CVE-2023-24829](./CVE-2023-24829.cve.json)
+CVE-2023-24829 [\[CVE json\]](./CVE-2023-24829.cve.json)
 
 ### Affected
 
@@ -32,7 +32,7 @@ Incorrect Authorization vulnerability in Apache Software Foundation Apache IoTDB
 
 ## apache/iotdb-web-workbench: create a user without authorization ## { #CVE-2023-24830 }
 
-[CVE-2023-24830](./CVE-2023-24830.cve.json)
+CVE-2023-24830 [\[CVE json\]](./CVE-2023-24830.cve.json)
 
 ### Affected
 
@@ -49,7 +49,7 @@ Improper Authentication vulnerability in Apache Software Foundation Apache IoTDB
 
 ## Apache IoTDB grafana-connector Login Bypass Vulnerability ## { #CVE-2023-24831 }
 
-[CVE-2023-24831](./CVE-2023-24831.cve.json)
+CVE-2023-24831 [\[CVE json\]](./CVE-2023-24831.cve.json)
 
 ### Affected
 
@@ -66,7 +66,7 @@ Improper Authentication vulnerability in Apache Software Foundation Apache IoTDB
 
 ## apache/iotdb-web-workbench: forge the JWTToken to access workbench ## { #CVE-2023-30771 }
 
-[CVE-2023-30771](./CVE-2023-30771.cve.json)
+CVE-2023-30771 [\[CVE json\]](./CVE-2023-30771.cve.json)
 
 ### Affected
 

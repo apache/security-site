@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Command injection by Useless configuration ## { #CVE-2022-43396 }
 
-[CVE-2022-43396](./CVE-2022-43396.cve.json)
+CVE-2022-43396 [\[CVE json\]](./CVE-2022-43396.cve.json)
 
 ### Affected
 
@@ -32,7 +32,7 @@ In the fix for CVE-2022-24697, a blacklist is used to filter user input commands
 
 ## Command injection by Diagnosis Controller ## { #CVE-2022-44621 }
 
-[CVE-2022-44621](./CVE-2022-44621.cve.json)
+CVE-2022-44621 [\[CVE json\]](./CVE-2022-44621.cve.json)
 
 ### Affected
 

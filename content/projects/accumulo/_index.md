@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Accumulo 2.1.0 may incorrectly validate cached credentials ## { #CVE-2023-34340 }
 
-[CVE-2023-34340](./CVE-2023-34340.cve.json)
+CVE-2023-34340 [\[CVE json\]](./CVE-2023-34340.cve.json)
 
 ### Affected
 

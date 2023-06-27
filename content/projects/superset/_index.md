@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Dashboard metadata information leak ## { #CVE-2022-45438 }
 
-[CVE-2022-45438](./CVE-2022-45438.cve.json)
+CVE-2022-45438 [\[CVE json\]](./CVE-2022-45438.cve.json)
 
 ### Affected
 
@@ -33,7 +33,7 @@ When explicitly enabling the feature flag DASHBOARD_CACHE (disabled by default),
 
 ## SQL injection vulnerability in adhoc clauses ## { #CVE-2022-41703 }
 
-[CVE-2022-41703](./CVE-2022-41703.cve.json)
+CVE-2022-41703 [\[CVE json\]](./CVE-2022-41703.cve.json)
 
 ### Affected
 
@@ -52,7 +52,7 @@ A vulnerability in the SQL Alchemy connector of Apache Superset allows an authen
 
 ## Cross-Site Scripting on dashboards ## { #CVE-2022-43717 }
 
-[CVE-2022-43717](./CVE-2022-43717.cve.json)
+CVE-2022-43717 [\[CVE json\]](./CVE-2022-43717.cve.json)
 
 ### Affected
 
@@ -70,7 +70,7 @@ Dashboard rendering does not sufficiently sanitize the content of markdown compo
 
 ## Cross-Site Scripting vulnerability on upload forms ## { #CVE-2022-43718 }
 
-[CVE-2022-43718](./CVE-2022-43718.cve.json)
+CVE-2022-43718 [\[CVE json\]](./CVE-2022-43718.cve.json)
 
 ### Affected
 
@@ -88,7 +88,7 @@ Upload data forms do not correctly render user input leading to possible XSS att
 
 ## Cross Site Request Forgery (CSRF) on accept, request access API ## { #CVE-2022-43719 }
 
-[CVE-2022-43719](./CVE-2022-43719.cve.json)
+CVE-2022-43719 [\[CVE json\]](./CVE-2022-43719.cve.json)
 
 ### Affected
 
@@ -107,7 +107,7 @@ Two legacy REST API endpoints for approval and request access are vulnerable to 
 
 ## Improper rendering of user input ## { #CVE-2022-43720 }
 
-[CVE-2022-43720](./CVE-2022-43720.cve.json)
+CVE-2022-43720 [\[CVE json\]](./CVE-2022-43720.cve.json)
 
 ### Affected
 
@@ -125,7 +125,7 @@ An authenticated attacker with write CSS template permissions can create a recor
 
 ## Open Redirect Vulnerability ## { #CVE-2022-43721 }
 
-[CVE-2022-43721](./CVE-2022-43721.cve.json)
+CVE-2022-43721 [\[CVE json\]](./CVE-2022-43721.cve.json)
 
 ### Affected
 
@@ -143,7 +143,7 @@ An authenticated attacker with update datasets permission could change a dataset
 
 ## Possible SSRF on import datasets ## { #CVE-2023-25504 }
 
-[CVE-2023-25504](./CVE-2023-25504.cve.json)
+CVE-2023-25504 [\[CVE json\]](./CVE-2023-25504.cve.json)
 
 ### Affected
 
@@ -162,7 +162,7 @@ is deployed. This vulnerability exists&nbsp;</span>in Apache Superset versions u
 
 ## Session validation vulnerability when using provided default SECRET_KEY ## { #CVE-2023-27524 }
 
-[CVE-2023-27524](./CVE-2023-27524.cve.json)
+CVE-2023-27524 [\[CVE json\]](./CVE-2023-27524.cve.json)
 
 ### Affected
 
@@ -179,7 +179,7 @@ Session Validation attacks in Apache Superset versions up to and including 2.0.1
 
 ## Incorrect default permissions for Gamma role ## { #CVE-2023-27525 }
 
-[CVE-2023-27525](./CVE-2023-27525.cve.json)
+CVE-2023-27525 [\[CVE json\]](./CVE-2023-27525.cve.json)
 
 ### Affected
 
@@ -196,7 +196,7 @@ An authenticated user with Gamma role authorization could have access to metadat
 
 ## Database connection password leak ## { #CVE-2023-30776 }
 
-[CVE-2023-30776](./CVE-2023-30776.cve.json)
+CVE-2023-30776 [\[CVE json\]](./CVE-2023-30776.cve.json)
 
 ### Affected
 

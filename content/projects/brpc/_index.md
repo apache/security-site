@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## ServerOptions.pid_file may cause arbitrary code execution ## { #CVE-2023-31039 }
 
-[CVE-2023-31039](./CVE-2023-31039.cve.json)
+CVE-2023-31039 [\[CVE json\]](./CVE-2023-31039.cve.json)
 
 ### Affected
 

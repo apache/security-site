@@ -106,7 +106,7 @@ layout: single
     for advisory in advisories[pmc]:
         cve = advisory['ID']
         project_page.write("\n\n## %s ## { #%s }\n\n" % (advisory['title'], cve))
-        project_page.write("[%s](./%s.cve.json)\n\n" % (cve, cve))
+        project_page.write("%s [\[CVE json\]](./%s.cve.json)\n\n" % (cve, cve))
         if not os.path.exists('cache/%s.json' % cve):
             f = urlopen('https://cveprocess.apache.org/publicjson/%s' % cve)
             with open('cache/%s.json' % cve, 'w') as d:

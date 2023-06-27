@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Archiva privilege escalation ## { #CVE-2023-28158 }
 
-[CVE-2023-28158](./CVE-2023-28158.cve.json)
+CVE-2023-28158 [\[CVE json\]](./CVE-2023-28158.cve.json)
 
 ### Affected
 

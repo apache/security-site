@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Possible remote code execution vulnerability when using the update configuration function ## { #CVE-2023-33246 }
 
-[CVE-2023-33246](./CVE-2023-33246.cve.json)
+CVE-2023-33246 [\[CVE json\]](./CVE-2023-33246.cve.json)
 
 ### Affected
 

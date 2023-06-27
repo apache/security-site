@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Remote command execution Vulnerability in script alert plugin ## { #CVE-2022-45875 }
 
-[CVE-2022-45875](./CVE-2022-45875.cve.json)
+CVE-2022-45875 [\[CVE json\]](./CVE-2022-45875.cve.json)
 
 ### Affected
 
@@ -33,7 +33,7 @@ Improper validation of script alert plugin parameters in Apache DolphinScheduler
 
 ## Apache DolphinScheduler 3.0.0 to 3.1.1 python gateway has improper authentication ## { #CVE-2023-25601 }
 
-[CVE-2023-25601](./CVE-2023-25601.cve.json)
+CVE-2023-25601 [\[CVE json\]](./CVE-2023-25601.cve.json)
 
 ### Affected
 

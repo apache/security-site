@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Improper Restriction of XML External Entity References in ExtractCCDAAttributes ## { #CVE-2023-22832 }
 
-[CVE-2023-22832](./CVE-2023-22832.cve.json)
+CVE-2023-22832 [\[CVE json\]](./CVE-2023-22832.cve.json)
 
 ### Affected
 
@@ -33,7 +33,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Potential Deserialization of Untrusted Data with JNDI in JMS Components ## { #CVE-2023-34212 }
 
-[CVE-2023-34212](./CVE-2023-34212.cve.json)
+CVE-2023-34212 [\[CVE json\]](./CVE-2023-34212.cve.json)
 
 ### Affected
 
@@ -51,7 +51,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Potential Code Injection with Database Services using H2 ## { #CVE-2023-34468 }
 
-[CVE-2023-34468](./CVE-2023-34468.cve.json)
+CVE-2023-34468 [\[CVE json\]](./CVE-2023-34468.cve.json)
 
 ### Affected
 

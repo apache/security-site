@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## XSS Injection points in several plugins ## { #CVE-2022-46907 }
 
-[CVE-2022-46907](./CVE-2022-46907.cve.json)
+CVE-2022-46907 [\[CVE json\]](./CVE-2022-46907.cve.json)
 
 ### Affected
 

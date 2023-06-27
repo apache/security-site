@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## LDAP Injection Vulnerability in Apache Kerby ## { #CVE-2023-25613 }
 
-[CVE-2023-25613](./CVE-2023-25613.cve.json)
+CVE-2023-25613 [\[CVE json\]](./CVE-2023-25613.cve.json)
 
 ### Affected
 

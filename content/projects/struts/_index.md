@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## DoS via OOM owing to not properly checking of list bounds ## { #CVE-2023-34149 }
 
-[CVE-2023-34149](./CVE-2023-34149.cve.json)
+CVE-2023-34149 [\[CVE json\]](./CVE-2023-34149.cve.json)
 
 ### Affected
 
@@ -33,7 +33,7 @@ Allocation of Resources Without Limits or Throttling vulnerability in Apache Sof
 
 ## DoS via OOM owing to no sanity limit on normal form fields in multipart forms ## { #CVE-2023-34396 }
 
-[CVE-2023-34396](./CVE-2023-34396.cve.json)
+CVE-2023-34396 [\[CVE json\]](./CVE-2023-34396.cve.json)
 
 ### Affected
 

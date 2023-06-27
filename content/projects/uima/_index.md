@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## DUCC (EOL) allows RCE ## { #CVE-2023-28935 }
 
-[CVE-2023-28935](./CVE-2023-28935.cve.json)
+CVE-2023-28935 [\[CVE json\]](./CVE-2023-28935.cve.json)
 
 ### Affected
 

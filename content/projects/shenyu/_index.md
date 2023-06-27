@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache ShenYu Admin ultra vires ## { #CVE-2022-42735 }
 
-[CVE-2022-42735](./CVE-2022-42735.cve.json)
+CVE-2022-42735 [\[CVE json\]](./CVE-2022-42735.cve.json)
 
 ### Affected
 

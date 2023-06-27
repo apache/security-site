@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache CXF directory listing / code exfiltration ## { #CVE-2022-46363 }
 
-[CVE-2022-46363](./CVE-2022-46363.cve.json)
+CVE-2022-46363 [\[CVE json\]](./CVE-2022-46363.cve.json)
 
 ### Affected
 
@@ -33,7 +33,7 @@ A vulnerability in Apache CXF before versions 3.5.5 and 3.4.10 allows an attacke
 
 ## Apache CXF SSRF Vulnerability ## { #CVE-2022-46364 }
 
-[CVE-2022-46364](./CVE-2022-46364.cve.json)
+CVE-2022-46364 [\[CVE json\]](./CVE-2022-46364.cve.json)
 
 ### Affected
 

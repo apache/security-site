@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Temporary File Information Disclosure ## { #CVE-2022-45935 }
 
-[CVE-2022-45935](./CVE-2022-45935.cve.json)
+CVE-2022-45935 [\[CVE json\]](./CVE-2022-45935.cve.json)
 
 ### Affected
 
@@ -32,7 +32,7 @@ Usage of temporary files with insecure permissions by the Apache James server al
 
 ## Temporary File Information Disclosure in MIME4J TempFileStorageProvider ## { #CVE-2022-45787 }
 
-[CVE-2022-45787](./CVE-2022-45787.cve.json)
+CVE-2022-45787 [\[CVE json\]](./CVE-2022-45787.cve.json)
 
 ### Affected
 
@@ -49,7 +49,7 @@ Unproper laxist permissions on the temporary files used by MIME4J TempFileStorag
 
 ## Privilege escalation through unauthenticated JMX ## { #CVE-2023-26269 }
 
-[CVE-2023-26269](./CVE-2023-26269.cve.json)
+CVE-2023-26269 [\[CVE json\]](./CVE-2023-26269.cve.json)
 
 ### Affected
 

@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Exposure of arbitrary execution in script engine expressions. ## { #CVE-2023-22665 }
 
-[CVE-2023-22665](./CVE-2023-22665.cve.json)
+CVE-2023-22665 [\[CVE json\]](./CVE-2023-22665.cve.json)
 
 ### Affected
 

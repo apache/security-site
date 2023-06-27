@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Spark proxy-user privilege escalation from malicious configuration class ## { #CVE-2023-22946 }
 
-[CVE-2023-22946](./CVE-2023-22946.cve.json)
+CVE-2023-22946 [\[CVE json\]](./CVE-2023-22946.cve.json)
 
 ### Affected
 
@@ -34,7 +34,7 @@ default of "false", and is not overridden by submitted applications.<br></div>
 
 ## Shell command injection via Spark UI ## { #CVE-2023-32007 }
 
-[CVE-2023-32007](./CVE-2023-32007.cve.json)
+CVE-2023-32007 [\[CVE json\]](./CVE-2023-32007.cve.json)
 
 ### Affected
 

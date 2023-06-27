@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Include-based XSS ## { #CVE-2022-45064 }
 
-[CVE-2022-45064](./CVE-2022-45064.cve.json)
+CVE-2022-45064 [\[CVE json\]](./CVE-2022-45064.cve.json)
 
 ### Affected
 
@@ -32,7 +32,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## XSS in CMS Site Group Detail ## { #CVE-2022-46769 }
 
-[CVE-2022-46769](./CVE-2022-46769.cve.json)
+CVE-2022-46769 [\[CVE json\]](./CVE-2022-46769.cve.json)
 
 ### Affected
 
@@ -49,7 +49,7 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 
 ## Multiple parsing problems in the Apache Sling Commons JSON module ## { #CVE-2022-47937 }
 
-[CVE-2022-47937](./CVE-2022-47937.cve.json)
+CVE-2022-47937 [\[CVE json\]](./CVE-2022-47937.cve.json)
 
 ### Affected
 
@@ -72,7 +72,7 @@ Apache Sling project, but may of course use other JSON libraries.<br></div></div
 
 ## XSS in CMS Reference / UI Components ## { #CVE-2023-22849 }
 
-[CVE-2023-22849](./CVE-2023-22849.cve.json)
+CVE-2023-22849 [\[CVE json\]](./CVE-2023-22849.cve.json)
 
 ### Affected
 
@@ -89,7 +89,7 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 
 ## JNDI injection into Apache sling-org-apache-sling-jcr-base ## { #CVE-2023-25141 }
 
-[CVE-2023-25141](./CVE-2023-25141.cve.json)
+CVE-2023-25141 [\[CVE json\]](./CVE-2023-25141.cve.json)
 
 ### Affected
 
@@ -106,7 +106,7 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 
 ## Apache Sling does not allow to handle i18n content in a secure way ## { #CVE-2023-25621 }
 
-[CVE-2023-25621](./CVE-2023-25621.cve.json)
+CVE-2023-25621 [\[CVE json\]](./CVE-2023-25621.cve.json)
 
 ### Affected
 
@@ -123,7 +123,7 @@ Privilege Escalation vulnerability in Apache Software Foundation Apache Sling.<b
 
 ## Requests to certain paths managed by the Apache Sling Resource Merger can lead to DoS ## { #CVE-2023-26513 }
 
-[CVE-2023-26513](./CVE-2023-26513.cve.json)
+CVE-2023-26513 [\[CVE json\]](./CVE-2023-26513.cve.json)
 
 ### Affected
 

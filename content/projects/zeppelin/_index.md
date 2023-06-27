@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Arbitrary file deletion vulnerability ## { #CVE-2021-28655 }
 
-[CVE-2021-28655](./CVE-2021-28655.cve.json)
+CVE-2021-28655 [\[CVE json\]](./CVE-2021-28655.cve.json)
 
 ### Affected
 
@@ -32,7 +32,7 @@ The improper Input Validation vulnerability in "”Move folder to Trash” featu
 
 ## Stored XSS in note permissions ## { #CVE-2022-46870 }
 
-[CVE-2022-46870](./CVE-2022-46870.cve.json)
+CVE-2022-46870 [\[CVE json\]](./CVE-2022-46870.cve.json)
 
 ### Affected
 

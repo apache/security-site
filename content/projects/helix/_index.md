@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Open redirect ## { #CVE-2022-47500 }
 
-[CVE-2022-47500](./CVE-2022-47500.cve.json)
+CVE-2022-47500 [\[CVE json\]](./CVE-2022-47500.cve.json)
 
 ### Affected
 

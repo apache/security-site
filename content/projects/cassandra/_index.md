@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Privilege escalation when enabling FQL/Audit logs ## { #CVE-2023-30601 }
 
-[CVE-2023-30601](./CVE-2023-30601.cve.json)
+CVE-2023-30601 [\[CVE json\]](./CVE-2023-30601.cve.json)
 
 ### Affected
 

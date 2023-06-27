@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## JsonErrorReportValve escaping ## { #CVE-2022-45143 }
 
-[CVE-2022-45143](./CVE-2022-45143.cve.json)
+CVE-2022-45143 [\[CVE json\]](./CVE-2022-45143.cve.json)
 
 ### Affected
 
@@ -34,7 +34,7 @@ The JsonErrorReportValve in Apache Tomcat 8.5.83, 9.0.40 to 9.0.68 and 10.1.0-M1
 
 ## JSESSIONID Cookie missing secure attribute in some configurations ## { #CVE-2023-28708 }
 
-[CVE-2023-28708](./CVE-2023-28708.cve.json)
+CVE-2023-28708 [\[CVE json\]](./CVE-2023-28708.cve.json)
 
 ### Affected
 
@@ -58,7 +58,7 @@ The JsonErrorReportValve in Apache Tomcat 8.5.83, 9.0.40 to 9.0.68 and 10.1.0-M1
 
 ## Fix for CVE-2023-24998 is incomplete ## { #CVE-2023-28709 }
 
-[CVE-2023-28709](./CVE-2023-28709.cve.json)
+CVE-2023-28709 [\[CVE json\]](./CVE-2023-28709.cve.json)
 
 ### Affected
 
@@ -78,7 +78,7 @@ The JsonErrorReportValve in Apache Tomcat 8.5.83, 9.0.40 to 9.0.68 and 10.1.0-M1
 
 ## AJP response header mix-up ## { #CVE-2023-34981 }
 
-[CVE-2023-34981](./CVE-2023-34981.cve.json)
+CVE-2023-34981 [\[CVE json\]](./CVE-2023-34981.cve.json)
 
 ### Affected
 

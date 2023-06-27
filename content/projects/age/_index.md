@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Python and Golang drivers allow data manipulation and exposure due to SQL injection ## { #CVE-2022-45786 }
 
-[CVE-2022-45786](./CVE-2022-45786.cve.json)
+CVE-2022-45786 [\[CVE json\]](./CVE-2022-45786.cve.json)
 
 ### Affected
 

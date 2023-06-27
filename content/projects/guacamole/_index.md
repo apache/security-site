@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Incorrect calculation of Guacamole protocol element lengths ## { #CVE-2023-30575 }
 
-[CVE-2023-30575](./CVE-2023-30575.cve.json)
+CVE-2023-30575 [\[CVE json\]](./CVE-2023-30575.cve.json)
 
 ### Affected
 
@@ -32,7 +32,7 @@ Apache Guacamole 1.5.1 and older may incorrectly calculate the lengths of instru
 
 ## Use-after-free in handling of RDP audio input buffer ## { #CVE-2023-30576 }
 
-[CVE-2023-30576](./CVE-2023-30576.cve.json)
+CVE-2023-30576 [\[CVE json\]](./CVE-2023-30576.cve.json)
 
 ### Affected
 

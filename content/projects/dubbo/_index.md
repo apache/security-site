@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Dubbo Deserialization Vulnerability Gadgets Bypass ## { #CVE-2023-23638 }
 
-[CVE-2023-23638](./CVE-2023-23638.cve.json)
+CVE-2023-23638 [\[CVE json\]](./CVE-2023-23638.cve.json)
 
 ### Affected
 

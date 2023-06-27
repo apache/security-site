@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## allows user impersonation ## { #CVE-2023-28326 }
 
-[CVE-2023-28326](./CVE-2023-28326.cve.json)
+CVE-2023-28326 [\[CVE json\]](./CVE-2023-28326.cve.json)
 
 ### Affected
 
@@ -32,7 +32,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## insufficient check of invitation hash ## { #CVE-2023-28936 }
 
-[CVE-2023-28936](./CVE-2023-28936.cve.json)
+CVE-2023-28936 [\[CVE json\]](./CVE-2023-28936.cve.json)
 
 ### Affected
 
@@ -49,7 +49,7 @@ Attacker can access arbitrary recording/room<br><br>Vendor: The Apache Software 
 
 ## allows bypass authentication ## { #CVE-2023-29032 }
 
-[CVE-2023-29032](./CVE-2023-29032.cve.json)
+CVE-2023-29032 [\[CVE json\]](./CVE-2023-29032.cve.json)
 
 ### Affected
 
@@ -66,7 +66,7 @@ Attacker can access arbitrary recording/room<br><br>Vendor: The Apache Software 
 
 ## allows null-byte Injection ## { #CVE-2023-29246 }
 
-[CVE-2023-29246](./CVE-2023-29246.cve.json)
+CVE-2023-29246 [\[CVE json\]](./CVE-2023-29246.cve.json)
 
 ### Affected
 

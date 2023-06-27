@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Arbitrary file reading vulnerability ## { #CVE-2022-47501 }
 
-[CVE-2022-47501](./CVE-2022-47501.cve.json)
+CVE-2022-47501 [\[CVE json\]](./CVE-2022-47501.cve.json)
 
 ### Affected
 

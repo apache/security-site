@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Possible RCE/Denial of service attack via SASL JAAS JndiLoginModule configuration using Kafka Connect  ## { #CVE-2023-25194 }
 
-[CVE-2023-25194](./CVE-2023-25194.cve.json)
+CVE-2023-25194 [\[CVE json\]](./CVE-2023-25194.cve.json)
 
 ### Affected
 

@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## JDBC JAAS LDAP injection ## { #CVE-2022-40145 }
 
-[CVE-2022-40145](./CVE-2022-40145.cve.json)
+CVE-2022-40145 [\[CVE json\]](./CVE-2022-40145.cve.json)
 
 ### Affected
 

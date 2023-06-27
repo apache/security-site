@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## The DatasourceManager module has a serialization attack vulnerability ## { #CVE-2022-44645 }
 
-[CVE-2022-44645](./CVE-2022-44645.cve.json)
+CVE-2022-44645 [\[CVE json\]](./CVE-2022-44645.cve.json)
 
 ### Affected
 
@@ -34,7 +34,7 @@ In Apache Linkis &lt;=1.3.0 when used with the MySQL Connector/J in the data sou
 
 ## The DatasourceManager module has a Local File Read Vulnerability ## { #CVE-2022-44644 }
 
-[CVE-2022-44644](./CVE-2022-44644.cve.json)
+CVE-2022-44644 [\[CVE json\]](./CVE-2022-44644.cve.json)
 
 ### Affected
 
@@ -51,7 +51,7 @@ In Apache Linkis &lt;=1.3.0 when used with the MySQL Connector/J in the data sou
 
 ## Apache Linkis publicsercice module unrestricted upload of file ## { #CVE-2023-27602 }
 
-[CVE-2023-27602](./CVE-2023-27602.cve.json)
+CVE-2023-27602 [\[CVE json\]](./CVE-2023-27602.cve.json)
 
 ### Affected
 
@@ -74,7 +74,7 @@ We recommend users upgrade the version of Linkis to version 1.3.2.&nbsp;<br></sp
 
 ## Apache Linkis Mangaer module engineConn material upload exists Zip Slip issue ## { #CVE-2023-27603 }
 
-[CVE-2023-27603](./CVE-2023-27603.cve.json)
+CVE-2023-27603 [\[CVE json\]](./CVE-2023-27603.cve.json)
 
 ### Affected
 
@@ -102,7 +102,7 @@ We recommend users upgrade the version of Linkis to version 1.3.2.
 
 ## Apache Linkis gateway module token authentication bypass ## { #CVE-2023-27987 }
 
-[CVE-2023-27987](./CVE-2023-27987.cve.json)
+CVE-2023-27987 [\[CVE json\]](./CVE-2023-27987.cve.json)
 
 ### Affected
 
@@ -130,7 +130,7 @@ We recommend users upgrade the version of Linkis to version 1.3.2 And modify the
 
 ## Apache Linkis JDBC EngineCon  has a deserialization command execution ## { #CVE-2023-29215 }
 
-[CVE-2023-29215](./CVE-2023-29215.cve.json)
+CVE-2023-29215 [\[CVE json\]](./CVE-2023-29215.cve.json)
 
 ### Affected
 
@@ -151,7 +151,7 @@ deserialization vulnerability and eventually lead to remote code execution. Ther
 
 ## Apache Linkis DatasourceManager module has a deserialization command execution ## { #CVE-2023-29216 }
 
-[CVE-2023-29216](./CVE-2023-29216.cve.json)
+CVE-2023-29216 [\[CVE json\]](./CVE-2023-29216.cve.json)
 
 ### Affected
 

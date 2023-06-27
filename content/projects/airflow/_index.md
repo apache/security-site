@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Hive Provider RCE vulnerability with hive_cli_params ## { #CVE-2022-46421 }
 
-[CVE-2022-46421](./CVE-2022-46421.cve.json)
+CVE-2022-46421 [\[CVE json\]](./CVE-2022-46421.cve.json)
 
 ### Affected
 
@@ -33,7 +33,7 @@ Improper Neutralization of Special Elements used in a Command ('Command Injectio
 
 ## Arbitrary file read via MySQL provider in Apache Airflow ## { #CVE-2023-22884 }
 
-[CVE-2023-22884](./CVE-2023-22884.cve.json)
+CVE-2023-22884 [\[CVE json\]](./CVE-2023-22884.cve.json)
 
 ### Affected
 
@@ -52,7 +52,7 @@ Improper Neutralization of Special Elements used in a Command ('Command Injectio
 
 ## Google Cloud Sql Provider Remote Command Execution ## { #CVE-2023-25691 }
 
-[CVE-2023-25691](./CVE-2023-25691.cve.json)
+CVE-2023-25691 [\[CVE json\]](./CVE-2023-25691.cve.json)
 
 ### Affected
 
@@ -70,7 +70,7 @@ Improper Input Validation vulnerability in the Apache Airflow Google Provider.<b
 
 ## Google Cloud Sql Provider Denial Of Service ## { #CVE-2023-25692 }
 
-[CVE-2023-25692](./CVE-2023-25692.cve.json)
+CVE-2023-25692 [\[CVE json\]](./CVE-2023-25692.cve.json)
 
 ### Affected
 
@@ -88,7 +88,7 @@ Improper Input Validation vulnerability in the Apache Airflow Google Provider.<b
 
 ## Sqoop Apache Airflow Provider Remote Code Execution Vulnerability ## { #CVE-2023-25693 }
 
-[CVE-2023-25693](./CVE-2023-25693.cve.json)
+CVE-2023-25693 [\[CVE json\]](./CVE-2023-25693.cve.json)
 
 ### Affected
 
@@ -106,7 +106,7 @@ Improper Input Validation vulnerability in the Apache Airflow Sqoop Provider.<br
 
 ## Information disclosure in Apache Airflow ## { #CVE-2023-25695 }
 
-[CVE-2023-25695](./CVE-2023-25695.cve.json)
+CVE-2023-25695 [\[CVE json\]](./CVE-2023-25695.cve.json)
 
 ### Affected
 
@@ -124,7 +124,7 @@ Generation of Error Message Containing Sensitive Information vulnerability in Ap
 
 ## Apache Airflow Hive Provider Beeline RCE ## { #CVE-2023-25696 }
 
-[CVE-2023-25696](./CVE-2023-25696.cve.json)
+CVE-2023-25696 [\[CVE json\]](./CVE-2023-25696.cve.json)
 
 ### Affected
 
@@ -142,7 +142,7 @@ Improper Input Validation vulnerability in the Apache Airflow Hive Provider.<br>
 
 ## Privilege escalation using airflow logs ## { #CVE-2023-25754 }
 
-[CVE-2023-25754](./CVE-2023-25754.cve.json)
+CVE-2023-25754 [\[CVE json\]](./CVE-2023-25754.cve.json)
 
 ### Affected
 
@@ -160,7 +160,7 @@ Privilege Context Switching Error vulnerability in Apache Software Foundation Ap
 
 ## Arbitrary file read via AWS provider ## { #CVE-2023-25956 }
 
-[CVE-2023-25956](./CVE-2023-25956.cve.json)
+CVE-2023-25956 [\[CVE json\]](./CVE-2023-25956.cve.json)
 
 ### Affected
 
@@ -178,7 +178,7 @@ Generation of Error Message Containing Sensitive Information vulnerability in th
 
 ## Apache Airflow Hive Provider Beeline Remote Command Execution ## { #CVE-2023-28706 }
 
-[CVE-2023-28706](./CVE-2023-28706.cve.json)
+CVE-2023-28706 [\[CVE json\]](./CVE-2023-28706.cve.json)
 
 ### Affected
 
@@ -196,7 +196,7 @@ Improper Control of Generation of Code ('Code Injection') vulnerability in Apach
 
 ## Airflow Apache Drill Provider Arbitrary File Read Vulnerability ## { #CVE-2023-28707 }
 
-[CVE-2023-28707](./CVE-2023-28707.cve.json)
+CVE-2023-28707 [\[CVE json\]](./CVE-2023-28707.cve.json)
 
 ### Affected
 
@@ -214,7 +214,7 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Air
 
 ## Apache Airflow Spark Provider Arbitrary File Read via JDBC ## { #CVE-2023-28710 }
 
-[CVE-2023-28710](./CVE-2023-28710.cve.json)
+CVE-2023-28710 [\[CVE json\]](./CVE-2023-28710.cve.json)
 
 ### Affected
 
@@ -232,7 +232,7 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Air
 
 ## Stored XSS on Apache Airflow ## { #CVE-2023-29247 }
 
-[CVE-2023-29247](./CVE-2023-29247.cve.json)
+CVE-2023-29247 [\[CVE json\]](./CVE-2023-29247.cve.json)
 
 ### Affected
 
@@ -251,7 +251,7 @@ Task instance details page in the UI is vulnerable to a stored XSS.<p>This issue
 
 ## KubernetesPodOperator RCE via connection configuration ## { #CVE-2023-33234 }
 
-[CVE-2023-33234](./CVE-2023-33234.cve.json)
+CVE-2023-33234 [\[CVE json\]](./CVE-2023-33234.cve.json)
 
 ### Affected
 
@@ -268,7 +268,7 @@ Arbitrary code execution in Apache Airflow CNCF Kubernetes provider version 5.0.
 
 ## Information disclosure on configuration view ## { #CVE-2023-35005 }
 
-[CVE-2023-35005](./CVE-2023-35005.cve.json)
+CVE-2023-35005 [\[CVE json\]](./CVE-2023-35005.cve.json)
 
 ### Affected
 

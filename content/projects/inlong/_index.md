@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Jdbc Connection causes arbitrary file reading in InLong ## { #CVE-2023-24977 }
 
-[CVE-2023-24977](./CVE-2023-24977.cve.json)
+CVE-2023-24977 [\[CVE json\]](./CVE-2023-24977.cve.json)
 
 ### Affected
 
@@ -32,7 +32,7 @@ Out-of-bounds Read vulnerability in Apache Software Foundation Apache InLong.<p>
 
 ## Jdbc Connection Security Bypass ## { #CVE-2023-24997 }
 
-[CVE-2023-24997](./CVE-2023-24997.cve.json)
+CVE-2023-24997 [\[CVE json\]](./CVE-2023-24997.cve.json)
 
 ### Affected
 
@@ -49,7 +49,7 @@ Deserialization of Untrusted Data vulnerability in Apache Software Foundation Ap
 
 ## JDBC Deserialization Vulnerability in InLong ## { #CVE-2023-27296 }
 
-[CVE-2023-27296](./CVE-2023-27296.cve.json)
+CVE-2023-27296 [\[CVE json\]](./CVE-2023-27296.cve.json)
 
 ### Affected
 
@@ -72,7 +72,7 @@ Deserialization of Untrusted Data vulnerability in Apache Software Foundation Ap
 
 ## SQL injection in apache inLong 1.5.0 ## { #CVE-2023-30465 }
 
-[CVE-2023-30465](./CVE-2023-30465.cve.json)
+CVE-2023-30465 [\[CVE json\]](./CVE-2023-30465.cve.json)
 
 ### Affected
 
@@ -91,7 +91,7 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 
 ## JDBC URL bypassing by adding blanks ## { #CVE-2023-31058 }
 
-[CVE-2023-31058](./CVE-2023-31058.cve.json)
+CVE-2023-31058 [\[CVE json\]](./CVE-2023-31058.cve.json)
 
 ### Affected
 
@@ -111,7 +111,7 @@ Deserialization of Untrusted Data Vulnerability in Apache Software Foundation Ap
 
 ## Privilege escalation vulnerability for InLong ## { #CVE-2023-31062 }
 
-[CVE-2023-31062](./CVE-2023-31062.cve.json)
+CVE-2023-31062 [\[CVE json\]](./CVE-2023-31062.cve.json)
 
 ### Affected
 
@@ -132,7 +132,7 @@ using the returned cookie<span style="background-color: rgb(255, 255, 255);">.</
 
 ## Insecurity direct object references cancelling applications ## { #CVE-2023-31064 }
 
-[CVE-2023-31064](./CVE-2023-31064.cve.json)
+CVE-2023-31064 [\[CVE json\]](./CVE-2023-31064.cve.json)
 
 ### Affected
 
@@ -149,7 +149,7 @@ Files or Directories Accessible to External Parties vulnerability in Apache Soft
 
 ## Insufficient Session Expiration in InLong ## { #CVE-2023-31065 }
 
-[CVE-2023-31065](./CVE-2023-31065.cve.json)
+CVE-2023-31065 [\[CVE json\]](./CVE-2023-31065.cve.json)
 
 ### Affected
 
@@ -174,7 +174,7 @@ Users are advised to upgrade to Apache InLong's 1.7.0 or cherry-pick <a target="
 
 ## Insecure direct object references for inlong sources ## { #CVE-2023-31066 }
 
-[CVE-2023-31066](./CVE-2023-31066.cve.json)
+CVE-2023-31066 [\[CVE json\]](./CVE-2023-31066.cve.json)
 
 ### Affected
 
@@ -191,7 +191,7 @@ Files or Directories Accessible to External Parties vulnerability in Apache Soft
 
 ## Weak Password Implementation in InLong ## { #CVE-2023-31098 }
 
-[CVE-2023-31098](./CVE-2023-31098.cve.json)
+CVE-2023-31098 [\[CVE json\]](./CVE-2023-31098.cve.json)
 
 ### Affected
 
@@ -211,7 +211,7 @@ symbol), attackers can easily guess the user's password and access the account.<
 
 ## Users who joined later can see the data of deleted users ## { #CVE-2023-31101 }
 
-[CVE-2023-31101](./CVE-2023-31101.cve.json)
+CVE-2023-31101 [\[CVE json\]](./CVE-2023-31101.cve.json)
 
 ### Affected
 
@@ -228,7 +228,7 @@ Insecure Default Initialization of Resource Vulnerability in Apache Software Fou
 
 ## Attackers can change the immutable name and type of cluster ## { #CVE-2023-31103 }
 
-[CVE-2023-31103](./CVE-2023-31103.cve.json)
+CVE-2023-31103 [\[CVE json\]](./CVE-2023-31103.cve.json)
 
 ### Affected
 
@@ -246,7 +246,7 @@ Attackers can change the immutable name and type of cluster of InLong.&nbsp;User
 
 ## Attackers can change the immutable name and type of nodes ## { #CVE-2023-31206 }
 
-[CVE-2023-31206](./CVE-2023-31206.cve.json)
+CVE-2023-31206 [\[CVE json\]](./CVE-2023-31206.cve.json)
 
 ### Affected
 
@@ -263,7 +263,7 @@ Exposure of Resource to Wrong Sphere Vulnerability in Apache Software Foundation
 
 ## IDOR make users can delete others' subscription ## { #CVE-2023-31453 }
 
-[CVE-2023-31453](./CVE-2023-31453.cve.json)
+CVE-2023-31453 [\[CVE json\]](./CVE-2023-31453.cve.json)
 
 ### Affected
 
@@ -287,7 +287,7 @@ of the deleted subscription</span><span style="background-color: rgb(255, 255, 2
 
 ## IDOR make users can bind any cluster ## { #CVE-2023-31454 }
 
-[CVE-2023-31454](./CVE-2023-31454.cve.json)
+CVE-2023-31454 [\[CVE json\]](./CVE-2023-31454.cve.json)
 
 ### Affected
 
