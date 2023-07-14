@@ -20,7 +20,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Atlas |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache BookKeeper |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache bRPC |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache Camel](https://camel.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Camel](https://camel.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://camel.apache.org/security/) |
 | Apache Cassandra |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache CloudStack](https://cloudstack.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Commons](https://commons.apache.org/security.html) |  [Apache Commons Security Team](mailto:security@commons.apache.org) | |
@@ -46,7 +46,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Jena |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache JMeter](https://jmeter.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache JSPWiki |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache Kafka](https://kafka.apache.org/project-security.html) |  [Apache Kafka Security Team](mailto:security@kafka.apache.org) | |
+| [Apache Kafka](https://kafka.apache.org/project-security.html) |  [Apache Kafka Security Team](mailto:security@kafka.apache.org) | [Advisories](https://kafka.apache.org/cve-list.html) |
 | Apache Karaf |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Kylin |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Libcloud](https://libcloud.apache.org/security.html) |  [Apache Libcloud Security Team](mailto:security@libcloud.apache.org) | |
@@ -77,7 +77,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache StreamPark (Incubating) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache StreamPipes |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Struts](https://struts.apache.org/security.html) |  [Apache Struts Security Team](mailto:security@struts.apache.org) | |
-| [Apache Subversion](https://subversion.apache.org/security/) |  [Apache Subversion Security Team](mailto:security@subversion.apache.org) | |
+| [Apache Subversion](https://subversion.apache.org/security/) |  [Apache Subversion Security Team](mailto:security@subversion.apache.org) | [Advisories](https://subversion.apache.org/security/) |
 | Apache Superset |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Tomcat](https://tomcat.apache.org/security.html) |  [Apache Tomcat Security Team](mailto:security@tomcat.apache.org) | [Advisories](https://tomcat.apache.org/security.html) |
 | [Apache Traffic Control](https://trafficcontrol.apache.org/security/index.html) |  [Apache Traffic Control Security Team](mailto:security@trafficcontrol.apache.org) | |
