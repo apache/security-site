@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.111.3">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Apache Pulsar security advisories </title>
+
+  
+  <meta name="description" content="Security information for Apache Pulsar"> 
+  
+  
+  
+  
+  
+  <meta name="robots" content="noindex">
+  
+
+  
+
+  <meta name="author" content="">
+
+
+  <meta property="og:title" content="Apache Pulsar security advisories" />
+<meta property="og:description" content="Security information for Apache Pulsar" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://security.apache.org/projects/pulsar/" />
+
+  
+
+
+
+
+  
+  
+  
+  
+   <link href="/projects/pulsar/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
+
+  <link rel="canonical" href="https://security.apache.org/projects/pulsar/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Apache Security Team</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Apache Security Team</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog" >Blog</a></li>
+    
+    <li><a href="https://www.apache.org/licenses/" >License</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
+    
+    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
+    
+    <li><a href="https://www.apache.org" >Apache</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+
+<div id="hero" class="wrap">
+  <h1>Apache Pulsar security advisories</h1>
+    <p>Security information for Apache Pulsar</p>
+</div>
+<div id="project-box">
+<div id="project">
+
+ <h1 id="reporting">Reporting</h1>
+<p>Do you want disclose a potential security issue for Apache Pulsar? Send your report to the  <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<h1 id="advisories">Advisories</h1>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2023-30428">Incorrect Authorization Validation for Rest Producer</h2>
+<p>CVE-2023-30428 <a href="./CVE-2023-30428.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Pulsar Broker from 2.9.0 through 2.9.5</li>
+<li>Apache Pulsar Broker from 2.10.0 before 2.10.4</li>
+<li>Apache Pulsar Broker at 2.11.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsar Broker&rsquo;s Rest Producer allows authenticated user with a custom HTTP header to produce a message to any topic using the broker&rsquo;s admin role.<br>This issue affects Apache Pulsar Brokers: from 2.9.0 through 2.9.5, from 2.10.0 before 2.10.4, 2.11.0.<br><br>The vulnerability is exploitable when an attacker can connect directly to the Pulsar Broker. If an attacker is connecting through the Pulsar Proxy, there is no known way to exploit this authorization vulnerability.<br><br>There are two known risks for affected users. First, an attacker could produce garbage messages to any topic in the cluster. Second, an attacker could produce messages to the topic level policies topic for other tenants and influence topic settings that could lead to exfiltration and/or deletion of messages for other tenants.<br><br>2.8 Pulsar Broker users and earlier are unaffected.<br>2.9 Pulsar Broker users should upgrade to one of the patched versions.<br>2.10 Pulsar Broker users should upgrade to at least 2.10.4.<br>2.11 Pulsar Broker users should upgrade to at least 2.11.1.<br>3.0 Pulsar Broker users are unaffected.<br><br></p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/v39hqtgrmyxr85rmofwvgrktnflbq3q5">https://lists.apache.org/thread/v39hqtgrmyxr85rmofwvgrktnflbq3q5</a></li>
+</ul>
+<h2 id="CVE-2023-30429">Incorrect Authorization for Function Worker when using mTLS Authentication through Pulsar Proxy</h2>
+<p>CVE-2023-30429 <a href="./CVE-2023-30429.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Pulsar before 2.10.4</li>
+<li>Apache Pulsar at 2.11.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsar.<br><br>This issue affects Apache Pulsar: before 2.10.4, and 2.11.0.<br><br>When a client connects to the Pulsar Function Worker via the Pulsar Proxy where the Pulsar Proxy uses mTLS authentication to authenticate with the Pulsar Function Worker, the Pulsar Function Worker incorrectly performs authorization by using the Proxy&rsquo;s role for authorization instead of the client&rsquo;s role, which can lead to privilege escalation, especially if the proxy is configured with a superuser role.<br><br>The recommended mitigation for impacted users is to upgrade the Pulsar Function Worker to a patched version.<br><br>2.10 Pulsar Function Worker users should upgrade to at least 2.10.4.<br>2.11 Pulsar Function Worker users should upgrade to at least 2.11.1.<br>3.0 Pulsar Function Worker users are unaffected.<br>Any users running the Pulsar Function Worker for 2.9.* and earlier should upgrade to one of the above patched versions.<br></p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/v0gcvvxswr830314q4b1kybsfmcf3jf8">https://lists.apache.org/thread/v0gcvvxswr830314q4b1kybsfmcf3jf8</a></li>
+</ul>
+<h2 id="CVE-2023-31007">Broker does not always disconnect client when authentication data expires</h2>
+<p>CVE-2023-31007 <a href="./CVE-2023-31007.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Pulsar before 2.9.5</li>
+<li>Apache Pulsar from 2.10.0 through 2.10.3</li>
+<li>Apache Pulsar at 2.11.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Improper Authentication vulnerability in Apache Software Foundation Apache Pulsar Broker allows a client to stay connected to a broker after authentication data expires if the client connected through the Pulsar Proxy when the broker is configured with authenticateOriginalAuthData=false or if a client connects directly to a broker with a specially crafted connect command when the broker is configured with authenticateOriginalAuthData=false.<br><br>This issue affects Apache Pulsar: through 2.9.4, from 2.10.0 through 2.10.3, 2.11.0.<br><br>2.9 Pulsar Broker users should upgrade to at least 2.9.5.<br>2.10 Pulsar Broker users should upgrade to at least 2.10.4.<br>2.11 Pulsar Broker users should upgrade to at least 2.11.1.<br>3.0 Pulsar Broker users are unaffected.<br>Any users running the Pulsar Broker for 2.8.* and earlier should upgrade to one of the above patched versions.<br></p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/qxn99xxyp0zv6jchjggn3soyo5gvqfxj">https://lists.apache.org/thread/qxn99xxyp0zv6jchjggn3soyo5gvqfxj</a></li>
+</ul>
+<h2 id="CVE-2023-37579">Incorrect Authorization for Function Worker Can Leak Sink/Source Credentials</h2>
+<p>CVE-2023-37579 <a href="./CVE-2023-37579.cve.json">[CVE json]</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Pulsar Function Worker before 2.10.4</li>
+<li>Apache Pulsar Function Worker at 2.11.0</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsar Function Worker.<br><br>This issue affects Apache Pulsar: before 2.10.4, and 2.11.0.<br><br>Any authenticated user can retrieve a source&rsquo;s configuration or a sink&rsquo;s configuration without authorization. Many sources and sinks contain credentials in the configuration, which could lead to leaked credentials. This vulnerability is mitigated by the fact that there is not a known way for an authenticated user to enumerate another tenant&rsquo;s sources or sinks, meaning the source or sink name would need to be guessed in order to exploit this vulnerability.<br><br>The recommended mitigation for impacted users is to upgrade the Pulsar Function Worker to a patched version.<br><br>2.10 Pulsar Function Worker users should upgrade to at least 2.10.4.<br>2.11 Pulsar Function Worker users should upgrade to at least 2.11.1.<br>3.0 Pulsar Function Worker users are unaffected.<br>Any users running the Pulsar Function Worker for 2.9.* and earlier should upgrade to one of the above patched versions.<br><br></p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/0dmn3cb5n2p08o3cpj3ycfhzfqs2ppwz">https://lists.apache.org/thread/0dmn3cb5n2p08o3cpj3ycfhzfqs2ppwz</a></li>
+</ul>
+
+  
+</div>
+</div>
+</main>
+  <footer> 
+    <footer id="footer">
+    <p>&copy; 2023 The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+  </footer>
+ 
+</footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/main.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

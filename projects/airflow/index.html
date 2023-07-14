@@ -120,159 +120,210 @@
 <li><a href="https://github.com/apache/airflow/pull/28101">https://github.com/apache/airflow/pull/28101</a></li>
 <li><a href="https://lists.apache.org/thread/09twdoyoybldlfj5gvk0qswtofh0rmp4">https://lists.apache.org/thread/09twdoyoybldlfj5gvk0qswtofh0rmp4</a></li>
 </ul>
+<h2 id="CVE-2022-46651">Security vulnerability on AirFlow Connections</h2>
+<p>CVE-2022-46651 <a href="./CVE-2022-46651.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Airflow before 2.6.3</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Apache Airflow, versions before 2.6.3, is affected by a vulnerability that allows an unauthorized actor to gain access to sensitive information in Connection edit view. This vulnerability is considered low since it requires someone with access to Connection resources specifically updating the connection to exploit it. Users should upgrade to version 2.6.3 or later which has removed the vulnerability.<br></p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/32309">https://github.com/apache/airflow/pull/32309</a></li>
+<li><a href="https://lists.apache.org/thread/n45h3y82og125rnlgt6rbm9szfb6q24d">https://lists.apache.org/thread/n45h3y82og125rnlgt6rbm9szfb6q24d</a></li>
+</ul>
 <h2 id="CVE-2023-22884">Arbitrary file read via MySQL provider in Apache Airflow</h2>
 <p>CVE-2023-22884 <a href="./CVE-2023-22884.cve.json">[CVE json]</a></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache Airflow before 2.5.1</li>
 <li>Apache Airflow MySQL Provider before 4.0.0</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-2">Description</h3>
 <p>Improper Neutralization of Special Elements used in a Command (&lsquo;Command Injection&rsquo;) vulnerability in Apache Software Foundation Apache Airflow, Apache Software Foundation Apache Airflow MySQL Provider.<p>This issue affects Apache Airflow: before 2.5.1; Apache Airflow MySQL Provider: before 4.0.0.</p></p>
-<h3 id="references-1">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/28811">https://github.com/apache/airflow/pull/28811</a></li>
 <li><a href="https://lists.apache.org/thread/0l0j3nt0t7fzrcjl2ch0jgj6c58kxs5h">https://lists.apache.org/thread/0l0j3nt0t7fzrcjl2ch0jgj6c58kxs5h</a></li>
 </ul>
+<h2 id="CVE-2023-22886">RCE Vulnerability</h2>
+<p>CVE-2023-22886 <a href="./CVE-2023-22886.cve.json">[CVE json]</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Airflow JDBC Provider before 4.0.0</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Improper Input Validation vulnerability in Apache Software Foundation Apache Airflow JDBC Provider.<br><span style="background-color: rgb(255, 255, 255);">Airflow JDBC Provider Connection’s [Connection URL] parameters had no</span><br><span style="background-color: rgb(255, 255, 255);">restrictions, which made it possible to implement RCE attacks via</span><br><span style="background-color: rgb(255, 255, 255);">different type JDBC drivers, obtain airflow server permission.</span><br><p>This issue affects Apache Airflow JDBC Provider: before 4.0.0.<br></p></p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/ynbjwp4n0vzql0xzhog1gkp1ovncf8j3">https://lists.apache.org/thread/ynbjwp4n0vzql0xzhog1gkp1ovncf8j3</a></li>
+</ul>
+<h2 id="CVE-2023-22887">Apache Airflow path traversal by authenticated user</h2>
+<p>CVE-2023-22887 <a href="./CVE-2023-22887.cve.json">[CVE json]</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Airflow before 2.6.3</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Apache Airflow, versions before 2.6.3, is affected by a vulnerability that allows an attacker to perform unauthorized file access outside the intended directory structure by manipulating the run_id parameter. This vulnerability is considered low since it requires an authenticated user to exploit it. It is recommended to upgrade to a version that is not affected</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/32293">https://github.com/apache/airflow/pull/32293</a></li>
+<li><a href="https://lists.apache.org/thread/rxddqs76r6rkxsg1n24d029zys67qwwo">https://lists.apache.org/thread/rxddqs76r6rkxsg1n24d029zys67qwwo</a></li>
+</ul>
+<h2 id="CVE-2023-22888">Scheduler remote DoS</h2>
+<p>CVE-2023-22888 <a href="./CVE-2023-22888.cve.json">[CVE json]</a></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Airflow before 2.6.3</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Apache Airflow, versions before 2.6.3, is affected by a vulnerability that allows an attacker to cause a service disruption by manipulating the run_id parameter. This vulnerability is considered low since it requires an authenticated user to exploit it. It is recommended to upgrade to a version that is not affected</p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/32293">https://github.com/apache/airflow/pull/32293</a></li>
+<li><a href="https://lists.apache.org/thread/dnlht2hvm7k81k5tgjtsfmk27c76kq7z">https://lists.apache.org/thread/dnlht2hvm7k81k5tgjtsfmk27c76kq7z</a></li>
+</ul>
 <h2 id="CVE-2023-25691">Google Cloud Sql Provider Remote Command Execution</h2>
 <p>CVE-2023-25691 <a href="./CVE-2023-25691.cve.json">[CVE json]</a></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-6">Affected</h3>
 <ul>
 <li>Apache Airflow Google Provider before 8.10.0</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-6">Description</h3>
 <p>Improper Input Validation vulnerability in the Apache Airflow Google Provider.<br><br><p>This issue affects Apache Airflow Google Provider versions before 8.10.0.</p></p>
-<h3 id="references-2">References</h3>
+<h3 id="references-6">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/29497">https://github.com/apache/airflow/pull/29497</a></li>
 <li><a href="https://lists.apache.org/thread/zdr8ovfttbh7kj0lydgcw88tbt2nmkcy">https://lists.apache.org/thread/zdr8ovfttbh7kj0lydgcw88tbt2nmkcy</a></li>
 </ul>
 <h2 id="CVE-2023-25692">Google Cloud Sql Provider Denial Of Service</h2>
 <p>CVE-2023-25692 <a href="./CVE-2023-25692.cve.json">[CVE json]</a></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-7">Affected</h3>
 <ul>
 <li>Apache Airflow Google Provider before 8.10.0</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-7">Description</h3>
 <p>Improper Input Validation vulnerability in the Apache Airflow Google Provider.<br><br><p>This issue affects Apache Airflow Google Provider versions before 8.10.0.</p></p>
-<h3 id="references-3">References</h3>
+<h3 id="references-7">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/29499">https://github.com/apache/airflow/pull/29499</a></li>
 <li><a href="https://lists.apache.org/thread/ks4l78l5rwdpmvfn7y7yhs179nyxtlsh">https://lists.apache.org/thread/ks4l78l5rwdpmvfn7y7yhs179nyxtlsh</a></li>
 </ul>
 <h2 id="CVE-2023-25693">Sqoop Apache Airflow Provider Remote Code Execution Vulnerability</h2>
 <p>CVE-2023-25693 <a href="./CVE-2023-25693.cve.json">[CVE json]</a></p>
-<h3 id="affected-4">Affected</h3>
+<h3 id="affected-8">Affected</h3>
 <ul>
 <li>Apache Airflow Sqoop Provider before 3.1.1</li>
 </ul>
-<h3 id="description-4">Description</h3>
+<h3 id="description-8">Description</h3>
 <p>Improper Input Validation vulnerability in the Apache Airflow Sqoop Provider.<br><br><p>This issue affects Apache Airflow Sqoop Provider versions before 3.1.1.</p></p>
-<h3 id="references-4">References</h3>
+<h3 id="references-8">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/29500">https://github.com/apache/airflow/pull/29500</a></li>
 <li><a href="https://lists.apache.org/thread/79qn8g5xbq036f8crb115obvr22l52q4">https://lists.apache.org/thread/79qn8g5xbq036f8crb115obvr22l52q4</a></li>
 </ul>
 <h2 id="CVE-2023-25695">Information disclosure in Apache Airflow</h2>
 <p>CVE-2023-25695 <a href="./CVE-2023-25695.cve.json">[CVE json]</a></p>
-<h3 id="affected-5">Affected</h3>
+<h3 id="affected-9">Affected</h3>
 <ul>
 <li>Apache Airflow before 2.5.2</li>
 </ul>
-<h3 id="description-5">Description</h3>
+<h3 id="description-9">Description</h3>
 <p>Generation of Error Message Containing Sensitive Information vulnerability in Apache Software Foundation Apache Airflow.<p>This issue affects Apache Airflow: before 2.5.2.</p></p>
-<h3 id="references-5">References</h3>
+<h3 id="references-9">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/29501">https://github.com/apache/airflow/pull/29501</a></li>
 <li><a href="https://lists.apache.org/thread/z8w6ckzs61ql365tv4d19k82o67r15p2">https://lists.apache.org/thread/z8w6ckzs61ql365tv4d19k82o67r15p2</a></li>
 </ul>
 <h2 id="CVE-2023-25696">Apache Airflow Hive Provider Beeline RCE</h2>
 <p>CVE-2023-25696 <a href="./CVE-2023-25696.cve.json">[CVE json]</a></p>
-<h3 id="affected-6">Affected</h3>
+<h3 id="affected-10">Affected</h3>
 <ul>
 <li>Apache Airflow Hive Provider before 5.1.3</li>
 </ul>
-<h3 id="description-6">Description</h3>
+<h3 id="description-10">Description</h3>
 <p>Improper Input Validation vulnerability in the Apache Airflow Hive Provider.<br><br><p>This issue affects Apache Airflow Hive Provider versions before 5.1.3.</p></p>
-<h3 id="references-6">References</h3>
+<h3 id="references-10">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/29502">https://github.com/apache/airflow/pull/29502</a></li>
 <li><a href="https://lists.apache.org/thread/99g0qm56wmgdxmbtdsvhj4rdnxhpzpml">https://lists.apache.org/thread/99g0qm56wmgdxmbtdsvhj4rdnxhpzpml</a></li>
 </ul>
 <h2 id="CVE-2023-25754">Privilege escalation using airflow logs</h2>
 <p>CVE-2023-25754 <a href="./CVE-2023-25754.cve.json">[CVE json]</a></p>
-<h3 id="affected-7">Affected</h3>
+<h3 id="affected-11">Affected</h3>
 <ul>
 <li>Apache Airflow before 2.6.0</li>
 </ul>
-<h3 id="description-7">Description</h3>
+<h3 id="description-11">Description</h3>
 <p>Privilege Context Switching Error vulnerability in Apache Software Foundation Apache Airflow.<p>This issue affects Apache Airflow: before 2.6.0.</p></p>
-<h3 id="references-7">References</h3>
+<h3 id="references-11">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/29506">https://github.com/apache/airflow/pull/29506</a></li>
 <li><a href="https://lists.apache.org/thread/3y83gr0qb8t49ppfk4fb2yk7md8ltq4v">https://lists.apache.org/thread/3y83gr0qb8t49ppfk4fb2yk7md8ltq4v</a></li>
 </ul>
 <h2 id="CVE-2023-25956">Arbitrary file read via AWS provider</h2>
 <p>CVE-2023-25956 <a href="./CVE-2023-25956.cve.json">[CVE json]</a></p>
-<h3 id="affected-8">Affected</h3>
+<h3 id="affected-12">Affected</h3>
 <ul>
 <li>Apache Airflow AWS Provider before 7.2.1</li>
 </ul>
-<h3 id="description-8">Description</h3>
+<h3 id="description-12">Description</h3>
 <p>Generation of Error Message Containing Sensitive Information vulnerability in the Apache Airflow AWS Provider.<br><br><p>This issue affects Apache Airflow AWS Provider versions before 7.2.1.</p></p>
-<h3 id="references-8">References</h3>
+<h3 id="references-12">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/29587">https://github.com/apache/airflow/pull/29587</a></li>
 <li><a href="https://lists.apache.org/thread/07pl9y4gdpw2c6rzqm77dvkm2z2kb5gv">https://lists.apache.org/thread/07pl9y4gdpw2c6rzqm77dvkm2z2kb5gv</a></li>
 </ul>
 <h2 id="CVE-2023-28706">Apache Airflow Hive Provider Beeline Remote Command Execution</h2>
 <p>CVE-2023-28706 <a href="./CVE-2023-28706.cve.json">[CVE json]</a></p>
-<h3 id="affected-9">Affected</h3>
+<h3 id="affected-13">Affected</h3>
 <ul>
 <li>Apache Airflow Hive Provider before 6.0.0</li>
 </ul>
-<h3 id="description-9">Description</h3>
+<h3 id="description-13">Description</h3>
 <p>Improper Control of Generation of Code (&lsquo;Code Injection&rsquo;) vulnerability in Apache Software Foundation Apache Airflow Hive Provider.<p>This issue affects Apache Airflow Hive Provider: before 6.0.0.</p></p>
-<h3 id="references-9">References</h3>
+<h3 id="references-13">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/30212">https://github.com/apache/airflow/pull/30212</a></li>
 <li><a href="https://lists.apache.org/thread/dl20xxd51xvlx0zzc0wzgxfjwgtbbxo3">https://lists.apache.org/thread/dl20xxd51xvlx0zzc0wzgxfjwgtbbxo3</a></li>
 </ul>
 <h2 id="CVE-2023-28707">Airflow Apache Drill Provider Arbitrary File Read Vulnerability</h2>
 <p>CVE-2023-28707 <a href="./CVE-2023-28707.cve.json">[CVE json]</a></p>
-<h3 id="affected-10">Affected</h3>
+<h3 id="affected-14">Affected</h3>
 <ul>
 <li>Apache Airflow Drill Provider before 2.3.2</li>
 </ul>
-<h3 id="description-10">Description</h3>
+<h3 id="description-14">Description</h3>
 <p>Improper Input Validation vulnerability in Apache Software Foundation Apache Airflow Drill Provider.<p>This issue affects Apache Airflow Drill Provider: before 2.3.2.</p></p>
-<h3 id="references-10">References</h3>
+<h3 id="references-14">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/30215">https://github.com/apache/airflow/pull/30215</a></li>
 <li><a href="https://lists.apache.org/thread/dfoj7q1nd0vhhsl8fjg63z4j6mfmdxtk">https://lists.apache.org/thread/dfoj7q1nd0vhhsl8fjg63z4j6mfmdxtk</a></li>
 </ul>
 <h2 id="CVE-2023-28710">Apache Airflow Spark Provider Arbitrary File Read via JDBC</h2>
 <p>CVE-2023-28710 <a href="./CVE-2023-28710.cve.json">[CVE json]</a></p>
-<h3 id="affected-11">Affected</h3>
+<h3 id="affected-15">Affected</h3>
 <ul>
 <li>Apache Airflow Spark Provider before 4.0.1</li>
 </ul>
-<h3 id="description-11">Description</h3>
+<h3 id="description-15">Description</h3>
 <p>Improper Input Validation vulnerability in Apache Software Foundation Apache Airflow Spark Provider.<p>This issue affects Apache Airflow Spark Provider: before 4.0.1.</p></p>
-<h3 id="references-11">References</h3>
+<h3 id="references-15">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/30223">https://github.com/apache/airflow/pull/30223</a></li>
 <li><a href="https://lists.apache.org/thread/lb9w9114ow00h2nkn8bjm106v5x1p1d2">https://lists.apache.org/thread/lb9w9114ow00h2nkn8bjm106v5x1p1d2</a></li>
 </ul>
 <h2 id="CVE-2023-29247">Stored XSS on Apache Airflow</h2>
 <p>CVE-2023-29247 <a href="./CVE-2023-29247.cve.json">[CVE json]</a></p>
-<h3 id="affected-12">Affected</h3>
+<h3 id="affected-16">Affected</h3>
 <ul>
 <li>Apache Airflow before 2.6.0</li>
 </ul>
-<h3 id="description-12">Description</h3>
+<h3 id="description-16">Description</h3>
 <p>Task instance details page in the UI is vulnerable to a stored XSS.<p>This issue affects Apache Airflow: before 2.6.0.</p><br></p>
-<h3 id="references-12">References</h3>
+<h3 id="references-16">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/30447">https://github.com/apache/airflow/pull/30447</a></li>
 <li><a href="https://github.com/apache/airflow/pull/30779">https://github.com/apache/airflow/pull/30779</a></li>
@@ -280,29 +331,107 @@
 </ul>
 <h2 id="CVE-2023-33234">KubernetesPodOperator RCE via connection configuration</h2>
 <p>CVE-2023-33234 <a href="./CVE-2023-33234.cve.json">[CVE json]</a></p>
-<h3 id="affected-13">Affected</h3>
+<h3 id="affected-17">Affected</h3>
 <ul>
 <li>Apache Airflow CNCF Kubernetes Provider from 5.0.0 through 6.1.0</li>
 </ul>
-<h3 id="description-13">Description</h3>
+<h3 id="description-17">Description</h3>
 <p>Arbitrary code execution in Apache Airflow CNCF Kubernetes provider version 5.0.0 allows user to change xcom sidecar image and resources via Airflow connection.<br><br>In order to exploit this weakness, a user would already need elevated permissions (Op or Admin) to change the connection object in this manner.  Operators should upgrade to provider version 7.0.0 which has removed the vulnerability.<br><br></p>
-<h3 id="references-13">References</h3>
+<h3 id="references-17">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/n1vpgl6h2qsdm52o9m2tx1oo86tl4gnq">https://lists.apache.org/thread/n1vpgl6h2qsdm52o9m2tx1oo86tl4gnq</a></li>
 </ul>
+<h2 id="CVE-2023-34395">Remote code execution vulnerability</h2>
+<p>CVE-2023-34395 <a href="./CVE-2023-34395.cve.json">[CVE json]</a></p>
+<h3 id="affected-18">Affected</h3>
+<ul>
+<li>Apache Airflow ODBC Provider before 4.0.0</li>
+</ul>
+<h3 id="description-18">Description</h3>
+<p>Improper Neutralization of Argument Delimiters in a Command (&lsquo;Argument Injection&rsquo;) vulnerability in Apache Software Foundation Apache Airflow ODBC Provider.<br><span style="background-color: rgb(255, 255, 255);">In OdbcHook, A privilege escalation vulnerability exists in a system due to controllable ODBC driver parameters that allow the loading of arbitrary dynamic-link libraries, resulting in command execution.<br></span>Starting version 4.0.0 driver can be set only from the hook constructor.<br><p>This issue affects Apache Airflow ODBC Provider: before 4.0.0.</p></p>
+<h3 id="references-18">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/31713">https://github.com/apache/airflow/pull/31713</a></li>
+<li><a href="https://lists.apache.org/thread/l26yykftzbhc9tgcph8cso88bc2lqwwd">https://lists.apache.org/thread/l26yykftzbhc9tgcph8cso88bc2lqwwd</a></li>
+</ul>
 <h2 id="CVE-2023-35005">Information disclosure on configuration view</h2>
 <p>CVE-2023-35005 <a href="./CVE-2023-35005.cve.json">[CVE json]</a></p>
-<h3 id="affected-14">Affected</h3>
+<h3 id="affected-19">Affected</h3>
 <ul>
 <li>Apache Airflow from 2.5.0 before 2.6.2</li>
 </ul>
-<h3 id="description-14">Description</h3>
+<h3 id="description-19">Description</h3>
 <div>In Apache Airflow, some potentially sensitive values were being shown to the user in certain situations.</div><div>This vulnerability is mitigated by the fact configuration is not shown in the UI by default (only if `[webserver] expose_config` is set to `non-sensitive-only`), and not all uncensored values are actually sentitive.</div><br><div>This issue affects Apache Airflow: from 2.5.0 before 2.6.2. Users are recommended to update to version 2.6.2 or later.<br></div>
-<h3 id="references-14">References</h3>
+<h3 id="references-19">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/31788">https://github.com/apache/airflow/pull/31788</a></li>
 <li><a href="https://github.com/apache/airflow/pull/31820">https://github.com/apache/airflow/pull/31820</a></li>
 <li><a href="https://lists.apache.org/thread/o4f2cxh0054m9tlxpb81c1yhylor5gjd">https://lists.apache.org/thread/o4f2cxh0054m9tlxpb81c1yhylor5gjd</a></li>
+</ul>
+<h2 id="CVE-2023-35797">Apache Airflow Hive Provider Beeline RCE with Principal</h2>
+<p>CVE-2023-35797 <a href="./CVE-2023-35797.cve.json">[CVE json]</a></p>
+<h3 id="affected-20">Affected</h3>
+<ul>
+<li>Apache Airflow Apache Hive Provider before 6.1.1</li>
+</ul>
+<h3 id="description-20">Description</h3>
+<p>Improper Input Validation vulnerability in Apache Software Foundation Apache Airflow Hive Provider.<br><p>This issue affects Apache Airflow Apache Hive Provider: before 6.1.1.<br><br><span style="background-color: rgb(255, 255, 255);">Before version 6.1.1 it was </span><span style="background-color: rgb(255, 255, 255);">possible to bypass the security check to RCE via</span><br><span style="background-color: rgb(255, 255, 255);">principal parameter. For this to be <span style="background-color: rgb(255, 255, 255);">exploited it requires access to modifying the connection details.</span><br></span><br>It is recommended updating provider version to 6.1.1 in order to avoid this vulnerability.</p></p>
+<h3 id="references-20">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/31983">https://github.com/apache/airflow/pull/31983</a></li>
+<li><a href="https://lists.apache.org/thread/30y19ok07fw52x5hnkbhwqo3ho0wwc1y">https://lists.apache.org/thread/30y19ok07fw52x5hnkbhwqo3ho0wwc1y</a></li>
+</ul>
+<h2 id="CVE-2023-35798">Airflow Apache ODBC and MSSQL Providers Arbitrary File Read Vulnerability</h2>
+<p>CVE-2023-35798 <a href="./CVE-2023-35798.cve.json">[CVE json]</a></p>
+<h3 id="affected-21">Affected</h3>
+<ul>
+<li>Apache Airflow ODBC Provider before 4.0.0</li>
+<li>Apache Airflow MSSQL Provider before 3.4.1</li>
+</ul>
+<h3 id="description-21">Description</h3>
+<p>Input Validation vulnerability in Apache Software Foundation Apache Airflow ODBC Provider, Apache Software Foundation Apache Airflow MSSQL Provider.<p>This vulnerability is considered low since it requires DAG code to use <code>&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;get_sqlalchemy_connection</code> and someone with access to connection resources specifically updating the connection to <span style="background-color: rgb(255, 255, 255);">exploit it.</span><br></span><br>This issue affects Apache Airflow ODBC Provider: before 4.0.0; Apache Airflow MSSQL Provider: before 3.4.1.<br><br>It is recommended to <span style="background-color: rgb(255, 255, 255);">upgrade to a version that is not affected</span></p></p>
+<h3 id="references-21">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/31984">https://github.com/apache/airflow/pull/31984</a></li>
+<li><a href="https://lists.apache.org/thread/951rb9m7wwox5p30tdvcfjxq8j1mp4pj">https://lists.apache.org/thread/951rb9m7wwox5p30tdvcfjxq8j1mp4pj</a></li>
+</ul>
+<h2 id="CVE-2023-35908">Access to DAGs without relevant permission</h2>
+<p>CVE-2023-35908 <a href="./CVE-2023-35908.cve.json">[CVE json]</a></p>
+<h3 id="affected-22">Affected</h3>
+<ul>
+<li>Apache Airflow before 2.6.3</li>
+</ul>
+<h3 id="description-22">Description</h3>
+<p>Apache Airflow, versions before 2.6.3, is affected by a vulnerability that allows unauthorized read access to a DAG through the URL. It is recommended to upgrade to a version that is not affected</p>
+<h3 id="references-22">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/32014">https://github.com/apache/airflow/pull/32014</a></li>
+<li><a href="https://lists.apache.org/thread/vsflptk5dt30vrfggn96nx87d7zr6yvw">https://lists.apache.org/thread/vsflptk5dt30vrfggn96nx87d7zr6yvw</a></li>
+</ul>
+<h2 id="CVE-2023-36543">ReDoS via dags function</h2>
+<p>CVE-2023-36543 <a href="./CVE-2023-36543.cve.json">[CVE json]</a></p>
+<h3 id="affected-23">Affected</h3>
+<ul>
+<li>Apache Airflow before 2.6.3</li>
+</ul>
+<h3 id="description-23">Description</h3>
+<p>Apache Airflow, versions before 2.6.3, has a vulnerability where an authenticated user can use crafted input to make the current request hang. It is recommended to upgrade to a version that is not affected</p>
+<h3 id="references-23">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/32060">https://github.com/apache/airflow/pull/32060</a></li>
+<li><a href="https://lists.apache.org/thread/tokfs980504ylgk3cv3hjlnrtbv4tng4">https://lists.apache.org/thread/tokfs980504ylgk3cv3hjlnrtbv4tng4</a></li>
+</ul>
+<h2 id="CVE-2023-37415">Improper Input Validation in Hive Provider with proxy_user</h2>
+<p>CVE-2023-37415 <a href="./CVE-2023-37415.cve.json">[CVE json]</a></p>
+<h3 id="affected-24">Affected</h3>
+<ul>
+<li>Apache Airflow Apache Hive Provider before 6.1.2</li>
+</ul>
+<h3 id="description-24">Description</h3>
+<p>Improper Input Validation vulnerability in Apache Software Foundation Apache Airflow Apache Hive Provider.<br><br>Patching on top of CVE-2023-35797<br><p>Before 6.1.2<span style="background-color: rgb(255, 255, 255);"> the proxy_user option can also inject semicolon.<br></span><br>This issue affects Apache Airflow Apache Hive Provider: before 6.1.2.<br><br></p><p>It is recommended updating provider version to 6.1.2 in order to avoid this vulnerability.</p><p></p></p>
+<h3 id="references-24">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/9wx0jlckbnycjh8nj5qfwxo423zvm41k">https://lists.apache.org/thread/9wx0jlckbnycjh8nj5qfwxo423zvm41k</a></li>
 </ul>
 
   
