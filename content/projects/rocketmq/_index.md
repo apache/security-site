@@ -35,3 +35,21 @@ CVE-2023-33246 [\[CVE json\]](./CVE-2023-33246.cve.json)
 
 ### References
 * https://lists.apache.org/thread/1s8j2c8kogthtpv3060yddk03zq0pxyp
+
+
+## Possible remote code execution when using the update configuration function ## { #CVE-2023-37582 }
+
+CVE-2023-37582 [\[CVE json\]](./CVE-2023-37582.cve.json)
+
+### Affected
+
+* Apache RocketMQ from 5.0.0 through 5.1.1
+* Apache RocketMQ through 4.9.6
+
+
+### Description
+
+<span style="background-color: rgb(255, 255, 255);">The RocketMQ NameServer component still has a remote command execution vulnerability as the CVE-2023-33246 issue was not completely fixed in version 5.1.1. <br><br>When NameServer address </span>are leaked on the extranet and lack permission verification, a<span style="background-color: rgb(255, 255, 255);">n attacker can exploit this vulnerability by using the update configuration function on the NameServer component to execute commands as the system users that RocketMQ is running as. <br><br>It is recommended for users to upgrade their NameServer version to 5.1.2 or above for RocketMQ 5.x or 4.9.7 or above for RocketMQ 4.x to prevent these attacks.</span><br>
+
+### References
+* https://lists.apache.org/thread/m614czxtpvlztd7mfgcs2xcsg36rdbnc

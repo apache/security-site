@@ -15,6 +15,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Airflow |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Ambari |  [Apache Ambari Security Team](mailto:security@ambari.apache.org) | |
 | [Apache Ant](https://ant.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Any23 |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Portable Runtime (APR)](https://apr.apache.org/security_report.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Archiva |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Atlas |  [Apache Security Team](mailto:security@apache.org) | |
@@ -45,6 +46,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache James |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Jena |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache JMeter](https://jmeter.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Johnzon |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache JSPWiki |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Kafka](https://kafka.apache.org/project-security.html) |  [Apache Kafka Security Team](mailto:security@kafka.apache.org) | [Advisories](https://kafka.apache.org/cve-list.html) |
 | Apache Karaf |  [Apache Security Team](mailto:security@apache.org) | |
@@ -56,12 +58,14 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache ManifoldCF |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Maven](https://maven.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Metron |  [Apache Metron Security Team](mailto:security@metron.apache.org) | |
+| Apache MINA |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache NiFi](https://nifi.apache.org/security.html) |  [Apache NiFi Security Team](mailto:security@nifi.apache.org) | |
 | [Apache OFBiz](https://ofbiz.apache.org/download.html#security) |  [Apache OFBiz Security Team](mailto:security@ofbiz.apache.org) | |
 | [Apache OpenMeetings](https://openmeetings.apache.org/security.html) |  [Apache OpenMeetings Security Team](mailto:security@openmeetings.apache.org) | |
 | [Apache OpenOffice](https://openoffice.apache.org/security) |  [Apache OpenOffice Security Team](mailto:security@openoffice.apache.org) | [Advisories](https://www.openoffice.org/security/bulletin.html) |
 | [Apache ORC](https://orc.apache.org/security/) |  [Apache ORC Security Team](mailto:security@orc.apache.org) | |
 | [Apache PDFBox](https://pdfbox.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Pulsar |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Ranger |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache RocketMQ |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Santuario](https://santuario.apache.org/secadv.html) |  [Apache Security Team](mailto:security@apache.org) | |

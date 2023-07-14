@@ -28,3 +28,23 @@ There is insufficient checking of user queries in Apache Jena versions 4.7.0 and
 
 ### References
 * https://lists.apache.org/thread/s0dmpsxcwqs57l4qfs415klkgmhdxq7s
+
+
+## Exposure of execution in script engine expressions. ## { #CVE-2023-32200 }
+
+CVE-2023-32200 [\[CVE json\]](./CVE-2023-32200.cve.json)
+
+### Affected
+
+* Apache Jena from 3.7.0 through 4.8.0
+
+
+### Description
+
+There is insufficient restrictions of called script functions in Apache Jena
+ versions 4.8.0 and earlier. It allows a 
+remote user to execute javascript via a SPARQL query.<br><p>This issue affects Apache Jena: from 3.7.0 through 4.8.0.</p>
+
+### References
+* https://www.cve.org/CVERecord?id=CVE-2023-22665
+* https://lists.apache.org/thread/7hg0t2kws3fyr75dl7lll8389xzzc46z
