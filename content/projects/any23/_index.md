@@ -28,3 +28,7 @@ CVE-2023-34150 [\[CVE json\]](./CVE-2023-34150.cve.json)
 
 ### References
 * https://lists.apache.org/thread/713tk23khbtbg940pb2ql8ggd4cvh6j1
+
+
+### Credits
+* Liran Mendelovich (finder)

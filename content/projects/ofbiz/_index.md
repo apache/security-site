@@ -31,3 +31,7 @@ pre-authentication attack.<br><p>This issue affects Apache OFBiz: before 18.12.0
 * https://lists.apache.org/thread/k8s76l0whydy45bfm4b69vq0mf94p3wc
 * https://ofbiz.apache.org/download.html
 * https://ofbiz.apache.org/security.html
+
+
+### Credits
+* Skay <lhcaomail@gmail.com> (finder)

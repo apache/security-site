@@ -32,3 +32,7 @@ Improper Privilege Management vulnerability in Apache Software Foundation Apache
 
 ### References
 * https://lists.apache.org/thread/2k8764jmckmc19qc8x51nlnngq71pcf7
+
+
+### Credits
+* xxhzz (finder)

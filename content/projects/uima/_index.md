@@ -28,3 +28,7 @@ CVE-2023-28935 [\[CVE json\]](./CVE-2023-28935.cve.json)
 
 ### References
 * https://lists.apache.org/thread/r19z14b9rrfxv72r93q5trq5tyffo75g
+
+
+### Credits
+* Crilwa (finder)

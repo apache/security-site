@@ -28,3 +28,7 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ### References
 * https://lists.apache.org/thread/b9qgtqvhnvgfpn0w1gz918p21p53tqk2
+
+
+### Credits
+* Andrew Pikler (finder)

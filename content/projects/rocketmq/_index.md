@@ -37,6 +37,10 @@ CVE-2023-33246 [\[CVE json\]](./CVE-2023-33246.cve.json)
 * https://lists.apache.org/thread/1s8j2c8kogthtpv3060yddk03zq0pxyp
 
 
+### Credits
+* lvyyevd@gmail.com (reporter)
+
+
 ## Possible remote code execution when using the update configuration function ## { #CVE-2023-37582 }
 
 CVE-2023-37582 [\[CVE json\]](./CVE-2023-37582.cve.json)
@@ -53,3 +57,8 @@ CVE-2023-37582 [\[CVE json\]](./CVE-2023-37582.cve.json)
 
 ### References
 * https://lists.apache.org/thread/m614czxtpvlztd7mfgcs2xcsg36rdbnc
+
+
+### Credits
+* soreatu@gmail.com (finder)
+* yuansec@outlook.com  (finder)

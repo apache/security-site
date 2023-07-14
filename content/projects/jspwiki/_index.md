@@ -28,3 +28,7 @@ A carefully crafted request on several JSPWiki plugins could trigger an XSS vuln
 
 ### References
 * https://lists.apache.org/thread/1m0mkq2nttx8tn94m11mytn4f0tv1504
+
+
+### Credits
+* This issue was discovered by Eugene Lim and Sng Jay Kai from Government Technology Agency of Singapore (finder)

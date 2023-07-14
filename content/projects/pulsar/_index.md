@@ -32,6 +32,10 @@ Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsa
 * https://lists.apache.org/thread/v39hqtgrmyxr85rmofwvgrktnflbq3q5
 
 
+### Credits
+* Michael Marshall of DataStax (finder)
+
+
 ## Incorrect Authorization for Function Worker when using mTLS Authentication through Pulsar Proxy ## { #CVE-2023-30429 }
 
 CVE-2023-30429 [\[CVE json\]](./CVE-2023-30429.cve.json)
@@ -48,6 +52,10 @@ Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsa
 
 ### References
 * https://lists.apache.org/thread/v0gcvvxswr830314q4b1kybsfmcf3jf8
+
+
+### Credits
+* Michael Marshall of DataStax (finder)
 
 
 ## Broker does not always disconnect client when authentication data expires ## { #CVE-2023-31007 }
@@ -69,6 +77,10 @@ Improper Authentication vulnerability in Apache Software Foundation Apache Pulsa
 * https://lists.apache.org/thread/qxn99xxyp0zv6jchjggn3soyo5gvqfxj
 
 
+### Credits
+* Michael Marshall of DataStax (finder)
+
+
 ## Incorrect Authorization for Function Worker Can Leak Sink/Source Credentials ## { #CVE-2023-37579 }
 
 CVE-2023-37579 [\[CVE json\]](./CVE-2023-37579.cve.json)
@@ -85,3 +97,7 @@ Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsa
 
 ### References
 * https://lists.apache.org/thread/0dmn3cb5n2p08o3cpj3ycfhzfqs2ppwz
+
+
+### Credits
+* Michael Marshall of DataStax (finder)

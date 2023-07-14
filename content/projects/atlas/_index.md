@@ -28,3 +28,7 @@ A vulnerability in import module of Apache Atlas allows an authenticated user to
 
 ### References
 * https://lists.apache.org/thread/0rqvcxo6brmos9w3lzfsdn2lsmlblpw3
+
+
+### Credits
+* Huangzhicong (finder)

@@ -28,3 +28,7 @@ CVE-2023-22602 [\[CVE json\]](./CVE-2023-22602.cve.json)
 
 ### References
 * https://lists.apache.org/thread/dzj0k2smpzzgj6g666hrbrgsrlf9yhkl
+
+
+### Credits
+* v3ged0ge and Adamytd (finder)

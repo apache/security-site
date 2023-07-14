@@ -28,3 +28,7 @@ Improper neutralization of special elements used in an LDAP query ('LDAP Injecti
 
 ### References
 * https://lists.apache.org/thread/m693p0dq6jvwwvmy2wnhj6k854z0s444
+
+
+### Credits
+* 4ra1n of Chaitin Tech (finder)

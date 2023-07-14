@@ -32,3 +32,7 @@ A REST interface in Apache StreamPipes (versions 0.69.0 to 0.91.0) <span style="
 
 ### References
 * https://lists.apache.org/thread/c4y8kf9bzpf36v4bottfmd8tc9cxo19m
+
+
+### Credits
+* Xun Bai, LJQC Open Source Security Institute (finder)

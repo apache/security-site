@@ -30,6 +30,10 @@ CVE-2022-25147 [\[CVE json\]](./CVE-2022-25147.cve.json)
 * https://lists.apache.org/thread/np5gjqlohc4f62lr09vrn61vl44cylh8
 
 
+### Credits
+* Ronald Crane (Zippenhop LLC) (reporter)
+
+
 ## out-of-bound writes in the apr_encode family of functions  ## { #CVE-2022-24963 }
 
 CVE-2022-24963 [\[CVE json\]](./CVE-2022-24963.cve.json)
@@ -47,6 +51,10 @@ Integer Overflow or Wraparound vulnerability in apr_encode functions of Apache P
 * https://lists.apache.org/thread/fw9p6sdncwsjkstwc066vz57xqzfksq9
 
 
+### Credits
+* Ronald Crane (Zippenhop LLC) (finder)
+
+
 ##  Windows out-of-bounds write in apr_socket_sendv function ## { #CVE-2022-28331 }
 
 CVE-2022-28331 [\[CVE json\]](./CVE-2022-28331.cve.json)
@@ -62,3 +70,7 @@ On Windows, Apache Portable Runtime 1.7.0 and earlier may write beyond the end o
 
 ### References
 * https://lists.apache.org/thread/5pfdfn7h0vsdo5xzjn97vghp0x42jj2r
+
+
+### Credits
+* Ronald Crane (Zippenhop LLC) (finder)

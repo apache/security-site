@@ -28,3 +28,7 @@ URL Redirection to Untrusted Site ('Open Redirect') vulnerability in Apache Soft
 
 ### References
 * https://lists.apache.org/thread/lr74xtxxbb1t3dfn5qzzwl2xjr3qlbmh
+
+
+### Credits
+* This issue was discovered by Everardo Padilla Saca (reporter)

@@ -29,3 +29,7 @@ Privilege escalation when enabling FQL/Audit logs allows user with JMX access to
 
 ### References
 * https://lists.apache.org/thread/f74p9jdhmmp7vtrqd8lgm8bq3dhxl8vn
+
+
+### Credits
+* Gal Elbaz at Oligo (finder)

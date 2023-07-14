@@ -141,6 +141,11 @@ layout: single
                 for reference in cna['references']:
                     project_page.write('* %s\n' % reference['url'])
 
+            if 'credits' in cna.keys():
+                project_page.write('\n\n### Credits\n')
+                for credit in cna['credits']:
+                    project_page.write('* %s (%s)\n' % (credit['value'], credit['type']))
+
             with open(staticdir + cve + '.cve.json', 'w') as cveFile:
                 cve_doc = {
                     "containers": details['containers'],

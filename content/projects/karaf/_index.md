@@ -29,3 +29,7 @@ CVE-2022-40145 [\[CVE json\]](./CVE-2022-40145.cve.json)
 
 ### References
 * https://karaf.apache.org/security/cve-2022-40145.txt
+
+
+### Credits
+* Xun Bai <bbbbear68@gmail.com> (reporter)

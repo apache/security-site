@@ -30,6 +30,10 @@ CVE-2023-28326 [\[CVE json\]](./CVE-2023-28326.cve.json)
 * https://lists.apache.org/thread/r9vn12dp5yofn1h3wd5x4h7c3vmmr5d9
 
 
+### Credits
+* Dennis Zimmt (reporter)
+
+
 ## insufficient check of invitation hash ## { #CVE-2023-28936 }
 
 CVE-2023-28936 [\[CVE json\]](./CVE-2023-28936.cve.json)
@@ -45,6 +49,10 @@ Attacker can access arbitrary recording/room<br><br>Vendor: The Apache Software 
 
 ### References
 * https://lists.apache.org/thread/y6vng44c22ll221rtvsv208x1pbjmdoc
+
+
+### Credits
+* Stefan Schiller (reporter)
 
 
 ## allows bypass authentication ## { #CVE-2023-29032 }
@@ -64,6 +72,10 @@ CVE-2023-29032 [\[CVE json\]](./CVE-2023-29032.cve.json)
 * https://lists.apache.org/thread/j2d6mg3rzcphfd8vvvk09d8p4o9lvnqp
 
 
+### Credits
+* Stefan Schiller (reporter)
+
+
 ## allows null-byte Injection ## { #CVE-2023-29246 }
 
 CVE-2023-29246 [\[CVE json\]](./CVE-2023-29246.cve.json)
@@ -79,3 +91,7 @@ CVE-2023-29246 [\[CVE json\]](./CVE-2023-29246.cve.json)
 
 ### References
 * https://lists.apache.org/thread/230plvhbdx26m43b0sy942wlwt6kkmmr
+
+
+### Credits
+* Stefan Schiller (reporter)

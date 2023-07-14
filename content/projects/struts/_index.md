@@ -31,6 +31,10 @@ Allocation of Resources Without Limits or Throttling vulnerability in Apache Sof
 * https://cwiki.apache.org/confluence/display/WW/S2-063
 
 
+### Credits
+* Matthew McClain (finder)
+
+
 ## DoS via OOM owing to no sanity limit on normal form fields in multipart forms ## { #CVE-2023-34396 }
 
 CVE-2023-34396 [\[CVE json\]](./CVE-2023-34396.cve.json)
@@ -47,3 +51,7 @@ Allocation of Resources Without Limits or Throttling vulnerability in Apache Sof
 
 ### References
 * https://cwiki.apache.org/confluence/display/WW/S2-064
+
+
+### Credits
+* Matthew McClain (finder)

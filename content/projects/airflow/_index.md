@@ -31,6 +31,10 @@ Improper Neutralization of Special Elements used in a Command ('Command Injectio
 * https://lists.apache.org/thread/09twdoyoybldlfj5gvk0qswtofh0rmp4
 
 
+### Credits
+* id_No2015429 of 3H Security Team (finder)
+
+
 ## Security vulnerability on AirFlow Connections ## { #CVE-2022-46651 }
 
 CVE-2022-46651 [\[CVE json\]](./CVE-2022-46651.cve.json)
@@ -68,6 +72,10 @@ Improper Neutralization of Special Elements used in a Command ('Command Injectio
 * https://lists.apache.org/thread/0l0j3nt0t7fzrcjl2ch0jgj6c58kxs5h
 
 
+### Credits
+* Son Tran from VNPT - VCI (reporter)
+
+
 ## RCE Vulnerability ## { #CVE-2023-22886 }
 
 CVE-2023-22886 [\[CVE json\]](./CVE-2023-22886.cve.json)
@@ -83,6 +91,11 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Air
 
 ### References
 * https://lists.apache.org/thread/ynbjwp4n0vzql0xzhog1gkp1ovncf8j3
+
+
+### Credits
+* heart Y (finder)
+* happyhacking (finder)
 
 
 ## Apache Airflow path traversal by authenticated user ## { #CVE-2023-22887 }
@@ -103,6 +116,11 @@ Apache Airflow, versions before 2.6.3, is affected by a vulnerability that allow
 * https://lists.apache.org/thread/rxddqs76r6rkxsg1n24d029zys67qwwo
 
 
+### Credits
+* Zhipeng Zhang (@Timon8) (finder)
+* KietNA from National Cyber Security (NCS) (finder)
+
+
 ## Scheduler remote DoS ## { #CVE-2023-22888 }
 
 CVE-2023-22888 [\[CVE json\]](./CVE-2023-22888.cve.json)
@@ -119,6 +137,10 @@ Apache Airflow, versions before 2.6.3, is affected by a vulnerability that allow
 ### References
 * https://github.com/apache/airflow/pull/32293
 * https://lists.apache.org/thread/dnlht2hvm7k81k5tgjtsfmk27c76kq7z
+
+
+### Credits
+* Zhipeng Zhang (@timon8) (finder)
 
 
 ## Google Cloud Sql Provider Remote Command Execution ## { #CVE-2023-25691 }
@@ -139,6 +161,10 @@ Improper Input Validation vulnerability in the Apache Airflow Google Provider.<b
 * https://lists.apache.org/thread/zdr8ovfttbh7kj0lydgcw88tbt2nmkcy
 
 
+### Credits
+* Xie Jianming of Caiji Sec Team (finder)
+
+
 ## Google Cloud Sql Provider Denial Of Service ## { #CVE-2023-25692 }
 
 CVE-2023-25692 [\[CVE json\]](./CVE-2023-25692.cve.json)
@@ -155,6 +181,10 @@ Improper Input Validation vulnerability in the Apache Airflow Google Provider.<b
 ### References
 * https://github.com/apache/airflow/pull/29499
 * https://lists.apache.org/thread/ks4l78l5rwdpmvfn7y7yhs179nyxtlsh
+
+
+### Credits
+* Xie Jianming of Caiji Sec Team (finder)
 
 
 ## Sqoop Apache Airflow Provider Remote Code Execution Vulnerability ## { #CVE-2023-25693 }
@@ -175,6 +205,10 @@ Improper Input Validation vulnerability in the Apache Airflow Sqoop Provider.<br
 * https://lists.apache.org/thread/79qn8g5xbq036f8crb115obvr22l52q4
 
 
+### Credits
+*  L3yx of Syclover Security Team (finder)
+
+
 ## Information disclosure in Apache Airflow ## { #CVE-2023-25695 }
 
 CVE-2023-25695 [\[CVE json\]](./CVE-2023-25695.cve.json)
@@ -191,6 +225,10 @@ Generation of Error Message Containing Sensitive Information vulnerability in Ap
 ### References
 * https://github.com/apache/airflow/pull/29501
 * https://lists.apache.org/thread/z8w6ckzs61ql365tv4d19k82o67r15p2
+
+
+### Credits
+* kuteminh11 (finder)
 
 
 ## Apache Airflow Hive Provider Beeline RCE ## { #CVE-2023-25696 }
@@ -211,6 +249,10 @@ Improper Input Validation vulnerability in the Apache Airflow Hive Provider.<br>
 * https://lists.apache.org/thread/99g0qm56wmgdxmbtdsvhj4rdnxhpzpml
 
 
+### Credits
+* id_No2015429 of 3H Secruity Team (finder)
+
+
 ## Privilege escalation using airflow logs ## { #CVE-2023-25754 }
 
 CVE-2023-25754 [\[CVE json\]](./CVE-2023-25754.cve.json)
@@ -227,6 +269,10 @@ Privilege Context Switching Error vulnerability in Apache Software Foundation Ap
 ### References
 * https://github.com/apache/airflow/pull/29506
 * https://lists.apache.org/thread/3y83gr0qb8t49ppfk4fb2yk7md8ltq4v
+
+
+### Credits
+* ksw9722@naver.com (finder)
 
 
 ## Arbitrary file read via AWS provider ## { #CVE-2023-25956 }
@@ -247,6 +293,11 @@ Generation of Error Message Containing Sensitive Information vulnerability in th
 * https://lists.apache.org/thread/07pl9y4gdpw2c6rzqm77dvkm2z2kb5gv
 
 
+### Credits
+* Son Tran from VNPT - VCI (finder)
+* kuteminh11 (finder)
+
+
 ## Apache Airflow Hive Provider Beeline Remote Command Execution ## { #CVE-2023-28706 }
 
 CVE-2023-28706 [\[CVE json\]](./CVE-2023-28706.cve.json)
@@ -263,6 +314,10 @@ Improper Control of Generation of Code ('Code Injection') vulnerability in Apach
 ### References
 * https://github.com/apache/airflow/pull/30212
 * https://lists.apache.org/thread/dl20xxd51xvlx0zzc0wzgxfjwgtbbxo3
+
+
+### Credits
+* sw0rd1ight of Caiji Sec Team and 4ra1n of Chaitin Tech (finder)
 
 
 ## Airflow Apache Drill Provider Arbitrary File Read Vulnerability ## { #CVE-2023-28707 }
@@ -283,6 +338,10 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Air
 * https://lists.apache.org/thread/dfoj7q1nd0vhhsl8fjg63z4j6mfmdxtk
 
 
+### Credits
+* Kai Zhao of 3H Secruity Team (finder)
+
+
 ## Apache Airflow Spark Provider Arbitrary File Read via JDBC ## { #CVE-2023-28710 }
 
 CVE-2023-28710 [\[CVE json\]](./CVE-2023-28710.cve.json)
@@ -299,6 +358,10 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Air
 ### References
 * https://github.com/apache/airflow/pull/30223
 * https://lists.apache.org/thread/lb9w9114ow00h2nkn8bjm106v5x1p1d2
+
+
+### Credits
+* Xie Jianming of  Nsfocus (finder)
 
 
 ## Stored XSS on Apache Airflow ## { #CVE-2023-29247 }
@@ -318,6 +381,11 @@ Task instance details page in the UI is vulnerable to a stored XSS.<p>This issue
 * https://github.com/apache/airflow/pull/30447
 * https://github.com/apache/airflow/pull/30779
 * https://lists.apache.org/thread/kqf5lxmko133780clsp827xfsh4xd3fl
+
+
+### Credits
+* taidh from VNPT - VCI (finder)
+* kuteminh11 (finder)
 
 
 ## KubernetesPodOperator RCE via connection configuration ## { #CVE-2023-33234 }
@@ -355,6 +423,10 @@ Improper Neutralization of Argument Delimiters in a Command ('Argument Injection
 * https://lists.apache.org/thread/l26yykftzbhc9tgcph8cso88bc2lqwwd
 
 
+### Credits
+* KmhlYXJ0 (finder)
+
+
 ## Information disclosure on configuration view ## { #CVE-2023-35005 }
 
 CVE-2023-35005 [\[CVE json\]](./CVE-2023-35005.cve.json)
@@ -374,6 +446,10 @@ CVE-2023-35005 [\[CVE json\]](./CVE-2023-35005.cve.json)
 * https://lists.apache.org/thread/o4f2cxh0054m9tlxpb81c1yhylor5gjd
 
 
+### Credits
+* Piotr Chomiak from Astro product security team (finder)
+
+
 ## Apache Airflow Hive Provider Beeline RCE with Principal ## { #CVE-2023-35797 }
 
 CVE-2023-35797 [\[CVE json\]](./CVE-2023-35797.cve.json)
@@ -390,6 +466,10 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Air
 ### References
 * https://github.com/apache/airflow/pull/31983
 * https://lists.apache.org/thread/30y19ok07fw52x5hnkbhwqo3ho0wwc1y
+
+
+### Credits
+* id_No2015429 of 3H Secruity Team (reporter)
 
 
 ## Airflow Apache ODBC and MSSQL Providers Arbitrary File Read Vulnerability ## { #CVE-2023-35798 }
@@ -411,6 +491,10 @@ Input Validation vulnerability in Apache Software Foundation Apache Airflow ODBC
 * https://lists.apache.org/thread/951rb9m7wwox5p30tdvcfjxq8j1mp4pj
 
 
+### Credits
+* id_No2015429 of 3H Secruity Team (finder)
+
+
 ## Access to DAGs without relevant permission ## { #CVE-2023-35908 }
 
 CVE-2023-35908 [\[CVE json\]](./CVE-2023-35908.cve.json)
@@ -427,6 +511,10 @@ Apache Airflow, versions before 2.6.3, is affected by a vulnerability that allow
 ### References
 * https://github.com/apache/airflow/pull/32014
 * https://lists.apache.org/thread/vsflptk5dt30vrfggn96nx87d7zr6yvw
+
+
+### Credits
+* Name : Karthikeyan Singaravelan  Employer : Visa (finder)
 
 
 ## ReDoS via dags function ## { #CVE-2023-36543 }
@@ -447,6 +535,11 @@ Apache Airflow, versions before 2.6.3, has a vulnerability where an authenticate
 * https://lists.apache.org/thread/tokfs980504ylgk3cv3hjlnrtbv4tng4
 
 
+### Credits
+* National Cyber Security VietNam (NCS VietNam) (finder)
+* hungtd (finder)
+
+
 ## Improper Input Validation in Hive Provider with proxy_user ## { #CVE-2023-37415 }
 
 CVE-2023-37415 [\[CVE json\]](./CVE-2023-37415.cve.json)
@@ -462,3 +555,7 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Air
 
 ### References
 * https://lists.apache.org/thread/9wx0jlckbnycjh8nj5qfwxo423zvm41k
+
+
+### Credits
+* Son Tran from VNPT - VCI (reporter)

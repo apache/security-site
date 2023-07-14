@@ -30,6 +30,10 @@ SpringEL injection in the server agent in Apache Ambari version 2.7.0 to 2.7.6 a
 * https://lists.apache.org/thread/6xf477ttz1oxmg0bx0tpdoz2mlqd7sbc
 
 
+### Credits
+* Jecki Go (jecgo@visa.com) (finder)
+
+
 ## Allows authenticated metrics consumers to perform RCE ## { #CVE-2022-45855 }
 
 CVE-2022-45855 [\[CVE json\]](./CVE-2022-45855.cve.json)
@@ -45,3 +49,7 @@ SpringEL injection in the metrics source in Apache Ambari version 2.7.0 to 2.7.6
 
 ### References
 * https://lists.apache.org/thread/302c4hwfjy9lx63jrbhcdx948pxc54l1
+
+
+### Credits
+* rg <18993610179@163.com> (finder)

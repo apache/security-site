@@ -32,6 +32,12 @@ In Apache Linkis &lt;=1.3.0 when used with the MySQL Connector/J in the data sou
 * https://lists.apache.org/thread/zlcfmvt65blqc4n6fxypg6f0ns8fqfz4
 
 
+### Credits
+* Tian Xin WU (Bearcat) , Vulnerability Researcher at Numen Cyber ​​​​Labs, Singapore. (reporter)
+* Department of Cyber Security Research (Jumbo, Unc1e) (remediation developer)
+* s3gundo of Hundsun Tech  (remediation developer)
+
+
 ## The DatasourceManager module has a Local File Read Vulnerability ## { #CVE-2022-44644 }
 
 CVE-2022-44644 [\[CVE json\]](./CVE-2022-44644.cve.json)
@@ -47,6 +53,11 @@ In Apache Linkis &lt;=1.3.0 when used with the MySQL Connector/J in the data sou
 
 ### References
 * https://lists.apache.org/thread/hwq9ytq6y1kdh9lz5znptkcrdll9x85h
+
+
+### Credits
+* Department of Cyber Security Research (Jumbo, Unc1e), Beijing Zhiqian Technology Co., LTD (reporter)
+* s3gundo of Hundsun Tech  (reporter)
 
 
 ## Apache Linkis publicsercice module unrestricted upload of file ## { #CVE-2023-27602 }
@@ -70,6 +81,10 @@ We recommend users upgrade the version of Linkis to version 1.3.2.&nbsp;<br></sp
 
 ### References
 * https://lists.apache.org/thread/wt70jfc0yfs6s5g0wg5dr5klnc48nsp1
+
+
+### Credits
+* Laihan (reporter)
 
 
 ## Apache Linkis Mangaer module engineConn material upload exists Zip Slip issue ## { #CVE-2023-27603 }
@@ -100,6 +115,10 @@ We recommend users upgrade the version of Linkis to version 1.3.2.
 * https://www.openwall.com/lists/oss-security/2023/04/10/2
 
 
+### Credits
+* 4ra1n (reporter)
+
+
 ## Apache Linkis gateway module token authentication bypass ## { #CVE-2023-27987 }
 
 CVE-2023-27987 [\[CVE json\]](./CVE-2023-27987.cve.json)
@@ -128,6 +147,10 @@ We recommend users upgrade the version of Linkis to version 1.3.2 And modify the
 * https://www.openwall.com/lists/oss-security/2023/04/10/3
 
 
+### Credits
+* Laihan (reporter)
+
+
 ## Apache Linkis JDBC EngineCon  has a deserialization command execution ## { #CVE-2023-29215 }
 
 CVE-2023-29215 [\[CVE json\]](./CVE-2023-29215.cve.json)
@@ -147,6 +170,10 @@ deserialization vulnerability and eventually lead to remote code execution. Ther
 
 ### References
 * https://lists.apache.org/thread/o682wz1ggq491ybvjwokxvcdtnzo76ls
+
+
+### Credits
+* sw0rd1ight (reporter)
 
 
 ## Apache Linkis DatasourceManager module has a deserialization command execution ## { #CVE-2023-29216 }
@@ -171,3 +198,7 @@ remote code execution.<br> Versions of Apache Linkis &lt;= 1.3.0 will be affecte
 
 ### References
 * https://lists.apache.org/thread/18vv0m32oy51nzk8tbz13qdl5569y55l
+
+
+### Credits
+* sw0rd1ight (reporter)

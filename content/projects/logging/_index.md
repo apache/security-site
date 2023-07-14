@@ -32,6 +32,10 @@ hashmap or hashtable (depending on which logging component is in use) to be proc
 * https://lists.apache.org/thread/wkx6grrcjkh86crr49p4blc1v1nflj3t
 
 
+### Credits
+* Garrett Tucker of Red Hat (reporter)
+
+
 ## SQL injection when using ODBC appender ## { #CVE-2023-31038 }
 
 CVE-2023-31038 [\[CVE json\]](./CVE-2023-31038.cve.json)

@@ -30,6 +30,10 @@ In the fix for CVE-2022-24697, a blacklist is used to filter user input commands
 * https://lists.apache.org/thread/ob2ks04zl5ms0r44cd74y1xdl1rzfd1r
 
 
+### Credits
+* Yasax1 Li <pp1ove.lit@gmail.com> (finder)
+
+
 ## Command injection by Diagnosis Controller ## { #CVE-2022-44621 }
 
 CVE-2022-44621 [\[CVE json\]](./CVE-2022-44621.cve.json)
@@ -45,3 +49,7 @@ Diagnosis Controller miss parameter validation, so user may attacked by command 
 
 ### References
 * https://lists.apache.org/thread/7ctchj24dofgsj9g1rg1245cms9myb34
+
+
+### Credits
+* Messy God <godimessy@gmail.com> (finder)

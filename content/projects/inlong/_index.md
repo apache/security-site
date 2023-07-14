@@ -30,6 +30,10 @@ Out-of-bounds Read vulnerability in Apache Software Foundation Apache InLong.<p>
 * https://lists.apache.org/thread/ggozxorctn3tdll7bgmpwwcbjnd0s6w7
 
 
+### Credits
+* This issue was discovered by s3gundo of Hundsun Tech (finder)
+
+
 ## Jdbc Connection Security Bypass ## { #CVE-2023-24997 }
 
 CVE-2023-24997 [\[CVE json\]](./CVE-2023-24997.cve.json)
@@ -45,6 +49,10 @@ Deserialization of Untrusted Data vulnerability in Apache Software Foundation Ap
 
 ### References
 * https://lists.apache.org/thread/nxvtxq7oxhwyzo9ty2hqz8rvh5r7ngd8
+
+
+### Credits
+* This issue was discovered by s3gundo of Hundsun Tech (finder)
 
 
 ## JDBC Deserialization Vulnerability in InLong ## { #CVE-2023-27296 }
@@ -70,6 +78,10 @@ Deserialization of Untrusted Data vulnerability in Apache Software Foundation Ap
 * https://lists.apache.org/thread/xbvtjw9bwzgbo9fp1by8o3p49nf59xzt
 
 
+### Credits
+* escape Wang (finder)
+
+
 ## SQL injection in apache inLong 1.5.0 ## { #CVE-2023-30465 }
 
 CVE-2023-30465 [\[CVE json\]](./CVE-2023-30465.cve.json)
@@ -87,6 +99,10 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 
 ### References
 * https://lists.apache.org/thread/mrh4nr3jrlbj6nxkn4q8hddbfh1pnok0
+
+
+### Credits
+* escape Wang (finder)
 
 
 ## JDBC URL bypassing by adding blanks ## { #CVE-2023-31058 }
@@ -107,6 +123,12 @@ Deserialization of Untrusted Data Vulnerability in Apache Software Foundation Ap
 
 ### References
 * https://lists.apache.org/thread/bkcgbn9l61croxfyspf7xd42qb189s3z
+
+
+### Credits
+* sw0rd1ight of Caiji Sec Team (finder)
+* 4ra1n of Chaitin Tech (finder)
+* H Ming (finder)
 
 
 ## Privilege escalation vulnerability for InLong ## { #CVE-2023-31062 }
@@ -130,6 +152,10 @@ using the returned cookie<span style="background-color: rgb(255, 255, 255);">.</
 * https://lists.apache.org/thread/btorjbo9o71h22tcvxzy076022hjdzq0
 
 
+### Credits
+* escape Wang (finder)
+
+
 ## Insecurity direct object references cancelling applications ## { #CVE-2023-31064 }
 
 CVE-2023-31064 [\[CVE json\]](./CVE-2023-31064.cve.json)
@@ -145,6 +171,10 @@ Files or Directories Accessible to External Parties vulnerability in Apache Soft
 
 ### References
 * https://lists.apache.org/thread/1osd2k3t3qol2wdsswqtr9gxdkf78n00
+
+
+### Credits
+* lujie.ac.cn (finder)
 
 
 ## Insufficient Session Expiration in InLong ## { #CVE-2023-31065 }
@@ -172,6 +202,10 @@ Users are advised to upgrade to Apache InLong's 1.7.0 or cherry-pick <a target="
 * https://lists.apache.org/thread/to7o0n2cks0omtwo6mhh5cs2vfdbplqf
 
 
+### Credits
+* lujie.ac.cn (finder)
+
+
 ## Insecure direct object references for inlong sources ## { #CVE-2023-31066 }
 
 CVE-2023-31066 [\[CVE json\]](./CVE-2023-31066.cve.json)
@@ -187,6 +221,10 @@ Files or Directories Accessible to External Parties vulnerability in Apache Soft
 
 ### References
 * https://lists.apache.org/thread/x7y05wo37sq5l9fnmmsjh2dr9kcjrcxf
+
+
+### Credits
+* lujie.ac.cn (finder)
 
 
 ## Weak Password Implementation in InLong ## { #CVE-2023-31098 }
@@ -209,6 +247,10 @@ symbol), attackers can easily guess the user's password and access the account.<
 * https://lists.apache.org/thread/1fvloc3no1gbffzrcsx9ltsg08wr2d1w
 
 
+### Credits
+* lujie.ac.cn (finder)
+
+
 ## Users who joined later can see the data of deleted users ## { #CVE-2023-31101 }
 
 CVE-2023-31101 [\[CVE json\]](./CVE-2023-31101.cve.json)
@@ -224,6 +266,10 @@ Insecure Default Initialization of Resource Vulnerability in Apache Software Fou
 
 ### References
 * https://lists.apache.org/thread/shvwwr6toqz5rr39rwh4k03z08sh9jmr
+
+
+### Credits
+* lujie.ac.cn (finder)
 
 
 ## Attackers can change the immutable name and type of cluster ## { #CVE-2023-31103 }

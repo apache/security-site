@@ -32,6 +32,11 @@ default of "false", and is not overridden by submitted applications.<br></div>
 * https://lists.apache.org/thread/yllfl25xh5tbotjmg93zrq4bzwhqc0gv
 
 
+### Credits
+* Hideyuki Furue (finder)
+* Yi Wu (Databricks) (remediation developer)
+
+
 ## Shell command injection via Spark UI ## { #CVE-2023-32007 }
 
 CVE-2023-32007 [\[CVE json\]](./CVE-2023-32007.cve.json)
@@ -49,3 +54,7 @@ CVE-2023-32007 [\[CVE json\]](./CVE-2023-32007.cve.json)
 * https://www.cve.org/CVERecord?id=CVE-2022-33891
 * https://spark.apache.org/security.html
 * https://lists.apache.org/thread/poxgnxhhnzz735kr1wos366l5vdbb0nv
+
+
+### Credits
+* Sven Krewitt, Flashpoint (reporter)

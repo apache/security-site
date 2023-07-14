@@ -31,6 +31,10 @@ Improper validation of script alert plugin parameters in Apache DolphinScheduler
 * https://lists.apache.org/thread/r0wqzkjsoq17j6ww381kmpx3jjp9hb6r
 
 
+### Credits
+* 4ra1n of Chaitin Tech (finder)
+
+
 ## Apache DolphinScheduler 3.0.0 to 3.1.1 python gateway has improper authentication ## { #CVE-2023-25601 }
 
 CVE-2023-25601 [\[CVE json\]](./CVE-2023-25601.cve.json)

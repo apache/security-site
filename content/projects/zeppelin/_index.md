@@ -30,6 +30,10 @@ The improper Input Validation vulnerability in "”Move folder to Trash” featu
 * https://lists.apache.org/thread/bxs056g3xlsofz0jb3wny9dw4llwptd2
 
 
+### Credits
+* Kai Zhao (finder)
+
+
 ## Stored XSS in note permissions ## { #CVE-2022-46870 }
 
 CVE-2022-46870 [\[CVE json\]](./CVE-2022-46870.cve.json)

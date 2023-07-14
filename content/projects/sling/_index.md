@@ -30,6 +30,10 @@ CVE-2022-45064 [\[CVE json\]](./CVE-2022-45064.cve.json)
 * https://lists.apache.org/thread/hhp611hltby3whk03vx2mv7cmy3vs0ok
 
 
+### Credits
+* Lars Krapf (reporter)
+
+
 ## XSS in CMS Site Group Detail ## { #CVE-2022-46769 }
 
 CVE-2022-46769 [\[CVE json\]](./CVE-2022-46769.cve.json)
@@ -45,6 +49,10 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 
 ### References
 * https://sling.apache.org/news.html
+
+
+### Credits
+* Apache Sling would like to thank Sam Bagheri for reporting this issue (finder)
 
 
 ## Multiple parsing problems in the Apache Sling Commons JSON module ## { #CVE-2022-47937 }
@@ -70,6 +78,10 @@ Apache Sling project, but may of course use other JSON libraries.<br></div></div
 * https://lists.apache.org/thread/sws7z50x47gv0c38q4kx6ktqrvrrg1pm
 
 
+### Credits
+* The vulnerability was discovered and reported by BIngDiAn. (finder)
+
+
 ## XSS in CMS Reference / UI Components ## { #CVE-2023-22849 }
 
 CVE-2023-22849 [\[CVE json\]](./CVE-2023-22849.cve.json)
@@ -87,6 +99,10 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 * https://sling.apache.org/news.html
 
 
+### Credits
+* Apache Sling would like to thank Eugene Lim and Sng Jay Kai from GOVTECH for reporting this issue (finder)
+
+
 ## JNDI injection into Apache sling-org-apache-sling-jcr-base ## { #CVE-2023-25141 }
 
 CVE-2023-25141 [\[CVE json\]](./CVE-2023-25141.cve.json)
@@ -102,6 +118,10 @@ CVE-2023-25141 [\[CVE json\]](./CVE-2023-25141.cve.json)
 
 ### References
 * https://sling.apache.org/news.html
+
+
+### Credits
+* Xun Bai from LJQC Open Source Security Institute  (reporter)
 
 
 ## Apache Sling does not allow to handle i18n content in a secure way ## { #CVE-2023-25621 }
@@ -136,3 +156,7 @@ Excessive Iteration vulnerability in Apache Software Foundation Apache Sling Res
 
 ### References
 * https://lists.apache.org/thread/xpcpo1y88ldss5hgmvogsf6h3735l5zb
+
+
+### Credits
+*  Alex Collignon (reporter)

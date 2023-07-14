@@ -28,3 +28,7 @@ An LDAP Injection vulnerability exists in the&nbsp;LdapIdentityBackend of Apache
 
 ### References
 * https://lists.apache.org/thread/ynz3hhbbq6d980fzpncwbh5jd8mkyt5y
+
+
+### Credits
+* 4ra1n of Chaitin Tech (finder)

@@ -28,3 +28,9 @@ CVE-2023-33008 [\[CVE json\]](./CVE-2023-33008.cve.json)
 
 ### References
 * https://lists.apache.org/thread/qbg14djo95gfpk7o560lr8wcrzfyw43l
+
+
+### Credits
+* PJ Fanning (reporter)
+* Jean-Louis Monteiro (remediation developer)
+* Romain Manni-Bucau (remediation reviewer)

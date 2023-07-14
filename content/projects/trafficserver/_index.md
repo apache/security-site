@@ -34,6 +34,10 @@ Improper Check for Unusual or Exceptional Conditions vulnerability handling requ
 * https://lists.apache.org/thread/mrj2lg4s0hf027rk7gz8t7hbn9xpfg02
 
 
+### Credits
+* Vijay Mamidi (finder)
+
+
 ## Improperly reading the client requests ## { #CVE-2022-37392 }
 
 CVE-2022-37392 [\[CVE json\]](./CVE-2022-37392.cve.json)
@@ -49,6 +53,10 @@ Improper Check for Unusual or Exceptional Conditions vulnerability in handling t
 
 ### References
 * https://lists.apache.org/thread/mrj2lg4s0hf027rk7gz8t7hbn9xpfg02
+
+
+### Credits
+* Menno de Gier (finder)
 
 
 ## Security issues with the xdebug plugin ## { #CVE-2022-40743 }
@@ -68,6 +76,10 @@ Improper Input Validation vulnerability for the xdebug plugin in Apache Software
 * https://lists.apache.org/thread/mrj2lg4s0hf027rk7gz8t7hbn9xpfg02
 
 
+### Credits
+* Nick Frost (finder)
+
+
 ## The TRACE method can be use to disclose network information ## { #CVE-2022-47184 }
 
 CVE-2022-47184 [\[CVE json\]](./CVE-2022-47184.cve.json)
@@ -83,6 +95,10 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ### References
 * https://lists.apache.org/thread/tns2b4khyyncgs5v5p9y35pobg9z2bvs
+
+
+### Credits
+* Martin O'Neal (reporter)
 
 
 ## Configuration option to block the PUSH method in ATS didn't work ## { #CVE-2023-30631 }
@@ -102,6 +118,10 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Tra
 * https://lists.apache.org/thread/tns2b4khyyncgs5v5p9y35pobg9z2bvs
 
 
+### Credits
+* Chris Lemmons (finder)
+
+
 ## s3_auth plugin problem with hash calculation ## { #CVE-2023-33933 }
 
 CVE-2023-33933 [\[CVE json\]](./CVE-2023-33933.cve.json)
@@ -117,3 +137,7 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ### References
 * https://lists.apache.org/thread/tns2b4khyyncgs5v5p9y35pobg9z2bvs
+
+
+### Credits
+* Masakazu Kitajo (reporter)

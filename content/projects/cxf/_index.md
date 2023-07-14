@@ -31,6 +31,10 @@ A vulnerability in Apache CXF before versions 3.5.5 and 3.4.10 allows an attacke
 * https://lists.apache.org/thread/pdzo1qgyplf4y523tnnzrcm7hoco3l8c
 
 
+### Credits
+* thanat0s from Beijin Qihoo 360 adlab (finder)
+
+
 ## Apache CXF SSRF Vulnerability ## { #CVE-2022-46364 }
 
 CVE-2022-46364 [\[CVE json\]](./CVE-2022-46364.cve.json)
@@ -47,3 +51,7 @@ A SSRF vulnerability in parsing the&nbsp;href attribute of XOP:Include in MTOM r
 
 ### References
 * https://cxf.apache.org/security-advisories.data/CVE-2022-46364.txt?version=1&modificationDate=1670944472739&api=v2
+
+
+### Credits
+* thanat0s from Beijin Qihoo 360 adlab (finder)

@@ -30,3 +30,7 @@ A deserialization vulnerability existed when dubbo generic invoke, which could l
 
 ### References
 * https://lists.apache.org/thread/8h6zscfzj482z512d2v5ft63hdhzm0cb
+
+
+### Credits
+* yemoli、R1ckyZ、Koishi、cxc (reporter)

@@ -30,6 +30,11 @@ Server-Side Request Forgery (SSRF) vulnerability in Apache Software Foundation A
 * https://lists.apache.org/thread/m58fdjmtkfp9h4c0r4l48rv995w3qhb6
 
 
+### Credits
+* Huydoppa from GHTK  (reporter)
+* Aleksander (remediation developer)
+
+
 ## SQL injection vulnerability  ## { #CVE-2023-25196 }
 
 CVE-2023-25196 [\[CVE json\]](./CVE-2023-25196.cve.json)
@@ -47,6 +52,11 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 * https://lists.apache.org/thread/m9x3vpn3bry4fympkzxnnz4qx0oc0w8m
 
 
+### Credits
+*  Zhang Baocheng at Leng Jing Qi Cai Security Lab (reporter)
+* Aleks@apache.org (remediation developer)
+
+
 ## SQL injection vulnerability in certain procedure calls  ## { #CVE-2023-25197 }
 
 CVE-2023-25197 [\[CVE json\]](./CVE-2023-25197.cve.json)
@@ -62,3 +72,8 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 
 ### References
 * https://lists.apache.org/thread/v0q9x86sx6f6l2nzr1z0nwm3y9qlng04
+
+
+### Credits
+* Eugene Lim at Cyber Security Group (CSG) Government Technology Agency GOVTECH.sg (reporter)
+* aleks@apache.org (remediation developer)

@@ -30,6 +30,10 @@ Apache Guacamole 1.5.1 and older may incorrectly calculate the lengths of instru
 * https://lists.apache.org/thread/tn63n2lon0h5p45oft834t1dqvvxownv
 
 
+### Credits
+* Stefan Schiller (Sonar) (finder)
+
+
 ## Use-after-free in handling of RDP audio input buffer ## { #CVE-2023-30576 }
 
 CVE-2023-30576 [\[CVE json\]](./CVE-2023-30576.cve.json)
@@ -45,3 +49,7 @@ Apache Guacamole 0.9.10 through 1.5.1 may continue to reference a freed RDP audi
 
 ### References
 * https://lists.apache.org/thread/vgtvxb3w7mm84hx6v8dfc0onsoz05gb6
+
+
+### Credits
+* Stefan Schiller (Sonar) (finder)

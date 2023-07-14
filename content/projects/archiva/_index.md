@@ -28,3 +28,7 @@ Privilege escalation via stored XSS using the file upload service to upload mali
 
 ### References
 * https://lists.apache.org/thread/8pm6d5y9cptznm0bdny3n8voovmm0dtt
+
+
+### Credits
+* sandr0 (sandr0.xyz)  (finder)

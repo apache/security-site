@@ -34,3 +34,7 @@ CVE-2023-24998 [\[CVE json\]](./CVE-2023-24998.cve.json)
 
 ### References
 * https://lists.apache.org/thread/4xl4l09mhwg4vgsk7dxqogcjrobrrdoy
+
+
+### Credits
+* Jakob Ackermann (finder)

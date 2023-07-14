@@ -28,3 +28,7 @@ Apache ShardingSphere-Proxy prior to 5.3.0 when using MySQL as database backend 
 
 ### References
 * https://lists.apache.org/thread/l5rz7j4rg10o7ywtgknh2f5hxnv6yw3l
+
+
+### Credits
+* smoking (finder)

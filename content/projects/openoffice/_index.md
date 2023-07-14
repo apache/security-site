@@ -31,6 +31,10 @@ CVE-2022-38745 [\[CVE json\]](./CVE-2022-38745.cve.json)
 * https://www.openoffice.org/security/cves/CVE-2022-38745.html
 
 
+### Credits
+* European Commission's Open Source Programme Office (sponsor)
+
+
 ## Macro URL arbitrary script execution ## { #CVE-2022-47502 }
 
 CVE-2022-47502 [\[CVE json\]](./CVE-2022-47502.cve.json)
@@ -47,3 +51,8 @@ CVE-2022-47502 [\[CVE json\]](./CVE-2022-47502.cve.json)
 ### References
 * https://lists.apache.org/thread/xr6tl91jj2jgcq8pdbrc4d8w13s6xn80
 * https://www.openoffice.org/security/cves/CVE-2022-47502.html
+
+
+### Credits
+* Altin Thartori (tin-z) (reporter)
+* Joachim Mammele (reporter)

@@ -31,6 +31,10 @@ CVE-2023-22832 [\[CVE json\]](./CVE-2023-22832.cve.json)
 * https://lists.apache.org/thread/b51qs6y7b7r58vovddkv6wc16g2xbl3w
 
 
+### Credits
+* Yi Cai of Chaitin Tech (finder)
+
+
 ## Potential Deserialization of Untrusted Data with JNDI in JMS Components ## { #CVE-2023-34212 }
 
 CVE-2023-34212 [\[CVE json\]](./CVE-2023-34212.cve.json)
@@ -49,6 +53,11 @@ CVE-2023-34212 [\[CVE json\]](./CVE-2023-34212.cve.json)
 * https://lists.apache.org/thread/w5rm46fxmvxy216tglf0dv83wo6gnzr5
 
 
+### Credits
+* Veraxy00 of Qianxin TI Center (finder)
+* Matei "Mal" Badanoiu (reporter)
+
+
 ## Potential Code Injection with Database Services using H2 ## { #CVE-2023-34468 }
 
 CVE-2023-34468 [\[CVE json\]](./CVE-2023-34468.cve.json)
@@ -65,3 +74,7 @@ CVE-2023-34468 [\[CVE json\]](./CVE-2023-34468.cve.json)
 ### References
 * https://nifi.apache.org/security.html#CVE-2023-34468
 * https://lists.apache.org/thread/7b82l4f5blmpkfcynf3y6z4x1vqo59h8
+
+
+### Credits
+* Matei "Mal" Badanoiu (finder)

@@ -30,6 +30,10 @@ Prior to Apache HTTP Server 2.4.55, a malicious backend can cause the response h
 * https://httpd.apache.org/security/vulnerabilities_24.html
 
 
+### Credits
+* Dimas Fariski Setyawan Putra (@nyxsorcerer) (finder)
+
+
 ## mod_proxy_ajp Possible request smuggling ## { #CVE-2022-36760 }
 
 CVE-2022-36760 [\[CVE json\]](./CVE-2022-36760.cve.json)
@@ -45,6 +49,10 @@ Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling') vulnerab
 
 ### References
 * https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* ZeddYu_Lu from Qi'anxin Research Institute of Legendsec at Qi'anxin Group (finder)
 
 
 ## mod_dav out of  bounds read, or write of zero byte ## { #CVE-2006-20001 }
@@ -85,6 +93,10 @@ substitution. For example, something like:</div><div><br></div><div>RewriteEngin
 * https://httpd.apache.org/security/vulnerabilities_24.html
 
 
+### Credits
+* Lars Krapf of Adobe (finder)
+
+
 ## mod_proxy_uwsgi HTTP response splitting ## { #CVE-2023-27522 }
 
 CVE-2023-27522 [\[CVE json\]](./CVE-2023-27522.cve.json)
@@ -100,3 +112,7 @@ CVE-2023-27522 [\[CVE json\]](./CVE-2023-27522.cve.json)
 
 ### References
 * https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Dimas Fariski Setyawan Putra (nyxsorcerer) (finder)

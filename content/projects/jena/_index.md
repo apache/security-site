@@ -30,6 +30,10 @@ There is insufficient checking of user queries in Apache Jena versions 4.7.0 and
 * https://lists.apache.org/thread/s0dmpsxcwqs57l4qfs415klkgmhdxq7s
 
 
+### Credits
+* L3yx of Syclover Security Team (reporter)
+
+
 ## Exposure of execution in script engine expressions. ## { #CVE-2023-32200 }
 
 CVE-2023-32200 [\[CVE json\]](./CVE-2023-32200.cve.json)
@@ -48,3 +52,7 @@ remote user to execute javascript via a SPARQL query.<br><p>This issue affects A
 ### References
 * https://www.cve.org/CVERecord?id=CVE-2023-22665
 * https://lists.apache.org/thread/7hg0t2kws3fyr75dl7lll8389xzzc46z
+
+
+### Credits
+* s3gundo of Alibaba (reporter)

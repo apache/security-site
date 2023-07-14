@@ -31,3 +31,7 @@ CVE-2023-26268 [\[CVE json\]](./CVE-2023-26268.cve.json)
 * https://lists.apache.org/thread/r2wvjfysg3d92lhhjd1qh3wfr8mlp0pp
 * https://docs.couchdb.org/en/stable/cve/2023-26268.html
 * https://lists.apache.org/thread/ldkqs0nhpmho26bdxf4fon7w75hsq5gl
+
+
+### Credits
+* Nick Vatamaniuc vatamane@apache.org (finder)

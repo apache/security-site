@@ -29,3 +29,7 @@ A possible security vulnerability has been identified in Apache Kafka Connect.<b
 ### References
 * https://kafka.apache.org/cve-list
 * https://lists.apache.org/thread/vy1c7fqcdqvq5grcqp6q5jyyb302khyz
+
+
+### Credits
+* Apache Kafka would like to thank to Jari Jääskelä (https://hackerone.com/reports/1529790) and 4ra1n and Y4tacker (they found vulnerabilities in other Apache projects. After discussion between PMC of the two projects, it was finally confirmed that it was the vulnerability of Kafka then they reported it to us) (finder)

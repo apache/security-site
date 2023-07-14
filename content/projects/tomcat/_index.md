@@ -76,6 +76,10 @@ CVE-2023-28709 [\[CVE json\]](./CVE-2023-28709.cve.json)
 * https://lists.apache.org/thread/7wvxonzwb7k9hx9jt3q33cmy7j97jo3j
 
 
+### Credits
+* Chenwei Jiang, Chenfeng Nie and Yue Yang from the Huawei Nebula Security Lab (finder)
+
+
 ## AJP response header mix-up ## { #CVE-2023-34981 }
 
 CVE-2023-34981 [\[CVE json\]](./CVE-2023-34981.cve.json)
@@ -94,3 +98,7 @@ A regression in the fix for bug 66512 in Apache Tomcat 11.0.0-M5, 10.1.8, 9.0.74
 
 ### References
 * https://lists.apache.org/thread/j1ksjh9m9gx1q60rtk1sbzmxhvj5h5qz
+
+
+### Credits
+* Hidenobu Hayashi and Yuichiro Fukubayashi of M3, Inc. (finder)

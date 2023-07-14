@@ -30,6 +30,10 @@ CVE-2022-45048 [\[CVE json\]](./CVE-2022-45048.cve.json)
 * https://lists.apache.org/thread/6rpzwy1smdhr60tsh1ydknn3kdm45bb6
 
 
+### Credits
+* g1831767442@163.com (finder)
+
+
 ## Permissions problem in the Apache Ranger Hive Plugin ## { #CVE-2021-40331 }
 
 CVE-2021-40331 [\[CVE json\]](./CVE-2021-40331.cve.json)

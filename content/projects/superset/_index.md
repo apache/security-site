@@ -31,6 +31,10 @@ When explicitly enabling the feature flag DASHBOARD_CACHE (disabled by default),
 * https://lists.apache.org/thread/snxbkf2x9kww7s0wkmydct9nhqqn9rv9
 
 
+### Credits
+* Sunny Alexli (finder)
+
+
 ## SQL injection vulnerability in adhoc clauses ## { #CVE-2022-41703 }
 
 CVE-2022-41703 [\[CVE json\]](./CVE-2022-41703.cve.json)
@@ -48,6 +52,10 @@ A vulnerability in the SQL Alchemy connector of Apache Superset allows an authen
 
 ### References
 * https://lists.apache.org/thread/g7jjw0okxjk5y57pbbxy19ydw42kqcos
+
+
+### Credits
+* Mingyu Son (finder)
 
 
 ## Cross-Site Scripting on dashboards ## { #CVE-2022-43717 }
@@ -68,6 +76,10 @@ Dashboard rendering does not sufficiently sanitize the content of markdown compo
 * https://lists.apache.org/thread/g6zy6vkpvkbj5mj32vmyzwol5ldtg9pl
 
 
+### Credits
+* Vladimir Razov (Positive Technologies) (finder)
+
+
 ## Cross-Site Scripting vulnerability on upload forms ## { #CVE-2022-43718 }
 
 CVE-2022-43718 [\[CVE json\]](./CVE-2022-43718.cve.json)
@@ -84,6 +96,10 @@ Upload data forms do not correctly render user input leading to possible XSS att
 
 ### References
 * https://lists.apache.org/thread/8615608jt2x7b3rmqrtngldy8pn3nz2r
+
+
+### Credits
+* Vladimir Razov (Positive Technologies) (finder)
 
 
 ## Cross Site Request Forgery (CSRF) on accept, request access API ## { #CVE-2022-43719 }
@@ -105,6 +121,10 @@ Two legacy REST API endpoints for approval and request access are vulnerable to 
 * https://lists.apache.org/thread/xc309h2dphrkg33154djf3nqlh2xc1c0
 
 
+### Credits
+* Vladimir Razov (Positive Technologies) (finder)
+
+
 ## Improper rendering of user input ## { #CVE-2022-43720 }
 
 CVE-2022-43720 [\[CVE json\]](./CVE-2022-43720.cve.json)
@@ -123,6 +143,10 @@ An authenticated attacker with write CSS template permissions can create a recor
 * https://lists.apache.org/thread/jts6x56kghr9mbowb653bk70pl81jp8l
 
 
+### Credits
+* Anton Vaychikauskas (Positive Technologies) (finder)
+
+
 ## Open Redirect Vulnerability ## { #CVE-2022-43721 }
 
 CVE-2022-43721 [\[CVE json\]](./CVE-2022-43721.cve.json)
@@ -139,6 +163,10 @@ An authenticated attacker with update datasets permission could change a dataset
 
 ### References
 * https://lists.apache.org/thread/s6sqt5jmcv6qxtvdot1t5tpt57v439kg
+
+
+### Credits
+* Vladimir Razov (Positive Technologies) (finder)
 
 
 ## Possible SSRF on import datasets ## { #CVE-2023-25504 }
@@ -160,6 +188,10 @@ is deployed. This vulnerability exists&nbsp;</span>in Apache Superset versions u
 * https://lists.apache.org/thread/tdnzkocfsqg2sbbornnp9g492fn4zhtx
 
 
+### Credits
+* Alexey Sabadash, VK (finder)
+
+
 ## Session validation vulnerability when using provided default SECRET_KEY ## { #CVE-2023-27524 }
 
 CVE-2023-27524 [\[CVE json\]](./CVE-2023-27524.cve.json)
@@ -175,6 +207,10 @@ Session Validation attacks in Apache Superset versions up to and including 2.0.1
 
 ### References
 * https://lists.apache.org/thread/n0ftx60sllf527j7g11kmt24wvof8xyk
+
+
+### Credits
+* Naveen Sunkavally (Horizon3.ai) (finder)
 
 
 ## Incorrect default permissions for Gamma role ## { #CVE-2023-27525 }
@@ -194,6 +230,10 @@ An authenticated user with Gamma role authorization could have access to metadat
 * https://lists.apache.org/thread/wpv7b17zjg2pmvpfkdd6nn8sco8y2q77
 
 
+### Credits
+* NTT DATA (finder)
+
+
 ## Database connection password leak ## { #CVE-2023-30776 }
 
 CVE-2023-30776 [\[CVE json\]](./CVE-2023-30776.cve.json)
@@ -209,3 +249,7 @@ An authenticated user with specific data permissions could access database conne
 
 ### References
 * https://lists.apache.org/thread/s9w9w10mt2sngk3solwnmq5k7md53tsz
+
+
+### Credits
+* Naveen Sunkavally (Horizon3.ai) (finder) (finder)

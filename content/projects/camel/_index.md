@@ -31,3 +31,7 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ### References
 * https://lists.apache.org/thread/x4vy2hhbltb1xrvy1g6m8hpjgj2k7wgh
+
+
+### Credits
+* Jonathan Leitschuh of the Open Source Security Foundation: Project Alpha-Omega (reporter)

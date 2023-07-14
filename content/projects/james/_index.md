@@ -30,6 +30,10 @@ Usage of temporary files with insecure permissions by the Apache James server al
 * https://lists.apache.org/thread/j61fo8xc1rxtofrn8vc33whx35s9cj1d
 
 
+### Credits
+* Benoit Tellier (reporter)
+
+
 ## Temporary File Information Disclosure in MIME4J TempFileStorageProvider ## { #CVE-2022-45787 }
 
 CVE-2022-45787 [\[CVE json\]](./CVE-2022-45787.cve.json)
@@ -45,6 +49,10 @@ Unproper laxist permissions on the temporary files used by MIME4J TempFileStorag
 
 ### References
 * https://lists.apache.org/thread/26s8p9stl1z261c4qw15bsq03tt7t0rj
+
+
+### Credits
+* Jonathan Leitschuh (finder)
 
 
 ## Privilege escalation through unauthenticated JMX ## { #CVE-2023-26269 }
@@ -63,3 +71,7 @@ malicious local user.</div><div>Administrators are advised to disable JMX, or se
 
 ### References
 * https://lists.apache.org/thread/2z44rg93pflbjhvbwy3xtz505bx41cbs
+
+
+### Credits
+* Matei "Mal" Badanoiu (reporter)
