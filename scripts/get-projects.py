@@ -9,7 +9,9 @@ pairs = zip(lines[::2], lines[1::2])
 
 advisory_links = {
   'camel': 'https://camel.apache.org/security/',
+  'directory': 'https://directory.apache.org/security-advisories.html',
   'httpd': 'https://httpd.apache.org/security/vulnerabilities_24.html',
+  'kafka': 'https://kafka.apache.org/cve-list.html',
   'openoffice': 'https://www.openoffice.org/security/bulletin.html',
   'solr': 'https://solr.apache.org/security.html#recent-cve-reports-for-apache-solr',
   'subversion': 'https://subversion.apache.org/security/',
