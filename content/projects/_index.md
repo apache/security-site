@@ -80,7 +80,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Spark](https://spark.apache.org/security.html) |  [Apache Spark Security Team](mailto:security@spark.apache.org) | |
 | Apache StreamPark (Incubating) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache StreamPipes |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache Struts](https://struts.apache.org/security.html) |  [Apache Struts Security Team](mailto:security@struts.apache.org) | |
+| [Apache Struts](https://struts.apache.org/security.html) |  [Apache Struts Security Team](mailto:security@struts.apache.org) | [Advisories](https://cwiki.apache.org/confluence/display/WW/Security+Bulletins) |
 | [Apache Subversion](https://subversion.apache.org/security/) |  [Apache Subversion Security Team](mailto:security@subversion.apache.org) | [Advisories](https://subversion.apache.org/security/) |
 | Apache Superset |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Tomcat](https://tomcat.apache.org/security.html) |  [Apache Tomcat Security Team](mailto:security@tomcat.apache.org) | [Advisories](https://tomcat.apache.org/security.html) |
