@@ -82,7 +82,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache StreamPipes |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Struts](https://struts.apache.org/security.html) |  [Apache Struts Security Team](mailto:security@struts.apache.org) | [Advisories](https://cwiki.apache.org/confluence/display/WW/Security+Bulletins) |
 | [Apache Subversion](https://subversion.apache.org/security/) |  [Apache Subversion Security Team](mailto:security@subversion.apache.org) | [Advisories](https://subversion.apache.org/security/) |
-| Apache Superset |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Superset](https://superset.apache.org/docs/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://superset.apache.org/docs/security/cves) |
 | [Apache Tomcat](https://tomcat.apache.org/security.html) |  [Apache Tomcat Security Team](mailto:security@tomcat.apache.org) | [Advisories](https://tomcat.apache.org/security.html) |
 | [Apache Traffic Control](https://trafficcontrol.apache.org/security/index.html) |  [Apache Traffic Control Security Team](mailto:security@trafficcontrol.apache.org) | |
 | Apache Traffic Server |  [Apache Traffic Server Security Team](mailto:security@trafficserver.apache.org) | |
