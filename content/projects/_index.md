@@ -17,7 +17,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Ant](https://ant.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Any23 |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Portable Runtime (APR)](https://apr.apache.org/security_report.html) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Archiva |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Archiva](https://archiva.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://archiva.apache.org/security.html) |
 | Apache Atlas |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache BookKeeper |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache bRPC |  [Apache Security Team](mailto:security@apache.org) | |
