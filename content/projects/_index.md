@@ -30,7 +30,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Directory |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache DolphinScheduler |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Druid](https://druid.apache.org/docs/latest/operations/security-overview.html) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Dubbo |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Dubbo](https://dubbo.apache.org/en/docs/notices/security/) |  [Apache Dubbo Security Team](mailto:security@dubbo.apache.org) | |
 | [Apache Fineract](https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report) |  [Apache Fineract Security Team](mailto:security@fineract.apache.org) | |
 | [Apache Geronimo](https://geronimo.apache.org/security-reports.html) |  [Apache Geronimo Security Team](mailto:security@geronimo.apache.org) | |
 | [Apache Pulsar](https://github.com/apache/pulsar/security/policy) |  [Apache Security Team](mailto:security@apache.org) | |
