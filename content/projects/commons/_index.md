@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Commons? You can read more about the projects' security policy on their [security page](https://commons.apache.org/security.html), and email your report to the  [Apache Commons Security Team](mailto:security@commons.apache.org).
+Do you want disclose a potential security issue for Apache Commons? You can read more about the projects' security policy on their [security page](https://commons.apache.org/security.html), and email your report to the [Apache Commons Security Team](mailto:security@commons.apache.org).
 
 # Advisories
 

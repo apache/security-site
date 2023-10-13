@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Fineract? You can read more about the projects' security policy on their [security page](https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report), and email your report to the  [Apache Fineract Security Team](mailto:security@fineract.apache.org).
+Do you want disclose a potential security issue for Apache Fineract? You can read more about the projects' security policy on their [security page](https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report), and email your report to the [Apache Fineract Security Team](mailto:security@fineract.apache.org).
 
 # Advisories
 

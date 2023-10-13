@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Dubbo? You can read more about the projects' security policy on their [security page](https://dubbo.apache.org/en/docs/notices/security/), and email your report to the  [Apache Dubbo Security Team](mailto:security@dubbo.apache.org).
+Do you want disclose a potential security issue for Apache Dubbo? You can read more about the projects' security policy on their [security page](https://dubbo.apache.org/en/docs/notices/security/), and email your report to the [Apache Dubbo Security Team](mailto:security@dubbo.apache.org).
 
 # Advisories
 

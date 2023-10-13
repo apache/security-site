@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Spark? You can read more about the projects' security policy on their [security page](https://spark.apache.org/security.html), and email your report to the  [Apache Spark Security Team](mailto:security@spark.apache.org).
+Do you want disclose a potential security issue for Apache Spark? You can read more about the projects' security policy on their [security page](https://spark.apache.org/security.html), and email your report to the [Apache Spark Security Team](mailto:security@spark.apache.org).
 
 # Advisories
 

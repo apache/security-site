@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Portable Runtime (APR)? You can read more about the projects' security policy on their [security page](https://apr.apache.org/security_report.html), and email your report to the  [Apache Security Team](mailto:security@apache.org).
+Do you want disclose a potential security issue for Apache Portable Runtime (APR)? You can read more about the projects' security policy on their [security page](https://apr.apache.org/security_report.html), and email your report to the [Apache Security Team](mailto:security@apache.org).
 
 # Advisories
 

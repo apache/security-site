@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Shiro? You can read more about the projects' security policy on their [security page](https://shiro.apache.org/security-reports.html), and email your report to the  [Apache Shiro Security Team](mailto:security@shiro.apache.org).
+Do you want disclose a potential security issue for Apache Shiro? You can read more about the projects' security policy on their [security page](https://shiro.apache.org/security-reports.html), and email your report to the [Apache Shiro Security Team](mailto:security@shiro.apache.org).
 
 # Advisories
 

@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache OFBiz? You can read more about the projects' security policy on their [security page](https://ofbiz.apache.org/download.html#security), and email your report to the  [Apache OFBiz Security Team](mailto:security@ofbiz.apache.org).
+Do you want disclose a potential security issue for Apache OFBiz? You can read more about the projects' security policy on their [security page](https://ofbiz.apache.org/download.html#security), and email your report to the [Apache OFBiz Security Team](mailto:security@ofbiz.apache.org).
 
 # Advisories
 

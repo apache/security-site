@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Sling? You can read more about the projects' security policy on their [security page](https://sling.apache.org/site/security.html), and email your report to the  [Apache Sling Security Team](mailto:security@sling.apache.org).
+Do you want disclose a potential security issue for Apache Sling? You can read more about the projects' security policy on their [security page](https://sling.apache.org/site/security.html), and email your report to the [Apache Sling Security Team](mailto:security@sling.apache.org).
 
 # Advisories
 

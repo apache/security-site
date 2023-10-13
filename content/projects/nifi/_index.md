@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache NiFi? You can read more about the projects' security policy on their [security page](https://nifi.apache.org/security.html), and email your report to the  [Apache NiFi Security Team](mailto:security@nifi.apache.org).
+Do you want disclose a potential security issue for Apache NiFi? You can read more about the projects' security policy on their [security page](https://nifi.apache.org/security.html), and email your report to the [Apache NiFi Security Team](mailto:security@nifi.apache.org).
 
 # Advisories
 

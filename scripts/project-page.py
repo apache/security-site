@@ -82,20 +82,20 @@ layout: single
 """ % (p['name'], p['name']))
     project_page.write('# Reporting\n\n')
     project_page.write('Do you want disclose a potential security issue for %s? ' % p['name'])
-    if 'link' in p.keys():
+    if 'link' in p.keys() and p['link']:
         project_page.write("You can read more about the projects' security policy on their [security page](%s), and email your report to the " % p['link'])
     else:
         project_page.write('Send your report to the ')
     if not 'contact' in p.keys() or p['contact'] == 'security@apache.org':
-        project_page.write(' [Apache Security Team](mailto:security@apache.org).')
+        project_page.write('[Apache Security Team](mailto:security@apache.org).')
     else:
-        project_page.write(' [%s Security Team](mailto:%s).' % (p['name'], p['contact']))
+        project_page.write('[%s Security Team](mailto:%s).' % (p['name'], p['contact']))
 
     project_page.write('\n\n# Advisories')
 
     project_page.write('\n\nThis section is experimental: it provides advisories since 2023 and ')
     project_page.write('may lag behind the official CVE publications. ')
-    if 'link' in p.keys():
+    if 'link' in p.keys() and p['link']:
         project_page.write('It may also lack details found on the [project security page](%s). ' % p['link'])
 
     project_page.write('If you have any feedback on how you would like this data to be provided, ')

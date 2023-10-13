@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache OpenMeetings? You can read more about the projects' security policy on their [security page](https://openmeetings.apache.org/security.html), and email your report to the  [Apache OpenMeetings Security Team](mailto:security@openmeetings.apache.org).
+Do you want disclose a potential security issue for Apache OpenMeetings? You can read more about the projects' security policy on their [security page](https://openmeetings.apache.org/security.html), and email your report to the [Apache OpenMeetings Security Team](mailto:security@openmeetings.apache.org).
 
 # Advisories
 

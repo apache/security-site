@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache HTTP Server? You can read more about the projects' security policy on their [security page](https://httpd.apache.org/security_report.html), and email your report to the  [Apache HTTP Server Security Team](mailto:security@httpd.apache.org).
+Do you want disclose a potential security issue for Apache HTTP Server? You can read more about the projects' security policy on their [security page](https://httpd.apache.org/security_report.html), and email your report to the [Apache HTTP Server Security Team](mailto:security@httpd.apache.org).
 
 # Advisories
 
