@@ -13,6 +13,28 @@ Do you want disclose a potential security issue for Apache OpenMeetings? You can
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://openmeetings.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Apache OpenMeetings: bandwidth can be overloaded with public web service ## { #CVE-2021-27576 }
+
+CVE-2021-27576 [\[CVE json\]](./CVE-2021-27576.cve.json)
+
+### Affected
+
+* Apache OpenMeetings from 4.0.0 before Apache OpenMeetings 4*
+* Apache OpenMeetings from Apache OpenMeetings 5 through 5.1.0
+
+
+### Description
+
+If was found that the NetTest web service can be used to overload the bandwidth of a Apache OpenMeetings server.  This issue was addressed in Apache OpenMeetings 6.0.0
+
+### References
+* https://lists.apache.org/thread.html/r9bb615bd70a0197368f5f3ffc887162686caeb0b5fc30592a7a871e9%40%3Cuser.openmeetings.apache.org%3E
+
+
+### Credits
+* This issue was identified by Trung Le, Chi Tran, Linh Cua
+
+
 ## allows user impersonation ## { #CVE-2023-28326 }
 
 CVE-2023-28326 [\[CVE json\]](./CVE-2023-28326.cve.json)

@@ -13,6 +13,69 @@ Do you want disclose a potential security issue for Apache Zeppelin? You can rea
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://zeppelin.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## bash command injection in spark interpreter ## { #CVE-2019-10095 }
+
+CVE-2019-10095 [\[CVE json\]](./CVE-2019-10095.cve.json)
+
+### Affected
+
+* Apache Zeppelin from Apache Zeppelin through 0.9.0
+
+
+### Description
+
+bash command injection vulnerability in Apache Zeppelin allows an attacker to inject system commands into Spark interpreter settings.  This issue affects Apache Zeppelin Apache Zeppelin version 0.9.0 and prior versions.
+
+### References
+* https://lists.apache.org/thread.html/rdf06e8423833b3daadc30c56a2ff47c48920864d5199476daa897208%40%3Cusers.zeppelin.apache.org%3E
+
+
+### Credits
+* Apache Zeppelin would like to thank HERE Security team for reporting this issue 
+
+
+## Notebook permissions bypass ## { #CVE-2020-13929 }
+
+CVE-2020-13929 [\[CVE json\]](./CVE-2020-13929.cve.json)
+
+### Affected
+
+* Apache Zeppelin from Apache Zeppelin through 0.9.0
+
+
+### Description
+
+Authentication bypass vulnerability in Apache Zeppelin allows an attacker to bypass Zeppelin authentication mechanism to act as another user.  This issue affects Apache Zeppelin Apache Zeppelin version 0.9.0 and prior versions.
+
+### References
+* https://lists.apache.org/thread.html/r768800925d6407a6a87ccae0ec98776b7bda50c0e3ed3d0130dad028%40%3Cusers.zeppelin.apache.org%3E
+
+
+### Credits
+* Apache Zeppelin would like to thank David Woodhouse for reporting this issue 
+
+
+## Cross Site Scripting in markdown interpreter ## { #CVE-2021-27578 }
+
+CVE-2021-27578 [\[CVE json\]](./CVE-2021-27578.cve.json)
+
+### Affected
+
+* Apache Zeppelin from Apache Zeppelin before 0.9.0
+
+
+### Description
+
+Cross Site Scripting vulnerability in markdown interpreter of Apache Zeppelin allows an attacker to inject malicious scripts.  This issue affects Apache Zeppelin Apache Zeppelin versions prior to 0.9.0.
+
+### References
+* https://lists.apache.org/thread.html/r90590aa5ea788128ecc2e822e1e64d5200b4cb92b06707b38da4cb3d%40%3Cusers.zeppelin.apache.org%3E
+
+
+### Credits
+* Apache Zeppelin would like to thank Paulo Pacheco for reporting this issue 
+
+
 ## Arbitrary file deletion vulnerability ## { #CVE-2021-28655 }
 
 CVE-2021-28655 [\[CVE json\]](./CVE-2021-28655.cve.json)

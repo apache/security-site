@@ -13,6 +13,49 @@ Do you want disclose a potential security issue for Apache Guacamole? You can re
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://guacamole.apache.org/security/). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Private tunnel identifier may be included in the non-private details of active connections ## { #CVE-2021-41767 }
+
+CVE-2021-41767 [\[CVE json\]](./CVE-2021-41767.cve.json)
+
+### Affected
+
+* Apache Guacamole from unspecified through 1.3.0
+
+
+### Description
+
+Apache Guacamole 1.3.0 and older may incorrectly include a private tunnel identifier in the non-private details of some REST responses. This may allow an authenticated user who already has permission to access a particular connection to read from or interact with another user's active use of that same connection.
+
+### References
+* https://lists.apache.org/thread/5l31k4jmzdsfz0xt8osrbl878gb3b7ro
+
+
+### Credits
+* We would like to thank Damian Velardo (Australia and New Zealand Banking Group) for reporting this issue.
+
+
+## Improper validation of SAML responses ## { #CVE-2021-43999 }
+
+CVE-2021-43999 [\[CVE json\]](./CVE-2021-43999.cve.json)
+
+### Affected
+
+* Apache Guacamole at 1.3.0
+* Apache Guacamole at 1.2.0
+
+
+### Description
+
+Apache Guacamole 1.2.0 and 1.3.0 do not properly validate responses received from a SAML identity provider. If SAML support is enabled, this may allow a malicious user to assume the identity of another Guacamole user.
+
+### References
+* https://lists.apache.org/thread/4dt9h5mo4o9rxlgxm3rp8wfqdtdjn2z9
+
+
+### Credits
+* We would like to thank Finn Steglich (ETAS) for reporting this issue.
+
+
 ## Incorrect calculation of Guacamole protocol element lengths ## { #CVE-2023-30575 }
 
 CVE-2023-30575 [\[CVE json\]](./CVE-2023-30575.cve.json)

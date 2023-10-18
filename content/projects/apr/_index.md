@@ -13,6 +13,30 @@ Do you want disclose a potential security issue for Apache Portable Runtime (APR
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://apr.apache.org/security_report.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Regression of CVE-2017-12613 ## { #CVE-2021-35940 }
+
+CVE-2021-35940 [\[CVE json\]](./CVE-2021-35940.cve.json)
+
+### Affected
+
+* Apache Portable Runtime (APR) at Apache Portable Runtime 1.7.0
+
+
+### Description
+
+An out-of-bounds array read in the apr_time_exp*() functions was fixed in the Apache Portable Runtime 1.6.3 release (CVE-2017-12613).  The fix for this issue was not carried forward to the APR 1.7.x branch, and hence version 1.7.0 regressed compared to 1.6.3 and is vulnerable to the same issue.
+
+### References
+* http://svn.apache.org/viewvc?view=revision&revision=1891198%20
+* http://mail-archives.apache.org/mod_mbox/www-announce/201710.mbox/%3CCACsi251B8UaLvM-rrH9fv57-zWi0zhyF3275_jPg1a9VEVVoxw%40mail.gmail.com%3E
+* https://downloads.apache.org/apr/patches/apr-1.7.0-CVE-2021-35940.patch
+* https://lists.apache.org/thread.html/ra2868b53339a6af65577146ad87016368c138388b09bff9d2860f50e%40%3Cdev.apr.apache.org%3E
+
+
+### Credits
+* The Apache Portable Runtime project would like to thank Iveta Cesalova (Red Hat) for reporting this issue.
+
+
 ## out-of-bounds writes in the apr_base64 family of functions ## { #CVE-2022-25147 }
 
 CVE-2022-25147 [\[CVE json\]](./CVE-2022-25147.cve.json)

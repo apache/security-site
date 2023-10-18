@@ -13,6 +13,49 @@ Do you want disclose a potential security issue for Apache Fineract? You can rea
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## disabled hostname verificiation ## { #CVE-2020-17514 }
+
+CVE-2020-17514 [\[CVE json\]](./CVE-2020-17514.cve.json)
+
+### Affected
+
+* Apache Fineract from Apache Fineract before 1.5.0
+
+
+### Description
+
+Apache Fineract prior to 1.5.0 disables HTTPS hostname verification in ProcessorHelper in the configureClient method. Under typical deployments, a man in the middle attack could be successful.
+
+### References
+* https://issues.apache.org/jira/browse/FINERACT-1211
+
+
+### Credits
+* We would like to thank Simon Gerst at https://github.com/intrigus-lgtm  for reporting this issue
+
+
+## Apache Fineract allowed an authenticated user to perform remote code execution due to path traversal ## { #CVE-2022-44635 }
+
+CVE-2022-44635 [\[CVE json\]](./CVE-2022-44635.cve.json)
+
+### Affected
+
+* Apache Fineract from Apache Fineract 1.8 through 1.8.0
+* Apache Fineract from Apache Fineract 1.7 through 1.7.0
+
+
+### Description
+
+Apache Fineract allowed an authenticated user to perform remote code execution due to a path traversal vulnerability in a file upload component of Apache Fineract, allowing an attacker to run remote code.  This issue affects Apache Fineract version 1.8.0 and prior versions. We recommend users to upgrade to 1.8.1.
+
+### References
+* https://lists.apache.org/thread/t8q6fmh3o6yqmy69qtqxppk9yg9wfybg
+
+
+### Credits
+* We would like to thank  Aman Sapra, co-captain of the Super Guesser CTF team & Security researcher at CRED, for reporting this issue, and the Apache Security team for their assistance.  We give kudos and karma to @Aleksandar Vidakovic for resolving this CVE. 
+
+
 ## SSRF template type vulnerability in certain authenticated users ## { #CVE-2023-25195 }
 
 CVE-2023-25195 [\[CVE json\]](./CVE-2023-25195.cve.json)

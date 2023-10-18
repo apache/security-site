@@ -13,6 +13,24 @@ Do you want disclose a potential security issue for Apache Accumulo? Send your r
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Apache Accumulo Improper Handling of Insufficient Permissions ## { #CVE-2020-17533 }
+
+CVE-2020-17533 [\[CVE json\]](./CVE-2020-17533.cve.json)
+
+### Affected
+
+* Apache Accumulo at Apache Accumulo 2.0.0
+* Apache Accumulo from 1.5.0 before Apache Accumulo*
+
+
+### Description
+
+Apache Accumulo versions 1.5.0 through 1.10.0 and version 2.0.0 do not properly check the return value of some policy enforcement functions before permitting an authenticated user to perform certain administrative operations. Specifically, the return values of the 'canFlush' and 'canPerformSystemActions' security functions are not checked in some instances, therefore allowing an authenticated user with insufficient permissions to perform the following actions: flushing a table, shutting down Accumulo or an individual tablet server, and setting or removing system-wide Accumulo configuration properties.
+
+### References
+* https://lists.apache.org/thread.html/rf8c1a787b6951d3dacb9ec58f0bf1633790c91f54ff10c6f8ff9d8ed%40%3Cuser.accumulo.apache.org%3E
+
+
 ## Accumulo 2.1.0 may incorrectly validate cached credentials ## { #CVE-2023-34340 }
 
 CVE-2023-34340 [\[CVE json\]](./CVE-2023-34340.cve.json)

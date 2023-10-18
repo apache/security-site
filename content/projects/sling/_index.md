@@ -13,6 +13,82 @@ Do you want disclose a potential security issue for Apache Sling? You can read m
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://sling.apache.org/site/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## SMTPS server hostname not checked when making TLS connection to SMTPS server ## { #CVE-2021-44549 }
+
+CVE-2021-44549 [\[CVE json\]](./CVE-2021-44549.cve.json)
+
+### Affected
+
+* Apache Sling Commons Messaging Mail at Apache Sling Commons Messaging Mail 1.0.0 1.0.0
+
+
+### Description
+
+Apache Sling Commons Messaging Mail provides a simple layer on top of JavaMail/Jakarta Mail for OSGi to send mails via SMTPS.
+
+To reduce the risk of "man in the middle" attacks additional server identity checks must be performed when accessing mail servers.
+
+For compatibility reasons these additional checks are disabled by default in JavaMail/Jakarta Mail.
+
+The SimpleMailService in Apache Sling Commons Messaging Mail 1.0 lacks an option to enable these checks for the shared mail session.
+A user could enable these checks nevertheless by accessing the session via the message created by SimpleMessageBuilder and setting the property mail.smtps.ssl.checkserveridentity to true.
+
+Apache Sling Commons Messaging Mail 2.0 adds support for enabling server identity checks and these checks are enabled by default.
+- https://javaee.github.io/javamail/docs/SSLNOTES.txt
+- https://javaee.github.io/javamail/docs/api/com/sun/mail/smtp/package-summary.html
+- https://github.com/eclipse-ee4j/mail/issues/429
+
+### References
+* https://lists.apache.org/thread/l8p9h2bqvkj6rhv4w8kzctb817415b7f
+
+
+### Credits
+* The issue was reported by Michael Lescisin.
+
+
+## log injection in Sling logging ## { #CVE-2022-32549 }
+
+CVE-2022-32549 [\[CVE json\]](./CVE-2022-32549.cve.json)
+
+### Affected
+
+* Apache Sling from Apache Sling API through 2.25.0
+* Apache Sling from Apache Sling Commons Log through 5.4.0
+
+
+### Description
+
+Apache Sling Commons Log <= 5.4.0 and Apache Sling API <= 2.25.0 are vulnerable to log injection. The ability to forge logs may allow an attacker to cover tracks by injecting fake logs and potentially corrupt log files.
+
+### References
+* https://lists.apache.org/thread/7z6h3806mwcov5kx6l96pq839sn0po1v
+
+
+### Credits
+* Apache Sling would like to thank Alex Collignon for reporting this issue.
+
+
+## XSS in Sling CMS Reference App Taxonomy Path ## { #CVE-2022-43670 }
+
+CVE-2022-43670 [\[CVE json\]](./CVE-2022-43670.cve.json)
+
+### Affected
+
+* Apache Sling App CMS from unspecified before 1.1.2
+
+
+### Description
+
+An improper neutralization of input during web page generation ('Cross-site Scripting') [CWE-79] vulnerability in Sling App CMS version 1.1.0 and prior may allow an authenticated remote attacker to perform a reflected cross site scripting (XSS) attack in the taxonomy management feature. 
+
+### References
+* https://lists.apache.org/thread/o68l3l3crfxz107fr9dm74y8vg8kj2cs
+
+
+### Credits
+* Apache Sling would like to thank QSec-Team for reporting this issue
+
+
 ## Include-based XSS ## { #CVE-2022-45064 }
 
 CVE-2022-45064 [\[CVE json\]](./CVE-2022-45064.cve.json)

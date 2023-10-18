@@ -13,6 +13,66 @@ Do you want disclose a potential security issue for Apache Archiva? You can read
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://archiva.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Apache Archiva Arbitrary user password reset vulnerability ## { #CVE-2022-29405 }
+
+CVE-2022-29405 [\[CVE json\]](./CVE-2022-29405.cve.json)
+
+### Affected
+
+* Apache Archiva from 2.2 through 2.2.7
+
+
+### Description
+
+In Apache Archiva, any registered user can reset password for any users.  This is fixed in Archiva 2.2.8
+
+### References
+* https://archiva.apache.org/docs/2.2.8/release-notes.html
+
+
+## Apache Archiva prior to 2.2.9 may allow the anonymous user to read arbitrary files ## { #CVE-2022-40308 }
+
+CVE-2022-40308 [\[CVE json\]](./CVE-2022-40308.cve.json)
+
+### Affected
+
+* Apache Archiva from Apache Archiva through 2.2.8
+
+
+### Description
+
+If anonymous read enabled, it's possible to read the database file directly without logging in.
+
+
+### References
+* https://lists.apache.org/thread/x01pnn0jjsw512cscxsbxzrjmz64n4cc
+
+
+### Credits
+* Thanks to L3yx of Syclover Security Team
+
+
+## Apache Archiva prior to 2.2.9 allows an authenticated user to delete arbitrary directories ## { #CVE-2022-40309 }
+
+CVE-2022-40309 [\[CVE json\]](./CVE-2022-40309.cve.json)
+
+### Affected
+
+* Apache Archiva from unspecified through 2.2.8
+
+
+### Description
+
+Users with write permissions to a repository can delete arbitrary directories.
+
+### References
+* https://lists.apache.org/thread/1odl4p85r96n27k577jk6ftrp19xfc27
+
+
+### Credits
+* Thanks to L3yx of Syclover Security Team
+
+
 ## Apache Archiva privilege escalation ## { #CVE-2023-28158 }
 
 CVE-2023-28158 [\[CVE json\]](./CVE-2023-28158.cve.json)

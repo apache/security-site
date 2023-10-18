@@ -32,3 +32,24 @@ URL Redirection to Untrusted Site ('Open Redirect') vulnerability in Apache Soft
 
 ### Credits
 * This issue was discovered by Everardo Padilla Saca (reporter)
+
+
+## Deserialization vulnerability in Helix workflow and REST ## { #CVE-2023-38647 }
+
+CVE-2023-38647 [\[CVE json\]](./CVE-2023-38647.cve.json)
+
+### Affected
+
+* Apache Helix through 1.2.0
+
+
+### Description
+
+<p><span style="background-color: rgb(255, 255, 255);">An attacker can use SnakeYAML to deserialize java.net.URLClassLoader and make it load a JAR from a specified URL, and then deserialize javax.script.</span><span style="background-color: rgb(255, 255, 255);">ScriptEngineManager to load code using that ClassLoader. <span style="background-color: rgb(255, 255, 255);">This unbounded deserialization can likely lead to remote code execution.&nbsp;</span>The code can be run in Helix REST start and Workflow creation.</span><br><span style="background-color: var(--wht);"><br></span></p><p><span style="background-color: var(--wht);">Affect all the versions lower and include 1.2.0.</span></p><p><span style="background-color: var(--wht);">Affected products: helix-core, helix-rest</span></p><p><span style="background-color: var(--wht);">Mitigation: Short term, stop using any YAML based configuration and workflow creation.</span><br><span style="background-color: var(--wht);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Long term, all Helix version bumping up to 1.3.0&nbsp;</span><br></p>
+
+### References
+* https://lists.apache.org/thread/zyqxhv0lc2z9w3tgr8ttrdy2zfh5jvc4
+
+
+### Credits
+* Qing Xu (reporter)

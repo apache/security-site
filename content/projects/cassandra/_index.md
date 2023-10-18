@@ -13,6 +13,33 @@ Do you want disclose a potential security issue for Apache Cassandra? Send your 
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Remote code execution for scripted UDFs ## { #CVE-2021-44521 }
+
+CVE-2021-44521 [\[CVE json\]](./CVE-2021-44521.cve.json)
+
+### Affected
+
+* Apache Cassandra from 3.0.0 before *
+
+
+### Description
+
+When running Apache Cassandra with the following configuration:
+
+enable_user_defined_functions: true
+enable_scripted_user_defined_functions: true
+enable_user_defined_functions_threads: false 
+
+it is possible for an attacker to execute arbitrary code on the host. The attacker would need to have enough permissions to create user defined functions in the cluster to be able to exploit this. Note that this configuration is documented as unsafe, and will continue to be considered unsafe after this CVE.
+
+### References
+* https://lists.apache.org/thread/y4nb9s4co34j8hdfmrshyl09lokm7356
+
+
+### Credits
+* This issue was discovered by Omer Kaspi of the JFrog Security vulnerability research team.
+
+
 ## Privilege escalation when enabling FQL/Audit logs ## { #CVE-2023-30601 }
 
 CVE-2023-30601 [\[CVE json\]](./CVE-2023-30601.cve.json)

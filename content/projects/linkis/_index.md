@@ -13,6 +13,28 @@ Do you want disclose a potential security issue for Apache Linkis? Send your rep
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## The Apache Linkis JDBC EngineConn module has a RCE Vulnerability ## { #CVE-2022-39944 }
+
+CVE-2022-39944 [\[CVE json\]](./CVE-2022-39944.cve.json)
+
+### Affected
+
+* Apache Linkis from Apache Linkis through 1.2.0
+
+
+### Description
+
+In Apache Linkis <=1.2.0 when used with the MySQL Connector/J, a deserialization vulnerability with possible remote code execution impact exists when an attacker has write access to a database and configures a JDBC EC with a MySQL data source and malicious parameters. Therefore, the parameters in the jdbc url should be blacklisted. Versions of Apache Linkis <= 1.2.0 will be affected, We recommend users to update to 1.3.0.
+
+
+### References
+* https://lists.apache.org/thread/rxytj48q17304snonjtyt5lnlw64gccc
+
+
+### Credits
+* This issue was discovered by 4ra1n and zac from ZAC Security Team
+
+
 ## The DatasourceManager module has a serialization attack vulnerability ## { #CVE-2022-44645 }
 
 CVE-2022-44645 [\[CVE json\]](./CVE-2022-44645.cve.json)

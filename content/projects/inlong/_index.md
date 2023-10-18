@@ -13,6 +13,29 @@ Do you want disclose a potential security issue for Apache InLong? Send your rep
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Deserialization attack in Apache InLong prior to version 1.3.0 allows RCE via JDBC ## { #CVE-2022-40955 }
+
+CVE-2022-40955 [\[CVE json\]](./CVE-2022-40955.cve.json)
+
+### Affected
+
+* Apache InLong from Apache InLong before 1.3.0
+
+
+### Description
+
+In versions of Apache InLong prior to 1.3.0, an attacker with sufficient privileges to specify MySQL JDBC connection URL parameters and to write arbitrary data to the MySQL database, could cause this data to be deserialized by Apache InLong, potentially leading to Remote Code Execution on the Apache InLong server.
+
+Users are advised to upgrade to Apache InLong 1.3.0 or newer.
+
+### References
+* https://lists.apache.org/thread/r1r34y7bchrpmp9jhfdoohzdmk7pj1q1
+
+
+### Credits
+* This issue was discovered by 4ra1n of Chaitin Tech.
+
+
 ## Jdbc Connection causes arbitrary file reading in InLong ## { #CVE-2023-24977 }
 
 CVE-2023-24977 [\[CVE json\]](./CVE-2023-24977.cve.json)
@@ -350,3 +373,147 @@ Incorrect Permission Assignment for Critical Resource Vulnerability in Apache So
 
 ### References
 * https://lists.apache.org/thread/nqt1tr6pbq8q4b033d7sg5gltx5pmjgl
+
+
+## General user can delete and update process ## { #CVE-2023-34189 }
+
+CVE-2023-34189 [\[CVE json\]](./CVE-2023-34189.cve.json)
+
+### Affected
+
+* Apache InLong from 1.4.0 through 1.7.0
+
+
+### Description
+
+Exposure of Resource to Wrong Sphere Vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.7.0. The attacker could use general users to delete and update the process, which only the admin can operate occurrences.&nbsp;
+
+Users are advised to upgrade to Apache InLong's 1.8.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8109">https://github.com/apache/inlong/pull/8109</a>&nbsp;to solve it.
+
+</p>
+
+### References
+* https://lists.apache.org/thread/smxqyx43hxjvzv4w71n2n3rfho9p378s
+
+
+## JDBC URL bypassing by allowLoadLocalInfileInPath param ## { #CVE-2023-34434 }
+
+CVE-2023-34434 [\[CVE json\]](./CVE-2023-34434.cve.json)
+
+### Affected
+
+* Apache InLong from 1.4.0 through 1.7.0
+
+
+### Description
+
+Deserialization of Untrusted Data Vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.7.0.&nbsp;
+
+The attacker could bypass the current logic and achieve arbitrary file reading. To solve it, users are advised to upgrade to Apache InLong's 1.8.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8130">https://github.com/apache/inlong/pull/8130</a>.
+
+</p>
+
+### References
+* https://lists.apache.org/thread/7f1o71w5r732cspltmtdydn01gllf4jo
+
+
+### Credits
+* sw0rd1ight and 4ra1n of Chaitin Tech (finder)
+
+
+## SQL injection in audit endpoint ## { #CVE-2023-35088 }
+
+CVE-2023-35088 [\[CVE json\]](./CVE-2023-35088.cve.json)
+
+### Affected
+
+* Apache InLong from 1.4.0 through 1.7.0
+
+
+### Description
+
+Improper Neutralization of Special Elements Used in an SQL Command ('SQL Injection') vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.7.0.&nbsp;
+In the toAuditCkSql method, the groupId, streamId, auditId, and dt are directly concatenated into the SQL query statement, which may lead to SQL injection attacks.
+Users are advised to upgrade to Apache InLong's 1.8.0 or cherry-pick [1] to solve it.
+
+</p><p>
+
+<span style="background-color: rgb(255, 255, 255);">[1] </span><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8198">https://github.com/apache/inlong/pull/8198</a>
+
+<br></p>
+
+### References
+* https://lists.apache.org/thread/os7b66x4n8dbtrdpb7c6x37bb1vjb0tk
+
+
+## General user Unauthorized access User Management ## { #CVE-2023-43666 }
+
+CVE-2023-43666 [\[CVE json\]](./CVE-2023-43666.cve.json)
+
+### Affected
+
+* Apache InLong from 1.4.0 through 1.8.0
+
+
+### Description
+
+Insufficient Verification of Data Authenticity vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.8.0,&nbsp;
+
+<span style="background-color: rgb(255, 255, 255);">General user can view all user data like Admin account.</span>
+
+<span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's 1.9.0 or cherry-pick [1] to solve it.</span></p><p>
+
+[1]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8623">https://github.com/apache/inlong/pull/8623</a></p><p></p>
+
+### References
+* https://lists.apache.org/thread/scbgh3ty3xcxm3q33r2t9f42gwwo1why
+
+
+## Log Injection in Global functions ## { #CVE-2023-43667 }
+
+CVE-2023-43667 [\[CVE json\]](./CVE-2023-43667.cve.json)
+
+### Affected
+
+* Apache InLong from 1.4.0 through 1.8.0
+
+
+### Description
+
+Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.8.0, the a<span style="background-color: rgb(255, 255, 255);">ttacker can create misleading or false records, making it harder to audit
+and trace malicious activities.&nbsp;</span>Users are advised to upgrade to Apache InLong's 1.8.0 or cherry-pick [1] to solve it.</p><p>
+
+<span style="background-color: rgb(255, 255, 255);">[1] </span><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8628">https://github.com/apache/inlong/pull/8628</a></p><p></p>
+
+### References
+* https://lists.apache.org/thread/spnb378g268p1f902fr9kqyph2k8n543
+
+
+## Jdbc Connection Security Bypass in InLong ## { #CVE-2023-43668 }
+
+CVE-2023-43668 [\[CVE json\]](./CVE-2023-43668.cve.json)
+
+### Affected
+
+* Apache InLong from 1.4.0 through 1.8.0
+
+
+### Description
+
+Authorization Bypass Through User-Controlled Key vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.8.0,&nbsp;
+
+<span style="background-color: rgb(255, 255, 255);">some sensitive params  checks will be </span><span style="background-color: rgb(255, 255, 255);">bypassed, <span style="background-color: rgb(255, 255, 255);">like "autoDeserizalize","</span><span style="background-color: rgb(255, 255, 255);">allowLoadLocalInfile"....</span>
+
+.</span>&nbsp;&nbsp;
+
+
+<span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's 1.9.0 or cherry-pick [1] to solve it.</span>
+
+</p><p>[1]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8604">https://github.com/apache/inlong/pull/8604</a></p>
+
+### References
+* https://lists.apache.org/thread/16gtk7rpdm1rof075ro83fkrnhbzn5sh
+
+
+### Credits
+* nbxiglk (finder)

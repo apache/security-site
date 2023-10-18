@@ -4,15 +4,26 @@ import json
 import os.path
 from os.path import dirname, realpath
 from collections import defaultdict
+import subprocess
 from urllib.request import urlopen
 
-# (for now) generated from https://apache.org/security/projects.html by get-projects.py
+# manually maintained
 with open('project-coordinates.json', 'r') as p:
     project_coordinates = json.load(p)
 
 # fetched from https://projects.apache.org/json/foundation/committees.json
 with open('committees.json', 'r') as cs:
-    project_committees = { c['id']: c for c in json.load(cs) }
+    project_committees = { c['group']: c for c in json.load(cs) }
+
+# fetched from https://projects.apache.org/json/foundation/committees-retired.json
+with open('committees-retired.json', 'r') as cr:
+    project_committees_retired = { c['id']: c for c in json.load(cr) }
+
+# fetched from https://projects.apache.org/json/foundation/podlings-history.json
+with open('podlings-history.json', 'r') as ph:
+    m = json.load(ph)
+    podlings_retired = { key: m[key] for key in m.keys() if m[key]['status'] == 'retired' }
+    project_committees_retired = {**project_committees_retired, **podlings_retired}
 
 with open('podlings.json', 'r') as ps:
     project_committees = {**project_committees, **(json.load(ps))}
@@ -45,7 +56,30 @@ def coordinates(pmc):
   else:
     return project_committees[pmc]
 
+def fetch_cve(cve_id):
+  print(cve_id)
+  if not os.path.exists('cache/%s.json' % cve_id):
+    f = urlopen('https://cveprocess.apache.org/publicjson/%s' % cve_id)
+    with open('cache/%s.json' % cve, 'w') as d:
+      d.write(f.read().decode('utf-8'))
+
+  with open('cache/%s.json' % cve_id, 'r') as d:
+    cve = json.loads(d.read())
+    if 'containers' in cve.keys():
+      return cve
+    else:
+      if not os.path.exists('cache-converted/%s.json' % cve_id):
+        subprocess.run(['cve4to5up.py', '-i', 'cache/%s.json' % cve_id, '-o' 'cache-converted/'])
+      with open('cache-converted/%s.json' % cve_id, 'r') as d:
+        cve = json.loads(d.read())
+        return cve
+
 for pmc in sorted(set(list(project_coordinates.keys()) + list(advisories.keys()))):
+    if pmc == 'dummy':
+        continue
+    if pmc in project_committees_retired.keys():
+        continue
+
     p = coordinates(pmc)
     assert p, 'All projects with advisories, including [%s], should have coordinates' % pmc
     if 'link' in p.keys() and p['link']:
@@ -66,12 +100,17 @@ for pmc in sorted(set(list(project_coordinates.keys()) + list(advisories.keys())
         projects_page.write(' |\n')
 
 for pmc in advisories.keys():
+    if pmc == 'dummy':
+        continue;
     basedir = '%s/../content/projects/%s/' % (dirname(realpath(__file__)), pmc)
     os.makedirs(basedir, exist_ok=True)
     staticdir = '%s/../static/projects/%s/' % (dirname(realpath(__file__)), pmc)
     os.makedirs(staticdir, exist_ok=True)
 
     project_page = open(basedir + '/_index.md', 'w')
+    # TODO generate pages for retired committees/podlings as well
+    if not pmc in project_coordinates.keys() and not pmc in project_committees.keys():
+        continue
     p = coordinates(pmc)
     project_page.write("""---
 title: %s security advisories
@@ -104,53 +143,53 @@ layout: single
     project_page.write('\n{.bg-warning}')
 
     for advisory in advisories[pmc]:
-        cve = advisory['ID']
-        project_page.write("\n\n## %s ## { #%s }\n\n" % (advisory['title'], cve))
-        project_page.write("%s [\[CVE json\]](./%s.cve.json)\n\n" % (cve, cve))
-        if not os.path.exists('cache/%s.json' % cve):
-            f = urlopen('https://cveprocess.apache.org/publicjson/%s' % cve)
-            with open('cache/%s.json' % cve, 'w') as d:
-                d.write(f.read().decode('utf-8'))
+        cve_id = advisory['ID']
+        project_page.write("\n\n## %s ## { #%s }\n\n" % (advisory['title'], cve_id))
+        project_page.write("%s [\[CVE json\]](./%s.cve.json)\n\n" % (cve_id, cve_id))
 
+        cve = fetch_cve(cve_id)
+        cna = cve['containers']['cna']
+        project_page.write("### Affected\n\n")
+        for affected in cna['affected']:
+          for version in affected['versions']:
+            project_page.write('* ' + affected['product'])
+            if version['version'] != '0':
+              if 'lessThan' in version.keys() or 'lessThanOrEqual' in version.keys():
+                project_page.write(' from ')
+              else:
+                project_page.write(' at ')
+              project_page.write(version['version'])
+            if 'lessThan' in version.keys():
+              project_page.write(' before ' + version['lessThan'])
+            if 'lessThanOrEqual' in version.keys():
+              project_page.write(' through ' + version['lessThanOrEqual'])
+            project_page.write('\n')
+        project_page.write('\n\n### Description\n\n')
+        for desc in cna['descriptions']:
+          if 'supportingMedia' in desc.keys():
+            for media in desc['supportingMedia']:
+              project_page.write(media['value'])
+          else:
+            project_page.write(desc['value'])
 
-        with open('cache/%s.json' % cve, 'r') as d:
-            details = json.loads(d.read())
-            cna = details['containers']['cna']
-            project_page.write("### Affected\n\n")
-            for affected in cna['affected']:
-                for version in affected['versions']:
-                    project_page.write('* ' + affected['product'])
-                    if version['version'] != '0':
-                        if 'lessThan' in version.keys() or 'lessThanOrEqual' in version.keys():
-                            project_page.write(' from ')
-                        else:
-                            project_page.write(' at ')
-                        project_page.write(version['version'])
-                    if 'lessThan' in version.keys():
-                        project_page.write(' before ' + version['lessThan'])
-                    if 'lessThanOrEqual' in version.keys():
-                        project_page.write(' through ' + version['lessThanOrEqual'])
-                    project_page.write('\n')
-            project_page.write('\n\n### Description\n\n')
-            for desc in cna['descriptions']:
-                for media in desc['supportingMedia']:
-                    project_page.write(media['value'])
+        if 'references' in cna.keys():
+          project_page.write('\n\n### References\n')
+          for reference in cna['references']:
+            project_page.write('* %s\n' % reference['url'])
 
-            if 'references' in cna.keys():
-                project_page.write('\n\n### References\n')
-                for reference in cna['references']:
-                    project_page.write('* %s\n' % reference['url'])
+        if 'credits' in cna.keys():
+          project_page.write('\n\n### Credits\n')
+          for credit in cna['credits']:
+            if 'type' in credit.keys():
+              project_page.write('* %s (%s)\n' % (credit['value'], credit['type']))
+            else:
+              project_page.write('* %s\n' % credit['value'])
 
-            if 'credits' in cna.keys():
-                project_page.write('\n\n### Credits\n')
-                for credit in cna['credits']:
-                    project_page.write('* %s (%s)\n' % (credit['value'], credit['type']))
-
-            with open(staticdir + cve + '.cve.json', 'w') as cveFile:
-                cve_doc = {
-                    "containers": details['containers'],
-                    "cveMetadata": details['cveMetadata'],
-                    "dataType": details['dataType'],
-                    "dataVersion": details['dataVersion'],
-                }
-                json.dump(cve_doc, cveFile, ensure_ascii=True, indent=2)
+        with open(staticdir + cve_id + '.cve.json', 'w') as cveFile:
+          cve_doc = {
+            "containers": cve['containers'],
+            "cveMetadata": cve['cveMetadata'],
+            "dataType": cve['dataType'],
+            "dataVersion": cve['dataVersion'],
+          }
+          json.dump(cve_doc, cveFile, ensure_ascii=True, indent=2)

@@ -13,6 +13,61 @@ Do you want disclose a potential security issue for Apache IoTDB? Send your repo
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Login check vulnerability by session Id ## { #CVE-2022-38369 }
+
+CVE-2022-38369 [\[CVE json\]](./CVE-2022-38369.cve.json)
+
+### Affected
+
+* Apache IoTDB at 0.13.0
+
+
+### Description
+
+Apache IoTDB version 0.13.0 is vulnerable by session id attack. Users should upgrade to version 0.13.1 which addresses this issue.
+
+### References
+* https://lists.apache.org/thread/7nk03ywvx3t3yjbcxzt7zy4nyc89y9b0
+
+
+## No authorization of DatabaseConnectController in grafana-connector.  ## { #CVE-2022-38370 }
+
+CVE-2022-38370 [\[CVE json\]](./CVE-2022-38370.cve.json)
+
+### Affected
+
+* Apache IoTDB at 0.13.0
+
+
+### Description
+
+Apache IoTDB grafana-connector version 0.13.0 contains an interface without authorization, which may expose the internal structure of database. Users should upgrade to version 0.13.1 which addresses this issue.
+
+### References
+* https://lists.apache.org/thread/kcpqgstvgf8sxy9ktxm1836nlwc8xy3j
+
+
+## Apache IoTDB prior to 0.13.3 allows DoS ## { #CVE-2022-43766 }
+
+CVE-2022-43766 [\[CVE json\]](./CVE-2022-43766.cve.json)
+
+### Affected
+
+* Apache IoTDB from unspecified through 0.13.2
+
+
+### Description
+
+Apache IoTDB version 0.12.2 to 0.12.6, 0.13.0 to 0.13.2 are vulnerable to a Denial of Service attack when accepting untrusted patterns for REGEXP queries with Java 8. Users should upgrade to 0.13.3 which addresses this issue or use a later version of Java to avoid it.
+
+### References
+* https://lists.apache.org/thread/9pgpb82p5brooy41n8l5q0y9h33db2zn
+
+
+### Credits
+* This issue was discovered by 4ra1n of Chaitin Tech
+
+
 ## apache/iotdb-web-workbench: forge the JWTToken to access workbench ## { #CVE-2023-24829 }
 
 CVE-2023-24829 [\[CVE json\]](./CVE-2023-24829.cve.json)

@@ -13,6 +13,48 @@ Do you want disclose a potential security issue for Apache Ambari? Send your rep
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Stored XSS in Apache Ambari ## { #CVE-2020-1936 }
+
+CVE-2020-1936 [\[CVE json\]](./CVE-2020-1936.cve.json)
+
+### Affected
+
+* Apache Ambari from Apache Ambari before 2.7.4
+
+
+### Description
+
+A cross-site scripting issue was found in Apache Ambari Views.  This was addressed in Apache Ambari 2.7.4.
+
+### References
+* https://lists.apache.org/thread.html/946a9d72e664ad8bc592168d9a2fed88100c6e9f1bdfea08e91a3184%40%3Cuser.ambari.apache.org%3E
+
+
+### Credits
+* Apache Ambari would like to thank Krzysztof Przybylski from STM Solutions
+
+
+##  ## { #CVE-2020-13924 }
+
+CVE-2020-13924 [\[CVE json\]](./CVE-2020-13924.cve.json)
+
+### Affected
+
+* Apache Ambari from Apache Ambari through 2.6.2.2
+
+
+### Description
+
+In Apache Ambari versions 2.6.2.2 and earlier, malicious users can construct file names for directory traversal and traverse to other directories to download files.
+
+### References
+* https://mail-archives.apache.org/mod_mbox/ambari-user/202102.mbox/%3CCAEJYuxEQZ_aPwJdAaSxPu-Dva%3Dhc7zZUx3-pzBORbd23g%2BGH1A%40mail.gmail.com%3E
+
+
+### Credits
+* threedr3am
+
+
 ## A malicious authenticated user can remotely execute arbitrary code in the context of the application. ## { #CVE-2022-42009 }
 
 CVE-2022-42009 [\[CVE json\]](./CVE-2022-42009.cve.json)
