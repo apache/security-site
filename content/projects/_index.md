@@ -24,7 +24,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Camel](https://camel.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://camel.apache.org/security/) |
 | Apache Cassandra |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache CloudStack](https://cloudstack.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache Commons](https://commons.apache.org/security.html) |  [Apache Commons Security Team](mailto:security@commons.apache.org) | |
+| [Apache Commons](https://commons.apache.org/security.html) |  [Apache Commons Security Team](mailto:security@commons.apache.org) | [Advisories](https://commons.apache.org/security.html#Known_Security_Vulnerabilities) |
 | Apache CouchDB |  [Apache CouchDB Security Team](mailto:security@couchdb.apache.org) | |
 | Apache CXF |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Directory |  [Apache Security Team](mailto:security@apache.org) | |
