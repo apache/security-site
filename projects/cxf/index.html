@@ -107,37 +107,83 @@
 <p>Do you want disclose a potential security issue for Apache CXF? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2020-13954">Apache CXF Reflected XSS in the services listing page via the styleSheetPath</h2>
+<p>CVE-2020-13954 <a href="./CVE-2020-13954.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache CXF from unspecified before 3.4.1</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>By default, Apache CXF creates a /services page containing a listing of the available endpoint names and addresses. This webpage is vulnerable to a reflected Cross-Site Scripting (XSS) attack via the styleSheetPath, which allows a malicious actor to inject javascript into the web page.</p>
+<p>This vulnerability affects all versions of Apache CXF prior to 3.4.1 and 3.3.8.</p>
+<p>Please note that this is a separate issue to CVE-2019-17573.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="http://cxf.apache.org/security-advisories.data/CVE-2020-13954.txt.asc?version=1&amp;modificationDate=1605183670659&amp;api=v2">http://cxf.apache.org/security-advisories.data/CVE-2020-13954.txt.asc?version=1&amp;modificationDate=1605183670659&amp;api=v2</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Thanks to Ryan Lambeth for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2021-22696">OAuth 2 authorization service vulnerable to DDos attacks</h2>
+<p>CVE-2021-22696 <a href="./CVE-2021-22696.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache CXF from unspecified before 3.4.3</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>CXF supports (via JwtRequestCodeFilter) passing OAuth 2 parameters via a JWT token as opposed to query parameters (see: The OAuth 2.0 Authorization Framework: JWT Secured Authorization Request (JAR)). Instead of sending a JWT token as a &ldquo;request&rdquo; parameter, the spec also supports specifying a URI from which to retrieve a JWT token from via the &ldquo;request_uri&rdquo; parameter.</p>
+<p>CXF was not validating the &ldquo;request_uri&rdquo; parameter (apart from ensuring it uses &ldquo;https) and was making a REST request to the parameter in the request to retrieve a token.</p>
+<p>This means that CXF was vulnerable to DDos attacks on the authorization server, as specified in section 10.4.1 of the spec.</p>
+<p>This issue affects Apache CXF versions prior to 3.4.3; Apache CXF versions prior to 3.3.10.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://cxf.apache.org/security-advisories.data/CVE-2021-22696.txt.asc">https://cxf.apache.org/security-advisories.data/CVE-2021-22696.txt.asc</a></li>
+</ul>
+<h2 id="CVE-2021-30468">Apache CXF Denial of service vulnerability in parsing JSON via JsonMapObjectReaderWriter</h2>
+<p>CVE-2021-30468 <a href="./CVE-2021-30468.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache CXF from Apache CXF before 3.4.4</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>A vulnerability in the JsonMapObjectReaderWriter of Apache CXF allows an attacker to submit malformed JSON to a web service, which results in the thread getting stuck in an infinite loop, consuming CPU indefinitely.</p>
+<p>This issue affects Apache CXF versions prior to 3.4.4; Apache CXF versions prior to 3.3.11.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="http://cxf.apache.org/security-advisories.data/CVE-2021-30468.txt.asc">http://cxf.apache.org/security-advisories.data/CVE-2021-30468.txt.asc</a></li>
+</ul>
 <h2 id="CVE-2022-46363">Apache CXF directory listing / code exfiltration</h2>
 <p>CVE-2022-46363 <a href="./CVE-2022-46363.cve.json">[CVE json]</a></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache CXF from 3.5 before 3.5.5</li>
 <li>Apache CXF from 3.4 before 3.4.10</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>A vulnerability in Apache CXF before versions 3.5.5 and 3.4.10 allows an attacker to perform a remote directory listing or code exfiltration. The vulnerability only applies when the CXFServlet is configured with both the static-resources-list and redirect-query-check attributes. These attributes are not supposed to be used together, and so the vulnerability can only arise if the CXF service is misconfigured.<br><br></p>
-<h3 id="references">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/pdzo1qgyplf4y523tnnzrcm7hoco3l8c">https://lists.apache.org/thread/pdzo1qgyplf4y523tnnzrcm7hoco3l8c</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>thanat0s from Beijin Qihoo 360 adlab (finder)</li>
 </ul>
 <h2 id="CVE-2022-46364">Apache CXF SSRF Vulnerability</h2>
 <p>CVE-2022-46364 <a href="./CVE-2022-46364.cve.json">[CVE json]</a></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-4">Affected</h3>
 <ul>
 <li>Apache CXF before 3.5.5</li>
 <li>Apache CXF before 3.4.10</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-4">Description</h3>
 <p>A SSRF vulnerability in parsing the href attribute of XOP:Include in MTOM requests in versions of Apache CXF before 3.5.5 and 3.4.10 allows an attacker to perform SSRF style attacks on webservices that take at least one parameter of any type. </p>
-<h3 id="references-1">References</h3>
+<h3 id="references-4">References</h3>
 <ul>
 <li><a href="https://cxf.apache.org/security-advisories.data/CVE-2022-46364.txt?version=1&amp;modificationDate=1670944472739&amp;api=v2">https://cxf.apache.org/security-advisories.data/CVE-2022-46364.txt?version=1&amp;modificationDate=1670944472739&amp;api=v2</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-2">Credits</h3>
 <ul>
 <li>thanat0s from Beijin Qihoo 360 adlab (finder)</li>
 </ul>

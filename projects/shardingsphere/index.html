@@ -107,21 +107,71 @@
 <p>Do you want disclose a potential security issue for Apache ShardingSphere? You can read more about the projects&rsquo; security policy on their <a href="https://shardingsphere.apache.org/community/en/security/">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://shardingsphere.apache.org/community/en/security/">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2021-26558">Deserialization of Untrusted Data</h2>
+<p>CVE-2021-26558 <a href="./CVE-2021-26558.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache ShardingSphere-UI from 4.1.1 before Apache ShardingSphere-UI*</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Deserialization of Untrusted Data vulnerability of Apache ShardingSphere-UI allows an attacker to inject outer link resources.  This issue affects Apache ShardingSphere-UI Apache ShardingSphere-UI version 4.1.1 and later versions; Apache ShardingSphere-UI versions prior to 5.0.0.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/4gzkm1zb6c97v9gl8lcz8ll5xr8o484c">https://lists.apache.org/thread/4gzkm1zb6c97v9gl8lcz8ll5xr8o484c</a></li>
+</ul>
+<h2 id="CVE-2022-22733">Access-Token in ElasticJob UI causes password disclosure</h2>
+<p>CVE-2022-22733 <a href="./CVE-2022-22733.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache ShardingSphere ElasticJob-UI from Apache ShardingSphere ElasticJob-UI 3.x through 3.0.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache ShardingSphere ElasticJob-UI allows an attacker who has guest account to do privilege escalation. This issue affects Apache ShardingSphere ElasticJob-UI Apache ShardingSphere ElasticJob-UI 3.x version 3.0.0 and prior versions.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/qpdsm936n9bhksb0rzn6bq1h7ord2nm6">https://lists.apache.org/thread/qpdsm936n9bhksb0rzn6bq1h7ord2nm6</a></li>
+</ul>
+<h2 id="CVE-2022-31764">Apache ShardingSphere ElasticJob-UI allows RCE via event trace data source JDBC</h2>
+<p>CVE-2022-31764 <a href="./CVE-2022-31764.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache ShardingSphere ElasticJob-UI from Apache ShardingSphere ElasticJob-UI 3.x through 3.0.1</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>The Lite UI of Apache ShardingSphere ElasticJob-UI allows an attacker to perform RCE by constructing a special JDBC URL of H2 database. This issue affects Apache ShardingSphere ElasticJob-UI version 3.0.1 and prior versions. This vulnerability has been fixed in ElasticJob-UI 3.0.2.
+The premise of this attack is that the attacker has obtained the account and password. Otherwise, the attacker cannot perform this attack.</p>
 <h2 id="CVE-2022-45347">MySQL authentication bypass</h2>
 <p>CVE-2022-45347 <a href="./CVE-2022-45347.cve.json">[CVE json]</a></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache ShardingSphere-Proxy before 5.3.0</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>Apache ShardingSphere-Proxy prior to 5.3.0 when using MySQL as database backend didn&rsquo;t cleanup the database session completely after client authentication failed, which allowed an attacker to execute normal commands by constructing a special MySQL client. This vulnerability has been fixed in Apache ShardingSphere 5.3.0.</p>
-<h3 id="references">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/l5rz7j4rg10o7ywtgknh2f5hxnv6yw3l">https://lists.apache.org/thread/l5rz7j4rg10o7ywtgknh2f5hxnv6yw3l</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
 <li>smoking (finder)</li>
+</ul>
+<h2 id="CVE-2023-28754">Deserialization vulnerability in ShardingSphere Agent</h2>
+<p>CVE-2023-28754 <a href="./CVE-2023-28754.cve.json">[CVE json]</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>ShardingSphere-Agent through 5.3.2</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Deserialization of Untrusted Data vulnerability in Apache ShardingSphere-Agent, which allows attackers to execute arbitrary code by constructing a special YAML configuration file.<br><div></div><div></div><span style="background-color: var(--wht);"><div>The attacker needs to have permission to modify the ShardingSphere Agent YAML configuration file on the target machine, and the target machine can access the URL with the arbitrary code JAR.
+An attacker can use SnakeYAML to deserialize java.net.URLClassLoader and make it load a JAR from a specified URL, and then deserialize javax.script.ScriptEngineManager to load code using that ClassLoader. When the ShardingSphere JVM process starts and uses the ShardingSphere-Agent, the arbitrary code specified by the attacker will be executed during the deserialization of the YAML configuration file by the Agent.</div>This issue affects ShardingSphere-Agent: through 5.3.2. This vulnerability is fixed in Apache ShardingSphere 5.4.0.</span></p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/p8onhqox5kkwow9lc6gs03z28wtyp1cg">https://lists.apache.org/thread/p8onhqox5kkwow9lc6gs03z28wtyp1cg</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Liav Gutman of the JFrog CSO Research team (finder)</li>
 </ul>
 
   

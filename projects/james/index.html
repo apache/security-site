@@ -107,52 +107,159 @@
 <p>Do you want disclose a potential security issue for Apache James? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2021-38542">Apache James vulnerable to STARTTLS command injection (IMAP and POP3)</h2>
+<p>CVE-2021-38542 <a href="./CVE-2021-38542.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache James from Apache James before 3.6.1</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Apache James prior to release 3.6.1 is vulnerable to a buffering attack relying on the use of the STARTTLS command. This can result in Man-in -the-middle command injection attacks, leading potentially to leakage of sensible information.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://www.openwall.com/lists/oss-security/2022/01/04/1">https://www.openwall.com/lists/oss-security/2022/01/04/1</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>We thanks Benoit Tellier, Raphael Ouazana for reporting this vulnerability as well as Damian Poddebniak, Fabian Ising, Hanno Böck, and Sebastian Schinzel Münster University of Applied Science for their research and tools regarding STARTTLS security.</li>
+</ul>
+<h2 id="CVE-2021-40110">Apache James IMAP vulnerable to a ReDoS</h2>
+<p>CVE-2021-40110 <a href="./CVE-2021-40110.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache James from Apache James through 3.6.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>In Apache James, using Jazzer fuzzer, we identified that an IMAP user can craft IMAP LIST commands to orchestrate a Denial Of Service using a vulnerable Regular expression.  This affected Apache James prior to 3.6.1</p>
+<p>We recommend upgrading to Apache James 3.6.1 or higher , which enforce the use of RE2J regular expression engine to execute regex in linear time without back-tracking.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://www.openwall.com/lists/oss-security/2022/01/04/2">https://www.openwall.com/lists/oss-security/2022/01/04/2</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Apache James PMC would like to thanks Benoit TELLIER for this report.</li>
+</ul>
+<h2 id="CVE-2021-40111">Apache James IMAP parsing Denial Of Service</h2>
+<p>CVE-2021-40111 <a href="./CVE-2021-40111.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache James from Apache James through 3.6.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>In Apache James, while fuzzing with Jazzer the IMAP parsing stack, we discover that crafted APPEND and STATUS IMAP command could be used to trigger infinite loops resulting in expensive CPU computations and OutOfMemory exceptions. This can be used for a Denial Of Service attack. The IMAP user needs to be authenticated to exploit this vulnerability.  This affected Apache James prior to version 3.6.1.</p>
+<p>This vulnerability had been patched in Apache James 3.6.1 and higher. We recommend the upgrade.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://www.openwall.com/lists/oss-security/2022/01/04/3">https://www.openwall.com/lists/oss-security/2022/01/04/3</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>The Apache James PMC would like to thanks Benoit TELLIER for the report.</li>
+</ul>
+<h2 id="CVE-2021-40525">Sieve file storage vulnerable to path traversal attacks</h2>
+<p>CVE-2021-40525 <a href="./CVE-2021-40525.cve.json">[CVE json]</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache James from Apache James through 3.6.0</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Apache James ManagedSieve implementation alongside with the file storage for sieve scripts is vulnerable to path traversal, allowing reading and writing any file. This vulnerability had been patched in Apache James 3.6.1 and higher. We recommend the upgrade.</p>
+<p>Distributed and Cassandra based products are also not impacted.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://www.openwall.com/lists/oss-security/2022/01/04/4">https://www.openwall.com/lists/oss-security/2022/01/04/4</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>The Apache James PMC would like to thanks Benoit TELLIER for the report.</li>
+</ul>
+<h2 id="CVE-2022-22931">Path traversal in Apache James 3.6.1</h2>
+<p>CVE-2022-22931 <a href="./CVE-2022-22931.cve.json">[CVE json]</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache James at Apache James 3.6.1</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Fix of CVE-2021-40525 do not prepend delimiters upon valid directory validations.</p>
+<p>Affected implementations include:</p>
+<ul>
+<li>maildir mailbox store</li>
+<li>Sieve file repository</li>
+</ul>
+<p>This enables a user to access other users data stores (limited to user names being prefixed by the value of the username being used).</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/bp8yql4wws56jlh0vxoowj7foothsmpr">https://lists.apache.org/thread/bp8yql4wws56jlh0vxoowj7foothsmpr</a></li>
+<li><a href="https://www.openwall.com/lists/oss-security/2022/02/07/1">https://www.openwall.com/lists/oss-security/2022/02/07/1</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>These issues were discovered and reported by GHSL team member Jaroslav Lobačevski</li>
+</ul>
+<h2 id="CVE-2022-28220">STARTTLS command injection in Apache JAMES</h2>
+<p>CVE-2022-28220 <a href="./CVE-2022-28220.cve.json">[CVE json]</a></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache James from Apache James through 3.6.2</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Apache James prior to release 3.6.3 and 3.7.1 is vulnerable to a buffering attack relying on the use of the STARTTLS command.</p>
+<p>Fix of CVE-2021-38542, which solved similar problem fron Apache James 3.6.1, is subject to a parser differential and do not take into account concurrent requests.</p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://james.apache.org/james/update/2022/08/26/james-3.7.1.html">https://james.apache.org/james/update/2022/08/26/james-3.7.1.html</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Apache James PMC would like to thanks Benoit TELLIER for this report, and Fabian Ising for his support.</li>
+</ul>
 <h2 id="CVE-2022-45935">Temporary File Information Disclosure</h2>
 <p>CVE-2022-45935 <a href="./CVE-2022-45935.cve.json">[CVE json]</a></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-6">Affected</h3>
 <ul>
 <li>Apache James server through 3.7.2</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-6">Description</h3>
 <p>Usage of temporary files with insecure permissions by the Apache James server allows an attacker with local access to access private user data in transit. <br><br>Vulnerable components includes the SMTP stack and IMAP APPEND command.<br><br>This issue affects Apache James server version 3.7.2 and prior versions.</p>
-<h3 id="references">References</h3>
+<h3 id="references-6">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/j61fo8xc1rxtofrn8vc33whx35s9cj1d">https://lists.apache.org/thread/j61fo8xc1rxtofrn8vc33whx35s9cj1d</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-6">Credits</h3>
 <ul>
 <li>Benoit Tellier (reporter)</li>
 </ul>
 <h2 id="CVE-2022-45787">Temporary File Information Disclosure in MIME4J TempFileStorageProvider</h2>
 <p>CVE-2022-45787 <a href="./CVE-2022-45787.cve.json">[CVE json]</a></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-7">Affected</h3>
 <ul>
 <li>Apache James MIME4J through 0.8.8</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-7">Description</h3>
 <p>Unproper laxist permissions on the temporary files used by MIME4J TempFileStorageProvider may lead to information disclosure to other local users. This issue affects Apache James MIME4J version 0.8.8 and prior versions.<br><br>We recommend users to upgrade to MIME4j version 0.8.9 or later.<br></p>
-<h3 id="references-1">References</h3>
+<h3 id="references-7">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/26s8p9stl1z261c4qw15bsq03tt7t0rj">https://lists.apache.org/thread/26s8p9stl1z261c4qw15bsq03tt7t0rj</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-7">Credits</h3>
 <ul>
 <li>Jonathan Leitschuh (finder)</li>
 </ul>
 <h2 id="CVE-2023-26269">Privilege escalation through unauthenticated JMX</h2>
 <p>CVE-2023-26269 <a href="./CVE-2023-26269.cve.json">[CVE json]</a></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-8">Affected</h3>
 <ul>
 <li>Apache James server through 3.7.3</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-8">Description</h3>
 <div>Apache James server version 3.7.3 and earlier provides a JMX management service without authentication by default. This allows privilege escalation by a 
 malicious local user.</div><div>Administrators are advised to disable JMX, or set up a JMX password.</div><div>Note that version 3.7.4 onward will set up a JMX password automatically for Guice users.<br></div>
-<h3 id="references-2">References</h3>
+<h3 id="references-8">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/2z44rg93pflbjhvbwy3xtz505bx41cbs">https://lists.apache.org/thread/2z44rg93pflbjhvbwy3xtz505bx41cbs</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-8">Credits</h3>
 <ul>
 <li>Matei &ldquo;Mal&rdquo; Badanoiu (reporter)</li>
 </ul>

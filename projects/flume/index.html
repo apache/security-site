@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.111.3">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Apache Flume security advisories </title>
+
+  
+  <meta name="description" content="Security information for Apache Flume"> 
+  
+  
+  
+  
+  
+  <meta name="robots" content="noindex">
+  
+
+  
+
+  <meta name="author" content="">
+
+
+  <meta property="og:title" content="Apache Flume security advisories" />
+<meta property="og:description" content="Security information for Apache Flume" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://security.apache.org/projects/flume/" />
+
+  
+
+
+
+
+  
+  
+  
+  
+   <link href="/projects/flume/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
+
+  <link rel="canonical" href="https://security.apache.org/projects/flume/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Apache Security Team</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Apache Security Team</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog" >Blog</a></li>
+    
+    <li><a href="https://www.apache.org/licenses/" >License</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
+    
+    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
+    
+    <li><a href="https://www.apache.org" >Apache</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+
+<div id="hero" class="wrap">
+  <h1>Apache Flume security advisories</h1>
+    <p>Security information for Apache Flume</p>
+</div>
+<div id="project-box">
+<div id="project">
+
+ <h1 id="reporting">Reporting</h1>
+<p>Do you want disclose a potential security issue for Apache Flume? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<h1 id="advisories">Advisories</h1>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2022-25167">Apache Flume vulnerable to a JNDI RCE in JMSSource </h2>
+<p>CVE-2022-25167 <a href="./CVE-2022-25167.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Flume from flume-jms-source before 1.10.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Apache Flume versions 1.4.0 through 1.9.0 are vulnerable to a remote code execution (RCE) attack when a configuration uses a JMS Source with a JNDI LDAP data source URI when an attacker has control of the target LDAP server. This issue is fixed by limiting JNDI to allow only the use of the java protocol or no protocol.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/16nf6b81zjpdc4y93ho99oxo83ddbsvg">https://lists.apache.org/thread/16nf6b81zjpdc4y93ho99oxo83ddbsvg</a></li>
+<li><a href="https://issues.apache.org/jira/browse/FLUME-3416">https://issues.apache.org/jira/browse/FLUME-3416</a></li>
+</ul>
+<h2 id="CVE-2022-34916">Improper Input Validation (JNDI Injection) in JMSMessageConsumer</h2>
+<p>CVE-2022-34916 <a href="./CVE-2022-34916.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Flume from flume-jms-source before 1.11.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Apache Flume versions 1.4.0 through 1.10.0 are vulnerable to a remote code execution (RCE) attack when a configuration uses a JMS Source with a JNDI LDAP data source URI when an attacker has control of the target LDAP server. This issue is fixed by limiting JNDI to allow only the use of the java protocol or no protocol.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/FLUME-3428">https://issues.apache.org/jira/browse/FLUME-3428</a></li>
+<li><a href="https://lists.apache.org/thread/qkmt4r2t9tbrxrdbjg1m2oczbvczd9zn">https://lists.apache.org/thread/qkmt4r2t9tbrxrdbjg1m2oczbvczd9zn</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Apache Flume would like to thank Frentzen Amaral for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2022-42468">Apache Flume prior to 1.11.0 has an Improper Input Validation (JNDI Injection) in JMSSource</h2>
+<p>CVE-2022-42468 <a href="./CVE-2022-42468.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Flume from Flume JMSSource before 1.11.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Apache Flume versions 1.4.0 through 1.10.1 are vulnerable to a remote code execution (RCE) attack when a configuration uses a JMS Source with an unsafe providerURL. This issue is fixed by limiting JNDI to allow only the use of the java protocol or no protocol.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/FLUME-3437">https://issues.apache.org/jira/browse/FLUME-3437</a></li>
+<li><a href="https://lists.apache.org/thread/939wkx8o90bp6m2ht3t1sdyo1ncypl78">https://lists.apache.org/thread/939wkx8o90bp6m2ht3t1sdyo1ncypl78</a></li>
+<li><a href="https://lists.apache.org/thread/1ckhmp539zr2nd2rs45pocpywk2d9zvz">https://lists.apache.org/thread/1ckhmp539zr2nd2rs45pocpywk2d9zvz</a></li>
+</ul>
+
+  
+</div>
+</div>
+</main>
+  <footer> 
+    <footer id="footer">
+    <p>&copy; 2023 The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+  </footer>
+ 
+</footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/main.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

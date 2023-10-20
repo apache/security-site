@@ -107,31 +107,79 @@
 <p>Do you want disclose a potential security issue for Apache Zeppelin? You can read more about the projects&rsquo; security policy on their <a href="https://zeppelin.apache.org/security.html">security page</a>, and email your report to the <a href="mailto:security@zeppelin.apache.org">Apache Zeppelin Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://zeppelin.apache.org/security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2019-10095">bash command injection in spark interpreter</h2>
+<p>CVE-2019-10095 <a href="./CVE-2019-10095.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Zeppelin from Apache Zeppelin through 0.9.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>bash command injection vulnerability in Apache Zeppelin allows an attacker to inject system commands into Spark interpreter settings.  This issue affects Apache Zeppelin Apache Zeppelin version 0.9.0 and prior versions.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/rdf06e8423833b3daadc30c56a2ff47c48920864d5199476daa897208%40%3Cusers.zeppelin.apache.org%3E">https://lists.apache.org/thread.html/rdf06e8423833b3daadc30c56a2ff47c48920864d5199476daa897208%40%3Cusers.zeppelin.apache.org%3E</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Apache Zeppelin would like to thank HERE Security team for reporting this issue</li>
+</ul>
+<h2 id="CVE-2020-13929">Notebook permissions bypass</h2>
+<p>CVE-2020-13929 <a href="./CVE-2020-13929.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Zeppelin from Apache Zeppelin through 0.9.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Authentication bypass vulnerability in Apache Zeppelin allows an attacker to bypass Zeppelin authentication mechanism to act as another user.  This issue affects Apache Zeppelin Apache Zeppelin version 0.9.0 and prior versions.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r768800925d6407a6a87ccae0ec98776b7bda50c0e3ed3d0130dad028%40%3Cusers.zeppelin.apache.org%3E">https://lists.apache.org/thread.html/r768800925d6407a6a87ccae0ec98776b7bda50c0e3ed3d0130dad028%40%3Cusers.zeppelin.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Apache Zeppelin would like to thank David Woodhouse for reporting this issue</li>
+</ul>
+<h2 id="CVE-2021-27578">Cross Site Scripting in markdown interpreter</h2>
+<p>CVE-2021-27578 <a href="./CVE-2021-27578.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Zeppelin from Apache Zeppelin before 0.9.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Cross Site Scripting vulnerability in markdown interpreter of Apache Zeppelin allows an attacker to inject malicious scripts.  This issue affects Apache Zeppelin Apache Zeppelin versions prior to 0.9.0.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r90590aa5ea788128ecc2e822e1e64d5200b4cb92b06707b38da4cb3d%40%3Cusers.zeppelin.apache.org%3E">https://lists.apache.org/thread.html/r90590aa5ea788128ecc2e822e1e64d5200b4cb92b06707b38da4cb3d%40%3Cusers.zeppelin.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Apache Zeppelin would like to thank Paulo Pacheco for reporting this issue</li>
+</ul>
 <h2 id="CVE-2021-28655">Arbitrary file deletion vulnerability</h2>
 <p>CVE-2021-28655 <a href="./CVE-2021-28655.cve.json">[CVE json]</a></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache Zeppelin through 0.9.0</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>The improper Input Validation vulnerability in &ldquo;”Move folder to Trash” feature of Apache Zeppelin allows an attacker to delete the arbitrary files.  This issue affects Apache Zeppelin Apache Zeppelin version 0.9.0 and prior versions.</p>
-<h3 id="references">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/bxs056g3xlsofz0jb3wny9dw4llwptd2">https://lists.apache.org/thread/bxs056g3xlsofz0jb3wny9dw4llwptd2</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-3">Credits</h3>
 <ul>
 <li>Kai Zhao (finder)</li>
 </ul>
 <h2 id="CVE-2022-46870">Stored XSS in note permissions</h2>
 <p>CVE-2022-46870 <a href="./CVE-2022-46870.cve.json">[CVE json]</a></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-4">Affected</h3>
 <ul>
 <li>Apache Zeppelin before 0.8.2</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-4">Description</h3>
 <p>An Improper Neutralization of Input During Web Page Generation (&lsquo;Cross-site Scripting&rsquo;) vulnerability in Apache Zeppelin allows logged-in users to execute arbitrary javascript in other users&rsquo; browsers.<br><p>This issue affects Apache Zeppelin before 0.8.2. Users are recommended to upgrade to a supported version of Zeppelin.<br></p></p>
-<h3 id="references-1">References</h3>
+<h3 id="references-4">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/gb1wdnrm1095xw6qznpsycfrht4lwbwc">https://lists.apache.org/thread/gb1wdnrm1095xw6qznpsycfrht4lwbwc</a></li>
 </ul>

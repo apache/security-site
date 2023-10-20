@@ -104,10 +104,60 @@
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache Subversion? You can read more about the projects&rsquo; security policy on their <a href="https://subversion.apache.org/security/">security page</a>, and email your report to the  <a href="mailto:security@subversion.apache.org">Apache Subversion Security Team</a>.</p>
+<p>Do you want disclose a potential security issue for Apache Subversion? You can read more about the projects&rsquo; security policy on their <a href="https://subversion.apache.org/security/">security page</a>, and email your report to the <a href="mailto:security@subversion.apache.org">Apache Subversion Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
-<p>This page is experimental: it provides consistent access to the advisories for Apache Subversion since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the <a href="https://subversion.apache.org/security/">project security page</a>.</p>
-<p>If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://subversion.apache.org/security/">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2020-17525">Remote unauthenticated denial-of-service in Subversion mod_authz_svn</h2>
+<p>CVE-2020-17525 <a href="./CVE-2020-17525.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Subversion at mod_authz_svn 1.10.7</li>
+<li>Apache Subversion from mod_authz_svn before 1.14.1</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Subversion&rsquo;s mod_authz_svn module will crash if the server is using in-repository authz rules with the AuthzSVNReposRelativeAccessFile option and a client sends a request for a non-existing repository URL. This can lead to disruption for users of the service.  This issue was fixed in mod_dav_svn+mod_authz_svn servers 1.14.1 and mod_dav_svn+mod_authz_svn servers 1.10.7</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://subversion.apache.org/security/CVE-2020-17525-advisory.txt">https://subversion.apache.org/security/CVE-2020-17525-advisory.txt</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Thomas Åkesson (simonsoft.se)</li>
+</ul>
+<h2 id="CVE-2021-28544">Apache Subversion SVN authz protected copyfrom paths regression</h2>
+<p>CVE-2021-28544 <a href="./CVE-2021-28544.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Subversion at 1.10.0 to 1.14.1</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Apache Subversion SVN authz protected copyfrom paths regression  Subversion servers reveal &lsquo;copyfrom&rsquo; paths that should be hidden according to configured path-based authorization (authz) rules.  When a node has been copied from a protected location, users with access to the copy can see the &lsquo;copyfrom&rsquo; path of the original.  This also reveals the fact that the node was copied.  Only the &lsquo;copyfrom&rsquo; path is revealed; not its contents. Both httpd and svnserve servers are vulnerable.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://subversion.apache.org/security/CVE-2021-28544-advisory.txt">https://subversion.apache.org/security/CVE-2021-28544-advisory.txt</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Apache Subversion would like to thank Evgeny Kotkov, visualsvn.com.</li>
+</ul>
+<h2 id="CVE-2022-24070">Apache Subversion mod_dav_svn is vulnerable to memory corruption</h2>
+<p>CVE-2022-24070 <a href="./CVE-2022-24070.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Subversion at 1.10.0 to 1.14.1</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Subversion&rsquo;s mod_dav_svn is vulnerable to memory corruption.  While looking up path-based authorization rules, mod_dav_svn servers may attempt to use memory which has already been freed.  Affected Subversion mod_dav_svn servers 1.10.0 through 1.14.1 (inclusive). Servers that do not use mod_dav_svn are not affected.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/SVN-4880">https://issues.apache.org/jira/browse/SVN-4880</a></li>
+<li><a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65861">https://bz.apache.org/bugzilla/show_bug.cgi?id=65861</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/HTTPD/ModuleLife">https://cwiki.apache.org/confluence/display/HTTPD/ModuleLife</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Apache Subversion would like to thank Thomas Weißschuh, cis-solutions.eu.</li>
+</ul>
 
   
 </div>

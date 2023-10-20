@@ -107,32 +107,136 @@
 <p>Do you want disclose a potential security issue for Apache DolphinScheduler? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2020-13922">Apache DolphinScheduler (incubating) Permission vulnerability</h2>
+<p>CVE-2020-13922 <a href="./CVE-2020-13922.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler from Apache DolphinScheduler before 1.3.2</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Versions of Apache DolphinScheduler prior to 1.3.2 allowed an ordinary user under any tenant to override another users password through the API interface.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://www.mail-archive.com/announce%40apache.org/msg06076.html">https://www.mail-archive.com/announce%40apache.org/msg06076.html</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>This issue was discovered by xuxiang of DtDream security</li>
+</ul>
+<h2 id="CVE-2021-27644">DolphinScheduler mysql jdbc connector parameters deserialize remote code execution</h2>
+<p>CVE-2021-27644 <a href="./CVE-2021-27644.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler from Apache DolphinScheduler before 1.3.6</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>In Apache DolphinScheduler before 1.3.6 versions, authorized users can use SQL injection in the data source center. (Only applicable to MySQL data source with internal login account password)</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r35d6acf021486a390a7ea09e6650c2fe19e72522bd484791d606a6e6%40%3Cdev.dolphinscheduler.apache.org%3E">https://lists.apache.org/thread.html/r35d6acf021486a390a7ea09e6650c2fe19e72522bd484791d606a6e6%40%3Cdev.dolphinscheduler.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>This issue was discovered by Jinchen Sheng of Ant FG Security Lab</li>
+</ul>
+<h2 id="CVE-2022-25598">Apache DolphinScheduler user registration is vulnerable to ReDoS attacks</h2>
+<p>CVE-2022-25598 <a href="./CVE-2022-25598.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler from Apache DolphinScheduler before 2.0.5</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Apache DolphinScheduler user registration is vulnerable to Regular express Denial of Service (ReDoS) attacks, Apache DolphinScheduler users should upgrade to version 2.0.5 or higher.Uncontrolled Resource Consumption vulnerability in <strong>COMPONENT</strong> of Apache DolphinScheduler allows an attacker to <strong>IMPACT</strong>.  This issue affects Apache DolphinScheduler Apache DolphinScheduler versions prior to 2.0.5.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/hwnw7xr969sg5nv84wz75nfr2c76fl93">https://lists.apache.org/thread/hwnw7xr969sg5nv84wz75nfr2c76fl93</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>This issue was discovered by Zheng Wang of HIT</li>
+</ul>
+<h2 id="CVE-2022-26884">Apache DolphinScheduler exposes files without authentication</h2>
+<p>CVE-2022-26884 <a href="./CVE-2022-26884.cve.json">[CVE json]</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler from Apache DolphinScheduler before 2.0.6</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Users can read any files by log server, Apache DolphinScheduler users should upgrade to version 2.0.6 or higher.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/xfdst5y4hnrm2ntmc5jzrgmw2htyyb9c">https://lists.apache.org/thread/xfdst5y4hnrm2ntmc5jzrgmw2htyyb9c</a></li>
+</ul>
+<h2 id="CVE-2022-26885">Apache DolphinScheduler config file read by task risk</h2>
+<p>CVE-2022-26885 <a href="./CVE-2022-26885.cve.json">[CVE json]</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler from Apache DolphinScheduler before 2.0.6</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>When using tasks to read config files, there is a risk of database password disclosure.   We recommend you upgrade to version 2.0.6 or higher.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/z7084r9cs2r26cszkkgjqpb5bhnxqssp">https://lists.apache.org/thread/z7084r9cs2r26cszkkgjqpb5bhnxqssp</a></li>
+</ul>
+<h2 id="CVE-2022-34662">Apache DolphinScheduler prior to 3.0.0 allows path traversal</h2>
+<p>CVE-2022-34662 <a href="./CVE-2022-34662.cve.json">[CVE json]</a></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler from Apache DolphinScheduler through 3.0.0-beta-1</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>When users add resources to the resource center with a relation path will cause path traversal issues and only for logged-in users. You could upgrade to version 3.0.0 or higher</p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/pbdzqf9ntxyvs4cr0x2dgk9zlf43btz8">https://lists.apache.org/thread/pbdzqf9ntxyvs4cr0x2dgk9zlf43btz8</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>This issue was discovered by Jigang Dong of M1QLin Security Team</li>
+</ul>
+<h2 id="CVE-2022-45462">Apache DolphinScheduler prior to 2.0.5 have command execution vulnerability</h2>
+<p>CVE-2022-45462 <a href="./CVE-2022-45462.cve.json">[CVE json]</a></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler from unspecified through 2.0.5</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>Alarm instance management has command injection when there is a specific command configured. It is only for logged-in users. We recommend you upgrade to version 2.0.6 or higher</p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/2f126y32bf1v3mvxkdgt2jr5j3l1t01w">https://lists.apache.org/thread/2f126y32bf1v3mvxkdgt2jr5j3l1t01w</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>This issue was discovered by Jigang Dong of M1QLin Security Team</li>
+</ul>
 <h2 id="CVE-2022-45875">Remote command execution Vulnerability in script alert plugin</h2>
 <p>CVE-2022-45875 <a href="./CVE-2022-45875.cve.json">[CVE json]</a></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-7">Affected</h3>
 <ul>
 <li>Apache DolphinScheduler from 3.0 through 3.0.1</li>
 <li>Apache DolphinScheduler from 3.1 through 3.1.0</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-7">Description</h3>
 <p>Improper validation of script alert plugin parameters in Apache DolphinScheduler to avoid remote command execution vulnerability.  This issue affects Apache DolphinScheduler version 3.0.1 and prior versions; version 3.1.0 and prior versions.</p>
-<h3 id="references">References</h3>
+<h3 id="references-7">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/r0wqzkjsoq17j6ww381kmpx3jjp9hb6r">https://lists.apache.org/thread/r0wqzkjsoq17j6ww381kmpx3jjp9hb6r</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-5">Credits</h3>
 <ul>
 <li>4ra1n of Chaitin Tech (finder)</li>
 </ul>
 <h2 id="CVE-2023-25601">Apache DolphinScheduler 3.0.0 to 3.1.1 python gateway has improper authentication</h2>
 <p>CVE-2023-25601 <a href="./CVE-2023-25601.cve.json">[CVE json]</a></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-8">Affected</h3>
 <ul>
 <li>Apache DolphinScheduler from 3.0.0 before 3.1.2</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-8">Description</h3>
 <p>On version 3.0.0 through 3.1.1, Apache DolphinScheduler&rsquo;s python gateway suffered from improper authentication: an attacker could use a socket bytes attack without authentication. This issue has been fixed from version 3.1.2 onwards. For users who use version 3.0.0 to 3.1.1, you can turn off the python-gateway function by changing the value <code>python-gateway.enabled=false</code> in configuration file <code>application.yaml</code>. If you are using the python gateway, please upgrade to version 3.1.2 or above.<br></p>
-<h3 id="references-1">References</h3>
+<h3 id="references-8">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/25g77jqczp3t8cz56hk1p65q7m6c64rf">https://lists.apache.org/thread/25g77jqczp3t8cz56hk1p65q7m6c64rf</a></li>
 </ul>

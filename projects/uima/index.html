@@ -107,19 +107,36 @@
 <p>Do you want disclose a potential security issue for Apache UIMA? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2022-32287">Apache UIMA prior to 3.3.1 has a path traversal vulnerability when extracting (PEAR) archives</h2>
+<p>CVE-2022-32287 <a href="./CVE-2022-32287.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache UIMA from Java SDK through 3.3.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>A relative path traversal vulnerability in a FileUtil class used by the PEAR management component of Apache UIMA allows an attacker to create files outside the designated target directory using carefully crafted ZIP entry names. This issue affects Apache UIMA Apache UIMA version 3.3.0 and prior versions.</p>
+<p>Note that PEAR files should never be installed into an UIMA installation from untrusted sources because PEAR archives are executable plugins that will be able to perform any actions with the same privileges as the host Java Virtual Machine.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/57vk0d79j94d0lk0vol8xn935yv1shdd">https://lists.apache.org/thread/57vk0d79j94d0lk0vol8xn935yv1shdd</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Apache UIMA would like to thank Huangzhicong from CodeSafe Team of Legendsec at Qi&rsquo;anxin Group</li>
+</ul>
 <h2 id="CVE-2023-28935">DUCC (EOL) allows RCE</h2>
 <p>CVE-2023-28935 <a href="./CVE-2023-28935.cve.json">[CVE json]</a></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache UIMA DUCC through *</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-1">Description</h3>
 <div>** UNSUPPORTED WHEN ASSIGNED ** Improper Neutralization of Special Elements used in a Command ('Command Injection') vulnerability in Apache Software Foundation Apache UIMA DUCC.<br></div><div>When using the "Distributed UIMA Cluster Computing" (DUCC) module of Apache UIMA, an authenticated user that has the permissions to modify core entities can cause command execution as the system user that runs the web process.<br></div><div>As the "Distributed UIMA Cluster Computing" module for UIMA is retired, we do not plan to release a fix for this issue.<br>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</div>
-<h3 id="references">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/r19z14b9rrfxv72r93q5trq5tyffo75g">https://lists.apache.org/thread/r19z14b9rrfxv72r93q5trq5tyffo75g</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>Crilwa (finder)</li>
 </ul>

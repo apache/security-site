@@ -107,19 +107,59 @@
 <p>Do you want disclose a potential security issue for Apache MINA? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2021-30129">DoS/OOM leak vulnerability in Apache Mina SSHD Server</h2>
+<p>CVE-2021-30129 <a href="./CVE-2021-30129.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Mina SSHD from 2.0.0 before Apache Mina SSHD*</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>A vulnerability in sshd-core of Apache Mina SSHD allows an attacker to overflow the server causing an OutOfMemory error.  This issue affects the SFTP and port forwarding features of Apache Mina SSHD version 2.0.0 and later versions.  It was addressed in Apache Mina SSHD 2.7.0</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r6d4f78e192a0c8eabd671a018da464024642980ecd24096bde6db36f%40%3Cusers.mina.apache.org%3E">https://lists.apache.org/thread.html/r6d4f78e192a0c8eabd671a018da464024642980ecd24096bde6db36f%40%3Cusers.mina.apache.org%3E</a></li>
+</ul>
+<h2 id="CVE-2021-41973">Apache MINA HTTP listener DOS</h2>
+<p>CVE-2021-41973 <a href="./CVE-2021-41973.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache MINA from Apache MINA before 2.1.5</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>In Apache MINA, a specifically crafted, malformed HTTP request may cause the HTTP Header decoder to loop indefinitely.  The decoder assumed that the HTTP Header begins at the beginning of the buffer and loops if there is more data than expected.  Please update MINA to 2.1.5 or greater.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r0b907da9340d5ff4e6c1a4798ef4e79700a668657f27cca8a39e9250%40%3Cdev.mina.apache.org%3E">https://lists.apache.org/thread.html/r0b907da9340d5ff4e6c1a4798ef4e79700a668657f27cca8a39e9250%40%3Cdev.mina.apache.org%3E</a></li>
+</ul>
+<h2 id="CVE-2022-45047">Apache MINA SSHD: Java unsafe deserialization vulnerability</h2>
+<p>CVE-2022-45047 <a href="./CVE-2022-45047.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache MINA SSHD from unspecified through 2.9.1</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Class org.apache.sshd.server.keyprovider.SimpleGeneratorHostKeyProvider in Apache MINA SSHD &lt;= 2.9.1 uses Java deserialization to load a serialized java.security.PrivateKey. The class is one of several implementations that an implementor using Apache MINA SSHD can choose for loading the host keys of an SSH server.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://www.mail-archive.com/dev%40mina.apache.org/msg39312.html">https://www.mail-archive.com/dev%40mina.apache.org/msg39312.html</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>The Apache MINA SSHD team would like to thank Zhang Zewei, NOFOCUS, for reporting this issue.</li>
+</ul>
 <h2 id="CVE-2023-35887">Information disclosure bugs with RootedFilesystem</h2>
 <p>CVE-2023-35887 <a href="./CVE-2023-35887.cve.json">[CVE json]</a></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache MINA SSHD from 1.0 before 2.10</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Software Foundation Apache MINA.<br><br>In SFTP servers implemented using Apache MINA SSHD that use a RootedFileSystem, logged users may be able to discover &ldquo;exists/does not exist&rdquo; information about items outside the rooted tree via paths including parent navigation (&quot;..&quot;) beyond the root, or involving symlinks.<br><br>This issue affects Apache MINA: from 1.0 before 2.10. Users are recommended to upgrade to 2.10<br></p>
-<h3 id="references">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/b9qgtqvhnvgfpn0w1gz918p21p53tqk2">https://lists.apache.org/thread/b9qgtqvhnvgfpn0w1gz918p21p53tqk2</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>Andrew Pikler (finder)</li>
 </ul>

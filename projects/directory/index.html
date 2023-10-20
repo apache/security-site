@@ -107,19 +107,35 @@
 <p>Do you want disclose a potential security issue for Apache Directory? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2021-33900">StartTLS and SASL confidentiality protection bypass</h2>
+<p>CVE-2021-33900 <a href="./CVE-2021-33900.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Directory Studio from unspecified through 2.0.0.v20210213-M16</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>While investigating DIRSTUDIO-1219 it was noticed that configured StartTLS encryption was not applied when any SASL authentication mechanism (DIGEST-MD5, GSSAPI) was used. While investigating DIRSTUDIO-1220 it was noticed that any configured SASL confidentiality layer was not applied. This issue affects Apache Directory Studio version 2.0.0.v20210213-M16 and prior versions.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/rb1dbcc43a5b406e45d335343a1704f4233de613140a01929d102fdc9%40%3Cusers.directory.apache.org%3E">https://lists.apache.org/thread.html/rb1dbcc43a5b406e45d335343a1704f4233de613140a01929d102fdc9%40%3Cusers.directory.apache.org%3E</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Apache Directory would like to thank Hugh Cole-Baker for reporting this issue.</li>
+</ul>
 <h2 id="CVE-2023-25613">LDAP Injection Vulnerability in Apache Kerby</h2>
 <p>CVE-2023-25613 <a href="./CVE-2023-25613.cve.json">[CVE json]</a></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache Kerby before 2.0.3</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-1">Description</h3>
 <p>An LDAP Injection vulnerability exists in the LdapIdentityBackend of Apache Kerby before 2.0.3. </p>
-<h3 id="references">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/ynz3hhbbq6d980fzpncwbh5jd8mkyt5y">https://lists.apache.org/thread/ynz3hhbbq6d980fzpncwbh5jd8mkyt5y</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>4ra1n of Chaitin Tech (finder)</li>
 </ul>

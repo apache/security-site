@@ -104,10 +104,25 @@
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache SpamAssassin? You can read more about the projects&rsquo; security policy on their <a href="https://cwiki.apache.org/confluence/display/SPAMASSASSIN/SecurityPolicy">security page</a>, and email your report to the  <a href="mailto:security@spamassassin.apache.org">Apache SpamAssassin Security Team</a>.</p>
+<p>Do you want disclose a potential security issue for Apache SpamAssassin? You can read more about the projects&rsquo; security policy on their <a href="https://cwiki.apache.org/confluence/display/SPAMASSASSIN/SecurityPolicy">security page</a>, and email your report to the <a href="mailto:security@spamassassin.apache.org">Apache SpamAssassin Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
-<p>This page is experimental: it provides consistent access to the advisories for Apache SpamAssassin since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the <a href="https://cwiki.apache.org/confluence/display/SPAMASSASSIN/SecurityPolicy">project security page</a>.</p>
-<p>If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://cwiki.apache.org/confluence/display/SPAMASSASSIN/SecurityPolicy">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2020-1946">Apache SpamAssassin has an OS Command Injection vulnerability</h2>
+<p>CVE-2020-1946 <a href="./CVE-2020-1946.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache SpamAssassin from Apache SpamAssassin before 3.4.5</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>In Apache SpamAssassin before 3.4.5, malicious rule configuration (.cf) files can be configured to run system commands without any output or errors. With this, exploits can be injected in a number of scenarios.  In addition to upgrading to SA version 3.4.5, users should only use update channels or 3rd party .cf files from trusted places.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://s.apache.org/3r1wh">https://s.apache.org/3r1wh</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Apache SpamAssassin would like to thank Damian Lukowski at credativ for ethically reporting this issue.</li>
+</ul>
 
   
 </div>

@@ -104,10 +104,107 @@
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache XML Graphics? You can read more about the projects&rsquo; security policy on their <a href="https://xmlgraphics.apache.org/security.html">security page</a>, and email your report to the  <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<p>Do you want disclose a potential security issue for Apache XML Graphics? You can read more about the projects&rsquo; security policy on their <a href="https://xmlgraphics.apache.org/security.html">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
-<p>This page is experimental: it provides consistent access to the advisories for Apache XML Graphics since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the <a href="https://xmlgraphics.apache.org/security.html">project security page</a>.</p>
-<p>If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://xmlgraphics.apache.org/security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2022-38398">Server-Side Request Forgery Information Disclosure Vulnerability</h2>
+<p>CVE-2022-38398 <a href="./CVE-2022-38398.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache XML Graphics at Batik 1.14</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Server-Side Request Forgery (SSRF) vulnerability in Batik of Apache XML Graphics allows an attacker to load a url thru the jar protocol.  This issue affects Apache XML Graphics Batik 1.14.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/712c9xwtmyghyokzrm2ml6sps4xlmbsx">https://lists.apache.org/thread/712c9xwtmyghyokzrm2ml6sps4xlmbsx</a></li>
+</ul>
+<h2 id="CVE-2022-38648">PDFTranscoder does not block external resources</h2>
+<p>CVE-2022-38648 <a href="./CVE-2022-38648.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache XML Graphics at Batik 1.14</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Server-Side Request Forgery (SSRF) vulnerability in Batik of Apache XML Graphics allows an attacker to fetch external resources.  This issue affects Apache XML Graphics Batik 1.14.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/gfsktxvj7jtwyovmhhbrw0bs13wfjd7b">https://lists.apache.org/thread/gfsktxvj7jtwyovmhhbrw0bs13wfjd7b</a></li>
+</ul>
+<h2 id="CVE-2022-40146">Jar url should be blocked by DefaultScriptSecurity</h2>
+<p>CVE-2022-40146 <a href="./CVE-2022-40146.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache XML Graphics at Batik 1.14</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Server-Side Request Forgery (SSRF) vulnerability in Batik of Apache XML Graphics allows an attacker to access files using a Jar url.  This issue affects Apache XML Graphics Batik 1.14. Only affects the batik-bridge component.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/hxtddqjty2sbs12y97c8g7xfh17jzxsx">https://lists.apache.org/thread/hxtddqjty2sbs12y97c8g7xfh17jzxsx</a></li>
+</ul>
+<h2 id="CVE-2022-41704">Apache Batik prior to 1.16 allows RCE when loading untrusted SVG input</h2>
+<p>CVE-2022-41704 <a href="./CVE-2022-41704.cve.json">[CVE json]</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache XML Graphics from Batik through 1.15</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>A vulnerability in Batik of Apache XML Graphics allows an attacker to run untrusted Java code from an SVG. This issue affects Apache XML Graphics prior to 1.16. It is recommended to update to version 1.16.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/hplhx0o74jb7blj39fm4kw3otcnjd6xf">https://lists.apache.org/thread/hplhx0o74jb7blj39fm4kw3otcnjd6xf</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>This issue was independently reported by 4ra1n of Chaitin Tech and pwnull</li>
+</ul>
+<h2 id="CVE-2022-42890">Apache Batik prior to 1.16 allows RCE via scripting</h2>
+<p>CVE-2022-42890 <a href="./CVE-2022-42890.cve.json">[CVE json]</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache XML Graphics from Batik through 1.15</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>A vulnerability in Batik of Apache XML Graphics allows an attacker to run Java code from untrusted SVG via JavaScript.  This issue affects Apache XML Graphics prior to 1.16. Users are recommended to upgrade to version 1.16.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/pkvhy0nsj1h1mlon008wtzhosbtxjwly">https://lists.apache.org/thread/pkvhy0nsj1h1mlon008wtzhosbtxjwly</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>This issue was independently reported by Y4tacker and 4ra1n of Chaitin Tech</li>
+</ul>
+<h2 id="CVE-2022-44729">Information disclosure vulnerability</h2>
+<p>CVE-2022-44729 <a href="./CVE-2022-44729.cve.json">[CVE json]</a></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache XML Graphics Batik at 1.16</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Server-Side Request Forgery (SSRF) vulnerability in Apache Software Foundation Apache XML Graphics Batik.<p>This issue affects Apache XML Graphics Batik: 1.16.</p><p>On version 1.16, a malicious SVG could trigger loading external resources by default, causing resource consumption or in some cases even information disclosure. Users are recommended to upgrade to version 1.17 or later.<br></p></p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://xmlgraphics.apache.org/security.html">https://xmlgraphics.apache.org/security.html</a></li>
+<li><a href="https://lists.apache.org/thread/hco2nw1typoorz33qzs0fcdx0ws6d6j2">https://lists.apache.org/thread/hco2nw1typoorz33qzs0fcdx0ws6d6j2</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>nbxiglk (finder)</li>
+</ul>
+<h2 id="CVE-2022-44730">Information disclosure vulnerability</h2>
+<p>CVE-2022-44730 <a href="./CVE-2022-44730.cve.json">[CVE json]</a></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache XML Graphics Batik at 1.16</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>Server-Side Request Forgery (SSRF) vulnerability in Apache Software Foundation Apache XML Graphics Batik.<p>This issue affects Apache XML Graphics Batik: 1.16.<br></p><p>A malicious SVG can probe user profile / data and send it directly as parameter to a URL.<br></p></p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/58m5817jr059f4v1zogh0fngj9pwjyj0">https://lists.apache.org/thread/58m5817jr059f4v1zogh0fngj9pwjyj0</a></li>
+<li><a href="https://xmlgraphics.apache.org/security.html">https://xmlgraphics.apache.org/security.html</a></li>
+</ul>
 
   
 </div>

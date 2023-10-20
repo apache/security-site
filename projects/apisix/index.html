@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.111.3">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Apache APISIX security advisories </title>
+
+  
+  <meta name="description" content="Security information for Apache APISIX"> 
+  
+  
+  
+  
+  
+  <meta name="robots" content="noindex">
+  
+
+  
+
+  <meta name="author" content="">
+
+
+  <meta property="og:title" content="Apache APISIX security advisories" />
+<meta property="og:description" content="Security information for Apache APISIX" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://security.apache.org/projects/apisix/" />
+
+  
+
+
+
+
+  
+  
+  
+  
+   <link href="/projects/apisix/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
+
+  <link rel="canonical" href="https://security.apache.org/projects/apisix/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Apache Security Team</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Apache Security Team</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog" >Blog</a></li>
+    
+    <li><a href="https://www.apache.org/licenses/" >License</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
+    
+    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
+    
+    <li><a href="https://www.apache.org" >Apache</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+
+<div id="hero" class="wrap">
+  <h1>Apache APISIX security advisories</h1>
+    <p>Security information for Apache APISIX</p>
+</div>
+<div id="project-box">
+<div id="project">
+
+ <h1 id="reporting">Reporting</h1>
+<p>Do you want disclose a potential security issue for Apache APISIX? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<h1 id="advisories">Advisories</h1>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2021-33190">Bypass network access control</h2>
+<p>CVE-2021-33190 <a href="./CVE-2021-33190.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache APISIX Dashboard at Apache APISIX Dashboard 2.6 2.6</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>In Apache APISIX Dashboard version 2.6, we changed the default value of listen host to 0.0.0.0 in order to facilitate users to configure external network access. In the IP allowed list restriction, a risky function was used for the IP acquisition, which made it possible to bypass the network limit. At the same time, the default account and password are fixed.Ultimately these factors lead to the issue of security risks.  This issue is fixed in APISIX Dashboard 2.6.1</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/re736aea55e8fd2478f0739c0c38a9375c4204fc1f0bd1ea687f57049%40%3Cdev.apisix.apache.org%3E">https://lists.apache.org/thread.html/re736aea55e8fd2478f0739c0c38a9375c4204fc1f0bd1ea687f57049%40%3Cdev.apisix.apache.org%3E</a></li>
+</ul>
+<h2 id="CVE-2021-43557">Path traversal in request_uri variable</h2>
+<p>CVE-2021-43557 <a href="./CVE-2021-43557.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache APISIX from 1.5 before Apache APISIX 1.5*</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>The uri-block plugin in Apache APISIX before 2.10.2 uses $request_uri without verification. The $request_uri is the full original request URI without normalization.
+This makes it possible to construct a URI to bypass the block list on some occasions. For instance, when the block list contains &ldquo;^/internal/&rdquo;, a URI like <code>//internal/</code> can be used to bypass it.</p>
+<p>Some other plugins also have the same issue. And it may affect the developer&rsquo;s custom plugin.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/18jyd458ptocr31rnkjs71w4h366mv7h">https://lists.apache.org/thread/18jyd458ptocr31rnkjs71w4h366mv7h</a></li>
+</ul>
+<h2 id="CVE-2021-45232">security vulnerability on unauthorized access.</h2>
+<p>CVE-2021-45232 <a href="./CVE-2021-45232.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache APISIX Dashboard at 2.7 and 2.7.1</li>
+<li>Apache APISIX Dashboard at 2.8</li>
+<li>Apache APISIX Dashboard at 2.9</li>
+<li>Apache APISIX Dashboard at 2.10</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>In Apache APISIX Dashboard before 2.10.1, the Manager API uses two frameworks and introduces framework <code>droplet</code> on the basis of framework <code>gin</code>, all APIs and authentication middleware are developed based on framework <code>droplet</code>, but some API directly use the interface of framework <code>gin</code> thus bypassing the authentication.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/979qbl6vlm8269fopfyygnxofgqyn6k5">https://lists.apache.org/thread/979qbl6vlm8269fopfyygnxofgqyn6k5</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Independently discovered by ZHU Yucheng of YuanbaoTeach Security Team.</li>
+</ul>
+<h2 id="CVE-2022-24112">apisix/batch-requests plugin allows overwriting the X-REAL-IP header</h2>
+<p>CVE-2022-24112 <a href="./CVE-2022-24112.cve.json">[CVE json]</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache APISIX from Apache APISIX 2.12 before 2.12.1</li>
+<li>Apache APISIX from Apache APISIX 2.10 before 2.10.4</li>
+<li>Apache APISIX from 1.3 before Apache APISIX 1*</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>An attacker can abuse the batch-requests plugin to send requests to bypass the IP restriction of Admin API.
+A default configuration of Apache APISIX (with default API key) is vulnerable to remote code execution.
+When the admin key was changed or the port of Admin API was changed to a port different from the data panel, the impact is lower. But there is still a risk to bypass the IP restriction of Apache APISIX&rsquo;s data panel.</p>
+<p>There is a check in the batch-requests plugin which overrides the client IP with its real remote IP. But due to a bug in the code, this check can be bypassed.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/lcdqywz8zy94mdysk7p3gfdgn51jmt94">https://lists.apache.org/thread/lcdqywz8zy94mdysk7p3gfdgn51jmt94</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Original discovery by Real World CTF at Chaitin Tech. Reported by Sauercloud.</li>
+</ul>
+<h2 id="CVE-2022-25757">Apache APISIX: the body_schema check in request-validation plugin can be bypassed</h2>
+<p>CVE-2022-25757 <a href="./CVE-2022-25757.cve.json">[CVE json]</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache APISIX from Apache APISIX through 2.12.1</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>In Apache APISIX before 2.13.0, when decoding JSON with duplicate keys, lua-cjson will choose the last occurred value as the result. By passing a JSON with a duplicate key, the attacker can bypass the body_schema validation in the request-validation plugin. For example, <code>{&quot;string_payload&quot;:&quot;bad&quot;,&quot;string_payload&quot;:&quot;good&quot;}</code> can be used to hide the &ldquo;bad&rdquo; input.</p>
+<p>Systems satisfy three conditions below are affected by this attack:</p>
+<ol>
+<li>use body_schema validation in the request-validation plugin</li>
+<li>upstream application uses a special JSON library that chooses the first occurred value, like jsoniter or gojay</li>
+<li>upstream application does not validate the input anymore.</li>
+</ol>
+<p>The fix in APISIX is to re-encode the validated JSON input back into the request body at the side of APISIX.Improper Input Validation vulnerability in <strong>COMPONENT</strong> of Apache APISIX allows an attacker to <strong>IMPACT</strong>.  This issue affects Apache APISIX Apache APISIX version 2.12.1 and prior versions.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/03vd2j81krxmpz6xo8p1dl642flpo6fv">https://lists.apache.org/thread/03vd2j81krxmpz6xo8p1dl642flpo6fv</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Thanks for Guangli Dong from <a href="https://www.huoxian.cn">www.huoxian.cn</a></li>
+</ul>
+<h2 id="CVE-2022-29266">apisix/jwt-auth may leak secrets in error response</h2>
+<p>CVE-2022-29266 <a href="./CVE-2022-29266.cve.json">[CVE json]</a></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache APISIX from Apache APISIX through 2.13.0</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>In Apache APISIX before 2.13.1, the jwt-auth plugin has a security issue that leaks the user&rsquo;s secret key because the error message returned from the dependency lua-resty-jwt contains sensitive information.</p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/6qpfyxogbvn18g9xr8g218jjfjbfsbhr">https://lists.apache.org/thread/6qpfyxogbvn18g9xr8g218jjfjbfsbhr</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Discovered and reported by a team from Kingdee Software (China) Ltd. consisting of Zhongyuan Tang, Hongfeng Xie, and Bing Chen.</li>
+</ul>
+
+  
+</div>
+</div>
+</main>
+  <footer> 
+    <footer id="footer">
+    <p>&copy; 2023 The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+  </footer>
+ 
+</footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/main.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

@@ -107,37 +107,194 @@
 <p>Do you want disclose a potential security issue for Apache OpenOffice? You can read more about the projects&rsquo; security policy on their <a href="https://openoffice.apache.org/security">security page</a>, and email your report to the <a href="mailto:security@openoffice.apache.org">Apache OpenOffice Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://openoffice.apache.org/security">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2021-28129">DEB packaging for Apache OpenOffice 4.1.8 installed with a non-root userid and groupid</h2>
+<p>CVE-2021-28129 <a href="./CVE-2021-28129.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache OpenOffice at Apache OpenOffice 4.1.8</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>While working on Apache OpenOffice 4.1.8 a developer discovered that the DEB package did not install using root, but instead used a userid and groupid of 500. This both caused issues with desktop integration and could allow a crafted attack on files owned by that user or group if they exist.</p>
+<p>Users who installed the Apache OpenOffice 4.1.8 DEB packaging should upgrade to the latest version of Apache OpenOffice.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/rc9090ab48b4699494b63b35cd6d7414c52d665ecae12add3cdc56c9b%40%3Cusers.openoffice.apache.org%3E">https://lists.apache.org/thread.html/rc9090ab48b4699494b63b35cd6d7414c52d665ecae12add3cdc56c9b%40%3Cusers.openoffice.apache.org%3E</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Arrigo Marchiori</li>
+</ul>
+<h2 id="CVE-2021-30245">Code execution in Apache OpenOffice via non-http(s) schemes in Hyperlinks</h2>
+<p>CVE-2021-30245 <a href="./CVE-2021-30245.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache OpenOffice from Apache OpenOffice through 4.1.9</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>The project received a report that all versions of Apache OpenOffice through 4.1.8 can open non-http(s) hyperlinks. The problem has existed since about 2006 and the issue is also in 4.1.9. If the link is specifically crafted this could lead to untrusted code execution. It is always best practice to be careful opening documents from unknown and unverified sources. The mitigation in Apache OpenOffice 4.1.10 (unreleased) assures that a security warning is displayed giving the user the option of continuing to open the hyperlink.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r87ff11512e4883052991e6b725e20294224034ea8453b811fb3ee735%40%3Cusers.openoffice.apache.org%3E">https://lists.apache.org/thread.html/r87ff11512e4883052991e6b725e20294224034ea8453b811fb3ee735%40%3Cusers.openoffice.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Fabian Bräunlein and Lukas Euler of Positive Security</li>
+</ul>
+<h2 id="CVE-2021-33035">Buffer overflow from a crafted DBF file</h2>
+<p>CVE-2021-33035 <a href="./CVE-2021-33035.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache OpenOffice from Apache OpenOffice through 4.1.10</li>
+<li>Apache OpenOffice from OpenOffice.org through 3.4</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Apache OpenOffice opens dBase/DBF documents and shows the contents as spreadsheets.  DBF are database files with data organized in fields.  When reading DBF data the size of certain fields is not checked: the data is just copied into local variables. A carefully crafted document could overflow the allocated space, leading to the execution of arbitrary code by altering the contents of the program stack.</p>
+<p>This issue affects Apache OpenOffice up to and including version 4.1.10</p>
+<p>This issue is fixed in Apache OpenOffice 4.1.11</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://github.com/apache/openoffice/commit/efddaef0151af3be16078cc4d88c6bae0f911e56#diff-ea66e734dd358922aba12ad4ba39c96bdc6cbde587d07dbc63d04daa0a30e90f">https://github.com/apache/openoffice/commit/efddaef0151af3be16078cc4d88c6bae0f911e56#diff-ea66e734dd358922aba12ad4ba39c96bdc6cbde587d07dbc63d04daa0a30e90f</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Apache OpenOffice would like to thank Eugene Lim, Government Technology Agency of Singapore for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2021-40439">Billion Laughs</h2>
+<p>CVE-2021-40439 <a href="./CVE-2021-40439.cve.json">[CVE json]</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache OpenOffice from Apache OpenOffice through 4.1.10</li>
+<li>Apache OpenOffice from OpenOffice.org through 3.4</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Apache OpenOffice has a dependency on expat software. Versions prior to 2.1.0 were subject to CVE-2013-0340 a &ldquo;Billion Laughs&rdquo; entity expansion denial of service attack and exploit via crafted XML files. ODF files consist of a set of XML files.</p>
+<p>All versions of Apache OpenOffice up to 4.1.10 are subject to this issue.</p>
+<p>expat in version 4.1.11 is patched.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/rfb2c193360436e230b85547e85a41bea0916916f96c501f5b6fc4702%40%3Cusers.openoffice.apache.org%3E">https://lists.apache.org/thread.html/rfb2c193360436e230b85547e85a41bea0916916f96c501f5b6fc4702%40%3Cusers.openoffice.apache.org%3E</a></li>
+</ul>
+<h2 id="CVE-2021-41830">Double Certificate Attack</h2>
+<p>CVE-2021-41830 <a href="./CVE-2021-41830.cve.json">[CVE json]</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache OpenOffice from Apache OpenOffice through 4.1.10</li>
+<li>Apache OpenOffice from OpenOffice.org through 3.4</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>It is possible for an attacker to manipulate signed documents and macros to appear to come from a trusted source.</p>
+<p>All versions of Apache OpenOffice up to 4.1.10 are affected. Users are advised to update to version 4.1.11.</p>
+<p>See CVE-2021-25633 for the LibreOffice advisory.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r97d287c88881aa581f1b18cb01e2cbedc4e6eae85958491acb89b12e%40%3Cusers.openoffice.apache.org%3E">https://lists.apache.org/thread.html/r97d287c88881aa581f1b18cb01e2cbedc4e6eae85958491acb89b12e%40%3Cusers.openoffice.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Apache OpenOffice would like to thank Simon Rohlmann, Vladislav Mladenov, Christian Mainka, and Jorg Schwenk of Ruhr University Bochum, Germany</li>
+</ul>
+<h2 id="CVE-2021-41831">Timestamp Manipulation with Signature Wrapping</h2>
+<p>CVE-2021-41831 <a href="./CVE-2021-41831.cve.json">[CVE json]</a></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache OpenOffice from Apache OpenOffice through 4.1.10</li>
+<li>Apache OpenOffice from OpenOffice.org through 3.4</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>It is possible for an attacker to manipulate the timestamp of signed documents.</p>
+<p>All versions of Apache OpenOffice up to 4.1.10 are affected. Users are advised to update to version 4.1.11.</p>
+<p>See CVE-2021-25634 for the LibreOffice advisory.</p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/ra74d5057cdc781a36286a83e8bcbc90a7678f030ae73339c35dfc4f9%40%3Cusers.openoffice.apache.org%3E">https://lists.apache.org/thread.html/ra74d5057cdc781a36286a83e8bcbc90a7678f030ae73339c35dfc4f9%40%3Cusers.openoffice.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Apache OpenOffice would like to thank Simon Rohlmann, Vladislav Mladenov, Christian Mainka, and Jorg Schwenk of Ruhr University Bochum, Germany</li>
+</ul>
+<h2 id="CVE-2021-41832">Content Manipulation with Certificate Validation Attack</h2>
+<p>CVE-2021-41832 <a href="./CVE-2021-41832.cve.json">[CVE json]</a></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache OpenOffice from Apache OpenOffice through 4.1.10</li>
+<li>Apache OpenOffice from OpenOffice.org through 3.4</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>It is possible for an attacker to manipulate documents to appear to be signed by a trusted source.</p>
+<p>All versions of Apache OpenOffice up to 4.1.10 are affected. Users are advised to update to version 4.1.11.</p>
+<p>See CVE-2021-25635 for the LibreOffice advisory.</p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/rd3214a568b43dd335b5d558f521377f4bff750684dea18eb041fc1bb%40%3Cusers.openoffice.apache.org%3E">https://lists.apache.org/thread.html/rd3214a568b43dd335b5d558f521377f4bff750684dea18eb041fc1bb%40%3Cusers.openoffice.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Apache OpenOffice would like to thank Simon Rohlmann, Vladislav Mladenov, Christian Mainka, and Jorg Schwenk of Ruhr University Bochum, Germany</li>
+</ul>
+<h2 id="CVE-2022-37400">Apache OpenOffice Static Initialization Vector Allows to Recover Passwords for Web Connections Without Knowing the Master Password</h2>
+<p>CVE-2022-37400 <a href="./CVE-2022-37400.cve.json">[CVE json]</a></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache OpenOffice from Apache OpenOffice 4 before 4.1.13</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>Apache OpenOffice supports the storage of passwords for web connections in the user&rsquo;s configuration database. The stored passwords are encrypted with a single master key provided by the user. A flaw in OpenOffice existed where the required initialization vector for encryption was always the same which weakens the security of the encryption making them vulnerable if an attacker has access to the user&rsquo;s configuration data. This issue affects: Apache OpenOffice versions prior to 4.1.13.
+Reference: CVE-2022-26306 - LibreOffice</p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://www.openoffice.org/security/cves/CVE-2022-37400.html">https://www.openoffice.org/security/cves/CVE-2022-37400.html</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>OpenSource Security GmbH on behalf of the German Federal Office for Information Security</li>
+</ul>
+<h2 id="CVE-2022-37401">Apache OpenOffice Weak Master Keys</h2>
+<p>CVE-2022-37401 <a href="./CVE-2022-37401.cve.json">[CVE json]</a></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache OpenOffice from Apache OpenOffice 4 before 4.1.13</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>Apache OpenOffice supports the storage of passwords for web connections in the user&rsquo;s configuration database. The stored passwords are encrypted with a single master key provided by the user. A flaw in OpenOffice existed where master key was poorly encoded resulting in weakening its entropy from 128 to 43 bits making the stored passwords vulnerable to a brute force attack if an attacker has access to the users stored config. This issue affects: Apache OpenOffice versions prior to 4.1.13.  Reference: CVE-2022-26307 - LibreOffice</p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://www.openoffice.org/security/cves/CVE-2022-37401.html">https://www.openoffice.org/security/cves/CVE-2022-37401.html</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>OpenSource Security GmbH on behalf of the German Federal Office for Information Security</li>
+</ul>
 <h2 id="CVE-2022-38745">Empty entry in Java class path</h2>
 <p>CVE-2022-38745 <a href="./CVE-2022-38745.cve.json">[CVE json]</a></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-9">Affected</h3>
 <ul>
 <li>Apache OpenOffice before 4.1.14</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-9">Description</h3>
 <div>Apache OpenOffice versions before 4.1.14 may be configured to add an empty entry to the Java class path. This may lead to run arbitrary Java code from the current directory.<br></div>
-<h3 id="references">References</h3>
+<h3 id="references-9">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/q3noq7m681kvtb29m28x74q8cnwnzzo0">https://lists.apache.org/thread/q3noq7m681kvtb29m28x74q8cnwnzzo0</a></li>
 <li><a href="https://www.openoffice.org/security/cves/CVE-2022-38745.html">https://www.openoffice.org/security/cves/CVE-2022-38745.html</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-8">Credits</h3>
 <ul>
 <li>European Commission&rsquo;s Open Source Programme Office (sponsor)</li>
 </ul>
 <h2 id="CVE-2022-47502">Macro URL arbitrary script execution</h2>
 <p>CVE-2022-47502 <a href="./CVE-2022-47502.cve.json">[CVE json]</a></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-10">Affected</h3>
 <ul>
 <li>Apache OpenOffice through 4.1.13</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-10">Description</h3>
 <p>Apache OpenOffice documents can contain links that call internal macros with arbitrary arguments. Several URI Schemes are defined for this purpose.<br></p><p>Links can be activated by clicks, or by automatic document events.</p><p>The execution of such links must be subject to user approval.</p><p>In the affected versions of OpenOffice, approval for certain links is not   requested; when activated, such links could therefore result in arbitrary script execution.<br></p>
-<h3 id="references-1">References</h3>
+<h3 id="references-10">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/xr6tl91jj2jgcq8pdbrc4d8w13s6xn80">https://lists.apache.org/thread/xr6tl91jj2jgcq8pdbrc4d8w13s6xn80</a></li>
 <li><a href="https://www.openoffice.org/security/cves/CVE-2022-47502.html">https://www.openoffice.org/security/cves/CVE-2022-47502.html</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-9">Credits</h3>
 <ul>
 <li>Altin Thartori (tin-z) (reporter)</li>
 <li>Joachim Mammele (reporter)</li>

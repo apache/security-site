@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.111.3">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Apache Geode security advisories </title>
+
+  
+  <meta name="description" content="Security information for Apache Geode"> 
+  
+  
+  
+  
+  
+  <meta name="robots" content="noindex">
+  
+
+  
+
+  <meta name="author" content="">
+
+
+  <meta property="og:title" content="Apache Geode security advisories" />
+<meta property="og:description" content="Security information for Apache Geode" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://security.apache.org/projects/geode/" />
+
+  
+
+
+
+
+  
+  
+  
+  
+   <link href="/projects/geode/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
+
+  <link rel="canonical" href="https://security.apache.org/projects/geode/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Apache Security Team</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Apache Security Team</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog" >Blog</a></li>
+    
+    <li><a href="https://www.apache.org/licenses/" >License</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
+    
+    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
+    
+    <li><a href="https://www.apache.org" >Apache</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+
+<div id="hero" class="wrap">
+  <h1>Apache Geode security advisories</h1>
+    <p>Security information for Apache Geode</p>
+</div>
+<div id="project-box">
+<div id="project">
+
+ <h1 id="reporting">Reporting</h1>
+<p>Do you want disclose a potential security issue for Apache Geode? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<h1 id="advisories">Advisories</h1>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2021-34797">Apache Geode log file redaction of sensitive information vulnerability</h2>
+<p>CVE-2021-34797 <a href="./CVE-2021-34797.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Geode from Apache Geode through 1.12.4</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Apache Geode versions up to 1.12.4 and 1.13.4 are vulnerable to a log file redaction of sensitive information flaw when using values that begin with characters other than letters or numbers for passwords and security properties with the prefix &ldquo;sysprop-&rdquo;, &ldquo;javax.net.ssl&rdquo;, or &ldquo;security-&rdquo;. This issue is fixed by overhauling the log file redaction in Apache Geode versions 1.12.5, 1.13.5, and 1.14.0.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/p4l0g49rzzzpn8yt9q9p0xp52h3zmsmk">https://lists.apache.org/thread/p4l0g49rzzzpn8yt9q9p0xp52h3zmsmk</a></li>
+<li><a href="https://lists.apache.org/thread/nq2w9gjzm1cjx1rh6zw41ty39qw7qpx4">https://lists.apache.org/thread/nq2w9gjzm1cjx1rh6zw41ty39qw7qpx4</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Apache Geode would like to thank Aaron Lindsey for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2022-34870">Apache Geode stored Cross-Site Scripting (XSS) via data injection vulnerability in Pulse web application</h2>
+<p>CVE-2022-34870 <a href="./CVE-2022-34870.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Geode from Apache Geode through 1.15.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Apache Geode versions up to 1.15.0 are vulnerable to a Cross-Site Scripting (XSS) via data injection when using Pulse web application to view Region entries.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/zltlr7f2ymr2m6jj54k4z0c4foos5fwx">https://lists.apache.org/thread/zltlr7f2ymr2m6jj54k4z0c4foos5fwx</a></li>
+</ul>
+<h2 id="CVE-2022-37021">Apache Geode deserialization of untrusted data flaw when using JMX over RMI on Java 8. </h2>
+<p>CVE-2022-37021 <a href="./CVE-2022-37021.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Geode from Apache Geode through 1.12.5</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Apache Geode versions up to 1.12.5, 1.13.4 and 1.14.0 are vulnerable to a deserialization of untrusted data flaw when using JMX over RMI on Java 8.</p>
+<p>Any user still on Java 8 who wishes to protect against deserialization attacks involving JMX or RMI should upgrade to Apache Geode 1.15 and Java 11.</p>
+<p>If upgrading to Java 11 is not possible, then upgrade to Apache Geode 1.15 and specify &ldquo;&ndash;J=-Dgeode.enableGlobalSerialFilter=true&rdquo; when starting any Locators or Servers. Follow the documentation for details on specifying any user classes that may be serialized/deserialized with the &ldquo;serializable-object-filter&rdquo; configuration option. Using a global serial filter will impact performance.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/qrvhmytsshsk5xcb68pwccw3y6m8o8nr">https://lists.apache.org/thread/qrvhmytsshsk5xcb68pwccw3y6m8o8nr</a></li>
+</ul>
+<h2 id="CVE-2022-37022">Apache Geode deserialization of untrusted data flaw when using JMX over RMI on Java 11</h2>
+<p>CVE-2022-37022 <a href="./CVE-2022-37022.cve.json">[CVE json]</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Geode from Apache Geode through 1.12.2</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Apache Geode versions up to 1.12.2 and 1.13.2 are vulnerable to a deserialization of untrusted data flaw when using JMX over RMI on Java 11.</p>
+<p>Any user wishing to protect against deserialization attacks involving JMX or RMI should upgrade to Apache Geode 1.15. Use of 1.15 on Java 11 will automatically protect JMX over RMI against deserialization attacks. This should have no impact on performance since it only affects JMX/RMI which Gfsh uses to communicate with the JMX Manager which is hosted on a Locator.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/kr1y4l9752g1ww1shnmh8dbfjq785k4m">https://lists.apache.org/thread/kr1y4l9752g1ww1shnmh8dbfjq785k4m</a></li>
+</ul>
+<h2 id="CVE-2022-37023">Apache Geode deserialization of untrusted data flaw when using REST API on Java 8 or Java 11</h2>
+<p>CVE-2022-37023 <a href="./CVE-2022-37023.cve.json">[CVE json]</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Geode from Apache Geode before 1.15.0</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Apache Geode versions prior to 1.15.0 are vulnerable to a deserialization of untrusted data flaw when using REST API on Java 8 or Java 11.</p>
+<p>Any user wishing to protect against deserialization attacks involving REST APIs should upgrade to Apache Geode 1.15 and follow the documentation for details on enabling &ldquo;validate-serializable-objects=true&rdquo; and specifying any user classes that may be serialized/deserialized with &ldquo;serializable-object-filter&rdquo;. Enabling &ldquo;validate-serializable-objects&rdquo; may impact performance.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/6js89pbqrp52zlpwgry5fsdn76gxbbfj">https://lists.apache.org/thread/6js89pbqrp52zlpwgry5fsdn76gxbbfj</a></li>
+</ul>
+
+  
+</div>
+</div>
+</main>
+  <footer> 
+    <footer id="footer">
+    <p>&copy; 2023 The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+  </footer>
+ 
+</footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/main.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

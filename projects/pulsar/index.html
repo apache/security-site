@@ -107,73 +107,222 @@
 <p>Do you want disclose a potential security issue for Apache Pulsar? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2021-22160">Authentication with JWT allows use of “none”-algorithm</h2>
+<p>CVE-2021-22160 <a href="./CVE-2021-22160.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Pulsar from Apache Pulsar before 2.7.1</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>If Apache Pulsar is configured to authenticate clients using tokens based on JSON Web Tokens (JWT), the signature of the token is not validated if the algorithm of the presented token is set to &ldquo;none&rdquo;. This allows an attacker to connect to Pulsar instances as any user (incl. admins).</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r347650d15a3e9c5f58b83e918b6ad6dedc2a63d3eb63da8e6a7be87e%40%3Cusers.pulsar.apache.org%3E">https://lists.apache.org/thread.html/r347650d15a3e9c5f58b83e918b6ad6dedc2a63d3eb63da8e6a7be87e%40%3Cusers.pulsar.apache.org%3E</a></li>
+</ul>
+<h2 id="CVE-2021-41571">Pulsar Admin API allows access to data from other tenants using getMessageById API</h2>
+<p>CVE-2021-41571 <a href="./CVE-2021-41571.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Pulsar from Apache Pulsar through 2.8.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>In Apache Pulsar it is possible to access data from BookKeeper that does not belong to the topics accessible by the authenticated user.</p>
+<p>The Admin API get-message-by-id requires the user to input a topic and a ledger id. The ledger id is a pointer to the data, and it is supposed to be a valid it for the topic.
+Authorisation controls are performed against the topic name and there is not proper validation the that ledger id is valid in the context of such ledger.
+So it may happen that the user is able to read from a ledger that contains data owned by another tenant.</p>
+<p>This issue affects Apache Pulsar Apache Pulsar version 2.8.0 and prior versions; Apache Pulsar version 2.7.3 and prior versions; Apache Pulsar version 2.6.4 and prior versions.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://pulsar.apache.org/admin-rest-api/#operation/getLastMessageId">https://pulsar.apache.org/admin-rest-api/#operation/getLastMessageId</a></li>
+<li><a href="https://github.com/apache/pulsar/issues/11814">https://github.com/apache/pulsar/issues/11814</a></li>
+<li><a href="https://lists.apache.org/thread/8n3k7pvyh4cf9q2jfzb6pb32ync6xlvr">https://lists.apache.org/thread/8n3k7pvyh4cf9q2jfzb6pb32ync6xlvr</a></li>
+</ul>
+<h2 id="CVE-2022-24280">Apache Pulsar Proxy target broker address isn&rsquo;t validated</h2>
+<p>CVE-2022-24280 <a href="./CVE-2022-24280.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Pulsar from 2.7 through 2.7.4</li>
+<li>Apache Pulsar from 2.8 through 2.8.2</li>
+<li>Apache Pulsar from 2.9 through 2.9.1</li>
+<li>Apache Pulsar from 2.6 and earlier through 2.6.4</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Improper Input Validation vulnerability in Proxy component of Apache Pulsar allows an attacker to make TCP/IP connection attempts that originate from the Pulsar Proxy&rsquo;s IP address.</p>
+<p>When the Apache Pulsar Proxy component is used, it is possible to attempt to open TCP/IP connections to any IP address and port that the Pulsar Proxy can connect to. An attacker could use this as a way for DoS attacks that originate from the Pulsar Proxy&rsquo;s IP address.
+It hasn’t been detected that the Pulsar Proxy authentication can be bypassed. The attacker will have to have a valid token to a properly secured Pulsar Proxy.</p>
+<p>This issue affects Apache Pulsar Proxy versions 2.7.0 to 2.7.4; 2.8.0 to 2.8.2; 2.9.0 to 2.9.1; 2.6.4 and earlier.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/ghs9jtjfbpy4c6xcftyvkl6swznlom1v">https://lists.apache.org/thread/ghs9jtjfbpy4c6xcftyvkl6swznlom1v</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>This issue was discovered by Lari Hotari of DataStax.</li>
+</ul>
+<h2 id="CVE-2022-33681">Improper Hostname Verification in Java Client and Proxy can expose authentication data via MITM</h2>
+<p>CVE-2022-33681 <a href="./CVE-2022-33681.cve.json">[CVE json]</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Pulsar at 2.10.0</li>
+<li>Apache Pulsar from 2.7 through 2.7.4</li>
+<li>Apache Pulsar from 2.8 through 2.8.3</li>
+<li>Apache Pulsar from 2.9 through 2.9.2</li>
+<li>Apache Pulsar from 2.6 and earlier through 2.6.4</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Delayed TLS hostname verification in the Pulsar Java Client and the Pulsar Proxy make each client vulnerable to a man in the middle attack. Connections from the Pulsar Java Client to the Pulsar Broker/Proxy and connections from the Pulsar Proxy to the Pulsar Broker are vulnerable. Authentication data is sent before verifying the server’s TLS certificate matches the hostname, which means authentication data could be exposed to an attacker.</p>
+<p>An attacker can only take advantage of this vulnerability by taking control of a machine &lsquo;between&rsquo; the client and the server. The attacker must then actively manipulate traffic to perform the attack by providing the client with a cryptographically valid certificate for an unrelated host. Because the client sends authentication data before performing hostname verification, an attacker could gain access to the client’s authentication data. The client eventually closes the connection when it verifies the hostname and identifies the targeted hostname does not match a hostname on the certificate.</p>
+<p>Because the client eventually closes the connection, the value of the intercepted authentication data depends on the authentication method used by the client. Token based authentication and username/password authentication methods are vulnerable because the authentication data can be used to impersonate the client in a separate session.</p>
+<p>This issue affects Apache Pulsar Java Client versions 2.7.0 to 2.7.4; 2.8.0 to 2.8.3; 2.9.0 to 2.9.2; 2.10.0; 2.6.4 and earlier.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/fpo6x10trvn20hlk0dmnr5vlz5v4kl3d">https://lists.apache.org/thread/fpo6x10trvn20hlk0dmnr5vlz5v4kl3d</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>This issue was discovered by Michael Marshall of DataStax.</li>
+</ul>
+<h2 id="CVE-2022-33682">Disabled Hostname Verification makes Brokers, Proxies vulnerable to MITM attack</h2>
+<p>CVE-2022-33682 <a href="./CVE-2022-33682.cve.json">[CVE json]</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Pulsar at 2.10.0</li>
+<li>Apache Pulsar from 2.7 through 2.7.4</li>
+<li>Apache Pulsar from 2.8 through 2.8.3</li>
+<li>Apache Pulsar from 2.9 through 2.9.2</li>
+<li>Apache Pulsar from 2.6 and earlier through 2.6.4</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>TLS hostname verification cannot be enabled in the Pulsar Broker&rsquo;s Java Client, the Pulsar Broker&rsquo;s Java Admin Client, the Pulsar WebSocket Proxy&rsquo;s Java Client, and the Pulsar Proxy&rsquo;s Admin Client leaving intra-cluster connections and geo-replication connections vulnerable to man in the middle attacks, which could leak credentials, configuration data, message data, and any other data sent by these clients. The vulnerability is for both the pulsar+ssl protocol and HTTPS.</p>
+<p>An attacker can only take advantage of this vulnerability by taking control of a machine &lsquo;between&rsquo; the client and the server. The attacker must then actively manipulate traffic to perform the attack by providing the client with a cryptographically valid certificate for an unrelated host.</p>
+<p>This issue affects Apache Pulsar Broker, Proxy, and WebSocket Proxy versions 2.7.0 to 2.7.4; 2.8.0 to 2.8.3; 2.9.0 to 2.9.2; 2.10.0; 2.6.4 and earlier.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/l0ynfl161qghwfcgbbl8ld9hzbl9t3yx">https://lists.apache.org/thread/l0ynfl161qghwfcgbbl8ld9hzbl9t3yx</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>This issue was discovered by Michael Marshall of DataStax.</li>
+</ul>
+<h2 id="CVE-2022-33683">Disabled Certificate Validation makes Broker, Proxy Admin Clients vulnerable to MITM attack </h2>
+<p>CVE-2022-33683 <a href="./CVE-2022-33683.cve.json">[CVE json]</a></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Pulsar at 2.10.0</li>
+<li>Apache Pulsar from 2.7 through 2.7.4</li>
+<li>Apache Pulsar from 2.8 through 2.8.3</li>
+<li>Apache Pulsar from 2.9 through 2.9.2</li>
+<li>Apache Pulsar from 2.6 and earlier through 2.6.4</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Apache Pulsar Brokers and Proxies create an internal Pulsar Admin Client that does not verify peer TLS certificates, even when tlsAllowInsecureConnection is disabled via configuration. The Pulsar Admin Client&rsquo;s intra-cluster and geo-replication HTTPS connections are vulnerable to man in the middle attacks, which could leak authentication data, configuration data, and any other data sent by these clients.</p>
+<p>An attacker can only take advantage of this vulnerability by taking control of a machine &lsquo;between&rsquo; the client and the server. The attacker must then actively manipulate traffic to perform the attack.</p>
+<p>This issue affects Apache Pulsar Broker and Proxy versions 2.7.0 to 2.7.4; 2.8.0 to 2.8.3; 2.9.0 to 2.9.2; 2.10.0; 2.6.4 and earlier.</p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/42v5rsxj36r3nhfxhmhb2x12r5jmvx3x">https://lists.apache.org/thread/42v5rsxj36r3nhfxhmhb2x12r5jmvx3x</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>This issue was discovered by Michael Marshall of DataStax.</li>
+</ul>
+<h2 id="CVE-2022-33684">Apache Pulsar C++/Python OAuth Clients prior to 3.0.0 were vulnerable to an MITM attack due to Disabled Certificate Validation</h2>
+<p>CVE-2022-33684 <a href="./CVE-2022-33684.cve.json">[CVE json]</a></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Pulsar from 2.7 through 2.7.4</li>
+<li>Apache Pulsar from 2.8 through 2.8.3</li>
+<li>Apache Pulsar from 2.9 through 2.9.2</li>
+<li>Apache Pulsar from 2.10 through 2.10.1</li>
+<li>Apache Pulsar from 2.6 and earlier through 2.6.4</li>
+<li>Apache Pulsar from 3.0.0 before 3.0*</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>The Apache Pulsar C++ Client does not verify peer TLS certificates when making HTTPS calls for the OAuth2.0 Client Credential Flow, even when tlsAllowInsecureConnection is disabled via configuration. This vulnerability allows an attacker to perform a man in the middle attack and intercept and/or modify the GET request that is sent to the ClientCredentialFlow &lsquo;issuer url&rsquo;. The intercepted credentials can be used to acquire authentication data from the OAuth2.0 server to then authenticate with an Apache Pulsar cluster.</p>
+<p>An attacker can only take advantage of this vulnerability by taking control of a machine &lsquo;between&rsquo; the client and the server. The attacker must then actively manipulate traffic to perform the attack.</p>
+<p>The Apache Pulsar Python Client wraps the C++ client, so it is also vulnerable in the same way. This issue affects Apache Pulsar C++ Client and Python Client versions 2.7.0 to 2.7.4; 2.8.0 to 2.8.3; 2.9.0 to 2.9.2; 2.10.0 to 2.10.1; 2.6.4 and earlier.</p>
+<p>Any users running affected versions of the C++ Client or the Python Client should rotate vulnerable OAuth2.0 credentials, including client_id and client_secret.</p>
+<p>2.7 C++ and Python Client users should upgrade to 2.7.5 and rotate vulnerable OAuth2.0 credentials.
+2.8 C++ and Python Client users should upgrade to 2.8.4 and rotate vulnerable OAuth2.0 credentials.
+2.9 C++ and Python Client users should upgrade to 2.9.3 and rotate vulnerable OAuth2.0 credentials.
+2.10 C++ and Python Client users should upgrade to 2.10.2 and rotate vulnerable OAuth2.0 credentials.
+3.0 C++ users are unaffected and 3.0 Python Client users will be unaffected when it is released.</p>
+<p>Any users running the C++ and Python Client for 2.6 or less should upgrade to one of the above patched versions.</p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/ky1ssskvkj00y36k7nys9b5gm5jjrzwv">https://lists.apache.org/thread/ky1ssskvkj00y36k7nys9b5gm5jjrzwv</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>This issue was discovered by Michael Rowley, <a href="mailto:michaellrowley@protonmail.com">michaellrowley@protonmail.com</a></li>
+</ul>
 <h2 id="CVE-2023-30428">Incorrect Authorization Validation for Rest Producer</h2>
 <p>CVE-2023-30428 <a href="./CVE-2023-30428.cve.json">[CVE json]</a></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-7">Affected</h3>
 <ul>
 <li>Apache Pulsar Broker from 2.9.0 through 2.9.5</li>
 <li>Apache Pulsar Broker from 2.10.0 before 2.10.4</li>
 <li>Apache Pulsar Broker at 2.11.0</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-7">Description</h3>
 <p>Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsar Broker&rsquo;s Rest Producer allows authenticated user with a custom HTTP header to produce a message to any topic using the broker&rsquo;s admin role.<br>This issue affects Apache Pulsar Brokers: from 2.9.0 through 2.9.5, from 2.10.0 before 2.10.4, 2.11.0.<br><br>The vulnerability is exploitable when an attacker can connect directly to the Pulsar Broker. If an attacker is connecting through the Pulsar Proxy, there is no known way to exploit this authorization vulnerability.<br><br>There are two known risks for affected users. First, an attacker could produce garbage messages to any topic in the cluster. Second, an attacker could produce messages to the topic level policies topic for other tenants and influence topic settings that could lead to exfiltration and/or deletion of messages for other tenants.<br><br>2.8 Pulsar Broker users and earlier are unaffected.<br>2.9 Pulsar Broker users should upgrade to one of the patched versions.<br>2.10 Pulsar Broker users should upgrade to at least 2.10.4.<br>2.11 Pulsar Broker users should upgrade to at least 2.11.1.<br>3.0 Pulsar Broker users are unaffected.<br><br></p>
-<h3 id="references">References</h3>
+<h3 id="references-7">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/v39hqtgrmyxr85rmofwvgrktnflbq3q5">https://lists.apache.org/thread/v39hqtgrmyxr85rmofwvgrktnflbq3q5</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-5">Credits</h3>
 <ul>
 <li>Michael Marshall of DataStax (finder)</li>
 </ul>
 <h2 id="CVE-2023-30429">Incorrect Authorization for Function Worker when using mTLS Authentication through Pulsar Proxy</h2>
 <p>CVE-2023-30429 <a href="./CVE-2023-30429.cve.json">[CVE json]</a></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-8">Affected</h3>
 <ul>
 <li>Apache Pulsar before 2.10.4</li>
 <li>Apache Pulsar at 2.11.0</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-8">Description</h3>
 <p>Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsar.<br><br>This issue affects Apache Pulsar: before 2.10.4, and 2.11.0.<br><br>When a client connects to the Pulsar Function Worker via the Pulsar Proxy where the Pulsar Proxy uses mTLS authentication to authenticate with the Pulsar Function Worker, the Pulsar Function Worker incorrectly performs authorization by using the Proxy&rsquo;s role for authorization instead of the client&rsquo;s role, which can lead to privilege escalation, especially if the proxy is configured with a superuser role.<br><br>The recommended mitigation for impacted users is to upgrade the Pulsar Function Worker to a patched version.<br><br>2.10 Pulsar Function Worker users should upgrade to at least 2.10.4.<br>2.11 Pulsar Function Worker users should upgrade to at least 2.11.1.<br>3.0 Pulsar Function Worker users are unaffected.<br>Any users running the Pulsar Function Worker for 2.9.* and earlier should upgrade to one of the above patched versions.<br></p>
-<h3 id="references-1">References</h3>
+<h3 id="references-8">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/v0gcvvxswr830314q4b1kybsfmcf3jf8">https://lists.apache.org/thread/v0gcvvxswr830314q4b1kybsfmcf3jf8</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-6">Credits</h3>
 <ul>
 <li>Michael Marshall of DataStax (finder)</li>
 </ul>
 <h2 id="CVE-2023-31007">Broker does not always disconnect client when authentication data expires</h2>
 <p>CVE-2023-31007 <a href="./CVE-2023-31007.cve.json">[CVE json]</a></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-9">Affected</h3>
 <ul>
 <li>Apache Pulsar before 2.9.5</li>
 <li>Apache Pulsar from 2.10.0 through 2.10.3</li>
 <li>Apache Pulsar at 2.11.0</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-9">Description</h3>
 <p>Improper Authentication vulnerability in Apache Software Foundation Apache Pulsar Broker allows a client to stay connected to a broker after authentication data expires if the client connected through the Pulsar Proxy when the broker is configured with authenticateOriginalAuthData=false or if a client connects directly to a broker with a specially crafted connect command when the broker is configured with authenticateOriginalAuthData=false.<br><br>This issue affects Apache Pulsar: through 2.9.4, from 2.10.0 through 2.10.3, 2.11.0.<br><br>2.9 Pulsar Broker users should upgrade to at least 2.9.5.<br>2.10 Pulsar Broker users should upgrade to at least 2.10.4.<br>2.11 Pulsar Broker users should upgrade to at least 2.11.1.<br>3.0 Pulsar Broker users are unaffected.<br>Any users running the Pulsar Broker for 2.8.* and earlier should upgrade to one of the above patched versions.<br></p>
-<h3 id="references-2">References</h3>
+<h3 id="references-9">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/qxn99xxyp0zv6jchjggn3soyo5gvqfxj">https://lists.apache.org/thread/qxn99xxyp0zv6jchjggn3soyo5gvqfxj</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-7">Credits</h3>
 <ul>
 <li>Michael Marshall of DataStax (finder)</li>
 </ul>
 <h2 id="CVE-2023-37579">Incorrect Authorization for Function Worker Can Leak Sink/Source Credentials</h2>
 <p>CVE-2023-37579 <a href="./CVE-2023-37579.cve.json">[CVE json]</a></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-10">Affected</h3>
 <ul>
 <li>Apache Pulsar Function Worker before 2.10.4</li>
 <li>Apache Pulsar Function Worker at 2.11.0</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-10">Description</h3>
 <p>Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsar Function Worker.<br><br>This issue affects Apache Pulsar: before 2.10.4, and 2.11.0.<br><br>Any authenticated user can retrieve a source&rsquo;s configuration or a sink&rsquo;s configuration without authorization. Many sources and sinks contain credentials in the configuration, which could lead to leaked credentials. This vulnerability is mitigated by the fact that there is not a known way for an authenticated user to enumerate another tenant&rsquo;s sources or sinks, meaning the source or sink name would need to be guessed in order to exploit this vulnerability.<br><br>The recommended mitigation for impacted users is to upgrade the Pulsar Function Worker to a patched version.<br><br>2.10 Pulsar Function Worker users should upgrade to at least 2.10.4.<br>2.11 Pulsar Function Worker users should upgrade to at least 2.11.1.<br>3.0 Pulsar Function Worker users are unaffected.<br>Any users running the Pulsar Function Worker for 2.9.* and earlier should upgrade to one of the above patched versions.<br><br></p>
-<h3 id="references-3">References</h3>
+<h3 id="references-10">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/0dmn3cb5n2p08o3cpj3ycfhzfqs2ppwz">https://lists.apache.org/thread/0dmn3cb5n2p08o3cpj3ycfhzfqs2ppwz</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits-8">Credits</h3>
 <ul>
 <li>Michael Marshall of DataStax (finder)</li>
 </ul>

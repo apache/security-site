@@ -104,10 +104,42 @@
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache Hive? You can read more about the projects&rsquo; security policy on their <a href="https://hive.apache.org/mailing_lists.html">security page</a>, and email your report to the  <a href="mailto:security@hive.apache.org">Apache Hive Security Team</a>.</p>
+<p>Do you want disclose a potential security issue for Apache Hive? You can read more about the projects&rsquo; security policy on their <a href="https://hive.apache.org/mailing_lists.html">security page</a>, and email your report to the <a href="mailto:security@hive.apache.org">Apache Hive Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
-<p>This page is experimental: it provides consistent access to the advisories for Apache Hive since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the <a href="https://hive.apache.org/mailing_lists.html">project security page</a>.</p>
-<p>If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://hive.apache.org/mailing_lists.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2020-1926">Timing attack in Cookie signature verification</h2>
+<p>CVE-2020-1926 <a href="./CVE-2020-1926.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Hive from Apache Hive before 2.3.8</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Apache Hive cookie signature verification used a non constant time comparison which is known to be vulnerable to timing attacks. This could allow recovery of another users cookie signature. The issue was addressed in Apache Hive 2.3.8</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/HIVE-22708">https://issues.apache.org/jira/browse/HIVE-22708</a></li>
+<li><a href="https://lists.apache.org/thread.html/rd186eedff68102ba1e68059a808101c5aa587e11542c7dcd26e7b9d7%40%3Cuser.hive.apache.org%3E">https://lists.apache.org/thread.html/rd186eedff68102ba1e68059a808101c5aa587e11542c7dcd26e7b9d7%40%3Cuser.hive.apache.org%3E</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Apache Hive would like to thank S. Wasin for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2021-34538">Apache Hive Security vulnerability in Hive with UDFs</h2>
+<p>CVE-2021-34538 <a href="./CVE-2021-34538.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Hive from Apache Hive before 3.1.3</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Apache Hive before 3.1.3 &ldquo;CREATE&rdquo; and &ldquo;DROP&rdquo; function operations does not check for necessary authorization of involved entities in the query. It was found that an unauthorized user can manipulate an existing UDF without having the privileges to do so. This allowed unauthorized or underprivileged users to drop and recreate UDFs pointing them to new jars that could be potentially malicious.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/oqqgnhz4c6nxsfd0xstosnk0g15f7354">https://lists.apache.org/thread/oqqgnhz4c6nxsfd0xstosnk0g15f7354</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>This vulnerability was discovered and reported by Hideyuki Furue.</li>
+</ul>
 
   
 </div>

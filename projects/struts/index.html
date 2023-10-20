@@ -107,37 +107,53 @@
 <p>Do you want disclose a potential security issue for Apache Struts? You can read more about the projects&rsquo; security policy on their <a href="https://struts.apache.org/security.html">security page</a>, and email your report to the <a href="mailto:security@struts.apache.org">Apache Struts Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://struts.apache.org/security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2023-34149">DoS via OOM owing to not properly checking of list bounds</h2>
-<p>CVE-2023-34149 <a href="./CVE-2023-34149.cve.json">[CVE json]</a></p>
+<h2 id="CVE-2021-31805">Forced OGNL evaluation, when evaluated on raw not validated user input in tag attributes, may lead to RCE.</h2>
+<p>CVE-2021-31805 <a href="./CVE-2021-31805.cve.json">[CVE json]</a></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Struts through 2.5.30</li>
-<li>Apache Struts through 6.1.2</li>
+<li>Apache Struts at 2.0.0 to 2.5.29</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache Software Foundation Apache Struts.<p>This issue affects Apache Struts: through 2.5.30, through 6.1.2.</p><p>Upgrade to Struts 2.5.31 or 6.1.2.1 or greater.<br></p></p>
+<p>The fix issued for CVE-2020-17530 was incomplete. So from Apache Struts 2.0.0 to 2.5.29, still some of the tag’s attributes could perform a double evaluation if a developer applied forced OGNL evaluation by using the %{&hellip;} syntax. Using forced OGNL evaluation on untrusted user input can lead to a Remote Code Execution and security degradation.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://cwiki.apache.org/confluence/display/WW/S2-063">https://cwiki.apache.org/confluence/display/WW/S2-063</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/WW/S2-062">https://cwiki.apache.org/confluence/display/WW/S2-062</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Matthew McClain (finder)</li>
+<li>Apache Struts would like to thank Chris McCown for reporting this issue!</li>
 </ul>
-<h2 id="CVE-2023-34396">DoS via OOM owing to no sanity limit on normal form fields in multipart forms</h2>
-<p>CVE-2023-34396 <a href="./CVE-2023-34396.cve.json">[CVE json]</a></p>
+<h2 id="CVE-2023-34149">DoS via OOM owing to not properly checking of list bounds</h2>
+<p>CVE-2023-34149 <a href="./CVE-2023-34149.cve.json">[CVE json]</a></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache Struts through 2.5.30</li>
 <li>Apache Struts through 6.1.2</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache Software Foundation Apache Struts.<p>This issue affects Apache Struts: through 2.5.30, through 6.1.2.</p><p>Upgrade to Struts 2.5.31 or 6.1.2.1 or greater<br></p></p>
+<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache Software Foundation Apache Struts.<p>This issue affects Apache Struts: through 2.5.30, through 6.1.2.</p><p>Upgrade to Struts 2.5.31 or 6.1.2.1 or greater.<br></p></p>
 <h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://cwiki.apache.org/confluence/display/WW/S2-063">https://cwiki.apache.org/confluence/display/WW/S2-063</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Matthew McClain (finder)</li>
+</ul>
+<h2 id="CVE-2023-34396">DoS via OOM owing to no sanity limit on normal form fields in multipart forms</h2>
+<p>CVE-2023-34396 <a href="./CVE-2023-34396.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Struts through 2.5.30</li>
+<li>Apache Struts through 6.1.2</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache Software Foundation Apache Struts.<p>This issue affects Apache Struts: through 2.5.30, through 6.1.2.</p><p>Upgrade to Struts 2.5.31 or 6.1.2.1 or greater<br></p></p>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://cwiki.apache.org/confluence/display/WW/S2-064">https://cwiki.apache.org/confluence/display/WW/S2-064</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-2">Credits</h3>
 <ul>
 <li>Matthew McClain (finder)</li>
 </ul>

@@ -107,102 +107,476 @@
 <p>Do you want disclose a potential security issue for Apache Traffic Server? Send your report to the <a href="mailto:security@trafficserver.apache.org">Apache Traffic Server Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2020-17508">Apache Traffic Server ESI plugin has a memory disclosure vulnerability</h2>
+<p>CVE-2020-17508 <a href="./CVE-2020-17508.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Traffic Server from Apache Traffic Server through 6.2.3</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>The ESI plugin in Apache Traffic Server 6.0.0 to 6.2.3, 7.0.0 to 7.1.11, and 8.0.0 to 8.1.0 has a memory disclosure vulnerability.  If you are running the plugin please upgrade to 7.1.12 or 8.1.1 or later.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r65434f7acca3aebf81b0588587149c893fe9f8f9f159eaa7364a70ff%40%3Cdev.trafficserver.apache.org%3E">https://lists.apache.org/thread.html/r65434f7acca3aebf81b0588587149c893fe9f8f9f159eaa7364a70ff%40%3Cdev.trafficserver.apache.org%3E</a></li>
+</ul>
+<h2 id="CVE-2020-17509">Apache Traffic Server negative cache option is vulnerable to a cache poisoning attack</h2>
+<p>CVE-2020-17509 <a href="./CVE-2020-17509.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Traffic Server from Apache Traffic Server through 6.2.3</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Apache Traffic Server negative cache option is vulnerable to a cache poisoning attack affecting versions 6.0.0 through 6.2.3, 7.0.0 through 7.1.10, and 8.0.0 through 8.0.7.  If you have this option enabled, please upgrade or disable this feature.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/raa9f0589c26c4d146646425e51e2a33e1457492df9f7ea2019daa6d3%40%3Cdev.trafficserver.apache.org%3E">https://lists.apache.org/thread.html/raa9f0589c26c4d146646425e51e2a33e1457492df9f7ea2019daa6d3%40%3Cdev.trafficserver.apache.org%3E</a></li>
+</ul>
+<h2 id="CVE-2021-27577">Incorrect handling of url fragment leads to cache poisoning</h2>
+<p>CVE-2021-27577 <a href="./CVE-2021-27577.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Traffic Server at Apache Traffic Server 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Incorrect handling of url fragment vulnerability of Apache Traffic Server allows an attacker to poison the cache.  This issue affects Apache Traffic Server 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/ra1a41ff92a70d25bf576d7da2590575e8ff430393a3f4a0c34de4277%40%3Cusers.trafficserver.apache.org%3E">https://lists.apache.org/thread.html/ra1a41ff92a70d25bf576d7da2590575e8ff430393a3f4a0c34de4277%40%3Cusers.trafficserver.apache.org%3E</a></li>
+</ul>
+<h2 id="CVE-2021-27737">slicer plugin crash</h2>
+<p>CVE-2021-27737 <a href="./CVE-2021-27737.cve.json">[CVE json]</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Traffic Server at 9.0.0</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Apache Traffic Server 9.0.0 is vulnerable to a remote DOS attack on the experimental Slicer plugin.</p>
+<h2 id="CVE-2021-32565">HTTP Request Smuggling, content length with invalid charters</h2>
+<p>CVE-2021-32565 <a href="./CVE-2021-32565.cve.json">[CVE json]</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Traffic Server at Apache Traffic Server 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Invalid values in the Content-Length header sent to Apache Traffic Server allows an attacker to smuggle requests.  This issue affects Apache Traffic Server 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/ra1a41ff92a70d25bf576d7da2590575e8ff430393a3f4a0c34de4277%40%3Cusers.trafficserver.apache.org%3E">https://lists.apache.org/thread.html/ra1a41ff92a70d25bf576d7da2590575e8ff430393a3f4a0c34de4277%40%3Cusers.trafficserver.apache.org%3E</a></li>
+</ul>
+<h2 id="CVE-2021-32566">Specific sequence of HTTP/2 frames can cause ATS to crash</h2>
+<p>CVE-2021-32566 <a href="./CVE-2021-32566.cve.json">[CVE json]</a></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Traffic Server at Apache Traffic Server 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Improper Input Validation vulnerability in HTTP/2 of Apache Traffic Server allows an attacker to DOS the server.  This issue affects Apache Traffic Server 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/ra1a41ff92a70d25bf576d7da2590575e8ff430393a3f4a0c34de4277%40%3Cusers.trafficserver.apache.org%3E">https://lists.apache.org/thread.html/ra1a41ff92a70d25bf576d7da2590575e8ff430393a3f4a0c34de4277%40%3Cusers.trafficserver.apache.org%3E</a></li>
+</ul>
+<h2 id="CVE-2021-32567">Reading HTTP/2 frames too many times</h2>
+<p>CVE-2021-32567 <a href="./CVE-2021-32567.cve.json">[CVE json]</a></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Traffic Server at Apache Traffic Server 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>Improper Input Validation vulnerability in HTTP/2 of Apache Traffic Server allows an attacker to DOS the server.  This issue affects Apache Traffic Server 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1.</p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/ra1a41ff92a70d25bf576d7da2590575e8ff430393a3f4a0c34de4277%40%3Cusers.trafficserver.apache.org%3E">https://lists.apache.org/thread.html/ra1a41ff92a70d25bf576d7da2590575e8ff430393a3f4a0c34de4277%40%3Cusers.trafficserver.apache.org%3E</a></li>
+</ul>
+<h2 id="CVE-2021-35474">Dynamic stack buffer overflow in cachekey plugin</h2>
+<p>CVE-2021-35474 <a href="./CVE-2021-35474.cve.json">[CVE json]</a></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache Traffic Server at Apache Traffic Server 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>Stack-based Buffer Overflow vulnerability in cachekey plugin of Apache Traffic Server.  This issue affects Apache Traffic Server 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1.</p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/ra1a41ff92a70d25bf576d7da2590575e8ff430393a3f4a0c34de4277%40%3Cusers.trafficserver.apache.org%3E">https://lists.apache.org/thread.html/ra1a41ff92a70d25bf576d7da2590575e8ff430393a3f4a0c34de4277%40%3Cusers.trafficserver.apache.org%3E</a></li>
+</ul>
+<h2 id="CVE-2021-37147">Request Smuggling - LF line ending</h2>
+<p>CVE-2021-37147 <a href="./CVE-2021-37147.cve.json">[CVE json]</a></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Traffic Server at 8.0.0 to 8.1.2 and 9.0.0 to 9.1.0</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>Improper input validation vulnerability in header parsing of Apache Traffic Server allows an attacker to smuggle requests.  This issue affects Apache Traffic Server 8.0.0 to 8.1.2 and 9.0.0 to 9.1.0.</p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/k01797hyncx53659wr3o72s5cvkc3164">https://lists.apache.org/thread/k01797hyncx53659wr3o72s5cvkc3164</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Apache Traffic Server would like to thank Mattias Grenfeldt and Asta Olofsson for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2021-37148">Request Smuggling - transfer encoding validation</h2>
+<p>CVE-2021-37148 <a href="./CVE-2021-37148.cve.json">[CVE json]</a></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache Traffic Server at 8.0.0 to 8.1.2 and 9.0.0 to 9.0.1</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>Improper input validation vulnerability in header parsing of Apache Traffic Server allows an attacker to smuggle requests.  This issue affects Apache Traffic Server 8.0.0 to 8.1.2 and 9.0.0 to 9.0.1.</p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/k01797hyncx53659wr3o72s5cvkc3164">https://lists.apache.org/thread/k01797hyncx53659wr3o72s5cvkc3164</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Apache Traffic Server would like to thank Mattias Grenfeldt and Asta Olofsson for reporting this issue</li>
+</ul>
+<h2 id="CVE-2021-37149">Request Smuggling - multiple attacks</h2>
+<p>CVE-2021-37149 <a href="./CVE-2021-37149.cve.json">[CVE json]</a></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache Traffic Server at 8.0.0 to 8.1.2 and 9.0.0 to 9.1.0</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<p>Improper Input Validation vulnerability in header parsing of Apache Traffic Server allows an attacker to smuggle requests.  This issue affects Apache Traffic Server 8.0.0 to 8.1.2 and 9.0.0 to 9.1.0.</p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/k01797hyncx53659wr3o72s5cvkc3164">https://lists.apache.org/thread/k01797hyncx53659wr3o72s5cvkc3164</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Apache Traffic Server would like to thank Mattias Grenfeldt and Asta Olofsson for reporting this issue</li>
+</ul>
+<h2 id="CVE-2021-37150">Protocol vs scheme mismatch</h2>
+<p>CVE-2021-37150 <a href="./CVE-2021-37150.cve.json">[CVE json]</a></p>
+<h3 id="affected-11">Affected</h3>
+<ul>
+<li>Apache Traffic Server at 8.0.0 to 9.1.2</li>
+</ul>
+<h3 id="description-11">Description</h3>
+<p>Improper Input Validation vulnerability in header parsing of Apache Traffic Server allows an attacker to request secure resources.  This issue affects Apache Traffic Server 8.0.0 to 9.1.2.</p>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/rc64lwbdgrkv674koc3zl1sljr9vwg21">https://lists.apache.org/thread/rc64lwbdgrkv674koc3zl1sljr9vwg21</a></li>
+</ul>
+<h2 id="CVE-2021-38161">Not validating origin TLS certificate</h2>
+<p>CVE-2021-38161 <a href="./CVE-2021-38161.cve.json">[CVE json]</a></p>
+<h3 id="affected-12">Affected</h3>
+<ul>
+<li>Apache Traffic Server at 8.0.0 to 8.0.8</li>
+</ul>
+<h3 id="description-12">Description</h3>
+<p>Improper Authentication vulnerability in TLS origin verification of Apache Traffic Server allows for man in the middle attacks.  This issue affects Apache Traffic Server 8.0.0 to 8.0.8.</p>
+<h3 id="references-11">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/k01797hyncx53659wr3o72s5cvkc3164">https://lists.apache.org/thread/k01797hyncx53659wr3o72s5cvkc3164</a></li>
+</ul>
+<h2 id="CVE-2021-41585">ATS stops accepting connections on FreeBSD</h2>
+<p>CVE-2021-41585 <a href="./CVE-2021-41585.cve.json">[CVE json]</a></p>
+<h3 id="affected-13">Affected</h3>
+<ul>
+<li>Apache Traffic Server at 7.0.0 to 9.1.0</li>
+</ul>
+<h3 id="description-13">Description</h3>
+<p>Improper Input Validation vulnerability in accepting socket connections in Apache Traffic Server allows an attacker to make the server stop accepting new connections.  This issue affects Apache Traffic Server 5.0.0 to 9.1.0.</p>
+<h3 id="references-12">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/k01797hyncx53659wr3o72s5cvkc3164">https://lists.apache.org/thread/k01797hyncx53659wr3o72s5cvkc3164</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Apache Traffic Server would like to thank Asbjorn Bjornstad for finding this issue.</li>
+</ul>
+<h2 id="CVE-2021-43082">heap-buffer-overflow with stats-over-http plugin</h2>
+<p>CVE-2021-43082 <a href="./CVE-2021-43082.cve.json">[CVE json]</a></p>
+<h3 id="affected-14">Affected</h3>
+<ul>
+<li>Apache Traffic Server at 9.1.0</li>
+</ul>
+<h3 id="description-14">Description</h3>
+<p>Buffer Copy without Checking Size of Input (&lsquo;Classic Buffer Overflow&rsquo;) vulnerability in the stats-over-http plugin of Apache Traffic Server allows an attacker to overwrite memory.  This issue affects Apache Traffic Server 9.1.0.</p>
+<h3 id="references-13">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/k01797hyncx53659wr3o72s5cvkc3164">https://lists.apache.org/thread/k01797hyncx53659wr3o72s5cvkc3164</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Apache Traffic Server would like to thank Masori Koshiba for finding this issue.</li>
+</ul>
+<h2 id="CVE-2021-44040">HTTP request line fuzzing attacks</h2>
+<p>CVE-2021-44040 <a href="./CVE-2021-44040.cve.json">[CVE json]</a></p>
+<h3 id="affected-15">Affected</h3>
+<ul>
+<li>Apache Traffic Server at 8.0.0 to 8.1.3 and 9.0.0 to 9.1.1</li>
+</ul>
+<h3 id="description-15">Description</h3>
+<p>Improper Input Validation vulnerability in request line parsing of Apache Traffic Server allows an attacker to send invalid requests.  This issue affects Apache Traffic Server 8.0.0 to 8.1.3 and 9.0.0 to 9.1.1.</p>
+<h3 id="references-14">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/zblwzcfs9ryhwjr89wz4osw55pxm6dx6">https://lists.apache.org/thread/zblwzcfs9ryhwjr89wz4osw55pxm6dx6</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Apache Traffic Server would like to thank Bahruz Jabiyev, Steven Sprecher and Kaan Onarlioglu for reporting these issues.  We used his tool t-reqs (<a href="https://github.com/bahruzjabiyev/t-reqs-http-fuzzer">https://github.com/bahruzjabiyev/t-reqs-http-fuzzer</a>) for discovering them.</li>
+</ul>
+<h2 id="CVE-2021-44759">Improper authentication vulnerability in TLS origin verification</h2>
+<p>CVE-2021-44759 <a href="./CVE-2021-44759.cve.json">[CVE json]</a></p>
+<h3 id="affected-16">Affected</h3>
+<ul>
+<li>Apache Traffic Server at 8.0.0 to 8.1.0</li>
+</ul>
+<h3 id="description-16">Description</h3>
+<p>Improper Authentication vulnerability in TLS origin validation of Apache Traffic Server allows an attacker to create a man in the middle attack.  This issue affects Apache Traffic Server 8.0.0 to 8.1.0.</p>
+<h3 id="references-15">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/zblwzcfs9ryhwjr89wz4osw55pxm6dx6">https://lists.apache.org/thread/zblwzcfs9ryhwjr89wz4osw55pxm6dx6</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>Apache Traffic Server would like to thank Takuya Kitano for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2022-25763">Improper input validation on HTTP/2 headers </h2>
+<p>CVE-2022-25763 <a href="./CVE-2022-25763.cve.json">[CVE json]</a></p>
+<h3 id="affected-17">Affected</h3>
+<ul>
+<li>Apache Traffic Server at 8.0.0 to 9.1.2</li>
+</ul>
+<h3 id="description-17">Description</h3>
+<p>Improper Input Validation vulnerability in HTTP/2 request validation of Apache Traffic Server allows an attacker to create smuggle or cache poison attacks.  This issue affects Apache Traffic Server 8.0.0 to 9.1.2.</p>
+<h3 id="references-16">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/rc64lwbdgrkv674koc3zl1sljr9vwg21">https://lists.apache.org/thread/rc64lwbdgrkv674koc3zl1sljr9vwg21</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>Apache Traffic Server would like to thank Mazakatsu Kitajo, Dhana Sekaran, and Zhang Zeyu for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2022-28129">Insufficient Validation of HTTP/1.x Headers</h2>
+<p>CVE-2022-28129 <a href="./CVE-2022-28129.cve.json">[CVE json]</a></p>
+<h3 id="affected-18">Affected</h3>
+<ul>
+<li>Apache Traffic Server at 8.0.0 to 9.1.2</li>
+</ul>
+<h3 id="description-18">Description</h3>
+<p>Improper Input Validation vulnerability in HTTP/1.1 header parsing of Apache Traffic Server allows an attacker to send invalid headers.  This issue affects Apache Traffic Server 8.0.0 to 9.1.2.</p>
+<h3 id="references-17">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/rc64lwbdgrkv674koc3zl1sljr9vwg21">https://lists.apache.org/thread/rc64lwbdgrkv674koc3zl1sljr9vwg21</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>Apache Traffic Server would like to thank Zhang Zeyu for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2022-31778">Transfer-Encoding not treated as hop-by-hop</h2>
+<p>CVE-2022-31778 <a href="./CVE-2022-31778.cve.json">[CVE json]</a></p>
+<h3 id="affected-19">Affected</h3>
+<ul>
+<li>Apache Traffic Server at 8.0.0 to 9.0.2</li>
+</ul>
+<h3 id="description-19">Description</h3>
+<p>Improper Input Validation vulnerability in handling the Transfer-Encoding header of Apache Traffic Server allows an attacker to poison the cache.  This issue affects Apache Traffic Server 8.0.0 to 9.0.2.</p>
+<h3 id="references-18">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/rc64lwbdgrkv674koc3zl1sljr9vwg21">https://lists.apache.org/thread/rc64lwbdgrkv674koc3zl1sljr9vwg21</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>Apache Traffic Server would like to thank Chris Lemmons for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2022-31779">Improper HTTP/2 scheme and method validation</h2>
+<p>CVE-2022-31779 <a href="./CVE-2022-31779.cve.json">[CVE json]</a></p>
+<h3 id="affected-20">Affected</h3>
+<ul>
+<li>Apache Traffic Server at 8.0.0 to 9.1.2</li>
+</ul>
+<h3 id="description-20">Description</h3>
+<p>Improper Input Validation vulnerability in HTTP/2 header parsing of Apache Traffic Server allows an attacker to smuggle requests.  This issue affects Apache Traffic Server 8.0.0 to 9.1.2.</p>
+<h3 id="references-19">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/rc64lwbdgrkv674koc3zl1sljr9vwg21">https://lists.apache.org/thread/rc64lwbdgrkv674koc3zl1sljr9vwg21</a></li>
+</ul>
+<h3 id="credits-10">Credits</h3>
+<ul>
+<li>Apache Traffic Server would like to thank Dhana Sekaran for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2022-31780">HTTP/2 framing vulnerabilities </h2>
+<p>CVE-2022-31780 <a href="./CVE-2022-31780.cve.json">[CVE json]</a></p>
+<h3 id="affected-21">Affected</h3>
+<ul>
+<li>Apache Traffic Server at 8.0.0 to 9.1.2</li>
+</ul>
+<h3 id="description-21">Description</h3>
+<p>Improper Input Validation vulnerability in HTTP/2 frame handling of Apache Traffic Server allows an attacker to smuggle requests.  This issue affects Apache Traffic Server 8.0.0 to 9.1.2.</p>
+<h3 id="references-20">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/rc64lwbdgrkv674koc3zl1sljr9vwg21">https://lists.apache.org/thread/rc64lwbdgrkv674koc3zl1sljr9vwg21</a></li>
+</ul>
+<h3 id="credits-11">Credits</h3>
+<ul>
+<li>Apache Traffic Server would like to thank Bahruz Jabiyev, Steven Sprecher, Anthony Gavazzi, Tommaso Innocenti, Kaan Onarlioglu, and Engin Kirda for reporting these issues.</li>
+</ul>
 <h2 id="CVE-2022-32749">Improperly handled requests can cause crashes in specific plugins</h2>
 <p>CVE-2022-32749 <a href="./CVE-2022-32749.cve.json">[CVE json]</a></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-22">Affected</h3>
 <ul>
 <li>Apache Traffic Server from 8.0.0 through 9.1.3</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-22">Description</h3>
 <p>Improper Check for Unusual or Exceptional Conditions vulnerability handling requests in Apache Traffic Server allows an attacker to crash the server under certain conditions.</p>
 <p>This issue affects Apache Traffic Server: from 8.0.0 through 9.1.3.</p>
-<h3 id="references">References</h3>
+<h3 id="references-21">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/mrj2lg4s0hf027rk7gz8t7hbn9xpfg02">https://lists.apache.org/thread/mrj2lg4s0hf027rk7gz8t7hbn9xpfg02</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-12">Credits</h3>
 <ul>
 <li>Vijay Mamidi (finder)</li>
 </ul>
 <h2 id="CVE-2022-37392">Improperly reading the client requests</h2>
 <p>CVE-2022-37392 <a href="./CVE-2022-37392.cve.json">[CVE json]</a></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-23">Affected</h3>
 <ul>
 <li>Apache Traffic Server from 8.0.0 through 9.1.3</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-23">Description</h3>
 <p>Improper Check for Unusual or Exceptional Conditions vulnerability in handling the requests to Apache Traffic Server.  This issue affects Apache Traffic Server 8.0.0 to 9.1.2.</p>
-<h3 id="references-1">References</h3>
+<h3 id="references-22">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/mrj2lg4s0hf027rk7gz8t7hbn9xpfg02">https://lists.apache.org/thread/mrj2lg4s0hf027rk7gz8t7hbn9xpfg02</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-13">Credits</h3>
 <ul>
 <li>Menno de Gier (finder)</li>
 </ul>
 <h2 id="CVE-2022-40743">Security issues with the xdebug plugin</h2>
 <p>CVE-2022-40743 <a href="./CVE-2022-40743.cve.json">[CVE json]</a></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-24">Affected</h3>
 <ul>
 <li>Apache Traffic Server from 9.0.0 through 9.1.3</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-24">Description</h3>
 <p>Improper Input Validation vulnerability for the xdebug plugin in Apache Software Foundation Apache Traffic Server can lead to cross site scripting and cache poisoning attacks.<p>This issue affects Apache Traffic Server: 9.0.0 to 9.1.3. Users should upgrade to 9.1.4 or later versions.<br></p></p>
-<h3 id="references-2">References</h3>
+<h3 id="references-23">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/mrj2lg4s0hf027rk7gz8t7hbn9xpfg02">https://lists.apache.org/thread/mrj2lg4s0hf027rk7gz8t7hbn9xpfg02</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-14">Credits</h3>
 <ul>
 <li>Nick Frost (finder)</li>
 </ul>
 <h2 id="CVE-2022-47184">The TRACE method can be use to disclose network information</h2>
 <p>CVE-2022-47184 <a href="./CVE-2022-47184.cve.json">[CVE json]</a></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-25">Affected</h3>
 <ul>
 <li>Apache Traffic Server from 8.0.0 through 9.2.0</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-25">Description</h3>
 <p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Software Foundation Apache Traffic Server.<p>This issue affects Apache Traffic Server: 8.0.0 to 9.2.0.</p></p>
-<h3 id="references-3">References</h3>
+<h3 id="references-24">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/tns2b4khyyncgs5v5p9y35pobg9z2bvs">https://lists.apache.org/thread/tns2b4khyyncgs5v5p9y35pobg9z2bvs</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits-15">Credits</h3>
 <ul>
 <li>Martin O&rsquo;Neal (reporter)</li>
 </ul>
+<h2 id="CVE-2022-47185">Invalid Range header causes a crash</h2>
+<p>CVE-2022-47185 <a href="./CVE-2022-47185.cve.json">[CVE json]</a></p>
+<h3 id="affected-26">Affected</h3>
+<ul>
+<li>Apache Traffic Server through 9.2.1</li>
+</ul>
+<h3 id="description-26">Description</h3>
+<p>Improper input validation vulnerability on the range header in Apache Software Foundation Apache Traffic Server.<p>This issue affects Apache Traffic Server: through 9.2.1.</p></p>
+<h3 id="references-25">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/jsl6dfdgs1mjjo1mbtyflyjr7xftswhc">https://lists.apache.org/thread/jsl6dfdgs1mjjo1mbtyflyjr7xftswhc</a></li>
+</ul>
+<h3 id="credits-16">Credits</h3>
+<ul>
+<li>Katsutoshi Ikenoya (finder)</li>
+</ul>
 <h2 id="CVE-2023-30631">Configuration option to block the PUSH method in ATS didn&rsquo;t work</h2>
 <p>CVE-2023-30631 <a href="./CVE-2023-30631.cve.json">[CVE json]</a></p>
-<h3 id="affected-4">Affected</h3>
+<h3 id="affected-27">Affected</h3>
 <ul>
 <li>Apache Traffic Server from 8.0.0 through 9.2.0</li>
 </ul>
-<h3 id="description-4">Description</h3>
+<h3 id="description-27">Description</h3>
 <p>Improper Input Validation vulnerability in Apache Software Foundation Apache Traffic Server.  The configuration option proxy.config.http.push_method_enabled didn&rsquo;t function.  However, by default the PUSH method is blocked in the ip_allow configuration file.<p>This issue affects Apache Traffic Server: from 8.0.0 through 9.2.0.</p><p>8.x users should upgrade to 8.1.7 or later versions<br>9.x users should upgrade to 9.2.1 or later versions<br></p></p>
-<h3 id="references-4">References</h3>
+<h3 id="references-26">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/tns2b4khyyncgs5v5p9y35pobg9z2bvs">https://lists.apache.org/thread/tns2b4khyyncgs5v5p9y35pobg9z2bvs</a></li>
 </ul>
-<h3 id="credits-4">Credits</h3>
+<h3 id="credits-17">Credits</h3>
 <ul>
 <li>Chris Lemmons (finder)</li>
 </ul>
 <h2 id="CVE-2023-33933">s3_auth plugin problem with hash calculation</h2>
 <p>CVE-2023-33933 <a href="./CVE-2023-33933.cve.json">[CVE json]</a></p>
-<h3 id="affected-5">Affected</h3>
+<h3 id="affected-28">Affected</h3>
 <ul>
 <li>Apache Traffic Server from 8.0.0 through 9.2.0</li>
 </ul>
-<h3 id="description-5">Description</h3>
+<h3 id="description-28">Description</h3>
 <p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Software Foundation Apache Traffic Server.<p>This issue affects Apache Traffic Server: from 8.0.0 through 9.2.0.</p><p>8.x users should upgrade to 8.1.7 or later versions<br>9.x users should upgrade to 9.2.1 or later versions<br></p></p>
-<h3 id="references-5">References</h3>
+<h3 id="references-27">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/tns2b4khyyncgs5v5p9y35pobg9z2bvs">https://lists.apache.org/thread/tns2b4khyyncgs5v5p9y35pobg9z2bvs</a></li>
 </ul>
-<h3 id="credits-5">Credits</h3>
+<h3 id="credits-18">Credits</h3>
 <ul>
 <li>Masakazu Kitajo (reporter)</li>
+</ul>
+<h2 id="CVE-2023-33934">Differential fuzzing for HTTP request parsing discrepancies</h2>
+<p>CVE-2023-33934 <a href="./CVE-2023-33934.cve.json">[CVE json]</a></p>
+<h3 id="affected-29">Affected</h3>
+<ul>
+<li>Apache Traffic Server through 9.2.1</li>
+</ul>
+<h3 id="description-29">Description</h3>
+<p>Improper Input Validation vulnerability in Apache Software Foundation Apache Traffic Server.<p>This issue affects Apache Traffic Server: through 9.2.1.</p></p>
+<h3 id="references-28">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/jsl6dfdgs1mjjo1mbtyflyjr7xftswhc">https://lists.apache.org/thread/jsl6dfdgs1mjjo1mbtyflyjr7xftswhc</a></li>
+<li><a href="https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BOTOM2MFKOLK46Q3BQHO662HTPZFRQUC/">https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BOTOM2MFKOLK46Q3BQHO662HTPZFRQUC/</a></li>
+</ul>
+<h3 id="credits-19">Credits</h3>
+<ul>
+<li>Bahruz Jabiyev, Anthony Gavazzi, Engin Kirda, Kaan Onarlioglu, Adi Peleg, Harvey Tuch (finder)</li>
+</ul>
+<h2 id="CVE-2023-39456">Malformed http/2 frames can cause an abort</h2>
+<p>CVE-2023-39456 <a href="./CVE-2023-39456.cve.json">[CVE json]</a></p>
+<h3 id="affected-30">Affected</h3>
+<ul>
+<li>Apache Traffic Server from 9.0.0 through 9.2.2</li>
+</ul>
+<h3 id="description-30">Description</h3>
+<p>Improper Input Validation vulnerability in Apache Traffic Server with malformed HTTP/2 frames.<p>This issue affects Apache Traffic Server: from 9.0.0 through 9.2.2.</p><p>Users are recommended to upgrade to version 9.2.3, which fixes the issue.</p></p>
+<h3 id="references-29">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/5py8h42mxfsn8l1wy6o41xwhsjlsd87q">https://lists.apache.org/thread/5py8h42mxfsn8l1wy6o41xwhsjlsd87q</a></li>
+</ul>
+<h3 id="credits-20">Credits</h3>
+<ul>
+<li>Akshat Parikh (finder)</li>
+</ul>
+<h2 id="CVE-2023-41752">s3_auth plugin problem with hash calculation</h2>
+<p>CVE-2023-41752 <a href="./CVE-2023-41752.cve.json">[CVE json]</a></p>
+<h3 id="affected-31">Affected</h3>
+<ul>
+<li>Apache Traffic Server from 8.0.0 through 8.1.8</li>
+<li>Apache Traffic Server from 9.0.0 through 9.2.2</li>
+</ul>
+<h3 id="description-31">Description</h3>
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Traffic Server.<p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.8, from 9.0.0 through 9.2.2.</p><p>Users are recommended to upgrade to version 8.1.9 or 9.2.3, which fixes the issue.</p></p>
+<h3 id="references-30">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/5py8h42mxfsn8l1wy6o41xwhsjlsd87q">https://lists.apache.org/thread/5py8h42mxfsn8l1wy6o41xwhsjlsd87q</a></li>
+</ul>
+<h3 id="credits-21">Credits</h3>
+<ul>
+<li>Masakazu Kitajo (finder)</li>
 </ul>
 
   

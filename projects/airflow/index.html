@@ -107,428 +107,1162 @@
 <p>Do you want disclose a potential security issue for Apache Airflow? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2020-17515"></h2>
+<p>CVE-2020-17515 <a href="./CVE-2020-17515.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Airflow from Apache Airflow before 1.10.13</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>The &ldquo;origin&rdquo; parameter passed to some of the endpoints like &lsquo;/trigger&rsquo; was vulnerable to XSS exploit. This issue affects Apache Airflow versions prior to 1.10.13.</p>
+<p>This is same as CVE-2020-13944 but the implemented fix in Airflow 1.10.13 did not fix the issue completely.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r4656959c8ed06c1f6202d89aa4e67b35ad7bdba5a666caff3fea888e%40%3Cusers.airflow.apache.org%3E">https://lists.apache.org/thread.html/r4656959c8ed06c1f6202d89aa4e67b35ad7bdba5a666caff3fea888e%40%3Cusers.airflow.apache.org%3E</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Ali Abdulwahab Ali Al-habsi of Accellion</li>
+</ul>
+<h2 id="CVE-2020-17511"></h2>
+<p>CVE-2020-17511 <a href="./CVE-2020-17511.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Airflow from Apache Airflow before 1.10.13</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>In Airflow versions prior to 1.10.13, when creating a user using airflow CLI, the password gets logged in plain text in the Log table in Airflow Metadatase. Same happened when creating a Connection with a password field.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/ree782a29d927b96bf0b39fb92e2f1f09ea3112a985f7a08ce93765ac%40%3Cusers.airflow.apache.org%3E">https://lists.apache.org/thread.html/ree782a29d927b96bf0b39fb92e2f1f09ea3112a985f7a08ce93765ac%40%3Cusers.airflow.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Ali Al-Habsi of Accellion</li>
+</ul>
+<h2 id="CVE-2020-17513"></h2>
+<p>CVE-2020-17513 <a href="./CVE-2020-17513.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Airflow from Apache Airflow before 1.10.13</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>In Apache Airflow versions prior to 1.10.13, the Charts and Query View of the old (Flask-admin based) UI were vulnerable for SSRF attack.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/rb3647269f07cc2775ca6568cbfd4994d862c842a58120d2aba9c658a%40%3Cusers.airflow.apache.org%3E">https://lists.apache.org/thread.html/rb3647269f07cc2775ca6568cbfd4994d862c842a58120d2aba9c658a%40%3Cusers.airflow.apache.org%3E</a></li>
+</ul>
+<h2 id="CVE-2020-17526"></h2>
+<p>CVE-2020-17526 <a href="./CVE-2020-17526.cve.json">[CVE json]</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Airflow from Apache Airflow before 1.10.14</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Incorrect Session Validation in Apache Airflow Webserver versions prior to 1.10.14 with default config allows a malicious airflow user on site A where they log in normally, to access unauthorized Airflow Webserver on Site B through the session from Site A.  This does not affect users who have changed the default value for <code>[webserver] secret_key</code> config.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/rbeeb73a6c741f2f9200d83b9c2220610da314810c4e8c9cf881d47ef%40%3Cusers.airflow.apache.org%3E">https://lists.apache.org/thread.html/rbeeb73a6c741f2f9200d83b9c2220610da314810c4e8c9cf881d47ef%40%3Cusers.airflow.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Junghan Lee of Deliveryhero Korea Security Team</li>
+</ul>
+<h2 id="CVE-2021-26559">CWE-284 Improper Access Control on Configurations Endpoint for the Stable API</h2>
+<p>CVE-2021-26559 <a href="./CVE-2021-26559.cve.json">[CVE json]</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Airflow at Apache Airflow 2.0.0</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Improper Access Control on Configurations Endpoint for the Stable API of Apache Airflow allows users with Viewer or User role to get Airflow Configurations including sensitive information even when <code>[webserver] expose_config</code> is set to <code>False</code> in <code>airflow.cfg</code>.</p>
+<p>This allowed a privilege escalation attack.</p>
+<p>This issue affects Apache Airflow 2.0.0.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r3b3787700279ec361308cbefb7c2cce2acb26891a12ce864e4a13c8d%40%3Cusers.airflow.apache.org%3E">https://lists.apache.org/thread.html/r3b3787700279ec361308cbefb7c2cce2acb26891a12ce864e4a13c8d%40%3Cusers.airflow.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Apache Airflow would like to thank Ian Carroll for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2021-26697">Apache Airflow: Lineage API endpoint for Experimental API missed authentication check</h2>
+<p>CVE-2021-26697 <a href="./CVE-2021-26697.cve.json">[CVE json]</a></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Airflow at Apache Airflow 2.0.0</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>The lineage endpoint of the deprecated Experimental API was not protected by authentication in Airflow 2.0.0. This allowed unauthenticated users to hit that endpoint.</p>
+<p>This is low-severity issue as the attacker needs to be aware of certain parameters to pass to that endpoint and even after can just get some metadata about a DAG and a Task.</p>
+<p>This issue affects Apache Airflow 2.0.0.</p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/re21fec81baea7a6d73b0b5d31efd07cc02c61f832e297f65bb19b519%40%3Cusers.airflow.apache.org%3E">https://lists.apache.org/thread.html/re21fec81baea7a6d73b0b5d31efd07cc02c61f832e297f65bb19b519%40%3Cusers.airflow.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Apache Airflow would like to thank Ian Carroll for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2021-28359">Apache Airflow Reflected XSS via Origin Query Argument in URL</h2>
+<p>CVE-2021-28359 <a href="./CVE-2021-28359.cve.json">[CVE json]</a></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Airflow at Apache Airflow 2.0.0</li>
+<li>Apache Airflow at Apache Airflow 2.0.1</li>
+<li>Apache Airflow from Apache Airflow before 1.10.15</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>The &ldquo;origin&rdquo; parameter passed to some of the endpoints like &lsquo;/trigger&rsquo; was vulnerable to XSS exploit. This issue affects Apache Airflow versions &lt;1.10.15 in 1.x series and affects 2.0.0 and 2.0.1 and 2.x series.</p>
+<p>This is the same as CVE-2020-13944 &amp; CVE-2020-17515 but the implemented fix did not fix the issue completely. Update to Airflow 1.10.15 or 2.0.2.</p>
+<p>Please also update your Python version to the latest available PATCH releases of the installed MINOR versions, example update to Python 3.6.13 if you are on Python 3.6. (Those contain the fix for CVE-2021-23336 <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-23336)">https://nvd.nist.gov/vuln/detail/CVE-2021-23336)</a>.</p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/ra8ce70088ba291f358e077cafdb14d174b7a1ce9a9d86d1b332d6367%40%3Cusers.airflow.apache.org%3E">https://lists.apache.org/thread.html/ra8ce70088ba291f358e077cafdb14d174b7a1ce9a9d86d1b332d6367%40%3Cusers.airflow.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Vasileios Daskalakis</li>
+</ul>
+<h2 id="CVE-2021-35936">No Authentication on Logging Server</h2>
+<p>CVE-2021-35936 <a href="./CVE-2021-35936.cve.json">[CVE json]</a></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache Airflow from Apache Airflow before 2.1.2</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>If remote logging is not used, the worker (in the case of CeleryExecutor) or the scheduler (in the case of LocalExecutor) runs a Flask logging server and is listening on a specific port and also binds on 0.0.0.0 by default.
+This logging server had no authentication and allows reading log files of DAG jobs.</p>
+<p>This issue affects Apache Airflow &lt; 2.1.2.</p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r53d6bd7b0a66f92ddaf1313282f10fec802e71246606dd30c16536df%40%3Cusers.airflow.apache.org%3E">https://lists.apache.org/thread.html/r53d6bd7b0a66f92ddaf1313282f10fec802e71246606dd30c16536df%40%3Cusers.airflow.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>Apache Airflow would like to thank Dolev Farhi for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2021-38540">Apache Airflow: Variable Import endpoint missed authentication check</h2>
+<p>CVE-2021-38540 <a href="./CVE-2021-38540.cve.json">[CVE json]</a></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Airflow from Apache Airflow  before 2.1.3</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>The variable import endpoint was not protected by authentication in Airflow &gt;=2.0.0, &lt;2.1.3. This allowed unauthenticated users to hit that endpoint to add/modify Airflow variables used in DAGs, potentially
+resulting in a denial of service, information disclosure or remote code execution.</p>
+<p>This issue affects Apache Airflow &gt;=2.0.0, &lt;2.1.3.</p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/rb34c3dd1a815456355217eef34060789f771b6f77c3a3dec77de2064%40%3Cusers.airflow.apache.org%3E">https://lists.apache.org/thread.html/rb34c3dd1a815456355217eef34060789f771b6f77c3a3dec77de2064%40%3Cusers.airflow.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>Apache Airflow would like to thank Nathan Jones, National Australia Bank’s Offensive Security Team</li>
+</ul>
+<h2 id="CVE-2021-45229">Apache Airflow: Reflected XSS via Origin Query Argument in URL</h2>
+<p>CVE-2021-45229 <a href="./CVE-2021-45229.cve.json">[CVE json]</a></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache Airflow from unspecified before 2.2.4</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>It was discovered that the &ldquo;Trigger DAG with config&rdquo; screen was susceptible to XSS attacks via the <code>origin</code> query argument.</p>
+<p>This issue affects Apache Airflow versions 2.2.3 and below.</p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/phx76cgtmhwwdy780rvwhobx8qoy4bnk">https://lists.apache.org/thread/phx76cgtmhwwdy780rvwhobx8qoy4bnk</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>The Apache Airflow PMC would like to thank both Bogdan Kurinnoy of the Samsung R&amp;D Institute Ukraine (SRK) and Ali Al-Habsi of Accellion for independently discovering and reporting this issue.</li>
+</ul>
+<h2 id="CVE-2021-45230">Apache Airflow: Creating DagRuns didn&rsquo;t respect Dag-level permissions in the Webserver</h2>
+<p>CVE-2021-45230 <a href="./CVE-2021-45230.cve.json">[CVE json]</a></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache Airflow at Apache Airflow 1.10 1.10.0 to 1.10.15</li>
+<li>Apache Airflow from Apache Airflow 2 before 2.2.0</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<p>In Apache Airflow prior to 2.2.0.  This CVE applies to a specific case where a User who has &ldquo;can_create&rdquo; permissions on DAG Runs can create Dag Runs for dags that they don&rsquo;t have &ldquo;edit&rdquo; permissions for.</p>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/m778ojn0k595rwco4ht9wjql89mjoxnl">https://lists.apache.org/thread/m778ojn0k595rwco4ht9wjql89mjoxnl</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>Apache Airflow PMC would like to thank Franco Cano Erazo for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2022-24288">Apache Airflow: RCE in example DAGs</h2>
+<p>CVE-2022-24288 <a href="./CVE-2022-24288.cve.json">[CVE json]</a></p>
+<h3 id="affected-11">Affected</h3>
+<ul>
+<li>Apache Airflow from unspecified before 2.2.4</li>
+</ul>
+<h3 id="description-11">Description</h3>
+<p>In Apache Airflow, prior to version 2.2.4, some example DAGs did not properly sanitize user-provided params, making them susceptible to OS Command Injection from the web UI.</p>
+<h3 id="references-11">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/dbw5ozcmr0h0lhs0yjph7xdc64oht23t">https://lists.apache.org/thread/dbw5ozcmr0h0lhs0yjph7xdc64oht23t</a></li>
+</ul>
+<h3 id="credits-10">Credits</h3>
+<ul>
+<li>The Apache Airflow PMC would like to thank Kai Zhao of the TToU Security Team for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2022-27949">Apache Airflow prior to 2.3.1 may include sensitive values in rendered template</h2>
+<p>CVE-2022-27949 <a href="./CVE-2022-27949.cve.json">[CVE json]</a></p>
+<h3 id="affected-12">Affected</h3>
+<ul>
+<li>Apache Airflow from unspecified before 2.3.1</li>
+</ul>
+<h3 id="description-12">Description</h3>
+<p>A vulnerability in UI of Apache Airflow allows an attacker to view unmasked secrets in rendered template values for tasks which were not executed (for example when they were depending on past and previous instances of the task failed). This issue affects Apache Airflow prior to 2.3.1.</p>
+<h3 id="references-12">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/22754">https://github.com/apache/airflow/pull/22754</a></li>
+<li><a href="https://lists.apache.org/thread/n38oc5obb48600fsvnbopxcs0jpbp65p">https://lists.apache.org/thread/n38oc5obb48600fsvnbopxcs0jpbp65p</a></li>
+</ul>
+<h3 id="credits-11">Credits</h3>
+<ul>
+<li>Apache Airflow PMC would like to thank James Srinivasan for reporting it.</li>
+</ul>
+<h2 id="CVE-2022-38054">Session Fixation</h2>
+<p>CVE-2022-38054 <a href="./CVE-2022-38054.cve.json">[CVE json]</a></p>
+<h3 id="affected-13">Affected</h3>
+<ul>
+<li>Apache Airflow from 2.2.4 before Apache Airflow*</li>
+</ul>
+<h3 id="description-13">Description</h3>
+<p>In Apache Airflow versions 2.2.4 through 2.3.3, the <code>database</code> webserver session backend was susceptible to session fixation.</p>
+<h3 id="references-13">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/rsd3h89xdp16rg0ltovx3m7q3ypkxsbb">https://lists.apache.org/thread/rsd3h89xdp16rg0ltovx3m7q3ypkxsbb</a></li>
+</ul>
+<h3 id="credits-12">Credits</h3>
+<ul>
+<li>The Apache Airflow PMC would like to thank Kai Zhao for reporting this issue.</li>
+<li>Additoinally we would like to thank Ali Al-Habsi for independently discovering and reporting this issue.</li>
+</ul>
+<h2 id="CVE-2022-38170">Overly permissive umask for daemons</h2>
+<p>CVE-2022-38170 <a href="./CVE-2022-38170.cve.json">[CVE json]</a></p>
+<h3 id="affected-14">Affected</h3>
+<ul>
+<li>Apache Airflow from Apache Airflow through 2.3.3</li>
+</ul>
+<h3 id="description-14">Description</h3>
+<p>In Apache Airflow prior to 2.3.4, an insecure umask was configured for numerous Airflow components when running with the  <code>--daemon</code> flag which could result in a race condition giving world-writable files in the Airflow home directory and allowing local users to expose arbitrary file contents via the webserver.</p>
+<h3 id="references-14">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/zn8mbbb1j2od5nc9zhrvb7rpsrg1vvzv">https://lists.apache.org/thread/zn8mbbb1j2od5nc9zhrvb7rpsrg1vvzv</a></li>
+</ul>
+<h3 id="credits-13">Credits</h3>
+<ul>
+<li>The Apache Airflow PMC would like to thank Harry Sintonen for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2022-38362">Docker Provider &lt;3.0 RCE vulnerability in example dag</h2>
+<p>CVE-2022-38362 <a href="./CVE-2022-38362.cve.json">[CVE json]</a></p>
+<h3 id="affected-15">Affected</h3>
+<ul>
+<li>Apache Airflow from Apache Airflow Docker Provider before 3.0.0</li>
+</ul>
+<h3 id="description-15">Description</h3>
+<p>Apache Airflow Docker&rsquo;s Provider prior to 3.0.0 shipped with an example DAG that was vulnerable to (authenticated) remote code exploit of code on the Airflow worker host.</p>
+<h3 id="references-15">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/614p38nf4gbk8xhvnskj9b1sqo2dknkb">https://lists.apache.org/thread/614p38nf4gbk8xhvnskj9b1sqo2dknkb</a></li>
+</ul>
+<h3 id="credits-14">Credits</h3>
+<ul>
+<li>Thanks to Kai Zhao of 3H Secruity Team for reporting this</li>
+</ul>
+<h2 id="CVE-2022-38649">Apache Airflow Pinot provider allowed Command Injection</h2>
+<p>CVE-2022-38649 <a href="./CVE-2022-38649.cve.json">[CVE json]</a></p>
+<h3 id="affected-16">Affected</h3>
+<ul>
+<li>Apache Airflow Pinot Provider from unspecified before 4.0.0</li>
+<li>Apache Airflow from unspecified before 2.3.0</li>
+</ul>
+<h3 id="description-16">Description</h3>
+<p>Improper Neutralization of Special Elements used in an OS Command (&lsquo;OS Command Injection&rsquo;) vulnerability in Apache Airflow Pinot Provider, Apache Airflow allows an attacker to control commands executed in the task execution context, without write access to DAG files. This issue affects Apache Airflow Pinot Provider versions prior to 4.0.0. It also impacts any Apache Airflow versions prior to 2.3.0 in case Apache Airflow Pinot Provider is installed (Apache Airflow Pinot Provider 4.0.0 can only be installed for Airflow 2.3.0+). Note that you need to manually install the Pinot Provider version 4.0.0 in order to get rid of the vulnerability on top of Airflow 2.3.0+ version.</p>
+<h3 id="references-16">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/27641">https://github.com/apache/airflow/pull/27641</a></li>
+<li><a href="https://lists.apache.org/thread/033o1gbc4ly6dpd2xf1o201v56fbl4dz">https://lists.apache.org/thread/033o1gbc4ly6dpd2xf1o201v56fbl4dz</a></li>
+</ul>
+<h3 id="credits-15">Credits</h3>
+<ul>
+<li>Apache Airflow PMC wants to thank id_No2015429 of 3H Security Team for reporting the issue.</li>
+</ul>
+<h2 id="CVE-2022-40127">Apache Airflow &lt;2.4.0 has an RCE in a bash example</h2>
+<p>CVE-2022-40127 <a href="./CVE-2022-40127.cve.json">[CVE json]</a></p>
+<h3 id="affected-17">Affected</h3>
+<ul>
+<li>Apache Airflow from Apache Airflow before 2.4.0</li>
+</ul>
+<h3 id="description-17">Description</h3>
+<p>A vulnerability in Example Dags of Apache Airflow allows an attacker with UI access who can trigger DAGs, to execute arbitrary commands via manually provided run_id parameter.  This issue affects Apache Airflow Apache Airflow versions prior to 2.4.0.</p>
+<h3 id="references-17">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/25960">https://github.com/apache/airflow/pull/25960</a></li>
+<li><a href="https://lists.apache.org/thread/cf132hgm6jvzvsbpsozl3plf1r4cwysy">https://lists.apache.org/thread/cf132hgm6jvzvsbpsozl3plf1r4cwysy</a></li>
+</ul>
+<h3 id="credits-16">Credits</h3>
+<ul>
+<li>Apache Airflow PMC would like to thank L3yx of Syclover Security Team.</li>
+</ul>
+<h2 id="CVE-2022-40189">Apache Airlfow Pig Provider RCE</h2>
+<p>CVE-2022-40189 <a href="./CVE-2022-40189.cve.json">[CVE json]</a></p>
+<h3 id="affected-18">Affected</h3>
+<ul>
+<li>Apache Airlfow Pig Provider from unspecified before 4.0.0</li>
+<li>Apache Airflow  from unspecified before 2.3.0</li>
+</ul>
+<h3 id="description-18">Description</h3>
+<p>Improper Neutralization of Special Elements used in an OS Command (&lsquo;OS Command Injection&rsquo;) vulnerability in Apache Airflow Pig Provider, Apache Airflow allows an attacker to control commands executed in the task execution context, without write access to DAG files. This issue affects Pig Provider versions prior to 4.0.0. It also impacts any Apache Airflow versions prior to 2.3.0 in case Pig Provider is installed (Pig Provider 4.0.0 can only be installed for Airflow 2.3.0+). Note that you need to manually install the Pig Provider version 4.0.0 in order to get rid of the vulnerability on top of Airflow 2.3.0+ version.</p>
+<h3 id="references-18">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/27644">https://github.com/apache/airflow/pull/27644</a></li>
+<li><a href="https://lists.apache.org/thread/yxnfzfw2w9pj5s785k3rlyly4y44sd15">https://lists.apache.org/thread/yxnfzfw2w9pj5s785k3rlyly4y44sd15</a></li>
+</ul>
+<h3 id="credits-17">Credits</h3>
+<ul>
+<li>Apache Airflow PMC wants to thank id_No2015429 of 3H Security Team for reporting the issue.</li>
+</ul>
+<h2 id="CVE-2022-40604">Format String Vulnerability</h2>
+<p>CVE-2022-40604 <a href="./CVE-2022-40604.cve.json">[CVE json]</a></p>
+<h3 id="affected-19">Affected</h3>
+<ul>
+<li>Apache Airflow from unspecified before 2.4.0</li>
+</ul>
+<h3 id="description-19">Description</h3>
+<p>In Apache Airflow 2.3.0 through 2.3.4, part of a url was unnecessarily formatted, allowing for possible information extraction.</p>
+<h3 id="references-19">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/26337">https://github.com/apache/airflow/pull/26337</a></li>
+<li><a href="https://lists.apache.org/thread/z20x8m16fnhxdkoollv53w1ybsts687t">https://lists.apache.org/thread/z20x8m16fnhxdkoollv53w1ybsts687t</a></li>
+</ul>
+<h3 id="credits-18">Credits</h3>
+<ul>
+<li>The Apache Airflow PMC would like to thank L3yx of Syclover Security Team for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2022-40754">Open Redirect</h2>
+<p>CVE-2022-40754 <a href="./CVE-2022-40754.cve.json">[CVE json]</a></p>
+<h3 id="affected-20">Affected</h3>
+<ul>
+<li>Apache Airflow from unspecified before 2.4.0</li>
+</ul>
+<h3 id="description-20">Description</h3>
+<p>In Apache Airflow 2.3.0 through 2.3.4, there was an open redirect in the webserver&rsquo;s <code>/confirm</code> endpoint.</p>
+<h3 id="references-20">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/26409">https://github.com/apache/airflow/pull/26409</a></li>
+<li><a href="https://lists.apache.org/thread/cn098dcp5x3c402xrb06p3l7nz5goffm">https://lists.apache.org/thread/cn098dcp5x3c402xrb06p3l7nz5goffm</a></li>
+</ul>
+<h3 id="credits-19">Credits</h3>
+<ul>
+<li>The Apache Airflow PMC would like to thank Konstantin Weddige (Lutra Security) for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2022-40954">Apache Airflow Spark Provider RCE that bypass restrictions to read arbitrary files</h2>
+<p>CVE-2022-40954 <a href="./CVE-2022-40954.cve.json">[CVE json]</a></p>
+<h3 id="affected-21">Affected</h3>
+<ul>
+<li>Apache Airflow Spark Provider from unspecified before 4.0.0</li>
+<li>Apache Airflow from unspecified before 2.3.0</li>
+</ul>
+<h3 id="description-21">Description</h3>
+<p>Improper Neutralization of Special Elements used in an OS Command (&lsquo;OS Command Injection&rsquo;) vulnerability in Apache Airflow Spark Provider, Apache Airflow allows an attacker to read arbtrary files in the task execution context, without write access to DAG files. This issue affects Spark Provider versions prior to 4.0.0. It also impacts any Apache Airflow versions prior to 2.3.0 in case Spark Provider is installed (Spark Provider 4.0.0 can only be installed for Airflow 2.3.0+). Note that you need to manually install the Spark Provider version 4.0.0 in order to get rid of the vulnerability on top of Airflow 2.3.0+ version that has lower version of the Spark Provider installed).</p>
+<h3 id="references-21">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/27646">https://github.com/apache/airflow/pull/27646</a></li>
+<li><a href="https://lists.apache.org/thread/0tmdlnmjs5t4gsx5fy73tb6zd3jztq45">https://lists.apache.org/thread/0tmdlnmjs5t4gsx5fy73tb6zd3jztq45</a></li>
+</ul>
+<h3 id="credits-20">Credits</h3>
+<ul>
+<li>Apache Airflow PMC wants to thank id_No2015429 of 3H Security Team for reporting the issue.</li>
+</ul>
+<h2 id="CVE-2022-41131">Apache Airflow Hive Provider vulnerability (command injection via hive_cli connection)</h2>
+<p>CVE-2022-41131 <a href="./CVE-2022-41131.cve.json">[CVE json]</a></p>
+<h3 id="affected-22">Affected</h3>
+<ul>
+<li>Apache Airflow Hive Provider from unspecified before 4.1.0</li>
+<li>Apache Airflow at 2.3.0</li>
+</ul>
+<h3 id="description-22">Description</h3>
+<p>Improper Neutralization of Special Elements used in an OS Command (&lsquo;OS Command Injection&rsquo;) vulnerability in Apache Airflow Hive Provider, Apache Airflow allows an attacker to execute arbtrary commands in the task execution context, without write access to DAG files. This issue affects Hive Provider versions prior to 4.1.0. It also impacts any Apache Airflow versions prior to 2.3.0 in case HIve Provider is installed (Hive Provider 4.1.0 can only be installed for Airflow 2.3.0+). Note that you need to manually install the HIve Provider version 4.1.0 in order to get rid of the vulnerability on top of Airflow 2.3.0+ version that has lower version of the Hive Provider installed).</p>
+<h3 id="references-22">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/27647">https://github.com/apache/airflow/pull/27647</a></li>
+<li><a href="https://lists.apache.org/thread/wwo3qp0z8gv54yzn7hr04wy4n8gb0vhl">https://lists.apache.org/thread/wwo3qp0z8gv54yzn7hr04wy4n8gb0vhl</a></li>
+</ul>
+<h3 id="credits-21">Credits</h3>
+<ul>
+<li>Apache Airflow PMC wants to thank id_No2015429 of 3H Security Team for reporting the issue.</li>
+</ul>
+<h2 id="CVE-2022-41672">Session still functional after user is deactivated</h2>
+<p>CVE-2022-41672 <a href="./CVE-2022-41672.cve.json">[CVE json]</a></p>
+<h3 id="affected-23">Affected</h3>
+<ul>
+<li>Apache Airflow from unspecified through 2.4.0</li>
+</ul>
+<h3 id="description-23">Description</h3>
+<p>In Apache Airflow, prior to version 2.4.1, deactivating a user wouldn&rsquo;t prevent an already authenticated user from being able to continue using the UI or API.</p>
+<h3 id="references-23">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/26635">https://github.com/apache/airflow/pull/26635</a></li>
+<li><a href="https://lists.apache.org/thread/ohf3pvd3dftb8zb01yngbn1jtkq5m08y">https://lists.apache.org/thread/ohf3pvd3dftb8zb01yngbn1jtkq5m08y</a></li>
+</ul>
+<h3 id="credits-22">Credits</h3>
+<ul>
+<li>The Apache Airflow PMC would like to thank Axel Chong (@Haxatron) for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2022-43982">Apache Airflow prior to 2.4.2 allows reflected XSS via Origin Query Argument in URL</h2>
+<p>CVE-2022-43982 <a href="./CVE-2022-43982.cve.json">[CVE json]</a></p>
+<h3 id="affected-24">Affected</h3>
+<ul>
+<li>Apache Airflow from unspecified before 2.4.2</li>
+</ul>
+<h3 id="description-24">Description</h3>
+<p>In Apache Airflow versions prior to 2.4.2, the &ldquo;Trigger DAG with config&rdquo; screen was susceptible to XSS attacks via the <code>origin</code> query argument.</p>
+<h3 id="references-24">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/27143">https://github.com/apache/airflow/pull/27143</a></li>
+<li><a href="https://lists.apache.org/thread/vqnvdrfsw9z7v7c46qh3psjgr7wy959l">https://lists.apache.org/thread/vqnvdrfsw9z7v7c46qh3psjgr7wy959l</a></li>
+</ul>
+<h3 id="credits-23">Credits</h3>
+<ul>
+<li>The Apache Airflow PMC would like to thank id_No2015429 of 3H Security Team for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2022-43985">Apache Airflow prior to 2.4.2 has an open redirect</h2>
+<p>CVE-2022-43985 <a href="./CVE-2022-43985.cve.json">[CVE json]</a></p>
+<h3 id="affected-25">Affected</h3>
+<ul>
+<li>Apache Airflow from unspecified before 2.4.2</li>
+</ul>
+<h3 id="description-25">Description</h3>
+<p>In Apache Airflow versions prior to 2.4.2, there was an open redirect in the webserver&rsquo;s <code>/confirm</code> endpoint.</p>
+<h3 id="references-25">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/27143">https://github.com/apache/airflow/pull/27143</a></li>
+<li><a href="https://lists.apache.org/thread/m13y9s5kw92fw9l8j4qd85h0txp4kfcq">https://lists.apache.org/thread/m13y9s5kw92fw9l8j4qd85h0txp4kfcq</a></li>
+</ul>
+<h3 id="credits-24">Credits</h3>
+<ul>
+<li>The Apache Airflow PMC would like to thank Axel Chong (@Haxatron) [https://hackerone.com/haxatron1] for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2022-45402">Apache Airflow: Open redirect during login</h2>
+<p>CVE-2022-45402 <a href="./CVE-2022-45402.cve.json">[CVE json]</a></p>
+<h3 id="affected-26">Affected</h3>
+<ul>
+<li>Apache Airflow from unspecified before 2.4.3</li>
+</ul>
+<h3 id="description-26">Description</h3>
+<p>In Apache Airflow versions prior to 2.4.3, there was an open redirect in the webserver&rsquo;s <code>/login</code> endpoint.</p>
+<h3 id="references-26">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/27576">https://github.com/apache/airflow/pull/27576</a></li>
+<li><a href="https://lists.apache.org/thread/nf4xrkoo6c81g6fdn4vj8k9x2686o9nh">https://lists.apache.org/thread/nf4xrkoo6c81g6fdn4vj8k9x2686o9nh</a></li>
+</ul>
+<h3 id="credits-25">Credits</h3>
+<ul>
+<li>The Apache Airflow PMC would like to thank Bugra Eskici for reporting this issue.</li>
+</ul>
 <h2 id="CVE-2022-46421">Hive Provider RCE vulnerability with hive_cli_params</h2>
 <p>CVE-2022-46421 <a href="./CVE-2022-46421.cve.json">[CVE json]</a></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-27">Affected</h3>
 <ul>
 <li>Apache Airflow Hive Provider before 5.0.0</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-27">Description</h3>
 <p>Improper Neutralization of Special Elements used in a Command (&lsquo;Command Injection&rsquo;) vulnerability in Apache Software Foundation Apache Airflow Hive Provider.<p>This issue affects Apache Airflow Hive Provider: before 5.0.0.</p></p>
-<h3 id="references">References</h3>
+<h3 id="references-27">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/28101">https://github.com/apache/airflow/pull/28101</a></li>
 <li><a href="https://lists.apache.org/thread/09twdoyoybldlfj5gvk0qswtofh0rmp4">https://lists.apache.org/thread/09twdoyoybldlfj5gvk0qswtofh0rmp4</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-26">Credits</h3>
 <ul>
 <li>id_No2015429 of 3H Security Team (finder)</li>
 </ul>
 <h2 id="CVE-2022-46651">Security vulnerability on AirFlow Connections</h2>
 <p>CVE-2022-46651 <a href="./CVE-2022-46651.cve.json">[CVE json]</a></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-28">Affected</h3>
 <ul>
 <li>Apache Airflow before 2.6.3</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-28">Description</h3>
 <p>Apache Airflow, versions before 2.6.3, is affected by a vulnerability that allows an unauthorized actor to gain access to sensitive information in Connection edit view. This vulnerability is considered low since it requires someone with access to Connection resources specifically updating the connection to exploit it. Users should upgrade to version 2.6.3 or later which has removed the vulnerability.<br></p>
-<h3 id="references-1">References</h3>
+<h3 id="references-28">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/32309">https://github.com/apache/airflow/pull/32309</a></li>
 <li><a href="https://lists.apache.org/thread/n45h3y82og125rnlgt6rbm9szfb6q24d">https://lists.apache.org/thread/n45h3y82og125rnlgt6rbm9szfb6q24d</a></li>
 </ul>
 <h2 id="CVE-2023-22884">Arbitrary file read via MySQL provider in Apache Airflow</h2>
 <p>CVE-2023-22884 <a href="./CVE-2023-22884.cve.json">[CVE json]</a></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-29">Affected</h3>
 <ul>
 <li>Apache Airflow before 2.5.1</li>
 <li>Apache Airflow MySQL Provider before 4.0.0</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-29">Description</h3>
 <p>Improper Neutralization of Special Elements used in a Command (&lsquo;Command Injection&rsquo;) vulnerability in Apache Software Foundation Apache Airflow, Apache Software Foundation Apache Airflow MySQL Provider.<p>This issue affects Apache Airflow: before 2.5.1; Apache Airflow MySQL Provider: before 4.0.0.</p></p>
-<h3 id="references-2">References</h3>
+<h3 id="references-29">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/28811">https://github.com/apache/airflow/pull/28811</a></li>
 <li><a href="https://lists.apache.org/thread/0l0j3nt0t7fzrcjl2ch0jgj6c58kxs5h">https://lists.apache.org/thread/0l0j3nt0t7fzrcjl2ch0jgj6c58kxs5h</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-27">Credits</h3>
 <ul>
 <li>Son Tran from VNPT - VCI (reporter)</li>
 </ul>
 <h2 id="CVE-2023-22886">RCE Vulnerability</h2>
 <p>CVE-2023-22886 <a href="./CVE-2023-22886.cve.json">[CVE json]</a></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-30">Affected</h3>
 <ul>
 <li>Apache Airflow JDBC Provider before 4.0.0</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-30">Description</h3>
 <p>Improper Input Validation vulnerability in Apache Software Foundation Apache Airflow JDBC Provider.<br><span style="background-color: rgb(255, 255, 255);">Airflow JDBC Provider Connection’s [Connection URL] parameters had no</span><br><span style="background-color: rgb(255, 255, 255);">restrictions, which made it possible to implement RCE attacks via</span><br><span style="background-color: rgb(255, 255, 255);">different type JDBC drivers, obtain airflow server permission.</span><br><p>This issue affects Apache Airflow JDBC Provider: before 4.0.0.<br></p></p>
-<h3 id="references-3">References</h3>
+<h3 id="references-30">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/ynbjwp4n0vzql0xzhog1gkp1ovncf8j3">https://lists.apache.org/thread/ynbjwp4n0vzql0xzhog1gkp1ovncf8j3</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-28">Credits</h3>
 <ul>
 <li>heart Y (finder)</li>
 <li>happyhacking (finder)</li>
 </ul>
 <h2 id="CVE-2023-22887">Apache Airflow path traversal by authenticated user</h2>
 <p>CVE-2023-22887 <a href="./CVE-2023-22887.cve.json">[CVE json]</a></p>
-<h3 id="affected-4">Affected</h3>
+<h3 id="affected-31">Affected</h3>
 <ul>
 <li>Apache Airflow before 2.6.3</li>
 </ul>
-<h3 id="description-4">Description</h3>
+<h3 id="description-31">Description</h3>
 <p>Apache Airflow, versions before 2.6.3, is affected by a vulnerability that allows an attacker to perform unauthorized file access outside the intended directory structure by manipulating the run_id parameter. This vulnerability is considered low since it requires an authenticated user to exploit it. It is recommended to upgrade to a version that is not affected</p>
-<h3 id="references-4">References</h3>
+<h3 id="references-31">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/32293">https://github.com/apache/airflow/pull/32293</a></li>
 <li><a href="https://lists.apache.org/thread/rxddqs76r6rkxsg1n24d029zys67qwwo">https://lists.apache.org/thread/rxddqs76r6rkxsg1n24d029zys67qwwo</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits-29">Credits</h3>
 <ul>
 <li>Zhipeng Zhang (@Timon8) (finder)</li>
 <li>KietNA from National Cyber Security (NCS) (finder)</li>
 </ul>
 <h2 id="CVE-2023-22888">Scheduler remote DoS</h2>
 <p>CVE-2023-22888 <a href="./CVE-2023-22888.cve.json">[CVE json]</a></p>
-<h3 id="affected-5">Affected</h3>
+<h3 id="affected-32">Affected</h3>
 <ul>
 <li>Apache Airflow before 2.6.3</li>
 </ul>
-<h3 id="description-5">Description</h3>
+<h3 id="description-32">Description</h3>
 <p>Apache Airflow, versions before 2.6.3, is affected by a vulnerability that allows an attacker to cause a service disruption by manipulating the run_id parameter. This vulnerability is considered low since it requires an authenticated user to exploit it. It is recommended to upgrade to a version that is not affected</p>
-<h3 id="references-5">References</h3>
+<h3 id="references-32">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/32293">https://github.com/apache/airflow/pull/32293</a></li>
 <li><a href="https://lists.apache.org/thread/dnlht2hvm7k81k5tgjtsfmk27c76kq7z">https://lists.apache.org/thread/dnlht2hvm7k81k5tgjtsfmk27c76kq7z</a></li>
 </ul>
-<h3 id="credits-4">Credits</h3>
+<h3 id="credits-30">Credits</h3>
 <ul>
 <li>Zhipeng Zhang (@timon8) (finder)</li>
 </ul>
 <h2 id="CVE-2023-25691">Google Cloud Sql Provider Remote Command Execution</h2>
 <p>CVE-2023-25691 <a href="./CVE-2023-25691.cve.json">[CVE json]</a></p>
-<h3 id="affected-6">Affected</h3>
+<h3 id="affected-33">Affected</h3>
 <ul>
 <li>Apache Airflow Google Provider before 8.10.0</li>
 </ul>
-<h3 id="description-6">Description</h3>
+<h3 id="description-33">Description</h3>
 <p>Improper Input Validation vulnerability in the Apache Airflow Google Provider.<br><br><p>This issue affects Apache Airflow Google Provider versions before 8.10.0.</p></p>
-<h3 id="references-6">References</h3>
+<h3 id="references-33">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/29497">https://github.com/apache/airflow/pull/29497</a></li>
 <li><a href="https://lists.apache.org/thread/zdr8ovfttbh7kj0lydgcw88tbt2nmkcy">https://lists.apache.org/thread/zdr8ovfttbh7kj0lydgcw88tbt2nmkcy</a></li>
 </ul>
-<h3 id="credits-5">Credits</h3>
+<h3 id="credits-31">Credits</h3>
 <ul>
 <li>Xie Jianming of Caiji Sec Team (finder)</li>
 </ul>
 <h2 id="CVE-2023-25692">Google Cloud Sql Provider Denial Of Service</h2>
 <p>CVE-2023-25692 <a href="./CVE-2023-25692.cve.json">[CVE json]</a></p>
-<h3 id="affected-7">Affected</h3>
+<h3 id="affected-34">Affected</h3>
 <ul>
 <li>Apache Airflow Google Provider before 8.10.0</li>
 </ul>
-<h3 id="description-7">Description</h3>
+<h3 id="description-34">Description</h3>
 <p>Improper Input Validation vulnerability in the Apache Airflow Google Provider.<br><br><p>This issue affects Apache Airflow Google Provider versions before 8.10.0.</p></p>
-<h3 id="references-7">References</h3>
+<h3 id="references-34">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/29499">https://github.com/apache/airflow/pull/29499</a></li>
 <li><a href="https://lists.apache.org/thread/ks4l78l5rwdpmvfn7y7yhs179nyxtlsh">https://lists.apache.org/thread/ks4l78l5rwdpmvfn7y7yhs179nyxtlsh</a></li>
 </ul>
-<h3 id="credits-6">Credits</h3>
+<h3 id="credits-32">Credits</h3>
 <ul>
 <li>Xie Jianming of Caiji Sec Team (finder)</li>
 </ul>
 <h2 id="CVE-2023-25693">Sqoop Apache Airflow Provider Remote Code Execution Vulnerability</h2>
 <p>CVE-2023-25693 <a href="./CVE-2023-25693.cve.json">[CVE json]</a></p>
-<h3 id="affected-8">Affected</h3>
+<h3 id="affected-35">Affected</h3>
 <ul>
 <li>Apache Airflow Sqoop Provider before 3.1.1</li>
 </ul>
-<h3 id="description-8">Description</h3>
+<h3 id="description-35">Description</h3>
 <p>Improper Input Validation vulnerability in the Apache Airflow Sqoop Provider.<br><br><p>This issue affects Apache Airflow Sqoop Provider versions before 3.1.1.</p></p>
-<h3 id="references-8">References</h3>
+<h3 id="references-35">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/29500">https://github.com/apache/airflow/pull/29500</a></li>
 <li><a href="https://lists.apache.org/thread/79qn8g5xbq036f8crb115obvr22l52q4">https://lists.apache.org/thread/79qn8g5xbq036f8crb115obvr22l52q4</a></li>
 </ul>
-<h3 id="credits-7">Credits</h3>
+<h3 id="credits-33">Credits</h3>
 <ul>
 <li>L3yx of Syclover Security Team (finder)</li>
 </ul>
 <h2 id="CVE-2023-25695">Information disclosure in Apache Airflow</h2>
 <p>CVE-2023-25695 <a href="./CVE-2023-25695.cve.json">[CVE json]</a></p>
-<h3 id="affected-9">Affected</h3>
+<h3 id="affected-36">Affected</h3>
 <ul>
 <li>Apache Airflow before 2.5.2</li>
 </ul>
-<h3 id="description-9">Description</h3>
+<h3 id="description-36">Description</h3>
 <p>Generation of Error Message Containing Sensitive Information vulnerability in Apache Software Foundation Apache Airflow.<p>This issue affects Apache Airflow: before 2.5.2.</p></p>
-<h3 id="references-9">References</h3>
+<h3 id="references-36">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/29501">https://github.com/apache/airflow/pull/29501</a></li>
 <li><a href="https://lists.apache.org/thread/z8w6ckzs61ql365tv4d19k82o67r15p2">https://lists.apache.org/thread/z8w6ckzs61ql365tv4d19k82o67r15p2</a></li>
 </ul>
-<h3 id="credits-8">Credits</h3>
+<h3 id="credits-34">Credits</h3>
 <ul>
 <li>kuteminh11 (finder)</li>
 </ul>
 <h2 id="CVE-2023-25696">Apache Airflow Hive Provider Beeline RCE</h2>
 <p>CVE-2023-25696 <a href="./CVE-2023-25696.cve.json">[CVE json]</a></p>
-<h3 id="affected-10">Affected</h3>
+<h3 id="affected-37">Affected</h3>
 <ul>
 <li>Apache Airflow Hive Provider before 5.1.3</li>
 </ul>
-<h3 id="description-10">Description</h3>
+<h3 id="description-37">Description</h3>
 <p>Improper Input Validation vulnerability in the Apache Airflow Hive Provider.<br><br><p>This issue affects Apache Airflow Hive Provider versions before 5.1.3.</p></p>
-<h3 id="references-10">References</h3>
+<h3 id="references-37">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/29502">https://github.com/apache/airflow/pull/29502</a></li>
 <li><a href="https://lists.apache.org/thread/99g0qm56wmgdxmbtdsvhj4rdnxhpzpml">https://lists.apache.org/thread/99g0qm56wmgdxmbtdsvhj4rdnxhpzpml</a></li>
 </ul>
-<h3 id="credits-9">Credits</h3>
+<h3 id="credits-35">Credits</h3>
 <ul>
 <li>id_No2015429 of 3H Secruity Team (finder)</li>
 </ul>
 <h2 id="CVE-2023-25754">Privilege escalation using airflow logs</h2>
 <p>CVE-2023-25754 <a href="./CVE-2023-25754.cve.json">[CVE json]</a></p>
-<h3 id="affected-11">Affected</h3>
+<h3 id="affected-38">Affected</h3>
 <ul>
 <li>Apache Airflow before 2.6.0</li>
 </ul>
-<h3 id="description-11">Description</h3>
+<h3 id="description-38">Description</h3>
 <p>Privilege Context Switching Error vulnerability in Apache Software Foundation Apache Airflow.<p>This issue affects Apache Airflow: before 2.6.0.</p></p>
-<h3 id="references-11">References</h3>
+<h3 id="references-38">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/29506">https://github.com/apache/airflow/pull/29506</a></li>
 <li><a href="https://lists.apache.org/thread/3y83gr0qb8t49ppfk4fb2yk7md8ltq4v">https://lists.apache.org/thread/3y83gr0qb8t49ppfk4fb2yk7md8ltq4v</a></li>
 </ul>
-<h3 id="credits-10">Credits</h3>
+<h3 id="credits-36">Credits</h3>
 <ul>
 <li><a href="mailto:ksw9722@naver.com">ksw9722@naver.com</a> (finder)</li>
 </ul>
 <h2 id="CVE-2023-25956">Arbitrary file read via AWS provider</h2>
 <p>CVE-2023-25956 <a href="./CVE-2023-25956.cve.json">[CVE json]</a></p>
-<h3 id="affected-12">Affected</h3>
+<h3 id="affected-39">Affected</h3>
 <ul>
 <li>Apache Airflow AWS Provider before 7.2.1</li>
 </ul>
-<h3 id="description-12">Description</h3>
+<h3 id="description-39">Description</h3>
 <p>Generation of Error Message Containing Sensitive Information vulnerability in the Apache Airflow AWS Provider.<br><br><p>This issue affects Apache Airflow AWS Provider versions before 7.2.1.</p></p>
-<h3 id="references-12">References</h3>
+<h3 id="references-39">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/29587">https://github.com/apache/airflow/pull/29587</a></li>
 <li><a href="https://lists.apache.org/thread/07pl9y4gdpw2c6rzqm77dvkm2z2kb5gv">https://lists.apache.org/thread/07pl9y4gdpw2c6rzqm77dvkm2z2kb5gv</a></li>
 </ul>
-<h3 id="credits-11">Credits</h3>
+<h3 id="credits-37">Credits</h3>
 <ul>
 <li>Son Tran from VNPT - VCI (finder)</li>
 <li>kuteminh11 (finder)</li>
 </ul>
+<h2 id="CVE-2023-27604">Airflow Sqoop Provider RCE Vulnerability</h2>
+<p>CVE-2023-27604 <a href="./CVE-2023-27604.cve.json">[CVE json]</a></p>
+<h3 id="affected-40">Affected</h3>
+<ul>
+<li>Apache Airflow Sqoop Provider before 4.0.0</li>
+</ul>
+<h3 id="description-40">Description</h3>
+<p>Apache Airflow Sqoop Provider, versions before 4.0.0, is affected by a vulnerability that allows an attacker pass parameters with the connections, which makes it possible to implement RCE attacks via ‘sqoop import &ndash;connect’, obtain airflow server permissions, etc. T<span style="background-color: rgb(255, 255, 255);">he attacker needs to be logged in and have authorization (permissions) to create/edit connections.<br></span><br> It is recommended to upgrade to a version that is not affected.<br>This issue was reported independently by <span style="background-color: rgb(255, 255, 255);">happyhacking-k</span>, And Xie Jianming and LiuHui of Caiji Sec Team also reported it.</p>
+<h3 id="references-40">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/33039">https://github.com/apache/airflow/pull/33039</a></li>
+<li><a href="https://lists.apache.org/thread/lswlxf11do51ob7f6xyyg8qp3n7wdrgd">https://lists.apache.org/thread/lswlxf11do51ob7f6xyyg8qp3n7wdrgd</a></li>
+</ul>
+<h3 id="credits-38">Credits</h3>
+<ul>
+<li>happyhacking-k (finder)</li>
+<li>Xie Jianming of Caiji Sec Team (finder)</li>
+<li>Liu Hui of Caiji Sec Team (finder)</li>
+</ul>
 <h2 id="CVE-2023-28706">Apache Airflow Hive Provider Beeline Remote Command Execution</h2>
 <p>CVE-2023-28706 <a href="./CVE-2023-28706.cve.json">[CVE json]</a></p>
-<h3 id="affected-13">Affected</h3>
+<h3 id="affected-41">Affected</h3>
 <ul>
 <li>Apache Airflow Hive Provider before 6.0.0</li>
 </ul>
-<h3 id="description-13">Description</h3>
+<h3 id="description-41">Description</h3>
 <p>Improper Control of Generation of Code (&lsquo;Code Injection&rsquo;) vulnerability in Apache Software Foundation Apache Airflow Hive Provider.<p>This issue affects Apache Airflow Hive Provider: before 6.0.0.</p></p>
-<h3 id="references-13">References</h3>
+<h3 id="references-41">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/30212">https://github.com/apache/airflow/pull/30212</a></li>
 <li><a href="https://lists.apache.org/thread/dl20xxd51xvlx0zzc0wzgxfjwgtbbxo3">https://lists.apache.org/thread/dl20xxd51xvlx0zzc0wzgxfjwgtbbxo3</a></li>
 </ul>
-<h3 id="credits-12">Credits</h3>
+<h3 id="credits-39">Credits</h3>
 <ul>
 <li>sw0rd1ight of Caiji Sec Team and 4ra1n of Chaitin Tech (finder)</li>
 </ul>
 <h2 id="CVE-2023-28707">Airflow Apache Drill Provider Arbitrary File Read Vulnerability</h2>
 <p>CVE-2023-28707 <a href="./CVE-2023-28707.cve.json">[CVE json]</a></p>
-<h3 id="affected-14">Affected</h3>
+<h3 id="affected-42">Affected</h3>
 <ul>
 <li>Apache Airflow Drill Provider before 2.3.2</li>
 </ul>
-<h3 id="description-14">Description</h3>
+<h3 id="description-42">Description</h3>
 <p>Improper Input Validation vulnerability in Apache Software Foundation Apache Airflow Drill Provider.<p>This issue affects Apache Airflow Drill Provider: before 2.3.2.</p></p>
-<h3 id="references-14">References</h3>
+<h3 id="references-42">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/30215">https://github.com/apache/airflow/pull/30215</a></li>
 <li><a href="https://lists.apache.org/thread/dfoj7q1nd0vhhsl8fjg63z4j6mfmdxtk">https://lists.apache.org/thread/dfoj7q1nd0vhhsl8fjg63z4j6mfmdxtk</a></li>
 </ul>
-<h3 id="credits-13">Credits</h3>
+<h3 id="credits-40">Credits</h3>
 <ul>
 <li>Kai Zhao of 3H Secruity Team (finder)</li>
 </ul>
 <h2 id="CVE-2023-28710">Apache Airflow Spark Provider Arbitrary File Read via JDBC</h2>
 <p>CVE-2023-28710 <a href="./CVE-2023-28710.cve.json">[CVE json]</a></p>
-<h3 id="affected-15">Affected</h3>
+<h3 id="affected-43">Affected</h3>
 <ul>
 <li>Apache Airflow Spark Provider before 4.0.1</li>
 </ul>
-<h3 id="description-15">Description</h3>
+<h3 id="description-43">Description</h3>
 <p>Improper Input Validation vulnerability in Apache Software Foundation Apache Airflow Spark Provider.<p>This issue affects Apache Airflow Spark Provider: before 4.0.1.</p></p>
-<h3 id="references-15">References</h3>
+<h3 id="references-43">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/30223">https://github.com/apache/airflow/pull/30223</a></li>
 <li><a href="https://lists.apache.org/thread/lb9w9114ow00h2nkn8bjm106v5x1p1d2">https://lists.apache.org/thread/lb9w9114ow00h2nkn8bjm106v5x1p1d2</a></li>
 </ul>
-<h3 id="credits-14">Credits</h3>
+<h3 id="credits-41">Credits</h3>
 <ul>
 <li>Xie Jianming of  Nsfocus (finder)</li>
 </ul>
 <h2 id="CVE-2023-29247">Stored XSS on Apache Airflow</h2>
 <p>CVE-2023-29247 <a href="./CVE-2023-29247.cve.json">[CVE json]</a></p>
-<h3 id="affected-16">Affected</h3>
+<h3 id="affected-44">Affected</h3>
 <ul>
 <li>Apache Airflow before 2.6.0</li>
 </ul>
-<h3 id="description-16">Description</h3>
+<h3 id="description-44">Description</h3>
 <p>Task instance details page in the UI is vulnerable to a stored XSS.<p>This issue affects Apache Airflow: before 2.6.0.</p><br></p>
-<h3 id="references-16">References</h3>
+<h3 id="references-44">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/30447">https://github.com/apache/airflow/pull/30447</a></li>
 <li><a href="https://github.com/apache/airflow/pull/30779">https://github.com/apache/airflow/pull/30779</a></li>
 <li><a href="https://lists.apache.org/thread/kqf5lxmko133780clsp827xfsh4xd3fl">https://lists.apache.org/thread/kqf5lxmko133780clsp827xfsh4xd3fl</a></li>
 </ul>
-<h3 id="credits-15">Credits</h3>
+<h3 id="credits-42">Credits</h3>
 <ul>
 <li>taidh from VNPT - VCI (finder)</li>
 <li>kuteminh11 (finder)</li>
 </ul>
 <h2 id="CVE-2023-33234">KubernetesPodOperator RCE via connection configuration</h2>
 <p>CVE-2023-33234 <a href="./CVE-2023-33234.cve.json">[CVE json]</a></p>
-<h3 id="affected-17">Affected</h3>
+<h3 id="affected-45">Affected</h3>
 <ul>
 <li>Apache Airflow CNCF Kubernetes Provider from 5.0.0 through 6.1.0</li>
 </ul>
-<h3 id="description-17">Description</h3>
+<h3 id="description-45">Description</h3>
 <p>Arbitrary code execution in Apache Airflow CNCF Kubernetes provider version 5.0.0 allows user to change xcom sidecar image and resources via Airflow connection.<br><br>In order to exploit this weakness, a user would already need elevated permissions (Op or Admin) to change the connection object in this manner.  Operators should upgrade to provider version 7.0.0 which has removed the vulnerability.<br><br></p>
-<h3 id="references-17">References</h3>
+<h3 id="references-45">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/n1vpgl6h2qsdm52o9m2tx1oo86tl4gnq">https://lists.apache.org/thread/n1vpgl6h2qsdm52o9m2tx1oo86tl4gnq</a></li>
 </ul>
 <h2 id="CVE-2023-34395">Remote code execution vulnerability</h2>
 <p>CVE-2023-34395 <a href="./CVE-2023-34395.cve.json">[CVE json]</a></p>
-<h3 id="affected-18">Affected</h3>
+<h3 id="affected-46">Affected</h3>
 <ul>
 <li>Apache Airflow ODBC Provider before 4.0.0</li>
 </ul>
-<h3 id="description-18">Description</h3>
+<h3 id="description-46">Description</h3>
 <p>Improper Neutralization of Argument Delimiters in a Command (&lsquo;Argument Injection&rsquo;) vulnerability in Apache Software Foundation Apache Airflow ODBC Provider.<br><span style="background-color: rgb(255, 255, 255);">In OdbcHook, A privilege escalation vulnerability exists in a system due to controllable ODBC driver parameters that allow the loading of arbitrary dynamic-link libraries, resulting in command execution.<br></span>Starting version 4.0.0 driver can be set only from the hook constructor.<br><p>This issue affects Apache Airflow ODBC Provider: before 4.0.0.</p></p>
-<h3 id="references-18">References</h3>
+<h3 id="references-46">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/31713">https://github.com/apache/airflow/pull/31713</a></li>
 <li><a href="https://lists.apache.org/thread/l26yykftzbhc9tgcph8cso88bc2lqwwd">https://lists.apache.org/thread/l26yykftzbhc9tgcph8cso88bc2lqwwd</a></li>
 </ul>
-<h3 id="credits-16">Credits</h3>
+<h3 id="credits-43">Credits</h3>
 <ul>
 <li>KmhlYXJ0 (finder)</li>
 </ul>
 <h2 id="CVE-2023-35005">Information disclosure on configuration view</h2>
 <p>CVE-2023-35005 <a href="./CVE-2023-35005.cve.json">[CVE json]</a></p>
-<h3 id="affected-19">Affected</h3>
+<h3 id="affected-47">Affected</h3>
 <ul>
 <li>Apache Airflow from 2.5.0 before 2.6.2</li>
 </ul>
-<h3 id="description-19">Description</h3>
+<h3 id="description-47">Description</h3>
 <div>In Apache Airflow, some potentially sensitive values were being shown to the user in certain situations.</div><div>This vulnerability is mitigated by the fact configuration is not shown in the UI by default (only if `[webserver] expose_config` is set to `non-sensitive-only`), and not all uncensored values are actually sentitive.</div><br><div>This issue affects Apache Airflow: from 2.5.0 before 2.6.2. Users are recommended to update to version 2.6.2 or later.<br></div>
-<h3 id="references-19">References</h3>
+<h3 id="references-47">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/31788">https://github.com/apache/airflow/pull/31788</a></li>
 <li><a href="https://github.com/apache/airflow/pull/31820">https://github.com/apache/airflow/pull/31820</a></li>
 <li><a href="https://lists.apache.org/thread/o4f2cxh0054m9tlxpb81c1yhylor5gjd">https://lists.apache.org/thread/o4f2cxh0054m9tlxpb81c1yhylor5gjd</a></li>
 </ul>
-<h3 id="credits-17">Credits</h3>
+<h3 id="credits-44">Credits</h3>
 <ul>
 <li>Piotr Chomiak from Astro product security team (finder)</li>
 </ul>
 <h2 id="CVE-2023-35797">Apache Airflow Hive Provider Beeline RCE with Principal</h2>
 <p>CVE-2023-35797 <a href="./CVE-2023-35797.cve.json">[CVE json]</a></p>
-<h3 id="affected-20">Affected</h3>
+<h3 id="affected-48">Affected</h3>
 <ul>
 <li>Apache Airflow Apache Hive Provider before 6.1.1</li>
 </ul>
-<h3 id="description-20">Description</h3>
+<h3 id="description-48">Description</h3>
 <p>Improper Input Validation vulnerability in Apache Software Foundation Apache Airflow Hive Provider.<br><p>This issue affects Apache Airflow Apache Hive Provider: before 6.1.1.<br><br><span style="background-color: rgb(255, 255, 255);">Before version 6.1.1 it was </span><span style="background-color: rgb(255, 255, 255);">possible to bypass the security check to RCE via</span><br><span style="background-color: rgb(255, 255, 255);">principal parameter. For this to be <span style="background-color: rgb(255, 255, 255);">exploited it requires access to modifying the connection details.</span><br></span><br>It is recommended updating provider version to 6.1.1 in order to avoid this vulnerability.</p></p>
-<h3 id="references-20">References</h3>
+<h3 id="references-48">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/31983">https://github.com/apache/airflow/pull/31983</a></li>
 <li><a href="https://lists.apache.org/thread/30y19ok07fw52x5hnkbhwqo3ho0wwc1y">https://lists.apache.org/thread/30y19ok07fw52x5hnkbhwqo3ho0wwc1y</a></li>
 </ul>
-<h3 id="credits-18">Credits</h3>
+<h3 id="credits-45">Credits</h3>
 <ul>
 <li>id_No2015429 of 3H Secruity Team (reporter)</li>
 </ul>
 <h2 id="CVE-2023-35798">Airflow Apache ODBC and MSSQL Providers Arbitrary File Read Vulnerability</h2>
 <p>CVE-2023-35798 <a href="./CVE-2023-35798.cve.json">[CVE json]</a></p>
-<h3 id="affected-21">Affected</h3>
+<h3 id="affected-49">Affected</h3>
 <ul>
 <li>Apache Airflow ODBC Provider before 4.0.0</li>
 <li>Apache Airflow MSSQL Provider before 3.4.1</li>
 </ul>
-<h3 id="description-21">Description</h3>
+<h3 id="description-49">Description</h3>
 <p>Input Validation vulnerability in Apache Software Foundation Apache Airflow ODBC Provider, Apache Software Foundation Apache Airflow MSSQL Provider.<p>This vulnerability is considered low since it requires DAG code to use <code>&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;get_sqlalchemy_connection</code> and someone with access to connection resources specifically updating the connection to <span style="background-color: rgb(255, 255, 255);">exploit it.</span><br></span><br>This issue affects Apache Airflow ODBC Provider: before 4.0.0; Apache Airflow MSSQL Provider: before 3.4.1.<br><br>It is recommended to <span style="background-color: rgb(255, 255, 255);">upgrade to a version that is not affected</span></p></p>
-<h3 id="references-21">References</h3>
+<h3 id="references-49">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/31984">https://github.com/apache/airflow/pull/31984</a></li>
 <li><a href="https://lists.apache.org/thread/951rb9m7wwox5p30tdvcfjxq8j1mp4pj">https://lists.apache.org/thread/951rb9m7wwox5p30tdvcfjxq8j1mp4pj</a></li>
 </ul>
-<h3 id="credits-19">Credits</h3>
+<h3 id="credits-46">Credits</h3>
 <ul>
 <li>id_No2015429 of 3H Secruity Team (finder)</li>
 </ul>
 <h2 id="CVE-2023-35908">Access to DAGs without relevant permission</h2>
 <p>CVE-2023-35908 <a href="./CVE-2023-35908.cve.json">[CVE json]</a></p>
-<h3 id="affected-22">Affected</h3>
+<h3 id="affected-50">Affected</h3>
 <ul>
 <li>Apache Airflow before 2.6.3</li>
 </ul>
-<h3 id="description-22">Description</h3>
+<h3 id="description-50">Description</h3>
 <p>Apache Airflow, versions before 2.6.3, is affected by a vulnerability that allows unauthorized read access to a DAG through the URL. It is recommended to upgrade to a version that is not affected</p>
-<h3 id="references-22">References</h3>
+<h3 id="references-50">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/32014">https://github.com/apache/airflow/pull/32014</a></li>
 <li><a href="https://lists.apache.org/thread/vsflptk5dt30vrfggn96nx87d7zr6yvw">https://lists.apache.org/thread/vsflptk5dt30vrfggn96nx87d7zr6yvw</a></li>
 </ul>
-<h3 id="credits-20">Credits</h3>
+<h3 id="credits-47">Credits</h3>
 <ul>
 <li>Name : Karthikeyan Singaravelan  Employer : Visa (finder)</li>
 </ul>
 <h2 id="CVE-2023-36543">ReDoS via dags function</h2>
 <p>CVE-2023-36543 <a href="./CVE-2023-36543.cve.json">[CVE json]</a></p>
-<h3 id="affected-23">Affected</h3>
+<h3 id="affected-51">Affected</h3>
 <ul>
 <li>Apache Airflow before 2.6.3</li>
 </ul>
-<h3 id="description-23">Description</h3>
+<h3 id="description-51">Description</h3>
 <p>Apache Airflow, versions before 2.6.3, has a vulnerability where an authenticated user can use crafted input to make the current request hang. It is recommended to upgrade to a version that is not affected</p>
-<h3 id="references-23">References</h3>
+<h3 id="references-51">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/32060">https://github.com/apache/airflow/pull/32060</a></li>
 <li><a href="https://lists.apache.org/thread/tokfs980504ylgk3cv3hjlnrtbv4tng4">https://lists.apache.org/thread/tokfs980504ylgk3cv3hjlnrtbv4tng4</a></li>
 </ul>
-<h3 id="credits-21">Credits</h3>
+<h3 id="credits-48">Credits</h3>
 <ul>
 <li>National Cyber Security VietNam (NCS VietNam) (finder)</li>
 <li>hungtd (finder)</li>
 </ul>
+<h2 id="CVE-2023-37379">Exposure of sensitive connection information, DOS and SSRF on &ldquo;test connection&rdquo; feature</h2>
+<p>CVE-2023-37379 <a href="./CVE-2023-37379.cve.json">[CVE json]</a></p>
+<h3 id="affected-52">Affected</h3>
+<ul>
+<li>Apache Airflow before 2.7.0</li>
+</ul>
+<h3 id="description-52">Description</h3>
+<p>Apache Airflow, in versions prior to 2.7.0, contains a security vulnerability that can be exploited by an authenticated user possessing Connection edit privileges. This vulnerability allows the user to access connection information and exploit the test connection feature by sending many requests, leading to a denial of service (DoS) condition on the server. Furthermore, malicious actors can leverage this vulnerability to establish harmful connections with the server.</p><p>Users of Apache Airflow are strongly advised to upgrade to version 2.7.0 or newer to mitigate the risk associated with this vulnerability. Additionally, administrators are encouraged to review and adjust user permissions to restrict access to sensitive functionalities, reducing the attack surface.</p><br>
+<h3 id="references-52">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/32052">https://github.com/apache/airflow/pull/32052</a></li>
+<li><a href="https://lists.apache.org/thread/g5c9vcn27lr14go48thrjpo6f4vw571r">https://lists.apache.org/thread/g5c9vcn27lr14go48thrjpo6f4vw571r</a></li>
+</ul>
+<h3 id="credits-49">Credits</h3>
+<ul>
+<li>kuteminh11 (finder)</li>
+<li>khoabda of Zalo Security Team (finder)</li>
+<li>Sayooj B Kumar(Team bi0s &amp; CRED Security team) (finder)</li>
+<li>Son Tran from VNPT - VCI (finder)</li>
+<li>KmhlYXJ0 (finder)</li>
+</ul>
 <h2 id="CVE-2023-37415">Improper Input Validation in Hive Provider with proxy_user</h2>
 <p>CVE-2023-37415 <a href="./CVE-2023-37415.cve.json">[CVE json]</a></p>
-<h3 id="affected-24">Affected</h3>
+<h3 id="affected-53">Affected</h3>
 <ul>
 <li>Apache Airflow Apache Hive Provider before 6.1.2</li>
 </ul>
-<h3 id="description-24">Description</h3>
+<h3 id="description-53">Description</h3>
 <p>Improper Input Validation vulnerability in Apache Software Foundation Apache Airflow Apache Hive Provider.<br><br>Patching on top of CVE-2023-35797<br><p>Before 6.1.2<span style="background-color: rgb(255, 255, 255);"> the proxy_user option can also inject semicolon.<br></span><br>This issue affects Apache Airflow Apache Hive Provider: before 6.1.2.<br><br></p><p>It is recommended updating provider version to 6.1.2 in order to avoid this vulnerability.</p><p></p></p>
-<h3 id="references-24">References</h3>
+<h3 id="references-53">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/9wx0jlckbnycjh8nj5qfwxo423zvm41k">https://lists.apache.org/thread/9wx0jlckbnycjh8nj5qfwxo423zvm41k</a></li>
 </ul>
-<h3 id="credits-22">Credits</h3>
+<h3 id="credits-50">Credits</h3>
 <ul>
 <li>Son Tran from VNPT - VCI (reporter)</li>
+</ul>
+<h2 id="CVE-2023-39441">SMTP/IMAP client components allowed MITM due to missing Certificate Validation</h2>
+<p>CVE-2023-39441 <a href="./CVE-2023-39441.cve.json">[CVE json]</a></p>
+<h3 id="affected-54">Affected</h3>
+<ul>
+<li>Apache Airflow SMTP Provider before 1.30</li>
+<li>Apache Airflow IMAP Provider before 3.3.0</li>
+<li>Apache Airflow before 2.7.0</li>
+</ul>
+<h3 id="description-54">Description</h3>
+<p><span style="background-color: rgb(255, 255, 255);">Apache Airflow SMTP Provider </span><span style="background-color: rgb(255, 255, 255);">before 1.3.0</span><span style="background-color: rgb(255, 255, 255);">, Apache Airflow IMAP Provider </span><span style="background-color: rgb(255, 255, 255);">before 3.3.0, and</span><span style="background-color: rgb(255, 255, 255);"> Apache Airflow </span><span style="background-color: rgb(255, 255, 255);">before 2.7.0 are affected by the </span>Validation of OpenSSL Certificate vulnerability.<br><br><span style="background-color: rgb(255, 255, 255);">The default SSL context with SSL library did not check a server&rsquo;s X.509 </span><span style="background-color: rgb(255, 255, 255);">certificate.  Instead, the code accepted any certificate, which could </span><span style="background-color: rgb(255, 255, 255);">result in the disclosure of mail server credentials or mail contents </span><span style="background-color: rgb(255, 255, 255);">when the client connects to an attacker in a MITM position.<br><br></span><span style="background-color: var(--wht);">Users are strongly advised to upgrade to Apache Airflow version 2.7.0 or newer, Apache Airflow IMAP Provider version 3.3.0 or newer, and Apache Airflow SMTP Provider version 1.3.0 or newer to mitigate the risk associated with this vulnerability</span></p>
+<h3 id="references-54">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/33075">https://github.com/apache/airflow/pull/33075</a></li>
+<li><a href="https://github.com/apache/airflow/pull/33108">https://github.com/apache/airflow/pull/33108</a></li>
+<li><a href="https://github.com/apache/airflow/pull/33070">https://github.com/apache/airflow/pull/33070</a></li>
+<li><a href="https://lists.apache.org/thread/xzp4wgjg2b1o6ylk2595df8bstlbo1lb">https://lists.apache.org/thread/xzp4wgjg2b1o6ylk2595df8bstlbo1lb</a></li>
+</ul>
+<h3 id="credits-51">Credits</h3>
+<ul>
+<li>Martin Schobert, Pentagrid AG (finder)</li>
+</ul>
+<h2 id="CVE-2023-39508">Airflow &ldquo;Run task&rdquo; feature allows execution with unnecessary priviledges</h2>
+<p>CVE-2023-39508 <a href="./CVE-2023-39508.cve.json">[CVE json]</a></p>
+<h3 id="affected-55">Affected</h3>
+<ul>
+<li>Apache Airflow before 2.6.0</li>
+</ul>
+<h3 id="description-55">Description</h3>
+<p>Execution with Unnecessary Privileges, : Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Software Foundation Apache Airflow.<p>The &ldquo;Run Task&rdquo; feature enables authenticated user to bypass some of the restrictions put in place. It allows to execute code in the webserver context as well as allows to bypas limitation of access the user has to certain DAGs. The &ldquo;Run Task&rdquo; feature is considered dangerous and it has been removed entirely in Airflow 2.6.0<br></p><p>This issue affects Apache Airflow: before 2.6.0.</p></p>
+<h3 id="references-55">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/29706">https://github.com/apache/airflow/pull/29706</a></li>
+<li><a href="https://lists.apache.org/thread/j2nkjd0zqvtqk85s6ywpx3c35pvzyx15">https://lists.apache.org/thread/j2nkjd0zqvtqk85s6ywpx3c35pvzyx15</a></li>
+</ul>
+<h3 id="credits-52">Credits</h3>
+<ul>
+<li>balis0ng (finder)</li>
+</ul>
+<h2 id="CVE-2023-39553">Apache Airflow Drill Provider Arbitrary File Read Vulnerability</h2>
+<p>CVE-2023-39553 <a href="./CVE-2023-39553.cve.json">[CVE json]</a></p>
+<h3 id="affected-56">Affected</h3>
+<ul>
+<li>Apache Airflow Drill Provider before 2.4.3</li>
+</ul>
+<h3 id="description-56">Description</h3>
+<p>Improper Input Validation vulnerability in Apache Software Foundation Apache Airflow Drill Provider.<br><br><span style="background-color: rgb(255, 255, 255);">Apache Airflow Drill Provider is affected by a vulnerability that allows an attacker to pass in malicious parameters when establishing a connection with DrillHook giving an opportunity to read files on the Airflow server.</span><br><p>This issue affects Apache Airflow Drill Provider: before 2.4.3.<br><span style="background-color: rgb(255, 255, 255);">It is recommended to upgrade to a version that is not affected.</span><br></p></p>
+<h3 id="references-56">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/33074">https://github.com/apache/airflow/pull/33074</a></li>
+<li><a href="https://lists.apache.org/thread/ozpl0opmob49rkcz8svo8wkxyw1395sf">https://lists.apache.org/thread/ozpl0opmob49rkcz8svo8wkxyw1395sf</a></li>
+</ul>
+<h3 id="credits-53">Credits</h3>
+<ul>
+<li>sw0rd1ight of Caiji Sec Team and 4ra1n of Chaitin Tech (finder)</li>
+<li>happyhacking (finder)</li>
+</ul>
+<h2 id="CVE-2023-40195">Apache Airflow Spark Provider Deserialization Vulnerability RCE</h2>
+<p>CVE-2023-40195 <a href="./CVE-2023-40195.cve.json">[CVE json]</a></p>
+<h3 id="affected-57">Affected</h3>
+<ul>
+<li>Apache Airflow Spark Provider before 4.1.3</li>
+</ul>
+<h3 id="description-57">Description</h3>
+<p>Deserialization of Untrusted Data, Inclusion of Functionality from Untrusted Control Sphere vulnerability in Apache Software Foundation Apache Airflow Spark Provider.<br><br><br><span style="background-color: rgb(255, 255, 255);">When the Apache Spark provider is installed on an Airflow deployment, an Airflow user that is authorized to configure Spark hooks can effectively run arbitrary code on the Airflow node by pointing it at a malicious Spark server. Prior to version 4.1.3, this was not called out in the documentation explicitly, so it is possible that administrators provided authorizations to configure Spark hooks without taking this into account. We recommend administrators to review their configurations to make sure the authorization to configure Spark hooks is only provided to fully trusted users.<br><br>To view the warning in the docs please visit <a target="_blank" rel="nofollow" href="https://airflow.apache.org/docs/apache-airflow-providers-apache-spark/4.1.3/connections/spark.html"><a href="https://airflow.apache.org/docs/apache-airflow-providers-apache-spark/4.1.3/connections/spark.html">https://airflow.apache.org/docs/apache-airflow-providers-apache-spark/4.1.3/connections/spark.html</a></a><br><br><br></span></p>
+<h3 id="references-57">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/33233">https://github.com/apache/airflow/pull/33233</a></li>
+<li><a href="https://lists.apache.org/thread/fzy95b1d6zv31j5wrx3znhzcscck2o24">https://lists.apache.org/thread/fzy95b1d6zv31j5wrx3znhzcscck2o24</a></li>
+</ul>
+<h3 id="credits-54">Credits</h3>
+<ul>
+<li>happyhacking-k (finder)</li>
+</ul>
+<h2 id="CVE-2023-40272">Apache Airflow Spark Provider Arbitrary File Read via JDBC</h2>
+<p>CVE-2023-40272 <a href="./CVE-2023-40272.cve.json">[CVE json]</a></p>
+<h3 id="affected-58">Affected</h3>
+<ul>
+<li>Apache Airflow Spark Provider before 4.1.3</li>
+</ul>
+<h3 id="description-58">Description</h3>
+<p>Apache Airflow Spark Provider, versions before 4.1.3, is affected by a vulnerability that allows an attacker to pass in malicious parameters when establishing a connection giving an opportunity to read files on the Airflow server.<br>It is recommended to upgrade to a version that is not affected.</p><p></p>
+<h3 id="references-58">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/t03gktyzyor20rh06okd91jtqmw6k1l7">https://lists.apache.org/thread/t03gktyzyor20rh06okd91jtqmw6k1l7</a></li>
+</ul>
+<h3 id="credits-55">Credits</h3>
+<ul>
+<li>sw0rd1ight (finder)</li>
+</ul>
+<h2 id="CVE-2023-40273">Session fixation in Apache Airflow web interface</h2>
+<p>CVE-2023-40273 <a href="./CVE-2023-40273.cve.json">[CVE json]</a></p>
+<h3 id="affected-59">Affected</h3>
+<ul>
+<li>Apache Airflow before 2.7.0</li>
+</ul>
+<h3 id="description-59">Description</h3>
+<p>The session fixation vulnerability allowed the authenticated user to continue accessing Airflow webserver even after the password of the user has been reset by the admin - up until the expiry of the session of the user. Other than manually cleaning the session database (for <code>database</code>&nbsp;session backend), or changing the secure_key and restarting the webserver, there were no mechanisms to force-logout the user (and all other users with that).</p><p>With this fix implemented, when using the&nbsp;<code>database</code>&nbsp;session backend, the existing sessions of the user are invalidated when the password of the user is reset. When using the <code>securecookie</code>&nbsp;session backend, the sessions are NOT invalidated and still require changing the secure key and restarting the webserver (and logging out all other users), but the user resetting the password is informed about it with a flash message warning displayed in the UI. Documentation is also updated explaining this behaviour.</p>Users of Apache Airflow are advised to upgrade to version 2.7.0 or newer to mitigate the risk associated with this vulnerability.<br>
+<h3 id="references-59">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/33347">https://github.com/apache/airflow/pull/33347</a></li>
+<li><a href="https://lists.apache.org/thread/9rdmv8ln4y4ncbyrlmjrsj903x4l80nj">https://lists.apache.org/thread/9rdmv8ln4y4ncbyrlmjrsj903x4l80nj</a></li>
+<li><a href="https://www.openwall.com/lists/oss-security/2023/08/23/1">https://www.openwall.com/lists/oss-security/2023/08/23/1</a></li>
+</ul>
+<h3 id="credits-56">Credits</h3>
+<ul>
+<li>Yusuf AYDIN (@h1_yusuf) (finder)</li>
+<li>L3yx of Syclover Security Team. (finder)</li>
+<li>Son Tran of VNPT-VCI (finder)</li>
+<li>Thuong Nguyen (@nthuong95) (finder)</li>
+</ul>
+<h2 id="CVE-2023-40611">Apache Airflow Dag Runs Broken Access Control Vulnerability</h2>
+<p>CVE-2023-40611 <a href="./CVE-2023-40611.cve.json">[CVE json]</a></p>
+<h3 id="affected-60">Affected</h3>
+<ul>
+<li>Apache Airflow before 2.7.1</li>
+</ul>
+<h3 id="description-60">Description</h3>
+<p>Apache Airflow, versions before 2.7.1, is affected by a vulnerability that allows authenticated and DAG-view authorized Users to modify some DAG run detail values when submitting notes. This could have them alter details such as configuration parameters, start date, etc.<br><br>Users should upgrade to version 2.7.1 or later which has removed the vulnerability.<br></p>
+<h3 id="references-60">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/33413">https://github.com/apache/airflow/pull/33413</a></li>
+<li><a href="https://lists.apache.org/thread/8y9xk1s3j4qr36yzqn8ogbn9fl7pxrn0">https://lists.apache.org/thread/8y9xk1s3j4qr36yzqn8ogbn9fl7pxrn0</a></li>
+</ul>
+<h3 id="credits-57">Credits</h3>
+<ul>
+<li>happyhacking (finder)</li>
+</ul>
+<h2 id="CVE-2023-40712">Secrets can be unmasked in the &ldquo;Rendered Template&rdquo; </h2>
+<p>CVE-2023-40712 <a href="./CVE-2023-40712.cve.json">[CVE json]</a></p>
+<h3 id="affected-61">Affected</h3>
+<ul>
+<li>Apache Airflow before 2.7.1</li>
+</ul>
+<h3 id="description-61">Description</h3>
+<p>Apache Airflow, versions before 2.7.1, is affected by a vulnerability that allows authenticated users who have access to see the task/dag in the UI, to craft a URL, which could lead to unmasking the secret configuration of the task that otherwise would be masked in the UI.<br><br>Users are strongly advised to upgrade to version 2.7.1 or later which has removed the vulnerability.</p>
+<h3 id="references-61">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/33512">https://github.com/apache/airflow/pull/33512</a></li>
+<li><a href="https://github.com/apache/airflow/pull/33516">https://github.com/apache/airflow/pull/33516</a></li>
+<li><a href="https://lists.apache.org/thread/jw1yv4lt6hpowqbb0x4o3tdp0jhx2bts">https://lists.apache.org/thread/jw1yv4lt6hpowqbb0x4o3tdp0jhx2bts</a></li>
+</ul>
+<h3 id="credits-58">Credits</h3>
+<ul>
+<li>klexadoc (finder)</li>
+</ul>
+<h2 id="CVE-2023-41267">Apache HDFS Provider error message suggested installation of incorrect pip package</h2>
+<p>CVE-2023-41267 <a href="./CVE-2023-41267.cve.json">[CVE json]</a></p>
+<h3 id="affected-62">Affected</h3>
+<ul>
+<li>Apache Airflow HDFS Provider before 4.1.1</li>
+</ul>
+<h3 id="description-62">Description</h3>
+<p><span style="background-color: rgb(255, 255, 255);">In the Apache Airflow HDFS Provider, versions prior to 4.1.1, a documentation info pointed users to an install incorrect pip package. As this package name was unclaimed, in theory, an attacker could claim this package and provide code that would be executed when this package was installed. The Airflow team has since taken ownership of the package (neutralizing the risk), and fixed the doc strings in version 4.1.1</span><br></p>
+<h3 id="references-62">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/33813">https://github.com/apache/airflow/pull/33813</a></li>
+<li><a href="https://lists.apache.org/thread/ggthr5pn42bn6wcr25hxnykjzh4ntw7z">https://lists.apache.org/thread/ggthr5pn42bn6wcr25hxnykjzh4ntw7z</a></li>
+</ul>
+<h3 id="credits-59">Credits</h3>
+<ul>
+<li>AnupamAs01 (finder)</li>
+</ul>
+<h2 id="CVE-2023-42663">Bypass permission verification to view task instances of other dags</h2>
+<p>CVE-2023-42663 <a href="./CVE-2023-42663.cve.json">[CVE json]</a></p>
+<h3 id="affected-63">Affected</h3>
+<ul>
+<li>Apache Airflow before 2.7.2</li>
+</ul>
+<h3 id="description-63">Description</h3>
+<p>Apache Airflow, versions before 2.7.2, has a vulnerability that allows an authorized user who has access to read specific DAGs only, to read information about task instances in other DAGs.<br>Users of Apache Airflow are advised to upgrade to version 2.7.2 or newer to mitigate the risk associated with this vulnerability.<br></p>
+<h3 id="references-63">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/34315">https://github.com/apache/airflow/pull/34315</a></li>
+<li><a href="https://lists.apache.org/thread/xj86cvfkxgd0cyqfmz6mh1bsfc61c6o9">https://lists.apache.org/thread/xj86cvfkxgd0cyqfmz6mh1bsfc61c6o9</a></li>
+</ul>
+<h3 id="credits-60">Credits</h3>
+<ul>
+<li>balis0ng (finder)</li>
+<li>Ephraim Anierobi (remediation developer)</li>
+</ul>
+<h2 id="CVE-2023-42780">Improper access control vulnerability in the &ldquo;List dag warnings&rdquo; feature</h2>
+<p>CVE-2023-42780 <a href="./CVE-2023-42780.cve.json">[CVE json]</a></p>
+<h3 id="affected-64">Affected</h3>
+<ul>
+<li>Apache Airflow before 2.7.2</li>
+</ul>
+<h3 id="description-64">Description</h3>
+<p>Apache Airflow, versions prior to 2.7.2, contains a security vulnerability that allows authenticated users of Airflow to list warnings for all DAGs, even if the user had no permission to see those DAGs. It would reveal the dag_ids and the stack-traces of import errors for those DAGs with import errors.<br>Users of Apache Airflow are advised to upgrade to version 2.7.2 or newer to mitigate the risk associated with this vulnerability.<br><br></p>
+<h3 id="references-64">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/34355">https://github.com/apache/airflow/pull/34355</a></li>
+<li><a href="https://lists.apache.org/thread/h5tvsvov8j55wojt5sojdprs05oby34d">https://lists.apache.org/thread/h5tvsvov8j55wojt5sojdprs05oby34d</a></li>
+</ul>
+<h3 id="credits-61">Credits</h3>
+<ul>
+<li>balis0ng (finder)</li>
+<li>Hussein Awala (remediation developer)</li>
+</ul>
+<h2 id="CVE-2023-42792">Improper access control to DAG resources</h2>
+<p>CVE-2023-42792 <a href="./CVE-2023-42792.cve.json">[CVE json]</a></p>
+<h3 id="affected-65">Affected</h3>
+<ul>
+<li>Apache Airflow before 2.7.2</li>
+</ul>
+<h3 id="description-65">Description</h3>
+<p>Apache Airflow, in versions prior to 2.7.2, contains a security vulnerability that allows an authenticated user with limited access to some DAGs, to craft a request that could give the user write access to various DAG resources for DAGs that the user had no access to, thus, enabling the user to clear DAGs they shouldn&rsquo;t.<br><br>Users of Apache Airflow are strongly advised to upgrade to version 2.7.2 or newer to mitigate the risk associated with this vulnerability.<br></p>
+<h3 id="references-65">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/34366">https://github.com/apache/airflow/pull/34366</a></li>
+<li><a href="https://lists.apache.org/thread/1spbo9nkn49fc2hnxqm9tf6mgqwp9tjq">https://lists.apache.org/thread/1spbo9nkn49fc2hnxqm9tf6mgqwp9tjq</a></li>
+</ul>
+<h3 id="credits-62">Credits</h3>
+<ul>
+<li>balis0ng (finder)</li>
+<li>Jarek Potiuk (remediation developer)</li>
+</ul>
+<h2 id="CVE-2023-45348">Configuration information leakage vulnerability</h2>
+<p>CVE-2023-45348 <a href="./CVE-2023-45348.cve.json">[CVE json]</a></p>
+<h3 id="affected-66">Affected</h3>
+<ul>
+<li>Apache Airflow from 2.7.0 before 2.7.2</li>
+</ul>
+<h3 id="description-66">Description</h3>
+<p>Apache Airflow, versions 2.7.0 and 2.7.1, is affected by a vulnerability that allows an authenticated user to retrieve sensitive configuration information when the &ldquo;expose_config&rdquo; option is set to &ldquo;non-sensitive-only&rdquo;. The <code>expose_config</code> option is False by default.<br>It is recommended to upgrade to a version that is not affected.</p>
+<h3 id="references-66">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/34712">https://github.com/apache/airflow/pull/34712</a></li>
+<li><a href="https://lists.apache.org/thread/sy4l5d6tn58hr8r61r2fkt1f0qock9z9">https://lists.apache.org/thread/sy4l5d6tn58hr8r61r2fkt1f0qock9z9</a></li>
+</ul>
+<h3 id="credits-63">Credits</h3>
+<ul>
+<li>L3yx of Syclover Security Team (finder)</li>
+<li>Hussein Awala (remediation developer)</li>
 </ul>
 
   

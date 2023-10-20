@@ -107,51 +107,70 @@
 <p>Do you want disclose a potential security issue for Apache Portable Runtime (APR)? You can read more about the projects&rsquo; security policy on their <a href="https://apr.apache.org/security_report.html">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://apr.apache.org/security_report.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2021-35940">Regression of CVE-2017-12613</h2>
+<p>CVE-2021-35940 <a href="./CVE-2021-35940.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Portable Runtime (APR) at Apache Portable Runtime 1.7.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>An out-of-bounds array read in the apr_time_exp*() functions was fixed in the Apache Portable Runtime 1.6.3 release (CVE-2017-12613).  The fix for this issue was not carried forward to the APR 1.7.x branch, and hence version 1.7.0 regressed compared to 1.6.3 and is vulnerable to the same issue.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="http://svn.apache.org/viewvc?view=revision&amp;revision=1891198%20">http://svn.apache.org/viewvc?view=revision&amp;revision=1891198%20</a></li>
+<li><a href="http://mail-archives.apache.org/mod_mbox/www-announce/201710.mbox/%3CCACsi251B8UaLvM-rrH9fv57-zWi0zhyF3275_jPg1a9VEVVoxw%40mail.gmail.com%3E">http://mail-archives.apache.org/mod_mbox/www-announce/201710.mbox/%3CCACsi251B8UaLvM-rrH9fv57-zWi0zhyF3275_jPg1a9VEVVoxw%40mail.gmail.com%3E</a></li>
+<li><a href="https://downloads.apache.org/apr/patches/apr-1.7.0-CVE-2021-35940.patch">https://downloads.apache.org/apr/patches/apr-1.7.0-CVE-2021-35940.patch</a></li>
+<li><a href="https://lists.apache.org/thread.html/ra2868b53339a6af65577146ad87016368c138388b09bff9d2860f50e%40%3Cdev.apr.apache.org%3E">https://lists.apache.org/thread.html/ra2868b53339a6af65577146ad87016368c138388b09bff9d2860f50e%40%3Cdev.apr.apache.org%3E</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>The Apache Portable Runtime project would like to thank Iveta Cesalova (Red Hat) for reporting this issue.</li>
+</ul>
 <h2 id="CVE-2022-25147">out-of-bounds writes in the apr_base64 family of functions</h2>
 <p>CVE-2022-25147 <a href="./CVE-2022-25147.cve.json">[CVE json]</a></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache Portable Runtime Utility (APR-util) through 1.6.1</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-1">Description</h3>
 <div>Integer Overflow or Wraparound vulnerability in apr_base64 functions of Apache Portable Runtime Utility (APR-util) allows an attacker to write beyond bounds of a buffer.</div><div><br></div><div>This issue affects Apache Portable Runtime Utility (APR-util) 1.6.1 and prior versions.</div>
-<h3 id="references">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/np5gjqlohc4f62lr09vrn61vl44cylh8">https://lists.apache.org/thread/np5gjqlohc4f62lr09vrn61vl44cylh8</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>Ronald Crane (Zippenhop LLC) (reporter)</li>
 </ul>
 <h2 id="CVE-2022-24963">out-of-bound writes in the apr_encode family of functions </h2>
 <p>CVE-2022-24963 <a href="./CVE-2022-24963.cve.json">[CVE json]</a></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache Portable Runtime (APR) at 1.7.0</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-2">Description</h3>
 <p>Integer Overflow or Wraparound vulnerability in apr_encode functions of Apache Portable Runtime (APR) allows an attacker to write beyond bounds of a buffer.<br>This issue affects Apache Portable Runtime (APR) version 1.7.0.</p>
-<h3 id="references-1">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/fw9p6sdncwsjkstwc066vz57xqzfksq9">https://lists.apache.org/thread/fw9p6sdncwsjkstwc066vz57xqzfksq9</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-2">Credits</h3>
 <ul>
 <li>Ronald Crane (Zippenhop LLC) (finder)</li>
 </ul>
 <h2 id="CVE-2022-28331">Windows out-of-bounds write in apr_socket_sendv function</h2>
 <p>CVE-2022-28331 <a href="./CVE-2022-28331.cve.json">[CVE json]</a></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache Portable Runtime (APR) through 1.7.0</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>On Windows, Apache Portable Runtime 1.7.0 and earlier may write beyond the end of a stack based buffer in apr_socket_sendv(). This is a result of integer overflow.</p>
-<h3 id="references-2">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/5pfdfn7h0vsdo5xzjn97vghp0x42jj2r">https://lists.apache.org/thread/5pfdfn7h0vsdo5xzjn97vghp0x42jj2r</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-3">Credits</h3>
 <ul>
 <li>Ronald Crane (Zippenhop LLC) (finder)</li>
 </ul>

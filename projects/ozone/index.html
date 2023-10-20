@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.111.3">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Apache Ozone security advisories </title>
+
+  
+  <meta name="description" content="Security information for Apache Ozone"> 
+  
+  
+  
+  
+  
+  <meta name="robots" content="noindex">
+  
+
+  
+
+  <meta name="author" content="">
+
+
+  <meta property="og:title" content="Apache Ozone security advisories" />
+<meta property="og:description" content="Security information for Apache Ozone" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://security.apache.org/projects/ozone/" />
+
+  
+
+
+
+
+  
+  
+  
+  
+   <link href="/projects/ozone/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
+
+  <link rel="canonical" href="https://security.apache.org/projects/ozone/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Apache Security Team</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Apache Security Team</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog" >Blog</a></li>
+    
+    <li><a href="https://www.apache.org/licenses/" >License</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
+    
+    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
+    
+    <li><a href="https://www.apache.org" >Apache</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+
+<div id="hero" class="wrap">
+  <h1>Apache Ozone security advisories</h1>
+    <p>Security information for Apache Ozone</p>
+</div>
+<div id="project-box">
+<div id="project">
+
+ <h1 id="reporting">Reporting</h1>
+<p>Do you want disclose a potential security issue for Apache Ozone? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<h1 id="advisories">Advisories</h1>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2020-17517">Ozone S3 Gateway allows bucket and key access to non authenticated users </h2>
+<p>CVE-2020-17517 <a href="./CVE-2020-17517.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Ozone from Apache Ozone through 1.0.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>The S3 buckets and keys in a secure Apache Ozone Cluster must be inaccessible to anonymous access by default. The current security vulnerability allows access to keys and buckets through a curl command or an unauthenticated HTTP request. This enables unauthorized access to buckets and keys thereby exposing data to anonymous clients or users.  This affected Apache Ozone prior to the 1.1.0 release.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/rdd59a176b32c63f7fc0865428bf9bbc69297fa17f6130c80c25869aa%40%3Cdev.ozone.apache.org%3E">https://lists.apache.org/thread.html/rdd59a176b32c63f7fc0865428bf9bbc69297fa17f6130c80c25869aa%40%3Cdev.ozone.apache.org%3E</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Apache Ozone would like to thank Kota Uenishi for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2021-36372">Original block tokens are persisted and can be retrieved</h2>
+<p>CVE-2021-36372 <a href="./CVE-2021-36372.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Ozone from 1.1 through 1.1</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>In Apache Ozone versions prior to 1.2.0, Initially generated block tokens are persisted to the metadata database and can be retrieved with authenticated users with permission to the key. Authenticated users may use them even after access is revoked.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://mail-archives.apache.org/mod_mbox/ozone-dev/202111.mbox/%3C5029c1ac-4685-8492-e3cb-ab48c5c370cf%40apache.org%3E">https://mail-archives.apache.org/mod_mbox/ozone-dev/202111.mbox/%3C5029c1ac-4685-8492-e3cb-ab48c5c370cf%40apache.org%3E</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Apache Ozone would like to thank Marton Elek for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2021-39231">Missing authentication/authorization on internal RPC endpoints</h2>
+<p>CVE-2021-39231 <a href="./CVE-2021-39231.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Ozone from 1.0 through 1.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>In Apache Ozone versions prior to 1.2.0, Various internal server-to-server RPC endpoints are available for connections, making it possible for an attacker to download raw data from Datanode and Ozone manager and modify Ratis replication configuration.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://mail-archives.apache.org/mod_mbox/ozone-dev/202111.mbox/%3C110cd117-75ed-364b-cd38-3effd20f2183%40apache.org%3E">https://mail-archives.apache.org/mod_mbox/ozone-dev/202111.mbox/%3C110cd117-75ed-364b-cd38-3effd20f2183%40apache.org%3E</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Apache Ozone would like to thank Marton Elek for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2021-39232">Missing admin check for SCM related admin commands</h2>
+<p>CVE-2021-39232 <a href="./CVE-2021-39232.cve.json">[CVE json]</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Ozone from 1.0 through 1.0</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>In Apache Ozone versions prior to 1.2.0, certain admin related SCM commands can be executed by any authenticated users, not just by admins.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://mail-archives.apache.org/mod_mbox/ozone-dev/202111.mbox/%3C3c30a7f2-13a4-345e-6c8a-c23a2b937041%40apache.org%3E">https://mail-archives.apache.org/mod_mbox/ozone-dev/202111.mbox/%3C3c30a7f2-13a4-345e-6c8a-c23a2b937041%40apache.org%3E</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>
+<pre><code>Apache Ozone would like to thank Wei-Chiu Chuang for reporting this issue.
+</code></pre>
+</li>
+</ul>
+<h2 id="CVE-2021-39233">Container-related datanode operations can be called without authorization</h2>
+<p>CVE-2021-39233 <a href="./CVE-2021-39233.cve.json">[CVE json]</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Ozone from 1.1 through 1.1</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>In Apache Ozone versions prior to 1.2.0, Container related Datanode requests of Ozone Datanode were not properly authorized and can be called by any client.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://mail-archives.apache.org/mod_mbox/ozone-dev/202111.mbox/%3C394a9a73-44dd-b5db-84d8-607c3226eb00%40apache.org%3E">https://mail-archives.apache.org/mod_mbox/ozone-dev/202111.mbox/%3C394a9a73-44dd-b5db-84d8-607c3226eb00%40apache.org%3E</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Apache Ozone would like to thank Marton Elek for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2021-39234">Raw block data can be read bypassing ACL/authorization</h2>
+<p>CVE-2021-39234 <a href="./CVE-2021-39234.cve.json">[CVE json]</a></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Ozone from 1.1 through 1.1</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>In Apache Ozone versions prior to 1.2.0, Authenticated users knowing the ID of an existing block can craft specific request allowing access those blocks, bypassing other security checks like ACL.</p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://mail-archives.apache.org/mod_mbox/ozone-dev/202111.mbox/%3C97d65498-7f8c-366f-1bea-5a74b6378f0d%40apache.org%3E">https://mail-archives.apache.org/mod_mbox/ozone-dev/202111.mbox/%3C97d65498-7f8c-366f-1bea-5a74b6378f0d%40apache.org%3E</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Apache Ozone would like to thank Marton Elek for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2021-39235">Access mode of block tokens are not enforced</h2>
+<p>CVE-2021-39235 <a href="./CVE-2021-39235.cve.json">[CVE json]</a></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Ozone from 1.0 through 1.0</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>In Apache Ozone before 1.2.0, Ozone Datanode doesn&rsquo;t check the access mode parameter of the block token. Authenticated users with valid READ block token can do any write operation on the same block.</p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://mail-archives.apache.org/mod_mbox/ozone-dev/202111.mbox/%3C93f88246-4320-7423-0dac-ec7a07f47455%40apache.org%3E">https://mail-archives.apache.org/mod_mbox/ozone-dev/202111.mbox/%3C93f88246-4320-7423-0dac-ec7a07f47455%40apache.org%3E</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>Apache Ozone would like to thank Marton Elek for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2021-39236">Owners of the S3 tokens are not validated</h2>
+<p>CVE-2021-39236 <a href="./CVE-2021-39236.cve.json">[CVE json]</a></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache Ozone from 1.0 through 1.0</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>In Apache Ozone before 1.2.0, Authenticated users with valid Ozone S3 credentials can create specific OM requests, impersonating any other user.</p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://mail-archives.apache.org/mod_mbox/ozone-dev/202111.mbox/%3C0fd74baa-88a0-39a2-8f3a-b982acb25d5a%40apache.org%3E">https://mail-archives.apache.org/mod_mbox/ozone-dev/202111.mbox/%3C0fd74baa-88a0-39a2-8f3a-b982acb25d5a%40apache.org%3E</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>Apache Ozone would like to thank Marton Elek for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2021-41532">Unauthenticated access to Ozone Recon HTTP endpoints</h2>
+<p>CVE-2021-41532 <a href="./CVE-2021-41532.cve.json">[CVE json]</a></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Ozone from Everglades (1.1.0) through 1.1.0</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>In Apache Ozone before 1.2.0, Recon HTTP endpoints provide access to OM, SCM and Datanode metadata. Due to a bug, any unauthenticated user can access the data from these endpoints.</p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://mail-archives.apache.org/mod_mbox/ozone-dev/202111.mbox/%3Ce0bc6598-9669-b897-fc28-de8a896e36aa%40apache.org%3E">https://mail-archives.apache.org/mod_mbox/ozone-dev/202111.mbox/%3Ce0bc6598-9669-b897-fc28-de8a896e36aa%40apache.org%3E</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>Apache Ozone would like to thank Ethan Rose for reporting this issue.</li>
+</ul>
+
+  
+</div>
+</div>
+</main>
+  <footer> 
+    <footer id="footer">
+    <p>&copy; 2023 The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+  </footer>
+ 
+</footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/main.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

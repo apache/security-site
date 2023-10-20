@@ -107,9 +107,165 @@
 <p>Do you want disclose a potential security issue for Apache Commons? You can read more about the projects&rsquo; security policy on their <a href="https://commons.apache.org/security.html">security page</a>, and email your report to the <a href="mailto:security@commons.apache.org">Apache Commons Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://commons.apache.org/security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2021-29425">Possible limited path traversal vulnerabily in Apache Commons IO </h2>
+<p>CVE-2021-29425 <a href="./CVE-2021-29425.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Commons IO at Apache Commons IO 2.2</li>
+<li>Apache Commons IO at Apache Commons IO 2.3</li>
+<li>Apache Commons IO at Apache Commons IO 2.4</li>
+<li>Apache Commons IO at Apache Commons IO 2.5</li>
+<li>Apache Commons IO at Apache Commons IO 2.6</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>In Apache Commons IO before 2.7, When invoking the method FileNameUtils.normalize with an improper input string, like &ldquo;//../foo&rdquo;, or &ldquo;\..\foo&rdquo;, the result would be the same value, thus possibly providing access to files in the parent directory, but not further above (thus &ldquo;limited&rdquo; path traversal), if the calling code would use the result to construct a path value.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/IO-556">https://issues.apache.org/jira/browse/IO-556</a></li>
+<li><a href="https://lists.apache.org/thread.html/rc359823b5500e9a9a2572678ddb8e01d3505a7ffcadfa8d13b8780ab%40%3Cuser.commons.apache.org%3E">https://lists.apache.org/thread.html/rc359823b5500e9a9a2572678ddb8e01d3505a7ffcadfa8d13b8780ab%40%3Cuser.commons.apache.org%3E</a></li>
+</ul>
+<h2 id="CVE-2021-35515">Apache Commons Compress 1.6 to 1.20 denial of service vulnerability</h2>
+<p>CVE-2021-35515 <a href="./CVE-2021-35515.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Commons Compress from 1.6 before Apache Commons Compress*</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>When reading a specially crafted 7Z archive, the construction of the list of codecs that decompress an entry can result in an infinite loop.  This could be used to mount a denial of service attack against services that use Compress&rsquo; sevenz package.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://commons.apache.org/proper/commons-compress/security-reports.html">https://commons.apache.org/proper/commons-compress/security-reports.html</a></li>
+<li><a href="https://lists.apache.org/thread.html/r19ebfd71770ec0617a9ea180e321ef927b3fefb4c81ec5d1902d20ab%40%3Cuser.commons.apache.org%3E">https://lists.apache.org/thread.html/r19ebfd71770ec0617a9ea180e321ef927b3fefb4c81ec5d1902d20ab%40%3Cuser.commons.apache.org%3E</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>This issue was discovered by OSS Fuzz.</li>
+</ul>
+<h2 id="CVE-2021-35516">Apache Commons Compress 1.6 to 1.20 denial of service vulnerability</h2>
+<p>CVE-2021-35516 <a href="./CVE-2021-35516.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Commons Compress from 1.6 before Apache Commons Compress*</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>When reading a specially crafted 7Z archive, Compress can be made to allocate large amounts of memory that finally leads to an out of memory error even for very small inputs. This could be used to mount a denial of service attack against services that use Compress&rsquo; sevenz package.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://commons.apache.org/proper/commons-compress/security-reports.html">https://commons.apache.org/proper/commons-compress/security-reports.html</a></li>
+<li><a href="https://lists.apache.org/thread.html/rf68442d67eb166f4b6cf0bbbe6c7f99098c12954f37332073c9822ca%40%3Cuser.commons.apache.org%3E">https://lists.apache.org/thread.html/rf68442d67eb166f4b6cf0bbbe6c7f99098c12954f37332073c9822ca%40%3Cuser.commons.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>This issue was first reported to the project&rsquo;s issue tracker as COMPRESS-542 by Robin Schimpf. Later OSS Fuzz detected ways to exploit this issue which managed to escape the initial attempt to fix it.</li>
+</ul>
+<h2 id="CVE-2021-35517">Apache Commons Compress 1.1 to 1.20 denial of service vulnerability</h2>
+<p>CVE-2021-35517 <a href="./CVE-2021-35517.cve.json">[CVE json]</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Commons Compress from 1.1 before Apache Commons Compress*</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>When reading a specially crafted TAR archive, Compress can be made to allocate large amounts of memory that finally leads to an out of memory error even for very small inputs. This could be used to mount a denial of service attack against services that use Compress&rsquo; tar package.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://commons.apache.org/proper/commons-compress/security-reports.html">https://commons.apache.org/proper/commons-compress/security-reports.html</a></li>
+<li><a href="https://lists.apache.org/thread.html/r605d906b710b95f1bbe0036a53ac6968f667f2c249b6fbabada9a940%40%3Cuser.commons.apache.org%3E">https://lists.apache.org/thread.html/r605d906b710b95f1bbe0036a53ac6968f667f2c249b6fbabada9a940%40%3Cuser.commons.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>This issue was discovered by OSS Fuzz.</li>
+</ul>
+<h2 id="CVE-2021-36090">Apache Commons Compress 1.0 to 1.20 denial of service vulnerability</h2>
+<p>CVE-2021-36090 <a href="./CVE-2021-36090.cve.json">[CVE json]</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Commons Compress from Apache Commons Compress through 1.20</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>When reading a specially crafted ZIP archive, Compress can be made to allocate large amounts of memory that finally leads to an out of memory error even for very small inputs. This could be used to mount a denial of service attack against services that use Compress&rsquo; zip package.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://commons.apache.org/proper/commons-compress/security-reports.html">https://commons.apache.org/proper/commons-compress/security-reports.html</a></li>
+<li><a href="https://lists.apache.org/thread.html/rc4134026d7d7b053d4f9f2205531122732405012c8804fd850a9b26f%40%3Cuser.commons.apache.org%3E">https://lists.apache.org/thread.html/rc4134026d7d7b053d4f9f2205531122732405012c8804fd850a9b26f%40%3Cuser.commons.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>This issue was discovered by OSS Fuzz.</li>
+</ul>
+<h2 id="CVE-2021-37533">Apache Commons Net&rsquo;s FTP client trusts the host from PASV response by default</h2>
+<p>CVE-2021-37533 <a href="./CVE-2021-37533.cve.json">[CVE json]</a></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Commons Net from Apache Commons Net before 3.9.0</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Prior to Apache Commons Net 3.9.0, Net&rsquo;s FTP client trusts the host from PASV response by default. A malicious server can redirect the Commons Net code to use a different host, but the user has to connect to the malicious server in the first place. This may lead to leakage of information about services running on the private network of the client.
+The default in version 3.9.0 is now false to ignore such hosts, as cURL does. See <a href="https://issues.apache.org/jira/browse/NET-711">https://issues.apache.org/jira/browse/NET-711</a>.</p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/o6yn9r9x6s94v97264hmgol1sf48mvx7">https://lists.apache.org/thread/o6yn9r9x6s94v97264hmgol1sf48mvx7</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Apache Commons would like to thank ZeddYu Lu for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2022-33980">Apache Commons Configuration insecure interpolation defaults</h2>
+<p>CVE-2022-33980 <a href="./CVE-2022-33980.cve.json">[CVE json]</a></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Commons Configuration from Apache Commons Configuration before 2.8.0</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>Apache Commons Configuration performs variable interpolation, allowing properties to be dynamically evaluated and expanded. The standard format for interpolation is &ldquo;${prefix:name}&rdquo;, where &ldquo;prefix&rdquo; is used to locate an instance of org.apache.commons.configuration2.interpol.Lookup that performs the interpolation. Starting with version 2.4 and continuing through 2.7, the set of default Lookup instances included interpolators that could result in arbitrary code execution or contact with remote servers. These lookups are:</p>
+<ul>
+<li>&ldquo;script&rdquo; - execute expressions using the JVM script execution engine (javax.script)</li>
+<li>&ldquo;dns&rdquo; - resolve dns records</li>
+<li>&ldquo;url&rdquo; - load values from urls, including from remote servers</li>
+</ul>
+<p>Applications using the interpolation defaults in the affected versions may be vulnerable to remote code execution or unintentional contact with remote servers if untrusted configuration values are used.</p>
+<p>Users are recommended to upgrade to Apache Commons Configuration 2.8.0, which disables the problematic interpolators by default.</p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/tdf5n7j80lfxdhs2764vn0xmpfodm87s">https://lists.apache.org/thread/tdf5n7j80lfxdhs2764vn0xmpfodm87s</a></li>
+</ul>
+<h2 id="CVE-2022-42889">Apache Commons Text prior to 1.10.0 allows RCE when applied to untrusted input due to insecure interpolation defaults</h2>
+<p>CVE-2022-42889 <a href="./CVE-2022-42889.cve.json">[CVE json]</a></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache Commons Text from 1.5 before Apache Commons Text*</li>
+<li>Apache Commons Text from unspecified through 1.9</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>Apache Commons Text performs variable interpolation, allowing properties to be dynamically evaluated and expanded. The standard format for interpolation is &ldquo;${prefix:name}&rdquo;, where &ldquo;prefix&rdquo; is used to locate an instance of org.apache.commons.text.lookup.StringLookup that performs the interpolation. Starting with version 1.5 and continuing through 1.9, the set of default Lookup instances included interpolators that could result in arbitrary code execution or contact with remote servers. These lookups are:</p>
+<ul>
+<li>&ldquo;script&rdquo; - execute expressions using the JVM script execution engine (javax.script)</li>
+<li>&ldquo;dns&rdquo; - resolve dns records</li>
+<li>&ldquo;url&rdquo; - load values from urls, including from remote servers</li>
+</ul>
+<p>Applications using the interpolation defaults in the affected versions may be vulnerable to remote code execution or unintentional contact with remote servers if untrusted configuration values are used. Users are recommended to upgrade to Apache Commons Text 1.10.0, which disables the problematic interpolators by default.</p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/n2bd4vdsgkqh2tm14l1wyc3jyol7s1om">https://lists.apache.org/thread/n2bd4vdsgkqh2tm14l1wyc3jyol7s1om</a></li>
+</ul>
+<h2 id="CVE-2022-42920">Apache Commons BCEL prior to 6.6.0 allows producing arbitrary bytecode via out-of-bounds writing</h2>
+<p>CVE-2022-42920 <a href="./CVE-2022-42920.cve.json">[CVE json]</a></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Commons BCEL from Apache Commons BCEL before 6.6.0</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>Apache Commons BCEL has a number of APIs that would normally only allow changing specific class characteristics. However, due to an out-of-bounds writing issue, these APIs can be used to produce arbitrary bytecode. This could be abused in applications that pass attacker-controllable data to those APIs, giving the attacker more control over the resulting bytecode than otherwise expected. Update to Apache Commons BCEL 6.6.0.</p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/lfxk7q8qmnh5bt9jm6nmjlv5hsxjhrz4">https://lists.apache.org/thread/lfxk7q8qmnh5bt9jm6nmjlv5hsxjhrz4</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Reported by Felix Wilhelm (Google); GitHub pull request to Apache Commons BCEL #147 by Richard Atkins (<a href="https://github.com/rjatkins);">https://github.com/rjatkins);</a> PR derived from OpenJDK (<a href="https://github.com/openjdk/jdk11u/">https://github.com/openjdk/jdk11u/</a>) commit 13bf52c8d876528a43be7cb77a1f452d29a21492 by Aleksei Voitylov and RealCLanger (Christoph Langer <a href="https://github.com/RealCLanger">https://github.com/RealCLanger</a>)</li>
+</ul>
 <h2 id="CVE-2023-24998">FileUpload DoS with excessive parts</h2>
 <p>CVE-2023-24998 <a href="./CVE-2023-24998.cve.json">[CVE json]</a></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-9">Affected</h3>
 <ul>
 <li>Apache Commons FileUpload before 1.5</li>
 <li>Apache Tomcat at 11.0.0-M1</li>
@@ -117,17 +273,33 @@
 <li>Apache Tomcat from 9.0.0-M1 through 9.0.70</li>
 <li>Apache Tomcat from 8.5.0 through 8.5.84</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-9">Description</h3>
 <div>Apache Commons FileUpload before 1.5 does not limit the number of request parts to be processed resulting in the possibility of an attacker triggering a DoS with a malicious upload or series of uploads.</div><div><br></div><div>Note that, like all of the file upload limits, the
           new configuration option (FileUploadBase#setFileCountMax) is not
           enabled by default and must be explicitly configured.<br></div>
-<h3 id="references">References</h3>
+<h3 id="references-9">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/4xl4l09mhwg4vgsk7dxqogcjrobrrdoy">https://lists.apache.org/thread/4xl4l09mhwg4vgsk7dxqogcjrobrrdoy</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-6">Credits</h3>
 <ul>
 <li>Jakob Ackermann (finder)</li>
+</ul>
+<h2 id="CVE-2023-42503">Denial of service via CPU consumption for malformed TAR file</h2>
+<p>CVE-2023-42503 <a href="./CVE-2023-42503.cve.json">[CVE json]</a></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache Commons Compress from 1.22 before 1.24.0</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<p>Improper Input Validation, Uncontrolled Resource Consumption vulnerability in Apache Commons Compress in TAR parsing.<p>This issue affects Apache Commons Compress: from 1.22 before 1.24.0.</p><p>Users are recommended to upgrade to version 1.24.0, which fixes the issue.</p><span style="background-color: rgb(255, 255, 255);">A third party can create a malformed TAR file by manipulating file modification times headers, which when parsed with Apache Commons Compress, will cause a denial of service issue via CPU consumption.</span><br><br><span style="background-color: rgb(255, 255, 255);">In version 1.22 of Apache Commons Compress, support was added for file modification times with higher precision (issue # COMPRESS-612 [1]). The format for the PAX extended headers carrying this data consists of two numbers separated by a period [2], indicating seconds and subsecond precision (for example “1647221103.5998539”). The impacted fields are “atime”, “ctime”, “mtime” and “LIBARCHIVE.creationtime”. No input validation is performed prior to the parsing of header values.</span><br><br><span style="background-color: rgb(255, 255, 255);">Parsing of these numbers uses the BigDecimal [3] class from the JDK which has a publicly known algorithmic complexity issue when doing operations on large numbers, causing denial of service (see issue # JDK-6560193 [4]). A third party can manipulate file time headers in a TAR file by placing a number with a very long fraction (300,000 digits) or a number with exponent notation (such as “9e9999999”) within a file modification time header, and the parsing of files with these headers will take hours instead of seconds, leading to a denial of service via exhaustion of CPU resources. This issue is similar to CVE-2012-2098 [5].</span><br><br><span style="background-color: rgb(255, 255, 255);">[1]: </span><a target="_blank" rel="nofollow" href="https://issues.apache.org/jira/browse/COMPRESS-612"><a href="https://issues.apache.org/jira/browse/COMPRESS-612">https://issues.apache.org/jira/browse/COMPRESS-612</a></a><br><span style="background-color: rgb(255, 255, 255);">[2]: </span><a target="_blank" rel="nofollow" href="https://pubs.opengroup.org/onlinepubs/9699919799/utilities/pax.html#tag_20_92_13_05"><a href="https://pubs.opengroup.org/onlinepubs/9699919799/utilities/pax.html#tag_20_92_13_05">https://pubs.opengroup.org/onlinepubs/9699919799/utilities/pax.html#tag_20_92_13_05</a></a><br><span style="background-color: rgb(255, 255, 255);">[3]: </span><a target="_blank" rel="nofollow" href="https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html"><a href="https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html">https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html</a></a><br><span style="background-color: rgb(255, 255, 255);">[4]: </span><a target="_blank" rel="nofollow" href="https://bugs.openjdk.org/browse/JDK-6560193"><a href="https://bugs.openjdk.org/browse/JDK-6560193">https://bugs.openjdk.org/browse/JDK-6560193</a></a><br><span style="background-color: rgb(255, 255, 255);">[5]: </span><a target="_blank" rel="nofollow" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2098"><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2098">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2098</a></a><br><br><span style="background-color: rgb(255, 255, 255);">Only applications using CompressorStreamFactory class (with auto-detection of file types), TarArchiveInputStream and TarFile classes to parse TAR files are impacted. Since this code was introduced in v1.22, only that version and later versions are impacted.</span><br><br></p>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/5xwcyr600mn074vgxq92tjssrchmc93c">https://lists.apache.org/thread/5xwcyr600mn074vgxq92tjssrchmc93c</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>Yakov Shafranovich, Amazon Web Services (reporter)</li>
 </ul>
 
   

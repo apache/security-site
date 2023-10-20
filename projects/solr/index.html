@@ -104,10 +104,80 @@
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache Solr? You can read more about the projects&rsquo; security policy on their <a href="https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity">security page</a>, and email your report to the  <a href="mailto:security@solr.apache.org">Apache Solr Security Team</a>.</p>
+<p>Do you want disclose a potential security issue for Apache Solr? You can read more about the projects&rsquo; security policy on their <a href="https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity">security page</a>, and email your report to the <a href="mailto:security@solr.apache.org">Apache Solr Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
-<p>This page is experimental: it provides consistent access to the advisories for Apache Solr since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the <a href="https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity">project security page</a>.</p>
-<p>If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2021-27905">SSRF vulnerability with the Replication handler</h2>
+<p>CVE-2021-27905 <a href="./CVE-2021-27905.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Solr from Apache Solr before 8.8.2</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>The ReplicationHandler (normally registered at &ldquo;/replication&rdquo; under a Solr core) in Apache Solr has a &ldquo;masterUrl&rdquo; (also &ldquo;leaderUrl&rdquo; alias) parameter that is used to designate another ReplicationHandler on another Solr core to replicate index data into the local core.  To prevent a SSRF vulnerability, Solr ought to check these parameters against a similar configuration it uses for the &ldquo;shards&rdquo; parameter.  Prior to this bug getting fixed, it did not.
+This problem affects essentially all Solr versions prior to it getting fixed in 8.8.2.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r0ddc3a82bd7523b1453cb7a5e09eb5559517145425074a42eb326b10%40%3Cannounce.apache.org%3E">https://lists.apache.org/thread.html/r0ddc3a82bd7523b1453cb7a5e09eb5559517145425074a42eb326b10%40%3Cannounce.apache.org%3E</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Reported by Caolinhong(Skay) from QI-ANXIN Cert (QI-ANXIN Technology Group Inc.)</li>
+</ul>
+<h2 id="CVE-2021-29262">Misapplied Zookeeper ACLs can result in leakage of configured authentication and authorization settings</h2>
+<p>CVE-2021-29262 <a href="./CVE-2021-29262.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Solr from Apache Solr before 8.8.2</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>When starting Apache Solr versions prior to 8.8.2, configured with the SaslZkACLProvider or VMParamsAllAndReadonlyDigestZkACLProvider and no existing security.json znode, if the optional read-only user is configured then Solr would not treat that node as a sensitive path and would allow it to be readable.
+Additionally, with any ZkACLProvider, if the security.json is already present, Solr will not automatically update the ACLs.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r536da4c4e4e406f7843461cc754a3d0a3fe575aa576e2b71a9cd57d0%40%3Cannounce.apache.org%3E">https://lists.apache.org/thread.html/r536da4c4e4e406f7843461cc754a3d0a3fe575aa576e2b71a9cd57d0%40%3Cannounce.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Timothy Potter and Mike Drob, Apple Cloud Services</li>
+</ul>
+<h2 id="CVE-2021-29943">Apache Solr Unprivileged users may be able to perform unauthorized read/write to collections</h2>
+<p>CVE-2021-29943 <a href="./CVE-2021-29943.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Solr from Apache Solr before 8.8.2</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>When using ConfigurableInternodeAuthHadoopPlugin for authentication, Apache Solr versions prior to 8.8.2 would forward/proxy distributed requests using server credentials instead of original client credentials. This would result in incorrect authorization resolution on the receiving hosts.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r91dd0ff556e0c9aab4c92852e0e540c59d4633718ce12881558cf44d%40%3Cusers.solr.apache.org%3E">https://lists.apache.org/thread.html/r91dd0ff556e0c9aab4c92852e0e540c59d4633718ce12881558cf44d%40%3Cusers.solr.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Geza Nagy</li>
+</ul>
+<h2 id="CVE-2021-44548">Apache Solr information disclosure vulnerability through DataImportHandler</h2>
+<p>CVE-2021-44548 <a href="./CVE-2021-44548.cve.json">[CVE json]</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Solr from unspecified before 8.11.1</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>An Improper Input Validation vulnerability in DataImportHandler of Apache Solr allows an attacker to provide a Windows UNC path resulting in an SMB network call being made from the Solr host to another host on the network. If the attacker has wider access to the network, this may lead to SMB attacks, which may result in:</p>
+<ul>
+<li>The exfiltration of sensitive data such as OS user hashes (NTLM/LM hashes),</li>
+<li>In case of misconfigured systems, SMB Relay Attacks which can lead to user impersonation on SMB Shares or, in a worse-case scenario, Remote Code Execution</li>
+</ul>
+<p>This issue affects all Apache Solr versions prior to 8.11.1. This issue only affects Windows.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://solr.apache.org/security.html#cve-2021-44548-apache-solr-information-disclosure-vulnerability-through-dataimporthandler">https://solr.apache.org/security.html#cve-2021-44548-apache-solr-information-disclosure-vulnerability-through-dataimporthandler</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Apache Solr would like to thank LaiHan of Nsfocus security team for reporting the issue</li>
+</ul>
 
   
 </div>

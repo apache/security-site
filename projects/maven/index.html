@@ -104,10 +104,39 @@
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache Maven? You can read more about the projects&rsquo; security policy on their <a href="https://maven.apache.org/security.html">security page</a>, and email your report to the  <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<p>Do you want disclose a potential security issue for Apache Maven? You can read more about the projects&rsquo; security policy on their <a href="https://maven.apache.org/security.html">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
-<p>This page is experimental: it provides consistent access to the advisories for Apache Maven since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the <a href="https://maven.apache.org/security.html">project security page</a>.</p>
-<p>If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://maven.apache.org/security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2021-26291">block repositories using http by default</h2>
+<p>CVE-2021-26291 <a href="./CVE-2021-26291.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Maven from Apache Maven through 3.8.1</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Apache Maven will follow repositories that are defined in a dependency’s Project Object Model (pom) which may be surprising to some users, resulting in potential risk if a malicious actor takes over that repository or is able to insert themselves into a position to pretend to be that repository. Maven is changing the default behavior in 3.8.1+ to no longer follow http (non-SSL) repository references by default. More details available in the referenced urls.</p>
+<p>If you are currently using a repository manager to govern the repositories used by your builds, you are unaffected by the risks present in the legacy behavior, and are unaffected by this vulnerability and change to default behavior. See this link for more information about repository management: <a href="https://maven.apache.org/repository-management.html">https://maven.apache.org/repository-management.html</a></p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r9a027668558264c4897633e66bcb7784099fdec9f9b22c38c2442f00%40%3Cusers.maven.apache.org%3E">https://lists.apache.org/thread.html/r9a027668558264c4897633e66bcb7784099fdec9f9b22c38c2442f00%40%3Cusers.maven.apache.org%3E</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Apache Maven would like to thank Jonathan Leitschuh for highlighting the need for this change.</li>
+</ul>
+<h2 id="CVE-2022-29599">Commandline class shell injection vulnerabilities</h2>
+<p>CVE-2022-29599 <a href="./CVE-2022-29599.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Maven from maven-shared-utils before 3.3.3</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>In Apache Maven maven-shared-utils prior to version 3.3.3, the Commandline class can emit double-quoted strings without proper escaping, allowing shell injection attacks.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/MSHARED-297">https://issues.apache.org/jira/browse/MSHARED-297</a></li>
+<li><a href="https://github.com/apache/maven-shared-utils/pull/40">https://github.com/apache/maven-shared-utils/pull/40</a></li>
+</ul>
 
   
 </div>

@@ -107,33 +107,186 @@
 <p>Do you want disclose a potential security issue for Apache Logging? Send your report to the <a href="mailto:security@logging.apache.org">Apache Logging Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2020-9493">Java deserialization in Chainsaw</h2>
+<p>CVE-2020-9493 <a href="./CVE-2020-9493.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Chainsaw from Apache Chainsaw before 2.1.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>A deserialization flaw was found in Apache Chainsaw versions prior to 2.1.0 which could lead to malicious code execution.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://www.openwall.com/lists/oss-security/2021/06/16/1">https://www.openwall.com/lists/oss-security/2021/06/16/1</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>This issue was reported by @kingkk</li>
+</ul>
+<h2 id="CVE-2021-44228">Apache Log4j2 JNDI features do not protect against attacker controlled LDAP and other JNDI related endpoints</h2>
+<p>CVE-2021-44228 <a href="./CVE-2021-44228.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Log4j2 from 2.0-beta9 before log4j-core*</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Apache Log4j2 2.0-beta9 through 2.15.0 (excluding security releases 2.12.2, 2.12.3, and 2.3.1) JNDI features used in configuration, log messages, and parameters do not protect against attacker controlled LDAP and other JNDI related endpoints. An attacker who can control log messages or log message parameters can execute arbitrary code loaded from LDAP servers when message lookup substitution is enabled. From log4j 2.15.0, this behavior has been disabled by default. From version 2.16.0 (along with 2.12.2, 2.12.3, and 2.3.1), this functionality has been completely removed.</p>
+<p>Note that this vulnerability is specific to log4j-core and does not affect log4net, log4cxx, or other Apache Logging Services projects.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://logging.apache.org/log4j/2.x/security.html">https://logging.apache.org/log4j/2.x/security.html</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>This issue was discovered by Chen Zhaojun of Alibaba Cloud Security Team.</li>
+</ul>
+<h2 id="CVE-2021-44832">Apache Log4j2 vulnerable to RCE via JDBC Appender when attacker controls configuration server</h2>
+<p>CVE-2021-44832 <a href="./CVE-2021-44832.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Log4j2 from log4j-core before 2.17.1</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Apache Log4j2 versions 2.0-beta7 through 2.17.0 (excluding security fix releases 2.3.2 and 2.12.4) are vulnerable to a remote code execution (RCE) attack when a configuration uses a JDBC Appender with a JNDI LDAP data source URI when an attacker has control of the target LDAP server. This issue is fixed by limiting JNDI data source names to the java protocol in Log4j2 versions 2.17.1, 2.12.4, and 2.3.2.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/s1o5vlo78ypqxnzn6p8zf6t9shtq5143">https://lists.apache.org/thread/s1o5vlo78ypqxnzn6p8zf6t9shtq5143</a></li>
+<li><a href="https://issues.apache.org/jira/browse/LOG4J2-3293">https://issues.apache.org/jira/browse/LOG4J2-3293</a></li>
+</ul>
+<h2 id="CVE-2021-4104">Deserialization of untrusted data in JMSAppender in Apache Log4j 1.2</h2>
+<p>CVE-2021-4104 <a href="./CVE-2021-4104.cve.json">[CVE json]</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Log4j 1.x at Apache Log4j 1.2 1.2.x</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>JMSAppender in Log4j 1.2 is vulnerable to deserialization of untrusted data when the attacker has write access to the Log4j configuration. The attacker can provide TopicBindingName and TopicConnectionFactoryBindingName configurations causing JMSAppender to perform JNDI requests that result in remote code execution in a similar fashion to CVE-2021-44228.</p>
+<p>Note this issue only affects Log4j 1.2 when specifically configured to use JMSAppender, which is not the default.</p>
+<p>Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log4j 2 as it addresses numerous other issues from the previous versions.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://www.cve.org/CVERecord?id=CVE-2021-44228">https://www.cve.org/CVERecord?id=CVE-2021-44228</a></li>
+<li><a href="https://github.com/apache/logging-log4j2/pull/608#issuecomment-990494126">https://github.com/apache/logging-log4j2/pull/608#issuecomment-990494126</a></li>
+<li><a href="https://access.redhat.com/security/cve/CVE-2021-4104">https://access.redhat.com/security/cve/CVE-2021-4104</a></li>
+</ul>
+<h2 id="CVE-2021-45046">Apache Log4j2 Thread Context Lookup Pattern vulnerable to remote code execution in certain non-default configurations</h2>
+<p>CVE-2021-45046 <a href="./CVE-2021-45046.cve.json">[CVE json]</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Log4j2 from log4j-core before 2.16.0</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>It was found that the fix to address CVE-2021-44228 in Apache Log4j 2.15.0 was incomplete in certain non-default configurations. When the logging configuration uses a non-default Pattern Layout with a Context Lookup (for example, $${ctx:loginId}), attackers with control over Thread Context Map (MDC) input data can craft malicious input data using a JNDI Lookup pattern, resulting in an information leak and remote code execution in some environments and local code execution in all environments; remote code execution has been demonstrated in operating systems using glibc with the libnss_resolve provider, glibc versions before 2.28, musl, and systemd-resolvd.</p>
+<p>Log4j 2.16.0 (Java 8), 2.12.2 (Java 7), and 2.3.1 (Java 6) fix this issue by removing support for message lookup patterns and disabling JNDI functionality by default.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://logging.apache.org/log4j/2.x/security.html">https://logging.apache.org/log4j/2.x/security.html</a></li>
+<li><a href="https://www.cve.org/CVERecord?id=CVE-2021-44228">https://www.cve.org/CVERecord?id=CVE-2021-44228</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>This issue was discovered by Kai Mindermann of iC Consult and separately by 4ra1n.</li>
+<li>Additional vulnerability details discovered independently by Ash Fox of Google, Alvaro Muñoz and Tony Torralba from GitHub, Anthony Weems of Praetorian, and RyotaK (@ryotkak)</li>
+</ul>
+<h2 id="CVE-2021-45105">Apache Log4j2 does not always protect from infinite recursion in lookup evaluation</h2>
+<p>CVE-2021-45105 <a href="./CVE-2021-45105.cve.json">[CVE json]</a></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Log4j2 from log4j-core before 2.17.0</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Apache Log4j2 versions 2.0-alpha1 through 2.16.0 (excluding 2.12.3 and 2.3.1) did not protect from uncontrolled recursion from self-referential lookups. This allows an attacker with control over Thread Context Map data to cause a denial of service when a crafted string is interpreted. This issue was fixed in Log4j 2.17.0, 2.12.3, and 2.3.1.</p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://logging.apache.org/log4j/2.x/security.html">https://logging.apache.org/log4j/2.x/security.html</a></li>
+<li><a href="https://issues.apache.org/jira/browse/LOG4J2-3230">https://issues.apache.org/jira/browse/LOG4J2-3230</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Independently discovered by Hideki Okamoto of Akamai Technologies, Guy Lederfein of Trend Micro Research working with Trend Micro’s Zero Day Initiative, and another anonymous vulnerability researcher</li>
+</ul>
+<h2 id="CVE-2022-23302">Deserialization of untrusted data in JMSSink in Apache Log4j 1.x</h2>
+<p>CVE-2022-23302 <a href="./CVE-2022-23302.cve.json">[CVE json]</a></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Log4j 1.x from 1.0.1 before *</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>JMSSink in all versions of Log4j 1.x is vulnerable to deserialization of untrusted data when the attacker has write access to the Log4j configuration or if the configuration references an LDAP service the attacker has access to. The attacker can provide a TopicConnectionFactoryBindingName configuration causing JMSSink to perform JNDI requests that result in remote code execution in a similar fashion to CVE-2021-4104.</p>
+<p>Note this issue only affects Log4j 1.x when specifically configured to use JMSSink, which is not the default.</p>
+<p>Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log4j 2 as it addresses numerous other issues from the previous versions.</p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/bsr3l5qz4g0myrjhy9h67bcxodpkwj4w">https://lists.apache.org/thread/bsr3l5qz4g0myrjhy9h67bcxodpkwj4w</a></li>
+<li><a href="https://logging.apache.org/log4j/1.2/index.html">https://logging.apache.org/log4j/1.2/index.html</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Eduardo&rsquo; Vela, Maksim Shudrak and Jacob Butler from Google.</li>
+</ul>
+<h2 id="CVE-2022-23305">SQL injection in JDBC Appender in Apache Log4j V1</h2>
+<p>CVE-2022-23305 <a href="./CVE-2022-23305.cve.json">[CVE json]</a></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache Log4j 1.x  from 1.2.1 before *</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>By design, the JDBCAppender in Log4j 1.2.x accepts an SQL statement as a configuration parameter where the values to be inserted are converters from PatternLayout. The message converter, %m, is likely to always be included. This allows attackers to manipulate the SQL by entering crafted strings into input fields or headers of an application that are logged allowing unintended SQL queries to be executed.</p>
+<p>Note this issue only affects Log4j 1.x when specifically configured to use the JDBCAppender, which is not the default. Beginning in version 2.0-beta8, the JDBCAppender was re-introduced with proper support for parameterized SQL queries and further customization over the columns written to in logs.</p>
+<p>Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log4j 2 as it addresses numerous other issues from the previous versions.</p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/pt6lh3pbsvxqlwlp4c5l798dv2hkc85y">https://lists.apache.org/thread/pt6lh3pbsvxqlwlp4c5l798dv2hkc85y</a></li>
+<li><a href="https://logging.apache.org/log4j/1.2/index.html">https://logging.apache.org/log4j/1.2/index.html</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Daniel Martin of NCC Group</li>
+</ul>
+<h2 id="CVE-2022-23307">A deserialization flaw in the Chainsaw component of Log4j 1 can lead to malicious code execution.</h2>
+<p>CVE-2022-23307 <a href="./CVE-2022-23307.cve.json">[CVE json]</a></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Log4j 1.x from 1.2.1 before *</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>CVE-2020-9493 identified a deserialization issue that was present in Apache Chainsaw. Prior to Chainsaw V2.0 Chainsaw was a component of Apache Log4j 1.2.x where the same issue exists.</p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/rg4yyc89vs3dw6kpy3r92xop9loywyhh">https://lists.apache.org/thread/rg4yyc89vs3dw6kpy3r92xop9loywyhh</a></li>
+<li><a href="https://logging.apache.org/log4j/1.2/index.html">https://logging.apache.org/log4j/1.2/index.html</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>@kingkk</li>
+</ul>
 <h2 id="CVE-2023-26464">Apache Log4j 1.x (EOL) allows DoS in Chainsaw and SocketAppender</h2>
 <p>CVE-2023-26464 <a href="./CVE-2023-26464.cve.json">[CVE json]</a></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-9">Affected</h3>
 <ul>
 <li>Apache Log4j from 1.0.4 before 2</li>
 <li>Apache Log4j from 2 through *</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-9">Description</h3>
 <div>** UNSUPPORTED WHEN ASSIGNED **</div><div>When using the Chainsaw or SocketAppender components with Log4j 1.x on JRE less than 1.7, an attacker that manages to cause a logging entry involving a specially-crafted (ie, deeply nested) 
 hashmap or hashtable (depending on which logging component is in use) to be processed could exhaust the available memory in the virtual machine and achieve Denial of Service when the object is deserialized.</div><div>This issue affects Apache Log4j before 2. Affected users are recommended to update to Log4j 2.x.</div><div>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.<br></div><p></p>
-<h3 id="references">References</h3>
+<h3 id="references-9">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/wkx6grrcjkh86crr49p4blc1v1nflj3t">https://lists.apache.org/thread/wkx6grrcjkh86crr49p4blc1v1nflj3t</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-7">Credits</h3>
 <ul>
 <li>Garrett Tucker of Red Hat (reporter)</li>
 </ul>
 <h2 id="CVE-2023-31038">SQL injection when using ODBC appender</h2>
 <p>CVE-2023-31038 <a href="./CVE-2023-31038.cve.json">[CVE json]</a></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-10">Affected</h3>
 <ul>
 <li>Apache Log4cxx from 0.9.0 before 1.1.0</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-10">Description</h3>
 <div>SQL injection in Log4cxx when using the ODBC appender to send log messages to a database.&nbsp; No fields sent to the database were properly escaped for SQL injection.&nbsp; This has been the case since at least version 0.9.0(released 2003-08-06)</div><div><br></div><div>Note that Log4cxx is a C++ framework, so only C++ applications are affected.</div><div>Before version 1.1.0, the ODBC appender was automatically part of Log4cxx if the library was found when compiling the library.&nbsp; As of version 1.1.0, this must be both explicitly enabled in order to be compiled in.</div><div><br></div><div>Three preconditions must be met for this vulnerability to be possible:</div><div>1. Log4cxx compiled with ODBC support(before version 1.1.0, this was auto-detected at compile time)</div><div>2. ODBCAppender enabled for logging messages to, generally done via a config file</div><div>3. User input is logged at some point. If your application does not have user input, it is unlikely to be affected.<br></div><div><br></div><div>Users are recommended to upgrade to version 1.1.0 which properly binds the parameters to the SQL statement, or migrate to the new DBAppender class which supports an ODBC connection in addition to other databases. <br>Note that this fix does require a configuration file update, as the old configuration files will not configure properly.&nbsp; An example is shown below, and more information may be found in the Log4cxx documentation on the ODBCAppender.<br></div><div><br></div><div>Example of old configuration snippet:</div><div>&lt;appender name="SqlODBCAppender" class="ODBCAppender"&gt;</div><div>&nbsp;&nbsp;&nbsp; &lt;param name="sql" value="INSERT INTO logs (message) VALUES ('%m')" /&gt;</div><div>&nbsp;&nbsp;&nbsp; ... other params here ...</div><div>&lt;/appender&gt;</div><div><br></div><div>The migrated configuration snippet with new ColumnMapping parameters:<br></div><div>&lt;appender name="SqlODBCAppender" class="ODBCAppender"&gt;<br></div><div><div></div><div>&nbsp; &nbsp; &lt;param name="sql" value="INSERT INTO logs (message) VALUES (?)" /&gt;</div><div>&nbsp;&nbsp;&nbsp; &lt;param name="ColumnMapping" value="message"/&gt;<br>&nbsp;&nbsp;&nbsp; ... other params here ...<br></div><div>&lt;/appender&gt;<br></div><br></div>
-<h3 id="references-1">References</h3>
+<h3 id="references-10">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/vgjlpdf353vv91gryspwxrzj6p0fbjd9">https://lists.apache.org/thread/vgjlpdf353vv91gryspwxrzj6p0fbjd9</a></li>
 </ul>

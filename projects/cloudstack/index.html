@@ -104,10 +104,42 @@
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache CloudStack? You can read more about the projects&rsquo; security policy on their <a href="https://cloudstack.apache.org/security.html">security page</a>, and email your report to the  <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<p>Do you want disclose a potential security issue for Apache CloudStack? You can read more about the projects&rsquo; security policy on their <a href="https://cloudstack.apache.org/security.html">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
-<p>This page is experimental: it provides consistent access to the advisories for Apache CloudStack since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the <a href="https://cloudstack.apache.org/security.html">project security page</a>.</p>
-<p>If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://cloudstack.apache.org/security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2022-26779">Apache Cloudstack insecure random number generation affects project email invitation</h2>
+<p>CVE-2022-26779 <a href="./CVE-2022-26779.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache CloudStack from Apache CloudStack before 4.16.1</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Apache CloudStack prior to 4.16.1.0 used insecure random number generation for project invitation tokens. If a project invite is created based only on an email address, a random token is generated. An attacker with knowledge of the project ID and the fact that the invite is sent, could generate time deterministic tokens and brute force attempt to use them prior to the legitimate receiver accepting the invite. This feature is not enabled by default, the attacker is required to know or guess the project ID for the invite in addition to the invitation token, and the attacker would need to be an existing authorized user of CloudStack.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/dmm07b1cyosovqr12ddhkko501p11h2h">https://lists.apache.org/thread/dmm07b1cyosovqr12ddhkko501p11h2h</a></li>
+<li><a href="https://github.com/JLLeitschuh/security-research/security/advisories/GHSA-vpcc-9rh2-8jfp">https://github.com/JLLeitschuh/security-research/security/advisories/GHSA-vpcc-9rh2-8jfp</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>This issue was reported by Jonathan Leitschuh</li>
+</ul>
+<h2 id="CVE-2022-35741">Apache CloudStack SAML Single Sign-On XXE</h2>
+<p>CVE-2022-35741 <a href="./CVE-2022-35741.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache CloudStack from 4.5.0 before Apache CloudStack*</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Apache CloudStack version 4.5.0 and later has a SAML 2.0 authentication Service Provider plugin which is found to be vulnerable to XML external entity (XXE) injection. This plugin is not enabled by default and the attacker would require that this plugin be enabled to exploit the vulnerability. When the SAML 2.0 plugin is enabled in affected versions of Apache CloudStack could potentially allow the exploitation of XXE vulnerabilities. The SAML 2.0 messages constructed during the authentication flow in Apache CloudStack are XML-based and the XML data is parsed by various standard libraries that are now understood to be vulnerable to XXE injection attacks such as arbitrary file reading, possible denial of service, server-side request forgery (SSRF) on the CloudStack management server.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/hwhxvtwp1d5dsm156bsf1cnyvtmrfv3f">https://lists.apache.org/thread/hwhxvtwp1d5dsm156bsf1cnyvtmrfv3f</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>This issue was reported by v3ged0ge</li>
+</ul>
 
   
 </div>

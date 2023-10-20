@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.111.3">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Apache Tika security advisories </title>
+
+  
+  <meta name="description" content="Security information for Apache Tika"> 
+  
+  
+  
+  
+  
+  <meta name="robots" content="noindex">
+  
+
+  
+
+  <meta name="author" content="">
+
+
+  <meta property="og:title" content="Apache Tika security advisories" />
+<meta property="og:description" content="Security information for Apache Tika" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://security.apache.org/projects/tika/" />
+
+  
+
+
+
+
+  
+  
+  
+  
+   <link href="/projects/tika/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
+
+  <link rel="canonical" href="https://security.apache.org/projects/tika/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Apache Security Team</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Apache Security Team</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog" >Blog</a></li>
+    
+    <li><a href="https://www.apache.org/licenses/" >License</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
+    
+    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
+    
+    <li><a href="https://www.apache.org" >Apache</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+
+<div id="hero" class="wrap">
+  <h1>Apache Tika security advisories</h1>
+    <p>Security information for Apache Tika</p>
+</div>
+<div id="project-box">
+<div id="project">
+
+ <h1 id="reporting">Reporting</h1>
+<p>Do you want disclose a potential security issue for Apache Tika? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<h1 id="advisories">Advisories</h1>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2021-28657">Infinite loop in Apache Tika&rsquo;s MP3 parser</h2>
+<p>CVE-2021-28657 <a href="./CVE-2021-28657.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Tika from Apache Tika before 1.26</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>A carefully crafted or corrupt file may trigger an infinite loop in Tika&rsquo;s MP3Parser up to and including Tika 1.25. Apache Tika users should upgrade to 1.26 or later.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r915add4aa52c60d1b5cf085039cfa73a98d7fae9673374dfd7744b5a%40%3Cdev.tika.apache.org%3E">https://lists.apache.org/thread.html/r915add4aa52c60d1b5cf085039cfa73a98d7fae9673374dfd7744b5a%40%3Cdev.tika.apache.org%3E</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Apache Tika would like to thank Khaled Nassar for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2022-25169">Apache Tika BPGParser Memory Usage DoS</h2>
+<p>CVE-2022-25169 <a href="./CVE-2022-25169.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Tika from Apache Tika through 1.28.1</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>The BPG parser in versions of Apache Tika before 1.28.2 and 2.4.0 may allocate an unreasonable amount of memory on carefully crafted files.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/t3tb51sf0k2pmbnzsrrrm23z9r1c10rk">https://lists.apache.org/thread/t3tb51sf0k2pmbnzsrrrm23z9r1c10rk</a></li>
+</ul>
+<h2 id="CVE-2022-30126">Apache Tika Regular Expression Denial of Service in Standards Extractor</h2>
+<p>CVE-2022-30126 <a href="./CVE-2022-30126.cve.json">[CVE json]</a></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Tika from Apache Tika through 1.28.1</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>In Apache Tika, a regular expression in our StandardsText class, used by the StandardsExtractingContentHandler could lead to a denial of service caused by backtracking on a specially crafted file. This only affects users who are running the StandardsExtractingContentHandler, which is a non-standard handler.  This is fixed in 1.28.2 and 2.4.0</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/dh3syg68nxogbmlg13srd6gjn3h2z6r4">https://lists.apache.org/thread/dh3syg68nxogbmlg13srd6gjn3h2z6r4</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>This issue was discovered and reported by the CodeQL team members <a href="https://github.com/atorralba">@atorralba (Tony Torralba)</a> and <a href="https://github.com/joefarebrother">@joefarebrother (Joseph Farebrother)</a>.</li>
+</ul>
+<h2 id="CVE-2022-30973">Missing fix for CVE-2022-30126 in 1.28.2</h2>
+<p>CVE-2022-30973 <a href="./CVE-2022-30973.cve.json">[CVE json]</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Tika from Apache Tika through 1.28.2</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>We failed to apply the fix for CVE-2022-30126 to the 1.x branch in the 1.28.2 release.  In Apache Tika, a regular expression in the StandardsText class, used by the StandardsExtractingContentHandler could lead to a denial of service caused by backtracking on a specially crafted file. This only affects users who are running the StandardsExtractingContentHandler, which is a non-standard handler.  This is fixed in 1.28.3.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/gqvb5t4p7tmdpl0y5bdbf72pgxj04h7p">https://lists.apache.org/thread/gqvb5t4p7tmdpl0y5bdbf72pgxj04h7p</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>This issue was reported by Cathy Hu, SUSE Software Solutions Germany GmbH.</li>
+</ul>
+<h2 id="CVE-2022-33879">Incomplete fix and new regex DoS in StandardsExtractingContentHandler</h2>
+<p>CVE-2022-33879 <a href="./CVE-2022-33879.cve.json">[CVE json]</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Tika from Apache Tika before 2.4.1</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>The initial fixes in CVE-2022-30126 and CVE-2022-30973 for regexes in the StandardsExtractingContentHandler were insufficient, and we found a separate, new regex DoS in a different regex in the StandardsExtractingContentHandler. These are now fixed in 1.28.4 and 2.4.1.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/wfno8mf5nlcvbs78z93q9thgrm30wwfh">https://lists.apache.org/thread/wfno8mf5nlcvbs78z93q9thgrm30wwfh</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>This incomplete fix was discovered and reported by the CodeQL team member <a href="https://github.com/atorralba">@atorralba (Tony Torralba)</a> and <a href="https://github.com/jarlob">@jarlob (Jaroslav Lobačevski)</a> from Github Security Lab.  The new ReDos was discovered by the Apache Tika team.</li>
+</ul>
+
+  
+</div>
+</div>
+</main>
+  <footer> 
+    <footer id="footer">
+    <p>&copy; 2023 The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+  </footer>
+ 
+</footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/main.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

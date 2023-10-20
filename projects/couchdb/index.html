@@ -107,22 +107,57 @@
 <p>Do you want disclose a potential security issue for Apache CouchDB? Send your report to the <a href="mailto:security@couchdb.apache.org">Apache CouchDB Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2021-38295">Privilege escalation vulnerability when using HTML attachments</h2>
+<p>CVE-2021-38295 <a href="./CVE-2021-38295.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache CouchDB from Apache CouchDB before 3.1.2</li>
+<li>IBM Cloudant from IBM Cloudant before 8201</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>In Apache CouchDB, a malicious user with permission to create documents in a database is able to attach a HTML attachment to a document. If a CouchDB admin opens that attachment in a browser, e.g. via the CouchDB admin interface Fauxton, any JavaScript code embedded in that HTML attachment will be executed within the security context of that admin. A similar route is available with the already deprecated _show and _list functionality.</p>
+<p>This privilege escalation vulnerability allows an attacker to add or remove data in any database or make configuration changes.  This issue affected Apache CouchDB prior to 3.1.2</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://docs.couchdb.org/en/stable/cve/2021-38295.html">https://docs.couchdb.org/en/stable/cve/2021-38295.html</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>This issue was identified by Cory Sabol of Secure Ideas.</li>
+</ul>
+<h2 id="CVE-2022-24706">Remote Code Execution Vulnerability in Packaging</h2>
+<p>CVE-2022-24706 <a href="./CVE-2022-24706.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache CouchDB from Apache CouchDB through 3.2.1</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>In Apache CouchDB prior to 3.2.2, an attacker can access an improperly secured default installation without authenticating and gain admin privileges.  The CouchDB documentation has always made recommendations for properly securing an installation, including recommending using a firewall in front of all CouchDB installations.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/w24wo0h8nlctfps65txvk0oc5hdcnv00">https://lists.apache.org/thread/w24wo0h8nlctfps65txvk0oc5hdcnv00</a></li>
+<li><a href="https://docs.couchdb.org/en/3.2.2/setup/cluster.html">https://docs.couchdb.org/en/3.2.2/setup/cluster.html</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>The Apache CouchDB Team would like to thank Alex Vandiver <a href="mailto:alexmv@zulip.com">alexmv@zulip.com</a> for the report of this issue.</li>
+</ul>
 <h2 id="CVE-2023-26268">Information sharing via couchjs processes</h2>
 <p>CVE-2023-26268 <a href="./CVE-2023-26268.cve.json">[CVE json]</a></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache CouchDB through 3.3.1</li>
 <li>IBM Cloudant through 8349</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-2">Description</h3>
 <p><span style="background-color: rgb(255, 255, 255);">Design documents with matching document IDs, from databases on the same cluster, may share a mutable Javascript environment when using these design document functions:<br><ul><li><span style="background-color: rgb(255, 255, 255);">validate_doc_update<br></span></li><li><span style="background-color: rgb(255, 255, 255);">list<br></span></li><li><span style="background-color: rgb(255, 255, 255);">filter<br></span></li><li><span style="background-color: rgb(255, 255, 255);">filter views (using view functions as filters)<br></span></li><li><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">r</span><span style="background-color: rgb(255, 255, 255);">ewrite</span><br></span></li><li><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">update<br></span></span></li></ul></span><div><span style="background-color: rgb(255, 255, 255);">This doesn&rsquo;t affect map/reduce or search (Dreyfus) index functions.</span></div><div><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to a version that is no longer affected by this issue (Apache CouchDB 3.3.2 or 3.2.3).</span></span></div><div><span style="background-color: rgb(255, 255, 255);">Workaround: Avoid using design documents from untrusted sources which may attempt to cache or store data in the Javascript environment.</span></div></p>
-<h3 id="references">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/r2wvjfysg3d92lhhjd1qh3wfr8mlp0pp">https://lists.apache.org/thread/r2wvjfysg3d92lhhjd1qh3wfr8mlp0pp</a></li>
 <li><a href="https://docs.couchdb.org/en/stable/cve/2023-26268.html">https://docs.couchdb.org/en/stable/cve/2023-26268.html</a></li>
 <li><a href="https://lists.apache.org/thread/ldkqs0nhpmho26bdxf4fon7w75hsq5gl">https://lists.apache.org/thread/ldkqs0nhpmho26bdxf4fon7w75hsq5gl</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-2">Credits</h3>
 <ul>
 <li>Nick Vatamaniuc <a href="mailto:vatamane@apache.org">vatamane@apache.org</a> (finder)</li>
 </ul>
