@@ -63,7 +63,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Jena |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache JMeter](https://jmeter.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Johnzon](https://johnzon.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache JSPWiki |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache JSPWiki](https://jspwiki-wiki.apache.org/Wiki.jsp?page=Security) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE) |
 | [Apache Kafka](https://kafka.apache.org/project-security.html) |  [Apache Kafka Security Team](mailto:security@kafka.apache.org) | [Advisories](https://kafka.apache.org/cve-list.html) |
 | Apache Karaf |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Knox |  [Apache Security Team](mailto:security@apache.org) | |
