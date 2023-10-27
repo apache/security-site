@@ -11,7 +11,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Project security page | Contact | |
 | --- | --- | --- |
 | Apache Accumulo |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache ActiveMQ |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache ActiveMQ](https://activemq.apache.org/security-advisories) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://activemq.apache.org/security-advisories) |
 | Apache AGE |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Airavata |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Airflow |  [Apache Security Team](mailto:security@apache.org) | |
