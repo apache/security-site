@@ -97,6 +97,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache RocketMQ |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Roller |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Santuario](https://santuario.apache.org/secadv.html) |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache SeaTunnel](https://seatunnel.apache.org/security) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache ServiceComb |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache ShardingSphere](https://shardingsphere.apache.org/community/en/security/) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache ShenYu |  [Apache Security Team](mailto:security@apache.org) | |
