@@ -53,13 +53,16 @@ def get_dt_projects():
     req = request.Request('https://security-tools-ec2-va.apache.org/api/v1/project?excludeInactive=true&onlyRoot=false&pageSize=1000&pageNumber=1')
     req.add_header('X-Api-Key', dt_api_key)
     with request.urlopen(req) as res:
-        result = {}
+        projects = {}
+        pmcs = {}
         for p in json.load(res):
             if 'version' in p:
-                result[f"{p['name']}-{p['version']}"] = p
-        return result
+                projects[f"{p['name']}-{p['version']}"] = p
+            else:
+                pmcs[p['name']] = p
+        return projects, pmcs
 
-dt_projects = get_dt_projects()
+dt_projects, dt_pmcs = get_dt_projects()
 
 # TODO don't hardcode, maybe add another layer
 pmc_uuids = {
@@ -67,8 +70,31 @@ pmc_uuids = {
     'commons': 'c2a20d87-386d-45df-af14-3426b470b4ab'
 }
 
-def get_or_create_dt_project(pmc, friendly_name, version):
-    global dt_projects, pmc_uuids
+def dt_pmc(pmc):
+    global dt_pmcs
+    friendly_name = 'Apache ' + pmc.title()
+    if not friendly_name in dt_pmcs:
+        project = {
+            'active': True,
+            'name': friendly_name,
+            # TODO don't hardcode
+            'classifier': 'LIBRARY',
+        }
+        with requests.put(
+            'https://security-tools-ec2-va.apache.org/api/v1/project',
+            headers={
+                'X-Api-Key': dt_api_key,
+                'Content-Type': 'application/json'
+            },
+            data=json.dumps(project)
+        ) as res:
+            print(res.status_code)
+        _, dt_pmcs = get_dt_projects()
+
+    return dt_pmcs[friendly_name]
+
+def get_or_create_dt_project(pmc, pmc_uuid, friendly_name, version):
+    global dt_projects
 
     if f"{friendly_name}-{version}" in dt_projects:
         print("Project exists, just update")
@@ -80,7 +106,7 @@ def get_or_create_dt_project(pmc, friendly_name, version):
             # TODO don't hardcode
             'classifier': 'LIBRARY',
             'parent': {
-                'uuid': pmc_uuids[pmc]
+                'uuid': pmc_uuid
             }
         }
         with requests.put(
@@ -93,19 +119,20 @@ def get_or_create_dt_project(pmc, friendly_name, version):
         ) as res:
             print(res.status_code)
 
-    dt_projects = get_dt_projects()
+        dt_projects, _ = get_dt_projects()
     return dt_projects[f"{friendly_name}-{version}"]
 
 for project in maven_projects(pmc):
     friendly_name = 'Apache ' + project.replace('-', ' ').title()
     print(project)
+    pmc_uuid = dt_pmc(pmc)['uuid']
 
     index = get_dirs(f'https://repo1.maven.org/maven2/org/apache/{pmc}/{project}')
     def version_name(link):
         return link.get('title')[:-1]
     def is_version(v):
-        # TODO support milestones?
-        return not 'M' in v
+        # TODO support such versions
+        return not 'M' in v and not 'incubating' in v and not 'hadoop' in v and not 'milestone' in v and not 'pre' in v
     versions = list(filter(is_version, list(map(version_name, index))))
     versions.sort(key=Version)
     if versions:
@@ -118,7 +145,7 @@ for project in maven_projects(pmc):
             return name.endswith('-cyclonedx.json')
         sboms = list(filter(is_sbom, map(file_name, index)))
         if sboms:
-            dt_project = get_or_create_dt_project(pmc, friendly_name, lastVersion)
+            dt_project = get_or_create_dt_project(pmc, pmc_uuid, friendly_name, lastVersion)
             sbom = sboms[0]
             with request.urlopen(f'https://repo1.maven.org/maven2/org/apache/{pmc}/{project}/{lastVersion}/{sbom}') as sbomPayload:
                 with requests.post(
