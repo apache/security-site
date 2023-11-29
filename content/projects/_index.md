@@ -43,7 +43,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache EventMesh |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Felix |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Fineract](https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report) |  [Apache Fineract Security Team](mailto:security@fineract.apache.org) | |
-| Apache Flink |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Flink](https://flink.apache.org/what-is-flink/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://flink.apache.org/what-is-flink/security/) |
 | Apache Flume |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Geode |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Geronimo](https://geronimo.apache.org/security-reports.html) |  [Apache Geronimo Security Team](mailto:security@geronimo.apache.org) | |
