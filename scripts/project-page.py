@@ -160,9 +160,10 @@ layout: single
           has_osv = False
 
         project_page.write("\n\n## %s ## { #%s }\n\n" % (advisory['title'], cve_id))
-        project_page.write("%s [\[CVE json\]](./%s.cve.json)\n\n" % (cve_id, cve_id))
+        project_page.write("%s [\[CVE json\]](./%s.cve.json)" % (cve_id, cve_id))
         if has_osv:
-          project_page.write("%s [\[OSV json\]](./%s.osv.json)\n\n" % (cve_id, cve_id))
+          project_page.write(" [\[OSV json\]](./%s.osv.json)\n\n" % cve_id)
+        project_page.write("\n\n")
 
         cna = cve['containers']['cna']
         project_page.write("### Affected\n\n")

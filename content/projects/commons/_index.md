@@ -15,9 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Possible limited path traversal vulnerabily in Apache Commons IO  ## { #CVE-2021-29425 }
 
-CVE-2021-29425 [\[CVE json\]](./CVE-2021-29425.cve.json)
+CVE-2021-29425 [\[CVE json\]](./CVE-2021-29425.cve.json) [\[OSV json\]](./CVE-2021-29425.osv.json)
 
-CVE-2021-29425 [\[OSV json\]](./CVE-2021-29425.osv.json)
+
 
 ### Affected
 
