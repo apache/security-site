@@ -482,6 +482,7 @@ An authenticated user with specific data permissions could access database conne
 
 ### References
 * https://lists.apache.org/thread/s9w9w10mt2sngk3solwnmq5k7md53tsz
+* http://www.openwall.com/lists/oss-security/2023/04/24/3
 
 
 ### Credits

@@ -23,8 +23,8 @@ stdenv.mkDerivation {
     owner = "raboof";
     repo = "cve-schema";
     # 'standalone-cve4to5' branch
-    rev = "edb05884906e24b60a942593344764d435e347b8";
-    hash = "sha256-8I2xCh1IuFuAndD4ZbfSGYJ6PGmIDoSB3aC3zL+qvrQ=";
+    rev = "9d22833a2cafa48da9bb58479232d09e9b2cd5f2";
+    hash = "sha256-Thc7ZOIZZtRiXcCAMuIGJei4tJVeaOfTRrN9YhOftJQ=";
   };
 
   sourceRoot = "source/schema/v5.0/support/CVE_4_to_5_converter";

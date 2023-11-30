@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-29425 [\[CVE json\]](./CVE-2021-29425.cve.json)
 
+CVE-2021-29425 [\[OSV json\]](./CVE-2021-29425.osv.json)
+
 ### Affected
 
 * Apache Commons IO at 2.2

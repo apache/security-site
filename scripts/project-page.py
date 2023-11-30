@@ -60,7 +60,7 @@ def fetch_cve(cve_id):
   print(cve_id)
   if not os.path.exists('cache/%s.json' % cve_id):
     f = urlopen('https://cveprocess.apache.org/publicjson/%s' % cve_id)
-    with open('cache/%s.json' % cve, 'w') as d:
+    with open('cache/%s.json' % cve_id, 'w') as d:
       d.write(f.read().decode('utf-8'))
 
   with open('cache/%s.json' % cve_id, 'r') as d:
@@ -144,10 +144,26 @@ layout: single
 
     for advisory in advisories[pmc]:
         cve_id = advisory['ID']
+        cve = fetch_cve(cve_id)
+
+        with open(staticdir + cve_id + '.cve.json', 'w') as cveFile:
+          cve_doc = {
+            "containers": cve['containers'],
+            "cveMetadata": cve['cveMetadata'],
+            "dataType": cve['dataType'],
+            "dataVersion": cve['dataVersion'],
+          }
+          json.dump(cve_doc, cveFile, ensure_ascii=True, indent=2)
+
+        has_osv = True
+        if subprocess.call(['./cve2osv.py', staticdir + cve_id + '.cve.json', staticdir + cve_id + '.osv.json']) != 0:
+          has_osv = False
+
         project_page.write("\n\n## %s ## { #%s }\n\n" % (advisory['title'], cve_id))
         project_page.write("%s [\[CVE json\]](./%s.cve.json)\n\n" % (cve_id, cve_id))
+        if has_osv:
+          project_page.write("%s [\[OSV json\]](./%s.osv.json)\n\n" % (cve_id, cve_id))
 
-        cve = fetch_cve(cve_id)
         cna = cve['containers']['cna']
         project_page.write("### Affected\n\n")
         for affected in cna['affected']:
@@ -185,11 +201,3 @@ layout: single
             else:
               project_page.write('* %s\n' % credit['value'])
 
-        with open(staticdir + cve_id + '.cve.json', 'w') as cveFile:
-          cve_doc = {
-            "containers": cve['containers'],
-            "cveMetadata": cve['cveMetadata'],
-            "dataType": cve['dataType'],
-            "dataVersion": cve['dataVersion'],
-          }
-          json.dump(cve_doc, cveFile, ensure_ascii=True, indent=2)

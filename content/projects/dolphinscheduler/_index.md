@@ -165,7 +165,7 @@ CVE-2022-45875 [\[CVE json\]](./CVE-2022-45875.cve.json)
 
 ### Description
 
-Improper validation of script alert plugin parameters in Apache DolphinScheduler to avoid remote command execution vulnerability.  This issue affects Apache DolphinScheduler version 3.0.1 and prior versions; version 3.1.0 and prior versions.
+Improper validation of script alert plugin parameters in Apache DolphinScheduler to avoid remote command execution vulnerability.  This issue affects Apache DolphinScheduler version 3.0.1 and prior versions; version 3.1.0 and prior versions.<br><span style="background-color: rgb(255, 255, 255);">This attack can be performed only by authenticated users which can login to DS.</span><br><br>
 
 ### References
 * https://lists.apache.org/thread/r0wqzkjsoq17j6ww381kmpx3jjp9hb6r
