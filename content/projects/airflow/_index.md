@@ -102,7 +102,7 @@ CVE-2021-26559 [\[CVE json\]](./CVE-2021-26559.cve.json)
 
 ### Affected
 
-* Apache Airflow at Apache Airflow 2.0.0
+* Apache Airflow at 2.0.0
 
 
 ### Description
@@ -127,7 +127,7 @@ CVE-2021-26697 [\[CVE json\]](./CVE-2021-26697.cve.json)
 
 ### Affected
 
-* Apache Airflow at Apache Airflow 2.0.0
+* Apache Airflow at 2.0.0
 
 
 ### Description
@@ -152,8 +152,8 @@ CVE-2021-28359 [\[CVE json\]](./CVE-2021-28359.cve.json)
 
 ### Affected
 
-* Apache Airflow at Apache Airflow 2.0.0
-* Apache Airflow at Apache Airflow 2.0.1
+* Apache Airflow at 2.0.0
+* Apache Airflow at 2.0.1
 * Apache Airflow from Apache Airflow before 1.10.15
 
 

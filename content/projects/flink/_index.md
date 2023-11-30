@@ -19,7 +19,7 @@ CVE-2020-17518 [\[CVE json\]](./CVE-2020-17518.cve.json)
 
 ### Affected
 
-* Apache Flink at Apache Flink 1.5.1 to 1.11.2
+* Apache Flink at 1.5.1 to 1.11.2
 
 
 ### Description
@@ -40,7 +40,7 @@ CVE-2020-17519 [\[CVE json\]](./CVE-2020-17519.cve.json)
 
 ### Affected
 
-* Apache Flink at Apache Flink 1.11.0 to 1.11.2
+* Apache Flink at 1.11.0 to 1.11.2
 
 
 ### Description

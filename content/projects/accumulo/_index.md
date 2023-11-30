@@ -19,7 +19,7 @@ CVE-2020-17533 [\[CVE json\]](./CVE-2020-17533.cve.json)
 
 ### Affected
 
-* Apache Accumulo at Apache Accumulo 2.0.0
+* Apache Accumulo at 2.0.0
 * Apache Accumulo from 1.5.0 before Apache Accumulo*
 
 

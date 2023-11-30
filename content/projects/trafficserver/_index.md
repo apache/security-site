@@ -55,7 +55,7 @@ CVE-2021-27577 [\[CVE json\]](./CVE-2021-27577.cve.json)
 
 ### Affected
 
-* Apache Traffic Server at Apache Traffic Server 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1
+* Apache Traffic Server at 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1
 
 
 ### Description
@@ -85,7 +85,7 @@ CVE-2021-32565 [\[CVE json\]](./CVE-2021-32565.cve.json)
 
 ### Affected
 
-* Apache Traffic Server at Apache Traffic Server 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1
+* Apache Traffic Server at 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1
 
 
 ### Description
@@ -102,7 +102,7 @@ CVE-2021-32566 [\[CVE json\]](./CVE-2021-32566.cve.json)
 
 ### Affected
 
-* Apache Traffic Server at Apache Traffic Server 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1
+* Apache Traffic Server at 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1
 
 
 ### Description
@@ -119,7 +119,7 @@ CVE-2021-32567 [\[CVE json\]](./CVE-2021-32567.cve.json)
 
 ### Affected
 
-* Apache Traffic Server at Apache Traffic Server 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1
+* Apache Traffic Server at 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1
 
 
 ### Description
@@ -136,7 +136,7 @@ CVE-2021-35474 [\[CVE json\]](./CVE-2021-35474.cve.json)
 
 ### Affected
 
-* Apache Traffic Server at Apache Traffic Server 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1
+* Apache Traffic Server at 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1
 
 
 ### Description

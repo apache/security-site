@@ -19,7 +19,7 @@ CVE-2021-26544 [\[CVE json\]](./CVE-2021-26544.cve.json)
 
 ### Affected
 
-* Apache Livy (Incubating) at Apache Livy (Incubating) 0.7.0-incubating
+* Apache Livy (Incubating) at 0.7.0-incubating
 
 
 ### Description

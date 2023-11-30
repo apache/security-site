@@ -504,8 +504,8 @@ CVE-2021-42013 [\[CVE json\]](./CVE-2021-42013.cve.json)
 
 ### Affected
 
-* Apache HTTP Server at Apache HTTP Server 2.4.49
-* Apache HTTP Server at Apache HTTP Server 2.4.50
+* Apache HTTP Server at 2.4.49
+* Apache HTTP Server at 2.4.50
 
 
 ### Description

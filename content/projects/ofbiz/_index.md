@@ -19,7 +19,7 @@ CVE-2021-26295 [\[CVE json\]](./CVE-2021-26295.cve.json)
 
 ### Affected
 
-* Apache OFBiz at Apache OFBiz 17.12.01 to 17.12.05
+* Apache OFBiz at 17.12.01 to 17.12.05
 
 
 ### Description

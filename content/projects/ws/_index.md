@@ -40,7 +40,7 @@ CVE-2022-45378 [\[CVE json\]](./CVE-2022-45378.cve.json)
 
 ### Affected
 
-* Apache SOAP at Apache SOAP 2.3
+* Apache SOAP at 2.3
 * Apache SOAP from Apache SOAP before 2.3
 
 

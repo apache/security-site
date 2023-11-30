@@ -110,7 +110,7 @@ CVE-2022-22931 [\[CVE json\]](./CVE-2022-22931.cve.json)
 
 ### Affected
 
-* Apache James at Apache James 3.6.1
+* Apache James at 3.6.1
 
 
 ### Description

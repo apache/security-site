@@ -19,7 +19,7 @@ CVE-2021-37580 [\[CVE json\]](./CVE-2021-37580.cve.json)
 
 ### Affected
 
-* Apache ShenYu Admin at Apache ShenYu Admin 2.3.0-2.4.0
+* Apache ShenYu Admin at 2.3.0-2.4.0
 
 
 ### Description
@@ -134,7 +134,7 @@ CVE-2022-37435 [\[CVE json\]](./CVE-2022-37435.cve.json)
 
 ### Affected
 
-* Apache ShenYu at Apache ShenYu 2.4.2 and 2.4.3
+* Apache ShenYu at 2.4.2 and 2.4.3
 
 
 ### Description

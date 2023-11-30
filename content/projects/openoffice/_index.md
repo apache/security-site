@@ -19,7 +19,7 @@ CVE-2021-28129 [\[CVE json\]](./CVE-2021-28129.cve.json)
 
 ### Affected
 
-* Apache OpenOffice at Apache OpenOffice 4.1.8
+* Apache OpenOffice at 4.1.8
 
 
 ### Description

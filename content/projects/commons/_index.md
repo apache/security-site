@@ -19,11 +19,11 @@ CVE-2021-29425 [\[CVE json\]](./CVE-2021-29425.cve.json)
 
 ### Affected
 
-* Apache Commons IO at Apache Commons IO 2.2
-* Apache Commons IO at Apache Commons IO 2.3
-* Apache Commons IO at Apache Commons IO 2.4
-* Apache Commons IO at Apache Commons IO 2.5
-* Apache Commons IO at Apache Commons IO 2.6
+* Apache Commons IO at 2.2
+* Apache Commons IO at 2.3
+* Apache Commons IO at 2.4
+* Apache Commons IO at 2.5
+* Apache Commons IO at 2.6
 
 
 ### Description

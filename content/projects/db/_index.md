@@ -19,7 +19,7 @@ CVE-2021-41616 [\[CVE json\]](./CVE-2021-41616.cve.json)
 
 ### Affected
 
-* Apache DB ddlutils at Apache DB ddlutils 1.0
+* Apache DB ddlutils at 1.0
 
 
 ### Description

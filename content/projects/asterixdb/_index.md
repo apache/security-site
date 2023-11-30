@@ -19,7 +19,7 @@ CVE-2020-9479 [\[CVE json\]](./CVE-2020-9479.cve.json)
 
 ### Affected
 
-* Apache AsterixDB at Apache AsterixDB git
+* Apache AsterixDB at git
 
 
 ### Description
