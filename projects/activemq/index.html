@@ -180,6 +180,77 @@
 <ul>
 <li>Apache ActiveMQ would like to thank Yash Pandya (Digital14), Rajatkumar Karmarkar (Digital14), and Likhith Cheekatipalle (Digital14) for reporting this issue.</li>
 </ul>
+<h2 id="CVE-2022-41678">Deserialization vulnerability on Jolokia that allows authenticated users to perform RCE</h2>
+<p>CVE-2022-41678 <a href="./CVE-2022-41678.cve.json">[CVE json]</a></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache ActiveMQ before 5.16.6</li>
+<li>Apache ActiveMQ from 5.17.0 before 5.17.4</li>
+<li>Apache ActiveMQ at 5.18.0</li>
+<li>Apache ActiveMQ at 6.0.0</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p><span style="background-color: rgb(255, 255, 255);">Once an user is authenticated on Jolokia, he can potentially trigger arbitrary code execution. <br><br>In details, in ActiveMQ configurations, jetty allows
+org.jolokia.http.AgentServlet to handler request to /api/jolokia<br><br>org.jolokia.http.HttpRequestHandler#handlePostRequest is able to
+create JmxRequest through JSONObject. And calls to
+org.jolokia.http.HttpRequestHandler#executeRequest.<br><br>Into deeper calling stacks,
+org.jolokia.handler.ExecHandler#doHandleRequest is able to invoke
+through refection.</p>
+<p>And then, RCE is able to be achieved via
+jdk.management.jfr.FlightRecorderMXBeanImpl which exists on Java version above 11.
+<br><br>
+1 Call newRecording.
+<br>
+2 Call setConfiguration. And a webshell data hides in it.
+<br>
+3 Call startRecording.
+<br>
+4 Call copyTo method. The webshell will be written to a .jsp file.<br><br></span>The mitigation is to restrict (by default) the actions authorized on Jolokia, or disable Jolokia.<br>A more restrictive Jolokia configuration has been defined in default ActiveMQ distribution. We encourage users to upgrade to ActiveMQ distributions version including updated Jolokia configuration: 5.16.6, 5.17.4, 5.18.0, 6.0.0.<br></p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://activemq.apache.org/security-advisories.data/CVE-2022-41678-announcement.txt">https://activemq.apache.org/security-advisories.data/CVE-2022-41678-announcement.txt</a></li>
+<li><a href="https://lists.apache.org/thread/7g17kwbtjl011mm4tr8bn1vnoq9wh4sl">https://lists.apache.org/thread/7g17kwbtjl011mm4tr8bn1vnoq9wh4sl</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li><a href="mailto:wangxin@threatbook.cn">wangxin@threatbook.cn</a> (finder)</li>
+<li><a href="mailto:wangzhendong@threatbook.cn">wangzhendong@threatbook.cn</a> (finder)</li>
+<li><a href="mailto:honglonglong@threatbook.cn">honglonglong@threatbook.cn</a> (finder)</li>
+</ul>
+<h2 id="CVE-2023-46604">Unbounded deserialization causes ActiveMQ to be vulnerable to a remote code execution (RCE) attack</h2>
+<p>CVE-2023-46604 <a href="./CVE-2023-46604.cve.json">[CVE json]</a></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache ActiveMQ from 5.18.0 before 5.18.3</li>
+<li>Apache ActiveMQ from 5.17.0 before 5.17.6</li>
+<li>Apache ActiveMQ from 5.16.0 before 5.16.7</li>
+<li>Apache ActiveMQ before 5.15.16</li>
+<li>Apache ActiveMQ Legacy OpenWire Module from 5.18.0 before 5.18.3</li>
+<li>Apache ActiveMQ Legacy OpenWire Module from 5.17.0 before 5.17.6</li>
+<li>Apache ActiveMQ Legacy OpenWire Module from 5.16.0 before 5.16.7</li>
+<li>Apache ActiveMQ Legacy OpenWire Module from 5.8.0 before 5.15.16</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<div>The Java OpenWire protocol marshaller is vulnerable to Remote Code 
+Execution. This vulnerability may allow a remote attacker with network 
+access to either a Java-based OpenWire broker or client to run arbitrary
+ shell commands by manipulating serialized class types in the OpenWire 
+protocol to cause either the client or the broker (respectively) to 
+instantiate any class on the classpath.</div><div><br></div><div>Users are recommended to upgrade
+ both brokers and clients to version 5.15.16, 5.16.7, 5.17.6, or 5.18.3 
+which fixes this issue.</div>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://activemq.apache.org/security-advisories.data/CVE-2023-46604-announcement.txt">https://activemq.apache.org/security-advisories.data/CVE-2023-46604-announcement.txt</a></li>
+<li><a href="https://www.openwall.com/lists/oss-security/2023/10/27/5">https://www.openwall.com/lists/oss-security/2023/10/27/5</a></li>
+<li><a href="https://security.netapp.com/advisory/ntap-20231110-0010/">https://security.netapp.com/advisory/ntap-20231110-0010/</a></li>
+<li><a href="https://packetstormsecurity.com/files/175676/Apache-ActiveMQ-Unauthenticated-Remote-Code-Execution.html">https://packetstormsecurity.com/files/175676/Apache-ActiveMQ-Unauthenticated-Remote-Code-Execution.html</a></li>
+<li><a href="https://lists.debian.org/debian-lts-announce/2023/11/msg00013.html">https://lists.debian.org/debian-lts-announce/2023/11/msg00013.html</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li><a href="mailto:yejie@threatbook.cn">yejie@threatbook.cn</a> (finder)</li>
+</ul>
 
   
 </div>

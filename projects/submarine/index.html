@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.111.3">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Apache Submarine security advisories </title>
+
+  
+  <meta name="description" content="Security information for Apache Submarine"> 
+  
+  
+  
+  
+  
+  <meta name="robots" content="noindex">
+  
+
+  
+
+  <meta name="author" content="">
+
+
+  <meta property="og:title" content="Apache Submarine security advisories" />
+<meta property="og:description" content="Security information for Apache Submarine" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://security.apache.org/projects/submarine/" />
+
+  
+
+
+
+
+  
+  
+  
+  
+   <link href="/projects/submarine/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
+
+  <link rel="canonical" href="https://security.apache.org/projects/submarine/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Apache Security Team</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Apache Security Team</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog" >Blog</a></li>
+    
+    <li><a href="https://www.apache.org/licenses/" >License</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
+    
+    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
+    
+    <li><a href="https://www.apache.org" >Apache</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+
+<div id="hero" class="wrap">
+  <h1>Apache Submarine security advisories</h1>
+    <p>Security information for Apache Submarine</p>
+</div>
+<div id="project-box">
+<div id="project">
+
+ <h1 id="reporting">Reporting</h1>
+<p>Do you want disclose a potential security issue for Apache Submarine? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<h1 id="advisories">Advisories</h1>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2023-37924">SQL injection from unauthorized login</h2>
+<p>CVE-2023-37924 <a href="./CVE-2023-37924.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Submarine from 0.7.0 before 0.8.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Apache Software Foundation Apache Submarine has an SQL injection vulnerability when a user logs in. This issue can result in unauthorized login.<br><span style="background-color: rgb(255, 255, 255);">Now we have fixed this issue and now user must have the correct login to access workbench.</span><br><p>This issue affects Apache Submarine: from 0.7.0 before 0.8.0. <span style="background-color: rgb(255, 255, 255);">We recommend that all submarine users with 0.7.0 upgrade to 0.8.0, which not only fixes the issue, supports the oidc authentication mode, but also removes the case of unauthenticated logins.</span><span style="background-color: rgb(255, 255, 255);"><br><span style="background-color: rgb(255, 255, 255);">If using the version lower than 0.8.0 and not want to upgrade, you can try cherry-pick PR <a target="_blank" rel="nofollow" href="https://github.com/apache/submarine/pull/1054"><a href="https://github.com/apache/submarine/pull/1037">https://github.com/apache/submarine/pull/1037</a></a> and rebuild the submarine-server image to fix this.</span><br></span></p></p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/SUBMARINE-1361">https://issues.apache.org/jira/browse/SUBMARINE-1361</a></li>
+<li><a href="https://github.com/apache/submarine/pull/1037">https://github.com/apache/submarine/pull/1037</a></li>
+<li><a href="https://lists.apache.org/thread/g99h773vd49n1wyghdq1llv2f83w1b3r">https://lists.apache.org/thread/g99h773vd49n1wyghdq1llv2f83w1b3r</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>lengjingqicai(棱镜七彩开源安全研究院) (reporter)</li>
+</ul>
+<h2 id="CVE-2023-46302">Fix CVE-2022-1471 SnakeYaml unsafe deserialization</h2>
+<p>CVE-2023-46302 <a href="./CVE-2023-46302.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Submarine from 0.7.0 before 0.8.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Apache Software Foundation Apache Submarine has a bug when serializing against yaml. The bug is caused by snakeyaml <a target="_blank" rel="nofollow" href="https://nvd.nist.gov/vuln/detail/CVE-2022-1471"><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-1471">https://nvd.nist.gov/vuln/detail/CVE-2022-1471</a></a>.<br><br>Apache Submarine uses JAXRS to define REST endpoints.  In order to
+handle YAML requests (using application/yaml content-type), it defines
+a YamlEntityProvider entity provider that will process all incoming
+YAML requests.  In order to unmarshal the request, the readFrom method
+is invoked, passing the entityStream containing the user-supplied data in <code>submarine-server/server-core/src/main/java/org/apache/submarine/server/utils/YamlUtils.java</code>.<br> <br>We have now fixed this issue in the new version by replacing to <code>jackson-dataformat-yaml</code>.<br>This issue affects Apache Submarine: from 0.7.0 before 0.8.0. <span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 0.8.0, which fixes this issue.<br><span style="background-color: rgb(255, 255, 255);">If using the version smaller than 0.8.0  and not want to upgrade, you can try cherry-pick PR <a target="_blank" rel="nofollow" href="https://github.com/apache/submarine/pull/1054"><a href="https://github.com/apache/submarine/pull/1054">https://github.com/apache/submarine/pull/1054</a></a> and rebuild the submart-server image to fix this.</span><br><br></span><br></p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/SUBMARINE-1371">https://issues.apache.org/jira/browse/SUBMARINE-1371</a></li>
+<li><a href="https://github.com/apache/submarine/pull/1054">https://github.com/apache/submarine/pull/1054</a></li>
+<li><a href="https://lists.apache.org/thread/zf0wppzh239j4h131hm1dbswfnztxrr5">https://lists.apache.org/thread/zf0wppzh239j4h131hm1dbswfnztxrr5</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>GHSL team member @jorgectf (Jorge Rosillo) (reporter)</li>
+</ul>
+
+  
+</div>
+</div>
+</main>
+  <footer> 
+    <footer id="footer">
+    <p>&copy; 2023 The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+  </footer>
+ 
+</footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/main.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

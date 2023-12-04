@@ -570,6 +570,86 @@ process itself. Gaining access to that database should
 <ul>
 <li>Naveen Sunkavally (Horizon3.ai) (finder)</li>
 </ul>
+<h2 id="CVE-2023-40610">Privilege escalation with default examples database</h2>
+<p>CVE-2023-40610 <a href="./CVE-2023-40610.cve.json">[CVE json]</a></p>
+<h3 id="affected-28">Affected</h3>
+<ul>
+<li>Apache Superset before 2.1.2</li>
+</ul>
+<h3 id="description-28">Description</h3>
+<p>Improper authorization check and possible privilege escalation on Apache Superset up to but excluding 2.1.2. Using the default examples database connection that allows access to both the examples schema and Apache Superset&rsquo;s metadata database, an attacker using a specially crafted CTE SQL statement could change data on the metadata database. This weakness could result on tampering with the authentication/authorization data.<br><br></p>
+<h3 id="references-28">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/jvgxpk4dbxyqtsgtl4pdgbd520rc0rot">https://lists.apache.org/thread/jvgxpk4dbxyqtsgtl4pdgbd520rc0rot</a></li>
+</ul>
+<h3 id="credits-27">Credits</h3>
+<ul>
+<li>LEXFO for Orange Innovation and Orange CERT-CC  at Orange group (finder)</li>
+</ul>
+<h2 id="CVE-2023-42501">Unnecessary read permissions within the Gamma role</h2>
+<p>CVE-2023-42501 <a href="./CVE-2023-42501.cve.json">[CVE json]</a></p>
+<h3 id="affected-29">Affected</h3>
+<ul>
+<li>Apache Superset before 2.1.2</li>
+</ul>
+<h3 id="description-29">Description</h3>
+<p>Unnecessary read permissions within the Gamma role would allow authenticated users to read configured CSS templates and annotations.<br>This issue affects Apache Superset: before 2.1.2.<br>Users should upgrade to version or above 2.1.2 and run <code>superset init</code> to reconstruct the Gamma role or remove <code>can_read</code> permission from the mentioned resources.<br><br></p>
+<h3 id="references-29">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/vk1rmrh9kz0chjmc9tk7o3md6zpz4ygh">https://lists.apache.org/thread/vk1rmrh9kz0chjmc9tk7o3md6zpz4ygh</a></li>
+</ul>
+<h3 id="credits-28">Credits</h3>
+<ul>
+<li>Miguel Segovia Gil (finder)</li>
+</ul>
+<h2 id="CVE-2023-42502">Open Redirect Vulnerability</h2>
+<p>CVE-2023-42502 <a href="./CVE-2023-42502.cve.json">[CVE json]</a></p>
+<h3 id="affected-30">Affected</h3>
+<ul>
+<li>Apache Superset before 3.0.0</li>
+</ul>
+<h3 id="description-30">Description</h3>
+<p>An authenticated attacker with update datasets permission could change a dataset link to an untrusted site by spoofing the <span style="background-color: rgb(255, 255, 255);">HTTP Host header</span>, users could be redirected to this site when clicking on that specific dataset. <span style="background-color: rgb(255, 255, 255);">This issue affects Apache Superset versions before 3.0.0.</span><br></p>
+<h3 id="references-30">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/n8348f194d8o8mln3oxd0s8jdl5bxbmn">https://lists.apache.org/thread/n8348f194d8o8mln3oxd0s8jdl5bxbmn</a></li>
+</ul>
+<h3 id="credits-29">Credits</h3>
+<ul>
+<li>Amit Laish – GE Vernova (finder)</li>
+</ul>
+<h2 id="CVE-2023-42504">Lack of rate limiting allows for possible denial of service</h2>
+<p>CVE-2023-42504 <a href="./CVE-2023-42504.cve.json">[CVE json]</a></p>
+<h3 id="affected-31">Affected</h3>
+<ul>
+<li>Apache Superset before 3.0.0</li>
+</ul>
+<h3 id="description-31">Description</h3>
+<p>An authenticated malicious user could initiate multiple concurrent requests, each requesting multiple dashboard exports, leading to a possible denial of service.</p><p>This issue affects Apache Superset: before 3.0.0</p>
+<h3 id="references-31">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/yzq5gk1y9lyw6nxwd3xdkxg1djqw1h6l">https://lists.apache.org/thread/yzq5gk1y9lyw6nxwd3xdkxg1djqw1h6l</a></li>
+</ul>
+<h3 id="credits-30">Credits</h3>
+<ul>
+<li>Amit Laish – GE Vernova (finder)</li>
+</ul>
+<h2 id="CVE-2023-42505">Sensitive information disclosure on db connection details</h2>
+<p>CVE-2023-42505 <a href="./CVE-2023-42505.cve.json">[CVE json]</a></p>
+<h3 id="affected-32">Affected</h3>
+<ul>
+<li>Apache Superset before 3.0.0</li>
+</ul>
+<h3 id="description-32">Description</h3>
+<p>An authenticated user with read permissions on database connections metadata could potentially access sensitive information such as the connection's username.<br><br></p><p>This issue affects Apache Superset before 3.0.0.<br></p>
+<h3 id="references-32">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/bd0fhtfzrtgo1q8x35tpm8ms144d1t2y">https://lists.apache.org/thread/bd0fhtfzrtgo1q8x35tpm8ms144d1t2y</a></li>
+</ul>
+<h3 id="credits-31">Credits</h3>
+<ul>
+<li>Leonel John Erik Angel Torres (finder)</li>
+</ul>
 
   
 </div>

@@ -300,6 +300,24 @@ command. Said command is then executed using the same privileges as the applicat
 <ul>
 <li>Ferenc Gerlits (finder)</li>
 </ul>
+<h2 id="CVE-2023-49145">Improper Neutralization of Input in Advanced User Interface for Jolt</h2>
+<p>CVE-2023-49145 <a href="./CVE-2023-49145.cve.json">[CVE json]</a></p>
+<h3 id="affected-11">Affected</h3>
+<ul>
+<li>Apache NiFi from 0.7.0 through 1.23.2</li>
+</ul>
+<h3 id="description-11">Description</h3>
+<p>Apache NiFi 0.7.0 through 1.23.2 include the JoltTransformJSON Processor, which provides an advanced configuration user interface that is vulnerable to DOM-based cross-site scripting. If an authenticated user, who is authorized to configure a JoltTransformJSON Processor, visits a crafted URL, then arbitrary
+JavaScript code can be executed within the session context of the authenticated user. Upgrading to Apache NiFi 1.24.0 or 2.0.0-M1 is the recommended mitigation.</p>
+<h3 id="references-11">References</h3>
+<ul>
+<li><a href="https://nifi.apache.org/security.html#CVE-2023-49145">https://nifi.apache.org/security.html#CVE-2023-49145</a></li>
+<li><a href="https://lists.apache.org/thread/j8rd0qsvgoj0khqck5f49jfbp0fm8r1o">https://lists.apache.org/thread/j8rd0qsvgoj0khqck5f49jfbp0fm8r1o</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>Dr. Oliver Matula, DB Systel GmbH (finder)</li>
+</ul>
 
   
 </div>
