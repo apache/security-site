@@ -517,3 +517,33 @@ Authorization Bypass Through User-Controlled Key vulnerability in Apache InLong.
 
 ### Credits
 * nbxiglk (finder)
+
+
+## Apache inlong has an Arbitrary File Read Vulnerability ## { #CVE-2023-46227 }
+
+CVE-2023-46227 [\[CVE json\]](./CVE-2023-46227.cve.json)
+
+### Affected
+
+* Apache InLong from 1.4.0 through 1.8.0
+
+
+### Description
+
+
+
+<span style="background-color: rgb(255, 255, 255);">
+
+Deserialization of Untrusted Data Vulnerability in Apache Software Foundation Apache InLong.
+
+</span><p>This issue affects Apache InLong: from 1.4.0 through 1.8.0, the a<span style="background-color: rgb(255, 255, 255);">ttacker can use \t to bypass.&nbsp;</span>Users are advised to upgrade to Apache InLong's 1.9.0 or cherry-pick [1] to solve it.</p><p><span style="background-color: rgb(255, 255, 255);">[1] </span><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8814"></a><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8814">https://github.com/apache/inlong/pull/8814</a></p>
+
+
+
+### References
+* https://lists.apache.org/thread/m8txor4f76tmrxksrmc87tw42g57nz33
+
+
+### Credits
+* Snakinya (finder)
+* s3gundo (finder)

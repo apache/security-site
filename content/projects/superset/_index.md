@@ -618,3 +618,108 @@ Apache Superset would allow for SQLite database connections to be incorrectly re
 
 ### Credits
 * Naveen Sunkavally (Horizon3.ai) (finder)
+
+
+## Privilege escalation with default examples database ## { #CVE-2023-40610 }
+
+CVE-2023-40610 [\[CVE json\]](./CVE-2023-40610.cve.json)
+
+### Affected
+
+* Apache Superset before 2.1.2
+
+
+### Description
+
+Improper authorization check and possible privilege escalation on Apache Superset&nbsp;up to but excluding 2.1.2. Using the default examples database connection that allows access to both the examples schema and Apache Superset's metadata database, an attacker using a specially crafted CTE SQL statement could change data on the metadata database. This weakness could result on tampering with the authentication/authorization data.<br><br>
+
+### References
+* https://lists.apache.org/thread/jvgxpk4dbxyqtsgtl4pdgbd520rc0rot
+
+
+### Credits
+* LEXFO for Orange Innovation and Orange CERT-CC  at Orange group (finder)
+
+
+## Unnecessary read permissions within the Gamma role ## { #CVE-2023-42501 }
+
+CVE-2023-42501 [\[CVE json\]](./CVE-2023-42501.cve.json)
+
+### Affected
+
+* Apache Superset before 2.1.2
+
+
+### Description
+
+Unnecessary read permissions within the Gamma role would allow authenticated users to read configured CSS templates and annotations.<br>This issue affects Apache Superset: before 2.1.2.<br>Users should upgrade to version or above 2.1.2 and run `superset init` to reconstruct the Gamma role or remove `can_read` permission from the mentioned resources.<br><br>
+
+### References
+* https://lists.apache.org/thread/vk1rmrh9kz0chjmc9tk7o3md6zpz4ygh
+
+
+### Credits
+* Miguel Segovia Gil (finder)
+
+
+## Open Redirect Vulnerability ## { #CVE-2023-42502 }
+
+CVE-2023-42502 [\[CVE json\]](./CVE-2023-42502.cve.json)
+
+### Affected
+
+* Apache Superset before 3.0.0
+
+
+### Description
+
+An authenticated attacker with update datasets permission could change a dataset link to an untrusted site by spoofing the <span style="background-color: rgb(255, 255, 255);">HTTP Host header</span>, users could be redirected to this site when clicking on that specific dataset. <span style="background-color: rgb(255, 255, 255);">This issue affects Apache Superset versions before 3.0.0.</span><br>
+
+### References
+* https://lists.apache.org/thread/n8348f194d8o8mln3oxd0s8jdl5bxbmn
+
+
+### Credits
+* Amit Laish – GE Vernova (finder)
+
+
+## Lack of rate limiting allows for possible denial of service ## { #CVE-2023-42504 }
+
+CVE-2023-42504 [\[CVE json\]](./CVE-2023-42504.cve.json)
+
+### Affected
+
+* Apache Superset before 3.0.0
+
+
+### Description
+
+<p>An authenticated malicious user could initiate multiple concurrent requests, each requesting multiple dashboard exports, leading to a possible denial of service.</p><p>This issue affects Apache Superset: before 3.0.0</p>
+
+### References
+* https://lists.apache.org/thread/yzq5gk1y9lyw6nxwd3xdkxg1djqw1h6l
+
+
+### Credits
+* Amit Laish – GE Vernova (finder)
+
+
+## Sensitive information disclosure on db connection details ## { #CVE-2023-42505 }
+
+CVE-2023-42505 [\[CVE json\]](./CVE-2023-42505.cve.json)
+
+### Affected
+
+* Apache Superset before 3.0.0
+
+
+### Description
+
+<p>An authenticated user with read permissions on database connections metadata could potentially access sensitive information such as the connection's username.<br><br></p><p>This issue affects Apache Superset before 3.0.0.<br></p>
+
+### References
+* https://lists.apache.org/thread/bd0fhtfzrtgo1q8x35tpm8ms144d1t2y
+
+
+### Credits
+*  Leonel John Erik Angel Torres (finder)

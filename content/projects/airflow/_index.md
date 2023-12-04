@@ -1474,6 +1474,29 @@ Apache Airflow, versions prior to 2.7.2, contains a security vulnerability that 
 * Hussein Awala (remediation developer)
 
 
+## Permission verification bypass allows viewing dagruns of other dags ## { #CVE-2023-42781 }
+
+CVE-2023-42781 [\[CVE json\]](./CVE-2023-42781.cve.json)
+
+### Affected
+
+* Apache Airflow before 2.7.3
+
+
+### Description
+
+Apache Airflow, versions before 2.7.3, has a vulnerability that allows an authorized user who has access to read specific DAGs only, to read information about task instances in other DAGs.&nbsp; This is a different issue than CVE-2023-42663 but leading to similar outcome.<br>Users of Apache Airflow are advised to upgrade to version 2.7.3 or newer to mitigate the risk associated with this vulnerability.
+
+### References
+* https://github.com/apache/airflow/pull/34939
+* https://lists.apache.org/thread/7dnl8nszdxqyns57f3dw0sloy5dfl9o1
+
+
+### Credits
+* balis0ng (finder)
+* Hussein Awala (remediation developer)
+
+
 ## Improper access control to DAG resources ## { #CVE-2023-42792 }
 
 CVE-2023-42792 [\[CVE json\]](./CVE-2023-42792.cve.json)
@@ -1520,3 +1543,73 @@ Apache Airflow, versions 2.7.0 and 2.7.1, is affected by a vulnerability that al
 ### Credits
 * L3yx of Syclover Security Team (finder)
 * Hussein Awala (remediation developer)
+
+
+## Sensitive information logged as clear text when rediss, amqp, rpc protocols are used as Celery result backend ## { #CVE-2023-46215 }
+
+CVE-2023-46215 [\[CVE json\]](./CVE-2023-46215.cve.json)
+
+### Affected
+
+* Apache Airflow Celery provider from 3.3.0 through 3.4.0
+* Apache Airflow from 1.10.0 before 2.7.0
+
+
+### Description
+
+Insertion of Sensitive Information into Log File vulnerability in Apache Airflow Celery provider, Apache Airflow.<br><br><p>Sensitive information logged as clear text when rediss, amqp, rpc protocols are used as Celery result backend<br>Note: the&nbsp;vulnerability is about the information exposed in the logs not about accessing the logs.</p><p>This issue affects Apache Airflow Celery provider: from 3.3.0 through 3.4.0; Apache Airflow: from 1.10.0 through 2.6.3.</p><p>Users are recommended to upgrade Airflow Celery provider to version 3.4.1&nbsp;and Apache Airlfow to version 2.7.0 which fixes the issue.</p>
+
+### References
+* https://github.com/apache/airflow/pull/34954
+* https://lists.apache.org/thread/wm1jfmks7r6m7bj0mq4lmw3998svn46n
+
+
+### Credits
+* husseinawala (finder)
+
+
+## Sensitive parameters exposed in API when "non-sensitive-only" configuration is set ## { #CVE-2023-46288 }
+
+CVE-2023-46288 [\[CVE json\]](./CVE-2023-46288.cve.json)
+
+### Affected
+
+* Apache Airflow from 2.4.0 before 2.7.0
+
+
+### Description
+
+Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Airflow.<p>This issue affects Apache Airflow from 2.4.0 to 2.7.0.</p><p>Sensitive configuration information has been exposed to authenticated users with the ability to read configuration via Airflow REST API for configuration even when the <code>expose_config</code>&nbsp;option is set to <code>non-sensitive-only</code>. The expose_config option is False by default. It is recommended to upgrade to a version that is not affected if you set <code>expose_config</code>&nbsp;to <code>non-sensitive-only</code>&nbsp;configuration. This is a different error than CVE-2023-45348&nbsp;which allows authenticated user to retrieve individual configuration values in 2.7.* by specially crafting their request (solved in 2.7.2).</p><p>Users are recommended to upgrade to version 2.7.2, which fixes the issue and additionally fixes&nbsp;CVE-2023-45348.</p>
+
+### References
+* https://github.com/apache/airflow/pull/32261
+* https://lists.apache.org/thread/yw4vzm0c5lqkwm0bxv6qy03yfd1od4nw
+
+
+### Credits
+* id_No2015429 of 3H Secruity Team (finder)
+* Lee, Wei (finder)
+* Lee, Wei (remediation developer)
+
+
+## Apache Airflow missing fix for CVE-2023-40611 in 2.7.1 (DAG run broken access) ## { #CVE-2023-47037 }
+
+CVE-2023-47037 [\[CVE json\]](./CVE-2023-47037.cve.json)
+
+### Affected
+
+* Apache Airflow before 2.7.3
+
+
+### Description
+
+<p><span style="background-color: rgb(255, 255, 255);">We failed to apply&nbsp;CVE-2023-40611 in 2.7.1 and this vulnerability was marked as fixed then.&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">Apache Airflow, versions before 2.7.3, is affected by a vulnerability that allows authenticated and DAG-view authorized Users to modify some DAG run detail values when submitting notes. This could have them alter details such as configuration parameters, start date, etc.&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">Users should upgrade to version 2.7.3 or later which has removed the vulnerability.</span><br></p><br><br>
+
+### References
+* https://github.com/apache/airflow/pull/33413
+* https://lists.apache.org/thread/04y4vrw1t2xl030gswtctc4nt1w90cb0
+
+
+### Credits
+* Tareq Ahamed from Hackerone (reporter)
+*  Augusto Hidalgo (remediation developer)

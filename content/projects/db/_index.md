@@ -30,3 +30,42 @@ Please note that DdlUtils is no longer being actively developed. To address the 
 
 ### References
 * https://lists.apache.org/thread.html/r3d7a8303a820144f5e2d1fd0b067e18d419421b58346b53b58d3fa72%40%3Cannounce.apache.org%3E
+
+
+## LDAP injection vulnerability in authenticator ## { #CVE-2022-46337 }
+
+CVE-2022-46337 [\[CVE json\]](./CVE-2022-46337.cve.json)
+
+### Affected
+
+* Apache Derby from 10.1.1.0 through 10.16.1.1
+
+
+### Description
+
+A cleverly devised username might bypass LDAP authentication checks. In 
+LDAP-authenticated Derby installations, this could let an attacker fill 
+up the disk by creating junk Derby databases. In LDAP-authenticated 
+Derby installations, this could also allow the attacker to execute 
+malware which was visible to and executable by the account which booted 
+the Derby server. In LDAP-protected databases which weren't also 
+protected by SQL GRANT/REVOKE authorization, this vulnerability could 
+also let an attacker view and corrupt sensitive data and run sensitive 
+database functions and procedures.
+<br>
+<br>Mitigation:
+<br>Users should upgrade to Java 21 and Derby 10.17.1.0.
+<br>Alternatively, users who wish to remain on older Java versions should 
+build their own Derby distribution from one of the release families to 
+which the fix was backported: 10.16, 10.15, and 10.14. Those are the 
+releases which correspond, respectively, with Java LTS versions 17, 11, 
+and 8.
+<br>
+<br>
+
+### References
+* https://lists.apache.org/thread/q23kvvtoohgzwybxpwozmvvk17rp0td3
+
+
+### Credits
+* This issue was discovered by ﻿4ra1n and Y4tacker, who also proposed the fix. (finder)

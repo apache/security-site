@@ -236,3 +236,29 @@ pre-authentication attack.<br><p>This issue affects Apache OFBiz: before 18.12.0
 
 ### Credits
 * Skay <lhcaomail@gmail.com> (finder)
+
+
+## Execution of Solr plugin queries without authentication ## { #CVE-2023-46819 }
+
+CVE-2023-46819 [\[CVE json\]](./CVE-2023-46819.cve.json)
+
+### Affected
+
+* Apache OFBiz before 18.12.09
+
+
+### Description
+
+Missing Authentication in Apache Software Foundation Apache OFBiz when using the Solr plugin.<br><p>This issue affects Apache OFBiz: before 18.12.09.&nbsp;
+
+<span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 18.12.09</span></p>
+
+### References
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html
+* https://ofbiz.apache.org/release-notes-18.12.09.html
+* https://lists.apache.org/thread/mm5j0rsbl22q7yb0nmb6h2swbfjbwv99
+
+
+### Credits
+* Anonymous by demand (finder)

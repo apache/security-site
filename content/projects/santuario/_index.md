@@ -32,3 +32,26 @@ All versions of Apache Santuario - XML Security for Java prior to 2.2.3 and 2.1.
 
 ### Credits
 * An Trinh, Calif.
+
+
+## Private Key disclosure in debug-log output ## { #CVE-2023-44483 }
+
+CVE-2023-44483 [\[CVE json\]](./CVE-2023-44483.cve.json)
+
+### Affected
+
+* Apache Santuario from 2.2 before 2.2.6
+* Apache Santuario from 2.3 before 2.3.4
+* Apache Santuario from 3.0 before 3.0.3
+
+
+### Description
+
+All versions of Apache Santuario - XML Security for Java prior to 2.2.6, 2.3.4, and 3.0.3, when using the JSR 105 API, are vulnerable to an issue where a private key may be disclosed in log files when generating an XML Signature and logging with debug level is enabled.&nbsp;Users are recommended to upgrade to version 2.2.6, 2.3.4, or 3.0.3, which fixes this issue.<br>
+
+### References
+* https://lists.apache.org/thread/vmqbp9mfxtrf0kmbnnmbn3h9j6dr9q55
+
+
+### Credits
+* Apache Santuario would like to thank Max Fichtelmann for reporting this issue. (finder)

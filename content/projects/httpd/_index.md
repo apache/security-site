@@ -957,3 +957,70 @@ CVE-2023-27522 [\[CVE json\]](./CVE-2023-27522.cve.json)
 
 ### Credits
 * Dimas Fariski Setyawan Putra (nyxsorcerer) (finder)
+
+
+## mod_macro buffer over-read ## { #CVE-2023-31122 }
+
+CVE-2023-31122 [\[CVE json\]](./CVE-2023-31122.cve.json)
+
+### Affected
+
+* Apache HTTP Server through 2.4.57
+
+
+### Description
+
+Out-of-bounds Read vulnerability in mod_macro of Apache HTTP Server.<p>This issue affects Apache HTTP Server: through 2.4.57.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* David Shoon (github/davidshoon) (finder)
+
+
+## DoS in HTTP/2 with initial windows size 0 ## { #CVE-2023-43622 }
+
+CVE-2023-43622 [\[CVE json\]](./CVE-2023-43622.cve.json)
+
+### Affected
+
+* Apache HTTP Server from 2.4.55 through 2.4.57
+
+
+### Description
+
+An attacker, opening a HTTP/2 connection with an initial window size of 0, was able to block handling of that connection indefinitely in Apache HTTP Server. This could be used to exhaust worker resources in the server, similar to the well known "slow loris" attack pattern.<br><p>This has been fixed in version 2.4.58, so that such connection are terminated properly after the configured connection timeout.</p><p>This issue affects Apache HTTP Server: from 2.4.55 through 2.4.57.</p><p>Users are recommended to upgrade to version 2.4.58, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Prof. Sven Dietrich (City University of New York) (finder)
+* Isa Jafarov (City University of New York) (finder)
+* Prof. Heejo Lee (Korea University) (finder)
+* Choongin Lee (Korea University) (finder)
+
+
+## HTTP/2 stream memory not reclaimed right away on RST ## { #CVE-2023-45802 }
+
+CVE-2023-45802 [\[CVE json\]](./CVE-2023-45802.cve.json)
+
+### Affected
+
+* Apache HTTP Server from 2.4.17 through 2.4.57
+
+
+### Description
+
+When a HTTP/2 stream was reset (RST frame) by a client, there was a time window were the request's memory resources were not reclaimed immediately. Instead, de-allocation was deferred to connection close. A client could send new requests and resets, keeping the connection busy and open and causing the memory footprint to keep on growing. On connection close, all resources were reclaimed, but the process might run out of memory before that.<br><br>This was found by the reporter during testing of&nbsp;CVE-2023-44487 (HTTP/2 Rapid Reset Exploit) with their own test client. During "normal" HTTP/2 use, the probability to hit this bug is very low. The kept memory would not become noticeable before the connection closes or times out.<br><br>Users are recommended to upgrade to version 2.4.58, which fixes the issue.<br>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Will Dormann of Vul Labs (finder)
+* David Warren of Vul Labs (finder)

@@ -266,3 +266,26 @@ CVE-2023-41180 [\[CVE json\]](./CVE-2023-41180.cve.json)
 
 ### Credits
 * Ferenc Gerlits (finder)
+
+
+## Improper Neutralization of Input in Advanced User Interface for Jolt ## { #CVE-2023-49145 }
+
+CVE-2023-49145 [\[CVE json\]](./CVE-2023-49145.cve.json)
+
+### Affected
+
+* Apache NiFi from 0.7.0 through 1.23.2
+
+
+### Description
+
+Apache NiFi 0.7.0 through 1.23.2 include the JoltTransformJSON Processor, which provides an advanced configuration user interface that is vulnerable to DOM-based cross-site scripting. If an authenticated user, who is authorized to configure a JoltTransformJSON Processor, visits a crafted URL, then arbitrary
+JavaScript code can be executed within the session context of the authenticated user. Upgrading to Apache NiFi 1.24.0 or 2.0.0-M1 is the recommended mitigation.
+
+### References
+* https://nifi.apache.org/security.html#CVE-2023-49145
+* https://lists.apache.org/thread/j8rd0qsvgoj0khqck5f49jfbp0fm8r1o
+
+
+### Credits
+* Dr. Oliver Matula, DB Systel GmbH (finder)

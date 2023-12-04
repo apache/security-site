@@ -15,11 +15,13 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache AGE |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Airavata |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Airflow |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Allura |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Ambari |  [Apache Ambari Security Team](mailto:security@ambari.apache.org) | |
 | [Apache Ant](https://ant.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache APISIX |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Portable Runtime (APR)](https://apr.apache.org/security_report.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Archiva](https://archiva.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://archiva.apache.org/security.html) |
+| Apache Arrow |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache AsterixDB |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Atlas |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Avro |  [Apache Security Team](mailto:security@apache.org) | |
@@ -31,6 +33,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Cassandra |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Cayenne |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache CloudStack](https://cloudstack.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Cocoon |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Commons](https://commons.apache.org/security.html) |  [Apache Commons Security Team](mailto:security@commons.apache.org) | [Advisories](https://commons.apache.org/security.html#Known_Security_Vulnerabilities) |
 | Apache CouchDB |  [Apache CouchDB Security Team](mailto:security@couchdb.apache.org) | |
 | Apache CXF |  [Apache Security Team](mailto:security@apache.org) | |
@@ -112,6 +115,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache StreamPark (Incubating) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache StreamPipes |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Struts](https://struts.apache.org/security.html) |  [Apache Struts Security Team](mailto:security@struts.apache.org) | [Advisories](https://cwiki.apache.org/confluence/display/WW/Security+Bulletins) |
+| Apache Submarine |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Subversion](https://subversion.apache.org/security/) |  [Apache Subversion Security Team](mailto:security@subversion.apache.org) | [Advisories](https://subversion.apache.org/security/) |
 | [Apache Superset](https://superset.apache.org/docs/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://superset.apache.org/docs/security/cves) |
 | Apache SystemDS |  [Apache Security Team](mailto:security@apache.org) | |

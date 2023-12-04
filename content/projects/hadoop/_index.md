@@ -136,3 +136,28 @@ This was addressed in Apache Hadoop 3.2.3
 
 ### Credits
 * This issue was reported by a member of GitHub Security Lab, Jaroslav Lobačevski (https://github.com/JarLob).
+
+
+## Privilege escalation in Apache Hadoop Yarn container-executor binary on Linux systems ## { #CVE-2023-26031 }
+
+CVE-2023-26031 [\[CVE json\]](./CVE-2023-26031.cve.json)
+
+### Affected
+
+* Apache Hadoop from 3.3.1 before 3.3.5
+
+
+### Description
+
+<br>Relative library resolution in linux container-executor binary in Apache Hadoop 3.3.1-3.3.4 on Linux allows local user to gain root privileges. If the YARN cluster is accepting work from remote (authenticated) users, this MAY permit remote users to gain root privileges.<br><br>Hadoop 3.3.0 updated the "<a target="_blank" rel="nofollow" href="https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-site/SecureContainer.html">YARN Secure Containers</a>" to add a feature for executing user-submitted applications in isolated linux containers.<br><br>The native binary HADOOP_HOME/bin/container-executor is used to launch these containers; it must be owned by root and have the suid bit set in order for the YARN processes to run the containers as the specific users submitting the jobs.<br><br>The patch "<a target="_blank" rel="nofollow" href="https://issues.apache.org/jira/browse/YARN-10495">YARN-10495</a>. make the rpath of container-executor configurable" modified the library loading path for loading .so files from "$ORIGIN/" to ""$ORIGIN/:../lib/native/". This is the a path through which libcrypto.so is located. Thus it is is possible for a user with reduced privileges to install a malicious libcrypto library into a path to which they have write access, invoke the container-executor command, and have their modified library executed as root.<br>If the YARN cluster is accepting work from remote (authenticated) users, and these users' submitted job are executed in the physical host, rather than a container, then the CVE permits remote users to gain root privileges.<br><br>The fix for the vulnerability is to revert the change, which is done in <a target="_blank" rel="nofollow" href="https://issues.apache.org/jira/browse/YARN-11441">YARN-11441</a>, "Revert YARN-10495". This patch is in hadoop-3.3.5.<br><br>To determine whether a version of container-executor is vulnerable, use the readelf command. If the RUNPATH or RPATH value contains the relative path "./lib/native/" then it  is at risk<br><br><tt>$ readelf -d container-executor|grep <span style="background-color: rgb(255, 255, 255);">'RUNPATH\|RPATH'</span> <br>0x000000000000001d (RUNPATH)  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Library runpath: [$ORIGIN/:../lib/native/]</tt><br><br>If it does not, then it is safe:<br><br><tt>$ readelf -d container-executor|grep <span style="background-color: rgb(255, 255, 255);">'RUNPATH\|RPATH'</span> <br>0x000000000000001d (RUNPATH)  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Library runpath: [$ORIGIN/]</tt><br><br>For an at-risk version of container-executor to enable privilege escalation, the owner must be root and the suid bit must be set<br><tt><br>$ ls -laF /opt/hadoop/bin/container-executor<br>---Sr-s---. 1 root hadoop 802968 May 9 20:21 /opt/hadoop/bin/container-executor</tt><br><br>A safe installation lacks the suid bit; ideally is also not owned by root.<br><br><tt>$ ls -laF /opt/hadoop/bin/container-executor<br>-rwxr-xr-x. 1 yarn hadoop 802968 May 9 20:21 /opt/hadoop/bin/container-executor</tt><br><br>This configuration does not support Yarn Secure Containers, but all other hadoop services, including YARN job execution outside secure containers continue to work.<br><br><br><br><br>
+
+### References
+* https://issues.apache.org/jira/browse/YARN-11441
+* https://hadoop.apache.org/cve_list.html
+* https://lists.apache.org/thread/q9qpdlv952gb4kphpndd5phvl7fkh71r
+
+
+### Credits
+* Esa Hiltunen (finder)
+* Mikko Kortelainen (finder)
+* The Teragrep Project (sponsor)

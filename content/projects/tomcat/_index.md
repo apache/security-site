@@ -554,3 +554,29 @@ smuggling when behind a reverse proxy.<br></p><p><span style="background-color: 
 
 ### Credits
 * Keran Mu and Jianjun Chen from Tsinghua University and Zhongguancun Laboratory (finder)
+
+
+## HTTP request smuggling via malformed trailer headers ## { #CVE-2023-46589 }
+
+CVE-2023-46589 [\[CVE json\]](./CVE-2023-46589.cve.json)
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.0-M10
+* Apache Tomcat from 10.1.0-M1 through 10.1.15
+* Apache Tomcat from 9.0.0-M1 through 9.0.82
+* Apache Tomcat from 8.5.0 through 8.5.95
+
+
+### Description
+
+Improper Input Validation vulnerability in Apache Tomcat.<p>Tomcat <span style="background-color: rgb(255, 255, 255);">from 11.0.0-M1 through 11.0.0-M10, from 10.1.0-M1 through 10.1.15, from 9.0.0-M1 through 9.0.82 and from 8.5.0 through 8.5.95</span> did not correctly parse HTTP trailer headers. A trailer header that exceeded the header size limit could cause Tomcat to treat a single 
+request as multiple requests leading to the possibility of request 
+smuggling when behind a reverse proxy.<br></p><p><span style="background-color: var(--wht);">Users are recommended to upgrade to version 11.0.0-M11&nbsp;onwards, 10.1.16 onwards, 9.0.83 onwards or 8.5.96 onwards, which fix the issue.</span></p><br>
+
+### References
+* https://lists.apache.org/thread/0rqq6ktozqc42ro8hhxdmmdjm1k1tpxr
+
+
+### Credits
+* Norihito Aimoto (OSSTech Corporation)  (finder)

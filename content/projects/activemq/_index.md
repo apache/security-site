@@ -109,3 +109,85 @@ In Apache ActiveMQ Artemis prior to 2.24.0, an attacker could show malicious con
 
 ### Credits
 * Apache ActiveMQ would like to thank Yash Pandya (Digital14), Rajatkumar Karmarkar (Digital14), and Likhith Cheekatipalle (Digital14) for reporting this issue.
+
+
+## Deserialization vulnerability on Jolokia that allows authenticated users to perform RCE ## { #CVE-2022-41678 }
+
+CVE-2022-41678 [\[CVE json\]](./CVE-2022-41678.cve.json)
+
+### Affected
+
+* Apache ActiveMQ before 5.16.6
+* Apache ActiveMQ from 5.17.0 before 5.17.4
+* Apache ActiveMQ at 5.18.0
+* Apache ActiveMQ at 6.0.0
+
+
+### Description
+
+<span style="background-color: rgb(255, 255, 255);">Once an user is authenticated on Jolokia, he can potentially trigger arbitrary code execution.&nbsp;<br><br>In details, in ActiveMQ configurations, jetty allows
+org.jolokia.http.AgentServlet to handler request to /api/jolokia<br><br>org.jolokia.http.HttpRequestHandler#handlePostRequest is able to
+create JmxRequest through JSONObject. And calls to
+org.jolokia.http.HttpRequestHandler#executeRequest.<br><br>Into deeper calling stacks,
+org.jolokia.handler.ExecHandler#doHandleRequest is able to invoke
+through refection.
+
+And then, RCE is able to be achieved via
+jdk.management.jfr.FlightRecorderMXBeanImpl which exists on Java version above 11.
+<br><br>
+1 Call newRecording.
+<br>
+2 Call setConfiguration. And a webshell data hides in it.
+<br>
+3 Call startRecording.
+<br>
+4 Call copyTo method. The webshell will be written to a .jsp file.<br><br></span>The mitigation is to restrict (by default) the actions authorized on Jolokia, or disable Jolokia.<br>A more restrictive Jolokia configuration has been defined in default ActiveMQ distribution. We encourage users to upgrade to ActiveMQ distributions version including updated Jolokia configuration: 5.16.6, 5.17.4, 5.18.0, 6.0.0.<br>
+
+### References
+* https://activemq.apache.org/security-advisories.data/CVE-2022-41678-announcement.txt
+* https://lists.apache.org/thread/7g17kwbtjl011mm4tr8bn1vnoq9wh4sl
+
+
+### Credits
+* wangxin@threatbook.cn (finder)
+* wangzhendong@threatbook.cn (finder)
+* honglonglong@threatbook.cn (finder)
+
+
+## Unbounded deserialization causes ActiveMQ to be vulnerable to a remote code execution (RCE) attack ## { #CVE-2023-46604 }
+
+CVE-2023-46604 [\[CVE json\]](./CVE-2023-46604.cve.json)
+
+### Affected
+
+* Apache ActiveMQ from 5.18.0 before 5.18.3
+* Apache ActiveMQ from 5.17.0 before 5.17.6
+* Apache ActiveMQ from 5.16.0 before 5.16.7
+* Apache ActiveMQ before 5.15.16
+* Apache ActiveMQ Legacy OpenWire Module from 5.18.0 before 5.18.3
+* Apache ActiveMQ Legacy OpenWire Module from 5.17.0 before 5.17.6
+* Apache ActiveMQ Legacy OpenWire Module from 5.16.0 before 5.16.7
+* Apache ActiveMQ Legacy OpenWire Module from 5.8.0 before 5.15.16
+
+
+### Description
+
+<div>The Java OpenWire protocol marshaller is vulnerable to Remote Code 
+Execution. This vulnerability may allow a remote attacker with network 
+access to either a Java-based OpenWire broker or client to run arbitrary
+ shell commands by manipulating serialized class types in the OpenWire 
+protocol to cause either the client or the broker (respectively) to 
+instantiate any class on the classpath.</div><div><br></div><div>Users are recommended to upgrade
+ both brokers and clients to version 5.15.16, 5.16.7, 5.17.6, or 5.18.3 
+which fixes this issue.</div>
+
+### References
+* https://activemq.apache.org/security-advisories.data/CVE-2023-46604-announcement.txt
+* https://www.openwall.com/lists/oss-security/2023/10/27/5
+* https://security.netapp.com/advisory/ntap-20231110-0010/
+* https://packetstormsecurity.com/files/175676/Apache-ActiveMQ-Unauthenticated-Remote-Code-Execution.html
+* https://lists.debian.org/debian-lts-announce/2023/11/msg00013.html
+
+
+### Credits
+* yejie@threatbook.cn (finder)

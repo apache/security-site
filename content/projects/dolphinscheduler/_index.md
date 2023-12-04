@@ -190,3 +190,64 @@ On version 3.0.0 through 3.1.1, Apache DolphinScheduler's python gateway suffere
 
 ### References
 * https://lists.apache.org/thread/25g77jqczp3t8cz56hk1p65q7m6c64rf
+
+
+## Apache dolphinscheduler sensitive information disclosure ## { #CVE-2023-48796 }
+
+CVE-2023-48796 [\[CVE json\]](./CVE-2023-48796.cve.json)
+
+### Affected
+
+* Apache DolphinScheduler from 3.0.0 before 3.0.2
+
+
+### Description
+
+Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache DolphinScheduler.<br><br>The information exposed to unauthorized actors may include sensitive data such as database credentials.<br><br>Users who can't upgrade to the fixed version can also set environment variable `MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE=health,metrics,prometheus` to workaround this, or add the following section in the `application.yaml` file<br><br><br>```<br>management:<br>&nbsp; endpoints:<br>&nbsp; &nbsp; web:<br>&nbsp; &nbsp; &nbsp; exposure:<br>&nbsp; &nbsp; &nbsp; &nbsp; include: health,metrics,prometheus<br>```<br><p><br></p><p>This issue affects Apache DolphinScheduler: from 3.0.0 before 3.0.2.</p><p>Users are recommended to upgrade to version 3.0.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/ffrmkcwgr2lcz0f5nnnyswhpn3fytsvo
+
+
+## Information Leakage Vulnerability ## { #CVE-2023-49068 }
+
+CVE-2023-49068 [\[CVE json\]](./CVE-2023-49068.cve.json)
+
+### Affected
+
+* Apache DolphinScheduler before 3.2.1
+
+
+### Description
+
+Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache DolphinScheduler.<p>This issue affects Apache DolphinScheduler: before 3.2.1.<br></p><p>Users are recommended to upgrade to version 3.2.1, which fixes the issue. At the time of disclosure of this advisory, this version has not yet been released. In the mean time, we recommend you make sure the logs are only available to trusted operators.<br></p>
+
+### References
+* https://github.com/apache/dolphinscheduler/pull/15192
+* https://lists.apache.org/thread/jn6kr6mjdgtfgpxoq9j8q4pkfsq8zmpq
+
+
+### Credits
+* Y4tacker and 4ra1n from Y4secTeam (finder)
+
+
+## Authenticated users could delete UDFs in resource center they were not authorized for ## { #CVE-2023-49620 }
+
+CVE-2023-49620 [\[CVE json\]](./CVE-2023-49620.cve.json)
+
+### Affected
+
+* Apache DolphinScheduler from 2.0.0 before 3.1.0
+
+
+### Description
+
+Before DolphinScheduler version 3.1.0, the login user could delete UDF function in the resource center unauthorized (which almost used in sql task), with&nbsp;unauthorized&nbsp;access vulnerability (IDOR), but after version 3.1.0 we fixed this issue. We mark this cve as moderate level because it still requires user login to operate, please upgrade to version 3.1.0 to avoid this&nbsp;vulnerability
+
+### References
+* https://github.com/apache/dolphinscheduler/pull/10307
+* https://lists.apache.org/thread/zm4t1ykj4cro1c8183q7y32z0yzfz8yj
+
+
+### Credits
+* Yuanheng Lab of zhongfu (finder)

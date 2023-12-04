@@ -173,3 +173,30 @@ Improper Privilege Management vulnerability in Apache Software Foundation Apache
 
 ### Credits
 * xxhzz (finder)
+
+
+## Server-Side Request Forgery in Apache ShenYu ## { #CVE-2023-25753 }
+
+CVE-2023-25753 [\[CVE json\]](./CVE-2023-25753.cve.json)
+
+### Affected
+
+* Apache ShenYu through 2.5.1
+
+
+### Description
+
+
+
+<p>There exists an SSRF (Server-Side Request Forgery) vulnerability located at the /sandbox/proxyGateway endpoint. This vulnerability allows us to manipulate arbitrary requests and retrieve corresponding responses by inputting any URL into the requestUrl parameter.</p><p>Of particular concern is our ability to exert control over the HTTP method, cookies, IP address, and headers. This effectively grants us the capability to dispatch complete HTTP requests to hosts of our choosing.</p><p>
+
+</p><p>This issue affects Apache ShenYu: 2.5.1.</p><p>Upgrade to Apache ShenYu 2.6.0 or apply patch&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/shenyu/pull/4776">https://github.com/apache/shenyu/pull/4776</a>&nbsp;.</p><p></p>
+
+
+
+### References
+* https://lists.apache.org/thread/chprswxvb22z35vnoxv9tt3zknsm977d
+
+
+### Credits
+* by3 (finder)
