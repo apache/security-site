@@ -64,12 +64,6 @@ def get_dt_projects():
 
 dt_projects, dt_pmcs = get_dt_projects()
 
-# TODO don't hardcode, maybe add another layer
-pmc_uuids = {
-    'arrow': '11fd86d9-b646-4808-a731-5ddffe6fb71e',
-    'commons': 'c2a20d87-386d-45df-af14-3426b470b4ab'
-}
-
 def dt_pmc(pmc):
     global dt_pmcs
     friendly_name = 'Apache ' + pmc.title()
