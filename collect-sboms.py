@@ -13,11 +13,6 @@ from sys import argv
 load_dotenv()
 dt_api_key = os.getenv('DT_API_KEY')
 
-if len(argv)>1:
-    pmc = argv[1]
-else:
-    pmc = 'commons'
-
 def get_index(url):
     with request.urlopen(url) as resp:
         index = resp.read().decode('utf-8')
@@ -87,15 +82,15 @@ def dt_pmc(pmc):
 
     return dt_pmcs[friendly_name]
 
-def get_or_create_dt_project(pmc, pmc_uuid, friendly_name, version):
+def get_or_create_dt_project(pmc, pmc_uuid, project_friendly_name, version):
     global dt_projects
 
-    if f"{friendly_name}-{version}" in dt_projects:
+    if f"{project_friendly_name}-{version}" in dt_projects:
         print("Project exists, just update")
     else:
         project = {
             'active': True,
-            'name': friendly_name,
+            'name': project_friendly_name,
             'version': version,
             # TODO don't hardcode
             'classifier': 'LIBRARY',
@@ -114,10 +109,27 @@ def get_or_create_dt_project(pmc, pmc_uuid, friendly_name, version):
             print(res.status_code)
 
         dt_projects, _ = get_dt_projects()
-    return dt_projects[f"{friendly_name}-{version}"]
+    return dt_projects[f"{project_friendly_name}-{version}"]
 
-for project in maven_projects(pmc):
-    friendly_name = 'Apache ' + project.replace('-', ' ').title()
+if len(argv)>1:
+    pmc = argv[1]
+else:
+    pmc = 'commons'
+
+if len(argv)>2:
+    projects = [ argv[2] ]
+elif pmc == 'camel':
+    projects = [
+      'camel',
+      'kamelets/camel-kamelets-parent',
+      'quarkus/camel-quarkus',
+      'springboot/spring-boot',
+    ]
+else:
+    projects = maven_projects(pmc)
+
+for project in projects:
+    friendly_name = 'Apache ' + project.split('/')[-1].replace('-', ' ').title()
     print(project)
     pmc_uuid = dt_pmc(pmc)['uuid']
 

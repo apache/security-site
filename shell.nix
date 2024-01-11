@@ -9,4 +9,5 @@ pkgs.mkShell {
       p.python-dotenv
     ]))
   ];
+  shareNet = true;
 }
