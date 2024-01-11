@@ -81,6 +81,6 @@ The ASF projects are highly diverse and independent. They have different languag
 
 The ASF Security Committee works closely with the project teams, communities, and reporters to ensure that issues get handled quickly and correctly. This responsible oversight is a principle of The Apache Way and helps ensure Apache software is stable and can be trusted.
 
-This report gave metrics for calendar year 2023 showing from the 24,000 emails received we triaged over 660 vulnerability reports relating to ASF projects.  We published 258 CVE records. The number of non-spam threads dealt with was up 31% from 2022 with the number of actual vulnerability reports up 10%.  We also highlighted a number of new security initiatives we’ve worked on including metadata consistency and SBOMs.
+This report gave metrics for calendar year 2023 showing from the 24,000 emails received we triaged over 660 vulnerability reports relating to ASF projects.  We published 258 CVE records. The number of non-spam threads dealt with was up 31% from 2022 with the number of actual vulnerability reports up 10%.  We also highlighted a number of new security initiatives we've worked on including metadata consistency and SBOMs.
 
 If you have vulnerability information you would like to share [please contact us](http://apache.org/security/#reporting-a-vulnerability) or for comments on this report use the public [security-discuss mailing list](https://lists.apache.org/list.html?security-discuss@community.apache.org).
