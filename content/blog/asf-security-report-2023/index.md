@@ -25,7 +25,7 @@ Diagram 1 gives the breakdown of those 1843 threads. 415 threads (23%) were peop
 
 The next 608 of the 1843 (33%) were email threads with people asking non-security (usually support-type) questions, questions about dependencies, or general administrative threads.
 
-The next 160 (8%) of those reports were researchers reporting infrastructure issues such as those affecting our web sites. These are almost always rejected; where a researcher reports us having directory listings enabled, source code visible, public “.git” directories, and so on. These reports are generally the unfiltered output of some publicly available scanning tool, and often come along with a request for some sort of monetary reward (bounty).
+The next 160 (8%) of those reports were researchers reporting infrastructure issues such as those affecting our web sites. These are almost always rejected; where a researcher reports us having directory listings enabled, source code visible, public ".git" directories, and so on. These reports are generally the unfiltered output of some publicly available scanning tool, and often come along with a request for some sort of monetary reward (bounty).
 
 That left 660 (36%) reports of new vulnerabilities in 2023 (up from 2022: 599, 2021: 441, 2020: 376), which spanned 112 of the top-level projects. These 660 reports include both external reports, as well as issues found internally by projects and their communities. We don't keep track of the breakdown between those categories. For example, where a project has found an issue themselves they will follow the same ASF process to assign it a CVE (Common Vulnerabilities and Exposures) name and address it, and we still count it here. 
 
