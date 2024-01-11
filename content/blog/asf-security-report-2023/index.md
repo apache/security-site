@@ -13,7 +13,7 @@ Anyone finding security issues in any ASF project can report them to security@ap
 
 The security committee is responsible for ensuring that issues are dealt with properly and actively reminds projects of their outstanding issues and responsibilities. Our paid person plays a pivotal role here. As a Board committee, we have the ability to take action including blocking a project's future releases or, worst case, archiving a project if such projects are unresponsive to handling their security issues. This, along with the Apache License v2.0, are key parts of the ASF’s general oversight function around official releases, allowing the ASF to protect individual developers and giving users confidence to deploy and rely on ASF software. 
 
-The oversight we have into all security reports, along with tools we have developed, gives us the ability to easily create metrics on the issues. Our last report [covered the metrics for 2022](https://security.apache.org/blog/asf-security-report-2022/)**.  **As well as vulnerability handling, this report also summarises the security initiatives we’ve worked on in the year.
+The oversight we have into all security reports, along with tools we have developed, gives us the ability to easily create metrics on the issues. Our last report [covered the metrics for 2022](https://security.apache.org/blog/asf-security-report-2022/). As well as vulnerability handling, this report also summarises the security initiatives we've worked on in the year.
 
 ## Reporting Statistics for 2023
 
