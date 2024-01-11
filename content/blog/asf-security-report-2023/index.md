@@ -64,7 +64,7 @@ As well as helping projects handle reports of vulnerabilities, we've worked on a
 
 * Working with projects to publish "security model" pages on their websites, which help users understand what to expect from the project security-wise, and help security researchers on where to best focus their efforts.  Such pages were published for  [Apache Maven](https://maven.apache.org/security.html), [Apache JMeter](https://jmeter.apache.org/security.html), [Apache Commons](https://commons.apache.org/security.html), [Apache PDFBox](https://pdfbox.apache.org/security.html),  and [Apache Airflow](https://airflow.apache.org/docs/apache-airflow/stable/security/security_model.html).
 * Reviewing the Common Platform Enumeration names (CPE's) that were assigned to our CVE's by the NIST's NVD programme, and suggesting fixes to some  inconsistencies/misclassifications we identified.  We have stopped distinguishing between 'incubating' and 'regular' Apache projects in the CPE, to avoid missing associations.
-* Working with NIST’s NVD programme to align their Common Weakness Enumeration (CWE) classifications.
+* Working with NIST's NVD programme to align their Common Weakness Enumeration (CWE) classifications.
 * A similar review of the GitHub Security Advisory (GHSA) database, reviewing artifact mappings and adding missing ones.
 * Put into place an ASF-wide default [vulnerability severity rating system](https://security.apache.org/blog/severityrating/).
 * Engaging with the Trivy SBOM/security scanner project to discuss how we can help reduce noise and make security reports more accurate, possibly using VEX. This is challenging because it requires the scanner to have access to not just a list, but the graph of dependencies.
