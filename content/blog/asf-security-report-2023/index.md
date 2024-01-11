@@ -60,7 +60,7 @@ During 2023 there were a few vulnerabilities worth highlighting; either because 
 
 ## Security initiatives
 
-As well as helping projects handle reports of vulnerabilities, we’ve worked on a number of security initiatives in 2023. These included:
+As well as helping projects handle reports of vulnerabilities, we've worked on a number of security initiatives in 2023. These included:
 
 * Working with projects to publish "security model" pages on their websites, which help users understand what to expect from the project security-wise, and help security researchers on where to best focus their efforts.  Such pages were published for  [Apache Maven](https://maven.apache.org/security.html), [Apache JMeter](https://jmeter.apache.org/security.html), [Apache Commons](https://commons.apache.org/security.html), [Apache PDFBox](https://pdfbox.apache.org/security.html),  and [Apache Airflow](https://airflow.apache.org/docs/apache-airflow/stable/security/security_model.html).
 * Reviewing the Common Platform Enumeration names (CPE's) that were assigned to our CVE's by the NIST's NVD programme, and suggesting fixes to some  inconsistencies/misclassifications we identified.  We have stopped distinguishing between 'incubating' and 'regular' Apache projects in the CPE, to avoid missing associations.
