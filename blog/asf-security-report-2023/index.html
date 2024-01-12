@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.111.3">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> ASF Security Report: 2023 </title>
+
+  
+  <meta name="description" content="This report explores the state of security across all of The Apache Software Foundation (ASF) projects for the calendar year 2023. We review key metrics, specific vulnerabilities, and the most common ways users of ASF projects were affected by security issues."> 
+  
+  
+  
+  
+  
+
+  
+
+  <meta name="author" content="Mark Cox, VP Security">
+
+
+  <meta property="og:title" content="ASF Security Report: 2023" />
+<meta property="og:description" content="This report explores the state of security across all of The Apache Software Foundation (ASF) projects for the calendar year 2023. We review key metrics, specific vulnerabilities, and the most common ways users of ASF projects were affected by security issues." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://security.apache.org/blog/asf-security-report-2023/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-01-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-01-11T00:00:00+00:00" />
+
+  
+
+
+
+
+  
+  
+  
+  
+  
+
+  <link rel="canonical" href="https://security.apache.org/blog/asf-security-report-2023/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Apache Security Team</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Apache Security Team</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog" >Blog</a></li>
+    
+    <li><a href="https://www.apache.org/licenses/" >License</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
+    
+    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
+    
+    <li><a href="https://www.apache.org" >Apache</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+<div class="push-center" itemscope itemtype="http://schema.org/BlogPosting">
+  <meta itemprop="name" content="ASF Security Report: 2023">
+<meta itemprop="description" content="This report explores the state of security across all of The Apache Software Foundation (ASF) projects for the calendar year 2023. We review key metrics, specific vulnerabilities, and the most common ways users of ASF projects were affected by security issues."><meta itemprop="datePublished" content="2024-01-11T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2024-01-11T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2102">
+<meta itemprop="keywords" content="" />
+  <div id="hero">
+    <h1 itemprop="headline">ASF Security Report: 2023</h1>
+    
+    <blockquote itemprop="description">This report explores the state of security across all of The Apache Software Foundation (ASF) projects for the calendar year 2023. We review key metrics, specific vulnerabilities, and the most common ways users of ASF projects were affected by security issues.</blockquote>
+    
+    <time class="post-time"><span class="icon">
+  <i class="fa fa-clock-o" aria-hidden="true"></i>
+</span>
+<span>10 minute read</span>
+<span class="icon">
+ <i class="fa fa-pencil" aria-hidden="true"></i>
+</span>
+
+  Published: <time datetime="2024-01-11T00:00:00&#43;00:00">11 Jan, 2024</time>
+
+</time>
+  </div>
+  <div id="post-box">
+    <div id="post" itemprop="articleBody"><h2 id="background">Background</h2>
+<p>The security committee of The Apache Software Foundation (ASF) oversees and coordinates the initial triage, handling, and process around vulnerabilities across all of the 320+ Apache projects handling over 65 incoming emails a day. Established in 2002, we have a <a href="https://s.apache.org/cveprocess">consistent process</a> for how issues are handled, and this process includes how our projects must disclose security issues. We have a single paid person to help deal with incoming vulnerability handling work, with the rest of the team, including the VP, being volunteers.</p>
+<p>Anyone finding security issues in any ASF project can report them to <a href="mailto:security@apache.org">security@apache.org</a>, where they are recorded and passed on to the relevant <a href="https://security.apache.org/projects/">dedicated security teams</a> or private project management committees (PMCs) to handle. These groups are composed wholly of volunteers. In general; each community, or PMC, is responsible for handling their own vulnerabilities. The security committee monitors all the issues reported across all the projects and keeps track of the issues throughout the vulnerability lifecycle. It also helps the various communities with their security response and process. And finally, the security committee reports on this to the ASF Board as part of the ASF oversight and governance function.</p>
+<p>The security committee is responsible for ensuring that issues are dealt with properly and actively reminds projects of their outstanding issues and responsibilities. Our paid person plays a pivotal role here. As a Board committee, we have the ability to take action including blocking a project&rsquo;s future releases or, worst case, archiving a project if such projects are unresponsive to handling their security issues. This, along with the Apache License v2.0, are key parts of the ASF&rsquo;s general oversight function around official releases, allowing the ASF to protect individual developers and giving users confidence to deploy and rely on ASF software.</p>
+<p>The oversight we have into all security reports, along with tools we have developed, gives us the ability to easily create metrics on the issues. Our last report <a href="https://security.apache.org/blog/asf-security-report-2022/">covered the metrics for 2022</a>. As well as vulnerability handling, this report also summarises the security initiatives we&rsquo;ve worked on in the year.</p>
+<h2 id="reporting-statistics-for-2023">Reporting Statistics for 2023</h2>
+<p>In 2023 our security email addresses received in total just over 24,000 emails (2022: 22,600). After spam filtering and thread grouping there were 1843 non-spam threads (2022: 1402, 2021: 1272, 2020: 946). Unfortunately security reports do sometimes look like spam, especially if they include lots of attachments or large videos, and so we are careful to review all messages to ensure real reports are not missed.</p>
+<p><img src="sankeymatic_20240108_103035_2000x1200.png" alt="Diagram 1: Breakdown of ASF security email threads for calendar year 2023 (after removal of &amp;lsquo;spam&amp;rsquo; messages)" title="Diagram 1: Breakdown of ASF security email threads for calendar year 2023 (after removal of 'spam' messages)"></p>
+<p>Diagram 1 gives the breakdown of those 1843 threads. 415 threads (23%) were people confused by the Apache License. As many projects use the Apache License, not just ASF projects, people can get confused when they see the Apache License and they don&rsquo;t understand what it is. This is most common, for example, on mobile phones where the licenses are displayed in the settings menu, usually due to the inclusion of software by Google released under the Apache License. We do not reply to these emails. This is up significantly from the 305 we received in 2022.</p>
+<p>The next 608 of the 1843 (33%) were email threads with people asking non-security (usually support-type) questions, questions about dependencies, or general administrative threads.</p>
+<p>The next 160 (8%) of those reports were researchers reporting infrastructure issues such as those affecting our web sites. These are almost always rejected; where a researcher reports us having directory listings enabled, source code visible, public &ldquo;.git&rdquo; directories, and so on. These reports are generally the unfiltered output of some publicly available scanning tool, and often come along with a request for some sort of monetary reward (bounty).</p>
+<p>That left 660 (36%) reports of new vulnerabilities in 2023 (up from 2022: 599, 2021: 441, 2020: 376), which spanned 112 of the top-level projects. These 660 reports include both external reports, as well as issues found internally by projects and their communities. We don&rsquo;t keep track of the breakdown between those categories. For example, where a project has found an issue themselves they will follow the same ASF process to assign it a CVE (Common Vulnerabilities and Exposures) name and address it, and we still count it here.</p>
+<p>The next step is having the project triage the report to see if it&rsquo;s really an issue. Invalid reports and reports of things that are not actually vulnerabilities get rejected back to the reporter. Of the remaining issues that are accepted, they are assigned appropriate CVE names and eventually fixes are released.</p>
+<p>As of January 1st 2024, 175 of those 660 reports were still under triage and investigation. This is where a project was working on an issue and had not yet rejected the issue or assigned it a CVE at that date. This number seems quite high but it does vary through the year and tends to be higher at the end of the calendar year, when many developers take holidays. It&rsquo;s not uncommon for lower severity issues to take some time before they become part of a new release, so at any given time there will always be a number of issues open and currently being worked on.  However, we&rsquo;re watching this metric on a monthly basis as the number of issues still under triage and investigation rising faster each month is a sign that projects are falling behind in processing reports.</p>
+<p>The remaining 485 reports (2022: 490, 2021: 391, 2020: 341) directly led to us assigning 173 CVE records (2022: 210, 2021: 183, 2020: 151, 2019: 122). Some vulnerability reports may include multiple issues, some reports are across multiple projects, and some reports are duplicates where the same issue is found by different reporters, so there isn&rsquo;t an exact one-to-one mapping of accepted reports to CVE names.</p>
+<p>The four projects with the most reports in 2023 were Airflow with 109 reports, Tomcat with 38 reports, Superset with 38 reports, and InLong with 27 reports. Airflow and Tomcat are part of the <a href="https://hackerone.com/ibb">HackerOne Internet Bug Bounty program</a>.</p>
+<h2 id="cve-statistics-for-2023">CVE Statistics for 2023</h2>
+<p>In 2023 we published 258 CVE records (2022: 245).  These records consist of vulnerabilities found and triaged in 2023 (the 173 mentioned above), and vulnerabilities found in previous years (&ldquo;under triage&rdquo;) where the release that fixed them was made in 2023.  The four projects with the most published CVE were Airflow with 47 CVE, Superset with 27, InLong with 23, and Tomcat with 10.  Note, as always, that the number of released CVE has no correlation with a project being more or less secure, and we&rsquo;ve not taken into account severity levels or timescales.  Indeed, projects fixing their issues and releasing timely security updates is a sign of a healthy project.</p>
+<p>The Apache Security committee handles CVE name allocation and is a CVE project Candidate Naming Authority (CNA), so all requests for CVE names in any ASF project are routed through us, even if the reporter is unaware and contacts the CVE project directly or goes public with an issue before contacting us.  The Apache Security Team requires that all security issues in all our projects have published CVE records.</p>
+<h2 id="noteworthy-vulnerabilities-and-events">Noteworthy vulnerabilities and events</h2>
+<p>During 2023 there were a few vulnerabilities worth highlighting; either because they were severe and high risk, they had readily available exploits, or there was media attention. These included:</p>
+<ul>
+<li>Several vulnerabilities were added this year to the CISA Known Exploited Vulnerabilities (KEV) catalog.  These mostly can lead to remote code execution:
+<ul>
+<li>A fixed and published vulnerability in Apache ActiveMQ in October 2023, (<a href="https://www.cve.org/CVERecord?id=CVE-2023-46604">CVE-2023-46604</a>).  This vulnerability also gained press attention due to it being widely exploited on installations that have not been upgraded, including by ransomware.  The Metasploit framework had an exploit submitted for this issue.</li>
+<li>A flaw in Apache RocketMQ (<a href="https://www.cve.org/CVERecord?id=CVE-2023-33246">CVE-2023-33246</a>), fixed in May 2023.  The Metasploit framework had an exploit submitted for this issue.</li>
+<li>A flaw in Apache Spark (<a href="https://www.cve.org/CVERecord?id=CVE-2022-33891">CVE-2022-33891</a>) fixed in a release in July 2022.</li>
+<li>A flaw in Tomcat if an attacker can reach JMX ports (<a href="https://www.cve.org/CVERecord?id=CVE-2016-8735">CVE-2016-8735</a>), fixed in a release in 2017.</li>
+</ul>
+</li>
+<li>CISA also released their &lsquo;<a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-215a">2022 Top Routinely Exploited Vulnerabilities</a>&rsquo; report in August 2023, mentioning malicious cyber actors continue to show high interest in Log4Shell, (<a href="https://www.cve.org/CVERecord?id=CVE-2021-44228">CVE-2021-44228</a>).  Their &lsquo;Additional Routinely Exploited Vulnerabilities&rsquo; table also lists some HTTP Server vulnerabilities and a follow-up on Log4Shell.  Nucleus Security made a visual representation of vendors in CISA&rsquo;s Known Exploited Vulnerabilities report. With 28 of the 989 vulnerabilities, <a href="https://nucleussec.com/cisa-kev-art/">Apache is visible on the chart</a>.</li>
+<li>A number of vulnerabilities in Apache OpenMeetings <a href="https://thehackernews.com/2023/07/apache-openmeetings-web-conferencing.html">gained attention</a>, addressed in a release in May 2023.</li>
+<li>Some time ago Santuario worked with Zoho to diagnose an issue that turned out to be incorrect use of an outdated xmlsec (Apache Santuario). Zoho fixed their software and disclosed <a href="https://www.cve.org/CVERecord?id=CVE-2022-47966">CVE-2022-47966</a> for it. Unfortunately one of their on-prem customers had not upgraded and was compromised. This was published as a <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-250a">CISA CSA in September 2023</a>.</li>
+<li>A critical flaw in Apache Struts was disclosed and fixed in December 2023, (<a href="https://www.cve.org/CVERecord?id=CVE-2023-50164">CVE-2023-50164</a>).</li>
+<li>A critical flaw in Apache OFBiz was disclosed and fixed in December 2023, (<a href="https://www.cve.org/CVERecord?id=CVE-2023-49070">CVE-2023-49070</a> and later update <a href="https://www.cve.org/CVERecord?id=CVE-2023-51467">CVE-2023-51467</a>).  There are reports of this issue being exploited.</li>
+</ul>
+<h2 id="security-initiatives">Security initiatives</h2>
+<p>As well as helping projects handle reports of vulnerabilities, we&rsquo;ve worked on a number of security initiatives in 2023. These included:</p>
+<ul>
+<li>Working with projects to publish &ldquo;security model&rdquo; pages on their websites, which help users understand what to expect from the project security-wise, and help security researchers on where to best focus their efforts.  Such pages were published for  <a href="https://maven.apache.org/security.html">Apache Maven</a>, <a href="https://jmeter.apache.org/security.html">Apache JMeter</a>, <a href="https://commons.apache.org/security.html">Apache Commons</a>, <a href="https://pdfbox.apache.org/security.html">Apache PDFBox</a>,  and <a href="https://airflow.apache.org/docs/apache-airflow/stable/security/security_model.html">Apache Airflow</a>.</li>
+<li>Reviewing the Common Platform Enumeration names (CPE&rsquo;s) that were assigned to our CVE&rsquo;s by the NIST&rsquo;s NVD programme, and suggesting fixes to some  inconsistencies/misclassifications we identified.  We have stopped distinguishing between &lsquo;incubating&rsquo; and &lsquo;regular&rsquo; Apache projects in the CPE, to avoid missing associations.</li>
+<li>Working with NIST&rsquo;s NVD programme to align their Common Weakness Enumeration (CWE) classifications.</li>
+<li>A similar review of the GitHub Security Advisory (GHSA) database, reviewing artifact mappings and adding missing ones.</li>
+<li>Put into place an ASF-wide default <a href="https://security.apache.org/blog/severityrating/">vulnerability severity rating system</a>.</li>
+<li>Engaging with the Trivy SBOM/security scanner project to discuss how we can help reduce noise and make security reports more accurate, possibly using VEX. This is challenging because it requires the scanner to have access to not just a list, but the graph of dependencies.</li>
+<li>Starting providing guidance for consistent software identification using schemes such as Purl and SWIG, so vulnerability information can more easily be shared by Apache itself as well as third parties. Such consistent naming is essential to improve the accuracy of SBOM and vulnerability scanning activities.</li>
+<li>Working with projects to start publishing SBOM/VEX/VDR information, including this year with the Apache Logging project and Apache Airflow project.  We have set up an experimental platform to collect and aggregate SBOMs and information about advisories for 3rd-party dependencies. This is already populated with information from 257 artifacts across 13 Apache projects, which we plan to expand and use to get more actionable information.</li>
+<li>Participation in the Community over Code NA conference, among other conversations  sharing the learnings from the formation of the Airflow security team.</li>
+<li>Working with OSTIF who are doing a security audit of Apache Commons, focusing on the Commons Codec, Commons IO, and Commons Lang components.</li>
+<li>Based on input from various parts of the ASF, we <a href="https://www.regulations.gov/comment/ONCD-2023-0002-0106">submitted a response</a> in November 2023 to the White House Office of the National Cyber Director (ONCD) Request for Information (RFI) on &ldquo;Open-Source Software Security and Memory Safe Programming Languages&rdquo;.</li>
+<li>Working with other parts of the ASF to offer considerable advice to policy makers of the EU working on acts and directives such as the Cyber Resiliance act.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>The ASF projects are highly diverse and independent. They have different languages, communities, management, and security models. However one of the things every project has in common is a consistent process for how reported security issues are handled.</p>
+<p>The ASF Security Committee works closely with the project teams, communities, and reporters to ensure that issues get handled quickly and correctly. This responsible oversight is a principle of The Apache Way and helps ensure Apache software is stable and can be trusted.</p>
+<p>This report gave metrics for calendar year 2023 showing from the 24,000 emails received we triaged over 660 vulnerability reports relating to ASF projects.  We published 258 CVE records. The number of non-spam threads dealt with was up 31% from 2022 with the number of actual vulnerability reports up 10%.  We also highlighted a number of new security initiatives we&rsquo;ve worked on including metadata consistency and SBOMs.</p>
+<p>If you have vulnerability information you would like to share <a href="http://apache.org/security/#reporting-a-vulnerability">please contact us</a> or for comments on this report use the public <a href="https://lists.apache.org/list.html?security-discuss@community.apache.org">security-discuss mailing list</a>.</p>
+</div>
+
+    <div class="">
+      <p>
+  Published
+  
+    
+      by <span itemprop="author">Mark Cox, VP Security</span>
+    
+  
+  <time datetime="2024-01-11T00:00:00&#43;00:00">
+    11 Jan, 2024
+  </time>
+  
+  
+  using <span itemprop="wordCount">2102</span> words.
+</p>
+ 
+
+
+
+    </div>
+    </div>
+  </div>
+  </main>
+  <footer>   <footer id="footer">
+    <p>&copy; 2023 The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+  </footer>
+ </footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/main.js" type="text/javascript">
+  </script>
+</body>
+
+</html>
