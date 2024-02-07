@@ -77,7 +77,10 @@ def dt_pmc(pmc):
             },
             data=json.dumps(project)
         ) as res:
-            print(res.status_code)
+            if res.status_code == 403:
+                print(f"403 creating PMC: missing authorization PORTFOLIO_MANAGEMENT")
+            else:
+                print(f"Created PMC: {res.status_code}")
         _, dt_pmcs = get_dt_projects()
 
     return dt_pmcs[friendly_name]
