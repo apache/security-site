@@ -281,6 +281,31 @@ Improper Authentication vulnerability in Apache Software Foundation Apache Pulsa
 * Michael Marshall of DataStax (finder)
 
 
+## Improper Authentication for WebSocket Proxy Endpoint Allows DoS ## { #CVE-2023-37544 }
+
+CVE-2023-37544 [\[CVE json\]](./CVE-2023-37544.cve.json)
+
+### Affected
+
+* Apache Pulsar WebSocket Proxy from 2.8.0 through 2.8.*
+* Apache Pulsar WebSocket Proxy from 2.9.0 through 2.9.*
+* Apache Pulsar WebSocket Proxy from 2.10.0 through 2.10.4
+* Apache Pulsar WebSocket Proxy from 2.11.0 through 2.11.1
+* Apache Pulsar WebSocket Proxy at 3.0.0
+
+
+### Description
+
+Improper Authentication vulnerability in Apache Pulsar WebSocket Proxy allows an attacker to connect to the /pingpong endpoint without authentication.<br><br>This issue affects Apache Pulsar WebSocket Proxy: from 2.8.0 through 2.8.*, from 2.9.0 through 2.9.*, from 2.10.0 through 2.10.4, from 2.11.0 through 2.11.1, 3.0.0.<br><br>The known risks include a denial of service due to the WebSocket Proxy accepting any connections, and excessive data transfer due to misuse of the WebSocket ping/pong feature.<br><br>2.10 Pulsar WebSocket Proxy users should upgrade to at least 2.10.5.<br>2.11 Pulsar WebSocket Proxy users should upgrade to at least 2.11.2.<br>3.0 Pulsar WebSocket Proxy users should upgrade to at least 3.0.1.<br>3.1 Pulsar WebSocket Proxy users are unaffected.<br>Any users running the Pulsar WebSocket Proxy for 2.8, 2.9, and earlier should upgrade to one of the above patched versions.
+
+### References
+* https://lists.apache.org/thread/od0k9zts1toc9h9snbqq4pjpyx28mv4m
+
+
+### Credits
+* Michael Marshall of DataStax (finder)
+
+
 ## Incorrect Authorization for Function Worker Can Leak Sink/Source Credentials ## { #CVE-2023-37579 }
 
 CVE-2023-37579 [\[CVE json\]](./CVE-2023-37579.cve.json)
@@ -301,3 +326,29 @@ Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsa
 
 ### Credits
 * Michael Marshall of DataStax (finder)
+
+
+## Timing attack in SASL token signature verification ## { #CVE-2023-51437 }
+
+CVE-2023-51437 [\[CVE json\]](./CVE-2023-51437.cve.json)
+
+### Affected
+
+* Apache Pulsar through 2.10.5
+* Apache Pulsar from 2.11.0 through 2.11.2
+* Apache Pulsar from 3.0.0 through 3.0.1
+* Apache Pulsar at 3.1.0
+
+
+### Description
+
+Observable timing discrepancy vulnerability in Apache Pulsar SASL Authentication Provider can allow an attacker to forge a SASL Role Token that will pass signature verification.<br><p>Users are recommended to upgrade to version 2.11.3, 3.0.2, or 3.1.1 which fixes the issue. Users should also consider updating the configured secret in the `saslJaasServerRoleTokenSignerSecretPath` file.<br></p><p>Any component matching an above version running the SASL Authentication Provider is affected. That includes the Pulsar Broker, Proxy, Websocket Proxy, or Function Worker.</p>2.11 Pulsar users should upgrade to at least 2.11.3.<br>3.0 Pulsar users should upgrade to at least 3.0.2.<br>3.1 Pulsar users should upgrade to at least 3.1.1.<br><div>Any users running Pulsar 2.8, 2.9, 2.10, and earlier should upgrade to one of the above patched versions.</div><div><br></div><p>For additional details on this attack vector, please refer to <a target="_blank" rel="nofollow" href="https://codahale.com/a-lesson-in-timing-attacks/">https://codahale.com/a-lesson-in-timing-attacks/</a>.</p>
+
+### References
+* https://lists.apache.org/thread/5kgmvvolf5tzp5rz9xjwfg2ncwvqqgl5
+
+
+### Credits
+* Yiheng Cao (finder)
+* Chenhao Lu  (finder)
+* Kaifeng Huang (finder)

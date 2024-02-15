@@ -224,3 +224,50 @@ remote code execution.<br> Versions of Apache Linkis &lt;= 1.3.0 will be affecte
 
 ### Credits
 * sw0rd1ight (reporter)
+
+
+## DatasourceManager module has a  JDBC parameter judgment logic vulnerability that allows for arbitrary file reading ## { #CVE-2023-41916 }
+
+CVE-2023-41916 [\[CVE json\]](./CVE-2023-41916.cve.json)
+
+### Affected
+
+* Apache Linkis DataSource from 1.4.0 before 1.5.0
+
+
+### Description
+
+
+
+In Apache Linkis =1.4.0, due to the lack of effective filtering
+of parameters, an attacker configuring malicious Mysql JDBC parameters in the DataSource Manager Module will trigger&nbsp;<span style="background-color: rgb(255, 255, 255);">arbitrary file reading</span>. Therefore, the parameters in the Mysql JDBC URL should be blacklisted. This attack requires the attacker to obtain an authorized account from Linkis before it can be carried out. Versions of Apache Linkis = 1.4.0 will be affected.&nbsp;<br>We recommend users upgrade the version of Linkis to version 1.5.0.
+
+<br>
+
+
+
+### References
+
+
+### Credits
+* Pho3n1x  (reporter)
+
+
+## DataSource module Oracle SQL Database Password Logged ## { #CVE-2023-50740 }
+
+CVE-2023-50740 [\[CVE json\]](./CVE-2023-50740.cve.json)
+
+### Affected
+
+* Apache Linkis DataSource from * before 1.5.0
+
+
+### Description
+
+In Apache Linkis &lt;=1.4.0, The password is printed to the log when using the Oracle data source of the Linkis data source module.&nbsp;<br>We recommend users upgrade the version of Linkis to version 1.5.0<br>
+
+### References
+
+
+### Credits
+* Jonathan Leitschuh (reporter)

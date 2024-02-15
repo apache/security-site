@@ -47,3 +47,49 @@ Improper configuration will cause ServiceComb ServiceCenter Directory Traversal 
 
 ### References
 * https://lists.apache.org/thread.html/r337be65e504eac52a12e89d7de40345e5d335deee9dd7288f7f59b81%40%3Cdev.servicecomb.apache.org%3E
+
+
+## attacker can query all environment variables of the service-center server ## { #CVE-2023-44312 }
+
+CVE-2023-44312 [\[CVE json\]](./CVE-2023-44312.cve.json)
+
+### Affected
+
+* Apache ServiceComb Service-Center through 2.1.0
+
+
+### Description
+
+Exposure of Sensitive Information to an Unauthorized Actor in Apache ServiceComb Service-Center.<p>This issue affects 
+
+Apache ServiceComb Service-Center
+
+ before 2.1.0 (include).</p><p>Users are recommended to upgrade to version 2.2.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/dkvlgnrmc17qzjdy9k0cr60wpzcssk1s
+
+
+### Credits
+* 苏 安 <suanwell@hotmail.com> (finder)
+
+
+## attacker can perform SSRF through the frontend API ## { #CVE-2023-44313 }
+
+CVE-2023-44313 [\[CVE json\]](./CVE-2023-44313.cve.json)
+
+### Affected
+
+* Apache ServiceComb Service-Center through 2.1.0
+
+
+### Description
+
+Server-Side Request Forgery (SSRF) vulnerability in Apache ServiceComb Service-Center. Attackers can obtain sensitive server information through specially crafted requests.<p>This issue affects Apache ServiceComb before 2.1.0(include).</p><p>Users are recommended to upgrade to version 2.2.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/kxovd455o9h4f2v811hcov2qknbwld5r
+
+
+### Credits
+* 苏 安 <suanwell@hotmail.com> (finder)

@@ -580,3 +580,25 @@ smuggling when behind a reverse proxy.<br></p><p><span style="background-color: 
 
 ### Credits
 * Norihito Aimoto (OSSTech Corporation)  (finder)
+
+
+## Leaking of unrelated request bodies in default error page ## { #CVE-2024-21733 }
+
+CVE-2024-21733 [\[CVE json\]](./CVE-2024-21733.cve.json)
+
+### Affected
+
+* Apache Tomcat from 8.5.7 through 8.5.63
+* Apache Tomcat from 9.0.0-M11 through 9.0.43
+
+
+### Description
+
+Generation of Error Message Containing Sensitive Information vulnerability in Apache Tomcat.<p>This issue affects Apache Tomcat: from 8.5.7 through 8.5.63, from 9.0.0-M11 through 9.0.43.</p><p>Users are recommended to upgrade to version 8.5.64 onwards or 9.0.44 onwards, which contain a fix for the issue.</p>
+
+### References
+* https://lists.apache.org/thread/h9bjqdd0odj6lhs2o96qgowcc6hb0cfz
+
+
+### Credits
+* xer0dayz from company Sn1perSecurity LLC (finder)

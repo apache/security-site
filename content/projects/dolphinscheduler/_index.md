@@ -231,6 +231,28 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 * Y4tacker and 4ra1n from Y4secTeam (finder)
 
 
+## Arbitrary js execute as root for authenticated users ## { #CVE-2023-49299 }
+
+CVE-2023-49299 [\[CVE json\]](./CVE-2023-49299.cve.json)
+
+### Affected
+
+* Apache DolphinScheduler before 3.1.9
+
+
+### Description
+
+Improper Input Validation vulnerability in Apache DolphinScheduler. An&nbsp;<span style="background-color: rgb(255, 255, 255);">authenticated user can cause arbitrary, unsandboxed javascript to be executed on the server.</span><p>This issue affects Apache DolphinScheduler: until 3.1.9.</p><p>Users are recommended to upgrade to version 3.1.9, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/dolphinscheduler/pull/15228
+* https://lists.apache.org/thread/tnf99qoc6tlnwrny4t1zk6mfszgdsokm
+
+
+### Credits
+* Eluen Siebene (finder)
+
+
 ## Authenticated users could delete UDFs in resource center they were not authorized for ## { #CVE-2023-49620 }
 
 CVE-2023-49620 [\[CVE json\]](./CVE-2023-49620.cve.json)

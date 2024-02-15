@@ -76,3 +76,45 @@ Allocation of Resources Without Limits or Throttling vulnerability in Apache Sof
 
 ### Credits
 * Matthew McClain (finder)
+
+
+## excessive disk usage ## { #CVE-2023-41835 }
+
+CVE-2023-41835 [\[CVE json\]](./CVE-2023-41835.cve.json)
+
+### Affected
+
+* Apache Struts from 2.0.0 through 2.5.31
+* Apache Struts from 6.1.2.1 through 6.3.0
+
+
+### Description
+
+<span style="background-color: rgb(255, 255, 255);">When a Multipart request is performed but some of the fields exceed the </span><code>maxStringLength</code><span style="background-color: rgb(255, 255, 255);">&nbsp; limit, the upload files will remain in </span><code>struts.multipart.saveDir</code><span style="background-color: rgb(255, 255, 255);">&nbsp; even if the request has been denied.</span><br>Users are recommended to upgrade to versions <span style="background-color: rgb(255, 255, 255);">Struts 2.5.32 or 6.1.2.2 or Struts 6.3.0.1 or greater</span>, which fixe this issue.
+
+### References
+* https://lists.apache.org/thread/6wj530kh3ono8phr642y9sqkl67ys2ft
+* https://www.openwall.com/lists/oss-security/2023/12/09/1
+
+
+## File upload component had a directory traversal vulnerability ## { #CVE-2023-50164 }
+
+CVE-2023-50164 [\[CVE json\]](./CVE-2023-50164.cve.json)
+
+### Affected
+
+* Apache Struts from 2.0.0 through 2.5.32
+* Apache Struts from 6.0.0 through 6.3.0.1
+
+
+### Description
+
+<span style="background-color: rgb(255, 255, 255);">An attacker can manipulate file upload params to enable paths traversal and under some circumstances this can lead to uploading a malicious file which can be used to perform Remote Code Execution.</span><br>Users are recommended to upgrade to versions <span style="background-color: rgb(255, 255, 255);">Struts 2.5.33 or Struts 6.3.0.2 or greater to</span>&nbsp;fix this issue.<br>
+
+### References
+* https://lists.apache.org/thread/yh09b3fkf6vz5d6jdgrlvmg60lfwtqhj
+* https://www.openwall.com/lists/oss-security/2023/12/07/1
+
+
+### Credits
+* Steven Seeley of Source Incite (reporter)

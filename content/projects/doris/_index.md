@@ -32,3 +32,20 @@ Apache Doris, prior to 1.0.0, used a hardcoded key and IV to initialize the ciph
 
 ### Credits
 * We would like to thanks to Dwi Siswanto<me@dw1.io> for the report of this issue
+
+
+## Missing API authentication allowed DoS ## { #CVE-2023-41314 }
+
+CVE-2023-41314 [\[CVE json\]](./CVE-2023-41314.cve.json)
+
+### Affected
+
+* Apache Doris from 1.2.0 through 2.0.3
+
+
+### Description
+
+The api /api/snapshot and /api/get_log_file would allow unauthenticated access.<br>It could allow a&nbsp;DoS attack or get arbitrary files from FE node.<br>Please&nbsp;upgrade to 2.0.3 to fix these issues.
+
+### References
+* https://lists.apache.org/thread/tgvpvz3yw7zgodl1sb3sv3jbbz8t5zb4

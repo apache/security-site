@@ -723,3 +723,113 @@ CVE-2023-42505 [\[CVE json\]](./CVE-2023-42505.cve.json)
 
 ### Credits
 *  Leonel John Erik Angel Torres (finder)
+
+
+## Allows for uncontrolled resource consumption via a ZIP bomb ## { #CVE-2023-46104 }
+
+CVE-2023-46104 [\[CVE json\]](./CVE-2023-46104.cve.json)
+
+### Affected
+
+* Apache Superset before 2.1.3
+* Apache Superset from 3.0.0 before 3.0.1
+
+
+### Description
+
+Uncontrolled resource consumption can be triggered by authenticated attacker that uploads a malicious ZIP to import database, dashboards or datasets.&nbsp;&nbsp;<br><span style="background-color: rgb(255, 255, 255);">This vulnerability exists </span>in Apache Superset versions up to and including 2.1.2 and versions 3.0.0, 3.0.1.<br>
+
+### References
+* https://lists.apache.org/thread/yxbxg4wryb7cb7wyybk11l5nqy0rsrvl
+
+
+### Credits
+* Dor Konis – GE Vernova (finder)
+
+
+## Stored XSS in Dashboard Title and Chart Title ## { #CVE-2023-49657 }
+
+CVE-2023-49657 [\[CVE json\]](./CVE-2023-49657.cve.json)
+
+### Affected
+
+* Apache Superset before 3.0.3
+
+
+### Description
+
+<span style="background-color: rgb(255, 255, 255);">A stored cross-site scripting (XSS) vulnerability exists in Apache Superset before 3.0.3.&nbsp;</span>An authenticated attacker with create/update permissions on charts or dashboards could store a script or add a specific HTML snippet that would act as a stored XSS.<br><br>For 2.X versions, users should change their config to include:<br><br>TALISMAN_CONFIG = {<br>&nbsp; &nbsp; "content_security_policy": {<br>&nbsp; &nbsp; &nbsp; &nbsp; "base-uri": ["'self'"],<br>&nbsp; &nbsp; &nbsp; &nbsp; "default-src": ["'self'"],<br>&nbsp; &nbsp; &nbsp; &nbsp; "img-src": ["'self'", "blob:", "data:"],<br>&nbsp; &nbsp; &nbsp; &nbsp; "worker-src": ["'self'", "blob:"],<br>&nbsp; &nbsp; &nbsp; &nbsp; "connect-src": [<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "'self'",<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "<a target="_blank" rel="nofollow" href="https://api.mapbox.com&quot;">https://api.mapbox.com"</a>;,<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "<a target="_blank" rel="nofollow" href="https://events.mapbox.com&quot;">https://events.mapbox.com"</a>;,<br>&nbsp; &nbsp; &nbsp; &nbsp; ],<br>&nbsp; &nbsp; &nbsp; &nbsp; "object-src": "'none'",<br>&nbsp; &nbsp; &nbsp; &nbsp; "style-src": [<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "'self'",<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "'unsafe-inline'",<br>&nbsp; &nbsp; &nbsp; &nbsp; ],<br>&nbsp; &nbsp; &nbsp; &nbsp; "script-src": ["'self'", "'strict-dynamic'"],<br>&nbsp; &nbsp; },<br>&nbsp; &nbsp; "content_security_policy_nonce_in": ["script-src"],<br>&nbsp; &nbsp; "force_https": False,<br>&nbsp; &nbsp; "session_cookie_secure": False,<br>}<br><br>
+
+### References
+* https://lists.apache.org/thread/wjyvz8om9nwd396lh0bt156mtwjxpsvx
+
+
+### Credits
+* Nick Barnes, Praetorian Security Inc. (reporter)
+* Amit Laish – GE Vernova (reporter)
+
+
+## Privilege Escalation Vulnerability ## { #CVE-2023-49734 }
+
+CVE-2023-49734 [\[CVE json\]](./CVE-2023-49734.cve.json)
+
+### Affected
+
+* Apache Superset before 2.1.2
+* Apache Superset from 3.0.0 before 3.0.2
+
+
+### Description
+
+An authenticated Gamma user has the ability to create a dashboard and add charts to it, this user would automatically become one of the owners of the charts allowing him to incorrectly have write permissions to these charts.<p>This issue affects Apache Superset: before 2.1.2, from 3.0.0 before 3.0.2.</p><p>Users are recommended to upgrade to version 3.0.2 or 2.1.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/985h6ltvtbvdoysso780kkj7x744cds5
+
+
+### Credits
+* Jordan Velich (finder)
+
+
+## SQL Injection on where_in JINJA macro ## { #CVE-2023-49736 }
+
+CVE-2023-49736 [\[CVE json\]](./CVE-2023-49736.cve.json)
+
+### Affected
+
+* Apache Superset before 2.1.2
+* Apache Superset from 3.0.0 before 3.0.2
+
+
+### Description
+
+A where_in JINJA macro <span style="background-color: rgb(255, 255, 255);">allows users to specify a quote, which combined with a carefully crafted statement&nbsp;would allow for SQL injection&nbsp;</span>in Apache Superset.<p>This issue affects Apache Superset: before 2.1.2, from 3.0.0 before 3.0.2.</p><p>Users are recommended to upgrade to version 3.0.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/1kf481bgs3451qcz6hfhobs7xvhp8n1p
+
+
+### Credits
+* Jack Prince-Fulls ( jf@incyan.com ) (finder)
+
+
+## Allows for uncontrolled resource consumption via a ZIP bomb (version range fix for CVE-2023-46104) ## { #CVE-2024-23952 }
+
+CVE-2024-23952 [\[CVE json\]](./CVE-2024-23952.cve.json)
+
+### Affected
+
+* Apache Superset before 2.1.3
+* Apache Superset from 3.0.0 before 3.0.2
+
+
+### Description
+
+This is a duplicate for CVE-2023-46104. With correct CVE version ranges for affected Apache Superset.<br> <br>Uncontrolled resource consumption can be triggered by authenticated attacker that uploads a malicious ZIP to import database, dashboards or datasets. &nbsp;<br><span style="background-color: rgb(255, 255, 255);">This vulnerability exists </span>in Apache Superset versions up to and including 2.1.2 and versions 3.0.0, 3.0.1.<br><br><br>
+
+### References
+* https://lists.apache.org/thread/zc58zvm4414molqn2m4d4vkrbrsxdksx
+
+
+### Credits
+* Dor Konis – GE Vernova (finder)

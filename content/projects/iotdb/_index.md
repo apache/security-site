@@ -134,3 +134,41 @@ Incorrect Authorization vulnerability in Apache Software Foundation Apache IoTDB
 
 ### References
 * https://lists.apache.org/thread/08nc3dr6lshfppx0pzmz5vbggdnzpojb
+
+
+## Remote Code Execution (RCE) risk via the UDF ## { #CVE-2023-46226 }
+
+CVE-2023-46226 [\[CVE json\]](./CVE-2023-46226.cve.json)
+
+### Affected
+
+* Apache IoTDB from 1.0.0 through 1.2.2
+
+
+### Description
+
+Remote Code Execution vulnerability in Apache IoTDB.<p>This issue affects Apache IoTDB: from 1.0.0 through 1.2.2.</p><p>Users are recommended to upgrade to version 1.3.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/293b4ob65ftnfwyf62fb9zh8gwdy38hg
+
+
+### Credits
+* Glassy of EagleCloud (finder)
+
+
+## Unsafe deserialize map in Sync Tool ## { #CVE-2023-51656 }
+
+CVE-2023-51656 [\[CVE json\]](./CVE-2023-51656.cve.json)
+
+### Affected
+
+* Apache IoTDB from 0.13.0 through 0.13.4
+
+
+### Description
+
+Deserialization of Untrusted Data vulnerability in Apache IoTDB.<p>This issue affects Apache IoTDB: from 0.13.0 through 0.13.4.</p><p>Users are recommended to upgrade to version 1.2.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/zy3klwpv11vl5n65josbfo2fyzxg3dxc

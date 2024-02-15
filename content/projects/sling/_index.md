@@ -236,3 +236,24 @@ Excessive Iteration vulnerability in Apache Software Foundation Apache Sling Res
 
 ### Credits
 *  Alex Collignon (reporter)
+
+
+## Malicious code execution via path traversal ## { #CVE-2024-23673 }
+
+CVE-2024-23673 [\[CVE json\]](./CVE-2024-23673.cve.json)
+
+### Affected
+
+* Apache Sling Servlets Resolver before 2.11.0
+
+
+### Description
+
+
+
+Malicious code execution via path traversal in Apache Software Foundation Apache Sling Servlets Resolver.<p>This issue affects all version of Apache Sling Servlets Resolver before 2.11.0. However, whether a system is vulnerable to this attack depends on the exact configuration of the system.<br>If the system is vulnerable, a user with write access to the repository might be able to trick the Sling Servlet Resolver to load a previously uploaded script.&nbsp;</p>
+
+Users are recommended to upgrade to version 2.11.0, which fixes this issue. It is recommended to upgrade, regardless of whether your system configuration currently allows this attack or not.
+
+### References
+* https://lists.apache.org/thread/5zzx8ztwc6tmbwlw80m2pbrp3913l2kl

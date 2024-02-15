@@ -219,3 +219,24 @@ Diagnosis Controller miss parameter validation, so user may attacked by command 
 
 ### Credits
 * Messy God <godimessy@gmail.com> (finder)
+
+
+## Insufficiently protected credentials in config file ## { #CVE-2023-29055 }
+
+CVE-2023-29055 [\[CVE json\]](./CVE-2023-29055.cve.json)
+
+### Affected
+
+* Apache Kylin from 2.0.0 through 4.0.3
+
+
+### Description
+
+<div>In Apache Kylin version 2.0.0 to 4.0.3, there is a Server Config web interface that displays the content of file 'kylin.properties', that may contain serverside credentials. When the kylin service runs over HTTP (or other plain text protocol), it is possible for network sniffers to hijack the HTTP payload and get access to the content of kylin.properties and potentially the containing credentials.<br></div><div><br></div><div>To avoid this threat, users are recommended to&nbsp;</div><div><ol><li>Always turn on HTTPS so that network payload is encrypted.<br></li><li>Avoid putting credentials in kylin.properties, or at least not in plain text.</li><li>Use network firewalls to protect the serverside such that it is not accessible to external attackers.<br></li><li>Upgrade to version Apache Kylin 4.0.4, which filters out the sensitive content that goes to the Server Config web interface.</li></ol><br></div>
+
+### References
+* https://lists.apache.org/thread/o1bvyv9wnfkx7dxpfjlor20nykgsoh6r
+
+
+### Credits
+* Li Jiakun <2839549219@qq.com> (reporter)

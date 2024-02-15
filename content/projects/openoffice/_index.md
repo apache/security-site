@@ -274,3 +274,25 @@ CVE-2022-47502 [\[CVE json\]](./CVE-2022-47502.cve.json)
 ### Credits
 * Altin Thartori (tin-z) (reporter)
 * Joachim Mammele (reporter)
+
+
+## Macro URL arbitrary script execution ## { #CVE-2023-47804 }
+
+CVE-2023-47804 [\[CVE json\]](./CVE-2023-47804.cve.json)
+
+### Affected
+
+* Apache OpenOffice through 4.1.14
+
+
+### Description
+
+<p>Apache OpenOffice documents can contain links that call internal macros with arbitrary arguments. Several URI Schemes are defined for this purpose.</p><p>Links can be activated by clicks, or by automatic document events.</p><p>The execution of such links must be subject to user approval.</p><p>In the affected versions of OpenOffice, approval for certain links is not requested; when activated, such links could therefore result in arbitrary script execution.</p><p>This is a corner case of CVE-2022-47502.</p>
+
+### References
+* https://lists.apache.org/thread/ygp59swfcy6g46jf8v9s6qpwmxn8fsvb
+* https://www.openoffice.org/security/cves/CVE-2023-47804.html
+
+
+### Credits
+* Amel BOUZIANE-LEBLOND aka Icare Bug Bounty Hunter (reporter)

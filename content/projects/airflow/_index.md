@@ -1613,3 +1613,167 @@ CVE-2023-47037 [\[CVE json\]](./CVE-2023-47037.cve.json)
 ### Credits
 * Tareq Ahamed from Hackerone (reporter)
 *  Augusto Hidalgo (remediation developer)
+
+
+## DAG Params alllow to embed unchecked Javascript ## { #CVE-2023-47265 }
+
+CVE-2023-47265 [\[CVE json\]](./CVE-2023-47265.cve.json)
+
+### Affected
+
+* Apache Airflow from 2.6.0 before 2.8.0
+
+
+### Description
+
+Apache Airflow, versions 2.6.0 through 2.7.3 has a stored XSS vulnerability that allows a DAG author to add an unbounded and not-sanitized javascript in the parameter description field of the DAG.&nbsp;This Javascript can be executed on the client side of any of the user who looks at the tasks in the browser sandbox. While this issue does not allow to exit the browser sandbox or manipulation of the server-side data - more than the DAG author already has, it allows to modify what the user looking at the DAG details sees in the browser - which opens up all kinds of possibilities of misleading other users.<br><br>Users of Apache Airflow are recommended to upgrade to version 2.8.0 or newer to mitigate the risk associated with this vulnerability<br>
+
+### References
+* https://github.com/apache/airflow/pull/35460
+* https://lists.apache.org/thread/128f3zl375vb1qv93k82zhnwkpl233pr
+
+
+### Credits
+* Jens Scheffler (finder)
+* Andrey Anshin (finder)
+* Jens Scheffler (remediation developer)
+
+
+## Improper access control to DAG resources ## { #CVE-2023-48291 }
+
+CVE-2023-48291 [\[CVE json\]](./CVE-2023-48291.cve.json)
+
+### Affected
+
+* Apache Airflow before 2.8.0
+
+
+### Description
+
+Apache Airflow, in versions prior to 2.8.0, contains a security vulnerability that allows an authenticated user with limited access to some DAGs, to craft a request that could give the user write access to various DAG resources for DAGs that the user had no access to, thus, enabling the user to clear DAGs they shouldn't.<br><br>This is a missing fix for CVE-2023-42792 in Apache Airflow 2.7.2&nbsp;<br><br>Users of Apache Airflow are strongly advised to upgrade to version 2.8.0 or newer to mitigate the risk associated with this vulnerability.
+
+### References
+* https://github.com/apache/airflow/pull/34366
+* https://lists.apache.org/thread/3nl0h014274yjlt1hd02z0q78ftyz0z3
+
+
+### Credits
+* balis0ng (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## Missing CSRF protection on DAG/trigger ## { #CVE-2023-49920 }
+
+CVE-2023-49920 [\[CVE json\]](./CVE-2023-49920.cve.json)
+
+### Affected
+
+* Apache Airflow from 2.7.0 before 2.8.0
+
+
+### Description
+
+Apache Airflow, version 2.7.0 through 2.7.3, has a vulnerability that allows an attacker to trigger a DAG in a GET request without CSRF validation.&nbsp;As a result, it was possible for a malicious website opened in the same browser - by the user who also had Airflow UI opened - to trigger the execution of DAGs without the user's consent.<br>Users are advised to upgrade to version 2.8.0 or later which is not affected
+
+### References
+* https://github.com/apache/airflow/pull/36026
+* https://lists.apache.org/thread/mnwd2vcfw3gms6ft6kl951vfbqrxsnjq
+
+
+### Credits
+* Tareq Ahamed ( 0xt4req) (finder)
+* Jens Scheffler (remediation developer)
+
+
+## Improper access control vulnerability on the "varimport" endpoint ## { #CVE-2023-50783 }
+
+CVE-2023-50783 [\[CVE json\]](./CVE-2023-50783.cve.json)
+
+### Affected
+
+* Apache Airflow before 2.8.0
+
+
+### Description
+
+Apache Airflow, versions before 2.8.0, is affected by a vulnerability that allows an authenticated user without the variable edit permission, to update a variable.<br>This flaw compromises the integrity of variable management, potentially leading to unauthorized data modification.<br>Users are recommended to upgrade to 2.8.0, which fixes this issue
+
+### References
+* https://github.com/apache/airflow/pull/33932
+* https://lists.apache.org/thread/rs7cr3yp726mb89s1m844hy9pq7frgcn
+
+
+### Credits
+* balis0ng (finder)
+* Ephraim Anierobi (remediation developer)
+
+
+## Potential pickle deserialization vulnerability in XComs ## { #CVE-2023-50943 }
+
+CVE-2023-50943 [\[CVE json\]](./CVE-2023-50943.cve.json)
+
+### Affected
+
+* Apache Airflow before 2.8.1
+
+
+### Description
+
+Apache Airflow, versions before 2.8.1, have a vulnerability that allows a potential attacker to poison the XCom data by bypassing the protection of "enable_xcom_pickling=False" configuration setting resulting in poisoned data after XCom deserialization. This vulnerability is considered low since it requires a DAG author to exploit it. Users are recommended to upgrade to version 2.8.1 or later, which fixes this issue.<br>
+
+### References
+* https://github.com/apache/airflow/pull/36255
+* https://lists.apache.org/thread/fx278v0twqzxkcts70tc04cp3f8p56pn
+
+
+### Credits
+* Peng Zhou (zpbrent@gmail.com) (finder)
+* Hussein Awala (remediation developer)
+
+
+## Bypass permission verification to read code of other dags ## { #CVE-2023-50944 }
+
+CVE-2023-50944 [\[CVE json\]](./CVE-2023-50944.cve.json)
+
+### Affected
+
+* Apache Airflow before 2.8.1
+
+
+### Description
+
+Apache Airflow, versions before 2.8.1, have a vulnerability that allows an authenticated user to access the source code of a DAG to which they don't have access.&nbsp;This vulnerability is considered low since it requires an authenticated user to exploit it. Users are recommended to upgrade to version 2.8.1, which fixes this issue.<br>
+
+### References
+* https://github.com/apache/airflow/pull/36257
+* https://lists.apache.org/thread/92krb5mpcq8qrw4t4j5oooqw7hgd8q7h
+
+
+### Credits
+* Timon8 Zhang (finder)
+
+
+## Kubernetes configuration file saved without encryption in the Metadata and logged as plain text in the Triggerer service ## { #CVE-2023-51702 }
+
+CVE-2023-51702 [\[CVE json\]](./CVE-2023-51702.cve.json)
+
+### Affected
+
+* Apache Airflow CNCF Kubernetes provider from 5.2.0 before 7.0.0
+* Apache Airflow from 2.3.0 before 2.6.1
+
+
+### Description
+
+Since version 5.2.0, when using deferrable mode with the path of a Kubernetes configuration file for authentication, the Airflow worker serializes this configuration file as a dictionary and sends it to the triggerer by storing it in metadata without any encryption. Additionally, if used with an Airflow version between 2.3.0 and 2.6.0, the configuration dictionary will be logged as plain text in the triggerer service without masking. This allows anyone with access to the metadata or triggerer log to obtain the configuration file and use it to access the Kubernetes cluster.<br><br>This behavior was changed in version 7.0.0, which stopped serializing the file contents and started providing the file path instead to read the contents into the trigger. Users are recommended to upgrade to version 7.0.0, which fixes this issue.
+
+### References
+* https://github.com/apache/airflow/pull/29498
+* https://github.com/apache/airflow/pull/30110
+* https://github.com/apache/airflow/pull/36492
+* https://lists.apache.org/thread/89x3q6lz5pykrkr1fkr04k4rfn9pvnv9
+
+
+### Credits
+* Hussein Awala (finder)
+* Hussein Awala (remediation developer)

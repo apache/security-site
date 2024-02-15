@@ -262,3 +262,86 @@ Missing Authentication in Apache Software Foundation Apache OFBiz when using the
 
 ### Credits
 * Anonymous by demand (finder)
+
+
+## Pre-auth RCE in Apache Ofbiz 18.12.09 due to XML-RPC still present ## { #CVE-2023-49070 }
+
+CVE-2023-49070 [\[CVE json\]](./CVE-2023-49070.cve.json)
+
+### Affected
+
+* Apache OFBiz before 18.12.10
+
+
+### Description
+
+
+
+Pre-auth RCE in Apache Ofbiz 18.12.09.<br><br>It's due to XML-RPC&nbsp;<span style="background-color: rgb(255, 255, 255);">no longer maintained</span>&nbsp;still present.<br><p>This issue affects Apache OFBiz: before 18.12.10.&nbsp;<br><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 18.12.10</span></p>
+
+
+
+### References
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html
+* https://ofbiz.apache.org/release-notes-18.12.10.html
+* https://issues.apache.org/jira/browse/OFBIZ-12812
+* https://lists.apache.org/thread/jmbqk2lp4t4483whzndp5xqlq4f3otg3
+
+
+### Credits
+* Siebene@ (finder)
+
+
+## Arbitrary file properties reading and SSRF attack ## { #CVE-2023-50968 }
+
+CVE-2023-50968 [\[CVE json\]](./CVE-2023-50968.cve.json)
+
+### Affected
+
+* Apache OFBiz through 18.12.10
+
+
+### Description
+
+<div>Arbitrary file properties reading vulnerability in Apache Software Foundation Apache OFBiz when user operates an uri call without authorizations.<br></div><div><br></div><div>The same uri can be operated to realize a SSRF attack also  without  authorizations.<br></div><div><br></div>Users are recommended to upgrade to version 18.12.11, which fixes this issue.
+
+### References
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html
+* https://ofbiz.apache.org/release-notes-18.12.11.html
+* https://issues.apache.org/jira/browse/OFBIZ-12875
+* https://lists.apache.org/thread/x5now4bk3llwf3k58kl96qvtjyxwp43q
+
+
+### Credits
+* Yun Peng - 郭 运鹏 <puata123@outlook.com> (finder)
+
+
+## Pre-authentication Remote Code Execution (RCE) vulnerability ## { #CVE-2023-51467 }
+
+CVE-2023-51467 [\[CVE json\]](./CVE-2023-51467.cve.json)
+
+### Affected
+
+* Apache OFBiz before 18.12.11
+
+
+### Description
+
+<div><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">The vulnerability permits attackers to circumvent authentication processes, enabling them to remotely <span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">execute arbitrary code</span></span><br></span></span></div>
+
+### References
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html
+* https://ofbiz.apache.org/release-notes-18.12.11.html
+* https://issues.apache.org/jira/browse/OFBIZ-12873
+* https://lists.apache.org/thread/9tmf9qyyhgh6m052rhz7lg9vxn390bdv
+* https://lists.apache.org/thread/oj2s6objhdq72t6g29omqpcbd1wlp48o
+* https://www.openwall.com/lists/oss-security/2023/12/26/3
+
+
+### Credits
+* Hasib Vhora, Senior Threat Researcher, SonicWall  (finder)
+* Gao Tian (finder)
+* L0ne1y (finder)

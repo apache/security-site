@@ -201,3 +201,20 @@ In Apache Ozone before 1.2.0, Recon HTTP endpoints provide access to OM, SCM and
 
 ### Credits
 * Apache Ozone would like to thank Ethan Rose for reporting this issue.
+
+
+## Missing mutual TLS authentication in one of the service internal Ozone Storage Container Manager endpoints ## { #CVE-2023-39196 }
+
+CVE-2023-39196 [\[CVE json\]](./CVE-2023-39196.cve.json)
+
+### Affected
+
+* Apache Ozone from 1.2.0 through 1.3.0
+
+
+### Description
+
+Improper Authentication vulnerability in Apache Ozone.<br><br>The vulnerability allows an attacker to download metadata internal to the Storage Container Manager service without proper authentication.<br>The attacker is not allowed to do any modification within the Ozone Storage Container Manager service using this vulnerability.<br>The accessible metadata does not contain sensitive information that can be used to exploit the system later on, and the accessible data does not make it possible to gain access to actual user data within Ozone.<br><p>This issue affects Apache Ozone: 1.2.0 and subsequent releases up until 1.3.0.</p><p>Users are recommended to upgrade to version 1.4.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/o96ct5t7kj5cgrmmfc6756m931t08nky

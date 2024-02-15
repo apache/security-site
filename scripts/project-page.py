@@ -25,6 +25,7 @@ with open('podlings-history.json', 'r') as ph:
     podlings_retired = { key: m[key] for key in m.keys() if m[key]['status'] == 'retired' }
     project_committees_retired = {**project_committees_retired, **podlings_retired}
 
+# fetched from https://projects.apache.org/json/foundation/podlings.json
 with open('podlings.json', 'r') as ps:
     project_committees = {**project_committees, **(json.load(ps))}
 
@@ -53,8 +54,11 @@ To report a vulnerability in an Apache project that is not listed below, contact
 def coordinates(pmc):
   if pmc in project_coordinates.keys():
     return project_coordinates[pmc]
-  else:
+  elif pmc in project_committees:
     return project_committees[pmc]
+  elif pmc in project_committees_retired:
+    return project_committees_retired[pmc]
+
 
 def fetch_cve(cve_id):
   print(cve_id)
@@ -74,6 +78,7 @@ def fetch_cve(cve_id):
         cve = json.loads(d.read())
         return cve
 
+# Projects overview page
 for pmc in sorted(set(list(project_coordinates.keys()) + list(advisories.keys()))):
     if pmc == 'dummy':
         continue
@@ -108,9 +113,6 @@ for pmc in advisories.keys():
     os.makedirs(staticdir, exist_ok=True)
 
     project_page = open(basedir + '/_index.md', 'w')
-    # TODO generate pages for retired committees/podlings as well
-    if not pmc in project_coordinates.keys() and not pmc in project_committees.keys():
-        continue
     p = coordinates(pmc)
     project_page.write("""---
 title: %s security advisories

@@ -33,3 +33,28 @@ CVE-2023-40743 [\[CVE json\]](./CVE-2023-40743.cve.json)
 
 ### Credits
 * Letian Yuan (finder)
+
+
+## Apache Axis 1.x (EOL) may allow SSRF when untrusted input is passed to the service admin HTTP API ## { #CVE-2023-51441 }
+
+CVE-2023-51441 [\[CVE json\]](./CVE-2023-51441.cve.json)
+
+### Affected
+
+* Apache Axis through 1.3
+
+
+### Description
+
+** UNSUPPORTED WHEN ASSIGNED ** Improper Input Validation vulnerability in Apache Axis allowed users with access to the admin service to perform possible SSRF<br><p>This issue affects Apache Axis: through 1.3.</p><p>As Axis 1 has been EOL we recommend you migrate to a different SOAP engine, such as Apache Axis 2/Java. Alternatively you could use a build of Axis with the patch from <a target="_blank" rel="nofollow" href="https://github.com/apache/axis-axis1-java/commit/685c309febc64aa393b2d64a05f90e7eb9f73e06">https://github.com/apache/axis-axis1-java/commit/685c309febc64aa393b2d64a05f90e7eb9f73e06</a> applied. The Apache Axis project does not expect to create an Axis 1.x release 
+fixing this problem, though contributors that would like to work towards
+ this are welcome.
+</p>
+
+### References
+* https://github.com/apache/axis-axis1-java/commit/685c309febc64aa393b2d64a05f90e7eb9f73e06
+* https://lists.apache.org/thread/8nrm5thop8f82pglx4o0jg8wmvy6d9yd
+
+
+### Credits
+* thiscodecc of MoyunSec Vlab and Bing (finder)

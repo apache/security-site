@@ -308,3 +308,42 @@ A deserialization vulnerability existed when dubbo generic invoke, which could l
 
 ### Credits
 * yemoli、R1ckyZ、Koishi、cxc (reporter)
+
+
+## Bypass serialize checks in Apache Dubbo ## { #CVE-2023-29234 }
+
+CVE-2023-29234 [\[CVE json\]](./CVE-2023-29234.cve.json)
+
+### Affected
+
+* Apache Dubbo from 3.1.0 through 3.1.10
+* Apache Dubbo from 3.2.0 through 3.2.4
+
+
+### Description
+
+A deserialization vulnerability existed when decode a&nbsp;malicious package.<p>This issue affects Apache Dubbo: from 3.1.0 through 3.1.10, from 3.2.0 through 3.2.4.</p><p>Users are recommended to upgrade to the latest version, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/wb2df2whkdnbgp54nnqn0m94rllx8f77
+
+
+### Credits
+* Bofei Chen, Lei Zhang, Guangliang Yang, Keke Lian and Xinyou Huang (finder)
+
+
+## Bypass deny serialize list check in Apache Dubbo ## { #CVE-2023-46279 }
+
+CVE-2023-46279 [\[CVE json\]](./CVE-2023-46279.cve.json)
+
+### Affected
+
+* Apache Dubbo at 3.1.5
+
+
+### Description
+
+Deserialization of Untrusted Data vulnerability in Apache Dubbo.<p>This issue only affects Apache Dubbo 3.1.5.</p><p>Users are recommended to upgrade to the latest version, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/zw53nxrkrfswmk9n3sfwxmcj7x030nmo

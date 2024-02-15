@@ -96,3 +96,25 @@ Apache Guacamole 0.9.10 through 1.5.1 may continue to reference a freed RDP audi
 
 ### Credits
 * Stefan Schiller (Sonar) (finder)
+
+
+## Integer overflow in handling of VNC image buffers ## { #CVE-2023-43826 }
+
+CVE-2023-43826 [\[CVE json\]](./CVE-2023-43826.cve.json)
+
+### Affected
+
+* Apache Guacamole through 1.5.3
+
+
+### Description
+
+<div>Apache Guacamole 1.5.3 and older do not consistently ensure that values received from a VNC server will not result in integer overflow. If a user connects to a malicious or compromised VNC server, specially-crafted data could result in memory corruption, possibly allowing arbitrary code to be executed with the privileges of the running guacd process.<br></div><div>Users are recommended to upgrade to version 1.5.4, which fixes this issue.</div>
+
+### References
+* https://lists.apache.org/thread/23gzwftpfgtq97tj6ttmbclry53kmwv6
+
+
+### Credits
+* Joseph Surin (Elttam) (reporter)
+* Matt Jones (Elttam) (reporter)

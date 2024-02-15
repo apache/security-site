@@ -547,3 +547,47 @@ Deserialization of Untrusted Data Vulnerability in Apache Software Foundation Ap
 ### Credits
 * Snakinya (finder)
 * s3gundo (finder)
+
+
+## Remote Code Execution vulnerability in Apache InLong Manager ## { #CVE-2023-51784 }
+
+CVE-2023-51784 [\[CVE json\]](./CVE-2023-51784.cve.json)
+
+### Affected
+
+* Apache InLong from 1.5.0 through 1.9.0
+
+
+### Description
+
+Improper Control of Generation of Code ('Code Injection') vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.5.0 through 1.9.0, which could lead to Remote Code Execution.&nbsp;<span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's 1.10.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1] </span><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8814"></a><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/9329">https://github.com/apache/inlong/pull/9329</a></p><p></p>
+
+### References
+* https://lists.apache.org/thread/4nxbyl6mh5jgh0plk0qposbxwn6w9h8j
+
+
+### Credits
+* X1r0z (finder)
+
+
+## Arbitrary File Read Vulnerability in Apache InLong Manager ## { #CVE-2023-51785 }
+
+CVE-2023-51785 [\[CVE json\]](./CVE-2023-51785.cve.json)
+
+### Affected
+
+* Apache InLong from 1.7.0 through 1.9.0
+
+
+### Description
+
+Deserialization of Untrusted Data vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.7.0 through 1.9.0, the attackers&nbsp;can make a arbitrary file read attack using mysql driver.&nbsp;<span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's 1.10.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/9331">https://github.com/apache/inlong/pull/9331</a></span></p>
+
+<p></p>
+
+### References
+* https://lists.apache.org/thread/g0yjmtjqvp8bnf1j0tdsk0nhfozjdjno
+
+
+### Credits
+* X1r0z (finder)

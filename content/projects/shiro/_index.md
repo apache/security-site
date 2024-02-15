@@ -120,3 +120,43 @@ Apache Shiro, before 1.12.0 or 2.0.0-alpha-3, <span style="background-color: rgb
 ### Credits
 * tkswifty (finder)
 * Ha1c9on (finder)
+
+
+## Apache Shiro before 1.13.0 or 2.0.0-alpha-4, may be susceptible to a path traversal attack that results in an authentication bypass when used together with path rewriting  ## { #CVE-2023-46749 }
+
+CVE-2023-46749 [\[CVE json\]](./CVE-2023-46749.cve.json)
+
+### Affected
+
+* Apache Shiro before 1.13.0
+* Apache Shiro from 2.0.0-alpha-1 before 2.0.0-alpha-4
+
+
+### Description
+
+Apache Shiro before 1.13.0 or 2.0.0-alpha-4, may be susceptible to a path traversal attack that results in an authentication bypass when used together with path rewriting <br><br><span style="background-color: rgb(255, 255, 255);">Mitigation: Update to Apache Shiro 1.13.0+ or 2.0.0-alpha-4+, or ensure `blockSemicolon` is enabled (this is the default).<br></span><br>
+
+### References
+* https://lists.apache.org/thread/mdv7ftz7k4488rzloxo2fb0p9shnp9wm
+
+
+## URL Redirection to Untrusted Site ('Open Redirect') vulnerability in FORM authentication feature Apache Shiro. ## { #CVE-2023-46750 }
+
+CVE-2023-46750 [\[CVE json\]](./CVE-2023-46750.cve.json)
+
+### Affected
+
+* Apache Shiro before 1.13.0
+* Apache Shiro from 2.0.0-alpha-1 before 2.0.0-alpha-4
+
+
+### Description
+
+<span style="background-color: rgb(255, 255, 255);">URL Redirection to Untrusted Site ('Open Redirect') vulnerability when "form" authentication is used in Apache Shiro.<br><span style="background-color: rgb(255, 255, 255);">Mitigation: Update to Apache Shiro 1.13.0+ or 2.0.0-alpha-4+.</span></span><br>
+
+### References
+* https://lists.apache.org/thread/hoc9zdyzmmrfj1zhctsvvtx844tcq6w9
+
+
+### Credits
+* Claudio Villella (finder)
