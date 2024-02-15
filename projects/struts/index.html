@@ -157,6 +157,38 @@
 <ul>
 <li>Matthew McClain (finder)</li>
 </ul>
+<h2 id="CVE-2023-41835">excessive disk usage</h2>
+<p>CVE-2023-41835 <a href="./CVE-2023-41835.cve.json">[CVE json]</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Struts from 2.0.0 through 2.5.31</li>
+<li>Apache Struts from 6.1.2.1 through 6.3.0</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p><span style="background-color: rgb(255, 255, 255);">When a Multipart request is performed but some of the fields exceed the </span><code>maxStringLength</code><span style="background-color: rgb(255, 255, 255);">  limit, the upload files will remain in </span><code>struts.multipart.saveDir</code><span style="background-color: rgb(255, 255, 255);">  even if the request has been denied.</span><br>Users are recommended to upgrade to versions <span style="background-color: rgb(255, 255, 255);">Struts 2.5.32 or 6.1.2.2 or Struts 6.3.0.1 or greater</span>, which fixe this issue.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/6wj530kh3ono8phr642y9sqkl67ys2ft">https://lists.apache.org/thread/6wj530kh3ono8phr642y9sqkl67ys2ft</a></li>
+<li><a href="https://www.openwall.com/lists/oss-security/2023/12/09/1">https://www.openwall.com/lists/oss-security/2023/12/09/1</a></li>
+</ul>
+<h2 id="CVE-2023-50164">File upload component had a directory traversal vulnerability</h2>
+<p>CVE-2023-50164 <a href="./CVE-2023-50164.cve.json">[CVE json]</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Struts from 2.0.0 through 2.5.32</li>
+<li>Apache Struts from 6.0.0 through 6.3.0.1</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p><span style="background-color: rgb(255, 255, 255);">An attacker can manipulate file upload params to enable paths traversal and under some circumstances this can lead to uploading a malicious file which can be used to perform Remote Code Execution.</span><br>Users are recommended to upgrade to versions <span style="background-color: rgb(255, 255, 255);">Struts 2.5.33 or Struts 6.3.0.2 or greater to</span> fix this issue.<br></p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/yh09b3fkf6vz5d6jdgrlvmg60lfwtqhj">https://lists.apache.org/thread/yh09b3fkf6vz5d6jdgrlvmg60lfwtqhj</a></li>
+<li><a href="https://www.openwall.com/lists/oss-security/2023/12/07/1">https://www.openwall.com/lists/oss-security/2023/12/07/1</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Steven Seeley of Source Incite (reporter)</li>
+</ul>
 
   
 </div>

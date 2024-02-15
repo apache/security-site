@@ -6,9 +6,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>  </title>
+  <title> Apache Isis security advisories </title>
 
   
+  <meta name="description" content="Security information for Apache Isis"> 
   
   
   
@@ -22,8 +23,8 @@
   <meta name="author" content="">
 
 
-  <meta property="og:title" content="" />
-<meta property="og:description" content="" />
+  <meta property="og:title" content="Apache Isis security advisories" />
+<meta property="og:description" content="Security information for Apache Isis" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://security.apache.org/projects/isis/" />
 
@@ -96,24 +97,60 @@
   <main>
 
 <div id="hero" class="wrap">
-  <h1></h1>
+  <h1>Apache Isis security advisories</h1>
+    <p>Security information for Apache Isis</p>
 </div>
-<ul id="posts">
+<div id="project-box">
+<div id="project">
 
- 
-  <section><nav class="pagination pager align-center">
-            <hr>
-    <ul>
-           
-        <li>
-
-        <a href="" class="button round small outline">Page 1 of 0</a>
-        </li>
-            
-    </ul>
-</nav></section>
+ <h1 id="reporting">Reporting</h1>
+<p>Do you want disclose a potential security issue for Apache Isis? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<h1 id="advisories">Advisories</h1>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2022-42466">XSS vulnerability, eg for String properties.</h2>
+<p>CVE-2022-42466 <a href="./CVE-2022-42466.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Isis from unspecified before 2.0.0-M9</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Prior to 2.0.0-M9, it was possible for an end-user to set the value of an editable string property of a domain object to a value that would be rendered unchanged when the value was saved.  In particular, the end-user could enter javascript or similar and this would be executed.</p>
+<p>As of this release, the inputted strings are properly escaped when rendered.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/83ftj5jgtv3mbm28w3trjyvd591jztrz">https://lists.apache.org/thread/83ftj5jgtv3mbm28w3trjyvd591jztrz</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Apache Isis would like to thank Qing Xu for reporting this issue</li>
+</ul>
+<h2 id="CVE-2022-42467">h2 webconsole (available only in prototype mode) should nevertheless be disabled by default.</h2>
+<p>CVE-2022-42467 <a href="./CVE-2022-42467.cve.json">[CVE json]</a></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Isis from Apache Isis before 2.0.0-M8</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>When running in prototype mode, the h2 webconsole module (accessible from the Prototype menu) is automatically made available with the ability to directly query the database.</p>
+<p>It was felt that it is safer to require the developer to explicitly enable this capability.  As of 2.0.0-M8, this can now be done using the &lsquo;isis.prototyping.h2-console.web-allow-remote-access&rsquo;  configuration property; the web console will be unavailable without setting this configuration.</p>
+<p>As an additional safeguard, the new &lsquo;isis.prototyping.h2-console.generate-random-web-admin-password&rsquo; configuration parameter (enabled by default) requires that the administrator use a randomly generated password to use the console.  The password is printed to the log, as &ldquo;webAdminPass: xxx&rdquo; (where &ldquo;xxx&rdquo;) is the password.</p>
+<p>To revert to the original behaviour, the administrator would therefore need to set these configuration parameter:</p>
+<pre><code>isis.prototyping.h2-console.web-allow-remote-access=true
+isis.prototyping.h2-console.generate-random-web-admin-password=false
+</code></pre>
+<p>Note also that the h2 webconsole is never available in production mode, so these safeguards are only to ensure that the webconsole is secured by default also in prototype mode.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/jbv2ddt00h7ntlbm6vkk4wdmb31pm8q3">https://lists.apache.org/thread/jbv2ddt00h7ntlbm6vkk4wdmb31pm8q3</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>William Thomson</li>
 </ul>
 
+  
+</div>
+</div>
 </main>
   <footer> 
     <footer id="footer">

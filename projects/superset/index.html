@@ -650,6 +650,91 @@ process itself. Gaining access to that database should
 <ul>
 <li>Leonel John Erik Angel Torres (finder)</li>
 </ul>
+<h2 id="CVE-2023-46104">Allows for uncontrolled resource consumption via a ZIP bomb</h2>
+<p>CVE-2023-46104 <a href="./CVE-2023-46104.cve.json">[CVE json]</a></p>
+<h3 id="affected-33">Affected</h3>
+<ul>
+<li>Apache Superset before 2.1.3</li>
+<li>Apache Superset from 3.0.0 before 3.0.1</li>
+</ul>
+<h3 id="description-33">Description</h3>
+<p>Uncontrolled resource consumption can be triggered by authenticated attacker that uploads a malicious ZIP to import database, dashboards or datasets.  <br><span style="background-color: rgb(255, 255, 255);">This vulnerability exists </span>in Apache Superset versions up to and including 2.1.2 and versions 3.0.0, 3.0.1.<br></p>
+<h3 id="references-33">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/yxbxg4wryb7cb7wyybk11l5nqy0rsrvl">https://lists.apache.org/thread/yxbxg4wryb7cb7wyybk11l5nqy0rsrvl</a></li>
+</ul>
+<h3 id="credits-32">Credits</h3>
+<ul>
+<li>Dor Konis – GE Vernova (finder)</li>
+</ul>
+<h2 id="CVE-2023-49657">Stored XSS in Dashboard Title and Chart Title</h2>
+<p>CVE-2023-49657 <a href="./CVE-2023-49657.cve.json">[CVE json]</a></p>
+<h3 id="affected-34">Affected</h3>
+<ul>
+<li>Apache Superset before 3.0.3</li>
+</ul>
+<h3 id="description-34">Description</h3>
+<p><span style="background-color: rgb(255, 255, 255);">A stored cross-site scripting (XSS) vulnerability exists in Apache Superset before 3.0.3. </span>An authenticated attacker with create/update permissions on charts or dashboards could store a script or add a specific HTML snippet that would act as a stored XSS.<br><br>For 2.X versions, users should change their config to include:<br><br>TALISMAN_CONFIG = {<br>    &ldquo;content_security_policy&rdquo;: {<br>        &ldquo;base-uri&rdquo;: [&quot;&lsquo;self&rsquo;&quot;],<br>        &ldquo;default-src&rdquo;: [&quot;&lsquo;self&rsquo;&quot;],<br>        &ldquo;img-src&rdquo;: [&quot;&lsquo;self&rsquo;&quot;, &ldquo;blob:&rdquo;, &ldquo;data:&rdquo;],<br>        &ldquo;worker-src&rdquo;: [&quot;&lsquo;self&rsquo;&quot;, &ldquo;blob:&rdquo;],<br>        &ldquo;connect-src&rdquo;: [<br>            &ldquo;&lsquo;self&rsquo;&rdquo;,<br>            &ldquo;<a target="_blank" rel="nofollow" href="https://api.mapbox.com&quot;">https://api.mapbox.com&rdquo;</a>;,<br>            &ldquo;<a target="_blank" rel="nofollow" href="https://events.mapbox.com&quot;">https://events.mapbox.com&rdquo;</a>;,<br>        ],<br>        &ldquo;object-src&rdquo;: &ldquo;&rsquo;none&rsquo;&rdquo;,<br>        &ldquo;style-src&rdquo;: [<br>            &ldquo;&lsquo;self&rsquo;&rdquo;,<br>            &ldquo;&lsquo;unsafe-inline&rsquo;&rdquo;,<br>        ],<br>        &ldquo;script-src&rdquo;: [&quot;&lsquo;self&rsquo;&quot;, &ldquo;&lsquo;strict-dynamic&rsquo;&rdquo;],<br>    },<br>    &ldquo;content_security_policy_nonce_in&rdquo;: [&ldquo;script-src&rdquo;],<br>    &ldquo;force_https&rdquo;: False,<br>    &ldquo;session_cookie_secure&rdquo;: False,<br>}<br><br></p>
+<h3 id="references-34">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/wjyvz8om9nwd396lh0bt156mtwjxpsvx">https://lists.apache.org/thread/wjyvz8om9nwd396lh0bt156mtwjxpsvx</a></li>
+</ul>
+<h3 id="credits-33">Credits</h3>
+<ul>
+<li>Nick Barnes, Praetorian Security Inc. (reporter)</li>
+<li>Amit Laish – GE Vernova (reporter)</li>
+</ul>
+<h2 id="CVE-2023-49734">Privilege Escalation Vulnerability</h2>
+<p>CVE-2023-49734 <a href="./CVE-2023-49734.cve.json">[CVE json]</a></p>
+<h3 id="affected-35">Affected</h3>
+<ul>
+<li>Apache Superset before 2.1.2</li>
+<li>Apache Superset from 3.0.0 before 3.0.2</li>
+</ul>
+<h3 id="description-35">Description</h3>
+<p>An authenticated Gamma user has the ability to create a dashboard and add charts to it, this user would automatically become one of the owners of the charts allowing him to incorrectly have write permissions to these charts.<p>This issue affects Apache Superset: before 2.1.2, from 3.0.0 before 3.0.2.</p><p>Users are recommended to upgrade to version 3.0.2 or 2.1.3, which fixes the issue.</p></p>
+<h3 id="references-35">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/985h6ltvtbvdoysso780kkj7x744cds5">https://lists.apache.org/thread/985h6ltvtbvdoysso780kkj7x744cds5</a></li>
+</ul>
+<h3 id="credits-34">Credits</h3>
+<ul>
+<li>Jordan Velich (finder)</li>
+</ul>
+<h2 id="CVE-2023-49736">SQL Injection on where_in JINJA macro</h2>
+<p>CVE-2023-49736 <a href="./CVE-2023-49736.cve.json">[CVE json]</a></p>
+<h3 id="affected-36">Affected</h3>
+<ul>
+<li>Apache Superset before 2.1.2</li>
+<li>Apache Superset from 3.0.0 before 3.0.2</li>
+</ul>
+<h3 id="description-36">Description</h3>
+<p>A where_in JINJA macro <span style="background-color: rgb(255, 255, 255);">allows users to specify a quote, which combined with a carefully crafted statement would allow for SQL injection </span>in Apache Superset.<p>This issue affects Apache Superset: before 2.1.2, from 3.0.0 before 3.0.2.</p><p>Users are recommended to upgrade to version 3.0.2, which fixes the issue.</p></p>
+<h3 id="references-36">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/1kf481bgs3451qcz6hfhobs7xvhp8n1p">https://lists.apache.org/thread/1kf481bgs3451qcz6hfhobs7xvhp8n1p</a></li>
+</ul>
+<h3 id="credits-35">Credits</h3>
+<ul>
+<li>Jack Prince-Fulls ( <a href="mailto:jf@incyan.com">jf@incyan.com</a> ) (finder)</li>
+</ul>
+<h2 id="CVE-2024-23952">Allows for uncontrolled resource consumption via a ZIP bomb (version range fix for CVE-2023-46104)</h2>
+<p>CVE-2024-23952 <a href="./CVE-2024-23952.cve.json">[CVE json]</a></p>
+<h3 id="affected-37">Affected</h3>
+<ul>
+<li>Apache Superset before 2.1.3</li>
+<li>Apache Superset from 3.0.0 before 3.0.2</li>
+</ul>
+<h3 id="description-37">Description</h3>
+<p>This is a duplicate for CVE-2023-46104. With correct CVE version ranges for affected Apache Superset.<br> <br>Uncontrolled resource consumption can be triggered by authenticated attacker that uploads a malicious ZIP to import database, dashboards or datasets.  <br><span style="background-color: rgb(255, 255, 255);">This vulnerability exists </span>in Apache Superset versions up to and including 2.1.2 and versions 3.0.0, 3.0.1.<br><br><br></p>
+<h3 id="references-37">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/zc58zvm4414molqn2m4d4vkrbrsxdksx">https://lists.apache.org/thread/zc58zvm4414molqn2m4d4vkrbrsxdksx</a></li>
+</ul>
+<h3 id="credits-36">Credits</h3>
+<ul>
+<li>Dor Konis – GE Vernova (finder)</li>
+</ul>
 
   
 </div>

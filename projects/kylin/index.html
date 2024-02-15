@@ -267,6 +267,22 @@ This issue affects Apache Kylin 2 version 2.6.6 and prior versions; Apache Kylin
 <ul>
 <li>Messy God <a href="mailto:godimessy@gmail.com">godimessy@gmail.com</a> (finder)</li>
 </ul>
+<h2 id="CVE-2023-29055">Insufficiently protected credentials in config file</h2>
+<p>CVE-2023-29055 <a href="./CVE-2023-29055.cve.json">[CVE json]</a></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache Kylin from 2.0.0 through 4.0.3</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<div>In Apache Kylin version 2.0.0 to 4.0.3, there is a Server Config web interface that displays the content of file 'kylin.properties', that may contain serverside credentials. When the kylin service runs over HTTP (or other plain text protocol), it is possible for network sniffers to hijack the HTTP payload and get access to the content of kylin.properties and potentially the containing credentials.<br></div><div><br></div><div>To avoid this threat, users are recommended to&nbsp;</div><div><ol><li>Always turn on HTTPS so that network payload is encrypted.<br></li><li>Avoid putting credentials in kylin.properties, or at least not in plain text.</li><li>Use network firewalls to protect the serverside such that it is not accessible to external attackers.<br></li><li>Upgrade to version Apache Kylin 4.0.4, which filters out the sensitive content that goes to the Server Config web interface.</li></ol><br></div>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/o1bvyv9wnfkx7dxpfjlor20nykgsoh6r">https://lists.apache.org/thread/o1bvyv9wnfkx7dxpfjlor20nykgsoh6r</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>Li Jiakun <a href="mailto:2839549219@qq.com">2839549219@qq.com</a> (reporter)</li>
+</ul>
 
   
 </div>

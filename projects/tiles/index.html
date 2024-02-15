@@ -6,9 +6,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>  </title>
+  <title> Apache Tiles security advisories </title>
 
   
+  <meta name="description" content="Security information for Apache Tiles"> 
   
   
   
@@ -22,8 +23,8 @@
   <meta name="author" content="">
 
 
-  <meta property="og:title" content="" />
-<meta property="og:description" content="" />
+  <meta property="og:title" content="Apache Tiles security advisories" />
+<meta property="og:description" content="Security information for Apache Tiles" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://security.apache.org/projects/tiles/" />
 
@@ -96,24 +97,36 @@
   <main>
 
 <div id="hero" class="wrap">
-  <h1></h1>
+  <h1>Apache Tiles security advisories</h1>
+    <p>Security information for Apache Tiles</p>
 </div>
-<ul id="posts">
+<div id="project-box">
+<div id="project">
 
- 
-  <section><nav class="pagination pager align-center">
-            <hr>
-    <ul>
-           
-        <li>
-
-        <a href="" class="button round small outline">Page 1 of 0</a>
-        </li>
-            
-    </ul>
-</nav></section>
+ <h1 id="reporting">Reporting</h1>
+<p>Do you want disclose a potential security issue for Apache Tiles? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<h1 id="advisories">Advisories</h1>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2023-49735">Unvalidated input may lead to path traversal and XXE</h2>
+<p>CVE-2023-49735 <a href="./CVE-2023-49735.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Tiles from 2.0.0 before *</li>
+</ul>
+<h3 id="description">Description</h3>
+<div>** UNSUPPORTED WHEN ASSIGNED **<br></div><div><br></div><div>The value set as the DefaultLocaleResolver.LOCALE_KEY attribute on the session was not validated while resolving XML definition files, leading to possible path traversal and eventually SSRF/XXE when passing user-controlled data to this key. Passing user-controlled data to this key may be relatively common, as it was also used like that to set the language in the 'tiles-test' application shipped with Tiles.<br></div><p>This issue affects Apache Tiles from version 2 onwards.<br></p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.<br></p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/8ktm4vxr6vvc1qsxh6ft8jzmom1zl65p">https://lists.apache.org/thread/8ktm4vxr6vvc1qsxh6ft8jzmom1zl65p</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Joseph Beeton of Contrast Security (finder)</li>
 </ul>
 
+  
+</div>
+</div>
 </main>
   <footer> 
     <footer id="footer">

@@ -6,9 +6,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>  </title>
+  <title> Apache jUDDI security advisories </title>
 
   
+  <meta name="description" content="Security information for Apache jUDDI"> 
   
   
   
@@ -22,8 +23,8 @@
   <meta name="author" content="">
 
 
-  <meta property="og:title" content="" />
-<meta property="og:description" content="" />
+  <meta property="og:title" content="Apache jUDDI security advisories" />
+<meta property="og:description" content="Security information for Apache jUDDI" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://security.apache.org/projects/juddi/" />
 
@@ -96,24 +97,38 @@
   <main>
 
 <div id="hero" class="wrap">
-  <h1></h1>
+  <h1>Apache jUDDI security advisories</h1>
+    <p>Security information for Apache jUDDI</p>
 </div>
-<ul id="posts">
+<div id="project-box">
+<div id="project">
 
- 
-  <section><nav class="pagination pager align-center">
-            <hr>
-    <ul>
-           
-        <li>
-
-        <a href="" class="button round small outline">Page 1 of 0</a>
-        </li>
-            
-    </ul>
-</nav></section>
+ <h1 id="reporting">Reporting</h1>
+<p>Do you want disclose a potential security issue for Apache jUDDI? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<h1 id="advisories">Advisories</h1>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2021-37578">Remote code execution via RMI</h2>
+<p>CVE-2021-37578 <a href="./CVE-2021-37578.cve.json">[CVE json]</a></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache jUDDI from unspecified before 3.3.10</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Apache jUDDI uses several classes related to Java&rsquo;s Remote Method Invocation (RMI) which (as an extension to UDDI) provides an alternate transport for accessing UDDI services.</p>
+<p>RMI uses the default Java serialization mechanism to pass parameters in RMI invocations. A remote attacker can send a malicious serialized object to the above RMI entries. The objects get deserialized without any check on the incoming data. In the worst case, it may let the attacker run arbitrary code remotely.</p>
+<p>For both jUDDI web service applications and jUDDI clients, the usage of RMI is disabled by default. Since this is an optional feature and an extension to the UDDI protocol, the likelihood of impact is low. Starting with 3.3.10, all RMI related code was removed.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r82047b3ba774cf870ea8e1e9ec51c6107f6cd056d4e36608148c6e71%40%3Cprivate.juddi.apache.org%3E">https://lists.apache.org/thread.html/r82047b3ba774cf870ea8e1e9ec51c6107f6cd056d4e36608148c6e71%40%3Cprivate.juddi.apache.org%3E</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Reported by Artem Smotrakov</li>
 </ul>
 
+  
+</div>
+</div>
 </main>
   <footer> 
     <footer id="footer">

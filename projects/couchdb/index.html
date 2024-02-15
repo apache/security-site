@@ -161,6 +161,27 @@
 <ul>
 <li>Nick Vatamaniuc <a href="mailto:vatamane@apache.org">vatamane@apache.org</a> (finder)</li>
 </ul>
+<h2 id="CVE-2023-45725">Privilege Escalation Using _design Documents</h2>
+<p>CVE-2023-45725 <a href="./CVE-2023-45725.cve.json">[CVE json]</a></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache CouchDB through 3.3.2</li>
+<li>IBM Cloudant before 8413</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Design document functions which receive a user http request object may expose authorization or session cookie headers of the user who accesses the document.<br><br>These design document functions are:<br><ul><li>  list</li><li>  show</li><li>  rewrite</li><li>  update</li></ul>An attacker can leak the session component using an HTML-like output, insert the session as an external resource (such as an image), or store the credential in a _local document with an &ldquo;update&rdquo; function.<br><br>For the attack to succeed the attacker has to be able to insert the design documents into the database, then manipulate a user to access a function from that design document.<br><br>Workaround: Avoid using design documents from untrusted sources which may attempt to access or manipulate request object&rsquo;s headers<br></p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/pqjq9zt8vq9rsobkc1cow9sqm9vozlrg">https://lists.apache.org/thread/pqjq9zt8vq9rsobkc1cow9sqm9vozlrg</a></li>
+<li><a href="https://docs.couchdb.org/en/stable/cve/2023-45725.html">https://docs.couchdb.org/en/stable/cve/2023-45725.html</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Natan Nehorai from the JFrog Vulnerability Research Team (finder)</li>
+<li>Or Peles from the JFrog Vulnerability Research Team (reporter)</li>
+<li>Richard Ellis from IBM/Cloudant Team (finder)</li>
+<li>Mike Rhodes from IBM/Cloudant Team (finder)</li>
+</ul>
 
   
 </div>

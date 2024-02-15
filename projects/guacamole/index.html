@@ -172,6 +172,23 @@
 <ul>
 <li>Stefan Schiller (Sonar) (finder)</li>
 </ul>
+<h2 id="CVE-2023-43826">Integer overflow in handling of VNC image buffers</h2>
+<p>CVE-2023-43826 <a href="./CVE-2023-43826.cve.json">[CVE json]</a></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Guacamole through 1.5.3</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<div>Apache Guacamole 1.5.3 and older do not consistently ensure that values received from a VNC server will not result in integer overflow. If a user connects to a malicious or compromised VNC server, specially-crafted data could result in memory corruption, possibly allowing arbitrary code to be executed with the privileges of the running guacd process.<br></div><div>Users are recommended to upgrade to version 1.5.4, which fixes this issue.</div>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/23gzwftpfgtq97tj6ttmbclry53kmwv6">https://lists.apache.org/thread/23gzwftpfgtq97tj6ttmbclry53kmwv6</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Joseph Surin (Elttam) (reporter)</li>
+<li>Matt Jones (Elttam) (reporter)</li>
+</ul>
 
   
 </div>

@@ -298,6 +298,70 @@ pre-authentication attack.<br><p>This issue affects Apache OFBiz: before 18.12.0
 <ul>
 <li>Anonymous by demand (finder)</li>
 </ul>
+<h2 id="CVE-2023-49070">Pre-auth RCE in Apache Ofbiz 18.12.09 due to XML-RPC still present</h2>
+<p>CVE-2023-49070 <a href="./CVE-2023-49070.cve.json">[CVE json]</a></p>
+<h3 id="affected-11">Affected</h3>
+<ul>
+<li>Apache OFBiz before 18.12.10</li>
+</ul>
+<h3 id="description-11">Description</h3>
+<p>Pre-auth RCE in Apache Ofbiz 18.12.09.<br><br>It&rsquo;s due to XML-RPC <span style="background-color: rgb(255, 255, 255);">no longer maintained</span> still present.<br><p>This issue affects Apache OFBiz: before 18.12.10. <br><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 18.12.10</span></p></p>
+<h3 id="references-11">References</h3>
+<ul>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://ofbiz.apache.org/release-notes-18.12.10.html">https://ofbiz.apache.org/release-notes-18.12.10.html</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-12812">https://issues.apache.org/jira/browse/OFBIZ-12812</a></li>
+<li><a href="https://lists.apache.org/thread/jmbqk2lp4t4483whzndp5xqlq4f3otg3">https://lists.apache.org/thread/jmbqk2lp4t4483whzndp5xqlq4f3otg3</a></li>
+</ul>
+<h3 id="credits-11">Credits</h3>
+<ul>
+<li>Siebene@ (finder)</li>
+</ul>
+<h2 id="CVE-2023-50968">Arbitrary file properties reading and SSRF attack</h2>
+<p>CVE-2023-50968 <a href="./CVE-2023-50968.cve.json">[CVE json]</a></p>
+<h3 id="affected-12">Affected</h3>
+<ul>
+<li>Apache OFBiz through 18.12.10</li>
+</ul>
+<h3 id="description-12">Description</h3>
+<div>Arbitrary file properties reading vulnerability in Apache Software Foundation Apache OFBiz when user operates an uri call without authorizations.<br></div><div><br></div><div>The same uri can be operated to realize a SSRF attack also  without  authorizations.<br></div><div><br></div>Users are recommended to upgrade to version 18.12.11, which fixes this issue.
+<h3 id="references-12">References</h3>
+<ul>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://ofbiz.apache.org/release-notes-18.12.11.html">https://ofbiz.apache.org/release-notes-18.12.11.html</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-12875">https://issues.apache.org/jira/browse/OFBIZ-12875</a></li>
+<li><a href="https://lists.apache.org/thread/x5now4bk3llwf3k58kl96qvtjyxwp43q">https://lists.apache.org/thread/x5now4bk3llwf3k58kl96qvtjyxwp43q</a></li>
+</ul>
+<h3 id="credits-12">Credits</h3>
+<ul>
+<li>Yun Peng - 郭 运鹏 <a href="mailto:puata123@outlook.com">puata123@outlook.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2023-51467">Pre-authentication Remote Code Execution (RCE) vulnerability</h2>
+<p>CVE-2023-51467 <a href="./CVE-2023-51467.cve.json">[CVE json]</a></p>
+<h3 id="affected-13">Affected</h3>
+<ul>
+<li>Apache OFBiz before 18.12.11</li>
+</ul>
+<h3 id="description-13">Description</h3>
+<div><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">The vulnerability permits attackers to circumvent authentication processes, enabling them to remotely <span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">execute arbitrary code</span></span><br></span></span></div>
+<h3 id="references-13">References</h3>
+<ul>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://ofbiz.apache.org/release-notes-18.12.11.html">https://ofbiz.apache.org/release-notes-18.12.11.html</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-12873">https://issues.apache.org/jira/browse/OFBIZ-12873</a></li>
+<li><a href="https://lists.apache.org/thread/9tmf9qyyhgh6m052rhz7lg9vxn390bdv">https://lists.apache.org/thread/9tmf9qyyhgh6m052rhz7lg9vxn390bdv</a></li>
+<li><a href="https://lists.apache.org/thread/oj2s6objhdq72t6g29omqpcbd1wlp48o">https://lists.apache.org/thread/oj2s6objhdq72t6g29omqpcbd1wlp48o</a></li>
+<li><a href="https://www.openwall.com/lists/oss-security/2023/12/26/3">https://www.openwall.com/lists/oss-security/2023/12/26/3</a></li>
+</ul>
+<h3 id="credits-13">Credits</h3>
+<ul>
+<li>Hasib Vhora, Senior Threat Researcher, SonicWall  (finder)</li>
+<li>Gao Tian (finder)</li>
+<li>L0ne1y (finder)</li>
+</ul>
 
   
 </div>
