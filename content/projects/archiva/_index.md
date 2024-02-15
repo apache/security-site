@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-29405 [\[CVE json\]](./CVE-2022-29405.cve.json)
 
+_Last updated: 2022-05-25T07:11:14.322Z_
+
 ### Affected
 
 * Apache Archiva from 2.2 through 2.2.7
@@ -33,6 +35,8 @@ In Apache Archiva, any registered user can reset password for any users.  This i
 ## Apache Archiva prior to 2.2.9 may allow the anonymous user to read arbitrary files ## { #CVE-2022-40308 }
 
 CVE-2022-40308 [\[CVE json\]](./CVE-2022-40308.cve.json)
+
+_Last updated: 2022-11-15T13:08:09.007Z_
 
 ### Affected
 
@@ -56,6 +60,8 @@ If anonymous read enabled, it's possible to read the database file directly with
 
 CVE-2022-40309 [\[CVE json\]](./CVE-2022-40309.cve.json)
 
+_Last updated: 2022-11-15T13:09:01.491Z_
+
 ### Affected
 
 * Apache Archiva from unspecified through 2.2.8
@@ -76,6 +82,8 @@ Users with write permissions to a repository can delete arbitrary directories.
 ## Apache Archiva privilege escalation ## { #CVE-2023-28158 }
 
 CVE-2023-28158 [\[CVE json\]](./CVE-2023-28158.cve.json)
+
+_Last updated: 2023-03-29T12:21:30.415Z_
 
 ### Affected
 

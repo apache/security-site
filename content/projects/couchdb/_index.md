@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-38295 [\[CVE json\]](./CVE-2021-38295.cve.json)
 
+_Last updated: 2021-10-14T16:26:03.894Z_
+
 ### Affected
 
 * Apache CouchDB from Apache CouchDB before 3.1.2
@@ -41,6 +43,8 @@ This privilege escalation vulnerability allows an attacker to add or remove data
 
 CVE-2022-24706 [\[CVE json\]](./CVE-2022-24706.cve.json)
 
+_Last updated: 2022-04-26T09:18:02.724Z_
+
 ### Affected
 
 * Apache CouchDB from Apache CouchDB through 3.2.1
@@ -63,6 +67,8 @@ In Apache CouchDB prior to 3.2.2, an attacker can access an improperly secured d
 ## Information sharing via couchjs processes ## { #CVE-2023-26268 }
 
 CVE-2023-26268 [\[CVE json\]](./CVE-2023-26268.cve.json)
+
+_Last updated: 2023-12-12T22:58:48.382Z_
 
 ### Affected
 
@@ -87,6 +93,8 @@ CVE-2023-26268 [\[CVE json\]](./CVE-2023-26268.cve.json)
 ## Privilege Escalation Using _design Documents ## { #CVE-2023-45725 }
 
 CVE-2023-45725 [\[CVE json\]](./CVE-2023-45725.cve.json)
+
+_Last updated: 2023-12-13T08:02:15.239Z_
 
 ### Affected
 

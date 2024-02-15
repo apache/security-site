@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-39944 [\[CVE json\]](./CVE-2022-39944.cve.json)
 
+_Last updated: 2022-10-26T12:44:23.967Z_
+
 ### Affected
 
 * Apache Linkis from Apache Linkis through 1.2.0
@@ -38,6 +40,8 @@ In Apache Linkis <=1.2.0 when used with the MySQL Connector/J, a deserialization
 ## The DatasourceManager module has a serialization attack vulnerability ## { #CVE-2022-44645 }
 
 CVE-2022-44645 [\[CVE json\]](./CVE-2022-44645.cve.json)
+
+_Last updated: 2023-02-03T07:43:51.516Z_
 
 ### Affected
 
@@ -64,6 +68,8 @@ In Apache Linkis &lt;=1.3.0 when used with the MySQL Connector/J in the data sou
 
 CVE-2022-44644 [\[CVE json\]](./CVE-2022-44644.cve.json)
 
+_Last updated: 2023-03-15T08:36:49.053Z_
+
 ### Affected
 
 * Apache Linkis (incubating) before 1.3.1
@@ -85,6 +91,8 @@ In Apache Linkis &lt;=1.3.0 when used with the MySQL Connector/J in the data sou
 ## Apache Linkis publicsercice module unrestricted upload of file ## { #CVE-2023-27602 }
 
 CVE-2023-27602 [\[CVE json\]](./CVE-2023-27602.cve.json)
+
+_Last updated: 2023-04-11T03:15:38.418Z_
 
 ### Affected
 
@@ -112,6 +120,8 @@ We recommend users upgrade the version of Linkis to version 1.3.2.&nbsp;<br></sp
 ## Apache Linkis Mangaer module engineConn material upload exists Zip Slip issue ## { #CVE-2023-27603 }
 
 CVE-2023-27603 [\[CVE json\]](./CVE-2023-27603.cve.json)
+
+_Last updated: 2023-04-14T07:17:48.297Z_
 
 ### Affected
 
@@ -145,6 +155,8 @@ We recommend users upgrade the version of Linkis to version 1.3.2.
 
 CVE-2023-27987 [\[CVE json\]](./CVE-2023-27987.cve.json)
 
+_Last updated: 2023-04-14T07:51:52.905Z_
+
 ### Affected
 
 * Apache Linkis through 1.3.1
@@ -177,6 +189,8 @@ We recommend users upgrade the version of Linkis to version 1.3.2 And modify the
 
 CVE-2023-29215 [\[CVE json\]](./CVE-2023-29215.cve.json)
 
+_Last updated: 2023-04-10T07:35:21.175Z_
+
 ### Affected
 
 * Apache Linkis through 1.3.1
@@ -201,6 +215,8 @@ deserialization vulnerability and eventually lead to remote code execution. Ther
 ## Apache Linkis DatasourceManager module has a deserialization command execution ## { #CVE-2023-29216 }
 
 CVE-2023-29216 [\[CVE json\]](./CVE-2023-29216.cve.json)
+
+_Last updated: 2023-04-10T07:37:27.173Z_
 
 ### Affected
 
@@ -230,6 +246,8 @@ remote code execution.<br> Versions of Apache Linkis &lt;= 1.3.0 will be affecte
 
 CVE-2023-41916 [\[CVE json\]](./CVE-2023-41916.cve.json)
 
+_Last updated: 2024-01-04T10:12:13.543Z_
+
 ### Affected
 
 * Apache Linkis DataSource from 1.4.0 before 1.5.0
@@ -256,6 +274,8 @@ of parameters, an attacker configuring malicious Mysql JDBC parameters in the Da
 ## DataSource module Oracle SQL Database Password Logged ## { #CVE-2023-50740 }
 
 CVE-2023-50740 [\[CVE json\]](./CVE-2023-50740.cve.json)
+
+_Last updated: 2024-01-04T02:15:45.612Z_
 
 ### Affected
 

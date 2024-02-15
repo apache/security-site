@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2023-47248 [\[CVE json\]](./CVE-2023-47248.cve.json)
 
+_Last updated: 2023-11-10T14:10:15.590Z_
+
 ### Affected
 
 * PyArrow from 0.14.0 through 14.0.0

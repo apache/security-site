@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-43410 [\[CVE json\]](./CVE-2021-43410.cve.json)
 
+_Last updated: 2021-12-09T08:58:17.423Z_
+
 ### Affected
 
 * Apache Airavata Django Portal from master branch before commit 3c5d8c7

@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-23937 [\[CVE json\]](./CVE-2021-23937.cve.json)
 
+_Last updated: 2021-05-25T08:01:09.799Z_
+
 ### Affected
 
 * Apache Wicket from Apache Wicket 9.x through 9.2.0

@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-31805 [\[CVE json\]](./CVE-2021-31805.cve.json)
 
+_Last updated: 2022-04-12T15:23:33.186Z_
+
 ### Affected
 
 * Apache Struts at 2.0.0 to 2.5.29
@@ -37,6 +39,8 @@ The fix issued for CVE-2020-17530 was incomplete. So from Apache Struts 2.0.0 to
 ## DoS via OOM owing to not properly checking of list bounds ## { #CVE-2023-34149 }
 
 CVE-2023-34149 [\[CVE json\]](./CVE-2023-34149.cve.json)
+
+_Last updated: 2023-06-14T07:48:49.995Z_
 
 ### Affected
 
@@ -60,6 +64,8 @@ Allocation of Resources Without Limits or Throttling vulnerability in Apache Sof
 
 CVE-2023-34396 [\[CVE json\]](./CVE-2023-34396.cve.json)
 
+_Last updated: 2023-06-14T07:50:57.318Z_
+
 ### Affected
 
 * Apache Struts through 2.5.30
@@ -82,6 +88,8 @@ Allocation of Resources Without Limits or Throttling vulnerability in Apache Sof
 
 CVE-2023-41835 [\[CVE json\]](./CVE-2023-41835.cve.json)
 
+_Last updated: 2023-12-12T08:42:17.762Z_
+
 ### Affected
 
 * Apache Struts from 2.0.0 through 2.5.31
@@ -100,6 +108,8 @@ CVE-2023-41835 [\[CVE json\]](./CVE-2023-41835.cve.json)
 ## File upload component had a directory traversal vulnerability ## { #CVE-2023-50164 }
 
 CVE-2023-50164 [\[CVE json\]](./CVE-2023-50164.cve.json)
+
+_Last updated: 2023-12-12T09:26:27.763Z_
 
 ### Affected
 

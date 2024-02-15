@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-28129 [\[CVE json\]](./CVE-2021-28129.cve.json)
 
+_Last updated: 2021-10-07T15:24:31.592Z_
+
 ### Affected
 
 * Apache OpenOffice at 4.1.8
@@ -40,6 +42,8 @@ Users who installed the Apache OpenOffice 4.1.8 DEB packaging should upgrade to 
 
 CVE-2021-30245 [\[CVE json\]](./CVE-2021-30245.cve.json)
 
+_Last updated: 2021-04-15T19:28:07.363Z_
+
 ### Affected
 
 * Apache OpenOffice from Apache OpenOffice through 4.1.9
@@ -60,6 +64,8 @@ The project received a report that all versions of Apache OpenOffice through 4.1
 ## Buffer overflow from a crafted DBF file ## { #CVE-2021-33035 }
 
 CVE-2021-33035 [\[CVE json\]](./CVE-2021-33035.cve.json)
+
+_Last updated: 2021-10-07T15:21:31.403Z_
 
 ### Affected
 
@@ -88,6 +94,8 @@ This issue is fixed in Apache OpenOffice 4.1.11
 
 CVE-2021-40439 [\[CVE json\]](./CVE-2021-40439.cve.json)
 
+_Last updated: 2021-10-07T15:23:25.432Z_
+
 ### Affected
 
 * Apache OpenOffice from Apache OpenOffice through 4.1.10
@@ -109,6 +117,8 @@ expat in version 4.1.11 is patched.
 ## Double Certificate Attack ## { #CVE-2021-41830 }
 
 CVE-2021-41830 [\[CVE json\]](./CVE-2021-41830.cve.json)
+
+_Last updated: 2021-10-11T08:05:11.193Z_
 
 ### Affected
 
@@ -138,6 +148,8 @@ See CVE-2021-25633 for the LibreOffice advisory.
 
 CVE-2021-41831 [\[CVE json\]](./CVE-2021-41831.cve.json)
 
+_Last updated: 2021-10-11T08:05:48.311Z_
+
 ### Affected
 
 * Apache OpenOffice from Apache OpenOffice through 4.1.10
@@ -164,6 +176,8 @@ See CVE-2021-25634 for the LibreOffice advisory.
 ## Content Manipulation with Certificate Validation Attack ## { #CVE-2021-41832 }
 
 CVE-2021-41832 [\[CVE json\]](./CVE-2021-41832.cve.json)
+
+_Last updated: 2021-10-11T08:06:50.243Z_
 
 ### Affected
 
@@ -192,6 +206,8 @@ See CVE-2021-25635 for the LibreOffice advisory.
 
 CVE-2022-37400 [\[CVE json\]](./CVE-2022-37400.cve.json)
 
+_Last updated: 2022-08-13T06:33:55.145Z_
+
 ### Affected
 
 * Apache OpenOffice from Apache OpenOffice 4 before 4.1.13
@@ -214,6 +230,8 @@ Reference: CVE-2022-26306 - LibreOffice
 
 CVE-2022-37401 [\[CVE json\]](./CVE-2022-37401.cve.json)
 
+_Last updated: 2022-08-13T06:35:06.833Z_
+
 ### Affected
 
 * Apache OpenOffice from Apache OpenOffice 4 before 4.1.13
@@ -234,6 +252,8 @@ Apache OpenOffice supports the storage of passwords for web connections in the u
 ## Empty entry in Java class path ## { #CVE-2022-38745 }
 
 CVE-2022-38745 [\[CVE json\]](./CVE-2022-38745.cve.json)
+
+_Last updated: 2023-03-24T15:56:44.525Z_
 
 ### Affected
 
@@ -257,6 +277,8 @@ CVE-2022-38745 [\[CVE json\]](./CVE-2022-38745.cve.json)
 
 CVE-2022-47502 [\[CVE json\]](./CVE-2022-47502.cve.json)
 
+_Last updated: 2023-04-05T12:45:10.294Z_
+
 ### Affected
 
 * Apache OpenOffice through 4.1.13
@@ -279,6 +301,8 @@ CVE-2022-47502 [\[CVE json\]](./CVE-2022-47502.cve.json)
 ## Macro URL arbitrary script execution ## { #CVE-2023-47804 }
 
 CVE-2023-47804 [\[CVE json\]](./CVE-2023-47804.cve.json)
+
+_Last updated: 2023-12-29T14:31:22.075Z_
 
 ### Affected
 

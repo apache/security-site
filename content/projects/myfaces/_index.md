@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-26296 [\[CVE json\]](./CVE-2021-26296.cve.json)
 
+_Last updated: 2021-02-19T08:27:26.368Z_
+
 ### Affected
 
 * Apache MyFaces Core from Apache MyFaces Core 2.2 before 2.2.14

@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-26544 [\[CVE json\]](./CVE-2021-26544.cve.json)
 
+_Last updated: 2021-02-20T08:56:02.977Z_
+
 ### Affected
 
 * Apache Livy (Incubating) at 0.7.0-incubating

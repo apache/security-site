@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-42009 [\[CVE json\]](./CVE-2021-42009.cve.json)
 
+_Last updated: 2021-10-12T07:37:49.253Z_
+
 ### Affected
 
 * Apache Traffic Control from 4.0.0 before Apache Traffic Control*
@@ -39,6 +41,8 @@ An authenticated Apache Traffic Control Traffic Ops user with Portal-level privi
 
 CVE-2021-43350 [\[CVE json\]](./CVE-2021-43350.cve.json)
 
+_Last updated: 2021-11-11T20:52:57.271Z_
+
 ### Affected
 
 * Apache Traffic Control from Traffic Ops before 6.0.1
@@ -59,6 +63,8 @@ An unauthenticated Apache Traffic Control Traffic Ops user can send a request wi
 ## Server-Side Request Forgery in Traffic Ops endpoint POST /user/login/oauth ## { #CVE-2022-23206 }
 
 CVE-2022-23206 [\[CVE json\]](./CVE-2022-23206.cve.json)
+
+_Last updated: 2022-02-06T15:11:05.215Z_
 
 ### Affected
 

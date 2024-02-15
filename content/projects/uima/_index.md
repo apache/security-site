@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-32287 [\[CVE json\]](./CVE-2022-32287.cve.json)
 
+_Last updated: 2022-11-03T11:49:10.523Z_
+
 ### Affected
 
 * Apache UIMA from Java SDK through 3.3.0
@@ -40,6 +42,8 @@ Note that PEAR files should never be installed into an UIMA installation from un
 
 CVE-2023-28935 [\[CVE json\]](./CVE-2023-28935.cve.json)
 
+_Last updated: 2023-03-30T09:10:09.175Z_
+
 ### Affected
 
 * Apache UIMA DUCC through *
@@ -60,6 +64,8 @@ CVE-2023-28935 [\[CVE json\]](./CVE-2023-28935.cve.json)
 ## Potential untrusted code execution when deserializing certain binary CAS formats ## { #CVE-2023-39913 }
 
 CVE-2023-39913 [\[CVE json\]](./CVE-2023-39913.cve.json)
+
+_Last updated: 2023-11-08T08:04:19.712Z_
 
 ### Affected
 

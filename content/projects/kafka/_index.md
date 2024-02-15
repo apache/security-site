@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-38153 [\[CVE json\]](./CVE-2021-38153.cve.json)
 
+_Last updated: 2021-09-22T08:43:16.777Z_
+
 ### Affected
 
 * Apache Kafka from Apache Kafka 2.0.x through 2.0.1
@@ -45,6 +47,8 @@ Some components in Apache Kafka use `Arrays.equals` to validate a password or ke
 ## Unauthenticated clients may cause OutOfMemoryError on Apache Kafka Brokers ## { #CVE-2022-34917 }
 
 CVE-2022-34917 [\[CVE json\]](./CVE-2022-34917.cve.json)
+
+_Last updated: 2022-09-30T05:44:20.899Z_
 
 ### Affected
 
@@ -86,6 +90,8 @@ We advise the users to upgrade the Kafka installations to one of the 3.2.3, 3.1.
 ## Possible RCE/Denial of service attack via SASL JAAS JndiLoginModule configuration using Kafka Connect  ## { #CVE-2023-25194 }
 
 CVE-2023-25194 [\[CVE json\]](./CVE-2023-25194.cve.json)
+
+_Last updated: 2023-07-21T11:35:22.991Z_
 
 ### Affected
 

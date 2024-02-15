@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-38294 [\[CVE json\]](./CVE-2021-38294.cve.json)
 
+_Last updated: 2021-10-21T22:16:43.838Z_
+
 ### Affected
 
 * Apache Storm from v1.0.0 before Apache Storm*
@@ -40,6 +42,8 @@ A Command Injection vulnerability exists in the getTopologyHistory service of th
 
 CVE-2021-40865 [\[CVE json\]](./CVE-2021-40865.cve.json)
 
+_Last updated: 2021-10-21T21:27:58.697Z_
+
 ### Affected
 
 * Apache Storm from v1.0.0 before Apache Storm *
@@ -62,6 +66,8 @@ An Unsafe Deserialization vulnerability exists in the worker services of the Apa
 ## Local Information Disclosure Vulnerability in Storm-core on Unix-Like systems due temporary files ## { #CVE-2023-43123 }
 
 CVE-2023-43123 [\[CVE json\]](./CVE-2023-43123.cve.json)
+
+_Last updated: 2023-11-23T09:16:32.695Z_
 
 ### Affected
 

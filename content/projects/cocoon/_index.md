@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-45135 [\[CVE json\]](./CVE-2022-45135.cve.json)
 
+_Last updated: 2023-11-30T08:05:43.177Z_
+
 ### Affected
 
 * Apache Cocoon from 2.2.0 before 2.3.0
@@ -37,6 +39,8 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 ## Apache Cocoon's StreamGenerator is vulnerable to XXE injection ## { #CVE-2023-49733 }
 
 CVE-2023-49733 [\[CVE json\]](./CVE-2023-49733.cve.json)
+
+_Last updated: 2023-11-30T11:29:43.636Z_
 
 ### Affected
 

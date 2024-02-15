@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2023-34442 [\[CVE json\]](./CVE-2023-34442.cve.json)
 
+_Last updated: 2023-07-10T09:31:01.757Z_
+
 ### Affected
 
 * Apache Camel JIRA from 3.x through <=3.14.8

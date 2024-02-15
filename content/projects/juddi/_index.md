@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-37578 [\[CVE json\]](./CVE-2021-37578.cve.json)
 
+_Last updated: 2021-07-29T06:57:59.880Z_
+
 ### Affected
 
 * Apache jUDDI from unspecified before 3.3.10

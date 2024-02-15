@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2023-33008 [\[CVE json\]](./CVE-2023-33008.cve.json)
 
+_Last updated: 2023-07-07T09:07:15.097Z_
+
 ### Affected
 
 * Apache Johnzon through 1.2.20

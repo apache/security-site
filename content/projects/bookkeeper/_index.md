@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-32531 [\[CVE json\]](./CVE-2022-32531.cve.json)
 
+_Last updated: 2023-07-12T14:53:21.686Z_
+
 ### Affected
 
 * Apache BookKeeper through 4.14.5

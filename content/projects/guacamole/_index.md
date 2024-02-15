@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-41767 [\[CVE json\]](./CVE-2021-41767.cve.json)
 
+_Last updated: 2022-01-11T22:07:33.145Z_
+
 ### Affected
 
 * Apache Guacamole from unspecified through 1.3.0
@@ -37,6 +39,8 @@ Apache Guacamole 1.3.0 and older may incorrectly include a private tunnel identi
 ## Improper validation of SAML responses ## { #CVE-2021-43999 }
 
 CVE-2021-43999 [\[CVE json\]](./CVE-2021-43999.cve.json)
+
+_Last updated: 2022-01-11T22:07:28.747Z_
 
 ### Affected
 
@@ -60,6 +64,8 @@ Apache Guacamole 1.2.0 and 1.3.0 do not properly validate responses received fro
 
 CVE-2023-30575 [\[CVE json\]](./CVE-2023-30575.cve.json)
 
+_Last updated: 2023-06-15T07:27:08.313Z_
+
 ### Affected
 
 * Apache Guacamole through 1.5.1
@@ -81,6 +87,8 @@ Apache Guacamole 1.5.1 and older may incorrectly calculate the lengths of instru
 
 CVE-2023-30576 [\[CVE json\]](./CVE-2023-30576.cve.json)
 
+_Last updated: 2023-06-06T17:26:55.108Z_
+
 ### Affected
 
 * Apache Guacamole from 0.9.10 through 1.5.1
@@ -101,6 +109,8 @@ Apache Guacamole 0.9.10 through 1.5.1 may continue to reference a freed RDP audi
 ## Integer overflow in handling of VNC image buffers ## { #CVE-2023-43826 }
 
 CVE-2023-43826 [\[CVE json\]](./CVE-2023-43826.cve.json)
+
+_Last updated: 2023-12-19T19:50:08.611Z_
 
 ### Affected
 

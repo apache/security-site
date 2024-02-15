@@ -19,6 +19,8 @@ CVE-2021-29425 [\[CVE json\]](./CVE-2021-29425.cve.json) [\[OSV json\]](./CVE-20
 
 
 
+_Last updated: 2021-04-13T06:36:54.192Z_
+
 ### Affected
 
 * Apache Commons IO at 2.2
@@ -43,6 +45,8 @@ In Apache Commons IO before 2.7, When invoking the method FileNameUtils.normaliz
 
 CVE-2021-35515 [\[CVE json\]](./CVE-2021-35515.cve.json)
 
+_Last updated: 2021-07-13T07:11:36.980Z_
+
 ### Affected
 
 * Apache Commons Compress from 1.6 before Apache Commons Compress*
@@ -65,6 +69,8 @@ When reading a specially crafted 7Z archive, the construction of the list of cod
 ## Apache Commons Compress 1.6 to 1.20 denial of service vulnerability ## { #CVE-2021-35516 }
 
 CVE-2021-35516 [\[CVE json\]](./CVE-2021-35516.cve.json)
+
+_Last updated: 2021-07-13T07:11:43.957Z_
 
 ### Affected
 
@@ -89,6 +95,8 @@ When reading a specially crafted 7Z archive, Compress can be made to allocate la
 
 CVE-2021-35517 [\[CVE json\]](./CVE-2021-35517.cve.json)
 
+_Last updated: 2021-07-13T07:11:53.430Z_
+
 ### Affected
 
 * Apache Commons Compress from 1.1 before Apache Commons Compress*
@@ -111,6 +119,8 @@ When reading a specially crafted TAR archive, Compress can be made to allocate l
 ## Apache Commons Compress 1.0 to 1.20 denial of service vulnerability ## { #CVE-2021-36090 }
 
 CVE-2021-36090 [\[CVE json\]](./CVE-2021-36090.cve.json)
+
+_Last updated: 2021-07-13T07:12:34.084Z_
 
 ### Affected
 
@@ -135,6 +145,8 @@ When reading a specially crafted ZIP archive, Compress can be made to allocate l
 
 CVE-2021-37533 [\[CVE json\]](./CVE-2021-37533.cve.json)
 
+_Last updated: 2022-12-03T14:53:25.293Z_
+
 ### Affected
 
 * Apache Commons Net from Apache Commons Net before 3.9.0
@@ -157,6 +169,8 @@ The default in version 3.9.0 is now false to ignore such hosts, as cURL does. Se
 ## Apache Commons Configuration insecure interpolation defaults ## { #CVE-2022-33980 }
 
 CVE-2022-33980 [\[CVE json\]](./CVE-2022-33980.cve.json)
+
+_Last updated: 2022-07-06T13:03:54.020Z_
 
 ### Affected
 
@@ -182,6 +196,8 @@ Users are recommended to upgrade to Apache Commons Configuration 2.8.0, which di
 
 CVE-2022-42889 [\[CVE json\]](./CVE-2022-42889.cve.json)
 
+_Last updated: 2022-10-13T13:03:35.541Z_
+
 ### Affected
 
 * Apache Commons Text from 1.5 before Apache Commons Text*
@@ -206,6 +222,8 @@ Applications using the interpolation defaults in the affected versions may be vu
 
 CVE-2022-42920 [\[CVE json\]](./CVE-2022-42920.cve.json)
 
+_Last updated: 2022-11-07T12:25:20.461Z_
+
 ### Affected
 
 * Apache Commons BCEL from Apache Commons BCEL before 6.6.0
@@ -226,6 +244,8 @@ Apache Commons BCEL has a number of APIs that would normally only allow changing
 ## FileUpload DoS with excessive parts ## { #CVE-2023-24998 }
 
 CVE-2023-24998 [\[CVE json\]](./CVE-2023-24998.cve.json)
+
+_Last updated: 2023-02-23T09:34:40.480Z_
 
 ### Affected
 
@@ -253,6 +273,8 @@ CVE-2023-24998 [\[CVE json\]](./CVE-2023-24998.cve.json)
 ## Denial of service via CPU consumption for malformed TAR file ## { #CVE-2023-42503 }
 
 CVE-2023-42503 [\[CVE json\]](./CVE-2023-42503.cve.json)
+
+_Last updated: 2023-09-14T07:45:08.532Z_
 
 ### Affected
 

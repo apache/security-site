@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-41303 [\[CVE json\]](./CVE-2021-41303.cve.json)
 
+_Last updated: 2021-09-17T08:17:09.454Z_
+
 ### Affected
 
 * Apache Shiro from Apache Shiro before 1.8.0
@@ -40,6 +42,8 @@ Users should update to Apache Shiro 1.8.0.
 
 CVE-2022-32532 [\[CVE json\]](./CVE-2022-32532.cve.json)
 
+_Last updated: 2022-06-28T23:13:16.050Z_
+
 ### Affected
 
 * Apache Shiro at Before 1.9.1
@@ -60,6 +64,8 @@ Apache Shiro before 1.9.1, A RegexRequestMatcher can be misconfigured to be bypa
 ## Authentication Bypass Vulnerability in Shiro when forwarding or including via RequestDispatcher ## { #CVE-2022-40664 }
 
 CVE-2022-40664 [\[CVE json\]](./CVE-2022-40664.cve.json)
+
+_Last updated: 2022-10-12T07:07:53.344Z_
 
 ### Affected
 
@@ -82,6 +88,8 @@ Apache Shiro before 1.10.0, Authentication Bypass Vulnerability in Shiro when fo
 
 CVE-2023-22602 [\[CVE json\]](./CVE-2023-22602.cve.json)
 
+_Last updated: 2023-01-14T09:33:37.695Z_
+
 ### Affected
 
 * Apache Shiro before 1.11.0
@@ -102,6 +110,8 @@ CVE-2023-22602 [\[CVE json\]](./CVE-2023-22602.cve.json)
 ## Apache Shiro before 1.12.0, or 2.0.0-alpha-3, may be susceptible to a path traversal attack when used together with APIs or other web frameworks that route requests based on non-normalized requests. ## { #CVE-2023-34478 }
 
 CVE-2023-34478 [\[CVE json\]](./CVE-2023-34478.cve.json)
+
+_Last updated: 2023-07-24T18:24:43.013Z_
 
 ### Affected
 
@@ -126,6 +136,8 @@ Apache Shiro, before 1.12.0 or 2.0.0-alpha-3, <span style="background-color: rgb
 
 CVE-2023-46749 [\[CVE json\]](./CVE-2023-46749.cve.json)
 
+_Last updated: 2024-01-19T18:12:43.905Z_
+
 ### Affected
 
 * Apache Shiro before 1.13.0
@@ -143,6 +155,8 @@ Apache Shiro before 1.13.0 or 2.0.0-alpha-4, may be susceptible to a path traver
 ## URL Redirection to Untrusted Site ('Open Redirect') vulnerability in FORM authentication feature Apache Shiro. ## { #CVE-2023-46750 }
 
 CVE-2023-46750 [\[CVE json\]](./CVE-2023-46750.cve.json)
+
+_Last updated: 2023-12-14T08:15:56.341Z_
 
 ### Affected
 

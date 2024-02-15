@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-45801 [\[CVE json\]](./CVE-2022-45801.cve.json)
 
+_Last updated: 2023-05-01T14:50:06.013Z_
+
 ### Affected
 
 * Apache StreamPark (incubating) from 1.0.0 before 2.0.0
@@ -33,6 +35,8 @@ CVE-2022-45801 [\[CVE json\]](./CVE-2022-45801.cve.json)
 ## Upload any file to any directory ## { #CVE-2022-45802 }
 
 CVE-2022-45802 [\[CVE json\]](./CVE-2022-45802.cve.json)
+
+_Last updated: 2023-06-26T10:23:44.595Z_
 
 ### Affected
 
@@ -51,6 +55,8 @@ CVE-2022-45802 [\[CVE json\]](./CVE-2022-45802.cve.json)
 
 CVE-2022-46365 [\[CVE json\]](./CVE-2022-46365.cve.json)
 
+_Last updated: 2023-05-01T14:53:47.030Z_
+
 ### Affected
 
 * Apache StreamPark (incubating) from 1.0.0 before 2.0.0
@@ -68,6 +74,8 @@ CVE-2022-46365 [\[CVE json\]](./CVE-2022-46365.cve.json)
 
 CVE-2023-30867 [\[CVE json\]](./CVE-2023-30867.cve.json)
 
+_Last updated: 2023-12-15T12:13:59.544Z_
+
 ### Affected
 
 * Apache StreamPark (incubating) from 2.0.0 before 2.1.2
@@ -84,6 +92,8 @@ CVE-2023-30867 [\[CVE json\]](./CVE-2023-30867.cve.json)
 ## Authenticated system users could trigger remote command execution ## { #CVE-2023-49898 }
 
 CVE-2023-49898 [\[CVE json\]](./CVE-2023-49898.cve.json)
+
+_Last updated: 2023-12-15T12:13:22.953Z_
 
 ### Affected
 

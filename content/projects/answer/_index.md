@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2023-49619 [\[CVE json\]](./CVE-2023-49619.cve.json)
 
+_Last updated: 2024-01-10T08:24:57.576Z_
+
 ### Affected
 
 * Apache Answer through 1.2.0

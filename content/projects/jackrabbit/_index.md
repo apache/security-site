@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2023-37895 [\[CVE json\]](./CVE-2023-37895.cve.json)
 
+_Last updated: 2023-07-25T14:02:07.695Z_
+
 ### Affected
 
 * Apache Jackrabbit Webapp (jackrabbit-webapp) from 2.21.0 before 2.21.18

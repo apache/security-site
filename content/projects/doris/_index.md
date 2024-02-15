@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-23942 [\[CVE json\]](./CVE-2022-23942.cve.json)
 
+_Last updated: 2022-04-26T14:49:46.143Z_
+
 ### Affected
 
 * Apache Doris(Incubating) at 0.15.0
@@ -37,6 +39,8 @@ Apache Doris, prior to 1.0.0, used a hardcoded key and IV to initialize the ciph
 ## Missing API authentication allowed DoS ## { #CVE-2023-41314 }
 
 CVE-2023-41314 [\[CVE json\]](./CVE-2023-41314.cve.json)
+
+_Last updated: 2023-12-18T08:27:49.193Z_
 
 ### Affected
 

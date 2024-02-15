@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-17531 [\[CVE json\]](./CVE-2020-17531.cve.json)
 
+_Last updated: 2020-12-08T12:41:08.137Z_
+
 ### Affected
 
 * Apache Tapestry from Apache Tapestry 4 through 4
@@ -39,6 +41,8 @@ Apache Tapestry 4 reached end of life in 2008 and no update to address this issu
 ## Bypass of the fix for CVE-2019-0195 ## { #CVE-2021-27850 }
 
 CVE-2021-27850 [\[CVE json\]](./CVE-2021-27850.cve.json)
+
+_Last updated: 2021-04-15T07:35:21.760Z_
 
 ### Affected
 
@@ -95,6 +99,8 @@ chain that leads to RCE (e.g. CommonsBeanUtils1 from ysoserial).Solution for thi
 
 CVE-2021-30638 [\[CVE json\]](./CVE-2021-30638.cve.json)
 
+_Last updated: 2021-04-27T18:27:24.498Z_
+
 ### Affected
 
 * Apache Tapestry from Apache Tapestry  before Apache Tapestry 5.6.4
@@ -118,6 +124,8 @@ Information Exposure vulnerability in context asset handling of Apache Tapestry 
 ## Regular Expression Denial of Service (ReDoS) in ContentType.java. (GHSL-2022-022) ## { #CVE-2022-31781 }
 
 CVE-2022-31781 [\[CVE json\]](./CVE-2022-31781.cve.json)
+
+_Last updated: 2022-07-13T07:23:23.997Z_
 
 ### Affected
 
@@ -145,6 +153,8 @@ Notice the vulnerability cannot be triggered by web requests in Tapestry code al
 ## Apache Tapestry prior to version 4 (EOL) allows RCE though deserialization of untrusted input ## { #CVE-2022-46366 }
 
 CVE-2022-46366 [\[CVE json\]](./CVE-2022-46366.cve.json)
+
+_Last updated: 2022-12-02T13:44:12.576Z_
 
 ### Affected
 

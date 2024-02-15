@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-41561 [\[CVE json\]](./CVE-2021-41561.cve.json)
 
+_Last updated: 2021-12-20T11:09:26.601Z_
+
 ### Affected
 
 * Apache Parquet from 1.9.0 before Parquet-MR*

@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-27905 [\[CVE json\]](./CVE-2021-27905.cve.json)
 
+_Last updated: 2021-04-13T06:30:52.402Z_
+
 ### Affected
 
 * Apache Solr from Apache Solr before 8.8.2
@@ -38,6 +40,8 @@ This problem affects essentially all Solr versions prior to it getting fixed in 
 ## Misapplied Zookeeper ACLs can result in leakage of configured authentication and authorization settings ## { #CVE-2021-29262 }
 
 CVE-2021-29262 [\[CVE json\]](./CVE-2021-29262.cve.json)
+
+_Last updated: 2021-04-13T06:28:50.304Z_
 
 ### Affected
 
@@ -61,6 +65,8 @@ Additionally, with any ZkACLProvider, if the security.json is already present, S
 
 CVE-2021-29943 [\[CVE json\]](./CVE-2021-29943.cve.json)
 
+_Last updated: 2021-04-13T06:29:18.585Z_
+
 ### Affected
 
 * Apache Solr from Apache Solr before 8.8.2
@@ -81,6 +87,8 @@ When using ConfigurableInternodeAuthHadoopPlugin for authentication, Apache Solr
 ## Apache Solr information disclosure vulnerability through DataImportHandler ## { #CVE-2021-44548 }
 
 CVE-2021-44548 [\[CVE json\]](./CVE-2021-44548.cve.json)
+
+_Last updated: 2021-12-23T08:51:22.228Z_
 
 ### Affected
 
@@ -108,6 +116,8 @@ This issue affects all Apache Solr versions prior to 8.11.1. This issue only aff
 
 CVE-2023-50290 [\[CVE json\]](./CVE-2023-50290.cve.json)
 
+_Last updated: 2024-01-15T09:32:41.749Z_
+
 ### Affected
 
 * Apache Solr from 9.0.0 before 9.3.0
@@ -124,6 +134,8 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 ## System Property redaction logic inconsistency can lead to leaked passwords ## { #CVE-2023-50291 }
 
 CVE-2023-50291 [\[CVE json\]](./CVE-2023-50291.cve.json)
+
+_Last updated: 2024-02-09T17:29:31.072Z_
 
 ### Affected
 
@@ -147,6 +159,8 @@ Insufficiently Protected Credentials vulnerability in Apache Solr.<p></p><p>This
 
 CVE-2023-50292 [\[CVE json\]](./CVE-2023-50292.cve.json)
 
+_Last updated: 2024-02-09T17:29:19.451Z_
+
 ### Affected
 
 * Apache Solr from 8.10.0 through 8.11.2
@@ -169,6 +183,8 @@ Incorrect Permission Assignment for Critical Resource, Improper Control of Dynam
 
 CVE-2023-50298 [\[CVE json\]](./CVE-2023-50298.cve.json)
 
+_Last updated: 2024-02-09T17:29:05.785Z_
+
 ### Affected
 
 * Apache Solr from 6.0.0 through 8.11.2
@@ -190,6 +206,8 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 ## Backup/Restore APIs allow for deployment of executables in malicious ConfigSets ## { #CVE-2023-50386 }
 
 CVE-2023-50386 [\[CVE json\]](./CVE-2023-50386.cve.json)
+
+_Last updated: 2024-02-09T17:28:49.163Z_
 
 ### Affected
 

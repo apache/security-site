@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-17515 [\[CVE json\]](./CVE-2020-17515.cve.json)
 
+_Last updated: 2020-12-11T13:35:28.574Z_
+
 ### Affected
 
 * Apache Airflow from Apache Airflow before 1.10.13
@@ -40,6 +42,8 @@ This is same as CVE-2020-13944 but the implemented fix in Airflow 1.10.13 did no
 
 CVE-2020-17511 [\[CVE json\]](./CVE-2020-17511.cve.json)
 
+_Last updated: 2020-12-14T09:35:45.373Z_
+
 ### Affected
 
 * Apache Airflow from Apache Airflow before 1.10.13
@@ -62,6 +66,8 @@ In Airflow versions prior to 1.10.13, when creating a user using airflow CLI, th
 
 CVE-2020-17513 [\[CVE json\]](./CVE-2020-17513.cve.json)
 
+_Last updated: 2020-12-14T09:36:02.746Z_
+
 ### Affected
 
 * Apache Airflow from Apache Airflow before 1.10.13
@@ -78,6 +84,8 @@ In Apache Airflow versions prior to 1.10.13, the Charts and Query View of the ol
 ##  ## { #CVE-2020-17526 }
 
 CVE-2020-17526 [\[CVE json\]](./CVE-2020-17526.cve.json)
+
+_Last updated: 2020-12-21T16:43:50.352Z_
 
 ### Affected
 
@@ -99,6 +107,8 @@ Incorrect Session Validation in Apache Airflow Webserver versions prior to 1.10.
 ## CWE-284 Improper Access Control on Configurations Endpoint for the Stable API ## { #CVE-2021-26559 }
 
 CVE-2021-26559 [\[CVE json\]](./CVE-2021-26559.cve.json)
+
+_Last updated: 2021-02-17T13:18:02.283Z_
 
 ### Affected
 
@@ -125,6 +135,8 @@ This issue affects Apache Airflow 2.0.0.
 
 CVE-2021-26697 [\[CVE json\]](./CVE-2021-26697.cve.json)
 
+_Last updated: 2021-02-17T14:10:43.736Z_
+
 ### Affected
 
 * Apache Airflow at 2.0.0
@@ -149,6 +161,8 @@ This issue affects Apache Airflow 2.0.0.
 ## Apache Airflow Reflected XSS via Origin Query Argument in URL ## { #CVE-2021-28359 }
 
 CVE-2021-28359 [\[CVE json\]](./CVE-2021-28359.cve.json)
+
+_Last updated: 2021-05-02T07:52:16.051Z_
 
 ### Affected
 
@@ -177,6 +191,8 @@ Please also update your Python version to the latest available PATCH releases of
 
 CVE-2021-35936 [\[CVE json\]](./CVE-2021-35936.cve.json)
 
+_Last updated: 2021-08-16T07:22:38.757Z_
+
 ### Affected
 
 * Apache Airflow from Apache Airflow before 2.1.2
@@ -200,6 +216,8 @@ This issue affects Apache Airflow < 2.1.2.
 ## Apache Airflow: Variable Import endpoint missed authentication check ## { #CVE-2021-38540 }
 
 CVE-2021-38540 [\[CVE json\]](./CVE-2021-38540.cve.json)
+
+_Last updated: 2021-09-09T14:59:44.637Z_
 
 ### Affected
 
@@ -225,6 +243,8 @@ This issue affects Apache Airflow >=2.0.0, <2.1.3.
 
 CVE-2021-45229 [\[CVE json\]](./CVE-2021-45229.cve.json)
 
+_Last updated: 2022-02-25T08:21:17.026Z_
+
 ### Affected
 
 * Apache Airflow from unspecified before 2.2.4
@@ -247,6 +267,8 @@ This issue affects Apache Airflow versions 2.2.3 and below.
 ## Apache Airflow: Creating DagRuns didn't respect Dag-level permissions in the Webserver ## { #CVE-2021-45230 }
 
 CVE-2021-45230 [\[CVE json\]](./CVE-2021-45230.cve.json)
+
+_Last updated: 2022-01-20T09:06:03.334Z_
 
 ### Affected
 
@@ -272,6 +294,8 @@ In Apache Airflow prior to 2.2.0.  This CVE applies to a specific case where a U
 
 CVE-2022-24288 [\[CVE json\]](./CVE-2022-24288.cve.json)
 
+_Last updated: 2022-02-25T08:21:43.680Z_
+
 ### Affected
 
 * Apache Airflow from unspecified before 2.2.4
@@ -292,6 +316,8 @@ In Apache Airflow, prior to version 2.2.4, some example DAGs did not properly sa
 ## Apache Airflow prior to 2.3.1 may include sensitive values in rendered template ## { #CVE-2022-27949 }
 
 CVE-2022-27949 [\[CVE json\]](./CVE-2022-27949.cve.json)
+
+_Last updated: 2022-11-15T11:12:08.938Z_
 
 ### Affected
 
@@ -315,6 +341,8 @@ A vulnerability in UI of Apache Airflow allows an attacker to view unmasked secr
 
 CVE-2022-38054 [\[CVE json\]](./CVE-2022-38054.cve.json)
 
+_Last updated: 2022-09-13T08:39:38.357Z_
+
 ### Affected
 
 * Apache Airflow from 2.2.4 before Apache Airflow*
@@ -337,6 +365,8 @@ In Apache Airflow versions 2.2.4 through 2.3.3, the `database` webserver session
 
 CVE-2022-38170 [\[CVE json\]](./CVE-2022-38170.cve.json)
 
+_Last updated: 2022-09-02T07:07:24.352Z_
+
 ### Affected
 
 * Apache Airflow from Apache Airflow through 2.3.3
@@ -357,6 +387,8 @@ In Apache Airflow prior to 2.3.4, an insecure umask was configured for numerous 
 ## Docker Provider <3.0 RCE vulnerability in example dag ## { #CVE-2022-38362 }
 
 CVE-2022-38362 [\[CVE json\]](./CVE-2022-38362.cve.json)
+
+_Last updated: 2022-08-16T14:05:03.199Z_
 
 ### Affected
 
@@ -379,6 +411,8 @@ Apache Airflow Docker's Provider prior to 3.0.0 shipped with an example DAG that
 ## Apache Airflow Pinot provider allowed Command Injection ## { #CVE-2022-38649 }
 
 CVE-2022-38649 [\[CVE json\]](./CVE-2022-38649.cve.json)
+
+_Last updated: 2022-11-22T09:35:10.175Z_
 
 ### Affected
 
@@ -403,6 +437,8 @@ Improper Neutralization of Special Elements used in an OS Command ('OS Command I
 
 CVE-2022-40127 [\[CVE json\]](./CVE-2022-40127.cve.json)
 
+_Last updated: 2022-11-14T09:30:08.330Z_
+
 ### Affected
 
 * Apache Airflow from Apache Airflow before 2.4.0
@@ -424,6 +460,8 @@ A vulnerability in Example Dags of Apache Airflow allows an attacker with UI acc
 ## Apache Airlfow Pig Provider RCE ## { #CVE-2022-40189 }
 
 CVE-2022-40189 [\[CVE json\]](./CVE-2022-40189.cve.json)
+
+_Last updated: 2022-11-22T09:39:35.331Z_
 
 ### Affected
 
@@ -448,6 +486,8 @@ Improper Neutralization of Special Elements used in an OS Command ('OS Command I
 
 CVE-2022-40604 [\[CVE json\]](./CVE-2022-40604.cve.json)
 
+_Last updated: 2022-09-21T07:22:50.780Z_
+
 ### Affected
 
 * Apache Airflow from unspecified before 2.4.0
@@ -469,6 +509,8 @@ In Apache Airflow 2.3.0 through 2.3.4, part of a url was unnecessarily formatted
 ## Open Redirect ## { #CVE-2022-40754 }
 
 CVE-2022-40754 [\[CVE json\]](./CVE-2022-40754.cve.json)
+
+_Last updated: 2022-09-21T07:22:31.671Z_
 
 ### Affected
 
@@ -492,6 +534,8 @@ In Apache Airflow 2.3.0 through 2.3.4, there was an open redirect in the webserv
 
 CVE-2022-40954 [\[CVE json\]](./CVE-2022-40954.cve.json)
 
+_Last updated: 2022-11-22T09:40:32.614Z_
+
 ### Affected
 
 * Apache Airflow Spark Provider from unspecified before 4.0.0
@@ -514,6 +558,8 @@ Improper Neutralization of Special Elements used in an OS Command ('OS Command I
 ## Apache Airflow Hive Provider vulnerability (command injection via hive_cli connection) ## { #CVE-2022-41131 }
 
 CVE-2022-41131 [\[CVE json\]](./CVE-2022-41131.cve.json)
+
+_Last updated: 2022-11-22T09:38:16.454Z_
 
 ### Affected
 
@@ -539,6 +585,8 @@ Improper Neutralization of Special Elements used in an OS Command ('OS Command I
 
 CVE-2022-41672 [\[CVE json\]](./CVE-2022-41672.cve.json)
 
+_Last updated: 2022-10-07T06:56:43.156Z_
+
 ### Affected
 
 * Apache Airflow from unspecified through 2.4.0
@@ -560,6 +608,8 @@ In Apache Airflow, prior to version 2.4.1, deactivating a user wouldn't prevent 
 ## Apache Airflow prior to 2.4.2 allows reflected XSS via Origin Query Argument in URL ## { #CVE-2022-43982 }
 
 CVE-2022-43982 [\[CVE json\]](./CVE-2022-43982.cve.json)
+
+_Last updated: 2022-11-02T08:37:19.773Z_
 
 ### Affected
 
@@ -583,6 +633,8 @@ In Apache Airflow versions prior to 2.4.2, the "Trigger DAG with config" screen 
 
 CVE-2022-43985 [\[CVE json\]](./CVE-2022-43985.cve.json)
 
+_Last updated: 2022-11-02T08:40:14.097Z_
+
 ### Affected
 
 * Apache Airflow from unspecified before 2.4.2
@@ -604,6 +656,8 @@ In Apache Airflow versions prior to 2.4.2, there was an open redirect in the web
 ## Apache Airflow: Open redirect during login ## { #CVE-2022-45402 }
 
 CVE-2022-45402 [\[CVE json\]](./CVE-2022-45402.cve.json)
+
+_Last updated: 2022-11-15T08:49:17.848Z_
 
 ### Affected
 
@@ -627,6 +681,8 @@ In Apache Airflow versions prior to 2.4.3, there was an open redirect in the web
 
 CVE-2022-46421 [\[CVE json\]](./CVE-2022-46421.cve.json)
 
+_Last updated: 2022-12-20T10:18:24.768Z_
+
 ### Affected
 
 * Apache Airflow Hive Provider before 5.0.0
@@ -649,6 +705,8 @@ Improper Neutralization of Special Elements used in a Command ('Command Injectio
 
 CVE-2022-46651 [\[CVE json\]](./CVE-2022-46651.cve.json)
 
+_Last updated: 2023-07-12T09:16:59.771Z_
+
 ### Affected
 
 * Apache Airflow before 2.6.3
@@ -666,6 +724,8 @@ Apache Airflow, versions before 2.6.3, is affected by a vulnerability that allow
 ## Arbitrary file read via MySQL provider in Apache Airflow ## { #CVE-2023-22884 }
 
 CVE-2023-22884 [\[CVE json\]](./CVE-2023-22884.cve.json)
+
+_Last updated: 2023-01-21T13:02:09.736Z_
 
 ### Affected
 
@@ -690,6 +750,8 @@ Improper Neutralization of Special Elements used in a Command ('Command Injectio
 
 CVE-2023-22886 [\[CVE json\]](./CVE-2023-22886.cve.json)
 
+_Last updated: 2023-06-29T09:40:58.058Z_
+
 ### Affected
 
 * Apache Airflow JDBC Provider before 4.0.0
@@ -711,6 +773,8 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Air
 ## Apache Airflow path traversal by authenticated user ## { #CVE-2023-22887 }
 
 CVE-2023-22887 [\[CVE json\]](./CVE-2023-22887.cve.json)
+
+_Last updated: 2023-07-13T10:31:08.518Z_
 
 ### Affected
 
@@ -735,6 +799,8 @@ Apache Airflow, versions before 2.6.3, is affected by a vulnerability that allow
 
 CVE-2023-22888 [\[CVE json\]](./CVE-2023-22888.cve.json)
 
+_Last updated: 2023-07-12T09:17:51.316Z_
+
 ### Affected
 
 * Apache Airflow before 2.6.3
@@ -756,6 +822,8 @@ Apache Airflow, versions before 2.6.3, is affected by a vulnerability that allow
 ## Google Cloud Sql Provider Remote Command Execution ## { #CVE-2023-25691 }
 
 CVE-2023-25691 [\[CVE json\]](./CVE-2023-25691.cve.json)
+
+_Last updated: 2023-02-24T11:35:47.925Z_
 
 ### Affected
 
@@ -779,6 +847,8 @@ Improper Input Validation vulnerability in the Apache Airflow Google Provider.<b
 
 CVE-2023-25692 [\[CVE json\]](./CVE-2023-25692.cve.json)
 
+_Last updated: 2023-02-24T11:47:58.411Z_
+
 ### Affected
 
 * Apache Airflow Google Provider before 8.10.0
@@ -800,6 +870,8 @@ Improper Input Validation vulnerability in the Apache Airflow Google Provider.<b
 ## Sqoop Apache Airflow Provider Remote Code Execution Vulnerability ## { #CVE-2023-25693 }
 
 CVE-2023-25693 [\[CVE json\]](./CVE-2023-25693.cve.json)
+
+_Last updated: 2023-02-24T11:48:09.839Z_
 
 ### Affected
 
@@ -823,6 +895,8 @@ Improper Input Validation vulnerability in the Apache Airflow Sqoop Provider.<br
 
 CVE-2023-25695 [\[CVE json\]](./CVE-2023-25695.cve.json)
 
+_Last updated: 2023-03-15T09:37:07.873Z_
+
 ### Affected
 
 * Apache Airflow before 2.5.2
@@ -844,6 +918,8 @@ Generation of Error Message Containing Sensitive Information vulnerability in Ap
 ## Apache Airflow Hive Provider Beeline RCE ## { #CVE-2023-25696 }
 
 CVE-2023-25696 [\[CVE json\]](./CVE-2023-25696.cve.json)
+
+_Last updated: 2023-02-24T11:48:19.499Z_
 
 ### Affected
 
@@ -867,6 +943,8 @@ Improper Input Validation vulnerability in the Apache Airflow Hive Provider.<br>
 
 CVE-2023-25754 [\[CVE json\]](./CVE-2023-25754.cve.json)
 
+_Last updated: 2023-05-08T11:57:41.997Z_
+
 ### Affected
 
 * Apache Airflow before 2.6.0
@@ -888,6 +966,8 @@ Privilege Context Switching Error vulnerability in Apache Software Foundation Ap
 ## Arbitrary file read via AWS provider ## { #CVE-2023-25956 }
 
 CVE-2023-25956 [\[CVE json\]](./CVE-2023-25956.cve.json)
+
+_Last updated: 2023-03-07T08:23:39.736Z_
 
 ### Affected
 
@@ -911,6 +991,8 @@ Generation of Error Message Containing Sensitive Information vulnerability in th
 ## Airflow Sqoop Provider RCE Vulnerability ## { #CVE-2023-27604 }
 
 CVE-2023-27604 [\[CVE json\]](./CVE-2023-27604.cve.json)
+
+_Last updated: 2023-08-28T07:47:27.394Z_
 
 ### Affected
 
@@ -936,6 +1018,8 @@ Apache Airflow Sqoop Provider, versions before 4.0.0, is affected by a vulnerabi
 
 CVE-2023-28706 [\[CVE json\]](./CVE-2023-28706.cve.json)
 
+_Last updated: 2023-04-07T14:54:35.049Z_
+
 ### Affected
 
 * Apache Airflow Hive Provider before 6.0.0
@@ -957,6 +1041,8 @@ Improper Control of Generation of Code ('Code Injection') vulnerability in Apach
 ## Airflow Apache Drill Provider Arbitrary File Read Vulnerability ## { #CVE-2023-28707 }
 
 CVE-2023-28707 [\[CVE json\]](./CVE-2023-28707.cve.json)
+
+_Last updated: 2023-04-07T14:53:21.428Z_
 
 ### Affected
 
@@ -980,6 +1066,8 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Air
 
 CVE-2023-28710 [\[CVE json\]](./CVE-2023-28710.cve.json)
 
+_Last updated: 2023-04-07T14:55:42.112Z_
+
 ### Affected
 
 * Apache Airflow Spark Provider before 4.0.1
@@ -1001,6 +1089,8 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Air
 ## Stored XSS on Apache Airflow ## { #CVE-2023-29247 }
 
 CVE-2023-29247 [\[CVE json\]](./CVE-2023-29247.cve.json)
+
+_Last updated: 2023-05-08T09:01:33.604Z_
 
 ### Affected
 
@@ -1026,6 +1116,8 @@ Task instance details page in the UI is vulnerable to a stored XSS.<p>This issue
 
 CVE-2023-33234 [\[CVE json\]](./CVE-2023-33234.cve.json)
 
+_Last updated: 2023-05-30T10:56:52.167Z_
+
 ### Affected
 
 * Apache Airflow CNCF Kubernetes Provider from 5.0.0 through 6.1.0
@@ -1042,6 +1134,8 @@ Arbitrary code execution in Apache Airflow CNCF Kubernetes provider version 5.0.
 ## Remote code execution vulnerability ## { #CVE-2023-34395 }
 
 CVE-2023-34395 [\[CVE json\]](./CVE-2023-34395.cve.json)
+
+_Last updated: 2023-06-27T11:36:51.331Z_
 
 ### Affected
 
@@ -1064,6 +1158,8 @@ Improper Neutralization of Argument Delimiters in a Command ('Argument Injection
 ## Information disclosure on configuration view ## { #CVE-2023-35005 }
 
 CVE-2023-35005 [\[CVE json\]](./CVE-2023-35005.cve.json)
+
+_Last updated: 2023-06-19T08:15:11.464Z_
 
 ### Affected
 
@@ -1088,6 +1184,8 @@ CVE-2023-35005 [\[CVE json\]](./CVE-2023-35005.cve.json)
 
 CVE-2023-35797 [\[CVE json\]](./CVE-2023-35797.cve.json)
 
+_Last updated: 2023-07-03T09:08:49.038Z_
+
 ### Affected
 
 * Apache Airflow Apache Hive Provider before 6.1.1
@@ -1109,6 +1207,8 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Air
 ## Airflow Apache ODBC and MSSQL Providers Arbitrary File Read Vulnerability ## { #CVE-2023-35798 }
 
 CVE-2023-35798 [\[CVE json\]](./CVE-2023-35798.cve.json)
+
+_Last updated: 2023-06-27T11:39:49.794Z_
 
 ### Affected
 
@@ -1133,6 +1233,8 @@ Input Validation vulnerability in Apache Software Foundation Apache Airflow ODBC
 
 CVE-2023-35908 [\[CVE json\]](./CVE-2023-35908.cve.json)
 
+_Last updated: 2023-07-12T09:14:08.022Z_
+
 ### Affected
 
 * Apache Airflow before 2.6.3
@@ -1154,6 +1256,8 @@ Apache Airflow, versions before 2.6.3, is affected by a vulnerability that allow
 ## ReDoS via dags function ## { #CVE-2023-36543 }
 
 CVE-2023-36543 [\[CVE json\]](./CVE-2023-36543.cve.json)
+
+_Last updated: 2023-07-21T10:49:41.270Z_
 
 ### Affected
 
@@ -1177,6 +1281,8 @@ Apache Airflow, versions before 2.6.3, has a vulnerability where an authenticate
 ## Exposure of sensitive connection information, DOS and SSRF on "test connection" feature ## { #CVE-2023-37379 }
 
 CVE-2023-37379 [\[CVE json\]](./CVE-2023-37379.cve.json)
+
+_Last updated: 2023-08-23T15:38:53.691Z_
 
 ### Affected
 
@@ -1204,6 +1310,8 @@ CVE-2023-37379 [\[CVE json\]](./CVE-2023-37379.cve.json)
 
 CVE-2023-37415 [\[CVE json\]](./CVE-2023-37415.cve.json)
 
+_Last updated: 2023-07-13T07:35:30.726Z_
+
 ### Affected
 
 * Apache Airflow Apache Hive Provider before 6.1.2
@@ -1224,6 +1332,8 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Air
 ## SMTP/IMAP client components allowed MITM due to missing Certificate Validation ## { #CVE-2023-39441 }
 
 CVE-2023-39441 [\[CVE json\]](./CVE-2023-39441.cve.json)
+
+_Last updated: 2023-08-23T15:39:49.970Z_
 
 ### Affected
 
@@ -1251,6 +1361,8 @@ CVE-2023-39441 [\[CVE json\]](./CVE-2023-39441.cve.json)
 
 CVE-2023-39508 [\[CVE json\]](./CVE-2023-39508.cve.json)
 
+_Last updated: 2023-08-05T06:47:11.955Z_
+
 ### Affected
 
 * Apache Airflow before 2.6.0
@@ -1272,6 +1384,8 @@ Execution with Unnecessary Privileges, : Exposure of Sensitive Information to an
 ## Apache Airflow Drill Provider Arbitrary File Read Vulnerability ## { #CVE-2023-39553 }
 
 CVE-2023-39553 [\[CVE json\]](./CVE-2023-39553.cve.json)
+
+_Last updated: 2023-08-11T18:42:20.040Z_
 
 ### Affected
 
@@ -1296,6 +1410,8 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Air
 
 CVE-2023-40195 [\[CVE json\]](./CVE-2023-40195.cve.json)
 
+_Last updated: 2023-08-28T07:49:59.173Z_
+
 ### Affected
 
 * Apache Airflow Spark Provider before 4.1.3
@@ -1318,6 +1434,8 @@ Deserialization of Untrusted Data, Inclusion of Functionality from Untrusted Con
 
 CVE-2023-40272 [\[CVE json\]](./CVE-2023-40272.cve.json)
 
+_Last updated: 2023-08-17T13:52:26.145Z_
+
 ### Affected
 
 * Apache Airflow Spark Provider before 4.1.3
@@ -1338,6 +1456,8 @@ CVE-2023-40272 [\[CVE json\]](./CVE-2023-40272.cve.json)
 ## Session fixation in Apache Airflow web interface ## { #CVE-2023-40273 }
 
 CVE-2023-40273 [\[CVE json\]](./CVE-2023-40273.cve.json)
+
+_Last updated: 2023-09-12T06:41:25.454Z_
 
 ### Affected
 
@@ -1365,6 +1485,8 @@ CVE-2023-40273 [\[CVE json\]](./CVE-2023-40273.cve.json)
 
 CVE-2023-40611 [\[CVE json\]](./CVE-2023-40611.cve.json)
 
+_Last updated: 2023-09-12T11:05:20.884Z_
+
 ### Affected
 
 * Apache Airflow before 2.7.1
@@ -1386,6 +1508,8 @@ Apache Airflow, versions before 2.7.1, is affected by a vulnerability that allow
 ## Secrets can be unmasked in the "Rendered Template"  ## { #CVE-2023-40712 }
 
 CVE-2023-40712 [\[CVE json\]](./CVE-2023-40712.cve.json)
+
+_Last updated: 2023-09-12T11:05:46.999Z_
 
 ### Affected
 
@@ -1410,6 +1534,8 @@ Apache Airflow, versions before 2.7.1, is affected by a vulnerability that allow
 
 CVE-2023-41267 [\[CVE json\]](./CVE-2023-41267.cve.json)
 
+_Last updated: 2023-09-14T07:46:36.891Z_
+
 ### Affected
 
 * Apache Airflow HDFS Provider before 4.1.1
@@ -1431,6 +1557,8 @@ CVE-2023-41267 [\[CVE json\]](./CVE-2023-41267.cve.json)
 ## Bypass permission verification to view task instances of other dags ## { #CVE-2023-42663 }
 
 CVE-2023-42663 [\[CVE json\]](./CVE-2023-42663.cve.json)
+
+_Last updated: 2023-10-14T09:47:24.055Z_
 
 ### Affected
 
@@ -1455,6 +1583,8 @@ CVE-2023-42663 [\[CVE json\]](./CVE-2023-42663.cve.json)
 
 CVE-2023-42780 [\[CVE json\]](./CVE-2023-42780.cve.json)
 
+_Last updated: 2023-10-14T09:46:05.032Z_
+
 ### Affected
 
 * Apache Airflow before 2.7.2
@@ -1477,6 +1607,8 @@ Apache Airflow, versions prior to 2.7.2, contains a security vulnerability that 
 ## Permission verification bypass allows viewing dagruns of other dags ## { #CVE-2023-42781 }
 
 CVE-2023-42781 [\[CVE json\]](./CVE-2023-42781.cve.json)
+
+_Last updated: 2023-11-12T13:14:05.928Z_
 
 ### Affected
 
@@ -1501,6 +1633,8 @@ Apache Airflow, versions before 2.7.3, has a vulnerability that allows an author
 
 CVE-2023-42792 [\[CVE json\]](./CVE-2023-42792.cve.json)
 
+_Last updated: 2023-10-14T09:47:04.851Z_
+
 ### Affected
 
 * Apache Airflow before 2.7.2
@@ -1523,6 +1657,8 @@ Apache Airflow, in versions prior to 2.7.2, contains a security vulnerability th
 ## Configuration information leakage vulnerability ## { #CVE-2023-45348 }
 
 CVE-2023-45348 [\[CVE json\]](./CVE-2023-45348.cve.json)
+
+_Last updated: 2023-10-14T09:46:37.359Z_
 
 ### Affected
 
@@ -1549,6 +1685,8 @@ Apache Airflow, versions 2.7.0 and 2.7.1, is affected by a vulnerability that al
 
 CVE-2023-46215 [\[CVE json\]](./CVE-2023-46215.cve.json)
 
+_Last updated: 2023-10-28T07:10:54.392Z_
+
 ### Affected
 
 * Apache Airflow Celery provider from 3.3.0 through 3.4.0
@@ -1571,6 +1709,8 @@ Insertion of Sensitive Information into Log File vulnerability in Apache Airflow
 ## Sensitive parameters exposed in API when "non-sensitive-only" configuration is set ## { #CVE-2023-46288 }
 
 CVE-2023-46288 [\[CVE json\]](./CVE-2023-46288.cve.json)
+
+_Last updated: 2023-10-23T18:13:01.162Z_
 
 ### Affected
 
@@ -1596,6 +1736,8 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 CVE-2023-47037 [\[CVE json\]](./CVE-2023-47037.cve.json)
 
+_Last updated: 2023-11-12T13:12:20.076Z_
+
 ### Affected
 
 * Apache Airflow before 2.7.3
@@ -1618,6 +1760,8 @@ CVE-2023-47037 [\[CVE json\]](./CVE-2023-47037.cve.json)
 ## DAG Params alllow to embed unchecked Javascript ## { #CVE-2023-47265 }
 
 CVE-2023-47265 [\[CVE json\]](./CVE-2023-47265.cve.json)
+
+_Last updated: 2023-12-21T09:28:05.966Z_
 
 ### Affected
 
@@ -1643,6 +1787,8 @@ Apache Airflow, versions 2.6.0 through 2.7.3 has a stored XSS vulnerability that
 
 CVE-2023-48291 [\[CVE json\]](./CVE-2023-48291.cve.json)
 
+_Last updated: 2023-12-21T09:30:40.260Z_
+
 ### Affected
 
 * Apache Airflow before 2.8.0
@@ -1665,6 +1811,8 @@ Apache Airflow, in versions prior to 2.8.0, contains a security vulnerability th
 ## Missing CSRF protection on DAG/trigger ## { #CVE-2023-49920 }
 
 CVE-2023-49920 [\[CVE json\]](./CVE-2023-49920.cve.json)
+
+_Last updated: 2023-12-21T09:27:07.715Z_
 
 ### Affected
 
@@ -1689,6 +1837,8 @@ Apache Airflow, version 2.7.0 through 2.7.3, has a vulnerability that allows an 
 
 CVE-2023-50783 [\[CVE json\]](./CVE-2023-50783.cve.json)
 
+_Last updated: 2023-12-21T09:28:46.089Z_
+
 ### Affected
 
 * Apache Airflow before 2.8.0
@@ -1711,6 +1861,8 @@ Apache Airflow, versions before 2.8.0, is affected by a vulnerability that allow
 ## Potential pickle deserialization vulnerability in XComs ## { #CVE-2023-50943 }
 
 CVE-2023-50943 [\[CVE json\]](./CVE-2023-50943.cve.json)
+
+_Last updated: 2024-01-24T12:57:05.049Z_
 
 ### Affected
 
@@ -1735,6 +1887,8 @@ Apache Airflow, versions before 2.8.1, have a vulnerability that allows a potent
 
 CVE-2023-50944 [\[CVE json\]](./CVE-2023-50944.cve.json)
 
+_Last updated: 2024-01-24T12:58:17.032Z_
+
 ### Affected
 
 * Apache Airflow before 2.8.1
@@ -1756,6 +1910,8 @@ Apache Airflow, versions before 2.8.1, have a vulnerability that allows an authe
 ## Kubernetes configuration file saved without encryption in the Metadata and logged as plain text in the Triggerer service ## { #CVE-2023-51702 }
 
 CVE-2023-51702 [\[CVE json\]](./CVE-2023-51702.cve.json)
+
+_Last updated: 2024-01-24T12:56:15.440Z_
 
 ### Affected
 

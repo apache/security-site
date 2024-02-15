@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-23437 [\[CVE json\]](./CVE-2022-23437.cve.json)
 
+_Last updated: 2022-01-24T14:59:39.857Z_
+
 ### Affected
 
 * Apache Xerces from Apache XercesJ through 2.12.1

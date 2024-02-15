@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-36364 [\[CVE json\]](./CVE-2022-36364.cve.json)
 
+_Last updated: 2022-07-28T08:30:13.087Z_
+
 ### Affected
 
 * Apache Calcite Avatica from Apache Calcite Avatica before 1.22.0
@@ -43,6 +45,8 @@ From Apache Calcite Avatica 1.22.0 onwards, it will be verified that the class i
 ## Apache Calcite: potential XEE attacks ## { #CVE-2022-39135 }
 
 CVE-2022-39135 [\[CVE json\]](./CVE-2022-39135.cve.json)
+
+_Last updated: 2023-09-18T12:55:46.886Z_
 
 ### Affected
 

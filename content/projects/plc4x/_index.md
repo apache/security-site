@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-43083 [\[CVE json\]](./CVE-2021-43083.cve.json)
 
+_Last updated: 2022-02-04T08:46:33.224Z_
+
 ### Affected
 
 * Apache PLC4X from PLC4C through 0.9.0

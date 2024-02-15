@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-40955 [\[CVE json\]](./CVE-2022-40955.cve.json)
 
+_Last updated: 2023-02-01T03:30:57.303Z_
+
 ### Affected
 
 * Apache InLong from Apache InLong before 1.3.0
@@ -40,6 +42,8 @@ Users are advised to upgrade to Apache InLong 1.3.0 or newer.
 
 CVE-2023-24977 [\[CVE json\]](./CVE-2023-24977.cve.json)
 
+_Last updated: 2023-02-01T09:09:46.267Z_
+
 ### Affected
 
 * Apache InLong from 1.1.0 through 1.5.0
@@ -61,6 +65,8 @@ Out-of-bounds Read vulnerability in Apache Software Foundation Apache InLong.<p>
 
 CVE-2023-24997 [\[CVE json\]](./CVE-2023-24997.cve.json)
 
+_Last updated: 2023-03-27T09:06:20.067Z_
+
 ### Affected
 
 * Apache InLong from 1.1.0 through 1.5.0
@@ -81,6 +87,8 @@ Deserialization of Untrusted Data vulnerability in Apache Software Foundation Ap
 ## JDBC Deserialization Vulnerability in InLong ## { #CVE-2023-27296 }
 
 CVE-2023-27296 [\[CVE json\]](./CVE-2023-27296.cve.json)
+
+_Last updated: 2023-03-27T08:57:01.107Z_
 
 ### Affected
 
@@ -109,6 +117,8 @@ Deserialization of Untrusted Data vulnerability in Apache Software Foundation Ap
 
 CVE-2023-30465 [\[CVE json\]](./CVE-2023-30465.cve.json)
 
+_Last updated: 2023-04-11T14:18:47.907Z_
+
 ### Affected
 
 * Apache InLong from 1.4.0 through 1.5.0
@@ -131,6 +141,8 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 ## JDBC URL bypassing by adding blanks ## { #CVE-2023-31058 }
 
 CVE-2023-31058 [\[CVE json\]](./CVE-2023-31058.cve.json)
+
+_Last updated: 2023-05-22T15:48:32.710Z_
 
 ### Affected
 
@@ -158,6 +170,8 @@ Deserialization of Untrusted Data Vulnerability in Apache Software Foundation Ap
 
 CVE-2023-31062 [\[CVE json\]](./CVE-2023-31062.cve.json)
 
+_Last updated: 2023-05-22T15:47:33.464Z_
+
 ### Affected
 
 * Apache InLong from 1.2.0 through 1.6.0
@@ -183,6 +197,8 @@ using the returned cookie<span style="background-color: rgb(255, 255, 255);">.</
 
 CVE-2023-31064 [\[CVE json\]](./CVE-2023-31064.cve.json)
 
+_Last updated: 2023-05-22T15:44:19.190Z_
+
 ### Affected
 
 * Apache InLong from 1.2.0 through 1.6.0
@@ -203,6 +219,8 @@ Files or Directories Accessible to External Parties vulnerability in Apache Soft
 ## Insufficient Session Expiration in InLong ## { #CVE-2023-31065 }
 
 CVE-2023-31065 [\[CVE json\]](./CVE-2023-31065.cve.json)
+
+_Last updated: 2023-05-22T15:40:53.524Z_
 
 ### Affected
 
@@ -233,6 +251,8 @@ Users are advised to upgrade to Apache InLong's 1.7.0 or cherry-pick <a target="
 
 CVE-2023-31066 [\[CVE json\]](./CVE-2023-31066.cve.json)
 
+_Last updated: 2023-05-22T15:35:37.675Z_
+
 ### Affected
 
 * Apache InLong from 1.4.0 through 1.6.0
@@ -253,6 +273,8 @@ Files or Directories Accessible to External Parties vulnerability in Apache Soft
 ## Weak Password Implementation in InLong ## { #CVE-2023-31098 }
 
 CVE-2023-31098 [\[CVE json\]](./CVE-2023-31098.cve.json)
+
+_Last updated: 2023-05-22T15:31:51.278Z_
 
 ### Affected
 
@@ -278,6 +300,8 @@ symbol), attackers can easily guess the user's password and access the account.<
 
 CVE-2023-31101 [\[CVE json\]](./CVE-2023-31101.cve.json)
 
+_Last updated: 2023-05-22T15:18:30.325Z_
+
 ### Affected
 
 * Apache InLong from 1.5.0 through 1.6.0
@@ -299,6 +323,8 @@ Insecure Default Initialization of Resource Vulnerability in Apache Software Fou
 
 CVE-2023-31103 [\[CVE json\]](./CVE-2023-31103.cve.json)
 
+_Last updated: 2023-05-22T15:13:26.771Z_
+
 ### Affected
 
 * Apache InLong from 1.4.0 through 1.6.0
@@ -317,6 +343,8 @@ Attackers can change the immutable name and type of cluster of InLong.&nbsp;User
 
 CVE-2023-31206 [\[CVE json\]](./CVE-2023-31206.cve.json)
 
+_Last updated: 2023-05-22T13:58:15.628Z_
+
 ### Affected
 
 * Apache InLong from 1.4.0 through 1.6.0
@@ -333,6 +361,8 @@ Exposure of Resource to Wrong Sphere Vulnerability in Apache Software Foundation
 ## IDOR make users can delete others' subscription ## { #CVE-2023-31453 }
 
 CVE-2023-31453 [\[CVE json\]](./CVE-2023-31453.cve.json)
+
+_Last updated: 2023-05-22T13:25:45.562Z_
 
 ### Affected
 
@@ -358,6 +388,8 @@ of the deleted subscription</span><span style="background-color: rgb(255, 255, 2
 
 CVE-2023-31454 [\[CVE json\]](./CVE-2023-31454.cve.json)
 
+_Last updated: 2023-05-22T13:22:59.589Z_
+
 ### Affected
 
 * Apache InLong from 1.2.0 through 1.6.0
@@ -379,6 +411,8 @@ Incorrect Permission Assignment for Critical Resource Vulnerability in Apache So
 
 CVE-2023-34189 [\[CVE json\]](./CVE-2023-34189.cve.json)
 
+_Last updated: 2023-07-25T07:08:51.094Z_
+
 ### Affected
 
 * Apache InLong from 1.4.0 through 1.7.0
@@ -399,6 +433,8 @@ Users are advised to upgrade to Apache InLong's 1.8.0 or cherry-pick <a target="
 ## JDBC URL bypassing by allowLoadLocalInfileInPath param ## { #CVE-2023-34434 }
 
 CVE-2023-34434 [\[CVE json\]](./CVE-2023-34434.cve.json)
+
+_Last updated: 2023-07-25T07:09:55.864Z_
 
 ### Affected
 
@@ -425,6 +461,8 @@ The attacker could bypass the current logic and achieve arbitrary file reading. 
 
 CVE-2023-35088 [\[CVE json\]](./CVE-2023-35088.cve.json)
 
+_Last updated: 2023-07-25T07:10:17.507Z_
+
 ### Affected
 
 * Apache InLong from 1.4.0 through 1.7.0
@@ -450,6 +488,8 @@ Users are advised to upgrade to Apache InLong's 1.8.0 or cherry-pick [1] to solv
 
 CVE-2023-43666 [\[CVE json\]](./CVE-2023-43666.cve.json)
 
+_Last updated: 2023-10-16T01:54:42.830Z_
+
 ### Affected
 
 * Apache InLong from 1.4.0 through 1.8.0
@@ -473,6 +513,8 @@ Insufficient Verification of Data Authenticity vulnerability in Apache InLong.<p
 
 CVE-2023-43667 [\[CVE json\]](./CVE-2023-43667.cve.json)
 
+_Last updated: 2023-10-16T01:55:19.314Z_
+
 ### Affected
 
 * Apache InLong from 1.4.0 through 1.8.0
@@ -492,6 +534,8 @@ and trace malicious activities.&nbsp;</span>Users are advised to upgrade to Apac
 ## Jdbc Connection Security Bypass in InLong ## { #CVE-2023-43668 }
 
 CVE-2023-43668 [\[CVE json\]](./CVE-2023-43668.cve.json)
+
+_Last updated: 2023-11-14T09:51:43.493Z_
 
 ### Affected
 
@@ -523,6 +567,8 @@ Authorization Bypass Through User-Controlled Key vulnerability in Apache InLong.
 
 CVE-2023-46227 [\[CVE json\]](./CVE-2023-46227.cve.json)
 
+_Last updated: 2023-10-19T09:40:37.360Z_
+
 ### Affected
 
 * Apache InLong from 1.4.0 through 1.8.0
@@ -553,6 +599,8 @@ Deserialization of Untrusted Data Vulnerability in Apache Software Foundation Ap
 
 CVE-2023-51784 [\[CVE json\]](./CVE-2023-51784.cve.json)
 
+_Last updated: 2024-01-03T09:39:13.790Z_
+
 ### Affected
 
 * Apache InLong from 1.5.0 through 1.9.0
@@ -573,6 +621,8 @@ Improper Control of Generation of Code ('Code Injection') vulnerability in Apach
 ## Arbitrary File Read Vulnerability in Apache InLong Manager ## { #CVE-2023-51785 }
 
 CVE-2023-51785 [\[CVE json\]](./CVE-2023-51785.cve.json)
+
+_Last updated: 2024-01-03T09:36:21.640Z_
 
 ### Affected
 

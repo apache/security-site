@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-27738 [\[CVE json\]](./CVE-2021-27738.cve.json)
 
+_Last updated: 2022-01-06T12:26:35.086Z_
+
 ### Affected
 
 * Apache Kylin from Apache Kylin 3 before 3.1.2
@@ -42,6 +44,8 @@ This issue affects Apache Kylin Apache Kylin 3 versions prior to 3.1.2.
 
 CVE-2021-31522 [\[CVE json\]](./CVE-2021-31522.cve.json)
 
+_Last updated: 2022-01-06T12:28:58.641Z_
+
 ### Affected
 
 * Apache Kylin from Apache Kylin 2 through 2.6.6
@@ -66,6 +70,8 @@ This issue affects Apache Kylin 2 version 2.6.6 and prior versions; Apache Kylin
 
 CVE-2021-36774 [\[CVE json\]](./CVE-2021-36774.cve.json)
 
+_Last updated: 2022-01-06T12:29:47.699Z_
+
 ### Affected
 
 * Apache Kylin from Apache Kylin 2 through 2.6.6
@@ -89,6 +95,8 @@ This issue affects Apache Kylin 2 version 2.6.6 and prior versions; Apache Kylin
 
 CVE-2021-45456 [\[CVE json\]](./CVE-2021-45456.cve.json)
 
+_Last updated: 2022-01-06T12:30:40.650Z_
+
 ### Affected
 
 * Apache Kylin at Apache Kylin 4 4.0.0
@@ -110,6 +118,8 @@ This issue affects Apache Kylin 4.0.0.
 ## Overly broad CORS configuration  ## { #CVE-2021-45457 }
 
 CVE-2021-45457 [\[CVE json\]](./CVE-2021-45457.cve.json)
+
+_Last updated: 2022-01-06T12:32:08.962Z_
 
 ### Affected
 
@@ -136,6 +146,8 @@ This issue affects Apache Kylin 2 version 2.6.6 and prior versions; Apache Kylin
 
 CVE-2021-45458 [\[CVE json\]](./CVE-2021-45458.cve.json)
 
+_Last updated: 2022-01-06T12:33:02.681Z_
+
 ### Affected
 
 * Apache Kylin from Apache Kylin 2 through 2.6.6
@@ -160,6 +172,8 @@ This issue affects Apache Kylin 2 version 2.6.6 and prior versions; Apache Kylin
 
 CVE-2022-24697 [\[CVE json\]](./CVE-2022-24697.cve.json)
 
+_Last updated: 2022-10-13T13:05:28.696Z_
+
 ### Affected
 
 * Apache Kylin from Apache Kylin 2 before 2.6.6
@@ -183,6 +197,8 @@ Kylin's cube designer function has a command injection vulnerability when overwr
 
 CVE-2022-43396 [\[CVE json\]](./CVE-2022-43396.cve.json)
 
+_Last updated: 2022-12-30T10:30:28.434Z_
+
 ### Affected
 
 * Apache Kylin from Apache Kylin 4 through 4.0.2
@@ -204,6 +220,8 @@ In the fix for CVE-2022-24697, a blacklist is used to filter user input commands
 
 CVE-2022-44621 [\[CVE json\]](./CVE-2022-44621.cve.json)
 
+_Last updated: 2022-12-30T10:31:39.045Z_
+
 ### Affected
 
 * Apache Kylin from Apache Kylin 4  through 4.0.2
@@ -224,6 +242,8 @@ Diagnosis Controller miss parameter validation, so user may attacked by command 
 ## Insufficiently protected credentials in config file ## { #CVE-2023-29055 }
 
 CVE-2023-29055 [\[CVE json\]](./CVE-2023-29055.cve.json)
+
+_Last updated: 2024-01-29T12:20:52.048Z_
 
 ### Affected
 

@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-17529 [\[CVE json\]](./CVE-2020-17529.cve.json)
 
+_Last updated: 2020-12-09T16:35:02.859Z_
+
 ### Affected
 
 * Apache NuttX (incubating) at 10.0.0
@@ -39,6 +41,8 @@ Out-of-bounds Write vulnerability in TCP Stack of Apache NuttX (incubating) vers
 
 CVE-2020-17528 [\[CVE json\]](./CVE-2020-17528.cve.json)
 
+_Last updated: 2020-12-09T16:34:56.566Z_
+
 ### Affected
 
 * Apache NuttX (incubating) at 10.0.0
@@ -60,6 +64,8 @@ Out-of-bounds Write vulnerability in TCP stack of Apache NuttX (incubating) vers
 ## malloc, realloc and memalign implementations are vulnerable to integer wrap-arounds ## { #CVE-2021-26461 }
 
 CVE-2021-26461 [\[CVE json\]](./CVE-2021-26461.cve.json)
+
+_Last updated: 2021-06-21T17:05:46.935Z_
 
 ### Affected
 

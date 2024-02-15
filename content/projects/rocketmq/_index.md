@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2023-33246 [\[CVE json\]](./CVE-2023-33246.cve.json)
 
+_Last updated: 2023-05-24T14:45:21.368Z_
+
 ### Affected
 
 * Apache RocketMQ through 5.1.0
@@ -44,6 +46,8 @@ CVE-2023-33246 [\[CVE json\]](./CVE-2023-33246.cve.json)
 ## Possible remote code execution when using the update configuration function ## { #CVE-2023-37582 }
 
 CVE-2023-37582 [\[CVE json\]](./CVE-2023-37582.cve.json)
+
+_Last updated: 2023-07-12T09:26:16.623Z_
 
 ### Affected
 

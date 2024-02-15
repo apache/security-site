@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-38542 [\[CVE json\]](./CVE-2021-38542.cve.json)
 
+_Last updated: 2022-01-04T08:46:18.750Z_
+
 ### Affected
 
 * Apache James from Apache James before 3.6.1
@@ -38,6 +40,8 @@ Apache James prior to release 3.6.1 is vulnerable to a buffering attack relying 
 ## Apache James IMAP vulnerable to a ReDoS ## { #CVE-2021-40110 }
 
 CVE-2021-40110 [\[CVE json\]](./CVE-2021-40110.cve.json)
+
+_Last updated: 2022-01-04T08:47:33.579Z_
 
 ### Affected
 
@@ -62,6 +66,8 @@ We recommend upgrading to Apache James 3.6.1 or higher , which enforce the use o
 
 CVE-2021-40111 [\[CVE json\]](./CVE-2021-40111.cve.json)
 
+_Last updated: 2022-01-04T08:48:24.795Z_
+
 ### Affected
 
 * Apache James from Apache James through 3.6.0
@@ -85,6 +91,8 @@ This vulnerability had been patched in Apache James 3.6.1 and higher. We recomme
 
 CVE-2021-40525 [\[CVE json\]](./CVE-2021-40525.cve.json)
 
+_Last updated: 2022-01-04T08:49:17.932Z_
+
 ### Affected
 
 * Apache James from Apache James through 3.6.0
@@ -107,6 +115,8 @@ Distributed and Cassandra based products are also not impacted.
 ## Path traversal in Apache James 3.6.1 ## { #CVE-2022-22931 }
 
 CVE-2022-22931 [\[CVE json\]](./CVE-2022-22931.cve.json)
+
+_Last updated: 2022-02-07T18:45:09.142Z_
 
 ### Affected
 
@@ -136,6 +146,8 @@ This enables a user to access other users data stores (limited to user names bei
 
 CVE-2022-28220 [\[CVE json\]](./CVE-2022-28220.cve.json)
 
+_Last updated: 2022-09-20T08:36:32.785Z_
+
 ### Affected
 
 * Apache James from Apache James through 3.6.2
@@ -161,6 +173,8 @@ Fix of CVE-2021-38542, which solved similar problem fron Apache James 3.6.1, is 
 
 CVE-2022-45935 [\[CVE json\]](./CVE-2022-45935.cve.json)
 
+_Last updated: 2023-07-12T10:18:16.935Z_
+
 ### Affected
 
 * Apache James server through 3.7.2
@@ -182,6 +196,8 @@ Usage of temporary files with insecure permissions by the Apache James server al
 
 CVE-2022-45787 [\[CVE json\]](./CVE-2022-45787.cve.json)
 
+_Last updated: 2023-01-16T10:25:33.637Z_
+
 ### Affected
 
 * Apache James MIME4J through 0.8.8
@@ -202,6 +218,8 @@ Unproper laxist permissions on the temporary files used by MIME4J TempFileStorag
 ## Privilege escalation through unauthenticated JMX ## { #CVE-2023-26269 }
 
 CVE-2023-26269 [\[CVE json\]](./CVE-2023-26269.cve.json)
+
+_Last updated: 2023-04-03T07:59:07.659Z_
 
 ### Affected
 

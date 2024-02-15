@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-34797 [\[CVE json\]](./CVE-2021-34797.cve.json)
 
+_Last updated: 2022-06-28T22:46:44.541Z_
+
 ### Affected
 
 * Apache Geode from Apache Geode through 1.12.4
@@ -39,6 +41,8 @@ Apache Geode versions up to 1.12.4 and 1.13.4 are vulnerable to a log file redac
 
 CVE-2022-34870 [\[CVE json\]](./CVE-2022-34870.cve.json)
 
+_Last updated: 2022-10-24T18:09:52.450Z_
+
 ### Affected
 
 * Apache Geode from Apache Geode through 1.15.0
@@ -55,6 +59,8 @@ Apache Geode versions up to 1.15.0 are vulnerable to a Cross-Site Scripting (XSS
 ## Apache Geode deserialization of untrusted data flaw when using JMX over RMI on Java 8.  ## { #CVE-2022-37021 }
 
 CVE-2022-37021 [\[CVE json\]](./CVE-2022-37021.cve.json)
+
+_Last updated: 2022-08-31T06:54:22.083Z_
 
 ### Affected
 
@@ -77,6 +83,8 @@ If upgrading to Java 11 is not possible, then upgrade to Apache Geode 1.15 and s
 
 CVE-2022-37022 [\[CVE json\]](./CVE-2022-37022.cve.json)
 
+_Last updated: 2022-08-31T06:56:24.123Z_
+
 ### Affected
 
 * Apache Geode from Apache Geode through 1.12.2
@@ -95,6 +103,8 @@ Any user wishing to protect against deserialization attacks involving JMX or RMI
 ## Apache Geode deserialization of untrusted data flaw when using REST API on Java 8 or Java 11 ## { #CVE-2022-37023 }
 
 CVE-2022-37023 [\[CVE json\]](./CVE-2022-37023.cve.json)
+
+_Last updated: 2022-08-31T06:58:07.415Z_
 
 ### Affected
 

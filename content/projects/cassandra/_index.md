@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-44521 [\[CVE json\]](./CVE-2021-44521.cve.json)
 
+_Last updated: 2022-02-11T12:02:55.157Z_
+
 ### Affected
 
 * Apache Cassandra from 3.0.0 before *
@@ -43,6 +45,8 @@ it is possible for an attacker to execute arbitrary code on the host. The attack
 ## Privilege escalation when enabling FQL/Audit logs ## { #CVE-2023-30601 }
 
 CVE-2023-30601 [\[CVE json\]](./CVE-2023-30601.cve.json)
+
+_Last updated: 2023-05-30T07:25:46.970Z_
 
 ### Affected
 

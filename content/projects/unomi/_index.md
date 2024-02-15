@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-13942 [\[CVE json\]](./CVE-2020-13942.cve.json)
 
+_Last updated: 2020-11-24T17:55:44.282Z_
+
 ### Affected
 
 * Apache Unomi from unspecified before 1.5.2
@@ -33,6 +35,8 @@ It is possible to inject malicious OGNL or MVEL scripts into the /context.json p
 ## Apache Unomi log injection ## { #CVE-2021-31164 }
 
 CVE-2021-31164 [\[CVE json\]](./CVE-2021-31164.cve.json)
+
+_Last updated: 2021-05-04T06:40:34.093Z_
 
 ### Affected
 

@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2023-38435 [\[CVE json\]](./CVE-2023-38435.cve.json)
 
+_Last updated: 2023-07-31T08:08:18.396Z_
+
 ### Affected
 
 * Apache Felix Healthcheck Webconsole Plugin through 2.0.2

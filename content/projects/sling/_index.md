@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-44549 [\[CVE json\]](./CVE-2021-44549.cve.json)
 
+_Last updated: 2021-12-14T15:10:31.167Z_
+
 ### Affected
 
 * Apache Sling Commons Messaging Mail at Apache Sling Commons Messaging Mail 1.0.0 1.0.0
@@ -50,6 +52,8 @@ Apache Sling Commons Messaging Mail 2.0 adds support for enabling server identit
 
 CVE-2022-32549 [\[CVE json\]](./CVE-2022-32549.cve.json)
 
+_Last updated: 2022-06-22T14:22:34.319Z_
+
 ### Affected
 
 * Apache Sling from Apache Sling API through 2.25.0
@@ -72,6 +76,8 @@ Apache Sling Commons Log <= 5.4.0 and Apache Sling API <= 2.25.0 are vulnerable 
 
 CVE-2022-43670 [\[CVE json\]](./CVE-2022-43670.cve.json)
 
+_Last updated: 2022-11-02T12:20:10.764Z_
+
 ### Affected
 
 * Apache Sling App CMS from unspecified before 1.1.2
@@ -92,6 +98,8 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 ## Include-based XSS ## { #CVE-2022-45064 }
 
 CVE-2022-45064 [\[CVE json\]](./CVE-2022-45064.cve.json)
+
+_Last updated: 2023-04-13T10:01:10.930Z_
 
 ### Affected
 
@@ -114,6 +122,8 @@ CVE-2022-45064 [\[CVE json\]](./CVE-2022-45064.cve.json)
 
 CVE-2022-46769 [\[CVE json\]](./CVE-2022-46769.cve.json)
 
+_Last updated: 2023-01-25T03:51:12.925Z_
+
 ### Affected
 
 * Apache Sling App CMS before 1.1.4
@@ -134,6 +144,8 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 ## Multiple parsing problems in the Apache Sling Commons JSON module ## { #CVE-2022-47937 }
 
 CVE-2022-47937 [\[CVE json\]](./CVE-2022-47937.cve.json)
+
+_Last updated: 2023-05-15T08:38:16.894Z_
 
 ### Affected
 
@@ -162,6 +174,8 @@ Apache Sling project, but may of course use other JSON libraries.<br></div></div
 
 CVE-2023-22849 [\[CVE json\]](./CVE-2023-22849.cve.json)
 
+_Last updated: 2023-02-03T23:38:07.612Z_
+
 ### Affected
 
 * Apache Sling App CMS before 1.1.6
@@ -182,6 +196,8 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 ## JNDI injection into Apache sling-org-apache-sling-jcr-base ## { #CVE-2023-25141 }
 
 CVE-2023-25141 [\[CVE json\]](./CVE-2023-25141.cve.json)
+
+_Last updated: 2023-02-14T10:19:00.558Z_
 
 ### Affected
 
@@ -204,6 +220,8 @@ CVE-2023-25141 [\[CVE json\]](./CVE-2023-25141.cve.json)
 
 CVE-2023-25621 [\[CVE json\]](./CVE-2023-25621.cve.json)
 
+_Last updated: 2023-02-23T08:41:12.080Z_
+
 ### Affected
 
 * Apache Sling from Apache Sling i18n through 2.5.18
@@ -220,6 +238,8 @@ Privilege Escalation vulnerability in Apache Software Foundation Apache Sling.<b
 ## Requests to certain paths managed by the Apache Sling Resource Merger can lead to DoS ## { #CVE-2023-26513 }
 
 CVE-2023-26513 [\[CVE json\]](./CVE-2023-26513.cve.json)
+
+_Last updated: 2023-03-20T12:19:53.778Z_
 
 ### Affected
 
@@ -241,6 +261,8 @@ Excessive Iteration vulnerability in Apache Software Foundation Apache Sling Res
 ## Malicious code execution via path traversal ## { #CVE-2024-23673 }
 
 CVE-2024-23673 [\[CVE json\]](./CVE-2024-23673.cve.json)
+
+_Last updated: 2024-02-06T10:04:18.646Z_
 
 ### Affected
 

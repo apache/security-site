@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-26779 [\[CVE json\]](./CVE-2022-26779.cve.json)
 
+_Last updated: 2022-07-13T11:28:52.383Z_
+
 ### Affected
 
 * Apache CloudStack from Apache CloudStack before 4.16.1
@@ -38,6 +40,8 @@ Apache CloudStack prior to 4.16.1.0 used insecure random number generation for p
 ## Apache CloudStack SAML Single Sign-On XXE ## { #CVE-2022-35741 }
 
 CVE-2022-35741 [\[CVE json\]](./CVE-2022-35741.cve.json)
+
+_Last updated: 2022-07-18T14:26:13.768Z_
 
 ### Affected
 

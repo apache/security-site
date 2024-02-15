@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-38296 [\[CVE json\]](./CVE-2021-38296.cve.json)
 
+_Last updated: 2022-03-10T08:16:48.042Z_
+
 ### Affected
 
 * Apache Spark from up to and including version 3.1.2 through 3.1.2
@@ -37,6 +39,8 @@ Apache Spark supports end-to-end encryption of RPC connections via "spark.authen
 ## Apache Spark XSS vulnerability in log viewer UI Javascript ## { #CVE-2022-31777 }
 
 CVE-2022-31777 [\[CVE json\]](./CVE-2022-31777.cve.json)
+
+_Last updated: 2022-11-01T15:31:47.242Z_
 
 ### Affected
 
@@ -59,6 +63,8 @@ A stored cross-site scripting (XSS) vulnerability in Apache Spark 3.2.1 and earl
 ## Apache Spark shell command injection vulnerability via Spark UI ## { #CVE-2022-33891 }
 
 CVE-2022-33891 [\[CVE json\]](./CVE-2022-33891.cve.json)
+
+_Last updated: 2022-07-18T06:58:42.467Z_
 
 ### Affected
 
@@ -83,6 +89,8 @@ The Apache Spark UI offers the possibility to enable ACLs via the configuration 
 
 CVE-2023-22946 [\[CVE json\]](./CVE-2023-22946.cve.json)
 
+_Last updated: 2023-04-17T07:30:17.426Z_
+
 ### Affected
 
 * Apache Spark before 3.4.0
@@ -106,6 +114,8 @@ default of "false", and is not overridden by submitted applications.<br></div>
 ## Shell command injection via Spark UI ## { #CVE-2023-32007 }
 
 CVE-2023-32007 [\[CVE json\]](./CVE-2023-32007.cve.json)
+
+_Last updated: 2023-05-02T08:37:02.283Z_
 
 ### Affected
 

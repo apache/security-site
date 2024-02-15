@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-34169 [\[CVE json\]](./CVE-2022-34169.cve.json)
 
+_Last updated: 2022-07-21T12:21:22.370Z_
+
 ### Affected
 
 * Apache Xalan-J from Xalan-J through 2.7.2

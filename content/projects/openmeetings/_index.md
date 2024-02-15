@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-27576 [\[CVE json\]](./CVE-2021-27576.cve.json)
 
+_Last updated: 2021-03-14T11:56:54.481Z_
+
 ### Affected
 
 * Apache OpenMeetings from 4.0.0 before Apache OpenMeetings 4*
@@ -39,6 +41,8 @@ If was found that the NetTest web service can be used to overload the bandwidth 
 
 CVE-2023-28326 [\[CVE json\]](./CVE-2023-28326.cve.json)
 
+_Last updated: 2023-03-28T14:34:57.762Z_
+
 ### Affected
 
 * Apache OpenMeetings from 2.0.0 before 7.0.0
@@ -59,6 +63,8 @@ CVE-2023-28326 [\[CVE json\]](./CVE-2023-28326.cve.json)
 ## insufficient check of invitation hash ## { #CVE-2023-28936 }
 
 CVE-2023-28936 [\[CVE json\]](./CVE-2023-28936.cve.json)
+
+_Last updated: 2023-05-12T01:19:31.368Z_
 
 ### Affected
 
@@ -81,6 +87,8 @@ Attacker can access arbitrary recording/room<br><br>Vendor: The Apache Software 
 
 CVE-2023-29032 [\[CVE json\]](./CVE-2023-29032.cve.json)
 
+_Last updated: 2023-05-12T01:19:51.993Z_
+
 ### Affected
 
 * Apache OpenMeetings from 3.1.3 before 7.1.0
@@ -101,6 +109,8 @@ CVE-2023-29032 [\[CVE json\]](./CVE-2023-29032.cve.json)
 ## allows null-byte Injection ## { #CVE-2023-29246 }
 
 CVE-2023-29246 [\[CVE json\]](./CVE-2023-29246.cve.json)
+
+_Last updated: 2023-05-12T01:21:14.732Z_
 
 ### Affected
 

@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2023-26512 [\[CVE json\]](./CVE-2023-26512.cve.json)
 
+_Last updated: 2023-07-27T09:32:16.269Z_
+
 ### Affected
 
 * Apache EventMesh (incubating) RabbitMQ connector from 1.7.0 through 1.8.0

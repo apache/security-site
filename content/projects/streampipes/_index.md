@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2023-31469 [\[CVE json\]](./CVE-2023-31469.cve.json)
 
+_Last updated: 2023-06-23T07:07:40.534Z_
+
 ### Affected
 
 * Apache StreamPipes from 0.69.0 through 0.91.0

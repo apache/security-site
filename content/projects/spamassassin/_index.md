@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-1946 [\[CVE json\]](./CVE-2020-1946.cve.json)
 
+_Last updated: 2021-03-25T09:15:51.926Z_
+
 ### Affected
 
 * Apache SpamAssassin from Apache SpamAssassin before 3.4.5

@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-9479 [\[CVE json\]](./CVE-2020-9479.cve.json)
 
+_Last updated: 2021-03-01T15:49:19.297Z_
+
 ### Affected
 
 * Apache AsterixDB at git

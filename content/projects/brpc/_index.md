@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2023-31039 [\[CVE json\]](./CVE-2023-31039.cve.json)
 
+_Last updated: 2023-05-08T08:57:09.633Z_
+
 ### Affected
 
 * Apache bRPC from 0.9.0 before 1.5.0
@@ -34,6 +36,8 @@ CVE-2023-31039 [\[CVE json\]](./CVE-2023-31039.cve.json)
 
 CVE-2023-45757 [\[CVE json\]](./CVE-2023-45757.cve.json)
 
+_Last updated: 2023-10-16T08:01:36.036Z_
+
 ### Affected
 
 * Apache bRPC from 0.9.0 through 1.6.0
@@ -50,6 +54,8 @@ CVE-2023-45757 [\[CVE json\]](./CVE-2023-45757.cve.json)
 ## HTTP request smuggling vulnerability ## { #CVE-2024-23452 }
 
 CVE-2024-23452 [\[CVE json\]](./CVE-2024-23452.cve.json)
+
+_Last updated: 2024-02-08T09:00:00.820Z_
 
 ### Affected
 

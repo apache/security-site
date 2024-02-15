@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-40690 [\[CVE json\]](./CVE-2021-40690.cve.json)
 
+_Last updated: 2021-09-19T17:20:51.491Z_
+
 ### Affected
 
 * Apache Santuario from XML Security for Java before 2.2.3,2.1.7
@@ -37,6 +39,8 @@ All versions of Apache Santuario - XML Security for Java prior to 2.2.3 and 2.1.
 ## Private Key disclosure in debug-log output ## { #CVE-2023-44483 }
 
 CVE-2023-44483 [\[CVE json\]](./CVE-2023-44483.cve.json)
+
+_Last updated: 2023-10-20T09:23:50.763Z_
 
 ### Affected
 

@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-17533 [\[CVE json\]](./CVE-2020-17533.cve.json)
 
+_Last updated: 2024-01-31T09:33:16.054Z_
+
 ### Affected
 
 * Apache Accumulo at 2.0.0
@@ -34,6 +36,8 @@ Apache Accumulo versions 1.5.0 through 1.10.0 and version 2.0.0 do not properly 
 ## Accumulo 2.1.0 may incorrectly validate cached credentials ## { #CVE-2023-34340 }
 
 CVE-2023-34340 [\[CVE json\]](./CVE-2023-34340.cve.json)
+
+_Last updated: 2023-06-21T07:01:43.546Z_
 
 ### Affected
 

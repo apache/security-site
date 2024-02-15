@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-23901 [\[CVE json\]](./CVE-2021-23901.cve.json)
 
+_Last updated: 2021-01-25T09:22:41.311Z_
+
 ### Affected
 
 * Apache Nutch from Apache Nutch through 1.17

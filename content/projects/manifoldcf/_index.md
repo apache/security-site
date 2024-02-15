@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-45910 [\[CVE json\]](./CVE-2022-45910.cve.json)
 
+_Last updated: 2022-12-07T09:50:35.935Z_
+
 ### Affected
 
 * Apache ManifoldCF through 2.23

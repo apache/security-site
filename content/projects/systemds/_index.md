@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-26477 [\[CVE json\]](./CVE-2022-26477.cve.json)
 
+_Last updated: 2022-06-27T17:04:45.966Z_
+
 ### Affected
 
 * Apache SystemDS from unspecified before 2.2.2

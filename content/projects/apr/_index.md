@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-35940 [\[CVE json\]](./CVE-2021-35940.cve.json)
 
+_Last updated: 2021-10-11T14:15:55.651Z_
+
 ### Affected
 
 * Apache Portable Runtime (APR) at Apache Portable Runtime 1.7.0
@@ -41,6 +43,8 @@ An out-of-bounds array read in the apr_time_exp*() functions was fixed in the Ap
 
 CVE-2022-25147 [\[CVE json\]](./CVE-2022-25147.cve.json)
 
+_Last updated: 2023-01-31T15:54:46.758Z_
+
 ### Affected
 
 * Apache Portable Runtime Utility (APR-util) through 1.6.1
@@ -62,6 +66,8 @@ CVE-2022-25147 [\[CVE json\]](./CVE-2022-25147.cve.json)
 
 CVE-2022-24963 [\[CVE json\]](./CVE-2022-24963.cve.json)
 
+_Last updated: 2023-01-31T15:51:53.920Z_
+
 ### Affected
 
 * Apache Portable Runtime (APR) at 1.7.0
@@ -82,6 +88,8 @@ Integer Overflow or Wraparound vulnerability in apr_encode functions of Apache P
 ##  Windows out-of-bounds write in apr_socket_sendv function ## { #CVE-2022-28331 }
 
 CVE-2022-28331 [\[CVE json\]](./CVE-2022-28331.cve.json)
+
+_Last updated: 2023-07-07T15:26:37.824Z_
 
 ### Affected
 

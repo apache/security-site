@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-26291 [\[CVE json\]](./CVE-2021-26291.cve.json)
 
+_Last updated: 2021-04-23T14:14:28.607Z_
+
 ### Affected
 
 * Apache Maven from Apache Maven through 3.8.1
@@ -39,6 +41,8 @@ If you are currently using a repository manager to govern the repositories used 
 ## Commandline class shell injection vulnerabilities ## { #CVE-2022-29599 }
 
 CVE-2022-29599 [\[CVE json\]](./CVE-2022-29599.cve.json)
+
+_Last updated: 2022-05-23T10:22:16.632Z_
 
 ### Affected
 

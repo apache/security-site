@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-37580 [\[CVE json\]](./CVE-2021-37580.cve.json)
 
+_Last updated: 2021-11-16T09:33:35.582Z_
+
 ### Affected
 
 * Apache ShenYu Admin at 2.3.0-2.4.0
@@ -38,6 +40,8 @@ A flaw was found in Apache ShenYu Admin. The incorrect use of JWT in ShenyuAdmin
 
 CVE-2021-45029 [\[CVE json\]](./CVE-2021-45029.cve.json)
 
+_Last updated: 2022-01-26T06:19:24.052Z_
+
 ### Affected
 
 * Apache ShenYu (incubating)  from Apache ShenYu (incubating) before 2.4.2
@@ -58,6 +62,8 @@ This issue affects Apache ShenYu (incubating)  2.4.0 and 2.4.1.
 
 CVE-2022-23223 [\[CVE json\]](./CVE-2022-23223.cve.json)
 
+_Last updated: 2022-01-26T06:44:20.022Z_
+
 ### Affected
 
 * Apache ShenYu (incubating)  from Apache ShenYu (incubating)  before 2.4.2
@@ -76,6 +82,8 @@ This issue affects Apache ShenYu (incubating) 2.4.0 and 2.4.1.
 ## Apache ShenYu (incubating) Improper access control ## { #CVE-2022-23944 }
 
 CVE-2022-23944 [\[CVE json\]](./CVE-2022-23944.cve.json)
+
+_Last updated: 2022-01-26T06:27:42.604Z_
 
 ### Affected
 
@@ -96,6 +104,8 @@ This issue affects Apache ShenYu (incubating) 2.4.0 and 2.4.1.
 
 CVE-2022-23945 [\[CVE json\]](./CVE-2022-23945.cve.json)
 
+_Last updated: 2022-01-26T06:39:24.870Z_
+
 ### Affected
 
 * Apache ShenYu (incubating)  from Apache ShenYu (incubating)  before 2.4.2
@@ -114,6 +124,8 @@ This issue affects Apache ShenYu (incubating) 2.4.0 and 2.4.1.
 
 CVE-2022-26650 [\[CVE json\]](./CVE-2022-26650.cve.json)
 
+_Last updated: 2022-06-18T12:30:20.191Z_
+
 ### Affected
 
 * Apache ShenYu (incubating)  from unspecified before 2.4.3
@@ -131,6 +143,8 @@ This issue affects Apache ShenYu (incubating) 2.4.0, 2.4.1 and 2.4.2.
 ## Apache ShenYu Admin Improper Privilege Management ## { #CVE-2022-37435 }
 
 CVE-2022-37435 [\[CVE json\]](./CVE-2022-37435.cve.json)
+
+_Last updated: 2022-09-01T13:57:00.985Z_
 
 ### Affected
 
@@ -153,6 +167,8 @@ This issue affects Apache ShenYu 2.4.2 and 2.4.3.
 ## Apache ShenYu Admin ultra vires ## { #CVE-2022-42735 }
 
 CVE-2022-42735 [\[CVE json\]](./CVE-2022-42735.cve.json)
+
+_Last updated: 2023-02-15T09:38:50.099Z_
 
 ### Affected
 
@@ -178,6 +194,8 @@ Improper Privilege Management vulnerability in Apache Software Foundation Apache
 ## Server-Side Request Forgery in Apache ShenYu ## { #CVE-2023-25753 }
 
 CVE-2023-25753 [\[CVE json\]](./CVE-2023-25753.cve.json)
+
+_Last updated: 2023-10-19T08:35:28.691Z_
 
 ### Affected
 

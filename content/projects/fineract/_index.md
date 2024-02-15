@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-17514 [\[CVE json\]](./CVE-2020-17514.cve.json)
 
+_Last updated: 2021-05-27T12:07:40.403Z_
+
 ### Affected
 
 * Apache Fineract from Apache Fineract before 1.5.0
@@ -37,6 +39,8 @@ Apache Fineract prior to 1.5.0 disables HTTPS hostname verification in Processor
 ## Apache Fineract allowed an authenticated user to perform remote code execution due to path traversal ## { #CVE-2022-44635 }
 
 CVE-2022-44635 [\[CVE json\]](./CVE-2022-44635.cve.json)
+
+_Last updated: 2022-11-29T14:22:31.295Z_
 
 ### Affected
 
@@ -60,6 +64,8 @@ Apache Fineract allowed an authenticated user to perform remote code execution d
 
 CVE-2023-25195 [\[CVE json\]](./CVE-2023-25195.cve.json)
 
+_Last updated: 2023-03-28T11:16:21.425Z_
+
 ### Affected
 
 * Apache Fineract from 1.4 through 1.8.3
@@ -82,6 +88,8 @@ Server-Side Request Forgery (SSRF) vulnerability in Apache Software Foundation A
 
 CVE-2023-25196 [\[CVE json\]](./CVE-2023-25196.cve.json)
 
+_Last updated: 2023-03-28T11:16:50.126Z_
+
 ### Affected
 
 * Apache Fineract from 1.4 through 1.8.2
@@ -103,6 +111,8 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 ## SQL injection vulnerability in certain procedure calls  ## { #CVE-2023-25197 }
 
 CVE-2023-25197 [\[CVE json\]](./CVE-2023-25197.cve.json)
+
+_Last updated: 2023-03-28T11:17:16.072Z_
 
 ### Affected
 

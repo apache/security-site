@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-36127 [\[CVE json\]](./CVE-2022-36127.cve.json)
 
+_Last updated: 2022-07-18T11:24:38.575Z_
+
 ### Affected
 
 * Apache SkyWalking NodeJS Agent from Apache SkyWalking NodeJS Agent through 0.5.0

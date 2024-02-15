@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-43045 [\[CVE json\]](./CVE-2021-43045.cve.json)
 
+_Last updated: 2022-01-06T17:58:30.429Z_
+
 ### Affected
 
 * Apache Avro from Apache Avro through 1.10.2
@@ -37,6 +39,8 @@ A vulnerability in the .NET SDK of Apache Avro allows an attacker to allocate ex
 ## Denial of service while reading data in Avro Rust SDK ## { #CVE-2022-35724 }
 
 CVE-2022-35724 [\[CVE json\]](./CVE-2022-35724.cve.json)
+
+_Last updated: 2022-08-09T06:43:41.354Z_
 
 ### Affected
 
@@ -59,6 +63,8 @@ It is possible to provide data to be read that leads the reader to loop in cycle
 
 CVE-2022-36124 [\[CVE json\]](./CVE-2022-36124.cve.json)
 
+_Last updated: 2022-08-09T06:46:06.388Z_
+
 ### Affected
 
 * Apache Avro from unspecified before 0.14.0
@@ -79,6 +85,8 @@ It is possible for a Reader to consume memory beyond the allowed constraints and
 ## Integer overflow when reading corrupted .avro file in Avro Rust SDK ## { #CVE-2022-36125 }
 
 CVE-2022-36125 [\[CVE json\]](./CVE-2022-36125.cve.json)
+
+_Last updated: 2022-08-09T06:44:50.447Z_
 
 ### Affected
 

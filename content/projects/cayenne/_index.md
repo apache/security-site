@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-24289 [\[CVE json\]](./CVE-2022-24289.cve.json)
 
+_Last updated: 2022-02-11T22:06:23.179Z_
+
 ### Affected
 
 * Apache Cayenne from 4.1 through 4.1

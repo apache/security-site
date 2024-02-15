@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-47500 [\[CVE json\]](./CVE-2022-47500.cve.json)
 
+_Last updated: 2022-12-19T09:23:48.197Z_
+
 ### Affected
 
 * Apache Helix from 0.8.0 through 1.0.4
@@ -37,6 +39,8 @@ URL Redirection to Untrusted Site ('Open Redirect') vulnerability in Apache Soft
 ## Deserialization vulnerability in Helix workflow and REST ## { #CVE-2023-38647 }
 
 CVE-2023-38647 [\[CVE json\]](./CVE-2023-38647.cve.json)
+
+_Last updated: 2023-07-26T07:52:23.420Z_
 
 ### Affected
 

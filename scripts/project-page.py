@@ -166,6 +166,8 @@ layout: single
         if has_osv:
           project_page.write(" [\[OSV json\]](./%s.osv.json)\n\n" % cve_id)
         project_page.write("\n\n")
+        project_page.write("_Last updated: %s_" % advisory['updated'])
+        project_page.write("\n\n")
 
         cna = cve['containers']['cna']
         project_page.write("### Affected\n\n")

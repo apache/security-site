@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2023-44981 [\[CVE json\]](./CVE-2023-44981.cve.json)
 
+_Last updated: 2023-10-11T11:55:41.759Z_
+
 ### Affected
 
 * Apache ZooKeeper from 3.9.0 before 3.9.1

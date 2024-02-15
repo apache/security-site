@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-25646 [\[CVE json\]](./CVE-2021-25646.cve.json)
 
+_Last updated: 2021-01-29T19:09:31.597Z_
+
 ### Affected
 
 * Apache Druid from 0.20.0 and earlier through 0.20.0
@@ -39,6 +41,8 @@ Apache Druid includes the ability to execute user-provided JavaScript code embed
 
 CVE-2021-26919 [\[CVE json\]](./CVE-2021-26919.cve.json)
 
+_Last updated: 2021-03-30T07:47:52.941Z_
+
 ### Affected
 
 * Apache Druid from Apache Druid through 0.20.1
@@ -60,6 +64,8 @@ Apache Druid allows users to read data from other database systems using JDBC. T
 
 CVE-2021-26920 [\[CVE json\]](./CVE-2021-26920.cve.json)
 
+_Last updated: 2021-07-02T07:14:27.176Z_
+
 ### Affected
 
 * Apache Druid from Apache Druid through 0.20.2
@@ -80,6 +86,8 @@ In the Druid ingestion system, the InputSource is used for reading data from a c
 ## Apache Druid: The HTTP inputSource allows authenticated users to read data from other sources than intended (incomplete fix of CVE-2021-26920) ## { #CVE-2021-36749 }
 
 CVE-2021-36749 [\[CVE json\]](./CVE-2021-36749.cve.json)
+
+_Last updated: 2021-09-23T23:08:21.915Z_
 
 ### Affected
 
@@ -105,6 +113,8 @@ This issue was previously mentioned as being fixed in 0.21.0 as per CVE-2021-269
 
 CVE-2021-44791 [\[CVE json\]](./CVE-2021-44791.cve.json)
 
+_Last updated: 2022-07-07T18:29:34.319Z_
+
 ### Affected
 
 * Apache Druid from Apache Druid through 0.22.1
@@ -125,6 +135,8 @@ In Apache Druid 0.22.1 and earlier, certain specially-crafted links result in un
 ## Clickjacking in the web console ## { #CVE-2022-28889 }
 
 CVE-2022-28889 [\[CVE json\]](./CVE-2022-28889.cve.json)
+
+_Last updated: 2022-07-07T18:30:27.570Z_
 
 ### Affected
 

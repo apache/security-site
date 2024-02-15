@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-26295 [\[CVE json\]](./CVE-2021-26295.cve.json)
 
+_Last updated: 2021-03-22T11:54:40.746Z_
+
 ### Affected
 
 * Apache OFBiz at 17.12.01 to 17.12.05
@@ -38,6 +40,8 @@ Apache OFBiz has unsafe deserialization prior to 17.12.06. An unauthenticated at
 ## RCE vulnerability in latest Apache OFBiz due to Java serialisation using RMI ## { #CVE-2021-29200 }
 
 CVE-2021-29200 [\[CVE json\]](./CVE-2021-29200.cve.json)
+
+_Last updated: 2021-04-27T19:46:30.140Z_
 
 ### Affected
 
@@ -62,6 +66,8 @@ An unauthenticated user can perform an RCE attack
 
 CVE-2021-30128 [\[CVE json\]](./CVE-2021-30128.cve.json)
 
+_Last updated: 2021-04-27T19:47:04.244Z_
+
 ### Affected
 
 * Apache OFBiz from Apache OFBiz before 17.12.07
@@ -83,6 +89,8 @@ Apache OFBiz has unsafe deserialization prior to 17.12.07 version
 
 CVE-2021-37608 [\[CVE json\]](./CVE-2021-37608.cve.json)
 
+_Last updated: 2021-08-18T07:45:08.867Z_
+
 ### Affected
 
 * Apache OFBiz from unspecified through 17.12.07
@@ -103,6 +111,8 @@ Unrestricted Upload of File with Dangerous Type vulnerability in Apache OFBiz al
 ## Unauth Stored XSS vulnerability in the Birt plugin of Apache OFBiz ## { #CVE-2022-25370 }
 
 CVE-2022-25370 [\[CVE json\]](./CVE-2022-25370.cve.json)
+
+_Last updated: 2022-09-02T06:58:56.611Z_
 
 ### Affected
 
@@ -128,6 +138,8 @@ In Apache OFBiz release 18.12.05, and earlier versions, by leveraging a vulnerab
 
 CVE-2022-25371 [\[CVE json\]](./CVE-2022-25371.cve.json)
 
+_Last updated: 2022-09-02T07:00:04.371Z_
+
 ### Affected
 
 * Apache OFBiz from Apache OFBiz through 18.12.05
@@ -152,6 +164,8 @@ By leveraging a bug in Birt (https://bugs.eclipse.org/bugs/show_bug.cgi?id=53814
 
 CVE-2022-25813 [\[CVE json\]](./CVE-2022-25813.cve.json)
 
+_Last updated: 2022-09-02T07:01:21.926Z_
+
 ### Affected
 
 * Apache OFBiz from Apache OFBiz through 18.12.05
@@ -173,6 +187,8 @@ manager needs to list the communications in the party component to activate the 
 ## Java Deserialization via RMI Connection from the Solr plugin of Apache OFBiz ## { #CVE-2022-29063 }
 
 CVE-2022-29063 [\[CVE json\]](./CVE-2022-29063.cve.json)
+
+_Last updated: 2022-09-02T07:04:01.683Z_
 
 ### Affected
 
@@ -196,6 +212,8 @@ Upgrade to at least 18.12.06 or apply patches at https://issues.apache.org/jira/
 
 CVE-2022-29158 [\[CVE json\]](./CVE-2022-29158.cve.json)
 
+_Last updated: 2022-09-02T07:05:27.871Z_
+
 ### Affected
 
 * Apache OFBiz from Apache OFBiz through 18.12.05
@@ -217,6 +235,8 @@ Upgrade to 18.12.06 or apply patches at https://issues.apache.org/jira/browse/OF
 ## Arbitrary file reading vulnerability ## { #CVE-2022-47501 }
 
 CVE-2022-47501 [\[CVE json\]](./CVE-2022-47501.cve.json)
+
+_Last updated: 2023-04-14T15:00:25.628Z_
 
 ### Affected
 
@@ -241,6 +261,8 @@ pre-authentication attack.<br><p>This issue affects Apache OFBiz: before 18.12.0
 ## Execution of Solr plugin queries without authentication ## { #CVE-2023-46819 }
 
 CVE-2023-46819 [\[CVE json\]](./CVE-2023-46819.cve.json)
+
+_Last updated: 2023-12-04T16:11:06.466Z_
 
 ### Affected
 
@@ -267,6 +289,8 @@ Missing Authentication in Apache Software Foundation Apache OFBiz when using the
 ## Pre-auth RCE in Apache Ofbiz 18.12.09 due to XML-RPC still present ## { #CVE-2023-49070 }
 
 CVE-2023-49070 [\[CVE json\]](./CVE-2023-49070.cve.json)
+
+_Last updated: 2023-12-20T10:48:11.952Z_
 
 ### Affected
 
@@ -297,6 +321,8 @@ Pre-auth RCE in Apache Ofbiz 18.12.09.<br><br>It's due to XML-RPC&nbsp;<span sty
 
 CVE-2023-50968 [\[CVE json\]](./CVE-2023-50968.cve.json)
 
+_Last updated: 2023-12-26T10:21:57.552Z_
+
 ### Affected
 
 * Apache OFBiz through 18.12.10
@@ -321,6 +347,8 @@ CVE-2023-50968 [\[CVE json\]](./CVE-2023-50968.cve.json)
 ## Pre-authentication Remote Code Execution (RCE) vulnerability ## { #CVE-2023-51467 }
 
 CVE-2023-51467 [\[CVE json\]](./CVE-2023-51467.cve.json)
+
+_Last updated: 2024-02-02T10:13:56.898Z_
 
 ### Affected
 

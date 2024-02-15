@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-22160 [\[CVE json\]](./CVE-2021-22160.cve.json)
 
+_Last updated: 2021-05-25T13:39:14.223Z_
+
 ### Affected
 
 * Apache Pulsar from Apache Pulsar before 2.7.1
@@ -33,6 +35,8 @@ If Apache Pulsar is configured to authenticate clients using tokens based on JSO
 ## Pulsar Admin API allows access to data from other tenants using getMessageById API ## { #CVE-2021-41571 }
 
 CVE-2021-41571 [\[CVE json\]](./CVE-2021-41571.cve.json)
+
+_Last updated: 2022-01-31T12:57:16.188Z_
 
 ### Affected
 
@@ -58,6 +62,8 @@ This issue affects Apache Pulsar Apache Pulsar version 2.8.0 and prior versions;
 ## Apache Pulsar Proxy target broker address isn't validated ## { #CVE-2022-24280 }
 
 CVE-2022-24280 [\[CVE json\]](./CVE-2022-24280.cve.json)
+
+_Last updated: 2022-09-23T09:22:34.280Z_
 
 ### Affected
 
@@ -87,6 +93,8 @@ This issue affects Apache Pulsar Proxy versions 2.7.0 to 2.7.4; 2.8.0 to 2.8.2; 
 ## Improper Hostname Verification in Java Client and Proxy can expose authentication data via MITM ## { #CVE-2022-33681 }
 
 CVE-2022-33681 [\[CVE json\]](./CVE-2022-33681.cve.json)
+
+_Last updated: 2022-09-23T09:22:48.001Z_
 
 ### Affected
 
@@ -119,6 +127,8 @@ This issue affects Apache Pulsar Java Client versions 2.7.0 to 2.7.4; 2.8.0 to 2
 
 CVE-2022-33682 [\[CVE json\]](./CVE-2022-33682.cve.json)
 
+_Last updated: 2022-09-23T09:23:08.927Z_
+
 ### Affected
 
 * Apache Pulsar at 2.10.0
@@ -148,6 +158,8 @@ This issue affects Apache Pulsar Broker, Proxy, and WebSocket Proxy versions 2.7
 
 CVE-2022-33683 [\[CVE json\]](./CVE-2022-33683.cve.json)
 
+_Last updated: 2022-09-23T09:23:30.771Z_
+
 ### Affected
 
 * Apache Pulsar at 2.10.0
@@ -176,6 +188,8 @@ This issue affects Apache Pulsar Broker and Proxy versions 2.7.0 to 2.7.4; 2.8.0
 ## Apache Pulsar C++/Python OAuth Clients prior to 3.0.0 were vulnerable to an MITM attack due to Disabled Certificate Validation ## { #CVE-2022-33684 }
 
 CVE-2022-33684 [\[CVE json\]](./CVE-2022-33684.cve.json)
+
+_Last updated: 2022-11-04T15:46:59.823Z_
 
 ### Affected
 
@@ -217,6 +231,8 @@ Any users running the C++ and Python Client for 2.6 or less should upgrade to on
 
 CVE-2023-30428 [\[CVE json\]](./CVE-2023-30428.cve.json)
 
+_Last updated: 2023-07-12T09:11:23.044Z_
+
 ### Affected
 
 * Apache Pulsar Broker from 2.9.0 through 2.9.5
@@ -240,6 +256,8 @@ Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsa
 
 CVE-2023-30429 [\[CVE json\]](./CVE-2023-30429.cve.json)
 
+_Last updated: 2023-07-12T09:08:18.670Z_
+
 ### Affected
 
 * Apache Pulsar before 2.10.4
@@ -261,6 +279,8 @@ Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsa
 ## Broker does not always disconnect client when authentication data expires ## { #CVE-2023-31007 }
 
 CVE-2023-31007 [\[CVE json\]](./CVE-2023-31007.cve.json)
+
+_Last updated: 2023-07-13T08:27:41.124Z_
 
 ### Affected
 
@@ -284,6 +304,8 @@ Improper Authentication vulnerability in Apache Software Foundation Apache Pulsa
 ## Improper Authentication for WebSocket Proxy Endpoint Allows DoS ## { #CVE-2023-37544 }
 
 CVE-2023-37544 [\[CVE json\]](./CVE-2023-37544.cve.json)
+
+_Last updated: 2023-12-20T08:33:58.071Z_
 
 ### Affected
 
@@ -310,6 +332,8 @@ Improper Authentication vulnerability in Apache Pulsar WebSocket Proxy allows an
 
 CVE-2023-37579 [\[CVE json\]](./CVE-2023-37579.cve.json)
 
+_Last updated: 2023-07-12T09:05:20.256Z_
+
 ### Affected
 
 * Apache Pulsar Function Worker before 2.10.4
@@ -331,6 +355,8 @@ Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsa
 ## Timing attack in SASL token signature verification ## { #CVE-2023-51437 }
 
 CVE-2023-51437 [\[CVE json\]](./CVE-2023-51437.cve.json)
+
+_Last updated: 2024-02-07T09:18:08.965Z_
 
 ### Affected
 

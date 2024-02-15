@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-45470 [\[CVE json\]](./CVE-2022-45470.cve.json)
 
+_Last updated: 2022-11-21T13:30:47.145Z_
+
 ### Affected
 
 * Apache Hama from 1.7.1 before Apache Hama*

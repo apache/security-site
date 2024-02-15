@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-36737 [\[CVE json\]](./CVE-2021-36737.cve.json)
 
+_Last updated: 2022-01-06T08:47:29.193Z_
+
 ### Affected
 
 * Apache Portals at org.apache.portals.pluto:PortletV3Demo 3.0.0
@@ -40,6 +42,8 @@ The input fields of the Apache Pluto UrlTestPortlet are vulnerable to Cross-Site
 
 CVE-2021-36738 [\[CVE json\]](./CVE-2021-36738.cve.json)
 
+_Last updated: 2022-01-06T08:48:04.239Z_
+
 ### Affected
 
 * Apache Portals at org.apache.portals.pluto.demo:applicant-mvcbean-cdi-jsp-portlet 3.1.0
@@ -57,6 +61,8 @@ The input fields in the JSP version of the Apache Pluto Applicant MVCBean CDI po
 
 CVE-2021-36739 [\[CVE json\]](./CVE-2021-36739.cve.json)
 
+_Last updated: 2022-01-06T08:48:42.463Z_
+
 ### Affected
 
 * Apache Portals at org.apache.portals.pluto.archetype:mvcbean-jsp-portlet-archetype 3.1.0
@@ -73,6 +79,8 @@ The "first name" and "last name" fields of the Apache Pluto 3.1.0 MVCBean JSP po
 ## Apache Portals Jetspeed XSS, CSRF, SSRF, and XXE issues ## { #CVE-2022-32533 }
 
 CVE-2022-32533 [\[CVE json\]](./CVE-2022-32533.cve.json)
+
+_Last updated: 2022-07-06T09:38:32.582Z_
 
 ### Affected
 

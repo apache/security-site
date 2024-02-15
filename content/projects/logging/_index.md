@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-9493 [\[CVE json\]](./CVE-2020-9493.cve.json)
 
+_Last updated: 2021-06-16T07:28:39.802Z_
+
 ### Affected
 
 * Apache Chainsaw from Apache Chainsaw before 2.1.0
@@ -37,6 +39,8 @@ A deserialization flaw was found in Apache Chainsaw versions prior to 2.1.0 whic
 ## Apache Log4j2 JNDI features do not protect against attacker controlled LDAP and other JNDI related endpoints ## { #CVE-2021-44228 }
 
 CVE-2021-44228 [\[CVE json\]](./CVE-2021-44228.cve.json)
+
+_Last updated: 2021-12-23T21:53:38.756Z_
 
 ### Affected
 
@@ -64,6 +68,8 @@ Note that this vulnerability is specific to log4j-core and does not affect log4n
 
 CVE-2021-44832 [\[CVE json\]](./CVE-2021-44832.cve.json)
 
+_Last updated: 2021-12-30T08:25:52.491Z_
+
 ### Affected
 
 * Apache Log4j2 from log4j-core before 2.17.1
@@ -81,6 +87,8 @@ Apache Log4j2 versions 2.0-beta7 through 2.17.0 (excluding security fix releases
 ## Deserialization of untrusted data in JMSAppender in Apache Log4j 1.2 ## { #CVE-2021-4104 }
 
 CVE-2021-4104 [\[CVE json\]](./CVE-2021-4104.cve.json)
+
+_Last updated: 2022-02-04T08:45:46.335Z_
 
 ### Affected
 
@@ -104,6 +112,8 @@ Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log
 ## Apache Log4j2 Thread Context Lookup Pattern vulnerable to remote code execution in certain non-default configurations ## { #CVE-2021-45046 }
 
 CVE-2021-45046 [\[CVE json\]](./CVE-2021-45046.cve.json)
+
+_Last updated: 2022-02-04T08:46:08.709Z_
 
 ### Affected
 
@@ -132,6 +142,8 @@ Log4j 2.16.0 (Java 8), 2.12.2 (Java 7), and 2.3.1 (Java 6) fix this issue by rem
 
 CVE-2021-45105 [\[CVE json\]](./CVE-2021-45105.cve.json)
 
+_Last updated: 2021-12-23T21:55:58.182Z_
+
 ### Affected
 
 * Apache Log4j2 from log4j-core before 2.17.0
@@ -153,6 +165,8 @@ Apache Log4j2 versions 2.0-alpha1 through 2.16.0 (excluding 2.12.3 and 2.3.1) di
 ## Deserialization of untrusted data in JMSSink in Apache Log4j 1.x ## { #CVE-2022-23302 }
 
 CVE-2022-23302 [\[CVE json\]](./CVE-2022-23302.cve.json)
+
+_Last updated: 2022-01-18T16:52:09.053Z_
 
 ### Affected
 
@@ -180,6 +194,8 @@ Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log
 
 CVE-2022-23305 [\[CVE json\]](./CVE-2022-23305.cve.json)
 
+_Last updated: 2022-01-18T15:19:05.615Z_
+
 ### Affected
 
 * Apache Log4j 1.x  from 1.2.1 before *
@@ -206,6 +222,8 @@ Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log
 
 CVE-2022-23307 [\[CVE json\]](./CVE-2022-23307.cve.json)
 
+_Last updated: 2022-01-18T15:19:48.077Z_
+
 ### Affected
 
 * Apache Log4j 1.x from 1.2.1 before *
@@ -227,6 +245,8 @@ CVE-2020-9493 identified a deserialization issue that was present in Apache Chai
 ## Apache Log4j 1.x (EOL) allows DoS in Chainsaw and SocketAppender ## { #CVE-2023-26464 }
 
 CVE-2023-26464 [\[CVE json\]](./CVE-2023-26464.cve.json)
+
+_Last updated: 2023-04-20T07:55:37.341Z_
 
 ### Affected
 
@@ -250,6 +270,8 @@ hashmap or hashtable (depending on which logging component is in use) to be proc
 ## SQL injection when using ODBC appender ## { #CVE-2023-31038 }
 
 CVE-2023-31038 [\[CVE json\]](./CVE-2023-31038.cve.json)
+
+_Last updated: 2023-05-08T08:55:53.262Z_
 
 ### Affected
 

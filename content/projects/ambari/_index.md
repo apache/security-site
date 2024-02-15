@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-1936 [\[CVE json\]](./CVE-2020-1936.cve.json)
 
+_Last updated: 2021-03-02T08:54:00.947Z_
+
 ### Affected
 
 * Apache Ambari from Apache Ambari before 2.7.4
@@ -37,6 +39,8 @@ A cross-site scripting issue was found in Apache Ambari Views.  This was address
 ##  ## { #CVE-2020-13924 }
 
 CVE-2020-13924 [\[CVE json\]](./CVE-2020-13924.cve.json)
+
+_Last updated: 2021-03-17T09:01:22.529Z_
 
 ### Affected
 
@@ -59,6 +63,8 @@ In Apache Ambari versions 2.6.2.2 and earlier, malicious users can construct fil
 
 CVE-2022-42009 [\[CVE json\]](./CVE-2022-42009.cve.json)
 
+_Last updated: 2023-07-12T09:58:16.769Z_
+
 ### Affected
 
 * Apache Ambari from 2.7.0 through 2.7.6
@@ -79,6 +85,8 @@ SpringEL injection in the server agent in Apache Ambari version 2.7.0 to 2.7.6 a
 ## Allows authenticated metrics consumers to perform RCE ## { #CVE-2022-45855 }
 
 CVE-2022-45855 [\[CVE json\]](./CVE-2022-45855.cve.json)
+
+_Last updated: 2023-07-12T09:59:42.590Z_
 
 ### Affected
 

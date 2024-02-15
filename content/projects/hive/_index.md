@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-1926 [\[CVE json\]](./CVE-2020-1926.cve.json)
 
+_Last updated: 2021-03-16T12:44:51.635Z_
+
 ### Affected
 
 * Apache Hive from Apache Hive before 2.3.8
@@ -38,6 +40,8 @@ Apache Hive cookie signature verification used a non constant time comparison wh
 ## Apache Hive Security vulnerability in Hive with UDFs ## { #CVE-2021-34538 }
 
 CVE-2021-34538 [\[CVE json\]](./CVE-2021-34538.cve.json)
+
+_Last updated: 2022-07-16T07:05:22.225Z_
 
 ### Affected
 

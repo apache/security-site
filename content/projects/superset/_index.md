@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-27907 [\[CVE json\]](./CVE-2021-27907.cve.json)
 
+_Last updated: 2021-03-05T11:29:37.298Z_
+
 ### Affected
 
 * Apache Superset from Apache Superset  through 0.38.0
@@ -37,6 +39,8 @@ Apache Superset up to and including 0.38.0 allowed the creation of a Markdown co
 ## Apache Superset Open Redirect  ## { #CVE-2021-28125 }
 
 CVE-2021-28125 [\[CVE json\]](./CVE-2021-28125.cve.json)
+
+_Last updated: 2021-04-27T09:22:22.370Z_
 
 ### Affected
 
@@ -61,6 +65,8 @@ Apache Superset up to and including 1.0.1 allowed for the creation of an externa
 
 CVE-2021-32609 [\[CVE json\]](./CVE-2021-32609.cve.json)
 
+_Last updated: 2021-10-15T15:41:12.188Z_
+
 ### Affected
 
 * Apache Superset from unspecified through 1.1
@@ -81,6 +87,8 @@ Apache Superset up to and including 1.1 does not sanitize titles correctly on th
 ## Improper access to dataset metadata information  ## { #CVE-2021-37839 }
 
 CVE-2021-37839 [\[CVE json\]](./CVE-2021-37839.cve.json)
+
+_Last updated: 2022-07-06T12:31:11.639Z_
 
 ### Affected
 
@@ -103,6 +111,8 @@ Apache Superset up to 1.5.1 allowed for authenticated users to access metadata i
 
 CVE-2021-41971 [\[CVE json\]](./CVE-2021-41971.cve.json)
 
+_Last updated: 2021-10-15T15:41:52.156Z_
+
 ### Affected
 
 * Apache Superset from Apache Superset before 1.3.1
@@ -124,6 +134,8 @@ Apache Superset up to and including 1.3.0 when configured with ENABLE_TEMPLATE_P
 ## Credentials leak ## { #CVE-2021-41972 }
 
 CVE-2021-41972 [\[CVE json\]](./CVE-2021-41972.cve.json)
+
+_Last updated: 2021-11-12T15:41:43.888Z_
 
 ### Affected
 
@@ -148,6 +160,8 @@ Apache Superset up to and including 1.3.1 allowed for database connections passw
 
 CVE-2021-42250 [\[CVE json\]](./CVE-2021-42250.cve.json)
 
+_Last updated: 2021-11-17T15:04:59.176Z_
+
 ### Affected
 
 * Apache Superset from Apache Superset through 1.3.1
@@ -168,6 +182,8 @@ Improper output neutralization for Logs. A specific Apache Superset HTTP endpoin
 ## API sensitive information leak ## { #CVE-2021-44451 }
 
 CVE-2021-44451 [\[CVE json\]](./CVE-2021-44451.cve.json)
+
+_Last updated: 2022-02-01T11:29:10.593Z_
 
 ### Affected
 
@@ -190,6 +206,8 @@ Apache Superset up to and including 1.3.2 allowed for registered database connec
 
 CVE-2022-27479 [\[CVE json\]](./CVE-2022-27479.cve.json)
 
+_Last updated: 2022-04-13T19:02:41.528Z_
+
 ### Affected
 
 * Apache Superset from unspecified before 1.4.2
@@ -207,6 +225,8 @@ Apache Superset before 1.4.2 is vulnerable to SQL injection in chart data reques
 ## Dashboard metadata information leak ## { #CVE-2022-45438 }
 
 CVE-2022-45438 [\[CVE json\]](./CVE-2022-45438.cve.json)
+
+_Last updated: 2023-01-25T08:27:38.187Z_
 
 ### Affected
 
@@ -229,6 +249,8 @@ When explicitly enabling the feature flag DASHBOARD_CACHE (disabled by default),
 ## SQL injection vulnerability in adhoc clauses ## { #CVE-2022-41703 }
 
 CVE-2022-41703 [\[CVE json\]](./CVE-2022-41703.cve.json)
+
+_Last updated: 2023-04-11T14:58:41.701Z_
 
 ### Affected
 
@@ -253,6 +275,8 @@ A vulnerability in the SQL Alchemy connector of Apache Superset allows an authen
 
 CVE-2022-43717 [\[CVE json\]](./CVE-2022-43717.cve.json)
 
+_Last updated: 2023-02-02T10:14:19.691Z_
+
 ### Affected
 
 * Apache Superset from 2.0.0 before 2.0.1
@@ -275,6 +299,8 @@ Dashboard rendering does not sufficiently sanitize the content of markdown compo
 
 CVE-2022-43718 [\[CVE json\]](./CVE-2022-43718.cve.json)
 
+_Last updated: 2023-02-02T10:15:07.131Z_
+
 ### Affected
 
 * Apache Superset from 2.0.0 before 2.0.1
@@ -296,6 +322,8 @@ Upload data forms do not correctly render user input leading to possible XSS att
 ## Cross Site Request Forgery (CSRF) on accept, request access API ## { #CVE-2022-43719 }
 
 CVE-2022-43719 [\[CVE json\]](./CVE-2022-43719.cve.json)
+
+_Last updated: 2023-02-02T10:16:06.095Z_
 
 ### Affected
 
@@ -320,6 +348,8 @@ Two legacy REST API endpoints for approval and request access are vulnerable to 
 
 CVE-2022-43720 [\[CVE json\]](./CVE-2022-43720.cve.json)
 
+_Last updated: 2023-02-02T10:16:28.581Z_
+
 ### Affected
 
 * Apache Superset from 2.0.0 before 2.0.1
@@ -342,6 +372,8 @@ An authenticated attacker with write CSS template permissions can create a recor
 
 CVE-2022-43721 [\[CVE json\]](./CVE-2022-43721.cve.json)
 
+_Last updated: 2023-02-02T10:16:45.887Z_
+
 ### Affected
 
 * Apache Superset from 2.0.0 before 2.0.1
@@ -363,6 +395,8 @@ An authenticated attacker with update datasets permission could change a dataset
 ## Possible SSRF on import datasets ## { #CVE-2023-25504 }
 
 CVE-2023-25504 [\[CVE json\]](./CVE-2023-25504.cve.json)
+
+_Last updated: 2023-04-17T16:29:38.744Z_
 
 ### Affected
 
@@ -387,6 +421,8 @@ is deployed. This vulnerability exists&nbsp;</span>in Apache Superset versions u
 
 CVE-2023-27523 [\[CVE json\]](./CVE-2023-27523.cve.json)
 
+_Last updated: 2023-09-06T09:50:25.921Z_
+
 ### Affected
 
 * Apache Superset through 2.1.0
@@ -407,6 +443,8 @@ Improper data authorization check on Jinja templated queries in Apache Superset&
 ## Session validation vulnerability when using provided default SECRET_KEY ## { #CVE-2023-27524 }
 
 CVE-2023-27524 [\[CVE json\]](./CVE-2023-27524.cve.json)
+
+_Last updated: 2023-04-24T15:28:12.736Z_
 
 ### Affected
 
@@ -429,6 +467,8 @@ Session Validation attacks in Apache Superset versions up to and including 2.0.1
 
 CVE-2023-27525 [\[CVE json\]](./CVE-2023-27525.cve.json)
 
+_Last updated: 2023-04-17T16:27:58.172Z_
+
 ### Affected
 
 * Apache Superset through 2.0.1
@@ -450,6 +490,8 @@ An authenticated user with Gamma role authorization could have access to metadat
 
 CVE-2023-27526 [\[CVE json\]](./CVE-2023-27526.cve.json)
 
+_Last updated: 2023-09-06T09:49:27.778Z_
+
 ### Affected
 
 * Apache Superset through 2.1.0
@@ -470,6 +512,8 @@ A non Admin authenticated user could incorrectly create resources using the impo
 ## Database connection password leak ## { #CVE-2023-30776 }
 
 CVE-2023-30776 [\[CVE json\]](./CVE-2023-30776.cve.json)
+
+_Last updated: 2023-06-15T07:29:48.154Z_
 
 ### Affected
 
@@ -493,6 +537,8 @@ An authenticated user with specific data permissions could access database conne
 
 CVE-2023-32672 [\[CVE json\]](./CVE-2023-32672.cve.json)
 
+_Last updated: 2023-09-06T13:15:55.981Z_
+
 ### Affected
 
 * Apache Superset through 2.1.0
@@ -513,6 +559,8 @@ An Incorrect authorisation check in SQLLab in Apache Superset versions up to and
 ## Improper API permission for low privilege users ## { #CVE-2023-36387 }
 
 CVE-2023-36387 [\[CVE json\]](./CVE-2023-36387.cve.json)
+
+_Last updated: 2023-10-17T07:53:17.128Z_
 
 ### Affected
 
@@ -536,6 +584,8 @@ An improper default REST API permission for Gamma users in Apache Superset up to
 
 CVE-2023-36388 [\[CVE json\]](./CVE-2023-36388.cve.json)
 
+_Last updated: 2023-09-06T12:53:55.132Z_
+
 ### Affected
 
 * Apache Superset through 2.1.0
@@ -556,6 +606,8 @@ Improper REST API permission in Apache Superset up to and including 2.1.0 allows
 ## Metadata db write access can lead to remote code execution ## { #CVE-2023-37941 }
 
 CVE-2023-37941 [\[CVE json\]](./CVE-2023-37941.cve.json)
+
+_Last updated: 2023-09-29T16:22:05.089Z_
 
 ### Affected
 
@@ -582,6 +634,8 @@ process itself. Gaining access to that database should
 
 CVE-2023-39264 [\[CVE json\]](./CVE-2023-39264.cve.json)
 
+_Last updated: 2023-09-06T12:58:57.264Z_
+
 ### Affected
 
 * Apache Superset through 2.1.0
@@ -602,6 +656,8 @@ By default, stack traces for errors were enabled, which resulted in the exposure
 ## Possible Unauthorized Registration of SQLite Database Connections ## { #CVE-2023-39265 }
 
 CVE-2023-39265 [\[CVE json\]](./CVE-2023-39265.cve.json)
+
+_Last updated: 2023-09-06T13:00:09.688Z_
 
 ### Affected
 
@@ -624,6 +680,8 @@ Apache Superset would allow for SQLite database connections to be incorrectly re
 
 CVE-2023-40610 [\[CVE json\]](./CVE-2023-40610.cve.json)
 
+_Last updated: 2023-11-27T10:22:38.966Z_
+
 ### Affected
 
 * Apache Superset before 2.1.2
@@ -644,6 +702,8 @@ Improper authorization check and possible privilege escalation on Apache Superse
 ## Unnecessary read permissions within the Gamma role ## { #CVE-2023-42501 }
 
 CVE-2023-42501 [\[CVE json\]](./CVE-2023-42501.cve.json)
+
+_Last updated: 2023-11-27T10:23:45.368Z_
 
 ### Affected
 
@@ -666,6 +726,8 @@ Unnecessary read permissions within the Gamma role would allow authenticated use
 
 CVE-2023-42502 [\[CVE json\]](./CVE-2023-42502.cve.json)
 
+_Last updated: 2023-11-28T16:25:40.797Z_
+
 ### Affected
 
 * Apache Superset before 3.0.0
@@ -686,6 +748,8 @@ An authenticated attacker with update datasets permission could change a dataset
 ## Lack of rate limiting allows for possible denial of service ## { #CVE-2023-42504 }
 
 CVE-2023-42504 [\[CVE json\]](./CVE-2023-42504.cve.json)
+
+_Last updated: 2023-11-29T09:18:09.316Z_
 
 ### Affected
 
@@ -708,6 +772,8 @@ CVE-2023-42504 [\[CVE json\]](./CVE-2023-42504.cve.json)
 
 CVE-2023-42505 [\[CVE json\]](./CVE-2023-42505.cve.json)
 
+_Last updated: 2023-11-28T16:26:56.352Z_
+
 ### Affected
 
 * Apache Superset before 3.0.0
@@ -728,6 +794,8 @@ CVE-2023-42505 [\[CVE json\]](./CVE-2023-42505.cve.json)
 ## Allows for uncontrolled resource consumption via a ZIP bomb ## { #CVE-2023-46104 }
 
 CVE-2023-46104 [\[CVE json\]](./CVE-2023-46104.cve.json)
+
+_Last updated: 2023-12-19T09:30:51.642Z_
 
 ### Affected
 
@@ -751,6 +819,8 @@ Uncontrolled resource consumption can be triggered by authenticated attacker tha
 
 CVE-2023-49657 [\[CVE json\]](./CVE-2023-49657.cve.json)
 
+_Last updated: 2024-01-29T08:35:36.887Z_
+
 ### Affected
 
 * Apache Superset before 3.0.3
@@ -772,6 +842,8 @@ CVE-2023-49657 [\[CVE json\]](./CVE-2023-49657.cve.json)
 ## Privilege Escalation Vulnerability ## { #CVE-2023-49734 }
 
 CVE-2023-49734 [\[CVE json\]](./CVE-2023-49734.cve.json)
+
+_Last updated: 2023-12-19T09:52:11.087Z_
 
 ### Affected
 
@@ -795,6 +867,8 @@ An authenticated Gamma user has the ability to create a dashboard and add charts
 
 CVE-2023-49736 [\[CVE json\]](./CVE-2023-49736.cve.json)
 
+_Last updated: 2023-12-19T09:33:08.370Z_
+
 ### Affected
 
 * Apache Superset before 2.1.2
@@ -816,6 +890,8 @@ A where_in JINJA macro <span style="background-color: rgb(255, 255, 255);">allow
 ## Allows for uncontrolled resource consumption via a ZIP bomb (version range fix for CVE-2023-46104) ## { #CVE-2024-23952 }
 
 CVE-2024-23952 [\[CVE json\]](./CVE-2024-23952.cve.json)
+
+_Last updated: 2024-02-14T11:09:45.113Z_
 
 ### Affected
 

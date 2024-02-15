@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-23974 [\[CVE json\]](./CVE-2022-23974.cve.json)
 
+_Last updated: 2022-04-05T19:51:49.065Z_
+
 ### Affected
 
 * Apache Pinot from Apache Pinot through 0.9.3
@@ -39,6 +41,8 @@ Pinot release 0.10.0 fixes this. See https://docs.pinot.apache.org/basics/releas
 ## Pinot query endpoint and the realtime ingestion layer has a vulnerability in unprotected environments due to a groovy function support ## { #CVE-2022-26112 }
 
 CVE-2022-26112 [\[CVE json\]](./CVE-2022-26112.cve.json)
+
+_Last updated: 2022-09-23T03:13:43.429Z_
 
 ### Affected
 

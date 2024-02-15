@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-33191 [\[CVE json\]](./CVE-2021-33191.cve.json)
 
+_Last updated: 2021-08-24T11:14:05.278Z_
+
 ### Affected
 
 * Apache NiFi - MiNiFi C++ from 0.5.0 before Apache NiFi - MiNiFi C++*
@@ -35,6 +37,8 @@ command. Said command is then executed using the same privileges as the applicat
 ## Apache NiFi information disclosure by XXE ## { #CVE-2021-44145 }
 
 CVE-2021-44145 [\[CVE json\]](./CVE-2021-44145.cve.json)
+
+_Last updated: 2021-12-17T08:46:07.497Z_
 
 ### Affected
 
@@ -56,6 +60,8 @@ In the TransformXML processor of Apache NiFi before 1.15.1 an authenticated user
 ## Insufficiently protected credentials ## { #CVE-2022-26850 }
 
 CVE-2022-26850 [\[CVE json\]](./CVE-2022-26850.cve.json)
+
+_Last updated: 2022-04-06T20:48:13.265Z_
 
 ### Affected
 
@@ -80,6 +86,8 @@ NiFi 1.16.0 includes updates to replace the Login Identity Providers configurati
 ## Improper Restriction of XML External Entity References in Multiple Components ## { #CVE-2022-29265 }
 
 CVE-2022-29265 [\[CVE json\]](./CVE-2022-29265.cve.json)
+
+_Last updated: 2022-04-30T08:01:30.969Z_
 
 ### Affected
 
@@ -115,6 +123,8 @@ The resolution disables Document Type Declarations in the default configuration 
 
 CVE-2022-33140 [\[CVE json\]](./CVE-2022-33140.cve.json)
 
+_Last updated: 2022-06-15T14:21:09.085Z_
+
 ### Affected
 
 * Apache NiFi from up to 1.16.2 through 1.16.2
@@ -140,6 +150,8 @@ The resolution removes command formatting based on user-provided arguments.
 
 CVE-2023-22832 [\[CVE json\]](./CVE-2023-22832.cve.json)
 
+_Last updated: 2023-02-10T07:45:29.071Z_
+
 ### Affected
 
 * Apache NiFi from 1.2.0 through 1.19.1
@@ -161,6 +173,8 @@ CVE-2023-22832 [\[CVE json\]](./CVE-2023-22832.cve.json)
 ## Potential Deserialization of Untrusted Data with JNDI in JMS Components ## { #CVE-2023-34212 }
 
 CVE-2023-34212 [\[CVE json\]](./CVE-2023-34212.cve.json)
+
+_Last updated: 2023-06-12T15:10:30.889Z_
 
 ### Affected
 
@@ -185,6 +199,8 @@ CVE-2023-34212 [\[CVE json\]](./CVE-2023-34212.cve.json)
 
 CVE-2023-34468 [\[CVE json\]](./CVE-2023-34468.cve.json)
 
+_Last updated: 2023-06-12T15:09:17.702Z_
+
 ### Affected
 
 * Apache NiFi from 0.0.2 through 1.21.0
@@ -206,6 +222,8 @@ CVE-2023-34468 [\[CVE json\]](./CVE-2023-34468.cve.json)
 ## Potential Code Injection with Properties Referencing Remote Resources ## { #CVE-2023-36542 }
 
 CVE-2023-36542 [\[CVE json\]](./CVE-2023-36542.cve.json)
+
+_Last updated: 2023-07-29T07:12:37.941Z_
 
 ### Affected
 
@@ -229,6 +247,8 @@ Apache NiFi 0.0.2 through 1.22.0 include Processors and Controller Services that
 
 CVE-2023-40037 [\[CVE json\]](./CVE-2023-40037.cve.json)
 
+_Last updated: 2023-08-18T21:54:49.856Z_
+
 ### Affected
 
 * Apache NiFi from 1.21.0 through 1.23.0
@@ -251,6 +271,8 @@ Apache NiFi 1.21.0 through 1.23.0 support JDBC and JNDI JMS access in several Pr
 
 CVE-2023-41180 [\[CVE json\]](./CVE-2023-41180.cve.json)
 
+_Last updated: 2023-09-03T15:52:48.640Z_
+
 ### Affected
 
 * Apache NiFi MiNiFi C++ from 0.13.0 through 0.14.0
@@ -271,6 +293,8 @@ CVE-2023-41180 [\[CVE json\]](./CVE-2023-41180.cve.json)
 ## Improper Neutralization of Input in Advanced User Interface for Jolt ## { #CVE-2023-49145 }
 
 CVE-2023-49145 [\[CVE json\]](./CVE-2023-49145.cve.json)
+
+_Last updated: 2023-11-27T22:29:16.184Z_
 
 ### Affected
 

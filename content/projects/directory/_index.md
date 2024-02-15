@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-33900 [\[CVE json\]](./CVE-2021-33900.cve.json)
 
+_Last updated: 2021-07-26T07:00:11.196Z_
+
 ### Affected
 
 * Apache Directory Studio from unspecified through 2.0.0.v20210213-M16
@@ -37,6 +39,8 @@ While investigating DIRSTUDIO-1219 it was noticed that configured StartTLS encry
 ## LDAP Injection Vulnerability in Apache Kerby ## { #CVE-2023-25613 }
 
 CVE-2023-25613 [\[CVE json\]](./CVE-2023-25613.cve.json)
+
+_Last updated: 2024-01-18T09:14:01.669Z_
 
 ### Affected
 

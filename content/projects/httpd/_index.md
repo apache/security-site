@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-13950 [\[CVE json\]](./CVE-2020-13950.cve.json)
 
+_Last updated: 2021-06-10T07:00:03.831Z_
+
 ### Affected
 
 * Apache HTTP Server at 2.4.46
@@ -40,6 +42,8 @@ Apache HTTP Server versions 2.4.41 to 2.4.46 mod_proxy_http can be made to crash
 ## mod_auth_digest possible stack overflow by one nul byte ## { #CVE-2020-35452 }
 
 CVE-2020-35452 [\[CVE json\]](./CVE-2020-35452.cve.json)
+
+_Last updated: 2021-06-10T07:01:23.279Z_
 
 ### Affected
 
@@ -91,6 +95,8 @@ Apache HTTP Server versions 2.4.0 to 2.4.46 A specially crafted Digest nonce can
 
 CVE-2019-17567 [\[CVE json\]](./CVE-2019-17567.cve.json)
 
+_Last updated: 2021-06-16T13:33:49.334Z_
+
 ### Affected
 
 * Apache HTTP Server at 2.4.46
@@ -135,6 +141,8 @@ Apache HTTP Server versions 2.4.6 to 2.4.46 mod_proxy_wstunnel configured on an 
 ## Improper Handling of Insufficient Privileges ## { #CVE-2020-13938 }
 
 CVE-2020-13938 [\[CVE json\]](./CVE-2020-13938.cve.json)
+
+_Last updated: 2021-06-10T06:59:41.634Z_
 
 ### Affected
 
@@ -186,6 +194,8 @@ Apache HTTP Server versions 2.4.0 to 2.4.46 Unprivileged local users can stop ht
 
 CVE-2021-26690 [\[CVE json\]](./CVE-2021-26690.cve.json)
 
+_Last updated: 2021-06-10T07:01:40.445Z_
+
 ### Affected
 
 * Apache HTTP Server at 2.4.46
@@ -235,6 +245,8 @@ Apache HTTP Server versions 2.4.0 to 2.4.46 A specially crafted Cookie header ha
 ## Apache HTTP Server mod_session response handling heap overflow ## { #CVE-2021-26691 }
 
 CVE-2021-26691 [\[CVE json\]](./CVE-2021-26691.cve.json)
+
+_Last updated: 2021-06-10T07:01:56.009Z_
 
 ### Affected
 
@@ -286,6 +298,8 @@ In Apache HTTP Server versions 2.4.0 to 2.4.46 a specially crafted SessionHeader
 
 CVE-2021-30641 [\[CVE json\]](./CVE-2021-30641.cve.json)
 
+_Last updated: 2021-06-10T07:02:16.829Z_
+
 ### Affected
 
 * Apache HTTP Server at 2.4.46
@@ -310,6 +324,8 @@ Apache HTTP Server versions 2.4.39 to 2.4.46 Unexpected matching behavior with '
 ## NULL pointer dereference on specially crafted HTTP/2 request ## { #CVE-2021-31618 }
 
 CVE-2021-31618 [\[CVE json\]](./CVE-2021-31618.cve.json)
+
+_Last updated: 2021-06-15T08:48:10.111Z_
 
 ### Affected
 
@@ -337,6 +353,8 @@ This issue affected  mod_http2 1.15.17 and Apache HTTP Server version 2.4.47 onl
 
 CVE-2021-33193 [\[CVE json\]](./CVE-2021-33193.cve.json)
 
+_Last updated: 2021-09-16T12:49:38.115Z_
+
 ### Affected
 
 * Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.48
@@ -360,6 +378,8 @@ This issue affects Apache HTTP Server 2.4.17 to 2.4.48.
 ## NULL pointer dereference in httpd core ## { #CVE-2021-34798 }
 
 CVE-2021-34798 [\[CVE json\]](./CVE-2021-34798.cve.json)
+
+_Last updated: 2021-09-16T14:31:21.975Z_
 
 ### Affected
 
@@ -385,6 +405,8 @@ This issue affects Apache HTTP Server 2.4.48 and earlier.
 
 CVE-2021-36160 [\[CVE json\]](./CVE-2021-36160.cve.json)
 
+_Last updated: 2021-09-16T14:33:49.077Z_
+
 ### Affected
 
 * Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.48
@@ -407,6 +429,8 @@ This issue affects Apache HTTP Server versions 2.4.30 to 2.4.48 (inclusive).
 ## ap_escape_quotes buffer overflow ## { #CVE-2021-39275 }
 
 CVE-2021-39275 [\[CVE json\]](./CVE-2021-39275.cve.json)
+
+_Last updated: 2021-09-16T14:35:11.663Z_
 
 ### Affected
 
@@ -432,6 +456,8 @@ This issue affects Apache HTTP Server 2.4.48 and earlier.
 
 CVE-2021-40438 [\[CVE json\]](./CVE-2021-40438.cve.json)
 
+_Last updated: 2021-09-16T14:37:10.201Z_
+
 ### Affected
 
 * Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.48
@@ -454,6 +480,8 @@ This issue affects Apache HTTP Server 2.4.48 and earlier.
 ## null pointer dereference in h2 fuzzing ## { #CVE-2021-41524 }
 
 CVE-2021-41524 [\[CVE json\]](./CVE-2021-41524.cve.json)
+
+_Last updated: 2021-10-05T11:31:17.600Z_
 
 ### Affected
 
@@ -479,6 +507,8 @@ The vulnerability was recently introduced in version 2.4.49. No exploit is known
 
 CVE-2021-41773 [\[CVE json\]](./CVE-2021-41773.cve.json)
 
+_Last updated: 2021-10-11T14:15:40.313Z_
+
 ### Affected
 
 * Apache HTTP Server at Apache HTTP Server 2.4 2.4.49
@@ -501,6 +531,8 @@ This issue only affects Apache 2.4.49 and not earlier versions.
 ## Path Traversal and Remote Code Execution in Apache HTTP Server 2.4.49 and 2.4.50 (incomplete fix of CVE-2021-41773) ## { #CVE-2021-42013 }
 
 CVE-2021-42013 [\[CVE json\]](./CVE-2021-42013.cve.json)
+
+_Last updated: 2021-10-11T17:31:43.275Z_
 
 ### Affected
 
@@ -531,6 +563,8 @@ This issue only affects Apache 2.4.49 and Apache 2.4.50 and not earlier versions
 
 CVE-2021-44224 [\[CVE json\]](./CVE-2021-44224.cve.json)
 
+_Last updated: 2021-12-20T11:06:17.917Z_
+
 ### Affected
 
 * Apache HTTP Server from 2.4.7 before Apache HTTP Server 2.4*
@@ -554,6 +588,8 @@ This issue affects Apache HTTP Server 2.4.7 up to 2.4.51 (included).
 ## Possible buffer overflow when parsing multipart content in mod_lua of Apache HTTP Server 2.4.51 and earlier ## { #CVE-2021-44790 }
 
 CVE-2021-44790 [\[CVE json\]](./CVE-2021-44790.cve.json)
+
+_Last updated: 2021-12-20T11:07:20.265Z_
 
 ### Affected
 
@@ -580,6 +616,8 @@ This issue affects Apache HTTP Server 2.4.51 and earlier.
 
 CVE-2022-22719 [\[CVE json\]](./CVE-2022-22719.cve.json)
 
+_Last updated: 2022-03-14T10:10:30.113Z_
+
 ### Affected
 
 * Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.52
@@ -603,6 +641,8 @@ This issue affects Apache HTTP Server 2.4.52 and earlier.
 
 CVE-2022-22720 [\[CVE json\]](./CVE-2022-22720.cve.json)
 
+_Last updated: 2022-03-14T10:09:48.647Z_
+
 ### Affected
 
 * Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.52
@@ -623,6 +663,8 @@ Apache HTTP Server 2.4.52 and earlier fails to close inbound connection when err
 ## core: Possible buffer overflow with very large or unlimited LimitXMLRequestBody ## { #CVE-2022-22721 }
 
 CVE-2022-22721 [\[CVE json\]](./CVE-2022-22721.cve.json)
+
+_Last updated: 2022-03-14T10:08:56.550Z_
 
 ### Affected
 
@@ -647,6 +689,8 @@ This issue affects Apache HTTP Server 2.4.52 and earlier.
 
 CVE-2022-22728 [\[CVE json\]](./CVE-2022-22728.cve.json)
 
+_Last updated: 2022-08-25T14:13:38.823Z_
+
 ### Affected
 
 * libapreq2 from unspecified through 2.16
@@ -663,6 +707,8 @@ A flaw in Apache libapreq2 versions 2.16 and earlier could cause a buffer overfl
 ## mod_sed: Read/write beyond bounds ## { #CVE-2022-23943 }
 
 CVE-2022-23943 [\[CVE json\]](./CVE-2022-23943.cve.json)
+
+_Last updated: 2022-03-14T10:07:36.342Z_
 
 ### Affected
 
@@ -687,6 +733,8 @@ This issue affects Apache HTTP Server 2.4 version 2.4.52 and prior versions.
 
 CVE-2022-26377 [\[CVE json\]](./CVE-2022-26377.cve.json)
 
+_Last updated: 2022-06-08T09:44:32.521Z_
+
 ### Affected
 
 * Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.53
@@ -708,6 +756,8 @@ Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling') vulnerab
 
 CVE-2022-28330 [\[CVE json\]](./CVE-2022-28330.cve.json)
 
+_Last updated: 2022-06-08T09:44:43.156Z_
+
 ### Affected
 
 * Apache HTTP Server from Apache HTTP Server through 2.4.53
@@ -728,6 +778,8 @@ Apache HTTP Server 2.4.53 and earlier on Windows may read beyond bounds when con
 ## read beyond bounds via ap_rwrite()  ## { #CVE-2022-28614 }
 
 CVE-2022-28614 [\[CVE json\]](./CVE-2022-28614.cve.json)
+
+_Last updated: 2022-06-10T17:43:34.235Z_
 
 ### Affected
 
@@ -752,6 +804,8 @@ Modules compiled and distributed separately from Apache HTTP Server that use the
 
 CVE-2022-28615 [\[CVE json\]](./CVE-2022-28615.cve.json)
 
+_Last updated: 2022-06-08T09:45:23.244Z_
+
 ### Affected
 
 * Apache HTTP Server from Apache HTTP Server through 2.4.53
@@ -772,6 +826,8 @@ Apache HTTP Server 2.4.53 and earlier may crash or disclose information due to a
 ## Denial of service in mod_lua r:parsebody ## { #CVE-2022-29404 }
 
 CVE-2022-29404 [\[CVE json\]](./CVE-2022-29404.cve.json)
+
+_Last updated: 2022-06-08T09:45:33.924Z_
 
 ### Affected
 
@@ -794,6 +850,8 @@ In Apache HTTP Server 2.4.53 and earlier, a malicious request to a lua script th
 
 CVE-2022-30522 [\[CVE json\]](./CVE-2022-30522.cve.json)
 
+_Last updated: 2022-06-08T09:45:43.331Z_
+
 ### Affected
 
 * Apache HTTP Server at 2.4.53
@@ -815,6 +873,8 @@ If Apache HTTP Server 2.4.53 is configured to do transformations with mod_sed in
 
 CVE-2022-30556 [\[CVE json\]](./CVE-2022-30556.cve.json)
 
+_Last updated: 2022-06-08T09:45:55.863Z_
+
 ### Affected
 
 * Apache HTTP Server from unspecified through 2.4.53
@@ -835,6 +895,8 @@ Apache HTTP Server 2.4.53 and earlier may return lengths to applications calling
 ## mod_proxy X-Forwarded-For dropped by hop-by-hop mechanism ## { #CVE-2022-31813 }
 
 CVE-2022-31813 [\[CVE json\]](./CVE-2022-31813.cve.json)
+
+_Last updated: 2022-06-08T09:46:07.679Z_
 
 ### Affected
 
@@ -858,6 +920,8 @@ This may be used to bypass IP based authentication on the origin server/applicat
 
 CVE-2022-37436 [\[CVE json\]](./CVE-2022-37436.cve.json)
 
+_Last updated: 2023-01-17T19:13:19.999Z_
+
 ### Affected
 
 * Apache HTTP Server before 2.4.55
@@ -878,6 +942,8 @@ Prior to Apache HTTP Server 2.4.55, a malicious backend can cause the response h
 ## mod_proxy_ajp Possible request smuggling ## { #CVE-2022-36760 }
 
 CVE-2022-36760 [\[CVE json\]](./CVE-2022-36760.cve.json)
+
+_Last updated: 2023-01-17T19:12:02.488Z_
 
 ### Affected
 
@@ -900,6 +966,8 @@ Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling') vulnerab
 
 CVE-2006-20001 [\[CVE json\]](./CVE-2006-20001.cve.json)
 
+_Last updated: 2023-01-17T19:07:17.134Z_
+
 ### Affected
 
 * Apache HTTP Server from 2.4 through 2.4.54
@@ -916,6 +984,8 @@ A carefully crafted If: request header can cause a memory read, or write of a si
 ## HTTP request splitting with mod_rewrite and mod_proxy ## { #CVE-2023-25690 }
 
 CVE-2023-25690 [\[CVE json\]](./CVE-2023-25690.cve.json)
+
+_Last updated: 2023-03-07T15:08:45.400Z_
 
 ### Affected
 
@@ -942,6 +1012,8 @@ substitution. For example, something like:</div><div><br></div><div>RewriteEngin
 
 CVE-2023-27522 [\[CVE json\]](./CVE-2023-27522.cve.json)
 
+_Last updated: 2023-03-07T15:09:26.534Z_
+
 ### Affected
 
 * Apache HTTP Server from 2.4.30 through 2.4.55
@@ -963,6 +1035,8 @@ CVE-2023-27522 [\[CVE json\]](./CVE-2023-27522.cve.json)
 
 CVE-2023-31122 [\[CVE json\]](./CVE-2023-31122.cve.json)
 
+_Last updated: 2023-10-23T06:51:56.755Z_
+
 ### Affected
 
 * Apache HTTP Server through 2.4.57
@@ -983,6 +1057,8 @@ Out-of-bounds Read vulnerability in mod_macro of Apache HTTP Server.<p>This issu
 ## DoS in HTTP/2 with initial windows size 0 ## { #CVE-2023-43622 }
 
 CVE-2023-43622 [\[CVE json\]](./CVE-2023-43622.cve.json)
+
+_Last updated: 2023-10-23T06:50:49.104Z_
 
 ### Affected
 
@@ -1007,6 +1083,8 @@ An attacker, opening a HTTP/2 connection with an initial window size of 0, was a
 ## HTTP/2 stream memory not reclaimed right away on RST ## { #CVE-2023-45802 }
 
 CVE-2023-45802 [\[CVE json\]](./CVE-2023-45802.cve.json)
+
+_Last updated: 2023-10-23T06:50:19.803Z_
 
 ### Affected
 

@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-40369 [\[CVE json\]](./CVE-2021-40369.cve.json)
 
+_Last updated: 2021-11-23T11:34:08.535Z_
+
 ### Affected
 
 * Apache JSPWiki from Apache JSPWiki through 2.11.0.M8
@@ -38,6 +40,8 @@ A carefully crafted plugin link invocation could trigger an XSS vulnerability on
 ## Arbitrary file deletion on logout ## { #CVE-2021-44140 }
 
 CVE-2021-44140 [\[CVE json\]](./CVE-2021-44140.cve.json)
+
+_Last updated: 2021-11-23T11:34:55.319Z_
 
 ### Affected
 
@@ -61,6 +65,8 @@ Remote attackers may delete arbitrary files in a system hosting a JSPWiki instan
 
 CVE-2022-24947 [\[CVE json\]](./CVE-2022-24947.cve.json)
 
+_Last updated: 2022-02-25T08:22:54.524Z_
+
 ### Affected
 
 * Apache JSPWiki at Apache JSPWiki up to 2.11.1 
@@ -81,6 +87,8 @@ Apache JSPWiki user preferences form is vulnerable to CSRF attacks, which can le
 ## Apache JSPWiki Cross-site scripting vulnerability on User Preferences screen ## { #CVE-2022-24948 }
 
 CVE-2022-24948 [\[CVE json\]](./CVE-2022-24948.cve.json)
+
+_Last updated: 2022-02-25T08:23:32.881Z_
 
 ### Affected
 
@@ -103,6 +111,8 @@ A carefully crafted user preferences for submission could trigger an XSS vulnera
 
 CVE-2022-27166 [\[CVE json\]](./CVE-2022-27166.cve.json)
 
+_Last updated: 2022-08-04T06:09:11.060Z_
+
 ### Affected
 
 * Apache JSPWiki from Apache JSPWiki through Apache JSPWiki up to 2.11.2
@@ -123,6 +133,8 @@ A carefully crafted request on XHRHtml2Markup.jsp could trigger an XSS vulnerabi
 ## Apache JSPWiki Cross-site scripting vulnerability on AJAXPreview.jsp ## { #CVE-2022-28730 }
 
 CVE-2022-28730 [\[CVE json\]](./CVE-2022-28730.cve.json)
+
+_Last updated: 2022-08-04T06:07:39.234Z_
 
 ### Affected
 
@@ -149,6 +161,8 @@ Apache JSPWiki users should upgrade to 2.11.3 or later.
 
 CVE-2022-28731 [\[CVE json\]](./CVE-2022-28731.cve.json)
 
+_Last updated: 2022-08-04T06:11:26.241Z_
+
 ### Affected
 
 * Apache JSPWiki from Apache JSPWiki through Apache JSPWiki up to 2.11.2
@@ -169,6 +183,8 @@ A carefully crafted request on UserPreferences.jsp could trigger an CSRF vulnera
 ## Apache JSPWiki Cross-site scripting vulnerability on WeblogPlugin ## { #CVE-2022-28732 }
 
 CVE-2022-28732 [\[CVE json\]](./CVE-2022-28732.cve.json)
+
+_Last updated: 2022-08-04T06:09:44.097Z_
 
 ### Affected
 
@@ -191,6 +207,8 @@ A carefully crafted request on WeblogPlugin could trigger an XSS vulnerability o
 
 CVE-2022-34158 [\[CVE json\]](./CVE-2022-34158.cve.json)
 
+_Last updated: 2022-08-04T06:10:42.676Z_
+
 ### Affected
 
 * Apache JSPWiki from unspecified through Apache JSPWiki up to 2.11.2
@@ -211,6 +229,8 @@ A carefully crafted invocation on the Image plugin could trigger an CSRF vulnera
 ## XSS Injection points in several plugins ## { #CVE-2022-46907 }
 
 CVE-2022-46907 [\[CVE json\]](./CVE-2022-46907.cve.json)
+
+_Last updated: 2023-05-25T06:58:08.238Z_
 
 ### Affected
 

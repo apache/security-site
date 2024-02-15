@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-17532 [\[CVE json\]](./CVE-2020-17532.cve.json)
 
+_Last updated: 2021-01-25T09:21:23.271Z_
+
 ### Affected
 
 * Apache ServiceComb-Java-Chassis at Apache ServiceComb-Java-Chassis 2.x 2.0.0 to 2.1.3
@@ -36,6 +38,8 @@ The problem happens in versions between 2.0.0 ~ 2.1.3 and fixed in Apache Servic
 
 CVE-2021-21501 [\[CVE json\]](./CVE-2021-21501.cve.json)
 
+_Last updated: 2021-08-10T09:15:53.939Z_
+
 ### Affected
 
 * Apache ServiceComb from Apache ServiceComb-Service-Center 1.x before 2.0.0
@@ -52,6 +56,8 @@ Improper configuration will cause ServiceComb ServiceCenter Directory Traversal 
 ## attacker can query all environment variables of the service-center server ## { #CVE-2023-44312 }
 
 CVE-2023-44312 [\[CVE json\]](./CVE-2023-44312.cve.json)
+
+_Last updated: 2024-01-31T08:49:10.176Z_
 
 ### Affected
 
@@ -77,6 +83,8 @@ Apache ServiceComb Service-Center
 ## attacker can perform SSRF through the frontend API ## { #CVE-2023-44313 }
 
 CVE-2023-44313 [\[CVE json\]](./CVE-2023-44313.cve.json)
+
+_Last updated: 2024-01-31T08:49:43.083Z_
 
 ### Affected
 

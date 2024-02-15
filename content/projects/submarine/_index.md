@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2023-37924 [\[CVE json\]](./CVE-2023-37924.cve.json)
 
+_Last updated: 2023-11-22T09:19:18.697Z_
+
 ### Affected
 
 * Apache Submarine from 0.7.0 before 0.8.0
@@ -39,6 +41,8 @@ Apache Software Foundation Apache Submarine has an SQL injection vulnerability w
 ## Fix CVE-2022-1471 SnakeYaml unsafe deserialization ## { #CVE-2023-46302 }
 
 CVE-2023-46302 [\[CVE json\]](./CVE-2023-46302.cve.json)
+
+_Last updated: 2023-11-20T08:46:49.527Z_
 
 ### Affected
 

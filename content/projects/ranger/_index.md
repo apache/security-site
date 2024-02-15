@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-45048 [\[CVE json\]](./CVE-2022-45048.cve.json)
 
+_Last updated: 2023-05-05T07:50:14.288Z_
+
 ### Affected
 
 * Apache Ranger at 2.3.0
@@ -37,6 +39,8 @@ CVE-2022-45048 [\[CVE json\]](./CVE-2022-45048.cve.json)
 ## Permissions problem in the Apache Ranger Hive Plugin ## { #CVE-2021-40331 }
 
 CVE-2021-40331 [\[CVE json\]](./CVE-2021-40331.cve.json)
+
+_Last updated: 2023-05-05T07:55:02.663Z_
 
 ### Affected
 

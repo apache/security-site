@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-24294 [\[CVE json\]](./CVE-2022-24294.cve.json)
 
+_Last updated: 2022-07-24T17:40:13.807Z_
+
 ### Affected
 
 * Apache MXNet from unspecified before 1.9.1

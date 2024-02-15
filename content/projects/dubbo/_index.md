@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-11995 [\[CVE json\]](./CVE-2020-11995.cve.json)
 
+_Last updated: 2021-01-11T09:22:59.963Z_
+
 ### Affected
 
 * Apache Dubbo from Apache Dubbo before 2.6.9
@@ -33,6 +35,8 @@ A deserialization vulnerability existed in dubbo 2.7.5 and its earlier versions,
 ## Open Redirect or SSRF vulnerability usage of parseURL ## { #CVE-2021-25640 }
 
 CVE-2021-25640 [\[CVE json\]](./CVE-2021-25640.cve.json)
+
+_Last updated: 2021-05-31T07:23:34.814Z_
 
 ### Affected
 
@@ -56,6 +60,8 @@ In Apache Dubbo prior to 2.6.9 and 2.7.9, the usage of parseURL method will lead
 
 CVE-2021-25641 [\[CVE json\]](./CVE-2021-25641.cve.json)
 
+_Last updated: 2021-05-29T07:21:43.205Z_
+
 ### Affected
 
 * Apache Dubbo from Apache Dubbo 2.7.x before 2.7.8
@@ -73,6 +79,8 @@ Each Apache Dubbo server will set a serialization id to tell the clients which s
 ## Apache Dubbo Pre-auth RCE via Java deserialization in the Generic filter ## { #CVE-2021-30179 }
 
 CVE-2021-30179 [\[CVE json\]](./CVE-2021-30179.cve.json)
+
+_Last updated: 2021-05-31T07:20:28.079Z_
 
 ### Affected
 
@@ -107,6 +115,8 @@ An attacker can control this RPC attachment and set it to nativejava to force th
 
 CVE-2021-30180 [\[CVE json\]](./CVE-2021-30180.cve.json)
 
+_Last updated: 2021-05-31T07:21:55.266Z_
+
 ### Affected
 
 * Apache Dubbo from Apache Dubbo 2.7.x before 2.7.9
@@ -128,6 +138,8 @@ Apache Dubbo prior to 2.7.9 support Tag routing which will enable a customer to 
 
 CVE-2021-30181 [\[CVE json\]](./CVE-2021-30181.cve.json)
 
+_Last updated: 2021-05-29T07:19:20.347Z_
+
 ### Affected
 
 * Apache Dubbo from Apache Dubbo 2.7.x before 2.7.9
@@ -146,6 +158,8 @@ Apache Dubbo prior to 2.6.9 and 2.7.9 supports Script routing which will enable 
 
 CVE-2021-36161 [\[CVE json\]](./CVE-2021-36161.cve.json)
 
+_Last updated: 2021-09-09T07:39:17.113Z_
+
 ### Affected
 
 * Apache Dubbo from Apache Dubbo 2.7.x through 2.7.12
@@ -162,6 +176,8 @@ Some component in Dubbo will try to print the formated string of the input argum
 ## Unprotected yaml deserialization cause RCE ## { #CVE-2021-36162 }
 
 CVE-2021-36162 [\[CVE json\]](./CVE-2021-36162.cve.json)
+
+_Last updated: 2021-09-07T09:20:04.687Z_
 
 ### Affected
 
@@ -183,6 +199,8 @@ When parsing these YAML rules, Dubbo customers will use SnakeYAML library to loa
 
 CVE-2021-36163 [\[CVE json\]](./CVE-2021-36163.cve.json)
 
+_Last updated: 2021-09-07T09:21:20.469Z_
+
 ### Affected
 
 * Apache Dubbo from Apache Dubbo 2.7.x through 2.7.12
@@ -203,6 +221,8 @@ In addition, the generic service is always exposed and therefore attackers do no
 
 CVE-2021-37579 [\[CVE json\]](./CVE-2021-37579.cve.json)
 
+_Last updated: 2021-09-09T07:40:35.954Z_
+
 ### Affected
 
 * Apache Dubbo from Apache Dubbo 2.7.x through 2.7.12
@@ -222,6 +242,8 @@ Apache Dubbo 2.7.13, 3.0.2 fixed this issue by quickly fail when any unrecognize
 ## Dubbo Hessian cause RCE when parse error ## { #CVE-2021-43297 }
 
 CVE-2021-43297 [\[CVE json\]](./CVE-2021-43297.cve.json)
+
+_Last updated: 2022-01-10T06:23:23.358Z_
 
 ### Affected
 
@@ -246,6 +268,8 @@ A deserialization vulnerability existed in dubbo hessian-lite  3.2.11 and its ea
 
 CVE-2022-24969 [\[CVE json\]](./CVE-2022-24969.cve.json)
 
+_Last updated: 2022-06-06T21:43:07.547Z_
+
 ### Affected
 
 * Apache Dubbo from Apache Dubbo 2.7.x before 2.7.15
@@ -265,6 +289,8 @@ bypass CVE-2021-25640
 ## Apache Dubbo Hession Deserialization Vulnerability Gadgets Bypass ## { #CVE-2022-39198 }
 
 CVE-2022-39198 [\[CVE json\]](./CVE-2022-39198.cve.json)
+
+_Last updated: 2022-10-18T18:50:42.549Z_
 
 ### Affected
 
@@ -291,6 +317,8 @@ This issue affects Apache Dubbo 2.7.x version 2.7.17 and prior versions; Apache 
 
 CVE-2023-23638 [\[CVE json\]](./CVE-2023-23638.cve.json)
 
+_Last updated: 2023-03-08T08:51:34.345Z_
+
 ### Affected
 
 * Apache Dubbo from Apache Dubbo 2.7.x through 2.7.21
@@ -314,6 +342,8 @@ A deserialization vulnerability existed when dubbo generic invoke, which could l
 
 CVE-2023-29234 [\[CVE json\]](./CVE-2023-29234.cve.json)
 
+_Last updated: 2023-12-15T05:49:00.876Z_
+
 ### Affected
 
 * Apache Dubbo from 3.1.0 through 3.1.10
@@ -335,6 +365,8 @@ A deserialization vulnerability existed when decode a&nbsp;malicious package.<p>
 ## Bypass deny serialize list check in Apache Dubbo ## { #CVE-2023-46279 }
 
 CVE-2023-46279 [\[CVE json\]](./CVE-2023-46279.cve.json)
+
+_Last updated: 2023-12-15T05:50:43.130Z_
 
 ### Affected
 

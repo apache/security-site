@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2019-10095 [\[CVE json\]](./CVE-2019-10095.cve.json)
 
+_Last updated: 2022-12-08T11:51:05.587Z_
+
 ### Affected
 
 * Apache Zeppelin from Apache Zeppelin through 0.9.0
@@ -37,6 +39,8 @@ bash command injection vulnerability in Apache Zeppelin allows an attacker to in
 ## Notebook permissions bypass ## { #CVE-2020-13929 }
 
 CVE-2020-13929 [\[CVE json\]](./CVE-2020-13929.cve.json)
+
+_Last updated: 2021-09-02T16:10:15.351Z_
 
 ### Affected
 
@@ -59,6 +63,8 @@ Authentication bypass vulnerability in Apache Zeppelin allows an attacker to byp
 
 CVE-2021-27578 [\[CVE json\]](./CVE-2021-27578.cve.json)
 
+_Last updated: 2021-09-02T16:11:07.660Z_
+
 ### Affected
 
 * Apache Zeppelin from Apache Zeppelin before 0.9.0
@@ -80,6 +86,8 @@ Cross Site Scripting vulnerability in markdown interpreter of Apache Zeppelin al
 
 CVE-2021-28655 [\[CVE json\]](./CVE-2021-28655.cve.json)
 
+_Last updated: 2022-12-20T09:49:02.814Z_
+
 ### Affected
 
 * Apache Zeppelin through 0.9.0
@@ -100,6 +108,8 @@ The improper Input Validation vulnerability in "”Move folder to Trash” featu
 ## Stored XSS in note permissions ## { #CVE-2022-46870 }
 
 CVE-2022-46870 [\[CVE json\]](./CVE-2022-46870.cve.json)
+
+_Last updated: 2022-12-16T12:54:56.815Z_
 
 ### Affected
 

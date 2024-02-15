@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-17525 [\[CVE json\]](./CVE-2020-17525.cve.json)
 
+_Last updated: 2021-03-17T09:12:33.507Z_
+
 ### Affected
 
 * Apache Subversion at mod_authz_svn 1.10.7
@@ -39,6 +41,8 @@ Subversion's mod_authz_svn module will crash if the server is using in-repositor
 
 CVE-2021-28544 [\[CVE json\]](./CVE-2021-28544.cve.json)
 
+_Last updated: 2022-04-12T17:46:18.140Z_
+
 ### Affected
 
 * Apache Subversion at 1.10.0 to 1.14.1
@@ -59,6 +63,8 @@ Apache Subversion SVN authz protected copyfrom paths regression  Subversion serv
 ## Apache Subversion mod_dav_svn is vulnerable to memory corruption ## { #CVE-2022-24070 }
 
 CVE-2022-24070 [\[CVE json\]](./CVE-2022-24070.cve.json)
+
+_Last updated: 2022-04-12T17:46:14.441Z_
 
 ### Affected
 

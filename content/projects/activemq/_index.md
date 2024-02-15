@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-13947 [\[CVE json\]](./CVE-2020-13947.cve.json)
 
+_Last updated: 2021-02-10T09:16:00.641Z_
+
 ### Affected
 
 * Apache ActiveMQ from Apache ActiveMQ before 5.15.13
@@ -33,6 +35,8 @@ An instance of a cross-site scripting vulnerability was identified to be present
 ## ActiveMQ: LDAP-Authentication does not verify passwords on servers with anonymous bind ## { #CVE-2021-26117 }
 
 CVE-2021-26117 [\[CVE json\]](./CVE-2021-26117.cve.json)
+
+_Last updated: 2021-01-27T18:47:20.605Z_
 
 ### Affected
 
@@ -56,6 +60,8 @@ The optional ActiveMQ LDAP login module can be configured to use anonymous acces
 
 CVE-2021-26118 [\[CVE json\]](./CVE-2021-26118.cve.json)
 
+_Last updated: 2021-01-27T18:47:25.710Z_
+
 ### Affected
 
 * Apache ActiveMQ Artemis from unspecified before 2.16.0
@@ -77,6 +83,8 @@ While investigating ARTEMIS-2964 it was found that the creation of advisory mess
 
 CVE-2022-23913 [\[CVE json\]](./CVE-2022-23913.cve.json)
 
+_Last updated: 2022-02-04T08:26:48.236Z_
+
 ### Affected
 
 * Apache ActiveMQ Artemis from 2.19.0 before 2.20.0
@@ -93,6 +101,8 @@ In Apache ActiveMQ Artemis prior to 2.20.0 or 2.19.1, an attacker could partiall
 ## HTML Injection in ActiveMQ Artemis Web Console ## { #CVE-2022-35278 }
 
 CVE-2022-35278 [\[CVE json\]](./CVE-2022-35278.cve.json)
+
+_Last updated: 2022-08-18T07:52:49.472Z_
 
 ### Affected
 
@@ -114,6 +124,8 @@ In Apache ActiveMQ Artemis prior to 2.24.0, an attacker could show malicious con
 ## Deserialization vulnerability on Jolokia that allows authenticated users to perform RCE ## { #CVE-2022-41678 }
 
 CVE-2022-41678 [\[CVE json\]](./CVE-2022-41678.cve.json)
+
+_Last updated: 2023-11-28T15:08:35.668Z_
 
 ### Affected
 
@@ -157,6 +169,8 @@ jdk.management.jfr.FlightRecorderMXBeanImpl which exists on Java version above 1
 ## Unbounded deserialization causes ActiveMQ to be vulnerable to a remote code execution (RCE) attack ## { #CVE-2023-46604 }
 
 CVE-2023-46604 [\[CVE json\]](./CVE-2023-46604.cve.json)
+
+_Last updated: 2023-11-28T15:02:26.708Z_
 
 ### Affected
 

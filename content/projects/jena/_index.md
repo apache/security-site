@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-33192 [\[CVE json\]](./CVE-2021-33192.cve.json)
 
+_Last updated: 2021-07-05T09:09:33.148Z_
+
 ### Affected
 
 * Apache Jena Fuseki at Apache Jena Fuseki2 2.0.0 to 4.0.0
@@ -38,6 +40,8 @@ A vulnerability in the HTML pages of Apache Jena Fuseki allows an attacker to ex
 
 CVE-2021-39239 [\[CVE json\]](./CVE-2021-39239.cve.json)
 
+_Last updated: 2021-09-16T14:16:06.658Z_
+
 ### Affected
 
 * Apache Jena from unspecified before 4.1.0
@@ -54,6 +58,8 @@ A vulnerability in XML processing in Apache Jena, in versions up to 4.1.0, may a
 ## Processing external DTDs ## { #CVE-2022-28890 }
 
 CVE-2022-28890 [\[CVE json\]](./CVE-2022-28890.cve.json)
+
+_Last updated: 2022-05-05T08:34:36.622Z_
 
 ### Affected
 
@@ -75,6 +81,8 @@ A vulnerability in the RDF/XML parser of Apache Jena allows an attacker to cause
 ## Apache Jena SDB allows arbitrary deserialisation via JDBC ## { #CVE-2022-45136 }
 
 CVE-2022-45136 [\[CVE json\]](./CVE-2022-45136.cve.json)
+
+_Last updated: 2022-11-14T15:41:09.479Z_
 
 ### Affected
 
@@ -99,6 +107,8 @@ Apache Jena SDB has been EOL since December 2020 and users should migrate to alt
 
 CVE-2023-22665 [\[CVE json\]](./CVE-2023-22665.cve.json)
 
+_Last updated: 2023-04-25T07:09:43.803Z_
+
 ### Affected
 
 * Apache Jena through 4.7.0
@@ -119,6 +129,8 @@ There is insufficient checking of user queries in Apache Jena versions 4.7.0 and
 ## Exposure of execution in script engine expressions. ## { #CVE-2023-32200 }
 
 CVE-2023-32200 [\[CVE json\]](./CVE-2023-32200.cve.json)
+
+_Last updated: 2023-07-12T07:50:01.786Z_
 
 ### Affected
 

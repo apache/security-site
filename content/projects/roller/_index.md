@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-33580 [\[CVE json\]](./CVE-2021-33580.cve.json)
 
+_Last updated: 2021-08-18T07:43:44.770Z_
+
 ### Affected
 
 * Apache Roller from Apache Roller before 6.0.2
@@ -43,6 +45,8 @@ The attacker doesn't have to use a browser and may send a specially crafted Refe
 ## Roller's weblog category, weblog settings and file-upload features did not properly sanitize input could be exploited to perform Reflected Cross Site Scripting (XSS) even on a Roller site configured for untrusted users. ## { #CVE-2023-37581 }
 
 CVE-2023-37581 [\[CVE json\]](./CVE-2023-37581.cve.json)
+
+_Last updated: 2023-08-24T08:15:22.581Z_
 
 ### Affected
 

@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-38398 [\[CVE json\]](./CVE-2022-38398.cve.json)
 
+_Last updated: 2022-09-22T14:36:45.719Z_
+
 ### Affected
 
 * Apache XML Graphics at Batik 1.14
@@ -33,6 +35,8 @@ Server-Side Request Forgery (SSRF) vulnerability in Batik of Apache XML Graphics
 ## PDFTranscoder does not block external resources ## { #CVE-2022-38648 }
 
 CVE-2022-38648 [\[CVE json\]](./CVE-2022-38648.cve.json)
+
+_Last updated: 2022-09-22T14:37:30.540Z_
 
 ### Affected
 
@@ -51,6 +55,8 @@ Server-Side Request Forgery (SSRF) vulnerability in Batik of Apache XML Graphics
 
 CVE-2022-40146 [\[CVE json\]](./CVE-2022-40146.cve.json)
 
+_Last updated: 2022-11-23T18:09:53.965Z_
+
 ### Affected
 
 * Apache XML Graphics at Batik 1.14
@@ -67,6 +73,8 @@ Server-Side Request Forgery (SSRF) vulnerability in Batik of Apache XML Graphics
 ## Apache Batik prior to 1.16 allows RCE when loading untrusted SVG input ## { #CVE-2022-41704 }
 
 CVE-2022-41704 [\[CVE json\]](./CVE-2022-41704.cve.json)
+
+_Last updated: 2022-10-25T11:02:56.969Z_
 
 ### Affected
 
@@ -89,6 +97,8 @@ A vulnerability in Batik of Apache XML Graphics allows an attacker to run untrus
 
 CVE-2022-42890 [\[CVE json\]](./CVE-2022-42890.cve.json)
 
+_Last updated: 2022-10-25T11:25:19.555Z_
+
 ### Affected
 
 * Apache XML Graphics from Batik through 1.15
@@ -109,6 +119,8 @@ A vulnerability in Batik of Apache XML Graphics allows an attacker to run Java c
 ## Information disclosure vulnerability ## { #CVE-2022-44729 }
 
 CVE-2022-44729 [\[CVE json\]](./CVE-2022-44729.cve.json)
+
+_Last updated: 2023-08-22T14:12:19.621Z_
 
 ### Affected
 
@@ -131,6 +143,8 @@ Server-Side Request Forgery (SSRF) vulnerability in Apache Software Foundation A
 ## Information disclosure vulnerability ## { #CVE-2022-44730 }
 
 CVE-2022-44730 [\[CVE json\]](./CVE-2022-44730.cve.json)
+
+_Last updated: 2023-08-22T14:04:18.758Z_
 
 ### Affected
 

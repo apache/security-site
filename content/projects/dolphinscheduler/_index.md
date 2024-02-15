@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-13922 [\[CVE json\]](./CVE-2020-13922.cve.json)
 
+_Last updated: 2021-01-11T09:18:42.255Z_
+
 ### Affected
 
 * Apache DolphinScheduler from Apache DolphinScheduler before 1.3.2
@@ -37,6 +39,8 @@ Versions of Apache DolphinScheduler prior to 1.3.2 allowed an ordinary user unde
 ## DolphinScheduler mysql jdbc connector parameters deserialize remote code execution ## { #CVE-2021-27644 }
 
 CVE-2021-27644 [\[CVE json\]](./CVE-2021-27644.cve.json)
+
+_Last updated: 2021-11-01T09:12:08.670Z_
 
 ### Affected
 
@@ -60,6 +64,8 @@ In Apache DolphinScheduler before 1.3.6 versions, authorized users can use SQL i
 
 CVE-2022-25598 [\[CVE json\]](./CVE-2022-25598.cve.json)
 
+_Last updated: 2022-11-01T03:18:38.664Z_
+
 ### Affected
 
 * Apache DolphinScheduler from Apache DolphinScheduler before 2.0.5
@@ -81,6 +87,8 @@ Apache DolphinScheduler user registration is vulnerable to Regular express Denia
 
 CVE-2022-26884 [\[CVE json\]](./CVE-2022-26884.cve.json)
 
+_Last updated: 2022-10-28T01:44:55.028Z_
+
 ### Affected
 
 * Apache DolphinScheduler from Apache DolphinScheduler before 2.0.6
@@ -98,6 +106,8 @@ Users can read any files by log server, Apache DolphinScheduler users should upg
 
 CVE-2022-26885 [\[CVE json\]](./CVE-2022-26885.cve.json)
 
+_Last updated: 2022-11-24T11:55:57.562Z_
+
 ### Affected
 
 * Apache DolphinScheduler from Apache DolphinScheduler before 2.0.6
@@ -114,6 +124,8 @@ When using tasks to read config files, there is a risk of database password disc
 ## Apache DolphinScheduler prior to 3.0.0 allows path traversal ## { #CVE-2022-34662 }
 
 CVE-2022-34662 [\[CVE json\]](./CVE-2022-34662.cve.json)
+
+_Last updated: 2022-11-01T15:28:47.599Z_
 
 ### Affected
 
@@ -136,6 +148,8 @@ When users add resources to the resource center with a relation path will cause 
 
 CVE-2022-45462 [\[CVE json\]](./CVE-2022-45462.cve.json)
 
+_Last updated: 2022-11-23T02:24:20.816Z_
+
 ### Affected
 
 * Apache DolphinScheduler from unspecified through 2.0.5
@@ -156,6 +170,8 @@ Alarm instance management has command injection when there is a specific command
 ## Remote command execution Vulnerability in script alert plugin ## { #CVE-2022-45875 }
 
 CVE-2022-45875 [\[CVE json\]](./CVE-2022-45875.cve.json)
+
+_Last updated: 2023-11-22T08:37:58.550Z_
 
 ### Affected
 
@@ -179,6 +195,8 @@ Improper validation of script alert plugin parameters in Apache DolphinScheduler
 
 CVE-2023-25601 [\[CVE json\]](./CVE-2023-25601.cve.json)
 
+_Last updated: 2023-04-20T15:06:54.846Z_
+
 ### Affected
 
 * Apache DolphinScheduler from 3.0.0 before 3.1.2
@@ -196,6 +214,8 @@ On version 3.0.0 through 3.1.1, Apache DolphinScheduler's python gateway suffere
 
 CVE-2023-48796 [\[CVE json\]](./CVE-2023-48796.cve.json)
 
+_Last updated: 2023-11-24T07:56:40.315Z_
+
 ### Affected
 
 * Apache DolphinScheduler from 3.0.0 before 3.0.2
@@ -212,6 +232,8 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 ## Information Leakage Vulnerability ## { #CVE-2023-49068 }
 
 CVE-2023-49068 [\[CVE json\]](./CVE-2023-49068.cve.json)
+
+_Last updated: 2023-11-27T09:49:38.223Z_
 
 ### Affected
 
@@ -235,6 +257,8 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 CVE-2023-49299 [\[CVE json\]](./CVE-2023-49299.cve.json)
 
+_Last updated: 2023-12-30T16:30:14.065Z_
+
 ### Affected
 
 * Apache DolphinScheduler before 3.1.9
@@ -256,6 +280,8 @@ Improper Input Validation vulnerability in Apache DolphinScheduler. An&nbsp;<spa
 ## Authenticated users could delete UDFs in resource center they were not authorized for ## { #CVE-2023-49620 }
 
 CVE-2023-49620 [\[CVE json\]](./CVE-2023-49620.cve.json)
+
+_Last updated: 2023-11-30T08:16:57.761Z_
 
 ### Affected
 

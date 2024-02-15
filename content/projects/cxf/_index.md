@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-13954 [\[CVE json\]](./CVE-2020-13954.cve.json)
 
+_Last updated: 2020-11-12T12:45:31.751Z_
+
 ### Affected
 
 * Apache CXF from unspecified before 3.4.1
@@ -43,6 +45,8 @@ Please note that this is a separate issue to CVE-2019-17573.
 
 CVE-2021-22696 [\[CVE json\]](./CVE-2021-22696.cve.json)
 
+_Last updated: 2021-04-02T09:58:49.120Z_
+
 ### Affected
 
 * Apache CXF from unspecified before 3.4.3
@@ -66,6 +70,8 @@ This issue affects Apache CXF versions prior to 3.4.3; Apache CXF versions prior
 
 CVE-2021-30468 [\[CVE json\]](./CVE-2021-30468.cve.json)
 
+_Last updated: 2021-06-16T11:56:32.302Z_
+
 ### Affected
 
 * Apache CXF from Apache CXF before 3.4.4
@@ -84,6 +90,8 @@ This issue affects Apache CXF versions prior to 3.4.4; Apache CXF versions prior
 ## Apache CXF directory listing / code exfiltration ## { #CVE-2022-46363 }
 
 CVE-2022-46363 [\[CVE json\]](./CVE-2022-46363.cve.json)
+
+_Last updated: 2022-12-13T14:47:26.050Z_
 
 ### Affected
 
@@ -106,6 +114,8 @@ A vulnerability in Apache CXF before versions 3.5.5 and 3.4.10 allows an attacke
 ## Apache CXF SSRF Vulnerability ## { #CVE-2022-46364 }
 
 CVE-2022-46364 [\[CVE json\]](./CVE-2022-46364.cve.json)
+
+_Last updated: 2022-12-13T15:44:20.951Z_
 
 ### Affected
 

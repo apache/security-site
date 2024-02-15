@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-28657 [\[CVE json\]](./CVE-2021-28657.cve.json)
 
+_Last updated: 2021-03-31T07:34:07.284Z_
+
 ### Affected
 
 * Apache Tika from Apache Tika before 1.26
@@ -38,6 +40,8 @@ A carefully crafted or corrupt file may trigger an infinite loop in Tika's MP3Pa
 
 CVE-2022-25169 [\[CVE json\]](./CVE-2022-25169.cve.json)
 
+_Last updated: 2022-05-16T16:59:35.802Z_
+
 ### Affected
 
 * Apache Tika from Apache Tika through 1.28.1
@@ -55,6 +59,8 @@ The BPG parser in versions of Apache Tika before 1.28.2 and 2.4.0 may allocate a
 ## Apache Tika Regular Expression Denial of Service in Standards Extractor ## { #CVE-2022-30126 }
 
 CVE-2022-30126 [\[CVE json\]](./CVE-2022-30126.cve.json)
+
+_Last updated: 2022-05-16T16:58:52.830Z_
 
 ### Affected
 
@@ -77,6 +83,8 @@ In Apache Tika, a regular expression in our StandardsText class, used by the Sta
 
 CVE-2022-30973 [\[CVE json\]](./CVE-2022-30973.cve.json)
 
+_Last updated: 2022-05-31T13:14:46.730Z_
+
 ### Affected
 
 * Apache Tika from Apache Tika through 1.28.2
@@ -97,6 +105,8 @@ We failed to apply the fix for CVE-2022-30126 to the 1.x branch in the 1.28.2 re
 ## Incomplete fix and new regex DoS in StandardsExtractingContentHandler ## { #CVE-2022-33879 }
 
 CVE-2022-33879 [\[CVE json\]](./CVE-2022-33879.cve.json)
+
+_Last updated: 2022-06-27T21:35:12.489Z_
 
 ### Affected
 

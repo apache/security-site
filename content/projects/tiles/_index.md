@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2023-49735 [\[CVE json\]](./CVE-2023-49735.cve.json)
 
+_Last updated: 2023-12-12T08:40:25.303Z_
+
 ### Affected
 
 * Apache Tiles from 2.0.0 before *

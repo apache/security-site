@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-42357 [\[CVE json\]](./CVE-2021-42357.cve.json)
 
+_Last updated: 2022-01-17T19:19:12.317Z_
+
 ### Affected
 
 * Apache Knox from Apache Knox 1.x before 1.6.1

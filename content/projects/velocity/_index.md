@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-13959 [\[CVE json\]](./CVE-2020-13959.cve.json)
 
+_Last updated: 2021-03-10T07:52:04.870Z_
+
 ### Affected
 
 * Apache Velocity Tools from Apache Velocity Tools before 3.1
@@ -38,6 +40,8 @@ XSS vulnerabilities allow attackers to execute arbitrary JavaScript in the conte
 ## Velocity Sandbox Bypass ## { #CVE-2020-13936 }
 
 CVE-2020-13936 [\[CVE json\]](./CVE-2020-13936.cve.json)
+
+_Last updated: 2021-03-10T07:51:18.089Z_
 
 ### Affected
 

@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2022-40705 [\[CVE json\]](./CVE-2022-40705.cve.json)
 
+_Last updated: 2022-09-22T08:11:36.490Z_
+
 ### Affected
 
 * Apache SOAP from 2.2 before Apache SOAP*
@@ -37,6 +39,8 @@ An Improper Restriction of XML External Entity Reference vulnerability in RPCRou
 ## Apache SOAP allows unauthenticated users to potentially invoke arbitrary code ## { #CVE-2022-45378 }
 
 CVE-2022-45378 [\[CVE json\]](./CVE-2022-45378.cve.json)
+
+_Last updated: 2022-11-14T14:06:51.577Z_
 
 ### Affected
 

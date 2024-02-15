@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-23926 [\[CVE json\]](./CVE-2021-23926.cve.json)
 
+_Last updated: 2021-01-14T14:45:47.410Z_
+
 ### Affected
 
 * Apache XMLBeans from Apache XMLBeans through 2.6.0
@@ -35,6 +37,8 @@ Affects XMLBeans up to and including v2.6.0.
 ## A carefully crafted TNEF file can cause an out of memory exception ## { #CVE-2022-26336 }
 
 CVE-2022-26336 [\[CVE json\]](./CVE-2022-26336.cve.json)
+
+_Last updated: 2022-03-04T15:58:59.057Z_
 
 ### Affected
 

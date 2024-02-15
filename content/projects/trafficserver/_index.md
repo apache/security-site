@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2020-17508 [\[CVE json\]](./CVE-2020-17508.cve.json)
 
+_Last updated: 2021-01-11T09:27:29.639Z_
+
 ### Affected
 
 * Apache Traffic Server from Apache Traffic Server through 6.2.3
@@ -34,6 +36,8 @@ The ESI plugin in Apache Traffic Server 6.0.0 to 6.2.3, 7.0.0 to 7.1.11, and 8.0
 ## Apache Traffic Server negative cache option is vulnerable to a cache poisoning attack ## { #CVE-2020-17509 }
 
 CVE-2020-17509 [\[CVE json\]](./CVE-2020-17509.cve.json)
+
+_Last updated: 2021-01-11T09:31:44.280Z_
 
 ### Affected
 
@@ -53,6 +57,8 @@ Apache Traffic Server negative cache option is vulnerable to a cache poisoning a
 
 CVE-2021-27577 [\[CVE json\]](./CVE-2021-27577.cve.json)
 
+_Last updated: 2021-06-28T17:28:40.345Z_
+
 ### Affected
 
 * Apache Traffic Server at 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1
@@ -70,6 +76,8 @@ Incorrect handling of url fragment vulnerability of Apache Traffic Server allows
 
 CVE-2021-27737 [\[CVE json\]](./CVE-2021-27737.cve.json)
 
+_Last updated: 2021-05-17T17:41:59.734Z_
+
 ### Affected
 
 * Apache Traffic Server at 9.0.0
@@ -82,6 +90,8 @@ Apache Traffic Server 9.0.0 is vulnerable to a remote DOS attack on the experime
 ## HTTP Request Smuggling, content length with invalid charters ## { #CVE-2021-32565 }
 
 CVE-2021-32565 [\[CVE json\]](./CVE-2021-32565.cve.json)
+
+_Last updated: 2021-06-28T17:31:31.239Z_
 
 ### Affected
 
@@ -100,6 +110,8 @@ Invalid values in the Content-Length header sent to Apache Traffic Server allows
 
 CVE-2021-32566 [\[CVE json\]](./CVE-2021-32566.cve.json)
 
+_Last updated: 2021-06-30T07:11:47.425Z_
+
 ### Affected
 
 * Apache Traffic Server at 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1
@@ -116,6 +128,8 @@ Improper Input Validation vulnerability in HTTP/2 of Apache Traffic Server allow
 ## Reading HTTP/2 frames too many times ## { #CVE-2021-32567 }
 
 CVE-2021-32567 [\[CVE json\]](./CVE-2021-32567.cve.json)
+
+_Last updated: 2021-06-30T07:12:25.231Z_
 
 ### Affected
 
@@ -134,6 +148,8 @@ Improper Input Validation vulnerability in HTTP/2 of Apache Traffic Server allow
 
 CVE-2021-35474 [\[CVE json\]](./CVE-2021-35474.cve.json)
 
+_Last updated: 2021-06-30T07:12:52.360Z_
+
 ### Affected
 
 * Apache Traffic Server at 7.0.0 to 7.1.12, 8.0.0 to 8.1.1, 9.0.0 to 9.0.1
@@ -150,6 +166,8 @@ Stack-based Buffer Overflow vulnerability in cachekey plugin of Apache Traffic S
 ## Request Smuggling - LF line ending ## { #CVE-2021-37147 }
 
 CVE-2021-37147 [\[CVE json\]](./CVE-2021-37147.cve.json)
+
+_Last updated: 2021-11-02T21:14:21.298Z_
 
 ### Affected
 
@@ -172,6 +190,8 @@ Improper input validation vulnerability in header parsing of Apache Traffic Serv
 
 CVE-2021-37148 [\[CVE json\]](./CVE-2021-37148.cve.json)
 
+_Last updated: 2021-11-02T21:14:46.545Z_
+
 ### Affected
 
 * Apache Traffic Server at 8.0.0 to 8.1.2 and 9.0.0 to 9.0.1
@@ -192,6 +212,8 @@ Improper input validation vulnerability in header parsing of Apache Traffic Serv
 ## Request Smuggling - multiple attacks ## { #CVE-2021-37149 }
 
 CVE-2021-37149 [\[CVE json\]](./CVE-2021-37149.cve.json)
+
+_Last updated: 2021-11-02T21:15:10.588Z_
 
 ### Affected
 
@@ -214,6 +236,8 @@ Improper Input Validation vulnerability in header parsing of Apache Traffic Serv
 
 CVE-2021-37150 [\[CVE json\]](./CVE-2021-37150.cve.json)
 
+_Last updated: 2022-08-10T05:43:13.024Z_
+
 ### Affected
 
 * Apache Traffic Server at 8.0.0 to 9.1.2
@@ -231,6 +255,8 @@ Improper Input Validation vulnerability in header parsing of Apache Traffic Serv
 
 CVE-2021-38161 [\[CVE json\]](./CVE-2021-38161.cve.json)
 
+_Last updated: 2021-11-02T21:16:04.785Z_
+
 ### Affected
 
 * Apache Traffic Server at 8.0.0 to 8.0.8
@@ -247,6 +273,8 @@ Improper Authentication vulnerability in TLS origin verification of Apache Traff
 ## ATS stops accepting connections on FreeBSD ## { #CVE-2021-41585 }
 
 CVE-2021-41585 [\[CVE json\]](./CVE-2021-41585.cve.json)
+
+_Last updated: 2021-11-02T21:16:43.796Z_
 
 ### Affected
 
@@ -269,6 +297,8 @@ Improper Input Validation vulnerability in accepting socket connections in Apach
 
 CVE-2021-43082 [\[CVE json\]](./CVE-2021-43082.cve.json)
 
+_Last updated: 2021-11-02T21:16:59.675Z_
+
 ### Affected
 
 * Apache Traffic Server at 9.1.0
@@ -289,6 +319,8 @@ Buffer Copy without Checking Size of Input ('Classic Buffer Overflow') vulnerabi
 ## HTTP request line fuzzing attacks ## { #CVE-2021-44040 }
 
 CVE-2021-44040 [\[CVE json\]](./CVE-2021-44040.cve.json)
+
+_Last updated: 2022-03-23T14:04:02.939Z_
 
 ### Affected
 
@@ -311,6 +343,8 @@ Improper Input Validation vulnerability in request line parsing of Apache Traffi
 
 CVE-2021-44759 [\[CVE json\]](./CVE-2021-44759.cve.json)
 
+_Last updated: 2022-03-23T14:03:27.211Z_
+
 ### Affected
 
 * Apache Traffic Server at 8.0.0 to 8.1.0
@@ -331,6 +365,8 @@ Improper Authentication vulnerability in TLS origin validation of Apache Traffic
 ## Improper input validation on HTTP/2 headers  ## { #CVE-2022-25763 }
 
 CVE-2022-25763 [\[CVE json\]](./CVE-2022-25763.cve.json)
+
+_Last updated: 2022-10-20T20:25:04.197Z_
 
 ### Affected
 
@@ -353,6 +389,8 @@ Improper Input Validation vulnerability in HTTP/2 request validation of Apache T
 
 CVE-2022-28129 [\[CVE json\]](./CVE-2022-28129.cve.json)
 
+_Last updated: 2022-08-10T05:42:44.803Z_
+
 ### Affected
 
 * Apache Traffic Server at 8.0.0 to 9.1.2
@@ -373,6 +411,8 @@ Improper Input Validation vulnerability in HTTP/1.1 header parsing of Apache Tra
 ## Transfer-Encoding not treated as hop-by-hop ## { #CVE-2022-31778 }
 
 CVE-2022-31778 [\[CVE json\]](./CVE-2022-31778.cve.json)
+
+_Last updated: 2022-08-10T05:44:15.239Z_
 
 ### Affected
 
@@ -395,6 +435,8 @@ Improper Input Validation vulnerability in handling the Transfer-Encoding header
 
 CVE-2022-31779 [\[CVE json\]](./CVE-2022-31779.cve.json)
 
+_Last updated: 2022-10-27T00:00:36.092Z_
+
 ### Affected
 
 * Apache Traffic Server at 8.0.0 to 9.1.2
@@ -416,6 +458,8 @@ Improper Input Validation vulnerability in HTTP/2 header parsing of Apache Traff
 
 CVE-2022-31780 [\[CVE json\]](./CVE-2022-31780.cve.json)
 
+_Last updated: 2022-08-10T05:45:38.174Z_
+
 ### Affected
 
 * Apache Traffic Server at 8.0.0 to 9.1.2
@@ -436,6 +480,8 @@ Improper Input Validation vulnerability in HTTP/2 frame handling of Apache Traff
 ## Improperly handled requests can cause crashes in specific plugins ## { #CVE-2022-32749 }
 
 CVE-2022-32749 [\[CVE json\]](./CVE-2022-32749.cve.json)
+
+_Last updated: 2022-12-19T10:51:20.718Z_
 
 ### Affected
 
@@ -462,6 +508,8 @@ Improper Check for Unusual or Exceptional Conditions vulnerability handling requ
 
 CVE-2022-37392 [\[CVE json\]](./CVE-2022-37392.cve.json)
 
+_Last updated: 2022-12-19T10:58:23.000Z_
+
 ### Affected
 
 * Apache Traffic Server from 8.0.0 through 9.1.3
@@ -482,6 +530,8 @@ Improper Check for Unusual or Exceptional Conditions vulnerability in handling t
 ## Security issues with the xdebug plugin ## { #CVE-2022-40743 }
 
 CVE-2022-40743 [\[CVE json\]](./CVE-2022-40743.cve.json)
+
+_Last updated: 2023-07-17T14:33:07.403Z_
 
 ### Affected
 
@@ -504,6 +554,8 @@ Improper Input Validation vulnerability for the xdebug plugin in Apache Software
 
 CVE-2022-47184 [\[CVE json\]](./CVE-2022-47184.cve.json)
 
+_Last updated: 2023-06-14T07:42:29.792Z_
+
 ### Affected
 
 * Apache Traffic Server from 8.0.0 through 9.2.0
@@ -524,6 +576,8 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 ## Invalid Range header causes a crash ## { #CVE-2022-47185 }
 
 CVE-2022-47185 [\[CVE json\]](./CVE-2022-47185.cve.json)
+
+_Last updated: 2023-08-09T06:57:36.707Z_
 
 ### Affected
 
@@ -546,6 +600,8 @@ Improper input validation vulnerability on the range header in Apache Software F
 
 CVE-2023-30631 [\[CVE json\]](./CVE-2023-30631.cve.json)
 
+_Last updated: 2023-06-14T07:44:52.725Z_
+
 ### Affected
 
 * Apache Traffic Server from 8.0.0 through 9.2.0
@@ -567,6 +623,8 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Tra
 
 CVE-2023-33933 [\[CVE json\]](./CVE-2023-33933.cve.json)
 
+_Last updated: 2023-08-31T19:49:23.749Z_
+
 ### Affected
 
 * Apache Traffic Server from 8.0.0 through 9.2.0
@@ -587,6 +645,8 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 ## Differential fuzzing for HTTP request parsing discrepancies ## { #CVE-2023-33934 }
 
 CVE-2023-33934 [\[CVE json\]](./CVE-2023-33934.cve.json)
+
+_Last updated: 2023-09-28T08:24:06.964Z_
 
 ### Affected
 
@@ -610,6 +670,8 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Tra
 
 CVE-2023-39456 [\[CVE json\]](./CVE-2023-39456.cve.json)
 
+_Last updated: 2023-10-17T06:58:15.367Z_
+
 ### Affected
 
 * Apache Traffic Server from 9.0.0 through 9.2.2
@@ -630,6 +692,8 @@ Improper Input Validation vulnerability in Apache Traffic Server with malformed 
 ## s3_auth plugin problem with hash calculation ## { #CVE-2023-41752 }
 
 CVE-2023-41752 [\[CVE json\]](./CVE-2023-41752.cve.json)
+
+_Last updated: 2023-10-17T06:57:44.046Z_
 
 ### Affected
 

@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-33190 [\[CVE json\]](./CVE-2021-33190.cve.json)
 
+_Last updated: 2021-06-08T15:01:51.802Z_
+
 ### Affected
 
 * Apache APISIX Dashboard at Apache APISIX Dashboard 2.6 2.6
@@ -34,6 +36,8 @@ In Apache APISIX Dashboard version 2.6, we changed the default value of listen h
 ## Path traversal in request_uri variable ## { #CVE-2021-43557 }
 
 CVE-2021-43557 [\[CVE json\]](./CVE-2021-43557.cve.json)
+
+_Last updated: 2021-11-22T08:20:29.238Z_
 
 ### Affected
 
@@ -54,6 +58,8 @@ Some other plugins also have the same issue. And it may affect the developer's c
 ## security vulnerability on unauthorized access. ## { #CVE-2021-45232 }
 
 CVE-2021-45232 [\[CVE json\]](./CVE-2021-45232.cve.json)
+
+_Last updated: 2021-12-27T14:49:25.542Z_
 
 ### Affected
 
@@ -78,6 +84,8 @@ In Apache APISIX Dashboard before 2.10.1, the Manager API uses two frameworks an
 ## apisix/batch-requests plugin allows overwriting the X-REAL-IP header ## { #CVE-2022-24112 }
 
 CVE-2022-24112 [\[CVE json\]](./CVE-2022-24112.cve.json)
+
+_Last updated: 2022-02-11T12:00:02.021Z_
 
 ### Affected
 
@@ -106,6 +114,8 @@ There is a check in the batch-requests plugin which overrides the client IP with
 
 CVE-2022-25757 [\[CVE json\]](./CVE-2022-25757.cve.json)
 
+_Last updated: 2022-03-28T06:57:28.175Z_
+
 ### Affected
 
 * Apache APISIX from Apache APISIX through 2.12.1
@@ -133,6 +143,8 @@ The fix in APISIX is to re-encode the validated JSON input back into the request
 ## apisix/jwt-auth may leak secrets in error response ## { #CVE-2022-29266 }
 
 CVE-2022-29266 [\[CVE json\]](./CVE-2022-29266.cve.json)
+
+_Last updated: 2022-05-03T06:58:33.689Z_
 
 ### Affected
 

@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2023-46851 [\[CVE json\]](./CVE-2023-46851.cve.json)
 
+_Last updated: 2023-11-07T08:56:30.662Z_
+
 ### Affected
 
 * Apache Allura from 1.0.1 through 1.15.0

@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-41616 [\[CVE json\]](./CVE-2021-41616.cve.json)
 
+_Last updated: 2021-09-30T07:51:31.141Z_
+
 ### Affected
 
 * Apache DB ddlutils at 1.0
@@ -35,6 +37,8 @@ Please note that DdlUtils is no longer being actively developed. To address the 
 ## LDAP injection vulnerability in authenticator ## { #CVE-2022-46337 }
 
 CVE-2022-46337 [\[CVE json\]](./CVE-2022-46337.cve.json)
+
+_Last updated: 2024-01-02T18:36:19.559Z_
 
 ### Affected
 

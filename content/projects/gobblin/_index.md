@@ -17,6 +17,8 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2021-36151 [\[CVE json\]](./CVE-2021-36151.cve.json)
 
+_Last updated: 2022-02-03T18:29:46.145Z_
+
 ### Affected
 
 * Apache Gobblin from Apache Gobblin through 0.15.0
@@ -37,6 +39,8 @@ In Apache Gobblin, the Hadoop token is written to a temp file that is visible to
 ## Insecure TrustManager used in LDAP connections ## { #CVE-2021-36152 }
 
 CVE-2021-36152 [\[CVE json\]](./CVE-2021-36152.cve.json)
+
+_Last updated: 2022-02-03T18:26:12.111Z_
 
 ### Affected
 
