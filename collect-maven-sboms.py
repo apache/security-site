@@ -17,11 +17,24 @@ dt_api_key = os.getenv('DT_API_KEY')
 def project_name(link):
     return link.get('title')[:-1]
 
-def maven_projects(pmc):
+def maven_projects(pmc, subproject = None):
     # TODO support deeper hierarchies
     def is_direct(name):
-        return name.startswith(f'{pmc}-')
-    return list(filter(is_direct, list(map(project_name, get_dirs(f'https://repo1.maven.org/maven2/org/apache/{pmc}/')))))
+        return name.startswith(f'{subproject or pmc}-')
+
+    if subproject:
+        url = f'https://repo1.maven.org/maven2/org/apache/{pmc}/{subproject}/'
+    else:
+        url = f'https://repo1.maven.org/maven2/org/apache/{pmc}/'
+
+    projects = list(filter(is_direct, list(map(project_name, get_dirs(url)))))
+
+    if subproject:
+        def prefix_subproject(project):
+            return f"{subproject}/{project}"
+        return list(map(prefix_subproject, projects))
+    else:
+        return projects
 
 if len(argv)>1:
     pmc = argv[1]
@@ -37,6 +50,8 @@ elif pmc == 'camel':
       'quarkus/camel-quarkus',
       'springboot/spring-boot',
     ]
+elif pmc == 'logging':
+    projects = maven_projects(pmc, 'log4j')
 else:
     projects = maven_projects(pmc)
 
@@ -60,7 +75,7 @@ for project in projects:
         def file_name(link):
             return link.get('title')
         def is_sbom(name):
-            return name.endswith('-cyclonedx.json')
+            return name.endswith('-cyclonedx.json') or name.endswith('-cyclonedx.xml')
         sboms = list(filter(is_sbom, map(file_name, index)))
         if sboms:
             sbom = sboms[0]
