@@ -6,6 +6,7 @@ python3 ./collect-airflow-sbom.py
 ./collect-maven-sboms.py druid
 # TODO handle weird versions
 ./collect-maven-sboms.py flink
+./collect-maven-sboms.py jena
 # TODO hadoop: nothing found?
 # TODO hive: not yet released?
 ./collect-maven-sboms.py hbase
