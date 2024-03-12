@@ -773,6 +773,101 @@ process itself. Gaining access to that database should
 <ul>
 <li>Dor Konis – GE Vernova (finder)</li>
 </ul>
+<h2 id="CVE-2024-24772">Improper Neutralisation of custom SQL on embedded context</h2>
+<p>CVE-2024-24772 <a href="./CVE-2024-24772.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-02-28T11:26:43.918Z</em></p>
+<h3 id="affected-38">Affected</h3>
+<ul>
+<li>Apache Superset before 3.0.4</li>
+<li>Apache Superset from 3.1.0 before 3.1.1</li>
+</ul>
+<h3 id="description-38">Description</h3>
+<p>A guest user could exploit a chart data REST API and send arbitrary SQL statements that on error could leak information from the underlying analytics database.<p><span style="background-color: var(--wht);">This issue affects Apache Superset: before 3.0.4, from 3.1.0 before 3.1.1.</span><br></p><p>Users are recommended to upgrade to version 3.1.1 or 3.0.4, which fixes the issue.</p></p>
+<h3 id="references-38">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/gfl3ckwy6y9tpz9jmpv62orh2q346sn5">https://lists.apache.org/thread/gfl3ckwy6y9tpz9jmpv62orh2q346sn5</a></li>
+</ul>
+<h3 id="credits-37">Credits</h3>
+<ul>
+<li>Beto Ferreira De Almeida (remediation developer)</li>
+<li>Linden Haynes (finder)</li>
+</ul>
+<h2 id="CVE-2024-24773">Improper validation of SQL statements allows for unauthorized access to data </h2>
+<p>CVE-2024-24773 <a href="./CVE-2024-24773.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-02-28T11:24:56.349Z</em></p>
+<h3 id="affected-39">Affected</h3>
+<ul>
+<li>Apache Superset before 3.0.4</li>
+<li>Apache Superset from 3.1.0 before 3.1.1</li>
+</ul>
+<h3 id="description-39">Description</h3>
+<p>Improper parsing of nested SQL statements on SQLLab would allow authenticated users to surpass their data authorization scope.<br><p>This issue affects Apache Superset: before 3.0.4, from 3.1.0 before 3.1.1.</p><p>Users are recommended to upgrade to version 3.1.1, which fixes the issue.</p></p>
+<h3 id="references-39">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/h66fy6nj41cfx07zh7l552w6dmtjh501">https://lists.apache.org/thread/h66fy6nj41cfx07zh7l552w6dmtjh501</a></li>
+</ul>
+<h3 id="credits-38">Credits</h3>
+<ul>
+<li>Beto Ferreira De Almeida (remediation developer)</li>
+<li>Daniel Vaz Gaspar (coordinator)</li>
+</ul>
+<h2 id="CVE-2024-24779">Improper data authorization when creating a new dataset</h2>
+<p>CVE-2024-24779 <a href="./CVE-2024-24779.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-02-28T11:28:00.354Z</em></p>
+<h3 id="affected-40">Affected</h3>
+<ul>
+<li>Apache Superset before 3.0.4</li>
+<li>Apache Superset from 3.1.0 before 3.1.1</li>
+</ul>
+<h3 id="description-40">Description</h3>
+<p>Apache Superset with custom roles that include <code>can write on dataset</code> and without all data access permissions, allows for users to create virtual datasets to data they don&rsquo;t have access to. These users could then use those virtual datasets to get access to unauthorized data.<br><p>This issue affects Apache Superset: before 3.0.4, from 3.1.0 before 3.1.1.</p><p>Users are recommended to upgrade to version 3.1.1 or 3.0.4, which fixes the issue.</p></p>
+<h3 id="references-40">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/xzhz1m5bb9zxhyqgoy4q2d689b3zp4pq">https://lists.apache.org/thread/xzhz1m5bb9zxhyqgoy4q2d689b3zp4pq</a></li>
+</ul>
+<h3 id="credits-39">Credits</h3>
+<ul>
+<li>Daniel Pedro Vaz Gaspar (remediation developer)</li>
+<li>@DLT1412 (finder)</li>
+</ul>
+<h2 id="CVE-2024-26016">Improper authorization validation on dashboards and charts import</h2>
+<p>CVE-2024-26016 <a href="./CVE-2024-26016.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-02-28T11:28:36.984Z</em></p>
+<h3 id="affected-41">Affected</h3>
+<ul>
+<li>Apache Superset before 3.0.4</li>
+<li>Apache Superset from 3.1.0 before 3.1.1</li>
+</ul>
+<h3 id="description-41">Description</h3>
+<p>A low privilege authenticated user <span style="background-color: rgb(255, 255, 255);">could import an existing dashboard or chart that they do not have access to and then modify its metadata, thereby gaining ownership of the object. However, it&rsquo;s important to note that access to the analytical data of these charts and dashboards would still be subject to validation based on data access privileges.</span><br><br><span style="background-color: var(--wht);">This issue affects Apache Superset: before 3.0.4, from 3.1.0 before 3.1.1.</span><p>Users are recommended to upgrade to version 3.1.1, which fixes the issue.</p></p>
+<h3 id="references-41">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/76v1jjcylgk4p3m0258qr359ook3vl8s">https://lists.apache.org/thread/76v1jjcylgk4p3m0258qr359ook3vl8s</a></li>
+</ul>
+<h3 id="credits-40">Credits</h3>
+<ul>
+<li>Daniel Vaz Gaspar (remediation developer)</li>
+<li>Matt Freyre (finder)</li>
+</ul>
+<h2 id="CVE-2024-27315">Improper error handling on alerts</h2>
+<p>CVE-2024-27315 <a href="./CVE-2024-27315.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-02-28T10:06:46.675Z</em></p>
+<h3 id="affected-42">Affected</h3>
+<ul>
+<li>Apache Superset before 3.0.4</li>
+<li>Apache Superset from 3.1.0 before 3.1.1</li>
+</ul>
+<h3 id="description-42">Description</h3>
+<p>An authenticated user with privileges to create Alerts on Alerts &amp; Reports has the capability to generate a specially crafted SQL statement that triggers an error on the database. This error is not properly handled by Apache Superset and may inadvertently surface in the error log of the Alert exposing possibly sensitive data.<br></p><p>This issue affects Apache Superset: before 3.0.4, from 3.1.0 before 3.1.1.</p><p>Users are recommended to upgrade to version 3.1.1 or 3.0.4, which fixes the issue.</p>
+<h3 id="references-42">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/qcwbx7q2s3ynsd405895bx3wcwq32j7z">https://lists.apache.org/thread/qcwbx7q2s3ynsd405895bx3wcwq32j7z</a></li>
+</ul>
+<h3 id="credits-41">Credits</h3>
+<ul>
+<li>Anastasios Stasinopoulos - OBRELA LABS (finder)</li>
+<li>Beto de Almeida (remediation developer)</li>
+</ul>
 
   
 </div>

@@ -6,10 +6,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Apache Xerces security advisories </title>
+  <title> Apache Aurora security advisories </title>
 
   
-  <meta name="description" content="Security information for Apache Xerces"> 
+  <meta name="description" content="Security information for Apache Aurora"> 
   
   
   
@@ -23,10 +23,10 @@
   <meta name="author" content="">
 
 
-  <meta property="og:title" content="Apache Xerces security advisories" />
-<meta property="og:description" content="Security information for Apache Xerces" />
+  <meta property="og:title" content="Apache Aurora security advisories" />
+<meta property="og:description" content="Security information for Apache Aurora" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://security.apache.org/projects/xerces/" />
+<meta property="og:url" content="https://security.apache.org/projects/aurora/" />
 
   
 
@@ -37,9 +37,9 @@
   
   
   
-   <link href="/projects/xerces/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
+   <link href="/projects/aurora/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
 
-  <link rel="canonical" href="https://security.apache.org/projects/xerces/">  
+  <link rel="canonical" href="https://security.apache.org/projects/aurora/">  
 
   <link href="/css/font.css" rel="stylesheet" type="text/css">
   <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
@@ -97,46 +97,33 @@
   <main>
 
 <div id="hero" class="wrap">
-  <h1>Apache Xerces security advisories</h1>
-    <p>Security information for Apache Xerces</p>
+  <h1>Apache Aurora security advisories</h1>
+    <p>Security information for Apache Aurora</p>
 </div>
 <div id="project-box">
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache Xerces? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<p>Do you want disclose a potential security issue for Apache Aurora? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2022-23437">Infinite loop within Apache XercesJ xml parser</h2>
-<p>CVE-2022-23437 <a href="./CVE-2022-23437.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2022-01-24T14:59:39.857Z</em></p>
+<h2 id="CVE-2024-27905">padding oracle can allow construction an authentication cookie</h2>
+<p>CVE-2024-27905 <a href="./CVE-2024-27905.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-02-27T14:29:18.380Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Xerces from Apache XercesJ through 2.12.1</li>
+<li>Apache Aurora from 0.5.0 through *</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>There&rsquo;s a vulnerability within the Apache Xerces Java (XercesJ) XML parser when handling specially crafted XML document payloads. This causes, the XercesJ XML parser to wait in an infinite loop, which may sometimes consume system resources for prolonged duration. This vulnerability is present within XercesJ version 2.12.1 and the previous versions.</p>
+<div>** UNSUPPORTED WHEN ASSIGNED ** Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Aurora.</div><p>An endpoint exposing internals to unauthenticated users can be used as a "padding oracle" allowing an anonymous attacker to construct a valid authentication cookie. Potentially this could be combined with vulnerabilities in other components to achieve remote code execution.<br></p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.<br></p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p><p><br></p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/6pjwm10bb69kq955fzr1n0nflnjd27dl">https://lists.apache.org/thread/6pjwm10bb69kq955fzr1n0nflnjd27dl</a></li>
+<li><a href="https://lists.apache.org/thread/564kbv3wqdzkscmdn2bg4vlk48qymryp">https://lists.apache.org/thread/564kbv3wqdzkscmdn2bg4vlk48qymryp</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>This issue was discovered by Sergey Temnikov and Ziyi Luo, from Amazon Corretto/JDK Team</li>
-</ul>
-<h2 id="CVE-2024-23807">Use-after-free on external DTD scan</h2>
-<p>CVE-2024-23807 <a href="./CVE-2024-23807.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2024-02-28T13:50:38.265Z</em></p>
-<h3 id="affected-1">Affected</h3>
-<ul>
-<li>Apache Xerces C++ from 3.0.0 before 3.2.5</li>
-</ul>
-<h3 id="description-1">Description</h3>
-<div>The Apache Xerces C++ XML parser on versions 3.0.0 before 3.2.5 contains a use-after-free error triggered during the scanning of external DTDs.</div><div><br></div><div>Users are recommended to upgrade to version 3.2.5 which fixes the issue, or mitigate the issue by disabling DTD processing. This can be accomplished via the DOM using a standard parser feature, or via SAX using the XERCES_DISABLE_DTD environment variable.<br></div><div><br></div><div>This issue has been disclosed before as CVE-2018-1311, but unfortunately that advisory incorrectly stated the issue would be fixed in version 3.2.3 or 3.2.4.<br></div>
-<h3 id="references-1">References</h3>
-<ul>
-<li><a href="https://github.com/apache/xerces-c/pull/54">https://github.com/apache/xerces-c/pull/54</a></li>
-<li><a href="https://lists.apache.org/thread/c497tgn864tsbm8w0bo3f0d81s07zk9r">https://lists.apache.org/thread/c497tgn864tsbm8w0bo3f0d81s07zk9r</a></li>
+<li>Quang Luong (reporter)</li>
+<li>Duc Nguyen (reporter)</li>
 </ul>
 
   

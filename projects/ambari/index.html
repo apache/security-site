@@ -175,6 +175,45 @@
 <ul>
 <li>rg <a href="mailto:18993610179@163.com">18993610179@163.com</a> (finder)</li>
 </ul>
+<h2 id="CVE-2023-50378">Various XSS problems</h2>
+<p>CVE-2023-50378 <a href="./CVE-2023-50378.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-03-01T14:38:24.618Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Ambari from 2.7.0 through 2.7.7</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p><span style="background-color: transparent;">Lack of proper input validation and constraint enforcement in Apache Ambari prior to 2.7.8  <br><br> Impact : As it will be <span style="background-color: rgb(255, 255, 255);">stored XSS, </span>Could be exploited to perform unauthorized actions, varying from data access to session hijacking and delivering malicious payloads. <br><br></span><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version  2.7.8 which fixes this issue.</span><br><br><br><br></p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/6hn0thq743vz9gh283s2d87wz8tqh37c">https://lists.apache.org/thread/6hn0thq743vz9gh283s2d87wz8tqh37c</a></li>
+</ul>
+<h2 id="CVE-2023-50379">authenticated users could perform command injection to perform RCE</h2>
+<p>CVE-2023-50379 <a href="./CVE-2023-50379.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-02-27T08:26:54.321Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Ambari from 2.7.0 through 2.7.7</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p><span style="background-color: transparent;">Malicious code injection in Apache Ambari in prior to 2.7.8. </span><span style="background-color: transparent;"><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 2.7.8, which fixes this issue.</span></span><b><span style="background-color: transparent;"><br><br></span></b><span style="background-color: transparent;">Impact:</span><b><span style="background-color: transparent;"><br></span></b><span style="background-color: transparent;">A Cluster Operator can manipulate the request by adding a malicious code injection and gain a root over the cluster main host.</span><br><br></p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/jglww6h6ngxpo1r6r5fx7ff7z29lnvv8">https://lists.apache.org/thread/jglww6h6ngxpo1r6r5fx7ff7z29lnvv8</a></li>
+</ul>
+<h2 id="CVE-2023-50380">authenticated users could perform XXE to read arbitrary files on the server</h2>
+<p>CVE-2023-50380 <a href="./CVE-2023-50380.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-02-27T16:51:31.875Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Ambari from 2.7.0 through 2.7.7</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p><span style="background-color: transparent;">XML External Entity injection in apache ambari versions &lt;= 2.7.7,&nbsp;<span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 2.7.8, which fixes this issue.</span></span></p><p><span style="background-color: transparent;"><br></span></p><p><span style="background-color: transparent;">More Details:</span></p><p><span style="background-color: transparent;">Oozie Workflow Scheduler had a vulnerability that allowed for root-level file reading and privilege escalation from low-privilege users. The vulnerability was caused through lack of proper user input validation.</span></p><p><span style="background-color: transparent;">This vulnerability is known as an XML External Entity (XXE) injection attack. Attackers can exploit XXE vulnerabilities to read arbitrary files on the server, including sensitive system files. In theory, it might be possible to use this to escalate privileges.</span></p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/qrt7mq7v7zyrh1qsh1gkg1m7clysvy32">https://lists.apache.org/thread/qrt7mq7v7zyrh1qsh1gkg1m7clysvy32</a></li>
+</ul>
 
   
 </div>

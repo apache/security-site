@@ -272,6 +272,62 @@ malicious local user.</div><div>Administrators are advised to disable JMX, or se
 <ul>
 <li>Matei &ldquo;Mal&rdquo; Badanoiu (reporter)</li>
 </ul>
+<h2 id="CVE-2023-51518">Privilege escalation via JMX pre-authentication deserialisation</h2>
+<p>CVE-2023-51518 <a href="./CVE-2023-51518.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-02-27T09:09:28.523Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache James server through 3.7.4</li>
+<li>Apache James server from 3.8 through 3.8.0</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>Apache James prior to version 3.7.5 and 3.8.0 exposes a JMX endpoint on localhost subject to pre-authentication deserialisation of untrusted data.<br>Given a deserialisation gadjet, this could be leveraged as part of an exploit chain that could result in privilege escalation.<br><div>Note that by default JMX endpoint is only bound locally.</div><div><br></div>We recommend users to:<br><div> - Upgrade to a non-vulnerable Apache James version</div><div> - Run Apache James isolated from other processes (docker - dedicated virtual machine)<br> - If possible turn off JMX<br></div></p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/wbdm61ch6l0kzjn6nnfmyqlng82qz0or">https://lists.apache.org/thread/wbdm61ch6l0kzjn6nnfmyqlng82qz0or</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>Mal Aware (reporter)</li>
+<li>Arnout Engelen (analyst)</li>
+</ul>
+<h2 id="CVE-2023-51747">SMTP smuggling in Apache James</h2>
+<p>CVE-2023-51747 <a href="./CVE-2023-51747.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-02-27T13:07:59.703Z</em></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache James server through 3.7.4</li>
+<li>Apache James server from 3.8 through 3.8.0</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<p>Apache James prior to versions 3.8.1 and 3.7.5 is vulnerable to SMTP smuggling.<br><br>A lenient behaviour in line delimiter handling might create a difference of interpretation between the sender and the receiver which can be exploited by an attacker to forge an SMTP envelop, allowing for instance to bypass SPF checks.<br><br>The patch implies enforcement of CRLF as a line delimiter as part of the DATA transaction.<br><br>We recommend James users to upgrade to non vulnerable versions.<br></p>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://sec-consult.com/blog/detail/smtp-smuggling-spoofing-e-mails-worldwide/">https://sec-consult.com/blog/detail/smtp-smuggling-spoofing-e-mails-worldwide/</a></li>
+<li><a href="https://postfix.org/smtp-smuggling.html">https://postfix.org/smtp-smuggling.html</a></li>
+<li><a href="https://lists.apache.org/thread/rxkwbkh9vgbl9rzx1fkllyk3krhgydko">https://lists.apache.org/thread/rxkwbkh9vgbl9rzx1fkllyk3krhgydko</a></li>
+</ul>
+<h3 id="credits-10">Credits</h3>
+<ul>
+<li>Benoit TELLIER (coordinator)</li>
+</ul>
+<h2 id="CVE-2024-21742">Mime4J DOM header injection</h2>
+<p>CVE-2024-21742 <a href="./CVE-2024-21742.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-02-27T16:19:24.276Z</em></p>
+<h3 id="affected-11">Affected</h3>
+<ul>
+<li>Apache James Mime4J through 0.8.9</li>
+</ul>
+<h3 id="description-11">Description</h3>
+<p>Improper input validation allows for header injection in MIME4J library when using MIME4J DOM for composing message.<br>This can be exploited by an attacker to add unintended headers to MIME messages.<br></p>
+<h3 id="references-11">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/nrqzg93219wdj056pqfszsd33dc54kfy">https://lists.apache.org/thread/nrqzg93219wdj056pqfszsd33dc54kfy</a></li>
+</ul>
+<h3 id="credits-11">Credits</h3>
+<ul>
+<li>Benoit TELLIER (finder)</li>
+</ul>
 
   
 </div>
