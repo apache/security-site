@@ -81,7 +81,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Maven](https://maven.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache MINA |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache MyFaces |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache NiFi](https://nifi.apache.org/security.html) |  [Apache NiFi Security Team](mailto:security@nifi.apache.org) | [Advisories](https://nifi.apache.org/security.html) |
+| [Apache NiFi](https://nifi.apache.org/documentation/security/) |  [Apache NiFi Security Team](mailto:security@nifi.apache.org) | [Advisories](https://nifi.apache.org/documentation/security/) |
 | Apache Nutch |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache NuttX |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache OFBiz](https://ofbiz.apache.org/download.html#security) |  [Apache OFBiz Security Team](mailto:security@ofbiz.apache.org) | |
