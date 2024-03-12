@@ -373,3 +373,61 @@ _Last updated: 2024-02-02T10:13:56.898Z_
 * Hasib Vhora, Senior Threat Researcher, SonicWall  (finder)
 * Gao Tian (finder)
 * L0ne1y (finder)
+
+
+## Path traversal or file inclusion ## { #CVE-2024-23946 }
+
+CVE-2024-23946 [\[CVE json\]](./CVE-2024-23946.cve.json)
+
+_Last updated: 2024-02-28T15:44:32.259Z_
+
+### Affected
+
+* Apache OFBiz before 18.12.12
+
+
+### Description
+
+Possible path traversal in Apache OFBiz allowing file inclusion.<br>Users are recommended to upgrade to version 18.12.12, that fixes the issue.
+
+### References
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html
+* https://ofbiz.apache.org/release-notes-18.12.12.html
+* https://issues.apache.org/jira/browse/OFBIZ-12884
+* https://lists.apache.org/thread/w4lp5ncpzttf41hn5bsc04mzq4o6lw3g
+
+
+### Credits
+* Arun Shaji from trendmicro.com (finder)
+
+
+## Path traversal allowing authentication bypass. ## { #CVE-2024-25065 }
+
+CVE-2024-25065 [\[CVE json\]](./CVE-2024-25065.cve.json)
+
+_Last updated: 2024-02-28T15:42:48.263Z_
+
+### Affected
+
+* Apache OFBiz before 18.12.12
+
+
+### Description
+
+
+
+Possible path traversal in Apache OFBiz allowing authentication bypass.<br>Users are recommended to upgrade to version 18.12.12, that fixes the issue.
+
+
+
+### References
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html
+* https://ofbiz.apache.org/release-notes-18.12.12.html
+* https://issues.apache.org/jira/browse/OFBIZ-12887
+* https://lists.apache.org/thread/rplfjp7ppn9ro49oo7jsrpj99m113lfc
+
+
+### Credits
+* YunPeng - 郭 运鹏 <puata123@outlook.com> (finder)

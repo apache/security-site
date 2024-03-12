@@ -291,3 +291,49 @@ Improper Input Validation, Uncontrolled Resource Consumption vulnerability in Ap
 
 ### Credits
 * Yakov Shafranovich, Amazon Web Services (reporter)
+
+
+## Denial of service caused by an infinite loop for a corrupted DUMP file ## { #CVE-2024-25710 }
+
+CVE-2024-25710 [\[CVE json\]](./CVE-2024-25710.cve.json)
+
+_Last updated: 2024-02-19T08:33:36.725Z_
+
+### Affected
+
+* Apache Commons Compress from 1.3 through 1.25.0
+
+
+### Description
+
+Loop with Unreachable Exit Condition ('Infinite Loop') vulnerability in Apache Commons Compress.<p>This issue affects Apache Commons Compress: from 1.3 through 1.25.0.</p><p>Users are recommended to upgrade to version 1.26.0 which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/cz8qkcwphy4cx8gltn932ln51cbtq6kf
+
+
+### Credits
+* Yakov Shafranovich, Amazon Web Services (reporter)
+
+
+## OutOfMemoryError unpacking broken Pack200 file ## { #CVE-2024-26308 }
+
+CVE-2024-26308 [\[CVE json\]](./CVE-2024-26308.cve.json)
+
+_Last updated: 2024-02-19T08:31:48.197Z_
+
+### Affected
+
+* Apache Commons Compress from 1.21 before 1.26.0
+
+
+### Description
+
+Allocation of Resources Without Limits or Throttling vulnerability in Apache Commons Compress.<p>This issue affects Apache Commons Compress: from 1.21 before 1.26.</p><p>Users are recommended to upgrade to version 1.26, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/ch5yo2d21p7vlqrhll9b17otbyq4npfg
+
+
+### Credits
+* Yakov Shafranovich, Amazon Web Services (reporter)

@@ -1933,3 +1933,79 @@ Since version 5.2.0, when using deferrable mode with the path of a Kubernetes co
 ### Credits
 * Hussein Awala (finder)
 * Hussein Awala (remediation developer)
+
+
+## Certificate validation isn't respected even if SSL is enabled for apache-airflow-providers-mongo  ## { #CVE-2024-25141 }
+
+CVE-2024-25141 [\[CVE json\]](./CVE-2024-25141.cve.json)
+
+_Last updated: 2024-02-20T20:30:25.779Z_
+
+### Affected
+
+* Apache Airflow Mongo Provider from 1.0.0 before 4.0.0
+
+
+### Description
+
+<span style="background-color: rgb(255, 255, 255);">When </span><code>ssl</code><span style="background-color: rgb(255, 255, 255);">&nbsp;was enabled for Mongo Hook, default settings included "allow_insecure" which caused that certificates were not validated. This was unexpected and undocumented.</span><br>Users are recommended to upgrade to version 4.0.0, which fixes this issue.
+
+### References
+* https://github.com/apache/airflow/pull/37214
+* https://lists.apache.org/thread/sqgbfqngjmn45ommmrgj7hvs7fgspsgm
+
+
+### Credits
+* Noah Stapp (reporter)
+
+
+## Overly broad default permissions for Viewer/Ops (audit logs) ## { #CVE-2024-26280 }
+
+CVE-2024-26280 [\[CVE json\]](./CVE-2024-26280.cve.json)
+
+_Last updated: 2024-03-01T11:05:52.165Z_
+
+### Affected
+
+* Apache Airflow before 2.8.2
+
+
+### Description
+
+Apache Airflow, versions before 2.8.2, has a vulnerability that allows authenticated Ops and Viewers users to view all information on audit logs, including dag names and usernames they were not permitted to view.&nbsp;With 2.8.2 and newer, Ops and Viewer users do not have audit log permission by default, they need to be explicitly granted permissions to see the logs. Only admin users have audit log permission by default.<br><br>Users of Apache Airflow are recommended to upgrade to version 2.8.2 or newer to mitigate the risk associated with this vulnerability
+
+### References
+* https://github.com/apache/airflow/pull/37501
+* https://lists.apache.org/thread/knskxxxml95091rsnpxkpo1jjp8rj0fh
+
+
+### Credits
+* Yusuf AYDIN (@h1_yusuf) (finder)
+
+
+## Dag Code and Import Error Permissions Ignored ## { #CVE-2024-27906 }
+
+CVE-2024-27906 [\[CVE json\]](./CVE-2024-27906.cve.json)
+
+_Last updated: 2024-02-29T11:02:16.638Z_
+
+### Affected
+
+* Apache Airflow before 2.8.2
+
+
+### Description
+
+Apache Airflow, versions before 2.8.2, has a vulnerability that allows authenticated users to view DAG code and import errors of DAGs they do not have permission to view through the API and the UI.<br><br>Users of Apache Airflow are recommended to upgrade to version 2.8.2 or newer to mitigate the risk associated with this vulnerability<br>
+
+### References
+* https://github.com/apache/airflow/pull/37290
+* https://github.com/apache/airflow/pull/37468
+* https://lists.apache.org/thread/on4f7t5sqr3vfgp1pvkck79wv7mq9st5
+
+
+### Credits
+* Alex Liotta (finder)
+* Sreenivasulu Suuda (finder)
+* vincbeck (Vincent) (remediation developer)
+* Jed Cunningham (remediation developer)

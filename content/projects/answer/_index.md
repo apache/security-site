@@ -34,3 +34,72 @@ Concurrent Execution using Shared Resource with Improper Synchronization ('Race 
 
 ### Credits
 * ek1ng (reporter)
+
+
+## Pixel Flood Attack by uploading the large pixel file ## { #CVE-2024-22393 }
+
+CVE-2024-22393 [\[CVE json\]](./CVE-2024-22393.cve.json)
+
+_Last updated: 2024-02-22T09:51:41.833Z_
+
+### Affected
+
+* Apache Answer through 1.2.1
+
+
+### Description
+
+Unrestricted Upload of File with Dangerous Type vulnerability in Apache Answer.<p>This issue affects Apache Answer: through 1.2.1.</p>Pixel Flood Attack by uploading large pixel files will cause server out of memory. A logged-in user&nbsp;can cause such an attack by uploading an image when posting content.<br><p>Users are recommended to upgrade to version [1.2.5], which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/f58l6dr4r74hl6o71gn47kmn44vw12cv
+
+
+### Credits
+* Mohammad Reza Omrani (reporter)
+
+
+## XSS vulnerability when submitting summary ## { #CVE-2024-23349 }
+
+CVE-2024-23349 [\[CVE json\]](./CVE-2024-23349.cve.json)
+
+_Last updated: 2024-02-22T09:48:18.347Z_
+
+### Affected
+
+* Apache Answer through 1.2.1
+
+
+### Description
+
+Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache Answer.<p>This issue affects Apache Answer: through 1.2.1.</p>XSS attack when user enters summary. A logged-in user, when modifying their own submitted question, can input malicious code in the summary to create such an attack.<br><br><span style="background-color: var(--wht);">Users are recommended to upgrade to version [1.2.5], which fixes the issue.</span>
+
+### References
+* https://lists.apache.org/thread/y5902t09vfgy7892z3vzr1zq900sgyqg
+
+
+### Credits
+* Lyaa@JeeseenSec (reporter)
+
+
+## Repeated submission at registration created duplicate users with the same name ## { #CVE-2024-26578 }
+
+CVE-2024-26578 [\[CVE json\]](./CVE-2024-26578.cve.json)
+
+_Last updated: 2024-02-22T09:28:11.636Z_
+
+### Affected
+
+* Apache Answer through 1.2.1
+
+
+### Description
+
+Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') vulnerability in Apache Answer.<p>This issue affects Apache Answer: through 1.2.1.</p>Repeated submission during registration resulted in the registration of the same user. When users register, if they rapidly submit multiple registrations using scripts, it can result in the creation of multiple user accounts simultaneously with the same name.<br><p>Users are recommended to upgrade to version [1.2.5], which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/ko0ksnznt2484lxt0zts2ygr82ldkhcb
+
+
+### Credits
+* Mohammad Reza Omrani (reporter)

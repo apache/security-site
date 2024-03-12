@@ -100,3 +100,75 @@ Privilege escalation via stored XSS using the file upload service to upload mali
 
 ### Credits
 * sandr0 (sandr0.xyz)  (finder)
+
+
+## disabling user registration is not effective ## { #CVE-2024-27138 }
+
+CVE-2024-27138 [\[CVE json\]](./CVE-2024-27138.cve.json)
+
+_Last updated: 2024-03-01T15:41:11.276Z_
+
+### Affected
+
+* Apache Archiva from 2.0.0 through *
+
+
+### Description
+
+<div>** UNSUPPORTED WHEN ASSIGNED ** Incorrect Authorization vulnerability in Apache Archiva.</div><div><br></div><div>Apache Archiva has a setting to disable user registration, however this restriction can be bypassed. As Apache Archiva has been retired, we do not expect to release a version of Apache Archiva that fixes this issue. You are recommended to look into migrating to a different solution, or isolate your instance from any untrusted users.<br></div><p></p><div>NOTE: This vulnerability only affects products that are no longer supported by the maintainer</div><div><br></div><br><p></p>
+
+### References
+* https://lists.apache.org/thread/070qcpclcb3sqk1hn8j5lvzohp30k1m2
+
+
+### Credits
+* Florian Hauser, @frycos (reporter)
+
+
+## incorrect authentication potentially leading to account takeover ## { #CVE-2024-27139 }
+
+CVE-2024-27139 [\[CVE json\]](./CVE-2024-27139.cve.json)
+
+_Last updated: 2024-03-01T15:40:48.119Z_
+
+### Affected
+
+* Apache Archiva from 2.0.0 through *
+
+
+### Description
+
+** UNSUPPORTED WHEN ASSIGNED **<br><div><br></div><div>Incorrect Authorization vulnerability in Apache Archiva: a vulnerability in Apache Archiva allows an unauthenticated attacker to modify account data, potentially leading to account takeover.<br></div><p>This issue affects Apache Archiva: from 2.0.0.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.<br></p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.<br></p>
+
+### References
+* https://lists.apache.org/thread/qr8b7r86p1hkn0dc0q827s981kf1bgd8
+
+
+### Credits
+* 1uHrm of cyberkl (reporter)
+
+
+## reflected XSS ## { #CVE-2024-27140 }
+
+CVE-2024-27140 [\[CVE json\]](./CVE-2024-27140.cve.json)
+
+_Last updated: 2024-03-01T15:40:06.489Z_
+
+### Affected
+
+* Apache Archiva from 2.0.0 through *
+
+
+### Description
+
+<div>** UNSUPPORTED WHEN ASSIGNED **<br></div><div><br></div><div>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache Archiva.</div><p>This issue affects Apache Archiva: from 2.0.0.</p><p></p><p></p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users. Alternatively, you could configure a HTTP proxy in front of your Archiva instance to only forward requests that do not have malicious characters in the URL.<br></p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p><p></p>
+
+### References
+* https://lists.apache.org/thread/xrn6nt904ozh3jym60c3f5hj2fb75pjy
+
+
+### Credits
+* sandr0 / Sandro Bauer (sandr0.xyz) (finder)
+* BTullis / Ben Tullis (wikimedia.org) (finder)
+* sbassett / Scott Bassett (wikimedia.org) (finder)
+* L0ne1y (finder)

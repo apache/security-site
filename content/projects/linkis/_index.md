@@ -275,7 +275,7 @@ of parameters, an attacker configuring malicious Mysql JDBC parameters in the Da
 
 CVE-2023-50740 [\[CVE json\]](./CVE-2023-50740.cve.json)
 
-_Last updated: 2024-01-04T02:15:45.612Z_
+_Last updated: 2024-03-06T13:44:51.798Z_
 
 ### Affected
 

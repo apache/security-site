@@ -103,3 +103,60 @@ SpringEL injection in the metrics source in Apache Ambari version 2.7.0 to 2.7.6
 
 ### Credits
 * rg <18993610179@163.com> (finder)
+
+
+## Various XSS problems ## { #CVE-2023-50378 }
+
+CVE-2023-50378 [\[CVE json\]](./CVE-2023-50378.cve.json)
+
+_Last updated: 2024-03-01T14:38:24.618Z_
+
+### Affected
+
+* Apache Ambari from 2.7.0 through 2.7.7
+
+
+### Description
+
+<span style="background-color: transparent;">Lack of proper input validation and constraint enforcement in Apache Ambari prior to 2.7.8&nbsp;&nbsp;<br><br>&nbsp;Impact : As it will be <span style="background-color: rgb(255, 255, 255);">stored XSS,&nbsp;</span>Could be exploited to perform unauthorized actions, varying from data access to session hijacking and delivering malicious payloads. <br><br></span><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version  2.7.8 which fixes this issue.</span><br><br><br><br>
+
+### References
+* https://lists.apache.org/thread/6hn0thq743vz9gh283s2d87wz8tqh37c
+
+
+## authenticated users could perform command injection to perform RCE ## { #CVE-2023-50379 }
+
+CVE-2023-50379 [\[CVE json\]](./CVE-2023-50379.cve.json)
+
+_Last updated: 2024-02-27T08:26:54.321Z_
+
+### Affected
+
+* Apache Ambari from 2.7.0 through 2.7.7
+
+
+### Description
+
+<span style="background-color: transparent;">Malicious code injection in Apache Ambari in prior to 2.7.8.&nbsp;</span><span style="background-color: transparent;"><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 2.7.8, which fixes this issue.</span></span><b><span style="background-color: transparent;"><br><br></span></b><span style="background-color: transparent;">Impact:</span><b><span style="background-color: transparent;"><br></span></b><span style="background-color: transparent;">A Cluster Operator can manipulate the request by adding a malicious code injection and gain a root over the cluster main host.</span><br><br>
+
+### References
+* https://lists.apache.org/thread/jglww6h6ngxpo1r6r5fx7ff7z29lnvv8
+
+
+## authenticated users could perform XXE to read arbitrary files on the server ## { #CVE-2023-50380 }
+
+CVE-2023-50380 [\[CVE json\]](./CVE-2023-50380.cve.json)
+
+_Last updated: 2024-02-27T16:51:31.875Z_
+
+### Affected
+
+* Apache Ambari from 2.7.0 through 2.7.7
+
+
+### Description
+
+<p><span style="background-color: transparent;">XML External Entity injection in apache ambari versions &lt;= 2.7.7,&nbsp;<span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 2.7.8, which fixes this issue.</span></span></p><p><span style="background-color: transparent;"><br></span></p><p><span style="background-color: transparent;">More Details:</span></p><p><span style="background-color: transparent;">Oozie Workflow Scheduler had a vulnerability that allowed for root-level file reading and privilege escalation from low-privilege users. The vulnerability was caused through lack of proper user input validation.</span></p><p><span style="background-color: transparent;">This vulnerability is known as an XML External Entity (XXE) injection attack. Attackers can exploit XXE vulnerabilities to read arbitrary files on the server, including sensitive system files. In theory, it might be possible to use this to escalate privileges.</span></p>
+
+### References
+* https://lists.apache.org/thread/qrt7mq7v7zyrh1qsh1gkg1m7clysvy32

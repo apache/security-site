@@ -909,3 +909,128 @@ This is a duplicate for CVE-2023-46104. With correct CVE version ranges for affe
 
 ### Credits
 * Dor Konis – GE Vernova (finder)
+
+
+## Improper Neutralisation of custom SQL on embedded context ## { #CVE-2024-24772 }
+
+CVE-2024-24772 [\[CVE json\]](./CVE-2024-24772.cve.json)
+
+_Last updated: 2024-02-28T11:26:43.918Z_
+
+### Affected
+
+* Apache Superset before 3.0.4
+* Apache Superset from 3.1.0 before 3.1.1
+
+
+### Description
+
+A guest user could exploit a chart data REST API and send arbitrary SQL statements that on error could leak information from the underlying analytics database.<p><span style="background-color: var(--wht);">This issue affects Apache Superset: before 3.0.4, from 3.1.0 before 3.1.1.</span><br></p><p>Users are recommended to upgrade to version 3.1.1 or 3.0.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/gfl3ckwy6y9tpz9jmpv62orh2q346sn5
+
+
+### Credits
+* Beto Ferreira De Almeida (remediation developer)
+* Linden Haynes (finder)
+
+
+## Improper validation of SQL statements allows for unauthorized access to data  ## { #CVE-2024-24773 }
+
+CVE-2024-24773 [\[CVE json\]](./CVE-2024-24773.cve.json)
+
+_Last updated: 2024-02-28T11:24:56.349Z_
+
+### Affected
+
+* Apache Superset before 3.0.4
+* Apache Superset from 3.1.0 before 3.1.1
+
+
+### Description
+
+Improper parsing of nested SQL statements on SQLLab would allow authenticated users to surpass their data authorization scope.<br><p>This issue affects Apache Superset: before 3.0.4, from 3.1.0 before 3.1.1.</p><p>Users are recommended to upgrade to version 3.1.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/h66fy6nj41cfx07zh7l552w6dmtjh501
+
+
+### Credits
+* Beto Ferreira De Almeida (remediation developer)
+* Daniel Vaz Gaspar (coordinator)
+
+
+## Improper data authorization when creating a new dataset ## { #CVE-2024-24779 }
+
+CVE-2024-24779 [\[CVE json\]](./CVE-2024-24779.cve.json)
+
+_Last updated: 2024-02-28T11:28:00.354Z_
+
+### Affected
+
+* Apache Superset before 3.0.4
+* Apache Superset from 3.1.0 before 3.1.1
+
+
+### Description
+
+Apache Superset with custom roles that include `can write on dataset` and without all data access permissions, allows for users to create virtual datasets to data they don't have access to. These users could then use those virtual datasets to get access to unauthorized data.<br><p>This issue affects Apache Superset: before 3.0.4, from 3.1.0 before 3.1.1.</p><p>Users are recommended to upgrade to version 3.1.1 or 3.0.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/xzhz1m5bb9zxhyqgoy4q2d689b3zp4pq
+
+
+### Credits
+* Daniel Pedro Vaz Gaspar (remediation developer)
+* @DLT1412 (finder)
+
+
+## Improper authorization validation on dashboards and charts import ## { #CVE-2024-26016 }
+
+CVE-2024-26016 [\[CVE json\]](./CVE-2024-26016.cve.json)
+
+_Last updated: 2024-02-28T11:28:36.984Z_
+
+### Affected
+
+* Apache Superset before 3.0.4
+* Apache Superset from 3.1.0 before 3.1.1
+
+
+### Description
+
+A low privilege authenticated user <span style="background-color: rgb(255, 255, 255);">could import an existing dashboard or chart that they do not have access to and then modify its metadata, thereby gaining ownership of the object. However, it's important to note that access to the analytical data of these charts and dashboards would still be subject to validation based on data access privileges.</span><br><br><span style="background-color: var(--wht);">This issue affects Apache Superset: before 3.0.4, from 3.1.0 before 3.1.1.</span><p>Users are recommended to upgrade to version 3.1.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/76v1jjcylgk4p3m0258qr359ook3vl8s
+
+
+### Credits
+* Daniel Vaz Gaspar (remediation developer)
+* Matt Freyre (finder)
+
+
+## Improper error handling on alerts ## { #CVE-2024-27315 }
+
+CVE-2024-27315 [\[CVE json\]](./CVE-2024-27315.cve.json)
+
+_Last updated: 2024-02-28T10:06:46.675Z_
+
+### Affected
+
+* Apache Superset before 3.0.4
+* Apache Superset from 3.1.0 before 3.1.1
+
+
+### Description
+
+<p>An authenticated user with privileges to create Alerts on Alerts &amp; Reports has the capability to generate a specially crafted SQL statement that triggers an error on the database. This error is not properly handled by Apache Superset and may inadvertently surface in the error log of the Alert exposing possibly sensitive data.<br></p><p>This issue affects Apache Superset: before 3.0.4, from 3.1.0 before 3.1.1.</p><p>Users are recommended to upgrade to version 3.1.1 or 3.0.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/qcwbx7q2s3ynsd405895bx3wcwq32j7z
+
+
+### Credits
+* Anastasios Stasinopoulos - OBRELA LABS (finder)
+* Beto de Almeida (remediation developer)

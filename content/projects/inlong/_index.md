@@ -641,3 +641,32 @@ Deserialization of Untrusted Data vulnerability in Apache InLong.<p>This issue a
 
 ### Credits
 * X1r0z (finder)
+
+
+## Logged-in user could exploit an arbitrary file read vulnerability ## { #CVE-2024-26580 }
+
+CVE-2024-26580 [\[CVE json\]](./CVE-2024-26580.cve.json)
+
+_Last updated: 2024-03-06T12:07:26.203Z_
+
+### Affected
+
+* Apache InLong from 1.4.0 through 1.10.0
+
+
+### Description
+
+Deserialization of Untrusted Data vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.8.0 through 1.10.0, the attackers can 
+
+<span style="background-color: rgb(255, 255, 255);">use the specific payload to read from an arbitrary file</span>. <span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's 1.11.0 or cherry-pick [1] to solve it.</span></p>
+
+<p><span style="background-color: rgb(255, 255, 255);">[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/9673">https://github.com/apache/inlong/pull/9673</a></span></p>
+
+<p></p>
+
+### References
+* https://lists.apache.org/thread/xvomf66l58x4dmoyzojflvx52gkzcdmk
+
+
+### Credits
+* an4er (finder)

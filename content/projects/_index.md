@@ -21,7 +21,6 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Ant](https://ant.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache APISIX |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Portable Runtime (APR)](https://apr.apache.org/security_report.html) |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache Archiva](https://archiva.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://archiva.apache.org/security.html) |
 | Apache Arrow |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache AsterixDB |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Atlas |  [Apache Security Team](mailto:security@apache.org) | |
@@ -48,7 +47,6 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Felix |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Fineract](https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report) |  [Apache Fineract Security Team](mailto:security@fineract.apache.org) | |
 | [Apache Flink](https://flink.apache.org/what-is-flink/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://flink.apache.org/what-is-flink/security/) |
-| Apache Flume |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Geode |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Geronimo](https://geronimo.apache.org/security-reports.html) |  [Apache Geronimo Security Team](mailto:security@geronimo.apache.org) | |
 | [Apache Pulsar](https://github.com/apache/pulsar/security/policy) |  [Apache Security Team](mailto:security@apache.org) | |

@@ -36,6 +36,29 @@ Apache Doris, prior to 1.0.0, used a hardcoded key and IV to initialize the ciph
 * We would like to thanks to Dwi Siswanto<me@dw1.io> for the report of this issue
 
 
+## Timing Attack weakness ## { #CVE-2023-41313 }
+
+CVE-2023-41313 [\[CVE json\]](./CVE-2023-41313.cve.json)
+
+_Last updated: 2024-03-12T10:16:14.512Z_
+
+### Affected
+
+* Apache Doris before 1.2.8
+
+
+### Description
+
+<span style="background-color: rgb(255, 255, 255);">The authentication method in Apache Doris versions before 2.0.0 was vulnerable to timing attacks.</span><br><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 2.0.0 + or 1.2.8, which fixes this issue.</span><br><p></p>
+
+### References
+* https://lists.apache.org/thread/jqczy3vxzs6q6rz9o0626j5nks9fnv95
+
+
+### Credits
+* Andrea Cosentino from  Apache Software Foundation  (reporter)
+
+
 ## Missing API authentication allowed DoS ## { #CVE-2023-41314 }
 
 CVE-2023-41314 [\[CVE json\]](./CVE-2023-41314.cve.json)
