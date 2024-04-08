@@ -37,3 +37,28 @@ Authorization Bypass Through User-Controlled Key vulnerability in Apache ZooKeep
 
 ### Credits
 * Damien Diederen <ddiederen@apache.org> (reporter)
+
+
+## Information disclosure in persistent watcher handling ## { #CVE-2024-23944 }
+
+CVE-2024-23944 [\[CVE json\]](./CVE-2024-23944.cve.json)
+
+_Last updated: 2024-03-14T16:09:06.013Z_
+
+### Affected
+
+* Apache ZooKeeper from 3.9.0 through 3.9.1
+* Apache ZooKeeper from 3.8.0 through 3.8.3
+* Apache ZooKeeper from 3.6.0 through 3.7.2
+
+
+### Description
+
+Information disclosure in persistent watchers handling in Apache ZooKeeper due to missing ACL check. It allows an attacker to monitor child znodes by attaching a persistent watcher (addWatch command) to a parent which the attacker has already access to. ZooKeeper server doesn't do ACL check when the persistent watcher is triggered and as a consequence, the full path of znodes that a watch event gets triggered upon is exposed to the owner of the watcher. It's important to note that only the path is exposed by this vulnerability, not the data of znode, but since znode path can contain sensitive information like user name or login ID, this issue is potentially critical.<br><br>Users are recommended to upgrade to version 3.9.2, 3.8.4 which fixes the issue.<br>
+
+### References
+* https://lists.apache.org/thread/96s5nqssj03rznz9hv58txdb2k1lr79k
+
+
+### Credits
+* 周吉安(寒泉) <zhoujian.zja@alibaba-inc.com> (reporter)

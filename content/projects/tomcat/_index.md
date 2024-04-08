@@ -654,3 +654,29 @@ Generation of Error Message Containing Sensitive Information vulnerability in Ap
 
 ### Credits
 * xer0dayz from company Sn1perSecurity LLC (finder)
+
+
+## HTTP/2 header handling DoS ## { #CVE-2024-24549 }
+
+CVE-2024-24549 [\[CVE json\]](./CVE-2024-24549.cve.json)
+
+_Last updated: 2024-03-13T15:47:06.777Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.0-M16
+* Apache Tomcat from 10.1.0-M1 through 10.1.18
+* Apache Tomcat from 9.0.0-M1 through 9.0.85
+* Apache Tomcat from 8.5.0 through 8.5.98
+
+
+### Description
+
+Denial of Service due to improper input validation vulnerability for HTTP/2 requests in Apache Tomcat. When processing an HTTP/2 request, if the request exceeded any of the configured limits for headers, the associated HTTP/2 stream was not reset until after all of the headers had been processed.<p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M16, from 10.1.0-M1 through 10.1.18, from 9.0.0-M1 through 9.0.85, from 8.5.0 through 8.5.98.</p><p>Users are recommended to upgrade to version 11.0.0-M17, 10.1.19, 9.0.86 or 8.5.99 which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/4c50rmomhbbsdgfjsgwlb51xdwfjdcvg
+
+
+### Credits
+* Bartek Nowotarski (finder)

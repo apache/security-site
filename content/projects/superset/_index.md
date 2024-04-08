@@ -444,7 +444,7 @@ Improper data authorization check on Jinja templated queries in Apache Superset&
 
 CVE-2023-27524 [\[CVE json\]](./CVE-2023-27524.cve.json)
 
-_Last updated: 2023-04-24T15:28:12.736Z_
+_Last updated: 2024-04-08T09:07:29.864Z_
 
 ### Affected
 

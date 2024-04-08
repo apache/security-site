@@ -145,7 +145,7 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 
 CVE-2022-47937 [\[CVE json\]](./CVE-2022-47937.cve.json)
 
-_Last updated: 2023-05-15T08:38:16.894Z_
+_Last updated: 2024-03-29T09:39:29.809Z_
 
 ### Affected
 

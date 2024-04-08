@@ -1054,6 +1054,29 @@ Out-of-bounds Read vulnerability in mod_macro of Apache HTTP Server.<p>This issu
 * David Shoon (github/davidshoon) (finder)
 
 
+## HTTP response splitting ## { #CVE-2023-38709 }
+
+CVE-2023-38709 [\[CVE json\]](./CVE-2023-38709.cve.json)
+
+_Last updated: 2024-04-04T19:19:33.281Z_
+
+### Affected
+
+* Apache HTTP Server through 2.4.58
+
+
+### Description
+
+Faulty input validation in the core of Apache allows malicious or exploitable backend/content generators to split HTTP responses.<br><br>This issue affects Apache HTTP Server: through 2.4.58.<br>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Orange Tsai (@orange_8361) from DEVCORE (finder)
+
+
 ## DoS in HTTP/2 with initial windows size 0 ## { #CVE-2023-43622 }
 
 CVE-2023-43622 [\[CVE json\]](./CVE-2023-43622.cve.json)
@@ -1102,3 +1125,50 @@ When a HTTP/2 stream was reset (RST frame) by a client, there was a time window 
 ### Credits
 * Will Dormann of Vul Labs (finder)
 * David Warren of Vul Labs (finder)
+
+
+## HTTP Response Splitting in multiple modules ## { #CVE-2024-24795 }
+
+CVE-2024-24795 [\[CVE json\]](./CVE-2024-24795.cve.json)
+
+_Last updated: 2024-04-04T19:20:46.952Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.58
+
+
+### Description
+
+HTTP Response splitting in multiple modules in Apache HTTP Server allows an attacker that can inject malicious response headers into backend applications to cause an HTTP desynchronization attack.<br><br>Users are recommended to upgrade to version 2.4.59, which fixes this issue.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Keran Mu, Tsinghua University and Zhongguancun Laboratory. (finder)
+* Jianjun Chen, Tsinghua University and Zhongguancun Laboratory. (finder)
+
+
+## HTTP/2 DoS by memory exhaustion on endless continuation frames ## { #CVE-2024-27316 }
+
+CVE-2024-27316 [\[CVE json\]](./CVE-2024-27316.cve.json)
+
+_Last updated: 2024-04-04T19:21:40.507Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.17 through 2.4.58
+
+
+### Description
+
+HTTP/2 incoming headers exceeding the limit are temporarily buffered in nghttp2 in order to generate an informative HTTP 413 response. If a client does not stop sending headers, this leads to memory exhaustion.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Bartek Nowotarski (https://nowotarski.info/)  (finder)

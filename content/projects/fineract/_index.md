@@ -130,3 +130,76 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 ### Credits
 * Eugene Lim at Cyber Security Group (CSG) Government Technology Agency GOVTECH.sg (reporter)
 * aleks@apache.org (remediation developer)
+
+
+## Under certain circumstances, this vulnerability allowed users, without specific permissions, to escalate their privileges to any role.  ## { #CVE-2024-23537 }
+
+CVE-2024-23537 [\[CVE json\]](./CVE-2024-23537.cve.json)
+
+_Last updated: 2024-03-29T14:38:03.872Z_
+
+### Affected
+
+* Apache Fineract before 1.9.0
+
+
+### Description
+
+Improper Privilege Management vulnerability in Apache Fineract.<p>This issue affects Apache Fineract: &lt;1.8.5.</p><p>Users are recommended to upgrade to version 1.9.0, which fixes the issue.</p>
+
+### References
+* https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report
+* https://lists.apache.org/thread/fq1ns4nprw2vqpkwwj9sw45jkwxmt9f1
+
+
+### Credits
+*  Yash Sancheti  (reporter)
+
+
+## Under certain system configurations, the sqlSearch parameter was vulnerable to SQL injection attacks, potentially allowing attackers to manipulate database queries. ## { #CVE-2024-23538 }
+
+CVE-2024-23538 [\[CVE json\]](./CVE-2024-23538.cve.json)
+
+_Last updated: 2024-03-29T14:37:38.535Z_
+
+### Affected
+
+* Apache Fineract before 1.8.5
+
+
+### Description
+
+Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Fineract.<p>This issue affects Apache Fineract: &lt;1.8.5.</p><p>Users are recommended to upgrade to version 1.8.5 or 1.9.0, which fix the issue.</p>
+
+### References
+* https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report
+* https://lists.apache.org/thread/by32w2dylzgbqm5940x3wj7519wolqxs
+
+
+### Credits
+* Yash Sancheti (reporter)
+* Majd Alasfar of ProgressSoft (reporter)
+
+
+## Under certain system configurations, the sqlSearch parameter for specific endpoints was vulnerable to SQL injection attacks, potentially allowing attackers to manipulate database queries.  ## { #CVE-2024-23539 }
+
+CVE-2024-23539 [\[CVE json\]](./CVE-2024-23539.cve.json)
+
+_Last updated: 2024-03-29T14:36:56.073Z_
+
+### Affected
+
+* Apache Fineract through 1.8.4
+
+
+### Description
+
+Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Fineract.<p>This issue affects Apache Fineract: &lt;1.8.5.</p><p>Users are recommended to upgrade to version 1.8.5 or 1.9.0, which fix the issue.</p>
+
+### References
+* https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report
+* https://lists.apache.org/thread/g8sv1gnjv716lx2h89jbvjdgtrrjmy7h
+
+
+### Credits
+* Yash Sancheti of GH Solutions Consultants (finder)

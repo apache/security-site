@@ -133,3 +133,26 @@ A SSRF vulnerability in parsing the&nbsp;href attribute of XOP:Include in MTOM r
 
 ### Credits
 * thanat0s from Beijin Qihoo 360 adlab (finder)
+
+
+## Apache CXF SSRF Vulnerability using the Aegis databinding ## { #CVE-2024-28752 }
+
+CVE-2024-28752 [\[CVE json\]](./CVE-2024-28752.cve.json)
+
+_Last updated: 2024-03-15T10:28:02.596Z_
+
+### Affected
+
+* Apache CXF before 4.0.4, 3.6.3, 3.5.8
+
+
+### Description
+
+A SSRF vulnerability using the Aegis DataBinding in versions of Apache CXF before 4.0.4, 3.6.3 and 3.5.8 allows an attacker to perform SSRF style attacks on webservices that take at least one parameter of any type. Users of other data bindings (including the default databinding) are not impacted.<br><br>
+
+### References
+* https://cxf.apache.org/security-advisories.data/CVE-2024-28752.txt
+
+
+### Credits
+* Tobias S. Fink (finder)

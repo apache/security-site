@@ -2009,3 +2009,52 @@ Apache Airflow, versions before 2.8.2, has a vulnerability that allows authentic
 * Sreenivasulu Suuda (finder)
 * vincbeck (Vincent) (remediation developer)
 * Jed Cunningham (remediation developer)
+
+
+## Ignored Airflow Permissions ## { #CVE-2024-28746 }
+
+CVE-2024-28746 [\[CVE json\]](./CVE-2024-28746.cve.json)
+
+_Last updated: 2024-03-14T08:40:55.534Z_
+
+### Affected
+
+* Apache Airflow from 2.8.0 before 2.8.3
+
+
+### Description
+
+Apache Airflow, versions 2.8.0 through 2.8.2, has a vulnerability that allows an authenticated user with limited permissions to access resources such as variables, connections, etc from the UI which they do not have permission to access.&nbsp;<br><br>Users of Apache Airflow are recommended to upgrade to version 2.8.3 or newer to mitigate the risk associated with this vulnerability<br>
+
+### References
+* https://github.com/apache/airflow/pull/37881
+* https://lists.apache.org/thread/b4pffc7w7do6qgk4jjbyxvdz5odrvny7
+
+
+### Credits
+* Alex Liotta (finder)
+* Vincent(Vincbeck) (remediation developer)
+
+
+## Potentially harmful permission changing by log task handler ## { #CVE-2024-29735 }
+
+CVE-2024-29735 [\[CVE json\]](./CVE-2024-29735.cve.json)
+
+_Last updated: 2024-03-26T16:52:39.118Z_
+
+### Affected
+
+* Apache Airflow from 2.8.2 through 2.8.3
+
+
+### Description
+
+Improper Preservation of Permissions vulnerability in Apache Airflow.<p>This issue affects Apache Airflow from 2.8.2 through 2.8.3.</p><p></p><p>Airflow's local file task handler in Airflow incorrectly set permissions for all parent folders of log folder, in default configuration adding write access to Unix <code>group</code>&nbsp;of the folders. In the case Airflow is run with the root user (not recommended) it added group write permission to all folders up to the root of the filesystem.</p><p>If your log files are stored in the home directory, these permission changes might impact your ability to run SSH operations after your home directory becomes group-writeable.</p><p>This issue does not affect users who use or extend Airflow using Official Airflow Docker reference images (<a target="_blank" rel="nofollow" href="https://hub.docker.com/r/apache/airflow/">https://hub.docker.com/r/apache/airflow/</a>) - those images require to have group write permission set anyway.</p><p>You are affected only if you install Airflow using local installation / virtualenv or other Docker images, but the issue has no impact if docker containers are used as intended, i.e. where Airflow components do not share containers with other applications and users.</p><p>Also you should not be affected if your umask is 002 (group write enabled) - this is the default on many linux systems.</p><p>Recommendation for users using Airflow outside of the containers:</p><ul><li>if you are using root to run Airflow, change your Airflow user to use non-root</li><li>upgrade Apache Airflow to 2.8.4 or above</li><li>If you prefer not to upgrade, you can change the <a target="_blank" rel="nofollow" href="https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html#file-task-handler-new-folder-permissions">https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html#file-task-handler-new-folder-permissions</a>&nbsp;to 0o755 (original value 0o775).</li><li>if you already ran Airflow tasks before and your default umask is 022 (group write disabled) you should stop Airflow components, check permissions of <code>AIRFLOW_HOME/logs</code>&nbsp;in all your components and all parent directories of this directory and remove group write access for all the parent directories</li></ul><br><p></p>
+
+### References
+* https://github.com/apache/airflow/pull/37310
+* https://lists.apache.org/thread/8khb1rtbznh100o325fb8xw5wjvtv536
+
+
+### Credits
+* Matej Murin (finder)

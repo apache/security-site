@@ -76,3 +76,42 @@ The api /api/snapshot and /api/get_log_file would allow unauthenticated access.<
 
 ### References
 * https://lists.apache.org/thread/tgvpvz3yw7zgodl1sb3sv3jbbz8t5zb4
+
+
+## Possible race condition ## { #CVE-2024-26307 }
+
+CVE-2024-26307 [\[CVE json\]](./CVE-2024-26307.cve.json)
+
+_Last updated: 2024-03-21T09:38:16.580Z_
+
+### Affected
+
+* Apache Doris before 1.2.8
+* Apache Doris before 2.0.4
+
+
+### Description
+
+Possible race condition vulnerability in Apache Doris.<br>Some of code using `chmod()` method. This method <span style="background-color: rgb(255, 255, 255);">run the risk of someone renaming the file out from under user and chmodding the wrong file.<br>This could theoretically happen, but the impact would be minimal.</span><br><p>This issue affects Apache Doris: before 1.2.8, before 2.0.4.</p><p>Users are recommended to upgrade to version 2.0.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5shhw8x8m271hd2wfwzqzwgf36pmc4pl
+
+
+## Downloading arbitrary remote jar files resulting in remote command execution ## { #CVE-2024-27438 }
+
+CVE-2024-27438 [\[CVE json\]](./CVE-2024-27438.cve.json)
+
+_Last updated: 2024-03-21T09:39:20.599Z_
+
+### Affected
+
+* Apache Doris from 1.2.0 through 2.0.4
+
+
+### Description
+
+Download of Code Without Integrity Check vulnerability in Apache Doris.<br>The jdbc driver files used for JDBC catalog is not checked and may&nbsp;resulting in remote command execution.<br>Once the attacker is authorized to create a JDBC catalog, he/she can use arbitrary driver jar file with unchecked code snippet. This&nbsp;code snippet will be run when catalog is initializing without any check.<br><p>This issue affects Apache Doris: from 1.2.0 through 2.0.4.</p><p>Users are recommended to upgrade to version 2.0.5 or 2.1.x, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/h95h82b0svlnwcg6c2xq4b08j6gwgczh

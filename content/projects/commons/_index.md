@@ -337,3 +337,49 @@ Allocation of Resources Without Limits or Throttling vulnerability in Apache Com
 
 ### Credits
 * Yakov Shafranovich, Amazon Web Services (reporter)
+
+
+## StackOverflowError adding property in AbstractListDelimiterHandler.flattenIterator() ## { #CVE-2024-29131 }
+
+CVE-2024-29131 [\[CVE json\]](./CVE-2024-29131.cve.json)
+
+_Last updated: 2024-03-21T09:07:12.130Z_
+
+### Affected
+
+* Apache Commons Configuration from 2.0 before 2.10.1
+
+
+### Description
+
+Out-of-bounds Write vulnerability in Apache Commons Configuration.<p>This issue affects Apache Commons Configuration: from 2.0 before 2.10.1.</p><p>Users are recommended to upgrade to version 2.10.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/03nzzzjn4oknyw5y0871tw7ltj0t3r37
+
+
+### Credits
+* Bob Marinier (finder)
+
+
+## StackOverflowError calling ListDelimiterHandler.flatten(Object, int) with a cyclical object tree ## { #CVE-2024-29133 }
+
+CVE-2024-29133 [\[CVE json\]](./CVE-2024-29133.cve.json)
+
+_Last updated: 2024-03-21T09:05:45.826Z_
+
+### Affected
+
+* Apache Commons Configuration from 2.0 before 2.10.1
+
+
+### Description
+
+Out-of-bounds Write vulnerability in Apache Commons Configuration.<p>This issue affects Apache Commons Configuration: from 2.0 before 2.10.1.</p><p>Users are recommended to upgrade to version 2.10.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/ccb9w15bscznh6tnp3wsvrrj9crbszh2
+
+
+### Credits
+* Gary Gregory (finder)

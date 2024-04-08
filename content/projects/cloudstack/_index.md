@@ -58,3 +58,75 @@ Apache CloudStack version 4.5.0 and later has a SAML 2.0 authentication Service 
 
 ### Credits
 * This issue was reported by v3ged0ge
+
+
+## x-forwarded-for HTTP header parsed by default ## { #CVE-2024-29006 }
+
+CVE-2024-29006 [\[CVE json\]](./CVE-2024-29006.cve.json)
+
+_Last updated: 2024-04-04T10:59:16.384Z_
+
+### Affected
+
+* Apache CloudStack from 4.11.0.0 through 4.18.1.0, 4.19.0.0
+
+
+### Description
+
+<div>By default the CloudStack management server honours the x-forwarded-for HTTP header and logs it as the source IP of an API request. This could lead to authentication bypass and other operational problems should an attacker decide to spoof their IP address this way. Users are recommended to upgrade to CloudStack version 4.18.1.1 or 4.19.0.1, which fixes this issue.</div>
+
+### References
+* https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp
+* https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1
+
+
+### Credits
+* Yuyang Xiao <superxyyang@gmail.com> (finder)
+
+
+## When downloading templates or ISOs, the management server and SSVM follow HTTP redirects with potentially dangerous consequences ## { #CVE-2024-29007 }
+
+CVE-2024-29007 [\[CVE json\]](./CVE-2024-29007.cve.json)
+
+_Last updated: 2024-04-04T10:58:20.239Z_
+
+### Affected
+
+* Apache CloudStack from 4.9.1.0 through 4.18.1.0, 4.19.0.0
+
+
+### Description
+
+<div>The CloudStack management server and secondary storage VM could be tricked into making requests to restricted or random resources by means of following 301 HTTP redirects presented by external servers when downloading templates or ISOs. Users are recommended to upgrade to version 4.18.1.1 or 4.19.0.1, which fixes this issue.</div>
+
+### References
+* https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp
+* https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1
+
+
+### Credits
+* Yuyang Xiao <superxyyang@gmail.com> (finder)
+
+
+## The extraconfig feature can be abused to load hypervisor resources on a VM instance ## { #CVE-2024-29008 }
+
+CVE-2024-29008 [\[CVE json\]](./CVE-2024-29008.cve.json)
+
+_Last updated: 2024-04-04T10:58:44.745Z_
+
+### Affected
+
+* Apache CloudStack from 4.14.0.0 through 4.18.1.0, 4.19.0.0
+
+
+### Description
+
+<div>A problem has been identified in the CloudStack additional VM configuration (extraconfig) feature which can be misused by anyone who has privilege to deploy a VM instance or configure settings of an already deployed VM instance, to configure additional VM configuration even when the feature is not explicitly enabled by the administrator. In a KVM based CloudStack environment, an attacker can exploit this issue to&nbsp;attach host devices such as storage disks, and PCI and USB devices such as network adapters and GPUs, in a regular VM instance that can be further exploited to gain access to the underlying network and storage infrastructure resources, and access any VM instance disks on the local storage.</div><br><div>Users are advised to upgrade to version 4.18.1.1 or 4.19.0.1, which fixes this issue.<br></div>
+
+### References
+* https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp
+* https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1
+
+
+### Credits
+* Wei Zhou <ustcweizhou@gmail.com> (finder)
