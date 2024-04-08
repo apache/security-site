@@ -595,6 +595,26 @@ smuggling when behind a reverse proxy.<br></p><p><span style="background-color: 
 <ul>
 <li>xer0dayz from company Sn1perSecurity LLC (finder)</li>
 </ul>
+<h2 id="CVE-2024-24549">HTTP/2 header handling DoS</h2>
+<p>CVE-2024-24549 <a href="./CVE-2024-24549.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-03-13T15:47:06.777Z</em></p>
+<h3 id="affected-26">Affected</h3>
+<ul>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M16</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.18</li>
+<li>Apache Tomcat from 9.0.0-M1 through 9.0.85</li>
+<li>Apache Tomcat from 8.5.0 through 8.5.98</li>
+</ul>
+<h3 id="description-26">Description</h3>
+<p>Denial of Service due to improper input validation vulnerability for HTTP/2 requests in Apache Tomcat. When processing an HTTP/2 request, if the request exceeded any of the configured limits for headers, the associated HTTP/2 stream was not reset until after all of the headers had been processed.<p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M16, from 10.1.0-M1 through 10.1.18, from 9.0.0-M1 through 9.0.85, from 8.5.0 through 8.5.98.</p><p>Users are recommended to upgrade to version 11.0.0-M17, 10.1.19, 9.0.86 or 8.5.99 which fix the issue.</p></p>
+<h3 id="references-26">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/4c50rmomhbbsdgfjsgwlb51xdwfjdcvg">https://lists.apache.org/thread/4c50rmomhbbsdgfjsgwlb51xdwfjdcvg</a></li>
+</ul>
+<h3 id="credits-15">Credits</h3>
+<ul>
+<li>Bartek Nowotarski (finder)</li>
+</ul>
 
   
 </div>

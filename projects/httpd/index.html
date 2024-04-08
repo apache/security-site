@@ -906,20 +906,37 @@ substitution. For example, something like:</div><div><br></div><div>RewriteEngin
 <ul>
 <li>David Shoon (github/davidshoon) (finder)</li>
 </ul>
-<h2 id="CVE-2023-43622">DoS in HTTP/2 with initial windows size 0</h2>
-<p>CVE-2023-43622 <a href="./CVE-2023-43622.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2023-10-23T06:50:49.104Z</em></p>
+<h2 id="CVE-2023-38709">HTTP response splitting</h2>
+<p>CVE-2023-38709 <a href="./CVE-2023-38709.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-04-04T19:19:33.281Z</em></p>
 <h3 id="affected-37">Affected</h3>
 <ul>
-<li>Apache HTTP Server from 2.4.55 through 2.4.57</li>
+<li>Apache HTTP Server through 2.4.58</li>
 </ul>
 <h3 id="description-37">Description</h3>
-<p>An attacker, opening a HTTP/2 connection with an initial window size of 0, was able to block handling of that connection indefinitely in Apache HTTP Server. This could be used to exhaust worker resources in the server, similar to the well known &ldquo;slow loris&rdquo; attack pattern.<br><p>This has been fixed in version 2.4.58, so that such connection are terminated properly after the configured connection timeout.</p><p>This issue affects Apache HTTP Server: from 2.4.55 through 2.4.57.</p><p>Users are recommended to upgrade to version 2.4.58, which fixes the issue.</p></p>
+<p>Faulty input validation in the core of Apache allows malicious or exploitable backend/content generators to split HTTP responses.<br><br>This issue affects Apache HTTP Server: through 2.4.58.<br></p>
 <h3 id="references-36">References</h3>
 <ul>
 <li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
 </ul>
 <h3 id="credits-35">Credits</h3>
+<ul>
+<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
+</ul>
+<h2 id="CVE-2023-43622">DoS in HTTP/2 with initial windows size 0</h2>
+<p>CVE-2023-43622 <a href="./CVE-2023-43622.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2023-10-23T06:50:49.104Z</em></p>
+<h3 id="affected-38">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.55 through 2.4.57</li>
+</ul>
+<h3 id="description-38">Description</h3>
+<p>An attacker, opening a HTTP/2 connection with an initial window size of 0, was able to block handling of that connection indefinitely in Apache HTTP Server. This could be used to exhaust worker resources in the server, similar to the well known &ldquo;slow loris&rdquo; attack pattern.<br><p>This has been fixed in version 2.4.58, so that such connection are terminated properly after the configured connection timeout.</p><p>This issue affects Apache HTTP Server: from 2.4.55 through 2.4.57.</p><p>Users are recommended to upgrade to version 2.4.58, which fixes the issue.</p></p>
+<h3 id="references-37">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-36">Credits</h3>
 <ul>
 <li>Prof. Sven Dietrich (City University of New York) (finder)</li>
 <li>Isa Jafarov (City University of New York) (finder)</li>
@@ -929,20 +946,55 @@ substitution. For example, something like:</div><div><br></div><div>RewriteEngin
 <h2 id="CVE-2023-45802">HTTP/2 stream memory not reclaimed right away on RST</h2>
 <p>CVE-2023-45802 <a href="./CVE-2023-45802.cve.json">[CVE json]</a></p>
 <p><em>Last updated: 2023-10-23T06:50:19.803Z</em></p>
-<h3 id="affected-38">Affected</h3>
+<h3 id="affected-39">Affected</h3>
 <ul>
 <li>Apache HTTP Server from 2.4.17 through 2.4.57</li>
 </ul>
-<h3 id="description-38">Description</h3>
+<h3 id="description-39">Description</h3>
 <p>When a HTTP/2 stream was reset (RST frame) by a client, there was a time window were the request&rsquo;s memory resources were not reclaimed immediately. Instead, de-allocation was deferred to connection close. A client could send new requests and resets, keeping the connection busy and open and causing the memory footprint to keep on growing. On connection close, all resources were reclaimed, but the process might run out of memory before that.<br><br>This was found by the reporter during testing of CVE-2023-44487 (HTTP/2 Rapid Reset Exploit) with their own test client. During &ldquo;normal&rdquo; HTTP/2 use, the probability to hit this bug is very low. The kept memory would not become noticeable before the connection closes or times out.<br><br>Users are recommended to upgrade to version 2.4.58, which fixes the issue.<br></p>
-<h3 id="references-37">References</h3>
+<h3 id="references-38">References</h3>
 <ul>
 <li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
 </ul>
-<h3 id="credits-36">Credits</h3>
+<h3 id="credits-37">Credits</h3>
 <ul>
 <li>Will Dormann of Vul Labs (finder)</li>
 <li>David Warren of Vul Labs (finder)</li>
+</ul>
+<h2 id="CVE-2024-24795">HTTP Response Splitting in multiple modules</h2>
+<p>CVE-2024-24795 <a href="./CVE-2024-24795.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-04-04T19:20:46.952Z</em></p>
+<h3 id="affected-40">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.58</li>
+</ul>
+<h3 id="description-40">Description</h3>
+<p>HTTP Response splitting in multiple modules in Apache HTTP Server allows an attacker that can inject malicious response headers into backend applications to cause an HTTP desynchronization attack.<br><br>Users are recommended to upgrade to version 2.4.59, which fixes this issue.</p>
+<h3 id="references-39">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-38">Credits</h3>
+<ul>
+<li>Keran Mu, Tsinghua University and Zhongguancun Laboratory. (finder)</li>
+<li>Jianjun Chen, Tsinghua University and Zhongguancun Laboratory. (finder)</li>
+</ul>
+<h2 id="CVE-2024-27316">HTTP/2 DoS by memory exhaustion on endless continuation frames</h2>
+<p>CVE-2024-27316 <a href="./CVE-2024-27316.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-04-04T19:21:40.507Z</em></p>
+<h3 id="affected-41">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.17 through 2.4.58</li>
+</ul>
+<h3 id="description-41">Description</h3>
+<p>HTTP/2 incoming headers exceeding the limit are temporarily buffered in nghttp2 in order to generate an informative HTTP 413 response. If a client does not stop sending headers, this leads to memory exhaustion.</p>
+<h3 id="references-40">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-39">Credits</h3>
+<ul>
+<li>Bartek Nowotarski (<a href="https://nowotarski.info/">https://nowotarski.info/</a>)  (finder)</li>
 </ul>
 
   

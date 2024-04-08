@@ -1602,6 +1602,43 @@ resulting in a denial of service, information disclosure or remote code executio
 <li>vincbeck (Vincent) (remediation developer)</li>
 <li>Jed Cunningham (remediation developer)</li>
 </ul>
+<h2 id="CVE-2024-28746">Ignored Airflow Permissions</h2>
+<p>CVE-2024-28746 <a href="./CVE-2024-28746.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-03-14T08:40:55.534Z</em></p>
+<h3 id="affected-81">Affected</h3>
+<ul>
+<li>Apache Airflow from 2.8.0 before 2.8.3</li>
+</ul>
+<h3 id="description-81">Description</h3>
+<p>Apache Airflow, versions 2.8.0 through 2.8.2, has a vulnerability that allows an authenticated user with limited permissions to access resources such as variables, connections, etc from the UI which they do not have permission to access. <br><br>Users of Apache Airflow are recommended to upgrade to version 2.8.3 or newer to mitigate the risk associated with this vulnerability<br></p>
+<h3 id="references-81">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/37881">https://github.com/apache/airflow/pull/37881</a></li>
+<li><a href="https://lists.apache.org/thread/b4pffc7w7do6qgk4jjbyxvdz5odrvny7">https://lists.apache.org/thread/b4pffc7w7do6qgk4jjbyxvdz5odrvny7</a></li>
+</ul>
+<h3 id="credits-78">Credits</h3>
+<ul>
+<li>Alex Liotta (finder)</li>
+<li>Vincent(Vincbeck) (remediation developer)</li>
+</ul>
+<h2 id="CVE-2024-29735">Potentially harmful permission changing by log task handler</h2>
+<p>CVE-2024-29735 <a href="./CVE-2024-29735.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-03-26T16:52:39.118Z</em></p>
+<h3 id="affected-82">Affected</h3>
+<ul>
+<li>Apache Airflow from 2.8.2 through 2.8.3</li>
+</ul>
+<h3 id="description-82">Description</h3>
+<p>Improper Preservation of Permissions vulnerability in Apache Airflow.<p>This issue affects Apache Airflow from 2.8.2 through 2.8.3.</p><p></p><p>Airflow&rsquo;s local file task handler in Airflow incorrectly set permissions for all parent folders of log folder, in default configuration adding write access to Unix <code>group</code> of the folders. In the case Airflow is run with the root user (not recommended) it added group write permission to all folders up to the root of the filesystem.</p><p>If your log files are stored in the home directory, these permission changes might impact your ability to run SSH operations after your home directory becomes group-writeable.</p><p>This issue does not affect users who use or extend Airflow using Official Airflow Docker reference images (<a target="_blank" rel="nofollow" href="https://hub.docker.com/r/apache/airflow/"><a href="https://hub.docker.com/r/apache/airflow/">https://hub.docker.com/r/apache/airflow/</a></a>) - those images require to have group write permission set anyway.</p><p>You are affected only if you install Airflow using local installation / virtualenv or other Docker images, but the issue has no impact if docker containers are used as intended, i.e. where Airflow components do not share containers with other applications and users.</p><p>Also you should not be affected if your umask is 002 (group write enabled) - this is the default on many linux systems.</p><p>Recommendation for users using Airflow outside of the containers:</p><ul><li>if you are using root to run Airflow, change your Airflow user to use non-root</li><li>upgrade Apache Airflow to 2.8.4 or above</li><li>If you prefer not to upgrade, you can change the <a target="_blank" rel="nofollow" href="https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html#file-task-handler-new-folder-permissions"><a href="https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html#file-task-handler-new-folder-permissions">https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html#file-task-handler-new-folder-permissions</a></a> to 0o755 (original value 0o775).</li><li>if you already ran Airflow tasks before and your default umask is 022 (group write disabled) you should stop Airflow components, check permissions of <code>AIRFLOW_HOME/logs</code> in all your components and all parent directories of this directory and remove group write access for all the parent directories</li></ul><br><p></p></p>
+<h3 id="references-82">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/37310">https://github.com/apache/airflow/pull/37310</a></li>
+<li><a href="https://lists.apache.org/thread/8khb1rtbznh100o325fb8xw5wjvtv536">https://lists.apache.org/thread/8khb1rtbznh100o325fb8xw5wjvtv536</a></li>
+</ul>
+<h3 id="credits-79">Credits</h3>
+<ul>
+<li>Matej Murin (finder)</li>
+</ul>
 
   
 </div>

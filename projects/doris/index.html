@@ -154,6 +154,33 @@
 <ul>
 <li><a href="https://lists.apache.org/thread/tgvpvz3yw7zgodl1sb3sv3jbbz8t5zb4">https://lists.apache.org/thread/tgvpvz3yw7zgodl1sb3sv3jbbz8t5zb4</a></li>
 </ul>
+<h2 id="CVE-2024-26307">Possible race condition</h2>
+<p>CVE-2024-26307 <a href="./CVE-2024-26307.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-03-21T09:38:16.580Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Doris before 1.2.8</li>
+<li>Apache Doris before 2.0.4</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Possible race condition vulnerability in Apache Doris.<br>Some of code using <code>chmod()</code> method. This method <span style="background-color: rgb(255, 255, 255);">run the risk of someone renaming the file out from under user and chmodding the wrong file.<br>This could theoretically happen, but the impact would be minimal.</span><br><p>This issue affects Apache Doris: before 1.2.8, before 2.0.4.</p><p>Users are recommended to upgrade to version 2.0.4, which fixes the issue.</p></p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/5shhw8x8m271hd2wfwzqzwgf36pmc4pl">https://lists.apache.org/thread/5shhw8x8m271hd2wfwzqzwgf36pmc4pl</a></li>
+</ul>
+<h2 id="CVE-2024-27438">Downloading arbitrary remote jar files resulting in remote command execution</h2>
+<p>CVE-2024-27438 <a href="./CVE-2024-27438.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-03-21T09:39:20.599Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Doris from 1.2.0 through 2.0.4</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Download of Code Without Integrity Check vulnerability in Apache Doris.<br>The jdbc driver files used for JDBC catalog is not checked and may resulting in remote command execution.<br>Once the attacker is authorized to create a JDBC catalog, he/she can use arbitrary driver jar file with unchecked code snippet. This code snippet will be run when catalog is initializing without any check.<br><p>This issue affects Apache Doris: from 1.2.0 through 2.0.4.</p><p>Users are recommended to upgrade to version 2.0.5 or 2.1.x, which fixes the issue.</p></p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/h95h82b0svlnwcg6c2xq4b08j6gwgczh">https://lists.apache.org/thread/h95h82b0svlnwcg6c2xq4b08j6gwgczh</a></li>
+</ul>
 
   
 </div>

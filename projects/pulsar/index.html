@@ -263,66 +263,87 @@ It hasn’t been detected that the Pulsar Proxy authentication can be bypassed. 
 <ul>
 <li>This issue was discovered by Michael Rowley, <a href="mailto:michaellrowley@protonmail.com">michaellrowley@protonmail.com</a></li>
 </ul>
+<h2 id="CVE-2022-34321">Improper Authentication for Pulsar Proxy Statistics Endpoint</h2>
+<p>CVE-2022-34321 <a href="./CVE-2022-34321.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-03-12T18:17:04.384Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache Pulsar from 2.6.0 before 2.10.6</li>
+<li>Apache Pulsar from 2.11.0 before 2.11.3</li>
+<li>Apache Pulsar from 3.0.0 before 3.0.2</li>
+<li>Apache Pulsar from 3.1.0 before 3.1.1</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>Improper Authentication vulnerability in Apache Pulsar Proxy allows an attacker to connect to the /proxy-stats endpoint without authentication. The vulnerable endpoint exposes detailed statistics about live connections, along with the capability to modify the logging level of proxied connections without requiring proper authentication credentials.<br><br>This issue affects Apache Pulsar versions from 2.6.0 to 2.10.5, from 2.11.0 to 2.11.2, from 3.0.0 to 3.0.1, and 3.1.0.<br><br>The known risks include exposing sensitive information such as connected client IP and unauthorized logging level manipulation which could lead to a denial-of-service condition by significantly increasing the proxy&rsquo;s logging overhead. When deployed via the Apache Pulsar Helm chart within Kubernetes environments, the actual client IP might not be revealed through the load balancer&rsquo;s default behavior, which typically obscures the original source IP addresses when externalTrafficPolicy is being configured to &ldquo;Cluster&rdquo; by default. The /proxy-stats endpoint contains topic level statistics, however, in the default configuration, the topic level statistics aren&rsquo;t known to be exposed.<br><br>2.10 Pulsar Proxy users should upgrade to at least 2.10.6.<br>2.11 Pulsar Proxy users should upgrade to at least 2.11.3.<br>3.0 Pulsar Proxy users should upgrade to at least 3.0.2.<br>3.1 Pulsar Proxy users should upgrade to at least 3.1.1.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions. Additionally, it&rsquo;s imperative to recognize that the Apache Pulsar Proxy is not intended for direct exposure to the internet. The architectural design of Pulsar Proxy assumes that it will operate within a secured network environment, safeguarded by appropriate perimeter defenses.</p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/ods5tq2hpl390hvjnvxv0bcg4rfpgjj8">https://lists.apache.org/thread/ods5tq2hpl390hvjnvxv0bcg4rfpgjj8</a></li>
+<li><a href="https://pulsar.apache.org/security/CVE-2022-34321/">https://pulsar.apache.org/security/CVE-2022-34321/</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Lari Hotari (finder)</li>
+</ul>
 <h2 id="CVE-2023-30428">Incorrect Authorization Validation for Rest Producer</h2>
 <p>CVE-2023-30428 <a href="./CVE-2023-30428.cve.json">[CVE json]</a></p>
 <p><em>Last updated: 2023-07-12T09:11:23.044Z</em></p>
-<h3 id="affected-7">Affected</h3>
+<h3 id="affected-8">Affected</h3>
 <ul>
 <li>Apache Pulsar Broker from 2.9.0 through 2.9.5</li>
 <li>Apache Pulsar Broker from 2.10.0 before 2.10.4</li>
 <li>Apache Pulsar Broker at 2.11.0</li>
 </ul>
-<h3 id="description-7">Description</h3>
+<h3 id="description-8">Description</h3>
 <p>Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsar Broker&rsquo;s Rest Producer allows authenticated user with a custom HTTP header to produce a message to any topic using the broker&rsquo;s admin role.<br>This issue affects Apache Pulsar Brokers: from 2.9.0 through 2.9.5, from 2.10.0 before 2.10.4, 2.11.0.<br><br>The vulnerability is exploitable when an attacker can connect directly to the Pulsar Broker. If an attacker is connecting through the Pulsar Proxy, there is no known way to exploit this authorization vulnerability.<br><br>There are two known risks for affected users. First, an attacker could produce garbage messages to any topic in the cluster. Second, an attacker could produce messages to the topic level policies topic for other tenants and influence topic settings that could lead to exfiltration and/or deletion of messages for other tenants.<br><br>2.8 Pulsar Broker users and earlier are unaffected.<br>2.9 Pulsar Broker users should upgrade to one of the patched versions.<br>2.10 Pulsar Broker users should upgrade to at least 2.10.4.<br>2.11 Pulsar Broker users should upgrade to at least 2.11.1.<br>3.0 Pulsar Broker users are unaffected.<br><br></p>
-<h3 id="references-7">References</h3>
+<h3 id="references-8">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/v39hqtgrmyxr85rmofwvgrktnflbq3q5">https://lists.apache.org/thread/v39hqtgrmyxr85rmofwvgrktnflbq3q5</a></li>
 </ul>
-<h3 id="credits-5">Credits</h3>
+<h3 id="credits-6">Credits</h3>
 <ul>
 <li>Michael Marshall of DataStax (finder)</li>
 </ul>
 <h2 id="CVE-2023-30429">Incorrect Authorization for Function Worker when using mTLS Authentication through Pulsar Proxy</h2>
 <p>CVE-2023-30429 <a href="./CVE-2023-30429.cve.json">[CVE json]</a></p>
 <p><em>Last updated: 2023-07-12T09:08:18.670Z</em></p>
-<h3 id="affected-8">Affected</h3>
+<h3 id="affected-9">Affected</h3>
 <ul>
 <li>Apache Pulsar before 2.10.4</li>
 <li>Apache Pulsar at 2.11.0</li>
 </ul>
-<h3 id="description-8">Description</h3>
+<h3 id="description-9">Description</h3>
 <p>Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsar.<br><br>This issue affects Apache Pulsar: before 2.10.4, and 2.11.0.<br><br>When a client connects to the Pulsar Function Worker via the Pulsar Proxy where the Pulsar Proxy uses mTLS authentication to authenticate with the Pulsar Function Worker, the Pulsar Function Worker incorrectly performs authorization by using the Proxy&rsquo;s role for authorization instead of the client&rsquo;s role, which can lead to privilege escalation, especially if the proxy is configured with a superuser role.<br><br>The recommended mitigation for impacted users is to upgrade the Pulsar Function Worker to a patched version.<br><br>2.10 Pulsar Function Worker users should upgrade to at least 2.10.4.<br>2.11 Pulsar Function Worker users should upgrade to at least 2.11.1.<br>3.0 Pulsar Function Worker users are unaffected.<br>Any users running the Pulsar Function Worker for 2.9.* and earlier should upgrade to one of the above patched versions.<br></p>
-<h3 id="references-8">References</h3>
+<h3 id="references-9">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/v0gcvvxswr830314q4b1kybsfmcf3jf8">https://lists.apache.org/thread/v0gcvvxswr830314q4b1kybsfmcf3jf8</a></li>
 </ul>
-<h3 id="credits-6">Credits</h3>
+<h3 id="credits-7">Credits</h3>
 <ul>
 <li>Michael Marshall of DataStax (finder)</li>
 </ul>
 <h2 id="CVE-2023-31007">Broker does not always disconnect client when authentication data expires</h2>
 <p>CVE-2023-31007 <a href="./CVE-2023-31007.cve.json">[CVE json]</a></p>
 <p><em>Last updated: 2023-07-13T08:27:41.124Z</em></p>
-<h3 id="affected-9">Affected</h3>
+<h3 id="affected-10">Affected</h3>
 <ul>
 <li>Apache Pulsar before 2.9.5</li>
 <li>Apache Pulsar from 2.10.0 through 2.10.3</li>
 <li>Apache Pulsar at 2.11.0</li>
 </ul>
-<h3 id="description-9">Description</h3>
+<h3 id="description-10">Description</h3>
 <p>Improper Authentication vulnerability in Apache Software Foundation Apache Pulsar Broker allows a client to stay connected to a broker after authentication data expires if the client connected through the Pulsar Proxy when the broker is configured with authenticateOriginalAuthData=false or if a client connects directly to a broker with a specially crafted connect command when the broker is configured with authenticateOriginalAuthData=false.<br><br>This issue affects Apache Pulsar: through 2.9.4, from 2.10.0 through 2.10.3, 2.11.0.<br><br>2.9 Pulsar Broker users should upgrade to at least 2.9.5.<br>2.10 Pulsar Broker users should upgrade to at least 2.10.4.<br>2.11 Pulsar Broker users should upgrade to at least 2.11.1.<br>3.0 Pulsar Broker users are unaffected.<br>Any users running the Pulsar Broker for 2.8.* and earlier should upgrade to one of the above patched versions.<br></p>
-<h3 id="references-9">References</h3>
+<h3 id="references-10">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/qxn99xxyp0zv6jchjggn3soyo5gvqfxj">https://lists.apache.org/thread/qxn99xxyp0zv6jchjggn3soyo5gvqfxj</a></li>
 </ul>
-<h3 id="credits-7">Credits</h3>
+<h3 id="credits-8">Credits</h3>
 <ul>
 <li>Michael Marshall of DataStax (finder)</li>
 </ul>
 <h2 id="CVE-2023-37544">Improper Authentication for WebSocket Proxy Endpoint Allows DoS</h2>
 <p>CVE-2023-37544 <a href="./CVE-2023-37544.cve.json">[CVE json]</a></p>
 <p><em>Last updated: 2023-12-20T08:33:58.071Z</em></p>
-<h3 id="affected-10">Affected</h3>
+<h3 id="affected-11">Affected</h3>
 <ul>
 <li>Apache Pulsar WebSocket Proxy from 2.8.0 through 2.8.*</li>
 <li>Apache Pulsar WebSocket Proxy from 2.9.0 through 2.9.*</li>
@@ -330,55 +351,153 @@ It hasn’t been detected that the Pulsar Proxy authentication can be bypassed. 
 <li>Apache Pulsar WebSocket Proxy from 2.11.0 through 2.11.1</li>
 <li>Apache Pulsar WebSocket Proxy at 3.0.0</li>
 </ul>
-<h3 id="description-10">Description</h3>
+<h3 id="description-11">Description</h3>
 <p>Improper Authentication vulnerability in Apache Pulsar WebSocket Proxy allows an attacker to connect to the /pingpong endpoint without authentication.<br><br>This issue affects Apache Pulsar WebSocket Proxy: from 2.8.0 through 2.8.<em>, from 2.9.0 through 2.9.</em>, from 2.10.0 through 2.10.4, from 2.11.0 through 2.11.1, 3.0.0.<br><br>The known risks include a denial of service due to the WebSocket Proxy accepting any connections, and excessive data transfer due to misuse of the WebSocket ping/pong feature.<br><br>2.10 Pulsar WebSocket Proxy users should upgrade to at least 2.10.5.<br>2.11 Pulsar WebSocket Proxy users should upgrade to at least 2.11.2.<br>3.0 Pulsar WebSocket Proxy users should upgrade to at least 3.0.1.<br>3.1 Pulsar WebSocket Proxy users are unaffected.<br>Any users running the Pulsar WebSocket Proxy for 2.8, 2.9, and earlier should upgrade to one of the above patched versions.</p>
-<h3 id="references-10">References</h3>
+<h3 id="references-11">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/od0k9zts1toc9h9snbqq4pjpyx28mv4m">https://lists.apache.org/thread/od0k9zts1toc9h9snbqq4pjpyx28mv4m</a></li>
 </ul>
-<h3 id="credits-8">Credits</h3>
+<h3 id="credits-9">Credits</h3>
 <ul>
 <li>Michael Marshall of DataStax (finder)</li>
 </ul>
 <h2 id="CVE-2023-37579">Incorrect Authorization for Function Worker Can Leak Sink/Source Credentials</h2>
 <p>CVE-2023-37579 <a href="./CVE-2023-37579.cve.json">[CVE json]</a></p>
 <p><em>Last updated: 2023-07-12T09:05:20.256Z</em></p>
-<h3 id="affected-11">Affected</h3>
+<h3 id="affected-12">Affected</h3>
 <ul>
 <li>Apache Pulsar Function Worker before 2.10.4</li>
 <li>Apache Pulsar Function Worker at 2.11.0</li>
 </ul>
-<h3 id="description-11">Description</h3>
+<h3 id="description-12">Description</h3>
 <p>Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsar Function Worker.<br><br>This issue affects Apache Pulsar: before 2.10.4, and 2.11.0.<br><br>Any authenticated user can retrieve a source&rsquo;s configuration or a sink&rsquo;s configuration without authorization. Many sources and sinks contain credentials in the configuration, which could lead to leaked credentials. This vulnerability is mitigated by the fact that there is not a known way for an authenticated user to enumerate another tenant&rsquo;s sources or sinks, meaning the source or sink name would need to be guessed in order to exploit this vulnerability.<br><br>The recommended mitigation for impacted users is to upgrade the Pulsar Function Worker to a patched version.<br><br>2.10 Pulsar Function Worker users should upgrade to at least 2.10.4.<br>2.11 Pulsar Function Worker users should upgrade to at least 2.11.1.<br>3.0 Pulsar Function Worker users are unaffected.<br>Any users running the Pulsar Function Worker for 2.9.* and earlier should upgrade to one of the above patched versions.<br><br></p>
-<h3 id="references-11">References</h3>
+<h3 id="references-12">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/0dmn3cb5n2p08o3cpj3ycfhzfqs2ppwz">https://lists.apache.org/thread/0dmn3cb5n2p08o3cpj3ycfhzfqs2ppwz</a></li>
 </ul>
-<h3 id="credits-9">Credits</h3>
+<h3 id="credits-10">Credits</h3>
 <ul>
 <li>Michael Marshall of DataStax (finder)</li>
 </ul>
 <h2 id="CVE-2023-51437">Timing attack in SASL token signature verification</h2>
 <p>CVE-2023-51437 <a href="./CVE-2023-51437.cve.json">[CVE json]</a></p>
 <p><em>Last updated: 2024-02-07T09:18:08.965Z</em></p>
-<h3 id="affected-12">Affected</h3>
+<h3 id="affected-13">Affected</h3>
 <ul>
 <li>Apache Pulsar through 2.10.5</li>
 <li>Apache Pulsar from 2.11.0 through 2.11.2</li>
 <li>Apache Pulsar from 3.0.0 through 3.0.1</li>
 <li>Apache Pulsar at 3.1.0</li>
 </ul>
-<h3 id="description-12">Description</h3>
+<h3 id="description-13">Description</h3>
 <p>Observable timing discrepancy vulnerability in Apache Pulsar SASL Authentication Provider can allow an attacker to forge a SASL Role Token that will pass signature verification.<br><p>Users are recommended to upgrade to version 2.11.3, 3.0.2, or 3.1.1 which fixes the issue. Users should also consider updating the configured secret in the <code>saslJaasServerRoleTokenSignerSecretPath</code> file.<br></p><p>Any component matching an above version running the SASL Authentication Provider is affected. That includes the Pulsar Broker, Proxy, Websocket Proxy, or Function Worker.</p>2.11 Pulsar users should upgrade to at least 2.11.3.<br>3.0 Pulsar users should upgrade to at least 3.0.2.<br>3.1 Pulsar users should upgrade to at least 3.1.1.<br><div>Any users running Pulsar 2.8, 2.9, 2.10, and earlier should upgrade to one of the above patched versions.</div><div><br></div><p>For additional details on this attack vector, please refer to <a target="_blank" rel="nofollow" href="https://codahale.com/a-lesson-in-timing-attacks/"><a href="https://codahale.com/a-lesson-in-timing-attacks/">https://codahale.com/a-lesson-in-timing-attacks/</a></a>.</p></p>
-<h3 id="references-12">References</h3>
+<h3 id="references-13">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/5kgmvvolf5tzp5rz9xjwfg2ncwvqqgl5">https://lists.apache.org/thread/5kgmvvolf5tzp5rz9xjwfg2ncwvqqgl5</a></li>
 </ul>
-<h3 id="credits-10">Credits</h3>
+<h3 id="credits-11">Credits</h3>
 <ul>
 <li>Yiheng Cao (finder)</li>
 <li>Chenhao Lu  (finder)</li>
 <li>Kaifeng Huang (finder)</li>
+</ul>
+<h2 id="CVE-2024-27135">Improper Input Validation in Pulsar Function Worker allows Remote Code Execution</h2>
+<p>CVE-2024-27135 <a href="./CVE-2024-27135.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-03-12T18:18:04.587Z</em></p>
+<h3 id="affected-14">Affected</h3>
+<ul>
+<li>Apache Pulsar from 2.4.0 before 2.10.6</li>
+<li>Apache Pulsar from 2.11.0 before 2.11.4</li>
+<li>Apache Pulsar from 3.0.0 before 3.0.3</li>
+<li>Apache Pulsar from 3.1.0 before 3.1.3</li>
+<li>Apache Pulsar from 3.2.0 before 3.2.1</li>
+</ul>
+<h3 id="description-14">Description</h3>
+<p>Improper input validation in the Pulsar Function Worker allows a malicious authenticated user to execute arbitrary Java code on the Pulsar Function worker, outside of the sandboxes designated for running user-provided functions. This vulnerability also applies to the Pulsar Broker when it is configured with &ldquo;functionsWorkerEnabled=true&rdquo;.<br><br>This issue affects Apache Pulsar versions from 2.4.0 to 2.10.5, from 2.11.0 to 2.11.3, from 3.0.0 to 3.0.2, from 3.1.0 to 3.1.2, and 3.2.0. <br><br>2.10 Pulsar Function Worker users should upgrade to at least 2.10.6.<br>2.11 Pulsar Function Worker users should upgrade to at least 2.11.4.<br>3.0 Pulsar Function Worker users should upgrade to at least 3.0.3.<br>3.1 Pulsar Function Worker users should upgrade to at least 3.1.3.<br>3.2 Pulsar Function Worker users should upgrade to at least 3.2.1.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.<br></p>
+<h3 id="references-14">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/dh8nj2vmb2br6thjltq74lk9jxkz62wn">https://lists.apache.org/thread/dh8nj2vmb2br6thjltq74lk9jxkz62wn</a></li>
+<li><a href="https://pulsar.apache.org/security/CVE-2024-27135/">https://pulsar.apache.org/security/CVE-2024-27135/</a></li>
+</ul>
+<h3 id="credits-12">Credits</h3>
+<ul>
+<li>Lari Hotari of StreamNative (finder)</li>
+</ul>
+<h2 id="CVE-2024-27317">Pulsar Functions Worker&rsquo;s Archive Extraction Vulnerability Allows Unauthorized File Modification</h2>
+<p>CVE-2024-27317 <a href="./CVE-2024-27317.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-03-12T18:18:50.985Z</em></p>
+<h3 id="affected-15">Affected</h3>
+<ul>
+<li>Apache Pulsar from 2.4.0 before 2.10.6</li>
+<li>Apache Pulsar from 2.11.0 before 2.11.4</li>
+<li>Apache Pulsar from 3.0.0 before 3.0.3</li>
+<li>Apache Pulsar from 3.1.0 before 3.1.3</li>
+<li>Apache Pulsar from 3.2.0 before 3.2.1</li>
+</ul>
+<h3 id="description-15">Description</h3>
+<p>In Pulsar Functions Worker, authenticated users can upload functions in jar or nar files. These files, essentially zip files, are extracted by the Functions Worker. However, if a malicious file is uploaded, it could exploit a directory traversal vulnerability. This occurs when the filenames in the zip files, which aren&rsquo;t properly validated, contain special elements like &ldquo;..&rdquo;, altering the directory path. This could allow an attacker to create or modify files outside of the designated extraction directory, potentially influencing system behavior. This vulnerability also applies to the Pulsar Broker when it is configured with &ldquo;functionsWorkerEnabled=true&rdquo;.<br><br>This issue affects Apache Pulsar versions from 2.4.0 to 2.10.5, from 2.11.0 to 2.11.3, from 3.0.0 to 3.0.2, from 3.1.0 to 3.1.2, and 3.2.0. <br><br>2.10 Pulsar Function Worker users should upgrade to at least 2.10.6.<br>2.11 Pulsar Function Worker users should upgrade to at least 2.11.4.<br>3.0 Pulsar Function Worker users should upgrade to at least 3.0.3.<br>3.1 Pulsar Function Worker users should upgrade to at least 3.1.3.<br>3.2 Pulsar Function Worker users should upgrade to at least 3.2.1.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.</p>
+<h3 id="references-15">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/ct9xmvlf7lompc1pxvlsb60qstfsm9po">https://lists.apache.org/thread/ct9xmvlf7lompc1pxvlsb60qstfsm9po</a></li>
+<li><a href="https://pulsar.apache.org/security/CVE-2024-27317/">https://pulsar.apache.org/security/CVE-2024-27317/</a></li>
+</ul>
+<h2 id="CVE-2024-27894">Pulsar Functions Worker Allows Unauthorized File Access and Unauthorized HTTP/HTTPS Proxying</h2>
+<p>CVE-2024-27894 <a href="./CVE-2024-27894.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-03-12T18:19:39.887Z</em></p>
+<h3 id="affected-16">Affected</h3>
+<ul>
+<li>Apache Pulsar from 2.4.0 before 2.10.6</li>
+<li>Apache Pulsar from 2.11.0 before 2.11.4</li>
+<li>Apache Pulsar from 3.0.0 before 3.0.3</li>
+<li>Apache Pulsar from 3.1.0 before 3.1.3</li>
+<li>Apache Pulsar from 3.2.0 before 3.2.1</li>
+</ul>
+<h3 id="description-16">Description</h3>
+<p>The Pulsar Functions Worker includes a capability that permits authenticated users to create functions where the function&rsquo;s implementation is referenced by a URL. The supported URL schemes include &ldquo;file&rdquo;, &ldquo;http&rdquo;, and &ldquo;https&rdquo;. When a function is created using this method, the Functions Worker will retrieve the implementation from the URL provided by the user. However, this feature introduces a vulnerability that can be exploited by an attacker to gain unauthorized access to any file that the Pulsar Functions Worker process has permissions to read. This includes reading the process environment which potentially includes sensitive information, such as secrets. Furthermore, an attacker could leverage this vulnerability to use the Pulsar Functions Worker as a proxy to access the content of remote HTTP and HTTPS endpoint URLs. This could also be used to carry out denial of service attacks.<br>This vulnerability also applies to the Pulsar Broker when it is configured with &ldquo;functionsWorkerEnabled=true&rdquo;.<br><br>This issue affects Apache Pulsar versions from 2.4.0 to 2.10.5, from 2.11.0 to 2.11.3, from 3.0.0 to 3.0.2, from 3.1.0 to 3.1.2, and 3.2.0. <br><br>2.10 Pulsar Function Worker users should upgrade to at least 2.10.6.<br>2.11 Pulsar Function Worker users should upgrade to at least 2.11.4.<br>3.0 Pulsar Function Worker users should upgrade to at least 3.0.3.<br>3.1 Pulsar Function Worker users should upgrade to at least 3.1.3.<br>3.2 Pulsar Function Worker users should upgrade to at least 3.2.1.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.<br><br>The updated versions of Pulsar Functions Worker will, by default, impose restrictions on the creation of functions using URLs. For users who rely on this functionality, the Function Worker configuration provides two configuration keys: &ldquo;additionalEnabledConnectorUrlPatterns&rdquo; and &ldquo;additionalEnabledFunctionsUrlPatterns&rdquo;. These keys allow users to specify a set of URL patterns that are permitted, enabling the creation of functions using URLs that match the defined patterns. This approach ensures that the feature remains available to those who require it, while limiting the potential for unauthorized access and exploitation.</p>
+<h3 id="references-16">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/45cqhgqg8d19ongjw18ypcss8vwh206p">https://lists.apache.org/thread/45cqhgqg8d19ongjw18ypcss8vwh206p</a></li>
+<li><a href="https://pulsar.apache.org/security/CVE-2024-27894/">https://pulsar.apache.org/security/CVE-2024-27894/</a></li>
+</ul>
+<h3 id="credits-13">Credits</h3>
+<ul>
+<li>Lari Hotari of StreamNative (finder)</li>
+</ul>
+<h2 id="CVE-2024-28098">Improper Authorization For Topic-Level Policy Management</h2>
+<p>CVE-2024-28098 <a href="./CVE-2024-28098.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-03-12T18:15:36.513Z</em></p>
+<h3 id="affected-17">Affected</h3>
+<ul>
+<li>Apache Pulsar from 2.7.1 before 2.10.6</li>
+<li>Apache Pulsar from 2.11.0 before 2.11.4</li>
+<li>Apache Pulsar from 3.0.0 before 3.0.3</li>
+<li>Apache Pulsar from 3.1.0 before 3.1.3</li>
+<li>Apache Pulsar from 3.2.0 before 3.2.1</li>
+</ul>
+<h3 id="description-17">Description</h3>
+<p>The vulnerability allows authenticated users with only produce or consume permissions to modify topic-level policies, such as retention, TTL, and offloading settings. These management operations should be restricted to users with the tenant admin role or super user role.<br><br>This issue affects Apache Pulsar versions from 2.7.1 to 2.10.5, from 2.11.0 to 2.11.3, from 3.0.0 to 3.0.2, from 3.1.0 to 3.1.2, and 3.2.0. <br><br>2.10 Apache Pulsar users should upgrade to at least 2.10.6.<br>2.11 Apache Pulsar users should upgrade to at least 2.11.4.<br>3.0 Apache Pulsar users should upgrade to at least 3.0.3.<br>3.1 Apache Pulsar users should upgrade to at least 3.1.3.<br>3.2 Apache Pulsar users should upgrade to at least 3.2.1.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.<br></p>
+<h3 id="references-17">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/3m6923y3wxpdcs9346sjvt8ql9swqc2z">https://lists.apache.org/thread/3m6923y3wxpdcs9346sjvt8ql9swqc2z</a></li>
+<li><a href="https://pulsar.apache.org/security/CVE-2024-28098/">https://pulsar.apache.org/security/CVE-2024-28098/</a></li>
+</ul>
+<h2 id="CVE-2024-29834">Improper Authorization For Namespace and Topic Management Endpoints</h2>
+<p>CVE-2024-29834 <a href="./CVE-2024-29834.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-04-02T19:24:43.888Z</em></p>
+<h3 id="affected-18">Affected</h3>
+<ul>
+<li>Apache Pulsar from 2.7.1 through 2.10.6</li>
+<li>Apache Pulsar from 2.11.0 through 2.11.4</li>
+<li>Apache Pulsar from 3.0.0 before 3.0.4</li>
+<li>Apache Pulsar from 3.1.0 through 3.1.3</li>
+<li>Apache Pulsar from 3.2.0 before 3.2.2</li>
+</ul>
+<h3 id="description-18">Description</h3>
+<p><span style="background-color: rgb(255, 255, 255);"><div><div>This vulnerability allows authenticated users with produce or consume permissions to perform unauthorized operations on partitioned topics, such as unloading topics and triggering compaction. These management operations should be restricted to users with the tenant admin role or superuser role. An authenticated user with produce permission can create subscriptions and update subscription properties on partitioned topics, even though this should be limited to users with consume permissions. This impact analysis assumes that Pulsar has been configured with the default authorization provider. For custom authorization providers, the impact could be slightly different. Additionally, the vulnerability allows an authenticated user to read, create, modify, and delete namespace properties in any namespace in any tenant. In Pulsar, namespace properties are reserved for user provided metadata about the namespace.</div></div></span><br><br>This issue affects Apache Pulsar versions from 2.7.1 to 2.10.6, from 2.11.0 to 2.11.4, from 3.0.0 to 3.0.3, from 3.1.0 to 3.1.3, and from 3.2.0 to 3.2.1. <br><br>3.0 Apache Pulsar users should upgrade to at least 3.0.4.<br>3.1 and 3.2 Apache Pulsar users should upgrade to at least 3.2.2.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.</p>
+<h3 id="references-18">References</h3>
+<ul>
+<li><a href="https://pulsar.apache.org/security/CVE-2024-29834/">https://pulsar.apache.org/security/CVE-2024-29834/</a></li>
+<li><a href="https://lists.apache.org/thread/v0ltl94k9lg28qfr1f54hpkvvsjc5bj5">https://lists.apache.org/thread/v0ltl94k9lg28qfr1f54hpkvvsjc5bj5</a></li>
 </ul>
 
   

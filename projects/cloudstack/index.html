@@ -142,6 +142,60 @@
 <ul>
 <li>This issue was reported by v3ged0ge</li>
 </ul>
+<h2 id="CVE-2024-29006">x-forwarded-for HTTP header parsed by default</h2>
+<p>CVE-2024-29006 <a href="./CVE-2024-29006.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-04-04T10:59:16.384Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache CloudStack from 4.11.0.0 through 4.18.1.0, 4.19.0.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<div>By default the CloudStack management server honours the x-forwarded-for HTTP header and logs it as the source IP of an API request. This could lead to authentication bypass and other operational problems should an attacker decide to spoof their IP address this way. Users are recommended to upgrade to CloudStack version 4.18.1.1 or 4.19.0.1, which fixes this issue.</div>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp">https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp</a></li>
+<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1">https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Yuyang Xiao <a href="mailto:superxyyang@gmail.com">superxyyang@gmail.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2024-29007">When downloading templates or ISOs, the management server and SSVM follow HTTP redirects with potentially dangerous consequences</h2>
+<p>CVE-2024-29007 <a href="./CVE-2024-29007.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-04-04T10:58:20.239Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache CloudStack from 4.9.1.0 through 4.18.1.0, 4.19.0.0</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<div>The CloudStack management server and secondary storage VM could be tricked into making requests to restricted or random resources by means of following 301 HTTP redirects presented by external servers when downloading templates or ISOs. Users are recommended to upgrade to version 4.18.1.1 or 4.19.0.1, which fixes this issue.</div>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp">https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp</a></li>
+<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1">https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Yuyang Xiao <a href="mailto:superxyyang@gmail.com">superxyyang@gmail.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2024-29008">The extraconfig feature can be abused to load hypervisor resources on a VM instance</h2>
+<p>CVE-2024-29008 <a href="./CVE-2024-29008.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-04-04T10:58:44.745Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache CloudStack from 4.14.0.0 through 4.18.1.0, 4.19.0.0</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<div>A problem has been identified in the CloudStack additional VM configuration (extraconfig) feature which can be misused by anyone who has privilege to deploy a VM instance or configure settings of an already deployed VM instance, to configure additional VM configuration even when the feature is not explicitly enabled by the administrator. In a KVM based CloudStack environment, an attacker can exploit this issue to&nbsp;attach host devices such as storage disks, and PCI and USB devices such as network adapters and GPUs, in a regular VM instance that can be further exploited to gain access to the underlying network and storage infrastructure resources, and access any VM instance disks on the local storage.</div><br><div>Users are advised to upgrade to version 4.18.1.1 or 4.19.0.1, which fixes this issue.<br></div>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp">https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp</a></li>
+<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1">https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Wei Zhou <a href="mailto:ustcweizhou@gmail.com">ustcweizhou@gmail.com</a> (finder)</li>
+</ul>
 
   
 </div>
