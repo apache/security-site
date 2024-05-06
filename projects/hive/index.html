@@ -142,6 +142,23 @@
 <ul>
 <li>This vulnerability was discovered and reported by Hideyuki Furue.</li>
 </ul>
+<h2 id="CVE-2023-35701">Arbitrary command execution via JDBC driver</h2>
+<p>CVE-2023-35701 <a href="./CVE-2023-35701.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-05-03T08:11:05.595Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Hive from 4.0.0-alpha-1 before 4.0.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Improper Control of Generation of Code (&lsquo;Code Injection&rsquo;) vulnerability in Apache Hive.<br><br>The vulnerability affects the Hive JDBC driver component and it can potentially lead to arbitrary code execution on the machine/endpoint that the JDBC driver (client) is running. The malicious user must have sufficient permissions to specify/edit JDBC URL(s) in an endpoint relying on the Hive JDBC driver and the JDBC client process must run under a privileged user to fully exploit the vulnerability. <br><br>The attacker can setup a malicious HTTP server and specify a JDBC URL pointing towards this server. When a JDBC connection is attempted, the malicious HTTP server can provide a special response with customized payload that can trigger the execution of certain commands in the JDBC client.<p>This issue affects Apache Hive: from 4.0.0-alpha-1 before 4.0.0.</p><p>Users are recommended to upgrade to version 4.0.0, which fixes the issue.</p></p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7zcv6l63spl4r66xwz5jv9rtrg2opx81">https://lists.apache.org/thread/7zcv6l63spl4r66xwz5jv9rtrg2opx81</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Kostya Kortchinsky (reporter)</li>
+</ul>
 
   
 </div>

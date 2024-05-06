@@ -267,6 +267,23 @@ Additionally, with any ZkACLProvider, if the security.json is already present, S
 <ul>
 <li>L3yx (reporter)</li>
 </ul>
+<h2 id="CVE-2024-31391">Solr-Operator liveness and readiness probes may leak basic auth credentials</h2>
+<p>CVE-2024-31391 <a href="./CVE-2024-31391.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-04-12T15:00:22.627Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache Solr Operator from 0.3.0 through 0.8.0</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>Insertion of Sensitive Information into Log File vulnerability in the Apache Solr Operator.<br><br>This issue affects all versions of the Apache Solr Operator from 0.3.0 through 0.8.0.<br><br>When asked to bootstrap Solr security, the operator will enable basic authentication and create several accounts for accessing Solr: including the &ldquo;solr&rdquo; and &ldquo;admin&rdquo; accounts for use by end-users, and a &ldquo;k8s-oper&rdquo; account which the operator uses for its own requests to Solr.<br>One common source of these operator requests is healthchecks: liveness, readiness, and startup probes are all used to determine Solr&rsquo;s health and ability to receive traffic.<br>By default, the operator configures the Solr APIs used for these probes to be exempt from authentication, but users may specifically request that authentication be required on probe endpoints as well.<br>Whenever one of these probes would fail, if authentication was in use, the Solr Operator would create a Kubernetes &ldquo;event&rdquo; containing the username and password of the &ldquo;k8s-oper&rdquo; account.<br><br>Within the affected version range, this vulnerability affects any solrcloud resource which (1) bootstrapped security through use of the <code>.solrOptions.security.authenticationType=basic</code> option, and (2) required authentication be used on probes by setting <code>.solrOptions.security.probesRequireAuth=true</code>.<br><br>Users are recommended to upgrade to Solr Operator version 0.8.1, which fixes this issue by ensuring that probes no longer print the credentials used for Solr requests.  Users may also mitigate the vulnerability by disabling authentication on their healthcheck probes using the setting <code>.solrOptions.security.probesRequireAuth=false</code>.<br></p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/w7011s78lzywzwyszvy4d8zm99ybt8c7">https://lists.apache.org/thread/w7011s78lzywzwyszvy4d8zm99ybt8c7</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>Flip Hess (finder)</li>
+</ul>
 
   
 </div>

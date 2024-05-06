@@ -1621,23 +1621,62 @@ resulting in a denial of service, information disclosure or remote code executio
 <li>Alex Liotta (finder)</li>
 <li>Vincent(Vincbeck) (remediation developer)</li>
 </ul>
+<h2 id="CVE-2024-29733">FTP_TLS instance with unverified SSL context</h2>
+<p>CVE-2024-29733 <a href="./CVE-2024-29733.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-04-21T17:21:52.458Z</em></p>
+<h3 id="affected-82">Affected</h3>
+<ul>
+<li>Apache Airflow FTP Provider before 3.7.0</li>
+</ul>
+<h3 id="description-82">Description</h3>
+<p>Improper Certificate Validation vulnerability in Apache Airflow FTP Provider.<br><br><p>The FTP hook lacks complete certificate validation in FTP_TLS connections, which can potentially be leveraged. Implementing proper certificate validation by passing context=ssl.create_default_context() during FTP_TLS instantiation is used as mitigation to validate the certificates properly.</p><p><span style="background-color: var(--wht);">This issue affects Apache Airflow FTP Provider: before 3.7.0.</span><br></p><p>Users are recommended to upgrade to version 3.7.0, which fixes the issue.</p></p>
+<h3 id="references-82">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/38266">https://github.com/apache/airflow/pull/38266</a></li>
+<li><a href="https://github.com/apache/airflow/blob/95e26118b828c364755f3a8c96870f3591b01c31/airflow/providers/ftp/hooks/ftp.py#L280">https://github.com/apache/airflow/blob/95e26118b828c364755f3a8c96870f3591b01c31/airflow/providers/ftp/hooks/ftp.py#L280</a></li>
+<li><a href="https://docs.python.org/3/library/ssl.html#best-defaults">https://docs.python.org/3/library/ssl.html#best-defaults</a></li>
+<li><a href="https://lists.apache.org/thread/265t5zbmtjs6h9fkw52wtp03nsbplky2">https://lists.apache.org/thread/265t5zbmtjs6h9fkw52wtp03nsbplky2</a></li>
+</ul>
+<h3 id="credits-79">Credits</h3>
+<ul>
+<li>Eric Brown of Secure Sauce LLC (finder)</li>
+</ul>
 <h2 id="CVE-2024-29735">Potentially harmful permission changing by log task handler</h2>
 <p>CVE-2024-29735 <a href="./CVE-2024-29735.cve.json">[CVE json]</a></p>
 <p><em>Last updated: 2024-03-26T16:52:39.118Z</em></p>
-<h3 id="affected-82">Affected</h3>
+<h3 id="affected-83">Affected</h3>
 <ul>
 <li>Apache Airflow from 2.8.2 through 2.8.3</li>
 </ul>
-<h3 id="description-82">Description</h3>
+<h3 id="description-83">Description</h3>
 <p>Improper Preservation of Permissions vulnerability in Apache Airflow.<p>This issue affects Apache Airflow from 2.8.2 through 2.8.3.</p><p></p><p>Airflow&rsquo;s local file task handler in Airflow incorrectly set permissions for all parent folders of log folder, in default configuration adding write access to Unix <code>group</code> of the folders. In the case Airflow is run with the root user (not recommended) it added group write permission to all folders up to the root of the filesystem.</p><p>If your log files are stored in the home directory, these permission changes might impact your ability to run SSH operations after your home directory becomes group-writeable.</p><p>This issue does not affect users who use or extend Airflow using Official Airflow Docker reference images (<a target="_blank" rel="nofollow" href="https://hub.docker.com/r/apache/airflow/"><a href="https://hub.docker.com/r/apache/airflow/">https://hub.docker.com/r/apache/airflow/</a></a>) - those images require to have group write permission set anyway.</p><p>You are affected only if you install Airflow using local installation / virtualenv or other Docker images, but the issue has no impact if docker containers are used as intended, i.e. where Airflow components do not share containers with other applications and users.</p><p>Also you should not be affected if your umask is 002 (group write enabled) - this is the default on many linux systems.</p><p>Recommendation for users using Airflow outside of the containers:</p><ul><li>if you are using root to run Airflow, change your Airflow user to use non-root</li><li>upgrade Apache Airflow to 2.8.4 or above</li><li>If you prefer not to upgrade, you can change the <a target="_blank" rel="nofollow" href="https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html#file-task-handler-new-folder-permissions"><a href="https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html#file-task-handler-new-folder-permissions">https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html#file-task-handler-new-folder-permissions</a></a> to 0o755 (original value 0o775).</li><li>if you already ran Airflow tasks before and your default umask is 022 (group write disabled) you should stop Airflow components, check permissions of <code>AIRFLOW_HOME/logs</code> in all your components and all parent directories of this directory and remove group write access for all the parent directories</li></ul><br><p></p></p>
-<h3 id="references-82">References</h3>
+<h3 id="references-83">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/37310">https://github.com/apache/airflow/pull/37310</a></li>
 <li><a href="https://lists.apache.org/thread/8khb1rtbznh100o325fb8xw5wjvtv536">https://lists.apache.org/thread/8khb1rtbznh100o325fb8xw5wjvtv536</a></li>
 </ul>
-<h3 id="credits-79">Credits</h3>
+<h3 id="credits-80">Credits</h3>
 <ul>
 <li>Matej Murin (finder)</li>
+</ul>
+<h2 id="CVE-2024-31869">Sensitive configuration for providers displayed when &ldquo;non-sensitive-only&rdquo; config used</h2>
+<p>CVE-2024-31869 <a href="./CVE-2024-31869.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-04-18T07:18:58.062Z</em></p>
+<h3 id="affected-84">Affected</h3>
+<ul>
+<li>Apache Airflow from 2.7.0 through 2.8.4</li>
+</ul>
+<h3 id="description-84">Description</h3>
+<p>Airflow versions 2.7.0 through 2.8.4 have a vulnerability that allows an authenticated user to see sensitive provider configuration <span style="background-color: rgb(255, 255, 255);">via the &ldquo;configuration&rdquo; UI page </span>when &ldquo;non-sensitive-only&rdquo; was set as &ldquo;webserver.expose_config&rdquo; configuration (The celery provider is the only community provider currently that has sensitive configurations). You should migrate to Airflow 2.9 or change your &ldquo;expose_config&rdquo; configuration to False as a workaround. This is similar, but different to <a target="_blank" rel="nofollow" href="https://github.com/advisories/GHSA-9qqg-mh7c-chfq">CVE-2023-46288</a> which concerned API, not UI configuration page.</p>
+<h3 id="references-84">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/38795">https://github.com/apache/airflow/pull/38795</a></li>
+<li><a href="https://lists.apache.org/thread/pz6vg7wcjk901rmsgt86h76g6kfcgtk3">https://lists.apache.org/thread/pz6vg7wcjk901rmsgt86h76g6kfcgtk3</a></li>
+</ul>
+<h3 id="credits-81">Credits</h3>
+<ul>
+<li>Manmeet Rangoola (finder)</li>
+<li>Jarek Potiuk (remediation developer)</li>
 </ul>
 
   

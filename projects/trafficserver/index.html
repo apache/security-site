@@ -610,6 +610,24 @@
 <ul>
 <li>Masakazu Kitajo (finder)</li>
 </ul>
+<h2 id="CVE-2024-31309">HTTP/2 CONTINUATION frames can be utilized for DoS attack</h2>
+<p>CVE-2024-31309 <a href="./CVE-2024-31309.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-04-10T15:16:21.844Z</em></p>
+<h3 id="affected-32">Affected</h3>
+<ul>
+<li>Apache Traffic Server from 8.0.0 through 8.1.9</li>
+<li>Apache Traffic Server from 9.0.0 through 9.2.3</li>
+</ul>
+<h3 id="description-32">Description</h3>
+<p>HTTP/2 <span style="background-color: rgb(255, 255, 255);">CONTINUATION</span>&nbsp;DoS attack can cause Apache Traffic Server to consume more resources on the server.&nbsp; Version from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.3 are&nbsp;affected.</p>Users can set a new setting (proxy.config.http2.max_continuation_frames_per_minute) to limit the number of CONTINUATION frames per minute. &nbsp;ATS does have a fixed amount of memory a request can use and ATS adheres to these limits in previous releases.<br><p>Users are recommended to upgrade to versions 8.1.10 or 9.2.4 which fixes the issue.</p>
+<h3 id="references-31">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/f9qh3g3jvy153wh82pz4onrfj1wh13kc">https://lists.apache.org/thread/f9qh3g3jvy153wh82pz4onrfj1wh13kc</a></li>
+</ul>
+<h3 id="credits-22">Credits</h3>
+<ul>
+<li>Bartek Nowotarski (reporter)</li>
+</ul>
 
   
 </div>
