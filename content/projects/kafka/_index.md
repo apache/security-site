@@ -110,3 +110,23 @@ A possible security vulnerability has been identified in Apache Kafka Connect AP
 
 ### Credits
 * Apache Kafka would like to thank to Jari Jääskelä (https://hackerone.com/reports/1529790) and 4ra1n and Y4tacker (they found vulnerabilities in other Apache projects. After discussion between PMC of the two projects, it was finally confirmed that it was the vulnerability of Kafka then they reported it to us) (finder)
+
+
+## Potential incorrect access control during migration from ZK mode to KRaft mode ## { #CVE-2024-27309 }
+
+CVE-2024-27309 [\[CVE json\]](./CVE-2024-27309.cve.json)
+
+_Last updated: 2024-04-12T06:58:42.007Z_
+
+### Affected
+
+* Apache Kafka from 3.5.0 through 3.5.2
+* Apache Kafka from 3.6.0 through 3.6.1
+
+
+### Description
+
+<div><div><div><div><div><div><div><div><div><div><div><div>While an Apache Kafka cluster is being migrated from ZooKeeper mode to KRaft mode, in some cases ACLs will not be correctly enforced.</div><div><br>Two preconditions are needed to trigger the bug:<br>1. The administrator decides to remove an ACL<br>2. The resource associated with the removed ACL continues to have two or more other ACLs associated with it after the removal.<br><br>When those two preconditions are met, Kafka will treat the resource as if it had only one ACL associated with it after the removal, rather than the two or more that would be correct.</div><br><div>The incorrect condition is cleared by removing all brokers in ZK mode, or by adding a new ACL to the affected resource. Once the migration is completed, there is no metadata loss (the ACLs all remain).</div><br><div>The full impact depends on the ACLs in use. If only ALLOW ACLs were configured during the migration, the impact would be limited to availability impact. if DENY ACLs were configured, the impact could include confidentiality and integrity impact depending on the ACLs configured, as the DENY ACLs might be ignored due to this vulnerability during the migration period.</div></div></div></div></div></div></div></div></div></div></div></div><div><div><div><div><div><div></div></div></div></div></div></div>
+
+### References
+* https://lists.apache.org/thread/6536rmzyg076lzzdw2xdktvnz163mjpy

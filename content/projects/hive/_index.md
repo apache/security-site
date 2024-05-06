@@ -58,3 +58,26 @@ Apache Hive before 3.1.3 "CREATE" and "DROP" function operations does not check 
 
 ### Credits
 * This vulnerability was discovered and reported by Hideyuki Furue.
+
+
+## Arbitrary command execution via JDBC driver ## { #CVE-2023-35701 }
+
+CVE-2023-35701 [\[CVE json\]](./CVE-2023-35701.cve.json)
+
+_Last updated: 2024-05-03T08:11:05.595Z_
+
+### Affected
+
+* Apache Hive from 4.0.0-alpha-1 before 4.0.0
+
+
+### Description
+
+Improper Control of Generation of Code ('Code Injection') vulnerability in Apache Hive.<br><br>The vulnerability affects the Hive JDBC driver component and it can potentially lead to arbitrary code execution on the machine/endpoint that the JDBC driver (client) is running. The malicious user must have sufficient permissions to specify/edit JDBC URL(s) in an endpoint relying on the Hive JDBC driver and the JDBC client process must run under a privileged user to fully exploit the vulnerability.&nbsp;<br><br>The attacker can setup a malicious HTTP server and specify a JDBC URL pointing towards this server. When a JDBC connection is attempted, the malicious HTTP server can provide a special response with customized payload that can trigger the execution of certain commands in the JDBC client.<p>This issue affects Apache Hive: from 4.0.0-alpha-1 before 4.0.0.</p><p>Users are recommended to upgrade to version 4.0.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/7zcv6l63spl4r66xwz5jv9rtrg2opx81
+
+
+### Credits
+* Kostya Kortchinsky (reporter)

@@ -17,7 +17,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2024-24746 [\[CVE json\]](./CVE-2024-24746.cve.json)
 
-_Last updated: 2024-04-08T10:10:04.674Z_
+_Last updated: 2024-04-10T07:39:33.115Z_
 
 ### Affected
 

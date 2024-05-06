@@ -105,6 +105,29 @@ The improper Input Validation vulnerability in "”Move folder to Trash” featu
 * Kai Zhao (finder)
 
 
+## CSRF vulnerability in the Credentials page ## { #CVE-2021-28656 }
+
+CVE-2021-28656 [\[CVE json\]](./CVE-2021-28656.cve.json)
+
+_Last updated: 2024-04-09T09:12:56.855Z_
+
+### Affected
+
+* Apache Zeppelin through 0.9.0
+
+
+### Description
+
+Cross-Site Request Forgery (CSRF) vulnerability in Credential page of Apache Zeppelin allows an attacker to submit malicious request.  This issue affects Apache Zeppelin Apache Zeppelin version 0.9.0 and prior versions.
+
+### References
+* https://lists.apache.org/thread/dttzkkv4qyn1rq2fdv1r94otb1osxztc
+
+
+### Credits
+* Jiang Qingzhi (finder)
+
+
 ## Stored XSS in note permissions ## { #CVE-2022-46870 }
 
 CVE-2022-46870 [\[CVE json\]](./CVE-2022-46870.cve.json)
@@ -122,3 +145,249 @@ An Improper Neutralization of Input During Web Page Generation ('Cross-site Scri
 
 ### References
 * https://lists.apache.org/thread/gb1wdnrm1095xw6qznpsycfrht4lwbwc
+
+
+## connecting to a malicious SAP server allowed it to perform XXE ## { #CVE-2022-47894 }
+
+CVE-2022-47894 [\[CVE json\]](./CVE-2022-47894.cve.json)
+
+_Last updated: 2024-04-09T09:29:15.865Z_
+
+### Affected
+
+* Apache Zeppelin SAP from 0.8.0 before 0.11.0
+
+
+### Description
+
+Improper Input Validation vulnerability in Apache Zeppelin SAP.<p>This issue affects Apache Zeppelin SAP: from 0.8.0 before 0.11.0.</p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.<br><br>For more information, the fix already was merged in the source code but Zeppelin decided to retire the SAP component<br><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+
+### References
+* https://github.com/apache/zeppelin/pull/4302
+* https://lists.apache.org/thread/csf4k73kkn3nx58pm0p2qrylbox4fvyy
+
+
+### Credits
+* kuiplatain@knownsec 404 Team (finder)
+
+
+## Path traversal vulnerability ## { #CVE-2024-31860 }
+
+CVE-2024-31860 [\[CVE json\]](./CVE-2024-31860.cve.json)
+
+_Last updated: 2024-04-09T09:08:25.607Z_
+
+### Affected
+
+* Apache Zeppelin from 0.9.0 before 0.11.0
+
+
+### Description
+
+Improper Input Validation vulnerability in Apache Zeppelin.<br><br>By adding relative path indicators(E.g ..), attackers can see the contents for any files in the filesystem that the server account can access.&nbsp;<br><p>This issue affects Apache Zeppelin: from 0.9.0 before 0.11.0.</p><p>Users are recommended to upgrade to version 0.11.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/zeppelin/pull/4632
+* https://lists.apache.org/thread/c0zfjnow3oc3dzc8w5rbkzj8lqj5jm5x
+
+
+### Credits
+* Kai Zhao (finder)
+
+
+## Code injection by Shell interpreter ## { #CVE-2024-31861 }
+
+CVE-2024-31861 [\[CVE json\]](./CVE-2024-31861.cve.json)
+
+_Last updated: 2024-04-11T09:38:08.162Z_
+
+### Affected
+
+* Apache Zeppelin from 0.10.1 before 0.11.1
+
+
+### Description
+
+Improper Control of Generation of Code ('Code Injection') vulnerability in Apache Zeppelin.<br><br>The attackers can use Shell interpreter as a code generation gateway, and execute the generated code as a normal way.<br><p>This issue affects Apache Zeppelin: from 0.10.1 before 0.11.1.</p><p>Users are recommended to upgrade to version 0.11.1, which doesn't have Shell interpreter by default.</p>
+
+### References
+* https://github.com/apache/zeppelin/pull/4708
+* https://lists.apache.org/thread/99clvqrht5l5r6kzjzwg2kj94boc9sfh
+
+
+### Credits
+* Esa Hiltunen (finder)
+* https://teragrep.com (finder)
+
+
+## Denial of service with invalid notebook name ## { #CVE-2024-31862 }
+
+CVE-2024-31862 [\[CVE json\]](./CVE-2024-31862.cve.json)
+
+_Last updated: 2024-04-09T09:40:37.681Z_
+
+### Affected
+
+* Apache Zeppelin from 0.10.1 before 0.11.0
+
+
+### Description
+
+Improper Input Validation vulnerability in Apache Zeppelin when creating a new note from Zeppelin's UI.<p>This issue affects Apache Zeppelin: from 0.10.1 before 0.11.0.</p><p>Users are recommended to upgrade to version 0.11.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/zeppelin/pull/4632
+* https://lists.apache.org/thread/73xdjx43yg4yz8bd4p3o8vzyybkysmn0
+
+
+### Credits
+* Esa Hiltunen (finder)
+* https://teragrep.com (finder)
+
+
+## Replacing other users notebook, bypassing any permissions ## { #CVE-2024-31863 }
+
+CVE-2024-31863 [\[CVE json\]](./CVE-2024-31863.cve.json)
+
+_Last updated: 2024-04-09T10:25:26.871Z_
+
+### Affected
+
+* Apache Zeppelin from 0.10.1 before 0.11.0
+
+
+### Description
+
+Authentication Bypass by Spoofing vulnerability by replacing to exsiting notes in Apache Zeppelin.<p>This issue affects Apache Zeppelin: from 0.10.1 before 0.11.0.</p><p>Users are recommended to upgrade to version 0.11.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/3od2gfpwllmtc9c5ggw04ohn8s7w3ct9
+
+
+### Credits
+* Esa Hiltunen (finder)
+* https://teragrep.com (finder)
+
+
+## Remote code execution by adding malicious JDBC connection string ## { #CVE-2024-31864 }
+
+CVE-2024-31864 [\[CVE json\]](./CVE-2024-31864.cve.json)
+
+_Last updated: 2024-04-11T07:54:22.052Z_
+
+### Affected
+
+* Apache Zeppelin before 0.11.1
+
+
+### Description
+
+Improper Control of Generation of Code ('Code Injection') vulnerability in Apache Zeppelin.<br><br>The attacker can inject sensitive configuration or malicious code when connecting MySQL database via JDBC driver.<br><p>This issue affects Apache Zeppelin: before 0.11.1.</p><p>Users are recommended to upgrade to version 0.11.1, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/zeppelin/pull/4709
+* https://www.cve.org/CVERecord?id=CVE-2020-11974
+* https://lists.apache.org/thread/752qdk0rnkd9nqtornz734zwb7xdwcdb
+
+
+### Credits
+* rg (finder)
+* Nbxiglk (finder)
+
+
+## Cron arbitrary user impersonation with improper privileges ## { #CVE-2024-31865 }
+
+CVE-2024-31865 [\[CVE json\]](./CVE-2024-31865.cve.json)
+
+_Last updated: 2024-04-09T16:07:34.123Z_
+
+### Affected
+
+* Apache Zeppelin from 0.8.2 before 0.11.1
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache Zeppelin.</p><p>The attackers can call updating cron API with invalid or improper privileges so that the notebook can run with the privileges.</p><p>This issue affects Apache Zeppelin: from 0.8.2 before 0.11.1.</p><p>Users are recommended to upgrade to version 0.11.1, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/zeppelin/pull/4631
+* https://lists.apache.org/thread/slm1sf0slwc11f4m4r0nd6ot2rf7w81l
+
+
+### Credits
+* Esa Hiltunen (finder)
+* https://teragrep.com (finder)
+
+
+## Interpreter download command does not escape malicious code injection ## { #CVE-2024-31866 }
+
+CVE-2024-31866 [\[CVE json\]](./CVE-2024-31866.cve.json)
+
+_Last updated: 2024-04-09T16:09:09.746Z_
+
+### Affected
+
+* Apache Zeppelin from 0.8.2 before 0.11.1
+
+
+### Description
+
+Improper Encoding or Escaping of Output vulnerability in Apache Zeppelin.<br><br>The attackers can execute shell scripts or malicious code by overriding configuration like&nbsp;<span style="background-color: rgb(255, 255, 255);">ZEPPELIN_INTP_CLASSPATH_OVERRIDES.</span><br><p>This issue affects Apache Zeppelin: from 0.8.2 before 0.11.1.</p><p>Users are recommended to upgrade to version 0.11.1, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/zeppelin/pull/4715
+* https://lists.apache.org/thread/jpkbq3oktopt34x2n5wnhzc2r1410ddd
+
+
+### Credits
+* Esa Hiltunen (finder)
+* https://teragrep.com (finder)
+
+
+## LDAP search filter query Injection Vulnerability ## { #CVE-2024-31867 }
+
+CVE-2024-31867 [\[CVE json\]](./CVE-2024-31867.cve.json)
+
+_Last updated: 2024-04-09T16:15:46.165Z_
+
+### Affected
+
+* Apache Zeppelin from 0.8.2 before 0.11.1
+
+
+### Description
+
+Improper Input Validation vulnerability in Apache Zeppelin.<br><br>The attackers can execute malicious queries by setting improper configuration properties to LDAP search filter.<br><p>This issue affects Apache Zeppelin: from 0.8.2 before 0.11.1.</p><p>Users are recommended to upgrade to version 0.11.1, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/zeppelin/pull/4714
+* https://lists.apache.org/thread/s4scw8bxdhrjs0kg0lhb68xqd8y9lrtf
+
+
+### Credits
+* Qing Xu (finder)
+
+
+## XSS vulnerability in the helium module ## { #CVE-2024-31868 }
+
+CVE-2024-31868 [\[CVE json\]](./CVE-2024-31868.cve.json)
+
+_Last updated: 2024-04-09T16:10:29.091Z_
+
+### Affected
+
+* Apache Zeppelin from 0.8.2 before 0.11.1
+
+
+### Description
+
+Improper Encoding or Escaping of Output vulnerability in Apache Zeppelin.<br><br>The attackers can modify helium.json and exposure XSS attacks to normal users.<br><p>This issue affects Apache Zeppelin: from 0.8.2 before 0.11.1.</p><p>Users are recommended to upgrade to version 0.11.1, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/zeppelin/pull/4728
+* https://lists.apache.org/thread/55mqs673plsxmgnq7fdf2flftpllyf11
+
+
+### Credits
+* H Ming (finder)

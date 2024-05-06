@@ -711,3 +711,27 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ### Credits
 * Masakazu Kitajo (finder)
+
+
+## HTTP/2 CONTINUATION frames can be utilized for DoS attack ## { #CVE-2024-31309 }
+
+CVE-2024-31309 [\[CVE json\]](./CVE-2024-31309.cve.json)
+
+_Last updated: 2024-04-10T15:16:21.844Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.3
+
+
+### Description
+
+<p>HTTP/2 <span style="background-color: rgb(255, 255, 255);">CONTINUATION</span>&nbsp;DoS attack can cause Apache Traffic Server to consume more resources on the server.&nbsp; Version from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.3 are&nbsp;affected.</p>Users can set a new setting (proxy.config.http2.max_continuation_frames_per_minute) to limit the number of CONTINUATION frames per minute. &nbsp;ATS does have a fixed amount of memory a request can use and ATS adheres to these limits in previous releases.<br><p>Users are recommended to upgrade to versions 8.1.10 or 9.2.4 which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/f9qh3g3jvy153wh82pz4onrfj1wh13kc
+
+
+### Credits
+* Bartek Nowotarski (reporter)

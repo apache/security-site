@@ -205,3 +205,29 @@ which fixes this issue.</div>
 
 ### Credits
 * yejie@threatbook.cn (finder)
+
+
+## Jolokia and REST API were not secured with default configuration ## { #CVE-2024-32114 }
+
+CVE-2024-32114 [\[CVE json\]](./CVE-2024-32114.cve.json)
+
+_Last updated: 2024-05-01T16:07:22.140Z_
+
+### Affected
+
+* Apache ActiveMQ from 6.0.0 through 6.1.1
+
+
+### Description
+
+In Apache ActiveMQ 6.x, the default configuration doesn't secure the API web context (where the Jolokia JMX REST API and the Message REST API are located).<br>It means that anyone can use these layers without any required authentication. Potentially, anyone can interact with the broker (using Jolokia JMX REST API) and/or produce/consume messages or purge/delete destinations (using the Message REST API).<br><br>To mitigate, users can update the default conf/jetty.xml configuration file to add authentication requirement:<br><blockquote><pre>&lt;bean id="securityConstraintMapping" class="org.eclipse.jetty.security.ConstraintMapping"&gt;
+&nbsp; &lt;property name="constraint" ref="securityConstraint" /&gt;
+&nbsp; &lt;property name="pathSpec" value="/" /&gt;
+&lt;/bean&gt;</pre></blockquote>Or we encourage users to upgrade to Apache ActiveMQ 6.1.2 where the default configuration has been updated with authentication by default.<br>
+
+### References
+* https://activemq.apache.org/security-advisories.data/CVE-2024-32114-announcement.txt
+
+
+### Credits
+* Martin Zeissig (finder)

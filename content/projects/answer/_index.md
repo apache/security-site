@@ -103,3 +103,26 @@ Concurrent Execution using Shared Resource with Improper Synchronization ('Race 
 
 ### Credits
 * Mohammad Reza Omrani (reporter)
+
+
+## XSS vulnerability when changing personal website ## { #CVE-2024-29217 }
+
+CVE-2024-29217 [\[CVE json\]](./CVE-2024-29217.cve.json)
+
+_Last updated: 2024-04-21T16:04:07.662Z_
+
+### Affected
+
+* Apache Answer before 1.3.0
+
+
+### Description
+
+Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache Answer.<p>This issue affects Apache Answer: before 1.3.0.</p>XSS attack when user changes personal website. A logged-in user, when modifying their personal website, can input malicious code in the website to create such an attack.<br><p>Users are recommended to upgrade to version [1.3.0], which fixes the issue.</p><p></p>
+
+### References
+* https://lists.apache.org/thread/nc0g1borr0d3wx25jm39pn7nyf268n0x
+
+
+### Credits
+* Tsubasa Umeuchi (reporter)

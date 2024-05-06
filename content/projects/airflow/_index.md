@@ -2036,6 +2036,32 @@ Apache Airflow, versions 2.8.0 through 2.8.2, has a vulnerability that allows an
 * Vincent(Vincbeck) (remediation developer)
 
 
+## FTP_TLS instance with unverified SSL context ## { #CVE-2024-29733 }
+
+CVE-2024-29733 [\[CVE json\]](./CVE-2024-29733.cve.json)
+
+_Last updated: 2024-04-21T17:21:52.458Z_
+
+### Affected
+
+* Apache Airflow FTP Provider before 3.7.0
+
+
+### Description
+
+Improper Certificate Validation vulnerability in Apache Airflow FTP Provider.<br><br><p>The FTP hook lacks complete certificate validation in FTP_TLS connections, which can potentially be leveraged. Implementing proper certificate validation by passing context=ssl.create_default_context() during FTP_TLS instantiation is used as mitigation to validate the certificates properly.</p><p><span style="background-color: var(--wht);">This issue affects Apache Airflow FTP Provider: before 3.7.0.</span><br></p><p>Users are recommended to upgrade to version 3.7.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/airflow/pull/38266
+* https://github.com/apache/airflow/blob/95e26118b828c364755f3a8c96870f3591b01c31/airflow/providers/ftp/hooks/ftp.py#L280
+* https://docs.python.org/3/library/ssl.html#best-defaults
+* https://lists.apache.org/thread/265t5zbmtjs6h9fkw52wtp03nsbplky2
+
+
+### Credits
+* Eric Brown of Secure Sauce LLC (finder)
+
+
 ## Potentially harmful permission changing by log task handler ## { #CVE-2024-29735 }
 
 CVE-2024-29735 [\[CVE json\]](./CVE-2024-29735.cve.json)
@@ -2058,3 +2084,28 @@ Improper Preservation of Permissions vulnerability in Apache Airflow.<p>This iss
 
 ### Credits
 * Matej Murin (finder)
+
+
+## Sensitive configuration for providers displayed when "non-sensitive-only" config used ## { #CVE-2024-31869 }
+
+CVE-2024-31869 [\[CVE json\]](./CVE-2024-31869.cve.json)
+
+_Last updated: 2024-04-18T07:18:58.062Z_
+
+### Affected
+
+* Apache Airflow from 2.7.0 through 2.8.4
+
+
+### Description
+
+Airflow versions 2.7.0 through 2.8.4 have a vulnerability that allows an authenticated user to see sensitive provider configuration <span style="background-color: rgb(255, 255, 255);">via the "configuration" UI page&nbsp;</span>when "non-sensitive-only" was set as "webserver.expose_config" configuration (The celery provider is the only community provider currently that has sensitive configurations). You should migrate to Airflow 2.9 or change your "expose_config" configuration to False as a workaround. This is similar, but different to <a target="_blank" rel="nofollow" href="https://github.com/advisories/GHSA-9qqg-mh7c-chfq">CVE-2023-46288</a> which concerned API, not UI configuration page.
+
+### References
+* https://github.com/apache/airflow/pull/38795
+* https://lists.apache.org/thread/pz6vg7wcjk901rmsgt86h76g6kfcgtk3
+
+
+### Credits
+* Manmeet Rangoola (finder)
+* Jarek Potiuk (remediation developer)

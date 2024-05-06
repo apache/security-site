@@ -225,3 +225,26 @@ Improper Control of Dynamically-Managed Code Resources, Unrestricted Upload of F
 
 ### Credits
 * L3yx (reporter)
+
+
+## Solr-Operator liveness and readiness probes may leak basic auth credentials ## { #CVE-2024-31391 }
+
+CVE-2024-31391 [\[CVE json\]](./CVE-2024-31391.cve.json)
+
+_Last updated: 2024-04-12T15:00:22.627Z_
+
+### Affected
+
+* Apache Solr Operator from 0.3.0 through 0.8.0
+
+
+### Description
+
+Insertion of Sensitive Information into Log File vulnerability in the Apache Solr Operator.<br><br>This issue affects all versions of the Apache Solr Operator from 0.3.0 through 0.8.0.<br><br>When asked to bootstrap Solr security, the operator will enable basic authentication and create several accounts for accessing Solr: including the "solr" and "admin" accounts for use by end-users, and a "k8s-oper" account which the operator uses for its own requests to Solr.<br>One common source of these operator requests is healthchecks: liveness, readiness, and startup probes are all used to determine Solr's health and ability to receive traffic.<br>By default, the operator configures the Solr APIs used for these probes to be exempt from authentication, but&nbsp;users may specifically request that authentication be required on probe endpoints as well.<br>Whenever one of these probes would fail, if authentication was in use, the Solr Operator would create a Kubernetes "event" containing the username and password of the "k8s-oper" account.<br><br>Within the affected version range, this vulnerability affects any solrcloud resource which (1) bootstrapped security through use of the `.solrOptions.security.authenticationType=basic` option, and (2) required authentication be used on probes by setting `.solrOptions.security.probesRequireAuth=true`.<br><br>Users are recommended to upgrade to Solr Operator version 0.8.1, which fixes this issue by ensuring that probes no longer print the credentials used for Solr requests.&nbsp; Users may also mitigate the vulnerability by disabling authentication on their healthcheck probes using the setting `.solrOptions.security.probesRequireAuth=false`.<br>
+
+### References
+* https://lists.apache.org/thread/w7011s78lzywzwyszvy4d8zm99ybt8c7
+
+
+### Credits
+* Flip Hess (finder)

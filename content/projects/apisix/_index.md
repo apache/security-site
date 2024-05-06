@@ -161,3 +161,26 @@ In Apache APISIX before 2.13.1, the jwt-auth plugin has a security issue that le
 
 ### Credits
 * Discovered and reported by a team from Kingdee Software (China) Ltd. consisting of Zhongyuan Tang, Hongfeng Xie, and Bing Chen.
+
+
+## Forward-Auth Request Smuggling ## { #CVE-2024-32638 }
+
+CVE-2024-32638 [\[CVE json\]](./CVE-2024-32638.cve.json)
+
+_Last updated: 2024-05-02T09:20:24.666Z_
+
+### Affected
+
+* Apache APISIX from 3.8.0 through 3.9.0
+
+
+### Description
+
+<span style="background-color: rgb(255, 255, 255);">Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling')</span>&nbsp;vulnerability in Apache APISIX when using `forward-auth` plugin.<p>This issue affects Apache APISIX: from 3.8.0, 3.9.0.</p><p>Users are recommended to upgrade to version 3.8.1, 3.9.1 or higher, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/ngvgxllw4zn4hgngkqw2o225kf9wotov
+
+
+### Credits
+* Discovered and reported by Brandon Arp and Bruno Green of Topsort. (reporter)
