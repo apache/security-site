@@ -36,6 +36,16 @@ def maven_projects(pmc, subproject = None):
     else:
         return projects
 
+def get_files_cached(url):
+    filename = "cache/" + "".join(x for x in url if x.isalnum())
+    if not os.path.exists(filename):
+        os.makedirs("cache", exist_ok=True)
+        with open(filename, "w") as out:
+            json.dump(get_files(url), out)
+
+    with open(filename, "r") as i:
+        return json.load(i)
+
 if len(argv)>1:
     pmc = argv[1]
 else:
@@ -62,7 +72,7 @@ for project in projects:
 
     index = get_dirs(f'https://repo1.maven.org/maven2/org/apache/{pmc}/{project}')
     def version_name(link):
-        return link.get('title')[:-1]
+        return link['title'][:-1]
     def is_version(v):
         # TODO support such versions
         return not 'M' in v and not 'incubating' in v and not 'hadoop' in v and not 'milestone' in v and not 'pre' in v
@@ -71,9 +81,9 @@ for project in projects:
     if versions:
         lastVersion = versions[-1]
         print(lastVersion)
-        index = get_files(f'https://repo1.maven.org/maven2/org/apache/{pmc}/{project}/{lastVersion}')
+        index = get_files_cached(f'https://repo1.maven.org/maven2/org/apache/{pmc}/{project}/{lastVersion}')
         def file_name(link):
-            return link.get('title')
+            return link['title']
         def is_sbom(name):
             return name.endswith('-cyclonedx.json') or name.endswith('-cyclonedx.xml')
         sboms = list(filter(is_sbom, map(file_name, index)))

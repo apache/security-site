@@ -7,7 +7,7 @@ import re
 
 baseurl = "https://airflow.apache.org/docs/apache-airflow/stable/sbom/"
 
-files = list(map(lambda e: e.get('href'), get_files(baseurl)))
+files = list(map(lambda e: e['href'], get_files(baseurl)))
 files.sort()
 file = files[0]
 

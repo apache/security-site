@@ -28,7 +28,12 @@ def get_files(url):
     tags = get_index(url)
     def is_dir(tag):
         return tag.has_attr('href') and not tag.get('href').endswith('/')
-    return list(filter(is_dir, tags))
+    def as_dict(tag):
+        return {
+            'title': tag.get('title'),
+            'href': tag.get('href'),
+        }
+    return list(map(as_dict, filter(is_dir, tags)))
 
 def get_dt_projects():
     req = request.Request('https://security-tools-ec2-va.apache.org/api/v1/project?excludeInactive=true&onlyRoot=false&pageSize=1000&pageNumber=1')

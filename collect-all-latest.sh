@@ -15,5 +15,6 @@ python3 ./collect-airflow-sbom.py
 ./collect-maven-sboms.py maven
 ./collect-maven-sboms.py orc
 ./collect-maven-sboms.py parquet
+./collect-maven-sboms.py spark
 ./collect-maven-sboms.py syncope
 ./collect-maven-sboms.py zookeeper
