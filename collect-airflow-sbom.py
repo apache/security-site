@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from bs4 import BeautifulSoup
-from common import get_files, dt_pmc, post_sbom
+from common import get_files, get_sbom_cached, dt_pmc, post_sbom
 import os
 import re
 
@@ -16,6 +16,7 @@ version = match.group(1)
 
 pmc = dt_pmc("airflow")
 pmc_uuid = pmc['uuid']
-post_sbom(pmc, pmc_uuid, "Apache Airflow", version, f'{baseurl}/{file}')
+sbom = get_sbom_cached(f'{baseurl}/{file}', f"airflow/{file}")
+post_sbom(pmc, pmc_uuid, "Apache Airflow", version, sbom)
 
 

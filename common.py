@@ -35,6 +35,16 @@ def get_files(url):
         }
     return list(map(as_dict, filter(is_dir, tags)))
 
+def get_sbom_cached(url, to):
+    filename = "sboms/" + to
+    if not os.path.exists(filename):
+        os.makedirs(os.path.abspath(os.path.join(filename, os.pardir)), exist_ok=True)
+        with request.urlopen(url) as sbomPayload:
+            with open(filename, "w") as out:
+                out.write(sbomPayload.read().decode('utf-8'))
+    with open(filename, "r") as i:
+        return i.read()
+
 def get_dt_projects():
     req = request.Request('https://security-tools-ec2-va.apache.org/api/v1/project?excludeInactive=true&onlyRoot=false&pageSize=1000&pageNumber=1')
     req.add_header('X-Api-Key', dt_api_key)
@@ -105,15 +115,14 @@ def get_or_create_dt_project(pmc, pmc_uuid, project_friendly_name, version):
         dt_projects, _ = get_dt_projects()
     return dt_projects[f"{project_friendly_name}-{version}"]
 
-def post_sbom(pmc, pmc_uuid, friendly_name, lastVersion, url):
+def post_sbom(pmc, pmc_uuid, friendly_name, lastVersion, sbom):
     dt_project = get_or_create_dt_project(pmc, pmc_uuid, friendly_name, lastVersion)
-    with request.urlopen(url) as sbomPayload:
-        with requests.post(
-            'https://security-tools-ec2-va.apache.org/api/v1/bom',
-            headers={'X-Api-Key': dt_api_key},
-            files=dict(
-                project=dt_project['uuid'],
-                bom=sbomPayload.read()
-            )
-        ) as res:
-            print(res)
+    with requests.post(
+        'https://security-tools-ec2-va.apache.org/api/v1/bom',
+        headers={'X-Api-Key': dt_api_key},
+        files=dict(
+            project=dt_project['uuid'],
+            bom=sbom
+        )
+    ) as res:
+        print(res)

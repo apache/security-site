@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from bs4 import BeautifulSoup
-from common import get_dirs, get_files, dt_pmc, post_sbom
+from common import get_dirs, get_files, get_sbom_cached, dt_pmc, post_sbom
 from dotenv import load_dotenv
 import json
 import os
@@ -90,4 +90,6 @@ for project in projects:
         if sboms:
             sbom = sboms[0]
             url = f'https://repo1.maven.org/maven2/org/apache/{pmc}/{project}/{lastVersion}/{sbom}'
-            post_sbom(pmc, pmc_uuid, friendly_name, lastVersion, url)
+            cache = f'{pmc}/{project}/{lastVersion}/{sbom}'
+            sbom = get_sbom_cached(url, cache)
+            post_sbom(pmc, pmc_uuid, friendly_name, lastVersion, sbom)
