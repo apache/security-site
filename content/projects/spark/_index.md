@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Spark Key Negotiation Vulnerability ## { #CVE-2021-38296 }
 
-CVE-2021-38296 [\[CVE json\]](./CVE-2021-38296.cve.json)
+CVE-2021-38296 [\[CVE json\]](./CVE-2021-38296.cve.json) [\[OSV json\]](./CVE-2021-38296.osv.json)
+
+
 
 _Last updated: 2022-03-10T08:16:48.042Z_
 
@@ -38,7 +40,9 @@ Apache Spark supports end-to-end encryption of RPC connections via "spark.authen
 
 ## Apache Spark XSS vulnerability in log viewer UI Javascript ## { #CVE-2022-31777 }
 
-CVE-2022-31777 [\[CVE json\]](./CVE-2022-31777.cve.json)
+CVE-2022-31777 [\[CVE json\]](./CVE-2022-31777.cve.json) [\[OSV json\]](./CVE-2022-31777.osv.json)
+
+
 
 _Last updated: 2022-11-01T15:31:47.242Z_
 
@@ -62,7 +66,9 @@ A stored cross-site scripting (XSS) vulnerability in Apache Spark 3.2.1 and earl
 
 ## Apache Spark shell command injection vulnerability via Spark UI ## { #CVE-2022-33891 }
 
-CVE-2022-33891 [\[CVE json\]](./CVE-2022-33891.cve.json)
+CVE-2022-33891 [\[CVE json\]](./CVE-2022-33891.cve.json) [\[OSV json\]](./CVE-2022-33891.osv.json)
+
+
 
 _Last updated: 2022-07-18T06:58:42.467Z_
 
@@ -87,7 +93,9 @@ The Apache Spark UI offers the possibility to enable ACLs via the configuration 
 
 ## Apache Spark proxy-user privilege escalation from malicious configuration class ## { #CVE-2023-22946 }
 
-CVE-2023-22946 [\[CVE json\]](./CVE-2023-22946.cve.json)
+CVE-2023-22946 [\[CVE json\]](./CVE-2023-22946.cve.json) [\[OSV json\]](./CVE-2023-22946.osv.json)
+
+
 
 _Last updated: 2023-04-17T07:30:17.426Z_
 
@@ -113,7 +121,9 @@ default of "false", and is not overridden by submitted applications.<br></div>
 
 ## Shell command injection via Spark UI ## { #CVE-2023-32007 }
 
-CVE-2023-32007 [\[CVE json\]](./CVE-2023-32007.cve.json)
+CVE-2023-32007 [\[CVE json\]](./CVE-2023-32007.cve.json) [\[OSV json\]](./CVE-2023-32007.osv.json)
+
+
 
 _Last updated: 2023-05-02T08:37:02.283Z_
 

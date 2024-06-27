@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache NuttX (incubating) Out of Bound Write from invalid fragmentation offset value specified in the IP header ## { #CVE-2020-17529 }
 
-CVE-2020-17529 [\[CVE json\]](./CVE-2020-17529.cve.json)
+CVE-2020-17529 [\[CVE json\]](./CVE-2020-17529.cve.json) [\[OSV json\]](./CVE-2020-17529.osv.json)
+
+
 
 _Last updated: 2020-12-09T16:35:02.859Z_
 
@@ -39,7 +41,9 @@ Out-of-bounds Write vulnerability in TCP Stack of Apache NuttX (incubating) vers
 
 ## Apache NuttX (incubating) Out of Bound Write from invalid TCP Urgent length ## { #CVE-2020-17528 }
 
-CVE-2020-17528 [\[CVE json\]](./CVE-2020-17528.cve.json)
+CVE-2020-17528 [\[CVE json\]](./CVE-2020-17528.cve.json) [\[OSV json\]](./CVE-2020-17528.osv.json)
+
+
 
 _Last updated: 2020-12-09T16:34:56.566Z_
 
@@ -63,7 +67,9 @@ Out-of-bounds Write vulnerability in TCP stack of Apache NuttX (incubating) vers
 
 ## malloc, realloc and memalign implementations are vulnerable to integer wrap-arounds ## { #CVE-2021-26461 }
 
-CVE-2021-26461 [\[CVE json\]](./CVE-2021-26461.cve.json)
+CVE-2021-26461 [\[CVE json\]](./CVE-2021-26461.cve.json) [\[OSV json\]](./CVE-2021-26461.osv.json)
+
+
 
 _Last updated: 2021-06-21T17:05:46.935Z_
 

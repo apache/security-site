@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Ozone S3 Gateway allows bucket and key access to non authenticated users  ## { #CVE-2020-17517 }
 
-CVE-2020-17517 [\[CVE json\]](./CVE-2020-17517.cve.json)
+CVE-2020-17517 [\[CVE json\]](./CVE-2020-17517.cve.json) [\[OSV json\]](./CVE-2020-17517.osv.json)
+
+
 
 _Last updated: 2021-04-27T16:36:35.505Z_
 
@@ -39,7 +41,9 @@ The S3 buckets and keys in a secure Apache Ozone Cluster must be inaccessible to
 
 ## Original block tokens are persisted and can be retrieved ## { #CVE-2021-36372 }
 
-CVE-2021-36372 [\[CVE json\]](./CVE-2021-36372.cve.json)
+CVE-2021-36372 [\[CVE json\]](./CVE-2021-36372.cve.json) [\[OSV json\]](./CVE-2021-36372.osv.json)
+
+
 
 _Last updated: 2024-01-31T09:17:30.555Z_
 
@@ -62,7 +66,9 @@ In Apache Ozone versions prior to 1.2.0, Initially generated block tokens are pe
 
 ## Missing authentication/authorization on internal RPC endpoints ## { #CVE-2021-39231 }
 
-CVE-2021-39231 [\[CVE json\]](./CVE-2021-39231.cve.json)
+CVE-2021-39231 [\[CVE json\]](./CVE-2021-39231.cve.json) [\[OSV json\]](./CVE-2021-39231.osv.json)
+
+
 
 _Last updated: 2021-11-19T09:07:59.940Z_
 
@@ -85,7 +91,9 @@ In Apache Ozone versions prior to 1.2.0, Various internal server-to-server RPC e
 
 ## Missing admin check for SCM related admin commands ## { #CVE-2021-39232 }
 
-CVE-2021-39232 [\[CVE json\]](./CVE-2021-39232.cve.json)
+CVE-2021-39232 [\[CVE json\]](./CVE-2021-39232.cve.json) [\[OSV json\]](./CVE-2021-39232.osv.json)
+
+
 
 _Last updated: 2021-11-19T09:09:30.310Z_
 
@@ -108,7 +116,9 @@ In Apache Ozone versions prior to 1.2.0, certain admin related SCM commands can 
 
 ## Container-related datanode operations can be called without authorization ## { #CVE-2021-39233 }
 
-CVE-2021-39233 [\[CVE json\]](./CVE-2021-39233.cve.json)
+CVE-2021-39233 [\[CVE json\]](./CVE-2021-39233.cve.json) [\[OSV json\]](./CVE-2021-39233.osv.json)
+
+
 
 _Last updated: 2021-11-19T09:10:07.173Z_
 
@@ -131,7 +141,9 @@ In Apache Ozone versions prior to 1.2.0, Container related Datanode requests of 
 
 ## Raw block data can be read bypassing ACL/authorization ## { #CVE-2021-39234 }
 
-CVE-2021-39234 [\[CVE json\]](./CVE-2021-39234.cve.json)
+CVE-2021-39234 [\[CVE json\]](./CVE-2021-39234.cve.json) [\[OSV json\]](./CVE-2021-39234.osv.json)
+
+
 
 _Last updated: 2021-11-19T09:10:52.636Z_
 
@@ -154,7 +166,9 @@ In Apache Ozone versions prior to 1.2.0, Authenticated users knowing the ID of a
 
 ## Access mode of block tokens are not enforced ## { #CVE-2021-39235 }
 
-CVE-2021-39235 [\[CVE json\]](./CVE-2021-39235.cve.json)
+CVE-2021-39235 [\[CVE json\]](./CVE-2021-39235.cve.json) [\[OSV json\]](./CVE-2021-39235.osv.json)
+
+
 
 _Last updated: 2021-11-19T09:11:44.999Z_
 
@@ -177,7 +191,9 @@ In Apache Ozone before 1.2.0, Ozone Datanode doesn't check the access mode param
 
 ## Owners of the S3 tokens are not validated ## { #CVE-2021-39236 }
 
-CVE-2021-39236 [\[CVE json\]](./CVE-2021-39236.cve.json)
+CVE-2021-39236 [\[CVE json\]](./CVE-2021-39236.cve.json) [\[OSV json\]](./CVE-2021-39236.osv.json)
+
+
 
 _Last updated: 2021-11-19T09:13:11.634Z_
 
@@ -200,7 +216,9 @@ In Apache Ozone before 1.2.0, Authenticated users with valid Ozone S3 credential
 
 ## Unauthenticated access to Ozone Recon HTTP endpoints ## { #CVE-2021-41532 }
 
-CVE-2021-41532 [\[CVE json\]](./CVE-2021-41532.cve.json)
+CVE-2021-41532 [\[CVE json\]](./CVE-2021-41532.cve.json) [\[OSV json\]](./CVE-2021-41532.osv.json)
+
+
 
 _Last updated: 2021-11-19T09:13:58.824Z_
 
@@ -223,7 +241,9 @@ In Apache Ozone before 1.2.0, Recon HTTP endpoints provide access to OM, SCM and
 
 ## Missing mutual TLS authentication in one of the service internal Ozone Storage Container Manager endpoints ## { #CVE-2023-39196 }
 
-CVE-2023-39196 [\[CVE json\]](./CVE-2023-39196.cve.json)
+CVE-2023-39196 [\[CVE json\]](./CVE-2023-39196.cve.json) [\[OSV json\]](./CVE-2023-39196.osv.json)
+
+
 
 _Last updated: 2024-02-07T12:56:26.948Z_
 

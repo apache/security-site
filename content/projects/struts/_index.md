@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Forced OGNL evaluation, when evaluated on raw not validated user input in tag attributes, may lead to RCE. ## { #CVE-2021-31805 }
 
-CVE-2021-31805 [\[CVE json\]](./CVE-2021-31805.cve.json)
+CVE-2021-31805 [\[CVE json\]](./CVE-2021-31805.cve.json) [\[OSV json\]](./CVE-2021-31805.osv.json)
+
+
 
 _Last updated: 2022-04-12T15:23:33.186Z_
 
@@ -38,7 +40,9 @@ The fix issued for CVE-2020-17530 was incomplete. So from Apache Struts 2.0.0 to
 
 ## DoS via OOM owing to not properly checking of list bounds ## { #CVE-2023-34149 }
 
-CVE-2023-34149 [\[CVE json\]](./CVE-2023-34149.cve.json)
+CVE-2023-34149 [\[CVE json\]](./CVE-2023-34149.cve.json) [\[OSV json\]](./CVE-2023-34149.osv.json)
+
+
 
 _Last updated: 2023-06-14T07:48:49.995Z_
 
@@ -62,7 +66,9 @@ Allocation of Resources Without Limits or Throttling vulnerability in Apache Sof
 
 ## DoS via OOM owing to no sanity limit on normal form fields in multipart forms ## { #CVE-2023-34396 }
 
-CVE-2023-34396 [\[CVE json\]](./CVE-2023-34396.cve.json)
+CVE-2023-34396 [\[CVE json\]](./CVE-2023-34396.cve.json) [\[OSV json\]](./CVE-2023-34396.osv.json)
+
+
 
 _Last updated: 2023-06-14T07:50:57.318Z_
 

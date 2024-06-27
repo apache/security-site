@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Java deserialization in Chainsaw ## { #CVE-2020-9493 }
 
-CVE-2020-9493 [\[CVE json\]](./CVE-2020-9493.cve.json)
+CVE-2020-9493 [\[CVE json\]](./CVE-2020-9493.cve.json) [\[OSV json\]](./CVE-2020-9493.osv.json)
+
+
 
 _Last updated: 2021-06-16T07:28:39.802Z_
 
@@ -38,7 +40,9 @@ A deserialization flaw was found in Apache Chainsaw versions prior to 2.1.0 whic
 
 ## Apache Log4j2 JNDI features do not protect against attacker controlled LDAP and other JNDI related endpoints ## { #CVE-2021-44228 }
 
-CVE-2021-44228 [\[CVE json\]](./CVE-2021-44228.cve.json)
+CVE-2021-44228 [\[CVE json\]](./CVE-2021-44228.cve.json) [\[OSV json\]](./CVE-2021-44228.osv.json)
+
+
 
 _Last updated: 2021-12-23T21:53:38.756Z_
 
@@ -66,7 +70,9 @@ Note that this vulnerability is specific to log4j-core and does not affect log4n
 
 ## Apache Log4j2 vulnerable to RCE via JDBC Appender when attacker controls configuration server ## { #CVE-2021-44832 }
 
-CVE-2021-44832 [\[CVE json\]](./CVE-2021-44832.cve.json)
+CVE-2021-44832 [\[CVE json\]](./CVE-2021-44832.cve.json) [\[OSV json\]](./CVE-2021-44832.osv.json)
+
+
 
 _Last updated: 2021-12-30T08:25:52.491Z_
 
@@ -86,7 +92,9 @@ Apache Log4j2 versions 2.0-beta7 through 2.17.0 (excluding security fix releases
 
 ## Deserialization of untrusted data in JMSAppender in Apache Log4j 1.2 ## { #CVE-2021-4104 }
 
-CVE-2021-4104 [\[CVE json\]](./CVE-2021-4104.cve.json)
+CVE-2021-4104 [\[CVE json\]](./CVE-2021-4104.cve.json) [\[OSV json\]](./CVE-2021-4104.osv.json)
+
+
 
 _Last updated: 2022-02-04T08:45:46.335Z_
 
@@ -111,7 +119,9 @@ Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log
 
 ## Apache Log4j2 Thread Context Lookup Pattern vulnerable to remote code execution in certain non-default configurations ## { #CVE-2021-45046 }
 
-CVE-2021-45046 [\[CVE json\]](./CVE-2021-45046.cve.json)
+CVE-2021-45046 [\[CVE json\]](./CVE-2021-45046.cve.json) [\[OSV json\]](./CVE-2021-45046.osv.json)
+
+
 
 _Last updated: 2022-02-04T08:46:08.709Z_
 
@@ -140,7 +150,9 @@ Log4j 2.16.0 (Java 8), 2.12.2 (Java 7), and 2.3.1 (Java 6) fix this issue by rem
 
 ## Apache Log4j2 does not always protect from infinite recursion in lookup evaluation ## { #CVE-2021-45105 }
 
-CVE-2021-45105 [\[CVE json\]](./CVE-2021-45105.cve.json)
+CVE-2021-45105 [\[CVE json\]](./CVE-2021-45105.cve.json) [\[OSV json\]](./CVE-2021-45105.osv.json)
+
+
 
 _Last updated: 2021-12-23T21:55:58.182Z_
 
@@ -164,7 +176,9 @@ Apache Log4j2 versions 2.0-alpha1 through 2.16.0 (excluding 2.12.3 and 2.3.1) di
 
 ## Deserialization of untrusted data in JMSSink in Apache Log4j 1.x ## { #CVE-2022-23302 }
 
-CVE-2022-23302 [\[CVE json\]](./CVE-2022-23302.cve.json)
+CVE-2022-23302 [\[CVE json\]](./CVE-2022-23302.cve.json) [\[OSV json\]](./CVE-2022-23302.osv.json)
+
+
 
 _Last updated: 2022-01-18T16:52:09.053Z_
 
@@ -192,7 +206,9 @@ Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log
 
 ## SQL injection in JDBC Appender in Apache Log4j V1 ## { #CVE-2022-23305 }
 
-CVE-2022-23305 [\[CVE json\]](./CVE-2022-23305.cve.json)
+CVE-2022-23305 [\[CVE json\]](./CVE-2022-23305.cve.json) [\[OSV json\]](./CVE-2022-23305.osv.json)
+
+
 
 _Last updated: 2022-01-18T15:19:05.615Z_
 
@@ -220,7 +236,9 @@ Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log
 
 ##  A deserialization flaw in the Chainsaw component of Log4j 1 can lead to malicious code execution. ## { #CVE-2022-23307 }
 
-CVE-2022-23307 [\[CVE json\]](./CVE-2022-23307.cve.json)
+CVE-2022-23307 [\[CVE json\]](./CVE-2022-23307.cve.json) [\[OSV json\]](./CVE-2022-23307.osv.json)
+
+
 
 _Last updated: 2022-01-18T15:19:48.077Z_
 
@@ -269,7 +287,9 @@ hashmap or hashtable (depending on which logging component is in use) to be proc
 
 ## SQL injection when using ODBC appender ## { #CVE-2023-31038 }
 
-CVE-2023-31038 [\[CVE json\]](./CVE-2023-31038.cve.json)
+CVE-2023-31038 [\[CVE json\]](./CVE-2023-31038.cve.json) [\[OSV json\]](./CVE-2023-31038.osv.json)
+
+
 
 _Last updated: 2023-05-08T08:55:53.262Z_
 

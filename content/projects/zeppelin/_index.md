@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## bash command injection in spark interpreter ## { #CVE-2019-10095 }
 
-CVE-2019-10095 [\[CVE json\]](./CVE-2019-10095.cve.json)
+CVE-2019-10095 [\[CVE json\]](./CVE-2019-10095.cve.json) [\[OSV json\]](./CVE-2019-10095.osv.json)
+
+
 
 _Last updated: 2022-12-08T11:51:05.587Z_
 
@@ -38,7 +40,9 @@ bash command injection vulnerability in Apache Zeppelin allows an attacker to in
 
 ## Notebook permissions bypass ## { #CVE-2020-13929 }
 
-CVE-2020-13929 [\[CVE json\]](./CVE-2020-13929.cve.json)
+CVE-2020-13929 [\[CVE json\]](./CVE-2020-13929.cve.json) [\[OSV json\]](./CVE-2020-13929.osv.json)
+
+
 
 _Last updated: 2021-09-02T16:10:15.351Z_
 
@@ -61,7 +65,9 @@ Authentication bypass vulnerability in Apache Zeppelin allows an attacker to byp
 
 ## Cross Site Scripting in markdown interpreter ## { #CVE-2021-27578 }
 
-CVE-2021-27578 [\[CVE json\]](./CVE-2021-27578.cve.json)
+CVE-2021-27578 [\[CVE json\]](./CVE-2021-27578.cve.json) [\[OSV json\]](./CVE-2021-27578.osv.json)
+
+
 
 _Last updated: 2021-09-02T16:11:07.660Z_
 
@@ -84,7 +90,9 @@ Cross Site Scripting vulnerability in markdown interpreter of Apache Zeppelin al
 
 ## Arbitrary file deletion vulnerability ## { #CVE-2021-28655 }
 
-CVE-2021-28655 [\[CVE json\]](./CVE-2021-28655.cve.json)
+CVE-2021-28655 [\[CVE json\]](./CVE-2021-28655.cve.json) [\[OSV json\]](./CVE-2021-28655.osv.json)
+
+
 
 _Last updated: 2022-12-20T09:49:02.814Z_
 
@@ -107,7 +115,9 @@ The improper Input Validation vulnerability in "”Move folder to Trash” featu
 
 ## CSRF vulnerability in the Credentials page ## { #CVE-2021-28656 }
 
-CVE-2021-28656 [\[CVE json\]](./CVE-2021-28656.cve.json)
+CVE-2021-28656 [\[CVE json\]](./CVE-2021-28656.cve.json) [\[OSV json\]](./CVE-2021-28656.osv.json)
+
+
 
 _Last updated: 2024-04-09T09:12:56.855Z_
 
@@ -130,7 +140,9 @@ Cross-Site Request Forgery (CSRF) vulnerability in Credential page of Apache Zep
 
 ## Stored XSS in note permissions ## { #CVE-2022-46870 }
 
-CVE-2022-46870 [\[CVE json\]](./CVE-2022-46870.cve.json)
+CVE-2022-46870 [\[CVE json\]](./CVE-2022-46870.cve.json) [\[OSV json\]](./CVE-2022-46870.osv.json)
+
+
 
 _Last updated: 2022-12-16T12:54:56.815Z_
 
@@ -149,7 +161,9 @@ An Improper Neutralization of Input During Web Page Generation ('Cross-site Scri
 
 ## connecting to a malicious SAP server allowed it to perform XXE ## { #CVE-2022-47894 }
 
-CVE-2022-47894 [\[CVE json\]](./CVE-2022-47894.cve.json)
+CVE-2022-47894 [\[CVE json\]](./CVE-2022-47894.cve.json) [\[OSV json\]](./CVE-2022-47894.osv.json)
+
+
 
 _Last updated: 2024-04-09T09:29:15.865Z_
 
@@ -173,7 +187,9 @@ Improper Input Validation vulnerability in Apache Zeppelin SAP.<p>This issue aff
 
 ## Path traversal vulnerability ## { #CVE-2024-31860 }
 
-CVE-2024-31860 [\[CVE json\]](./CVE-2024-31860.cve.json)
+CVE-2024-31860 [\[CVE json\]](./CVE-2024-31860.cve.json) [\[OSV json\]](./CVE-2024-31860.osv.json)
+
+
 
 _Last updated: 2024-04-09T09:08:25.607Z_
 
@@ -197,7 +213,9 @@ Improper Input Validation vulnerability in Apache Zeppelin.<br><br>By adding rel
 
 ## Denial of service with invalid notebook name ## { #CVE-2024-31862 }
 
-CVE-2024-31862 [\[CVE json\]](./CVE-2024-31862.cve.json)
+CVE-2024-31862 [\[CVE json\]](./CVE-2024-31862.cve.json) [\[OSV json\]](./CVE-2024-31862.osv.json)
+
+
 
 _Last updated: 2024-04-09T09:40:37.681Z_
 
@@ -222,7 +240,9 @@ Improper Input Validation vulnerability in Apache Zeppelin when creating a new n
 
 ## Replacing other users notebook, bypassing any permissions ## { #CVE-2024-31863 }
 
-CVE-2024-31863 [\[CVE json\]](./CVE-2024-31863.cve.json)
+CVE-2024-31863 [\[CVE json\]](./CVE-2024-31863.cve.json) [\[OSV json\]](./CVE-2024-31863.osv.json)
+
+
 
 _Last updated: 2024-04-09T10:25:26.871Z_
 
@@ -246,7 +266,9 @@ Authentication Bypass by Spoofing vulnerability by replacing to exsiting notes i
 
 ## Remote code execution by adding malicious JDBC connection string ## { #CVE-2024-31864 }
 
-CVE-2024-31864 [\[CVE json\]](./CVE-2024-31864.cve.json)
+CVE-2024-31864 [\[CVE json\]](./CVE-2024-31864.cve.json) [\[OSV json\]](./CVE-2024-31864.osv.json)
+
+
 
 _Last updated: 2024-04-11T07:54:22.052Z_
 
@@ -272,7 +294,9 @@ Improper Control of Generation of Code ('Code Injection') vulnerability in Apach
 
 ## Cron arbitrary user impersonation with improper privileges ## { #CVE-2024-31865 }
 
-CVE-2024-31865 [\[CVE json\]](./CVE-2024-31865.cve.json)
+CVE-2024-31865 [\[CVE json\]](./CVE-2024-31865.cve.json) [\[OSV json\]](./CVE-2024-31865.osv.json)
+
+
 
 _Last updated: 2024-04-09T16:07:34.123Z_
 
@@ -297,7 +321,9 @@ _Last updated: 2024-04-09T16:07:34.123Z_
 
 ## Interpreter download command does not escape malicious code injection ## { #CVE-2024-31866 }
 
-CVE-2024-31866 [\[CVE json\]](./CVE-2024-31866.cve.json)
+CVE-2024-31866 [\[CVE json\]](./CVE-2024-31866.cve.json) [\[OSV json\]](./CVE-2024-31866.osv.json)
+
+
 
 _Last updated: 2024-04-09T16:09:09.746Z_
 
@@ -322,7 +348,9 @@ Improper Encoding or Escaping of Output vulnerability in Apache Zeppelin.<br><br
 
 ## LDAP search filter query Injection Vulnerability ## { #CVE-2024-31867 }
 
-CVE-2024-31867 [\[CVE json\]](./CVE-2024-31867.cve.json)
+CVE-2024-31867 [\[CVE json\]](./CVE-2024-31867.cve.json) [\[OSV json\]](./CVE-2024-31867.osv.json)
+
+
 
 _Last updated: 2024-04-09T16:15:46.165Z_
 
@@ -346,7 +374,9 @@ Improper Input Validation vulnerability in Apache Zeppelin.<br><br>The attackers
 
 ## XSS vulnerability in the helium module ## { #CVE-2024-31868 }
 
-CVE-2024-31868 [\[CVE json\]](./CVE-2024-31868.cve.json)
+CVE-2024-31868 [\[CVE json\]](./CVE-2024-31868.cve.json) [\[OSV json\]](./CVE-2024-31868.osv.json)
+
+
 
 _Last updated: 2024-04-09T16:10:29.091Z_
 

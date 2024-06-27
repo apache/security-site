@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## DNS proxy and possible amplification attack ## { #CVE-2021-23937 }
 
-CVE-2021-23937 [\[CVE json\]](./CVE-2021-23937.cve.json)
+CVE-2021-23937 [\[CVE json\]](./CVE-2021-23937.cve.json) [\[OSV json\]](./CVE-2021-23937.osv.json)
+
+
 
 _Last updated: 2021-05-25T08:01:09.799Z_
 
@@ -43,7 +45,9 @@ This issue affects Apache Wicket Apache Wicket 9.x version 9.2.0 and prior versi
 
 ## Possible bypass of CSRF protection ## { #CVE-2024-27439 }
 
-CVE-2024-27439 [\[CVE json\]](./CVE-2024-27439.cve.json)
+CVE-2024-27439 [\[CVE json\]](./CVE-2024-27439.cve.json) [\[OSV json\]](./CVE-2024-27439.osv.json)
+
+
 
 _Last updated: 2024-03-19T11:07:46.188Z_
 

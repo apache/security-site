@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## regex injection leading to DoS ## { #CVE-2021-33580 }
 
-CVE-2021-33580 [\[CVE json\]](./CVE-2021-33580.cve.json)
+CVE-2021-33580 [\[CVE json\]](./CVE-2021-33580.cve.json) [\[OSV json\]](./CVE-2021-33580.osv.json)
+
+
 
 _Last updated: 2021-08-18T07:43:44.770Z_
 

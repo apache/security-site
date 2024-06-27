@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## padding oracle can allow construction an authentication cookie ## { #CVE-2024-27905 }
 
-CVE-2024-27905 [\[CVE json\]](./CVE-2024-27905.cve.json)
+CVE-2024-27905 [\[CVE json\]](./CVE-2024-27905.cve.json) [\[OSV json\]](./CVE-2024-27905.osv.json)
+
+
 
 _Last updated: 2024-02-27T14:29:18.380Z_
 

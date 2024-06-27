@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ##  ## { #CVE-2020-13947 }
 
-CVE-2020-13947 [\[CVE json\]](./CVE-2020-13947.cve.json)
+CVE-2020-13947 [\[CVE json\]](./CVE-2020-13947.cve.json) [\[OSV json\]](./CVE-2020-13947.osv.json)
+
+
 
 _Last updated: 2021-02-10T09:16:00.641Z_
 
@@ -34,7 +36,9 @@ An instance of a cross-site scripting vulnerability was identified to be present
 
 ## ActiveMQ: LDAP-Authentication does not verify passwords on servers with anonymous bind ## { #CVE-2021-26117 }
 
-CVE-2021-26117 [\[CVE json\]](./CVE-2021-26117.cve.json)
+CVE-2021-26117 [\[CVE json\]](./CVE-2021-26117.cve.json) [\[OSV json\]](./CVE-2021-26117.osv.json)
+
+
 
 _Last updated: 2021-01-27T18:47:20.605Z_
 
@@ -58,7 +62,9 @@ The optional ActiveMQ LDAP login module can be configured to use anonymous acces
 
 ## Flaw in ActiveMQ Artemis OpenWire support ## { #CVE-2021-26118 }
 
-CVE-2021-26118 [\[CVE json\]](./CVE-2021-26118.cve.json)
+CVE-2021-26118 [\[CVE json\]](./CVE-2021-26118.cve.json) [\[OSV json\]](./CVE-2021-26118.osv.json)
+
+
 
 _Last updated: 2021-01-27T18:47:25.710Z_
 
@@ -81,7 +87,9 @@ While investigating ARTEMIS-2964 it was found that the creation of advisory mess
 
 ## Apache ActiveMQ Artemis DoS ## { #CVE-2022-23913 }
 
-CVE-2022-23913 [\[CVE json\]](./CVE-2022-23913.cve.json)
+CVE-2022-23913 [\[CVE json\]](./CVE-2022-23913.cve.json) [\[OSV json\]](./CVE-2022-23913.osv.json)
+
+
 
 _Last updated: 2022-02-04T08:26:48.236Z_
 
@@ -100,7 +108,9 @@ In Apache ActiveMQ Artemis prior to 2.20.0 or 2.19.1, an attacker could partiall
 
 ## HTML Injection in ActiveMQ Artemis Web Console ## { #CVE-2022-35278 }
 
-CVE-2022-35278 [\[CVE json\]](./CVE-2022-35278.cve.json)
+CVE-2022-35278 [\[CVE json\]](./CVE-2022-35278.cve.json) [\[OSV json\]](./CVE-2022-35278.osv.json)
+
+
 
 _Last updated: 2022-08-18T07:52:49.472Z_
 
@@ -209,7 +219,9 @@ which fixes this issue.</div>
 
 ## Jolokia and REST API were not secured with default configuration ## { #CVE-2024-32114 }
 
-CVE-2024-32114 [\[CVE json\]](./CVE-2024-32114.cve.json)
+CVE-2024-32114 [\[CVE json\]](./CVE-2024-32114.cve.json) [\[OSV json\]](./CVE-2024-32114.osv.json)
+
+
 
 _Last updated: 2024-05-01T16:07:22.140Z_
 

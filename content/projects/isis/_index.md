@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## XSS vulnerability, eg for String properties. ## { #CVE-2022-42466 }
 
-CVE-2022-42466 [\[CVE json\]](./CVE-2022-42466.cve.json)
+CVE-2022-42466 [\[CVE json\]](./CVE-2022-42466.cve.json) [\[OSV json\]](./CVE-2022-42466.osv.json)
+
+
 
 _Last updated: 2022-10-19T07:20:06.791Z_
 
@@ -40,7 +42,9 @@ As of this release, the inputted strings are properly escaped when rendered.
 
 ## h2 webconsole (available only in prototype mode) should nevertheless be disabled by default. ## { #CVE-2022-42467 }
 
-CVE-2022-42467 [\[CVE json\]](./CVE-2022-42467.cve.json)
+CVE-2022-42467 [\[CVE json\]](./CVE-2022-42467.cve.json) [\[OSV json\]](./CVE-2022-42467.osv.json)
+
+
 
 _Last updated: 2022-10-19T07:19:59.555Z_
 

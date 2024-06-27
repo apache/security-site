@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Parquet-MR potential DoS in case of malicious Parquet file ## { #CVE-2021-41561 }
 
-CVE-2021-41561 [\[CVE json\]](./CVE-2021-41561.cve.json)
+CVE-2021-41561 [\[CVE json\]](./CVE-2021-41561.cve.json) [\[OSV json\]](./CVE-2021-41561.osv.json)
+
+
 
 _Last updated: 2021-12-20T11:09:26.601Z_
 

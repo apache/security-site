@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## SQL injection from unauthorized login ## { #CVE-2023-37924 }
 
-CVE-2023-37924 [\[CVE json\]](./CVE-2023-37924.cve.json)
+CVE-2023-37924 [\[CVE json\]](./CVE-2023-37924.cve.json) [\[OSV json\]](./CVE-2023-37924.osv.json)
+
+
 
 _Last updated: 2023-11-22T09:19:18.697Z_
 
@@ -40,7 +42,9 @@ Apache Software Foundation Apache Submarine has an SQL injection vulnerability w
 
 ## Fix CVE-2022-1471 SnakeYaml unsafe deserialization ## { #CVE-2023-46302 }
 
-CVE-2023-46302 [\[CVE json\]](./CVE-2023-46302.cve.json)
+CVE-2023-46302 [\[CVE json\]](./CVE-2023-46302.cve.json) [\[OSV json\]](./CVE-2023-46302.osv.json)
+
+
 
 _Last updated: 2023-11-20T08:46:49.527Z_
 
@@ -69,7 +73,9 @@ is invoked, passing the entityStream containing the user-supplied data in `subma
 
 ## SQL injection ## { #CVE-2024-36263 }
 
-CVE-2024-36263 [\[CVE json\]](./CVE-2024-36263.cve.json)
+CVE-2024-36263 [\[CVE json\]](./CVE-2024-36263.cve.json) [\[OSV json\]](./CVE-2024-36263.osv.json)
+
+
 
 _Last updated: 2024-06-12T14:05:08.215Z_
 
@@ -94,7 +100,9 @@ _Last updated: 2024-06-12T14:05:08.215Z_
 
 ## default secret ## { #CVE-2024-36264 }
 
-CVE-2024-36264 [\[CVE json\]](./CVE-2024-36264.cve.json)
+CVE-2024-36264 [\[CVE json\]](./CVE-2024-36264.cve.json) [\[OSV json\]](./CVE-2024-36264.osv.json)
+
+
 
 _Last updated: 2024-06-12T14:06:29.951Z_
 
@@ -119,7 +127,9 @@ _Last updated: 2024-06-12T14:06:29.951Z_
 
 ## authorization bypass ## { #CVE-2024-36265 }
 
-CVE-2024-36265 [\[CVE json\]](./CVE-2024-36265.cve.json)
+CVE-2024-36265 [\[CVE json\]](./CVE-2024-36265.cve.json) [\[OSV json\]](./CVE-2024-36265.osv.json)
+
+
 
 _Last updated: 2024-06-12T14:12:08.874Z_
 

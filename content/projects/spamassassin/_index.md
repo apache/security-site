@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache SpamAssassin has an OS Command Injection vulnerability ## { #CVE-2020-1946 }
 
-CVE-2020-1946 [\[CVE json\]](./CVE-2020-1946.cve.json)
+CVE-2020-1946 [\[CVE json\]](./CVE-2020-1946.cve.json) [\[OSV json\]](./CVE-2020-1946.osv.json)
+
+
 
 _Last updated: 2021-03-25T09:15:51.926Z_
 

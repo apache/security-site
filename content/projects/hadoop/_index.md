@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Hadoop YARN remote code execution in ZKConfigurationStore of capacity scheduler ## { #CVE-2021-25642 }
 
-CVE-2021-25642 [\[CVE json\]](./CVE-2021-25642.cve.json)
+CVE-2021-25642 [\[CVE json\]](./CVE-2021-25642.cve.json) [\[OSV json\]](./CVE-2021-25642.osv.json)
+
+
 
 _Last updated: 2022-08-25T13:21:18.013Z_
 
@@ -38,7 +40,9 @@ ZKConfigurationStore which is optionally used by CapacityScheduler of Apache Had
 
 ## Apache Hadoop Privilege escalation vulnerability ## { #CVE-2021-33036 }
 
-CVE-2021-33036 [\[CVE json\]](./CVE-2021-33036.cve.json)
+CVE-2021-33036 [\[CVE json\]](./CVE-2021-33036.cve.json) [\[OSV json\]](./CVE-2021-33036.osv.json)
+
+
 
 _Last updated: 2022-06-15T14:23:07.883Z_
 
@@ -61,7 +65,9 @@ In Apache Hadoop 2.2.0 to 2.10.1, 3.0.0-alpha1 to 3.1.4, 3.2.0 to 3.2.2, and 3.3
 
 ## Heap buffer overflow in libhdfs native library ## { #CVE-2021-37404 }
 
-CVE-2021-37404 [\[CVE json\]](./CVE-2021-37404.cve.json)
+CVE-2021-37404 [\[CVE json\]](./CVE-2021-37404.cve.json) [\[OSV json\]](./CVE-2021-37404.osv.json)
+
+
 
 _Last updated: 2022-06-13T06:58:30.060Z_
 
@@ -87,7 +93,9 @@ There is a potential heap buffer overflow in Apache Hadoop libhdfs native code. 
 
 ## Command injection in org.apache.hadoop.fs.FileUtil.unTarUsingTar ## { #CVE-2022-25168 }
 
-CVE-2022-25168 [\[CVE json\]](./CVE-2022-25168.cve.json)
+CVE-2022-25168 [\[CVE json\]](./CVE-2022-25168.cve.json) [\[OSV json\]](./CVE-2022-25168.osv.json)
+
+
 
 _Last updated: 2022-08-04T14:28:32.587Z_
 
@@ -150,7 +158,9 @@ This was addressed in Apache Hadoop 3.2.3
 
 ## Privilege escalation in Apache Hadoop Yarn container-executor binary on Linux systems ## { #CVE-2023-26031 }
 
-CVE-2023-26031 [\[CVE json\]](./CVE-2023-26031.cve.json)
+CVE-2023-26031 [\[CVE json\]](./CVE-2023-26031.cve.json) [\[OSV json\]](./CVE-2023-26031.osv.json)
+
+
 
 _Last updated: 2024-05-07T00:58:06.325Z_
 

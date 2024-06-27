@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Display information UI XSS ## { #CVE-2021-33192 }
 
-CVE-2021-33192 [\[CVE json\]](./CVE-2021-33192.cve.json)
+CVE-2021-33192 [\[CVE json\]](./CVE-2021-33192.cve.json) [\[OSV json\]](./CVE-2021-33192.osv.json)
+
+
 
 _Last updated: 2021-07-05T09:09:33.148Z_
 
@@ -38,7 +40,9 @@ A vulnerability in the HTML pages of Apache Jena Fuseki allows an attacker to ex
 
 ## XML External Entity (XXE) vulnerability ## { #CVE-2021-39239 }
 
-CVE-2021-39239 [\[CVE json\]](./CVE-2021-39239.cve.json)
+CVE-2021-39239 [\[CVE json\]](./CVE-2021-39239.cve.json) [\[OSV json\]](./CVE-2021-39239.osv.json)
+
+
 
 _Last updated: 2021-09-16T14:16:06.658Z_
 
@@ -57,7 +61,9 @@ A vulnerability in XML processing in Apache Jena, in versions up to 4.1.0, may a
 
 ## Processing external DTDs ## { #CVE-2022-28890 }
 
-CVE-2022-28890 [\[CVE json\]](./CVE-2022-28890.cve.json)
+CVE-2022-28890 [\[CVE json\]](./CVE-2022-28890.cve.json) [\[OSV json\]](./CVE-2022-28890.osv.json)
+
+
 
 _Last updated: 2022-05-05T08:34:36.622Z_
 
@@ -80,7 +86,9 @@ A vulnerability in the RDF/XML parser of Apache Jena allows an attacker to cause
 
 ## Apache Jena SDB allows arbitrary deserialisation via JDBC ## { #CVE-2022-45136 }
 
-CVE-2022-45136 [\[CVE json\]](./CVE-2022-45136.cve.json)
+CVE-2022-45136 [\[CVE json\]](./CVE-2022-45136.cve.json) [\[OSV json\]](./CVE-2022-45136.osv.json)
+
+
 
 _Last updated: 2022-11-14T15:41:09.479Z_
 
@@ -105,7 +113,9 @@ Apache Jena SDB has been EOL since December 2020 and users should migrate to alt
 
 ## Exposure of arbitrary execution in script engine expressions. ## { #CVE-2023-22665 }
 
-CVE-2023-22665 [\[CVE json\]](./CVE-2023-22665.cve.json)
+CVE-2023-22665 [\[CVE json\]](./CVE-2023-22665.cve.json) [\[OSV json\]](./CVE-2023-22665.osv.json)
+
+
 
 _Last updated: 2023-04-25T07:09:43.803Z_
 
@@ -128,7 +138,9 @@ There is insufficient checking of user queries in Apache Jena versions 4.7.0 and
 
 ## Exposure of execution in script engine expressions. ## { #CVE-2023-32200 }
 
-CVE-2023-32200 [\[CVE json\]](./CVE-2023-32200.cve.json)
+CVE-2023-32200 [\[CVE json\]](./CVE-2023-32200.cve.json) [\[OSV json\]](./CVE-2023-32200.osv.json)
+
+
 
 _Last updated: 2023-07-12T07:50:01.786Z_
 

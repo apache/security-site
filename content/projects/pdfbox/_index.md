@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## A carefully crafted PDF file can trigger an infinite loop while loading the file ## { #CVE-2021-27807 }
 
-CVE-2021-27807 [\[CVE json\]](./CVE-2021-27807.cve.json)
+CVE-2021-27807 [\[CVE json\]](./CVE-2021-27807.cve.json) [\[OSV json\]](./CVE-2021-27807.osv.json)
+
+
 
 _Last updated: 2021-03-19T16:02:02.671Z_
 
@@ -38,7 +40,9 @@ A carefully crafted PDF file can trigger an infinite loop while loading the file
 
 ## A carefully crafted PDF file can trigger an OutOfMemory-Exception while loading the file ## { #CVE-2021-27906 }
 
-CVE-2021-27906 [\[CVE json\]](./CVE-2021-27906.cve.json)
+CVE-2021-27906 [\[CVE json\]](./CVE-2021-27906.cve.json) [\[OSV json\]](./CVE-2021-27906.osv.json)
+
+
 
 _Last updated: 2021-03-19T16:03:06.161Z_
 
@@ -61,7 +65,9 @@ A carefully crafted PDF file can trigger an OutOfMemory-Exception while loading 
 
 ## A carefully crafted PDF file can trigger an OutOfMemory-Exception while loading a tiny file ## { #CVE-2021-31811 }
 
-CVE-2021-31811 [\[CVE json\]](./CVE-2021-31811.cve.json)
+CVE-2021-31811 [\[CVE json\]](./CVE-2021-31811.cve.json) [\[OSV json\]](./CVE-2021-31811.osv.json)
+
+
 
 _Last updated: 2021-06-12T09:40:36.582Z_
 
@@ -84,7 +90,9 @@ In Apache PDFBox, a carefully crafted PDF file can trigger an OutOfMemory-Except
 
 ## A carefully crafted PDF file can trigger an infinite loop while loading the file ## { #CVE-2021-31812 }
 
-CVE-2021-31812 [\[CVE json\]](./CVE-2021-31812.cve.json)
+CVE-2021-31812 [\[CVE json\]](./CVE-2021-31812.cve.json) [\[OSV json\]](./CVE-2021-31812.osv.json)
+
+
 
 _Last updated: 2021-06-12T09:40:30.803Z_
 

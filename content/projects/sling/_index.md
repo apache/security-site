@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## SMTPS server hostname not checked when making TLS connection to SMTPS server ## { #CVE-2021-44549 }
 
-CVE-2021-44549 [\[CVE json\]](./CVE-2021-44549.cve.json)
+CVE-2021-44549 [\[CVE json\]](./CVE-2021-44549.cve.json) [\[OSV json\]](./CVE-2021-44549.osv.json)
+
+
 
 _Last updated: 2021-12-14T15:10:31.167Z_
 
@@ -50,7 +52,9 @@ Apache Sling Commons Messaging Mail 2.0 adds support for enabling server identit
 
 ## log injection in Sling logging ## { #CVE-2022-32549 }
 
-CVE-2022-32549 [\[CVE json\]](./CVE-2022-32549.cve.json)
+CVE-2022-32549 [\[CVE json\]](./CVE-2022-32549.cve.json) [\[OSV json\]](./CVE-2022-32549.osv.json)
+
+
 
 _Last updated: 2022-06-22T14:22:34.319Z_
 
@@ -74,7 +78,9 @@ Apache Sling Commons Log <= 5.4.0 and Apache Sling API <= 2.25.0 are vulnerable 
 
 ## XSS in Sling CMS Reference App Taxonomy Path ## { #CVE-2022-43670 }
 
-CVE-2022-43670 [\[CVE json\]](./CVE-2022-43670.cve.json)
+CVE-2022-43670 [\[CVE json\]](./CVE-2022-43670.cve.json) [\[OSV json\]](./CVE-2022-43670.osv.json)
+
+
 
 _Last updated: 2022-11-02T12:20:10.764Z_
 
@@ -97,7 +103,9 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 
 ## Include-based XSS ## { #CVE-2022-45064 }
 
-CVE-2022-45064 [\[CVE json\]](./CVE-2022-45064.cve.json)
+CVE-2022-45064 [\[CVE json\]](./CVE-2022-45064.cve.json) [\[OSV json\]](./CVE-2022-45064.osv.json)
+
+
 
 _Last updated: 2023-04-13T10:01:10.930Z_
 
@@ -120,7 +128,9 @@ _Last updated: 2023-04-13T10:01:10.930Z_
 
 ## XSS in CMS Site Group Detail ## { #CVE-2022-46769 }
 
-CVE-2022-46769 [\[CVE json\]](./CVE-2022-46769.cve.json)
+CVE-2022-46769 [\[CVE json\]](./CVE-2022-46769.cve.json) [\[OSV json\]](./CVE-2022-46769.osv.json)
+
+
 
 _Last updated: 2023-01-25T03:51:12.925Z_
 
@@ -143,7 +153,9 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 
 ## Multiple parsing problems in the Apache Sling Commons JSON module ## { #CVE-2022-47937 }
 
-CVE-2022-47937 [\[CVE json\]](./CVE-2022-47937.cve.json)
+CVE-2022-47937 [\[CVE json\]](./CVE-2022-47937.cve.json) [\[OSV json\]](./CVE-2022-47937.osv.json)
+
+
 
 _Last updated: 2024-03-29T09:39:29.809Z_
 
@@ -172,7 +184,9 @@ Apache Sling project, but may of course use other JSON libraries.<br></div></div
 
 ## XSS in CMS Reference / UI Components ## { #CVE-2023-22849 }
 
-CVE-2023-22849 [\[CVE json\]](./CVE-2023-22849.cve.json)
+CVE-2023-22849 [\[CVE json\]](./CVE-2023-22849.cve.json) [\[OSV json\]](./CVE-2023-22849.osv.json)
+
+
 
 _Last updated: 2023-02-03T23:38:07.612Z_
 
@@ -195,7 +209,9 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 
 ## JNDI injection into Apache sling-org-apache-sling-jcr-base ## { #CVE-2023-25141 }
 
-CVE-2023-25141 [\[CVE json\]](./CVE-2023-25141.cve.json)
+CVE-2023-25141 [\[CVE json\]](./CVE-2023-25141.cve.json) [\[OSV json\]](./CVE-2023-25141.osv.json)
+
+
 
 _Last updated: 2023-02-14T10:19:00.558Z_
 
@@ -218,7 +234,9 @@ _Last updated: 2023-02-14T10:19:00.558Z_
 
 ## Apache Sling does not allow to handle i18n content in a secure way ## { #CVE-2023-25621 }
 
-CVE-2023-25621 [\[CVE json\]](./CVE-2023-25621.cve.json)
+CVE-2023-25621 [\[CVE json\]](./CVE-2023-25621.cve.json) [\[OSV json\]](./CVE-2023-25621.osv.json)
+
+
 
 _Last updated: 2023-02-23T08:41:12.080Z_
 
@@ -237,7 +255,9 @@ Privilege Escalation vulnerability in Apache Software Foundation Apache Sling.<b
 
 ## Requests to certain paths managed by the Apache Sling Resource Merger can lead to DoS ## { #CVE-2023-26513 }
 
-CVE-2023-26513 [\[CVE json\]](./CVE-2023-26513.cve.json)
+CVE-2023-26513 [\[CVE json\]](./CVE-2023-26513.cve.json) [\[OSV json\]](./CVE-2023-26513.osv.json)
+
+
 
 _Last updated: 2023-03-20T12:19:53.778Z_
 
@@ -260,7 +280,9 @@ Excessive Iteration vulnerability in Apache Software Foundation Apache Sling Res
 
 ## Malicious code execution via path traversal ## { #CVE-2024-23673 }
 
-CVE-2024-23673 [\[CVE json\]](./CVE-2024-23673.cve.json)
+CVE-2024-23673 [\[CVE json\]](./CVE-2024-23673.cve.json) [\[OSV json\]](./CVE-2024-23673.osv.json)
+
+
 
 _Last updated: 2024-02-06T10:04:18.646Z_
 

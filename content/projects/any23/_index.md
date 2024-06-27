@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## An XML external entity (XXE) injection vulnerability exists in Apache Any23 StreamUtils.java ## { #CVE-2021-38555 }
 
-CVE-2021-38555 [\[CVE json\]](./CVE-2021-38555.cve.json)
+CVE-2021-38555 [\[CVE json\]](./CVE-2021-38555.cve.json) [\[OSV json\]](./CVE-2021-38555.osv.json)
+
+
 
 _Last updated: 2021-09-11T10:55:48.141Z_
 
@@ -38,7 +40,9 @@ An XML external entity (XXE) injection vulnerability was discovered in the Any23
 
 ## A Remote Code Execution (RCE) vulnerability exists in Apache Any23 YAMLExtractor.java ## { #CVE-2021-40146 }
 
-CVE-2021-40146 [\[CVE json\]](./CVE-2021-40146.cve.json)
+CVE-2021-40146 [\[CVE json\]](./CVE-2021-40146.cve.json) [\[OSV json\]](./CVE-2021-40146.osv.json)
+
+
 
 _Last updated: 2021-09-11T10:59:07.858Z_
 
@@ -61,7 +65,9 @@ A Remote Code Execution (RCE) vulnerability was discovered in the Any23 YAMLExtr
 
 ## An XML external entity (XXE) injection vulnerability exists in the Apache Any23 RDFa XSLTStylesheet extractor ## { #CVE-2022-25312 }
 
-CVE-2022-25312 [\[CVE json\]](./CVE-2022-25312.cve.json)
+CVE-2022-25312 [\[CVE json\]](./CVE-2022-25312.cve.json) [\[OSV json\]](./CVE-2022-25312.osv.json)
+
+
 
 _Last updated: 2022-03-04T23:18:57.830Z_
 
@@ -84,7 +90,9 @@ An XML external entity (XXE) injection vulnerability was discovered in the Any23
 
 ## Possible excessive allocation of resources reading input. ## { #CVE-2023-34150 }
 
-CVE-2023-34150 [\[CVE json\]](./CVE-2023-34150.cve.json)
+CVE-2023-34150 [\[CVE json\]](./CVE-2023-34150.cve.json) [\[OSV json\]](./CVE-2023-34150.osv.json)
+
+
 
 _Last updated: 2023-07-14T08:51:32.515Z_
 

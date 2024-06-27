@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## XMLBeans XML Entity Expansion ## { #CVE-2021-23926 }
 
-CVE-2021-23926 [\[CVE json\]](./CVE-2021-23926.cve.json)
+CVE-2021-23926 [\[CVE json\]](./CVE-2021-23926.cve.json) [\[OSV json\]](./CVE-2021-23926.osv.json)
+
+
 
 _Last updated: 2021-01-14T14:45:47.410Z_
 
@@ -36,7 +38,9 @@ Affects XMLBeans up to and including v2.6.0.
 
 ## A carefully crafted TNEF file can cause an out of memory exception ## { #CVE-2022-26336 }
 
-CVE-2022-26336 [\[CVE json\]](./CVE-2022-26336.cve.json)
+CVE-2022-26336 [\[CVE json\]](./CVE-2022-26336.cve.json) [\[OSV json\]](./CVE-2022-26336.osv.json)
+
+
 
 _Last updated: 2022-03-04T15:58:59.057Z_
 

@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Denial of service in NimBLE Bluetooth stack ## { #CVE-2024-24746 }
 
-CVE-2024-24746 [\[CVE json\]](./CVE-2024-24746.cve.json)
+CVE-2024-24746 [\[CVE json\]](./CVE-2024-24746.cve.json) [\[OSV json\]](./CVE-2024-24746.osv.json)
+
+
 
 _Last updated: 2024-04-10T07:39:33.115Z_
 

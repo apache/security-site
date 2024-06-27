@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## ReDoS in Apache MXNet RTC Module ## { #CVE-2022-24294 }
 
-CVE-2022-24294 [\[CVE json\]](./CVE-2022-24294.cve.json)
+CVE-2022-24294 [\[CVE json\]](./CVE-2022-24294.cve.json) [\[OSV json\]](./CVE-2022-24294.osv.json)
+
+
 
 _Last updated: 2022-07-24T17:40:13.807Z_
 

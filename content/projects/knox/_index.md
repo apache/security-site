@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## DOM based XSS Vulnerability in Apache Knox ## { #CVE-2021-42357 }
 
-CVE-2021-42357 [\[CVE json\]](./CVE-2021-42357.cve.json)
+CVE-2021-42357 [\[CVE json\]](./CVE-2021-42357.cve.json) [\[OSV json\]](./CVE-2021-42357.osv.json)
+
+
 
 _Last updated: 2022-01-17T19:19:12.317Z_
 

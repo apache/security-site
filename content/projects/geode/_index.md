@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Geode log file redaction of sensitive information vulnerability ## { #CVE-2021-34797 }
 
-CVE-2021-34797 [\[CVE json\]](./CVE-2021-34797.cve.json)
+CVE-2021-34797 [\[CVE json\]](./CVE-2021-34797.cve.json) [\[OSV json\]](./CVE-2021-34797.osv.json)
+
+
 
 _Last updated: 2022-06-28T22:46:44.541Z_
 
@@ -39,7 +41,9 @@ Apache Geode versions up to 1.12.4 and 1.13.4 are vulnerable to a log file redac
 
 ## Apache Geode stored Cross-Site Scripting (XSS) via data injection vulnerability in Pulse web application ## { #CVE-2022-34870 }
 
-CVE-2022-34870 [\[CVE json\]](./CVE-2022-34870.cve.json)
+CVE-2022-34870 [\[CVE json\]](./CVE-2022-34870.cve.json) [\[OSV json\]](./CVE-2022-34870.osv.json)
+
+
 
 _Last updated: 2022-10-24T18:09:52.450Z_
 
@@ -58,7 +62,9 @@ Apache Geode versions up to 1.15.0 are vulnerable to a Cross-Site Scripting (XSS
 
 ## Apache Geode deserialization of untrusted data flaw when using JMX over RMI on Java 8.  ## { #CVE-2022-37021 }
 
-CVE-2022-37021 [\[CVE json\]](./CVE-2022-37021.cve.json)
+CVE-2022-37021 [\[CVE json\]](./CVE-2022-37021.cve.json) [\[OSV json\]](./CVE-2022-37021.osv.json)
+
+
 
 _Last updated: 2022-08-31T06:54:22.083Z_
 
@@ -81,7 +87,9 @@ If upgrading to Java 11 is not possible, then upgrade to Apache Geode 1.15 and s
 
 ## Apache Geode deserialization of untrusted data flaw when using JMX over RMI on Java 11 ## { #CVE-2022-37022 }
 
-CVE-2022-37022 [\[CVE json\]](./CVE-2022-37022.cve.json)
+CVE-2022-37022 [\[CVE json\]](./CVE-2022-37022.cve.json) [\[OSV json\]](./CVE-2022-37022.osv.json)
+
+
 
 _Last updated: 2022-08-31T06:56:24.123Z_
 
@@ -102,7 +110,9 @@ Any user wishing to protect against deserialization attacks involving JMX or RMI
 
 ## Apache Geode deserialization of untrusted data flaw when using REST API on Java 8 or Java 11 ## { #CVE-2022-37023 }
 
-CVE-2022-37023 [\[CVE json\]](./CVE-2022-37023.cve.json)
+CVE-2022-37023 [\[CVE json\]](./CVE-2022-37023.cve.json) [\[OSV json\]](./CVE-2022-37023.osv.json)
+
+
 
 _Last updated: 2022-08-31T06:58:07.415Z_
 

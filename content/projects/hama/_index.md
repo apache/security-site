@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Hama allows XSS and information disclosure ## { #CVE-2022-45470 }
 
-CVE-2022-45470 [\[CVE json\]](./CVE-2022-45470.cve.json)
+CVE-2022-45470 [\[CVE json\]](./CVE-2022-45470.cve.json) [\[OSV json\]](./CVE-2022-45470.osv.json)
+
+
 
 _Last updated: 2022-11-21T13:30:47.145Z_
 

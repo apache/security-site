@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Cloudstack insecure random number generation affects project email invitation ## { #CVE-2022-26779 }
 
-CVE-2022-26779 [\[CVE json\]](./CVE-2022-26779.cve.json)
+CVE-2022-26779 [\[CVE json\]](./CVE-2022-26779.cve.json) [\[OSV json\]](./CVE-2022-26779.osv.json)
+
+
 
 _Last updated: 2022-07-13T11:28:52.383Z_
 
@@ -39,7 +41,9 @@ Apache CloudStack prior to 4.16.1.0 used insecure random number generation for p
 
 ## Apache CloudStack SAML Single Sign-On XXE ## { #CVE-2022-35741 }
 
-CVE-2022-35741 [\[CVE json\]](./CVE-2022-35741.cve.json)
+CVE-2022-35741 [\[CVE json\]](./CVE-2022-35741.cve.json) [\[OSV json\]](./CVE-2022-35741.osv.json)
+
+
 
 _Last updated: 2022-07-18T14:26:13.768Z_
 
@@ -62,7 +66,9 @@ Apache CloudStack version 4.5.0 and later has a SAML 2.0 authentication Service 
 
 ## x-forwarded-for HTTP header parsed by default ## { #CVE-2024-29006 }
 
-CVE-2024-29006 [\[CVE json\]](./CVE-2024-29006.cve.json)
+CVE-2024-29006 [\[CVE json\]](./CVE-2024-29006.cve.json) [\[OSV json\]](./CVE-2024-29006.osv.json)
+
+
 
 _Last updated: 2024-04-04T10:59:16.384Z_
 
@@ -86,7 +92,9 @@ _Last updated: 2024-04-04T10:59:16.384Z_
 
 ## When downloading templates or ISOs, the management server and SSVM follow HTTP redirects with potentially dangerous consequences ## { #CVE-2024-29007 }
 
-CVE-2024-29007 [\[CVE json\]](./CVE-2024-29007.cve.json)
+CVE-2024-29007 [\[CVE json\]](./CVE-2024-29007.cve.json) [\[OSV json\]](./CVE-2024-29007.osv.json)
+
+
 
 _Last updated: 2024-04-04T10:58:20.239Z_
 
@@ -110,7 +118,9 @@ _Last updated: 2024-04-04T10:58:20.239Z_
 
 ## The extraconfig feature can be abused to load hypervisor resources on a VM instance ## { #CVE-2024-29008 }
 
-CVE-2024-29008 [\[CVE json\]](./CVE-2024-29008.cve.json)
+CVE-2024-29008 [\[CVE json\]](./CVE-2024-29008.cve.json) [\[OSV json\]](./CVE-2024-29008.osv.json)
+
+
 
 _Last updated: 2024-04-04T10:58:44.745Z_
 

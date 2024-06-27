@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache James vulnerable to STARTTLS command injection (IMAP and POP3) ## { #CVE-2021-38542 }
 
-CVE-2021-38542 [\[CVE json\]](./CVE-2021-38542.cve.json)
+CVE-2021-38542 [\[CVE json\]](./CVE-2021-38542.cve.json) [\[OSV json\]](./CVE-2021-38542.osv.json)
+
+
 
 _Last updated: 2022-01-04T08:46:18.750Z_
 
@@ -39,7 +41,9 @@ Apache James prior to release 3.6.1 is vulnerable to a buffering attack relying 
 
 ## Apache James IMAP vulnerable to a ReDoS ## { #CVE-2021-40110 }
 
-CVE-2021-40110 [\[CVE json\]](./CVE-2021-40110.cve.json)
+CVE-2021-40110 [\[CVE json\]](./CVE-2021-40110.cve.json) [\[OSV json\]](./CVE-2021-40110.osv.json)
+
+
 
 _Last updated: 2022-01-04T08:47:33.579Z_
 
@@ -64,7 +68,9 @@ We recommend upgrading to Apache James 3.6.1 or higher , which enforce the use o
 
 ## Apache James IMAP parsing Denial Of Service ## { #CVE-2021-40111 }
 
-CVE-2021-40111 [\[CVE json\]](./CVE-2021-40111.cve.json)
+CVE-2021-40111 [\[CVE json\]](./CVE-2021-40111.cve.json) [\[OSV json\]](./CVE-2021-40111.osv.json)
+
+
 
 _Last updated: 2022-01-04T08:48:24.795Z_
 
@@ -89,7 +95,9 @@ This vulnerability had been patched in Apache James 3.6.1 and higher. We recomme
 
 ## Sieve file storage vulnerable to path traversal attacks ## { #CVE-2021-40525 }
 
-CVE-2021-40525 [\[CVE json\]](./CVE-2021-40525.cve.json)
+CVE-2021-40525 [\[CVE json\]](./CVE-2021-40525.cve.json) [\[OSV json\]](./CVE-2021-40525.osv.json)
+
+
 
 _Last updated: 2022-01-04T08:49:17.932Z_
 
@@ -114,7 +122,9 @@ Distributed and Cassandra based products are also not impacted.
 
 ## Path traversal in Apache James 3.6.1 ## { #CVE-2022-22931 }
 
-CVE-2022-22931 [\[CVE json\]](./CVE-2022-22931.cve.json)
+CVE-2022-22931 [\[CVE json\]](./CVE-2022-22931.cve.json) [\[OSV json\]](./CVE-2022-22931.osv.json)
+
+
 
 _Last updated: 2022-02-07T18:45:09.142Z_
 
@@ -144,7 +154,9 @@ This enables a user to access other users data stores (limited to user names bei
 
 ## STARTTLS command injection in Apache JAMES ## { #CVE-2022-28220 }
 
-CVE-2022-28220 [\[CVE json\]](./CVE-2022-28220.cve.json)
+CVE-2022-28220 [\[CVE json\]](./CVE-2022-28220.cve.json) [\[OSV json\]](./CVE-2022-28220.osv.json)
+
+
 
 _Last updated: 2022-09-20T08:36:32.785Z_
 
@@ -171,7 +183,9 @@ Fix of CVE-2021-38542, which solved similar problem fron Apache James 3.6.1, is 
 
 ## Temporary File Information Disclosure ## { #CVE-2022-45935 }
 
-CVE-2022-45935 [\[CVE json\]](./CVE-2022-45935.cve.json)
+CVE-2022-45935 [\[CVE json\]](./CVE-2022-45935.cve.json) [\[OSV json\]](./CVE-2022-45935.osv.json)
+
+
 
 _Last updated: 2023-07-12T10:18:16.935Z_
 
@@ -194,7 +208,9 @@ Usage of temporary files with insecure permissions by the Apache James server al
 
 ## Temporary File Information Disclosure in MIME4J TempFileStorageProvider ## { #CVE-2022-45787 }
 
-CVE-2022-45787 [\[CVE json\]](./CVE-2022-45787.cve.json)
+CVE-2022-45787 [\[CVE json\]](./CVE-2022-45787.cve.json) [\[OSV json\]](./CVE-2022-45787.osv.json)
+
+
 
 _Last updated: 2023-01-16T10:25:33.637Z_
 
@@ -217,7 +233,9 @@ Unproper laxist permissions on the temporary files used by MIME4J TempFileStorag
 
 ## Privilege escalation through unauthenticated JMX ## { #CVE-2023-26269 }
 
-CVE-2023-26269 [\[CVE json\]](./CVE-2023-26269.cve.json)
+CVE-2023-26269 [\[CVE json\]](./CVE-2023-26269.cve.json) [\[OSV json\]](./CVE-2023-26269.osv.json)
+
+
 
 _Last updated: 2023-04-03T07:59:07.659Z_
 
@@ -241,7 +259,9 @@ malicious local user.</div><div>Administrators are advised to disable JMX, or se
 
 ## Privilege escalation via JMX pre-authentication deserialisation ## { #CVE-2023-51518 }
 
-CVE-2023-51518 [\[CVE json\]](./CVE-2023-51518.cve.json)
+CVE-2023-51518 [\[CVE json\]](./CVE-2023-51518.cve.json) [\[OSV json\]](./CVE-2023-51518.osv.json)
+
+
 
 _Last updated: 2024-02-27T09:09:28.523Z_
 
@@ -266,7 +286,9 @@ Apache James prior to version 3.7.5 and 3.8.0 exposes a JMX endpoint on localhos
 
 ## SMTP smuggling in Apache James ## { #CVE-2023-51747 }
 
-CVE-2023-51747 [\[CVE json\]](./CVE-2023-51747.cve.json)
+CVE-2023-51747 [\[CVE json\]](./CVE-2023-51747.cve.json) [\[OSV json\]](./CVE-2023-51747.osv.json)
+
+
 
 _Last updated: 2024-02-27T13:07:59.703Z_
 
@@ -292,7 +314,9 @@ Apache James prior to versions 3.8.1 and 3.7.5 is vulnerable to SMTP smuggling.<
 
 ## Mime4J DOM header injection ## { #CVE-2024-21742 }
 
-CVE-2024-21742 [\[CVE json\]](./CVE-2024-21742.cve.json)
+CVE-2024-21742 [\[CVE json\]](./CVE-2024-21742.cve.json) [\[OSV json\]](./CVE-2024-21742.osv.json)
+
+
 
 _Last updated: 2024-02-27T16:19:24.276Z_
 

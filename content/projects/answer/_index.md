@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Repeated submissions using scripts resulted in an abnormal number of collections for questions. ## { #CVE-2023-49619 }
 
-CVE-2023-49619 [\[CVE json\]](./CVE-2023-49619.cve.json)
+CVE-2023-49619 [\[CVE json\]](./CVE-2023-49619.cve.json) [\[OSV json\]](./CVE-2023-49619.osv.json)
+
+
 
 _Last updated: 2024-01-10T08:24:57.576Z_
 
@@ -38,7 +40,9 @@ Concurrent Execution using Shared Resource with Improper Synchronization ('Race 
 
 ## Pixel Flood Attack by uploading the large pixel file ## { #CVE-2024-22393 }
 
-CVE-2024-22393 [\[CVE json\]](./CVE-2024-22393.cve.json)
+CVE-2024-22393 [\[CVE json\]](./CVE-2024-22393.cve.json) [\[OSV json\]](./CVE-2024-22393.osv.json)
+
+
 
 _Last updated: 2024-02-22T09:51:41.833Z_
 
@@ -61,7 +65,9 @@ Unrestricted Upload of File with Dangerous Type vulnerability in Apache Answer.<
 
 ## XSS vulnerability when submitting summary ## { #CVE-2024-23349 }
 
-CVE-2024-23349 [\[CVE json\]](./CVE-2024-23349.cve.json)
+CVE-2024-23349 [\[CVE json\]](./CVE-2024-23349.cve.json) [\[OSV json\]](./CVE-2024-23349.osv.json)
+
+
 
 _Last updated: 2024-02-22T09:48:18.347Z_
 
@@ -84,7 +90,9 @@ Improper Neutralization of Input During Web Page Generation ('Cross-site Scripti
 
 ## Repeated submission at registration created duplicate users with the same name ## { #CVE-2024-26578 }
 
-CVE-2024-26578 [\[CVE json\]](./CVE-2024-26578.cve.json)
+CVE-2024-26578 [\[CVE json\]](./CVE-2024-26578.cve.json) [\[OSV json\]](./CVE-2024-26578.osv.json)
+
+
 
 _Last updated: 2024-02-22T09:28:11.636Z_
 
@@ -107,7 +115,9 @@ Concurrent Execution using Shared Resource with Improper Synchronization ('Race 
 
 ## XSS vulnerability when changing personal website ## { #CVE-2024-29217 }
 
-CVE-2024-29217 [\[CVE json\]](./CVE-2024-29217.cve.json)
+CVE-2024-29217 [\[CVE json\]](./CVE-2024-29217.cve.json) [\[OSV json\]](./CVE-2024-29217.osv.json)
+
+
 
 _Last updated: 2024-04-21T16:04:07.662Z_
 

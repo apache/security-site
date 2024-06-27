@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## SQL injection in DatabaseCookieAuthenticatorAction ## { #CVE-2022-45135 }
 
-CVE-2022-45135 [\[CVE json\]](./CVE-2022-45135.cve.json)
+CVE-2022-45135 [\[CVE json\]](./CVE-2022-45135.cve.json) [\[OSV json\]](./CVE-2022-45135.osv.json)
+
+
 
 _Last updated: 2023-11-30T08:05:43.177Z_
 
@@ -38,7 +40,9 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 
 ## Apache Cocoon's StreamGenerator is vulnerable to XXE injection ## { #CVE-2023-49733 }
 
-CVE-2023-49733 [\[CVE json\]](./CVE-2023-49733.cve.json)
+CVE-2023-49733 [\[CVE json\]](./CVE-2023-49733.cve.json) [\[OSV json\]](./CVE-2023-49733.osv.json)
+
+
 
 _Last updated: 2023-11-30T11:29:43.636Z_
 

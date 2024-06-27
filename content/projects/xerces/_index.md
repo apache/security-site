@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Infinite loop within Apache XercesJ xml parser ## { #CVE-2022-23437 }
 
-CVE-2022-23437 [\[CVE json\]](./CVE-2022-23437.cve.json)
+CVE-2022-23437 [\[CVE json\]](./CVE-2022-23437.cve.json) [\[OSV json\]](./CVE-2022-23437.osv.json)
+
+
 
 _Last updated: 2022-01-24T14:59:39.857Z_
 
@@ -38,7 +40,9 @@ There's a vulnerability within the Apache Xerces Java (XercesJ) XML parser when 
 
 ## Use-after-free on external DTD scan ## { #CVE-2024-23807 }
 
-CVE-2024-23807 [\[CVE json\]](./CVE-2024-23807.cve.json)
+CVE-2024-23807 [\[CVE json\]](./CVE-2024-23807.cve.json) [\[OSV json\]](./CVE-2024-23807.osv.json)
+
+
 
 _Last updated: 2024-02-28T13:50:38.265Z_
 

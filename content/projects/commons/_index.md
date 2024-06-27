@@ -43,7 +43,9 @@ In Apache Commons IO before 2.7, When invoking the method FileNameUtils.normaliz
 
 ## Apache Commons Compress 1.6 to 1.20 denial of service vulnerability ## { #CVE-2021-35515 }
 
-CVE-2021-35515 [\[CVE json\]](./CVE-2021-35515.cve.json)
+CVE-2021-35515 [\[CVE json\]](./CVE-2021-35515.cve.json) [\[OSV json\]](./CVE-2021-35515.osv.json)
+
+
 
 _Last updated: 2021-07-13T07:11:36.980Z_
 
@@ -68,7 +70,9 @@ When reading a specially crafted 7Z archive, the construction of the list of cod
 
 ## Apache Commons Compress 1.6 to 1.20 denial of service vulnerability ## { #CVE-2021-35516 }
 
-CVE-2021-35516 [\[CVE json\]](./CVE-2021-35516.cve.json)
+CVE-2021-35516 [\[CVE json\]](./CVE-2021-35516.cve.json) [\[OSV json\]](./CVE-2021-35516.osv.json)
+
+
 
 _Last updated: 2021-07-13T07:11:43.957Z_
 
@@ -93,7 +97,9 @@ When reading a specially crafted 7Z archive, Compress can be made to allocate la
 
 ## Apache Commons Compress 1.1 to 1.20 denial of service vulnerability ## { #CVE-2021-35517 }
 
-CVE-2021-35517 [\[CVE json\]](./CVE-2021-35517.cve.json)
+CVE-2021-35517 [\[CVE json\]](./CVE-2021-35517.cve.json) [\[OSV json\]](./CVE-2021-35517.osv.json)
+
+
 
 _Last updated: 2021-07-13T07:11:53.430Z_
 
@@ -118,7 +124,9 @@ When reading a specially crafted TAR archive, Compress can be made to allocate l
 
 ## Apache Commons Compress 1.0 to 1.20 denial of service vulnerability ## { #CVE-2021-36090 }
 
-CVE-2021-36090 [\[CVE json\]](./CVE-2021-36090.cve.json)
+CVE-2021-36090 [\[CVE json\]](./CVE-2021-36090.cve.json) [\[OSV json\]](./CVE-2021-36090.osv.json)
+
+
 
 _Last updated: 2021-07-13T07:12:34.084Z_
 
@@ -143,7 +151,9 @@ When reading a specially crafted ZIP archive, Compress can be made to allocate l
 
 ## Apache Commons Net's FTP client trusts the host from PASV response by default ## { #CVE-2021-37533 }
 
-CVE-2021-37533 [\[CVE json\]](./CVE-2021-37533.cve.json)
+CVE-2021-37533 [\[CVE json\]](./CVE-2021-37533.cve.json) [\[OSV json\]](./CVE-2021-37533.osv.json)
+
+
 
 _Last updated: 2022-12-03T14:53:25.293Z_
 
@@ -168,7 +178,9 @@ The default in version 3.9.0 is now false to ignore such hosts, as cURL does. Se
 
 ## Apache Commons Configuration insecure interpolation defaults ## { #CVE-2022-33980 }
 
-CVE-2022-33980 [\[CVE json\]](./CVE-2022-33980.cve.json)
+CVE-2022-33980 [\[CVE json\]](./CVE-2022-33980.cve.json) [\[OSV json\]](./CVE-2022-33980.osv.json)
+
+
 
 _Last updated: 2022-07-06T13:03:54.020Z_
 
@@ -194,7 +206,9 @@ Users are recommended to upgrade to Apache Commons Configuration 2.8.0, which di
 
 ## Apache Commons Text prior to 1.10.0 allows RCE when applied to untrusted input due to insecure interpolation defaults ## { #CVE-2022-42889 }
 
-CVE-2022-42889 [\[CVE json\]](./CVE-2022-42889.cve.json)
+CVE-2022-42889 [\[CVE json\]](./CVE-2022-42889.cve.json) [\[OSV json\]](./CVE-2022-42889.osv.json)
+
+
 
 _Last updated: 2022-10-13T13:03:35.541Z_
 
@@ -220,7 +234,9 @@ Applications using the interpolation defaults in the affected versions may be vu
 
 ## Apache Commons BCEL prior to 6.6.0 allows producing arbitrary bytecode via out-of-bounds writing ## { #CVE-2022-42920 }
 
-CVE-2022-42920 [\[CVE json\]](./CVE-2022-42920.cve.json)
+CVE-2022-42920 [\[CVE json\]](./CVE-2022-42920.cve.json) [\[OSV json\]](./CVE-2022-42920.osv.json)
+
+
 
 _Last updated: 2022-11-07T12:25:20.461Z_
 
@@ -243,7 +259,9 @@ Apache Commons BCEL has a number of APIs that would normally only allow changing
 
 ## FileUpload DoS with excessive parts ## { #CVE-2023-24998 }
 
-CVE-2023-24998 [\[CVE json\]](./CVE-2023-24998.cve.json)
+CVE-2023-24998 [\[CVE json\]](./CVE-2023-24998.cve.json) [\[OSV json\]](./CVE-2023-24998.osv.json)
+
+
 
 _Last updated: 2023-02-23T09:34:40.480Z_
 
@@ -272,7 +290,9 @@ _Last updated: 2023-02-23T09:34:40.480Z_
 
 ## Denial of service via CPU consumption for malformed TAR file ## { #CVE-2023-42503 }
 
-CVE-2023-42503 [\[CVE json\]](./CVE-2023-42503.cve.json)
+CVE-2023-42503 [\[CVE json\]](./CVE-2023-42503.cve.json) [\[OSV json\]](./CVE-2023-42503.osv.json)
+
+
 
 _Last updated: 2023-09-14T07:45:08.532Z_
 
@@ -295,7 +315,9 @@ Improper Input Validation, Uncontrolled Resource Consumption vulnerability in Ap
 
 ## Denial of service caused by an infinite loop for a corrupted DUMP file ## { #CVE-2024-25710 }
 
-CVE-2024-25710 [\[CVE json\]](./CVE-2024-25710.cve.json)
+CVE-2024-25710 [\[CVE json\]](./CVE-2024-25710.cve.json) [\[OSV json\]](./CVE-2024-25710.osv.json)
+
+
 
 _Last updated: 2024-02-19T08:33:36.725Z_
 
@@ -318,7 +340,9 @@ Loop with Unreachable Exit Condition ('Infinite Loop') vulnerability in Apache C
 
 ## OutOfMemoryError unpacking broken Pack200 file ## { #CVE-2024-26308 }
 
-CVE-2024-26308 [\[CVE json\]](./CVE-2024-26308.cve.json)
+CVE-2024-26308 [\[CVE json\]](./CVE-2024-26308.cve.json) [\[OSV json\]](./CVE-2024-26308.osv.json)
+
+
 
 _Last updated: 2024-02-19T08:31:48.197Z_
 
@@ -341,7 +365,9 @@ Allocation of Resources Without Limits or Throttling vulnerability in Apache Com
 
 ## StackOverflowError adding property in AbstractListDelimiterHandler.flattenIterator() ## { #CVE-2024-29131 }
 
-CVE-2024-29131 [\[CVE json\]](./CVE-2024-29131.cve.json)
+CVE-2024-29131 [\[CVE json\]](./CVE-2024-29131.cve.json) [\[OSV json\]](./CVE-2024-29131.osv.json)
+
+
 
 _Last updated: 2024-03-21T09:07:12.130Z_
 
@@ -364,7 +390,9 @@ Out-of-bounds Write vulnerability in Apache Commons Configuration.<p>This issue 
 
 ## StackOverflowError calling ListDelimiterHandler.flatten(Object, int) with a cyclical object tree ## { #CVE-2024-29133 }
 
-CVE-2024-29133 [\[CVE json\]](./CVE-2024-29133.cve.json)
+CVE-2024-29133 [\[CVE json\]](./CVE-2024-29133.cve.json) [\[OSV json\]](./CVE-2024-29133.osv.json)
+
+
 
 _Last updated: 2024-03-21T09:05:45.826Z_
 

@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## XSS in V3 Demo Portlet ## { #CVE-2021-36737 }
 
-CVE-2021-36737 [\[CVE json\]](./CVE-2021-36737.cve.json)
+CVE-2021-36737 [\[CVE json\]](./CVE-2021-36737.cve.json) [\[OSV json\]](./CVE-2021-36737.osv.json)
+
+
 
 _Last updated: 2022-01-06T08:47:29.193Z_
 
@@ -40,7 +42,9 @@ The input fields of the Apache Pluto UrlTestPortlet are vulnerable to Cross-Site
 
 ## XSS vulnerability in the JSP version of the Apache Pluto Applicant MVCBean CDI portlet ## { #CVE-2021-36738 }
 
-CVE-2021-36738 [\[CVE json\]](./CVE-2021-36738.cve.json)
+CVE-2021-36738 [\[CVE json\]](./CVE-2021-36738.cve.json) [\[OSV json\]](./CVE-2021-36738.osv.json)
+
+
 
 _Last updated: 2022-01-06T08:48:04.239Z_
 
@@ -59,7 +63,9 @@ The input fields in the JSP version of the Apache Pluto Applicant MVCBean CDI po
 
 ## XSS vulnerability in the MVCBean JSP portlet maven archetype ## { #CVE-2021-36739 }
 
-CVE-2021-36739 [\[CVE json\]](./CVE-2021-36739.cve.json)
+CVE-2021-36739 [\[CVE json\]](./CVE-2021-36739.cve.json) [\[OSV json\]](./CVE-2021-36739.osv.json)
+
+
 
 _Last updated: 2022-01-06T08:48:42.463Z_
 
@@ -78,7 +84,9 @@ The "first name" and "last name" fields of the Apache Pluto 3.1.0 MVCBean JSP po
 
 ## Apache Portals Jetspeed XSS, CSRF, SSRF, and XXE issues ## { #CVE-2022-32533 }
 
-CVE-2022-32533 [\[CVE json\]](./CVE-2022-32533.cve.json)
+CVE-2022-32533 [\[CVE json\]](./CVE-2022-32533.cve.json) [\[OSV json\]](./CVE-2022-32533.osv.json)
+
+
 
 _Last updated: 2022-07-06T09:38:32.582Z_
 

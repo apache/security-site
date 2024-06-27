@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache ServiceComb Yaml remote deserialization vulnerability ## { #CVE-2020-17532 }
 
-CVE-2020-17532 [\[CVE json\]](./CVE-2020-17532.cve.json)
+CVE-2020-17532 [\[CVE json\]](./CVE-2020-17532.cve.json) [\[OSV json\]](./CVE-2020-17532.osv.json)
+
+
 
 _Last updated: 2021-01-25T09:21:23.271Z_
 
@@ -36,7 +38,9 @@ The problem happens in versions between 2.0.0 ~ 2.1.3 and fixed in Apache Servic
 
 ## ServiceComb ServiceCenter Directory Traversal ## { #CVE-2021-21501 }
 
-CVE-2021-21501 [\[CVE json\]](./CVE-2021-21501.cve.json)
+CVE-2021-21501 [\[CVE json\]](./CVE-2021-21501.cve.json) [\[OSV json\]](./CVE-2021-21501.osv.json)
+
+
 
 _Last updated: 2021-08-10T09:15:53.939Z_
 
@@ -55,7 +59,9 @@ Improper configuration will cause ServiceComb ServiceCenter Directory Traversal 
 
 ## attacker can query all environment variables of the service-center server ## { #CVE-2023-44312 }
 
-CVE-2023-44312 [\[CVE json\]](./CVE-2023-44312.cve.json)
+CVE-2023-44312 [\[CVE json\]](./CVE-2023-44312.cve.json) [\[OSV json\]](./CVE-2023-44312.osv.json)
+
+
 
 _Last updated: 2024-01-31T08:49:10.176Z_
 
@@ -82,7 +88,9 @@ Apache ServiceComb Service-Center
 
 ## attacker can perform SSRF through the frontend API ## { #CVE-2023-44313 }
 
-CVE-2023-44313 [\[CVE json\]](./CVE-2023-44313.cve.json)
+CVE-2023-44313 [\[CVE json\]](./CVE-2023-44313.cve.json) [\[OSV json\]](./CVE-2023-44313.osv.json)
+
+
 
 _Last updated: 2024-01-31T08:49:43.083Z_
 

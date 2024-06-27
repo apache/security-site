@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache SOAP: XML External Entity Injection (XXE) allows unauthenticated users to read arbitrary files via HTTP ## { #CVE-2022-40705 }
 
-CVE-2022-40705 [\[CVE json\]](./CVE-2022-40705.cve.json)
+CVE-2022-40705 [\[CVE json\]](./CVE-2022-40705.cve.json) [\[OSV json\]](./CVE-2022-40705.osv.json)
+
+
 
 _Last updated: 2022-09-22T08:11:36.490Z_
 

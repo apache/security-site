@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Remote Code Execution in Apache Unomi ## { #CVE-2020-13942 }
 
-CVE-2020-13942 [\[CVE json\]](./CVE-2020-13942.cve.json)
+CVE-2020-13942 [\[CVE json\]](./CVE-2020-13942.cve.json) [\[OSV json\]](./CVE-2020-13942.osv.json)
+
+
 
 _Last updated: 2020-11-24T17:55:44.282Z_
 
@@ -34,7 +36,9 @@ It is possible to inject malicious OGNL or MVEL scripts into the /context.json p
 
 ## Apache Unomi log injection ## { #CVE-2021-31164 }
 
-CVE-2021-31164 [\[CVE json\]](./CVE-2021-31164.cve.json)
+CVE-2021-31164 [\[CVE json\]](./CVE-2021-31164.cve.json) [\[OSV json\]](./CVE-2021-31164.osv.json)
+
+
 
 _Last updated: 2021-05-04T06:40:34.093Z_
 

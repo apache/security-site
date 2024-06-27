@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Flink directory traversal attack: remote file writing through the REST API ## { #CVE-2020-17518 }
 
-CVE-2020-17518 [\[CVE json\]](./CVE-2020-17518.cve.json)
+CVE-2020-17518 [\[CVE json\]](./CVE-2020-17518.cve.json) [\[OSV json\]](./CVE-2020-17518.osv.json)
+
+
 
 _Last updated: 2021-01-05T11:32:09.849Z_
 
@@ -38,7 +40,9 @@ Apache Flink 1.5.1 introduced a REST handler that allows you to write an uploade
 
 ## Apache Flink directory traversal attack: reading remote files through the REST API ## { #CVE-2020-17519 }
 
-CVE-2020-17519 [\[CVE json\]](./CVE-2020-17519.cve.json)
+CVE-2020-17519 [\[CVE json\]](./CVE-2020-17519.cve.json) [\[OSV json\]](./CVE-2020-17519.osv.json)
+
+
 
 _Last updated: 2021-01-05T11:32:48.294Z_
 
@@ -62,7 +66,9 @@ All users should upgrade to Flink 1.11.3 or 1.12.0 if their Flink instance(s) ar
 
 ## Apache Flink Stateful Functions allowed HTTP header injection due to Improper Neutralization of CRLF Sequences ## { #CVE-2023-41834 }
 
-CVE-2023-41834 [\[CVE json\]](./CVE-2023-41834.cve.json)
+CVE-2023-41834 [\[CVE json\]](./CVE-2023-41834.cve.json) [\[OSV json\]](./CVE-2023-41834.osv.json)
+
+
 
 _Last updated: 2023-09-19T12:34:13.497Z_
 

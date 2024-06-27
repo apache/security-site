@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Stored XSS in Apache Ambari ## { #CVE-2020-1936 }
 
-CVE-2020-1936 [\[CVE json\]](./CVE-2020-1936.cve.json)
+CVE-2020-1936 [\[CVE json\]](./CVE-2020-1936.cve.json) [\[OSV json\]](./CVE-2020-1936.osv.json)
+
+
 
 _Last updated: 2021-03-02T08:54:00.947Z_
 
@@ -38,7 +40,9 @@ A cross-site scripting issue was found in Apache Ambari Views.  This was address
 
 ##  ## { #CVE-2020-13924 }
 
-CVE-2020-13924 [\[CVE json\]](./CVE-2020-13924.cve.json)
+CVE-2020-13924 [\[CVE json\]](./CVE-2020-13924.cve.json) [\[OSV json\]](./CVE-2020-13924.osv.json)
+
+
 
 _Last updated: 2021-03-17T09:01:22.529Z_
 
@@ -61,7 +65,9 @@ In Apache Ambari versions 2.6.2.2 and earlier, malicious users can construct fil
 
 ## A malicious authenticated user can remotely execute arbitrary code in the context of the application. ## { #CVE-2022-42009 }
 
-CVE-2022-42009 [\[CVE json\]](./CVE-2022-42009.cve.json)
+CVE-2022-42009 [\[CVE json\]](./CVE-2022-42009.cve.json) [\[OSV json\]](./CVE-2022-42009.osv.json)
+
+
 
 _Last updated: 2023-07-12T09:58:16.769Z_
 
@@ -84,7 +90,9 @@ SpringEL injection in the server agent in Apache Ambari version 2.7.0 to 2.7.6 a
 
 ## Allows authenticated metrics consumers to perform RCE ## { #CVE-2022-45855 }
 
-CVE-2022-45855 [\[CVE json\]](./CVE-2022-45855.cve.json)
+CVE-2022-45855 [\[CVE json\]](./CVE-2022-45855.cve.json) [\[OSV json\]](./CVE-2022-45855.osv.json)
+
+
 
 _Last updated: 2023-07-12T09:59:42.590Z_
 
@@ -107,7 +115,9 @@ SpringEL injection in the metrics source in Apache Ambari version 2.7.0 to 2.7.6
 
 ## Various XSS problems ## { #CVE-2023-50378 }
 
-CVE-2023-50378 [\[CVE json\]](./CVE-2023-50378.cve.json)
+CVE-2023-50378 [\[CVE json\]](./CVE-2023-50378.cve.json) [\[OSV json\]](./CVE-2023-50378.osv.json)
+
+
 
 _Last updated: 2024-03-01T14:38:24.618Z_
 
@@ -126,7 +136,9 @@ _Last updated: 2024-03-01T14:38:24.618Z_
 
 ## authenticated users could perform command injection to perform RCE ## { #CVE-2023-50379 }
 
-CVE-2023-50379 [\[CVE json\]](./CVE-2023-50379.cve.json)
+CVE-2023-50379 [\[CVE json\]](./CVE-2023-50379.cve.json) [\[OSV json\]](./CVE-2023-50379.osv.json)
+
+
 
 _Last updated: 2024-02-27T08:26:54.321Z_
 
@@ -145,7 +157,9 @@ _Last updated: 2024-02-27T08:26:54.321Z_
 
 ## authenticated users could perform XXE to read arbitrary files on the server ## { #CVE-2023-50380 }
 
-CVE-2023-50380 [\[CVE json\]](./CVE-2023-50380.cve.json)
+CVE-2023-50380 [\[CVE json\]](./CVE-2023-50380.cve.json) [\[OSV json\]](./CVE-2023-50380.osv.json)
+
+
 
 _Last updated: 2024-02-27T16:51:31.875Z_
 

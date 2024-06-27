@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## disabled hostname verificiation ## { #CVE-2020-17514 }
 
-CVE-2020-17514 [\[CVE json\]](./CVE-2020-17514.cve.json)
+CVE-2020-17514 [\[CVE json\]](./CVE-2020-17514.cve.json) [\[OSV json\]](./CVE-2020-17514.osv.json)
+
+
 
 _Last updated: 2021-05-27T12:07:40.403Z_
 
@@ -38,7 +40,9 @@ Apache Fineract prior to 1.5.0 disables HTTPS hostname verification in Processor
 
 ## Apache Fineract allowed an authenticated user to perform remote code execution due to path traversal ## { #CVE-2022-44635 }
 
-CVE-2022-44635 [\[CVE json\]](./CVE-2022-44635.cve.json)
+CVE-2022-44635 [\[CVE json\]](./CVE-2022-44635.cve.json) [\[OSV json\]](./CVE-2022-44635.osv.json)
+
+
 
 _Last updated: 2022-11-29T14:22:31.295Z_
 
@@ -62,7 +66,9 @@ Apache Fineract allowed an authenticated user to perform remote code execution d
 
 ## SSRF template type vulnerability in certain authenticated users ## { #CVE-2023-25195 }
 
-CVE-2023-25195 [\[CVE json\]](./CVE-2023-25195.cve.json)
+CVE-2023-25195 [\[CVE json\]](./CVE-2023-25195.cve.json) [\[OSV json\]](./CVE-2023-25195.osv.json)
+
+
 
 _Last updated: 2023-03-28T11:16:21.425Z_
 
@@ -86,7 +92,9 @@ Server-Side Request Forgery (SSRF) vulnerability in Apache Software Foundation A
 
 ## SQL injection vulnerability  ## { #CVE-2023-25196 }
 
-CVE-2023-25196 [\[CVE json\]](./CVE-2023-25196.cve.json)
+CVE-2023-25196 [\[CVE json\]](./CVE-2023-25196.cve.json) [\[OSV json\]](./CVE-2023-25196.osv.json)
+
+
 
 _Last updated: 2023-03-28T11:16:50.126Z_
 
@@ -110,7 +118,9 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 
 ## SQL injection vulnerability in certain procedure calls  ## { #CVE-2023-25197 }
 
-CVE-2023-25197 [\[CVE json\]](./CVE-2023-25197.cve.json)
+CVE-2023-25197 [\[CVE json\]](./CVE-2023-25197.cve.json) [\[OSV json\]](./CVE-2023-25197.osv.json)
+
+
 
 _Last updated: 2023-03-28T11:17:16.072Z_
 
@@ -134,7 +144,9 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 
 ## Under certain circumstances, this vulnerability allowed users, without specific permissions, to escalate their privileges to any role.  ## { #CVE-2024-23537 }
 
-CVE-2024-23537 [\[CVE json\]](./CVE-2024-23537.cve.json)
+CVE-2024-23537 [\[CVE json\]](./CVE-2024-23537.cve.json) [\[OSV json\]](./CVE-2024-23537.osv.json)
+
+
 
 _Last updated: 2024-03-29T14:38:03.872Z_
 
@@ -158,7 +170,9 @@ Improper Privilege Management vulnerability in Apache Fineract.<p>This issue aff
 
 ## Under certain system configurations, the sqlSearch parameter was vulnerable to SQL injection attacks, potentially allowing attackers to manipulate database queries. ## { #CVE-2024-23538 }
 
-CVE-2024-23538 [\[CVE json\]](./CVE-2024-23538.cve.json)
+CVE-2024-23538 [\[CVE json\]](./CVE-2024-23538.cve.json) [\[OSV json\]](./CVE-2024-23538.osv.json)
+
+
 
 _Last updated: 2024-03-29T14:37:38.535Z_
 
@@ -183,7 +197,9 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 
 ## Under certain system configurations, the sqlSearch parameter for specific endpoints was vulnerable to SQL injection attacks, potentially allowing attackers to manipulate database queries.  ## { #CVE-2024-23539 }
 
-CVE-2024-23539 [\[CVE json\]](./CVE-2024-23539.cve.json)
+CVE-2024-23539 [\[CVE json\]](./CVE-2024-23539.cve.json) [\[OSV json\]](./CVE-2024-23539.osv.json)
+
+
 
 _Last updated: 2024-03-29T14:36:56.073Z_
 

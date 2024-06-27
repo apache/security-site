@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## DEB packaging for Apache OpenOffice 4.1.8 installed with a non-root userid and groupid ## { #CVE-2021-28129 }
 
-CVE-2021-28129 [\[CVE json\]](./CVE-2021-28129.cve.json)
+CVE-2021-28129 [\[CVE json\]](./CVE-2021-28129.cve.json) [\[OSV json\]](./CVE-2021-28129.osv.json)
+
+
 
 _Last updated: 2021-10-07T15:24:31.592Z_
 
@@ -40,7 +42,9 @@ Users who installed the Apache OpenOffice 4.1.8 DEB packaging should upgrade to 
 
 ## Code execution in Apache OpenOffice via non-http(s) schemes in Hyperlinks ## { #CVE-2021-30245 }
 
-CVE-2021-30245 [\[CVE json\]](./CVE-2021-30245.cve.json)
+CVE-2021-30245 [\[CVE json\]](./CVE-2021-30245.cve.json) [\[OSV json\]](./CVE-2021-30245.osv.json)
+
+
 
 _Last updated: 2021-04-15T19:28:07.363Z_
 
@@ -63,7 +67,9 @@ The project received a report that all versions of Apache OpenOffice through 4.1
 
 ## Buffer overflow from a crafted DBF file ## { #CVE-2021-33035 }
 
-CVE-2021-33035 [\[CVE json\]](./CVE-2021-33035.cve.json)
+CVE-2021-33035 [\[CVE json\]](./CVE-2021-33035.cve.json) [\[OSV json\]](./CVE-2021-33035.osv.json)
+
+
 
 _Last updated: 2021-10-07T15:21:31.403Z_
 
@@ -92,7 +98,9 @@ This issue is fixed in Apache OpenOffice 4.1.11
 
 ## Billion Laughs ## { #CVE-2021-40439 }
 
-CVE-2021-40439 [\[CVE json\]](./CVE-2021-40439.cve.json)
+CVE-2021-40439 [\[CVE json\]](./CVE-2021-40439.cve.json) [\[OSV json\]](./CVE-2021-40439.osv.json)
+
+
 
 _Last updated: 2021-10-07T15:23:25.432Z_
 
@@ -116,7 +124,9 @@ expat in version 4.1.11 is patched.
 
 ## Double Certificate Attack ## { #CVE-2021-41830 }
 
-CVE-2021-41830 [\[CVE json\]](./CVE-2021-41830.cve.json)
+CVE-2021-41830 [\[CVE json\]](./CVE-2021-41830.cve.json) [\[OSV json\]](./CVE-2021-41830.osv.json)
+
+
 
 _Last updated: 2021-10-11T08:05:11.193Z_
 
@@ -146,7 +156,9 @@ See CVE-2021-25633 for the LibreOffice advisory.
 
 ## Timestamp Manipulation with Signature Wrapping ## { #CVE-2021-41831 }
 
-CVE-2021-41831 [\[CVE json\]](./CVE-2021-41831.cve.json)
+CVE-2021-41831 [\[CVE json\]](./CVE-2021-41831.cve.json) [\[OSV json\]](./CVE-2021-41831.osv.json)
+
+
 
 _Last updated: 2021-10-11T08:05:48.311Z_
 
@@ -175,7 +187,9 @@ See CVE-2021-25634 for the LibreOffice advisory.
 
 ## Content Manipulation with Certificate Validation Attack ## { #CVE-2021-41832 }
 
-CVE-2021-41832 [\[CVE json\]](./CVE-2021-41832.cve.json)
+CVE-2021-41832 [\[CVE json\]](./CVE-2021-41832.cve.json) [\[OSV json\]](./CVE-2021-41832.osv.json)
+
+
 
 _Last updated: 2021-10-11T08:06:50.243Z_
 
@@ -204,7 +218,9 @@ See CVE-2021-25635 for the LibreOffice advisory.
 
 ## Apache OpenOffice Static Initialization Vector Allows to Recover Passwords for Web Connections Without Knowing the Master Password ## { #CVE-2022-37400 }
 
-CVE-2022-37400 [\[CVE json\]](./CVE-2022-37400.cve.json)
+CVE-2022-37400 [\[CVE json\]](./CVE-2022-37400.cve.json) [\[OSV json\]](./CVE-2022-37400.osv.json)
+
+
 
 _Last updated: 2022-08-13T06:33:55.145Z_
 
@@ -228,7 +244,9 @@ Reference: CVE-2022-26306 - LibreOffice
 
 ## Apache OpenOffice Weak Master Keys ## { #CVE-2022-37401 }
 
-CVE-2022-37401 [\[CVE json\]](./CVE-2022-37401.cve.json)
+CVE-2022-37401 [\[CVE json\]](./CVE-2022-37401.cve.json) [\[OSV json\]](./CVE-2022-37401.osv.json)
+
+
 
 _Last updated: 2022-08-13T06:35:06.833Z_
 

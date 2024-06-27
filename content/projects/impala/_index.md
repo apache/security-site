@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Impala logs contain secrets ## { #CVE-2021-28131 }
 
-CVE-2021-28131 [\[CVE json\]](./CVE-2021-28131.cve.json)
+CVE-2021-28131 [\[CVE json\]](./CVE-2021-28131.cve.json) [\[OSV json\]](./CVE-2021-28131.osv.json)
+
+
 
 _Last updated: 2021-07-22T09:44:57.855Z_
 

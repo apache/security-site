@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache UIMA prior to 3.3.1 has a path traversal vulnerability when extracting (PEAR) archives ## { #CVE-2022-32287 }
 
-CVE-2022-32287 [\[CVE json\]](./CVE-2022-32287.cve.json)
+CVE-2022-32287 [\[CVE json\]](./CVE-2022-32287.cve.json) [\[OSV json\]](./CVE-2022-32287.osv.json)
+
+
 
 _Last updated: 2022-11-03T11:49:10.523Z_
 
@@ -40,7 +42,9 @@ Note that PEAR files should never be installed into an UIMA installation from un
 
 ## DUCC (EOL) allows RCE ## { #CVE-2023-28935 }
 
-CVE-2023-28935 [\[CVE json\]](./CVE-2023-28935.cve.json)
+CVE-2023-28935 [\[CVE json\]](./CVE-2023-28935.cve.json) [\[OSV json\]](./CVE-2023-28935.osv.json)
+
+
 
 _Last updated: 2023-03-30T09:10:09.175Z_
 
@@ -63,7 +67,9 @@ _Last updated: 2023-03-30T09:10:09.175Z_
 
 ## Potential untrusted code execution when deserializing certain binary CAS formats ## { #CVE-2023-39913 }
 
-CVE-2023-39913 [\[CVE json\]](./CVE-2023-39913.cve.json)
+CVE-2023-39913 [\[CVE json\]](./CVE-2023-39913.cve.json) [\[OSV json\]](./CVE-2023-39913.osv.json)
+
+
 
 _Last updated: 2023-11-08T08:04:19.712Z_
 

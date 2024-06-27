@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Authorization bypass in SASL Quorum Peer Authentication ## { #CVE-2023-44981 }
 
-CVE-2023-44981 [\[CVE json\]](./CVE-2023-44981.cve.json)
+CVE-2023-44981 [\[CVE json\]](./CVE-2023-44981.cve.json) [\[OSV json\]](./CVE-2023-44981.osv.json)
+
+
 
 _Last updated: 2023-10-11T11:55:41.759Z_
 
@@ -41,7 +43,9 @@ Authorization Bypass Through User-Controlled Key vulnerability in Apache ZooKeep
 
 ## Information disclosure in persistent watcher handling ## { #CVE-2024-23944 }
 
-CVE-2024-23944 [\[CVE json\]](./CVE-2024-23944.cve.json)
+CVE-2024-23944 [\[CVE json\]](./CVE-2024-23944.cve.json) [\[OSV json\]](./CVE-2024-23944.osv.json)
+
+
 
 _Last updated: 2024-03-14T16:09:06.013Z_
 

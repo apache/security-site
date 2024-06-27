@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## LDAP Injection Vulnerability - ActiveDirectory Authorities ## { #CVE-2022-45910 }
 
-CVE-2022-45910 [\[CVE json\]](./CVE-2022-45910.cve.json)
+CVE-2022-45910 [\[CVE json\]](./CVE-2022-45910.cve.json) [\[OSV json\]](./CVE-2022-45910.osv.json)
+
+
 
 _Last updated: 2022-12-07T09:50:35.935Z_
 

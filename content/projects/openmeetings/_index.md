@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache OpenMeetings: bandwidth can be overloaded with public web service ## { #CVE-2021-27576 }
 
-CVE-2021-27576 [\[CVE json\]](./CVE-2021-27576.cve.json)
+CVE-2021-27576 [\[CVE json\]](./CVE-2021-27576.cve.json) [\[OSV json\]](./CVE-2021-27576.osv.json)
+
+
 
 _Last updated: 2021-03-14T11:56:54.481Z_
 
@@ -39,7 +41,9 @@ If was found that the NetTest web service can be used to overload the bandwidth 
 
 ## allows user impersonation ## { #CVE-2023-28326 }
 
-CVE-2023-28326 [\[CVE json\]](./CVE-2023-28326.cve.json)
+CVE-2023-28326 [\[CVE json\]](./CVE-2023-28326.cve.json) [\[OSV json\]](./CVE-2023-28326.osv.json)
+
+
 
 _Last updated: 2023-03-28T14:34:57.762Z_
 
@@ -62,7 +66,9 @@ _Last updated: 2023-03-28T14:34:57.762Z_
 
 ## insufficient check of invitation hash ## { #CVE-2023-28936 }
 
-CVE-2023-28936 [\[CVE json\]](./CVE-2023-28936.cve.json)
+CVE-2023-28936 [\[CVE json\]](./CVE-2023-28936.cve.json) [\[OSV json\]](./CVE-2023-28936.osv.json)
+
+
 
 _Last updated: 2023-05-12T01:19:31.368Z_
 
@@ -85,7 +91,9 @@ Attacker can access arbitrary recording/room<br><br>Vendor: The Apache Software 
 
 ## allows bypass authentication ## { #CVE-2023-29032 }
 
-CVE-2023-29032 [\[CVE json\]](./CVE-2023-29032.cve.json)
+CVE-2023-29032 [\[CVE json\]](./CVE-2023-29032.cve.json) [\[OSV json\]](./CVE-2023-29032.osv.json)
+
+
 
 _Last updated: 2023-05-12T01:19:51.993Z_
 
@@ -108,7 +116,9 @@ _Last updated: 2023-05-12T01:19:51.993Z_
 
 ## allows null-byte Injection ## { #CVE-2023-29246 }
 
-CVE-2023-29246 [\[CVE json\]](./CVE-2023-29246.cve.json)
+CVE-2023-29246 [\[CVE json\]](./CVE-2023-29246.cve.json) [\[OSV json\]](./CVE-2023-29246.osv.json)
+
+
 
 _Last updated: 2023-05-12T01:21:14.732Z_
 

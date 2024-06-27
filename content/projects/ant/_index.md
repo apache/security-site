@@ -42,7 +42,9 @@ Apache Ant prior to 1.9.16 and 1.10.11 were affected.
 
 ## Apache Ant ZIP, and ZIP based, archive denial of service vulnerability ## { #CVE-2021-36374 }
 
-CVE-2021-36374 [\[CVE json\]](./CVE-2021-36374.cve.json)
+CVE-2021-36374 [\[CVE json\]](./CVE-2021-36374.cve.json) [\[OSV json\]](./CVE-2021-36374.osv.json)
+
+
 
 _Last updated: 2021-07-19T07:37:04.488Z_
 
@@ -70,7 +72,9 @@ Commonly used derived formats from ZIP archives are for instance JAR files and m
 
 ## Apache Ivy allows creating/overwriting any file on the system ## { #CVE-2022-37865 }
 
-CVE-2022-37865 [\[CVE json\]](./CVE-2022-37865.cve.json)
+CVE-2022-37865 [\[CVE json\]](./CVE-2022-37865.cve.json) [\[OSV json\]](./CVE-2022-37865.osv.json)
+
+
 
 _Last updated: 2022-11-07T10:53:07.179Z_
 
@@ -103,7 +107,9 @@ Ivy users of version 2.4.0 to 2.5.0 should upgrade to Ivy 2.5.1.
 
 ## Apache Ivy allows path traversal in the presence of a malicious repository ## { #CVE-2022-37866 }
 
-CVE-2022-37866 [\[CVE json\]](./CVE-2022-37866.cve.json)
+CVE-2022-37866 [\[CVE json\]](./CVE-2022-37866.cve.json) [\[OSV json\]](./CVE-2022-37866.osv.json)
+
+
 
 _Last updated: 2022-11-07T13:15:44.826Z_
 
@@ -141,7 +147,9 @@ Users of Apache Ivy 2.0.0 to 2.5.1 should upgrade to Ivy 2.5.1.
 
 ## XML External Entity vulnerability in Apache Ivy ## { #CVE-2022-46751 }
 
-CVE-2022-46751 [\[CVE json\]](./CVE-2022-46751.cve.json)
+CVE-2022-46751 [\[CVE json\]](./CVE-2022-46751.cve.json) [\[OSV json\]](./CVE-2022-46751.osv.json)
+
+
 
 _Last updated: 2023-08-21T06:54:55.281Z_
 

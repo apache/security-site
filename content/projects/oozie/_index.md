@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Oozie local privilege escalation ## { #CVE-2020-35451 }
 
-CVE-2020-35451 [\[CVE json\]](./CVE-2020-35451.cve.json)
+CVE-2020-35451 [\[CVE json\]](./CVE-2020-35451.cve.json) [\[OSV json\]](./CVE-2020-35451.osv.json)
+
+
 
 _Last updated: 2021-03-09T15:14:53.244Z_
 

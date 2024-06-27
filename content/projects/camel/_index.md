@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Temporary file information disclosure in Camel-Jira ## { #CVE-2023-34442 }
 
-CVE-2023-34442 [\[CVE json\]](./CVE-2023-34442.cve.json)
+CVE-2023-34442 [\[CVE json\]](./CVE-2023-34442.cve.json) [\[OSV json\]](./CVE-2023-34442.osv.json)
+
+
 
 _Last updated: 2023-07-10T09:31:01.757Z_
 
@@ -41,7 +43,9 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ## Camel-SQL: Unsafe Deserialization from JDBCAggregationRepository ## { #CVE-2024-22369 }
 
-CVE-2024-22369 [\[CVE json\]](./CVE-2024-22369.cve.json)
+CVE-2024-22369 [\[CVE json\]](./CVE-2024-22369.cve.json) [\[OSV json\]](./CVE-2024-22369.osv.json)
+
+
 
 _Last updated: 2024-02-20T15:01:05.582Z_
 
@@ -97,7 +101,9 @@ Exposure of sensitive data by by crafting a malicious EventFactory and providing
 
 ## Camel-CassandraQL: Unsafe Deserialization from CassandraAggregationRepository ## { #CVE-2024-23114 }
 
-CVE-2024-23114 [\[CVE json\]](./CVE-2024-23114.cve.json)
+CVE-2024-23114 [\[CVE json\]](./CVE-2024-23114.cve.json) [\[OSV json\]](./CVE-2024-23114.osv.json)
+
+
 
 _Last updated: 2024-02-20T14:59:36.356Z_
 

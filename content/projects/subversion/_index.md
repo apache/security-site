@@ -39,7 +39,9 @@ Subversion's mod_authz_svn module will crash if the server is using in-repositor
 
 ## Apache Subversion SVN authz protected copyfrom paths regression ## { #CVE-2021-28544 }
 
-CVE-2021-28544 [\[CVE json\]](./CVE-2021-28544.cve.json)
+CVE-2021-28544 [\[CVE json\]](./CVE-2021-28544.cve.json) [\[OSV json\]](./CVE-2021-28544.osv.json)
+
+
 
 _Last updated: 2022-04-12T17:46:18.140Z_
 
@@ -62,7 +64,9 @@ Apache Subversion SVN authz protected copyfrom paths regression  Subversion serv
 
 ## Apache Subversion mod_dav_svn is vulnerable to memory corruption ## { #CVE-2022-24070 }
 
-CVE-2022-24070 [\[CVE json\]](./CVE-2022-24070.cve.json)
+CVE-2022-24070 [\[CVE json\]](./CVE-2022-24070.cve.json) [\[OSV json\]](./CVE-2022-24070.osv.json)
+
+
 
 _Last updated: 2022-04-12T17:46:14.441Z_
 

@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## SSRF vulnerability with the Replication handler ## { #CVE-2021-27905 }
 
-CVE-2021-27905 [\[CVE json\]](./CVE-2021-27905.cve.json)
+CVE-2021-27905 [\[CVE json\]](./CVE-2021-27905.cve.json) [\[OSV json\]](./CVE-2021-27905.osv.json)
+
+
 
 _Last updated: 2021-04-13T06:30:52.402Z_
 
@@ -39,7 +41,9 @@ This problem affects essentially all Solr versions prior to it getting fixed in 
 
 ## Misapplied Zookeeper ACLs can result in leakage of configured authentication and authorization settings ## { #CVE-2021-29262 }
 
-CVE-2021-29262 [\[CVE json\]](./CVE-2021-29262.cve.json)
+CVE-2021-29262 [\[CVE json\]](./CVE-2021-29262.cve.json) [\[OSV json\]](./CVE-2021-29262.osv.json)
+
+
 
 _Last updated: 2021-04-13T06:28:50.304Z_
 
@@ -63,7 +67,9 @@ Additionally, with any ZkACLProvider, if the security.json is already present, S
 
 ## Apache Solr Unprivileged users may be able to perform unauthorized read/write to collections ## { #CVE-2021-29943 }
 
-CVE-2021-29943 [\[CVE json\]](./CVE-2021-29943.cve.json)
+CVE-2021-29943 [\[CVE json\]](./CVE-2021-29943.cve.json) [\[OSV json\]](./CVE-2021-29943.osv.json)
+
+
 
 _Last updated: 2021-04-13T06:29:18.585Z_
 
@@ -86,7 +92,9 @@ When using ConfigurableInternodeAuthHadoopPlugin for authentication, Apache Solr
 
 ## Apache Solr information disclosure vulnerability through DataImportHandler ## { #CVE-2021-44548 }
 
-CVE-2021-44548 [\[CVE json\]](./CVE-2021-44548.cve.json)
+CVE-2021-44548 [\[CVE json\]](./CVE-2021-44548.cve.json) [\[OSV json\]](./CVE-2021-44548.osv.json)
+
+
 
 _Last updated: 2021-12-23T08:51:22.228Z_
 
@@ -114,7 +122,9 @@ This issue affects all Apache Solr versions prior to 8.11.1. This issue only aff
 
 ## Host environment variables are published via the Metrics API ## { #CVE-2023-50290 }
 
-CVE-2023-50290 [\[CVE json\]](./CVE-2023-50290.cve.json)
+CVE-2023-50290 [\[CVE json\]](./CVE-2023-50290.cve.json) [\[OSV json\]](./CVE-2023-50290.osv.json)
+
+
 
 _Last updated: 2024-01-15T09:32:41.749Z_
 
@@ -133,7 +143,9 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ## System Property redaction logic inconsistency can lead to leaked passwords ## { #CVE-2023-50291 }
 
-CVE-2023-50291 [\[CVE json\]](./CVE-2023-50291.cve.json)
+CVE-2023-50291 [\[CVE json\]](./CVE-2023-50291.cve.json) [\[OSV json\]](./CVE-2023-50291.osv.json)
+
+
 
 _Last updated: 2024-02-09T17:29:31.072Z_
 
@@ -157,7 +169,9 @@ Insufficiently Protected Credentials vulnerability in Apache Solr.<p></p><p>This
 
 ## Solr Schema Designer blindly "trusts" all configsets, possibly leading to RCE by unauthenticated users ## { #CVE-2023-50292 }
 
-CVE-2023-50292 [\[CVE json\]](./CVE-2023-50292.cve.json)
+CVE-2023-50292 [\[CVE json\]](./CVE-2023-50292.cve.json) [\[OSV json\]](./CVE-2023-50292.osv.json)
+
+
 
 _Last updated: 2024-02-09T17:29:19.451Z_
 
@@ -181,7 +195,9 @@ Incorrect Permission Assignment for Critical Resource, Improper Control of Dynam
 
 ## Solr can expose ZooKeeper credentials via Streaming Expressions ## { #CVE-2023-50298 }
 
-CVE-2023-50298 [\[CVE json\]](./CVE-2023-50298.cve.json)
+CVE-2023-50298 [\[CVE json\]](./CVE-2023-50298.cve.json) [\[OSV json\]](./CVE-2023-50298.osv.json)
+
+
 
 _Last updated: 2024-02-09T17:29:05.785Z_
 
@@ -205,7 +221,9 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ## Backup/Restore APIs allow for deployment of executables in malicious ConfigSets ## { #CVE-2023-50386 }
 
-CVE-2023-50386 [\[CVE json\]](./CVE-2023-50386.cve.json)
+CVE-2023-50386 [\[CVE json\]](./CVE-2023-50386.cve.json) [\[OSV json\]](./CVE-2023-50386.osv.json)
+
+
 
 _Last updated: 2024-02-09T17:28:49.163Z_
 
@@ -229,7 +247,9 @@ Improper Control of Dynamically-Managed Code Resources, Unrestricted Upload of F
 
 ## Solr-Operator liveness and readiness probes may leak basic auth credentials ## { #CVE-2024-31391 }
 
-CVE-2024-31391 [\[CVE json\]](./CVE-2024-31391.cve.json)
+CVE-2024-31391 [\[CVE json\]](./CVE-2024-31391.cve.json) [\[OSV json\]](./CVE-2024-31391.osv.json)
+
+
 
 _Last updated: 2024-04-12T15:00:22.627Z_
 

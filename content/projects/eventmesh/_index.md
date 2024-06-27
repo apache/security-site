@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache EventMesh RabbitMQ-Connector plugin allows RCE through deserialization of untrusted data ## { #CVE-2023-26512 }
 
-CVE-2023-26512 [\[CVE json\]](./CVE-2023-26512.cve.json)
+CVE-2023-26512 [\[CVE json\]](./CVE-2023-26512.cve.json) [\[OSV json\]](./CVE-2023-26512.osv.json)
+
+
 
 _Last updated: 2023-07-27T09:32:16.269Z_
 

@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Doris hardcoded cryptography initialization ## { #CVE-2022-23942 }
 
-CVE-2022-23942 [\[CVE json\]](./CVE-2022-23942.cve.json)
+CVE-2022-23942 [\[CVE json\]](./CVE-2022-23942.cve.json) [\[OSV json\]](./CVE-2022-23942.osv.json)
+
+
 
 _Last updated: 2022-04-26T14:49:46.143Z_
 
@@ -38,7 +40,9 @@ Apache Doris, prior to 1.0.0, used a hardcoded key and IV to initialize the ciph
 
 ## Timing Attack weakness ## { #CVE-2023-41313 }
 
-CVE-2023-41313 [\[CVE json\]](./CVE-2023-41313.cve.json)
+CVE-2023-41313 [\[CVE json\]](./CVE-2023-41313.cve.json) [\[OSV json\]](./CVE-2023-41313.osv.json)
+
+
 
 _Last updated: 2024-03-12T10:16:14.512Z_
 
@@ -61,7 +65,9 @@ _Last updated: 2024-03-12T10:16:14.512Z_
 
 ## Missing API authentication allowed DoS ## { #CVE-2023-41314 }
 
-CVE-2023-41314 [\[CVE json\]](./CVE-2023-41314.cve.json)
+CVE-2023-41314 [\[CVE json\]](./CVE-2023-41314.cve.json) [\[OSV json\]](./CVE-2023-41314.osv.json)
+
+
 
 _Last updated: 2023-12-18T08:27:49.193Z_
 
@@ -80,7 +86,9 @@ The api /api/snapshot and /api/get_log_file would allow unauthenticated access.<
 
 ## Possible race condition ## { #CVE-2024-26307 }
 
-CVE-2024-26307 [\[CVE json\]](./CVE-2024-26307.cve.json)
+CVE-2024-26307 [\[CVE json\]](./CVE-2024-26307.cve.json) [\[OSV json\]](./CVE-2024-26307.osv.json)
+
+
 
 _Last updated: 2024-03-21T09:38:16.580Z_
 
@@ -100,7 +108,9 @@ Possible race condition vulnerability in Apache Doris.<br>Some of code using `ch
 
 ## Downloading arbitrary remote jar files resulting in remote command execution ## { #CVE-2024-27438 }
 
-CVE-2024-27438 [\[CVE json\]](./CVE-2024-27438.cve.json)
+CVE-2024-27438 [\[CVE json\]](./CVE-2024-27438.cve.json) [\[OSV json\]](./CVE-2024-27438.osv.json)
+
+
 
 _Last updated: 2024-03-21T09:39:20.599Z_
 

@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Possible DOS vulnerabilities in C# Avro SDK ## { #CVE-2021-43045 }
 
-CVE-2021-43045 [\[CVE json\]](./CVE-2021-43045.cve.json)
+CVE-2021-43045 [\[CVE json\]](./CVE-2021-43045.cve.json) [\[OSV json\]](./CVE-2021-43045.osv.json)
+
+
 
 _Last updated: 2022-01-06T17:58:30.429Z_
 
@@ -38,7 +40,9 @@ A vulnerability in the .NET SDK of Apache Avro allows an attacker to allocate ex
 
 ## Denial of service while reading data in Avro Rust SDK ## { #CVE-2022-35724 }
 
-CVE-2022-35724 [\[CVE json\]](./CVE-2022-35724.cve.json)
+CVE-2022-35724 [\[CVE json\]](./CVE-2022-35724.cve.json) [\[OSV json\]](./CVE-2022-35724.osv.json)
+
+
 
 _Last updated: 2022-08-09T06:43:41.354Z_
 
@@ -61,7 +65,9 @@ It is possible to provide data to be read that leads the reader to loop in cycle
 
 ## Memory overconsumption in Avro Rust SDK ## { #CVE-2022-36124 }
 
-CVE-2022-36124 [\[CVE json\]](./CVE-2022-36124.cve.json)
+CVE-2022-36124 [\[CVE json\]](./CVE-2022-36124.cve.json) [\[OSV json\]](./CVE-2022-36124.osv.json)
+
+
 
 _Last updated: 2022-08-09T06:46:06.388Z_
 
@@ -84,7 +90,9 @@ It is possible for a Reader to consume memory beyond the allowed constraints and
 
 ## Integer overflow when reading corrupted .avro file in Avro Rust SDK ## { #CVE-2022-36125 }
 
-CVE-2022-36125 [\[CVE json\]](./CVE-2022-36125.cve.json)
+CVE-2022-36125 [\[CVE json\]](./CVE-2022-36125.cve.json) [\[OSV json\]](./CVE-2022-36125.osv.json)
+
+
 
 _Last updated: 2022-08-09T06:44:50.447Z_
 

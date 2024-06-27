@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Arbitrary code execution when loading a malicious data file ## { #CVE-2023-47248 }
 
-CVE-2023-47248 [\[CVE json\]](./CVE-2023-47248.cve.json)
+CVE-2023-47248 [\[CVE json\]](./CVE-2023-47248.cve.json) [\[OSV json\]](./CVE-2023-47248.osv.json)
+
+
 
 _Last updated: 2023-11-10T14:10:15.590Z_
 

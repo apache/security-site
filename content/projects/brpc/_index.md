@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## ServerOptions.pid_file may cause arbitrary code execution ## { #CVE-2023-31039 }
 
-CVE-2023-31039 [\[CVE json\]](./CVE-2023-31039.cve.json)
+CVE-2023-31039 [\[CVE json\]](./CVE-2023-31039.cve.json) [\[OSV json\]](./CVE-2023-31039.osv.json)
+
+
 
 _Last updated: 2023-05-08T08:57:09.633Z_
 
@@ -34,7 +36,9 @@ _Last updated: 2023-05-08T08:57:09.633Z_
 
 ## The builtin service rpcz page has an XSS attack vulnerability ## { #CVE-2023-45757 }
 
-CVE-2023-45757 [\[CVE json\]](./CVE-2023-45757.cve.json)
+CVE-2023-45757 [\[CVE json\]](./CVE-2023-45757.cve.json) [\[OSV json\]](./CVE-2023-45757.osv.json)
+
+
 
 _Last updated: 2023-10-16T08:01:36.036Z_
 
@@ -53,7 +57,9 @@ _Last updated: 2023-10-16T08:01:36.036Z_
 
 ## HTTP request smuggling vulnerability ## { #CVE-2024-23452 }
 
-CVE-2024-23452 [\[CVE json\]](./CVE-2024-23452.cve.json)
+CVE-2024-23452 [\[CVE json\]](./CVE-2024-23452.cve.json) [\[OSV json\]](./CVE-2024-23452.osv.json)
+
+
 
 _Last updated: 2024-02-08T09:00:00.820Z_
 

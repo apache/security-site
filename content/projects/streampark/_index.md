@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## LDAP Injection Vulnerability ## { #CVE-2022-45801 }
 
-CVE-2022-45801 [\[CVE json\]](./CVE-2022-45801.cve.json)
+CVE-2022-45801 [\[CVE json\]](./CVE-2022-45801.cve.json) [\[OSV json\]](./CVE-2022-45801.osv.json)
+
+
 
 _Last updated: 2023-05-01T14:50:06.013Z_
 
@@ -34,7 +36,9 @@ _Last updated: 2023-05-01T14:50:06.013Z_
 
 ## Upload any file to any directory ## { #CVE-2022-45802 }
 
-CVE-2022-45802 [\[CVE json\]](./CVE-2022-45802.cve.json)
+CVE-2022-45802 [\[CVE json\]](./CVE-2022-45802.cve.json) [\[OSV json\]](./CVE-2022-45802.osv.json)
+
+
 
 _Last updated: 2023-06-26T10:23:44.595Z_
 
@@ -53,7 +57,9 @@ _Last updated: 2023-06-26T10:23:44.595Z_
 
 ## Logic error causing any account reset ## { #CVE-2022-46365 }
 
-CVE-2022-46365 [\[CVE json\]](./CVE-2022-46365.cve.json)
+CVE-2022-46365 [\[CVE json\]](./CVE-2022-46365.cve.json) [\[OSV json\]](./CVE-2022-46365.osv.json)
+
+
 
 _Last updated: 2023-05-01T14:53:47.030Z_
 
@@ -72,7 +78,9 @@ _Last updated: 2023-05-01T14:53:47.030Z_
 
 ## Authenticated system users could trigger SQL injection vulnerability ## { #CVE-2023-30867 }
 
-CVE-2023-30867 [\[CVE json\]](./CVE-2023-30867.cve.json)
+CVE-2023-30867 [\[CVE json\]](./CVE-2023-30867.cve.json) [\[OSV json\]](./CVE-2023-30867.osv.json)
+
+
 
 _Last updated: 2023-12-15T12:13:59.544Z_
 
@@ -91,7 +99,9 @@ _Last updated: 2023-12-15T12:13:59.544Z_
 
 ## Authenticated system users could trigger remote command execution ## { #CVE-2023-49898 }
 
-CVE-2023-49898 [\[CVE json\]](./CVE-2023-49898.cve.json)
+CVE-2023-49898 [\[CVE json\]](./CVE-2023-49898.cve.json) [\[OSV json\]](./CVE-2023-49898.osv.json)
+
+
 
 _Last updated: 2023-12-15T12:13:22.953Z_
 

@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## DoS/OOM leak vulnerability in Apache Mina SSHD Server ## { #CVE-2021-30129 }
 
-CVE-2021-30129 [\[CVE json\]](./CVE-2021-30129.cve.json)
+CVE-2021-30129 [\[CVE json\]](./CVE-2021-30129.cve.json) [\[OSV json\]](./CVE-2021-30129.osv.json)
+
+
 
 _Last updated: 2021-07-12T12:00:59.616Z_
 
@@ -34,7 +36,9 @@ A vulnerability in sshd-core of Apache Mina SSHD allows an attacker to overflow 
 
 ## Apache MINA HTTP listener DOS ## { #CVE-2021-41973 }
 
-CVE-2021-41973 [\[CVE json\]](./CVE-2021-41973.cve.json)
+CVE-2021-41973 [\[CVE json\]](./CVE-2021-41973.cve.json) [\[OSV json\]](./CVE-2021-41973.osv.json)
+
+
 
 _Last updated: 2021-11-01T08:33:24.585Z_
 
@@ -53,7 +57,9 @@ In Apache MINA, a specifically crafted, malformed HTTP request may cause the HTT
 
 ## Apache MINA SSHD: Java unsafe deserialization vulnerability ## { #CVE-2022-45047 }
 
-CVE-2022-45047 [\[CVE json\]](./CVE-2022-45047.cve.json)
+CVE-2022-45047 [\[CVE json\]](./CVE-2022-45047.cve.json) [\[OSV json\]](./CVE-2022-45047.osv.json)
+
+
 
 _Last updated: 2022-11-16T09:03:02.600Z_
 
@@ -76,7 +82,9 @@ Class org.apache.sshd.server.keyprovider.SimpleGeneratorHostKeyProvider in Apach
 
 ## Information disclosure bugs with RootedFilesystem ## { #CVE-2023-35887 }
 
-CVE-2023-35887 [\[CVE json\]](./CVE-2023-35887.cve.json)
+CVE-2023-35887 [\[CVE json\]](./CVE-2023-35887.cve.json) [\[OSV json\]](./CVE-2023-35887.osv.json)
+
+
 
 _Last updated: 2023-07-19T07:18:05.211Z_
 

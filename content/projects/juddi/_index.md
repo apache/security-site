@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Remote code execution via RMI ## { #CVE-2021-37578 }
 
-CVE-2021-37578 [\[CVE json\]](./CVE-2021-37578.cve.json)
+CVE-2021-37578 [\[CVE json\]](./CVE-2021-37578.cve.json) [\[OSV json\]](./CVE-2021-37578.osv.json)
+
+
 
 _Last updated: 2021-07-29T06:57:59.880Z_
 

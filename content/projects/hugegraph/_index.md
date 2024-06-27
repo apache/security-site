@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## SSRF in Hubble connection page ## { #CVE-2024-27347 }
 
-CVE-2024-27347 [\[CVE json\]](./CVE-2024-27347.cve.json)
+CVE-2024-27347 [\[CVE json\]](./CVE-2024-27347.cve.json) [\[OSV json\]](./CVE-2024-27347.osv.json)
+
+
 
 _Last updated: 2024-04-22T14:07:30.816Z_
 
@@ -38,7 +40,9 @@ Server-Side Request Forgery (SSRF) vulnerability in Apache HugeGraph-Hubble.<p>T
 
 ## Command execution in gremlin ## { #CVE-2024-27348 }
 
-CVE-2024-27348 [\[CVE json\]](./CVE-2024-27348.cve.json)
+CVE-2024-27348 [\[CVE json\]](./CVE-2024-27348.cve.json) [\[OSV json\]](./CVE-2024-27348.osv.json)
+
+
 
 _Last updated: 2024-04-22T14:08:03.374Z_
 
@@ -62,7 +66,9 @@ RCE-Remote Command Execution vulnerability in Apache HugeGraph-Server.<p>This is
 
 ## Bypass whitelist in Auth mode ## { #CVE-2024-27349 }
 
-CVE-2024-27349 [\[CVE json\]](./CVE-2024-27349.cve.json)
+CVE-2024-27349 [\[CVE json\]](./CVE-2024-27349.cve.json) [\[OSV json\]](./CVE-2024-27349.osv.json)
+
+
 
 _Last updated: 2024-04-22T14:08:39.984Z_
 

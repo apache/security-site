@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## MiNiFi CPP arbitrary script execution is possible on the agent's host machine through the c2 protocol ## { #CVE-2021-33191 }
 
-CVE-2021-33191 [\[CVE json\]](./CVE-2021-33191.cve.json)
+CVE-2021-33191 [\[CVE json\]](./CVE-2021-33191.cve.json) [\[OSV json\]](./CVE-2021-33191.osv.json)
+
+
 
 _Last updated: 2021-08-24T11:14:05.278Z_
 
@@ -36,7 +38,9 @@ command. Said command is then executed using the same privileges as the applicat
 
 ## Apache NiFi information disclosure by XXE ## { #CVE-2021-44145 }
 
-CVE-2021-44145 [\[CVE json\]](./CVE-2021-44145.cve.json)
+CVE-2021-44145 [\[CVE json\]](./CVE-2021-44145.cve.json) [\[OSV json\]](./CVE-2021-44145.osv.json)
+
+
 
 _Last updated: 2021-12-17T08:46:07.497Z_
 
@@ -59,7 +63,9 @@ In the TransformXML processor of Apache NiFi before 1.15.1 an authenticated user
 
 ## Insufficiently protected credentials ## { #CVE-2022-26850 }
 
-CVE-2022-26850 [\[CVE json\]](./CVE-2022-26850.cve.json)
+CVE-2022-26850 [\[CVE json\]](./CVE-2022-26850.cve.json) [\[OSV json\]](./CVE-2022-26850.osv.json)
+
+
 
 _Last updated: 2022-04-06T20:48:13.265Z_
 
@@ -85,7 +91,9 @@ NiFi 1.16.0 includes updates to replace the Login Identity Providers configurati
 
 ## Improper Restriction of XML External Entity References in Multiple Components ## { #CVE-2022-29265 }
 
-CVE-2022-29265 [\[CVE json\]](./CVE-2022-29265.cve.json)
+CVE-2022-29265 [\[CVE json\]](./CVE-2022-29265.cve.json) [\[OSV json\]](./CVE-2022-29265.osv.json)
+
+
 
 _Last updated: 2022-04-30T08:01:30.969Z_
 
@@ -121,7 +129,9 @@ The resolution disables Document Type Declarations in the default configuration 
 
 ## Improper Neutralization of Command Elements in Shell User Group Provider ## { #CVE-2022-33140 }
 
-CVE-2022-33140 [\[CVE json\]](./CVE-2022-33140.cve.json)
+CVE-2022-33140 [\[CVE json\]](./CVE-2022-33140.cve.json) [\[OSV json\]](./CVE-2022-33140.osv.json)
+
+
 
 _Last updated: 2022-06-15T14:21:09.085Z_
 
@@ -148,7 +158,9 @@ The resolution removes command formatting based on user-provided arguments.
 
 ## Improper Restriction of XML External Entity References in ExtractCCDAAttributes ## { #CVE-2023-22832 }
 
-CVE-2023-22832 [\[CVE json\]](./CVE-2023-22832.cve.json)
+CVE-2023-22832 [\[CVE json\]](./CVE-2023-22832.cve.json) [\[OSV json\]](./CVE-2023-22832.osv.json)
+
+
 
 _Last updated: 2023-02-10T07:45:29.071Z_
 
@@ -172,7 +184,9 @@ _Last updated: 2023-02-10T07:45:29.071Z_
 
 ## Potential Deserialization of Untrusted Data with JNDI in JMS Components ## { #CVE-2023-34212 }
 
-CVE-2023-34212 [\[CVE json\]](./CVE-2023-34212.cve.json)
+CVE-2023-34212 [\[CVE json\]](./CVE-2023-34212.cve.json) [\[OSV json\]](./CVE-2023-34212.osv.json)
+
+
 
 _Last updated: 2023-06-12T15:10:30.889Z_
 
@@ -197,7 +211,9 @@ _Last updated: 2023-06-12T15:10:30.889Z_
 
 ## Potential Code Injection with Database Services using H2 ## { #CVE-2023-34468 }
 
-CVE-2023-34468 [\[CVE json\]](./CVE-2023-34468.cve.json)
+CVE-2023-34468 [\[CVE json\]](./CVE-2023-34468.cve.json) [\[OSV json\]](./CVE-2023-34468.osv.json)
+
+
 
 _Last updated: 2023-06-12T15:09:17.702Z_
 
@@ -221,7 +237,9 @@ _Last updated: 2023-06-12T15:09:17.702Z_
 
 ## Potential Code Injection with Properties Referencing Remote Resources ## { #CVE-2023-36542 }
 
-CVE-2023-36542 [\[CVE json\]](./CVE-2023-36542.cve.json)
+CVE-2023-36542 [\[CVE json\]](./CVE-2023-36542.cve.json) [\[OSV json\]](./CVE-2023-36542.osv.json)
+
+
 
 _Last updated: 2023-07-29T07:12:37.941Z_
 
@@ -245,7 +263,9 @@ Apache NiFi 0.0.2 through 1.22.0 include Processors and Controller Services that
 
 ## Incomplete Validation of JDBC and JNDI Connection URLs ## { #CVE-2023-40037 }
 
-CVE-2023-40037 [\[CVE json\]](./CVE-2023-40037.cve.json)
+CVE-2023-40037 [\[CVE json\]](./CVE-2023-40037.cve.json) [\[OSV json\]](./CVE-2023-40037.osv.json)
+
+
 
 _Last updated: 2023-08-18T21:54:49.856Z_
 
@@ -269,7 +289,9 @@ Apache NiFi 1.21.0 through 1.23.0 support JDBC and JNDI JMS access in several Pr
 
 ## Incorrect Certificate Validation in InvokeHTTP for MiNiFi C++ ## { #CVE-2023-41180 }
 
-CVE-2023-41180 [\[CVE json\]](./CVE-2023-41180.cve.json)
+CVE-2023-41180 [\[CVE json\]](./CVE-2023-41180.cve.json) [\[OSV json\]](./CVE-2023-41180.osv.json)
+
+
 
 _Last updated: 2023-09-03T15:52:48.640Z_
 
@@ -292,7 +314,9 @@ _Last updated: 2023-09-03T15:52:48.640Z_
 
 ## Improper Neutralization of Input in Advanced User Interface for Jolt ## { #CVE-2023-49145 }
 
-CVE-2023-49145 [\[CVE json\]](./CVE-2023-49145.cve.json)
+CVE-2023-49145 [\[CVE json\]](./CVE-2023-49145.cve.json) [\[OSV json\]](./CVE-2023-49145.osv.json)
+
+
 
 _Last updated: 2023-11-27T22:29:16.184Z_
 

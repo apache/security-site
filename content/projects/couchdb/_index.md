@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Privilege escalation vulnerability when using HTML attachments ## { #CVE-2021-38295 }
 
-CVE-2021-38295 [\[CVE json\]](./CVE-2021-38295.cve.json)
+CVE-2021-38295 [\[CVE json\]](./CVE-2021-38295.cve.json) [\[OSV json\]](./CVE-2021-38295.osv.json)
+
+
 
 _Last updated: 2021-10-14T16:26:03.894Z_
 
@@ -41,7 +43,9 @@ This privilege escalation vulnerability allows an attacker to add or remove data
 
 ## Remote Code Execution Vulnerability in Packaging ## { #CVE-2022-24706 }
 
-CVE-2022-24706 [\[CVE json\]](./CVE-2022-24706.cve.json)
+CVE-2022-24706 [\[CVE json\]](./CVE-2022-24706.cve.json) [\[OSV json\]](./CVE-2022-24706.osv.json)
+
+
 
 _Last updated: 2022-04-26T09:18:02.724Z_
 
@@ -66,7 +70,9 @@ In Apache CouchDB prior to 3.2.2, an attacker can access an improperly secured d
 
 ## Information sharing via couchjs processes ## { #CVE-2023-26268 }
 
-CVE-2023-26268 [\[CVE json\]](./CVE-2023-26268.cve.json)
+CVE-2023-26268 [\[CVE json\]](./CVE-2023-26268.cve.json) [\[OSV json\]](./CVE-2023-26268.osv.json)
+
+
 
 _Last updated: 2023-12-12T22:58:48.382Z_
 
@@ -92,7 +98,9 @@ _Last updated: 2023-12-12T22:58:48.382Z_
 
 ## Privilege Escalation Using _design Documents ## { #CVE-2023-45725 }
 
-CVE-2023-45725 [\[CVE json\]](./CVE-2023-45725.cve.json)
+CVE-2023-45725 [\[CVE json\]](./CVE-2023-45725.cve.json) [\[OSV json\]](./CVE-2023-45725.osv.json)
+
+
 
 _Last updated: 2023-12-13T08:02:15.239Z_
 

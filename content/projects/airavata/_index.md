@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## airavata-django-portal allows CRLF log injection because of the lack of escaping in the log statements ## { #CVE-2021-43410 }
 
-CVE-2021-43410 [\[CVE json\]](./CVE-2021-43410.cve.json)
+CVE-2021-43410 [\[CVE json\]](./CVE-2021-43410.cve.json) [\[OSV json\]](./CVE-2021-43410.osv.json)
+
+
 
 _Last updated: 2021-12-09T08:58:17.423Z_
 

@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## RCE vulnerability in latest Apache OFBiz due to Java serialisation using RMI ## { #CVE-2021-26295 }
 
-CVE-2021-26295 [\[CVE json\]](./CVE-2021-26295.cve.json)
+CVE-2021-26295 [\[CVE json\]](./CVE-2021-26295.cve.json) [\[OSV json\]](./CVE-2021-26295.osv.json)
+
+
 
 _Last updated: 2021-03-22T11:54:40.746Z_
 
@@ -39,7 +41,9 @@ Apache OFBiz has unsafe deserialization prior to 17.12.06. An unauthenticated at
 
 ## RCE vulnerability in latest Apache OFBiz due to Java serialisation using RMI ## { #CVE-2021-29200 }
 
-CVE-2021-29200 [\[CVE json\]](./CVE-2021-29200.cve.json)
+CVE-2021-29200 [\[CVE json\]](./CVE-2021-29200.cve.json) [\[OSV json\]](./CVE-2021-29200.osv.json)
+
+
 
 _Last updated: 2021-04-27T19:46:30.140Z_
 
@@ -64,7 +68,9 @@ An unauthenticated user can perform an RCE attack
 
 ## Unsafe deserialization in Apache OFBiz ## { #CVE-2021-30128 }
 
-CVE-2021-30128 [\[CVE json\]](./CVE-2021-30128.cve.json)
+CVE-2021-30128 [\[CVE json\]](./CVE-2021-30128.cve.json) [\[OSV json\]](./CVE-2021-30128.osv.json)
+
+
 
 _Last updated: 2021-04-27T19:47:04.244Z_
 
@@ -87,7 +93,9 @@ Apache OFBiz has unsafe deserialization prior to 17.12.07 version
 
 ## Arbitrary file upload vulnerability in OFBiz ## { #CVE-2021-37608 }
 
-CVE-2021-37608 [\[CVE json\]](./CVE-2021-37608.cve.json)
+CVE-2021-37608 [\[CVE json\]](./CVE-2021-37608.cve.json) [\[OSV json\]](./CVE-2021-37608.osv.json)
+
+
 
 _Last updated: 2021-08-18T07:45:08.867Z_
 
@@ -110,7 +118,9 @@ Unrestricted Upload of File with Dangerous Type vulnerability in Apache OFBiz al
 
 ## Unauth Stored XSS vulnerability in the Birt plugin of Apache OFBiz ## { #CVE-2022-25370 }
 
-CVE-2022-25370 [\[CVE json\]](./CVE-2022-25370.cve.json)
+CVE-2022-25370 [\[CVE json\]](./CVE-2022-25370.cve.json) [\[OSV json\]](./CVE-2022-25370.osv.json)
+
+
 
 _Last updated: 2022-09-02T06:58:56.611Z_
 
@@ -136,7 +146,9 @@ In Apache OFBiz release 18.12.05, and earlier versions, by leveraging a vulnerab
 
 ## Unauth Path Traversal with file corruption affecting the Birt plugin of Apache OFBiz ## { #CVE-2022-25371 }
 
-CVE-2022-25371 [\[CVE json\]](./CVE-2022-25371.cve.json)
+CVE-2022-25371 [\[CVE json\]](./CVE-2022-25371.cve.json) [\[OSV json\]](./CVE-2022-25371.osv.json)
+
+
 
 _Last updated: 2022-09-02T07:00:04.371Z_
 
@@ -162,7 +174,9 @@ By leveraging a bug in Birt (https://bugs.eclipse.org/bugs/show_bug.cgi?id=53814
 
 ## Server-Side Template Injection affecting the ecommerce plugin of Apache OFBiz ## { #CVE-2022-25813 }
 
-CVE-2022-25813 [\[CVE json\]](./CVE-2022-25813.cve.json)
+CVE-2022-25813 [\[CVE json\]](./CVE-2022-25813.cve.json) [\[OSV json\]](./CVE-2022-25813.osv.json)
+
+
 
 _Last updated: 2022-09-02T07:01:21.926Z_
 
@@ -186,7 +200,9 @@ manager needs to list the communications in the party component to activate the 
 
 ## Java Deserialization via RMI Connection from the Solr plugin of Apache OFBiz ## { #CVE-2022-29063 }
 
-CVE-2022-29063 [\[CVE json\]](./CVE-2022-29063.cve.json)
+CVE-2022-29063 [\[CVE json\]](./CVE-2022-29063.cve.json) [\[OSV json\]](./CVE-2022-29063.osv.json)
+
+
 
 _Last updated: 2022-09-02T07:04:01.683Z_
 
@@ -210,7 +226,9 @@ Upgrade to at least 18.12.06 or apply patches at https://issues.apache.org/jira/
 
 ## Regular Expression Denial of Service (ReDoS) vulnerability in Apache OFBiz ## { #CVE-2022-29158 }
 
-CVE-2022-29158 [\[CVE json\]](./CVE-2022-29158.cve.json)
+CVE-2022-29158 [\[CVE json\]](./CVE-2022-29158.cve.json) [\[OSV json\]](./CVE-2022-29158.osv.json)
+
+
 
 _Last updated: 2022-09-02T07:05:27.871Z_
 
@@ -234,7 +252,9 @@ Upgrade to 18.12.06 or apply patches at https://issues.apache.org/jira/browse/OF
 
 ## Arbitrary file reading vulnerability ## { #CVE-2022-47501 }
 
-CVE-2022-47501 [\[CVE json\]](./CVE-2022-47501.cve.json)
+CVE-2022-47501 [\[CVE json\]](./CVE-2022-47501.cve.json) [\[OSV json\]](./CVE-2022-47501.osv.json)
+
+
 
 _Last updated: 2023-04-14T15:00:25.628Z_
 
@@ -260,7 +280,9 @@ pre-authentication attack.<br><p>This issue affects Apache OFBiz: before 18.12.0
 
 ## Execution of Solr plugin queries without authentication ## { #CVE-2023-46819 }
 
-CVE-2023-46819 [\[CVE json\]](./CVE-2023-46819.cve.json)
+CVE-2023-46819 [\[CVE json\]](./CVE-2023-46819.cve.json) [\[OSV json\]](./CVE-2023-46819.osv.json)
+
+
 
 _Last updated: 2023-12-04T16:11:06.466Z_
 
@@ -288,7 +310,9 @@ Missing Authentication in Apache Software Foundation Apache OFBiz when using the
 
 ## Pre-auth RCE in Apache Ofbiz 18.12.09 due to XML-RPC still present ## { #CVE-2023-49070 }
 
-CVE-2023-49070 [\[CVE json\]](./CVE-2023-49070.cve.json)
+CVE-2023-49070 [\[CVE json\]](./CVE-2023-49070.cve.json) [\[OSV json\]](./CVE-2023-49070.osv.json)
+
+
 
 _Last updated: 2023-12-20T10:48:11.952Z_
 
@@ -319,7 +343,9 @@ Pre-auth RCE in Apache Ofbiz 18.12.09.<br><br>It's due to XML-RPC&nbsp;<span sty
 
 ## Arbitrary file properties reading and SSRF attack ## { #CVE-2023-50968 }
 
-CVE-2023-50968 [\[CVE json\]](./CVE-2023-50968.cve.json)
+CVE-2023-50968 [\[CVE json\]](./CVE-2023-50968.cve.json) [\[OSV json\]](./CVE-2023-50968.osv.json)
+
+
 
 _Last updated: 2023-12-26T10:21:57.552Z_
 
@@ -346,7 +372,9 @@ _Last updated: 2023-12-26T10:21:57.552Z_
 
 ## Pre-authentication Remote Code Execution (RCE) vulnerability ## { #CVE-2023-51467 }
 
-CVE-2023-51467 [\[CVE json\]](./CVE-2023-51467.cve.json)
+CVE-2023-51467 [\[CVE json\]](./CVE-2023-51467.cve.json) [\[OSV json\]](./CVE-2023-51467.osv.json)
+
+
 
 _Last updated: 2024-02-02T10:13:56.898Z_
 
@@ -377,7 +405,9 @@ _Last updated: 2024-02-02T10:13:56.898Z_
 
 ## Path traversal or file inclusion ## { #CVE-2024-23946 }
 
-CVE-2024-23946 [\[CVE json\]](./CVE-2024-23946.cve.json)
+CVE-2024-23946 [\[CVE json\]](./CVE-2024-23946.cve.json) [\[OSV json\]](./CVE-2024-23946.osv.json)
+
+
 
 _Last updated: 2024-02-28T15:44:32.259Z_
 
@@ -404,7 +434,9 @@ Possible path traversal in Apache OFBiz allowing file inclusion.<br>Users are re
 
 ## Path traversal allowing authentication bypass. ## { #CVE-2024-25065 }
 
-CVE-2024-25065 [\[CVE json\]](./CVE-2024-25065.cve.json)
+CVE-2024-25065 [\[CVE json\]](./CVE-2024-25065.cve.json) [\[OSV json\]](./CVE-2024-25065.osv.json)
+
+
 
 _Last updated: 2024-02-28T15:42:48.263Z_
 
@@ -435,7 +467,9 @@ Possible path traversal in Apache OFBiz allowing authentication bypass.<br>Users
 
 ## Path traversal leading to RCE ## { #CVE-2024-32113 }
 
-CVE-2024-32113 [\[CVE json\]](./CVE-2024-32113.cve.json)
+CVE-2024-32113 [\[CVE json\]](./CVE-2024-32113.cve.json) [\[OSV json\]](./CVE-2024-32113.osv.json)
+
+
 
 _Last updated: 2024-05-08T14:49:53.237Z_
 
@@ -461,7 +495,9 @@ Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') v
 
 ## Path traversal leading to a RCE ## { #CVE-2024-36104 }
 
-CVE-2024-36104 [\[CVE json\]](./CVE-2024-36104.cve.json)
+CVE-2024-36104 [\[CVE json\]](./CVE-2024-36104.cve.json) [\[OSV json\]](./CVE-2024-36104.osv.json)
+
+
 
 _Last updated: 2024-06-03T06:55:24.928Z_
 

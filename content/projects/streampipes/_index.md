@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Privilege escalation through non-admin user ## { #CVE-2023-31469 }
 
-CVE-2023-31469 [\[CVE json\]](./CVE-2023-31469.cve.json)
+CVE-2023-31469 [\[CVE json\]](./CVE-2023-31469.cve.json) [\[OSV json\]](./CVE-2023-31469.osv.json)
+
+
 
 _Last updated: 2023-06-23T07:07:40.534Z_
 
@@ -42,7 +44,9 @@ A REST interface in Apache StreamPipes (versions 0.69.0 to 0.91.0) <span style="
 
 ## Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG) in Recovery Token Generation ## { #CVE-2024-29868 }
 
-CVE-2024-29868 [\[CVE json\]](./CVE-2024-29868.cve.json)
+CVE-2024-29868 [\[CVE json\]](./CVE-2024-29868.cve.json) [\[OSV json\]](./CVE-2024-29868.osv.json)
+
+
 
 _Last updated: 2024-06-24T09:59:38.377Z_
 

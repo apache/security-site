@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Deserialization flaw in EOL Tapestry 4. ## { #CVE-2020-17531 }
 
-CVE-2020-17531 [\[CVE json\]](./CVE-2020-17531.cve.json)
+CVE-2020-17531 [\[CVE json\]](./CVE-2020-17531.cve.json) [\[OSV json\]](./CVE-2020-17531.osv.json)
+
+
 
 _Last updated: 2020-12-08T12:41:08.137Z_
 
@@ -40,7 +42,9 @@ Apache Tapestry 4 reached end of life in 2008 and no update to address this issu
 
 ## Bypass of the fix for CVE-2019-0195 ## { #CVE-2021-27850 }
 
-CVE-2021-27850 [\[CVE json\]](./CVE-2021-27850.cve.json)
+CVE-2021-27850 [\[CVE json\]](./CVE-2021-27850.cve.json) [\[OSV json\]](./CVE-2021-27850.osv.json)
+
+
 
 _Last updated: 2021-04-15T07:35:21.760Z_
 
@@ -97,7 +101,9 @@ chain that leads to RCE (e.g. CommonsBeanUtils1 from ysoserial).Solution for thi
 
 ## An Information Disclosure due to insufficient input validation exists in Apache Tapestry 5.4.0 and later ## { #CVE-2021-30638 }
 
-CVE-2021-30638 [\[CVE json\]](./CVE-2021-30638.cve.json)
+CVE-2021-30638 [\[CVE json\]](./CVE-2021-30638.cve.json) [\[OSV json\]](./CVE-2021-30638.osv.json)
+
+
 
 _Last updated: 2021-04-27T18:27:24.498Z_
 
@@ -123,7 +129,9 @@ Information Exposure vulnerability in context asset handling of Apache Tapestry 
 
 ## Regular Expression Denial of Service (ReDoS) in ContentType.java. (GHSL-2022-022) ## { #CVE-2022-31781 }
 
-CVE-2022-31781 [\[CVE json\]](./CVE-2022-31781.cve.json)
+CVE-2022-31781 [\[CVE json\]](./CVE-2022-31781.cve.json) [\[OSV json\]](./CVE-2022-31781.osv.json)
+
+
 
 _Last updated: 2022-07-13T07:23:23.997Z_
 
@@ -152,7 +160,9 @@ Notice the vulnerability cannot be triggered by web requests in Tapestry code al
 
 ## Apache Tapestry prior to version 4 (EOL) allows RCE though deserialization of untrusted input ## { #CVE-2022-46366 }
 
-CVE-2022-46366 [\[CVE json\]](./CVE-2022-46366.cve.json)
+CVE-2022-46366 [\[CVE json\]](./CVE-2022-46366.cve.json) [\[OSV json\]](./CVE-2022-46366.osv.json)
+
+
 
 _Last updated: 2022-12-02T13:44:12.576Z_
 

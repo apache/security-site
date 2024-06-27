@@ -20,7 +20,8 @@ def package(product):
   if product == 'Apache Commons IO':
     return mavenPackage('org.apache.commons', 'commons-io')
   else:
-    raise ValueError(f'Cannot infer package for product {product}')
+    # https://github.com/ossf/osv-schema/issues/94
+    return None
 
 def range(versions):
   if versions['status'] != 'affected':
@@ -44,11 +45,13 @@ def range(versions):
   }
 
 def convert_affected(affected):
-  return {
-    'package': package(affected['product']),
-    # TODO severity
-    'ranges': list(map(range, affected['versions'])),
-  }
+  result = {}
+  p = package(affected['product'])
+  if p:
+    result['package'] = p
+  result['ranges'] = list(map(range, affected['versions']))
+  # TODO severity
+  return result
 
 def reference(reference):
   url = reference['url']

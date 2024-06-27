@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Tomcat: Request header mix-up between HTTP/2 streams ## { #CVE-2020-17527 }
 
-CVE-2020-17527 [\[CVE json\]](./CVE-2020-17527.cve.json)
+CVE-2020-17527 [\[CVE json\]](./CVE-2020-17527.cve.json) [\[OSV json\]](./CVE-2020-17527.osv.json)
+
+
 
 _Last updated: 2020-12-03T18:25:33.380Z_
 
@@ -36,7 +38,9 @@ While investigating bug 64830 it was discovered that Apache Tomcat 10.0.0-M1 to 
 
 ## Apache Tomcat information disclosure ## { #CVE-2021-24122 }
 
-CVE-2021-24122 [\[CVE json\]](./CVE-2021-24122.cve.json)
+CVE-2021-24122 [\[CVE json\]](./CVE-2021-24122.cve.json) [\[OSV json\]](./CVE-2021-24122.osv.json)
+
+
 
 _Last updated: 2021-01-14T14:26:04.037Z_
 
@@ -62,7 +66,9 @@ When serving resources from a network location using the NTFS file system, Apach
 
 ## Apache Tomcat h2c request mix-up ## { #CVE-2021-25122 }
 
-CVE-2021-25122 [\[CVE json\]](./CVE-2021-25122.cve.json)
+CVE-2021-25122 [\[CVE json\]](./CVE-2021-25122.cve.json) [\[OSV json\]](./CVE-2021-25122.osv.json)
+
+
 
 _Last updated: 2021-03-01T11:12:28.219Z_
 
@@ -83,7 +89,9 @@ When responding to new h2c connection requests, Apache Tomcat versions 10.0.0-M1
 
 ## Incomplete fix for CVE-2020-9484 ## { #CVE-2021-25329 }
 
-CVE-2021-25329 [\[CVE json\]](./CVE-2021-25329.cve.json)
+CVE-2021-25329 [\[CVE json\]](./CVE-2021-25329.cve.json) [\[OSV json\]](./CVE-2021-25329.osv.json)
+
+
 
 _Last updated: 2021-03-01T12:01:51.094Z_
 
@@ -109,7 +117,9 @@ The fix for CVE-2020-9484 was incomplete. When using Apache Tomcat 10.0.0-M1 to 
 
 ## DoS after non-blocking IO error ## { #CVE-2021-30639 }
 
-CVE-2021-30639 [\[CVE json\]](./CVE-2021-30639.cve.json)
+CVE-2021-30639 [\[CVE json\]](./CVE-2021-30639.cve.json) [\[OSV json\]](./CVE-2021-30639.osv.json)
+
+
 
 _Last updated: 2021-07-12T13:20:34.738Z_
 
@@ -131,7 +141,9 @@ Applications that do not use non-blocking I/O are not exposed to this vulnerabil
 
 ## Auth weakness in JNDIRealm ## { #CVE-2021-30640 }
 
-CVE-2021-30640 [\[CVE json\]](./CVE-2021-30640.cve.json)
+CVE-2021-30640 [\[CVE json\]](./CVE-2021-30640.cve.json) [\[OSV json\]](./CVE-2021-30640.osv.json)
+
+
 
 _Last updated: 2021-07-12T13:14:16.116Z_
 
@@ -153,7 +165,9 @@ A vulnerability in the JNDI Realm of Apache Tomcat allows an attacker to authent
 
 ## Incorrect Transfer-Encoding handling with HTTP/1.0 ## { #CVE-2021-33037 }
 
-CVE-2021-33037 [\[CVE json\]](./CVE-2021-33037.cve.json)
+CVE-2021-33037 [\[CVE json\]](./CVE-2021-33037.cve.json) [\[OSV json\]](./CVE-2021-33037.osv.json)
+
+
 
 _Last updated: 2021-07-12T13:31:58.821Z_
 
@@ -181,7 +195,9 @@ Apache Tomcat 10.0.0-M1 to 10.0.6, 9.0.0.M1 to 9.0.46 and 8.5.0 to 8.5.66 did no
 
 ## Apache Tomcat DoS with unexpected TLS packet ## { #CVE-2021-41079 }
 
-CVE-2021-41079 [\[CVE json\]](./CVE-2021-41079.cve.json)
+CVE-2021-41079 [\[CVE json\]](./CVE-2021-41079.cve.json) [\[OSV json\]](./CVE-2021-41079.osv.json)
+
+
 
 _Last updated: 2021-09-15T17:56:16.883Z_
 
@@ -206,7 +222,9 @@ Apache Tomcat 8.5.0 to 8.5.63, 9.0.0-M1 to 9.0.43 and 10.0.0-M1 to 10.0.2 did no
 
 ## DoS via memory leak with WebSocket connections ## { #CVE-2021-42340 }
 
-CVE-2021-42340 [\[CVE json\]](./CVE-2021-42340.cve.json)
+CVE-2021-42340 [\[CVE json\]](./CVE-2021-42340.cve.json) [\[OSV json\]](./CVE-2021-42340.osv.json)
+
+
 
 _Last updated: 2021-10-14T14:26:25.345Z_
 
@@ -228,7 +246,9 @@ The fix for bug 63362 present in Apache Tomcat 10.1.0-M1 to 10.1.0-M5, 10.0.0-M1
 
 ## Apache Tomcat: Information disclosure ## { #CVE-2021-43980 }
 
-CVE-2021-43980 [\[CVE json\]](./CVE-2021-43980.cve.json)
+CVE-2021-43980 [\[CVE json\]](./CVE-2021-43980.cve.json) [\[OSV json\]](./CVE-2021-43980.osv.json)
+
+
 
 _Last updated: 2022-09-28T13:18:54.072Z_
 
@@ -254,7 +274,9 @@ The simplified implementation of blocking reads and writes introduced in Tomcat 
 
 ## Local privilege escalation with FileStore ## { #CVE-2022-23181 }
 
-CVE-2022-23181 [\[CVE json\]](./CVE-2022-23181.cve.json)
+CVE-2022-23181 [\[CVE json\]](./CVE-2022-23181.cve.json) [\[OSV json\]](./CVE-2022-23181.osv.json)
+
+
 
 _Last updated: 2022-01-26T11:25:59.878Z_
 
@@ -276,7 +298,9 @@ The fix for bug CVE-2020-9484 introduced a time of check, time of use vulnerabil
 
 ## Response mix-up with WebSocket concurrent send and close ## { #CVE-2022-25762 }
 
-CVE-2022-25762 [\[CVE json\]](./CVE-2022-25762.cve.json)
+CVE-2022-25762 [\[CVE json\]](./CVE-2022-25762.cve.json) [\[OSV json\]](./CVE-2022-25762.osv.json)
+
+
 
 _Last updated: 2022-05-12T20:00:18.925Z_
 
@@ -296,7 +320,9 @@ If a web application sends a WebSocket message concurrently with the WebSocket c
 
 ## EncryptInterceptor does not provide complete protection on insecure networks ## { #CVE-2022-29885 }
 
-CVE-2022-29885 [\[CVE json\]](./CVE-2022-29885.cve.json)
+CVE-2022-29885 [\[CVE json\]](./CVE-2022-29885.cve.json) [\[OSV json\]](./CVE-2022-29885.osv.json)
+
+
 
 _Last updated: 2022-05-11T16:28:52.897Z_
 
@@ -322,7 +348,9 @@ The documentation of Apache Tomcat 10.1.0-M1 to 10.1.0-M14, 10.0.0-M1 to 10.0.20
 
 ## XSS in examples web application ## { #CVE-2022-34305 }
 
-CVE-2022-34305 [\[CVE json\]](./CVE-2022-34305.cve.json)
+CVE-2022-34305 [\[CVE json\]](./CVE-2022-34305.cve.json) [\[OSV json\]](./CVE-2022-34305.osv.json)
+
+
 
 _Last updated: 2022-06-23T10:22:24.067Z_
 
@@ -344,7 +372,9 @@ In Apache Tomcat 10.1.0-M1 to 10.1.0-M16, 10.0.0-M1 to 10.0.22, 9.0.30 to 9.0.64
 
 ## Apache Tomcat request smuggling via malformed content-length ## { #CVE-2022-42252 }
 
-CVE-2022-42252 [\[CVE json\]](./CVE-2022-42252.cve.json)
+CVE-2022-42252 [\[CVE json\]](./CVE-2022-42252.cve.json) [\[OSV json\]](./CVE-2022-42252.osv.json)
+
+
 
 _Last updated: 2022-11-18T12:36:02.907Z_
 
@@ -370,7 +400,9 @@ If Apache Tomcat 8.5.0 to 8.5.82, 9.0.0-M1 to 9.0.67, 10.0.0-M1 to 10.0.26 or 10
 
 ## JsonErrorReportValve escaping ## { #CVE-2022-45143 }
 
-CVE-2022-45143 [\[CVE json\]](./CVE-2022-45143.cve.json)
+CVE-2022-45143 [\[CVE json\]](./CVE-2022-45143.cve.json) [\[OSV json\]](./CVE-2022-45143.osv.json)
+
+
 
 _Last updated: 2023-03-21T17:23:52.275Z_
 
@@ -391,7 +423,9 @@ The JsonErrorReportValve in Apache Tomcat 8.5.83, 9.0.40 to 9.0.68 and 10.1.0-M1
 
 ## JSESSIONID Cookie missing secure attribute in some configurations ## { #CVE-2023-28708 }
 
-CVE-2023-28708 [\[CVE json\]](./CVE-2023-28708.cve.json)
+CVE-2023-28708 [\[CVE json\]](./CVE-2023-28708.cve.json) [\[OSV json\]](./CVE-2023-28708.osv.json)
+
+
 
 _Last updated: 2023-03-22T10:11:10.614Z_
 
@@ -417,7 +451,9 @@ _Last updated: 2023-03-22T10:11:10.614Z_
 
 ## Fix for CVE-2023-24998 is incomplete ## { #CVE-2023-28709 }
 
-CVE-2023-28709 [\[CVE json\]](./CVE-2023-28709.cve.json)
+CVE-2023-28709 [\[CVE json\]](./CVE-2023-28709.cve.json) [\[OSV json\]](./CVE-2023-28709.osv.json)
+
+
 
 _Last updated: 2023-05-22T10:09:00.405Z_
 
@@ -443,7 +479,9 @@ _Last updated: 2023-05-22T10:09:00.405Z_
 
 ## AJP response header mix-up ## { #CVE-2023-34981 }
 
-CVE-2023-34981 [\[CVE json\]](./CVE-2023-34981.cve.json)
+CVE-2023-34981 [\[CVE json\]](./CVE-2023-34981.cve.json) [\[OSV json\]](./CVE-2023-34981.osv.json)
+
+
 
 _Last updated: 2023-06-21T10:26:13.887Z_
 
@@ -469,7 +507,9 @@ A regression in the fix for bug 66512 in Apache Tomcat 11.0.0-M5, 10.1.8, 9.0.74
 
 ## Open redirect with FORM authentication ## { #CVE-2023-41080 }
 
-CVE-2023-41080 [\[CVE json\]](./CVE-2023-41080.cve.json)
+CVE-2023-41080 [\[CVE json\]](./CVE-2023-41080.cve.json) [\[OSV json\]](./CVE-2023-41080.osv.json)
+
+
 
 _Last updated: 2023-08-25T20:39:30.851Z_
 
@@ -523,7 +563,9 @@ _Last updated: 2023-09-28T21:30:55.612Z_
 
 ## FileUpload: DoS due to accumulation of temporary files on Windows ## { #CVE-2023-42794 }
 
-CVE-2023-42794 [\[CVE json\]](./CVE-2023-42794.cve.json)
+CVE-2023-42794 [\[CVE json\]](./CVE-2023-42794.cve.json) [\[OSV json\]](./CVE-2023-42794.osv.json)
+
+
 
 _Last updated: 2023-10-10T17:17:04.806Z_
 
@@ -553,7 +595,9 @@ disk being full.
 
 ## Failure during request clean-up leads to sensitive data leaking to subsequent requests ## { #CVE-2023-42795 }
 
-CVE-2023-42795 [\[CVE json\]](./CVE-2023-42795.cve.json)
+CVE-2023-42795 [\[CVE json\]](./CVE-2023-42795.cve.json) [\[OSV json\]](./CVE-2023-42795.osv.json)
+
+
 
 _Last updated: 2023-10-10T17:42:21.672Z_
 
@@ -577,7 +621,9 @@ information leaking from the current request/response to the next.<br></p><p>Use
 
 ## Trailer header parsing too lenient ## { #CVE-2023-45648 }
 
-CVE-2023-45648 [\[CVE json\]](./CVE-2023-45648.cve.json)
+CVE-2023-45648 [\[CVE json\]](./CVE-2023-45648.cve.json) [\[OSV json\]](./CVE-2023-45648.osv.json)
+
+
 
 _Last updated: 2023-10-10T18:38:37.767Z_
 
@@ -606,7 +652,9 @@ smuggling when behind a reverse proxy.<br></p><p><span style="background-color: 
 
 ## HTTP request smuggling via malformed trailer headers ## { #CVE-2023-46589 }
 
-CVE-2023-46589 [\[CVE json\]](./CVE-2023-46589.cve.json)
+CVE-2023-46589 [\[CVE json\]](./CVE-2023-46589.cve.json) [\[OSV json\]](./CVE-2023-46589.osv.json)
+
+
 
 _Last updated: 2023-12-05T09:49:53.674Z_
 
@@ -634,7 +682,9 @@ smuggling when behind a reverse proxy.<br></p><p><span style="background-color: 
 
 ## Leaking of unrelated request bodies in default error page ## { #CVE-2024-21733 }
 
-CVE-2024-21733 [\[CVE json\]](./CVE-2024-21733.cve.json)
+CVE-2024-21733 [\[CVE json\]](./CVE-2024-21733.cve.json) [\[OSV json\]](./CVE-2024-21733.osv.json)
+
+
 
 _Last updated: 2024-01-19T10:29:13.588Z_
 
@@ -658,7 +708,9 @@ Generation of Error Message Containing Sensitive Information vulnerability in Ap
 
 ## HTTP/2 header handling DoS ## { #CVE-2024-24549 }
 
-CVE-2024-24549 [\[CVE json\]](./CVE-2024-24549.cve.json)
+CVE-2024-24549 [\[CVE json\]](./CVE-2024-24549.cve.json) [\[OSV json\]](./CVE-2024-24549.osv.json)
+
+
 
 _Last updated: 2024-03-13T15:47:06.777Z_
 

@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Authenticated users can override system configurations in their requests which allows them to execute arbitrary code. ## { #CVE-2021-25646 }
 
-CVE-2021-25646 [\[CVE json\]](./CVE-2021-25646.cve.json)
+CVE-2021-25646 [\[CVE json\]](./CVE-2021-25646.cve.json) [\[OSV json\]](./CVE-2021-25646.osv.json)
+
+
 
 _Last updated: 2021-01-29T19:09:31.597Z_
 
@@ -39,7 +41,9 @@ Apache Druid includes the ability to execute user-provided JavaScript code embed
 
 ## Apache Druid Authenticated users can execute arbitrary code from malicious MySQL database systems. ## { #CVE-2021-26919 }
 
-CVE-2021-26919 [\[CVE json\]](./CVE-2021-26919.cve.json)
+CVE-2021-26919 [\[CVE json\]](./CVE-2021-26919.cve.json) [\[OSV json\]](./CVE-2021-26919.osv.json)
+
+
 
 _Last updated: 2021-03-30T07:47:52.941Z_
 
@@ -62,7 +66,9 @@ Apache Druid allows users to read data from other database systems using JDBC. T
 
 ## Apache Druid: The HTTP inputSource allows authenticated users to read data from other sources than intended ## { #CVE-2021-26920 }
 
-CVE-2021-26920 [\[CVE json\]](./CVE-2021-26920.cve.json)
+CVE-2021-26920 [\[CVE json\]](./CVE-2021-26920.cve.json) [\[OSV json\]](./CVE-2021-26920.osv.json)
+
+
 
 _Last updated: 2021-07-02T07:14:27.176Z_
 
@@ -85,7 +91,9 @@ In the Druid ingestion system, the InputSource is used for reading data from a c
 
 ## Apache Druid: The HTTP inputSource allows authenticated users to read data from other sources than intended (incomplete fix of CVE-2021-26920) ## { #CVE-2021-36749 }
 
-CVE-2021-36749 [\[CVE json\]](./CVE-2021-36749.cve.json)
+CVE-2021-36749 [\[CVE json\]](./CVE-2021-36749.cve.json) [\[OSV json\]](./CVE-2021-36749.osv.json)
+
+
 
 _Last updated: 2021-09-23T23:08:21.915Z_
 
@@ -111,7 +119,9 @@ This issue was previously mentioned as being fixed in 0.21.0 as per CVE-2021-269
 
 ## Reflected XSS on certain HTTP endpoints ## { #CVE-2021-44791 }
 
-CVE-2021-44791 [\[CVE json\]](./CVE-2021-44791.cve.json)
+CVE-2021-44791 [\[CVE json\]](./CVE-2021-44791.cve.json) [\[OSV json\]](./CVE-2021-44791.osv.json)
+
+
 
 _Last updated: 2022-07-07T18:29:34.319Z_
 
@@ -134,7 +144,9 @@ In Apache Druid 0.22.1 and earlier, certain specially-crafted links result in un
 
 ## Clickjacking in the web console ## { #CVE-2022-28889 }
 
-CVE-2022-28889 [\[CVE json\]](./CVE-2022-28889.cve.json)
+CVE-2022-28889 [\[CVE json\]](./CVE-2022-28889.cve.json) [\[OSV json\]](./CVE-2022-28889.osv.json)
+
+
 
 _Last updated: 2022-07-07T18:30:27.570Z_
 

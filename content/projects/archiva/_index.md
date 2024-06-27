@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Archiva Arbitrary user password reset vulnerability ## { #CVE-2022-29405 }
 
-CVE-2022-29405 [\[CVE json\]](./CVE-2022-29405.cve.json)
+CVE-2022-29405 [\[CVE json\]](./CVE-2022-29405.cve.json) [\[OSV json\]](./CVE-2022-29405.osv.json)
+
+
 
 _Last updated: 2022-05-25T07:11:14.322Z_
 
@@ -34,7 +36,9 @@ In Apache Archiva, any registered user can reset password for any users.  This i
 
 ## Apache Archiva prior to 2.2.9 may allow the anonymous user to read arbitrary files ## { #CVE-2022-40308 }
 
-CVE-2022-40308 [\[CVE json\]](./CVE-2022-40308.cve.json)
+CVE-2022-40308 [\[CVE json\]](./CVE-2022-40308.cve.json) [\[OSV json\]](./CVE-2022-40308.osv.json)
+
+
 
 _Last updated: 2022-11-15T13:08:09.007Z_
 
@@ -58,7 +62,9 @@ If anonymous read enabled, it's possible to read the database file directly with
 
 ## Apache Archiva prior to 2.2.9 allows an authenticated user to delete arbitrary directories ## { #CVE-2022-40309 }
 
-CVE-2022-40309 [\[CVE json\]](./CVE-2022-40309.cve.json)
+CVE-2022-40309 [\[CVE json\]](./CVE-2022-40309.cve.json) [\[OSV json\]](./CVE-2022-40309.osv.json)
+
+
 
 _Last updated: 2022-11-15T13:09:01.491Z_
 
@@ -81,7 +87,9 @@ Users with write permissions to a repository can delete arbitrary directories.
 
 ## Apache Archiva privilege escalation ## { #CVE-2023-28158 }
 
-CVE-2023-28158 [\[CVE json\]](./CVE-2023-28158.cve.json)
+CVE-2023-28158 [\[CVE json\]](./CVE-2023-28158.cve.json) [\[OSV json\]](./CVE-2023-28158.osv.json)
+
+
 
 _Last updated: 2023-03-29T12:21:30.415Z_
 
@@ -104,7 +112,9 @@ Privilege escalation via stored XSS using the file upload service to upload mali
 
 ## disabling user registration is not effective ## { #CVE-2024-27138 }
 
-CVE-2024-27138 [\[CVE json\]](./CVE-2024-27138.cve.json)
+CVE-2024-27138 [\[CVE json\]](./CVE-2024-27138.cve.json) [\[OSV json\]](./CVE-2024-27138.osv.json)
+
+
 
 _Last updated: 2024-03-01T15:41:11.276Z_
 
@@ -127,7 +137,9 @@ _Last updated: 2024-03-01T15:41:11.276Z_
 
 ## incorrect authentication potentially leading to account takeover ## { #CVE-2024-27139 }
 
-CVE-2024-27139 [\[CVE json\]](./CVE-2024-27139.cve.json)
+CVE-2024-27139 [\[CVE json\]](./CVE-2024-27139.cve.json) [\[OSV json\]](./CVE-2024-27139.osv.json)
+
+
 
 _Last updated: 2024-03-01T15:40:48.119Z_
 
@@ -150,7 +162,9 @@ _Last updated: 2024-03-01T15:40:48.119Z_
 
 ## reflected XSS ## { #CVE-2024-27140 }
 
-CVE-2024-27140 [\[CVE json\]](./CVE-2024-27140.cve.json)
+CVE-2024-27140 [\[CVE json\]](./CVE-2024-27140.cve.json) [\[OSV json\]](./CVE-2024-27140.osv.json)
+
+
 
 _Last updated: 2024-03-01T15:40:06.489Z_
 

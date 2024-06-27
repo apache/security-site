@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## sensitive information exposure via import ## { #CVE-2023-46851 }
 
-CVE-2023-46851 [\[CVE json\]](./CVE-2023-46851.cve.json)
+CVE-2023-46851 [\[CVE json\]](./CVE-2023-46851.cve.json) [\[OSV json\]](./CVE-2023-46851.osv.json)
+
+
 
 _Last updated: 2023-11-07T08:56:30.662Z_
 
@@ -39,7 +41,9 @@ _Last updated: 2023-11-07T08:56:30.662Z_
 
 ## sensitive information exposure via DNS rebinding ## { #CVE-2024-36471 }
 
-CVE-2024-36471 [\[CVE json\]](./CVE-2024-36471.cve.json)
+CVE-2024-36471 [\[CVE json\]](./CVE-2024-36471.cve.json) [\[OSV json\]](./CVE-2024-36471.osv.json)
+
+
 
 _Last updated: 2024-06-10T21:55:03.113Z_
 

@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Timing Attack Vulnerability for Apache Kafka Connect and Clients ## { #CVE-2021-38153 }
 
-CVE-2021-38153 [\[CVE json\]](./CVE-2021-38153.cve.json)
+CVE-2021-38153 [\[CVE json\]](./CVE-2021-38153.cve.json) [\[OSV json\]](./CVE-2021-38153.osv.json)
+
+
 
 _Last updated: 2021-09-22T08:43:16.777Z_
 
@@ -46,7 +48,9 @@ Some components in Apache Kafka use `Arrays.equals` to validate a password or ke
 
 ## Unauthenticated clients may cause OutOfMemoryError on Apache Kafka Brokers ## { #CVE-2022-34917 }
 
-CVE-2022-34917 [\[CVE json\]](./CVE-2022-34917.cve.json)
+CVE-2022-34917 [\[CVE json\]](./CVE-2022-34917.cve.json) [\[OSV json\]](./CVE-2022-34917.osv.json)
+
+
 
 _Last updated: 2022-09-30T05:44:20.899Z_
 
@@ -114,7 +118,9 @@ A possible security vulnerability has been identified in Apache Kafka Connect AP
 
 ## Potential incorrect access control during migration from ZK mode to KRaft mode ## { #CVE-2024-27309 }
 
-CVE-2024-27309 [\[CVE json\]](./CVE-2024-27309.cve.json)
+CVE-2024-27309 [\[CVE json\]](./CVE-2024-27309.cve.json) [\[OSV json\]](./CVE-2024-27309.osv.json)
+
+
 
 _Last updated: 2024-04-12T06:58:42.007Z_
 

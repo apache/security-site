@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Axis 1.x (EOL) may allow RCE when untrusted input is passed to getService ## { #CVE-2023-40743 }
 
-CVE-2023-40743 [\[CVE json\]](./CVE-2023-40743.cve.json)
+CVE-2023-40743 [\[CVE json\]](./CVE-2023-40743.cve.json) [\[OSV json\]](./CVE-2023-40743.osv.json)
+
+
 
 _Last updated: 2023-09-05T14:42:08.579Z_
 
@@ -39,7 +41,9 @@ _Last updated: 2023-09-05T14:42:08.579Z_
 
 ## Apache Axis 1.x (EOL) may allow SSRF when untrusted input is passed to the service admin HTTP API ## { #CVE-2023-51441 }
 
-CVE-2023-51441 [\[CVE json\]](./CVE-2023-51441.cve.json)
+CVE-2023-51441 [\[CVE json\]](./CVE-2023-51441.cve.json) [\[OSV json\]](./CVE-2023-51441.osv.json)
+
+
 
 _Last updated: 2024-01-31T09:07:08.922Z_
 

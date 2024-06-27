@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache ddlutils 1.0 readobject vulnerability ## { #CVE-2021-41616 }
 
-CVE-2021-41616 [\[CVE json\]](./CVE-2021-41616.cve.json)
+CVE-2021-41616 [\[CVE json\]](./CVE-2021-41616.cve.json) [\[OSV json\]](./CVE-2021-41616.osv.json)
+
+
 
 _Last updated: 2021-09-30T07:51:31.141Z_
 
@@ -36,7 +38,9 @@ Please note that DdlUtils is no longer being actively developed. To address the 
 
 ## LDAP injection vulnerability in authenticator ## { #CVE-2022-46337 }
 
-CVE-2022-46337 [\[CVE json\]](./CVE-2022-46337.cve.json)
+CVE-2022-46337 [\[CVE json\]](./CVE-2022-46337.cve.json) [\[OSV json\]](./CVE-2022-46337.osv.json)
+
+
 
 _Last updated: 2024-01-02T18:36:19.559Z_
 

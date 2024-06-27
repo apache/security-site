@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache CXF Reflected XSS in the services listing page via the styleSheetPath ## { #CVE-2020-13954 }
 
-CVE-2020-13954 [\[CVE json\]](./CVE-2020-13954.cve.json)
+CVE-2020-13954 [\[CVE json\]](./CVE-2020-13954.cve.json) [\[OSV json\]](./CVE-2020-13954.osv.json)
+
+
 
 _Last updated: 2020-11-12T12:45:31.751Z_
 
@@ -43,7 +45,9 @@ Please note that this is a separate issue to CVE-2019-17573.
 
 ## OAuth 2 authorization service vulnerable to DDos attacks ## { #CVE-2021-22696 }
 
-CVE-2021-22696 [\[CVE json\]](./CVE-2021-22696.cve.json)
+CVE-2021-22696 [\[CVE json\]](./CVE-2021-22696.cve.json) [\[OSV json\]](./CVE-2021-22696.osv.json)
+
+
 
 _Last updated: 2021-04-02T09:58:49.120Z_
 
@@ -68,7 +72,9 @@ This issue affects Apache CXF versions prior to 3.4.3; Apache CXF versions prior
 
 ## Apache CXF Denial of service vulnerability in parsing JSON via JsonMapObjectReaderWriter ## { #CVE-2021-30468 }
 
-CVE-2021-30468 [\[CVE json\]](./CVE-2021-30468.cve.json)
+CVE-2021-30468 [\[CVE json\]](./CVE-2021-30468.cve.json) [\[OSV json\]](./CVE-2021-30468.osv.json)
+
+
 
 _Last updated: 2021-06-16T11:56:32.302Z_
 
@@ -89,7 +95,9 @@ This issue affects Apache CXF versions prior to 3.4.4; Apache CXF versions prior
 
 ## Apache CXF directory listing / code exfiltration ## { #CVE-2022-46363 }
 
-CVE-2022-46363 [\[CVE json\]](./CVE-2022-46363.cve.json)
+CVE-2022-46363 [\[CVE json\]](./CVE-2022-46363.cve.json) [\[OSV json\]](./CVE-2022-46363.osv.json)
+
+
 
 _Last updated: 2022-12-13T14:47:26.050Z_
 
@@ -113,7 +121,9 @@ A vulnerability in Apache CXF before versions 3.5.5 and 3.4.10 allows an attacke
 
 ## Apache CXF SSRF Vulnerability ## { #CVE-2022-46364 }
 
-CVE-2022-46364 [\[CVE json\]](./CVE-2022-46364.cve.json)
+CVE-2022-46364 [\[CVE json\]](./CVE-2022-46364.cve.json) [\[OSV json\]](./CVE-2022-46364.osv.json)
+
+
 
 _Last updated: 2022-12-13T15:44:20.951Z_
 
@@ -137,7 +147,9 @@ A SSRF vulnerability in parsing the&nbsp;href attribute of XOP:Include in MTOM r
 
 ## Apache CXF SSRF Vulnerability using the Aegis databinding ## { #CVE-2024-28752 }
 
-CVE-2024-28752 [\[CVE json\]](./CVE-2024-28752.cve.json)
+CVE-2024-28752 [\[CVE json\]](./CVE-2024-28752.cve.json) [\[OSV json\]](./CVE-2024-28752.osv.json)
+
+
 
 _Last updated: 2024-03-15T10:28:02.596Z_
 

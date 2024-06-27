@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Unvalidated input may lead to path traversal and XXE ## { #CVE-2023-49735 }
 
-CVE-2023-49735 [\[CVE json\]](./CVE-2023-49735.cve.json)
+CVE-2023-49735 [\[CVE json\]](./CVE-2023-49735.cve.json) [\[OSV json\]](./CVE-2023-49735.osv.json)
+
+
 
 _Last updated: 2023-12-12T08:40:25.303Z_
 

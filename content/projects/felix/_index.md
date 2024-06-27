@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## XSS in healthcheck webconsole plugin ## { #CVE-2023-38435 }
 
-CVE-2023-38435 [\[CVE json\]](./CVE-2023-38435.cve.json)
+CVE-2023-38435 [\[CVE json\]](./CVE-2023-38435.cve.json) [\[OSV json\]](./CVE-2023-38435.osv.json)
+
+
 
 _Last updated: 2023-07-31T08:08:18.396Z_
 

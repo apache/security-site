@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache DolphinScheduler (incubating) Permission vulnerability ## { #CVE-2020-13922 }
 
-CVE-2020-13922 [\[CVE json\]](./CVE-2020-13922.cve.json)
+CVE-2020-13922 [\[CVE json\]](./CVE-2020-13922.cve.json) [\[OSV json\]](./CVE-2020-13922.osv.json)
+
+
 
 _Last updated: 2021-01-11T09:18:42.255Z_
 
@@ -38,7 +40,9 @@ Versions of Apache DolphinScheduler prior to 1.3.2 allowed an ordinary user unde
 
 ## DolphinScheduler mysql jdbc connector parameters deserialize remote code execution ## { #CVE-2021-27644 }
 
-CVE-2021-27644 [\[CVE json\]](./CVE-2021-27644.cve.json)
+CVE-2021-27644 [\[CVE json\]](./CVE-2021-27644.cve.json) [\[OSV json\]](./CVE-2021-27644.osv.json)
+
+
 
 _Last updated: 2021-11-01T09:12:08.670Z_
 
@@ -62,7 +66,9 @@ In Apache DolphinScheduler before 1.3.6 versions, authorized users can use SQL i
 
 ## Apache DolphinScheduler user registration is vulnerable to ReDoS attacks ## { #CVE-2022-25598 }
 
-CVE-2022-25598 [\[CVE json\]](./CVE-2022-25598.cve.json)
+CVE-2022-25598 [\[CVE json\]](./CVE-2022-25598.cve.json) [\[OSV json\]](./CVE-2022-25598.osv.json)
+
+
 
 _Last updated: 2022-11-01T03:18:38.664Z_
 
@@ -85,7 +91,9 @@ Apache DolphinScheduler user registration is vulnerable to Regular express Denia
 
 ## Apache DolphinScheduler exposes files without authentication ## { #CVE-2022-26884 }
 
-CVE-2022-26884 [\[CVE json\]](./CVE-2022-26884.cve.json)
+CVE-2022-26884 [\[CVE json\]](./CVE-2022-26884.cve.json) [\[OSV json\]](./CVE-2022-26884.osv.json)
+
+
 
 _Last updated: 2022-10-28T01:44:55.028Z_
 
@@ -104,7 +112,9 @@ Users can read any files by log server, Apache DolphinScheduler users should upg
 
 ## Apache DolphinScheduler config file read by task risk ## { #CVE-2022-26885 }
 
-CVE-2022-26885 [\[CVE json\]](./CVE-2022-26885.cve.json)
+CVE-2022-26885 [\[CVE json\]](./CVE-2022-26885.cve.json) [\[OSV json\]](./CVE-2022-26885.osv.json)
+
+
 
 _Last updated: 2022-11-24T11:55:57.562Z_
 
@@ -123,7 +133,9 @@ When using tasks to read config files, there is a risk of database password disc
 
 ## Apache DolphinScheduler prior to 3.0.0 allows path traversal ## { #CVE-2022-34662 }
 
-CVE-2022-34662 [\[CVE json\]](./CVE-2022-34662.cve.json)
+CVE-2022-34662 [\[CVE json\]](./CVE-2022-34662.cve.json) [\[OSV json\]](./CVE-2022-34662.osv.json)
+
+
 
 _Last updated: 2022-11-01T15:28:47.599Z_
 
@@ -146,7 +158,9 @@ When users add resources to the resource center with a relation path will cause 
 
 ## Apache DolphinScheduler prior to 2.0.5 have command execution vulnerability ## { #CVE-2022-45462 }
 
-CVE-2022-45462 [\[CVE json\]](./CVE-2022-45462.cve.json)
+CVE-2022-45462 [\[CVE json\]](./CVE-2022-45462.cve.json) [\[OSV json\]](./CVE-2022-45462.osv.json)
+
+
 
 _Last updated: 2022-11-23T02:24:20.816Z_
 
@@ -169,7 +183,9 @@ Alarm instance management has command injection when there is a specific command
 
 ## Remote command execution Vulnerability in script alert plugin ## { #CVE-2022-45875 }
 
-CVE-2022-45875 [\[CVE json\]](./CVE-2022-45875.cve.json)
+CVE-2022-45875 [\[CVE json\]](./CVE-2022-45875.cve.json) [\[OSV json\]](./CVE-2022-45875.osv.json)
+
+
 
 _Last updated: 2023-11-22T08:37:58.550Z_
 
@@ -193,7 +209,9 @@ Improper validation of script alert plugin parameters in Apache DolphinScheduler
 
 ## Apache DolphinScheduler 3.0.0 to 3.1.1 python gateway has improper authentication ## { #CVE-2023-25601 }
 
-CVE-2023-25601 [\[CVE json\]](./CVE-2023-25601.cve.json)
+CVE-2023-25601 [\[CVE json\]](./CVE-2023-25601.cve.json) [\[OSV json\]](./CVE-2023-25601.osv.json)
+
+
 
 _Last updated: 2023-04-20T15:06:54.846Z_
 
@@ -212,7 +230,9 @@ On version 3.0.0 through 3.1.1, Apache DolphinScheduler's python gateway suffere
 
 ## Apache dolphinscheduler sensitive information disclosure ## { #CVE-2023-48796 }
 
-CVE-2023-48796 [\[CVE json\]](./CVE-2023-48796.cve.json)
+CVE-2023-48796 [\[CVE json\]](./CVE-2023-48796.cve.json) [\[OSV json\]](./CVE-2023-48796.osv.json)
+
+
 
 _Last updated: 2023-11-24T07:56:40.315Z_
 
@@ -231,7 +251,9 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ## Information Leakage Vulnerability ## { #CVE-2023-49068 }
 
-CVE-2023-49068 [\[CVE json\]](./CVE-2023-49068.cve.json)
+CVE-2023-49068 [\[CVE json\]](./CVE-2023-49068.cve.json) [\[OSV json\]](./CVE-2023-49068.osv.json)
+
+
 
 _Last updated: 2023-11-27T09:49:38.223Z_
 
@@ -255,7 +277,9 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ## Remote Code Execution in Apache Dolphinscheduler ## { #CVE-2023-49109 }
 
-CVE-2023-49109 [\[CVE json\]](./CVE-2023-49109.cve.json)
+CVE-2023-49109 [\[CVE json\]](./CVE-2023-49109.cve.json) [\[OSV json\]](./CVE-2023-49109.osv.json)
+
+
 
 _Last updated: 2024-02-20T06:02:40.133Z_
 
@@ -280,7 +304,9 @@ Exposure of Remote Code Execution in Apache Dolphinscheduler.<br><br>This issue 
 
 ## Insecure TLS TrustManager used in HttpUtil ## { #CVE-2023-49250 }
 
-CVE-2023-49250 [\[CVE json\]](./CVE-2023-49250.cve.json)
+CVE-2023-49250 [\[CVE json\]](./CVE-2023-49250.cve.json) [\[OSV json\]](./CVE-2023-49250.osv.json)
+
+
 
 _Last updated: 2024-02-20T05:59:07.770Z_
 
@@ -300,7 +326,9 @@ _Last updated: 2024-02-20T05:59:07.770Z_
 
 ## Arbitrary js execute as root for authenticated users ## { #CVE-2023-49299 }
 
-CVE-2023-49299 [\[CVE json\]](./CVE-2023-49299.cve.json)
+CVE-2023-49299 [\[CVE json\]](./CVE-2023-49299.cve.json) [\[OSV json\]](./CVE-2023-49299.osv.json)
+
+
 
 _Last updated: 2023-12-30T16:30:14.065Z_
 
@@ -324,7 +352,9 @@ Improper Input Validation vulnerability in Apache DolphinScheduler. An&nbsp;<spa
 
 ## Authenticated users could delete UDFs in resource center they were not authorized for ## { #CVE-2023-49620 }
 
-CVE-2023-49620 [\[CVE json\]](./CVE-2023-49620.cve.json)
+CVE-2023-49620 [\[CVE json\]](./CVE-2023-49620.cve.json) [\[OSV json\]](./CVE-2023-49620.osv.json)
+
+
 
 _Last updated: 2023-11-30T08:16:57.761Z_
 
@@ -375,7 +405,9 @@ Session Fixation Apache DolphinScheduler before version 3.2.0, which session is 
 
 ## Arbitrary File Read Vulnerability ## { #CVE-2023-51770 }
 
-CVE-2023-51770 [\[CVE json\]](./CVE-2023-51770.cve.json)
+CVE-2023-51770 [\[CVE json\]](./CVE-2023-51770.cve.json) [\[OSV json\]](./CVE-2023-51770.osv.json)
+
+
 
 _Last updated: 2024-02-20T06:00:50.765Z_
 
@@ -401,7 +433,9 @@ Arbitrary File Read Vulnerability in Apache Dolphinscheduler.<br><br>This issue 
 
 ## Arbitrary js execution as root for authenticated users ## { #CVE-2024-23320 }
 
-CVE-2024-23320 [\[CVE json\]](./CVE-2024-23320.cve.json)
+CVE-2024-23320 [\[CVE json\]](./CVE-2024-23320.cve.json) [\[OSV json\]](./CVE-2024-23320.osv.json)
+
+
 
 _Last updated: 2024-02-23T16:36:40.046Z_
 

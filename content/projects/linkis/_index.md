@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## The Apache Linkis JDBC EngineConn module has a RCE Vulnerability ## { #CVE-2022-39944 }
 
-CVE-2022-39944 [\[CVE json\]](./CVE-2022-39944.cve.json)
+CVE-2022-39944 [\[CVE json\]](./CVE-2022-39944.cve.json) [\[OSV json\]](./CVE-2022-39944.osv.json)
+
+
 
 _Last updated: 2022-10-26T12:44:23.967Z_
 
@@ -39,7 +41,9 @@ In Apache Linkis <=1.2.0 when used with the MySQL Connector/J, a deserialization
 
 ## The DatasourceManager module has a serialization attack vulnerability ## { #CVE-2022-44645 }
 
-CVE-2022-44645 [\[CVE json\]](./CVE-2022-44645.cve.json)
+CVE-2022-44645 [\[CVE json\]](./CVE-2022-44645.cve.json) [\[OSV json\]](./CVE-2022-44645.osv.json)
+
+
 
 _Last updated: 2023-02-03T07:43:51.516Z_
 
@@ -66,7 +70,9 @@ In Apache Linkis &lt;=1.3.0 when used with the MySQL Connector/J in the data sou
 
 ## The DatasourceManager module has a Local File Read Vulnerability ## { #CVE-2022-44644 }
 
-CVE-2022-44644 [\[CVE json\]](./CVE-2022-44644.cve.json)
+CVE-2022-44644 [\[CVE json\]](./CVE-2022-44644.cve.json) [\[OSV json\]](./CVE-2022-44644.osv.json)
+
+
 
 _Last updated: 2023-03-15T08:36:49.053Z_
 
@@ -90,7 +96,9 @@ In Apache Linkis &lt;=1.3.0 when used with the MySQL Connector/J in the data sou
 
 ## Apache Linkis publicsercice module unrestricted upload of file ## { #CVE-2023-27602 }
 
-CVE-2023-27602 [\[CVE json\]](./CVE-2023-27602.cve.json)
+CVE-2023-27602 [\[CVE json\]](./CVE-2023-27602.cve.json) [\[OSV json\]](./CVE-2023-27602.osv.json)
+
+
 
 _Last updated: 2023-04-11T03:15:38.418Z_
 
@@ -187,7 +195,9 @@ We recommend users upgrade the version of Linkis to version 1.3.2 And modify the
 
 ## Apache Linkis JDBC EngineCon  has a deserialization command execution ## { #CVE-2023-29215 }
 
-CVE-2023-29215 [\[CVE json\]](./CVE-2023-29215.cve.json)
+CVE-2023-29215 [\[CVE json\]](./CVE-2023-29215.cve.json) [\[OSV json\]](./CVE-2023-29215.osv.json)
+
+
 
 _Last updated: 2023-04-10T07:35:21.175Z_
 
@@ -214,7 +224,9 @@ deserialization vulnerability and eventually lead to remote code execution. Ther
 
 ## DataSource module Oracle SQL Database Password Logged ## { #CVE-2023-50740 }
 
-CVE-2023-50740 [\[CVE json\]](./CVE-2023-50740.cve.json)
+CVE-2023-50740 [\[CVE json\]](./CVE-2023-50740.cve.json) [\[OSV json\]](./CVE-2023-50740.osv.json)
+
+
 
 _Last updated: 2024-03-06T13:44:51.798Z_
 

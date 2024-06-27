@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Shiro before 1.8.0, when using Apache Shiro with Spring Boot, a specially crafted HTTP request may cause an authentication bypass ## { #CVE-2021-41303 }
 
-CVE-2021-41303 [\[CVE json\]](./CVE-2021-41303.cve.json)
+CVE-2021-41303 [\[CVE json\]](./CVE-2021-41303.cve.json) [\[OSV json\]](./CVE-2021-41303.osv.json)
+
+
 
 _Last updated: 2021-09-17T08:17:09.454Z_
 
@@ -40,7 +42,9 @@ Users should update to Apache Shiro 1.8.0.
 
 ## Authentication Bypass Vulnerability ## { #CVE-2022-32532 }
 
-CVE-2022-32532 [\[CVE json\]](./CVE-2022-32532.cve.json)
+CVE-2022-32532 [\[CVE json\]](./CVE-2022-32532.cve.json) [\[OSV json\]](./CVE-2022-32532.osv.json)
+
+
 
 _Last updated: 2022-06-28T23:13:16.050Z_
 
@@ -63,7 +67,9 @@ Apache Shiro before 1.9.1, A RegexRequestMatcher can be misconfigured to be bypa
 
 ## Authentication Bypass Vulnerability in Shiro when forwarding or including via RequestDispatcher ## { #CVE-2022-40664 }
 
-CVE-2022-40664 [\[CVE json\]](./CVE-2022-40664.cve.json)
+CVE-2022-40664 [\[CVE json\]](./CVE-2022-40664.cve.json) [\[OSV json\]](./CVE-2022-40664.osv.json)
+
+
 
 _Last updated: 2022-10-12T07:07:53.344Z_
 
@@ -109,7 +115,9 @@ _Last updated: 2023-01-14T09:33:37.695Z_
 
 ## Apache Shiro before 1.12.0, or 2.0.0-alpha-3, may be susceptible to a path traversal attack when used together with APIs or other web frameworks that route requests based on non-normalized requests. ## { #CVE-2023-34478 }
 
-CVE-2023-34478 [\[CVE json\]](./CVE-2023-34478.cve.json)
+CVE-2023-34478 [\[CVE json\]](./CVE-2023-34478.cve.json) [\[OSV json\]](./CVE-2023-34478.osv.json)
+
+
 
 _Last updated: 2023-07-24T18:24:43.013Z_
 
@@ -134,7 +142,9 @@ Apache Shiro, before 1.12.0 or 2.0.0-alpha-3, <span style="background-color: rgb
 
 ## Apache Shiro before 1.13.0 or 2.0.0-alpha-4, may be susceptible to a path traversal attack that results in an authentication bypass when used together with path rewriting  ## { #CVE-2023-46749 }
 
-CVE-2023-46749 [\[CVE json\]](./CVE-2023-46749.cve.json)
+CVE-2023-46749 [\[CVE json\]](./CVE-2023-46749.cve.json) [\[OSV json\]](./CVE-2023-46749.osv.json)
+
+
 
 _Last updated: 2024-01-19T18:12:43.905Z_
 
@@ -154,7 +164,9 @@ Apache Shiro before 1.13.0 or 2.0.0-alpha-4, may be susceptible to a path traver
 
 ## URL Redirection to Untrusted Site ('Open Redirect') vulnerability in FORM authentication feature Apache Shiro. ## { #CVE-2023-46750 }
 
-CVE-2023-46750 [\[CVE json\]](./CVE-2023-46750.cve.json)
+CVE-2023-46750 [\[CVE json\]](./CVE-2023-46750.cve.json) [\[OSV json\]](./CVE-2023-46750.osv.json)
+
+
 
 _Last updated: 2023-12-14T08:15:56.341Z_
 

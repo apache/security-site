@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Timing attack in Cookie signature verification ## { #CVE-2020-1926 }
 
-CVE-2020-1926 [\[CVE json\]](./CVE-2020-1926.cve.json)
+CVE-2020-1926 [\[CVE json\]](./CVE-2020-1926.cve.json) [\[OSV json\]](./CVE-2020-1926.osv.json)
+
+
 
 _Last updated: 2021-03-16T12:44:51.635Z_
 
@@ -39,7 +41,9 @@ Apache Hive cookie signature verification used a non constant time comparison wh
 
 ## Apache Hive Security vulnerability in Hive with UDFs ## { #CVE-2021-34538 }
 
-CVE-2021-34538 [\[CVE json\]](./CVE-2021-34538.cve.json)
+CVE-2021-34538 [\[CVE json\]](./CVE-2021-34538.cve.json) [\[OSV json\]](./CVE-2021-34538.osv.json)
+
+
 
 _Last updated: 2022-07-16T07:05:22.225Z_
 
@@ -62,7 +66,9 @@ Apache Hive before 3.1.3 "CREATE" and "DROP" function operations does not check 
 
 ## Arbitrary command execution via JDBC driver ## { #CVE-2023-35701 }
 
-CVE-2023-35701 [\[CVE json\]](./CVE-2023-35701.cve.json)
+CVE-2023-35701 [\[CVE json\]](./CVE-2023-35701.cve.json) [\[OSV json\]](./CVE-2023-35701.osv.json)
+
+
 
 _Last updated: 2024-05-03T08:11:05.595Z_
 

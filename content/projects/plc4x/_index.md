@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache PLC4X 0.9.0 Buffer overflow in PLC4C via crafted server response ## { #CVE-2021-43083 }
 
-CVE-2021-43083 [\[CVE json\]](./CVE-2021-43083.cve.json)
+CVE-2021-43083 [\[CVE json\]](./CVE-2021-43083.cve.json) [\[OSV json\]](./CVE-2021-43083.osv.json)
+
+
 
 _Last updated: 2022-02-04T08:46:33.224Z_
 

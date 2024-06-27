@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Login check vulnerability by session Id ## { #CVE-2022-38369 }
 
-CVE-2022-38369 [\[CVE json\]](./CVE-2022-38369.cve.json)
+CVE-2022-38369 [\[CVE json\]](./CVE-2022-38369.cve.json) [\[OSV json\]](./CVE-2022-38369.osv.json)
+
+
 
 _Last updated: 2022-09-05T09:42:50.630Z_
 
@@ -34,7 +36,9 @@ Apache IoTDB version 0.13.0 is vulnerable by session id attack. Users should upg
 
 ## No authorization of DatabaseConnectController in grafana-connector.  ## { #CVE-2022-38370 }
 
-CVE-2022-38370 [\[CVE json\]](./CVE-2022-38370.cve.json)
+CVE-2022-38370 [\[CVE json\]](./CVE-2022-38370.cve.json) [\[OSV json\]](./CVE-2022-38370.osv.json)
+
+
 
 _Last updated: 2022-09-05T09:43:12.381Z_
 
@@ -53,7 +57,9 @@ Apache IoTDB grafana-connector version 0.13.0 contains an interface without auth
 
 ## Apache IoTDB prior to 0.13.3 allows DoS ## { #CVE-2022-43766 }
 
-CVE-2022-43766 [\[CVE json\]](./CVE-2022-43766.cve.json)
+CVE-2022-43766 [\[CVE json\]](./CVE-2022-43766.cve.json) [\[OSV json\]](./CVE-2022-43766.osv.json)
+
+
 
 _Last updated: 2022-10-26T16:04:23.572Z_
 
@@ -76,7 +82,9 @@ Apache IoTDB version 0.12.2 to 0.12.6, 0.13.0 to 0.13.2 are vulnerable to a Deni
 
 ## apache/iotdb-web-workbench: forge the JWTToken to access workbench ## { #CVE-2023-24829 }
 
-CVE-2023-24829 [\[CVE json\]](./CVE-2023-24829.cve.json)
+CVE-2023-24829 [\[CVE json\]](./CVE-2023-24829.cve.json) [\[OSV json\]](./CVE-2023-24829.osv.json)
+
+
 
 _Last updated: 2023-03-08T16:15:02.969Z_
 
@@ -95,7 +103,9 @@ Incorrect Authorization vulnerability in Apache Software Foundation Apache IoTDB
 
 ## apache/iotdb-web-workbench: create a user without authorization ## { #CVE-2023-24830 }
 
-CVE-2023-24830 [\[CVE json\]](./CVE-2023-24830.cve.json)
+CVE-2023-24830 [\[CVE json\]](./CVE-2023-24830.cve.json) [\[OSV json\]](./CVE-2023-24830.osv.json)
+
+
 
 _Last updated: 2023-03-08T16:15:22.623Z_
 
@@ -114,7 +124,9 @@ Improper Authentication vulnerability in Apache Software Foundation Apache IoTDB
 
 ## Apache IoTDB grafana-connector Login Bypass Vulnerability ## { #CVE-2023-24831 }
 
-CVE-2023-24831 [\[CVE json\]](./CVE-2023-24831.cve.json)
+CVE-2023-24831 [\[CVE json\]](./CVE-2023-24831.cve.json) [\[OSV json\]](./CVE-2023-24831.osv.json)
+
+
 
 _Last updated: 2023-04-18T01:31:44.944Z_
 
@@ -133,7 +145,9 @@ Improper Authentication vulnerability in Apache Software Foundation Apache IoTDB
 
 ## apache/iotdb-web-workbench: forge the JWTToken to access workbench ## { #CVE-2023-30771 }
 
-CVE-2023-30771 [\[CVE json\]](./CVE-2023-30771.cve.json)
+CVE-2023-30771 [\[CVE json\]](./CVE-2023-30771.cve.json) [\[OSV json\]](./CVE-2023-30771.osv.json)
+
+
 
 _Last updated: 2023-04-17T07:26:11.955Z_
 
@@ -152,7 +166,9 @@ Incorrect Authorization vulnerability in Apache Software Foundation Apache IoTDB
 
 ## Remote Code Execution (RCE) risk via the UDF ## { #CVE-2023-46226 }
 
-CVE-2023-46226 [\[CVE json\]](./CVE-2023-46226.cve.json)
+CVE-2023-46226 [\[CVE json\]](./CVE-2023-46226.cve.json) [\[OSV json\]](./CVE-2023-46226.osv.json)
+
+
 
 _Last updated: 2024-01-15T10:36:23.883Z_
 
@@ -175,7 +191,9 @@ Remote Code Execution vulnerability in Apache IoTDB.<p>This issue affects Apache
 
 ## Unsafe deserialize map in Sync Tool ## { #CVE-2023-51656 }
 
-CVE-2023-51656 [\[CVE json\]](./CVE-2023-51656.cve.json)
+CVE-2023-51656 [\[CVE json\]](./CVE-2023-51656.cve.json) [\[OSV json\]](./CVE-2023-51656.osv.json)
+
+
 
 _Last updated: 2023-12-21T11:47:55.799Z_
 
