@@ -1959,6 +1959,30 @@ _Last updated: 2024-02-20T20:30:25.779Z_
 * Noah Stapp (reporter)
 
 
+## Cache Control - Storage of Sensitive Data in Browser Cache  ## { #CVE-2024-25142 }
+
+CVE-2024-25142 [\[CVE json\]](./CVE-2024-25142.cve.json)
+
+_Last updated: 2024-06-14T08:25:32.229Z_
+
+### Affected
+
+* Apache Airflow before 2.9.2
+
+
+### Description
+
+<p>Use of Web Browser Cache Containing Sensitive Information vulnerability in Apache Airflow.&nbsp;</p><p>Airflow did not return "Cache-Control" header for dynamic content, which in case of some browsers could result in potentially storing sensitive data in local cache of the browser.</p><p>This issue affects Apache Airflow: before 2.9.2.</p><p>Users are recommended to upgrade to version 2.9.2, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/airflow/pull/39550
+* https://lists.apache.org/thread/cg1j28lk0fhzthk0of1g7vy7p2n1j7nr
+
+
+### Credits
+* Jens Scheffler (reporter)
+
+
 ## Overly broad default permissions for Viewer/Ops (audit logs) ## { #CVE-2024-26280 }
 
 CVE-2024-26280 [\[CVE json\]](./CVE-2024-26280.cve.json)
@@ -2109,3 +2133,28 @@ Airflow versions 2.7.0 through 2.8.4 have a vulnerability that allows an authent
 ### Credits
 * Manmeet Rangoola (finder)
 * Jarek Potiuk (remediation developer)
+
+
+## XSS vulnerability in Task Instance Log/Log Details ## { #CVE-2024-32077 }
+
+CVE-2024-32077 [\[CVE json\]](./CVE-2024-32077.cve.json)
+
+_Last updated: 2024-05-14T10:43:17.698Z_
+
+### Affected
+
+* Apache Airflow from 2.9.0 before 2.9.1
+
+
+### Description
+
+Apache Airflow version 2.9.0 has a vulnerability that allows an authenticated attacker to inject malicious data into the task instance logs.&nbsp;<br>Users are recommended to upgrade to version 2.9.1, which fixes this issue.<br>
+
+### References
+* https://github.com/apache/airflow/pull/38882
+* https://lists.apache.org/thread/gsjmnrqb3m5fzp0vgpty1jxcywo91v77
+
+
+### Credits
+* Ming (finder)
+* Jens Scheffler (remediation developer)

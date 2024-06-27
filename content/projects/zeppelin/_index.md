@@ -195,31 +195,6 @@ Improper Input Validation vulnerability in Apache Zeppelin.<br><br>By adding rel
 * Kai Zhao (finder)
 
 
-## Code injection by Shell interpreter ## { #CVE-2024-31861 }
-
-CVE-2024-31861 [\[CVE json\]](./CVE-2024-31861.cve.json)
-
-_Last updated: 2024-04-11T09:38:08.162Z_
-
-### Affected
-
-* Apache Zeppelin from 0.10.1 before 0.11.1
-
-
-### Description
-
-Improper Control of Generation of Code ('Code Injection') vulnerability in Apache Zeppelin.<br><br>The attackers can use Shell interpreter as a code generation gateway, and execute the generated code as a normal way.<br><p>This issue affects Apache Zeppelin: from 0.10.1 before 0.11.1.</p><p>Users are recommended to upgrade to version 0.11.1, which doesn't have Shell interpreter by default.</p>
-
-### References
-* https://github.com/apache/zeppelin/pull/4708
-* https://lists.apache.org/thread/99clvqrht5l5r6kzjzwg2kj94boc9sfh
-
-
-### Credits
-* Esa Hiltunen (finder)
-* https://teragrep.com (finder)
-
-
 ## Denial of service with invalid notebook name ## { #CVE-2024-31862 }
 
 CVE-2024-31862 [\[CVE json\]](./CVE-2024-31862.cve.json)

@@ -431,3 +431,55 @@ Possible path traversal in Apache OFBiz allowing authentication bypass.<br>Users
 
 ### Credits
 * YunPeng - 郭 运鹏 <puata123@outlook.com> (finder)
+
+
+## Path traversal leading to RCE ## { #CVE-2024-32113 }
+
+CVE-2024-32113 [\[CVE json\]](./CVE-2024-32113.cve.json)
+
+_Last updated: 2024-05-08T14:49:53.237Z_
+
+### Affected
+
+* Apache OFBiz before 18.12.13
+
+
+### Description
+
+Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache OFBiz.<p>This issue affects Apache OFBiz: before 18.12.13.</p><p>Users are recommended to upgrade to version 18.12.13, which fixes the issue.</p>
+
+### References
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html
+* https://issues.apache.org/jira/browse/OFBIZ-13006
+* https://lists.apache.org/thread/w6s60okgkxp2th1sr8vx0ndmgk68fqrd
+
+
+### Credits
+* Qiyi Zhang (RacerZ) @secsys from Fudan (finder)
+
+
+## Path traversal leading to a RCE ## { #CVE-2024-36104 }
+
+CVE-2024-36104 [\[CVE json\]](./CVE-2024-36104.cve.json)
+
+_Last updated: 2024-06-03T06:55:24.928Z_
+
+### Affected
+
+* Apache OFBiz before 18.12.14
+
+
+### Description
+
+Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache OFBiz.&nbsp;<p>This issue affects Apache OFBiz: before 18.12.14.</p><p>Users are recommended to upgrade to version 18.12.14, which fixes the issue.</p>
+
+### References
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html
+* https://issues.apache.org/jira/browse/OFBIZ-13092
+* https://lists.apache.org/thread/sv0xr8b1j7mmh5p37yldy9vmnzbodz2o
+
+
+### Credits
+* godspeed (AAA@ZJU) (finder)

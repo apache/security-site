@@ -121,11 +121,11 @@ In Apache ActiveMQ Artemis prior to 2.24.0, an attacker could show malicious con
 * Apache ActiveMQ would like to thank Yash Pandya (Digital14), Rajatkumar Karmarkar (Digital14), and Likhith Cheekatipalle (Digital14) for reporting this issue.
 
 
-## Deserialization vulnerability on Jolokia that allows authenticated users to perform RCE ## { #CVE-2022-41678 }
+## Insufficient API restrictions on Jolokia allow authenticated users to perform RCE ## { #CVE-2022-41678 }
 
 CVE-2022-41678 [\[CVE json\]](./CVE-2022-41678.cve.json)
 
-_Last updated: 2023-11-28T15:08:35.668Z_
+_Last updated: 2024-05-31T08:42:39.786Z_
 
 ### Affected
 

@@ -247,3 +247,27 @@ A carefully crafted request on several JSPWiki plugins could trigger an XSS vuln
 
 ### Credits
 * This issue was discovered by Eugene Lim and Sng Jay Kai from Government Technology Agency of Singapore (finder)
+
+
+## Cross-site scripting vulnerability on upload page ## { #CVE-2024-27136 }
+
+CVE-2024-27136 [\[CVE json\]](./CVE-2024-27136.cve.json)
+
+_Last updated: 2024-06-24T07:44:28.700Z_
+
+### Affected
+
+* Apache JSPWiki through 2.12.1
+
+
+### Description
+
+XSS in Upload page in Apache JSPWiki 2.12.1 and priors allows the attacker to execute javascript in the victim's browser and get some sensitive information about the victim.  Apache JSPWiki users should upgrade to 2.12.2 or later. 
+
+### References
+* https://lists.apache.org/thread/gfms8gbncqqkj52p861b8fnsypwsl1d5
+* https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2024-27136
+
+
+### Credits
+* This issue was discovered by sonnh from Vietnam National Cyber security technology corporation (finder)

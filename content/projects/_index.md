@@ -57,7 +57,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Hive](https://hive.apache.org/mailing_lists.html) |  [Apache Hive Security Team](mailto:security@hive.apache.org) | |
 | Apache Hop |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache HTTP Server](https://httpd.apache.org/security_report.html) |  [Apache HTTP Server Security Team](mailto:security@httpd.apache.org) | [Advisories](https://httpd.apache.org/security/vulnerabilities_24.html) |
-| Apache HugeGraph (Incubating) |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache HugeGraph](https://hugegraph.apache.org/docs/guides/security) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://hugegraph.apache.org/docs/guides/security) |
 | Apache Ignite |  [Apache Ignite Security Team](mailto:security@ignite.apache.org) | |
 | Apache Impala |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache InLong |  [Apache Security Team](mailto:security@apache.org) | |
@@ -117,7 +117,6 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache StreamPark (Incubating) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache StreamPipes |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Struts](https://struts.apache.org/security.html) |  [Apache Struts Security Team](mailto:security@struts.apache.org) | [Advisories](https://cwiki.apache.org/confluence/display/WW/Security+Bulletins) |
-| Apache Submarine |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Subversion](https://subversion.apache.org/security/) |  [Apache Subversion Security Team](mailto:security@subversion.apache.org) | [Advisories](https://subversion.apache.org/security/) |
 | [Apache Superset](https://superset.apache.org/docs/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://superset.apache.org/docs/security/cves) |
 | Apache SystemDS |  [Apache Security Team](mailto:security@apache.org) | |

@@ -1034,3 +1034,52 @@ _Last updated: 2024-02-28T10:06:46.675Z_
 ### Credits
 * Anastasios Stasinopoulos - OBRELA LABS (finder)
 * Beto de Almeida (remediation developer)
+
+
+## Incorrect datasource authorization on explore REST API  ## { #CVE-2024-28148 }
+
+CVE-2024-28148 [\[CVE json\]](./CVE-2024-28148.cve.json)
+
+_Last updated: 2024-05-08T08:31:47.011Z_
+
+### Affected
+
+* Apache Superset before 3.1.2
+
+
+### Description
+
+<span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">An authenticated user could potentially access metadata for a datasource they are not authorized to view by submitting a targeted REST API request.</span></span><p>This issue affects Apache Superset: before 3.1.2.</p><p>Users are recommended to upgrade to version 3.1.2 or above, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/n27wlbd05oc6bgjh28d5pxzsrrph8dgo
+
+
+### Credits
+* Daniel Pedro Vaz Gaspar (remediation developer)
+* Krishna Nadh (finder)
+
+
+## Server arbitrary file read ## { #CVE-2024-34693 }
+
+CVE-2024-34693 [\[CVE json\]](./CVE-2024-34693.cve.json)
+
+_Last updated: 2024-06-20T08:51:53.358Z_
+
+### Affected
+
+* Apache Superset before 3.1.3
+* Apache Superset from 4.0.0 before 4.0.1
+
+
+### Description
+
+Improper Input Validation vulnerability in Apache Superset, allows for an authenticated attacker to create a MariaDB connection with local_infile enabled. If both the MariaDB server (off by default) and the local mysql client on the web server are set to allow for local infile, it's possible for the attacker to execute a specific MySQL/MariaDB SQL command that is able to read files from the server and insert their content on a MariaDB database table.<p>This issue affects Apache Superset: before 3.1.3 and version 4.0.0</p><p>Users are recommended to upgrade to version 4.0.1 or 3.1.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/1803x1s34m7r71h1k0q1njol8k6fmyon
+
+
+### Credits
+* Matei "Mal" Badanoiu (finder)
+* Daniel Vaz Gaspar (remediation developer)

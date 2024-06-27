@@ -152,7 +152,7 @@ This was addressed in Apache Hadoop 3.2.3
 
 CVE-2023-26031 [\[CVE json\]](./CVE-2023-26031.cve.json)
 
-_Last updated: 2023-11-16T08:31:41.219Z_
+_Last updated: 2024-05-07T00:58:06.325Z_
 
 ### Affected
 

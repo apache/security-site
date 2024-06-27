@@ -35,3 +35,26 @@ _Last updated: 2023-11-07T08:56:30.662Z_
 
 ### Credits
 * Stefan Schiller (Sonar) (finder)
+
+
+## sensitive information exposure via DNS rebinding ## { #CVE-2024-36471 }
+
+CVE-2024-36471 [\[CVE json\]](./CVE-2024-36471.cve.json)
+
+_Last updated: 2024-06-10T21:55:03.113Z_
+
+### Affected
+
+* Apache Allura from 1.0.1 through 1.16.0
+
+
+### Description
+
+<div>Import functionality is vulnerable to DNS rebinding attacks between verification and processing of the URL.&nbsp; Project administrators can run these imports, which could cause Allura to read from internal services and expose them.<br></div><div><br></div><div>This issue affects Apache Allura from 1.0.1 through 1.16.0.</div><p></p><p>Users are recommended to upgrade to version 1.17.0, which fixes the issue.  If you are unable to upgrade, set "disable_entry_points.allura.importers = forge-tracker, forge-discussion" in your .ini config file.<br></p><br>
+
+### References
+* https://lists.apache.org/thread/g43164t4bcp0tjwt4opxyks4svm8kvbh
+
+
+### Credits
+* truff https://x.com/truffzor (finder)

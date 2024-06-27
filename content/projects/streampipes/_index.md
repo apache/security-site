@@ -38,3 +38,27 @@ A REST interface in Apache StreamPipes (versions 0.69.0 to 0.91.0) <span style="
 
 ### Credits
 * Xun Bai, LJQC Open Source Security Institute (finder)
+
+
+## Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG) in Recovery Token Generation ## { #CVE-2024-29868 }
+
+CVE-2024-29868 [\[CVE json\]](./CVE-2024-29868.cve.json)
+
+_Last updated: 2024-06-24T09:59:38.377Z_
+
+### Affected
+
+* Apache StreamPipes from 0.69.0 through 0.93.0
+* Apache StreamPipes from 0.69.0 through 0.93.0
+
+
+### Description
+
+Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG) vulnerability in Apache StreamPipes&nbsp;<span style="background-color: rgb(255, 255, 255);">user self-registration and password recovery mechanism</span>.<br>This allows an attacker to guess the recovery token in a reasonable time and thereby to take over the attacked user's account.<br><p>This issue affects Apache StreamPipes: from 0.69.0 through 0.93.0.</p><p>Users are recommended to upgrade to version 0.95.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/g7t7zctvq2fysrw1x17flnc12592nhx7
+
+
+### Credits
+* Alessandro Albani, Digital Security Division Var Group (finder)

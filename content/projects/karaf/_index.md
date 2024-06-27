@@ -109,3 +109,26 @@ _Last updated: 2022-12-21T15:53:26.357Z_
 
 ### Credits
 * Xun Bai <bbbbear68@gmail.com> (reporter)
+
+
+## Cave SSRF and arbitrary file access ## { #CVE-2024-34365 }
+
+CVE-2024-34365 [\[CVE json\]](./CVE-2024-34365.cve.json)
+
+_Last updated: 2024-05-09T06:49:03.305Z_
+
+### Affected
+
+* Apache Karaf Cave through *
+
+
+### Description
+
+** UNSUPPORTED WHEN ASSIGNED ** Improper Input Validation vulnerability in Apache Karaf Cave.<p>This issue affects all versions of Apache Karaf Cave.</p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.<p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+
+### References
+* https://karaf.apache.org/security/cve-2024-34365.txt
+
+
+### Credits
+* cigar (finder)

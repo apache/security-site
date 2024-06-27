@@ -65,3 +65,76 @@ is invoked, passing the entityStream containing the user-supplied data in `subma
 
 ### Credits
 * GHSL team member @jorgectf (Jorge Rosillo) (reporter)
+
+
+## SQL injection ## { #CVE-2024-36263 }
+
+CVE-2024-36263 [\[CVE json\]](./CVE-2024-36263.cve.json)
+
+_Last updated: 2024-06-12T14:05:08.215Z_
+
+### Affected
+
+* Apache Submarine Server Core through *
+
+
+### Description
+
+<p>** UNSUPPORTED WHEN ASSIGNED ** Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Submarine Server Core.</p><p>This issue affects Apache Submarine Server Core: all versions.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+
+### References
+* https://github.com/apache/submarine/pull/1121
+* https://lists.apache.org/thread/8q9kbdg9gk9kpz5p8x6t7q8709l3vrmt
+
+
+### Credits
+* BaoChengZhang of LengJingQiCaiSecurityLab (finder)
+* L0ne1y (finder)
+
+
+## default secret ## { #CVE-2024-36264 }
+
+CVE-2024-36264 [\[CVE json\]](./CVE-2024-36264.cve.json)
+
+_Last updated: 2024-06-12T14:06:29.951Z_
+
+### Affected
+
+* Apache Submarine Commons Utils from 0.8.0 through *
+
+
+### Description
+
+<p>** UNSUPPORTED WHEN ASSIGNED ** Improper Authentication vulnerability in Apache Submarine Commons Utils.</p><p>This issue affects Apache Submarine Commons Utils: from 0.8.0.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+
+### References
+* https://github.com/apache/submarine/pull/1125
+* https://lists.apache.org/thread/7mo0c7vbhpo8thvybl8wwvb0bccrg7r4
+
+
+### Credits
+* Jonathan Leitschuh (finder)
+* L0ne1y (finder)
+
+
+## authorization bypass ## { #CVE-2024-36265 }
+
+CVE-2024-36265 [\[CVE json\]](./CVE-2024-36265.cve.json)
+
+_Last updated: 2024-06-12T14:12:08.874Z_
+
+### Affected
+
+* Apache Submarine Server Core from 0.8.0 through *
+
+
+### Description
+
+<p>** UNSUPPORTED WHEN ASSIGNED ** Incorrect Authorization vulnerability in Apache Submarine Server Core.</p><p>This issue affects Apache Submarine Server Core: from 0.8.0.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+
+### References
+* https://lists.apache.org/thread/prckhhst19qxof064hsm8cccxtofvflz
+
+
+### Credits
+* L0ne1y (finder)

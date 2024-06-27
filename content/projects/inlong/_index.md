@@ -643,6 +643,34 @@ Deserialization of Untrusted Data vulnerability in Apache InLong.<p>This issue a
 * X1r0z (finder)
 
 
+## Apache Inlong JDBC Vulnerability ## { #CVE-2024-26579 }
+
+CVE-2024-26579 [\[CVE json\]](./CVE-2024-26579.cve.json)
+
+_Last updated: 2024-05-08T14:57:16.261Z_
+
+### Affected
+
+* Apache InLong from 1.7.0 through 1.11
+
+
+### Description
+
+Deserialization of Untrusted Data vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.7.0 through 1.11.0,&nbsp;
+
+ the attackers can bypass using malicious parameters.
+
+<span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's 1.12.0 or cherry-pick [1], [2] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/9694">https://github.com/apache/inlong/pull/9694</a></span></p><p>[2]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/9707">https://github.com/apache/inlong/pull/9707</a></p><p></p>
+
+### References
+* https://lists.apache.org/thread/d2hndtvh6bll4pkl91o2oqxyynhr54k3
+
+
+### Credits
+* L0ne1y  (finder)
+* Ming (finder)
+
+
 ## Logged-in user could exploit an arbitrary file read vulnerability ## { #CVE-2024-26580 }
 
 CVE-2024-26580 [\[CVE json\]](./CVE-2024-26580.cve.json)
