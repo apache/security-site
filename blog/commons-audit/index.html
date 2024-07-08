@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.111.3">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> STF/OSTIF commission audit of three Apache Commons projects </title>
+
+  
+  <meta name="description" content="No vulnerabilities found, a number of security hardening improvements identified and implemented."> 
+  
+  
+  
+  
+  
+
+  
+
+  <meta name="author" content="Arnout Engelen">
+
+
+  <meta property="og:title" content="STF/OSTIF commission audit of three Apache Commons projects" />
+<meta property="og:description" content="No vulnerabilities found, a number of security hardening improvements identified and implemented." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://security.apache.org/blog/commons-audit/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-07-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-07-08T00:00:00+00:00" />
+
+  
+
+
+
+
+  
+  
+  
+  
+  
+
+  <link rel="canonical" href="https://security.apache.org/blog/commons-audit/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Apache Security Team</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Apache Security Team</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog" >Blog</a></li>
+    
+    <li><a href="https://www.apache.org/licenses/" >License</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
+    
+    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
+    
+    <li><a href="https://www.apache.org" >Apache</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+<div class="push-center" itemscope itemtype="http://schema.org/BlogPosting">
+  <meta itemprop="name" content="STF/OSTIF commission audit of three Apache Commons projects">
+<meta itemprop="description" content="No vulnerabilities found, a number of security hardening improvements identified and implemented."><meta itemprop="datePublished" content="2024-07-08T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2024-07-08T00:00:00+00:00" />
+<meta itemprop="wordCount" content="188">
+<meta itemprop="keywords" content="" />
+  <div id="hero">
+    <h1 itemprop="headline">STF/OSTIF commission audit of three Apache Commons projects</h1>
+    
+    <blockquote itemprop="description">No vulnerabilities found, a number of security hardening improvements identified and implemented.</blockquote>
+    
+    <time class="post-time"><span class="icon">
+  <i class="fa fa-clock-o" aria-hidden="true"></i>
+</span>
+<span>1 minute read</span>
+<span class="icon">
+ <i class="fa fa-pencil" aria-hidden="true"></i>
+</span>
+
+  Published: <time datetime="2024-07-08T00:00:00&#43;00:00">8 Jul, 2024</time>
+
+</time>
+  </div>
+  <div id="post-box">
+    <div id="post" itemprop="articleBody"><p>The <a href="https://ostif.org/">Open Source Technology Improvement Fund (OSTIF)</a>,
+funded by the <a href="https://sovereigntechfund.de">Sovereign Tech Fund (STF)</a>&rsquo;s <a href="https://www.sovereigntechfund.de/programs/bug-resilience">Bug Resilience Program</a>,
+recently commissioned an audit of three
+<a href="https://commons.apache.org/">Apache Commons</a> projects:
+<a href="https://commons.apache.org/proper/commons-lang/">Apache Commons Lang</a>,
+<a href="https://commons.apache.org/proper/commons-io/">Apache Commons IO</a> and
+<a href="https://commons.apache.org/proper/commons-codec/">Apache Commons Codec</a>.
+We are proud to announce that <a href="https://adalogics.com/">Ada Logics</a>, who
+performed the audit, did not find any vulnerabilities.</p>
+<p>The Apache Commons libraries are low-level building blocks, often used in
+internal applications on trusted input. As such, unless otherwise specified,
+it is the responsibility of the application invoking the libraries to make sure
+any untrusted parameters are sanitized. When that layer of defense fails,
+we try to limit the possible impact of such a breach by making sure malicious or
+otherwise invalid input can cause minimal disruption. During their analysis, which
+included both manual auditing and code fuzzing, Ada Logics identified a number of
+new opportunities for such security hardening improvements, and contributed code
+to implement several of these.</p>
+<p>We thank the <a href="https://sovereigntechfund.de">Sovereign Tech Fund</a>,
+<a href="https://ostif.org/">OSTIF</a> and <a href="https://adalogics.com/">Ada Logics</a> for
+their help in ensuring the security of projects that use Apache Commons.</p>
+<p>You can find additional information about this audit at <a href="https://ostif.org/apachec-audit-complete/">the OSTIF blog</a>.</p>
+</div>
+
+    <div class="">
+      <p>
+  Published
+  
+    
+      by <span itemprop="author">Arnout Engelen</span>
+    
+  
+  <time datetime="2024-07-08T00:00:00&#43;00:00">
+    8 Jul, 2024
+  </time>
+  
+  
+  using <span itemprop="wordCount">188</span> words.
+</p>
+ 
+
+
+
+    </div>
+    </div>
+  </div>
+  </main>
+  <footer>   <footer id="footer">
+    <p>&copy; 2023 The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+  </footer>
+ </footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/main.js" type="text/javascript">
+  </script>
+</body>
+
+</html>
