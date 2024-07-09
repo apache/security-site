@@ -1,12 +1,12 @@
 ---
-title: STF/OSTIF commission audit of three Apache Commons projects
+title: AWS/OSTIF commission audit of three Apache Commons projects
 author: Arnout Engelen
 date: 2024-07-08
 description: No vulnerabilities found, a number of security hardening improvements identified and implemented.
 ---
 
 The [Open Source Technology Improvement Fund (OSTIF)](https://ostif.org/),
-funded by the [Sovereign Tech Fund (STF)](https://sovereigntechfund.de)'s [Bug Resilience Program](https://www.sovereigntechfund.de/programs/bug-resilience),
+funded by [Amazon Web Services (AWS)](https://aws.amazon.com/),
 recently commissioned an audit of three
 [Apache Commons](https://commons.apache.org/) projects:
 [Apache Commons Lang](https://commons.apache.org/proper/commons-lang/),
@@ -25,7 +25,7 @@ included both manual auditing and code fuzzing, Ada Logics identified a number o
 new opportunities for such security hardening improvements, and contributed code
 to implement several of these.
 
-We thank the [Sovereign Tech Fund](https://sovereigntechfund.de),
+We thank [Amazon Web Services (AWS)](https://aws.amazon.com),
 [OSTIF](https://ostif.org/) and [Ada Logics](https://adalogics.com/) for
 their help in ensuring the security of projects that use Apache Commons.
 
