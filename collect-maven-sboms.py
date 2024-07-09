@@ -59,7 +59,7 @@ elif pmc == 'camel':
       'kamelets/camel-kamelets-parent',
       'quarkus/camel-quarkus',
       'springboot/spring-boot',
-    ]
+    ] + maven_projects(pmc)
 elif pmc == 'logging':
     projects = maven_projects(pmc, 'log4j')
 else:
