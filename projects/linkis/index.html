@@ -239,17 +239,97 @@ deserialization vulnerability and eventually lead to remote code execution. Ther
 <ul>
 <li>sw0rd1ight (reporter)</li>
 </ul>
+<h2 id="CVE-2023-29216">Apache Linkis DatasourceManager module has a deserialization command execution</h2>
+<p>CVE-2023-29216 <a href="./CVE-2023-29216.cve.json">[CVE json]</a> <a href="./CVE-2023-29216.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-13T14:57:28.538Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache Linkis through 1.3.1</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>In Apache Linkis &lt;=1.3.1, because the parameters are not
+effectively filtered, the attacker uses the MySQL data source and malicious parameters to
+configure a new data source to trigger a deserialization vulnerability, eventually leading to
+remote code execution.<br> Versions of Apache Linkis &lt;= 1.3.0 will be affected.<br>We recommend users upgrade the version of Linkis to version 1.3.2.</p>
+<br>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/18vv0m32oy51nzk8tbz13qdl5569y55l">https://lists.apache.org/thread/18vv0m32oy51nzk8tbz13qdl5569y55l</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>sw0rd1ight (reporter)</li>
+</ul>
+<h2 id="CVE-2023-41916">DatasourceManager module has a  JDBC parameter judgment logic vulnerability that allows for arbitrary file reading</h2>
+<p>CVE-2023-41916 <a href="./CVE-2023-41916.cve.json">[CVE json]</a> <a href="./CVE-2023-41916.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-15T07:53:56.163Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Linkis DataSource from 1.4.0 before 1.5.0</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>In Apache Linkis =1.4.0, due to the lack of effective filtering
+of parameters, an attacker configuring malicious Mysql JDBC parameters in the DataSource Manager Module will trigger <span style="background-color: rgb(255, 255, 255);">arbitrary file reading</span>. Therefore, the parameters in the Mysql JDBC URL should be blacklisted. This attack requires the attacker to obtain an authorized account from Linkis before it can be carried out. Versions of Apache Linkis = 1.4.0 will be affected. <br>We recommend users upgrade the version of Linkis to version 1.5.0.</p>
+<br>
+<h3 id="references-8">References</h3>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>Pho3n1x  (reporter)</li>
+</ul>
+<h2 id="CVE-2023-46801">DataSource Remote code execution vulnerability</h2>
+<p>CVE-2023-46801 <a href="./CVE-2023-46801.cve.json">[CVE json]</a> <a href="./CVE-2023-46801.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-15T07:55:28.176Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache Linkis DataSource from 1.4.0 before 1.6.0</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>In Apache Linkis &lt;= 1.5.0, data source management module, when adding Mysql data source, exists remote code execution vulnerability for java version &lt; 1.8.0_241. The deserialization vulnerability exploited through jrmp can inject malicious files into the server and execute them.</p>
+<p>This attack requires the attacker to obtain an authorized account from Linkis before it can be carried out.  We recommend that users upgrade the java version to &gt;= 1.8.0_241. Or users upgrade Linkis to version 1.6.0.</p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/0dnzh64xy1n7qo3rgo2loz9zn7m9xgdx">https://lists.apache.org/thread/0dnzh64xy1n7qo3rgo2loz9zn7m9xgdx</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>Pho3n1x  (reporter)</li>
+</ul>
+<h2 id="CVE-2023-49566">JDBC Datasource Module with DB2 has JNDI Injection vulnerability</h2>
+<p>CVE-2023-49566 <a href="./CVE-2023-49566.cve.json">[CVE json]</a> <a href="./CVE-2023-49566.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-15T07:56:41.397Z</em></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache Linkis DataSource from * before 1.6.0</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<p>In Apache Linkis &lt;=1.5.0, due to the lack of effective filtering
+of parameters, an attacker configuring malicious</p>
+<p>db2</p>
+<p>parameters in the DataSource Manager Module will result in jndi injection. Therefore, the parameters in the DB2 URL should be blacklisted. </p>
+<p>This attack requires the attacker to obtain an authorized account from Linkis before it can be carried out.</p>
+<p>Versions of Apache Linkis</p>
+<p>&lt;=1.5.0</p>
+<p>will be affected.<br>We recommend users upgrade the version of Linkis to version 1.6.0.<br></p>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/t68yy52lmv7pxgrxnq6rw7rwvk9tb1xj">https://lists.apache.org/thread/t68yy52lmv7pxgrxnq6rw7rwvk9tb1xj</a></li>
+</ul>
+<h3 id="credits-10">Credits</h3>
+<ul>
+<li>Joyh (reporter)</li>
+<li>L0ne1y (reporter)</li>
+</ul>
 <h2 id="CVE-2023-50740">DataSource module Oracle SQL Database Password Logged</h2>
 <p>CVE-2023-50740 <a href="./CVE-2023-50740.cve.json">[CVE json]</a> <a href="./CVE-2023-50740.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-03-06T13:44:51.798Z</em></p>
-<h3 id="affected-7">Affected</h3>
+<h3 id="affected-11">Affected</h3>
 <ul>
 <li>Apache Linkis DataSource from * before 1.5.0</li>
 </ul>
-<h3 id="description-7">Description</h3>
+<h3 id="description-11">Description</h3>
 <p>In Apache Linkis &lt;=1.4.0, The password is printed to the log when using the Oracle data source of the Linkis data source module. <br>We recommend users upgrade the version of Linkis to version 1.5.0<br></p>
-<h3 id="references-7">References</h3>
-<h3 id="credits-7">Credits</h3>
+<h3 id="references-11">References</h3>
+<h3 id="credits-11">Credits</h3>
 <ul>
 <li>Jonathan Leitschuh (reporter)</li>
 </ul>

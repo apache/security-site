@@ -994,6 +994,155 @@ substitution. For example, something like:</div><div><br></div><div>RewriteEngin
 <ul>
 <li>Bartek Nowotarski (<a href="https://nowotarski.info/">https://nowotarski.info/</a>)  (finder)</li>
 </ul>
+<h2 id="CVE-2024-36387">DoS by Null pointer in websocket over HTTP/2</h2>
+<p>CVE-2024-36387 <a href="./CVE-2024-36387.cve.json">[CVE json]</a> <a href="./CVE-2024-36387.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-02T10:05:08.772Z</em></p>
+<h3 id="affected-42">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.55 through 2.4.59</li>
+</ul>
+<h3 id="description-42">Description</h3>
+<p>Serving WebSocket protocol upgrades over a HTTP/2 connection could result in a Null Pointer dereference, leading to a crash of the server process, degrading performance.</p>
+<h3 id="references-41">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-40">Credits</h3>
+<ul>
+<li>Marc Stern (<a href="mailto:marc.stern@approach-cyber.com">marc.stern@approach-cyber.com</a>) (finder)</li>
+</ul>
+<h2 id="CVE-2024-38472">Apache HTTP Server on WIndows UNC SSRF</h2>
+<p>CVE-2024-38472 <a href="./CVE-2024-38472.cve.json">[CVE json]</a> <a href="./CVE-2024-38472.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-01T18:12:25.346Z</em></p>
+<h3 id="affected-43">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
+</ul>
+<h3 id="description-43">Description</h3>
+<p>SSRF in Apache HTTP Server on Windows allows to potentially leak NTML hashes to a malicious server via SSRF and <span style="background-color: rgb(255, 255, 255);">malicious requests or content </span><br>Users are recommended to upgrade to version 2.4.60 which fixes this issue.  Note: Existing configurations that access UNC paths will have to configure new directive &ldquo;UNCList&rdquo; to allow access during request processing.</p>
+<h3 id="references-42">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-41">Credits</h3>
+<ul>
+<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
+</ul>
+<h2 id="CVE-2024-38473">Apache HTTP Server proxy encoding problem</h2>
+<p>CVE-2024-38473 <a href="./CVE-2024-38473.cve.json">[CVE json]</a> <a href="./CVE-2024-38473.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-03T12:05:25.367Z</em></p>
+<h3 id="affected-44">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
+</ul>
+<h3 id="description-44">Description</h3>
+<p>Encoding problem in mod_proxy in Apache HTTP Server 2.4.59 and earlier allows request URLs with incorrect encoding to be sent to backend services, potentially bypassing authentication via crafted requests. This affects configurations where mechanisms other than ProxyPass/ProxyPassMatch or RewriteRule with the &lsquo;P&rsquo; flag are used to configure a request to be proxied, such as SetHandler or inadvertent proxying via CVE-2024-39573.  Note that these alternate mechanisms may be used within .htaccess.<br><br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.</p>
+<h3 id="references-43">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-42">Credits</h3>
+<ul>
+<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
+</ul>
+<h2 id="CVE-2024-38474">Apache HTTP Server weakness with encoded question marks in backreferences</h2>
+<p>CVE-2024-38474 <a href="./CVE-2024-38474.cve.json">[CVE json]</a> <a href="./CVE-2024-38474.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-01T18:14:45.297Z</em></p>
+<h3 id="affected-45">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
+</ul>
+<h3 id="description-45">Description</h3>
+<p>Substitution encoding issue in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows attacker to execute scripts in<br>directories permitted by the configuration but not directly reachable by any URL or source disclosure of scripts meant to only to be executed as CGI.<br><br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.<br><br>Some RewriteRules that capture and substitute unsafely will now fail unless rewrite flag &ldquo;UnsafeAllow3F&rdquo; is specified.</p>
+<h3 id="references-44">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-43">Credits</h3>
+<ul>
+<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
+</ul>
+<h2 id="CVE-2024-38475">Apache HTTP Server weakness in mod_rewrite when first segment of substitution matches filesystem path.</h2>
+<p>CVE-2024-38475 <a href="./CVE-2024-38475.cve.json">[CVE json]</a> <a href="./CVE-2024-38475.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-01T18:15:10.846Z</em></p>
+<h3 id="affected-46">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
+</ul>
+<h3 id="description-46">Description</h3>
+<p>Improper escaping of output in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows an attacker to map URLs to filesystem locations that are permitted to be served by the server but are not intentionally/directly reachable by any URL, resulting in code execution or source code disclosure. <br><br>Substitutions in server context that use a backreferences or variables as the first segment of the substitution are affected.  Some unsafe RewiteRules will be broken by this change and the rewrite flag &ldquo;UnsafePrefixStat&rdquo; can be used to opt back in once ensuring the substitution is appropriately constrained.</p>
+<h3 id="references-45">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-44">Credits</h3>
+<ul>
+<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
+</ul>
+<h2 id="CVE-2024-38476">Apache HTTP Server may use exploitable/malicious backend application output to run local handlers via internal redirect</h2>
+<p>CVE-2024-38476 <a href="./CVE-2024-38476.cve.json">[CVE json]</a> <a href="./CVE-2024-38476.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-01T19:20:41.405Z</em></p>
+<h3 id="affected-47">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
+</ul>
+<h3 id="description-47">Description</h3>
+<p>Vulnerability in core of Apache HTTP Server 2.4.59 and earlier are vulnerably to information disclosure, SSRF or local script execution via <span style="background-color: rgb(255, 255, 255);">backend applications whose response headers are malicious or exploitable.</span><br><br>Note: Some legacy uses of the &lsquo;AddType&rsquo; directive to connect a request to a handler must be ported to &lsquo;AddHandler&rsquo; after this fix.<br><br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.</p>
+<h3 id="references-46">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-45">Credits</h3>
+<ul>
+<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
+</ul>
+<h2 id="CVE-2024-38477">Crash resulting in Denial of Service in mod_proxy via a malicious request</h2>
+<p>CVE-2024-38477 <a href="./CVE-2024-38477.cve.json">[CVE json]</a> <a href="./CVE-2024-38477.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-01T18:16:10.377Z</em></p>
+<h3 id="affected-48">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
+</ul>
+<h3 id="description-48">Description</h3>
+<p>null pointer dereference in mod_proxy in Apache HTTP Server 2.4.59 and earlier allows an attacker to crash the server via a malicious request.<br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.</p>
+<h3 id="references-47">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-46">Credits</h3>
+<ul>
+<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
+</ul>
+<h2 id="CVE-2024-39573">mod_rewrite proxy handler substitution</h2>
+<p>CVE-2024-39573 <a href="./CVE-2024-39573.cve.json">[CVE json]</a> <a href="./CVE-2024-39573.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-01T18:16:42.254Z</em></p>
+<h3 id="affected-49">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
+</ul>
+<h3 id="description-49">Description</h3>
+<p>Potential SSRF in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows an attacker to cause unsafe RewriteRules to unexpectedly setup URL&rsquo;s to be handled by mod_proxy.<br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.</p>
+<h3 id="references-48">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-47">Credits</h3>
+<ul>
+<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
+</ul>
+<h2 id="CVE-2024-39884">source code disclosure with handlers configured via AddType</h2>
+<p>CVE-2024-39884 <a href="./CVE-2024-39884.cve.json">[CVE json]</a> <a href="./CVE-2024-39884.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-04T08:41:17.573Z</em></p>
+<h3 id="affected-50">Affected</h3>
+<ul>
+<li>Apache HTTP Server at 2.4.60</li>
+</ul>
+<h3 id="description-50">Description</h3>
+<p>A regression in the core of Apache HTTP Server 2.4.60 ignores some use of the legacy content-type based configuration of handlers.   &ldquo;AddType&rdquo; and similar configuration, under some circumstances where files are requested indirectly, result in source code disclosure of local content. For example, PHP scripts may be served instead of interpreted.<br><br>Users are recommended to upgrade to version 2.4.61, which fixes this issue.</p>
+<h3 id="references-49">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
 
   
 </div>

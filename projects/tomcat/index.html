@@ -593,9 +593,9 @@ smuggling when behind a reverse proxy.<br></p><p><span style="background-color: 
 <ul>
 <li>xer0dayz from company Sn1perSecurity LLC (finder)</li>
 </ul>
-<h2 id="CVE-2024-24549">HTTP/2 header handling DoS</h2>
-<p>CVE-2024-24549 <a href="./CVE-2024-24549.cve.json">[CVE json]</a> <a href="./CVE-2024-24549.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-03-13T15:47:06.777Z</em></p>
+<h2 id="CVE-2024-23672">WebSocket DoS with incomplete closing handshake</h2>
+<p>CVE-2024-23672 <a href="./CVE-2024-23672.cve.json">[CVE json]</a> <a href="./CVE-2024-23672.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-03T18:12:25.589Z</em></p>
 <h3 id="affected-26">Affected</h3>
 <ul>
 <li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M16</li>
@@ -604,14 +604,49 @@ smuggling when behind a reverse proxy.<br></p><p><span style="background-color: 
 <li>Apache Tomcat from 8.5.0 through 8.5.98</li>
 </ul>
 <h3 id="description-26">Description</h3>
-<p>Denial of Service due to improper input validation vulnerability for HTTP/2 requests in Apache Tomcat. When processing an HTTP/2 request, if the request exceeded any of the configured limits for headers, the associated HTTP/2 stream was not reset until after all of the headers had been processed.<p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M16, from 10.1.0-M1 through 10.1.18, from 9.0.0-M1 through 9.0.85, from 8.5.0 through 8.5.98.</p><p>Users are recommended to upgrade to version 11.0.0-M17, 10.1.19, 9.0.86 or 8.5.99 which fix the issue.</p></p>
+<p>Denial of Service via incomplete cleanup vulnerability in Apache Tomcat. It was possible for WebSocket clients to keep WebSocket connections open leading to increased resource consumption.<p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M16, from 10.1.0-M1 through 10.1.18, from 9.0.0-M1 through 9.0.85, from 8.5.0 through 8.5.98.</p><p>Users are recommended to upgrade to version 11.0.0-M17, 10.1.19, 9.0.86 or 8.5.99 which fix the issue.</p></p>
 <h3 id="references-26">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/cmpswfx6tj4s7x0nxxosvfqs11lvdx2f">https://lists.apache.org/thread/cmpswfx6tj4s7x0nxxosvfqs11lvdx2f</a></li>
+</ul>
+<h2 id="CVE-2024-24549">HTTP/2 header handling DoS</h2>
+<p>CVE-2024-24549 <a href="./CVE-2024-24549.cve.json">[CVE json]</a> <a href="./CVE-2024-24549.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-03-13T15:47:06.777Z</em></p>
+<h3 id="affected-27">Affected</h3>
+<ul>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M16</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.18</li>
+<li>Apache Tomcat from 9.0.0-M1 through 9.0.85</li>
+<li>Apache Tomcat from 8.5.0 through 8.5.98</li>
+</ul>
+<h3 id="description-27">Description</h3>
+<p>Denial of Service due to improper input validation vulnerability for HTTP/2 requests in Apache Tomcat. When processing an HTTP/2 request, if the request exceeded any of the configured limits for headers, the associated HTTP/2 stream was not reset until after all of the headers had been processed.<p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M16, from 10.1.0-M1 through 10.1.18, from 9.0.0-M1 through 9.0.85, from 8.5.0 through 8.5.98.</p><p>Users are recommended to upgrade to version 11.0.0-M17, 10.1.19, 9.0.86 or 8.5.99 which fix the issue.</p></p>
+<h3 id="references-27">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/4c50rmomhbbsdgfjsgwlb51xdwfjdcvg">https://lists.apache.org/thread/4c50rmomhbbsdgfjsgwlb51xdwfjdcvg</a></li>
 </ul>
 <h3 id="credits-15">Credits</h3>
 <ul>
 <li>Bartek Nowotarski (finder)</li>
+</ul>
+<h2 id="CVE-2024-34750">HTTP/2 excess header handling DoS</h2>
+<p>CVE-2024-34750 <a href="./CVE-2024-34750.cve.json">[CVE json]</a> <a href="./CVE-2024-34750.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-03T19:38:21.788Z</em></p>
+<h3 id="affected-28">Affected</h3>
+<ul>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M20</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.24</li>
+<li>Apache Tomcat from 9.0.0-M1 through 9.0.89</li>
+</ul>
+<h3 id="description-28">Description</h3>
+<p>Improper Handling of Exceptional Conditions, Uncontrolled Resource Consumption vulnerability in Apache Tomcat. When processing an HTTP/2 stream, Tomcat did not handle some cases of excessive HTTP headers correctly. This led to a miscounting of active HTTP/2 streams which in turn led to the use of an incorrect infinite timeout which allowed connections to remain open which should have been closed.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M20, from 10.1.0-M1 through 10.1.24, from 9.0.0-M1 through 9.0.89.</p><p>Users are recommended to upgrade to version 11.0.0-M21, 10.1.25 or 9.0.90, which fixes the issue.</p>
+<h3 id="references-28">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/4kqf0bc9gxymjc2x7v3p7dvplnl77y8l">https://lists.apache.org/thread/4kqf0bc9gxymjc2x7v3p7dvplnl77y8l</a></li>
+</ul>
+<h3 id="credits-16">Credits</h3>
+<ul>
+<li>devme4f from VNPT-VCI (finder)</li>
 </ul>
 
   
