@@ -337,3 +337,29 @@ JavaScript code can be executed within the session context of the authenticated 
 
 ### Credits
 * Dr. Oliver Matula, DB Systel GmbH (finder)
+
+
+## Improper Neutralization of Input in Parameter Context Description ## { #CVE-2024-37389 }
+
+CVE-2024-37389 [\[CVE json\]](./CVE-2024-37389.cve.json) [\[OSV json\]](./CVE-2024-37389.osv.json)
+
+
+
+_Last updated: 2024-07-08T07:28:58.478Z_
+
+### Affected
+
+* Apache NiFi from 1.10.0 through 1.26.0
+* Apache NiFi from 2.0.0-M1 through 2.0.0-M3
+
+
+### Description
+
+Apache NiFi 1.10.0 through 1.26.0 and 2.0.0-M1 through 2.0.0-M3 support a description field in the Parameter Context configuration that is vulnerable to cross-site scripting. An authenticated user, authorized to configure a Parameter Context, can enter arbitrary JavaScript code, which the client browser will execute within the session context of the authenticated user. Upgrading to Apache NiFi 1.27.0 or 2.0.0-M4 is the recommended mitigation.
+
+### References
+* https://lists.apache.org/thread/yso9fr0wtff53nk046h1o83hdyb1lrxh
+
+
+### Credits
+* Akbar Kustirama (finder)

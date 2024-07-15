@@ -706,6 +706,30 @@ Generation of Error Message Containing Sensitive Information vulnerability in Ap
 * xer0dayz from company Sn1perSecurity LLC (finder)
 
 
+## WebSocket DoS with incomplete closing handshake ## { #CVE-2024-23672 }
+
+CVE-2024-23672 [\[CVE json\]](./CVE-2024-23672.cve.json) [\[OSV json\]](./CVE-2024-23672.osv.json)
+
+
+
+_Last updated: 2024-07-03T18:12:25.589Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.0-M16
+* Apache Tomcat from 10.1.0-M1 through 10.1.18
+* Apache Tomcat from 9.0.0-M1 through 9.0.85
+* Apache Tomcat from 8.5.0 through 8.5.98
+
+
+### Description
+
+Denial of Service via incomplete cleanup vulnerability in Apache Tomcat. It was possible for WebSocket clients to keep WebSocket connections open leading to increased resource consumption.<p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M16, from 10.1.0-M1 through 10.1.18, from 9.0.0-M1 through 9.0.85, from 8.5.0 through 8.5.98.</p><p>Users are recommended to upgrade to version 11.0.0-M17, 10.1.19, 9.0.86 or 8.5.99 which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/cmpswfx6tj4s7x0nxxosvfqs11lvdx2f
+
+
 ## HTTP/2 header handling DoS ## { #CVE-2024-24549 }
 
 CVE-2024-24549 [\[CVE json\]](./CVE-2024-24549.cve.json) [\[OSV json\]](./CVE-2024-24549.osv.json)
@@ -732,3 +756,30 @@ Denial of Service due to improper input validation vulnerability for HTTP/2 requ
 
 ### Credits
 * Bartek Nowotarski (finder)
+
+
+## HTTP/2 excess header handling DoS ## { #CVE-2024-34750 }
+
+CVE-2024-34750 [\[CVE json\]](./CVE-2024-34750.cve.json) [\[OSV json\]](./CVE-2024-34750.osv.json)
+
+
+
+_Last updated: 2024-07-03T19:38:21.788Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.0-M20
+* Apache Tomcat from 10.1.0-M1 through 10.1.24
+* Apache Tomcat from 9.0.0-M1 through 9.0.89
+
+
+### Description
+
+<p>Improper Handling of Exceptional Conditions, Uncontrolled Resource Consumption vulnerability in Apache Tomcat. When processing an HTTP/2 stream, Tomcat did not handle some cases of excessive HTTP headers correctly. This led to a miscounting of active HTTP/2 streams which in turn led to the use of an incorrect infinite timeout which allowed connections to remain open which should have been closed.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M20, from 10.1.0-M1 through 10.1.24, from 9.0.0-M1 through 9.0.89.</p><p>Users are recommended to upgrade to version 11.0.0-M21, 10.1.25 or 9.0.90, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/4kqf0bc9gxymjc2x7v3p7dvplnl77y8l
+
+
+### Credits
+* devme4f from VNPT-VCI (finder)

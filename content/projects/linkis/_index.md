@@ -222,6 +222,141 @@ deserialization vulnerability and eventually lead to remote code execution. Ther
 * sw0rd1ight (reporter)
 
 
+## Apache Linkis DatasourceManager module has a deserialization command execution ## { #CVE-2023-29216 }
+
+CVE-2023-29216 [\[CVE json\]](./CVE-2023-29216.cve.json) [\[OSV json\]](./CVE-2023-29216.osv.json)
+
+
+
+_Last updated: 2024-07-13T14:57:28.538Z_
+
+### Affected
+
+* Apache Linkis through 1.3.1
+
+
+### Description
+
+
+
+In Apache Linkis &lt;=1.3.1, because the parameters are not
+effectively filtered, the attacker uses the MySQL data source and malicious parameters to
+configure a new data source to trigger a deserialization vulnerability, eventually leading to
+remote code execution.<br> Versions of Apache Linkis &lt;= 1.3.0 will be affected.<br>We recommend users upgrade the version of Linkis to version 1.3.2.
+
+<br>
+
+### References
+* https://lists.apache.org/thread/18vv0m32oy51nzk8tbz13qdl5569y55l
+
+
+### Credits
+* sw0rd1ight (reporter)
+
+
+## DatasourceManager module has a  JDBC parameter judgment logic vulnerability that allows for arbitrary file reading ## { #CVE-2023-41916 }
+
+CVE-2023-41916 [\[CVE json\]](./CVE-2023-41916.cve.json) [\[OSV json\]](./CVE-2023-41916.osv.json)
+
+
+
+_Last updated: 2024-07-15T07:53:56.163Z_
+
+### Affected
+
+* Apache Linkis DataSource from 1.4.0 before 1.5.0
+
+
+### Description
+
+
+
+In Apache Linkis =1.4.0, due to the lack of effective filtering
+of parameters, an attacker configuring malicious Mysql JDBC parameters in the DataSource Manager Module will trigger&nbsp;<span style="background-color: rgb(255, 255, 255);">arbitrary file reading</span>. Therefore, the parameters in the Mysql JDBC URL should be blacklisted. This attack requires the attacker to obtain an authorized account from Linkis before it can be carried out. Versions of Apache Linkis = 1.4.0 will be affected.&nbsp;<br>We recommend users upgrade the version of Linkis to version 1.5.0.
+
+<br>
+
+
+
+### References
+
+
+### Credits
+* Pho3n1x  (reporter)
+
+
+## DataSource Remote code execution vulnerability ## { #CVE-2023-46801 }
+
+CVE-2023-46801 [\[CVE json\]](./CVE-2023-46801.cve.json) [\[OSV json\]](./CVE-2023-46801.osv.json)
+
+
+
+_Last updated: 2024-07-15T07:55:28.176Z_
+
+### Affected
+
+* Apache Linkis DataSource from 1.4.0 before 1.6.0
+
+
+### Description
+
+
+
+In Apache Linkis &lt;= 1.5.0, data source management module, when adding Mysql data source, exists remote code execution vulnerability for java version &lt; 1.8.0_241. The deserialization vulnerability exploited through jrmp can inject malicious files into the server and execute them. 
+
+This attack requires the attacker to obtain an authorized account from Linkis before it can be carried out.&nbsp; We recommend that users upgrade the java version to &gt;= 1.8.0_241. Or users upgrade Linkis to version 1.6.0.
+
+
+
+### References
+* https://lists.apache.org/thread/0dnzh64xy1n7qo3rgo2loz9zn7m9xgdx
+
+
+### Credits
+* Pho3n1x  (reporter)
+
+
+## JDBC Datasource Module with DB2 has JNDI Injection vulnerability ## { #CVE-2023-49566 }
+
+CVE-2023-49566 [\[CVE json\]](./CVE-2023-49566.cve.json) [\[OSV json\]](./CVE-2023-49566.osv.json)
+
+
+
+_Last updated: 2024-07-15T07:56:41.397Z_
+
+### Affected
+
+* Apache Linkis DataSource from * before 1.6.0
+
+
+### Description
+
+
+
+In Apache Linkis &lt;=1.5.0, due to the lack of effective filtering
+of parameters, an attacker configuring malicious 
+
+db2
+
+ parameters in the DataSource Manager Module will result&nbsp;in jndi injection. Therefore, the parameters in the DB2 URL should be blacklisted.&nbsp;
+
+This attack requires the attacker to obtain an authorized account from Linkis before it can be carried out.
+
+ Versions of Apache Linkis 
+
+&lt;=1.5.0
+
+ will be affected.<br>We recommend users upgrade the version of Linkis to version 1.6.0.<br>
+
+### References
+* https://lists.apache.org/thread/t68yy52lmv7pxgrxnq6rw7rwvk9tb1xj
+
+
+### Credits
+* Joyh (reporter)
+* L0ne1y (reporter)
+
+
 ## DataSource module Oracle SQL Database Password Logged ## { #CVE-2023-50740 }
 
 CVE-2023-50740 [\[CVE json\]](./CVE-2023-50740.cve.json) [\[OSV json\]](./CVE-2023-50740.osv.json)

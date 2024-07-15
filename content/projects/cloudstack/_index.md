@@ -140,3 +140,63 @@ _Last updated: 2024-04-04T10:58:44.745Z_
 
 ### Credits
 * Wei Zhou <ustcweizhou@gmail.com> (finder)
+
+
+## Unauthenticated cluster service port leads to remote execution ## { #CVE-2024-38346 }
+
+CVE-2024-38346 [\[CVE json\]](./CVE-2024-38346.cve.json) [\[OSV json\]](./CVE-2024-38346.osv.json)
+
+
+
+_Last updated: 2024-07-05T13:39:11.185Z_
+
+### Affected
+
+* Apache CloudStack from 4.0.0 through 4.18.2.0
+* Apache CloudStack from 4.19.0.0 through 4.19.0.1
+
+
+### Description
+
+<p>The CloudStack cluster service runs on unauthenticated port (default 9090) that can be misused to run arbitrary commands on targeted hypervisors and CloudStack management server hosts. Some of these commands were found to have command injection vulnerabilities that can result in arbitrary code execution via agents on the hosts that may run as a privileged user.&nbsp;<span style="background-color: rgb(255, 255, 255);">An attacker that can reach the cluster service on the unauthenticated&nbsp;port (default 9090), can exploit this to perform remote code execution on CloudStack managed hosts and result in complete</span>&nbsp;compromise of the confidentiality, integrity, and availability of CloudStack managed infrastructure.</p><span style="background-color: rgb(255, 255, 255);"><div><span style="background-color: rgb(255, 255, 255);"><br></span></div><div><span style="background-color: rgb(255, 255, 255);">Users are recommended to restrict the network access to the cluster service port (default 9090) on a CloudStack management server host to only its peer CloudStack management server hosts.&nbsp;</span>Users are recommended to upgrade to version 4.18.2.1, 4.19.0.2 or later, which addresses this issue.</div></span>
+
+### References
+* https://lists.apache.org/thread/6l51r00csrct61plkyd3qg3fj99215d1
+* https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.2-4.18.2.1
+* https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-1-and-4-19-0-2/
+
+
+### Credits
+* Adam Pond of Apple Services Engineering Security (finder)
+* Terry Thibault of Apple Services Engineering Security (finder)
+* Damon Smith of Apple Services Engineering Security (finder)
+
+
+## Integration API service uses dynamic port when disabled ## { #CVE-2024-39864 }
+
+CVE-2024-39864 [\[CVE json\]](./CVE-2024-39864.cve.json) [\[OSV json\]](./CVE-2024-39864.osv.json)
+
+
+
+_Last updated: 2024-07-05T13:39:23.006Z_
+
+### Affected
+
+* Apache CloudStack from 4.0.0 through 4.18.2.0
+* Apache CloudStack from 4.19.0.0 through 4.19.0.1
+
+
+### Description
+
+<div><p>The CloudStack integration API service allows running its unauthenticated API server (usually on port 8096 when configured and enabled via integration.api.port global setting) for internal portal integrations and for testing purposes. By default, the integration API service port is disabled and is considered disabled when integration.api.port is set to 0 or negative. Due to an improper initialisation logic, the integration API service would listen on a random port when its port value is set to 0 (default value).&nbsp;<span style="background-color: rgb(255, 255, 255);">An attacker that can access the CloudStack management network could scan and find the randomised integration API service port and exploit it to perform unauthorised administrative actions and perform remote code execution on CloudStack managed hosts and result in complete</span>&nbsp;compromise of the confidentiality, integrity, and availability of CloudStack managed infrastructure.<span style="background-color: rgb(255, 255, 255);"><br></span></p><span style="background-color: rgb(255, 255, 255);"><div><span style="background-color: rgb(255, 255, 255);">Users are recommended to restrict the network access on the CloudStack management server hosts to only essential ports. </span>Users are recommended to upgrade to version 4.18.2.1, 4.19.0.2 or later, which addresses this issue.</div></span></div>
+
+### References
+* https://lists.apache.org/thread/6l51r00csrct61plkyd3qg3fj99215d1
+* https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.2-4.18.2.1
+* https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-1-and-4-19-0-2/
+
+
+### Credits
+* Adam Pond of Apple Services Engineering Security (finder)
+* Terry Thibault of Apple Services Engineering Security (finder)
+* Damon Smith of Apple Services Engineering Security (finder)

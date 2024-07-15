@@ -1254,3 +1254,224 @@ HTTP/2 incoming headers exceeding the limit are temporarily buffered in nghttp2 
 
 ### Credits
 * Bartek Nowotarski (https://nowotarski.info/)  (finder)
+
+
+## DoS by Null pointer in websocket over HTTP/2 ## { #CVE-2024-36387 }
+
+CVE-2024-36387 [\[CVE json\]](./CVE-2024-36387.cve.json) [\[OSV json\]](./CVE-2024-36387.osv.json)
+
+
+
+_Last updated: 2024-07-02T10:05:08.772Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.55 through 2.4.59
+
+
+### Description
+
+Serving WebSocket protocol upgrades over a HTTP/2 connection could result in a Null Pointer dereference, leading to a crash of the server process, degrading performance.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Marc Stern (<marc.stern@approach-cyber.com>) (finder)
+
+
+## Apache HTTP Server on WIndows UNC SSRF ## { #CVE-2024-38472 }
+
+CVE-2024-38472 [\[CVE json\]](./CVE-2024-38472.cve.json) [\[OSV json\]](./CVE-2024-38472.osv.json)
+
+
+
+_Last updated: 2024-07-01T18:12:25.346Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.59
+
+
+### Description
+
+SSRF in Apache HTTP Server on Windows allows to potentially leak NTML hashes to a malicious server via SSRF and&nbsp;<span style="background-color: rgb(255, 255, 255);">malicious requests or content </span><br>Users are recommended to upgrade to version 2.4.60 which fixes this issue.&nbsp; Note: Existing configurations that access UNC paths will have to configure new directive "UNCList" to allow access during request processing.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Orange Tsai (@orange_8361) from DEVCORE (finder)
+
+
+## Apache HTTP Server proxy encoding problem ## { #CVE-2024-38473 }
+
+CVE-2024-38473 [\[CVE json\]](./CVE-2024-38473.cve.json) [\[OSV json\]](./CVE-2024-38473.osv.json)
+
+
+
+_Last updated: 2024-07-03T12:05:25.367Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.59
+
+
+### Description
+
+Encoding problem in mod_proxy in Apache HTTP Server 2.4.59 and earlier allows request URLs with incorrect encoding to be sent to backend services, potentially bypassing authentication via crafted requests. This affects configurations where mechanisms other than ProxyPass/ProxyPassMatch or RewriteRule with the 'P' flag are used to configure a request to be proxied, such as SetHandler or inadvertent proxying via&nbsp;CVE-2024-39573.&nbsp; Note that these alternate mechanisms may be used within .htaccess.<br><br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Orange Tsai (@orange_8361) from DEVCORE (finder)
+
+
+## Apache HTTP Server weakness with encoded question marks in backreferences ## { #CVE-2024-38474 }
+
+CVE-2024-38474 [\[CVE json\]](./CVE-2024-38474.cve.json) [\[OSV json\]](./CVE-2024-38474.osv.json)
+
+
+
+_Last updated: 2024-07-01T18:14:45.297Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.59
+
+
+### Description
+
+Substitution encoding issue in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows attacker to execute scripts in<br>directories permitted by the configuration but not directly reachable by any&nbsp;URL or source disclosure of scripts meant to only to be executed as CGI.<br><br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.<br><br>Some RewriteRules that capture and substitute unsafely will now fail unless rewrite flag "UnsafeAllow3F" is specified.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Orange Tsai (@orange_8361) from DEVCORE (finder)
+
+
+## Apache HTTP Server weakness in mod_rewrite when first segment of substitution matches filesystem path. ## { #CVE-2024-38475 }
+
+CVE-2024-38475 [\[CVE json\]](./CVE-2024-38475.cve.json) [\[OSV json\]](./CVE-2024-38475.osv.json)
+
+
+
+_Last updated: 2024-07-01T18:15:10.846Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.59
+
+
+### Description
+
+Improper escaping of output in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows an attacker to map URLs to filesystem locations that are&nbsp;permitted to be served by the server but are not intentionally/directly reachable by any URL, resulting in code execution or source code disclosure. <br><br>Substitutions in&nbsp;server context that use a backreferences or variables as the first segment of the substitution are affected.&nbsp; Some unsafe RewiteRules will be broken by this change and the rewrite flag "UnsafePrefixStat" can be used to opt back in once ensuring the substitution is appropriately constrained.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Orange Tsai (@orange_8361) from DEVCORE (finder)
+
+
+## Apache HTTP Server may use exploitable/malicious backend application output to run local handlers via internal redirect ## { #CVE-2024-38476 }
+
+CVE-2024-38476 [\[CVE json\]](./CVE-2024-38476.cve.json) [\[OSV json\]](./CVE-2024-38476.osv.json)
+
+
+
+_Last updated: 2024-07-01T19:20:41.405Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.59
+
+
+### Description
+
+Vulnerability in core of Apache HTTP Server 2.4.59 and earlier are vulnerably to information disclosure, SSRF or local script execution via&nbsp;<span style="background-color: rgb(255, 255, 255);">backend applications whose response headers are malicious or exploitable.</span><br><br>Note: Some legacy uses of the 'AddType' directive to connect a&nbsp;request to a handler must be ported to 'AddHandler' after this fix.<br><br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Orange Tsai (@orange_8361) from DEVCORE (finder)
+
+
+## Crash resulting in Denial of Service in mod_proxy via a malicious request ## { #CVE-2024-38477 }
+
+CVE-2024-38477 [\[CVE json\]](./CVE-2024-38477.cve.json) [\[OSV json\]](./CVE-2024-38477.osv.json)
+
+
+
+_Last updated: 2024-07-01T18:16:10.377Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.59
+
+
+### Description
+
+null pointer dereference in mod_proxy in Apache HTTP Server 2.4.59 and earlier allows an attacker to crash the server via a malicious request.<br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Orange Tsai (@orange_8361) from DEVCORE (finder)
+
+
+## mod_rewrite proxy handler substitution ## { #CVE-2024-39573 }
+
+CVE-2024-39573 [\[CVE json\]](./CVE-2024-39573.cve.json) [\[OSV json\]](./CVE-2024-39573.osv.json)
+
+
+
+_Last updated: 2024-07-01T18:16:42.254Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.59
+
+
+### Description
+
+Potential SSRF in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows an attacker to cause unsafe RewriteRules to unexpectedly setup URL's to be handled by mod_proxy.<br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Orange Tsai (@orange_8361) from DEVCORE (finder)
+
+
+## source code disclosure with handlers configured via AddType ## { #CVE-2024-39884 }
+
+CVE-2024-39884 [\[CVE json\]](./CVE-2024-39884.cve.json) [\[OSV json\]](./CVE-2024-39884.osv.json)
+
+
+
+_Last updated: 2024-07-04T08:41:17.573Z_
+
+### Affected
+
+* Apache HTTP Server at 2.4.60
+
+
+### Description
+
+A regression in the core of Apache HTTP Server 2.4.60 ignores some use of the legacy content-type based configuration of handlers.&nbsp; &nbsp;"AddType" and similar configuration, under some circumstances where files are requested indirectly, result in source code disclosure of local content. For example, PHP scripts may be served instead of interpreted.<br><br>Users are recommended to upgrade to version 2.4.61, which fixes this issue.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html

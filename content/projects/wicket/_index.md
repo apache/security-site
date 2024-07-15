@@ -67,3 +67,30 @@ An error in the evaluation of the fetch metadata headers could allow a bypass of
 
 ### Credits
 * Jo Theunis (finder)
+
+
+## Remote code execution via XSLT injection ## { #CVE-2024-36522 }
+
+CVE-2024-36522 [\[CVE json\]](./CVE-2024-36522.cve.json) [\[OSV json\]](./CVE-2024-36522.osv.json)
+
+
+
+_Last updated: 2024-07-12T12:13:50.122Z_
+
+### Affected
+
+* Apache Wicket from 10.0.0-M1 through 10.0.0
+* Apache Wicket from 9.0.0 through 9.17.0
+* Apache Wicket from 8.0.0 through 8.15.0
+
+
+### Description
+
+The default configuration of XSLTResourceStream.java is vulnerable to remote code execution via XSLT injection when <span style="background-color: rgb(255, 255, 255);">processing input from an untrusted source without validation</span>.<br>Users are recommended to upgrade to versions 10.1.0, 9.18.0 or 8.16.0, which fix this issue.
+
+### References
+* https://lists.apache.org/thread/w613qh7yors840pbx00l1pq6wkl9jzkc
+
+
+### Credits
+* cigar (finder)
