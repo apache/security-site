@@ -126,3 +126,5 @@ def post_sbom(pmc, pmc_uuid, friendly_name, lastVersion, sbom):
         )
     ) as res:
         print(res)
+        if res.status_code != 200:
+            print(res.text)

@@ -26,3 +26,20 @@ with requests.get("https://camel.apache.org/download/") as res:
         version = match.group(2)
         sbom = get_sbom_cached(url, f"camel/{name}")
         post_sbom(pmc, pmc['uuid'], friendly_name, version, sbom)
+
+main_sboms = {
+    "Apache Camel": "camel",
+    "Apache Camel Quarkus": "camel-quarkus",
+    "Apache Camel Kamelets": "camel-kamelets",
+    "Apache Camel Spring Boot": "camel-spring-boot",
+    # Kafka connector is not in version control?
+}
+
+for name in main_sboms:
+    slug = main_sboms[name]
+    url = f"https://raw.githubusercontent.com/apache/{slug}/main/{slug}-sbom/{slug}-sbom.json"
+    with requests.get(url) as res:
+        if res.status_code == 200:
+            post_sbom(pmc, pmc['uuid'], name, "main", res.text)
+        else:
+            print("Failed to fetch " + url)

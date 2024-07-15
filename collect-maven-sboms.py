@@ -1,18 +1,12 @@
 #!/usr/bin/env python3
 
-from bs4 import BeautifulSoup
 from common import get_dirs, get_files, get_sbom_cached, dt_pmc, post_sbom
 from dotenv import load_dotenv
 import json
 import os
 from packaging.version import Version
 import re
-import requests
-from urllib import request
 from sys import argv
-
-load_dotenv()
-dt_api_key = os.getenv('DT_API_KEY')
 
 def project_name(link):
     return link.get('title')[:-1]
@@ -54,12 +48,12 @@ else:
 if len(argv)>2:
     projects = [ argv[2] ]
 elif pmc == 'camel':
+    # we switched to getting those from the
+    # download page, with collect-camel-sboms.py
+    # but spring-boot is not there:
     projects = [
-      'camel',
-      'kamelets/camel-kamelets-parent',
-      'quarkus/camel-quarkus',
       'springboot/spring-boot',
-    ] + maven_projects(pmc)
+    ]
 elif pmc == 'logging':
     projects = maven_projects(pmc, 'log4j')
 else:

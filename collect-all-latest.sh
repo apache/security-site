@@ -2,6 +2,8 @@ python3 ./collect-airflow-sbom.py
 ./collect-maven-sboms.py
 ./collect-maven-sboms.py arrow
 ./collect-maven-sboms.py avro
+./collect-camel-sboms.py
+./collect-maven-sboms.py camel
 ./collect-maven-sboms.py commons
 ./collect-maven-sboms.py druid
 # TODO handle weird versions
