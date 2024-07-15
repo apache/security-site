@@ -55,7 +55,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Hadoop](https://hadoop.apache.org/mailing_lists.html) |  [Apache Hadoop Security Team](mailto:security@hadoop.apache.org) | [Advisories](https://hadoop.apache.org/cve_list.html) |
 | Apache Helix |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Hive](https://hive.apache.org/mailing_lists.html) |  [Apache Hive Security Team](mailto:security@hive.apache.org) | |
-| Apache Hop |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Hop](https://hop.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache HTTP Server](https://httpd.apache.org/security_report.html) |  [Apache HTTP Server Security Team](mailto:security@httpd.apache.org) | [Advisories](https://httpd.apache.org/security/vulnerabilities_24.html) |
 | [Apache HugeGraph](https://hugegraph.apache.org/docs/guides/security) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://hugegraph.apache.org/docs/guides/security) |
 | Apache Ignite |  [Apache Ignite Security Team](mailto:security@ignite.apache.org) | |
