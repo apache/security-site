@@ -26,7 +26,14 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Atlas |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Avro |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Axis |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache BVal |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Baremaps (Incubating) |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Beam |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Bigtop |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Bloodhound |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache BookKeeper |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Brooklyn |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache BuildStream |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache bRPC |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Calcite |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Camel](https://camel.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://camel.apache.org/security/) |
