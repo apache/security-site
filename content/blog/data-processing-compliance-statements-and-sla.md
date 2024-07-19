@@ -1,14 +1,32 @@
 ---
 title: Data Processing, Compliance Statements and SLA
 author: Arnout Engelen
-date: 2024-07-10
+date: 2024-07-19
 ---
 
-The Apache Software Foundation is a non commercial, open source organization that relies on a large community of volunteers and companies to maintain its software. It provides this software free (and gratis) 'as is' - as per [its license](https://www.apache.org/licenses/LICENSE-2.0).
+The Apache Software Foundation is a non commercial, open source organization that relies on a large community of volunteers and companies to maintain its software. It provides this software freely (and gratis) 'as is' - as per [its license](https://www.apache.org/licenses/LICENSE-2.0).
 
-As such we are not a 'vendor' or a 'supplier'. So while you agree to our aforementioned [license](https://www.apache.org/licenses/LICENSE-2.0) agremement, the Apache Software Foundation does not commit to things that a vendor or supplier would usually commit to. Such as providing a typical commercial helpdesk, commercial support, a 24x7 service level agreement and so on. 
+As such we are not a 'vendor' or a 'supplier', but a steward. While you agree to our aforementioned [license](https://www.apache.org/licenses/LICENSE-2.0) agreement, the Apache Software Foundation does not commit to things that a vendor or supplier would usually commit to, such as providing a typical commercial helpdesk, commercial support, a 24x7 service level agreement and so on.
 
-For readers not yet familiar, it might be interesting to read more about [how the ASF works](https://apache.org/foundation/how-it-works.html).
+For readers not yet familiar, it might be interesting to read more about [how the ASF works](https://apache.org/foundation/how-it-works.html), and consider participating.
+
+# Service Level Agreement
+
+While we strive to keep our software secure and up to date - the
+[license](https://www.apache.org/licenses/LICENSE-2.0),
+under which our software was provided to you, does *not* come with a Service
+Level Agreement.
+
+There are no strict pre-agreed timelines for Apache releases or security patches:
+when handling security issues projects take a risk-based approach, where issues
+that are likely to have serious downstream consequences are dealt with quickly,
+while issues with less impact may be fixed in the regular release cadence.
+
+The [Apache Security Team](https://apache.org/security) monitors this process,
+and projects that fail to meet reasonable response times will be retired
+following our [Attic process](https://attic.apache.org). If you want to prevent
+this from happening, the best way is to join the project community while it's
+healthy and actively contribute (security) analyses and improvements.
 
 # Data processing
 
@@ -31,18 +49,6 @@ In particular, any software that is released will adhere to the [release policy]
 
 You may either complete various certifications in house, by using a third party or by procuring the software from a commercial entity that provides such services. We cannot make any particular recommendations, but if that is relevant to you that might be something to seek out.
 
-# Service Level Agreement
-
-While we strive to keep our software secure and up to date - the [license](https://www.apache.org/licenses/LICENSE-2.0), under which our software was provided to you, does *not* come with a Service Level Agreement. 
-
-There are no strict pre-agreed timelines for Apache releases or security patches:
-when handling security issues projects take a risk-based approach, where issues
-that are likely to have serious downstream consequences are dealt with quickly,
-while issues with less impact may be fixed in the regular release cadence. The
-[Apache Security Team](https://apache.org/security) monitors this process, and
-projects that fail to meet reasonable response times will be retired following
-our [Attic process](https://attic.apache.org).
-
 # Attic
 
-The Attic contains historic code that is no longer fit for purpose. It is code that can no longer be used as it was originally intended. A project that was moved to the [Attic](https://attic.apache.org) is not subject to our various security- and release-policies. It is no longer considered a release by the Apache Software Foundation. 
+The Attic contains historic code that is no longer fit for purpose. It is code that can no longer be used as it was originally intended. A project that was moved to the [Attic](https://attic.apache.org) is not subject to our various security- and release-policies. It is no longer considered a release by the Apache Software Foundation.
