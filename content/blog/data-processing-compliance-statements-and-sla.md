@@ -49,6 +49,20 @@ In particular, any software that is released will adhere to the [release policy]
 
 You may either complete various certifications in house, by using a third party or by procuring the software from a commercial entity that provides such services. We cannot make any particular recommendations, but if that is relevant to you that might be something to seek out.
 
+# Provenance and export restrictions
+
+As a Delaware incorporated 501(c)3 organisation the Apache Software Foundation
+labours under the rules and regulation of the United States. We have a
+[separate page](https://www.apache.org/licenses/exports/) dedicated to detailed
+information on the export control status of the Apache Software Foundation's
+releases.
+
+The provenance of code contributed to the Apache Software Foundation is tracked
+carefully through [CLAs and Software Grants](https://www.apache.org/licenses/#grants),
+as well as the terms of the [license](https://www.apache.org/licenses/LICENSE-2.0)
+itself. Even with that solid foundation, however, the trustworthiness of our code
+comes mainly from the transparency that we practice in all aspects of development.
+
 # Attic
 
 The Attic contains historic code that is no longer fit for purpose. It is code that can no longer be used as it was originally intended. A project that was moved to the [Attic](https://attic.apache.org) is not subject to our various security- and release-policies. It is no longer considered a release by the Apache Software Foundation.
