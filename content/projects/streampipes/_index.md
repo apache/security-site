@@ -66,3 +66,78 @@ Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG) vulnerabilit
 
 ### Credits
 * Alessandro Albani, Digital Security Division Var Group (finder)
+
+
+## Potential creation of multiple identical accounts ## { #CVE-2024-30471 }
+
+CVE-2024-30471 [\[CVE json\]](./CVE-2024-30471.cve.json) [\[OSV json\]](./CVE-2024-30471.osv.json)
+
+
+
+_Last updated: 2024-07-17T09:01:50.452Z_
+
+### Affected
+
+* Apache StreamPipes through 0.93.0
+
+
+### Description
+
+Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability in Apache StreamPipes in user self-registration.<br>This allows an attacker to potentially request the creation of multiple accounts with the same email address until the email address is registered, creating many identical users and corrupting StreamPipe's user management.<br><p>This issue affects Apache StreamPipes: through 0.93.0.</p><p>Users are recommended to upgrade to version 0.95.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/8yodrmohgcybq900or3d4hc1msl230fr
+
+
+### Credits
+* TonyNT from VNPT-NET (finder)
+
+
+## Potential remote code execution (RCE) via file upload ## { #CVE-2024-31411 }
+
+CVE-2024-31411 [\[CVE json\]](./CVE-2024-31411.cve.json) [\[OSV json\]](./CVE-2024-31411.osv.json)
+
+
+
+_Last updated: 2024-07-17T09:22:06.439Z_
+
+### Affected
+
+* Apache StreamPipes through 0.93.0
+
+
+### Description
+
+Unrestricted Upload of File with dangerous type vulnerability in Apache StreamPipes.<br>Such a dangerous type might be an executable file that may lead to a remote code execution (RCE).<br>The unrestricted upload is only possible for authenticated and authorized users.<br><p>This issue affects Apache StreamPipes: through 0.93.0.</p><p>Users are recommended to upgrade to version 0.95.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/b0657okbwzg5xxs11hphvc9qrd9s70mt
+
+
+### Credits
+* L0ne1y (finder)
+
+
+## Possibility of SSRF in pipeline element installation process ## { #CVE-2024-31979 }
+
+CVE-2024-31979 [\[CVE json\]](./CVE-2024-31979.cve.json) [\[OSV json\]](./CVE-2024-31979.osv.json)
+
+
+
+_Last updated: 2024-07-17T09:03:15.953Z_
+
+### Affected
+
+* Apache StreamPipes through 0.93.0
+
+
+### Description
+
+Server-Side Request Forgery (SSRF) vulnerability in Apache StreamPipes during installation process of pipeline elements.<br>Previously, StreamPipes allowed users to configure custom endpoints from which to install additional pipeline elements. <br>These endpoints were not properly validated, allowing an attacker to get StreamPipes to send an HTTP GET request to an arbitrary address.<br><p>This issue affects Apache StreamPipes: through 0.93.0.</p><p>Users are recommended to upgrade to version 0.95.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/8lryp3bxnby9kmk13odkz2jbfdjfvf0y
+
+
+### Credits
+* L0ne1y (finder)

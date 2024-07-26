@@ -6,11 +6,11 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache CloudStack? You can read more about the projects' security policy on their [security page](https://cloudstack.apache.org/security.html), and email your report to the [Apache Security Team](mailto:security@apache.org).
+Do you want disclose a potential security issue for Apache CloudStack? You can read more about the projects' security policy on their [security page](https://cloudstack.apache.org/security/), and email your report to the [Apache Security Team](mailto:security@apache.org).
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://cloudstack.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://cloudstack.apache.org/security/). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
 ## Apache Cloudstack insecure random number generation affects project email invitation ## { #CVE-2022-26779 }
@@ -200,3 +200,35 @@ _Last updated: 2024-07-05T13:39:23.006Z_
 * Adam Pond of Apple Services Engineering Security (finder)
 * Terry Thibault of Apple Services Engineering Security (finder)
 * Damon Smith of Apple Services Engineering Security (finder)
+
+
+## SAML Signature Exclusion ## { #CVE-2024-41107 }
+
+CVE-2024-41107 [\[CVE json\]](./CVE-2024-41107.cve.json) [\[OSV json\]](./CVE-2024-41107.osv.json)
+
+
+
+_Last updated: 2024-07-19T10:11:15.224Z_
+
+### Affected
+
+* Apache CloudStack from 4.5.0 through 4.18.2.1
+* Apache CloudStack from 4.19.0.0 through 4.19.0.2
+
+
+### Description
+
+<div>The CloudStack SAML authentication (disabled by default) does not enforce signature check. In CloudStack environments where SAML authentication is enabled, an attacker that initiates CloudStack SAML single sign-on authentication can bypass SAML authentication by submitting a spoofed SAML response with no signature and <span style="background-color: rgb(255, 255, 255);">known or guessed username and other user details of a SAML-enabled CloudStack user-account</span>.&nbsp;In such environments, this can result in a complete compromise of the resources owned and/or accessible by a SAML enabled user-account.<br></div><div><br><span style="background-color: rgb(255, 255, 255);">Affected users are recommended to disable the SAML authentication plugin by setting the&nbsp;"saml2.enabled" global setting to "false", or upgrade to version 4.18.2.2, 4.19.1.0 or later, which addresses this issue.</span></div>
+
+### References
+* https://lists.apache.org/thread/5q06g8zvmhcw6w3tjr6r5prqdw6zckg3
+* https://cloudstack.apache.org/blog/security-release-advisory-cve-2024-41107
+* https://github.com/apache/cloudstack/issues/4519
+* https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-cve-2024-41107
+
+
+### Credits
+* Christian Gross of Netcloud AG (finder)
+* Damon Smith of Apple Services Engineering Security (finder)
+* Adam Pond of Apple Services Engineering Security (finder)
+* Terry Thibault of Apple Services Engineering Security (finder)

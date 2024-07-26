@@ -1171,3 +1171,29 @@ Improper Input Validation vulnerability in Apache Superset, allows for an authen
 ### Credits
 * Matei "Mal" Badanoiu (finder)
 * Daniel Vaz Gaspar (remediation developer)
+
+
+## Improper SQL authorisation, parse not checking for specific engine functions ## { #CVE-2024-39887 }
+
+CVE-2024-39887 [\[CVE json\]](./CVE-2024-39887.cve.json) [\[OSV json\]](./CVE-2024-39887.osv.json)
+
+
+
+_Last updated: 2024-07-16T09:20:08.872Z_
+
+### Affected
+
+* Apache Superset before 4.0.2
+
+
+### Description
+
+<p>An SQL Injection vulnerability in Apache Superset exists due to improper neutralization of special elements used in SQL commands. Specifically, certain engine-specific functions are not checked, which allows attackers to bypass Apache Superset's SQL authorization. To mitigate this, a new configuration key named <code>DISALLOWED_SQL_FUNCTIONS</code> has been introduced. This key disallows the use of the following PostgreSQL functions: <code>version</code>, <code>query_to_xml</code>, <code>inet_server_addr</code>, and <code>inet_client_addr</code>. Additional functions can be added to this list for increased protection.</p><p>This issue affects Apache Superset: before 4.0.2.</p><p>Users are recommended to upgrade to version 4.0.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/j55vm41jg3l0x6w49zrmvbf3k0ts5fqz
+
+
+### Credits
+* Mike Yushkovskiy (finder)
+* Daniel Vaz Gaspar (remediation developer)

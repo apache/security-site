@@ -39,3 +39,28 @@ _Last updated: 2023-11-10T14:10:15.590Z_
 
 ### Credits
 * Li Jiakun - laoquanshi (finder)
+
+
+## AWS WebIdentityToken exposure in log files ## { #CVE-2024-41178 }
+
+CVE-2024-41178 [\[CVE json\]](./CVE-2024-41178.cve.json) [\[OSV json\]](./CVE-2024-41178.osv.json)
+
+
+
+_Last updated: 2024-07-23T17:07:57.878Z_
+
+### Affected
+
+* Apache Arrow Rust Object Store from 0.5.0 through 0.10.1
+
+
+### Description
+
+Exposure of temporary credentials in logs&nbsp;in Apache Arrow Rust Object Store (`object_store` crate), version 0.10.1 and earlier on all platforms using AWS WebIdentityTokens.&nbsp;<br><br>On certain error conditions, the logs may contain the OIDC token passed to <a target="_blank" rel="nofollow" href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html">AssumeRoleWithWebIdentity</a>. This allows someone with access to the logs to impersonate that identity, including performing their own calls to AssumeRoleWithWebIdentity, until the OIDC token expires. Typically OIDC tokens are valid for up to an hour, although this will vary depending on the issuer.<br><br>Users are recommended to use a different AWS authentication mechanism, disable logging or upgrade to version 0.10.2, which fixes this issue.<br><br>Details:<br><span style="background-color: var(--wht);"><br>When using AWS WebIdentityTokens with the object_store crate, in the event of a failure and automatic retry, </span><span style="background-color: var(--wht);">the underlying reqwest error, including the full URL with the credentials, potentially in the parameters, is written to the logs.&nbsp;<br></span><br>Thanks to <span style="background-color: rgb(255, 255, 255);">Paul&nbsp;</span>Hatcherian for reporting this vulnerability
+
+### References
+* https://lists.apache.org/thread/3t0povdppnt2czv6crlsqhvyko93kcrg
+
+
+### Credits
+* Paul Hatcherian (finder)

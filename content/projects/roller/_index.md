@@ -66,3 +66,28 @@ _Last updated: 2023-08-24T08:15:22.581Z_
 
 ### Credits
 * SecureLayer7 Technologies Pvt Ltd (finder)
+
+
+## Insufficient input validation for some user profile and bookmark fields when Roller in untested-users mode ## { #CVE-2024-25090 }
+
+CVE-2024-25090 [\[CVE json\]](./CVE-2024-25090.cve.json) [\[OSV json\]](./CVE-2024-25090.osv.json)
+
+
+
+_Last updated: 2024-07-26T08:36:45.293Z_
+
+### Affected
+
+* Apache Roller from 5.0.0 before 6.1.3
+
+
+### Description
+
+<p>Insufficient input validation and sanitation in Profile name &amp; screenname, Bookmark name &amp; description and blogroll name features in all versions of Apache Roller on all platforms allows an authenticated user to perform an XSS attack. Mitigation: if you do not have Roller configured for untrusted users, then you need to do nothing because you trust your users to author raw HTML and other web content. If you are running with untrusted users then you should upgrade to Roller 6.1.3.</p><p>This issue affects Apache Roller: from 5.0.0 before 6.1.3.</p><p>Users are recommended to upgrade to version 6.1.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/lb50jqyxwf8jrfpydl6dc5zpqtpgrrwd
+
+
+### Credits
+* Jacob Hazak (reporter)

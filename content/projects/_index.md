@@ -32,7 +32,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Camel](https://camel.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://camel.apache.org/security/) |
 | Apache Cassandra |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Cayenne |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache CloudStack](https://cloudstack.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache CloudStack](https://cloudstack.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Cocoon |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Commons](https://commons.apache.org/security.html) |  [Apache Commons Security Team](mailto:security@commons.apache.org) | [Advisories](https://commons.apache.org/security.html#Known_Security_Vulnerabilities) |
 | Apache CouchDB |  [Apache CouchDB Security Team](mailto:security@couchdb.apache.org) | |
@@ -41,6 +41,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Directory |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache DolphinScheduler |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Doris |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Drill |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Druid](https://druid.apache.org/docs/latest/operations/security-overview.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Dubbo](https://dubbo.apache.org/en/docs/notices/security/) |  [Apache Dubbo Security Team](mailto:security@dubbo.apache.org) | |
 | Apache EventMesh |  [Apache Security Team](mailto:security@apache.org) | |
@@ -119,6 +120,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Struts](https://struts.apache.org/security.html) |  [Apache Struts Security Team](mailto:security@struts.apache.org) | [Advisories](https://cwiki.apache.org/confluence/display/WW/Security+Bulletins) |
 | [Apache Subversion](https://subversion.apache.org/security/) |  [Apache Subversion Security Team](mailto:security@subversion.apache.org) | [Advisories](https://subversion.apache.org/security/) |
 | [Apache Superset](https://superset.apache.org/docs/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://superset.apache.org/docs/security/cves) |
+| Apache Syncope |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache SystemDS |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Tapestry |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Tika |  [Apache Security Team](mailto:security@apache.org) | |

@@ -409,7 +409,7 @@ CVE-2023-51437 [\[CVE json\]](./CVE-2023-51437.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-02-07T09:18:08.965Z_
+_Last updated: 2024-07-22T08:38:34.087Z_
 
 ### Affected
 

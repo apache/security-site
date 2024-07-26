@@ -168,3 +168,74 @@ A SSRF vulnerability using the Aegis DataBinding in versions of Apache CXF befor
 
 ### Credits
 * Tobias S. Fink (finder)
+
+
+## SSRF vulnerability via WADL stylesheet parameter ## { #CVE-2024-29736 }
+
+CVE-2024-29736 [\[CVE json\]](./CVE-2024-29736.cve.json) [\[OSV json\]](./CVE-2024-29736.osv.json)
+
+
+
+_Last updated: 2024-07-19T08:50:06.520Z_
+
+### Affected
+
+* Apache CXF before 3.5.9, 3.6.4, 4.0.5
+
+
+### Description
+
+A SSRF vulnerability in WADL service description in versions of Apache CXF before 4.0.5, 3.6.4 and 3.5.9 allows an attacker to perform SSRF style attacks on REST webservices. The attack only applies if a custom stylesheet parameter is configured.
+
+### References
+* https://lists.apache.org/thread/4jtpsswn2r6xommol54p5mg263ysgdw2
+
+
+### Credits
+* Tobias S. Fink (finder)
+
+
+## Apache CXF Denial of Service vulnerability in JOSE ## { #CVE-2024-32007 }
+
+CVE-2024-32007 [\[CVE json\]](./CVE-2024-32007.cve.json) [\[OSV json\]](./CVE-2024-32007.osv.json)
+
+
+
+_Last updated: 2024-07-19T08:50:30.464Z_
+
+### Affected
+
+* Apache CXF before 4.0.5, 3.6.4, 3.5.9
+
+
+### Description
+
+An improper input validation of the&nbsp;p2c parameter in the Apache CXF JOSE code before 4.0.5, 3.6.4 and 3.5.9&nbsp;allows an attacker to perform a denial of service attack by specifying a large value for this parameter in a token.&nbsp;<br>
+
+### References
+* https://lists.apache.org/thread/stwrgsr1llb73nkl16klv9vjqgmmx633
+
+
+### Credits
+* Jingcheng Yang and Jianjun Chen from Sichuan University and Zhongguancun Lab. (finder)
+
+
+## Unrestricted memory consumption in CXF HTTP clients ## { #CVE-2024-41172 }
+
+CVE-2024-41172 [\[CVE json\]](./CVE-2024-41172.cve.json) [\[OSV json\]](./CVE-2024-41172.osv.json)
+
+
+
+_Last updated: 2024-07-19T08:50:42.522Z_
+
+### Affected
+
+* Apache CXF from 3.6.0, 4.0.0 before 3.6.4, 4.0.5
+
+
+### Description
+
+In versions of Apache CXF before 3.6.4 and 4.0.5 (3.5.x and lower versions are not impacted), a CXF HTTP client conduit may prevent HTTPClient instances from being garbage collected and it is possible that memory consumption will continue to increase, eventually causing the application to run  out of memory<br>
+
+### References
+* https://lists.apache.org/thread/n2hvbrgwpdtcqdccod8by28ynnolybl6

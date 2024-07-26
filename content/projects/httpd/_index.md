@@ -1237,7 +1237,7 @@ CVE-2024-27316 [\[CVE json\]](./CVE-2024-27316.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-04-04T19:21:40.507Z_
+_Last updated: 2024-07-22T08:42:12.197Z_
 
 ### Affected
 
@@ -1475,3 +1475,50 @@ A regression in the core of Apache HTTP Server 2.4.60 ignores some use of the le
 
 ### References
 * https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+## source code disclosure with handlers configured via AddType ## { #CVE-2024-40725 }
+
+CVE-2024-40725 [\[CVE json\]](./CVE-2024-40725.cve.json) [\[OSV json\]](./CVE-2024-40725.osv.json)
+
+
+
+_Last updated: 2024-07-18T09:32:42.028Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.60 through 2.4.61
+
+
+### Description
+
+<p>A partial fix for&nbsp; CVE-2024-39884 in the core of Apache HTTP Server 2.4.61 ignores some use of the legacy content-type based configuration of handlers. "AddType" and similar configuration, under some circumstances where files are requested indirectly, result in source code disclosure of local content. For example, PHP scripts may be served instead of interpreted.</p><p></p><p>Users are recommended to upgrade to version 2.4.62, which fixes this issue.</p><br><br>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+## SSRF with mod_rewrite in server/vhost context on Windows ## { #CVE-2024-40898 }
+
+CVE-2024-40898 [\[CVE json\]](./CVE-2024-40898.cve.json) [\[OSV json\]](./CVE-2024-40898.osv.json)
+
+
+
+_Last updated: 2024-07-18T09:55:11.215Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.61
+
+
+### Description
+
+SSRF in Apache HTTP Server on Windows with mod_rewrite in server/vhost context, allows to potentially leak NTLM hashes to a malicious server via SSRF and <span style="background-color: rgb(255, 255, 255);">malicious requests.<br></span><br>Users are recommended to upgrade to version 2.4.62 which fixes this issue.&nbsp;
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Smi1e (DBAPPSecurity Ltd.) (finder)
+* xiaojunjie (DBAPPSecurity Ltd.) (finder)

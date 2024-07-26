@@ -2330,3 +2330,57 @@ Apache Airflow version 2.9.0 has a vulnerability that allows an authenticated at
 ### Credits
 * Ming (finder)
 * Jens Scheffler (remediation developer)
+
+
+## Potential XSS Vulnerability ## { #CVE-2024-39863 }
+
+CVE-2024-39863 [\[CVE json\]](./CVE-2024-39863.cve.json) [\[OSV json\]](./CVE-2024-39863.osv.json)
+
+
+
+_Last updated: 2024-07-22T08:50:05.686Z_
+
+### Affected
+
+* Apache Airflow before 2.9.3
+
+
+### Description
+
+Apache Airflow versions before 2.9.3 have a vulnerability that allows an authenticated attacker to inject a malicious link when installing a provider. Users are recommended to upgrade to version 2.9.3, which fixes this issue.<br>
+
+### References
+* https://github.com/apache/airflow/pull/40475
+* https://lists.apache.org/thread/gxkvs279f1mbvckv5q65worr6how20o3
+
+
+### Credits
+* Seokchan Yoon (https://github.com/ch4n3-yoon) (finder)
+* Amogh Desai (remediation developer)
+
+
+## DAG Author Code Execution possibility in airflow-scheduler ## { #CVE-2024-39877 }
+
+CVE-2024-39877 [\[CVE json\]](./CVE-2024-39877.cve.json) [\[OSV json\]](./CVE-2024-39877.osv.json)
+
+
+
+_Last updated: 2024-07-17T07:54:23.158Z_
+
+### Affected
+
+* Apache Airflow from 2.4.0 before 2.9.3
+
+
+### Description
+
+Apache Airflow 2.4.0, and versions before 2.9.3, has a vulnerability that allows authenticated DAG authors to craft a doc_md parameter in a way that could execute arbitrary code in the scheduler context, which should be forbidden according to the Airflow Security model. Users should upgrade to version 2.9.3 or later which has removed the vulnerability.
+
+### References
+* https://github.com/apache/airflow/pull/40522
+* https://lists.apache.org/thread/1xhj9dkp37d6pzn24ll2mf94wbqnb2y1
+
+
+### Credits
+* Seokchan Yoon (https://github.com/ch4n3-yoon) (finder)
+* Wei Lee (remediation developer)
