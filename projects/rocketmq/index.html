@@ -142,6 +142,26 @@
 <li><a href="mailto:soreatu@gmail.com">soreatu@gmail.com</a> (finder)</li>
 <li><a href="mailto:yuansec@outlook.com">yuansec@outlook.com</a>  (finder)</li>
 </ul>
+<h2 id="CVE-2024-23321">Unauthorized Exposure of Sensitive Data</h2>
+<p>CVE-2024-23321 <a href="./CVE-2024-23321.cve.json">[CVE json]</a> <a href="./CVE-2024-23321.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-22T09:24:05.796Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache RocketMQ from 4.5.2 through 5.2.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>For RocketMQ versions 5.2.0 and below, under certain conditions, there is a risk of exposure of sensitive Information to an unauthorized actor even if RocketMQ is enabled with authentication and authorization functions.</p>
+<p>An attacker, possessing regular user privileges or listed in the IP whitelist, could potentially acquire the administrator's account and password through specific interfaces. Such an action would grant them full control over RocketMQ, provided they have access to the broker IP address list.</p>
+<p>To mitigate these security threats, it is strongly advised that users upgrade to version 5.3.0 or newer. Additionally, we recommend users to use RocketMQ ACL 2.0 instead of the original RocketMQ ACL when upgrading to version Apache RocketMQ 5.3.0.</p>
+<p></p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/lr8npobww786nrnddd1pcy974r17c830">https://lists.apache.org/thread/lr8npobww786nrnddd1pcy974r17c830</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>BaoChengZhang (LengJingQiCaiSecurityLab) (finder)</li>
+</ul>
 
   
 </div>

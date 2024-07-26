@@ -170,6 +170,108 @@
 <ul>
 <li><a href="https://lists.apache.org/thread/qj99c03r4td35f8gbxq084b8qmv2fyr3">https://lists.apache.org/thread/qj99c03r4td35f8gbxq084b8qmv2fyr3</a></li>
 </ul>
+<h2 id="CVE-2023-52290">Unchecked SQL query fields trigger SQL injection vulnerability</h2>
+<p>CVE-2023-52290 <a href="./CVE-2023-52290.cve.json">[CVE json]</a> <a href="./CVE-2023-52290.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-16T07:37:36.828Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache StreamPark (incubating) from 2.0.0 before 2.1.4</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p><br>In streampark-console the list pages(e.g: application pages), users can sort page by field. This sort field is sent from the front-end to the back-end, and the SQL query is generated using this field. However, because this sort field isn&rsquo;t validated, there is a risk of SQL injection vulnerability. The attacker must successfully log into the system to launch an attack, which may cause data leakage. Since no data will be written, <span style="background-color: rgb(255, 255, 255);">so this is a low-impact vulnerability.</span><br><br><div><div>Mitigation:<br><br>all users should upgrade to 2.1.4,  Such parameters will be blocked.<br><br></div></div><br><br></p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/t3mcm8pb65d9gj3wrgtj9sx9s2pfvvl3">https://lists.apache.org/thread/t3mcm8pb65d9gj3wrgtj9sx9s2pfvvl3</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>thiscodecc of MoyunSec Vlab and Bing (reporter)</li>
+</ul>
+<h2 id="CVE-2023-52291">Unchecked maven build params could trigger remote command execution</h2>
+<p>CVE-2023-52291 <a href="./CVE-2023-52291.cve.json">[CVE json]</a> <a href="./CVE-2023-52291.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-17T08:16:10.844Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache StreamPark (incubating) from 2.0.0 before 2.1.4</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>In streampark, the project module integrates Maven&rsquo;s compilation capabilities. The input parameter validation is not strict, allowing attackers to insert commands for remote command execution, The prerequisite for a successful attack is that the user needs to log in to the streampark system and have system-level permissions. Generally, only users of that system have the authorization to log in, and users would not manually input a dangerous operation command. Therefore, the risk level of this vulnerability is very low.<br><div><br><br>Background:<br><br>In the &ldquo;Project&rdquo; module, the maven build args <span style="background-color: rgb(255, 255, 255);"> “&lt;” operator causes command injection. e.g</span> : “&lt; (curl <a target="_blank" rel="nofollow" href="http://xxx.com"><a href="http://xxx.com">http://xxx.com</a></a>)” will be executed as a command injection,<br><br><br><div>Mitigation:<br><br></div>all users <span style="background-color: var(--wht);">should upgrade to 2.1.4,  The &ldquo;&lt;&rdquo; operator will blocked。</span><div><br></div></div><p></p><br><br></p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/pl6xgzoqrl4kcn0nt55zjbsx8dn80mkf">https://lists.apache.org/thread/pl6xgzoqrl4kcn0nt55zjbsx8dn80mkf</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>thiscodecc of MoyunSec Vlab and Bing (finder)</li>
+</ul>
+<h2 id="CVE-2024-29120">Information leakage vulnerability</h2>
+<p>CVE-2024-29120 <a href="./CVE-2024-29120.cve.json">[CVE json]</a> <a href="./CVE-2024-29120.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-17T14:59:02.804Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache StreamPark from 2.0.0 before 2.1.4</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>In Streampark (version &lt; <span style="background-color: rgb(255, 255, 255);">2.1.4</span>), when a user logged in successfully, the Backend service would return &ldquo;Authorization&rdquo; as the front-end authentication credential.  User can use this credential to request other users&rsquo; information, including the administrator&rsquo;s username, password, salt value, etc. <br><br><div>Mitigation:<br><br></div>all users <span style="background-color: var(--wht);">should upgrade to 2.1.4</span><br><br></p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/y3oqz7l8vd7jxxx3z2khgl625nvfr60j">https://lists.apache.org/thread/y3oqz7l8vd7jxxx3z2khgl625nvfr60j</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>L0ne1y (reporter)</li>
+</ul>
+<h2 id="CVE-2024-29178">FreeMarker SSTI RCE Vulnerability</h2>
+<p>CVE-2024-29178 <a href="./CVE-2024-29178.cve.json">[CVE json]</a> <a href="./CVE-2024-29178.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-18T11:15:55.181Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache StreamPark from 1.0.0 before 2.1.4</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p><span style="background-color: rgb(255, 255, 255);">On versions before 2.1.4, a user could log in and perform a template injection attack resulting in Remote Code Execution on the server, The attacker must successfully log into the system to launch an attack, so this is a moderate-impact vulnerability.<br></span><br><br><div>Mitigation:<br><br></div>all users <span style="background-color: var(--wht);">should upgrade to 2.1.4</span><br><br></p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/n6dhnl68knpxy80t35qxkkw2691l8sfn">https://lists.apache.org/thread/n6dhnl68knpxy80t35qxkkw2691l8sfn</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>L0ne1y (reporter)</li>
+</ul>
+<h2 id="CVE-2024-29737">maven build params could trigger remote command execution</h2>
+<p>CVE-2024-29737 <a href="./CVE-2024-29737.cve.json">[CVE json]</a> <a href="./CVE-2024-29737.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-17T08:21:09.036Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache StreamPark (incubating) from 2.0.0 before 2.1.4</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>In streampark, the project module integrates Maven&rsquo;s compilation capabilities. The input parameter validation is not strict, allowing attackers to insert commands for remote command execution, The prerequisite for a successful attack is that the user needs to log in to the streampark system and have system-level permissions. Generally, only users of that system have the authorization to log in, and users would not manually input a dangerous operation command. Therefore, the risk level of this vulnerability is very low.<br><div><br><div>Mitigation:<br><br></div>all users <span style="background-color: var(--wht);">should upgrade to 2.1.4<br><br>Background info:<span style="background-color: rgb(255, 255, 255);"><br><span style="background-color: rgb(255, 255, 255);"><br>Log in to Streampark using the default username (e.g. test1, test2, test3) and the default password (streampark). Navigate to the Project module, then add a new project. Enter the git repository address of the project and input <code>touch /tmp/success_2.1.2</code> as the &ldquo;Build Argument&rdquo;. Note that there is no verification and interception of the special character &ldquo;<code>&quot;. As a result, you will find that this injection command will be successfully executed after executing the build.&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;div&gt;In the latest version, the special symbol </code> is intercepted.</div><div><div><div><div></div></div></div></div></span><div><br><br></div></div><p></p><br></p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/xhx7jt1t24s6d7o435wxng8t0ojfbfh5">https://lists.apache.org/thread/xhx7jt1t24s6d7o435wxng8t0ojfbfh5</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>L0ne1y (reporter)</li>
+</ul>
+<h2 id="CVE-2024-34457">Apache StreamPark IDOR Vulnerability</h2>
+<p>CVE-2024-34457 <a href="./CVE-2024-34457.cve.json">[CVE json]</a> <a href="./CVE-2024-34457.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-22T09:48:19.350Z</em></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache StreamPark from 1.0.0 before 2.1.4</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<div>On versions before 2.1.4, after a regular user successfully logs in, they can manually make a request using the authorization token to view everyone's user flink information, including executeSQL and config.<br></div><br><div>Mitigation:<br><br></div>all users <span style="background-color: var(--wht);">should upgrade to 2.1.4</span><br><br><br><br>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/brlfrmvw9dcv38zoofmhxg7qookmwn7j">https://lists.apache.org/thread/brlfrmvw9dcv38zoofmhxg7qookmwn7j</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>L0ne1y (reporter)</li>
+</ul>
 
   
 </div>

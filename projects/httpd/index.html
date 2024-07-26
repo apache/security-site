@@ -979,7 +979,7 @@ substitution. For example, something like:</div><div><br></div><div>RewriteEngin
 </ul>
 <h2 id="CVE-2024-27316">HTTP/2 DoS by memory exhaustion on endless continuation frames</h2>
 <p>CVE-2024-27316 <a href="./CVE-2024-27316.cve.json">[CVE json]</a> <a href="./CVE-2024-27316.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-04-04T19:21:40.507Z</em></p>
+<p><em>Last updated: 2024-07-22T08:42:12.197Z</em></p>
 <h3 id="affected-41">Affected</h3>
 <ul>
 <li>Apache HTTP Server from 2.4.17 through 2.4.58</li>
@@ -1142,6 +1142,37 @@ substitution. For example, something like:</div><div><br></div><div>RewriteEngin
 <h3 id="references-49">References</h3>
 <ul>
 <li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h2 id="CVE-2024-40725">source code disclosure with handlers configured via AddType</h2>
+<p>CVE-2024-40725 <a href="./CVE-2024-40725.cve.json">[CVE json]</a> <a href="./CVE-2024-40725.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-18T09:32:42.028Z</em></p>
+<h3 id="affected-51">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.60 through 2.4.61</li>
+</ul>
+<h3 id="description-51">Description</h3>
+<p>A partial fix for&nbsp; CVE-2024-39884 in the core of Apache HTTP Server 2.4.61 ignores some use of the legacy content-type based configuration of handlers. "AddType" and similar configuration, under some circumstances where files are requested indirectly, result in source code disclosure of local content. For example, PHP scripts may be served instead of interpreted.</p><p></p><p>Users are recommended to upgrade to version 2.4.62, which fixes this issue.</p><br><br>
+<h3 id="references-50">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h2 id="CVE-2024-40898">SSRF with mod_rewrite in server/vhost context on Windows</h2>
+<p>CVE-2024-40898 <a href="./CVE-2024-40898.cve.json">[CVE json]</a> <a href="./CVE-2024-40898.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-18T09:55:11.215Z</em></p>
+<h3 id="affected-52">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.61</li>
+</ul>
+<h3 id="description-52">Description</h3>
+<p>SSRF in Apache HTTP Server on Windows with mod_rewrite in server/vhost context, allows to potentially leak NTLM hashes to a malicious server via SSRF and <span style="background-color: rgb(255, 255, 255);">malicious requests.<br></span><br>Users are recommended to upgrade to version 2.4.62 which fixes this issue. </p>
+<h3 id="references-51">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-48">Credits</h3>
+<ul>
+<li>Smi1e (DBAPPSecurity Ltd.) (finder)</li>
+<li>xiaojunjie (DBAPPSecurity Ltd.) (finder)</li>
 </ul>
 
   

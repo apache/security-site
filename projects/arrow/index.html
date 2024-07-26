@@ -125,6 +125,23 @@
 <ul>
 <li>Li Jiakun - laoquanshi (finder)</li>
 </ul>
+<h2 id="CVE-2024-41178">AWS WebIdentityToken exposure in log files</h2>
+<p>CVE-2024-41178 <a href="./CVE-2024-41178.cve.json">[CVE json]</a> <a href="./CVE-2024-41178.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-23T17:07:57.878Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Arrow Rust Object Store from 0.5.0 through 0.10.1</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Exposure of temporary credentials in logs in Apache Arrow Rust Object Store (<code>object_store</code> crate), version 0.10.1 and earlier on all platforms using AWS WebIdentityTokens. <br><br>On certain error conditions, the logs may contain the OIDC token passed to <a target="_blank" rel="nofollow" href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html">AssumeRoleWithWebIdentity</a>. This allows someone with access to the logs to impersonate that identity, including performing their own calls to AssumeRoleWithWebIdentity, until the OIDC token expires. Typically OIDC tokens are valid for up to an hour, although this will vary depending on the issuer.<br><br>Users are recommended to use a different AWS authentication mechanism, disable logging or upgrade to version 0.10.2, which fixes this issue.<br><br>Details:<br><span style="background-color: var(--wht);"><br>When using AWS WebIdentityTokens with the object_store crate, in the event of a failure and automatic retry, </span><span style="background-color: var(--wht);">the underlying reqwest error, including the full URL with the credentials, potentially in the parameters, is written to the logs. <br></span><br>Thanks to <span style="background-color: rgb(255, 255, 255);">Paul </span>Hatcherian for reporting this vulnerability</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/3t0povdppnt2czv6crlsqhvyko93kcrg">https://lists.apache.org/thread/3t0povdppnt2czv6crlsqhvyko93kcrg</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Paul Hatcherian (finder)</li>
+</ul>
 
   
 </div>

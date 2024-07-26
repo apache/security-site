@@ -140,6 +140,23 @@
 <ul>
 <li>Apache Pinot would like to thank Haoruo Chen(<a href="mailto:chenhaoruo0128@gmail.com">chenhaoruo0128@gmail.com</a>) for reporting the issue</li>
 </ul>
+<h2 id="CVE-2024-39676">Unauthorized endpoint exposed sensitive information</h2>
+<p>CVE-2024-39676 <a href="./CVE-2024-39676.cve.json">[CVE json]</a> <a href="./CVE-2024-39676.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-24T07:41:07.886Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Pinot from 0.1 before 1.0.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Pinot.</p><p>This issue affects Apache Pinot: from 0.1 before 1.0.0.</p><p>Users are recommended to upgrade to version 1.0.0<span style="background-color: rgb(255, 255, 255);">&nbsp;and configure RBAC</span>, which fixes the issue.</p><p><span style="background-color: rgb(255, 255, 255);">Details:&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">When using a request to path “/appconfigs” to the controller, it can lead to the disclosure of sensitive information such as system information (e.g. arch, os version), environment information (e.g. maxHeapSize) and Pinot configurations (e.g. zookeeper path). This issue was addressed by the </span><a target="_blank" rel="nofollow" href="https://docs.pinot.apache.org/operators/tutorials/authentication/basic-auth-access-control"><span style="background-color: rgb(255, 255, 255);">Role-based Access Control</span></a>,<span style="background-color: rgb(255, 255, 255);"> so that /appConfigs` and all other APIs can be access controlled. Only authorized users have access to it. Note the user needs to add the admin role accordingly to the RBAC guide to control access to this endpoint, and in the future version of Pinot, a default admin role is planned to be added.</span></p><br>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/hsm0b2w8qr0sqy4rj1mfnnw286tslpzc">https://lists.apache.org/thread/hsm0b2w8qr0sqy4rj1mfnnw286tslpzc</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Xun Bai <a href="mailto:bbbbear68@gmail.com">bbbbear68@gmail.com</a> (finder)</li>
+</ul>
 
   
 </div>

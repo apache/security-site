@@ -903,6 +903,24 @@ process itself. Gaining access to that database should
 <li>Matei &ldquo;Mal&rdquo; Badanoiu (finder)</li>
 <li>Daniel Vaz Gaspar (remediation developer)</li>
 </ul>
+<h2 id="CVE-2024-39887">Improper SQL authorisation, parse not checking for specific engine functions</h2>
+<p>CVE-2024-39887 <a href="./CVE-2024-39887.cve.json">[CVE json]</a> <a href="./CVE-2024-39887.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-16T09:20:08.872Z</em></p>
+<h3 id="affected-45">Affected</h3>
+<ul>
+<li>Apache Superset before 4.0.2</li>
+</ul>
+<h3 id="description-45">Description</h3>
+<p>An SQL Injection vulnerability in Apache Superset exists due to improper neutralization of special elements used in SQL commands. Specifically, certain engine-specific functions are not checked, which allows attackers to bypass Apache Superset's SQL authorization. To mitigate this, a new configuration key named <code>DISALLOWED_SQL_FUNCTIONS</code> has been introduced. This key disallows the use of the following PostgreSQL functions: <code>version</code>, <code>query_to_xml</code>, <code>inet_server_addr</code>, and <code>inet_client_addr</code>. Additional functions can be added to this list for increased protection.</p><p>This issue affects Apache Superset: before 4.0.2.</p><p>Users are recommended to upgrade to version 4.0.2, which fixes the issue.</p>
+<h3 id="references-45">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/j55vm41jg3l0x6w49zrmvbf3k0ts5fqz">https://lists.apache.org/thread/j55vm41jg3l0x6w49zrmvbf3k0ts5fqz</a></li>
+</ul>
+<h3 id="credits-44">Credits</h3>
+<ul>
+<li>Mike Yushkovskiy (finder)</li>
+<li>Daniel Vaz Gaspar (remediation developer)</li>
+</ul>
 
   
 </div>

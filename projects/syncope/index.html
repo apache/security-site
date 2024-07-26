@@ -6,10 +6,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Apache SeaTunnel security advisories </title>
+  <title> Apache Syncope security advisories </title>
 
   
-  <meta name="description" content="Security information for Apache SeaTunnel"> 
+  <meta name="description" content="Security information for Apache Syncope"> 
   
   
   
@@ -23,10 +23,10 @@
   <meta name="author" content="">
 
 
-  <meta property="og:title" content="Apache SeaTunnel security advisories" />
-<meta property="og:description" content="Security information for Apache SeaTunnel" />
+  <meta property="og:title" content="Apache Syncope security advisories" />
+<meta property="og:description" content="Security information for Apache Syncope" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://security.apache.org/projects/seatunnel/" />
+<meta property="og:url" content="https://security.apache.org/projects/syncope/" />
 
   
 
@@ -35,9 +35,9 @@
 
   
   
-   <link href="/projects/seatunnel/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
+   <link href="/projects/syncope/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
 
-  <link rel="canonical" href="https://security.apache.org/projects/seatunnel/">  
+  <link rel="canonical" href="https://security.apache.org/projects/syncope/">  
 
   <link href="/css/font.css" rel="stylesheet" type="text/css">
   <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
@@ -95,29 +95,33 @@
   <main>
 
 <div id="hero" class="wrap">
-  <h1>Apache SeaTunnel security advisories</h1>
-    <p>Security information for Apache SeaTunnel</p>
+  <h1>Apache Syncope security advisories</h1>
+    <p>Security information for Apache Syncope</p>
 </div>
 <div id="project-box">
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache SeaTunnel? You can read more about the projects&rsquo; security policy on their <a href="https://seatunnel.apache.org/security">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<p>Do you want disclose a potential security issue for Apache Syncope? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
-<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://seatunnel.apache.org/security">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2023-48396">Authentication bypass</h2>
-<p>CVE-2023-48396 <a href="./CVE-2023-48396.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2024-07-25T12:29:51.622Z</em></p>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2024-38503">HTML tags can be injected into Console or Enduser text fields</h2>
+<p>CVE-2024-38503 <a href="./CVE-2024-38503.cve.json">[CVE json]</a> <a href="./CVE-2024-38503.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-22T09:54:11.921Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache SeaTunnel at 1.0.0</li>
+<li>Apache Syncope from 2.1 through 2.1.14</li>
+<li>Apache Syncope from 3.0 through 3.0.7</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Web Authentication vulnerability in Apache SeaTunnel.<p>This issue affects Apache SeaTunnel: 1.0.0.</p><p>Users are recommended to upgrade to version 1.0.1, which fixes the issue.</p></p>
+<p>When editing a user, group or any object in the Syncope Console, HTML tags could be added to any text field and could lead to potential exploits.<br>The same vulnerability was found in the Syncope Enduser, when editing “Personal Information” or “User Requests”.<br><br>Users are recommended to upgrade to version 3.0.8, which fixes this issue.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/hbwcp33zmgghhhhjhkjlo3g092t3xqf4">https://lists.apache.org/thread/hbwcp33zmgghhhhjhkjlo3g092t3xqf4</a></li>
-<li><a href="https://lists.apache.org/thread/%3CCAFBzuDO=+L_EO=VFD8i5W5AcDOzKLz_ORGJrJxsdxEFjHTBSjQ@mail.gmail.com%3E?%3Cprivate.seatunnel.apache.org%3E">https://lists.apache.org/thread/%3CCAFBzuDO=+L_EO=VFD8i5W5AcDOzKLz_ORGJrJxsdxEFjHTBSjQ@mail.gmail.com%3E?%3Cprivate.seatunnel.apache.org%3E</a></li>
+<li><a href="https://syncope.apache.org/security#cve-2024-38503-html-tags-can-be-injected-into-console-or-enduser">https://syncope.apache.org/security#cve-2024-38503-html-tags-can-be-injected-into-console-or-enduser</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Basalt IT-Security Team (finder)</li>
 </ul>
 
   
