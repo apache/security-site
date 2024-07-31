@@ -11,12 +11,13 @@ files = list(map(lambda e: e['href'], get_files(baseurl)))
 files.sort()
 file = files[0]
 
-match = re.search('apache-airflow-sbom-(.*)-python3.\d+.json', file)
+match = re.search('apache-airflow-sbom-(.*?)-(.*).json', file)
 version = match.group(1)
+variant = match.group(2)
 
 pmc = dt_pmc("airflow")
 pmc_uuid = pmc['uuid']
 sbom = get_sbom_cached(f'{baseurl}/{file}', f"airflow/{file}")
-post_sbom(pmc, pmc_uuid, "Apache Airflow", version, sbom)
+post_sbom(pmc, pmc_uuid, f"Apache Airflow {variant}", version, sbom)
 
 
