@@ -77,7 +77,14 @@ for project in projects:
         # TODO support such versions
         return not 'M' in v and not 'incubating' in v and not 'hadoop' in v and not 'milestone' in v and not 'pre' in v
     versions = list(filter(is_version, list(map(version_name, index))))
-    versions.sort(key=Version)
+
+    # TODO probably good to have a custom version splitter/sorter
+    # after all
+    def parse_version(s):
+        from itertools import takewhile
+        return Version("".join(takewhile(lambda c: c != '-', s)).replace(".Final", ""))
+
+    versions.sort(key=parse_version)
     if versions:
         lastVersion = versions[-1]
         print(lastVersion)
