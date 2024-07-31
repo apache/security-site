@@ -1,3 +1,4 @@
+set -e
 python3 ./collect-airflow-sbom.py
 ./collect-maven-sboms.py
 ./collect-maven-sboms.py arrow

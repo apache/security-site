@@ -38,7 +38,13 @@ def get_files_cached(url):
             json.dump(get_files(url), out)
 
     with open(filename, "r") as i:
-        return json.load(i)
+        try:
+            return json.load(i)
+        except Exception as e:
+            print(f"Failed to parse {filename}")
+            print(f"for {url}")
+            raise e
+
 
 if len(argv)>1:
     pmc = argv[1]
