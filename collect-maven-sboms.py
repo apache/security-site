@@ -49,7 +49,7 @@ def get_files_cached(url):
 if len(argv)>1:
     pmc = argv[1]
 else:
-    pmc = 'commons'
+    pmc = 'maven'
 
 if len(argv)>2:
     projects = [ argv[2] ]
