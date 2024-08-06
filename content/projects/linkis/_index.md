@@ -379,3 +379,73 @@ In Apache Linkis &lt;=1.4.0, The password is printed to the log when using the O
 
 ### Credits
 * Jonathan Leitschuh (reporter)
+
+
+## Privilege Escalation Attack vulnerability ## { #CVE-2024-27181 }
+
+CVE-2024-27181 [\[CVE json\]](./CVE-2024-27181.cve.json) [\[OSV json\]](./CVE-2024-27181.osv.json)
+
+
+
+_Last updated: 2024-08-02T09:27:34.414Z_
+
+### Affected
+
+* Apache Linkis Basic management services from 1.3.2 before 1.6.0
+
+
+### Description
+
+
+
+In Apache Linkis &lt;= 1.5.0,
+
+Privilege Escalation in Basic management services where the attacking user is 
+
+<span style="background-color: rgb(255, 255, 255);">a trusted account</span>
+
+ allows access to Linkis's Token information. Users are advised to upgrade to version 1.6.0, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/hosd73l7hxb3rpt5rb0yg0ld11zph4c6
+
+
+### Credits
+* superx (reporter)
+
+
+## Engine material management Arbitrary file deletion vulnerability ## { #CVE-2024-27182 }
+
+CVE-2024-27182 [\[CVE json\]](./CVE-2024-27182.cve.json) [\[OSV json\]](./CVE-2024-27182.osv.json)
+
+
+
+_Last updated: 2024-08-02T09:29:36.766Z_
+
+### Affected
+
+* Apache Linkis  Basic management services from 1.3.2 before 1.6.0
+
+
+### Description
+
+
+
+
+
+In Apache Linkis &lt;= 1.5.0,
+
+Arbitrary file deletion in Basic management services on 
+
+<span style="background-color: rgb(255, 255, 255);">A user with an administrator account could delete any file accessible by the Linkis system user</span>
+
+.<br>Users are recommended to upgrade to version 1.6.0, which fixes this issue.
+
+
+
+### References
+* https://lists.apache.org/thread/2of1p433h8rbq2bx525rtftnk19oz38h
+
+
+### Credits
+* superx (reporter)

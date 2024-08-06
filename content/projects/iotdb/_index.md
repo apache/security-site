@@ -208,3 +208,28 @@ Deserialization of Untrusted Data vulnerability in Apache IoTDB.<p>This issue af
 
 ### References
 * https://lists.apache.org/thread/zy3klwpv11vl5n65josbfo2fyzxg3dxc
+
+
+## SSRF Vulnerability (EOL) ## { #CVE-2024-36448 }
+
+CVE-2024-36448 [\[CVE json\]](./CVE-2024-36448.cve.json) [\[OSV json\]](./CVE-2024-36448.osv.json)
+
+
+
+_Last updated: 2024-08-05T09:53:35.819Z_
+
+### Affected
+
+* Apache IoTDB Workbench from 0.13.0 through *
+
+
+### Description
+
+<p>** UNSUPPORTED WHEN ASSIGNED ** Server-Side Request Forgery (SSRF) vulnerability in Apache IoTDB Workbench.</p><p>This issue affects Apache IoTDB Workbench: from 0.13.0.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+
+### References
+* https://lists.apache.org/thread/d19p0vsm7nogp43q9m3tzm5jl6mzjj1x
+
+
+### Credits
+* L0ne1y (finder)

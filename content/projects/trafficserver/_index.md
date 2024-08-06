@@ -722,6 +722,32 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Tra
 * Bahruz Jabiyev, Anthony Gavazzi, Engin Kirda, Kaan Onarlioglu, Adi Peleg, Harvey Tuch (finder)
 
 
+## Incomplete field name check allows request smuggling ## { #CVE-2023-38522 }
+
+CVE-2023-38522 [\[CVE json\]](./CVE-2023-38522.cve.json) [\[OSV json\]](./CVE-2023-38522.osv.json)
+
+
+
+_Last updated: 2024-07-26T09:11:19.021Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.10
+* Apache Traffic Server from 9.0.0 through 9.2.4
+
+
+### Description
+
+<p>Apache Traffic Server accepts characters that are not allowed for HTTP field names and forwards malformed requests to origin servers. This can be utilized for request smuggling and may also lead cache poisoning if the origin servers are vulnerable.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.10, from 9.0.0 through 9.2.4.</p><p>Users are recommended to upgrade to version 8.1.11 or 9.2.5, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/c4mcmpblgl8kkmyt56t23543gp8v56m0
+
+
+### Credits
+* Ben Kallus (finder)
+
+
 ## Malformed http/2 frames can cause an abort ## { #CVE-2023-39456 }
 
 CVE-2023-39456 [\[CVE json\]](./CVE-2023-39456.cve.json) [\[OSV json\]](./CVE-2023-39456.osv.json)
@@ -797,3 +823,55 @@ _Last updated: 2024-04-10T15:16:21.844Z_
 
 ### Credits
 * Bartek Nowotarski (reporter)
+
+
+## Incomplete check for chunked trailer section allows request smuggling ## { #CVE-2024-35161 }
+
+CVE-2024-35161 [\[CVE json\]](./CVE-2024-35161.cve.json) [\[OSV json\]](./CVE-2024-35161.osv.json)
+
+
+
+_Last updated: 2024-07-26T09:10:54.492Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.10
+* Apache Traffic Server from 9.0.0 through 9.2.4
+
+
+### Description
+
+<p>Apache Traffic Server forwards malformed HTTP chunked trailer section to origin servers. This can be utilized for request smuggling and may also lead cache poisoning if the origin servers are vulnerable.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.10, from 9.0.0 through 9.2.4.</p>Users can set a new setting (proxy.config.http.drop_chunked_trailers) not to forward chunked trailer section.<br><p>Users are recommended to upgrade to version 8.1.11 or 9.2.5, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/c4mcmpblgl8kkmyt56t23543gp8v56m0
+
+
+### Credits
+* Keran Mu (reporter)
+
+
+## Invalid Accept-Encoding can force forwarding requests ## { #CVE-2024-35296 }
+
+CVE-2024-35296 [\[CVE json\]](./CVE-2024-35296.cve.json) [\[OSV json\]](./CVE-2024-35296.osv.json)
+
+
+
+_Last updated: 2024-07-26T09:11:09.740Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.10
+* Apache Traffic Server from 9.0.0 through 9.2.4
+
+
+### Description
+
+<p>Invalid Accept-Encoding header can cause Apache Traffic Server to fail cache lookup and force forwarding requests.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.10, from 9.0.0 through 9.2.4.</p><p>Users are recommended to upgrade to version 8.1.11 or 9.2.5, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/c4mcmpblgl8kkmyt56t23543gp8v56m0
+
+
+### Credits
+* Min Chen (reporter)

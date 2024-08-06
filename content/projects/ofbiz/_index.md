@@ -519,3 +519,46 @@ Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') v
 
 ### Credits
 * godspeed (AAA@ZJU) (finder)
+
+
+## Unauthenticated endpoint could allow execution of screen rendering code ## { #CVE-2024-38856 }
+
+CVE-2024-38856 [\[CVE json\]](./CVE-2024-38856.cve.json) [\[OSV json\]](./CVE-2024-38856.osv.json)
+
+
+
+_Last updated: 2024-08-05T08:20:16.193Z_
+
+### Affected
+
+* Apache OFBiz through 18.12.14
+
+
+### Description
+
+<p>Incorrect Authorization vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: through 18.12.14.</p><p>Users are recommended to upgrade to version 18.12.15, which fixes the issue.</p>Unauthenticated endpoints could allow execution of screen rendering code of screens if some preconditions are met (such as when the screen definitions don't explicitly check user's permissions because they rely on the configuration of their endpoints).<br>
+
+### References
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html
+* https://lists.apache.org/thread/olxxjk6b13sl3wh9cmp0k2dscvp24l7w
+* https://issues.apache.org/jira/browse/OFBIZ-13128
+
+
+### Credits
+* unam4 (finder)
+* ruozhi (finder)
+* m1sn0w (finder)
+* kuiplatain (finder)
+* PaperPen@Timeline Sec (finder)
+* RacerZ (finder)
+* e0mlja (finder)
+* Donghyun (finder)
+* 4ra1n (finder)
+* godspeed (finder)
+* Hasib Vhora (finder)
+* pwnull (finder)
+* blckder02-YHLab (finder)
+* Xenc from SGLAB of Legendsec at Qi'anxin Group (finder)
+* Nicholas Zubrisky. (finder)
+* Y4tacker  (finder)

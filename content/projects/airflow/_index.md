@@ -2384,3 +2384,25 @@ Apache Airflow 2.4.0, and versions before 2.9.3, has a vulnerability that allows
 ### Credits
 * Seokchan Yoon (https://github.com/ch4n3-yoon) (finder)
 * Wei Lee (remediation developer)
+
+
+## FAB provider 1.2.1 and 1.2.0 did not let user to logout for Airflow ## { #CVE-2024-42447 }
+
+CVE-2024-42447 [\[CVE json\]](./CVE-2024-42447.cve.json) [\[OSV json\]](./CVE-2024-42447.osv.json)
+
+
+
+_Last updated: 2024-08-04T20:03:30.234Z_
+
+### Affected
+
+* Apache Airflow Providers FAB from 1.2.0 through 1.2.1
+
+
+### Description
+
+<p>Insufficient Session Expiration vulnerability in Apache Airflow Providers FAB.</p><p>This issue affects Apache Airflow Providers FAB: 1.2.1 (when used with Apache Airflow 2.9.3) and FAB 1.2.0 for all Airflow versions. The FAB provider prevented the user from logging out.&nbsp;&nbsp;</p><p>* FAB provider 1.2.1 only affected Airflow 2.9.3 (earlier and later versions of Airflow are not affected)</p><p>* FAB provider 1.2.0 affected all versions of Airflow.<br></p><p><span style="background-color: var(--wht);">Users who run Apache Airflow 2.9.3 are recommended to upgrade to Apache Airflow Providers FAB version 1.2.2 which fixes the issue.</span><br></p><p>Users who run Any Apache Airflow version and have FAB provider 1.2.0 are recommended to upgrade to Apache Airflow Providers FAB version 1.2.2 which fixes the issue.</p>Also upgrading Apache Airflow to latest version available is recommended.<br><br><p>Note: Early version of Airflow reference container images of Airflow 2.9.3 and constraint files contained FAB provider 1.2.1 version, but this is fixed in updated versions of the images.&nbsp;</p><p>Users are advised to pull the latest Airflow images or reinstall FAB provider according to the current constraints.</p><br>
+
+### References
+* https://github.com/apache/airflow/pull/40784
+* https://lists.apache.org/thread/2zoo8cjlwfjhbfdxfgltcm0hnc0qmc52

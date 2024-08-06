@@ -17,7 +17,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2023-48396 [\[CVE json\]](./CVE-2023-48396.cve.json)
 
-_Last updated: 2024-07-25T12:29:51.622Z_
+_Last updated: 2024-07-30T08:15:30.810Z_
 
 ### Affected
 

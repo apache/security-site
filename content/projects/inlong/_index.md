@@ -729,7 +729,7 @@ CVE-2024-26580 [\[CVE json\]](./CVE-2024-26580.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-03-06T12:07:26.203Z_
+_Last updated: 2024-08-02T09:40:25.011Z_
 
 ### Affected
 
@@ -752,3 +752,32 @@ Deserialization of Untrusted Data vulnerability in Apache InLong.<p>This issue a
 
 ### Credits
 * an4er (finder)
+
+
+## Remote Code Execution vulnerability ## { #CVE-2024-36268 }
+
+CVE-2024-36268 [\[CVE json\]](./CVE-2024-36268.cve.json) [\[OSV json\]](./CVE-2024-36268.osv.json)
+
+
+
+_Last updated: 2024-08-02T09:44:23.542Z_
+
+### Affected
+
+* Apache InLong TubeMQ Client from 1.10.0 through 1.12.0
+
+
+### Description
+
+<p>Improper Control of Generation of Code ('Code Injection') vulnerability in Apache InLong.</p><p>This issue affects Apache InLong: from 1.10.0 through 1.12.0, which could lead to Remote Code Execution. <span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's 1.13.0 or cherry-pick [1] to solve it.</span></p>
+
+<p><span style="background-color: rgb(255, 255, 255);">[1]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/10251">https://github.com/apache/inlong/pull/10251</a></span></p>
+
+<p></p>
+
+### References
+* https://lists.apache.org/thread/1w1yp1bg5sjvn46dszkf00tz1vfs0frc
+
+
+### Credits
+* X1r0z  (finder)
