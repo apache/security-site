@@ -7,6 +7,8 @@ pkgs.mkShell {
       p.requests
       p.packaging
       p.python-dotenv
+
+      p.pygithub
     ]))
   ];
   shareNet = true;

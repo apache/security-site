@@ -125,6 +125,6 @@ def post_sbom(pmc, pmc_uuid, friendly_name, lastVersion, sbom):
             bom=sbom
         )
     ) as res:
-        print(res)
+        print(sbom)
         if res.status_code != 200:
-            print(res.text)
+            raise Exception(f"Submitting SBOM for {friendly_name} failed: {res.status_code}: {res.text}")
