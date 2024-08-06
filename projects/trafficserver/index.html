@@ -573,58 +573,112 @@
 <ul>
 <li>Bahruz Jabiyev, Anthony Gavazzi, Engin Kirda, Kaan Onarlioglu, Adi Peleg, Harvey Tuch (finder)</li>
 </ul>
-<h2 id="CVE-2023-39456">Malformed http/2 frames can cause an abort</h2>
-<p>CVE-2023-39456 <a href="./CVE-2023-39456.cve.json">[CVE json]</a> <a href="./CVE-2023-39456.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-10-17T06:58:15.367Z</em></p>
+<h2 id="CVE-2023-38522">Incomplete field name check allows request smuggling</h2>
+<p>CVE-2023-38522 <a href="./CVE-2023-38522.cve.json">[CVE json]</a> <a href="./CVE-2023-38522.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-26T09:11:19.021Z</em></p>
 <h3 id="affected-30">Affected</h3>
 <ul>
-<li>Apache Traffic Server from 9.0.0 through 9.2.2</li>
+<li>Apache Traffic Server from 8.0.0 through 8.1.10</li>
+<li>Apache Traffic Server from 9.0.0 through 9.2.4</li>
 </ul>
 <h3 id="description-30">Description</h3>
-<p>Improper Input Validation vulnerability in Apache Traffic Server with malformed HTTP/2 frames.<p>This issue affects Apache Traffic Server: from 9.0.0 through 9.2.2.</p><p>Users are recommended to upgrade to version 9.2.3, which fixes the issue.</p></p>
+<p>Apache Traffic Server accepts characters that are not allowed for HTTP field names and forwards malformed requests to origin servers. This can be utilized for request smuggling and may also lead cache poisoning if the origin servers are vulnerable.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.10, from 9.0.0 through 9.2.4.</p><p>Users are recommended to upgrade to version 8.1.11 or 9.2.5, which fixes the issue.</p>
 <h3 id="references-29">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/5py8h42mxfsn8l1wy6o41xwhsjlsd87q">https://lists.apache.org/thread/5py8h42mxfsn8l1wy6o41xwhsjlsd87q</a></li>
+<li><a href="https://lists.apache.org/thread/c4mcmpblgl8kkmyt56t23543gp8v56m0">https://lists.apache.org/thread/c4mcmpblgl8kkmyt56t23543gp8v56m0</a></li>
 </ul>
 <h3 id="credits-20">Credits</h3>
 <ul>
-<li>Akshat Parikh (finder)</li>
+<li>Ben Kallus (finder)</li>
 </ul>
-<h2 id="CVE-2023-41752">s3_auth plugin problem with hash calculation</h2>
-<p>CVE-2023-41752 <a href="./CVE-2023-41752.cve.json">[CVE json]</a> <a href="./CVE-2023-41752.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-10-17T06:57:44.046Z</em></p>
+<h2 id="CVE-2023-39456">Malformed http/2 frames can cause an abort</h2>
+<p>CVE-2023-39456 <a href="./CVE-2023-39456.cve.json">[CVE json]</a> <a href="./CVE-2023-39456.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-10-17T06:58:15.367Z</em></p>
 <h3 id="affected-31">Affected</h3>
 <ul>
-<li>Apache Traffic Server from 8.0.0 through 8.1.8</li>
 <li>Apache Traffic Server from 9.0.0 through 9.2.2</li>
 </ul>
 <h3 id="description-31">Description</h3>
-<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Traffic Server.<p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.8, from 9.0.0 through 9.2.2.</p><p>Users are recommended to upgrade to version 8.1.9 or 9.2.3, which fixes the issue.</p></p>
+<p>Improper Input Validation vulnerability in Apache Traffic Server with malformed HTTP/2 frames.<p>This issue affects Apache Traffic Server: from 9.0.0 through 9.2.2.</p><p>Users are recommended to upgrade to version 9.2.3, which fixes the issue.</p></p>
 <h3 id="references-30">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/5py8h42mxfsn8l1wy6o41xwhsjlsd87q">https://lists.apache.org/thread/5py8h42mxfsn8l1wy6o41xwhsjlsd87q</a></li>
 </ul>
 <h3 id="credits-21">Credits</h3>
 <ul>
+<li>Akshat Parikh (finder)</li>
+</ul>
+<h2 id="CVE-2023-41752">s3_auth plugin problem with hash calculation</h2>
+<p>CVE-2023-41752 <a href="./CVE-2023-41752.cve.json">[CVE json]</a> <a href="./CVE-2023-41752.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-10-17T06:57:44.046Z</em></p>
+<h3 id="affected-32">Affected</h3>
+<ul>
+<li>Apache Traffic Server from 8.0.0 through 8.1.8</li>
+<li>Apache Traffic Server from 9.0.0 through 9.2.2</li>
+</ul>
+<h3 id="description-32">Description</h3>
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Traffic Server.<p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.8, from 9.0.0 through 9.2.2.</p><p>Users are recommended to upgrade to version 8.1.9 or 9.2.3, which fixes the issue.</p></p>
+<h3 id="references-31">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/5py8h42mxfsn8l1wy6o41xwhsjlsd87q">https://lists.apache.org/thread/5py8h42mxfsn8l1wy6o41xwhsjlsd87q</a></li>
+</ul>
+<h3 id="credits-22">Credits</h3>
+<ul>
 <li>Masakazu Kitajo (finder)</li>
 </ul>
 <h2 id="CVE-2024-31309">HTTP/2 CONTINUATION frames can be utilized for DoS attack</h2>
 <p>CVE-2024-31309 <a href="./CVE-2024-31309.cve.json">[CVE json]</a> <a href="./CVE-2024-31309.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-04-10T15:16:21.844Z</em></p>
-<h3 id="affected-32">Affected</h3>
+<h3 id="affected-33">Affected</h3>
 <ul>
 <li>Apache Traffic Server from 8.0.0 through 8.1.9</li>
 <li>Apache Traffic Server from 9.0.0 through 9.2.3</li>
 </ul>
-<h3 id="description-32">Description</h3>
+<h3 id="description-33">Description</h3>
 <p>HTTP/2 <span style="background-color: rgb(255, 255, 255);">CONTINUATION</span>&nbsp;DoS attack can cause Apache Traffic Server to consume more resources on the server.&nbsp; Version from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.3 are&nbsp;affected.</p>Users can set a new setting (proxy.config.http2.max_continuation_frames_per_minute) to limit the number of CONTINUATION frames per minute. &nbsp;ATS does have a fixed amount of memory a request can use and ATS adheres to these limits in previous releases.<br><p>Users are recommended to upgrade to versions 8.1.10 or 9.2.4 which fixes the issue.</p>
-<h3 id="references-31">References</h3>
+<h3 id="references-32">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/f9qh3g3jvy153wh82pz4onrfj1wh13kc">https://lists.apache.org/thread/f9qh3g3jvy153wh82pz4onrfj1wh13kc</a></li>
 </ul>
-<h3 id="credits-22">Credits</h3>
+<h3 id="credits-23">Credits</h3>
 <ul>
 <li>Bartek Nowotarski (reporter)</li>
+</ul>
+<h2 id="CVE-2024-35161">Incomplete check for chunked trailer section allows request smuggling</h2>
+<p>CVE-2024-35161 <a href="./CVE-2024-35161.cve.json">[CVE json]</a> <a href="./CVE-2024-35161.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-26T09:10:54.492Z</em></p>
+<h3 id="affected-34">Affected</h3>
+<ul>
+<li>Apache Traffic Server from 8.0.0 through 8.1.10</li>
+<li>Apache Traffic Server from 9.0.0 through 9.2.4</li>
+</ul>
+<h3 id="description-34">Description</h3>
+<p>Apache Traffic Server forwards malformed HTTP chunked trailer section to origin servers. This can be utilized for request smuggling and may also lead cache poisoning if the origin servers are vulnerable.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.10, from 9.0.0 through 9.2.4.</p>Users can set a new setting (proxy.config.http.drop_chunked_trailers) not to forward chunked trailer section.<br><p>Users are recommended to upgrade to version 8.1.11 or 9.2.5, which fixes the issue.</p>
+<h3 id="references-33">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/c4mcmpblgl8kkmyt56t23543gp8v56m0">https://lists.apache.org/thread/c4mcmpblgl8kkmyt56t23543gp8v56m0</a></li>
+</ul>
+<h3 id="credits-24">Credits</h3>
+<ul>
+<li>Keran Mu (reporter)</li>
+</ul>
+<h2 id="CVE-2024-35296">Invalid Accept-Encoding can force forwarding requests</h2>
+<p>CVE-2024-35296 <a href="./CVE-2024-35296.cve.json">[CVE json]</a> <a href="./CVE-2024-35296.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-26T09:11:09.740Z</em></p>
+<h3 id="affected-35">Affected</h3>
+<ul>
+<li>Apache Traffic Server from 8.0.0 through 8.1.10</li>
+<li>Apache Traffic Server from 9.0.0 through 9.2.4</li>
+</ul>
+<h3 id="description-35">Description</h3>
+<p>Invalid Accept-Encoding header can cause Apache Traffic Server to fail cache lookup and force forwarding requests.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.10, from 9.0.0 through 9.2.4.</p><p>Users are recommended to upgrade to version 8.1.11 or 9.2.5, which fixes the issue.</p>
+<h3 id="references-34">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/c4mcmpblgl8kkmyt56t23543gp8v56m0">https://lists.apache.org/thread/c4mcmpblgl8kkmyt56t23543gp8v56m0</a></li>
+</ul>
+<h3 id="credits-25">Credits</h3>
+<ul>
+<li>Min Chen (reporter)</li>
 </ul>
 
   
