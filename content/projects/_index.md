@@ -78,6 +78,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Livy (Incubating) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Logging |  [Apache Logging Security Team](mailto:security@logging.apache.org) | |
 | Apache Lucene |  [Apache Lucene Security Team](mailto:security@lucene.apache.org) | |
+| Apache Lucene.NET |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache ManifoldCF |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Maven](https://maven.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache MINA |  [Apache Security Team](mailto:security@apache.org) | |
