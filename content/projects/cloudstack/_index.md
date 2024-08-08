@@ -232,3 +232,60 @@ _Last updated: 2024-07-19T10:11:15.224Z_
 * Damon Smith of Apple Services Engineering Security (finder)
 * Adam Pond of Apple Services Engineering Security (finder)
 * Terry Thibault of Apple Services Engineering Security (finder)
+
+
+## User Key Exposure to Domain Admins ## { #CVE-2024-42062 }
+
+CVE-2024-42062 [\[CVE json\]](./CVE-2024-42062.cve.json) [\[OSV json\]](./CVE-2024-42062.osv.json)
+
+
+
+_Last updated: 2024-08-07T06:49:20.134Z_
+
+### Affected
+
+* Apache CloudStack from 4.10.0 through 4.18.2.2
+* Apache CloudStack from 4.19.0.0 through 4.19.1.0
+
+
+### Description
+
+CloudStack account-users by default use username and password based authentication for API and UI access. Account-users can<span style="background-color: rgb(255, 255, 255);">&nbsp;generate and register randomised API and secret keys and use them for the purpose of API-based automation and integrations.&nbsp;</span><span style="background-color: rgb(255, 255, 255);">Due to an access permission validation issue that affects Apache CloudStack versions 4.10.0 up to 4.19.1.0, domain admin accounts were found to be able to query all registered account-users API and secret keys in an environment, including that of a root admin.&nbsp;</span>An attacker who has domain admin access can exploit this to gain root admin and other-account privileges and perform malicious operations that can result in compromise of resources integrity and confidentiality, data loss,&nbsp;<span style="background-color: rgb(255, 255, 255);">denial of service</span>&nbsp;and availability of CloudStack managed infrastructure.<br><br>Users are recommended to upgrade to Apache CloudStack 4.18.2.3 or 4.19.1.1, or later, which addresses this issue.&nbsp;Additionally, all account-user API and secret keys should be regenerated.<br>
+
+### References
+* https://cloudstack.apache.org/blog/security-release-advisory-4.19.1.1-4.18.2.3
+* https://lists.apache.org/thread/lxqtfd6407prbw3801hb4fz3ot3t8wlj
+* https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-3-and-4-19-1-1/
+
+
+### Credits
+* Fabricio Duarte (finder)
+
+
+## Unauthorised Network List Access ## { #CVE-2024-42222 }
+
+CVE-2024-42222 [\[CVE json\]](./CVE-2024-42222.cve.json) [\[OSV json\]](./CVE-2024-42222.osv.json)
+
+
+
+_Last updated: 2024-08-07T06:49:40.024Z_
+
+### Affected
+
+* Apache CloudStack at 4.19.1.0
+
+
+### Description
+
+<div>In Apache CloudStack 4.19.1.0, a regression in the network listing API allows unauthorised list access of network details for domain admin and normal user accounts. This vulnerability compromises tenant isolation, potentially leading to unauthorised access to network details, configurations and data.<br><br>Affected users are advised to upgrade to version 4.19.1.1 to address this issue. Users on older versions of CloudStack considering to upgrade, can skip 4.19.1.0 and upgrade directly to 4.19.1.1.<br></div>
+
+### References
+* https://github.com/apache/cloudstack/issues/9456
+* https://cloudstack.apache.org/blog/security-release-advisory-4.19.1.1-4.18.2.3
+* https://lists.apache.org/thread/lxqtfd6407prbw3801hb4fz3ot3t8wlj
+* https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-3-and-4-19-1-1/
+
+
+### Credits
+* Christian Gross of Netcloud AG (finder)
+* Midhun Jose (finder)
