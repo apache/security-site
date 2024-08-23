@@ -103,3 +103,31 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ### Credits
 * Andrew Pikler (finder)
+
+
+## integrity check bypass ## { #CVE-2024-41909 }
+
+CVE-2024-41909 [\[CVE json\]](./CVE-2024-41909.cve.json) [\[OSV json\]](./CVE-2024-41909.osv.json)
+
+
+
+_Last updated: 2024-08-12T16:00:27.622Z_
+
+### Affected
+
+* Apache MINA SSHD through 2.11.0
+
+
+### Description
+
+<div>Like many other SSH implementations, Apache MINA SSHD suffered from the issue that is more widely known as CVE-2023-48795. An attacker that can intercept traffic between client and server could drop certain packets from the stream, potentially causing client and server to consequently end up with a connection for which 
+some security features have been downgraded or disabled, aka a Terrapin 
+attack<br></div><div><br></div><div>The mitigations to prevent this type of attack were implemented in Apache MINA SSHD 2.12.0, both client and server side. Users are recommended to upgrade to at least this version. Note that both the client and the server implementation must have mitigations applied against this issue, otherwise the connection may still be affected.<br></div>
+
+### References
+* https://github.com/apache/mina-sshd/issues/445
+* https://lists.apache.org/thread/vwf1ot8wx1njyy8n19j5j2tcnjnozt3b
+
+
+### Credits
+* Fabian Bäumer (finder)

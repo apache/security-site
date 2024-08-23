@@ -240,7 +240,7 @@ CVE-2024-42062 [\[CVE json\]](./CVE-2024-42062.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-08-07T06:49:20.134Z_
+_Last updated: 2024-08-19T13:43:36.243Z_
 
 ### Affected
 

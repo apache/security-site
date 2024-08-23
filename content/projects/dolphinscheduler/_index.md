@@ -234,7 +234,7 @@ CVE-2023-48796 [\[CVE json\]](./CVE-2023-48796.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2023-11-24T07:56:40.315Z_
+_Last updated: 2024-08-09T12:46:44.554Z_
 
 ### Affected
 
@@ -459,3 +459,86 @@ Improper Input Validation vulnerability in Apache DolphinScheduler. An <span sty
 * xuesong.zhou (finder)
 * Nbxiglk (finder)
 * Huang Atao (finder)
+
+
+## RCE by arbitrary js execution ## { #CVE-2024-29831 }
+
+CVE-2024-29831 [\[CVE json\]](./CVE-2024-29831.cve.json) [\[OSV json\]](./CVE-2024-29831.osv.json)
+
+
+
+_Last updated: 2024-08-09T14:21:46.981Z_
+
+### Affected
+
+* Apache DolphinScheduler through 3.2.1
+
+
+### Description
+
+Improper Input Validation vulnerability in Apache DolphinScheduler. An <span style="background-color: rgb(255, 255, 255);">authenticated user can cause arbitrary, unsandboxed javascript to be executed on the server. If you are using the switch task plugin, please upgrade to version 3.2.2.<br></span>
+
+### References
+* https://lists.apache.org/thread/x1ch0x5om3srtbnp7rtsvdszho3mdrq0
+
+
+### Credits
+* yerest (reporter)
+* L0ne1y (reporter)
+* My Long (reporter)
+
+
+## Resource File Read And Write Vulnerability ## { #CVE-2024-30188 }
+
+CVE-2024-30188 [\[CVE json\]](./CVE-2024-30188.cve.json) [\[OSV json\]](./CVE-2024-30188.osv.json)
+
+
+
+_Last updated: 2024-08-09T12:45:43.623Z_
+
+### Affected
+
+* Apache DolphinScheduler from 3.1.0 before 3.2.2
+
+
+### Description
+
+File read and write vulnerability in Apache DolphinScheduler ,&nbsp; authenticated users can illegally access additional resource files.<br><p>This issue affects Apache DolphinScheduler: from 3.1.0 before 3.2.2.</p><p>Users are recommended to upgrade to version 3.2.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/tbrt42mnr42bq6scxwt6bjr3s2pwyd07
+
+
+### Credits
+* L0ne1y (reporter)
+* drun1baby (reporter)
+* Zevi (reporter)
+* Xun Bai (reporter)
+
+
+## Remote Code Execution Vulnerability ## { #CVE-2024-43202 }
+
+CVE-2024-43202 [\[CVE json\]](./CVE-2024-43202.cve.json) [\[OSV json\]](./CVE-2024-43202.osv.json)
+
+
+
+_Last updated: 2024-08-20T07:29:41.648Z_
+
+### Affected
+
+* Apache DolphinScheduler from 3.0.0 before 3.2.2
+
+
+### Description
+
+Exposure of Remote Code Execution in Apache Dolphinscheduler.<br><br>This issue affects Apache DolphinScheduler: before 3.2.2. <br><br>We recommend users to upgrade Apache DolphinScheduler to version 3.2.2, which fixes the issue. 
+
+### References
+* https://github.com/apache/dolphinscheduler/pull/15758
+* https://lists.apache.org/thread/nlmdp7q7l7o3l27778vxc5px24ncr5r5
+* https://lists.apache.org/thread/qbhk9wqyxhrn4z7m4m343wqxpwg926nh
+* https://www.cve.org/CVERecord?id=CVE-2023-49109
+
+
+### Credits
+* an4er (reporter)

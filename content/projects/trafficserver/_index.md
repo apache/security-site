@@ -728,7 +728,7 @@ CVE-2023-38522 [\[CVE json\]](./CVE-2023-38522.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-07-26T09:11:19.021Z_
+_Last updated: 2024-08-13T08:46:41.192Z_
 
 ### Affected
 
@@ -831,7 +831,7 @@ CVE-2024-35161 [\[CVE json\]](./CVE-2024-35161.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-07-26T09:10:54.492Z_
+_Last updated: 2024-08-13T08:48:31.440Z_
 
 ### Affected
 

@@ -2386,6 +2386,33 @@ Apache Airflow 2.4.0, and versions before 2.9.3, has a vulnerability that allows
 * Wei Lee (remediation developer)
 
 
+## Stored XSS Vulnerability on provider link ## { #CVE-2024-41937 }
+
+CVE-2024-41937 [\[CVE json\]](./CVE-2024-41937.cve.json) [\[OSV json\]](./CVE-2024-41937.osv.json)
+
+
+
+_Last updated: 2024-08-21T15:31:11.725Z_
+
+### Affected
+
+* Apache Airflow before 2.10.0
+
+
+### Description
+
+Apache Airflow, versions before 2.10.0, have a vulnerability that allows the developer of a malicious provider to execute a cross-site scripting attack when clicking on a provider documentation link. This would require the provider to be installed on the web server and the&nbsp;user to click the provider link.<br>Users should upgrade to 2.10.0 or later, which fixes this vulnerability.
+
+### References
+* https://github.com/apache/airflow/pull/40933
+* https://lists.apache.org/thread/lwlmgg6hqfmkpvw5py4w53hxyl37jl6d
+
+
+### Credits
+* sw0rd1ight (https://github.com/sw0rd1ight) (finder)
+* Amogh Desai (remediation developer)
+
+
 ## FAB provider 1.2.1 and 1.2.0 did not let user to logout for Airflow ## { #CVE-2024-42447 }
 
 CVE-2024-42447 [\[CVE json\]](./CVE-2024-42447.cve.json) [\[OSV json\]](./CVE-2024-42447.osv.json)

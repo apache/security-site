@@ -61,3 +61,28 @@ _Last updated: 2023-07-26T07:52:23.420Z_
 
 ### Credits
 * Qing Xu (reporter)
+
+
+## Helix front hard-coded secret in the express-session ## { #CVE-2024-22281 }
+
+CVE-2024-22281 [\[CVE json\]](./CVE-2024-22281.cve.json) [\[OSV json\]](./CVE-2024-22281.osv.json)
+
+
+
+_Last updated: 2024-08-20T22:11:36.792Z_
+
+### Affected
+
+* Apache Helix Front (UI) through *
+
+
+### Description
+
+<p>** UNSUPPORTED WHEN ASSIGNED ** The Apache Helix Front (UI) component contained a hard-coded secret, allowing an attacker to spoof sessions by generating their own fake cookies.<br></p><p>This issue affects Apache Helix Front (UI): all versions.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+
+### References
+* https://lists.apache.org/thread/zt26fpmrqx3fzcy8nv3b43kb3xllo5ny
+
+
+### Credits
+* Jonathan Leitschuh (finder)

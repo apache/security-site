@@ -136,3 +136,53 @@ Improper Neutralization of Input During Web Page Generation ('Cross-site Scripti
 
 ### Credits
 * Tsubasa Umeuchi (reporter)
+
+
+## The link for resetting user password is not Single-Use ## { #CVE-2024-41888 }
+
+CVE-2024-41888 [\[CVE json\]](./CVE-2024-41888.cve.json) [\[OSV json\]](./CVE-2024-41888.osv.json)
+
+
+
+_Last updated: 2024-08-09T14:55:12.877Z_
+
+### Affected
+
+* Apache Answer through 1.3.5
+
+
+### Description
+
+<p>Missing Release of Resource after Effective Lifetime vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 1.3.5.</p>The password reset link remains valid within its expiration period even after it has been used. This could potentially lead to the link being misused or hijacked.<br><p>Users are recommended to upgrade to version 1.3.6, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/jbs1j2o9rqm5sc19jyk3jcfvkmfkmyf4
+
+
+### Credits
+* Mohammad Reza Omrani (reporter)
+
+
+## The link to reset the user's password will remain valid after sending a new link ## { #CVE-2024-41890 }
+
+CVE-2024-41890 [\[CVE json\]](./CVE-2024-41890.cve.json) [\[OSV json\]](./CVE-2024-41890.osv.json)
+
+
+
+_Last updated: 2024-08-09T14:53:26.714Z_
+
+### Affected
+
+* Apache Answer through 1.3.5
+
+
+### Description
+
+<p>Missing Release of Resource after Effective Lifetime vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 1.3.5.</p>User sends multiple password reset emails, each containing a valid link. Within the link's validity period, this could potentially lead to the link being misused or hijacked.<br><p>Users are recommended to upgrade to version 1.3.6, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/j7c080xj31x8rvz1pyk2h47rdd9pwbv9
+
+
+### Credits
+* Mohammad Reza Omrani (reporter)
