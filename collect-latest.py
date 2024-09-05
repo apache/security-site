@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from common import dt_pmc, post_sbom
 import json
 import os
@@ -71,6 +72,10 @@ for committee in committees:
             print(f"Failed to execute {bespoke_script}: {status}")
             exit(1)
     else:
+        print("Fetching sbom from GitHub is not supported, https://github.com/DependencyTrack/dependency-track/discussions/1222")
+        continue
+
+        # TODO
         print(f"Trying to fetch SBOMs for {pmc} from GitHub")
         dtpmc = dt_pmc(pmc)
         for repo in repos(pmc):
