@@ -41,4 +41,4 @@ Still, as a token of our appreciation, we'd like to thank a number of such repor
 * [Harish](https://www.linkedin.com/in/harish-p-62b38a158) for working with us to resolve a [GitHub Actions issue](https://medium.com/apache-airflow/unraveling-the-code-navigating-a-ci-release-security-vulnerability-in-apache-airflow-620214a96297)
 * [Li Jiantao](https://twitter.com/Cursered) of [STAR Labs SG Pte. Ltd.](https://twitter.com/starlabs_sg) for reporting a problem with an internal administrative tool.
 * Gaurang Maheta for notifying us of a remaining reference to polyfill.io on an ASF domain.
-* Ahmed Ghazy for notifying us of leaked credentials
+* [Ahmed Ghazy](https://www.linkedin.com/in/ahmedd-ghazy) for notifying us of leaked credentials
