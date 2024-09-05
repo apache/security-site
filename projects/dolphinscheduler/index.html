@@ -102,7 +102,7 @@
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache DolphinScheduler? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<p>Do you want disclose a potential security issue for Apache DolphinScheduler? Send your report to the <a href="mailto:security@dolphinscheduler.apache.org">Apache DolphinScheduler Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
 <h2 id="CVE-2020-13922">Apache DolphinScheduler (incubating) Permission vulnerability</h2>
@@ -249,7 +249,7 @@
 </ul>
 <h2 id="CVE-2023-48796">Apache dolphinscheduler sensitive information disclosure</h2>
 <p>CVE-2023-48796 <a href="./CVE-2023-48796.cve.json">[CVE json]</a> <a href="./CVE-2023-48796.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-11-24T07:56:40.315Z</em></p>
+<p><em>Last updated: 2024-08-09T12:46:44.554Z</em></p>
 <h3 id="affected-9">Affected</h3>
 <ul>
 <li>Apache DolphinScheduler from 3.0.0 before 3.0.2</li>
@@ -409,6 +409,65 @@
 <li>xuesong.zhou (finder)</li>
 <li>Nbxiglk (finder)</li>
 <li>Huang Atao (finder)</li>
+</ul>
+<h2 id="CVE-2024-29831">RCE by arbitrary js execution</h2>
+<p>CVE-2024-29831 <a href="./CVE-2024-29831.cve.json">[CVE json]</a> <a href="./CVE-2024-29831.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-08-09T14:21:46.981Z</em></p>
+<h3 id="affected-18">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler through 3.2.1</li>
+</ul>
+<h3 id="description-18">Description</h3>
+<p>Improper Input Validation vulnerability in Apache DolphinScheduler. An <span style="background-color: rgb(255, 255, 255);">authenticated user can cause arbitrary, unsandboxed javascript to be executed on the server. If you are using the switch task plugin, please upgrade to version 3.2.2.<br></span></p>
+<h3 id="references-18">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/x1ch0x5om3srtbnp7rtsvdszho3mdrq0">https://lists.apache.org/thread/x1ch0x5om3srtbnp7rtsvdszho3mdrq0</a></li>
+</ul>
+<h3 id="credits-13">Credits</h3>
+<ul>
+<li>yerest (reporter)</li>
+<li>L0ne1y (reporter)</li>
+<li>My Long (reporter)</li>
+</ul>
+<h2 id="CVE-2024-30188">Resource File Read And Write Vulnerability</h2>
+<p>CVE-2024-30188 <a href="./CVE-2024-30188.cve.json">[CVE json]</a> <a href="./CVE-2024-30188.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-08-09T12:45:43.623Z</em></p>
+<h3 id="affected-19">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler from 3.1.0 before 3.2.2</li>
+</ul>
+<h3 id="description-19">Description</h3>
+<p>File read and write vulnerability in Apache DolphinScheduler ,  authenticated users can illegally access additional resource files.<br><p>This issue affects Apache DolphinScheduler: from 3.1.0 before 3.2.2.</p><p>Users are recommended to upgrade to version 3.2.2, which fixes the issue.</p></p>
+<h3 id="references-19">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/tbrt42mnr42bq6scxwt6bjr3s2pwyd07">https://lists.apache.org/thread/tbrt42mnr42bq6scxwt6bjr3s2pwyd07</a></li>
+</ul>
+<h3 id="credits-14">Credits</h3>
+<ul>
+<li>L0ne1y (reporter)</li>
+<li>drun1baby (reporter)</li>
+<li>Zevi (reporter)</li>
+<li>Xun Bai (reporter)</li>
+</ul>
+<h2 id="CVE-2024-43202">Remote Code Execution Vulnerability</h2>
+<p>CVE-2024-43202 <a href="./CVE-2024-43202.cve.json">[CVE json]</a> <a href="./CVE-2024-43202.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-08-20T07:29:41.648Z</em></p>
+<h3 id="affected-20">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler from 3.0.0 before 3.2.2</li>
+</ul>
+<h3 id="description-20">Description</h3>
+<p>Exposure of Remote Code Execution in Apache Dolphinscheduler.<br><br>This issue affects Apache DolphinScheduler: before 3.2.2. <br><br>We recommend users to upgrade Apache DolphinScheduler to version 3.2.2, which fixes the issue.</p>
+<h3 id="references-20">References</h3>
+<ul>
+<li><a href="https://github.com/apache/dolphinscheduler/pull/15758">https://github.com/apache/dolphinscheduler/pull/15758</a></li>
+<li><a href="https://lists.apache.org/thread/nlmdp7q7l7o3l27778vxc5px24ncr5r5">https://lists.apache.org/thread/nlmdp7q7l7o3l27778vxc5px24ncr5r5</a></li>
+<li><a href="https://lists.apache.org/thread/qbhk9wqyxhrn4z7m4m343wqxpwg926nh">https://lists.apache.org/thread/qbhk9wqyxhrn4z7m4m343wqxpwg926nh</a></li>
+<li><a href="https://www.cve.org/CVERecord?id=CVE-2023-49109">https://www.cve.org/CVERecord?id=CVE-2023-49109</a></li>
+</ul>
+<h3 id="credits-15">Credits</h3>
+<ul>
+<li>an4er (reporter)</li>
 </ul>
 
   
