@@ -2433,3 +2433,57 @@ _Last updated: 2024-08-04T20:03:30.234Z_
 ### References
 * https://github.com/apache/airflow/pull/40784
 * https://lists.apache.org/thread/2zoo8cjlwfjhbfdxfgltcm0hnc0qmc52
+
+
+## Authenticated DAG authors could execute code on scheduler nodes ## { #CVE-2024-45034 }
+
+CVE-2024-45034 [\[CVE json\]](./CVE-2024-45034.cve.json) [\[OSV json\]](./CVE-2024-45034.osv.json)
+
+
+
+_Last updated: 2024-09-07T07:45:26.032Z_
+
+### Affected
+
+* Apache Airflow before 2.10.1
+
+
+### Description
+
+Apache Airflow versions before 2.10.1 have a vulnerability that allows&nbsp;DAG authors to add local settings to the DAG folder and get it executed by the scheduler, where the scheduler is not supposed to execute code submitted by the DAG author. <br>Users are advised to upgrade to version 2.10.1 or later, which has fixed the vulnerability.
+
+### References
+* https://github.com/apache/airflow/pull/41672
+* https://lists.apache.org/thread/b4fcw33vh60yfg9990n5vmc7sy2dcgjx
+
+
+### Credits
+* Seokchan Yoon: https://github.com/ch4n3-yoon (finder)
+* Amogh Desai (remediation developer)
+
+
+## Command Injection in an example DAG ## { #CVE-2024-45498 }
+
+CVE-2024-45498 [\[CVE json\]](./CVE-2024-45498.cve.json) [\[OSV json\]](./CVE-2024-45498.osv.json)
+
+
+
+_Last updated: 2024-09-07T07:43:42.216Z_
+
+### Affected
+
+* Apache Airflow at 2.10.0
+
+
+### Description
+
+Example DAG: example_inlet_event_extra.py shipped with Apache Airflow version 2.10.0 has a vulnerability that allows an authenticated attacker with only DAG trigger permission to execute arbitrary commands. If you used that example as the base of your DAGs - please review if you have not copied the dangerous example; see <a target="_blank" rel="nofollow" href="https://github.com/apache/airflow/pull/41873">https://github.com/apache/airflow/pull/41873</a>&nbsp;for more information. We recommend against exposing the example DAGs in your deployment. If you must expose the example DAGs, upgrade Airflow to version 2.10.1 or later.<br>
+
+### References
+* https://github.com/apache/airflow/pull/41873
+* https://lists.apache.org/thread/tl7lzczcqdmqj2pcpbvtjdpd2tb9561n
+
+
+### Credits
+* Nhien Pham (aka nhienit) at Galaxy One (finder)
+* Amogh Desai (remediation developer)

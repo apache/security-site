@@ -562,3 +562,63 @@ _Last updated: 2024-08-05T08:20:16.193Z_
 * Xenc from SGLAB of Legendsec at Qi'anxin Group (finder)
 * Nicholas Zubrisky. (finder)
 * Y4tacker  (finder)
+
+
+## Confused controller-view authorization logic (forced browsing) ## { #CVE-2024-45195 }
+
+CVE-2024-45195 [\[CVE json\]](./CVE-2024-45195.cve.json) [\[OSV json\]](./CVE-2024-45195.osv.json)
+
+
+
+_Last updated: 2024-09-04T08:08:57.418Z_
+
+### Affected
+
+* Apache OFBiz before 18.12.16
+
+
+### Description
+
+<p>Direct Request ('Forced Browsing') vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 18.12.16.</p><p>Users are recommended to upgrade to version 18.12.16, which fixes the issue.</p>
+
+### References
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html
+* https://issues.apache.org/jira/browse/OFBIZ-13130
+* https://lists.apache.org/thread/o90dd9lbk1hh3t2557t2y2qvrh92p7wy
+
+
+### Credits
+* shin24 from National Cyber Security Vietnam (finder)
+* LuanPV from National Cyber Security Vietnam (finder)
+* Ryan Emmons, Lead Security Researcher at Rapid7 (finder)
+* Hasib Vhora, Senior Threat Researcher, SonicWall (finder)
+* Xenc from SGLAB of Legendsec at Qi'anxin Group (finder)
+
+
+## Prevent use of URLs in files when loading them from Java or Groovy, leading to a RCE ## { #CVE-2024-45507 }
+
+CVE-2024-45507 [\[CVE json\]](./CVE-2024-45507.cve.json) [\[OSV json\]](./CVE-2024-45507.osv.json)
+
+
+
+_Last updated: 2024-09-04T08:08:31.094Z_
+
+### Affected
+
+* Apache OFBiz before 18.12.16
+
+
+### Description
+
+<p>Server-Side Request Forgery (SSRF), Improper Control of Generation of Code ('Code Injection') vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 18.12.16.</p><p>Users are recommended to upgrade to version 18.12.16, which fixes the issue.</p>
+
+### References
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html
+* https://issues.apache.org/jira/browse/OFBIZ-13132
+* https://lists.apache.org/thread/o90dd9lbk1hh3t2557t2y2qvrh92p7wy
+
+
+### Credits
+* 孙相 (Sun Xiang) (finder)

@@ -114,3 +114,28 @@ On Windows, Apache Portable Runtime 1.7.0 and earlier may write beyond the end o
 
 ### Credits
 * Ronald Crane (Zippenhop LLC) (finder)
+
+
+## Unexpected lax shared memory permissions ## { #CVE-2023-49582 }
+
+CVE-2023-49582 [\[CVE json\]](./CVE-2023-49582.cve.json) [\[OSV json\]](./CVE-2023-49582.osv.json)
+
+
+
+_Last updated: 2024-08-26T14:03:42.543Z_
+
+### Affected
+
+* Apache Portable Runtime (APR) from 0.9.0 through 1.7.4
+
+
+### Description
+
+Lax permissions set by the Apache Portable Runtime library on Unix platforms would allow local users read access to named shared memory segments, potentially revealing sensitive application data. <br><br>This issue does not affect non-Unix platforms, or builds with&nbsp;APR_USE_SHMEM_SHMGET=1 (apr.h)<br><br>Users are recommended to upgrade to APR version 1.7.5, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/sntjc04t1rvjhdzz2tzmtz2zdnmv7dc4
+
+
+### Credits
+* Thomas Stangner (reporter)
