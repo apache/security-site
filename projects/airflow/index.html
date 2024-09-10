@@ -1784,6 +1784,44 @@ resulting in a denial of service, information disclosure or remote code executio
 <li><a href="https://github.com/apache/airflow/pull/40784">https://github.com/apache/airflow/pull/40784</a></li>
 <li><a href="https://lists.apache.org/thread/2zoo8cjlwfjhbfdxfgltcm0hnc0qmc52">https://lists.apache.org/thread/2zoo8cjlwfjhbfdxfgltcm0hnc0qmc52</a></li>
 </ul>
+<h2 id="CVE-2024-45034">Authenticated DAG authors could execute code on scheduler nodes</h2>
+<p>CVE-2024-45034 <a href="./CVE-2024-45034.cve.json">[CVE json]</a> <a href="./CVE-2024-45034.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-09-07T07:45:26.032Z</em></p>
+<h3 id="affected-91">Affected</h3>
+<ul>
+<li>Apache Airflow before 2.10.1</li>
+</ul>
+<h3 id="description-91">Description</h3>
+<p>Apache Airflow versions before 2.10.1 have a vulnerability that allows DAG authors to add local settings to the DAG folder and get it executed by the scheduler, where the scheduler is not supposed to execute code submitted by the DAG author. <br>Users are advised to upgrade to version 2.10.1 or later, which has fixed the vulnerability.</p>
+<h3 id="references-91">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/41672">https://github.com/apache/airflow/pull/41672</a></li>
+<li><a href="https://lists.apache.org/thread/b4fcw33vh60yfg9990n5vmc7sy2dcgjx">https://lists.apache.org/thread/b4fcw33vh60yfg9990n5vmc7sy2dcgjx</a></li>
+</ul>
+<h3 id="credits-87">Credits</h3>
+<ul>
+<li>Seokchan Yoon: <a href="https://github.com/ch4n3-yoon">https://github.com/ch4n3-yoon</a> (finder)</li>
+<li>Amogh Desai (remediation developer)</li>
+</ul>
+<h2 id="CVE-2024-45498">Command Injection in an example DAG</h2>
+<p>CVE-2024-45498 <a href="./CVE-2024-45498.cve.json">[CVE json]</a> <a href="./CVE-2024-45498.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-09-07T07:43:42.216Z</em></p>
+<h3 id="affected-92">Affected</h3>
+<ul>
+<li>Apache Airflow at 2.10.0</li>
+</ul>
+<h3 id="description-92">Description</h3>
+<p>Example DAG: example_inlet_event_extra.py shipped with Apache Airflow version 2.10.0 has a vulnerability that allows an authenticated attacker with only DAG trigger permission to execute arbitrary commands. If you used that example as the base of your DAGs - please review if you have not copied the dangerous example; see <a target="_blank" rel="nofollow" href="https://github.com/apache/airflow/pull/41873"><a href="https://github.com/apache/airflow/pull/41873">https://github.com/apache/airflow/pull/41873</a></a> for more information. We recommend against exposing the example DAGs in your deployment. If you must expose the example DAGs, upgrade Airflow to version 2.10.1 or later.<br></p>
+<h3 id="references-92">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/41873">https://github.com/apache/airflow/pull/41873</a></li>
+<li><a href="https://lists.apache.org/thread/tl7lzczcqdmqj2pcpbvtjdpd2tb9561n">https://lists.apache.org/thread/tl7lzczcqdmqj2pcpbvtjdpd2tb9561n</a></li>
+</ul>
+<h3 id="credits-88">Credits</h3>
+<ul>
+<li>Nhien Pham (aka nhienit) at Galaxy One (finder)</li>
+<li>Amogh Desai (remediation developer)</li>
+</ul>
 
   
 </div>
