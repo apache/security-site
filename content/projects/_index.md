@@ -128,7 +128,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Tomcat](https://tomcat.apache.org/security.html) |  [Apache Tomcat Security Team](mailto:security@tomcat.apache.org) | [Advisories](https://tomcat.apache.org/security.html) |
 | [Apache Traffic Control](https://trafficcontrol.apache.org/security/index.html) |  [Apache Traffic Control Security Team](mailto:security@trafficcontrol.apache.org) | |
 | Apache Traffic Server |  [Apache Traffic Server Security Team](mailto:security@trafficserver.apache.org) | |
-| [Apache TVM](https://tvm.apache.org/docs/arch/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache TVM](https://tvm.apache.org/docs/reference/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache UIMA |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Unomi |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Velocity |  [Apache Security Team](mailto:security@apache.org) | |
