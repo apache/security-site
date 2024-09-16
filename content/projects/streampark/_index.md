@@ -249,7 +249,7 @@ CVE-2024-34457 [\[CVE json\]](./CVE-2024-34457.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-07-22T09:48:19.350Z_
+_Last updated: 2024-09-11T11:03:06.370Z_
 
 ### Affected
 

@@ -19,7 +19,7 @@ CVE-2024-38503 [\[CVE json\]](./CVE-2024-38503.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-07-22T09:54:11.921Z_
+_Last updated: 2024-09-11T11:11:10.160Z_
 
 ### Affected
 
