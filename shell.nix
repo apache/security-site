@@ -9,6 +9,10 @@ pkgs.mkShell {
       p.python-dotenv
 
       p.pygithub
+
+      # for ecosystem.py
+      p.lib4sbom
+      p.networkx
     ]))
   ];
   shareNet = true;
