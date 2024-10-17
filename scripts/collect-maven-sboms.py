@@ -14,7 +14,7 @@ def project_name(link):
 def maven_projects(pmc, subproject = None):
     # TODO support deeper hierarchies
     def is_direct(name):
-        return name.startswith(f'{subproject or pmc}-')
+        return name.startswith(f'{subproject or pmc}')
 
     if subproject:
         url = f'https://repo1.maven.org/maven2/org/apache/{pmc}/{subproject}/'
