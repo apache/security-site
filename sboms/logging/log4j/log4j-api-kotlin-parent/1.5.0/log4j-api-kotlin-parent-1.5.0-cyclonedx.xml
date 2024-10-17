@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bom serialNumber="urn:uuid:e8acd9eb-10c8-3acc-b23a-1f7f126402c0" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
+  <metadata>
+    <lifecycles>
+      <lifecycle>
+        <phase>build</phase>
+      </lifecycle>
+    </lifecycles>
+    <tools>
+      <tool>
+        <vendor>OWASP Foundation</vendor>
+        <name>CycloneDX Maven plugin</name>
+        <version>2.8.0</version>
+        <hashes>
+          <hash alg="MD5">76ffec6a7ddd46b2b24517411874eb99</hash>
+          <hash alg="SHA-1">5b0d5b41975b53be4799b9621b4af0cfc41d44b6</hash>
+          <hash alg="SHA-256">6852aa0f4e42a2db745bab80e384951a6a65b9215d041081d675780999027e81</hash>
+          <hash alg="SHA-512">417de20fcdcb11c9713bacbd57290d8e68037fdb4553fd31b8cb08bd760ad52dc65ea88ad4be15844ad3fd5a4d3e440d2f70326f2fe1e63ec78e059c9a883f8d</hash>
+          <hash alg="SHA-384">5eb755c6492e7a7385fa9a1e1f4517875bcb834b2df437808a37a2d6f5285df428741762305980315a63fcef1406597d</hash>
+          <hash alg="SHA3-384">0fe16a47cf7aab0b22251dafcc39939b68e8f1778093309d8d2060b51a08df445a8b8ed5a9561669faf2e55f907c76d8</hash>
+          <hash alg="SHA3-256">3e5a1eb5ab7d0797498862794709ff8eaaa071fe4cc9ec77f52db7e2f97ef487</hash>
+          <hash alg="SHA3-512">59281a3e29e76270d7f44b40b5b9f05e55f1ae3ec716d80add806f360940809e3813998ac7c5758043b8e248aed73b86e37dc506cdb4cde03c16bb617d8e5a3a</hash>
+        </hashes>
+      </tool>
+    </tools>
+    <component type="library" bom-ref="pkg:maven/org.apache.logging.log4j/log4j-api-kotlin-parent@1.5.0?type=pom">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.logging.log4j</group>
+      <name>log4j-api-kotlin-parent</name>
+      <version>1.5.0</version>
+      <description>Apache Log4j Kotlin API parent project</description>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.logging.log4j/log4j-api-kotlin-parent@1.5.0?type=pom</purl>
+      <externalReferences><reference type="vulnerability-assertion"><url>https://logging.apache.org/cyclonedx/vdr.xml</url></reference><reference type="website"><url>https://logging.apache.org/log4j/kotlin/</url></reference><reference type="build-system"><url>https://github.com/apache/logging-log4j-kotlin/actions</url></reference><reference type="distribution"><url>https://logging.apache.org/download.html</url></reference><reference type="distribution-intake"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://github.com/apache/logging-log4j-kotlin/issues</url></reference><reference type="mailing-list"><url>https://lists.apache.org/list.html?log4j-user@logging.apache.org</url></reference><reference type="vcs"><url>https://github.com/apache/logging-log4j-kotlin</url></reference></externalReferences>
+    </component>
+    <properties>
+      <property name="maven.goal">makeAggregateBom</property>
+      <property name="maven.scopes">compile,provided,runtime,system</property>
+      <property name="cdx:reproducible">enabled</property>
+    </properties>
+  </metadata>
+  <components>
+    <component type="library" bom-ref="pkg:maven/org.apache.logging.log4j/log4j-api-kotlin@1.5.0?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.logging.log4j</group>
+      <name>log4j-api-kotlin</name>
+      <version>1.5.0</version>
+      <description>Kotlin wrapper for Log4j API</description>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.logging.log4j/log4j-api-kotlin@1.5.0?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://logging.apache.org/log4j/kotlin/</url></reference><reference type="build-system"><url>https://github.com/apache/logging-log4j-kotlin/actions</url></reference><reference type="distribution"><url>https://logging.apache.org/download.html</url></reference><reference type="distribution-intake"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://github.com/apache/logging-log4j-kotlin/issues</url></reference><reference type="mailing-list"><url>https://lists.apache.org/list.html?log4j-user@logging.apache.org</url></reference><reference type="vcs"><url>https://github.com/apache/logging-log4j-kotlin</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.23.1?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.logging.log4j</group>
+      <name>log4j-api</name>
+      <version>2.23.1</version>
+      <description>The Apache Log4j API</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">bee2e2dcbeeb983bdb6b71c9c3476b6a</hash>
+        <hash alg="SHA-1">9c15c29c526d9c6783049c0a77722693c66706e1</hash>
+        <hash alg="SHA-256">92ec1fd36ab3bc09de6198d2d7c0914685c0f7127ea931acc32fd2ecdd82ea89</hash>
+        <hash alg="SHA-512">2a296246b0059ff5fe5c26e2ba3f48aa99e38d7658d613fbd02f32c6d4262f93a67525e6cc4d767fa5c2ab0e39e70bb3c0d3966d38ea4f01608588c084af3162</hash>
+        <hash alg="SHA-384">3937cb646009763a94b199a0d6c0065441b9914e2b25e3d58db523874ea760276b445ff300015948d3a813217e0ee404</hash>
+        <hash alg="SHA3-384">16ea3301ca37fbede2927399209b403066621789c4f1bee531b5153f27b652458900697fb828170d541a5f3b82e77fb7</hash>
+        <hash alg="SHA3-256">0a3dfffc0f362b0a86ad0cd8b36da313c7500a8bdecb0ad7e628c2637d933548</hash>
+        <hash alg="SHA3-512">2e230994b8cb7442a2073d60f89c27703ffc78b613dec7891bbfa42e91c95ed684b387ed65df3ee48559ccc06e6877462748f7e2ef985082c8db0741feb576a8</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.logging.log4j/log4j-api@2.23.1?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://logging.apache.org/log4j/2.x/log4j/log4j-api/</url></reference><reference type="build-system"><url>https://github.com/apache/logging-log4j2/actions</url></reference><reference type="distribution"><url>https://logging.apache.org/logging-parent/latest/#distribution</url></reference><reference type="distribution-intake"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://github.com/apache/logging-log4j2/issues</url></reference><reference type="mailing-list"><url>https://lists.apache.org/list.html?log4j-user@logging.apache.org</url></reference><reference type="vcs"><url>https://github.com/apache/logging-log4j2</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.6.21?type=jar">
+      <group>org.jetbrains.kotlin</group>
+      <name>kotlin-stdlib</name>
+      <version>1.6.21</version>
+      <description>Kotlin Standard Library for JVM</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">df1b133841b2778996355058342c66be</hash>
+        <hash alg="SHA-1">11ef67f1900634fd951bad28c53ec957fabbe5b8</hash>
+        <hash alg="SHA-256">739c526672bb337573b28f63afa8306eb088b0c3a0967f56d6c89f4a3012a492</hash>
+        <hash alg="SHA-512">4083817bb11b983ad9bb7fb28832f1801706f03a04ce7952e5f76cb859b3c1b61d3ec3041eeed5b52fe1e834d67ddd924ea4958e7cdb7269355dfa247e7ede33</hash>
+        <hash alg="SHA-384">187b5042da1117f3eb3d08f1462031faf8586c2d2bda377822b8ba34358bd0de2ea547aae98d8756fb19e06ebc1b2329</hash>
+        <hash alg="SHA3-384">f5cb6b9b55676e8d87de5fd749089187535fbe1c7a7fb8e44dbb4bd61e064f3be38fb68ac6574c672f93b9d0c51a7daa</hash>
+        <hash alg="SHA3-256">35e137fd6afcf908f3aeadaf81a2824001b243c2a94ccf2e3908e2d6836ce826</hash>
+        <hash alg="SHA3-512">b8db1d2409309c36b861cadeb2479cf2bf0f82fa6022de13de21e03ac94820b8c74cd8c592a76d40269673cc6df90f5c3be52ef60bcfffe36c3361452ad24434</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.6.21?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://kotlinlang.org/</url></reference><reference type="vcs"><url>https://github.com/JetBrains/kotlin</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@1.6.21?type=jar">
+      <group>org.jetbrains.kotlin</group>
+      <name>kotlin-stdlib-common</name>
+      <version>1.6.21</version>
+      <description>Kotlin Common Standard Library</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">ef059f351dbf296d43895872bb5a335f</hash>
+        <hash alg="SHA-1">5e5b55c26dbc80372a920aef60eb774b714559b8</hash>
+        <hash alg="SHA-256">183bec59cd9f3a14957b190e8c879cf1194bd1f106b0a7b6e1cbb8790d242363</hash>
+        <hash alg="SHA-512">f2b36e4fb7bc6dc9606e76e651c2e63c9f81c3c20881ad3ea1000f4020669c26d467a7c686f28550d29a72dd4d2da5e3fe7286d7f4bc4e1c0773d74063246c62</hash>
+        <hash alg="SHA-384">0bc8a5424c570f271a7fc9d7ac43fc7976d3cda7ebd91102c640d55e11cf4186378312143bab3de5f6ca18f92bcfb204</hash>
+        <hash alg="SHA3-384">7c28762f2e20f81bbd3d01499eacc9c7e3a19b140aa58536092046aaffa31598260b0a4c432cf5866531c5d4038bb9a5</hash>
+        <hash alg="SHA3-256">b8824bfd54ac5d638675b8771362adabf297cbd1ebc69cd8eefd65fe0fdc9b1f</hash>
+        <hash alg="SHA3-512">ff28e5a0a8640870bdcbad15b72b202e4bbaa43e06d191580e652bd9e38dbb50363bfb4efded34deac4438493dfdeaba460aa77ed8a9d02debf799aff4558ddc</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@1.6.21?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://kotlinlang.org/</url></reference><reference type="vcs"><url>https://github.com/JetBrains/kotlin</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.jetbrains/annotations@13.0?type=jar">
+      <group>org.jetbrains</group>
+      <name>annotations</name>
+      <version>13.0</version>
+      <description>A set of annotations used for code inspection support and code documentation.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">f4fb462172517b46b6cd90003508515a</hash>
+        <hash alg="SHA-1">919f0dfe192fb4e063e7dacadee7f8bb9a2672a9</hash>
+        <hash alg="SHA-256">ace2a10dc8e2d5fd34925ecac03e4988b2c0f851650c94b8cef49ba1bd111478</hash>
+        <hash alg="SHA-512">5622d0ffe410e7272e2bb9fae1006caedeb86d0c62d2d9f3929a3b3cdcdef1963218fcf0cede82e95ef9f4da3ed4a173fa055ee6e4038886376181e0423e02ff</hash>
+        <hash alg="SHA-384">6bcde3a6e471d416522e6288474bc4f9115e2e8abf8ce5d300829bee4aa98dff73be7d8c6f0607f3d6d423c7f5abbf90</hash>
+        <hash alg="SHA3-384">f4d5a5d5a76b24c4751c8c52f2879b097d2430c3571c59b4630e8c871c9bdb08e24e803a14c24fc8d3378417f29b7244</hash>
+        <hash alg="SHA3-256">b4a80ea81c4bc7e364e07981465f547e8ed83031806eaf3b97dfb38f894f5b6f</hash>
+        <hash alg="SHA3-512">15b23bce818b4399b334dd632eb85de5a1b70c47fb9260561e70b1f726211c83bddbc957f3b4c32a1d8c687f9bc6c38d0a638c731cb5daf5b619aa725d6050c2</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.jetbrains/annotations@13.0?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://www.jetbrains.org</url></reference><reference type="distribution-intake"><url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="vcs"><url>https://github.com/JetBrains/intellij-community</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.jetbrains.kotlin/kotlin-reflect@1.6.21?type=jar">
+      <group>org.jetbrains.kotlin</group>
+      <name>kotlin-reflect</name>
+      <version>1.6.21</version>
+      <description>Kotlin Full Reflection Library</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">3db09afc9595efdfa2eccba08665501b</hash>
+        <hash alg="SHA-1">5dc3574d9b7bebfcb4ec6b10ada4aaa9e140bd0b</hash>
+        <hash alg="SHA-256">1e1f57209f7238c3fd1735a1b9339a56565507dca249f8371bf59d91f601aeaa</hash>
+        <hash alg="SHA-512">b163760a7d8ee95773d8138af62abad1dd594de4cc248ccaab9e1c3705dea3a0e1b1464377f45ed97156eae73d23b3d0f1962f9eec76a3cd3729a1f59338d010</hash>
+        <hash alg="SHA-384">a2859caf0c37a13e4bec811b71c279ad14ac05d4440cbbf0ab2bf182cf428b8d5383e5ad3ae07ef23070ea75b5133e08</hash>
+        <hash alg="SHA3-384">8363901504e6c2d80189cc06363e3bae6ae9c9b0d2ef88a4b19fc1ae55c28e697fdd0979bccca74c4eb6ff367b44126e</hash>
+        <hash alg="SHA3-256">abba0bc1b1523028dedc4d7b7e0b2feb5ba553c743e8f82fad7a0fc8789a747e</hash>
+        <hash alg="SHA3-512">587b303a11252aaaad7febb398df3c7b56c3cd9cedbc59a49736b796b1059b6dc27b3808275aed04174b76e95e83fe15f6eae03507e71ef14003604c9a719338</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.jetbrains.kotlin/kotlin-reflect@1.6.21?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://kotlinlang.org/</url></reference><reference type="vcs"><url>https://github.com/JetBrains/kotlin</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-jdk8@1.6.4?type=jar">
+      <group>org.jetbrains.kotlinx</group>
+      <name>kotlinx-coroutines-jdk8</name>
+      <version>1.6.4</version>
+      <description>Coroutines support libraries for Kotlin</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">9532e16578f95c1f9bb3d199fa1c1039</hash>
+        <hash alg="SHA-1">5bc4b0bf6fd90fc190fd2f17e919c74c6274cb71</hash>
+        <hash alg="SHA-256">88c64b8eea3eb90597d2fb0fd30f3cf782fbcdad06312e5665a618f070f02119</hash>
+        <hash alg="SHA-512">c7e26be1165a0b2e47f45387bbd240c42e09569be97388e1f5036f177d45af2d01ddb08058c4f0eda1442a5f4ee7432ff949675fee4c9de5c11a7fa156601bac</hash>
+        <hash alg="SHA-384">da27877ff4a8557dc600a3542e17454b7f1316ab82db282d11761c71b99bc1e47b86ae87a528a85488346d7da8d8d3a5</hash>
+        <hash alg="SHA3-384">e50726539cd8a7cead80f130b7e53f6c80caf0348fa3c1fc3125e8b250cde7b3d562f492fa51104504c37744e0406f5c</hash>
+        <hash alg="SHA3-256">7285fc2b56f24b4b45ab92564008a47b35d2d00c9ee3463127ad432c2f3bf1c5</hash>
+        <hash alg="SHA3-512">f4d4e21bb67e6f9f18dae481326301aff03d79db8c303c8ae26bec1fa08a87850da825150d7c360671d19ba43c926312ac43a38c83d227937816bf04f33b45b6</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-jdk8@1.6.4?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://github.com/Kotlin/kotlinx.coroutines</url></reference><reference type="vcs"><url>https://github.com/Kotlin/kotlinx.coroutines</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm@1.6.4?type=jar">
+      <group>org.jetbrains.kotlinx</group>
+      <name>kotlinx-coroutines-core-jvm</name>
+      <version>1.6.4</version>
+      <description>Coroutines support libraries for Kotlin</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">9ba1873872fe1406d39bc40683050c45</hash>
+        <hash alg="SHA-1">2c997cd1c0ef33f3e751d3831929aeff1390cb30</hash>
+        <hash alg="SHA-256">c24c8bb27bb320c4a93871501a7e5e0c61607638907b197aef675513d4c820be</hash>
+        <hash alg="SHA-512">a4fb638b7427b4e2a87d750958e6ca66c75eefb64c4f359cbfa2d08c868455aa0ff9091c2f2e61f1e4a7c51a3771c68795e96cf306368945940f172dd324742d</hash>
+        <hash alg="SHA-384">b31a6017e4d83ed1242d677d61e8d9d689cd20963f38eb19270be3f8640cfdb3a8c8a7e746ad2e3b49da3cc5a58cf9d4</hash>
+        <hash alg="SHA3-384">25a110c5c57fc339bf8059bfd40e18f7b00906eb0e34da4fe836523ab076bd07a37f13141cbc21dcfd226fe6fd38fe65</hash>
+        <hash alg="SHA3-256">43ab27c32dd36e89304a827e3e8ca895551e249485a5225b9d01a981b6b6d279</hash>
+        <hash alg="SHA3-512">7c40decc4c82b95486b8a3d1528a24296a6e8ab2fdf8983ad763d514314dbc12e398e42de61a16922aeca7c4471e6c23c5f37f21007582aaecbf1e8cd0686831</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm@1.6.4?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://github.com/Kotlin/kotlinx.coroutines</url></reference><reference type="vcs"><url>https://github.com/Kotlin/kotlinx.coroutines</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@1.6.21?type=jar">
+      <group>org.jetbrains.kotlin</group>
+      <name>kotlin-stdlib-jdk8</name>
+      <version>1.6.21</version>
+      <description>Kotlin Standard Library JDK 8 extension</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">9e7ee18a1a5dd5bf070c7e6f706ccc9c</hash>
+        <hash alg="SHA-1">eeb4d60d75e9ea9c11200d52974e522793b14fba</hash>
+        <hash alg="SHA-256">dab45489b47736d59fce44b80676f1947a9b6bcab10fd60e878a83bd82a6954c</hash>
+        <hash alg="SHA-512">c6055591873996d21f809b7508c8d19371bc832979a563bbfe9d9c7d04c4133708ba16104ee611136618e647f8a9950b1202cb2dfca1af9fa809c6bc276c87ec</hash>
+        <hash alg="SHA-384">754c3d51cbd37cd8610cd14737d2216c22ac0fe5c493c1d32c6f0171c2a0d29b3529f10d760e23aec9aeb6afb17be08d</hash>
+        <hash alg="SHA3-384">95189fa02e132e40ac89e283fbcd96aa0caa12bf6229c7b2b8aee30cfcf99b503b1ef11f8c3054f8be8ffd5e64fd0c5d</hash>
+        <hash alg="SHA3-256">b550a252cd80b1d4527358bffe0dcfad2e458a4526858b9c1871b5665312b237</hash>
+        <hash alg="SHA3-512">8de546c9513cbea034cf1e972f7871c8f16ada452e17a1435832ea49bbfb7374d5970d2fa32d9d9782306ee14f16a9471148eaf8500d21d989bc03361490e335</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@1.6.21?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://kotlinlang.org/</url></reference><reference type="vcs"><url>https://github.com/JetBrains/kotlin</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk7@1.6.21?type=jar">
+      <group>org.jetbrains.kotlin</group>
+      <name>kotlin-stdlib-jdk7</name>
+      <version>1.6.21</version>
+      <description>Kotlin Standard Library JDK 7 extension</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">73d0db6af7445088858d51a1a6843b75</hash>
+        <hash alg="SHA-1">568c1b78a8e17a4f35b31f0a74e2916095ed74c2</hash>
+        <hash alg="SHA-256">f1b0634dbb94172038463020bb2dd45ca26849f8ce29d625acb0f1569d11dbee</hash>
+        <hash alg="SHA-512">0c56a3bd135e31155cf35f7bb1c6d71afd597599db23b587d0231d4b5f5a5e6a62432d33f160eb6e90bbe228bd92a2913370751435e4b95afb6b0a93ff1e3668</hash>
+        <hash alg="SHA-384">6dd281628011c8795886c59d7d99014589faed1019caf85f81acb5fddc283dc00c6cecb74a1ebbb104252094e8ffd7ee</hash>
+        <hash alg="SHA3-384">d6977cdb50b1399502162c9f2c404667402e7d4da779bd92523dbbcddcd0ac1862aa15e44787c788c051e6bb9698fb8f</hash>
+        <hash alg="SHA3-256">4132082cfad00c33e2a4a928fdda7c6a1e32396f67761c65aea6877d143c8fb6</hash>
+        <hash alg="SHA3-512">bd5a1f7e28a8ddfe5368923df9442df0ebfa6971514bd134cac7ba7fd556ff741237502b7ecf881b6a758026b0dd156d44f0204e36a42a46dbd46e8d832be745</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk7@1.6.21?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://kotlinlang.org/</url></reference><reference type="vcs"><url>https://github.com/JetBrains/kotlin</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.github.spotbugs/spotbugs-annotations@4.8.5?type=jar">
+      <group>com.github.spotbugs</group>
+      <name>spotbugs-annotations</name>
+      <version>4.8.5</version>
+      <description>Annotations the SpotBugs tool supports</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">e952af1f90eadb3502cff551518fcbc9</hash>
+        <hash alg="SHA-1">17ab39acf7cf6f7a330ee3be08a4bb2740082b4c</hash>
+        <hash alg="SHA-256">6e63acb693f156e4fb79151b88f9eebe731b4da65fe12843503613e0d6e6f68d</hash>
+        <hash alg="SHA-512">eca6f33606ed912e74c2770c43e8bbc07b695d72a7144deaf26fa526cf821f840a119034e12c2967cfe0b7e37ced64c0b59a7f668bb24ae78cad8dd0051593fe</hash>
+        <hash alg="SHA-384">2d8b479b41ac69301c73fddcae166b84257d94421a8a3352f76a80b6b113d89db9ac0f84482b005572965edeb72aecb6</hash>
+        <hash alg="SHA3-384">2cc8b41fa984828dd531958064d453121c95088825a03d701ec6a8314a3b3493f74ea1afbc699b570a9c01cd581c3824</hash>
+        <hash alg="SHA3-256">069b8825f72c8c8c051212e374776501db6cd9250acc8ab95a1ec8193c10bfdc</hash>
+        <hash alg="SHA3-512">b9e6d0a9df7fd99fe5e25f595f52d385a32b6e0757627bcd45e1b92129c0ee41d5c5da641f13b7c5d379cab5951bdf04b5bd5e85ffa0ac2a8ce2deb399c95654</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>LGPL-2.1-only</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.github.spotbugs/spotbugs-annotations@4.8.5?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://spotbugs.github.io/</url></reference><reference type="vcs"><url>https://github.com/spotbugs/spotbugs/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar">
+      <group>com.google.code.findbugs</group>
+      <name>jsr305</name>
+      <version>3.0.2</version>
+      <description>JSR305 Annotations for Findbugs</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">dd83accb899363c32b07d7a1b2e4ce40</hash>
+        <hash alg="SHA-1">25ea2e8b0c338a877313bd4672d3fe056ea78f0d</hash>
+        <hash alg="SHA-256">766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7</hash>
+        <hash alg="SHA-512">bb09db62919a50fa5b55906013be6ca4fc7acb2e87455fac5eaf9ede2e41ce8bbafc0e5a385a561264ea4cd71bbbd3ef5a45e02d63277a201d06a0ae1636f804</hash>
+        <hash alg="SHA-384">ca0b169d3eb2d0922dc031133a021f861a043bb3e405a88728215fd6ff00fa52fdc7347842dcc2031472e3726164bdc4</hash>
+        <hash alg="SHA3-384">9903fd7505218999f8262efedb3d935d64bcef84aae781064ab5e1b24755466b269517cada562fa140cd1d417ede57a1</hash>
+        <hash alg="SHA3-256">223fda9a89a461afaae73b177a2dc20ed4a90f2f8757f5c65f3241b0510f00ff</hash>
+        <hash alg="SHA3-512">3996b5af57a5d5c6a0cd62b11773360fb051dd86a2ba968476806a2a5d32049b82d69a24a3c694e8fe4d735be6a28e41000cc500cc2a9fb577e058045855d2d6</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://findbugs.sourceforge.net/</url></reference><reference type="distribution-intake"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="vcs"><url>https://code.google.com/p/jsr-305/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.osgi/osgi.annotation@8.1.0?type=jar">
+      <publisher>Eclipse Foundation</publisher>
+      <group>org.osgi</group>
+      <name>osgi.annotation</name>
+      <version>8.1.0</version>
+      <description>OSGi Annotation Release 8, Annotations for use in compiling bundles</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">3bcfab9c55a2bcc158aa4953084021b6</hash>
+        <hash alg="SHA-1">59d42736bcc0af2144ba5c1a12ff7c08ea4b7e12</hash>
+        <hash alg="SHA-256">68afeb86a5322675d4dfe3df5863c7d8a37b34c18e3a8e41553f1ab3ac15d78f</hash>
+        <hash alg="SHA-512">a190fa888fd22c2c31455d672b3e50ca79fa9f02269b9d45f6e6fc189dc8f90d20663e290f151a851e010b52ce87e62dc5079253c3e59caa72f11ea6248ffb26</hash>
+        <hash alg="SHA-384">581c88a48fc7df5edae29712f943ef780fb0f32b4eee10dfcaa879f122f19fd1645b961b38bc0a97dd894d89952fdb68</hash>
+        <hash alg="SHA3-384">ab4fab76440671def19eb0ca3370d8f0f8a915df4ec92e5aa2b9e12a4b97aa49301c51ccd28a2d2718beec6fe8105bc6</hash>
+        <hash alg="SHA3-256">6849ce4a9cad5dbf2dce1ad817442821a633f8ae10ab1ccde69ac46d26127a46</hash>
+        <hash alg="SHA3-512">3c3ce68b5ae1ea157f78d72a210cc152375fd8819a7c85ed5c718fbe387ffb522715e1b0dfa5094caed1e8bbe4b8fcc6d2aadd1cd3851f4c0fffebda5acaebba</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.osgi/osgi.annotation@8.1.0?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://docs.osgi.org/</url></reference><reference type="vcs"><url>https://github.com/osgi/osgi</url></reference></externalReferences>
+    </component>
+  </components>
+  <dependencies>
+    <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api-kotlin-parent@1.5.0?type=pom">
+      <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api-kotlin@1.5.0?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api-kotlin@1.5.0?type=jar">
+      <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.23.1?type=jar"/>
+      <dependency ref="pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.6.21?type=jar"/>
+      <dependency ref="pkg:maven/org.jetbrains.kotlin/kotlin-reflect@1.6.21?type=jar"/>
+      <dependency ref="pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-jdk8@1.6.4?type=jar"/>
+      <dependency ref="pkg:maven/com.github.spotbugs/spotbugs-annotations@4.8.5?type=jar"/>
+      <dependency ref="pkg:maven/org.osgi/osgi.annotation@8.1.0?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.23.1?type=jar"/>
+    <dependency ref="pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.6.21?type=jar">
+      <dependency ref="pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@1.6.21?type=jar"/>
+      <dependency ref="pkg:maven/org.jetbrains/annotations@13.0?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@1.6.21?type=jar"/>
+    <dependency ref="pkg:maven/org.jetbrains/annotations@13.0?type=jar"/>
+    <dependency ref="pkg:maven/org.jetbrains.kotlin/kotlin-reflect@1.6.21?type=jar">
+      <dependency ref="pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.6.21?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-jdk8@1.6.4?type=jar">
+      <dependency ref="pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm@1.6.4?type=jar"/>
+      <dependency ref="pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@1.6.21?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm@1.6.4?type=jar">
+      <dependency ref="pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@1.6.21?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@1.6.21?type=jar">
+      <dependency ref="pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk7@1.6.21?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk7@1.6.21?type=jar"/>
+    <dependency ref="pkg:maven/com.github.spotbugs/spotbugs-annotations@4.8.5?type=jar">
+      <dependency ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar"/>
+    <dependency ref="pkg:maven/org.osgi/osgi.annotation@8.1.0?type=jar"/>
+  </dependencies>
+</bom>

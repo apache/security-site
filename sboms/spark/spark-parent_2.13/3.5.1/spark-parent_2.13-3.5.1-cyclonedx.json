@@ -1,0 +1,151 @@
+{
+  "bomFormat" : "CycloneDX",
+  "specVersion" : "1.4",
+  "serialNumber" : "urn:uuid:003411c6-b4d5-4294-b49d-ff3f71909109",
+  "version" : 1,
+  "metadata" : {
+    "timestamp" : "2024-02-15T14:23:09Z",
+    "tools" : [
+      {
+        "vendor" : "OWASP Foundation",
+        "name" : "CycloneDX Maven plugin",
+        "version" : "2.7.9",
+        "hashes" : [
+          {
+            "alg" : "MD5",
+            "content" : "8e595cdb67f17e4b41e046456970591d"
+          },
+          {
+            "alg" : "SHA-1",
+            "content" : "69e8ca804520d09ce4657e7235bae84d01cbffa6"
+          },
+          {
+            "alg" : "SHA-256",
+            "content" : "aa09074fe5aa403c008cd4fc7ef8ce41cd244489337f16b3e91a3914158a4db8"
+          },
+          {
+            "alg" : "SHA-512",
+            "content" : "1488a8112da8e675813d7585f57c5efb178aed32901118186ee12d0e4ae3d19c53774c7f860bf70d17d70f050119b69443a2637cf641675b4b5d9cdcdd69b89b"
+          },
+          {
+            "alg" : "SHA-384",
+            "content" : "b097295dfbf10887abc6eec58d4d0822cde5a73d1f5c1cf183a57bf569016ad5ced9d34efae3e574d82bb62837540c6c"
+          }
+        ]
+      }
+    ],
+    "component" : {
+      "publisher" : "Apache Software Foundation",
+      "group" : "org.apache.spark",
+      "name" : "spark-parent_2.13",
+      "version" : "3.5.1",
+      "description" : "The Apache Software Foundation provides support for the Apache community of open-source software projects. The Apache projects are characterized by a collaborative, consensus based development process, an open and pragmatic software license, and a desire to create high quality software that leads the way in its field. We consider ourselves not simply a group of projects sharing a server, but rather a community of developers and users.",
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.spark/spark-parent_2.13@3.5.1?type=pom",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://spark.apache.org/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/SPARK"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "dev-subscribe@spark.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "scm:git:git@github.com:apache/spark.git"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.spark/spark-parent_2.13@3.5.1?type=pom"
+    },
+    "properties" : [
+      {
+        "name" : "maven.goal",
+        "value" : "makeBom"
+      },
+      {
+        "name" : "maven.scopes",
+        "value" : "compile,provided,runtime,system"
+      }
+    ]
+  },
+  "components" : [
+    {
+      "group" : "org.spark-project.spark",
+      "name" : "unused",
+      "version" : "1.0.0",
+      "description" : "Sonatype helps open source projects to set up Maven repositories on https://oss.sonatype.org/",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "763373ce9fe48581d4f2b8ffca35bb82"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "205fe37a2fade6ce6dfcf8eff57ed21a4a1c22af"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "00fd27fc9bde701581e7dcf5b95981d9e749a1c176bb8bfcd49f675768ff6bf0"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "08a6ac8d2dc9d89ff557c7e96096c76e687efe3ce166aa6dbb76865bbef64dc8b6ecb5561ef03c2451a688ccdb3876b8f16b9137d02c290a698e917a5656b6fa"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "c8c51d0d851835107db273d7ce522f026587d922c9d1d34739c3dedf9b7737c1c491e961dc7931f46c476d28acbc91f6"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.spark-project.spark/unused@1.0.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://nexus.sonatype.org/oss-repository-hosting.html/unused"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.spark-project.spark/unused@1.0.0?type=jar"
+    }
+  ],
+  "dependencies" : [
+    {
+      "ref" : "pkg:maven/org.apache.spark/spark-parent_2.13@3.5.1?type=pom",
+      "dependsOn" : [
+        "pkg:maven/org.spark-project.spark/unused@1.0.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.spark-project.spark/unused@1.0.0?type=jar",
+      "dependsOn" : [ ]
+    }
+  ]
+}
