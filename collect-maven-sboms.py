@@ -62,6 +62,12 @@ elif pmc == 'camel':
     ]
 elif pmc == 'logging':
     projects = maven_projects(pmc, 'log4j')
+elif pmc == 'pekko':
+    def eligible(project):
+        # these publish CycloneDX 1.0 XML artifacts
+        # without a 'components' tag, which is not valid
+        return not (project.startswith("pekko-bom") or project.startswith("pekko-protobuf-v3"))
+    projects = list(filter(eligible, maven_projects(pmc)))
 else:
     projects = maven_projects(pmc)
 
@@ -92,7 +98,9 @@ for project in projects:
         def file_name(link):
             return link['title']
         def is_sbom(name):
-            return name.endswith('-cyclonedx.json') or name.endswith('-cyclonedx.xml')
+            # tighten to '-cyclonedx.xml' when Pekko is released with
+            # https://github.com/apache/pekko/pull/1536
+            return name.endswith('-cyclonedx.json') or name.endswith('.xml')
         sboms = list(filter(is_sbom, map(file_name, index)))
         if sboms:
             sbom = sboms[0]
