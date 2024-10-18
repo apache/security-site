@@ -4,9 +4,26 @@
   <script src="echarts.min.js"></script>
   <!-- TODO perhaps replace -->
   <script src="jquery.min.js "></script>
+<style>
+body {
+  font-family: sans-serif;
+}
+#intro {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+</style>
 </head>
 <body>
-  <div id="main" style="width: 100%; height: 100%"></div>
+  <div id="intro">
+  <h1>Apache Ecosystem Graph</h1>
+  This page shows Apache artifacts that publish SBOMs, and their
+  dependency relationships. While this is a somewhat superficial
+  showcase, you are encouraged to
+  <a href="https://cwiki.apache.org/confluence/display/SECURITY/Software+Bill+of+Materials+SBOM">publish SBOMs for your project</a>
+  and <a href="https://github.com/apache/security-site/tree/sboms">get them included here</a>.
+  </div>
+  <div id="main" style="width: 100%; height: 90%"></div>
   <script>
 var option;
 const myChart = echarts.init(document.getElementById('main'))
@@ -39,7 +56,7 @@ $.get('ecosystem.json', function (webkitDep) {
 	draggable: true,
         edges: webkitDep.links,
         force: {
-          edgeLength: 5,
+          edgeLength: 15,
           repulsion: 20,
           gravity: 0.2
         },
