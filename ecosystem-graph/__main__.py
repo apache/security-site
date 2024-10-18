@@ -5,7 +5,7 @@
 import json
 from lib4sbom.parser import SBOMParser
 import os
-from concurrent.futures import ThreadPoolExecutor
+import re
 import networkx as nx
 
 def list_sboms():
@@ -19,28 +19,34 @@ def list_sboms():
                     sboms.append((purl, os.path.join(root, file)))
     return sboms
 
+def simplify_purl(purl):
+    return re.sub(r'_(2.12|2.13|3)$', '', purl.split('@')[0])
+
 sboms = list_sboms();
-purls = [ sbom[0] for sbom in sboms ]
+purls = [ simplify_purl(sbom[0]) for sbom in sboms ]
 
 def get_purl(package):
     if 'purl' in package:
         return package['purl']
     if 'group' in package:
         return f"pkg:maven/{package['group']}/{package['name']}"
+    if 'externalreference' in package:
+        for (_, t, r) in package['externalreference']:
+            if t == 'purl':
+                return r
     return None
 
 links = nx.DiGraph()
 def parse_sbom(sbom):
     global links
-    #print(sbom[1])
+    sbom_purl = simplify_purl(sbom[0])
     parser = SBOMParser()
     parser.parse_file(sbom[1])
     for package in parser.get_packages():
-        purl = get_purl(package)
-        if purl and purl in purls:
-            links.add_edge(sbom[0], purl)
+        dep_purl = simplify_purl(get_purl(package))
+        if dep_purl and dep_purl in purls:
+            links.add_edge(sbom_purl, dep_purl)
 
-#print(parse_sbom(('x', "sboms/spark/spark-core_2.12/3.5.2/spark-core_2.12-3.5.2-cyclonedx.json")))
 list(map(parse_sbom, sboms))
 
 # Hack: remove some 'provided' dependencies causing cycles ;)
@@ -50,10 +56,11 @@ links.remove_edge("pkg:maven/org.apache.commons/commons-lang3", "pkg:maven/org.a
 simplified = nx.transitive_reduction(links)
 
 def to_dot(graph):
-    print("strict graph {")
+    result = "strict graph {\n"
     for k, v in graph.edges:
-      print(f"  \"{k}\" -- \"{v}\"")
-    print("}")
+      result += f"  \"{k}\" -- \"{v}\"\n"
+    result += "}"
+    return result
 
 def to_json(graph):
     purls = []
