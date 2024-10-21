@@ -91,3 +91,28 @@ _Last updated: 2024-07-26T08:36:45.293Z_
 
 ### Credits
 * Jacob Hazak (reporter)
+
+
+## Weakness in CSRF protection allows privilege escalation ## { #CVE-2024-46911 }
+
+CVE-2024-46911 [\[CVE json\]](./CVE-2024-46911.cve.json) [\[OSV json\]](./CVE-2024-46911.osv.json)
+
+
+
+_Last updated: 2024-10-11T21:53:17.272Z_
+
+### Affected
+
+* Apache Roller from 1.0.0 before 6.1.4
+
+
+### Description
+
+<p>Cross-site Resource Forgery (CSRF), Privilege escalation vulnerability in Apache Roller. On multi-blog/user Roller websites, by default weblog owners are trusted to publish arbitrary weblog content and this combined with a deficiency in Roller's CSRF protections allowed an escalation of privileges attack. This issue affects Apache Roller before 6.1.4.</p><p>Roller users who run multi-blog/user Roller websites are recommended to upgrade to version 6.1.4, which fixes the issue.</p>Roller 6.1.4 release announcement:&nbsp;<a target="_blank" rel="nofollow" href="https://lists.apache.org/thread/3c3f6rwqptyw6wdc95654fq5vlosqdpw">https://lists.apache.org/thread/3c3f6rwqptyw6wdc95654fq5vlosqdpw</a><br><br>
+
+### References
+* https://lists.apache.org/thread/6m0ghjo9j92qty00t2qb6qf2spds0p5t
+
+
+### Credits
+* Chi Tran from EEVEE (finder)

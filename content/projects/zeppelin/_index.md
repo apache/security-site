@@ -378,7 +378,7 @@ CVE-2024-31868 [\[CVE json\]](./CVE-2024-31868.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-04-09T16:10:29.091Z_
+_Last updated: 2024-10-03T12:35:14.839Z_
 
 ### Affected
 

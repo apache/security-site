@@ -1099,7 +1099,7 @@ CVE-2024-27315 [\[CVE json\]](./CVE-2024-27315.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-02-28T10:06:46.675Z_
+_Last updated: 2024-10-03T12:30:58.178Z_
 
 ### Affected
 

@@ -268,3 +268,55 @@ Insertion of Sensitive Information into Log File vulnerability in the Apache Sol
 
 ### Credits
 * Flip Hess (finder)
+
+
+## Authentication bypass possible using a fake URL Path ending ## { #CVE-2024-45216 }
+
+CVE-2024-45216 [\[CVE json\]](./CVE-2024-45216.cve.json) [\[OSV json\]](./CVE-2024-45216.osv.json)
+
+
+
+_Last updated: 2024-10-16T07:50:24.165Z_
+
+### Affected
+
+* Apache Solr from 5.3.0 before 8.11.4
+* Apache Solr from 9.0.0 before 9.7.0
+
+
+### Description
+
+<p>Improper Authentication vulnerability in Apache Solr.</p>Solr instances using the PKIAuthenticationPlugin, which is enabled by default when Solr Authentication is used, are vulnerable to Authentication bypass.<br>A fake ending at the end of any Solr API URL path, will allow requests to skip Authentication while maintaining the API contract with the original URL Path.<br>This fake ending looks like an unprotected API path, however it is stripped off internally after authentication but before API routing.<br><p></p><p>This issue affects Apache Solr: from 5.3.0 before 8.11.4, from 9.0.0 before 9.7.0.</p><p>Users are recommended to upgrade to version 9.7.0, or 8.11.4, which fix the issue.</p>
+
+### References
+* https://solr.apache.org/security.html#cve-2024-45216-apache-solr-authentication-bypass-possible-using-a-fake-url-path-ending
+
+
+### Credits
+* Liu Huajin (reporter)
+
+
+## ConfigSets created during a backup restore command are trusted implicitly ## { #CVE-2024-45217 }
+
+CVE-2024-45217 [\[CVE json\]](./CVE-2024-45217.cve.json) [\[OSV json\]](./CVE-2024-45217.osv.json)
+
+
+
+_Last updated: 2024-10-16T07:51:15.128Z_
+
+### Affected
+
+* Apache Solr from 6.6.0 before 8.11.4
+* Apache Solr from 9.0.0 before 9.7.0
+
+
+### Description
+
+<p>Insecure Default Initialization of Resource vulnerability in Apache Solr.</p><p><span style="background-color: rgb(255, 255, 255);">New ConfigSets that are created via a Restore command, which copy a configSet from the backup and give it a new name, are created without setting the "trusted" metadata.<br>ConfigSets that do not contain the flag are trusted implicitly if the metadata is missing, therefore this leads to "trusted" ConfigSets that may not have been created with an Authenticated request.</span><br><span style="background-color: rgb(255, 255, 255);">"trusted" ConfigSets are able to load custom code into classloaders, therefore the flag is supposed to only be set when the request that uploads the ConfigSet is Authenticated &amp; Authorized.</span></p><p>This issue affects Apache Solr: from 6.6.0 before 8.11.4, from 9.0.0 before 9.7.0. This issue does not affect Solr instances that are secured via Authentication/Authorization.</p><p>Users are primarily recommended to use Authentication and Authorization when running Solr. However, upgrading to version 9.7.0, or 8.11.4 will mitigate this issue otherwise.</p><p></p>
+
+### References
+* https://solr.apache.org/security.html#cve-2024-45217-apache-solr-configsets-created-during-a-backup-restore-command-are-trusted-implicitly
+
+
+### Credits
+* Liu Huajin (reporter)

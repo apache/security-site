@@ -411,3 +411,28 @@ Out-of-bounds Write vulnerability in Apache Commons Configuration.<p>This issue 
 
 ### Credits
 * Gary Gregory (finder)
+
+
+## Possible denial of service attack on untrusted input to XmlStreamReader ## { #CVE-2024-47554 }
+
+CVE-2024-47554 [\[CVE json\]](./CVE-2024-47554.cve.json) [\[OSV json\]](./CVE-2024-47554.osv.json)
+
+
+
+_Last updated: 2024-10-03T11:32:46.805Z_
+
+### Affected
+
+* Apache Commons IO from 2.0 before 2.14.0
+
+
+### Description
+
+<p>Uncontrolled Resource Consumption vulnerability in Apache Commons IO.</p><p>The org.apache.commons.io.input.XmlStreamReader class may excessively consume CPU resources when processing maliciously crafted input.<br></p><p>This issue affects Apache Commons IO: from 2.0 before 2.14.0.</p><p>Users are recommended to upgrade to version 2.14.0 or later, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/6ozr91rr9cj5lm0zyhv30bsp317hk5z1
+
+
+### Credits
+* CodeQL (tool)

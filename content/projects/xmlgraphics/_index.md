@@ -168,3 +168,28 @@ Server-Side Request Forgery (SSRF) vulnerability in Apache Software Foundation A
 ### References
 * https://lists.apache.org/thread/58m5817jr059f4v1zogh0fngj9pwjyj0
 * https://xmlgraphics.apache.org/security.html
+
+
+## XML External Entity (XXE) Processing ## { #CVE-2024-28168 }
+
+CVE-2024-28168 [\[CVE json\]](./CVE-2024-28168.cve.json) [\[OSV json\]](./CVE-2024-28168.osv.json)
+
+
+
+_Last updated: 2024-10-09T12:04:02.004Z_
+
+### Affected
+
+* Apache XML Graphics FOP at 2.9
+
+
+### Description
+
+<p>Improper Restriction of XML External Entity Reference ('XXE') vulnerability in Apache XML Graphics FOP.</p><p>This issue affects Apache XML Graphics FOP: 2.9.</p><p>Users are recommended to upgrade to version 2.10, which fixes the issue.</p>
+
+### References
+* https://xmlgraphics.apache.org/security.html
+
+
+### Credits
+* c1gar of Shanxi Normal University (finder)

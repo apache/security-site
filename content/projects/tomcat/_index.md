@@ -783,3 +783,24 @@ _Last updated: 2024-07-03T19:38:21.788Z_
 
 ### Credits
 * devme4f from VNPT-VCI (finder)
+
+
+## mod_jk: local users can view and modify configuration ## { #CVE-2024-46544 }
+
+CVE-2024-46544 [\[CVE json\]](./CVE-2024-46544.cve.json) [\[OSV json\]](./CVE-2024-46544.osv.json)
+
+
+
+_Last updated: 2024-09-23T10:51:17.287Z_
+
+### Affected
+
+* Apache Tomcat Connectors from 1.2.9-beta through 1.2.49
+
+
+### Description
+
+<p>Incorrect Default Permissions vulnerability in Apache Tomcat Connectors allows local users to view and modify shared memory containing mod_jk configuration which may lead to information disclosure and/or denial of service.</p><p>This issue affects Apache Tomcat Connectors: from 1.2.9-beta through 1.2.49. Only mod_jk on Unix like systems is affected. Neither the ISAPI redirector nor mod_jk on Windows is affected.<br></p><p>Users are recommended to upgrade to version 1.2.50, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/q1gp7cc38hs1r8gj8gfnopwznd5fpr4d

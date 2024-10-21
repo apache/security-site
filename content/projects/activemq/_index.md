@@ -217,6 +217,31 @@ which fixes this issue.</div>
 * yejie@threatbook.cn (finder)
 
 
+## Authenticated users could perform RCE via Jolokia MBeans ## { #CVE-2023-50780 }
+
+CVE-2023-50780 [\[CVE json\]](./CVE-2023-50780.cve.json) [\[OSV json\]](./CVE-2023-50780.osv.json)
+
+
+
+_Last updated: 2024-10-14T16:03:33.323Z_
+
+### Affected
+
+* Apache ActiveMQ Artemis before 2.29.0
+
+
+### Description
+
+<p>Apache ActiveMQ Artemis allows access to diagnostic information and controls through MBeans, which are also exposed through the authenticated Jolokia endpoint. Before version 2.29.0, this also included the Log4J2 MBean. This MBean is not meant for exposure to non-administrative users. This could eventually allow an authenticated attacker to write arbitrary files to the filesystem and indirectly achieve RCE.<br></p><p>Users are recommended to upgrade to version 2.29.0 or later, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/63b78shqz312phsx7v1ryr7jv7bprg58
+
+
+### Credits
+* Matei "Mal" Badanoiu (finder)
+
+
 ## Jolokia and REST API were not secured with default configuration ## { #CVE-2024-32114 }
 
 CVE-2024-32114 [\[CVE json\]](./CVE-2024-32114.cve.json) [\[OSV json\]](./CVE-2024-32114.osv.json)

@@ -87,3 +87,29 @@ Subversion's mod_dav_svn is vulnerable to memory corruption.  While looking up p
 
 ### Credits
 * Apache Subversion would like to thank Thomas Weißschuh, cis-solutions.eu.
+
+
+## Command line argument injection on Windows platforms ## { #CVE-2024-45720 }
+
+CVE-2024-45720 [\[CVE json\]](./CVE-2024-45720.cve.json) [\[OSV json\]](./CVE-2024-45720.osv.json)
+
+
+
+_Last updated: 2024-10-09T12:38:27.375Z_
+
+### Affected
+
+* Apache Subversion from 1.0.0 through 1.14.3
+
+
+### Description
+
+On Windows platforms, a "best fit" character encoding conversion of command line arguments to Subversion's executables (e.g., svn.exe, etc.) may lead to unexpected command line argument interpretation, including argument injection and execution of other programs, if a specially crafted command line argument string is processed.<br><br>All versions of Subversion up to and including Subversion 1.14.3 are affected on Windows platforms only. Users are recommended to upgrade to version Subversion 1.14.4, which fixes this issue.<br><br><div>Subversion is not affected on UNIX-like platforms.</div><br>
+
+### References
+* https://subversion.apache.org/security/CVE-2024-45720-advisory.txt
+
+
+### Credits
+* Orange Tsai (@orange_8361) from DEVCORE Research Team (finder)
+* splitline (@_splitline_) from DEVCORE Research Team (finder)

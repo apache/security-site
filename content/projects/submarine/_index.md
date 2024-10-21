@@ -104,7 +104,7 @@ CVE-2024-36264 [\[CVE json\]](./CVE-2024-36264.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-06-12T14:06:29.951Z_
+_Last updated: 2024-10-14T08:55:23.574Z_
 
 ### Affected
 

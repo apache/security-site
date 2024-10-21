@@ -289,3 +289,117 @@ _Last updated: 2024-08-07T06:49:40.024Z_
 ### Credits
 * Christian Gross of Netcloud AG (finder)
 * Midhun Jose (finder)
+
+
+## Uploaded and registered templates and volumes can be used to abuse KVM-based infrastructure ## { #CVE-2024-45219 }
+
+CVE-2024-45219 [\[CVE json\]](./CVE-2024-45219.cve.json) [\[OSV json\]](./CVE-2024-45219.osv.json)
+
+
+
+_Last updated: 2024-10-15T18:32:48.536Z_
+
+### Affected
+
+* Apache CloudStack from 4.0.0 through 4.18.2.3
+* Apache CloudStack from 4.19.0.0 through 4.19.1.1
+
+
+### Description
+
+Account users in Apache CloudStack by default are allowed to upload and register templates for deploying instances and volumes for attaching them as data disks to their existing instances. Due to missing validation checks for KVM-compatible templates or volumes in CloudStack 4.0.0 through 4.18.2.3 and 4.19.0.0 through 4.19.1.1, an attacker that can upload or register templates and volumes, can use them to deploy malicious instances or attach uploaded volumes to their existing instances on KVM-based environments and exploit this to gain access to the host filesystems that could result in the compromise of resource integrity and confidentiality, data loss, denial of service, and availability of KVM-based infrastructure managed by CloudStack.<div><br></div><div><span style="background-color: rgb(252, 252, 252);">Users are recommended to upgrade to Apache CloudStack 4.18.2.4 or 4.19.1.2, or later, which addresses this issue. <br><br></span>Additionally, all user-uploaded or registered KVM-compatible templates and volumes can be scanned and checked that they are flat files that should not be using any additional or unnecessary features. For example, operators can run this on their secondary storage(s) and inspect output. An empty output for the disk being validated means it has no references to the host filesystems; on the other hand, if the output for the disk being validated is not empty, it might indicate a compromised disk.<br></div><blockquote>for file in $(find /path/to/storage/ -type f -regex [a-f0-9\-]*.*); do echo "Retrieving file [$file] info. If the output is not empty, that might indicate a compromised disk; check it carefully."; qemu-img info -U $file | grep file: ; printf "\n\n"; done</blockquote><div><br>The command can also be run for the file-based primary storages; however, bear in mind that (i) volumes created from templates will have references for the templates at first and (ii) volumes can be consolidated while migrating, losing their references to the templates. Therefore, the command execution for the primary storages can show both false positives and false negatives.<br><br>For checking the whole template/volume features of each disk, operators can run the following command:<br></div><blockquote>for file in $(find /path/to/storage/ -type f -regex [a-f0-9\-]*.*); do echo "Retrieving file [$file] info."; qemu-img info -U $file; printf "\n\n"; done</blockquote><div><span style="background-color: rgb(252, 252, 252);"><br></span></div>
+
+### References
+* https://cloudstack.apache.org/blog/security-release-advisory-4.18.2.4-4.19.1.2
+* https://lists.apache.org/thread/ktsfjcnj22x4kg49ctock3d9tq7jnvlo
+* https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-4-and-4-19-1-2/
+
+
+### Credits
+* Daniel Augusto Veronezi Salvador <gutoveronezi@apache.org> (reporter)
+
+
+## Access checks not enforced in Quota ## { #CVE-2024-45461 }
+
+CVE-2024-45461 [\[CVE json\]](./CVE-2024-45461.cve.json) [\[OSV json\]](./CVE-2024-45461.osv.json)
+
+
+
+_Last updated: 2024-10-16T10:38:52.990Z_
+
+### Affected
+
+* Apache CloudStack Quota plugin from 4.7.0 through 4.18.2.3
+* Apache CloudStack Quota plugin from 4.19.0.0 through 4.19.1.1
+
+
+### Description
+
+<div>The CloudStack Quota feature allows cloud administrators to implement a quota or usage limit system for cloud resources, and is disabled by default. In environments where the feature is enabled, due to missing access check enforcements, non-administrative CloudStack user accounts are able to access and modify quota-related configurations and data. This issue affects Apache CloudStack from 4.7.0 through 4.18.2.3; and from 4.19.0.0 through 4.19.1.1, where the Quota feature is enabled.</div><div><br></div><span style="background-color: rgb(252, 252, 252);">Users are recommended to upgrade to Apache CloudStack 4.18.2.4 or 4.19.1.2, or later, which addresses this issue.&nbsp;</span>Alternatively, users that do not use the Quota feature are advised to disabled the plugin by setting the global setting "quota.enable.service" to "false".
+
+### References
+* https://cloudstack.apache.org/blog/security-release-advisory-4.18.2.4-4.19.1.2
+* https://lists.apache.org/thread/ktsfjcnj22x4kg49ctock3d9tq7jnvlo
+* https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-4-and-4-19-1-2/
+
+
+### Credits
+* Fabrício Duarte <fabricio.duarte.jr@gmail.com> (reporter)
+
+
+## Incomplete session invalidation on web interface logout ## { #CVE-2024-45462 }
+
+CVE-2024-45462 [\[CVE json\]](./CVE-2024-45462.cve.json) [\[OSV json\]](./CVE-2024-45462.osv.json)
+
+
+
+_Last updated: 2024-10-16T10:39:03.528Z_
+
+### Affected
+
+* Apache CloudStack from 4.15.1.0 through 4.18.2.3
+* Apache CloudStack from 4.19.0.0 through 4.19.1.1
+
+
+### Description
+
+<div>The logout operation in the CloudStack web interface does not expire the user session completely which is valid until expiry by time or restart of the backend service. An attacker that has access to a user's browser can use an unexpired session to gain access to resources owned by the logged out user account. This issue affects Apache CloudStack from 4.15.1.0 through 4.18.2.3; and from 4.19.0.0 through 4.19.1.1.</div><div><br></div><div><span style="background-color: rgb(252, 252, 252);">Users are recommended to upgrade to Apache CloudStack 4.18.2.4 or 4.19.1.2, or later, which addresses this issue.</span></div>
+
+### References
+* https://cloudstack.apache.org/blog/security-release-advisory-4.18.2.4-4.19.1.2
+* https://lists.apache.org/thread/ktsfjcnj22x4kg49ctock3d9tq7jnvlo
+* https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-4-and-4-19-1-2/
+
+
+### Credits
+* Arthur Souza (reporter)
+* Felipe Olivaes (reporter)
+
+
+## Request origin validation bypass makes account takeover possible ## { #CVE-2024-45693 }
+
+CVE-2024-45693 [\[CVE json\]](./CVE-2024-45693.cve.json) [\[OSV json\]](./CVE-2024-45693.osv.json)
+
+
+
+_Last updated: 2024-10-16T10:39:13.974Z_
+
+### Affected
+
+* Apache CloudStack from 4.15.1.0 through 4.18.2.3
+* Apache CloudStack from 4.19.0.0 through 4.19.1.1
+
+
+### Description
+
+<p>Users logged into the Apache CloudStack's web interface can be tricked to submit malicious CSRF requests due to missing validation of the origin of the requests. This can allow an attacker to gain privileges and access to resources of the authenticated users and may lead<span style="background-color: rgb(255, 255, 255);">&nbsp;to account takeover,&nbsp;</span>disruption, exposure of sensitive data and compromise integrity of the resources owned by the user account that are managed by the platform.</p><p>This issue affects Apache CloudStack from 4.15.1.0 through 4.18.2.3 and 4.19.0.0 through 4.19.1.1</p><p></p><div><span style="background-color: rgb(252, 252, 252);">Users are recommended to upgrade to Apache CloudStack 4.18.2.4 or 4.19.1.2, or later, which addresses this issue.</span><br></div><div><div><div><div></div></div></div></div><div></div><p></p>
+
+### References
+* https://cloudstack.apache.org/blog/security-release-advisory-4.18.2.4-4.19.1.2
+* https://lists.apache.org/thread/ktsfjcnj22x4kg49ctock3d9tq7jnvlo
+* https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-4-and-4-19-1-2/
+
+
+### Credits
+* Arthur Souza (reporter)
+* Felipe Olivaes (reporter)

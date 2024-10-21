@@ -138,6 +138,31 @@ Improper Neutralization of Input During Web Page Generation ('Cross-site Scripti
 * Tsubasa Umeuchi (reporter)
 
 
+## Avatar URL leaked user email addresses ## { #CVE-2024-40761 }
+
+CVE-2024-40761 [\[CVE json\]](./CVE-2024-40761.cve.json) [\[OSV json\]](./CVE-2024-40761.osv.json)
+
+
+
+_Last updated: 2024-09-25T07:31:07.119Z_
+
+### Affected
+
+* Apache Answer through 1.3.5
+
+
+### Description
+
+<p>Inadequate Encryption Strength vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 1.3.5.</p>Using the MD5 value of a user's email to access Gravatar is insecure and can lead to the leakage of user email. The official recommendation is to use SHA256 instead.<br><p>Users are recommended to upgrade to version 1.4.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/mmrhsfy16qwrw0pkv0p9kj40vy3sg08x
+
+
+### Credits
+* 张岳熙 (reporter)
+
+
 ## The link for resetting user password is not Single-Use ## { #CVE-2024-41888 }
 
 CVE-2024-41888 [\[CVE json\]](./CVE-2024-41888.cve.json) [\[OSV json\]](./CVE-2024-41888.osv.json)

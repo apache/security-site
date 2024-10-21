@@ -111,3 +111,28 @@ It is possible to crash (panic) an application by providing a corrupted data to 
 
 ### Credits
 * This issue was reported to the Apache Avro team by Evan Richter at ForAllSecure and found with Mayhem.
+
+
+## Arbitrary Code Execution when reading Avro schema (Java SDK) ## { #CVE-2024-47561 }
+
+CVE-2024-47561 [\[CVE json\]](./CVE-2024-47561.cve.json) [\[OSV json\]](./CVE-2024-47561.osv.json)
+
+
+
+_Last updated: 2024-10-21T08:50:48.382Z_
+
+### Affected
+
+* Apache Avro Java SDK before 1.11.4
+
+
+### Description
+
+Schema parsing in the Java SDK of Apache Avro 1.11.3 and previous versions allows bad actors to execute arbitrary code.<br>Users are recommended to upgrade to version 1.11.4&nbsp; or 1.12.0, which fix this issue.
+
+### References
+* https://lists.apache.org/thread/c2v7mhqnmq0jmbwxqq3r5jbj1xg43h5x
+
+
+### Credits
+* Kostya Kortchinsky, from the Databricks Security Team (finder)

@@ -1185,7 +1185,7 @@ CVE-2023-45802 [\[CVE json\]](./CVE-2023-45802.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2023-10-23T06:50:19.803Z_
+_Last updated: 2024-10-14T09:01:43.211Z_
 
 ### Affected
 
@@ -1211,7 +1211,7 @@ CVE-2024-24795 [\[CVE json\]](./CVE-2024-24795.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-04-04T19:20:46.952Z_
+_Last updated: 2024-10-03T12:15:08.331Z_
 
 ### Affected
 

@@ -161,3 +161,55 @@ In Apache Druid 0.22.1 and earlier, the server did not set appropriate headers t
 
 ### References
 * https://lists.apache.org/thread/t3nsq4crdr8wqgmj721d2wg6pf26s5cw
+
+
+## Padding oracle in druid-pac4j extension that allows an attacker to manipulate a pac4j session cookie via Padding Oracle Attack ## { #CVE-2024-45384 }
+
+CVE-2024-45384 [\[CVE json\]](./CVE-2024-45384.cve.json) [\[OSV json\]](./CVE-2024-45384.osv.json)
+
+
+
+_Last updated: 2024-09-17T17:58:14.680Z_
+
+### Affected
+
+* Apache Druid from 0.18.0 through 30.0.0
+
+
+### Description
+
+<p>Padding Oracle vulnerability in Apache Druid extension, druid-pac4j.<br>This could allow an attacker to manipulate a pac4j session cookie.<br><br></p><p>This issue affects Apache Druid versions 0.18.0 through 30.0.0.<br>Since the druid-pac4j extension is optional and disabled by default, Druid installations not using the druid-pac4j extension are not affected by this vulnerability.<br></p><p></p><br>While we are not aware of a way to meaningfully exploit this flaw, we 
+nevertheless recommend upgrading to version 30.0.1 or higher which fixes the issue<br>and ensuring you have a strong 
+druid.auth.pac4j.cookiePassphrase as a precaution.<br><p></p>
+
+### References
+* https://lists.apache.org/thread/gr94fnp574plb50lsp8jw4smvgv1lbz1
+
+
+### Credits
+* mr-n30 (reporter)
+
+
+## Users can provide MySQL JDBC properties not on allow list ## { #CVE-2024-45537 }
+
+CVE-2024-45537 [\[CVE json\]](./CVE-2024-45537.cve.json) [\[OSV json\]](./CVE-2024-45537.osv.json)
+
+
+
+_Last updated: 2024-09-19T09:29:22.203Z_
+
+### Affected
+
+* Apache Druid through 30.0.0
+
+
+### Description
+
+<div>Apache Druid allows users with certain permissions to read data from other database systems using JDBC. This functionality allows trusted users to set up Druid lookups or run ingestion tasks. Druid also allows administrators to configure a list of allowed properties that users are able to provide for their JDBC connections. By default, this allowed properties list restricts users to TLS-related properties only. However, when configuration a MySQL JDBC connection, users can use a particularly-crafted JDBC connection string to provide properties that are not on this allow list.</div><div><br></div>Users without the permission to configure JDBC connections are not able to exploit this vulnerability.<br>CVE-2021-26919 describes a similar vulnerability which was partially addressed in Apache Druid 0.20.2.<br><div><br></div><div><br></div><div>This issue is fixed in Apache Druid 30.0.1.</div><br>
+
+### References
+* https://lists.apache.org/thread/2ovx1t77y6tlkhk5b42clp4vwo4c8cjv
+
+
+### Credits
+* L0ne1y (finder)

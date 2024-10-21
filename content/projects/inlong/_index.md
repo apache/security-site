@@ -555,7 +555,7 @@ CVE-2023-43667 [\[CVE json\]](./CVE-2023-43667.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2023-10-16T01:55:19.314Z_
+_Last updated: 2024-09-27T11:45:32.709Z_
 
 ### Affected
 

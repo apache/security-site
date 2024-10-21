@@ -119,7 +119,7 @@ CVE-2023-50378 [\[CVE json\]](./CVE-2023-50378.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-03-01T14:38:24.618Z_
+_Last updated: 2024-10-03T12:23:04.013Z_
 
 ### Affected
 

@@ -183,3 +183,34 @@ _Last updated: 2024-05-07T00:58:06.325Z_
 * Esa Hiltunen (finder)
 * Mikko Kortelainen (finder)
 * The Teragrep Project (sponsor)
+
+
+## Temporary File Local Information Disclosure ## { #CVE-2024-23454 }
+
+CVE-2024-23454 [\[CVE json\]](./CVE-2024-23454.cve.json) [\[OSV json\]](./CVE-2024-23454.osv.json)
+
+
+
+_Last updated: 2024-09-25T07:45:41.584Z_
+
+### Affected
+
+* Apache Hadoop before 3.4.0
+
+
+### Description
+
+<span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">Apache Hadoop’s RunJar.run()&nbsp;<span style="background-color: rgb(255, 255, 255);">does not set permissions for temporary directory&nbsp;by default. I</span></span>f sensitive data will be present in this file, all the other local users may be able to view the content.
+This is because, on unix-like systems, the system temporary directory is
+shared between all local users. As such, files written in this directory,
+without setting the correct posix permissions explicitly, may be viewable
+by all other local users.
+</span><br><br>
+
+### References
+* https://issues.apache.org/jira/browse/HADOOP-19031
+* https://lists.apache.org/thread/xlo7q8kn4tsjvx059r789oz19hzgfkfs
+
+
+### Credits
+* Andrea Cosentino (finder)

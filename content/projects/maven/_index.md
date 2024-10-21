@@ -60,3 +60,34 @@ In Apache Maven maven-shared-utils prior to version 3.3.3, the Commandline class
 ### References
 * https://issues.apache.org/jira/browse/MSHARED-297
 * https://github.com/apache/maven-shared-utils/pull/40
+
+
+## Maven Archetype integration-test may package local settings into the published artifact, possibly containing credentials ## { #CVE-2024-47197 }
+
+CVE-2024-47197 [\[CVE json\]](./CVE-2024-47197.cve.json) [\[OSV json\]](./CVE-2024-47197.osv.json)
+
+
+
+_Last updated: 2024-09-26T08:01:19.076Z_
+
+### Affected
+
+* Maven Archetype Plugin from 3.2.1 before 3.3.0
+
+
+### Description
+
+<p>Exposure of Sensitive Information to an Unauthorized Actor, Insecure Storage of Sensitive Information vulnerability in Maven Archetype Plugin.</p><p>This issue affects Maven Archetype Plugin: from 3.2.1 before 3.3.0.</p><p>Users are recommended to upgrade to version 3.3.0, which fixes the issue.</p><span style="background-color: rgb(255, 255, 255);">Archetype integration testing creates a file
+called ./target/classes/archetype-it/archetype-settings.xml
+This file contains all the content from the users ~/.m2/settings.xml file,
+which often contains information they do not want to publish. We expect that on many developer machines, this also contains
+credentials.<br><br><span style="background-color: rgb(255, 255, 255);">When the user runs </span></span><tt><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">mvn verify</span></span></tt><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);"> again (without a </span></span><tt><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">mvn clean</span></span></tt><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">), this file becomes part of
+the final artifact.<br><br><span style="background-color: rgb(255, 255, 255);">If a developer were to publish this into Maven Central or any other remote repository (whether as a release
+or a snapshot) their credentials would be published without them knowing.</span></span></span><br>
+
+### References
+* https://lists.apache.org/thread/ftg81np183wnyk0kg4ks95dvgxdrof96
+
+
+### Credits
+* Niels Basjes (reporter)
