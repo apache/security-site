@@ -102,10 +102,27 @@
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache Lucene? You can read more about the projects&rsquo; security policy on their <a href="None">security page</a>, and email your report to the  <a href="mailto:security@lucene.apache.org">Apache Lucene Security Team</a>.</p>
+<p>Do you want disclose a potential security issue for Apache Lucene? Send your report to the <a href="mailto:security@lucene.apache.org">Apache Lucene Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
-<p>This page is experimental: it provides consistent access to the advisories for Apache Lucene since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the <a href="None">project security page</a>.</p>
-<p>If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2024-45772">Security Vulnerability in Lucene Replicator - Deserialization Issue</h2>
+<p>CVE-2024-45772 <a href="./CVE-2024-45772.cve.json">[CVE json]</a> <a href="./CVE-2024-45772.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-09-30T08:51:28.580Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Lucene Replicator from 4.4.0 before 9.12.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Deserialization of Untrusted Data vulnerability in Apache Lucene Replicator.</p><p>This issue affects Apache Lucene's replicator module: from 4.4.0 before 9.12.0.<br>The deprecated org.apache.lucene.replicator.http package is affected.<br>The org.apache.lucene.replicator.nrt package is not affected.</p><p><span style="background-color: var(--wht);">Users are recommended to upgrade to version 9.12.0, which fixes the issue.</span></p><p><span style="background-color: var(--wht);">Java serialization filters (such as&nbsp;<span style="background-color: rgb(255, 255, 255);">-Djdk.serialFilter='!*' on the commandline) can mitigate the issue on vulnerable versions without impacting functionality.</span></span></p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/3f3oph7bqnqspb9q5p0gm5mgc1b6thjo">https://lists.apache.org/thread/3f3oph7bqnqspb9q5p0gm5mgc1b6thjo</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Summ3r from Vidar-Team (finder)</li>
+<li>Paul Irwin from Apache Lucene.NET (coordinator)</li>
+</ul>
 
   
 </div>

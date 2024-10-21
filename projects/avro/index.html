@@ -173,6 +173,23 @@
 <ul>
 <li>This issue was reported to the Apache Avro team by Evan Richter at ForAllSecure and found with Mayhem.</li>
 </ul>
+<h2 id="CVE-2024-47561">Arbitrary Code Execution when reading Avro schema (Java SDK)</h2>
+<p>CVE-2024-47561 <a href="./CVE-2024-47561.cve.json">[CVE json]</a> <a href="./CVE-2024-47561.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-10-21T08:50:48.382Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Avro Java SDK before 1.11.4</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Schema parsing in the Java SDK of Apache Avro 1.11.3 and previous versions allows bad actors to execute arbitrary code.<br>Users are recommended to upgrade to version 1.11.4  or 1.12.0, which fix this issue.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/c2v7mhqnmq0jmbwxqq3r5jbj1xg43h5x">https://lists.apache.org/thread/c2v7mhqnmq0jmbwxqq3r5jbj1xg43h5x</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Kostya Kortchinsky, from the Databricks Security Team (finder)</li>
+</ul>
 
   
 </div>

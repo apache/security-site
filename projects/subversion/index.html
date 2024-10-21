@@ -159,6 +159,24 @@
 <ul>
 <li>Apache Subversion would like to thank Thomas Weißschuh, cis-solutions.eu.</li>
 </ul>
+<h2 id="CVE-2024-45720">Command line argument injection on Windows platforms</h2>
+<p>CVE-2024-45720 <a href="./CVE-2024-45720.cve.json">[CVE json]</a> <a href="./CVE-2024-45720.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-10-09T12:38:27.375Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Subversion from 1.0.0 through 1.14.3</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>On Windows platforms, a &ldquo;best fit&rdquo; character encoding conversion of command line arguments to Subversion&rsquo;s executables (e.g., svn.exe, etc.) may lead to unexpected command line argument interpretation, including argument injection and execution of other programs, if a specially crafted command line argument string is processed.<br><br>All versions of Subversion up to and including Subversion 1.14.3 are affected on Windows platforms only. Users are recommended to upgrade to version Subversion 1.14.4, which fixes this issue.<br><br><div>Subversion is not affected on UNIX-like platforms.</div><br></p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://subversion.apache.org/security/CVE-2024-45720-advisory.txt">https://subversion.apache.org/security/CVE-2024-45720-advisory.txt</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Orange Tsai (@orange_8361) from DEVCORE Research Team (finder)</li>
+<li>splitline (@<em>splitline</em>) from DEVCORE Research Team (finder)</li>
+</ul>
 
   
 </div>

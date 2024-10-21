@@ -282,6 +282,42 @@ Additionally, with any ZkACLProvider, if the security.json is already present, S
 <ul>
 <li>Flip Hess (finder)</li>
 </ul>
+<h2 id="CVE-2024-45216">Authentication bypass possible using a fake URL Path ending</h2>
+<p>CVE-2024-45216 <a href="./CVE-2024-45216.cve.json">[CVE json]</a> <a href="./CVE-2024-45216.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-10-16T07:50:24.165Z</em></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache Solr from 5.3.0 before 8.11.4</li>
+<li>Apache Solr from 9.0.0 before 9.7.0</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<p>Improper Authentication vulnerability in Apache Solr.</p>Solr instances using the PKIAuthenticationPlugin, which is enabled by default when Solr Authentication is used, are vulnerable to Authentication bypass.<br>A fake ending at the end of any Solr API URL path, will allow requests to skip Authentication while maintaining the API contract with the original URL Path.<br>This fake ending looks like an unprotected API path, however it is stripped off internally after authentication but before API routing.<br><p></p><p>This issue affects Apache Solr: from 5.3.0 before 8.11.4, from 9.0.0 before 9.7.0.</p><p>Users are recommended to upgrade to version 9.7.0, or 8.11.4, which fix the issue.</p>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://solr.apache.org/security.html#cve-2024-45216-apache-solr-authentication-bypass-possible-using-a-fake-url-path-ending">https://solr.apache.org/security.html#cve-2024-45216-apache-solr-authentication-bypass-possible-using-a-fake-url-path-ending</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>Liu Huajin (reporter)</li>
+</ul>
+<h2 id="CVE-2024-45217">ConfigSets created during a backup restore command are trusted implicitly</h2>
+<p>CVE-2024-45217 <a href="./CVE-2024-45217.cve.json">[CVE json]</a> <a href="./CVE-2024-45217.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-10-16T07:51:15.128Z</em></p>
+<h3 id="affected-11">Affected</h3>
+<ul>
+<li>Apache Solr from 6.6.0 before 8.11.4</li>
+<li>Apache Solr from 9.0.0 before 9.7.0</li>
+</ul>
+<h3 id="description-11">Description</h3>
+<p>Insecure Default Initialization of Resource vulnerability in Apache Solr.</p><p><span style="background-color: rgb(255, 255, 255);">New ConfigSets that are created via a Restore command, which copy a configSet from the backup and give it a new name, are created without setting the "trusted" metadata.<br>ConfigSets that do not contain the flag are trusted implicitly if the metadata is missing, therefore this leads to "trusted" ConfigSets that may not have been created with an Authenticated request.</span><br><span style="background-color: rgb(255, 255, 255);">"trusted" ConfigSets are able to load custom code into classloaders, therefore the flag is supposed to only be set when the request that uploads the ConfigSet is Authenticated &amp; Authorized.</span></p><p>This issue affects Apache Solr: from 6.6.0 before 8.11.4, from 9.0.0 before 9.7.0. This issue does not affect Solr instances that are secured via Authentication/Authorization.</p><p>Users are primarily recommended to use Authentication and Authorization when running Solr. However, upgrading to version 9.7.0, or 8.11.4 will mitigate this issue otherwise.</p><p></p>
+<h3 id="references-11">References</h3>
+<ul>
+<li><a href="https://solr.apache.org/security.html#cve-2024-45217-apache-solr-configsets-created-during-a-backup-restore-command-are-trusted-implicitly">https://solr.apache.org/security.html#cve-2024-45217-apache-solr-configsets-created-during-a-backup-restore-command-are-trusted-implicitly</a></li>
+</ul>
+<h3 id="credits-10">Credits</h3>
+<ul>
+<li>Liu Huajin (reporter)</li>
+</ul>
 
   
 </div>

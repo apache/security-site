@@ -648,6 +648,19 @@ smuggling when behind a reverse proxy.<br></p><p><span style="background-color: 
 <ul>
 <li>devme4f from VNPT-VCI (finder)</li>
 </ul>
+<h2 id="CVE-2024-46544">mod_jk: local users can view and modify configuration</h2>
+<p>CVE-2024-46544 <a href="./CVE-2024-46544.cve.json">[CVE json]</a> <a href="./CVE-2024-46544.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-09-23T10:51:17.287Z</em></p>
+<h3 id="affected-29">Affected</h3>
+<ul>
+<li>Apache Tomcat Connectors from 1.2.9-beta through 1.2.49</li>
+</ul>
+<h3 id="description-29">Description</h3>
+<p>Incorrect Default Permissions vulnerability in Apache Tomcat Connectors allows local users to view and modify shared memory containing mod_jk configuration which may lead to information disclosure and/or denial of service.</p><p>This issue affects Apache Tomcat Connectors: from 1.2.9-beta through 1.2.49. Only mod_jk on Unix like systems is affected. Neither the ISAPI redirector nor mod_jk on Windows is affected.<br></p><p>Users are recommended to upgrade to version 1.2.50, which fixes the issue.</p>
+<h3 id="references-29">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/q1gp7cc38hs1r8gj8gfnopwznd5fpr4d">https://lists.apache.org/thread/q1gp7cc38hs1r8gj8gfnopwznd5fpr4d</a></li>
+</ul>
 
   
 </div>
