@@ -39,7 +39,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache CXF |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache DB |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Directory |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache DolphinScheduler |  [Apache DolphinScheduler Security Team](mailto:security@dolphinscheduler.apache.org) | |
+| [Apache DolphinScheduler](https://github.com/apache/dolphinscheduler/blob/dev/docs/docs/en/contribute/join/security.md) |  [Apache DolphinScheduler Security Team](mailto:security@dolphinscheduler.apache.org) | |
 | Apache Doris |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Drill |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Druid](https://druid.apache.org/docs/latest/operations/security-overview.html) |  [Apache Security Team](mailto:security@apache.org) | |
