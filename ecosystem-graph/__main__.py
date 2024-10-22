@@ -11,12 +11,22 @@ import networkx as nx
 def list_sboms():
     sboms = []
     for pmc in os.scandir("sboms"):
-        for project in filter(os.path.isdir, os.scandir(f"sboms/{pmc.name}")):
-            # TODO assuming Maven and depth 1 here for now...
-            purl = f"pkg:maven/org.apache.{pmc.name}/{project.name}"
-            for (root, _, files) in os.walk(f"sboms/{pmc.name}/{project.name}"):
-                for file in files:
-                    sboms.append((purl, os.path.join(root, file)))
+        for tpe in filter(os.path.isdir, os.scandir(f"sboms/{pmc.name}")):
+            if tpe.name == 'maven':
+                for (root, _, files) in os.walk(f"sboms/{pmc.name}/maven"):
+                    for file in files:
+                        group_id = root.split('/')[3]
+                        artifact_id = root.split('/')[4]
+                        purl = f"pkg:maven/{group_id}/{artifact_id}"
+                        sboms.append((purl, os.path.join(root, file)))
+            elif tpe.name == 'pypi':
+                for (root, _, files) in os.walk(f"sboms/{pmc.name}/pypi"):
+                    for file in files:
+                        package_name = root.split('/')[3]
+                        purl = f"pkg:pypi/{package_name}"
+                        sboms.append((purl, os.path.join(root, file)))
+            else:
+                print(f"Unexpected type: {tpe}")
     return sboms
 
 def simplify_purl(purl):

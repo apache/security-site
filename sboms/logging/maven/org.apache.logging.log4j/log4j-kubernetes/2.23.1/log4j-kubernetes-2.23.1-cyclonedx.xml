@@ -1,0 +1,1859 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bom xmlns="http://cyclonedx.org/schema/bom/1.5" version="1" serialNumber="urn:uuid:1c1af6c2-2f68-3635-9088-b2c5b75fab20">
+  <metadata>
+    <tools>
+      <tool>
+        <vendor>OWASP Foundation</vendor>
+        <name>CycloneDX Maven plugin</name>
+        <version>2.7.10</version>
+        <hashes>
+          <hash alg="MD5">1cc7f6a0382f8bb2f758d6a6ea401d1b</hash>
+          <hash alg="SHA-1">a4297947a1f2d7d453105db542651614bbd37f38</hash>
+          <hash alg="SHA-256">bd0fdd8f2f2116eee5e715aeac1580f19eb7a10ec2b6f805b53567067658e872</hash>
+          <hash alg="SHA-512">9cde8352a427e10b96cae01348fc7cfe5d4aa9cd0a5e5dd93b414ce3bb7d112993c3b3004e53af52567fbfa16de0704ec59a5556a635ad70571fd124ae389f39</hash>
+          <hash alg="SHA-384">93d7bf5b5c735347edfbfbd66810273ca840f9a322b816d22d44c3d8e8255c09e86570bb23712aeb0cade0f478be5aeb</hash>
+          <hash alg="SHA3-384">4467f16e9ca32190a6e49c65339eb28ee5e8c78f4e918fcf95128a4b7648898de56ccb43eacfad0c9391ef8cdb7d629a</hash>
+          <hash alg="SHA3-256">ed2996c99b483e969221d5e9a40f562ea2ab85442d361d72a90e85266a3ed781</hash>
+          <hash alg="SHA3-512">c8e6ea9ddc38edc77e284b3bf541663e84752bdc59ed1935799847a48a14ea2fa531b61008fefcba37d732a56702a11ac112437b9b80d18f4ecc8ef0ecfb32cf</hash>
+        </hashes>
+      </tool>
+    </tools>
+    <component type="library" bom-ref="pkg:maven/org.apache.logging.log4j/log4j-kubernetes@2.23.1?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.logging.log4j</group>
+      <name>log4j-kubernetes</name>
+      <version>2.23.1</version>
+      <description>Apache Log4j Kubernetes Support</description>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.logging.log4j/log4j-kubernetes@2.23.1?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://logging.apache.org/log4j/2.x/</url>
+        </reference>
+        <reference type="build-system">
+          <url>https://github.com/apache/logging-log4j2/actions</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://logging.apache.org/log4j/2.x/download.html</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/apache/logging-log4j2/issues</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>https://lists.apache.org/list.html?log4j-user@logging.apache.org</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/apache/logging-log4j2</url>
+        </reference>
+        <reference type="vulnerability-assertion">
+          <url>https://logging.apache.org/cyclonedx/vdr.xml</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <properties>
+      <property name="maven.goal">makeBom</property>
+      <property name="maven.scopes">compile,provided,runtime,system</property>
+      <property name="cdx:reproducible">enabled</property>
+    </properties>
+  </metadata>
+  <components>
+    <component type="library" bom-ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.23.1?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.logging.log4j</group>
+      <name>log4j-api</name>
+      <version>2.23.1</version>
+      <description>The Apache Log4j API</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">bee2e2dcbeeb983bdb6b71c9c3476b6a</hash>
+        <hash alg="SHA-1">9c15c29c526d9c6783049c0a77722693c66706e1</hash>
+        <hash alg="SHA-256">92ec1fd36ab3bc09de6198d2d7c0914685c0f7127ea931acc32fd2ecdd82ea89</hash>
+        <hash alg="SHA-512">2a296246b0059ff5fe5c26e2ba3f48aa99e38d7658d613fbd02f32c6d4262f93a67525e6cc4d767fa5c2ab0e39e70bb3c0d3966d38ea4f01608588c084af3162</hash>
+        <hash alg="SHA-384">3937cb646009763a94b199a0d6c0065441b9914e2b25e3d58db523874ea760276b445ff300015948d3a813217e0ee404</hash>
+        <hash alg="SHA3-384">16ea3301ca37fbede2927399209b403066621789c4f1bee531b5153f27b652458900697fb828170d541a5f3b82e77fb7</hash>
+        <hash alg="SHA3-256">0a3dfffc0f362b0a86ad0cd8b36da313c7500a8bdecb0ad7e628c2637d933548</hash>
+        <hash alg="SHA3-512">2e230994b8cb7442a2073d60f89c27703ffc78b613dec7891bbfa42e91c95ed684b387ed65df3ee48559ccc06e6877462748f7e2ef985082c8db0741feb576a8</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.logging.log4j/log4j-api@2.23.1?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://logging.apache.org/log4j/2.x/log4j/log4j-api/</url>
+        </reference>
+        <reference type="build-system">
+          <url>https://github.com/apache/logging-log4j2/actions</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://logging.apache.org/logging-parent/latest/#distribution</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/apache/logging-log4j2/issues</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>https://lists.apache.org/list.html?log4j-user@logging.apache.org</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/apache/logging-log4j2</url>
+        </reference>
+        <reference type="vulnerability-assertion">
+          <url>https://logging.apache.org/cyclonedx/vdr.xml</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.logging.log4j/log4j-core@2.23.1?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.logging.log4j</group>
+      <name>log4j-core</name>
+      <version>2.23.1</version>
+      <description>The Apache Log4j Implementation</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">34fad2df975cf874a2fdf4b797122f16</hash>
+        <hash alg="SHA-1">905802940e2c78042d75b837c136ac477d2b4e4d</hash>
+        <hash alg="SHA-256">7079368005fc34f56248f57f8a8a53361c3a53e9007d556dbc66fc669df081b5</hash>
+        <hash alg="SHA-512">0862144475f4a5ed67c8ab4bf163e02a89c1cdde18cd3dd3811075bd7a4cd33bab5cb824c3dac8d16afa74e9e267a1120b6c18bbf3d586f37d740e06a1af1b15</hash>
+        <hash alg="SHA-384">d2608dd33e2dd3e50a663d942660db80bb62c39afa3fe4155de6bad235b4ee637f97488cb21e9d22750bdd279a44634a</hash>
+        <hash alg="SHA3-384">a4d3ebc98bba16601879fe05ca40c4ca442e8d8177795d286c19ac14040b750f1a9adbffbea982e4636bdd8798918883</hash>
+        <hash alg="SHA3-256">80fc801f0be9b360024407409c8eae4d5fdfbfb520ec968500a9196446d77817</hash>
+        <hash alg="SHA3-512">1d7923e1bf2bf28f9e5f0990b36cff5c5e8b3409ae848ee903c970a0af22da3d4ae81dfb335d2ecfb3cdf3f09dec08bf2d2f1f8dd2702c766fa373975f551205</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.logging.log4j/log4j-core@2.23.1?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://logging.apache.org/log4j/2.x/log4j/log4j-core/</url>
+        </reference>
+        <reference type="build-system">
+          <url>https://github.com/apache/logging-log4j2/actions</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://logging.apache.org/logging-parent/latest/#distribution</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/apache/logging-log4j2/issues</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>https://lists.apache.org/list.html?log4j-user@logging.apache.org</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/apache/logging-log4j2</url>
+        </reference>
+        <reference type="vulnerability-assertion">
+          <url>https://logging.apache.org/cyclonedx/vdr.xml</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-client@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-client</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">f2bb9f586a984c18bf58008eba57f515</hash>
+        <hash alg="SHA-1">4bd58dfa0aafd8b83d724e15f63455be18e2f57b</hash>
+        <hash alg="SHA-256">65273c12319afe50a2b4c4ca5f4c3fe9b4fb2820f78722d3fe9d51dcc3168e08</hash>
+        <hash alg="SHA-512">86055e8ec382b6f89852bc4a9e58e4553ecb55c930fe9ae7ddd3c9b88288530ecf1552d832140c51d7299d2f704f0e9c63b8b75df637809edf84a1d221f7e6d5</hash>
+        <hash alg="SHA-384">5b241023d025a85bb0875aa4288dc738e8fbaa79322d36c8a1fab2bfc13a7faff1751c550ce667bc0e6ce1546f9c7c76</hash>
+        <hash alg="SHA3-384">bf97dd1c7ec347f716a2dbccc6673b71c5f677c010ce31e15a91ac5dfa6fb72643c9add0bac8e53396550cb6c60aaa18</hash>
+        <hash alg="SHA3-256">9e139a1e1270b6ac50dfdd0b44dc33de7c081d36631c2169c9b16ae2158be1b4</hash>
+        <hash alg="SHA3-512">114f421c7188b3477b70a90fa079265e7b5fe6b1cbc5c14cb0c444d9a9eeae56e043d6682903432bc5b6bd4dc438afbb9a570d1fa736e37a6d6d3f30d7020c13</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-client@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-client/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-client/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-core</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">5a023ecee673bce7ffe87311704b7e7a</hash>
+        <hash alg="SHA-1">db0ddae51aba333fc5a8bce55d1ceabe58a9e28e</hash>
+        <hash alg="SHA-256">b03f988932d076a6f3904f2493755ceffe0127f868bcdda9acaa00f4630c97d2</hash>
+        <hash alg="SHA-512">dec7cc1a9a84081a819f0f82db748736a0f39fcb2167a34a9cbbe28e6fb9d185f7cc4f52f37af9c8259b747c55175e92f24d3e40eb22d2b7f00e11ad3d75421f</hash>
+        <hash alg="SHA-384">d6ee100422fa252dd7c494111f249f018fad248f3f5ec6c60f55a6db8f6ba021682fd78ba78c95406f3152f64a89fce8</hash>
+        <hash alg="SHA3-384">67747d08f62a8d8f7634227f29ecc03d8a703dd415aafba38d417a6a0b2f8ea6c2f53f21abc31208f4e6be4f1921e297</hash>
+        <hash alg="SHA3-256">7b7466d618563ee29665d5dd8193cc6fac98091e8f51073c861a1ef9bfe0e27e</hash>
+        <hash alg="SHA3-512">047b487dd259b81eceda26941ad4e7951d78baf4f07cbd75cda7af80729f0e41f9565f9f78b5a6b1e30dc8287d6262c434393275e23130e76333d35773fc6ace</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-core/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-core/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-common</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">f95b8b4450fa1b20da3fb0b0f35dbe1d</hash>
+        <hash alg="SHA-1">4951c32dc36315ce8ce4be8ce7dfc022d2e67939</hash>
+        <hash alg="SHA-256">0ccf846896847c79a86477b2a8c20f85d2e3b89e5bede8f2093736df3205d02d</hash>
+        <hash alg="SHA-512">2672379f929f58050137b294403d000404f0f01b42f804c66f52d970440849fe559000b5b8c812200d612f8132ae42be853fa2ddbe218bd403a243a90cf00fe0</hash>
+        <hash alg="SHA-384">8ae770784d32d4b67d419246af6f09780fb0a6366a517855fed61ca850581aa35b11dd32de8865d4546fcd1c3a206815</hash>
+        <hash alg="SHA3-384">5ab39be3737ebccf07ef2a9b02b91fe280942718de4e7ea171865131e0a3482d4447faf5face86edaea91819b2a1cdb4</hash>
+        <hash alg="SHA3-256">111005af7f7a73e9fa1207a6605f60133abbb5c72065e5649b038086179a948f</hash>
+        <hash alg="SHA3-512">b3100cfae99704ebc9b7ca4b93021750348436afbe59e4afd9eb0f48d7647ee3d7fd4118661a3f200005d7f39a9abe741b0ebbffddf14d1e09dc241ccb2d3284</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-common/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-common/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar">
+      <publisher>FasterXML</publisher>
+      <group>com.fasterxml.jackson.core</group>
+      <name>jackson-annotations</name>
+      <version>2.16.1</version>
+      <description>Core annotations used for value types, used by Jackson data binding package.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">1c1e081b6b61ee1f1cb0ef52eef45d61</hash>
+        <hash alg="SHA-1">fd441d574a71e7d10a4f73de6609f881d8cdfeec</hash>
+        <hash alg="SHA-256">a4730771e6a495dd3793a42cdb8ce6bddb96c77e15f40c98fd8d9a7ae09e7286</hash>
+        <hash alg="SHA-512">2e268340c11ff606df14cc963e5a4c97b22c69dbe09b9ee96873b6553aa97ba703f94dd85cc05704a35c4ae1651fc37d23d87e94bbad39f2a3a63fc2b3f754b1</hash>
+        <hash alg="SHA-384">27d294ee2a7519f851bd9da37eefd432b13e2ba2ee94e5bcc8587d8d251c8d00537fe583912681f5d43fc92f29dc23ac</hash>
+        <hash alg="SHA3-384">f80ca2f1d7b49ca06c999f287249874979295312ad61fae7dba101a084825c2f7200b0a252c67e36b8f185cb5b70b490</hash>
+        <hash alg="SHA3-256">28db760c602a501079b88e94eb4cea2e59895a688e6ea66e447b51adac113e0a</hash>
+        <hash alg="SHA3-512">acc6d03c8674438bac5e2b09e1615b11d202c12aa720e9205d820543cc2762f9a3497bf9de9f8239844db23ccf0b52cbd3255aff422c03de490c60ce2c4787ee</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://github.com/FasterXML/jackson</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/FasterXML/jackson-annotations/issues</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/FasterXML/jackson-annotations</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-rbac@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-rbac</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">39b5725e96bdc3a47d858f99d53b3b9d</hash>
+        <hash alg="SHA-1">4c2ac17285bbfe3ac2f68a5a6c304a0d080c26d9</hash>
+        <hash alg="SHA-256">64d6d62077596de7b68780e94088dd21bb167b9bab23ce9964f478a0f464af21</hash>
+        <hash alg="SHA-512">2ebb925a6b9d80ee3db6f01f470bbba230d65ec41ca6b25f2e5e5f4c8b5645dc66366e5555edc308bbb6f02954798168b04901c7f408fbb4ec6b68383a92d218</hash>
+        <hash alg="SHA-384">9fe48dff081be11c913fa3ef56e8fd57baeb88450ec312122e10cdeef34e0c2284db5ca8fceae4bb9e36fb7557535658</hash>
+        <hash alg="SHA3-384">b6ab5c9f1f1c2d55e9cc6f66fe3779f68ea97f86529a9bdd1f4b203853ac347b4c8d4d6d390e6a9f68a020ba62db47ec</hash>
+        <hash alg="SHA3-256">68d1f1727de9985c898f8cae17860eb11560c525703a9151c08a59317b90609a</hash>
+        <hash alg="SHA3-512">1164d138a18e182be34c5dd50678b97501fd12a2b0ee095f682f333258f43f622965ff97f552845ca8979c3f571150fd37deefa0724a3f6778cab4b69e2b0883</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-rbac@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-rbac/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-rbac/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-admissionregistration@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-admissionregistration</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">5e2a360eb19091502719d7ff5404c502</hash>
+        <hash alg="SHA-1">a65c0c9a9276f37866ae38bbbc63150e486e981a</hash>
+        <hash alg="SHA-256">997e8c2cbea4fdbf14c2e1577da1fec1f3cb33c6e43c52abd00b452169b3acb0</hash>
+        <hash alg="SHA-512">d08684e5bfe7f2cf03223ac9243669ace4f11a71d2c82c4d54d3d1ba4ab2084d82432c0964128a633ffe4cee89d00ea3098811465e16ba96d5077c16b91b29af</hash>
+        <hash alg="SHA-384">32e7d4900553d856414675454d1a1f15663da97243ed8ade73bff98c4368ea4902b39898bbebfe528ec8506f85512c53</hash>
+        <hash alg="SHA3-384">fe8b85175f3817f860a652c8ece21c94d465090d566af222e8ba8d8f9a062d5a3f1c6b26f96078d36a56b65aabadaa91</hash>
+        <hash alg="SHA3-256">6bc276fa7162b6187a523bb5c975d8e1f6857ee17c09d1cb530fc1d4b5b526c6</hash>
+        <hash alg="SHA3-512">31b95e2e43f7ca425e5d91374b77f7547480b748383a8168d1ee7c1082d683b5b1feda188e19b3b762e1a4ea8d706228a93575a389c64c5657d5d8cbd6ff2772</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-admissionregistration@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-admissionregistration/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-admissionregistration/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-apps@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-apps</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">f5d3d61d6077dc73a578f7cd62809852</hash>
+        <hash alg="SHA-1">062677ef958b58f52eba5d5c302078585088c577</hash>
+        <hash alg="SHA-256">25e6c349fcff6e56352360de95595c28d9e0617f97ddbfa4e9390c778b8828c1</hash>
+        <hash alg="SHA-512">4658b030ec21898f9a8254a81fa59e47a766fd74ea070bb5034ca11670b8841868d840590881f918b7731ef5ad34a2c5a90656bf01dbbb6b183f57767e335797</hash>
+        <hash alg="SHA-384">b46ef6a9b312909ce69746c38db93cd46203ade5d34fca1f0681c956745842c1e47897b75e1c41ac3ec2c6c35e253603</hash>
+        <hash alg="SHA3-384">e95c90ea53367a611af85b1b9a8342f7f660840c25797f1eda71c9afd7701f74ca112d2a391a02d846b3a6a2ce82effa</hash>
+        <hash alg="SHA3-256">71fda168c9ef1ca61126378f0d6d05fde8c4882738a60004a4fdf5dc71b73522</hash>
+        <hash alg="SHA3-512">1781113c01b55831f6439e94ca0700b96f581aec87a1a41a535e809203380b2d0f14353e758a826f8efb936376b605c1c1e1ec0e3b3b1717ab14e6663b5c970c</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-apps@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-apps/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-apps/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-autoscaling@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-autoscaling</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">d6fa5aaf6e2e701b6f57788b1a9c1ce3</hash>
+        <hash alg="SHA-1">9db3e0a12d0b627f7efa061cc4d9b45e8f3e6185</hash>
+        <hash alg="SHA-256">b63439cf5cfcc94cd63efb64e2fd3507cf1ed1b275fc5632b672838b603dcda0</hash>
+        <hash alg="SHA-512">6ca4e5b560409b5c5de27d0335bda345b5c8b03aae9e3784e458d069d9ba226ebc201f77c8b5c34278dd2f4fdc5b1451585d527cb9e8854a1e11840d1b1a7199</hash>
+        <hash alg="SHA-384">16966817840f5453b4e60107b6dcfc381bd964d92ad1be40a7c5d407f66fce6c759c154eb2038c98ff3ae83a3df72177</hash>
+        <hash alg="SHA3-384">9805f8eb138211231908f4a10d68263dede28d9259cb4d2fcbc6db381aafcbd926f3b7817638db5238e4a464e44f58f8</hash>
+        <hash alg="SHA3-256">20ca848553341a8fa268d492a4da4eba942197d6f268e8e92eb89d2f0c00f67e</hash>
+        <hash alg="SHA3-512">1d36c6d5c0380c6580021ada7a8e4791915df05547ff43304bd9122a06b6286f068a2c4537376cc15ea7493aa566106f1d3fc1d2f64f8635950345908ad14235</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-autoscaling@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-autoscaling/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-autoscaling/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-apiextensions@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-apiextensions</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">d945fb29944c12828c99e67191b9a401</hash>
+        <hash alg="SHA-1">e389a800dbe70fc0aa43bcc79160890d2da1bd8b</hash>
+        <hash alg="SHA-256">b0ba570d92f9e9d5cb7fda4a999322b8005db7853fb494e0012c75b845b9efee</hash>
+        <hash alg="SHA-512">18f8cdc386f1ea84b93d9b24e20c0891a56619d73d060fba1c93f3f8c345e5ee0b597782b184299578587a6dbd9796527bc74c0c2498c2a62532d6282418d32a</hash>
+        <hash alg="SHA-384">37dad53e6bf36b263d2995f5037b5eef847124b12dc0c3e8769feab51030a4c7f2cb98c4dabedb1ea89e2987b0d49c51</hash>
+        <hash alg="SHA3-384">5e4aa9e744f7feaabed50b515be2cd53c20328b1cee3b79a7905483ec5b7617e24501d82b8ed73302738ce007af291b2</hash>
+        <hash alg="SHA3-256">ac320d7ba23bc3f8a3f5c6b3397eafc603858b7d467945044b12b4ee58bd32de</hash>
+        <hash alg="SHA3-512">16168cc3c0620921e74b85004dc6bfc6f5c251de59d003b5e1524550949caa52961f80367211a578a35bfb46cac673871e476f69c93d7e55bb269a1815af3f9d</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-apiextensions@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-apiextensions/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-apiextensions/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-batch@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-batch</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">a66dc17003ec64b0a38caa3cef6792e9</hash>
+        <hash alg="SHA-1">409628da66f3913dcb73f83c961e0ab6f316d30a</hash>
+        <hash alg="SHA-256">25e09894b63e042fd165010e6d8590b069025ae907576298f25d40a57050e001</hash>
+        <hash alg="SHA-512">87199d12c443c45ed2a98b9ff6846e8e2f60b2b4ea30b6079ec3451ee4f64c6ee5fac9aa9bc3ee7e323bee0ff7619f0de77003c1358790e1f70c3acfe7cbc526</hash>
+        <hash alg="SHA-384">1aa11f176a1a5f4e3a1bd6462dc50da1bb0a762de5f05590e991c7f6aee8c92b483f7ad9ef34cc198dfcfef9410e7c28</hash>
+        <hash alg="SHA3-384">2165f0a23f037dd171779ef4ec836fee88e6f5b8192f044d17680dcbee3654a57f5244624f88dbbcd01560dcac4a54b5</hash>
+        <hash alg="SHA3-256">014b2b84ac4bf16e454c790bc6575c5e7e2ae16b186028b7fcbc65779cfcb0f2</hash>
+        <hash alg="SHA3-512">1ef0313c1a6a76e611999c84bdd31f34abac17dc9b8375f70550467f3f2da8721e5a76433bc1739800c119ca3d90530926159d82f3e63d4f0ad0a34c2d5b19cb</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-batch@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-batch/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-batch/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-certificates@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-certificates</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">3a280158c7d0614ff315c945d36b5b2a</hash>
+        <hash alg="SHA-1">524335e1338dab9ba38b0c02faa0fccf703852d7</hash>
+        <hash alg="SHA-256">a48493f2cd72a91bc89a4f8d17790937ad2e379f553ef28050a7619d7e486494</hash>
+        <hash alg="SHA-512">92a3ce050247b064d495b54031784341affdc822faaf92b3ae5af4fd0d57b7ab7ed5660ba97f61f9f2b4e434e11c1e27a24dae3bd097d024179a540d080a4f21</hash>
+        <hash alg="SHA-384">5fb59472db253ccd6a75e2d488c2b2c74c8976dc3f6adf257a465171b49719471affdd6e0736786bff45785e977b4062</hash>
+        <hash alg="SHA3-384">0c9f3cfca4de39645d25705ff3f52bb8a3b98a3fadf95d929ee2104005df13b02d5ecbe1666ad759d0f4d6014651ae36</hash>
+        <hash alg="SHA3-256">c7d0ae007707b6cfb03bbe50ea79b0f3b4069e3cd12d2eff4dfd685f9fe2c9cc</hash>
+        <hash alg="SHA3-512">0ba4a86272552713899d1f1c3406b6c3ae388055cb73e9b9d29b83757906111bafadbb34dae3f2b3b272582cb92b5fbf2e0a7592561267b863e7ce529700e3ff</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-certificates@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-certificates/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-certificates/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-coordination@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-coordination</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">1aa8ece9c7f5045b15485c4daa8908d9</hash>
+        <hash alg="SHA-1">7d37f85dfb6cbde00cfca8e402f960b22ab2fc17</hash>
+        <hash alg="SHA-256">fde47cf5d9827b28f86047975c9b1def4f88ff19fe43ac93c52c860b0f439720</hash>
+        <hash alg="SHA-512">c4aa927c6f92a8cace5d86dcf2cb0c1f906d3f0a6ad3a06c731de8c669260cde59e34e12bfb4e7e2f3a305bb68b1f9d7820f75bbaf186bf62a9bc05fbbceeebc</hash>
+        <hash alg="SHA-384">e84348f63f9b17ac6481e26ef6044febbd455a45e8e3df2faf71be3795f9cc93207ed9406ac0d858c83c6a9741e5c56e</hash>
+        <hash alg="SHA3-384">ece56a3cae08a194d142051c01fc64bfec9d7c1cbf73948e99c5f1d128e58bb7afc17e3c5dbb741ca2ed47ec2ab9f106</hash>
+        <hash alg="SHA3-256">b6afab0e87d42d6a68fc296504ae21f8a1794fee578c3b729955356159580ff0</hash>
+        <hash alg="SHA3-512">8719b37d038325c4f7f92478a55568a4f864da4e8221192de879a9d1ee0e2b8d5e760f6a908b94efa1382823687203c93751ee90bfd90640265a7f657d0df62e</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-coordination@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-coordination/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-coordination/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-discovery@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-discovery</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">85960ed579e00981fdad1f1a6293ac63</hash>
+        <hash alg="SHA-1">31d6739cb8ee1d331c18a86011f12549da996947</hash>
+        <hash alg="SHA-256">d80347e24922f1c1494834f504f3f815bc4852e06d07e4d8051decccc20e9dd6</hash>
+        <hash alg="SHA-512">a61e0e54e8db1056ba43dd30713d1b2a9a3fc6d577cafeb86a825456c84692f34c4095f7427e97376def9b2a74c1a4d1657fd5d76a6b2f6a5f7133e655b59bf3</hash>
+        <hash alg="SHA-384">7722fbbaf73e03e5c8b00af8811e60e6e9e00cd7936823bc3d2ed5e87b24a43601f9770cd10a8b2ec3e5333688c745a6</hash>
+        <hash alg="SHA3-384">911a4dc923985b93da5927046464af432c531dfe45e1fa33686db6057e11ef6cb9ae46358778ea57aac3702181b8fed2</hash>
+        <hash alg="SHA3-256">d27ab60061c013dca04cdefa7ab9d093d4a996270ce61984ef8ed7d7bb2fb81f</hash>
+        <hash alg="SHA3-512">fc24da91730600fa71c79097ac78cb1c59866d95e20501ff8131a0715a0c879b43b873ef22615331bcd6bd82b46a1f88340a725ea3399c19a1abd0925c155f8c</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-discovery@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-discovery/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-discovery/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-events@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-events</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">3d3cb5729bc6c4158b34a1c818e9b906</hash>
+        <hash alg="SHA-1">3da2660d7c5700edd7cb3c8d6968d47e7760e2e6</hash>
+        <hash alg="SHA-256">46092b86abd50351791a6fb9b46f528d59eadbc8d7c8f7064bcb579328e5c22c</hash>
+        <hash alg="SHA-512">c502cd80ea5f8daabc398c0ca4b7a12ef67e8b6ed313c6c2f37973d32e11616d9442b8a975fe3b5f7594a0a73d62b421bc2073dfff6473d6e71087506efaa332</hash>
+        <hash alg="SHA-384">a174dc52c3e60eb9be22baeafd51454d6108d8adb0c4e999e10814f0f549d78d9f05d82994e4afc02b89167f6514d2e9</hash>
+        <hash alg="SHA3-384">62cc95d6d24d4985bc67d09626520943e1e7f2496a7ae37a0b91bfe58ee3ef9e7849d8ddb44819a49ad47411de2fec0d</hash>
+        <hash alg="SHA3-256">233d9dd531997a482d270f523bcfa0df900fdeecfa230d10cbe7eb33c89e3149</hash>
+        <hash alg="SHA3-512">a2bd26f0a28942500a606aead1f17b5bb6f7ec09ddff81d12b6861c788ce8c6c7e6c9d55f05e5b68166f478beb8781d9adb1604c571eac59ff54ca35d336bda6</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-events@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-events/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-events/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-extensions@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-extensions</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">33efdfb9f653e7ebfdbcd8f52f88eb79</hash>
+        <hash alg="SHA-1">f3a4789ef807bd09638937e116e9beae3667b5bf</hash>
+        <hash alg="SHA-256">3ccd5df1c342069a0375199b54fe15620da77ab43002e029ebcbc3865990bc8f</hash>
+        <hash alg="SHA-512">6ee5ea9f3b8764e488b081ef635a06e36eeee6667b68457b4bb06a7f711e76092d1f090cf34c7510211102e325dfd580d89609a99fcae8f21addc99e53b5c0d4</hash>
+        <hash alg="SHA-384">52dff3e7eda632fdb67c42342a1db4727ad7ee03f1f3913aa6ed093bbba6d3d51b051a9563858273b1b3e09f1a88cf3b</hash>
+        <hash alg="SHA3-384">02d12412847e9a94dd5936222265b30ec878c105219c822103bcfacf22738909cfc28fb0f211e35b726f47e6b21be6b8</hash>
+        <hash alg="SHA3-256">7393949680de00446326704086cceca2e0e3dfecc7e53e4bd0972c29c75efe7f</hash>
+        <hash alg="SHA3-512">1569ce5359f31cf1ff9e1f65de3df21c6f9444764da1f4b8cb03418aad788d37a24b7059785ebe3eca29fadebb8972a46e2c2d81c96d9d483aa4f882c1afa580</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-extensions@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-extensions/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-extensions/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-flowcontrol@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-flowcontrol</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">485bb55ef6b2706b5a9cdd618bd97b49</hash>
+        <hash alg="SHA-1">b2635cd569989a1000a86cf355db0e0ce939d595</hash>
+        <hash alg="SHA-256">121a6e4c6b3e2c18669079b6743b7559f87e680d238128d72d633583676c3e38</hash>
+        <hash alg="SHA-512">83ff548b15f498181b52a4fa528bc4cab6247e1340208400795e43825449d5d99376ad994e317aa65f815ba421ca4a0759d6d94e3fe053757a491cec089f3204</hash>
+        <hash alg="SHA-384">69bd3d0d70f362c1956a540f7da67d55cf42890f13ee6b956117a7ce93dd28d06829cf0e2ccd0e6d383805f4d12c26ea</hash>
+        <hash alg="SHA3-384">814c6414eebeb104ffd95de1dd866a3647c1eeea065b307fa24de2d54a0ca8dab3e3c4e2969038b58c81cee7c8ffea03</hash>
+        <hash alg="SHA3-256">19f2e0b2d610c8635e52c12080c4632e6a116894371a2552c3f4dd4f5531e735</hash>
+        <hash alg="SHA3-512">9f1c1d1e4cb928c10417876012b386f0beaef58aa1df4b6c7174a89c5113cd531b00d6159d44431e62410dd1d3c3b5f80ef80f4c61c377c4e59a4dfc69d75da5</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-flowcontrol@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-flowcontrol/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-flowcontrol/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-networking@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-networking</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">1484ede5c65acddce9973256dc6a8d9c</hash>
+        <hash alg="SHA-1">a1a677eaff3cfd4472aadeaa57424dd95a4644d1</hash>
+        <hash alg="SHA-256">fc66125920f35bc2c53bd15d32c2ecdcda8d9b793ed24fefc89fd83720b86667</hash>
+        <hash alg="SHA-512">350e1612e2e500da948712aa61dd2b6578f80d787219cca57292e9602eff4a647a4ba465d622e3d4b0e39b14a157589a102d8840d173f7e9bf7e1775bb799587</hash>
+        <hash alg="SHA-384">97e7c9adbf72a9b0d2dcf3c4f1fe3383490272d690eb08a600dffb8655a9b6780aca135ee650423d5ae2b111055a1130</hash>
+        <hash alg="SHA3-384">b3477a299e245f3b21500cee05cea87166c9959b0c171e07310db1bfac27e1202f088c08fc29491a6cdf102c04dc13bd</hash>
+        <hash alg="SHA3-256">198f9ac6a802c983d4bab320cfc6fcd414e6b2cce4e1bb6c091a3d20e757cd2e</hash>
+        <hash alg="SHA3-512">11550210aaa294e9e5a7ae85d93c5bcf73cd9d352797f529d4947f1ac8b8cd8c28a2b97f26f77d517948c7146e9b3825c57f1d3659b173e557fa19b43bab8226</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-networking@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-networking/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-networking/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-metrics@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-metrics</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">7ffa3bec7129df700b49d7d90e87d657</hash>
+        <hash alg="SHA-1">7d33e7c561bb3293bcb8996b190b87470f0c61ce</hash>
+        <hash alg="SHA-256">1479235f92cbf1c88d8ad7b813ba57f53e49464d6257c9d8661e17dd0d75c72d</hash>
+        <hash alg="SHA-512">18a67935fe605d844b09ec070e9bbd483711b585669dbfe188c7172fd8a55d99c863120fdc5e215f60080b2d6fadb08b7686f94a2eca2c14ecb9e48eda9ee2d0</hash>
+        <hash alg="SHA-384">1d727a88fa95ed4dc42803807b60efe1b19c30a3d57f9b715c953a4008031857762c970dd470268dd28761e79820be56</hash>
+        <hash alg="SHA3-384">512a1cdc52bb781fb279e1beb382cddf641259a33e2e478873b150c81161f587a524c7c0b30b1b1680ad8ca16bb15e99</hash>
+        <hash alg="SHA3-256">e2b296d3caee5eae2880fdf429396060cf92848521a31e1b845524a3ccc22e56</hash>
+        <hash alg="SHA3-512">0d92284707c406dc18de63f2be788f42c7908ab3ed645b2b494667a7aa91d354f51e914c0ef0f4a75c7db44cb540158a21a357d18db3e10bdd61c6d35f041d66</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-metrics@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-metrics/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-metrics/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-policy@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-policy</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">36355dbd224ebda4c4fe4678461770d4</hash>
+        <hash alg="SHA-1">2a15c2f10255115fa3c67b87054b0f249502949f</hash>
+        <hash alg="SHA-256">9a3bb2eaf39f7252915b9b5098ddcb20b489e3fb2806778c30f950043b44440e</hash>
+        <hash alg="SHA-512">03d7fdd72ff89f0e3f414bdc922ca05520de92e4e22a7834fbae259d694f2a658f1bfa144ff0c7e288e3b797a82619cdd6b52002ecba10799c56b2a1514f4b8d</hash>
+        <hash alg="SHA-384">d88d6d15d31c61db0e2a610d6ceb42628f722c8d812cf0b439b459be0a434f6dac80f74446c4de8bbc995a009c13dd71</hash>
+        <hash alg="SHA3-384">073440e609f5d90f7c282a603bafbb5f0c4e7b2b4d4c1773fbd06cb93e6283ec3d637d06a279de63ed17f70368d71db2</hash>
+        <hash alg="SHA3-256">86424bc64fc75795291823720dfb5f888c40cecdece1cc8234023506979efa0b</hash>
+        <hash alg="SHA3-512">80513f4a36c4c9c2087e80845e70842b30c494d51c7cb8896c5a62ed67ad5e752e61d035d740f85c7e28ade83d7f796b7a63afa91550ee1f1bfcbce11228d36b</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-policy@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-policy/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-policy/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-scheduling@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-scheduling</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">a252777161e131373f526a85d34327a1</hash>
+        <hash alg="SHA-1">e19c767139883846d8936bdc2860d8bf02bde761</hash>
+        <hash alg="SHA-256">255a073454ee8476a32998b8dc23eb2baadaa281c08b453bc02f72ba076a1aaf</hash>
+        <hash alg="SHA-512">699f7c92e22dd58da4a536ca1335a13d5f1614f16dd406dfe0951bf4c22930461d318bad7c58f9a5f8599bb1a443da7c0489e0dad724a86ab08c60405305b1b0</hash>
+        <hash alg="SHA-384">dffd3881e3033a6593b543f27f261f32b204a675bf1ff3857e5438bd0a887f797cab2df1a0c13b066c50d3cfb00d8590</hash>
+        <hash alg="SHA3-384">f6665a5246a38bf4e5a3da9a722866a16bdfb750b74653fd84959e9abdae497aa7164ec96e84d19b1fe09b15783ef30f</hash>
+        <hash alg="SHA3-256">72d4abea12c4ebe2368dbb516543880e2b8890ece4d5b3d4f9a72b91253bc9c1</hash>
+        <hash alg="SHA3-512">1817e642f0307aa986d72a4c8c83f36c17153bf07d3c5e420a25742957b4fb82664110b437b72dc5e8bff9dba9d640ef1c853868f48fe9494d0c2b666c0cbccd</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-scheduling@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-scheduling/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-scheduling/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-storageclass@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-storageclass</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">3d65e6332486b64fe75008f63f1d7cd8</hash>
+        <hash alg="SHA-1">c56ebc86f9d70d93aa43730cdb309a4e8509e288</hash>
+        <hash alg="SHA-256">156e9fb56894b7d73015d160dc672209730287516b059561f88f528ed364b3b2</hash>
+        <hash alg="SHA-512">04c80469a5b3b9954d5ca73951597652b032d160ba9b8515d9bbee0aeb7585e3edbc33384aee0f050c684340c3a2d7f5ca59ca3acf1c1374a8d1d7bbef48c877</hash>
+        <hash alg="SHA-384">1d7811f56ff328247da32ce3a8d4eb35bc4fa43a4fa132fbd46a927939843a5e60472723f0bc51a86c8ac28888e25763</hash>
+        <hash alg="SHA3-384">9aeac227b82a213da5d7674ba272926a1ff5d1b35311f3cab1576609e24ef9e239b2d316473ca9ecb08b1165da3fecc2</hash>
+        <hash alg="SHA3-256">c0bd7903fa636219bf0487481864066913538e3b07cbc964147a42c26cfc9f05</hash>
+        <hash alg="SHA3-512">e5889e1fa33fd90e5f7ae97843ecc75631240b7e2bbedcf8786c8e6f5061b0b7b5a566e9cd29ec67702435d679ea4c82681651858a870c38a76376591449c680</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-storageclass@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-storageclass/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-storageclass/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/kubernetes-model-node@5.12.4?type=jar">
+      <publisher>Red Hat</publisher>
+      <group>io.fabric8</group>
+      <name>kubernetes-model-node</name>
+      <version>5.12.4</version>
+      <description>Java client for Kubernetes and OpenShift</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">fad01678578490edae16b10dfd9bf8e1</hash>
+        <hash alg="SHA-1">f0e70d95b8b024524f988238969d8fe13f13a184</hash>
+        <hash alg="SHA-256">d75cfb51ddf92ef9dac8a887b1dfc35f225a7aef58c5b8cfefb7229ec4d83328</hash>
+        <hash alg="SHA-512">109b178832bb7b7ea257d1f52a44e893e58cb76183c49642771581ee7963ae34d8a1bb1ccb0ea48b4e5b10d9cd915bad521d80ffcdaf62a1dd71e58c999af6e3</hash>
+        <hash alg="SHA-384">2a698f2e2bd17aa200366d96115314383df723b92368d55a2002434ce7c9a8290e527e63c977907c345684cc42b2c895</hash>
+        <hash alg="SHA3-384">0641ee30c7b6d6fc4c3672d18c14040c3b5bca9c821dffced1b6a1a4989f15444a429511e729936abd490c458742cd21</hash>
+        <hash alg="SHA3-256">5b1a4bc183d6157bd568255e375a81d285f2555e5e138bfc175583234a37615a</hash>
+        <hash alg="SHA3-512">165b2290e8008779f1c74811463ae3219e7771cbcaa7d0fe061e51c115c425498f9ce53b07f34624f08d9770642738883ea7712e7f0fced5d8316515389d3d82</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/kubernetes-model-node@5.12.4?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://fabric8.io/kubernetes-model-generator/kubernetes-model-node/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/fabric8io/kubernetes-client/kubernetes-model-generator/kubernetes-model-node/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.squareup.okhttp3/okhttp@3.12.12?type=jar">
+      <group>com.squareup.okhttp3</group>
+      <name>okhttp</name>
+      <version>3.12.12</version>
+      <description>An HTTP+HTTP/2 client for Android and Java applications</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">8c4278a115ce8862eda078738f19047e</hash>
+        <hash alg="SHA-1">d3e1ce1d2b3119adf270b2d00d947beb03fe3321</hash>
+        <hash alg="SHA-256">36f1cd0798fb231e5be189d0bfe2634d5879f73082be5718ca30a73d1ee15e4b</hash>
+        <hash alg="SHA-512">e162af91087a02d27469c4327a1730eee48962f94bb7668795c2279ae5218d907a2e8d2e082cc10e11a4ecc9a61d2de8372f1061bd8e386e8c4e58abdba42dfe</hash>
+        <hash alg="SHA-384">82d5e410bfc4263b1b33e78ca2171727f0b489aec16064b40448eae58bd11b370c65ddb03468947bb853a2bd28546b34</hash>
+        <hash alg="SHA3-384">dc45a7a1e6262a01a158fcdc7678a69f544d7e5c091117801c87b5e550444505775eaa0f1cfc7987163e4cad6ac1a38c</hash>
+        <hash alg="SHA3-256">8e9311110798afa19f36cd0d5c1c43778119330d8a2643568294d4f889c99c84</hash>
+        <hash alg="SHA3-512">bff8e25420c5100ac38f09921599b18110130babd9a4ed11b0d66655e8d70d53417eb960933d911075e73bd7c091aa43f4c054755aba5e254eb70a96fa36fc93</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.squareup.okhttp3/okhttp@3.12.12?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://github.com/square/okhttp/okhttp</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/square/okhttp/issues</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/square/okhttp/okhttp/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.squareup.okio/okio@1.15.0?type=jar">
+      <group>com.squareup.okio</group>
+      <name>okio</name>
+      <version>1.15.0</version>
+      <description>A modern I/O API for Java</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">e8ddbcb79210050527c2eda7562e63ce</hash>
+        <hash alg="SHA-1">bc28b5a964c8f5721eb58ee3f3c47a9bcbf4f4d8</hash>
+        <hash alg="SHA-256">693fa319a7e8843300602b204023b7674f106ebcb577f2dd5807212b66118bd2</hash>
+        <hash alg="SHA-512">d9e9f3b1f9765dd6eb8e1ebd4e1ded5d93b73ff80e5bd4d8efb9dc8d8f894b32f5bd78f4533f5727d0183a5d6a7f55df623d9ba8e8d97bc468a07c1b777a09da</hash>
+        <hash alg="SHA-384">b0fb659b3d5a328bdc2d9077f36fd179354cd0373d51d3cab72ac2daec6c4a5c1a3ecd7cb61f1f35999bccf0d45196c9</hash>
+        <hash alg="SHA3-384">0ffc5758c7ccac248a1a7ddc159a3d1f1ef3451534488b7a2b74aaa13ae61d9760244c0b2d5d0183db40f821edbdd68f</hash>
+        <hash alg="SHA3-256">c63bfaf77e2a2ca50af52bb95a8b496c0af9734d3cc6699af8a7e729ddc92337</hash>
+        <hash alg="SHA3-512">6324a11fae156045af66707fd0f397f8798af01d5dbb2eeab7e50c40cd8bb02ee5e12299765e3c9b15edc6aac271dc2ea30272422d4eeb395a19892638126509</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.squareup.okio/okio@1.15.0?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://github.com/square/okio/okio</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/square/okio/issues</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/square/okio/okio/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.squareup.okhttp3/logging-interceptor@3.12.12?type=jar">
+      <group>com.squareup.okhttp3</group>
+      <name>logging-interceptor</name>
+      <version>3.12.12</version>
+      <description>An HTTP+HTTP/2 client for Android and Java applications</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">91025bd23c916c14fe2c54c0a1b74a7d</hash>
+        <hash alg="SHA-1">d952189f6abb148ff72aab246aa8c28cf99b469f</hash>
+        <hash alg="SHA-256">dbf83bebfae07c7d9823eb0cd3a11d74e3b387f9fd98ce6438c6c12c1d9f870f</hash>
+        <hash alg="SHA-512">9a504a91655a957429dc250f6d7d25f207d4bdafc4bc185494f20cf8b79b85211469dedf3a9d6552083ea12c436d438418bdd6993d87b5650ef11893b6be108e</hash>
+        <hash alg="SHA-384">3fb50437843d6c90b9d15c799892565f941de8969e6b80031d2c75a68822e7add4eff8f78e2a915728d8b32bd00badea</hash>
+        <hash alg="SHA3-384">4c370c93f206865a2c49fb0c44023f6876f877a6f3af4fa1c58c9b096854ed6d43686b97ba891a53993708c5ff7d5129</hash>
+        <hash alg="SHA3-256">d1e07fc88150791663d74f91d6e9e23a326352d9169063b1b3e6168fbcc9ed13</hash>
+        <hash alg="SHA3-512">508842c497711dab2ca2f9da5770f07e52d6df28a76bf039db4e81d693a4c025fd9349bb6868bd46a3dad840a34a03f6ffe6e43272b7b58f0817811660333097</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.squareup.okhttp3/logging-interceptor@3.12.12?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://github.com/square/okhttp/logging-interceptor</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/square/okhttp/issues</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/square/okhttp/logging-interceptor/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.slf4j/slf4j-api@2.0.9?type=jar">
+      <publisher>QOS.ch</publisher>
+      <group>org.slf4j</group>
+      <name>slf4j-api</name>
+      <version>2.0.9</version>
+      <description>The slf4j API</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">45630e54b0f0ac2b3c80462515ad8fda</hash>
+        <hash alg="SHA-1">7cf2726fdcfbc8610f9a71fb3ed639871f315340</hash>
+        <hash alg="SHA-256">0818930dc8d7debb403204611691da58e49d42c50b6ffcfdce02dadb7c3c2b6c</hash>
+        <hash alg="SHA-512">069e6ddce79617e37d61758120c7e68348ee62f255781948937f7bec3058e46244026d7f6a11e90fbc15cd4288c4bb1acee4f242af521c721a9e68a05e64d526</hash>
+        <hash alg="SHA-384">fd6f7ad85d02ac63cd1a586c8bb158c1fc000495f512f097731ea9f749b5da2637615b821294962805ba312c738f40aa</hash>
+        <hash alg="SHA3-384">17cd61f59a162250b52a89c7c56eb60da253b776210500313c7b82744483ff84717946f969251fb4d76f9bb12a2458fe</hash>
+        <hash alg="SHA3-256">9dcb04582c64c79e788f9191195834ec75bb3457133d22a176a0ccb069b97103</hash>
+        <hash alg="SHA3-512">990faffa454598a3fa82affe30f1323db769d2e1fff20d9c7163ef6fd95ac7a0874c06a634207a2eaed9e5afbdee68b225138fc75018717ba97efe3ffe92c88a</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+          <url>https://opensource.org/licenses/MIT</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.slf4j/slf4j-api@2.0.9?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://www.slf4j.org</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/qos-ch/slf4j/slf4j-parent/slf4j-api</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml@2.16.1?type=jar">
+      <publisher>FasterXML</publisher>
+      <group>com.fasterxml.jackson.dataformat</group>
+      <name>jackson-dataformat-yaml</name>
+      <version>2.16.1</version>
+      <description>Support for reading and writing YAML-encoded data via Jackson abstractions.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">f08a64b0e8a224690e774ea3d5dcd00f</hash>
+        <hash alg="SHA-1">8e4f1923d73cd55f2b4c0d56ee4ed80419297354</hash>
+        <hash alg="SHA-256">fd67e0fafe368ad3dfc1b545eb8fe084a5c64628fb71ef70bd94a4dab27aefff</hash>
+        <hash alg="SHA-512">773490a5e0b0d8d197137813278469e3cade4255903769877b73c2af78fbbfba598dec0fc4e3044b3af40c6987c89447b18d08dcbd26f8a48c2a1bd13da364ea</hash>
+        <hash alg="SHA-384">0408da5ee2f9928cfacb3899bff42b5103b0ab411c50fa301eb583e284b56735099082d9a8de6f0a8c42b2b66a7a0077</hash>
+        <hash alg="SHA3-384">86840ac6add1889036bb3ee58fea7f81268649de698e87b6dc0bf980b44bc7a237b8aa118f2328d440ddac667d003c52</hash>
+        <hash alg="SHA3-256">17767198ee246e0f0db107f60a18197c43f4c8e285e615c6ac67393cf4cb3403</hash>
+        <hash alg="SHA3-512">a074fa6410d37d44d962b0421f7b34ceece643345c7bc1a357091e028f2391ce18e65e9892b949f332adb26640da05f8589d42ec84d52e5f7f149f5367cce330</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml@2.16.1?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://github.com/FasterXML/jackson-dataformats-text</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/FasterXML/jackson-dataformats-text/issues</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/FasterXML/jackson-dataformats-text/jackson-dataformat-yaml</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.yaml/snakeyaml@2.2?type=jar">
+      <group>org.yaml</group>
+      <name>snakeyaml</name>
+      <version>2.2</version>
+      <description>YAML 1.1 parser and emitter for Java</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">d78aacf5f2de5b52f1a327470efd1ad7</hash>
+        <hash alg="SHA-1">3af797a25458550a16bf89acc8e4ab2b7f2bfce0</hash>
+        <hash alg="SHA-256">1467931448a0817696ae2805b7b8b20bfb082652bf9c4efaed528930dc49389b</hash>
+        <hash alg="SHA-512">11547e75cc80bee26f532e2598bc6e4ffa802941496dc0d8ce017f1b15e01ebbb80e91ed17d1047916e32bf2fc58da532bc71a1dfe93afccc277a296d86634ba</hash>
+        <hash alg="SHA-384">dae0cb1a7ab9ccc75413f46f18ae160e12e91dfef0c17a07ea547a365e9fb422c071aa01579f2a320f15ce6ee4c29038</hash>
+        <hash alg="SHA3-384">654b418f330fa02f1111a20c27395ec5c7f463907ae44f60057c94da04f81e815cf1c3959f005026381ef79030049694</hash>
+        <hash alg="SHA3-256">2c4deb8d79876b80b210ef72dc5de2b19607e50fbe3abf09a4324576ca0881fc</hash>
+        <hash alg="SHA3-512">0d9be5610b2bcb6bb7562ee8bcc0d68f81d3771958ce9299c5e57e8ec952c96906d711587b7f72936328c72fb41687b4f908c4de3070b78cc1f3e257cf4b715e</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.yaml/snakeyaml@2.2?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://bitbucket.org/snakeyaml/snakeyaml</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://bitbucket.org/snakeyaml/snakeyaml/issues</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://bitbucket.org/snakeyaml/snakeyaml/src</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.fasterxml.jackson.datatype/jackson-datatype-jsr310@2.16.1?type=jar">
+      <publisher>FasterXML</publisher>
+      <group>com.fasterxml.jackson.datatype</group>
+      <name>jackson-datatype-jsr310</name>
+      <version>2.16.1</version>
+      <description>Add-on module to support JSR-310 (Java 8 Date &amp; Time API) data types.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">31164dfc9861d7bbcdf19413e6d9ce84</hash>
+        <hash alg="SHA-1">36a418325c618e440e5ccb80b75c705d894f50bd</hash>
+        <hash alg="SHA-256">6281970682a8da3ddbac54bb203c9badf1c26f507f3ecaa48ef10318579bc9ad</hash>
+        <hash alg="SHA-512">27f0b7498d44eac1851eaca1ed4cc29aff0df507070960df532af5be0a8b52d0d0576f5e526c2208954e0c144c50b7173f1c18762e10e4137862ed7aa5b84bf5</hash>
+        <hash alg="SHA-384">9c4248cc09e488a9c69b4eed32448f836a8a94c1c7d0a6bbb817d559f3d27af3a4914dae6cf3e8ad833ef4eb22f60580</hash>
+        <hash alg="SHA3-384">792c359e4589234d524959c4778aa6d51e2e80b9e9424421d4cf5f258591d775a71797ee493d0bd67acef03731d90881</hash>
+        <hash alg="SHA3-256">29acad63e5fca794b2a60a119a03e7b3a767921f549e05ab458452bd8b3123b7</hash>
+        <hash alg="SHA3-512">71fe49c1965dacf54f2c7cffcc8cebc2687db24bdb6cfd203e910edbc61c2fba0dffa1f2996529ef8383363d8e71e7e55b802cf8432dd2ac7841e33e23865152</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.fasterxml.jackson.datatype/jackson-datatype-jsr310@2.16.1?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jsr310</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/FasterXML/jackson-modules-java8/issues</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jsr310</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.16.1?type=jar">
+      <publisher>FasterXML</publisher>
+      <group>com.fasterxml.jackson.core</group>
+      <name>jackson-databind</name>
+      <version>2.16.1</version>
+      <description>General data-binding functionality for Jackson: works on core streaming API</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">ac71b868569d329136f2c63f34dd2c89</hash>
+        <hash alg="SHA-1">02a16efeb840c45af1e2f31753dfe76795278b73</hash>
+        <hash alg="SHA-256">baf8a8ebee8f45ef68cdd5e2dd3923b3e296c0937b96ec0b4806aa3a31bccd1d</hash>
+        <hash alg="SHA-512">e826126759ef714b35c546a524d0fc82e8ae38ad19d0502a58d360926aef3d13492092372302fcea19e78b24432838a40023ebf5dfae4e8c566478c4833ea998</hash>
+        <hash alg="SHA-384">6e46bf61e034085444b1a708fbb6926ddd46ccaa75c20c9765c1a98c266449169d7a28e6197224f46cc4c15201187ab6</hash>
+        <hash alg="SHA3-384">649d02e2265bc92d75876b31006f1cb2fe33788da8edb06ebc5b798e964ba7a8d6b96d21053b01e5fe3cf27a63a8b66c</hash>
+        <hash alg="SHA3-256">d58b494fb40bb93c799c315293daf81fb6d0bf418d38b912aab1c37b4de1db77</hash>
+        <hash alg="SHA3-512">c3950b04417dee7450b36f3428005a2f118c8ce0388f2c2470f5543cac3106215b6b591848775176892951f2ea7a608c7d02280067d5cfae1634e0f3e306e628</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.16.1?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://github.com/FasterXML/jackson</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/FasterXML/jackson-databind/issues</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/FasterXML/jackson-databind</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.fasterxml.jackson.core/jackson-core@2.16.1?type=jar">
+      <publisher>FasterXML</publisher>
+      <group>com.fasterxml.jackson.core</group>
+      <name>jackson-core</name>
+      <version>2.16.1</version>
+      <description>Core Jackson processing abstractions (aka Streaming API), implementation for JSON</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">0f51c6a7d713aed6e044cf1692bb59f4</hash>
+        <hash alg="SHA-1">9456bb3cdd0f79f91a5f730a1b1bb041a380c91f</hash>
+        <hash alg="SHA-256">f5f8ef90609e64fec82eb908e497dc7d81b2eb983fe509b870292a193cde4dfb</hash>
+        <hash alg="SHA-512">1f1551b0512a0ac3fc883db62472901c91051586616804daec24268ceaed409faaa1f1695df2f6220fa389aeb54802eb51dec439322bc7383507b45c08cbe17b</hash>
+        <hash alg="SHA-384">24b8435650ceba20008563d8bb9db4a8aca74d7ffa33e95efc6ac576d71f39d5ab228c133b413c6c852c34d905a249cf</hash>
+        <hash alg="SHA3-384">f15db08b5d9ff6b475507afeb587a30bf6fe050d216cadf1bcd9fccaac0a59fd6bb1e8533ee8a48bb6075801b6f617ce</hash>
+        <hash alg="SHA3-256">5fc0bd6adc8b1f3e96b835acc703cb1a4a977deb1f44d0b9314ea25b83c2f36f</hash>
+        <hash alg="SHA3-512">7273a7e983ef1e9c7195aa36dba2d0b7b35600f844f61a54c1a80e4590c987257411f8e17a2fb9252849fd8c5ab9fb40f14ae288159a0e98c337020fb8679a1d</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.fasterxml.jackson.core/jackson-core@2.16.1?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://github.com/FasterXML/jackson-core</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/FasterXML/jackson-core/issues</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/FasterXML/jackson-core</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/io.fabric8/zjsonpatch@0.3.0?type=jar">
+      <group>io.fabric8</group>
+      <name>zjsonpatch</name>
+      <version>0.3.0</version>
+      <description>Java Library to find / apply JSON Patches according to RFC 6902</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">c47f98189f594bd86ccbf40c5391b600</hash>
+        <hash alg="SHA-1">d3ebf0f291297649b4c8dc3ecc81d2eddedc100d</hash>
+        <hash alg="SHA-256">ae4e5e931646a25cb09b55186de4f3346e358e01130bef279ddf495a719c71d5</hash>
+        <hash alg="SHA-512">7dabd119a1f500f031da506901c4dd03f11ccd53a15e089ee3917372293b32d56196f621614b20663715e00cd77a17636d44fb95aea8a711aa8a8869741d065a</hash>
+        <hash alg="SHA-384">712dd69436caf0fbd144bce2e12871353cb6c6c58d52a4b795146028fcd8ab929acadbb890fb14fa02ea2ea6a85c4fcb</hash>
+        <hash alg="SHA3-384">e696db3c82365c18b4705e6fcb0eddb4a81eeb0aadbb48a259620455aaf590230b5617d9590bc1d45a6d848deb79948b</hash>
+        <hash alg="SHA3-256">24edbbfeb6b8be6c1597f45768b8304b703f89e485c4e497cca596b069b123d9</hash>
+        <hash alg="SHA3-512">79412b78a9d8f61994eabc84ae4185ddaa446a28a44015ae69eb5e5c0b6ec8b904f41e2c98188358c7e9b5caaf7d21be766b88828caad8ea92b3b1d70aca0912</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/io.fabric8/zjsonpatch@0.3.0?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://github.com/fabric8io/zjsonpatch/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/fabric8io/zjsonpatch</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.github.mifmif/generex@1.0.2?type=jar">
+      <group>com.github.mifmif</group>
+      <name>generex</name>
+      <version>1.0.2</version>
+      <description>Generex A Java Library for regex to Strings generation</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">a832db42f9e1c4f76930f547f6f80998</hash>
+        <hash alg="SHA-1">b378f873b4e8d7616c3d920e2132cb1c87679600</hash>
+        <hash alg="SHA-256">8f8ce233c335e08e113a3f9579de1046fb19927e82468b1bbebcd6cba8760b81</hash>
+        <hash alg="SHA-512">a0993c16f82bd0ce6072f4bea6d001a49e9203b35290f10c6a3f2b2dd385f08302b4531a0a825ad5c000826369aba828ab8fad49fcefca4d7351a8e0d825b9a8</hash>
+        <hash alg="SHA-384">9cc05f3e6a2d802d5b39cadd0b4ca0bc94726f1b4e0f619b10d53f5e2f8b8663f620b0618ea499e152b431cd055dbd44</hash>
+        <hash alg="SHA3-384">03e450ea034f2c92b21af2956676cae06b50f9c6eb7def0267da8806595fc4486e493369a31602640fd286cb563a7b89</hash>
+        <hash alg="SHA3-256">960afdbf525f54fc30f33e8e1d18cce761692fced186dccf79fbdd5a13efefb5</hash>
+        <hash alg="SHA3-512">5de6504499682fffc0a49cbece02341a045e05f04da880a8ca185931ab792771a4b3b9a96887bd9e2889c1213c7b7e547b019c26b7169903ee96b774de61b68f</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.github.mifmif/generex@1.0.2?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://github.com/mifmif/Generex/tree/master</url>
+        </reference>
+        <reference type="build-system">
+          <url>https://travis-ci.org/mifmif/Generex/builds</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/mifmif/Generex.git</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/dk.brics.automaton/automaton@1.11-8?type=jar">
+      <group>dk.brics.automaton</group>
+      <name>automaton</name>
+      <version>1.11-8</version>
+      <description>A DFA/NFA (finite-state automata) implementation with
+		Unicode alphabet (UTF16) and support for the standard regular
+		expression operations (concatenation, union, Kleene star) and a number
+		of non-standard ones (intersection, complement, etc.)</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">3467dcbbba2fe68a4e07a5826988e034</hash>
+        <hash alg="SHA-1">6ebfa65eb431ff4b715a23be7a750cbc4cc96d0f</hash>
+        <hash alg="SHA-256">a24475f6ccfe1cc7a4fe9e34e05ce687b0ce0c6e8cb781e0eced3b186482c61e</hash>
+        <hash alg="SHA-512">e00b4ddf558275509f263850b1ff04097315000baeda5cab469b555083412922317e92dcacadf70179851e4068f3f574fdab9ef36b1612d352d072e57d49046d</hash>
+        <hash alg="SHA-384">9c107955c2502954864a484a0f23c741231a9e5b61c376ee45df5fd816c31308ca8a9380b1b4b1e07aefb3bf24edab34</hash>
+        <hash alg="SHA3-384">20301590b7ef4af5e1f025220f4f4ff759942fecb016d81e160853ec6d32ee227b07976ddaa8aad503976cbb39f15f07</hash>
+        <hash alg="SHA3-256">42e6f6cdfa5b71a2c985a9dedde83f828955e640598937b7fb6ca4fc8a62e702</hash>
+        <hash alg="SHA3-512">51e80070179c7bc3fdafa31b6da3555a36c7c749bb11ed22f49cb9a9454db1b987d92238b6d5fdea5e08ed6c87f797ac38cb796675e56e2aa1ced82ceb9358e9</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>BSD-4-Clause</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/dk.brics.automaton/automaton@1.11-8?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://www.brics.dk/automaton/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/biz.aQute.bnd/biz.aQute.bnd.annotation@7.0.0?type=jar">
+      <publisher>Bndtools</publisher>
+      <group>biz.aQute.bnd</group>
+      <name>biz.aQute.bnd.annotation</name>
+      <version>7.0.0</version>
+      <description>bnd Annotations Library</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">0339bd011cf13131841417c0de7452f5</hash>
+        <hash alg="SHA-1">8ad279ebf0d04ea89c5ce4d934189d0d16bb6d50</hash>
+        <hash alg="SHA-256">a0090390963dd2092f8abb6d76092bab1696494d2e31b127f5b1b2bf29c08638</hash>
+        <hash alg="SHA-512">6e96cffe60466e9bd5730c93686a6ae252958be6202ba07d235239f0033b9a1cc53faad327ddaebab9eab30825b881acc6296777851028c7fad5668cbbe99c81</hash>
+        <hash alg="SHA-384">f51cd44911333bf7c2f58bdf7440062c138005c8332be3bf69b0ab0d9d93af4d1e1dde3a4eae5bfae92e835b70e6f561</hash>
+        <hash alg="SHA3-384">7e93113ee29b6fbed02fbeac096582476b0b7c04703a54ecf0c3c89cab6fff06bc486d072c78f5a19e2c7da1c603b9d2</hash>
+        <hash alg="SHA3-256">e0a35d4ec2afe652ef58a37a9f2491349527e86c7a1b37d13436fdfef77f32b2</hash>
+        <hash alg="SHA3-512">62783affe413b5419c08008094a43e63712c65d6e4a0cd345e58e1a7c66dc32a08f2e68852d14641d30da31d665091c19571809145f769480cb0b80e0ad003e9</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <name>(Apache-2.0 OR EPL-2.0)</name>
+          <url>https://opensource.org/licenses/Apache-2.0,https://opensource.org/licenses/EPL-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/biz.aQute.bnd/biz.aQute.bnd.annotation@7.0.0?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://bnd.bndtools.org/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/bndtools/bnd</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.osgi/org.osgi.resource@1.0.0?type=jar">
+      <publisher>OSGi Alliance</publisher>
+      <group>org.osgi</group>
+      <name>org.osgi.resource</name>
+      <version>1.0.0</version>
+      <description>OSGi Companion Code for org.osgi.resource Version 1.0.0.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">7d857a4203e2996fab0cf070133e43df</hash>
+        <hash alg="SHA-1">343c88949132984b3f2d4175a72c40b77dc65619</hash>
+        <hash alg="SHA-256">81fc50f1f1d38a4af28e131907d4afe213249aab05060484edca0e60c4af9b4a</hash>
+        <hash alg="SHA-512">4e798790856f83f50832db80bfab64dfceeff1c509d7dde43e74a9f9192ea7a7d5ea77b9b1e81291fa6ba3dcef5ab8fa791ca8093a72a08d7ca6f6499e13e506</hash>
+        <hash alg="SHA-384">73038c395166552b64b6b5469bd8056584f48d19b5762df2e8bd2770405ed8f6071e397a87d9a7ed39f8c2e0e8ab85b2</hash>
+        <hash alg="SHA3-384">e06c8a460b3bf06d6cb22237aeffa6afd2eadd9461096c67b768a14603ad8aaa88f891d03cf0a273a99d86906c1c8eb3</hash>
+        <hash alg="SHA3-256">1097cfd20e80ce368fd828a23ad7c32a202cebd92106f6ebb88ba55ca74349ee</hash>
+        <hash alg="SHA3-512">d7b710e1e0484badb875f326c602c90df6705df48b0f057320919a5255d3ecbddd7053eabc68787480a70aebd7e553e9f51728112e1fa0846c849366b7e8d69b</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.osgi/org.osgi.resource@1.0.0?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://www.osgi.org/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://osgi.org/git/build.git</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.osgi/org.osgi.service.serviceloader@1.0.0?type=jar">
+      <publisher>OSGi Alliance</publisher>
+      <group>org.osgi</group>
+      <name>org.osgi.service.serviceloader</name>
+      <version>1.0.0</version>
+      <description>OSGi Companion Code for org.osgi.service.serviceloader Version 1.0.0.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">4943f0102a6d893c4dd77f369a5f0537</hash>
+        <hash alg="SHA-1">3728ff37909c6a3c1870b3e851342d9f2bd3cc63</hash>
+        <hash alg="SHA-256">8f876ce2a9aa4e95b1f1952950255103e2487425050a654f3285447ba601c154</hash>
+        <hash alg="SHA-512">a7def4cb7a8ed992645faa80a780e0b30bd39c1587b5bcb65fe170d10842d0d880c2849edd50c64807fe0e4b9cc0051337d1b161d0d390465d9e63a762861c49</hash>
+        <hash alg="SHA-384">1e480694b8a541da4cd1e044d3f3ea3cd55152515ac022b80d865b6654242506c2138daabb4e71c30d36b12b9aaf676d</hash>
+        <hash alg="SHA3-384">7f076af200ae9c2bd9f235b949aee01a1a758c8aac10fee8b98ec2497197d2029117d5627eb0eabd9b42979eb1baa009</hash>
+        <hash alg="SHA3-256">83b1dce69c4c899176eb6e368e434ecb77dfed7c436530b8c5d08b9b6f2430aa</hash>
+        <hash alg="SHA3-512">5debde53a7ead231dcd907467d59728f59cae4eb3b967c19808f78890bd97d2f04657cad9c093e88f9818338b0b3b38a57c66400ebcff61fbb26d18e9f7bf8ed</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.osgi/org.osgi.service.serviceloader@1.0.0?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://www.osgi.org/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://osgi.org/git/build.git</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.google.errorprone/error_prone_annotations@2.24.1?type=jar">
+      <publisher>Google LLC</publisher>
+      <group>com.google.errorprone</group>
+      <name>error_prone_annotations</name>
+      <version>2.24.1</version>
+      <description>Error Prone is a static analysis tool for Java that catches common programming mistakes at compile-time.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">345bbebec9b3c68d2638c0f6809436dc</hash>
+        <hash alg="SHA-1">32b299e45105aa9b0df8279c74dc1edfcf313ff0</hash>
+        <hash alg="SHA-256">19fe2f7155d20ea093168527999da98108103ee546d1e8b726bc4b27c31a3c30</hash>
+        <hash alg="SHA-512">75a8d055b90fc2be2198d8502299b5e4f08a81d87b15334a788a719e155f006b23c3648a4574be831de932db212593a2b004584948c394adb8272ed7d5844c94</hash>
+        <hash alg="SHA-384">b474fabb3ed301583358187787cb89161d4ea3a5e46d66aaf4317bfa74cba0063f53872c30fbc130af505537ac72f9c3</hash>
+        <hash alg="SHA3-384">5d5456af3f5d809c6e1fbe13b6b65c71b442dcff66e087bf1be3958e582c7565135cf61f7b3bff55cee6d27a74365d01</hash>
+        <hash alg="SHA3-256">39119e15f4769fdd5b018c1c9cae88c78e9454e05666731e8a703f47ed903693</hash>
+        <hash alg="SHA3-512">d25c633ed33e217d71076ecf76040c13e3d8dfcc9eda1a2300a718a8699317de0b87680bfa5e499bf8c51f133408ab24c93e47393aa8c4300e92db0d683b48d6</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.google.errorprone/error_prone_annotations@2.24.1?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://errorprone.info/error_prone_annotations</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/google/error-prone/error_prone_annotations</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.osgi/osgi.annotation@8.1.0?type=jar">
+      <publisher>Eclipse Foundation</publisher>
+      <group>org.osgi</group>
+      <name>osgi.annotation</name>
+      <version>8.1.0</version>
+      <description>OSGi Annotation Release 8, Annotations for use in compiling bundles</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">3bcfab9c55a2bcc158aa4953084021b6</hash>
+        <hash alg="SHA-1">59d42736bcc0af2144ba5c1a12ff7c08ea4b7e12</hash>
+        <hash alg="SHA-256">68afeb86a5322675d4dfe3df5863c7d8a37b34c18e3a8e41553f1ab3ac15d78f</hash>
+        <hash alg="SHA-512">a190fa888fd22c2c31455d672b3e50ca79fa9f02269b9d45f6e6fc189dc8f90d20663e290f151a851e010b52ce87e62dc5079253c3e59caa72f11ea6248ffb26</hash>
+        <hash alg="SHA-384">581c88a48fc7df5edae29712f943ef780fb0f32b4eee10dfcaa879f122f19fd1645b961b38bc0a97dd894d89952fdb68</hash>
+        <hash alg="SHA3-384">ab4fab76440671def19eb0ca3370d8f0f8a915df4ec92e5aa2b9e12a4b97aa49301c51ccd28a2d2718beec6fe8105bc6</hash>
+        <hash alg="SHA3-256">6849ce4a9cad5dbf2dce1ad817442821a633f8ae10ab1ccde69ac46d26127a46</hash>
+        <hash alg="SHA3-512">3c3ce68b5ae1ea157f78d72a210cc152375fd8819a7c85ed5c718fbe387ffb522715e1b0dfa5094caed1e8bbe4b8fcc6d2aadd1cd3851f4c0fffebda5acaebba</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.osgi/osgi.annotation@8.1.0?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://docs.osgi.org/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/osgi/osgi</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.osgi/org.osgi.annotation.bundle@2.0.0?type=jar">
+      <publisher>Eclipse Foundation</publisher>
+      <group>org.osgi</group>
+      <name>org.osgi.annotation.bundle</name>
+      <version>2.0.0</version>
+      <description>OSGi Companion Code for org.osgi.annotation.bundle Version 2.0.0</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">19115314a0ce4cfb711a811dcc0be0a3</hash>
+        <hash alg="SHA-1">f5c2cd6e670c3c5d440d3003efd5ef2ead5c68eb</hash>
+        <hash alg="SHA-256">b9c9546ec5be3ebc2e85ba4919150ad76d64594805282fc895133a47d264a7ae</hash>
+        <hash alg="SHA-512">f16b8983240ba3c08d6bc78e2eae92e89eb528f32a705961d90b463def0a5ed1ba08cc3d0be38b5dcfb946c6f759df772e122fb769e58e8c20aa79a489a1fd21</hash>
+        <hash alg="SHA-384">88217b7d3a2d9a0a3f005162b95d68ba2bd29629688b2c32e93e4587d89fe6bd468f5c62ef422ebf2b609d402e62ff56</hash>
+        <hash alg="SHA3-384">c7ee64dd3e235d900d01d8629b82245303d34a006e1edcd2571ef736d9c6256dcb718be326ad4909cb6d2cea26118ea9</hash>
+        <hash alg="SHA3-256">9adcacb036caf30d17a13fcd5952a35e011678b1dbfabafdff73dba065ace8a3</hash>
+        <hash alg="SHA3-512">76bec6bb2cdbc8da043760a7aedd51203c8d70b740c9b8de0ba6b0cf9ad991a58059566e7f62dee30606f32d267b2596d5bd5e885c73e336ae7fff6cf7f970db</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.osgi/org.osgi.annotation.bundle@2.0.0?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://docs.osgi.org/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/osgi/osgi</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.osgi/org.osgi.annotation.versioning@1.1.2?type=jar">
+      <publisher>Eclipse Foundation</publisher>
+      <group>org.osgi</group>
+      <name>org.osgi.annotation.versioning</name>
+      <version>1.1.2</version>
+      <description>OSGi Companion Code for org.osgi.annotation.versioning Version 1.1.2</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">a61b3b8d09c85ad296c61e21bf77ec70</hash>
+        <hash alg="SHA-1">dc3cd4ec96c0b3c5459fe00694bd73a816ecf93e</hash>
+        <hash alg="SHA-256">f51f235e80df8ffbc30ef1b557b6ea38a696632d675404ec117e952978b8b863</hash>
+        <hash alg="SHA-512">a4c612bec624a168f25f0923d51925bbc914686673eeebd5b2442998b876f05855e2b0a6e6e9aca4a6533ed3156b0d24f94c3e508ee9778e1b2e469be318afa3</hash>
+        <hash alg="SHA-384">68a2046f083a2e77304622a56d07c0e73ba88534af4a87b5428cebf8b638c40ce21bbac089a8b5520ad488c946b633ea</hash>
+        <hash alg="SHA3-384">930734f6979650191d51cd8bf1f9ab4548d307950735aa98e2dbda7aecc19b49d01a3b968824f6df2ffafce65e122c60</hash>
+        <hash alg="SHA3-256">513392d0e8ddd873d04c5cf4f402a9cfe094413832bb859fe37b70fd0512dd12</hash>
+        <hash alg="SHA3-512">3d2bd7d2eb784a9fab4b09c42adb0722363079235340f1915bb82a99f1c5e616ee8f3dc34d2c90b941d2651dcb4f393c7fea3e23b579456a696604148d10f22b</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.osgi/org.osgi.annotation.versioning@1.1.2?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://docs.osgi.org/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/osgi/osgi</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.github.spotbugs/spotbugs-annotations@4.8.3?type=jar">
+      <group>com.github.spotbugs</group>
+      <name>spotbugs-annotations</name>
+      <version>4.8.3</version>
+      <description>Annotations the SpotBugs tool supports</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">cd5917b77643c3a7ba5420aea78f940c</hash>
+        <hash alg="SHA-1">05d2dc4ca5b632976371155252499819aea372ed</hash>
+        <hash alg="SHA-256">e5d4f60be8e57595766ba7f1d4535dc46aebf98dae05e16372a4d4120d3ebb6b</hash>
+        <hash alg="SHA-512">1a64f6911a94654d440ce4918395af0cbdee79696acbcf727af79134b02e6be17956fffa8f39e05fa9e22e336041443eb31165b338164b48a1c70f947e66d68b</hash>
+        <hash alg="SHA-384">6875428ea8454185df4ac50b6551f9d9ba7d9152083eec2ecc5046aa464767982abfe0733c258f2dfed9fc3f2ad68add</hash>
+        <hash alg="SHA3-384">25422667753a299021150558bf094a6bd5a521a0b736d94866f807f3246b11a0574e9e480f85c7a894258979afdaedd4</hash>
+        <hash alg="SHA3-256">116a3c20fdd3253ab1cfc1bdc95c8d4eb3c454b3f7d89af1d2b87bde4b890c88</hash>
+        <hash alg="SHA3-512">0e9ee42600abe9496fedc2d82cd71e51fd05f26c0094c1710025d3931b79507a3502a9f9e83fddefeb6ed784123c7faa7251bd58368e78cdcc218481cd05045d</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>LGPL-2.1-only</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.github.spotbugs/spotbugs-annotations@4.8.3?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://spotbugs.github.io/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/spotbugs/spotbugs/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar">
+      <group>com.google.code.findbugs</group>
+      <name>jsr305</name>
+      <version>3.0.2</version>
+      <description>JSR305 Annotations for Findbugs</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">dd83accb899363c32b07d7a1b2e4ce40</hash>
+        <hash alg="SHA-1">25ea2e8b0c338a877313bd4672d3fe056ea78f0d</hash>
+        <hash alg="SHA-256">766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7</hash>
+        <hash alg="SHA-512">bb09db62919a50fa5b55906013be6ca4fc7acb2e87455fac5eaf9ede2e41ce8bbafc0e5a385a561264ea4cd71bbbd3ef5a45e02d63277a201d06a0ae1636f804</hash>
+        <hash alg="SHA-384">ca0b169d3eb2d0922dc031133a021f861a043bb3e405a88728215fd6ff00fa52fdc7347842dcc2031472e3726164bdc4</hash>
+        <hash alg="SHA3-384">9903fd7505218999f8262efedb3d935d64bcef84aae781064ab5e1b24755466b269517cada562fa140cd1d417ede57a1</hash>
+        <hash alg="SHA3-256">223fda9a89a461afaae73b177a2dc20ed4a90f2f8757f5c65f3241b0510f00ff</hash>
+        <hash alg="SHA3-512">3996b5af57a5d5c6a0cd62b11773360fb051dd86a2ba968476806a2a5d32049b82d69a24a3c694e8fe4d735be6a28e41000cc500cc2a9fb577e058045855d2d6</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://findbugs.sourceforge.net/</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://code.google.com/p/jsr-305/</url>
+        </reference>
+      </externalReferences>
+    </component>
+  </components>
+  <dependencies>
+    <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-kubernetes@2.23.1?type=jar">
+      <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.23.1?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-core@2.23.1?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-client@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/biz.aQute.bnd/biz.aQute.bnd.annotation@7.0.0?type=jar"/>
+      <dependency ref="pkg:maven/com.google.errorprone/error_prone_annotations@2.24.1?type=jar"/>
+      <dependency ref="pkg:maven/org.osgi/osgi.annotation@8.1.0?type=jar"/>
+      <dependency ref="pkg:maven/org.osgi/org.osgi.annotation.bundle@2.0.0?type=jar"/>
+      <dependency ref="pkg:maven/com.github.spotbugs/spotbugs-annotations@4.8.3?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.23.1?type=jar"/>
+    <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-core@2.23.1?type=jar">
+      <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.23.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-client@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-rbac@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-admissionregistration@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-apps@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-autoscaling@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-apiextensions@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-batch@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-certificates@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-coordination@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-discovery@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-events@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-extensions@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-flowcontrol@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-networking@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-metrics@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-policy@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-scheduling@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-storageclass@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-node@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.squareup.okhttp3/okhttp@3.12.12?type=jar"/>
+      <dependency ref="pkg:maven/com.squareup.okhttp3/logging-interceptor@3.12.12?type=jar"/>
+      <dependency ref="pkg:maven/org.slf4j/slf4j-api@2.0.9?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml@2.16.1?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.datatype/jackson-datatype-jsr310@2.16.1?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.16.1?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-core@2.16.1?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/zjsonpatch@0.3.0?type=jar"/>
+      <dependency ref="pkg:maven/com.github.mifmif/generex@1.0.2?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar">
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.16.1?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.16.1?type=jar">
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-core@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-core@2.16.1?type=jar"/>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-rbac@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-admissionregistration@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-apps@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-autoscaling@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-apiextensions@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-batch@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-certificates@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-coordination@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-discovery@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-events@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-extensions@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-flowcontrol@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-networking@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-metrics@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-policy@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-scheduling@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-storageclass@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/kubernetes-model-node@5.12.4?type=jar">
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-core@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/io.fabric8/kubernetes-model-common@5.12.4?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/com.squareup.okhttp3/okhttp@3.12.12?type=jar">
+      <dependency ref="pkg:maven/com.squareup.okio/okio@1.15.0?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/com.squareup.okio/okio@1.15.0?type=jar"/>
+    <dependency ref="pkg:maven/com.squareup.okhttp3/logging-interceptor@3.12.12?type=jar">
+      <dependency ref="pkg:maven/com.squareup.okhttp3/okhttp@3.12.12?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.slf4j/slf4j-api@2.0.9?type=jar"/>
+    <dependency ref="pkg:maven/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml@2.16.1?type=jar">
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.16.1?type=jar"/>
+      <dependency ref="pkg:maven/org.yaml/snakeyaml@2.2?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-core@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.yaml/snakeyaml@2.2?type=jar"/>
+    <dependency ref="pkg:maven/com.fasterxml.jackson.datatype/jackson-datatype-jsr310@2.16.1?type=jar">
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.16.1?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-core@2.16.1?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/io.fabric8/zjsonpatch@0.3.0?type=jar">
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.16.1?type=jar"/>
+      <dependency ref="pkg:maven/com.fasterxml.jackson.core/jackson-core@2.16.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/com.github.mifmif/generex@1.0.2?type=jar">
+      <dependency ref="pkg:maven/dk.brics.automaton/automaton@1.11-8?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/dk.brics.automaton/automaton@1.11-8?type=jar"/>
+    <dependency ref="pkg:maven/biz.aQute.bnd/biz.aQute.bnd.annotation@7.0.0?type=jar">
+      <dependency ref="pkg:maven/org.osgi/org.osgi.resource@1.0.0?type=jar"/>
+      <dependency ref="pkg:maven/org.osgi/org.osgi.service.serviceloader@1.0.0?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.osgi/org.osgi.resource@1.0.0?type=jar"/>
+    <dependency ref="pkg:maven/org.osgi/org.osgi.service.serviceloader@1.0.0?type=jar"/>
+    <dependency ref="pkg:maven/com.google.errorprone/error_prone_annotations@2.24.1?type=jar"/>
+    <dependency ref="pkg:maven/org.osgi/osgi.annotation@8.1.0?type=jar"/>
+    <dependency ref="pkg:maven/org.osgi/org.osgi.annotation.bundle@2.0.0?type=jar">
+      <dependency ref="pkg:maven/org.osgi/org.osgi.annotation.versioning@1.1.2?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.osgi/org.osgi.annotation.versioning@1.1.2?type=jar"/>
+    <dependency ref="pkg:maven/com.github.spotbugs/spotbugs-annotations@4.8.3?type=jar">
+      <dependency ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar"/>
+  </dependencies>
+</bom>
