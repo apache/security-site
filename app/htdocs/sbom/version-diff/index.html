@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <style>
+      body {
+        font-family: sans-serif
+      }
+    </style>
+  </head>
+  <body onload="populateArtifacts()">
+    <h1>ASF Dependency Version Diff</h1>
+    This utility shows the differences in dependency versions
+    between different artifacts for which SBOMs were published.
+    <form>
+      <label for="artifact">Artifact</label>
+      <select name="artifact" id="artifact" onchange="populateVersions()">
+      </select>
+      <br>
+      <label for="version">Version</label>
+      <select name="version" id="version" onchange="populateReport()">
+      </select>
+      <label for="version2">...</label>
+      <select name="version2" id="version2" onchange="populateReport()">
+      </select>
+    </form>
+    <div id="report">
+    </div>
+  </body>
+  <script>
+    function populateArtifacts() {
+      const req = new XMLHttpRequest()
+      req.onreadystatechange = function() {
+        if (req.readyState == 4) {
+          if (req.status == 200) {
+            const artifacts = JSON.parse(req.responseText)
+            for (i in artifacts) {
+              const opt = document.createElement('option')
+              opt.value = artifacts[i][0] + '/' + artifacts[i][1]
+              opt.innerHTML = artifacts[i][1]
+              document.getElementById('artifact')
+                .appendChild(opt)
+            }
+            //populateVersions()
+          } else {
+            alert(req.responseText)
+          }
+        }
+      }
+      req.open("GET", "/sbom/artifacts")
+      req.send()
+    }
+    function populateVersions() {
+      document.getElementById('version').innerHTML = ''
+      document.getElementById('version2').innerHTML = ''
+      const req = new XMLHttpRequest()
+      req.onreadystatechange = function() {
+        if (req.readyState == 4) {
+          if (req.status == 200) {
+            const versions = JSON.parse(req.responseText)
+            for (v in versions) {
+              const opt1 = document.createElement('option')
+              opt1.value = versions[v]
+              opt1.innerHTML = versions[v]
+              document.getElementById('version')
+                .appendChild(opt1)
+
+              const opt2 = document.createElement('option')
+              opt2.value = versions[v]
+              opt2.innerHTML = versions[v]
+              document.getElementById('version2')
+                .appendChild(opt2)
+            }
+          } else {
+            alert(req.responseText)
+          }
+          populateReport()
+        }
+      }
+      req.open("GET", "/sbom/versions?artifact=" + document.getElementById('artifact').value)
+      req.send()
+    }
+    function populateReport() {
+      document.getElementById('report').innerHTML = ''
+      const req = new XMLHttpRequest()
+      req.onreadystatechange = function() {
+        if (req.readyState == 4) {
+          if (req.status == 200) {
+            const table = document.createElement('table')
+            table.setAttribute('border', '1')
+            const dependencies = JSON.parse(req.responseText)
+            for (d in dependencies) {
+              const row = document.createElement('tr')
+              const name = document.createElement('td')
+              name.innerHTML= dependencies[d][0]
+              row.appendChild(name)
+              const version = document.createElement('td')
+              version.innerHTML = dependencies[d][1]
+              row.appendChild(version)
+              if (dependencies[d].length > 2) {
+                const version2 = document.createElement('td')
+                version2.innerHTML = dependencies[d][2]
+                row.appendChild(version2)
+              }
+              table.appendChild(row)
+            }
+            document.getElementById('report')
+              .appendChild(table)
+          } else {
+            alert(req.responseText)
+          }
+        }
+      }
+      req.open("GET", "/sbom/tree?artifact=" + document.getElementById('artifact').value + "&version=" + document.getElementById('version').value + "&version2=" + document.getElementById('version2').value)
+      req.send()
+    }
+  </script>
+</html>

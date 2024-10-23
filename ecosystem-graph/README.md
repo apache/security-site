@@ -12,5 +12,5 @@ In the root of the repository, run 'python3 -m ecosystem-graph'. This will
 
 ## Viewing
 
-in `ecosystem-graph`, run `python3 -m http.server --bind 127.0.0.1`
-and visit http://127.0.0.1:8000
+in the root of the repository, run `python3 -m app`
+and visit http://127.0.0.1:8082/sbom/

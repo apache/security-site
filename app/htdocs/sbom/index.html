@@ -28,13 +28,12 @@ body {
 var option;
 const myChart = echarts.init(document.getElementById('main'))
 myChart.showLoading();
-$.get('ecosystem.json', function (webkitDep) {
-  console.log('loaded', webkitDep);
+$.get('ecosystem.json', function (resource) {
+  webkitDep = JSON.parse(resource);
   myChart.hideLoading();
   option = {
     legend: {
       data: webkitDep.categories,
-      //data: [ 'foo', 'bar' ],
       right: 10,
       top: 20,
       bottom: 20
