@@ -30,7 +30,7 @@ def list_sboms():
     return sboms
 
 def simplify_purl(purl):
-    return re.sub(r'_(2.12|2.13|3)$', '', purl.split('@')[0])
+    return re.sub(r'_(2.1.|3)$', '', purl.split('@')[0])
 
 sboms = list_sboms();
 purls = [ simplify_purl(sbom[0]) for sbom in sboms ]
@@ -66,6 +66,8 @@ list(map(parse_sbom, sboms))
 # Hack: remove some 'provided' dependencies causing cycles ;)
 links.remove_edge("pkg:maven/org.apache.commons/commons-lang3", "pkg:maven/org.apache.commons/commons-text")
 links.remove_edge("pkg:maven/org.apache.commons/commons-lang3", "pkg:maven/org.apache.commons/commons-lang3")
+links.remove_edge("pkg:maven/org.apache.camel.kafkaconnector/camel-kafka-connector", "pkg:maven/org.apache.camel.kafkaconnector/camel-kafka-connector")
+links.remove_edge("pkg:maven/org.apache.camel.kamelets/camel-kamelets", "pkg:maven/org.apache.camel.kamelets/camel-kamelets")
 # will probably have to exclude commons-configuration2 depending on hadoop-hdfs-client
 # via commons-vfs once commons-vfs has a release which publishes an SBOM
 links.remove_edge("pkg:maven/org.apache.commons/commons-configuration2", "pkg:maven/org.apache.hadoop/hadoop-hdfs-client")

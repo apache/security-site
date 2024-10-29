@@ -23,8 +23,20 @@ with requests.get("https://camel.apache.org/download/") as res:
           "camel-kamelets": "Apache Camel Kamelets",
           "camel-kafka-connector": "Apache Camel Kafka Connector",
         }[match.group(1)]
+        group_id = {
+          "apache-camel": "org.apache.camel",
+          "apache-camel-quarkus": "org.apache.camel.quarkus",
+          "camel-kamelets": "org.apache.camel.kamelets",
+          "camel-kafka-connector": "org.apache.camel.kafkaconnector",
+        }[match.group(1)]
+        artifact_id = {
+          "apache-camel": "camel",
+          "apache-camel-quarkus": "camel-quarkus",
+          "camel-kamelets": "camel-kamelets",
+          "camel-kafka-connector": "camel-kafka-connector",
+        }[match.group(1)]
         version = match.group(2)
-        sbom = get_sbom_cached(url, f"camel/{name}")
+        sbom = get_sbom_cached(url, f"camel/maven/{group_id}/{artifact_id}/{version}/{name}")
         post_sbom(pmc, pmc['uuid'], friendly_name, version, sbom)
 
 main_sboms = {

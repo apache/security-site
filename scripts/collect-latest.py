@@ -4,11 +4,11 @@ import json
 import os
 import sys
 
-with open("sbom-locations.json") as data:
+with open("scripts/sbom-locations.json") as data:
     locations = json.load(data)
     data.close()
 
-with open("committees.json") as data:
+with open("scripts/committees.json") as data:
     committees = json.load(data)
     data.close()
 if len(sys.argv) > 1:
@@ -58,7 +58,7 @@ def sbom_from_gh(repo):
 
 for committee in committees:
     pmc = committee["id"]
-    bespoke_script = f"./collect-{pmc}-sboms.py"
+    bespoke_script = f"scripts/collect-{pmc}-sboms.py"
     if os.path.exists(bespoke_script):
         print(f"exec'ing {bespoke_script}")
         status = os.system(f"python3 {bespoke_script}")
@@ -67,7 +67,7 @@ for committee in committees:
             exit(1)
     elif pmc in locations and locations[pmc]['type'] == "maven":
         print(f"fetching {pmc} SBOMs from Maven Central")
-        status = os.system(f"python3 collect-maven-sboms.py {pmc}")
+        status = os.system(f"python3 scripts/collect-maven-sboms.py {pmc}")
         if status != 0:
             print(f"Failed to execute {bespoke_script}: {status}")
             exit(1)
