@@ -37,3 +37,30 @@ When editing a user, group or any object in the Syncope Console, HTML tags could
 
 ### Credits
 * Basalt IT-Security Team (finder)
+
+
+## Stored XSS in Console and Enduser ## { #CVE-2024-45031 }
+
+CVE-2024-45031 [\[CVE json\]](./CVE-2024-45031.cve.json) [\[OSV json\]](./CVE-2024-45031.osv.json)
+
+
+
+_Last updated: 2024-10-24T14:21:28.163Z_
+
+### Affected
+
+* Apache Syncope from 2.1 through 2.1.14
+* Apache Syncope from 3.0 through 3.0.8
+
+
+### Description
+
+When editing objects in the Syncope Console, incomplete HTML tags could be used to bypass HTML sanitization. This made it possible to inject stored XSS payloads which would trigger for other users during ordinary usage of the application.<br>XSS payloads could also be injected in Syncope Enduser when editing “Personal Information” or “User Requests”: such payloads would trigger for administrators in Syncope Console, thus enabling session hijacking.<br><br>Users are recommended to upgrade to version 3.0.9, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/fn567pfmo3s55ofkc42drz8b4kgbhp9m
+
+
+### Credits
+* Kasper Karlsson, Omegapoint (finder)
+* Pontus Hanssen, Omegapoint (finder)
