@@ -128,5 +128,5 @@ def to_json(graph):
 #    outfile.write(to_dot(links))
 #with open("ecosystem.dot", "w") as outfile:
 #    outfile.write(to_dot(simplified))
-with open("app/htdocs/sbom/ecosystem.json", "w") as outfile:
+with open("app/htdocs/ecosystem.json", "w") as outfile:
     outfile.write(json.dumps(to_json(simplified)))

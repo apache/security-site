@@ -45,7 +45,7 @@
           }
         }
       }
-      req.open("GET", "/sbom/artifacts")
+      req.open("GET", "/api/artifacts")
       req.send()
     }
     function populateVersions() {
@@ -75,7 +75,7 @@
           populateReport()
         }
       }
-      req.open("GET", "/sbom/versions?artifact=" + document.getElementById('artifact').value)
+      req.open("GET", "/api/versions?artifact=" + document.getElementById('artifact').value)
       req.send()
     }
     function populateReport() {
@@ -109,7 +109,7 @@
           }
         }
       }
-      req.open("GET", "/sbom/tree?artifact=" + document.getElementById('artifact').value + "&version=" + document.getElementById('version').value + "&version2=" + document.getElementById('version2').value)
+      req.open("GET", "/api/tree?artifact=" + document.getElementById('artifact').value + "&version=" + document.getElementById('version').value + "&version2=" + document.getElementById('version2').value)
       req.send()
     }
   </script>
