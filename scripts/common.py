@@ -2,8 +2,9 @@ from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 import json
 import os
+from pathlib import Path
 import requests
-from urllib import request
+from urllib import error, request
 
 load_dotenv()
 dt_api_key = os.getenv('DT_API_KEY')
@@ -22,18 +23,46 @@ def get_dirs(url):
     tags = get_index(url)
     def is_dir(tag):
         return tag.has_attr('href') and tag.get('href').endswith('/')
-    return list(filter(is_dir, tags))
+    def as_str(tag):
+        return tag['href'][:-1]
+    return list(map(as_str, list(filter(is_dir, tags))))
 
 def get_files(url):
     tags = get_index(url)
-    def is_dir(tag):
+    def is_file(tag):
         return tag.has_attr('href') and not tag.get('href').endswith('/')
     def as_dict(tag):
         return {
             'title': tag.get('title'),
             'href': tag.get('href'),
         }
-    return list(map(as_dict, filter(is_dir, tags)))
+    return list(map(as_dict, filter(is_file, tags)))
+
+# Returns (and caches) a None for URLs that are either empty
+# or are not found
+def get_url_cached(url):
+    filename = "cache/" + "".join(x for x in url if x.isalnum())
+    if not os.path.exists(filename):
+        os.makedirs("cache", exist_ok=True)
+        with open(filename, "w") as out:
+            try:
+                with request.urlopen(url) as resp:
+                    response = resp.read().decode('utf-8')
+                    out.write(response)
+                    out.close()
+            except error.HTTPError as e:
+                if e.status == 404:
+                    Path(filename).touch()
+                else:
+                    raise e
+
+    with open(filename, "r") as i:
+        try:
+            return i.read()
+        except Exception as e:
+            print(f"Failed to parse {filename}")
+            print(f"for {url}")
+            raise e
 
 def get_sbom_cached(url, to):
     filename = "sboms/" + to

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from common import get_dirs, get_files, get_sbom_cached, dt_pmc, post_sbom
+from common import get_dirs, get_files, get_url_cached, get_sbom_cached, dt_pmc, post_sbom
 from dotenv import load_dotenv
 import json
 import os
@@ -21,10 +21,26 @@ class Project:
     def __str__(self) -> str:
         return f"Project({self.pmc}, {self.group_id}, {self.artifact_id})"
 
+def get_dirs_cached(url):
+    filename = "cache/dirs-" + "".join(x for x in url if x.isalnum())
+    if not os.path.exists(filename):
+        os.makedirs("cache", exist_ok=True)
+        with open(filename, "w") as out:
+            json.dump(get_dirs(url), out)
+
+    with open(filename, "r") as i:
+        try:
+            return json.load(i)
+        except Exception as e:
+            print(f"Failed to parse {filename}")
+            print(f"for {url}")
+            raise e
+
+def is_project(url):
+    return "versioning" in get_url_cached(f"{url}/maven-metadata.xml")
+
 def maven_projects(pmc, prefix = None, subproject = None):
-    # TODO support deeper hierarchies
-    def is_direct(project):
-        return project.artifact_id.startswith(f'{subproject or pmc}')
+    result = []
 
     prefix = prefix or f"org/apache/{pmc}"
     if subproject:
@@ -32,13 +48,27 @@ def maven_projects(pmc, prefix = None, subproject = None):
     else:
         url = f'https://repo1.maven.org/maven2/{prefix}'
 
-    def as_project(link):
-        return Project(pmc, '.'.join(url.split('/')[4:]), link.get('title')[:-1])
+    def as_project(url):
+        p = Project(pmc, '.'.join(url.split('/')[4:-1]), url.split('/')[-1])
+        print(p)
+        return p
 
-    return list(filter(is_direct, list(map(as_project, get_dirs(url + '/')))))
+    print(f"Looking at {url}")
+    if is_project(url):
+        print(f"Looking at project at {url}")
+        result.append(as_project(url))
+    else:
+        print(f"Looking at projects under {url}")
+        for d in get_dirs_cached(url):
+            if subproject:
+                sub = f"{subproject}/{d}"
+            else:
+                sub = d
+            result = result + maven_projects(pmc, prefix, sub)
+    return result
 
 def get_files_cached(url):
-    filename = "cache/" + "".join(x for x in url if x.isalnum())
+    filename = "cache/files-" + "".join(x for x in url if x.isalnum())
     if not os.path.exists(filename):
         os.makedirs("cache", exist_ok=True)
         with open(filename, "w") as out:
@@ -86,12 +116,10 @@ for project in projects:
     pmc_uuid = dt_pmc(pmc)['uuid']
 
     index = get_dirs(project.url())
-    def version_name(link):
-        return link['title'][:-1]
     def is_version(v):
         # TODO support such versions
         return not 'M' in v and not 'incubating' in v and not 'hadoop' in v and not 'milestone' in v and not 'pre' in v and not len(v) > 15
-    versions = list(filter(is_version, list(map(version_name, index))))
+    versions = list(filter(is_version, index))
 
     # TODO probably good to have a custom version splitter/sorter
     # after all

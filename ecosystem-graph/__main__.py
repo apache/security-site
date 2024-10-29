@@ -99,7 +99,11 @@ def to_json(graph):
             return purls.index(purl)
         except ValueError: 
             purls.append(purl)
-            category = purl.split('/')[1].split('.')[-1]
+            group = purl.split('/')[1]
+            if group.startswith("org.apache"):
+                category = group.split('.')[2]
+            else:
+                category = group.split('.')[-1]
             if category not in categories:
                 categories.append(category)
                 categoryObjects.append({
