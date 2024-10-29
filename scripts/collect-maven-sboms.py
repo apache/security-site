@@ -90,7 +90,7 @@ for project in projects:
         return link['title'][:-1]
     def is_version(v):
         # TODO support such versions
-        return not 'M' in v and not 'incubating' in v and not 'hadoop' in v and not 'milestone' in v and not 'pre' in v and not len(v) > 10
+        return not 'M' in v and not 'incubating' in v and not 'hadoop' in v and not 'milestone' in v and not 'pre' in v and not len(v) > 15
     versions = list(filter(is_version, list(map(version_name, index))))
 
     # TODO probably good to have a custom version splitter/sorter

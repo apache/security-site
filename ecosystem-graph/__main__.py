@@ -51,7 +51,11 @@ def parse_sbom(sbom):
     global links
     sbom_purl = simplify_purl(sbom[0])
     parser = SBOMParser()
-    parser.parse_file(sbom[1])
+    try:
+        parser.parse_file(sbom[1])
+    except Exception as e:
+        print('Error parsing ' + sbom[1])
+        raise e
     for package in parser.get_packages():
         dep_purl = simplify_purl(get_purl(package))
         if dep_purl and dep_purl in purls:
@@ -62,8 +66,21 @@ list(map(parse_sbom, sboms))
 # Hack: remove some 'provided' dependencies causing cycles ;)
 links.remove_edge("pkg:maven/org.apache.commons/commons-lang3", "pkg:maven/org.apache.commons/commons-text")
 links.remove_edge("pkg:maven/org.apache.commons/commons-lang3", "pkg:maven/org.apache.commons/commons-lang3")
-#print(nx.find_cycle(links))
-simplified = nx.transitive_reduction(links)
+# will probably have to exclude commons-configuration2 depending on hadoop-hdfs-client
+# via commons-vfs once commons-vfs has a release which publishes an SBOM
+links.remove_edge("pkg:maven/org.apache.commons/commons-configuration2", "pkg:maven/org.apache.hadoop/hadoop-hdfs-client")
+
+try:
+    simplified = nx.transitive_reduction(links)
+except Exception:
+    print("Found a cyclic dependency.")
+    print('''  Unfortunately this makes it hard to remove 'redundant'
+  transitive links from the graph (e.g. if 'A' depends on 'B' and 'B' depends
+  on 'C', we don't want to see a direct link from 'A' to 'C', and I don't think
+  all SBOM formats allow us to detect this otherwise).''')
+    print("Cycles:")
+    print(nx.find_cycle(links))
+    exit(2)
 
 def to_dot(graph):
     result = "strict graph {\n"
@@ -107,5 +124,9 @@ def to_json(graph):
             "links": links,
     }
 
+#with open("ecosystem-full.dot", "w") as outfile:
+#    outfile.write(to_dot(links))
+#with open("ecosystem.dot", "w") as outfile:
+#    outfile.write(to_dot(simplified))
 with open("app/htdocs/sbom/ecosystem.json", "w") as outfile:
     outfile.write(json.dumps(to_json(simplified)))

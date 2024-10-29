@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bom serialNumber="urn:uuid:fd881f66-938b-4e33-aec1-af8cdc4d3083" version="1" xmlns="http://cyclonedx.org/schema/bom/1.4">
+  <metadata>
+    <timestamp>2024-10-09T16:25:27Z</timestamp>
+    <tools>
+      <tool>
+        <vendor>OWASP Foundation</vendor>
+        <name>CycloneDX Maven plugin</name>
+        <version>2.7.10</version>
+        <hashes>
+          <hash alg="MD5">1cc7f6a0382f8bb2f758d6a6ea401d1b</hash>
+          <hash alg="SHA-1">a4297947a1f2d7d453105db542651614bbd37f38</hash>
+          <hash alg="SHA-256">bd0fdd8f2f2116eee5e715aeac1580f19eb7a10ec2b6f805b53567067658e872</hash>
+          <hash alg="SHA-512">9cde8352a427e10b96cae01348fc7cfe5d4aa9cd0a5e5dd93b414ce3bb7d112993c3b3004e53af52567fbfa16de0704ec59a5556a635ad70571fd124ae389f39</hash>
+          <hash alg="SHA-384">93d7bf5b5c735347edfbfbd66810273ca840f9a322b816d22d44c3d8e8255c09e86570bb23712aeb0cade0f478be5aeb</hash>
+        </hashes>
+      </tool>
+    </tools>
+    <component type="library" bom-ref="pkg:maven/org.apache.hadoop/hadoop-client-check-invariants@3.4.1?type=pom">
+      <publisher>Apache Software Foundation</publisher>
+      <group>org.apache.hadoop</group>
+      <name>hadoop-client-check-invariants</name>
+      <version>3.4.1</version>
+      <description>Enforces our invariants for the api and runtime client modules.
+  E.g. that modules have a specific set of transitive dependencies
+  and shaded artifacts only contain classes that are in particular
+  packages. Does the enforcement through the maven-enforcer-plugin
+  and an integration test.</description>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.hadoop/hadoop-client-check-invariants@3.4.1?type=pom</purl>
+      <externalReferences><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
+    </component>
+    <properties>
+      <property name="maven.goal">makeBom</property>
+      <property name="maven.scopes">compile,provided,runtime,system</property>
+    </properties>
+  </metadata>
+  <components>
+    <component type="library" bom-ref="pkg:maven/org.apache.hadoop/hadoop-client-api@3.4.1?type=jar">
+      <publisher>Apache Software Foundation</publisher>
+      <group>org.apache.hadoop</group>
+      <name>hadoop-client-api</name>
+      <version>3.4.1</version>
+      <description>Apache Hadoop Client</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">ca3ecadd54afd54a1620c9d87cc55ef1</hash>
+        <hash alg="SHA-1">7e4cfae7f5c85cffdbc21fdf749262fc78d4463a</hash>
+        <hash alg="SHA-256">a964d4daa054c9615bbafb4553efbb140fa7fb9ac6f358a24393f183a5703438</hash>
+        <hash alg="SHA-512">d505c0f8cfffcfe0090c69de854c971c7d88646f1f9f31af43ad3934a686dc06ae39250c3c99998ea57a27fc226a0fa5fb4da39867cac3997577ad7ffb01b239</hash>
+        <hash alg="SHA-384">d445f3faf75f0d8d8708c4d15ebe509267e03e1362e826e731cb9e30c911ab54d63c2b5e6328ea847e71a7f3e5ccd696</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.hadoop/hadoop-client-api@3.4.1?type=jar</purl>
+      <externalReferences><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.hadoop/hadoop-annotations@3.4.1?type=jar">
+      <publisher>Apache Software Foundation</publisher>
+      <group>org.apache.hadoop</group>
+      <name>hadoop-annotations</name>
+      <version>3.4.1</version>
+      <description>Apache Hadoop Annotations</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">d60fe895b3e260a8b4dfe318672abb5e</hash>
+        <hash alg="SHA-1">f3deae4653e35daff2362089bc42a90398ed16b3</hash>
+        <hash alg="SHA-256">b29271921faf6e88212f0e9304bf716f466eecff37037d6cb75450ce202c7791</hash>
+        <hash alg="SHA-512">53596d51fd0868eb21ef6cd5ba2816f7d835536c88139ccb13b03463f254fade352127d79de6583bf54cf3bae3bcd3d1ce965e66243a19ee5109d2eb6013b4f5</hash>
+        <hash alg="SHA-384">b3473b0d03a9cc6b211ed4df0532ad4a14ad88e67a6e937e9b51f9e5e7cdba3e108671d16d6d4dd2fdfed9ba2ddf3ce1</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.hadoop/hadoop-annotations@3.4.1?type=jar</purl>
+      <externalReferences><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.xerial.snappy/snappy-java@1.1.10.4?type=jar">
+      <publisher>xerial.org</publisher>
+      <group>org.xerial.snappy</group>
+      <name>snappy-java</name>
+      <version>1.1.10.4</version>
+      <description>snappy-java: A fast compression/decompression library</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">d1d3b91e925c46a1a0f68b87298bafe8</hash>
+        <hash alg="SHA-1">50d0390056017158bdc75c063efd5c2a898d5f0c</hash>
+        <hash alg="SHA-256">55b30c94e5c4cc2d4b6976916098d0678a8a6cc7427fa8c875621bd94e731ac8</hash>
+        <hash alg="SHA-512">9e52bad4eaa0d0a2e0083cdd3433d84c4bb44c4d3f0314a48c3d6eacbb64d0f4fb2d71197944115618a598eb4a4941c13af2a9ec676b003fb3462ddac58bbe41</hash>
+        <hash alg="SHA-384">9539e8eb2dea244f07a7216db38970e3f336b5dc9d132cbe54e201c818dba3e02a1fc467b4529a18eca7127f86d742dd</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.xerial.snappy/snappy-java@1.1.10.4?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://github.com/xerial/snappy-java</url></reference><reference type="vcs"><url>https://github.com/xerial/snappy-java</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.hadoop/hadoop-client-runtime@3.4.1?type=jar">
+      <publisher>Apache Software Foundation</publisher>
+      <group>org.apache.hadoop</group>
+      <name>hadoop-client-runtime</name>
+      <version>3.4.1</version>
+      <description>Apache Hadoop Client</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">b30c1f2d1477803072091dd4378f744d</hash>
+        <hash alg="SHA-1">30ec07ceccb224b2ef17af34fbb593bff3e9e071</hash>
+        <hash alg="SHA-256">f6a800a159f918670db533606d33560d6c13b7e13f14eda493280ae33b9eeb2f</hash>
+        <hash alg="SHA-512">6363e4b786f49c7f7e1efe733000399e781e4827e26f8f22259f2e32f907a37401283aaf5fea201584c6cc8ddba8716c0d305917bb628e3438ed199cb1a3e00a</hash>
+        <hash alg="SHA-384">bddfef7a2e6e1b1f43e9169407a659397ee2fd708bdfa42492b100c622f37e640da3245bd6395aa4f6ceeee2a40b0dc4</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.hadoop/hadoop-client-runtime@3.4.1?type=jar</purl>
+      <externalReferences><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar">
+      <publisher>QOS.ch</publisher>
+      <group>org.slf4j</group>
+      <name>slf4j-api</name>
+      <version>1.7.36</version>
+      <description>The slf4j API</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">872da51f5de7f3923da4de871d57fd85</hash>
+        <hash alg="SHA-1">6c62681a2f655b49963a5983b8b0950a6120ae14</hash>
+        <hash alg="SHA-256">d3ef575e3e4979678dc01bf1dcce51021493b4d11fb7f1be8ad982877c16a1c0</hash>
+        <hash alg="SHA-512">f9b033fc019a44f98b16048da7e2b59edd4a6a527ba60e358f65ab88e0afae03a9340f1b3e8a543d49fa542290f499c5594259affa1ff3e6e7bf3b428d4c610b</hash>
+        <hash alg="SHA-384">2b14ad035877087157e379d3277dcdcd79e58d6bdb147c47d29e377d75ce53ad42cafbf22f5fb7827c7e946ff4876b9a</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+          <url>https://opensource.org/licenses/MIT</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://www.slf4j.org</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="vcs"><url>https://github.com/qos-ch/slf4j/slf4j-api</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/commons-logging/commons-logging@1.2?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>commons-logging</group>
+      <name>commons-logging</name>
+      <version>1.2</version>
+      <description>Apache Commons Logging is a thin adapter allowing configurable bridging to other,
+    well known logging systems.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">040b4b4d8eac886f6b4a2a3bd2f31b00</hash>
+        <hash alg="SHA-1">4bfc12adfe4842bf07b657f0369c4cb522955686</hash>
+        <hash alg="SHA-256">daddea1ea0be0f56978ab3006b8ac92834afeefbd9b7e4e6316fca57df0fa636</hash>
+        <hash alg="SHA-512">ed00dbfabd9ae00efa26dd400983601d076fe36408b7d6520084b447e5d1fa527ce65bd6afdcb58506c3a808323d28e88f26cb99c6f5db9ff64f6525ecdfa557</hash>
+        <hash alg="SHA-384">ac20720d7156131478205f1b454395abf84cfc8da2f163301af32f63bd3c4764bd26cb54ed53800f33193ae591f3ce9c</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/commons-logging/commons-logging@1.2?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://commons.apache.org/proper/commons-logging/</url></reference><reference type="build-system"><url>https://continuum-ci.apache.org/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>http://issues.apache.org/jira/browse/LOGGING</url></reference><reference type="mailing-list"><url>http://mail-archives.apache.org/mod_mbox/commons-user/</url></reference><reference type="vcs"><url>http://svn.apache.org/repos/asf/commons/proper/logging/trunk</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar">
+      <group>com.google.code.findbugs</group>
+      <name>jsr305</name>
+      <version>3.0.2</version>
+      <description>JSR305 Annotations for Findbugs</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">dd83accb899363c32b07d7a1b2e4ce40</hash>
+        <hash alg="SHA-1">25ea2e8b0c338a877313bd4672d3fe056ea78f0d</hash>
+        <hash alg="SHA-256">766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7</hash>
+        <hash alg="SHA-512">bb09db62919a50fa5b55906013be6ca4fc7acb2e87455fac5eaf9ede2e41ce8bbafc0e5a385a561264ea4cd71bbbd3ef5a45e02d63277a201d06a0ae1636f804</hash>
+        <hash alg="SHA-384">ca0b169d3eb2d0922dc031133a021f861a043bb3e405a88728215fd6ff00fa52fdc7347842dcc2031472e3726164bdc4</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://findbugs.sourceforge.net/</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="vcs"><url>https://code.google.com/p/jsr-305/</url></reference></externalReferences>
+    </component>
+  </components>
+  <dependencies>
+    <dependency ref="pkg:maven/org.apache.hadoop/hadoop-client-check-invariants@3.4.1?type=pom">
+      <dependency ref="pkg:maven/org.apache.hadoop/hadoop-client-api@3.4.1?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.hadoop/hadoop-client-runtime@3.4.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.hadoop/hadoop-client-api@3.4.1?type=jar">
+      <dependency ref="pkg:maven/org.apache.hadoop/hadoop-annotations@3.4.1?type=jar"/>
+      <dependency ref="pkg:maven/org.xerial.snappy/snappy-java@1.1.10.4?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.hadoop/hadoop-annotations@3.4.1?type=jar"/>
+    <dependency ref="pkg:maven/org.xerial.snappy/snappy-java@1.1.10.4?type=jar"/>
+    <dependency ref="pkg:maven/org.apache.hadoop/hadoop-client-runtime@3.4.1?type=jar">
+      <dependency ref="pkg:maven/org.apache.hadoop/hadoop-client-api@3.4.1?type=jar"/>
+      <dependency ref="pkg:maven/org.xerial.snappy/snappy-java@1.1.10.4?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.hadoop/hadoop-annotations@3.4.1?type=jar"/>
+      <dependency ref="pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar"/>
+      <dependency ref="pkg:maven/commons-logging/commons-logging@1.2?type=jar"/>
+      <dependency ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar"/>
+    <dependency ref="pkg:maven/commons-logging/commons-logging@1.2?type=jar"/>
+    <dependency ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar"/>
+  </dependencies>
+</bom>

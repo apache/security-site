@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bom serialNumber="urn:uuid:59116f44-bfac-447b-b595-842ea87f7807" version="1" xmlns="http://cyclonedx.org/schema/bom/1.4">
+  <metadata>
+    <timestamp>2024-10-09T14:51:17Z</timestamp>
+    <tools>
+      <tool>
+        <vendor>OWASP Foundation</vendor>
+        <name>CycloneDX Maven plugin</name>
+        <version>2.7.10</version>
+        <hashes>
+          <hash alg="MD5">1cc7f6a0382f8bb2f758d6a6ea401d1b</hash>
+          <hash alg="SHA-1">a4297947a1f2d7d453105db542651614bbd37f38</hash>
+          <hash alg="SHA-256">bd0fdd8f2f2116eee5e715aeac1580f19eb7a10ec2b6f805b53567067658e872</hash>
+          <hash alg="SHA-512">9cde8352a427e10b96cae01348fc7cfe5d4aa9cd0a5e5dd93b414ce3bb7d112993c3b3004e53af52567fbfa16de0704ec59a5556a635ad70571fd124ae389f39</hash>
+          <hash alg="SHA-384">93d7bf5b5c735347edfbfbd66810273ca840f9a322b816d22d44c3d8e8255c09e86570bb23712aeb0cade0f478be5aeb</hash>
+        </hashes>
+      </tool>
+    </tools>
+    <component type="library" bom-ref="pkg:maven/org.apache.hadoop/hadoop-annotations@3.4.1?type=jar">
+      <publisher>Apache Software Foundation</publisher>
+      <group>org.apache.hadoop</group>
+      <name>hadoop-annotations</name>
+      <version>3.4.1</version>
+      <description>Apache Hadoop Annotations</description>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.hadoop/hadoop-annotations@3.4.1?type=jar</purl>
+      <externalReferences><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
+    </component>
+    <properties>
+      <property name="maven.goal">makeBom</property>
+      <property name="maven.scopes">compile,provided,runtime,system</property>
+    </properties>
+  </metadata>
+  <components>
+    <component type="library" bom-ref="pkg:maven/jdiff/jdiff@1.0.9?type=jar">
+      <group>jdiff</group>
+      <name>jdiff</name>
+      <version>1.0.9</version>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">b04a301c786ccc2dea7d57483bd2cab3</hash>
+        <hash alg="SHA-1">1793d3db09705c21e2ce39d2692b313bb92d0e75</hash>
+        <hash alg="SHA-256">6442446bcfd4fab9a7832e7ec637b9cd3b2d78d46fe66a4f1af0a212941711cf</hash>
+        <hash alg="SHA-512">8601eeafeea38719eaa3f4f24b00c5ea7e84ccb9da6caf5fa98a9e7cfe12caaaeb436648108aa94cb994f77d1ddc1ca123cd2cd87f2afe45b554dcaffe8d51ff</hash>
+        <hash alg="SHA-384">c8ce8f4c5a45e119ea75e0c8dc9438304dea2f7d749da266960b6a35f49f6951d8ec23f95b18be033cea90b9660fb309</hash>
+      </hashes>
+      <licenses/>
+      <purl>pkg:maven/jdiff/jdiff@1.0.9?type=jar</purl>
+    </component>
+    <component type="library" bom-ref="pkg:maven/jdk.tools/jdk.tools@1.8?type=jar">
+      <group>jdk.tools</group>
+      <name>jdk.tools</name>
+      <version>1.8</version>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">d28b30698a4fa0d1634efbb00dcc050b</hash>
+        <hash alg="SHA-1">104c3756567bbe4ef501b72c4462323b479ac8c3</hash>
+        <hash alg="SHA-256">0752b0f8d1c422f803f54adad0ee65c3e4a9f5c167b7fd45ae835658661b5223</hash>
+        <hash alg="SHA-512">b7ae2257997009370b27b6a9b67f6d4eba0d8669a071b65e13af0405c322ebc9b235ef5c2709c19540f96cfd29b3d564a6bf8ba5275659aec551b9748c4dcd19</hash>
+        <hash alg="SHA-384">c95a42f1c9e83f0e663dec90fb6856758a9f3be103ed7ffb65597583f92b6a640be37f9e52449ec6c197517fec7ac7fd</hash>
+      </hashes>
+      <purl>pkg:maven/jdk.tools/jdk.tools@1.8?type=jar</purl>
+    </component>
+  </components>
+  <dependencies>
+    <dependency ref="pkg:maven/org.apache.hadoop/hadoop-annotations@3.4.1?type=jar">
+      <dependency ref="pkg:maven/jdiff/jdiff@1.0.9?type=jar"/>
+      <dependency ref="pkg:maven/jdk.tools/jdk.tools@1.8?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/jdiff/jdiff@1.0.9?type=jar"/>
+    <dependency ref="pkg:maven/jdk.tools/jdk.tools@1.8?type=jar"/>
+  </dependencies>
+</bom>

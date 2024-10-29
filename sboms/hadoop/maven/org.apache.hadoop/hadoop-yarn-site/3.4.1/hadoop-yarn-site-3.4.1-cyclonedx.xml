@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bom serialNumber="urn:uuid:074fd702-9168-401b-8be4-d08c2b95f12b" version="1" xmlns="http://cyclonedx.org/schema/bom/1.4">
+  <metadata>
+    <timestamp>2024-10-09T15:56:18Z</timestamp>
+    <tools>
+      <tool>
+        <vendor>OWASP Foundation</vendor>
+        <name>CycloneDX Maven plugin</name>
+        <version>2.7.10</version>
+        <hashes>
+          <hash alg="MD5">1cc7f6a0382f8bb2f758d6a6ea401d1b</hash>
+          <hash alg="SHA-1">a4297947a1f2d7d453105db542651614bbd37f38</hash>
+          <hash alg="SHA-256">bd0fdd8f2f2116eee5e715aeac1580f19eb7a10ec2b6f805b53567067658e872</hash>
+          <hash alg="SHA-512">9cde8352a427e10b96cae01348fc7cfe5d4aa9cd0a5e5dd93b414ce3bb7d112993c3b3004e53af52567fbfa16de0704ec59a5556a635ad70571fd124ae389f39</hash>
+          <hash alg="SHA-384">93d7bf5b5c735347edfbfbd66810273ca840f9a322b816d22d44c3d8e8255c09e86570bb23712aeb0cade0f478be5aeb</hash>
+        </hashes>
+      </tool>
+    </tools>
+    <component type="library" bom-ref="pkg:maven/org.apache.hadoop/hadoop-yarn-site@3.4.1?type=pom">
+      <publisher>Apache Software Foundation</publisher>
+      <group>org.apache.hadoop</group>
+      <name>hadoop-yarn-site</name>
+      <version>3.4.1</version>
+      <description>Apache Hadoop Project POM</description>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.hadoop/hadoop-yarn-site@3.4.1?type=pom</purl>
+      <externalReferences><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
+    </component>
+    <properties>
+      <property name="maven.goal">makeBom</property>
+      <property name="maven.scopes">compile,provided,runtime,system</property>
+    </properties>
+  </metadata>
+  <dependencies>
+    <dependency ref="pkg:maven/org.apache.hadoop/hadoop-yarn-site@3.4.1?type=pom"/>
+  </dependencies>
+</bom>
