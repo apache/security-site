@@ -123,6 +123,25 @@
 <ul>
 <li>Basalt IT-Security Team (finder)</li>
 </ul>
+<h2 id="CVE-2024-45031">Stored XSS in Console and Enduser</h2>
+<p>CVE-2024-45031 <a href="./CVE-2024-45031.cve.json">[CVE json]</a> <a href="./CVE-2024-45031.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-10-24T14:21:28.163Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Syncope from 2.1 through 2.1.14</li>
+<li>Apache Syncope from 3.0 through 3.0.8</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>When editing objects in the Syncope Console, incomplete HTML tags could be used to bypass HTML sanitization. This made it possible to inject stored XSS payloads which would trigger for other users during ordinary usage of the application.<br>XSS payloads could also be injected in Syncope Enduser when editing “Personal Information” or “User Requests”: such payloads would trigger for administrators in Syncope Console, thus enabling session hijacking.<br><br>Users are recommended to upgrade to version 3.0.9, which fixes this issue.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/fn567pfmo3s55ofkc42drz8b4kgbhp9m">https://lists.apache.org/thread/fn567pfmo3s55ofkc42drz8b4kgbhp9m</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Kasper Karlsson, Omegapoint (finder)</li>
+<li>Pontus Hanssen, Omegapoint (finder)</li>
+</ul>
 
   
 </div>
