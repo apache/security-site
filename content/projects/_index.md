@@ -30,6 +30,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache bRPC |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Calcite |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Camel](https://camel.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://camel.apache.org/security/) |
+| [Apache Carbondata](https://carbondata.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Cassandra |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Cayenne |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache CloudStack](https://cloudstack.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | |
