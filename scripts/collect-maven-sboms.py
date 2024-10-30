@@ -57,9 +57,9 @@ def maven_projects(pmc, prefix = None, subproject = None):
     if is_project(url):
         print(f"Looking at project at {url}")
         result.append(as_project(url))
-    else:
-        print(f"Looking at projects under {url}")
-        for d in get_dirs_cached(url):
+    print(f"Looking at projects under {url}")
+    for d in get_dirs_cached(url):
+        if not d[0].isnumeric():
             if subproject:
                 sub = f"{subproject}/{d}"
             else:
@@ -103,7 +103,7 @@ elif pmc == 'pekko':
     def eligible(project):
         # these publish CycloneDX 1.0 XML artifacts
         # without a 'components' tag, which is not valid
-        return not (project.startswith("pekko-bom") or project.startswith("pekko-protobuf-v3"))
+        return not (project.artifact_id.startswith("pekko-bom") or project.artifact_id.startswith("pekko-protobuf-v3"))
     projects = list(filter(eligible, maven_projects(pmc)))
 elif pmc == 'commons':
     projects = maven_projects(pmc) + maven_projects(pmc, prefix = "commons-io")
@@ -118,7 +118,7 @@ for project in projects:
     index = get_dirs(project.url())
     def is_version(v):
         # TODO support such versions
-        return not 'M' in v and not 'incubating' in v and not 'hadoop' in v and not 'milestone' in v and not 'pre' in v and not len(v) > 15
+        return v[0].isnumeric() and not 'M' in v and not 'incubating' in v and not 'hadoop' in v and not 'milestone' in v and not 'pre' in v and not len(v) > 15
     versions = list(filter(is_version, index))
 
     # TODO probably good to have a custom version splitter/sorter
@@ -137,7 +137,7 @@ for project in projects:
         def is_sbom(name):
             # tighten to '-cyclonedx.xml' when Pekko is released with
             # https://github.com/apache/pekko/pull/1536
-            return name and (name.endswith('-cyclonedx.json') or (name.endswith('.xml') and not name.endswith('site.xml') and not name.endswith('metadata.xml')))
+            return name and (name.endswith('-cyclonedx.json') or (name.endswith('.xml') and not name.endswith('site.xml') and not name.endswith('metadata.xml') and not name.endswith('features.xml')))
         sboms = list(filter(is_sbom, map(file_name, index)))
         if sboms:
             sbom = sboms[0]

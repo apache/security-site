@@ -1,0 +1,118 @@
+{
+  "bomFormat" : "CycloneDX",
+  "specVersion" : "1.5",
+  "serialNumber" : "urn:uuid:5e55236b-6c48-377b-a4f2-2b2142219a34",
+  "version" : 1,
+  "metadata" : {
+    "lifecycles" : [
+      {
+        "phase" : "build"
+      }
+    ],
+    "tools" : {
+      "components" : [
+        {
+          "author" : "OWASP Foundation",
+          "group" : "org.cyclonedx",
+          "name" : "cyclonedx-maven-plugin",
+          "version" : "2.8.2",
+          "description" : "CycloneDX Maven plugin",
+          "hashes" : [
+            {
+              "alg" : "MD5",
+              "content" : "3bb2c0a57386c1551f09c3328474c1b6"
+            },
+            {
+              "alg" : "SHA-1",
+              "content" : "3b287e981e81263165b606ca210ed42a9f6bced1"
+            },
+            {
+              "alg" : "SHA-256",
+              "content" : "37fab69d06c0d402de9fe600381f63bb5b98f864ea8589c52d71bbd6dd60d293"
+            },
+            {
+              "alg" : "SHA-512",
+              "content" : "f65b4722540a930422d4a28cb54c982dbe01fdb41717c3b95e9836137856cabed2b836b1b9e0394798d99e9973ce6931c61675cbed859238cab1a99d3063786f"
+            },
+            {
+              "alg" : "SHA-384",
+              "content" : "55fc5a528d5fd426d306f26e6a73fd8cf9e779a101f31591ca084c8f615d8073d80cc24ee04ea1df209051842e481080"
+            },
+            {
+              "alg" : "SHA3-384",
+              "content" : "888b88d83887fe1e3c62f6ab3f11501ae4e97dfc0d954b6eec3b0133dfccb92e984a6ace18fb6965cf215e0cd01de9aa"
+            },
+            {
+              "alg" : "SHA3-256",
+              "content" : "26a3386e02289680b9e6d24900824d52a35238ce76cb0e67ba3090fc638f269b"
+            },
+            {
+              "alg" : "SHA3-512",
+              "content" : "a229e418d8af12002e51e39bf1201b7ea86a9a883386524386383454e970cc3cfb44cb1020022ff91e96349d8db8575768052e1bbaf415478e8e99d9e4e22d0f"
+            }
+          ],
+          "type" : "library"
+        }
+      ]
+    },
+    "component" : {
+      "publisher" : "Apache Jena",
+      "group" : "org.apache.jena",
+      "name" : "jena-fuseki",
+      "version" : "5.2.0",
+      "description" : "Fuseki is a SPARQL 1.1 Server which provides the SPARQL query, SPARQL update and SPARQL graph store protocols.",
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.jena/jena-fuseki@5.2.0?type=pom",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://jena.apache.org/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/JENA"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@jena.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf/jena.git/jena-fuseki"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.jena/jena-fuseki@5.2.0?type=pom"
+    },
+    "properties" : [
+      {
+        "name" : "maven.goal",
+        "value" : "makeBom"
+      },
+      {
+        "name" : "maven.scopes",
+        "value" : "compile,provided,runtime,system"
+      },
+      {
+        "name" : "cdx:reproducible",
+        "value" : "enabled"
+      }
+    ]
+  },
+  "dependencies" : [
+    {
+      "ref" : "pkg:maven/org.apache.jena/jena-fuseki@5.2.0?type=pom",
+      "dependsOn" : [ ]
+    }
+  ]
+}
