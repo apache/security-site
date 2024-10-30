@@ -137,7 +137,7 @@ for project in projects:
         def is_sbom(name):
             # tighten to '-cyclonedx.xml' when Pekko is released with
             # https://github.com/apache/pekko/pull/1536
-            return name.endswith('-cyclonedx.json') or (name.endswith('.xml') and not name.endswith('site.xml') and not name.endswith('metadata.xml'))
+            return name and (name.endswith('-cyclonedx.json') or (name.endswith('.xml') and not name.endswith('site.xml') and not name.endswith('metadata.xml')))
         sboms = list(filter(is_sbom, map(file_name, index)))
         if sboms:
             sbom = sboms[0]
