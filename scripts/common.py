@@ -75,7 +75,7 @@ def get_sbom_cached(url, to):
         return i.read()
 
 def get_dt_projects():
-    req = request.Request('https://security-tools-ec2-va.apache.org/api/v1/project?excludeInactive=true&onlyRoot=false&pageSize=1000&pageNumber=1')
+    req = request.Request('https://security-tools-ec2-va.apache.org/api/v1/project?excludeInactive=true&onlyRoot=false&pageSize=2000&pageNumber=1')
     req.add_header('X-Api-Key', dt_api_key)
     with request.urlopen(req) as res:
         projects = {}

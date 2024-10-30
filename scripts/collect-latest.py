@@ -69,7 +69,7 @@ for committee in committees:
         print(f"fetching {pmc} SBOMs from Maven Central")
         status = os.system(f"python3 scripts/collect-maven-sboms.py {pmc}")
         if status != 0:
-            print(f"Failed to execute {bespoke_script}: {status}")
+            print(f"Failed to execute collect-maven-sboms.py {pmc}: {status}")
             exit(1)
     else:
         print("Fetching sbom from GitHub is not supported, https://github.com/DependencyTrack/dependency-track/discussions/1222")
