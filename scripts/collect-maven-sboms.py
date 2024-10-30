@@ -97,6 +97,8 @@ elif pmc == 'camel':
     projects = [
       'springboot/spring-boot',
     ]
+elif pmc == 'commons':
+    projects = maven_projects(pmc) + maven_projects(pmc, prefix = "commons-io") + maven_projects(pmc, prefix = "org/apache/bcel")
 elif pmc == 'logging':
     projects = maven_projects(pmc, subproject = 'log4j')
 elif pmc == 'pekko':
@@ -105,8 +107,10 @@ elif pmc == 'pekko':
         # without a 'components' tag, which is not valid
         return not (project.artifact_id.startswith("pekko-bom") or project.artifact_id.startswith("pekko-protobuf-v3"))
     projects = list(filter(eligible, maven_projects(pmc)))
-elif pmc == 'commons':
-    projects = maven_projects(pmc) + maven_projects(pmc, prefix = "commons-io")
+elif pmc == 'turbine':
+    projects = maven_projects(pmc) + maven_projects(pmc, prefix = "org/apache/fulcrum")
+elif pmc == 'wc':
+    projects = maven_projects(pmc) + maven_projects(pmc, prefix = "org/apache/wss4j")
 else:
     projects = maven_projects(pmc)
 
@@ -125,7 +129,7 @@ for project in projects:
     # after all
     def parse_version(s):
         from itertools import takewhile
-        return Version("".join(takewhile(lambda c: c != '-', s)).replace(".Final", ""))
+        return Version("".join(takewhile(lambda c: c != '-', s)).replace(".Final", "").replace(".v", "."))
 
     versions.sort(key=parse_version)
     if versions:
@@ -137,7 +141,7 @@ for project in projects:
         def is_sbom(name):
             # tighten to '-cyclonedx.xml' when Pekko is released with
             # https://github.com/apache/pekko/pull/1536
-            return name and (name.endswith('-cyclonedx.json') or (name.endswith('.xml') and not name.endswith('site.xml') and not name.endswith('metadata.xml') and not name.endswith('features.xml')))
+            return name and (name.endswith('-cyclonedx.json') or name.endswith('-cyclonedx.xml') or (name.startswith('pekko') and name.endswith('xml')))
         sboms = list(filter(is_sbom, map(file_name, index)))
         if sboms:
             sbom = sboms[0]

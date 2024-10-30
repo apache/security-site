@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bom serialNumber="urn:uuid:cee2b4ac-0a56-34ae-b475-0d08bafd69e6" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
+  <metadata>
+    <lifecycles>
+      <lifecycle>
+        <phase>build</phase>
+      </lifecycle>
+    </lifecycles>
+    <tools>
+      <tool>
+        <vendor>OWASP Foundation</vendor>
+        <name>CycloneDX Maven plugin</name>
+        <version>2.8.0</version>
+        <hashes>
+          <hash alg="MD5">76ffec6a7ddd46b2b24517411874eb99</hash>
+          <hash alg="SHA-1">5b0d5b41975b53be4799b9621b4af0cfc41d44b6</hash>
+          <hash alg="SHA-256">6852aa0f4e42a2db745bab80e384951a6a65b9215d041081d675780999027e81</hash>
+          <hash alg="SHA-512">417de20fcdcb11c9713bacbd57290d8e68037fdb4553fd31b8cb08bd760ad52dc65ea88ad4be15844ad3fd5a4d3e440d2f70326f2fe1e63ec78e059c9a883f8d</hash>
+          <hash alg="SHA-384">5eb755c6492e7a7385fa9a1e1f4517875bcb834b2df437808a37a2d6f5285df428741762305980315a63fcef1406597d</hash>
+          <hash alg="SHA3-384">0fe16a47cf7aab0b22251dafcc39939b68e8f1778093309d8d2060b51a08df445a8b8ed5a9561669faf2e55f907c76d8</hash>
+          <hash alg="SHA3-256">3e5a1eb5ab7d0797498862794709ff8eaaa071fe4cc9ec77f52db7e2f97ef487</hash>
+          <hash alg="SHA3-512">59281a3e29e76270d7f44b40b5b9f05e55f1ae3ec716d80add806f360940809e3813998ac7c5758043b8e248aed73b86e37dc506cdb4cde03c16bb617d8e5a3a</hash>
+        </hashes>
+      </tool>
+    </tools>
+    <component type="library" bom-ref="pkg:maven/org.apache.jspwiki.it/jspwiki-it-test-cma-jdbc@2.12.2?type=war">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.jspwiki.it</group>
+      <name>jspwiki-it-test-cma-jdbc</name>
+      <version>2.12.2</version>
+      <description>functional tests execution for jspwiki-it-test-container-jdbc (container auth, relative URLs, JDBC database)</description>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.jspwiki.it/jspwiki-it-test-cma-jdbc@2.12.2?type=war</purl>
+      <externalReferences><reference type="vulnerability-assertion"><url>https://jspwiki.apache.org/cyclonedx/vdr.xml</url></reference><reference type="website"><url>https://jspwiki.apache.org/jspwiki-it-builder/jspwiki-it-test-cma-jdbc/</url></reference><reference type="build-system"><url>https://builds.apache.org/job/JSPWiki</url></reference><reference type="distribution-intake"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>http://issues.apache.org/jira/browse/JSPWIKI</url></reference><reference type="mailing-list"><url>http://mail-archives.apache.org/mod_mbox/jspwiki-dev/</url></reference><reference type="vcs"><url>https://github.com/apache/jspwiki/jspwiki-it-builder/jspwiki-it-test-cma-jdbc</url></reference></externalReferences>
+    </component>
+    <properties>
+      <property name="maven.goal">makeBom</property>
+      <property name="maven.scopes">compile,provided,runtime,system</property>
+      <property name="cdx:reproducible">enabled</property>
+    </properties>
+  </metadata>
+  <components>
+    <component type="library" bom-ref="pkg:maven/org.apache.jspwiki/jspwiki-war@2.12.2?type=war">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.jspwiki</group>
+      <name>jspwiki-war</name>
+      <version>2.12.2</version>
+      <description>Apache JSPWiki is a leading open source WikiWiki engine, feature-rich
+    and built around standard JEE components (Java, servlets, JSP).</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">bd6bde109da7102612105489109248ee</hash>
+        <hash alg="SHA-1">36f998ca44ebc3d646c617daafc1bfbf2a83cb07</hash>
+        <hash alg="SHA-256">96689ae5b98ace5b30a63dc5c93a8b42049a57bd840dbdcbe66ff7b0250a29d4</hash>
+        <hash alg="SHA-512">b6b032b1c56f15cdcc82e0af20376a3a915702619c4822935cb58e2c926ccafe2ca2ac757c3bfc6a2b7fb4a9ab0658f5f7c329a33f8f53245df5a061d6cfa148</hash>
+        <hash alg="SHA-384">1729df79ea9a193035935bbb9e01382c11339f01f6c3ec334a4af99a035a1935c2de0001f5f1a9fc94b931ad47bafc0e</hash>
+        <hash alg="SHA3-384">97a7517465f924071d3474d463b7692d3804bd4daa2dfa74932fcc23538eb3809dae4ee5adc7eb1052f7bba9c80176c0</hash>
+        <hash alg="SHA3-256">a8f34648a7d5c6ed0b2fc097271759432e5e3fe342a6ff8c38307adaf79a5f8a</hash>
+        <hash alg="SHA3-512">446308d8b1d5ca71859cf762b247a62608d99572f0fc25af695f4bac02ae39ca36dd237787d29cc9f638d5ff96f36af07b3819a4ab625d556ef4d8efa78c2d4c</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.jspwiki/jspwiki-war@2.12.2?type=war</purl>
+      <externalReferences><reference type="website"><url>https://jspwiki.apache.org/jspwiki-war/</url></reference><reference type="build-system"><url>https://builds.apache.org/job/JSPWiki</url></reference><reference type="distribution-intake"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>http://issues.apache.org/jira/browse/JSPWIKI</url></reference><reference type="mailing-list"><url>http://mail-archives.apache.org/mod_mbox/jspwiki-dev/</url></reference><reference type="vcs"><url>https://github.com/apache/jspwiki/jspwiki-war</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.hsqldb/hsqldb@2.7.2?classifier=jdk8&amp;type=jar">
+      <publisher>The HSQL Development Group</publisher>
+      <group>org.hsqldb</group>
+      <name>hsqldb</name>
+      <version>2.7.2</version>
+      <description>HSQLDB - Lightweight 100% Java SQL Database Engine</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">b25017073fc04b09ac4a15344febed2b</hash>
+        <hash alg="SHA-1">56abc2511747c4e117627b6ed05d6eaafd42fa5f</hash>
+        <hash alg="SHA-256">5d33ef96b9c110847362664a731d4d64e95c405bbf0f209a493ce5ca0f1e160f</hash>
+        <hash alg="SHA-512">c784345c52481e6dc6ada1e3ac993e4f6157d7f9c13f0ba7916eeda241aa73c0fc7ff9a541eb1546e3f65acbcb61f6ab5a26f87024ec0a3c85c13025a15d8708</hash>
+        <hash alg="SHA-384">e037d1c01cfa89285e225a85b60d2ecc25a1a8c209169dc42fa2f4c9fcb5b5dde28307894984a9130585fb66a00904e1</hash>
+        <hash alg="SHA3-384">e32687788f1c40b128b8130a21e99926cce4dfb00848b89d1d585a265026fe785612ca9967fa12276a933470c046a9e7</hash>
+        <hash alg="SHA3-256">45d9e443edfe2bde3a521c8ec15ec9b304550448f0df10f55a97ae28b4ce6449</hash>
+        <hash alg="SHA3-512">eca28c9854f05d871b1b2b0edef12fc19eb5fa68d53278554d225f254edf623010adbe0a71f99022129c0ac56e1f44ed03e5155a65b1091f0478b74d98eaeb02</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <name>HSQLDB License, a BSD open source license</name>
+          <url>http://hsqldb.org/web/hsqlLicense.html</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.hsqldb/hsqldb@2.7.2?classifier=jdk8&amp;type=jar</purl>
+      <externalReferences><reference type="website"><url>http://hsqldb.org</url></reference><reference type="vcs"><url>http://sourceforge.net/p/hsqldb/svn/HEAD/tree/base/tags/2.7.2</url></reference></externalReferences>
+    </component>
+  </components>
+  <dependencies>
+    <dependency ref="pkg:maven/org.apache.jspwiki.it/jspwiki-it-test-cma-jdbc@2.12.2?type=war">
+      <dependency ref="pkg:maven/org.apache.jspwiki/jspwiki-war@2.12.2?type=war"/>
+      <dependency ref="pkg:maven/org.hsqldb/hsqldb@2.7.2?classifier=jdk8&amp;type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.jspwiki/jspwiki-war@2.12.2?type=war"/>
+    <dependency ref="pkg:maven/org.hsqldb/hsqldb@2.7.2?classifier=jdk8&amp;type=jar"/>
+  </dependencies>
+</bom>

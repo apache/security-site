@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bom serialNumber="urn:uuid:9160e3cb-f29b-3b3e-924b-27bb711b489a" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
+  <metadata>
+    <lifecycles>
+      <lifecycle>
+        <phase>build</phase>
+      </lifecycle>
+    </lifecycles>
+    <tools>
+      <tool>
+        <vendor>OWASP Foundation</vendor>
+        <name>CycloneDX Maven plugin</name>
+        <version>2.8.0</version>
+        <hashes>
+          <hash alg="MD5">76ffec6a7ddd46b2b24517411874eb99</hash>
+          <hash alg="SHA-1">5b0d5b41975b53be4799b9621b4af0cfc41d44b6</hash>
+          <hash alg="SHA-256">6852aa0f4e42a2db745bab80e384951a6a65b9215d041081d675780999027e81</hash>
+          <hash alg="SHA-512">417de20fcdcb11c9713bacbd57290d8e68037fdb4553fd31b8cb08bd760ad52dc65ea88ad4be15844ad3fd5a4d3e440d2f70326f2fe1e63ec78e059c9a883f8d</hash>
+          <hash alg="SHA-384">5eb755c6492e7a7385fa9a1e1f4517875bcb834b2df437808a37a2d6f5285df428741762305980315a63fcef1406597d</hash>
+          <hash alg="SHA3-384">0fe16a47cf7aab0b22251dafcc39939b68e8f1778093309d8d2060b51a08df445a8b8ed5a9561669faf2e55f907c76d8</hash>
+          <hash alg="SHA3-256">3e5a1eb5ab7d0797498862794709ff8eaaa071fe4cc9ec77f52db7e2f97ef487</hash>
+          <hash alg="SHA3-512">59281a3e29e76270d7f44b40b5b9f05e55f1ae3ec716d80add806f360940809e3813998ac7c5758043b8e248aed73b86e37dc506cdb4cde03c16bb617d8e5a3a</hash>
+        </hashes>
+      </tool>
+    </tools>
+    <component type="library" bom-ref="pkg:maven/org.apache.jspwiki/jspwiki-portable@2.12.2?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.jspwiki</group>
+      <name>jspwiki-portable</name>
+      <version>2.12.2</version>
+      <description>Apache JSPWiki is a leading open source WikiWiki engine, feature-rich
+    and built around standard JEE components (Java, servlets, JSP).</description>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.jspwiki/jspwiki-portable@2.12.2?type=jar</purl>
+      <externalReferences><reference type="vulnerability-assertion"><url>https://jspwiki.apache.org/cyclonedx/vdr.xml</url></reference><reference type="website"><url>https://jspwiki.apache.org/jspwiki-portable/</url></reference><reference type="build-system"><url>https://builds.apache.org/job/JSPWiki</url></reference><reference type="distribution-intake"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>http://issues.apache.org/jira/browse/JSPWIKI</url></reference><reference type="mailing-list"><url>http://mail-archives.apache.org/mod_mbox/jspwiki-dev/</url></reference><reference type="vcs"><url>https://github.com/apache/jspwiki/jspwiki-portable</url></reference></externalReferences>
+    </component>
+    <properties>
+      <property name="maven.goal">makeBom</property>
+      <property name="maven.scopes">compile,provided,runtime,system</property>
+      <property name="cdx:reproducible">enabled</property>
+    </properties>
+  </metadata>
+  <components>
+    <component type="library" bom-ref="pkg:maven/org.apache.jspwiki/jspwiki-war@2.12.2?type=war">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.jspwiki</group>
+      <name>jspwiki-war</name>
+      <version>2.12.2</version>
+      <description>Apache JSPWiki is a leading open source WikiWiki engine, feature-rich
+    and built around standard JEE components (Java, servlets, JSP).</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">bd6bde109da7102612105489109248ee</hash>
+        <hash alg="SHA-1">36f998ca44ebc3d646c617daafc1bfbf2a83cb07</hash>
+        <hash alg="SHA-256">96689ae5b98ace5b30a63dc5c93a8b42049a57bd840dbdcbe66ff7b0250a29d4</hash>
+        <hash alg="SHA-512">b6b032b1c56f15cdcc82e0af20376a3a915702619c4822935cb58e2c926ccafe2ca2ac757c3bfc6a2b7fb4a9ab0658f5f7c329a33f8f53245df5a061d6cfa148</hash>
+        <hash alg="SHA-384">1729df79ea9a193035935bbb9e01382c11339f01f6c3ec334a4af99a035a1935c2de0001f5f1a9fc94b931ad47bafc0e</hash>
+        <hash alg="SHA3-384">97a7517465f924071d3474d463b7692d3804bd4daa2dfa74932fcc23538eb3809dae4ee5adc7eb1052f7bba9c80176c0</hash>
+        <hash alg="SHA3-256">a8f34648a7d5c6ed0b2fc097271759432e5e3fe342a6ff8c38307adaf79a5f8a</hash>
+        <hash alg="SHA3-512">446308d8b1d5ca71859cf762b247a62608d99572f0fc25af695f4bac02ae39ca36dd237787d29cc9f638d5ff96f36af07b3819a4ab625d556ef4d8efa78c2d4c</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.jspwiki/jspwiki-war@2.12.2?type=war</purl>
+      <externalReferences><reference type="website"><url>https://jspwiki.apache.org/jspwiki-war/</url></reference><reference type="build-system"><url>https://builds.apache.org/job/JSPWiki</url></reference><reference type="distribution-intake"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>http://issues.apache.org/jira/browse/JSPWIKI</url></reference><reference type="mailing-list"><url>http://mail-archives.apache.org/mod_mbox/jspwiki-dev/</url></reference><reference type="vcs"><url>https://github.com/apache/jspwiki/jspwiki-war</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.89?type=jar">
+      <group>org.apache.tomcat.embed</group>
+      <name>tomcat-embed-core</name>
+      <version>9.0.89</version>
+      <description>Core Tomcat implementation</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">9d30637d6809cc0028b59b6e9b8f1c4f</hash>
+        <hash alg="SHA-1">2fec80e8887ed9fc13bfa488a8058126de22cc84</hash>
+        <hash alg="SHA-256">0eab6ad013d6bd2160ca82b17494dab5377c84827bc49c0f244ab4238319319a</hash>
+        <hash alg="SHA-512">8901e5e44433534817876ef66b179fc3ee93cdabc36b030a2092686bf79efb2bea8afc2c6352bed342f9b08f2546c008dd465160b1b77b0ed84ce753d4359023</hash>
+        <hash alg="SHA-384">18310778af80cadaaaa2d26d538d3f7a4e223ef6eca9cb491c6dc87adc2e14a37148312e1fd9ac3cf1f1a285dda9e04c</hash>
+        <hash alg="SHA3-384">cbccdb1750ce619d15b02e509ef1363f7f66481ffd116e5c032f3d3654c0ea89a655aa1253146d581628effd56a6ec67</hash>
+        <hash alg="SHA3-256">dddbedf7b27e4aac8b3a778956bc43c3181de49c317ca1c859cbe0d1da3feed6</hash>
+        <hash alg="SHA3-512">9c51b9c374bfe49c1be27be2901dfdacf915cc0d4308fc26d8a8e2966d827b772ddea5f6fa58af5433b9a40ce0b05b63a36aa2f769cec85473bc184927f0727b</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.89?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://tomcat.apache.org/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.tomcat/tomcat-annotations-api@9.0.89?type=jar">
+      <group>org.apache.tomcat</group>
+      <name>tomcat-annotations-api</name>
+      <version>9.0.89</version>
+      <description>Annotations Package</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">b4309e19bc21787e2fc5846666570a43</hash>
+        <hash alg="SHA-1">5b82217549d600eb54bc5affa34b28e8feb78e35</hash>
+        <hash alg="SHA-256">8d7816dce287e92a6abac2987915c750550d8ca454e311a072ebfde38e23a148</hash>
+        <hash alg="SHA-512">d5fffc5347013d0ce13dbde973b91f6f9f6bd5ce6e5d236fc88679341d7f6e5eb5467130fdb0a5c325bb95600a9de240f47384be590c8469be46629f7ef3215a</hash>
+        <hash alg="SHA-384">29721ddc16f459a4e428ec16bfa214414410cfc3946c5fcf6d33ce10f1861f4dbdd0f6783acdb5d221f02f18dc6ab8d5</hash>
+        <hash alg="SHA3-384">6757b5d73ead6f89de406cd52a6cc0cb59d797903e1433a6b94c775e2f5309f4f156c48b86fd0fa16892709f12b14849</hash>
+        <hash alg="SHA3-256">6b658e4746747584d0a4a6700301c270c4964a933ae7a653d6ab33ed714433c1</hash>
+        <hash alg="SHA3-512">42db7bdafdb158ca6a8d09eb5f4c4863e395c89d10994d7012f9c5f28bfb120feec64d2b4fab620769eaadb34bfde10118178b657affb5a9e2efb8666485bb05</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.tomcat/tomcat-annotations-api@9.0.89?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://tomcat.apache.org/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.tomcat/tomcat-jsp-api@9.0.89?type=jar">
+      <group>org.apache.tomcat</group>
+      <name>tomcat-jsp-api</name>
+      <version>9.0.89</version>
+      <description>JSP package</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">998a22421448a1b3cf75fc6e973bd081</hash>
+        <hash alg="SHA-1">5a51d96bb3e145ce531bca18858ff31c8d90f554</hash>
+        <hash alg="SHA-256">4d10e2d83d849555dedd4eb1950ffbcfedb68c39ef9e1a6d755e03407d1a3bda</hash>
+        <hash alg="SHA-512">0b174cf2b3dde3bb768ec9af60429572bd1e1c1a009173406f60113c3ca0165216f1d235d505b295fad95b8298bac759c0e36715a111a91c4ec759a738a27a29</hash>
+        <hash alg="SHA-384">162cb3c39fca1ef66822d80559d8a5e32cfd0c10965c47011faafcf5491f8449df7644e0ccc116cf0495ebdcc7fdc579</hash>
+        <hash alg="SHA3-384">4a4e5d821d76f12e7fd371c61afcebac0b3b23d7a8ba12ebebd128cc70ce2269171558da091b9c1b73ac9d7ae4b29d13</hash>
+        <hash alg="SHA3-256">5cedd74dcff90895b30b6b9bf1ef68f77f92ed9b00413005dff989a46b8f805f</hash>
+        <hash alg="SHA3-512">ff007d022739eebac7b85f8c8172c64db3e49f4e5d70532470269bb510dc025cc86ff82858d24e29e80121050c0b3c3612f8b42c0a4b106ab397e1518d15000a</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.tomcat/tomcat-jsp-api@9.0.89?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://tomcat.apache.org/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.tomcat/tomcat-el-api@9.0.89?type=jar">
+      <group>org.apache.tomcat</group>
+      <name>tomcat-el-api</name>
+      <version>9.0.89</version>
+      <description>Expression language package</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">bf72a5dab2cce571858aa464e6901379</hash>
+        <hash alg="SHA-1">31851789981ca79ef1603d881cee66b4d1ee69d7</hash>
+        <hash alg="SHA-256">1b0059142473007ea5b3692fd0f7be65487d36a078ddf14f66e64584f84a3d45</hash>
+        <hash alg="SHA-512">1de5e968568355f5bcd8efe1cf7fad5c427436d9307f2822636ce82d888033d01247e63a7b45941d7823c9eaa7204663281fe3a0d4ed765305ba3071d3525fb6</hash>
+        <hash alg="SHA-384">0d7a4b14606fd313237b40c8844e4559095229bb582cde62b57255827d8830577edd0e65a29b6d509d7ed76810861428</hash>
+        <hash alg="SHA3-384">8eaff11204f44b165d0743757e2ae7d90d1eab81d18595a7512ba388ce251ac1cf407e9b03c6cae91ebc9a05458f0e8d</hash>
+        <hash alg="SHA3-256">f675ca68a665c3acdd7ed4d696b1403b8b18817ffbcd3aa2051aedc2b4e14c57</hash>
+        <hash alg="SHA3-512">1b9d422b9a7841c0a48c2d42f056bf41660530db3da3f51a89c9cc44f123e50a3463dd1f2c37844c78d32c8c71746a24c9535d4301005507523d8f4e62d994fb</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.tomcat/tomcat-el-api@9.0.89?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://tomcat.apache.org/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.tomcat/tomcat-servlet-api@9.0.89?type=jar">
+      <group>org.apache.tomcat</group>
+      <name>tomcat-servlet-api</name>
+      <version>9.0.89</version>
+      <description>javax.servlet package</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">a9fad69beb1bdb9b0cf4d2ac37e43048</hash>
+        <hash alg="SHA-1">1670d55c61d0dae1920ac41133f47a20fcf31db3</hash>
+        <hash alg="SHA-256">6edd7186b4df3db9ba50f86468c74c256050d31f6394430e65f92d96752a0f9a</hash>
+        <hash alg="SHA-512">ff646b3afce76efd7385434866ee9b9b55fe24c561c0eb1666656b87acd4bb3efb822e81b578bee5b1e4a1dbe5f5ddf39e7f3ccf009ec95982874b24e72cd00e</hash>
+        <hash alg="SHA-384">d083b1ec18b2f750f63d7381ff1d0fe475c2d82823228b758c5393750dcd869bcb5368a9a211e592445a0e0cc263217a</hash>
+        <hash alg="SHA3-384">41c8ac38aa192227addff49bd7da85d7e32b2124b6ed752370f41e3ac2bb6beca5fa34bda4f5e81be2cbdc7ea3723296</hash>
+        <hash alg="SHA3-256">222625f2aeaf0e1b658dc23d95e581becef1a8a76ad524fac2938287abe4b71d</hash>
+        <hash alg="SHA3-512">6f8efc4a33e5a90cb4425eaac894905e6dff935e095ba4eb49106a4d6b0f3129d4a7ee3510475356c91ee7e05ee1f52956d7693f086f998d4ebd50b8d934fca7</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0 and
+        Common Development And Distribution License (CDDL) Version 1.0</name>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.tomcat/tomcat-servlet-api@9.0.89?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://tomcat.apache.org/</url></reference></externalReferences>
+    </component>
+  </components>
+  <dependencies>
+    <dependency ref="pkg:maven/org.apache.jspwiki/jspwiki-portable@2.12.2?type=jar">
+      <dependency ref="pkg:maven/org.apache.jspwiki/jspwiki-war@2.12.2?type=war"/>
+      <dependency ref="pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.89?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.tomcat/tomcat-jsp-api@9.0.89?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.jspwiki/jspwiki-war@2.12.2?type=war"/>
+    <dependency ref="pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@9.0.89?type=jar">
+      <dependency ref="pkg:maven/org.apache.tomcat/tomcat-annotations-api@9.0.89?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.tomcat/tomcat-annotations-api@9.0.89?type=jar"/>
+    <dependency ref="pkg:maven/org.apache.tomcat/tomcat-jsp-api@9.0.89?type=jar">
+      <dependency ref="pkg:maven/org.apache.tomcat/tomcat-el-api@9.0.89?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.tomcat/tomcat-servlet-api@9.0.89?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.tomcat/tomcat-el-api@9.0.89?type=jar"/>
+    <dependency ref="pkg:maven/org.apache.tomcat/tomcat-servlet-api@9.0.89?type=jar"/>
+  </dependencies>
+</bom>
