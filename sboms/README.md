@@ -11,8 +11,8 @@ Apache Software Foundation produced SBOMs
 | [CXF](https://projects.apache.org/committee.html?cxf)               | Maven Central | Maven | CycloneDX Maven Plugin |
 | [Directory](https://projects.apache.org/committee.html?directory)   | Maven Central | Maven | CycloneDX Maven Plugin |
 | [Druid](https://projects.apache.org/committee.html?druid)           | Maven Central | Maven | CycloneDX Maven Plugin |
-| [Flink](https://projects.apache.org/committee.html?flink)           | Maven Central | Maven | CycloneDX Maven Plugin |
-| [Groovy](https://projects.apache.org/committee.html?groovy)         | Maven Central | Groovy | CycloneDX Groovy Plugin |
+| [Flink](https://projects.apache.org/committee.html?flink)           | Maven Central | Maven, ... | CycloneDX Maven Plugin | Docker, K8S Operator
+| [Groovy](https://projects.apache.org/committee.html?groovy)         | Maven Central | Gradle | CycloneDX Gradle Plugin |
 | [Hadoop](https://projects.apache.org/committee.html?hadoop)         | Maven Central | Maven | CycloneDX Maven Plugin |
 | [HBase](https://projects.apache.org/committee.html?hbase)           | Maven Central | Maven | CycloneDX Maven Plugin |
 | [Hop](https://projects.apache.org/committee.html?hop)               | Maven Central | Maven | CycloneDX Maven Plugin |
