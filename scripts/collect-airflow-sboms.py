@@ -17,5 +17,5 @@ for file in files:
 
     pmc = dt_pmc("airflow")
     pmc_uuid = pmc['uuid']
-    sbom = get_sbom_cached(f'{baseurl}/{file}', f"airflow/pypi/apache-airflow/{version}/{file}")
+    sbom = get_sbom_cached(f'{baseurl}/{file}', f"airflow/website/apache-airflow/{version}/{file}")
     post_sbom(pmc, pmc_uuid, f"Apache Airflow {variant}", version, sbom)

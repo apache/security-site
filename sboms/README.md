@@ -1,12 +1,12 @@
 Apache Software Foundation produced SBOMs
 =========================================
 
-| TLP                                                                 | SBOM storage | Build tools | SBOM Tools | Comments
-| ------------------------------------------------------------------- | ------------ | ----------- | ---------- | --------
-| [Airflow](https://projects.apache.org/committee.html?airflow)       | PyPI, npm    | pip, npm     | cdxgen     | [SBOMs](https://airflow.apache.org/docs/apache-airflow/stable/security/sbom.html)
-| [Arrow](https://projects.apache.org/committee.html?arrow)           | Maven Central, ... | Maven, ... | CycloneDX Maven Plugin | Go? Python?
-| [Avro](https://projects.apache.org/committee.html?avro)             | Maven Central, ... | Maven, ... | CycloneDX Maven Plugin | Python, C/C++/C#, PHP, Ruby, Rust, JavaScript, and even Perl
-| [Camel](https://projects.apache.org/committee.html?camel)           | Maven Central | Maven | CycloneDX Maven Plugin |
+| TLP                                                                 | SBOM storage  | Build tools | SBOM Tools | Comments
+| ------------------------------------------------------------------- | ------------- | ----------- | ---------- | --------
+| [Airflow](https://projects.apache.org/committee.html?airflow)       | website       | pip, npm     | cdxgen     | [SBOMs](https://airflow.apache.org/docs/apache-airflow/stable/security/sbom.html)
+| [Arrow](https://projects.apache.org/committee.html?arrow)           | Maven Central | Maven, ... | CycloneDX Maven Plugin | Go? Python?
+| [Avro](https://projects.apache.org/committee.html?avro)             | Maven Central | Maven, ... | CycloneDX Maven Plugin | Python, C/C++/C#, PHP, Ruby, Rust, JavaScript, and even Perl
+| [Camel](https://projects.apache.org/committee.html?camel)           | dlcdn         | Maven | CycloneDX Maven Plugin | [SBOMs](https://camel.apache.org/download/)
 | [Commons](https://projects.apache.org/committee.html?commons)       | Maven Central | Maven | CycloneDX Maven Plugin, SPDX Maven Plugin |
 | [CXF](https://projects.apache.org/committee.html?cxf)               | Maven Central | Maven | CycloneDX Maven Plugin |
 | [Directory](https://projects.apache.org/committee.html?directory)   | Maven Central | Maven | CycloneDX Maven Plugin |
@@ -27,7 +27,7 @@ Apache Software Foundation produced SBOMs
 | [Ratis](https://projects.apache.org/committee.html?ratis)           | Maven Central | Maven | CycloneDX Maven Plugin |
 | [Santuario](https://projects.apache.org/committee.html?santuario)   | Maven Central | Maven, ... | CycloneDX Maven Plugin | C++?
 | [Skywalking](https://projects.apache.org/committee.html?skywalking) | Maven Central | Maven, ... | CycloneDX Maven Plugin | Docker, Helm, npm, Rust, ...
-| [Spark](https://projects.apache.org/committee.html?spark)           | Maven Central, PyPI | Maven, pip, ... | CycloneDX Maven Plugin | Python? K8S Operator?
+| [Spark](https://projects.apache.org/committee.html?spark)           | Maven Central | Maven, pip, ... | CycloneDX Maven Plugin | Python? K8S Operator?
 | [Syncope](https://projects.apache.org/committee.html?syncope)       | Maven Central | Maven | CycloneDX Maven Plugin |
 | [Turbine](https://projects.apache.org/committee.html?turbine)       | Maven Central | Maven | CycloneDX Maven Plugin |
 | [Zookeeper](https://projects.apache.org/committee.html?zookeeper)   | Maven Central | Maven | CycloneDX Maven Plugin |
