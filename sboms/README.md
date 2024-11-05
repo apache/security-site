@@ -1,9 +1,9 @@
 Apache Software Foundation produced SBOMs
 =========================================
 
-| TLP                                                                 | Ecosystems | Build tools | SBOM Tools | Comments
-| ------------------------------------------------------------------- | -------    | ------      | -----      | -----
-| [Airflow](https://projects.apache.org/committee.html?airflow)       | PyPI, npm   | pip, npm     | cdxgen     | [SBOMs](https://airflow.apache.org/docs/apache-airflow/stable/security/sbom.html)
+| TLP                                                                 | SBOM storage | Build tools | SBOM Tools | Comments
+| ------------------------------------------------------------------- | ------------ | ----------- | ---------- | --------
+| [Airflow](https://projects.apache.org/committee.html?airflow)       | PyPI, npm    | pip, npm     | cdxgen     | [SBOMs](https://airflow.apache.org/docs/apache-airflow/stable/security/sbom.html)
 | [Arrow](https://projects.apache.org/committee.html?arrow)           | Maven Central, ... | Maven, ... | CycloneDX Maven Plugin | Go? Python?
 | [Avro](https://projects.apache.org/committee.html?avro)             | Maven Central, ... | Maven, ... | CycloneDX Maven Plugin | Python, C/C++/C#, PHP, Ruby, Rust, JavaScript, and even Perl
 | [Camel](https://projects.apache.org/committee.html?camel)           | Maven Central | Maven | CycloneDX Maven Plugin |
