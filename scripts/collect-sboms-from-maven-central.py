@@ -146,6 +146,6 @@ for project in projects:
         if sboms:
             sbom = sboms[0]
             url = f"{project.url()}/{lastVersion}/{sbom}"
-            cache = f'{pmc}/maven/{project.group_id}/{project.artifact_id}/{lastVersion}/{sbom}'
+            cache = f'{pmc}/maven-central/{project.group_id}/{project.artifact_id}/{lastVersion}/{sbom}'
             sbom = get_sbom_cached(url, cache)
             post_sbom(pmc, pmc_uuid, friendly_name, lastVersion, sbom)

@@ -36,7 +36,7 @@ with requests.get("https://camel.apache.org/download/") as res:
           "camel-kafka-connector": "camel-kafka-connector",
         }[match.group(1)]
         version = match.group(2)
-        sbom = get_sbom_cached(url, f"camel/maven/{group_id}/{artifact_id}/{version}/{name}")
+        sbom = get_sbom_cached(url, f"camel/dlcdn/{group_id}/{artifact_id}/{version}/{name}")
         post_sbom(pmc, pmc['uuid'], friendly_name, version, sbom)
 
 main_sboms = {
