@@ -4,8 +4,8 @@ import json
 import os
 import sys
 
-with open("scripts/sbom-locations.json") as data:
-    locations = json.load(data)
+with open("scripts/sboms-from-maven-central.json") as data:
+    maven_central = json.load(data)
     data.close()
 
 with open("scripts/committees.json") as data:
@@ -65,7 +65,7 @@ for committee in committees:
         if status != 0:
             print(f"Failed to execute {bespoke_script}: {status}")
             exit(1)
-    elif pmc in locations and locations[pmc]['type'] == "maven-central":
+    elif pmc in maven_central:
         print(f"fetching {pmc} SBOMs from Maven Central")
         status = os.system(f"python3 scripts/collect-sboms-from-maven-central.py {pmc}")
         if status != 0:
