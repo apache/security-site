@@ -34,18 +34,20 @@ public class describe_sboms {
         out.println("=======");
         out.println();
         out.println("release provides " + args.length + " SBOMs");
-        out.println("| file | metadata | components | by type | libraries purl types | deps tree |");
-        out.println("| ---- | -------- | ---------- | ------- | -------------------- | --------- |");
+        out.println("| file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |");
+        out.println("| ----------------------------------- | -------- | ------------------------------------------ |");
 
         int i = 1;
         for(String path: args) {
             String name = path.substring(path.lastIndexOf('/') + 1);
             //name = name.substring(0, name.indexOf("-cyclonedx."));
             System.err.println("Analyzing " + name);
+            String extension = name.substring(name.lastIndexOf('.') + 1);
+            name = name.substring(0, name.lastIndexOf('.'));
 
             Bom bom = readJsonSBOM(path);
 
-            out.print("| **[" + name + "](" + path + ")**");
+            out.print("| **[" + name + "](" + path + ")**<br>" + extension);
             summarize(bom);
         }
 
@@ -62,7 +64,7 @@ public class describe_sboms {
 }
 
     private static void describeMetadata(Metadata meta) throws Exception {
-        out.print("**component**: " + meta.getComponent().getPurl());
+        out.print("**" + meta.getComponent().getPurl().substring(4) + "**");
         out.print("<br>type: " + meta.getComponent().getType());
         out.print("<br>timestamp: " + DF.format(meta.getTimestamp()));
         if (meta.getTools() != null) {
@@ -73,7 +75,7 @@ public class describe_sboms {
     }
 
     private static void summarize(Bom bom) throws Exception {
-        out.print("<br>" + bom.getBomFormat() + " " + bom.getSpecVersion());
+        out.print(bom.getBomFormat() + " " + bom.getSpecVersion());
         out.print("<br>" + bom.getSerialNumber());
         out.print("<br>version: " + bom.getVersion());
         out.print(" | ");
@@ -82,16 +84,16 @@ public class describe_sboms {
             out.print(" | 0");
         } else {
             out.print(" | " + bom.getComponents().size());
-            print(bom.getComponents().stream().collect(Collectors.groupingBy(c -> c.getType().getTypeName(), Collectors.counting())));
+            print(bom.getComponents().stream().collect(Collectors.groupingBy(c -> c.getType().getTypeName(), Collectors.counting())), "");
             print(bom.getComponents().stream().filter(c -> Component.Type.LIBRARY.equals(c.getType()))
-                    .collect(Collectors.groupingBy(c -> extractPurlGroup(c.getPurl()), Collectors.counting())));
+                    .collect(Collectors.groupingBy(c -> extractPurlGroup(c.getPurl()), Collectors.counting())), "- ");
         }
-        out.print(" | " + (bom.getDependencies() != null));
+        out.print("<br>" + ((bom.getDependencies() == null) ? "**NO** " : "") + "deps tree");
         out.println(" |");
     }
 
-    private static void print(Object o) {
-        out.print(" | " + o.toString().replace('{', '`').replace('}', ' ').replace(", ", "<br>`")
+    private static void print(Object o, String prefix) {
+        out.print("<br>" + prefix + o.toString().replace('{', '`').replace('}', ' ').replace(", ", "<br>" + prefix + "`")
                 .replace("=", "`: "));
     }
 
