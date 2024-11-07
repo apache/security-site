@@ -49,7 +49,7 @@ public class describe_sboms {
 
             Bom bom = readJsonSBOM(path);
 
-            out.print("| **[" + name + "](" + path + ")**<br>" + extension);
+            out.print("| **[" + name + "](" + path + ")**<br>" + extension + " ");
             summarize(bom);
         }
 
@@ -66,6 +66,10 @@ public class describe_sboms {
 }
 
     private static void describeMetadata(Metadata meta) throws Exception {
+        if (meta == null) {
+            out.print(" ");
+            return;
+        }
         out.print("**" + meta.getComponent().getPurl().substring(4) + "**");
         out.print("<br>type: " + meta.getComponent().getType());
         out.print("<br>timestamp: " + DF.format(meta.getTimestamp()));
@@ -77,9 +81,15 @@ public class describe_sboms {
     }
 
     private static void summarize(Bom bom) throws Exception {
-        out.print(bom.getBomFormat() + " " + bom.getSpecVersion());
-        out.print("<br>" + bom.getSerialNumber());
-        out.print("<br>version: " + bom.getVersion());
+        if (bom.getBomFormat() == null) {
+            out.print(bom.getSpecVersion());
+        } else {
+            out.print(bom.getBomFormat() + " " + bom.getSpecVersion());
+        }
+        if (bom.getSerialNumber() != null) {
+            out.print("<br>" + bom.getSerialNumber());
+            out.print("<br>version: " + bom.getVersion());
+        }
         out.print(" | ");
         describeMetadata(bom.getMetadata());
         if (bom.getComponents() == null) {

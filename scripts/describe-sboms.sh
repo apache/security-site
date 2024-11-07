@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# look at SBOMs in sboms/{pmc} and generate release SBOMs description in sboms/{pmc}/{project}-{version}.md
+# that lists the SBOMs associated to the release, and for each a high-level summary:
+# - what is the SBOM describing? = the content of metadata
+# - what are the components from the release (the BOM)? = the content of components
+
 describe="$(pwd)/scripts/describe_sboms.java"
 
 echo "> describing Airflow SBOMs"
@@ -52,3 +57,38 @@ do
 done
 cd ../..
 
+echo "> describing Pekko SBOMs"
+cd sboms/pekko
+for d in */org.apache.pekko/pekko-bom_2.13/*
+do
+  version=$(basename $d)
+  echo "  > describing Pekko $version"
+  $describe Pekko $version */org.apache.pekko/pekko-*/$version/*.xml > pekko-$version.md
+done
+cd ../..
+
+echo "> describing Turbine SBOMs"
+cd sboms/turbine
+for d in */org.apache.turbine/turbine/*
+do
+  version=$(basename $d)
+  echo "  > describing Turbine $version"
+  $describe Turbine $version */org.apache.turbine/turbine*/$version/*.json > turbine-$version.md
+done
+for d in */org.apache.fulcrum/fulcrum-security/*
+do
+  version=$(basename $d)
+  echo "  > describing Fulcrum $version"
+  $describe Fulcrum $version */org.apache.fulcrum/fulcrum*/$version/*.json > fulcrum-$version.md
+done
+cd ../..
+
+echo "> describing Zookeeper SBOMs"
+cd sboms/zookeeper
+for d in */org.apache.zookeeper/zookeeper-jute/*
+do
+  version=$(basename $d)
+  echo "  > describing Zookeeper $version"
+  $describe Zookeeper $version */org.apache.zookeeper/zookeeper*/$version/*.json > zookeeper-$version.md
+done
+cd ../..
