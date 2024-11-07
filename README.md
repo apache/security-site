@@ -13,6 +13,30 @@ See [SECURITY/SBOM Software Bill of Materials](https://cwiki.apache.org/confluen
 for a quick background on what SBOMs are and how they're produced and
 used across the ASF.
 
+## Repository structure
+
+### `sboms`
+
+This folder contains an archive of SBOMs downloaded from their canonical
+locations. The top-level directory is the PMC, under that the directory
+structure follows the
+[Purl](https://github.com/package-url/purl-spec/blob/master/PURL-TYPES.rst)
+identification of the artifacts that are described by the SBOMs.
+
+### `app`
+
+A web application hosted at https://sbom.security.apache.org/ to allow
+browsing the SBOM information.
+
+### `ecosystem-graph`
+
+A script to generate the graph displayed at https://sbom.security.apache.org/ 
+
+### `scripts`
+
+Various smaller scripts, such as for collecting SBOMs from their
+canonical locations.
+
 ## What Projects are Involved?
 
 | TLP                                                                                                               | SBOMs                               | Build       | SBOM Tools | Comments
