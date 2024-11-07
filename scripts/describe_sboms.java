@@ -66,10 +66,15 @@ public class describe_sboms {
         out.print("<br>timestamp: " + DF.format(meta.getTimestamp()));
         if (meta.getTools() != null) {
             out.print("<br>tool: " + meta.getTools().get(0).getName() + " " + meta.getTools().get(0).getVersion());
+        } else if (meta.getToolChoice() != null) {
+            out.print("<br>tool: " + meta.getToolChoice().getComponents().get(0).getName() + " " + meta.getToolChoice().getComponents().get(0).getVersion());
         }
     }
 
     private static void summarize(Bom bom) throws Exception {
+        out.print("<br>" + bom.getBomFormat() + " " + bom.getSpecVersion());
+        out.print("<br>" + bom.getSerialNumber());
+        out.print("<br>version: " + bom.getVersion());
         out.print(" | ");
         describeMetadata(bom.getMetadata());
         if (bom.getComponents() == null) {
