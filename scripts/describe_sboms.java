@@ -30,15 +30,17 @@ public class describe_sboms {
     public static void main(String... args) throws Exception {
 
         out = System.out;
-        out.println("Summary of SBOMs");
+        String project = args[0];
+        String version = args[1];
+        out.println(project + " " + version + ": " + (args.length - 2) + " SBOMs");
         out.println("=======");
         out.println();
-        out.println("release provides " + args.length + " SBOMs");
         out.println("| file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |");
         out.println("| ----------------------------------- | -------- | ------------------------------------------ |");
 
-        int i = 1;
+        int i = 0;
         for(String path: args) {
+            if (i++ < 2) continue;
             String name = path.substring(path.lastIndexOf('/') + 1);
             //name = name.substring(0, name.indexOf("-cyclonedx."));
             System.err.println("Analyzing " + name);
@@ -88,7 +90,7 @@ public class describe_sboms {
             print(bom.getComponents().stream().filter(c -> Component.Type.LIBRARY.equals(c.getType()))
                     .collect(Collectors.groupingBy(c -> extractPurlGroup(c.getPurl()), Collectors.counting())), "- ");
         }
-        out.print("<br>" + ((bom.getDependencies() == null) ? "**NO** " : "") + "deps tree");
+        //out.print("<br>" + ((bom.getDependencies() == null) ? "**NO** " : "") + "deps tree");
         out.println(" |");
     }
 

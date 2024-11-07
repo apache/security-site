@@ -8,7 +8,7 @@ for d in */apache-airflow/2.*
 do
   version=$(basename $d)
   echo "  > describing Airflow $version"
-  $describe $d/*.json > airflow-$version.md
+  $describe Airflow $version $d/*.json > airflow-$version.md
 done
 cd ../..
 
@@ -18,7 +18,7 @@ for d in */org.apache.flink/flink-core/*
 do
   version=$(basename $d)
   echo "  > describing Flink $version"
-  $describe */org.apache.flink/flink*/$version/*.json > flink-$version.md
+  $describe Flink $version */org.apache.flink/flink*/$version/*.json > flink-$version.md
 done
 cd ../..
 
@@ -28,7 +28,7 @@ for d in */org.apache.groovy/groovy/*
 do
   version=$(basename $d)
   echo "  > describing Groovy $version"
-  $describe */org.apache.groovy/groovy*/$version/*.json > groovy-$version.md
+  $describe Groovy $version */org.apache.groovy/groovy*/$version/*.json > groovy-$version.md
 done
 cd ../..
 
@@ -38,7 +38,7 @@ for d in */org.apache.jspwiki/jspwiki-war/2.*
 do
   version=$(basename $d)
   echo "  > describing JSPWiki $version"
-  $describe */org.apache.jspwiki*/jspwiki-*/$version/*.xml > jspwiki-$version.md
+  $describe JSPWiki $version */org.apache.jspwiki*/jspwiki-*/$version/*.xml > jspwiki-$version.md
 done
 cd ../..
 
@@ -48,7 +48,7 @@ for d in */org.apache.logging.log4j/log4j-api/*
 do
   version=$(basename $d)
   echo "  > describing Log4j $version"
-  $describe */org.apache.logging.log4j/log4j-*/$version/*.xml > log4j-$version.md
+  $describe Log4j $version */org.apache.logging.log4j/log4j-*/$version/*.xml > log4j-$version.md
 done
 cd ../..
 
