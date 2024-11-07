@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Shows:
+# * the jars found in the 'portable' zip and its SBOM
+# * the jars found in the published .war and its SBOM
+# for manual comparison
+
 v=$1
 
 [ -z "$v" ] && echo "$0 {version}" && exit 1

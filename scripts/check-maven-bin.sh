@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Lists the jar files in the binary distribution and the
+# dependencies listed in the SBOM on Maven Central,
+# for manual comparison
+
 v=$1
 
 [ -z "$v" ] && echo "$0 {version}" && exit 1
