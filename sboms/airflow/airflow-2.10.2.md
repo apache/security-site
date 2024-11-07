@@ -1,6 +1,7 @@
 Summary of SBOMs
 =======
 
+release provides 21 SBOMs
 | file | metadata | components | by type | libraries purl types | deps tree |
 | ---- | -------- | ---------- | ------- | -------------------- | --------- |
 | **[apache-airflow-sbom-2.10.2-npm-only.json](pypi/apache-airflow/2.10.2/apache-airflow-sbom-2.10.2-npm-only.json)**<br>CycloneDX 1.5<br>urn:uuid:e058a2f3-e2ee-479e-8038-1399f5206ae6<br>version: 1 | **component**: pkg:npm/apache-airflow@2.10.2<br>type: APPLICATION<br>timestamp: 2024-09-20 23:36:30<br>tool: cdxgen 10.9.11 | 1572 | `framework`: 90<br>`library`: 1482  | `npm`: 1482  | true |

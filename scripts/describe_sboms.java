@@ -33,6 +33,7 @@ public class describe_sboms {
         out.println("Summary of SBOMs");
         out.println("=======");
         out.println();
+        out.println("release provides " + args.length + " SBOMs");
         out.println("| file | metadata | components | by type | libraries purl types | deps tree |");
         out.println("| ---- | -------- | ---------- | ------- | -------------------- | --------- |");
 

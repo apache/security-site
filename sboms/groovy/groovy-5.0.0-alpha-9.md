@@ -1,6 +1,7 @@
 Summary of SBOMs
 =======
 
+release provides 33 SBOMs
 | file | metadata | components | by type | libraries purl types | deps tree |
 | ---- | -------- | ---------- | ------- | -------------------- | --------- |
 | **[groovy-5.0.0-alpha-9-cyclonedx.json](maven/org.apache.groovy/groovy/5.0.0-alpha-9/groovy-5.0.0-alpha-9-cyclonedx.json)**<br>CycloneDX 1.5<br>urn:uuid:e200d11e-0e08-4bf4-ac19-bb1e2641cccf<br>version: 1 | **component**: pkg:maven/org.apache.groovy/groovy@5.0.0-alpha-9?type=pom<br>type: LIBRARY<br>timestamp: 2024-06-27 09:53:41<br>tool: cyclonedx-gradle-plugin 1.8.2 | 82 | `library`: 82  | `maven`: 82  | true |

@@ -1,6 +1,7 @@
 Summary of SBOMs
 =======
 
+release provides 132 SBOMs
 | file | metadata | components | by type | libraries purl types | deps tree |
 | ---- | -------- | ---------- | ------- | -------------------- | --------- |
 | **[flink-annotations-1.20.0-cyclonedx.json](maven/org.apache.flink/flink-annotations/1.20.0/flink-annotations-1.20.0-cyclonedx.json)**<br>CycloneDX 1.4<br>urn:uuid:74a68d58-eac5-49db-b35b-a66635de7ee9<br>version: 1 | **component**: pkg:maven/org.apache.flink/flink-annotations@1.20.0?type=jar<br>type: LIBRARY<br>timestamp: 2024-07-25 09:41:24<br>tool: CycloneDX Maven plugin 2.7.7 | 3 | `library`: 3  | `maven`: 3  | true |
