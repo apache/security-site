@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -47,7 +48,12 @@ public class describe_sboms {
             String extension = name.substring(name.lastIndexOf('.') + 1);
             name = name.substring(0, name.lastIndexOf('.'));
 
-            Bom bom = readJsonSBOM(path);
+            Date now = new Date();
+            Bom bom = readSBOM(path);
+            Metadata m = bom.getMetadata();
+            if (m.getTimestamp().after(now)) {
+                m.setTimestamp(null); // deserialized init timestamp even if not defined by teh SBOM
+            }
 
             out.print("| **[" + name + "](" + path + ")**<br>" + extension + " ");
             summarize(bom);
@@ -56,7 +62,7 @@ public class describe_sboms {
         out.close();
     }
 
-    private static Bom readJsonSBOM(String path) throws Exception {
+    private static Bom readSBOM(String path) throws Exception {
         if (path.endsWith(".json")) {
             JsonParser parser = new JsonParser();
             return parser.parse(new File(path));
@@ -72,7 +78,7 @@ public class describe_sboms {
         }
         out.print("**" + meta.getComponent().getPurl().substring(4) + "**");
         out.print("<br>type: " + meta.getComponent().getType());
-        out.print("<br>timestamp: " + DF.format(meta.getTimestamp()));
+        out.print("<br>timestamp: " + ((meta.getTimestamp() == null) ? "" : DF.format(meta.getTimestamp())));
         if (meta.getTools() != null) {
             out.print("<br>tool: " + meta.getTools().get(0).getName() + " " + meta.getTools().get(0).getVersion());
         } else if (meta.getToolChoice() != null) {
