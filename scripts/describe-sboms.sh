@@ -30,6 +30,7 @@ function describeReleasesFromBase() {
   local baseDir=$4
   local baseSub=$5
   [ "$id" = "-" ] && id=$pmc
+  [ "$baseSub" = "-" ] && baseSub=$id
 
   echo "> describing $name SBOMs"
   cd sboms/$pmc
@@ -47,10 +48,34 @@ describeReleasesFromBasedir airflow Airflow apache-airflow
 describeReleasesFromBase arrow Arrow -
 describeReleasesFromBase avro Avro -
 describeReleasesFromBase camel Camel -
-# TODO commons
+
+# commons
+describeReleasesFromBase commons "Commons IO" commons-io commons-io
+describeReleasesFromBase commons BCEL bcel org.apache.bcel
+describeReleasesFromBase commons "Commons Compress" commons-compress org.apache.commons -
+describeReleasesFromBase commons "Commons Configuration 2" commons-configuration2 org.apache.commons -
+describeReleasesFromBase commons "Commons Crypto" commons-crypto org.apache.commons -
+describeReleasesFromBase commons "Commons CSV" commons-csv org.apache.commons -
+describeReleasesFromBase commons "Commons DBCP 2" commons-dbcp2 org.apache.commons -
+describeReleasesFromBase commons "Commons Email" commons-email org.apache.commons -
+describeReleasesFromBase commons "Commons Exec" commons-exec org.apache.commons -
+describeReleasesFromBase commons "Commons Imaging" commons-imaging org.apache.commons -
+describeReleasesFromBase commons "Commons JCS 3" commons-jcs3 org.apache.commons -
+describeReleasesFromBase commons "Commons JEXL 3" commons-jexl3 org.apache.commons -
+describeReleasesFromBase commons "Commons Lang 3" commons-lang3 org.apache.commons -
+describeReleasesFromBase commons "Commons Math 4" commons-math org.apache.commons -
+describeReleasesFromBase commons "Commons Parent" commons-parent org.apache.commons -
+describeReleasesFromBase commons "Commons Pool 2" commons-pool2 org.apache.commons -
+describeReleasesFromBase commons "Commons Release Plugin" commons-release-plugin org.apache.commons -
+describeReleasesFromBase commons "Commons RNG" commons-rng org.apache.commons -
+describeReleasesFromBase commons "Commons Statistics" commons-statistics org.apache.commons -
+describeReleasesFromBase commons "Commons Text" commons-text org.apache.commons -
+
 describeReleasesFromBase cxf CXF -
+
 describeReleasesFromBase directory Directory - org.apache.directory
 describeReleasesFromBase directory Kerby kerby org.apache.kerby
+
 describeReleasesFromBase druid Druid -
 describeReleasesFromBase flink Flink -
 describeReleasesFromBase groovy Groovy -
@@ -69,6 +94,8 @@ describeReleasesFromBase santuario Santuario -
 describeReleasesFromBase skywalking SkyWalking -
 describeReleasesFromBase spark Spark -
 describeReleasesFromBase syncope Syncope -
+
 describeReleasesFromBase turbine Turbine - org.apache.turbine
 describeReleasesFromBase turbine Fulcrum fulcrum org.apache.fulcrum
+
 describeReleasesFromBase zookeeper Zookeeper -

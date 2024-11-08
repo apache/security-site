@@ -1,0 +1,10 @@
+Commons RNG 1.6: 5 SBOMs
+=======
+
+| file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |
+| ----------------------------------- | -------- | ------------------------------------------ |
+| **[commons-rng-client-api-1.6-cyclonedx](maven/org.apache.commons/commons-rng-client-api/1.6/commons-rng-client-api-1.6-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:590065f5-3ab5-305d-a8e2-7da797c3b7c6<br>version: 1 | **maven/org.apache.commons/commons-rng-client-api@1.6?type=jar**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 0 |
+| **[commons-rng-core-1.6-cyclonedx](maven/org.apache.commons/commons-rng-core/1.6/commons-rng-core-1.6-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:a5bc825e-351d-3cf8-9122-d657edff429b<br>version: 1 | **maven/org.apache.commons/commons-rng-core@1.6?type=jar**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 1<br>`library`: 1 <br>- `maven`: 1  |
+| **[commons-rng-parent-1.6-cyclonedx](maven/org.apache.commons/commons-rng-parent/1.6/commons-rng-parent-1.6-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:0620eeba-cfe0-3c86-8a6d-5e579447df3f<br>version: 1 | **maven/org.apache.commons/commons-rng-parent@1.6?type=pom**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 4<br>`library`: 4 <br>- `maven`: 4  |
+| **[commons-rng-sampling-1.6-cyclonedx](maven/org.apache.commons/commons-rng-sampling/1.6/commons-rng-sampling-1.6-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:fe85b4b3-0f58-319d-b8b3-3ffb7c98f7ae<br>version: 1 | **maven/org.apache.commons/commons-rng-sampling@1.6?type=jar**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 1<br>`library`: 1 <br>- `maven`: 1  |
+| **[commons-rng-simple-1.6-cyclonedx](maven/org.apache.commons/commons-rng-simple/1.6/commons-rng-simple-1.6-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:6ef49daf-7e1b-303d-b9e9-16307e035f20<br>version: 1 | **maven/org.apache.commons/commons-rng-simple@1.6?type=jar**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 2<br>`library`: 2 <br>- `maven`: 2  |
