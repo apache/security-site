@@ -18,7 +18,6 @@ Apache Software Foundation produced SBOMs
 | [Hop](https://projects.apache.org/committee.html?hop)               | Maven Central | Maven | CycloneDX Maven Plugin |
 | [Jena](https://projects.apache.org/committee.html?jena)             | Maven Central | Maven | CycloneDX Maven Plugin |
 | [JSPWiki](https://projects.apache.org/committee.html?jspwiki)       | Maven Central | Maven | CycloneDX Maven Plugin |
-| Kerby                                                               | Maven Central | Maven | CycloneDX Maven Plugin | a project of Apache Directory
 | [Logging](https://projects.apache.org/committee.html?logging)       | Maven Central | Maven, ... | CycloneDX Maven Plugin | C++, .Net, PHP? [VDR](https://logging.apache.org/cyclonedx/vdr.xml)
 | [Maven](https://projects.apache.org/committee.html?maven)           | Maven Central | Maven | CycloneDX Maven Plugin |
 | [Orc](https://projects.apache.org/committee.html?orc)               | Maven Central | Maven, ... | CycloneDX Maven Plugin | Conan, Docker

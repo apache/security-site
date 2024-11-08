@@ -99,6 +99,8 @@ elif pmc == 'camel':
     ]
 elif pmc == 'commons':
     projects = maven_projects(pmc) + maven_projects(pmc, prefix = "commons-io") + maven_projects(pmc, prefix = "org/apache/bcel")
+elif pmc == 'directory':
+    projects = maven_projects(pmc) + maven_projects(pmc, prefix = "org/apache/kerby")
 elif pmc == 'logging':
     projects = maven_projects(pmc, subproject = 'log4j')
 elif pmc == 'pekko':
