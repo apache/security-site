@@ -51,7 +51,7 @@ public class describe_sboms {
             Date now = new Date();
             Bom bom = readSBOM(path);
             Metadata m = bom.getMetadata();
-            if (m.getTimestamp().after(now)) {
+            if (m != null && m.getTimestamp().after(now)) {
                 m.setTimestamp(null); // deserialized init timestamp even if not defined by teh SBOM
             }
 

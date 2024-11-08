@@ -1,8 +1,9 @@
-Flink 1.19.1: 126 SBOMs
+Flink 1.19.1: 127 SBOMs
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |
 | ----------------------------------- | -------- | ------------------------------------------ |
+| **[fink-migration-test-utils-1.19.1-cyclonedx](maven/org.apache.flink/fink-migration-test-utils/1.19.1/fink-migration-test-utils-1.19.1-cyclonedx.json)**<br>json CycloneDX 1.4<br>urn:uuid:b84b7f1b-30c5-448d-9b99-116c8dedbdf5<br>version: 1 | **maven/org.apache.flink/fink-migration-test-utils@1.19.1?type=jar**<br>type: LIBRARY<br>timestamp: 2024-06-06 15:18:10<br>tool: CycloneDX Maven plugin 2.7.7 | 12<br>`library`: 12 <br>- `maven`: 12  |
 | **[flink-annotations-1.19.1-cyclonedx](maven/org.apache.flink/flink-annotations/1.19.1/flink-annotations-1.19.1-cyclonedx.json)**<br>json CycloneDX 1.4<br>urn:uuid:95eaf038-4fb5-4358-9398-985349ed304d<br>version: 1 | **maven/org.apache.flink/flink-annotations@1.19.1?type=jar**<br>type: LIBRARY<br>timestamp: 2024-06-06 15:17:27<br>tool: CycloneDX Maven plugin 2.7.7 | 3<br>`library`: 3 <br>- `maven`: 3  |
 | **[flink-architecture-tests-1.19.1-cyclonedx](maven/org.apache.flink/flink-architecture-tests/1.19.1/flink-architecture-tests-1.19.1-cyclonedx.json)**<br>json CycloneDX 1.4<br>urn:uuid:f013a528-f17f-4668-80d9-bc28c78202ad<br>version: 1 | **maven/org.apache.flink/flink-architecture-tests@1.19.1?type=pom**<br>type: LIBRARY<br>timestamp: 2024-06-06 15:17:34<br>tool: CycloneDX Maven plugin 2.7.7 | 3<br>`library`: 3 <br>- `maven`: 3  |
 | **[flink-architecture-tests-base-1.19.1-cyclonedx](maven/org.apache.flink/flink-architecture-tests-base/1.19.1/flink-architecture-tests-base-1.19.1-cyclonedx.json)**<br>json CycloneDX 1.4<br>urn:uuid:6d3fb7ff-a058-417e-829f-526c5439e827<br>version: 1 | **maven/org.apache.flink/flink-architecture-tests-base@1.19.1?type=jar**<br>type: LIBRARY<br>timestamp: 2024-06-06 15:17:37<br>tool: CycloneDX Maven plugin 2.7.7 | 4<br>`library`: 4 <br>- `maven`: 4  |

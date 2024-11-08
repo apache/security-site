@@ -44,11 +44,11 @@ function describeReleasesFromBase() {
 
 describeReleasesFromBasedir airflow Airflow apache-airflow
 
-describeReleasesFromBase flink Flink - org.apache.flink flink
-describeReleasesFromBase groovy Groovy - org.apache.groovy groovy
-describeReleasesFromBase jspwiki JSPWiki - org.apache.jspwiki jspwiki
-describeReleasesFromBase logging Log4j log4j org.apache.logging.log4j log4j
-describeReleasesFromBase pekko Pekko - org.apache.pekko pekko
-describeReleasesFromBase turbine Turbine - org.apache.turbine turbine
-describeReleasesFromBase turbine Fulcrum fulcrum org.apache.fulcrum fulcrum
-describeReleasesFromBase zookeeper Zookeeper - org.apache.zookeeper zookeeper
+describeReleasesFromBase flink Flink -
+describeReleasesFromBase groovy Groovy -
+describeReleasesFromBase jspwiki JSPWiki -
+describeReleasesFromBase logging Log4j log4j
+describeReleasesFromBase pekko Pekko -
+describeReleasesFromBase turbine Turbine - org.apache.turbine
+describeReleasesFromBase turbine Fulcrum fulcrum org.apache.fulcrum
+describeReleasesFromBase zookeeper Zookeeper -
