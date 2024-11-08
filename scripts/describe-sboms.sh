@@ -44,11 +44,31 @@ function describeReleasesFromBase() {
 
 describeReleasesFromBasedir airflow Airflow apache-airflow
 
+describeReleasesFromBase arrow Arrow -
+describeReleasesFromBase avro Avro -
+describeReleasesFromBase camel Camel -
+# TODO commons
+describeReleasesFromBase cxf CXF -
+describeReleasesFromBase directory Directory - org.apache.directory
+describeReleasesFromBase directory Kerby kerby org.apache.kerby
+describeReleasesFromBase druid Druid -
 describeReleasesFromBase flink Flink -
 describeReleasesFromBase groovy Groovy -
+describeReleasesFromBase hadoop Hadoop -
+describeReleasesFromBase hbase HBase -
+describeReleasesFromBase hop Hop -
+describeReleasesFromBase jena Jena -
 describeReleasesFromBase jspwiki JSPWiki -
 describeReleasesFromBase logging Log4j log4j
+# TODO maven
+describeReleasesFromBase orc ORC -
+describeReleasesFromBase parquet Parquet -
 describeReleasesFromBase pekko Pekko -
+describeReleasesFromBase ratis Ratis -
+describeReleasesFromBase santuario Santuario -
+describeReleasesFromBase skywalking SkyWalking -
+describeReleasesFromBase spark Spark -
+describeReleasesFromBase syncope Syncope -
 describeReleasesFromBase turbine Turbine - org.apache.turbine
 describeReleasesFromBase turbine Fulcrum fulcrum org.apache.fulcrum
 describeReleasesFromBase zookeeper Zookeeper -
