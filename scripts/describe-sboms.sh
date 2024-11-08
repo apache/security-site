@@ -85,7 +85,68 @@ describeReleasesFromBase hop Hop -
 describeReleasesFromBase jena Jena -
 describeReleasesFromBase jspwiki JSPWiki -
 describeReleasesFromBase logging Log4j log4j
-# TODO maven
+
+# maven
+#describeReleasesFromBase maven Maven - org.apache.maven # need strict equality, not any groupId starting with
+describeReleasesFromBase maven "Maven Archetype" maven-archetype org.apache.maven.archetype # missing maven-archetype-plugin
+describeReleasesFromBase maven "Maven Archetype Bundles" maven-archetypes org.apache.maven.archetypes
+describeReleasesFromBase maven Doxia doxia org.apache.maven.doxia
+describeReleasesFromBase maven "Maven Enforcer" maven-enforcer org.apache.maven.enforcer # missing maven-enforcer-plugin and maven-enforcer-extension
+describeReleasesFromBase maven "Maven Build Cache Extension" maven-build-cache-extension org.apache.maven.extensions -
+describeReleasesFromBase maven "Maven Extensions Parent" maven-extensions org.apache.maven.extensions -
+describeReleasesFromBase maven "Maven Indexer" maven-indexer org.apache.maven.indexer
+describeReleasesFromBase maven "Maven JXR" maven-jxr org.apache.maven.jxr # missing maven-jxr-plugin
+describeReleasesFromBase maven "Maven Plugin Testing" maven-plugin-testing org.apache.maven.plugin-testing
+describeReleasesFromBase maven "Maven Plugin Tools" maven-plugin-tools org.apache.maven.plugin-tools # missing maven-plugin-plugin
+# plugins
+describeReleasesFromBase maven "Maven Artifact Plugin" maven-artifact-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Assembly Plugin" maven-assembly-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Checkstyle Plugin" maven-checkstyle-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Clean Plugin" maven-clean-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Compiler Plugin" maven-compiler-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Dependency Plugin" maven-dependency-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Deploy Plugin" maven-deploy-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven GPG Plugin" maven-gpg-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Help Plugin" maven-help-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Install Plugin" maven-install-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Invoker Plugin" maven-invoker-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Jar Plugin" maven-jar-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Jarsigner Plugin" maven-jarsigner-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Javadoc Plugin" maven-javadoc-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven JLink Plugin" maven-jlink-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Plugins Parent" maven-plugins org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven PMD Plugin" maven-pmd-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Project Info Reports Plugin" maven-project-info-reports-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Remote Resources Plugin" maven-remote-resources-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Resources Plugin" maven-resources-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven SCM Publish Plugin" maven-scm-publish-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Shade Plugin" maven-shade-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Site Plugin" maven-site-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Source Plugin" maven-source-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Toolchains Plugin" maven-toolchains-plugin org.apache.maven.plugins -
+# end of plugins
+describeReleasesFromBase maven "Maven Release" maven-release org.apache.maven.release # missing maven-release-plugin
+describeReleasesFromBase maven "Maven Reporting API" maven-reporting-api org.apache.maven.reporting -
+describeReleasesFromBase maven "Maven Reporting Exec" maven-reporting-exec org.apache.maven.reporting -
+describeReleasesFromBase maven "Maven Reporting Implementation" maven-reporting-impl org.apache.maven.reporting -
+describeReleasesFromBase maven "Maven Resolver" maven-resolver org.apache.maven.resolver
+describeReleasesFromBase maven "Maven SCM" maven-scm org.apache.maven.scm
+# shared
+describeReleasesFromBase maven "Maven Common Artifact Filters" maven-common-artifact-filters org.apache.maven.shared -
+describeReleasesFromBase maven "Maven Dependency Analyzer" maven-dependency-analyzer org.apache.maven.shared -
+describeReleasesFromBase maven "Maven Dependency Tree" maven-dependency-tree org.apache.maven.shared -
+describeReleasesFromBase maven "Maven Filtering" maven-filtering org.apache.maven.shared -
+describeReleasesFromBase maven "Maven Invoker" maven-invoker org.apache.maven.shared -
+describeReleasesFromBase maven "Maven Jarsigner" maven-jarsigner org.apache.maven.shared -
+describeReleasesFromBase maven "Maven Script Interpreter" maven-script-interpreter org.apache.maven.shared -
+describeReleasesFromBase maven "Maven Shared Parent" maven-shared-components org.apache.maven.shared -
+describeReleasesFromBase maven "Maven Shared Jar" maven-shared-jar org.apache.maven.shared -
+describeReleasesFromBase maven "Maven Shared Resources" maven-shared-resources org.apache.maven.shared -
+# end of shared
+describeReleasesFromBase maven "Maven Skins Parent" maven-skins org.apache.maven.skins
+describeReleasesFromBase maven "Maven Surefire" maven-surefire org.apache.maven.surefire # missing maven-failsafe-plugin, maven-surefire-plugin and maven-surefire-report-plugin
+describeReleasesFromBase maven "Maven Wrapper" maven-wrapper org.apache.maven.wrapper
+
 describeReleasesFromBase orc ORC -
 describeReleasesFromBase parquet Parquet -
 describeReleasesFromBase pekko Pekko -
