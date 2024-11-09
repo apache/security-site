@@ -1,4 +1,4 @@
-Maven Plugin Tools 3.15.1: 7 SBOMs
+Maven Plugin Tools 3.15.1: 8 SBOMs
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |
@@ -10,3 +10,4 @@ Maven Plugin Tools 3.15.1: 7 SBOMs
 | **[maven-script-3.15.1-cyclonedx](maven/org.apache.maven.plugin-tools/maven-script/3.15.1/maven-script-3.15.1-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:42be94fe-de61-35fe-8029-f27e1f4d6c7c<br>version: 1 | **maven/org.apache.maven.plugin-tools/maven-script@3.15.1?type=pom**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 0 |
 | **[maven-script-ant-3.15.1-cyclonedx](maven/org.apache.maven.plugin-tools/maven-script-ant/3.15.1/maven-script-ant-3.15.1-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:e94ae2cf-f0fc-3396-9ab5-882e992ddb68<br>version: 1 | **maven/org.apache.maven.plugin-tools/maven-script-ant@3.15.1?type=jar**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 43<br>`library`: 43 <br>- `maven`: 43  |
 | **[maven-script-beanshell-3.15.1-cyclonedx](maven/org.apache.maven.plugin-tools/maven-script-beanshell/3.15.1/maven-script-beanshell-3.15.1-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:55104dc7-d8a3-3de9-be2d-75ca2c34aa15<br>version: 1 | **maven/org.apache.maven.plugin-tools/maven-script-beanshell@3.15.1?type=jar**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 13<br>`library`: 13 <br>- `maven`: 13  |
+| **[maven-plugin-plugin-3.15.1-cyclonedx](maven/org.apache.maven.plugins/maven-plugin-plugin/3.15.1/maven-plugin-plugin-3.15.1-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:c190f7db-9c50-3fe8-ba0e-0c1aa7b7f2b5<br>version: 1 | **maven/org.apache.maven.plugins/maven-plugin-plugin@3.15.1?type=maven-plugin**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 66<br>`library`: 66 <br>- `maven`: 66  |
