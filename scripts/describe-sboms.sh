@@ -10,7 +10,9 @@ describe="$(pwd)/scripts/describe_sboms.java"
 function describeReleasesFromBasedir() {
   local pmc=$1
   local name=$2
-  local basedir=$3
+  local id=$3
+  local basedir=$4
+  [ "$id" = "-" ] && id=$pmc
 
   echo "> describing $name SBOMs"
   cd sboms/$pmc
@@ -18,7 +20,7 @@ function describeReleasesFromBasedir() {
   do
     local version=$(basename $d)
     echo "  > describing $name $version"
-    $describe $name $version $d/*.(xml|json) > $pmc-$version.md
+    $describe $name $version $d/*.(xml|json) > $id-$version.md
   done
   cd ../..
 }
@@ -76,7 +78,7 @@ function describeReleasesFromBaseStrict() {
   cd ../..
 }
 
-describeReleasesFromBasedir airflow Airflow apache-airflow
+describeReleasesFromBasedir airflow Airflow - apache-airflow
 
 describeReleasesFromBase arrow Arrow -
 describeReleasesFromBase avro Avro -
@@ -194,3 +196,5 @@ describeReleasesFromBase turbine Turbine - org.apache.turbine
 describeReleasesFromBase turbine Fulcrum fulcrum org.apache.fulcrum
 
 describeReleasesFromBase zookeeper Zookeeper -
+
+$describe $0 sboms/*/*.md
