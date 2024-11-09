@@ -1,4 +1,4 @@
-Maven Project Info Reports Plugin 3.8.0: 1 SBOMs
+Maven Project Info Reports Plugin 3.8.0: 1 SBOM
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |

@@ -1,4 +1,4 @@
-Maven Script Interpreter 1.6: 1 SBOMs
+Maven Script Interpreter 1.6: 1 SBOM
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |

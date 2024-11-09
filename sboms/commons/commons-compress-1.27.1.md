@@ -1,4 +1,4 @@
-Commons Compress 1.27.1: 1 SBOMs
+Commons Compress 1.27.1: 1 SBOM
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |

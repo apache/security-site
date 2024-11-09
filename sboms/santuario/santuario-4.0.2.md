@@ -1,4 +1,4 @@
-Santuario 4.0.2: 1 SBOMs
+Santuario 4.0.2: 1 SBOM
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |

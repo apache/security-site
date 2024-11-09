@@ -1,4 +1,4 @@
-Maven Archiver 3.6.2: 1 SBOMs
+Maven Archiver 3.6.2: 1 SBOM
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |

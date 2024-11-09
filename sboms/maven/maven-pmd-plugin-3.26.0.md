@@ -1,4 +1,4 @@
-Maven PMD Plugin 3.26.0: 1 SBOMs
+Maven PMD Plugin 3.26.0: 1 SBOM
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |

@@ -1,4 +1,4 @@
-Maven Jarsigner 3.1.0: 1 SBOMs
+Maven Jarsigner 3.1.0: 1 SBOM
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |

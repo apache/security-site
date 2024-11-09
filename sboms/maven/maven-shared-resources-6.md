@@ -1,4 +1,4 @@
-Maven Shared Resources 6: 1 SBOMs
+Maven Shared Resources 6: 1 SBOM
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |

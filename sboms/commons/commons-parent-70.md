@@ -1,4 +1,4 @@
-Commons Parent 70: 1 SBOMs
+Commons Parent 70: 1 SBOM
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |

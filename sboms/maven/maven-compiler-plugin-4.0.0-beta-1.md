@@ -1,4 +1,4 @@
-Maven Compiler Plugin 4.0.0-beta-1: 1 SBOMs
+Maven Compiler Plugin 4.0.0-beta-1: 1 SBOM
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |

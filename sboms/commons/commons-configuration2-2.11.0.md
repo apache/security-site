@@ -1,4 +1,4 @@
-Commons Configuration 2 2.11.0: 1 SBOMs
+Commons Configuration 2 2.11.0: 1 SBOM
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |

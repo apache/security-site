@@ -1,4 +1,4 @@
-ORC 1.9.3: 1 SBOMs
+ORC 1.9.3: 1 SBOM
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |

@@ -1,4 +1,4 @@
-CXF 3.5.9: 1 SBOMs
+CXF 3.5.9: 1 SBOM
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |

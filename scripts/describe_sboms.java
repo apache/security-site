@@ -81,7 +81,7 @@ public class describe_sboms {
                 for(String v: versions) {
                     String sboms = Files.readAllLines(Path.of(prefix + v + ".md")).get(0);
                     sboms = sboms.substring(sboms.indexOf(':') + 2);
-                    readme.add("- " + v + ": [" + (sboms.startsWith("1 ") ? "1 SBOM" : sboms) + "](" + pmc + "/" + id + "-" + v + ".md)");
+                    readme.add("- " + v + ": [" + sboms + "](" + pmc + "/" + id + "-" + v + ".md)");
                 }
                 readme.add("");
             }
@@ -94,7 +94,7 @@ public class describe_sboms {
         String project = args[0];
         String version = args[1];
         out = System.out;
-        out.println(project + " " + version + ": " + (args.length - 2) + " SBOMs");
+        out.println(project + " " + version + ": " + (args.length - 2) + " SBOM" + ((args.length > 3) ? "s" : ""));
         out.println("=======");
         out.println();
         out.println("| file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |");

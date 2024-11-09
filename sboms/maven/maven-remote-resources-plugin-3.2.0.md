@@ -1,4 +1,4 @@
-Maven Remote Resources Plugin 3.2.0: 1 SBOMs
+Maven Remote Resources Plugin 3.2.0: 1 SBOM
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |
