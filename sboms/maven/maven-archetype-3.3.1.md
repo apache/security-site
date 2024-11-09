@@ -1,4 +1,4 @@
-Maven Archetype 3.3.1: 6 SBOMs
+Maven Archetype 3.3.1: 7 SBOMs
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |
@@ -9,3 +9,4 @@ Maven Archetype 3.3.1: 6 SBOMs
 | **[archetype-models-3.3.1-cyclonedx](maven/org.apache.maven.archetype/archetype-models/3.3.1/archetype-models-3.3.1-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:28ab0dfc-d302-39b7-8401-0365e6998fc0<br>version: 1 | **maven/org.apache.maven.archetype/archetype-models@3.3.1?type=pom**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 2<br>`library`: 2 <br>- `maven`: 2  |
 | **[archetype-packaging-3.3.1-cyclonedx](maven/org.apache.maven.archetype/archetype-packaging/3.3.1/archetype-packaging-3.3.1-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:49dd5259-1efa-3508-a7e7-5956a313dff9<br>version: 1 | **maven/org.apache.maven.archetype/archetype-packaging@3.3.1?type=jar**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 0 |
 | **[maven-archetype-3.3.1-cyclonedx](maven/org.apache.maven.archetype/maven-archetype/3.3.1/maven-archetype-3.3.1-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:48ea88d2-04e5-3a57-820c-1e85c77c3219<br>version: 1 | **maven/org.apache.maven.archetype/maven-archetype@3.3.1?type=pom**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 72<br>`library`: 72 <br>- `maven`: 72  |
+| **[maven-archetype-plugin-3.3.1-cyclonedx](maven/org.apache.maven.plugins/maven-archetype-plugin/3.3.1/maven-archetype-plugin-3.3.1-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:21aed583-5971-3965-89c7-c458d4c8a2d1<br>version: 1 | **maven/org.apache.maven.plugins/maven-archetype-plugin@3.3.1?type=maven-plugin**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 68<br>`library`: 68 <br>- `maven`: 68  |

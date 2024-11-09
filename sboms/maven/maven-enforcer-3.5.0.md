@@ -1,4 +1,4 @@
-Maven Enforcer 3.5.0: 3 SBOMs
+Maven Enforcer 3.5.0: 5 SBOMs
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |
@@ -6,3 +6,5 @@ Maven Enforcer 3.5.0: 3 SBOMs
 | **[enforcer-3.5.0-cyclonedx](maven/org.apache.maven.enforcer/enforcer/3.5.0/enforcer-3.5.0-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:d0cdcb03-8fe3-3cbf-901e-cc50141eb96c<br>version: 1 | **maven/org.apache.maven.enforcer/enforcer@3.5.0?type=pom**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 46<br>`library`: 46 <br>- `maven`: 46  |
 | **[enforcer-api-3.5.0-cyclonedx](maven/org.apache.maven.enforcer/enforcer-api/3.5.0/enforcer-api-3.5.0-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:81665628-f16d-3f59-8775-690459d88501<br>version: 1 | **maven/org.apache.maven.enforcer/enforcer-api@3.5.0?type=jar**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 14<br>`library`: 14 <br>- `maven`: 14  |
 | **[enforcer-rules-3.5.0-cyclonedx](maven/org.apache.maven.enforcer/enforcer-rules/3.5.0/enforcer-rules-3.5.0-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:52c04755-183a-3dd4-aa07-1734748d0456<br>version: 1 | **maven/org.apache.maven.enforcer/enforcer-rules@3.5.0?type=jar**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 41<br>`library`: 41 <br>- `maven`: 41  |
+| **[maven-enforcer-plugin-3.5.0-cyclonedx](maven/org.apache.maven.plugins/maven-enforcer-plugin/3.5.0/maven-enforcer-plugin-3.5.0-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:91630487-555b-3fba-a7fd-da5750fb82a5<br>version: 1 | **maven/org.apache.maven.plugins/maven-enforcer-plugin@3.5.0?type=maven-plugin**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 43<br>`library`: 43 <br>- `maven`: 43  |
+| **[maven-enforcer-extension-3.5.0-cyclonedx](maven/org.apache.maven.extensions/maven-enforcer-extension/3.5.0/maven-enforcer-extension-3.5.0-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:c5472226-5927-3b26-9348-73b09d7fd10e<br>version: 1 | **maven/org.apache.maven.extensions/maven-enforcer-extension@3.5.0?type=jar**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 38<br>`library`: 38 <br>- `maven`: 38  |

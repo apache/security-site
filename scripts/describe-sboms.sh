@@ -29,8 +29,14 @@ function describeReleasesFromBase() {
   local id=$3
   local baseDir=$4
   local baseSub=$5
+  local additional1=$5;
+  local additional2=$6;
   [ "$id" = "-" ] && id=$pmc
-  [ "$baseSub" = "-" ] && baseSub=$id
+  if [ "$baseSub" != "" ]
+  then
+    [ "$baseSub" = "-" ] && baseSub=$id && additional1=""
+    [ "$additional1" != "" ] && baseSub=""
+  fi
 
   echo "> describing $name SBOMs"
   cd sboms/$pmc
@@ -38,7 +44,34 @@ function describeReleasesFromBase() {
   for version in $(echo "$(for d in */$baseDir*/$baseSub*/* ; do filename $d ; done)" | sort -u)
   do
     echo "  > describing $name $version"
-    $describe $name $version */$baseDir*/$baseSub*/$version/*.(xml|json) > $id-$version.md
+    if [ "$additional1" = "" ]
+    then
+      $describe $name $version */$baseDir*/$baseSub*/$version/*.(xml|json) > $id-$version.md
+    elif [ "$additional2" = "" ]
+    then
+      $describe $name $version */$baseDir*/$baseSub*/$version/*.(xml|json) */$additional1*/$version/*.(xml|json) > $id-$version.md
+    else
+      $describe $name $version */$baseDir*/$baseSub*/$version/*.(xml|json) */$additional1*/$version/*.(xml|json) */$additional2*/$version/*.(xml|json) > $id-$version.md
+    fi
+  done
+  cd ../..
+}
+
+function describeReleasesFromBaseStrict() {
+  local pmc=$1
+  local name=$2
+  local id=$3
+  local baseDir=$4
+  local detectVersions=$5
+  [ "$id" = "-" ] && id=$pmc
+
+  echo "> describing $name SBOMs"
+  cd sboms/$pmc
+  local version
+  for version in $(echo "$(for d in */$baseDir/$detectVersions*/* ; do filename $d ; done)" | sort -u)
+  do
+    echo "  > describing $name $version"
+    $describe $name $version */$baseDir/*/$version/*.(xml|json) > $id-$version.md
   done
   cd ../..
 }
@@ -87,17 +120,17 @@ describeReleasesFromBase jspwiki JSPWiki -
 describeReleasesFromBase logging Log4j log4j
 
 # maven
-#describeReleasesFromBase maven Maven - org.apache.maven # need strict equality, not any groupId starting with
-describeReleasesFromBase maven "Maven Archetype" maven-archetype org.apache.maven.archetype # missing maven-archetype-plugin
+describeReleasesFromBaseStrict maven Maven - org.apache.maven apache-maven
+describeReleasesFromBase maven "Maven Archetype" maven-archetype org.apache.maven.archetype org.apache.maven.plugins/maven-archetype-plugin
 describeReleasesFromBase maven "Maven Archetype Bundles" maven-archetypes org.apache.maven.archetypes
 describeReleasesFromBase maven Doxia doxia org.apache.maven.doxia
-describeReleasesFromBase maven "Maven Enforcer" maven-enforcer org.apache.maven.enforcer # missing maven-enforcer-plugin and maven-enforcer-extension
+describeReleasesFromBase maven "Maven Enforcer" maven-enforcer org.apache.maven.enforcer org.apache.maven.plugins/maven-enforcer-plugin org.apache.maven.extensions/maven-enforcer-extension
 describeReleasesFromBase maven "Maven Build Cache Extension" maven-build-cache-extension org.apache.maven.extensions -
 describeReleasesFromBase maven "Maven Extensions Parent" maven-extensions org.apache.maven.extensions -
 describeReleasesFromBase maven "Maven Indexer" maven-indexer org.apache.maven.indexer
-describeReleasesFromBase maven "Maven JXR" maven-jxr org.apache.maven.jxr # missing maven-jxr-plugin
+describeReleasesFromBase maven "Maven JXR" maven-jxr org.apache.maven.jxr org.apache.maven.plugins/maven-jxr-plugin org.apache.maven/maven-jxr
 describeReleasesFromBase maven "Maven Plugin Testing" maven-plugin-testing org.apache.maven.plugin-testing
-describeReleasesFromBase maven "Maven Plugin Tools" maven-plugin-tools org.apache.maven.plugin-tools # missing maven-plugin-plugin
+describeReleasesFromBase maven "Maven Plugin Tools" maven-plugin-tools org.apache.maven.plugin-tools org.apache.maven.plugins/maven-plugin-plugin
 # plugins
 describeReleasesFromBase maven "Maven Artifact Plugin" maven-artifact-plugin org.apache.maven.plugins -
 describeReleasesFromBase maven "Maven Assembly Plugin" maven-assembly-plugin org.apache.maven.plugins -
@@ -125,13 +158,14 @@ describeReleasesFromBase maven "Maven Site Plugin" maven-site-plugin org.apache.
 describeReleasesFromBase maven "Maven Source Plugin" maven-source-plugin org.apache.maven.plugins -
 describeReleasesFromBase maven "Maven Toolchains Plugin" maven-toolchains-plugin org.apache.maven.plugins -
 # end of plugins
-describeReleasesFromBase maven "Maven Release" maven-release org.apache.maven.release # missing maven-release-plugin
+describeReleasesFromBase maven "Maven Release" maven-release org.apache.maven.release org.apache.maven.plugins/maven-release-plugin
 describeReleasesFromBase maven "Maven Reporting API" maven-reporting-api org.apache.maven.reporting -
 describeReleasesFromBase maven "Maven Reporting Exec" maven-reporting-exec org.apache.maven.reporting -
 describeReleasesFromBase maven "Maven Reporting Implementation" maven-reporting-impl org.apache.maven.reporting -
 describeReleasesFromBase maven "Maven Resolver" maven-resolver org.apache.maven.resolver
 describeReleasesFromBase maven "Maven SCM" maven-scm org.apache.maven.scm
 # shared
+describeReleasesFromBase maven "Maven Archiver" maven-archiver org.apache.maven -
 describeReleasesFromBase maven "Maven Common Artifact Filters" maven-common-artifact-filters org.apache.maven.shared -
 describeReleasesFromBase maven "Maven Dependency Analyzer" maven-dependency-analyzer org.apache.maven.shared -
 describeReleasesFromBase maven "Maven Dependency Tree" maven-dependency-tree org.apache.maven.shared -
@@ -144,7 +178,7 @@ describeReleasesFromBase maven "Maven Shared Jar" maven-shared-jar org.apache.ma
 describeReleasesFromBase maven "Maven Shared Resources" maven-shared-resources org.apache.maven.shared -
 # end of shared
 describeReleasesFromBase maven "Maven Skins Parent" maven-skins org.apache.maven.skins
-describeReleasesFromBase maven "Maven Surefire" maven-surefire org.apache.maven.surefire # missing maven-failsafe-plugin, maven-surefire-plugin and maven-surefire-report-plugin
+describeReleasesFromBase maven "Maven Surefire" maven-surefire org.apache.maven.surefire org.apache.maven.plugins/maven-failsafe-plugin org.apache.maven.plugins/maven-surefire
 describeReleasesFromBase maven "Maven Wrapper" maven-wrapper org.apache.maven.wrapper
 
 describeReleasesFromBase orc ORC -

@@ -1,4 +1,4 @@
-Maven Plugin Tools 4.0.0-beta-1: 5 SBOMs
+Maven Plugin Tools 4.0.0-beta-1: 6 SBOMs
 =======
 
 | file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |
@@ -8,3 +8,4 @@ Maven Plugin Tools 4.0.0-beta-1: 5 SBOMs
 | **[maven-plugin-tools-annotations-4.0.0-beta-1-cyclonedx](maven/org.apache.maven.plugin-tools/maven-plugin-tools-annotations/4.0.0-beta-1/maven-plugin-tools-annotations-4.0.0-beta-1-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:4d8491ce-6514-374b-9652-48edf754b1f1<br>version: 1 | **maven/org.apache.maven.plugin-tools/maven-plugin-tools-annotations@4.0.0-beta-1?type=jar**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 59<br>`library`: 59 <br>- `maven`: 59  |
 | **[maven-plugin-tools-api-4.0.0-beta-1-cyclonedx](maven/org.apache.maven.plugin-tools/maven-plugin-tools-api/4.0.0-beta-1/maven-plugin-tools-api-4.0.0-beta-1-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:7dc684f2-da63-3cf5-9bd3-e566fa788856<br>version: 1 | **maven/org.apache.maven.plugin-tools/maven-plugin-tools-api@4.0.0-beta-1?type=jar**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 44<br>`library`: 44 <br>- `maven`: 44  |
 | **[maven-plugin-tools-generators-4.0.0-beta-1-cyclonedx](maven/org.apache.maven.plugin-tools/maven-plugin-tools-generators/4.0.0-beta-1/maven-plugin-tools-generators-4.0.0-beta-1-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:d8d591fa-55fc-3c75-8a57-d8c6103d2858<br>version: 1 | **maven/org.apache.maven.plugin-tools/maven-plugin-tools-generators@4.0.0-beta-1?type=jar**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 53<br>`library`: 53 <br>- `maven`: 53  |
+| **[maven-plugin-plugin-4.0.0-beta-1-cyclonedx](maven/org.apache.maven.plugins/maven-plugin-plugin/4.0.0-beta-1/maven-plugin-plugin-4.0.0-beta-1-cyclonedx.json)**<br>json CycloneDX 1.5<br>urn:uuid:e2c5cd62-c7ee-3c52-9a36-0643a96d87d1<br>version: 1 | **maven/org.apache.maven.plugins/maven-plugin-plugin@4.0.0-beta-1?type=maven-plugin**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.8.0 | 67<br>`library`: 67 <br>- `maven`: 67  |
