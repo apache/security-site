@@ -1,35 +1,35 @@
 Apache Software Foundation produced SBOMs
 =========================================
 
-| TLP                                                                 |                      | Ecosystems  | Build       | SBOM Tools | Comments
-| ------------------------------------------------------------------- | -------------------- | ----------- | ----------- | ---------- | --------
-| [Airflow](https://projects.apache.org/committee.html?airflow)       | [SBOMs](#airflow)    | PyPI, npm   | pip, npm    | cdxgen     | [SBOMs](https://airflow.apache.org/docs/apache-airflow/stable/security/sbom.html)
-| [Arrow](https://projects.apache.org/committee.html?arrow)           | [SBOMs](#arrow)      | Maven Central<br>... | Maven<br>... | CycloneDX Maven P | Go? Python?
-| [Avro](https://projects.apache.org/committee.html?avro)             | [SBOMs](#avro)       | Maven Central<br>... | Maven<br>... | CycloneDX Maven P | Python, C/C++/C#, PHP, Ruby, Rust, JavaScript, and even Perl
-| [Camel](https://projects.apache.org/committee.html?camel)           | [SBOMs](#camel)      | Maven Central | Maven     | CycloneDX Maven P |
-| [Commons](https://projects.apache.org/committee.html?commons)       | [SBOMs](#commons)    | Maven Central | Maven     | CycloneDX Maven P<br>SPDX Maven P |
-| [CXF](https://projects.apache.org/committee.html?cxf)               | [SBOMs](#cxf)        | Maven Central | Maven     | CycloneDX Maven P |
-| [Directory](https://projects.apache.org/committee.html?directory)   | [SBOMs](#directory)  | Maven Central | Maven     | CycloneDX Maven P |
-| [Druid](https://projects.apache.org/committee.html?druid)           | [SBOMs](#druid)      | Maven Central | Maven     | CycloneDX Maven P |
-| [Flink](https://projects.apache.org/committee.html?flink)           | [SBOMs](#flink)      | Maven Central | Maven<br>... | CycloneDX Maven P | Docker, K8S Operator
-| [Groovy](https://projects.apache.org/committee.html?groovy)         | [SBOMs](#groovy)     | Maven Central | Gradle    | CycloneDX Gradle P |
-| [Hadoop](https://projects.apache.org/committee.html?hadoop)         | [SBOMs](#hadoop)     | Maven Central | Maven     | CycloneDX Maven P |
-| [HBase](https://projects.apache.org/committee.html?hbase)           | [SBOMs](#hbase)      | Maven Central | Maven     | CycloneDX Maven P |
-| [Hop](https://projects.apache.org/committee.html?hop)               | [SBOMs](#hop)        | Maven Central | Maven     | CycloneDX Maven P |
-| [Jena](https://projects.apache.org/committee.html?jena)             | [SBOMs](#jena)       | Maven Central | Maven     | CycloneDX Maven P |
-| [JSPWiki](https://projects.apache.org/committee.html?jspwiki)       | [SBOMs](#jspwiki)    | Maven Central | Maven     | CycloneDX Maven P |
-| [Logging](https://projects.apache.org/committee.html?logging)       | [SBOMs](#logging)    | Maven Central | Maven<br>... | CycloneDX Maven P | C++, .Net, PHP? [VDR](https://logging.apache.org/cyclonedx/vdr.xml)
-| [Maven](https://projects.apache.org/committee.html?maven)           | [SBOMs](#maven)      | Maven Central | Maven     | CycloneDX Maven P |
-| [Orc](https://projects.apache.org/committee.html?orc)               | [SBOMs](#orc)        | Maven Central | Maven<br>... | CycloneDX Maven P | Conan, Docker
-| [Parquet](https://projects.apache.org/committee.html?parquet)       | [SBOMs](#parquet)    | Maven Central | Maven<br>... | CycloneDX Maven P | C++, Rust
-| [Pekko](https://projects.apache.org/committee.html?pekko)           | [SBOMs](#pekko)      | Maven Central | Sbt       | ? | 
-| [Ratis](https://projects.apache.org/committee.html?ratis)           | [SBOMs](#ratis)      | Maven Central | Maven     | CycloneDX Maven P |
-| [Santuario](https://projects.apache.org/committee.html?santuario)   | [SBOMs](#santuario)  | Maven Central | Maven<br>... | CycloneDX Maven P | C++?
-| [Skywalking](https://projects.apache.org/committee.html?skywalking) | [SBOMs](#skywalking) | Maven Central | Maven<br>... | CycloneDX Maven P | Docker, Helm, npm, Rust, ...
-| [Spark](https://projects.apache.org/committee.html?spark)           | [SBOMs](#spark)      | Maven Central<br>PyPI | Maven<br>pip<br>... | CycloneDX Maven P | Python? K8S Operator?
-| [Syncope](https://projects.apache.org/committee.html?syncope)       | [SBOMs](#syncope)    | Maven Central | Maven     | CycloneDX Maven P |
-| [Turbine](https://projects.apache.org/committee.html?turbine)       | [SBOMs](#turbine)    | Maven Central | Maven     | CycloneDX Maven P |
-| [Zookeeper](https://projects.apache.org/committee.html?zookeeper)   | [SBOMs](#zookeeper)  | Maven Central | Maven     | CycloneDX Maven P |
+| TLP        |                                                                                                                                               | Ecosystems  | Build       | SBOM Tools | Comments
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ----------- | ---------- | --------
+| Airflow    | [:house:](https://airflow.apache.org/)    [:information_source:](https://projects.apache.org/committee.html?airflow)    [:memo:](#airflow)    | PyPI, npm   | pip, npm    | cdxgen     | [SBOMs publication](https://airflow.apache.org/docs/apache-airflow/stable/security/sbom.html)
+| Arrow      | [:house:](https://arrow.apache.org/)&nbsp;[:information_source:](https://projects.apache.org/committee.html?arrow)&nbsp;[:memo:](#arrow)      | Maven&nbsp;Central<br>... | Maven<br>... | CDX Maven P | Go? Python?
+| Avro       | [:house:](https://avro.apache.org/)       [:information_source:](https://projects.apache.org/committee.html?avro)       [:memo:](#avro)       | Maven Central<br>... | Maven<br>... | CDX Maven P | Python, C/C++/C#, PHP, Ruby, Rust, JavaScript, and even Perl
+| Camel      | [:house:](https://camel.apache.org/)      [:information_source:](https://projects.apache.org/committee.html?camel)      [:memo:](#camel)      | Maven Central | Maven     | CDX Maven P |
+| Commons    | [:house:](https://commons.apache.org/)    [:information_source:](https://projects.apache.org/committee.html?commons)    [:memo:](#commons)    | Maven Central | Maven     | CDX Maven P<br>SPDX&nbsp;Maven&nbsp;P |
+| CXF        | [:house:](https://cxf.apache.org/)        [:information_source:](https://projects.apache.org/committee.html?cxf)        [:memo:](#cxf)        | Maven Central | Maven     | CDX Maven P |
+| Directory  | [:house:](https://directory.apache.org/)  [:information_source:](https://projects.apache.org/committee.html?directory)  [:memo:](#directory)  | Maven Central | Maven     | CDX Maven P |
+| Druid      | [:house:](https://druid.apache.org/)      [:information_source:](https://projects.apache.org/committee.html?druid)      [:memo:](#druid)      | Maven Central | Maven     | CDX Maven P |
+| Flink      | [:house:](https://flink.apache.org/)      [:information_source:](https://projects.apache.org/committee.html?flink)      [:memo:](#flink)      | Maven Central | Maven<br>... | CDX Maven P | Docker, K8S Operator
+| Groovy     | [:house:](https://groovy.apache.org/)     [:information_source:](https://projects.apache.org/committee.html?groovy)     [:memo:](#groovy)     | Maven Central | Gradle    | CDX Gradle P |
+| Hadoop     | [:house:](https://hadoop.apache.org/)     [:information_source:](https://projects.apache.org/committee.html?hadoop)     [:memo:](#hadoop)     | Maven Central | Maven     | CDX Maven P |
+| HBase      | [:house:](https://hbase.apache.org/)      [:information_source:](https://projects.apache.org/committee.html?hbase)      [:memo:](#hbase)      | Maven Central | Maven     | CDX Maven P |
+| Hop        | [:house:](https://hop.apache.org/)        [:information_source:](https://projects.apache.org/committee.html?hop)        [:memo:](#hop)        | Maven Central | Maven     | CDX Maven P |
+| Jena       | [:house:](https://jena.apache.org/)       [:information_source:](https://projects.apache.org/committee.html?jena)       [:memo:](#jena)       | Maven Central | Maven     | CDX Maven P |
+| JSPWiki    | [:house:](https://jspwiki.apache.org/)    [:information_source:](https://projects.apache.org/committee.html?jspwiki)    [:memo:](#jspwiki)    | Maven Central | Maven     | CDX Maven P |
+| Logging    | [:house:](https://logging.apache.org/)    [:information_source:](https://projects.apache.org/committee.html?logging)    [:memo:](#logging)    | Maven Central | Maven<br>... | CDX Maven P | C++, .Net, PHP? [VDR](https://logging.apache.org/CDX/vdr.xml)
+| Maven      | [:house:](https://maven.apache.org/)      [:information_source:](https://projects.apache.org/committee.html?maven)      [:memo:](#maven)      | Maven Central | Maven     | CDX Maven P |
+| Orc        | [:house:](https://orc.apache.org/)        [:information_source:](https://projects.apache.org/committee.html?orc)        [:memo:](#orc)        | Maven Central | Maven<br>... | CDX Maven P | Conan, Docker
+| Parquet    | [:house:](https://parquet.apache.org/)    [:information_source:](https://projects.apache.org/committee.html?parquet)    [:memo:](#parquet)    | Maven Central | Maven<br>... | CDX Maven P | C++, Rust
+| Pekko      | [:house:](https://pekko.apache.org/)      [:information_source:](https://projects.apache.org/committee.html?pekko)      [:memo:](#pekko)      | Maven Central | Sbt       | ? | 
+| Ratis      | [:house:](https://ratis.apache.org/)      [:information_source:](https://projects.apache.org/committee.html?ratis)      [:memo:](#ratis)      | Maven Central | Maven     | CDX Maven P |
+| Santuario  | [:house:](https://santuario.apache.org/)  [:information_source:](https://projects.apache.org/committee.html?santuario)  [:memo:](#santuario)  | Maven Central | Maven<br>... | CDX Maven P | C++?
+| Skywalking | [:house:](https://skywalking.apache.org/) [:information_source:](https://projects.apache.org/committee.html?skywalking) [:memo:](#skywalking) | Maven Central | Maven<br>... | CDX Maven P | Docker, Helm, npm, Rust, ...
+| Spark      | [:house:](https://spark.apache.org/)      [:information_source:](https://projects.apache.org/committee.html?spark)      [:memo:](#spark)      | Maven Central<br>PyPI | Maven<br>pip<br>... | CDX Maven P | Python? K8S Operator?
+| Syncope    | [:house:](https://syncope.apache.org/)    [:information_source:](https://projects.apache.org/committee.html?syncope)    [:memo:](#syncope)    | Maven Central | Maven     | CDX Maven P |
+| Turbine    | [:house:](https://turbine.apache.org/)    [:information_source:](https://projects.apache.org/committee.html?turbine)    [:memo:](#turbine)    | Maven Central | Maven     | CDX Maven P |
+| Zookeeper  | [:house:](https://zookeeper.apache.org/)  [:information_source:](https://projects.apache.org/committee.html?zookeeper)  [:memo:](#zookeeper)  | Maven Central | Maven     | CDX Maven P |
 
 <!-- below generated: do not edit, it will be overridden -->
 

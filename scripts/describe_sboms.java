@@ -48,12 +48,12 @@ public class describe_sboms {
         String sh = args[0];
 
         List<String> readme = Files.readAllLines(Path.of("sboms/README.md")).stream().takeWhile(s -> !s.startsWith("##")).collect(Collectors.toList());
-        List<String> readmeProjects = readme.stream().filter(s -> s.startsWith("| [")).collect(Collectors.toList());
+        List<String> readmeProjects = readme.stream().filter(s -> s.contains("[:home:]")).collect(Collectors.toList());
         Map<String, List<String>> byPmc = new TreeMap<>(Files.readAllLines(Path.of(sh)).stream().filter(s -> s.startsWith("describeReleases")).collect(Collectors.groupingBy(s -> s.split(" ", 3)[1])));
 
         for(Map.Entry<String,List<String>> e: byPmc.entrySet()) {
             String pmc = e.getKey();
-            String pmcName = readmeProjects.stream().filter(s -> s.contains("?" + pmc + ")")).map(s -> s.substring(s.indexOf('[') + 1, s.indexOf(']'))).findFirst().get();
+            String pmcName = readmeProjects.stream().filter(s -> s.contains("https://" + pmc + ".apache.org")).map(s -> s.substring(2, s.indexOf('[') - 1).trim()).findFirst().get();
             List<String> projects = e.getValue().stream().map(s -> s.split(" ", 3)[2]).collect(Collectors.toList());
 
             readme.add("## " + pmcName);
