@@ -1,0 +1,11 @@
+Commons JCS 3 3.2: 6 SBOMs
+=======
+
+| file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |
+| ----------------------------------- | -------- | ------------------------------------------ |
+| **[commons-jcs3-3.2-cyclonedx](maven/org.apache.commons/commons-jcs3/3.2/commons-jcs3-3.2-cyclonedx.json)**<br>json CycloneDX 1.4 | **maven/org.apache.commons/commons-jcs3@3.2?type=pom**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.7.9 | 35<br>`library`: 35 <br>- `maven`: 35  |
+| **[commons-jcs3-core-3.2-cyclonedx](maven/org.apache.commons/commons-jcs3-core/3.2/commons-jcs3-core-3.2-cyclonedx.json)**<br>json CycloneDX 1.4 | **maven/org.apache.commons/commons-jcs3-core@3.2?type=jar**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.7.9 | 8<br>`library`: 8 <br>- `maven`: 8  |
+| **[commons-jcs3-jcache-3.2-cyclonedx](maven/org.apache.commons/commons-jcs3-jcache/3.2/commons-jcs3-jcache-3.2-cyclonedx.json)**<br>json CycloneDX 1.4 | **maven/org.apache.commons/commons-jcs3-jcache@3.2?type=jar**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.7.9 | 8<br>`library`: 8 <br>- `maven`: 8  |
+| **[commons-jcs3-jcache-extras-3.2-cyclonedx](maven/org.apache.commons/commons-jcs3-jcache-extras/3.2/commons-jcs3-jcache-extras-3.2-cyclonedx.json)**<br>json CycloneDX 1.4 | **maven/org.apache.commons/commons-jcs3-jcache-extras@3.2?type=jar**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.7.9 | 6<br>`library`: 6 <br>- `maven`: 6  |
+| **[commons-jcs3-jcache-openjpa-3.2-cyclonedx](maven/org.apache.commons/commons-jcs3-jcache-openjpa/3.2/commons-jcs3-jcache-openjpa-3.2-cyclonedx.json)**<br>json CycloneDX 1.4 | **maven/org.apache.commons/commons-jcs3-jcache-openjpa@3.2?type=jar**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.7.9 | 10<br>`library`: 10 <br>- `maven`: 10  |
+| **[commons-jcs3-jcache-tck-3.2-cyclonedx](maven/org.apache.commons/commons-jcs3-jcache-tck/3.2/commons-jcs3-jcache-tck-3.2-cyclonedx.json)**<br>json CycloneDX 1.4 | **maven/org.apache.commons/commons-jcs3-jcache-tck@3.2?type=jar**<br>type: LIBRARY<br>timestamp: <br>tool: CycloneDX Maven plugin 2.7.9 | 11<br>`library`: 11 <br>- `maven`: 11  |

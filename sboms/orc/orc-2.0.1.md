@@ -1,0 +1,9 @@
+ORC 2.0.1: 4 SBOMs
+=======
+
+| file, spec<br>Serial Number, version| metadata | components<br>by type<br>- libs purl types |
+| ----------------------------------- | -------- | ------------------------------------------ |
+| **[orc-core-2.0.1-cyclonedx](maven/org.apache.orc/orc-core/2.0.1/orc-core-2.0.1-cyclonedx.json)**<br>json CycloneDX 1.4<br>urn:uuid:54470e99-f9fc-4421-9668-183e74a15b36<br>version: 1 | **maven/org.apache.orc/orc-core@2.0.1?type=jar**<br>type: LIBRARY<br>timestamp: 2024-05-10 19:56:50<br>tool: CycloneDX Maven plugin makeBom compile+provided+runtime+system 2.7.6 | 18<br>`library`: 18 <br>- `maven`: 18  |
+| **[orc-mapreduce-2.0.1-cyclonedx](maven/org.apache.orc/orc-mapreduce/2.0.1/orc-mapreduce-2.0.1-cyclonedx.json)**<br>json CycloneDX 1.4<br>urn:uuid:f78b864c-9ec2-41d4-bfb3-89567b71181f<br>version: 1 | **maven/org.apache.orc/orc-mapreduce@2.0.1?type=jar**<br>type: LIBRARY<br>timestamp: 2024-05-10 19:57:33<br>tool: CycloneDX Maven plugin makeBom compile+provided+runtime+system 2.7.6 | 21<br>`library`: 21 <br>- `maven`: 21  |
+| **[orc-shims-2.0.1-cyclonedx](maven/org.apache.orc/orc-shims/2.0.1/orc-shims-2.0.1-cyclonedx.json)**<br>json CycloneDX 1.4<br>urn:uuid:ed5b8aa2-0de2-44d0-aa43-cc6338917cae<br>version: 1 | **maven/org.apache.orc/orc-shims@2.0.1?type=jar**<br>type: LIBRARY<br>timestamp: 2024-05-10 19:55:17<br>tool: CycloneDX Maven plugin makeBom compile+provided+runtime+system 2.7.6 | 3<br>`library`: 3 <br>- `maven`: 3  |
+| **[orc-tools-2.0.1-cyclonedx](maven/org.apache.orc/orc-tools/2.0.1/orc-tools-2.0.1-cyclonedx.json)**<br>json CycloneDX 1.4<br>urn:uuid:6da1e073-d2cc-4bda-9ed5-c0edc0f030b0<br>version: 1 | **maven/org.apache.orc/orc-tools@2.0.1?type=jar**<br>type: LIBRARY<br>timestamp: 2024-05-10 19:58:12<br>tool: CycloneDX Maven plugin makeBom compile+provided+runtime+system 2.7.6 | 31<br>`library`: 31 <br>- `maven`: 31  |

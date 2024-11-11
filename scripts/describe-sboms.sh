@@ -10,7 +10,9 @@ describe="$(pwd)/scripts/describe_sboms.java"
 function describeReleasesFromBasedir() {
   local pmc=$1
   local name=$2
-  local basedir=$3
+  local id=$3
+  local basedir=$4
+  [ "$id" = "-" ] && id=$pmc
 
   echo "> describing $name SBOMs"
   cd sboms/$pmc
@@ -18,7 +20,7 @@ function describeReleasesFromBasedir() {
   do
     local version=$(basename $d)
     echo "  > describing $name $version"
-    $describe $name $version $d/*.(xml|json) > $pmc-$version.md
+    $describe $name $version $d/*.(xml|json) > $id-$version.md
   done
   cd ../..
 }
@@ -29,7 +31,14 @@ function describeReleasesFromBase() {
   local id=$3
   local baseDir=$4
   local baseSub=$5
+  local additional1=$5;
+  local additional2=$6;
   [ "$id" = "-" ] && id=$pmc
+  if [ "$baseSub" != "" ]
+  then
+    [ "$baseSub" = "-" ] && baseSub=$id && additional1=""
+    [ "$additional1" != "" ] && baseSub=""
+  fi
 
   echo "> describing $name SBOMs"
   cd sboms/$pmc
@@ -37,18 +46,155 @@ function describeReleasesFromBase() {
   for version in $(echo "$(for d in */$baseDir*/$baseSub*/* ; do filename $d ; done)" | sort -u)
   do
     echo "  > describing $name $version"
-    $describe $name $version */$baseDir*/$baseSub*/$version/*.(xml|json) > $id-$version.md
+    if [ "$additional1" = "" ]
+    then
+      $describe $name $version */$baseDir*/$baseSub*/$version/*.(xml|json) > $id-$version.md
+    elif [ "$additional2" = "" ]
+    then
+      $describe $name $version */$baseDir*/$baseSub*/$version/*.(xml|json) */$additional1*/$version/*.(xml|json) > $id-$version.md
+    else
+      $describe $name $version */$baseDir*/$baseSub*/$version/*.(xml|json) */$additional1*/$version/*.(xml|json) */$additional2*/$version/*.(xml|json) > $id-$version.md
+    fi
   done
   cd ../..
 }
 
-describeReleasesFromBasedir airflow Airflow apache-airflow
+function describeReleasesFromBaseStrict() {
+  local pmc=$1
+  local name=$2
+  local id=$3
+  local baseDir=$4
+  local detectVersions=$5
+  [ "$id" = "-" ] && id=$pmc
 
-describeReleasesFromBase flink Flink - org.apache.flink flink
-describeReleasesFromBase groovy Groovy - org.apache.groovy groovy
-describeReleasesFromBase jspwiki JSPWiki - org.apache.jspwiki jspwiki
-describeReleasesFromBase logging Log4j log4j org.apache.logging.log4j log4j
-describeReleasesFromBase pekko Pekko - org.apache.pekko pekko
-describeReleasesFromBase turbine Turbine - org.apache.turbine turbine
-describeReleasesFromBase turbine Fulcrum fulcrum org.apache.fulcrum fulcrum
-describeReleasesFromBase zookeeper Zookeeper - org.apache.zookeeper zookeeper
+  echo "> describing $name SBOMs"
+  cd sboms/$pmc
+  local version
+  for version in $(echo "$(for d in */$baseDir/$detectVersions*/* ; do filename $d ; done)" | sort -u)
+  do
+    echo "  > describing $name $version"
+    $describe $name $version */$baseDir/*/$version/*.(xml|json) > $id-$version.md
+  done
+  cd ../..
+}
+
+describeReleasesFromBasedir airflow Airflow - apache-airflow
+
+describeReleasesFromBase arrow Arrow -
+describeReleasesFromBase avro Avro -
+describeReleasesFromBase camel Camel -
+
+# commons
+describeReleasesFromBase commons "Commons IO" commons-io commons-io
+describeReleasesFromBase commons BCEL bcel org.apache.bcel
+describeReleasesFromBase commons "Commons Compress" commons-compress org.apache.commons -
+describeReleasesFromBase commons "Commons Configuration 2" commons-configuration2 org.apache.commons -
+describeReleasesFromBase commons "Commons Crypto" commons-crypto org.apache.commons -
+describeReleasesFromBase commons "Commons CSV" commons-csv org.apache.commons -
+describeReleasesFromBase commons "Commons DBCP 2" commons-dbcp2 org.apache.commons -
+describeReleasesFromBase commons "Commons Email" commons-email org.apache.commons -
+describeReleasesFromBase commons "Commons Exec" commons-exec org.apache.commons -
+describeReleasesFromBase commons "Commons Imaging" commons-imaging org.apache.commons -
+describeReleasesFromBase commons "Commons JCS 3" commons-jcs3 org.apache.commons -
+describeReleasesFromBase commons "Commons JEXL 3" commons-jexl3 org.apache.commons -
+describeReleasesFromBase commons "Commons Lang 3" commons-lang3 org.apache.commons -
+describeReleasesFromBase commons "Commons Math 4" commons-math org.apache.commons -
+describeReleasesFromBase commons "Commons Parent" commons-parent org.apache.commons -
+describeReleasesFromBase commons "Commons Pool 2" commons-pool2 org.apache.commons -
+describeReleasesFromBase commons "Commons Release Plugin" commons-release-plugin org.apache.commons -
+describeReleasesFromBase commons "Commons RNG" commons-rng org.apache.commons -
+describeReleasesFromBase commons "Commons Statistics" commons-statistics org.apache.commons -
+describeReleasesFromBase commons "Commons Text" commons-text org.apache.commons -
+
+describeReleasesFromBase cxf CXF -
+
+describeReleasesFromBase directory Directory - org.apache.directory
+describeReleasesFromBase directory Kerby kerby org.apache.kerby
+
+describeReleasesFromBase druid Druid -
+describeReleasesFromBase flink Flink -
+describeReleasesFromBase groovy Groovy -
+describeReleasesFromBase hadoop Hadoop -
+describeReleasesFromBase hbase HBase -
+describeReleasesFromBase hop Hop -
+describeReleasesFromBase jena Jena -
+describeReleasesFromBase jspwiki JSPWiki -
+describeReleasesFromBase logging Log4j log4j
+
+# maven
+describeReleasesFromBaseStrict maven Maven - org.apache.maven apache-maven
+describeReleasesFromBase maven "Maven Archetype" maven-archetype org.apache.maven.archetype org.apache.maven.plugins/maven-archetype-plugin
+describeReleasesFromBase maven "Maven Archetype Bundles" maven-archetypes org.apache.maven.archetypes
+describeReleasesFromBase maven Doxia doxia org.apache.maven.doxia
+describeReleasesFromBase maven "Maven Enforcer" maven-enforcer org.apache.maven.enforcer org.apache.maven.plugins/maven-enforcer-plugin org.apache.maven.extensions/maven-enforcer-extension
+describeReleasesFromBase maven "Maven Build Cache Extension" maven-build-cache-extension org.apache.maven.extensions -
+describeReleasesFromBase maven "Maven Extensions Parent" maven-extensions org.apache.maven.extensions -
+describeReleasesFromBase maven "Maven Indexer" maven-indexer org.apache.maven.indexer
+describeReleasesFromBase maven "Maven JXR" maven-jxr org.apache.maven.jxr org.apache.maven.plugins/maven-jxr-plugin org.apache.maven/maven-jxr
+describeReleasesFromBase maven "Maven Plugin Testing" maven-plugin-testing org.apache.maven.plugin-testing
+describeReleasesFromBase maven "Maven Plugin Tools" maven-plugin-tools org.apache.maven.plugin-tools org.apache.maven.plugins/maven-plugin-plugin
+# plugins
+describeReleasesFromBase maven "Maven Artifact Plugin" maven-artifact-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Assembly Plugin" maven-assembly-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Checkstyle Plugin" maven-checkstyle-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Clean Plugin" maven-clean-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Compiler Plugin" maven-compiler-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Dependency Plugin" maven-dependency-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Deploy Plugin" maven-deploy-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven GPG Plugin" maven-gpg-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Help Plugin" maven-help-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Install Plugin" maven-install-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Invoker Plugin" maven-invoker-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Jar Plugin" maven-jar-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Jarsigner Plugin" maven-jarsigner-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Javadoc Plugin" maven-javadoc-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven JLink Plugin" maven-jlink-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Plugins Parent" maven-plugins org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven PMD Plugin" maven-pmd-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Project Info Reports Plugin" maven-project-info-reports-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Remote Resources Plugin" maven-remote-resources-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Resources Plugin" maven-resources-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven SCM Publish Plugin" maven-scm-publish-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Shade Plugin" maven-shade-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Site Plugin" maven-site-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Source Plugin" maven-source-plugin org.apache.maven.plugins -
+describeReleasesFromBase maven "Maven Toolchains Plugin" maven-toolchains-plugin org.apache.maven.plugins -
+# end of plugins
+describeReleasesFromBase maven "Maven Release" maven-release org.apache.maven.release org.apache.maven.plugins/maven-release-plugin
+describeReleasesFromBase maven "Maven Reporting API" maven-reporting-api org.apache.maven.reporting -
+describeReleasesFromBase maven "Maven Reporting Exec" maven-reporting-exec org.apache.maven.reporting -
+describeReleasesFromBase maven "Maven Reporting Implementation" maven-reporting-impl org.apache.maven.reporting -
+describeReleasesFromBase maven "Maven Resolver" maven-resolver org.apache.maven.resolver
+describeReleasesFromBase maven "Maven SCM" maven-scm org.apache.maven.scm
+# shared
+describeReleasesFromBase maven "Maven Archiver" maven-archiver org.apache.maven -
+describeReleasesFromBase maven "Maven Common Artifact Filters" maven-common-artifact-filters org.apache.maven.shared -
+describeReleasesFromBase maven "Maven Dependency Analyzer" maven-dependency-analyzer org.apache.maven.shared -
+describeReleasesFromBase maven "Maven Dependency Tree" maven-dependency-tree org.apache.maven.shared -
+describeReleasesFromBase maven "Maven Filtering" maven-filtering org.apache.maven.shared -
+describeReleasesFromBase maven "Maven Invoker" maven-invoker org.apache.maven.shared -
+describeReleasesFromBase maven "Maven Jarsigner" maven-jarsigner org.apache.maven.shared -
+describeReleasesFromBase maven "Maven Script Interpreter" maven-script-interpreter org.apache.maven.shared -
+describeReleasesFromBase maven "Maven Shared Parent" maven-shared-components org.apache.maven.shared -
+describeReleasesFromBase maven "Maven Shared Jar" maven-shared-jar org.apache.maven.shared -
+describeReleasesFromBase maven "Maven Shared Resources" maven-shared-resources org.apache.maven.shared -
+# end of shared
+describeReleasesFromBase maven "Maven Skins Parent" maven-skins org.apache.maven.skins
+describeReleasesFromBase maven "Maven Surefire" maven-surefire org.apache.maven.surefire org.apache.maven.plugins/maven-failsafe-plugin org.apache.maven.plugins/maven-surefire
+describeReleasesFromBase maven "Maven Wrapper" maven-wrapper org.apache.maven.wrapper
+
+describeReleasesFromBase orc ORC -
+describeReleasesFromBase parquet Parquet -
+describeReleasesFromBase pekko Pekko -
+describeReleasesFromBase ratis Ratis -
+describeReleasesFromBase santuario Santuario -
+describeReleasesFromBase skywalking SkyWalking -
+describeReleasesFromBase spark Spark -
+describeReleasesFromBase syncope Syncope -
+
+describeReleasesFromBase turbine Turbine - org.apache.turbine
+describeReleasesFromBase turbine Fulcrum fulcrum org.apache.fulcrum
+
+describeReleasesFromBase zookeeper Zookeeper -
+
+$describe $0 sboms/*/*.md
