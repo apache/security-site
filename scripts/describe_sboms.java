@@ -48,7 +48,7 @@ public class describe_sboms {
         String sh = args[0];
 
         List<String> readme = Files.readAllLines(Path.of("sboms/README.md")).stream().takeWhile(s -> !s.startsWith("##")).collect(Collectors.toList());
-        List<String> readmeProjects = readme.stream().filter(s -> s.contains("[:information_source:]")).collect(Collectors.toList());
+        List<String> readmeProjects = Files.readAllLines(Path.of("README.md")).stream().filter(s -> s.contains("sboms/README.md#")).collect(Collectors.toList());
         Map<String, List<String>> byPmc = new TreeMap<>(Files.readAllLines(Path.of(sh)).stream().filter(s -> s.startsWith("describeReleases")).collect(Collectors.groupingBy(s -> s.split(" ", 3)[1])));
 
         for(Map.Entry<String,List<String>> e: byPmc.entrySet()) {
