@@ -39,7 +39,7 @@ If someone else is running Apache software on your behalf, such as Amazon WebSer
 
 # Compliance statements
 
-We do not directly provide any compliance statements (such as CC, STIG, CJIS, USGBC, 508, Army NW, etc).
+We do not directly provide any compliance statements or reports (such as SOC, CC, STIG, CJIS, USGBC, 508, Army NW, etc).
 
 Nonetheless, many organizations that use Apache software projects have successfully passed various audits and received the corresponding certification.
 
