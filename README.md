@@ -15,25 +15,21 @@ used across the ASF.
 
 ## Repository structure
 
-### `sboms`
-
+- `sboms/`
 This folder contains an archive of SBOMs downloaded from their canonical
 locations. The top-level directory is the PMC, under that the directory
 structure follows the
 [Purl](https://github.com/package-url/purl-spec/blob/master/PURL-TYPES.rst)
 identification of the artifacts that are described by the SBOMs.
 
-### `app`
-
+- `app/`
 A web application hosted at https://sbom.security.apache.org/ to allow
 browsing the SBOM information.
 
-### `ecosystem-graph`
-
+- `ecosystem-graph/`
 A script to generate the graph displayed at https://sbom.security.apache.org/ 
 
-### `scripts`
-
+- `scripts/`
 Various smaller scripts, such as for collecting SBOMs from their
 canonical locations.
 
