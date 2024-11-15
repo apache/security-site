@@ -5,7 +5,7 @@ date: 2024-03-01
 description: This post describes when and how we give credit to people who report security issues.
 ---
 
-We highly appreciate everyone who responsibly [reports security issues](https://www.apache.org/security/)
+We highly appreciate everyone who responsibly [reports security issues](/report/)
 to us: a diverse mix of community members, independent security researchers,
 software auditing firms, etc.
 
@@ -19,17 +19,6 @@ The Apache Software Foundation, being a volunteer organization, does not have
 a bug bounty program. However, some Apache projects are covered under 3rd-party
 bounty programs such as the
 [HackerOne Internet Bug Bounty](https://hackerone.com/ibb).
-
-Notifications about possible security issues in the infrastructure that makes
-development possible, such as websites, CI systems and other supporting
-software, are also very welcome.
-
-There are some classes of common reports that we consider invalid up-front:
-
-* We already know our mailservers do not use DKIM/DMARC. We plan to support this in the future, but this is nontrivial given our strong reliance on mailinglists.
-* As an open source organization with transparency at our core, read access to directory listings, source code repositories and build servers is intentionally public.
-* If a project has a dependency for which a security advisory has been published, this is not in itself a vulnerability in the project, as more often than not the dependency is used in a way that is not affected by the issue in the advisory. Only if you have additional analysis to confirm the project is affected you're invited to report this through the private reporting mechanism.
-* Similarly, results from source code security analysis tools are not accepted without additional analysis showing the problem indeed violates the projects' security model, as such tools commonly produce a significant amount of false positives.
 
 Valid reports about our project infrastructure are typically not eligible
 for a CVE, as downstream users do not need to take any action,
