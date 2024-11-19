@@ -9,22 +9,27 @@ sbomdir = os.path.realpath('./sboms')
 def get_purl(package):
     if 'purl' in package:
         return package['purl']
-    if 'group' in package:
-        return f"pkg:maven/{package['group']}/{package['name']}"
     if 'externalreference' in package:
         for (_, t, r) in package['externalreference']:
             if t == 'purl':
                 return r
+    print(f"Could not determine purl for {package['name']}")
     return None
 
 def dependency(package):
-    return get_purl(package) or package['name'], package['version']
+    purl = get_purl(package)
+    if purl:
+        pre, post = purl.split("@", 1)
+        return pre, post.split("?")[0]
+    else:
+        return package['name'], package['version']
 
 def load_sbom(artifact, version):
     path = './sboms/' + artifact + '/' + version
     if os.path.commonprefix((os.path.realpath(path), sbomdir)) != sbomdir:
         raise ValueError("Unexpected path")
     for sbom in os.scandir(path):
+        print(f"Using {path}/{sbom.name}")
         parser = SBOMParser()
         parser.parse_file(path + '/' + sbom.name)
         return list(map(dependency, parser.get_packages()))
