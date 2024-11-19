@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bom serialNumber="urn:uuid:6dbde96d-574d-35a5-aa95-f0c8dbbe0ac4" version="1" xmlns="http://cyclonedx.org/schema/bom/1.5">
+  <metadata>
+    <lifecycles>
+      <lifecycle>
+        <phase>build</phase>
+      </lifecycle>
+    </lifecycles>
+    <tools>
+      <components>
+        <component type="library">
+          <author>OWASP Foundation</author>
+          <group>org.cyclonedx</group>
+          <name>cyclonedx-maven-plugin</name>
+          <version>2.8.1</version>
+          <description>CycloneDX Maven plugin</description>
+          <hashes>
+            <hash alg="MD5">42c73e70d517b359d40b757c368d68fc</hash>
+            <hash alg="SHA-1">c66892e13fb7ed7b8105cb5a280fa767d9e0bf12</hash>
+            <hash alg="SHA-256">566681b9fcb1b0178e101cd899d2ea399e2039255e208a1a477bc079158dbdc5</hash>
+            <hash alg="SHA-512">93d7b7421ee2d91f84930e75a52864952f26fee96114740dab477ee5f0e62b6448759ad5a160f1749650379f771941100c7fd84ed523b2407d2004b928998ecb</hash>
+            <hash alg="SHA-384">04b0c71c1b79f77e723e7db96c72705f50172e94df5a7f28edbd96024b886fff65f61f37fc77abb1d12b0809813ae665</hash>
+            <hash alg="SHA3-384">eafa68c2c25670f0b77c5db3acdfd97cfe97dfc50c47bba2103353327b049b9bbac0d8b621b1168200ddf21719048c73</hash>
+            <hash alg="SHA3-256">2c07b6997ba0e40ca3b66e39cfcf101fcebdceaa19fce0baf12e013cf392466e</hash>
+            <hash alg="SHA3-512">636f068843bad92259885cd4d427630619864c0172bd1b41df15c33a7d411767ab09cf2ff339a97fda149ee44c95a162fdf6cb12de19e2dc0250c2fadc80d882</hash>
+          </hashes>
+        </component>
+      </components>
+    </tools>
+    <component type="library" bom-ref="pkg:maven/org.apache.logging.log4j/log4j-weaver@0.2.0?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.logging.log4j</group>
+      <name>log4j-weaver</name>
+      <version>0.2.0</version>
+      <description>The Apache Log4j Weaving Tools for logging frameworks</description>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.logging.log4j/log4j-weaver@0.2.0?type=jar</purl>
+      <externalReferences><reference type="vulnerability-assertion"><url>https://logging.apache.org/cyclonedx/vdr.xml</url></reference><reference type="website"><url>https://logging.apache.org/log4j/transform</url></reference><reference type="build-system"><url>https://github.com/apache/logging-log4j-transform/actions</url></reference><reference type="distribution"><url>https://logging.apache.org/log4j/transform/latest/#distribution</url></reference><reference type="distribution-intake"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://github.com/apache/logging-log4j-transform/issues</url></reference><reference type="mailing-list"><url>https://lists.apache.org/list.html?log4j-user@logging.apache.org</url></reference><reference type="vcs"><url>https://github.com/apache/logging-log4j-transform</url></reference></externalReferences>
+    </component>
+    <properties>
+      <property name="maven.goal">makeBom</property>
+      <property name="maven.scopes">compile,provided,runtime,system</property>
+      <property name="cdx:reproducible">enabled</property>
+    </properties>
+  </metadata>
+  <components>
+    <component type="library" bom-ref="pkg:maven/org.ow2.asm/asm@9.7.1?type=jar">
+      <publisher>OW2</publisher>
+      <group>org.ow2.asm</group>
+      <name>asm</name>
+      <version>9.7.1</version>
+      <description>ASM, a very small and fast Java bytecode manipulation framework</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">e2cdd32d198ad31427d298eee9d39d8d</hash>
+        <hash alg="SHA-1">f0ed132a49244b042cd0e15702ab9f2ce3cc8436</hash>
+        <hash alg="SHA-256">8cadd43ac5eb6d09de05faecca38b917a040bb9139c7edeb4cc81c740b713281</hash>
+        <hash alg="SHA-512">4767b01603dad5c79cc1e2b5f3722f72b1059d928f184f446ba11badeb1b381b3a3a9a801cc43d25d396df950b09d19597c73173c411b1da890de808b94f1f50</hash>
+        <hash alg="SHA-384">166e2be10a19ca6a6d7cadb542eb1c948562483f02557b467a50a3d19d01318e12e5c3b495c482f3f5369be1b7f20eed</hash>
+        <hash alg="SHA3-384">e301862376e84df61c3547dbf637252750224fb5b74feb82f20e1527a8e3152c45f620192a9111a2db5e2f0e73ebd7ca</hash>
+        <hash alg="SHA3-256">7edcc4ff09b3ace15091a8c550f552a324b5cee6c1527944db5823df7eba8d64</hash>
+        <hash alg="SHA3-512">9d220edc5528e4d788605721490f3d29483dd4bd506765e85d781048419aa89b686a70e316b82ef2a856ead56bb7be6b5d52d77b7ca6f27d5e0e347e9669d731</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>BSD-3-Clause</id>
+          <url>https://opensource.org/licenses/BSD-3-Clause</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.ow2.asm/asm@9.7.1?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://asm.ow2.io/</url></reference><reference type="distribution-intake"><url>https://repository.ow2.org/nexus/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://gitlab.ow2.org/asm/asm/issues</url></reference><reference type="mailing-list"><url>https://mail.ow2.org/wws/arc/asm/</url></reference><reference type="vcs"><url>https://gitlab.ow2.org/asm/asm/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.ow2.asm/asm-commons@9.7.1?type=jar">
+      <publisher>OW2</publisher>
+      <group>org.ow2.asm</group>
+      <name>asm-commons</name>
+      <version>9.7.1</version>
+      <description>Usefull class adapters based on ASM, a very small and fast Java bytecode manipulation framework</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">8344aea3c8b7d707e9d35a62710e77c9</hash>
+        <hash alg="SHA-1">406c6a2225cfe1819f102a161e54cc16a5c24f75</hash>
+        <hash alg="SHA-256">9a579b54d292ad9be171d4313fd4739c635592c2b5ac3a459bbd1049cddec6a0</hash>
+        <hash alg="SHA-512">81daf5765e387e6aeec5d45c4b9e4e1b471fb4f350931e5a214845c7c657a2142768f6902765e49c0ce2c595962e5d008883cba2e4a40c4bdce8f2e92518d2db</hash>
+        <hash alg="SHA-384">473ba9b72bd47d2000d127dababdd649fd7738d658cd5b818266cd978e8d3bb2589e431a52bfaa7fb8a03d2345a529f2</hash>
+        <hash alg="SHA3-384">1a792b9567115e97b81242325de41d3757e8b11dc5c38b4f6b8c9aa34ef8a33b5ef9a7401c725574ee4c36ebb5c0f46a</hash>
+        <hash alg="SHA3-256">2974918408bf8791d133c96cee74e86f4fa9659faa1faaf886eed3c586b7c717</hash>
+        <hash alg="SHA3-512">21c2635f5cdee961ea6aedee78589603b0ff1d56ee295d4548e882abe4485a5818a82848a99851592de5a8d09e4c74e406fc0bea9f23e250e58e0e31986845af</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>BSD-3-Clause</id>
+          <url>https://opensource.org/licenses/BSD-3-Clause</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.ow2.asm/asm-commons@9.7.1?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://asm.ow2.io/</url></reference><reference type="distribution-intake"><url>https://repository.ow2.org/nexus/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://gitlab.ow2.org/asm/asm/issues</url></reference><reference type="mailing-list"><url>https://mail.ow2.org/wws/arc/asm/</url></reference><reference type="vcs"><url>https://gitlab.ow2.org/asm/asm/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.ow2.asm/asm-tree@9.7.1?type=jar">
+      <publisher>OW2</publisher>
+      <group>org.ow2.asm</group>
+      <name>asm-tree</name>
+      <version>9.7.1</version>
+      <description>Tree API of ASM, a very small and fast Java bytecode manipulation framework</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">e85029f613b6469989cc7cf53fe06b74</hash>
+        <hash alg="SHA-1">3a53139787663b139de76b627fca0084ab60d32c</hash>
+        <hash alg="SHA-256">9929881f59eb6b840e86d54570c77b59ce721d104e6dfd7a40978991c2d3b41f</hash>
+        <hash alg="SHA-512">e55008c392fdd35e95d3404766b12dd4b46e13d5c362fcd0ab42a65751a82737eaf0ebc857691d1916190d34407adfde4437615d69c278785416fd911e00978d</hash>
+        <hash alg="SHA-384">4363d7d075700cbe6161bf86a0ff1b0e732fe96963010f1fc66f7701e8139673cc4fba81ae2937d25e0a5032368b0d5a</hash>
+        <hash alg="SHA3-384">d22a3eeb20ee739bfbf3535655e7d25e3b3910f13ac86d9e4c29b4e0b19efd53ab65c1d843bbc0e289a8744d27e09453</hash>
+        <hash alg="SHA3-256">9d57ddbdd10cda7f9bc45bc0bcb54143f7ea1b802540cf3029ab7e31dfc59df7</hash>
+        <hash alg="SHA3-512">1352a6d8caca6649bc7e1c8e209a1e3864ac8eac8d6af2f11e2701eab5304a4cff41355828ed0c69adc8fc3b8d639d607bec574834e8e3185a3e3f81199e756a</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>BSD-3-Clause</id>
+          <url>https://opensource.org/licenses/BSD-3-Clause</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.ow2.asm/asm-tree@9.7.1?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://asm.ow2.io/</url></reference><reference type="distribution-intake"><url>https://repository.ow2.org/nexus/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://gitlab.ow2.org/asm/asm/issues</url></reference><reference type="mailing-list"><url>https://mail.ow2.org/wws/arc/asm/</url></reference><reference type="vcs"><url>https://gitlab.ow2.org/asm/asm/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.ow2.asm/asm-util@9.7.1?type=jar">
+      <publisher>OW2</publisher>
+      <group>org.ow2.asm</group>
+      <name>asm-util</name>
+      <version>9.7.1</version>
+      <description>Utilities for ASM, a very small and fast Java bytecode manipulation framework</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">36d373a9cd6cad9b35db9f984c6b4bbb</hash>
+        <hash alg="SHA-1">9e23359b598ec6b74b23e53110dd5c577adf2243</hash>
+        <hash alg="SHA-256">f885be71b5c90556f5f1ad1c4f9276b29b96057c497d46666fe4ddbec3cb43c6</hash>
+        <hash alg="SHA-512">522d793d15a2c5ea6504a50222cf0750f1eab7b881cf289675042539b1aba8b3868197b1bebe729de728dd10020eb028ae16252dcd5d84fdcbf7f925832bc269</hash>
+        <hash alg="SHA-384">c073e7d64d5891d024860f638c3ee901aca60637b820ad05f9be7d33b4f4ad99fc448173dd9cb0b1cd0032485e813b24</hash>
+        <hash alg="SHA3-384">2300d5572d929e6f20a7569dceb05bd9930b6ca18bcf11f648e37f28d00e78883f632ff60f4c4f9997aaa3d560a9450b</hash>
+        <hash alg="SHA3-256">f5b3d45b832550fc3d1a675fdc4531a32eb8688db37b7102f0d544635f967ed2</hash>
+        <hash alg="SHA3-512">ae097429b38febbc39a91d9697b6f709a49aad2fbc032ae2222e8f11c2907ef1a526afc4ee38d4dee46c09a7196f4f676f5704461dd3a0fe1e606bc9e3ef970a</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>BSD-3-Clause</id>
+          <url>https://opensource.org/licenses/BSD-3-Clause</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.ow2.asm/asm-util@9.7.1?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://asm.ow2.io/</url></reference><reference type="distribution-intake"><url>https://repository.ow2.org/nexus/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://gitlab.ow2.org/asm/asm/issues</url></reference><reference type="mailing-list"><url>https://mail.ow2.org/wws/arc/asm/</url></reference><reference type="vcs"><url>https://gitlab.ow2.org/asm/asm/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.ow2.asm/asm-analysis@9.7.1?type=jar">
+      <publisher>OW2</publisher>
+      <group>org.ow2.asm</group>
+      <name>asm-analysis</name>
+      <version>9.7.1</version>
+      <description>Static code analysis API of ASM, a very small and fast Java bytecode manipulation framework</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">4cd9e7178dfb85371bba3077e40cd514</hash>
+        <hash alg="SHA-1">f97a3b319f0ed6a8cd944dc79060d3912a28985f</hash>
+        <hash alg="SHA-256">85b29371884ba31bb76edf22323c2c24e172c3267a67152eba3d1ccc2e041ef2</hash>
+        <hash alg="SHA-512">a8bd265c81d9bb4371cafd3f5d18f96ad79aec65031457d518c54599144d199d9feddf13b8dc822b2598b8b504a88edbd81d1f2c52991a70a6b343d8f5bb6fe5</hash>
+        <hash alg="SHA-384">31620bb948127b811684769f966990170ced469f4b15f30bf22a7a0d28c7da644027cf7c9ffd10f80fcc4cdf377909d8</hash>
+        <hash alg="SHA3-384">fe5920760dfcbe5dda26d7839ba9ad621a8d2b139994e0d2107873512651cfffdb73e85e635dbad0f9db7cfee55420d3</hash>
+        <hash alg="SHA3-256">3fe7b153bea627308dbfb2ce682a3c10646a06eee5d34a13acd76e60a7cda240</hash>
+        <hash alg="SHA3-512">1acd097141b321e440561a9ef759b5b5ab125b42ae02e5806fd026978727740124a483f608db230563fde701161e51f8548a662e29ba12d97ba3d24949b4c821</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>BSD-3-Clause</id>
+          <url>https://opensource.org/licenses/BSD-3-Clause</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.ow2.asm/asm-analysis@9.7.1?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://asm.ow2.io/</url></reference><reference type="distribution-intake"><url>https://repository.ow2.org/nexus/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://gitlab.ow2.org/asm/asm/issues</url></reference><reference type="mailing-list"><url>https://mail.ow2.org/wws/arc/asm/</url></reference><reference type="vcs"><url>https://gitlab.ow2.org/asm/asm/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.commons</group>
+      <name>commons-lang3</name>
+      <version>3.17.0</version>
+      <description>Apache Commons Lang, a package of Java utility classes for the
+  classes that are in java.lang's hierarchy, or are considered to be so
+  standard as to justify existence in java.lang.
+
+  The code is tested using the latest revision of the JDK for supported
+  LTS releases: 8, 11, 17 and 21 currently.
+  See https://github.com/apache/commons-lang/blob/master/.github/workflows/maven.yml
+  
+  Please ensure your build environment is up-to-date and kindly report any build issues.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">7730df72b7fdff4a3a32d89a314f826a</hash>
+        <hash alg="SHA-1">b17d2136f0460dcc0d2016ceefca8723bdf4ee70</hash>
+        <hash alg="SHA-256">6ee731df5c8e5a2976a1ca023b6bb320ea8d3539fbe64c8a1d5cb765127c33b4</hash>
+        <hash alg="SHA-512">dfd5ff7fe7f852b9caabc81e5a00e20616f98405085f059b64dc2121feb5fa6cb327e11a3d2f954c079811c31f6fd484e90f932d45078796fbfa7dbf1f1eb5aa</hash>
+        <hash alg="SHA-384">c6ed55a5c2b05332890a43a3ea73b30f42dc23c92ebd054a8b0d29ca8f49fb9361f7325cfa90715be457804b087221b5</hash>
+        <hash alg="SHA3-384">bb9e148a87928c3053bcccee361d5d8d81b3c6ea41a390d96c615afd242409f909361c945f3b4238a297e4ebb2ed413b</hash>
+        <hash alg="SHA3-256">f28f34565f25dd65fd1a47916e917df9e3ff2c6721897ea57391a238227c96a2</hash>
+        <hash alg="SHA3-512">4c8e7a5f10d091bb240e7eb59287d0e4e4420e7a2d2be2b8060111e479540ffae89040377c99ec7f458cd54e1ac0ed0778951cd1f34d5d90571b8a303fbb9baf</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://commons.apache.org/proper/commons-lang/</url></reference><reference type="build-system"><url>https://github.com/apache/commons-parent/actions</url></reference><reference type="distribution-intake"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/LANG</url></reference><reference type="mailing-list"><url>https://mail-archives.apache.org/mod_mbox/commons-user/</url></reference><reference type="vcs"><url>https://gitbox.apache.org/repos/asf?p=commons-lang.git</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.osgi/osgi.annotation@8.1.0?type=jar">
+      <publisher>Eclipse Foundation</publisher>
+      <group>org.osgi</group>
+      <name>osgi.annotation</name>
+      <version>8.1.0</version>
+      <description>OSGi Annotation Release 8, Annotations for use in compiling bundles</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">3bcfab9c55a2bcc158aa4953084021b6</hash>
+        <hash alg="SHA-1">59d42736bcc0af2144ba5c1a12ff7c08ea4b7e12</hash>
+        <hash alg="SHA-256">68afeb86a5322675d4dfe3df5863c7d8a37b34c18e3a8e41553f1ab3ac15d78f</hash>
+        <hash alg="SHA-512">a190fa888fd22c2c31455d672b3e50ca79fa9f02269b9d45f6e6fc189dc8f90d20663e290f151a851e010b52ce87e62dc5079253c3e59caa72f11ea6248ffb26</hash>
+        <hash alg="SHA-384">581c88a48fc7df5edae29712f943ef780fb0f32b4eee10dfcaa879f122f19fd1645b961b38bc0a97dd894d89952fdb68</hash>
+        <hash alg="SHA3-384">ab4fab76440671def19eb0ca3370d8f0f8a915df4ec92e5aa2b9e12a4b97aa49301c51ccd28a2d2718beec6fe8105bc6</hash>
+        <hash alg="SHA3-256">6849ce4a9cad5dbf2dce1ad817442821a633f8ae10ab1ccde69ac46d26127a46</hash>
+        <hash alg="SHA3-512">3c3ce68b5ae1ea157f78d72a210cc152375fd8819a7c85ed5c718fbe387ffb522715e1b0dfa5094caed1e8bbe4b8fcc6d2aadd1cd3851f4c0fffebda5acaebba</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.osgi/osgi.annotation@8.1.0?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://docs.osgi.org/</url></reference><reference type="vcs"><url>https://github.com/osgi/osgi</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.github.spotbugs/spotbugs-annotations@4.8.6?type=jar">
+      <group>com.github.spotbugs</group>
+      <name>spotbugs-annotations</name>
+      <version>4.8.6</version>
+      <description>Annotations the SpotBugs tool supports</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">0806b237c67c69869506ce3ced9a722f</hash>
+        <hash alg="SHA-1">1dcffed3e561ed32134a0dff4717f19bc2fdf4d8</hash>
+        <hash alg="SHA-256">4548b74a815ed44f5480ca4f06204a8b00809dc7e5f6a825a9edf18f40377b65</hash>
+        <hash alg="SHA-512">ebe5bca26efc72b82c168b65f8f4b1b55768e0464edb9e732e48bcb05b3de7e761e50f0da46e96f02258b4bc4443f4e4a5e7d53956b17161674238b564f6018d</hash>
+        <hash alg="SHA-384">ed8acfde5a975f6aa24930caf2889cddeee21226497ca7ca403a25afdc2a6a32d7a6d53cc117143401e3698c87b33159</hash>
+        <hash alg="SHA3-384">eca5720d9a38a2dfe8667dd73003e4fd6d3a0503219d4aea539570374bdbe9157dfe945502de2d40b4f20a4caebd2100</hash>
+        <hash alg="SHA3-256">59bcae1d85e982281500f515c27f49c292f5b0f57a69204859f9c5243a64917f</hash>
+        <hash alg="SHA3-512">0b77811020ea0052e4b799add234754e2f3437b28f0f4f51f49df9de7bad5d97b4262aed175cc16f2d110a7c49adf88d99dc8f12bb2751ca6bff845ba09c473a</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>LGPL-2.1-only</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.github.spotbugs/spotbugs-annotations@4.8.6?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://spotbugs.github.io/</url></reference><reference type="vcs"><url>https://github.com/spotbugs/spotbugs/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar">
+      <group>com.google.code.findbugs</group>
+      <name>jsr305</name>
+      <version>3.0.2</version>
+      <description>JSR305 Annotations for Findbugs</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">dd83accb899363c32b07d7a1b2e4ce40</hash>
+        <hash alg="SHA-1">25ea2e8b0c338a877313bd4672d3fe056ea78f0d</hash>
+        <hash alg="SHA-256">766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7</hash>
+        <hash alg="SHA-512">bb09db62919a50fa5b55906013be6ca4fc7acb2e87455fac5eaf9ede2e41ce8bbafc0e5a385a561264ea4cd71bbbd3ef5a45e02d63277a201d06a0ae1636f804</hash>
+        <hash alg="SHA-384">ca0b169d3eb2d0922dc031133a021f861a043bb3e405a88728215fd6ff00fa52fdc7347842dcc2031472e3726164bdc4</hash>
+        <hash alg="SHA3-384">9903fd7505218999f8262efedb3d935d64bcef84aae781064ab5e1b24755466b269517cada562fa140cd1d417ede57a1</hash>
+        <hash alg="SHA3-256">223fda9a89a461afaae73b177a2dc20ed4a90f2f8757f5c65f3241b0510f00ff</hash>
+        <hash alg="SHA3-512">3996b5af57a5d5c6a0cd62b11773360fb051dd86a2ba968476806a2a5d32049b82d69a24a3c694e8fe4d735be6a28e41000cc500cc2a9fb577e058045855d2d6</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://findbugs.sourceforge.net/</url></reference><reference type="distribution-intake"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="vcs"><url>https://code.google.com/p/jsr-305/</url></reference></externalReferences>
+    </component>
+  </components>
+  <dependencies>
+    <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-weaver@0.2.0?type=jar">
+      <dependency ref="pkg:maven/org.ow2.asm/asm@9.7.1?type=jar"/>
+      <dependency ref="pkg:maven/org.ow2.asm/asm-commons@9.7.1?type=jar"/>
+      <dependency ref="pkg:maven/org.ow2.asm/asm-util@9.7.1?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar"/>
+      <dependency ref="pkg:maven/org.osgi/osgi.annotation@8.1.0?type=jar"/>
+      <dependency ref="pkg:maven/com.github.spotbugs/spotbugs-annotations@4.8.6?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.ow2.asm/asm@9.7.1?type=jar"/>
+    <dependency ref="pkg:maven/org.ow2.asm/asm-commons@9.7.1?type=jar">
+      <dependency ref="pkg:maven/org.ow2.asm/asm@9.7.1?type=jar"/>
+      <dependency ref="pkg:maven/org.ow2.asm/asm-tree@9.7.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.ow2.asm/asm-tree@9.7.1?type=jar">
+      <dependency ref="pkg:maven/org.ow2.asm/asm@9.7.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.ow2.asm/asm-util@9.7.1?type=jar">
+      <dependency ref="pkg:maven/org.ow2.asm/asm@9.7.1?type=jar"/>
+      <dependency ref="pkg:maven/org.ow2.asm/asm-tree@9.7.1?type=jar"/>
+      <dependency ref="pkg:maven/org.ow2.asm/asm-analysis@9.7.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.ow2.asm/asm-analysis@9.7.1?type=jar">
+      <dependency ref="pkg:maven/org.ow2.asm/asm-tree@9.7.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar"/>
+    <dependency ref="pkg:maven/org.osgi/osgi.annotation@8.1.0?type=jar"/>
+    <dependency ref="pkg:maven/com.github.spotbugs/spotbugs-annotations@4.8.6?type=jar">
+      <dependency ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar"/>
+  </dependencies>
+</bom>
