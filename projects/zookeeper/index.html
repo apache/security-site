@@ -144,6 +144,24 @@
 <ul>
 <li>周吉安(寒泉) <a href="mailto:zhoujian.zja@alibaba-inc.com">zhoujian.zja@alibaba-inc.com</a> (reporter)</li>
 </ul>
+<h2 id="CVE-2024-51504">Authentication bypass with IP-based authentication in Admin Server</h2>
+<p>CVE-2024-51504 <a href="./CVE-2024-51504.cve.json">[CVE json]</a> <a href="./CVE-2024-51504.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-11-07T09:52:02.061Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache ZooKeeper from 3.9.0 before 3.9.3</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>When using IPAuthenticationProvider in ZooKeeper Admin Server there is a possibility of Authentication Bypass by Spoofing &ndash; this only impacts IP based authentication implemented in ZooKeeper Admin Server. Default configuration of client&rsquo;s IP address detection in IPAuthenticationProvider, which uses HTTP request headers, is weak and allows an attacker to bypass authentication via spoofing client&rsquo;s IP address in request headers. Default configuration honors X-Forwarded-For HTTP header to read client&rsquo;s IP address. X-Forwarded-For request header is mainly used by proxy servers to identify the client and can be easily spoofed by an attacker pretending that the request comes from a different IP address. Admin Server commands, such as snapshot and restore arbitrarily can be executed on successful exploitation which could potentially lead to information leakage or service availability issues. Users are recommended to upgrade to version 3.9.3, which fixes this issue.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/b3qrmpkto5r6989qr61fw9y2x646kqlh">https://lists.apache.org/thread/b3qrmpkto5r6989qr61fw9y2x646kqlh</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>4ra1n (reporter)</li>
+<li>Y4tacker (reporter)</li>
+</ul>
 
   
 </div>

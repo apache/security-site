@@ -364,6 +364,24 @@ JavaScript code can be executed within the session context of the authenticated 
 <ul>
 <li>Muhammad Hazim Bin Nor Aizi (finder)</li>
 </ul>
+<h2 id="CVE-2024-52067">Potential Insertion of Sensitive Parameter Values in Debug Log</h2>
+<p>CVE-2024-52067 <a href="./CVE-2024-52067.cve.json">[CVE json]</a> <a href="./CVE-2024-52067.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-11-21T09:28:41.996Z</em></p>
+<h3 id="affected-14">Affected</h3>
+<ul>
+<li>Apache NiFi from 1.16.0 through 1.28.0</li>
+<li>Apache NiFi from 2.0.0-M1 through 2.0.0-M4</li>
+</ul>
+<h3 id="description-14">Description</h3>
+<p>Apache NiFi 1.16.0 through 1.28.0 and 2.0.0-M1 through 2.0.0-M4 include optional debug logging of Parameter Context values during the flow synchronization process. An authorized administrator with access to change logging levels could enable debug logging for framework flow synchronization, causing the application to write Parameter names and values to the application log. Parameter Context values may contain sensitive information depending on application flow configuration. Deployments of Apache NiFi with the default Logback configuration do not log Parameter Context values. Upgrading to Apache NiFi 2.0.0 or 1.28.1 is the recommendation mitigation, eliminating Parameter value logging from the flow synchronization process regardless of the Logback configuration.<br></p>
+<h3 id="references-14">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/9rz5rwn2zc7pfjq7ppqldqlc067tlcwd">https://lists.apache.org/thread/9rz5rwn2zc7pfjq7ppqldqlc067tlcwd</a></li>
+</ul>
+<h3 id="credits-12">Credits</h3>
+<ul>
+<li>David Handermann (finder)</li>
+</ul>
 
   
 </div>

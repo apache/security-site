@@ -123,6 +123,74 @@
 <ul>
 <li>Iván Arce from Quarkslab Vulnerability Reports team (reporter)</li>
 </ul>
+<h2 id="CVE-2024-47248">Buffer overflow in NimBLE MESH Bluetooth stack</h2>
+<p>CVE-2024-47248 <a href="./CVE-2024-47248.cve.json">[CVE json]</a> <a href="./CVE-2024-47248.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-11-26T11:15:41.242Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache NimBLE through 1.7.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Buffer Copy without Checking Size of Input ('Classic Buffer Overflow') vulnerability in Apache NimBLE.</p>Specially crafted MESH message could result in memory corruption when non-default build configuration is used.<br><p>This issue affects Apache NimBLE: through 1.7.0.</p><p>Users are recommended to upgrade to version 1.8.0, which fixes the issue.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/z8m7jqh54xybf9kz8q2l3tz92zsj7tmz">https://lists.apache.org/thread/z8m7jqh54xybf9kz8q2l3tz92zsj7tmz</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Wei Che Kao (Xiaobye), graduate student from National Yang Ming Chiao Tung University, Dept. of CS, Security and Systems Lab. (reporter)</li>
+</ul>
+<h2 id="CVE-2024-47249">Lack of input sanitization leading to out-of-bound reads in multiple advertisement handler</h2>
+<p>CVE-2024-47249 <a href="./CVE-2024-47249.cve.json">[CVE json]</a> <a href="./CVE-2024-47249.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-11-26T11:16:32.616Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache NimBLE through 1.7.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Improper Validation of Array Index vulnerability in Apache NimBLE.</p>Lack of input validation for HCI events from controller could result in out-of-bound memory corruption and crash.<br>This issue requires broken or bogus Bluetooth controller and thus severity is considered low.<br><p>This issue affects Apache NimBLE: through 1.7.0.</p><p>Users are recommended to upgrade to version 1.8.0, which fixes the issue.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7ckxw6481dp68ons627pjcb27c75n0mq">https://lists.apache.org/thread/7ckxw6481dp68ons627pjcb27c75n0mq</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Eunkyu Lee (reporter)</li>
+</ul>
+<h2 id="CVE-2024-47250">Lack of input validation in HCI advertising report could lead to potential out-of-bound access</h2>
+<p>CVE-2024-47250 <a href="./CVE-2024-47250.cve.json">[CVE json]</a> <a href="./CVE-2024-47250.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-11-26T11:17:18.104Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache NimBLE through 1.7.0</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Out-of-bounds Read vulnerability in Apache NimBLE.</p><span style="background-color: rgb(255, 255, 255);">Missing proper validation of HCI advertising report could lead to out-of-bound access when parsing HCI event and thus bogus G</span>AP 'device found' events being sent.<br>This issue requires broken or bogus Bluetooth controller and thus severity is considered low.<br><p>This issue affects Apache NimBLE: through 1.7.0.<br></p><p>Users are recommended to upgrade to version 1.8.0, which fixes the issue.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/zdb50spojlqbn0yxd866mbzqjt2vpt85">https://lists.apache.org/thread/zdb50spojlqbn0yxd866mbzqjt2vpt85</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Eunkyu Lee (reporter)</li>
+</ul>
+<h2 id="CVE-2024-51569">Lack of input sanitization leading to out-of-bound reads in Number of Completed Packets HCI event handler</h2>
+<p>CVE-2024-51569 <a href="./CVE-2024-51569.cve.json">[CVE json]</a> <a href="./CVE-2024-51569.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-11-26T11:17:54.727Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache NimBLE through 1.7.0</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p></p><p>Out-of-bounds Read vulnerability in Apache NimBLE.</p><span style="background-color: rgb(255, 255, 255);">Missing proper validation of HCI Number Of Completed Packets could lead to out-of-bound access when parsing HCI event and invalid read from HCI transport memory.<br></span>This issue requires broken or bogus Bluetooth controller and thus severity is considered low.<br><p>This issue affects Apache NimBLE: through 1.7.0.<br></p><p>Users are recommended to upgrade to version 1.8.0, which fixes the issue.</p><p></p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/q0vs5rddx1lho30xnpsrvpzgxqmywnhs">https://lists.apache.org/thread/q0vs5rddx1lho30xnpsrvpzgxqmywnhs</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Eunkyu Lee (reporter)</li>
+</ul>
 
   
 </div>

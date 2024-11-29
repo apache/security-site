@@ -200,6 +200,27 @@ successfully authenticate via TLS can trigger the issue.</li>
 <ul>
 <li><a href="https://lists.apache.org/thread/6536rmzyg076lzzdw2xdktvnz163mjpy">https://lists.apache.org/thread/6536rmzyg076lzzdw2xdktvnz163mjpy</a></li>
 </ul>
+<h2 id="CVE-2024-31141">Privilege escalation to filesystem read-access via automatic ConfigProvider</h2>
+<p>CVE-2024-31141 <a href="./CVE-2024-31141.cve.json">[CVE json]</a> <a href="./CVE-2024-31141.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-11-19T08:40:15.880Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Kafka Clients from 2.3.0 through 3.5.2</li>
+<li>Apache Kafka Clients from 3.6.0 through 3.6.2</li>
+<li>Apache Kafka Clients at 3.7.0</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Files or Directories Accessible to External Parties, Improper Privilege Management vulnerability in Apache Kafka Clients.<br><br>Apache Kafka Clients accept configuration data for customizing behavior, and includes ConfigProvider plugins in order to manipulate these configurations. Apache Kafka also provides FileConfigProvider, DirectoryConfigProvider, and EnvVarConfigProvider implementations which include the ability to read from disk or environment variables.<br>In applications where Apache Kafka Clients configurations can be specified by an untrusted party, attackers may use these ConfigProviders to read arbitrary contents of the disk and environment variables.<br><br>In particular, this flaw may be used in Apache Kafka Connect to escalate from REST API access to filesystem/environment access, which may be undesirable in certain environments, including SaaS products.<br><p>This issue affects Apache Kafka Clients: from 2.3.0 through 3.5.2, 3.6.2, 3.7.0.<br></p><p>Users with affected applications are recommended to upgrade kafka-clients to version &gt;=3.8.0, and set the JVM system property &ldquo;org.apache.kafka.automatic.config.providers=none&rdquo;.<br>Users of Kafka Connect with one of the listed ConfigProvider implementations specified in their worker config are also recommended to add appropriate &ldquo;allowlist.pattern&rdquo; and &ldquo;allowed.paths&rdquo; to restrict their operation to appropriate bounds.<br></p>For users of Kafka Clients or Kafka Connect in environments that trust users with disk and environment variable access, it is not recommended to set the system property.<br><span style="background-color: var(--wht);">For users of the Kafka Broker, Kafka MirrorMaker 2.0, Kafka Streams, and Kafka command-line tools, it is not recommended to set the system property.<br></span></p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/9whdzfr0zwdhr364604w5ssnzmg4v2lv">https://lists.apache.org/thread/9whdzfr0zwdhr364604w5ssnzmg4v2lv</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Greg Harris (finder)</li>
+<li>Mickael Maison (remediation reviewer)</li>
+<li>Chris Egerton (remediation reviewer)</li>
+</ul>
 
   
 </div>
