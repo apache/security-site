@@ -403,3 +403,31 @@ _Last updated: 2024-10-16T10:39:13.974Z_
 ### Credits
 * Arthur Souza (reporter)
 * Felipe Olivaes (reporter)
+
+
+## Directly downloaded templates can be used to abuse KVM-based infrastructure ## { #CVE-2024-50386 }
+
+CVE-2024-50386 [\[CVE json\]](./CVE-2024-50386.cve.json) [\[OSV json\]](./CVE-2024-50386.osv.json)
+
+
+
+_Last updated: 2024-11-12T13:52:37.947Z_
+
+### Affected
+
+* Apache CloudStack from 4.0.0 through 4.18.2.4
+* Apache CloudStack from 4.19.0.0 through 4.19.1.2
+
+
+### Description
+
+Account users in Apache CloudStack by default are allowed to register templates to be downloaded directly to the primary storage for deploying instances. Due to missing validation checks for KVM-compatible templates in CloudStack 4.0.0 through 4.18.2.4 and 4.19.0.0 through 4.19.1.2, an attacker that can register templates, can use them to deploy malicious instances on KVM-based environments and exploit this to gain access to the host filesystems that could result in the compromise of resource integrity and confidentiality, data loss, denial of service, and availability of KVM-based infrastructure managed by CloudStack.<div><br></div><div><span style="background-color: rgb(252, 252, 252);">Users are recommended to upgrade to Apache CloudStack 4.18.2.5 or 4.19.1.3, or later, which addresses this issue. <br><br></span>Additionally, all user-registered KVM-compatible templates can be scanned and checked that they are flat files that should not be using any additional or unnecessary features. For example, operators can run the following command on their file-based primary storage(s) and inspect the output. An empty output for the disk being validated means it has no references to the host filesystems; on the other hand, if the output for the disk being validated is not empty, it might indicate a compromised disk. H<span style="background-color: rgb(255, 255, 255);">owever, bear in mind that (i) volumes created from templates will have references for the templates at first and (ii) volumes can be consolidated while migrating, losing their references to the templates. Therefore, the command execution for the primary storages can show both false positives and false negatives.</span><br></div><blockquote>for file in $(find /path/to/storage/ -type f -regex [a-f0-9\-]*.*); do echo "Retrieving file [$file] info. If the output is not empty, that might indicate a compromised disk; check it carefully."; qemu-img info -U $file | grep file: ; printf "\n\n"; done</blockquote><div><br>For checking the whole template/volume features of each disk, operators can run the following command:<br></div><blockquote>for file in $(find /path/to/storage/ -type f -regex [a-f0-9\-]*.*); do echo "Retrieving file [$file] info."; qemu-img info -U $file; printf "\n\n"; done</blockquote><div><span style="background-color: rgb(252, 252, 252);"><br></span></div><br>
+
+### References
+* https://cloudstack.apache.org/blog/security-release-advisory-4.18.2.5-4.19.1.3
+* https://lists.apache.org/thread/d0x83c2cyglzzdw8csbop7mj7h83z95y
+* https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-5-and-4-19-1-3/
+
+
+### Credits
+* Kiran Chavala <kiranchavala@apache.org> (reporter)

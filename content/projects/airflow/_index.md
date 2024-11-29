@@ -2487,3 +2487,57 @@ Example DAG: example_inlet_event_extra.py shipped with Apache Airflow version 2.
 ### Credits
 * Nhien Pham (aka nhienit) at Galaxy One (finder)
 * Amogh Desai (remediation developer)
+
+
+## Sensitive configuration values are not masked in the logs by default ## { #CVE-2024-45784 }
+
+CVE-2024-45784 [\[CVE json\]](./CVE-2024-45784.cve.json) [\[OSV json\]](./CVE-2024-45784.osv.json)
+
+
+
+_Last updated: 2024-11-15T08:20:02.608Z_
+
+### Affected
+
+* Apache Airflow before 2.10.3
+
+
+### Description
+
+Apache Airflow versions before 2.10.3 contain a vulnerability that could expose sensitive configuration variables in task logs. This vulnerability allows DAG authors to unintentionally or intentionally log sensitive configuration variables. Unauthorized users could access these logs, potentially exposing critical data that could be exploited to compromise the security of the Airflow deployment. In version 2.10.3, secrets are now masked in task logs to prevent sensitive configuration variables from being exposed in the logging output. Users should upgrade to Airflow 2.10.3 or the latest version to eliminate this vulnerability.&nbsp;If you suspect that DAG authors could have logged the secret values to the logs and that your logs are not additionally protected, it is also recommended that you update those secrets.
+
+### References
+* https://github.com/apache/airflow/pull/43040
+* https://lists.apache.org/thread/k2jm55jztlbmk4zrlh10syvq3n57hl4h
+
+
+### Credits
+* Saurabh Banawar (finder)
+* Amogh Desai (remediation developer)
+
+
+## Secrets not masked in UI when sensitive variables are set via Airflow cli ## { #CVE-2024-50378 }
+
+CVE-2024-50378 [\[CVE json\]](./CVE-2024-50378.cve.json) [\[OSV json\]](./CVE-2024-50378.osv.json)
+
+
+
+_Last updated: 2024-11-08T14:37:07.862Z_
+
+### Affected
+
+* Apache Airflow before 2.10.3
+
+
+### Description
+
+Airflow versions before 2.10.3 have a vulnerability that allows authenticated users with audit log access to see sensitive values in audit logs which they should not see.&nbsp;When sensitive variables were set via airflow CLI, values of those variables appeared in the audit log and were stored unencrypted in the Airflow database. While this risk is limited to users with audit log access, it is recommended to upgrade to Airflow 2.10.3 or a later version, which addresses this issue. Users who previously used the CLI to set secret variables should manually delete entries with those variables from the log table.
+
+### References
+* https://github.com/apache/airflow/pull/43123
+* https://lists.apache.org/thread/17rxys384lzfd6nhm3fztzgvk47zy7jb
+
+
+### Credits
+* Saurabh Banawar (finder)
+* Shubham Raj (remediation developer)

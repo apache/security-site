@@ -66,3 +66,29 @@ Information disclosure in persistent watchers handling in Apache ZooKeeper due t
 
 ### Credits
 * 周吉安(寒泉) <zhoujian.zja@alibaba-inc.com> (reporter)
+
+
+## Authentication bypass with IP-based authentication in Admin Server ## { #CVE-2024-51504 }
+
+CVE-2024-51504 [\[CVE json\]](./CVE-2024-51504.cve.json) [\[OSV json\]](./CVE-2024-51504.osv.json)
+
+
+
+_Last updated: 2024-11-07T09:52:02.061Z_
+
+### Affected
+
+* Apache ZooKeeper from 3.9.0 before 3.9.3
+
+
+### Description
+
+When using IPAuthenticationProvider in ZooKeeper Admin Server there is a possibility of Authentication Bypass by Spoofing -- this only impacts IP based authentication implemented in ZooKeeper Admin Server. Default configuration of client's IP address detection in&nbsp;IPAuthenticationProvider, which uses HTTP request headers, is weak&nbsp;and allows an attacker to bypass authentication via spoofing client's IP address in request headers. Default configuration honors X-Forwarded-For HTTP header to read client's IP address. X-Forwarded-For request header is mainly used by proxy servers to identify the client and can be easily spoofed by an attacker pretending that the request comes from a different IP address. Admin Server commands, such as snapshot and restore arbitrarily can be executed on successful exploitation which could potentially lead to information leakage or service availability issues. Users are recommended to upgrade to version 3.9.3, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/b3qrmpkto5r6989qr61fw9y2x646kqlh
+
+
+### Credits
+* 4ra1n (reporter)
+* Y4tacker (reporter)

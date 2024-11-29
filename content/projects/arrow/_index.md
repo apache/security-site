@@ -64,3 +64,31 @@ Exposure of temporary credentials in logs&nbsp;in Apache Arrow Rust Object Store
 
 ### Credits
 * Paul Hatcherian (finder)
+
+
+## Arbitrary code execution when loading a malicious data file ## { #CVE-2024-52338 }
+
+CVE-2024-52338 [\[CVE json\]](./CVE-2024-52338.cve.json) [\[OSV json\]](./CVE-2024-52338.osv.json)
+
+
+
+_Last updated: 2024-11-28T16:31:53.209Z_
+
+### Affected
+
+* Apache Arrow R package from 4.0.0 through 16.1.0
+
+
+### Description
+
+<p>Deserialization of untrusted data in IPC and Parquet readers in the Apache Arrow R package versions&nbsp;4.0.0 through 16.1.0 allows arbitrary code execution. An application is vulnerable if it 
+reads Arrow IPC, Feather or Parquet data from untrusted sources (for 
+example, user-supplied input files). This vulnerability only affects the arrow R package, not other Apache Arrow 
+implementations or bindings unless those bindings are specifically used via the R package (for example, an R application that embeds a Python interpreter and uses PyArrow to read files from untrusted sources is still vulnerable if the arrow R package is an affected version). It is recommended that users of the arrow R package upgrade to 17.0.0 or later. Similarly, it
+ is recommended that downstream libraries upgrade their dependency 
+requirements to arrow 17.0.0 or later. If using an affected
+version of the package, untrusted data can read into a Table and its internal to_data_frame() method can be used as a workaround (e.g., read_parquet(..., as_data_frame = FALSE)$to_data_frame()).<br></p><p>This issue affects the Apache Arrow R package: from 4.0.0 through 16.1.0.<br></p><p>Users are recommended to upgrade to version 17.0.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/arrow/commit/801de2fbcf5bcbce0c019ed4b35ff3fc863b141b
+* https://lists.apache.org/thread/0rcbvj1gdp15lvm23zm601tjpq0k25vt

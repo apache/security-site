@@ -211,3 +211,28 @@ _Last updated: 2024-08-09T14:53:26.714Z_
 
 ### Credits
 * Mohammad Reza Omrani (reporter)
+
+
+## Predictable Authorization Token Using UUIDv1 ## { #CVE-2024-45719 }
+
+CVE-2024-45719 [\[CVE json\]](./CVE-2024-45719.cve.json) [\[OSV json\]](./CVE-2024-45719.osv.json)
+
+
+
+_Last updated: 2024-11-22T14:36:42.714Z_
+
+### Affected
+
+* Apache Answer through 1.4.0
+
+
+### Description
+
+<p>Inadequate Encryption Strength vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 1.4.0.</p>The ids generated using the UUID v1 version are to some extent not secure enough. It can cause the generated token to be predictable.<br><p>Users are recommended to upgrade to version 1.4.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/sz2d0z39k01nbx3r9pj65t76o1hy9491
+
+
+### Credits
+* Chi Tran from Eevee (reporter)

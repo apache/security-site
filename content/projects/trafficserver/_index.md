@@ -875,3 +875,50 @@ _Last updated: 2024-07-26T09:11:09.740Z_
 
 ### Credits
 * Min Chen (reporter)
+
+
+## Valid Host field value can cause crashes ## { #CVE-2024-50305 }
+
+CVE-2024-50305 [\[CVE json\]](./CVE-2024-50305.cve.json) [\[OSV json\]](./CVE-2024-50305.osv.json)
+
+
+
+_Last updated: 2024-11-14T09:54:18.691Z_
+
+### Affected
+
+* Apache Traffic Server from 9.2.0 through 9.2.5
+
+
+### Description
+
+<p>Valid Host header field can cause Apache Traffic Server to crash on some platforms.</p><p>This issue affects Apache Traffic Server: from 9.2.0 through 9.2.5.</p><p>Users are recommended to upgrade to version 9.2.6, which fixes the issue, or 10.0.2, which does not have the issue.</p>
+
+### References
+* https://lists.apache.org/thread/y15fh6c7kyqvzm0f9odw7c5jh4r4np0y
+
+
+## Server process can fail to drop privilege ## { #CVE-2024-50306 }
+
+CVE-2024-50306 [\[CVE json\]](./CVE-2024-50306.cve.json) [\[OSV json\]](./CVE-2024-50306.osv.json)
+
+
+
+_Last updated: 2024-11-14T09:55:41.120Z_
+
+### Affected
+
+* Apache Traffic Server from 9.2.0 through 9.2.5
+* Apache Traffic Server from 10.0.0 through 10.0.1
+
+
+### Description
+
+<p>Unchecked return value can allow Apache Traffic Server to retain privileges on startup.</p><p>This issue affects Apache Traffic Server: from 9.2.0 through 9.2.5, from 10.0.0 through 10.0.1.</p><p>Users are recommended to upgrade to version 9.2.6 or 10.0.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/y15fh6c7kyqvzm0f9odw7c5jh4r4np0y
+
+
+### Credits
+* Jeffrey BENCTEUX (reporter)

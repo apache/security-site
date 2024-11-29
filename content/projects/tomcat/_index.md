@@ -785,6 +785,33 @@ _Last updated: 2024-07-03T19:38:21.788Z_
 * devme4f from VNPT-VCI (finder)
 
 
+## Denial of Service ## { #CVE-2024-38286 }
+
+CVE-2024-38286 [\[CVE json\]](./CVE-2024-38286.cve.json) [\[OSV json\]](./CVE-2024-38286.osv.json)
+
+
+
+_Last updated: 2024-11-07T07:37:40.443Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.0-M20
+* Apache Tomcat from 10.1.0-M1 through 10.1.24
+* Apache Tomcat from 9.0.13 through 9.0.89
+
+
+### Description
+
+<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M20, from 10.1.0-M1 through 10.1.24, from 9.0.13 through 9.0.89. Older, unsupported versions may also be affected.<br></p><p>Users are recommended to upgrade to version 11.0.0-M21, 10.1.25, or 9.0.90, which fixes the issue.</p><p></p><div>Apache Tomcat, under certain configurations on any platform, allows an attacker to cause an OutOfMemoryError by abusing the TLS handshake process.<br></div><br><p></p>
+
+### References
+* https://lists.apache.org/thread/wms60cvbsz3fpbz9psxtfx8r41jl6d4s
+
+
+### Credits
+* Ozaki, North Grid Corporation (reporter)
+
+
 ## mod_jk: local users can view and modify configuration ## { #CVE-2024-46544 }
 
 CVE-2024-46544 [\[CVE json\]](./CVE-2024-46544.cve.json) [\[OSV json\]](./CVE-2024-46544.osv.json)
@@ -804,3 +831,73 @@ _Last updated: 2024-09-23T10:51:17.287Z_
 
 ### References
 * https://lists.apache.org/thread/q1gp7cc38hs1r8gj8gfnopwznd5fpr4d
+
+
+## Authentication bypass when using Jakarta Authentication API ## { #CVE-2024-52316 }
+
+CVE-2024-52316 [\[CVE json\]](./CVE-2024-52316.cve.json) [\[OSV json\]](./CVE-2024-52316.osv.json)
+
+
+
+_Last updated: 2024-11-18T11:32:31.150Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.0-M26
+* Apache Tomcat from 10.1.0-M1 through 10.1.30
+* Apache Tomcat from 9.0.0-M1 through 9.0.95
+
+
+### Description
+
+<p>Unchecked Error Condition vulnerability in Apache Tomcat. If Tomcat is configured to use a custom Jakarta Authentication (formerly JASPIC)&nbsp;ServerAuthContext component which may throw an exception during the authentication process without explicitly setting an HTTP status to indicate failure, the authentication may not fail, allowing the user to bypass the authentication process. There are no known Jakarta&nbsp;Authentication components that behave in this way.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M26, from 10.1.0-M1 through 10.1.30, from 9.0.0-M1 through 9.0.95.</p><p>Users are recommended to upgrade to version 11.0.0, 10.1.31 or 9.0.96, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/lopzlqh91jj9n334g02om08sbysdb928
+
+
+## Request/response mix-up with HTTP/2 ## { #CVE-2024-52317 }
+
+CVE-2024-52317 [\[CVE json\]](./CVE-2024-52317.cve.json) [\[OSV json\]](./CVE-2024-52317.osv.json)
+
+
+
+_Last updated: 2024-11-18T11:37:01.194Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M23 through 11.0.0-M26
+* Apache Tomcat from 10.1.27 through 10.1.30
+* Apache Tomcat from 9.0.92 through 9.0.95
+
+
+### Description
+
+<p>Incorrect object re-cycling and re-use vulnerability in Apache Tomcat.&nbsp;Incorrect recycling of the request and response used by HTTP/2 requests 
+could lead to request and/or response mix-up between users.</p><p>This issue affects Apache Tomcat: from 11.0.0-M23 through 11.0.0-M26, from 10.1.27 through 10.1.30, from 9.0.92 through 9.0.95.</p><p>Users are recommended to upgrade to version 11.0.0, 10.1.31 or 9.0.96, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/ty376mrxy1mmxtw3ogo53nc9l3co3dfs
+
+
+## Incorrect JSP tag recycling leads to XSS ## { #CVE-2024-52318 }
+
+CVE-2024-52318 [\[CVE json\]](./CVE-2024-52318.cve.json) [\[OSV json\]](./CVE-2024-52318.osv.json)
+
+
+
+_Last updated: 2024-11-18T12:21:44.105Z_
+
+### Affected
+
+* Apache Tomcat at 11.0.0
+* Apache Tomcat at 10.1.31
+* Apache Tomcat at 9.0.96
+
+
+### Description
+
+<p>Incorrect object recycling and reuse vulnerability in Apache Tomcat.</p><p>This issue affects Apache Tomcat: 11.0.0, 10.1.31, 9.0.96.</p><p>Users are recommended to upgrade to version 11.0.1, 10.1.32 or 9.0.97, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/co243cw1nlh6p521c5265cm839wkqdp9

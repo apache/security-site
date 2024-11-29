@@ -622,3 +622,60 @@ _Last updated: 2024-09-04T08:08:31.094Z_
 
 ### Credits
 * 孙相 (Sun Xiang) (finder)
+
+
+## URLs allowing remote use of Groovy expressions, leading to RCE ## { #CVE-2024-47208 }
+
+CVE-2024-47208 [\[CVE json\]](./CVE-2024-47208.cve.json) [\[OSV json\]](./CVE-2024-47208.osv.json)
+
+
+
+_Last updated: 2024-11-18T08:43:11.961Z_
+
+### Affected
+
+* Apache OFBiz before 18.12.17
+
+
+### Description
+
+<p>Server-Side Request Forgery (SSRF), Improper Control of Generation of Code ('Code Injection') vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 18.12.17.</p><p>Users are recommended to upgrade to version 18.12.17, which fixes the issue.</p>
+
+### References
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html
+* https://issues.apache.org/jira/browse/OFBIZ-13158
+* https://lists.apache.org/thread/022r19skfofhv3lzql33vowlrvqndh11
+
+
+### Credits
+* 孙相 (Sun Xiang) (finder)
+
+
+## Bypass SameSite restrictions with target redirection using URL parameters (SSTI and CSRF leading to RCE) ## { #CVE-2024-48962 }
+
+CVE-2024-48962 [\[CVE json\]](./CVE-2024-48962.cve.json) [\[OSV json\]](./CVE-2024-48962.osv.json)
+
+
+
+_Last updated: 2024-11-16T07:59:29.966Z_
+
+### Affected
+
+* Apache OFBiz before 18.12.17
+
+
+### Description
+
+<p>Improper Control of Generation of Code ('Code Injection'), Cross-Site Request Forgery (CSRF), : Improper Neutralization of Special Elements Used in a Template Engine vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 18.12.17.</p><p>Users are recommended to upgrade to version 18.12.17, which fixes the issue.</p>
+
+### References
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html
+* https://issues.apache.org/jira/browse/OFBIZ-13162
+* https://lists.apache.org/thread/6sddh4pts90cp8ktshqb4xykdp6lb6q6
+
+
+### Credits
+* Sebastiano Sartor <s@sebsrt.xyz> (finder)
+* Ryan <marimoo.eth@gmail.com> (finder)

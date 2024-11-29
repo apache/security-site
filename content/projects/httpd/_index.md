@@ -1287,7 +1287,7 @@ CVE-2024-38472 [\[CVE json\]](./CVE-2024-38472.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-07-01T18:12:25.346Z_
+_Last updated: 2024-11-18T08:50:42.606Z_
 
 ### Affected
 

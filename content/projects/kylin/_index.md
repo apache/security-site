@@ -280,3 +280,28 @@ _Last updated: 2024-01-29T12:20:52.048Z_
 
 ### Credits
 * Li Jiakun <2839549219@qq.com> (reporter)
+
+
+## Session fixation in web interface ## { #CVE-2024-23590 }
+
+CVE-2024-23590 [\[CVE json\]](./CVE-2024-23590.cve.json) [\[OSV json\]](./CVE-2024-23590.osv.json)
+
+
+
+_Last updated: 2024-11-04T09:27:04.256Z_
+
+### Affected
+
+* Apache Kylin from 2.0.0 before 5.0.0
+
+
+### Description
+
+<p>Session Fixation vulnerability in Apache Kylin.</p><p>This issue affects Apache Kylin: from 2.0.0 through 4.x.</p><p>Users are recommended to upgrade to version 5.0.0 or above, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/7161154h0k6zygr9917qq0g95p39szml
+
+
+### Credits
+* XJB Security Team (reporter)
