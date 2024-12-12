@@ -65,7 +65,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Impala |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache InLong |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache IoTDB |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Jackrabbit |  [Apache Jackrabbit Security Team](mailto:security@jackrabbit.apache.org) | |
+| [Apache Jackrabbit](https://jackrabbit.apache.org/jcr/security-reports.html) |  [Apache Jackrabbit Security Team](mailto:security@jackrabbit.apache.org) | [Advisories](https://jackrabbit.apache.org/jcr/security-reports.html) |
 | Apache James |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Jena |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache JMeter](https://jmeter.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |

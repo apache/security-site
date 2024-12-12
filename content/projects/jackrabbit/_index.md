@@ -6,11 +6,11 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Jackrabbit? Send your report to the [Apache Jackrabbit Security Team](mailto:security@jackrabbit.apache.org).
+Do you want disclose a potential security issue for Apache Jackrabbit? You can read more about the projects' security policy on their [security page](https://jackrabbit.apache.org/jcr/security-reports.html), and email your report to the [Apache Jackrabbit Security Team](mailto:security@jackrabbit.apache.org).
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://jackrabbit.apache.org/jcr/security-reports.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
 ## Apache Jackrabbit RMI access can lead to RCE ## { #CVE-2023-37895 }
