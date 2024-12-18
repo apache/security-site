@@ -1,0 +1,10 @@
+[Unit]
+Description=SBOM web application
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/sbom-app
+ExecStart=nix-shell --run "python3 -m app"
+Restart=on-failure
+
+WantedBy=multi-user.target
