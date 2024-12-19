@@ -1,0 +1,123 @@
+{
+  "bomFormat" : "CycloneDX",
+  "specVersion" : "1.6",
+  "serialNumber" : "urn:uuid:7cb34d77-deb6-3b42-9ddb-b8982e676e9f",
+  "version" : 1,
+  "metadata" : {
+    "lifecycles" : [
+      {
+        "phase" : "build"
+      }
+    ],
+    "tools" : {
+      "components" : [
+        {
+          "type" : "library",
+          "author" : "OWASP Foundation",
+          "group" : "org.cyclonedx",
+          "name" : "cyclonedx-maven-plugin",
+          "version" : "2.9.0",
+          "description" : "CycloneDX Maven plugin",
+          "hashes" : [
+            {
+              "alg" : "MD5",
+              "content" : "dfaeab7ec837ce07874e2ee66fdc57d3"
+            },
+            {
+              "alg" : "SHA-1",
+              "content" : "8bab47bafc8183d0a5f37790ff55ed05ead1ae2d"
+            },
+            {
+              "alg" : "SHA-256",
+              "content" : "67117e03eae4a03ca8bab3add044995f4899aa21798a2510b8265ef8101e90ac"
+            },
+            {
+              "alg" : "SHA-512",
+              "content" : "ae6b706516bb76da806b7854aef9e348fa593f5159ae9d693ad38942165c0ebc0846d977a477f6029612d43468fd2cd73a5aa253c228a94fb8d184e0acefc3d2"
+            },
+            {
+              "alg" : "SHA-384",
+              "content" : "ee872354d8b0dcd6f9835a913b3aaba70d9365a46043be78020183282a1e9fca812e969246cbe31d642541591b46648b"
+            },
+            {
+              "alg" : "SHA3-384",
+              "content" : "e5167f9e7ceba3b7b4d1900c404543907868745334bedc69cdf79c271727148413033a3b1426b733b7549e612e44adee"
+            },
+            {
+              "alg" : "SHA3-256",
+              "content" : "41fc0bc2275f354e2c7da01041ce73ce677364799cba53920a180aa5d4571c63"
+            },
+            {
+              "alg" : "SHA3-512",
+              "content" : "ed7f97900b09b818dbc0b8a23c00a2843e1bc34e2e8eb5b6df52533af0a15b721de6f7d5c2fd9352b8d4fde768e080053b40a16f0f9f04c336fe9b44abe83fc0"
+            }
+          ]
+        }
+      ]
+    },
+    "component" : {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.syncope.client/syncope-client-idrepo@3.0.9?type=pom",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.syncope.client",
+      "name" : "syncope-client-idrepo",
+      "version" : "3.0.9",
+      "description" : "Apache Syncope Client IdRepo",
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.syncope.client/syncope-client-idrepo@3.0.9?type=pom",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://syncope.apache.org/syncope-client/syncope-client-idrepo/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-builds.apache.org./job/Syncope/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/SYNCOPE"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?user@syncope.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=syncope.git/syncope-client/syncope-client-idrepo"
+        }
+      ]
+    },
+    "properties" : [
+      {
+        "name" : "maven.goal",
+        "value" : "makeBom"
+      },
+      {
+        "name" : "maven.scopes",
+        "value" : "compile,provided,runtime,system"
+      },
+      {
+        "name" : "cdx:reproducible",
+        "value" : "enabled"
+      }
+    ]
+  },
+  "dependencies" : [
+    {
+      "ref" : "pkg:maven/org.apache.syncope.client/syncope-client-idrepo@3.0.9?type=pom",
+      "dependsOn" : [ ]
+    }
+  ]
+}

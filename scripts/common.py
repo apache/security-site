@@ -76,6 +76,8 @@ def get_sbom_cached(url, to):
 
 def get_dt_projects():
     req = request.Request('https://security-tools-ec2-va.apache.org/api/v1/project?excludeInactive=true&onlyRoot=false&pageSize=5000&pageNumber=1')
+    if not dt_api_key:
+        raise ValueError("This script wants to write to DependencyTrack, but DT_API_KEY was not set.")
     req.add_header('X-Api-Key', dt_api_key)
     with request.urlopen(req) as res:
         projects = {}
