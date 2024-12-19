@@ -1,0 +1,3405 @@
+{
+  "bomFormat" : "CycloneDX",
+  "specVersion" : "1.5",
+  "serialNumber" : "urn:uuid:9ba80545-8575-34ff-9a36-f7bea316ef5d",
+  "version" : 1,
+  "metadata" : {
+    "lifecycles" : [
+      {
+        "phase" : "build"
+      }
+    ],
+    "tools" : [
+      {
+        "vendor" : "OWASP Foundation",
+        "name" : "CycloneDX Maven plugin",
+        "version" : "2.8.0",
+        "hashes" : [
+          {
+            "alg" : "MD5",
+            "content" : "76ffec6a7ddd46b2b24517411874eb99"
+          },
+          {
+            "alg" : "SHA-1",
+            "content" : "5b0d5b41975b53be4799b9621b4af0cfc41d44b6"
+          },
+          {
+            "alg" : "SHA-256",
+            "content" : "6852aa0f4e42a2db745bab80e384951a6a65b9215d041081d675780999027e81"
+          },
+          {
+            "alg" : "SHA-512",
+            "content" : "417de20fcdcb11c9713bacbd57290d8e68037fdb4553fd31b8cb08bd760ad52dc65ea88ad4be15844ad3fd5a4d3e440d2f70326f2fe1e63ec78e059c9a883f8d"
+          },
+          {
+            "alg" : "SHA-384",
+            "content" : "5eb755c6492e7a7385fa9a1e1f4517875bcb834b2df437808a37a2d6f5285df428741762305980315a63fcef1406597d"
+          },
+          {
+            "alg" : "SHA3-384",
+            "content" : "0fe16a47cf7aab0b22251dafcc39939b68e8f1778093309d8d2060b51a08df445a8b8ed5a9561669faf2e55f907c76d8"
+          },
+          {
+            "alg" : "SHA3-256",
+            "content" : "3e5a1eb5ab7d0797498862794709ff8eaaa071fe4cc9ec77f52db7e2f97ef487"
+          },
+          {
+            "alg" : "SHA3-512",
+            "content" : "59281a3e29e76270d7f44b40b5b9f05e55f1ae3ec716d80add806f360940809e3813998ac7c5758043b8e248aed73b86e37dc506cdb4cde03c16bb617d8e5a3a"
+          }
+        ]
+      }
+    ],
+    "component" : {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven.resolver",
+      "name" : "maven-resolver-supplier-mvn4",
+      "version" : "2.0.5",
+      "description" : "A helper module to provide RepositorySystem instances.",
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven.resolver/maven-resolver-supplier-mvn4@2.0.5?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/resolver/maven-resolver-supplier-mvn4/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-resolver/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MRESOLVER"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven-resolver/tree/maven-resolver-2.0.5/maven-resolver-supplier-mvn4"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven.resolver/maven-resolver-supplier-mvn4@2.0.5?type=jar"
+    },
+    "properties" : [
+      {
+        "name" : "maven.goal",
+        "value" : "makeBom"
+      },
+      {
+        "name" : "maven.scopes",
+        "value" : "compile,provided,runtime,system"
+      },
+      {
+        "name" : "cdx:reproducible",
+        "value" : "enabled"
+      }
+    ]
+  },
+  "components" : [
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven.resolver",
+      "name" : "maven-resolver-api",
+      "version" : "2.0.5",
+      "description" : "The application programming interface for the repository system.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "f6faf7a8660919dafa32a6e64e5ea15d"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "4f66f61c79fd8cfc15a71b3ecadb379c95941049"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "90db5edf3b35351c5d4eac42a6c003b7d8cec216e61578b91cbfe9c2c7348543"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "7545c90343b34d4eb96761a22980d7317ba88695b09ecc6fb2b1397966f5e149c730c3a221005ba0acf08976a5b34ccca9423172dd27e64909478c7c9f6f05d4"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "3711a7fc6e1a2afd21119c2e00c90f9480a68f8f31d3208738f3ab145bd74bace40e2caf1f6aad6ad00b22308939c5ae"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "a49f94a7e02581a106f9c4bae99167563914b74b86a3638880105ed86bb6c5fcb34375e0b31f162a9e4a92cd9f0c3597"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "d07f0bcd964a21b51433101bd5156675f7d7dee1fa9db337f6fe122a32c7af02"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "54c392ea3daa2ee4d7540dcff0aa6bd81dc56965d9d785c2e1ea9a318bf692a5a33915832d8aea0f56a7fcd54e57dfd93b4f8b8d463fb2226b7c90e1c86526f7"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven.resolver/maven-resolver-api@2.0.5?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/resolver/maven-resolver-api/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-resolver/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MRESOLVER"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven-resolver/tree/maven-resolver-2.0.5/maven-resolver-api"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven.resolver/maven-resolver-api@2.0.5?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven.resolver",
+      "name" : "maven-resolver-util",
+      "version" : "2.0.5",
+      "description" : "A collection of utility classes to ease usage of the repository system.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "9ed27f12c4f66e6f904fb568af805a25"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "e8912b920fcbdbdabb52565467283a1f801290bd"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "c019682426558e866dfd8eb5a50a8bf385ef753ff0159038e13997c897e3619d"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "0fb9da707c81516edad3053b298d1c8890979edf326d69f1b9d04faae0b41a69c60f0311c1b17c0f64d86b1c0d106e128f4ce0b5e5b239520bdf6f144e814ecc"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "96a7a6f70903bf20f70f6c7993b0efa6f16194d06d803b47d0cfd5b84c70d2353af7cdcb5ad300ccc0f8114a63aa231b"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "179597bc70b301255833221b0efcdf78b2d6ba19019706f194fb5a5f237963fca568891ffeb2b8277d75907ee0a85ffa"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "d13be53c9267cc5d278e0c967cd9473b3b60c678e279ed029539b2d8d7e6f620"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "1cff375a6f47c169ba82c1bfca26d7af3e1f4ce3e7330765dbc32a997b452039c96e644a4daabda18f632db52bcfd44d80c81346ccb14cfba690cf16dec1ef89"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven.resolver/maven-resolver-util@2.0.5?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/resolver/maven-resolver-util/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-resolver/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MRESOLVER"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven-resolver/tree/maven-resolver-2.0.5/maven-resolver-util"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven.resolver/maven-resolver-util@2.0.5?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven.resolver",
+      "name" : "maven-resolver-spi",
+      "version" : "2.0.5",
+      "description" : "The service provider interface for repository system implementations and repository connectors.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "1af0b8ea5c26de848a31717037fca7f6"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "57dbee5bca29b4fc69a7de6aa435f1f185bb7ba7"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "a93d80cd3c3acd392105d34d8b17ac689fb09717f922e356e88e0cf9a5315ef7"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "c9fad2e5bd779970db6b896a01ec7d0063cdb6641c3daa7f694cacc7e6de1662a267e8dcd88f8dd48e37985d236cb71cb3e0f8a54181540c8c5741540f2bf310"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "477337c1d5f26e4217342e13fe9e24e40bee6840899dbaf6011264cd52b2bc3c0c5685dd8d6e353716e862a5212a9a9c"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "d9170fa9cbd81ef6f58e81405dbd6ce1270b1f6bfd7b4440b7b99a2f672c98ed3f3df4f70e1b2929a60a2ac4343322f2"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "b45eb6d1a02b7ab5215a64d6abd7403e81c01dbcdb0131d8d714cdb0b28418cb"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "a8cbf0ba3e9c4b10f073083939322a034717b339645333e34cbf360678df9ff67004210d952a45a70dd5f98a3634c61dac724aa4bf0668419af0f35060670762"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven.resolver/maven-resolver-spi@2.0.5?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/resolver/maven-resolver-spi/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-resolver/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MRESOLVER"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven-resolver/tree/maven-resolver-2.0.5/maven-resolver-spi"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven.resolver/maven-resolver-spi@2.0.5?type=jar"
+    },
+    {
+      "group" : "com.google.code.gson",
+      "name" : "gson",
+      "version" : "2.11.0",
+      "description" : "Gson JSON library",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "0c69b9199d3a4e6c34dc03619ff7feee"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "527175ca6d81050b53bdd4c457a6d6e017626b0e"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "57928d6e5a6edeb2abd3770a8f95ba44dce45f3b23b7a9dc2b309c581552a78b"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "b8c91426a8275b42ea5c55b104308ffbe656ae3354bc661f62173352e53a4818a009e4dd82bc6cf518c77fda5a4d2eab0d3ad832581a8f0d87966ef04e6c025a"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "8720df1ca6f2258a71b7f2307e2b49f0ad2379bc93e93be6a6c619e52b95dbe5a080a49149e8708ce1890e97b47b9bbf"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "e3e268c6f8c75f018c7c8160fba7fe373242d45a2313b5c7823f3f75fcc04bbf93cb43c08ba2998b01b8a3c685d77280"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "aa4162683be07c5de9c962e88301054ea42a9bed2257a5e4e650545624a2c094"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "31730c961b8920673ac3e973a16272752a46df479bfc0ce4dfb6dd324e32d34e5006247d6b5508b8fdc785ba5ffb42534ea3fa2d7094191febcac60654230e24"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/com.google.code.gson/gson@2.11.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://github.com/google/gson"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/google/gson/issues"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/google/gson/"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.google.code.gson/gson@2.11.0?type=jar"
+    },
+    {
+      "publisher" : "Google LLC",
+      "group" : "com.google.errorprone",
+      "name" : "error_prone_annotations",
+      "version" : "2.27.0",
+      "description" : "Error Prone is a static analysis tool for Java that catches common programming mistakes at compile-time.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "fb183180666ce3d0a24ef7ba02d7193c"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "91b2c29d8a6148b5e2e4930f070d4840e2e48e34"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "24c923372c58e35d0b9f16a028929bb9aedc77521867c274f2bd0735df5ba1f5"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "479f3c5e25a7ccd90adf70a9b1a71bae18205681ce966618b2ba28aea1b10c087b10ca7172e7b34384901b5e8d2dd009f1cdcbcd2a01be55082d276245de0a35"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "b71b73336df13a8d102933d851f2ceb486d8554cfdc717f38fb2d36234a7b0c9bc015112c9d0c7c3520a081fa85c55b7"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "94e94fd4ad6e3340aff5b059746395abc4952d4b7f570576f5eee0efb7f8801f2ac0b4c95aba400afc8ac1204e96e630"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "faa04401fbf3938684fa829d86310ac894c0646b2cdff18106f5384fcd427f84"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "18fdd0dd19823353693fab456226914179623be005d27a85250f5e8758d433c9e88f639556a61a03210339be6dafa86a57068e92e0254b305f1a17add4b805c9"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/com.google.errorprone/error_prone_annotations@2.27.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://errorprone.info/error_prone_annotations"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/google/error-prone/error_prone_annotations"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.google.errorprone/error_prone_annotations@2.27.0?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven.resolver",
+      "name" : "maven-resolver-named-locks",
+      "version" : "2.0.5",
+      "description" : "A synchronization utility implementation using Named locks.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "7ad2f6534d807b088fdb136638d92a88"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "7476216dd6c7484ad78f3ae8035a1fc4e7ec4363"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "c1fdf803d3aee232979b3a6caf5331fb09cf3ca0bde3d6e01e5de0b0d6a0c203"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "2be7a52496cdfdf0db018b452cae1d3c43c4ec5b45388c0028324fb98566e33c3eb84b0206e20dabbb7d175e1ee231ff6a1710024469a5c0439d75714eda4e64"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "a278f3fdd82eb6830aa8dba5dbc00a9909dc8b0cf287b7d4777bd1a3c8db43538a88f2341f2538c811e16d417c7a031e"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "e37622378c81d5c1a4d93e20b382b2f8f54ba444f6db90a14e1aa4f8583cfe017c03a1f783370ac285ee8119cfa34109"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "308b081c8da7913167180d0cca2260fb9a2d74ee18809cb7ff1a3c63de39fcb3"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "63928ac54d7f0afc07dc94175afc70d3acdd68d725b706f5a1c0f506cb8a3688d094b301bf1dcc9de008b36a5d12db6ad3f40eea334b2d56ad708c7bc56e79e7"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven.resolver/maven-resolver-named-locks@2.0.5?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/resolver/maven-resolver-named-locks/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-resolver/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MRESOLVER"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven-resolver/tree/maven-resolver-2.0.5/maven-resolver-named-locks"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven.resolver/maven-resolver-named-locks@2.0.5?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven.resolver",
+      "name" : "maven-resolver-impl",
+      "version" : "2.0.5",
+      "description" : "An implementation of the repository system.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "1e775285eedb552b2c4d95ae5b4af7ee"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "dd0948ac52ad8a39ea220dcce1e8d2a3e3a143d0"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "548fd7b310d7f6253d368ebea93650148472267d819dd585c2b5dc90ff4ced3a"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "0fd2126a3b0f3dd9db01f1167643b7d54b46efb800637886eb58ec7f4aaa01885cb2c62a0286c97a2d0590ed9a387690fd589bf8370f7997066a5b44b07d3b02"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "9534def2eabceaa44c22d04e84f064439be7f62ace3c46e9e0f800da27d3cb41ef7a1ec220f4d68cc6998753320bcef9"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "c035a1f20d90450454dfe219c6017dcd197b0e9f6d900595f1b80692807c3712b7f3781b5e6eabcbd3091f0815a059e6"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "4a54ca7a232415c6131345cc9fa59688bd68c610bf09b78e60a1629044992d24"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "02aae821cdc14f6fa7811829370fc4fe26ac058b65d68a556ddd606631f45cdac600b17cf304659fe582f5b3b7cfd58555f24585fe9aca4391fee17f9624eb1f"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven.resolver/maven-resolver-impl@2.0.5?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/resolver/maven-resolver-impl/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-resolver/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MRESOLVER"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven-resolver/tree/maven-resolver-2.0.5/maven-resolver-impl"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven.resolver/maven-resolver-impl@2.0.5?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven.resolver",
+      "name" : "maven-resolver-connector-basic",
+      "version" : "2.0.5",
+      "description" : "A repository connector implementation for repositories using URI-based layouts.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "9613194f32def2d493db0115a799b81b"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "376b9c2cccae4cbb02f39389806482d945b4ca81"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "3d6f39142e47ea5ab4196d229f1d9e35e1538696f1ac16925a786e0ddbe04563"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "5c1862fee43d70556ff1d3a9c313569b9d69b0ce39f08c4fd142ffaa69dec4af178895b39589c46ae2e25a72c6fee42c668ef11a7336e518511305916b77cbe0"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "d93d6a5eea58291ec2ec15edf2cd33434045ce685f0ae2d409f32315f1c285cf573a07e6c381ebd730873a0827e0b971"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "1d02ae3c825769f147cf94c440423f32ecce0b0e8f07b84c937217e572c84206943b3886194472f317d562d2fdbf9545"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "938929460d8f864639c2b98c4fe0ac2fed216168d7103a817f06d22670e84cdc"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "869913d7aaf11f5ccd3aa16f85da6f81f553c03d23b173ff2b964efb8a3edeab80c6564e3d20e9a16f24ac7b929f6e4df0faefafb481e4abf091a6eddc595bce"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven.resolver/maven-resolver-connector-basic@2.0.5?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/resolver/maven-resolver-connector-basic/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-resolver/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MRESOLVER"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven-resolver/tree/maven-resolver-2.0.5/maven-resolver-connector-basic"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven.resolver/maven-resolver-connector-basic@2.0.5?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven.resolver",
+      "name" : "maven-resolver-transport-file",
+      "version" : "2.0.5",
+      "description" : "A transport implementation for repositories using file:// URLs.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "17b716132aefb0758abf19d9cf34774c"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "8d951b3984fa3871d45f77e48c6c461d6b2db09e"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "b4d311e00fff783c1c7ff5472d3ae1d1ee548fad15168d783a07590a248f49ed"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "40275ac9fc2be0d29f386e3a370337d17ebafe11d61263c129e6b4154a76ac81a94d97e934d09759cc9c6ab5cf762e19950756fd900dd64b45f55898c7fca668"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "8250bcd93bad6b617753665c5d98145b786366a5f2a0d77d182ed6209706e496800030e874989d26356eb6fa9ca0259c"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "2da78ac6cb417b03267d1e3e9547ac1cdb4e383aff27b8089a66fa24e9fb123016166322b1e06c0cc3d96de979a824af"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "a733a330a75eda678be17107f5a171bf8a5e01dc3d264d3d3d60ffb842b180f7"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "970f49f9be865f6e791918cb88b2a5f7d6419c392833dea8d8ad672db5d318ea6d97d4d3980b531d68d8338cc56b8375a20fd75aaf5daa0b204b4ffeca2dca04"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven.resolver/maven-resolver-transport-file@2.0.5?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/resolver/maven-resolver-transport-file/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-resolver/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MRESOLVER"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven-resolver/tree/maven-resolver-2.0.5/maven-resolver-transport-file"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven.resolver/maven-resolver-transport-file@2.0.5?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven.resolver",
+      "name" : "maven-resolver-transport-apache",
+      "version" : "2.0.5",
+      "description" : "A transport implementation for repositories using http:// and https:// URLs.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "a3a840cb61c60a38075128ffa233cbb8"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "e06dd2fcdceba49f8d89a948069f375a44461874"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "2f9b68cf3b0b9b4059aabd13198bdbbd298698a315a061d2e50cbfecc309ebe2"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "fc1894b5fedb5df3700a3a3d0e1ea8be51131422063299150187797925a6cf37c4f57ffc8ec0aec7b2088f7f5bcd9bc25cd6fc6f7433fe6707e7aa3781d56c1a"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "8503b0b92af3f286341000be1fd8a6e66d28f115cb872be8acd511d69fc31d4a723f476bcc25d16e0ac91e8e49b1c66d"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "92bb1a5b0730eb14ca0a37c5101d1e847e0f851f3efbbf21ca59e1d4ec556f7e88f72e099cc2cdb5280415d40b768d1c"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "c4242c27e221592354df548c4f28cf6045db2f5ec243233323cf2e40e87db974"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "fb8cca6ae4bed9d972f5adf9ba98023e12ac1b72235eb9f578afa7d32848ea7b16446d388e9c7886f9c27ea5e58dcfeb71c7b96c4493f1fbe685d4c726991b83"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven.resolver/maven-resolver-transport-apache@2.0.5?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/resolver/maven-resolver-transport-apache/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-resolver/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MRESOLVER"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven-resolver/tree/maven-resolver-2.0.5/maven-resolver-transport-apache"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven.resolver/maven-resolver-transport-apache@2.0.5?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.httpcomponents",
+      "name" : "httpclient",
+      "version" : "4.5.14",
+      "description" : "Apache HttpComponents Client",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "2cb357c4b763f47e58af6cad47df6ba3"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "1194890e6f56ec29177673f2f12d0b8e627dec98"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "c8bc7e1c51a6d4ce72f40d2ebbabf1c4b68bfe76e732104b04381b493478e9d6"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "a084ef30fb0a2a25397d8fab439fe68f67e294bf53153e2e1355b8df92886d40fe6abe35dc84f014245f7158e92641bcbd98019b4fbbd9e5a0db495b160b4ced"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "c8ccaa1fa8ba7c421413e3c30375bd9c31284e837c476fd831e18043ad4187e92166f49554123108891241bed674b95d"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "9a17dfcf12b2af3a9b006ec369f9bc78ba322348bf1a01146e0d4f3fec2bed6cbe8b2193fac5b4d5a0c3036c06477510"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "48f0a61b691e22dec9d6db8e0b58be4ca17a42a2846c82f0875de21f72bb0faa"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "4ad2c9adc761b7e813330f0dcad3f9978702896c7d0cbf81f60a472d550e320b1527be425ba597c8c9352d587e32e1d46ceb4c73e99c70a6190df4c699a7c2a9"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://hc.apache.org/httpcomponents-client-ga"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "http://issues.apache.org/jira/browse/HTTPCLIENT"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "http://mail-archives.apache.org/mod_mbox/hc-httpclient-users/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/httpcomponents-client/tree/4.5.14/httpclient"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.httpcomponents",
+      "name" : "httpcore",
+      "version" : "4.4.16",
+      "description" : "Apache HttpComponents Core (blocking I/O)",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "28d2cd9bf8789fd2ec774fb88436ebd1"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "51cf043c87253c9f58b539c9f7e44c8894223850"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "6c9b3dd142a09dc468e23ad39aad6f75a0f2b85125104469f026e52a474e464f"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "168026436a6bcf5e96c0c59606638abbdc30de4b405ae55afde70fdf2895e267a3d48bba6bdadc5a89f38e31da3d9a9dc91e1cab7ea76f5e04322cf1ec63b838"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "ba9ceaee1a37ca3201d6a1315ecb0327b495489efd0baa155c219c475df8d3eb69fe77ab0026563db406497626da6562"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "b9dc44dcc7cc86d5036f26d54c4003a2d72808ae7b07a0808bb53505c6d4281b5ad213eb1f3d0fef1113dec57cb0dfe1"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "fd8ab51846476c6c18822151c9ec07b39a9633010b5d20ea937fc6910407bc64"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "b42fa528242981a9d70e4f68ab75a24292df5112c44c21b6f18cb9201ce747885ba1d4dc69bc3d14d0da46a6c2638f937c11bc45749abeb55dc89ddada90cdda"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.httpcomponents/httpcore@4.4.16?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://hc.apache.org/httpcomponents-core-ga"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "http://issues.apache.org/jira/browse/HTTPCORE"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "http://mail-archives.apache.org/mod_mbox/hc-httpclient-users/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/httpcomponents-core/tree/4.4.16/httpcore"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.httpcomponents/httpcore@4.4.16?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "commons-codec",
+      "name" : "commons-codec",
+      "version" : "1.17.1",
+      "description" : "The Apache Commons Codec component contains encoders and decoders for various formats such as Base16, Base32, Base64, digest, and Hexadecimal. In addition to these widely used encoders and decoders, the codec package also maintains a collection of phonetic encoding utilities.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "7b3438ab4c6d91e0066d410947e43f3e"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "973638b7149d333563584137ebf13a691bb60579"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "f9f6cb103f2ddc3c99a9d80ada2ae7bf0685111fd6bffccb72033d1da4e6ff23"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "a7db98db470e6ad338266ff442fbdfbc277ba1d07a591336f7d15dc49fdac884da7dac04d806628b12437f993d8b5e6a4b800a66590ff11936dbf8bedcd8e860"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "ef0b8e0fbea5ee057b2c39114ff862a057d207d4dd6b4fd2f5ca96bfc039e76274f1dd02ddf985f1fa965736a522f5c5"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "ac30c88a6c4bbdfa79cb697cd179627d2addae842e48e2ab167c4f9c5475d05ef4743f58fbed254dd7abc6f3877644fe"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "f3fe1daf04e63f556d72f4f59f149327b65d899d6afe1de770b42faae2e323df"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "29901c3e6394dd87f13a91b5432c678ac144cb6c86271b06c57c73c0480b23a4688d0266e2dd04abf5e1d148a2e80e1215dd87d2cb5ffbf2c023409f4f5f8f86"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/commons-codec/commons-codec@1.17.1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-codec/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/CODEC"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/commons-codec"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/commons-codec/commons-codec@1.17.1?type=jar"
+    },
+    {
+      "publisher" : "QOS.ch",
+      "group" : "org.slf4j",
+      "name" : "jcl-over-slf4j",
+      "version" : "2.0.16",
+      "description" : "JCL 1.2 implemented over SLF4J",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "c077b88c43f9d63f64f9880fdb457efb"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "9d08badad22f1ac07deac9188ade596472a2bfd9"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "5744d62c5af556e839ab922c9fa3f737f0a5971e478ba68b2eb5256b2842ec78"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "5c4c540ac68898e49a126611665bbe47e660591a6aaf9f1d1c342116a2b0f6b5f7225d8072917b1fab0cef4c5ca48c0d1508655ce5ab368d7c27be78b3c75c87"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "90c2ce65783350a6bf25cf6abe6a4583f7ad9ec8807ee51fe7543c7a6a163ecd5141c29853c3ea35e05c0069e09141f4"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "c65b56e6743867a1de077828446999c0f8de4b47fd56e40f136157735143f462ebb5fc3f6fc02a3db790a81cf823c1bc"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "c00f9fc1f31f03afa6ad252a7aff15edaee78b2b742bf65a97cdd74f7189120a"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "9e7c5af053bc0334fe2a4c9c2c6311a55c34b54889a2051c33e97eb9edabf3ea1064a017de4b510a54f77720c9a24ffdb832218bc92b4db6fc3b9cf972f268dc"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.slf4j/jcl-over-slf4j@2.0.16?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://www.slf4j.org"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/qos-ch/slf4j/slf4j-parent/jcl-over-slf4j"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.slf4j/jcl-over-slf4j@2.0.16?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven",
+      "name" : "maven-resolver-provider",
+      "version" : "4.0.0-rc-1",
+      "description" : "Extensions to Maven Resolver for utilizing Maven POM and repository metadata.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "713a1cb0b383cb48c732f3eb336eb7f8"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "a154849819bc2e764efa56af1cba745594ff1e3b"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "a68b4bb1eec43cf30569d58fe44dc066010c6051e85702a7e316d65b910ffdeb"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "830595dfeafeae033a4e67f09d06d7ab285b416b90afa29b0bffdd1feb66e8515dbcaddfc195ab3114de58c88a4351b3dd65e89f3d89605429167be68011250f"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "cc196a3191ede75868c31b5a484af06f86c3c4981d0491e4e2fe322c06498e4b53e2c7c3ba34a7534e9947a8092fcf35"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "06fe5fb0fc37eeda1737ac3dece3000a845b58b78211435d3fc06a7ee63f34769af6de66908974fceb6c23a532ffe803"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "7bb77ade9e70fc9476674b261fc220ca884928c0bedfdb7787e27b8f035444e4"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "25d003ef0b5943de51b7ba005859d44513e5130ccebd4c07289f2408a5f4197ac7fab3cd4b012b50b7a6457738fc7c8e12b32e46fd50e275efb8c31f11d4de9c"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven/maven-resolver-provider@4.0.0-rc-1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/ref/4.0.0-rc-1/maven-resolver-provider/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.apache.org/download.html"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MNG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven/tree/maven-4.0.0-rc-1/maven-resolver-provider"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven/maven-resolver-provider@4.0.0-rc-1?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven",
+      "name" : "maven-api-xml",
+      "version" : "4.0.0-rc-1",
+      "description" : "Maven 4 API - Immutable XML.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "b21102cfc07b4414ed4ee37804c2b2fa"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "fd10607063c1305d8bf1dcf633340f5c8778a456"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "54eeb13262f17a887e8db6d4e8d34e3bbcf577c0fdb66e7bc94f5b15b23647c6"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "74e14ed6293c3b483450127f432db4ea45c933c9f10f58f9dede1529ba0f950cb60853bacec5d9b7531cd72843d1df6147619c19a6d8c9d1dc8bc9869fc12e47"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "5b3a98d19c6ef5ac4fc74cfd8dfd64c9dc3a7a88b9af2faeff72608ebfdea06555e9a9daf61e2db63b6dea7fe3fc6912"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "111317d578a26f8413b871080ab8c242d96d31afbe81dafd2af118a70e494ad35e3d87cb8c905a1fa0f7d3086aa946f9"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "604f15fe8885ac54be393f76a9d355dfbc6f7e9c5fc18f75ef740eb10fc0b9ef"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "c7ea9d68313ef58da8a95e9a78abdb75324734b1c2d79895482c9bf8ccfe9ac0595acb64653c9e807e068be5306a68a1bae61d70f575fc40a89efdb8f8dd4ef6"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven/maven-api-xml@4.0.0-rc-1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/ref/4.0.0-rc-1/api/maven-api-xml/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.apache.org/download.html"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MNG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven/tree/maven-4.0.0-rc-1/api/maven-api-xml"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven/maven-api-xml@4.0.0-rc-1?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven",
+      "name" : "maven-api-metadata",
+      "version" : "4.0.0-rc-1",
+      "description" : "Maven 4 API - Immutable Repository Metadata model.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "27cfc66c11faa7ce9789aa83c9147877"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "e0c503522c08a6dad8aca76264d954f168771c1f"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "d9e2bbb62c21dab6fb90d8c6078336e94ba365943e46a9fb4c25a83f99054cb8"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "f5053b6b685cd848e7613c9e7284afc78a11c31a6efd5c1b1615defd57455cee6c6e96987fe0efdad17711899af6811bca381be43ed86f11f32364ed599627a9"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "3e269d1f73514b601da82d641778f14e0320a0e660e3a2dc2b07fa4d93f5c56bb851403921451aee1be2f583ebd3e0c2"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "419678b70daf0c4cf8e543a3c333bfdc96848bb87a6f2daedc0ea8070b6c4aec6a48c1b888e07cef10efc31faa9fbee3"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "7bed18c4c8f96c38d1905bb5a869aee088086bedae3da4c9df71879a10ee58f7"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "5eafe56ffd3cc192b5459b81bdb77ec02ad7ba3815086875626c8b45ea49b909f4c395c9485a2acaa829aa6423ce4c8f3da1db823c658dbdd8f64df75e4f0d4c"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven/maven-api-metadata@4.0.0-rc-1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/ref/4.0.0-rc-1/api/maven-api-metadata/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.apache.org/download.html"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MNG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven/tree/maven-4.0.0-rc-1/api/maven-api-metadata"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven/maven-api-metadata@4.0.0-rc-1?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven",
+      "name" : "maven-api-spi",
+      "version" : "4.0.0-rc-1",
+      "description" : "Maven 4 API - Maven SPI.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "d439ce99b7ee17ad722e6e2da8d1d846"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "a1ae50d86a3ef3b312b5f580c5d9fedbad2554a6"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "0baa8ef26d111b0a4079a022be8c108de7f0c7bffe5cb454ac911c468ffceae6"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "86effd15d56d41eea446f8cad88157c9033f646b2d0d0d3d68a29bdd112ce4693375186fd20dc1608182fbd750ec33ffd85dda90c59376a090bf811dffa012a3"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "7ad8129997a26a61892736d0d475f6a672959c06c825837284cd03c4bc83d2ad34efba1731d9a851cd4b4eda80d5a27a"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "c1c5c6616c82b10f0a7ab75b59242ed869c61e7d96b76d00a916047c4e6005b2863c7c8e94cb24a362da600db4e086e3"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "06d9e78d6818e4fc999236b9bf7e870beb2e6651a3239f7095698c43a01ae15f"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "2ccc37d1b3fec2383859c08c43c08dadf02f7b81b10e9400f61dc3f1a5bf47c1e052cecbb3bc18fc81a276b3412cfeadccbd7aa075ce72d0228bfe6fb84dfbe6"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven/maven-api-spi@4.0.0-rc-1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/ref/4.0.0-rc-1/api/maven-api-spi/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.apache.org/download.html"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MNG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven/tree/maven-4.0.0-rc-1/api/maven-api-spi"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven/maven-api-spi@4.0.0-rc-1?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven",
+      "name" : "maven-api-di",
+      "version" : "4.0.0-rc-1",
+      "description" : "Maven 4 API - Dependency Injection",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "1ee891c8a2e4aa6a451cdf1917e4ec29"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "67665599b83873b35ce4e35efd80a8dfea5b789c"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "b1ceaf90310e4d285969d36dc2aeff48fc2814336e4ed52fd2d00d0a4db4787a"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "48bd92c7891fac1955f10e953dcf66208794dde8b25b3e5a8bdfc2d1b00f6a56710794df8284838791b7c615570f5a079f4d77d9d36987b1e4758a7c3b96e705"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "054f23f6df88c385e1faf7d0450ef8e51ace984fabc033b32ae78e934c27f634aa6347686134753d5261431a068cfc9f"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "656cec58bfce64aa11f12ab1f9bf0c58bdf2c0f929ce642075757cdb10cd474c5d9283dc8d56edc436ee195799189b3c"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "bd5bc0aee0ab95d0b3891857c66c0873d818dca9172f2df45eeb7951bf580054"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "3ffa1c9398ad6eb65d4d86195d01600b52221900cba64b45fce1c42a93735988986569ff0dbc2aa85e770fa70658a4d4841b243518555c402616e0039d8d586c"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven/maven-api-di@4.0.0-rc-1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/ref/4.0.0-rc-1/api/maven-api-di/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.apache.org/download.html"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MNG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven/tree/maven-4.0.0-rc-1/api/maven-api-di"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven/maven-api-di@4.0.0-rc-1?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven",
+      "name" : "maven-api-core",
+      "version" : "4.0.0-rc-1",
+      "description" : "Maven 4 API - Maven Core API",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "632b5f5200456294abc602b7a9fcf056"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "99acbfd463335ce76d98ace3044088679ed3eaac"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "9b41ba1a14c907631da85207560e105b96e26ce49036f9b1d869d5d2fd2233f4"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "2913b666c9df682cf25300a0865b84ed04c90a6ad69ace29954dd588c22a6765a5aeb486f8525f69d2c77fccb511e976f533c7ab7d755efab5ce94f15fcac380"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "3a57073d83bbbbf2c11c4f132e6c44a34d13c2b563aab887edc8f0c609207b437cbcf2f575f6f08a3b2392f380b62ee1"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "38376b89c6f2a0a1f12c7a474ee9494b5dca5962437826b7ef5e8901a2a71476cd7c250d512a4b5abaecb45bed3dec63"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "c45b59c66553cd5771c99c84b2335a25a850fa6fdcaf59171ad91c117280d8be"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "527777ccd7f71a42794faea236a50cd04952a3e4257ffc50f77f53e792aa2bbca62bcf1914023333f19f0dedddd0f6f8e0ec6de21780e37702e52e51d57f5a94"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven/maven-api-core@4.0.0-rc-1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/ref/4.0.0-rc-1/api/maven-api-core/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.apache.org/download.html"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MNG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven/tree/maven-4.0.0-rc-1/api/maven-api-core"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven/maven-api-core@4.0.0-rc-1?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven",
+      "name" : "maven-api-settings",
+      "version" : "4.0.0-rc-1",
+      "description" : "Maven 4 API - Immutable Settings model.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "5618474165a7ebec877b982555861832"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "83f19c89dfd035428244233f768791a2f2cc755e"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "9ee4fd535e74808a9147a53907eb9f864746d7bc02a0733cb7c25b782444b5af"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "03f79468ece16e43a8c49bdb5b43a6dfd72f61c961a7d4c8953a88b63bbbfeb14224ce5d6e81b15e055b6836bc99c23c02b0090e2bc94e46092fdd8386e3d36a"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "876171cf8c2943ef080f868e6e45420c722d923165df13286e295edd385e109ceb4af345317985e0ff33228bb5826f4b"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "2f95b9605898ea5b6d749809d5e4718aeae924ab16082c00226afdeb2332a2dbda422c5b7898ba7a5bebc1b3801839bc"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "7a32b9480d7822895987377885ffad056de76933f5147e1785beb30da5db0045"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "f88f186f859401f099a338d156c6af9c0b11da57aed11ede492bc4bdfd864bde5bc5d7ba632c9108b237d79ee341e043045d1353f4406585834f4ddc0e44412d"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven/maven-api-settings@4.0.0-rc-1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/ref/4.0.0-rc-1/api/maven-api-settings/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.apache.org/download.html"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MNG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven/tree/maven-4.0.0-rc-1/api/maven-api-settings"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven/maven-api-settings@4.0.0-rc-1?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven",
+      "name" : "maven-api-toolchain",
+      "version" : "4.0.0-rc-1",
+      "description" : "Maven 4 API - Immutable Toolchain model.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "9012fd99b85de3e90c70747d065e455c"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "3043de1e8f598aa4bbcf7b0069c8c9319b45f5dd"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "a1825e82202621f142c5e11ba8e1763246fc6ffdab3c47be374ea9a3fe259378"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "a04489db275ac167dbd92f07e9538ed2a9a8c6adc7c6097bd04c7f8b14466076bf35cff8e648ff5fa620a195235603cd842b46bc6fc67601105f8e073cc18b4b"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "8a7c1ff4fe653c881e1b93afe923b8aaac803e422ba1a78aaf2842d155a2c46199e86a63fa95b8aba2bea39466f49d52"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "a11dc73f369636a333cd7bfc4fa4f0fb3280d8f687997a17adbbec1ad6254d1dee920dbc02765a3dadd213f2df82ea8c"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "32c0012db77e43db4249cae95707a3ad55be8c5925ef9c3ab69231d4e6ab176c"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "630ed1c5ebd491d11f0523679aa2960a597f22a0f6797d2a84b3712cff8e036c308fa9e356804d5a61095cfd8edc1fe1e4d0bea282dfd843be37c253d1e92d2f"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven/maven-api-toolchain@4.0.0-rc-1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/ref/4.0.0-rc-1/api/maven-api-toolchain/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.apache.org/download.html"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MNG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven/tree/maven-4.0.0-rc-1/api/maven-api-toolchain"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven/maven-api-toolchain@4.0.0-rc-1?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven",
+      "name" : "maven-api-plugin",
+      "version" : "4.0.0-rc-1",
+      "description" : "Maven 4 API - Immutable Plugin model.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "9897a59eef8fa39950b3a3366cae03cd"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "b24b6c02d5aeb086c2be9bcecfc4189d609c8175"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "ff91d68980b4a7687027cddfdb618566993f389537b42dfa8ea1cc79928cf22d"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "1de6ee9d3df80972cdda1e04af27cb5e6c0aeaf105728079eb9b49be9deee33d130d65698afdbdb0117995d701a7854273edbc48130e17bc7a87207da499324f"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "90b127316ab3bb9322a5b473cdf329d6d51aae2955081ca5292dc34ff5c61e91e733ab2804b91bd8ea1f2d1ff6bb4a86"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "ef2d1af86d0211b170f8fb4ea29b4e36f43c4499d4437b93f89fc930488b5e1738f3d06849eea1c854c7dc7a03c9975a"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "fef301f789db5e946106b8f46d88bd4c07367112b0b1e7318f8b51a781e8020e"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "64262f4e9d6e1c778ac3a2cd84dfa7caf0aa329b9d1fe0179a3098c4e605f5098eab661ff07a513f0cffb1bf41d1f32e03e5f812e938b513753470f9243934da"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven/maven-api-plugin@4.0.0-rc-1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/ref/4.0.0-rc-1/api/maven-api-plugin/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.apache.org/download.html"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MNG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven/tree/maven-4.0.0-rc-1/api/maven-api-plugin"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven/maven-api-plugin@4.0.0-rc-1?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven",
+      "name" : "maven-api-model",
+      "version" : "4.0.0-rc-1",
+      "description" : "Maven 4 API - Immutable Model for Maven POM (Project Object Model).",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "7a9f9d201e3e4e34811058415a4c447c"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "24ead89e53b7d1249754a0a829a32c247e642ca9"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "1e791ef4f1dd92343186d5c3bc74566d5cf2e54dd24e4405eec53727fac1b452"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "430ef009188350485489a4d3bfaf05bd7f87d9487353360d05c95c6b1a9c73fcafb1a7474a7f6570b86db79e6221f0dbe2315c9c146caf2bebd03b09167576b3"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "64d9de8809068a8f79fa3118dda0748b13b2a4b66cb544fe27be80a6e411b62b8026e37087c287d3ad28a6ce65e5bee9"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "c5046f061e92a6a24873967ca35e93c6fe173e62c35c18f6acb8c41237b4bdc2b880c2764d8f768db47414027559eda0"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "5d1ecf4a876610b3fdb3256baba62a666aac0a6665e885cc198cb2b5ed3fd899"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "b29a9e90e66c9c9e1a0912cdfe97b38c0189595aa534387d0107d84c0b3d21a2dd3a5b35ee2a9bb1115e17f875f80c8052f512ac13c57304d4bd24142e5cd3b8"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven/maven-api-model@4.0.0-rc-1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/ref/4.0.0-rc-1/api/maven-api-model/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.apache.org/download.html"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MNG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven/tree/maven-4.0.0-rc-1/api/maven-api-model"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven/maven-api-model@4.0.0-rc-1?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven",
+      "name" : "maven-impl",
+      "version" : "4.0.0-rc-1",
+      "description" : "Provides the implementation classes for the Maven API",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "9a72d7f6cf47bbfdf44bcf778a25c57d"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "7470b7c7bd2f3ec893aebf3f0620ae75667174ee"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "1eb47aa7eb24644761a87d20d6c81b72502b125cc696df08fb169b91207691f4"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "9c5fcefd961c08c2b02a7c0785f9c90c4bd0dba770d01d1c6550d15ee4aa273600e43a6f6fbcde493af107c8d6313e9ee98c53a4551a2f73f7f69fcd7cca60b0"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "e976ec2c2cb63952a8faa565a5a15f0b4f2990008b0205e152d6edf241d283159e67ab3e9b0af9d5c240ea6b21cc6402"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "c72ca2584a2af3fdd23e442d2c818e67ccda8089715d836a74b46d3e0e0932fea62a2b6104db7be0e13b2dbc55f97056"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "df5d79c44f8ee3ae03f1f7a187916f1c84191ea5420ece988cbfd8347ebbb46e"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "4bc02f84e065c413fffd8f01ba780583cf68a04f0a3cc9f09ac4036f152c15e52c7ccbf670e1138d3472c6d64a75aec1eee0f67bc50b5aa9f6015a3a22a54ab1"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven/maven-impl@4.0.0-rc-1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/ref/4.0.0-rc-1/maven-impl/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.apache.org/download.html"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MNG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven/tree/maven-4.0.0-rc-1/maven-impl"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven/maven-impl@4.0.0-rc-1?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven",
+      "name" : "maven-di",
+      "version" : "4.0.0-rc-1",
+      "description" : "Provides the implementation for the Dependency Injection mechanism in Maven",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "9b4374cd55800e2b2d668e824a1a8a51"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "b474d5cf9ae4738f5b56bb4344c437000ec7393f"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "593ac429392884593cd836e54ec33d9d97ce2b5c2b70a0cee74cdc0994800439"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "3544e4b798a03f88bc8a1acba83af8b7407420282435707d148017ba7085e3889d0b67c88b6f294a7d6df8979425b7a16b08cc5c7aaebb2c3359e736f98126a4"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "c61dc7469a0de50e0915f915c7b06af7b9a5446d011dbe166054baacafee7f7d7e56d8e69597da16ec9f852693a13b7a"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "864cc08512507540a375bfb8020ab4c0d86d461b0d9c78749772d341f306f12bb260c0d4f8e74ea3027cfbdf94502d8e"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "21dece97abcd26855fb90724addd514e9a37597251684ed110183554a2529e41"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "f045048c9e9711135679993be27995a3e1373aa4738611629ead221c11448de75f63343efaa3bbfdce6a808e8900b32ae01f67382ec380e37ee2d785d32e6f59"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven/maven-di@4.0.0-rc-1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/ref/4.0.0-rc-1/maven-di/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.apache.org/download.html"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MNG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven/tree/maven-4.0.0-rc-1/maven-di"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven/maven-di@4.0.0-rc-1?type=jar"
+    },
+    {
+      "publisher" : "fasterxml.com",
+      "group" : "org.codehaus.woodstox",
+      "name" : "stax2-api",
+      "version" : "4.2.2",
+      "description" : "Stax2 API is an extension to basic Stax 1.0 API that adds significant new functionality, such as full-featured bi-direction validation interface and high-performance Typed Access API.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "6949cace015c0f408f0b846e3735d301"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "b0d746cadea928e5264f2ea294ea9a1bf815bbde"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "a61c48d553efad78bc01fffc4ac528bebbae64cbaec170b2a5e39cf61eb51abe"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "1c0587ecb4c5a659ce2ae1fe36ffc12636a8ecba549a29f2cf91cb4d1d36a335c05f35776f480488d40d894230389f76aeeb363887026c6ef5c565995c17b7c6"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "3b617db8307a081df858a4110f5b8fec51c06355762506cbc4be5557fb06959f0499f7e672103d46f71c66bae472a7bd"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "22a3150713f7072962e26c286a1ef97d849b10d7f1251c56ae34252f247127b56dd189daa758c64776b4196ee0060517"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "174868c81672068b42ccde35310d4dad60f457b795101e99588c28b0eebdefc2"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "c88de5a2137e3b63b632ef24799a677c998b76e736407f1e8c6af85d1b6a94c76bc20d26e6cac847d8383ab6760f1b5c2ae7574fba21e1e6a96de7cdd38f0e39"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "BSD-2-Clause"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.codehaus.woodstox/stax2-api@4.2.2?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://github.com/FasterXML/stax2-api"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/FasterXML/stax2-api/issues"
+        },
+        {
+          "type" : "vcs",
+          "url" : "http://github.com/FasterXML/stax2-api"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.codehaus.woodstox/stax2-api@4.2.2?type=jar"
+    },
+    {
+      "publisher" : "Codehaus Plexus",
+      "group" : "org.codehaus.plexus",
+      "name" : "plexus-sec-dispatcher",
+      "version" : "4.0.2",
+      "description" : "The Plexus project provides a full software stack for creating and executing software projects.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "9925c73aed2942d2c0f53da57f00a7a9"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "a26139c4a0cf298d23bf0da87bc75b6b7cc68e09"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "a34f93320a8d84b1aa008eab9f34cc2bafd591351b32133946bc2ba2a0cc2405"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "be2a1c38d0e13013d96bc9a31edac7cd73d8195d0579f48de22551760b90c9db404122add17c9cbb9bcf6b44c873b345a57b9334237f49958942e651e36c2d8e"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "2f325f45c857a8997cea6dfd0b963dd6f9cbad9ae58418710172de6246fcc5a863942f46a65c2cbe89761fd1abf36245"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "6fa4431f113a990ba1fa2655cff9bd7fb9867b3f040af33c19c47bae004186e95edf69dcd1461b986eeec853277bef66"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "92e2012e1c35939ff2b3177ffb649daf30229e0a9ae4d934bbc6ba3e84b19f7d"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "fd594f80d2e888c8391f05022883ace6a6f514ebfb7278d630a93061d598d708800c9d888ef369af77e8de50a411aada6fad9b3bdabd34dcdb533cb35728fd5f"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.codehaus.plexus/plexus-sec-dispatcher@4.0.2?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://codehaus-plexus.github.io/plexus-pom/plexus-sec-dispatcher/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/codehaus-plexus/plexus-sec-dispatcher/issues"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://groups.google.com/forum/#!forum/mojohaus-dev"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/codehaus-plexus/plexus-sec-dispatcher.git"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.codehaus.plexus/plexus-sec-dispatcher@4.0.2?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven",
+      "name" : "maven-xml",
+      "version" : "4.0.0-rc-1",
+      "description" : "Provides the implementation classes for the Maven XML",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "ab213b034093c1815271b77694bb81f5"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "c8340b336aa4f9e69f1f8c491e99094c6af43475"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "a4213fa681334de4d48ee70467d52249a3703104256a1fd088600f7742e856e9"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "96f243378535e5728aa84456a64e18236611f424aa26ba18cd8f3fce632e134e1b7b0db21f514fa99e35ce5e962a9f6cd60d00dac2f985aa2ad6a7b48fd788fb"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "405a116168baeeb793ab7390cc8e999d147ebe97b591410c68821e1dc6056a756fddcea2be36c5a36bbb35d91d2d1ea4"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "113907f50fe8110895e36cbbed2b3d0932af3a6f0a5c54d43f6713dcc5e9de3617348e8dda310f87893584b01b5c7cdc"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "472528f4b468bca1d861cb5f15b2584512b8f2e986e3bccad84aa2b79ed1a5af"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "2ff053ef165272c827c28f501aa578e2ce92edccfe93bef473d0d2a0c5dfadfc26e58c7cc43d792c63966b9da40150f30d413256e67d124eeb4b031f7b19496d"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven/maven-xml@4.0.0-rc-1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/ref/4.0.0-rc-1/maven-xml/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.apache.org/download.html"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MNG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven/tree/maven-4.0.0-rc-1/maven-xml"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven/maven-xml@4.0.0-rc-1?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven",
+      "name" : "maven-model",
+      "version" : "4.0.0-rc-1",
+      "description" : "Model for Maven POM (Project Object Model)",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "11a843012297ce5e69c86655088ed6ef"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "eba084aa7c4641954a56ac7730e7a7d3735d5108"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "a005c374586353e70773410fdbdc4523a2a71c8571c630b51b79e81cf73f8f32"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "936145f83f59e598e8187397c72e1fe91df779dcc1b700b2195f683f8161dfeb8d7b41d2504586686f4b6d44008a9147551bb90cf7b99b4c20cfc2e15bf91549"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "bff217d056975570ce21958dad6c98e79b4841f7f5b1941639861dbf58d5b886627a527e4b38c97546c259e4cf251e27"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "b74111871ecab23b927401cdaf936f71e1c980e082917586b8353c04b4a1836880dccc7f7adc730e7d206c17ce76b100"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "3b4905504abafd88145344f2339ae38a242654a4b6e442895992ae9a237d39ea"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "846bd6cbd0bc40e08b0281d2f873ba1f3e23ad7d0054c9fe492309c77b0f76e6fb88e4570f9fc61c9f15478167b49aae84d05454f423515957d4f4e78f9de110"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven/maven-model@4.0.0-rc-1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/ref/4.0.0-rc-1/maven-model/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.apache.org/download.html"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MNG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven/tree/maven-4.0.0-rc-1/maven-model"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven/maven-model@4.0.0-rc-1?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven",
+      "name" : "maven-builder-support",
+      "version" : "4.0.0-rc-1",
+      "description" : "Support for descriptor builders (model, setting, toolchains)",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "364192c6ae1f07313c2be7a406f2a8a8"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "20745dc62bcc738d3705d6b7c78ca9e451bec7a2"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "964721f34d0a48c1231858bc1b5f272e0a88375c8b277f74a51c52ed84f34c34"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "e31ded0466b184914f35aa42c66a7d1647e9a81b0ad76dde30ff1ef9750ce38867e366221a0ddce20b75cf6d3fc808b06b182f7484dfd683057de8c1720fd7f0"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "c2554eb1d3e0f51ec25f8995a8af5beb961ef5a396edb20eca8bf0f9d74aa8d7ddad60d9a3048c65eb3b8d521afd135d"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "0ca23b23c185a6485ad24bb941db44c7b63878bbce0351d47f5f7e7424c62a6037f85fe5e82ff67ea528d8fb3eb81b50"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "3ff4c53e795a54bd30fcb53e51078a780e9bac7838339091a42e6d70d4c566cd"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "9a03bff85fe3f1a99427d3a6c9d2061c657398daef45f1089f5a90d62cea6bca73f525f86ba837872e46e4b62ffeedb5731f57647834dd0068681ac555be6d68"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven/maven-builder-support@4.0.0-rc-1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/ref/4.0.0-rc-1/maven-builder-support/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.apache.org/download.html"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MNG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven/tree/maven-4.0.0-rc-1/maven-builder-support"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven/maven-builder-support@4.0.0-rc-1?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven",
+      "name" : "maven-repository-metadata",
+      "version" : "4.0.0-rc-1",
+      "description" : "Per-directory local and remote repository metadata.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "ab058db05520abfe694a4e088757a716"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "5364d9974cfd7625bcea9cf5db52f6c602340b10"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "fc7f8b1d419f590ddae1f5338f6093862d13032f5a0ff0b6e86d3f8c7ea1b646"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "6843b3fd8cc04979d061ebf2b5a7caf38e3765d0ee70d5eed8757e0a5c1c1855f6ffe32298a0731902d802c52ee888389bc84d41726df789898730afa434d99d"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "4e31faa58f84c7b3146853f8fa7433bc6734405c93f5f423aac96098d560f7a5ff7a3731e67e4f9fb69f15362cdc552f"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "577454d1f1ded3025a23fd5e1c37956a00a3e032643b06650d7ba78fdf4b17fe54c5be4d5e59d51869f735a650925109"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "0e75d6d2532c15a7ec9f7fef5798c4268257636819cbfb90564a271cbe2d497b"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "122b9822dccedfc9428ab4a6b5969cab06d9e0d44df7c393a0b612b558d5025f4ae2f2d571df691db5c777968b7b50914621cc945b5d484fa92086da274cadf9"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven/maven-repository-metadata@4.0.0-rc-1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/ref/4.0.0-rc-1/maven-repository-metadata/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.apache.org/download.html"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MNG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven/tree/maven-4.0.0-rc-1/maven-repository-metadata"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven/maven-repository-metadata@4.0.0-rc-1?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven",
+      "name" : "maven-model-builder",
+      "version" : "4.0.0-rc-1",
+      "description" : "The effective model builder, with inheritance, profile activation, interpolation, ...",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "14fb401f853d0572c64db1ff43431cf8"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "123db4e4dfade16e139c6e63a9b9524e8b7c9771"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "227bd35a3a85ae3c9036766a3d72792379fd4aa6062db7bbb1f47068b654051f"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "1a2bb4c76bf1485f2259803beae056a86a7fc566e235629802325d07967bce72c37d0c15fa73e0fd3ee8cee27a354ae84103cc18907d45c16efffe87c9d4acab"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "d7d13c3668c721e096abd5887e123d9974ad1ef0eb3ebddd0269e926ba70270de803ddd7f043931d240cc6a999c0d485"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "8a73c363942d9188e11aa0c35287282abb49649a5aa51746b5dbcf98bbcfd49bb992bb24effd6ee425ae294dd32418b0"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "1c434c6f9c12856d4beae04af4e056d9e897232d9899af220baa7143230c6842"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "4ef010bd7ced9c7adb4fe1172b89a1a9561be41a451888a33ee8b94adae39b3f8db1b9c026fd61be3e5bc46e7e63508d73004f2bd5c106afd303594ac5b736db"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven/maven-model-builder@4.0.0-rc-1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/ref/4.0.0-rc-1/maven-model-builder/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.apache.org/download.html"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MNG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven/tree/maven-4.0.0-rc-1/maven-model-builder"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven/maven-model-builder@4.0.0-rc-1?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.maven",
+      "name" : "maven-api-meta",
+      "version" : "4.0.0-rc-1",
+      "description" : "Maven 4 API - Java meta annotations.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "edc7edd870d7cdf7b576bd4076d3aa9b"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "b5ab74f5f8ada990c4589d740b8da5c2567e5db7"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "480e4495b9bf4802592e8a428232f914420318360e0f4102cb28d086e76989c9"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "b495d3bd8046e2ad3f1328400166a9b309de1a866ecc89fc1393df6c8dbe8dd6f43b1e34e9a2078e95e34ef2dbf80a8be74067eab9849fafbaf30a64d9c5d7a4"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "91bebd3b34f7eaad140a26203cde0499ce2a7753a16e71e3c3ad368e64bbacbb0eb734738f225833d8736b6802dc0a21"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "5b7678e87826c1d2944a0429681e243e7486c132f30e6c35f1a8e7c155ab206f1536fef2fb835269522d3fdeff698ae4"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "fae330d20c362e11ae9eaf3c388860b0b7c85a2abc1e28c38e70dad5c8a485e9"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "381914f96a444e8ef7e062c10e887c601e0c8c724338e2924b08c29c49434ed9517eb7d4c9869eb40dbb87eb0434f7ec2bb9770e595e0894401b738530c09f9e"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.maven/maven-api-meta@4.0.0-rc-1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://maven.apache.org/ref/4.0.0-rc-1/api/maven-api-meta/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.apache.org/download.html"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/MNG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?users@maven.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/maven/tree/maven-4.0.0-rc-1/api/maven-api-meta"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.maven/maven-api-meta@4.0.0-rc-1?type=jar"
+    },
+    {
+      "publisher" : "Codehaus Plexus",
+      "group" : "org.codehaus.plexus",
+      "name" : "plexus-interpolation",
+      "version" : "1.27",
+      "description" : "The Plexus project provides a full software stack for creating and executing software projects.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "c2edbe0dbc934692794aaeac6006055a"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "8dc73f4ff5eafcbb7ec035ba54736e828b272533"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "3fb4fb6143fdf964024c3cb738551524b9ea84e5c211cd660c559ad0703e5230"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "34ae1399e75560d6aec6743ce37e10d2236342ec58145c3fdd7b03340f4ed3ef500f824c845d452dbb8c3f14d118c855707de4a080074fa572daf7ccfef4dddf"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "cf31f04d414db3c864a403628707df8b36c379a984d75804e5cbfeeea5fea54d2510620de045c0b01a7745063b3135fb"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "9a439b4e81260659af067e91d5e2482337dc718cd32abc08562e9a90fee45da6a0cbfffdc7190b13ba662ed3153fcde1"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "d8cd271924ed99a870e9f8c17796e2ab0a3e69350465508517992bee0cea6bbe"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "75a3e2cbde1c45b70c1b4103620f76673db127e17518e2ca51cff1e6d7a84041e495c71171490004650d6476679d009594db2557898e231962bea3744914c501"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.codehaus.plexus/plexus-interpolation@1.27?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://codehaus-plexus.github.io/plexus-pom/plexus-interpolation/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/codehaus-plexus/plexus-interpolation/issues"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://groups.google.com/forum/#!forum/mojohaus-dev"
+        },
+        {
+          "type" : "vcs",
+          "url" : "http://github.com/codehaus-plexus/plexus-interpolation/tree/plexus-interpolation-1.27/"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.codehaus.plexus/plexus-interpolation@1.27?type=jar"
+    },
+    {
+      "publisher" : "Codehaus Plexus",
+      "group" : "org.codehaus.plexus",
+      "name" : "plexus-xml",
+      "version" : "3.0.1",
+      "description" : "A collection of various utility classes to ease working with XML in Maven 3.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "cd868918ebc742350840124ea4422ab0"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "b0e73c21402f03c2765674b8dede21673b3288cf"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "c1a510a87a62bd2d74ac1472dd31c3f9e9b0b8b8568f37d77c0f135415bebd05"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "422f2ccdda00dd8c90c2f5b5f4ad6f0410fb6f2bcb3429d196f7f39c96a44a6709c70539648214d5b7686a70240a6c16c7b985b943f8002d318f90896230a259"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "da397eb08963f4366d2119af1d993efa00fee25e50b09454422805ce83e662507e2afc7f6b4171a9c5da111d7ada3365"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "d21cc3459871a9f6e9a893df8f8bcb85a4f20cee96e821098e2a0f2655b20c9f01f1139e7dc4a80444d627d9854c56f6"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "bdf4b087b5d0ed2473c5ff7524b7c6dff791738715aa5499f14ed11729b3690b"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "fedd50a88c651e5a5da1639d5c507634bd50cb9103acfdec9e0db7827656855b7d1ee19ec7318de91996e86dc5e9c38f1b507433498c75ae327b865534999a9a"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.codehaus.plexus/plexus-xml@3.0.1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://codehaus-plexus.github.io/plexus-xml/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/codehaus-plexus/plexus-xml/issues"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://groups.google.com/forum/#!forum/mojohaus-dev"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/codehaus-plexus/plexus-xml/tree/plexus-xml-3.0.1/"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.codehaus.plexus/plexus-xml@3.0.1?type=jar"
+    },
+    {
+      "publisher" : "FasterXML",
+      "group" : "com.fasterxml.woodstox",
+      "name" : "woodstox-core",
+      "version" : "7.1.0",
+      "description" : "Woodstox is a high-performance XML processor that implements Stax (JSR-173), SAX2 and Stax2 APIs",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "f8b70141712cd2ac67800ba036f0aa13"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "95341048cfb852aa05037e6cc83069b8664728c5"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "81266920a1cdc47306a8a2b4726c99ec89b3fbf31c2470e4f5e477d9d857ca9f"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "257260a61892f52a94979c512cc86d3cfaf83c8c1ef231f15033f27c1af4c2b7928b7df9ac0005ef617746193273fe2df68ac0164d5f51e47be580506464b857"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "698b3d685100988b264f0d025b01c64723b1033aa063e70cdcfef5743d1a83d7a2a1b94fbba99dc638f3dca2a498a980"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "a835755da983be214c4d2a43633b8ea51103b274a43b45184610615f0f747904a1967f3c99670471b24024ba61cfd1b3"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "1ab326e9b6f5c668645360b9c372e3abbf29574087b863c90f247d017b5d91c8"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "cc58b8aa1cf72672c0adba7ecc58463ae7718a033b8f9d95c3038a96bc61f6241d938e0b2950a850e9afbd035e5580687ea20d391fb58ce1596694bc118a0e7f"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/com.fasterxml.woodstox/woodstox-core@7.1.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://github.com/FasterXML/woodstox"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/FasterXML/woodstox/issues"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/FasterXML/woodstox"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.fasterxml.woodstox/woodstox-core@7.1.0?type=jar"
+    },
+    {
+      "publisher" : "QOS.ch",
+      "group" : "org.slf4j",
+      "name" : "slf4j-api",
+      "version" : "2.0.16",
+      "description" : "The slf4j API",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "c8de8f5d740584cb24b5652cfba8b3c4"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "0172931663a09a1fa515567af5fbef00897d3c04"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "a12578dde1ba00bd9b816d388a0b879928d00bab3c83c240f7013bf4196c579a"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "91c2e7b30f24649bb3edfc7f138c2b7dc715ad36963af159defb80a71205eb7e4c5bcc80d779ef993b567a56724064f190c93985f32665a8df85198a03a2f1bb"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "ed0cc7ad67343b9fe4df03ea534025bf9d90c112b33cd8920f29890d923c349b69820c9c42b9e8882047af848b74f99d"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "331ac707cfa4b2bda44deffce7d2a640abb9ae12968cb1ac4879ba1b45542e3d3ce1016c812ff1f2449336bc7ea6bebb"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "3f68204951bb4baedc34fdd7194d0801042268aba0c58ac5d760779510743fbb"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "d7a2f7359e7b2cd6ae3650d28352bf8789acf5855a3596a3be2a236a94931abf8bacf0d6a457afa43164be53abb19cc223ef4f030822a3295c036c078527e361"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "MIT",
+            "url" : "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://www.slf4j.org"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/qos-ch/slf4j/slf4j-parent/slf4j-api"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar"
+    }
+  ],
+  "dependencies" : [
+    {
+      "ref" : "pkg:maven/org.apache.maven.resolver/maven-resolver-supplier-mvn4@2.0.5?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-api@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-util@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-spi@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-named-locks@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-impl@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-connector-basic@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-transport-file@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-transport-apache@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven/maven-resolver-provider@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-model-builder@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven.resolver/maven-resolver-api@2.0.5?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven.resolver/maven-resolver-util@2.0.5?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-api@2.0.5?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven.resolver/maven-resolver-spi@2.0.5?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-api@2.0.5?type=jar",
+        "pkg:maven/com.google.code.gson/gson@2.11.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/com.google.code.gson/gson@2.11.0?type=jar",
+      "dependsOn" : [
+        "pkg:maven/com.google.errorprone/error_prone_annotations@2.27.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/com.google.errorprone/error_prone_annotations@2.27.0?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven.resolver/maven-resolver-named-locks@2.0.5?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven.resolver/maven-resolver-impl@2.0.5?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-api@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-spi@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-named-locks@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-util@2.0.5?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven.resolver/maven-resolver-connector-basic@2.0.5?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-api@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-spi@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-util@2.0.5?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven.resolver/maven-resolver-transport-file@2.0.5?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-api@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-spi@2.0.5?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven.resolver/maven-resolver-transport-apache@2.0.5?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-api@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-spi@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-util@2.0.5?type=jar",
+        "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+        "pkg:maven/org.apache.httpcomponents/httpcore@4.4.16?type=jar",
+        "pkg:maven/commons-codec/commons-codec@1.17.1?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar",
+        "pkg:maven/org.slf4j/jcl-over-slf4j@2.0.16?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.httpcomponents/httpcore@4.4.16?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.httpcomponents/httpcore@4.4.16?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/commons-codec/commons-codec@1.17.1?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.slf4j/jcl-over-slf4j@2.0.16?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven/maven-resolver-provider@4.0.0-rc-1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven/maven-api-xml@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-metadata@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-spi@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-core@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-model@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-impl@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-xml@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-model@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-builder-support@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-model-builder@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-repository-metadata@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-api@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-spi@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-util@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-impl@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-connector-basic@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-transport-file@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-transport-apache@2.0.5?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven/maven-api-xml@4.0.0-rc-1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven/maven-api-meta@4.0.0-rc-1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven/maven-api-meta@4.0.0-rc-1?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven/maven-api-metadata@4.0.0-rc-1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven/maven-api-meta@4.0.0-rc-1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven/maven-api-spi@4.0.0-rc-1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven/maven-api-meta@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-model@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-core@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-di@4.0.0-rc-1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven/maven-api-model@4.0.0-rc-1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven/maven-api-meta@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-xml@4.0.0-rc-1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven/maven-api-core@4.0.0-rc-1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven/maven-api-meta@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-model@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-settings@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-toolchain@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-plugin@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-xml@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-di@4.0.0-rc-1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven/maven-api-settings@4.0.0-rc-1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven/maven-api-meta@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-xml@4.0.0-rc-1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven/maven-api-toolchain@4.0.0-rc-1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven/maven-api-meta@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-xml@4.0.0-rc-1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven/maven-api-plugin@4.0.0-rc-1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven/maven-api-meta@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-xml@4.0.0-rc-1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven/maven-api-di@4.0.0-rc-1?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven/maven-impl@4.0.0-rc-1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven/maven-api-core@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-spi@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-metadata@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-xml@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-toolchain@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-di@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-meta@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-model@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-settings@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-di@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-api@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-spi@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-util@2.0.5?type=jar",
+        "pkg:maven/org.apache.maven/maven-xml@4.0.0-rc-1?type=jar",
+        "pkg:maven/com.fasterxml.woodstox/woodstox-core@7.1.0?type=jar",
+        "pkg:maven/org.codehaus.woodstox/stax2-api@4.2.2?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-impl@2.0.5?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-sec-dispatcher@4.0.2?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven/maven-di@4.0.0-rc-1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven/maven-api-di@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-meta@4.0.0-rc-1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven/maven-xml@4.0.0-rc-1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven/maven-api-xml@4.0.0-rc-1?type=jar",
+        "pkg:maven/com.fasterxml.woodstox/woodstox-core@7.1.0?type=jar",
+        "pkg:maven/org.codehaus.woodstox/stax2-api@4.2.2?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/com.fasterxml.woodstox/woodstox-core@7.1.0?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.codehaus.woodstox/stax2-api@4.2.2?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.codehaus.woodstox/stax2-api@4.2.2?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.codehaus.plexus/plexus-sec-dispatcher@4.0.2?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven/maven-model@4.0.0-rc-1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven/maven-api-model@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-xml@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-meta@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-impl@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-xml@3.0.1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.codehaus.plexus/plexus-xml@3.0.1?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven/maven-builder-support@4.0.0-rc-1?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven/maven-model-builder@4.0.0-rc-1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven/maven-api-core@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-spi@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-xml@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-meta@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-model@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-impl@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-model@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-builder-support@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-interpolation@1.27?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-xml@3.0.1?type=jar",
+        "pkg:maven/com.fasterxml.woodstox/woodstox-core@7.1.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.codehaus.plexus/plexus-interpolation@1.27?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.maven/maven-repository-metadata@4.0.0-rc-1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.maven/maven-api-meta@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-api-metadata@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.apache.maven/maven-impl@4.0.0-rc-1?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-xml@3.0.1?type=jar",
+        "pkg:maven/org.apache.maven/maven-xml@4.0.0-rc-1?type=jar"
+      ]
+    }
+  ]
+}
