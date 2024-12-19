@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
-from common import get_dirs, get_files, get_url_cached, get_sbom_cached, dt_pmc, post_sbom
-from dotenv import load_dotenv
+from common import get_dirs, get_files, get_url_cached, get_sbom_cached
 import json
 import os
 from packaging.version import Version
@@ -117,9 +116,8 @@ else:
     projects = maven_projects(pmc)
 
 for project in projects:
-    friendly_name = 'Apache ' + project.artifact_id.replace('-', ' ').title()
     print(project)
-    pmc_uuid = dt_pmc(pmc)['uuid']
+    friendly_name = 'Apache ' + project.artifact_id.replace('-', ' ').title()
 
     index = get_dirs(project.url())
     def is_version(v):
@@ -149,5 +147,4 @@ for project in projects:
             sbom = sboms[0]
             url = f"{project.url()}/{lastVersion}/{sbom}"
             cache = f'{pmc}/maven/{project.group_id}/{project.artifact_id}/{lastVersion}/{sbom}'
-            sbom = get_sbom_cached(url, cache)
-            post_sbom(pmc, pmc_uuid, friendly_name, lastVersion, sbom)
+            get_sbom_cached(url, cache)

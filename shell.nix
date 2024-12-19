@@ -26,8 +26,8 @@ pkgs.mkShell {
       p.requests
       p.packaging
       p.python-dotenv
-
       p.pygithub
+      p.pytest
 
       # for ecosystem-graph
       (p.lib4sbom.overrideAttrs(a: {

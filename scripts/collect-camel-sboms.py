@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
 
 from bs4 import BeautifulSoup
-from common import dt_pmc, get_sbom_cached, post_sbom
+from common import get_sbom_cached
 import re
 import requests
-
-pmc = dt_pmc("camel")
 
 with requests.get("https://camel.apache.org/download/") as res:
     soup = BeautifulSoup(res.text, 'html.parser')
@@ -36,22 +34,24 @@ with requests.get("https://camel.apache.org/download/") as res:
           "camel-kafka-connector": "camel-kafka-connector",
         }[match.group(1)]
         version = match.group(2)
-        sbom = get_sbom_cached(url, f"camel/maven/{group_id}/{artifact_id}/{version}/{name}")
-        post_sbom(pmc, pmc['uuid'], friendly_name, version, sbom)
+        get_sbom_cached(url, f"camel/maven/{group_id}/{artifact_id}/{version}/{name}")
 
-main_sboms = {
-    "Apache Camel": "camel",
-    "Apache Camel Quarkus": "camel-quarkus",
-    "Apache Camel Kamelets": "camel-kamelets",
-    "Apache Camel Spring Boot": "camel-spring-boot",
-    # Kafka connector is not in version control?
-}
-
-for name in main_sboms:
-    slug = main_sboms[name]
-    url = f"https://raw.githubusercontent.com/apache/{slug}/main/{slug}-sbom/{slug}-sbom.json"
-    with requests.get(url) as res:
-        if res.status_code == 200:
-            post_sbom(pmc, pmc['uuid'], name, "main", res.text)
-        else:
-            print("Failed to fetch " + url)
+# TODO what do we do with the 'main branch' SBOMs? possibly too heavy to include in the
+# repo, but would be good to still have a mechanism to collect and report on those.
+# perhaps put them on the filesystem but .gitignore them?
+#main_sboms = {
+#    "Apache Camel": "camel",
+#    "Apache Camel Quarkus": "camel-quarkus",
+#    "Apache Camel Kamelets": "camel-kamelets",
+#    "Apache Camel Spring Boot": "camel-spring-boot",
+#    # Kafka connector is not in version control?
+#}
+#
+#for name in main_sboms:
+#    slug = main_sboms[name]
+#    url = f"https://raw.githubusercontent.com/apache/{slug}/main/{slug}-sbom/{slug}-sbom.json"
+#    with requests.get(url) as res:
+#        if res.status_code == 200:
+#            #post_sbom(pmc, pmc['uuid'], name, "main", res.text)
+#        else:
+#            print("Failed to fetch " + url)

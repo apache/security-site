@@ -1,13 +1,7 @@
 from bs4 import BeautifulSoup
-from dotenv import load_dotenv
-import json
 import os
 from pathlib import Path
-import requests
 from urllib import error, request
-
-load_dotenv()
-dt_api_key = os.getenv('DT_API_KEY')
 
 def get_index(url):
     with request.urlopen(url) as resp:
@@ -74,89 +68,3 @@ def get_sbom_cached(url, to):
     with open(filename, "r") as i:
         return i.read()
 
-def get_dt_projects():
-    req = request.Request('https://security-tools-ec2-va.apache.org/api/v1/project?excludeInactive=true&onlyRoot=false&pageSize=5000&pageNumber=1')
-    if not dt_api_key:
-        raise ValueError("This script wants to write to DependencyTrack, but DT_API_KEY was not set.")
-    req.add_header('X-Api-Key', dt_api_key)
-    with request.urlopen(req) as res:
-        projects = {}
-        pmcs = {}
-        for p in json.load(res):
-            if 'version' in p:
-                projects[f"{p['name']}-{p['version']}"] = p
-            else:
-                pmcs[p['name']] = p
-        print(len(projects))
-        print(len(pmcs))
-        return projects, pmcs
-
-dt_projects, dt_pmcs = get_dt_projects()
-
-def dt_pmc(pmc):
-    global dt_pmcs
-    friendly_name = 'Apache ' + pmc.title()
-    if not friendly_name in dt_pmcs:
-        project = {
-            'active': True,
-            'name': friendly_name,
-            # TODO don't hardcode
-            'classifier': 'LIBRARY',
-        }
-        with requests.put(
-            'https://security-tools-ec2-va.apache.org/api/v1/project',
-            headers={
-                'X-Api-Key': dt_api_key,
-                'Content-Type': 'application/json'
-            },
-            data=json.dumps(project)
-        ) as res:
-            if res.status_code == 403:
-                print(f"403 creating PMC: missing authorization PORTFOLIO_MANAGEMENT")
-            else:
-                print(f"Created PMC: {res.status_code}")
-        _, dt_pmcs = get_dt_projects()
-
-    return dt_pmcs[friendly_name]
-
-def get_or_create_dt_project(pmc, pmc_uuid, project_friendly_name, version):
-    global dt_projects
-
-    if f"{project_friendly_name}-{version}" in dt_projects:
-        print("Project exists, just update")
-    else:
-        project = {
-            'active': True,
-            'name': project_friendly_name,
-            'version': version,
-            # TODO don't hardcode
-            'classifier': 'LIBRARY',
-            'parent': {
-                'uuid': pmc_uuid
-            }
-        }
-        with requests.put(
-            'https://security-tools-ec2-va.apache.org/api/v1/project',
-            headers={
-                'X-Api-Key': dt_api_key,
-                'Content-Type': 'application/json'
-            },
-            data=json.dumps(project)
-        ) as res:
-            print(res.status_code)
-
-        dt_projects, _ = get_dt_projects()
-    return dt_projects[f"{project_friendly_name}-{version}"]
-
-def post_sbom(pmc, pmc_uuid, friendly_name, lastVersion, sbom):
-    dt_project = get_or_create_dt_project(pmc, pmc_uuid, friendly_name, lastVersion)
-    with requests.post(
-        'https://security-tools-ec2-va.apache.org/api/v1/bom',
-        headers={'X-Api-Key': dt_api_key},
-        files=dict(
-            project=dt_project['uuid'],
-            bom=sbom
-        )
-    ) as res:
-        if res.status_code != 200:
-            raise Exception(f"Submitting SBOM for {friendly_name} failed: {res.status_code}: {res.text}")
