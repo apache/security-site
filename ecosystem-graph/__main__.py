@@ -8,20 +8,23 @@ import os
 import re
 import networkx as nx
 
+def is_sbom(file):
+    return not file.endswith("md") and not file.endswith("uploaded")
+
 def list_sboms():
     sboms = []
-    for pmc in os.scandir("sboms"):
-        for tpe in filter(os.path.isdir, os.scandir(f"sboms/{pmc.name}")):
-            if tpe.name == 'maven':
-                for (root, _, files) in os.walk(f"sboms/{pmc.name}/maven"):
-                    for file in files:
+    for pmc in [ d.name for d in os.scandir("sboms/") if os.path.isdir(d) ]:
+        for tpe in [ t.name for t in os.scandir(f"sboms/{pmc}") if os.path.isdir(t) ]:
+            if tpe == 'maven':
+                for (root, _, files) in os.walk(f"sboms/{pmc}/maven"):
+                    for file in filter(is_sbom, files):
                         group_id = root.split('/')[3]
                         artifact_id = root.split('/')[4]
                         purl = f"pkg:maven/{group_id}/{artifact_id}"
                         sboms.append((purl, os.path.join(root, file)))
-            elif tpe.name == 'pypi':
-                for (root, _, files) in os.walk(f"sboms/{pmc.name}/pypi"):
-                    for file in files:
+            elif tpe == 'pypi':
+                for (root, _, files) in os.walk(f"sboms/{pmc}/pypi"):
+                    for file in filter(is_sbom, files):
                         package_name = root.split('/')[3]
                         purl = f"pkg:pypi/{package_name}"
                         sboms.append((purl, os.path.join(root, file)))
