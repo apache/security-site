@@ -30,15 +30,7 @@ pkgs.mkShell {
       p.pytest
 
       # for ecosystem-graph
-      (p.lib4sbom.overrideAttrs(a: {
-        patches = (a.patches or []) ++ [
-          (pkgs.fetchpatch {
-            # https://github.com/anthonyharrison/lib4sbom/pull/58
-            url = "https://github.com/anthonyharrison/lib4sbom/commit/181549e90d092fe943327334cba8866ed8f111a1.patch";
-            hash = "sha256-STiuoIv4of7xpa99/dfkJYl2IyD1mMcbswN9S4RPBpc=";
-          })
-        ];
-      }))
+      p.lib4sbom
       p.networkx
 
       # for app
