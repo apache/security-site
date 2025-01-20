@@ -3,17 +3,22 @@
 # Script to analyze ASF SBOMs and draw a project graph
 
 import json
+from collections import defaultdict
 from lib4sbom.parser import SBOMParser
 import os
 import re
 import networkx as nx
+
+print("Collecting data...")
+
+pmcs = [ d.name for d in os.scandir("sboms/") if os.path.isdir(d) ]
 
 def is_sbom(file):
     return not file.endswith("md") and not file.endswith("uploaded")
 
 def list_sboms():
     sboms = []
-    for pmc in [ d.name for d in os.scandir("sboms/") if os.path.isdir(d) ]:
+    for pmc in pmcs:
         for tpe in [ t.name for t in os.scandir(f"sboms/{pmc}") if os.path.isdir(t) ]:
             if tpe == 'maven':
                 for (root, _, files) in os.walk(f"sboms/{pmc}/maven"):
@@ -21,13 +26,13 @@ def list_sboms():
                         group_id = root.split('/')[3]
                         artifact_id = root.split('/')[4]
                         purl = f"pkg:maven/{group_id}/{artifact_id}"
-                        sboms.append((purl, os.path.join(root, file)))
+                        sboms.append((pmc, purl, os.path.join(root, file)))
             elif tpe == 'pypi':
                 for (root, _, files) in os.walk(f"sboms/{pmc}/pypi"):
                     for file in filter(is_sbom, files):
                         package_name = root.split('/')[3]
                         purl = f"pkg:pypi/{package_name}"
-                        sboms.append((purl, os.path.join(root, file)))
+                        sboms.append((pmc, purl, os.path.join(root, file)))
             else:
                 print(f"Unexpected type: {tpe}")
     return sboms
@@ -36,33 +41,38 @@ def simplify_purl(purl):
     return re.sub(r'_(2.1.|3)$', '', purl.split('@')[0])
 
 sboms = list_sboms();
-purls = [ simplify_purl(sbom[0]) for sbom in sboms ]
+purls = [ simplify_purl(sbom[1]) for sbom in sboms ]
 
 def get_purl(package):
     if 'purl' in package:
         return package['purl']
-    if 'group' in package:
-        return f"pkg:maven/{package['group']}/{package['name']}"
     if 'externalreference' in package:
         for (_, t, r) in package['externalreference']:
             if t == 'purl':
                 return r
+    if 'group' in package:
+        return f"pkg:maven/{package['group']}/{package['name']}"
     return None
 
+missing = defaultdict(dict)
 links = nx.DiGraph()
 def parse_sbom(sbom):
-    global links
-    sbom_purl = simplify_purl(sbom[0])
+    global links, missing
+    pmc = sbom[0]
+    sbom_purl = simplify_purl(sbom[1])
     parser = SBOMParser()
     try:
-        parser.parse_file(sbom[1])
+        parser.parse_file(sbom[2])
     except Exception as e:
-        print('Error parsing ' + sbom[1])
+        print('Error parsing ' + sbom[2])
         raise e
     for package in parser.get_packages():
         dep_purl = simplify_purl(get_purl(package))
-        if dep_purl and dep_purl in purls:
-            links.add_edge(sbom_purl, dep_purl)
+        if dep_purl:
+            if dep_purl in purls:
+                links.add_edge(sbom_purl, dep_purl)
+            elif 'apache' in dep_purl:
+                missing[pmc][dep_purl] = sbom[2]
 
 list(map(parse_sbom, sboms))
 
@@ -133,9 +143,28 @@ def to_json(graph):
             "links": links,
     }
 
+print("Generating global graph...")
 #with open("ecosystem-full.dot", "w") as outfile:
 #    outfile.write(to_dot(links))
 #with open("ecosystem.dot", "w") as outfile:
 #    outfile.write(to_dot(simplified))
 with open("app/htdocs/ecosystem.json", "w") as outfile:
     outfile.write(json.dumps(to_json(simplified)))
+
+for pmc in pmcs:
+    print(f"Generating PMC-specific graph for {pmc}...")
+    project_links = nx.DiGraph()
+    for sbom in { simplify_purl(sbom[1]) for sbom in sboms if sbom[0] == pmc }:
+        if sbom in simplified:
+            for a in nx.ancestors(simplified, sbom):
+                project_links.add_edge(a, sbom)
+            for d in nx.descendants(simplified, sbom):
+                project_links.add_edge(sbom, d)
+    project_simplified = nx.transitive_reduction(project_links)
+
+    with open(f"app/htdocs/{pmc}.json", "w") as outfile:
+        outfile.write(json.dumps(to_json(project_simplified)))
+
+for pmc in pmcs:
+    with open(f"app/htdocs/{pmc}-missing.json", "w") as outfile:
+        outfile.write(json.dumps(missing[pmc]))

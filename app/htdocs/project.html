@@ -1,0 +1,30 @@
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <script src="echarts.min.js"></script>
+<style>
+body {
+  font-family: sans-serif;
+}
+#intro {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+</style>
+</head>
+<body>
+This graph shows the Apache artifacts that have published
+and SBOM for <span id="pmc"></span>, as well as those that
+reference them or are referenced by them.
+<div id="main" style="width: 100%; height: 70%"></div>
+<h1>Missing ASF dependencies</h1>
+The following is a list of dependencies found in your SBOMs
+referencing Apache that did not have their own SBOM. This
+might indicate a mistake in your SBOM, or a dependency that
+does not yet publish SBOMs at all. Perhaps you could assist
+them?
+<div id="missing"></div>
+  <script src="js/graph.js"></script>
+  <script src="js/project.js"></script>
+</body>
+</html>
