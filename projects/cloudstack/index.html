@@ -405,6 +405,24 @@
 <ul>
 <li>Kiran Chavala <a href="mailto:kiranchavala@apache.org">kiranchavala@apache.org</a> (reporter)</li>
 </ul>
+<h2 id="CVE-2025-22828">Unauthorised access to annotations</h2>
+<p>CVE-2025-22828 <a href="./CVE-2025-22828.cve.json">[CVE json]</a> <a href="./CVE-2025-22828.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-01-13T12:40:18.771Z</em></p>
+<h3 id="affected-15">Affected</h3>
+<ul>
+<li>Apache CloudStack from 4.16.0 through *</li>
+</ul>
+<h3 id="description-15">Description</h3>
+<div>CloudStack users can add and read comments (annotations) on resources they are authorised to access.&nbsp;</div><div>Due to an access validation issue that affects Apache CloudStack versions from 4.16.0, users who have access, prior access or knowledge of resource UUIDs can list and add comments (annotations) to such resources.&nbsp;</div><div>An attacker with a user-account and access or prior knowledge of resource UUIDs may exploit this issue to read contents of the comments (annotations) or add malicious comments (annotations) to such resources.&nbsp;</div><div>This may cause potential loss of confidentiality of CloudStack environments and resources if the comments (annotations) contain any privileged information. However, guessing or brute-forcing resource UUIDs are generally hard to impossible and access to listing or adding comments isn't same as access to CloudStack resources, making this issue of very low severity and general low impact.</div><br><div>CloudStack admins may also disallow listAnnotations and addAnnotation API access to non-admin roles in their environment as an interim measure.</div><br>
+<h3 id="references-15">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/bbsm9fdwrgfyostzojh6ghpocgdmx8rs">https://lists.apache.org/thread/bbsm9fdwrgfyostzojh6ghpocgdmx8rs</a></li>
+</ul>
+<h3 id="credits-15">Credits</h3>
+<ul>
+<li>Alex Perrakis <a href="mailto:alexperrakis1@gmail.com">alexperrakis1@gmail.com</a> (reporter)</li>
+<li>Efstratios Chatzoglou <a href="mailto:efchatzoglou@gmail.com">efchatzoglou@gmail.com</a> (reporter)</li>
+</ul>
 
   
 </div>

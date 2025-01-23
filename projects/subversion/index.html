@@ -177,6 +177,23 @@
 <li>Orange Tsai (@orange_8361) from DEVCORE Research Team (finder)</li>
 <li>splitline (@<em>splitline</em>) from DEVCORE Research Team (finder)</li>
 </ul>
+<h2 id="CVE-2024-46901">mod_dav_svn denial-of-service via control characters in paths</h2>
+<p>CVE-2024-46901 <a href="./CVE-2024-46901.cve.json">[CVE json]</a> <a href="./CVE-2024-46901.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-12-09T09:36:41.289Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Subversion through 1.14.4</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Insufficient validation of filenames against control characters in Apache Subversion repositories served via mod_dav_svn allows authenticated users with commit access to commit a corrupted revision, leading to disruption for users of the repository.<br><br>All versions of Subversion up to and including Subversion 1.14.4 are affected if serving repositories via mod_dav_svn. Users are recommended to upgrade to version 1.14.5, which fixes this issue.<br><br>Repositories served via other access methods are not affected.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://subversion.apache.org/security/CVE-2024-46901-advisory.txt">https://subversion.apache.org/security/CVE-2024-46901-advisory.txt</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>HaoZi, WordPress China (finder)</li>
+</ul>
 
   
 </div>

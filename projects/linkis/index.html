@@ -391,6 +391,26 @@ of parameters, an attacker configuring malicious</p>
 <li>Hen (reporter)</li>
 <li>Pj fanning  (reporter)</li>
 </ul>
+<h2 id="CVE-2024-45627">JDBC Datasource Module with Mysql has file read vulnerability</h2>
+<p>CVE-2024-45627 <a href="./CVE-2024-45627.cve.json">[CVE json]</a> <a href="./CVE-2024-45627.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-01-14T16:13:18.399Z</em></p>
+<h3 id="affected-15">Affected</h3>
+<ul>
+<li>Apache Linkis Metadata Query Service JDBC from 1.5.0 before 1.7.0</li>
+</ul>
+<h3 id="description-15">Description</h3>
+<p>In Apache Linkis &lt;1.7.0, due to the lack of effective filtering
+of parameters, an attacker configuring malicious Mysql JDBC parameters in the DataSource Manager Module will</p>
+<p><span style="background-color: rgb(255, 255, 255);">allow the attacker to read arbitrary files from the Linkis server</span>. Therefore, the parameters in the Mysql JDBC URL should be blacklisted. This attack requires the attacker to obtain an authorized account from Linkis before it can be carried out. Versions of Apache Linkis &lt; 1.7.0 will be affected. <br>We recommend users upgrade the version of Linkis to version 1.7.0.</p>
+<br>
+<h3 id="references-15">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/0zzx8lldwoqgzq98mg61hojgpvn76xsh">https://lists.apache.org/thread/0zzx8lldwoqgzq98mg61hojgpvn76xsh</a></li>
+</ul>
+<h3 id="credits-15">Credits</h3>
+<ul>
+<li>Le1a (reporter)</li>
+</ul>
 
   
 </div>

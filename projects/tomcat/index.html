@@ -680,51 +680,107 @@ smuggling when behind a reverse proxy.<br></p><p><span style="background-color: 
 <ul>
 <li><a href="https://lists.apache.org/thread/q1gp7cc38hs1r8gj8gfnopwznd5fpr4d">https://lists.apache.org/thread/q1gp7cc38hs1r8gj8gfnopwznd5fpr4d</a></li>
 </ul>
+<h2 id="CVE-2024-50379">RCE due to TOCTOU issue in JSP compilation</h2>
+<p>CVE-2024-50379 <a href="./CVE-2024-50379.cve.json">[CVE json]</a> <a href="./CVE-2024-50379.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-12-19T17:34:02.440Z</em></p>
+<h3 id="affected-31">Affected</h3>
+<ul>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.1</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.33</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.97</li>
+</ul>
+<h3 id="description-31">Description</h3>
+<p>Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability during JSP compilation in Apache Tomcat permits an RCE on case insensitive file systems when the default servlet is enabled for write (non-default configuration).</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.1, from 10.1.0-M1 through 10.1.33, from 9.0.0.M1 through 9.0.97.</p><p>Users are recommended to upgrade to version 11.0.2, 10.1.34 or 9.0.98, which fixes the issue.</p>
+<h3 id="references-31">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/y6lj6q1xnp822g6ro70tn19sgtjmr80r">https://lists.apache.org/thread/y6lj6q1xnp822g6ro70tn19sgtjmr80r</a></li>
+</ul>
+<h3 id="credits-18">Credits</h3>
+<ul>
+<li>Nacl, WHOAMI, Yemoli and Ruozhi (finder)</li>
+</ul>
 <h2 id="CVE-2024-52316">Authentication bypass when using Jakarta Authentication API</h2>
 <p>CVE-2024-52316 <a href="./CVE-2024-52316.cve.json">[CVE json]</a> <a href="./CVE-2024-52316.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-11-18T11:32:31.150Z</em></p>
-<h3 id="affected-31">Affected</h3>
+<h3 id="affected-32">Affected</h3>
 <ul>
 <li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M26</li>
 <li>Apache Tomcat from 10.1.0-M1 through 10.1.30</li>
 <li>Apache Tomcat from 9.0.0-M1 through 9.0.95</li>
 </ul>
-<h3 id="description-31">Description</h3>
+<h3 id="description-32">Description</h3>
 <p>Unchecked Error Condition vulnerability in Apache Tomcat. If Tomcat is configured to use a custom Jakarta Authentication (formerly JASPIC)&nbsp;ServerAuthContext component which may throw an exception during the authentication process without explicitly setting an HTTP status to indicate failure, the authentication may not fail, allowing the user to bypass the authentication process. There are no known Jakarta&nbsp;Authentication components that behave in this way.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M26, from 10.1.0-M1 through 10.1.30, from 9.0.0-M1 through 9.0.95.</p><p>Users are recommended to upgrade to version 11.0.0, 10.1.31 or 9.0.96, which fix the issue.</p>
-<h3 id="references-31">References</h3>
+<h3 id="references-32">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/lopzlqh91jj9n334g02om08sbysdb928">https://lists.apache.org/thread/lopzlqh91jj9n334g02om08sbysdb928</a></li>
 </ul>
 <h2 id="CVE-2024-52317">Request/response mix-up with HTTP/2</h2>
 <p>CVE-2024-52317 <a href="./CVE-2024-52317.cve.json">[CVE json]</a> <a href="./CVE-2024-52317.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-11-18T11:37:01.194Z</em></p>
-<h3 id="affected-32">Affected</h3>
+<h3 id="affected-33">Affected</h3>
 <ul>
 <li>Apache Tomcat from 11.0.0-M23 through 11.0.0-M26</li>
 <li>Apache Tomcat from 10.1.27 through 10.1.30</li>
 <li>Apache Tomcat from 9.0.92 through 9.0.95</li>
 </ul>
-<h3 id="description-32">Description</h3>
+<h3 id="description-33">Description</h3>
 <p>Incorrect object re-cycling and re-use vulnerability in Apache Tomcat.&nbsp;Incorrect recycling of the request and response used by HTTP/2 requests 
 could lead to request and/or response mix-up between users.</p><p>This issue affects Apache Tomcat: from 11.0.0-M23 through 11.0.0-M26, from 10.1.27 through 10.1.30, from 9.0.92 through 9.0.95.</p><p>Users are recommended to upgrade to version 11.0.0, 10.1.31 or 9.0.96, which fixes the issue.</p>
-<h3 id="references-32">References</h3>
+<h3 id="references-33">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/ty376mrxy1mmxtw3ogo53nc9l3co3dfs">https://lists.apache.org/thread/ty376mrxy1mmxtw3ogo53nc9l3co3dfs</a></li>
 </ul>
 <h2 id="CVE-2024-52318">Incorrect JSP tag recycling leads to XSS</h2>
 <p>CVE-2024-52318 <a href="./CVE-2024-52318.cve.json">[CVE json]</a> <a href="./CVE-2024-52318.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-11-18T12:21:44.105Z</em></p>
-<h3 id="affected-33">Affected</h3>
+<h3 id="affected-34">Affected</h3>
 <ul>
 <li>Apache Tomcat at 11.0.0</li>
 <li>Apache Tomcat at 10.1.31</li>
 <li>Apache Tomcat at 9.0.96</li>
 </ul>
-<h3 id="description-33">Description</h3>
+<h3 id="description-34">Description</h3>
 <p>Incorrect object recycling and reuse vulnerability in Apache Tomcat.</p><p>This issue affects Apache Tomcat: 11.0.0, 10.1.31, 9.0.96.</p><p>Users are recommended to upgrade to version 11.0.1, 10.1.32 or 9.0.97, which fixes the issue.</p>
-<h3 id="references-33">References</h3>
+<h3 id="references-34">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/co243cw1nlh6p521c5265cm839wkqdp9">https://lists.apache.org/thread/co243cw1nlh6p521c5265cm839wkqdp9</a></li>
+</ul>
+<h2 id="CVE-2024-54677">DoS in examples web application</h2>
+<p>CVE-2024-54677 <a href="./CVE-2024-54677.cve.json">[CVE json]</a> <a href="./CVE-2024-54677.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-12-18T07:08:27.136Z</em></p>
+<h3 id="affected-35">Affected</h3>
+<ul>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.1</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.33</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.97</li>
+</ul>
+<h3 id="description-35">Description</h3>
+<p>Uncontrolled Resource Consumption vulnerability in the examples web application provided with Apache Tomcat leads to denial of service.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.1, from 10.1.0-M1 through 10.1.33, from 9.0.0.M1 through 9.9.97.</p><p>Users are recommended to upgrade to version 11.0.2, 10.1.34 or 9.0.98, which fixes the issue.</p>
+<h3 id="references-35">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/tdtbbxpg5trdwc2wnopcth9ccvdftq2n">https://lists.apache.org/thread/tdtbbxpg5trdwc2wnopcth9ccvdftq2n</a></li>
+</ul>
+<h2 id="CVE-2024-56337">RCE due to TOCTOU issue in JSP compilation - CVE-2024-50379 mitigation was incomplete</h2>
+<p>CVE-2024-56337 <a href="./CVE-2024-56337.cve.json">[CVE json]</a> <a href="./CVE-2024-56337.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-12-20T15:29:02.063Z</em></p>
+<h3 id="affected-36">Affected</h3>
+<ul>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.1</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.33</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.97</li>
+</ul>
+<h3 id="description-36">Description</h3>
+<p>Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.1, from 10.1.0-M1 through 10.1.33, from 9.0.0.M1 through 9.0.97.</p><p>The mitigation for CVE-2024-50379 was incomplete.</p><p>Users running Tomcat on a case insensitive file system with the default servlet write enabled (readonly initialisation 
+parameter set to the non-default value of false) may need additional configuration to fully mitigate CVE-2024-50379 depending on which version of Java they are using with Tomcat:<br>- running on Java 8 or Java 11: the system property&nbsp;sun.io.useCanonCaches must be explicitly set to false (it defaults to true)<br>- running on Java 17: the&nbsp;system property sun.io.useCanonCaches, if set, must be set to false&nbsp;(it defaults to false)<br>- running on Java 21 onwards: no further configuration is required&nbsp;(the system property and the problematic cache have been removed)</p><p><span style="background-color: var(--wht);">Tomcat 11.0.3, 10.1.35 and 9.0.99 onwards will include checks that&nbsp;sun.io.useCanonCaches is set appropriately before allowing the default servlet to be write enabled on a case insensitive file system. Tomcat will also set&nbsp;sun.io.useCanonCaches to false by default where it can.</span></p>
+<h3 id="references-36">References</h3>
+<ul>
+<li><a href="https://www.cve.org/CVERecord?id=CVE-2024-50379">https://www.cve.org/CVERecord?id=CVE-2024-50379</a></li>
+<li><a href="https://lists.apache.org/thread/b2b9qrgjrz1kvo4ym8y2wkfdvwoq6qbp">https://lists.apache.org/thread/b2b9qrgjrz1kvo4ym8y2wkfdvwoq6qbp</a></li>
+</ul>
+<h3 id="credits-19">Credits</h3>
+<ul>
+<li>This vulnerability was first reported by Nacl, WHOAMI, Yemoli and Ruozhi. (finder)</li>
+<li>This vulnerability was independently reported with a very helpful PoC by dawu@knownsec 404 team and Sunflower@knownsec 404 team (finder)</li>
 </ul>
 
   

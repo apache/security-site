@@ -221,6 +221,28 @@ successfully authenticate via TLS can trigger the issue.</li>
 <li>Mickael Maison (remediation reviewer)</li>
 <li>Chris Egerton (remediation reviewer)</li>
 </ul>
+<h2 id="CVE-2024-56128">SCRAM authentication vulnerable to replay attacks when used without encryption</h2>
+<p>CVE-2024-56128 <a href="./CVE-2024-56128.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-12-18T13:38:00.297Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Kafka from 0.10.2.0 before 3.7.2</li>
+<li>Apache Kafka at 3.8.0</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Incorrect Implementation of Authentication Algorithm in Apache Kafka's SCRAM implementation.<br><br>Issue Summary:<br>Apache Kafka's implementation of the Salted Challenge Response Authentication Mechanism (SCRAM) did not fully adhere to the requirements of RFC 5802 [1].<br>Specifically, as per RFC 5802, the server must verify that the nonce sent by the client in the second message matches the nonce sent by the server in its first message.<br>However, Kafka's SCRAM implementation did not perform this validation.<br><br>Impact:<br>This vulnerability is exploitable only when an attacker has plaintext access to the SCRAM authentication exchange. However, the usage of SCRAM over plaintext is strongly<br>discouraged as it is considered an insecure practice [2]. Apache Kafka recommends deploying SCRAM exclusively with TLS encryption to protect SCRAM exchanges from interception [3].<br>Deployments using SCRAM with TLS are not affected by this issue.</p>How to Detect If You Are Impacted:<br>If your deployment uses SCRAM authentication over plaintext communication channels (without TLS encryption), you are likely impacted.<br>To check if TLS is enabled, review your server.properties configuration file for listeners property. If you have SASL_PLAINTEXT in the listeners, then you are likely impacted.<br><br><span style="background-color: var(--wht);">Fix Details:<br></span><span style="background-color: var(--wht);">The issue has been addressed by introducing nonce verification in the final message of the SCRAM authentication exchange to ensure compliance with RFC 5802.<br><br></span><span style="background-color: var(--wht);">Affected Versions:<br></span><span style="background-color: var(--wht);">Apache Kafka versions 0.10.2.0 through 3.9.0, excluding the fixed versions below.<br><br></span><span style="background-color: var(--wht);">Fixed Versions:<br></span><span style="background-color: var(--wht);">3.9.0<br></span><span style="background-color: var(--wht);">3.8.1<br></span><span style="background-color: var(--wht);">3.7.2<br><br></span><span style="background-color: var(--wht);">Users are advised to upgrade to 3.7.2 or later to mitigate this issue.<br><br></span><span style="background-color: var(--wht);">Recommendations for Mitigation:<br></span><span style="background-color: var(--wht);">Users unable to upgrade to the fixed versions can mitigate the issue by:<br></span><span style="background-color: var(--wht);">- Using TLS with SCRAM Authentication:<br></span><span style="background-color: var(--wht);">Always deploy SCRAM over TLS to encrypt authentication exchanges and protect against interception.<br></span><span style="background-color: var(--wht);">- Considering Alternative Authentication Mechanisms:<br></span><span style="background-color: var(--wht);">Evaluate alternative authentication mechanisms, such as PLAIN, Kerberos or OAuth with TLS, which provide additional layers of security.</span><br>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc5802">https://datatracker.ietf.org/doc/html/rfc5802</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc5802#section-9">https://datatracker.ietf.org/doc/html/rfc5802#section-9</a></li>
+<li><a href="https://kafka.apache.org/documentation/#security_sasl_scram_security">https://kafka.apache.org/documentation/#security_sasl_scram_security</a></li>
+<li><a href="https://lists.apache.org/thread/84dh4so32lwn7wr6c5s9mwh381vx9wkw">https://lists.apache.org/thread/84dh4so32lwn7wr6c5s9mwh381vx9wkw</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Tim Fox (<a href="mailto:timvolpe@gmail.com">timvolpe@gmail.com</a>) (finder)</li>
+<li>Vikas Singh <a href="mailto:vikas@confluent.io">vikas@confluent.io</a> (remediation developer)</li>
+</ul>
 
   
 </div>

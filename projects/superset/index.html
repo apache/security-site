@@ -921,6 +921,80 @@ process itself. Gaining access to that database should
 <li>Mike Yushkovskiy (finder)</li>
 <li>Daniel Vaz Gaspar (remediation developer)</li>
 </ul>
+<h2 id="CVE-2024-53947">Improper SQL authorisation, parse not checking for specific postgres functions</h2>
+<p>CVE-2024-53947 <a href="./CVE-2024-53947.cve.json">[CVE json]</a> <a href="./CVE-2024-53947.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-12-09T13:35:08.136Z</em></p>
+<h3 id="affected-46">Affected</h3>
+<ul>
+<li>Apache Superset before 4.1.0</li>
+</ul>
+<h3 id="description-46">Description</h3>
+<p>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Superset. Specifically, certain engine-specific functions are not checked, which allows attackers to bypass Apache Superset's SQL authorization. This issue is a follow-up to&nbsp;CVE-2024-39887 with additional disallowed PostgreSQL functions now included:&nbsp;query_to_xml_and_xmlschema,&nbsp;table_to_xml,&nbsp;table_to_xml_and_xmlschema.</p><p>This issue affects Apache Superset: &lt;4.1.0.</p><p>Users are recommended to upgrade to version 4.1.0, which fixes the issue or add these Postgres functions to the config set&nbsp;DISALLOWED_SQL_FUNCTIONS.</p>
+<h3 id="references-46">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/hj3gfsjh67vqw12nlrshlsym4bkopjmn">https://lists.apache.org/thread/hj3gfsjh67vqw12nlrshlsym4bkopjmn</a></li>
+</ul>
+<h3 id="credits-45">Credits</h3>
+<ul>
+<li>Iván Arce (Quarkslab) (reporter)</li>
+<li>Daniel Gaspar (remediation developer)</li>
+<li>Mathieu Farrell (Quarkslab) (finder)</li>
+</ul>
+<h2 id="CVE-2024-53948">Error verbosity exposes metadata in analytics databases</h2>
+<p>CVE-2024-53948 <a href="./CVE-2024-53948.cve.json">[CVE json]</a> <a href="./CVE-2024-53948.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-12-09T13:35:29.219Z</em></p>
+<h3 id="affected-47">Affected</h3>
+<ul>
+<li>Apache Superset before 4.1.0</li>
+</ul>
+<h3 id="description-47">Description</h3>
+<p>Generation of Error Message Containing analytics metadata Information in Apache Superset.</p><p>This issue affects Apache Superset: before 4.1.0.</p><p>Users are recommended to upgrade to version 4.1.0, which fixes the issue.</p>
+<h3 id="references-47">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/8howpf3png0wrgpls46ggk441oczlfvf">https://lists.apache.org/thread/8howpf3png0wrgpls46ggk441oczlfvf</a></li>
+</ul>
+<h3 id="credits-46">Credits</h3>
+<ul>
+<li>Bartosz Galaszewski (reporter)</li>
+<li>Daniel Gaspar (remediation developer)</li>
+</ul>
+<h2 id="CVE-2024-53949">Lower privilege users are able to create Role when FAB_ADD_SECURITY_API is enabled</h2>
+<p>CVE-2024-53949 <a href="./CVE-2024-53949.cve.json">[CVE json]</a> <a href="./CVE-2024-53949.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-12-09T13:35:39.972Z</em></p>
+<h3 id="affected-48">Affected</h3>
+<ul>
+<li>Apache Superset from 2.0.0 before 4.1.0</li>
+</ul>
+<h3 id="description-48">Description</h3>
+<p>Improper Authorization vulnerability in Apache Superset when&nbsp;<span style="background-color: rgb(255, 255, 255);">FAB_ADD_SECURITY_API is enabled (disabled by default). Allows for lower privilege users to use this API.</span></p><p>&nbsp;issue affects Apache Superset: from 2.0.0 before 4.1.0.</p><p>Users are recommended to upgrade to version 4.1.0, which fixes the issue.</p>
+<h3 id="references-48">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/d3scbwmfpzbpm6npnzdw5y4owtqqyq8d">https://lists.apache.org/thread/d3scbwmfpzbpm6npnzdw5y4owtqqyq8d</a></li>
+</ul>
+<h3 id="credits-47">Credits</h3>
+<ul>
+<li>Jonathan Zimmerman (reporter)</li>
+<li>Hugh Miles (remediation developer)</li>
+</ul>
+<h2 id="CVE-2024-55633">SQLLab Improper readonly query validation allows unauthorized write access</h2>
+<p>CVE-2024-55633 <a href="./CVE-2024-55633.cve.json">[CVE json]</a> <a href="./CVE-2024-55633.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-12-12T14:36:00.087Z</em></p>
+<h3 id="affected-49">Affected</h3>
+<ul>
+<li>Apache Superset before 4.1.0</li>
+</ul>
+<h3 id="description-49">Description</h3>
+<p>Improper Authorization vulnerability in Apache Superset. On Postgres analytic databases an attacker with SQLLab access can&nbsp;craft a specially designed SQL DML statement<span style="background-color: rgb(255, 255, 255);">&nbsp;that is Incorrectly identified as a read-only query, enabling its execution. Non postgres analytics database connections and postgres analytics database connections set with a readonly user (advised) are not vulnerable.&nbsp;</span></p><p>This issue affects Apache Superset: before 4.1.0.</p><p>Users are recommended to upgrade to version 4.1.0, which fixes the issue.</p>
+<h3 id="references-49">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/bwmd17fcvljt9q4cgctp4v09zh3qs7fb">https://lists.apache.org/thread/bwmd17fcvljt9q4cgctp4v09zh3qs7fb</a></li>
+</ul>
+<h3 id="credits-48">Credits</h3>
+<ul>
+<li>Beto de Almeida (remediation developer)</li>
+<li>Daniel Gaspar (coordinator)</li>
+<li>James Ford (Striveworks) (finder)</li>
+</ul>
 
   
 </div>
