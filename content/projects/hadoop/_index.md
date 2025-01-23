@@ -162,7 +162,7 @@ CVE-2023-26031 [\[CVE json\]](./CVE-2023-26031.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-05-07T00:58:06.325Z_
+_Last updated: 2024-12-31T00:51:13.948Z_
 
 ### Affected
 

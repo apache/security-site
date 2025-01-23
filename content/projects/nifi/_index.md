@@ -415,3 +415,28 @@ Apache NiFi 1.16.0 through 1.28.0 and 2.0.0-M1 through 2.0.0-M4 include optional
 
 ### Credits
 * David Handermann (finder)
+
+
+## Missing Complete Authorization for Parameter and Service References ## { #CVE-2024-56512 }
+
+CVE-2024-56512 [\[CVE json\]](./CVE-2024-56512.cve.json) [\[OSV json\]](./CVE-2024-56512.osv.json)
+
+
+
+_Last updated: 2024-12-29T11:14:49.689Z_
+
+### Affected
+
+* Apache NiFi from 1.10.0 through 2.0.0
+
+
+### Description
+
+Apache NiFi 1.10.0 through 2.0.0 are missing fine-grained authorization checking for Parameter Contexts, referenced Controller Services, and referenced Parameter Providers, when creating new Process Groups.<br><br>Creating a new Process Group can include binding to a Parameter Context, but in cases where the Process Group did not reference any Parameter values, the framework did not check user authorization for the bound Parameter Context. Missing authorization for a bound Parameter Context enabled clients to download non-sensitive Parameter values after creating the Process Group.<br><br>Creating a new Process Group can also include referencing existing Controller Services or Parameter Providers. The framework did not check user authorization for referenced Controller Services or Parameter Providers, enabling clients to create Process Groups and use these components that were otherwise unauthorized.<br><br>This vulnerability is limited in scope to authenticated users authorized to create Process Groups. The scope is further limited to deployments with component-based authorization policies. Upgrading to Apache NiFi 2.1.0 is the recommended mitigation, which includes authorization checking for Parameter and Controller Service references on Process Group creation.<br>
+
+### References
+* https://lists.apache.org/thread/cjc8fns5kjsho0s7vonlnojokyfx47wn
+
+
+### Credits
+* Matt Gilman (finder)

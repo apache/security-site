@@ -94,3 +94,31 @@ The default configuration of XSLTResourceStream.java is vulnerable to remote cod
 
 ### Credits
 * cigar (finder)
+
+
+## An attacker can intentionally trigger a memory leak ## { #CVE-2024-53299 }
+
+CVE-2024-53299 [\[CVE json\]](./CVE-2024-53299.cve.json) [\[OSV json\]](./CVE-2024-53299.osv.json)
+
+
+
+_Last updated: 2025-01-23T08:37:04.162Z_
+
+### Affected
+
+* Apache Wicket from 7.0.0 through 7.18.*
+* Apache Wicket from 8.0.0-M1 through 8.16.*
+* Apache Wicket from 9.0.0-M1 through 9.18.*
+* Apache Wicket from 10.0.0-M1 through 10.2.*
+
+
+### Description
+
+The request handling in the core in Apache Wicket 7.0.0 on any platform allows an attacker to create a DOS via multiple requests to server resources.<br>Users are recommended to upgrade to versions 9.19.0 or 10.3.0, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/gyp2ht00c62827y0379lxh5dbx3hhho5
+
+
+### Credits
+* Pedro Santos (finder)

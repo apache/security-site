@@ -17,7 +17,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Airflow |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Allura |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Ambari |  [Apache Ambari Security Team](mailto:security@ambari.apache.org) | |
-| Apache Answer (Incubating) |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Answer |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Ant](https://ant.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache APISIX |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Portable Runtime (APR)](https://apr.apache.org/security_report.html) |  [Apache Security Team](mailto:security@apache.org) | |
@@ -34,7 +34,6 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Cassandra |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Cayenne |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache CloudStack](https://cloudstack.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Cocoon |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Commons](https://commons.apache.org/security.html) |  [Apache Commons Security Team](mailto:security@commons.apache.org) | [Advisories](https://commons.apache.org/security.html#Known_Security_Vulnerabilities) |
 | Apache CouchDB |  [Apache CouchDB Security Team](mailto:security@couchdb.apache.org) | |
 | Apache CXF |  [Apache Security Team](mailto:security@apache.org) | |

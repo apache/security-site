@@ -137,3 +137,28 @@ _Last updated: 2023-05-12T01:21:14.732Z_
 
 ### Credits
 * Stefan Schiller (reporter)
+
+
+## Deserialisation of untrusted data in cluster mode ## { #CVE-2024-54676 }
+
+CVE-2024-54676 [\[CVE json\]](./CVE-2024-54676.cve.json) [\[OSV json\]](./CVE-2024-54676.osv.json)
+
+
+
+_Last updated: 2025-01-08T08:40:01.385Z_
+
+### Affected
+
+* Apache OpenMeetings from 2.1 before 8.0.0
+
+
+### Description
+
+<p>Vendor: The Apache Software Foundation</p><p>Versions Affected: Apache OpenMeetings from 2.1.0 before 8.0.0</p>Description: Default clustering instructions at <a target="_blank" rel="nofollow" href="https://openmeetings.apache.org/Clustering.html">https://openmeetings.apache.org/Clustering.html</a>&nbsp;doesn't specify white/black lists for OpenJPA this leads to possible <span style="background-color: rgb(255, 255, 255);">deserialisation of untrusted data</span>.<br>Users are recommended to upgrade to version 8.0.0 and <span style="background-color: rgb(255, 255, 255);">update their startup scripts to include the relevant </span><code>'openjpa.serialization.class.blacklist' and 'openjpa.serialization.class.whitelist' configurations as shown in the documentation</code>.
+
+### References
+* https://lists.apache.org/thread/o0k05jxrt5tp4nm45lj14yfjxmg67m95
+
+
+### Credits
+* m0d9 from Tencent Yunding Lab (reporter)

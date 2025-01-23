@@ -431,3 +431,29 @@ Account users in Apache CloudStack by default are allowed to register templates 
 
 ### Credits
 * Kiran Chavala <kiranchavala@apache.org> (reporter)
+
+
+## Unauthorised access to annotations ## { #CVE-2025-22828 }
+
+CVE-2025-22828 [\[CVE json\]](./CVE-2025-22828.cve.json) [\[OSV json\]](./CVE-2025-22828.osv.json)
+
+
+
+_Last updated: 2025-01-13T12:40:18.771Z_
+
+### Affected
+
+* Apache CloudStack from 4.16.0 through *
+
+
+### Description
+
+<div>CloudStack users can add and read comments (annotations) on resources they are authorised to access.&nbsp;</div><div>Due to an access validation issue that affects Apache CloudStack versions from 4.16.0, users who have access, prior access or knowledge of resource UUIDs can list and add comments (annotations) to such resources.&nbsp;</div><div>An attacker with a user-account and access or prior knowledge of resource UUIDs may exploit this issue to read contents of the comments (annotations) or add malicious comments (annotations) to such resources.&nbsp;</div><div>This may cause potential loss of confidentiality of CloudStack environments and resources if the comments (annotations) contain any privileged information. However, guessing or brute-forcing resource UUIDs are generally hard to impossible and access to listing or adding comments isn't same as access to CloudStack resources, making this issue of very low severity and general low impact.</div><br><div>CloudStack admins may also disallow listAnnotations and addAnnotation API access to non-admin roles in their environment as an interim measure.</div><br>
+
+### References
+* https://lists.apache.org/thread/bbsm9fdwrgfyostzojh6ghpocgdmx8rs
+
+
+### Credits
+* Alex Perrakis <alexperrakis1@gmail.com> (reporter)
+* Efstratios Chatzoglou <efchatzoglou@gmail.com> (reporter)

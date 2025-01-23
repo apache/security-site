@@ -239,3 +239,26 @@ In versions of Apache CXF before 3.6.4 and 4.0.5 (3.5.x and lower versions are n
 
 ### References
 * https://lists.apache.org/thread/n2hvbrgwpdtcqdccod8by28ynnolybl6
+
+
+## Denial of Service vulnerability with temporary files ## { #CVE-2025-23184 }
+
+CVE-2025-23184 [\[CVE json\]](./CVE-2025-23184.cve.json) [\[OSV json\]](./CVE-2025-23184.osv.json)
+
+
+
+_Last updated: 2025-01-21T09:35:35.654Z_
+
+### Affected
+
+* Apache CXF before 3.5.10
+* Apache CXF from 3.6.0 before 3.6.5
+* Apache CXF from 4.0.0 before 4.0.6
+
+
+### Description
+
+A potential denial of service vulnerability is present in versions of Apache CXF before&nbsp;3.5.10, 3.6.5 and 4.0.6.&nbsp;In some edge cases, the CachedOutputStream instances may not be closed and, if backed by temporary files, may fill up the file system (it applies to servers and clients).<br><br>
+
+### References
+* https://lists.apache.org/thread/lfs8l63rnctnj2skfrxyys7v8fgnt122

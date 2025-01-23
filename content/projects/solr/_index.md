@@ -276,7 +276,7 @@ CVE-2024-45216 [\[CVE json\]](./CVE-2024-45216.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-10-16T07:50:24.165Z_
+_Last updated: 2024-12-03T17:55:26.574Z_
 
 ### Affected
 

@@ -87,3 +87,28 @@ Authentication Bypass by Spoofing vulnerability in Apache HugeGraph-Server.<p>Th
 
 ### Credits
 * 6right of moresec (reporter)
+
+
+## Fixed JWT Token(Secret) ## { #CVE-2024-43441 }
+
+CVE-2024-43441 [\[CVE json\]](./CVE-2024-43441.cve.json) [\[OSV json\]](./CVE-2024-43441.osv.json)
+
+
+
+_Last updated: 2024-12-24T11:59:55.141Z_
+
+### Affected
+
+* Apache HugeGraph-Server from 1.0.0 before 1.5.0
+
+
+### Description
+
+<p>Authentication Bypass by Assumed-Immutable Data vulnerability in Apache HugeGraph-Server.</p><p>This issue affects Apache HugeGraph-Server: from 1.0.0 before 1.5.0.</p><p>Users are recommended to upgrade to version 1.5.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/h2607yv32wgcrywov960jpxhvsmmlf12
+
+
+### Credits
+* L0ne1y (reporter)

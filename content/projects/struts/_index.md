@@ -134,3 +134,24 @@ _Last updated: 2023-12-12T09:26:27.763Z_
 
 ### Credits
 * Steven Seeley of Source Incite (reporter)
+
+
+## Mixing setters for uploaded files and normal fields can allow bypass file upload checks ## { #CVE-2024-53677 }
+
+CVE-2024-53677 [\[CVE json\]](./CVE-2024-53677.cve.json) [\[OSV json\]](./CVE-2024-53677.osv.json)
+
+
+
+_Last updated: 2024-12-20T15:44:02.694Z_
+
+### Affected
+
+* Apache Struts from 2.0.0 before 6.4.0
+
+
+### Description
+
+<p>File upload logic in Apache Struts is flawed.&nbsp;<span style="background-color: rgb(255, 255, 255);">An attacker can manipulate file upload params to enable paths traversal and under some circumstances this can lead to uploading a malicious file which can be used to perform Remote Code Execution.</span></p><p>This issue affects Apache Struts: from 2.0.0 before 6.4.0.</p><p>Users are recommended to upgrade to version 6.4.0 at least and <span style="background-color: rgb(255, 255, 255);">migrate to the new </span><a target="_blank" rel="nofollow" href="https://struts.apache.org/core-developers/file-upload">file upload mechanism</a><span style="background-color: rgb(255, 255, 255);">. If you are not using an old file upload logic based on&nbsp;<b>FileuploadInterceptor</b>&nbsp;your application is safe.</span></p>You can find more details in&nbsp;<a target="_blank" rel="nofollow" href="https://cwiki.apache.org/confluence/display/WW/S2-067">https://cwiki.apache.org/confluence/display/WW/S2-067</a>
+
+### References
+* https://cwiki.apache.org/confluence/display/WW/S2-067

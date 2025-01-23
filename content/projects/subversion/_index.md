@@ -113,3 +113,28 @@ On Windows platforms, a "best fit" character encoding conversion of command line
 ### Credits
 * Orange Tsai (@orange_8361) from DEVCORE Research Team (finder)
 * splitline (@_splitline_) from DEVCORE Research Team (finder)
+
+
+## mod_dav_svn denial-of-service via control characters in paths ## { #CVE-2024-46901 }
+
+CVE-2024-46901 [\[CVE json\]](./CVE-2024-46901.cve.json) [\[OSV json\]](./CVE-2024-46901.osv.json)
+
+
+
+_Last updated: 2024-12-09T09:36:41.289Z_
+
+### Affected
+
+* Apache Subversion through 1.14.4
+
+
+### Description
+
+Insufficient validation of filenames against control characters in Apache Subversion repositories served via mod_dav_svn allows authenticated users with commit access to commit a corrupted revision, leading to disruption for users of the repository.<br><br>All versions of Subversion up to and including Subversion 1.14.4 are affected if serving repositories via mod_dav_svn. Users are recommended to upgrade to version 1.14.5, which fixes this issue.<br><br>Repositories served via other access methods are not affected.
+
+### References
+* https://subversion.apache.org/security/CVE-2024-46901-advisory.txt
+
+
+### Credits
+* HaoZi, WordPress China (finder)

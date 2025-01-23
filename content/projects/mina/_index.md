@@ -131,3 +131,42 @@ attack<br></div><div><br></div><div>The mitigations to prevent this type of atta
 
 ### Credits
 * Fabian Bäumer (finder)
+
+
+## MINA applications using unbounded deserialization may allow RCE ## { #CVE-2024-52046 }
+
+CVE-2024-52046 [\[CVE json\]](./CVE-2024-52046.cve.json)
+
+_Last updated: 2024-12-28T13:37:01.745Z_
+
+### Affected
+
+* Apache MINA from 2.0 through 2.0.26
+* Apache MINA from 2.1 through 2.1.9
+* Apache MINA from 2.2 through 2.2.3
+
+
+### Description
+
+<div>
+			<div>
+				<div>
+					<div>
+						<p>The ObjectSerializationDecoder in Apache MINA uses Java’s native deserialization protocol to process
+incoming serialized data but lacks the necessary security checks and defenses. This vulnerability allows
+attackers to exploit the deserialization process by sending specially crafted malicious serialized data,
+potentially leading to remote code execution (RCE) attacks.
+</p>
+					</div>
+				</div>
+			</div>
+		</div><div>
+	
+This issue affects MINA core versions 2.0.X, 2.1.X and 2.2.X, and will be fixed by the releases 2.0.27, 2.1.10 and 2.2.4.<br></div><div><br></div><div>It's also important to note that an application using MINA core library will only be affected if the <span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">IoBuffer#getObject</span></span>() method is called, and this specific method is potentially called when adding a ProtocolCodecFilter instance using the <span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(212, 212, 212);">ObjectSerializationCodecFactory</span></span></span> class in the filter chain. If your application is specifically using those classes, you have to upgrade to the latest version of MINA core library.</div><div><br></div><div>Upgrading will&nbsp; not be enough: you also need to explicitly allow the classes the decoder will accept in the <span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(212, 212, 212);">ObjectSerializationDecoder</span></span></span> instance, using one of the three new methods:</div><div><br></div><div><div><div><p>    /**</p><p>&nbsp; &nbsp;&nbsp; * Accept class names where the supplied ClassNameMatcher matches for</p><p>     * deserialization, unless they are otherwise rejected.</p><p>     *</p><p>     * @param classNameMatcher the matcher to use</p><p>     */</p><p>    public void <span style="background-color: rgb(212, 212, 212);">accept</span>(ClassNameMatcher classNameMatcher)</p><p><br></p><p>    /**</p><p>     * Accept class names that match the supplied pattern for</p><p>     * deserialization, unless they are otherwise rejected.</p><p>     *</p><p>     * @param pattern standard Java regexp</p><p>     */</p><p>    public void accept(Pattern pattern) <br></p><p><br></p><p>    /**</p><p>     * Accept the wildcard specified classes for deserialization,</p><p>     * unless they are otherwise rejected.</p><p>     *</p><p>     * @param patterns Wildcard file name patterns as defined by</p><p>     *                  {@link org.apache.commons.io.FilenameUtils#wildcardMatch(String, String) FilenameUtils.wildcardMatch}</p><p>     */</p><p>    public void accept(String... patterns)<br></p></div><div><br></div><div>By default, the decoder will reject *all* classes that will be present in the incoming data.</div><div><br></div><div><br></div><div>Note: The FtpServer, SSHd and Vysper sub-project are not affected by this issue.<br></div></div></div>
+
+### References
+* https://lists.apache.org/thread/4wxktgjpggdbto15d515wdctohb0qmv8
+
+
+### Credits
+* The initial report was submitted by Bofei Chen, with all the necessary bits to reproduce the RCE (finder)

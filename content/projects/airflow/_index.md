@@ -2435,6 +2435,32 @@ _Last updated: 2024-08-04T20:03:30.234Z_
 * https://lists.apache.org/thread/2zoo8cjlwfjhbfdxfgltcm0hnc0qmc52
 
 
+## Application does not invalidate session after password change via Airflow cli ## { #CVE-2024-45033 }
+
+CVE-2024-45033 [\[CVE json\]](./CVE-2024-45033.cve.json) [\[OSV json\]](./CVE-2024-45033.osv.json)
+
+
+
+_Last updated: 2025-01-08T08:41:37.392Z_
+
+### Affected
+
+* Apache Airflow Fab Provider before 1.5.2
+
+
+### Description
+
+<p>Insufficient Session Expiration vulnerability in Apache Airflow Fab Provider.</p><p>This issue affects Apache Airflow Fab Provider: before 1.5.2.<br><br><span style="background-color: rgb(255, 255, 255);">When user password has been changed with admin CLI, the sessions for that user have not been cleared, leading to insufficient session expiration, thus logged users could continue to be logged in even after the password was changed. This only happened when the password was changed with CLI. The problem does not happen in case change was done with webserver thus this is different from&nbsp;</span><a target="_blank" rel="nofollow" href="https://github.com/advisories/GHSA-pm87-24wq-r8w9">CVE-2023-40273</a><span style="background-color: rgb(255, 255, 255);">&nbsp;which was addressed in Apache-Airflow 2.7.0</span><br></p><p>Users are recommended to upgrade to version 1.5.2, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/airflow/pull/45139
+* https://lists.apache.org/thread/yw535346rk766ybzpqtvrl36sjj789st
+
+
+### Credits
+* Saurabh Banawar (reporter)
+
+
 ## Authenticated DAG authors could execute code on scheduler nodes ## { #CVE-2024-45034 }
 
 CVE-2024-45034 [\[CVE json\]](./CVE-2024-45034.cve.json) [\[OSV json\]](./CVE-2024-45034.osv.json)

@@ -45,7 +45,7 @@ CVE-2024-47248 [\[CVE json\]](./CVE-2024-47248.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-11-26T11:15:41.242Z_
+_Last updated: 2024-12-06T07:39:45.067Z_
 
 ### Affected
 
@@ -70,7 +70,7 @@ CVE-2024-47249 [\[CVE json\]](./CVE-2024-47249.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-11-26T11:16:32.616Z_
+_Last updated: 2024-12-06T07:49:57.242Z_
 
 ### Affected
 
@@ -95,7 +95,7 @@ CVE-2024-47250 [\[CVE json\]](./CVE-2024-47250.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-11-26T11:17:18.104Z_
+_Last updated: 2024-12-06T07:50:00.629Z_
 
 ### Affected
 
@@ -120,7 +120,7 @@ CVE-2024-51569 [\[CVE json\]](./CVE-2024-51569.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-11-26T11:17:54.727Z_
+_Last updated: 2024-12-06T07:50:42.419Z_
 
 ### Affected
 

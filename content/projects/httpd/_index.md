@@ -1132,7 +1132,7 @@ CVE-2023-38709 [\[CVE json\]](./CVE-2023-38709.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-04-04T19:19:33.281Z_
+_Last updated: 2025-01-17T11:15:18.205Z_
 
 ### Affected
 

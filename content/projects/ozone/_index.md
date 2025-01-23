@@ -258,3 +258,29 @@ Improper Authentication vulnerability in Apache Ozone.<br><br>The vulnerability 
 
 ### References
 * https://lists.apache.org/thread/o96ct5t7kj5cgrmmfc6756m931t08nky
+
+
+## Improper authentication when generating S3 secrets ## { #CVE-2024-45106 }
+
+CVE-2024-45106 [\[CVE json\]](./CVE-2024-45106.cve.json) [\[OSV json\]](./CVE-2024-45106.osv.json)
+
+
+
+_Last updated: 2024-12-03T09:06:21.271Z_
+
+### Affected
+
+* Apache Ozone at 1.4.0
+
+
+### Description
+
+Improper authentication of an HTTP endpoint in the S3 Gateway of Apache Ozone 1.4.0 allows any authenticated Kerberos user to revoke and regenerate the S3 secrets of any other user. This is only possible if:<br><ul><li><tt>ozone.s3g.secret.http.enabled</tt> is set to <tt>true</tt>. The default value of this configuration is <tt>false</tt>.</li><li>The user configured in <tt>ozone.s3g.kerberos.principal</tt> is also configured in <tt>ozone.s3.administrators</tt> or <tt>ozone.administrators</tt>.</li></ul>Users are recommended to upgrade to Apache Ozone version 1.4.1 which disables the affected endpoint.<br>
+
+### References
+* https://lists.apache.org/thread/rylnxwttp004kvotpk9j158vb238pfkm
+
+
+### Credits
+* Ethan Rose (reporter)
+* Ivan Zlenko (remediation developer)

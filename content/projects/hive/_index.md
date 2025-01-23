@@ -64,6 +64,34 @@ Apache Hive before 3.1.3 "CREATE" and "DROP" function operations does not check 
 * This vulnerability was discovered and reported by Hideyuki Furue.
 
 
+## Deserialization of untrusted data when fetching partitions from the Metastore ## { #CVE-2022-41137 }
+
+CVE-2022-41137 [\[CVE json\]](./CVE-2022-41137.cve.json) [\[OSV json\]](./CVE-2022-41137.osv.json)
+
+
+
+_Last updated: 2024-12-05T10:01:39.567Z_
+
+### Affected
+
+* Apache Hive from 4.0.0-alpha-1 before 4.0.0
+
+
+### Description
+
+Apache Hive&nbsp;Metastore (HMS) uses&nbsp;<span style="background-color: rgb(255, 255, 255);">SerializationUtilities#deserializeObjectWithTypeInformation</span><span style="background-color: rgb(255, 255, 255);">&nbsp;method when filtering and fetching partitions that is unsafe and</span>&nbsp;can lead&nbsp;to Remote Code Execution (RCE) since it allows the deserialization of arbitrary data.<br><br>In real deployments, the vulnerability can be exploited only by authenticated users/clients that were able to successfully establish&nbsp;a connection to the Metastore. From an API perspective any code that calls the unsafe method may be vulnerable unless it performs additional prerechecks on the input arguments.
+
+### References
+* https://github.com/apache/hive
+* https://issues.apache.org/jira/browse/HIVE-26539
+* https://github.com/apache/hive/commit/60027bb9c91a93affcfebd9068f064bc1f2a74c9
+* https://lists.apache.org/thread/jwtr3d9yovf2wo0qlxvkhoxnwxxyzgts
+
+
+### Credits
+* Junjie Liao (reporter)
+
+
 ## Arbitrary command execution via JDBC driver ## { #CVE-2023-35701 }
 
 CVE-2023-35701 [\[CVE json\]](./CVE-2023-35701.cve.json) [\[OSV json\]](./CVE-2023-35701.osv.json)
@@ -87,3 +115,40 @@ Improper Control of Generation of Code ('Code Injection') vulnerability in Apach
 
 ### Credits
 * Kostya Kortchinsky (reporter)
+
+
+## CookieSigner exposes the correct signature when message verification fails ## { #CVE-2024-23945 }
+
+CVE-2024-23945 [\[CVE json\]](./CVE-2024-23945.cve.json) [\[OSV json\]](./CVE-2024-23945.osv.json)
+
+
+
+_Last updated: 2024-12-23T15:26:52.096Z_
+
+### Affected
+
+* Apache Hive from 1.2.0 before 4.0.0
+* Apache Spark from 2.0.0 before 3.0.0
+* Apache Spark from 3.0.0 before 3.3.4
+* Apache Spark from 3.4.0 before 3.4.2
+* Apache Spark at 3.5.0
+
+
+### Description
+
+Signing cookies is an application security feature that adds a digital signature to cookie data to verify its authenticity and integrity. The signature helps prevent malicious actors from modifying the cookie value, which can lead to security vulnerabilities and exploitation. Apache Hive’s service component accidentally exposes the signed cookie to the end user when there is a mismatch in signature between the current and expected cookie. Exposing the correct cookie signature can lead to further exploitation.<br><br>The vulnerable CookieSigner logic was introduced in Apache Hive by&nbsp;HIVE-9710 (1.2.0) and in Apache Spark by SPARK-14987 (2.0.0). The affected components are the following:<br>* org.apache.hive:hive-service<br>* org.apache.spark:spark-hive-thriftserver_2.11<br>* org.apache.spark:spark-hive-thriftserver_2.12<br><br>
+
+### References
+* https://github.com/apache/hive
+* https://github.com/apache/spark
+* https://github.com/apache/spark/commit/cf59b1f51c16301f689b4e0f17ba4dbd140e1b19
+* https://github.com/apache/hive/commit/7638cb1a3b07713cc490aa2909a37037f89e08b4
+* https://issues.apache.org/jira/browse/HIVE-9710
+* https://issues.apache.org/jira/browse/SPARK-14987
+* https://lists.apache.org/thread/59r4mv7glrxpwkkdjvjbdljfpx3f5zzc
+* https://lists.apache.org/thread/5o2ljnzrv8zvhjw9vy7b4rwjpc32hgfc
+
+
+### Credits
+* Kostya Kortchinsky (reporter)
+* Hamza Tahmi (reporter)

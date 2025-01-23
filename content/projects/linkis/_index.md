@@ -479,3 +479,33 @@ In Apache Linkis &lt;= 1.5.0, a Random string security vulnerability in Spark En
 ### Credits
 * Hen (reporter)
 * Pj fanning  (reporter)
+
+
+## JDBC Datasource Module with Mysql has file read vulnerability ## { #CVE-2024-45627 }
+
+CVE-2024-45627 [\[CVE json\]](./CVE-2024-45627.cve.json) [\[OSV json\]](./CVE-2024-45627.osv.json)
+
+
+
+_Last updated: 2025-01-14T16:13:18.399Z_
+
+### Affected
+
+* Apache Linkis Metadata Query Service JDBC from 1.5.0 before 1.7.0
+
+
+### Description
+
+In Apache Linkis &lt;1.7.0, due to the lack of effective filtering
+of parameters, an attacker configuring malicious Mysql JDBC parameters in the DataSource Manager Module will 
+
+<span style="background-color: rgb(255, 255, 255);">allow the attacker to read arbitrary files from the Linkis server</span>. Therefore, the parameters in the Mysql JDBC URL should be blacklisted. This attack requires the attacker to obtain an authorized account from Linkis before it can be carried out. Versions of Apache Linkis &lt; 1.7.0 will be affected. <br>We recommend users upgrade the version of Linkis to version 1.7.0.
+
+<br>
+
+### References
+* https://lists.apache.org/thread/0zzx8lldwoqgzq98mg61hojgpvn76xsh
+
+
+### Credits
+* Le1a (reporter)

@@ -165,3 +165,31 @@ Files or Directories Accessible to External Parties, Improper Privilege Manageme
 * Greg Harris (finder)
 * Mickael Maison (remediation reviewer)
 * Chris Egerton (remediation reviewer)
+
+
+## SCRAM authentication vulnerable to replay attacks when used without encryption ## { #CVE-2024-56128 }
+
+CVE-2024-56128 [\[CVE json\]](./CVE-2024-56128.cve.json)
+
+_Last updated: 2024-12-18T13:38:00.297Z_
+
+### Affected
+
+* Apache Kafka from 0.10.2.0 before 3.7.2
+* Apache Kafka at 3.8.0
+
+
+### Description
+
+<p>Incorrect Implementation of Authentication Algorithm in Apache Kafka's SCRAM implementation.<br><br>Issue Summary:<br>Apache Kafka's implementation of the Salted Challenge Response Authentication Mechanism (SCRAM) did not fully adhere to the requirements of RFC 5802 [1].<br>Specifically, as per RFC 5802, the server must verify that the nonce sent by the client in the second message matches the nonce sent by the server in its first message.<br>However, Kafka's SCRAM implementation did not perform this validation.<br><br>Impact:<br>This vulnerability is exploitable only when an attacker has plaintext access to the SCRAM authentication exchange. However, the usage of SCRAM over plaintext is strongly<br>discouraged as it is considered an insecure practice [2]. Apache Kafka recommends deploying SCRAM exclusively with TLS encryption to protect SCRAM exchanges from interception [3].<br>Deployments using SCRAM with TLS are not affected by this issue.</p>How to Detect If You Are Impacted:<br>If your deployment uses SCRAM authentication over plaintext communication channels (without TLS encryption), you are likely impacted.<br>To check if TLS is enabled, review your server.properties configuration file for listeners property. If you have SASL_PLAINTEXT in the listeners, then you are likely impacted.<br><br><span style="background-color: var(--wht);">Fix Details:<br></span><span style="background-color: var(--wht);">The issue has been addressed by introducing nonce verification in the final message of the SCRAM authentication exchange to ensure compliance with RFC 5802.<br><br></span><span style="background-color: var(--wht);">Affected Versions:<br></span><span style="background-color: var(--wht);">Apache Kafka versions 0.10.2.0 through 3.9.0, excluding the fixed versions below.<br><br></span><span style="background-color: var(--wht);">Fixed Versions:<br></span><span style="background-color: var(--wht);">3.9.0<br></span><span style="background-color: var(--wht);">3.8.1<br></span><span style="background-color: var(--wht);">3.7.2<br><br></span><span style="background-color: var(--wht);">Users are advised to upgrade to 3.7.2 or later to mitigate this issue.<br><br></span><span style="background-color: var(--wht);">Recommendations for Mitigation:<br></span><span style="background-color: var(--wht);">Users unable to upgrade to the fixed versions can mitigate the issue by:<br></span><span style="background-color: var(--wht);">- Using TLS with SCRAM Authentication:<br></span><span style="background-color: var(--wht);">Always deploy SCRAM over TLS to encrypt authentication exchanges and protect against interception.<br></span><span style="background-color: var(--wht);">- Considering Alternative Authentication Mechanisms:<br></span><span style="background-color: var(--wht);">Evaluate alternative authentication mechanisms, such as PLAIN, Kerberos or OAuth with TLS, which provide additional layers of security.</span><br>
+
+### References
+* https://datatracker.ietf.org/doc/html/rfc5802
+* https://datatracker.ietf.org/doc/html/rfc5802#section-9
+* https://kafka.apache.org/documentation/#security_sasl_scram_security
+* https://lists.apache.org/thread/84dh4so32lwn7wr6c5s9mwh381vx9wkw
+
+
+### Credits
+* Tim Fox (timvolpe@gmail.com) (finder)
+* Vikas Singh <vikas@confluent.io> (remediation developer)

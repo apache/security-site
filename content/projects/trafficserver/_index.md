@@ -877,6 +877,28 @@ _Last updated: 2024-07-26T09:11:09.740Z_
 * Min Chen (reporter)
 
 
+## Cache key plugin is vulnerable to cache poisoning attack ## { #CVE-2024-38479 }
+
+CVE-2024-38479 [\[CVE json\]](./CVE-2024-38479.cve.json) [\[OSV json\]](./CVE-2024-38479.osv.json)
+
+
+
+_Last updated: 2024-12-19T08:48:33.164Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.11
+* Apache Traffic Server from 9.0.0 through 9.2.5
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache Traffic Server.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.5.</p><p>Users are recommended to upgrade to version 9.2.6, which fixes the issue, or 10.0.2, which does not have the issue.</p>
+
+### References
+* https://lists.apache.org/thread/y15fh6c7kyqvzm0f9odw7c5jh4r4np0y
+
+
 ## Valid Host field value can cause crashes ## { #CVE-2024-50305 }
 
 CVE-2024-50305 [\[CVE json\]](./CVE-2024-50305.cve.json) [\[OSV json\]](./CVE-2024-50305.osv.json)

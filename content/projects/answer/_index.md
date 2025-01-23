@@ -1,12 +1,12 @@
 ---
-title: Apache Answer (Incubating) security advisories
-description: Security information for Apache Answer (Incubating)
+title: Apache Answer security advisories
+description: Security information for Apache Answer
 layout: single
 ---
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Answer (Incubating)? Send your report to the [Apache Security Team](mailto:security@apache.org).
+Do you want disclose a potential security issue for Apache Answer? Send your report to the [Apache Security Team](mailto:security@apache.org).
 
 # Advisories
 

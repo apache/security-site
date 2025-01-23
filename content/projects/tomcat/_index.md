@@ -833,6 +833,33 @@ _Last updated: 2024-09-23T10:51:17.287Z_
 * https://lists.apache.org/thread/q1gp7cc38hs1r8gj8gfnopwznd5fpr4d
 
 
+## RCE due to TOCTOU issue in JSP compilation ## { #CVE-2024-50379 }
+
+CVE-2024-50379 [\[CVE json\]](./CVE-2024-50379.cve.json) [\[OSV json\]](./CVE-2024-50379.osv.json)
+
+
+
+_Last updated: 2024-12-19T17:34:02.440Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.1
+* Apache Tomcat from 10.1.0-M1 through 10.1.33
+* Apache Tomcat from 9.0.0.M1 through 9.0.97
+
+
+### Description
+
+<p>Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability during JSP compilation in Apache Tomcat permits an RCE on case insensitive file systems when the default servlet is enabled for write (non-default configuration).</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.1, from 10.1.0-M1 through 10.1.33, from 9.0.0.M1 through 9.0.97.</p><p>Users are recommended to upgrade to version 11.0.2, 10.1.34 or 9.0.98, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/y6lj6q1xnp822g6ro70tn19sgtjmr80r
+
+
+### Credits
+* Nacl, WHOAMI, Yemoli and Ruozhi (finder)
+
+
 ## Authentication bypass when using Jakarta Authentication API ## { #CVE-2024-52316 }
 
 CVE-2024-52316 [\[CVE json\]](./CVE-2024-52316.cve.json) [\[OSV json\]](./CVE-2024-52316.osv.json)
@@ -901,3 +928,56 @@ _Last updated: 2024-11-18T12:21:44.105Z_
 
 ### References
 * https://lists.apache.org/thread/co243cw1nlh6p521c5265cm839wkqdp9
+
+
+## DoS in examples web application ## { #CVE-2024-54677 }
+
+CVE-2024-54677 [\[CVE json\]](./CVE-2024-54677.cve.json) [\[OSV json\]](./CVE-2024-54677.osv.json)
+
+
+
+_Last updated: 2024-12-18T07:08:27.136Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.1
+* Apache Tomcat from 10.1.0-M1 through 10.1.33
+* Apache Tomcat from 9.0.0.M1 through 9.0.97
+
+
+### Description
+
+<p>Uncontrolled Resource Consumption vulnerability in the examples web application provided with Apache Tomcat leads to denial of service.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.1, from 10.1.0-M1 through 10.1.33, from 9.0.0.M1 through 9.9.97.</p><p>Users are recommended to upgrade to version 11.0.2, 10.1.34 or 9.0.98, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/tdtbbxpg5trdwc2wnopcth9ccvdftq2n
+
+
+## RCE due to TOCTOU issue in JSP compilation - CVE-2024-50379 mitigation was incomplete ## { #CVE-2024-56337 }
+
+CVE-2024-56337 [\[CVE json\]](./CVE-2024-56337.cve.json) [\[OSV json\]](./CVE-2024-56337.osv.json)
+
+
+
+_Last updated: 2024-12-20T15:29:02.063Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.1
+* Apache Tomcat from 10.1.0-M1 through 10.1.33
+* Apache Tomcat from 9.0.0.M1 through 9.0.97
+
+
+### Description
+
+<p>Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.1, from 10.1.0-M1 through 10.1.33, from 9.0.0.M1 through 9.0.97.</p><p>The mitigation for CVE-2024-50379 was incomplete.</p><p>Users running Tomcat on a case insensitive file system with the default servlet write enabled (readonly initialisation 
+parameter set to the non-default value of false) may need additional configuration to fully mitigate CVE-2024-50379 depending on which version of Java they are using with Tomcat:<br>- running on Java 8 or Java 11: the system property&nbsp;sun.io.useCanonCaches must be explicitly set to false (it defaults to true)<br>- running on Java 17: the&nbsp;system property sun.io.useCanonCaches, if set, must be set to false&nbsp;(it defaults to false)<br>- running on Java 21 onwards: no further configuration is required&nbsp;(the system property and the problematic cache have been removed)</p><p><span style="background-color: var(--wht);">Tomcat 11.0.3, 10.1.35 and 9.0.99 onwards will include checks that&nbsp;sun.io.useCanonCaches is set appropriately before allowing the default servlet to be write enabled on a case insensitive file system. Tomcat will also set&nbsp;sun.io.useCanonCaches to false by default where it can.</span></p>
+
+### References
+* https://www.cve.org/CVERecord?id=CVE-2024-50379
+* https://lists.apache.org/thread/b2b9qrgjrz1kvo4ym8y2wkfdvwoq6qbp
+
+
+### Credits
+* This vulnerability was first reported by Nacl, WHOAMI, Yemoli and Ruozhi. (finder)
+* This vulnerability was independently reported with a very helpful PoC by dawu@knownsec 404 team and Sunflower@knownsec 404 team (finder)

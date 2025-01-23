@@ -174,3 +174,97 @@ _Last updated: 2024-02-27T16:51:31.875Z_
 
 ### References
 * https://lists.apache.org/thread/qrt7mq7v7zyrh1qsh1gkg1m7clysvy32
+
+
+## Remote Code Injection in Ambari Metrics and AMS Alerts ## { #CVE-2024-51941 }
+
+CVE-2024-51941 [\[CVE json\]](./CVE-2024-51941.cve.json) [\[OSV json\]](./CVE-2024-51941.osv.json)
+
+
+
+_Last updated: 2025-01-21T21:24:21.468Z_
+
+### Affected
+
+* Apache Ambari through 2.7.8
+
+
+### Description
+
+A remote code injection vulnerability exists in the Ambari Metrics and 
+AMS Alerts feature, allowing authenticated users to inject and execute 
+arbitrary code. The vulnerability occurs when processing alert 
+definitions, where malicious input can be injected into the alert script
+ execution path. An attacker with authenticated access can exploit this 
+vulnerability to execute arbitrary commands on the server. The issue has
+ been fixed in the latest versions of Ambari.
+
+### References
+* https://lists.apache.org/thread/xq50nlff7o7z1kq3y637clzzl6mjhl8j
+
+
+### Credits
+* 4ra1n (https://github.com/4ra1n) (finder)
+* h4cking2thegate@gmail.com (reporter)
+
+
+## XML External Entity (XXE) Vulnerability in Ambari/Oozie ## { #CVE-2025-23195 }
+
+CVE-2025-23195 [\[CVE json\]](./CVE-2025-23195.cve.json) [\[OSV json\]](./CVE-2025-23195.osv.json)
+
+
+
+_Last updated: 2025-01-21T21:22:31.147Z_
+
+### Affected
+
+* Apache Ambari before 2.7.9
+
+
+### Description
+
+An XML External Entity (XXE) vulnerability exists in the Ambari/Oozie 
+project, allowing an attacker to inject malicious XML entities. This 
+vulnerability occurs due to insecure parsing of XML input using the 
+`DocumentBuilderFactory` class without disabling external entity 
+resolution. An attacker can exploit this vulnerability to read arbitrary
+ files on the server or perform server-side request forgery (SSRF) 
+attacks. The issue has been fixed in both Ambari 2.7.9 and the trunk 
+branch.
+
+### References
+* https://lists.apache.org/thread/hsb6mvxd7g37dq1ygtd0pd88gs9tfcwq
+
+
+## Code Injection Vulnerability in Ambari Alert Definition ## { #CVE-2025-23196 }
+
+CVE-2025-23196 [\[CVE json\]](./CVE-2025-23196.cve.json) [\[OSV json\]](./CVE-2025-23196.osv.json)
+
+
+
+_Last updated: 2025-01-21T21:23:39.991Z_
+
+### Affected
+
+* Apache Ambari from 8 before 2.7.9
+
+
+### Description
+
+A code injection vulnerability exists in the Ambari Alert Definition 
+feature, allowing authenticated users to inject and execute arbitrary 
+shell commands. The vulnerability arises when defining alert scripts, 
+where the script filename field is executed using `sh -c`. An attacker 
+with authenticated access can exploit this vulnerability to inject 
+malicious commands, leading to remote code execution on the server. The 
+issue has been fixed in the latest versions of Ambari.
+
+### References
+* https://lists.apache.org/thread/70g1l5lxvko7kvhyxmtmklhhfrlon837
+
+
+### Credits
+* Liyw979 (reporter)
+* robinzeng2015 (reporter)
+* fcgboy (reporter)
+* wk2025 (reporter)

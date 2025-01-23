@@ -1197,3 +1197,109 @@ _Last updated: 2024-07-16T09:20:08.872Z_
 ### Credits
 * Mike Yushkovskiy (finder)
 * Daniel Vaz Gaspar (remediation developer)
+
+
+## Improper SQL authorisation, parse not checking for specific postgres functions ## { #CVE-2024-53947 }
+
+CVE-2024-53947 [\[CVE json\]](./CVE-2024-53947.cve.json) [\[OSV json\]](./CVE-2024-53947.osv.json)
+
+
+
+_Last updated: 2024-12-09T13:35:08.136Z_
+
+### Affected
+
+* Apache Superset before 4.1.0
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Superset. Specifically, certain engine-specific functions are not checked, which allows attackers to bypass Apache Superset's SQL authorization. This issue is a follow-up to&nbsp;CVE-2024-39887 with additional disallowed PostgreSQL functions now included:&nbsp;query_to_xml_and_xmlschema,&nbsp;table_to_xml,&nbsp;table_to_xml_and_xmlschema.</p><p>This issue affects Apache Superset: &lt;4.1.0.</p><p>Users are recommended to upgrade to version 4.1.0, which fixes the issue or add these Postgres functions to the config set&nbsp;DISALLOWED_SQL_FUNCTIONS.</p>
+
+### References
+* https://lists.apache.org/thread/hj3gfsjh67vqw12nlrshlsym4bkopjmn
+
+
+### Credits
+* Iván Arce (Quarkslab) (reporter)
+* Daniel Gaspar (remediation developer)
+* Mathieu Farrell (Quarkslab) (finder)
+
+
+## Error verbosity exposes metadata in analytics databases ## { #CVE-2024-53948 }
+
+CVE-2024-53948 [\[CVE json\]](./CVE-2024-53948.cve.json) [\[OSV json\]](./CVE-2024-53948.osv.json)
+
+
+
+_Last updated: 2024-12-09T13:35:29.219Z_
+
+### Affected
+
+* Apache Superset before 4.1.0
+
+
+### Description
+
+<p>Generation of Error Message Containing analytics metadata Information in Apache Superset.</p><p>This issue affects Apache Superset: before 4.1.0.</p><p>Users are recommended to upgrade to version 4.1.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/8howpf3png0wrgpls46ggk441oczlfvf
+
+
+### Credits
+* Bartosz Galaszewski (reporter)
+* Daniel Gaspar (remediation developer)
+
+
+## Lower privilege users are able to create Role when FAB_ADD_SECURITY_API is enabled ## { #CVE-2024-53949 }
+
+CVE-2024-53949 [\[CVE json\]](./CVE-2024-53949.cve.json) [\[OSV json\]](./CVE-2024-53949.osv.json)
+
+
+
+_Last updated: 2024-12-09T13:35:39.972Z_
+
+### Affected
+
+* Apache Superset from 2.0.0 before 4.1.0
+
+
+### Description
+
+<p>Improper Authorization vulnerability in Apache Superset when&nbsp;<span style="background-color: rgb(255, 255, 255);">FAB_ADD_SECURITY_API is enabled (disabled by default). Allows for lower privilege users to use this API.</span></p><p>&nbsp;issue affects Apache Superset: from 2.0.0 before 4.1.0.</p><p>Users are recommended to upgrade to version 4.1.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/d3scbwmfpzbpm6npnzdw5y4owtqqyq8d
+
+
+### Credits
+* Jonathan Zimmerman (reporter)
+* Hugh Miles (remediation developer)
+
+
+## SQLLab Improper readonly query validation allows unauthorized write access ## { #CVE-2024-55633 }
+
+CVE-2024-55633 [\[CVE json\]](./CVE-2024-55633.cve.json) [\[OSV json\]](./CVE-2024-55633.osv.json)
+
+
+
+_Last updated: 2024-12-12T14:36:00.087Z_
+
+### Affected
+
+* Apache Superset before 4.1.0
+
+
+### Description
+
+<p>Improper Authorization vulnerability in Apache Superset. On Postgres analytic databases an attacker with SQLLab access can&nbsp;craft a specially designed SQL DML statement<span style="background-color: rgb(255, 255, 255);">&nbsp;that is Incorrectly identified as a read-only query, enabling its execution. Non postgres analytics database connections and postgres analytics database connections set with a readonly user (advised) are not vulnerable.&nbsp;</span></p><p>This issue affects Apache Superset: before 4.1.0.</p><p>Users are recommended to upgrade to version 4.1.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/bwmd17fcvljt9q4cgctp4v09zh3qs7fb
+
+
+### Credits
+* Beto de Almeida (remediation developer)
+* Daniel Gaspar (coordinator)
+* James Ford (Striveworks) (finder)

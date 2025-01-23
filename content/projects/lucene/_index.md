@@ -19,7 +19,7 @@ CVE-2024-45772 [\[CVE json\]](./CVE-2024-45772.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-09-30T08:51:28.580Z_
+_Last updated: 2024-12-10T17:34:29.725Z_
 
 ### Affected
 

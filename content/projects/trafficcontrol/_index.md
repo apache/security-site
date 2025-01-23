@@ -87,3 +87,27 @@ In Apache Traffic Control Traffic Ops prior to 6.1.0 or 5.1.6, an unprivileged u
 
 ### Credits
 * Apache Traffic Control would like to thank walkerxiong of SecCoder Security Lab for reporting this issue.
+
+
+## SQL Injection in Traffic Ops endpoint PUT deliveryservice_request_comments ## { #CVE-2024-45387 }
+
+CVE-2024-45387 [\[CVE json\]](./CVE-2024-45387.cve.json)
+
+_Last updated: 2024-12-23T15:30:11.661Z_
+
+### Affected
+
+* Apache Traffic Control from 8.0.0 through 8.0.1
+* Apache Traffic Control from 7.0.0 before 8.0.0
+
+
+### Description
+
+<div>An SQL injection vulnerability in Traffic Ops in Apache Traffic Control &lt;= 8.0.1, &gt;= 8.0.0 allows a privileged user with role "admin", "federation", "operations", "portal", or "steering" to execute arbitrary SQL against the database by sending a specially-crafted PUT request.</div>Users are recommended to upgrade to version Apache Traffic Control 8.0.2 if you run an affected version of Traffic Ops.
+
+### References
+* https://lists.apache.org/thread/t38nk5n7t8w3pb66z7z4pqfzt4443trr
+
+
+### Credits
+* Yuan Luo from Tencent YunDing Security Lab (reporter)
