@@ -1,9 +1,9 @@
 ---
-title: Reporting security issues in ASF infrastructure
+title: Reporting security issues in dependencies
 description: We strongly encourage you to report potential security vulnerabilities privately, before disclosing them in a public forum.
 ---
 
-When an advisory is published for a dependency, more often than not, the project does not use the dependency in a way that is affected by the problem described in the advisory. For this reason we don't accept the simple fact that an advisory exists for a dependency as a security issue in itself.
+When an advisory is published for a library in the dependency tree of an ASF project or artifact, more often than not, the project does not use the dependency in a way that is affected by the problem described in the advisory. For this reason we don't accept the simple fact that an advisory exists for a dependency as a security issue in itself.
 
 If you have done any analysis to confirm the issue described in the advisory does impact this project, please share that information with us though the private channels described [here](https://security.apache.org/report-code).
 
