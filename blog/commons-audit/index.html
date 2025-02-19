@@ -56,7 +56,6 @@
 
 
 <body class="page-kube">
-  <header> <div class="show-sm">
   <header class="site-header">
     <div class="nav-container">
       <a href="/" class="nav-brand">
@@ -75,6 +74,7 @@
       <ul class="nav-menu">
         <li><a href="/blog">Blog</a></li>
         <li><a href="/projects">Projects</a></li>
+        <li><a href="/report">Report</a></li>
         <li><a href="/mailinglist">Mailing List</a></li>
         <li><a href="https://www.apache.org/licenses/">License</a></li>
         <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
@@ -84,7 +84,6 @@
       </ul>
     </div>
   </header>
- </header>
   <main>
 <div class="push-center" itemscope itemtype="http://schema.org/BlogPosting">
   <meta itemprop="name" content="AWS/OSTIF commission audit of three Apache Commons projects">
@@ -168,6 +167,26 @@ their help in ensuring the security of projects that use Apache Commons.</p>
   <script src="/js/kube.legenda.js" type="text/javascript">
   </script>
   <script src="/js/main.js" type="text/javascript">
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+          navMenu.classList.remove('active');
+        }
+      });
+      
+      // Close menu when pressing Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          navMenu.classList.remove('active');
+        }
+      });
+    });
   </script>
 </body>
 
