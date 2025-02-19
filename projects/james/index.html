@@ -326,6 +326,44 @@ malicious local user.</div><div>Administrators are advised to disable JMX, or se
 <ul>
 <li>Benoit TELLIER (finder)</li>
 </ul>
+<h2 id="CVE-2024-37358">Apache James: denial of service through the use of IMAP literals</h2>
+<p>CVE-2024-37358 <a href="./CVE-2024-37358.cve.json">[CVE json]</a> <a href="./CVE-2024-37358.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-02-06T11:22:36.577Z</em></p>
+<h3 id="affected-12">Affected</h3>
+<ul>
+<li>Apache James server through 3.7.5</li>
+<li>Apache James server from 3.8.0 through 3.8.1</li>
+</ul>
+<h3 id="description-12">Description</h3>
+<p>Similarly to CVE-2024-34055, Apache James is vulnerable to denial of service through the abuse of IMAP literals from both authenticated and unauthenticated users, which could be used to cause unbounded memory allocation and very long computations<br><br>Version 3.7.6 and 3.8.2 restrict such illegitimate use of IMAP literals.<br></p>
+<h3 id="references-12">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/1pxsh11v5s3fkvhnqvkmlqwt3fgpcrqc">https://lists.apache.org/thread/1pxsh11v5s3fkvhnqvkmlqwt3fgpcrqc</a></li>
+</ul>
+<h3 id="credits-12">Credits</h3>
+<ul>
+<li>Xavier GUIMARD (reporter)</li>
+<li>Benoit TELLIER (coordinator)</li>
+</ul>
+<h2 id="CVE-2024-45626">Apache James: denial of service through JMAP HTML to text conversion</h2>
+<p>CVE-2024-45626 <a href="./CVE-2024-45626.cve.json">[CVE json]</a> <a href="./CVE-2024-45626.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-02-06T11:21:05.038Z</em></p>
+<h3 id="affected-13">Affected</h3>
+<ul>
+<li>Apache James server from 3.8.0 through 3.8.1</li>
+<li>Apache James server through 3.7.5</li>
+</ul>
+<h3 id="description-13">Description</h3>
+<p>Apache James server JMAP HTML to text plain implementation in versions below 3.8.2 and 3.7.6 is subject to unbounded memory consumption that can result in a denial of service.<br><br>Users are recommended to upgrade to version 3.7.6 and 3.8.2, which fix this issue.</p>
+<h3 id="references-13">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/1fr9hvpsylomwwfr3rv82g84sxszn4kl">https://lists.apache.org/thread/1fr9hvpsylomwwfr3rv82g84sxszn4kl</a></li>
+</ul>
+<h3 id="credits-13">Credits</h3>
+<ul>
+<li>Benoit TELLIER (finder)</li>
+<li>Wojciech Kapcia (finder)</li>
+</ul>
 
   
 </div>

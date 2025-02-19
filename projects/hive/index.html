@@ -206,6 +206,48 @@
 <li>Kostya Kortchinsky (reporter)</li>
 <li>Hamza Tahmi (reporter)</li>
 </ul>
+<h2 id="CVE-2024-23953">Timing Attack Against Signature in LLAP util</h2>
+<p>CVE-2024-23953 <a href="./CVE-2024-23953.cve.json">[CVE json]</a> <a href="./CVE-2024-23953.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-01-28T06:25:01.840Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Hive from 2.2.0 before 4.0.0</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Use of Arrays.equals() in <span style="background-color: rgb(255, 255, 255);">LlapSignerImpl in </span>Apache Hive to compare message signatures <span style="background-color: var(--wht);">allows attacker to forge a valid signature for an arbitrary message byte by byte. The attacker should be an authorized user of the product to perform this attack. </span>Users are recommended to upgrade to version 4.0.0, which fixes this issue.<br><br><span style="background-color: rgb(253, 253, 253);">The problem occurs when an application doesn’t use a constant-time algorithm for validating a signature. <span style="background-color: rgb(253, 253, 253);">The method </span><code>Arrays.equals()</code><span style="background-color: rgb(253, 253, 253);"> returns </span><code>false</code><span style="background-color: rgb(253, 253, 253);"> right away when it sees that one of the input’s bytes are different. It means that the comparison time depends on the contents of the arrays. This little thing may allow an attacker to forge a valid signature for an arbitrary message byte by byte. So it might allow malicious users to submit splits/work with selected signatures to LLAP without running as a privileged user, potentially leading to DDoS attack.</span><br><br></span>More details in the reference section.<br></p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://github.com/apache/hive">https://github.com/apache/hive</a></li>
+<li><a href="https://github.com/apache/hive/commit/b418e3c9f479ba8e7d31e6470306111002ffa809">https://github.com/apache/hive/commit/b418e3c9f479ba8e7d31e6470306111002ffa809</a></li>
+<li><a href="https://issues.apache.org/jira/browse/HIVE-28030">https://issues.apache.org/jira/browse/HIVE-28030</a></li>
+<li><a href="https://blog.gypsyengineer.com/en/security/preventing-timing-attacks-with-codeql.html">https://blog.gypsyengineer.com/en/security/preventing-timing-attacks-with-codeql.html</a></li>
+<li><a href="https://cqr.company/web-vulnerabilities/timing-attacks/">https://cqr.company/web-vulnerabilities/timing-attacks/</a></li>
+<li><a href="https://lists.apache.org/thread/0nloywj49nbtlc6l3c6363qvq7o1ztb7">https://lists.apache.org/thread/0nloywj49nbtlc6l3c6363qvq7o1ztb7</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Andrea Cosentino (reporter)</li>
+</ul>
+<h2 id="CVE-2024-29869">Credentials file created with non restrictive permissions</h2>
+<p>CVE-2024-29869 <a href="./CVE-2024-29869.cve.json">[CVE json]</a> <a href="./CVE-2024-29869.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-01-28T19:57:18.085Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Hive from 1.1.0 before 4.0.1</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>Hive creates a credentials file to a temporary directory in the file system with permissions 644 by default when the file permissions are not set explicitly. Any unauthorized user having access to the directory can read the sensitive information written into this file. Users are recommended to upgrade to version 4.0.1, which fixes this issue.<br></p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://github.com/apache/hive">https://github.com/apache/hive</a></li>
+<li><a href="https://github.com/apache/hive/commit/20106e254527f7d71b2e34455c4322e14950c620">https://github.com/apache/hive/commit/20106e254527f7d71b2e34455c4322e14950c620</a></li>
+<li><a href="https://issues.apache.org/jira/browse/HIVE-28134">https://issues.apache.org/jira/browse/HIVE-28134</a></li>
+<li><a href="https://lists.apache.org/thread/h27ohpyrqf9w1m3c0tqr7x8jg59rcrv6">https://lists.apache.org/thread/h27ohpyrqf9w1m3c0tqr7x8jg59rcrv6</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>Andrea Cosentino (reporter)</li>
+</ul>
 
   
 </div>

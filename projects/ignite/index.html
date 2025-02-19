@@ -102,10 +102,29 @@
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache Ignite? You can read more about the projects&rsquo; security policy on their <a href="None">security page</a>, and email your report to the  <a href="mailto:security@ignite.apache.org">Apache Ignite Security Team</a>.</p>
+<p>Do you want disclose a potential security issue for Apache Ignite? Send your report to the <a href="mailto:security@ignite.apache.org">Apache Ignite Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
-<p>This page is experimental: it provides consistent access to the advisories for Apache Ignite since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the <a href="None">project security page</a>.</p>
-<p>If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2024-52577">Possible RCE when deserializing incoming messages by the server node</h2>
+<p>CVE-2024-52577 <a href="./CVE-2024-52577.cve.json">[CVE json]</a> <a href="./CVE-2024-52577.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-02-14T09:55:31.279Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Ignite from 2.6.0 before 2.17.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>In Apache Ignite versions from 2.6.0 and before 2.17.0, configured Class Serialization Filters are ignored for some Ignite endpoints. The vulnerability could be exploited if an attacker manually crafts an Ignite message containing a vulnerable object whose class is present in the Ignite server classpath and sends it to Ignite server endpoints. Deserialization of such a message by the Ignite server may result in the execution of arbitrary code on the Apache Ignite server side.<br></p><p><br></p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/1bst0n27m9kb3b6f6hvlghn182vqb2hh">https://lists.apache.org/thread/1bst0n27m9kb3b6f6hvlghn182vqb2hh</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>zhattatey (<a href="mailto:zhattatey@gmail.com">zhattatey@gmail.com</a>) (finder)</li>
+<li>zhattatey (<a href="mailto:zhattatey@gmail.com">zhattatey@gmail.com</a>) (reporter)</li>
+<li>Mikhail Petrov (<a href="mailto:mpetrov@apache.org">mpetrov@apache.org</a>) (remediation developer)</li>
+<li>Alex Plehanov (<a href="mailto:plehanov.alex@gmail.com">plehanov.alex@gmail.com</a>) (remediation reviewer)</li>
+</ul>
 
   
 </div>

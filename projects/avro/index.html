@@ -173,20 +173,38 @@
 <ul>
 <li>This issue was reported to the Apache Avro team by Evan Richter at ForAllSecure and found with Mayhem.</li>
 </ul>
+<h2 id="CVE-2023-39410">Memory when deserializing untrusted data in Avro Java SDK</h2>
+<p>CVE-2023-39410 <a href="./CVE-2023-39410.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2025-02-06T14:33:53.747Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Avro Java SDK before 1.11.3</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<div>When deserializing untrusted or corrupted data, it is possible for a reader to consume memory beyond the allowed constraints and thus lead to out of memory on the system.</div><div><br></div><div>This issue affects Java applications using Apache Avro Java SDK up to and including 1.11.2.  Users should update to apache-avro version 1.11.3 which addresses this issue.</div><div><br></div>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/q142wj99cwdd0jo5lvdoxzoymlqyjdds">https://lists.apache.org/thread/q142wj99cwdd0jo5lvdoxzoymlqyjdds</a></li>
+<li><a href="https://www.openwall.com/lists/oss-security/2023/09/29/6">https://www.openwall.com/lists/oss-security/2023/09/29/6</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Adam Korczynski at ADA Logics Ltd (finder)</li>
+</ul>
 <h2 id="CVE-2024-47561">Arbitrary Code Execution when reading Avro schema (Java SDK)</h2>
 <p>CVE-2024-47561 <a href="./CVE-2024-47561.cve.json">[CVE json]</a> <a href="./CVE-2024-47561.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-10-21T08:50:48.382Z</em></p>
-<h3 id="affected-4">Affected</h3>
+<h3 id="affected-5">Affected</h3>
 <ul>
 <li>Apache Avro Java SDK before 1.11.4</li>
 </ul>
-<h3 id="description-4">Description</h3>
+<h3 id="description-5">Description</h3>
 <p>Schema parsing in the Java SDK of Apache Avro 1.11.3 and previous versions allows bad actors to execute arbitrary code.<br>Users are recommended to upgrade to version 1.11.4  or 1.12.0, which fix this issue.</p>
-<h3 id="references-4">References</h3>
+<h3 id="references-5">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/c2v7mhqnmq0jmbwxqq3r5jbj1xg43h5x">https://lists.apache.org/thread/c2v7mhqnmq0jmbwxqq3r5jbj1xg43h5x</a></li>
 </ul>
-<h3 id="credits-4">Credits</h3>
+<h3 id="credits-5">Credits</h3>
 <ul>
 <li>Kostya Kortchinsky, from the Databricks Security Team (finder)</li>
 </ul>

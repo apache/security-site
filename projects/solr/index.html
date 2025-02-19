@@ -318,6 +318,40 @@ Additionally, with any ZkACLProvider, if the security.json is already present, S
 <ul>
 <li>Liu Huajin (reporter)</li>
 </ul>
+<h2 id="CVE-2024-52012">Configset upload on Windows allows arbitrary path write-access</h2>
+<p>CVE-2024-52012 <a href="./CVE-2024-52012.cve.json">[CVE json]</a> <a href="./CVE-2024-52012.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-01-27T08:54:39.844Z</em></p>
+<h3 id="affected-12">Affected</h3>
+<ul>
+<li>Apache Solr from 6.6 through 9.7.0</li>
+</ul>
+<h3 id="description-12">Description</h3>
+<p>Relative Path Traversal vulnerability in Apache Solr.</p>Solr instances running on Windows are vulnerable to arbitrary filepath write-access, due to a lack of input-sanitation in the "configset upload" API.&nbsp; Commonly known as a "zipslip", maliciously constructed ZIP files can use relative filepaths to write data to unanticipated parts of the filesystem.&nbsp;&nbsp;<br><p>This issue affects Apache Solr: from 6.6 through 9.7.0.</p><p>Users are recommended to upgrade to version 9.8.0, which fixes the issue.&nbsp; Users unable to upgrade may also safely prevent the issue by using Solr's "Rule-Based Authentication Plugin" to restrict access to the configset upload API, so that it can only be accessed by a trusted set of administrators/users.</p>
+<h3 id="references-12">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/yp39pgbv4vf1746pf5yblz84lv30vfxd">https://lists.apache.org/thread/yp39pgbv4vf1746pf5yblz84lv30vfxd</a></li>
+</ul>
+<h3 id="credits-11">Credits</h3>
+<ul>
+<li>rry (finder)</li>
+</ul>
+<h2 id="CVE-2025-24814">Core-creation with &ldquo;trusted&rdquo; configset can use arbitrary untrusted files</h2>
+<p>CVE-2025-24814 <a href="./CVE-2025-24814.cve.json">[CVE json]</a> <a href="./CVE-2025-24814.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-01-27T08:58:06.761Z</em></p>
+<h3 id="affected-13">Affected</h3>
+<ul>
+<li>Apache Solr through 9.7</li>
+</ul>
+<h3 id="description-13">Description</h3>
+<p>Core creation allows users to replace "trusted" configset files with arbitrary configuration</p>Solr instances that (1) use the "FileSystemConfigSetService" component (the default in "standalone" or "user-managed" mode), and (2) are running without authentication and authorization are vulnerable to a sort of privilege escalation wherein individual "trusted" configset files can be ignored in favor of potentially-untrusted replacements available elsewhere on the filesystem.&nbsp; These replacement config files are treated as "trusted" and can use "&lt;lib&gt;" tags to add to Solr's classpath, which an attacker might use to load malicious code as a searchComponent or other plugin.<br><br>This issue affects all Apache Solr versions up through Solr 9.7.&nbsp; Users can protect against the vulnerability by enabling authentication and authorization on their Solr clusters or switching to SolrCloud (and away from "FileSystemConfigSetService").&nbsp; Users are also recommended to upgrade to Solr 9.8.0, which mitigates this issue by disabling use of "&lt;lib&gt;" tags by default.<br>
+<h3 id="references-13">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/gl291pn8x9f9n52ys5l0pc0b6qtf0qw1">https://lists.apache.org/thread/gl291pn8x9f9n52ys5l0pc0b6qtf0qw1</a></li>
+</ul>
+<h3 id="credits-12">Credits</h3>
+<ul>
+<li>pwn null (finder)</li>
+</ul>
 
   
 </div>
