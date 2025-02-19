@@ -56,56 +56,58 @@
 
 <body class="page-kube">
   <header> <div class="show-sm">
-    <div id="nav-toggle-box">
-      <div id="nav-toggle-brand">
-        <a href="/">Apache Security Team</a>
-      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
-    </div>
-  </div>
-  <div class="hide-sm" id="top">
-    <div id="top-brand">
-      <a href="/" title="home">Apache Security Team</a>
-    </div>
-    <nav id="top-nav-main">
-      <ul>
-       
-       
-    <li><a href="/blog" >Blog</a></li>
-    
-    <li><a href="https://www.apache.org/licenses/" >License</a></li>
-    
-    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
-    
-    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
-    
-    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
-    
-    <li><a href="https://www.apache.org" >Apache</a></li>
-    
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        Apache Security Team
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/mailinglist">Mailing List</a></li>
+        <li><a href="https://www.apache.org/licenses/">License</a></li>
+        <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+        <li><a href="https://www.apache.org/foundation/thanks.html">Thanks</a></li>
+        <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy</a></li>
+        <li><a href="https://www.apache.org">Apache</a></li>
       </ul>
-    </nav>
-    <nav id="top-nav-extra"> 
-      <ul>
-          
-      </ul>
-    </nav>
-  </div>
+    </div>
+  </header>
  </header>
   <main>
 
 <div id="hero" class="wrap">
   <h1>Apache Security Team Blog</h1>
 </div>
-<ul id="posts">
+<div class="blog-container">
+  <div class="blog-header">
+    <div class="categories">
+      <a href="#" class="category active">All Posts</a>
+      <a href="#" class="category">Security Reports</a>
+      <a href="#" class="category">CVE Alerts</a>
+      <a href="#" class="category">Updates</a>
+    </div>
+  </div>
 
-  <li itemscope itemtype="http://schema.org/CreativeWork">
+  <div class="posts-grid">
+    <article class="post-card" itemscope itemtype="http://schema.org/CreativeWork">
     <h2 class="title">
         <a href="https://security.apache.org/blog/data-processing-compliance-statements-and-sla/" itemprop="headline">Data Processing, Compliance Statements and SLA</a>
     </h2>
     <hr>
     
-</li>
-  <li itemscope itemtype="http://schema.org/CreativeWork">
+    </article>
+    <article class="post-card" itemscope itemtype="http://schema.org/CreativeWork">
     <h2 class="title">
         <a href="https://security.apache.org/blog/commons-audit/" itemprop="headline">AWS/OSTIF commission audit of three Apache Commons projects</a>
     </h2>
@@ -113,8 +115,8 @@
     
     <p itemprop="about">No vulnerabilities found, a number of security hardening improvements identified and implemented.</p>
     
-</li>
-  <li itemscope itemtype="http://schema.org/CreativeWork">
+    </article>
+    <article class="post-card" itemscope itemtype="http://schema.org/CreativeWork">
     <h2 class="title">
         <a href="https://security.apache.org/blog/cve-2024-3094/" itemprop="headline">xz/liblzma/libarchive compromise</a>
     </h2>
@@ -122,8 +124,8 @@
     
     <p itemprop="about">At this time we have no reason to believe Apache projects are directly impacted by this compromise, also known as CVE-2024-3094.</p>
     
-</li>
-  <li itemscope itemtype="http://schema.org/CreativeWork">
+    </article>
+    <article class="post-card" itemscope itemtype="http://schema.org/CreativeWork">
     <h2 class="title">
         <a href="https://security.apache.org/blog/credits/" itemprop="headline">Credits for finding security vulnerabilities</a>
     </h2>
@@ -131,8 +133,8 @@
     
     <p itemprop="about">This post describes when and how we give credit to people who report security issues.</p>
     
-</li>
-  <li itemscope itemtype="http://schema.org/CreativeWork">
+    </article>
+    <article class="post-card" itemscope itemtype="http://schema.org/CreativeWork">
     <h2 class="title">
         <a href="https://security.apache.org/blog/asf-security-report-2023/" itemprop="headline">ASF Security Report: 2023</a>
     </h2>
@@ -140,8 +142,8 @@
     
     <p itemprop="about">This report explores the state of security across all of The Apache Software Foundation (ASF) projects for the calendar year 2023. We review key metrics, specific vulnerabilities, and the most common ways users of ASF projects were affected by security issues.</p>
     
-</li>
-  <li itemscope itemtype="http://schema.org/CreativeWork">
+    </article>
+    <article class="post-card" itemscope itemtype="http://schema.org/CreativeWork">
     <h2 class="title">
         <a href="https://security.apache.org/blog/severityrating/" itemprop="headline">Apache vulnerability severity rating system</a>
     </h2>
@@ -149,8 +151,8 @@
     
     <p itemprop="about">We introduce a default severity rating system, based on the scales we&#39;ve been using with some specific projects</p>
     
-</li>
-  <li itemscope itemtype="http://schema.org/CreativeWork">
+    </article>
+    <article class="post-card" itemscope itemtype="http://schema.org/CreativeWork">
     <h2 class="title">
         <a href="https://security.apache.org/blog/asf-security-report-2022/" itemprop="headline">ASF Security Report: 2022</a>
     </h2>
@@ -158,8 +160,8 @@
     
     <p itemprop="about">This report explores the state of security across all of The Apache Software Foundation (ASF) projects for the calendar year 2022. We review key metrics, specific vulnerabilities, and the most common ways users of ASF projects were affected by security issues.</p>
     
-</li>
-  <li itemscope itemtype="http://schema.org/CreativeWork">
+    </article>
+    <article class="post-card" itemscope itemtype="http://schema.org/CreativeWork">
     <h2 class="title">
         <a href="https://security.apache.org/blog/cve-2022-42889/" itemprop="headline">CVE-2022-42889: interpolations that allow RCE disabled in Commons Text 1.10.0</a>
     </h2>
@@ -167,8 +169,8 @@
     
     <p itemprop="about">Find out if you should worry about CVE-2022-42889, which was recently released by the Apache Commons Text team</p>
     
-</li>
-  <li itemscope itemtype="http://schema.org/CreativeWork">
+    </article>
+    <article class="post-card" itemscope itemtype="http://schema.org/CreativeWork">
     <h2 class="title">
         <a href="https://security.apache.org/blog/cve-2021-44228/" itemprop="headline">Apache projects affected by log4j CVE-2021-44228</a>
     </h2>
@@ -176,9 +178,10 @@
     
     <p itemprop="about">This entry is where we will collect links to statements provided by ASF projects on if they are affected by CVE-2021-44228, the security issue in Log4j2.</p>
     
-</li>
- 
-  <section><nav class="pagination pager align-center">
+    </article>
+  </div>
+
+  <div class="pagination-section"><nav class="pagination pager align-center">
             <hr>
     <ul>
            
@@ -188,8 +191,8 @@
         </li>
             
     </ul>
-</nav></section>
-</ul>
+</nav>  </div>
+</div>
 
 </main>
   <footer> 

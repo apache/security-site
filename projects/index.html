@@ -57,40 +57,33 @@
 
 <body class="page-kube">
   <header> <div class="show-sm">
-    <div id="nav-toggle-box">
-      <div id="nav-toggle-brand">
-        <a href="/">Apache Security Team</a>
-      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
-    </div>
-  </div>
-  <div class="hide-sm" id="top">
-    <div id="top-brand">
-      <a href="/" title="home">Apache Security Team</a>
-    </div>
-    <nav id="top-nav-main">
-      <ul>
-       
-       
-    <li><a href="/blog" >Blog</a></li>
-    
-    <li><a href="https://www.apache.org/licenses/" >License</a></li>
-    
-    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
-    
-    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
-    
-    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
-    
-    <li><a href="https://www.apache.org" >Apache</a></li>
-    
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        Apache Security Team
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/mailinglist">Mailing List</a></li>
+        <li><a href="https://www.apache.org/licenses/">License</a></li>
+        <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+        <li><a href="https://www.apache.org/foundation/thanks.html">Thanks</a></li>
+        <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy</a></li>
+        <li><a href="https://www.apache.org">Apache</a></li>
       </ul>
-    </nav>
-    <nav id="top-nav-extra"> 
-      <ul>
-          
-      </ul>
-    </nav>
-  </div>
+    </div>
+  </header>
  </header>
   <main>
 
@@ -98,8 +91,10 @@
   <h1>Apache Project Security Information</h1>
     <p>Security information for individual Apache projects</p>
 </div>
-<div id="project-box">
 <div id="project">
+  <div class="search-container">
+    <input type="text" id="projectSearch" placeholder="Search projects..." class="search-input" />
+  </div>
 
  <p>Here is a list of pages ASF projects maintain to provide information on known security vulnerabilities. Each entry also has the security contact for reporting new vulnerabilities related to that project. Note that not all project security teams have a dedicated address for reporting new vulnerabilities.</p>
 <p>To report a vulnerability in an Apache project that is not listed below, contact the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
@@ -777,7 +772,23 @@
 
   
 </div>
-</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('projectSearch');
+    const table = document.querySelector('#project table');
+    const rows = table.querySelectorAll('tbody tr');
+
+    searchInput.addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase();
+
+        rows.forEach(row => {
+            const text = row.textContent.toLowerCase();
+            row.style.display = text.includes(searchTerm) ? '' : 'none';
+        });
+    });
+});
+</script>
 </main>
   <footer> 
     <footer id="footer">
