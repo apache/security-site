@@ -335,3 +335,57 @@ Improper input validation allows for header injection in MIME4J library when usi
 
 ### Credits
 * Benoit TELLIER (finder)
+
+
+## Apache James: denial of service through the use of IMAP literals ## { #CVE-2024-37358 }
+
+CVE-2024-37358 [\[CVE json\]](./CVE-2024-37358.cve.json) [\[OSV json\]](./CVE-2024-37358.osv.json)
+
+
+
+_Last updated: 2025-02-06T11:22:36.577Z_
+
+### Affected
+
+* Apache James server through 3.7.5
+* Apache James server from 3.8.0 through 3.8.1
+
+
+### Description
+
+Similarly to CVE-2024-34055, Apache James is vulnerable to denial of service through the abuse of IMAP literals from both authenticated and unauthenticated users, which could be used to cause unbounded memory allocation and very long computations<br><br>Version 3.7.6 and 3.8.2 restrict such illegitimate use of IMAP literals.<br>
+
+### References
+* https://lists.apache.org/thread/1pxsh11v5s3fkvhnqvkmlqwt3fgpcrqc
+
+
+### Credits
+* Xavier GUIMARD (reporter)
+* Benoit TELLIER (coordinator)
+
+
+## Apache James: denial of service through JMAP HTML to text conversion ## { #CVE-2024-45626 }
+
+CVE-2024-45626 [\[CVE json\]](./CVE-2024-45626.cve.json) [\[OSV json\]](./CVE-2024-45626.osv.json)
+
+
+
+_Last updated: 2025-02-06T11:21:05.038Z_
+
+### Affected
+
+* Apache James server from 3.8.0 through 3.8.1
+* Apache James server through 3.7.5
+
+
+### Description
+
+Apache James server JMAP HTML to text plain implementation in versions below 3.8.2 and 3.7.6 is subject to unbounded memory consumption that can result in a denial of service.<br><br>Users are recommended to upgrade to version 3.7.6 and 3.8.2, which fix this issue.
+
+### References
+* https://lists.apache.org/thread/1fr9hvpsylomwwfr3rv82g84sxszn4kl
+
+
+### Credits
+* Benoit TELLIER (finder)
+* Wojciech Kapcia (finder)

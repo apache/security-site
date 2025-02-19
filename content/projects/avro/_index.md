@@ -113,6 +113,30 @@ It is possible to crash (panic) an application by providing a corrupted data to 
 * This issue was reported to the Apache Avro team by Evan Richter at ForAllSecure and found with Mayhem.
 
 
+## Memory when deserializing untrusted data in Avro Java SDK ## { #CVE-2023-39410 }
+
+CVE-2023-39410 [\[CVE json\]](./CVE-2023-39410.cve.json)
+
+_Last updated: 2025-02-06T14:33:53.747Z_
+
+### Affected
+
+* Apache Avro Java SDK before 1.11.3
+
+
+### Description
+
+<div>When deserializing untrusted or corrupted data, it is possible for a reader to consume memory beyond the allowed constraints and thus lead to out of memory on the system.</div><div><br></div><div>This issue affects Java applications using Apache Avro Java SDK up to and including 1.11.2.  Users should update to apache-avro version 1.11.3 which addresses this issue.</div><div><br></div>
+
+### References
+* https://lists.apache.org/thread/q142wj99cwdd0jo5lvdoxzoymlqyjdds
+* https://www.openwall.com/lists/oss-security/2023/09/29/6
+
+
+### Credits
+* Adam Korczynski at ADA Logics Ltd (finder)
+
+
 ## Arbitrary Code Execution when reading Avro schema (Java SDK) ## { #CVE-2024-47561 }
 
 CVE-2024-47561 [\[CVE json\]](./CVE-2024-47561.cve.json) [\[OSV json\]](./CVE-2024-47561.osv.json)

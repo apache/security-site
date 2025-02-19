@@ -62,3 +62,28 @@ _Last updated: 2024-06-10T21:55:03.113Z_
 
 ### Credits
 * truff https://x.com/truffzor (finder)
+
+
+## Stored authenticated XSS ## { #CVE-2024-38379 }
+
+CVE-2024-38379 [\[CVE json\]](./CVE-2024-38379.cve.json) [\[OSV json\]](./CVE-2024-38379.osv.json)
+
+
+
+_Last updated: 2025-02-06T14:32:32.361Z_
+
+### Affected
+
+* Apache Allura from 1.4.0 through 1.17.0
+
+
+### Description
+
+<p>Apache Allura's neighborhood settings are vulnerable to a stored XSS attack.&nbsp; Only neighborhood admins can access these settings, so the scope of risk is limited to configurations where neighborhood admins are not fully trusted.<br></p><p>This issue affects Apache Allura: from 1.4.0 through 1.17.0.</p><p>Users are recommended to upgrade to version 1.17.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/2lb6vp00sj2b2snpmhff5lyortxjsnrp
+
+
+### Credits
+* Ömer "WASP" Akincir (finder)

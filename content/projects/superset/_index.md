@@ -855,6 +855,31 @@ _Last updated: 2023-11-28T16:26:56.352Z_
 *  Leonel John Erik Angel Torres (finder)
 
 
+## Stored XSS on API endpoint ## { #CVE-2023-43701 }
+
+CVE-2023-43701 [\[CVE json\]](./CVE-2023-43701.cve.json) [\[OSV json\]](./CVE-2023-43701.osv.json)
+
+
+
+_Last updated: 2025-02-06T14:29:43.997Z_
+
+### Affected
+
+* Apache Superset before 2.1.2
+
+
+### Description
+
+Improper payload validation and an improper REST API response type, made it possible for an authenticated malicious actor to store malicious code into Chart's metadata, this code could get executed if a user specifically accesses a specific deprecated API endpoint.&nbsp;This issue affects Apache Superset versions prior to 2.1.2.&nbsp;<br>Users are recommended to upgrade to version 2.1.2, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/4dnr1knk50fw60jxkjgqj228f0xcc892
+
+
+### Credits
+* Amit Laish – GE Vernova (finder)
+
+
 ## Allows for uncontrolled resource consumption via a ZIP bomb ## { #CVE-2023-46104 }
 
 CVE-2023-46104 [\[CVE json\]](./CVE-2023-46104.cve.json) [\[OSV json\]](./CVE-2023-46104.osv.json)
@@ -991,7 +1016,7 @@ CVE-2024-24772 [\[CVE json\]](./CVE-2024-24772.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-02-28T11:26:43.918Z_
+_Last updated: 2025-02-12T09:26:35.721Z_
 
 ### Affected
 
@@ -1258,7 +1283,7 @@ CVE-2024-53949 [\[CVE json\]](./CVE-2024-53949.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-12-09T13:35:39.972Z_
+_Last updated: 2025-02-12T09:34:35.897Z_
 
 ### Affected
 
@@ -1284,7 +1309,7 @@ CVE-2024-55633 [\[CVE json\]](./CVE-2024-55633.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-12-12T14:36:00.087Z_
+_Last updated: 2025-02-12T09:35:41.246Z_
 
 ### Affected
 

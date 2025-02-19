@@ -168,6 +168,31 @@ In streampark, the project module integrates Maven's compilation capabilities. T
 * thiscodecc of MoyunSec Vlab and Bing (finder)
 
 
+## session not invalidated after logout ## { #CVE-2024-29070 }
+
+CVE-2024-29070 [\[CVE json\]](./CVE-2024-29070.cve.json) [\[OSV json\]](./CVE-2024-29070.osv.json)
+
+
+
+_Last updated: 2025-02-06T14:33:02.169Z_
+
+### Affected
+
+* Apache StreamPark from 1.0.0 before 2.1.4
+
+
+### Description
+
+On versions before 2.1.4,&nbsp;session is not invalidated after logout. When the user logged in successfully, the Backend service returns "Authorization" as the front-end authentication credential. "Authorization" can still initiate requests and access data even after logout.<br><br><div>Mitigation:<br><br></div>all users <span style="background-color: var(--wht);">should upgrade to 2.1.4</span><br><br><br>
+
+### References
+* https://lists.apache.org/thread/zslblrz1l0n9t67mqdv42yv75ncfn9zl
+
+
+### Credits
+* L0ne1y (reporter)
+
+
 ## Information leakage vulnerability ## { #CVE-2024-29120 }
 
 CVE-2024-29120 [\[CVE json\]](./CVE-2024-29120.cve.json) [\[OSV json\]](./CVE-2024-29120.osv.json)

@@ -36,3 +36,28 @@ A vulnerability in import module of Apache Atlas allows an authenticated user to
 
 ### Credits
 * Huangzhicong (finder)
+
+
+## An authenticated user can perform XSS and potentially impersonate another user ## { #CVE-2024-46910 }
+
+CVE-2024-46910 [\[CVE json\]](./CVE-2024-46910.cve.json) [\[OSV json\]](./CVE-2024-46910.osv.json)
+
+
+
+_Last updated: 2025-02-13T08:52:51.188Z_
+
+### Affected
+
+* Apache Atlas from 2.0.0 through 2.3.0
+
+
+### Description
+
+<p>An authenticated user can perform XSS and potentially impersonate another user.</p><p>This issue affects Apache Atlas <span style="background-color: rgb(255, 255, 255);">versions&nbsp;</span>2.3.0 and earlier.</p><p>Users are recommended to upgrade to version 2.4.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/sqzp34l4cdk21zoq5g31qlsvr7jvb1fy
+
+
+### Credits
+* basavaraj@seciqtech.com (finder)

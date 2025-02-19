@@ -242,7 +242,7 @@ CVE-2025-23196 [\[CVE json\]](./CVE-2025-23196.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-01-21T21:23:39.991Z_
+_Last updated: 2025-02-03T08:22:23.980Z_
 
 ### Affected
 

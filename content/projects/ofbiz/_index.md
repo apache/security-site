@@ -658,7 +658,7 @@ CVE-2024-48962 [\[CVE json\]](./CVE-2024-48962.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-11-16T07:59:29.966Z_
+_Last updated: 2025-02-17T11:17:10.834Z_
 
 ### Affected
 

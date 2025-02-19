@@ -38,3 +38,29 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 
 ### Credits
 *  This vulnerability was found by xray web vulnerability scanner (github.com/chaitin/xray) (finder)
+
+
+## XSS in services console ## { #CVE-2025-25247 }
+
+CVE-2025-25247 [\[CVE json\]](./CVE-2025-25247.cve.json) [\[OSV json\]](./CVE-2025-25247.osv.json)
+
+
+
+_Last updated: 2025-02-10T11:16:58.175Z_
+
+### Affected
+
+* Apache Felix Webconsole from Version 4.x through 4.9.8
+* Apache Felix Webconsole from Version 5.x through 5.0.8
+
+
+### Description
+
+<p>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache Felix Webconsole.</p><p>This issue affects Apache Felix Webconsole 4.x up to 4.9.8 and 5.x up to 5.0.8.</p><p>Users are recommended to upgrade to version 4.9.10 or 5.0.10 or higher, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/z47jbf0rbylzd0ktfzdw9c8b5fpyl24m
+
+
+### Credits
+* Viktor Mares (me@viktormares.com) (finder)

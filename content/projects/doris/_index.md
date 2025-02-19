@@ -125,3 +125,30 @@ Download of Code Without Integrity Check vulnerability in Apache Doris.<br>The j
 
 ### References
 * https://lists.apache.org/thread/h95h82b0svlnwcg6c2xq4b08j6gwgczh
+
+
+## allows admin users to read arbitrary files through the REST API ## { #CVE-2024-48019 }
+
+CVE-2024-48019 [\[CVE json\]](./CVE-2024-48019.cve.json) [\[OSV json\]](./CVE-2024-48019.osv.json)
+
+
+
+_Last updated: 2025-02-04T18:19:49.957Z_
+
+### Affected
+
+* Apache Doris from 2.1.0 before 2.1.8
+* Apache Doris from 3.0.0 before 3.0.3
+
+
+### Description
+
+<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'), Files or Directories Accessible to External Parties vulnerability in Apache Doris.<br></p><p><span style="background-color: rgb(255, 255, 255);">Application administrators can read arbitrary
+files from the server filesystem through path traversal.</span><br></p><p>Users are recommended to upgrade to version 2.1.8, 3.0.3 or later, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/p70klgmyrgknhn0t195261wvwv5jw6hr
+
+
+### Credits
+* Man Yue Mo of the GitHub Security Lab team (finder)

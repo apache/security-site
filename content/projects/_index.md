@@ -73,6 +73,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Kafka](https://kafka.apache.org/project-security.html) |  [Apache Kafka Security Team](mailto:security@kafka.apache.org) | [Advisories](https://kafka.apache.org/cve-list.html) |
 | Apache Karaf |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Knox |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Kvrocks |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Kylin |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Libcloud](https://libcloud.apache.org/security.html) |  [Apache Libcloud Security Team](mailto:security@libcloud.apache.org) | |
 | Apache Linkis |  [Apache Security Team](mailto:security@apache.org) | |
@@ -113,7 +114,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Shiro](https://shiro.apache.org/security-reports.html) |  [Apache Shiro Security Team](mailto:security@shiro.apache.org) | |
 | [Apache SINGA](https://singa.apache.org/security.html) |  [Apache SINGA Security Team](mailto:security@singa.apache.org) | |
 | Apache SkyWalking |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache Sling](https://sling.apache.org/site/security.html) |  [Apache Sling Security Team](mailto:security@sling.apache.org) | |
+| [Apache Sling](https://sling.apache.org/project-information/security.html) |  [Apache Sling Security Team](mailto:security@sling.apache.org) | |
 | [Apache Solr](https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity) |  [Apache Solr Security Team](mailto:security@solr.apache.org) | [Advisories](https://solr.apache.org/security.html#recent-cve-reports-for-apache-solr) |
 | [Apache SpamAssassin](https://cwiki.apache.org/confluence/display/SPAMASSASSIN/SecurityPolicy) |  [Apache SpamAssassin Security Team](mailto:security@spamassassin.apache.org) | |
 | [Apache Spark](https://spark.apache.org/security.html) |  [Apache Spark Security Team](mailto:security@spark.apache.org) | [Advisories](https://spark.apache.org/security.html) |

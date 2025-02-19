@@ -137,7 +137,7 @@ attack<br></div><div><br></div><div>The mitigations to prevent this type of atta
 
 CVE-2024-52046 [\[CVE json\]](./CVE-2024-52046.cve.json)
 
-_Last updated: 2024-12-28T13:37:01.745Z_
+_Last updated: 2025-02-12T09:33:34.969Z_
 
 ### Affected
 

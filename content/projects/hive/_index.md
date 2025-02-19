@@ -152,3 +152,61 @@ Signing cookies is an application security feature that adds a digital signature
 ### Credits
 * Kostya Kortchinsky (reporter)
 * Hamza Tahmi (reporter)
+
+
+## Timing Attack Against Signature in LLAP util ## { #CVE-2024-23953 }
+
+CVE-2024-23953 [\[CVE json\]](./CVE-2024-23953.cve.json) [\[OSV json\]](./CVE-2024-23953.osv.json)
+
+
+
+_Last updated: 2025-01-28T06:25:01.840Z_
+
+### Affected
+
+* Apache Hive from 2.2.0 before 4.0.0
+
+
+### Description
+
+Use of Arrays.equals() in <span style="background-color: rgb(255, 255, 255);">LlapSignerImpl in&nbsp;</span>Apache Hive to compare message signatures&nbsp;<span style="background-color: var(--wht);">allows attacker to forge a valid signature for an arbitrary message byte by byte. The attacker should be an authorized user of the product to perform this attack.&nbsp;</span>Users are recommended to upgrade to version 4.0.0, which fixes this issue.<br><br><span style="background-color: rgb(253, 253, 253);">The problem occurs when an application doesn’t use a constant-time algorithm for validating a signature.&nbsp;<span style="background-color: rgb(253, 253, 253);">The method </span><code>Arrays.equals()</code><span style="background-color: rgb(253, 253, 253);">&nbsp;returns </span><code>false</code><span style="background-color: rgb(253, 253, 253);">&nbsp;right away when it sees that one of the input’s bytes are different. It means that the comparison time depends on the contents of the arrays. This little thing may allow an attacker to forge a valid signature for an arbitrary message byte by byte.&nbsp;So it might allow malicious users to submit splits/work with selected signatures to LLAP without running as a privileged user, potentially leading to DDoS attack.</span><br><br></span>More details in the reference section.<br>
+
+### References
+* https://github.com/apache/hive
+* https://github.com/apache/hive/commit/b418e3c9f479ba8e7d31e6470306111002ffa809
+* https://issues.apache.org/jira/browse/HIVE-28030
+* https://blog.gypsyengineer.com/en/security/preventing-timing-attacks-with-codeql.html
+* https://cqr.company/web-vulnerabilities/timing-attacks/
+* https://lists.apache.org/thread/0nloywj49nbtlc6l3c6363qvq7o1ztb7
+
+
+### Credits
+* Andrea Cosentino (reporter)
+
+
+## Credentials file created with non restrictive permissions ## { #CVE-2024-29869 }
+
+CVE-2024-29869 [\[CVE json\]](./CVE-2024-29869.cve.json) [\[OSV json\]](./CVE-2024-29869.osv.json)
+
+
+
+_Last updated: 2025-01-28T19:57:18.085Z_
+
+### Affected
+
+* Apache Hive from 1.1.0 before 4.0.1
+
+
+### Description
+
+Hive creates a credentials file to a temporary directory in the file system with permissions 644 by default when the file permissions are not set explicitly. Any unauthorized user having access to the directory can read the sensitive information written into this file.&nbsp;Users are recommended to upgrade to version 4.0.1, which fixes this issue.<br>
+
+### References
+* https://github.com/apache/hive
+* https://github.com/apache/hive/commit/20106e254527f7d71b2e34455c4322e14950c620
+* https://issues.apache.org/jira/browse/HIVE-28134
+* https://lists.apache.org/thread/h27ohpyrqf9w1m3c0tqr7x8jg59rcrv6
+
+
+### Credits
+* Andrea Cosentino (reporter)

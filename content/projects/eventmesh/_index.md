@@ -38,3 +38,31 @@ CWE-502 Deserialization of Untrusted Data&nbsp;at the&nbsp;<span style="backgrou
 
 ### Credits
 * xuxiaoyu of HW GTS shengjian lab (reporter)
+
+
+## raft Hessian Deserialization Vulnerability allowing remote code execution ## { #CVE-2024-56180 }
+
+CVE-2024-56180 [\[CVE json\]](./CVE-2024-56180.cve.json) [\[OSV json\]](./CVE-2024-56180.osv.json)
+
+
+
+_Last updated: 2025-02-14T15:26:18.633Z_
+
+### Affected
+
+* Apache EventMesh from 1.10.1 before 1.11.0
+
+
+### Description
+
+<span style="background-color: rgb(255, 255, 255);">CWE-502 Deserialization of Untrusted Data at the eventmesh-meta-raft</span><span style="background-color: rgb(255, 255, 255);">&nbsp;plugin</span><span style="background-color: rgb(255, 255, 255);">&nbsp;module in Apache EventMesh master branch without release version on windows\linux\mac os e.g. platforms allows attackers to send controlled message and </span><span style="background-color: rgb(255, 255, 255);">remote code execute</span><span style="background-color: rgb(255, 255, 255);">&nbsp;via hessian d</span><span style="background-color: rgb(255, 255, 255);">eserialization rpc protocol</span><span style="background-color: rgb(255, 255, 255);">. Users can use the code under the master branch in project repo or version 1.11.0 to fix this issue.</span><br>
+
+### References
+* https://lists.apache.org/thread/k9fw0t5r7t1vbx53gs8d1r8c54rhx0wd
+
+
+### Credits
+* yulate (reporter)
+* Au5t1n (reporter)
+* h3h3qaq (reporter)
+* X1r0z (reporter)
