@@ -1,22 +1,48 @@
 {{ define "title"}} {{ .Title}} {{end}}
 {{ define "header"}} {{ partial "header" .}} {{end}}
 {{ define "main"}}
-<div class="push-center" itemscope itemtype="http://schema.org/BlogPosting">
-  {{ template "_internal/schema.html" . }}
-  <div id="hero">
-    <h1 itemprop="headline">{{.Title}}</h1>
-    {{ if .Description }}
-    <blockquote itemprop="description">{{ .Description }}</blockquote>
-    {{ end }}
-    <time class="post-time">{{ partial "post/meta" . }}</time>
-  </div>
-  <div id="post-box">
-    <div id="post" itemprop="articleBody">{{.Content | safeHTML}}</div>
+<div class="blog-container" itemscope itemtype="http://schema.org/BlogPosting">
+    {{ template "_internal/schema.html" . }}
+    
+    <article class="blog-post">
+        <header class="blog-post-header">
+            <div class="blog-categories">
+                {{ range .Params.categories }}
+                <span class="blog-category">{{ . }}</span>
+                {{ end }}
+            </div>
+            <h1 itemprop="headline">{{.Title}}</h1>
+            {{ if .Description }}
+            <p class="blog-description" itemprop="description">{{ .Description }}</p>
+            {{ end }}
+            <div class="blog-meta">
+                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+                    {{ .Date.Format "January 2, 2006" }}
+                </time>
+                {{ with .Params.author }}
+                <span class="blog-author">By {{ . }}</span>
+                {{ end }}
+            </div>
+        </header>
 
-    <div class="">
-      {{ partial "post/byauthor" . }} {{ partial "post/related-content" . }}
-    </div>
-    </div>
-  </div>
-  {{ end }} {{ define "footer"}} {{ partial "footer.html" .}} {{ end }}
+        <div class="blog-content" itemprop="articleBody">
+            {{.Content | safeHTML}}
+        </div>
+
+        <footer class="blog-post-footer">
+            {{ partial "post/byauthor" . }}
+            {{ partial "post/related-content" . }}
+            <div class="blog-navigation">
+                {{ with .PrevInSection }}
+                <a href="{{ .RelPermalink }}" class="prev-post">← {{ .Title }}</a>
+                {{ end }}
+                {{ with .NextInSection }}
+                <a href="{{ .RelPermalink }}" class="next-post">{{ .Title }} →</a>
+                {{ end }}
+            </div>
+        </footer>
+    </article>
+</div>
+{{ end }}
+{{ define "footer"}} {{ partial "footer.html" .}} {{ end }}
 
