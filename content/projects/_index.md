@@ -17,7 +17,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Airflow |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Allura |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Ambari |  [Apache Ambari Security Team](mailto:security@ambari.apache.org) | |
-| Apache Answer |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Answer](https://answer.apache.org/community/security-model) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Ant](https://ant.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache APISIX |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Portable Runtime (APR)](https://apr.apache.org/security_report.html) |  [Apache Security Team](mailto:security@apache.org) | |
@@ -90,7 +90,6 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Nutch |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache NuttX |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache OFBiz](https://ofbiz.apache.org/download.html#security) |  [Apache OFBiz Security Team](mailto:security@ofbiz.apache.org) | |
-| Apache Oozie |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache OpenMeetings](https://openmeetings.apache.org/security.html) |  [Apache OpenMeetings Security Team](mailto:security@openmeetings.apache.org) | |
 | [Apache OpenOffice](https://openoffice.apache.org/security) |  [Apache OpenOffice Security Team](mailto:security@openoffice.apache.org) | [Advisories](https://www.openoffice.org/security/bulletin.html) |
 | [Apache ORC](https://orc.apache.org/security/) |  [Apache ORC Security Team](mailto:security@orc.apache.org) | |
