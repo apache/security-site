@@ -42,6 +42,27 @@ A REST interface in Apache StreamPipes (versions 0.69.0 to 0.91.0) <span style="
 * Xun Bai, LJQC Open Source Security Institute (finder)
 
 
+## Resources Permission Escalation ## { #CVE-2024-24778 }
+
+CVE-2024-24778 [\[CVE json\]](./CVE-2024-24778.cve.json) [\[OSV json\]](./CVE-2024-24778.osv.json)
+
+
+
+_Last updated: 2025-03-03T10:37:02.610Z_
+
+### Affected
+
+* Apache StreamPipes through 0.95.1
+
+
+### Description
+
+<div></div><div></div><p>Improper privilege management in a REST interface allowed registered users to access unauthorized resources if the resource ID was know. </p><div></div><div></div><p>This issue affects Apache StreamPipes: through 0.95.1.</p><p>Users are recommended to upgrade to version 0.97.0 which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/j14w6wghlwwrgfgc6hoz9f94fwxtlgzh
+
+
 ## Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG) in Recovery Token Generation ## { #CVE-2024-29868 }
 
 CVE-2024-29868 [\[CVE json\]](./CVE-2024-29868.cve.json) [\[OSV json\]](./CVE-2024-29868.osv.json)
