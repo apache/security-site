@@ -122,17 +122,30 @@
 <ul>
 <li>Xun Bai, LJQC Open Source Security Institute (finder)</li>
 </ul>
+<h2 id="CVE-2024-24778">Resources Permission Escalation</h2>
+<p>CVE-2024-24778 <a href="./CVE-2024-24778.cve.json">[CVE json]</a> <a href="./CVE-2024-24778.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-03-03T10:37:02.610Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache StreamPipes through 0.95.1</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<div></div><div></div><p>Improper privilege management in a REST interface allowed registered users to access unauthorized resources if the resource ID was know. </p><div></div><div></div><p>This issue affects Apache StreamPipes: through 0.95.1.</p><p>Users are recommended to upgrade to version 0.97.0 which fixes the issue.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/j14w6wghlwwrgfgc6hoz9f94fwxtlgzh">https://lists.apache.org/thread/j14w6wghlwwrgfgc6hoz9f94fwxtlgzh</a></li>
+</ul>
 <h2 id="CVE-2024-29868">Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG) in Recovery Token Generation</h2>
 <p>CVE-2024-29868 <a href="./CVE-2024-29868.cve.json">[CVE json]</a> <a href="./CVE-2024-29868.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-06-24T09:59:38.377Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache StreamPipes from 0.69.0 through 0.93.0</li>
 <li>Apache StreamPipes from 0.69.0 through 0.93.0</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-2">Description</h3>
 <p>Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG) vulnerability in Apache StreamPipes <span style="background-color: rgb(255, 255, 255);">user self-registration and password recovery mechanism</span>.<br>This allows an attacker to guess the recovery token in a reasonable time and thereby to take over the attacked user&rsquo;s account.<br><p>This issue affects Apache StreamPipes: from 0.69.0 through 0.93.0.</p><p>Users are recommended to upgrade to version 0.95.0, which fixes the issue.</p></p>
-<h3 id="references-1">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/g7t7zctvq2fysrw1x17flnc12592nhx7">https://lists.apache.org/thread/g7t7zctvq2fysrw1x17flnc12592nhx7</a></li>
 </ul>
@@ -143,13 +156,13 @@
 <h2 id="CVE-2024-30471">Potential creation of multiple identical accounts</h2>
 <p>CVE-2024-30471 <a href="./CVE-2024-30471.cve.json">[CVE json]</a> <a href="./CVE-2024-30471.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-07-17T09:01:50.452Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache StreamPipes through 0.93.0</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability in Apache StreamPipes in user self-registration.<br>This allows an attacker to potentially request the creation of multiple accounts with the same email address until the email address is registered, creating many identical users and corrupting StreamPipe&rsquo;s user management.<br><p>This issue affects Apache StreamPipes: through 0.93.0.</p><p>Users are recommended to upgrade to version 0.95.0, which fixes the issue.</p></p>
-<h3 id="references-2">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/8yodrmohgcybq900or3d4hc1msl230fr">https://lists.apache.org/thread/8yodrmohgcybq900or3d4hc1msl230fr</a></li>
 </ul>
@@ -160,13 +173,13 @@
 <h2 id="CVE-2024-31411">Potential remote code execution (RCE) via file upload</h2>
 <p>CVE-2024-31411 <a href="./CVE-2024-31411.cve.json">[CVE json]</a> <a href="./CVE-2024-31411.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-07-17T09:22:06.439Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-4">Affected</h3>
 <ul>
 <li>Apache StreamPipes through 0.93.0</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-4">Description</h3>
 <p>Unrestricted Upload of File with dangerous type vulnerability in Apache StreamPipes.<br>Such a dangerous type might be an executable file that may lead to a remote code execution (RCE).<br>The unrestricted upload is only possible for authenticated and authorized users.<br><p>This issue affects Apache StreamPipes: through 0.93.0.</p><p>Users are recommended to upgrade to version 0.95.0, which fixes the issue.</p></p>
-<h3 id="references-3">References</h3>
+<h3 id="references-4">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/b0657okbwzg5xxs11hphvc9qrd9s70mt">https://lists.apache.org/thread/b0657okbwzg5xxs11hphvc9qrd9s70mt</a></li>
 </ul>
@@ -177,13 +190,13 @@
 <h2 id="CVE-2024-31979">Possibility of SSRF in pipeline element installation process</h2>
 <p>CVE-2024-31979 <a href="./CVE-2024-31979.cve.json">[CVE json]</a> <a href="./CVE-2024-31979.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-07-17T09:03:15.953Z</em></p>
-<h3 id="affected-4">Affected</h3>
+<h3 id="affected-5">Affected</h3>
 <ul>
 <li>Apache StreamPipes through 0.93.0</li>
 </ul>
-<h3 id="description-4">Description</h3>
+<h3 id="description-5">Description</h3>
 <p>Server-Side Request Forgery (SSRF) vulnerability in Apache StreamPipes during installation process of pipeline elements.<br>Previously, StreamPipes allowed users to configure custom endpoints from which to install additional pipeline elements. <br>These endpoints were not properly validated, allowing an attacker to get StreamPipes to send an HTTP GET request to an arbitrary address.<br><p>This issue affects Apache StreamPipes: through 0.93.0.</p><p>Users are recommended to upgrade to version 0.95.0, which fixes the issue.</p></p>
-<h3 id="references-4">References</h3>
+<h3 id="references-5">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/8lryp3bxnby9kmk13odkz2jbfdjfvf0y">https://lists.apache.org/thread/8lryp3bxnby9kmk13odkz2jbfdjfvf0y</a></li>
 </ul>
