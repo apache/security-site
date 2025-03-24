@@ -679,3 +679,31 @@ _Last updated: 2025-02-17T11:17:10.834Z_
 ### Credits
 * Sebastiano Sartor <s@sebsrt.xyz> (finder)
 * Ryan <marimoo.eth@gmail.com> (finder)
+
+
+## Server-Side Template Injection affecting the ecommerce plugin leading to possible RCE ## { #CVE-2025-26865 }
+
+CVE-2025-26865 [\[CVE json\]](./CVE-2025-26865.cve.json) [\[OSV json\]](./CVE-2025-26865.osv.json)
+
+
+
+_Last updated: 2025-03-10T14:00:48.257Z_
+
+### Affected
+
+* Apache OFBiz from 18.12.17 before 18.12.18
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements Used in a Template Engine vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: from 18.12.17 before 18.12.18.&nbsp;&nbsp;</p>It's a regression between 18.12.17 and 18.12.18.<br>In case you use something like that, which is not recommended!<br>For security, only official releases should be used.<br><br>In other words, if you use 18.12.17 you are still safe.<br>The version 18.12.17 is not a affected.<br>But something between 18.12.17 and 18.12.18 is.<br><br>In that case, users are recommended to upgrade to version 18.12.18, which fixes the issue.<br>
+
+### References
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html
+* https://issues.apache.org/jira/browse/OFBIZ-12594
+* https://lists.apache.org/thread/prb48ztk01bflyyjbl6p56wlcc1n5sz7
+
+
+### Credits
+* Matei "Mal" Badanoiu (finder)

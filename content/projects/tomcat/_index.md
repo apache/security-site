@@ -981,3 +981,31 @@ parameter set to the non-default value of false) may need additional configurati
 ### Credits
 * This vulnerability was first reported by Nacl, WHOAMI, Yemoli and Ruozhi. (finder)
 * This vulnerability was independently reported with a very helpful PoC by dawu@knownsec 404 team and Sunflower@knownsec 404 team (finder)
+
+
+## Potential RCE and/or information disclosure and/or information corruption with partial PUT ## { #CVE-2025-24813 }
+
+CVE-2025-24813 [\[CVE json\]](./CVE-2025-24813.cve.json) [\[OSV json\]](./CVE-2025-24813.osv.json)
+
+
+
+_Last updated: 2025-03-10T16:45:06.621Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.2
+* Apache Tomcat from 10.1.0-M1 through 10.1.34
+* Apache Tomcat from 9.0.0.M1 through 9.0.98
+
+
+### Description
+
+<p>Path Equivalence: 'file.Name' (Internal Dot) leading to&nbsp;<span style="background-color: var(--wht);">Remote Code Execution and/or Information disclosure&nbsp;</span><span style="background-color: var(--wht);">and/or malicious content added to uploaded files via write enabled&nbsp;</span><span style="background-color: var(--wht);">Default Servlet</span>&nbsp;in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.2, from 10.1.0-M1 through 10.1.34, from 9.0.0.M1 through 9.0.98.</p><div><p>If all of the following were true, a malicious user was able to view       security sensitive files and/or inject content into those files:<br>-&nbsp;<span style="background-color: var(--wht);">writes enabled for the default servlet (disabled by default)<br></span><span style="background-color: var(--wht);">- support for partial PUT (enabled by default)<br></span><span style="background-color: var(--wht);">- a target URL for security sensitive uploads that was a sub-directory of&nbsp;</span><span style="background-color: var(--wht);">a target URL for public uploads<br>-&nbsp;</span><span style="background-color: var(--wht);">attacker knowledge of the names of security sensitive files being&nbsp;</span><span style="background-color: var(--wht);">uploaded<br>-&nbsp;</span><span style="background-color: var(--wht);">the security sensitive files also being uploaded via partial PUT</span></p><p><span style="background-color: var(--wht);">If all of the following were true, a malicious user was able to</span>       perform remote code execution:<br><span style="background-color: var(--wht);">- writes enabled for the default servlet (disabled by default)<br>-&nbsp;</span><span style="background-color: var(--wht);">support for partial PUT (enabled by default)<br>-&nbsp;</span><span style="background-color: var(--wht);">application was using Tomcat's file based session persistence with the&nbsp;</span><span style="background-color: var(--wht);">default storage location<br>-&nbsp;</span><span style="background-color: var(--wht);">application included a library that may be leveraged in a&nbsp;</span><span style="background-color: var(--wht);">deserialization attack</span></p><p><span style="background-color: var(--wht);">Users are recommended to upgrade to version 11.0.3, 10.1.35 or 9.0.98, which fixes the issue.</span></p></div>
+
+### References
+* https://lists.apache.org/thread/j5fkjv2k477os90nczf2v9l61fb0kkgq
+
+
+### Credits
+* COSCO Shipping Lines DIC (finder)
+* sw0rd1ight (https://github.com/sw0rd1ight) (finder)

@@ -17,7 +17,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Airflow |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Allura |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Ambari |  [Apache Ambari Security Team](mailto:security@ambari.apache.org) | |
-| Apache Answer |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Answer](https://answer.apache.org/community/security-model) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://answer.apache.org/community/security/) |
 | [Apache Ant](https://ant.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache APISIX |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Portable Runtime (APR)](https://apr.apache.org/security_report.html) |  [Apache Security Team](mailto:security@apache.org) | |
@@ -60,9 +60,9 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Hop](https://hop.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache HTTP Server](https://httpd.apache.org/security_report.html) |  [Apache HTTP Server Security Team](mailto:security@httpd.apache.org) | [Advisories](https://httpd.apache.org/security/vulnerabilities_24.html) |
 | [Apache HugeGraph](https://hugegraph.apache.org/docs/guides/security) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://hugegraph.apache.org/docs/guides/security) |
-| Apache Ignite |  [Apache Ignite Security Team](mailto:security@ignite.apache.org) | |
+| [Apache Ignite](https://ignite.apache.org/docs/latest/security/security-model) |  [Apache Ignite Security Team](mailto:security@ignite.apache.org) | |
 | Apache Impala |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache InLong |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache InLong](https://inlong.apache.org/docs/next/security/) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache IoTDB |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Jackrabbit](https://jackrabbit.apache.org/jcr/security-reports.html) |  [Apache Jackrabbit Security Team](mailto:security@jackrabbit.apache.org) | [Advisories](https://jackrabbit.apache.org/jcr/security-reports.html) |
 | Apache James |  [Apache Security Team](mailto:security@apache.org) | |
@@ -90,7 +90,6 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Nutch |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache NuttX |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache OFBiz](https://ofbiz.apache.org/download.html#security) |  [Apache OFBiz Security Team](mailto:security@ofbiz.apache.org) | |
-| Apache Oozie |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache OpenMeetings](https://openmeetings.apache.org/security.html) |  [Apache OpenMeetings Security Team](mailto:security@openmeetings.apache.org) | |
 | [Apache OpenOffice](https://openoffice.apache.org/security) |  [Apache OpenOffice Security Team](mailto:security@openoffice.apache.org) | [Advisories](https://www.openoffice.org/security/bulletin.html) |
 | [Apache ORC](https://orc.apache.org/security/) |  [Apache ORC Security Team](mailto:security@orc.apache.org) | |

@@ -107,3 +107,28 @@ SSRF vulnerability in Edit Service Page of Apache Ranger UI in Apache Ranger Ver
 
 ### Credits
 * Gyujin (biz@web-us.kr) (finder)
+
+
+## Improper Neutralization of Formula Elements in a CSV File ## { #CVE-2024-55532 }
+
+CVE-2024-55532 [\[CVE json\]](./CVE-2024-55532.cve.json) [\[OSV json\]](./CVE-2024-55532.osv.json)
+
+
+
+_Last updated: 2025-03-03T16:17:53.766Z_
+
+### Affected
+
+* Apache Ranger through 2.5.0
+
+
+### Description
+
+Improper Neutralization of Formula Elements in Export CSV feature of Apache Ranger in Apache Ranger Version &lt; 2.6.0.<br>Users are recommended to upgrade to version 2.6.0, which fixes this issue.
+
+### References
+* https://cwiki.apache.org/confluence/display/RANGER/Vulnerabilities+found+in+Ranger
+
+
+### Credits
+* "김도균"<a2256014@naver.com> (finder)

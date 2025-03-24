@@ -877,6 +877,33 @@ _Last updated: 2024-07-26T09:11:09.740Z_
 * Min Chen (reporter)
 
 
+## Request smuggling via pipelining after a chunked message body ## { #CVE-2024-38311 }
+
+CVE-2024-38311 [\[CVE json\]](./CVE-2024-38311.cve.json) [\[OSV json\]](./CVE-2024-38311.osv.json)
+
+
+
+_Last updated: 2025-03-06T11:34:14.593Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.11
+* Apache Traffic Server from 9.0.0 through 9.2.8
+* Apache Traffic Server from 10.0.0 through 10.0.3
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache Traffic Server.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.8, from 10.0.0 through 10.0.3.</p><p>Users are recommended to upgrade to version 9.2.9 or 10.0.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/btofzws2yqskk2n7f01r3l1819x01023
+
+
+### Credits
+* Ben Kallus (reporter)
+
+
 ## Cache key plugin is vulnerable to cache poisoning attack ## { #CVE-2024-38479 }
 
 CVE-2024-38479 [\[CVE json\]](./CVE-2024-38479.cve.json) [\[OSV json\]](./CVE-2024-38479.osv.json)
@@ -944,3 +971,80 @@ _Last updated: 2024-11-14T09:55:41.120Z_
 
 ### Credits
 * Jeffrey BENCTEUX (reporter)
+
+
+## Intercept plugins are not access controlled ## { #CVE-2024-56195 }
+
+CVE-2024-56195 [\[CVE json\]](./CVE-2024-56195.cve.json) [\[OSV json\]](./CVE-2024-56195.osv.json)
+
+
+
+_Last updated: 2025-03-06T11:23:34.892Z_
+
+### Affected
+
+* Apache Traffic Server from 9.2.0 through 9.2.8
+* Apache Traffic Server from 10.0.0 through 10.0.3
+
+
+### Description
+
+<p>Improper Access Control vulnerability in Apache Traffic Server.</p><p>This issue affects Apache Traffic Server: from 9.2.0 through 9.2.8, from 10.0.0 through 10.0.3.</p><p>Users are recommended to upgrade to version 9.2.9 or 10.0.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/btofzws2yqskk2n7f01r3l1819x01023
+
+
+### Credits
+* Masaori Koshiba (reporter)
+
+
+## ACL is not fully compatible with older versions ## { #CVE-2024-56196 }
+
+CVE-2024-56196 [\[CVE json\]](./CVE-2024-56196.cve.json) [\[OSV json\]](./CVE-2024-56196.osv.json)
+
+
+
+_Last updated: 2025-03-06T11:21:46.767Z_
+
+### Affected
+
+* Apache Traffic Server from 10.0.0 through 10.0.3
+
+
+### Description
+
+<p>Improper Access Control vulnerability in Apache Traffic Server.</p><p>This issue affects Apache Traffic Server: from 10.0.0 through 10.0.3.</p><p>Users are recommended to upgrade to version 10.0.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/btofzws2yqskk2n7f01r3l1819x01023
+
+
+### Credits
+* Chris McFarlen (reporter)
+
+
+## Expect header field can unreasonably retain resource ## { #CVE-2024-56202 }
+
+CVE-2024-56202 [\[CVE json\]](./CVE-2024-56202.cve.json) [\[OSV json\]](./CVE-2024-56202.osv.json)
+
+
+
+_Last updated: 2025-03-06T11:09:09.771Z_
+
+### Affected
+
+* Apache Traffic Server from 9.0.0 through 9.2.8
+* Apache Traffic Server from 10.0.0 through 10.0.3
+
+
+### Description
+
+<p>Expected Behavior Violation vulnerability in Apache Traffic Server.</p><p>This issue affects Apache Traffic Server: from 9.0.0 through 9.2.8, from 10.0.0 through 10.0.3.</p><p>Users are recommended to upgrade to versions 9.2.9 or 10.0.4 or newer, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/btofzws2yqskk2n7f01r3l1819x01023
+
+
+### Credits
+* David Carlin (reporter)

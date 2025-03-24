@@ -1,5 +1,5 @@
 ---
-title: Reporting security issues in ASF infrastructure
+title: Reporting security issues in ASF code
 description: We strongly encourage you to report potential security vulnerabilities privately, before disclosing them in a public forum.
 ---
 
@@ -15,7 +15,7 @@ projects have published a 'Security Model' to clarify which guarantees can be
 expected. You can find the security model pages, as well as the email address
 you can use to report potential vulnerabilities, [here](/projects).
 
-Please send one plain-text, unencrypted, email for each vulnerability you are reporting. We may ask you to resubmit your report if you send it as an image, movie, HTML, or PDF attachment when you could as easily describe it with plain text.
+Please send one plain-text, unencrypted, email for each vulnerability you are reporting to [security@apache.org](mailto:security@apache.org). We may ask you to resubmit your report if you send it as an image, movie, HTML, or PDF attachment when you could as easily describe it with plain text.
 
 ## Handling
 
