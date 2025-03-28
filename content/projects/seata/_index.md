@@ -37,3 +37,54 @@ Deserialization of Untrusted Data vulnerability in Apache Seata.&nbsp;<br><br><d
 
 ### Credits
 * X1r0z(exp10it666123@gmail.com) (finder)
+
+
+## Deserialization of untrusted Data in jraft mode in Apache Seata Server ## { #CVE-2024-47552 }
+
+CVE-2024-47552 [\[CVE json\]](./CVE-2024-47552.cve.json) [\[OSV json\]](./CVE-2024-47552.osv.json)
+
+
+
+_Last updated: 2025-03-20T08:57:58.136Z_
+
+### Affected
+
+* Apache Seata (incubating) from 2.0.0 before 2.2.0
+
+
+### Description
+
+<p>Deserialization of Untrusted Data vulnerability in Apache Seata (incubating).</p><p>This issue affects Apache Seata (incubating): from 2.0.0 before 2.2.0.</p><p>Users are recommended to upgrade to version 2.2.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/652o82vzk9qrtgksk55cfgpbvdgtkch0
+
+
+### Credits
+* liuhuajin<liuhuajin1@huawei.com> (finder)
+* llqxc369@gmail.com (finder)
+
+
+## compression bomb attack in Apache Seata Server ## { #CVE-2024-54016 }
+
+CVE-2024-54016 [\[CVE json\]](./CVE-2024-54016.cve.json) [\[OSV json\]](./CVE-2024-54016.osv.json)
+
+
+
+_Last updated: 2025-03-20T08:59:24.157Z_
+
+### Affected
+
+* Apache Seata (incubating) through <=2.2.0
+
+
+### Description
+
+<p>Improper Handling of Highly Compressed Data (Data Amplification) vulnerability in Apache Seata (incubating).</p><p>This issue affects Apache Seata (incubating): through &lt;=2.2.0.</p><p>Users are recommended to upgrade to version 2.3.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/grn0x8tmssx07qc9z50lwgmrkwzrrhzg
+
+
+### Credits
+* yyjLF@proton.me (finder)

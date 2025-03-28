@@ -133,6 +133,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache TVM](https://tvm.apache.org/docs/reference/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache UIMA |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Unomi |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache VCL |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Velocity |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Wicket |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Web Services |  [Apache Security Team](mailto:security@apache.org) | |

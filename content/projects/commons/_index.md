@@ -436,3 +436,58 @@ _Last updated: 2024-10-03T11:32:46.805Z_
 
 ### Credits
 * CodeQL (tool)
+
+
+## Possible path traversal issue when using NameScope.DESCENDENT ## { #CVE-2025-27553 }
+
+CVE-2025-27553 [\[CVE json\]](./CVE-2025-27553.cve.json) [\[OSV json\]](./CVE-2025-27553.osv.json)
+
+
+
+_Last updated: 2025-03-23T14:16:17.945Z_
+
+### Affected
+
+* Apache Commons VFS before 2.10.0
+
+
+### Description
+
+<p>Relative Path Traversal vulnerability in Apache Commons VFS before 2.10.0.</p><span style="background-color: rgb(255, 255, 255);">The FileObject API in Commons VFS has a 'resolveFile' method that
+takes a 'scope' parameter. Specifying 'NameScope.DESCENDENT' promises that "an exception is thrown if the resolved file is not a descendent of
+the base file". However, when the path contains encoded ".."
+characters (for example, "%2E%2E/bar.txt"), it might return file objects that are not
+a descendent of the base file, without throwing an exception.</span><br><p>This issue affects Apache Commons VFS: before 2.10.0.</p><p>Users are recommended to upgrade to version 2.10.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/cnzqowyw9r2pl263cylmxhnvh41hyjcb
+
+
+### Credits
+* Arnout Engelen (finder)
+
+
+## Failing to find an FTP file can reveal the URI's password in an error message ## { #CVE-2025-30474 }
+
+CVE-2025-30474 [\[CVE json\]](./CVE-2025-30474.cve.json) [\[OSV json\]](./CVE-2025-30474.osv.json)
+
+
+
+_Last updated: 2025-03-23T14:15:49.617Z_
+
+### Affected
+
+* Apache Commons VFS before 2.10.0
+
+
+### Description
+
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Commons VFS.</p>The FtpFileObject class can throw an exception when a file is not found, revealing the original URI in its message, which may include a password. <span style="background-color: rgb(255, 255, 255);">The fix is to mask the password in the exception message</span><br><p>This issue affects Apache Commons VFS: before 2.10.0.</p><p>Users are recommended to upgrade to version 2.10.0, which fixes the issue.</p>
+
+### References
+* https://issues.apache.org/jira/browse/VFS-169
+* https://lists.apache.org/thread/w6ztgnbk6ccry3470x191g3xwrpgy6f4
+
+
+### Credits
+* Marek Šunda (finder)

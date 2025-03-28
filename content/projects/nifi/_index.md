@@ -440,3 +440,28 @@ Apache NiFi 1.10.0 through 2.0.0 are missing fine-grained authorization checking
 
 ### Credits
 * Matt Gilman (finder)
+
+
+## Potential Insertion of MongoDB Password in Provenance Record ## { #CVE-2025-27017 }
+
+CVE-2025-27017 [\[CVE json\]](./CVE-2025-27017.cve.json) [\[OSV json\]](./CVE-2025-27017.osv.json)
+
+
+
+_Last updated: 2025-03-12T16:19:42.969Z_
+
+### Affected
+
+* Apache NiFi from 1.13.0 through 2.2.0
+
+
+### Description
+
+<p><span style="background-color: rgb(252, 252, 252);">Apache NiFi 1.13.0 through 2.2.0 includes the username and password used to authenticate with MongoDB in the NiFi provenance events that MongoDB components generate during processing. An authorized user with read access to the provenance events of those processors may see the credentials information. Upgrading to Apache NiFi 2.3.0 is the recommended mitigation, which removes the credentials from provenance event records.</span></p>
+
+### References
+* https://lists.apache.org/thread/d4n5474jkhp82dvnht13pjtlfx7bhn5q
+
+
+### Credits
+* Robert Creese (finder)

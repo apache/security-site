@@ -2567,3 +2567,30 @@ Airflow versions before 2.10.3 have a vulnerability that allows authenticated us
 ### Credits
 * Saurabh Banawar (finder)
 * Shubham Raj (remediation developer)
+
+
+## SQL injection in MySQL provider core function ## { #CVE-2025-27018 }
+
+CVE-2025-27018 [\[CVE json\]](./CVE-2025-27018.cve.json) [\[OSV json\]](./CVE-2025-27018.osv.json)
+
+
+
+_Last updated: 2025-03-19T09:06:05.242Z_
+
+### Affected
+
+* Apache Airflow MySQL Provider before 6.2.0
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Airflow MySQL Provider.</p><span style="background-color: rgb(255, 255, 255);">When user triggered a DAG with dump_sql or load_sql functions they could pass a table parameter from a UI, that could cause SQL injection by running SQL that was not intended.<br>It could lead to data corruption, modification and others.</span><br><p>This issue affects Apache Airflow MySQL Provider: before 6.2.0.</p><p>Users are recommended to upgrade to version 6.2.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/airflow/pull/47254
+* https://github.com/apache/airflow/pull/47255
+* https://lists.apache.org/thread/m8ohgkwz4mq9njohf66sjwqjdy28gvzf
+
+
+### Credits
+* Vincent55 (DEVCORE Internship Program) (finder)

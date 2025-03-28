@@ -64,3 +64,28 @@ _Last updated: 2025-02-10T11:16:58.175Z_
 
 ### Credits
 * Viktor Mares (me@viktormares.com) (finder)
+
+
+## XSS in HTTP Webconsole Plugin ## { #CVE-2025-27867 }
+
+CVE-2025-27867 [\[CVE json\]](./CVE-2025-27867.cve.json) [\[OSV json\]](./CVE-2025-27867.osv.json)
+
+
+
+_Last updated: 2025-03-12T15:51:23.297Z_
+
+### Affected
+
+* Apache Felix HTTP Webconsole Plugin from 1.x through 1.2.0
+
+
+### Description
+
+<p>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache Felix HTTP Webconsole Plugin.</p><p>This issue affects Apache Felix HTTP Webconsole Plugin: from Version 1.X through 1.2.0.</p><p>Users are recommended to upgrade to version 1.2.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/y83f2rvm8bccr5ctgv7mzxd69p6f77dp
+
+
+### Credits
+* Viktor Mares (me@viktormares.com) (finder)

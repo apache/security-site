@@ -989,7 +989,7 @@ CVE-2025-24813 [\[CVE json\]](./CVE-2025-24813.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-03-10T16:45:06.621Z_
+_Last updated: 2025-03-18T16:09:43.998Z_
 
 ### Affected
 

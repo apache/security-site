@@ -36,3 +36,28 @@ There is a race condition in OozieSharelibCLI in Apache Oozie before version 5.2
 
 ### Credits
 * The Apache Oozie PMC would like to thank Jonathan Leitschuh for reporting the issue
+
+
+## XSS in Oozie Web Console ## { #CVE-2025-26796 }
+
+CVE-2025-26796 [\[CVE json\]](./CVE-2025-26796.cve.json) [\[OSV json\]](./CVE-2025-26796.osv.json)
+
+
+
+_Last updated: 2025-03-22T12:23:17.532Z_
+
+### Affected
+
+* Apache Oozie through *
+
+
+### Description
+
+<p>** UNSUPPORTED WHEN ASSIGNED ** Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache Oozie.</p><p>This issue affects Apache Oozie: all versions.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+
+### References
+* https://lists.apache.org/thread/fzrmsslnrpl0vpp0jr73fosmfjv4omdq
+
+
+### Credits
+* Nikhil Daf (finder)

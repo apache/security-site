@@ -305,3 +305,59 @@ _Last updated: 2024-11-04T09:27:04.256Z_
 
 ### Credits
 * XJB Security Team (reporter)
+
+
+## SSRF vulnerability in the diagnosis api ## { #CVE-2024-48944 }
+
+CVE-2024-48944 [\[CVE json\]](./CVE-2024-48944.cve.json) [\[OSV json\]](./CVE-2024-48944.osv.json)
+
+
+
+_Last updated: 2025-03-27T15:05:54.463Z_
+
+### Affected
+
+* Apache Kylin from 5.0.0 through 5.0.1
+
+
+### Description
+
+<p>Server-Side Request Forgery (SSRF) vulnerability in Apache Kylin. Through a kylin server, an attacker may forge a request to invoke "/kylin/api/xxx/diag" api on another internal host and possibly get leaked information. There are two preconditions: 1) The attacker has got admin access to a kylin server; 2) Another internal host has the "/kylin/api/xxx/diag" api
+
+endpoint open for service.<br></p><p>This issue affects Apache Kylin: from 5.0.0 
+through 
+
+5.0.1.</p><p>Users are recommended to upgrade to version 5.0.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/1xxxtdfh9hzqsqgb1pd9grb8hvqdyc9x
+
+
+### Credits
+* Zevi <linzmgx@gmail.com> (finder)
+
+
+## The remote code execution via jdbc url ## { #CVE-2025-30067 }
+
+CVE-2025-30067 [\[CVE json\]](./CVE-2025-30067.cve.json) [\[OSV json\]](./CVE-2025-30067.osv.json)
+
+
+
+_Last updated: 2025-03-27T15:06:34.995Z_
+
+### Affected
+
+* Apache Kylin from 4.0.0 through 5.0.1
+
+
+### Description
+
+<p>Improper Control of Generation of Code ('Code Injection') vulnerability in Apache Kylin. 
+If an attacker gets access to Kylin's system or project admin permission, the JDBC connection configuration maybe altered to execute arbitrary code from the remote. You are fine as long as the Kylin's system and project admin access is well protected.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.1.</p><p>Users are recommended to upgrade to version 5.0.2 or above, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/6j19pt8yoqfphf1lprtrzoqkvz1gwbnc
+
+
+### Credits
+* Pho3n1x <ph03n1x@qq.com> (finder)
