@@ -241,6 +241,24 @@ druid.auth.pac4j.cookiePassphrase as a precaution.<br><p></p>
 <ul>
 <li>L0ne1y (finder)</li>
 </ul>
+<h2 id="CVE-2025-27888">Server-Side Request Forgery and Cross-Site Scripting</h2>
+<p>CVE-2025-27888 <a href="./CVE-2025-27888.cve.json">[CVE json]</a> <a href="./CVE-2025-27888.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-03-24T07:41:49.543Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Druid before 31.0.2</li>
+<li>Apache Druid at 32.0.0</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>Severity: medium (5.8) / important</p><p>Server-Side Request Forgery (SSRF), Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'),&nbsp;URL Redirection to Untrusted Site ('Open Redirect') vulnerability in Apache Druid.</p><p>This issue affects all previous Druid versions.<br></p><p><span style="background-color: rgba(232, 232, 232, 0.04);">When using the Druid management proxy, a request that has a specially crafted URL could be used to redirect the request to an arbitrary server instead. This has the potential for XSS or XSRF. The user is required to be authenticated for this exploit. The management proxy is enabled in Druid's out-of-box configuration. It may be disabled to mitigate this vulnerability. If the management proxy is disabled, some web console features will not work properly, but core functionality is unaffected.<br></span></p><p>Users are recommended to upgrade to Druid 31.0.2 or Druid 32.0.1, which fixes the issue.</p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/c0qo989pwtrqkjv6xfr0c30dnjq8vf39">https://lists.apache.org/thread/c0qo989pwtrqkjv6xfr0c30dnjq8vf39</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>XBOW (reporter)</li>
+</ul>
 
   
 </div>

@@ -395,6 +395,45 @@ The default in version 3.9.0 is now false to ignore such hosts, as cURL does. Se
 <ul>
 <li>CodeQL (tool)</li>
 </ul>
+<h2 id="CVE-2025-27553">Possible path traversal issue when using NameScope.DESCENDENT</h2>
+<p>CVE-2025-27553 <a href="./CVE-2025-27553.cve.json">[CVE json]</a> <a href="./CVE-2025-27553.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-03-23T14:16:17.945Z</em></p>
+<h3 id="affected-16">Affected</h3>
+<ul>
+<li>Apache Commons VFS before 2.10.0</li>
+</ul>
+<h3 id="description-16">Description</h3>
+<p>Relative Path Traversal vulnerability in Apache Commons VFS before 2.10.0.</p><span style="background-color: rgb(255, 255, 255);">The FileObject API in Commons VFS has a 'resolveFile' method that
+takes a 'scope' parameter. Specifying 'NameScope.DESCENDENT' promises that "an exception is thrown if the resolved file is not a descendent of
+the base file". However, when the path contains encoded ".."
+characters (for example, "%2E%2E/bar.txt"), it might return file objects that are not
+a descendent of the base file, without throwing an exception.</span><br><p>This issue affects Apache Commons VFS: before 2.10.0.</p><p>Users are recommended to upgrade to version 2.10.0, which fixes the issue.</p>
+<h3 id="references-16">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/cnzqowyw9r2pl263cylmxhnvh41hyjcb">https://lists.apache.org/thread/cnzqowyw9r2pl263cylmxhnvh41hyjcb</a></li>
+</ul>
+<h3 id="credits-13">Credits</h3>
+<ul>
+<li>Arnout Engelen (finder)</li>
+</ul>
+<h2 id="CVE-2025-30474">Failing to find an FTP file can reveal the URI&rsquo;s password in an error message</h2>
+<p>CVE-2025-30474 <a href="./CVE-2025-30474.cve.json">[CVE json]</a> <a href="./CVE-2025-30474.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-03-23T14:15:49.617Z</em></p>
+<h3 id="affected-17">Affected</h3>
+<ul>
+<li>Apache Commons VFS before 2.10.0</li>
+</ul>
+<h3 id="description-17">Description</h3>
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Commons VFS.</p>The FtpFileObject class can throw an exception when a file is not found, revealing the original URI in its message, which may include a password. <span style="background-color: rgb(255, 255, 255);">The fix is to mask the password in the exception message</span><br><p>This issue affects Apache Commons VFS: before 2.10.0.</p><p>Users are recommended to upgrade to version 2.10.0, which fixes the issue.</p>
+<h3 id="references-17">References</h3>
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/VFS-169">https://issues.apache.org/jira/browse/VFS-169</a></li>
+<li><a href="https://lists.apache.org/thread/w6ztgnbk6ccry3470x191g3xwrpgy6f4">https://lists.apache.org/thread/w6ztgnbk6ccry3470x191g3xwrpgy6f4</a></li>
+</ul>
+<h3 id="credits-14">Credits</h3>
+<ul>
+<li>Marek Šunda (finder)</li>
+</ul>
 
   
 </div>

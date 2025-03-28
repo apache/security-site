@@ -399,6 +399,23 @@ JavaScript code can be executed within the session context of the authenticated 
 <ul>
 <li>Matt Gilman (finder)</li>
 </ul>
+<h2 id="CVE-2025-27017">Potential Insertion of MongoDB Password in Provenance Record</h2>
+<p>CVE-2025-27017 <a href="./CVE-2025-27017.cve.json">[CVE json]</a> <a href="./CVE-2025-27017.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-03-12T16:19:42.969Z</em></p>
+<h3 id="affected-16">Affected</h3>
+<ul>
+<li>Apache NiFi from 1.13.0 through 2.2.0</li>
+</ul>
+<h3 id="description-16">Description</h3>
+<p><span style="background-color: rgb(252, 252, 252);">Apache NiFi 1.13.0 through 2.2.0 includes the username and password used to authenticate with MongoDB in the NiFi provenance events that MongoDB components generate during processing. An authorized user with read access to the provenance events of those processors may see the credentials information. Upgrading to Apache NiFi 2.3.0 is the recommended mitigation, which removes the credentials from provenance event records.</span></p>
+<h3 id="references-16">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/d4n5474jkhp82dvnht13pjtlfx7bhn5q">https://lists.apache.org/thread/d4n5474jkhp82dvnht13pjtlfx7bhn5q</a></li>
+</ul>
+<h3 id="credits-14">Credits</h3>
+<ul>
+<li>Robert Creese (finder)</li>
+</ul>
 
   
 </div>

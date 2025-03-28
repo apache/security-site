@@ -308,6 +308,44 @@ This issue affects Apache Kylin 2 version 2.6.6 and prior versions; Apache Kylin
 <ul>
 <li>XJB Security Team (reporter)</li>
 </ul>
+<h2 id="CVE-2024-48944">SSRF vulnerability in the diagnosis api</h2>
+<p>CVE-2024-48944 <a href="./CVE-2024-48944.cve.json">[CVE json]</a> <a href="./CVE-2024-48944.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-03-27T15:05:54.463Z</em></p>
+<h3 id="affected-11">Affected</h3>
+<ul>
+<li>Apache Kylin from 5.0.0 through 5.0.1</li>
+</ul>
+<h3 id="description-11">Description</h3>
+<p>Server-Side Request Forgery (SSRF) vulnerability in Apache Kylin. Through a kylin server, an attacker may forge a request to invoke "/kylin/api/xxx/diag" api on another internal host and possibly get leaked information. There are two preconditions: 1) The attacker has got admin access to a kylin server; 2) Another internal host has the "/kylin/api/xxx/diag" api
+<p>endpoint open for service.<br></p><p>This issue affects Apache Kylin: from 5.0.0
+through</p>
+<p>5.0.1.</p><p>Users are recommended to upgrade to version 5.0.2, which fixes the issue.</p></p>
+<h3 id="references-11">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/1xxxtdfh9hzqsqgb1pd9grb8hvqdyc9x">https://lists.apache.org/thread/1xxxtdfh9hzqsqgb1pd9grb8hvqdyc9x</a></li>
+</ul>
+<h3 id="credits-11">Credits</h3>
+<ul>
+<li>Zevi <a href="mailto:linzmgx@gmail.com">linzmgx@gmail.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2025-30067">The remote code execution via jdbc url</h2>
+<p>CVE-2025-30067 <a href="./CVE-2025-30067.cve.json">[CVE json]</a> <a href="./CVE-2025-30067.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-03-27T15:06:34.995Z</em></p>
+<h3 id="affected-12">Affected</h3>
+<ul>
+<li>Apache Kylin from 4.0.0 through 5.0.1</li>
+</ul>
+<h3 id="description-12">Description</h3>
+<p>Improper Control of Generation of Code ('Code Injection') vulnerability in Apache Kylin. 
+If an attacker gets access to Kylin's system or project admin permission, the JDBC connection configuration maybe altered to execute arbitrary code from the remote. You are fine as long as the Kylin's system and project admin access is well protected.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.1.</p><p>Users are recommended to upgrade to version 5.0.2 or above, which fixes the issue.</p>
+<h3 id="references-12">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/6j19pt8yoqfphf1lprtrzoqkvz1gwbnc">https://lists.apache.org/thread/6j19pt8yoqfphf1lprtrzoqkvz1gwbnc</a></li>
+</ul>
+<h3 id="credits-12">Credits</h3>
+<ul>
+<li>Pho3n1x <a href="mailto:ph03n1x@qq.com">ph03n1x@qq.com</a> (finder)</li>
+</ul>
 
   
 </div>

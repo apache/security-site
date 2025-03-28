@@ -190,6 +190,50 @@
 <li>Federico Mariani From Apache Software Foundation (finder)</li>
 <li>Andrea Cosentino from Apache Software Foundation (finder)</li>
 </ul>
+<h2 id="CVE-2025-27636">Camel Message Header Injection via Improper Filtering</h2>
+<p>CVE-2025-27636 <a href="./CVE-2025-27636.cve.json">[CVE json]</a> <a href="./CVE-2025-27636.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-03-17T14:20:17.925Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Camel from 4.10.0 before 4.10.2</li>
+<li>Apache Camel from 4.8.0 before 4.8.5</li>
+<li>Apache Camel from 3.10.0 before 3.22.4</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Bypass/Injection vulnerability in Apache Camel components under particular conditions.</p><p>This issue affects Apache Camel: from 4.10.0 through &lt;= 4.10.1, from 4.8.0 through &lt;= 4.8.4, from 3.10.0 through &lt;= 3.22.3.</p><p>Users are recommended to upgrade to version 4.10.2 for 4.10.x LTS, 4.8.5 for 4.8.x LTS and 3.22.4 for 3.x releases.</p><div></div><div>This vulnerability is present in Camel's default incoming header filter, that allows an attacker to include Camel specific</div><div>headers that for some Camel components can alter the behaviours such as the camel-bean component, to call another method</div><div>on the bean, than was coded in the application. In the camel-jms component, then a malicious header can be used to send</div><div>the message to another queue (on the same broker) than was coded in the application. This could also be seen by using the camel-exec component</div><div><br></div><div>The attacker would need to inject custom headers, such as HTTP protocols. So if you have Camel applications that are</div><div>directly connected to the internet via HTTP, then an attacker could include malicious HTTP headers in the HTTP requests</div><div>that are send to the Camel application.</div><div><br></div>All the known Camel HTTP component such as camel-servlet, camel-jetty, camel-undertow, camel-platform-http, and camel-netty-http would be vulnerable out of the box.<br><br>In these conditions an attacker could be able to forge a Camel header name and make the bean component invoking other methods in the same bean.<br><br><div>In terms of usage of the default header filter strategy the list of components using that is: <br></div><div><div><ul><li>camel-activemq</li><li>camel-activemq6</li><li>camel-amqp</li><li>camel-aws2-sqs</li><li>camel-azure-servicebus</li><li>camel-cxf-rest</li><li>camel-cxf-soap</li><li>camel-http</li><li>camel-jetty</li><li>camel-jms</li><li>camel-kafka</li><li>camel-knative</li><li>camel-mail</li><li>camel-nats</li><li>camel-netty-http</li><li>camel-platform-http</li><li>camel-rest</li><li>camel-sjms</li><li>camel-spring-rabbitmq</li><li>camel-stomp</li><li>camel-tahu</li><li>camel-undertow</li><li>camel-xmpp</li></ul></div></div><div>The vulnerability arises due to a bug in the default filtering mechanism that only blocks headers starting with "Camel", "camel", or "org.apache.camel.".&nbsp;</div><br><div><span style="background-color: var(--wht);">Mitigation:&nbsp;</span>You can easily work around this in your Camel applications by removing the&nbsp;headers in your Camel routes. There are many ways of doing this, also&nbsp;globally or per route. This means you could use the removeHeaders EIP, to filter out anything like "cAmel, cAMEL" etc, or in general everything not starting with "Camel", "camel" or "org.apache.camel.".&nbsp;<br></div><br>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/l3zcg3vts88bmc7w8172wkgw610y693z">https://lists.apache.org/thread/l3zcg3vts88bmc7w8172wkgw610y693z</a></li>
+<li><a href="https://issues.apache.org/jira/browse/CAMEL-21828">https://issues.apache.org/jira/browse/CAMEL-21828</a></li>
+<li><a href="https://camel.apache.org/security/CVE-2025-27636.html">https://camel.apache.org/security/CVE-2025-27636.html</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Mark Thorson (finder)</li>
+</ul>
+<h2 id="CVE-2025-29891">Camel Message Header Injection through request parameters</h2>
+<p>CVE-2025-29891 <a href="./CVE-2025-29891.cve.json">[CVE json]</a> <a href="./CVE-2025-29891.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-03-13T08:19:35.754Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Camel from 4.10.0 before 4.10.2</li>
+<li>Apache Camel from 4.8.0 before 4.8.5</li>
+<li>Apache Camel from 3.10.0 before 3.22.4</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Bypass/Injection vulnerability in Apache Camel.</p><p>This issue affects Apache Camel: from 4.10.0 before 4.10.2, from 4.8.0 before 4.8.5, from 3.10.0 before 3.22.4.</p><p>Users are recommended to upgrade to version 4.10.2 for 4.10.x LTS, 4.8.5 for 4.8.x LTS and 3.22.4 for 3.x releases.</p><p>This vulnerability is present in Camel's default incoming header filter, that allows an attacker to include Camel specific headers that for some Camel components can alter the behaviours such as the camel-bean component, or the camel-exec component.</p><p>If you have Camel applications that are directly connected to the internet via HTTP, then an attacker&nbsp;<span style="background-color: rgb(255, 255, 255);">could include parameters in the HTTP requests that are sent to the Camel application that get translated into headers.</span>&nbsp;</p><p>The headers could be both provided as request parameters for an HTTP methods invocation or as part of the payload of the HTTP methods invocation.</p><p><span style="background-color: var(--wht);">All the known Camel HTTP component such as camel-servlet, camel-jetty, camel-undertow, camel-platform-http, and camel-netty-http would be vulnerable out of the box.</span></p><span style="background-color: rgb(255, 255, 255);">This CVE is related to the CVE-2025-27636: while they have the same root cause and are fixed with the same fix, CVE-2025-27636 was assumed to only be exploitable if an attacker could add malicious HTTP headers, while we have now determined that it is also exploitable via HTTP parameters. Like in CVE-2025-27636, exploitation is only possible if the Camel route uses particular vulnerable components.</span><p></p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://camel.apache.org/security/CVE-2025-27636.html">https://camel.apache.org/security/CVE-2025-27636.html</a></li>
+<li><a href="https://camel.apache.org/security/CVE-2025-29891.html">https://camel.apache.org/security/CVE-2025-29891.html</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Citi Cyber Security Operations (finder)</li>
+<li>Akamai Security Intelligence Group (SIG) (reporter)</li>
+<li>Mark Thorson of AT&amp;T (finder)</li>
+<li>Mark Thorson of AT&amp;T (reporter)</li>
+</ul>
 
   
 </div>
