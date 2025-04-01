@@ -268,3 +268,32 @@ In Apache ActiveMQ 6.x, the default configuration doesn't secure the API web con
 
 ### Credits
 * Martin Zeissig (finder)
+
+
+## Address routing-type can be updated by user without the createAddress permission ## { #CVE-2025-27427 }
+
+CVE-2025-27427 [\[CVE json\]](./CVE-2025-27427.cve.json) [\[OSV json\]](./CVE-2025-27427.osv.json)
+
+
+
+_Last updated: 2025-04-01T07:26:53.803Z_
+
+### Affected
+
+* Apache ActiveMQ Artemis from 2.0.0 through 2.39.0
+
+
+### Description
+
+<p>A vulnerability exists in Apache ActiveMQ Artemis whereby a user with the createDurableQueue or createNonDurableQueue permission on an address can augment the routing-type supported by that address even if said user doesn't have the createAddress permission for that particular address. When combined with the send permission and automatic queue creation a user could successfully send a message with a routing-type not supported by the address when that message should actually be rejected on the basis that the user doesn't have permission to change the routing-type of the address.</p><p>This issue affects Apache ActiveMQ Artemis from 2.0.0 through 2.39.0.</p><p>Users are recommended to upgrade to version 2.40.0 which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/8dzlm2vkqphyrnkrby8r8kzndsm5o6x8
+
+
+### Credits
+* Eojin Lee <djwls7179@gmail.com> (reporter)
+* Dain Lee <ledain5094@gmail.com> (finder)
+* WooJin Park <1203kids@gmail.com> (finder)
+* MinJung Lee <whitney2319@gmail.com> (finder)
+* SeChang Oh <osc010524@gmail.com> (finder)
