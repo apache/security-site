@@ -293,6 +293,27 @@ which fixes this issue.</div>
 <ul>
 <li>Martin Zeissig (finder)</li>
 </ul>
+<h2 id="CVE-2025-27427">Address routing-type can be updated by user without the createAddress permission</h2>
+<p>CVE-2025-27427 <a href="./CVE-2025-27427.cve.json">[CVE json]</a> <a href="./CVE-2025-27427.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-04-01T07:26:53.803Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache ActiveMQ Artemis from 2.0.0 through 2.39.0</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>A vulnerability exists in Apache ActiveMQ Artemis whereby a user with the createDurableQueue or createNonDurableQueue permission on an address can augment the routing-type supported by that address even if said user doesn't have the createAddress permission for that particular address. When combined with the send permission and automatic queue creation a user could successfully send a message with a routing-type not supported by the address when that message should actually be rejected on the basis that the user doesn't have permission to change the routing-type of the address.</p><p>This issue affects Apache ActiveMQ Artemis from 2.0.0 through 2.39.0.</p><p>Users are recommended to upgrade to version 2.40.0 which fixes the issue.</p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/8dzlm2vkqphyrnkrby8r8kzndsm5o6x8">https://lists.apache.org/thread/8dzlm2vkqphyrnkrby8r8kzndsm5o6x8</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>Eojin Lee <a href="mailto:djwls7179@gmail.com">djwls7179@gmail.com</a> (reporter)</li>
+<li>Dain Lee <a href="mailto:ledain5094@gmail.com">ledain5094@gmail.com</a> (finder)</li>
+<li>WooJin Park <a href="mailto:1203kids@gmail.com">1203kids@gmail.com</a> (finder)</li>
+<li>MinJung Lee <a href="mailto:whitney2319@gmail.com">whitney2319@gmail.com</a> (finder)</li>
+<li>SeChang Oh <a href="mailto:osc010524@gmail.com">osc010524@gmail.com</a> (finder)</li>
+</ul>
 
   
 </div>
