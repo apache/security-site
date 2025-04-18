@@ -65,4 +65,4 @@ comes mainly from the transparency that we practice in all aspects of developmen
 
 # Attic
 
-The Attic contains historic code that is no longer fit for purpose. It is code that can no longer be used as it was originally intended. A project that was moved to the [Attic](https://attic.apache.org) is not subject to our various security- and release-policies. It is no longer considered a release by the Apache Software Foundation.
+The [Attic](https://attic.apache.org) contains historic code that is no longer maintained. We make no guarantees on whether it can still be used as it was originally intended. A project that was moved to the [Attic](https://attic.apache.org) is not subject to our various security- and release-policies. It is no longer considered a release by the Apache Software Foundation.
