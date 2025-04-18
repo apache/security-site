@@ -67,5 +67,5 @@ comes mainly from the transparency that we practice in all aspects of developmen
 
 The [Attic](https://attic.apache.org) contains historic code that is no longer maintained.
 We make no guarantees as to whether it can still be used as it was originally intended.
-A project in the [Attic](https://attic.apache.org) is not subject to our various security- and release-policies.
-It is no longer considered a release by the Apache Software Foundation, is not subject to any oversight, and may no longer be fit for purpose.
+A project in the [Attic](https://attic.apache.org) is not subject to our various security- and release policies.
+It is not subject to any oversight, its releases are no longer considered releases by the Apache Software Foundation, and they may no longer be fit for purpose.
