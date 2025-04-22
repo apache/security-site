@@ -66,7 +66,7 @@ comes mainly from the transparency that we practice in all aspects of developmen
 # Attic
 
 The [Attic](https://attic.apache.org) contains historic code that is no longer maintained.
-We make no guarantees as to whether the code still works as originally intended we do not release new versions.
+We make no guarantees as to whether the code still works as originally intended and we do not release new versions.
 We no longer track security issues and other bugs for this code, and we will not provide fixes.
 
 In other words, a project in the [Attic](https://attic.apache.org) is not subject to our various security- and release policies.
