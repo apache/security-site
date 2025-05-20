@@ -102,10 +102,30 @@
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache ORC? You can read more about the projects&rsquo; security policy on their <a href="https://orc.apache.org/security/">security page</a>, and email your report to the  <a href="mailto:security@orc.apache.org">Apache ORC Security Team</a>.</p>
+<p>Do you want disclose a potential security issue for Apache ORC? You can read more about the projects&rsquo; security policy on their <a href="https://orc.apache.org/security/">security page</a>, and email your report to the <a href="mailto:security@orc.apache.org">Apache ORC Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
-<p>This page is experimental: it provides consistent access to the advisories for Apache ORC since 2023 in text and CVE JSON format. It may lag slighly behind the official CVE publications. It may also lack details found on the <a href="https://orc.apache.org/security/">project security page</a>.</p>
-<p>If you have any feedback on how you would like this data to be presented, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://orc.apache.org/security/">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2025-47436">Potential Heap Buffer Overflow during C++ LZO Decompression</h2>
+<p>CVE-2025-47436 <a href="./CVE-2025-47436.cve.json">[CVE json]</a> <a href="./CVE-2025-47436.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-05-14T13:11:33.684Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache ORC through 1.8.8</li>
+<li>Apache ORC from 1.9.0 through 1.9.5</li>
+<li>Apache ORC from 2.0.0 through 2.0.4</li>
+<li>Apache ORC from 2.1.0 through 2.1.1</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Heap-based Buffer Overflow vulnerability in Apache ORC.</p><p>A vulnerability has been identified in the ORC C++ LZO decompression logic, where specially crafted malformed ORC files can cause the decompressor to&nbsp;<span style="background-color: rgb(255, 255, 255);">allocate a 250-byte buffer but then attempts to copy 295 bytes into it. It causes memory corruption.</span></p><p>This issue affects Apache ORC C++ library: through 1.8.8, from 1.9.0 through 1.9.5, from 2.0.0 through 2.0.4, from 2.1.0 through 2.1.1.</p><p>Users are recommended to upgrade to version 1.8.9, 1.9.6, 2.0.5, and 2.1.2, which fix the issue.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://orc.apache.org/security/CVE-2025-47436/">https://orc.apache.org/security/CVE-2025-47436/</a></li>
+<li><a href="https://lists.apache.org/thread/kd6tlv8fs5jybmsgxr4vrkdxyc866wrn">https://lists.apache.org/thread/kd6tlv8fs5jybmsgxr4vrkdxyc866wrn</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Jason Villaluna (reporter)</li>
+</ul>
 
   
 </div>

@@ -1598,7 +1598,7 @@ resulting in a denial of service, information disclosure or remote code executio
 </ul>
 <h2 id="CVE-2024-27906">Dag Code and Import Error Permissions Ignored</h2>
 <p>CVE-2024-27906 <a href="./CVE-2024-27906.cve.json">[CVE json]</a> <a href="./CVE-2024-27906.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-02-29T11:02:16.638Z</em></p>
+<p><em>Last updated: 2025-05-06T13:12:04.279Z</em></p>
 <h3 id="affected-81">Affected</h3>
 <ul>
 <li>Apache Airflow before 2.8.2</li>
@@ -1896,6 +1896,24 @@ resulting in a denial of service, information disclosure or remote code executio
 <h3 id="credits-92">Credits</h3>
 <ul>
 <li>Vincent55 (DEVCORE Internship Program) (finder)</li>
+</ul>
+<h2 id="CVE-2025-30473">Remote Code Execution via Sql Injection</h2>
+<p>CVE-2025-30473 <a href="./CVE-2025-30473.cve.json">[CVE json]</a> <a href="./CVE-2025-30473.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-04-07T08:31:55.441Z</em></p>
+<h3 id="affected-97">Affected</h3>
+<ul>
+<li>Apache Airflow Common SQL Provider before 1.24.1</li>
+</ul>
+<h3 id="description-97">Description</h3>
+<p>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Airflow Common SQL Provider.<br><br><span style="background-color: rgb(255, 255, 255);">When using the partition clause in SQLTableCheckOperator as parameter (which was a recommended pattern), Authenticated UI User could inject arbitrary SQL command when triggering DAG exposing partition_clause to the user.<br></span><span style="background-color: rgb(255, 255, 255);">This allowed the DAG Triggering user to escalate privileges to execute those arbitrary commands which they normally would not have.</span><br></p><p>This issue affects Apache Airflow Common SQL Provider: before 1.24.1.</p><p>Users are recommended to upgrade to version 1.24.1, which fixes the issue.</p>
+<h3 id="references-97">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/48098">https://github.com/apache/airflow/pull/48098</a></li>
+<li><a href="https://lists.apache.org/thread/53klkv790cylqcop0350w7nfq1y6h0t2">https://lists.apache.org/thread/53klkv790cylqcop0350w7nfq1y6h0t2</a></li>
+</ul>
+<h3 id="credits-93">Credits</h3>
+<ul>
+<li>nxczje (reporter)</li>
 </ul>
 
   

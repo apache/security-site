@@ -802,6 +802,43 @@ parameter set to the non-default value of false) may need additional configurati
 <li>COSCO Shipping Lines DIC (finder)</li>
 <li>sw0rd1ight (<a href="https://github.com/sw0rd1ight">https://github.com/sw0rd1ight</a>) (finder)</li>
 </ul>
+<h2 id="CVE-2025-31650">DoS via malformed HTTP/2 PRIORITY_UPDATE frame</h2>
+<p>CVE-2025-31650 <a href="./CVE-2025-31650.cve.json">[CVE json]</a> <a href="./CVE-2025-31650.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-05-06T13:12:48.728Z</em></p>
+<h3 id="affected-38">Affected</h3>
+<ul>
+<li>Apache Tomcat from 9.0.76 through 9.0.102</li>
+<li>Apache Tomcat from 10.1.10 through 10.1.39</li>
+<li>Apache Tomcat from 11.0.0-M2 through 11.0.5</li>
+</ul>
+<h3 id="description-38">Description</h3>
+<p>Improper Input Validation vulnerability in Apache Tomcat. Incorrect error handling for some invalid HTTP priority headers resulted in incomplete clean-up of the failed request which created a memory leak. A large number of such requests could trigger an OutOfMemoryException resulting in a denial of service.</p><p>This issue affects Apache Tomcat: from 9.0.76 through 9.0.102, from 10.1.10 through 10.1.39, from 11.0.0-M2 through 11.0.5.</p><p>Users are recommended to upgrade to version 9.0.104, 10.1.40 or 11.0.6 which fix the issue.</p>
+<h3 id="references-38">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/j6zzk0y3yym9pzfzkq5vcyxzz0yzh826">https://lists.apache.org/thread/j6zzk0y3yym9pzfzkq5vcyxzz0yzh826</a></li>
+</ul>
+<h2 id="CVE-2025-31651">Bypass of rules in Rewrite Valve</h2>
+<p>CVE-2025-31651 <a href="./CVE-2025-31651.cve.json">[CVE json]</a> <a href="./CVE-2025-31651.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-05-06T13:13:07.142Z</em></p>
+<h3 id="affected-39">Affected</h3>
+<ul>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.5</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.39</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.102</li>
+</ul>
+<h3 id="description-39">Description</h3>
+<p>Improper Neutralization of Escape, Meta, or Control Sequences vulnerability in Apache Tomcat.&nbsp;For a subset of unlikely rewrite rule configurations, it was possible 
+for a specially crafted request to bypass some rewrite rules. If those 
+rewrite rules effectively enforced security constraints, those 
+constraints could be bypassed.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.5, from 10.1.0-M1 through 10.1.39, from 9.0.0.M1 through 9.0.102.</p><p>Users are recommended to upgrade to version [FIXED_VERSION], which fixes the issue.</p>
+<h3 id="references-39">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/list.html?announce@tomcat.apache.org">https://lists.apache.org/list.html?announce@tomcat.apache.org</a></li>
+</ul>
+<h3 id="credits-21">Credits</h3>
+<ul>
+<li>COSCO Shipping Lines DIC (finder)</li>
+</ul>
 
   
 </div>

@@ -234,6 +234,28 @@
 <li>Mark Thorson of AT&amp;T (finder)</li>
 <li>Mark Thorson of AT&amp;T (reporter)</li>
 </ul>
+<h2 id="CVE-2025-30177">Camel-Undertow Message Header Injection via Improper Filtering</h2>
+<p>CVE-2025-30177 <a href="./CVE-2025-30177.cve.json">[CVE json]</a> <a href="./CVE-2025-30177.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-04-01T16:32:28.939Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Camel from 4.10.0 before 4.10.3</li>
+<li>Apache Camel from 4.8.0 before 4.8.6</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>Bypass/Injection vulnerability in Apache Camel in Camel-Undertow component under particular conditions.</p><p>This issue affects Apache Camel: from 4.10.0 before 4.10.3, from 4.8.0 before 4.8.6.</p>Users are recommended to upgrade to version 4.10.3 for 4.10.x LTS and 4.8.6 for 4.8.x LTS.<br><br><div>Camel undertow component is vulnerable to Camel message header injection, in particular the custom header filter strategy used by the component only filter the "out" direction, while it doesn't filter the "in" direction.</div><br>This allows an attacker to include Camel specific headers that for some Camel components can alter the behaviour such as the camel-bean component, or the camel-exec component.<br><br>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://camel.apache.org/security/CVE-2025-27636.html">https://camel.apache.org/security/CVE-2025-27636.html</a></li>
+<li><a href="https://camel.apache.org/security/CVE-2025-29891.html">https://camel.apache.org/security/CVE-2025-29891.html</a></li>
+<li><a href="https://lists.apache.org/thread/dj79zdgw01j337lr9gvyy4sv8xfyw8py">https://lists.apache.org/thread/dj79zdgw01j337lr9gvyy4sv8xfyw8py</a></li>
+<li><a href="https://camel.apache.org/security/CVE-2025-30177.html">https://camel.apache.org/security/CVE-2025-30177.html</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>Mark Thorson of AT&amp;T (finder)</li>
+<li>Mark Thorson of AT&amp;T (reporter)</li>
+</ul>
 
   
 </div>
