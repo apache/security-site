@@ -116,3 +116,34 @@ _Last updated: 2024-10-11T21:53:17.272Z_
 
 ### Credits
 * Chi Tran from EEVEE (finder)
+
+
+## Insufficient Session Expiration on Password Change ## { #CVE-2025-24859 }
+
+CVE-2025-24859 [\[CVE json\]](./CVE-2025-24859.cve.json) [\[OSV json\]](./CVE-2025-24859.osv.json)
+
+
+
+_Last updated: 2025-04-18T15:26:03.795Z_
+
+### Affected
+
+* Apache Roller from 1.0.0 before 6.1.5
+
+
+### Description
+
+<p></p><pre><code>A session management vulnerability exists in Apache Roller before version 6.1.5 where active user sessions are not properly invalidated after password changes. When a user's password is changed, either by the user themselves or by an administrator, existing sessions remain active and usable. This allows continued access to the application through old sessions even after password changes, potentially enabling unauthorized access if credentials were compromised.
+
+This issue affects Apache Roller versions up to and including 6.1.4.
+
+The vulnerability is fixed in Apache Roller 6.1.5 by implementing centralized session management that properly invalidates all active sessions when passwords are changed or users are disabled.
+</code></pre><br><br><p></p>
+
+### References
+* https://lists.apache.org/thread/vxv52vdr8nhtjlj6v02w43fdvo0cxw23
+* https://lists.apache.org/thread/4j906k16v21kdx8hk87gl7663sw7lg7f
+
+
+### Credits
+* Haining Meng (finder)

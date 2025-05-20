@@ -37,3 +37,28 @@ _Last updated: 2025-02-07T12:46:01.975Z_
 
 ### Credits
 * Sergey Volosatov (reporter)
+
+
+## The server was crashed by the negative offset ## { #CVE-2025-26413 }
+
+CVE-2025-26413 [\[CVE json\]](./CVE-2025-26413.cve.json) [\[OSV json\]](./CVE-2025-26413.osv.json)
+
+
+
+_Last updated: 2025-04-22T10:35:30.358Z_
+
+### Affected
+
+* Apache Kvrocks through 2.11.1
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache Kvrocks.</p>The SETRANGE command didn't check if the `offset` input is a positive integer and use it as an index<br>of a string. So it will cause the server to crash due to its index is&nbsp; out of range.<br><p>This issue affects Apache Kvrocks: through 2.11.1.</p><p>Users are recommended to upgrade to version 2.12.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/388743qrr8yq8qm0go8tls6rf1kog8dw
+
+
+### Credits
+* ankki-zsyang, Shenzhen Ankki Technologies Co., Ltd. (reporter)

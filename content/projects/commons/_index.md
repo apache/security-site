@@ -491,3 +491,26 @@ _Last updated: 2025-03-23T14:15:49.617Z_
 
 ### Credits
 * Marek Šunda (finder)
+
+
+## Uncontrolled Resource Consumption when loading untrusted configurations in 1.x ## { #CVE-2025-46392 }
+
+CVE-2025-46392 [\[CVE json\]](./CVE-2025-46392.cve.json) [\[OSV json\]](./CVE-2025-46392.osv.json)
+
+
+
+_Last updated: 2025-05-09T09:34:18.561Z_
+
+### Affected
+
+* Apache Commons Configuration from 1 before 2.0.0
+
+
+### Description
+
+<p>Uncontrolled Resource Consumption vulnerability in Apache Commons Configuration 1.x.</p><p>There are a number of issues in Apache Commons Configuration 1.x that allow excessive resource consumption when loading untrusted configurations or using unexpected usage patterns. The Apache Commons Configuration team does not intend to fix these issues in 1.x. Apache Commons Configuration 1.x is still safe to use in scenario's where you only load trusted configurations. <br></p><p>Users that load untrusted configurations or give attackers control over usage patterns are recommended to upgrade to the 2.x version line, which fixes these issues. Apache Commons Configuration 2.x is not a drop-in replacement, but as it uses a separate Maven groupId and Java package namespace they can be loaded side-by-side, making it possible to do a gradual migration.</p>
+
+### References
+* https://www.cve.org/CVERecord?id=CVE-2024-29131
+* https://www.cve.org/CVERecord?id=CVE-2024-29133
+* https://lists.apache.org/thread/y1pl0mn3opz6kwkm873zshjdxq3dwq5s

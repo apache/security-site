@@ -569,3 +569,37 @@ _Last updated: 2024-04-02T19:24:43.888Z_
 ### References
 * https://pulsar.apache.org/security/CVE-2024-29834/
 * https://lists.apache.org/thread/v0ltl94k9lg28qfr1f54hpkvvsjc5bj5
+
+
+## Sensitive information logged in Pulsar's Apache Kafka Connectors ## { #CVE-2025-30677 }
+
+CVE-2025-30677 [\[CVE json\]](./CVE-2025-30677.cve.json)
+
+_Last updated: 2025-04-09T11:16:21.827Z_
+
+### Affected
+
+* Apache Pulsar IO Kafka Connector from 2.3.0 before 3.0.11
+* Apache Pulsar IO Kafka Connector from 3.1.0 before 3.3.6
+* Apache Pulsar IO Kafka Connector from 4.0.0 before 4.0.4
+* Apache Pulsar IO Kafka Connect Adaptor from 2.3.0 before 3.0.11
+* Apache Pulsar IO Kafka Connect Adaptor from 3.1.0 before 3.3.6
+* Apache Pulsar IO Kafka Connect Adaptor from 4.0.0 before 4.0.4
+
+
+### Description
+
+<p>Apache Pulsar contains multiple connectors for integrating with Apache Kafka. The Pulsar IO Apache Kafka Source Connector, Sink Connector, and Kafka Connect Adaptor Sink Connector log sensitive configuration properties in plain text in application logs.</p>
+<p><span style="background-color: var(--wht);">This vulnerability can lead to unintended exposure of credentials in log files, potentially allowing attackers with access to these logs to obtain Apache Kafka credentials. The vulnerability's impact is limited by the fact that an attacker would need access to the application logs to exploit this issue.</span></p><p>This issue affects Apache Pulsar IO's Apache Kafka connectors in all versions before 3.0.11, 3.3.6, and 4.0.4.</p>
+<p>3.0.x version users should upgrade to at least 3.0.11.<br>
+3.3.x version users should upgrade to at least 3.3.6.<br>
+4.0.x version users should upgrade to at least 4.0.4.</p>
+<p>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.</p>
+
+### References
+* https://pulsar.apache.org/security/
+* https://lists.apache.org/thread/zv5fwwrh374r1p5cmksxcd40ssxxko3d
+
+
+### Credits
+* Kyler Katz (finder)

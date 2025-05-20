@@ -186,3 +186,33 @@ _Last updated: 2025-03-13T08:19:35.754Z_
 * Akamai Security Intelligence Group (SIG) (reporter)
 * Mark Thorson of AT&T (finder)
 * Mark Thorson of AT&T (reporter)
+
+
+## Camel-Undertow Message Header Injection via Improper Filtering ## { #CVE-2025-30177 }
+
+CVE-2025-30177 [\[CVE json\]](./CVE-2025-30177.cve.json) [\[OSV json\]](./CVE-2025-30177.osv.json)
+
+
+
+_Last updated: 2025-04-01T16:32:28.939Z_
+
+### Affected
+
+* Apache Camel from 4.10.0 before 4.10.3
+* Apache Camel from 4.8.0 before 4.8.6
+
+
+### Description
+
+<p>Bypass/Injection vulnerability in Apache Camel in Camel-Undertow component under particular conditions.</p><p>This issue affects Apache Camel: from 4.10.0 before 4.10.3, from 4.8.0 before 4.8.6.</p>Users are recommended to upgrade to version 4.10.3 for 4.10.x LTS and 4.8.6 for 4.8.x LTS.<br><br><div>Camel undertow component is vulnerable to Camel message header injection, in particular the custom header filter strategy used by the component only filter the "out" direction, while it doesn't filter the "in" direction.</div><br>This allows an attacker to include Camel specific headers that for some Camel components can alter the behaviour such as the camel-bean component, or the camel-exec component.<br><br>
+
+### References
+* https://camel.apache.org/security/CVE-2025-27636.html
+* https://camel.apache.org/security/CVE-2025-29891.html
+* https://lists.apache.org/thread/dj79zdgw01j337lr9gvyy4sv8xfyw8py
+* https://camel.apache.org/security/CVE-2025-30177.html
+
+
+### Credits
+* Mark Thorson of AT&T (finder)
+* Mark Thorson of AT&T (reporter)

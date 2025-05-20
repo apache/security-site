@@ -2173,7 +2173,7 @@ CVE-2024-27906 [\[CVE json\]](./CVE-2024-27906.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-02-29T11:02:16.638Z_
+_Last updated: 2025-05-06T13:12:04.279Z_
 
 ### Affected
 
@@ -2594,3 +2594,29 @@ _Last updated: 2025-03-19T09:06:05.242Z_
 
 ### Credits
 * Vincent55 (DEVCORE Internship Program) (finder)
+
+
+## Remote Code Execution via Sql Injection ## { #CVE-2025-30473 }
+
+CVE-2025-30473 [\[CVE json\]](./CVE-2025-30473.cve.json) [\[OSV json\]](./CVE-2025-30473.osv.json)
+
+
+
+_Last updated: 2025-04-07T08:31:55.441Z_
+
+### Affected
+
+* Apache Airflow Common SQL Provider before 1.24.1
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Airflow Common SQL Provider.<br><br><span style="background-color: rgb(255, 255, 255);">When using the partition clause in SQLTableCheckOperator as parameter (which was a recommended pattern), Authenticated UI User could inject arbitrary SQL command when triggering DAG exposing partition_clause to the user.<br></span><span style="background-color: rgb(255, 255, 255);">This allowed the DAG Triggering user to escalate privileges to execute those arbitrary commands which they normally would not have.</span><br></p><p>This issue affects Apache Airflow Common SQL Provider: before 1.24.1.</p><p>Users are recommended to upgrade to version 1.24.1, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/airflow/pull/48098
+* https://lists.apache.org/thread/53klkv790cylqcop0350w7nfq1y6h0t2
+
+
+### Credits
+* nxczje (reporter)

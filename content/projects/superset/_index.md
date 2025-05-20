@@ -1328,3 +1328,29 @@ _Last updated: 2025-02-12T09:35:41.246Z_
 * Beto de Almeida (remediation developer)
 * Daniel Gaspar (coordinator)
 * James Ford (Striveworks) (finder)
+
+
+## Improper authorization leading to resource ownership takeover ## { #CVE-2025-27696 }
+
+CVE-2025-27696 [\[CVE json\]](./CVE-2025-27696.cve.json) [\[OSV json\]](./CVE-2025-27696.osv.json)
+
+
+
+_Last updated: 2025-05-13T08:21:19.457Z_
+
+### Affected
+
+* Apache Superset through 4.1.1
+
+
+### Description
+
+<p>Improper Authorization vulnerability in Apache Superset allows ownership takeover of dashboards, charts or datasets by authenticated users with read permissions.</p><p>This issue affects Apache Superset: through 4.1.1.</p><p>Users are recommended to upgrade to version 4.1.2 or above, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/k2od03bxnxs6vcp80sr03ywcxl194413
+
+
+### Credits
+* João Marono (finder)
+* Daniel Gaspar (remediation developer)

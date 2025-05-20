@@ -236,3 +236,29 @@ _Last updated: 2024-11-22T14:36:42.714Z_
 
 ### Credits
 * Chi Tran from Eevee (reporter)
+
+
+## Using externally referenced images can leak user privacy. ## { #CVE-2025-29868 }
+
+CVE-2025-29868 [\[CVE json\]](./CVE-2025-29868.cve.json) [\[OSV json\]](./CVE-2025-29868.osv.json)
+
+
+
+_Last updated: 2025-04-01T07:56:26.883Z_
+
+### Affected
+
+* Apache Answer through 1.4.2
+
+
+### Description
+
+<p>Private Data Structure Returned From A Public Method vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 1.4.2.</p>If a user uses an externally referenced image, when a user accesses this image, the provider of the image may obtain private information about the ip address of that accessing user.<br><p>Users are recommended to upgrade to version 1.4.5, which fixes the issue.&nbsp;In the new version, administrators can set whether external content can be displayed.</p>
+
+### References
+* https://lists.apache.org/thread/l7pohw5g03g3qsvrz8pqc9t29mdv5lhf
+
+
+### Credits
+* Hamed Kohi (reporter)
+* Luke Smith (reporter)

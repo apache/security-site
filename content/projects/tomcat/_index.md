@@ -1009,3 +1009,56 @@ _Last updated: 2025-03-18T16:09:43.998Z_
 ### Credits
 * COSCO Shipping Lines DIC (finder)
 * sw0rd1ight (https://github.com/sw0rd1ight) (finder)
+
+
+## DoS via malformed HTTP/2 PRIORITY_UPDATE frame ## { #CVE-2025-31650 }
+
+CVE-2025-31650 [\[CVE json\]](./CVE-2025-31650.cve.json) [\[OSV json\]](./CVE-2025-31650.osv.json)
+
+
+
+_Last updated: 2025-05-06T13:12:48.728Z_
+
+### Affected
+
+* Apache Tomcat from 9.0.76 through 9.0.102
+* Apache Tomcat from 10.1.10 through 10.1.39
+* Apache Tomcat from 11.0.0-M2 through 11.0.5
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache Tomcat. Incorrect error handling for some invalid HTTP priority headers resulted in incomplete clean-up of the failed request which created a memory leak. A large number of such requests could trigger an OutOfMemoryException resulting in a denial of service.</p><p>This issue affects Apache Tomcat: from 9.0.76 through 9.0.102, from 10.1.10 through 10.1.39, from 11.0.0-M2 through 11.0.5.</p><p>Users are recommended to upgrade to version 9.0.104, 10.1.40 or 11.0.6 which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/j6zzk0y3yym9pzfzkq5vcyxzz0yzh826
+
+
+## Bypass of rules in Rewrite Valve ## { #CVE-2025-31651 }
+
+CVE-2025-31651 [\[CVE json\]](./CVE-2025-31651.cve.json) [\[OSV json\]](./CVE-2025-31651.osv.json)
+
+
+
+_Last updated: 2025-05-06T13:13:07.142Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.5
+* Apache Tomcat from 10.1.0-M1 through 10.1.39
+* Apache Tomcat from 9.0.0.M1 through 9.0.102
+
+
+### Description
+
+<p>Improper Neutralization of Escape, Meta, or Control Sequences vulnerability in Apache Tomcat.&nbsp;For a subset of unlikely rewrite rule configurations, it was possible 
+for a specially crafted request to bypass some rewrite rules. If those 
+rewrite rules effectively enforced security constraints, those 
+constraints could be bypassed.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.5, from 10.1.0-M1 through 10.1.39, from 9.0.0.M1 through 9.0.102.</p><p>Users are recommended to upgrade to version [FIXED_VERSION], which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/list.html?announce@tomcat.apache.org
+
+
+### Credits
+* COSCO Shipping Lines DIC (finder)

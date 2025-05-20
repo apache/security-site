@@ -36,3 +36,30 @@ Improper Input Validation vulnerability in Parquet-MR of Apache Parquet allows a
 
 ### Credits
 * This issue was discovered by Sergey Temnikov of the Amazon S3 team.
+
+
+## Potential malicious code execution from trusted packages in the parquet-avro module when reading an Avro schema from a Parquet file metadata ## { #CVE-2025-46762 }
+
+CVE-2025-46762 [\[CVE json\]](./CVE-2025-46762.cve.json) [\[OSV json\]](./CVE-2025-46762.osv.json)
+
+
+
+_Last updated: 2025-05-06T09:08:12.043Z_
+
+### Affected
+
+* Apache Parquet Java through 1.15.1
+
+
+### Description
+
+<p><span style="background-color: rgb(252, 252, 252);">Schema parsing in the parquet-avro module of Apache Parquet 1.15.0 and previous versions allows bad actors to execute arbitrary code.</span></p><p><span style="background-color: rgb(252, 252, 252);">While 1.15.1 introduced a fix to restrict untrusted packages, the default setting of trusted packages still allows malicious classes from these packages to be executed.</span></p><p><span style="background-color: rgb(252, 252, 252);"><span style="background-color: rgb(255, 255, 255);">The exploit is only applicable if the client code of parquet-avro uses the "specific" or the "reflect" models deliberately for reading Parquet files. ("generic" model is not impacted)</span><br></span><br>Users are recommended to <span style="background-color: rgb(255, 255, 255);">upgrade to 1.15.2 or set the system property "org.apache.parquet.avro.</span><span style="background-color: rgb(255, 255, 255);">SERIALIZABLE_PACKAGES" to an empty string on 1.15.1. Both are sufficient to fix the issue.</span><br></p>
+
+### References
+* https://lists.apache.org/thread/t7724lpvl110xsbgqwsmrdsns0rhycdp
+
+
+### Credits
+* Andrew Pikler (reporter)
+* David Handermann (reporter)
+* Nándor Kollár (reporter)

@@ -707,3 +707,31 @@ _Last updated: 2025-03-10T14:00:48.257Z_
 
 ### Credits
 * Matei "Mal" Badanoiu (finder)
+
+
+## Stored XSS Vulnerability ## { #CVE-2025-30676 }
+
+CVE-2025-30676 [\[CVE json\]](./CVE-2025-30676.cve.json) [\[OSV json\]](./CVE-2025-30676.osv.json)
+
+
+
+_Last updated: 2025-04-01T14:43:47.266Z_
+
+### Affected
+
+* Apache OFBiz before 18.12.19
+
+
+### Description
+
+<p>Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS) vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 18.12.19.</p><p>Users are recommended to upgrade to version 18.12.19, which fixes the issue.</p>
+
+### References
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html
+* https://issues.apache.org/jira/browse/OFBIZ-13219
+* https://lists.apache.org/thread/8d718qt8dqthnw1gmyxsq8glfdjklnjf
+
+
+### Credits
+* Khaled Nassar  (@mindpatch) (finder)

@@ -210,6 +210,32 @@ Deserialization of Untrusted Data vulnerability in Apache IoTDB.<p>This issue af
 * https://lists.apache.org/thread/zy3klwpv11vl5n65josbfo2fyzxg3dxc
 
 
+## Remote Code Execution with untrusted URI of User-defined function ## { #CVE-2024-24780 }
+
+CVE-2024-24780 [\[CVE json\]](./CVE-2024-24780.cve.json) [\[OSV json\]](./CVE-2024-24780.osv.json)
+
+
+
+_Last updated: 2025-05-14T10:42:18.799Z_
+
+### Affected
+
+* Apache IoTDB from 1.0.0 before 1.3.4
+
+
+### Description
+
+<p>Remote Code Execution with untrusted URI of UDF vulnerability in Apache IoTDB. The attacker who has&nbsp;privilege to create UDF can register malicious function from&nbsp;untrusted URI.</p><p>This issue affects Apache IoTDB: from 1.0.0 before 1.3.4.</p><p>Users are recommended to upgrade to version 1.3.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/xphtm98v3zsk9vlpfh481m1ry2ctxvmj
+
+
+### Credits
+* Y4 tacker (finder)
+* Nbxiglk (finder)
+
+
 ## SSRF Vulnerability (EOL) ## { #CVE-2024-36448 }
 
 CVE-2024-36448 [\[CVE json\]](./CVE-2024-36448.cve.json) [\[OSV json\]](./CVE-2024-36448.osv.json)
@@ -233,3 +259,55 @@ _Last updated: 2024-08-05T09:53:35.819Z_
 
 ### Credits
 * L0ne1y (finder)
+
+
+## Exposure of Sensitive Information in IoTDB JDBC driver ## { #CVE-2025-26795 }
+
+CVE-2025-26795 [\[CVE json\]](./CVE-2025-26795.cve.json) [\[OSV json\]](./CVE-2025-26795.osv.json)
+
+
+
+_Last updated: 2025-05-14T10:43:01.849Z_
+
+### Affected
+
+* Apache IoTDB JDBC driver from 0.10.0 through 1.3.3
+* Apache IoTDB JDBC driver from 2.0.1-beta before 2.0.2
+
+
+### Description
+
+<p>Exposure of Sensitive Information to an Unauthorized Actor, Insertion of Sensitive Information into Log File vulnerability in Apache IoTDB JDBC driver.</p><p>This issue affects iotdb-jdbc: from 0.10.0 through 1.3.3, from 2.0.1-beta before 2.0.2.</p><p>Users are recommended to upgrade to version 2.0.2 and 1.3.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/bj0ytxr5wg0c4jw8xm7rhfd8ogho0r91
+
+
+### Credits
+* Kyler Katz (finder)
+
+
+## Exposure of Sensitive Information in IoTDB OpenID Authentication ## { #CVE-2025-26864 }
+
+CVE-2025-26864 [\[CVE json\]](./CVE-2025-26864.cve.json) [\[OSV json\]](./CVE-2025-26864.osv.json)
+
+
+
+_Last updated: 2025-05-14T10:44:11.661Z_
+
+### Affected
+
+* Apache IoTDB from 0.10.0 through 1.3.3
+* Apache IoTDB from 2.0.1-beta before 2.0.2
+
+
+### Description
+
+<p>Exposure of Sensitive Information to an Unauthorized Actor, Insertion of Sensitive Information into Log File vulnerability in the <span style="background-color: rgb(255, 255, 255);">OpenIdAuthorizer of</span> Apache IoTDB.</p><p>This issue affects Apache IoTDB: from 0.10.0 through 1.3.3, from 2.0.1-beta before 2.0.2.</p><p>Users are recommended to upgrade to version 1.3.4 and 2.0.2, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/2kcjnlypppk8qjh17dpz0jvkcpn6l162
+
+
+### Credits
+* Kyler Katz (finder)

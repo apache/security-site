@@ -318,7 +318,7 @@ CVE-2024-21742 [\[CVE json\]](./CVE-2024-21742.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-02-27T16:19:24.276Z_
+_Last updated: 2025-05-06T13:11:31.892Z_
 
 ### Affected
 

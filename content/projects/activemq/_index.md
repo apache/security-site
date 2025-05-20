@@ -270,6 +270,31 @@ In Apache ActiveMQ 6.x, the default configuration doesn't secure the API web con
 * Martin Zeissig (finder)
 
 
+## Passwords leaking from broker properties in the debug log ## { #CVE-2025-27391 }
+
+CVE-2025-27391 [\[CVE json\]](./CVE-2025-27391.cve.json) [\[OSV json\]](./CVE-2025-27391.osv.json)
+
+
+
+_Last updated: 2025-04-09T14:42:30.509Z_
+
+### Affected
+
+* Apache ActiveMQ Artemis from 1.5.1 before 2.40.0
+
+
+### Description
+
+<p>Insertion of Sensitive Information into Log File vulnerability in Apache ActiveMQ Artemis. All the values of the broker properties are&nbsp;logged when the org.apache.activemq.artemis.core.config.impl.ConfigurationImpl <span style="background-color: rgb(255, 255, 255);">logger has the&nbsp;</span>debug level enabled.</p><p>This issue affects Apache ActiveMQ Artemis: from 1.5.1 before 2.40.0. It can be mitigated by restricting log access to only trusted users.</p><p>Users are recommended to upgrade to version 2.40.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/25p96cvzl1mkt29lwm2d8knklkoqolps
+
+
+### Credits
+* Rafael Yanez Illescas <ryanezil@redhat.com> (finder)
+
+
 ## Address routing-type can be updated by user without the createAddress permission ## { #CVE-2025-27427 }
 
 CVE-2025-27427 [\[CVE json\]](./CVE-2025-27427.cve.json) [\[OSV json\]](./CVE-2025-27427.osv.json)
@@ -297,3 +322,52 @@ _Last updated: 2025-04-01T07:26:53.803Z_
 * WooJin Park <1203kids@gmail.com> (finder)
 * MinJung Lee <whitney2319@gmail.com> (finder)
 * SeChang Oh <osc010524@gmail.com> (finder)
+
+
+## Unchecked buffer length can cause excessive memory allocation ## { #CVE-2025-27533 }
+
+CVE-2025-27533 [\[CVE json\]](./CVE-2025-27533.cve.json) [\[OSV json\]](./CVE-2025-27533.osv.json)
+
+
+
+_Last updated: 2025-05-07T08:58:58.430Z_
+
+### Affected
+
+* Apache ActiveMQ from 6.0.0 before 6.1.6
+* Apache ActiveMQ from 5.18.0 before 5.18.7
+* Apache ActiveMQ from 5.17.0 before 5.17.7
+* Apache ActiveMQ from 5.16.0 before 5.16.8
+
+
+### Description
+
+<p>Memory Allocation with Excessive Size Value vulnerability in Apache ActiveMQ.</p><span style="background-color: rgb(255, 255, 255);">During unmarshalling of OpenWire commands the size value of buffers was not properly validated which could lead to excessive memory allocation and be exploited to cause a denial of service (DoS) by depleting process memory, thereby affecting applications and services that rely on the availability of the ActiveMQ broker when not using mutual TLS connections.</span><br><p>This issue affects Apache ActiveMQ: from 6.0.0 before 6.1.6, from 5.18.0 before 5.18.7, from 5.17.0 before 5.17.7, before 5.16.8. ActiveMQ 5.19.0 is not affected.</p><p>Users are recommended to upgrade to version 6.1.6+, 5.19.0+,  5.18.7+, 5.17.7, or 5.16.8 or which fixes the issue.</p><p>Existing users may implement mutual TLS to mitigate the risk on affected brokers.</p>
+
+### References
+* https://lists.apache.org/thread/8hcm25vf7mchg4zbbhnlx2lc5bs705hg
+
+
+## deserialization allowlist bypass ## { #CVE-2025-29953 }
+
+CVE-2025-29953 [\[CVE json\]](./CVE-2025-29953.cve.json) [\[OSV json\]](./CVE-2025-29953.osv.json)
+
+
+
+_Last updated: 2025-04-18T15:23:28.244Z_
+
+### Affected
+
+* Apache ActiveMQ NMS OpenWire Client before 2.1.1
+
+
+### Description
+
+<p>Deserialization of Untrusted Data vulnerability in Apache ActiveMQ NMS OpenWire Client.</p><p>This issue affects Apache ActiveMQ NMS OpenWire Client before 2.1.1 when performing connections to untrusted servers. Such servers could abuse the unbounded deserialization in the client to provide malicious responses that may eventually cause arbitrary code execution on the client. Version 2.1.0 introduced a allow/denylist feature to restrict deserialization, but this feature could be bypassed.</p><p>The .NET team has deprecated the built-in .NET binary serialization feature starting with .NET 9 and suggests migrating away from binary serialization. The project is considering to follow suit and drop this part of the NMS API altogether.</p><p>Users are recommended to upgrade to version 2.1.1, which fixes the issue. We also recommend to migrate away from relying on .NET binary serialization as a hardening method for the future.</p>
+
+### References
+* https://lists.apache.org/thread/vc1sj9y3056d3kkhcvrs9fyw5w8kpmlx
+
+
+### Credits
+* g7shot working with Trend Zero Day Initiative (finder)

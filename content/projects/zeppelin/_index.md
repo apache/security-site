@@ -191,7 +191,7 @@ CVE-2024-31860 [\[CVE json\]](./CVE-2024-31860.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-04-09T09:08:25.607Z_
+_Last updated: 2025-05-06T13:12:30.032Z_
 
 ### Affected
 

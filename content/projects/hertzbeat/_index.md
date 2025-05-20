@@ -19,7 +19,7 @@ CVE-2024-41151 [\[CVE json\]](./CVE-2024-41151.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-11-18T08:45:47.594Z_
+_Last updated: 2025-04-16T11:19:50.180Z_
 
 ### Affected
 
@@ -120,3 +120,30 @@ _Last updated: 2024-11-18T08:45:21.798Z_
 
 ### Credits
 * Ícaro Torres (finder)
+
+
+## Server-Side Request Forgery (SSRF) in Api Config Oss ## { #CVE-2024-56736 }
+
+CVE-2024-56736 [\[CVE json\]](./CVE-2024-56736.cve.json) [\[OSV json\]](./CVE-2024-56736.osv.json)
+
+
+
+_Last updated: 2025-04-16T15:38:09.273Z_
+
+### Affected
+
+* Apache HertzBeat before 1.7.0
+
+
+### Description
+
+<p>Server-Side Request Forgery (SSRF) vulnerability in Apache HertzBeat.</p><p>This issue affects Apache HertzBeat (incubating): before 1.7.0.</p><p>Users are recommended to upgrade to version 1.7.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/kdzg36h9yxp0q0n4lhcfppxntjy8rj1x
+* https://lists.apache.org/thread/lwfhsllos1rx9v8k0yhl252cbpqpn0sv
+
+
+### Credits
+* tonghuaroot (finder)
+* zyufoye (finder)

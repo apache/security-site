@@ -973,6 +973,32 @@ _Last updated: 2024-11-14T09:55:41.120Z_
 * Jeffrey BENCTEUX (reporter)
 
 
+## Malformed chunked message body allows request smuggling ## { #CVE-2024-53868 }
+
+CVE-2024-53868 [\[CVE json\]](./CVE-2024-53868.cve.json) [\[OSV json\]](./CVE-2024-53868.osv.json)
+
+
+
+_Last updated: 2025-04-03T08:58:55.409Z_
+
+### Affected
+
+* Apache Traffic Server from 9.2.0 through 9.2.9
+* Apache Traffic Server from 10.0.0 through 10.0.4
+
+
+### Description
+
+<p></p><p><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">Apache Traffic Server allows request smuggling if c</span>hunked messages are malformed.</span>&nbsp;</p><p></p><p></p><p>This issue affects Apache Traffic Server: from 9.2.0 through 9.2.9, from 10.0.0 through 10.0.4.</p><p>Users are recommended to upgrade to version 9.2.10 or 10.0.5, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/rwyx91rsrnmpjbm04footfjjf6m9d1c9
+
+
+### Credits
+* Jeppe Bonde Weikop (reporter)
+
+
 ## Intercept plugins are not access controlled ## { #CVE-2024-56195 }
 
 CVE-2024-56195 [\[CVE json\]](./CVE-2024-56195.cve.json) [\[OSV json\]](./CVE-2024-56195.osv.json)

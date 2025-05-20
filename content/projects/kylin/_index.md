@@ -313,7 +313,7 @@ CVE-2024-48944 [\[CVE json\]](./CVE-2024-48944.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-03-27T15:05:54.463Z_
+_Last updated: 2025-04-28T14:59:34.758Z_
 
 ### Affected
 
