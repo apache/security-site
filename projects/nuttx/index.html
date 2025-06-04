@@ -158,6 +158,27 @@
 <ul>
 <li>Apache NuttX would like to thank Omri Ben-Bassat of Section 52 at Azure Defender for IoT of Microsoft Corp for bringing this issue to our attention.</li>
 </ul>
+<h2 id="CVE-2025-35003">NuttX Bluetooth Stack HCI and UART DoS/RCE Vulnerabilities.</h2>
+<p>CVE-2025-35003 <a href="./CVE-2025-35003.cve.json">[CVE json]</a> <a href="./CVE-2025-35003.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-05-26T10:03:58.478Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache NuttX RTOS from 7.25 before 12.9.0</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Improper Restriction of Operations within the Bounds of a Memory Buffer and Stack-based Buffer Overflow vulnerabilities were discovered in Apache NuttX RTOS Bluetooth Stack (HCI and UART components) that may result in system crash, denial of service, or arbitrary code execution, after receiving maliciously crafted packets.</p><p>NuttX's Bluetooth HCI/UART stack users are advised to upgrade to version 12.9.0, which fixes the identified implementation issues.</p><p>This issue affects Apache NuttX: from 7.25 before 12.9.0. <br></p><p></p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://github.com/apache/nuttx/pull/16179">https://github.com/apache/nuttx/pull/16179</a></li>
+<li><a href="https://lists.apache.org/thread/k4xzz3jhkx48zxw9vwmqrmm4hmg78vsj">https://lists.apache.org/thread/k4xzz3jhkx48zxw9vwmqrmm4hmg78vsj</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Chongqing Lei <a href="mailto:leicq@seu.edu.cn">leicq@seu.edu.cn</a> (reporter)</li>
+<li>Zhen Ling <a href="mailto:zhenling@seu.edu.cn">zhenling@seu.edu.cn</a> (reporter)</li>
+<li>Chongqing Lei <a href="mailto:leicq@seu.edu.cn">leicq@seu.edu.cn</a> (remediation developer)</li>
+<li>Tomek CEDRO <a href="mailto:tomek@cedro.info">tomek@cedro.info</a> (coordinator)</li>
+</ul>
 
   
 </div>

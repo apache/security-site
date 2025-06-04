@@ -1030,6 +1030,25 @@ process itself. Gaining access to that database should
 <li>João Marono (finder)</li>
 <li>Daniel Gaspar (remediation developer)</li>
 </ul>
+<h2 id="CVE-2025-48912">Improper authorization bypass on row level security via SQL Injection</h2>
+<p>CVE-2025-48912 <a href="./CVE-2025-48912.cve.json">[CVE json]</a> <a href="./CVE-2025-48912.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-05-30T08:26:07.560Z</em></p>
+<h3 id="affected-52">Affected</h3>
+<ul>
+<li>Apache Superset before 4.1.2</li>
+</ul>
+<h3 id="description-52">Description</h3>
+<p>An authenticated malicious actor using specially crafted requests could bypass row level security configuration by injecting SQL into 'sqlExpression' fields. This allowed the execution of sub-queries to evade parsing defenses ultimately granting unauthorized access to data.</p><p>This issue affects Apache Superset: before 4.1.2.</p><p>Users are recommended to upgrade to version 4.1.2, which fixes the issue.</p>
+<h3 id="references-52">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/ms2t2oq218hb7l628trsogo4fj7h1135">https://lists.apache.org/thread/ms2t2oq218hb7l628trsogo4fj7h1135</a></li>
+</ul>
+<h3 id="credits-51">Credits</h3>
+<ul>
+<li>Pedro Sousa (coordinator)</li>
+<li>Beto de Almeida (remediation developer)</li>
+<li>Mirakl Security (finder)</li>
+</ul>
 
   
 </div>
