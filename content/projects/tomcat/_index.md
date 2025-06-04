@@ -1062,3 +1062,30 @@ constraints could be bypassed.</p><p>This issue affects Apache Tomcat: from 11.0
 
 ### Credits
 * COSCO Shipping Lines DIC (finder)
+
+
+## Security constraint bypass for CGI scripts ## { #CVE-2025-46701 }
+
+CVE-2025-46701 [\[CVE json\]](./CVE-2025-46701.cve.json) [\[OSV json\]](./CVE-2025-46701.osv.json)
+
+
+
+_Last updated: 2025-05-29T19:06:20.436Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.6
+* Apache Tomcat from 10.1.0-M1 through 10.1.40
+* Apache Tomcat from 9.0.0.M1 through 9.0.104
+
+
+### Description
+
+<p>Improper Handling of Case Sensitivity vulnerability in Apache Tomcat's GCI servlet allows security constraint bypass of security constraints that apply to the pathInfo component of a URI mapped to the CGI servlet.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.6, from 10.1.0-M1 through 10.1.40, from 9.0.0.M1 through 9.0.104.</p><p>Users are recommended to upgrade to version 11.0.7, 10.1.41 or 9.0.105, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/xhqqk9w5q45srcdqhogdk04lhdscv30j
+
+
+### Credits
+* Greg K (https://github.com/gregk4sec) (finder)

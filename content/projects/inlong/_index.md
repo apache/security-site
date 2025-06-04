@@ -783,6 +783,95 @@ _Last updated: 2024-08-02T09:44:23.542Z_
 * X1r0z  (finder)
 
 
+## JDBC Vulnerability during verification processing ## { #CVE-2025-27522 }
+
+CVE-2025-27522 [\[CVE json\]](./CVE-2025-27522.cve.json) [\[OSV json\]](./CVE-2025-27522.osv.json)
+
+
+
+_Last updated: 2025-05-28T08:06:02.351Z_
+
+### Affected
+
+* Apache InLong from 1.13.0 through 2.1.0
+
+
+### Description
+
+<p>Deserialization of Untrusted Data vulnerability in Apache InLong.</p><p>This issue affects Apache InLong: from 1.13.0 through 2.1.0.&nbsp;This vulnerability is a secondary mining bypass for CVE-2024-26579.&nbsp;<span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's 2.2.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/11732">
+
+</a><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/11732">https://github.com/apache/inlong/pull/11732</a></span></p><p></p>
+
+### References
+* https://lists.apache.org/thread/s4dnmq3gwcjocxf85qk190knlzd26jby
+* https://github.com/apache/inlong/pull/11732
+
+
+### Credits
+* yulate (finder)
+* m4x (finder)
+
+
+## JDBC Vulnerability For URLEncode and backspace bypass ## { #CVE-2025-27526 }
+
+CVE-2025-27526 [\[CVE json\]](./CVE-2025-27526.cve.json) [\[OSV json\]](./CVE-2025-27526.osv.json)
+
+
+
+_Last updated: 2025-05-28T08:07:33.686Z_
+
+### Affected
+
+* Apache InLong from 1.13 through 2.1.0
+
+
+### Description
+
+<p>Deserialization of Untrusted Data vulnerability in Apache InLong.</p><p>This issue affects Apache InLong: from 1.13.0 through 2.1.0. This vulnerability which can lead to JDBC Vulnerability URLEncdoe and backspace bypass. <span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's 2.2.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/11747">https://github.com/apache/inlong/pull/11747</a></span></p><p></p>
+
+### References
+* https://lists.apache.org/thread/4t4sqscm7xdqn883dyjy40qk6ncf26xf
+* https://github.com/apache/inlong/pull/11747
+
+
+### Credits
+* yulate (finder)
+* m4x (finder)
+* h3h3qaq (finder)
+
+
+## JDBC Vulnerability for Invisible Character Bypass Leading to Arbitrary File Read ## { #CVE-2025-27528 }
+
+CVE-2025-27528 [\[CVE json\]](./CVE-2025-27528.cve.json) [\[OSV json\]](./CVE-2025-27528.osv.json)
+
+
+
+_Last updated: 2025-05-28T08:12:25.901Z_
+
+### Affected
+
+* Apache InLong from 1.13.0 through 2.1.0
+
+
+### Description
+
+<p>Deserialization of Untrusted Data vulnerability in Apache InLong.</p><p>This issue affects Apache InLong: from 1.13.0 through 2.1.0. 
+
+<span style="background-color: rgb(255, 255, 255);">This
+vulnerability allows attackers to bypass the security mechanisms of InLong
+JDBC and leads to arbitrary file reading.&nbsp;</span><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's 2.2.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/11747">https://github.com/apache/inlong/pull/11747</a></span></p><p></p>
+
+### References
+* https://lists.apache.org/thread/b807rqzgyv4qgvxw3nhkq8tl6g90gqgj
+* https://github.com/apache/inlong/pull/11747
+
+
+### Credits
+* yulat (finder)
+* m4x (finder)
+* h3h3qaq (finder)
+
+
 ## An arbitrary file read vulnerability for JDBC ## { #CVE-2025-27531 }
 
 CVE-2025-27531 [\[CVE json\]](./CVE-2025-27531.cve.json) [\[OSV json\]](./CVE-2025-27531.osv.json)

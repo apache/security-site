@@ -88,3 +88,32 @@ Apache Nuttx Versions prior to 10.1.0 are vulnerable to integer wrap-around in f
 
 ### Credits
 * Apache NuttX would like to thank Omri Ben-Bassat of Section 52 at Azure Defender for IoT of Microsoft Corp for bringing this issue to our attention.
+
+
+## NuttX Bluetooth Stack HCI and UART DoS/RCE Vulnerabilities. ## { #CVE-2025-35003 }
+
+CVE-2025-35003 [\[CVE json\]](./CVE-2025-35003.cve.json) [\[OSV json\]](./CVE-2025-35003.osv.json)
+
+
+
+_Last updated: 2025-05-26T10:03:58.478Z_
+
+### Affected
+
+* Apache NuttX RTOS from 7.25 before 12.9.0
+
+
+### Description
+
+<p>Improper Restriction of Operations within the Bounds of a Memory Buffer and Stack-based Buffer Overflow vulnerabilities were discovered in Apache NuttX RTOS Bluetooth Stack (HCI and UART components) that may result in system crash, denial of service, or arbitrary code execution, after receiving maliciously crafted packets.</p><p>NuttX's Bluetooth HCI/UART stack users are advised to upgrade to version 12.9.0, which fixes the identified implementation issues.</p><p>This issue affects Apache NuttX: from 7.25 before 12.9.0. <br></p><p></p>
+
+### References
+* https://github.com/apache/nuttx/pull/16179
+* https://lists.apache.org/thread/k4xzz3jhkx48zxw9vwmqrmm4hmg78vsj
+
+
+### Credits
+* Chongqing Lei <leicq@seu.edu.cn> (reporter)
+* Zhen Ling <zhenling@seu.edu.cn> (reporter)
+* Chongqing Lei <leicq@seu.edu.cn> (remediation developer)
+* Tomek CEDRO <tomek@cedro.info> (coordinator)

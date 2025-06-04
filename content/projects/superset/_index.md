@@ -1354,3 +1354,30 @@ _Last updated: 2025-05-13T08:21:19.457Z_
 ### Credits
 * João Marono (finder)
 * Daniel Gaspar (remediation developer)
+
+
+## Improper authorization bypass on row level security via SQL Injection ## { #CVE-2025-48912 }
+
+CVE-2025-48912 [\[CVE json\]](./CVE-2025-48912.cve.json) [\[OSV json\]](./CVE-2025-48912.osv.json)
+
+
+
+_Last updated: 2025-05-30T08:26:07.560Z_
+
+### Affected
+
+* Apache Superset before 4.1.2
+
+
+### Description
+
+<p>An authenticated malicious actor using specially crafted requests could bypass row level security configuration by injecting SQL into 'sqlExpression' fields. This allowed the execution of sub-queries to evade parsing defenses ultimately granting unauthorized access to data.</p><p>This issue affects Apache Superset: before 4.1.2.</p><p>Users are recommended to upgrade to version 4.1.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/ms2t2oq218hb7l628trsogo4fj7h1135
+
+
+### Credits
+* Pedro Sousa (coordinator)
+* Beto de Almeida (remediation developer)
+* Mirakl Security (finder)
