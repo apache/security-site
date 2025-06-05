@@ -54,6 +54,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Gobblin |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Guacamole](https://guacamole.apache.org/security/) |  [Apache Guacamole Security Team](mailto:security@guacamole.apache.org) | [Advisories](https://guacamole.apache.org/security/) |
 | [Apache Hadoop](https://hadoop.apache.org/mailing_lists.html) |  [Apache Hadoop Security Team](mailto:security@hadoop.apache.org) | [Advisories](https://hadoop.apache.org/cve_list.html) |
+| [Apache HttpComponents](https://hc.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Helix |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Hertzbeat](https://hertzbeat.apache.org/docs/help/security_model/) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Hive](https://hive.apache.org/mailing_lists.html) |  [Apache Hive Security Team](mailto:security@hive.apache.org) | |
