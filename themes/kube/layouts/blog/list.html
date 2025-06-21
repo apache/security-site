@@ -1,0 +1,68 @@
+{{ define "main" }}
+<div class="blog-container">
+    <div class="blog-header">
+        <h1>{{ .Title }}</h1>
+    </div>
+
+    <div class="blog-filters">
+        <div class="blog-search">
+            <input type="text" id="searchInput" placeholder="Search posts..." />
+        </div>
+        <select class="category-filter" id="categoryFilter">
+            <option value="">All Categories</option>
+            {{ range .Site.Taxonomies.categories }}
+            <option value="{{ .Name }}">{{ .Name | humanize }}</option>
+            {{ end }}
+        </select>
+    </div>
+
+    <div class="blog-grid">
+        {{ range .Pages }}
+        <article class="blog-card" data-categories="{{ range .Params.categories }}{{ . }} {{ end }}">
+            <a href="{{ .RelPermalink }}" class="blog-link">
+                <div class="blog-card-content">
+                    <h2>{{ .Title }}</h2>
+                    <div class="blog-card-meta">
+                        <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+                        {{ with .Params.author }}<span>{{ . }}</span>{{ end }}
+                    </div>
+                    {{ range .Params.categories }}
+                    <span class="blog-category">{{ . }}</span>
+                    {{ end }}
+                    <div class="blog-excerpt">
+                        {{ .Summary }}
+                    </div>
+                </div>
+            </a>
+        </article>
+        {{ end }}
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const blogCards = document.querySelectorAll('.blog-card');
+
+    function filterPosts() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const selectedCategory = categoryFilter.value.toLowerCase();
+
+        blogCards.forEach(card => {
+            const title = card.querySelector('h2').innerText.toLowerCase();
+            const excerpt = card.querySelector('.blog-excerpt').innerText.toLowerCase();
+            const categories = card.dataset.categories.toLowerCase();
+            
+            const matchesSearch = title.includes(searchTerm) || excerpt.includes(searchTerm);
+            const matchesCategory = !selectedCategory || categories.includes(selectedCategory);
+
+            card.style.display = matchesSearch && matchesCategory ? 'flex' : 'none';
+        });
+    }
+
+    searchInput.addEventListener('input', filterPosts);
+    categoryFilter.addEventListener('change', filterPosts);
+});
+</script>
+{{ end }}
