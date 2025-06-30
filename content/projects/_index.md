@@ -129,7 +129,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Syncope |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache SystemDS |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Tapestry |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Tika |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Tika](https://tika.apache.org/security-model.html) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://tika.apache.org/security.html) |
 | [Apache Tomcat](https://tomcat.apache.org/security.html) |  [Apache Tomcat Security Team](mailto:security@tomcat.apache.org) | [Advisories](https://tomcat.apache.org/security.html) |
 | [Apache Traffic Control](https://trafficcontrol.apache.org/security/index.html) |  [Apache Traffic Control Security Team](mailto:security@trafficcontrol.apache.org) | |
 | Apache Traffic Server |  [Apache Traffic Server Security Team](mailto:security@trafficserver.apache.org) | |
