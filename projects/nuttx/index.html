@@ -160,7 +160,7 @@
 </ul>
 <h2 id="CVE-2025-35003">NuttX Bluetooth Stack HCI and UART DoS/RCE Vulnerabilities.</h2>
 <p>CVE-2025-35003 <a href="./CVE-2025-35003.cve.json">[CVE json]</a> <a href="./CVE-2025-35003.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-05-26T10:03:58.478Z</em></p>
+<p><em>Last updated: 2025-06-14T22:46:25.637Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache NuttX RTOS from 7.25 before 12.9.0</li>
@@ -178,6 +178,57 @@
 <li>Zhen Ling <a href="mailto:zhenling@seu.edu.cn">zhenling@seu.edu.cn</a> (reporter)</li>
 <li>Chongqing Lei <a href="mailto:leicq@seu.edu.cn">leicq@seu.edu.cn</a> (remediation developer)</li>
 <li>Tomek CEDRO <a href="mailto:tomek@cedro.info">tomek@cedro.info</a> (coordinator)</li>
+</ul>
+<h2 id="CVE-2025-47868">tools/bdf-converter: Fix loop termination condition.</h2>
+<p>CVE-2025-47868 <a href="./CVE-2025-47868.cve.json">[CVE json]</a> <a href="./CVE-2025-47868.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-06-14T22:53:54.263Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache NuttX RTOS: tools/bdf-converter. from 6.9 before 12.9.0</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Out-of-bounds Write resulting in possible Heap-based Buffer Overflow vulnerability was discovered in tools/bdf-converter font conversion utility that is part of Apache NuttX RTOS repository. This standalone program is optional and neither part of NuttX RTOS nor Applications runtime, but active bdf-converter users may be affected when this tool is exposed to external provided user data data (i.e. publicly available automation).</p><p>This issue affects Apache NuttX: from 6.9 before 12.9.0.</p><p>Users are recommended to upgrade to version 12.9.0, which fixes the issue.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://github.com/apache/nuttx/pull/16000">https://github.com/apache/nuttx/pull/16000</a></li>
+<li><a href="https://lists.apache.org/thread/p4o2lcqgspx3ws1n2p4wmoqbqow1w1pw">https://lists.apache.org/thread/p4o2lcqgspx3ws1n2p4wmoqbqow1w1pw</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Chánh Phạm <a href="mailto:chanhphamviet@gmail.com">chanhphamviet@gmail.com</a> (finder)</li>
+<li>Nathan Hartman <a href="mailto:hartman.nathan@gmail.com">hartman.nathan@gmail.com</a> (remediation developer)</li>
+<li>Tomek CEDRO <a href="mailto:tomek@cedro.info">tomek@cedro.info</a> (coordinator)</li>
+<li>Alan Carvalho de Assis <a href="mailto:acassis@gmail.com">acassis@gmail.com</a> (remediation reviewer)</li>
+<li>Alin Jerpelea <a href="mailto:jerpelea@gmail.com">jerpelea@gmail.com</a> (remediation reviewer)</li>
+<li>Lee, Lup Yuen <a href="mailto:luppy@appkaki.com">luppy@appkaki.com</a> (remediation reviewer)</li>
+<li>Arnout Engelen <a href="mailto:engelen@apache.org">engelen@apache.org</a> (coordinator)</li>
+</ul>
+<h2 id="CVE-2025-47869">examples/xmlrpc: Fix calls buffers size.</h2>
+<p>CVE-2025-47869 <a href="./CVE-2025-47869.cve.json">[CVE json]</a> <a href="./CVE-2025-47869.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-06-14T22:55:02.542Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache NuttX RTOS from 6.22 before 12.9.0</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Improper Restriction of Operations within the Bounds of a Memory Buffer vulnerability was discovered in Apache NuttX RTOS apps/exapmles/xmlrpc application. In this example application device stats structure that stored remotely provided parameters had hardcoded buffer size which could lead to buffer overflow. Structure members buffers were updated to valid size of CONFIG_XMLRPC_STRINGSIZE+1.</p><p>This issue affects Apache NuttX RTOS users that may have used or base their code on example application as presented in releases from 6.22 before 12.9.0.</p><p>Users of XMLRPC in Apache NuttX RTOS are advised to review their code 
+for this pattern and update buffer sizes as presented in the version of 
+the example in release 12.9.0.<br></p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://github.com/apache/nuttx-apps/pull/3027">https://github.com/apache/nuttx-apps/pull/3027</a></li>
+<li><a href="https://lists.apache.org/thread/306qcqyc3bpb2ozh015yxjo9kqs4jbvj">https://lists.apache.org/thread/306qcqyc3bpb2ozh015yxjo9kqs4jbvj</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Chánh Phạm <a href="mailto:chanhphamviet@gmail.com">chanhphamviet@gmail.com</a> (reporter)</li>
+<li>Arnout Engelen <a href="mailto:engelen@apache.org">engelen@apache.org</a> (remediation developer)</li>
+<li>Tomek CEDRO <a href="mailto:tomek@cedro.info">tomek@cedro.info</a> (coordinator)</li>
+<li>Alan Carvalho de Assis <a href="mailto:acassis@gmail.com">acassis@gmail.com</a> (remediation reviewer)</li>
+<li>Alin Jerpelea <a href="mailto:jerpelea@gmail.com">jerpelea@gmail.com</a> (remediation reviewer)</li>
+<li>Lee, Lup Yuen <a href="mailto:luppy@appkaki.com">luppy@appkaki.com</a> (remediation reviewer)</li>
+<li>Xiang Xiao <a href="mailto:xiaoxiang781216@gmail.com">xiaoxiang781216@gmail.com</a> (remediation reviewer)</li>
+<li>JianyuWang <a href="mailto:wangjianyu3@xiaomi.com">wangjianyu3@xiaomi.com</a> (remediation reviewer)</li>
 </ul>
 
   

@@ -136,6 +136,25 @@
 <ul>
 <li>jiahua huang (reporter)</li>
 </ul>
+<h2 id="CVE-2025-32896">Unauthenticated insecure access</h2>
+<p>CVE-2025-32896 <a href="./CVE-2025-32896.cve.json">[CVE json]</a> <a href="./CVE-2025-32896.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-06-19T08:34:42.552Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache SeaTunnel from 2.3.1 through 2.3.10</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<h1 id="summarybrbrunauthorized-users-can-perform-arbitrary-file-read-and-deserializationbrattack-by-submit-job-using-restful-api-v1brbr-detailsbrunauthorized-users-can-access-hazelcastrestmapssubmit-job-to-submitbrjobbran-attacker-can-set-extra-params-in-mysql-url-to-perform-arbitrary-filebrread-and-deserialization-attackbrbrthis-issue-affects-apache-seatunnel-lt2310brbr-fixedbrbrusers-are-recommended-to-upgrade-to-version-2311-and-enable-restful-api-v2-amp-open-https-two-way-authentication--which-fixes-the-issue">Summary<br><br>Unauthorized users can perform Arbitrary File Read and Deserialization<br>attack by submit job using restful api-v1.<br><br># Details<br>Unauthorized users can access <code>/hazelcast/rest/maps/submit-job</code> to submit<br>job.<br>An attacker can set extra params in mysql url to perform Arbitrary File<br>Read and Deserialization attack.<br><br>This issue affects Apache SeaTunnel: &lt;=2.3.10<br><br># Fixed<br><br>Users are recommended to upgrade to version 2.3.11, and enable restful api-v2 &amp; open https two-way authentication , which fixes the issue.</h1>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/qvh3zyt1jr25rgvw955rb8qjrnbxfro9">https://lists.apache.org/thread/qvh3zyt1jr25rgvw955rb8qjrnbxfro9</a></li>
+<li><a href="https://github.com/apache/seatunnel/pull/9010">https://github.com/apache/seatunnel/pull/9010</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Owen Amadeus (reporter)</li>
+<li>liyiwei (reporter)</li>
+</ul>
 
   
 </div>
