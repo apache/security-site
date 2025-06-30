@@ -56,3 +56,30 @@ Mysql security vulnerability in Apache SeaTunnel.<br><br><tt><span style="backgr
 
 ### Credits
 * jiahua huang (reporter)
+
+
+## Unauthenticated insecure access ## { #CVE-2025-32896 }
+
+CVE-2025-32896 [\[CVE json\]](./CVE-2025-32896.cve.json) [\[OSV json\]](./CVE-2025-32896.osv.json)
+
+
+
+_Last updated: 2025-06-19T08:34:42.552Z_
+
+### Affected
+
+* Apache SeaTunnel from 2.3.1 through 2.3.10
+
+
+### Description
+
+# Summary<br><br>Unauthorized users can perform Arbitrary File Read and Deserialization<br>attack by submit job using restful api-v1.<br><br># Details<br>Unauthorized users can access `/hazelcast/rest/maps/submit-job` to submit<br>job.<br>An attacker can set extra params in mysql url to perform Arbitrary File<br>Read and Deserialization attack.<br><br>This issue affects Apache SeaTunnel: &lt;=2.3.10<br><br># Fixed<br><br>Users are recommended to upgrade to version 2.3.11, and enable restful api-v2 &amp; open https two-way authentication , which fixes the issue.
+
+### References
+* https://lists.apache.org/thread/qvh3zyt1jr25rgvw955rb8qjrnbxfro9
+* https://github.com/apache/seatunnel/pull/9010
+
+
+### Credits
+* Owen Amadeus (reporter)
+* liyiwei (reporter)

@@ -2620,3 +2620,29 @@ _Last updated: 2025-04-07T08:31:55.441Z_
 
 ### Credits
 * nxczje (reporter)
+
+
+## Potential SQL injection in CopyFromExternalStageToSnowflakeOperator ## { #CVE-2025-50213 }
+
+CVE-2025-50213 [\[CVE json\]](./CVE-2025-50213.cve.json) [\[OSV json\]](./CVE-2025-50213.osv.json)
+
+
+
+_Last updated: 2025-06-24T07:06:50.934Z_
+
+### Affected
+
+* Apache Airflow Providers Snowflake before 6.4.0
+
+
+### Description
+
+<p>Failure to Sanitize Special Elements into a Different Plane (Special Element Injection) vulnerability in Apache Airflow Providers Snowflake.</p><p>This issue affects Apache Airflow Providers Snowflake: before 6.4.0.</p><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">Sanitation of table and stage parameters were added in</span>&nbsp;CopyFromExternalStageToSnowflakeOperator&nbsp;<span style="background-color: rgb(255, 255, 255);">to prevent</span><span style="background-color: rgb(255, 255, 255);">&nbsp;SQL injection</span></span><br><p>Users are recommended to upgrade to version 6.4.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/airflow/pull/51734
+* https://lists.apache.org/thread/2kqfmyt2pghg5f6797g8hzvq331v8qx3
+
+
+### Credits
+* Nhien Pham (@nhienit) at Galaxy One (finder)

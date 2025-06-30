@@ -1089,3 +1089,84 @@ _Last updated: 2025-05-29T19:06:20.436Z_
 
 ### Credits
 * Greg K (https://github.com/gregk4sec) (finder)
+
+
+## FileUpload large number of parts with headers DoS ## { #CVE-2025-48988 }
+
+CVE-2025-48988 [\[CVE json\]](./CVE-2025-48988.cve.json) [\[OSV json\]](./CVE-2025-48988.osv.json)
+
+
+
+_Last updated: 2025-06-16T14:17:28.072Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.7
+* Apache Tomcat from 10.1.0-M1 through 10.1.41
+* Apache Tomcat from 9.0.0.M1 through 9.0.105
+
+
+### Description
+
+<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.7, from 10.1.0-M1 through 10.1.41, from 9.0.0.M1 through 9.0.105.</p><p>Users are recommended to upgrade to version 11.0.8, 10.1.42 or 9.0.106, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/nzkqsok8t42qofgqfmck536mtyzygp18
+
+
+### Credits
+* TERASOLUNA Framework Security Team of NTT DATA Group Corporation (finder)
+
+
+## exe side-loading via icalcs.exe in Tomcat installer for Windows ## { #CVE-2025-49124 }
+
+CVE-2025-49124 [\[CVE json\]](./CVE-2025-49124.cve.json) [\[OSV json\]](./CVE-2025-49124.osv.json)
+
+
+
+_Last updated: 2025-06-16T14:22:26.411Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.7
+* Apache Tomcat from 10.1.0 through 10.1.41
+* Apache Tomcat from 9.0.23 through 9.0.105
+
+
+### Description
+
+<p>Untrusted Search Path vulnerability in Apache Tomcat installer for Windows. During installation, the Tomcat installer for Windows used icacls.exe without specifying a full path.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.7, from 10.1.0 through 10.1.41, from 9.0.23 through 9.0.105.</p><p>Users are recommended to upgrade to version 11.0.8, 10.1.42 or 9.0.106, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/lnow7tt2j6hb9kcpkggx32ht6o90vqzv
+
+
+### Credits
+* T. Doğa Gelişli https://linkedin.com/in/tdogagelisli/ (finder)
+
+
+## Security constraint bypass for pre/post-resources ## { #CVE-2025-49125 }
+
+CVE-2025-49125 [\[CVE json\]](./CVE-2025-49125.cve.json) [\[OSV json\]](./CVE-2025-49125.osv.json)
+
+
+
+_Last updated: 2025-06-16T14:20:04.248Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.7
+* Apache Tomcat from 10.1.0-M1 through 10.1.41
+* Apache Tomcat from 9.0.0.M1 through 9.0.105
+
+
+### Description
+
+<p>Authentication Bypass Using an Alternate Path or Channel vulnerability in Apache Tomcat.&nbsp; When using PreResources or PostResources mounted other than at the root of the web application, it was possible to access those resources via an unexpected path. That path was likely not to be protected by the same security constraints as the expected path, allowing those security constraints to be bypassed.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.7, from 10.1.0-M1 through 10.1.41, from 9.0.0.M1 through 9.0.105.</p><p>Users are recommended to upgrade to version 11.0.8, 10.1.42 or 9.0.106, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/m66cytbfrty9k7dc4cg6tl1czhsnbywk
+
+
+### Credits
+* Greg K (https://github.com/gregk4sec) (finder)

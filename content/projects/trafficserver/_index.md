@@ -1074,3 +1074,51 @@ _Last updated: 2025-03-06T11:09:09.771Z_
 
 ### Credits
 * David Carlin (reporter)
+
+
+## Client IP address from PROXY protocol is not used for ACL ## { #CVE-2025-31698 }
+
+CVE-2025-31698 [\[CVE json\]](./CVE-2025-31698.cve.json) [\[OSV json\]](./CVE-2025-31698.osv.json)
+
+
+
+_Last updated: 2025-06-19T10:07:45.344Z_
+
+### Affected
+
+* Apache Traffic Server from 10.0.0 through 10.0.6
+* Apache Traffic Server from 9.0.0 through 9.2.10
+
+
+### Description
+
+<p>ACL configured in ip_allow.config or remap.config does not use IP addresses that are provided by PROXY protocol.</p>Users can use a new setting (proxy.config.acl.subjects) to choose which IP addresses to use for the ACL if Apache Traffic Server is configured to accept PROXY protocol.&nbsp;<br><p>This issue affects undefined: from 10.0.0 through 10.0.6, from 9.0.0 through 9.2.10.</p><p>Users are recommended to upgrade to version 9.2.11 or 10.0.6, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/15t32nxbypqg1m2smp640vjx89o6v5f8
+
+
+## Remote DoS via memory exhaustion in ESI Plugin ## { #CVE-2025-49763 }
+
+CVE-2025-49763 [\[CVE json\]](./CVE-2025-49763.cve.json) [\[OSV json\]](./CVE-2025-49763.osv.json)
+
+
+
+_Last updated: 2025-06-19T10:07:13.563Z_
+
+### Affected
+
+* Apache Traffic Server from 10.0.0 through 10.0.5
+* Apache Traffic Server from 9.0.0 through 9.2.10
+
+
+### Description
+
+<p>ESI plugin does not have the limit for maximum inclusion depth, and that allows excessive memory consumption if malicious instructions are inserted.</p>Users can use a new setting for the plugin (--max-inclusion-depth) to limit it.<br><p>This issue affects Apache Traffic Server: from 10.0.0 through 10.0.5, from 9.0.0 through 9.2.10.</p><p>Users are recommended to upgrade to version 9.2.11 or 10.0.6,  which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/15t32nxbypqg1m2smp640vjx89o6v5f8
+
+
+### Credits
+* Yohann Sillam (reporter)

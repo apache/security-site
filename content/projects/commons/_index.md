@@ -548,3 +548,29 @@ Users of the artifact org.apache.commons:commons-beanutils2
 ### Credits
 * Raj (mailto:denesh.raj@zohocorp.com) (reporter)
 * Muthukumar Marikani (mailto:muthukumar.marikani@zohocorp.com) (finder)
+
+
+## FileUpload DoS via part headers ## { #CVE-2025-48976 }
+
+CVE-2025-48976 [\[CVE json\]](./CVE-2025-48976.cve.json) [\[OSV json\]](./CVE-2025-48976.osv.json)
+
+
+
+_Last updated: 2025-06-16T15:00:47.037Z_
+
+### Affected
+
+* Apache Commons FileUpload from 1.0 before 1.6
+* Apache Commons FileUpload from 2.0.0-M1 before 2.0.0-M4
+
+
+### Description
+
+<p>Allocation of resources for multipart headers with insufficient limits enabled a DoS vulnerability in Apache Commons FileUpload.</p><p>This issue affects Apache Commons FileUpload: from 1.0 before 1.6; from 2.0.0-M1 before 2.0.0-M4.</p><p>Users are recommended to upgrade to versions 1.6 or 2.0.0-M4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/fbs3wrr3p67vkjcxogqqqqz45pqtso12
+
+
+### Credits
+* TERASOLUNA Framework Security Team of NTT DATA Group Corporation (finder)
