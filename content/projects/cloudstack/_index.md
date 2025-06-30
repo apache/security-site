@@ -457,3 +457,143 @@ _Last updated: 2025-01-13T12:40:18.771Z_
 ### Credits
 * Alex Perrakis <alexperrakis1@gmail.com> (reporter)
 * Efstratios Chatzoglou <efchatzoglou@gmail.com> (reporter)
+
+
+## Unauthorised access to dedicated resources in Quota plugin ## { #CVE-2025-22829 }
+
+CVE-2025-22829 [\[CVE json\]](./CVE-2025-22829.cve.json) [\[OSV json\]](./CVE-2025-22829.osv.json)
+
+
+
+_Last updated: 2025-06-11T04:00:28.410Z_
+
+### Affected
+
+* Apache CloudStack from 4.20.0.0 before 4.20.1.0
+
+
+### Description
+
+The CloudStack Quota plugin has an improper privilege management logic in version 4.20.0.0. Anyone with authenticated user-account access in CloudStack 4.20.0.0 environments, where this plugin is enabled and have access to specific APIs can enable or disable reception of quota-related emails for any account in the environment and list their configurations.<br><br>Quota plugin users using CloudStack 4.20.0.0 are recommended to upgrade to CloudStack version 4.20.1.0, which fixes this issue.
+
+### References
+* https://cloudstack.staged.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0
+* https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/
+* https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60
+
+
+### Credits
+* Fabricio Duarte <fabricio.duarte.jr@gmail.com> (finder)
+
+
+## CKS cluster in project exposes user API keys ## { #CVE-2025-26521 }
+
+CVE-2025-26521 [\[CVE json\]](./CVE-2025-26521.cve.json) [\[OSV json\]](./CVE-2025-26521.osv.json)
+
+
+
+_Last updated: 2025-06-11T04:00:17.648Z_
+
+### Affected
+
+* Apache CloudStack from 4.17.0.0 before 4.19.3.0
+* Apache CloudStack from 4.20.0.0 before 4.20.1.0
+
+
+### Description
+
+When an Apache CloudStack user-account creates a CKS-based Kubernetes cluster in a project, the API key and the secret key of the 'kubeadmin' user of the caller account are used to create the secret config in the CKS-based Kubernetes cluster. A member of the project who can access the CKS-based Kubernetes cluster, can also access the API key and secret key of the 'kubeadmin' user of the CKS cluster's creator's account. An attacker who's a member of the project can exploit this to impersonate and perform privileged actions that can result in complete compromise of the confidentiality, integrity, and availability of resources owned by the creator's account.<br><br>CKS users are recommended to upgrade to version 4.19.3.0 or 4.20.1.0, which fixes this issue.<h3>Updating Existing Kubernetes Clusters in Projects</h3>A <b>service account</b> should be created for each project to provide limited access specifically for Kubernetes cluster providers and autoscaling. Follow the steps below to create a new service account, update the secret inside the cluster, and regenerate existing API and service keys:<h3>1. Create a New Service Account</h3><div>Create a new account using the role <b>"Project Kubernetes Service Role"</b> with the following details:</div><div><table><tbody><tr><td><b>Account Name</b><br></td><td>kubeadmin-&lt;FIRST_EIGHT_CHARACTERS_OF_PROJECT_ID&gt;<br></td></tr><tr><td><b>First Name</b><br></td><td>Kubernetes<br></td></tr><tr><td><b>Last Name</b><br></td><td>Service User<br></td></tr><tr><td><b>Account Type</b><br></td><td>0 (Normal User)<br></td></tr><tr><td><b>Role ID</b><br></td><td>&lt;ID_OF_SERVICE_ROLE&gt;<br></td></tr></tbody></table><br></div><h3>2. Add the Service Account to the Project</h3>Add this account to the <b>project</b> where the Kubernetes cluster(s) are hosted.<br><h3>3. Generate API and Secret Keys</h3>Generate <b>API Key</b> and <b>Secret Key</b> for the <i>default user</i> of this account.<br><h3>4. Update the CloudStack Secret in the Kubernetes Cluster</h3>Create a temporary file `/tmp/cloud-config` with the following data:<br>&nbsp;&nbsp;<tt>&nbsp;api-url = &lt;API_URL&gt;  &nbsp; &nbsp;  # For example: &lt;MS_URL&gt;/client/api<br>&nbsp; api-key = &lt;SERVICE_USER_API_KEY&gt;<br>&nbsp; secret-key = &lt;SERVICE_USER_SECRET_KEY&gt;<br></tt><div><tt>&nbsp; project-id = &lt;PROJECT_ID&gt;</tt></div><div><tt><br></tt></div>Delete the existing secret using kubectl and Kubernetes cluster config:<br><div>&nbsp;&nbsp;<tt>&nbsp;./kubectl --kubeconfig kube.conf -n kube-system delete secret cloudstack-secret</tt></div><div><tt><br></tt></div>Create a new secret using kubectl and Kubernetes cluster config:<br><div>&nbsp; &nbsp; ./kubectl --kubeconfig kube.conf -n kube-system create secret generic cloudstack-secret --from-file=/tmp/cloud-config</div><div><br></div>Remove the temporary file:<br>&nbsp; &nbsp; rm /tmp/cloud-config<h3>5. Regenerate API and Secret Keys</h3>Regenerate the API and secret keys for the <b>original user account</b> that was used to create the Kubernetes cluster.<br>
+
+### References
+* https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/
+* https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/
+* https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60
+
+
+### Credits
+* Wei Zhou (weizhou@apache.org) (finder)
+
+
+## Unauthorised template/ISO list access to the domain/resource admins ## { #CVE-2025-30675 }
+
+CVE-2025-30675 [\[CVE json\]](./CVE-2025-30675.cve.json) [\[OSV json\]](./CVE-2025-30675.osv.json)
+
+
+
+_Last updated: 2025-06-11T04:00:06.854Z_
+
+### Affected
+
+* Apache CloudStack from 4.0.0 before 4.19.3.0
+* Apache CloudStack from 4.20.0.0 before 4.20.1.0
+
+
+### Description
+
+<div><span style="background-color: rgba(232, 232, 232, 0.04);">In Apache CloudStack, a flaw in access control affects the listTemplates and listIsos APIs. A malicious Domain Admin or Resource Admin can exploit this issue by intentionally specifying the 'domainid' parameter along with the 'filter=self' or 'filter=selfexecutable' values. This allows the attacker to gain unauthorized visibility into templates and ISOs under the ROOT domain.</span></div><div><span style="background-color: rgba(232, 232, 232, 0.04);">A malicious admin can enumerate and extract metadata of templates and ISOs that belong to unrelated domains, violating isolation boundaries and potentially exposing sensitive or internal configuration details.&nbsp;</span></div><div><span style="background-color: rgba(232, 232, 232, 0.04);">This vulnerability has been fixed by ensuring the domain resolution strictly adheres to the caller's scope rather than defaulting to the ROOT domain.</span></div><div><span style="background-color: rgba(232, 232, 232, 0.04);"><br></span></div><div><span style="background-color: rgba(232, 232, 232, 0.04);">Affected users are recommended to upgrade to Apache CloudStack 4.19.3.0 or 4.20.1.0.</span></div>
+
+### References
+* https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/
+* https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/
+* https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60
+
+
+### Credits
+* Bernardo De Marco Gonçalves <bernardomg2004@gmail.com> (finder)
+
+
+## Domain Admin can reset Admin password in Root Domain ## { #CVE-2025-47713 }
+
+CVE-2025-47713 [\[CVE json\]](./CVE-2025-47713.cve.json) [\[OSV json\]](./CVE-2025-47713.osv.json)
+
+
+
+_Last updated: 2025-06-11T03:59:55.628Z_
+
+### Affected
+
+* Apache CloudStack from 4.10.0 before 4.19.3.0
+* Apache CloudStack from 4.20.0.0 before 4.20.1.0
+
+
+### Description
+
+<p></p><div><span style="background-color: rgba(232, 232, 232, 0.04);">A privilege escalation vulnerability exists in Apache CloudStack versions 4.10.0.0 through 4.20.0.0 where a malicious Domain Admin user in the ROOT domain can reset the password of user-accounts of Admin role type. This operation is not appropriately restricted and allows the attacker to assume control over higher-privileged user-accounts.&nbsp;</span><span style="background-color: rgba(232, 232, 232, 0.04);">A malicious Domain Admin attacker can impersonate an Admin user-account and gain access to sensitive APIs and resources that&nbsp;<span style="background-color: rgb(255, 255, 255);">could result in the compromise of resource integrity and confidentiality, data loss, denial of service, and availability of infrastructure managed by CloudStack.</span><br><br></span></div><div><span style="background-color: rgba(232, 232, 232, 0.04);">Users are recommended to upgrade to Apache CloudStack 4.19.3.0 or 4.20.1.0, which fixes the issue with the following:<br></span><span style="background-color: rgba(232, 232, 232, 0.04);"><div><ul><li><span style="background-color: rgba(232, 232, 232, 0.04);"><span style="background-color: rgba(232, 232, 232, 0.04);">Strict validation on Role Type hierarchy: the caller's user-account role must be equal to or higher than the target user-account's role.</span></span></li><li><span style="background-color: rgba(232, 232, 232, 0.04);"><span style="background-color: rgba(232, 232, 232, 0.04);">API privilege comparison: the caller must possess all privileges of the user they are operating on. </span></span></li><li><span style="background-color: rgba(232, 232, 232, 0.04);"><span style="background-color: rgba(232, 232, 232, 0.04);">Two new domain-level settings (restricted to the default Admin): <br> - role.types.allowed.for.operations.on.accounts.of.same.role.type: Defines which role types are allowed to act on users of the same role type. Default: "Admin, DomainAdmin, ResourceAdmin". <br>&nbsp; &nbsp;- allow.operations.on.users.in.same.account: Allows/disallows user operations within the same account. Default: true.</span></span></li></ul></div></span></div><p></p>
+
+### References
+* https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/
+* https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/
+* https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60
+
+
+### Credits
+* Scott Schmitz <sschmitz@ussignal.com> (finder)
+
+
+## Insecure access of user's API/Secret Keys in the same domain ## { #CVE-2025-47849 }
+
+CVE-2025-47849 [\[CVE json\]](./CVE-2025-47849.cve.json) [\[OSV json\]](./CVE-2025-47849.osv.json)
+
+
+
+_Last updated: 2025-06-11T03:59:42.176Z_
+
+### Affected
+
+* Apache CloudStack from 4.10.0 before 4.19.3.0
+* Apache CloudStack from 4.20.0.0 before 4.20.1.0
+
+
+### Description
+
+<div><span style="background-color: rgba(232, 232, 232, 0.04);"><span style="background-color: rgba(232, 232, 232, 0.04);">A privilege escalation vulnerability exists in Apache CloudStack versions 4.10.0.0 through 4.20.0.0 where a malicious Domain Admin user in the ROOT domain can get the API key and secret key of user-accounts of Admin role type in the same domain. This operation is not appropriately restricted and allows the attacker to assume control over higher-privileged user-accounts. </span><span style="background-color: rgba(232, 232, 232, 0.04);">A malicious Domain Admin attacker can impersonate an Admin user-account and gain access to sensitive APIs and resources that <span style="background-color: rgb(255, 255, 255);">could result in the compromise of resource integrity and confidentiality, data loss, denial of service, and availability of infrastructure managed by CloudStack.</span><br></span><br><span style="background-color: rgba(232, 232, 232, 0.04);">Users are recommended to upgrade to Apache CloudStack 4.19.3.0 or 4.20.1.0, which fixes the issue with the following:<br></span></span></div><div><ul><li><span style="background-color: rgba(232, 232, 232, 0.04);">Strict validation on Role Type hierarchy: the caller's role must be equal to or higher than the target user's role.&nbsp;</span></li><li><span style="background-color: rgba(232, 232, 232, 0.04);">API privilege comparison: the caller must possess all privileges of the user they are operating on.&nbsp;</span></li><li><span style="background-color: rgba(232, 232, 232, 0.04);">Two new domain-level settings (restricted to the default admin):&nbsp;<br> - role.types.allowed.for.operations.on.accounts.of.same.role.type: Defines which role types are allowed to act on users of the same role type. Default: "Admin, DomainAdmin, ResourceAdmin".&nbsp;<br> - allow.operations.on.users.in.same.account: Allows/disallows user operations within the same account. Default: true.</span></li></ul></div>
+
+### References
+* https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/
+* https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/
+* https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60
+
+
+### Credits
+* Kevin Li <kli74@apple.com> (finder)
+* Scott Schmitz <sschmitz@ussignal.com> (finder)

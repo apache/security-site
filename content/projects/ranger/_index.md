@@ -65,7 +65,7 @@ CVE-2024-45478 [\[CVE json\]](./CVE-2024-45478.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-01-21T21:25:56.074Z_
+_Last updated: 2025-06-10T09:05:24.595Z_
 
 ### Affected
 
@@ -90,7 +90,7 @@ CVE-2024-45479 [\[CVE json\]](./CVE-2024-45479.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-01-21T21:26:14.944Z_
+_Last updated: 2025-06-10T09:06:31.823Z_
 
 ### Affected
 

@@ -19,7 +19,7 @@ CVE-2025-46548 [\[CVE json\]](./CVE-2025-46548.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-06-03T14:45:30.963Z_
+_Last updated: 2025-06-11T17:44:21.510Z_
 
 ### Affected
 

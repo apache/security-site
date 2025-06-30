@@ -96,7 +96,7 @@ CVE-2025-35003 [\[CVE json\]](./CVE-2025-35003.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-05-26T10:03:58.478Z_
+_Last updated: 2025-06-14T22:46:25.637Z_
 
 ### Affected
 
@@ -117,3 +117,70 @@ _Last updated: 2025-05-26T10:03:58.478Z_
 * Zhen Ling <zhenling@seu.edu.cn> (reporter)
 * Chongqing Lei <leicq@seu.edu.cn> (remediation developer)
 * Tomek CEDRO <tomek@cedro.info> (coordinator)
+
+
+## tools/bdf-converter: Fix loop termination condition. ## { #CVE-2025-47868 }
+
+CVE-2025-47868 [\[CVE json\]](./CVE-2025-47868.cve.json) [\[OSV json\]](./CVE-2025-47868.osv.json)
+
+
+
+_Last updated: 2025-06-14T22:53:54.263Z_
+
+### Affected
+
+* Apache NuttX RTOS: tools/bdf-converter. from 6.9 before 12.9.0
+
+
+### Description
+
+<p>Out-of-bounds Write resulting in possible Heap-based Buffer Overflow vulnerability was discovered in tools/bdf-converter font conversion utility that is part of Apache NuttX RTOS repository. This standalone program is optional and neither part of NuttX RTOS nor Applications runtime, but active bdf-converter users may be affected when this tool is exposed to external provided user data data (i.e. publicly available automation).</p><p>This issue affects Apache NuttX: from 6.9 before 12.9.0.</p><p>Users are recommended to upgrade to version 12.9.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/nuttx/pull/16000
+* https://lists.apache.org/thread/p4o2lcqgspx3ws1n2p4wmoqbqow1w1pw
+
+
+### Credits
+* Chánh Phạm <chanhphamviet@gmail.com> (finder)
+* Nathan Hartman <hartman.nathan@gmail.com> (remediation developer)
+* Tomek CEDRO <tomek@cedro.info> (coordinator)
+* Alan Carvalho de Assis <acassis@gmail.com> (remediation reviewer)
+* Alin Jerpelea <jerpelea@gmail.com> (remediation reviewer)
+* Lee, Lup Yuen <luppy@appkaki.com> (remediation reviewer)
+* Arnout Engelen <engelen@apache.org> (coordinator)
+
+
+## examples/xmlrpc: Fix calls buffers size. ## { #CVE-2025-47869 }
+
+CVE-2025-47869 [\[CVE json\]](./CVE-2025-47869.cve.json) [\[OSV json\]](./CVE-2025-47869.osv.json)
+
+
+
+_Last updated: 2025-06-14T22:55:02.542Z_
+
+### Affected
+
+* Apache NuttX RTOS from 6.22 before 12.9.0
+
+
+### Description
+
+<p>Improper Restriction of Operations within the Bounds of a Memory Buffer vulnerability was discovered in Apache NuttX RTOS apps/exapmles/xmlrpc application. In this example application device stats structure that stored remotely provided parameters had hardcoded buffer size which could lead to buffer overflow. Structure members buffers were updated to valid size of CONFIG_XMLRPC_STRINGSIZE+1.</p><p>This issue affects Apache NuttX RTOS users that may have used or base their code on example application as presented in releases from 6.22 before 12.9.0.</p><p>Users of XMLRPC in Apache NuttX RTOS are advised to review their code 
+for this pattern and update buffer sizes as presented in the version of 
+the example in release 12.9.0.<br></p>
+
+### References
+* https://github.com/apache/nuttx-apps/pull/3027
+* https://lists.apache.org/thread/306qcqyc3bpb2ozh015yxjo9kqs4jbvj
+
+
+### Credits
+* Chánh Phạm <chanhphamviet@gmail.com> (reporter)
+* Arnout Engelen <engelen@apache.org> (remediation developer)
+* Tomek CEDRO <tomek@cedro.info> (coordinator)
+* Alan Carvalho de Assis <acassis@gmail.com> (remediation reviewer)
+* Alin Jerpelea <jerpelea@gmail.com> (remediation reviewer)
+* Lee, Lup Yuen <luppy@appkaki.com> (remediation reviewer)
+* Xiang Xiao <xiaoxiang781216@gmail.com> (remediation reviewer)
+* JianyuWang <wangjianyu3@xiaomi.com> (remediation reviewer)

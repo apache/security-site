@@ -193,3 +193,87 @@ _Last updated: 2024-12-18T13:38:00.297Z_
 ### Credits
 * Tim Fox (timvolpe@gmail.com) (finder)
 * Vikas Singh <vikas@confluent.io> (remediation developer)
+
+
+## Arbitrary file read and SSRF vulnerability ## { #CVE-2025-27817 }
+
+CVE-2025-27817 [\[CVE json\]](./CVE-2025-27817.cve.json) [\[OSV json\]](./CVE-2025-27817.osv.json)
+
+
+
+_Last updated: 2025-06-10T07:55:12.969Z_
+
+### Affected
+
+* Apache Kafka Client from 3.1.0 through 3.9.0
+
+
+### Description
+
+<div>A possible arbitrary file read and SSRF vulnerability has been identified in Apache Kafka Client. Apache Kafka Clients accept configuration data for setting the SASL/OAUTHBEARER connection with the brokers, including "sasl.oauthbearer.token.endpoint.url" and "sasl.oauthbearer.jwks.endpoint.url". Apache Kafka allows clients to read an arbitrary file and return the content in the error log, or sending requests to an unintended location. In applications where Apache Kafka Clients configurations can be specified by an untrusted party, attackers may use the "sasl.oauthbearer.token.endpoint.url" and "sasl.oauthbearer.jwks.endpoint.url" configuratin to read arbitrary contents of the disk and environment variables or make requests to an unintended location. In particular, this flaw may be used in Apache Kafka Connect to escalate from REST API access to filesystem/environment/URL access, which may be undesirable in certain environments, including SaaS products. </div><p>Since Apache Kafka 3.9.1/4.0.0, we have added a system property ("-Dorg.apache.kafka.sasl.oauthbearer.allowed.urls") to set the allowed urls in SASL JAAS configuration. In 3.9.1, it accepts all urls by default for backward compatibility. However in 4.0.0 and newer, the default value is empty list and users have to set the allowed urls explicitly.<br></p>
+
+      <br>
+
+### References
+* https://kafka.apache.org/cve-list
+
+
+### Credits
+* 罗鑫 <lx2317103712@gmail.com> (finder)
+* 1ue (https://github.com/luelueking) (finder)
+* 4ra1n (https://github.com/4ra1n) (finder)
+* enokiy <846800628@qq.com> (finder)
+* VulTeam of ThreatBook (finder)
+
+
+## Possible RCE attack via SASL JAAS LdapLoginModule configuration ## { #CVE-2025-27818 }
+
+CVE-2025-27818 [\[CVE json\]](./CVE-2025-27818.cve.json) [\[OSV json\]](./CVE-2025-27818.osv.json)
+
+
+
+_Last updated: 2025-06-10T07:53:14.155Z_
+
+### Affected
+
+* Apache Kafka from 2.3.0 through 3.9.0
+
+
+### Description
+
+A possible security vulnerability has been identified in Apache Kafka.<br>This requires access to a alterConfig to the&nbsp;cluster resource, or Kafka Connect worker, and the ability to create/modify connectors on it with an arbitrary Kafka client SASL JAAS config<br>and a SASL-based security protocol, which has been possible on Kafka clusters since Apache Kafka 2.0.0 (Kafka Connect 2.3.0).<br>When configuring the broker via config file or AlterConfig command, or connector via the Kafka Kafka Connect REST API, an <span style="background-color: rgb(255, 255, 255);">authenticated operator</span>&nbsp;can set the <span style="background-color: rgb(255, 255, 255);">`sasl.jaas.config`<br></span>property for any of the connector's Kafka clients to "com.sun.security.auth.module.LdapLoginModule", which can be done via the<br>`producer.override.sasl.jaas.config`, `consumer.override.sasl.jaas.config`, or `admin.override.sasl.jaas.config` properties.<br>This will allow the server to connect to the attacker's LDAP server<br>and deserialize the LDAP response, which the attacker can use to execute java deserialization gadget chains on the Kafka connect server.<br>Attacker can cause <span style="background-color: rgb(255, 255, 255);">unrestricted deserialization of untrusted data (or) </span>RCE vulnerability when there are gadgets in the classpath.<br><br>Since Apache Kafka 3.0.0, users are allowed to specify these properties in connector configurations for Kafka Connect clusters running with out-of-the-box<br>configurations. Before Apache Kafka 3.0.0, users may not specify these properties unless the Kafka Connect cluster has been reconfigured with a connector<br>client override policy that permits them.<br><br>Since Apache Kafka 3.9.1/4.0.0, we have added a system property ("-Dorg.apache.kafka.disallowed.login.modules") to disable the problematic login modules usage<br>in SASL JAAS configuration. Also by default "com.sun.security.auth.module.JndiLoginModule,com.sun.security.auth.module.LdapLoginModule" are disabled in Apache Kafka Connect 3.9.1/4.0.0. <br><br>We advise the Kafka users to validate connector configurations and only allow trusted LDAP configurations. Also examine connector dependencies for <br>vulnerable versions and either upgrade their connectors, upgrading that specific dependency, or removing the connectors as options for remediation. Finally,<br><span style="background-color: rgb(255, 255, 255);">in addition to leveraging the "org.apache.kafka.disallowed.login.modules" system property, Kafka Connect users can also implement their own connector<br>client config override policy, which can be used to control which Kafka client properties can be overridden directly in a connector config and which cannot.</span><br><br>
+
+### References
+* https://kafka.apache.org/cve-list
+
+
+### Credits
+* 罗鑫 <lx2317103712@gmail.com> (finder)
+* ra1lgun <ra1lgun@foxmail.com> (finder)
+
+
+## Possible RCE/Denial of service attack via SASL JAAS JndiLoginModule configuration ## { #CVE-2025-27819 }
+
+CVE-2025-27819 [\[CVE json\]](./CVE-2025-27819.cve.json) [\[OSV json\]](./CVE-2025-27819.osv.json)
+
+
+
+_Last updated: 2025-06-10T07:54:40.206Z_
+
+### Affected
+
+* Apache Kafka from 2.0.0 through 3.3.2
+
+
+### Description
+
+<div>In CVE-2023-25194, we announced the RCE/Denial of service attack via SASL JAAS JndiLoginModule configuration in Kafka Connect API. But not only Kafka Connect API is vulnerable to this attack, the Apache Kafka brokers also have this vulnerability. To exploit this vulnerability, the attacker needs to be able to connect to the Kafka cluster and have the AlterConfigs permission on the cluster resource.</div><div><br>Since Apache Kafka 3.4.0, we have added a system property ("-Dorg.apache.kafka.disallowed.login.modules") to disable the problematic login modules usage in SASL JAAS configuration. Also by default "com.sun.security.auth.module.JndiLoginModule" is disabled in Apache Kafka 3.4.0, and "com.sun.security.auth.module.JndiLoginModule,com.sun.security.auth.module.LdapLoginModule" is disabled by default in in Apache Kafka 3.9.1/4.0.0<br></div>
+
+### References
+* https://kafka.apache.org/cve-list
+
+
+### Credits
+* Ziyang Li (finder)
+* Ji'an Zhou (finder)
+* Ying Zhu (finder)
