@@ -122,20 +122,37 @@
 <ul>
 <li>This issue was discovered by Sergey Temnikov of the Amazon S3 team.</li>
 </ul>
+<h2 id="CVE-2025-30065">Arbitrary code execution in the parquet-avro module when reading an Avro schema from a Parquet file metadata</h2>
+<p>CVE-2025-30065 <a href="./CVE-2025-30065.cve.json">[CVE json]</a> <a href="./CVE-2025-30065.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-11T10:32:31.431Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Parquet Java through 1.15.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p><span style="background-color: rgb(252, 252, 252);">Schema parsing in the parquet-avro module of Apache Parquet 1.15.0 and previous versions allows bad actors to execute arbitrary code</span><br></p><p>Users are recommended to upgrade to version 1.15.1, which fixes the issue.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/okzqb3kn479gqzxm21gg5vqr35om9gw5">https://lists.apache.org/thread/okzqb3kn479gqzxm21gg5vqr35om9gw5</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Keyi Li (Amazon) (finder)</li>
+</ul>
 <h2 id="CVE-2025-46762">Potential malicious code execution from trusted packages in the parquet-avro module when reading an Avro schema from a Parquet file metadata</h2>
 <p>CVE-2025-46762 <a href="./CVE-2025-46762.cve.json">[CVE json]</a> <a href="./CVE-2025-46762.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-05-06T09:08:12.043Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache Parquet Java through 1.15.1</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-2">Description</h3>
 <p><span style="background-color: rgb(252, 252, 252);">Schema parsing in the parquet-avro module of Apache Parquet 1.15.0 and previous versions allows bad actors to execute arbitrary code.</span></p><p><span style="background-color: rgb(252, 252, 252);">While 1.15.1 introduced a fix to restrict untrusted packages, the default setting of trusted packages still allows malicious classes from these packages to be executed.</span></p><p><span style="background-color: rgb(252, 252, 252);"><span style="background-color: rgb(255, 255, 255);">The exploit is only applicable if the client code of parquet-avro uses the "specific" or the "reflect" models deliberately for reading Parquet files. ("generic" model is not impacted)</span><br></span><br>Users are recommended to <span style="background-color: rgb(255, 255, 255);">upgrade to 1.15.2 or set the system property "org.apache.parquet.avro.</span><span style="background-color: rgb(255, 255, 255);">SERIALIZABLE_PACKAGES" to an empty string on 1.15.1. Both are sufficient to fix the issue.</span><br></p>
-<h3 id="references-1">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/t7724lpvl110xsbgqwsmrdsns0rhycdp">https://lists.apache.org/thread/t7724lpvl110xsbgqwsmrdsns0rhycdp</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-2">Credits</h3>
 <ul>
 <li>Andrew Pikler (reporter)</li>
 <li>David Handermann (reporter)</li>

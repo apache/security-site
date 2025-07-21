@@ -233,6 +233,40 @@ When the admin key was changed or the port of Admin API was changed to a port di
 <ul>
 <li>Discovered and reported by Brandon Arp and Bruno Green of Topsort. (reporter)</li>
 </ul>
+<h2 id="CVE-2025-27446">Local listening file permissions in APISIX plugin runner allow a local attacker to elevate privileges</h2>
+<p>CVE-2025-27446 <a href="./CVE-2025-27446.cve.json">[CVE json]</a> <a href="./CVE-2025-27446.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-06T03:41:43.412Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache APISIX Java Plugin Runner from 0.2.0 through 0.5.0</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>Incorrect Permission Assignment for Critical Resource vulnerability in Apache APISIX(java-plugin-runner).</p>Local listening file permissions in APISIX plugin runner allow a local attacker to elevate privileges.<br><p>This issue affects Apache APISIX(java-plugin-runner): from 0.2.0 through 0.5.0.</p><p>Users are recommended to upgrade to version 0.6.0 or higher, which fixes the issue.</p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/qwxnxolt0j5nvjfpr0mlz6h7nrtvyzng">https://lists.apache.org/thread/qwxnxolt0j5nvjfpr0mlz6h7nrtvyzng</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Benoit TELLIER (reporter)</li>
+</ul>
+<h2 id="CVE-2025-46647">improper validation of issuer from introspection discovery url in plugin openid-connect</h2>
+<p>CVE-2025-46647 <a href="./CVE-2025-46647.cve.json">[CVE json]</a> <a href="./CVE-2025-46647.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-02T01:08:54.683Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache APISIX before 3.12.0</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>A vulnerability of plugin&nbsp;openid-connect in Apache APISIX.</p>This vulnerability will only have an impact if all of the following conditions are met:<br>1. Use the openid-connect plugin with introspection mode<br>2. The auth service connected to openid-connect provides services to multiple issuers<br>3. Multiple issuers share the same private key and relies only on the issuer being different<br><br><div><div>If affected by this vulnerability, it would allow an attacker with a valid account on one of the issuers to log into the other issuer.</div></div><br><p>This issue affects Apache APISIX: until 3.12.0.</p><p>Users are recommended to upgrade to version 3.12.0 or higher.<br><br></p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/yrpp2cd3o4qkxlrh421mq8gsrt0k4x0w">https://lists.apache.org/thread/yrpp2cd3o4qkxlrh421mq8gsrt0k4x0w</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>Tiernan Messmer (finder)</li>
+</ul>
 
   
 </div>

@@ -269,6 +269,26 @@
 <ul>
 <li><a href="https://lists.apache.org/thread/lfs8l63rnctnj2skfrxyys7v8fgnt122">https://lists.apache.org/thread/lfs8l63rnctnj2skfrxyys7v8fgnt122</a></li>
 </ul>
+<h2 id="CVE-2025-48795">Denial of Service and sensitive data exposure in logs</h2>
+<p>CVE-2025-48795 <a href="./CVE-2025-48795.cve.json">[CVE json]</a> <a href="./CVE-2025-48795.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-15T14:26:43.340Z</em></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache CXF from 3.5.10 before 3.5.11</li>
+<li>Apache CXF from 3.6.5 before 3.6.6</li>
+<li>Apache CXF from 4.0.6 before 4.0.7</li>
+<li>Apache CXF from 4.1.0 before 4.1.1</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<p>Apache CXF stores large stream based messages as temporary files on the local filesystem. A bug was introduced which means that the entire temporary file is read into memory and then logged. An attacker might be able to exploit this to cause a denial of service attack by causing an out of memory exception. In addition, it is possible to configure CXF to encrypt temporary files to prevent sensitive credentials from being cached unencrypted on the local filesystem, however this bug means that the cached files are written out to logs unencrypted.<br><br>Users are recommended to upgrade to versions 3.5.11, 3.6.6, 4.0.7 or 4.1.1, which fixes this issue.</p>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/vo5qv02mvv5plmb6z2xf1ktjmrpv3jmn">https://lists.apache.org/thread/vo5qv02mvv5plmb6z2xf1ktjmrpv3jmn</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>MAUGIN Thomas <a href="https://github.com/Thom-x">https://github.com/Thom-x</a>, Qlik (finder)</li>
+</ul>
 
   
 </div>

@@ -1174,6 +1174,128 @@ substitution. For example, something like:</div><div><br></div><div>RewriteEngin
 <li>Smi1e (DBAPPSecurity Ltd.) (finder)</li>
 <li>xiaojunjie (DBAPPSecurity Ltd.) (finder)</li>
 </ul>
+<h2 id="CVE-2024-42516">HTTP response splitting</h2>
+<p>CVE-2024-42516 <a href="./CVE-2024-42516.cve.json">[CVE json]</a> <a href="./CVE-2024-42516.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-11T10:29:33.054Z</em></p>
+<h3 id="affected-53">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.63</li>
+</ul>
+<h3 id="description-53">Description</h3>
+<p>HTTP response splitting in the core of Apache HTTP Server allows an attacker who can manipulate the Content-Type response headers of applications hosted or proxied by the server can split the HTTP response.<br><br>This vulnerability was described as CVE-2023-38709 but the patch included in Apache HTTP Server 2.4.59 did not address the issue.<br><br>Users are recommended to upgrade to version 2.4.64, which fixes this issue.</p>
+<h3 id="references-52">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h2 id="CVE-2024-43204">SSRF with mod_headers setting Content-Type header</h2>
+<p>CVE-2024-43204 <a href="./CVE-2024-43204.cve.json">[CVE json]</a> <a href="./CVE-2024-43204.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-11T10:33:09.127Z</em></p>
+<h3 id="affected-54">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.63</li>
+</ul>
+<h3 id="description-54">Description</h3>
+<p>SSRF in Apache HTTP Server with mod_proxy loaded allows an attacker to send outbound proxy requests to a URL controlled by the attacker.  Requires an unlikely configuration where mod_headers is configured to modify the Content-Type request or response header with a value provided in the HTTP request.<br><br>Users are recommended to upgrade to version 2.4.64 which fixes this issue.</p>
+<h3 id="references-53">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-49">Credits</h3>
+<ul>
+<li>xiaojunjie@安恒信息杭州市滨江区技能大师工作室 (finder)</li>
+</ul>
+<h2 id="CVE-2024-43394">SSRF on Windows due to UNC paths</h2>
+<p>CVE-2024-43394 <a href="./CVE-2024-43394.cve.json">[CVE json]</a> <a href="./CVE-2024-43394.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-11T10:29:24.674Z</em></p>
+<h3 id="affected-55">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.63</li>
+</ul>
+<h3 id="description-55">Description</h3>
+<p></p><p>Server-Side Request Forgery (SSRF)&nbsp;in Apache HTTP Server on Windows allows to potentially leak NTLM hashes to a malicious server via&nbsp;<br>mod_rewrite or apache expressions that pass unvalidated request input.</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.63.</p>Note: <span style="background-color: rgb(255, 255, 255);">&nbsp;The Apache HTTP Server Project will be setting a higher bar for accepting vulnerability reports regarding SSRF via UNC paths. <br><br>The server offers limited protection against administrators directing the server to open UNC paths.<br></span>Windows servers should limit the hosts they will connect over via SMB based on the nature of NTLM authentication.<br>
+<h3 id="references-54">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-50">Credits</h3>
+<ul>
+<li>Kainan Zhang (@4xpl0r3r) from Fortinet (finder)</li>
+</ul>
+<h2 id="CVE-2024-47252">mod_ssl error log variable escaping</h2>
+<p>CVE-2024-47252 <a href="./CVE-2024-47252.cve.json">[CVE json]</a> <a href="./CVE-2024-47252.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-11T10:29:12.847Z</em></p>
+<h3 id="affected-56">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4 through 2.4.63</li>
+</ul>
+<h3 id="description-56">Description</h3>
+<p>Insufficient escaping of user-supplied data in mod_ssl in Apache HTTP Server 2.4.63 and earlier allows an untrusted SSL/TLS client to insert escape characters into log files in some configurations.<br><br>In a logging configuration where CustomLog is used with &ldquo;%{varname}x&rdquo; or &ldquo;%{varname}c&rdquo; to log variables provided by mod_ssl such as SSL_TLS_SNI, no escaping is performed by either mod_log_config or mod_ssl and unsanitized data provided by the client may appear in log files.<br><br></p>
+<h3 id="references-55">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-51">Credits</h3>
+<ul>
+<li>John Runyon (finder)</li>
+</ul>
+<h2 id="CVE-2025-23048">mod_ssl access control bypass with session resumption</h2>
+<p>CVE-2025-23048 <a href="./CVE-2025-23048.cve.json">[CVE json]</a> <a href="./CVE-2025-23048.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-11T10:30:23.007Z</em></p>
+<h3 id="affected-57">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.35 through 2.4.63</li>
+</ul>
+<h3 id="description-57">Description</h3>
+<p>In some mod_ssl configurations on Apache HTTP Server 2.4.35 through to 2.4.63, an access control bypass by trusted clients is possible using TLS 1.3 session resumption.<br><br>Configurations are affected when mod_ssl is configured for multiple virtual hosts, with each restricted to a different set of trusted client certificates (for example with a different SSLCACertificateFile/Path setting). In such a case, a client trusted to access one virtual host may be able to access another virtual host, if SSLStrictSNIVHostCheck is not enabled in either virtual host.<br><br></p>
+<h3 id="references-56">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-52">Credits</h3>
+<ul>
+<li>Sven Hebrok, Felix Cramer, Tim Storm, Maximilian Radoy, and Juraj Somorovsky at Paderborn University (finder)</li>
+</ul>
+<h2 id="CVE-2025-49812">mod_ssl TLS upgrade attack</h2>
+<p>CVE-2025-49812 <a href="./CVE-2025-49812.cve.json">[CVE json]</a> <a href="./CVE-2025-49812.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-11T10:29:53.093Z</em></p>
+<h3 id="affected-58">Affected</h3>
+<ul>
+<li>Apache HTTP Server through 2.4.63</li>
+</ul>
+<h3 id="description-58">Description</h3>
+<p>In some mod_ssl configurations on Apache HTTP Server versions through to 2.4.63, an HTTP desynchronisation attack allows a man-in-the-middle attacker to hijack an HTTP session via a TLS upgrade.<br><br>Only configurations using &ldquo;SSLEngine optional&rdquo; to enable TLS upgrades are affected. Users are recommended to upgrade to version 2.4.64, which removes support for TLS upgrade.</p>
+<h3 id="references-57">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-53">Credits</h3>
+<ul>
+<li>Robert Merget (Technology Innovation Institute) (finder)</li>
+<li>Nurullah Erinola (Ruhr University Bochum) (finder)</li>
+<li>Marcel Maehren (Ruhr University Bochum) (finder)</li>
+<li>Lukas Knittel (Ruhr University Bochum) (finder)</li>
+<li>Sven Hebrok (Paderborn University) (finder)</li>
+<li>Marcus Brinkmann (Ruhr University Bochum) (finder)</li>
+<li>Juraj Somorovsky (Paderborn University) (finder)</li>
+<li>Jörg Schwenk (Ruhr University Bochum) (finder)</li>
+</ul>
+<h2 id="CVE-2025-53020">HTTP/2 DoS by Memory Increase</h2>
+<p>CVE-2025-53020 <a href="./CVE-2025-53020.cve.json">[CVE json]</a> <a href="./CVE-2025-53020.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-11T10:30:11.990Z</em></p>
+<h3 id="affected-59">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.17 through 2.4.63</li>
+</ul>
+<h3 id="description-59">Description</h3>
+<p>Late Release of Memory after Effective Lifetime vulnerability in Apache HTTP Server.</p><p>This issue affects Apache HTTP Server: from 2.4.17 up to 2.4.63.</p><p>Users are recommended to upgrade to version 2.4.64, which fixes the issue.</p>
+<h3 id="references-58">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-54">Credits</h3>
+<ul>
+<li>Gal Bar Nahum (finder)</li>
+</ul>
 
   
 </div>
