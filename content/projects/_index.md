@@ -50,7 +50,6 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Flink](https://flink.apache.org/what-is-flink/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://flink.apache.org/what-is-flink/security/) |
 | Apache Geode |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Geronimo](https://geronimo.apache.org/security-reports.html) |  [Apache Geronimo Security Team](mailto:security@geronimo.apache.org) | |
-| [Apache Pulsar](https://github.com/apache/pulsar/security/policy) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Gobblin |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Guacamole](https://guacamole.apache.org/security/) |  [Apache Guacamole Security Team](mailto:security@guacamole.apache.org) | [Advisories](https://guacamole.apache.org/security/) |
 | [Apache Hadoop](https://hadoop.apache.org/mailing_lists.html) |  [Apache Hadoop Security Team](mailto:security@hadoop.apache.org) | [Advisories](https://hadoop.apache.org/cve_list.html) |
@@ -103,7 +102,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache PLC4X |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache POI |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Portals |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Pulsar |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Pulsar](https://github.com/apache/pulsar/security/policy) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Ranger |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache RocketMQ |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Roller |  [Apache Security Team](mailto:security@apache.org) | |
