@@ -138,3 +138,29 @@ _Last updated: 2023-12-19T19:50:08.611Z_
 ### Credits
 * Joseph Surin (Elttam) (reporter)
 * Matt Jones (Elttam) (reporter)
+
+
+## Improper input validation of console codes ## { #CVE-2024-35164 }
+
+CVE-2024-35164 [\[CVE json\]](./CVE-2024-35164.cve.json) [\[OSV json\]](./CVE-2024-35164.osv.json)
+
+
+
+_Last updated: 2025-07-02T11:23:12.067Z_
+
+### Affected
+
+* Apache Guacamole from 0.8.0 through 1.5.5
+
+
+### Description
+
+<div>The terminal emulator of Apache Guacamole 1.5.5 and older does not properly validate console codes received from servers via text-based protocols like SSH. If a malicious user has access to a text-based connection, a specially-crafted sequence of console codes could allow arbitrary code to be executed
+with the privileges of the running guacd process.</div><div><br></div><div>Users are recommended to upgrade to version 1.6.0, which fixes this issue.</div>
+
+### References
+* https://lists.apache.org/thread/sgs8lplbkrpvd3hrvcnnxh3028h4py70
+
+
+### Credits
+* Tizian Seehaus (Tibotix) (reporter)

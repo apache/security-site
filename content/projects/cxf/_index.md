@@ -262,3 +262,31 @@ A potential denial of service vulnerability is present in versions of Apache CXF
 
 ### References
 * https://lists.apache.org/thread/lfs8l63rnctnj2skfrxyys7v8fgnt122
+
+
+## Denial of Service and sensitive data exposure in logs ## { #CVE-2025-48795 }
+
+CVE-2025-48795 [\[CVE json\]](./CVE-2025-48795.cve.json) [\[OSV json\]](./CVE-2025-48795.osv.json)
+
+
+
+_Last updated: 2025-07-15T14:26:43.340Z_
+
+### Affected
+
+* Apache CXF from 3.5.10 before 3.5.11
+* Apache CXF from 3.6.5 before 3.6.6
+* Apache CXF from 4.0.6 before 4.0.7
+* Apache CXF from 4.1.0 before 4.1.1
+
+
+### Description
+
+Apache CXF stores large stream based messages as temporary files on the local filesystem. A bug was introduced which means that the entire temporary file is read into memory and then logged. An attacker might be able to exploit this to cause a denial of service attack by causing an out of memory exception. In addition, it is possible to configure CXF to encrypt temporary files to prevent sensitive credentials from being cached unencrypted on the local filesystem, however this bug means that the cached files are written out to logs unencrypted.<br><br>Users are recommended to upgrade to versions 3.5.11, 3.6.6, 4.0.7 or 4.1.1, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/vo5qv02mvv5plmb6z2xf1ktjmrpv3jmn
+
+
+### Credits
+* MAUGIN Thomas https://github.com/Thom-x, Qlik (finder)

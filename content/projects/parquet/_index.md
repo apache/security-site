@@ -38,6 +38,31 @@ Improper Input Validation vulnerability in Parquet-MR of Apache Parquet allows a
 * This issue was discovered by Sergey Temnikov of the Amazon S3 team.
 
 
+## Arbitrary code execution in the parquet-avro module when reading an Avro schema from a Parquet file metadata ## { #CVE-2025-30065 }
+
+CVE-2025-30065 [\[CVE json\]](./CVE-2025-30065.cve.json) [\[OSV json\]](./CVE-2025-30065.osv.json)
+
+
+
+_Last updated: 2025-07-11T10:32:31.431Z_
+
+### Affected
+
+* Apache Parquet Java through 1.15.0
+
+
+### Description
+
+<p><span style="background-color: rgb(252, 252, 252);">Schema parsing in the parquet-avro module of Apache Parquet 1.15.0 and previous versions allows bad actors to execute arbitrary code</span><br></p><p>Users are recommended to upgrade to version 1.15.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/okzqb3kn479gqzxm21gg5vqr35om9gw5
+
+
+### Credits
+* Keyi Li (Amazon) (finder)
+
+
 ## Potential malicious code execution from trusted packages in the parquet-avro module when reading an Avro schema from a Parquet file metadata ## { #CVE-2025-46762 }
 
 CVE-2025-46762 [\[CVE json\]](./CVE-2025-46762.cve.json) [\[OSV json\]](./CVE-2025-46762.osv.json)

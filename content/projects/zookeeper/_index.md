@@ -47,7 +47,7 @@ CVE-2024-23944 [\[CVE json\]](./CVE-2024-23944.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-03-14T16:09:06.013Z_
+_Last updated: 2025-07-03T14:52:54.955Z_
 
 ### Affected
 

@@ -1522,3 +1522,181 @@ SSRF in Apache HTTP Server on Windows with mod_rewrite in server/vhost context, 
 ### Credits
 * Smi1e (DBAPPSecurity Ltd.) (finder)
 * xiaojunjie (DBAPPSecurity Ltd.) (finder)
+
+
+## HTTP response splitting ## { #CVE-2024-42516 }
+
+CVE-2024-42516 [\[CVE json\]](./CVE-2024-42516.cve.json) [\[OSV json\]](./CVE-2024-42516.osv.json)
+
+
+
+_Last updated: 2025-07-11T10:29:33.054Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.63
+
+
+### Description
+
+HTTP response splitting in the core of Apache HTTP Server allows an attacker who can manipulate the Content-Type response headers of applications hosted or proxied by the server can split the HTTP response.<br><br>This vulnerability was described as CVE-2023-38709 but the patch included in Apache HTTP Server 2.4.59 did not address the issue.<br><br>Users are recommended to upgrade to version 2.4.64, which fixes this issue.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+## SSRF with mod_headers setting Content-Type header ## { #CVE-2024-43204 }
+
+CVE-2024-43204 [\[CVE json\]](./CVE-2024-43204.cve.json) [\[OSV json\]](./CVE-2024-43204.osv.json)
+
+
+
+_Last updated: 2025-07-11T10:33:09.127Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.63
+
+
+### Description
+
+SSRF in Apache HTTP Server with mod_proxy loaded allows an attacker to send outbound proxy requests to a URL controlled by the attacker.&nbsp; Requires an unlikely configuration where mod_headers is configured to modify the Content-Type request or response header with a value provided in the HTTP request.<br><br>Users are recommended to upgrade to version 2.4.64 which fixes this issue.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* xiaojunjie@安恒信息杭州市滨江区技能大师工作室 (finder)
+
+
+## SSRF on Windows due to UNC paths ## { #CVE-2024-43394 }
+
+CVE-2024-43394 [\[CVE json\]](./CVE-2024-43394.cve.json) [\[OSV json\]](./CVE-2024-43394.osv.json)
+
+
+
+_Last updated: 2025-07-11T10:29:24.674Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.63
+
+
+### Description
+
+<p></p><p>Server-Side Request Forgery (SSRF)&nbsp;in Apache HTTP Server on Windows allows to potentially leak NTLM hashes to a malicious server via&nbsp;<br>mod_rewrite or apache expressions that pass unvalidated request input.</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.63.</p>Note: <span style="background-color: rgb(255, 255, 255);">&nbsp;The Apache HTTP Server Project will be setting a higher bar for accepting vulnerability reports regarding SSRF via UNC paths. <br><br>The server offers limited protection against administrators directing the server to open UNC paths.<br></span>Windows servers should limit the hosts they will connect over via SMB based on the nature of NTLM authentication.<br>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Kainan Zhang (@4xpl0r3r) from Fortinet (finder)
+
+
+## mod_ssl error log variable escaping ## { #CVE-2024-47252 }
+
+CVE-2024-47252 [\[CVE json\]](./CVE-2024-47252.cve.json) [\[OSV json\]](./CVE-2024-47252.osv.json)
+
+
+
+_Last updated: 2025-07-11T10:29:12.847Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4 through 2.4.63
+
+
+### Description
+
+Insufficient escaping of user-supplied data in mod_ssl in Apache HTTP Server 2.4.63 and earlier allows an untrusted SSL/TLS client to insert escape characters into log files in some configurations.<br><br>In a logging configuration where CustomLog is used with "%{varname}x" or "%{varname}c" to log variables provided by mod_ssl such as SSL_TLS_SNI, no escaping is performed by either mod_log_config or mod_ssl and unsanitized data provided by the client may appear in log files.<br><br>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* John Runyon (finder)
+
+
+## mod_ssl access control bypass with session resumption ## { #CVE-2025-23048 }
+
+CVE-2025-23048 [\[CVE json\]](./CVE-2025-23048.cve.json) [\[OSV json\]](./CVE-2025-23048.osv.json)
+
+
+
+_Last updated: 2025-07-11T10:30:23.007Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.35 through 2.4.63
+
+
+### Description
+
+In some mod_ssl configurations on Apache HTTP Server 2.4.35 through to 2.4.63, an access control bypass by trusted clients is possible using TLS 1.3 session resumption.<br><br>Configurations are affected when mod_ssl is configured for multiple virtual hosts, with each restricted to a different set of trusted client certificates (for example with a different SSLCACertificateFile/Path setting). In such a case, a client trusted to access one virtual host may be able to access another virtual host, if SSLStrictSNIVHostCheck is not enabled in either virtual host.<br><br>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Sven Hebrok, Felix Cramer, Tim Storm, Maximilian Radoy, and Juraj Somorovsky at Paderborn University (finder)
+
+
+## mod_ssl TLS upgrade attack ## { #CVE-2025-49812 }
+
+CVE-2025-49812 [\[CVE json\]](./CVE-2025-49812.cve.json) [\[OSV json\]](./CVE-2025-49812.osv.json)
+
+
+
+_Last updated: 2025-07-11T10:29:53.093Z_
+
+### Affected
+
+* Apache HTTP Server through 2.4.63
+
+
+### Description
+
+In some mod_ssl configurations on Apache HTTP Server versions through to 2.4.63, an HTTP desynchronisation attack allows a man-in-the-middle attacker to hijack an HTTP session via a TLS upgrade.<br><br>Only configurations using "SSLEngine optional" to enable TLS upgrades are affected. Users are recommended to upgrade to version 2.4.64, which removes support for TLS upgrade.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Robert Merget (Technology Innovation Institute) (finder)
+* Nurullah Erinola (Ruhr University Bochum) (finder)
+* Marcel Maehren (Ruhr University Bochum) (finder)
+* Lukas Knittel (Ruhr University Bochum) (finder)
+* Sven Hebrok (Paderborn University) (finder)
+* Marcus Brinkmann (Ruhr University Bochum) (finder)
+* Juraj Somorovsky (Paderborn University) (finder)
+* Jörg Schwenk (Ruhr University Bochum) (finder)
+
+
+## HTTP/2 DoS by Memory Increase ## { #CVE-2025-53020 }
+
+CVE-2025-53020 [\[CVE json\]](./CVE-2025-53020.cve.json) [\[OSV json\]](./CVE-2025-53020.osv.json)
+
+
+
+_Last updated: 2025-07-11T10:30:11.990Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.17 through 2.4.63
+
+
+### Description
+
+<p>Late Release of Memory after Effective Lifetime vulnerability in Apache HTTP Server.</p><p>This issue affects Apache HTTP Server: from 2.4.17 up to 2.4.63.</p><p>Users are recommended to upgrade to version 2.4.64, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Gal Bar Nahum (finder)

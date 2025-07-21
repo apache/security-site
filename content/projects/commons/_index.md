@@ -550,6 +550,33 @@ Users of the artifact org.apache.commons:commons-beanutils2
 * Muthukumar Marikani (mailto:muthukumar.marikani@zohocorp.com) (finder)
 
 
+## ClassUtils.getClass(...) can throw a StackOverflowError on very long inputs ## { #CVE-2025-48924 }
+
+CVE-2025-48924 [\[CVE json\]](./CVE-2025-48924.cve.json) [\[OSV json\]](./CVE-2025-48924.osv.json)
+
+
+
+_Last updated: 2025-07-11T14:56:54.861Z_
+
+### Affected
+
+* Apache Commons Lang from 2.0 through 2.6
+* Apache Commons Lang from 3.0 before 3.18.0
+
+
+### Description
+
+<p>Uncontrolled Recursion vulnerability in Apache Commons Lang.</p><p>This issue affects Apache Commons Lang: Starting with&nbsp;<span style="background-color: rgb(255, 255, 255);">commons-lang:commons-lang&nbsp;</span>2.0 to 2.6, and, from org.apache.<span style="background-color: rgb(255, 255, 255);">commons:commons-lang3 3.0 before&nbsp;</span>3.18.0.</p><p>The methods ClassUtils.getClass(...) can throw&nbsp;StackOverflowError on very long inputs. Because an Error is usually not handled by applications and libraries, a 
+StackOverflowError could&nbsp;cause an application to stop.</p><p>Users are recommended to upgrade to version 3.18.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/bgv0lpswokgol11tloxnjfzdl7yrc1g1
+
+
+### Credits
+* OSS-Fuzz Issue 42522972 (finder)
+
+
 ## FileUpload DoS via part headers ## { #CVE-2025-48976 }
 
 CVE-2025-48976 [\[CVE json\]](./CVE-2025-48976.cve.json) [\[OSV json\]](./CVE-2025-48976.osv.json)

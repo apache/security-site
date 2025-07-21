@@ -1170,3 +1170,85 @@ _Last updated: 2025-06-16T14:20:04.248Z_
 
 ### Credits
 * Greg K (https://github.com/gregk4sec) (finder)
+
+
+## APR/Native Connector crash leading to DoS ## { #CVE-2025-52434 }
+
+CVE-2025-52434 [\[CVE json\]](./CVE-2025-52434.cve.json) [\[OSV json\]](./CVE-2025-52434.osv.json)
+
+
+
+_Last updated: 2025-07-10T19:04:00.766Z_
+
+### Affected
+
+* Apache Tomcat from 9.0.0.M1 through 9.0.106
+
+
+### Description
+
+<p>Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') vulnerability in Apache Tomcat when using the APR/Native connector. This was particularly noticeable with client initiated closes of HTTP/2 connections.</p><p>This issue affects Apache Tomcat: from 9.0.0.M1 through 9.0.106.</p><p>Users are recommended to upgrade to version 9.0.107, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/gxgh65004f25y8519coth6w7vchww030
+
+
+### Credits
+* Nacl (finder)
+* 12SqweR (finder)
+* WHOAMI (finder)
+* yyzmoon (finder)
+
+
+## DoS via integer overflow in multipart file upload ## { #CVE-2025-52520 }
+
+CVE-2025-52520 [\[CVE json\]](./CVE-2025-52520.cve.json) [\[OSV json\]](./CVE-2025-52520.osv.json)
+
+
+
+_Last updated: 2025-07-10T19:05:49.403Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.8
+* Apache Tomcat from 10.1.0-M1 through 10.1.42
+* Apache Tomcat from 9.0.0.M1 through 9.0.106
+
+
+### Description
+
+<p>For some unlikely configurations of multipart upload, an Integer Overflow vulnerability in Apache Tomcat could lead to a DoS via bypassing of size limits.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.8, from 10.1.0-M1 through 10.1.42, from 9.0.0.M1 through 9.0.106.</p><p>Users are recommended to upgrade to version 11.0.9, 10.1.43 or 9.0.107, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/trqq01bbxw6c92zx69kx2mw2qgmfy0o5
+
+
+### Credits
+* Saravana Kumar (finder)
+
+
+## DoS via excessive h2 streams at connection start ## { #CVE-2025-53506 }
+
+CVE-2025-53506 [\[CVE json\]](./CVE-2025-53506.cve.json) [\[OSV json\]](./CVE-2025-53506.osv.json)
+
+
+
+_Last updated: 2025-07-11T10:31:51.460Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.8
+* Apache Tomcat from 10.1.0-M1 through 10.1.42
+* Apache Tomcat from 9.0.0.M1 through 9.0.106
+
+
+### Description
+
+<p>Uncontrolled Resource Consumption vulnerability in Apache Tomcat if an HTTP/2 client did not acknowledge the initial settings frame that reduces the maximum permitted concurrent streams.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.8, from 10.1.0-M1 through 10.1.42, from 9.0.0.M1 through 9.0.106.</p><p>Users are recommended to upgrade to version 11.0.9, 10.1.43 or 9.0.107, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/p09775q0rd185m6zz98krg0fp45j8kr0
+
+
+### Credits
+* Kanatoko (finder)

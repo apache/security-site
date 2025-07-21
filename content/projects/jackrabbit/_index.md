@@ -40,3 +40,32 @@ _Last updated: 2023-07-25T14:02:07.695Z_
 * Siebene@ (reporter)
 * Michael Dürig (other)
 * Manfred Baedke (other)
+
+
+## XXE vulnerability in jackrabbit-spi-commons ## { #CVE-2025-53689 }
+
+CVE-2025-53689 [\[CVE json\]](./CVE-2025-53689.cve.json) [\[OSV json\]](./CVE-2025-53689.osv.json)
+
+
+
+_Last updated: 2025-07-14T09:15:35.583Z_
+
+### Affected
+
+* Apache Jackrabbit from 2.20.0 before 2.20.17
+* Apache Jackrabbit from 2.22.0 before 2.22.1
+* Apache Jackrabbit from 2.23.0-beta before 2.23.2-beta
+
+
+### Description
+
+Blind XXE Vulnerabilities in jackrabbit-spi-commons and jackrabbit-core in Apache Jackrabbit &lt; 2.23.2 due to usage of an unsecured document build to load privileges.<br><br>Users are recommended to upgrade to versions 2.20.17 (Java 8), 2.22.1 (Java 11) or 2.23.2 (Java 11, beta versions), which fix this issue. Earlier versions (up to 2.20.16) are not supported anymore, thus users should update to the respective supported version.
+
+### References
+* https://lists.apache.org/thread/5pf9n76ny13pzzk765og2h3gxdxw7p24
+
+
+### Credits
+* Lars Krapf - Adobe (reporter)
+* Dylan Pindur - Assetnote (finder)
+* Adam Kues - Assetnote (finder)

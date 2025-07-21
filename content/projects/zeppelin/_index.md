@@ -396,3 +396,30 @@ Improper Encoding or Escaping of Output vulnerability in Apache Zeppelin.<br><br
 
 ### Credits
 * H Ming (finder)
+
+
+## raft directory listing and file read ## { #CVE-2024-41169 }
+
+CVE-2024-41169 [\[CVE json\]](./CVE-2024-41169.cve.json) [\[OSV json\]](./CVE-2024-41169.osv.json)
+
+
+
+_Last updated: 2025-07-12T16:22:30.823Z_
+
+### Affected
+
+* Apache Zeppelin from 0.10.1 before 0.12.0
+
+
+### Description
+
+<p>The attacker can use the raft server protocol in an unauthenticated way. The attacker can see the server's resources, including directories and files.</p><p>This issue affects Apache Zeppelin: from 0.10.1 up to 0.12.0.</p><p>Users are recommended to upgrade to version 0.12.0,&nbsp;<span style="background-color: rgb(255, 255, 255);">which fixes the issue by removing the Cluster Interpreter.</span></p>
+
+### References
+* https://github.com/apache/zeppelin/pull/4841
+* https://issues.apache.org/jira/browse/ZEPPELIN-6101
+* https://lists.apache.org/thread/moyym04993c8owh4h0qj98r43tbo8qdd
+
+
+### Credits
+* SuperX <superxyyang@gmail.com> (finder)

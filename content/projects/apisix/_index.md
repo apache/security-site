@@ -198,3 +198,53 @@ _Last updated: 2024-05-02T09:20:24.666Z_
 
 ### Credits
 * Discovered and reported by Brandon Arp and Bruno Green of Topsort. (reporter)
+
+
+## Local listening file permissions in APISIX plugin runner allow a local attacker to elevate privileges ## { #CVE-2025-27446 }
+
+CVE-2025-27446 [\[CVE json\]](./CVE-2025-27446.cve.json) [\[OSV json\]](./CVE-2025-27446.osv.json)
+
+
+
+_Last updated: 2025-07-06T03:41:43.412Z_
+
+### Affected
+
+* Apache APISIX Java Plugin Runner from 0.2.0 through 0.5.0
+
+
+### Description
+
+<p>Incorrect Permission Assignment for Critical Resource vulnerability in Apache APISIX(java-plugin-runner).</p>Local listening file permissions in APISIX plugin runner allow a local attacker to elevate privileges.<br><p>This issue affects Apache APISIX(java-plugin-runner): from 0.2.0 through 0.5.0.</p><p>Users are recommended to upgrade to version 0.6.0 or higher, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/qwxnxolt0j5nvjfpr0mlz6h7nrtvyzng
+
+
+### Credits
+* Benoit TELLIER (reporter)
+
+
+## improper validation of issuer from introspection discovery url in plugin openid-connect ## { #CVE-2025-46647 }
+
+CVE-2025-46647 [\[CVE json\]](./CVE-2025-46647.cve.json) [\[OSV json\]](./CVE-2025-46647.osv.json)
+
+
+
+_Last updated: 2025-07-02T01:08:54.683Z_
+
+### Affected
+
+* Apache APISIX before 3.12.0
+
+
+### Description
+
+<p>A vulnerability of plugin&nbsp;openid-connect in Apache APISIX.</p>This vulnerability will only have an impact if all of the following conditions are met:<br>1. Use the openid-connect plugin with introspection mode<br>2. The auth service connected to openid-connect provides services to multiple issuers<br>3. Multiple issuers share the same private key and relies only on the issuer being different<br><br><div><div>If affected by this vulnerability, it would allow an attacker with a valid account on one of the issuers to log into the other issuer.</div></div><br><p>This issue affects Apache APISIX: until 3.12.0.</p><p>Users are recommended to upgrade to version 3.12.0 or higher.<br><br></p>
+
+### References
+* https://lists.apache.org/thread/yrpp2cd3o4qkxlrh421mq8gsrt0k4x0w
+
+
+### Credits
+* Tiernan Messmer (finder)

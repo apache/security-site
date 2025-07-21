@@ -162,3 +162,49 @@ remote user to execute javascript via a SPARQL query.<br><p>This issue affects A
 
 ### Credits
 * s3gundo of Alibaba (reporter)
+
+
+## Administrative users can create files outside the server directory space via the admin UI ## { #CVE-2025-49656 }
+
+CVE-2025-49656 [\[CVE json\]](./CVE-2025-49656.cve.json) [\[OSV json\]](./CVE-2025-49656.osv.json)
+
+
+
+_Last updated: 2025-07-21T09:30:16.936Z_
+
+### Affected
+
+* Apache Jena through 5.4.0
+
+
+### Description
+
+<p>Users with administrator access can create databases files outside the files area of the Fuseki server.</p><p>This issue affects Apache Jena version up to 5.4.0.</p><p>Users are recommended to upgrade to version 5.5.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/qmm21som8zct813vx6dfd1phnfro6mwq
+
+
+### Credits
+* Noriaki Iwasaki; Cyber Defense Institute, Inc (reporter)
+
+
+## Configuration files uploaded by administrative users are not check properly ## { #CVE-2025-50151 }
+
+CVE-2025-50151 [\[CVE json\]](./CVE-2025-50151.cve.json) [\[OSV json\]](./CVE-2025-50151.osv.json)
+
+
+
+_Last updated: 2025-07-21T09:32:27.896Z_
+
+### Affected
+
+* Apache Jena through 5.4.0
+
+
+### Description
+
+<div>File access paths in configuration files uploaded by users with administrator access are not validated.</div><div><p>This issue affects Apache Jena version up to 5.4.0.</p><p>Users are recommended to upgrade to version 5.5.0, which does not allow arbitrary configuration upload.</p><br></div>
+
+### References
+* https://lists.apache.org/thread/12gks5z40gh9bszn1xk8mz34gz586xss
