@@ -33,3 +33,4 @@ Still, as a token of our appreciation, we'd like to thank a number of such repor
 * Gaurang Maheta for notifying us of a remaining reference to polyfill.io on an ASF domain.
 * [Ahmed Ghazy](https://www.linkedin.com/in/ahmedd-ghazy) for notifying us of leaked credentials
 * [Maulik Mehta](https://www.linkedin.com/in/maulik-mehta-root) for notifying us of incorrectly exposed secrets
+* Dror Peleg for reporting an XSS in one of our project websites
