@@ -1381,3 +1381,109 @@ _Last updated: 2025-05-30T08:26:07.560Z_
 * Pedro Sousa (coordinator)
 * Beto de Almeida (remediation developer)
 * Mirakl Security (finder)
+
+
+## Stored XSS on charts metadata ## { #CVE-2025-55672 }
+
+CVE-2025-55672 [\[CVE json\]](./CVE-2025-55672.cve.json) [\[OSV json\]](./CVE-2025-55672.osv.json)
+
+
+
+_Last updated: 2025-08-14T13:17:31.272Z_
+
+### Affected
+
+* Apache Superset before 5.0.0
+
+
+### Description
+
+<p><span style="background-color: rgba(232, 232, 232, 0.04);">A stored Cross-Site Scripting (XSS) vulnerability exists in Apache Superset's chart visualization. An authenticated user with permissions to edit charts can inject a malicious payload into a column's label. The payload is not properly sanitized and gets executed in the victim's browser when they hover over the chart, potentially leading to session hijacking or the execution of arbitrary commands on behalf of the user.</span></p><p>This issue affects Apache Superset: before 5.0.0.</p><p>Users are recommended to upgrade to version 5.0.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/rvh7fdjfzxzjhcfwoz7twc2brhvochdj
+
+
+### Credits
+* Pedro Sousa (coordinator)
+* Jobar (finder)
+* Mehmet Yavuz (remediation developer)
+
+
+## Metadata exposure in embedded charts ## { #CVE-2025-55673 }
+
+CVE-2025-55673 [\[CVE json\]](./CVE-2025-55673.cve.json) [\[OSV json\]](./CVE-2025-55673.osv.json)
+
+
+
+_Last updated: 2025-08-14T13:16:25.157Z_
+
+### Affected
+
+* Apache Superset before 4.1.3
+
+
+### Description
+
+<p><span style="background-color: rgba(232, 232, 232, 0.04);">When a guest user accesses a chart in Apache Superset, the API response from the /chart/data endpoint includes a query field in its payload. This field contains the underlying query, which improperly discloses database schema information, such as table names, to the low-privileged guest user.</span></p><p>This issue affects Apache Superset: before 4.1.3.</p><p>Users are recommended to upgrade to version 4.1.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/h2hw756wk4sj4z49blvzkr5fntl9hlf8
+
+
+### Credits
+* Pedro Sousa (coordinator)
+* Daniel Gaspar (remediation developer)
+
+
+## Improper SQL authorisation, parse not checking for specific engine functions ## { #CVE-2025-55674 }
+
+CVE-2025-55674 [\[CVE json\]](./CVE-2025-55674.cve.json) [\[OSV json\]](./CVE-2025-55674.osv.json)
+
+
+
+_Last updated: 2025-08-14T13:18:08.885Z_
+
+### Affected
+
+* Apache Superset before 5.0.0
+
+
+### Description
+
+<p><span style="background-color: rgba(232, 232, 232, 0.04);">A bypass of the DISALLOWED_SQL_FUNCTIONS security feature in Apache Superset allows for the execution of blocked SQL functions. An attacker can use a special inline block to circumvent the denylist. This allows a user with SQL Lab access to execute functions that were intended to be disabled, leading to the disclosure of sensitive database information like the software version.</span></p><p>This issue affects Apache Superset: before 5.0.0.</p><p>Users are recommended to upgrade to version 5.0.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/cn49ps15ny3g2b1qzdg5mj7hp47p5jdo
+
+
+### Credits
+* Pedro Sousa (coordinator)
+* Beto Dealmeida (remediation developer)
+* d47sec from NCS Viet Nam (reporter)
+
+
+## Incorrect datasource authorization on REST API ## { #CVE-2025-55675 }
+
+CVE-2025-55675 [\[CVE json\]](./CVE-2025-55675.cve.json) [\[OSV json\]](./CVE-2025-55675.osv.json)
+
+
+
+_Last updated: 2025-08-14T13:18:52.601Z_
+
+### Affected
+
+* Apache Superset before 5.0.0
+
+
+### Description
+
+<p><span style="background-color: rgb(255, 255, 255);">Apache Superset contains an improper access control vulnerability in its /explore endpoint. A missing authorization check allows an authenticated user to discover metadata about datasources they do not have permission to access. By iterating through the datasource_id in the URL, an attacker can enumerate and confirm the existence and names of protected datasources, leading to sensitive information disclosure.</span></p><p>This issue affects Apache Superset: before 5.0.0.</p><p>Users are recommended to upgrade to version 5.0.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/op681b4kbd7g84tfjf9omz0sxggbcv33
+
+
+### Credits
+* Daniel Höxtermann / hxtmdev (remediation developer)
+* Pedro Sousa (coordinator)

@@ -601,3 +601,30 @@ _Last updated: 2025-06-16T15:00:47.037Z_
 
 ### Credits
 * TERASOLUNA Framework Security Team of NTT DATA Group Corporation (finder)
+
+
+## Expression Injection leading to RCE ## { #CVE-2025-53192 }
+
+CVE-2025-53192 [\[CVE json\]](./CVE-2025-53192.cve.json) [\[OSV json\]](./CVE-2025-53192.osv.json)
+
+
+
+_Last updated: 2025-08-18T20:09:29.375Z_
+
+### Affected
+
+* Apache Commons OGNL before *
+
+
+### Description
+
+<p>** UNSUPPORTED WHEN ASSIGNED ** Improper Neutralization of Expression/Command Delimiters vulnerability in Apache Commons OGNL.</p><p>This issue affects Apache Commons OGNL: all versions.</p><p></p><div><p>When using the API <code>Ognl.getValue</code>​, the OGNL engine parses and evaluates the provided expression with powerful capabilities, including accessing and invoking related methods,
+ etc. Although <code>OgnlRuntime</code> attempts to restrict certain dangerous classes and methods (such as <code>java.lang.Runtime</code>) through a blocklist, these restrictions are not comprehensive. 
+Attackers may be able to bypass the restrictions by leveraging class objects that are not covered by the blocklist and potentially achieve arbitrary code execution.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.<br></p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</div>
+
+### References
+* https://lists.apache.org/thread/2gj8tjl6vz949nnp3yxz3okm9xz2k7sp
+
+
+### Credits
+* yyjLF (finder)

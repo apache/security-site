@@ -40,6 +40,31 @@ CWE-502 Deserialization of Untrusted Data&nbsp;at the&nbsp;<span style="backgrou
 * xuxiaoyu of HW GTS shengjian lab (reporter)
 
 
+## SSRF ## { #CVE-2024-39954 }
+
+CVE-2024-39954 [\[CVE json\]](./CVE-2024-39954.cve.json) [\[OSV json\]](./CVE-2024-39954.osv.json)
+
+
+
+_Last updated: 2025-08-20T08:56:38.252Z_
+
+### Affected
+
+* Apache EventMesh Runtime from 1.6.0 through 1.11.0
+
+
+### Description
+
+CWE-918 Server-Side Request Forgery (SSRF) in eventmesh-runtime module in <span style="background-color: rgba(0, 0, 0, 0.06);">WebhookUtil.java</span> on windows\linux\mac os e.g. allows the attacker can abuse functionality on the server to read or update internal resources.<br>Users are recommended to upgrade to version 1.12.0 or use the master branch , which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/v6c96zygqx8xc2k3n2d59mgnm5txhkon
+
+
+### Credits
+* Mak1r 808 <808mak1r@gmail.com> (reporter)
+
+
 ## raft Hessian Deserialization Vulnerability allowing remote code execution ## { #CVE-2024-56180 }
 
 CVE-2024-56180 [\[CVE json\]](./CVE-2024-56180.cve.json) [\[OSV json\]](./CVE-2024-56180.osv.json)

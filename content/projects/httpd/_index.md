@@ -1645,6 +1645,31 @@ In some mod_ssl configurations on Apache HTTP Server 2.4.35 through to 2.4.63, a
 * Sven Hebrok, Felix Cramer, Tim Storm, Maximilian Radoy, and Juraj Somorovsky at Paderborn University (finder)
 
 
+## mod_proxy_http2 denial of service ## { #CVE-2025-49630 }
+
+CVE-2025-49630 [\[CVE json\]](./CVE-2025-49630.cve.json) [\[OSV json\]](./CVE-2025-49630.osv.json)
+
+
+
+_Last updated: 2025-08-13T15:38:59.198Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.26 through 2.4.63
+
+
+### Description
+
+In certain proxy configurations, a denial of service attack against&nbsp;Apache HTTP Server versions 2.4.26 through to 2.4.63 can be triggered by untrusted clients causing an assertion in mod_proxy_http2.<br><br>Configurations affected are a reverse proxy is configured for an HTTP/2 backend, with ProxyPreserveHost set to "on".<br>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Anthony CORSIEZ (finder)
+
+
 ## mod_ssl TLS upgrade attack ## { #CVE-2025-49812 }
 
 CVE-2025-49812 [\[CVE json\]](./CVE-2025-49812.cve.json) [\[OSV json\]](./CVE-2025-49812.osv.json)
@@ -1700,3 +1725,24 @@ _Last updated: 2025-07-11T10:30:11.990Z_
 
 ### Credits
 * Gal Bar Nahum (finder)
+
+
+## 'RewriteCond expr' always evaluates to true in 2.4.64 ## { #CVE-2025-54090 }
+
+CVE-2025-54090 [\[CVE json\]](./CVE-2025-54090.cve.json) [\[OSV json\]](./CVE-2025-54090.osv.json)
+
+
+
+_Last updated: 2025-07-23T13:19:23.112Z_
+
+### Affected
+
+* Apache HTTP Server at 2.4.64
+
+
+### Description
+
+<p>A bug in Apache HTTP Server 2.4.64 results in all "RewriteCond expr ..." tests evaluating as "true".<br><br></p><p>Users are recommended to upgrade to version 2.4.65, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html

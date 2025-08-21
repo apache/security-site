@@ -735,3 +735,34 @@ _Last updated: 2025-04-01T14:43:47.266Z_
 
 ### Credits
 * Khaled Nassar  (@mindpatch) (finder)
+
+
+## RCE Vulnerability in scrum plugin ## { #CVE-2025-54466 }
+
+CVE-2025-54466 [\[CVE json\]](./CVE-2025-54466.cve.json) [\[OSV json\]](./CVE-2025-54466.osv.json)
+
+
+
+_Last updated: 2025-08-15T14:13:40.046Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.02
+
+
+### Description
+
+<p>Improper Control of Generation of Code ('Code Injection') vulnerability leading to a possible RCE in Apache OFBiz&nbsp;scrum plugin.<br><br>This issue affects Apache OFBiz: before 24.09.02 only when the&nbsp;scrum plugin is used.</p><p>Even unauthenticated attackers can exploit this vulnerability.<br></p><p>Users are recommended to upgrade to version 24.09.02, which fixes the issue.</p>
+
+### References
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html
+* https://ofbiz.apache.org/release-notes-24.09.02.html
+* https://issues.apache.org/jira/browse/OFBIZ-13276
+* https://lists.apache.org/thread/14d0yd9co9gx2mctd3vyz1cc8d39n915
+
+
+### Credits
+* Teeramet Eakwilai <teeramet@datafarm.co.th> (finder)
+* Thanasin Luangpipat (finder)
+* Jarukit Auikritskul (finder)

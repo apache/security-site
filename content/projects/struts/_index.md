@@ -155,3 +155,28 @@ _Last updated: 2024-12-20T15:44:02.694Z_
 
 ### References
 * https://cwiki.apache.org/confluence/display/WW/S2-067
+
+
+## Improper Output Neutralization for Logs ## { #CVE-2025-54656 }
+
+CVE-2025-54656 [\[CVE json\]](./CVE-2025-54656.cve.json) [\[OSV json\]](./CVE-2025-54656.osv.json)
+
+
+
+_Last updated: 2025-07-30T15:58:00.516Z_
+
+### Affected
+
+* Apache Struts Extras before 2
+
+
+### Description
+
+<p>** UNSUPPORTED WHEN ASSIGNED ** Improper Output Neutralization for Logs vulnerability in Apache Struts.</p><p>This issue affects Apache Struts Extras: before 2.</p><p>When using LookupDispatchAction, in some cases, Struts may print untrusted input to the logs without any filtering. Specially-crafted input may lead to log output where part of the message masquerades as a separate log line, confusing consumers of the logs (either human or automated).&nbsp;</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+
+### References
+* https://lists.apache.org/thread/so5cn07j2zn9vlf1xnfqp630wts719rr
+
+
+### Credits
+* Ryan Murphy of HeroDevs (finder)

@@ -83,3 +83,34 @@ Request smuggling vulnerability in HTTP server in Apache bRPC 0.9.5~1.7.0 on all
 * Ziyang Chen of 2012 Laboratories (finder)
 * Haoran Zhi of 2012 Laboratories (finder)
 * Hongpei Li of 2012 Laboratories (finder)
+
+
+## Redis Parser Remote Denial of Service ## { #CVE-2025-54472 }
+
+CVE-2025-54472 [\[CVE json\]](./CVE-2025-54472.cve.json) [\[OSV json\]](./CVE-2025-54472.osv.json)
+
+
+
+_Last updated: 2025-08-12T02:14:20.765Z_
+
+### Affected
+
+* Apache bRPC before 1.14.1
+
+
+### Description
+
+Unlimited memory allocation in redis protocol parser in Apache bRPC (all versions &lt; 1.14.1) on all platforms allows attackers to crash the service via network.<br><br>
+
+<span style="background-color: rgb(255, 255, 255);">Root Cause: In the bRPC Redis protocol parser code, memory for arrays or strings of corresponding sizes is allocated based on the integers read from the network. If the integer read from the network is too large, it may cause a bad alloc error and lead to the program crashing. Attackers can exploit this feature by sending special data packets to the bRPC service to carry out a denial-of-service attack on it.<br></span>The bRPC 1.14.0 version tried to fix this issue by limited the memory allocation size, however, the limitation checking code is not well implemented that may cause integer overflow and evade such limitation. So the&nbsp;1.14.0 version is also vulnerable, although the integer range that affect version 1.14.0 is different from that affect version &lt; 1.14.0.<br><br>
+
+<span style="background-color: rgb(255, 255, 255);">Affected scenarios: Using bRPC as a Redis server to provide network services to untrusted clients, or using bRPC as a Redis client to call untrusted Redis services.</span>
+
+<br><br>How to Fix: we provide two methods, you can choose one of them:<br><br>1. Upgrade bRPC to version 1.14.1.<br>2. Apply this patch (<a target="_blank" rel="nofollow" href="https://github.com/apache/brpc/pull/3050">https://github.com/apache/brpc/pull/3050</a>) manually.<br><br><span style="background-color: rgb(255, 255, 255);">No matter you choose which method, you should note that the patch limits the maximum length of memory allocated for each time in the bRPC Redis parser. The default limit is 64M. If some of you redis request or response have a size larger than 64M, you might encounter error after upgrade. For such case, you can modify the gflag&nbsp;<span style="background-color: rgb(255, 255, 255);">redis_max_allocation_size to set a larger limit.</span></span><br><br>
+
+### References
+* https://lists.apache.org/thread/r3xsy3wvs4kmfhc281173k5b6ll1xt2m
+
+
+### Credits
+* Tyler Zars (reporter)

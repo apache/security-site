@@ -427,7 +427,7 @@ CVE-2023-28708 [\[CVE json\]](./CVE-2023-28708.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2023-03-22T10:11:10.614Z_
+_Last updated: 2025-08-07T10:57:04.637Z_
 
 ### Affected
 
@@ -511,7 +511,7 @@ CVE-2023-41080 [\[CVE json\]](./CVE-2023-41080.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2023-08-25T20:39:30.851Z_
+_Last updated: 2025-08-07T11:02:22.148Z_
 
 ### Affected
 
@@ -599,7 +599,7 @@ CVE-2023-42795 [\[CVE json\]](./CVE-2023-42795.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2023-10-10T17:42:21.672Z_
+_Last updated: 2025-08-07T11:04:21.577Z_
 
 ### Affected
 
@@ -625,7 +625,7 @@ CVE-2023-45648 [\[CVE json\]](./CVE-2023-45648.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2023-10-10T18:38:37.767Z_
+_Last updated: 2025-08-07T11:05:52.121Z_
 
 ### Affected
 
@@ -656,7 +656,7 @@ CVE-2023-46589 [\[CVE json\]](./CVE-2023-46589.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2023-12-05T09:49:53.674Z_
+_Last updated: 2025-08-07T11:06:31.696Z_
 
 ### Affected
 
@@ -712,7 +712,7 @@ CVE-2024-23672 [\[CVE json\]](./CVE-2024-23672.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-07-03T18:12:25.589Z_
+_Last updated: 2025-08-07T11:10:43.300Z_
 
 ### Affected
 
@@ -764,7 +764,7 @@ CVE-2024-34750 [\[CVE json\]](./CVE-2024-34750.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-07-03T19:38:21.788Z_
+_Last updated: 2025-08-08T10:25:24.682Z_
 
 ### Affected
 
@@ -791,7 +791,7 @@ CVE-2024-38286 [\[CVE json\]](./CVE-2024-38286.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-11-07T07:37:40.443Z_
+_Last updated: 2025-08-08T10:48:50.572Z_
 
 ### Affected
 
@@ -839,7 +839,7 @@ CVE-2024-50379 [\[CVE json\]](./CVE-2024-50379.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-12-19T17:34:02.440Z_
+_Last updated: 2025-08-08T11:26:52.051Z_
 
 ### Affected
 
@@ -866,7 +866,7 @@ CVE-2024-52316 [\[CVE json\]](./CVE-2024-52316.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-11-18T11:32:31.150Z_
+_Last updated: 2025-08-08T11:20:47.225Z_
 
 ### Affected
 
@@ -936,7 +936,7 @@ CVE-2024-54677 [\[CVE json\]](./CVE-2024-54677.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-12-18T07:08:27.136Z_
+_Last updated: 2025-08-08T11:22:50.270Z_
 
 ### Affected
 
@@ -959,7 +959,7 @@ CVE-2024-56337 [\[CVE json\]](./CVE-2024-56337.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-12-20T15:29:02.063Z_
+_Last updated: 2025-08-08T11:24:50.897Z_
 
 ### Affected
 
@@ -989,7 +989,7 @@ CVE-2025-24813 [\[CVE json\]](./CVE-2025-24813.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-03-18T16:09:43.998Z_
+_Last updated: 2025-08-08T11:39:51.098Z_
 
 ### Affected
 
@@ -1017,7 +1017,7 @@ CVE-2025-31650 [\[CVE json\]](./CVE-2025-31650.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-05-06T13:12:48.728Z_
+_Last updated: 2025-08-08T11:42:59.031Z_
 
 ### Affected
 
@@ -1040,7 +1040,7 @@ CVE-2025-31651 [\[CVE json\]](./CVE-2025-31651.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-05-06T13:13:07.142Z_
+_Last updated: 2025-08-08T11:49:27.749Z_
 
 ### Affected
 
@@ -1070,7 +1070,7 @@ CVE-2025-46701 [\[CVE json\]](./CVE-2025-46701.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-05-29T19:06:20.436Z_
+_Last updated: 2025-08-08T11:51:49.081Z_
 
 ### Affected
 
@@ -1097,7 +1097,7 @@ CVE-2025-48988 [\[CVE json\]](./CVE-2025-48988.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-06-16T14:17:28.072Z_
+_Last updated: 2025-08-08T11:54:30.158Z_
 
 ### Affected
 
@@ -1118,13 +1118,39 @@ _Last updated: 2025-06-16T14:17:28.072Z_
 * TERASOLUNA Framework Security Team of NTT DATA Group Corporation (finder)
 
 
+## h2 DoS - Made You Reset ## { #CVE-2025-48989 }
+
+CVE-2025-48989 [\[CVE json\]](./CVE-2025-48989.cve.json)
+
+_Last updated: 2025-08-13T12:39:48.010Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.9
+* Apache Tomcat from 10.1.0-M1 through 10.1.43
+* Apache Tomcat from 9.0.0.M1 through 9.0.107
+* Apache Tomcat from 8.5.0 through 8.5.100
+
+
+### Description
+
+<p>Improper Resource Shutdown or Release vulnerability in Apache Tomcat made Tomcat vulnerable to the made you reset attack.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.9, from 10.1.0-M1 through 10.1.43 and from 9.0.0.M1 through 9.0.107. Older, EOL versions may also be affected.</p><p>Users are recommended to upgrade to one of versions 11.0.10, 10.1.44 or 9.0.108 which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/9ydfg0xr0tchmglcprhxgwhj0hfwxlyf
+
+
+### Credits
+* Gal Bar Nahum, Anat Bremler-Barr, and Yaniv Harel of Tel Aviv University (finder)
+
+
 ## exe side-loading via icalcs.exe in Tomcat installer for Windows ## { #CVE-2025-49124 }
 
 CVE-2025-49124 [\[CVE json\]](./CVE-2025-49124.cve.json) [\[OSV json\]](./CVE-2025-49124.osv.json)
 
 
 
-_Last updated: 2025-06-16T14:22:26.411Z_
+_Last updated: 2025-08-08T12:03:08.688Z_
 
 ### Affected
 
@@ -1151,7 +1177,7 @@ CVE-2025-49125 [\[CVE json\]](./CVE-2025-49125.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-06-16T14:20:04.248Z_
+_Last updated: 2025-08-08T12:05:46.995Z_
 
 ### Affected
 
@@ -1178,7 +1204,7 @@ CVE-2025-52434 [\[CVE json\]](./CVE-2025-52434.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-07-10T19:04:00.766Z_
+_Last updated: 2025-08-08T12:10:06.290Z_
 
 ### Affected
 
@@ -1206,7 +1232,7 @@ CVE-2025-52520 [\[CVE json\]](./CVE-2025-52520.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-07-10T19:05:49.403Z_
+_Last updated: 2025-08-08T12:13:56.358Z_
 
 ### Affected
 
@@ -1233,7 +1259,7 @@ CVE-2025-53506 [\[CVE json\]](./CVE-2025-53506.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-07-11T10:31:51.460Z_
+_Last updated: 2025-08-08T12:14:50.971Z_
 
 ### Affected
 
@@ -1252,3 +1278,29 @@ _Last updated: 2025-07-11T10:31:51.460Z_
 
 ### Credits
 * Kanatoko (finder)
+
+
+## session fixation via rewrite valve ## { #CVE-2025-55668 }
+
+CVE-2025-55668 [\[CVE json\]](./CVE-2025-55668.cve.json)
+
+_Last updated: 2025-08-13T13:21:46.893Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.7
+* Apache Tomcat from 10.1.0-M1 through 10.1.41
+* Apache Tomcat from 9.0.0.M1 through 9.0.105
+* Apache Tomcat from 8 before 9.0.0.M1
+
+
+### Description
+
+<p>Session Fixation vulnerability in Apache Tomcat via rewrite valve.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.7, from 10.1.0-M1 through 10.1.41, from 9.0.0.M1 through 9.0.105.<br>Older, EOL versions may also be affected.</p><p>Users are recommended to upgrade to version 11.0.8, 10.1.42 or 9.0.106, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/v6bknr96rl7l1qxkl1c03v0qdvbbqs47
+
+
+### Credits
+* Greg K (https://github.com/gregk4sec) (finder)

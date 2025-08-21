@@ -290,3 +290,30 @@ Apache CXF stores large stream based messages as temporary files on the local fi
 
 ### Credits
 * MAUGIN Thomas https://github.com/Thom-x, Qlik (finder)
+
+
+## Untrusted JMS configuration can lead to RCE ## { #CVE-2025-48913 }
+
+CVE-2025-48913 [\[CVE json\]](./CVE-2025-48913.cve.json) [\[OSV json\]](./CVE-2025-48913.osv.json)
+
+
+
+_Last updated: 2025-08-08T09:21:18.803Z_
+
+### Affected
+
+* Apache CXF from 4.1.0 before 4.1.3
+* Apache CXF from 4.0.0 before 4.0.9
+* Apache CXF before 3.6.8
+
+
+### Description
+
+If untrusted users are allowed to configure JMS for Apache CXF, previously they could use RMI or LDAP URLs, potentially leading to code execution capabilities.  This interface is now restricted to reject those protocols, removing this possibility.<br><br>Users are recommended to upgrade to versions 3.6.8, 4.0.9 or 4.1.3, which fix this issue.
+
+### References
+* https://lists.apache.org/thread/f1nv488ztc0js4g5ml2v88mzkzslyh83
+
+
+### Credits
+* M Bhatt (r34p3r) OWASP GenAI Security Project & Blake Gatto (b1oo) Shrewd Research (finder)

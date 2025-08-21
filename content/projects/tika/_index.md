@@ -133,3 +133,28 @@ The initial fixes in CVE-2022-30126 and CVE-2022-30973 for regexes in the Standa
 
 ### Credits
 * This incomplete fix was discovered and reported by the CodeQL team member [@atorralba (Tony Torralba)](https://github.com/atorralba) and [@jarlob (Jaroslav Lobačevski)](https://github.com/jarlob) from Github Security Lab.  The new ReDos was discovered by the Apache Tika team.
+
+
+## XXE vulnerability in PDFParser's handling of XFA ## { #CVE-2025-54988 }
+
+CVE-2025-54988 [\[CVE json\]](./CVE-2025-54988.cve.json) [\[OSV json\]](./CVE-2025-54988.osv.json)
+
+
+
+_Last updated: 2025-08-20T20:08:47.852Z_
+
+### Affected
+
+* Apache Tika PDF parser module from 1.13 through 3.2.1
+
+
+### Description
+
+Critical XXE in Apache Tika (tika-parser-pdf-module) in Apache Tika 1.13 through and including 3.2.1 on all platforms allows an attacker to carry out XML External Entity injection via a crafted XFA file inside of a PDF. An attacker may be able to read sensitive data or trigger malicious requests to internal resources or third-party servers. Note that the tika-parser-pdf-module is used as a dependency in several Tika packages including at least: tika-parsers-standard-modules, tika-parsers-standard-package, tika-app, tika-grpc and tika-server-standard.<br><br>Users are recommended to upgrade to version 3.2.2, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/8xn3rqy6kz5b3l1t83kcofkw0w4mmj1w
+
+
+### Credits
+* Paras Jain and Yakov Shafranovich of Amazon. (reporter)

@@ -110,3 +110,28 @@ _Last updated: 2025-06-28T18:25:15.298Z_
 ### References
 * https://www.cve.org/CVERecord?id=CVE-2024-47552
 * https://lists.apache.org/thread/9fhtf7yvpjpzlwd1m0wfgg6tp2btxpy1
+
+
+## Deserialization of untrusted Data in Apache Seata Server ## { #CVE-2025-53606 }
+
+CVE-2025-53606 [\[CVE json\]](./CVE-2025-53606.cve.json) [\[OSV json\]](./CVE-2025-53606.osv.json)
+
+
+
+_Last updated: 2025-08-08T09:22:52.076Z_
+
+### Affected
+
+* Apache Seata (incubating) at 2.4.0
+
+
+### Description
+
+<p>Deserialization of Untrusted Data vulnerability in Apache Seata (incubating).</p><p>This issue affects Apache Seata (incubating): 2.4.0.</p><p>Users are recommended to upgrade to version 2.5.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/ggfd72vvvxjozs81zbcls45zxg64pphx
+
+
+### Credits
+* A.R. (finder)

@@ -293,3 +293,61 @@ XSS in Upload page in Apache JSPWiki 2.12.1 and priors allows the attacker to ex
 
 ### Credits
 * This issue was discovered by sonnh from Vietnam National Cyber security technology corporation (finder)
+
+
+## Cross-Site Scripting (XSS) in JSPWiki Header Link processing ## { #CVE-2025-24853 }
+
+CVE-2025-24853 [\[CVE json\]](./CVE-2025-24853.cve.json) [\[OSV json\]](./CVE-2025-24853.osv.json)
+
+
+
+_Last updated: 2025-07-31T08:42:03.970Z_
+
+### Affected
+
+* Apache JSPWiki through 2.12.2
+
+
+### Description
+
+<p>A carefully crafted request when creating a header link using the 
+wiki markup syntax, which could allow the attacker to execute javascript
+ in the victim's browser and get some sensitive information about the 
+victim.
+</p>
+<p>Further research by the JSPWiki team showed that the markdown parser allowed this kind of attack too.</p><p>Apache JSPWiki users should upgrade to 2.12.3 or later.<br></p><br>
+
+### References
+* https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2025-24853
+
+
+### Credits
+* The issue was discovered by XBOW (https://github.com/xbow-security, https://xbow.com) (finder)
+
+
+## Cross-Site Scripting (XSS) in JSPWiki Image plugin ## { #CVE-2025-24854 }
+
+CVE-2025-24854 [\[CVE json\]](./CVE-2025-24854.cve.json) [\[OSV json\]](./CVE-2025-24854.osv.json)
+
+
+
+_Last updated: 2025-07-31T08:43:17.113Z_
+
+### Affected
+
+* Apache JSPWiki through 2.12.2
+
+
+### Description
+
+<div>A carefully crafted request using the Image plugin could trigger an XSS 
+vulnerability on Apache JSPWiki, which could allow the attacker to 
+execute javascript in the victim's browser and get some sensitive 
+information about the victim.<br></div><div><br></div><div>Apache JSPWiki users should upgrade to 2.12.3 or later.<br></div>
+
+### References
+* https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2025-24854
+
+
+### Credits
+* The issue was separately discovered by both XBOW (https://github.com/xbow-security, https://xbow.com) and Hamed Kohi <0x.hamy.1ATgmailDOTcom> (finder)

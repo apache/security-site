@@ -423,3 +423,84 @@ _Last updated: 2025-07-12T16:22:30.823Z_
 
 ### Credits
 * SuperX <superxyyang@gmail.com> (finder)
+
+
+## XSS in the Helium module ## { #CVE-2024-41177 }
+
+CVE-2024-41177 [\[CVE json\]](./CVE-2024-41177.cve.json) [\[OSV json\]](./CVE-2024-41177.osv.json)
+
+
+
+_Last updated: 2025-08-03T10:09:33.254Z_
+
+### Affected
+
+* Apache Zeppelin before 0.12.0
+
+
+### Description
+
+<p>Incomplete Blacklist to Cross-Site Scripting vulnerability in Apache Zeppelin.</p><p>This issue affects Apache Zeppelin: before 0.12.0.</p><p>Users are recommended to upgrade to version 0.12.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/zeppelin/pull/4755
+* https://github.com/apache/zeppelin/pull/4795
+* https://lists.apache.org/thread/nwh8vh9f3pnvt04n8z4g2kbddh62blr6
+
+
+### Credits
+* H Ming (finder)
+
+
+## Command Injection via CSWSH ## { #CVE-2024-51775 }
+
+CVE-2024-51775 [\[CVE json\]](./CVE-2024-51775.cve.json) [\[OSV json\]](./CVE-2024-51775.osv.json)
+
+
+
+_Last updated: 2025-08-03T10:14:50.764Z_
+
+### Affected
+
+* Apache Zeppelin from 0.11.1 before 0.12.0
+
+
+### Description
+
+<p>Missing Origin Validation in WebSockets vulnerability in Apache Zeppelin.</p>The attacker could access the Zeppelin server from another origin without any restriction, and get internal information about paragraphs.&nbsp;<br><p>This issue affects Apache Zeppelin: from 0.11.1 before 0.12.0.</p><p>Users are recommended to upgrade to version 0.12.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/zeppelin/pull/4823
+* https://lists.apache.org/thread/bckm4y2ld5k5ro7bwh5yxbpxvslw0lm6
+
+
+### Credits
+* Calum Hutton (finder)
+
+
+## Arbitrary file read by adding malicious JDBC connection string ## { #CVE-2024-52279 }
+
+CVE-2024-52279 [\[CVE json\]](./CVE-2024-52279.cve.json) [\[OSV json\]](./CVE-2024-52279.osv.json)
+
+
+
+_Last updated: 2025-08-03T10:01:35.245Z_
+
+### Affected
+
+* Apache Zeppelin from 0.11.1 before 0.12.0
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache Zeppelin. The fix for JDBC URL validation in CVE-2024-31864 did not account for URL encoded input.</p><p>This issue affects Apache Zeppelin: from 0.11.1 before 0.12.0.</p><p>Users are recommended to upgrade to version 0.12.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/zeppelin/pull/4838
+* https://issues.apache.org/jira/browse/ZEPPELIN-6095
+* https://www.cve.org/CVERecord?id=CVE-2024-31864
+* https://lists.apache.org/thread/dxb98vgrb21rrl3k0fzonpk66onr6o4q
+
+
+### Credits
+* H Ming (finder)
