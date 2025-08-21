@@ -509,6 +509,25 @@ StackOverflowError could&nbsp;cause an application to stop.</p><p>Users are reco
 <ul>
 <li>TERASOLUNA Framework Security Team of NTT DATA Group Corporation (finder)</li>
 </ul>
+<h2 id="CVE-2025-53192">Expression Injection leading to RCE</h2>
+<p>CVE-2025-53192 <a href="./CVE-2025-53192.cve.json">[CVE json]</a> <a href="./CVE-2025-53192.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-08-18T20:09:29.375Z</em></p>
+<h3 id="affected-22">Affected</h3>
+<ul>
+<li>Apache Commons OGNL before *</li>
+</ul>
+<h3 id="description-22">Description</h3>
+<p>** UNSUPPORTED WHEN ASSIGNED ** Improper Neutralization of Expression/Command Delimiters vulnerability in Apache Commons OGNL.</p><p>This issue affects Apache Commons OGNL: all versions.</p><p></p><div><p>When using the API <code>Ognl.getValue</code>​, the OGNL engine parses and evaluates the provided expression with powerful capabilities, including accessing and invoking related methods,
+ etc. Although <code>OgnlRuntime</code> attempts to restrict certain dangerous classes and methods (such as <code>java.lang.Runtime</code>) through a blocklist, these restrictions are not comprehensive. 
+Attackers may be able to bypass the restrictions by leveraging class objects that are not covered by the blocklist and potentially achieve arbitrary code execution.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.<br></p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</div>
+<h3 id="references-22">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/2gj8tjl6vz949nnp3yxz3okm9xz2k7sp">https://lists.apache.org/thread/2gj8tjl6vz949nnp3yxz3okm9xz2k7sp</a></li>
+</ul>
+<h3 id="credits-18">Credits</h3>
+<ul>
+<li>yyjLF (finder)</li>
+</ul>
 
   
 </div>

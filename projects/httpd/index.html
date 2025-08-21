@@ -1255,20 +1255,37 @@ substitution. For example, something like:</div><div><br></div><div>RewriteEngin
 <ul>
 <li>Sven Hebrok, Felix Cramer, Tim Storm, Maximilian Radoy, and Juraj Somorovsky at Paderborn University (finder)</li>
 </ul>
-<h2 id="CVE-2025-49812">mod_ssl TLS upgrade attack</h2>
-<p>CVE-2025-49812 <a href="./CVE-2025-49812.cve.json">[CVE json]</a> <a href="./CVE-2025-49812.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-07-11T10:29:53.093Z</em></p>
+<h2 id="CVE-2025-49630">mod_proxy_http2 denial of service</h2>
+<p>CVE-2025-49630 <a href="./CVE-2025-49630.cve.json">[CVE json]</a> <a href="./CVE-2025-49630.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-08-13T15:38:59.198Z</em></p>
 <h3 id="affected-58">Affected</h3>
 <ul>
-<li>Apache HTTP Server through 2.4.63</li>
+<li>Apache HTTP Server from 2.4.26 through 2.4.63</li>
 </ul>
 <h3 id="description-58">Description</h3>
-<p>In some mod_ssl configurations on Apache HTTP Server versions through to 2.4.63, an HTTP desynchronisation attack allows a man-in-the-middle attacker to hijack an HTTP session via a TLS upgrade.<br><br>Only configurations using &ldquo;SSLEngine optional&rdquo; to enable TLS upgrades are affected. Users are recommended to upgrade to version 2.4.64, which removes support for TLS upgrade.</p>
+<p>In certain proxy configurations, a denial of service attack against Apache HTTP Server versions 2.4.26 through to 2.4.63 can be triggered by untrusted clients causing an assertion in mod_proxy_http2.<br><br>Configurations affected are a reverse proxy is configured for an HTTP/2 backend, with ProxyPreserveHost set to &ldquo;on&rdquo;.<br></p>
 <h3 id="references-57">References</h3>
 <ul>
 <li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
 </ul>
 <h3 id="credits-53">Credits</h3>
+<ul>
+<li>Anthony CORSIEZ (finder)</li>
+</ul>
+<h2 id="CVE-2025-49812">mod_ssl TLS upgrade attack</h2>
+<p>CVE-2025-49812 <a href="./CVE-2025-49812.cve.json">[CVE json]</a> <a href="./CVE-2025-49812.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-11T10:29:53.093Z</em></p>
+<h3 id="affected-59">Affected</h3>
+<ul>
+<li>Apache HTTP Server through 2.4.63</li>
+</ul>
+<h3 id="description-59">Description</h3>
+<p>In some mod_ssl configurations on Apache HTTP Server versions through to 2.4.63, an HTTP desynchronisation attack allows a man-in-the-middle attacker to hijack an HTTP session via a TLS upgrade.<br><br>Only configurations using &ldquo;SSLEngine optional&rdquo; to enable TLS upgrades are affected. Users are recommended to upgrade to version 2.4.64, which removes support for TLS upgrade.</p>
+<h3 id="references-58">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-54">Credits</h3>
 <ul>
 <li>Robert Merget (Technology Innovation Institute) (finder)</li>
 <li>Nurullah Erinola (Ruhr University Bochum) (finder)</li>
@@ -1282,19 +1299,32 @@ substitution. For example, something like:</div><div><br></div><div>RewriteEngin
 <h2 id="CVE-2025-53020">HTTP/2 DoS by Memory Increase</h2>
 <p>CVE-2025-53020 <a href="./CVE-2025-53020.cve.json">[CVE json]</a> <a href="./CVE-2025-53020.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-07-11T10:30:11.990Z</em></p>
-<h3 id="affected-59">Affected</h3>
+<h3 id="affected-60">Affected</h3>
 <ul>
 <li>Apache HTTP Server from 2.4.17 through 2.4.63</li>
 </ul>
-<h3 id="description-59">Description</h3>
+<h3 id="description-60">Description</h3>
 <p>Late Release of Memory after Effective Lifetime vulnerability in Apache HTTP Server.</p><p>This issue affects Apache HTTP Server: from 2.4.17 up to 2.4.63.</p><p>Users are recommended to upgrade to version 2.4.64, which fixes the issue.</p>
-<h3 id="references-58">References</h3>
+<h3 id="references-59">References</h3>
 <ul>
 <li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
 </ul>
-<h3 id="credits-54">Credits</h3>
+<h3 id="credits-55">Credits</h3>
 <ul>
 <li>Gal Bar Nahum (finder)</li>
+</ul>
+<h2 id="CVE-2025-54090">&lsquo;RewriteCond expr&rsquo; always evaluates to true in 2.4.64</h2>
+<p>CVE-2025-54090 <a href="./CVE-2025-54090.cve.json">[CVE json]</a> <a href="./CVE-2025-54090.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-23T13:19:23.112Z</em></p>
+<h3 id="affected-61">Affected</h3>
+<ul>
+<li>Apache HTTP Server at 2.4.64</li>
+</ul>
+<h3 id="description-61">Description</h3>
+<p>A bug in Apache HTTP Server 2.4.64 results in all "RewriteCond expr ..." tests evaluating as "true".<br><br></p><p>Users are recommended to upgrade to version 2.4.65, which fixes the issue.</p>
+<h3 id="references-60">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
 </ul>
 
   
