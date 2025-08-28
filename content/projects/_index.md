@@ -80,7 +80,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Libcloud](https://libcloud.apache.org/security.html) |  [Apache Libcloud Security Team](mailto:security@libcloud.apache.org) | |
 | Apache Linkis |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Livy (Incubating) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Logging |  [Apache Logging Security Team](mailto:security@logging.apache.org) | |
+| [Apache Logging](https://logging.apache.org/security.html) |  [Apache Logging Security Team](mailto:security@logging.apache.org) | [Advisories](https://logging.apache.org/security.html) |
 | Apache Lucene |  [Apache Lucene Security Team](mailto:security@lucene.apache.org) | |
 | Apache Lucene.NET |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache ManifoldCF |  [Apache Security Team](mailto:security@apache.org) | |
