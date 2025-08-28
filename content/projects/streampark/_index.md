@@ -291,3 +291,28 @@ _Last updated: 2024-09-11T11:03:06.370Z_
 
 ### Credits
 * L0ne1y (reporter)
+
+
+## SQL injection vulnerability ## { #CVE-2024-48988 }
+
+CVE-2024-48988 [\[CVE json\]](./CVE-2024-48988.cve.json) [\[OSV json\]](./CVE-2024-48988.osv.json)
+
+
+
+_Last updated: 2025-08-22T16:18:41.486Z_
+
+### Affected
+
+* Apache StreamPark from 2.1.4 before 2.1.6
+
+
+### Description
+
+<p>SQL Injection vulnerability in Apache StreamPark.</p><p>This issue affects Apache StreamPark: from 2.1.4 before 2.1.6.</p><p>Users are recommended to upgrade to version 2.1.6, which fixes the issue.</p><br>This vulnerability is present only in the distribution package (SpringBoot platform) and does not involve Maven artifacts.<br>It can only be exploited after a user has successfully logged into the platform (implying that the attacker would first need to compromise the login authentication). <br>As a result, the associated risk is considered relatively low.<br><p><br></p>
+
+### References
+* https://lists.apache.org/thread/26ng8388l93zwjrst560cbjz9x7wpq1s
+
+
+### Credits
+* Xingchen Chen, Ze Jin, wh1t3p1g, yhbl, Qixu Liu  Institute of Information Engineering, CAS (reporter)

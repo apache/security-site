@@ -304,3 +304,68 @@ _Last updated: 2023-05-08T08:55:53.262Z_
 
 ### References
 * https://lists.apache.org/thread/vgjlpdf353vv91gryspwxrzj6p0fbjd9
+
+
+## Improper HTML escaping in HTMLLayout ## { #CVE-2025-54812 }
+
+CVE-2025-54812 [\[CVE json\]](./CVE-2025-54812.cve.json) [\[OSV json\]](./CVE-2025-54812.osv.json)
+
+
+
+_Last updated: 2025-08-22T18:46:44.374Z_
+
+### Affected
+
+* Apache Log4cxx before 1.5.0
+
+
+### Description
+
+<p>Improper Output Neutralization for Logs vulnerability in Apache Log4cxx.</p>
+<p>When using <code>HTMLLayout</code>, logger names are not properly escaped when writing out to the HTML file.
+If untrusted data is used to retrieve the name of a logger, an attacker could theoretically inject HTML or Javascript in order to hide information from logs or steal data from the user.
+In order to activate this, the following sequence must occur:</p>
+<ol>
+<li>Log4cxx is configured to use <code>HTMLLayout</code>.</li>
+<li>Logger name comes from an untrusted string</li>
+<li>Logger with compromised name logs a message</li>
+<li>User opens the generated HTML log file in their browser, leading to potential XSS</li>
+</ol>
+<p>Because logger names are generally constant strings, we assess the impact to users as LOW</p>
+<p>This issue affects Apache Log4cxx: before <code>1.5.0</code>.</p>
+<p>Users are recommended to upgrade to version <code>1.5.0</code>, which fixes the issue.</p>
+
+### References
+* https://logging.apache.org/security.html#CVE-2025-54812
+* https://github.com/apache/logging-log4cxx/pull/509
+* https://github.com/apache/logging-log4cxx/pull/514
+
+
+### Credits
+* Sovereign Tech Agency (sponsor)
+
+
+## Improper escaping with JSONLayout ## { #CVE-2025-54813 }
+
+CVE-2025-54813 [\[CVE json\]](./CVE-2025-54813.cve.json) [\[OSV json\]](./CVE-2025-54813.osv.json)
+
+
+
+_Last updated: 2025-08-22T18:45:40.110Z_
+
+### Affected
+
+* Apache Log4cxx from 0.11.0 before 1.5.0
+
+
+### Description
+
+<p>Improper Output Neutralization for Logs vulnerability in Apache Log4cxx.</p><p>When using <code>JSONLayout</code>, not all payload bytes are properly escaped. If an attacker-supplied message contains certain non-printable characters, these will be passed along in the message and written out as part of the JSON message. This may prevent applications that consume these logs from correctly interpreting the information within them.</p><p>This issue affects Apache Log4cxx: before <code>1.5.0</code>.</p><p>Users are recommended to upgrade to version <code>1.5.0</code>, which fixes the issue.</p>
+
+### References
+* https://logging.apache.org/security.html#CVE-2025-54813
+* https://github.com/apache/logging-log4cxx/pull/512
+
+
+### Credits
+* Sovereign Tech Agency (sponsor)
