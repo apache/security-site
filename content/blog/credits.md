@@ -26,6 +26,7 @@ so they do not need to be notified.
 
 Still, as a token of our appreciation, we'd like to thank a number of such reporters here:
 
+* [Priya Dharshan (JPD)](https://www.linkedin.com/in/priya-dharshan-474246225/) for notifying us of a problematic reference to an unclaimed NPM package namespace allowing resource squatting.
 * [Aviv Keller](https://linkedin.com/in/redyetidev) for helping identify a number of XSS problems in various Apache project websites, and for helping fix a large number of complex GitHub Actions permissions issues.
 * [Max CM](https://nopcorn.run) and [Andrew Buchanan](https://www.linkedin.com/in/abuchanan560) for identifying GHA issues where Git credentials could leak into public artifacts.
 * [Harish](https://www.linkedin.com/in/harish-p-62b38a158) for working with us to resolve a [GitHub Actions issue](https://medium.com/apache-airflow/unraveling-the-code-navigating-a-ci-release-security-vulnerability-in-apache-airflow-620214a96297)
