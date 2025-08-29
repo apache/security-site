@@ -209,6 +209,28 @@ unauthorized operations.<br></p><p>This is same vulnerability that CVE-2020-1394
 <ul>
 <li>Stefan Miklosovic (reporter)</li>
 </ul>
+<h2 id="CVE-2025-26467">User with MODIFY permission on ALL KEYSPACES can escalate privileges to superuser via unsafe actions (4.0.16 only)</h2>
+<p>CVE-2025-26467 <a href="./CVE-2025-26467.cve.json">[CVE json]</a> <a href="./CVE-2025-26467.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-08-25T13:14:47.609Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Cassandra at 4.0.16</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>
+<p><span style="background-color: rgb(255, 255, 255);">Privilege Defined With Unsafe Actions vulnerability in Apache Cassandra. An user with MODIFY permission ON ALL KEYSPACES can escalate privileges to superuser within a targeted Cassandra cluster via unsafe actions to a system resource. Operators granting data MODIFY permission on all keyspaces on affected versions should review data access rules for potential breaches.</span></p>
+<p><br><span style="background-color: var(--wht);"><br>This issue affects Apache Cassandra 3.0.30, 3.11.17, 4.0.16, 4.1.7, 5.0.2, but this advisory is only for 4.0.16 because the fix to CVE-2025-23015 was incorrectly applied to 4.0.16, so that version is still affected.<br></span><br>Users in the 4.0 series are recommended to upgrade to version 4.0.17 which fixes the issue. Users from 3.0, 3.11, 4.1 and 5.0 series should follow recommendation from CVE-2025-23015.<br></p></p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/xxj36rr4d6mzyqpld05dn8b9951hfpz7">https://lists.apache.org/thread/xxj36rr4d6mzyqpld05dn8b9951hfpz7</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Adam Pond of Apple Services Engineering Security (finder)</li>
+<li>Ali Mirheidari of Apple Services Engineering Security (finder)</li>
+<li>Terry Thibault of Apple Services Engineering Security (finder)</li>
+<li>Will Brattain of Apple Services Engineering Security (finder)</li>
+</ul>
 
   
 </div>

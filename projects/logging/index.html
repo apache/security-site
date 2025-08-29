@@ -102,9 +102,9 @@
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache Logging? Send your report to the <a href="mailto:security@logging.apache.org">Apache Logging Security Team</a>.</p>
+<p>Do you want disclose a potential security issue for Apache Logging? You can read more about the projects&rsquo; security policy on their <a href="https://logging.apache.org/security.html">security page</a>, and email your report to the <a href="mailto:security@logging.apache.org">Apache Logging Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
-<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://logging.apache.org/security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
 <h2 id="CVE-2020-9493">Java deserialization in Chainsaw</h2>
 <p>CVE-2020-9493 <a href="./CVE-2020-9493.cve.json">[CVE json]</a> <a href="./CVE-2020-9493.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2021-06-16T07:28:39.802Z</em></p>
@@ -298,6 +298,55 @@ hashmap or hashtable (depending on which logging component is in use) to be proc
 <h3 id="references-10">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/vgjlpdf353vv91gryspwxrzj6p0fbjd9">https://lists.apache.org/thread/vgjlpdf353vv91gryspwxrzj6p0fbjd9</a></li>
+</ul>
+<h2 id="CVE-2025-54812">Improper HTML escaping in HTMLLayout</h2>
+<p>CVE-2025-54812 <a href="./CVE-2025-54812.cve.json">[CVE json]</a> <a href="./CVE-2025-54812.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-08-22T18:46:44.374Z</em></p>
+<h3 id="affected-11">Affected</h3>
+<ul>
+<li>Apache Log4cxx before 1.5.0</li>
+</ul>
+<h3 id="description-11">Description</h3>
+<p>Improper Output Neutralization for Logs vulnerability in Apache Log4cxx.</p>
+<p>When using <code>HTMLLayout</code>, logger names are not properly escaped when writing out to the HTML file.
+If untrusted data is used to retrieve the name of a logger, an attacker could theoretically inject HTML or Javascript in order to hide information from logs or steal data from the user.
+In order to activate this, the following sequence must occur:</p>
+<ol>
+<li>Log4cxx is configured to use <code>HTMLLayout</code>.</li>
+<li>Logger name comes from an untrusted string</li>
+<li>Logger with compromised name logs a message</li>
+<li>User opens the generated HTML log file in their browser, leading to potential XSS</li>
+</ol>
+<p>Because logger names are generally constant strings, we assess the impact to users as LOW</p>
+<p>This issue affects Apache Log4cxx: before <code>1.5.0</code>.</p>
+<p>Users are recommended to upgrade to version <code>1.5.0</code>, which fixes the issue.</p>
+<h3 id="references-11">References</h3>
+<ul>
+<li><a href="https://logging.apache.org/security.html#CVE-2025-54812">https://logging.apache.org/security.html#CVE-2025-54812</a></li>
+<li><a href="https://github.com/apache/logging-log4cxx/pull/509">https://github.com/apache/logging-log4cxx/pull/509</a></li>
+<li><a href="https://github.com/apache/logging-log4cxx/pull/514">https://github.com/apache/logging-log4cxx/pull/514</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>Sovereign Tech Agency (sponsor)</li>
+</ul>
+<h2 id="CVE-2025-54813">Improper escaping with JSONLayout</h2>
+<p>CVE-2025-54813 <a href="./CVE-2025-54813.cve.json">[CVE json]</a> <a href="./CVE-2025-54813.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-08-22T18:45:40.110Z</em></p>
+<h3 id="affected-12">Affected</h3>
+<ul>
+<li>Apache Log4cxx from 0.11.0 before 1.5.0</li>
+</ul>
+<h3 id="description-12">Description</h3>
+<p>Improper Output Neutralization for Logs vulnerability in Apache Log4cxx.</p><p>When using <code>JSONLayout</code>, not all payload bytes are properly escaped. If an attacker-supplied message contains certain non-printable characters, these will be passed along in the message and written out as part of the JSON message. This may prevent applications that consume these logs from correctly interpreting the information within them.</p><p>This issue affects Apache Log4cxx: before <code>1.5.0</code>.</p><p>Users are recommended to upgrade to version <code>1.5.0</code>, which fixes the issue.</p>
+<h3 id="references-12">References</h3>
+<ul>
+<li><a href="https://logging.apache.org/security.html#CVE-2025-54813">https://logging.apache.org/security.html#CVE-2025-54813</a></li>
+<li><a href="https://github.com/apache/logging-log4cxx/pull/512">https://github.com/apache/logging-log4cxx/pull/512</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>Sovereign Tech Agency (sponsor)</li>
 </ul>
 
   
