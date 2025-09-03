@@ -91,7 +91,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache NiFi](https://nifi.apache.org/documentation/security/) |  [Apache NiFi Security Team](mailto:security@nifi.apache.org) | [Advisories](https://nifi.apache.org/documentation/security/) |
 | Apache Nutch |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache NuttX |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache OFBiz](https://ofbiz.apache.org/download.html#security) |  [Apache OFBiz Security Team](mailto:security@ofbiz.apache.org) | |
+| [Apache OFBiz](https://ofbiz.apache.org/security.html) |  [Apache OFBiz Security Team](mailto:security@ofbiz.apache.org) | [Advisories](https://ofbiz.apache.org/security.html) |
 | [Apache OpenMeetings](https://openmeetings.apache.org/security.html) |  [Apache OpenMeetings Security Team](mailto:security@openmeetings.apache.org) | |
 | [Apache OpenOffice](https://openoffice.apache.org/security) |  [Apache OpenOffice Security Team](mailto:security@openoffice.apache.org) | [Advisories](https://www.openoffice.org/security/bulletin.html) |
 | [Apache ORC](https://orc.apache.org/security/) |  [Apache ORC Security Team](mailto:security@orc.apache.org) | |
