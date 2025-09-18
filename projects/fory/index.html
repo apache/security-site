@@ -6,10 +6,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Apache Syncope security advisories </title>
+  <title> Apache Fory security advisories </title>
 
   
-  <meta name="description" content="Security information for Apache Syncope"> 
+  <meta name="description" content="Security information for Apache Fory"> 
   
   
   
@@ -23,10 +23,10 @@
   <meta name="author" content="">
 
 
-  <meta property="og:title" content="Apache Syncope security advisories" />
-<meta property="og:description" content="Security information for Apache Syncope" />
+  <meta property="og:title" content="Apache Fory security advisories" />
+<meta property="og:description" content="Security information for Apache Fory" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://security.apache.org/projects/syncope/" />
+<meta property="og:url" content="https://security.apache.org/projects/fory/" />
 
   
 
@@ -35,9 +35,9 @@
 
   
   
-   <link href="/projects/syncope/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
+   <link href="/projects/fory/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
 
-  <link rel="canonical" href="https://security.apache.org/projects/syncope/">  
+  <link rel="canonical" href="https://security.apache.org/projects/fory/">  
 
   <link href="/css/font.css" rel="stylesheet" type="text/css">
   <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
@@ -95,52 +95,32 @@
   <main>
 
 <div id="hero" class="wrap">
-  <h1>Apache Syncope security advisories</h1>
-    <p>Security information for Apache Syncope</p>
+  <h1>Apache Fory security advisories</h1>
+    <p>Security information for Apache Fory</p>
 </div>
 <div id="project-box">
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache Syncope? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<p>Do you want disclose a potential security issue for Apache Fory? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2024-38503">HTML tags can be injected into Console or Enduser text fields</h2>
-<p>CVE-2024-38503 <a href="./CVE-2024-38503.cve.json">[CVE json]</a> <a href="./CVE-2024-38503.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-09-11T11:11:10.160Z</em></p>
+<h2 id="CVE-2025-59328">Denial of Service (DoS) due to Deserialization of Untrusted malicious large Data</h2>
+<p>CVE-2025-59328 <a href="./CVE-2025-59328.cve.json">[CVE json]</a> <a href="./CVE-2025-59328.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-09-15T16:26:55.892Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Syncope from 2.1 through 2.1.14</li>
-<li>Apache Syncope from 3.0 through 3.0.7</li>
+<li>Apache Fory from 0.5.0 through 0.12.1</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>When editing a user, group or any object in the Syncope Console, HTML tags could be added to any text field and could lead to potential exploits.<br>The same vulnerability was found in the Syncope Enduser, when editing “Personal Information” or “User Requests”.<br><br>Users are recommended to upgrade to version 3.0.8, which fixes this issue.</p>
+<p></p><p>A vulnerability in Apache Fory allows a remote attacker to cause a Denial of Service (DoS). The issue stems from the insecure deserialization of untrusted data. An attacker can supply a <strong>large, specially crafted data payload</strong>&nbsp;that, when processed, consumes an excessive amount of CPU resources during the deserialization process. This leads to CPU exhaustion, rendering the application or system using the Apache Fory library unresponsive and unavailable to legitimate users.</p><p>Users of Apache Fory are strongly advised to upgrade to version <strong>0.12.2 or later</strong>&nbsp;to mitigate this vulnerability. Developers of libraries and applications that depend on Apache Fory should update their dependency requirements to Apache Fory <strong>0.12.2 or later</strong>&nbsp;and release new versions of their software.</p><p></p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://syncope.apache.org/security#cve-2024-38503-html-tags-can-be-injected-into-console-or-enduser">https://syncope.apache.org/security#cve-2024-38503-html-tags-can-be-injected-into-console-or-enduser</a></li>
+<li><a href="https://fory.apache.org/security/">https://fory.apache.org/security/</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Basalt IT-Security Team (finder)</li>
-</ul>
-<h2 id="CVE-2024-45031">Stored XSS in Console and Enduser</h2>
-<p>CVE-2024-45031 <a href="./CVE-2024-45031.cve.json">[CVE json]</a> <a href="./CVE-2024-45031.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-09-01T09:41:27.665Z</em></p>
-<h3 id="affected-1">Affected</h3>
-<ul>
-<li>Apache Syncope from 2.1 through 2.1.14</li>
-<li>Apache Syncope from 3.0 through 3.0.8</li>
-</ul>
-<h3 id="description-1">Description</h3>
-<p>When editing objects in the Syncope Console, incomplete HTML tags could be used to bypass HTML sanitization. This made it possible to inject stored XSS payloads which would trigger for other users during ordinary usage of the application.<br>XSS payloads could also be injected in Syncope Enduser when editing “Personal Information” or “User Requests”: such payloads would trigger for administrators in Syncope Console, thus enabling session hijacking.<br><br>Users are recommended to upgrade to version 3.0.9, which fixes this issue.</p>
-<h3 id="references-1">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/fn567pfmo3s55ofkc42drz8b4kgbhp9m">https://lists.apache.org/thread/fn567pfmo3s55ofkc42drz8b4kgbhp9m</a></li>
-</ul>
-<h3 id="credits-1">Credits</h3>
-<ul>
-<li>Kasper Karlsson, Omegapoint (finder)</li>
-<li>Pontus Hanssen, Omegapoint (finder)</li>
+<li>r00t4dm of meituan security (reporter)</li>
 </ul>
 
   
