@@ -46,16 +46,31 @@
 
 
 <body class="page-kube">
-  <header>{{ block "header" . }}{{ end }}</header>
-  <main>{{ block "main" . }}{{ end }}</main>
-  <footer>{{ block "footer" . }}{{ end }}</footer>
-
+  <header class="site-header">
+    <div class="nav-container">
+      {{ block "header" . }}{{ end }}
+    </div>
+  </header>
+  <main class="content">
+    <div class="main-container">
+      {{ block "main" . }}{{ end }}
+    </div>
+  </main>
+  <footer>
+    <div class="footer-container">
+      {{ block "footer" . }}
+      <p>&copy; The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+      {{ end }}
+    </div>
+  </footer>
 
   <script src="{{ "/js/kube.js" | relURL }}" type="text/javascript">
   </script>
   <script src="{{ "/js/kube.legenda.js" | relURL }}" type="text/javascript">
   </script>
   <script src="{{ "/js/main.js" | relURL }}" type="text/javascript">
+  </script>
+  <script src="{{ "/js/blog.js" | relURL }}" type="text/javascript">
   </script>
 </body>
 
