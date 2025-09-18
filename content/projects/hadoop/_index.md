@@ -191,7 +191,7 @@ CVE-2024-23454 [\[CVE json\]](./CVE-2024-23454.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-09-25T07:45:41.584Z_
+_Last updated: 2025-09-05T09:09:35.509Z_
 
 ### Affected
 

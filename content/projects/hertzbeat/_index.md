@@ -147,3 +147,78 @@ _Last updated: 2025-04-16T15:38:09.273Z_
 ### Credits
 * tonghuaroot (finder)
 * zyufoye (finder)
+
+
+## RCE by parse http sitemap xml response ## { #CVE-2025-24404 }
+
+CVE-2025-24404 [\[CVE json\]](./CVE-2025-24404.cve.json) [\[OSV json\]](./CVE-2025-24404.osv.json)
+
+
+
+_Last updated: 2025-09-09T09:30:57.298Z_
+
+### Affected
+
+* Apache HertzBeat (incubating) before 1.7.0
+
+
+### Description
+
+<p>XML Injection RCE by parse http sitemap xml response vulnerability in Apache HertzBeat.</p>
+
+
+
+
+
+
+
+
+
+
+<p>The attacker needs to have an authenticated account with access, and add monitor parsed by xml, returned special content can trigger the XML parsing vulnerability.</p><p>This issue affects Apache HertzBeat (incubating): before 1.7.0.</p><p>Users are recommended to upgrade to version 1.7.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/4ydy3tqbpwmhl79mcj3pxwqz62nggrfd
+
+
+### Credits
+* unam4 (finder)
+* springkill (finder)
+* Zoiltin (finder)
+
+
+## Jmx JNDI injection vulnerability ## { #CVE-2025-48208 }
+
+CVE-2025-48208 [\[CVE json\]](./CVE-2025-48208.cve.json) [\[OSV json\]](./CVE-2025-48208.osv.json)
+
+
+
+_Last updated: 2025-09-09T09:31:33.928Z_
+
+### Affected
+
+* Apache HertzBeat (incubating) through 1.7.2
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection') vulnerability in Apache HertzBeat .</p>
+
+
+
+
+
+
+
+
+
+
+<p>The attacker needs to have an authenticated account with access, and the attack can only be triggered by crafting custom commands. A successful attack would result in arbitrary script execution.</p><p>This issue affects Apache HertzBeat: through 1.7.2.</p><p>Users are recommended to upgrade to version [1.7.3], which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/3zrr3oo67pxxx7wgzj80kglltfshngn2
+
+
+### Credits
+* F10wers13eiCHeng (finder)
+* aftersnow (finder)

@@ -141,7 +141,7 @@ CVE-2025-54988 [\[CVE json\]](./CVE-2025-54988.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-20T20:08:47.852Z_
+_Last updated: 2025-08-28T17:43:30.753Z_
 
 ### Affected
 

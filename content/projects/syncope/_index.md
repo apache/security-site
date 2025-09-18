@@ -45,7 +45,7 @@ CVE-2024-45031 [\[CVE json\]](./CVE-2024-45031.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-10-24T14:21:28.163Z_
+_Last updated: 2025-09-01T09:41:27.665Z_
 
 ### Affected
 

@@ -182,7 +182,7 @@ CVE-2024-51941 [\[CVE json\]](./CVE-2024-51941.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-01-21T21:24:21.468Z_
+_Last updated: 2025-09-03T08:07:26.617Z_
 
 ### Affected
 

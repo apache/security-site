@@ -1330,13 +1330,13 @@ _Last updated: 2025-02-12T09:35:41.246Z_
 * James Ford (Striveworks) (finder)
 
 
-## Improper authorization leading to resource ownership takeover ## { #CVE-2025-27696 }
+## Incorrect authorization leading to resource ownership takeover ## { #CVE-2025-27696 }
 
 CVE-2025-27696 [\[CVE json\]](./CVE-2025-27696.cve.json) [\[OSV json\]](./CVE-2025-27696.osv.json)
 
 
 
-_Last updated: 2025-05-13T08:21:19.457Z_
+_Last updated: 2025-09-01T09:52:51.812Z_
 
 ### Affected
 

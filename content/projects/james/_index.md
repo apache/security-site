@@ -343,7 +343,7 @@ CVE-2024-37358 [\[CVE json\]](./CVE-2024-37358.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-02-06T11:22:36.577Z_
+_Last updated: 2025-09-01T09:40:16.733Z_
 
 ### Affected
 

@@ -516,6 +516,54 @@ File read and write vulnerability in Apache DolphinScheduler ,&nbsp; authenticat
 * Xun Bai (reporter)
 
 
+## Alert Script Attack ## { #CVE-2024-43115 }
+
+CVE-2024-43115 [\[CVE json\]](./CVE-2024-43115.cve.json) [\[OSV json\]](./CVE-2024-43115.osv.json)
+
+
+
+_Last updated: 2025-09-03T08:38:26.012Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.2.2
+
+
+### Description
+
+<div>Improper Input Validation vulnerability in Apache DolphinScheduler. An <span style="background-color: rgb(255, 255, 255);">authenticated user can execute any shell script server by alert script.</span><br></div><p>This issue affects Apache DolphinScheduler: before 3.2.2.</p><p>Users are recommended to upgrade to version <span style="background-color: rgb(255, 255, 255);">3.3.1</span>, which fixes the issue.</p><br>
+
+### References
+* https://lists.apache.org/thread/qm36nrsv1vrr2j4o5q2wo75h3686hrnj
+
+
+### Credits
+* L0ne1y (reporter)
+
+
+## CWE-276 Incorrect Default Permissions ## { #CVE-2024-43166 }
+
+CVE-2024-43166 [\[CVE json\]](./CVE-2024-43166.cve.json)
+
+_Last updated: 2025-09-18T09:38:13.985Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.2.2
+
+
+### Description
+
+<p>Incorrect Default Permissions vulnerability in Apache DolphinScheduler.</p><p>This issue affects Apache DolphinScheduler: before 3.2.2.</p><p>Users are recommended to upgrade to version <span style="background-color: rgb(255, 255, 255);">3.3.1</span>, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/8zd69zkkx55qp365xp4tml1xh9og5lhk
+
+
+### Credits
+* L0ne1y (reporter)
+
+
 ## Remote Code Execution Vulnerability ## { #CVE-2024-43202 }
 
 CVE-2024-43202 [\[CVE json\]](./CVE-2024-43202.cve.json) [\[OSV json\]](./CVE-2024-43202.osv.json)
