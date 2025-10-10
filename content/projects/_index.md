@@ -122,6 +122,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache SpamAssassin](https://cwiki.apache.org/confluence/display/SPAMASSASSIN/SecurityPolicy) |  [Apache SpamAssassin Security Team](mailto:security@spamassassin.apache.org) | |
 | [Apache Spark](https://spark.apache.org/security.html) |  [Apache Spark Security Team](mailto:security@spark.apache.org) | [Advisories](https://spark.apache.org/security.html) |
 | Apache Storm |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache StormCrawler](https://stormcrawler.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://stormcrawler.apache.org/security/) |
 | [Apache StreamPark](https://streampark.apache.org/community/security/) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache StreamPipes |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Struts](https://struts.apache.org/security.html) |  [Apache Struts Security Team](mailto:security@struts.apache.org) | [Advisories](https://cwiki.apache.org/confluence/display/WW/Security+Bulletins) |
