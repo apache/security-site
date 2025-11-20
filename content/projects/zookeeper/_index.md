@@ -92,3 +92,28 @@ When using IPAuthenticationProvider in ZooKeeper Admin Server there is a possibi
 ### Credits
 * 4ra1n (reporter)
 * Y4tacker (reporter)
+
+
+## Insufficient Permission Check in AdminServer Snapshot/Restore Commands ## { #CVE-2025-58457 }
+
+CVE-2025-58457 [\[CVE json\]](./CVE-2025-58457.cve.json) [\[OSV json\]](./CVE-2025-58457.osv.json)
+
+
+
+_Last updated: 2025-09-24T09:29:42.132Z_
+
+### Affected
+
+* Apache ZooKeeper from 3.9.0 before 3.9.4
+
+
+### Description
+
+<p>Improper permission check in ZooKeeper AdminServer lets authorized clients to run snapshot and restore command with insufficient permissions.</p><p>This issue affects Apache ZooKeeper: from 3.9.0 before 3.9.4.</p><p>Users are recommended to upgrade to version 3.9.4, which fixes the issue.</p><p>The issue can be mitigated by disabling both commands (via <code>admin.snapshot.enabled</code> and <code>admin.restore.enabled</code>), disabling the whole AdminServer interface (via <code>admin.enableServer</code>), or ensuring that the root ACL does not provide open permissions. (Note that ZooKeeper ACLs are not recursive, so this does not impact operations on child nodes besides notifications from recursive watches.)</p>
+
+### References
+* https://lists.apache.org/thread/r5yol0kkhx2fzw22pxk1ozwm3oc6yxrx
+
+
+### Credits
+* Damien Diederen <ddiederen@apache.org> (reporter)

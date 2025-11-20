@@ -44,7 +44,7 @@ CVE-2024-46910 [\[CVE json\]](./CVE-2024-46910.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-02-20T16:33:33.241Z_
+_Last updated: 2025-10-17T15:29:29.800Z_
 
 ### Affected
 

@@ -129,3 +129,61 @@ Any user wishing to protect against deserialization attacks involving REST APIs 
 
 ### References
 * https://lists.apache.org/thread/6js89pbqrp52zlpwgry5fsdn76gxbbfj
+
+
+## Reflected XSS ## { #CVE-2024-44088 }
+
+CVE-2024-44088 [\[CVE json\]](./CVE-2024-44088.cve.json) [\[OSV json\]](./CVE-2024-44088.osv.json)
+
+
+
+_Last updated: 2025-10-14T14:36:50.748Z_
+
+### Affected
+
+* Apache Geode from 1.1.0 before 1.15.2
+
+
+### Description
+
+<p>
+
+<span style="background-color: rgb(255, 255, 255);">Malicious script injection </span><span style="background-color: rgb(255, 255, 255);">('Cross-site Scripting') vulnerability in Apache Geode</span><span style="background-color: rgb(255, 255, 255);">&nbsp;web-api (REST). This vulnerability allows an attacker that tricks a logged-in user into clicking a specially-crafted link to execute code on the returned page, which could lead to theft of the user's session information and even account takeover.</span>
+
+</p><p>This issue affects Apache Geode: all versions prior to 1.15.2</p><p>Users are recommended to upgrade to version 1.15.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/161r34nokmcc0w74mnf04lskgb8g1d3g
+
+
+### Credits
+* Nbxiglk (finder)
+
+
+## CSRF attacks through GET requests to the Management and Monitoring REST API that can execute gfsh commands on the target system ## { #CVE-2025-47410 }
+
+CVE-2025-47410 [\[CVE json\]](./CVE-2025-47410.cve.json) [\[OSV json\]](./CVE-2025-47410.osv.json)
+
+
+
+_Last updated: 2025-10-18T15:15:07.664Z_
+
+### Affected
+
+* Apache Geode from 1.10.0 before 1.15.2
+
+
+### Description
+
+Apache Geode is vulnerable to CSRF attacks through GET requests to the Management and Monitoring REST API that could allow an attacker who has tricked a user into giving up their Geode session credentials to submit malicious commands on the target system on behalf of the authenticated user.<br>
+
+<p>This issue affects Apache Geode: versions 1.10 through 1.15.1</p><p>Users are recommended to upgrade to version 1.15.2, which fixes the issue.</p>
+
+<br>
+
+### References
+* https://lists.apache.org/thread/k88tv3rhl4ymsvt4h6qsv7sq10q5prrt
+
+
+### Credits
+* S. M. Zuhair Zaki (finder)

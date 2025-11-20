@@ -371,3 +371,28 @@ _Last updated: 2025-04-18T15:23:28.244Z_
 
 ### Credits
 * g7shot working with Trend Zero Day Initiative (finder)
+
+
+## Deserialization of Untrusted Data ## { #CVE-2025-54539 }
+
+CVE-2025-54539 [\[CVE json\]](./CVE-2025-54539.cve.json) [\[OSV json\]](./CVE-2025-54539.osv.json)
+
+
+
+_Last updated: 2025-10-16T08:26:04.874Z_
+
+### Affected
+
+* Apache ActiveMQ NMS AMQP Client through 2.3.0
+
+
+### Description
+
+A Deserialization of Untrusted Data vulnerability exists in the Apache ActiveMQ NMS AMQP Client.<br><br>This issue affects all versions of Apache ActiveMQ NMS AMQP up to and including 2.3.0, when establishing connections to untrusted AMQP servers. Malicious servers could exploit unbounded deserialization logic present in the client to craft responses that may lead to arbitrary code execution on the client side.<br><br>Although version 2.1.0 introduced a mechanism to restrict deserialization via allow/deny lists, the protection was found to be bypassable under certain conditions.<br><br>In line with Microsoft’s deprecation of binary serialization in .NET 9, the project is evaluating the removal of .NET binary serialization support from the NMS API entirely in future releases.<br><br>Mitigation and Recommendations:<br>Users are strongly encouraged to upgrade to version 2.4.0 or later, which resolves the issue. Additionally, projects depending on NMS-AMQP should migrate away from .NET binary serialization as part of a long-term hardening strategy.
+
+### References
+* https://lists.apache.org/thread/9k684j07ljrshy3hxwhj5m0xjmkz1g2n
+
+
+### Credits
+* Security Research Team @ Endor Labs (finder)

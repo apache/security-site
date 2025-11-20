@@ -96,7 +96,7 @@ CVE-2024-56325 [\[CVE json\]](./CVE-2024-56325.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-07-11T10:32:57.135Z_
+_Last updated: 2025-10-27T17:11:36.725Z_
 
 ### Affected
 

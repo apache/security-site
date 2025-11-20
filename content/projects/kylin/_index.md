@@ -361,3 +361,79 @@ If an attacker gets access to Kylin's system or project admin permission, the JD
 
 ### Credits
 * Pho3n1x <ph03n1x@qq.com> (finder)
+
+
+## Authentication bypass ## { #CVE-2025-61733 }
+
+CVE-2025-61733 [\[CVE json\]](./CVE-2025-61733.cve.json) [\[OSV json\]](./CVE-2025-61733.osv.json)
+
+
+
+_Last updated: 2025-10-02T09:47:37.237Z_
+
+### Affected
+
+* Apache Kylin from 4.0.0 through 5.0.2
+
+
+### Description
+
+<p>Authentication Bypass Using an Alternate Path or Channel vulnerability in Apache Kylin.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.2.</p><p>Users are recommended to upgrade to version 5.0.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/8wmcffly6gp50nmfw8j4w3hlmv843yo0
+
+
+### Credits
+* liuhuajin <liuhuajin1@huawei.com> (finder)
+
+
+## improper restriction of file read ## { #CVE-2025-61734 }
+
+CVE-2025-61734 [\[CVE json\]](./CVE-2025-61734.cve.json) [\[OSV json\]](./CVE-2025-61734.osv.json)
+
+
+
+_Last updated: 2025-10-02T09:47:13.137Z_
+
+### Affected
+
+* Apache Kylin from 4.0.0 through 5.0.2
+
+
+### Description
+
+<p>Files or Directories Accessible to External Parties vulnerability in Apache Kylin.
+ You are fine as long as the Kylin's system and project admin access is well protected.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.2.</p><p>Users are recommended to upgrade to version 5.0.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/z705g7sn3g0bkchlqbo1hz1tyqorn4d2
+
+
+### Credits
+* liuhuajin <liuhuajin1@huawei.com> (finder)
+
+
+## Server-Side Request Forgery ## { #CVE-2025-61735 }
+
+CVE-2025-61735 [\[CVE json\]](./CVE-2025-61735.cve.json) [\[OSV json\]](./CVE-2025-61735.osv.json)
+
+
+
+_Last updated: 2025-10-02T09:47:48.059Z_
+
+### Affected
+
+* Apache Kylin from 4.0.0 through 5.0.2
+
+
+### Description
+
+<p>Server-Side Request Forgery (SSRF) vulnerability in Apache Kylin.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.2.&nbsp;You are fine as long as the Kylin's system and project admin access is well protected.</p><p>Users are recommended to upgrade to version 5.0.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/yscobmx869zvprsykb94r24jtmb58ckh
+
+
+### Credits
+* liuhuajin <liuhuajin1@huawei.com> (finder)

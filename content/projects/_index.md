@@ -33,6 +33,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Camel](https://camel.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://camel.apache.org/security/) |
 | [Apache Carbondata](https://carbondata.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Cassandra |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Causeway |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Cayenne |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache CloudStack](https://cloudstack.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Commons](https://commons.apache.org/security.html) |  [Apache Commons Security Team](mailto:security@commons.apache.org) | [Advisories](https://commons.apache.org/security.html#Known_Security_Vulnerabilities) |
@@ -103,7 +104,6 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Pinot |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache PLC4X |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache POI |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Portals |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Pulsar](https://github.com/apache/pulsar/security/policy) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Ranger |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache RocketMQ](https://rocketmq.apache.org/docs/securityModel/01security-model) |  [Apache Security Team](mailto:security@apache.org) | |
@@ -133,7 +133,6 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Tapestry |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Tika](https://tika.apache.org/security-model.html) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://tika.apache.org/security.html) |
 | [Apache Tomcat](https://tomcat.apache.org/security.html) |  [Apache Tomcat Security Team](mailto:security@tomcat.apache.org) | [Advisories](https://tomcat.apache.org/security.html) |
-| [Apache Traffic Control](https://trafficcontrol.apache.org/security/index.html) |  [Apache Traffic Control Security Team](mailto:security@trafficcontrol.apache.org) | |
 | [Apache Traffic Server](https://github.com/apache/trafficserver/security/policy) |  [Apache Traffic Server Security Team](mailto:security@trafficserver.apache.org) | |
 | [Apache TVM](https://tvm.apache.org/docs/reference/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache UIMA |  [Apache Security Team](mailto:security@apache.org) | |

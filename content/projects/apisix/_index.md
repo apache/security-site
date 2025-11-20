@@ -181,7 +181,7 @@ CVE-2024-32638 [\[CVE json\]](./CVE-2024-32638.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-05-02T09:20:24.666Z_
+_Last updated: 2025-10-15T03:54:43.662Z_
 
 ### Affected
 
@@ -248,3 +248,28 @@ _Last updated: 2025-07-02T01:08:54.683Z_
 
 ### Credits
 * Tiernan Messmer (finder)
+
+
+## basic-auth logs plaintext credentials at info level ## { #CVE-2025-62232 }
+
+CVE-2025-62232 [\[CVE json\]](./CVE-2025-62232.cve.json) [\[OSV json\]](./CVE-2025-62232.osv.json)
+
+
+
+_Last updated: 2025-10-31T08:48:32.770Z_
+
+### Affected
+
+* Apache APISIX from 1.0 before 3.14
+
+
+### Description
+
+Sensitive data exposure via logging in basic-auth leads to plaintext usernames and passwords written to error logs and forwarded to log sinks when log level is INFO/DEBUG. This creates a high risk of credential compromise through log access.<br>It has been fixed in the following commit:&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/apisix/pull/12629">https://github.com/apache/apisix/pull/12629</a><br>Users are recommended to upgrade to version 3.14, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/32hdgh570btfhg02hfc7p7ckf9v83259
+
+
+### Credits
+* Mapta / BugBunny_ai (reporter)

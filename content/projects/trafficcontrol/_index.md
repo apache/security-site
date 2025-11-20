@@ -111,3 +111,28 @@ _Last updated: 2024-12-23T15:30:11.661Z_
 
 ### Credits
 * Yuan Luo from Tencent YunDing Security Lab (reporter)
+
+
+## ReDoS issue in Traffic Router configuration ## { #CVE-2025-61581 }
+
+CVE-2025-61581 [\[CVE json\]](./CVE-2025-61581.cve.json) [\[OSV json\]](./CVE-2025-61581.osv.json)
+
+
+
+_Last updated: 2025-10-16T08:40:10.117Z_
+
+### Affected
+
+* Apache Traffic Control before *
+
+
+### Description
+
+<p>** UNSUPPORTED WHEN ASSIGNED ** Inefficient Regular Expression Complexity vulnerability in Apache Traffic Control.</p><p>This issue affects Apache Traffic Control: all versions.</p><p>People with access to the management interface of the Traffic Router component could specify malicious patterns and cause unavailability.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+
+### References
+* https://lists.apache.org/thread/mx2jxgnlop2f4vbqnvmrldh4pqmobxvp
+
+
+### Credits
+* Chris Lemmons (finder)

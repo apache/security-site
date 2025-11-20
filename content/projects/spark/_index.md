@@ -144,3 +144,27 @@ _Last updated: 2023-05-02T08:37:02.283Z_
 
 ### Credits
 * Sven Krewitt, Flashpoint (reporter)
+
+
+## RPC encryption defaults to unauthenticated AES-CTR mode, enabling man-in-the-middle ciphertext modification attacks ## { #CVE-2025-55039 }
+
+CVE-2025-55039 [\[CVE json\]](./CVE-2025-55039.cve.json) [\[OSV json\]](./CVE-2025-55039.osv.json)
+
+
+
+_Last updated: 2025-10-14T20:48:57.896Z_
+
+### Affected
+
+* Apache Spark from 3.5.0 before 3.5.2
+* Apache Spark before 3.4.4
+* Apache Spark from 3.5.0 before 3.5.2
+* Apache Spark before 3.4.4
+
+
+### Description
+
+<p>This issue affects Apache Spark versions before  3.4.4,&nbsp;3.5.2 and 4.0.0.</p><p></p>Apache Spark versions before 4.0.0, 3.5.2 and 3.4.4 use an insecure default network encryption cipher for RPC communication between nodes.<p></p><p>When <code>spark.network.crypto.enabled</code> is set to true (it is set to false by default), but <code>spark.network.crypto.cipher</code> is not explicitly configured, Spark defaults to AES in CTR mode (<code>AES/CTR/NoPadding</code>), which provides encryption without authentication.</p><p>This vulnerability allows a man-in-the-middle attacker to modify encrypted RPC traffic undetected by flipping bits in ciphertext, potentially compromising heartbeat messages or application data and affecting the integrity of Spark workflows.<br></p><p>To mitigate this issue, users should either configure <code>spark.network.crypto.cipher</code> to <code>AES/GCM/NoPadding</code> to enable authenticated encryption or</p><p>enable SSL encryption by setting <code>spark.ssl.enabled</code> to true, which provides stronger transport security.</p>
+
+### References
+* https://lists.apache.org/thread/zrgyy9l85nm2c7vk36vr7bkyorg3w4qq

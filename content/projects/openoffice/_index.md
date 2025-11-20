@@ -338,3 +338,201 @@ _Last updated: 2023-12-29T14:31:22.075Z_
 
 ### Credits
 * Amel BOUZIANE-LEBLOND aka Icare Bug Bounty Hunter (reporter)
+
+
+## Remote documents loaded without prompt via IFrame ## { #CVE-2025-64401 }
+
+CVE-2025-64401 [\[CVE json\]](./CVE-2025-64401.cve.json) [\[OSV json\]](./CVE-2025-64401.osv.json)
+
+
+
+_Last updated: 2025-11-12T13:57:23.255Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.15
+
+
+### Description
+
+<p>Apache OpenOffice documents can contain links. A missing Authorization vulnerability in Apache OpenOffice&nbsp;allowed an attacker to craft a document that would cause external links 
+to be loaded without prompt.&nbsp;In the affected versions of Apache OpenOffice, documents that used "floating frames" linked to external files would 
+load the contents of those frames without prompting the user for 
+permission to do so.</p><p>This issue affects Apache OpenOffice: through 4.1.15.</p><p>Users are recommended to upgrade to version 4.1.16, which fixes the issue.</p><p>The LibreOffice suite reported this issue as&nbsp;CVE-2023-2255</p>
+
+### References
+* https://www.openoffice.org/security/cves/CVE-2025-64401.html
+* https://lists.apache.org/thread/o00dtgvhr9tx8r4y8vf6y2mg7nn6mx6c
+
+
+### Credits
+* Amel Bouziane-Leblond for discovering and reporting the issue (finder)
+
+
+## Remote documents loaded without prompt via OLE objects ## { #CVE-2025-64402 }
+
+CVE-2025-64402 [\[CVE json\]](./CVE-2025-64402.cve.json) [\[OSV json\]](./CVE-2025-64402.osv.json)
+
+
+
+_Last updated: 2025-11-12T09:03:00.298Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.15
+
+
+### Description
+
+<p>Apache OpenOffice documents can contain links. A missing Authorization vulnerability in Apache OpenOffice allowed an attacker to craft a document that would cause external links 
+to be loaded without prompt. In the affected versions of Apache OpenOffice, documents that used "OLE objects" linked to external files would 
+load the contents of those files without prompting the user for 
+permission to do so.</p><p>This issue affects Apache OpenOffice: through 4.1.15.</p><p>Users are recommended to upgrade to version 4.1.16, which fixes the issue.</p>
+
+### References
+* https://www.openoffice.org/security/cves/CVE-2025-64402.html
+* https://lists.apache.org/thread/tssrl88tygjsgk6csllm6p2fb6tlv8d8
+
+
+### Credits
+* Dawid Golunski, Doyensec LLC (finder)
+
+
+## Remote documents loaded without prompt via "external data sources" in Calc ## { #CVE-2025-64403 }
+
+CVE-2025-64403 [\[CVE json\]](./CVE-2025-64403.cve.json) [\[OSV json\]](./CVE-2025-64403.osv.json)
+
+
+
+_Last updated: 2025-11-12T09:04:48.789Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.15
+
+
+### Description
+
+<p>Apache OpenOffice Calc spreadsheet can contain links to other files, in the form of "external data sources". A missing Authorization vulnerability in Apache OpenOffice allowed an attacker to craft a document that would cause such links 
+to be loaded without prompt.</p><p>This issue affects Apache OpenOffice: through 4.1.15.</p><p>Users are recommended to upgrade to version 4.1.16, which fixes the issue.</p>
+
+### References
+* https://www.openoffice.org/security/cves/CVE-2025-64403.html
+* https://lists.apache.org/thread/t7c6jhvdb00xtgd9vvn7h5sq9f4h5trt
+
+
+### Credits
+* Reginaldo Silva of ubercomp.com (finder)
+
+
+## Remote documents loaded without prompt via background and bullet images ## { #CVE-2025-64404 }
+
+CVE-2025-64404 [\[CVE json\]](./CVE-2025-64404.cve.json) [\[OSV json\]](./CVE-2025-64404.osv.json)
+
+
+
+_Last updated: 2025-11-12T09:08:28.789Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.15
+
+
+### Description
+
+<p>Apache OpenOffice documents can contain links to other files. A missing Authorization vulnerability in Apache OpenOffice allowed an attacker to craft a document that would cause external links 
+to be loaded without prompt. In the affected versions of Apache OpenOffice, documents that used background fill images, or bullet images, linked to external files would 
+load the contents of those files without prompting the user for 
+permission to do so.</p><p>This issue affects Apache OpenOffice: through 4.1.15.</p><p>Users are recommended to upgrade to version 4.1.16, which fixes the issue.</p>
+
+### References
+* https://www.openoffice.org/security/cves/CVE-2025-64404.html
+* https://lists.apache.org/thread/08n4mdx0pnhqsllnkc63d27sdgq3tygc
+
+
+### Credits
+* Reginaldo Silva of ubercomp.com (finder)
+
+
+## Remote documents loaded without prompt via DDE function ## { #CVE-2025-64405 }
+
+CVE-2025-64405 [\[CVE json\]](./CVE-2025-64405.cve.json) [\[OSV json\]](./CVE-2025-64405.osv.json)
+
+
+
+_Last updated: 2025-11-12T09:10:33.592Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.15
+
+
+### Description
+
+<p>Apache OpenOffice documents can contain links. A missing Authorization vulnerability in Apache OpenOffice allowed an attacker to craft a document that would cause external links 
+to be loaded without prompt. In the affected versions of Apache OpenOffice, Calc spreadsheet containing DDE links to external files would 
+load the contents of those files without prompting the user for 
+permission to do so.</p><p>This issue affects Apache OpenOffice: through 4.1.15.</p><p>Users are recommended to upgrade to version 4.1.16, which fixes the issue.</p>
+
+### References
+* https://www.openoffice.org/security/cves/CVE-2025-64405.html
+* https://lists.apache.org/thread/0jjftxkcc4l9kt7jjn630hfrh2ygfcbk
+
+
+### Credits
+* Louis Bettels, Technische Universität Braunschweig (finder)
+
+
+## Possible memory corruption during CSV import ## { #CVE-2025-64406 }
+
+CVE-2025-64406 [\[CVE json\]](./CVE-2025-64406.cve.json) [\[OSV json\]](./CVE-2025-64406.osv.json)
+
+
+
+_Last updated: 2025-11-12T09:11:45.438Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.15
+
+
+### Description
+
+<p>An out-of-bounds Write vulnerability in Apache OpenOffice could allow an attacker to craft a document that would crash the program, or otherwise corrupt other memory areas.</p><p>This issue affects Apache OpenOffice: through 4.1.15.</p><p>Users are recommended to upgrade to version 4.1.16, which fixes the issue.</p>
+
+### References
+* https://www.openoffice.org/security/cves/CVE-2025-64406.html
+* https://lists.apache.org/thread/py89gpogxfb2yo9c5vwv2h9x3m85pfmm
+
+
+### Credits
+* Damjan Jovanovic for discovering, reporting and fixing the issue (finder)
+
+
+## URL fetching can be used to exfiltrate arbitrary INI file values and environment variables ## { #CVE-2025-64407 }
+
+CVE-2025-64407 [\[CVE json\]](./CVE-2025-64407.cve.json) [\[OSV json\]](./CVE-2025-64407.osv.json)
+
+
+
+_Last updated: 2025-11-12T09:12:41.931Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.15
+
+
+### Description
+
+<p>Apache OpenOffice documents can contain links. A missing Authorization vulnerability in Apache OpenOffice allowed an attacker to craft a document that would cause external links 
+to be loaded without prompt. Such links could also be used to transmit system information, such as environment variables or configuration settings.</p><p>In the affected versions of Apache OpenOffice, documents that used a certain URI scheme linking to external files would 
+load the contents of such files without prompting the user for 
+permission to do so. Such URI scheme allows to include system configuration data, that is not supposed to be transmitted externally.</p><p>This issue affects Apache OpenOffice: through 4.1.15.</p><p>Users are recommended to upgrade to version 4.1.16, which fixes the issue.</p><p></p><p></p><p>The LibreOffice suite reported this issue as&nbsp;CVE-2024-12426.</p><p></p>
+
+### References
+* https://www.openoffice.org/security/cves/CVE-2025-64407.html
+* https://lists.apache.org/thread/4yg1gv71f14fw4ky4ds50o6xjq49594g
+
+
+### Credits
+* Thomas Rinsma of Codean Labs (finder)

@@ -152,3 +152,31 @@ files from the server filesystem through path traversal.</span><br></p><p>Users 
 
 ### Credits
 * Man Yue Mo of the GitHub Security Lab team (finder)
+
+
+## Improper Access Control results in bypassing a "read-only" mode for doris-mcp-server MCP Server ## { #CVE-2025-58337 }
+
+CVE-2025-58337 [\[CVE json\]](./CVE-2025-58337.cve.json) [\[OSV json\]](./CVE-2025-58337.osv.json)
+
+
+
+_Last updated: 2025-11-05T09:26:34.887Z_
+
+### Affected
+
+* Apache Doris-MCP-Server from 0.1.0 before 0.6.0
+
+
+### Description
+
+<p>An attacker with a valid read-only account can bypass Doris MCP Server’s read-only mode due to improper access control, allowing modifications that should have been prevented by read-only restrictions.<br></p><p>Impact:<br>
+Bypasses read-only mode; attackers with read-only access may perform unauthorized modifications.</p>
+<p></p><p>Recommended action for operators: Upgrade to version 0.6.0 as soon as possible (this release contains the fix).</p><p></p>
+<p></p><br>
+
+### References
+* https://lists.apache.org/thread/6tswlphj0pqn9zf25594r3c1vzvfj40h
+
+
+### Credits
+* Liran Tal, (liran@lirantal.com) (finder)

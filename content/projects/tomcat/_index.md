@@ -404,7 +404,7 @@ CVE-2022-45143 [\[CVE json\]](./CVE-2022-45143.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2023-03-21T17:23:52.275Z_
+_Last updated: 2025-10-29T11:35:28.968Z_
 
 ### Affected
 
@@ -427,7 +427,7 @@ CVE-2023-28708 [\[CVE json\]](./CVE-2023-28708.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-07T10:57:04.637Z_
+_Last updated: 2025-10-29T12:07:08.322Z_
 
 ### Affected
 
@@ -511,7 +511,7 @@ CVE-2023-41080 [\[CVE json\]](./CVE-2023-41080.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-07T11:02:22.148Z_
+_Last updated: 2025-10-29T12:04:38.029Z_
 
 ### Affected
 
@@ -567,7 +567,7 @@ CVE-2023-42794 [\[CVE json\]](./CVE-2023-42794.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2023-10-10T17:17:04.806Z_
+_Last updated: 2025-10-29T12:04:08.371Z_
 
 ### Affected
 
@@ -599,7 +599,7 @@ CVE-2023-42795 [\[CVE json\]](./CVE-2023-42795.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-07T11:04:21.577Z_
+_Last updated: 2025-10-29T12:02:56.986Z_
 
 ### Affected
 
@@ -625,7 +625,7 @@ CVE-2023-45648 [\[CVE json\]](./CVE-2023-45648.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-07T11:05:52.121Z_
+_Last updated: 2025-10-29T12:00:45.261Z_
 
 ### Affected
 
@@ -656,7 +656,7 @@ CVE-2023-46589 [\[CVE json\]](./CVE-2023-46589.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-07T11:06:31.696Z_
+_Last updated: 2025-10-29T12:00:21.984Z_
 
 ### Affected
 
@@ -686,7 +686,7 @@ CVE-2024-21733 [\[CVE json\]](./CVE-2024-21733.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-01-19T10:29:13.588Z_
+_Last updated: 2025-10-29T11:59:57.792Z_
 
 ### Affected
 
@@ -712,7 +712,7 @@ CVE-2024-23672 [\[CVE json\]](./CVE-2024-23672.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-07T11:10:43.300Z_
+_Last updated: 2025-10-29T11:57:07.493Z_
 
 ### Affected
 
@@ -736,7 +736,7 @@ CVE-2024-24549 [\[CVE json\]](./CVE-2024-24549.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2024-03-13T15:47:06.777Z_
+_Last updated: 2025-10-29T11:56:21.050Z_
 
 ### Affected
 
@@ -764,7 +764,7 @@ CVE-2024-34750 [\[CVE json\]](./CVE-2024-34750.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-08T10:25:24.682Z_
+_Last updated: 2025-10-29T11:55:37.796Z_
 
 ### Affected
 
@@ -791,7 +791,7 @@ CVE-2024-38286 [\[CVE json\]](./CVE-2024-38286.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-08T10:48:50.572Z_
+_Last updated: 2025-10-29T11:54:52.747Z_
 
 ### Affected
 
@@ -839,7 +839,7 @@ CVE-2024-50379 [\[CVE json\]](./CVE-2024-50379.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-08T11:26:52.051Z_
+_Last updated: 2025-10-29T11:51:38.009Z_
 
 ### Affected
 
@@ -866,7 +866,7 @@ CVE-2024-52316 [\[CVE json\]](./CVE-2024-52316.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-08T11:20:47.225Z_
+_Last updated: 2025-10-29T11:51:21.348Z_
 
 ### Affected
 
@@ -936,7 +936,7 @@ CVE-2024-54677 [\[CVE json\]](./CVE-2024-54677.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-08T11:22:50.270Z_
+_Last updated: 2025-10-29T11:50:12.395Z_
 
 ### Affected
 
@@ -959,7 +959,7 @@ CVE-2024-56337 [\[CVE json\]](./CVE-2024-56337.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-08T11:24:50.897Z_
+_Last updated: 2025-10-29T11:52:34.749Z_
 
 ### Affected
 
@@ -989,7 +989,7 @@ CVE-2025-24813 [\[CVE json\]](./CVE-2025-24813.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-08T11:39:51.098Z_
+_Last updated: 2025-10-29T11:49:42.250Z_
 
 ### Affected
 
@@ -1040,7 +1040,7 @@ CVE-2025-31651 [\[CVE json\]](./CVE-2025-31651.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-08T11:49:27.749Z_
+_Last updated: 2025-10-29T11:46:25.018Z_
 
 ### Affected
 
@@ -1070,7 +1070,7 @@ CVE-2025-46701 [\[CVE json\]](./CVE-2025-46701.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-08T11:51:49.081Z_
+_Last updated: 2025-10-29T11:46:00.351Z_
 
 ### Affected
 
@@ -1097,7 +1097,7 @@ CVE-2025-48988 [\[CVE json\]](./CVE-2025-48988.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-08T11:54:30.158Z_
+_Last updated: 2025-10-29T11:45:34.776Z_
 
 ### Affected
 
@@ -1122,7 +1122,7 @@ _Last updated: 2025-08-08T11:54:30.158Z_
 
 CVE-2025-48989 [\[CVE json\]](./CVE-2025-48989.cve.json)
 
-_Last updated: 2025-08-13T12:39:48.010Z_
+_Last updated: 2025-10-29T11:45:00.142Z_
 
 ### Affected
 
@@ -1150,7 +1150,7 @@ CVE-2025-49124 [\[CVE json\]](./CVE-2025-49124.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-08T12:03:08.688Z_
+_Last updated: 2025-10-29T11:44:21.737Z_
 
 ### Affected
 
@@ -1177,7 +1177,7 @@ CVE-2025-49125 [\[CVE json\]](./CVE-2025-49125.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-08T12:05:46.995Z_
+_Last updated: 2025-10-29T11:43:27.486Z_
 
 ### Affected
 
@@ -1204,7 +1204,7 @@ CVE-2025-52434 [\[CVE json\]](./CVE-2025-52434.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-08T12:10:06.290Z_
+_Last updated: 2025-10-29T11:42:49.909Z_
 
 ### Affected
 
@@ -1232,7 +1232,7 @@ CVE-2025-52520 [\[CVE json\]](./CVE-2025-52520.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-08T12:13:56.358Z_
+_Last updated: 2025-10-29T11:41:28.130Z_
 
 ### Affected
 
@@ -1259,7 +1259,7 @@ CVE-2025-53506 [\[CVE json\]](./CVE-2025-53506.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-08-08T12:14:50.971Z_
+_Last updated: 2025-10-29T11:40:57.934Z_
 
 ### Affected
 
@@ -1284,7 +1284,7 @@ _Last updated: 2025-08-08T12:14:50.971Z_
 
 CVE-2025-55668 [\[CVE json\]](./CVE-2025-55668.cve.json)
 
-_Last updated: 2025-08-13T13:21:46.893Z_
+_Last updated: 2025-10-29T11:39:27.849Z_
 
 ### Affected
 
@@ -1304,3 +1304,90 @@ _Last updated: 2025-08-13T13:21:46.893Z_
 
 ### Credits
 * Greg K (https://github.com/gregk4sec) (finder)
+
+
+## Directory traversal via rewrite with possible RCE if PUT is enabled ## { #CVE-2025-55752 }
+
+CVE-2025-55752 [\[CVE json\]](./CVE-2025-55752.cve.json)
+
+_Last updated: 2025-10-29T11:38:53.688Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.10
+* Apache Tomcat from 10.1.0-M1 through 10.1.44
+* Apache Tomcat from 9.0.0.M11 through 9.0.108
+* Apache Tomcat from 8.5.6 through 8.5.100
+* Apache Tomcat from 3 before 8.5.0
+* Apache Tomcat from 10.0.0-M1 through 10.0.27
+
+
+### Description
+
+<p>Relative Path Traversal vulnerability in Apache Tomcat.</p><div><p>The fix for bug 60013 introduced a regression where the       rewritten URL was normalized before it was decoded. This introduced the       possibility that, for rewrite rules that rewrite query parameters to the       URL, an attacker could manipulate the request URI to bypass security       constraints including the protection for /WEB-INF/ and /META-INF/. If PUT requests were also enabled then malicious files could be uploaded leading to remote code execution. PUT requests are normally limited to trusted users and it is considered unlikely that PUT requests would be enabled in conjunction with a rewrite that manipulated the URI.</p></div><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.10, from 10.1.0-M1 through 10.1.44, from 9.0.0.M11 through 9.0.108.</p>The following versions were EOL at the time the CVE was created but are 
+known to be affected: 8.5.6 though 8.5.100. Other, older, EOL versions may also be affected.<br><p>Users are recommended to upgrade to version 11.0.11 or later, 10.1.45 or later or 9.0.109 or later, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/n05kjcwyj1s45ovs8ll1qrrojhfb1tog
+
+
+### Credits
+* Chumy Tsai (github.com/Jimmy01240397) @ CyCraft Technology Intern (finder)
+
+
+## console manipulation via escape sequences in log messages ## { #CVE-2025-55754 }
+
+CVE-2025-55754 [\[CVE json\]](./CVE-2025-55754.cve.json)
+
+_Last updated: 2025-10-29T11:38:22.595Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.10
+* Apache Tomcat from 10.1.0-M1 through 10.1.44
+* Apache Tomcat from 9.0.40 through 9.0.108
+* Apache Tomcat from 8.5.60 through 8.5.100
+* Apache Tomcat from 3 before 8.5.0
+* Apache Tomcat from 10.0.0-M1 through 10.0.27
+
+
+### Description
+
+<p>Improper Neutralization of Escape, Meta, or Control Sequences vulnerability in Apache Tomcat.</p><div><p>Tomcat did not escape ANSI escape sequences in log messages. If Tomcat was running in a console on a Windows operating system, and the console supported ANSI escape sequences, it was possible for an attacker to use a specially crafted URL to inject ANSI escape sequences to manipulate the console and the clipboard and attempt to trick an administrator into running an attacker controlled command. While no attack vector was found, it may have been possible to mount this attack on other operating systems.</p></div><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.10, from 10.1.0-M1 through 10.1.44, from 9.0.40 through 9.0.108.</p>The following versions were EOL at the time the CVE was created but are 
+known to be affected: 8.5.60 though 8.5.100. Other, older, EOL versions may also be affected.<br><p>Users are recommended to upgrade to version 11.0.11 or later, 10.1.45 or later or 9.0.109 or later, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/j7w54hqbkfcn0xb9xy0wnx8w5nymcbqd
+
+
+### Credits
+* Elysee Franchuk of MOBIA Technology Innovations (finder)
+
+
+## Delayed cleaning of multi-part upload temporary files may lead to DoS ## { #CVE-2025-61795 }
+
+CVE-2025-61795 [\[CVE json\]](./CVE-2025-61795.cve.json)
+
+_Last updated: 2025-10-29T11:37:37.868Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.11
+* Apache Tomcat from 10.1.0-M1 through 10.1.46
+* Apache Tomcat from 9.0.0.M1 through 9.0.109
+* Apache Tomcat from 8.5.0 through 8.5.100
+* Apache Tomcat from 3 before 8.5.0
+* Apache Tomcat from 10.0.0-M1 through 10.0.27
+
+
+### Description
+
+<p>Improper Resource Shutdown or Release vulnerability in Apache Tomcat.</p><div><p>If an error occurred (including exceeding limits) during the processing of a multipart upload, temporary copies of the uploaded parts written to disc were not cleaned up immediately but left for the garbage collection process to delete. Depending on JVM settings, application memory usage and application load, it was possible that space for the temporary copies of uploaded parts would be filled faster than GC cleared it, leading to a DoS.</p></div><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.11, from 10.1.0-M1 through 10.1.46, from 9.0.0.M1 through 9.0.109.</p>The following versions were EOL at the time the CVE was created but are 
+known to be affected: 8.5.0 though 8.5.100. Other, older, EOL versions may also be affected.<br><p>Users are recommended to upgrade to version 11.0.12 or later, 10.1.47 or later or 9.0.110 or later which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/wm9mx8brmx9g4zpywm06ryrtvd3160pp
+
+
+### Credits
+* sw0rd1ight (https://github.com/sw0rd1ight) (finder)

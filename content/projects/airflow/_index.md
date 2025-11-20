@@ -2646,3 +2646,101 @@ _Last updated: 2025-06-24T07:06:50.934Z_
 
 ### Credits
 * Nhien Pham (@nhienit) at Galaxy One (finder)
+
+
+## Connection sensitive details exposed to users with READ permissions ## { #CVE-2025-54831 }
+
+CVE-2025-54831 [\[CVE json\]](./CVE-2025-54831.cve.json) [\[OSV json\]](./CVE-2025-54831.osv.json)
+
+
+
+_Last updated: 2025-09-26T07:28:57.402Z_
+
+### Affected
+
+* Apache Airflow at 3.0.3
+
+
+### Description
+
+<p></p><p>Apache Airflow 3 introduced a change to the handling of sensitive information in Connections. The intent was to restrict access to sensitive connection fields to <em>Connection Editing Users</em>, effectively applying a "write-only" model for sensitive values.</p>
+<p>In Airflow 3.0.3, this model was unintentionally violated: sensitive connection information could be viewed by users with READ permissions through both the API and the UI. This behavior also bypassed the `<code>AIRFLOW__CORE__HIDE_SENSITIVE_VAR_CONN_FIELDS`</code> configuration option.</p>
+<p>This issue does not affect Airflow 2.x, where exposing sensitive information to connection editors was the intended and documented behavior.</p><p></p><p><br></p><p>Users of Airflow 3.0.3 are advised to upgrade Airflow to &gt;=3.0.4.</p>
+
+### References
+* https://lists.apache.org/thread/vblmfqtydrp5zgn2q8tj3slk5podxspf
+
+
+## Command injection in "example_dag_decorator" ## { #CVE-2025-54941 }
+
+CVE-2025-54941 [\[CVE json\]](./CVE-2025-54941.cve.json) [\[OSV json\]](./CVE-2025-54941.osv.json)
+
+
+
+_Last updated: 2025-10-30T09:45:25.170Z_
+
+### Affected
+
+* Apache Airflow from 3.0.0 before < 3.0.5
+
+
+### Description
+
+An example dag `example_dag_decorator` had non-validated parameter that allowed the UI user to redirect the example to a malicious server and execute code on worker. This however required that the example dags are enabled in production (not default) or the example dag code copied to build your own similar dag. If you used the `example_dag_decorator` please review it and apply the changes implemented in Airflow 3.0.5 accordingly.<br><br><br>
+
+### References
+* https://lists.apache.org/thread/c6q6nofc6xl5bms039ks9b34v0v36df1
+
+
+### Credits
+* Nacl (reporter)
+
+
+## Airflow 3 API: /api/v2/dagReports executes DAG Python in API ## { #CVE-2025-62402 }
+
+CVE-2025-62402 [\[CVE json\]](./CVE-2025-62402.cve.json) [\[OSV json\]](./CVE-2025-62402.osv.json)
+
+
+
+_Last updated: 2025-10-30T09:14:24.818Z_
+
+### Affected
+
+* Apache Airflow from 3.0.0 before 3.1.1
+
+
+### Description
+
+API users via `/api/v2/dagReports` could perform Dag code execution in the context of the api-server if the api-server was deployed in the environment where Dag files were available.<br>
+
+### References
+* https://lists.apache.org/thread/vbzxnxn031wb998hsd7vqnvh4z8nx6rs
+
+
+### Credits
+* kwkr (https://github.com/kwkr) (reporter)
+
+
+## Privilege boundary bypass in bulk APIs (create action can upsert existing Pools/Connections/Variables) ## { #CVE-2025-62503 }
+
+CVE-2025-62503 [\[CVE json\]](./CVE-2025-62503.cve.json) [\[OSV json\]](./CVE-2025-62503.osv.json)
+
+
+
+_Last updated: 2025-10-30T09:11:15.486Z_
+
+### Affected
+
+* Apache Airflow from 3.0.0 before 3.1.1
+
+
+### Description
+
+User with CREATE and no UPDATE privilege for Pools, Connections, Variables could update existing records via bulk create API with overwrite action.<br><br><br>
+
+### References
+* https://lists.apache.org/thread/3v58249qscyn1hg240gh8hqg9pb4okcr
+
+
+### Credits
+* Maciej Kawka (finder)

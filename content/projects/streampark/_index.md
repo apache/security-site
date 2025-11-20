@@ -316,3 +316,28 @@ _Last updated: 2025-08-22T16:18:41.486Z_
 
 ### Credits
 * Xingchen Chen, Ze Jin, wh1t3p1g, yhbl, Qixu Liu  Institute of Information Engineering, CAS (reporter)
+
+
+## Authenticated users can trigger remote command execution ## { #CVE-2025-30001 }
+
+CVE-2025-30001 [\[CVE json\]](./CVE-2025-30001.cve.json) [\[OSV json\]](./CVE-2025-30001.osv.json)
+
+
+
+_Last updated: 2025-10-10T09:52:24.458Z_
+
+### Affected
+
+* Apache StreamPark from 2.1.4 before 2.1.6
+
+
+### Description
+
+<p>Incorrect Execution-Assigned Permissions vulnerability in Apache StreamPark.</p><p>This issue affects Apache StreamPark: from 2.1.4 before 2.1.6.</p><p>Users are recommended to upgrade to version 2.1.6, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/xfmsvhkcnr1831n0w5ovy3p44lsmfb7m
+
+
+### Credits
+* Liufeng Yi (ylf@yiliufeng.net) (reporter)

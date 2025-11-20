@@ -311,3 +311,57 @@ _Last updated: 2025-05-14T10:44:11.661Z_
 
 ### Credits
 * Kyler Katz (finder)
+
+
+## DoS Vulnerability ## { #CVE-2025-48392 }
+
+CVE-2025-48392 [\[CVE json\]](./CVE-2025-48392.cve.json) [\[OSV json\]](./CVE-2025-48392.osv.json)
+
+
+
+_Last updated: 2025-09-24T07:59:48.976Z_
+
+### Affected
+
+* Apache IoTDB from 1.3.3 through 1.3.4
+* Apache IoTDB from 2.0.1-beta through 2.0.4
+
+
+### Description
+
+<p>A vulnerability in Apache IoTDB.</p><p>This issue affects Apache IoTDB: from 1.3.3 through 1.3.4, from 2.0.1-beta through 2.0.4.</p><p>Users are recommended to upgrade to version 2.0.5, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/1rn0637hptglmctf8cqd9425bj4q21td
+
+
+### Credits
+* yyjLF (finder)
+
+
+## Deserialization of untrusted Data ## { #CVE-2025-48459 }
+
+CVE-2025-48459 [\[CVE json\]](./CVE-2025-48459.cve.json) [\[OSV json\]](./CVE-2025-48459.osv.json)
+
+
+
+_Last updated: 2025-09-24T07:57:20.978Z_
+
+### Affected
+
+* Apache IoTDB from 1.0.0 before 2.0.5
+
+
+### Description
+
+<p>Deserialization of Untrusted Data vulnerability in Apache IoTDB.</p><p>This issue affects Apache IoTDB: from 1.0.0 before 2.0.5.</p><p>Users are recommended to upgrade to version 2.0.5, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/mr84n19nv8d0bmcrfsj3mm5ff5qn4q2f
+
+
+### Credits
+* Sanny (finder)
+* 75Acol (finder)
+* stan fang (finder)
+* Wu Jiang (finder)

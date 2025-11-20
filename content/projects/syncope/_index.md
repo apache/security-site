@@ -64,3 +64,30 @@ When editing objects in the Syncope Console, incomplete HTML tags could be used 
 ### Credits
 * Kasper Karlsson, Omegapoint (finder)
 * Pontus Hanssen, Omegapoint (finder)
+
+
+## Remote Code Execution by delegated administrators ## { #CVE-2025-57738 }
+
+CVE-2025-57738 [\[CVE json\]](./CVE-2025-57738.cve.json) [\[OSV json\]](./CVE-2025-57738.osv.json)
+
+
+
+_Last updated: 2025-10-20T14:43:38.022Z_
+
+### Affected
+
+* Apache Syncope from 2.1 through 2.1.14
+* Apache Syncope from 3.0 through 3.0.13
+* Apache Syncope from 4.0 through 4.0.1
+
+
+### Description
+
+Apache Syncope offers the ability to extend / customize the base behavior on every deployment by allowing to provide custom implementations of a few Java interfaces; such implementations can be provided either as Java or Groovy classes, with the latter being particularly attractive as the machinery is set for runtime reload.<br>Such a feature has been available for a while, but recently it was discovered that a malicious administrator can inject Groovy code that can be executed remotely by a running Apache Syncope Core instance.<br>Users are recommended to upgrade to version 3.0.14 / 4.0.2, which fix this issue by forcing the Groovy code to run in a sandbox.
+
+### References
+* https://lists.apache.org/thread/x7cv6xv7z76y49grdr1hgj1pzw5zbby6
+
+
+### Credits
+* Mike Cole (Mantel Group) (finder)

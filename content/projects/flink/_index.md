@@ -87,3 +87,33 @@ Improper Neutralization of CRLF Sequences in HTTP Headers in Apache Flink Statef
 
 ### Credits
 * Andrea Cosentino (finder)
+
+
+## SQL injection via maliciously crafted identifiers ## { #CVE-2025-62228 }
+
+CVE-2025-62228 [\[CVE json\]](./CVE-2025-62228.cve.json) [\[OSV json\]](./CVE-2025-62228.osv.json)
+
+
+
+_Last updated: 2025-10-09T13:15:41.457Z_
+
+### Affected
+
+* Apache Flink CDC from 3.0.0 through 3.4.0
+* Apache Flink CDC from 3.0.0 through 3.4.0
+* Apache Flink CDC from 3.0.0 through 3.4.0
+* Apache Flink CDC from 3.0.0 through 3.4.0
+* Apache Flink CDC from 3.3.0 through 3.4.0
+
+
+### Description
+
+<div><div>Apache Flink CDC version 3.4.0 was vulnerable to a SQL injection via maliciously crafted identifiers eg. crafted database name or crafted table name. Even through only the logged-in database user can trigger the attack, we recommend users update Flink CDC version to 3.5.0 which address this issue.   </div></div><br>
+
+### References
+* https://lists.apache.org/thread/3dn0hc1wbc5sj0jbgdg33gtnwlw7qrl3
+
+
+### Credits
+* intSheep (reporter)
+* Mapta/BugBunny_ai (reporter)

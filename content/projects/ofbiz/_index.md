@@ -766,3 +766,61 @@ _Last updated: 2025-08-15T14:13:40.046Z_
 * Teeramet Eakwilai <teeramet@datafarm.co.th> (finder)
 * Thanasin Luangpipat (finder)
 * Jarukit Auikritskul (finder)
+
+
+## Critical Remote Command Execution via Unrestricted File Upload ## { #CVE-2025-59118 }
+
+CVE-2025-59118 [\[CVE json\]](./CVE-2025-59118.cve.json) [\[OSV json\]](./CVE-2025-59118.osv.json)
+
+
+
+_Last updated: 2025-11-12T09:15:52.459Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.03
+
+
+### Description
+
+<p>Unrestricted Upload of File with Dangerous Type vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 24.09.03.</p><p>Users are recommended to upgrade to version 24.09.03, which fixes the issue.</p>
+
+### References
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html
+* https://ofbiz.apache.org/release-notes-24.09.03.html
+* https://issues.apache.org/jira/browse/OFBIZ-13292
+* https://lists.apache.org/thread/202263kpy7g76pzsy1fm96h9lcmhsqpt
+
+
+### Credits
+* RedHive Team (security@hive.red) https://hive.red/en/ (finder)
+
+
+## Reflected Cross-site Scripting ## { #CVE-2025-61623 }
+
+CVE-2025-61623 [\[CVE json\]](./CVE-2025-61623.cve.json) [\[OSV json\]](./CVE-2025-61623.osv.json)
+
+
+
+_Last updated: 2025-11-12T09:16:48.899Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.03
+
+
+### Description
+
+<p>Reflected cross-site scripting vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 24.09.03.</p><p>Users are recommended to upgrade to version 24.09.03, which fixes the issue.</p>
+
+### References
+* https://issues.apache.org/jira/browse/OFBIZ-13295
+* https://ofbiz.apache.org/download.html
+* https://ofbiz.apache.org/security.html
+* https://ofbiz.apache.org/release-notes-24.09.03.html
+* https://lists.apache.org/thread/sb2mngrg766qbqt5g29fo0qblk3v4x5y
+
+
+### Credits
+* RedHive Team (security@hive.red) https://hive.red/en/ (finder)
