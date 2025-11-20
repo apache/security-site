@@ -162,6 +162,23 @@
 <li>4ra1n (reporter)</li>
 <li>Y4tacker (reporter)</li>
 </ul>
+<h2 id="CVE-2025-58457">Insufficient Permission Check in AdminServer Snapshot/Restore Commands</h2>
+<p>CVE-2025-58457 <a href="./CVE-2025-58457.cve.json">[CVE json]</a> <a href="./CVE-2025-58457.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-09-24T09:29:42.132Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache ZooKeeper from 3.9.0 before 3.9.4</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Improper permission check in ZooKeeper AdminServer lets authorized clients to run snapshot and restore command with insufficient permissions.</p><p>This issue affects Apache ZooKeeper: from 3.9.0 before 3.9.4.</p><p>Users are recommended to upgrade to version 3.9.4, which fixes the issue.</p><p>The issue can be mitigated by disabling both commands (via <code>admin.snapshot.enabled</code> and <code>admin.restore.enabled</code>), disabling the whole AdminServer interface (via <code>admin.enableServer</code>), or ensuring that the root ACL does not provide open permissions. (Note that ZooKeeper ACLs are not recursive, so this does not impact operations on child nodes besides notifications from recursive watches.)</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/r5yol0kkhx2fzw22pxk1ozwm3oc6yxrx">https://lists.apache.org/thread/r5yol0kkhx2fzw22pxk1ozwm3oc6yxrx</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Damien Diederen <a href="mailto:ddiederen@apache.org">ddiederen@apache.org</a> (reporter)</li>
+</ul>
 
   
 </div>

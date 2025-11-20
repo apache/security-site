@@ -1933,6 +1933,72 @@ resulting in a denial of service, information disclosure or remote code executio
 <ul>
 <li>Nhien Pham (@nhienit) at Galaxy One (finder)</li>
 </ul>
+<h2 id="CVE-2025-54831">Connection sensitive details exposed to users with READ permissions</h2>
+<p>CVE-2025-54831 <a href="./CVE-2025-54831.cve.json">[CVE json]</a> <a href="./CVE-2025-54831.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-09-26T07:28:57.402Z</em></p>
+<h3 id="affected-99">Affected</h3>
+<ul>
+<li>Apache Airflow at 3.0.3</li>
+</ul>
+<h3 id="description-99">Description</h3>
+<p></p><p>Apache Airflow 3 introduced a change to the handling of sensitive information in Connections. The intent was to restrict access to sensitive connection fields to <em>Connection Editing Users</em>, effectively applying a "write-only" model for sensitive values.</p>
+<p>In Airflow 3.0.3, this model was unintentionally violated: sensitive connection information could be viewed by users with READ permissions through both the API and the UI. This behavior also bypassed the `<code>AIRFLOW__CORE__HIDE_SENSITIVE_VAR_CONN_FIELDS`</code> configuration option.</p>
+<p>This issue does not affect Airflow 2.x, where exposing sensitive information to connection editors was the intended and documented behavior.</p><p></p><p><br></p><p>Users of Airflow 3.0.3 are advised to upgrade Airflow to &gt;=3.0.4.</p>
+<h3 id="references-99">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/vblmfqtydrp5zgn2q8tj3slk5podxspf">https://lists.apache.org/thread/vblmfqtydrp5zgn2q8tj3slk5podxspf</a></li>
+</ul>
+<h2 id="CVE-2025-54941">Command injection in &ldquo;example_dag_decorator&rdquo;</h2>
+<p>CVE-2025-54941 <a href="./CVE-2025-54941.cve.json">[CVE json]</a> <a href="./CVE-2025-54941.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-30T09:45:25.170Z</em></p>
+<h3 id="affected-100">Affected</h3>
+<ul>
+<li>Apache Airflow from 3.0.0 before &lt; 3.0.5</li>
+</ul>
+<h3 id="description-100">Description</h3>
+<p>An example dag <code>example_dag_decorator</code> had non-validated parameter that allowed the UI user to redirect the example to a malicious server and execute code on worker. This however required that the example dags are enabled in production (not default) or the example dag code copied to build your own similar dag. If you used the <code>example_dag_decorator</code> please review it and apply the changes implemented in Airflow 3.0.5 accordingly.<br><br><br></p>
+<h3 id="references-100">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/c6q6nofc6xl5bms039ks9b34v0v36df1">https://lists.apache.org/thread/c6q6nofc6xl5bms039ks9b34v0v36df1</a></li>
+</ul>
+<h3 id="credits-95">Credits</h3>
+<ul>
+<li>Nacl (reporter)</li>
+</ul>
+<h2 id="CVE-2025-62402">Airflow 3 API: /api/v2/dagReports executes DAG Python in API</h2>
+<p>CVE-2025-62402 <a href="./CVE-2025-62402.cve.json">[CVE json]</a> <a href="./CVE-2025-62402.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-30T09:14:24.818Z</em></p>
+<h3 id="affected-101">Affected</h3>
+<ul>
+<li>Apache Airflow from 3.0.0 before 3.1.1</li>
+</ul>
+<h3 id="description-101">Description</h3>
+<p>API users via <code>/api/v2/dagReports</code> could perform Dag code execution in the context of the api-server if the api-server was deployed in the environment where Dag files were available.<br></p>
+<h3 id="references-101">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/vbzxnxn031wb998hsd7vqnvh4z8nx6rs">https://lists.apache.org/thread/vbzxnxn031wb998hsd7vqnvh4z8nx6rs</a></li>
+</ul>
+<h3 id="credits-96">Credits</h3>
+<ul>
+<li>kwkr (<a href="https://github.com/kwkr">https://github.com/kwkr</a>) (reporter)</li>
+</ul>
+<h2 id="CVE-2025-62503">Privilege boundary bypass in bulk APIs (create action can upsert existing Pools/Connections/Variables)</h2>
+<p>CVE-2025-62503 <a href="./CVE-2025-62503.cve.json">[CVE json]</a> <a href="./CVE-2025-62503.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-30T09:11:15.486Z</em></p>
+<h3 id="affected-102">Affected</h3>
+<ul>
+<li>Apache Airflow from 3.0.0 before 3.1.1</li>
+</ul>
+<h3 id="description-102">Description</h3>
+<p>User with CREATE and no UPDATE privilege for Pools, Connections, Variables could update existing records via bulk create API with overwrite action.<br><br><br></p>
+<h3 id="references-102">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/3v58249qscyn1hg240gh8hqg9pb4okcr">https://lists.apache.org/thread/3v58249qscyn1hg240gh8hqg9pb4okcr</a></li>
+</ul>
+<h3 id="credits-97">Credits</h3>
+<ul>
+<li>Maciej Kawka (finder)</li>
+</ul>
 
   
 </div>

@@ -142,6 +142,25 @@
 <li>Kasper Karlsson, Omegapoint (finder)</li>
 <li>Pontus Hanssen, Omegapoint (finder)</li>
 </ul>
+<h2 id="CVE-2025-57738">Remote Code Execution by delegated administrators</h2>
+<p>CVE-2025-57738 <a href="./CVE-2025-57738.cve.json">[CVE json]</a> <a href="./CVE-2025-57738.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-20T14:43:38.022Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Syncope from 2.1 through 2.1.14</li>
+<li>Apache Syncope from 3.0 through 3.0.13</li>
+<li>Apache Syncope from 4.0 through 4.0.1</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Apache Syncope offers the ability to extend / customize the base behavior on every deployment by allowing to provide custom implementations of a few Java interfaces; such implementations can be provided either as Java or Groovy classes, with the latter being particularly attractive as the machinery is set for runtime reload.<br>Such a feature has been available for a while, but recently it was discovered that a malicious administrator can inject Groovy code that can be executed remotely by a running Apache Syncope Core instance.<br>Users are recommended to upgrade to version 3.0.14 / 4.0.2, which fix this issue by forcing the Groovy code to run in a sandbox.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/x7cv6xv7z76y49grdr1hgj1pzw5zbby6">https://lists.apache.org/thread/x7cv6xv7z76y49grdr1hgj1pzw5zbby6</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Mike Cole (Mantel Group) (finder)</li>
+</ul>
 
   
 </div>
