@@ -63,7 +63,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Hop](https://hop.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache HttpComponents |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache HTTP Server](https://httpd.apache.org/security_report.html) |  [Apache HTTP Server Security Team](mailto:security@httpd.apache.org) | [Advisories](https://httpd.apache.org/security/vulnerabilities_24.html) |
-| [Apache HugeGraph](https://hugegraph.apache.org/docs/guides/security) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://hugegraph.apache.org/docs/guides/security) |
+| [Apache HugeGraph](https://hugegraph.apache.org/docs/guides/security) |  [Apache HugeGraph Security Team](mailto:security@hugegraph.apache.org) | [Advisories](https://hugegraph.apache.org/docs/guides/security) |
 | [Apache Ignite](https://ignite.apache.org/docs/latest/security/security-model) |  [Apache Ignite Security Team](mailto:security@ignite.apache.org) | |
 | Apache Impala |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache InLong](https://inlong.apache.org/docs/next/security/) |  [Apache Security Team](mailto:security@apache.org) | |
