@@ -228,13 +228,13 @@ On version 3.0.0 through 3.1.1, Apache DolphinScheduler's python gateway suffere
 * https://lists.apache.org/thread/25g77jqczp3t8cz56hk1p65q7m6c64rf
 
 
-## Apache dolphinscheduler sensitive information disclosure ## { #CVE-2023-48796 }
+## Sensitive information disclosure ## { #CVE-2023-48796 }
 
 CVE-2023-48796 [\[CVE json\]](./CVE-2023-48796.cve.json) [\[OSV json\]](./CVE-2023-48796.osv.json)
 
 
 
-_Last updated: 2024-08-09T12:46:44.554Z_
+_Last updated: 2025-11-28T05:01:20.066Z_
 
 ### Affected
 

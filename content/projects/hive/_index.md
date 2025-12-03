@@ -210,3 +210,28 @@ Hive creates a credentials file to a temporary directory in the file system with
 
 ### Credits
 * Andrea Cosentino (reporter)
+
+
+## SQL injection vulnerability when processing delete column statistics requests via the HMS Thrift APIs ## { #CVE-2025-62728 }
+
+CVE-2025-62728 [\[CVE json\]](./CVE-2025-62728.cve.json) [\[OSV json\]](./CVE-2025-62728.osv.json)
+
+
+
+_Last updated: 2025-11-26T10:29:43.944Z_
+
+### Affected
+
+* Apache Hive from 4.1.0 before 4.2.0
+
+
+### Description
+
+<p>SQL injection vulnerability in Hive Metastore Server (HMS) when processing delete column statistics requests via the Thrift APIs. The vulnerability is only exploitable by trusted/authorized users/applications that are allowed to call directly the Thrift APIs. In most real-world deployments, HMS is accessible to only a handful of applications (e.g., Hiveserver2) thus the vulnerability is not exploitable. Moreover, the vulnerable code cannot be reached when metastore.try.direct.sql property is set to false.</p><p>This issue affects Apache Hive: from 4.1.0 before 4.2.0.</p><p>Users are recommended to upgrade to version 4.2.0, which fixes the issue. Users who cannot upgrade directly are encouraged to set&nbsp;metastore.try.direct.sql property to false if the HMS Thrift APIs are exposed to general public.</p>
+
+### References
+* https://lists.apache.org/thread/yj65dd8dmzgy8p3nv8zy33v8knzg9o7g
+
+
+### Credits
+* WuKong (Tencent) (finder)

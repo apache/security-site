@@ -91,3 +91,30 @@ Apache Syncope offers the ability to extend / customize the base behavior on eve
 
 ### Credits
 * Mike Cole (Mantel Group) (finder)
+
+
+## Default AES key used for internal password encryption ## { #CVE-2025-65998 }
+
+CVE-2025-65998 [\[CVE json\]](./CVE-2025-65998.cve.json) [\[OSV json\]](./CVE-2025-65998.osv.json)
+
+
+
+_Last updated: 2025-11-24T13:46:58.386Z_
+
+### Affected
+
+* Apache Syncope from 2.1 through 2.1.14
+* Apache Syncope from 3.0 through 3.0.14
+* Apache Syncope from 4.0 through 4.0.2
+
+
+### Description
+
+<p>Apache Syncope can be configured to store the user password values in the internal database with AES encryption, though this is not the default option.</p><p>When AES is configured, the default key value, hard-coded in the source code, is always used. This allows a malicious attacker, once obtained access to the internal database content, to reconstruct the original cleartext password values.<br>This is not affecting encrypted plain attributes, whose values are also stored using AES encryption.</p><p>Users are recommended to upgrade to version 3.0.15 / 4.0.3, which fix this issue.</p>
+
+### References
+* https://lists.apache.org/thread/fjh0tb0d1xkbphc5ogdsc348ppz88cts
+
+
+### Credits
+* Clemens Bergmann (Technical University of Darmstadt) (finder)

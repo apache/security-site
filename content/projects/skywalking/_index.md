@@ -32,3 +32,28 @@ A vulnerability in Apache SkyWalking NodeJS Agent prior to 0.5.1. The vulnerabil
 
 ### References
 * https://lists.apache.org/thread/x238wo4r5goy39dxdjcmlofp6gcdnqr3
+
+
+## Stored XSS vulnerability ## { #CVE-2025-54057 }
+
+CVE-2025-54057 [\[CVE json\]](./CVE-2025-54057.cve.json) [\[OSV json\]](./CVE-2025-54057.osv.json)
+
+
+
+_Last updated: 2025-11-27T02:19:21.627Z_
+
+### Affected
+
+* Apache SkyWalking through 10.2.0
+
+
+### Description
+
+<p>Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS) vulnerability in Apache SkyWalking.</p><p>This issue affects Apache SkyWalking: &lt;= 10.2.0.</p><p>Users are recommended to upgrade to version 10.3.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/sl2x2tx8y007x0mo746yddx2lvnv9tcr
+
+
+### Credits
+* Vinh Nguyễn Quang (vinhnq4902@gmail.com) (reporter)

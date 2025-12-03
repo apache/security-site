@@ -180,3 +180,29 @@ _Last updated: 2025-07-30T15:58:00.516Z_
 
 ### Credits
 * Ryan Murphy of HeroDevs (finder)
+
+
+## File leak in multipart request processing causes disk exhaustion (DoS) ## { #CVE-2025-64775 }
+
+CVE-2025-64775 [\[CVE json\]](./CVE-2025-64775.cve.json) [\[OSV json\]](./CVE-2025-64775.osv.json)
+
+
+
+_Last updated: 2025-12-01T14:46:33.986Z_
+
+### Affected
+
+* Apache Struts from 2.0.0 through 6.7.0
+* Apache Struts from 7.0.0 through 7.0.3
+
+
+### Description
+
+<p>Denial of Service vulnerability in Apache Struts, f<span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">ile leak in multipart request processing causes disk exhaustion.</span></span></p><p>This issue affects Apache Struts: from 2.0.0 through 6.7.0, from 7.0.0 through 7.0.3.</p><p>Users are recommended to upgrade to version 6.8.0 or 7.1.1, which fixes the issue.</p>
+
+### References
+* https://cwiki.apache.org/confluence/display/WW/S2-068
+
+
+### Credits
+* Nicolas Fournier (reporter)

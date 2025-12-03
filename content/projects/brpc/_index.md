@@ -116,6 +116,41 @@ Unlimited memory allocation in redis protocol parser in Apache bRPC (all version
 * Tyler Zars (reporter)
 
 
+## Stack Exhaustion via Unbounded Recursion in JSON Parser ## { #CVE-2025-59789 }
+
+CVE-2025-59789 [\[CVE json\]](./CVE-2025-59789.cve.json) [\[OSV json\]](./CVE-2025-59789.osv.json)
+
+
+
+_Last updated: 2025-12-01T02:28:22.223Z_
+
+### Affected
+
+* Apache bRPC before 1.15.0
+
+
+### Description
+
+Uncontrolled recursion in the json2pb component in Apache bRPC (version &lt; 1.15.0) on all platforms allows remote attackers to make the server crash via sending deep recursive json data.<br><br>Root Cause:<br>The bRPC&nbsp;json2pb component uses rapidjson to parse json data from the network. The rapidjson parser uses a recursive parsing method by default. If the input json has a large depth of recursive structure, the parser function may run into stack overflow.<br><br>Affected Scenarios:<br>Use bRPC server with protobuf message to serve http+json requests from untrusted network. Or directly use&nbsp;JsonToProtoMessage to convert json from&nbsp;untrusted input.
+
+<br><br>How to Fix: <br>(<span style="background-color: rgb(255, 255, 255);">Choose one of the following options)&nbsp;</span><br>1. Upgrade bRPC to version 1.15.0, which fixes this issue.<br><span style="background-color: rgb(255, 255, 255);">2. Apply this patch: </span><a target="_blank" rel="nofollow" href="https://github.com/apache/brpc/pull/3099">https://github.com/apache/brpc/pull/3099</a>
+
+<br><br>Note:<br>No matter which option 
+
+<span style="background-color: rgb(255, 255, 255);">you choose</span>, you should know that the fix introduces a recursion depth limit with default value 100. It affects these functions:&nbsp;
+
+<span style="background-color: rgb(255, 255, 255);">ProtoMessageToJson, ProtoMessageToProtoJson, JsonToProtoMessage, and ProtoJsonToProtoMessage.</span>
+
+ If your requests contain json or protobuf messages that have a depth exceeding the limit, the request will be failed after applying the fix. You can modify the gflag json2pb_max_recursion_depth to change the limit.
+
+### References
+* https://lists.apache.org/thread/ozmcsztcpxn61jxod8jo8q46jo0oc1zx
+
+
+### Credits
+* Tyler Zars (finder)
+
+
 ## Remote command injection vulnerability in heap builtin service ## { #CVE-2025-60021 }
 
 CVE-2025-60021 [\[CVE json\]](./CVE-2025-60021.cve.json) [\[OSV json\]](./CVE-2025-60021.osv.json)

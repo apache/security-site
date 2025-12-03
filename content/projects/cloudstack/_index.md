@@ -597,3 +597,59 @@ _Last updated: 2025-06-11T03:59:42.176Z_
 ### Credits
 * Kevin Li <kli74@apple.com> (finder)
 * Scott Schmitz <sschmitz@ussignal.com> (finder)
+
+
+## Potential remote code execution on Javascript engine defined rules ## { #CVE-2025-59302 }
+
+CVE-2025-59302 [\[CVE json\]](./CVE-2025-59302.cve.json) [\[OSV json\]](./CVE-2025-59302.osv.json)
+
+
+
+_Last updated: 2025-11-27T11:46:23.798Z_
+
+### Affected
+
+* Apache CloudStack from 4.18.0 before 4.20.2
+* Apache CloudStack from 4.21.0 before 4.22.0
+
+
+### Description
+
+<p>In  Apache CloudStack improper control of generation of code ('Code Injection') vulnerability is found in the following APIs which are accessible only to admins.</p><ul><li>quotaTariffCreate</li><li>quotaTariffUpdate</li><li>createSecondaryStorageSelector</li><li>updateSecondaryStorageSelector</li><li>updateHost</li><li>updateStorage</li></ul><p>This issue affects Apache CloudStack: from 4.18.0 before 4.20.2, from 4.21.0 before 4.22.0.&nbsp;Users are recommended to upgrade to versions 4.20.2 or 4.22.0, which contain the fix.</p><p>The fix introduces a new global configuration flag, <strong><code>js.interpretation.enabled</code></strong>, allowing administrators to control the interpretation of JavaScript expressions in these APIs, thereby mitigating the code injection risk.</p>
+
+### References
+* https://lists.apache.org/thread/kwwsg2j85f1b75o0ht5zbr34d7h66788
+
+
+### Credits
+* Tianyi Cheng <chengtianyi@huawei.com> (finder)
+
+
+## Lack of user permission validation leading to data leak for few APIs ## { #CVE-2025-59454 }
+
+CVE-2025-59454 [\[CVE json\]](./CVE-2025-59454.cve.json) [\[OSV json\]](./CVE-2025-59454.osv.json)
+
+
+
+_Last updated: 2025-11-27T11:40:37.834Z_
+
+### Affected
+
+* Apache CloudStack from 4.0.0 before 4.20.2
+* Apache CloudStack from 4.21.0 before 4.22.0
+
+
+### Description
+
+In Apache CloudStack, a gap in access control checks affected the APIs <pre>- createNetworkACL
+- listNetworkACLs
+- listResourceDetails
+- listVirtualMachinesUsageHistory
+- listVolumesUsageHistory</pre><div>While these APIs were accessible only to authorized users, insufficient permission validation meant that users could occasionally access information beyond their intended scope.</div><div><br></div><div>Users are recommended to upgrade to Apache CloudStack 4.20.2.0 or 4.22.0.0, which fixes the issue.</div>
+
+### References
+* https://lists.apache.org/thread/0hlklvlwhzsfw39nocmyxb6svjbs9xbc
+
+
+### Credits
+* bugreporter@qq.com <https://github.com/ai-bugreporter/Credits> (finder)

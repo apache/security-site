@@ -239,3 +239,37 @@ _Last updated: 2025-03-24T07:41:49.543Z_
 
 ### Credits
 * XBOW (reporter)
+
+
+## Kerberos authenticaton chooses a cryptographically unsecure secret if not configured explicitly. ## { #CVE-2025-59390 }
+
+CVE-2025-59390 [\[CVE json\]](./CVE-2025-59390.cve.json) [\[OSV json\]](./CVE-2025-59390.osv.json)
+
+
+
+_Last updated: 2025-11-26T08:50:04.518Z_
+
+### Affected
+
+* Apache Druid through 34.0.0
+
+
+### Description
+
+<p>Apache Druid’s Kerberos authenticator uses a weak fallback secret when the `druid.auth.authenticator.kerberos.cookieSignatureSecret<code></code>` configuration is not explicitly set. In this case, the secret is generated using <code>`ThreadLocalRandom`</code>,
+ which is not a crypto-graphically secure random number generator. This 
+may allow an attacker to predict or brute force the secret used to sign 
+authentication cookies, potentially enabling token forgery or 
+authentication bypass. Additionally, each process generates its own 
+fallback secret, resulting in inconsistent secrets across nodes. This 
+causes authentication failures in distributed or multi-broker 
+deployments, effectively leading to a incorrectly configured clusters. Users are 
+advised to configure a strong&nbsp;<code>`druid.auth.authenticator.kerberos.cookieSignatureSecret`</code><br><br></p><p>This issue affects Apache Druid: through 34.0.0.</p><p>Users are recommended to upgrade to version 35.0.0, which fixes the issue making it mandatory to set `druid.auth.authenticator.kerberos.cookieSignatureSecret` when using the&nbsp;Kerberos authenticator. Services will fail to come up if the secret is not set.&nbsp;</p>
+
+### References
+* https://lists.apache.org/thread/jwjltllnntgj1sb9wzsjmvwm9f8rlhg8
+
+
+### Credits
+* Luke Smith (smithluke1966@gmail.com) (finder)
+* 1nfocalypse (analyst)

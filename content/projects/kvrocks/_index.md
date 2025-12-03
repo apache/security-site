@@ -62,3 +62,53 @@ _Last updated: 2025-04-22T10:35:30.358Z_
 
 ### Credits
 * ankki-zsyang, Shenzhen Ankki Technologies Co., Ltd. (reporter)
+
+
+## RESET command grants admin privileges ## { #CVE-2025-59790 }
+
+CVE-2025-59790 [\[CVE json\]](./CVE-2025-59790.cve.json) [\[OSV json\]](./CVE-2025-59790.osv.json)
+
+
+
+_Last updated: 2025-11-28T14:20:28.481Z_
+
+### Affected
+
+* Apache Kvrocks from 2.9.0 through 2.13.0
+
+
+### Description
+
+<p>Improper Privilege Management vulnerability in Apache Kvrocks.</p><p>This issue affects Apache Kvrocks: from v2.9.0 through v2.13.0.</p><p>Users are recommended to upgrade to version 2.14.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/dlbz5hmm4ts3npzqnvhofxmqg9w9zt0o
+
+
+### Credits
+* Mapta / BugBunny_ai (reporter)
+
+
+## MONITOR command reveals plaintext credentials to non-admins ## { #CVE-2025-59792 }
+
+CVE-2025-59792 [\[CVE json\]](./CVE-2025-59792.cve.json) [\[OSV json\]](./CVE-2025-59792.osv.json)
+
+
+
+_Last updated: 2025-11-28T14:21:21.082Z_
+
+### Affected
+
+* Apache Kvrocks from 1.0.0 through 2.13.0
+
+
+### Description
+
+<p>Reveals plaintext credentials in the MONITOR command vulnerability in Apache Kvrocks.</p><p>This issue affects Apache Kvrocks: from 1.0.0 through 2.13.0.</p><p>Users are recommended to upgrade to version 2.14.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/h2pcvr5p9otc7dnj2dt2nr4b3omghddw
+
+
+### Credits
+* Mapta / BugBunny_ai (reporter)
