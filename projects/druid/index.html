@@ -259,6 +259,32 @@ druid.auth.pac4j.cookiePassphrase as a precaution.<br><p></p>
 <ul>
 <li>XBOW (reporter)</li>
 </ul>
+<h2 id="CVE-2025-59390">Kerberos authenticaton chooses a cryptographically unsecure secret if not configured explicitly.</h2>
+<p>CVE-2025-59390 <a href="./CVE-2025-59390.cve.json">[CVE json]</a> <a href="./CVE-2025-59390.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-11-26T08:50:04.518Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache Druid through 34.0.0</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>Apache Druid’s Kerberos authenticator uses a weak fallback secret when the `druid.auth.authenticator.kerberos.cookieSignatureSecret<code></code>` configuration is not explicitly set. In this case, the secret is generated using <code>`ThreadLocalRandom`</code>,
+ which is not a crypto-graphically secure random number generator. This 
+may allow an attacker to predict or brute force the secret used to sign 
+authentication cookies, potentially enabling token forgery or 
+authentication bypass. Additionally, each process generates its own 
+fallback secret, resulting in inconsistent secrets across nodes. This 
+causes authentication failures in distributed or multi-broker 
+deployments, effectively leading to a incorrectly configured clusters. Users are 
+advised to configure a strong&nbsp;<code>`druid.auth.authenticator.kerberos.cookieSignatureSecret`</code><br><br></p><p>This issue affects Apache Druid: through 34.0.0.</p><p>Users are recommended to upgrade to version 35.0.0, which fixes the issue making it mandatory to set `druid.auth.authenticator.kerberos.cookieSignatureSecret` when using the&nbsp;Kerberos authenticator. Services will fail to come up if the secret is not set.&nbsp;</p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/jwjltllnntgj1sb9wzsjmvwm9f8rlhg8">https://lists.apache.org/thread/jwjltllnntgj1sb9wzsjmvwm9f8rlhg8</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>Luke Smith (<a href="mailto:smithluke1966@gmail.com">smithluke1966@gmail.com</a>) (finder)</li>
+<li>1nfocalypse (analyst)</li>
+</ul>
 
   
 </div>

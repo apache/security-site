@@ -161,6 +161,25 @@
 <ul>
 <li>Mike Cole (Mantel Group) (finder)</li>
 </ul>
+<h2 id="CVE-2025-65998">Default AES key used for internal password encryption</h2>
+<p>CVE-2025-65998 <a href="./CVE-2025-65998.cve.json">[CVE json]</a> <a href="./CVE-2025-65998.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-11-24T13:46:58.386Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Syncope from 2.1 through 2.1.14</li>
+<li>Apache Syncope from 3.0 through 3.0.14</li>
+<li>Apache Syncope from 4.0 through 4.0.2</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Apache Syncope can be configured to store the user password values in the internal database with AES encryption, though this is not the default option.</p><p>When AES is configured, the default key value, hard-coded in the source code, is always used. This allows a malicious attacker, once obtained access to the internal database content, to reconstruct the original cleartext password values.<br>This is not affecting encrypted plain attributes, whose values are also stored using AES encryption.</p><p>Users are recommended to upgrade to version 3.0.15 / 4.0.3, which fix this issue.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/fjh0tb0d1xkbphc5ogdsc348ppz88cts">https://lists.apache.org/thread/fjh0tb0d1xkbphc5ogdsc348ppz88cts</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Clemens Bergmann (Technical University of Darmstadt) (finder)</li>
+</ul>
 
   
 </div>
