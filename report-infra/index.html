@@ -104,7 +104,7 @@
  <p>ASF infrastructure includes the apache.org websites, email infrastructure and version control systems.</p>
 <p>There are some classes of common reports that we consider invalid up-front:</p>
 <ul>
-<li>We already know our mailservers do not use DKIM/DMARC. We plan to support this in the future, but this is nontrivial given our strong reliance on mailinglists.</li>
+<li>We already know our domain has a weak <code>p=none</code> DMARC policy. This is because our mailservers only use DKIM for individual emails. We plan to support this for our mailinglists as well in the future, but this is nontrivial.</li>
 <li>As an open source organization with transparency at our core, read access to directory listings, source code repositories and build servers is intentionally public.</li>
 <li>Systems that disclose the versions of the servers and software we use</li>
 <li>Data that is publicly accessible in our bug tracking systems</li>
