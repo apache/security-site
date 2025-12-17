@@ -245,3 +245,81 @@ SQL Injection vulnerability in various API endpoints - offices, dashboards, etc.
 ### Credits
 * Kabilan S - Security engineer at Zoho (finder)
 * Aleksandar Vidakovic (remediation developer)
+
+
+## weak password policy ## { #CVE-2025-23408 }
+
+CVE-2025-23408 [\[CVE json\]](./CVE-2025-23408.cve.json)
+
+_Last updated: 2025-12-12T09:18:57.063Z_
+
+### Affected
+
+* Apache Fineract through 1.10.1
+* Apache Fineract at 1.11.0
+
+
+### Description
+
+<p>Weak Password Requirements vulnerability in Apache Fineract.</p><p>This issue affects Apache Fineract: through 1.10.1.&nbsp;The issue is fixed in version 1.11.0.</p><p>Users are encouraged to upgrade to version 1.13.0, the latest release.<br></p>
+
+### References
+* https://lists.apache.org/thread/bdlb6wl968yh1n48mr5npsk2spo6dncf
+
+
+### Credits
+* Peter Chen, PayPal Security (finder)
+* Kristof Jozsa, BaaSFlow (analyst)
+
+
+## Server Key not masked ## { #CVE-2025-58130 }
+
+CVE-2025-58130 [\[CVE json\]](./CVE-2025-58130.cve.json)
+
+_Last updated: 2025-12-12T09:20:05.211Z_
+
+### Affected
+
+* Apache Fineract through 1.11.0
+* Apache Fineract at 1.12.1
+
+
+### Description
+
+<p>Insufficiently Protected Credentials vulnerability in Apache Fineract.</p><p>This issue affects Apache Fineract: through 1.11.0.&nbsp;The issue is fixed in version 1.12.1.</p><p>Users are encouraged to upgrade to version 1.13.0, the latest release.<br></p>
+
+### References
+* https://lists.apache.org/thread/d9zpkc86zk265523tfvbr8w7gyr6onoy
+
+
+### Credits
+* Peter Chen (reporter)
+* Jose Alberto Hernandez (remediation developer)
+* Ádám Sághy (remediation reviewer)
+
+
+## IDOR via self-service API ## { #CVE-2025-58137 }
+
+CVE-2025-58137 [\[CVE json\]](./CVE-2025-58137.cve.json)
+
+_Last updated: 2025-12-12T09:20:50.539Z_
+
+### Affected
+
+* Apache Fineract through 1.11.0
+* Apache Fineract at 1.12.1
+
+
+### Description
+
+<p>Authorization Bypass Through User-Controlled Key vulnerability in Apache Fineract.</p><p>This issue affects Apache Fineract: through 1.11.0. The issue is fixed in version 1.12.1.</p><p>Users are encouraged to upgrade to version 1.13.0, the latest release.</p>
+
+### References
+* https://lists.apache.org/thread/gz3zhoghlclch3rdnzyrdcf69c0507ww
+
+
+### Credits
+* Peter Chen (reporter)
+* Ádám Sághy (remediation developer)
+* Aleksandar Vidakovic (remediation reviewer)
+* Víctor Romero (remediation reviewer)

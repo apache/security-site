@@ -247,7 +247,7 @@ CVE-2025-59390 [\[CVE json\]](./CVE-2025-59390.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-11-26T08:50:04.518Z_
+_Last updated: 2025-12-11T12:56:31.790Z_
 
 ### Affected
 

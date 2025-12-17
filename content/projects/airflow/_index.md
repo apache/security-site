@@ -2744,3 +2744,30 @@ User with CREATE and no UPDATE privilege for Pools, Connections, Variables could
 
 ### Credits
 * Maciej Kawka (finder)
+
+
+## Secrets in rendered templates not redacted properly and exposed in the UI ## { #CVE-2025-66388 }
+
+CVE-2025-66388 [\[CVE json\]](./CVE-2025-66388.cve.json) [\[OSV json\]](./CVE-2025-66388.osv.json)
+
+
+
+_Last updated: 2025-12-15T11:30:42.649Z_
+
+### Affected
+
+* Apache Airflow from 3.1.0 before 3.1.4
+
+
+### Description
+
+A vulnerability in Apache Airflow allowed authenticated UI users to view secret values in rendered templates due to secrets not being properly redacted,&nbsp;potentially exposing secrets to users without the appropriate authorization.<br><br>Users are recommended to upgrade to version 3.1.4, which fixes this issue.
+
+### References
+* https://github.com/apache/airflow/pull/58772
+* https://lists.apache.org/thread/mv9hzsx8grjf7gdlkxwppnpbtogtls2g
+
+
+### Credits
+* William Ashe (finder)
+* Amogh Desai (remediation developer)

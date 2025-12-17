@@ -1746,3 +1746,135 @@ _Last updated: 2025-07-23T13:19:23.112Z_
 
 ### References
 * https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+## mod_md (ACME), unintended retry intervals ## { #CVE-2025-55753 }
+
+CVE-2025-55753 [\[CVE json\]](./CVE-2025-55753.cve.json) [\[OSV json\]](./CVE-2025-55753.osv.json)
+
+
+
+_Last updated: 2025-12-05T10:17:13.634Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.30 before 2.4.66
+
+
+### Description
+
+<p><span style="background-color: rgb(255, 255, 255);">An integer overflow in the case of failed ACME certificate renewal leads, after a number of failures (~30 days in default configurations), to the backoff timer becoming 0. Attempts to renew the certificate then are repeated without delays until it succeeds.</span></p><p>This issue affects Apache HTTP Server: from 2.4.30 before 2.4.66.<br></p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Aisle Research (finder)
+
+
+## Server Side Includes adds query string to #exec cmd=... ## { #CVE-2025-58098 }
+
+CVE-2025-58098 [\[CVE json\]](./CVE-2025-58098.cve.json) [\[OSV json\]](./CVE-2025-58098.osv.json)
+
+
+
+_Last updated: 2025-12-05T13:40:37.496Z_
+
+### Affected
+
+* Apache HTTP Server before 2.4.66
+
+
+### Description
+
+<p>Apache HTTP Server 2.4.65 and earlier with Server Side Includes (SSI) enabled and mod_cgid (but not mod_cgi) passes the shell-escaped query string to #exec cmd="..." directives.</p><p>This issue affects Apache HTTP Server before 2.4.66.</p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Anthony Parfenov (United Rentals, Inc.) (finder)
+
+
+## NTLM Leakage on Windows through UNC SSRF ## { #CVE-2025-59775 }
+
+CVE-2025-59775 [\[CVE json\]](./CVE-2025-59775.cve.json) [\[OSV json\]](./CVE-2025-59775.osv.json)
+
+
+
+_Last updated: 2025-12-05T10:17:02.236Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.65
+
+
+### Description
+
+<p>
+
+Server-Side Request Forgery (SSRF) vulnerability 
+
+&nbsp;in Apache HTTP Server on Windows 
+
+with <span style="background-color: rgb(247, 247, 247);">AllowEncodedSlashes</span> <span style="background-color: rgb(247, 247, 247);">On</span>&nbsp;and <span style="background-color: rgb(247, 247, 247);">MergeSlashes</span> <span style="background-color: rgb(247, 247, 247);">Off</span>&nbsp; allows to potentially leak NTLM 
+hashes to a malicious server via SSRF and malicious requests or content</p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Orange Tsai (@orange_8361) from DEVCORE (finder)
+
+
+## CGI environment variable override ## { #CVE-2025-65082 }
+
+CVE-2025-65082 [\[CVE json\]](./CVE-2025-65082.cve.json) [\[OSV json\]](./CVE-2025-65082.osv.json)
+
+
+
+_Last updated: 2025-12-05T10:46:23.466Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.65
+
+
+### Description
+
+<p>Improper Neutralization of Escape, Meta, or Control Sequences vulnerability in Apache HTTP Server through environment variables set via the Apache configuration unexpectedly superseding variables calculated by the server for CGI programs.</p><p>This issue affects Apache HTTP Server from 2.4.0 through 2.4.65.</p><p>Users are recommended to upgrade to version 2.4.66 which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Mattias Åsander (Umeå University) (finder)
+
+
+## mod_userdir+suexec bypass via AllowOverride FileInfo ## { #CVE-2025-66200 }
+
+CVE-2025-66200 [\[CVE json\]](./CVE-2025-66200.cve.json) [\[OSV json\]](./CVE-2025-66200.osv.json)
+
+
+
+_Last updated: 2025-12-05T11:02:46.192Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.7 through 2.4.65
+
+
+### Description
+
+<p>mod_userdir+suexec bypass via AllowOverride FileInfo vulnerability in Apache HTTP Server. Users with access to use the RequestHeader directive in htaccess can cause some CGI scripts to run under an unexpected userid.</p><p>This issue affects Apache HTTP Server: from 2.4.7 through 2.4.65.</p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Mattias Åsander (Umeå University) (finder)

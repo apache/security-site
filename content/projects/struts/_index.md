@@ -188,7 +188,7 @@ CVE-2025-64775 [\[CVE json\]](./CVE-2025-64775.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-12-01T14:46:33.986Z_
+_Last updated: 2025-12-07T08:27:17.883Z_
 
 ### Affected
 
@@ -202,6 +202,33 @@ _Last updated: 2025-12-01T14:46:33.986Z_
 
 ### References
 * https://cwiki.apache.org/confluence/display/WW/S2-068
+
+
+### Credits
+* Nicolas Fournier (reporter)
+
+
+## File leak in multipart request processing causes disk exhaustion (DoS) - version ranges fixed ## { #CVE-2025-66675 }
+
+CVE-2025-66675 [\[CVE json\]](./CVE-2025-66675.cve.json) [\[OSV json\]](./CVE-2025-66675.osv.json)
+
+
+
+_Last updated: 2025-12-10T07:13:32.174Z_
+
+### Affected
+
+* Apache Struts from 2.0.0 through 6.7.*
+* Apache Struts from 7.0.0 through 7.0.*
+
+
+### Description
+
+<p>Denial of Service vulnerability in Apache Struts, f<span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">ile leak in multipart request processing causes disk exhaustion.</span></span></p><p>This issue affects Apache Struts: from 2.0.0 through 6.7.4, from 7.0.0 through 7.0.3.</p><p>Users are recommended to upgrade to version 6.8.0 or 7.1.1, which fixes the issue.<br><br>It's related to&nbsp;<span style="background-color: rgb(255, 255, 255);"><a target="_blank" rel="nofollow" href="https://cve.org/CVERecord?id=CVE-2025-64775">https://cve.org/CVERecord?id=CVE-2025-64775</a>&nbsp;- this CVE addresses missing affected version 6.7.4</span></p>
+
+### References
+* https://cwiki.apache.org/confluence/display/WW/S2-068
+* https://cve.org/CVERecord?id=CVE-2025-64775
 
 
 ### Credits
