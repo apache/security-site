@@ -102,9 +102,9 @@
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache Fineract? You can read more about the projects&rsquo; security policy on their <a href="https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report">security page</a>, and email your report to the <a href="mailto:security@fineract.apache.org">Apache Fineract Security Team</a>.</p>
+<p>Do you want disclose a potential security issue for Apache Fineract? You can read more about the projects&rsquo; security policy on their <a href="https://fineract.apache.org/security.html">security page</a>, and email your report to the <a href="mailto:security@fineract.apache.org">Apache Fineract Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
-<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://fineract.apache.org/security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
 <h2 id="CVE-2020-17514">disabled hostname verificiation</h2>
 <p>CVE-2020-17514 <a href="./CVE-2020-17514.cve.json">[CVE json]</a> <a href="./CVE-2020-17514.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2021-05-27T12:07:40.403Z</em></p>
@@ -266,6 +266,66 @@
 <ul>
 <li>Kabilan S - Security engineer at Zoho (finder)</li>
 <li>Aleksandar Vidakovic (remediation developer)</li>
+</ul>
+<h2 id="CVE-2025-23408">weak password policy</h2>
+<p>CVE-2025-23408 <a href="./CVE-2025-23408.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2025-12-12T09:18:57.063Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache Fineract through 1.10.1</li>
+<li>Apache Fineract at 1.11.0</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>Weak Password Requirements vulnerability in Apache Fineract.</p><p>This issue affects Apache Fineract: through 1.10.1.&nbsp;The issue is fixed in version 1.11.0.</p><p>Users are encouraged to upgrade to version 1.13.0, the latest release.<br></p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/bdlb6wl968yh1n48mr5npsk2spo6dncf">https://lists.apache.org/thread/bdlb6wl968yh1n48mr5npsk2spo6dncf</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>Peter Chen, PayPal Security (finder)</li>
+<li>Kristof Jozsa, BaaSFlow (analyst)</li>
+</ul>
+<h2 id="CVE-2025-58130">Server Key not masked</h2>
+<p>CVE-2025-58130 <a href="./CVE-2025-58130.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2025-12-12T09:20:05.211Z</em></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache Fineract through 1.11.0</li>
+<li>Apache Fineract at 1.12.1</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<p>Insufficiently Protected Credentials vulnerability in Apache Fineract.</p><p>This issue affects Apache Fineract: through 1.11.0.&nbsp;The issue is fixed in version 1.12.1.</p><p>Users are encouraged to upgrade to version 1.13.0, the latest release.<br></p>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/d9zpkc86zk265523tfvbr8w7gyr6onoy">https://lists.apache.org/thread/d9zpkc86zk265523tfvbr8w7gyr6onoy</a></li>
+</ul>
+<h3 id="credits-10">Credits</h3>
+<ul>
+<li>Peter Chen (reporter)</li>
+<li>Jose Alberto Hernandez (remediation developer)</li>
+<li>Ádám Sághy (remediation reviewer)</li>
+</ul>
+<h2 id="CVE-2025-58137">IDOR via self-service API</h2>
+<p>CVE-2025-58137 <a href="./CVE-2025-58137.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2025-12-12T09:20:50.539Z</em></p>
+<h3 id="affected-11">Affected</h3>
+<ul>
+<li>Apache Fineract through 1.11.0</li>
+<li>Apache Fineract at 1.12.1</li>
+</ul>
+<h3 id="description-11">Description</h3>
+<p>Authorization Bypass Through User-Controlled Key vulnerability in Apache Fineract.</p><p>This issue affects Apache Fineract: through 1.11.0. The issue is fixed in version 1.12.1.</p><p>Users are encouraged to upgrade to version 1.13.0, the latest release.</p>
+<h3 id="references-11">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/gz3zhoghlclch3rdnzyrdcf69c0507ww">https://lists.apache.org/thread/gz3zhoghlclch3rdnzyrdcf69c0507ww</a></li>
+</ul>
+<h3 id="credits-11">Credits</h3>
+<ul>
+<li>Peter Chen (reporter)</li>
+<li>Ádám Sághy (remediation developer)</li>
+<li>Aleksandar Vidakovic (remediation reviewer)</li>
+<li>Víctor Romero (remediation reviewer)</li>
 </ul>
 
   

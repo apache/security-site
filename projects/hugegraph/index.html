@@ -174,6 +174,29 @@
 <ul>
 <li>L0ne1y (reporter)</li>
 </ul>
+<h2 id="CVE-2025-26866">RAFT and deserialization vulnerability</h2>
+<p>CVE-2025-26866 <a href="./CVE-2025-26866.cve.json">[CVE json]</a> <a href="./CVE-2025-26866.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-12T09:23:05.196Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache HugeGraph-Server from 1.0.0 before 1.7.0</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p></p>
+<p><span style="background-color: rgb(255, 255, 255);">A remote code execution vulnerability exists where a malicious Raft node can exploit insecure Hessian deserialization within the PD store. The fix enforces IP-based authentication to restrict cluster membership and implements a strict class whitelist to harden the Hessian serialization process against object injection attacks.</span><br></p>
+<p></p><p>Users are recommended to upgrade to version 1.7.0, which fixes the issue.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://github.com/apache/incubator-hugegraph/pull/2735">https://github.com/apache/incubator-hugegraph/pull/2735</a></li>
+<li><a href="https://lists.apache.org/thread/ko8jkwbjbb99m45pg4sgo5xsm8gx9nsq">https://lists.apache.org/thread/ko8jkwbjbb99m45pg4sgo5xsm8gx9nsq</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>shukuang (reporter)</li>
+<li>yulate (reporter)</li>
+<li>X1r0z (reporter)</li>
+<li>haohao0103 (remediation developer)</li>
+</ul>
 
   
 </div>

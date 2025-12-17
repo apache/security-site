@@ -1326,6 +1326,95 @@ substitution. For example, something like:</div><div><br></div><div>RewriteEngin
 <ul>
 <li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
 </ul>
+<h2 id="CVE-2025-55753">mod_md (ACME), unintended retry intervals</h2>
+<p>CVE-2025-55753 <a href="./CVE-2025-55753.cve.json">[CVE json]</a> <a href="./CVE-2025-55753.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-05T10:17:13.634Z</em></p>
+<h3 id="affected-62">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.30 before 2.4.66</li>
+</ul>
+<h3 id="description-62">Description</h3>
+<p><span style="background-color: rgb(255, 255, 255);">An integer overflow in the case of failed ACME certificate renewal leads, after a number of failures (~30 days in default configurations), to the backoff timer becoming 0. Attempts to renew the certificate then are repeated without delays until it succeeds.</span></p><p>This issue affects Apache HTTP Server: from 2.4.30 before 2.4.66.<br></p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p>
+<h3 id="references-61">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-56">Credits</h3>
+<ul>
+<li>Aisle Research (finder)</li>
+</ul>
+<h2 id="CVE-2025-58098">Server Side Includes adds query string to #exec cmd=&hellip; ##</h2>
+<p>CVE-2025-58098 <a href="./CVE-2025-58098.cve.json">[CVE json]</a> <a href="./CVE-2025-58098.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-05T13:40:37.496Z</em></p>
+<h3 id="affected-63">Affected</h3>
+<ul>
+<li>Apache HTTP Server before 2.4.66</li>
+</ul>
+<h3 id="description-63">Description</h3>
+<p>Apache HTTP Server 2.4.65 and earlier with Server Side Includes (SSI) enabled and mod_cgid (but not mod_cgi) passes the shell-escaped query string to #exec cmd="..." directives.</p><p>This issue affects Apache HTTP Server before 2.4.66.</p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p>
+<h3 id="references-62">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-57">Credits</h3>
+<ul>
+<li>Anthony Parfenov (United Rentals, Inc.) (finder)</li>
+</ul>
+<h2 id="CVE-2025-59775">NTLM Leakage on Windows through UNC SSRF</h2>
+<p>CVE-2025-59775 <a href="./CVE-2025-59775.cve.json">[CVE json]</a> <a href="./CVE-2025-59775.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-05T10:17:02.236Z</em></p>
+<h3 id="affected-64">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.65</li>
+</ul>
+<h3 id="description-64">Description</h3>
+<p>
+<p>Server-Side Request Forgery (SSRF) vulnerability</p>
+<p> in Apache HTTP Server on Windows</p>
+<p>with <span style="background-color: rgb(247, 247, 247);">AllowEncodedSlashes</span> <span style="background-color: rgb(247, 247, 247);">On</span> and <span style="background-color: rgb(247, 247, 247);">MergeSlashes</span> <span style="background-color: rgb(247, 247, 247);">Off</span>  allows to potentially leak NTLM
+hashes to a malicious server via SSRF and malicious requests or content</p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p></p>
+<h3 id="references-63">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-58">Credits</h3>
+<ul>
+<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
+</ul>
+<h2 id="CVE-2025-65082">CGI environment variable override</h2>
+<p>CVE-2025-65082 <a href="./CVE-2025-65082.cve.json">[CVE json]</a> <a href="./CVE-2025-65082.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-05T10:46:23.466Z</em></p>
+<h3 id="affected-65">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.65</li>
+</ul>
+<h3 id="description-65">Description</h3>
+<p>Improper Neutralization of Escape, Meta, or Control Sequences vulnerability in Apache HTTP Server through environment variables set via the Apache configuration unexpectedly superseding variables calculated by the server for CGI programs.</p><p>This issue affects Apache HTTP Server from 2.4.0 through 2.4.65.</p><p>Users are recommended to upgrade to version 2.4.66 which fixes the issue.</p>
+<h3 id="references-64">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-59">Credits</h3>
+<ul>
+<li>Mattias Åsander (Umeå University) (finder)</li>
+</ul>
+<h2 id="CVE-2025-66200">mod_userdir+suexec bypass via AllowOverride FileInfo</h2>
+<p>CVE-2025-66200 <a href="./CVE-2025-66200.cve.json">[CVE json]</a> <a href="./CVE-2025-66200.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-05T11:02:46.192Z</em></p>
+<h3 id="affected-66">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.7 through 2.4.65</li>
+</ul>
+<h3 id="description-66">Description</h3>
+<p>mod_userdir+suexec bypass via AllowOverride FileInfo vulnerability in Apache HTTP Server. Users with access to use the RequestHeader directive in htaccess can cause some CGI scripts to run under an unexpected userid.</p><p>This issue affects Apache HTTP Server: from 2.4.7 through 2.4.65.</p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p>
+<h3 id="references-65">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-60">Credits</h3>
+<ul>
+<li>Mattias Åsander (Umeå University) (finder)</li>
+</ul>
 
   
 </div>

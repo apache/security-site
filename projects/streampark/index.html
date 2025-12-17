@@ -323,6 +323,57 @@
 <ul>
 <li>Liufeng Yi (<a href="mailto:ylf@yiliufeng.net">ylf@yiliufeng.net</a>) (reporter)</li>
 </ul>
+<h2 id="CVE-2025-53960">Uses the user’s password as the secret key</h2>
+<p>CVE-2025-53960 <a href="./CVE-2025-53960.cve.json">[CVE json]</a> <a href="./CVE-2025-53960.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-16T10:08:35.119Z</em></p>
+<h3 id="affected-14">Affected</h3>
+<ul>
+<li>Apache StreamPark from 2.0.0 before 2.1.7</li>
+</ul>
+<h3 id="description-14">Description</h3>
+<p></p><div><div><p>When issuing JSON Web Tokens (JWT), Apache StreamPark directly uses the user's password as the HMAC signing key (e.g., with the HS256 algorithm). An attacker can exploit this vulnerability to perform offline brute-force attacks on the user's password using a captured JWT, or to arbitrarily forge identity tokens for the user if the password is already known, ultimately leading to complete account takeover.<br><br></p></div></div>This issue affects Apache StreamPark: from 2.0.0 before 2.1.7.<p></p><p>Users are recommended to upgrade to version 2.1.7, which fixes the issue.</p>
+<h3 id="references-14">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/xlpvfzf5l5m5mfyjwrz5h4dssm3c32vy">https://lists.apache.org/thread/xlpvfzf5l5m5mfyjwrz5h4dssm3c32vy</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>omkar parkhe <a href="mailto:omkarparth@gmail.com">omkarparth@gmail.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2025-54947">Use hard-coded key vulnerability</h2>
+<p>CVE-2025-54947 <a href="./CVE-2025-54947.cve.json">[CVE json]</a> <a href="./CVE-2025-54947.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-12T15:11:36.470Z</em></p>
+<h3 id="affected-15">Affected</h3>
+<ul>
+<li>Apache StreamPark from 2.0.0 before 2.1.7</li>
+</ul>
+<h3 id="description-15">Description</h3>
+<p>In Apache StreamPark versions 2.0.0 through 2.1.7, a security vulnerability involving a hard-coded encryption key exists. This vulnerability occurs because the system uses a fixed, immutable key for encryption instead of dynamically generating or securely configuring the key. Attackers may obtain this key through reverse engineering or code analysis, potentially decrypting sensitive data or forging encrypted information, leading to information disclosure or unauthorized system access.</p><p>This issue affects Apache StreamPark: from 2.0.0 before 2.1.7.</p><p>Users are recommended to upgrade to version 2.1.7, which fixes the issue.</p>
+<h3 id="references-15">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/kdntmzyzrco75x9q6mc6s8lty1fxmog1">https://lists.apache.org/thread/kdntmzyzrco75x9q6mc6s8lty1fxmog1</a></li>
+</ul>
+<h3 id="credits-10">Credits</h3>
+<ul>
+<li><a href="mailto:omkarparth@gmail.com">omkarparth@gmail.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2025-54981">Weak Encryption Algorithm in StreamPark</h2>
+<p>CVE-2025-54981 <a href="./CVE-2025-54981.cve.json">[CVE json]</a> <a href="./CVE-2025-54981.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-12T15:10:32.960Z</em></p>
+<h3 id="affected-16">Affected</h3>
+<ul>
+<li>Apache StreamPark from 2.0.0 before 2.1.7</li>
+</ul>
+<h3 id="description-16">Description</h3>
+<p><span style="background-color: rgb(255, 255, 255);">Weak Encryption Algorithm in StreamPark,&nbsp;The use of an AES cipher in ECB mode and a weak random number generator for encrypting sensitive data, including JWT tokens, may have risked exposing sensitive authentication data<br></span><br>This issue affects Apache StreamPark: from 2.0.0 before 2.1.7.</p><p>Users are recommended to upgrade to version 2.1.7, which fixes the issue.</p>
+<h3 id="references-16">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/9rbvdvwg5fdhzjdgyrholgso53r26998">https://lists.apache.org/thread/9rbvdvwg5fdhzjdgyrholgso53r26998</a></li>
+</ul>
+<h3 id="credits-11">Credits</h3>
+<ul>
+<li>omkar parkhe <a href="mailto:omkarparth@gmail.com">omkarparth@gmail.com</a> (finder)</li>
+</ul>
 
   
 </div>

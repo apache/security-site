@@ -203,6 +203,22 @@
 <ul>
 <li>Paras Jain and Yakov Shafranovich of Amazon. (reporter)</li>
 </ul>
+<h2 id="CVE-2025-66516">Update to CVE-2025-54988 to expand scope of artifacts affected</h2>
+<p>CVE-2025-66516 <a href="./CVE-2025-66516.cve.json">[CVE json]</a> <a href="./CVE-2025-66516.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-17T09:38:14.880Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Tika core from 1.13 through 3.2.1</li>
+<li>Apache Tika parsers from 1.13 before 2.0.0</li>
+<li>Apache Tika PDF parser module from 2.0.0 through 3.2.1</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>Critical XXE in Apache Tika tika-core (1.13-3.2.1), tika-pdf-module (2.0.0-3.2.1) and tika-parsers (1.13-1.28.5) modules on all platforms allows an attacker to carry out XML External Entity injection via a crafted XFA file inside of a PDF. <br><br>This CVE covers the same vulnerability as in CVE-2025-54988. However, this CVE expands the scope of affected packages in two ways. <br><br>First, while the entrypoint for the vulnerability was the tika-parser-pdf-module as reported in CVE-2025-54988, the vulnerability and its fix were in tika-core. Users who upgraded the tika-parser-pdf-module but did not upgrade tika-core to &gt;= 3.2.2 would still be vulnerable. <br><br>Second, the original report failed to mention that in the 1.x Tika releases, the PDFParser was in the &ldquo;org.apache.tika:tika-parsers&rdquo; module.</p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/s5x3k93nhbkqzztp1olxotoyjpdlps9k">https://lists.apache.org/thread/s5x3k93nhbkqzztp1olxotoyjpdlps9k</a></li>
+<li><a href="https://cve.org/CVERecord?id=CVE-2025-54988">https://cve.org/CVERecord?id=CVE-2025-54988</a></li>
+</ul>
 
   
 </div>
