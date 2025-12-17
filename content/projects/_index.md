@@ -48,7 +48,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Dubbo](https://dubbo.apache.org/en/docs/notices/security/) |  [Apache Dubbo Security Team](mailto:security@dubbo.apache.org) | |
 | Apache EventMesh |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Felix |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache Fineract](https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report) |  [Apache Fineract Security Team](mailto:security@fineract.apache.org) | |
+| [Apache Fineract](https://fineract.apache.org/security.html) |  [Apache Fineract Security Team](mailto:security@fineract.apache.org) | [Advisories](https://fineract.apache.org/security.html) |
 | [Apache Flink](https://flink.apache.org/what-is-flink/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://flink.apache.org/what-is-flink/security/) |
 | Apache Fory |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Geode |  [Apache Security Team](mailto:security@apache.org) | |
