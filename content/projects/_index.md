@@ -93,7 +93,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Mynewt |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache NiFi](https://nifi.apache.org/documentation/security/) |  [Apache NiFi Security Team](mailto:security@nifi.apache.org) | [Advisories](https://nifi.apache.org/documentation/security/) |
 | Apache Nutch |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache NuttX |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache NuttX](https://nuttx.apache.org/docs/latest/security.html) |  [Apache NuttX Security Team](mailto:security@nuttx.apache.org) | [Advisories](https://nuttx.apache.org/docs/latest/security.html#nuttx-cves) |
 | [Apache OFBiz](https://ofbiz.apache.org/security.html) |  [Apache OFBiz Security Team](mailto:security@ofbiz.apache.org) | [Advisories](https://ofbiz.apache.org/security.html) |
 | [Apache OpenMeetings](https://openmeetings.apache.org/security.html) |  [Apache OpenMeetings Security Team](mailto:security@openmeetings.apache.org) | |
 | [Apache OpenOffice](https://openoffice.apache.org/security) |  [Apache OpenOffice Security Team](mailto:security@openoffice.apache.org) | [Advisories](https://www.openoffice.org/security/bulletin.html) |

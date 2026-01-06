@@ -6,11 +6,11 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache NuttX? Send your report to the [Apache Security Team](mailto:security@apache.org).
+Do you want disclose a potential security issue for Apache NuttX? You can read more about the projects' security policy on their [security page](https://nuttx.apache.org/docs/latest/security.html), and email your report to the [Apache NuttX Security Team](mailto:security@nuttx.apache.org).
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://nuttx.apache.org/docs/latest/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
 ## Apache NuttX (incubating) Out of Bound Write from invalid fragmentation offset value specified in the IP header ## { #CVE-2020-17529 }
