@@ -102,9 +102,9 @@
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache NuttX? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<p>Do you want disclose a potential security issue for Apache NuttX? You can read more about the projects&rsquo; security policy on their <a href="https://nuttx.apache.org/docs/latest/security.html">security page</a>, and email your report to the <a href="mailto:security@nuttx.apache.org">Apache NuttX Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
-<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://nuttx.apache.org/docs/latest/security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
 <h2 id="CVE-2020-17529">Apache NuttX (incubating) Out of Bound Write from invalid fragmentation offset value specified in the IP header</h2>
 <p>CVE-2020-17529 <a href="./CVE-2020-17529.cve.json">[CVE json]</a> <a href="./CVE-2020-17529.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2020-12-09T16:35:02.859Z</em></p>
@@ -229,6 +229,51 @@ the example in release 12.9.0.<br></p>
 <li>Lee, Lup Yuen <a href="mailto:luppy@appkaki.com">luppy@appkaki.com</a> (remediation reviewer)</li>
 <li>Xiang Xiao <a href="mailto:xiaoxiang781216@gmail.com">xiaoxiang781216@gmail.com</a> (remediation reviewer)</li>
 <li>JianyuWang <a href="mailto:wangjianyu3@xiaomi.com">wangjianyu3@xiaomi.com</a> (remediation reviewer)</li>
+</ul>
+<h2 id="CVE-2025-48768">fs/inode: fs_inoderemove root inode removal</h2>
+<p>CVE-2025-48768 <a href="./CVE-2025-48768.cve.json">[CVE json]</a> <a href="./CVE-2025-48768.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-01T16:13:58.511Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache NuttX RTOS from 10.0.0 before 12.10.0</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>Release of Invalid Pointer or Reference vulnerability was discovered in&nbsp;fs/inode/fs_inoderemove&nbsp;code of the Apache NuttX RTOS that allowed root filesystem inode removal leading to a debug assert trigger (that is disabled by default), NULL pointer dereference (handled differently depending on the target architecture), or in general, a Denial of Service.</p><p>This issue affects Apache NuttX RTOS: from 10.0.0 before 12.10.0.</p><p>Users of filesystem based services with write access that were exposed over the network (i.e. FTP) are affected and recommended to upgrade to version 12.10.0 that fixes the issue.</p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://github.com/apache/nuttx/pull/16437">https://github.com/apache/nuttx/pull/16437</a></li>
+<li><a href="https://lists.apache.org/thread/nwo1kd08b7t3dyz082q2pghdxwvxwyvo">https://lists.apache.org/thread/nwo1kd08b7t3dyz082q2pghdxwvxwyvo</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>Liu, Richard Jiayang <a href="mailto:rjliu3@illinois.edu">rjliu3@illinois.edu</a> (finder)</li>
+<li>Liu, Richard Jiayang <a href="mailto:rjliu3@illinois.edu">rjliu3@illinois.edu</a> (remediation developer)</li>
+<li>Alan Carvalho de Assis <a href="mailto:acassis@apache.org">acassis@apache.org</a> (remediation reviewer)</li>
+<li>Tomek CEDRO <a href="mailto:cederom@apache.org">cederom@apache.org</a> (coordinator)</li>
+<li>Xiang Xiao <a href="mailto:xiaoxiang@apache.org">xiaoxiang@apache.org</a> (remediation reviewer)</li>
+<li>Jiuzhu Dong <a href="mailto:jiuzhudong@apache.org">jiuzhudong@apache.org</a> (remediation reviewer)</li>
+</ul>
+<h2 id="CVE-2025-48769">fs/vfs/fs_rename: use after free</h2>
+<p>CVE-2025-48769 <a href="./CVE-2025-48769.cve.json">[CVE json]</a> <a href="./CVE-2025-48769.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-01T16:14:32.107Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache NuttX RTOS from 7.20 before 12.11.0</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>Use After Free vulnerability was discovered in fs/vfs/fs_rename code of the Apache NuttX RTOS, that due recursive implementation and single buffer use by two different pointer variables allowed arbitrary user provided size buffer reallocation and write to the previously freed heap chunk, that in specific cases could cause unintended virtual filesystem rename/move operation results.</p><p>This issue affects Apache NuttX RTOS: from 7.20 before 12.11.0.</p><p>Users of virtual filesystem based services with write access especially when exposed over the network (i.e. FTP) are affected and recommended to upgrade to version 12.11.0 that fixes the issue.</p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://github.com/apache/nuttx/pull/16455">https://github.com/apache/nuttx/pull/16455</a></li>
+<li><a href="https://lists.apache.org/thread/7m83v11ldfq7bvw72n9t5sccocczocjn">https://lists.apache.org/thread/7m83v11ldfq7bvw72n9t5sccocczocjn</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>Liu, Richard Jiayang <a href="mailto:rjliu3@illinois.edu">rjliu3@illinois.edu</a> (finder)</li>
+<li>Liu, Richard Jiayang <a href="mailto:rjliu3@illinois.edu">rjliu3@illinois.edu</a> (remediation developer)</li>
+<li>Tomek CEDRO <a href="mailto:cederom@apache.org">cederom@apache.org</a> (coordinator)</li>
+<li>Xiang Xiao <a href="mailto:xiaoxiang@apache.org">xiaoxiang@apache.org</a> (remediation reviewer)</li>
+<li>Jiuzhu Dong <a href="mailto:jiuzhudong@apache.org">jiuzhudong@apache.org</a> (remediation reviewer)</li>
 </ul>
 
   

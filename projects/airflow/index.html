@@ -2018,6 +2018,24 @@ resulting in a denial of service, information disclosure or remote code executio
 <li>William Ashe (finder)</li>
 <li>Amogh Desai (remediation developer)</li>
 </ul>
+<h2 id="CVE-2025-67895">Edge3 Worker RPC RCE on Airflow 2</h2>
+<p>CVE-2025-67895 <a href="./CVE-2025-67895.cve.json">[CVE json]</a> <a href="./CVE-2025-67895.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-17T11:48:30.034Z</em></p>
+<h3 id="affected-104">Affected</h3>
+<ul>
+<li>Apache Airflow Providers Edge3 before 2.0.0</li>
+</ul>
+<h3 id="description-104">Description</h3>
+<p>Edge3 Worker RPC RCE on Airflow 2.</p><p>This issue affects Apache Airflow Providers Edge3: before 2.0.0 - and only if you installed and configured it on Airflow 2.</p><p></p><p>The Edge3 provider support in Airflow 2 has been always development-only and not officially released, however if you installed and configured Edge3 provider in Airflow 2, it implicitly enabled non-public (normally) API which was used to test Edge Provider in Airflow 2 during the development. This API allowed Dag author to perform Remote Code Execution in the webserver context, which Dag Author was not supposed to be able to do.</p><p>If you installed and configured Edge3 provider for Airflow 2, you should uninstall it and migrate to Airflow 3. The new Edge3 provider versions (&gt;=2.0.0) has minimum version of Airflow set to 3 and the RCE-prone Airflow 2 code is removed, so it should no longer be possible to use the Edge3 provider 2.0.0+ on Airflow 2.</p><p>If you used Edge Provider in Airflow 3, you are not affected.</p><p></p>
+<h3 id="references-104">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/59143">https://github.com/apache/airflow/pull/59143</a></li>
+<li><a href="https://lists.apache.org/thread/hhnmmzkj5qx5gbk6pdkh8tcsx5oj1nqs">https://lists.apache.org/thread/hhnmmzkj5qx5gbk6pdkh8tcsx5oj1nqs</a></li>
+</ul>
+<h3 id="credits-99">Credits</h3>
+<ul>
+<li>Lee (finder)</li>
+</ul>
 
   
 </div>
