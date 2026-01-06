@@ -166,7 +166,7 @@ CVE-2025-66516 [\[CVE json\]](./CVE-2025-66516.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-12-17T09:38:14.880Z_
+_Last updated: 2025-12-30T15:07:41.528Z_
 
 ### Affected
 

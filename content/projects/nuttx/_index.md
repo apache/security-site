@@ -184,3 +184,64 @@ the example in release 12.9.0.<br></p>
 * Lee, Lup Yuen <luppy@appkaki.com> (remediation reviewer)
 * Xiang Xiao <xiaoxiang781216@gmail.com> (remediation reviewer)
 * JianyuWang <wangjianyu3@xiaomi.com> (remediation reviewer)
+
+
+## fs/inode: fs_inoderemove root inode removal ## { #CVE-2025-48768 }
+
+CVE-2025-48768 [\[CVE json\]](./CVE-2025-48768.cve.json) [\[OSV json\]](./CVE-2025-48768.osv.json)
+
+
+
+_Last updated: 2026-01-01T16:13:58.511Z_
+
+### Affected
+
+* Apache NuttX RTOS from 10.0.0 before 12.10.0
+
+
+### Description
+
+<p>Release of Invalid Pointer or Reference vulnerability was discovered in&nbsp;fs/inode/fs_inoderemove&nbsp;code of the Apache NuttX RTOS that allowed root filesystem inode removal leading to a debug assert trigger (that is disabled by default), NULL pointer dereference (handled differently depending on the target architecture), or in general, a Denial of Service.</p><p>This issue affects Apache NuttX RTOS: from 10.0.0 before 12.10.0.</p><p>Users of filesystem based services with write access that were exposed over the network (i.e. FTP) are affected and recommended to upgrade to version 12.10.0 that fixes the issue.</p>
+
+### References
+* https://github.com/apache/nuttx/pull/16437
+* https://lists.apache.org/thread/nwo1kd08b7t3dyz082q2pghdxwvxwyvo
+
+
+### Credits
+* Liu, Richard Jiayang <rjliu3@illinois.edu> (finder)
+* Liu, Richard Jiayang <rjliu3@illinois.edu> (remediation developer)
+* Alan Carvalho de Assis <acassis@apache.org> (remediation reviewer)
+* Tomek CEDRO <cederom@apache.org> (coordinator)
+* Xiang Xiao <xiaoxiang@apache.org> (remediation reviewer)
+* Jiuzhu Dong <jiuzhudong@apache.org> (remediation reviewer)
+
+
+## fs/vfs/fs_rename: use after free ## { #CVE-2025-48769 }
+
+CVE-2025-48769 [\[CVE json\]](./CVE-2025-48769.cve.json) [\[OSV json\]](./CVE-2025-48769.osv.json)
+
+
+
+_Last updated: 2026-01-01T16:14:32.107Z_
+
+### Affected
+
+* Apache NuttX RTOS from 7.20 before 12.11.0
+
+
+### Description
+
+<p>Use After Free vulnerability was discovered in fs/vfs/fs_rename code of the Apache NuttX RTOS, that due recursive implementation and single buffer use by two different pointer variables allowed arbitrary user provided size buffer reallocation and write to the previously freed heap chunk, that in specific cases could cause unintended virtual filesystem rename/move operation results.</p><p>This issue affects Apache NuttX RTOS: from 7.20 before 12.11.0.</p><p>Users of virtual filesystem based services with write access especially when exposed over the network (i.e. FTP) are affected and recommended to upgrade to version 12.11.0 that fixes the issue.</p>
+
+### References
+* https://github.com/apache/nuttx/pull/16455
+* https://lists.apache.org/thread/7m83v11ldfq7bvw72n9t5sccocczocjn
+
+
+### Credits
+* Liu, Richard Jiayang <rjliu3@illinois.edu> (finder)
+* Liu, Richard Jiayang <rjliu3@illinois.edu> (remediation developer)
+* Tomek CEDRO <cederom@apache.org> (coordinator)
+* Xiang Xiao <xiaoxiang@apache.org> (remediation reviewer)
+* Jiuzhu Dong <jiuzhudong@apache.org> (remediation reviewer)

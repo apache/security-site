@@ -2771,3 +2771,29 @@ A vulnerability in Apache Airflow allowed authenticated UI users to view secret 
 ### Credits
 * William Ashe (finder)
 * Amogh Desai (remediation developer)
+
+
+## Edge3 Worker RPC RCE on Airflow 2 ## { #CVE-2025-67895 }
+
+CVE-2025-67895 [\[CVE json\]](./CVE-2025-67895.cve.json) [\[OSV json\]](./CVE-2025-67895.osv.json)
+
+
+
+_Last updated: 2025-12-17T11:48:30.034Z_
+
+### Affected
+
+* Apache Airflow Providers Edge3 before 2.0.0
+
+
+### Description
+
+<p>Edge3 Worker RPC RCE on Airflow 2.</p><p>This issue affects Apache Airflow Providers Edge3: before 2.0.0 - and only if you installed and configured it on Airflow 2.</p><p></p><p>The Edge3 provider support in Airflow 2 has been always development-only and not officially released, however if you installed and configured Edge3 provider in Airflow 2, it implicitly enabled non-public (normally) API which was used to test Edge Provider in Airflow 2 during the development. This API allowed Dag author to perform Remote Code Execution in the webserver context, which Dag Author was not supposed to be able to do.</p><p>If you installed and configured Edge3 provider for Airflow 2, you should uninstall it and migrate to Airflow 3. The new Edge3 provider versions (&gt;=2.0.0) has minimum version of Airflow set to 3 and the RCE-prone Airflow 2 code is removed, so it should no longer be possible to use the Edge3 provider 2.0.0+ on Airflow 2.</p><p>If you used Edge Provider in Airflow 3, you are not affected.</p><p></p>
+
+### References
+* https://github.com/apache/airflow/pull/59143
+* https://lists.apache.org/thread/hhnmmzkj5qx5gbk6pdkh8tcsx5oj1nqs
+
+
+### Credits
+* Lee (finder)

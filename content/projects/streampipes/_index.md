@@ -162,3 +162,28 @@ Server-Side Request Forgery (SSRF) vulnerability in Apache StreamPipes during in
 
 ### Credits
 * L0ne1y (finder)
+
+
+## Leverage of User ID for Privilege Escalation ## { #CVE-2025-47411 }
+
+CVE-2025-47411 [\[CVE json\]](./CVE-2025-47411.cve.json) [\[OSV json\]](./CVE-2025-47411.osv.json)
+
+
+
+_Last updated: 2026-01-01T16:41:48.353Z_
+
+### Affected
+
+* Apache StreamPipes from 0.69.0 through 0.97.0
+
+
+### Description
+
+<div>A user with a legitimate non-administrator account can exploit a vulnerability in the user ID creation mechanism in Apache StreamPipes that allows them to swap the username of an existing user with that of an administrator.&nbsp;</div><div>This vulnerability allows an attacker to gain administrative control over the application by manipulating JWT tokens, which can lead to data tampering, unauthorized access and other security issues.</div><div></div><div><br></div><div><p>This issue affects Apache StreamPipes: through 0.97.0.</p><p>Users are recommended to upgrade to version 0.98.0, which fixes the issue.</p></div>
+
+### References
+* https://lists.apache.org/thread/lngko4ht2ok3o0rk9h0clgm4kb0lmt36
+
+
+### Credits
+* darren.xuan@mantelgroup.com.au (finder)

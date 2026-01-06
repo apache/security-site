@@ -80,6 +80,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Knox |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Kvrocks |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Kylin |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Kyuubi |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Libcloud](https://libcloud.apache.org/security.html) |  [Apache Libcloud Security Team](mailto:security@libcloud.apache.org) | |
 | Apache Linkis |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Livy (Incubating) |  [Apache Security Team](mailto:security@apache.org) | |

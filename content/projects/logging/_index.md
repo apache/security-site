@@ -369,3 +369,34 @@ _Last updated: 2025-08-22T18:45:40.110Z_
 
 ### Credits
 * Sovereign Tech Agency (sponsor)
+
+
+## Missing TLS hostname verification in Socket appender ## { #CVE-2025-68161 }
+
+CVE-2025-68161 [\[CVE json\]](./CVE-2025-68161.cve.json) [\[OSV json\]](./CVE-2025-68161.osv.json)
+
+
+
+_Last updated: 2025-12-19T06:41:01.682Z_
+
+### Affected
+
+* Apache Log4j Core from 2.0-beta9 before 2.25.3
+* Apache Log4j Core from 3.0.0-alpha1 through 3.0.0-beta3
+
+
+### Description
+
+<p>The Socket Appender in Apache Log4j Core versions <code>2.0-beta9</code> through <code>2.25.2</code> does not perform TLS hostname verification of the peer certificate, even when the <a target="_blank" rel="nofollow" href="https://logging.apache.org/log4j/2.x/manual/appenders/network.html#SslConfiguration-attr-verifyHostName">verifyHostName</a> configuration attribute or the <a target="_blank" rel="nofollow" href="https://logging.apache.org/log4j/2.x/manual/systemproperties.html#log4j2.sslVerifyHostName">log4j2.sslVerifyHostName</a> system property is set to <code>true</code>.</p><p>This issue may allow a man-in-the-middle attacker to intercept or redirect log traffic under the following conditions:</p><ul><li>The attacker is able to intercept or redirect network traffic between the client and the log receiver.</li><li>The attacker can present a server certificate issued by a certification authority trusted by the Socket Appender’s configured <strong>trust store</strong> (or by the default Java trust store if no custom trust store is configured).</li></ul><p>Users are advised to upgrade to Apache Log4j Core version <code>2.25.3</code>, which addresses this issue.</p><p>As an alternative mitigation, the Socket Appender may be configured to use a private or restricted trust root to limit the set of trusted certificates.</p>
+
+### References
+* https://github.com/apache/logging-log4j2/pull/4002
+* https://logging.apache.org/security.html#CVE-2025-68161
+* https://logging.apache.org/cyclonedx/vdr.xml
+* https://logging.apache.org/log4j/2.x/manual/systemproperties.html#log4j2.sslVerifyHostName
+* https://logging.apache.org/log4j/2.x/manual/appenders/network.html#SslConfiguration-attr-verifyHostName
+* https://lists.apache.org/thread/xr33kyxq3sl67lwb61ggvm1fzc8k7dvx
+
+
+### Credits
+* Samuli Leinonen (finder)
