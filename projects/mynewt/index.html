@@ -191,6 +191,80 @@
 <ul>
 <li>Eunkyu Lee (reporter)</li>
 </ul>
+<h2 id="CVE-2025-52435">Invalid error handling in pause encryption procedure in NimBLE controller</h2>
+<p>CVE-2025-52435 <a href="./CVE-2025-52435.cve.json">[CVE json]</a> <a href="./CVE-2025-52435.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-10T09:47:08.833Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Mynewt NimBLE through 1.8.0</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>J2EE Misconfiguration: Data Transmission Without Encryption vulnerability in Apache NimBLE.</p>Improper handling of Pause Encryption procedure on Link Layer results in a previously encrypted connection being left in un-encrypted state <span style="background-color: rgb(255, 255, 255);">allowing an eavesdropper to observe the remainder of the exchange</span>.<br><p>This issue affects Apache NimBLE: through &lt;= 1.8.0.</p><p>Users are recommended to upgrade to version 1.9.0, which fixes the issue.</p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://github.com/apache/mynewt-nimble/commit/164f1c23c18a290908df76ed83fe848bfe4a4903">https://github.com/apache/mynewt-nimble/commit/164f1c23c18a290908df76ed83fe848bfe4a4903</a></li>
+<li><a href="https://github.com/apache/mynewt-nimble/commit/ec3d75e909fa6dcadf1836fefc4432794a673d18">https://github.com/apache/mynewt-nimble/commit/ec3d75e909fa6dcadf1836fefc4432794a673d18</a></li>
+<li><a href="https://lists.apache.org/thread/ow8dzpsqfh9llfclh5fzh6z237brzc0s">https://lists.apache.org/thread/ow8dzpsqfh9llfclh5fzh6z237brzc0s</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Henrik Schnor <a href="mailto:henrik.schnor@mailbox.org">henrik.schnor@mailbox.org</a> (reporter)</li>
+</ul>
+<h2 id="CVE-2025-53470">Out-of-Bounds Write Vulnerability in NimBLE HCI H4 driver</h2>
+<p>CVE-2025-53470 <a href="./CVE-2025-53470.cve.json">[CVE json]</a> <a href="./CVE-2025-53470.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-10T09:46:32.072Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Mynewt NimBLE through 1.8</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>Out-of-bounds Read vulnerability in Apache  NimBLE HCI H4 driver. Specially crafted HCI event could lead to invalid memory read in H4 driver.</p><p>This issue affects Apache NimBLE: through 1.8.&nbsp;</p><p>This issue requires a broken or bogus Bluetooth controller and thus severity is considered low.</p><p>Users are recommended to upgrade to version 1.9, which fixes the issue.</p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://github.com/apache/mynewt-nimble/commit/b973df0c6cf7b30efbf8eb2cafdc1ee843464b76">https://github.com/apache/mynewt-nimble/commit/b973df0c6cf7b30efbf8eb2cafdc1ee843464b76</a></li>
+<li><a href="https://lists.apache.org/thread/32sm0944dyod4sdql77stgyw9xb2msc0">https://lists.apache.org/thread/32sm0944dyod4sdql77stgyw9xb2msc0</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>雷重庆 <a href="mailto:leicq@seu.edu.cn">leicq@seu.edu.cn</a> (reporter)</li>
+</ul>
+<h2 id="CVE-2025-53477">NULL Pointer Dereference in NimBLE host HCI layer</h2>
+<p>CVE-2025-53477 <a href="./CVE-2025-53477.cve.json">[CVE json]</a> <a href="./CVE-2025-53477.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-10T09:45:08.352Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache Mynewt NimBLE through 1.8.0</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>NULL Pointer Dereference vulnerability in Apache Nimble.</p><span style="background-color: rgb(255, 255, 255);">Missing validation of HCI connection complete or HCI command TX buffer could lead to NULL pointer dereference.</span><br>This issue requires disabled asserts and broken or bogus Bluetooth controller and thus severity is considered low.<br><br><p>This issue affects Apache NimBLE: through 1.8.0.</p><p>Users are recommended to upgrade to version 1.9.0, which fixes the issue.</p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://github.com/apache/mynewt-nimble/commit/0caf9baeb271ede85fcc5237ab87ddbf938600da">https://github.com/apache/mynewt-nimble/commit/0caf9baeb271ede85fcc5237ab87ddbf938600da</a></li>
+<li><a href="https://github.com/apache/mynewt-nimble/commit/3160b8c4c7ff8db4e0f9badcdf7df684b151e077">https://github.com/apache/mynewt-nimble/commit/3160b8c4c7ff8db4e0f9badcdf7df684b151e077</a></li>
+<li><a href="https://lists.apache.org/thread/1dxthc132hwm2tzvjblrtnschcsbw2vo">https://lists.apache.org/thread/1dxthc132hwm2tzvjblrtnschcsbw2vo</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>雷重庆 <a href="mailto:leicq@seu.edu.cn">leicq@seu.edu.cn</a> (reporter)</li>
+</ul>
+<h2 id="CVE-2025-62235">Incorrect handling of SMP Security Request could lead to undesirable pairing</h2>
+<p>CVE-2025-62235 <a href="./CVE-2025-62235.cve.json">[CVE json]</a> <a href="./CVE-2025-62235.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-10T09:42:36.935Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Mynewt NimBLE through 1.8.0</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>Authentication Bypass by Spoofing vulnerability in Apache NimBLE.</p>Receiving specially crafted Security Request could lead to removal of original bond<span style="background-color: rgb(255, 255, 255);">&nbsp;and re-bond with impostor.</span><br><p>This issue affects Apache NimBLE: through 1.8.0.</p><p>Users are recommended to upgrade to version 1.9.0, which fixes the issue.</p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://github.com/apache/mynewt-nimble/commit/41f67e391e788c5feef9030026cc5cbc5431838a">https://github.com/apache/mynewt-nimble/commit/41f67e391e788c5feef9030026cc5cbc5431838a</a></li>
+<li><a href="https://lists.apache.org/thread/rw2mrpfwb9d9wmq4h4b6ctcd6gpkk2ho">https://lists.apache.org/thread/rw2mrpfwb9d9wmq4h4b6ctcd6gpkk2ho</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>Tommaso Sacchetti <a href="mailto:tommaso.sacchetti@gmail.com">tommaso.sacchetti@gmail.com</a> (reporter)</li>
+</ul>
 
   
 </div>
