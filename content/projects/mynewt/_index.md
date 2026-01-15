@@ -137,3 +137,109 @@ _Last updated: 2024-12-06T07:50:42.419Z_
 
 ### Credits
 * Eunkyu Lee (reporter)
+
+
+## Invalid error handling in pause encryption procedure in NimBLE controller ## { #CVE-2025-52435 }
+
+CVE-2025-52435 [\[CVE json\]](./CVE-2025-52435.cve.json) [\[OSV json\]](./CVE-2025-52435.osv.json)
+
+
+
+_Last updated: 2026-01-10T09:47:08.833Z_
+
+### Affected
+
+* Apache Mynewt NimBLE through 1.8.0
+
+
+### Description
+
+<p>J2EE Misconfiguration: Data Transmission Without Encryption vulnerability in Apache NimBLE.</p>Improper handling of Pause Encryption procedure on Link Layer results in a previously encrypted connection being left in un-encrypted state <span style="background-color: rgb(255, 255, 255);">allowing an eavesdropper to observe the remainder of the exchange</span>.<br><p>This issue affects Apache NimBLE: through &lt;= 1.8.0.</p><p>Users are recommended to upgrade to version 1.9.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/mynewt-nimble/commit/164f1c23c18a290908df76ed83fe848bfe4a4903
+* https://github.com/apache/mynewt-nimble/commit/ec3d75e909fa6dcadf1836fefc4432794a673d18
+* https://lists.apache.org/thread/ow8dzpsqfh9llfclh5fzh6z237brzc0s
+
+
+### Credits
+* Henrik Schnor <henrik.schnor@mailbox.org> (reporter)
+
+
+## Out-of-Bounds Write Vulnerability in NimBLE HCI H4 driver ## { #CVE-2025-53470 }
+
+CVE-2025-53470 [\[CVE json\]](./CVE-2025-53470.cve.json) [\[OSV json\]](./CVE-2025-53470.osv.json)
+
+
+
+_Last updated: 2026-01-10T09:46:32.072Z_
+
+### Affected
+
+* Apache Mynewt NimBLE through 1.8
+
+
+### Description
+
+<p>Out-of-bounds Read vulnerability in Apache  NimBLE HCI H4 driver. Specially crafted HCI event could lead to invalid memory read in H4 driver.</p><p>This issue affects Apache NimBLE: through 1.8.&nbsp;</p><p>This issue requires a broken or bogus Bluetooth controller and thus severity is considered low.</p><p>Users are recommended to upgrade to version 1.9, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/mynewt-nimble/commit/b973df0c6cf7b30efbf8eb2cafdc1ee843464b76
+* https://lists.apache.org/thread/32sm0944dyod4sdql77stgyw9xb2msc0
+
+
+### Credits
+* 雷重庆 <leicq@seu.edu.cn> (reporter)
+
+
+## NULL Pointer Dereference in NimBLE host HCI layer ## { #CVE-2025-53477 }
+
+CVE-2025-53477 [\[CVE json\]](./CVE-2025-53477.cve.json) [\[OSV json\]](./CVE-2025-53477.osv.json)
+
+
+
+_Last updated: 2026-01-10T09:45:08.352Z_
+
+### Affected
+
+* Apache Mynewt NimBLE through 1.8.0
+
+
+### Description
+
+<p>NULL Pointer Dereference vulnerability in Apache Nimble.</p><span style="background-color: rgb(255, 255, 255);">Missing validation of HCI connection complete or HCI command TX buffer could lead to NULL pointer dereference.</span><br>This issue requires disabled asserts and broken or bogus Bluetooth controller and thus severity is considered low.<br><br><p>This issue affects Apache NimBLE: through 1.8.0.</p><p>Users are recommended to upgrade to version 1.9.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/mynewt-nimble/commit/0caf9baeb271ede85fcc5237ab87ddbf938600da
+* https://github.com/apache/mynewt-nimble/commit/3160b8c4c7ff8db4e0f9badcdf7df684b151e077
+* https://lists.apache.org/thread/1dxthc132hwm2tzvjblrtnschcsbw2vo
+
+
+### Credits
+* 雷重庆 <leicq@seu.edu.cn> (reporter)
+
+
+## Incorrect handling of SMP Security Request could lead to undesirable pairing ## { #CVE-2025-62235 }
+
+CVE-2025-62235 [\[CVE json\]](./CVE-2025-62235.cve.json) [\[OSV json\]](./CVE-2025-62235.osv.json)
+
+
+
+_Last updated: 2026-01-10T09:42:36.935Z_
+
+### Affected
+
+* Apache Mynewt NimBLE through 1.8.0
+
+
+### Description
+
+<p>Authentication Bypass by Spoofing vulnerability in Apache NimBLE.</p>Receiving specially crafted Security Request could lead to removal of original bond<span style="background-color: rgb(255, 255, 255);">&nbsp;and re-bond with impostor.</span><br><p>This issue affects Apache NimBLE: through 1.8.0.</p><p>Users are recommended to upgrade to version 1.9.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/mynewt-nimble/commit/41f67e391e788c5feef9030026cc5cbc5431838a
+* https://lists.apache.org/thread/rw2mrpfwb9d9wmq4h4b6ctcd6gpkk2ho
+
+
+### Credits
+* Tommaso Sacchetti <tommaso.sacchetti@gmail.com> (reporter)

@@ -149,28 +149,3 @@ Uncontrolled recursion in the json2pb component in Apache bRPC (version &lt; 1.1
 
 ### Credits
 * Tyler Zars (finder)
-
-
-## Remote command injection vulnerability in heap builtin service ## { #CVE-2025-60021 }
-
-CVE-2025-60021 [\[CVE json\]](./CVE-2025-60021.cve.json) [\[OSV json\]](./CVE-2025-60021.osv.json)
-
-
-
-_Last updated: 2025-11-03T13:53:24.560Z_
-
-### Affected
-
-* Apache bRPC from 1.11.0 before 1.15.0
-
-
-### Description
-
-<p>Remote command injection vulnerability in heap profiler builtin service in Apache bRPC ((all versions &lt; 1.15.0)) on all platforms allows attacker to inject remote command.</p><p></p>Root Cause: The bRPC heap profiler built-in service (/pprof/heap) does not validate the user-provided extra_options parameter and executes it as a command-line argument. Attackers can execute remote commands using the extra_options parameter..<br><br>Affected scenarios:&nbsp;Use the built-in bRPC heap profiler service to perform jemalloc memory profiling.<br><br>How to Fix: we provide two methods, you can choose one of them:<br><br>1. Upgrade bRPC to version 1.15.0.<br>2. Apply this patch (<a target="_blank" rel="nofollow" href="https://github.com/apache/brpc/pull/3101">https://github.com/apache/brpc/pull/3101</a>) manually.<b><br></b><p></p>
-
-### References
-* https://lists.apache.org/thread/co5rkdxogomk42nhogox1ojfpw3mword
-
-
-### Credits
-* Simcha Kosman (reporter)

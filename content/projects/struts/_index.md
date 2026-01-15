@@ -233,3 +233,25 @@ _Last updated: 2025-12-10T07:13:32.174Z_
 
 ### Credits
 * Nicolas Fournier (reporter)
+
+
+## XXE vulnerability in outdated XWork component ## { #CVE-2025-68493 }
+
+CVE-2025-68493 [\[CVE json\]](./CVE-2025-68493.cve.json) [\[OSV json\]](./CVE-2025-68493.osv.json)
+
+
+
+_Last updated: 2026-01-11T11:40:53.869Z_
+
+### Affected
+
+* Apache Struts from 2.0.0 before 2.2.1
+* Apache Struts from 2.2.1 through 6.1.0
+
+
+### Description
+
+<p>Missing XML Validation vulnerability in Apache Struts, Apache Struts.</p><p>This issue affects Apache Struts: from 2.0.0 before 2.2.1; Apache Struts: from 2.2.1 through 6.1.0.</p><p>Users are recommended to upgrade to version 6.1.1, which fixes the issue.</p>
+
+### References
+* https://cwiki.apache.org/confluence/display/WW/S2-069

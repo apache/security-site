@@ -138,6 +138,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Traffic Server](https://github.com/apache/trafficserver/security/policy) |  [Apache Traffic Server Security Team](mailto:security@trafficserver.apache.org) | |
 | [Apache TVM](https://tvm.apache.org/docs/reference/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache UIMA |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Uniffle |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Unomi |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache VCL |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Velocity |  [Apache Security Team](mailto:security@apache.org) | |

@@ -216,3 +216,30 @@ _Last updated: 2025-04-01T16:32:28.939Z_
 ### Credits
 * Mark Thorson of AT&T (finder)
 * Mark Thorson of AT&T (reporter)
+
+
+## Cypher injection vulnerability in Camel-Neo4j component ## { #CVE-2025-66169 }
+
+CVE-2025-66169 [\[CVE json\]](./CVE-2025-66169.cve.json) [\[OSV json\]](./CVE-2025-66169.osv.json)
+
+
+
+_Last updated: 2026-01-14T11:45:34.042Z_
+
+### Affected
+
+* Apache Camel Neo4j from 4.10.0 before 4.10.8
+* Apache Camel Neo4j from 4.14.0 before 4.14.3
+* Apache Camel Neo4j from 4.15.0 before 4.17.0
+
+
+### Description
+
+<p>Cypher Injection vulnerability in Apache Camel camel-neo4j component.</p><p>This issue affects Apache Camel: from 4.10.0 before 4.10.8, from 4.14.0 before 4.14.3, from 4.15.0 before 4.17.0</p><p><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 4.10.8 for 4.10.x LTS and 4.14.3 for 4.14.x LTS and 4.17.0.</span></p>
+
+### References
+* https://camel.apache.org/security/CVE-2025-66169.html
+
+
+### Credits
+* Ya0H4cker (finder)
