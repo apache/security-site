@@ -370,3 +370,53 @@ _Last updated: 2025-01-27T08:58:06.761Z_
 
 ### Credits
 * pwn null (finder)
+
+
+## Unauthorized bypass of certain "predefined permission" rules in the RuleBasedAuthorizationPlugin ## { #CVE-2026-22022 }
+
+CVE-2026-22022 [\[CVE json\]](./CVE-2026-22022.cve.json) [\[OSV json\]](./CVE-2026-22022.osv.json)
+
+
+
+_Last updated: 2026-01-21T13:41:44.763Z_
+
+### Affected
+
+* Apache Solr from 5.3 through 9.10.0
+
+
+### Description
+
+Deployments of Apache Solr 5.3.0 through 9.10.0 that rely on Solr's "Rule Based Authorization Plugin" are vulnerable to allowing unauthorized access to certain Solr APIs, due to insufficiently strict input validation in those components.&nbsp; Only deployments that meet <b>all</b> of the following criteria are impacted by this vulnerability:<br><br><ol><li>Use of Solr's "RuleBasedAuthorizationPlugin"</li><li>A RuleBasedAuthorizationPlugin config (see security.json) that specifies multiple "roles"</li><li>A RuleBasedAuthorizationPlugin permission list (see security.json) that uses one or more of the following pre-defined permission rules: "config-read", "config-edit", "schema-read", "metrics-read", or "security-read".</li><li>A RuleBasedAuthorizationPlugin permission list that <b>doesn't</b> define the "all" pre-defined permission</li><li>A networking setup that allows clients to make unfiltered network requests to Solr. (i.e. user-submitted HTTP/HTTPS requests reach Solr as-is, unmodified or restricted by any intervening proxy or gateway)<br></li></ol>Users can mitigate this vulnerability by ensuring that their RuleBasedAuthorizationPlugin configuration specifies the "all" pre-defined permission and associates the permission with an "admin" or other privileged role.&nbsp; Users can also upgrade to a Solr version outside of the impacted range, such as the recently released Solr 9.10.1.&nbsp;
+
+### References
+* https://lists.apache.org/thread/d59hqbgo7p62myq7mgfpz7or8n1j7wbn
+
+
+### Credits
+* monkeontheroof (finder)
+
+
+## Insufficient file-access checking in standalone core-creation requests ## { #CVE-2026-22444 }
+
+CVE-2026-22444 [\[CVE json\]](./CVE-2026-22444.cve.json) [\[OSV json\]](./CVE-2026-22444.osv.json)
+
+
+
+_Last updated: 2026-01-21T13:40:23.406Z_
+
+### Affected
+
+* Apache Solr from 8.6 through 9.10.0
+
+
+### Description
+
+The "create core" API of Apache Solr 8.6 through 9.10.0 lacks sufficient input validation on some API parameters, which can cause Solr to check the existence of and attempt to read file-system paths that should be disallowed by Solr's <a target="_blank" rel="nofollow" href="https://https://solr.apache.org/guide/solr/latest/configuration-guide/configuring-solr-xml.html#the-solr-element">"allowPaths" security setting</a>.&nbsp; These read-only accesses can allow users to create cores using unexpected configsets if any are accessible via the filesystem.&nbsp; On Windows systems configured to allow UNC paths this can additionally cause disclosure of NTLM "user" hashes.&nbsp;<br><br>Solr deployments are subject to this vulnerability if they meet the following criteria:<br><ol><li>Solr is running in its "standalone" mode.</li><li>Solr's "allowPath" setting is being used to restrict file access to certain directories.</li><li>Solr's "create core" API is exposed and accessible to untrusted users.&nbsp; This can happen if Solr's <a target="_blank" rel="nofollow" href="https://solr.apache.org/guide/solr/latest/deployment-guide/rule-based-authorization-plugin.html">RuleBasedAuthorizationPlugin</a> is disabled, or if it is enabled but the "core-admin-edit" predefined permission (or an equivalent custom permission) is given to low-trust (i.e. non-admin) user roles.</li></ol><br>Users can mitigate this by enabling Solr's RuleBasedAuthorizationPlugin (if disabled) and configuring a permission-list that prevents untrusted users from creating new Solr cores.&nbsp; Users should also upgrade to Apache Solr 9.10.1 or greater, which contain fixes for this issue.
+
+### References
+* https://lists.apache.org/thread/qkrb9dd4xrlqmmq73lrhkbfkttto2d1m
+
+
+### Credits
+* Damon Toey (finder)

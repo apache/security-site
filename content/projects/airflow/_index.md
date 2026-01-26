@@ -2797,3 +2797,55 @@ _Last updated: 2025-12-17T11:48:30.034Z_
 
 ### Credits
 * Lee (finder)
+
+
+## Secrets in rendered templates could contain parts of sensitive values when truncated ## { #CVE-2025-68438 }
+
+CVE-2025-68438 [\[CVE json\]](./CVE-2025-68438.cve.json) [\[OSV json\]](./CVE-2025-68438.osv.json)
+
+
+
+_Last updated: 2026-01-16T10:06:05.336Z_
+
+### Affected
+
+* Apache Airflow from 3.1.0 before 3.1.6
+
+
+### Description
+
+In Apache Airflow versions before 3.1.6, when rendered template fields in a Dag exceed [core]&nbsp;<code>max_templated_field_length</code>, sensitive values could be exposed in cleartext in the Rendered Templates UI. This occurred because serialization of those fields used a secrets masker instance that did not include user-registered <code>mask_secret()</code> patterns, so secrets were not reliably masked before truncation and display.<br><br>Users are recommended to upgrade to 3.1.6 or later, which fixes this issue<br>
+
+### References
+* https://lists.apache.org/thread/55n7b4nlsz3vo5n4h5lrj9bfsk8ctyff
+
+
+### Credits
+* William Ashe (finder)
+* Amogh Desai (remediation developer)
+
+
+## proxy credentials for various providers might leak in task logs ## { #CVE-2025-68675 }
+
+CVE-2025-68675 [\[CVE json\]](./CVE-2025-68675.cve.json) [\[OSV json\]](./CVE-2025-68675.osv.json)
+
+
+
+_Last updated: 2026-01-16T10:23:24.208Z_
+
+### Affected
+
+* Apache Airflow before 3.1.6
+
+
+### Description
+
+In Apache Airflow versions before 3.1.6, the proxies and proxy fields within a Connection may include proxy URLs containing embedded authentication information. These fields were not treated as sensitive by default and therefore were not automatically masked in log output. As a result, when such connections are rendered or printed to logs, proxy credentials embedded in these fields could be exposed.<br><br>Users are recommended to upgrade to 3.1.6 or later, which fixes this issue
+
+### References
+* https://lists.apache.org/thread/x6kply4nqd4vc4wgxtm6g9r2tt63s8c5
+
+
+### Credits
+* lwlkr https://github.com/kwkr (finder)
+* Ankit Chaurasia (remediation developer)

@@ -214,3 +214,28 @@ by all other local users.
 
 ### Credits
 * Andrea Cosentino (finder)
+
+
+## Out of bounds write in URI parser of native HDFS client ## { #CVE-2025-27821 }
+
+CVE-2025-27821 [\[CVE json\]](./CVE-2025-27821.cve.json) [\[OSV json\]](./CVE-2025-27821.osv.json)
+
+
+
+_Last updated: 2026-01-26T09:44:12.099Z_
+
+### Affected
+
+* HDFS native client from 3.2.0 before 3.4.2
+
+
+### Description
+
+<p>Out-of-bounds Write vulnerability in Apache Hadoop HDFS native client.</p><p>This issue affects Apache Hadoop: from 3.2.0 before 3.4.2.</p><p>Users are recommended to upgrade to version 3.4.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/kwjhyyx0wl2z9b0mw0styjk0hhdbyplh
+
+
+### Credits
+* BUI Ngoc Tan (reporter)

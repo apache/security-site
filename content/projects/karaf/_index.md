@@ -140,3 +140,27 @@ _Last updated: 2024-05-09T06:49:03.305Z_
 
 ### Credits
 * cigar (finder)
+
+
+## Decanter log-socket collector has deserialization vulnerability ## { #CVE-2026-24656 }
+
+CVE-2026-24656 [\[CVE json\]](./CVE-2026-24656.cve.json)
+
+_Last updated: 2026-01-26T09:41:22.803Z_
+
+### Affected
+
+* Apache Karaf before 2.12.0
+* Apache Karaf at 2.12.0
+
+
+### Description
+
+<p>Deserialization of Untrusted Data vulnerability in Apache Karaf Decanter.</p><br>The Decanter log socket collector exposes the port 4560, without authentication. If the collector exposes allowed classes property, this configuration can be bypassed.<br>It means that the log socket collector is vulnerable to deserialization of untrusted data, eventually causing DoS.<br><br><br>NB: Decanter log socket collector is not installed by default. Users who have not installed Decanter log socket are not impacted by this issue.<br><br><p>This issue affects Apache Karaf Decanter before 2.12.0.</p><p>Users are recommended to upgrade to version 2.12.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/dc5wmdn6hyc992olntkl75kk04ndzx34
+
+
+### Credits
+* r00t4dm (finder)
