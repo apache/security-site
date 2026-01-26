@@ -195,6 +195,23 @@
 <ul>
 <li>Tyler Zars (finder)</li>
 </ul>
+<h2 id="CVE-2025-60021">Remote command injection vulnerability in heap builtin service</h2>
+<p>CVE-2025-60021 <a href="./CVE-2025-60021.cve.json">[CVE json]</a> <a href="./CVE-2025-60021.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-16T08:39:21.612Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache bRPC from 1.11.0 before 1.15.0</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Remote command injection vulnerability in heap profiler builtin service in Apache bRPC ((all versions &lt; 1.15.0)) on all platforms allows attacker to inject remote command.</p><p></p>Root Cause: The bRPC heap profiler built-in service (/pprof/heap) does not validate the user-provided extra_options parameter and executes it as a command-line argument. Attackers can execute remote commands using the extra_options parameter..<br><br>Affected scenarios:&nbsp;Use the built-in bRPC heap profiler service to perform jemalloc memory profiling.<br><br>How to Fix: we provide two methods, you can choose one of them:<br><br>1. Upgrade bRPC to version 1.15.0.<br>2. Apply this patch (<a target="_blank" rel="nofollow" href="https://github.com/apache/brpc/pull/3101">https://github.com/apache/brpc/pull/3101</a>) manually.<b><br></b><p></p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/co5rkdxogomk42nhogox1ojfpw3mword">https://lists.apache.org/thread/co5rkdxogomk42nhogox1ojfpw3mword</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Simcha Kosman (reporter)</li>
+</ul>
 
   
 </div>

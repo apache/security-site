@@ -2036,6 +2036,42 @@ resulting in a denial of service, information disclosure or remote code executio
 <ul>
 <li>Lee (finder)</li>
 </ul>
+<h2 id="CVE-2025-68438">Secrets in rendered templates could contain parts of sensitive values when truncated</h2>
+<p>CVE-2025-68438 <a href="./CVE-2025-68438.cve.json">[CVE json]</a> <a href="./CVE-2025-68438.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-16T10:06:05.336Z</em></p>
+<h3 id="affected-105">Affected</h3>
+<ul>
+<li>Apache Airflow from 3.1.0 before 3.1.6</li>
+</ul>
+<h3 id="description-105">Description</h3>
+<p>In Apache Airflow versions before 3.1.6, when rendered template fields in a Dag exceed [core] <code>max_templated_field_length</code>, sensitive values could be exposed in cleartext in the Rendered Templates UI. This occurred because serialization of those fields used a secrets masker instance that did not include user-registered <code>mask_secret()</code> patterns, so secrets were not reliably masked before truncation and display.<br><br>Users are recommended to upgrade to 3.1.6 or later, which fixes this issue<br></p>
+<h3 id="references-105">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/55n7b4nlsz3vo5n4h5lrj9bfsk8ctyff">https://lists.apache.org/thread/55n7b4nlsz3vo5n4h5lrj9bfsk8ctyff</a></li>
+</ul>
+<h3 id="credits-100">Credits</h3>
+<ul>
+<li>William Ashe (finder)</li>
+<li>Amogh Desai (remediation developer)</li>
+</ul>
+<h2 id="CVE-2025-68675">proxy credentials for various providers might leak in task logs</h2>
+<p>CVE-2025-68675 <a href="./CVE-2025-68675.cve.json">[CVE json]</a> <a href="./CVE-2025-68675.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-16T10:23:24.208Z</em></p>
+<h3 id="affected-106">Affected</h3>
+<ul>
+<li>Apache Airflow before 3.1.6</li>
+</ul>
+<h3 id="description-106">Description</h3>
+<p>In Apache Airflow versions before 3.1.6, the proxies and proxy fields within a Connection may include proxy URLs containing embedded authentication information. These fields were not treated as sensitive by default and therefore were not automatically masked in log output. As a result, when such connections are rendered or printed to logs, proxy credentials embedded in these fields could be exposed.<br><br>Users are recommended to upgrade to 3.1.6 or later, which fixes this issue</p>
+<h3 id="references-106">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/x6kply4nqd4vc4wgxtm6g9r2tt63s8c5">https://lists.apache.org/thread/x6kply4nqd4vc4wgxtm6g9r2tt63s8c5</a></li>
+</ul>
+<h3 id="credits-101">Credits</h3>
+<ul>
+<li>lwlkr <a href="https://github.com/kwkr">https://github.com/kwkr</a> (finder)</li>
+<li>Ankit Chaurasia (remediation developer)</li>
+</ul>
 
   
 </div>

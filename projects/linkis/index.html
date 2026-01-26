@@ -411,6 +411,50 @@ of parameters, an attacker configuring malicious Mysql JDBC parameters in the Da
 <ul>
 <li>Le1a (reporter)</li>
 </ul>
+<h2 id="CVE-2025-29847">Arbitrary File Read via Double URL Encoding Bypass</h2>
+<p>CVE-2025-29847 <a href="./CVE-2025-29847.cve.json">[CVE json]</a> <a href="./CVE-2025-29847.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-19T08:36:04.753Z</em></p>
+<h3 id="affected-16">Affected</h3>
+<ul>
+<li>Apache Linkis from 1.3.0 through 1.7.0</li>
+</ul>
+<h3 id="description-16">Description</h3>
+<p>A vulnerability in Apache Linkis.<br><br><b>Problem Description</b><br>When using the JDBC engine and da<br>When using the JDBC engine and data source functionality, if the URL parameter configured on the frontend has undergone multiple rounds of URL encoding, it may bypass the system's checks. This bypass can trigger a vulnerability that allows unauthorized access to system files via JDBC parameters.</p><b>Scope of Impact</b><br>
+<p><span style="background-color: rgb(255, 255, 255);">This issue affects Apache Linkis: from 1.3.0 through 1.7.0.<br><br><b>Severity level</b><br></span></p>
+<p>moderate<br><p><b>Solution</b><br>Continuously check if the connection information contains the &ldquo;%&rdquo; character; if it does, perform URL decoding.<br><br>Users are recommended to upgrade to version 1.8.0, which fixes the issue.<br></p><p></p>
+<p><span style="background-color: rgb(255, 255, 255);">More questions about this vulnerability can be discussed here:</span> <a target="_blank" rel="nofollow" href="https://lists.apache.org/list?dev@linkis.apache.org:2025-9:cve"><a href="https://lists.apache.org/list?dev@linkis.apache.org:2025-9:cve">https://lists.apache.org/list?dev@linkis.apache.org:2025-9:cve</a></a><br></p></p>
+<h3 id="references-16">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/03l5rfkgdt022o75jp8x4tzpqxz8g057">https://lists.apache.org/thread/03l5rfkgdt022o75jp8x4tzpqxz8g057</a></li>
+</ul>
+<h3 id="credits-16">Credits</h3>
+<ul>
+<li>Le1a and A1kaid from Threatbook (finder)</li>
+<li>kinghao (analyst)</li>
+<li>Le1a from Threatbook (remediation developer)</li>
+<li>kinghao (remediation reviewer)</li>
+</ul>
+<h2 id="CVE-2025-59355">Password Exposure</h2>
+<p>CVE-2025-59355 <a href="./CVE-2025-59355.cve.json">[CVE json]</a> <a href="./CVE-2025-59355.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-19T08:37:22.783Z</em></p>
+<h3 id="affected-17">Affected</h3>
+<ul>
+<li>Apache Linkis from 1.0.0 through 1.7.0</li>
+</ul>
+<h3 id="description-17">Description</h3>
+<p>A vulnerability.<br><br>When org.apache.linkis.metadata.util.HiveUtils.decode() fails to perform Base64 decoding, it records the complete input parameter string in the log via logger.error(str + "decode failed", e). If the input parameter contains sensitive information such as Hive Metastore keys, plaintext passwords will be left in the log files when decoding fails, resulting in information leakage.</p><p><br><b>Affected Scope</b><br>Component: Sensitive fields in hive-site.xml (e.g., javax.jdo.option.ConnectionPassword) or other fields encoded in Base64.<br>Version: Apache Linkis 1.0.0 – 1.7.0</p><br><p><b>Trigger Conditions</b><br>The value of the configuration item is an invalid Base64 string.<br>Log files are readable by users other than hive-site.xml administrators.</p><p><br><b>Severity: Low</b><br>The probability of Base64 decoding failure is low.<br>The leakage is only triggered when logs at the Error level are exposed.<br><br><b>Remediation</b><br>Apache Linkis 1.8.0 and later versions have replaced the log with desensitized content.<br>logger.error("URL decode failed: {}", e.getMessage());   // 不再输出 str<br><br><br>Users are recommended to upgrade to version 1.8.0, which fixes the issue.<br></p>
+<h3 id="references-17">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/75z7vhftw6w1mllndgpkfmcj0fzo4lbj">https://lists.apache.org/thread/75z7vhftw6w1mllndgpkfmcj0fzo4lbj</a></li>
+<li><a href="https://lists.apache.org/thread/4dcgmqdkk2p5y4k43ok5rgd4ylx8698h">https://lists.apache.org/thread/4dcgmqdkk2p5y4k43ok5rgd4ylx8698h</a></li>
+</ul>
+<h3 id="credits-17">Credits</h3>
+<ul>
+<li>Kyler (finder)</li>
+<li>kinghao (analyst)</li>
+<li>Le1a (remediation developer)</li>
+<li>kinghao (remediation reviewer)</li>
+</ul>
 
   
 </div>
