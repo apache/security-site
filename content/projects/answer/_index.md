@@ -262,3 +262,28 @@ _Last updated: 2025-04-01T07:56:26.883Z_
 ### Credits
 * Hamed Kohi (reporter)
 * Luke Smith (reporter)
+
+
+## Revision API Improper Access Control leads to Information Disclosure ## { #CVE-2026-24735 }
+
+CVE-2026-24735 [\[CVE json\]](./CVE-2026-24735.cve.json) [\[OSV json\]](./CVE-2026-24735.osv.json)
+
+
+
+_Last updated: 2026-02-04T10:41:53.728Z_
+
+### Affected
+
+* Apache Answer through 1.7.1
+
+
+### Description
+
+<p>Exposure of Private Personal Information to an Unauthorized Actor vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 1.7.1.</p>An unauthenticated API endpoint incorrectly exposes full revision history for deleted content. This allows unauthorized user to retrieve restricted or sensitive information.<br><p>Users are recommended to upgrade to version 2.0.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/whxloom7mpxlyt5wzdskflsg5mzdzd60
+
+
+### Credits
+* Sho Odagiri of GMO Cybersecurity by Ierae, Inc. (reporter)

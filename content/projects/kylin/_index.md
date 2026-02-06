@@ -369,7 +369,7 @@ CVE-2025-61733 [\[CVE json\]](./CVE-2025-61733.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-10-02T09:47:37.237Z_
+_Last updated: 2026-02-02T07:33:38.093Z_
 
 ### Affected
 
@@ -394,7 +394,7 @@ CVE-2025-61734 [\[CVE json\]](./CVE-2025-61734.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-10-02T09:47:13.137Z_
+_Last updated: 2026-02-02T07:35:03.252Z_
 
 ### Affected
 
@@ -420,7 +420,7 @@ CVE-2025-61735 [\[CVE json\]](./CVE-2025-61735.cve.json) [\[OSV json\]](./CVE-20
 
 
 
-_Last updated: 2025-10-02T09:47:48.059Z_
+_Last updated: 2026-02-02T07:35:53.853Z_
 
 ### Affected
 

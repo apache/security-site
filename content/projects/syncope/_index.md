@@ -118,3 +118,57 @@ _Last updated: 2025-11-24T13:46:58.386Z_
 
 ### Credits
 * Clemens Bergmann (Technical University of Darmstadt) (finder)
+
+
+## Reflected XSS on Enduser Login ## { #CVE-2026-23794 }
+
+CVE-2026-23794 [\[CVE json\]](./CVE-2026-23794.cve.json) [\[OSV json\]](./CVE-2026-23794.osv.json)
+
+
+
+_Last updated: 2026-02-03T15:15:22.918Z_
+
+### Affected
+
+* Apache Syncope from 3.0 through 3.0.15
+* Apache Syncope from 4.0 through 4.0.3
+
+
+### Description
+
+<p>Reflected XSS in Apache Syncope's Enduser Login page.<br>An attacker that tricks a legitimate user into clicking a malicious link and logging in to Syncope Enduser could steal that user's credentials.</p><p>This issue affects Apache Syncope: from 3.0 through 3.0.15, from 4.0 through 4.0.3.</p><p>Users are recommended to upgrade to version 3.0.16 / 4.0.4, which fix this issue.</p>
+
+### References
+* https://lists.apache.org/thread/7h30ghqdsf3spl3h7gdmscxofrm8ygjo
+
+
+### Credits
+* Kasper Karlsson (finder)
+* Karin Taliga (finder)
+
+
+## Console XXE on Keymaster parameters ## { #CVE-2026-23795 }
+
+CVE-2026-23795 [\[CVE json\]](./CVE-2026-23795.cve.json) [\[OSV json\]](./CVE-2026-23795.osv.json)
+
+
+
+_Last updated: 2026-02-03T15:14:33.685Z_
+
+### Affected
+
+* Apache Syncope from 3.0 through 3.0.15
+* Apache Syncope from 4.0 through 4.0.3
+
+
+### Description
+
+<p>Improper Restriction of XML External Entity Reference vulnerability in Apache Syncope Console.<br>An administrator with adequate entitlements to create or edit Keymaster parameters via Console can construct malicious XML text to launch an XXE attack, thereby causing sensitive data leakage occurs.</p><p>This issue affects Apache Syncope: from 3.0 through 3.0.15, from 4.0 through 4.0.3.</p><p>Users are recommended to upgrade to version 3.0.16 / 4.0.4, which fix this issue.</p>
+
+### References
+* https://lists.apache.org/thread/mzgbdn8hzk8vr94o660njcc7w62c2pos
+
+
+### Credits
+* follycat (finder)
+* Y0n3er (finder)
