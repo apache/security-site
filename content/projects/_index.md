@@ -40,6 +40,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache CouchDB |  [Apache CouchDB Security Team](mailto:security@couchdb.apache.org) | |
 | Apache CXF |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache DB |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache DevLake](https://devlake.apache.org/docs/v1.0/GettingStarted/Authentication) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Directory |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache DolphinScheduler](https://github.com/apache/dolphinscheduler/blob/dev/docs/docs/en/contribute/join/security.md) |  [Apache DolphinScheduler Security Team](mailto:security@dolphinscheduler.apache.org) | |
 | [Apache Doris](https://doris.apache.org/docs/dev/admin-manual/auth/security-overview) |  [Apache Security Team](mailto:security@apache.org) | |
