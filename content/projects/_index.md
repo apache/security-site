@@ -106,7 +106,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Pekko |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Pinot |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache PLC4X |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache POI |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache POI](https://poi.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Pulsar](https://github.com/apache/pulsar/security/policy) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Ranger |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache RocketMQ](https://rocketmq.apache.org/docs/securityModel/01security-model) |  [Apache Security Team](mailto:security@apache.org) | |
