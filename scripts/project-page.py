@@ -163,9 +163,9 @@ layout: single
           has_osv = False
 
         project_page.write("\n\n## %s ## { #%s }\n\n" % (advisory['title'], cve_id))
-        project_page.write("%s [\[CVE json\]](./%s.cve.json)" % (cve_id, cve_id))
+        project_page.write("%s [\\[CVE\\]](https://cve.org/CVERecord?id=%s) [\\[CVE json\\]](./%s.cve.json)" % (cve_id, cve_id, cve_id))
         if has_osv:
-          project_page.write(" [\[OSV json\]](./%s.osv.json)\n\n" % cve_id)
+          project_page.write(" [\\[OSV json\\]](./%s.osv.json)\n\n" % cve_id)
         project_page.write("\n\n")
         project_page.write("_Last updated: %s_" % advisory['updated'])
         project_page.write("\n\n")
