@@ -105,22 +105,27 @@
 <p>Do you want disclose a potential security issue for Apache SeaTunnel? You can read more about the projects&rsquo; security policy on their <a href="https://seatunnel.apache.org/security">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://seatunnel.apache.org/security">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2023-48396">Authentication bypass</h2>
-<p>CVE-2023-48396 <a href="./CVE-2023-48396.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2024-07-30T08:15:30.810Z</em></p>
+<h2 id="CVE-2025-32896">Unauthenticated insecure access</h2>
+<p>CVE-2025-32896 <a href="https://cve.org/CVERecord?id=CVE-2025-32896">[CVE]</a> <a href="./CVE-2025-32896.cve.json">[CVE json]</a> <a href="./CVE-2025-32896.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-06-19T08:34:42.552Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache SeaTunnel at 1.0.0</li>
+<li>Apache SeaTunnel from 2.3.1 through 2.3.10</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Web Authentication vulnerability in Apache SeaTunnel.<p>This issue affects Apache SeaTunnel: 1.0.0.</p><p>Users are recommended to upgrade to version 1.0.1, which fixes the issue.</p></p>
+<h1 id="summarybrbrunauthorized-users-can-perform-arbitrary-file-read-and-deserializationbrattack-by-submit-job-using-restful-api-v1brbr-detailsbrunauthorized-users-can-access-hazelcastrestmapssubmit-job-to-submitbrjobbran-attacker-can-set-extra-params-in-mysql-url-to-perform-arbitrary-filebrread-and-deserialization-attackbrbrthis-issue-affects-apache-seatunnel-lt2310brbr-fixedbrbrusers-are-recommended-to-upgrade-to-version-2311-and-enable-restful-api-v2-amp-open-https-two-way-authentication--which-fixes-the-issue">Summary<br><br>Unauthorized users can perform Arbitrary File Read and Deserialization<br>attack by submit job using restful api-v1.<br><br># Details<br>Unauthorized users can access <code>/hazelcast/rest/maps/submit-job</code> to submit<br>job.<br>An attacker can set extra params in mysql url to perform Arbitrary File<br>Read and Deserialization attack.<br><br>This issue affects Apache SeaTunnel: &lt;=2.3.10<br><br># Fixed<br><br>Users are recommended to upgrade to version 2.3.11, and enable restful api-v2 &amp; open https two-way authentication , which fixes the issue.</h1>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/hbwcp33zmgghhhhjhkjlo3g092t3xqf4">https://lists.apache.org/thread/hbwcp33zmgghhhhjhkjlo3g092t3xqf4</a></li>
-<li><a href="https://lists.apache.org/thread/%3CCAFBzuDO=+L_EO=VFD8i5W5AcDOzKLz_ORGJrJxsdxEFjHTBSjQ@mail.gmail.com%3E?%3Cprivate.seatunnel.apache.org%3E">https://lists.apache.org/thread/%3CCAFBzuDO=+L_EO=VFD8i5W5AcDOzKLz_ORGJrJxsdxEFjHTBSjQ@mail.gmail.com%3E?%3Cprivate.seatunnel.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread/qvh3zyt1jr25rgvw955rb8qjrnbxfro9">https://lists.apache.org/thread/qvh3zyt1jr25rgvw955rb8qjrnbxfro9</a></li>
+<li><a href="https://github.com/apache/seatunnel/pull/9010">https://github.com/apache/seatunnel/pull/9010</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Owen Amadeus (reporter)</li>
+<li>liyiwei (reporter)</li>
 </ul>
 <h2 id="CVE-2023-49198">Arbitrary file read vulnerability</h2>
-<p>CVE-2023-49198 <a href="./CVE-2023-49198.cve.json">[CVE json]</a> <a href="./CVE-2023-49198.osv.json">[OSV json]</a></p>
+<p>CVE-2023-49198 <a href="https://cve.org/CVERecord?id=CVE-2023-49198">[CVE]</a> <a href="./CVE-2023-49198.cve.json">[CVE json]</a> <a href="./CVE-2023-49198.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-08-21T09:37:50.824Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
@@ -132,28 +137,23 @@
 <ul>
 <li><a href="https://lists.apache.org/thread/48j9f1nsn037mgzc4j9o51nwglb1s08h">https://lists.apache.org/thread/48j9f1nsn037mgzc4j9o51nwglb1s08h</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>jiahua huang (reporter)</li>
 </ul>
-<h2 id="CVE-2025-32896">Unauthenticated insecure access</h2>
-<p>CVE-2025-32896 <a href="./CVE-2025-32896.cve.json">[CVE json]</a> <a href="./CVE-2025-32896.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-06-19T08:34:42.552Z</em></p>
+<h2 id="CVE-2023-48396">Authentication bypass</h2>
+<p>CVE-2023-48396 <a href="https://cve.org/CVERecord?id=CVE-2023-48396">[CVE]</a> <a href="./CVE-2023-48396.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-07-30T08:15:30.810Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache SeaTunnel from 2.3.1 through 2.3.10</li>
+<li>Apache SeaTunnel at 1.0.0</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<h1 id="summarybrbrunauthorized-users-can-perform-arbitrary-file-read-and-deserializationbrattack-by-submit-job-using-restful-api-v1brbr-detailsbrunauthorized-users-can-access-hazelcastrestmapssubmit-job-to-submitbrjobbran-attacker-can-set-extra-params-in-mysql-url-to-perform-arbitrary-filebrread-and-deserialization-attackbrbrthis-issue-affects-apache-seatunnel-lt2310brbr-fixedbrbrusers-are-recommended-to-upgrade-to-version-2311-and-enable-restful-api-v2-amp-open-https-two-way-authentication--which-fixes-the-issue">Summary<br><br>Unauthorized users can perform Arbitrary File Read and Deserialization<br>attack by submit job using restful api-v1.<br><br># Details<br>Unauthorized users can access <code>/hazelcast/rest/maps/submit-job</code> to submit<br>job.<br>An attacker can set extra params in mysql url to perform Arbitrary File<br>Read and Deserialization attack.<br><br>This issue affects Apache SeaTunnel: &lt;=2.3.10<br><br># Fixed<br><br>Users are recommended to upgrade to version 2.3.11, and enable restful api-v2 &amp; open https two-way authentication , which fixes the issue.</h1>
+<p>Web Authentication vulnerability in Apache SeaTunnel.<p>This issue affects Apache SeaTunnel: 1.0.0.</p><p>Users are recommended to upgrade to version 1.0.1, which fixes the issue.</p></p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/qvh3zyt1jr25rgvw955rb8qjrnbxfro9">https://lists.apache.org/thread/qvh3zyt1jr25rgvw955rb8qjrnbxfro9</a></li>
-<li><a href="https://github.com/apache/seatunnel/pull/9010">https://github.com/apache/seatunnel/pull/9010</a></li>
-</ul>
-<h3 id="credits-1">Credits</h3>
-<ul>
-<li>Owen Amadeus (reporter)</li>
-<li>liyiwei (reporter)</li>
+<li><a href="https://lists.apache.org/thread/hbwcp33zmgghhhhjhkjlo3g092t3xqf4">https://lists.apache.org/thread/hbwcp33zmgghhhhjhkjlo3g092t3xqf4</a></li>
+<li><a href="https://lists.apache.org/thread/%3CCAFBzuDO=+L_EO=VFD8i5W5AcDOzKLz_ORGJrJxsdxEFjHTBSjQ@mail.gmail.com%3E?%3Cprivate.seatunnel.apache.org%3E">https://lists.apache.org/thread/%3CCAFBzuDO=+L_EO=VFD8i5W5AcDOzKLz_ORGJrJxsdxEFjHTBSjQ@mail.gmail.com%3E?%3Cprivate.seatunnel.apache.org%3E</a></li>
 </ul>
 
   

@@ -105,94 +105,90 @@
 <p>Do you want disclose a potential security issue for Apache Camel? You can read more about the projects&rsquo; security policy on their <a href="https://camel.apache.org/security/">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://camel.apache.org/security/">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2023-34442">Temporary file information disclosure in Camel-Jira</h2>
-<p>CVE-2023-34442 <a href="./CVE-2023-34442.cve.json">[CVE json]</a> <a href="./CVE-2023-34442.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-07-10T09:31:01.757Z</em></p>
+<h2 id="CVE-2026-25747">Deserialization of Untrusted Data in Camel LevelDB</h2>
+<p>CVE-2026-25747 <a href="https://cve.org/CVERecord?id=CVE-2026-25747">[CVE]</a> <a href="./CVE-2026-25747.cve.json">[CVE json]</a> <a href="./CVE-2026-25747.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-02-22T15:56:14.254Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Camel JIRA from 3.x through &lt;=3.14.8</li>
-<li>Apache Camel JIRA from 3.18.x through &lt;=3.18.7</li>
-<li>Apache Camel JIRA from 3.20.x through &lt;= 3.20.5</li>
-<li>Apache Camel JIRA from 4.x through &lt;= 4.0.0-M3</li>
+<li>Apache Camel from 4.10.0 before 4.10.9</li>
+<li>Apache Camel from 4.14.0 before 4.14.5</li>
+<li>Apache Camel from 4.15.0 before 4.18.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Software Foundation Apache Camel.<p>This issue affects Apache Camel: from 3.X through &lt;=3.14.8, from 3.18.X through &lt;=3.18.7, from 3.20.X through &lt;= 3.20.5, from 4.X through &lt;= 4.0.0-M3.</p><span style="background-color: rgb(255, 255, 255);">Users should upgrade to 3.14.9, 3.18.8, 3.20.6 or 3.21.0 and for users on Camel 4.x update to 4.0.0-M1</span><br></p>
+<p>Deserialization of Untrusted Data vulnerability in Apache Camel LevelDB component.</p><span style="background-color: rgb(255, 255, 255);">The Camel-LevelDB DefaultLevelDBSerializer class deserializes data read from the LevelDB aggregation repository using java.io.ObjectInputStream without applying any ObjectInputFilter or class-loading restrictions. An attacker who can write to the LevelDB database files used by a Camel application can inject a crafted serialized Java object that, when deserialized during normal aggregation repository operations, results in arbitrary code execution in the context of the application.</span><br><p>This issue affects Apache Camel: from 4.10.0 before 4.10.8, from 4.14.0 before 4.14.5, from 4.15.0 before 4.18.0.</p><p>Users are recommended to upgrade to version 4.18.0, which fixes the issue. For the 4.10.x LTS releases, users are recommended to upgrade to 4.10.9, while for 4.14.x LTS releases, users are recommended to upgrade to 4.14.5</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/x4vy2hhbltb1xrvy1g6m8hpjgj2k7wgh">https://lists.apache.org/thread/x4vy2hhbltb1xrvy1g6m8hpjgj2k7wgh</a></li>
+<li><a href="https://github.com/oscerd/CVE-2026-25747">https://github.com/oscerd/CVE-2026-25747</a></li>
+<li><a href="https://camel.apache.org/security/CVE-2026-25747.html">https://camel.apache.org/security/CVE-2026-25747.html</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Jonathan Leitschuh of the Open Source Security Foundation: Project Alpha-Omega (reporter)</li>
+<li>Andrea Cosentino (finder)</li>
+<li>Andrea Cosentino (remediation developer)</li>
 </ul>
-<h2 id="CVE-2024-22369">Camel-SQL: Unsafe Deserialization from JDBCAggregationRepository</h2>
-<p>CVE-2024-22369 <a href="./CVE-2024-22369.cve.json">[CVE json]</a> <a href="./CVE-2024-22369.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-02-20T15:01:05.582Z</em></p>
+<h2 id="CVE-2026-23552">Camel-Keycloak: Cross-Realm Token Acceptance Bypass in KeycloakSecurityPolicy</h2>
+<p>CVE-2026-23552 <a href="https://cve.org/CVERecord?id=CVE-2026-23552">[CVE]</a> <a href="./CVE-2026-23552.cve.json">[CVE json]</a> <a href="./CVE-2026-23552.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-02-22T15:55:13.482Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache Camel from 3.0.0 before 3.21.4</li>
-<li>Apache Camel from 3.22.0 before 3.22.1</li>
-<li>Apache Camel from 4.0.0 before 4.0.4</li>
-<li>Apache Camel from 4.1.0 before 4.4.0</li>
+<li>Apache Camel from 4.15.0 before 4.18.0</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>Deserialization of Untrusted Data vulnerability in Apache Camel SQL Component<p>This issue affects Apache Camel: from 3.0.0 before 3.21.4, from 3.22.0 before 3.22.1, from 4.0.0 before 4.0.4, from 4.1.0 before 4.4.0.</p><p>Users are recommended to upgrade to version 4.4.0, which fixes the issue. If users are on the 4.0.x LTS releases stream, then they are suggested to upgrade to 4.0.4. If users are on 3.x, they are suggested to move to 3.21.4 or 3.22.1</p></p>
+<p>Cross-Realm Token Acceptance Bypass in KeycloakSecurityPolicy Apache Camel Keycloak component.&nbsp;</p><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">The Camel-Keycloak KeycloakSecurityPolicy does not validate the iss (issuer) claim of JWT tokens against the configured realm. A token issued by one Keycloak realm is silently accepted by a policy configured for a completely different realm, breaking tenant isolation.</span></span><br><p>This issue affects Apache Camel: from 4.15.0 before 4.18.0.</p><p>Users are recommended to upgrade to version 4.18.0, which fixes the issue.</p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/3dko781dy2gy5l3fs48p56fgp429yb0f">https://lists.apache.org/thread/3dko781dy2gy5l3fs48p56fgp429yb0f</a></li>
-<li><a href="https://camel.apache.org/security/CVE-2024-22369.html">https://camel.apache.org/security/CVE-2024-22369.html</a></li>
+<li><a href="https://camel.apache.org/security/CVE-2026-23552.html">https://camel.apache.org/security/CVE-2026-23552.html</a></li>
+<li><a href="https://github.com/oscerd/CVE-2026-23552">https://github.com/oscerd/CVE-2026-23552</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>Ziyang Chen from HuaWei Open Source Management Center (finder)</li>
-<li>Pingtao Wei from HuaWei Open Source Management Center (finder)</li>
-<li>Haoran Zhi from HuaWei Open Source Management Center (finder)</li>
+<li>Andrea Cosentino (finder)</li>
+<li>Andrea Cosentino (remediation developer)</li>
 </ul>
-<h2 id="CVE-2024-22371">Apache Camel issue on ExchangeCreatedEvent</h2>
-<p>CVE-2024-22371 <a href="./CVE-2024-22371.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2024-02-26T09:22:36.071Z</em></p>
+<h2 id="CVE-2025-66169">Cypher injection vulnerability in Camel-Neo4j component</h2>
+<p>CVE-2025-66169 <a href="https://cve.org/CVERecord?id=CVE-2025-66169">[CVE]</a> <a href="./CVE-2025-66169.cve.json">[CVE json]</a> <a href="./CVE-2025-66169.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-14T11:45:34.042Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache Camel from 1.x through 1.6.0</li>
-<li>Apache Camel from 3.21.x through 3.21.3</li>
-<li>Apache Camel from 3.22.x through 3.22.0</li>
-<li>Apache Camel from 4.0.x through 4.0.3</li>
-<li>Apache Camel from 4.x through 4.3.0</li>
+<li>Apache Camel Neo4j from 4.10.0 before 4.10.8</li>
+<li>Apache Camel Neo4j from 4.14.0 before 4.14.3</li>
+<li>Apache Camel Neo4j from 4.15.0 before 4.17.0</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>Exposure of sensitive data by by crafting a malicious EventFactory and providing a custom ExchangeCreatedEvent that exposes sensitive data. Vulnerability in Apache Camel.<p>This issue affects Apache Camel: from 3.21.X through 3.21.3, from 3.22.X through 3.22.0, from 4.0.X through 4.0.3, from 4.X through 4.3.0.</p><p>Users are recommended to upgrade to version 3.21.4, 3.22.1, 4.0.4 or 4.4.0, which fixes the issue.</p></p>
+<p>Cypher Injection vulnerability in Apache Camel camel-neo4j component.</p><p>This issue affects Apache Camel: from 4.10.0 before 4.10.8, from 4.14.0 before 4.14.3, from 4.15.0 before 4.17.0</p><p><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 4.10.8 for 4.10.x LTS and 4.14.3 for 4.14.x LTS and 4.17.0.</span></p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://camel.apache.org/security/CVE-2024-22371.html">https://camel.apache.org/security/CVE-2024-22371.html</a></li>
+<li><a href="https://camel.apache.org/security/CVE-2025-66169.html">https://camel.apache.org/security/CVE-2025-66169.html</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>Otavio Rodolfo Piske from the Apache Software Foundation (finder)</li>
+<li>Ya0H4cker (finder)</li>
 </ul>
-<h2 id="CVE-2024-23114">Camel-CassandraQL: Unsafe Deserialization from CassandraAggregationRepository</h2>
-<p>CVE-2024-23114 <a href="./CVE-2024-23114.cve.json">[CVE json]</a> <a href="./CVE-2024-23114.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-02-20T14:59:36.356Z</em></p>
+<h2 id="CVE-2025-30177">Camel-Undertow Message Header Injection via Improper Filtering</h2>
+<p>CVE-2025-30177 <a href="https://cve.org/CVERecord?id=CVE-2025-30177">[CVE]</a> <a href="./CVE-2025-30177.cve.json">[CVE json]</a> <a href="./CVE-2025-30177.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-04-01T16:32:28.939Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache Camel from 3.0.0 before 3.21.4</li>
-<li>Apache Camel from 3.22.0 before 3.22.1</li>
-<li>Apache Camel from 4.0.0 before 4.0.4</li>
-<li>Apache Camel from 4.1.0 before 4.4.0</li>
+<li>Apache Camel from 4.10.0 before 4.10.3</li>
+<li>Apache Camel from 4.8.0 before 4.8.6</li>
 </ul>
 <h3 id="description-3">Description</h3>
-<p>Deserialization of Untrusted Data vulnerability in Apache Camel CassandraQL Component AggregationRepository which is vulnerable to unsafe deserialization. Under specific conditions it is possible to deserialize malicious payload.<p>This issue affects Apache Camel: from 3.0.0 before 3.21.4, from 3.22.0 before 3.22.1, from 4.0.0 before 4.0.4, from 4.1.0 before 4.4.0.</p><p>Users are recommended to upgrade to version 4.4.0, which fixes the issue. If users are on the 4.0.x LTS releases stream, then they are suggested to upgrade to 4.0.4. If users are on 3.x, they are suggested to move to 3.21.4 or 3.22.1</p></p>
+<p>Bypass/Injection vulnerability in Apache Camel in Camel-Undertow component under particular conditions.</p><p>This issue affects Apache Camel: from 4.10.0 before 4.10.3, from 4.8.0 before 4.8.6.</p>Users are recommended to upgrade to version 4.10.3 for 4.10.x LTS and 4.8.6 for 4.8.x LTS.<br><br><div>Camel undertow component is vulnerable to Camel message header injection, in particular the custom header filter strategy used by the component only filter the "out" direction, while it doesn't filter the "in" direction.</div><br>This allows an attacker to include Camel specific headers that for some Camel components can alter the behaviour such as the camel-bean component, or the camel-exec component.<br><br>
 <h3 id="references-3">References</h3>
 <ul>
-<li><a href="https://camel.apache.org/security/CVE-2024-23114.html">https://camel.apache.org/security/CVE-2024-23114.html</a></li>
+<li><a href="https://camel.apache.org/security/CVE-2025-27636.html">https://camel.apache.org/security/CVE-2025-27636.html</a></li>
+<li><a href="https://camel.apache.org/security/CVE-2025-29891.html">https://camel.apache.org/security/CVE-2025-29891.html</a></li>
+<li><a href="https://lists.apache.org/thread/dj79zdgw01j337lr9gvyy4sv8xfyw8py">https://lists.apache.org/thread/dj79zdgw01j337lr9gvyy4sv8xfyw8py</a></li>
+<li><a href="https://camel.apache.org/security/CVE-2025-30177.html">https://camel.apache.org/security/CVE-2025-30177.html</a></li>
 </ul>
 <h3 id="credits-3">Credits</h3>
 <ul>
-<li>Federico Mariani From Apache Software Foundation (finder)</li>
-<li>Andrea Cosentino from Apache Software Foundation (finder)</li>
+<li>Mark Thorson of AT&amp;T (finder)</li>
+<li>Mark Thorson of AT&amp;T (reporter)</li>
 </ul>
-<h2 id="CVE-2025-27636">Camel Message Header Injection via Improper Filtering</h2>
-<p>CVE-2025-27636 <a href="./CVE-2025-27636.cve.json">[CVE json]</a> <a href="./CVE-2025-27636.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-03-17T14:20:17.925Z</em></p>
+<h2 id="CVE-2025-29891">Camel Message Header Injection through request parameters</h2>
+<p>CVE-2025-29891 <a href="https://cve.org/CVERecord?id=CVE-2025-29891">[CVE]</a> <a href="./CVE-2025-29891.cve.json">[CVE json]</a> <a href="./CVE-2025-29891.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-03-13T08:19:35.754Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
 <li>Apache Camel from 4.10.0 before 4.10.2</li>
@@ -200,20 +196,22 @@
 <li>Apache Camel from 3.10.0 before 3.22.4</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<p>Bypass/Injection vulnerability in Apache Camel components under particular conditions.</p><p>This issue affects Apache Camel: from 4.10.0 through &lt;= 4.10.1, from 4.8.0 through &lt;= 4.8.4, from 3.10.0 through &lt;= 3.22.3.</p><p>Users are recommended to upgrade to version 4.10.2 for 4.10.x LTS, 4.8.5 for 4.8.x LTS and 3.22.4 for 3.x releases.</p><div></div><div>This vulnerability is present in Camel's default incoming header filter, that allows an attacker to include Camel specific</div><div>headers that for some Camel components can alter the behaviours such as the camel-bean component, to call another method</div><div>on the bean, than was coded in the application. In the camel-jms component, then a malicious header can be used to send</div><div>the message to another queue (on the same broker) than was coded in the application. This could also be seen by using the camel-exec component</div><div><br></div><div>The attacker would need to inject custom headers, such as HTTP protocols. So if you have Camel applications that are</div><div>directly connected to the internet via HTTP, then an attacker could include malicious HTTP headers in the HTTP requests</div><div>that are send to the Camel application.</div><div><br></div>All the known Camel HTTP component such as camel-servlet, camel-jetty, camel-undertow, camel-platform-http, and camel-netty-http would be vulnerable out of the box.<br><br>In these conditions an attacker could be able to forge a Camel header name and make the bean component invoking other methods in the same bean.<br><br><div>In terms of usage of the default header filter strategy the list of components using that is: <br></div><div><div><ul><li>camel-activemq</li><li>camel-activemq6</li><li>camel-amqp</li><li>camel-aws2-sqs</li><li>camel-azure-servicebus</li><li>camel-cxf-rest</li><li>camel-cxf-soap</li><li>camel-http</li><li>camel-jetty</li><li>camel-jms</li><li>camel-kafka</li><li>camel-knative</li><li>camel-mail</li><li>camel-nats</li><li>camel-netty-http</li><li>camel-platform-http</li><li>camel-rest</li><li>camel-sjms</li><li>camel-spring-rabbitmq</li><li>camel-stomp</li><li>camel-tahu</li><li>camel-undertow</li><li>camel-xmpp</li></ul></div></div><div>The vulnerability arises due to a bug in the default filtering mechanism that only blocks headers starting with "Camel", "camel", or "org.apache.camel.".&nbsp;</div><br><div><span style="background-color: var(--wht);">Mitigation:&nbsp;</span>You can easily work around this in your Camel applications by removing the&nbsp;headers in your Camel routes. There are many ways of doing this, also&nbsp;globally or per route. This means you could use the removeHeaders EIP, to filter out anything like "cAmel, cAMEL" etc, or in general everything not starting with "Camel", "camel" or "org.apache.camel.".&nbsp;<br></div><br>
+<p>Bypass/Injection vulnerability in Apache Camel.</p><p>This issue affects Apache Camel: from 4.10.0 before 4.10.2, from 4.8.0 before 4.8.5, from 3.10.0 before 3.22.4.</p><p>Users are recommended to upgrade to version 4.10.2 for 4.10.x LTS, 4.8.5 for 4.8.x LTS and 3.22.4 for 3.x releases.</p><p>This vulnerability is present in Camel's default incoming header filter, that allows an attacker to include Camel specific headers that for some Camel components can alter the behaviours such as the camel-bean component, or the camel-exec component.</p><p>If you have Camel applications that are directly connected to the internet via HTTP, then an attacker&nbsp;<span style="background-color: rgb(255, 255, 255);">could include parameters in the HTTP requests that are sent to the Camel application that get translated into headers.</span>&nbsp;</p><p>The headers could be both provided as request parameters for an HTTP methods invocation or as part of the payload of the HTTP methods invocation.</p><p><span style="background-color: var(--wht);">All the known Camel HTTP component such as camel-servlet, camel-jetty, camel-undertow, camel-platform-http, and camel-netty-http would be vulnerable out of the box.</span></p><span style="background-color: rgb(255, 255, 255);">This CVE is related to the CVE-2025-27636: while they have the same root cause and are fixed with the same fix, CVE-2025-27636 was assumed to only be exploitable if an attacker could add malicious HTTP headers, while we have now determined that it is also exploitable via HTTP parameters. Like in CVE-2025-27636, exploitation is only possible if the Camel route uses particular vulnerable components.</span><p></p>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/l3zcg3vts88bmc7w8172wkgw610y693z">https://lists.apache.org/thread/l3zcg3vts88bmc7w8172wkgw610y693z</a></li>
-<li><a href="https://issues.apache.org/jira/browse/CAMEL-21828">https://issues.apache.org/jira/browse/CAMEL-21828</a></li>
 <li><a href="https://camel.apache.org/security/CVE-2025-27636.html">https://camel.apache.org/security/CVE-2025-27636.html</a></li>
+<li><a href="https://camel.apache.org/security/CVE-2025-29891.html">https://camel.apache.org/security/CVE-2025-29891.html</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>Mark Thorson (finder)</li>
+<li>Citi Cyber Security Operations (finder)</li>
+<li>Akamai Security Intelligence Group (SIG) (reporter)</li>
+<li>Mark Thorson of AT&amp;T (finder)</li>
+<li>Mark Thorson of AT&amp;T (reporter)</li>
 </ul>
-<h2 id="CVE-2025-29891">Camel Message Header Injection through request parameters</h2>
-<p>CVE-2025-29891 <a href="./CVE-2025-29891.cve.json">[CVE json]</a> <a href="./CVE-2025-29891.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-03-13T08:19:35.754Z</em></p>
+<h2 id="CVE-2025-27636">Camel Message Header Injection via Improper Filtering</h2>
+<p>CVE-2025-27636 <a href="https://cve.org/CVERecord?id=CVE-2025-27636">[CVE]</a> <a href="./CVE-2025-27636.cve.json">[CVE json]</a> <a href="./CVE-2025-27636.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-03-17T14:20:17.925Z</em></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
 <li>Apache Camel from 4.10.0 before 4.10.2</li>
@@ -221,59 +219,101 @@
 <li>Apache Camel from 3.10.0 before 3.22.4</li>
 </ul>
 <h3 id="description-5">Description</h3>
-<p>Bypass/Injection vulnerability in Apache Camel.</p><p>This issue affects Apache Camel: from 4.10.0 before 4.10.2, from 4.8.0 before 4.8.5, from 3.10.0 before 3.22.4.</p><p>Users are recommended to upgrade to version 4.10.2 for 4.10.x LTS, 4.8.5 for 4.8.x LTS and 3.22.4 for 3.x releases.</p><p>This vulnerability is present in Camel's default incoming header filter, that allows an attacker to include Camel specific headers that for some Camel components can alter the behaviours such as the camel-bean component, or the camel-exec component.</p><p>If you have Camel applications that are directly connected to the internet via HTTP, then an attacker&nbsp;<span style="background-color: rgb(255, 255, 255);">could include parameters in the HTTP requests that are sent to the Camel application that get translated into headers.</span>&nbsp;</p><p>The headers could be both provided as request parameters for an HTTP methods invocation or as part of the payload of the HTTP methods invocation.</p><p><span style="background-color: var(--wht);">All the known Camel HTTP component such as camel-servlet, camel-jetty, camel-undertow, camel-platform-http, and camel-netty-http would be vulnerable out of the box.</span></p><span style="background-color: rgb(255, 255, 255);">This CVE is related to the CVE-2025-27636: while they have the same root cause and are fixed with the same fix, CVE-2025-27636 was assumed to only be exploitable if an attacker could add malicious HTTP headers, while we have now determined that it is also exploitable via HTTP parameters. Like in CVE-2025-27636, exploitation is only possible if the Camel route uses particular vulnerable components.</span><p></p>
+<p>Bypass/Injection vulnerability in Apache Camel components under particular conditions.</p><p>This issue affects Apache Camel: from 4.10.0 through &lt;= 4.10.1, from 4.8.0 through &lt;= 4.8.4, from 3.10.0 through &lt;= 3.22.3.</p><p>Users are recommended to upgrade to version 4.10.2 for 4.10.x LTS, 4.8.5 for 4.8.x LTS and 3.22.4 for 3.x releases.</p><div></div><div>This vulnerability is present in Camel's default incoming header filter, that allows an attacker to include Camel specific</div><div>headers that for some Camel components can alter the behaviours such as the camel-bean component, to call another method</div><div>on the bean, than was coded in the application. In the camel-jms component, then a malicious header can be used to send</div><div>the message to another queue (on the same broker) than was coded in the application. This could also be seen by using the camel-exec component</div><div><br></div><div>The attacker would need to inject custom headers, such as HTTP protocols. So if you have Camel applications that are</div><div>directly connected to the internet via HTTP, then an attacker could include malicious HTTP headers in the HTTP requests</div><div>that are send to the Camel application.</div><div><br></div>All the known Camel HTTP component such as camel-servlet, camel-jetty, camel-undertow, camel-platform-http, and camel-netty-http would be vulnerable out of the box.<br><br>In these conditions an attacker could be able to forge a Camel header name and make the bean component invoking other methods in the same bean.<br><br><div>In terms of usage of the default header filter strategy the list of components using that is: <br></div><div><div><ul><li>camel-activemq</li><li>camel-activemq6</li><li>camel-amqp</li><li>camel-aws2-sqs</li><li>camel-azure-servicebus</li><li>camel-cxf-rest</li><li>camel-cxf-soap</li><li>camel-http</li><li>camel-jetty</li><li>camel-jms</li><li>camel-kafka</li><li>camel-knative</li><li>camel-mail</li><li>camel-nats</li><li>camel-netty-http</li><li>camel-platform-http</li><li>camel-rest</li><li>camel-sjms</li><li>camel-spring-rabbitmq</li><li>camel-stomp</li><li>camel-tahu</li><li>camel-undertow</li><li>camel-xmpp</li></ul></div></div><div>The vulnerability arises due to a bug in the default filtering mechanism that only blocks headers starting with "Camel", "camel", or "org.apache.camel.".&nbsp;</div><br><div><span style="background-color: var(--wht);">Mitigation:&nbsp;</span>You can easily work around this in your Camel applications by removing the&nbsp;headers in your Camel routes. There are many ways of doing this, also&nbsp;globally or per route. This means you could use the removeHeaders EIP, to filter out anything like "cAmel, cAMEL" etc, or in general everything not starting with "Camel", "camel" or "org.apache.camel.".&nbsp;<br></div><br>
 <h3 id="references-5">References</h3>
 <ul>
+<li><a href="https://lists.apache.org/thread/l3zcg3vts88bmc7w8172wkgw610y693z">https://lists.apache.org/thread/l3zcg3vts88bmc7w8172wkgw610y693z</a></li>
+<li><a href="https://issues.apache.org/jira/browse/CAMEL-21828">https://issues.apache.org/jira/browse/CAMEL-21828</a></li>
 <li><a href="https://camel.apache.org/security/CVE-2025-27636.html">https://camel.apache.org/security/CVE-2025-27636.html</a></li>
-<li><a href="https://camel.apache.org/security/CVE-2025-29891.html">https://camel.apache.org/security/CVE-2025-29891.html</a></li>
 </ul>
 <h3 id="credits-5">Credits</h3>
 <ul>
-<li>Citi Cyber Security Operations (finder)</li>
-<li>Akamai Security Intelligence Group (SIG) (reporter)</li>
-<li>Mark Thorson of AT&amp;T (finder)</li>
-<li>Mark Thorson of AT&amp;T (reporter)</li>
+<li>Mark Thorson (finder)</li>
 </ul>
-<h2 id="CVE-2025-30177">Camel-Undertow Message Header Injection via Improper Filtering</h2>
-<p>CVE-2025-30177 <a href="./CVE-2025-30177.cve.json">[CVE json]</a> <a href="./CVE-2025-30177.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-04-01T16:32:28.939Z</em></p>
+<h2 id="CVE-2024-23114">Camel-CassandraQL: Unsafe Deserialization from CassandraAggregationRepository</h2>
+<p>CVE-2024-23114 <a href="https://cve.org/CVERecord?id=CVE-2024-23114">[CVE]</a> <a href="./CVE-2024-23114.cve.json">[CVE json]</a> <a href="./CVE-2024-23114.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-02-20T14:59:36.356Z</em></p>
 <h3 id="affected-6">Affected</h3>
 <ul>
-<li>Apache Camel from 4.10.0 before 4.10.3</li>
-<li>Apache Camel from 4.8.0 before 4.8.6</li>
+<li>Apache Camel from 3.0.0 before 3.21.4</li>
+<li>Apache Camel from 3.22.0 before 3.22.1</li>
+<li>Apache Camel from 4.0.0 before 4.0.4</li>
+<li>Apache Camel from 4.1.0 before 4.4.0</li>
 </ul>
 <h3 id="description-6">Description</h3>
-<p>Bypass/Injection vulnerability in Apache Camel in Camel-Undertow component under particular conditions.</p><p>This issue affects Apache Camel: from 4.10.0 before 4.10.3, from 4.8.0 before 4.8.6.</p>Users are recommended to upgrade to version 4.10.3 for 4.10.x LTS and 4.8.6 for 4.8.x LTS.<br><br><div>Camel undertow component is vulnerable to Camel message header injection, in particular the custom header filter strategy used by the component only filter the "out" direction, while it doesn't filter the "in" direction.</div><br>This allows an attacker to include Camel specific headers that for some Camel components can alter the behaviour such as the camel-bean component, or the camel-exec component.<br><br>
+<p>Deserialization of Untrusted Data vulnerability in Apache Camel CassandraQL Component AggregationRepository which is vulnerable to unsafe deserialization. Under specific conditions it is possible to deserialize malicious payload.<p>This issue affects Apache Camel: from 3.0.0 before 3.21.4, from 3.22.0 before 3.22.1, from 4.0.0 before 4.0.4, from 4.1.0 before 4.4.0.</p><p>Users are recommended to upgrade to version 4.4.0, which fixes the issue. If users are on the 4.0.x LTS releases stream, then they are suggested to upgrade to 4.0.4. If users are on 3.x, they are suggested to move to 3.21.4 or 3.22.1</p></p>
 <h3 id="references-6">References</h3>
 <ul>
-<li><a href="https://camel.apache.org/security/CVE-2025-27636.html">https://camel.apache.org/security/CVE-2025-27636.html</a></li>
-<li><a href="https://camel.apache.org/security/CVE-2025-29891.html">https://camel.apache.org/security/CVE-2025-29891.html</a></li>
-<li><a href="https://lists.apache.org/thread/dj79zdgw01j337lr9gvyy4sv8xfyw8py">https://lists.apache.org/thread/dj79zdgw01j337lr9gvyy4sv8xfyw8py</a></li>
-<li><a href="https://camel.apache.org/security/CVE-2025-30177.html">https://camel.apache.org/security/CVE-2025-30177.html</a></li>
+<li><a href="https://camel.apache.org/security/CVE-2024-23114.html">https://camel.apache.org/security/CVE-2024-23114.html</a></li>
 </ul>
 <h3 id="credits-6">Credits</h3>
 <ul>
-<li>Mark Thorson of AT&amp;T (finder)</li>
-<li>Mark Thorson of AT&amp;T (reporter)</li>
+<li>Federico Mariani From Apache Software Foundation (finder)</li>
+<li>Andrea Cosentino from Apache Software Foundation (finder)</li>
 </ul>
-<h2 id="CVE-2025-66169">Cypher injection vulnerability in Camel-Neo4j component</h2>
-<p>CVE-2025-66169 <a href="./CVE-2025-66169.cve.json">[CVE json]</a> <a href="./CVE-2025-66169.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-01-14T11:45:34.042Z</em></p>
+<h2 id="CVE-2024-22371">Apache Camel issue on ExchangeCreatedEvent</h2>
+<p>CVE-2024-22371 <a href="https://cve.org/CVERecord?id=CVE-2024-22371">[CVE]</a> <a href="./CVE-2024-22371.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-02-26T09:22:36.071Z</em></p>
 <h3 id="affected-7">Affected</h3>
 <ul>
-<li>Apache Camel Neo4j from 4.10.0 before 4.10.8</li>
-<li>Apache Camel Neo4j from 4.14.0 before 4.14.3</li>
-<li>Apache Camel Neo4j from 4.15.0 before 4.17.0</li>
+<li>Apache Camel from 1.x through 1.6.0</li>
+<li>Apache Camel from 3.21.x through 3.21.3</li>
+<li>Apache Camel from 3.22.x through 3.22.0</li>
+<li>Apache Camel from 4.0.x through 4.0.3</li>
+<li>Apache Camel from 4.x through 4.3.0</li>
 </ul>
 <h3 id="description-7">Description</h3>
-<p>Cypher Injection vulnerability in Apache Camel camel-neo4j component.</p><p>This issue affects Apache Camel: from 4.10.0 before 4.10.8, from 4.14.0 before 4.14.3, from 4.15.0 before 4.17.0</p><p><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 4.10.8 for 4.10.x LTS and 4.14.3 for 4.14.x LTS and 4.17.0.</span></p>
+<p>Exposure of sensitive data by by crafting a malicious EventFactory and providing a custom ExchangeCreatedEvent that exposes sensitive data. Vulnerability in Apache Camel.<p>This issue affects Apache Camel: from 3.21.X through 3.21.3, from 3.22.X through 3.22.0, from 4.0.X through 4.0.3, from 4.X through 4.3.0.</p><p>Users are recommended to upgrade to version 3.21.4, 3.22.1, 4.0.4 or 4.4.0, which fixes the issue.</p></p>
 <h3 id="references-7">References</h3>
 <ul>
-<li><a href="https://camel.apache.org/security/CVE-2025-66169.html">https://camel.apache.org/security/CVE-2025-66169.html</a></li>
+<li><a href="https://camel.apache.org/security/CVE-2024-22371.html">https://camel.apache.org/security/CVE-2024-22371.html</a></li>
 </ul>
 <h3 id="credits-7">Credits</h3>
 <ul>
-<li>Ya0H4cker (finder)</li>
+<li>Otavio Rodolfo Piske from the Apache Software Foundation (finder)</li>
+</ul>
+<h2 id="CVE-2024-22369">Camel-SQL: Unsafe Deserialization from JDBCAggregationRepository</h2>
+<p>CVE-2024-22369 <a href="https://cve.org/CVERecord?id=CVE-2024-22369">[CVE]</a> <a href="./CVE-2024-22369.cve.json">[CVE json]</a> <a href="./CVE-2024-22369.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-02-20T15:01:05.582Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Camel from 3.0.0 before 3.21.4</li>
+<li>Apache Camel from 3.22.0 before 3.22.1</li>
+<li>Apache Camel from 4.0.0 before 4.0.4</li>
+<li>Apache Camel from 4.1.0 before 4.4.0</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>Deserialization of Untrusted Data vulnerability in Apache Camel SQL Component<p>This issue affects Apache Camel: from 3.0.0 before 3.21.4, from 3.22.0 before 3.22.1, from 4.0.0 before 4.0.4, from 4.1.0 before 4.4.0.</p><p>Users are recommended to upgrade to version 4.4.0, which fixes the issue. If users are on the 4.0.x LTS releases stream, then they are suggested to upgrade to 4.0.4. If users are on 3.x, they are suggested to move to 3.21.4 or 3.22.1</p></p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/3dko781dy2gy5l3fs48p56fgp429yb0f">https://lists.apache.org/thread/3dko781dy2gy5l3fs48p56fgp429yb0f</a></li>
+<li><a href="https://camel.apache.org/security/CVE-2024-22369.html">https://camel.apache.org/security/CVE-2024-22369.html</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>Ziyang Chen from HuaWei Open Source Management Center (finder)</li>
+<li>Pingtao Wei from HuaWei Open Source Management Center (finder)</li>
+<li>Haoran Zhi from HuaWei Open Source Management Center (finder)</li>
+</ul>
+<h2 id="CVE-2023-34442">Temporary file information disclosure in Camel-Jira</h2>
+<p>CVE-2023-34442 <a href="https://cve.org/CVERecord?id=CVE-2023-34442">[CVE]</a> <a href="./CVE-2023-34442.cve.json">[CVE json]</a> <a href="./CVE-2023-34442.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-07-10T09:31:01.757Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache Camel JIRA from 3.x through &lt;=3.14.8</li>
+<li>Apache Camel JIRA from 3.18.x through &lt;=3.18.7</li>
+<li>Apache Camel JIRA from 3.20.x through &lt;= 3.20.5</li>
+<li>Apache Camel JIRA from 4.x through &lt;= 4.0.0-M3</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Software Foundation Apache Camel.<p>This issue affects Apache Camel: from 3.X through &lt;=3.14.8, from 3.18.X through &lt;=3.18.7, from 3.20.X through &lt;= 3.20.5, from 4.X through &lt;= 4.0.0-M3.</p><span style="background-color: rgb(255, 255, 255);">Users should upgrade to 3.14.9, 3.18.8, 3.20.6 or 3.21.0 and for users on Camel 4.x update to 4.0.0-M1</span><br></p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/x4vy2hhbltb1xrvy1g6m8hpjgj2k7wgh">https://lists.apache.org/thread/x4vy2hhbltb1xrvy1g6m8hpjgj2k7wgh</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>Jonathan Leitschuh of the Open Source Security Foundation: Project Alpha-Omega (reporter)</li>
 </ul>
 
   

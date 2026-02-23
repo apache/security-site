@@ -105,586 +105,586 @@
 <p>Do you want disclose a potential security issue for Apache InLong? You can read more about the projects&rsquo; security policy on their <a href="https://inlong.apache.org/docs/next/security/">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://inlong.apache.org/docs/next/security/">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2022-40955">Deserialization attack in Apache InLong prior to version 1.3.0 allows RCE via JDBC</h2>
-<p>CVE-2022-40955 <a href="./CVE-2022-40955.cve.json">[CVE json]</a> <a href="./CVE-2022-40955.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-02-01T03:30:57.303Z</em></p>
+<h2 id="CVE-2025-27531">An arbitrary file read vulnerability for JDBC</h2>
+<p>CVE-2025-27531 <a href="https://cve.org/CVERecord?id=CVE-2025-27531">[CVE]</a> <a href="./CVE-2025-27531.cve.json">[CVE json]</a> <a href="./CVE-2025-27531.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-02-28T12:24:23.760Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache InLong from Apache InLong before 1.3.0</li>
+<li>Apache InLong from 1.13.0 before 2.1.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>In versions of Apache InLong prior to 1.3.0, an attacker with sufficient privileges to specify MySQL JDBC connection URL parameters and to write arbitrary data to the MySQL database, could cause this data to be deserialized by Apache InLong, potentially leading to Remote Code Execution on the Apache InLong server.</p>
-<p>Users are advised to upgrade to Apache InLong 1.3.0 or newer.</p>
+<p>Deserialization of Untrusted Data vulnerability in Apache InLong.&nbsp;</p><p>This issue affects Apache InLong: from 1.13.0 before 2.1.0, 
+<p><span style="background-color: rgb(255, 255, 255);">this issue would allow an authenticated attacker to read arbitrary files</span><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);"> by double writing the param.</span></p>
+</span>
+</p><p>Users are recommended to upgrade to version 2.1.0, which fixes the issue.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/r1r34y7bchrpmp9jhfdoohzdmk7pj1q1">https://lists.apache.org/thread/r1r34y7bchrpmp9jhfdoohzdmk7pj1q1</a></li>
+<li><a href="https://lists.apache.org/thread/r62lkqrr739wvcb60j6ql6q63rh4bxx5">https://lists.apache.org/thread/r62lkqrr739wvcb60j6ql6q63rh4bxx5</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>This issue was discovered by 4ra1n of Chaitin Tech.</li>
+<li>Ming (finder)</li>
 </ul>
-<h2 id="CVE-2023-24977">Jdbc Connection causes arbitrary file reading in InLong</h2>
-<p>CVE-2023-24977 <a href="./CVE-2023-24977.cve.json">[CVE json]</a> <a href="./CVE-2023-24977.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-02-01T09:09:46.267Z</em></p>
+<h2 id="CVE-2025-27528">JDBC Vulnerability for Invisible Character Bypass Leading to Arbitrary File Read</h2>
+<p>CVE-2025-27528 <a href="https://cve.org/CVERecord?id=CVE-2025-27528">[CVE]</a> <a href="./CVE-2025-27528.cve.json">[CVE json]</a> <a href="./CVE-2025-27528.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-05-28T08:12:25.901Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache InLong from 1.1.0 through 1.5.0</li>
+<li>Apache InLong from 1.13.0 through 2.1.0</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>Out-of-bounds Read vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.1.0 through 1.5.0. Users are advised to upgrade to Apache InLong&rsquo;s latest version or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7214"><a href="https://github.com/apache/inlong/pull/7214">https://github.com/apache/inlong/pull/7214</a></a> to solve it.</p></p>
+<p>Deserialization of Untrusted Data vulnerability in Apache InLong.</p><p>This issue affects Apache InLong: from 1.13.0 through 2.1.0. 
+<p><span style="background-color: rgb(255, 255, 255);">This
+vulnerability allows attackers to bypass the security mechanisms of InLong
+JDBC and leads to arbitrary file reading. </span><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong&rsquo;s 2.2.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/11747"><a href="https://github.com/apache/inlong/pull/11747">https://github.com/apache/inlong/pull/11747</a></a></span></p><p></p></p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/ggozxorctn3tdll7bgmpwwcbjnd0s6w7">https://lists.apache.org/thread/ggozxorctn3tdll7bgmpwwcbjnd0s6w7</a></li>
+<li><a href="https://lists.apache.org/thread/b807rqzgyv4qgvxw3nhkq8tl6g90gqgj">https://lists.apache.org/thread/b807rqzgyv4qgvxw3nhkq8tl6g90gqgj</a></li>
+<li><a href="https://github.com/apache/inlong/pull/11747">https://github.com/apache/inlong/pull/11747</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>This issue was discovered by s3gundo of Hundsun Tech (finder)</li>
+<li>yulat (finder)</li>
+<li>m4x (finder)</li>
+<li>h3h3qaq (finder)</li>
 </ul>
-<h2 id="CVE-2023-24997">Jdbc Connection Security Bypass</h2>
-<p>CVE-2023-24997 <a href="./CVE-2023-24997.cve.json">[CVE json]</a> <a href="./CVE-2023-24997.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-03-27T09:06:20.067Z</em></p>
+<h2 id="CVE-2025-27526">JDBC Vulnerability For URLEncode and backspace bypass</h2>
+<p>CVE-2025-27526 <a href="https://cve.org/CVERecord?id=CVE-2025-27526">[CVE]</a> <a href="./CVE-2025-27526.cve.json">[CVE json]</a> <a href="./CVE-2025-27526.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-05-28T08:07:33.686Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache InLong from 1.1.0 through 1.5.0</li>
+<li>Apache InLong from 1.13 through 2.1.0</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>Deserialization of Untrusted Data vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.1.0 through 1.5.0. <span style="background-color: rgb(255, 255, 255);">Users are advised to upgrade to Apache InLong&rsquo;s latest version or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7223"><a href="https://github.com/apache/inlong/pull/7223">https://github.com/apache/inlong/pull/7223</a></a></span><span style="background-color: rgb(255, 255, 255);"> to solve it.</span></p></p>
+<p>Deserialization of Untrusted Data vulnerability in Apache InLong.</p><p>This issue affects Apache InLong: from 1.13.0 through 2.1.0. This vulnerability which can lead to JDBC Vulnerability URLEncdoe and backspace bypass. <span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's 2.2.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/11747">https://github.com/apache/inlong/pull/11747</a></span></p><p></p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/nxvtxq7oxhwyzo9ty2hqz8rvh5r7ngd8">https://lists.apache.org/thread/nxvtxq7oxhwyzo9ty2hqz8rvh5r7ngd8</a></li>
+<li><a href="https://lists.apache.org/thread/4t4sqscm7xdqn883dyjy40qk6ncf26xf">https://lists.apache.org/thread/4t4sqscm7xdqn883dyjy40qk6ncf26xf</a></li>
+<li><a href="https://github.com/apache/inlong/pull/11747">https://github.com/apache/inlong/pull/11747</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>This issue was discovered by s3gundo of Hundsun Tech (finder)</li>
+<li>yulate (finder)</li>
+<li>m4x (finder)</li>
+<li>h3h3qaq (finder)</li>
 </ul>
-<h2 id="CVE-2023-27296">JDBC Deserialization Vulnerability in InLong</h2>
-<p>CVE-2023-27296 <a href="./CVE-2023-27296.cve.json">[CVE json]</a> <a href="./CVE-2023-27296.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-03-27T08:57:01.107Z</em></p>
+<h2 id="CVE-2025-27522">JDBC Vulnerability during verification processing</h2>
+<p>CVE-2025-27522 <a href="https://cve.org/CVERecord?id=CVE-2025-27522">[CVE]</a> <a href="./CVE-2025-27522.cve.json">[CVE json]</a> <a href="./CVE-2025-27522.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-05-28T08:06:02.351Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache InLong from 1.1.0 through 1.5.0</li>
+<li>Apache InLong from 1.13.0 through 2.1.0</li>
 </ul>
 <h3 id="description-3">Description</h3>
-<p>Deserialization of Untrusted Data vulnerability in Apache Software Foundation Apache InLong.<br><br><span style="background-color: rgb(255, 255, 255);">It could be triggered by authenticated users of InLong, </span>you could refer to [1] to know more about this vulnerability.<br><br>This issue affects Apache InLong: from 1.1.0 through 1.5.0.  Users are advised to upgrade to Apache InLong&rsquo;s latest version or cherry-pick [2] to solve it.<br><br></p>
-<p><span style="background-color: rgb(255, 255, 255);">[1] </span><a target="_blank" rel="nofollow" href="https://programmer.help/blogs/jdbc-deserialization-vulnerability-learning.html"><a href="https://programmer.help/blogs/jdbc-deserialization-vulnerability-learning.html">https://programmer.help/blogs/jdbc-deserialization-vulnerability-learning.html</a><br><br></a></p>
-<p><span style="background-color: rgb(255, 255, 255);">[2] </span><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7422"><a href="https://github.com/apache/inlong/pull/7422">https://github.com/apache/inlong/pull/7422</a></a></p>
-<p><br><br></p>
+<p>Deserialization of Untrusted Data vulnerability in Apache InLong.</p><p>This issue affects Apache InLong: from 1.13.0 through 2.1.0.&nbsp;This vulnerability is a secondary mining bypass for CVE-2024-26579.&nbsp;<span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's 2.2.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/11732">
+<p></a><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/11732"><a href="https://github.com/apache/inlong/pull/11732">https://github.com/apache/inlong/pull/11732</a></a></span></p><p></p></p>
 <h3 id="references-3">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/xbvtjw9bwzgbo9fp1by8o3p49nf59xzt">https://lists.apache.org/thread/xbvtjw9bwzgbo9fp1by8o3p49nf59xzt</a></li>
+<li><a href="https://lists.apache.org/thread/s4dnmq3gwcjocxf85qk190knlzd26jby">https://lists.apache.org/thread/s4dnmq3gwcjocxf85qk190knlzd26jby</a></li>
+<li><a href="https://github.com/apache/inlong/pull/11732">https://github.com/apache/inlong/pull/11732</a></li>
 </ul>
 <h3 id="credits-3">Credits</h3>
 <ul>
-<li>escape Wang (finder)</li>
+<li>yulate (finder)</li>
+<li>m4x (finder)</li>
 </ul>
-<h2 id="CVE-2023-30465">SQL injection in apache inLong 1.5.0</h2>
-<p>CVE-2023-30465 <a href="./CVE-2023-30465.cve.json">[CVE json]</a> <a href="./CVE-2023-30465.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-04-11T14:18:47.907Z</em></p>
+<h2 id="CVE-2024-36268">Remote Code Execution vulnerability</h2>
+<p>CVE-2024-36268 <a href="https://cve.org/CVERecord?id=CVE-2024-36268">[CVE]</a> <a href="./CVE-2024-36268.cve.json">[CVE json]</a> <a href="./CVE-2024-36268.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-08-02T09:44:23.542Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache InLong from 1.4.0 through 1.5.0</li>
+<li>Apache InLong TubeMQ Client from 1.10.0 through 1.12.0</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<p>Improper Neutralization of Special Elements used in an SQL Command (&lsquo;SQL Injection&rsquo;) vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.5.0. By manipulating the &ldquo;orderType&rdquo; parameter and the ordering of the returned content using an SQL injection attack, an attacker can extract the username of the   user with ID 1 from the &ldquo;user&rdquo; table, one character at a time.  Users are advised to upgrade to Apache InLong&rsquo;s 1.6.0 or cherry-pick [1] to solve it.<br><a target="_blank" rel="nofollow" href="https://programmer.help/blogs/jdbc-deserialization-vulnerability-learning.html"><br></a></p>
-<p><span style="background-color: rgb(255, 255, 255);">[1] </span><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/issues/7529"><a href="https://github.com/apache/inlong/issues/7529">https://github.com/apache/inlong/issues/7529</a></a></p></p>
+<p>Improper Control of Generation of Code ('Code Injection') vulnerability in Apache InLong.</p><p>This issue affects Apache InLong: from 1.10.0 through 1.12.0, which could lead to Remote Code Execution. <span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's 1.13.0 or cherry-pick [1] to solve it.</span></p>
+<p><span style="background-color: rgb(255, 255, 255);">[1]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/10251">https://github.com/apache/inlong/pull/10251</a></span></p>
+<p></p>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/mrh4nr3jrlbj6nxkn4q8hddbfh1pnok0">https://lists.apache.org/thread/mrh4nr3jrlbj6nxkn4q8hddbfh1pnok0</a></li>
+<li><a href="https://lists.apache.org/thread/1w1yp1bg5sjvn46dszkf00tz1vfs0frc">https://lists.apache.org/thread/1w1yp1bg5sjvn46dszkf00tz1vfs0frc</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>escape Wang (finder)</li>
+<li>X1r0z  (finder)</li>
 </ul>
-<h2 id="CVE-2023-31058">JDBC URL bypassing by adding blanks</h2>
-<p>CVE-2023-31058 <a href="./CVE-2023-31058.cve.json">[CVE json]</a> <a href="./CVE-2023-31058.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-05-22T15:48:32.710Z</em></p>
+<h2 id="CVE-2024-26580">Logged-in user could exploit an arbitrary file read vulnerability</h2>
+<p>CVE-2024-26580 <a href="https://cve.org/CVERecord?id=CVE-2024-26580">[CVE]</a> <a href="./CVE-2024-26580.cve.json">[CVE json]</a> <a href="./CVE-2024-26580.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-08-02T09:40:25.011Z</em></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
-<li>Apache InLong from 1.4.0 through 1.6.0</li>
+<li>Apache InLong from 1.4.0 through 1.10.0</li>
 </ul>
 <h3 id="description-5">Description</h3>
-<p>Deserialization of Untrusted Data Vulnerability in Apache Software Foundation Apache InLong.<p><span style="background-color: var(--wht);">This issue affects Apache InLong: from 1.4.0 through 1.6.0. </span><span style="background-color: var(--wht);"><span style="background-color: rgb(255, 255, 255);">Attackers would bypass the
-&lsquo;autoDeserialize&rsquo; option filtering by a<span style="background-color: var(--wht);">dding</span><span style="background-color: var(--wht);"><span style="background-color: rgb(255, 255, 255);"> blanks</span></span></span>.  Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7674"></p>
-<p></a><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7674"><a href="https://github.com/apache/inlong/pull/7674">https://github.com/apache/inlong/pull/7674</a></a> to solve it.</span></p></p>
+<p>Deserialization of Untrusted Data vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.8.0 through 1.10.0, the attackers can</p>
+<p><span style="background-color: rgb(255, 255, 255);">use the specific payload to read from an arbitrary file</span>. <span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong&rsquo;s 1.11.0 or cherry-pick [1] to solve it.</span></p></p>
+<p><span style="background-color: rgb(255, 255, 255);">[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/9673">https://github.com/apache/inlong/pull/9673</a></span></p>
+<p></p>
 <h3 id="references-5">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/bkcgbn9l61croxfyspf7xd42qb189s3z">https://lists.apache.org/thread/bkcgbn9l61croxfyspf7xd42qb189s3z</a></li>
+<li><a href="https://lists.apache.org/thread/xvomf66l58x4dmoyzojflvx52gkzcdmk">https://lists.apache.org/thread/xvomf66l58x4dmoyzojflvx52gkzcdmk</a></li>
 </ul>
 <h3 id="credits-5">Credits</h3>
 <ul>
-<li>sw0rd1ight of Caiji Sec Team (finder)</li>
-<li>4ra1n of Chaitin Tech (finder)</li>
-<li>H Ming (finder)</li>
+<li>an4er (finder)</li>
 </ul>
-<h2 id="CVE-2023-31062">Privilege escalation vulnerability for InLong</h2>
-<p>CVE-2023-31062 <a href="./CVE-2023-31062.cve.json">[CVE json]</a> <a href="./CVE-2023-31062.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-05-22T15:47:33.464Z</em></p>
+<h2 id="CVE-2024-26579">Apache Inlong JDBC Vulnerability</h2>
+<p>CVE-2024-26579 <a href="https://cve.org/CVERecord?id=CVE-2024-26579">[CVE]</a> <a href="./CVE-2024-26579.cve.json">[CVE json]</a> <a href="./CVE-2024-26579.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-05-08T14:57:16.261Z</em></p>
 <h3 id="affected-6">Affected</h3>
 <ul>
-<li>Apache InLong from 1.2.0 through 1.6.0</li>
+<li>Apache InLong from 1.7.0 through 1.11</li>
 </ul>
 <h3 id="description-6">Description</h3>
-<p>Improper Privilege Management Vulnerabilities in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.2.0 through 1.6.0.  When the attacker has access to a valid (but unprivileged) account, t<span style="background-color: rgb(255, 255, 255);">he exploit can be executed using Burp Suite by sending a login
-request and following it with a subsequent HTTP request
-using the returned cookie<span style="background-color: rgb(255, 255, 255);">.</span></span></p><p><span style="background-color: rgb(255, 255, 255);">Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick <span style="background-color: rgb(255, 255, 255);"><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7836"><a href="https://github.com/apache/inlong/pull/7836">https://github.com/apache/inlong/pull/7836</a></a></span> to solve it.</span><span style="background-color: rgb(255, 255, 255);"><br></p>
-<p></span></p></p>
+<p>Deserialization of Untrusted Data vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.7.0 through 1.11.0, </p>
+<p>the attackers can bypass using malicious parameters.</p>
+<p><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong&rsquo;s 1.12.0 or cherry-pick [1], [2] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/9694"><a href="https://github.com/apache/inlong/pull/9694">https://github.com/apache/inlong/pull/9694</a></a></span></p><p>[2] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/9707"><a href="https://github.com/apache/inlong/pull/9707">https://github.com/apache/inlong/pull/9707</a></a></p><p></p></p>
 <h3 id="references-6">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/btorjbo9o71h22tcvxzy076022hjdzq0">https://lists.apache.org/thread/btorjbo9o71h22tcvxzy076022hjdzq0</a></li>
+<li><a href="https://lists.apache.org/thread/d2hndtvh6bll4pkl91o2oqxyynhr54k3">https://lists.apache.org/thread/d2hndtvh6bll4pkl91o2oqxyynhr54k3</a></li>
 </ul>
 <h3 id="credits-6">Credits</h3>
 <ul>
-<li>escape Wang (finder)</li>
+<li>L0ne1y  (finder)</li>
+<li>Ming (finder)</li>
 </ul>
-<h2 id="CVE-2023-31064">Insecurity direct object references cancelling applications</h2>
-<p>CVE-2023-31064 <a href="./CVE-2023-31064.cve.json">[CVE json]</a> <a href="./CVE-2023-31064.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-05-22T15:44:19.190Z</em></p>
+<h2 id="CVE-2023-51785">Arbitrary File Read Vulnerability in Apache InLong Manager</h2>
+<p>CVE-2023-51785 <a href="https://cve.org/CVERecord?id=CVE-2023-51785">[CVE]</a> <a href="./CVE-2023-51785.cve.json">[CVE json]</a> <a href="./CVE-2023-51785.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-01-03T09:36:21.640Z</em></p>
 <h3 id="affected-7">Affected</h3>
 <ul>
-<li>Apache InLong from 1.2.0 through 1.6.0</li>
+<li>Apache InLong from 1.7.0 through 1.9.0</li>
 </ul>
 <h3 id="description-7">Description</h3>
-<p>Files or Directories Accessible to External Parties vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.2.0 through 1.6.0. the user in InLong could cancel an <span style="background-color: rgb(255, 255, 255);">application that doesn&rsquo;t belongs to it. </span>Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7799"><a href="https://github.com/apache/inlong/pull/7799">https://github.com/apache/inlong/pull/7799</a></a> to solve it.<br></p></p>
+<p>Deserialization of Untrusted Data vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.7.0 through 1.9.0, the attackers can make a arbitrary file read attack using mysql driver. <span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong&rsquo;s 1.10.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/9331"><a href="https://github.com/apache/inlong/pull/9331">https://github.com/apache/inlong/pull/9331</a></a></span></p></p>
+<p></p>
 <h3 id="references-7">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/1osd2k3t3qol2wdsswqtr9gxdkf78n00">https://lists.apache.org/thread/1osd2k3t3qol2wdsswqtr9gxdkf78n00</a></li>
+<li><a href="https://lists.apache.org/thread/g0yjmtjqvp8bnf1j0tdsk0nhfozjdjno">https://lists.apache.org/thread/g0yjmtjqvp8bnf1j0tdsk0nhfozjdjno</a></li>
 </ul>
 <h3 id="credits-7">Credits</h3>
 <ul>
-<li>lujie.ac.cn (finder)</li>
+<li>X1r0z (finder)</li>
 </ul>
-<h2 id="CVE-2023-31065">Insufficient Session Expiration in InLong</h2>
-<p>CVE-2023-31065 <a href="./CVE-2023-31065.cve.json">[CVE json]</a> <a href="./CVE-2023-31065.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-05-22T15:40:53.524Z</em></p>
+<h2 id="CVE-2023-51784">Remote Code Execution vulnerability in Apache InLong Manager</h2>
+<p>CVE-2023-51784 <a href="https://cve.org/CVERecord?id=CVE-2023-51784">[CVE]</a> <a href="./CVE-2023-51784.cve.json">[CVE json]</a> <a href="./CVE-2023-51784.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-01-03T09:39:13.790Z</em></p>
 <h3 id="affected-8">Affected</h3>
 <ul>
-<li>Apache InLong from 1.4.0 through 1.6.0</li>
+<li>Apache InLong from 1.5.0 through 1.9.0</li>
 </ul>
 <h3 id="description-8">Description</h3>
-<p>Insufficient Session Expiration vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.6.0. </p>
-<p><span style="background-color: rgb(255, 255, 255);">An old session can be used by an attacker even after the user has been deleted or the password has been changed.</span></p>
-<p>Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7836"><a href="https://github.com/apache/inlong/pull/7836">https://github.com/apache/inlong/pull/7836</a></a>, <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7884"><a href="https://github.com/apache/inlong/pull/7884">https://github.com/apache/inlong/pull/7884</a></a> to solve it.</p>
-<p><br></p></p>
+<p>Improper Control of Generation of Code (&lsquo;Code Injection&rsquo;) vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.5.0 through 1.9.0, which could lead to Remote Code Execution. <span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong&rsquo;s 1.10.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1] </span><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8814"></a><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/9329"><a href="https://github.com/apache/inlong/pull/9329">https://github.com/apache/inlong/pull/9329</a></a></p><p></p></p>
 <h3 id="references-8">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/to7o0n2cks0omtwo6mhh5cs2vfdbplqf">https://lists.apache.org/thread/to7o0n2cks0omtwo6mhh5cs2vfdbplqf</a></li>
+<li><a href="https://lists.apache.org/thread/4nxbyl6mh5jgh0plk0qposbxwn6w9h8j">https://lists.apache.org/thread/4nxbyl6mh5jgh0plk0qposbxwn6w9h8j</a></li>
 </ul>
 <h3 id="credits-8">Credits</h3>
 <ul>
-<li>lujie.ac.cn (finder)</li>
+<li>X1r0z (finder)</li>
 </ul>
-<h2 id="CVE-2023-31066">Insecure direct object references for inlong sources</h2>
-<p>CVE-2023-31066 <a href="./CVE-2023-31066.cve.json">[CVE json]</a> <a href="./CVE-2023-31066.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-05-22T15:35:37.675Z</em></p>
+<h2 id="CVE-2023-46227">Apache inlong has an Arbitrary File Read Vulnerability</h2>
+<p>CVE-2023-46227 <a href="https://cve.org/CVERecord?id=CVE-2023-46227">[CVE]</a> <a href="./CVE-2023-46227.cve.json">[CVE json]</a> <a href="./CVE-2023-46227.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-10-19T09:40:37.360Z</em></p>
 <h3 id="affected-9">Affected</h3>
 <ul>
-<li>Apache InLong from 1.4.0 through 1.6.0</li>
+<li>Apache InLong from 1.4.0 through 1.8.0</li>
 </ul>
 <h3 id="description-9">Description</h3>
-<p>Files or Directories Accessible to External Parties vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.6.0. Different users in InLong could <span style="background-color: rgb(255, 255, 255);">delete, edit, stop, and start others&rsquo; sources!</span> Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7775"><a href="https://github.com/apache/inlong/pull/7775">https://github.com/apache/inlong/pull/7775</a></a> to solve it.<br></p></p>
+<span style="background-color: rgb(255, 255, 255);">
+<p>Deserialization of Untrusted Data Vulnerability in Apache Software Foundation Apache InLong.</p>
+<p></span><p>This issue affects Apache InLong: from 1.4.0 through 1.8.0, the a<span style="background-color: rgb(255, 255, 255);">ttacker can use \t to bypass. </span>Users are advised to upgrade to Apache InLong&rsquo;s 1.9.0 or cherry-pick [1] to solve it.</p><p><span style="background-color: rgb(255, 255, 255);">[1] </span><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8814"></a><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8814"><a href="https://github.com/apache/inlong/pull/8814">https://github.com/apache/inlong/pull/8814</a></a></p></p>
 <h3 id="references-9">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/x7y05wo37sq5l9fnmmsjh2dr9kcjrcxf">https://lists.apache.org/thread/x7y05wo37sq5l9fnmmsjh2dr9kcjrcxf</a></li>
+<li><a href="https://lists.apache.org/thread/m8txor4f76tmrxksrmc87tw42g57nz33">https://lists.apache.org/thread/m8txor4f76tmrxksrmc87tw42g57nz33</a></li>
 </ul>
 <h3 id="credits-9">Credits</h3>
 <ul>
-<li>lujie.ac.cn (finder)</li>
+<li>Snakinya (finder)</li>
+<li>s3gundo (finder)</li>
 </ul>
-<h2 id="CVE-2023-31098">Weak Password Implementation in InLong</h2>
-<p>CVE-2023-31098 <a href="./CVE-2023-31098.cve.json">[CVE json]</a> <a href="./CVE-2023-31098.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-05-22T15:31:51.278Z</em></p>
+<h2 id="CVE-2023-43668">Jdbc Connection Security Bypass in InLong</h2>
+<p>CVE-2023-43668 <a href="https://cve.org/CVERecord?id=CVE-2023-43668">[CVE]</a> <a href="./CVE-2023-43668.cve.json">[CVE json]</a> <a href="./CVE-2023-43668.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-11-14T09:51:43.493Z</em></p>
 <h3 id="affected-10">Affected</h3>
 <ul>
-<li>Apache InLong from 1.1.0 through 1.6.0</li>
+<li>Apache InLong from 1.4.0 through 1.8.0</li>
 </ul>
 <h3 id="description-10">Description</h3>
-<p>Weak Password Requirements vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.1.0 through 1.6.0. </p>
-<p><span style="background-color: rgb(255, 255, 255);">When users change their password to a simple password (with any character or
-symbol), attackers can easily guess the user&rsquo;s password and access the account.</span></p><p>Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7805"><a href="https://github.com/apache/inlong/pull/7805">https://github.com/apache/inlong/pull/7805</a></a> to solve it.<br></p></p>
+<p>Authorization Bypass Through User-Controlled Key vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.8.0, </p>
+<p><span style="background-color: rgb(255, 255, 255);">some sensitive params  checks will be </span><span style="background-color: rgb(255, 255, 255);">bypassed, <span style="background-color: rgb(255, 255, 255);">like &ldquo;autoDeserizalize&rdquo;,&quot;</span><span style="background-color: rgb(255, 255, 255);">allowLoadLocalInfile&quot;&hellip;.</span></p>
+<p>.</span>  </p>
+<p><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong&rsquo;s 1.9.0 or cherry-pick [1] to solve it.</span></p>
+</p><p>[1]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8604">https://github.com/apache/inlong/pull/8604</a></p>
 <h3 id="references-10">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/1fvloc3no1gbffzrcsx9ltsg08wr2d1w">https://lists.apache.org/thread/1fvloc3no1gbffzrcsx9ltsg08wr2d1w</a></li>
+<li><a href="https://lists.apache.org/thread/16gtk7rpdm1rof075ro83fkrnhbzn5sh">https://lists.apache.org/thread/16gtk7rpdm1rof075ro83fkrnhbzn5sh</a></li>
 </ul>
 <h3 id="credits-10">Credits</h3>
 <ul>
-<li>lujie.ac.cn (finder)</li>
+<li>nbxiglk (finder)</li>
 </ul>
-<h2 id="CVE-2023-31101">Users who joined later can see the data of deleted users</h2>
-<p>CVE-2023-31101 <a href="./CVE-2023-31101.cve.json">[CVE json]</a> <a href="./CVE-2023-31101.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-05-22T15:18:30.325Z</em></p>
+<h2 id="CVE-2023-43667">Log Injection in Global functions</h2>
+<p>CVE-2023-43667 <a href="https://cve.org/CVERecord?id=CVE-2023-43667">[CVE]</a> <a href="./CVE-2023-43667.cve.json">[CVE json]</a> <a href="./CVE-2023-43667.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-09-27T11:45:32.709Z</em></p>
 <h3 id="affected-11">Affected</h3>
 <ul>
-<li>Apache InLong from 1.5.0 through 1.6.0</li>
+<li>Apache InLong from 1.4.0 through 1.8.0</li>
 </ul>
 <h3 id="description-11">Description</h3>
-<p>Insecure Default Initialization of Resource Vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.5.0 through 1.6.0.  Users registered in InLong who joined later can see deleted users&rsquo; data. Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7836"><a href="https://github.com/apache/inlong/pull/7836">https://github.com/apache/inlong/pull/7836</a></a> to solve it.<br></p></p>
+<p>Improper Neutralization of Special Elements used in an SQL Command (&lsquo;SQL Injection&rsquo;) vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.8.0, the a<span style="background-color: rgb(255, 255, 255);">ttacker can create misleading or false records, making it harder to audit
+and trace malicious activities. </span>Users are advised to upgrade to Apache InLong&rsquo;s 1.8.0 or cherry-pick [1] to solve it.</p><p></p>
+<p><span style="background-color: rgb(255, 255, 255);">[1] </span><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8628"><a href="https://github.com/apache/inlong/pull/8628">https://github.com/apache/inlong/pull/8628</a></a></p><p></p></p>
 <h3 id="references-11">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/shvwwr6toqz5rr39rwh4k03z08sh9jmr">https://lists.apache.org/thread/shvwwr6toqz5rr39rwh4k03z08sh9jmr</a></li>
+<li><a href="https://lists.apache.org/thread/spnb378g268p1f902fr9kqyph2k8n543">https://lists.apache.org/thread/spnb378g268p1f902fr9kqyph2k8n543</a></li>
 </ul>
-<h3 id="credits-11">Credits</h3>
-<ul>
-<li>lujie.ac.cn (finder)</li>
-</ul>
-<h2 id="CVE-2023-31103">Attackers can change the immutable name and type of cluster</h2>
-<p>CVE-2023-31103 <a href="./CVE-2023-31103.cve.json">[CVE json]</a> <a href="./CVE-2023-31103.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-05-22T15:13:26.771Z</em></p>
+<h2 id="CVE-2023-43666">General user Unauthorized access User Management</h2>
+<p>CVE-2023-43666 <a href="https://cve.org/CVERecord?id=CVE-2023-43666">[CVE]</a> <a href="./CVE-2023-43666.cve.json">[CVE json]</a> <a href="./CVE-2023-43666.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-10-16T01:54:42.830Z</em></p>
 <h3 id="affected-12">Affected</h3>
 <ul>
-<li>Apache InLong from 1.4.0 through 1.6.0</li>
+<li>Apache InLong from 1.4.0 through 1.8.0</li>
 </ul>
 <h3 id="description-12">Description</h3>
-<p>Exposure of Resource to Wrong Sphere Vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.6.0. 
-Attackers can change the immutable name and type of cluster of InLong. Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7891"><a href="https://github.com/apache/inlong/pull/7891">https://github.com/apache/inlong/pull/7891</a></a> to solve it.<br></p></p>
+<p>Insufficient Verification of Data Authenticity vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.8.0, </p>
+<p><span style="background-color: rgb(255, 255, 255);">General user can view all user data like Admin account.</span></p>
+<p><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong&rsquo;s 1.9.0 or cherry-pick [1] to solve it.</span></p><p></p>
+<p>[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8623"><a href="https://github.com/apache/inlong/pull/8623">https://github.com/apache/inlong/pull/8623</a></a></p><p></p></p>
 <h3 id="references-12">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/bv51zhjookcnfbz8b0xsl9wv78sn0j1p">https://lists.apache.org/thread/bv51zhjookcnfbz8b0xsl9wv78sn0j1p</a></li>
-</ul>
-<h2 id="CVE-2023-31206">Attackers can change the immutable name and type of nodes</h2>
-<p>CVE-2023-31206 <a href="./CVE-2023-31206.cve.json">[CVE json]</a> <a href="./CVE-2023-31206.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-05-22T13:58:15.628Z</em></p>
-<h3 id="affected-13">Affected</h3>
-<ul>
-<li>Apache InLong from 1.4.0 through 1.6.0</li>
-</ul>
-<h3 id="description-13">Description</h3>
-<p>Exposure of Resource to Wrong Sphere Vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.6.0. <span style="background-color: var(--wht);">Attackers can change the immutable name and type of nodes of InLong. Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick [1] to solve it.</span></p><p><a target="_blank" rel="nofollow" href="https://cveprocess.apache.org/cve5/[1]%C2%A0https://github.com/apache/inlong/pull/7891">[1] </a><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7891"><a href="https://github.com/apache/inlong/pull/7891">https://github.com/apache/inlong/pull/7891</a></a></p></p>
-<h3 id="references-13">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/qb7zffo785wzpmsobjqcypodngw6kg6x">https://lists.apache.org/thread/qb7zffo785wzpmsobjqcypodngw6kg6x</a></li>
-</ul>
-<h2 id="CVE-2023-31453">IDOR make users can delete others&rsquo; subscription</h2>
-<p>CVE-2023-31453 <a href="./CVE-2023-31453.cve.json">[CVE json]</a> <a href="./CVE-2023-31453.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-05-22T13:25:45.562Z</em></p>
-<h3 id="affected-14">Affected</h3>
-<ul>
-<li>Apache InLong from 1.2.0 through 1.6.0</li>
-</ul>
-<h3 id="description-14">Description</h3>
-<p>Incorrect Permission Assignment for Critical Resource Vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.2.0 through 1.6.0. The <span style="background-color: rgb(255, 255, 255);">attacker can delete others&rsquo; subscriptions, even if they are not the owner
-of the deleted subscription</span><span style="background-color: rgb(255, 255, 255);">. </span>Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick [1] to solve it.</p><p>[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7949"></p>
-<p></a><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7949"><a href="https://github.com/apache/inlong/pull/7949">https://github.com/apache/inlong/pull/7949</a></a></p>
-</p>
-<p></p>
-<h3 id="references-14">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/9nz8o2skgc5230w276h4w92j0zstnl06">https://lists.apache.org/thread/9nz8o2skgc5230w276h4w92j0zstnl06</a></li>
-</ul>
-<h2 id="CVE-2023-31454">IDOR make users can bind any cluster</h2>
-<p>CVE-2023-31454 <a href="./CVE-2023-31454.cve.json">[CVE json]</a> <a href="./CVE-2023-31454.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-05-22T13:22:59.589Z</em></p>
-<h3 id="affected-15">Affected</h3>
-<ul>
-<li>Apache InLong from 1.2.0 through 1.6.0</li>
-</ul>
-<h3 id="description-15">Description</h3>
-<p>Incorrect Permission Assignment for Critical Resource Vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.2.0 through 1.6.0. </p>
-<p><span style="background-color: rgb(255, 255, 255);">The attacker can bind any cluster, even if he is not the cluster owner. Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7947"><a href="https://github.com/apache/inlong/pull/7947">https://github.com/apache/inlong/pull/7947</a></a> to solve it.</span><br></p>
-</p>
-<h3 id="references-15">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/nqt1tr6pbq8q4b033d7sg5gltx5pmjgl">https://lists.apache.org/thread/nqt1tr6pbq8q4b033d7sg5gltx5pmjgl</a></li>
-</ul>
-<h2 id="CVE-2023-34189">General user can delete and update process</h2>
-<p>CVE-2023-34189 <a href="./CVE-2023-34189.cve.json">[CVE json]</a> <a href="./CVE-2023-34189.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-07-25T07:08:51.094Z</em></p>
-<h3 id="affected-16">Affected</h3>
-<ul>
-<li>Apache InLong from 1.4.0 through 1.7.0</li>
-</ul>
-<h3 id="description-16">Description</h3>
-<p>Exposure of Resource to Wrong Sphere Vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.7.0. The attacker could use general users to delete and update the process, which only the admin can operate occurrences. </p>
-<p>Users are advised to upgrade to Apache InLong&rsquo;s 1.8.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8109"><a href="https://github.com/apache/inlong/pull/8109">https://github.com/apache/inlong/pull/8109</a></a> to solve it.</p>
-</p>
-<h3 id="references-16">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/smxqyx43hxjvzv4w71n2n3rfho9p378s">https://lists.apache.org/thread/smxqyx43hxjvzv4w71n2n3rfho9p378s</a></li>
-</ul>
-<h2 id="CVE-2023-34434">JDBC URL bypassing by allowLoadLocalInfileInPath param</h2>
-<p>CVE-2023-34434 <a href="./CVE-2023-34434.cve.json">[CVE json]</a> <a href="./CVE-2023-34434.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-07-25T07:09:55.864Z</em></p>
-<h3 id="affected-17">Affected</h3>
-<ul>
-<li>Apache InLong from 1.4.0 through 1.7.0</li>
-</ul>
-<h3 id="description-17">Description</h3>
-<p>Deserialization of Untrusted Data Vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.7.0. </p>
-<p>The attacker could bypass the current logic and achieve arbitrary file reading. To solve it, users are advised to upgrade to Apache InLong&rsquo;s 1.8.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8130"><a href="https://github.com/apache/inlong/pull/8130">https://github.com/apache/inlong/pull/8130</a></a>.</p>
-</p>
-<h3 id="references-17">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/7f1o71w5r732cspltmtdydn01gllf4jo">https://lists.apache.org/thread/7f1o71w5r732cspltmtdydn01gllf4jo</a></li>
-</ul>
-<h3 id="credits-12">Credits</h3>
-<ul>
-<li>sw0rd1ight and 4ra1n of Chaitin Tech (finder)</li>
+<li><a href="https://lists.apache.org/thread/scbgh3ty3xcxm3q33r2t9f42gwwo1why">https://lists.apache.org/thread/scbgh3ty3xcxm3q33r2t9f42gwwo1why</a></li>
 </ul>
 <h2 id="CVE-2023-35088">SQL injection in audit endpoint</h2>
-<p>CVE-2023-35088 <a href="./CVE-2023-35088.cve.json">[CVE json]</a> <a href="./CVE-2023-35088.osv.json">[OSV json]</a></p>
+<p>CVE-2023-35088 <a href="https://cve.org/CVERecord?id=CVE-2023-35088">[CVE]</a> <a href="./CVE-2023-35088.cve.json">[CVE json]</a> <a href="./CVE-2023-35088.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2023-07-25T07:10:17.507Z</em></p>
-<h3 id="affected-18">Affected</h3>
+<h3 id="affected-13">Affected</h3>
 <ul>
 <li>Apache InLong from 1.4.0 through 1.7.0</li>
 </ul>
-<h3 id="description-18">Description</h3>
+<h3 id="description-13">Description</h3>
 <p>Improper Neutralization of Special Elements Used in an SQL Command (&lsquo;SQL Injection&rsquo;) vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.7.0. 
 In the toAuditCkSql method, the groupId, streamId, auditId, and dt are directly concatenated into the SQL query statement, which may lead to SQL injection attacks.
 Users are advised to upgrade to Apache InLong&rsquo;s 1.8.0 or cherry-pick [1] to solve it.</p>
 </p><p>
 <p><span style="background-color: rgb(255, 255, 255);">[1] </span><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8198"><a href="https://github.com/apache/inlong/pull/8198">https://github.com/apache/inlong/pull/8198</a></a></p>
 <p><br></p></p>
-<h3 id="references-18">References</h3>
+<h3 id="references-13">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/os7b66x4n8dbtrdpb7c6x37bb1vjb0tk">https://lists.apache.org/thread/os7b66x4n8dbtrdpb7c6x37bb1vjb0tk</a></li>
 </ul>
-<h2 id="CVE-2023-43666">General user Unauthorized access User Management</h2>
-<p>CVE-2023-43666 <a href="./CVE-2023-43666.cve.json">[CVE json]</a> <a href="./CVE-2023-43666.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-10-16T01:54:42.830Z</em></p>
+<h2 id="CVE-2023-34434">JDBC URL bypassing by allowLoadLocalInfileInPath param</h2>
+<p>CVE-2023-34434 <a href="https://cve.org/CVERecord?id=CVE-2023-34434">[CVE]</a> <a href="./CVE-2023-34434.cve.json">[CVE json]</a> <a href="./CVE-2023-34434.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-07-25T07:09:55.864Z</em></p>
+<h3 id="affected-14">Affected</h3>
+<ul>
+<li>Apache InLong from 1.4.0 through 1.7.0</li>
+</ul>
+<h3 id="description-14">Description</h3>
+<p>Deserialization of Untrusted Data Vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.7.0. </p>
+<p>The attacker could bypass the current logic and achieve arbitrary file reading. To solve it, users are advised to upgrade to Apache InLong&rsquo;s 1.8.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8130"><a href="https://github.com/apache/inlong/pull/8130">https://github.com/apache/inlong/pull/8130</a></a>.</p>
+</p>
+<h3 id="references-14">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7f1o71w5r732cspltmtdydn01gllf4jo">https://lists.apache.org/thread/7f1o71w5r732cspltmtdydn01gllf4jo</a></li>
+</ul>
+<h3 id="credits-11">Credits</h3>
+<ul>
+<li>sw0rd1ight and 4ra1n of Chaitin Tech (finder)</li>
+</ul>
+<h2 id="CVE-2023-34189">General user can delete and update process</h2>
+<p>CVE-2023-34189 <a href="https://cve.org/CVERecord?id=CVE-2023-34189">[CVE]</a> <a href="./CVE-2023-34189.cve.json">[CVE json]</a> <a href="./CVE-2023-34189.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-07-25T07:08:51.094Z</em></p>
+<h3 id="affected-15">Affected</h3>
+<ul>
+<li>Apache InLong from 1.4.0 through 1.7.0</li>
+</ul>
+<h3 id="description-15">Description</h3>
+<p>Exposure of Resource to Wrong Sphere Vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.7.0. The attacker could use general users to delete and update the process, which only the admin can operate occurrences. </p>
+<p>Users are advised to upgrade to Apache InLong&rsquo;s 1.8.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8109"><a href="https://github.com/apache/inlong/pull/8109">https://github.com/apache/inlong/pull/8109</a></a> to solve it.</p>
+</p>
+<h3 id="references-15">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/smxqyx43hxjvzv4w71n2n3rfho9p378s">https://lists.apache.org/thread/smxqyx43hxjvzv4w71n2n3rfho9p378s</a></li>
+</ul>
+<h2 id="CVE-2023-31454">IDOR make users can bind any cluster</h2>
+<p>CVE-2023-31454 <a href="https://cve.org/CVERecord?id=CVE-2023-31454">[CVE]</a> <a href="./CVE-2023-31454.cve.json">[CVE json]</a> <a href="./CVE-2023-31454.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-05-22T13:22:59.589Z</em></p>
+<h3 id="affected-16">Affected</h3>
+<ul>
+<li>Apache InLong from 1.2.0 through 1.6.0</li>
+</ul>
+<h3 id="description-16">Description</h3>
+<p>Incorrect Permission Assignment for Critical Resource Vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.2.0 through 1.6.0. </p>
+<p><span style="background-color: rgb(255, 255, 255);">The attacker can bind any cluster, even if he is not the cluster owner. Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7947"><a href="https://github.com/apache/inlong/pull/7947">https://github.com/apache/inlong/pull/7947</a></a> to solve it.</span><br></p>
+</p>
+<h3 id="references-16">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/nqt1tr6pbq8q4b033d7sg5gltx5pmjgl">https://lists.apache.org/thread/nqt1tr6pbq8q4b033d7sg5gltx5pmjgl</a></li>
+</ul>
+<h2 id="CVE-2023-31453">IDOR make users can delete others&rsquo; subscription</h2>
+<p>CVE-2023-31453 <a href="https://cve.org/CVERecord?id=CVE-2023-31453">[CVE]</a> <a href="./CVE-2023-31453.cve.json">[CVE json]</a> <a href="./CVE-2023-31453.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-05-22T13:25:45.562Z</em></p>
+<h3 id="affected-17">Affected</h3>
+<ul>
+<li>Apache InLong from 1.2.0 through 1.6.0</li>
+</ul>
+<h3 id="description-17">Description</h3>
+<p>Incorrect Permission Assignment for Critical Resource Vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.2.0 through 1.6.0. The <span style="background-color: rgb(255, 255, 255);">attacker can delete others&rsquo; subscriptions, even if they are not the owner
+of the deleted subscription</span><span style="background-color: rgb(255, 255, 255);">. </span>Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick [1] to solve it.</p><p>[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7949"></p>
+<p></a><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7949"><a href="https://github.com/apache/inlong/pull/7949">https://github.com/apache/inlong/pull/7949</a></a></p>
+</p>
+<p></p>
+<h3 id="references-17">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/9nz8o2skgc5230w276h4w92j0zstnl06">https://lists.apache.org/thread/9nz8o2skgc5230w276h4w92j0zstnl06</a></li>
+</ul>
+<h2 id="CVE-2023-31206">Attackers can change the immutable name and type of nodes</h2>
+<p>CVE-2023-31206 <a href="https://cve.org/CVERecord?id=CVE-2023-31206">[CVE]</a> <a href="./CVE-2023-31206.cve.json">[CVE json]</a> <a href="./CVE-2023-31206.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-05-22T13:58:15.628Z</em></p>
+<h3 id="affected-18">Affected</h3>
+<ul>
+<li>Apache InLong from 1.4.0 through 1.6.0</li>
+</ul>
+<h3 id="description-18">Description</h3>
+<p>Exposure of Resource to Wrong Sphere Vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.6.0. <span style="background-color: var(--wht);">Attackers can change the immutable name and type of nodes of InLong. Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick [1] to solve it.</span></p><p><a target="_blank" rel="nofollow" href="https://cveprocess.apache.org/cve5/[1]%C2%A0https://github.com/apache/inlong/pull/7891">[1] </a><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7891"><a href="https://github.com/apache/inlong/pull/7891">https://github.com/apache/inlong/pull/7891</a></a></p></p>
+<h3 id="references-18">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/qb7zffo785wzpmsobjqcypodngw6kg6x">https://lists.apache.org/thread/qb7zffo785wzpmsobjqcypodngw6kg6x</a></li>
+</ul>
+<h2 id="CVE-2023-31103">Attackers can change the immutable name and type of cluster</h2>
+<p>CVE-2023-31103 <a href="https://cve.org/CVERecord?id=CVE-2023-31103">[CVE]</a> <a href="./CVE-2023-31103.cve.json">[CVE json]</a> <a href="./CVE-2023-31103.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-05-22T15:13:26.771Z</em></p>
 <h3 id="affected-19">Affected</h3>
 <ul>
-<li>Apache InLong from 1.4.0 through 1.8.0</li>
+<li>Apache InLong from 1.4.0 through 1.6.0</li>
 </ul>
 <h3 id="description-19">Description</h3>
-<p>Insufficient Verification of Data Authenticity vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.8.0, </p>
-<p><span style="background-color: rgb(255, 255, 255);">General user can view all user data like Admin account.</span></p>
-<p><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong&rsquo;s 1.9.0 or cherry-pick [1] to solve it.</span></p><p></p>
-<p>[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8623"><a href="https://github.com/apache/inlong/pull/8623">https://github.com/apache/inlong/pull/8623</a></a></p><p></p></p>
+<p>Exposure of Resource to Wrong Sphere Vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.6.0. 
+Attackers can change the immutable name and type of cluster of InLong. Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7891"><a href="https://github.com/apache/inlong/pull/7891">https://github.com/apache/inlong/pull/7891</a></a> to solve it.<br></p></p>
 <h3 id="references-19">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/scbgh3ty3xcxm3q33r2t9f42gwwo1why">https://lists.apache.org/thread/scbgh3ty3xcxm3q33r2t9f42gwwo1why</a></li>
+<li><a href="https://lists.apache.org/thread/bv51zhjookcnfbz8b0xsl9wv78sn0j1p">https://lists.apache.org/thread/bv51zhjookcnfbz8b0xsl9wv78sn0j1p</a></li>
 </ul>
-<h2 id="CVE-2023-43667">Log Injection in Global functions</h2>
-<p>CVE-2023-43667 <a href="./CVE-2023-43667.cve.json">[CVE json]</a> <a href="./CVE-2023-43667.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-09-27T11:45:32.709Z</em></p>
+<h2 id="CVE-2023-31101">Users who joined later can see the data of deleted users</h2>
+<p>CVE-2023-31101 <a href="https://cve.org/CVERecord?id=CVE-2023-31101">[CVE]</a> <a href="./CVE-2023-31101.cve.json">[CVE json]</a> <a href="./CVE-2023-31101.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-05-22T15:18:30.325Z</em></p>
 <h3 id="affected-20">Affected</h3>
 <ul>
-<li>Apache InLong from 1.4.0 through 1.8.0</li>
+<li>Apache InLong from 1.5.0 through 1.6.0</li>
 </ul>
 <h3 id="description-20">Description</h3>
-<p>Improper Neutralization of Special Elements used in an SQL Command (&lsquo;SQL Injection&rsquo;) vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.8.0, the a<span style="background-color: rgb(255, 255, 255);">ttacker can create misleading or false records, making it harder to audit
-and trace malicious activities. </span>Users are advised to upgrade to Apache InLong&rsquo;s 1.8.0 or cherry-pick [1] to solve it.</p><p></p>
-<p><span style="background-color: rgb(255, 255, 255);">[1] </span><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8628"><a href="https://github.com/apache/inlong/pull/8628">https://github.com/apache/inlong/pull/8628</a></a></p><p></p></p>
+<p>Insecure Default Initialization of Resource Vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.5.0 through 1.6.0.  Users registered in InLong who joined later can see deleted users&rsquo; data. Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7836"><a href="https://github.com/apache/inlong/pull/7836">https://github.com/apache/inlong/pull/7836</a></a> to solve it.<br></p></p>
 <h3 id="references-20">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/spnb378g268p1f902fr9kqyph2k8n543">https://lists.apache.org/thread/spnb378g268p1f902fr9kqyph2k8n543</a></li>
+<li><a href="https://lists.apache.org/thread/shvwwr6toqz5rr39rwh4k03z08sh9jmr">https://lists.apache.org/thread/shvwwr6toqz5rr39rwh4k03z08sh9jmr</a></li>
 </ul>
-<h2 id="CVE-2023-43668">Jdbc Connection Security Bypass in InLong</h2>
-<p>CVE-2023-43668 <a href="./CVE-2023-43668.cve.json">[CVE json]</a> <a href="./CVE-2023-43668.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-11-14T09:51:43.493Z</em></p>
+<h3 id="credits-12">Credits</h3>
+<ul>
+<li>lujie.ac.cn (finder)</li>
+</ul>
+<h2 id="CVE-2023-31098">Weak Password Implementation in InLong</h2>
+<p>CVE-2023-31098 <a href="https://cve.org/CVERecord?id=CVE-2023-31098">[CVE]</a> <a href="./CVE-2023-31098.cve.json">[CVE json]</a> <a href="./CVE-2023-31098.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-05-22T15:31:51.278Z</em></p>
 <h3 id="affected-21">Affected</h3>
 <ul>
-<li>Apache InLong from 1.4.0 through 1.8.0</li>
+<li>Apache InLong from 1.1.0 through 1.6.0</li>
 </ul>
 <h3 id="description-21">Description</h3>
-<p>Authorization Bypass Through User-Controlled Key vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.8.0, </p>
-<p><span style="background-color: rgb(255, 255, 255);">some sensitive params  checks will be </span><span style="background-color: rgb(255, 255, 255);">bypassed, <span style="background-color: rgb(255, 255, 255);">like &ldquo;autoDeserizalize&rdquo;,&quot;</span><span style="background-color: rgb(255, 255, 255);">allowLoadLocalInfile&quot;&hellip;.</span></p>
-<p>.</span>  </p>
-<p><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong&rsquo;s 1.9.0 or cherry-pick [1] to solve it.</span></p>
-</p><p>[1]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8604">https://github.com/apache/inlong/pull/8604</a></p>
+<p>Weak Password Requirements vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.1.0 through 1.6.0. </p>
+<p><span style="background-color: rgb(255, 255, 255);">When users change their password to a simple password (with any character or
+symbol), attackers can easily guess the user&rsquo;s password and access the account.</span></p><p>Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7805"><a href="https://github.com/apache/inlong/pull/7805">https://github.com/apache/inlong/pull/7805</a></a> to solve it.<br></p></p>
 <h3 id="references-21">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/16gtk7rpdm1rof075ro83fkrnhbzn5sh">https://lists.apache.org/thread/16gtk7rpdm1rof075ro83fkrnhbzn5sh</a></li>
+<li><a href="https://lists.apache.org/thread/1fvloc3no1gbffzrcsx9ltsg08wr2d1w">https://lists.apache.org/thread/1fvloc3no1gbffzrcsx9ltsg08wr2d1w</a></li>
 </ul>
 <h3 id="credits-13">Credits</h3>
 <ul>
-<li>nbxiglk (finder)</li>
+<li>lujie.ac.cn (finder)</li>
 </ul>
-<h2 id="CVE-2023-46227">Apache inlong has an Arbitrary File Read Vulnerability</h2>
-<p>CVE-2023-46227 <a href="./CVE-2023-46227.cve.json">[CVE json]</a> <a href="./CVE-2023-46227.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-10-19T09:40:37.360Z</em></p>
+<h2 id="CVE-2023-31066">Insecure direct object references for inlong sources</h2>
+<p>CVE-2023-31066 <a href="https://cve.org/CVERecord?id=CVE-2023-31066">[CVE]</a> <a href="./CVE-2023-31066.cve.json">[CVE json]</a> <a href="./CVE-2023-31066.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-05-22T15:35:37.675Z</em></p>
 <h3 id="affected-22">Affected</h3>
 <ul>
-<li>Apache InLong from 1.4.0 through 1.8.0</li>
+<li>Apache InLong from 1.4.0 through 1.6.0</li>
 </ul>
 <h3 id="description-22">Description</h3>
-<span style="background-color: rgb(255, 255, 255);">
-<p>Deserialization of Untrusted Data Vulnerability in Apache Software Foundation Apache InLong.</p>
-<p></span><p>This issue affects Apache InLong: from 1.4.0 through 1.8.0, the a<span style="background-color: rgb(255, 255, 255);">ttacker can use \t to bypass. </span>Users are advised to upgrade to Apache InLong&rsquo;s 1.9.0 or cherry-pick [1] to solve it.</p><p><span style="background-color: rgb(255, 255, 255);">[1] </span><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8814"></a><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8814"><a href="https://github.com/apache/inlong/pull/8814">https://github.com/apache/inlong/pull/8814</a></a></p></p>
+<p>Files or Directories Accessible to External Parties vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.6.0. Different users in InLong could <span style="background-color: rgb(255, 255, 255);">delete, edit, stop, and start others&rsquo; sources!</span> Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7775"><a href="https://github.com/apache/inlong/pull/7775">https://github.com/apache/inlong/pull/7775</a></a> to solve it.<br></p></p>
 <h3 id="references-22">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/m8txor4f76tmrxksrmc87tw42g57nz33">https://lists.apache.org/thread/m8txor4f76tmrxksrmc87tw42g57nz33</a></li>
+<li><a href="https://lists.apache.org/thread/x7y05wo37sq5l9fnmmsjh2dr9kcjrcxf">https://lists.apache.org/thread/x7y05wo37sq5l9fnmmsjh2dr9kcjrcxf</a></li>
 </ul>
 <h3 id="credits-14">Credits</h3>
 <ul>
-<li>Snakinya (finder)</li>
-<li>s3gundo (finder)</li>
+<li>lujie.ac.cn (finder)</li>
 </ul>
-<h2 id="CVE-2023-51784">Remote Code Execution vulnerability in Apache InLong Manager</h2>
-<p>CVE-2023-51784 <a href="./CVE-2023-51784.cve.json">[CVE json]</a> <a href="./CVE-2023-51784.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-01-03T09:39:13.790Z</em></p>
+<h2 id="CVE-2023-31065">Insufficient Session Expiration in InLong</h2>
+<p>CVE-2023-31065 <a href="https://cve.org/CVERecord?id=CVE-2023-31065">[CVE]</a> <a href="./CVE-2023-31065.cve.json">[CVE json]</a> <a href="./CVE-2023-31065.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-05-22T15:40:53.524Z</em></p>
 <h3 id="affected-23">Affected</h3>
 <ul>
-<li>Apache InLong from 1.5.0 through 1.9.0</li>
+<li>Apache InLong from 1.4.0 through 1.6.0</li>
 </ul>
 <h3 id="description-23">Description</h3>
-<p>Improper Control of Generation of Code (&lsquo;Code Injection&rsquo;) vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.5.0 through 1.9.0, which could lead to Remote Code Execution. <span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong&rsquo;s 1.10.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1] </span><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8814"></a><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/9329"><a href="https://github.com/apache/inlong/pull/9329">https://github.com/apache/inlong/pull/9329</a></a></p><p></p></p>
+<p>Insufficient Session Expiration vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.6.0. </p>
+<p><span style="background-color: rgb(255, 255, 255);">An old session can be used by an attacker even after the user has been deleted or the password has been changed.</span></p>
+<p>Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7836"><a href="https://github.com/apache/inlong/pull/7836">https://github.com/apache/inlong/pull/7836</a></a>, <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7884"><a href="https://github.com/apache/inlong/pull/7884">https://github.com/apache/inlong/pull/7884</a></a> to solve it.</p>
+<p><br></p></p>
 <h3 id="references-23">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/4nxbyl6mh5jgh0plk0qposbxwn6w9h8j">https://lists.apache.org/thread/4nxbyl6mh5jgh0plk0qposbxwn6w9h8j</a></li>
+<li><a href="https://lists.apache.org/thread/to7o0n2cks0omtwo6mhh5cs2vfdbplqf">https://lists.apache.org/thread/to7o0n2cks0omtwo6mhh5cs2vfdbplqf</a></li>
 </ul>
 <h3 id="credits-15">Credits</h3>
 <ul>
-<li>X1r0z (finder)</li>
+<li>lujie.ac.cn (finder)</li>
 </ul>
-<h2 id="CVE-2023-51785">Arbitrary File Read Vulnerability in Apache InLong Manager</h2>
-<p>CVE-2023-51785 <a href="./CVE-2023-51785.cve.json">[CVE json]</a> <a href="./CVE-2023-51785.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-01-03T09:36:21.640Z</em></p>
+<h2 id="CVE-2023-31064">Insecurity direct object references cancelling applications</h2>
+<p>CVE-2023-31064 <a href="https://cve.org/CVERecord?id=CVE-2023-31064">[CVE]</a> <a href="./CVE-2023-31064.cve.json">[CVE json]</a> <a href="./CVE-2023-31064.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-05-22T15:44:19.190Z</em></p>
 <h3 id="affected-24">Affected</h3>
 <ul>
-<li>Apache InLong from 1.7.0 through 1.9.0</li>
+<li>Apache InLong from 1.2.0 through 1.6.0</li>
 </ul>
 <h3 id="description-24">Description</h3>
-<p>Deserialization of Untrusted Data vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.7.0 through 1.9.0, the attackers can make a arbitrary file read attack using mysql driver. <span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong&rsquo;s 1.10.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/9331"><a href="https://github.com/apache/inlong/pull/9331">https://github.com/apache/inlong/pull/9331</a></a></span></p></p>
-<p></p>
+<p>Files or Directories Accessible to External Parties vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.2.0 through 1.6.0. the user in InLong could cancel an <span style="background-color: rgb(255, 255, 255);">application that doesn&rsquo;t belongs to it. </span>Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7799"><a href="https://github.com/apache/inlong/pull/7799">https://github.com/apache/inlong/pull/7799</a></a> to solve it.<br></p></p>
 <h3 id="references-24">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/g0yjmtjqvp8bnf1j0tdsk0nhfozjdjno">https://lists.apache.org/thread/g0yjmtjqvp8bnf1j0tdsk0nhfozjdjno</a></li>
+<li><a href="https://lists.apache.org/thread/1osd2k3t3qol2wdsswqtr9gxdkf78n00">https://lists.apache.org/thread/1osd2k3t3qol2wdsswqtr9gxdkf78n00</a></li>
 </ul>
 <h3 id="credits-16">Credits</h3>
 <ul>
-<li>X1r0z (finder)</li>
+<li>lujie.ac.cn (finder)</li>
 </ul>
-<h2 id="CVE-2024-26579">Apache Inlong JDBC Vulnerability</h2>
-<p>CVE-2024-26579 <a href="./CVE-2024-26579.cve.json">[CVE json]</a> <a href="./CVE-2024-26579.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-05-08T14:57:16.261Z</em></p>
+<h2 id="CVE-2023-31062">Privilege escalation vulnerability for InLong</h2>
+<p>CVE-2023-31062 <a href="https://cve.org/CVERecord?id=CVE-2023-31062">[CVE]</a> <a href="./CVE-2023-31062.cve.json">[CVE json]</a> <a href="./CVE-2023-31062.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-05-22T15:47:33.464Z</em></p>
 <h3 id="affected-25">Affected</h3>
 <ul>
-<li>Apache InLong from 1.7.0 through 1.11</li>
+<li>Apache InLong from 1.2.0 through 1.6.0</li>
 </ul>
 <h3 id="description-25">Description</h3>
-<p>Deserialization of Untrusted Data vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.7.0 through 1.11.0, </p>
-<p>the attackers can bypass using malicious parameters.</p>
-<p><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong&rsquo;s 1.12.0 or cherry-pick [1], [2] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/9694"><a href="https://github.com/apache/inlong/pull/9694">https://github.com/apache/inlong/pull/9694</a></a></span></p><p>[2] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/9707"><a href="https://github.com/apache/inlong/pull/9707">https://github.com/apache/inlong/pull/9707</a></a></p><p></p></p>
+<p>Improper Privilege Management Vulnerabilities in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.2.0 through 1.6.0.  When the attacker has access to a valid (but unprivileged) account, t<span style="background-color: rgb(255, 255, 255);">he exploit can be executed using Burp Suite by sending a login
+request and following it with a subsequent HTTP request
+using the returned cookie<span style="background-color: rgb(255, 255, 255);">.</span></span></p><p><span style="background-color: rgb(255, 255, 255);">Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick <span style="background-color: rgb(255, 255, 255);"><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7836"><a href="https://github.com/apache/inlong/pull/7836">https://github.com/apache/inlong/pull/7836</a></a></span> to solve it.</span><span style="background-color: rgb(255, 255, 255);"><br></p>
+<p></span></p></p>
 <h3 id="references-25">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/d2hndtvh6bll4pkl91o2oqxyynhr54k3">https://lists.apache.org/thread/d2hndtvh6bll4pkl91o2oqxyynhr54k3</a></li>
+<li><a href="https://lists.apache.org/thread/btorjbo9o71h22tcvxzy076022hjdzq0">https://lists.apache.org/thread/btorjbo9o71h22tcvxzy076022hjdzq0</a></li>
 </ul>
 <h3 id="credits-17">Credits</h3>
 <ul>
-<li>L0ne1y  (finder)</li>
-<li>Ming (finder)</li>
+<li>escape Wang (finder)</li>
 </ul>
-<h2 id="CVE-2024-26580">Logged-in user could exploit an arbitrary file read vulnerability</h2>
-<p>CVE-2024-26580 <a href="./CVE-2024-26580.cve.json">[CVE json]</a> <a href="./CVE-2024-26580.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-08-02T09:40:25.011Z</em></p>
+<h2 id="CVE-2023-31058">JDBC URL bypassing by adding blanks</h2>
+<p>CVE-2023-31058 <a href="https://cve.org/CVERecord?id=CVE-2023-31058">[CVE]</a> <a href="./CVE-2023-31058.cve.json">[CVE json]</a> <a href="./CVE-2023-31058.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-05-22T15:48:32.710Z</em></p>
 <h3 id="affected-26">Affected</h3>
 <ul>
-<li>Apache InLong from 1.4.0 through 1.10.0</li>
+<li>Apache InLong from 1.4.0 through 1.6.0</li>
 </ul>
 <h3 id="description-26">Description</h3>
-<p>Deserialization of Untrusted Data vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.8.0 through 1.10.0, the attackers can</p>
-<p><span style="background-color: rgb(255, 255, 255);">use the specific payload to read from an arbitrary file</span>. <span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong&rsquo;s 1.11.0 or cherry-pick [1] to solve it.</span></p></p>
-<p><span style="background-color: rgb(255, 255, 255);">[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/9673">https://github.com/apache/inlong/pull/9673</a></span></p>
-<p></p>
+<p>Deserialization of Untrusted Data Vulnerability in Apache Software Foundation Apache InLong.<p><span style="background-color: var(--wht);">This issue affects Apache InLong: from 1.4.0 through 1.6.0. </span><span style="background-color: var(--wht);"><span style="background-color: rgb(255, 255, 255);">Attackers would bypass the
+&lsquo;autoDeserialize&rsquo; option filtering by a<span style="background-color: var(--wht);">dding</span><span style="background-color: var(--wht);"><span style="background-color: rgb(255, 255, 255);"> blanks</span></span></span>.  Users are advised to upgrade to Apache InLong&rsquo;s 1.7.0 or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7674"></p>
+<p></a><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7674"><a href="https://github.com/apache/inlong/pull/7674">https://github.com/apache/inlong/pull/7674</a></a> to solve it.</span></p></p>
 <h3 id="references-26">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/xvomf66l58x4dmoyzojflvx52gkzcdmk">https://lists.apache.org/thread/xvomf66l58x4dmoyzojflvx52gkzcdmk</a></li>
+<li><a href="https://lists.apache.org/thread/bkcgbn9l61croxfyspf7xd42qb189s3z">https://lists.apache.org/thread/bkcgbn9l61croxfyspf7xd42qb189s3z</a></li>
 </ul>
 <h3 id="credits-18">Credits</h3>
 <ul>
-<li>an4er (finder)</li>
+<li>sw0rd1ight of Caiji Sec Team (finder)</li>
+<li>4ra1n of Chaitin Tech (finder)</li>
+<li>H Ming (finder)</li>
 </ul>
-<h2 id="CVE-2024-36268">Remote Code Execution vulnerability</h2>
-<p>CVE-2024-36268 <a href="./CVE-2024-36268.cve.json">[CVE json]</a> <a href="./CVE-2024-36268.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-08-02T09:44:23.542Z</em></p>
+<h2 id="CVE-2023-30465">SQL injection in apache inLong 1.5.0</h2>
+<p>CVE-2023-30465 <a href="https://cve.org/CVERecord?id=CVE-2023-30465">[CVE]</a> <a href="./CVE-2023-30465.cve.json">[CVE json]</a> <a href="./CVE-2023-30465.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-04-11T14:18:47.907Z</em></p>
 <h3 id="affected-27">Affected</h3>
 <ul>
-<li>Apache InLong TubeMQ Client from 1.10.0 through 1.12.0</li>
+<li>Apache InLong from 1.4.0 through 1.5.0</li>
 </ul>
 <h3 id="description-27">Description</h3>
-<p>Improper Control of Generation of Code ('Code Injection') vulnerability in Apache InLong.</p><p>This issue affects Apache InLong: from 1.10.0 through 1.12.0, which could lead to Remote Code Execution. <span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's 1.13.0 or cherry-pick [1] to solve it.</span></p>
-<p><span style="background-color: rgb(255, 255, 255);">[1]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/10251">https://github.com/apache/inlong/pull/10251</a></span></p>
-<p></p>
+<p>Improper Neutralization of Special Elements used in an SQL Command (&lsquo;SQL Injection&rsquo;) vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.5.0. By manipulating the &ldquo;orderType&rdquo; parameter and the ordering of the returned content using an SQL injection attack, an attacker can extract the username of the   user with ID 1 from the &ldquo;user&rdquo; table, one character at a time.  Users are advised to upgrade to Apache InLong&rsquo;s 1.6.0 or cherry-pick [1] to solve it.<br><a target="_blank" rel="nofollow" href="https://programmer.help/blogs/jdbc-deserialization-vulnerability-learning.html"><br></a></p>
+<p><span style="background-color: rgb(255, 255, 255);">[1] </span><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/issues/7529"><a href="https://github.com/apache/inlong/issues/7529">https://github.com/apache/inlong/issues/7529</a></a></p></p>
 <h3 id="references-27">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/1w1yp1bg5sjvn46dszkf00tz1vfs0frc">https://lists.apache.org/thread/1w1yp1bg5sjvn46dszkf00tz1vfs0frc</a></li>
+<li><a href="https://lists.apache.org/thread/mrh4nr3jrlbj6nxkn4q8hddbfh1pnok0">https://lists.apache.org/thread/mrh4nr3jrlbj6nxkn4q8hddbfh1pnok0</a></li>
 </ul>
 <h3 id="credits-19">Credits</h3>
 <ul>
-<li>X1r0z  (finder)</li>
+<li>escape Wang (finder)</li>
 </ul>
-<h2 id="CVE-2025-27522">JDBC Vulnerability during verification processing</h2>
-<p>CVE-2025-27522 <a href="./CVE-2025-27522.cve.json">[CVE json]</a> <a href="./CVE-2025-27522.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-05-28T08:06:02.351Z</em></p>
+<h2 id="CVE-2023-27296">JDBC Deserialization Vulnerability in InLong</h2>
+<p>CVE-2023-27296 <a href="https://cve.org/CVERecord?id=CVE-2023-27296">[CVE]</a> <a href="./CVE-2023-27296.cve.json">[CVE json]</a> <a href="./CVE-2023-27296.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-03-27T08:57:01.107Z</em></p>
 <h3 id="affected-28">Affected</h3>
 <ul>
-<li>Apache InLong from 1.13.0 through 2.1.0</li>
+<li>Apache InLong from 1.1.0 through 1.5.0</li>
 </ul>
 <h3 id="description-28">Description</h3>
-<p>Deserialization of Untrusted Data vulnerability in Apache InLong.</p><p>This issue affects Apache InLong: from 1.13.0 through 2.1.0.&nbsp;This vulnerability is a secondary mining bypass for CVE-2024-26579.&nbsp;<span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's 2.2.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/11732">
-<p></a><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/11732"><a href="https://github.com/apache/inlong/pull/11732">https://github.com/apache/inlong/pull/11732</a></a></span></p><p></p></p>
+<p>Deserialization of Untrusted Data vulnerability in Apache Software Foundation Apache InLong.<br><br><span style="background-color: rgb(255, 255, 255);">It could be triggered by authenticated users of InLong, </span>you could refer to [1] to know more about this vulnerability.<br><br>This issue affects Apache InLong: from 1.1.0 through 1.5.0.  Users are advised to upgrade to Apache InLong&rsquo;s latest version or cherry-pick [2] to solve it.<br><br></p>
+<p><span style="background-color: rgb(255, 255, 255);">[1] </span><a target="_blank" rel="nofollow" href="https://programmer.help/blogs/jdbc-deserialization-vulnerability-learning.html"><a href="https://programmer.help/blogs/jdbc-deserialization-vulnerability-learning.html">https://programmer.help/blogs/jdbc-deserialization-vulnerability-learning.html</a><br><br></a></p>
+<p><span style="background-color: rgb(255, 255, 255);">[2] </span><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7422"><a href="https://github.com/apache/inlong/pull/7422">https://github.com/apache/inlong/pull/7422</a></a></p>
+<p><br><br></p>
 <h3 id="references-28">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/s4dnmq3gwcjocxf85qk190knlzd26jby">https://lists.apache.org/thread/s4dnmq3gwcjocxf85qk190knlzd26jby</a></li>
-<li><a href="https://github.com/apache/inlong/pull/11732">https://github.com/apache/inlong/pull/11732</a></li>
+<li><a href="https://lists.apache.org/thread/xbvtjw9bwzgbo9fp1by8o3p49nf59xzt">https://lists.apache.org/thread/xbvtjw9bwzgbo9fp1by8o3p49nf59xzt</a></li>
 </ul>
 <h3 id="credits-20">Credits</h3>
 <ul>
-<li>yulate (finder)</li>
-<li>m4x (finder)</li>
+<li>escape Wang (finder)</li>
 </ul>
-<h2 id="CVE-2025-27526">JDBC Vulnerability For URLEncode and backspace bypass</h2>
-<p>CVE-2025-27526 <a href="./CVE-2025-27526.cve.json">[CVE json]</a> <a href="./CVE-2025-27526.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-05-28T08:07:33.686Z</em></p>
+<h2 id="CVE-2023-24997">Jdbc Connection Security Bypass</h2>
+<p>CVE-2023-24997 <a href="https://cve.org/CVERecord?id=CVE-2023-24997">[CVE]</a> <a href="./CVE-2023-24997.cve.json">[CVE json]</a> <a href="./CVE-2023-24997.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-03-27T09:06:20.067Z</em></p>
 <h3 id="affected-29">Affected</h3>
 <ul>
-<li>Apache InLong from 1.13 through 2.1.0</li>
+<li>Apache InLong from 1.1.0 through 1.5.0</li>
 </ul>
 <h3 id="description-29">Description</h3>
-<p>Deserialization of Untrusted Data vulnerability in Apache InLong.</p><p>This issue affects Apache InLong: from 1.13.0 through 2.1.0. This vulnerability which can lead to JDBC Vulnerability URLEncdoe and backspace bypass. <span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's 2.2.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/11747">https://github.com/apache/inlong/pull/11747</a></span></p><p></p>
+<p>Deserialization of Untrusted Data vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.1.0 through 1.5.0. <span style="background-color: rgb(255, 255, 255);">Users are advised to upgrade to Apache InLong&rsquo;s latest version or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7223"><a href="https://github.com/apache/inlong/pull/7223">https://github.com/apache/inlong/pull/7223</a></a></span><span style="background-color: rgb(255, 255, 255);"> to solve it.</span></p></p>
 <h3 id="references-29">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/4t4sqscm7xdqn883dyjy40qk6ncf26xf">https://lists.apache.org/thread/4t4sqscm7xdqn883dyjy40qk6ncf26xf</a></li>
-<li><a href="https://github.com/apache/inlong/pull/11747">https://github.com/apache/inlong/pull/11747</a></li>
+<li><a href="https://lists.apache.org/thread/nxvtxq7oxhwyzo9ty2hqz8rvh5r7ngd8">https://lists.apache.org/thread/nxvtxq7oxhwyzo9ty2hqz8rvh5r7ngd8</a></li>
 </ul>
 <h3 id="credits-21">Credits</h3>
 <ul>
-<li>yulate (finder)</li>
-<li>m4x (finder)</li>
-<li>h3h3qaq (finder)</li>
+<li>This issue was discovered by s3gundo of Hundsun Tech (finder)</li>
 </ul>
-<h2 id="CVE-2025-27528">JDBC Vulnerability for Invisible Character Bypass Leading to Arbitrary File Read</h2>
-<p>CVE-2025-27528 <a href="./CVE-2025-27528.cve.json">[CVE json]</a> <a href="./CVE-2025-27528.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-05-28T08:12:25.901Z</em></p>
+<h2 id="CVE-2023-24977">Jdbc Connection causes arbitrary file reading in InLong</h2>
+<p>CVE-2023-24977 <a href="https://cve.org/CVERecord?id=CVE-2023-24977">[CVE]</a> <a href="./CVE-2023-24977.cve.json">[CVE json]</a> <a href="./CVE-2023-24977.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-02-01T09:09:46.267Z</em></p>
 <h3 id="affected-30">Affected</h3>
 <ul>
-<li>Apache InLong from 1.13.0 through 2.1.0</li>
+<li>Apache InLong from 1.1.0 through 1.5.0</li>
 </ul>
 <h3 id="description-30">Description</h3>
-<p>Deserialization of Untrusted Data vulnerability in Apache InLong.</p><p>This issue affects Apache InLong: from 1.13.0 through 2.1.0. 
-<p><span style="background-color: rgb(255, 255, 255);">This
-vulnerability allows attackers to bypass the security mechanisms of InLong
-JDBC and leads to arbitrary file reading. </span><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong&rsquo;s 2.2.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/11747"><a href="https://github.com/apache/inlong/pull/11747">https://github.com/apache/inlong/pull/11747</a></a></span></p><p></p></p>
+<p>Out-of-bounds Read vulnerability in Apache Software Foundation Apache InLong.<p>This issue affects Apache InLong: from 1.1.0 through 1.5.0. Users are advised to upgrade to Apache InLong&rsquo;s latest version or cherry-pick <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/7214"><a href="https://github.com/apache/inlong/pull/7214">https://github.com/apache/inlong/pull/7214</a></a> to solve it.</p></p>
 <h3 id="references-30">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/b807rqzgyv4qgvxw3nhkq8tl6g90gqgj">https://lists.apache.org/thread/b807rqzgyv4qgvxw3nhkq8tl6g90gqgj</a></li>
-<li><a href="https://github.com/apache/inlong/pull/11747">https://github.com/apache/inlong/pull/11747</a></li>
+<li><a href="https://lists.apache.org/thread/ggozxorctn3tdll7bgmpwwcbjnd0s6w7">https://lists.apache.org/thread/ggozxorctn3tdll7bgmpwwcbjnd0s6w7</a></li>
 </ul>
 <h3 id="credits-22">Credits</h3>
 <ul>
-<li>yulat (finder)</li>
-<li>m4x (finder)</li>
-<li>h3h3qaq (finder)</li>
+<li>This issue was discovered by s3gundo of Hundsun Tech (finder)</li>
 </ul>
-<h2 id="CVE-2025-27531">An arbitrary file read vulnerability for JDBC</h2>
-<p>CVE-2025-27531 <a href="./CVE-2025-27531.cve.json">[CVE json]</a> <a href="./CVE-2025-27531.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-02-28T12:24:23.760Z</em></p>
+<h2 id="CVE-2022-40955">Deserialization attack in Apache InLong prior to version 1.3.0 allows RCE via JDBC</h2>
+<p>CVE-2022-40955 <a href="https://cve.org/CVERecord?id=CVE-2022-40955">[CVE]</a> <a href="./CVE-2022-40955.cve.json">[CVE json]</a> <a href="./CVE-2022-40955.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-02-01T03:30:57.303Z</em></p>
 <h3 id="affected-31">Affected</h3>
 <ul>
-<li>Apache InLong from 1.13.0 before 2.1.0</li>
+<li>Apache InLong from Apache InLong before 1.3.0</li>
 </ul>
 <h3 id="description-31">Description</h3>
-<p>Deserialization of Untrusted Data vulnerability in Apache InLong.&nbsp;</p><p>This issue affects Apache InLong: from 1.13.0 before 2.1.0, 
-<p><span style="background-color: rgb(255, 255, 255);">this issue would allow an authenticated attacker to read arbitrary files</span><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);"> by double writing the param.</span></p>
-</span>
-</p><p>Users are recommended to upgrade to version 2.1.0, which fixes the issue.</p>
+<p>In versions of Apache InLong prior to 1.3.0, an attacker with sufficient privileges to specify MySQL JDBC connection URL parameters and to write arbitrary data to the MySQL database, could cause this data to be deserialized by Apache InLong, potentially leading to Remote Code Execution on the Apache InLong server.</p>
+<p>Users are advised to upgrade to Apache InLong 1.3.0 or newer.</p>
 <h3 id="references-31">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/r62lkqrr739wvcb60j6ql6q63rh4bxx5">https://lists.apache.org/thread/r62lkqrr739wvcb60j6ql6q63rh4bxx5</a></li>
+<li><a href="https://lists.apache.org/thread/r1r34y7bchrpmp9jhfdoohzdmk7pj1q1">https://lists.apache.org/thread/r1r34y7bchrpmp9jhfdoohzdmk7pj1q1</a></li>
 </ul>
 <h3 id="credits-23">Credits</h3>
 <ul>
-<li>Ming (finder)</li>
+<li>This issue was discovered by 4ra1n of Chaitin Tech.</li>
 </ul>
 
   

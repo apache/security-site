@@ -105,104 +105,86 @@
 <p>Do you want disclose a potential security issue for Apache Sling? You can read more about the projects&rsquo; security policy on their <a href="https://sling.apache.org/project-information/security.html">security page</a>, and email your report to the <a href="mailto:security@sling.apache.org">Apache Sling Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://sling.apache.org/project-information/security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-44549">SMTPS server hostname not checked when making TLS connection to SMTPS server</h2>
-<p>CVE-2021-44549 <a href="./CVE-2021-44549.cve.json">[CVE json]</a> <a href="./CVE-2021-44549.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-12-14T15:10:31.167Z</em></p>
+<h2 id="CVE-2024-23673">Malicious code execution via path traversal</h2>
+<p>CVE-2024-23673 <a href="https://cve.org/CVERecord?id=CVE-2024-23673">[CVE]</a> <a href="./CVE-2024-23673.cve.json">[CVE json]</a> <a href="./CVE-2024-23673.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-02-06T10:04:18.646Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Sling Commons Messaging Mail at Apache Sling Commons Messaging Mail 1.0.0 1.0.0</li>
+<li>Apache Sling Servlets Resolver before 2.11.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Apache Sling Commons Messaging Mail provides a simple layer on top of JavaMail/Jakarta Mail for OSGi to send mails via SMTPS.</p>
-<p>To reduce the risk of &ldquo;man in the middle&rdquo; attacks additional server identity checks must be performed when accessing mail servers.</p>
-<p>For compatibility reasons these additional checks are disabled by default in JavaMail/Jakarta Mail.</p>
-<p>The SimpleMailService in Apache Sling Commons Messaging Mail 1.0 lacks an option to enable these checks for the shared mail session.
-A user could enable these checks nevertheless by accessing the session via the message created by SimpleMessageBuilder and setting the property mail.smtps.ssl.checkserveridentity to true.</p>
-<p>Apache Sling Commons Messaging Mail 2.0 adds support for enabling server identity checks and these checks are enabled by default.</p>
-<ul>
-<li><a href="https://javaee.github.io/javamail/docs/SSLNOTES.txt">https://javaee.github.io/javamail/docs/SSLNOTES.txt</a></li>
-<li><a href="https://javaee.github.io/javamail/docs/api/com/sun/mail/smtp/package-summary.html">https://javaee.github.io/javamail/docs/api/com/sun/mail/smtp/package-summary.html</a></li>
-<li><a href="https://github.com/eclipse-ee4j/mail/issues/429">https://github.com/eclipse-ee4j/mail/issues/429</a></li>
-</ul>
+<p>Malicious code execution via path traversal in Apache Software Foundation Apache Sling Servlets Resolver.<p>This issue affects all version of Apache Sling Servlets Resolver before 2.11.0. However, whether a system is vulnerable to this attack depends on the exact configuration of the system.<br>If the system is vulnerable, a user with write access to the repository might be able to trick the Sling Servlet Resolver to load a previously uploaded script. </p></p>
+<p>Users are recommended to upgrade to version 2.11.0, which fixes this issue. It is recommended to upgrade, regardless of whether your system configuration currently allows this attack or not.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/l8p9h2bqvkj6rhv4w8kzctb817415b7f">https://lists.apache.org/thread/l8p9h2bqvkj6rhv4w8kzctb817415b7f</a></li>
+<li><a href="https://lists.apache.org/thread/5zzx8ztwc6tmbwlw80m2pbrp3913l2kl">https://lists.apache.org/thread/5zzx8ztwc6tmbwlw80m2pbrp3913l2kl</a></li>
+</ul>
+<h2 id="CVE-2023-26513">Requests to certain paths managed by the Apache Sling Resource Merger can lead to DoS</h2>
+<p>CVE-2023-26513 <a href="https://cve.org/CVERecord?id=CVE-2023-26513">[CVE]</a> <a href="./CVE-2023-26513.cve.json">[CVE json]</a> <a href="./CVE-2023-26513.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-03-20T12:19:53.778Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Sling Resource Merger from 1.2.0 before 1.4.2</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Excessive Iteration vulnerability in Apache Software Foundation Apache Sling Resource Merger.<p>This issue affects Apache Sling Resource Merger: from 1.2.0 before 1.4.2.</p></p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/xpcpo1y88ldss5hgmvogsf6h3735l5zb">https://lists.apache.org/thread/xpcpo1y88ldss5hgmvogsf6h3735l5zb</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>The issue was reported by Michael Lescisin.</li>
+<li>Alex Collignon (reporter)</li>
 </ul>
-<h2 id="CVE-2022-32549">log injection in Sling logging</h2>
-<p>CVE-2022-32549 <a href="./CVE-2022-32549.cve.json">[CVE json]</a> <a href="./CVE-2022-32549.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-06-22T14:22:34.319Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h2 id="CVE-2023-25621">Apache Sling does not allow to handle i18n content in a secure way</h2>
+<p>CVE-2023-25621 <a href="https://cve.org/CVERecord?id=CVE-2023-25621">[CVE]</a> <a href="./CVE-2023-25621.cve.json">[CVE json]</a> <a href="./CVE-2023-25621.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-02-23T08:41:12.080Z</em></p>
+<h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache Sling from Apache Sling API through 2.25.0</li>
-<li>Apache Sling from Apache Sling Commons Log through 5.4.0</li>
+<li>Apache Sling from Apache Sling i18n through 2.5.18</li>
 </ul>
-<h3 id="description-1">Description</h3>
-<p>Apache Sling Commons Log &lt;= 5.4.0 and Apache Sling API &lt;= 2.25.0 are vulnerable to log injection. The ability to forge logs may allow an attacker to cover tracks by injecting fake logs and potentially corrupt log files.</p>
-<h3 id="references-1">References</h3>
+<h3 id="description-2">Description</h3>
+<p>Privilege Escalation vulnerability in Apache Software Foundation Apache Sling.<br>Any content author is able to create i18n dictionaries in the repository in a location the author has write access to. As these translations are used across the whole product, it allows an author to change any text or dialog in the product. For example an attacker might fool someone by changing the text on a delete button to &ldquo;Info&rdquo;.<br><p>This issue affects the i18n module of Apache Sling up to version 2.5.18. Version 2.6.2 and higher limit by default i18m dictionaries to certain paths in the repository (/libs and /apps).</p><p>Users of the module are advised to update to version 2.6.2 or higher, check the configuration for resource loading and then adjust the access permissions for the configured path accordingly.<br></p></p>
+<h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/7z6h3806mwcov5kx6l96pq839sn0po1v">https://lists.apache.org/thread/7z6h3806mwcov5kx6l96pq839sn0po1v</a></li>
+<li><a href="https://sling.apache.org/news.html">https://sling.apache.org/news.html</a></li>
+</ul>
+<h2 id="CVE-2023-25141">JNDI injection into Apache sling-org-apache-sling-jcr-base</h2>
+<p>CVE-2023-25141 <a href="https://cve.org/CVERecord?id=CVE-2023-25141">[CVE]</a> <a href="./CVE-2023-25141.cve.json">[CVE json]</a> <a href="./CVE-2023-25141.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-02-14T10:19:00.558Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Sling JCR Base from 2.0.6 before 3.1.12</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<div>Apache Sling JCR Base &lt; 3.1.12 has a critical injection vulnerability when running on old JDK versions (JDK 1.8.191 or earlier) through utility functions in RepositoryAccessor. The functions getRepository and getRepositoryFromURL allow an application to access data stored in a remote location via JDNI and RMI.</div><div><br></div><div>Users of Apache Sling JCR Base are recommended to upgrade to Apache Sling JCR Base 3.1.12 or later, or to run on a more recent JDK.</div>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://sling.apache.org/news.html">https://sling.apache.org/news.html</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>Apache Sling would like to thank Alex Collignon for reporting this issue.</li>
+<li>Xun Bai from LJQC Open Source Security Institute  (reporter)</li>
 </ul>
-<h2 id="CVE-2022-43670">XSS in Sling CMS Reference App Taxonomy Path</h2>
-<p>CVE-2022-43670 <a href="./CVE-2022-43670.cve.json">[CVE json]</a> <a href="./CVE-2022-43670.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-11-02T12:20:10.764Z</em></p>
-<h3 id="affected-2">Affected</h3>
-<ul>
-<li>Apache Sling App CMS from unspecified before 1.1.2</li>
-</ul>
-<h3 id="description-2">Description</h3>
-<p>An improper neutralization of input during web page generation (&lsquo;Cross-site Scripting&rsquo;) [CWE-79] vulnerability in Sling App CMS version 1.1.0 and prior may allow an authenticated remote attacker to perform a reflected cross site scripting (XSS) attack in the taxonomy management feature.</p>
-<h3 id="references-2">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/o68l3l3crfxz107fr9dm74y8vg8kj2cs">https://lists.apache.org/thread/o68l3l3crfxz107fr9dm74y8vg8kj2cs</a></li>
-</ul>
-<h3 id="credits-2">Credits</h3>
-<ul>
-<li>Apache Sling would like to thank QSec-Team for reporting this issue</li>
-</ul>
-<h2 id="CVE-2022-45064">Include-based XSS</h2>
-<p>CVE-2022-45064 <a href="./CVE-2022-45064.cve.json">[CVE json]</a> <a href="./CVE-2022-45064.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-04-13T10:01:10.930Z</em></p>
-<h3 id="affected-3">Affected</h3>
-<ul>
-<li>Apache Sling Engine from   before 2.14.0</li>
-</ul>
-<h3 id="description-3">Description</h3>
-<div>The SlingRequestDispatcher doesn't correctly implement the RequestDispatcher API resulting in a generic type of include-based cross-site scripting issues on the Apache Sling level. The vulnerability is exploitable by an attacker that is able to include a resource with specific content-type and control the include path (i.e. writing content). The impact of a successful attack is privilege escalation to administrative power.</div><div><br></div><div>Please update to Apache Sling Engine &gt;= 2.14.0 and enable the "Check Content-Type overrides" configuration option.<br><br><br></div>
-<h3 id="references-3">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/hhp611hltby3whk03vx2mv7cmy3vs0ok">https://lists.apache.org/thread/hhp611hltby3whk03vx2mv7cmy3vs0ok</a></li>
-</ul>
-<h3 id="credits-3">Credits</h3>
-<ul>
-<li>Lars Krapf (reporter)</li>
-</ul>
-<h2 id="CVE-2022-46769">XSS in CMS Site Group Detail</h2>
-<p>CVE-2022-46769 <a href="./CVE-2022-46769.cve.json">[CVE json]</a> <a href="./CVE-2022-46769.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-01-25T03:51:12.925Z</em></p>
+<h2 id="CVE-2023-22849">XSS in CMS Reference / UI Components</h2>
+<p>CVE-2023-22849 <a href="https://cve.org/CVERecord?id=CVE-2023-22849">[CVE]</a> <a href="./CVE-2023-22849.cve.json">[CVE json]</a> <a href="./CVE-2023-22849.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-02-03T23:38:07.612Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache Sling App CMS before 1.1.4</li>
+<li>Apache Sling App CMS before 1.1.6</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<p>An improper neutralization of input during web page generation (&lsquo;Cross-site Scripting&rsquo;) [CWE-79] vulnerability in Sling App CMS version 1.1.2 and prior may allow an authenticated remote attacker to perform a reflected cross-site scripting (XSS) attack in the site group feature.<br><br><span style="background-color: rgb(255, 255, 255);">Upgrade to Apache Sling App CMS &gt;= 1.1.4</span> <br></p>
+<p>An improper neutralization of input during web page generation (&lsquo;Cross-site Scripting&rsquo;) [CWE-79] vulnerability in Sling App CMS version 1.1.4 and prior may allow an authenticated remote attacker to perform a reflected cross-site scripting (XSS) attack in multiple features.<br><br><span style="background-color: rgb(255, 255, 255);">Upgrade to Apache Sling App CMS &gt;= 1.1.6</span><br></p>
 <h3 id="references-4">References</h3>
 <ul>
 <li><a href="https://sling.apache.org/news.html">https://sling.apache.org/news.html</a></li>
 </ul>
-<h3 id="credits-4">Credits</h3>
+<h3 id="credits-2">Credits</h3>
 <ul>
-<li>Apache Sling would like to thank Sam Bagheri for reporting this issue (finder)</li>
+<li>Apache Sling would like to thank Eugene Lim and Sng Jay Kai from GOVTECH for reporting this issue (finder)</li>
 </ul>
 <h2 id="CVE-2022-47937">Multiple parsing problems in the Apache Sling Commons JSON module</h2>
-<p>CVE-2022-47937 <a href="./CVE-2022-47937.cve.json">[CVE json]</a> <a href="./CVE-2022-47937.osv.json">[OSV json]</a></p>
+<p>CVE-2022-47937 <a href="https://cve.org/CVERecord?id=CVE-2022-47937">[CVE]</a> <a href="./CVE-2022-47937.cve.json">[CVE json]</a> <a href="./CVE-2022-47937.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-03-29T09:39:29.809Z</em></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
@@ -220,87 +202,105 @@ Apache Sling project, but may of course use other JSON libraries.<br></div></div
 <li><a href="https://github.com/apache/sling-org-apache-sling-commons-johnzon">https://github.com/apache/sling-org-apache-sling-commons-johnzon</a></li>
 <li><a href="https://lists.apache.org/thread/sws7z50x47gv0c38q4kx6ktqrvrrg1pm">https://lists.apache.org/thread/sws7z50x47gv0c38q4kx6ktqrvrrg1pm</a></li>
 </ul>
-<h3 id="credits-5">Credits</h3>
+<h3 id="credits-3">Credits</h3>
 <ul>
 <li>The vulnerability was discovered and reported by BIngDiAn. (finder)</li>
 </ul>
-<h2 id="CVE-2023-22849">XSS in CMS Reference / UI Components</h2>
-<p>CVE-2023-22849 <a href="./CVE-2023-22849.cve.json">[CVE json]</a> <a href="./CVE-2023-22849.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-02-03T23:38:07.612Z</em></p>
+<h2 id="CVE-2022-46769">XSS in CMS Site Group Detail</h2>
+<p>CVE-2022-46769 <a href="https://cve.org/CVERecord?id=CVE-2022-46769">[CVE]</a> <a href="./CVE-2022-46769.cve.json">[CVE json]</a> <a href="./CVE-2022-46769.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-01-25T03:51:12.925Z</em></p>
 <h3 id="affected-6">Affected</h3>
 <ul>
-<li>Apache Sling App CMS before 1.1.6</li>
+<li>Apache Sling App CMS before 1.1.4</li>
 </ul>
 <h3 id="description-6">Description</h3>
-<p>An improper neutralization of input during web page generation (&lsquo;Cross-site Scripting&rsquo;) [CWE-79] vulnerability in Sling App CMS version 1.1.4 and prior may allow an authenticated remote attacker to perform a reflected cross-site scripting (XSS) attack in multiple features.<br><br><span style="background-color: rgb(255, 255, 255);">Upgrade to Apache Sling App CMS &gt;= 1.1.6</span><br></p>
+<p>An improper neutralization of input during web page generation (&lsquo;Cross-site Scripting&rsquo;) [CWE-79] vulnerability in Sling App CMS version 1.1.2 and prior may allow an authenticated remote attacker to perform a reflected cross-site scripting (XSS) attack in the site group feature.<br><br><span style="background-color: rgb(255, 255, 255);">Upgrade to Apache Sling App CMS &gt;= 1.1.4</span> <br></p>
 <h3 id="references-6">References</h3>
 <ul>
 <li><a href="https://sling.apache.org/news.html">https://sling.apache.org/news.html</a></li>
 </ul>
-<h3 id="credits-6">Credits</h3>
+<h3 id="credits-4">Credits</h3>
 <ul>
-<li>Apache Sling would like to thank Eugene Lim and Sng Jay Kai from GOVTECH for reporting this issue (finder)</li>
+<li>Apache Sling would like to thank Sam Bagheri for reporting this issue (finder)</li>
 </ul>
-<h2 id="CVE-2023-25141">JNDI injection into Apache sling-org-apache-sling-jcr-base</h2>
-<p>CVE-2023-25141 <a href="./CVE-2023-25141.cve.json">[CVE json]</a> <a href="./CVE-2023-25141.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-02-14T10:19:00.558Z</em></p>
+<h2 id="CVE-2022-45064">Include-based XSS</h2>
+<p>CVE-2022-45064 <a href="https://cve.org/CVERecord?id=CVE-2022-45064">[CVE]</a> <a href="./CVE-2022-45064.cve.json">[CVE json]</a> <a href="./CVE-2022-45064.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-04-13T10:01:10.930Z</em></p>
 <h3 id="affected-7">Affected</h3>
 <ul>
-<li>Apache Sling JCR Base from 2.0.6 before 3.1.12</li>
+<li>Apache Sling Engine from   before 2.14.0</li>
 </ul>
 <h3 id="description-7">Description</h3>
-<div>Apache Sling JCR Base &lt; 3.1.12 has a critical injection vulnerability when running on old JDK versions (JDK 1.8.191 or earlier) through utility functions in RepositoryAccessor. The functions getRepository and getRepositoryFromURL allow an application to access data stored in a remote location via JDNI and RMI.</div><div><br></div><div>Users of Apache Sling JCR Base are recommended to upgrade to Apache Sling JCR Base 3.1.12 or later, or to run on a more recent JDK.</div>
+<div>The SlingRequestDispatcher doesn't correctly implement the RequestDispatcher API resulting in a generic type of include-based cross-site scripting issues on the Apache Sling level. The vulnerability is exploitable by an attacker that is able to include a resource with specific content-type and control the include path (i.e. writing content). The impact of a successful attack is privilege escalation to administrative power.</div><div><br></div><div>Please update to Apache Sling Engine &gt;= 2.14.0 and enable the "Check Content-Type overrides" configuration option.<br><br><br></div>
 <h3 id="references-7">References</h3>
 <ul>
-<li><a href="https://sling.apache.org/news.html">https://sling.apache.org/news.html</a></li>
+<li><a href="https://lists.apache.org/thread/hhp611hltby3whk03vx2mv7cmy3vs0ok">https://lists.apache.org/thread/hhp611hltby3whk03vx2mv7cmy3vs0ok</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Lars Krapf (reporter)</li>
+</ul>
+<h2 id="CVE-2022-43670">XSS in Sling CMS Reference App Taxonomy Path</h2>
+<p>CVE-2022-43670 <a href="https://cve.org/CVERecord?id=CVE-2022-43670">[CVE]</a> <a href="./CVE-2022-43670.cve.json">[CVE json]</a> <a href="./CVE-2022-43670.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-11-02T12:20:10.764Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Sling App CMS from unspecified before 1.1.2</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>An improper neutralization of input during web page generation (&lsquo;Cross-site Scripting&rsquo;) [CWE-79] vulnerability in Sling App CMS version 1.1.0 and prior may allow an authenticated remote attacker to perform a reflected cross site scripting (XSS) attack in the taxonomy management feature.</p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/o68l3l3crfxz107fr9dm74y8vg8kj2cs">https://lists.apache.org/thread/o68l3l3crfxz107fr9dm74y8vg8kj2cs</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>Apache Sling would like to thank QSec-Team for reporting this issue</li>
+</ul>
+<h2 id="CVE-2022-32549">log injection in Sling logging</h2>
+<p>CVE-2022-32549 <a href="https://cve.org/CVERecord?id=CVE-2022-32549">[CVE]</a> <a href="./CVE-2022-32549.cve.json">[CVE json]</a> <a href="./CVE-2022-32549.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-06-22T14:22:34.319Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache Sling from Apache Sling API through 2.25.0</li>
+<li>Apache Sling from Apache Sling Commons Log through 5.4.0</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>Apache Sling Commons Log &lt;= 5.4.0 and Apache Sling API &lt;= 2.25.0 are vulnerable to log injection. The ability to forge logs may allow an attacker to cover tracks by injecting fake logs and potentially corrupt log files.</p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7z6h3806mwcov5kx6l96pq839sn0po1v">https://lists.apache.org/thread/7z6h3806mwcov5kx6l96pq839sn0po1v</a></li>
 </ul>
 <h3 id="credits-7">Credits</h3>
 <ul>
-<li>Xun Bai from LJQC Open Source Security Institute  (reporter)</li>
+<li>Apache Sling would like to thank Alex Collignon for reporting this issue.</li>
 </ul>
-<h2 id="CVE-2023-25621">Apache Sling does not allow to handle i18n content in a secure way</h2>
-<p>CVE-2023-25621 <a href="./CVE-2023-25621.cve.json">[CVE json]</a> <a href="./CVE-2023-25621.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-02-23T08:41:12.080Z</em></p>
-<h3 id="affected-8">Affected</h3>
+<h2 id="CVE-2021-44549">SMTPS server hostname not checked when making TLS connection to SMTPS server</h2>
+<p>CVE-2021-44549 <a href="https://cve.org/CVERecord?id=CVE-2021-44549">[CVE]</a> <a href="./CVE-2021-44549.cve.json">[CVE json]</a> <a href="./CVE-2021-44549.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-12-14T15:10:31.167Z</em></p>
+<h3 id="affected-10">Affected</h3>
 <ul>
-<li>Apache Sling from Apache Sling i18n through 2.5.18</li>
+<li>Apache Sling Commons Messaging Mail at Apache Sling Commons Messaging Mail 1.0.0 1.0.0</li>
 </ul>
-<h3 id="description-8">Description</h3>
-<p>Privilege Escalation vulnerability in Apache Software Foundation Apache Sling.<br>Any content author is able to create i18n dictionaries in the repository in a location the author has write access to. As these translations are used across the whole product, it allows an author to change any text or dialog in the product. For example an attacker might fool someone by changing the text on a delete button to &ldquo;Info&rdquo;.<br><p>This issue affects the i18n module of Apache Sling up to version 2.5.18. Version 2.6.2 and higher limit by default i18m dictionaries to certain paths in the repository (/libs and /apps).</p><p>Users of the module are advised to update to version 2.6.2 or higher, check the configuration for resource loading and then adjust the access permissions for the configured path accordingly.<br></p></p>
-<h3 id="references-8">References</h3>
+<h3 id="description-10">Description</h3>
+<p>Apache Sling Commons Messaging Mail provides a simple layer on top of JavaMail/Jakarta Mail for OSGi to send mails via SMTPS.</p>
+<p>To reduce the risk of &ldquo;man in the middle&rdquo; attacks additional server identity checks must be performed when accessing mail servers.</p>
+<p>For compatibility reasons these additional checks are disabled by default in JavaMail/Jakarta Mail.</p>
+<p>The SimpleMailService in Apache Sling Commons Messaging Mail 1.0 lacks an option to enable these checks for the shared mail session.
+A user could enable these checks nevertheless by accessing the session via the message created by SimpleMessageBuilder and setting the property mail.smtps.ssl.checkserveridentity to true.</p>
+<p>Apache Sling Commons Messaging Mail 2.0 adds support for enabling server identity checks and these checks are enabled by default.</p>
 <ul>
-<li><a href="https://sling.apache.org/news.html">https://sling.apache.org/news.html</a></li>
+<li><a href="https://javaee.github.io/javamail/docs/SSLNOTES.txt">https://javaee.github.io/javamail/docs/SSLNOTES.txt</a></li>
+<li><a href="https://javaee.github.io/javamail/docs/api/com/sun/mail/smtp/package-summary.html">https://javaee.github.io/javamail/docs/api/com/sun/mail/smtp/package-summary.html</a></li>
+<li><a href="https://github.com/eclipse-ee4j/mail/issues/429">https://github.com/eclipse-ee4j/mail/issues/429</a></li>
 </ul>
-<h2 id="CVE-2023-26513">Requests to certain paths managed by the Apache Sling Resource Merger can lead to DoS</h2>
-<p>CVE-2023-26513 <a href="./CVE-2023-26513.cve.json">[CVE json]</a> <a href="./CVE-2023-26513.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-03-20T12:19:53.778Z</em></p>
-<h3 id="affected-9">Affected</h3>
+<h3 id="references-10">References</h3>
 <ul>
-<li>Apache Sling Resource Merger from 1.2.0 before 1.4.2</li>
-</ul>
-<h3 id="description-9">Description</h3>
-<p>Excessive Iteration vulnerability in Apache Software Foundation Apache Sling Resource Merger.<p>This issue affects Apache Sling Resource Merger: from 1.2.0 before 1.4.2.</p></p>
-<h3 id="references-9">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/xpcpo1y88ldss5hgmvogsf6h3735l5zb">https://lists.apache.org/thread/xpcpo1y88ldss5hgmvogsf6h3735l5zb</a></li>
+<li><a href="https://lists.apache.org/thread/l8p9h2bqvkj6rhv4w8kzctb817415b7f">https://lists.apache.org/thread/l8p9h2bqvkj6rhv4w8kzctb817415b7f</a></li>
 </ul>
 <h3 id="credits-8">Credits</h3>
 <ul>
-<li>Alex Collignon (reporter)</li>
-</ul>
-<h2 id="CVE-2024-23673">Malicious code execution via path traversal</h2>
-<p>CVE-2024-23673 <a href="./CVE-2024-23673.cve.json">[CVE json]</a> <a href="./CVE-2024-23673.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-02-06T10:04:18.646Z</em></p>
-<h3 id="affected-10">Affected</h3>
-<ul>
-<li>Apache Sling Servlets Resolver before 2.11.0</li>
-</ul>
-<h3 id="description-10">Description</h3>
-<p>Malicious code execution via path traversal in Apache Software Foundation Apache Sling Servlets Resolver.<p>This issue affects all version of Apache Sling Servlets Resolver before 2.11.0. However, whether a system is vulnerable to this attack depends on the exact configuration of the system.<br>If the system is vulnerable, a user with write access to the repository might be able to trick the Sling Servlet Resolver to load a previously uploaded script. </p></p>
-<p>Users are recommended to upgrade to version 2.11.0, which fixes this issue. It is recommended to upgrade, regardless of whether your system configuration currently allows this attack or not.</p>
-<h3 id="references-10">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/5zzx8ztwc6tmbwlw80m2pbrp3913l2kl">https://lists.apache.org/thread/5zzx8ztwc6tmbwlw80m2pbrp3913l2kl</a></li>
+<li>The issue was reported by Michael Lescisin.</li>
 </ul>
 
   

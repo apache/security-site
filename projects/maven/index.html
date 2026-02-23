@@ -105,26 +105,31 @@
 <p>Do you want disclose a potential security issue for Apache Maven? You can read more about the projects&rsquo; security policy on their <a href="https://maven.apache.org/security.html">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://maven.apache.org/security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-26291">block repositories using http by default</h2>
-<p>CVE-2021-26291 <a href="./CVE-2021-26291.cve.json">[CVE json]</a> <a href="./CVE-2021-26291.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-04-23T14:14:28.607Z</em></p>
+<h2 id="CVE-2024-47197">Maven Archetype integration-test may package local settings into the published artifact, possibly containing credentials</h2>
+<p>CVE-2024-47197 <a href="https://cve.org/CVERecord?id=CVE-2024-47197">[CVE]</a> <a href="./CVE-2024-47197.cve.json">[CVE json]</a> <a href="./CVE-2024-47197.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-09-26T08:01:19.076Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Maven from Apache Maven through 3.8.1</li>
+<li>Maven Archetype Plugin from 3.2.1 before 3.3.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Apache Maven will follow repositories that are defined in a dependency’s Project Object Model (pom) which may be surprising to some users, resulting in potential risk if a malicious actor takes over that repository or is able to insert themselves into a position to pretend to be that repository. Maven is changing the default behavior in 3.8.1+ to no longer follow http (non-SSL) repository references by default. More details available in the referenced urls.</p>
-<p>If you are currently using a repository manager to govern the repositories used by your builds, you are unaffected by the risks present in the legacy behavior, and are unaffected by this vulnerability and change to default behavior. See this link for more information about repository management: <a href="https://maven.apache.org/repository-management.html">https://maven.apache.org/repository-management.html</a></p>
+<p>Exposure of Sensitive Information to an Unauthorized Actor, Insecure Storage of Sensitive Information vulnerability in Maven Archetype Plugin.</p><p>This issue affects Maven Archetype Plugin: from 3.2.1 before 3.3.0.</p><p>Users are recommended to upgrade to version 3.3.0, which fixes the issue.</p><span style="background-color: rgb(255, 255, 255);">Archetype integration testing creates a file
+called ./target/classes/archetype-it/archetype-settings.xml
+This file contains all the content from the users ~/.m2/settings.xml file,
+which often contains information they do not want to publish. We expect that on many developer machines, this also contains
+credentials.<br><br><span style="background-color: rgb(255, 255, 255);">When the user runs </span></span><tt><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">mvn verify</span></span></tt><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);"> again (without a </span></span><tt><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">mvn clean</span></span></tt><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">), this file becomes part of
+the final artifact.<br><br><span style="background-color: rgb(255, 255, 255);">If a developer were to publish this into Maven Central or any other remote repository (whether as a release
+or a snapshot) their credentials would be published without them knowing.</span></span></span><br>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread.html/r9a027668558264c4897633e66bcb7784099fdec9f9b22c38c2442f00%40%3Cusers.maven.apache.org%3E">https://lists.apache.org/thread.html/r9a027668558264c4897633e66bcb7784099fdec9f9b22c38c2442f00%40%3Cusers.maven.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread/ftg81np183wnyk0kg4ks95dvgxdrof96">https://lists.apache.org/thread/ftg81np183wnyk0kg4ks95dvgxdrof96</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Apache Maven would like to thank Jonathan Leitschuh for highlighting the need for this change.</li>
+<li>Niels Basjes (reporter)</li>
 </ul>
 <h2 id="CVE-2022-29599">Commandline class shell injection vulnerabilities</h2>
-<p>CVE-2022-29599 <a href="./CVE-2022-29599.cve.json">[CVE json]</a> <a href="./CVE-2022-29599.osv.json">[OSV json]</a></p>
+<p>CVE-2022-29599 <a href="https://cve.org/CVERecord?id=CVE-2022-29599">[CVE]</a> <a href="./CVE-2022-29599.cve.json">[CVE json]</a> <a href="./CVE-2022-29599.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-05-23T10:22:16.632Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
@@ -137,28 +142,23 @@
 <li><a href="https://issues.apache.org/jira/browse/MSHARED-297">https://issues.apache.org/jira/browse/MSHARED-297</a></li>
 <li><a href="https://github.com/apache/maven-shared-utils/pull/40">https://github.com/apache/maven-shared-utils/pull/40</a></li>
 </ul>
-<h2 id="CVE-2024-47197">Maven Archetype integration-test may package local settings into the published artifact, possibly containing credentials</h2>
-<p>CVE-2024-47197 <a href="./CVE-2024-47197.cve.json">[CVE json]</a> <a href="./CVE-2024-47197.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-09-26T08:01:19.076Z</em></p>
+<h2 id="CVE-2021-26291">block repositories using http by default</h2>
+<p>CVE-2021-26291 <a href="https://cve.org/CVERecord?id=CVE-2021-26291">[CVE]</a> <a href="./CVE-2021-26291.cve.json">[CVE json]</a> <a href="./CVE-2021-26291.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-04-23T14:14:28.607Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Maven Archetype Plugin from 3.2.1 before 3.3.0</li>
+<li>Apache Maven from Apache Maven through 3.8.1</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>Exposure of Sensitive Information to an Unauthorized Actor, Insecure Storage of Sensitive Information vulnerability in Maven Archetype Plugin.</p><p>This issue affects Maven Archetype Plugin: from 3.2.1 before 3.3.0.</p><p>Users are recommended to upgrade to version 3.3.0, which fixes the issue.</p><span style="background-color: rgb(255, 255, 255);">Archetype integration testing creates a file
-called ./target/classes/archetype-it/archetype-settings.xml
-This file contains all the content from the users ~/.m2/settings.xml file,
-which often contains information they do not want to publish. We expect that on many developer machines, this also contains
-credentials.<br><br><span style="background-color: rgb(255, 255, 255);">When the user runs </span></span><tt><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">mvn verify</span></span></tt><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);"> again (without a </span></span><tt><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">mvn clean</span></span></tt><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">), this file becomes part of
-the final artifact.<br><br><span style="background-color: rgb(255, 255, 255);">If a developer were to publish this into Maven Central or any other remote repository (whether as a release
-or a snapshot) their credentials would be published without them knowing.</span></span></span><br>
+<p>Apache Maven will follow repositories that are defined in a dependency’s Project Object Model (pom) which may be surprising to some users, resulting in potential risk if a malicious actor takes over that repository or is able to insert themselves into a position to pretend to be that repository. Maven is changing the default behavior in 3.8.1+ to no longer follow http (non-SSL) repository references by default. More details available in the referenced urls.</p>
+<p>If you are currently using a repository manager to govern the repositories used by your builds, you are unaffected by the risks present in the legacy behavior, and are unaffected by this vulnerability and change to default behavior. See this link for more information about repository management: <a href="https://maven.apache.org/repository-management.html">https://maven.apache.org/repository-management.html</a></p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/ftg81np183wnyk0kg4ks95dvgxdrof96">https://lists.apache.org/thread/ftg81np183wnyk0kg4ks95dvgxdrof96</a></li>
+<li><a href="https://lists.apache.org/thread.html/r9a027668558264c4897633e66bcb7784099fdec9f9b22c38c2442f00%40%3Cusers.maven.apache.org%3E">https://lists.apache.org/thread.html/r9a027668558264c4897633e66bcb7784099fdec9f9b22c38c2442f00%40%3Cusers.maven.apache.org%3E</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>Niels Basjes (reporter)</li>
+<li>Apache Maven would like to thank Jonathan Leitschuh for highlighting the need for this change.</li>
 </ul>
 
   

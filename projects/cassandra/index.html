@@ -105,69 +105,51 @@
 <p>Do you want disclose a potential security issue for Apache Cassandra? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-44521">Remote code execution for scripted UDFs</h2>
-<p>CVE-2021-44521 <a href="./CVE-2021-44521.cve.json">[CVE json]</a> <a href="./CVE-2021-44521.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-02-11T12:02:55.157Z</em></p>
+<h2 id="CVE-2025-26467">User with MODIFY permission on ALL KEYSPACES can escalate privileges to superuser via unsafe actions (4.0.16 only)</h2>
+<p>CVE-2025-26467 <a href="https://cve.org/CVERecord?id=CVE-2025-26467">[CVE]</a> <a href="./CVE-2025-26467.cve.json">[CVE json]</a> <a href="./CVE-2025-26467.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-08-25T13:14:47.609Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Cassandra from 3.0.0 before *</li>
+<li>Apache Cassandra at 4.0.16</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>When running Apache Cassandra with the following configuration:</p>
-<p>enable_user_defined_functions: true
-enable_scripted_user_defined_functions: true
-enable_user_defined_functions_threads: false</p>
-<p>it is possible for an attacker to execute arbitrary code on the host. The attacker would need to have enough permissions to create user defined functions in the cluster to be able to exploit this. Note that this configuration is documented as unsafe, and will continue to be considered unsafe after this CVE.</p>
+<p>
+<p><span style="background-color: rgb(255, 255, 255);">Privilege Defined With Unsafe Actions vulnerability in Apache Cassandra. An user with MODIFY permission ON ALL KEYSPACES can escalate privileges to superuser within a targeted Cassandra cluster via unsafe actions to a system resource. Operators granting data MODIFY permission on all keyspaces on affected versions should review data access rules for potential breaches.</span></p>
+<p><br><span style="background-color: var(--wht);"><br>This issue affects Apache Cassandra 3.0.30, 3.11.17, 4.0.16, 4.1.7, 5.0.2, but this advisory is only for 4.0.16 because the fix to CVE-2025-23015 was incorrectly applied to 4.0.16, so that version is still affected.<br></span><br>Users in the 4.0 series are recommended to upgrade to version 4.0.17 which fixes the issue. Users from 3.0, 3.11, 4.1 and 5.0 series should follow recommendation from CVE-2025-23015.<br></p></p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/y4nb9s4co34j8hdfmrshyl09lokm7356">https://lists.apache.org/thread/y4nb9s4co34j8hdfmrshyl09lokm7356</a></li>
+<li><a href="https://lists.apache.org/thread/xxj36rr4d6mzyqpld05dn8b9951hfpz7">https://lists.apache.org/thread/xxj36rr4d6mzyqpld05dn8b9951hfpz7</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>This issue was discovered by Omer Kaspi of the JFrog Security vulnerability research team.</li>
+<li>Adam Pond of Apple Services Engineering Security (finder)</li>
+<li>Ali Mirheidari of Apple Services Engineering Security (finder)</li>
+<li>Terry Thibault of Apple Services Engineering Security (finder)</li>
+<li>Will Brattain of Apple Services Engineering Security (finder)</li>
 </ul>
-<h2 id="CVE-2023-30601">Privilege escalation when enabling FQL/Audit logs</h2>
-<p>CVE-2023-30601 <a href="./CVE-2023-30601.cve.json">[CVE json]</a> <a href="./CVE-2023-30601.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-05-30T07:25:46.970Z</em></p>
+<h2 id="CVE-2025-24860">CassandraNetworkAuthorizer and CassandraCIDRAuthorizer can be bypassed allowing access to different network regions</h2>
+<p>CVE-2025-24860 <a href="https://cve.org/CVERecord?id=CVE-2025-24860">[CVE]</a> <a href="./CVE-2025-24860.cve.json">[CVE json]</a> <a href="./CVE-2025-24860.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-02-04T10:17:53.494Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache Cassandra from 4.0.0 through 4.0.9</li>
-<li>Apache Cassandra from 4.1.0 through 4.1.1</li>
+<li>Apache Cassandra from 4.0.0 through 4.0.15</li>
+<li>Apache Cassandra from 4.1.0 through 4.1.7</li>
+<li>Apache Cassandra from 5.0.0 through 5.0.2</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>Privilege escalation when enabling FQL/Audit logs allows user with JMX access to run arbitrary commands as the user running Apache Cassandra<br><p>This issue affects Apache Cassandra: from 4.0.0 through 4.0.9, from 4.1.0 through 4.1.1.</p>WORKAROUND<br>The vulnerability requires nodetool/JMX access to be exploitable, disable access for any non-trusted users.<br><br>MITIGATION<br>Upgrade to 4.0.10 or 4.1.2 and leave the new FQL/Auditlog configuration property allow_nodetool_archive_command as false.</p>
+<p></p><p>Incorrect Authorization vulnerability in Apache Cassandra allowing users to access a datacenter or IP/CIDR groups they should not be able to when using CassandraNetworkAuthorizer or CassandraCIDRAuthorizer.<br><br>Users with restricted data center access can update their own permissions via data control language (DCL) statements on affected versions.<br></p><p></p><p>This issue affects Apache Cassandra: from 4.0.0 through 4.0.15 and from 4.1.0 through 4.1.7 for CassandraNetworkAuthorizer, and from 5.0.0 through 5.0.2 for both CassandraNetworkAuthorizer and CassandraCIDRAuthorizer.<br></p><p></p><p>Operators using&nbsp;CassandraNetworkAuthorizer or&nbsp;CassandraCIDRAuthorizer on affected versions should review data access rules for potential breaches. Users are recommended to upgrade to versions 4.0.16, 4.1.8, 5.0.3, which fixes the issue.<br></p><p></p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/f74p9jdhmmp7vtrqd8lgm8bq3dhxl8vn">https://lists.apache.org/thread/f74p9jdhmmp7vtrqd8lgm8bq3dhxl8vn</a></li>
+<li><a href="https://lists.apache.org/thread/yjo5on4tf7s1r9qklc4byrz30b8vkm2d">https://lists.apache.org/thread/yjo5on4tf7s1r9qklc4byrz30b8vkm2d</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>Gal Elbaz at Oligo (finder)</li>
-</ul>
-<h2 id="CVE-2024-27137">unrestricted deserialization of JMX authentication credentials</h2>
-<p>CVE-2024-27137 <a href="./CVE-2024-27137.cve.json">[CVE json]</a> <a href="./CVE-2024-27137.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-02-04T10:19:42.511Z</em></p>
-<h3 id="affected-2">Affected</h3>
-<ul>
-<li>Apache Cassandra from 4.0.2 before 4.0.15</li>
-<li>Apache Cassandra from 4.1.0 before 4.1.8</li>
-<li>Apache Cassandra from 5.0-beta1 before 5.0.3</li>
-</ul>
-<h3 id="description-2">Description</h3>
-<p>In Apache Cassandra it is possible for a local attacker without access
- to the Apache Cassandra process or configuration files to manipulate 
-the RMI registry to perform a man-in-the-middle attack and capture user 
-names and passwords used to access the JMX interface. The attacker can 
-then use these credentials to access the JMX interface and perform 
-unauthorized operations.<br></p><p>This is same vulnerability that CVE-2020-13946 was issued for, but the Java option was changed in JDK10.<br></p><p>This issue affects Apache Cassandra from 4.0.2 through 5.0.2 running Java 11.<br></p><p>Operators are recommended to upgrade to a release equal to or later than 4.0.15, 4.1.8, or 5.0.3 which fixes the issue.<br></p>
-<h3 id="references-2">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/jsk87d9yv8r204mgqpz1qxtp5wcrpysm">https://lists.apache.org/thread/jsk87d9yv8r204mgqpz1qxtp5wcrpysm</a></li>
+<li>Stefan Miklosovic (reporter)</li>
 </ul>
 <h2 id="CVE-2025-23015">User with MODIFY permission on ALL KEYSPACES can escalate privileges to superuser via unsafe actions</h2>
-<p>CVE-2025-23015 <a href="./CVE-2025-23015.cve.json">[CVE json]</a> <a href="./CVE-2025-23015.osv.json">[OSV json]</a></p>
+<p>CVE-2025-23015 <a href="https://cve.org/CVERecord?id=CVE-2025-23015">[CVE]</a> <a href="./CVE-2025-23015.cve.json">[CVE json]</a> <a href="./CVE-2025-23015.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-02-11T15:47:20.883Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache Cassandra from 3.0.0 through 3.0.30</li>
 <li>Apache Cassandra from 3.1.0 through 3.11.17</li>
@@ -175,11 +157,11 @@ unauthorized operations.<br></p><p>This is same vulnerability that CVE-2020-1394
 <li>Apache Cassandra from 4.1.0 through 4.1.7</li>
 <li>Apache Cassandra from 5.0.0 through 5.0.2</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-2">Description</h3>
 <p>Privilege Defined With Unsafe Actions vulnerability in Apache Cassandra. An user with MODIFY permission ON ALL KEYSPACES can escalate privileges to superuser within a targeted Cassandra cluster via unsafe actions to a system resource. Operators granting data MODIFY permission on all keyspaces on affected versions should review data access rules for potential breaches.<br><br>This issue affects Apache Cassandra through 3.0.30, 3.11.17, 4.0.16, 4.1.7, 5.0.2.<br><br>Users are recommended to upgrade to versions 3.0.32, 3.11.19, 4.0.17, 4.1.8, 5.0.3, which fixes the issue.<br><br>Addendum:<br><br></p>
 <p><span style="background-color: rgb(255, 255, 255);">A performance regression was detected in the security releases 3.0.30 [1] and 3.11.18 [2]. Affected users are recommended to upgrade to versions 3.0.32 and 3.11.19 instead.<br><br>The fix to this vulnerability was incorrectly applied to 4.0.16, and affected users in the 4.0 series are recommended to upgrade to 4.0.17 (see CVE-2025-26467 for more information).</span><br><br><span style="background-color: rgb(255, 255, 255);">Remaining versions are unaffected.</span><br><br><span style="background-color: rgb(255, 255, 255);">[1] - <a target="_blank" rel="nofollow" href="https://lists.apache.org/thread/yprngr9cmp9c43m1c56thv1v0v6y5ywq"><a href="https://lists.apache.org/thread/yprngr9cmp9c43m1c56thv1v0v6y5ywq">https://lists.apache.org/thread/yprngr9cmp9c43m1c56thv1v0v6y5ywq</a></a></span><br><span style="background-color: rgb(255, 255, 255);">[2] - <a target="_blank" rel="nofollow" href="https://lists.apache.org/thread/hc9shwlm1kmxdxosbh3qo2xooqoo3sc6"><a href="https://lists.apache.org/thread/hc9shwlm1kmxdxosbh3qo2xooqoo3sc6">https://lists.apache.org/thread/hc9shwlm1kmxdxosbh3qo2xooqoo3sc6</a></a></span></p>
 <br>
-<h3 id="references-3">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/jmks4msbgkl65ssg69x728sv1m0hwz3s">https://lists.apache.org/thread/jmks4msbgkl65ssg69x728sv1m0hwz3s</a></li>
 </ul>
@@ -190,46 +172,64 @@ unauthorized operations.<br></p><p>This is same vulnerability that CVE-2020-1394
 <li>Terry Thibault of Apple Services Engineering Security (finder)</li>
 <li>Will Brattain of Apple Services Engineering Security (finder)</li>
 </ul>
-<h2 id="CVE-2025-24860">CassandraNetworkAuthorizer and CassandraCIDRAuthorizer can be bypassed allowing access to different network regions</h2>
-<p>CVE-2025-24860 <a href="./CVE-2025-24860.cve.json">[CVE json]</a> <a href="./CVE-2025-24860.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-02-04T10:17:53.494Z</em></p>
+<h2 id="CVE-2024-27137">unrestricted deserialization of JMX authentication credentials</h2>
+<p>CVE-2024-27137 <a href="https://cve.org/CVERecord?id=CVE-2024-27137">[CVE]</a> <a href="./CVE-2024-27137.cve.json">[CVE json]</a> <a href="./CVE-2024-27137.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-02-04T10:19:42.511Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Cassandra from 4.0.2 before 4.0.15</li>
+<li>Apache Cassandra from 4.1.0 before 4.1.8</li>
+<li>Apache Cassandra from 5.0-beta1 before 5.0.3</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>In Apache Cassandra it is possible for a local attacker without access
+ to the Apache Cassandra process or configuration files to manipulate 
+the RMI registry to perform a man-in-the-middle attack and capture user 
+names and passwords used to access the JMX interface. The attacker can 
+then use these credentials to access the JMX interface and perform 
+unauthorized operations.<br></p><p>This is same vulnerability that CVE-2020-13946 was issued for, but the Java option was changed in JDK10.<br></p><p>This issue affects Apache Cassandra from 4.0.2 through 5.0.2 running Java 11.<br></p><p>Operators are recommended to upgrade to a release equal to or later than 4.0.15, 4.1.8, or 5.0.3 which fixes the issue.<br></p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/jsk87d9yv8r204mgqpz1qxtp5wcrpysm">https://lists.apache.org/thread/jsk87d9yv8r204mgqpz1qxtp5wcrpysm</a></li>
+</ul>
+<h2 id="CVE-2023-30601">Privilege escalation when enabling FQL/Audit logs</h2>
+<p>CVE-2023-30601 <a href="https://cve.org/CVERecord?id=CVE-2023-30601">[CVE]</a> <a href="./CVE-2023-30601.cve.json">[CVE json]</a> <a href="./CVE-2023-30601.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-05-30T07:25:46.970Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache Cassandra from 4.0.0 through 4.0.15</li>
-<li>Apache Cassandra from 4.1.0 through 4.1.7</li>
-<li>Apache Cassandra from 5.0.0 through 5.0.2</li>
+<li>Apache Cassandra from 4.0.0 through 4.0.9</li>
+<li>Apache Cassandra from 4.1.0 through 4.1.1</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<p></p><p>Incorrect Authorization vulnerability in Apache Cassandra allowing users to access a datacenter or IP/CIDR groups they should not be able to when using CassandraNetworkAuthorizer or CassandraCIDRAuthorizer.<br><br>Users with restricted data center access can update their own permissions via data control language (DCL) statements on affected versions.<br></p><p></p><p>This issue affects Apache Cassandra: from 4.0.0 through 4.0.15 and from 4.1.0 through 4.1.7 for CassandraNetworkAuthorizer, and from 5.0.0 through 5.0.2 for both CassandraNetworkAuthorizer and CassandraCIDRAuthorizer.<br></p><p></p><p>Operators using&nbsp;CassandraNetworkAuthorizer or&nbsp;CassandraCIDRAuthorizer on affected versions should review data access rules for potential breaches. Users are recommended to upgrade to versions 4.0.16, 4.1.8, 5.0.3, which fixes the issue.<br></p><p></p>
+<p>Privilege escalation when enabling FQL/Audit logs allows user with JMX access to run arbitrary commands as the user running Apache Cassandra<br><p>This issue affects Apache Cassandra: from 4.0.0 through 4.0.9, from 4.1.0 through 4.1.1.</p>WORKAROUND<br>The vulnerability requires nodetool/JMX access to be exploitable, disable access for any non-trusted users.<br><br>MITIGATION<br>Upgrade to 4.0.10 or 4.1.2 and leave the new FQL/Auditlog configuration property allow_nodetool_archive_command as false.</p>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/yjo5on4tf7s1r9qklc4byrz30b8vkm2d">https://lists.apache.org/thread/yjo5on4tf7s1r9qklc4byrz30b8vkm2d</a></li>
+<li><a href="https://lists.apache.org/thread/f74p9jdhmmp7vtrqd8lgm8bq3dhxl8vn">https://lists.apache.org/thread/f74p9jdhmmp7vtrqd8lgm8bq3dhxl8vn</a></li>
 </ul>
 <h3 id="credits-3">Credits</h3>
 <ul>
-<li>Stefan Miklosovic (reporter)</li>
+<li>Gal Elbaz at Oligo (finder)</li>
 </ul>
-<h2 id="CVE-2025-26467">User with MODIFY permission on ALL KEYSPACES can escalate privileges to superuser via unsafe actions (4.0.16 only)</h2>
-<p>CVE-2025-26467 <a href="./CVE-2025-26467.cve.json">[CVE json]</a> <a href="./CVE-2025-26467.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-08-25T13:14:47.609Z</em></p>
+<h2 id="CVE-2021-44521">Remote code execution for scripted UDFs</h2>
+<p>CVE-2021-44521 <a href="https://cve.org/CVERecord?id=CVE-2021-44521">[CVE]</a> <a href="./CVE-2021-44521.cve.json">[CVE json]</a> <a href="./CVE-2021-44521.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-02-11T12:02:55.157Z</em></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
-<li>Apache Cassandra at 4.0.16</li>
+<li>Apache Cassandra from 3.0.0 before *</li>
 </ul>
 <h3 id="description-5">Description</h3>
-<p>
-<p><span style="background-color: rgb(255, 255, 255);">Privilege Defined With Unsafe Actions vulnerability in Apache Cassandra. An user with MODIFY permission ON ALL KEYSPACES can escalate privileges to superuser within a targeted Cassandra cluster via unsafe actions to a system resource. Operators granting data MODIFY permission on all keyspaces on affected versions should review data access rules for potential breaches.</span></p>
-<p><br><span style="background-color: var(--wht);"><br>This issue affects Apache Cassandra 3.0.30, 3.11.17, 4.0.16, 4.1.7, 5.0.2, but this advisory is only for 4.0.16 because the fix to CVE-2025-23015 was incorrectly applied to 4.0.16, so that version is still affected.<br></span><br>Users in the 4.0 series are recommended to upgrade to version 4.0.17 which fixes the issue. Users from 3.0, 3.11, 4.1 and 5.0 series should follow recommendation from CVE-2025-23015.<br></p></p>
+<p>When running Apache Cassandra with the following configuration:</p>
+<p>enable_user_defined_functions: true
+enable_scripted_user_defined_functions: true
+enable_user_defined_functions_threads: false</p>
+<p>it is possible for an attacker to execute arbitrary code on the host. The attacker would need to have enough permissions to create user defined functions in the cluster to be able to exploit this. Note that this configuration is documented as unsafe, and will continue to be considered unsafe after this CVE.</p>
 <h3 id="references-5">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/xxj36rr4d6mzyqpld05dn8b9951hfpz7">https://lists.apache.org/thread/xxj36rr4d6mzyqpld05dn8b9951hfpz7</a></li>
+<li><a href="https://lists.apache.org/thread/y4nb9s4co34j8hdfmrshyl09lokm7356">https://lists.apache.org/thread/y4nb9s4co34j8hdfmrshyl09lokm7356</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>Adam Pond of Apple Services Engineering Security (finder)</li>
-<li>Ali Mirheidari of Apple Services Engineering Security (finder)</li>
-<li>Terry Thibault of Apple Services Engineering Security (finder)</li>
-<li>Will Brattain of Apple Services Engineering Security (finder)</li>
+<li>This issue was discovered by Omer Kaspi of the JFrog Security vulnerability research team.</li>
 </ul>
 
   

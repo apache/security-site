@@ -105,25 +105,25 @@
 <p>Do you want disclose a potential security issue for Apache Helix? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2022-47500">Open redirect</h2>
-<p>CVE-2022-47500 <a href="./CVE-2022-47500.cve.json">[CVE json]</a> <a href="./CVE-2022-47500.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-12-19T09:23:48.197Z</em></p>
+<h2 id="CVE-2024-22281">Helix front hard-coded secret in the express-session</h2>
+<p>CVE-2024-22281 <a href="https://cve.org/CVERecord?id=CVE-2024-22281">[CVE]</a> <a href="./CVE-2024-22281.cve.json">[CVE json]</a> <a href="./CVE-2024-22281.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-08-20T22:11:36.792Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Helix from 0.8.0 through 1.0.4</li>
+<li>Apache Helix Front (UI) through *</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>URL Redirection to Untrusted Site (&lsquo;Open Redirect&rsquo;) vulnerability in Apache Software Foundation Apache Helix UI component.<p>This issue affects Apache Helix all releases from 0.8.0 to 1.0.4.</p><p></p><b>Solution</b>: removed the the forward component since it was improper designed for UI embedding.<br><br><span style="background-color: rgb(255, 255, 255);"> User please upgrade to 1.1.0 to fix this issue.<br></span><br></p>
+<p>** UNSUPPORTED WHEN ASSIGNED ** The Apache Helix Front (UI) component contained a hard-coded secret, allowing an attacker to spoof sessions by generating their own fake cookies.<br></p><p>This issue affects Apache Helix Front (UI): all versions.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/lr74xtxxbb1t3dfn5qzzwl2xjr3qlbmh">https://lists.apache.org/thread/lr74xtxxbb1t3dfn5qzzwl2xjr3qlbmh</a></li>
+<li><a href="https://lists.apache.org/thread/zt26fpmrqx3fzcy8nv3b43kb3xllo5ny">https://lists.apache.org/thread/zt26fpmrqx3fzcy8nv3b43kb3xllo5ny</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>This issue was discovered by Everardo Padilla Saca (reporter)</li>
+<li>Jonathan Leitschuh (finder)</li>
 </ul>
 <h2 id="CVE-2023-38647">Deserialization vulnerability in Helix workflow and REST</h2>
-<p>CVE-2023-38647 <a href="./CVE-2023-38647.cve.json">[CVE json]</a> <a href="./CVE-2023-38647.osv.json">[OSV json]</a></p>
+<p>CVE-2023-38647 <a href="https://cve.org/CVERecord?id=CVE-2023-38647">[CVE]</a> <a href="./CVE-2023-38647.cve.json">[CVE json]</a> <a href="./CVE-2023-38647.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2023-07-26T07:52:23.420Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
@@ -139,22 +139,22 @@
 <ul>
 <li>Qing Xu (reporter)</li>
 </ul>
-<h2 id="CVE-2024-22281">Helix front hard-coded secret in the express-session</h2>
-<p>CVE-2024-22281 <a href="./CVE-2024-22281.cve.json">[CVE json]</a> <a href="./CVE-2024-22281.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-08-20T22:11:36.792Z</em></p>
+<h2 id="CVE-2022-47500">Open redirect</h2>
+<p>CVE-2022-47500 <a href="https://cve.org/CVERecord?id=CVE-2022-47500">[CVE]</a> <a href="./CVE-2022-47500.cve.json">[CVE json]</a> <a href="./CVE-2022-47500.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-12-19T09:23:48.197Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache Helix Front (UI) through *</li>
+<li>Apache Helix from 0.8.0 through 1.0.4</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>** UNSUPPORTED WHEN ASSIGNED ** The Apache Helix Front (UI) component contained a hard-coded secret, allowing an attacker to spoof sessions by generating their own fake cookies.<br></p><p>This issue affects Apache Helix Front (UI): all versions.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+<p>URL Redirection to Untrusted Site (&lsquo;Open Redirect&rsquo;) vulnerability in Apache Software Foundation Apache Helix UI component.<p>This issue affects Apache Helix all releases from 0.8.0 to 1.0.4.</p><p></p><b>Solution</b>: removed the the forward component since it was improper designed for UI embedding.<br><br><span style="background-color: rgb(255, 255, 255);"> User please upgrade to 1.1.0 to fix this issue.<br></span><br></p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/zt26fpmrqx3fzcy8nv3b43kb3xllo5ny">https://lists.apache.org/thread/zt26fpmrqx3fzcy8nv3b43kb3xllo5ny</a></li>
+<li><a href="https://lists.apache.org/thread/lr74xtxxbb1t3dfn5qzzwl2xjr3qlbmh">https://lists.apache.org/thread/lr74xtxxbb1t3dfn5qzzwl2xjr3qlbmh</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>Jonathan Leitschuh (finder)</li>
+<li>This issue was discovered by Everardo Padilla Saca (reporter)</li>
 </ul>
 
   

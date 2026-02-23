@@ -105,77 +105,77 @@
 <p>Do you want disclose a potential security issue for Apache Shiro? You can read more about the projects&rsquo; security policy on their <a href="https://shiro.apache.org/security-reports.html">security page</a>, and email your report to the <a href="mailto:security@shiro.apache.org">Apache Shiro Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://shiro.apache.org/security-reports.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-41303">Apache Shiro before 1.8.0, when using Apache Shiro with Spring Boot, a specially crafted HTTP request may cause an authentication bypass</h2>
-<p>CVE-2021-41303 <a href="./CVE-2021-41303.cve.json">[CVE json]</a> <a href="./CVE-2021-41303.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-09-17T08:17:09.454Z</em></p>
+<h2 id="CVE-2026-23903">Auth bypass when accessing static files only on case-insensitive filesystems</h2>
+<p>CVE-2026-23903 <a href="https://cve.org/CVERecord?id=CVE-2026-23903">[CVE]</a> <a href="./CVE-2026-23903.cve.json">[CVE json]</a> <a href="./CVE-2026-23903.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-02-09T09:26:19.996Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Shiro from Apache Shiro before 1.8.0</li>
+<li>Apache Shiro before 2.0.7</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Apache Shiro before 1.8.0, when using Apache Shiro with Spring Boot, a specially crafted HTTP request may cause an authentication bypass.</p>
-<p>Users should update to Apache Shiro 1.8.0.</p>
+<p>Authentication Bypass by Alternate Name vulnerability in Apache Shiro.</p><p>This issue affects Apache Shiro: before 2.0.7.</p><p>Users are recommended to upgrade to version 2.0.7, which fixes the issue.</p>The issue only effects static files. If static files are served from a case-insensitive filesystem,<br>such as default macOS setup, static files may be accessed by varying the case of the filename in the request.<br>If only lower-case (common default) filters are present in Shiro, they may be bypassed this way.<br><br>Shiro 2.0.7 and later has a new parameters to remediate this issue<br>shiro.ini: <span style="background-color: rgba(129, 139, 152, 0.12);">filterChainResolver.caseInsensitive = true<br></span>application.propertie: shiro<span style="background-color: rgba(129, 139, 152, 0.12);">.caseInsensitive=true<br></span><br>Shiro 3.0.0 and later (upcoming) makes this the default.
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread.html/re470be1ffea44bca28ccb0e67a4cf5d744e2d2b981d00fdbbf5abc13%40%3Cannounce.shiro.apache.org%3E">https://lists.apache.org/thread.html/re470be1ffea44bca28ccb0e67a4cf5d744e2d2b981d00fdbbf5abc13%40%3Cannounce.shiro.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread/5jjf0hnjcol58z2m5y255c7scz1lnp8k">https://lists.apache.org/thread/5jjf0hnjcol58z2m5y255c7scz1lnp8k</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Apache Shiro would like to thank tsug0d for reporting this issue.</li>
+<li>Jesse Yang (finder)</li>
+<li>Lenny Pimak (remediation developer)</li>
 </ul>
-<h2 id="CVE-2022-32532">Authentication Bypass Vulnerability</h2>
-<p>CVE-2022-32532 <a href="./CVE-2022-32532.cve.json">[CVE json]</a> <a href="./CVE-2022-32532.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-06-28T23:13:16.050Z</em></p>
+<h2 id="CVE-2026-23901">Brute force attack possible to determine valid user names</h2>
+<p>CVE-2026-23901 <a href="https://cve.org/CVERecord?id=CVE-2026-23901">[CVE]</a> <a href="./CVE-2026-23901.cve.json">[CVE json]</a> <a href="./CVE-2026-23901.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-02-10T09:25:49.952Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache Shiro at Before 1.9.1</li>
+<li>Apache Shiro before 2.0.7</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>Apache Shiro before 1.9.1, A RegexRequestMatcher can be misconfigured to be bypassed on some servlet containers. Applications using RegExPatternMatcher with <code>.</code> in the regular expression are possibly vulnerable to an authorization bypass.</p>
+<p>Observable Timing Discrepancy vulnerability in Apache Shiro.</p><p>This issue affects Apache Shiro: from 1.*, 2.* before 2.0.7.</p><p>Users are recommended to upgrade to version 2.0.7 or later, which fixes the issue.</p>Prior to Shiro 2.0.7, code paths for non-existent vs. existing users are different enough,<br>that a brute-force attack may be able to tell, by timing the requests only, determine if<br>the request failed because of a non-existent user vs. wrong password.<br><br>The most likely attack vector is a local attack only.<br>Shiro security model&nbsp;<a target="_blank" rel="nofollow" href="https://shiro.apache.org/security-model.html#username_enumeration">https://shiro.apache.org/security-model.html#username_enumeration</a>&nbsp;discusses this as well.<br><br>Typically, brute force attack can be mitigated at the infrastructure level.
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/y8260dw8vbm99oq7zv6y3mzn5ovk90xh">https://lists.apache.org/thread/y8260dw8vbm99oq7zv6y3mzn5ovk90xh</a></li>
+<li><a href="https://lists.apache.org/thread/mm1jct9b86jvnh3y44tj22xvjtx3xhhh">https://lists.apache.org/thread/mm1jct9b86jvnh3y44tj22xvjtx3xhhh</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>Apache Shiro would like the thank 4ra1n for reporting this issue.</li>
+<li>4ra1n (finder)</li>
+<li>Y4tacker (finder)</li>
+<li>lprimak (remediation developer)</li>
 </ul>
-<h2 id="CVE-2022-40664">Authentication Bypass Vulnerability in Shiro when forwarding or including via RequestDispatcher</h2>
-<p>CVE-2022-40664 <a href="./CVE-2022-40664.cve.json">[CVE json]</a> <a href="./CVE-2022-40664.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-10-12T07:07:53.344Z</em></p>
+<h2 id="CVE-2023-46750">URL Redirection to Untrusted Site (&lsquo;Open Redirect&rsquo;) vulnerability in FORM authentication feature Apache Shiro.</h2>
+<p>CVE-2023-46750 <a href="https://cve.org/CVERecord?id=CVE-2023-46750">[CVE]</a> <a href="./CVE-2023-46750.cve.json">[CVE json]</a> <a href="./CVE-2023-46750.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-12-14T08:15:56.341Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache Shiro from Apache Shiro before 1.10.0</li>
+<li>Apache Shiro before 1.13.0</li>
+<li>Apache Shiro from 2.0.0-alpha-1 before 2.0.0-alpha-4</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>Apache Shiro before 1.10.0, Authentication Bypass Vulnerability in Shiro when forwarding or including via RequestDispatcher.</p>
+<p><span style="background-color: rgb(255, 255, 255);">URL Redirection to Untrusted Site (&lsquo;Open Redirect&rsquo;) vulnerability when &ldquo;form&rdquo; authentication is used in Apache Shiro.<br><span style="background-color: rgb(255, 255, 255);">Mitigation: Update to Apache Shiro 1.13.0+ or 2.0.0-alpha-4+.</span></span><br></p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/loc2ktxng32xpy7lfwxto13k4lvnhjwg">https://lists.apache.org/thread/loc2ktxng32xpy7lfwxto13k4lvnhjwg</a></li>
+<li><a href="https://lists.apache.org/thread/hoc9zdyzmmrfj1zhctsvvtx844tcq6w9">https://lists.apache.org/thread/hoc9zdyzmmrfj1zhctsvvtx844tcq6w9</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>Apache Shiro would like to thank Y4tacker for reporting this issue</li>
+<li>Claudio Villella (finder)</li>
 </ul>
-<h2 id="CVE-2023-22602">Apache Shiro before 1.11.0, when used with Spring Boot 2.6+, may allow authentication bypass through a specially crafted HTTP request</h2>
-<p>CVE-2023-22602 <a href="./CVE-2023-22602.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2023-01-14T09:33:37.695Z</em></p>
+<h2 id="CVE-2023-46749">Apache Shiro before 1.13.0 or 2.0.0-alpha-4, may be susceptible to a path traversal attack that results in an authentication bypass when used together with path rewriting </h2>
+<p>CVE-2023-46749 <a href="https://cve.org/CVERecord?id=CVE-2023-46749">[CVE]</a> <a href="./CVE-2023-46749.cve.json">[CVE json]</a> <a href="./CVE-2023-46749.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-01-19T18:12:43.905Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache Shiro before 1.11.0</li>
+<li>Apache Shiro before 1.13.0</li>
+<li>Apache Shiro from 2.0.0-alpha-1 before 2.0.0-alpha-4</li>
 </ul>
 <h3 id="description-3">Description</h3>
-<p><span style="background-color: rgb(255, 255, 255);">When using Apache Shiro before 1.11.0 together with Spring Boot 2.6+, a specially crafted HTTP request may cause an authentication bypass.<br><br></span>The authentication bypass occurs when Shiro and Spring Boot are using different pattern-matching techniques. Both Shiro and Spring Boot &lt; 2.6 default to Ant style pattern matching.<br><p>Mitigation: Update to Apache Shiro 1.11.0, or set the following Spring Boot configuration value:  <code>spring.mvc.pathmatch.matching-strategy = ant_path_matcher</code><br></p></p>
+<p>Apache Shiro before 1.13.0 or 2.0.0-alpha-4, may be susceptible to a path traversal attack that results in an authentication bypass when used together with path rewriting <br><br><span style="background-color: rgb(255, 255, 255);">Mitigation: Update to Apache Shiro 1.13.0+ or 2.0.0-alpha-4+, or ensure <code>blockSemicolon</code> is enabled (this is the default).<br></span><br></p>
 <h3 id="references-3">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/dzj0k2smpzzgj6g666hrbrgsrlf9yhkl">https://lists.apache.org/thread/dzj0k2smpzzgj6g666hrbrgsrlf9yhkl</a></li>
-</ul>
-<h3 id="credits-3">Credits</h3>
-<ul>
-<li>v3ged0ge and Adamytd (finder)</li>
+<li><a href="https://lists.apache.org/thread/mdv7ftz7k4488rzloxo2fb0p9shnp9wm">https://lists.apache.org/thread/mdv7ftz7k4488rzloxo2fb0p9shnp9wm</a></li>
 </ul>
 <h2 id="CVE-2023-34478">Apache Shiro before 1.12.0, or 2.0.0-alpha-3, may be susceptible to a path traversal attack when used together with APIs or other web frameworks that route requests based on non-normalized requests.</h2>
-<p>CVE-2023-34478 <a href="./CVE-2023-34478.cve.json">[CVE json]</a> <a href="./CVE-2023-34478.osv.json">[OSV json]</a></p>
+<p>CVE-2023-34478 <a href="https://cve.org/CVERecord?id=CVE-2023-34478">[CVE]</a> <a href="./CVE-2023-34478.cve.json">[CVE json]</a> <a href="./CVE-2023-34478.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2023-07-24T18:24:43.013Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
@@ -188,42 +188,79 @@
 <ul>
 <li><a href="https://lists.apache.org/thread/mbv26onkgw9o35rldh7vmq11wpv2t2qk">https://lists.apache.org/thread/mbv26onkgw9o35rldh7vmq11wpv2t2qk</a></li>
 </ul>
-<h3 id="credits-4">Credits</h3>
+<h3 id="credits-3">Credits</h3>
 <ul>
 <li>tkswifty (finder)</li>
 <li>Ha1c9on (finder)</li>
 </ul>
-<h2 id="CVE-2023-46749">Apache Shiro before 1.13.0 or 2.0.0-alpha-4, may be susceptible to a path traversal attack that results in an authentication bypass when used together with path rewriting </h2>
-<p>CVE-2023-46749 <a href="./CVE-2023-46749.cve.json">[CVE json]</a> <a href="./CVE-2023-46749.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-01-19T18:12:43.905Z</em></p>
+<h2 id="CVE-2023-22602">Apache Shiro before 1.11.0, when used with Spring Boot 2.6+, may allow authentication bypass through a specially crafted HTTP request</h2>
+<p>CVE-2023-22602 <a href="https://cve.org/CVERecord?id=CVE-2023-22602">[CVE]</a> <a href="./CVE-2023-22602.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2023-01-14T09:33:37.695Z</em></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
-<li>Apache Shiro before 1.13.0</li>
-<li>Apache Shiro from 2.0.0-alpha-1 before 2.0.0-alpha-4</li>
+<li>Apache Shiro before 1.11.0</li>
 </ul>
 <h3 id="description-5">Description</h3>
-<p>Apache Shiro before 1.13.0 or 2.0.0-alpha-4, may be susceptible to a path traversal attack that results in an authentication bypass when used together with path rewriting <br><br><span style="background-color: rgb(255, 255, 255);">Mitigation: Update to Apache Shiro 1.13.0+ or 2.0.0-alpha-4+, or ensure <code>blockSemicolon</code> is enabled (this is the default).<br></span><br></p>
+<p><span style="background-color: rgb(255, 255, 255);">When using Apache Shiro before 1.11.0 together with Spring Boot 2.6+, a specially crafted HTTP request may cause an authentication bypass.<br><br></span>The authentication bypass occurs when Shiro and Spring Boot are using different pattern-matching techniques. Both Shiro and Spring Boot &lt; 2.6 default to Ant style pattern matching.<br><p>Mitigation: Update to Apache Shiro 1.11.0, or set the following Spring Boot configuration value:  <code>spring.mvc.pathmatch.matching-strategy = ant_path_matcher</code><br></p></p>
 <h3 id="references-5">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/mdv7ftz7k4488rzloxo2fb0p9shnp9wm">https://lists.apache.org/thread/mdv7ftz7k4488rzloxo2fb0p9shnp9wm</a></li>
+<li><a href="https://lists.apache.org/thread/dzj0k2smpzzgj6g666hrbrgsrlf9yhkl">https://lists.apache.org/thread/dzj0k2smpzzgj6g666hrbrgsrlf9yhkl</a></li>
 </ul>
-<h2 id="CVE-2023-46750">URL Redirection to Untrusted Site (&lsquo;Open Redirect&rsquo;) vulnerability in FORM authentication feature Apache Shiro.</h2>
-<p>CVE-2023-46750 <a href="./CVE-2023-46750.cve.json">[CVE json]</a> <a href="./CVE-2023-46750.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-12-14T08:15:56.341Z</em></p>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>v3ged0ge and Adamytd (finder)</li>
+</ul>
+<h2 id="CVE-2022-40664">Authentication Bypass Vulnerability in Shiro when forwarding or including via RequestDispatcher</h2>
+<p>CVE-2022-40664 <a href="https://cve.org/CVERecord?id=CVE-2022-40664">[CVE]</a> <a href="./CVE-2022-40664.cve.json">[CVE json]</a> <a href="./CVE-2022-40664.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-10-12T07:07:53.344Z</em></p>
 <h3 id="affected-6">Affected</h3>
 <ul>
-<li>Apache Shiro before 1.13.0</li>
-<li>Apache Shiro from 2.0.0-alpha-1 before 2.0.0-alpha-4</li>
+<li>Apache Shiro from Apache Shiro before 1.10.0</li>
 </ul>
 <h3 id="description-6">Description</h3>
-<p><span style="background-color: rgb(255, 255, 255);">URL Redirection to Untrusted Site (&lsquo;Open Redirect&rsquo;) vulnerability when &ldquo;form&rdquo; authentication is used in Apache Shiro.<br><span style="background-color: rgb(255, 255, 255);">Mitigation: Update to Apache Shiro 1.13.0+ or 2.0.0-alpha-4+.</span></span><br></p>
+<p>Apache Shiro before 1.10.0, Authentication Bypass Vulnerability in Shiro when forwarding or including via RequestDispatcher.</p>
 <h3 id="references-6">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/hoc9zdyzmmrfj1zhctsvvtx844tcq6w9">https://lists.apache.org/thread/hoc9zdyzmmrfj1zhctsvvtx844tcq6w9</a></li>
+<li><a href="https://lists.apache.org/thread/loc2ktxng32xpy7lfwxto13k4lvnhjwg">https://lists.apache.org/thread/loc2ktxng32xpy7lfwxto13k4lvnhjwg</a></li>
 </ul>
 <h3 id="credits-5">Credits</h3>
 <ul>
-<li>Claudio Villella (finder)</li>
+<li>Apache Shiro would like to thank Y4tacker for reporting this issue</li>
+</ul>
+<h2 id="CVE-2022-32532">Authentication Bypass Vulnerability</h2>
+<p>CVE-2022-32532 <a href="https://cve.org/CVERecord?id=CVE-2022-32532">[CVE]</a> <a href="./CVE-2022-32532.cve.json">[CVE json]</a> <a href="./CVE-2022-32532.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-06-28T23:13:16.050Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache Shiro at Before 1.9.1</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>Apache Shiro before 1.9.1, A RegexRequestMatcher can be misconfigured to be bypassed on some servlet containers. Applications using RegExPatternMatcher with <code>.</code> in the regular expression are possibly vulnerable to an authorization bypass.</p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/y8260dw8vbm99oq7zv6y3mzn5ovk90xh">https://lists.apache.org/thread/y8260dw8vbm99oq7zv6y3mzn5ovk90xh</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>Apache Shiro would like the thank 4ra1n for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2021-41303">Apache Shiro before 1.8.0, when using Apache Shiro with Spring Boot, a specially crafted HTTP request may cause an authentication bypass</h2>
+<p>CVE-2021-41303 <a href="https://cve.org/CVERecord?id=CVE-2021-41303">[CVE]</a> <a href="./CVE-2021-41303.cve.json">[CVE json]</a> <a href="./CVE-2021-41303.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-09-17T08:17:09.454Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Shiro from Apache Shiro before 1.8.0</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>Apache Shiro before 1.8.0, when using Apache Shiro with Spring Boot, a specially crafted HTTP request may cause an authentication bypass.</p>
+<p>Users should update to Apache Shiro 1.8.0.</p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/re470be1ffea44bca28ccb0e67a4cf5d744e2d2b981d00fdbbf5abc13%40%3Cannounce.shiro.apache.org%3E">https://lists.apache.org/thread.html/re470be1ffea44bca28ccb0e67a4cf5d744e2d2b981d00fdbbf5abc13%40%3Cannounce.shiro.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>Apache Shiro would like to thank tsug0d for reporting this issue.</li>
 </ul>
 
   

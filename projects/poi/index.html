@@ -105,23 +105,22 @@
 <p>Do you want disclose a potential security issue for Apache POI? You can read more about the projects&rsquo; security policy on their <a href="https://poi.apache.org/security.html">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://poi.apache.org/security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-23926">XMLBeans XML Entity Expansion</h2>
-<p>CVE-2021-23926 <a href="./CVE-2021-23926.cve.json">[CVE json]</a> <a href="./CVE-2021-23926.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-01-14T14:45:47.410Z</em></p>
+<h2 id="CVE-2025-31672">parsing OOXML based files (xlsx, docx, etc.), poi-ooxml could read unexpected data if underlying zip has duplicate zip entry names</h2>
+<p>CVE-2025-31672 <a href="https://cve.org/CVERecord?id=CVE-2025-31672">[CVE]</a> <a href="./CVE-2025-31672.cve.json">[CVE json]</a> <a href="./CVE-2025-31672.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-04-09T11:59:31.807Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache XMLBeans from Apache XMLBeans through 2.6.0</li>
+<li>Apache POI before 5.4.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>The XML parsers used by XMLBeans up to version 2.6.0 did not set the properties needed to protect the user from malicious XML input. Vulnerabilities include possibilities for XML Entity Expansion attacks.
-Affects XMLBeans up to and including v2.6.0.</p>
+<p>Improper Input Validation vulnerability in Apache POI. The issue affects the parsing of OOXML format files like xlsx, docx and pptx. These file formats are basically zip files and it is possible for malicious users to add zip entries with duplicate names (including the path) in the zip. In this case, products reading the affected file could read different data because 1 of the zip entries with the duplicate name is selected over another but different products may choose a different zip entry.<br>This issue affects Apache POI poi-ooxml before 5.4.0. poi-ooxml 5.4.0 has a check that throws an exception if zip entries with duplicate file names are found in the input file.<br>Users are recommended to upgrade to version poi-ooxml 5.4.0, which fixes the issue. Please read <a target="_blank" rel="nofollow" href="https://poi.apache.org/security.html"><a href="https://poi.apache.org/security.html">https://poi.apache.org/security.html</a></a> for recommendations about how to use the POI libraries securely.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://poi.apache.org/">https://poi.apache.org/</a></li>
-<li><a href="https://issues.apache.org/jira/browse/XMLBEANS-517">https://issues.apache.org/jira/browse/XMLBEANS-517</a></li>
+<li><a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=69620">https://bz.apache.org/bugzilla/show_bug.cgi?id=69620</a></li>
+<li><a href="https://lists.apache.org/thread/k14w8vcjqy4h34hh5kzldko78kpylkq5">https://lists.apache.org/thread/k14w8vcjqy4h34hh5kzldko78kpylkq5</a></li>
 </ul>
 <h2 id="CVE-2022-26336">A carefully crafted TNEF file can cause an out of memory exception</h2>
-<p>CVE-2022-26336 <a href="./CVE-2022-26336.cve.json">[CVE json]</a> <a href="./CVE-2022-26336.osv.json">[OSV json]</a></p>
+<p>CVE-2022-26336 <a href="https://cve.org/CVERecord?id=CVE-2022-26336">[CVE]</a> <a href="./CVE-2022-26336.cve.json">[CVE json]</a> <a href="./CVE-2022-26336.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-03-04T15:58:59.057Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
@@ -137,19 +136,20 @@ Affects XMLBeans up to and including v2.6.0.</p>
 <ul>
 <li>Apache POI would like to thank Craig Haft of Yahoo Inc. for reporting and providing a patch for this issue.</li>
 </ul>
-<h2 id="CVE-2025-31672">parsing OOXML based files (xlsx, docx, etc.), poi-ooxml could read unexpected data if underlying zip has duplicate zip entry names</h2>
-<p>CVE-2025-31672 <a href="./CVE-2025-31672.cve.json">[CVE json]</a> <a href="./CVE-2025-31672.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-04-09T11:59:31.807Z</em></p>
+<h2 id="CVE-2021-23926">XMLBeans XML Entity Expansion</h2>
+<p>CVE-2021-23926 <a href="https://cve.org/CVERecord?id=CVE-2021-23926">[CVE]</a> <a href="./CVE-2021-23926.cve.json">[CVE json]</a> <a href="./CVE-2021-23926.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-01-14T14:45:47.410Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache POI before 5.4.0</li>
+<li>Apache XMLBeans from Apache XMLBeans through 2.6.0</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>Improper Input Validation vulnerability in Apache POI. The issue affects the parsing of OOXML format files like xlsx, docx and pptx. These file formats are basically zip files and it is possible for malicious users to add zip entries with duplicate names (including the path) in the zip. In this case, products reading the affected file could read different data because 1 of the zip entries with the duplicate name is selected over another but different products may choose a different zip entry.<br>This issue affects Apache POI poi-ooxml before 5.4.0. poi-ooxml 5.4.0 has a check that throws an exception if zip entries with duplicate file names are found in the input file.<br>Users are recommended to upgrade to version poi-ooxml 5.4.0, which fixes the issue. Please read <a target="_blank" rel="nofollow" href="https://poi.apache.org/security.html"><a href="https://poi.apache.org/security.html">https://poi.apache.org/security.html</a></a> for recommendations about how to use the POI libraries securely.</p>
+<p>The XML parsers used by XMLBeans up to version 2.6.0 did not set the properties needed to protect the user from malicious XML input. Vulnerabilities include possibilities for XML Entity Expansion attacks.
+Affects XMLBeans up to and including v2.6.0.</p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=69620">https://bz.apache.org/bugzilla/show_bug.cgi?id=69620</a></li>
-<li><a href="https://lists.apache.org/thread/k14w8vcjqy4h34hh5kzldko78kpylkq5">https://lists.apache.org/thread/k14w8vcjqy4h34hh5kzldko78kpylkq5</a></li>
+<li><a href="https://poi.apache.org/">https://poi.apache.org/</a></li>
+<li><a href="https://issues.apache.org/jira/browse/XMLBEANS-517">https://issues.apache.org/jira/browse/XMLBEANS-517</a></li>
 </ul>
 
   

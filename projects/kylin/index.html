@@ -105,298 +105,298 @@
 <p>Do you want disclose a potential security issue for Apache Kylin? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-27738">Improper Access Control to Streaming Coordinator &amp; SSRF</h2>
-<p>CVE-2021-27738 <a href="./CVE-2021-27738.cve.json">[CVE json]</a> <a href="./CVE-2021-27738.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-01-06T12:26:35.086Z</em></p>
+<h2 id="CVE-2025-61735">Server-Side Request Forgery</h2>
+<p>CVE-2025-61735 <a href="https://cve.org/CVERecord?id=CVE-2025-61735">[CVE]</a> <a href="./CVE-2025-61735.cve.json">[CVE json]</a> <a href="./CVE-2025-61735.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-02-02T07:35:53.853Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Kylin from Apache Kylin 3 before 3.1.2</li>
+<li>Apache Kylin from 4.0.0 through 5.0.2</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>All request mappings in <code>StreamingCoordinatorController.java</code> handling <code>/kylin/api/streaming_coordinator/*</code> REST API endpoints did not include any security checks, which allowed an unauthenticated user to issue arbitrary requests, such as assigning/unassigning of streaming cubes, creation/modification and deletion of replica sets, to the Kylin Coordinator.</p>
-<p>For endpoints accepting node details in HTTP message body, unauthenticated (but limited) server-side request forgery (SSRF) can be achieved.</p>
-<p>This issue affects Apache Kylin Apache Kylin 3 versions prior to 3.1.2.</p>
+<p>Server-Side Request Forgery (SSRF) vulnerability in Apache Kylin.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.2.&nbsp;You are fine as long as the Kylin's system and project admin access is well protected.</p><p>Users are recommended to upgrade to version 5.0.3, which fixes the issue.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/vkohh0to2vzwymyb2x13fszs3cs3vd70">https://lists.apache.org/thread/vkohh0to2vzwymyb2x13fszs3cs3vd70</a></li>
+<li><a href="https://lists.apache.org/thread/yscobmx869zvprsykb94r24jtmb58ckh">https://lists.apache.org/thread/yscobmx869zvprsykb94r24jtmb58ckh</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Wei Lin Ngo <a href="mailto:ngo.weilin@starlabs.sg">ngo.weilin@starlabs.sg</a></li>
+<li>liuhuajin <a href="mailto:liuhuajin1@huawei.com">liuhuajin1@huawei.com</a> (finder)</li>
 </ul>
-<h2 id="CVE-2021-31522">Apache Kylin unsafe class loading</h2>
-<p>CVE-2021-31522 <a href="./CVE-2021-31522.cve.json">[CVE json]</a> <a href="./CVE-2021-31522.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-01-06T12:28:58.641Z</em></p>
+<h2 id="CVE-2025-61734">improper restriction of file read</h2>
+<p>CVE-2025-61734 <a href="https://cve.org/CVERecord?id=CVE-2025-61734">[CVE]</a> <a href="./CVE-2025-61734.cve.json">[CVE json]</a> <a href="./CVE-2025-61734.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-02-02T07:35:03.252Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache Kylin from Apache Kylin 2 through 2.6.6</li>
-<li>Apache Kylin from Apache Kylin 3 through 3.1.2</li>
-<li>Apache Kylin from Apache Kylin 4 through 4.0.0</li>
+<li>Apache Kylin from 4.0.0 through 5.0.2</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>Kylin can receive user input and load any class through Class.forName(&hellip;).
-This issue affects Apache Kylin 2 version 2.6.6 and prior versions; Apache Kylin 3 version 3.1.2 and prior versions; Apache Kylin 4 version 4.0.0 and prior versions.</p>
+<p>Files or Directories Accessible to External Parties vulnerability in Apache Kylin.
+ You are fine as long as the Kylin's system and project admin access is well protected.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.2.</p><p>Users are recommended to upgrade to version 5.0.3, which fixes the issue.</p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/hh5crx3yr701zd8wtpqo1mww2rlkvznw">https://lists.apache.org/thread/hh5crx3yr701zd8wtpqo1mww2rlkvznw</a></li>
+<li><a href="https://lists.apache.org/thread/z705g7sn3g0bkchlqbo1hz1tyqorn4d2">https://lists.apache.org/thread/z705g7sn3g0bkchlqbo1hz1tyqorn4d2</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>bo yu <a href="mailto:forhaby0@gmail.com">forhaby0@gmail.com</a></li>
+<li>liuhuajin <a href="mailto:liuhuajin1@huawei.com">liuhuajin1@huawei.com</a> (finder)</li>
 </ul>
-<h2 id="CVE-2021-36774">Mysql JDBC Connector Deserialize RCE</h2>
-<p>CVE-2021-36774 <a href="./CVE-2021-36774.cve.json">[CVE json]</a> <a href="./CVE-2021-36774.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-01-06T12:29:47.699Z</em></p>
+<h2 id="CVE-2025-61733">Authentication bypass</h2>
+<p>CVE-2025-61733 <a href="https://cve.org/CVERecord?id=CVE-2025-61733">[CVE]</a> <a href="./CVE-2025-61733.cve.json">[CVE json]</a> <a href="./CVE-2025-61733.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-02-02T07:33:38.093Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache Kylin from Apache Kylin 2 through 2.6.6</li>
-<li>Apache Kylin from Apache Kylin 3 through 3.1.2</li>
+<li>Apache Kylin from 4.0.0 through 5.0.2</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>Apache Kylin allows users to read data from other database systems using JDBC. The MySQL JDBC driver supports certain properties, which, if left unmitigated, can allow an attacker to execute arbitrary code from a hacker-controlled malicious MySQL server within Kylin server processes.
-This issue affects Apache Kylin 2 version 2.6.6 and prior versions; Apache Kylin 3 version 3.1.2 and prior versions.</p>
+<p>Authentication Bypass Using an Alternate Path or Channel vulnerability in Apache Kylin.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.2.</p><p>Users are recommended to upgrade to version 5.0.3, which fixes the issue.</p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/lchpcvoolc6w8zc6vo1wstk8zbfqv2ow">https://lists.apache.org/thread/lchpcvoolc6w8zc6vo1wstk8zbfqv2ow</a></li>
+<li><a href="https://lists.apache.org/thread/8wmcffly6gp50nmfw8j4w3hlmv843yo0">https://lists.apache.org/thread/8wmcffly6gp50nmfw8j4w3hlmv843yo0</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>jinchen sheng <a href="mailto:jincsheng@gmail.com">jincsheng@gmail.com</a></li>
+<li>liuhuajin <a href="mailto:liuhuajin1@huawei.com">liuhuajin1@huawei.com</a> (finder)</li>
 </ul>
-<h2 id="CVE-2021-45456">Command injection</h2>
-<p>CVE-2021-45456 <a href="./CVE-2021-45456.cve.json">[CVE json]</a> <a href="./CVE-2021-45456.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-01-06T12:30:40.650Z</em></p>
+<h2 id="CVE-2025-30067">The remote code execution via jdbc url</h2>
+<p>CVE-2025-30067 <a href="https://cve.org/CVERecord?id=CVE-2025-30067">[CVE]</a> <a href="./CVE-2025-30067.cve.json">[CVE json]</a> <a href="./CVE-2025-30067.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-03-27T15:06:34.995Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache Kylin at Apache Kylin 4 4.0.0</li>
+<li>Apache Kylin from 4.0.0 through 5.0.1</li>
 </ul>
 <h3 id="description-3">Description</h3>
-<p>Apache kylin checks the legitimacy of the project before executing some commands with the project name passed in by the user. There is a mismatch between what is being checked and what is being used as the shell command argument in DiagnosisService. This may cause an illegal project name to pass the check and perform the following steps, resulting in a command injection vulnerability.
-This issue affects Apache Kylin 4.0.0.</p>
+<p>Improper Control of Generation of Code ('Code Injection') vulnerability in Apache Kylin. 
+If an attacker gets access to Kylin's system or project admin permission, the JDBC connection configuration maybe altered to execute arbitrary code from the remote. You are fine as long as the Kylin's system and project admin access is well protected.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.1.</p><p>Users are recommended to upgrade to version 5.0.2 or above, which fixes the issue.</p>
 <h3 id="references-3">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/70fkf9w1swt2cqdcz13rwfjvblw1fcpf">https://lists.apache.org/thread/70fkf9w1swt2cqdcz13rwfjvblw1fcpf</a></li>
+<li><a href="https://lists.apache.org/thread/6j19pt8yoqfphf1lprtrzoqkvz1gwbnc">https://lists.apache.org/thread/6j19pt8yoqfphf1lprtrzoqkvz1gwbnc</a></li>
 </ul>
 <h3 id="credits-3">Credits</h3>
 <ul>
-<li>Alvaro Munoz <a href="mailto:pwntester@github.com">pwntester@github.com</a></li>
+<li>Pho3n1x <a href="mailto:ph03n1x@qq.com">ph03n1x@qq.com</a> (finder)</li>
 </ul>
-<h2 id="CVE-2021-45457">Overly broad CORS configuration </h2>
-<p>CVE-2021-45457 <a href="./CVE-2021-45457.cve.json">[CVE json]</a> <a href="./CVE-2021-45457.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-01-06T12:32:08.962Z</em></p>
+<h2 id="CVE-2024-48944">SSRF vulnerability in the diagnosis api</h2>
+<p>CVE-2024-48944 <a href="https://cve.org/CVERecord?id=CVE-2024-48944">[CVE]</a> <a href="./CVE-2024-48944.cve.json">[CVE json]</a> <a href="./CVE-2024-48944.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-04-28T14:59:34.758Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache Kylin from Apache Kylin 2 through 2.6.6</li>
-<li>Apache Kylin from Apache Kylin 3 through 3.1.2</li>
-<li>Apache Kylin from Apache Kylin 4 through 4.0.0</li>
+<li>Apache Kylin from 5.0.0 through 5.0.1</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<p>In Apache Kylin, Cross-origin requests with credentials are allowed to be sent from any origin.</p>
-<p>This issue affects Apache Kylin 2 version 2.6.6 and prior versions; Apache Kylin 3 version 3.1.2 and prior versions; Apache Kylin 4 version 4.0.0 and prior versions.</p>
+<p>Server-Side Request Forgery (SSRF) vulnerability in Apache Kylin. Through a kylin server, an attacker may forge a request to invoke "/kylin/api/xxx/diag" api on another internal host and possibly get leaked information. There are two preconditions: 1) The attacker has got admin access to a kylin server; 2) Another internal host has the "/kylin/api/xxx/diag" api
+<p>endpoint open for service.<br></p><p>This issue affects Apache Kylin: from 5.0.0
+through</p>
+<p>5.0.1.</p><p>Users are recommended to upgrade to version 5.0.2, which fixes the issue.</p></p>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/rzv4mq58okwj1n88lry82ol2wwm57q1m">https://lists.apache.org/thread/rzv4mq58okwj1n88lry82ol2wwm57q1m</a></li>
+<li><a href="https://lists.apache.org/thread/1xxxtdfh9hzqsqgb1pd9grb8hvqdyc9x">https://lists.apache.org/thread/1xxxtdfh9hzqsqgb1pd9grb8hvqdyc9x</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>Alvaro Munoz <a href="mailto:pwntester@github.com">pwntester@github.com</a></li>
+<li>Zevi <a href="mailto:linzmgx@gmail.com">linzmgx@gmail.com</a> (finder)</li>
 </ul>
-<h2 id="CVE-2021-45458">Hardcoded credentials</h2>
-<p>CVE-2021-45458 <a href="./CVE-2021-45458.cve.json">[CVE json]</a> <a href="./CVE-2021-45458.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-01-06T12:33:02.681Z</em></p>
+<h2 id="CVE-2024-23590">Session fixation in web interface</h2>
+<p>CVE-2024-23590 <a href="https://cve.org/CVERecord?id=CVE-2024-23590">[CVE]</a> <a href="./CVE-2024-23590.cve.json">[CVE json]</a> <a href="./CVE-2024-23590.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-11-04T09:27:04.256Z</em></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
-<li>Apache Kylin from Apache Kylin 2 through 2.6.6</li>
-<li>Apache Kylin from Apache Kylin 3 through 3.1.2</li>
-<li>Apache Kylin from Apache Kylin 4 through 4.0.0</li>
+<li>Apache Kylin from 2.0.0 before 5.0.0</li>
 </ul>
 <h3 id="description-5">Description</h3>
-<p>Apache Kylin provides encryption classes PasswordPlaceholderConfigurer to help users encrypt their passwords. In the encryption algorithm used by this encryption class, the cipher is initialized with a hardcoded key and IV.  If users use class PasswordPlaceholderConfigurer to encrypt their password and configure it into kylin&rsquo;s configuration file, there is a risk that the password may be decrypted.
-This issue affects Apache Kylin 2 version 2.6.6 and prior versions; Apache Kylin 3 version 3.1.2 and prior versions; Apache Kylin 4 version 4.0.0 and prior versions.</p>
+<p>Session Fixation vulnerability in Apache Kylin.</p><p>This issue affects Apache Kylin: from 2.0.0 through 4.x.</p><p>Users are recommended to upgrade to version 5.0.0 or above, which fixes the issue.</p>
 <h3 id="references-5">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/oof215qz188k16vhlo97cm1jksxdowfy">https://lists.apache.org/thread/oof215qz188k16vhlo97cm1jksxdowfy</a></li>
+<li><a href="https://lists.apache.org/thread/7161154h0k6zygr9917qq0g95p39szml">https://lists.apache.org/thread/7161154h0k6zygr9917qq0g95p39szml</a></li>
 </ul>
 <h3 id="credits-5">Credits</h3>
 <ul>
-<li>Alvaro Munoz <a href="mailto:pwntester@github.com">pwntester@github.com</a></li>
+<li>XJB Security Team (reporter)</li>
+</ul>
+<h2 id="CVE-2023-29055">Insufficiently protected credentials in config file</h2>
+<p>CVE-2023-29055 <a href="https://cve.org/CVERecord?id=CVE-2023-29055">[CVE]</a> <a href="./CVE-2023-29055.cve.json">[CVE json]</a> <a href="./CVE-2023-29055.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-01-29T12:20:52.048Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Kylin from 2.0.0 through 4.0.3</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<div>In Apache Kylin version 2.0.0 to 4.0.3, there is a Server Config web interface that displays the content of file 'kylin.properties', that may contain serverside credentials. When the kylin service runs over HTTP (or other plain text protocol), it is possible for network sniffers to hijack the HTTP payload and get access to the content of kylin.properties and potentially the containing credentials.<br></div><div><br></div><div>To avoid this threat, users are recommended to&nbsp;</div><div><ol><li>Always turn on HTTPS so that network payload is encrypted.<br></li><li>Avoid putting credentials in kylin.properties, or at least not in plain text.</li><li>Use network firewalls to protect the serverside such that it is not accessible to external attackers.<br></li><li>Upgrade to version Apache Kylin 4.0.4, which filters out the sensitive content that goes to the Server Config web interface.</li></ol><br></div>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/o1bvyv9wnfkx7dxpfjlor20nykgsoh6r">https://lists.apache.org/thread/o1bvyv9wnfkx7dxpfjlor20nykgsoh6r</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>Li Jiakun <a href="mailto:2839549219@qq.com">2839549219@qq.com</a> (reporter)</li>
+</ul>
+<h2 id="CVE-2022-44621">Command injection by Diagnosis Controller</h2>
+<p>CVE-2022-44621 <a href="https://cve.org/CVERecord?id=CVE-2022-44621">[CVE]</a> <a href="./CVE-2022-44621.cve.json">[CVE json]</a> <a href="./CVE-2022-44621.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-12-30T10:31:39.045Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache Kylin from Apache Kylin 4  through 4.0.2</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>Diagnosis Controller miss parameter validation, so user may attacked by command injection via HTTP Request.</p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7ctchj24dofgsj9g1rg1245cms9myb34">https://lists.apache.org/thread/7ctchj24dofgsj9g1rg1245cms9myb34</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>Messy God <a href="mailto:godimessy@gmail.com">godimessy@gmail.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2022-43396">Command injection by Useless configuration</h2>
+<p>CVE-2022-43396 <a href="https://cve.org/CVERecord?id=CVE-2022-43396">[CVE]</a> <a href="./CVE-2022-43396.cve.json">[CVE json]</a> <a href="./CVE-2022-43396.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-12-30T10:30:28.434Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Kylin from Apache Kylin 4 through 4.0.2</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>In the fix for CVE-2022-24697, a blacklist is used to filter user input commands. But there is a risk of being bypassed. The user can control the command by controlling the kylin.engine.spark-cmd parameter of conf.</p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/ob2ks04zl5ms0r44cd74y1xdl1rzfd1r">https://lists.apache.org/thread/ob2ks04zl5ms0r44cd74y1xdl1rzfd1r</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>Yasax1 Li <a href="mailto:pp1ove.lit@gmail.com">pp1ove.lit@gmail.com</a> (finder)</li>
 </ul>
 <h2 id="CVE-2022-24697">Apache Kylin prior to 4.0.2 allows command injection when the configuration overwrites function overwrites system parameters</h2>
-<p>CVE-2022-24697 <a href="./CVE-2022-24697.cve.json">[CVE json]</a> <a href="./CVE-2022-24697.osv.json">[OSV json]</a></p>
+<p>CVE-2022-24697 <a href="https://cve.org/CVERecord?id=CVE-2022-24697">[CVE]</a> <a href="./CVE-2022-24697.cve.json">[CVE json]</a> <a href="./CVE-2022-24697.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-10-13T13:05:28.696Z</em></p>
-<h3 id="affected-6">Affected</h3>
+<h3 id="affected-9">Affected</h3>
 <ul>
 <li>Apache Kylin from Apache Kylin 2 before 2.6.6</li>
 <li>Apache Kylin from Apache Kylin 3 through 3.1.2</li>
 <li>Apache Kylin from Apache Kylin 4 through 4.0.1</li>
 </ul>
-<h3 id="description-6">Description</h3>
+<h3 id="description-9">Description</h3>
 <p>Kylin&rsquo;s cube designer function has a command injection vulnerability when overwriting system parameters in the configuration overwrites menu. RCE can be implemented by closing the single quotation marks around the parameter value of “&ndash; conf=” to inject any operating system command into the command line parameters. This vulnerability affects Kylin 2 version 2.6.5 and earlier, Kylin 3 version 3.1.2 and earlier, and Kylin 4 version 4.0.1 and earlier.</p>
-<h3 id="references-6">References</h3>
+<h3 id="references-9">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/07mnn9c7o314wrhrwjr10w9j5s82voj4">https://lists.apache.org/thread/07mnn9c7o314wrhrwjr10w9j5s82voj4</a></li>
 </ul>
-<h3 id="credits-6">Credits</h3>
+<h3 id="credits-9">Credits</h3>
 <ul>
 <li>Kylin Team would like to thanks Kai Zhao of ToTU Secruity Team.</li>
 </ul>
-<h2 id="CVE-2022-43396">Command injection by Useless configuration</h2>
-<p>CVE-2022-43396 <a href="./CVE-2022-43396.cve.json">[CVE json]</a> <a href="./CVE-2022-43396.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-12-30T10:30:28.434Z</em></p>
-<h3 id="affected-7">Affected</h3>
-<ul>
-<li>Apache Kylin from Apache Kylin 4 through 4.0.2</li>
-</ul>
-<h3 id="description-7">Description</h3>
-<p>In the fix for CVE-2022-24697, a blacklist is used to filter user input commands. But there is a risk of being bypassed. The user can control the command by controlling the kylin.engine.spark-cmd parameter of conf.</p>
-<h3 id="references-7">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/ob2ks04zl5ms0r44cd74y1xdl1rzfd1r">https://lists.apache.org/thread/ob2ks04zl5ms0r44cd74y1xdl1rzfd1r</a></li>
-</ul>
-<h3 id="credits-7">Credits</h3>
-<ul>
-<li>Yasax1 Li <a href="mailto:pp1ove.lit@gmail.com">pp1ove.lit@gmail.com</a> (finder)</li>
-</ul>
-<h2 id="CVE-2022-44621">Command injection by Diagnosis Controller</h2>
-<p>CVE-2022-44621 <a href="./CVE-2022-44621.cve.json">[CVE json]</a> <a href="./CVE-2022-44621.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-12-30T10:31:39.045Z</em></p>
-<h3 id="affected-8">Affected</h3>
-<ul>
-<li>Apache Kylin from Apache Kylin 4  through 4.0.2</li>
-</ul>
-<h3 id="description-8">Description</h3>
-<p>Diagnosis Controller miss parameter validation, so user may attacked by command injection via HTTP Request.</p>
-<h3 id="references-8">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/7ctchj24dofgsj9g1rg1245cms9myb34">https://lists.apache.org/thread/7ctchj24dofgsj9g1rg1245cms9myb34</a></li>
-</ul>
-<h3 id="credits-8">Credits</h3>
-<ul>
-<li>Messy God <a href="mailto:godimessy@gmail.com">godimessy@gmail.com</a> (finder)</li>
-</ul>
-<h2 id="CVE-2023-29055">Insufficiently protected credentials in config file</h2>
-<p>CVE-2023-29055 <a href="./CVE-2023-29055.cve.json">[CVE json]</a> <a href="./CVE-2023-29055.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-01-29T12:20:52.048Z</em></p>
-<h3 id="affected-9">Affected</h3>
-<ul>
-<li>Apache Kylin from 2.0.0 through 4.0.3</li>
-</ul>
-<h3 id="description-9">Description</h3>
-<div>In Apache Kylin version 2.0.0 to 4.0.3, there is a Server Config web interface that displays the content of file 'kylin.properties', that may contain serverside credentials. When the kylin service runs over HTTP (or other plain text protocol), it is possible for network sniffers to hijack the HTTP payload and get access to the content of kylin.properties and potentially the containing credentials.<br></div><div><br></div><div>To avoid this threat, users are recommended to&nbsp;</div><div><ol><li>Always turn on HTTPS so that network payload is encrypted.<br></li><li>Avoid putting credentials in kylin.properties, or at least not in plain text.</li><li>Use network firewalls to protect the serverside such that it is not accessible to external attackers.<br></li><li>Upgrade to version Apache Kylin 4.0.4, which filters out the sensitive content that goes to the Server Config web interface.</li></ol><br></div>
-<h3 id="references-9">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/o1bvyv9wnfkx7dxpfjlor20nykgsoh6r">https://lists.apache.org/thread/o1bvyv9wnfkx7dxpfjlor20nykgsoh6r</a></li>
-</ul>
-<h3 id="credits-9">Credits</h3>
-<ul>
-<li>Li Jiakun <a href="mailto:2839549219@qq.com">2839549219@qq.com</a> (reporter)</li>
-</ul>
-<h2 id="CVE-2024-23590">Session fixation in web interface</h2>
-<p>CVE-2024-23590 <a href="./CVE-2024-23590.cve.json">[CVE json]</a> <a href="./CVE-2024-23590.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-11-04T09:27:04.256Z</em></p>
+<h2 id="CVE-2021-45458">Hardcoded credentials</h2>
+<p>CVE-2021-45458 <a href="https://cve.org/CVERecord?id=CVE-2021-45458">[CVE]</a> <a href="./CVE-2021-45458.cve.json">[CVE json]</a> <a href="./CVE-2021-45458.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-01-06T12:33:02.681Z</em></p>
 <h3 id="affected-10">Affected</h3>
 <ul>
-<li>Apache Kylin from 2.0.0 before 5.0.0</li>
+<li>Apache Kylin from Apache Kylin 2 through 2.6.6</li>
+<li>Apache Kylin from Apache Kylin 3 through 3.1.2</li>
+<li>Apache Kylin from Apache Kylin 4 through 4.0.0</li>
 </ul>
 <h3 id="description-10">Description</h3>
-<p>Session Fixation vulnerability in Apache Kylin.</p><p>This issue affects Apache Kylin: from 2.0.0 through 4.x.</p><p>Users are recommended to upgrade to version 5.0.0 or above, which fixes the issue.</p>
+<p>Apache Kylin provides encryption classes PasswordPlaceholderConfigurer to help users encrypt their passwords. In the encryption algorithm used by this encryption class, the cipher is initialized with a hardcoded key and IV.  If users use class PasswordPlaceholderConfigurer to encrypt their password and configure it into kylin&rsquo;s configuration file, there is a risk that the password may be decrypted.
+This issue affects Apache Kylin 2 version 2.6.6 and prior versions; Apache Kylin 3 version 3.1.2 and prior versions; Apache Kylin 4 version 4.0.0 and prior versions.</p>
 <h3 id="references-10">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/7161154h0k6zygr9917qq0g95p39szml">https://lists.apache.org/thread/7161154h0k6zygr9917qq0g95p39szml</a></li>
+<li><a href="https://lists.apache.org/thread/oof215qz188k16vhlo97cm1jksxdowfy">https://lists.apache.org/thread/oof215qz188k16vhlo97cm1jksxdowfy</a></li>
 </ul>
 <h3 id="credits-10">Credits</h3>
 <ul>
-<li>XJB Security Team (reporter)</li>
+<li>Alvaro Munoz <a href="mailto:pwntester@github.com">pwntester@github.com</a></li>
 </ul>
-<h2 id="CVE-2024-48944">SSRF vulnerability in the diagnosis api</h2>
-<p>CVE-2024-48944 <a href="./CVE-2024-48944.cve.json">[CVE json]</a> <a href="./CVE-2024-48944.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-04-28T14:59:34.758Z</em></p>
+<h2 id="CVE-2021-45457">Overly broad CORS configuration </h2>
+<p>CVE-2021-45457 <a href="https://cve.org/CVERecord?id=CVE-2021-45457">[CVE]</a> <a href="./CVE-2021-45457.cve.json">[CVE json]</a> <a href="./CVE-2021-45457.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-01-06T12:32:08.962Z</em></p>
 <h3 id="affected-11">Affected</h3>
 <ul>
-<li>Apache Kylin from 5.0.0 through 5.0.1</li>
+<li>Apache Kylin from Apache Kylin 2 through 2.6.6</li>
+<li>Apache Kylin from Apache Kylin 3 through 3.1.2</li>
+<li>Apache Kylin from Apache Kylin 4 through 4.0.0</li>
 </ul>
 <h3 id="description-11">Description</h3>
-<p>Server-Side Request Forgery (SSRF) vulnerability in Apache Kylin. Through a kylin server, an attacker may forge a request to invoke "/kylin/api/xxx/diag" api on another internal host and possibly get leaked information. There are two preconditions: 1) The attacker has got admin access to a kylin server; 2) Another internal host has the "/kylin/api/xxx/diag" api
-<p>endpoint open for service.<br></p><p>This issue affects Apache Kylin: from 5.0.0
-through</p>
-<p>5.0.1.</p><p>Users are recommended to upgrade to version 5.0.2, which fixes the issue.</p></p>
+<p>In Apache Kylin, Cross-origin requests with credentials are allowed to be sent from any origin.</p>
+<p>This issue affects Apache Kylin 2 version 2.6.6 and prior versions; Apache Kylin 3 version 3.1.2 and prior versions; Apache Kylin 4 version 4.0.0 and prior versions.</p>
 <h3 id="references-11">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/1xxxtdfh9hzqsqgb1pd9grb8hvqdyc9x">https://lists.apache.org/thread/1xxxtdfh9hzqsqgb1pd9grb8hvqdyc9x</a></li>
+<li><a href="https://lists.apache.org/thread/rzv4mq58okwj1n88lry82ol2wwm57q1m">https://lists.apache.org/thread/rzv4mq58okwj1n88lry82ol2wwm57q1m</a></li>
 </ul>
 <h3 id="credits-11">Credits</h3>
 <ul>
-<li>Zevi <a href="mailto:linzmgx@gmail.com">linzmgx@gmail.com</a> (finder)</li>
+<li>Alvaro Munoz <a href="mailto:pwntester@github.com">pwntester@github.com</a></li>
 </ul>
-<h2 id="CVE-2025-30067">The remote code execution via jdbc url</h2>
-<p>CVE-2025-30067 <a href="./CVE-2025-30067.cve.json">[CVE json]</a> <a href="./CVE-2025-30067.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-03-27T15:06:34.995Z</em></p>
+<h2 id="CVE-2021-45456">Command injection</h2>
+<p>CVE-2021-45456 <a href="https://cve.org/CVERecord?id=CVE-2021-45456">[CVE]</a> <a href="./CVE-2021-45456.cve.json">[CVE json]</a> <a href="./CVE-2021-45456.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-01-06T12:30:40.650Z</em></p>
 <h3 id="affected-12">Affected</h3>
 <ul>
-<li>Apache Kylin from 4.0.0 through 5.0.1</li>
+<li>Apache Kylin at Apache Kylin 4 4.0.0</li>
 </ul>
 <h3 id="description-12">Description</h3>
-<p>Improper Control of Generation of Code ('Code Injection') vulnerability in Apache Kylin. 
-If an attacker gets access to Kylin's system or project admin permission, the JDBC connection configuration maybe altered to execute arbitrary code from the remote. You are fine as long as the Kylin's system and project admin access is well protected.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.1.</p><p>Users are recommended to upgrade to version 5.0.2 or above, which fixes the issue.</p>
+<p>Apache kylin checks the legitimacy of the project before executing some commands with the project name passed in by the user. There is a mismatch between what is being checked and what is being used as the shell command argument in DiagnosisService. This may cause an illegal project name to pass the check and perform the following steps, resulting in a command injection vulnerability.
+This issue affects Apache Kylin 4.0.0.</p>
 <h3 id="references-12">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/6j19pt8yoqfphf1lprtrzoqkvz1gwbnc">https://lists.apache.org/thread/6j19pt8yoqfphf1lprtrzoqkvz1gwbnc</a></li>
+<li><a href="https://lists.apache.org/thread/70fkf9w1swt2cqdcz13rwfjvblw1fcpf">https://lists.apache.org/thread/70fkf9w1swt2cqdcz13rwfjvblw1fcpf</a></li>
 </ul>
 <h3 id="credits-12">Credits</h3>
 <ul>
-<li>Pho3n1x <a href="mailto:ph03n1x@qq.com">ph03n1x@qq.com</a> (finder)</li>
+<li>Alvaro Munoz <a href="mailto:pwntester@github.com">pwntester@github.com</a></li>
 </ul>
-<h2 id="CVE-2025-61733">Authentication bypass</h2>
-<p>CVE-2025-61733 <a href="./CVE-2025-61733.cve.json">[CVE json]</a> <a href="./CVE-2025-61733.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-02-02T07:33:38.093Z</em></p>
+<h2 id="CVE-2021-36774">Mysql JDBC Connector Deserialize RCE</h2>
+<p>CVE-2021-36774 <a href="https://cve.org/CVERecord?id=CVE-2021-36774">[CVE]</a> <a href="./CVE-2021-36774.cve.json">[CVE json]</a> <a href="./CVE-2021-36774.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-01-06T12:29:47.699Z</em></p>
 <h3 id="affected-13">Affected</h3>
 <ul>
-<li>Apache Kylin from 4.0.0 through 5.0.2</li>
+<li>Apache Kylin from Apache Kylin 2 through 2.6.6</li>
+<li>Apache Kylin from Apache Kylin 3 through 3.1.2</li>
 </ul>
 <h3 id="description-13">Description</h3>
-<p>Authentication Bypass Using an Alternate Path or Channel vulnerability in Apache Kylin.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.2.</p><p>Users are recommended to upgrade to version 5.0.3, which fixes the issue.</p>
+<p>Apache Kylin allows users to read data from other database systems using JDBC. The MySQL JDBC driver supports certain properties, which, if left unmitigated, can allow an attacker to execute arbitrary code from a hacker-controlled malicious MySQL server within Kylin server processes.
+This issue affects Apache Kylin 2 version 2.6.6 and prior versions; Apache Kylin 3 version 3.1.2 and prior versions.</p>
 <h3 id="references-13">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/8wmcffly6gp50nmfw8j4w3hlmv843yo0">https://lists.apache.org/thread/8wmcffly6gp50nmfw8j4w3hlmv843yo0</a></li>
+<li><a href="https://lists.apache.org/thread/lchpcvoolc6w8zc6vo1wstk8zbfqv2ow">https://lists.apache.org/thread/lchpcvoolc6w8zc6vo1wstk8zbfqv2ow</a></li>
 </ul>
 <h3 id="credits-13">Credits</h3>
 <ul>
-<li>liuhuajin <a href="mailto:liuhuajin1@huawei.com">liuhuajin1@huawei.com</a> (finder)</li>
+<li>jinchen sheng <a href="mailto:jincsheng@gmail.com">jincsheng@gmail.com</a></li>
 </ul>
-<h2 id="CVE-2025-61734">improper restriction of file read</h2>
-<p>CVE-2025-61734 <a href="./CVE-2025-61734.cve.json">[CVE json]</a> <a href="./CVE-2025-61734.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-02-02T07:35:03.252Z</em></p>
+<h2 id="CVE-2021-31522">Apache Kylin unsafe class loading</h2>
+<p>CVE-2021-31522 <a href="https://cve.org/CVERecord?id=CVE-2021-31522">[CVE]</a> <a href="./CVE-2021-31522.cve.json">[CVE json]</a> <a href="./CVE-2021-31522.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-01-06T12:28:58.641Z</em></p>
 <h3 id="affected-14">Affected</h3>
 <ul>
-<li>Apache Kylin from 4.0.0 through 5.0.2</li>
+<li>Apache Kylin from Apache Kylin 2 through 2.6.6</li>
+<li>Apache Kylin from Apache Kylin 3 through 3.1.2</li>
+<li>Apache Kylin from Apache Kylin 4 through 4.0.0</li>
 </ul>
 <h3 id="description-14">Description</h3>
-<p>Files or Directories Accessible to External Parties vulnerability in Apache Kylin.
- You are fine as long as the Kylin's system and project admin access is well protected.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.2.</p><p>Users are recommended to upgrade to version 5.0.3, which fixes the issue.</p>
+<p>Kylin can receive user input and load any class through Class.forName(&hellip;).
+This issue affects Apache Kylin 2 version 2.6.6 and prior versions; Apache Kylin 3 version 3.1.2 and prior versions; Apache Kylin 4 version 4.0.0 and prior versions.</p>
 <h3 id="references-14">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/z705g7sn3g0bkchlqbo1hz1tyqorn4d2">https://lists.apache.org/thread/z705g7sn3g0bkchlqbo1hz1tyqorn4d2</a></li>
+<li><a href="https://lists.apache.org/thread/hh5crx3yr701zd8wtpqo1mww2rlkvznw">https://lists.apache.org/thread/hh5crx3yr701zd8wtpqo1mww2rlkvznw</a></li>
 </ul>
 <h3 id="credits-14">Credits</h3>
 <ul>
-<li>liuhuajin <a href="mailto:liuhuajin1@huawei.com">liuhuajin1@huawei.com</a> (finder)</li>
+<li>bo yu <a href="mailto:forhaby0@gmail.com">forhaby0@gmail.com</a></li>
 </ul>
-<h2 id="CVE-2025-61735">Server-Side Request Forgery</h2>
-<p>CVE-2025-61735 <a href="./CVE-2025-61735.cve.json">[CVE json]</a> <a href="./CVE-2025-61735.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-02-02T07:35:53.853Z</em></p>
+<h2 id="CVE-2021-27738">Improper Access Control to Streaming Coordinator &amp; SSRF</h2>
+<p>CVE-2021-27738 <a href="https://cve.org/CVERecord?id=CVE-2021-27738">[CVE]</a> <a href="./CVE-2021-27738.cve.json">[CVE json]</a> <a href="./CVE-2021-27738.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-01-06T12:26:35.086Z</em></p>
 <h3 id="affected-15">Affected</h3>
 <ul>
-<li>Apache Kylin from 4.0.0 through 5.0.2</li>
+<li>Apache Kylin from Apache Kylin 3 before 3.1.2</li>
 </ul>
 <h3 id="description-15">Description</h3>
-<p>Server-Side Request Forgery (SSRF) vulnerability in Apache Kylin.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.2.&nbsp;You are fine as long as the Kylin's system and project admin access is well protected.</p><p>Users are recommended to upgrade to version 5.0.3, which fixes the issue.</p>
+<p>All request mappings in <code>StreamingCoordinatorController.java</code> handling <code>/kylin/api/streaming_coordinator/*</code> REST API endpoints did not include any security checks, which allowed an unauthenticated user to issue arbitrary requests, such as assigning/unassigning of streaming cubes, creation/modification and deletion of replica sets, to the Kylin Coordinator.</p>
+<p>For endpoints accepting node details in HTTP message body, unauthenticated (but limited) server-side request forgery (SSRF) can be achieved.</p>
+<p>This issue affects Apache Kylin Apache Kylin 3 versions prior to 3.1.2.</p>
 <h3 id="references-15">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/yscobmx869zvprsykb94r24jtmb58ckh">https://lists.apache.org/thread/yscobmx869zvprsykb94r24jtmb58ckh</a></li>
+<li><a href="https://lists.apache.org/thread/vkohh0to2vzwymyb2x13fszs3cs3vd70">https://lists.apache.org/thread/vkohh0to2vzwymyb2x13fszs3cs3vd70</a></li>
 </ul>
 <h3 id="credits-15">Credits</h3>
 <ul>
-<li>liuhuajin <a href="mailto:liuhuajin1@huawei.com">liuhuajin1@huawei.com</a> (finder)</li>
+<li>Wei Lin Ngo <a href="mailto:ngo.weilin@starlabs.sg">ngo.weilin@starlabs.sg</a></li>
 </ul>
 
   

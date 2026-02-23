@@ -105,50 +105,44 @@
 <p>Do you want disclose a potential security issue for Apache Submarine? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2023-37924">SQL injection from unauthorized login</h2>
-<p>CVE-2023-37924 <a href="./CVE-2023-37924.cve.json">[CVE json]</a> <a href="./CVE-2023-37924.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-11-22T09:19:18.697Z</em></p>
+<h2 id="CVE-2024-36265">authorization bypass</h2>
+<p>CVE-2024-36265 <a href="https://cve.org/CVERecord?id=CVE-2024-36265">[CVE]</a> <a href="./CVE-2024-36265.cve.json">[CVE json]</a> <a href="./CVE-2024-36265.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-06-12T14:12:08.874Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Submarine from 0.7.0 before 0.8.0</li>
+<li>Apache Submarine Server Core from 0.8.0 through *</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Apache Software Foundation Apache Submarine has an SQL injection vulnerability when a user logs in. This issue can result in unauthorized login.<br><span style="background-color: rgb(255, 255, 255);">Now we have fixed this issue and now user must have the correct login to access workbench.</span><br><p>This issue affects Apache Submarine: from 0.7.0 before 0.8.0. <span style="background-color: rgb(255, 255, 255);">We recommend that all submarine users with 0.7.0 upgrade to 0.8.0, which not only fixes the issue, supports the oidc authentication mode, but also removes the case of unauthenticated logins.</span><span style="background-color: rgb(255, 255, 255);"><br><span style="background-color: rgb(255, 255, 255);">If using the version lower than 0.8.0 and not want to upgrade, you can try cherry-pick PR <a target="_blank" rel="nofollow" href="https://github.com/apache/submarine/pull/1054"><a href="https://github.com/apache/submarine/pull/1037">https://github.com/apache/submarine/pull/1037</a></a> and rebuild the submarine-server image to fix this.</span><br></span></p></p>
+<p>** UNSUPPORTED WHEN ASSIGNED ** Incorrect Authorization vulnerability in Apache Submarine Server Core.</p><p>This issue affects Apache Submarine Server Core: from 0.8.0.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://issues.apache.org/jira/browse/SUBMARINE-1361">https://issues.apache.org/jira/browse/SUBMARINE-1361</a></li>
-<li><a href="https://github.com/apache/submarine/pull/1037">https://github.com/apache/submarine/pull/1037</a></li>
-<li><a href="https://lists.apache.org/thread/g99h773vd49n1wyghdq1llv2f83w1b3r">https://lists.apache.org/thread/g99h773vd49n1wyghdq1llv2f83w1b3r</a></li>
+<li><a href="https://lists.apache.org/thread/prckhhst19qxof064hsm8cccxtofvflz">https://lists.apache.org/thread/prckhhst19qxof064hsm8cccxtofvflz</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>lengjingqicai(棱镜七彩开源安全研究院) (reporter)</li>
+<li>L0ne1y (finder)</li>
 </ul>
-<h2 id="CVE-2023-46302">Fix CVE-2022-1471 SnakeYaml unsafe deserialization</h2>
-<p>CVE-2023-46302 <a href="./CVE-2023-46302.cve.json">[CVE json]</a> <a href="./CVE-2023-46302.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-11-20T08:46:49.527Z</em></p>
+<h2 id="CVE-2024-36264">default secret</h2>
+<p>CVE-2024-36264 <a href="https://cve.org/CVERecord?id=CVE-2024-36264">[CVE]</a> <a href="./CVE-2024-36264.cve.json">[CVE json]</a> <a href="./CVE-2024-36264.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-10-14T08:55:23.574Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache Submarine from 0.7.0 before 0.8.0</li>
+<li>Apache Submarine Commons Utils from 0.8.0 through *</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>Apache Software Foundation Apache Submarine has a bug when serializing against yaml. The bug is caused by snakeyaml <a target="_blank" rel="nofollow" href="https://nvd.nist.gov/vuln/detail/CVE-2022-1471"><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-1471">https://nvd.nist.gov/vuln/detail/CVE-2022-1471</a></a>.<br><br>Apache Submarine uses JAXRS to define REST endpoints.  In order to
-handle YAML requests (using application/yaml content-type), it defines
-a YamlEntityProvider entity provider that will process all incoming
-YAML requests.  In order to unmarshal the request, the readFrom method
-is invoked, passing the entityStream containing the user-supplied data in <code>submarine-server/server-core/src/main/java/org/apache/submarine/server/utils/YamlUtils.java</code>.<br> <br>We have now fixed this issue in the new version by replacing to <code>jackson-dataformat-yaml</code>.<br>This issue affects Apache Submarine: from 0.7.0 before 0.8.0. <span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 0.8.0, which fixes this issue.<br><span style="background-color: rgb(255, 255, 255);">If using the version smaller than 0.8.0  and not want to upgrade, you can try cherry-pick PR <a target="_blank" rel="nofollow" href="https://github.com/apache/submarine/pull/1054"><a href="https://github.com/apache/submarine/pull/1054">https://github.com/apache/submarine/pull/1054</a></a> and rebuild the submart-server image to fix this.</span><br><br></span><br></p>
+<p>** UNSUPPORTED WHEN ASSIGNED ** Improper Authentication vulnerability in Apache Submarine Commons Utils.</p><p>This issue affects Apache Submarine Commons Utils: from 0.8.0.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://issues.apache.org/jira/browse/SUBMARINE-1371">https://issues.apache.org/jira/browse/SUBMARINE-1371</a></li>
-<li><a href="https://github.com/apache/submarine/pull/1054">https://github.com/apache/submarine/pull/1054</a></li>
-<li><a href="https://lists.apache.org/thread/zf0wppzh239j4h131hm1dbswfnztxrr5">https://lists.apache.org/thread/zf0wppzh239j4h131hm1dbswfnztxrr5</a></li>
+<li><a href="https://github.com/apache/submarine/pull/1125">https://github.com/apache/submarine/pull/1125</a></li>
+<li><a href="https://lists.apache.org/thread/7mo0c7vbhpo8thvybl8wwvb0bccrg7r4">https://lists.apache.org/thread/7mo0c7vbhpo8thvybl8wwvb0bccrg7r4</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>GHSL team member @jorgectf (Jorge Rosillo) (reporter)</li>
+<li>Jonathan Leitschuh (finder)</li>
+<li>L0ne1y (finder)</li>
 </ul>
 <h2 id="CVE-2024-36263">SQL injection</h2>
-<p>CVE-2024-36263 <a href="./CVE-2024-36263.cve.json">[CVE json]</a> <a href="./CVE-2024-36263.osv.json">[OSV json]</a></p>
+<p>CVE-2024-36263 <a href="https://cve.org/CVERecord?id=CVE-2024-36263">[CVE]</a> <a href="./CVE-2024-36263.cve.json">[CVE json]</a> <a href="./CVE-2024-36263.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-06-12T14:05:08.215Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
@@ -166,41 +160,47 @@ is invoked, passing the entityStream containing the user-supplied data in <code>
 <li>BaoChengZhang of LengJingQiCaiSecurityLab (finder)</li>
 <li>L0ne1y (finder)</li>
 </ul>
-<h2 id="CVE-2024-36264">default secret</h2>
-<p>CVE-2024-36264 <a href="./CVE-2024-36264.cve.json">[CVE json]</a> <a href="./CVE-2024-36264.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-10-14T08:55:23.574Z</em></p>
+<h2 id="CVE-2023-46302">Fix CVE-2022-1471 SnakeYaml unsafe deserialization</h2>
+<p>CVE-2023-46302 <a href="https://cve.org/CVERecord?id=CVE-2023-46302">[CVE]</a> <a href="./CVE-2023-46302.cve.json">[CVE json]</a> <a href="./CVE-2023-46302.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-11-20T08:46:49.527Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache Submarine Commons Utils from 0.8.0 through *</li>
+<li>Apache Submarine from 0.7.0 before 0.8.0</li>
 </ul>
 <h3 id="description-3">Description</h3>
-<p>** UNSUPPORTED WHEN ASSIGNED ** Improper Authentication vulnerability in Apache Submarine Commons Utils.</p><p>This issue affects Apache Submarine Commons Utils: from 0.8.0.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+<p>Apache Software Foundation Apache Submarine has a bug when serializing against yaml. The bug is caused by snakeyaml <a target="_blank" rel="nofollow" href="https://nvd.nist.gov/vuln/detail/CVE-2022-1471"><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-1471">https://nvd.nist.gov/vuln/detail/CVE-2022-1471</a></a>.<br><br>Apache Submarine uses JAXRS to define REST endpoints.  In order to
+handle YAML requests (using application/yaml content-type), it defines
+a YamlEntityProvider entity provider that will process all incoming
+YAML requests.  In order to unmarshal the request, the readFrom method
+is invoked, passing the entityStream containing the user-supplied data in <code>submarine-server/server-core/src/main/java/org/apache/submarine/server/utils/YamlUtils.java</code>.<br> <br>We have now fixed this issue in the new version by replacing to <code>jackson-dataformat-yaml</code>.<br>This issue affects Apache Submarine: from 0.7.0 before 0.8.0. <span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 0.8.0, which fixes this issue.<br><span style="background-color: rgb(255, 255, 255);">If using the version smaller than 0.8.0  and not want to upgrade, you can try cherry-pick PR <a target="_blank" rel="nofollow" href="https://github.com/apache/submarine/pull/1054"><a href="https://github.com/apache/submarine/pull/1054">https://github.com/apache/submarine/pull/1054</a></a> and rebuild the submart-server image to fix this.</span><br><br></span><br></p>
 <h3 id="references-3">References</h3>
 <ul>
-<li><a href="https://github.com/apache/submarine/pull/1125">https://github.com/apache/submarine/pull/1125</a></li>
-<li><a href="https://lists.apache.org/thread/7mo0c7vbhpo8thvybl8wwvb0bccrg7r4">https://lists.apache.org/thread/7mo0c7vbhpo8thvybl8wwvb0bccrg7r4</a></li>
+<li><a href="https://issues.apache.org/jira/browse/SUBMARINE-1371">https://issues.apache.org/jira/browse/SUBMARINE-1371</a></li>
+<li><a href="https://github.com/apache/submarine/pull/1054">https://github.com/apache/submarine/pull/1054</a></li>
+<li><a href="https://lists.apache.org/thread/zf0wppzh239j4h131hm1dbswfnztxrr5">https://lists.apache.org/thread/zf0wppzh239j4h131hm1dbswfnztxrr5</a></li>
 </ul>
 <h3 id="credits-3">Credits</h3>
 <ul>
-<li>Jonathan Leitschuh (finder)</li>
-<li>L0ne1y (finder)</li>
+<li>GHSL team member @jorgectf (Jorge Rosillo) (reporter)</li>
 </ul>
-<h2 id="CVE-2024-36265">authorization bypass</h2>
-<p>CVE-2024-36265 <a href="./CVE-2024-36265.cve.json">[CVE json]</a> <a href="./CVE-2024-36265.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-06-12T14:12:08.874Z</em></p>
+<h2 id="CVE-2023-37924">SQL injection from unauthorized login</h2>
+<p>CVE-2023-37924 <a href="https://cve.org/CVERecord?id=CVE-2023-37924">[CVE]</a> <a href="./CVE-2023-37924.cve.json">[CVE json]</a> <a href="./CVE-2023-37924.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-11-22T09:19:18.697Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache Submarine Server Core from 0.8.0 through *</li>
+<li>Apache Submarine from 0.7.0 before 0.8.0</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<p>** UNSUPPORTED WHEN ASSIGNED ** Incorrect Authorization vulnerability in Apache Submarine Server Core.</p><p>This issue affects Apache Submarine Server Core: from 0.8.0.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+<p>Apache Software Foundation Apache Submarine has an SQL injection vulnerability when a user logs in. This issue can result in unauthorized login.<br><span style="background-color: rgb(255, 255, 255);">Now we have fixed this issue and now user must have the correct login to access workbench.</span><br><p>This issue affects Apache Submarine: from 0.7.0 before 0.8.0. <span style="background-color: rgb(255, 255, 255);">We recommend that all submarine users with 0.7.0 upgrade to 0.8.0, which not only fixes the issue, supports the oidc authentication mode, but also removes the case of unauthenticated logins.</span><span style="background-color: rgb(255, 255, 255);"><br><span style="background-color: rgb(255, 255, 255);">If using the version lower than 0.8.0 and not want to upgrade, you can try cherry-pick PR <a target="_blank" rel="nofollow" href="https://github.com/apache/submarine/pull/1054"><a href="https://github.com/apache/submarine/pull/1037">https://github.com/apache/submarine/pull/1037</a></a> and rebuild the submarine-server image to fix this.</span><br></span></p></p>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/prckhhst19qxof064hsm8cccxtofvflz">https://lists.apache.org/thread/prckhhst19qxof064hsm8cccxtofvflz</a></li>
+<li><a href="https://issues.apache.org/jira/browse/SUBMARINE-1361">https://issues.apache.org/jira/browse/SUBMARINE-1361</a></li>
+<li><a href="https://github.com/apache/submarine/pull/1037">https://github.com/apache/submarine/pull/1037</a></li>
+<li><a href="https://lists.apache.org/thread/g99h773vd49n1wyghdq1llv2f83w1b3r">https://lists.apache.org/thread/g99h773vd49n1wyghdq1llv2f83w1b3r</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>L0ne1y (finder)</li>
+<li>lengjingqicai(棱镜七彩开源安全研究院) (reporter)</li>
 </ul>
 
   

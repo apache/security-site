@@ -105,54 +105,60 @@
 <p>Do you want disclose a potential security issue for Apache Geode? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-34797">Apache Geode log file redaction of sensitive information vulnerability</h2>
-<p>CVE-2021-34797 <a href="./CVE-2021-34797.cve.json">[CVE json]</a> <a href="./CVE-2021-34797.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-06-28T22:46:44.541Z</em></p>
+<h2 id="CVE-2025-47410">CSRF attacks through GET requests to the Management and Monitoring REST API that can execute gfsh commands on the target system</h2>
+<p>CVE-2025-47410 <a href="https://cve.org/CVERecord?id=CVE-2025-47410">[CVE]</a> <a href="./CVE-2025-47410.cve.json">[CVE json]</a> <a href="./CVE-2025-47410.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-18T15:15:07.664Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Geode from Apache Geode through 1.12.4</li>
+<li>Apache Geode from 1.10.0 before 1.15.2</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Apache Geode versions up to 1.12.4 and 1.13.4 are vulnerable to a log file redaction of sensitive information flaw when using values that begin with characters other than letters or numbers for passwords and security properties with the prefix &ldquo;sysprop-&rdquo;, &ldquo;javax.net.ssl&rdquo;, or &ldquo;security-&rdquo;. This issue is fixed by overhauling the log file redaction in Apache Geode versions 1.12.5, 1.13.5, and 1.14.0.</p>
+<p>Apache Geode is vulnerable to CSRF attacks through GET requests to the Management and Monitoring REST API that could allow an attacker who has tricked a user into giving up their Geode session credentials to submit malicious commands on the target system on behalf of the authenticated user.<br></p>
+<p>This issue affects Apache Geode: versions 1.10 through 1.15.1</p><p>Users are recommended to upgrade to version 1.15.2, which fixes the issue.</p>
+<br>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/p4l0g49rzzzpn8yt9q9p0xp52h3zmsmk">https://lists.apache.org/thread/p4l0g49rzzzpn8yt9q9p0xp52h3zmsmk</a></li>
-<li><a href="https://lists.apache.org/thread/nq2w9gjzm1cjx1rh6zw41ty39qw7qpx4">https://lists.apache.org/thread/nq2w9gjzm1cjx1rh6zw41ty39qw7qpx4</a></li>
+<li><a href="https://lists.apache.org/thread/k88tv3rhl4ymsvt4h6qsv7sq10q5prrt">https://lists.apache.org/thread/k88tv3rhl4ymsvt4h6qsv7sq10q5prrt</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Apache Geode would like to thank Aaron Lindsey for reporting this issue.</li>
+<li>S. M. Zuhair Zaki (finder)</li>
 </ul>
-<h2 id="CVE-2022-34870">Apache Geode stored Cross-Site Scripting (XSS) via data injection vulnerability in Pulse web application</h2>
-<p>CVE-2022-34870 <a href="./CVE-2022-34870.cve.json">[CVE json]</a> <a href="./CVE-2022-34870.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-10-24T18:09:52.450Z</em></p>
+<h2 id="CVE-2024-44088">Reflected XSS</h2>
+<p>CVE-2024-44088 <a href="https://cve.org/CVERecord?id=CVE-2024-44088">[CVE]</a> <a href="./CVE-2024-44088.cve.json">[CVE json]</a> <a href="./CVE-2024-44088.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-14T14:36:50.748Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache Geode from Apache Geode through 1.15.0</li>
+<li>Apache Geode from 1.1.0 before 1.15.2</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>Apache Geode versions up to 1.15.0 are vulnerable to a Cross-Site Scripting (XSS) via data injection when using Pulse web application to view Region entries.</p>
+<p>
+<p><span style="background-color: rgb(255, 255, 255);">Malicious script injection </span><span style="background-color: rgb(255, 255, 255);">(&lsquo;Cross-site Scripting&rsquo;) vulnerability in Apache Geode</span><span style="background-color: rgb(255, 255, 255);"> web-api (REST). This vulnerability allows an attacker that tricks a logged-in user into clicking a specially-crafted link to execute code on the returned page, which could lead to theft of the user&rsquo;s session information and even account takeover.</span></p>
+</p><p>This issue affects Apache Geode: all versions prior to 1.15.2</p><p>Users are recommended to upgrade to version 1.15.2, which fixes the issue.</p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/zltlr7f2ymr2m6jj54k4z0c4foos5fwx">https://lists.apache.org/thread/zltlr7f2ymr2m6jj54k4z0c4foos5fwx</a></li>
+<li><a href="https://lists.apache.org/thread/161r34nokmcc0w74mnf04lskgb8g1d3g">https://lists.apache.org/thread/161r34nokmcc0w74mnf04lskgb8g1d3g</a></li>
 </ul>
-<h2 id="CVE-2022-37021">Apache Geode deserialization of untrusted data flaw when using JMX over RMI on Java 8. </h2>
-<p>CVE-2022-37021 <a href="./CVE-2022-37021.cve.json">[CVE json]</a> <a href="./CVE-2022-37021.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-08-31T06:54:22.083Z</em></p>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Nbxiglk (finder)</li>
+</ul>
+<h2 id="CVE-2022-37023">Apache Geode deserialization of untrusted data flaw when using REST API on Java 8 or Java 11</h2>
+<p>CVE-2022-37023 <a href="https://cve.org/CVERecord?id=CVE-2022-37023">[CVE]</a> <a href="./CVE-2022-37023.cve.json">[CVE json]</a> <a href="./CVE-2022-37023.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-08-31T06:58:07.415Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache Geode from Apache Geode through 1.12.5</li>
+<li>Apache Geode from Apache Geode before 1.15.0</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>Apache Geode versions up to 1.12.5, 1.13.4 and 1.14.0 are vulnerable to a deserialization of untrusted data flaw when using JMX over RMI on Java 8.</p>
-<p>Any user still on Java 8 who wishes to protect against deserialization attacks involving JMX or RMI should upgrade to Apache Geode 1.15 and Java 11.</p>
-<p>If upgrading to Java 11 is not possible, then upgrade to Apache Geode 1.15 and specify &ldquo;&ndash;J=-Dgeode.enableGlobalSerialFilter=true&rdquo; when starting any Locators or Servers. Follow the documentation for details on specifying any user classes that may be serialized/deserialized with the &ldquo;serializable-object-filter&rdquo; configuration option. Using a global serial filter will impact performance.</p>
+<p>Apache Geode versions prior to 1.15.0 are vulnerable to a deserialization of untrusted data flaw when using REST API on Java 8 or Java 11.</p>
+<p>Any user wishing to protect against deserialization attacks involving REST APIs should upgrade to Apache Geode 1.15 and follow the documentation for details on enabling &ldquo;validate-serializable-objects=true&rdquo; and specifying any user classes that may be serialized/deserialized with &ldquo;serializable-object-filter&rdquo;. Enabling &ldquo;validate-serializable-objects&rdquo; may impact performance.</p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/qrvhmytsshsk5xcb68pwccw3y6m8o8nr">https://lists.apache.org/thread/qrvhmytsshsk5xcb68pwccw3y6m8o8nr</a></li>
+<li><a href="https://lists.apache.org/thread/6js89pbqrp52zlpwgry5fsdn76gxbbfj">https://lists.apache.org/thread/6js89pbqrp52zlpwgry5fsdn76gxbbfj</a></li>
 </ul>
 <h2 id="CVE-2022-37022">Apache Geode deserialization of untrusted data flaw when using JMX over RMI on Java 11</h2>
-<p>CVE-2022-37022 <a href="./CVE-2022-37022.cve.json">[CVE json]</a> <a href="./CVE-2022-37022.osv.json">[OSV json]</a></p>
+<p>CVE-2022-37022 <a href="https://cve.org/CVERecord?id=CVE-2022-37022">[CVE]</a> <a href="./CVE-2022-37022.cve.json">[CVE json]</a> <a href="./CVE-2022-37022.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-08-31T06:56:24.123Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
@@ -165,57 +171,51 @@
 <ul>
 <li><a href="https://lists.apache.org/thread/kr1y4l9752g1ww1shnmh8dbfjq785k4m">https://lists.apache.org/thread/kr1y4l9752g1ww1shnmh8dbfjq785k4m</a></li>
 </ul>
-<h2 id="CVE-2022-37023">Apache Geode deserialization of untrusted data flaw when using REST API on Java 8 or Java 11</h2>
-<p>CVE-2022-37023 <a href="./CVE-2022-37023.cve.json">[CVE json]</a> <a href="./CVE-2022-37023.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-08-31T06:58:07.415Z</em></p>
+<h2 id="CVE-2022-37021">Apache Geode deserialization of untrusted data flaw when using JMX over RMI on Java 8. </h2>
+<p>CVE-2022-37021 <a href="https://cve.org/CVERecord?id=CVE-2022-37021">[CVE]</a> <a href="./CVE-2022-37021.cve.json">[CVE json]</a> <a href="./CVE-2022-37021.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-08-31T06:54:22.083Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache Geode from Apache Geode before 1.15.0</li>
+<li>Apache Geode from Apache Geode through 1.12.5</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<p>Apache Geode versions prior to 1.15.0 are vulnerable to a deserialization of untrusted data flaw when using REST API on Java 8 or Java 11.</p>
-<p>Any user wishing to protect against deserialization attacks involving REST APIs should upgrade to Apache Geode 1.15 and follow the documentation for details on enabling &ldquo;validate-serializable-objects=true&rdquo; and specifying any user classes that may be serialized/deserialized with &ldquo;serializable-object-filter&rdquo;. Enabling &ldquo;validate-serializable-objects&rdquo; may impact performance.</p>
+<p>Apache Geode versions up to 1.12.5, 1.13.4 and 1.14.0 are vulnerable to a deserialization of untrusted data flaw when using JMX over RMI on Java 8.</p>
+<p>Any user still on Java 8 who wishes to protect against deserialization attacks involving JMX or RMI should upgrade to Apache Geode 1.15 and Java 11.</p>
+<p>If upgrading to Java 11 is not possible, then upgrade to Apache Geode 1.15 and specify &ldquo;&ndash;J=-Dgeode.enableGlobalSerialFilter=true&rdquo; when starting any Locators or Servers. Follow the documentation for details on specifying any user classes that may be serialized/deserialized with the &ldquo;serializable-object-filter&rdquo; configuration option. Using a global serial filter will impact performance.</p>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/6js89pbqrp52zlpwgry5fsdn76gxbbfj">https://lists.apache.org/thread/6js89pbqrp52zlpwgry5fsdn76gxbbfj</a></li>
+<li><a href="https://lists.apache.org/thread/qrvhmytsshsk5xcb68pwccw3y6m8o8nr">https://lists.apache.org/thread/qrvhmytsshsk5xcb68pwccw3y6m8o8nr</a></li>
 </ul>
-<h2 id="CVE-2024-44088">Reflected XSS</h2>
-<p>CVE-2024-44088 <a href="./CVE-2024-44088.cve.json">[CVE json]</a> <a href="./CVE-2024-44088.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-14T14:36:50.748Z</em></p>
+<h2 id="CVE-2022-34870">Apache Geode stored Cross-Site Scripting (XSS) via data injection vulnerability in Pulse web application</h2>
+<p>CVE-2022-34870 <a href="https://cve.org/CVERecord?id=CVE-2022-34870">[CVE]</a> <a href="./CVE-2022-34870.cve.json">[CVE json]</a> <a href="./CVE-2022-34870.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-10-24T18:09:52.450Z</em></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
-<li>Apache Geode from 1.1.0 before 1.15.2</li>
+<li>Apache Geode from Apache Geode through 1.15.0</li>
 </ul>
 <h3 id="description-5">Description</h3>
-<p>
-<p><span style="background-color: rgb(255, 255, 255);">Malicious script injection </span><span style="background-color: rgb(255, 255, 255);">(&lsquo;Cross-site Scripting&rsquo;) vulnerability in Apache Geode</span><span style="background-color: rgb(255, 255, 255);"> web-api (REST). This vulnerability allows an attacker that tricks a logged-in user into clicking a specially-crafted link to execute code on the returned page, which could lead to theft of the user&rsquo;s session information and even account takeover.</span></p>
-</p><p>This issue affects Apache Geode: all versions prior to 1.15.2</p><p>Users are recommended to upgrade to version 1.15.2, which fixes the issue.</p>
+<p>Apache Geode versions up to 1.15.0 are vulnerable to a Cross-Site Scripting (XSS) via data injection when using Pulse web application to view Region entries.</p>
 <h3 id="references-5">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/161r34nokmcc0w74mnf04lskgb8g1d3g">https://lists.apache.org/thread/161r34nokmcc0w74mnf04lskgb8g1d3g</a></li>
+<li><a href="https://lists.apache.org/thread/zltlr7f2ymr2m6jj54k4z0c4foos5fwx">https://lists.apache.org/thread/zltlr7f2ymr2m6jj54k4z0c4foos5fwx</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
-<ul>
-<li>Nbxiglk (finder)</li>
-</ul>
-<h2 id="CVE-2025-47410">CSRF attacks through GET requests to the Management and Monitoring REST API that can execute gfsh commands on the target system</h2>
-<p>CVE-2025-47410 <a href="./CVE-2025-47410.cve.json">[CVE json]</a> <a href="./CVE-2025-47410.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-18T15:15:07.664Z</em></p>
+<h2 id="CVE-2021-34797">Apache Geode log file redaction of sensitive information vulnerability</h2>
+<p>CVE-2021-34797 <a href="https://cve.org/CVERecord?id=CVE-2021-34797">[CVE]</a> <a href="./CVE-2021-34797.cve.json">[CVE json]</a> <a href="./CVE-2021-34797.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-06-28T22:46:44.541Z</em></p>
 <h3 id="affected-6">Affected</h3>
 <ul>
-<li>Apache Geode from 1.10.0 before 1.15.2</li>
+<li>Apache Geode from Apache Geode through 1.12.4</li>
 </ul>
 <h3 id="description-6">Description</h3>
-<p>Apache Geode is vulnerable to CSRF attacks through GET requests to the Management and Monitoring REST API that could allow an attacker who has tricked a user into giving up their Geode session credentials to submit malicious commands on the target system on behalf of the authenticated user.<br></p>
-<p>This issue affects Apache Geode: versions 1.10 through 1.15.1</p><p>Users are recommended to upgrade to version 1.15.2, which fixes the issue.</p>
-<br>
+<p>Apache Geode versions up to 1.12.4 and 1.13.4 are vulnerable to a log file redaction of sensitive information flaw when using values that begin with characters other than letters or numbers for passwords and security properties with the prefix &ldquo;sysprop-&rdquo;, &ldquo;javax.net.ssl&rdquo;, or &ldquo;security-&rdquo;. This issue is fixed by overhauling the log file redaction in Apache Geode versions 1.12.5, 1.13.5, and 1.14.0.</p>
 <h3 id="references-6">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/k88tv3rhl4ymsvt4h6qsv7sq10q5prrt">https://lists.apache.org/thread/k88tv3rhl4ymsvt4h6qsv7sq10q5prrt</a></li>
+<li><a href="https://lists.apache.org/thread/p4l0g49rzzzpn8yt9q9p0xp52h3zmsmk">https://lists.apache.org/thread/p4l0g49rzzzpn8yt9q9p0xp52h3zmsmk</a></li>
+<li><a href="https://lists.apache.org/thread/nq2w9gjzm1cjx1rh6zw41ty39qw7qpx4">https://lists.apache.org/thread/nq2w9gjzm1cjx1rh6zw41ty39qw7qpx4</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>S. M. Zuhair Zaki (finder)</li>
+<li>Apache Geode would like to thank Aaron Lindsey for reporting this issue.</li>
 </ul>
 
   

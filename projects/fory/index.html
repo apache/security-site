@@ -105,40 +105,40 @@
 <p>Do you want disclose a potential security issue for Apache Fory? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2025-59328">Denial of Service (DoS) due to Deserialization of Untrusted malicious large Data</h2>
-<p>CVE-2025-59328 <a href="./CVE-2025-59328.cve.json">[CVE json]</a> <a href="./CVE-2025-59328.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-09-15T16:26:55.892Z</em></p>
-<h3 id="affected">Affected</h3>
-<ul>
-<li>Apache Fory from 0.5.0 through 0.12.1</li>
-</ul>
-<h3 id="description">Description</h3>
-<p></p><p>A vulnerability in Apache Fory allows a remote attacker to cause a Denial of Service (DoS). The issue stems from the insecure deserialization of untrusted data. An attacker can supply a <strong>large, specially crafted data payload</strong>&nbsp;that, when processed, consumes an excessive amount of CPU resources during the deserialization process. This leads to CPU exhaustion, rendering the application or system using the Apache Fory library unresponsive and unavailable to legitimate users.</p><p>Users of Apache Fory are strongly advised to upgrade to version <strong>0.12.2 or later</strong>&nbsp;to mitigate this vulnerability. Developers of libraries and applications that depend on Apache Fory should update their dependency requirements to Apache Fory <strong>0.12.2 or later</strong>&nbsp;and release new versions of their software.</p><p></p>
-<h3 id="references">References</h3>
-<ul>
-<li><a href="https://fory.apache.org/security/">https://fory.apache.org/security/</a></li>
-</ul>
-<h3 id="credits">Credits</h3>
-<ul>
-<li>r00t4dm of meituan security (reporter)</li>
-</ul>
 <h2 id="CVE-2025-61622">Python RCE via unguarded pickle fallback serializer in pyfory</h2>
-<p>CVE-2025-61622 <a href="./CVE-2025-61622.cve.json">[CVE json]</a> <a href="./CVE-2025-61622.osv.json">[OSV json]</a></p>
+<p>CVE-2025-61622 <a href="https://cve.org/CVERecord?id=CVE-2025-61622">[CVE]</a> <a href="./CVE-2025-61622.cve.json">[CVE json]</a> <a href="./CVE-2025-61622.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-10-04T14:58:38.087Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected">Affected</h3>
 <ul>
 <li>Apache Fory from 0.12.0 through 0.12.2</li>
 <li>Apache Fory from 0.1.0 through 0.10.3</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description">Description</h3>
 <p><span style="background-color: rgb(255, 255, 255);">Deserialization of untrusted data in python in <span style="background-color: rgb(255, 255, 255);">pyfory </span>versions 0.12.0 through 0.12.2, or the <span style="background-color: rgb(255, 255, 255);">legacy <span style="background-color: rgb(255, 255, 255);">pyfury versions from</span></span><span style="background-color: rgb(255, 255, 255);"> 0.1.0 through 0.10.3:</span> allows arbitrary code execution. An application is vulnerable if it reads pyfory serialized data from untrusted sources. <span style="background-color: rgb(255, 255, 255);">An attacker can craft a data stream that selects pickle-fallback serializer during deserialization, leading to the execution of <code>pickle.loads</code>, which is vulnerable to <span style="background-color: rgb(255, 255, 255);">remote code execution.<br><br>Users are recommended to upgrade to pyfory version 0.12.3 or later, which has removed pickle fallback serializer and thus fixes this issue.<br></span></span></span><br></p>
-<h3 id="references-1">References</h3>
+<h3 id="references">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/vfn9hp9qt06db5yo1gmj3l114o3o2csd">https://lists.apache.org/thread/vfn9hp9qt06db5yo1gmj3l114o3o2csd</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits">Credits</h3>
 <ul>
 <li>bugbunny.ai (reporter)</li>
+</ul>
+<h2 id="CVE-2025-59328">Denial of Service (DoS) due to Deserialization of Untrusted malicious large Data</h2>
+<p>CVE-2025-59328 <a href="https://cve.org/CVERecord?id=CVE-2025-59328">[CVE]</a> <a href="./CVE-2025-59328.cve.json">[CVE json]</a> <a href="./CVE-2025-59328.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-09-15T16:26:55.892Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Fory from 0.5.0 through 0.12.1</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p></p><p>A vulnerability in Apache Fory allows a remote attacker to cause a Denial of Service (DoS). The issue stems from the insecure deserialization of untrusted data. An attacker can supply a <strong>large, specially crafted data payload</strong>&nbsp;that, when processed, consumes an excessive amount of CPU resources during the deserialization process. This leads to CPU exhaustion, rendering the application or system using the Apache Fory library unresponsive and unavailable to legitimate users.</p><p>Users of Apache Fory are strongly advised to upgrade to version <strong>0.12.2 or later</strong>&nbsp;to mitigate this vulnerability. Developers of libraries and applications that depend on Apache Fory should update their dependency requirements to Apache Fory <strong>0.12.2 or later</strong>&nbsp;and release new versions of their software.</p><p></p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://fory.apache.org/security/">https://fory.apache.org/security/</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>r00t4dm of meituan security (reporter)</li>
 </ul>
 
   

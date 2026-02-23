@@ -105,69 +105,69 @@
 <p>Do you want disclose a potential security issue for Apache Portals? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-36737">XSS in V3 Demo Portlet</h2>
-<p>CVE-2021-36737 <a href="./CVE-2021-36737.cve.json">[CVE json]</a> <a href="./CVE-2021-36737.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-01-06T08:47:29.193Z</em></p>
+<h2 id="CVE-2022-32533">Apache Portals Jetspeed XSS, CSRF, SSRF, and XXE issues</h2>
+<p>CVE-2022-32533 <a href="https://cve.org/CVERecord?id=CVE-2022-32533">[CVE]</a> <a href="./CVE-2022-32533.cve.json">[CVE json]</a> <a href="./CVE-2022-32533.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-07-06T09:38:32.582Z</em></p>
 <h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Portals at Jetspeed 2.3.1</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Apache Jetspeed-2 does not sufficiently filter untrusted user input by default leading to a number of issues including XSS, CSRF, XXE, and SSRF.  Setting the configuration option &ldquo;xss.filter.post = true&rdquo; may mitigate these issues.</p>
+<p>NOTE: Apache Jetspeed is a dormant project of Apache Portals and no updates will be provided for this issue.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/d3g248pr03x8rvmh8p2t3xdlw0wn5dz2">https://lists.apache.org/thread/d3g248pr03x8rvmh8p2t3xdlw0wn5dz2</a></li>
+<li><a href="https://www.openwall.com/lists/oss-security/2022/07/06/1">https://www.openwall.com/lists/oss-security/2022/07/06/1</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Thanks to RunningSnail for reporting.</li>
+</ul>
+<h2 id="CVE-2021-36739">XSS vulnerability in the MVCBean JSP portlet maven archetype</h2>
+<p>CVE-2021-36739 <a href="https://cve.org/CVERecord?id=CVE-2021-36739">[CVE]</a> <a href="./CVE-2021-36739.cve.json">[CVE json]</a> <a href="./CVE-2021-36739.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-01-06T08:48:42.463Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Portals at org.apache.portals.pluto.archetype:mvcbean-jsp-portlet-archetype 3.1.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>The &ldquo;first name&rdquo; and &ldquo;last name&rdquo; fields of the Apache Pluto 3.1.0 MVCBean JSP portlet maven archetype are vulnerable to Cross-Site Scripting (XSS) attacks.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/m5j87nn1lmvzp8b9lmh7gqq68g5lnb7p">https://lists.apache.org/thread/m5j87nn1lmvzp8b9lmh7gqq68g5lnb7p</a></li>
+</ul>
+<h2 id="CVE-2021-36738">XSS vulnerability in the JSP version of the Apache Pluto Applicant MVCBean CDI portlet</h2>
+<p>CVE-2021-36738 <a href="https://cve.org/CVERecord?id=CVE-2021-36738">[CVE]</a> <a href="./CVE-2021-36738.cve.json">[CVE json]</a> <a href="./CVE-2021-36738.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-01-06T08:48:04.239Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Portals at org.apache.portals.pluto.demo:applicant-mvcbean-cdi-jsp-portlet 3.1.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>The input fields in the JSP version of the Apache Pluto Applicant MVCBean CDI portlet are vulnerable to Cross-Site Scripting (XSS) attacks. Users should migrate to version 3.1.1 of the applicant-mvcbean-cdi-jsp-portlet.war artifact</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/11j19v1gjsk7o6o8nch1xrydow9b8lll">https://lists.apache.org/thread/11j19v1gjsk7o6o8nch1xrydow9b8lll</a></li>
+</ul>
+<h2 id="CVE-2021-36737">XSS in V3 Demo Portlet</h2>
+<p>CVE-2021-36737 <a href="https://cve.org/CVERecord?id=CVE-2021-36737">[CVE]</a> <a href="./CVE-2021-36737.cve.json">[CVE json]</a> <a href="./CVE-2021-36737.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-01-06T08:47:29.193Z</em></p>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache Portals at org.apache.portals.pluto:PortletV3Demo 3.0.0</li>
 <li>Apache Portals at org.apache.portals.pluto:PortletV3Demo 3.0.1</li>
 <li>Apache Portals at org.apache.portals.pluto.demo:v3-demo-portlet 3.1.0</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>The input fields of the Apache Pluto UrlTestPortlet are vulnerable to Cross-Site Scripting (XSS) attacks.  Users should migrate to version 3.1.1 of the v3-demo-portlet.war artifact</p>
-<h3 id="references">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/x7kt47bf358x8sg9qg02zt0dmdrtow25">https://lists.apache.org/thread/x7kt47bf358x8sg9qg02zt0dmdrtow25</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
-<ul>
-<li>Thanks to Dhiraj Mishra for reporting.</li>
-</ul>
-<h2 id="CVE-2021-36738">XSS vulnerability in the JSP version of the Apache Pluto Applicant MVCBean CDI portlet</h2>
-<p>CVE-2021-36738 <a href="./CVE-2021-36738.cve.json">[CVE json]</a> <a href="./CVE-2021-36738.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-01-06T08:48:04.239Z</em></p>
-<h3 id="affected-1">Affected</h3>
-<ul>
-<li>Apache Portals at org.apache.portals.pluto.demo:applicant-mvcbean-cdi-jsp-portlet 3.1.0</li>
-</ul>
-<h3 id="description-1">Description</h3>
-<p>The input fields in the JSP version of the Apache Pluto Applicant MVCBean CDI portlet are vulnerable to Cross-Site Scripting (XSS) attacks. Users should migrate to version 3.1.1 of the applicant-mvcbean-cdi-jsp-portlet.war artifact</p>
-<h3 id="references-1">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/11j19v1gjsk7o6o8nch1xrydow9b8lll">https://lists.apache.org/thread/11j19v1gjsk7o6o8nch1xrydow9b8lll</a></li>
-</ul>
-<h2 id="CVE-2021-36739">XSS vulnerability in the MVCBean JSP portlet maven archetype</h2>
-<p>CVE-2021-36739 <a href="./CVE-2021-36739.cve.json">[CVE json]</a> <a href="./CVE-2021-36739.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-01-06T08:48:42.463Z</em></p>
-<h3 id="affected-2">Affected</h3>
-<ul>
-<li>Apache Portals at org.apache.portals.pluto.archetype:mvcbean-jsp-portlet-archetype 3.1.0</li>
-</ul>
-<h3 id="description-2">Description</h3>
-<p>The &ldquo;first name&rdquo; and &ldquo;last name&rdquo; fields of the Apache Pluto 3.1.0 MVCBean JSP portlet maven archetype are vulnerable to Cross-Site Scripting (XSS) attacks.</p>
-<h3 id="references-2">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/m5j87nn1lmvzp8b9lmh7gqq68g5lnb7p">https://lists.apache.org/thread/m5j87nn1lmvzp8b9lmh7gqq68g5lnb7p</a></li>
-</ul>
-<h2 id="CVE-2022-32533">Apache Portals Jetspeed XSS, CSRF, SSRF, and XXE issues</h2>
-<p>CVE-2022-32533 <a href="./CVE-2022-32533.cve.json">[CVE json]</a> <a href="./CVE-2022-32533.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-07-06T09:38:32.582Z</em></p>
-<h3 id="affected-3">Affected</h3>
-<ul>
-<li>Apache Portals at Jetspeed 2.3.1</li>
-</ul>
-<h3 id="description-3">Description</h3>
-<p>Apache Jetspeed-2 does not sufficiently filter untrusted user input by default leading to a number of issues including XSS, CSRF, XXE, and SSRF.  Setting the configuration option &ldquo;xss.filter.post = true&rdquo; may mitigate these issues.</p>
-<p>NOTE: Apache Jetspeed is a dormant project of Apache Portals and no updates will be provided for this issue.</p>
-<h3 id="references-3">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/d3g248pr03x8rvmh8p2t3xdlw0wn5dz2">https://lists.apache.org/thread/d3g248pr03x8rvmh8p2t3xdlw0wn5dz2</a></li>
-<li><a href="https://www.openwall.com/lists/oss-security/2022/07/06/1">https://www.openwall.com/lists/oss-security/2022/07/06/1</a></li>
-</ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>Thanks to RunningSnail for reporting.</li>
+<li>Thanks to Dhiraj Mishra for reporting.</li>
 </ul>
 
   

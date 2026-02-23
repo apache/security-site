@@ -105,83 +105,83 @@
 <p>Do you want disclose a potential security issue for Apache Wicket? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-23937">DNS proxy and possible amplification attack</h2>
-<p>CVE-2021-23937 <a href="./CVE-2021-23937.cve.json">[CVE json]</a> <a href="./CVE-2021-23937.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-05-25T08:01:09.799Z</em></p>
-<h3 id="affected">Affected</h3>
-<ul>
-<li>Apache Wicket from Apache Wicket 9.x through 9.2.0</li>
-<li>Apache Wicket from Apache Wicket 8.x through 8.11.0</li>
-<li>Apache Wicket from Apache Wicket 7.x through 7.17.0</li>
-<li>Apache Wicket from 6.2.0 before Apache Wicket 6.x*</li>
-</ul>
-<h3 id="description">Description</h3>
-<p>A DNS proxy and possible amplification attack vulnerability in WebClientInfo of Apache Wicket allows an attacker to trigger arbitrary DNS lookups from the server when the X-Forwarded-For header is not properly sanitized. This DNS lookup can be engineered to overload an internal DNS server or to slow down request processing of the Apache Wicket application causing a possible denial of service on either the internal infrastructure or the web application itself.</p>
-<p>This issue affects Apache Wicket Apache Wicket 9.x version 9.2.0 and prior versions; Apache Wicket 8.x version 8.11.0 and prior versions; Apache Wicket 7.x version 7.17.0 and prior versions and Apache Wicket 6.x version 6.2.0 and later versions.</p>
-<h3 id="references">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread.html/rc2ef22f90793e158cef65a7e370cdbca023c499d1403d65feeca870d%40%3Cusers.wicket.apache.org%3E">https://lists.apache.org/thread.html/rc2ef22f90793e158cef65a7e370cdbca023c499d1403d65feeca870d%40%3Cusers.wicket.apache.org%3E</a></li>
-</ul>
-<h3 id="credits">Credits</h3>
-<ul>
-<li>Apache Wicket would like to thank Jonathan Juursema from Topicus.Healthcare for reporting this issue.</li>
-</ul>
-<h2 id="CVE-2024-27439">Possible bypass of CSRF protection</h2>
-<p>CVE-2024-27439 <a href="./CVE-2024-27439.cve.json">[CVE json]</a> <a href="./CVE-2024-27439.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-03-19T11:07:46.188Z</em></p>
-<h3 id="affected-1">Affected</h3>
-<ul>
-<li>Apache Wicket from 9.1.0 through 9.16.0</li>
-<li>Apache Wicket from 10.0.0-M1 before 10.0.0</li>
-</ul>
-<h3 id="description-1">Description</h3>
-<p>An error in the evaluation of the fetch metadata headers could allow a bypass of the CSRF protection in Apache Wicket.<br><p>This issue affects Apache Wicket: from 9.1.0 through 9.16.0, and the milestone releases for the 10.0 series.<br>Apache Wicket 8.x does not support CSRF protection via the fetch metadata headers and as such is not affected.</p><p>Users are recommended to upgrade to version 9.17.0 or 10.0.0, which fixes the issue.</p></p>
-<h3 id="references-1">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/o825rvjjtmz3qv21ps5k7m2w9193g1lo">https://lists.apache.org/thread/o825rvjjtmz3qv21ps5k7m2w9193g1lo</a></li>
-</ul>
-<h3 id="credits-1">Credits</h3>
-<ul>
-<li>Jo Theunis (finder)</li>
-</ul>
-<h2 id="CVE-2024-36522">Remote code execution via XSLT injection</h2>
-<p>CVE-2024-36522 <a href="./CVE-2024-36522.cve.json">[CVE json]</a> <a href="./CVE-2024-36522.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-12T12:13:50.122Z</em></p>
-<h3 id="affected-2">Affected</h3>
-<ul>
-<li>Apache Wicket from 10.0.0-M1 through 10.0.0</li>
-<li>Apache Wicket from 9.0.0 through 9.17.0</li>
-<li>Apache Wicket from 8.0.0 through 8.15.0</li>
-</ul>
-<h3 id="description-2">Description</h3>
-<p>The default configuration of XSLTResourceStream.java is vulnerable to remote code execution via XSLT injection when <span style="background-color: rgb(255, 255, 255);">processing input from an untrusted source without validation</span>.<br>Users are recommended to upgrade to versions 10.1.0, 9.18.0 or 8.16.0, which fix this issue.</p>
-<h3 id="references-2">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/w613qh7yors840pbx00l1pq6wkl9jzkc">https://lists.apache.org/thread/w613qh7yors840pbx00l1pq6wkl9jzkc</a></li>
-</ul>
-<h3 id="credits-2">Credits</h3>
-<ul>
-<li>cigar (finder)</li>
-</ul>
 <h2 id="CVE-2024-53299">An attacker can intentionally trigger a memory leak</h2>
-<p>CVE-2024-53299 <a href="./CVE-2024-53299.cve.json">[CVE json]</a> <a href="./CVE-2024-53299.osv.json">[OSV json]</a></p>
+<p>CVE-2024-53299 <a href="https://cve.org/CVERecord?id=CVE-2024-53299">[CVE]</a> <a href="./CVE-2024-53299.cve.json">[CVE json]</a> <a href="./CVE-2024-53299.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-01-23T08:37:04.162Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected">Affected</h3>
 <ul>
 <li>Apache Wicket from 7.0.0 through 7.18.*</li>
 <li>Apache Wicket from 8.0.0-M1 through 8.16.*</li>
 <li>Apache Wicket from 9.0.0-M1 through 9.18.*</li>
 <li>Apache Wicket from 10.0.0-M1 through 10.2.*</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description">Description</h3>
 <p>The request handling in the core in Apache Wicket 7.0.0 on any platform allows an attacker to create a DOS via multiple requests to server resources.<br>Users are recommended to upgrade to versions 9.19.0 or 10.3.0, which fixes this issue.</p>
-<h3 id="references-3">References</h3>
+<h3 id="references">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/gyp2ht00c62827y0379lxh5dbx3hhho5">https://lists.apache.org/thread/gyp2ht00c62827y0379lxh5dbx3hhho5</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits">Credits</h3>
 <ul>
 <li>Pedro Santos (finder)</li>
+</ul>
+<h2 id="CVE-2024-36522">Remote code execution via XSLT injection</h2>
+<p>CVE-2024-36522 <a href="https://cve.org/CVERecord?id=CVE-2024-36522">[CVE]</a> <a href="./CVE-2024-36522.cve.json">[CVE json]</a> <a href="./CVE-2024-36522.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-12T12:13:50.122Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Wicket from 10.0.0-M1 through 10.0.0</li>
+<li>Apache Wicket from 9.0.0 through 9.17.0</li>
+<li>Apache Wicket from 8.0.0 through 8.15.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>The default configuration of XSLTResourceStream.java is vulnerable to remote code execution via XSLT injection when <span style="background-color: rgb(255, 255, 255);">processing input from an untrusted source without validation</span>.<br>Users are recommended to upgrade to versions 10.1.0, 9.18.0 or 8.16.0, which fix this issue.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/w613qh7yors840pbx00l1pq6wkl9jzkc">https://lists.apache.org/thread/w613qh7yors840pbx00l1pq6wkl9jzkc</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>cigar (finder)</li>
+</ul>
+<h2 id="CVE-2024-27439">Possible bypass of CSRF protection</h2>
+<p>CVE-2024-27439 <a href="https://cve.org/CVERecord?id=CVE-2024-27439">[CVE]</a> <a href="./CVE-2024-27439.cve.json">[CVE json]</a> <a href="./CVE-2024-27439.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-03-19T11:07:46.188Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Wicket from 9.1.0 through 9.16.0</li>
+<li>Apache Wicket from 10.0.0-M1 before 10.0.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>An error in the evaluation of the fetch metadata headers could allow a bypass of the CSRF protection in Apache Wicket.<br><p>This issue affects Apache Wicket: from 9.1.0 through 9.16.0, and the milestone releases for the 10.0 series.<br>Apache Wicket 8.x does not support CSRF protection via the fetch metadata headers and as such is not affected.</p><p>Users are recommended to upgrade to version 9.17.0 or 10.0.0, which fixes the issue.</p></p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/o825rvjjtmz3qv21ps5k7m2w9193g1lo">https://lists.apache.org/thread/o825rvjjtmz3qv21ps5k7m2w9193g1lo</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Jo Theunis (finder)</li>
+</ul>
+<h2 id="CVE-2021-23937">DNS proxy and possible amplification attack</h2>
+<p>CVE-2021-23937 <a href="https://cve.org/CVERecord?id=CVE-2021-23937">[CVE]</a> <a href="./CVE-2021-23937.cve.json">[CVE json]</a> <a href="./CVE-2021-23937.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-05-25T08:01:09.799Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Wicket from Apache Wicket 9.x through 9.2.0</li>
+<li>Apache Wicket from Apache Wicket 8.x through 8.11.0</li>
+<li>Apache Wicket from Apache Wicket 7.x through 7.17.0</li>
+<li>Apache Wicket from 6.2.0 before Apache Wicket 6.x*</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>A DNS proxy and possible amplification attack vulnerability in WebClientInfo of Apache Wicket allows an attacker to trigger arbitrary DNS lookups from the server when the X-Forwarded-For header is not properly sanitized. This DNS lookup can be engineered to overload an internal DNS server or to slow down request processing of the Apache Wicket application causing a possible denial of service on either the internal infrastructure or the web application itself.</p>
+<p>This issue affects Apache Wicket Apache Wicket 9.x version 9.2.0 and prior versions; Apache Wicket 8.x version 8.11.0 and prior versions; Apache Wicket 7.x version 7.17.0 and prior versions and Apache Wicket 6.x version 6.2.0 and later versions.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/rc2ef22f90793e158cef65a7e370cdbca023c499d1403d65feeca870d%40%3Cusers.wicket.apache.org%3E">https://lists.apache.org/thread.html/rc2ef22f90793e158cef65a7e370cdbca023c499d1403d65feeca870d%40%3Cusers.wicket.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Apache Wicket would like to thank Jonathan Juursema from Topicus.Healthcare for reporting this issue.</li>
 </ul>
 
   

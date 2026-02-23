@@ -105,35 +105,146 @@
 <p>Do you want disclose a potential security issue for Apache Kafka? You can read more about the projects&rsquo; security policy on their <a href="https://kafka.apache.org/project-security.html">security page</a>, and email your report to the <a href="mailto:security@kafka.apache.org">Apache Kafka Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://kafka.apache.org/project-security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-38153">Timing Attack Vulnerability for Apache Kafka Connect and Clients</h2>
-<p>CVE-2021-38153 <a href="./CVE-2021-38153.cve.json">[CVE json]</a> <a href="./CVE-2021-38153.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-09-22T08:43:16.777Z</em></p>
+<h2 id="CVE-2025-27819">Possible RCE/Denial of service attack via SASL JAAS JndiLoginModule configuration</h2>
+<p>CVE-2025-27819 <a href="https://cve.org/CVERecord?id=CVE-2025-27819">[CVE]</a> <a href="./CVE-2025-27819.cve.json">[CVE json]</a> <a href="./CVE-2025-27819.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-06-10T07:54:40.206Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Kafka from Apache Kafka 2.0.x through 2.0.1</li>
-<li>Apache Kafka from Apache Kafka 2.1.x through 2.1.1</li>
-<li>Apache Kafka from Apache Kafka 2.2.x through 2.2.2</li>
-<li>Apache Kafka from Apache Kafka 2.3.x through 2.3.1</li>
-<li>Apache Kafka from Apache Kafka 2.4.x through 2.4.1</li>
-<li>Apache Kafka from Apache Kafka 2.5.x through 2.5.1</li>
-<li>Apache Kafka from Apache Kafka 2.6.x through 2.6.2</li>
-<li>Apache Kafka from Apache Kafka 2.7.x through 2.7.1</li>
-<li>Apache Kafka from Apache Kafka 2.8.x through 2.8.0</li>
+<li>Apache Kafka from 2.0.0 through 3.3.2</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Some components in Apache Kafka use <code>Arrays.equals</code> to validate a password or key, which is vulnerable to timing attacks that make brute force attacks for such credentials more likely to be successful. Users should upgrade to 2.8.1 or higher, or 3.0.0 or higher where this vulnerability has been fixed. The affected versions include Apache Kafka 2.0.0, 2.0.1, 2.1.0, 2.1.1, 2.2.0, 2.2.1, 2.2.2, 2.3.0, 2.3.1, 2.4.0, 2.4.1, 2.5.0, 2.5.1, 2.6.0, 2.6.1, 2.6.2, 2.7.0, 2.7.1, and 2.8.0.</p>
+<div>In CVE-2023-25194, we announced the RCE/Denial of service attack via SASL JAAS JndiLoginModule configuration in Kafka Connect API. But not only Kafka Connect API is vulnerable to this attack, the Apache Kafka brokers also have this vulnerability. To exploit this vulnerability, the attacker needs to be able to connect to the Kafka cluster and have the AlterConfigs permission on the cluster resource.</div><div><br>Since Apache Kafka 3.4.0, we have added a system property ("-Dorg.apache.kafka.disallowed.login.modules") to disable the problematic login modules usage in SASL JAAS configuration. Also by default "com.sun.security.auth.module.JndiLoginModule" is disabled in Apache Kafka 3.4.0, and "com.sun.security.auth.module.JndiLoginModule,com.sun.security.auth.module.LdapLoginModule" is disabled by default in in Apache Kafka 3.9.1/4.0.0<br></div>
 <h3 id="references">References</h3>
 <ul>
 <li><a href="https://kafka.apache.org/cve-list">https://kafka.apache.org/cve-list</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Apache Kafka would like to thank J. Santilli for reporting this issue.</li>
+<li>Ziyang Li (finder)</li>
+<li>Ji&rsquo;an Zhou (finder)</li>
+<li>Ying Zhu (finder)</li>
+</ul>
+<h2 id="CVE-2025-27818">Possible RCE attack via SASL JAAS LdapLoginModule configuration</h2>
+<p>CVE-2025-27818 <a href="https://cve.org/CVERecord?id=CVE-2025-27818">[CVE]</a> <a href="./CVE-2025-27818.cve.json">[CVE json]</a> <a href="./CVE-2025-27818.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-06-10T07:53:14.155Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Kafka from 2.3.0 through 3.9.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>A possible security vulnerability has been identified in Apache Kafka.<br>This requires access to a alterConfig to the cluster resource, or Kafka Connect worker, and the ability to create/modify connectors on it with an arbitrary Kafka client SASL JAAS config<br>and a SASL-based security protocol, which has been possible on Kafka clusters since Apache Kafka 2.0.0 (Kafka Connect 2.3.0).<br>When configuring the broker via config file or AlterConfig command, or connector via the Kafka Kafka Connect REST API, an <span style="background-color: rgb(255, 255, 255);">authenticated operator</span> can set the <span style="background-color: rgb(255, 255, 255);"><code>sasl.jaas.config</code><br></span>property for any of the connector&rsquo;s Kafka clients to &ldquo;com.sun.security.auth.module.LdapLoginModule&rdquo;, which can be done via the<br><code>producer.override.sasl.jaas.config</code>, <code>consumer.override.sasl.jaas.config</code>, or <code>admin.override.sasl.jaas.config</code> properties.<br>This will allow the server to connect to the attacker&rsquo;s LDAP server<br>and deserialize the LDAP response, which the attacker can use to execute java deserialization gadget chains on the Kafka connect server.<br>Attacker can cause <span style="background-color: rgb(255, 255, 255);">unrestricted deserialization of untrusted data (or) </span>RCE vulnerability when there are gadgets in the classpath.<br><br>Since Apache Kafka 3.0.0, users are allowed to specify these properties in connector configurations for Kafka Connect clusters running with out-of-the-box<br>configurations. Before Apache Kafka 3.0.0, users may not specify these properties unless the Kafka Connect cluster has been reconfigured with a connector<br>client override policy that permits them.<br><br>Since Apache Kafka 3.9.1/4.0.0, we have added a system property (&quot;-Dorg.apache.kafka.disallowed.login.modules&quot;) to disable the problematic login modules usage<br>in SASL JAAS configuration. Also by default &ldquo;com.sun.security.auth.module.JndiLoginModule,com.sun.security.auth.module.LdapLoginModule&rdquo; are disabled in Apache Kafka Connect 3.9.1/4.0.0. <br><br>We advise the Kafka users to validate connector configurations and only allow trusted LDAP configurations. Also examine connector dependencies for <br>vulnerable versions and either upgrade their connectors, upgrading that specific dependency, or removing the connectors as options for remediation. Finally,<br><span style="background-color: rgb(255, 255, 255);">in addition to leveraging the &ldquo;org.apache.kafka.disallowed.login.modules&rdquo; system property, Kafka Connect users can also implement their own connector<br>client config override policy, which can be used to control which Kafka client properties can be overridden directly in a connector config and which cannot.</span><br><br></p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://kafka.apache.org/cve-list">https://kafka.apache.org/cve-list</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>罗鑫 <a href="mailto:lx2317103712@gmail.com">lx2317103712@gmail.com</a> (finder)</li>
+<li>ra1lgun <a href="mailto:ra1lgun@foxmail.com">ra1lgun@foxmail.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2025-27817">Arbitrary file read and SSRF vulnerability</h2>
+<p>CVE-2025-27817 <a href="https://cve.org/CVERecord?id=CVE-2025-27817">[CVE]</a> <a href="./CVE-2025-27817.cve.json">[CVE json]</a> <a href="./CVE-2025-27817.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-06-10T07:55:12.969Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Kafka Client from 3.1.0 through 3.9.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<div>A possible arbitrary file read and SSRF vulnerability has been identified in Apache Kafka Client. Apache Kafka Clients accept configuration data for setting the SASL/OAUTHBEARER connection with the brokers, including "sasl.oauthbearer.token.endpoint.url" and "sasl.oauthbearer.jwks.endpoint.url". Apache Kafka allows clients to read an arbitrary file and return the content in the error log, or sending requests to an unintended location. In applications where Apache Kafka Clients configurations can be specified by an untrusted party, attackers may use the "sasl.oauthbearer.token.endpoint.url" and "sasl.oauthbearer.jwks.endpoint.url" configuratin to read arbitrary contents of the disk and environment variables or make requests to an unintended location. In particular, this flaw may be used in Apache Kafka Connect to escalate from REST API access to filesystem/environment/URL access, which may be undesirable in certain environments, including SaaS products. </div><p>Since Apache Kafka 3.9.1/4.0.0, we have added a system property ("-Dorg.apache.kafka.sasl.oauthbearer.allowed.urls") to set the allowed urls in SASL JAAS configuration. In 3.9.1, it accepts all urls by default for backward compatibility. However in 4.0.0 and newer, the default value is empty list and users have to set the allowed urls explicitly.<br></p>
+<pre><code>  &lt;br&gt;
+</code></pre>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://kafka.apache.org/cve-list">https://kafka.apache.org/cve-list</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>罗鑫 <a href="mailto:lx2317103712@gmail.com">lx2317103712@gmail.com</a> (finder)</li>
+<li>1ue (<a href="https://github.com/luelueking">https://github.com/luelueking</a>) (finder)</li>
+<li>4ra1n (<a href="https://github.com/4ra1n">https://github.com/4ra1n</a>) (finder)</li>
+<li>enokiy <a href="mailto:846800628@qq.com">846800628@qq.com</a> (finder)</li>
+<li>VulTeam of ThreatBook (finder)</li>
+</ul>
+<h2 id="CVE-2024-56128">SCRAM authentication vulnerable to replay attacks when used without encryption</h2>
+<p>CVE-2024-56128 <a href="https://cve.org/CVERecord?id=CVE-2024-56128">[CVE]</a> <a href="./CVE-2024-56128.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-12-18T13:38:00.297Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Kafka from 0.10.2.0 before 3.7.2</li>
+<li>Apache Kafka at 3.8.0</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Incorrect Implementation of Authentication Algorithm in Apache Kafka's SCRAM implementation.<br><br>Issue Summary:<br>Apache Kafka's implementation of the Salted Challenge Response Authentication Mechanism (SCRAM) did not fully adhere to the requirements of RFC 5802 [1].<br>Specifically, as per RFC 5802, the server must verify that the nonce sent by the client in the second message matches the nonce sent by the server in its first message.<br>However, Kafka's SCRAM implementation did not perform this validation.<br><br>Impact:<br>This vulnerability is exploitable only when an attacker has plaintext access to the SCRAM authentication exchange. However, the usage of SCRAM over plaintext is strongly<br>discouraged as it is considered an insecure practice [2]. Apache Kafka recommends deploying SCRAM exclusively with TLS encryption to protect SCRAM exchanges from interception [3].<br>Deployments using SCRAM with TLS are not affected by this issue.</p>How to Detect If You Are Impacted:<br>If your deployment uses SCRAM authentication over plaintext communication channels (without TLS encryption), you are likely impacted.<br>To check if TLS is enabled, review your server.properties configuration file for listeners property. If you have SASL_PLAINTEXT in the listeners, then you are likely impacted.<br><br><span style="background-color: var(--wht);">Fix Details:<br></span><span style="background-color: var(--wht);">The issue has been addressed by introducing nonce verification in the final message of the SCRAM authentication exchange to ensure compliance with RFC 5802.<br><br></span><span style="background-color: var(--wht);">Affected Versions:<br></span><span style="background-color: var(--wht);">Apache Kafka versions 0.10.2.0 through 3.9.0, excluding the fixed versions below.<br><br></span><span style="background-color: var(--wht);">Fixed Versions:<br></span><span style="background-color: var(--wht);">3.9.0<br></span><span style="background-color: var(--wht);">3.8.1<br></span><span style="background-color: var(--wht);">3.7.2<br><br></span><span style="background-color: var(--wht);">Users are advised to upgrade to 3.7.2 or later to mitigate this issue.<br><br></span><span style="background-color: var(--wht);">Recommendations for Mitigation:<br></span><span style="background-color: var(--wht);">Users unable to upgrade to the fixed versions can mitigate the issue by:<br></span><span style="background-color: var(--wht);">- Using TLS with SCRAM Authentication:<br></span><span style="background-color: var(--wht);">Always deploy SCRAM over TLS to encrypt authentication exchanges and protect against interception.<br></span><span style="background-color: var(--wht);">- Considering Alternative Authentication Mechanisms:<br></span><span style="background-color: var(--wht);">Evaluate alternative authentication mechanisms, such as PLAIN, Kerberos or OAuth with TLS, which provide additional layers of security.</span><br>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc5802">https://datatracker.ietf.org/doc/html/rfc5802</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc5802#section-9">https://datatracker.ietf.org/doc/html/rfc5802#section-9</a></li>
+<li><a href="https://kafka.apache.org/documentation/#security_sasl_scram_security">https://kafka.apache.org/documentation/#security_sasl_scram_security</a></li>
+<li><a href="https://lists.apache.org/thread/84dh4so32lwn7wr6c5s9mwh381vx9wkw">https://lists.apache.org/thread/84dh4so32lwn7wr6c5s9mwh381vx9wkw</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Tim Fox (<a href="mailto:timvolpe@gmail.com">timvolpe@gmail.com</a>) (finder)</li>
+<li>Vikas Singh <a href="mailto:vikas@confluent.io">vikas@confluent.io</a> (remediation developer)</li>
+</ul>
+<h2 id="CVE-2024-31141">Privilege escalation to filesystem read-access via automatic ConfigProvider</h2>
+<p>CVE-2024-31141 <a href="https://cve.org/CVERecord?id=CVE-2024-31141">[CVE]</a> <a href="./CVE-2024-31141.cve.json">[CVE json]</a> <a href="./CVE-2024-31141.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-11-19T08:40:15.880Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Kafka Clients from 2.3.0 through 3.5.2</li>
+<li>Apache Kafka Clients from 3.6.0 through 3.6.2</li>
+<li>Apache Kafka Clients at 3.7.0</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Files or Directories Accessible to External Parties, Improper Privilege Management vulnerability in Apache Kafka Clients.<br><br>Apache Kafka Clients accept configuration data for customizing behavior, and includes ConfigProvider plugins in order to manipulate these configurations. Apache Kafka also provides FileConfigProvider, DirectoryConfigProvider, and EnvVarConfigProvider implementations which include the ability to read from disk or environment variables.<br>In applications where Apache Kafka Clients configurations can be specified by an untrusted party, attackers may use these ConfigProviders to read arbitrary contents of the disk and environment variables.<br><br>In particular, this flaw may be used in Apache Kafka Connect to escalate from REST API access to filesystem/environment access, which may be undesirable in certain environments, including SaaS products.<br><p>This issue affects Apache Kafka Clients: from 2.3.0 through 3.5.2, 3.6.2, 3.7.0.<br></p><p>Users with affected applications are recommended to upgrade kafka-clients to version &gt;=3.8.0, and set the JVM system property &ldquo;org.apache.kafka.automatic.config.providers=none&rdquo;.<br>Users of Kafka Connect with one of the listed ConfigProvider implementations specified in their worker config are also recommended to add appropriate &ldquo;allowlist.pattern&rdquo; and &ldquo;allowed.paths&rdquo; to restrict their operation to appropriate bounds.<br></p>For users of Kafka Clients or Kafka Connect in environments that trust users with disk and environment variable access, it is not recommended to set the system property.<br><span style="background-color: var(--wht);">For users of the Kafka Broker, Kafka MirrorMaker 2.0, Kafka Streams, and Kafka command-line tools, it is not recommended to set the system property.<br></span></p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/9whdzfr0zwdhr364604w5ssnzmg4v2lv">https://lists.apache.org/thread/9whdzfr0zwdhr364604w5ssnzmg4v2lv</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Greg Harris (finder)</li>
+<li>Mickael Maison (remediation reviewer)</li>
+<li>Chris Egerton (remediation reviewer)</li>
+</ul>
+<h2 id="CVE-2024-27309">Potential incorrect access control during migration from ZK mode to KRaft mode</h2>
+<p>CVE-2024-27309 <a href="https://cve.org/CVERecord?id=CVE-2024-27309">[CVE]</a> <a href="./CVE-2024-27309.cve.json">[CVE json]</a> <a href="./CVE-2024-27309.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-04-12T06:58:42.007Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Kafka from 3.5.0 through 3.5.2</li>
+<li>Apache Kafka from 3.6.0 through 3.6.1</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<div><div><div><div><div><div><div><div><div><div><div><div>While an Apache Kafka cluster is being migrated from ZooKeeper mode to KRaft mode, in some cases ACLs will not be correctly enforced.</div><div><br>Two preconditions are needed to trigger the bug:<br>1. The administrator decides to remove an ACL<br>2. The resource associated with the removed ACL continues to have two or more other ACLs associated with it after the removal.<br><br>When those two preconditions are met, Kafka will treat the resource as if it had only one ACL associated with it after the removal, rather than the two or more that would be correct.</div><br><div>The incorrect condition is cleared by removing all brokers in ZK mode, or by adding a new ACL to the affected resource. Once the migration is completed, there is no metadata loss (the ACLs all remain).</div><br><div>The full impact depends on the ACLs in use. If only ALLOW ACLs were configured during the migration, the impact would be limited to availability impact. if DENY ACLs were configured, the impact could include confidentiality and integrity impact depending on the ACLs configured, as the DENY ACLs might be ignored due to this vulnerability during the migration period.</div></div></div></div></div></div></div></div></div></div></div></div><div><div><div><div><div><div></div></div></div></div></div></div>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/6536rmzyg076lzzdw2xdktvnz163mjpy">https://lists.apache.org/thread/6536rmzyg076lzzdw2xdktvnz163mjpy</a></li>
+</ul>
+<h2 id="CVE-2023-25194">Possible RCE/Denial of service attack via SASL JAAS JndiLoginModule configuration using Kafka Connect </h2>
+<p>CVE-2023-25194 <a href="https://cve.org/CVERecord?id=CVE-2023-25194">[CVE]</a> <a href="./CVE-2023-25194.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2023-07-21T11:35:22.991Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Kafka Connect API from 2.3.0 before 3.4.0</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>A possible security vulnerability has been identified in Apache Kafka Connect API.<br>This requires access to a Kafka Connect worker, and the ability to create/modify connectors on it with an arbitrary Kafka client SASL JAAS config<br>and a SASL-based security protocol, which has been possible on Kafka Connect clusters since Apache Kafka Connect 2.3.0.<br>When configuring the connector via the Kafka Connect REST API, an <span style="background-color: rgb(255, 255, 255);">authenticated operator</span> can set the <span style="background-color: rgb(255, 255, 255);"><code>sasl.jaas.config</code><br></span>property for any of the connector&rsquo;s Kafka clients to &ldquo;com.sun.security.auth.module.JndiLoginModule&rdquo;, which can be done via the<br><code>producer.override.sasl.jaas.config</code>, <code>consumer.override.sasl.jaas.config</code>, or <code>admin.override.sasl.jaas.config</code> properties.<br>This will allow the server to connect to the attacker&rsquo;s LDAP server<br>and deserialize the LDAP response, which the attacker can use to execute java deserialization gadget chains on the Kafka connect server.<br>Attacker can cause <span style="background-color: rgb(255, 255, 255);">unrestricted deserialization of untrusted data (or) </span>RCE vulnerability when there are gadgets in the classpath.<br><br>Since Apache Kafka 3.0.0, users are allowed to specify these properties in connector configurations for Kafka Connect clusters running with out-of-the-box<br>configurations. Before Apache Kafka 3.0.0, users may not specify these properties unless the Kafka Connect cluster has been reconfigured with a connector<br>client override policy that permits them.<br><br>Since Apache Kafka 3.4.0, we have added a system property (&quot;-Dorg.apache.kafka.disallowed.login.modules&quot;) to disable the problematic login modules usage<br>in SASL JAAS configuration. Also by default &ldquo;com.sun.security.auth.module.JndiLoginModule&rdquo; is disabled in Apache Kafka Connect 3.4.0. <br><br>We advise the Kafka Connect users to validate connector configurations and only allow trusted JNDI configurations. Also examine connector dependencies for <br>vulnerable versions and either upgrade their connectors, upgrading that specific dependency, or removing the connectors as options for remediation. Finally,<br><span style="background-color: rgb(255, 255, 255);">in addition to leveraging the &ldquo;org.apache.kafka.disallowed.login.modules&rdquo; system property, Kafka Connect users can also implement their own connector<br>client config override policy, which can be used to control which Kafka client properties can be overridden directly in a connector config and which cannot.</span><br></p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://kafka.apache.org/cve-list">https://kafka.apache.org/cve-list</a></li>
+<li><a href="https://lists.apache.org/thread/vy1c7fqcdqvq5grcqp6q5jyyb302khyz">https://lists.apache.org/thread/vy1c7fqcdqvq5grcqp6q5jyyb302khyz</a></li>
+<li><a href="http://packetstormsecurity.com/files/173151/Apache-Druid-JNDI-Injection-Remote-Code-Execution.html">http://packetstormsecurity.com/files/173151/Apache-Druid-JNDI-Injection-Remote-Code-Execution.html</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Apache Kafka would like to thank to Jari Jääskelä (<a href="https://hackerone.com/reports/1529790">https://hackerone.com/reports/1529790</a>) and 4ra1n and Y4tacker (they found vulnerabilities in other Apache projects. After discussion between PMC of the two projects, it was finally confirmed that it was the vulnerability of Kafka then they reported it to us) (finder)</li>
 </ul>
 <h2 id="CVE-2022-34917">Unauthenticated clients may cause OutOfMemoryError on Apache Kafka Brokers</h2>
-<p>CVE-2022-34917 <a href="./CVE-2022-34917.cve.json">[CVE json]</a> <a href="./CVE-2022-34917.osv.json">[OSV json]</a></p>
+<p>CVE-2022-34917 <a href="https://cve.org/CVERecord?id=CVE-2022-34917">[CVE]</a> <a href="./CVE-2022-34917.cve.json">[CVE json]</a> <a href="./CVE-2022-34917.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-09-30T05:44:20.899Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-7">Affected</h3>
 <ul>
 <li>Apache Kafka at Apache Kafka 2.8.0 2.8.0</li>
 <li>Apache Kafka at Apache Kafka 2.8.1 2.8.1</li>
@@ -144,7 +255,7 @@
 <li>Apache Kafka at Apache Kafka 3.2.0 3.2.0</li>
 <li>Apache Kafka at Apache Kafka 3.2.1 3.2.1</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-7">Description</h3>
 <p>A security vulnerability has been identified in Apache Kafka. It affects all releases since 2.8.0. The vulnerability allows malicious
 unauthenticated clients to allocate large amounts of memory on brokers. This can lead to brokers hitting OutOfMemoryException and
 causing denial of service.</p>
@@ -159,149 +270,38 @@ SASL credentials, can trigger the issue.</li>
 successfully authenticate via TLS can trigger the issue.</li>
 </ul>
 <p>We advise the users to upgrade the Kafka installations to one of the 3.2.3, 3.1.2, 3.0.2, 2.8.2 versions.</p>
-<h3 id="references-1">References</h3>
-<ul>
-<li><a href="https://kafka.apache.org/cve-list">https://kafka.apache.org/cve-list</a></li>
-</ul>
-<h3 id="credits-1">Credits</h3>
-<ul>
-<li>Apache Kafka would like to thank Mickael Maison, Tom Bentley and Daniel Collins for reporting this issue.</li>
-</ul>
-<h2 id="CVE-2023-25194">Possible RCE/Denial of service attack via SASL JAAS JndiLoginModule configuration using Kafka Connect </h2>
-<p>CVE-2023-25194 <a href="./CVE-2023-25194.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2023-07-21T11:35:22.991Z</em></p>
-<h3 id="affected-2">Affected</h3>
-<ul>
-<li>Apache Kafka Connect API from 2.3.0 before 3.4.0</li>
-</ul>
-<h3 id="description-2">Description</h3>
-<p>A possible security vulnerability has been identified in Apache Kafka Connect API.<br>This requires access to a Kafka Connect worker, and the ability to create/modify connectors on it with an arbitrary Kafka client SASL JAAS config<br>and a SASL-based security protocol, which has been possible on Kafka Connect clusters since Apache Kafka Connect 2.3.0.<br>When configuring the connector via the Kafka Connect REST API, an <span style="background-color: rgb(255, 255, 255);">authenticated operator</span> can set the <span style="background-color: rgb(255, 255, 255);"><code>sasl.jaas.config</code><br></span>property for any of the connector&rsquo;s Kafka clients to &ldquo;com.sun.security.auth.module.JndiLoginModule&rdquo;, which can be done via the<br><code>producer.override.sasl.jaas.config</code>, <code>consumer.override.sasl.jaas.config</code>, or <code>admin.override.sasl.jaas.config</code> properties.<br>This will allow the server to connect to the attacker&rsquo;s LDAP server<br>and deserialize the LDAP response, which the attacker can use to execute java deserialization gadget chains on the Kafka connect server.<br>Attacker can cause <span style="background-color: rgb(255, 255, 255);">unrestricted deserialization of untrusted data (or) </span>RCE vulnerability when there are gadgets in the classpath.<br><br>Since Apache Kafka 3.0.0, users are allowed to specify these properties in connector configurations for Kafka Connect clusters running with out-of-the-box<br>configurations. Before Apache Kafka 3.0.0, users may not specify these properties unless the Kafka Connect cluster has been reconfigured with a connector<br>client override policy that permits them.<br><br>Since Apache Kafka 3.4.0, we have added a system property (&quot;-Dorg.apache.kafka.disallowed.login.modules&quot;) to disable the problematic login modules usage<br>in SASL JAAS configuration. Also by default &ldquo;com.sun.security.auth.module.JndiLoginModule&rdquo; is disabled in Apache Kafka Connect 3.4.0. <br><br>We advise the Kafka Connect users to validate connector configurations and only allow trusted JNDI configurations. Also examine connector dependencies for <br>vulnerable versions and either upgrade their connectors, upgrading that specific dependency, or removing the connectors as options for remediation. Finally,<br><span style="background-color: rgb(255, 255, 255);">in addition to leveraging the &ldquo;org.apache.kafka.disallowed.login.modules&rdquo; system property, Kafka Connect users can also implement their own connector<br>client config override policy, which can be used to control which Kafka client properties can be overridden directly in a connector config and which cannot.</span><br></p>
-<h3 id="references-2">References</h3>
-<ul>
-<li><a href="https://kafka.apache.org/cve-list">https://kafka.apache.org/cve-list</a></li>
-<li><a href="https://lists.apache.org/thread/vy1c7fqcdqvq5grcqp6q5jyyb302khyz">https://lists.apache.org/thread/vy1c7fqcdqvq5grcqp6q5jyyb302khyz</a></li>
-<li><a href="http://packetstormsecurity.com/files/173151/Apache-Druid-JNDI-Injection-Remote-Code-Execution.html">http://packetstormsecurity.com/files/173151/Apache-Druid-JNDI-Injection-Remote-Code-Execution.html</a></li>
-</ul>
-<h3 id="credits-2">Credits</h3>
-<ul>
-<li>Apache Kafka would like to thank to Jari Jääskelä (<a href="https://hackerone.com/reports/1529790">https://hackerone.com/reports/1529790</a>) and 4ra1n and Y4tacker (they found vulnerabilities in other Apache projects. After discussion between PMC of the two projects, it was finally confirmed that it was the vulnerability of Kafka then they reported it to us) (finder)</li>
-</ul>
-<h2 id="CVE-2024-27309">Potential incorrect access control during migration from ZK mode to KRaft mode</h2>
-<p>CVE-2024-27309 <a href="./CVE-2024-27309.cve.json">[CVE json]</a> <a href="./CVE-2024-27309.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-04-12T06:58:42.007Z</em></p>
-<h3 id="affected-3">Affected</h3>
-<ul>
-<li>Apache Kafka from 3.5.0 through 3.5.2</li>
-<li>Apache Kafka from 3.6.0 through 3.6.1</li>
-</ul>
-<h3 id="description-3">Description</h3>
-<div><div><div><div><div><div><div><div><div><div><div><div>While an Apache Kafka cluster is being migrated from ZooKeeper mode to KRaft mode, in some cases ACLs will not be correctly enforced.</div><div><br>Two preconditions are needed to trigger the bug:<br>1. The administrator decides to remove an ACL<br>2. The resource associated with the removed ACL continues to have two or more other ACLs associated with it after the removal.<br><br>When those two preconditions are met, Kafka will treat the resource as if it had only one ACL associated with it after the removal, rather than the two or more that would be correct.</div><br><div>The incorrect condition is cleared by removing all brokers in ZK mode, or by adding a new ACL to the affected resource. Once the migration is completed, there is no metadata loss (the ACLs all remain).</div><br><div>The full impact depends on the ACLs in use. If only ALLOW ACLs were configured during the migration, the impact would be limited to availability impact. if DENY ACLs were configured, the impact could include confidentiality and integrity impact depending on the ACLs configured, as the DENY ACLs might be ignored due to this vulnerability during the migration period.</div></div></div></div></div></div></div></div></div></div></div></div><div><div><div><div><div><div></div></div></div></div></div></div>
-<h3 id="references-3">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/6536rmzyg076lzzdw2xdktvnz163mjpy">https://lists.apache.org/thread/6536rmzyg076lzzdw2xdktvnz163mjpy</a></li>
-</ul>
-<h2 id="CVE-2024-31141">Privilege escalation to filesystem read-access via automatic ConfigProvider</h2>
-<p>CVE-2024-31141 <a href="./CVE-2024-31141.cve.json">[CVE json]</a> <a href="./CVE-2024-31141.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-11-19T08:40:15.880Z</em></p>
-<h3 id="affected-4">Affected</h3>
-<ul>
-<li>Apache Kafka Clients from 2.3.0 through 3.5.2</li>
-<li>Apache Kafka Clients from 3.6.0 through 3.6.2</li>
-<li>Apache Kafka Clients at 3.7.0</li>
-</ul>
-<h3 id="description-4">Description</h3>
-<p>Files or Directories Accessible to External Parties, Improper Privilege Management vulnerability in Apache Kafka Clients.<br><br>Apache Kafka Clients accept configuration data for customizing behavior, and includes ConfigProvider plugins in order to manipulate these configurations. Apache Kafka also provides FileConfigProvider, DirectoryConfigProvider, and EnvVarConfigProvider implementations which include the ability to read from disk or environment variables.<br>In applications where Apache Kafka Clients configurations can be specified by an untrusted party, attackers may use these ConfigProviders to read arbitrary contents of the disk and environment variables.<br><br>In particular, this flaw may be used in Apache Kafka Connect to escalate from REST API access to filesystem/environment access, which may be undesirable in certain environments, including SaaS products.<br><p>This issue affects Apache Kafka Clients: from 2.3.0 through 3.5.2, 3.6.2, 3.7.0.<br></p><p>Users with affected applications are recommended to upgrade kafka-clients to version &gt;=3.8.0, and set the JVM system property &ldquo;org.apache.kafka.automatic.config.providers=none&rdquo;.<br>Users of Kafka Connect with one of the listed ConfigProvider implementations specified in their worker config are also recommended to add appropriate &ldquo;allowlist.pattern&rdquo; and &ldquo;allowed.paths&rdquo; to restrict their operation to appropriate bounds.<br></p>For users of Kafka Clients or Kafka Connect in environments that trust users with disk and environment variable access, it is not recommended to set the system property.<br><span style="background-color: var(--wht);">For users of the Kafka Broker, Kafka MirrorMaker 2.0, Kafka Streams, and Kafka command-line tools, it is not recommended to set the system property.<br></span></p>
-<h3 id="references-4">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/9whdzfr0zwdhr364604w5ssnzmg4v2lv">https://lists.apache.org/thread/9whdzfr0zwdhr364604w5ssnzmg4v2lv</a></li>
-</ul>
-<h3 id="credits-3">Credits</h3>
-<ul>
-<li>Greg Harris (finder)</li>
-<li>Mickael Maison (remediation reviewer)</li>
-<li>Chris Egerton (remediation reviewer)</li>
-</ul>
-<h2 id="CVE-2024-56128">SCRAM authentication vulnerable to replay attacks when used without encryption</h2>
-<p>CVE-2024-56128 <a href="./CVE-2024-56128.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2024-12-18T13:38:00.297Z</em></p>
-<h3 id="affected-5">Affected</h3>
-<ul>
-<li>Apache Kafka from 0.10.2.0 before 3.7.2</li>
-<li>Apache Kafka at 3.8.0</li>
-</ul>
-<h3 id="description-5">Description</h3>
-<p>Incorrect Implementation of Authentication Algorithm in Apache Kafka's SCRAM implementation.<br><br>Issue Summary:<br>Apache Kafka's implementation of the Salted Challenge Response Authentication Mechanism (SCRAM) did not fully adhere to the requirements of RFC 5802 [1].<br>Specifically, as per RFC 5802, the server must verify that the nonce sent by the client in the second message matches the nonce sent by the server in its first message.<br>However, Kafka's SCRAM implementation did not perform this validation.<br><br>Impact:<br>This vulnerability is exploitable only when an attacker has plaintext access to the SCRAM authentication exchange. However, the usage of SCRAM over plaintext is strongly<br>discouraged as it is considered an insecure practice [2]. Apache Kafka recommends deploying SCRAM exclusively with TLS encryption to protect SCRAM exchanges from interception [3].<br>Deployments using SCRAM with TLS are not affected by this issue.</p>How to Detect If You Are Impacted:<br>If your deployment uses SCRAM authentication over plaintext communication channels (without TLS encryption), you are likely impacted.<br>To check if TLS is enabled, review your server.properties configuration file for listeners property. If you have SASL_PLAINTEXT in the listeners, then you are likely impacted.<br><br><span style="background-color: var(--wht);">Fix Details:<br></span><span style="background-color: var(--wht);">The issue has been addressed by introducing nonce verification in the final message of the SCRAM authentication exchange to ensure compliance with RFC 5802.<br><br></span><span style="background-color: var(--wht);">Affected Versions:<br></span><span style="background-color: var(--wht);">Apache Kafka versions 0.10.2.0 through 3.9.0, excluding the fixed versions below.<br><br></span><span style="background-color: var(--wht);">Fixed Versions:<br></span><span style="background-color: var(--wht);">3.9.0<br></span><span style="background-color: var(--wht);">3.8.1<br></span><span style="background-color: var(--wht);">3.7.2<br><br></span><span style="background-color: var(--wht);">Users are advised to upgrade to 3.7.2 or later to mitigate this issue.<br><br></span><span style="background-color: var(--wht);">Recommendations for Mitigation:<br></span><span style="background-color: var(--wht);">Users unable to upgrade to the fixed versions can mitigate the issue by:<br></span><span style="background-color: var(--wht);">- Using TLS with SCRAM Authentication:<br></span><span style="background-color: var(--wht);">Always deploy SCRAM over TLS to encrypt authentication exchanges and protect against interception.<br></span><span style="background-color: var(--wht);">- Considering Alternative Authentication Mechanisms:<br></span><span style="background-color: var(--wht);">Evaluate alternative authentication mechanisms, such as PLAIN, Kerberos or OAuth with TLS, which provide additional layers of security.</span><br>
-<h3 id="references-5">References</h3>
-<ul>
-<li><a href="https://datatracker.ietf.org/doc/html/rfc5802">https://datatracker.ietf.org/doc/html/rfc5802</a></li>
-<li><a href="https://datatracker.ietf.org/doc/html/rfc5802#section-9">https://datatracker.ietf.org/doc/html/rfc5802#section-9</a></li>
-<li><a href="https://kafka.apache.org/documentation/#security_sasl_scram_security">https://kafka.apache.org/documentation/#security_sasl_scram_security</a></li>
-<li><a href="https://lists.apache.org/thread/84dh4so32lwn7wr6c5s9mwh381vx9wkw">https://lists.apache.org/thread/84dh4so32lwn7wr6c5s9mwh381vx9wkw</a></li>
-</ul>
-<h3 id="credits-4">Credits</h3>
-<ul>
-<li>Tim Fox (<a href="mailto:timvolpe@gmail.com">timvolpe@gmail.com</a>) (finder)</li>
-<li>Vikas Singh <a href="mailto:vikas@confluent.io">vikas@confluent.io</a> (remediation developer)</li>
-</ul>
-<h2 id="CVE-2025-27817">Arbitrary file read and SSRF vulnerability</h2>
-<p>CVE-2025-27817 <a href="./CVE-2025-27817.cve.json">[CVE json]</a> <a href="./CVE-2025-27817.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-06-10T07:55:12.969Z</em></p>
-<h3 id="affected-6">Affected</h3>
-<ul>
-<li>Apache Kafka Client from 3.1.0 through 3.9.0</li>
-</ul>
-<h3 id="description-6">Description</h3>
-<div>A possible arbitrary file read and SSRF vulnerability has been identified in Apache Kafka Client. Apache Kafka Clients accept configuration data for setting the SASL/OAUTHBEARER connection with the brokers, including "sasl.oauthbearer.token.endpoint.url" and "sasl.oauthbearer.jwks.endpoint.url". Apache Kafka allows clients to read an arbitrary file and return the content in the error log, or sending requests to an unintended location. In applications where Apache Kafka Clients configurations can be specified by an untrusted party, attackers may use the "sasl.oauthbearer.token.endpoint.url" and "sasl.oauthbearer.jwks.endpoint.url" configuratin to read arbitrary contents of the disk and environment variables or make requests to an unintended location. In particular, this flaw may be used in Apache Kafka Connect to escalate from REST API access to filesystem/environment/URL access, which may be undesirable in certain environments, including SaaS products. </div><p>Since Apache Kafka 3.9.1/4.0.0, we have added a system property ("-Dorg.apache.kafka.sasl.oauthbearer.allowed.urls") to set the allowed urls in SASL JAAS configuration. In 3.9.1, it accepts all urls by default for backward compatibility. However in 4.0.0 and newer, the default value is empty list and users have to set the allowed urls explicitly.<br></p>
-<pre><code>  &lt;br&gt;
-</code></pre>
-<h3 id="references-6">References</h3>
-<ul>
-<li><a href="https://kafka.apache.org/cve-list">https://kafka.apache.org/cve-list</a></li>
-</ul>
-<h3 id="credits-5">Credits</h3>
-<ul>
-<li>罗鑫 <a href="mailto:lx2317103712@gmail.com">lx2317103712@gmail.com</a> (finder)</li>
-<li>1ue (<a href="https://github.com/luelueking">https://github.com/luelueking</a>) (finder)</li>
-<li>4ra1n (<a href="https://github.com/4ra1n">https://github.com/4ra1n</a>) (finder)</li>
-<li>enokiy <a href="mailto:846800628@qq.com">846800628@qq.com</a> (finder)</li>
-<li>VulTeam of ThreatBook (finder)</li>
-</ul>
-<h2 id="CVE-2025-27818">Possible RCE attack via SASL JAAS LdapLoginModule configuration</h2>
-<p>CVE-2025-27818 <a href="./CVE-2025-27818.cve.json">[CVE json]</a> <a href="./CVE-2025-27818.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-06-10T07:53:14.155Z</em></p>
-<h3 id="affected-7">Affected</h3>
-<ul>
-<li>Apache Kafka from 2.3.0 through 3.9.0</li>
-</ul>
-<h3 id="description-7">Description</h3>
-<p>A possible security vulnerability has been identified in Apache Kafka.<br>This requires access to a alterConfig to the cluster resource, or Kafka Connect worker, and the ability to create/modify connectors on it with an arbitrary Kafka client SASL JAAS config<br>and a SASL-based security protocol, which has been possible on Kafka clusters since Apache Kafka 2.0.0 (Kafka Connect 2.3.0).<br>When configuring the broker via config file or AlterConfig command, or connector via the Kafka Kafka Connect REST API, an <span style="background-color: rgb(255, 255, 255);">authenticated operator</span> can set the <span style="background-color: rgb(255, 255, 255);"><code>sasl.jaas.config</code><br></span>property for any of the connector&rsquo;s Kafka clients to &ldquo;com.sun.security.auth.module.LdapLoginModule&rdquo;, which can be done via the<br><code>producer.override.sasl.jaas.config</code>, <code>consumer.override.sasl.jaas.config</code>, or <code>admin.override.sasl.jaas.config</code> properties.<br>This will allow the server to connect to the attacker&rsquo;s LDAP server<br>and deserialize the LDAP response, which the attacker can use to execute java deserialization gadget chains on the Kafka connect server.<br>Attacker can cause <span style="background-color: rgb(255, 255, 255);">unrestricted deserialization of untrusted data (or) </span>RCE vulnerability when there are gadgets in the classpath.<br><br>Since Apache Kafka 3.0.0, users are allowed to specify these properties in connector configurations for Kafka Connect clusters running with out-of-the-box<br>configurations. Before Apache Kafka 3.0.0, users may not specify these properties unless the Kafka Connect cluster has been reconfigured with a connector<br>client override policy that permits them.<br><br>Since Apache Kafka 3.9.1/4.0.0, we have added a system property (&quot;-Dorg.apache.kafka.disallowed.login.modules&quot;) to disable the problematic login modules usage<br>in SASL JAAS configuration. Also by default &ldquo;com.sun.security.auth.module.JndiLoginModule,com.sun.security.auth.module.LdapLoginModule&rdquo; are disabled in Apache Kafka Connect 3.9.1/4.0.0. <br><br>We advise the Kafka users to validate connector configurations and only allow trusted LDAP configurations. Also examine connector dependencies for <br>vulnerable versions and either upgrade their connectors, upgrading that specific dependency, or removing the connectors as options for remediation. Finally,<br><span style="background-color: rgb(255, 255, 255);">in addition to leveraging the &ldquo;org.apache.kafka.disallowed.login.modules&rdquo; system property, Kafka Connect users can also implement their own connector<br>client config override policy, which can be used to control which Kafka client properties can be overridden directly in a connector config and which cannot.</span><br><br></p>
 <h3 id="references-7">References</h3>
 <ul>
 <li><a href="https://kafka.apache.org/cve-list">https://kafka.apache.org/cve-list</a></li>
 </ul>
 <h3 id="credits-6">Credits</h3>
 <ul>
-<li>罗鑫 <a href="mailto:lx2317103712@gmail.com">lx2317103712@gmail.com</a> (finder)</li>
-<li>ra1lgun <a href="mailto:ra1lgun@foxmail.com">ra1lgun@foxmail.com</a> (finder)</li>
+<li>Apache Kafka would like to thank Mickael Maison, Tom Bentley and Daniel Collins for reporting this issue.</li>
 </ul>
-<h2 id="CVE-2025-27819">Possible RCE/Denial of service attack via SASL JAAS JndiLoginModule configuration</h2>
-<p>CVE-2025-27819 <a href="./CVE-2025-27819.cve.json">[CVE json]</a> <a href="./CVE-2025-27819.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-06-10T07:54:40.206Z</em></p>
+<h2 id="CVE-2021-38153">Timing Attack Vulnerability for Apache Kafka Connect and Clients</h2>
+<p>CVE-2021-38153 <a href="https://cve.org/CVERecord?id=CVE-2021-38153">[CVE]</a> <a href="./CVE-2021-38153.cve.json">[CVE json]</a> <a href="./CVE-2021-38153.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-09-22T08:43:16.777Z</em></p>
 <h3 id="affected-8">Affected</h3>
 <ul>
-<li>Apache Kafka from 2.0.0 through 3.3.2</li>
+<li>Apache Kafka from Apache Kafka 2.0.x through 2.0.1</li>
+<li>Apache Kafka from Apache Kafka 2.1.x through 2.1.1</li>
+<li>Apache Kafka from Apache Kafka 2.2.x through 2.2.2</li>
+<li>Apache Kafka from Apache Kafka 2.3.x through 2.3.1</li>
+<li>Apache Kafka from Apache Kafka 2.4.x through 2.4.1</li>
+<li>Apache Kafka from Apache Kafka 2.5.x through 2.5.1</li>
+<li>Apache Kafka from Apache Kafka 2.6.x through 2.6.2</li>
+<li>Apache Kafka from Apache Kafka 2.7.x through 2.7.1</li>
+<li>Apache Kafka from Apache Kafka 2.8.x through 2.8.0</li>
 </ul>
 <h3 id="description-8">Description</h3>
-<div>In CVE-2023-25194, we announced the RCE/Denial of service attack via SASL JAAS JndiLoginModule configuration in Kafka Connect API. But not only Kafka Connect API is vulnerable to this attack, the Apache Kafka brokers also have this vulnerability. To exploit this vulnerability, the attacker needs to be able to connect to the Kafka cluster and have the AlterConfigs permission on the cluster resource.</div><div><br>Since Apache Kafka 3.4.0, we have added a system property ("-Dorg.apache.kafka.disallowed.login.modules") to disable the problematic login modules usage in SASL JAAS configuration. Also by default "com.sun.security.auth.module.JndiLoginModule" is disabled in Apache Kafka 3.4.0, and "com.sun.security.auth.module.JndiLoginModule,com.sun.security.auth.module.LdapLoginModule" is disabled by default in in Apache Kafka 3.9.1/4.0.0<br></div>
+<p>Some components in Apache Kafka use <code>Arrays.equals</code> to validate a password or key, which is vulnerable to timing attacks that make brute force attacks for such credentials more likely to be successful. Users should upgrade to 2.8.1 or higher, or 3.0.0 or higher where this vulnerability has been fixed. The affected versions include Apache Kafka 2.0.0, 2.0.1, 2.1.0, 2.1.1, 2.2.0, 2.2.1, 2.2.2, 2.3.0, 2.3.1, 2.4.0, 2.4.1, 2.5.0, 2.5.1, 2.6.0, 2.6.1, 2.6.2, 2.7.0, 2.7.1, and 2.8.0.</p>
 <h3 id="references-8">References</h3>
 <ul>
 <li><a href="https://kafka.apache.org/cve-list">https://kafka.apache.org/cve-list</a></li>
 </ul>
 <h3 id="credits-7">Credits</h3>
 <ul>
-<li>Ziyang Li (finder)</li>
-<li>Ji&rsquo;an Zhou (finder)</li>
-<li>Ying Zhu (finder)</li>
+<li>Apache Kafka would like to thank J. Santilli for reporting this issue.</li>
 </ul>
 
   

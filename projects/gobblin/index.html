@@ -105,39 +105,39 @@
 <p>Do you want disclose a potential security issue for Apache Gobblin? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-36151">Local Credentials Disclosure Vulnerability</h2>
-<p>CVE-2021-36151 <a href="./CVE-2021-36151.cve.json">[CVE json]</a> <a href="./CVE-2021-36151.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-02-03T18:29:46.145Z</em></p>
+<h2 id="CVE-2021-36152">Insecure TrustManager used in LDAP connections</h2>
+<p>CVE-2021-36152 <a href="https://cve.org/CVERecord?id=CVE-2021-36152">[CVE]</a> <a href="./CVE-2021-36152.cve.json">[CVE json]</a> <a href="./CVE-2021-36152.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-02-03T18:26:12.111Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
 <li>Apache Gobblin from Apache Gobblin through 0.15.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>In Apache Gobblin, the Hadoop token is written to a temp file that is visible to all local users on Unix-like systems. This affects versions &lt;= 0.15.0. Users should update to version 0.16.0 which addresses this issue.</p>
+<p>Apache Gobblin trusts all certificates used for LDAP connections in Gobblin-as-a-Service. This affects versions &lt;= 0.15.0. Users should update to version 0.16.0 which addresses this issue.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/3cdkyxdd6xk05lsvr3l66dsnvhwyo1t0">https://lists.apache.org/thread/3cdkyxdd6xk05lsvr3l66dsnvhwyo1t0</a></li>
+<li><a href="https://lists.apache.org/thread/3bxf7rbf4zh95r78jtgth6gwhr5fyl2j">https://lists.apache.org/thread/3bxf7rbf4zh95r78jtgth6gwhr5fyl2j</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Apache Gobblin would like to thank Jonathan Leitschuh for reporting this issue.</li>
+<li>Apache Gobblin would like to thank Simon Gerst for reporting this issue.</li>
 </ul>
-<h2 id="CVE-2021-36152">Insecure TrustManager used in LDAP connections</h2>
-<p>CVE-2021-36152 <a href="./CVE-2021-36152.cve.json">[CVE json]</a> <a href="./CVE-2021-36152.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-02-03T18:26:12.111Z</em></p>
+<h2 id="CVE-2021-36151">Local Credentials Disclosure Vulnerability</h2>
+<p>CVE-2021-36151 <a href="https://cve.org/CVERecord?id=CVE-2021-36151">[CVE]</a> <a href="./CVE-2021-36151.cve.json">[CVE json]</a> <a href="./CVE-2021-36151.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-02-03T18:29:46.145Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache Gobblin from Apache Gobblin through 0.15.0</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>Apache Gobblin trusts all certificates used for LDAP connections in Gobblin-as-a-Service. This affects versions &lt;= 0.15.0. Users should update to version 0.16.0 which addresses this issue.</p>
+<p>In Apache Gobblin, the Hadoop token is written to a temp file that is visible to all local users on Unix-like systems. This affects versions &lt;= 0.15.0. Users should update to version 0.16.0 which addresses this issue.</p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/3bxf7rbf4zh95r78jtgth6gwhr5fyl2j">https://lists.apache.org/thread/3bxf7rbf4zh95r78jtgth6gwhr5fyl2j</a></li>
+<li><a href="https://lists.apache.org/thread/3cdkyxdd6xk05lsvr3l66dsnvhwyo1t0">https://lists.apache.org/thread/3cdkyxdd6xk05lsvr3l66dsnvhwyo1t0</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>Apache Gobblin would like to thank Simon Gerst for reporting this issue.</li>
+<li>Apache Gobblin would like to thank Jonathan Leitschuh for reporting this issue.</li>
 </ul>
 
   

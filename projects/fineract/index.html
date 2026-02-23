@@ -105,227 +105,227 @@
 <p>Do you want disclose a potential security issue for Apache Fineract? You can read more about the projects&rsquo; security policy on their <a href="https://fineract.apache.org/security.html">security page</a>, and email your report to the <a href="mailto:security@fineract.apache.org">Apache Fineract Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://fineract.apache.org/security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2020-17514">disabled hostname verificiation</h2>
-<p>CVE-2020-17514 <a href="./CVE-2020-17514.cve.json">[CVE json]</a> <a href="./CVE-2020-17514.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-05-27T12:07:40.403Z</em></p>
+<h2 id="CVE-2025-58137">IDOR via self-service API</h2>
+<p>CVE-2025-58137 <a href="https://cve.org/CVERecord?id=CVE-2025-58137">[CVE]</a> <a href="./CVE-2025-58137.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2025-12-12T09:20:50.539Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Fineract from Apache Fineract before 1.5.0</li>
+<li>Apache Fineract through 1.11.0</li>
+<li>Apache Fineract at 1.12.1</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Apache Fineract prior to 1.5.0 disables HTTPS hostname verification in ProcessorHelper in the configureClient method. Under typical deployments, a man in the middle attack could be successful.</p>
-<h3 id="references">References</h3>
-<ul>
-<li><a href="https://issues.apache.org/jira/browse/FINERACT-1211">https://issues.apache.org/jira/browse/FINERACT-1211</a></li>
-</ul>
-<h3 id="credits">Credits</h3>
-<ul>
-<li>We would like to thank Simon Gerst at <a href="https://github.com/intrigus-lgtm">https://github.com/intrigus-lgtm</a>  for reporting this issue</li>
-</ul>
-<h2 id="CVE-2022-44635">Apache Fineract allowed an authenticated user to perform remote code execution due to path traversal</h2>
-<p>CVE-2022-44635 <a href="./CVE-2022-44635.cve.json">[CVE json]</a> <a href="./CVE-2022-44635.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-11-29T14:22:31.295Z</em></p>
-<h3 id="affected-1">Affected</h3>
-<ul>
-<li>Apache Fineract from Apache Fineract 1.8 through 1.8.0</li>
-<li>Apache Fineract from Apache Fineract 1.7 through 1.7.0</li>
-</ul>
-<h3 id="description-1">Description</h3>
-<p>Apache Fineract allowed an authenticated user to perform remote code execution due to a path traversal vulnerability in a file upload component of Apache Fineract, allowing an attacker to run remote code.  This issue affects Apache Fineract version 1.8.0 and prior versions. We recommend users to upgrade to 1.8.1.</p>
-<h3 id="references-1">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/t8q6fmh3o6yqmy69qtqxppk9yg9wfybg">https://lists.apache.org/thread/t8q6fmh3o6yqmy69qtqxppk9yg9wfybg</a></li>
-</ul>
-<h3 id="credits-1">Credits</h3>
-<ul>
-<li>We would like to thank  Aman Sapra, co-captain of the Super Guesser CTF team &amp; Security researcher at CRED, for reporting this issue, and the Apache Security team for their assistance.  We give kudos and karma to @Aleksandar Vidakovic for resolving this CVE.</li>
-</ul>
-<h2 id="CVE-2023-25195">SSRF template type vulnerability in certain authenticated users</h2>
-<p>CVE-2023-25195 <a href="./CVE-2023-25195.cve.json">[CVE json]</a> <a href="./CVE-2023-25195.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-03-28T11:16:21.425Z</em></p>
-<h3 id="affected-2">Affected</h3>
-<ul>
-<li>Apache Fineract from 1.4 through 1.8.3</li>
-</ul>
-<h3 id="description-2">Description</h3>
-<p>Server-Side Request Forgery (SSRF) vulnerability in Apache Software Foundation Apache Fineract.<br><p>Authorized users with limited permissions can gain access to server and may be able to use server for any outbound traffic. </p><p>This issue affects Apache Fineract: from 1.4 through 1.8.3.</p></p>
-<h3 id="references-2">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/m58fdjmtkfp9h4c0r4l48rv995w3qhb6">https://lists.apache.org/thread/m58fdjmtkfp9h4c0r4l48rv995w3qhb6</a></li>
-</ul>
-<h3 id="credits-2">Credits</h3>
-<ul>
-<li>Huydoppa from GHTK  (reporter)</li>
-<li>Aleksander (remediation developer)</li>
-</ul>
-<h2 id="CVE-2023-25196">SQL injection vulnerability </h2>
-<p>CVE-2023-25196 <a href="./CVE-2023-25196.cve.json">[CVE json]</a> <a href="./CVE-2023-25196.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-03-28T11:16:50.126Z</em></p>
-<h3 id="affected-3">Affected</h3>
-<ul>
-<li>Apache Fineract from 1.4 through 1.8.2</li>
-</ul>
-<h3 id="description-3">Description</h3>
-<p>Improper Neutralization of Special Elements used in an SQL Command (&lsquo;SQL Injection&rsquo;) vulnerability in Apache Software Foundation Apache Fineract.<br><p>Authorized users may be able to change or add data in certain components.  </p><p>This issue affects Apache Fineract: from 1.4 through 1.8.2.</p></p>
-<h3 id="references-3">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/m9x3vpn3bry4fympkzxnnz4qx0oc0w8m">https://lists.apache.org/thread/m9x3vpn3bry4fympkzxnnz4qx0oc0w8m</a></li>
-</ul>
-<h3 id="credits-3">Credits</h3>
-<ul>
-<li>Zhang Baocheng at Leng Jing Qi Cai Security Lab (reporter)</li>
-<li><a href="mailto:Aleks@apache.org">Aleks@apache.org</a> (remediation developer)</li>
-</ul>
-<h2 id="CVE-2023-25197">SQL injection vulnerability in certain procedure calls </h2>
-<p>CVE-2023-25197 <a href="./CVE-2023-25197.cve.json">[CVE json]</a> <a href="./CVE-2023-25197.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-03-28T11:17:16.072Z</em></p>
-<h3 id="affected-4">Affected</h3>
-<ul>
-<li>apache fineract from 1.4 through 1.8.2</li>
-</ul>
-<h3 id="description-4">Description</h3>
-<p>Improper Neutralization of Special Elements used in an SQL Command (&lsquo;SQL Injection&rsquo;) vulnerability in Apache Software Foundation apache fineract.<br><p>Authorized users may be able to exploit this for limited impact on components.  </p><p>This issue affects apache fineract: from 1.4 through 1.8.2.</p></p>
-<h3 id="references-4">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/v0q9x86sx6f6l2nzr1z0nwm3y9qlng04">https://lists.apache.org/thread/v0q9x86sx6f6l2nzr1z0nwm3y9qlng04</a></li>
-</ul>
-<h3 id="credits-4">Credits</h3>
-<ul>
-<li>Eugene Lim at Cyber Security Group (CSG) Government Technology Agency GOVTECH.sg (reporter)</li>
-<li><a href="mailto:aleks@apache.org">aleks@apache.org</a> (remediation developer)</li>
-</ul>
-<h2 id="CVE-2024-23537">Under certain circumstances, this vulnerability allowed users, without specific permissions, to escalate their privileges to any role. </h2>
-<p>CVE-2024-23537 <a href="./CVE-2024-23537.cve.json">[CVE json]</a> <a href="./CVE-2024-23537.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-03-29T14:38:03.872Z</em></p>
-<h3 id="affected-5">Affected</h3>
-<ul>
-<li>Apache Fineract before 1.9.0</li>
-</ul>
-<h3 id="description-5">Description</h3>
-<p>Improper Privilege Management vulnerability in Apache Fineract.<p>This issue affects Apache Fineract: &lt;1.8.5.</p><p>Users are recommended to upgrade to version 1.9.0, which fixes the issue.</p></p>
-<h3 id="references-5">References</h3>
-<ul>
-<li><a href="https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report">https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report</a></li>
-<li><a href="https://lists.apache.org/thread/fq1ns4nprw2vqpkwwj9sw45jkwxmt9f1">https://lists.apache.org/thread/fq1ns4nprw2vqpkwwj9sw45jkwxmt9f1</a></li>
-</ul>
-<h3 id="credits-5">Credits</h3>
-<ul>
-<li>Yash Sancheti  (reporter)</li>
-</ul>
-<h2 id="CVE-2024-23538">Under certain system configurations, the sqlSearch parameter was vulnerable to SQL injection attacks, potentially allowing attackers to manipulate database queries.</h2>
-<p>CVE-2024-23538 <a href="./CVE-2024-23538.cve.json">[CVE json]</a> <a href="./CVE-2024-23538.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-03-29T14:37:38.535Z</em></p>
-<h3 id="affected-6">Affected</h3>
-<ul>
-<li>Apache Fineract before 1.8.5</li>
-</ul>
-<h3 id="description-6">Description</h3>
-<p>Improper Neutralization of Special Elements used in an SQL Command (&lsquo;SQL Injection&rsquo;) vulnerability in Apache Fineract.<p>This issue affects Apache Fineract: &lt;1.8.5.</p><p>Users are recommended to upgrade to version 1.8.5 or 1.9.0, which fix the issue.</p></p>
-<h3 id="references-6">References</h3>
-<ul>
-<li><a href="https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report">https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report</a></li>
-<li><a href="https://lists.apache.org/thread/by32w2dylzgbqm5940x3wj7519wolqxs">https://lists.apache.org/thread/by32w2dylzgbqm5940x3wj7519wolqxs</a></li>
-</ul>
-<h3 id="credits-6">Credits</h3>
-<ul>
-<li>Yash Sancheti (reporter)</li>
-<li>Majd Alasfar of ProgressSoft (reporter)</li>
-</ul>
-<h2 id="CVE-2024-23539">Under certain system configurations, the sqlSearch parameter for specific endpoints was vulnerable to SQL injection attacks, potentially allowing attackers to manipulate database queries. </h2>
-<p>CVE-2024-23539 <a href="./CVE-2024-23539.cve.json">[CVE json]</a> <a href="./CVE-2024-23539.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-03-29T14:36:56.073Z</em></p>
-<h3 id="affected-7">Affected</h3>
-<ul>
-<li>Apache Fineract through 1.8.4</li>
-</ul>
-<h3 id="description-7">Description</h3>
-<p>Improper Neutralization of Special Elements used in an SQL Command (&lsquo;SQL Injection&rsquo;) vulnerability in Apache Fineract.<p>This issue affects Apache Fineract: &lt;1.8.5.</p><p>Users are recommended to upgrade to version 1.8.5 or 1.9.0, which fix the issue.</p></p>
-<h3 id="references-7">References</h3>
-<ul>
-<li><a href="https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report">https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report</a></li>
-<li><a href="https://lists.apache.org/thread/g8sv1gnjv716lx2h89jbvjdgtrrjmy7h">https://lists.apache.org/thread/g8sv1gnjv716lx2h89jbvjdgtrrjmy7h</a></li>
-</ul>
-<h3 id="credits-7">Credits</h3>
-<ul>
-<li>Yash Sancheti of GH Solutions Consultants (finder)</li>
-</ul>
-<h2 id="CVE-2024-32838">SQL injection vulnerabilities in offices API endpoint</h2>
-<p>CVE-2024-32838 <a href="./CVE-2024-32838.cve.json">[CVE json]</a> <a href="./CVE-2024-32838.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-02-12T09:44:14.259Z</em></p>
-<h3 id="affected-8">Affected</h3>
-<ul>
-<li>Apache Fineract from 1.4 through 1.9</li>
-</ul>
-<h3 id="description-8">Description</h3>
-<p>SQL Injection vulnerability in various API endpoints - offices, dashboards, etc. Apache Fineract versions 1.9 and before have a vulnerability that allows an authenticated attacker to inject malicious data into some of the REST API endpoints&rsquo; query parameter. <div><br>Users are recommended to upgrade to version 1.10.1, which fixes this issue.<br><br>A SQL Validator has been implemented which allows us to configure a series of tests and checks against our SQL queries that will allow us to validate and protect against nearly all potential SQL injection attacks. <br><br></div></p>
-<h3 id="references-8">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/7l88h17pn9nf8zpx5bbojk7ko5oxo1dy">https://lists.apache.org/thread/7l88h17pn9nf8zpx5bbojk7ko5oxo1dy</a></li>
-</ul>
-<h3 id="credits-8">Credits</h3>
-<ul>
-<li>Kabilan S - Security engineer at Zoho (finder)</li>
-<li>Aleksandar Vidakovic (remediation developer)</li>
-</ul>
-<h2 id="CVE-2025-23408">weak password policy</h2>
-<p>CVE-2025-23408 <a href="./CVE-2025-23408.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2025-12-12T09:18:57.063Z</em></p>
-<h3 id="affected-9">Affected</h3>
-<ul>
-<li>Apache Fineract through 1.10.1</li>
-<li>Apache Fineract at 1.11.0</li>
-</ul>
-<h3 id="description-9">Description</h3>
-<p>Weak Password Requirements vulnerability in Apache Fineract.</p><p>This issue affects Apache Fineract: through 1.10.1.&nbsp;The issue is fixed in version 1.11.0.</p><p>Users are encouraged to upgrade to version 1.13.0, the latest release.<br></p>
-<h3 id="references-9">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/bdlb6wl968yh1n48mr5npsk2spo6dncf">https://lists.apache.org/thread/bdlb6wl968yh1n48mr5npsk2spo6dncf</a></li>
-</ul>
-<h3 id="credits-9">Credits</h3>
-<ul>
-<li>Peter Chen, PayPal Security (finder)</li>
-<li>Kristof Jozsa, BaaSFlow (analyst)</li>
-</ul>
-<h2 id="CVE-2025-58130">Server Key not masked</h2>
-<p>CVE-2025-58130 <a href="./CVE-2025-58130.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2025-12-12T09:20:05.211Z</em></p>
-<h3 id="affected-10">Affected</h3>
-<ul>
-<li>Apache Fineract through 1.11.0</li>
-<li>Apache Fineract at 1.12.1</li>
-</ul>
-<h3 id="description-10">Description</h3>
-<p>Insufficiently Protected Credentials vulnerability in Apache Fineract.</p><p>This issue affects Apache Fineract: through 1.11.0.&nbsp;The issue is fixed in version 1.12.1.</p><p>Users are encouraged to upgrade to version 1.13.0, the latest release.<br></p>
-<h3 id="references-10">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/d9zpkc86zk265523tfvbr8w7gyr6onoy">https://lists.apache.org/thread/d9zpkc86zk265523tfvbr8w7gyr6onoy</a></li>
-</ul>
-<h3 id="credits-10">Credits</h3>
-<ul>
-<li>Peter Chen (reporter)</li>
-<li>Jose Alberto Hernandez (remediation developer)</li>
-<li>Ádám Sághy (remediation reviewer)</li>
-</ul>
-<h2 id="CVE-2025-58137">IDOR via self-service API</h2>
-<p>CVE-2025-58137 <a href="./CVE-2025-58137.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2025-12-12T09:20:50.539Z</em></p>
-<h3 id="affected-11">Affected</h3>
-<ul>
-<li>Apache Fineract through 1.11.0</li>
-<li>Apache Fineract at 1.12.1</li>
-</ul>
-<h3 id="description-11">Description</h3>
 <p>Authorization Bypass Through User-Controlled Key vulnerability in Apache Fineract.</p><p>This issue affects Apache Fineract: through 1.11.0. The issue is fixed in version 1.12.1.</p><p>Users are encouraged to upgrade to version 1.13.0, the latest release.</p>
-<h3 id="references-11">References</h3>
+<h3 id="references">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/gz3zhoghlclch3rdnzyrdcf69c0507ww">https://lists.apache.org/thread/gz3zhoghlclch3rdnzyrdcf69c0507ww</a></li>
 </ul>
-<h3 id="credits-11">Credits</h3>
+<h3 id="credits">Credits</h3>
 <ul>
 <li>Peter Chen (reporter)</li>
 <li>Ádám Sághy (remediation developer)</li>
 <li>Aleksandar Vidakovic (remediation reviewer)</li>
 <li>Víctor Romero (remediation reviewer)</li>
+</ul>
+<h2 id="CVE-2025-58130">Server Key not masked</h2>
+<p>CVE-2025-58130 <a href="https://cve.org/CVERecord?id=CVE-2025-58130">[CVE]</a> <a href="./CVE-2025-58130.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2025-12-12T09:20:05.211Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Fineract through 1.11.0</li>
+<li>Apache Fineract at 1.12.1</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Insufficiently Protected Credentials vulnerability in Apache Fineract.</p><p>This issue affects Apache Fineract: through 1.11.0.&nbsp;The issue is fixed in version 1.12.1.</p><p>Users are encouraged to upgrade to version 1.13.0, the latest release.<br></p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/d9zpkc86zk265523tfvbr8w7gyr6onoy">https://lists.apache.org/thread/d9zpkc86zk265523tfvbr8w7gyr6onoy</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Peter Chen (reporter)</li>
+<li>Jose Alberto Hernandez (remediation developer)</li>
+<li>Ádám Sághy (remediation reviewer)</li>
+</ul>
+<h2 id="CVE-2025-23408">weak password policy</h2>
+<p>CVE-2025-23408 <a href="https://cve.org/CVERecord?id=CVE-2025-23408">[CVE]</a> <a href="./CVE-2025-23408.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2025-12-12T09:18:57.063Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Fineract through 1.10.1</li>
+<li>Apache Fineract at 1.11.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Weak Password Requirements vulnerability in Apache Fineract.</p><p>This issue affects Apache Fineract: through 1.10.1.&nbsp;The issue is fixed in version 1.11.0.</p><p>Users are encouraged to upgrade to version 1.13.0, the latest release.<br></p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/bdlb6wl968yh1n48mr5npsk2spo6dncf">https://lists.apache.org/thread/bdlb6wl968yh1n48mr5npsk2spo6dncf</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Peter Chen, PayPal Security (finder)</li>
+<li>Kristof Jozsa, BaaSFlow (analyst)</li>
+</ul>
+<h2 id="CVE-2024-32838">SQL injection vulnerabilities in offices API endpoint</h2>
+<p>CVE-2024-32838 <a href="https://cve.org/CVERecord?id=CVE-2024-32838">[CVE]</a> <a href="./CVE-2024-32838.cve.json">[CVE json]</a> <a href="./CVE-2024-32838.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-02-12T09:44:14.259Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Fineract from 1.4 through 1.9</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>SQL Injection vulnerability in various API endpoints - offices, dashboards, etc. Apache Fineract versions 1.9 and before have a vulnerability that allows an authenticated attacker to inject malicious data into some of the REST API endpoints&rsquo; query parameter. <div><br>Users are recommended to upgrade to version 1.10.1, which fixes this issue.<br><br>A SQL Validator has been implemented which allows us to configure a series of tests and checks against our SQL queries that will allow us to validate and protect against nearly all potential SQL injection attacks. <br><br></div></p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7l88h17pn9nf8zpx5bbojk7ko5oxo1dy">https://lists.apache.org/thread/7l88h17pn9nf8zpx5bbojk7ko5oxo1dy</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Kabilan S - Security engineer at Zoho (finder)</li>
+<li>Aleksandar Vidakovic (remediation developer)</li>
+</ul>
+<h2 id="CVE-2024-23539">Under certain system configurations, the sqlSearch parameter for specific endpoints was vulnerable to SQL injection attacks, potentially allowing attackers to manipulate database queries. </h2>
+<p>CVE-2024-23539 <a href="https://cve.org/CVERecord?id=CVE-2024-23539">[CVE]</a> <a href="./CVE-2024-23539.cve.json">[CVE json]</a> <a href="./CVE-2024-23539.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-03-29T14:36:56.073Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Fineract through 1.8.4</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Improper Neutralization of Special Elements used in an SQL Command (&lsquo;SQL Injection&rsquo;) vulnerability in Apache Fineract.<p>This issue affects Apache Fineract: &lt;1.8.5.</p><p>Users are recommended to upgrade to version 1.8.5 or 1.9.0, which fix the issue.</p></p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report">https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report</a></li>
+<li><a href="https://lists.apache.org/thread/g8sv1gnjv716lx2h89jbvjdgtrrjmy7h">https://lists.apache.org/thread/g8sv1gnjv716lx2h89jbvjdgtrrjmy7h</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Yash Sancheti of GH Solutions Consultants (finder)</li>
+</ul>
+<h2 id="CVE-2024-23538">Under certain system configurations, the sqlSearch parameter was vulnerable to SQL injection attacks, potentially allowing attackers to manipulate database queries.</h2>
+<p>CVE-2024-23538 <a href="https://cve.org/CVERecord?id=CVE-2024-23538">[CVE]</a> <a href="./CVE-2024-23538.cve.json">[CVE json]</a> <a href="./CVE-2024-23538.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-03-29T14:37:38.535Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Fineract before 1.8.5</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Improper Neutralization of Special Elements used in an SQL Command (&lsquo;SQL Injection&rsquo;) vulnerability in Apache Fineract.<p>This issue affects Apache Fineract: &lt;1.8.5.</p><p>Users are recommended to upgrade to version 1.8.5 or 1.9.0, which fix the issue.</p></p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report">https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report</a></li>
+<li><a href="https://lists.apache.org/thread/by32w2dylzgbqm5940x3wj7519wolqxs">https://lists.apache.org/thread/by32w2dylzgbqm5940x3wj7519wolqxs</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Yash Sancheti (reporter)</li>
+<li>Majd Alasfar of ProgressSoft (reporter)</li>
+</ul>
+<h2 id="CVE-2024-23537">Under certain circumstances, this vulnerability allowed users, without specific permissions, to escalate their privileges to any role. </h2>
+<p>CVE-2024-23537 <a href="https://cve.org/CVERecord?id=CVE-2024-23537">[CVE]</a> <a href="./CVE-2024-23537.cve.json">[CVE json]</a> <a href="./CVE-2024-23537.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-03-29T14:38:03.872Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Fineract before 1.9.0</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>Improper Privilege Management vulnerability in Apache Fineract.<p>This issue affects Apache Fineract: &lt;1.8.5.</p><p>Users are recommended to upgrade to version 1.9.0, which fixes the issue.</p></p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report">https://cwiki.apache.org/confluence/display/FINERACT/Apache+Fineract+Security+Report</a></li>
+<li><a href="https://lists.apache.org/thread/fq1ns4nprw2vqpkwwj9sw45jkwxmt9f1">https://lists.apache.org/thread/fq1ns4nprw2vqpkwwj9sw45jkwxmt9f1</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>Yash Sancheti  (reporter)</li>
+</ul>
+<h2 id="CVE-2023-25197">SQL injection vulnerability in certain procedure calls </h2>
+<p>CVE-2023-25197 <a href="https://cve.org/CVERecord?id=CVE-2023-25197">[CVE]</a> <a href="./CVE-2023-25197.cve.json">[CVE json]</a> <a href="./CVE-2023-25197.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-03-28T11:17:16.072Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>apache fineract from 1.4 through 1.8.2</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>Improper Neutralization of Special Elements used in an SQL Command (&lsquo;SQL Injection&rsquo;) vulnerability in Apache Software Foundation apache fineract.<br><p>Authorized users may be able to exploit this for limited impact on components.  </p><p>This issue affects apache fineract: from 1.4 through 1.8.2.</p></p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/v0q9x86sx6f6l2nzr1z0nwm3y9qlng04">https://lists.apache.org/thread/v0q9x86sx6f6l2nzr1z0nwm3y9qlng04</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>Eugene Lim at Cyber Security Group (CSG) Government Technology Agency GOVTECH.sg (reporter)</li>
+<li><a href="mailto:aleks@apache.org">aleks@apache.org</a> (remediation developer)</li>
+</ul>
+<h2 id="CVE-2023-25196">SQL injection vulnerability </h2>
+<p>CVE-2023-25196 <a href="https://cve.org/CVERecord?id=CVE-2023-25196">[CVE]</a> <a href="./CVE-2023-25196.cve.json">[CVE json]</a> <a href="./CVE-2023-25196.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-03-28T11:16:50.126Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Fineract from 1.4 through 1.8.2</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>Improper Neutralization of Special Elements used in an SQL Command (&lsquo;SQL Injection&rsquo;) vulnerability in Apache Software Foundation Apache Fineract.<br><p>Authorized users may be able to change or add data in certain components.  </p><p>This issue affects Apache Fineract: from 1.4 through 1.8.2.</p></p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/m9x3vpn3bry4fympkzxnnz4qx0oc0w8m">https://lists.apache.org/thread/m9x3vpn3bry4fympkzxnnz4qx0oc0w8m</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>Zhang Baocheng at Leng Jing Qi Cai Security Lab (reporter)</li>
+<li><a href="mailto:Aleks@apache.org">Aleks@apache.org</a> (remediation developer)</li>
+</ul>
+<h2 id="CVE-2023-25195">SSRF template type vulnerability in certain authenticated users</h2>
+<p>CVE-2023-25195 <a href="https://cve.org/CVERecord?id=CVE-2023-25195">[CVE]</a> <a href="./CVE-2023-25195.cve.json">[CVE json]</a> <a href="./CVE-2023-25195.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-03-28T11:16:21.425Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache Fineract from 1.4 through 1.8.3</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>Server-Side Request Forgery (SSRF) vulnerability in Apache Software Foundation Apache Fineract.<br><p>Authorized users with limited permissions can gain access to server and may be able to use server for any outbound traffic. </p><p>This issue affects Apache Fineract: from 1.4 through 1.8.3.</p></p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/m58fdjmtkfp9h4c0r4l48rv995w3qhb6">https://lists.apache.org/thread/m58fdjmtkfp9h4c0r4l48rv995w3qhb6</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>Huydoppa from GHTK  (reporter)</li>
+<li>Aleksander (remediation developer)</li>
+</ul>
+<h2 id="CVE-2022-44635">Apache Fineract allowed an authenticated user to perform remote code execution due to path traversal</h2>
+<p>CVE-2022-44635 <a href="https://cve.org/CVERecord?id=CVE-2022-44635">[CVE]</a> <a href="./CVE-2022-44635.cve.json">[CVE json]</a> <a href="./CVE-2022-44635.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-11-29T14:22:31.295Z</em></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache Fineract from Apache Fineract 1.8 through 1.8.0</li>
+<li>Apache Fineract from Apache Fineract 1.7 through 1.7.0</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<p>Apache Fineract allowed an authenticated user to perform remote code execution due to a path traversal vulnerability in a file upload component of Apache Fineract, allowing an attacker to run remote code.  This issue affects Apache Fineract version 1.8.0 and prior versions. We recommend users to upgrade to 1.8.1.</p>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/t8q6fmh3o6yqmy69qtqxppk9yg9wfybg">https://lists.apache.org/thread/t8q6fmh3o6yqmy69qtqxppk9yg9wfybg</a></li>
+</ul>
+<h3 id="credits-10">Credits</h3>
+<ul>
+<li>We would like to thank  Aman Sapra, co-captain of the Super Guesser CTF team &amp; Security researcher at CRED, for reporting this issue, and the Apache Security team for their assistance.  We give kudos and karma to @Aleksandar Vidakovic for resolving this CVE.</li>
+</ul>
+<h2 id="CVE-2020-17514">disabled hostname verificiation</h2>
+<p>CVE-2020-17514 <a href="https://cve.org/CVERecord?id=CVE-2020-17514">[CVE]</a> <a href="./CVE-2020-17514.cve.json">[CVE json]</a> <a href="./CVE-2020-17514.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-05-27T12:07:40.403Z</em></p>
+<h3 id="affected-11">Affected</h3>
+<ul>
+<li>Apache Fineract from Apache Fineract before 1.5.0</li>
+</ul>
+<h3 id="description-11">Description</h3>
+<p>Apache Fineract prior to 1.5.0 disables HTTPS hostname verification in ProcessorHelper in the configureClient method. Under typical deployments, a man in the middle attack could be successful.</p>
+<h3 id="references-11">References</h3>
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/FINERACT-1211">https://issues.apache.org/jira/browse/FINERACT-1211</a></li>
+</ul>
+<h3 id="credits-11">Credits</h3>
+<ul>
+<li>We would like to thank Simon Gerst at <a href="https://github.com/intrigus-lgtm">https://github.com/intrigus-lgtm</a>  for reporting this issue</li>
 </ul>
 
   

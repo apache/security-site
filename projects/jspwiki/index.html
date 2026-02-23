@@ -105,114 +105,119 @@
 <p>Do you want disclose a potential security issue for Apache JSPWiki? You can read more about the projects&rsquo; security policy on their <a href="https://jspwiki-wiki.apache.org/Wiki.jsp?page=Security">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://jspwiki-wiki.apache.org/Wiki.jsp?page=Security">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-40369">XSS vulnerability on Denounce plugin</h2>
-<p>CVE-2021-40369 <a href="./CVE-2021-40369.cve.json">[CVE json]</a> <a href="./CVE-2021-40369.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-11-23T11:34:08.535Z</em></p>
+<h2 id="CVE-2025-24854">Cross-Site Scripting (XSS) in JSPWiki Image plugin</h2>
+<p>CVE-2025-24854 <a href="https://cve.org/CVERecord?id=CVE-2025-24854">[CVE]</a> <a href="./CVE-2025-24854.cve.json">[CVE json]</a> <a href="./CVE-2025-24854.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-31T08:43:17.113Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache JSPWiki from Apache JSPWiki through 2.11.0.M8</li>
+<li>Apache JSPWiki through 2.12.2</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>A carefully crafted plugin link invocation could trigger an XSS vulnerability on Apache JSPWiki, related to the Denounce plugin, which could allow the attacker to execute javascript in the victim&rsquo;s browser and get some sensitive information about the victim.  Apache JSPWiki users should upgrade to 2.11.0 or later.</p>
+<div>A carefully crafted request using the Image plugin could trigger an XSS 
+vulnerability on Apache JSPWiki, which could allow the attacker to 
+execute javascript in the victim's browser and get some sensitive 
+information about the victim.<br></div><div><br></div><div>Apache JSPWiki users should upgrade to 2.12.3 or later.<br></div>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2021-40369">https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2021-40369</a></li>
-<li><a href="https://lists.apache.org/thread/r2j00nrnpjgcmoxvlv3pgfoq9kzrcsfh">https://lists.apache.org/thread/r2j00nrnpjgcmoxvlv3pgfoq9kzrcsfh</a></li>
+<li><a href="https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2025-24854">https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2025-24854</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Apache JSPWiki would like to thank map1e (<a href="mailto:root@lazymaple.pw">root@lazymaple.pw</a>) for discovering this issue.</li>
+<li>The issue was separately discovered by both XBOW (<a href="https://github.com/xbow-security">https://github.com/xbow-security</a>, <a href="https://xbow.com">https://xbow.com</a>) and Hamed Kohi &lt;0x.hamy.1ATgmailDOTcom&gt; (finder)</li>
 </ul>
-<h2 id="CVE-2021-44140">Arbitrary file deletion on logout</h2>
-<p>CVE-2021-44140 <a href="./CVE-2021-44140.cve.json">[CVE json]</a> <a href="./CVE-2021-44140.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-11-23T11:34:55.319Z</em></p>
+<h2 id="CVE-2025-24853">Cross-Site Scripting (XSS) in JSPWiki Header Link processing</h2>
+<p>CVE-2025-24853 <a href="https://cve.org/CVERecord?id=CVE-2025-24853">[CVE]</a> <a href="./CVE-2025-24853.cve.json">[CVE json]</a> <a href="./CVE-2025-24853.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-31T08:42:03.970Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache JSPWiki from Apache JSPWiki through 2.11.0.M8</li>
+<li>Apache JSPWiki through 2.12.2</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>Remote attackers may delete arbitrary files in a system hosting a JSPWiki instance, versions up to 2.11.0.M8, by using a carefuly crafted http request on logout, given that those files are reachable to the user running the JSPWiki instance. Apache JSPWiki users should upgrade to 2.11.0 or later.</p>
+<p>A carefully crafted request when creating a header link using the 
+wiki markup syntax, which could allow the attacker to execute javascript
+ in the victim's browser and get some sensitive information about the 
+victim.
+</p>
+<p>Further research by the JSPWiki team showed that the markdown parser allowed this kind of attack too.</p><p>Apache JSPWiki users should upgrade to 2.12.3 or later.<br></p><br>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2021-44140">https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2021-44140</a></li>
-<li><a href="https://lists.apache.org/thread/5qglpjdhvobppx7j550lf1sk28f6011t">https://lists.apache.org/thread/5qglpjdhvobppx7j550lf1sk28f6011t</a></li>
+<li><a href="https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2025-24853">https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2025-24853</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>Apache JSPWiki would like to thank haby0 (<a href="mailto:forhaby0@gmail.com">forhaby0@gmail.com</a>) from Duxiaoman Financial Security Team for discovering and proposing the fix for this issue.</li>
+<li>The issue was discovered by XBOW (<a href="https://github.com/xbow-security">https://github.com/xbow-security</a>, <a href="https://xbow.com">https://xbow.com</a>) (finder)</li>
 </ul>
-<h2 id="CVE-2022-24947">Apache JSPWiki CSRF Account Takeover</h2>
-<p>CVE-2022-24947 <a href="./CVE-2022-24947.cve.json">[CVE json]</a> <a href="./CVE-2022-24947.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-02-25T08:22:54.524Z</em></p>
+<h2 id="CVE-2024-27136">Cross-site scripting vulnerability on upload page</h2>
+<p>CVE-2024-27136 <a href="https://cve.org/CVERecord?id=CVE-2024-27136">[CVE]</a> <a href="./CVE-2024-27136.cve.json">[CVE json]</a> <a href="./CVE-2024-27136.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-06-24T07:44:28.700Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache JSPWiki at Apache JSPWiki up to 2.11.1</li>
+<li>Apache JSPWiki through 2.12.1</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>Apache JSPWiki user preferences form is vulnerable to CSRF attacks, which can lead to account takeover.   Apache JSPWiki users should upgrade to 2.11.2 or later.</p>
+<p>XSS in Upload page in Apache JSPWiki 2.12.1 and priors allows the attacker to execute javascript in the victim&rsquo;s browser and get some sensitive information about the victim.  Apache JSPWiki users should upgrade to 2.12.2 or later.</p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/txrgykjkpt80t57kzpbjo8kfrv8ss02c">https://lists.apache.org/thread/txrgykjkpt80t57kzpbjo8kfrv8ss02c</a></li>
+<li><a href="https://lists.apache.org/thread/gfms8gbncqqkj52p861b8fnsypwsl1d5">https://lists.apache.org/thread/gfms8gbncqqkj52p861b8fnsypwsl1d5</a></li>
+<li><a href="https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2024-27136">https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2024-27136</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>This issue was discovered initially by Cristian Borlovan from Ounce Labs Security (ref. JSPWIKI-79), and later on and independently from this by Paulos Yibelo, from Octagon Networks.</li>
+<li>This issue was discovered by sonnh from Vietnam National Cyber security technology corporation (finder)</li>
 </ul>
-<h2 id="CVE-2022-24948">Apache JSPWiki Cross-site scripting vulnerability on User Preferences screen</h2>
-<p>CVE-2022-24948 <a href="./CVE-2022-24948.cve.json">[CVE json]</a> <a href="./CVE-2022-24948.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-02-25T08:23:32.881Z</em></p>
+<h2 id="CVE-2022-46907">XSS Injection points in several plugins</h2>
+<p>CVE-2022-46907 <a href="https://cve.org/CVERecord?id=CVE-2022-46907">[CVE]</a> <a href="./CVE-2022-46907.cve.json">[CVE json]</a> <a href="./CVE-2022-46907.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-05-25T06:58:08.238Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache JSPWiki at Apache JSPWiki up to 2.11.1</li>
+<li>Apache JSPWiki before Apache JSPWiki up to 2.12.0</li>
 </ul>
 <h3 id="description-3">Description</h3>
-<p>A carefully crafted user preferences for submission could trigger an XSS vulnerability on Apache JSPWiki, related to the user preferences screen, which could allow the attacker to execute javascript in the victim&rsquo;s browser and get some sensitive information about the victim.  Apache JSPWiki users should upgrade to 2.11.2 or later.</p>
+<p>A carefully crafted request on several JSPWiki plugins could trigger an XSS vulnerability on Apache JSPWiki, which could allow the attacker to execute javascript in the victim&rsquo;s browser and get some sensitive information about the victim.  Apache JSPWiki users should upgrade to 2.12.0 or later.<br></p>
 <h3 id="references-3">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/86p0yzopc4mw2h5bkwpt927b2c8tfq3b">https://lists.apache.org/thread/86p0yzopc4mw2h5bkwpt927b2c8tfq3b</a></li>
+<li><a href="https://lists.apache.org/thread/1m0mkq2nttx8tn94m11mytn4f0tv1504">https://lists.apache.org/thread/1m0mkq2nttx8tn94m11mytn4f0tv1504</a></li>
 </ul>
 <h3 id="credits-3">Credits</h3>
 <ul>
-<li>This issue was discovered by Paulos Yibelo, from Octagon Networks.</li>
+<li>This issue was discovered by Eugene Lim and Sng Jay Kai from Government Technology Agency of Singapore (finder)</li>
 </ul>
-<h2 id="CVE-2022-27166">XSS vulnerability on XHRHtml2Markup.jsp in JSPWiki 2.11.2</h2>
-<p>CVE-2022-27166 <a href="./CVE-2022-27166.cve.json">[CVE json]</a> <a href="./CVE-2022-27166.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-08-04T06:09:11.060Z</em></p>
+<h2 id="CVE-2022-34158">User Group Privilege Escalation</h2>
+<p>CVE-2022-34158 <a href="https://cve.org/CVERecord?id=CVE-2022-34158">[CVE]</a> <a href="./CVE-2022-34158.cve.json">[CVE json]</a> <a href="./CVE-2022-34158.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-08-04T06:10:42.676Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache JSPWiki from Apache JSPWiki through Apache JSPWiki up to 2.11.2</li>
+<li>Apache JSPWiki from unspecified through Apache JSPWiki up to 2.11.2</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<p>A carefully crafted request on XHRHtml2Markup.jsp could trigger an XSS vulnerability on Apache JSPWiki up to and including 2.11.2, which could allow the attacker to execute javascript in the victim&rsquo;s browser and get some sensitive information about the victim.</p>
+<p>A carefully crafted invocation on the Image plugin could trigger an CSRF vulnerability on Apache JSPWiki before 2.11.3, which could allow a group privilege escalation of the attacker&rsquo;s account. Further examination of this issue established that it could also be used to modify the email associated with the attacked account, and then a reset password request from the login page.</p>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2022-28732">https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2022-28732</a></li>
+<li><a href="https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2022-34158">https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2022-34158</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>Issue was discovered by Salt, <saltnekoko AT gmail DOT com></li>
+<li>This issue was discovered by Huiseong Seo (t0rchwo0d), <awdr1624AT gmail DOT com></li>
 </ul>
-<h2 id="CVE-2022-28730">Apache JSPWiki Cross-site scripting vulnerability on AJAXPreview.jsp</h2>
-<p>CVE-2022-28730 <a href="./CVE-2022-28730.cve.json">[CVE json]</a> <a href="./CVE-2022-28730.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-08-04T06:07:39.234Z</em></p>
+<h2 id="CVE-2022-28732">Apache JSPWiki Cross-site scripting vulnerability on WeblogPlugin</h2>
+<p>CVE-2022-28732 <a href="https://cve.org/CVERecord?id=CVE-2022-28732">[CVE]</a> <a href="./CVE-2022-28732.cve.json">[CVE json]</a> <a href="./CVE-2022-28732.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-08-04T06:09:44.097Z</em></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
 <li>Apache JSPWiki from Apache JSPWiki through Apache JSPWiki up to 2.11.2</li>
 </ul>
 <h3 id="description-5">Description</h3>
-<p>A carefully crafted request on AJAXPreview.jsp could trigger an XSS vulnerability on Apache JSPWiki, which could allow the attacker to execute javascript in the victim&rsquo;s browser and get some sensitive information about the victim.</p>
-<p>This vulnerability leverages CVE-2021-40369, where the Denounce plugin dangerously renders user-supplied URLs. Upon re-testing CVE-2021-40369, it appears that the patch was incomplete as it was still possible to insert malicious input via the Denounce plugin.</p>
-<p>Apache JSPWiki users should upgrade to 2.11.3 or later.</p>
+<p>A carefully crafted request on WeblogPlugin could trigger an XSS vulnerability on Apache JSPWiki, which could allow the attacker to execute javascript in the victim&rsquo;s browser and get some sensitive information about the victim.  Apache JSPWiki users should upgrade to 2.11.3 or later.</p>
 <h3 id="references-5">References</h3>
 <ul>
 <li><a href="https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2022-28732">https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2022-28732</a></li>
 </ul>
 <h3 id="credits-5">Credits</h3>
 <ul>
-<li>This issue was discovered by Poh Jia Hao, from Star Labs <info AT starlabs DOT sg></li>
+<li>This issue was discovered by Wang Ran, from JDArmy, @jd.com</li>
 </ul>
 <h2 id="CVE-2022-28731">Apache JSPWiki CSRF in UserPreferences.jsp</h2>
-<p>CVE-2022-28731 <a href="./CVE-2022-28731.cve.json">[CVE json]</a> <a href="./CVE-2022-28731.osv.json">[OSV json]</a></p>
+<p>CVE-2022-28731 <a href="https://cve.org/CVERecord?id=CVE-2022-28731">[CVE]</a> <a href="./CVE-2022-28731.cve.json">[CVE json]</a> <a href="./CVE-2022-28731.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-08-04T06:11:26.241Z</em></p>
 <h3 id="affected-6">Affected</h3>
 <ul>
@@ -228,116 +233,111 @@
 <ul>
 <li>This issue was discovered by Fabrice Perez, <fabioperez AT gmail DOT com></li>
 </ul>
-<h2 id="CVE-2022-28732">Apache JSPWiki Cross-site scripting vulnerability on WeblogPlugin</h2>
-<p>CVE-2022-28732 <a href="./CVE-2022-28732.cve.json">[CVE json]</a> <a href="./CVE-2022-28732.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-08-04T06:09:44.097Z</em></p>
+<h2 id="CVE-2022-28730">Apache JSPWiki Cross-site scripting vulnerability on AJAXPreview.jsp</h2>
+<p>CVE-2022-28730 <a href="https://cve.org/CVERecord?id=CVE-2022-28730">[CVE]</a> <a href="./CVE-2022-28730.cve.json">[CVE json]</a> <a href="./CVE-2022-28730.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-08-04T06:07:39.234Z</em></p>
 <h3 id="affected-7">Affected</h3>
 <ul>
 <li>Apache JSPWiki from Apache JSPWiki through Apache JSPWiki up to 2.11.2</li>
 </ul>
 <h3 id="description-7">Description</h3>
-<p>A carefully crafted request on WeblogPlugin could trigger an XSS vulnerability on Apache JSPWiki, which could allow the attacker to execute javascript in the victim&rsquo;s browser and get some sensitive information about the victim.  Apache JSPWiki users should upgrade to 2.11.3 or later.</p>
+<p>A carefully crafted request on AJAXPreview.jsp could trigger an XSS vulnerability on Apache JSPWiki, which could allow the attacker to execute javascript in the victim&rsquo;s browser and get some sensitive information about the victim.</p>
+<p>This vulnerability leverages CVE-2021-40369, where the Denounce plugin dangerously renders user-supplied URLs. Upon re-testing CVE-2021-40369, it appears that the patch was incomplete as it was still possible to insert malicious input via the Denounce plugin.</p>
+<p>Apache JSPWiki users should upgrade to 2.11.3 or later.</p>
 <h3 id="references-7">References</h3>
 <ul>
 <li><a href="https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2022-28732">https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2022-28732</a></li>
 </ul>
 <h3 id="credits-7">Credits</h3>
 <ul>
-<li>This issue was discovered by Wang Ran, from JDArmy, @jd.com</li>
+<li>This issue was discovered by Poh Jia Hao, from Star Labs <info AT starlabs DOT sg></li>
 </ul>
-<h2 id="CVE-2022-34158">User Group Privilege Escalation</h2>
-<p>CVE-2022-34158 <a href="./CVE-2022-34158.cve.json">[CVE json]</a> <a href="./CVE-2022-34158.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-08-04T06:10:42.676Z</em></p>
+<h2 id="CVE-2022-27166">XSS vulnerability on XHRHtml2Markup.jsp in JSPWiki 2.11.2</h2>
+<p>CVE-2022-27166 <a href="https://cve.org/CVERecord?id=CVE-2022-27166">[CVE]</a> <a href="./CVE-2022-27166.cve.json">[CVE json]</a> <a href="./CVE-2022-27166.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-08-04T06:09:11.060Z</em></p>
 <h3 id="affected-8">Affected</h3>
 <ul>
-<li>Apache JSPWiki from unspecified through Apache JSPWiki up to 2.11.2</li>
+<li>Apache JSPWiki from Apache JSPWiki through Apache JSPWiki up to 2.11.2</li>
 </ul>
 <h3 id="description-8">Description</h3>
-<p>A carefully crafted invocation on the Image plugin could trigger an CSRF vulnerability on Apache JSPWiki before 2.11.3, which could allow a group privilege escalation of the attacker&rsquo;s account. Further examination of this issue established that it could also be used to modify the email associated with the attacked account, and then a reset password request from the login page.</p>
+<p>A carefully crafted request on XHRHtml2Markup.jsp could trigger an XSS vulnerability on Apache JSPWiki up to and including 2.11.2, which could allow the attacker to execute javascript in the victim&rsquo;s browser and get some sensitive information about the victim.</p>
 <h3 id="references-8">References</h3>
 <ul>
-<li><a href="https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2022-34158">https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2022-34158</a></li>
+<li><a href="https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2022-28732">https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2022-28732</a></li>
 </ul>
 <h3 id="credits-8">Credits</h3>
 <ul>
-<li>This issue was discovered by Huiseong Seo (t0rchwo0d), <awdr1624AT gmail DOT com></li>
+<li>Issue was discovered by Salt, <saltnekoko AT gmail DOT com></li>
 </ul>
-<h2 id="CVE-2022-46907">XSS Injection points in several plugins</h2>
-<p>CVE-2022-46907 <a href="./CVE-2022-46907.cve.json">[CVE json]</a> <a href="./CVE-2022-46907.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-05-25T06:58:08.238Z</em></p>
+<h2 id="CVE-2022-24948">Apache JSPWiki Cross-site scripting vulnerability on User Preferences screen</h2>
+<p>CVE-2022-24948 <a href="https://cve.org/CVERecord?id=CVE-2022-24948">[CVE]</a> <a href="./CVE-2022-24948.cve.json">[CVE json]</a> <a href="./CVE-2022-24948.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-02-25T08:23:32.881Z</em></p>
 <h3 id="affected-9">Affected</h3>
 <ul>
-<li>Apache JSPWiki before Apache JSPWiki up to 2.12.0</li>
+<li>Apache JSPWiki at Apache JSPWiki up to 2.11.1</li>
 </ul>
 <h3 id="description-9">Description</h3>
-<p>A carefully crafted request on several JSPWiki plugins could trigger an XSS vulnerability on Apache JSPWiki, which could allow the attacker to execute javascript in the victim&rsquo;s browser and get some sensitive information about the victim.  Apache JSPWiki users should upgrade to 2.12.0 or later.<br></p>
+<p>A carefully crafted user preferences for submission could trigger an XSS vulnerability on Apache JSPWiki, related to the user preferences screen, which could allow the attacker to execute javascript in the victim&rsquo;s browser and get some sensitive information about the victim.  Apache JSPWiki users should upgrade to 2.11.2 or later.</p>
 <h3 id="references-9">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/1m0mkq2nttx8tn94m11mytn4f0tv1504">https://lists.apache.org/thread/1m0mkq2nttx8tn94m11mytn4f0tv1504</a></li>
+<li><a href="https://lists.apache.org/thread/86p0yzopc4mw2h5bkwpt927b2c8tfq3b">https://lists.apache.org/thread/86p0yzopc4mw2h5bkwpt927b2c8tfq3b</a></li>
 </ul>
 <h3 id="credits-9">Credits</h3>
 <ul>
-<li>This issue was discovered by Eugene Lim and Sng Jay Kai from Government Technology Agency of Singapore (finder)</li>
+<li>This issue was discovered by Paulos Yibelo, from Octagon Networks.</li>
 </ul>
-<h2 id="CVE-2024-27136">Cross-site scripting vulnerability on upload page</h2>
-<p>CVE-2024-27136 <a href="./CVE-2024-27136.cve.json">[CVE json]</a> <a href="./CVE-2024-27136.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-06-24T07:44:28.700Z</em></p>
+<h2 id="CVE-2022-24947">Apache JSPWiki CSRF Account Takeover</h2>
+<p>CVE-2022-24947 <a href="https://cve.org/CVERecord?id=CVE-2022-24947">[CVE]</a> <a href="./CVE-2022-24947.cve.json">[CVE json]</a> <a href="./CVE-2022-24947.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-02-25T08:22:54.524Z</em></p>
 <h3 id="affected-10">Affected</h3>
 <ul>
-<li>Apache JSPWiki through 2.12.1</li>
+<li>Apache JSPWiki at Apache JSPWiki up to 2.11.1</li>
 </ul>
 <h3 id="description-10">Description</h3>
-<p>XSS in Upload page in Apache JSPWiki 2.12.1 and priors allows the attacker to execute javascript in the victim&rsquo;s browser and get some sensitive information about the victim.  Apache JSPWiki users should upgrade to 2.12.2 or later.</p>
+<p>Apache JSPWiki user preferences form is vulnerable to CSRF attacks, which can lead to account takeover.   Apache JSPWiki users should upgrade to 2.11.2 or later.</p>
 <h3 id="references-10">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/gfms8gbncqqkj52p861b8fnsypwsl1d5">https://lists.apache.org/thread/gfms8gbncqqkj52p861b8fnsypwsl1d5</a></li>
-<li><a href="https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2024-27136">https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2024-27136</a></li>
+<li><a href="https://lists.apache.org/thread/txrgykjkpt80t57kzpbjo8kfrv8ss02c">https://lists.apache.org/thread/txrgykjkpt80t57kzpbjo8kfrv8ss02c</a></li>
 </ul>
 <h3 id="credits-10">Credits</h3>
 <ul>
-<li>This issue was discovered by sonnh from Vietnam National Cyber security technology corporation (finder)</li>
+<li>This issue was discovered initially by Cristian Borlovan from Ounce Labs Security (ref. JSPWIKI-79), and later on and independently from this by Paulos Yibelo, from Octagon Networks.</li>
 </ul>
-<h2 id="CVE-2025-24853">Cross-Site Scripting (XSS) in JSPWiki Header Link processing</h2>
-<p>CVE-2025-24853 <a href="./CVE-2025-24853.cve.json">[CVE json]</a> <a href="./CVE-2025-24853.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-07-31T08:42:03.970Z</em></p>
+<h2 id="CVE-2021-44140">Arbitrary file deletion on logout</h2>
+<p>CVE-2021-44140 <a href="https://cve.org/CVERecord?id=CVE-2021-44140">[CVE]</a> <a href="./CVE-2021-44140.cve.json">[CVE json]</a> <a href="./CVE-2021-44140.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-11-23T11:34:55.319Z</em></p>
 <h3 id="affected-11">Affected</h3>
 <ul>
-<li>Apache JSPWiki through 2.12.2</li>
+<li>Apache JSPWiki from Apache JSPWiki through 2.11.0.M8</li>
 </ul>
 <h3 id="description-11">Description</h3>
-<p>A carefully crafted request when creating a header link using the 
-wiki markup syntax, which could allow the attacker to execute javascript
- in the victim's browser and get some sensitive information about the 
-victim.
-</p>
-<p>Further research by the JSPWiki team showed that the markdown parser allowed this kind of attack too.</p><p>Apache JSPWiki users should upgrade to 2.12.3 or later.<br></p><br>
+<p>Remote attackers may delete arbitrary files in a system hosting a JSPWiki instance, versions up to 2.11.0.M8, by using a carefuly crafted http request on logout, given that those files are reachable to the user running the JSPWiki instance. Apache JSPWiki users should upgrade to 2.11.0 or later.</p>
 <h3 id="references-11">References</h3>
 <ul>
-<li><a href="https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2025-24853">https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2025-24853</a></li>
+<li><a href="https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2021-44140">https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2021-44140</a></li>
+<li><a href="https://lists.apache.org/thread/5qglpjdhvobppx7j550lf1sk28f6011t">https://lists.apache.org/thread/5qglpjdhvobppx7j550lf1sk28f6011t</a></li>
 </ul>
 <h3 id="credits-11">Credits</h3>
 <ul>
-<li>The issue was discovered by XBOW (<a href="https://github.com/xbow-security">https://github.com/xbow-security</a>, <a href="https://xbow.com">https://xbow.com</a>) (finder)</li>
+<li>Apache JSPWiki would like to thank haby0 (<a href="mailto:forhaby0@gmail.com">forhaby0@gmail.com</a>) from Duxiaoman Financial Security Team for discovering and proposing the fix for this issue.</li>
 </ul>
-<h2 id="CVE-2025-24854">Cross-Site Scripting (XSS) in JSPWiki Image plugin</h2>
-<p>CVE-2025-24854 <a href="./CVE-2025-24854.cve.json">[CVE json]</a> <a href="./CVE-2025-24854.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-07-31T08:43:17.113Z</em></p>
+<h2 id="CVE-2021-40369">XSS vulnerability on Denounce plugin</h2>
+<p>CVE-2021-40369 <a href="https://cve.org/CVERecord?id=CVE-2021-40369">[CVE]</a> <a href="./CVE-2021-40369.cve.json">[CVE json]</a> <a href="./CVE-2021-40369.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-11-23T11:34:08.535Z</em></p>
 <h3 id="affected-12">Affected</h3>
 <ul>
-<li>Apache JSPWiki through 2.12.2</li>
+<li>Apache JSPWiki from Apache JSPWiki through 2.11.0.M8</li>
 </ul>
 <h3 id="description-12">Description</h3>
-<div>A carefully crafted request using the Image plugin could trigger an XSS 
-vulnerability on Apache JSPWiki, which could allow the attacker to 
-execute javascript in the victim's browser and get some sensitive 
-information about the victim.<br></div><div><br></div><div>Apache JSPWiki users should upgrade to 2.12.3 or later.<br></div>
+<p>A carefully crafted plugin link invocation could trigger an XSS vulnerability on Apache JSPWiki, related to the Denounce plugin, which could allow the attacker to execute javascript in the victim&rsquo;s browser and get some sensitive information about the victim.  Apache JSPWiki users should upgrade to 2.11.0 or later.</p>
 <h3 id="references-12">References</h3>
 <ul>
-<li><a href="https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2025-24854">https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2025-24854</a></li>
+<li><a href="https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2021-40369">https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2021-40369</a></li>
+<li><a href="https://lists.apache.org/thread/r2j00nrnpjgcmoxvlv3pgfoq9kzrcsfh">https://lists.apache.org/thread/r2j00nrnpjgcmoxvlv3pgfoq9kzrcsfh</a></li>
 </ul>
 <h3 id="credits-12">Credits</h3>
 <ul>
-<li>The issue was separately discovered by both XBOW (<a href="https://github.com/xbow-security">https://github.com/xbow-security</a>, <a href="https://xbow.com">https://xbow.com</a>) and Hamed Kohi &lt;0x.hamy.1ATgmailDOTcom&gt; (finder)</li>
+<li>Apache JSPWiki would like to thank map1e (<a href="mailto:root@lazymaple.pw">root@lazymaple.pw</a>) for discovering this issue.</li>
 </ul>
 
   

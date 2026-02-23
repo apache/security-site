@@ -105,55 +105,60 @@
 <p>Do you want disclose a potential security issue for Apache Doris? You can read more about the projects&rsquo; security policy on their <a href="https://doris.apache.org/docs/dev/admin-manual/auth/security-overview">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://doris.apache.org/docs/dev/admin-manual/auth/security-overview">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2022-23942">Apache Doris hardcoded cryptography initialization</h2>
-<p>CVE-2022-23942 <a href="./CVE-2022-23942.cve.json">[CVE json]</a> <a href="./CVE-2022-23942.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-04-26T14:49:46.143Z</em></p>
+<h2 id="CVE-2025-58337">Improper Access Control results in bypassing a &ldquo;read-only&rdquo; mode for doris-mcp-server MCP Server</h2>
+<p>CVE-2025-58337 <a href="https://cve.org/CVERecord?id=CVE-2025-58337">[CVE]</a> <a href="./CVE-2025-58337.cve.json">[CVE json]</a> <a href="./CVE-2025-58337.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-11-05T09:26:34.887Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Doris(Incubating) at 0.15.0</li>
+<li>Apache Doris-MCP-Server from 0.1.0 before 0.6.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Apache Doris, prior to 1.0.0, used a hardcoded key and IV to initialize the cipher used for ldap password, which may lead to information disclosure.</p>
+<p>An attacker with a valid read-only account can bypass Doris MCP Server’s read-only mode due to improper access control, allowing modifications that should have been prevented by read-only restrictions.<br></p><p>Impact:<br>
+Bypasses read-only mode; attackers with read-only access may perform unauthorized modifications.</p>
+<p></p><p>Recommended action for operators: Upgrade to version 0.6.0 as soon as possible (this release contains the fix).</p><p></p>
+<p></p><br>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/com2dyzp3bn2rdrotry90q2zzord4tvt">https://lists.apache.org/thread/com2dyzp3bn2rdrotry90q2zzord4tvt</a></li>
+<li><a href="https://lists.apache.org/thread/6tswlphj0pqn9zf25594r3c1vzvfj40h">https://lists.apache.org/thread/6tswlphj0pqn9zf25594r3c1vzvfj40h</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>We would like to thanks to Dwi Siswanto<a href="mailto:me@dw1.io">me@dw1.io</a> for the report of this issue</li>
+<li>Liran Tal, (<a href="mailto:liran@lirantal.com">liran@lirantal.com</a>) (finder)</li>
 </ul>
-<h2 id="CVE-2023-41313">Timing Attack weakness</h2>
-<p>CVE-2023-41313 <a href="./CVE-2023-41313.cve.json">[CVE json]</a> <a href="./CVE-2023-41313.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-03-12T10:16:14.512Z</em></p>
+<h2 id="CVE-2024-48019">allows admin users to read arbitrary files through the REST API</h2>
+<p>CVE-2024-48019 <a href="https://cve.org/CVERecord?id=CVE-2024-48019">[CVE]</a> <a href="./CVE-2024-48019.cve.json">[CVE json]</a> <a href="./CVE-2024-48019.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-02-04T18:19:49.957Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache Doris before 1.2.8</li>
+<li>Apache Doris from 2.1.0 before 2.1.8</li>
+<li>Apache Doris from 3.0.0 before 3.0.3</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p><span style="background-color: rgb(255, 255, 255);">The authentication method in Apache Doris versions before 2.0.0 was vulnerable to timing attacks.</span><br><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 2.0.0 + or 1.2.8, which fixes this issue.</span><br><p></p></p>
+<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'), Files or Directories Accessible to External Parties vulnerability in Apache Doris.<br></p><p><span style="background-color: rgb(255, 255, 255);">Application administrators can read arbitrary
+files from the server filesystem through path traversal.</span><br></p><p>Users are recommended to upgrade to version 2.1.8, 3.0.3 or later, which fixes the issue.</p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/jqczy3vxzs6q6rz9o0626j5nks9fnv95">https://lists.apache.org/thread/jqczy3vxzs6q6rz9o0626j5nks9fnv95</a></li>
+<li><a href="https://lists.apache.org/thread/p70klgmyrgknhn0t195261wvwv5jw6hr">https://lists.apache.org/thread/p70klgmyrgknhn0t195261wvwv5jw6hr</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>Andrea Cosentino from  Apache Software Foundation  (reporter)</li>
+<li>Man Yue Mo of the GitHub Security Lab team (finder)</li>
 </ul>
-<h2 id="CVE-2023-41314">Missing API authentication allowed DoS</h2>
-<p>CVE-2023-41314 <a href="./CVE-2023-41314.cve.json">[CVE json]</a> <a href="./CVE-2023-41314.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-12-18T08:27:49.193Z</em></p>
+<h2 id="CVE-2024-27438">Downloading arbitrary remote jar files resulting in remote command execution</h2>
+<p>CVE-2024-27438 <a href="https://cve.org/CVERecord?id=CVE-2024-27438">[CVE]</a> <a href="./CVE-2024-27438.cve.json">[CVE json]</a> <a href="./CVE-2024-27438.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-03-21T09:39:20.599Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache Doris from 1.2.0 through 2.0.3</li>
+<li>Apache Doris from 1.2.0 through 2.0.4</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>The api /api/snapshot and /api/get_log_file would allow unauthenticated access.<br>It could allow a DoS attack or get arbitrary files from FE node.<br>Please upgrade to 2.0.3 to fix these issues.</p>
+<p>Download of Code Without Integrity Check vulnerability in Apache Doris.<br>The jdbc driver files used for JDBC catalog is not checked and may resulting in remote command execution.<br>Once the attacker is authorized to create a JDBC catalog, he/she can use arbitrary driver jar file with unchecked code snippet. This code snippet will be run when catalog is initializing without any check.<br><p>This issue affects Apache Doris: from 1.2.0 through 2.0.4.</p><p>Users are recommended to upgrade to version 2.0.5 or 2.1.x, which fixes the issue.</p></p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/tgvpvz3yw7zgodl1sb3sv3jbbz8t5zb4">https://lists.apache.org/thread/tgvpvz3yw7zgodl1sb3sv3jbbz8t5zb4</a></li>
+<li><a href="https://lists.apache.org/thread/h95h82b0svlnwcg6c2xq4b08j6gwgczh">https://lists.apache.org/thread/h95h82b0svlnwcg6c2xq4b08j6gwgczh</a></li>
 </ul>
 <h2 id="CVE-2024-26307">Possible race condition</h2>
-<p>CVE-2024-26307 <a href="./CVE-2024-26307.cve.json">[CVE json]</a> <a href="./CVE-2024-26307.osv.json">[OSV json]</a></p>
+<p>CVE-2024-26307 <a href="https://cve.org/CVERecord?id=CVE-2024-26307">[CVE]</a> <a href="./CVE-2024-26307.cve.json">[CVE json]</a> <a href="./CVE-2024-26307.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-03-21T09:38:16.580Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
@@ -166,57 +171,52 @@
 <ul>
 <li><a href="https://lists.apache.org/thread/5shhw8x8m271hd2wfwzqzwgf36pmc4pl">https://lists.apache.org/thread/5shhw8x8m271hd2wfwzqzwgf36pmc4pl</a></li>
 </ul>
-<h2 id="CVE-2024-27438">Downloading arbitrary remote jar files resulting in remote command execution</h2>
-<p>CVE-2024-27438 <a href="./CVE-2024-27438.cve.json">[CVE json]</a> <a href="./CVE-2024-27438.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-03-21T09:39:20.599Z</em></p>
+<h2 id="CVE-2023-41314">Missing API authentication allowed DoS</h2>
+<p>CVE-2023-41314 <a href="https://cve.org/CVERecord?id=CVE-2023-41314">[CVE]</a> <a href="./CVE-2023-41314.cve.json">[CVE json]</a> <a href="./CVE-2023-41314.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-12-18T08:27:49.193Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache Doris from 1.2.0 through 2.0.4</li>
+<li>Apache Doris from 1.2.0 through 2.0.3</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<p>Download of Code Without Integrity Check vulnerability in Apache Doris.<br>The jdbc driver files used for JDBC catalog is not checked and may resulting in remote command execution.<br>Once the attacker is authorized to create a JDBC catalog, he/she can use arbitrary driver jar file with unchecked code snippet. This code snippet will be run when catalog is initializing without any check.<br><p>This issue affects Apache Doris: from 1.2.0 through 2.0.4.</p><p>Users are recommended to upgrade to version 2.0.5 or 2.1.x, which fixes the issue.</p></p>
+<p>The api /api/snapshot and /api/get_log_file would allow unauthenticated access.<br>It could allow a DoS attack or get arbitrary files from FE node.<br>Please upgrade to 2.0.3 to fix these issues.</p>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/h95h82b0svlnwcg6c2xq4b08j6gwgczh">https://lists.apache.org/thread/h95h82b0svlnwcg6c2xq4b08j6gwgczh</a></li>
+<li><a href="https://lists.apache.org/thread/tgvpvz3yw7zgodl1sb3sv3jbbz8t5zb4">https://lists.apache.org/thread/tgvpvz3yw7zgodl1sb3sv3jbbz8t5zb4</a></li>
 </ul>
-<h2 id="CVE-2024-48019">allows admin users to read arbitrary files through the REST API</h2>
-<p>CVE-2024-48019 <a href="./CVE-2024-48019.cve.json">[CVE json]</a> <a href="./CVE-2024-48019.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-02-04T18:19:49.957Z</em></p>
+<h2 id="CVE-2023-41313">Timing Attack weakness</h2>
+<p>CVE-2023-41313 <a href="https://cve.org/CVERecord?id=CVE-2023-41313">[CVE]</a> <a href="./CVE-2023-41313.cve.json">[CVE json]</a> <a href="./CVE-2023-41313.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-03-12T10:16:14.512Z</em></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
-<li>Apache Doris from 2.1.0 before 2.1.8</li>
-<li>Apache Doris from 3.0.0 before 3.0.3</li>
+<li>Apache Doris before 1.2.8</li>
 </ul>
 <h3 id="description-5">Description</h3>
-<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'), Files or Directories Accessible to External Parties vulnerability in Apache Doris.<br></p><p><span style="background-color: rgb(255, 255, 255);">Application administrators can read arbitrary
-files from the server filesystem through path traversal.</span><br></p><p>Users are recommended to upgrade to version 2.1.8, 3.0.3 or later, which fixes the issue.</p>
+<p><span style="background-color: rgb(255, 255, 255);">The authentication method in Apache Doris versions before 2.0.0 was vulnerable to timing attacks.</span><br><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 2.0.0 + or 1.2.8, which fixes this issue.</span><br><p></p></p>
 <h3 id="references-5">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/p70klgmyrgknhn0t195261wvwv5jw6hr">https://lists.apache.org/thread/p70klgmyrgknhn0t195261wvwv5jw6hr</a></li>
+<li><a href="https://lists.apache.org/thread/jqczy3vxzs6q6rz9o0626j5nks9fnv95">https://lists.apache.org/thread/jqczy3vxzs6q6rz9o0626j5nks9fnv95</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>Man Yue Mo of the GitHub Security Lab team (finder)</li>
+<li>Andrea Cosentino from  Apache Software Foundation  (reporter)</li>
 </ul>
-<h2 id="CVE-2025-58337">Improper Access Control results in bypassing a &ldquo;read-only&rdquo; mode for doris-mcp-server MCP Server</h2>
-<p>CVE-2025-58337 <a href="./CVE-2025-58337.cve.json">[CVE json]</a> <a href="./CVE-2025-58337.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-11-05T09:26:34.887Z</em></p>
+<h2 id="CVE-2022-23942">Apache Doris hardcoded cryptography initialization</h2>
+<p>CVE-2022-23942 <a href="https://cve.org/CVERecord?id=CVE-2022-23942">[CVE]</a> <a href="./CVE-2022-23942.cve.json">[CVE json]</a> <a href="./CVE-2022-23942.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-04-26T14:49:46.143Z</em></p>
 <h3 id="affected-6">Affected</h3>
 <ul>
-<li>Apache Doris-MCP-Server from 0.1.0 before 0.6.0</li>
+<li>Apache Doris(Incubating) at 0.15.0</li>
 </ul>
 <h3 id="description-6">Description</h3>
-<p>An attacker with a valid read-only account can bypass Doris MCP Server’s read-only mode due to improper access control, allowing modifications that should have been prevented by read-only restrictions.<br></p><p>Impact:<br>
-Bypasses read-only mode; attackers with read-only access may perform unauthorized modifications.</p>
-<p></p><p>Recommended action for operators: Upgrade to version 0.6.0 as soon as possible (this release contains the fix).</p><p></p>
-<p></p><br>
+<p>Apache Doris, prior to 1.0.0, used a hardcoded key and IV to initialize the cipher used for ldap password, which may lead to information disclosure.</p>
 <h3 id="references-6">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/6tswlphj0pqn9zf25594r3c1vzvfj40h">https://lists.apache.org/thread/6tswlphj0pqn9zf25594r3c1vzvfj40h</a></li>
+<li><a href="https://lists.apache.org/thread/com2dyzp3bn2rdrotry90q2zzord4tvt">https://lists.apache.org/thread/com2dyzp3bn2rdrotry90q2zzord4tvt</a></li>
 </ul>
 <h3 id="credits-3">Credits</h3>
 <ul>
-<li>Liran Tal, (<a href="mailto:liran@lirantal.com">liran@lirantal.com</a>) (finder)</li>
+<li>We would like to thanks to Dwi Siswanto<a href="mailto:me@dw1.io">me@dw1.io</a> for the report of this issue</li>
 </ul>
 
   

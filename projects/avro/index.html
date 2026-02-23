@@ -105,59 +105,61 @@
 <p>Do you want disclose a potential security issue for Apache Avro? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-43045">Possible DOS vulnerabilities in C# Avro SDK</h2>
-<p>CVE-2021-43045 <a href="./CVE-2021-43045.cve.json">[CVE json]</a> <a href="./CVE-2021-43045.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-01-06T17:58:30.429Z</em></p>
+<h2 id="CVE-2025-33042">Code injection on Java generated code</h2>
+<p>CVE-2025-33042 <a href="https://cve.org/CVERecord?id=CVE-2025-33042">[CVE]</a> <a href="./CVE-2025-33042.cve.json">[CVE json]</a> <a href="./CVE-2025-33042.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-02-13T11:47:01.866Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Avro from Apache Avro through 1.10.2</li>
+<li>Apache Avro Java SDK through 1.11.4</li>
+<li>Apache Avro Java SDK at 1.12.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>A vulnerability in the .NET SDK of Apache Avro allows an attacker to allocate excessive resources, potentially causing a denial-of-service attack.  This issue affects .NET applications using Apache Avro version 1.10.2 and prior versions.  Users should update to version 1.11.0 which addresses this issue.</p>
+<p>Improper Control of Generation of Code ('Code Injection') vulnerability in Apache Avro Java SDK when generating specific records from untrusted Avro schemas.</p><p>This issue affects Apache Avro Java SDK: all versions through 1.11.4 and version&nbsp;1.12.0.</p><p>Users are recommended to upgrade to version 1.12.1 or 1.11.5, which fix the issue.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/5fttw9vk6gd2p3b846nox7hcj5469xfd">https://lists.apache.org/thread/5fttw9vk6gd2p3b846nox7hcj5469xfd</a></li>
+<li><a href="https://lists.apache.org/thread/fy88wmgf1lj9479vrpt12cv8x73lroj1">https://lists.apache.org/thread/fy88wmgf1lj9479vrpt12cv8x73lroj1</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Apache Avro would like to thank Philip Sanetra for reporting this issue.</li>
+<li>Brant Eckert (finder)</li>
 </ul>
-<h2 id="CVE-2022-35724">Denial of service while reading data in Avro Rust SDK</h2>
-<p>CVE-2022-35724 <a href="./CVE-2022-35724.cve.json">[CVE json]</a> <a href="./CVE-2022-35724.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-08-09T06:43:41.354Z</em></p>
+<h2 id="CVE-2024-47561">Arbitrary Code Execution when reading Avro schema (Java SDK)</h2>
+<p>CVE-2024-47561 <a href="https://cve.org/CVERecord?id=CVE-2024-47561">[CVE]</a> <a href="./CVE-2024-47561.cve.json">[CVE json]</a> <a href="./CVE-2024-47561.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-10-21T08:50:48.382Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache Avro from unspecified before 0.14.0</li>
+<li>Apache Avro Java SDK before 1.11.4</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>It is possible to provide data to be read that leads the reader to loop in cycles endlessly, consuming CPU.  This issue affects Rust applications using Apache Avro Rust SDK prior to 0.14.0 (previously known as avro-rs).  Users should update to apache-avro version 0.14.0 which addresses this issue.</p>
+<p>Schema parsing in the Java SDK of Apache Avro 1.11.3 and previous versions allows bad actors to execute arbitrary code.<br>Users are recommended to upgrade to version 1.11.4  or 1.12.0, which fix this issue.</p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/771z1nwrpkn1ovmyfb2fm65mchdxgy7p">https://lists.apache.org/thread/771z1nwrpkn1ovmyfb2fm65mchdxgy7p</a></li>
+<li><a href="https://lists.apache.org/thread/c2v7mhqnmq0jmbwxqq3r5jbj1xg43h5x">https://lists.apache.org/thread/c2v7mhqnmq0jmbwxqq3r5jbj1xg43h5x</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>This issue was reported to the Apache Avro team by Evan Richter at ForAllSecure and found with Mayhem.</li>
+<li>Kostya Kortchinsky, from the Databricks Security Team (finder)</li>
 </ul>
-<h2 id="CVE-2022-36124">Memory overconsumption in Avro Rust SDK</h2>
-<p>CVE-2022-36124 <a href="./CVE-2022-36124.cve.json">[CVE json]</a> <a href="./CVE-2022-36124.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-08-09T06:46:06.388Z</em></p>
+<h2 id="CVE-2023-39410">Memory when deserializing untrusted data in Avro Java SDK</h2>
+<p>CVE-2023-39410 <a href="https://cve.org/CVERecord?id=CVE-2023-39410">[CVE]</a> <a href="./CVE-2023-39410.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2025-02-06T14:33:53.747Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache Avro from unspecified before 0.14.0</li>
+<li>Apache Avro Java SDK before 1.11.3</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>It is possible for a Reader to consume memory beyond the allowed constraints and thus lead to out of memory on the system. This issue affects Rust applications using Apache Avro Rust SDK prior to 0.14.0 (previously known as avro-rs).  Users should update to apache-avro version 0.14.0 which addresses this issue.</p>
+<div>When deserializing untrusted or corrupted data, it is possible for a reader to consume memory beyond the allowed constraints and thus lead to out of memory on the system.</div><div><br></div><div>This issue affects Java applications using Apache Avro Java SDK up to and including 1.11.2.  Users should update to apache-avro version 1.11.3 which addresses this issue.</div><div><br></div>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/kj429rzo1xxjgz058qqqg0y7c0p512zo">https://lists.apache.org/thread/kj429rzo1xxjgz058qqqg0y7c0p512zo</a></li>
+<li><a href="https://lists.apache.org/thread/q142wj99cwdd0jo5lvdoxzoymlqyjdds">https://lists.apache.org/thread/q142wj99cwdd0jo5lvdoxzoymlqyjdds</a></li>
+<li><a href="https://www.openwall.com/lists/oss-security/2023/09/29/6">https://www.openwall.com/lists/oss-security/2023/09/29/6</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>This issue was reported to the Apache Avro team by Evan Richter at ForAllSecure and found with Mayhem.</li>
+<li>Adam Korczynski at ADA Logics Ltd (finder)</li>
 </ul>
 <h2 id="CVE-2022-36125">Integer overflow when reading corrupted .avro file in Avro Rust SDK</h2>
-<p>CVE-2022-36125 <a href="./CVE-2022-36125.cve.json">[CVE json]</a> <a href="./CVE-2022-36125.osv.json">[OSV json]</a></p>
+<p>CVE-2022-36125 <a href="https://cve.org/CVERecord?id=CVE-2022-36125">[CVE]</a> <a href="./CVE-2022-36125.cve.json">[CVE json]</a> <a href="./CVE-2022-36125.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-08-09T06:44:50.447Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
@@ -173,40 +175,56 @@
 <ul>
 <li>This issue was reported to the Apache Avro team by Evan Richter at ForAllSecure and found with Mayhem.</li>
 </ul>
-<h2 id="CVE-2023-39410">Memory when deserializing untrusted data in Avro Java SDK</h2>
-<p>CVE-2023-39410 <a href="./CVE-2023-39410.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2025-02-06T14:33:53.747Z</em></p>
+<h2 id="CVE-2022-36124">Memory overconsumption in Avro Rust SDK</h2>
+<p>CVE-2022-36124 <a href="https://cve.org/CVERecord?id=CVE-2022-36124">[CVE]</a> <a href="./CVE-2022-36124.cve.json">[CVE json]</a> <a href="./CVE-2022-36124.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-08-09T06:46:06.388Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache Avro Java SDK before 1.11.3</li>
+<li>Apache Avro from unspecified before 0.14.0</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<div>When deserializing untrusted or corrupted data, it is possible for a reader to consume memory beyond the allowed constraints and thus lead to out of memory on the system.</div><div><br></div><div>This issue affects Java applications using Apache Avro Java SDK up to and including 1.11.2.  Users should update to apache-avro version 1.11.3 which addresses this issue.</div><div><br></div>
+<p>It is possible for a Reader to consume memory beyond the allowed constraints and thus lead to out of memory on the system. This issue affects Rust applications using Apache Avro Rust SDK prior to 0.14.0 (previously known as avro-rs).  Users should update to apache-avro version 0.14.0 which addresses this issue.</p>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/q142wj99cwdd0jo5lvdoxzoymlqyjdds">https://lists.apache.org/thread/q142wj99cwdd0jo5lvdoxzoymlqyjdds</a></li>
-<li><a href="https://www.openwall.com/lists/oss-security/2023/09/29/6">https://www.openwall.com/lists/oss-security/2023/09/29/6</a></li>
+<li><a href="https://lists.apache.org/thread/kj429rzo1xxjgz058qqqg0y7c0p512zo">https://lists.apache.org/thread/kj429rzo1xxjgz058qqqg0y7c0p512zo</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>Adam Korczynski at ADA Logics Ltd (finder)</li>
+<li>This issue was reported to the Apache Avro team by Evan Richter at ForAllSecure and found with Mayhem.</li>
 </ul>
-<h2 id="CVE-2024-47561">Arbitrary Code Execution when reading Avro schema (Java SDK)</h2>
-<p>CVE-2024-47561 <a href="./CVE-2024-47561.cve.json">[CVE json]</a> <a href="./CVE-2024-47561.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-10-21T08:50:48.382Z</em></p>
+<h2 id="CVE-2022-35724">Denial of service while reading data in Avro Rust SDK</h2>
+<p>CVE-2022-35724 <a href="https://cve.org/CVERecord?id=CVE-2022-35724">[CVE]</a> <a href="./CVE-2022-35724.cve.json">[CVE json]</a> <a href="./CVE-2022-35724.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-08-09T06:43:41.354Z</em></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
-<li>Apache Avro Java SDK before 1.11.4</li>
+<li>Apache Avro from unspecified before 0.14.0</li>
 </ul>
 <h3 id="description-5">Description</h3>
-<p>Schema parsing in the Java SDK of Apache Avro 1.11.3 and previous versions allows bad actors to execute arbitrary code.<br>Users are recommended to upgrade to version 1.11.4  or 1.12.0, which fix this issue.</p>
+<p>It is possible to provide data to be read that leads the reader to loop in cycles endlessly, consuming CPU.  This issue affects Rust applications using Apache Avro Rust SDK prior to 0.14.0 (previously known as avro-rs).  Users should update to apache-avro version 0.14.0 which addresses this issue.</p>
 <h3 id="references-5">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/c2v7mhqnmq0jmbwxqq3r5jbj1xg43h5x">https://lists.apache.org/thread/c2v7mhqnmq0jmbwxqq3r5jbj1xg43h5x</a></li>
+<li><a href="https://lists.apache.org/thread/771z1nwrpkn1ovmyfb2fm65mchdxgy7p">https://lists.apache.org/thread/771z1nwrpkn1ovmyfb2fm65mchdxgy7p</a></li>
 </ul>
 <h3 id="credits-5">Credits</h3>
 <ul>
-<li>Kostya Kortchinsky, from the Databricks Security Team (finder)</li>
+<li>This issue was reported to the Apache Avro team by Evan Richter at ForAllSecure and found with Mayhem.</li>
+</ul>
+<h2 id="CVE-2021-43045">Possible DOS vulnerabilities in C# Avro SDK</h2>
+<p>CVE-2021-43045 <a href="https://cve.org/CVERecord?id=CVE-2021-43045">[CVE]</a> <a href="./CVE-2021-43045.cve.json">[CVE json]</a> <a href="./CVE-2021-43045.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-01-06T17:58:30.429Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Avro from Apache Avro through 1.10.2</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>A vulnerability in the .NET SDK of Apache Avro allows an attacker to allocate excessive resources, potentially causing a denial-of-service attack.  This issue affects .NET applications using Apache Avro version 1.10.2 and prior versions.  Users should update to version 1.11.0 which addresses this issue.</p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/5fttw9vk6gd2p3b846nox7hcj5469xfd">https://lists.apache.org/thread/5fttw9vk6gd2p3b846nox7hcj5469xfd</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>Apache Avro would like to thank Philip Sanetra for reporting this issue.</li>
 </ul>
 
   

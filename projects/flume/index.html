@@ -105,22 +105,23 @@
 <p>Do you want disclose a potential security issue for Apache Flume? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2022-25167">Apache Flume vulnerable to a JNDI RCE in JMSSource </h2>
-<p>CVE-2022-25167 <a href="./CVE-2022-25167.cve.json">[CVE json]</a> <a href="./CVE-2022-25167.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-06-14T07:51:07.443Z</em></p>
+<h2 id="CVE-2022-42468">Apache Flume prior to 1.11.0 has an Improper Input Validation (JNDI Injection) in JMSSource</h2>
+<p>CVE-2022-42468 <a href="https://cve.org/CVERecord?id=CVE-2022-42468">[CVE]</a> <a href="./CVE-2022-42468.cve.json">[CVE json]</a> <a href="./CVE-2022-42468.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-10-26T13:08:08.448Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Flume from flume-jms-source before 1.10.0</li>
+<li>Apache Flume from Flume JMSSource before 1.11.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Apache Flume versions 1.4.0 through 1.9.0 are vulnerable to a remote code execution (RCE) attack when a configuration uses a JMS Source with a JNDI LDAP data source URI when an attacker has control of the target LDAP server. This issue is fixed by limiting JNDI to allow only the use of the java protocol or no protocol.</p>
+<p>Apache Flume versions 1.4.0 through 1.10.1 are vulnerable to a remote code execution (RCE) attack when a configuration uses a JMS Source with an unsafe providerURL. This issue is fixed by limiting JNDI to allow only the use of the java protocol or no protocol.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/16nf6b81zjpdc4y93ho99oxo83ddbsvg">https://lists.apache.org/thread/16nf6b81zjpdc4y93ho99oxo83ddbsvg</a></li>
-<li><a href="https://issues.apache.org/jira/browse/FLUME-3416">https://issues.apache.org/jira/browse/FLUME-3416</a></li>
+<li><a href="https://issues.apache.org/jira/browse/FLUME-3437">https://issues.apache.org/jira/browse/FLUME-3437</a></li>
+<li><a href="https://lists.apache.org/thread/939wkx8o90bp6m2ht3t1sdyo1ncypl78">https://lists.apache.org/thread/939wkx8o90bp6m2ht3t1sdyo1ncypl78</a></li>
+<li><a href="https://lists.apache.org/thread/1ckhmp539zr2nd2rs45pocpywk2d9zvz">https://lists.apache.org/thread/1ckhmp539zr2nd2rs45pocpywk2d9zvz</a></li>
 </ul>
 <h2 id="CVE-2022-34916">Improper Input Validation (JNDI Injection) in JMSMessageConsumer</h2>
-<p>CVE-2022-34916 <a href="./CVE-2022-34916.cve.json">[CVE json]</a> <a href="./CVE-2022-34916.osv.json">[OSV json]</a></p>
+<p>CVE-2022-34916 <a href="https://cve.org/CVERecord?id=CVE-2022-34916">[CVE]</a> <a href="./CVE-2022-34916.cve.json">[CVE json]</a> <a href="./CVE-2022-34916.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-08-21T08:11:17.200Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
@@ -137,20 +138,19 @@
 <ul>
 <li>Apache Flume would like to thank Frentzen Amaral for reporting this issue.</li>
 </ul>
-<h2 id="CVE-2022-42468">Apache Flume prior to 1.11.0 has an Improper Input Validation (JNDI Injection) in JMSSource</h2>
-<p>CVE-2022-42468 <a href="./CVE-2022-42468.cve.json">[CVE json]</a> <a href="./CVE-2022-42468.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-10-26T13:08:08.448Z</em></p>
+<h2 id="CVE-2022-25167">Apache Flume vulnerable to a JNDI RCE in JMSSource </h2>
+<p>CVE-2022-25167 <a href="https://cve.org/CVERecord?id=CVE-2022-25167">[CVE]</a> <a href="./CVE-2022-25167.cve.json">[CVE json]</a> <a href="./CVE-2022-25167.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-06-14T07:51:07.443Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache Flume from Flume JMSSource before 1.11.0</li>
+<li>Apache Flume from flume-jms-source before 1.10.0</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>Apache Flume versions 1.4.0 through 1.10.1 are vulnerable to a remote code execution (RCE) attack when a configuration uses a JMS Source with an unsafe providerURL. This issue is fixed by limiting JNDI to allow only the use of the java protocol or no protocol.</p>
+<p>Apache Flume versions 1.4.0 through 1.9.0 are vulnerable to a remote code execution (RCE) attack when a configuration uses a JMS Source with a JNDI LDAP data source URI when an attacker has control of the target LDAP server. This issue is fixed by limiting JNDI to allow only the use of the java protocol or no protocol.</p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://issues.apache.org/jira/browse/FLUME-3437">https://issues.apache.org/jira/browse/FLUME-3437</a></li>
-<li><a href="https://lists.apache.org/thread/939wkx8o90bp6m2ht3t1sdyo1ncypl78">https://lists.apache.org/thread/939wkx8o90bp6m2ht3t1sdyo1ncypl78</a></li>
-<li><a href="https://lists.apache.org/thread/1ckhmp539zr2nd2rs45pocpywk2d9zvz">https://lists.apache.org/thread/1ckhmp539zr2nd2rs45pocpywk2d9zvz</a></li>
+<li><a href="https://lists.apache.org/thread/16nf6b81zjpdc4y93ho99oxo83ddbsvg">https://lists.apache.org/thread/16nf6b81zjpdc4y93ho99oxo83ddbsvg</a></li>
+<li><a href="https://issues.apache.org/jira/browse/FLUME-3416">https://issues.apache.org/jira/browse/FLUME-3416</a></li>
 </ul>
 
   

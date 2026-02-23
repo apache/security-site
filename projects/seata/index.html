@@ -105,44 +105,39 @@
 <p>Do you want disclose a potential security issue for Apache Seata? You can read more about the projects&rsquo; security policy on their <a href="https://seata.apache.org/docs/next/security/secret-key">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://seata.apache.org/docs/next/security/secret-key">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2024-22399">Remote Code Execution vulnerability via Hessian Deserialization in Apache Seata Server</h2>
-<p>CVE-2024-22399 <a href="./CVE-2024-22399.cve.json">[CVE json]</a> <a href="./CVE-2024-22399.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-09-16T11:42:03.440Z</em></p>
+<h2 id="CVE-2025-53606">Deserialization of untrusted Data in Apache Seata Server</h2>
+<p>CVE-2025-53606 <a href="https://cve.org/CVERecord?id=CVE-2025-53606">[CVE]</a> <a href="./CVE-2025-53606.cve.json">[CVE json]</a> <a href="./CVE-2025-53606.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-08-08T09:22:52.076Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Seata at 2.0.0</li>
-<li>Apache Seata from 1.0.0 through 1.8.0</li>
+<li>Apache Seata (incubating) at 2.4.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Deserialization of Untrusted Data vulnerability in Apache Seata. <br><br><div><div><div><div><div><p>When developers disable authentication on the Seata-Server and do not use the Seata client SDK dependencies, they may construct uncontrolled serialized malicious requests by directly sending bytecode based on the Seata private protocol.<br><br></p></div></div></div></div></div><div></div><p>This issue affects Apache Seata: 2.0.0, from 1.0.0 through 1.8.0.</p><p>Users are recommended to upgrade to version 2.1.0/1.8.1, which fixes the issue.</p><br></p>
+<p>Deserialization of Untrusted Data vulnerability in Apache Seata (incubating).</p><p>This issue affects Apache Seata (incubating): 2.4.0.</p><p>Users are recommended to upgrade to version 2.5.0, which fixes the issue.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/91nzzlxyj4nmks85gbzwkkjtbmnmlkc4">https://lists.apache.org/thread/91nzzlxyj4nmks85gbzwkkjtbmnmlkc4</a></li>
+<li><a href="https://lists.apache.org/thread/ggfd72vvvxjozs81zbcls45zxg64pphx">https://lists.apache.org/thread/ggfd72vvvxjozs81zbcls45zxg64pphx</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>X1r0z(<a href="mailto:exp10it666123@gmail.com">exp10it666123@gmail.com</a>) (finder)</li>
+<li>A.R. (finder)</li>
 </ul>
-<h2 id="CVE-2024-47552">Deserialization of untrusted Data in jraft mode in Apache Seata Server</h2>
-<p>CVE-2024-47552 <a href="./CVE-2024-47552.cve.json">[CVE json]</a> <a href="./CVE-2024-47552.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-03-20T08:57:58.136Z</em></p>
+<h2 id="CVE-2025-32897">Deserialization of untrusted Data in Apache Seata Server</h2>
+<p>CVE-2025-32897 <a href="https://cve.org/CVERecord?id=CVE-2025-32897">[CVE]</a> <a href="./CVE-2025-32897.cve.json">[CVE json]</a> <a href="./CVE-2025-32897.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-06-28T18:25:15.298Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache Seata (incubating) from 2.0.0 before 2.2.0</li>
+<li>Apache Seata (incubating) from 2.0.0 before 2.3.0</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>Deserialization of Untrusted Data vulnerability in Apache Seata (incubating).</p><p>This issue affects Apache Seata (incubating): from 2.0.0 before 2.2.0.</p><p>Users are recommended to upgrade to version 2.2.0, which fixes the issue.</p>
+<p>Deserialization of Untrusted Data vulnerability in Apache Seata (incubating).</p><span style="background-color: rgb(255, 255, 255);">This security vulnerability is the same as CVE-2024-47552, but the version range described in the CVE-2024-47552 definition is too narrow.</span><br><p>This issue affects Apache Seata (incubating): from 2.0.0 before 2.3.0.</p><p>Users are recommended to upgrade to version 2.3.0, which fixes the issue.</p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/652o82vzk9qrtgksk55cfgpbvdgtkch0">https://lists.apache.org/thread/652o82vzk9qrtgksk55cfgpbvdgtkch0</a></li>
-</ul>
-<h3 id="credits-1">Credits</h3>
-<ul>
-<li>liuhuajin<a href="mailto:liuhuajin1@huawei.com">liuhuajin1@huawei.com</a> (finder)</li>
-<li><a href="mailto:llqxc369@gmail.com">llqxc369@gmail.com</a> (finder)</li>
+<li><a href="https://www.cve.org/CVERecord?id=CVE-2024-47552">https://www.cve.org/CVERecord?id=CVE-2024-47552</a></li>
+<li><a href="https://lists.apache.org/thread/9fhtf7yvpjpzlwd1m0wfgg6tp2btxpy1">https://lists.apache.org/thread/9fhtf7yvpjpzlwd1m0wfgg6tp2btxpy1</a></li>
 </ul>
 <h2 id="CVE-2024-54016">compression bomb attack in Apache Seata Server</h2>
-<p>CVE-2024-54016 <a href="./CVE-2024-54016.cve.json">[CVE json]</a> <a href="./CVE-2024-54016.osv.json">[OSV json]</a></p>
+<p>CVE-2024-54016 <a href="https://cve.org/CVERecord?id=CVE-2024-54016">[CVE]</a> <a href="./CVE-2024-54016.cve.json">[CVE json]</a> <a href="./CVE-2024-54016.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-03-20T08:59:24.157Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
@@ -154,40 +149,45 @@
 <ul>
 <li><a href="https://lists.apache.org/thread/grn0x8tmssx07qc9z50lwgmrkwzrrhzg">https://lists.apache.org/thread/grn0x8tmssx07qc9z50lwgmrkwzrrhzg</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li><a href="mailto:yyjLF@proton.me">yyjLF@proton.me</a> (finder)</li>
 </ul>
-<h2 id="CVE-2025-32897">Deserialization of untrusted Data in Apache Seata Server</h2>
-<p>CVE-2025-32897 <a href="./CVE-2025-32897.cve.json">[CVE json]</a> <a href="./CVE-2025-32897.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-06-28T18:25:15.298Z</em></p>
+<h2 id="CVE-2024-47552">Deserialization of untrusted Data in jraft mode in Apache Seata Server</h2>
+<p>CVE-2024-47552 <a href="https://cve.org/CVERecord?id=CVE-2024-47552">[CVE]</a> <a href="./CVE-2024-47552.cve.json">[CVE json]</a> <a href="./CVE-2024-47552.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-03-20T08:57:58.136Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache Seata (incubating) from 2.0.0 before 2.3.0</li>
+<li>Apache Seata (incubating) from 2.0.0 before 2.2.0</li>
 </ul>
 <h3 id="description-3">Description</h3>
-<p>Deserialization of Untrusted Data vulnerability in Apache Seata (incubating).</p><span style="background-color: rgb(255, 255, 255);">This security vulnerability is the same as CVE-2024-47552, but the version range described in the CVE-2024-47552 definition is too narrow.</span><br><p>This issue affects Apache Seata (incubating): from 2.0.0 before 2.3.0.</p><p>Users are recommended to upgrade to version 2.3.0, which fixes the issue.</p>
+<p>Deserialization of Untrusted Data vulnerability in Apache Seata (incubating).</p><p>This issue affects Apache Seata (incubating): from 2.0.0 before 2.2.0.</p><p>Users are recommended to upgrade to version 2.2.0, which fixes the issue.</p>
 <h3 id="references-3">References</h3>
 <ul>
-<li><a href="https://www.cve.org/CVERecord?id=CVE-2024-47552">https://www.cve.org/CVERecord?id=CVE-2024-47552</a></li>
-<li><a href="https://lists.apache.org/thread/9fhtf7yvpjpzlwd1m0wfgg6tp2btxpy1">https://lists.apache.org/thread/9fhtf7yvpjpzlwd1m0wfgg6tp2btxpy1</a></li>
+<li><a href="https://lists.apache.org/thread/652o82vzk9qrtgksk55cfgpbvdgtkch0">https://lists.apache.org/thread/652o82vzk9qrtgksk55cfgpbvdgtkch0</a></li>
 </ul>
-<h2 id="CVE-2025-53606">Deserialization of untrusted Data in Apache Seata Server</h2>
-<p>CVE-2025-53606 <a href="./CVE-2025-53606.cve.json">[CVE json]</a> <a href="./CVE-2025-53606.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-08-08T09:22:52.076Z</em></p>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>liuhuajin<a href="mailto:liuhuajin1@huawei.com">liuhuajin1@huawei.com</a> (finder)</li>
+<li><a href="mailto:llqxc369@gmail.com">llqxc369@gmail.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2024-22399">Remote Code Execution vulnerability via Hessian Deserialization in Apache Seata Server</h2>
+<p>CVE-2024-22399 <a href="https://cve.org/CVERecord?id=CVE-2024-22399">[CVE]</a> <a href="./CVE-2024-22399.cve.json">[CVE json]</a> <a href="./CVE-2024-22399.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-09-16T11:42:03.440Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache Seata (incubating) at 2.4.0</li>
+<li>Apache Seata at 2.0.0</li>
+<li>Apache Seata from 1.0.0 through 1.8.0</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<p>Deserialization of Untrusted Data vulnerability in Apache Seata (incubating).</p><p>This issue affects Apache Seata (incubating): 2.4.0.</p><p>Users are recommended to upgrade to version 2.5.0, which fixes the issue.</p>
+<p>Deserialization of Untrusted Data vulnerability in Apache Seata. <br><br><div><div><div><div><div><p>When developers disable authentication on the Seata-Server and do not use the Seata client SDK dependencies, they may construct uncontrolled serialized malicious requests by directly sending bytecode based on the Seata private protocol.<br><br></p></div></div></div></div></div><div></div><p>This issue affects Apache Seata: 2.0.0, from 1.0.0 through 1.8.0.</p><p>Users are recommended to upgrade to version 2.1.0/1.8.1, which fixes the issue.</p><br></p>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/ggfd72vvvxjozs81zbcls45zxg64pphx">https://lists.apache.org/thread/ggfd72vvvxjozs81zbcls45zxg64pphx</a></li>
+<li><a href="https://lists.apache.org/thread/91nzzlxyj4nmks85gbzwkkjtbmnmlkc4">https://lists.apache.org/thread/91nzzlxyj4nmks85gbzwkkjtbmnmlkc4</a></li>
 </ul>
 <h3 id="credits-3">Credits</h3>
 <ul>
-<li>A.R. (finder)</li>
+<li>X1r0z(<a href="mailto:exp10it666123@gmail.com">exp10it666123@gmail.com</a>) (finder)</li>
 </ul>
 
   

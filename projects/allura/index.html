@@ -105,26 +105,25 @@
 <p>Do you want disclose a potential security issue for Apache Allura? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2023-46851">sensitive information exposure via import</h2>
-<p>CVE-2023-46851 <a href="./CVE-2023-46851.cve.json">[CVE json]</a> <a href="./CVE-2023-46851.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-11-07T08:56:30.662Z</em></p>
+<h2 id="CVE-2024-38379">Stored authenticated XSS</h2>
+<p>CVE-2024-38379 <a href="https://cve.org/CVERecord?id=CVE-2024-38379">[CVE]</a> <a href="./CVE-2024-38379.cve.json">[CVE json]</a> <a href="./CVE-2024-38379.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-02-06T14:32:32.361Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Allura from 1.0.1 through 1.15.0</li>
+<li>Apache Allura from 1.4.0 through 1.17.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<div>Allura Discussion and Allura Forum importing does not restrict URL values specified in attachments. Project administrators can run these imports, which could cause Allura to read local files and expose them.&nbsp; Exposing internal files then can lead to other exploits, like session hijacking, or remote code execution.<br></div><div><br></div><div>This issue affects Apache Allura from 1.0.1 through 1.15.0.</div><p></p><p>Users are recommended to upgrade to version 1.16.0, which fixes the issue.&nbsp; If you are unable to upgrade, set "disable_entry_points.allura.importers = forge-tracker, forge-discussion" in your .ini config file.<br></p>
+<p>Apache Allura's neighborhood settings are vulnerable to a stored XSS attack.&nbsp; Only neighborhood admins can access these settings, so the scope of risk is limited to configurations where neighborhood admins are not fully trusted.<br></p><p>This issue affects Apache Allura: from 1.4.0 through 1.17.0.</p><p>Users are recommended to upgrade to version 1.17.1, which fixes the issue.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://allura.apache.org/posts/2023-allura-1.16.0.html">https://allura.apache.org/posts/2023-allura-1.16.0.html</a></li>
-<li><a href="https://lists.apache.org/thread/hqk0vltl7qgrq215zgwjfoj0khbov0gx">https://lists.apache.org/thread/hqk0vltl7qgrq215zgwjfoj0khbov0gx</a></li>
+<li><a href="https://lists.apache.org/thread/2lb6vp00sj2b2snpmhff5lyortxjsnrp">https://lists.apache.org/thread/2lb6vp00sj2b2snpmhff5lyortxjsnrp</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Stefan Schiller (Sonar) (finder)</li>
+<li>Ömer &ldquo;WASP&rdquo; Akincir (finder)</li>
 </ul>
 <h2 id="CVE-2024-36471">sensitive information exposure via DNS rebinding</h2>
-<p>CVE-2024-36471 <a href="./CVE-2024-36471.cve.json">[CVE json]</a> <a href="./CVE-2024-36471.osv.json">[OSV json]</a></p>
+<p>CVE-2024-36471 <a href="https://cve.org/CVERecord?id=CVE-2024-36471">[CVE]</a> <a href="./CVE-2024-36471.cve.json">[CVE json]</a> <a href="./CVE-2024-36471.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-06-10T21:55:03.113Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
@@ -140,22 +139,23 @@
 <ul>
 <li>truff <a href="https://x.com/truffzor">https://x.com/truffzor</a> (finder)</li>
 </ul>
-<h2 id="CVE-2024-38379">Stored authenticated XSS</h2>
-<p>CVE-2024-38379 <a href="./CVE-2024-38379.cve.json">[CVE json]</a> <a href="./CVE-2024-38379.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-02-06T14:32:32.361Z</em></p>
+<h2 id="CVE-2023-46851">sensitive information exposure via import</h2>
+<p>CVE-2023-46851 <a href="https://cve.org/CVERecord?id=CVE-2023-46851">[CVE]</a> <a href="./CVE-2023-46851.cve.json">[CVE json]</a> <a href="./CVE-2023-46851.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-11-07T08:56:30.662Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache Allura from 1.4.0 through 1.17.0</li>
+<li>Apache Allura from 1.0.1 through 1.15.0</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>Apache Allura's neighborhood settings are vulnerable to a stored XSS attack.&nbsp; Only neighborhood admins can access these settings, so the scope of risk is limited to configurations where neighborhood admins are not fully trusted.<br></p><p>This issue affects Apache Allura: from 1.4.0 through 1.17.0.</p><p>Users are recommended to upgrade to version 1.17.1, which fixes the issue.</p>
+<div>Allura Discussion and Allura Forum importing does not restrict URL values specified in attachments. Project administrators can run these imports, which could cause Allura to read local files and expose them.&nbsp; Exposing internal files then can lead to other exploits, like session hijacking, or remote code execution.<br></div><div><br></div><div>This issue affects Apache Allura from 1.0.1 through 1.15.0.</div><p></p><p>Users are recommended to upgrade to version 1.16.0, which fixes the issue.&nbsp; If you are unable to upgrade, set "disable_entry_points.allura.importers = forge-tracker, forge-discussion" in your .ini config file.<br></p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/2lb6vp00sj2b2snpmhff5lyortxjsnrp">https://lists.apache.org/thread/2lb6vp00sj2b2snpmhff5lyortxjsnrp</a></li>
+<li><a href="https://allura.apache.org/posts/2023-allura-1.16.0.html">https://allura.apache.org/posts/2023-allura-1.16.0.html</a></li>
+<li><a href="https://lists.apache.org/thread/hqk0vltl7qgrq215zgwjfoj0khbov0gx">https://lists.apache.org/thread/hqk0vltl7qgrq215zgwjfoj0khbov0gx</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>Ömer &ldquo;WASP&rdquo; Akincir (finder)</li>
+<li>Stefan Schiller (Sonar) (finder)</li>
 </ul>
 
   

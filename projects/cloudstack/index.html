@@ -105,214 +105,217 @@
 <p>Do you want disclose a potential security issue for Apache CloudStack? You can read more about the projects&rsquo; security policy on their <a href="https://cloudstack.apache.org/security/">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://cloudstack.apache.org/security/">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2022-26779">Apache Cloudstack insecure random number generation affects project email invitation</h2>
-<p>CVE-2022-26779 <a href="./CVE-2022-26779.cve.json">[CVE json]</a> <a href="./CVE-2022-26779.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-07-13T11:28:52.383Z</em></p>
+<h2 id="CVE-2025-59454">Lack of user permission validation leading to data leak for few APIs</h2>
+<p>CVE-2025-59454 <a href="https://cve.org/CVERecord?id=CVE-2025-59454">[CVE]</a> <a href="./CVE-2025-59454.cve.json">[CVE json]</a> <a href="./CVE-2025-59454.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-11-27T11:40:37.834Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache CloudStack from Apache CloudStack before 4.16.1</li>
+<li>Apache CloudStack from 4.0.0 before 4.20.2</li>
+<li>Apache CloudStack from 4.21.0 before 4.22.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Apache CloudStack prior to 4.16.1.0 used insecure random number generation for project invitation tokens. If a project invite is created based only on an email address, a random token is generated. An attacker with knowledge of the project ID and the fact that the invite is sent, could generate time deterministic tokens and brute force attempt to use them prior to the legitimate receiver accepting the invite. This feature is not enabled by default, the attacker is required to know or guess the project ID for the invite in addition to the invitation token, and the attacker would need to be an existing authorized user of CloudStack.</p>
+<p>In Apache CloudStack, a gap in access control checks affected the APIs <pre>- createNetworkACL</p>
+<ul>
+<li>listNetworkACLs</li>
+<li>listResourceDetails</li>
+<li>listVirtualMachinesUsageHistory</li>
+<li>listVolumesUsageHistory</pre><div>While these APIs were accessible only to authorized users, insufficient permission validation meant that users could occasionally access information beyond their intended scope.</div><div><br></div><div>Users are recommended to upgrade to Apache CloudStack 4.20.2.0 or 4.22.0.0, which fixes the issue.</div></li>
+</ul>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/dmm07b1cyosovqr12ddhkko501p11h2h">https://lists.apache.org/thread/dmm07b1cyosovqr12ddhkko501p11h2h</a></li>
-<li><a href="https://github.com/JLLeitschuh/security-research/security/advisories/GHSA-vpcc-9rh2-8jfp">https://github.com/JLLeitschuh/security-research/security/advisories/GHSA-vpcc-9rh2-8jfp</a></li>
+<li><a href="https://lists.apache.org/thread/0hlklvlwhzsfw39nocmyxb6svjbs9xbc">https://lists.apache.org/thread/0hlklvlwhzsfw39nocmyxb6svjbs9xbc</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>This issue was reported by Jonathan Leitschuh</li>
+<li><a href="mailto:bugreporter@qq.com">bugreporter@qq.com</a> <a href="https://github.com/ai-bugreporter/Credits">https://github.com/ai-bugreporter/Credits</a> (finder)</li>
 </ul>
-<h2 id="CVE-2022-35741">Apache CloudStack SAML Single Sign-On XXE</h2>
-<p>CVE-2022-35741 <a href="./CVE-2022-35741.cve.json">[CVE json]</a> <a href="./CVE-2022-35741.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-07-18T14:26:13.768Z</em></p>
+<h2 id="CVE-2025-59302">Potential remote code execution on Javascript engine defined rules</h2>
+<p>CVE-2025-59302 <a href="https://cve.org/CVERecord?id=CVE-2025-59302">[CVE]</a> <a href="./CVE-2025-59302.cve.json">[CVE json]</a> <a href="./CVE-2025-59302.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-11-27T11:46:23.798Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.5.0 before Apache CloudStack*</li>
+<li>Apache CloudStack from 4.18.0 before 4.20.2</li>
+<li>Apache CloudStack from 4.21.0 before 4.22.0</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>Apache CloudStack version 4.5.0 and later has a SAML 2.0 authentication Service Provider plugin which is found to be vulnerable to XML external entity (XXE) injection. This plugin is not enabled by default and the attacker would require that this plugin be enabled to exploit the vulnerability. When the SAML 2.0 plugin is enabled in affected versions of Apache CloudStack could potentially allow the exploitation of XXE vulnerabilities. The SAML 2.0 messages constructed during the authentication flow in Apache CloudStack are XML-based and the XML data is parsed by various standard libraries that are now understood to be vulnerable to XXE injection attacks such as arbitrary file reading, possible denial of service, server-side request forgery (SSRF) on the CloudStack management server.</p>
+<p>In  Apache CloudStack improper control of generation of code ('Code Injection') vulnerability is found in the following APIs which are accessible only to admins.</p><ul><li>quotaTariffCreate</li><li>quotaTariffUpdate</li><li>createSecondaryStorageSelector</li><li>updateSecondaryStorageSelector</li><li>updateHost</li><li>updateStorage</li></ul><p>This issue affects Apache CloudStack: from 4.18.0 before 4.20.2, from 4.21.0 before 4.22.0.&nbsp;Users are recommended to upgrade to versions 4.20.2 or 4.22.0, which contain the fix.</p><p>The fix introduces a new global configuration flag, <strong><code>js.interpretation.enabled</code></strong>, allowing administrators to control the interpretation of JavaScript expressions in these APIs, thereby mitigating the code injection risk.</p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/hwhxvtwp1d5dsm156bsf1cnyvtmrfv3f">https://lists.apache.org/thread/hwhxvtwp1d5dsm156bsf1cnyvtmrfv3f</a></li>
+<li><a href="https://lists.apache.org/thread/kwwsg2j85f1b75o0ht5zbr34d7h66788">https://lists.apache.org/thread/kwwsg2j85f1b75o0ht5zbr34d7h66788</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>This issue was reported by v3ged0ge</li>
+<li>Tianyi Cheng <a href="mailto:chengtianyi@huawei.com">chengtianyi@huawei.com</a> (finder)</li>
 </ul>
-<h2 id="CVE-2024-29006">x-forwarded-for HTTP header parsed by default</h2>
-<p>CVE-2024-29006 <a href="./CVE-2024-29006.cve.json">[CVE json]</a> <a href="./CVE-2024-29006.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-04-04T10:59:16.384Z</em></p>
+<h2 id="CVE-2025-47849">Insecure access of user&rsquo;s API/Secret Keys in the same domain</h2>
+<p>CVE-2025-47849 <a href="https://cve.org/CVERecord?id=CVE-2025-47849">[CVE]</a> <a href="./CVE-2025-47849.cve.json">[CVE json]</a> <a href="./CVE-2025-47849.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-06-11T03:59:42.176Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.11.0.0 through 4.18.1.0, 4.19.0.0</li>
+<li>Apache CloudStack from 4.10.0 before 4.19.3.0</li>
+<li>Apache CloudStack from 4.20.0.0 before 4.20.1.0</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<div>By default the CloudStack management server honours the x-forwarded-for HTTP header and logs it as the source IP of an API request. This could lead to authentication bypass and other operational problems should an attacker decide to spoof their IP address this way. Users are recommended to upgrade to CloudStack version 4.18.1.1 or 4.19.0.1, which fixes this issue.</div>
+<div><span style="background-color: rgba(232, 232, 232, 0.04);"><span style="background-color: rgba(232, 232, 232, 0.04);">A privilege escalation vulnerability exists in Apache CloudStack versions 4.10.0.0 through 4.20.0.0 where a malicious Domain Admin user in the ROOT domain can get the API key and secret key of user-accounts of Admin role type in the same domain. This operation is not appropriately restricted and allows the attacker to assume control over higher-privileged user-accounts. </span><span style="background-color: rgba(232, 232, 232, 0.04);">A malicious Domain Admin attacker can impersonate an Admin user-account and gain access to sensitive APIs and resources that <span style="background-color: rgb(255, 255, 255);">could result in the compromise of resource integrity and confidentiality, data loss, denial of service, and availability of infrastructure managed by CloudStack.</span><br></span><br><span style="background-color: rgba(232, 232, 232, 0.04);">Users are recommended to upgrade to Apache CloudStack 4.19.3.0 or 4.20.1.0, which fixes the issue with the following:<br></span></span></div><div><ul><li><span style="background-color: rgba(232, 232, 232, 0.04);">Strict validation on Role Type hierarchy: the caller's role must be equal to or higher than the target user's role.&nbsp;</span></li><li><span style="background-color: rgba(232, 232, 232, 0.04);">API privilege comparison: the caller must possess all privileges of the user they are operating on.&nbsp;</span></li><li><span style="background-color: rgba(232, 232, 232, 0.04);">Two new domain-level settings (restricted to the default admin):&nbsp;<br> - role.types.allowed.for.operations.on.accounts.of.same.role.type: Defines which role types are allowed to act on users of the same role type. Default: "Admin, DomainAdmin, ResourceAdmin".&nbsp;<br> - allow.operations.on.users.in.same.account: Allows/disallows user operations within the same account. Default: true.</span></li></ul></div>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp">https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp</a></li>
-<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1">https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1</a></li>
+<li><a href="https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/">https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/</a></li>
+<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/">https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/</a></li>
+<li><a href="https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60">https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>Yuyang Xiao <a href="mailto:superxyyang@gmail.com">superxyyang@gmail.com</a> (finder)</li>
+<li>Kevin Li <a href="mailto:kli74@apple.com">kli74@apple.com</a> (finder)</li>
+<li>Scott Schmitz <a href="mailto:sschmitz@ussignal.com">sschmitz@ussignal.com</a> (finder)</li>
 </ul>
-<h2 id="CVE-2024-29007">When downloading templates or ISOs, the management server and SSVM follow HTTP redirects with potentially dangerous consequences</h2>
-<p>CVE-2024-29007 <a href="./CVE-2024-29007.cve.json">[CVE json]</a> <a href="./CVE-2024-29007.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-04-04T10:58:20.239Z</em></p>
+<h2 id="CVE-2025-47713">Domain Admin can reset Admin password in Root Domain</h2>
+<p>CVE-2025-47713 <a href="https://cve.org/CVERecord?id=CVE-2025-47713">[CVE]</a> <a href="./CVE-2025-47713.cve.json">[CVE json]</a> <a href="./CVE-2025-47713.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-06-11T03:59:55.628Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.9.1.0 through 4.18.1.0, 4.19.0.0</li>
+<li>Apache CloudStack from 4.10.0 before 4.19.3.0</li>
+<li>Apache CloudStack from 4.20.0.0 before 4.20.1.0</li>
 </ul>
 <h3 id="description-3">Description</h3>
-<div>The CloudStack management server and secondary storage VM could be tricked into making requests to restricted or random resources by means of following 301 HTTP redirects presented by external servers when downloading templates or ISOs. Users are recommended to upgrade to version 4.18.1.1 or 4.19.0.1, which fixes this issue.</div>
+<p></p><div><span style="background-color: rgba(232, 232, 232, 0.04);">A privilege escalation vulnerability exists in Apache CloudStack versions 4.10.0.0 through 4.20.0.0 where a malicious Domain Admin user in the ROOT domain can reset the password of user-accounts of Admin role type. This operation is not appropriately restricted and allows the attacker to assume control over higher-privileged user-accounts.&nbsp;</span><span style="background-color: rgba(232, 232, 232, 0.04);">A malicious Domain Admin attacker can impersonate an Admin user-account and gain access to sensitive APIs and resources that&nbsp;<span style="background-color: rgb(255, 255, 255);">could result in the compromise of resource integrity and confidentiality, data loss, denial of service, and availability of infrastructure managed by CloudStack.</span><br><br></span></div><div><span style="background-color: rgba(232, 232, 232, 0.04);">Users are recommended to upgrade to Apache CloudStack 4.19.3.0 or 4.20.1.0, which fixes the issue with the following:<br></span><span style="background-color: rgba(232, 232, 232, 0.04);"><div><ul><li><span style="background-color: rgba(232, 232, 232, 0.04);"><span style="background-color: rgba(232, 232, 232, 0.04);">Strict validation on Role Type hierarchy: the caller's user-account role must be equal to or higher than the target user-account's role.</span></span></li><li><span style="background-color: rgba(232, 232, 232, 0.04);"><span style="background-color: rgba(232, 232, 232, 0.04);">API privilege comparison: the caller must possess all privileges of the user they are operating on. </span></span></li><li><span style="background-color: rgba(232, 232, 232, 0.04);"><span style="background-color: rgba(232, 232, 232, 0.04);">Two new domain-level settings (restricted to the default Admin): <br> - role.types.allowed.for.operations.on.accounts.of.same.role.type: Defines which role types are allowed to act on users of the same role type. Default: "Admin, DomainAdmin, ResourceAdmin". <br>&nbsp; &nbsp;- allow.operations.on.users.in.same.account: Allows/disallows user operations within the same account. Default: true.</span></span></li></ul></div></span></div><p></p>
 <h3 id="references-3">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp">https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp</a></li>
-<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1">https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1</a></li>
+<li><a href="https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/">https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/</a></li>
+<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/">https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/</a></li>
+<li><a href="https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60">https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60</a></li>
 </ul>
 <h3 id="credits-3">Credits</h3>
 <ul>
-<li>Yuyang Xiao <a href="mailto:superxyyang@gmail.com">superxyyang@gmail.com</a> (finder)</li>
+<li>Scott Schmitz <a href="mailto:sschmitz@ussignal.com">sschmitz@ussignal.com</a> (finder)</li>
 </ul>
-<h2 id="CVE-2024-29008">The extraconfig feature can be abused to load hypervisor resources on a VM instance</h2>
-<p>CVE-2024-29008 <a href="./CVE-2024-29008.cve.json">[CVE json]</a> <a href="./CVE-2024-29008.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-04-04T10:58:44.745Z</em></p>
+<h2 id="CVE-2025-30675">Unauthorised template/ISO list access to the domain/resource admins</h2>
+<p>CVE-2025-30675 <a href="https://cve.org/CVERecord?id=CVE-2025-30675">[CVE]</a> <a href="./CVE-2025-30675.cve.json">[CVE json]</a> <a href="./CVE-2025-30675.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-06-11T04:00:06.854Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.14.0.0 through 4.18.1.0, 4.19.0.0</li>
+<li>Apache CloudStack from 4.0.0 before 4.19.3.0</li>
+<li>Apache CloudStack from 4.20.0.0 before 4.20.1.0</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<div>A problem has been identified in the CloudStack additional VM configuration (extraconfig) feature which can be misused by anyone who has privilege to deploy a VM instance or configure settings of an already deployed VM instance, to configure additional VM configuration even when the feature is not explicitly enabled by the administrator. In a KVM based CloudStack environment, an attacker can exploit this issue to&nbsp;attach host devices such as storage disks, and PCI and USB devices such as network adapters and GPUs, in a regular VM instance that can be further exploited to gain access to the underlying network and storage infrastructure resources, and access any VM instance disks on the local storage.</div><br><div>Users are advised to upgrade to version 4.18.1.1 or 4.19.0.1, which fixes this issue.<br></div>
+<div><span style="background-color: rgba(232, 232, 232, 0.04);">In Apache CloudStack, a flaw in access control affects the listTemplates and listIsos APIs. A malicious Domain Admin or Resource Admin can exploit this issue by intentionally specifying the 'domainid' parameter along with the 'filter=self' or 'filter=selfexecutable' values. This allows the attacker to gain unauthorized visibility into templates and ISOs under the ROOT domain.</span></div><div><span style="background-color: rgba(232, 232, 232, 0.04);">A malicious admin can enumerate and extract metadata of templates and ISOs that belong to unrelated domains, violating isolation boundaries and potentially exposing sensitive or internal configuration details.&nbsp;</span></div><div><span style="background-color: rgba(232, 232, 232, 0.04);">This vulnerability has been fixed by ensuring the domain resolution strictly adheres to the caller's scope rather than defaulting to the ROOT domain.</span></div><div><span style="background-color: rgba(232, 232, 232, 0.04);"><br></span></div><div><span style="background-color: rgba(232, 232, 232, 0.04);">Affected users are recommended to upgrade to Apache CloudStack 4.19.3.0 or 4.20.1.0.</span></div>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp">https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp</a></li>
-<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1">https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1</a></li>
+<li><a href="https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/">https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/</a></li>
+<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/">https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/</a></li>
+<li><a href="https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60">https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>Wei Zhou <a href="mailto:ustcweizhou@gmail.com">ustcweizhou@gmail.com</a> (finder)</li>
+<li>Bernardo De Marco Gonçalves <a href="mailto:bernardomg2004@gmail.com">bernardomg2004@gmail.com</a> (finder)</li>
 </ul>
-<h2 id="CVE-2024-38346">Unauthenticated cluster service port leads to remote execution</h2>
-<p>CVE-2024-38346 <a href="./CVE-2024-38346.cve.json">[CVE json]</a> <a href="./CVE-2024-38346.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-05T13:39:11.185Z</em></p>
+<h2 id="CVE-2025-26521">CKS cluster in project exposes user API keys</h2>
+<p>CVE-2025-26521 <a href="https://cve.org/CVERecord?id=CVE-2025-26521">[CVE]</a> <a href="./CVE-2025-26521.cve.json">[CVE json]</a> <a href="./CVE-2025-26521.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-06-11T04:00:17.648Z</em></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.0.0 through 4.18.2.0</li>
-<li>Apache CloudStack from 4.19.0.0 through 4.19.0.1</li>
+<li>Apache CloudStack from 4.17.0.0 before 4.19.3.0</li>
+<li>Apache CloudStack from 4.20.0.0 before 4.20.1.0</li>
 </ul>
 <h3 id="description-5">Description</h3>
-<p>The CloudStack cluster service runs on unauthenticated port (default 9090) that can be misused to run arbitrary commands on targeted hypervisors and CloudStack management server hosts. Some of these commands were found to have command injection vulnerabilities that can result in arbitrary code execution via agents on the hosts that may run as a privileged user.&nbsp;<span style="background-color: rgb(255, 255, 255);">An attacker that can reach the cluster service on the unauthenticated&nbsp;port (default 9090), can exploit this to perform remote code execution on CloudStack managed hosts and result in complete</span>&nbsp;compromise of the confidentiality, integrity, and availability of CloudStack managed infrastructure.</p><span style="background-color: rgb(255, 255, 255);"><div><span style="background-color: rgb(255, 255, 255);"><br></span></div><div><span style="background-color: rgb(255, 255, 255);">Users are recommended to restrict the network access to the cluster service port (default 9090) on a CloudStack management server host to only its peer CloudStack management server hosts.&nbsp;</span>Users are recommended to upgrade to version 4.18.2.1, 4.19.0.2 or later, which addresses this issue.</div></span>
+<p>When an Apache CloudStack user-account creates a CKS-based Kubernetes cluster in a project, the API key and the secret key of the &lsquo;kubeadmin&rsquo; user of the caller account are used to create the secret config in the CKS-based Kubernetes cluster. A member of the project who can access the CKS-based Kubernetes cluster, can also access the API key and secret key of the &lsquo;kubeadmin&rsquo; user of the CKS cluster&rsquo;s creator&rsquo;s account. An attacker who&rsquo;s a member of the project can exploit this to impersonate and perform privileged actions that can result in complete compromise of the confidentiality, integrity, and availability of resources owned by the creator&rsquo;s account.<br><br>CKS users are recommended to upgrade to version 4.19.3.0 or 4.20.1.0, which fixes this issue.<h3>Updating Existing Kubernetes Clusters in Projects</h3>A <b>service account</b> should be created for each project to provide limited access specifically for Kubernetes cluster providers and autoscaling. Follow the steps below to create a new service account, update the secret inside the cluster, and regenerate existing API and service keys:<h3>1. Create a New Service Account</h3><div>Create a new account using the role <b>&ldquo;Project Kubernetes Service Role&rdquo;</b> with the following details:</div><div><table><tbody><tr><td><b>Account Name</b><br></td><td>kubeadmin-&lt;FIRST_EIGHT_CHARACTERS_OF_PROJECT_ID&gt;<br></td></tr><tr><td><b>First Name</b><br></td><td>Kubernetes<br></td></tr><tr><td><b>Last Name</b><br></td><td>Service User<br></td></tr><tr><td><b>Account Type</b><br></td><td>0 (Normal User)<br></td></tr><tr><td><b>Role ID</b><br></td><td>&lt;ID_OF_SERVICE_ROLE&gt;<br></td></tr></tbody></table><br></div><h3>2. Add the Service Account to the Project</h3>Add this account to the <b>project</b> where the Kubernetes cluster(s) are hosted.<br><h3>3. Generate API and Secret Keys</h3>Generate <b>API Key</b> and <b>Secret Key</b> for the <i>default user</i> of this account.<br><h3>4. Update the CloudStack Secret in the Kubernetes Cluster</h3>Create a temporary file <code>/tmp/cloud-config</code> with the following data:<br>  <tt> api-url = &lt;API_URL&gt;       # For example: &lt;MS_URL&gt;/client/api<br>  api-key = &lt;SERVICE_USER_API_KEY&gt;<br>  secret-key = &lt;SERVICE_USER_SECRET_KEY&gt;<br></tt><div><tt>  project-id = &lt;PROJECT_ID&gt;</tt></div><div><tt><br></tt></div>Delete the existing secret using kubectl and Kubernetes cluster config:<br><div>  <tt> ./kubectl &ndash;kubeconfig kube.conf -n kube-system delete secret cloudstack-secret</tt></div><div><tt><br></tt></div>Create a new secret using kubectl and Kubernetes cluster config:<br><div>    ./kubectl &ndash;kubeconfig kube.conf -n kube-system create secret generic cloudstack-secret &ndash;from-file=/tmp/cloud-config</div><div><br></div>Remove the temporary file:<br>    rm /tmp/cloud-config<h3>5. Regenerate API and Secret Keys</h3>Regenerate the API and secret keys for the <b>original user account</b> that was used to create the Kubernetes cluster.<br></p>
 <h3 id="references-5">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/6l51r00csrct61plkyd3qg3fj99215d1">https://lists.apache.org/thread/6l51r00csrct61plkyd3qg3fj99215d1</a></li>
-<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.2-4.18.2.1">https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.2-4.18.2.1</a></li>
-<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-1-and-4-19-0-2/">https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-1-and-4-19-0-2/</a></li>
+<li><a href="https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/">https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/</a></li>
+<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/">https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/</a></li>
+<li><a href="https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60">https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60</a></li>
 </ul>
 <h3 id="credits-5">Credits</h3>
 <ul>
-<li>Adam Pond of Apple Services Engineering Security (finder)</li>
-<li>Terry Thibault of Apple Services Engineering Security (finder)</li>
-<li>Damon Smith of Apple Services Engineering Security (finder)</li>
+<li>Wei Zhou (<a href="mailto:weizhou@apache.org">weizhou@apache.org</a>) (finder)</li>
 </ul>
-<h2 id="CVE-2024-39864">Integration API service uses dynamic port when disabled</h2>
-<p>CVE-2024-39864 <a href="./CVE-2024-39864.cve.json">[CVE json]</a> <a href="./CVE-2024-39864.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-05T13:39:23.006Z</em></p>
+<h2 id="CVE-2025-22829">Unauthorised access to dedicated resources in Quota plugin</h2>
+<p>CVE-2025-22829 <a href="https://cve.org/CVERecord?id=CVE-2025-22829">[CVE]</a> <a href="./CVE-2025-22829.cve.json">[CVE json]</a> <a href="./CVE-2025-22829.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-06-11T04:00:28.410Z</em></p>
 <h3 id="affected-6">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.0.0 through 4.18.2.0</li>
-<li>Apache CloudStack from 4.19.0.0 through 4.19.0.1</li>
+<li>Apache CloudStack from 4.20.0.0 before 4.20.1.0</li>
 </ul>
 <h3 id="description-6">Description</h3>
-<div><p>The CloudStack integration API service allows running its unauthenticated API server (usually on port 8096 when configured and enabled via integration.api.port global setting) for internal portal integrations and for testing purposes. By default, the integration API service port is disabled and is considered disabled when integration.api.port is set to 0 or negative. Due to an improper initialisation logic, the integration API service would listen on a random port when its port value is set to 0 (default value).&nbsp;<span style="background-color: rgb(255, 255, 255);">An attacker that can access the CloudStack management network could scan and find the randomised integration API service port and exploit it to perform unauthorised administrative actions and perform remote code execution on CloudStack managed hosts and result in complete</span>&nbsp;compromise of the confidentiality, integrity, and availability of CloudStack managed infrastructure.<span style="background-color: rgb(255, 255, 255);"><br></span></p><span style="background-color: rgb(255, 255, 255);"><div><span style="background-color: rgb(255, 255, 255);">Users are recommended to restrict the network access on the CloudStack management server hosts to only essential ports. </span>Users are recommended to upgrade to version 4.18.2.1, 4.19.0.2 or later, which addresses this issue.</div></span></div>
+<p>The CloudStack Quota plugin has an improper privilege management logic in version 4.20.0.0. Anyone with authenticated user-account access in CloudStack 4.20.0.0 environments, where this plugin is enabled and have access to specific APIs can enable or disable reception of quota-related emails for any account in the environment and list their configurations.<br><br>Quota plugin users using CloudStack 4.20.0.0 are recommended to upgrade to CloudStack version 4.20.1.0, which fixes this issue.</p>
 <h3 id="references-6">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/6l51r00csrct61plkyd3qg3fj99215d1">https://lists.apache.org/thread/6l51r00csrct61plkyd3qg3fj99215d1</a></li>
-<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.2-4.18.2.1">https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.2-4.18.2.1</a></li>
-<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-1-and-4-19-0-2/">https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-1-and-4-19-0-2/</a></li>
+<li><a href="https://cloudstack.staged.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0">https://cloudstack.staged.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0</a></li>
+<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/">https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/</a></li>
+<li><a href="https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60">https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60</a></li>
 </ul>
 <h3 id="credits-6">Credits</h3>
 <ul>
-<li>Adam Pond of Apple Services Engineering Security (finder)</li>
-<li>Terry Thibault of Apple Services Engineering Security (finder)</li>
-<li>Damon Smith of Apple Services Engineering Security (finder)</li>
+<li>Fabricio Duarte <a href="mailto:fabricio.duarte.jr@gmail.com">fabricio.duarte.jr@gmail.com</a> (finder)</li>
 </ul>
-<h2 id="CVE-2024-41107">SAML Signature Exclusion</h2>
-<p>CVE-2024-41107 <a href="./CVE-2024-41107.cve.json">[CVE json]</a> <a href="./CVE-2024-41107.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-19T10:11:15.224Z</em></p>
+<h2 id="CVE-2025-22828">Unauthorised access to annotations</h2>
+<p>CVE-2025-22828 <a href="https://cve.org/CVERecord?id=CVE-2025-22828">[CVE]</a> <a href="./CVE-2025-22828.cve.json">[CVE json]</a> <a href="./CVE-2025-22828.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-01-13T12:40:18.771Z</em></p>
 <h3 id="affected-7">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.5.0 through 4.18.2.1</li>
-<li>Apache CloudStack from 4.19.0.0 through 4.19.0.2</li>
+<li>Apache CloudStack from 4.16.0 through *</li>
 </ul>
 <h3 id="description-7">Description</h3>
-<div>The CloudStack SAML authentication (disabled by default) does not enforce signature check. In CloudStack environments where SAML authentication is enabled, an attacker that initiates CloudStack SAML single sign-on authentication can bypass SAML authentication by submitting a spoofed SAML response with no signature and <span style="background-color: rgb(255, 255, 255);">known or guessed username and other user details of a SAML-enabled CloudStack user-account</span>.&nbsp;In such environments, this can result in a complete compromise of the resources owned and/or accessible by a SAML enabled user-account.<br></div><div><br><span style="background-color: rgb(255, 255, 255);">Affected users are recommended to disable the SAML authentication plugin by setting the&nbsp;"saml2.enabled" global setting to "false", or upgrade to version 4.18.2.2, 4.19.1.0 or later, which addresses this issue.</span></div>
+<div>CloudStack users can add and read comments (annotations) on resources they are authorised to access.&nbsp;</div><div>Due to an access validation issue that affects Apache CloudStack versions from 4.16.0, users who have access, prior access or knowledge of resource UUIDs can list and add comments (annotations) to such resources.&nbsp;</div><div>An attacker with a user-account and access or prior knowledge of resource UUIDs may exploit this issue to read contents of the comments (annotations) or add malicious comments (annotations) to such resources.&nbsp;</div><div>This may cause potential loss of confidentiality of CloudStack environments and resources if the comments (annotations) contain any privileged information. However, guessing or brute-forcing resource UUIDs are generally hard to impossible and access to listing or adding comments isn't same as access to CloudStack resources, making this issue of very low severity and general low impact.</div><br><div>CloudStack admins may also disallow listAnnotations and addAnnotation API access to non-admin roles in their environment as an interim measure.</div><br>
 <h3 id="references-7">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/5q06g8zvmhcw6w3tjr6r5prqdw6zckg3">https://lists.apache.org/thread/5q06g8zvmhcw6w3tjr6r5prqdw6zckg3</a></li>
-<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-cve-2024-41107">https://cloudstack.apache.org/blog/security-release-advisory-cve-2024-41107</a></li>
-<li><a href="https://github.com/apache/cloudstack/issues/4519">https://github.com/apache/cloudstack/issues/4519</a></li>
-<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-cve-2024-41107">https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-cve-2024-41107</a></li>
+<li><a href="https://lists.apache.org/thread/bbsm9fdwrgfyostzojh6ghpocgdmx8rs">https://lists.apache.org/thread/bbsm9fdwrgfyostzojh6ghpocgdmx8rs</a></li>
 </ul>
 <h3 id="credits-7">Credits</h3>
 <ul>
-<li>Christian Gross of Netcloud AG (finder)</li>
-<li>Damon Smith of Apple Services Engineering Security (finder)</li>
-<li>Adam Pond of Apple Services Engineering Security (finder)</li>
-<li>Terry Thibault of Apple Services Engineering Security (finder)</li>
+<li>Alex Perrakis <a href="mailto:alexperrakis1@gmail.com">alexperrakis1@gmail.com</a> (reporter)</li>
+<li>Efstratios Chatzoglou <a href="mailto:efchatzoglou@gmail.com">efchatzoglou@gmail.com</a> (reporter)</li>
 </ul>
-<h2 id="CVE-2024-42062">User Key Exposure to Domain Admins</h2>
-<p>CVE-2024-42062 <a href="./CVE-2024-42062.cve.json">[CVE json]</a> <a href="./CVE-2024-42062.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-08-19T13:43:36.243Z</em></p>
+<h2 id="CVE-2024-50386">Directly downloaded templates can be used to abuse KVM-based infrastructure</h2>
+<p>CVE-2024-50386 <a href="https://cve.org/CVERecord?id=CVE-2024-50386">[CVE]</a> <a href="./CVE-2024-50386.cve.json">[CVE json]</a> <a href="./CVE-2024-50386.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-11-12T13:52:37.947Z</em></p>
 <h3 id="affected-8">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.10.0 through 4.18.2.2</li>
-<li>Apache CloudStack from 4.19.0.0 through 4.19.1.0</li>
+<li>Apache CloudStack from 4.0.0 through 4.18.2.4</li>
+<li>Apache CloudStack from 4.19.0.0 through 4.19.1.2</li>
 </ul>
 <h3 id="description-8">Description</h3>
-<p>CloudStack account-users by default use username and password based authentication for API and UI access. Account-users can<span style="background-color: rgb(255, 255, 255);"> generate and register randomised API and secret keys and use them for the purpose of API-based automation and integrations. </span><span style="background-color: rgb(255, 255, 255);">Due to an access permission validation issue that affects Apache CloudStack versions 4.10.0 up to 4.19.1.0, domain admin accounts were found to be able to query all registered account-users API and secret keys in an environment, including that of a root admin. </span>An attacker who has domain admin access can exploit this to gain root admin and other-account privileges and perform malicious operations that can result in compromise of resources integrity and confidentiality, data loss, <span style="background-color: rgb(255, 255, 255);">denial of service</span> and availability of CloudStack managed infrastructure.<br><br>Users are recommended to upgrade to Apache CloudStack 4.18.2.3 or 4.19.1.1, or later, which addresses this issue. Additionally, all account-user API and secret keys should be regenerated.<br></p>
+<p>Account users in Apache CloudStack by default are allowed to register templates to be downloaded directly to the primary storage for deploying instances. Due to missing validation checks for KVM-compatible templates in CloudStack 4.0.0 through 4.18.2.4 and 4.19.0.0 through 4.19.1.2, an attacker that can register templates, can use them to deploy malicious instances on KVM-based environments and exploit this to gain access to the host filesystems that could result in the compromise of resource integrity and confidentiality, data loss, denial of service, and availability of KVM-based infrastructure managed by CloudStack.<div><br></div><div><span style="background-color: rgb(252, 252, 252);">Users are recommended to upgrade to Apache CloudStack 4.18.2.5 or 4.19.1.3, or later, which addresses this issue. <br><br></span>Additionally, all user-registered KVM-compatible templates can be scanned and checked that they are flat files that should not be using any additional or unnecessary features. For example, operators can run the following command on their file-based primary storage(s) and inspect the output. An empty output for the disk being validated means it has no references to the host filesystems; on the other hand, if the output for the disk being validated is not empty, it might indicate a compromised disk. H<span style="background-color: rgb(255, 255, 255);">owever, bear in mind that (i) volumes created from templates will have references for the templates at first and (ii) volumes can be consolidated while migrating, losing their references to the templates. Therefore, the command execution for the primary storages can show both false positives and false negatives.</span><br></div><blockquote>for file in $(find /path/to/storage/ -type f -regex [a-f0-9-]<em>.</em>); do echo &ldquo;Retrieving file [$file] info. If the output is not empty, that might indicate a compromised disk; check it carefully.&rdquo;; qemu-img info -U $file | grep file: ; printf &ldquo;\n\n&rdquo;; done</blockquote><div><br>For checking the whole template/volume features of each disk, operators can run the following command:<br></div><blockquote>for file in $(find /path/to/storage/ -type f -regex [a-f0-9-]<em>.</em>); do echo &ldquo;Retrieving file [$file] info.&rdquo;; qemu-img info -U $file; printf &ldquo;\n\n&rdquo;; done</blockquote><div><span style="background-color: rgb(252, 252, 252);"><br></span></div><br></p>
 <h3 id="references-8">References</h3>
 <ul>
-<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.19.1.1-4.18.2.3">https://cloudstack.apache.org/blog/security-release-advisory-4.19.1.1-4.18.2.3</a></li>
-<li><a href="https://lists.apache.org/thread/lxqtfd6407prbw3801hb4fz3ot3t8wlj">https://lists.apache.org/thread/lxqtfd6407prbw3801hb4fz3ot3t8wlj</a></li>
-<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-3-and-4-19-1-1/">https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-3-and-4-19-1-1/</a></li>
+<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.18.2.5-4.19.1.3">https://cloudstack.apache.org/blog/security-release-advisory-4.18.2.5-4.19.1.3</a></li>
+<li><a href="https://lists.apache.org/thread/d0x83c2cyglzzdw8csbop7mj7h83z95y">https://lists.apache.org/thread/d0x83c2cyglzzdw8csbop7mj7h83z95y</a></li>
+<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-5-and-4-19-1-3/">https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-5-and-4-19-1-3/</a></li>
 </ul>
 <h3 id="credits-8">Credits</h3>
 <ul>
-<li>Fabricio Duarte (finder)</li>
+<li>Kiran Chavala <a href="mailto:kiranchavala@apache.org">kiranchavala@apache.org</a> (reporter)</li>
 </ul>
-<h2 id="CVE-2024-42222">Unauthorised Network List Access</h2>
-<p>CVE-2024-42222 <a href="./CVE-2024-42222.cve.json">[CVE json]</a> <a href="./CVE-2024-42222.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-08-07T06:49:40.024Z</em></p>
+<h2 id="CVE-2024-45693">Request origin validation bypass makes account takeover possible</h2>
+<p>CVE-2024-45693 <a href="https://cve.org/CVERecord?id=CVE-2024-45693">[CVE]</a> <a href="./CVE-2024-45693.cve.json">[CVE json]</a> <a href="./CVE-2024-45693.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-10-16T10:39:13.974Z</em></p>
 <h3 id="affected-9">Affected</h3>
 <ul>
-<li>Apache CloudStack at 4.19.1.0</li>
+<li>Apache CloudStack from 4.15.1.0 through 4.18.2.3</li>
+<li>Apache CloudStack from 4.19.0.0 through 4.19.1.1</li>
 </ul>
 <h3 id="description-9">Description</h3>
-<div>In Apache CloudStack 4.19.1.0, a regression in the network listing API allows unauthorised list access of network details for domain admin and normal user accounts. This vulnerability compromises tenant isolation, potentially leading to unauthorised access to network details, configurations and data.<br><br>Affected users are advised to upgrade to version 4.19.1.1 to address this issue. Users on older versions of CloudStack considering to upgrade, can skip 4.19.1.0 and upgrade directly to 4.19.1.1.<br></div>
+<p>Users logged into the Apache CloudStack's web interface can be tricked to submit malicious CSRF requests due to missing validation of the origin of the requests. This can allow an attacker to gain privileges and access to resources of the authenticated users and may lead<span style="background-color: rgb(255, 255, 255);">&nbsp;to account takeover,&nbsp;</span>disruption, exposure of sensitive data and compromise integrity of the resources owned by the user account that are managed by the platform.</p><p>This issue affects Apache CloudStack from 4.15.1.0 through 4.18.2.3 and 4.19.0.0 through 4.19.1.1</p><p></p><div><span style="background-color: rgb(252, 252, 252);">Users are recommended to upgrade to Apache CloudStack 4.18.2.4 or 4.19.1.2, or later, which addresses this issue.</span><br></div><div><div><div><div></div></div></div></div><div></div><p></p>
 <h3 id="references-9">References</h3>
 <ul>
-<li><a href="https://github.com/apache/cloudstack/issues/9456">https://github.com/apache/cloudstack/issues/9456</a></li>
-<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.19.1.1-4.18.2.3">https://cloudstack.apache.org/blog/security-release-advisory-4.19.1.1-4.18.2.3</a></li>
-<li><a href="https://lists.apache.org/thread/lxqtfd6407prbw3801hb4fz3ot3t8wlj">https://lists.apache.org/thread/lxqtfd6407prbw3801hb4fz3ot3t8wlj</a></li>
-<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-3-and-4-19-1-1/">https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-3-and-4-19-1-1/</a></li>
+<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.18.2.4-4.19.1.2">https://cloudstack.apache.org/blog/security-release-advisory-4.18.2.4-4.19.1.2</a></li>
+<li><a href="https://lists.apache.org/thread/ktsfjcnj22x4kg49ctock3d9tq7jnvlo">https://lists.apache.org/thread/ktsfjcnj22x4kg49ctock3d9tq7jnvlo</a></li>
+<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-4-and-4-19-1-2/">https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-4-and-4-19-1-2/</a></li>
 </ul>
 <h3 id="credits-9">Credits</h3>
 <ul>
-<li>Christian Gross of Netcloud AG (finder)</li>
-<li>Midhun Jose (finder)</li>
+<li>Arthur Souza (reporter)</li>
+<li>Felipe Olivaes (reporter)</li>
 </ul>
-<h2 id="CVE-2024-45219">Uploaded and registered templates and volumes can be used to abuse KVM-based infrastructure</h2>
-<p>CVE-2024-45219 <a href="./CVE-2024-45219.cve.json">[CVE json]</a> <a href="./CVE-2024-45219.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-10-15T18:32:48.536Z</em></p>
+<h2 id="CVE-2024-45462">Incomplete session invalidation on web interface logout</h2>
+<p>CVE-2024-45462 <a href="https://cve.org/CVERecord?id=CVE-2024-45462">[CVE]</a> <a href="./CVE-2024-45462.cve.json">[CVE json]</a> <a href="./CVE-2024-45462.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-10-16T10:39:03.528Z</em></p>
 <h3 id="affected-10">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.0.0 through 4.18.2.3</li>
+<li>Apache CloudStack from 4.15.1.0 through 4.18.2.3</li>
 <li>Apache CloudStack from 4.19.0.0 through 4.19.1.1</li>
 </ul>
 <h3 id="description-10">Description</h3>
-<p>Account users in Apache CloudStack by default are allowed to upload and register templates for deploying instances and volumes for attaching them as data disks to their existing instances. Due to missing validation checks for KVM-compatible templates or volumes in CloudStack 4.0.0 through 4.18.2.3 and 4.19.0.0 through 4.19.1.1, an attacker that can upload or register templates and volumes, can use them to deploy malicious instances or attach uploaded volumes to their existing instances on KVM-based environments and exploit this to gain access to the host filesystems that could result in the compromise of resource integrity and confidentiality, data loss, denial of service, and availability of KVM-based infrastructure managed by CloudStack.<div><br></div><div><span style="background-color: rgb(252, 252, 252);">Users are recommended to upgrade to Apache CloudStack 4.18.2.4 or 4.19.1.2, or later, which addresses this issue. <br><br></span>Additionally, all user-uploaded or registered KVM-compatible templates and volumes can be scanned and checked that they are flat files that should not be using any additional or unnecessary features. For example, operators can run this on their secondary storage(s) and inspect output. An empty output for the disk being validated means it has no references to the host filesystems; on the other hand, if the output for the disk being validated is not empty, it might indicate a compromised disk.<br></div><blockquote>for file in $(find /path/to/storage/ -type f -regex [a-f0-9-]<em>.</em>); do echo &ldquo;Retrieving file [$file] info. If the output is not empty, that might indicate a compromised disk; check it carefully.&rdquo;; qemu-img info -U $file | grep file: ; printf &ldquo;\n\n&rdquo;; done</blockquote><div><br>The command can also be run for the file-based primary storages; however, bear in mind that (i) volumes created from templates will have references for the templates at first and (ii) volumes can be consolidated while migrating, losing their references to the templates. Therefore, the command execution for the primary storages can show both false positives and false negatives.<br><br>For checking the whole template/volume features of each disk, operators can run the following command:<br></div><blockquote>for file in $(find /path/to/storage/ -type f -regex [a-f0-9-]<em>.</em>); do echo &ldquo;Retrieving file [$file] info.&rdquo;; qemu-img info -U $file; printf &ldquo;\n\n&rdquo;; done</blockquote><div><span style="background-color: rgb(252, 252, 252);"><br></span></div></p>
+<div>The logout operation in the CloudStack web interface does not expire the user session completely which is valid until expiry by time or restart of the backend service. An attacker that has access to a user's browser can use an unexpired session to gain access to resources owned by the logged out user account. This issue affects Apache CloudStack from 4.15.1.0 through 4.18.2.3; and from 4.19.0.0 through 4.19.1.1.</div><div><br></div><div><span style="background-color: rgb(252, 252, 252);">Users are recommended to upgrade to Apache CloudStack 4.18.2.4 or 4.19.1.2, or later, which addresses this issue.</span></div>
 <h3 id="references-10">References</h3>
 <ul>
 <li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.18.2.4-4.19.1.2">https://cloudstack.apache.org/blog/security-release-advisory-4.18.2.4-4.19.1.2</a></li>
@@ -321,10 +324,11 @@
 </ul>
 <h3 id="credits-10">Credits</h3>
 <ul>
-<li>Daniel Augusto Veronezi Salvador <a href="mailto:gutoveronezi@apache.org">gutoveronezi@apache.org</a> (reporter)</li>
+<li>Arthur Souza (reporter)</li>
+<li>Felipe Olivaes (reporter)</li>
 </ul>
 <h2 id="CVE-2024-45461">Access checks not enforced in Quota</h2>
-<p>CVE-2024-45461 <a href="./CVE-2024-45461.cve.json">[CVE json]</a> <a href="./CVE-2024-45461.osv.json">[OSV json]</a></p>
+<p>CVE-2024-45461 <a href="https://cve.org/CVERecord?id=CVE-2024-45461">[CVE]</a> <a href="./CVE-2024-45461.cve.json">[CVE json]</a> <a href="./CVE-2024-45461.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-02-12T09:30:16.539Z</em></p>
 <h3 id="affected-11">Affected</h3>
 <ul>
@@ -343,16 +347,16 @@
 <ul>
 <li>Fabrício Duarte <a href="mailto:fabricio.duarte.jr@gmail.com">fabricio.duarte.jr@gmail.com</a> (reporter)</li>
 </ul>
-<h2 id="CVE-2024-45462">Incomplete session invalidation on web interface logout</h2>
-<p>CVE-2024-45462 <a href="./CVE-2024-45462.cve.json">[CVE json]</a> <a href="./CVE-2024-45462.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-10-16T10:39:03.528Z</em></p>
+<h2 id="CVE-2024-45219">Uploaded and registered templates and volumes can be used to abuse KVM-based infrastructure</h2>
+<p>CVE-2024-45219 <a href="https://cve.org/CVERecord?id=CVE-2024-45219">[CVE]</a> <a href="./CVE-2024-45219.cve.json">[CVE json]</a> <a href="./CVE-2024-45219.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-10-15T18:32:48.536Z</em></p>
 <h3 id="affected-12">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.15.1.0 through 4.18.2.3</li>
+<li>Apache CloudStack from 4.0.0 through 4.18.2.3</li>
 <li>Apache CloudStack from 4.19.0.0 through 4.19.1.1</li>
 </ul>
 <h3 id="description-12">Description</h3>
-<div>The logout operation in the CloudStack web interface does not expire the user session completely which is valid until expiry by time or restart of the backend service. An attacker that has access to a user's browser can use an unexpired session to gain access to resources owned by the logged out user account. This issue affects Apache CloudStack from 4.15.1.0 through 4.18.2.3; and from 4.19.0.0 through 4.19.1.1.</div><div><br></div><div><span style="background-color: rgb(252, 252, 252);">Users are recommended to upgrade to Apache CloudStack 4.18.2.4 or 4.19.1.2, or later, which addresses this issue.</span></div>
+<p>Account users in Apache CloudStack by default are allowed to upload and register templates for deploying instances and volumes for attaching them as data disks to their existing instances. Due to missing validation checks for KVM-compatible templates or volumes in CloudStack 4.0.0 through 4.18.2.3 and 4.19.0.0 through 4.19.1.1, an attacker that can upload or register templates and volumes, can use them to deploy malicious instances or attach uploaded volumes to their existing instances on KVM-based environments and exploit this to gain access to the host filesystems that could result in the compromise of resource integrity and confidentiality, data loss, denial of service, and availability of KVM-based infrastructure managed by CloudStack.<div><br></div><div><span style="background-color: rgb(252, 252, 252);">Users are recommended to upgrade to Apache CloudStack 4.18.2.4 or 4.19.1.2, or later, which addresses this issue. <br><br></span>Additionally, all user-uploaded or registered KVM-compatible templates and volumes can be scanned and checked that they are flat files that should not be using any additional or unnecessary features. For example, operators can run this on their secondary storage(s) and inspect output. An empty output for the disk being validated means it has no references to the host filesystems; on the other hand, if the output for the disk being validated is not empty, it might indicate a compromised disk.<br></div><blockquote>for file in $(find /path/to/storage/ -type f -regex [a-f0-9-]<em>.</em>); do echo &ldquo;Retrieving file [$file] info. If the output is not empty, that might indicate a compromised disk; check it carefully.&rdquo;; qemu-img info -U $file | grep file: ; printf &ldquo;\n\n&rdquo;; done</blockquote><div><br>The command can also be run for the file-based primary storages; however, bear in mind that (i) volumes created from templates will have references for the templates at first and (ii) volumes can be consolidated while migrating, losing their references to the templates. Therefore, the command execution for the primary storages can show both false positives and false negatives.<br><br>For checking the whole template/volume features of each disk, operators can run the following command:<br></div><blockquote>for file in $(find /path/to/storage/ -type f -regex [a-f0-9-]<em>.</em>); do echo &ldquo;Retrieving file [$file] info.&rdquo;; qemu-img info -U $file; printf &ldquo;\n\n&rdquo;; done</blockquote><div><span style="background-color: rgb(252, 252, 252);"><br></span></div></p>
 <h3 id="references-12">References</h3>
 <ul>
 <li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.18.2.4-4.19.1.2">https://cloudstack.apache.org/blog/security-release-advisory-4.18.2.4-4.19.1.2</a></li>
@@ -361,209 +365,205 @@
 </ul>
 <h3 id="credits-12">Credits</h3>
 <ul>
-<li>Arthur Souza (reporter)</li>
-<li>Felipe Olivaes (reporter)</li>
+<li>Daniel Augusto Veronezi Salvador <a href="mailto:gutoveronezi@apache.org">gutoveronezi@apache.org</a> (reporter)</li>
 </ul>
-<h2 id="CVE-2024-45693">Request origin validation bypass makes account takeover possible</h2>
-<p>CVE-2024-45693 <a href="./CVE-2024-45693.cve.json">[CVE json]</a> <a href="./CVE-2024-45693.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-10-16T10:39:13.974Z</em></p>
+<h2 id="CVE-2024-42222">Unauthorised Network List Access</h2>
+<p>CVE-2024-42222 <a href="https://cve.org/CVERecord?id=CVE-2024-42222">[CVE]</a> <a href="./CVE-2024-42222.cve.json">[CVE json]</a> <a href="./CVE-2024-42222.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-08-07T06:49:40.024Z</em></p>
 <h3 id="affected-13">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.15.1.0 through 4.18.2.3</li>
-<li>Apache CloudStack from 4.19.0.0 through 4.19.1.1</li>
+<li>Apache CloudStack at 4.19.1.0</li>
 </ul>
 <h3 id="description-13">Description</h3>
-<p>Users logged into the Apache CloudStack's web interface can be tricked to submit malicious CSRF requests due to missing validation of the origin of the requests. This can allow an attacker to gain privileges and access to resources of the authenticated users and may lead<span style="background-color: rgb(255, 255, 255);">&nbsp;to account takeover,&nbsp;</span>disruption, exposure of sensitive data and compromise integrity of the resources owned by the user account that are managed by the platform.</p><p>This issue affects Apache CloudStack from 4.15.1.0 through 4.18.2.3 and 4.19.0.0 through 4.19.1.1</p><p></p><div><span style="background-color: rgb(252, 252, 252);">Users are recommended to upgrade to Apache CloudStack 4.18.2.4 or 4.19.1.2, or later, which addresses this issue.</span><br></div><div><div><div><div></div></div></div></div><div></div><p></p>
+<div>In Apache CloudStack 4.19.1.0, a regression in the network listing API allows unauthorised list access of network details for domain admin and normal user accounts. This vulnerability compromises tenant isolation, potentially leading to unauthorised access to network details, configurations and data.<br><br>Affected users are advised to upgrade to version 4.19.1.1 to address this issue. Users on older versions of CloudStack considering to upgrade, can skip 4.19.1.0 and upgrade directly to 4.19.1.1.<br></div>
 <h3 id="references-13">References</h3>
 <ul>
-<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.18.2.4-4.19.1.2">https://cloudstack.apache.org/blog/security-release-advisory-4.18.2.4-4.19.1.2</a></li>
-<li><a href="https://lists.apache.org/thread/ktsfjcnj22x4kg49ctock3d9tq7jnvlo">https://lists.apache.org/thread/ktsfjcnj22x4kg49ctock3d9tq7jnvlo</a></li>
-<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-4-and-4-19-1-2/">https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-4-and-4-19-1-2/</a></li>
+<li><a href="https://github.com/apache/cloudstack/issues/9456">https://github.com/apache/cloudstack/issues/9456</a></li>
+<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.19.1.1-4.18.2.3">https://cloudstack.apache.org/blog/security-release-advisory-4.19.1.1-4.18.2.3</a></li>
+<li><a href="https://lists.apache.org/thread/lxqtfd6407prbw3801hb4fz3ot3t8wlj">https://lists.apache.org/thread/lxqtfd6407prbw3801hb4fz3ot3t8wlj</a></li>
+<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-3-and-4-19-1-1/">https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-3-and-4-19-1-1/</a></li>
 </ul>
 <h3 id="credits-13">Credits</h3>
 <ul>
-<li>Arthur Souza (reporter)</li>
-<li>Felipe Olivaes (reporter)</li>
+<li>Christian Gross of Netcloud AG (finder)</li>
+<li>Midhun Jose (finder)</li>
 </ul>
-<h2 id="CVE-2024-50386">Directly downloaded templates can be used to abuse KVM-based infrastructure</h2>
-<p>CVE-2024-50386 <a href="./CVE-2024-50386.cve.json">[CVE json]</a> <a href="./CVE-2024-50386.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-11-12T13:52:37.947Z</em></p>
+<h2 id="CVE-2024-42062">User Key Exposure to Domain Admins</h2>
+<p>CVE-2024-42062 <a href="https://cve.org/CVERecord?id=CVE-2024-42062">[CVE]</a> <a href="./CVE-2024-42062.cve.json">[CVE json]</a> <a href="./CVE-2024-42062.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-08-19T13:43:36.243Z</em></p>
 <h3 id="affected-14">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.0.0 through 4.18.2.4</li>
-<li>Apache CloudStack from 4.19.0.0 through 4.19.1.2</li>
+<li>Apache CloudStack from 4.10.0 through 4.18.2.2</li>
+<li>Apache CloudStack from 4.19.0.0 through 4.19.1.0</li>
 </ul>
 <h3 id="description-14">Description</h3>
-<p>Account users in Apache CloudStack by default are allowed to register templates to be downloaded directly to the primary storage for deploying instances. Due to missing validation checks for KVM-compatible templates in CloudStack 4.0.0 through 4.18.2.4 and 4.19.0.0 through 4.19.1.2, an attacker that can register templates, can use them to deploy malicious instances on KVM-based environments and exploit this to gain access to the host filesystems that could result in the compromise of resource integrity and confidentiality, data loss, denial of service, and availability of KVM-based infrastructure managed by CloudStack.<div><br></div><div><span style="background-color: rgb(252, 252, 252);">Users are recommended to upgrade to Apache CloudStack 4.18.2.5 or 4.19.1.3, or later, which addresses this issue. <br><br></span>Additionally, all user-registered KVM-compatible templates can be scanned and checked that they are flat files that should not be using any additional or unnecessary features. For example, operators can run the following command on their file-based primary storage(s) and inspect the output. An empty output for the disk being validated means it has no references to the host filesystems; on the other hand, if the output for the disk being validated is not empty, it might indicate a compromised disk. H<span style="background-color: rgb(255, 255, 255);">owever, bear in mind that (i) volumes created from templates will have references for the templates at first and (ii) volumes can be consolidated while migrating, losing their references to the templates. Therefore, the command execution for the primary storages can show both false positives and false negatives.</span><br></div><blockquote>for file in $(find /path/to/storage/ -type f -regex [a-f0-9-]<em>.</em>); do echo &ldquo;Retrieving file [$file] info. If the output is not empty, that might indicate a compromised disk; check it carefully.&rdquo;; qemu-img info -U $file | grep file: ; printf &ldquo;\n\n&rdquo;; done</blockquote><div><br>For checking the whole template/volume features of each disk, operators can run the following command:<br></div><blockquote>for file in $(find /path/to/storage/ -type f -regex [a-f0-9-]<em>.</em>); do echo &ldquo;Retrieving file [$file] info.&rdquo;; qemu-img info -U $file; printf &ldquo;\n\n&rdquo;; done</blockquote><div><span style="background-color: rgb(252, 252, 252);"><br></span></div><br></p>
+<p>CloudStack account-users by default use username and password based authentication for API and UI access. Account-users can<span style="background-color: rgb(255, 255, 255);"> generate and register randomised API and secret keys and use them for the purpose of API-based automation and integrations. </span><span style="background-color: rgb(255, 255, 255);">Due to an access permission validation issue that affects Apache CloudStack versions 4.10.0 up to 4.19.1.0, domain admin accounts were found to be able to query all registered account-users API and secret keys in an environment, including that of a root admin. </span>An attacker who has domain admin access can exploit this to gain root admin and other-account privileges and perform malicious operations that can result in compromise of resources integrity and confidentiality, data loss, <span style="background-color: rgb(255, 255, 255);">denial of service</span> and availability of CloudStack managed infrastructure.<br><br>Users are recommended to upgrade to Apache CloudStack 4.18.2.3 or 4.19.1.1, or later, which addresses this issue. Additionally, all account-user API and secret keys should be regenerated.<br></p>
 <h3 id="references-14">References</h3>
 <ul>
-<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.18.2.5-4.19.1.3">https://cloudstack.apache.org/blog/security-release-advisory-4.18.2.5-4.19.1.3</a></li>
-<li><a href="https://lists.apache.org/thread/d0x83c2cyglzzdw8csbop7mj7h83z95y">https://lists.apache.org/thread/d0x83c2cyglzzdw8csbop7mj7h83z95y</a></li>
-<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-5-and-4-19-1-3/">https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-5-and-4-19-1-3/</a></li>
+<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.19.1.1-4.18.2.3">https://cloudstack.apache.org/blog/security-release-advisory-4.19.1.1-4.18.2.3</a></li>
+<li><a href="https://lists.apache.org/thread/lxqtfd6407prbw3801hb4fz3ot3t8wlj">https://lists.apache.org/thread/lxqtfd6407prbw3801hb4fz3ot3t8wlj</a></li>
+<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-3-and-4-19-1-1/">https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-3-and-4-19-1-1/</a></li>
 </ul>
 <h3 id="credits-14">Credits</h3>
 <ul>
-<li>Kiran Chavala <a href="mailto:kiranchavala@apache.org">kiranchavala@apache.org</a> (reporter)</li>
+<li>Fabricio Duarte (finder)</li>
 </ul>
-<h2 id="CVE-2025-22828">Unauthorised access to annotations</h2>
-<p>CVE-2025-22828 <a href="./CVE-2025-22828.cve.json">[CVE json]</a> <a href="./CVE-2025-22828.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-01-13T12:40:18.771Z</em></p>
+<h2 id="CVE-2024-41107">SAML Signature Exclusion</h2>
+<p>CVE-2024-41107 <a href="https://cve.org/CVERecord?id=CVE-2024-41107">[CVE]</a> <a href="./CVE-2024-41107.cve.json">[CVE json]</a> <a href="./CVE-2024-41107.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-19T10:11:15.224Z</em></p>
 <h3 id="affected-15">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.16.0 through *</li>
+<li>Apache CloudStack from 4.5.0 through 4.18.2.1</li>
+<li>Apache CloudStack from 4.19.0.0 through 4.19.0.2</li>
 </ul>
 <h3 id="description-15">Description</h3>
-<div>CloudStack users can add and read comments (annotations) on resources they are authorised to access.&nbsp;</div><div>Due to an access validation issue that affects Apache CloudStack versions from 4.16.0, users who have access, prior access or knowledge of resource UUIDs can list and add comments (annotations) to such resources.&nbsp;</div><div>An attacker with a user-account and access or prior knowledge of resource UUIDs may exploit this issue to read contents of the comments (annotations) or add malicious comments (annotations) to such resources.&nbsp;</div><div>This may cause potential loss of confidentiality of CloudStack environments and resources if the comments (annotations) contain any privileged information. However, guessing or brute-forcing resource UUIDs are generally hard to impossible and access to listing or adding comments isn't same as access to CloudStack resources, making this issue of very low severity and general low impact.</div><br><div>CloudStack admins may also disallow listAnnotations and addAnnotation API access to non-admin roles in their environment as an interim measure.</div><br>
+<div>The CloudStack SAML authentication (disabled by default) does not enforce signature check. In CloudStack environments where SAML authentication is enabled, an attacker that initiates CloudStack SAML single sign-on authentication can bypass SAML authentication by submitting a spoofed SAML response with no signature and <span style="background-color: rgb(255, 255, 255);">known or guessed username and other user details of a SAML-enabled CloudStack user-account</span>.&nbsp;In such environments, this can result in a complete compromise of the resources owned and/or accessible by a SAML enabled user-account.<br></div><div><br><span style="background-color: rgb(255, 255, 255);">Affected users are recommended to disable the SAML authentication plugin by setting the&nbsp;"saml2.enabled" global setting to "false", or upgrade to version 4.18.2.2, 4.19.1.0 or later, which addresses this issue.</span></div>
 <h3 id="references-15">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/bbsm9fdwrgfyostzojh6ghpocgdmx8rs">https://lists.apache.org/thread/bbsm9fdwrgfyostzojh6ghpocgdmx8rs</a></li>
+<li><a href="https://lists.apache.org/thread/5q06g8zvmhcw6w3tjr6r5prqdw6zckg3">https://lists.apache.org/thread/5q06g8zvmhcw6w3tjr6r5prqdw6zckg3</a></li>
+<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-cve-2024-41107">https://cloudstack.apache.org/blog/security-release-advisory-cve-2024-41107</a></li>
+<li><a href="https://github.com/apache/cloudstack/issues/4519">https://github.com/apache/cloudstack/issues/4519</a></li>
+<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-cve-2024-41107">https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-cve-2024-41107</a></li>
 </ul>
 <h3 id="credits-15">Credits</h3>
 <ul>
-<li>Alex Perrakis <a href="mailto:alexperrakis1@gmail.com">alexperrakis1@gmail.com</a> (reporter)</li>
-<li>Efstratios Chatzoglou <a href="mailto:efchatzoglou@gmail.com">efchatzoglou@gmail.com</a> (reporter)</li>
+<li>Christian Gross of Netcloud AG (finder)</li>
+<li>Damon Smith of Apple Services Engineering Security (finder)</li>
+<li>Adam Pond of Apple Services Engineering Security (finder)</li>
+<li>Terry Thibault of Apple Services Engineering Security (finder)</li>
 </ul>
-<h2 id="CVE-2025-22829">Unauthorised access to dedicated resources in Quota plugin</h2>
-<p>CVE-2025-22829 <a href="./CVE-2025-22829.cve.json">[CVE json]</a> <a href="./CVE-2025-22829.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-06-11T04:00:28.410Z</em></p>
+<h2 id="CVE-2024-39864">Integration API service uses dynamic port when disabled</h2>
+<p>CVE-2024-39864 <a href="https://cve.org/CVERecord?id=CVE-2024-39864">[CVE]</a> <a href="./CVE-2024-39864.cve.json">[CVE json]</a> <a href="./CVE-2024-39864.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-05T13:39:23.006Z</em></p>
 <h3 id="affected-16">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.20.0.0 before 4.20.1.0</li>
+<li>Apache CloudStack from 4.0.0 through 4.18.2.0</li>
+<li>Apache CloudStack from 4.19.0.0 through 4.19.0.1</li>
 </ul>
 <h3 id="description-16">Description</h3>
-<p>The CloudStack Quota plugin has an improper privilege management logic in version 4.20.0.0. Anyone with authenticated user-account access in CloudStack 4.20.0.0 environments, where this plugin is enabled and have access to specific APIs can enable or disable reception of quota-related emails for any account in the environment and list their configurations.<br><br>Quota plugin users using CloudStack 4.20.0.0 are recommended to upgrade to CloudStack version 4.20.1.0, which fixes this issue.</p>
+<div><p>The CloudStack integration API service allows running its unauthenticated API server (usually on port 8096 when configured and enabled via integration.api.port global setting) for internal portal integrations and for testing purposes. By default, the integration API service port is disabled and is considered disabled when integration.api.port is set to 0 or negative. Due to an improper initialisation logic, the integration API service would listen on a random port when its port value is set to 0 (default value).&nbsp;<span style="background-color: rgb(255, 255, 255);">An attacker that can access the CloudStack management network could scan and find the randomised integration API service port and exploit it to perform unauthorised administrative actions and perform remote code execution on CloudStack managed hosts and result in complete</span>&nbsp;compromise of the confidentiality, integrity, and availability of CloudStack managed infrastructure.<span style="background-color: rgb(255, 255, 255);"><br></span></p><span style="background-color: rgb(255, 255, 255);"><div><span style="background-color: rgb(255, 255, 255);">Users are recommended to restrict the network access on the CloudStack management server hosts to only essential ports. </span>Users are recommended to upgrade to version 4.18.2.1, 4.19.0.2 or later, which addresses this issue.</div></span></div>
 <h3 id="references-16">References</h3>
 <ul>
-<li><a href="https://cloudstack.staged.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0">https://cloudstack.staged.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0</a></li>
-<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/">https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/</a></li>
-<li><a href="https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60">https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60</a></li>
+<li><a href="https://lists.apache.org/thread/6l51r00csrct61plkyd3qg3fj99215d1">https://lists.apache.org/thread/6l51r00csrct61plkyd3qg3fj99215d1</a></li>
+<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.2-4.18.2.1">https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.2-4.18.2.1</a></li>
+<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-1-and-4-19-0-2/">https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-1-and-4-19-0-2/</a></li>
 </ul>
 <h3 id="credits-16">Credits</h3>
 <ul>
-<li>Fabricio Duarte <a href="mailto:fabricio.duarte.jr@gmail.com">fabricio.duarte.jr@gmail.com</a> (finder)</li>
+<li>Adam Pond of Apple Services Engineering Security (finder)</li>
+<li>Terry Thibault of Apple Services Engineering Security (finder)</li>
+<li>Damon Smith of Apple Services Engineering Security (finder)</li>
 </ul>
-<h2 id="CVE-2025-26521">CKS cluster in project exposes user API keys</h2>
-<p>CVE-2025-26521 <a href="./CVE-2025-26521.cve.json">[CVE json]</a> <a href="./CVE-2025-26521.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-06-11T04:00:17.648Z</em></p>
+<h2 id="CVE-2024-38346">Unauthenticated cluster service port leads to remote execution</h2>
+<p>CVE-2024-38346 <a href="https://cve.org/CVERecord?id=CVE-2024-38346">[CVE]</a> <a href="./CVE-2024-38346.cve.json">[CVE json]</a> <a href="./CVE-2024-38346.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-05T13:39:11.185Z</em></p>
 <h3 id="affected-17">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.17.0.0 before 4.19.3.0</li>
-<li>Apache CloudStack from 4.20.0.0 before 4.20.1.0</li>
+<li>Apache CloudStack from 4.0.0 through 4.18.2.0</li>
+<li>Apache CloudStack from 4.19.0.0 through 4.19.0.1</li>
 </ul>
 <h3 id="description-17">Description</h3>
-<p>When an Apache CloudStack user-account creates a CKS-based Kubernetes cluster in a project, the API key and the secret key of the &lsquo;kubeadmin&rsquo; user of the caller account are used to create the secret config in the CKS-based Kubernetes cluster. A member of the project who can access the CKS-based Kubernetes cluster, can also access the API key and secret key of the &lsquo;kubeadmin&rsquo; user of the CKS cluster&rsquo;s creator&rsquo;s account. An attacker who&rsquo;s a member of the project can exploit this to impersonate and perform privileged actions that can result in complete compromise of the confidentiality, integrity, and availability of resources owned by the creator&rsquo;s account.<br><br>CKS users are recommended to upgrade to version 4.19.3.0 or 4.20.1.0, which fixes this issue.<h3>Updating Existing Kubernetes Clusters in Projects</h3>A <b>service account</b> should be created for each project to provide limited access specifically for Kubernetes cluster providers and autoscaling. Follow the steps below to create a new service account, update the secret inside the cluster, and regenerate existing API and service keys:<h3>1. Create a New Service Account</h3><div>Create a new account using the role <b>&ldquo;Project Kubernetes Service Role&rdquo;</b> with the following details:</div><div><table><tbody><tr><td><b>Account Name</b><br></td><td>kubeadmin-&lt;FIRST_EIGHT_CHARACTERS_OF_PROJECT_ID&gt;<br></td></tr><tr><td><b>First Name</b><br></td><td>Kubernetes<br></td></tr><tr><td><b>Last Name</b><br></td><td>Service User<br></td></tr><tr><td><b>Account Type</b><br></td><td>0 (Normal User)<br></td></tr><tr><td><b>Role ID</b><br></td><td>&lt;ID_OF_SERVICE_ROLE&gt;<br></td></tr></tbody></table><br></div><h3>2. Add the Service Account to the Project</h3>Add this account to the <b>project</b> where the Kubernetes cluster(s) are hosted.<br><h3>3. Generate API and Secret Keys</h3>Generate <b>API Key</b> and <b>Secret Key</b> for the <i>default user</i> of this account.<br><h3>4. Update the CloudStack Secret in the Kubernetes Cluster</h3>Create a temporary file <code>/tmp/cloud-config</code> with the following data:<br>  <tt> api-url = &lt;API_URL&gt;       # For example: &lt;MS_URL&gt;/client/api<br>  api-key = &lt;SERVICE_USER_API_KEY&gt;<br>  secret-key = &lt;SERVICE_USER_SECRET_KEY&gt;<br></tt><div><tt>  project-id = &lt;PROJECT_ID&gt;</tt></div><div><tt><br></tt></div>Delete the existing secret using kubectl and Kubernetes cluster config:<br><div>  <tt> ./kubectl &ndash;kubeconfig kube.conf -n kube-system delete secret cloudstack-secret</tt></div><div><tt><br></tt></div>Create a new secret using kubectl and Kubernetes cluster config:<br><div>    ./kubectl &ndash;kubeconfig kube.conf -n kube-system create secret generic cloudstack-secret &ndash;from-file=/tmp/cloud-config</div><div><br></div>Remove the temporary file:<br>    rm /tmp/cloud-config<h3>5. Regenerate API and Secret Keys</h3>Regenerate the API and secret keys for the <b>original user account</b> that was used to create the Kubernetes cluster.<br></p>
+<p>The CloudStack cluster service runs on unauthenticated port (default 9090) that can be misused to run arbitrary commands on targeted hypervisors and CloudStack management server hosts. Some of these commands were found to have command injection vulnerabilities that can result in arbitrary code execution via agents on the hosts that may run as a privileged user.&nbsp;<span style="background-color: rgb(255, 255, 255);">An attacker that can reach the cluster service on the unauthenticated&nbsp;port (default 9090), can exploit this to perform remote code execution on CloudStack managed hosts and result in complete</span>&nbsp;compromise of the confidentiality, integrity, and availability of CloudStack managed infrastructure.</p><span style="background-color: rgb(255, 255, 255);"><div><span style="background-color: rgb(255, 255, 255);"><br></span></div><div><span style="background-color: rgb(255, 255, 255);">Users are recommended to restrict the network access to the cluster service port (default 9090) on a CloudStack management server host to only its peer CloudStack management server hosts.&nbsp;</span>Users are recommended to upgrade to version 4.18.2.1, 4.19.0.2 or later, which addresses this issue.</div></span>
 <h3 id="references-17">References</h3>
 <ul>
-<li><a href="https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/">https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/</a></li>
-<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/">https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/</a></li>
-<li><a href="https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60">https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60</a></li>
+<li><a href="https://lists.apache.org/thread/6l51r00csrct61plkyd3qg3fj99215d1">https://lists.apache.org/thread/6l51r00csrct61plkyd3qg3fj99215d1</a></li>
+<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.2-4.18.2.1">https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.2-4.18.2.1</a></li>
+<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-1-and-4-19-0-2/">https://www.shapeblue.com/shapeblue-security-advisory-apache-cloudstack-security-releases-4-18-2-1-and-4-19-0-2/</a></li>
 </ul>
 <h3 id="credits-17">Credits</h3>
 <ul>
-<li>Wei Zhou (<a href="mailto:weizhou@apache.org">weizhou@apache.org</a>) (finder)</li>
+<li>Adam Pond of Apple Services Engineering Security (finder)</li>
+<li>Terry Thibault of Apple Services Engineering Security (finder)</li>
+<li>Damon Smith of Apple Services Engineering Security (finder)</li>
 </ul>
-<h2 id="CVE-2025-30675">Unauthorised template/ISO list access to the domain/resource admins</h2>
-<p>CVE-2025-30675 <a href="./CVE-2025-30675.cve.json">[CVE json]</a> <a href="./CVE-2025-30675.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-06-11T04:00:06.854Z</em></p>
+<h2 id="CVE-2024-29008">The extraconfig feature can be abused to load hypervisor resources on a VM instance</h2>
+<p>CVE-2024-29008 <a href="https://cve.org/CVERecord?id=CVE-2024-29008">[CVE]</a> <a href="./CVE-2024-29008.cve.json">[CVE json]</a> <a href="./CVE-2024-29008.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-04-04T10:58:44.745Z</em></p>
 <h3 id="affected-18">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.0.0 before 4.19.3.0</li>
-<li>Apache CloudStack from 4.20.0.0 before 4.20.1.0</li>
+<li>Apache CloudStack from 4.14.0.0 through 4.18.1.0, 4.19.0.0</li>
 </ul>
 <h3 id="description-18">Description</h3>
-<div><span style="background-color: rgba(232, 232, 232, 0.04);">In Apache CloudStack, a flaw in access control affects the listTemplates and listIsos APIs. A malicious Domain Admin or Resource Admin can exploit this issue by intentionally specifying the 'domainid' parameter along with the 'filter=self' or 'filter=selfexecutable' values. This allows the attacker to gain unauthorized visibility into templates and ISOs under the ROOT domain.</span></div><div><span style="background-color: rgba(232, 232, 232, 0.04);">A malicious admin can enumerate and extract metadata of templates and ISOs that belong to unrelated domains, violating isolation boundaries and potentially exposing sensitive or internal configuration details.&nbsp;</span></div><div><span style="background-color: rgba(232, 232, 232, 0.04);">This vulnerability has been fixed by ensuring the domain resolution strictly adheres to the caller's scope rather than defaulting to the ROOT domain.</span></div><div><span style="background-color: rgba(232, 232, 232, 0.04);"><br></span></div><div><span style="background-color: rgba(232, 232, 232, 0.04);">Affected users are recommended to upgrade to Apache CloudStack 4.19.3.0 or 4.20.1.0.</span></div>
+<div>A problem has been identified in the CloudStack additional VM configuration (extraconfig) feature which can be misused by anyone who has privilege to deploy a VM instance or configure settings of an already deployed VM instance, to configure additional VM configuration even when the feature is not explicitly enabled by the administrator. In a KVM based CloudStack environment, an attacker can exploit this issue to&nbsp;attach host devices such as storage disks, and PCI and USB devices such as network adapters and GPUs, in a regular VM instance that can be further exploited to gain access to the underlying network and storage infrastructure resources, and access any VM instance disks on the local storage.</div><br><div>Users are advised to upgrade to version 4.18.1.1 or 4.19.0.1, which fixes this issue.<br></div>
 <h3 id="references-18">References</h3>
 <ul>
-<li><a href="https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/">https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/</a></li>
-<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/">https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/</a></li>
-<li><a href="https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60">https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60</a></li>
+<li><a href="https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp">https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp</a></li>
+<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1">https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1</a></li>
 </ul>
 <h3 id="credits-18">Credits</h3>
 <ul>
-<li>Bernardo De Marco Gonçalves <a href="mailto:bernardomg2004@gmail.com">bernardomg2004@gmail.com</a> (finder)</li>
+<li>Wei Zhou <a href="mailto:ustcweizhou@gmail.com">ustcweizhou@gmail.com</a> (finder)</li>
 </ul>
-<h2 id="CVE-2025-47713">Domain Admin can reset Admin password in Root Domain</h2>
-<p>CVE-2025-47713 <a href="./CVE-2025-47713.cve.json">[CVE json]</a> <a href="./CVE-2025-47713.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-06-11T03:59:55.628Z</em></p>
+<h2 id="CVE-2024-29007">When downloading templates or ISOs, the management server and SSVM follow HTTP redirects with potentially dangerous consequences</h2>
+<p>CVE-2024-29007 <a href="https://cve.org/CVERecord?id=CVE-2024-29007">[CVE]</a> <a href="./CVE-2024-29007.cve.json">[CVE json]</a> <a href="./CVE-2024-29007.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-04-04T10:58:20.239Z</em></p>
 <h3 id="affected-19">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.10.0 before 4.19.3.0</li>
-<li>Apache CloudStack from 4.20.0.0 before 4.20.1.0</li>
+<li>Apache CloudStack from 4.9.1.0 through 4.18.1.0, 4.19.0.0</li>
 </ul>
 <h3 id="description-19">Description</h3>
-<p></p><div><span style="background-color: rgba(232, 232, 232, 0.04);">A privilege escalation vulnerability exists in Apache CloudStack versions 4.10.0.0 through 4.20.0.0 where a malicious Domain Admin user in the ROOT domain can reset the password of user-accounts of Admin role type. This operation is not appropriately restricted and allows the attacker to assume control over higher-privileged user-accounts.&nbsp;</span><span style="background-color: rgba(232, 232, 232, 0.04);">A malicious Domain Admin attacker can impersonate an Admin user-account and gain access to sensitive APIs and resources that&nbsp;<span style="background-color: rgb(255, 255, 255);">could result in the compromise of resource integrity and confidentiality, data loss, denial of service, and availability of infrastructure managed by CloudStack.</span><br><br></span></div><div><span style="background-color: rgba(232, 232, 232, 0.04);">Users are recommended to upgrade to Apache CloudStack 4.19.3.0 or 4.20.1.0, which fixes the issue with the following:<br></span><span style="background-color: rgba(232, 232, 232, 0.04);"><div><ul><li><span style="background-color: rgba(232, 232, 232, 0.04);"><span style="background-color: rgba(232, 232, 232, 0.04);">Strict validation on Role Type hierarchy: the caller's user-account role must be equal to or higher than the target user-account's role.</span></span></li><li><span style="background-color: rgba(232, 232, 232, 0.04);"><span style="background-color: rgba(232, 232, 232, 0.04);">API privilege comparison: the caller must possess all privileges of the user they are operating on. </span></span></li><li><span style="background-color: rgba(232, 232, 232, 0.04);"><span style="background-color: rgba(232, 232, 232, 0.04);">Two new domain-level settings (restricted to the default Admin): <br> - role.types.allowed.for.operations.on.accounts.of.same.role.type: Defines which role types are allowed to act on users of the same role type. Default: "Admin, DomainAdmin, ResourceAdmin". <br>&nbsp; &nbsp;- allow.operations.on.users.in.same.account: Allows/disallows user operations within the same account. Default: true.</span></span></li></ul></div></span></div><p></p>
+<div>The CloudStack management server and secondary storage VM could be tricked into making requests to restricted or random resources by means of following 301 HTTP redirects presented by external servers when downloading templates or ISOs. Users are recommended to upgrade to version 4.18.1.1 or 4.19.0.1, which fixes this issue.</div>
 <h3 id="references-19">References</h3>
 <ul>
-<li><a href="https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/">https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/</a></li>
-<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/">https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/</a></li>
-<li><a href="https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60">https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60</a></li>
+<li><a href="https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp">https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp</a></li>
+<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1">https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1</a></li>
 </ul>
 <h3 id="credits-19">Credits</h3>
 <ul>
-<li>Scott Schmitz <a href="mailto:sschmitz@ussignal.com">sschmitz@ussignal.com</a> (finder)</li>
+<li>Yuyang Xiao <a href="mailto:superxyyang@gmail.com">superxyyang@gmail.com</a> (finder)</li>
 </ul>
-<h2 id="CVE-2025-47849">Insecure access of user&rsquo;s API/Secret Keys in the same domain</h2>
-<p>CVE-2025-47849 <a href="./CVE-2025-47849.cve.json">[CVE json]</a> <a href="./CVE-2025-47849.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-06-11T03:59:42.176Z</em></p>
+<h2 id="CVE-2024-29006">x-forwarded-for HTTP header parsed by default</h2>
+<p>CVE-2024-29006 <a href="https://cve.org/CVERecord?id=CVE-2024-29006">[CVE]</a> <a href="./CVE-2024-29006.cve.json">[CVE json]</a> <a href="./CVE-2024-29006.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-04-04T10:59:16.384Z</em></p>
 <h3 id="affected-20">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.10.0 before 4.19.3.0</li>
-<li>Apache CloudStack from 4.20.0.0 before 4.20.1.0</li>
+<li>Apache CloudStack from 4.11.0.0 through 4.18.1.0, 4.19.0.0</li>
 </ul>
 <h3 id="description-20">Description</h3>
-<div><span style="background-color: rgba(232, 232, 232, 0.04);"><span style="background-color: rgba(232, 232, 232, 0.04);">A privilege escalation vulnerability exists in Apache CloudStack versions 4.10.0.0 through 4.20.0.0 where a malicious Domain Admin user in the ROOT domain can get the API key and secret key of user-accounts of Admin role type in the same domain. This operation is not appropriately restricted and allows the attacker to assume control over higher-privileged user-accounts. </span><span style="background-color: rgba(232, 232, 232, 0.04);">A malicious Domain Admin attacker can impersonate an Admin user-account and gain access to sensitive APIs and resources that <span style="background-color: rgb(255, 255, 255);">could result in the compromise of resource integrity and confidentiality, data loss, denial of service, and availability of infrastructure managed by CloudStack.</span><br></span><br><span style="background-color: rgba(232, 232, 232, 0.04);">Users are recommended to upgrade to Apache CloudStack 4.19.3.0 or 4.20.1.0, which fixes the issue with the following:<br></span></span></div><div><ul><li><span style="background-color: rgba(232, 232, 232, 0.04);">Strict validation on Role Type hierarchy: the caller's role must be equal to or higher than the target user's role.&nbsp;</span></li><li><span style="background-color: rgba(232, 232, 232, 0.04);">API privilege comparison: the caller must possess all privileges of the user they are operating on.&nbsp;</span></li><li><span style="background-color: rgba(232, 232, 232, 0.04);">Two new domain-level settings (restricted to the default admin):&nbsp;<br> - role.types.allowed.for.operations.on.accounts.of.same.role.type: Defines which role types are allowed to act on users of the same role type. Default: "Admin, DomainAdmin, ResourceAdmin".&nbsp;<br> - allow.operations.on.users.in.same.account: Allows/disallows user operations within the same account. Default: true.</span></li></ul></div>
+<div>By default the CloudStack management server honours the x-forwarded-for HTTP header and logs it as the source IP of an API request. This could lead to authentication bypass and other operational problems should an attacker decide to spoof their IP address this way. Users are recommended to upgrade to CloudStack version 4.18.1.1 or 4.19.0.1, which fixes this issue.</div>
 <h3 id="references-20">References</h3>
 <ul>
-<li><a href="https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/">https://cloudstack.apache.org/blog/cve-advisories-4.19.3.0-4.20.1.0/</a></li>
-<li><a href="https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/">https://www.shapeblue.com/shapeblue-security-advisory-cloudstack-4-19-3-0-and-4-20-1-0/</a></li>
-<li><a href="https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60">https://lists.apache.org/thread/y3qnwn59t8qggtdohv7k7vw39bgb3d60</a></li>
+<li><a href="https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp">https://lists.apache.org/thread/82f46pv7mvh95ybto5hn8wlo6g8jhjvp</a></li>
+<li><a href="https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1">https://cloudstack.apache.org/blog/security-release-advisory-4.19.0.1-4.18.1.1</a></li>
 </ul>
 <h3 id="credits-20">Credits</h3>
 <ul>
-<li>Kevin Li <a href="mailto:kli74@apple.com">kli74@apple.com</a> (finder)</li>
-<li>Scott Schmitz <a href="mailto:sschmitz@ussignal.com">sschmitz@ussignal.com</a> (finder)</li>
+<li>Yuyang Xiao <a href="mailto:superxyyang@gmail.com">superxyyang@gmail.com</a> (finder)</li>
 </ul>
-<h2 id="CVE-2025-59302">Potential remote code execution on Javascript engine defined rules</h2>
-<p>CVE-2025-59302 <a href="./CVE-2025-59302.cve.json">[CVE json]</a> <a href="./CVE-2025-59302.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-11-27T11:46:23.798Z</em></p>
+<h2 id="CVE-2022-35741">Apache CloudStack SAML Single Sign-On XXE</h2>
+<p>CVE-2022-35741 <a href="https://cve.org/CVERecord?id=CVE-2022-35741">[CVE]</a> <a href="./CVE-2022-35741.cve.json">[CVE json]</a> <a href="./CVE-2022-35741.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-07-18T14:26:13.768Z</em></p>
 <h3 id="affected-21">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.18.0 before 4.20.2</li>
-<li>Apache CloudStack from 4.21.0 before 4.22.0</li>
+<li>Apache CloudStack from 4.5.0 before Apache CloudStack*</li>
 </ul>
 <h3 id="description-21">Description</h3>
-<p>In  Apache CloudStack improper control of generation of code ('Code Injection') vulnerability is found in the following APIs which are accessible only to admins.</p><ul><li>quotaTariffCreate</li><li>quotaTariffUpdate</li><li>createSecondaryStorageSelector</li><li>updateSecondaryStorageSelector</li><li>updateHost</li><li>updateStorage</li></ul><p>This issue affects Apache CloudStack: from 4.18.0 before 4.20.2, from 4.21.0 before 4.22.0.&nbsp;Users are recommended to upgrade to versions 4.20.2 or 4.22.0, which contain the fix.</p><p>The fix introduces a new global configuration flag, <strong><code>js.interpretation.enabled</code></strong>, allowing administrators to control the interpretation of JavaScript expressions in these APIs, thereby mitigating the code injection risk.</p>
+<p>Apache CloudStack version 4.5.0 and later has a SAML 2.0 authentication Service Provider plugin which is found to be vulnerable to XML external entity (XXE) injection. This plugin is not enabled by default and the attacker would require that this plugin be enabled to exploit the vulnerability. When the SAML 2.0 plugin is enabled in affected versions of Apache CloudStack could potentially allow the exploitation of XXE vulnerabilities. The SAML 2.0 messages constructed during the authentication flow in Apache CloudStack are XML-based and the XML data is parsed by various standard libraries that are now understood to be vulnerable to XXE injection attacks such as arbitrary file reading, possible denial of service, server-side request forgery (SSRF) on the CloudStack management server.</p>
 <h3 id="references-21">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/kwwsg2j85f1b75o0ht5zbr34d7h66788">https://lists.apache.org/thread/kwwsg2j85f1b75o0ht5zbr34d7h66788</a></li>
+<li><a href="https://lists.apache.org/thread/hwhxvtwp1d5dsm156bsf1cnyvtmrfv3f">https://lists.apache.org/thread/hwhxvtwp1d5dsm156bsf1cnyvtmrfv3f</a></li>
 </ul>
 <h3 id="credits-21">Credits</h3>
 <ul>
-<li>Tianyi Cheng <a href="mailto:chengtianyi@huawei.com">chengtianyi@huawei.com</a> (finder)</li>
+<li>This issue was reported by v3ged0ge</li>
 </ul>
-<h2 id="CVE-2025-59454">Lack of user permission validation leading to data leak for few APIs</h2>
-<p>CVE-2025-59454 <a href="./CVE-2025-59454.cve.json">[CVE json]</a> <a href="./CVE-2025-59454.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-11-27T11:40:37.834Z</em></p>
+<h2 id="CVE-2022-26779">Apache Cloudstack insecure random number generation affects project email invitation</h2>
+<p>CVE-2022-26779 <a href="https://cve.org/CVERecord?id=CVE-2022-26779">[CVE]</a> <a href="./CVE-2022-26779.cve.json">[CVE json]</a> <a href="./CVE-2022-26779.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-07-13T11:28:52.383Z</em></p>
 <h3 id="affected-22">Affected</h3>
 <ul>
-<li>Apache CloudStack from 4.0.0 before 4.20.2</li>
-<li>Apache CloudStack from 4.21.0 before 4.22.0</li>
+<li>Apache CloudStack from Apache CloudStack before 4.16.1</li>
 </ul>
 <h3 id="description-22">Description</h3>
-<p>In Apache CloudStack, a gap in access control checks affected the APIs <pre>- createNetworkACL</p>
-<ul>
-<li>listNetworkACLs</li>
-<li>listResourceDetails</li>
-<li>listVirtualMachinesUsageHistory</li>
-<li>listVolumesUsageHistory</pre><div>While these APIs were accessible only to authorized users, insufficient permission validation meant that users could occasionally access information beyond their intended scope.</div><div><br></div><div>Users are recommended to upgrade to Apache CloudStack 4.20.2.0 or 4.22.0.0, which fixes the issue.</div></li>
-</ul>
+<p>Apache CloudStack prior to 4.16.1.0 used insecure random number generation for project invitation tokens. If a project invite is created based only on an email address, a random token is generated. An attacker with knowledge of the project ID and the fact that the invite is sent, could generate time deterministic tokens and brute force attempt to use them prior to the legitimate receiver accepting the invite. This feature is not enabled by default, the attacker is required to know or guess the project ID for the invite in addition to the invitation token, and the attacker would need to be an existing authorized user of CloudStack.</p>
 <h3 id="references-22">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/0hlklvlwhzsfw39nocmyxb6svjbs9xbc">https://lists.apache.org/thread/0hlklvlwhzsfw39nocmyxb6svjbs9xbc</a></li>
+<li><a href="https://lists.apache.org/thread/dmm07b1cyosovqr12ddhkko501p11h2h">https://lists.apache.org/thread/dmm07b1cyosovqr12ddhkko501p11h2h</a></li>
+<li><a href="https://github.com/JLLeitschuh/security-research/security/advisories/GHSA-vpcc-9rh2-8jfp">https://github.com/JLLeitschuh/security-research/security/advisories/GHSA-vpcc-9rh2-8jfp</a></li>
 </ul>
 <h3 id="credits-22">Credits</h3>
 <ul>
-<li><a href="mailto:bugreporter@qq.com">bugreporter@qq.com</a> <a href="https://github.com/ai-bugreporter/Credits">https://github.com/ai-bugreporter/Credits</a> (finder)</li>
+<li>This issue was reported by Jonathan Leitschuh</li>
 </ul>
 
   

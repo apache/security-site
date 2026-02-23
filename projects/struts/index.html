@@ -105,85 +105,98 @@
 <p>Do you want disclose a potential security issue for Apache Struts? You can read more about the projects&rsquo; security policy on their <a href="https://struts.apache.org/security.html">security page</a>, and email your report to the <a href="mailto:security@struts.apache.org">Apache Struts Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://struts.apache.org/security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-31805">Forced OGNL evaluation, when evaluated on raw not validated user input in tag attributes, may lead to RCE.</h2>
-<p>CVE-2021-31805 <a href="./CVE-2021-31805.cve.json">[CVE json]</a> <a href="./CVE-2021-31805.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-04-12T15:23:33.186Z</em></p>
+<h2 id="CVE-2025-68493">XXE vulnerability in outdated XWork component</h2>
+<p>CVE-2025-68493 <a href="https://cve.org/CVERecord?id=CVE-2025-68493">[CVE]</a> <a href="./CVE-2025-68493.cve.json">[CVE json]</a> <a href="./CVE-2025-68493.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-11T11:40:53.869Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Struts at 2.0.0 to 2.5.29</li>
+<li>Apache Struts from 2.0.0 before 2.2.1</li>
+<li>Apache Struts from 2.2.1 through 6.1.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>The fix issued for CVE-2020-17530 was incomplete. So from Apache Struts 2.0.0 to 2.5.29, still some of the tag’s attributes could perform a double evaluation if a developer applied forced OGNL evaluation by using the %{&hellip;} syntax. Using forced OGNL evaluation on untrusted user input can lead to a Remote Code Execution and security degradation.</p>
+<p>Missing XML Validation vulnerability in Apache Struts, Apache Struts.</p><p>This issue affects Apache Struts: from 2.0.0 before 2.2.1; Apache Struts: from 2.2.1 through 6.1.0.</p><p>Users are recommended to upgrade to version 6.1.1, which fixes the issue.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://cwiki.apache.org/confluence/display/WW/S2-062">https://cwiki.apache.org/confluence/display/WW/S2-062</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/WW/S2-069">https://cwiki.apache.org/confluence/display/WW/S2-069</a></li>
+</ul>
+<h2 id="CVE-2025-66675">File leak in multipart request processing causes disk exhaustion (DoS) - version ranges fixed</h2>
+<p>CVE-2025-66675 <a href="https://cve.org/CVERecord?id=CVE-2025-66675">[CVE]</a> <a href="./CVE-2025-66675.cve.json">[CVE json]</a> <a href="./CVE-2025-66675.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-10T07:13:32.174Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Struts from 2.0.0 through 6.7.*</li>
+<li>Apache Struts from 7.0.0 through 7.0.*</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Denial of Service vulnerability in Apache Struts, f<span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">ile leak in multipart request processing causes disk exhaustion.</span></span></p><p>This issue affects Apache Struts: from 2.0.0 through 6.7.4, from 7.0.0 through 7.0.3.</p><p>Users are recommended to upgrade to version 6.8.0 or 7.1.1, which fixes the issue.<br><br>It's related to&nbsp;<span style="background-color: rgb(255, 255, 255);"><a target="_blank" rel="nofollow" href="https://cve.org/CVERecord?id=CVE-2025-64775">https://cve.org/CVERecord?id=CVE-2025-64775</a>&nbsp;- this CVE addresses missing affected version 6.7.4</span></p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://cwiki.apache.org/confluence/display/WW/S2-068">https://cwiki.apache.org/confluence/display/WW/S2-068</a></li>
+<li><a href="https://cve.org/CVERecord?id=CVE-2025-64775">https://cve.org/CVERecord?id=CVE-2025-64775</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Apache Struts would like to thank Chris McCown for reporting this issue!</li>
+<li>Nicolas Fournier (reporter)</li>
 </ul>
-<h2 id="CVE-2023-34149">DoS via OOM owing to not properly checking of list bounds</h2>
-<p>CVE-2023-34149 <a href="./CVE-2023-34149.cve.json">[CVE json]</a> <a href="./CVE-2023-34149.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-06-14T07:48:49.995Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h2 id="CVE-2025-64775">File leak in multipart request processing causes disk exhaustion (DoS)</h2>
+<p>CVE-2025-64775 <a href="https://cve.org/CVERecord?id=CVE-2025-64775">[CVE]</a> <a href="./CVE-2025-64775.cve.json">[CVE json]</a> <a href="./CVE-2025-64775.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-07T08:27:17.883Z</em></p>
+<h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache Struts through 2.5.30</li>
-<li>Apache Struts through 6.1.2</li>
+<li>Apache Struts from 2.0.0 through 6.7.0</li>
+<li>Apache Struts from 7.0.0 through 7.0.3</li>
 </ul>
-<h3 id="description-1">Description</h3>
-<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache Software Foundation Apache Struts.<p>This issue affects Apache Struts: through 2.5.30, through 6.1.2.</p><p>Upgrade to Struts 2.5.31 or 6.1.2.1 or greater.<br></p></p>
-<h3 id="references-1">References</h3>
+<h3 id="description-2">Description</h3>
+<p>Denial of Service vulnerability in Apache Struts, f<span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">ile leak in multipart request processing causes disk exhaustion.</span></span></p><p>This issue affects Apache Struts: from 2.0.0 through 6.7.0, from 7.0.0 through 7.0.3.</p><p>Users are recommended to upgrade to version 6.8.0 or 7.1.1, which fixes the issue.</p>
+<h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://cwiki.apache.org/confluence/display/WW/S2-063">https://cwiki.apache.org/confluence/display/WW/S2-063</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/WW/S2-068">https://cwiki.apache.org/confluence/display/WW/S2-068</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>Matthew McClain (finder)</li>
+<li>Nicolas Fournier (reporter)</li>
 </ul>
-<h2 id="CVE-2023-34396">DoS via OOM owing to no sanity limit on normal form fields in multipart forms</h2>
-<p>CVE-2023-34396 <a href="./CVE-2023-34396.cve.json">[CVE json]</a> <a href="./CVE-2023-34396.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-06-14T07:50:57.318Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h2 id="CVE-2025-54656">Improper Output Neutralization for Logs</h2>
+<p>CVE-2025-54656 <a href="https://cve.org/CVERecord?id=CVE-2025-54656">[CVE]</a> <a href="./CVE-2025-54656.cve.json">[CVE json]</a> <a href="./CVE-2025-54656.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-30T15:58:00.516Z</em></p>
+<h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache Struts through 2.5.30</li>
-<li>Apache Struts through 6.1.2</li>
+<li>Apache Struts Extras before 2</li>
 </ul>
-<h3 id="description-2">Description</h3>
-<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache Software Foundation Apache Struts.<p>This issue affects Apache Struts: through 2.5.30, through 6.1.2.</p><p>Upgrade to Struts 2.5.31 or 6.1.2.1 or greater<br></p></p>
-<h3 id="references-2">References</h3>
+<h3 id="description-3">Description</h3>
+<p>** UNSUPPORTED WHEN ASSIGNED ** Improper Output Neutralization for Logs vulnerability in Apache Struts.</p><p>This issue affects Apache Struts Extras: before 2.</p><p>When using LookupDispatchAction, in some cases, Struts may print untrusted input to the logs without any filtering. Specially-crafted input may lead to log output where part of the message masquerades as a separate log line, confusing consumers of the logs (either human or automated).&nbsp;</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+<h3 id="references-3">References</h3>
 <ul>
-<li><a href="https://cwiki.apache.org/confluence/display/WW/S2-064">https://cwiki.apache.org/confluence/display/WW/S2-064</a></li>
+<li><a href="https://lists.apache.org/thread/so5cn07j2zn9vlf1xnfqp630wts719rr">https://lists.apache.org/thread/so5cn07j2zn9vlf1xnfqp630wts719rr</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>Matthew McClain (finder)</li>
+<li>Ryan Murphy of HeroDevs (finder)</li>
 </ul>
-<h2 id="CVE-2023-41835">excessive disk usage</h2>
-<p>CVE-2023-41835 <a href="./CVE-2023-41835.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2023-12-12T08:42:17.762Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h2 id="CVE-2024-53677">Mixing setters for uploaded files and normal fields can allow bypass file upload checks</h2>
+<p>CVE-2024-53677 <a href="https://cve.org/CVERecord?id=CVE-2024-53677">[CVE]</a> <a href="./CVE-2024-53677.cve.json">[CVE json]</a> <a href="./CVE-2024-53677.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-12-20T15:44:02.694Z</em></p>
+<h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache Struts from 2.0.0 through 2.5.31</li>
-<li>Apache Struts from 6.1.2.1 through 6.3.0</li>
+<li>Apache Struts from 2.0.0 before 6.4.0</li>
 </ul>
-<h3 id="description-3">Description</h3>
-<p><span style="background-color: rgb(255, 255, 255);">When a Multipart request is performed but some of the fields exceed the </span><code>maxStringLength</code><span style="background-color: rgb(255, 255, 255);">  limit, the upload files will remain in </span><code>struts.multipart.saveDir</code><span style="background-color: rgb(255, 255, 255);">  even if the request has been denied.</span><br>Users are recommended to upgrade to versions <span style="background-color: rgb(255, 255, 255);">Struts 2.5.32 or 6.1.2.2 or Struts 6.3.0.1 or greater</span>, which fixe this issue.</p>
-<h3 id="references-3">References</h3>
+<h3 id="description-4">Description</h3>
+<p>File upload logic in Apache Struts is flawed.&nbsp;<span style="background-color: rgb(255, 255, 255);">An attacker can manipulate file upload params to enable paths traversal and under some circumstances this can lead to uploading a malicious file which can be used to perform Remote Code Execution.</span></p><p>This issue affects Apache Struts: from 2.0.0 before 6.4.0.</p><p>Users are recommended to upgrade to version 6.4.0 at least and <span style="background-color: rgb(255, 255, 255);">migrate to the new </span><a target="_blank" rel="nofollow" href="https://struts.apache.org/core-developers/file-upload">file upload mechanism</a><span style="background-color: rgb(255, 255, 255);">. If you are not using an old file upload logic based on&nbsp;<b>FileuploadInterceptor</b>&nbsp;your application is safe.</span></p>You can find more details in&nbsp;<a target="_blank" rel="nofollow" href="https://cwiki.apache.org/confluence/display/WW/S2-067">https://cwiki.apache.org/confluence/display/WW/S2-067</a>
+<h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/6wj530kh3ono8phr642y9sqkl67ys2ft">https://lists.apache.org/thread/6wj530kh3ono8phr642y9sqkl67ys2ft</a></li>
-<li><a href="https://www.openwall.com/lists/oss-security/2023/12/09/1">https://www.openwall.com/lists/oss-security/2023/12/09/1</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/WW/S2-067">https://cwiki.apache.org/confluence/display/WW/S2-067</a></li>
 </ul>
 <h2 id="CVE-2023-50164">File upload component had a directory traversal vulnerability</h2>
-<p>CVE-2023-50164 <a href="./CVE-2023-50164.cve.json">[CVE json]</a></p>
+<p>CVE-2023-50164 <a href="https://cve.org/CVERecord?id=CVE-2023-50164">[CVE]</a> <a href="./CVE-2023-50164.cve.json">[CVE json]</a></p>
 <p><em>Last updated: 2023-12-12T09:26:27.763Z</em></p>
-<h3 id="affected-4">Affected</h3>
+<h3 id="affected-5">Affected</h3>
 <ul>
 <li>Apache Struts from 2.0.0 through 2.5.32</li>
 <li>Apache Struts from 6.0.0 through 6.3.0.1</li>
 </ul>
-<h3 id="description-4">Description</h3>
+<h3 id="description-5">Description</h3>
 <p><span style="background-color: rgb(255, 255, 255);">An attacker can manipulate file upload params to enable paths traversal and under some circumstances this can lead to uploading a malicious file which can be used to perform Remote Code Execution.</span><br>Users are recommended to upgrade to versions <span style="background-color: rgb(255, 255, 255);">Struts 2.5.33 or Struts 6.3.0.2 or greater to</span> fix this issue.<br></p>
-<h3 id="references-4">References</h3>
+<h3 id="references-5">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/yh09b3fkf6vz5d6jdgrlvmg60lfwtqhj">https://lists.apache.org/thread/yh09b3fkf6vz5d6jdgrlvmg60lfwtqhj</a></li>
 <li><a href="https://www.openwall.com/lists/oss-security/2023/12/07/1">https://www.openwall.com/lists/oss-security/2023/12/07/1</a></li>
@@ -192,86 +205,73 @@
 <ul>
 <li>Steven Seeley of Source Incite (reporter)</li>
 </ul>
-<h2 id="CVE-2024-53677">Mixing setters for uploaded files and normal fields can allow bypass file upload checks</h2>
-<p>CVE-2024-53677 <a href="./CVE-2024-53677.cve.json">[CVE json]</a> <a href="./CVE-2024-53677.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-12-20T15:44:02.694Z</em></p>
-<h3 id="affected-5">Affected</h3>
-<ul>
-<li>Apache Struts from 2.0.0 before 6.4.0</li>
-</ul>
-<h3 id="description-5">Description</h3>
-<p>File upload logic in Apache Struts is flawed.&nbsp;<span style="background-color: rgb(255, 255, 255);">An attacker can manipulate file upload params to enable paths traversal and under some circumstances this can lead to uploading a malicious file which can be used to perform Remote Code Execution.</span></p><p>This issue affects Apache Struts: from 2.0.0 before 6.4.0.</p><p>Users are recommended to upgrade to version 6.4.0 at least and <span style="background-color: rgb(255, 255, 255);">migrate to the new </span><a target="_blank" rel="nofollow" href="https://struts.apache.org/core-developers/file-upload">file upload mechanism</a><span style="background-color: rgb(255, 255, 255);">. If you are not using an old file upload logic based on&nbsp;<b>FileuploadInterceptor</b>&nbsp;your application is safe.</span></p>You can find more details in&nbsp;<a target="_blank" rel="nofollow" href="https://cwiki.apache.org/confluence/display/WW/S2-067">https://cwiki.apache.org/confluence/display/WW/S2-067</a>
-<h3 id="references-5">References</h3>
-<ul>
-<li><a href="https://cwiki.apache.org/confluence/display/WW/S2-067">https://cwiki.apache.org/confluence/display/WW/S2-067</a></li>
-</ul>
-<h2 id="CVE-2025-54656">Improper Output Neutralization for Logs</h2>
-<p>CVE-2025-54656 <a href="./CVE-2025-54656.cve.json">[CVE json]</a> <a href="./CVE-2025-54656.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-07-30T15:58:00.516Z</em></p>
+<h2 id="CVE-2023-41835">excessive disk usage</h2>
+<p>CVE-2023-41835 <a href="https://cve.org/CVERecord?id=CVE-2023-41835">[CVE]</a> <a href="./CVE-2023-41835.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2023-12-12T08:42:17.762Z</em></p>
 <h3 id="affected-6">Affected</h3>
 <ul>
-<li>Apache Struts Extras before 2</li>
+<li>Apache Struts from 2.0.0 through 2.5.31</li>
+<li>Apache Struts from 6.1.2.1 through 6.3.0</li>
 </ul>
 <h3 id="description-6">Description</h3>
-<p>** UNSUPPORTED WHEN ASSIGNED ** Improper Output Neutralization for Logs vulnerability in Apache Struts.</p><p>This issue affects Apache Struts Extras: before 2.</p><p>When using LookupDispatchAction, in some cases, Struts may print untrusted input to the logs without any filtering. Specially-crafted input may lead to log output where part of the message masquerades as a separate log line, confusing consumers of the logs (either human or automated).&nbsp;</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+<p><span style="background-color: rgb(255, 255, 255);">When a Multipart request is performed but some of the fields exceed the </span><code>maxStringLength</code><span style="background-color: rgb(255, 255, 255);">  limit, the upload files will remain in </span><code>struts.multipart.saveDir</code><span style="background-color: rgb(255, 255, 255);">  even if the request has been denied.</span><br>Users are recommended to upgrade to versions <span style="background-color: rgb(255, 255, 255);">Struts 2.5.32 or 6.1.2.2 or Struts 6.3.0.1 or greater</span>, which fixe this issue.</p>
 <h3 id="references-6">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/so5cn07j2zn9vlf1xnfqp630wts719rr">https://lists.apache.org/thread/so5cn07j2zn9vlf1xnfqp630wts719rr</a></li>
+<li><a href="https://lists.apache.org/thread/6wj530kh3ono8phr642y9sqkl67ys2ft">https://lists.apache.org/thread/6wj530kh3ono8phr642y9sqkl67ys2ft</a></li>
+<li><a href="https://www.openwall.com/lists/oss-security/2023/12/09/1">https://www.openwall.com/lists/oss-security/2023/12/09/1</a></li>
+</ul>
+<h2 id="CVE-2023-34396">DoS via OOM owing to no sanity limit on normal form fields in multipart forms</h2>
+<p>CVE-2023-34396 <a href="https://cve.org/CVERecord?id=CVE-2023-34396">[CVE]</a> <a href="./CVE-2023-34396.cve.json">[CVE json]</a> <a href="./CVE-2023-34396.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-06-14T07:50:57.318Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache Struts through 2.5.30</li>
+<li>Apache Struts through 6.1.2</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache Software Foundation Apache Struts.<p>This issue affects Apache Struts: through 2.5.30, through 6.1.2.</p><p>Upgrade to Struts 2.5.31 or 6.1.2.1 or greater<br></p></p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://cwiki.apache.org/confluence/display/WW/S2-064">https://cwiki.apache.org/confluence/display/WW/S2-064</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>Ryan Murphy of HeroDevs (finder)</li>
+<li>Matthew McClain (finder)</li>
 </ul>
-<h2 id="CVE-2025-64775">File leak in multipart request processing causes disk exhaustion (DoS)</h2>
-<p>CVE-2025-64775 <a href="./CVE-2025-64775.cve.json">[CVE json]</a> <a href="./CVE-2025-64775.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-12-07T08:27:17.883Z</em></p>
-<h3 id="affected-7">Affected</h3>
+<h2 id="CVE-2023-34149">DoS via OOM owing to not properly checking of list bounds</h2>
+<p>CVE-2023-34149 <a href="https://cve.org/CVERecord?id=CVE-2023-34149">[CVE]</a> <a href="./CVE-2023-34149.cve.json">[CVE json]</a> <a href="./CVE-2023-34149.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-06-14T07:48:49.995Z</em></p>
+<h3 id="affected-8">Affected</h3>
 <ul>
-<li>Apache Struts from 2.0.0 through 6.7.0</li>
-<li>Apache Struts from 7.0.0 through 7.0.3</li>
+<li>Apache Struts through 2.5.30</li>
+<li>Apache Struts through 6.1.2</li>
 </ul>
-<h3 id="description-7">Description</h3>
-<p>Denial of Service vulnerability in Apache Struts, f<span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">ile leak in multipart request processing causes disk exhaustion.</span></span></p><p>This issue affects Apache Struts: from 2.0.0 through 6.7.0, from 7.0.0 through 7.0.3.</p><p>Users are recommended to upgrade to version 6.8.0 or 7.1.1, which fixes the issue.</p>
-<h3 id="references-7">References</h3>
+<h3 id="description-8">Description</h3>
+<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache Software Foundation Apache Struts.<p>This issue affects Apache Struts: through 2.5.30, through 6.1.2.</p><p>Upgrade to Struts 2.5.31 or 6.1.2.1 or greater.<br></p></p>
+<h3 id="references-8">References</h3>
 <ul>
-<li><a href="https://cwiki.apache.org/confluence/display/WW/S2-068">https://cwiki.apache.org/confluence/display/WW/S2-068</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/WW/S2-063">https://cwiki.apache.org/confluence/display/WW/S2-063</a></li>
 </ul>
 <h3 id="credits-5">Credits</h3>
 <ul>
-<li>Nicolas Fournier (reporter)</li>
+<li>Matthew McClain (finder)</li>
 </ul>
-<h2 id="CVE-2025-66675">File leak in multipart request processing causes disk exhaustion (DoS) - version ranges fixed</h2>
-<p>CVE-2025-66675 <a href="./CVE-2025-66675.cve.json">[CVE json]</a> <a href="./CVE-2025-66675.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-12-10T07:13:32.174Z</em></p>
-<h3 id="affected-8">Affected</h3>
+<h2 id="CVE-2021-31805">Forced OGNL evaluation, when evaluated on raw not validated user input in tag attributes, may lead to RCE.</h2>
+<p>CVE-2021-31805 <a href="https://cve.org/CVERecord?id=CVE-2021-31805">[CVE]</a> <a href="./CVE-2021-31805.cve.json">[CVE json]</a> <a href="./CVE-2021-31805.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-04-12T15:23:33.186Z</em></p>
+<h3 id="affected-9">Affected</h3>
 <ul>
-<li>Apache Struts from 2.0.0 through 6.7.*</li>
-<li>Apache Struts from 7.0.0 through 7.0.*</li>
+<li>Apache Struts at 2.0.0 to 2.5.29</li>
 </ul>
-<h3 id="description-8">Description</h3>
-<p>Denial of Service vulnerability in Apache Struts, f<span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">ile leak in multipart request processing causes disk exhaustion.</span></span></p><p>This issue affects Apache Struts: from 2.0.0 through 6.7.4, from 7.0.0 through 7.0.3.</p><p>Users are recommended to upgrade to version 6.8.0 or 7.1.1, which fixes the issue.<br><br>It's related to&nbsp;<span style="background-color: rgb(255, 255, 255);"><a target="_blank" rel="nofollow" href="https://cve.org/CVERecord?id=CVE-2025-64775">https://cve.org/CVERecord?id=CVE-2025-64775</a>&nbsp;- this CVE addresses missing affected version 6.7.4</span></p>
-<h3 id="references-8">References</h3>
+<h3 id="description-9">Description</h3>
+<p>The fix issued for CVE-2020-17530 was incomplete. So from Apache Struts 2.0.0 to 2.5.29, still some of the tag’s attributes could perform a double evaluation if a developer applied forced OGNL evaluation by using the %{&hellip;} syntax. Using forced OGNL evaluation on untrusted user input can lead to a Remote Code Execution and security degradation.</p>
+<h3 id="references-9">References</h3>
 <ul>
-<li><a href="https://cwiki.apache.org/confluence/display/WW/S2-068">https://cwiki.apache.org/confluence/display/WW/S2-068</a></li>
-<li><a href="https://cve.org/CVERecord?id=CVE-2025-64775">https://cve.org/CVERecord?id=CVE-2025-64775</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/WW/S2-062">https://cwiki.apache.org/confluence/display/WW/S2-062</a></li>
 </ul>
 <h3 id="credits-6">Credits</h3>
 <ul>
-<li>Nicolas Fournier (reporter)</li>
-</ul>
-<h2 id="CVE-2025-68493">XXE vulnerability in outdated XWork component</h2>
-<p>CVE-2025-68493 <a href="./CVE-2025-68493.cve.json">[CVE json]</a> <a href="./CVE-2025-68493.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-01-11T11:40:53.869Z</em></p>
-<h3 id="affected-9">Affected</h3>
-<ul>
-<li>Apache Struts from 2.0.0 before 2.2.1</li>
-<li>Apache Struts from 2.2.1 through 6.1.0</li>
-</ul>
-<h3 id="description-9">Description</h3>
-<p>Missing XML Validation vulnerability in Apache Struts, Apache Struts.</p><p>This issue affects Apache Struts: from 2.0.0 before 2.2.1; Apache Struts: from 2.2.1 through 6.1.0.</p><p>Users are recommended to upgrade to version 6.1.1, which fixes the issue.</p>
-<h3 id="references-9">References</h3>
-<ul>
-<li><a href="https://cwiki.apache.org/confluence/display/WW/S2-069">https://cwiki.apache.org/confluence/display/WW/S2-069</a></li>
+<li>Apache Struts would like to thank Chris McCown for reporting this issue!</li>
 </ul>
 
   

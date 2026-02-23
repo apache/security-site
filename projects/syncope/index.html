@@ -105,118 +105,118 @@
 <p>Do you want disclose a potential security issue for Apache Syncope? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2024-38503">HTML tags can be injected into Console or Enduser text fields</h2>
-<p>CVE-2024-38503 <a href="./CVE-2024-38503.cve.json">[CVE json]</a> <a href="./CVE-2024-38503.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-09-11T11:11:10.160Z</em></p>
+<h2 id="CVE-2026-23795">Console XXE on Keymaster parameters</h2>
+<p>CVE-2026-23795 <a href="https://cve.org/CVERecord?id=CVE-2026-23795">[CVE]</a> <a href="./CVE-2026-23795.cve.json">[CVE json]</a> <a href="./CVE-2026-23795.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-02-03T15:14:33.685Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Syncope from 2.1 through 2.1.14</li>
-<li>Apache Syncope from 3.0 through 3.0.7</li>
+<li>Apache Syncope from 3.0 through 3.0.15</li>
+<li>Apache Syncope from 4.0 through 4.0.3</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>When editing a user, group or any object in the Syncope Console, HTML tags could be added to any text field and could lead to potential exploits.<br>The same vulnerability was found in the Syncope Enduser, when editing “Personal Information” or “User Requests”.<br><br>Users are recommended to upgrade to version 3.0.8, which fixes this issue.</p>
+<p>Improper Restriction of XML External Entity Reference vulnerability in Apache Syncope Console.<br>An administrator with adequate entitlements to create or edit Keymaster parameters via Console can construct malicious XML text to launch an XXE attack, thereby causing sensitive data leakage occurs.</p><p>This issue affects Apache Syncope: from 3.0 through 3.0.15, from 4.0 through 4.0.3.</p><p>Users are recommended to upgrade to version 3.0.16 / 4.0.4, which fix this issue.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://syncope.apache.org/security#cve-2024-38503-html-tags-can-be-injected-into-console-or-enduser">https://syncope.apache.org/security#cve-2024-38503-html-tags-can-be-injected-into-console-or-enduser</a></li>
+<li><a href="https://lists.apache.org/thread/mzgbdn8hzk8vr94o660njcc7w62c2pos">https://lists.apache.org/thread/mzgbdn8hzk8vr94o660njcc7w62c2pos</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Basalt IT-Security Team (finder)</li>
+<li>follycat (finder)</li>
+<li>Y0n3er (finder)</li>
 </ul>
-<h2 id="CVE-2024-45031">Stored XSS in Console and Enduser</h2>
-<p>CVE-2024-45031 <a href="./CVE-2024-45031.cve.json">[CVE json]</a> <a href="./CVE-2024-45031.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-09-01T09:41:27.665Z</em></p>
+<h2 id="CVE-2026-23794">Reflected XSS on Enduser Login</h2>
+<p>CVE-2026-23794 <a href="https://cve.org/CVERecord?id=CVE-2026-23794">[CVE]</a> <a href="./CVE-2026-23794.cve.json">[CVE json]</a> <a href="./CVE-2026-23794.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-02-03T15:15:22.918Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache Syncope from 2.1 through 2.1.14</li>
-<li>Apache Syncope from 3.0 through 3.0.8</li>
+<li>Apache Syncope from 3.0 through 3.0.15</li>
+<li>Apache Syncope from 4.0 through 4.0.3</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>When editing objects in the Syncope Console, incomplete HTML tags could be used to bypass HTML sanitization. This made it possible to inject stored XSS payloads which would trigger for other users during ordinary usage of the application.<br>XSS payloads could also be injected in Syncope Enduser when editing “Personal Information” or “User Requests”: such payloads would trigger for administrators in Syncope Console, thus enabling session hijacking.<br><br>Users are recommended to upgrade to version 3.0.9, which fixes this issue.</p>
+<p>Reflected XSS in Apache Syncope's Enduser Login page.<br>An attacker that tricks a legitimate user into clicking a malicious link and logging in to Syncope Enduser could steal that user's credentials.</p><p>This issue affects Apache Syncope: from 3.0 through 3.0.15, from 4.0 through 4.0.3.</p><p>Users are recommended to upgrade to version 3.0.16 / 4.0.4, which fix this issue.</p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/fn567pfmo3s55ofkc42drz8b4kgbhp9m">https://lists.apache.org/thread/fn567pfmo3s55ofkc42drz8b4kgbhp9m</a></li>
+<li><a href="https://lists.apache.org/thread/7h30ghqdsf3spl3h7gdmscxofrm8ygjo">https://lists.apache.org/thread/7h30ghqdsf3spl3h7gdmscxofrm8ygjo</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>Kasper Karlsson, Omegapoint (finder)</li>
-<li>Pontus Hanssen, Omegapoint (finder)</li>
-</ul>
-<h2 id="CVE-2025-57738">Remote Code Execution by delegated administrators</h2>
-<p>CVE-2025-57738 <a href="./CVE-2025-57738.cve.json">[CVE json]</a> <a href="./CVE-2025-57738.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-20T14:43:38.022Z</em></p>
-<h3 id="affected-2">Affected</h3>
-<ul>
-<li>Apache Syncope from 2.1 through 2.1.14</li>
-<li>Apache Syncope from 3.0 through 3.0.13</li>
-<li>Apache Syncope from 4.0 through 4.0.1</li>
-</ul>
-<h3 id="description-2">Description</h3>
-<p>Apache Syncope offers the ability to extend / customize the base behavior on every deployment by allowing to provide custom implementations of a few Java interfaces; such implementations can be provided either as Java or Groovy classes, with the latter being particularly attractive as the machinery is set for runtime reload.<br>Such a feature has been available for a while, but recently it was discovered that a malicious administrator can inject Groovy code that can be executed remotely by a running Apache Syncope Core instance.<br>Users are recommended to upgrade to version 3.0.14 / 4.0.2, which fix this issue by forcing the Groovy code to run in a sandbox.</p>
-<h3 id="references-2">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/x7cv6xv7z76y49grdr1hgj1pzw5zbby6">https://lists.apache.org/thread/x7cv6xv7z76y49grdr1hgj1pzw5zbby6</a></li>
-</ul>
-<h3 id="credits-2">Credits</h3>
-<ul>
-<li>Mike Cole (Mantel Group) (finder)</li>
+<li>Kasper Karlsson (finder)</li>
+<li>Karin Taliga (finder)</li>
 </ul>
 <h2 id="CVE-2025-65998">Default AES key used for internal password encryption</h2>
-<p>CVE-2025-65998 <a href="./CVE-2025-65998.cve.json">[CVE json]</a> <a href="./CVE-2025-65998.osv.json">[OSV json]</a></p>
+<p>CVE-2025-65998 <a href="https://cve.org/CVERecord?id=CVE-2025-65998">[CVE]</a> <a href="./CVE-2025-65998.cve.json">[CVE json]</a> <a href="./CVE-2025-65998.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-11-24T13:46:58.386Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache Syncope from 2.1 through 2.1.14</li>
 <li>Apache Syncope from 3.0 through 3.0.14</li>
 <li>Apache Syncope from 4.0 through 4.0.2</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-2">Description</h3>
 <p>Apache Syncope can be configured to store the user password values in the internal database with AES encryption, though this is not the default option.</p><p>When AES is configured, the default key value, hard-coded in the source code, is always used. This allows a malicious attacker, once obtained access to the internal database content, to reconstruct the original cleartext password values.<br>This is not affecting encrypted plain attributes, whose values are also stored using AES encryption.</p><p>Users are recommended to upgrade to version 3.0.15 / 4.0.3, which fix this issue.</p>
-<h3 id="references-3">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/fjh0tb0d1xkbphc5ogdsc348ppz88cts">https://lists.apache.org/thread/fjh0tb0d1xkbphc5ogdsc348ppz88cts</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits-2">Credits</h3>
 <ul>
 <li>Clemens Bergmann (Technical University of Darmstadt) (finder)</li>
 </ul>
-<h2 id="CVE-2026-23794">Reflected XSS on Enduser Login</h2>
-<p>CVE-2026-23794 <a href="./CVE-2026-23794.cve.json">[CVE json]</a> <a href="./CVE-2026-23794.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-02-03T15:15:22.918Z</em></p>
+<h2 id="CVE-2025-57738">Remote Code Execution by delegated administrators</h2>
+<p>CVE-2025-57738 <a href="https://cve.org/CVERecord?id=CVE-2025-57738">[CVE]</a> <a href="./CVE-2025-57738.cve.json">[CVE json]</a> <a href="./CVE-2025-57738.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-20T14:43:38.022Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Syncope from 2.1 through 2.1.14</li>
+<li>Apache Syncope from 3.0 through 3.0.13</li>
+<li>Apache Syncope from 4.0 through 4.0.1</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Apache Syncope offers the ability to extend / customize the base behavior on every deployment by allowing to provide custom implementations of a few Java interfaces; such implementations can be provided either as Java or Groovy classes, with the latter being particularly attractive as the machinery is set for runtime reload.<br>Such a feature has been available for a while, but recently it was discovered that a malicious administrator can inject Groovy code that can be executed remotely by a running Apache Syncope Core instance.<br>Users are recommended to upgrade to version 3.0.14 / 4.0.2, which fix this issue by forcing the Groovy code to run in a sandbox.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/x7cv6xv7z76y49grdr1hgj1pzw5zbby6">https://lists.apache.org/thread/x7cv6xv7z76y49grdr1hgj1pzw5zbby6</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Mike Cole (Mantel Group) (finder)</li>
+</ul>
+<h2 id="CVE-2024-45031">Stored XSS in Console and Enduser</h2>
+<p>CVE-2024-45031 <a href="https://cve.org/CVERecord?id=CVE-2024-45031">[CVE]</a> <a href="./CVE-2024-45031.cve.json">[CVE json]</a> <a href="./CVE-2024-45031.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-09-01T09:41:27.665Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache Syncope from 3.0 through 3.0.15</li>
-<li>Apache Syncope from 4.0 through 4.0.3</li>
+<li>Apache Syncope from 2.1 through 2.1.14</li>
+<li>Apache Syncope from 3.0 through 3.0.8</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<p>Reflected XSS in Apache Syncope's Enduser Login page.<br>An attacker that tricks a legitimate user into clicking a malicious link and logging in to Syncope Enduser could steal that user's credentials.</p><p>This issue affects Apache Syncope: from 3.0 through 3.0.15, from 4.0 through 4.0.3.</p><p>Users are recommended to upgrade to version 3.0.16 / 4.0.4, which fix this issue.</p>
+<p>When editing objects in the Syncope Console, incomplete HTML tags could be used to bypass HTML sanitization. This made it possible to inject stored XSS payloads which would trigger for other users during ordinary usage of the application.<br>XSS payloads could also be injected in Syncope Enduser when editing “Personal Information” or “User Requests”: such payloads would trigger for administrators in Syncope Console, thus enabling session hijacking.<br><br>Users are recommended to upgrade to version 3.0.9, which fixes this issue.</p>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/7h30ghqdsf3spl3h7gdmscxofrm8ygjo">https://lists.apache.org/thread/7h30ghqdsf3spl3h7gdmscxofrm8ygjo</a></li>
+<li><a href="https://lists.apache.org/thread/fn567pfmo3s55ofkc42drz8b4kgbhp9m">https://lists.apache.org/thread/fn567pfmo3s55ofkc42drz8b4kgbhp9m</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>Kasper Karlsson (finder)</li>
-<li>Karin Taliga (finder)</li>
+<li>Kasper Karlsson, Omegapoint (finder)</li>
+<li>Pontus Hanssen, Omegapoint (finder)</li>
 </ul>
-<h2 id="CVE-2026-23795">Console XXE on Keymaster parameters</h2>
-<p>CVE-2026-23795 <a href="./CVE-2026-23795.cve.json">[CVE json]</a> <a href="./CVE-2026-23795.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-02-03T15:14:33.685Z</em></p>
+<h2 id="CVE-2024-38503">HTML tags can be injected into Console or Enduser text fields</h2>
+<p>CVE-2024-38503 <a href="https://cve.org/CVERecord?id=CVE-2024-38503">[CVE]</a> <a href="./CVE-2024-38503.cve.json">[CVE json]</a> <a href="./CVE-2024-38503.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-09-11T11:11:10.160Z</em></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
-<li>Apache Syncope from 3.0 through 3.0.15</li>
-<li>Apache Syncope from 4.0 through 4.0.3</li>
+<li>Apache Syncope from 2.1 through 2.1.14</li>
+<li>Apache Syncope from 3.0 through 3.0.7</li>
 </ul>
 <h3 id="description-5">Description</h3>
-<p>Improper Restriction of XML External Entity Reference vulnerability in Apache Syncope Console.<br>An administrator with adequate entitlements to create or edit Keymaster parameters via Console can construct malicious XML text to launch an XXE attack, thereby causing sensitive data leakage occurs.</p><p>This issue affects Apache Syncope: from 3.0 through 3.0.15, from 4.0 through 4.0.3.</p><p>Users are recommended to upgrade to version 3.0.16 / 4.0.4, which fix this issue.</p>
+<p>When editing a user, group or any object in the Syncope Console, HTML tags could be added to any text field and could lead to potential exploits.<br>The same vulnerability was found in the Syncope Enduser, when editing “Personal Information” or “User Requests”.<br><br>Users are recommended to upgrade to version 3.0.8, which fixes this issue.</p>
 <h3 id="references-5">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/mzgbdn8hzk8vr94o660njcc7w62c2pos">https://lists.apache.org/thread/mzgbdn8hzk8vr94o660njcc7w62c2pos</a></li>
+<li><a href="https://syncope.apache.org/security#cve-2024-38503-html-tags-can-be-injected-into-console-or-enduser">https://syncope.apache.org/security#cve-2024-38503-html-tags-can-be-injected-into-console-or-enduser</a></li>
 </ul>
 <h3 id="credits-5">Credits</h3>
 <ul>
-<li>follycat (finder)</li>
-<li>Y0n3er (finder)</li>
+<li>Basalt IT-Security Team (finder)</li>
 </ul>
 
   

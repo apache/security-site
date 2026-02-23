@@ -105,41 +105,41 @@
 <p>Do you want disclose a potential security issue for Apache Santuario? You can read more about the projects&rsquo; security policy on their <a href="https://santuario.apache.org/secadv.html">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://santuario.apache.org/secadv.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-40690">Bypass of the secureValidation property</h2>
-<p>CVE-2021-40690 <a href="./CVE-2021-40690.cve.json">[CVE json]</a> <a href="./CVE-2021-40690.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-09-19T17:20:51.491Z</em></p>
-<h3 id="affected">Affected</h3>
-<ul>
-<li>Apache Santuario from XML Security for Java before 2.2.3,2.1.7</li>
-</ul>
-<h3 id="description">Description</h3>
-<p>All versions of Apache Santuario - XML Security for Java prior to 2.2.3 and 2.1.7 are vulnerable to an issue where the &ldquo;secureValidation&rdquo; property is not passed correctly when creating a KeyInfo from a KeyInfoReference element. This allows an attacker to abuse an XPath Transform to extract any local .xml files in a RetrievalMethod element.</p>
-<h3 id="references">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread.html/r8848751b6a5dd78cc9e99d627e74fecfaffdfa1bb615dce827aad633%40%3Cdev.santuario.apache.org%3E">https://lists.apache.org/thread.html/r8848751b6a5dd78cc9e99d627e74fecfaffdfa1bb615dce827aad633%40%3Cdev.santuario.apache.org%3E</a></li>
-</ul>
-<h3 id="credits">Credits</h3>
-<ul>
-<li>An Trinh, Calif.</li>
-</ul>
 <h2 id="CVE-2023-44483">Private Key disclosure in debug-log output</h2>
-<p>CVE-2023-44483 <a href="./CVE-2023-44483.cve.json">[CVE json]</a> <a href="./CVE-2023-44483.osv.json">[OSV json]</a></p>
+<p>CVE-2023-44483 <a href="https://cve.org/CVERecord?id=CVE-2023-44483">[CVE]</a> <a href="./CVE-2023-44483.cve.json">[CVE json]</a> <a href="./CVE-2023-44483.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2023-10-20T09:23:50.763Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected">Affected</h3>
 <ul>
 <li>Apache Santuario from 2.2 before 2.2.6</li>
 <li>Apache Santuario from 2.3 before 2.3.4</li>
 <li>Apache Santuario from 3.0 before 3.0.3</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description">Description</h3>
 <p>All versions of Apache Santuario - XML Security for Java prior to 2.2.6, 2.3.4, and 3.0.3, when using the JSR 105 API, are vulnerable to an issue where a private key may be disclosed in log files when generating an XML Signature and logging with debug level is enabled. Users are recommended to upgrade to version 2.2.6, 2.3.4, or 3.0.3, which fixes this issue.<br></p>
-<h3 id="references-1">References</h3>
+<h3 id="references">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/vmqbp9mfxtrf0kmbnnmbn3h9j6dr9q55">https://lists.apache.org/thread/vmqbp9mfxtrf0kmbnnmbn3h9j6dr9q55</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits">Credits</h3>
 <ul>
 <li>Apache Santuario would like to thank Max Fichtelmann for reporting this issue. (finder)</li>
+</ul>
+<h2 id="CVE-2021-40690">Bypass of the secureValidation property</h2>
+<p>CVE-2021-40690 <a href="https://cve.org/CVERecord?id=CVE-2021-40690">[CVE]</a> <a href="./CVE-2021-40690.cve.json">[CVE json]</a> <a href="./CVE-2021-40690.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-09-19T17:20:51.491Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Santuario from XML Security for Java before 2.2.3,2.1.7</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>All versions of Apache Santuario - XML Security for Java prior to 2.2.3 and 2.1.7 are vulnerable to an issue where the &ldquo;secureValidation&rdquo; property is not passed correctly when creating a KeyInfo from a KeyInfoReference element. This allows an attacker to abuse an XPath Transform to extract any local .xml files in a RetrievalMethod element.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r8848751b6a5dd78cc9e99d627e74fecfaffdfa1bb615dce827aad633%40%3Cdev.santuario.apache.org%3E">https://lists.apache.org/thread.html/r8848751b6a5dd78cc9e99d627e74fecfaffdfa1bb615dce827aad633%40%3Cdev.santuario.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>An Trinh, Calif.</li>
 </ul>
 
   

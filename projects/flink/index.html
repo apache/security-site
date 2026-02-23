@@ -105,62 +105,10 @@
 <p>Do you want disclose a potential security issue for Apache Flink? You can read more about the projects&rsquo; security policy on their <a href="https://flink.apache.org/what-is-flink/security/">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://flink.apache.org/what-is-flink/security/">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2020-17518">Apache Flink directory traversal attack: remote file writing through the REST API</h2>
-<p>CVE-2020-17518 <a href="./CVE-2020-17518.cve.json">[CVE json]</a> <a href="./CVE-2020-17518.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-01-05T11:32:09.849Z</em></p>
-<h3 id="affected">Affected</h3>
-<ul>
-<li>Apache Flink at 1.5.1 to 1.11.2</li>
-</ul>
-<h3 id="description">Description</h3>
-<p>Apache Flink 1.5.1 introduced a REST handler that allows you to write an uploaded file to an arbitrary location on the local file system, through a maliciously modified HTTP HEADER. The files can be written to any location accessible by Flink 1.5.1.  All users should upgrade to Flink 1.11.3 or 1.12.0 if their Flink instance(s) are exposed.  The issue was fixed in commit a5264a6f41524afe8ceadf1d8ddc8c80f323ebc4 from apache/flink:master.</p>
-<h3 id="references">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread.html/rb43cd476419a48be89c1339b527a18116f23eec5b6df2b2acbfef261%40%3Cdev.flink.apache.org%3E">https://lists.apache.org/thread.html/rb43cd476419a48be89c1339b527a18116f23eec5b6df2b2acbfef261%40%3Cdev.flink.apache.org%3E</a></li>
-</ul>
-<h3 id="credits">Credits</h3>
-<ul>
-<li>0rich1 of Ant Security FG Lab</li>
-</ul>
-<h2 id="CVE-2020-17519">Apache Flink directory traversal attack: reading remote files through the REST API</h2>
-<p>CVE-2020-17519 <a href="./CVE-2020-17519.cve.json">[CVE json]</a> <a href="./CVE-2020-17519.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-01-05T11:32:48.294Z</em></p>
-<h3 id="affected-1">Affected</h3>
-<ul>
-<li>Apache Flink at 1.11.0 to 1.11.2</li>
-</ul>
-<h3 id="description-1">Description</h3>
-<p>A change introduced in Apache Flink 1.11.0 (and released in 1.11.1 and 1.11.2 as well) allows attackers to read any file on the local filesystem of the JobManager through the REST interface of the JobManager process. Access is restricted to files accessible by the JobManager process.
-All users should upgrade to Flink 1.11.3 or 1.12.0 if their Flink instance(s) are exposed. The issue was fixed in commit b561010b0ee741543c3953306037f00d7a9f0801 from apache/flink:master.</p>
-<h3 id="references-1">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread.html/r6843202556a6d0bce9607ebc02e303f68fc88e9038235598bde3b50d%40%3Cdev.flink.apache.org%3E">https://lists.apache.org/thread.html/r6843202556a6d0bce9607ebc02e303f68fc88e9038235598bde3b50d%40%3Cdev.flink.apache.org%3E</a></li>
-</ul>
-<h3 id="credits-1">Credits</h3>
-<ul>
-<li>0rich1 of Ant Security FG Lab</li>
-</ul>
-<h2 id="CVE-2023-41834">Apache Flink Stateful Functions allowed HTTP header injection due to Improper Neutralization of CRLF Sequences</h2>
-<p>CVE-2023-41834 <a href="./CVE-2023-41834.cve.json">[CVE json]</a> <a href="./CVE-2023-41834.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-09-19T12:34:13.497Z</em></p>
-<h3 id="affected-2">Affected</h3>
-<ul>
-<li>Apache Flink Stateful Functions from 3.1.0 through 3.2.0</li>
-</ul>
-<h3 id="description-2">Description</h3>
-<p>Improper Neutralization of CRLF Sequences in HTTP Headers in Apache Flink Stateful Functions 3.1.0, 3.1.1 and 3.2.0 allows remote attackers to inject arbitrary HTTP headers and conduct HTTP response splitting attacks via crafted HTTP requests. Attackers could potentially inject malicious content into the HTTP response that is sent to the user&rsquo;s browser. <br><br>Users should upgrade to Apache Flink Stateful Functions version 3.3.0.</p>
-<h3 id="references-2">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/cvxcsdyjqc3lysj1tz7s06zwm36zvwrm">https://lists.apache.org/thread/cvxcsdyjqc3lysj1tz7s06zwm36zvwrm</a></li>
-</ul>
-<h3 id="credits-2">Credits</h3>
-<ul>
-<li>Andrea Cosentino (finder)</li>
-</ul>
 <h2 id="CVE-2025-62228">SQL injection via maliciously crafted identifiers</h2>
-<p>CVE-2025-62228 <a href="./CVE-2025-62228.cve.json">[CVE json]</a> <a href="./CVE-2025-62228.osv.json">[OSV json]</a></p>
+<p>CVE-2025-62228 <a href="https://cve.org/CVERecord?id=CVE-2025-62228">[CVE]</a> <a href="./CVE-2025-62228.cve.json">[CVE json]</a> <a href="./CVE-2025-62228.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-10-09T13:15:41.457Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected">Affected</h3>
 <ul>
 <li>Apache Flink CDC from 3.0.0 through 3.4.0</li>
 <li>Apache Flink CDC from 3.0.0 through 3.4.0</li>
@@ -168,16 +116,68 @@ All users should upgrade to Flink 1.11.3 or 1.12.0 if their Flink instance(s) ar
 <li>Apache Flink CDC from 3.0.0 through 3.4.0</li>
 <li>Apache Flink CDC from 3.3.0 through 3.4.0</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description">Description</h3>
 <div><div>Apache Flink CDC version 3.4.0 was vulnerable to a SQL injection via maliciously crafted identifiers eg. crafted database name or crafted table name. Even through only the logged-in database user can trigger the attack, we recommend users update Flink CDC version to 3.5.0 which address this issue.   </div></div><br>
-<h3 id="references-3">References</h3>
+<h3 id="references">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/3dn0hc1wbc5sj0jbgdg33gtnwlw7qrl3">https://lists.apache.org/thread/3dn0hc1wbc5sj0jbgdg33gtnwlw7qrl3</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits">Credits</h3>
 <ul>
 <li>intSheep (reporter)</li>
 <li>Mapta/BugBunny_ai (reporter)</li>
+</ul>
+<h2 id="CVE-2023-41834">Apache Flink Stateful Functions allowed HTTP header injection due to Improper Neutralization of CRLF Sequences</h2>
+<p>CVE-2023-41834 <a href="https://cve.org/CVERecord?id=CVE-2023-41834">[CVE]</a> <a href="./CVE-2023-41834.cve.json">[CVE json]</a> <a href="./CVE-2023-41834.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-09-19T12:34:13.497Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Flink Stateful Functions from 3.1.0 through 3.2.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Improper Neutralization of CRLF Sequences in HTTP Headers in Apache Flink Stateful Functions 3.1.0, 3.1.1 and 3.2.0 allows remote attackers to inject arbitrary HTTP headers and conduct HTTP response splitting attacks via crafted HTTP requests. Attackers could potentially inject malicious content into the HTTP response that is sent to the user&rsquo;s browser. <br><br>Users should upgrade to Apache Flink Stateful Functions version 3.3.0.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/cvxcsdyjqc3lysj1tz7s06zwm36zvwrm">https://lists.apache.org/thread/cvxcsdyjqc3lysj1tz7s06zwm36zvwrm</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Andrea Cosentino (finder)</li>
+</ul>
+<h2 id="CVE-2020-17519">Apache Flink directory traversal attack: reading remote files through the REST API</h2>
+<p>CVE-2020-17519 <a href="https://cve.org/CVERecord?id=CVE-2020-17519">[CVE]</a> <a href="./CVE-2020-17519.cve.json">[CVE json]</a> <a href="./CVE-2020-17519.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-01-05T11:32:48.294Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Flink at 1.11.0 to 1.11.2</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>A change introduced in Apache Flink 1.11.0 (and released in 1.11.1 and 1.11.2 as well) allows attackers to read any file on the local filesystem of the JobManager through the REST interface of the JobManager process. Access is restricted to files accessible by the JobManager process.
+All users should upgrade to Flink 1.11.3 or 1.12.0 if their Flink instance(s) are exposed. The issue was fixed in commit b561010b0ee741543c3953306037f00d7a9f0801 from apache/flink:master.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r6843202556a6d0bce9607ebc02e303f68fc88e9038235598bde3b50d%40%3Cdev.flink.apache.org%3E">https://lists.apache.org/thread.html/r6843202556a6d0bce9607ebc02e303f68fc88e9038235598bde3b50d%40%3Cdev.flink.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>0rich1 of Ant Security FG Lab</li>
+</ul>
+<h2 id="CVE-2020-17518">Apache Flink directory traversal attack: remote file writing through the REST API</h2>
+<p>CVE-2020-17518 <a href="https://cve.org/CVERecord?id=CVE-2020-17518">[CVE]</a> <a href="./CVE-2020-17518.cve.json">[CVE json]</a> <a href="./CVE-2020-17518.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-01-05T11:32:09.849Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Flink at 1.5.1 to 1.11.2</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Apache Flink 1.5.1 introduced a REST handler that allows you to write an uploaded file to an arbitrary location on the local file system, through a maliciously modified HTTP HEADER. The files can be written to any location accessible by Flink 1.5.1.  All users should upgrade to Flink 1.11.3 or 1.12.0 if their Flink instance(s) are exposed.  The issue was fixed in commit a5264a6f41524afe8ceadf1d8ddc8c80f323ebc4 from apache/flink:master.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/rb43cd476419a48be89c1339b527a18116f23eec5b6df2b2acbfef261%40%3Cdev.flink.apache.org%3E">https://lists.apache.org/thread.html/rb43cd476419a48be89c1339b527a18116f23eec5b6df2b2acbfef261%40%3Cdev.flink.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>0rich1 of Ant Security FG Lab</li>
 </ul>
 
   

@@ -105,43 +105,43 @@
 <p>Do you want disclose a potential security issue for Apache Subversion? You can read more about the projects&rsquo; security policy on their <a href="https://subversion.apache.org/security/">security page</a>, and email your report to the <a href="mailto:security@subversion.apache.org">Apache Subversion Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://subversion.apache.org/security/">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2020-17525">Remote unauthenticated denial-of-service in Subversion mod_authz_svn</h2>
-<p>CVE-2020-17525 <a href="./CVE-2020-17525.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2021-03-17T09:12:33.507Z</em></p>
+<h2 id="CVE-2024-46901">mod_dav_svn denial-of-service via control characters in paths</h2>
+<p>CVE-2024-46901 <a href="https://cve.org/CVERecord?id=CVE-2024-46901">[CVE]</a> <a href="./CVE-2024-46901.cve.json">[CVE json]</a> <a href="./CVE-2024-46901.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-12-09T09:36:41.289Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Subversion at mod_authz_svn 1.10.7</li>
-<li>Apache Subversion from mod_authz_svn before 1.14.1</li>
+<li>Apache Subversion through 1.14.4</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Subversion&rsquo;s mod_authz_svn module will crash if the server is using in-repository authz rules with the AuthzSVNReposRelativeAccessFile option and a client sends a request for a non-existing repository URL. This can lead to disruption for users of the service.  This issue was fixed in mod_dav_svn+mod_authz_svn servers 1.14.1 and mod_dav_svn+mod_authz_svn servers 1.10.7</p>
+<p>Insufficient validation of filenames against control characters in Apache Subversion repositories served via mod_dav_svn allows authenticated users with commit access to commit a corrupted revision, leading to disruption for users of the repository.<br><br>All versions of Subversion up to and including Subversion 1.14.4 are affected if serving repositories via mod_dav_svn. Users are recommended to upgrade to version 1.14.5, which fixes this issue.<br><br>Repositories served via other access methods are not affected.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://subversion.apache.org/security/CVE-2020-17525-advisory.txt">https://subversion.apache.org/security/CVE-2020-17525-advisory.txt</a></li>
+<li><a href="https://subversion.apache.org/security/CVE-2024-46901-advisory.txt">https://subversion.apache.org/security/CVE-2024-46901-advisory.txt</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Thomas Åkesson (simonsoft.se)</li>
+<li>HaoZi, WordPress China (finder)</li>
 </ul>
-<h2 id="CVE-2021-28544">Apache Subversion SVN authz protected copyfrom paths regression</h2>
-<p>CVE-2021-28544 <a href="./CVE-2021-28544.cve.json">[CVE json]</a> <a href="./CVE-2021-28544.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-04-12T17:46:18.140Z</em></p>
+<h2 id="CVE-2024-45720">Command line argument injection on Windows platforms</h2>
+<p>CVE-2024-45720 <a href="https://cve.org/CVERecord?id=CVE-2024-45720">[CVE]</a> <a href="./CVE-2024-45720.cve.json">[CVE json]</a> <a href="./CVE-2024-45720.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-10-09T12:38:27.375Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache Subversion at 1.10.0 to 1.14.1</li>
+<li>Apache Subversion from 1.0.0 through 1.14.3</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>Apache Subversion SVN authz protected copyfrom paths regression  Subversion servers reveal &lsquo;copyfrom&rsquo; paths that should be hidden according to configured path-based authorization (authz) rules.  When a node has been copied from a protected location, users with access to the copy can see the &lsquo;copyfrom&rsquo; path of the original.  This also reveals the fact that the node was copied.  Only the &lsquo;copyfrom&rsquo; path is revealed; not its contents. Both httpd and svnserve servers are vulnerable.</p>
+<p>On Windows platforms, a &ldquo;best fit&rdquo; character encoding conversion of command line arguments to Subversion&rsquo;s executables (e.g., svn.exe, etc.) may lead to unexpected command line argument interpretation, including argument injection and execution of other programs, if a specially crafted command line argument string is processed.<br><br>All versions of Subversion up to and including Subversion 1.14.3 are affected on Windows platforms only. Users are recommended to upgrade to version Subversion 1.14.4, which fixes this issue.<br><br><div>Subversion is not affected on UNIX-like platforms.</div><br></p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://subversion.apache.org/security/CVE-2021-28544-advisory.txt">https://subversion.apache.org/security/CVE-2021-28544-advisory.txt</a></li>
+<li><a href="https://subversion.apache.org/security/CVE-2024-45720-advisory.txt">https://subversion.apache.org/security/CVE-2024-45720-advisory.txt</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>Apache Subversion would like to thank Evgeny Kotkov, visualsvn.com.</li>
+<li>Orange Tsai (@orange_8361) from DEVCORE Research Team (finder)</li>
+<li>splitline (@<em>splitline</em>) from DEVCORE Research Team (finder)</li>
 </ul>
 <h2 id="CVE-2022-24070">Apache Subversion mod_dav_svn is vulnerable to memory corruption</h2>
-<p>CVE-2022-24070 <a href="./CVE-2022-24070.cve.json">[CVE json]</a> <a href="./CVE-2022-24070.osv.json">[OSV json]</a></p>
+<p>CVE-2022-24070 <a href="https://cve.org/CVERecord?id=CVE-2022-24070">[CVE]</a> <a href="./CVE-2022-24070.cve.json">[CVE json]</a> <a href="./CVE-2022-24070.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-04-12T17:46:14.441Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
@@ -159,40 +159,40 @@
 <ul>
 <li>Apache Subversion would like to thank Thomas Weißschuh, cis-solutions.eu.</li>
 </ul>
-<h2 id="CVE-2024-45720">Command line argument injection on Windows platforms</h2>
-<p>CVE-2024-45720 <a href="./CVE-2024-45720.cve.json">[CVE json]</a> <a href="./CVE-2024-45720.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-10-09T12:38:27.375Z</em></p>
+<h2 id="CVE-2021-28544">Apache Subversion SVN authz protected copyfrom paths regression</h2>
+<p>CVE-2021-28544 <a href="https://cve.org/CVERecord?id=CVE-2021-28544">[CVE]</a> <a href="./CVE-2021-28544.cve.json">[CVE json]</a> <a href="./CVE-2021-28544.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-04-12T17:46:18.140Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache Subversion from 1.0.0 through 1.14.3</li>
+<li>Apache Subversion at 1.10.0 to 1.14.1</li>
 </ul>
 <h3 id="description-3">Description</h3>
-<p>On Windows platforms, a &ldquo;best fit&rdquo; character encoding conversion of command line arguments to Subversion&rsquo;s executables (e.g., svn.exe, etc.) may lead to unexpected command line argument interpretation, including argument injection and execution of other programs, if a specially crafted command line argument string is processed.<br><br>All versions of Subversion up to and including Subversion 1.14.3 are affected on Windows platforms only. Users are recommended to upgrade to version Subversion 1.14.4, which fixes this issue.<br><br><div>Subversion is not affected on UNIX-like platforms.</div><br></p>
+<p>Apache Subversion SVN authz protected copyfrom paths regression  Subversion servers reveal &lsquo;copyfrom&rsquo; paths that should be hidden according to configured path-based authorization (authz) rules.  When a node has been copied from a protected location, users with access to the copy can see the &lsquo;copyfrom&rsquo; path of the original.  This also reveals the fact that the node was copied.  Only the &lsquo;copyfrom&rsquo; path is revealed; not its contents. Both httpd and svnserve servers are vulnerable.</p>
 <h3 id="references-3">References</h3>
 <ul>
-<li><a href="https://subversion.apache.org/security/CVE-2024-45720-advisory.txt">https://subversion.apache.org/security/CVE-2024-45720-advisory.txt</a></li>
+<li><a href="https://subversion.apache.org/security/CVE-2021-28544-advisory.txt">https://subversion.apache.org/security/CVE-2021-28544-advisory.txt</a></li>
 </ul>
 <h3 id="credits-3">Credits</h3>
 <ul>
-<li>Orange Tsai (@orange_8361) from DEVCORE Research Team (finder)</li>
-<li>splitline (@<em>splitline</em>) from DEVCORE Research Team (finder)</li>
+<li>Apache Subversion would like to thank Evgeny Kotkov, visualsvn.com.</li>
 </ul>
-<h2 id="CVE-2024-46901">mod_dav_svn denial-of-service via control characters in paths</h2>
-<p>CVE-2024-46901 <a href="./CVE-2024-46901.cve.json">[CVE json]</a> <a href="./CVE-2024-46901.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-12-09T09:36:41.289Z</em></p>
+<h2 id="CVE-2020-17525">Remote unauthenticated denial-of-service in Subversion mod_authz_svn</h2>
+<p>CVE-2020-17525 <a href="https://cve.org/CVERecord?id=CVE-2020-17525">[CVE]</a> <a href="./CVE-2020-17525.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2021-03-17T09:12:33.507Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache Subversion through 1.14.4</li>
+<li>Apache Subversion at mod_authz_svn 1.10.7</li>
+<li>Apache Subversion from mod_authz_svn before 1.14.1</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<p>Insufficient validation of filenames against control characters in Apache Subversion repositories served via mod_dav_svn allows authenticated users with commit access to commit a corrupted revision, leading to disruption for users of the repository.<br><br>All versions of Subversion up to and including Subversion 1.14.4 are affected if serving repositories via mod_dav_svn. Users are recommended to upgrade to version 1.14.5, which fixes this issue.<br><br>Repositories served via other access methods are not affected.</p>
+<p>Subversion&rsquo;s mod_authz_svn module will crash if the server is using in-repository authz rules with the AuthzSVNReposRelativeAccessFile option and a client sends a request for a non-existing repository URL. This can lead to disruption for users of the service.  This issue was fixed in mod_dav_svn+mod_authz_svn servers 1.14.1 and mod_dav_svn+mod_authz_svn servers 1.10.7</p>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://subversion.apache.org/security/CVE-2024-46901-advisory.txt">https://subversion.apache.org/security/CVE-2024-46901-advisory.txt</a></li>
+<li><a href="https://subversion.apache.org/security/CVE-2020-17525-advisory.txt">https://subversion.apache.org/security/CVE-2020-17525-advisory.txt</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>HaoZi, WordPress China (finder)</li>
+<li>Thomas Åkesson (simonsoft.se)</li>
 </ul>
 
   

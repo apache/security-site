@@ -105,177 +105,166 @@
 <p>Do you want disclose a potential security issue for Apache NiFi? You can read more about the projects&rsquo; security policy on their <a href="https://nifi.apache.org/documentation/security/">security page</a>, and email your report to the <a href="mailto:security@nifi.apache.org">Apache NiFi Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://nifi.apache.org/documentation/security/">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-33191">MiNiFi CPP arbitrary script execution is possible on the agent&rsquo;s host machine through the c2 protocol</h2>
-<p>CVE-2021-33191 <a href="./CVE-2021-33191.cve.json">[CVE json]</a> <a href="./CVE-2021-33191.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-08-24T11:14:05.278Z</em></p>
+<h2 id="CVE-2026-25903">Missing Authorization of Restricted Permissions for Component Updates</h2>
+<p>CVE-2026-25903 <a href="https://cve.org/CVERecord?id=CVE-2026-25903">[CVE]</a> <a href="./CVE-2026-25903.cve.json">[CVE json]</a> <a href="./CVE-2026-25903.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-02-17T09:54:42.673Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache NiFi - MiNiFi C++ from 0.5.0 before Apache NiFi - MiNiFi C++*</li>
+<li>Apache NiFi from 1.1.0 before 2.8.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>From Apache NiFi MiNiFi C++ version 0.5.0 the c2 protocol implements an &ldquo;agent-update&rdquo; command which was designed to patch the application binary.
-This &ldquo;patching&rdquo; command defaults to calling a trusted binary, but might be modified to an arbitrary value through a &ldquo;c2-update&rdquo;
-command. Said command is then executed using the same privileges as the application binary.  This was addressed in version 0.10.0</p>
+<p>Apache NiFi 1.1.0 through 2.7.2 are missing authorization when updating configuration properties on extension components that have specific Required Permissions based on the Restricted annotation. The Restricted annotation indicates additional privileges required to add the annotated component to the flow configuration, but framework authorization did not check restricted status when updating a component previously added. The missing authorization requires a more privileged user to add a restricted component to the flow configuration, but permits a less privileged user to make property configuration changes. Apache NiFi installations that do not implement different levels of authorization for Restricted components are not subject to this vulnerability because the framework enforces write permissions as the security boundary. Upgrading to Apache NiFi 2.8.0 is the recommended mitigation.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://www.openwall.com/lists/oss-security/2021/08/24/1">https://www.openwall.com/lists/oss-security/2021/08/24/1</a></li>
-</ul>
-<h2 id="CVE-2021-44145">Apache NiFi information disclosure by XXE</h2>
-<p>CVE-2021-44145 <a href="./CVE-2021-44145.cve.json">[CVE json]</a> <a href="./CVE-2021-44145.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-12-17T08:46:07.497Z</em></p>
-<h3 id="affected-1">Affected</h3>
-<ul>
-<li>Apache NiFi from Apache NiFi through 1.15.0</li>
-</ul>
-<h3 id="description-1">Description</h3>
-<p>In the TransformXML processor of Apache NiFi before 1.15.1 an authenticated user could configure an XSLT file which, if it included malicious external entity calls, may reveal sensitive information.</p>
-<h3 id="references-1">References</h3>
-<ul>
-<li><a href="https://nifi.apache.org/security.html#1.15.1-vulnerabilities">https://nifi.apache.org/security.html#1.15.1-vulnerabilities</a></li>
+<li><a href="https://lists.apache.org/thread/jf6bkt9sk6xvshy8xyxv3vtlxd340345">https://lists.apache.org/thread/jf6bkt9sk6xvshy8xyxv3vtlxd340345</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>This issue was discovered by DangKhai at Viettel Cyber Security.</li>
+<li>David Handermann (finder)</li>
 </ul>
-<h2 id="CVE-2022-26850">Insufficiently protected credentials</h2>
-<p>CVE-2022-26850 <a href="./CVE-2022-26850.cve.json">[CVE json]</a> <a href="./CVE-2022-26850.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-04-06T20:48:13.265Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h2 id="CVE-2025-66524">Deserialization of Untrusted Data in GetAsanaObject Processor</h2>
+<p>CVE-2025-66524 <a href="https://cve.org/CVERecord?id=CVE-2025-66524">[CVE]</a> <a href="./CVE-2025-66524.cve.json">[CVE json]</a> <a href="./CVE-2025-66524.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-19T09:24:44.035Z</em></p>
+<h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache NiFi at NiFi 1.14.0 to 1.15.3</li>
+<li>Apache NiFi from 1.20.0 through 2.6.0</li>
 </ul>
-<h3 id="description-2">Description</h3>
-<p>When creating or updating credentials for single-user access, Apache NiFi wrote a copy of the Login Identity Providers configuration to the operating system temporary directory. On most platforms, the operating system temporary directory has global read permissions. NiFi immediately moved the temporary file to the final configuration directory, which significantly limited the window of opportunity for access.</p>
-<p>NiFi 1.16.0 includes updates to replace the Login Identity Providers configuration without writing a file to the operating system temporary directory.</p>
-<h3 id="references-2">References</h3>
+<h3 id="description-1">Description</h3>
+<p>Apache NiFi 1.20.0 through 2.6.0 include the GetAsanaObject Processor, which requires integration with a configurable Distribute Map Cache Client Service for storing and retrieving state information. The GetAsanaObject Processor used generic Java Object serialization and deserialization without filtering. Unfiltered Java object deserialization does not provide protection against crafted state information stored in the cache server configured for GetAsanaObject. Exploitation requires an Apache NiFi system running with the GetAsanaObject Processor, and direct access to the configured cache server. Upgrading to Apache NiFi 2.7.0 is the recommended mitigation, which replaces Java Object serialization with JSON serialization. Removing the GetAsanaObject Processor located in the nifi-asana-processors-nar bundle also prevents exploitation.</p>
+<h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://nifi.apache.org/security.html#CVE-2022-26850">https://nifi.apache.org/security.html#CVE-2022-26850</a></li>
+<li><a href="https://lists.apache.org/thread/k9h004ydjg7opdvxr0nfywtzf33z60d7">https://lists.apache.org/thread/k9h004ydjg7opdvxr0nfywtzf33z60d7</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>This issue was discovered by Jonathan Leitschuh (<a href="https://twitter.com/jlleitschuh">https://twitter.com/jlleitschuh</a>)</li>
+<li>Jaeyeong Lee (finder)</li>
 </ul>
-<h2 id="CVE-2022-29265">Improper Restriction of XML External Entity References in Multiple Components</h2>
-<p>CVE-2022-29265 <a href="./CVE-2022-29265.cve.json">[CVE json]</a> <a href="./CVE-2022-29265.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-04-30T08:01:30.969Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h2 id="CVE-2025-27017">Potential Insertion of MongoDB Password in Provenance Record</h2>
+<p>CVE-2025-27017 <a href="https://cve.org/CVERecord?id=CVE-2025-27017">[CVE]</a> <a href="./CVE-2025-27017.cve.json">[CVE json]</a> <a href="./CVE-2025-27017.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-03-12T16:19:42.969Z</em></p>
+<h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache NiFi from 0.0.1 to 1.16.0 through 0.0.1 to 1.16.0</li>
+<li>Apache NiFi from 1.13.0 through 2.2.0</li>
 </ul>
-<h3 id="description-3">Description</h3>
-<p>Multiple components in Apache NiFi 0.0.1 to 1.16.0 do not restrict XML External Entity references in the default configuration.</p>
-<p>The Standard Content Viewer service attempts to resolve XML External Entity references when viewing formatted XML files.</p>
-<p>The following Processors attempt to resolve XML External Entity references when configured with default property values:</p>
+<h3 id="description-2">Description</h3>
+<p><span style="background-color: rgb(252, 252, 252);">Apache NiFi 1.13.0 through 2.2.0 includes the username and password used to authenticate with MongoDB in the NiFi provenance events that MongoDB components generate during processing. An authorized user with read access to the provenance events of those processors may see the credentials information. Upgrading to Apache NiFi 2.3.0 is the recommended mitigation, which removes the credentials from provenance event records.</span></p>
+<h3 id="references-2">References</h3>
 <ul>
-<li>EvaluateXPath</li>
-<li>EvaluateXQuery</li>
-<li>ValidateXml</li>
-</ul>
-<p>Apache NiFi flow configurations that include these Processors are vulnerable to malicious XML documents that contain Document Type Declarations with XML External Entity references.</p>
-<p>The resolution disables Document Type Declarations in the default configuration for these Processors, and disallows XML External Entity resolution in standard services.</p>
-<h3 id="references-3">References</h3>
-<ul>
-<li><a href="https://nifi.apache.org/security.html#CVE-2022-29265">https://nifi.apache.org/security.html#CVE-2022-29265</a></li>
-<li><a href="https://lists.apache.org/thread/47od9kr9n4cyv0mv81jh3pkyx815kyjl">https://lists.apache.org/thread/47od9kr9n4cyv0mv81jh3pkyx815kyjl</a></li>
+<li><a href="https://lists.apache.org/thread/d4n5474jkhp82dvnht13pjtlfx7bhn5q">https://lists.apache.org/thread/d4n5474jkhp82dvnht13pjtlfx7bhn5q</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>David Handermann at exceptionfactory.com reported this issue.</li>
+<li>Robert Creese (finder)</li>
 </ul>
-<h2 id="CVE-2022-33140">Improper Neutralization of Command Elements in Shell User Group Provider</h2>
-<p>CVE-2022-33140 <a href="./CVE-2022-33140.cve.json">[CVE json]</a> <a href="./CVE-2022-33140.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-06-15T14:21:09.085Z</em></p>
-<h3 id="affected-4">Affected</h3>
+<h2 id="CVE-2024-56512">Missing Complete Authorization for Parameter and Service References</h2>
+<p>CVE-2024-56512 <a href="https://cve.org/CVERecord?id=CVE-2024-56512">[CVE]</a> <a href="./CVE-2024-56512.cve.json">[CVE json]</a> <a href="./CVE-2024-56512.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-12-29T11:14:49.689Z</em></p>
+<h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache NiFi from up to 1.16.2 through 1.16.2</li>
-<li>Apache NiFi from 1.10.0 before 1.10.0*</li>
-<li>Apache NiFi Registry from up to 1.16.2 through 1.16.2</li>
-<li>Apache NiFi Registry from 0.6.0 before 0.6.0*</li>
+<li>Apache NiFi from 1.10.0 through 2.0.0</li>
 </ul>
-<h3 id="description-4">Description</h3>
-<p>The optional ShellUserGroupProvider in Apache NiFi 1.10.0 to 1.16.2 and Apache NiFi Registry 0.6.0 to 1.16.2 does not neutralize arguments for group resolution commands, allowing injection of operating system commands on Linux and macOS platforms.</p>
-<p>The ShellUserGroupProvider is not included in the default configuration. Command injection requires ShellUserGroupProvider to be one of the enabled User Group Providers in the Authorizers configuration. Command injection also requires an authenticated user with elevated privileges.  Apache NiFi requires an authenticated user with authorization to modify access policies in order to execute the command. Apache NiFi Registry requires an authenticated user with authorization to read user groups in order to execute the command.</p>
-<p>The resolution removes command formatting based on user-provided arguments.</p>
-<h3 id="references-4">References</h3>
+<h3 id="description-3">Description</h3>
+<p>Apache NiFi 1.10.0 through 2.0.0 are missing fine-grained authorization checking for Parameter Contexts, referenced Controller Services, and referenced Parameter Providers, when creating new Process Groups.<br><br>Creating a new Process Group can include binding to a Parameter Context, but in cases where the Process Group did not reference any Parameter values, the framework did not check user authorization for the bound Parameter Context. Missing authorization for a bound Parameter Context enabled clients to download non-sensitive Parameter values after creating the Process Group.<br><br>Creating a new Process Group can also include referencing existing Controller Services or Parameter Providers. The framework did not check user authorization for referenced Controller Services or Parameter Providers, enabling clients to create Process Groups and use these components that were otherwise unauthorized.<br><br>This vulnerability is limited in scope to authenticated users authorized to create Process Groups. The scope is further limited to deployments with component-based authorization policies. Upgrading to Apache NiFi 2.1.0 is the recommended mitigation, which includes authorization checking for Parameter and Controller Service references on Process Group creation.<br></p>
+<h3 id="references-3">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/bzs2pcdjsdrh5039oslmfr9mbs9qqdhr">https://lists.apache.org/thread/bzs2pcdjsdrh5039oslmfr9mbs9qqdhr</a></li>
-<li><a href="https://nifi.apache.org/security.html#CVE-2022-33140">https://nifi.apache.org/security.html#CVE-2022-33140</a></li>
-</ul>
-<h2 id="CVE-2023-22832">Improper Restriction of XML External Entity References in ExtractCCDAAttributes</h2>
-<p>CVE-2023-22832 <a href="./CVE-2023-22832.cve.json">[CVE json]</a> <a href="./CVE-2023-22832.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-02-10T07:45:29.071Z</em></p>
-<h3 id="affected-5">Affected</h3>
-<ul>
-<li>Apache NiFi from 1.2.0 through 1.19.1</li>
-</ul>
-<h3 id="description-5">Description</h3>
-<div>The ExtractCCDAAttributes Processor in Apache NiFi 1.2.0 through 1.19.1 does not restrict XML External Entity references.</div><div>Flow configurations that include the ExtractCCDAAttributes Processor are vulnerable to malicious XML documents that contain Document Type Declarations with XML External Entity references.</div><div>The resolution disables Document Type Declarations and disallows XML External Entity resolution in the ExtractCCDAAttributes Processor.</div>
-<h3 id="references-5">References</h3>
-<ul>
-<li><a href="https://nifi.apache.org/security.html#CVE-2023-22832">https://nifi.apache.org/security.html#CVE-2023-22832</a></li>
-<li><a href="https://lists.apache.org/thread/b51qs6y7b7r58vovddkv6wc16g2xbl3w">https://lists.apache.org/thread/b51qs6y7b7r58vovddkv6wc16g2xbl3w</a></li>
+<li><a href="https://lists.apache.org/thread/cjc8fns5kjsho0s7vonlnojokyfx47wn">https://lists.apache.org/thread/cjc8fns5kjsho0s7vonlnojokyfx47wn</a></li>
 </ul>
 <h3 id="credits-3">Credits</h3>
 <ul>
-<li>Yi Cai of Chaitin Tech (finder)</li>
+<li>Matt Gilman (finder)</li>
 </ul>
-<h2 id="CVE-2023-34212">Potential Deserialization of Untrusted Data with JNDI in JMS Components</h2>
-<p>CVE-2023-34212 <a href="./CVE-2023-34212.cve.json">[CVE json]</a> <a href="./CVE-2023-34212.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-06-12T15:10:30.889Z</em></p>
-<h3 id="affected-6">Affected</h3>
+<h2 id="CVE-2024-52067">Potential Insertion of Sensitive Parameter Values in Debug Log</h2>
+<p>CVE-2024-52067 <a href="https://cve.org/CVERecord?id=CVE-2024-52067">[CVE]</a> <a href="./CVE-2024-52067.cve.json">[CVE json]</a> <a href="./CVE-2024-52067.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-11-21T09:28:41.996Z</em></p>
+<h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache NiFi from 1.8.0 through 1.21.0</li>
+<li>Apache NiFi from 1.16.0 through 1.28.0</li>
+<li>Apache NiFi from 2.0.0-M1 through 2.0.0-M4</li>
 </ul>
-<h3 id="description-6">Description</h3>
-<div>The JndiJmsConnectionFactoryProvider Controller Service, along with the ConsumeJMS and PublishJMS Processors, in Apache NiFi 1.8.0 through 1.21.0 allow an authenticated and authorized user to configure URL and library properties that enable deserialization of untrusted data from a remote location.</div><div>The resolution validates the JNDI URL and restricts locations to a set of allowed schemes.</div><div>You are recommended to upgrade to version 1.22.0 or later which fixes this issue.<br></div>
-<h3 id="references-6">References</h3>
+<h3 id="description-4">Description</h3>
+<p>Apache NiFi 1.16.0 through 1.28.0 and 2.0.0-M1 through 2.0.0-M4 include optional debug logging of Parameter Context values during the flow synchronization process. An authorized administrator with access to change logging levels could enable debug logging for framework flow synchronization, causing the application to write Parameter names and values to the application log. Parameter Context values may contain sensitive information depending on application flow configuration. Deployments of Apache NiFi with the default Logback configuration do not log Parameter Context values. Upgrading to Apache NiFi 2.0.0 or 1.28.1 is the recommendation mitigation, eliminating Parameter value logging from the flow synchronization process regardless of the Logback configuration.<br></p>
+<h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://nifi.apache.org/security.html#CVE-2023-34212">https://nifi.apache.org/security.html#CVE-2023-34212</a></li>
-<li><a href="https://lists.apache.org/thread/w5rm46fxmvxy216tglf0dv83wo6gnzr5">https://lists.apache.org/thread/w5rm46fxmvxy216tglf0dv83wo6gnzr5</a></li>
+<li><a href="https://lists.apache.org/thread/9rz5rwn2zc7pfjq7ppqldqlc067tlcwd">https://lists.apache.org/thread/9rz5rwn2zc7pfjq7ppqldqlc067tlcwd</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>Veraxy00 of Qianxin TI Center (finder)</li>
-<li>Matei &ldquo;Mal&rdquo; Badanoiu (reporter)</li>
+<li>David Handermann (finder)</li>
 </ul>
-<h2 id="CVE-2023-34468">Potential Code Injection with Database Services using H2</h2>
-<p>CVE-2023-34468 <a href="./CVE-2023-34468.cve.json">[CVE json]</a> <a href="./CVE-2023-34468.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-06-12T15:09:17.702Z</em></p>
-<h3 id="affected-7">Affected</h3>
+<h2 id="CVE-2024-45477">Improper Neutralization of Input in Parameter Description</h2>
+<p>CVE-2024-45477 <a href="https://cve.org/CVERecord?id=CVE-2024-45477">[CVE]</a> <a href="./CVE-2024-45477.cve.json">[CVE json]</a> <a href="./CVE-2024-45477.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-10-29T09:00:05.602Z</em></p>
+<h3 id="affected-5">Affected</h3>
 <ul>
-<li>Apache NiFi from 0.0.2 through 1.21.0</li>
+<li>Apache NiFi from 1.10.0 through 1.27.0</li>
+<li>Apache NiFi from 2.0.0-M1 through 2.0.0-M3</li>
 </ul>
-<h3 id="description-7">Description</h3>
-<div>The DBCPConnectionPool and HikariCPConnectionPool Controller Services in Apache NiFi 0.0.2 through 1.21.0 allow an authenticated and authorized user to configure a Database URL with the H2 driver that enables custom code execution.</div><div>The resolution validates the Database URL and rejects H2 JDBC locations.</div><div>You are recommended to upgrade to version 1.22.0 or later which fixes this issue.<br></div>
-<h3 id="references-7">References</h3>
+<h3 id="description-5">Description</h3>
+<p>Apache NiFi 1.10.0 through 1.27.0 and 2.0.0-M1 through 2.0.0-M3 support a description field for Parameters in a Parameter Context configuration that is vulnerable to cross-site scripting. An authenticated user, authorized to configure a Parameter Context, can enter arbitrary JavaScript code, which the client browser will execute within the session context of the authenticated user. Upgrading to Apache NiFi 1.28.0 or 2.0.0-M4 is the recommended mitigation.</p>
+<h3 id="references-5">References</h3>
 <ul>
-<li><a href="https://nifi.apache.org/security.html#CVE-2023-34468">https://nifi.apache.org/security.html#CVE-2023-34468</a></li>
-<li><a href="https://lists.apache.org/thread/7b82l4f5blmpkfcynf3y6z4x1vqo59h8">https://lists.apache.org/thread/7b82l4f5blmpkfcynf3y6z4x1vqo59h8</a></li>
+<li><a href="https://lists.apache.org/thread/shdv0tw9hggj7tx9pl7g93mgok2lwbj9">https://lists.apache.org/thread/shdv0tw9hggj7tx9pl7g93mgok2lwbj9</a></li>
 </ul>
 <h3 id="credits-5">Credits</h3>
 <ul>
-<li>Matei &ldquo;Mal&rdquo; Badanoiu (finder)</li>
+<li>Muhammad Hazim Bin Nor Aizi (finder)</li>
 </ul>
-<h2 id="CVE-2023-36542">Potential Code Injection with Properties Referencing Remote Resources</h2>
-<p>CVE-2023-36542 <a href="./CVE-2023-36542.cve.json">[CVE json]</a> <a href="./CVE-2023-36542.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-07-29T07:12:37.941Z</em></p>
-<h3 id="affected-8">Affected</h3>
+<h2 id="CVE-2024-37389">Improper Neutralization of Input in Parameter Context Description</h2>
+<p>CVE-2024-37389 <a href="https://cve.org/CVERecord?id=CVE-2024-37389">[CVE]</a> <a href="./CVE-2024-37389.cve.json">[CVE json]</a> <a href="./CVE-2024-37389.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-08T07:28:58.478Z</em></p>
+<h3 id="affected-6">Affected</h3>
 <ul>
-<li>Apache NiFi from 0.0.2 through 1.22.0</li>
+<li>Apache NiFi from 1.10.0 through 1.26.0</li>
+<li>Apache NiFi from 2.0.0-M1 through 2.0.0-M3</li>
 </ul>
-<h3 id="description-8">Description</h3>
-<p>Apache NiFi 0.0.2 through 1.22.0 include Processors and Controller Services that support HTTP URL references for retrieving drivers, which allows an authenticated and authorized user to configure a location that enables custom code execution. The resolution introduces a new Required Permission for referencing remote resources, restricting configuration of these components to privileged users. The permission prevents unprivileged users from configuring Processors and Controller Services annotated with the new Reference Remote Resources restriction. Upgrading to Apache NiFi 1.23.0 is the recommended mitigation.<br></p>
-<h3 id="references-8">References</h3>
+<h3 id="description-6">Description</h3>
+<p>Apache NiFi 1.10.0 through 1.26.0 and 2.0.0-M1 through 2.0.0-M3 support a description field in the Parameter Context configuration that is vulnerable to cross-site scripting. An authenticated user, authorized to configure a Parameter Context, can enter arbitrary JavaScript code, which the client browser will execute within the session context of the authenticated user. Upgrading to Apache NiFi 1.27.0 or 2.0.0-M4 is the recommended mitigation.</p>
+<h3 id="references-6">References</h3>
 <ul>
-<li><a href="https://nifi.apache.org/security.html#CVE-2023-36542">https://nifi.apache.org/security.html#CVE-2023-36542</a></li>
-<li><a href="https://lists.apache.org/thread/swnly3dzhhq9zo3rofc8djq77stkhbof">https://lists.apache.org/thread/swnly3dzhhq9zo3rofc8djq77stkhbof</a></li>
+<li><a href="https://lists.apache.org/thread/yso9fr0wtff53nk046h1o83hdyb1lrxh">https://lists.apache.org/thread/yso9fr0wtff53nk046h1o83hdyb1lrxh</a></li>
 </ul>
 <h3 id="credits-6">Credits</h3>
 <ul>
-<li>nbxiglk (finder)</li>
+<li>Akbar Kustirama (finder)</li>
+</ul>
+<h2 id="CVE-2023-49145">Improper Neutralization of Input in Advanced User Interface for Jolt</h2>
+<p>CVE-2023-49145 <a href="https://cve.org/CVERecord?id=CVE-2023-49145">[CVE]</a> <a href="./CVE-2023-49145.cve.json">[CVE json]</a> <a href="./CVE-2023-49145.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-11-27T22:29:16.184Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache NiFi from 0.7.0 through 1.23.2</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>Apache NiFi 0.7.0 through 1.23.2 include the JoltTransformJSON Processor, which provides an advanced configuration user interface that is vulnerable to DOM-based cross-site scripting. If an authenticated user, who is authorized to configure a JoltTransformJSON Processor, visits a crafted URL, then arbitrary
+JavaScript code can be executed within the session context of the authenticated user. Upgrading to Apache NiFi 1.24.0 or 2.0.0-M1 is the recommended mitigation.</p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://nifi.apache.org/security.html#CVE-2023-49145">https://nifi.apache.org/security.html#CVE-2023-49145</a></li>
+<li><a href="https://lists.apache.org/thread/j8rd0qsvgoj0khqck5f49jfbp0fm8r1o">https://lists.apache.org/thread/j8rd0qsvgoj0khqck5f49jfbp0fm8r1o</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>Dr. Oliver Matula, DB Systel GmbH (finder)</li>
+</ul>
+<h2 id="CVE-2023-41180">Incorrect Certificate Validation in InvokeHTTP for MiNiFi C++</h2>
+<p>CVE-2023-41180 <a href="https://cve.org/CVERecord?id=CVE-2023-41180">[CVE]</a> <a href="./CVE-2023-41180.cve.json">[CVE json]</a> <a href="./CVE-2023-41180.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-09-03T15:52:48.640Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache NiFi MiNiFi C++ from 0.13.0 through 0.14.0</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<div>Incorrect certificate validation in InvokeHTTP on Apache NiFi MiNiFi C++ versions 0.13 to 0.14 allows an intermediary to present a forged certificate during TLS handshake negotation. The Disable Peer Verification property of InvokeHTTP was effectively flipped,  disabling verification by default, when using HTTPS.<br></div><div><br></div><div>Mitigation: Set the Disable Peer Verification property of InvokeHTTP to true when using MiNiFi C++ versions 0.13.0 or 0.14.0. Upgrading to MiNiFi C++ 0.15.0 corrects the default behavior.<br></div>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/b51f8csysg1pvgs6xjjrq5hrjrvfot1y">https://lists.apache.org/thread/b51f8csysg1pvgs6xjjrq5hrjrvfot1y</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>Ferenc Gerlits (finder)</li>
 </ul>
 <h2 id="CVE-2023-40037">Incomplete Validation of JDBC and JNDI Connection URLs</h2>
-<p>CVE-2023-40037 <a href="./CVE-2023-40037.cve.json">[CVE json]</a> <a href="./CVE-2023-40037.osv.json">[OSV json]</a></p>
+<p>CVE-2023-40037 <a href="https://cve.org/CVERecord?id=CVE-2023-40037">[CVE]</a> <a href="./CVE-2023-40037.cve.json">[CVE json]</a> <a href="./CVE-2023-40037.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2023-08-18T21:54:49.856Z</em></p>
 <h3 id="affected-9">Affected</h3>
 <ul>
@@ -288,150 +277,178 @@ command. Said command is then executed using the same privileges as the applicat
 <li><a href="https://nifi.apache.org/security.html#CVE-2023-40037">https://nifi.apache.org/security.html#CVE-2023-40037</a></li>
 <li><a href="https://lists.apache.org/thread/bqbjlrs2p5ghh8sbk5nsxb8xpf9l687q">https://lists.apache.org/thread/bqbjlrs2p5ghh8sbk5nsxb8xpf9l687q</a></li>
 </ul>
-<h3 id="credits-7">Credits</h3>
+<h3 id="credits-9">Credits</h3>
 <ul>
 <li>Matei &ldquo;Mal&rdquo; Badanoiu (finder)</li>
 </ul>
-<h2 id="CVE-2023-41180">Incorrect Certificate Validation in InvokeHTTP for MiNiFi C++</h2>
-<p>CVE-2023-41180 <a href="./CVE-2023-41180.cve.json">[CVE json]</a> <a href="./CVE-2023-41180.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-09-03T15:52:48.640Z</em></p>
+<h2 id="CVE-2023-36542">Potential Code Injection with Properties Referencing Remote Resources</h2>
+<p>CVE-2023-36542 <a href="https://cve.org/CVERecord?id=CVE-2023-36542">[CVE]</a> <a href="./CVE-2023-36542.cve.json">[CVE json]</a> <a href="./CVE-2023-36542.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-07-29T07:12:37.941Z</em></p>
 <h3 id="affected-10">Affected</h3>
 <ul>
-<li>Apache NiFi MiNiFi C++ from 0.13.0 through 0.14.0</li>
+<li>Apache NiFi from 0.0.2 through 1.22.0</li>
 </ul>
 <h3 id="description-10">Description</h3>
-<div>Incorrect certificate validation in InvokeHTTP on Apache NiFi MiNiFi C++ versions 0.13 to 0.14 allows an intermediary to present a forged certificate during TLS handshake negotation. The Disable Peer Verification property of InvokeHTTP was effectively flipped,  disabling verification by default, when using HTTPS.<br></div><div><br></div><div>Mitigation: Set the Disable Peer Verification property of InvokeHTTP to true when using MiNiFi C++ versions 0.13.0 or 0.14.0. Upgrading to MiNiFi C++ 0.15.0 corrects the default behavior.<br></div>
+<p>Apache NiFi 0.0.2 through 1.22.0 include Processors and Controller Services that support HTTP URL references for retrieving drivers, which allows an authenticated and authorized user to configure a location that enables custom code execution. The resolution introduces a new Required Permission for referencing remote resources, restricting configuration of these components to privileged users. The permission prevents unprivileged users from configuring Processors and Controller Services annotated with the new Reference Remote Resources restriction. Upgrading to Apache NiFi 1.23.0 is the recommended mitigation.<br></p>
 <h3 id="references-10">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/b51f8csysg1pvgs6xjjrq5hrjrvfot1y">https://lists.apache.org/thread/b51f8csysg1pvgs6xjjrq5hrjrvfot1y</a></li>
-</ul>
-<h3 id="credits-8">Credits</h3>
-<ul>
-<li>Ferenc Gerlits (finder)</li>
-</ul>
-<h2 id="CVE-2023-49145">Improper Neutralization of Input in Advanced User Interface for Jolt</h2>
-<p>CVE-2023-49145 <a href="./CVE-2023-49145.cve.json">[CVE json]</a> <a href="./CVE-2023-49145.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-11-27T22:29:16.184Z</em></p>
-<h3 id="affected-11">Affected</h3>
-<ul>
-<li>Apache NiFi from 0.7.0 through 1.23.2</li>
-</ul>
-<h3 id="description-11">Description</h3>
-<p>Apache NiFi 0.7.0 through 1.23.2 include the JoltTransformJSON Processor, which provides an advanced configuration user interface that is vulnerable to DOM-based cross-site scripting. If an authenticated user, who is authorized to configure a JoltTransformJSON Processor, visits a crafted URL, then arbitrary
-JavaScript code can be executed within the session context of the authenticated user. Upgrading to Apache NiFi 1.24.0 or 2.0.0-M1 is the recommended mitigation.</p>
-<h3 id="references-11">References</h3>
-<ul>
-<li><a href="https://nifi.apache.org/security.html#CVE-2023-49145">https://nifi.apache.org/security.html#CVE-2023-49145</a></li>
-<li><a href="https://lists.apache.org/thread/j8rd0qsvgoj0khqck5f49jfbp0fm8r1o">https://lists.apache.org/thread/j8rd0qsvgoj0khqck5f49jfbp0fm8r1o</a></li>
-</ul>
-<h3 id="credits-9">Credits</h3>
-<ul>
-<li>Dr. Oliver Matula, DB Systel GmbH (finder)</li>
-</ul>
-<h2 id="CVE-2024-37389">Improper Neutralization of Input in Parameter Context Description</h2>
-<p>CVE-2024-37389 <a href="./CVE-2024-37389.cve.json">[CVE json]</a> <a href="./CVE-2024-37389.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-08T07:28:58.478Z</em></p>
-<h3 id="affected-12">Affected</h3>
-<ul>
-<li>Apache NiFi from 1.10.0 through 1.26.0</li>
-<li>Apache NiFi from 2.0.0-M1 through 2.0.0-M3</li>
-</ul>
-<h3 id="description-12">Description</h3>
-<p>Apache NiFi 1.10.0 through 1.26.0 and 2.0.0-M1 through 2.0.0-M3 support a description field in the Parameter Context configuration that is vulnerable to cross-site scripting. An authenticated user, authorized to configure a Parameter Context, can enter arbitrary JavaScript code, which the client browser will execute within the session context of the authenticated user. Upgrading to Apache NiFi 1.27.0 or 2.0.0-M4 is the recommended mitigation.</p>
-<h3 id="references-12">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/yso9fr0wtff53nk046h1o83hdyb1lrxh">https://lists.apache.org/thread/yso9fr0wtff53nk046h1o83hdyb1lrxh</a></li>
+<li><a href="https://nifi.apache.org/security.html#CVE-2023-36542">https://nifi.apache.org/security.html#CVE-2023-36542</a></li>
+<li><a href="https://lists.apache.org/thread/swnly3dzhhq9zo3rofc8djq77stkhbof">https://lists.apache.org/thread/swnly3dzhhq9zo3rofc8djq77stkhbof</a></li>
 </ul>
 <h3 id="credits-10">Credits</h3>
 <ul>
-<li>Akbar Kustirama (finder)</li>
+<li>nbxiglk (finder)</li>
 </ul>
-<h2 id="CVE-2024-45477">Improper Neutralization of Input in Parameter Description</h2>
-<p>CVE-2024-45477 <a href="./CVE-2024-45477.cve.json">[CVE json]</a> <a href="./CVE-2024-45477.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-10-29T09:00:05.602Z</em></p>
-<h3 id="affected-13">Affected</h3>
+<h2 id="CVE-2023-34468">Potential Code Injection with Database Services using H2</h2>
+<p>CVE-2023-34468 <a href="https://cve.org/CVERecord?id=CVE-2023-34468">[CVE]</a> <a href="./CVE-2023-34468.cve.json">[CVE json]</a> <a href="./CVE-2023-34468.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-06-12T15:09:17.702Z</em></p>
+<h3 id="affected-11">Affected</h3>
 <ul>
-<li>Apache NiFi from 1.10.0 through 1.27.0</li>
-<li>Apache NiFi from 2.0.0-M1 through 2.0.0-M3</li>
+<li>Apache NiFi from 0.0.2 through 1.21.0</li>
 </ul>
-<h3 id="description-13">Description</h3>
-<p>Apache NiFi 1.10.0 through 1.27.0 and 2.0.0-M1 through 2.0.0-M3 support a description field for Parameters in a Parameter Context configuration that is vulnerable to cross-site scripting. An authenticated user, authorized to configure a Parameter Context, can enter arbitrary JavaScript code, which the client browser will execute within the session context of the authenticated user. Upgrading to Apache NiFi 1.28.0 or 2.0.0-M4 is the recommended mitigation.</p>
-<h3 id="references-13">References</h3>
+<h3 id="description-11">Description</h3>
+<div>The DBCPConnectionPool and HikariCPConnectionPool Controller Services in Apache NiFi 0.0.2 through 1.21.0 allow an authenticated and authorized user to configure a Database URL with the H2 driver that enables custom code execution.</div><div>The resolution validates the Database URL and rejects H2 JDBC locations.</div><div>You are recommended to upgrade to version 1.22.0 or later which fixes this issue.<br></div>
+<h3 id="references-11">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/shdv0tw9hggj7tx9pl7g93mgok2lwbj9">https://lists.apache.org/thread/shdv0tw9hggj7tx9pl7g93mgok2lwbj9</a></li>
+<li><a href="https://nifi.apache.org/security.html#CVE-2023-34468">https://nifi.apache.org/security.html#CVE-2023-34468</a></li>
+<li><a href="https://lists.apache.org/thread/7b82l4f5blmpkfcynf3y6z4x1vqo59h8">https://lists.apache.org/thread/7b82l4f5blmpkfcynf3y6z4x1vqo59h8</a></li>
 </ul>
 <h3 id="credits-11">Credits</h3>
 <ul>
-<li>Muhammad Hazim Bin Nor Aizi (finder)</li>
+<li>Matei &ldquo;Mal&rdquo; Badanoiu (finder)</li>
 </ul>
-<h2 id="CVE-2024-52067">Potential Insertion of Sensitive Parameter Values in Debug Log</h2>
-<p>CVE-2024-52067 <a href="./CVE-2024-52067.cve.json">[CVE json]</a> <a href="./CVE-2024-52067.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-11-21T09:28:41.996Z</em></p>
-<h3 id="affected-14">Affected</h3>
+<h2 id="CVE-2023-34212">Potential Deserialization of Untrusted Data with JNDI in JMS Components</h2>
+<p>CVE-2023-34212 <a href="https://cve.org/CVERecord?id=CVE-2023-34212">[CVE]</a> <a href="./CVE-2023-34212.cve.json">[CVE json]</a> <a href="./CVE-2023-34212.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-06-12T15:10:30.889Z</em></p>
+<h3 id="affected-12">Affected</h3>
 <ul>
-<li>Apache NiFi from 1.16.0 through 1.28.0</li>
-<li>Apache NiFi from 2.0.0-M1 through 2.0.0-M4</li>
+<li>Apache NiFi from 1.8.0 through 1.21.0</li>
 </ul>
-<h3 id="description-14">Description</h3>
-<p>Apache NiFi 1.16.0 through 1.28.0 and 2.0.0-M1 through 2.0.0-M4 include optional debug logging of Parameter Context values during the flow synchronization process. An authorized administrator with access to change logging levels could enable debug logging for framework flow synchronization, causing the application to write Parameter names and values to the application log. Parameter Context values may contain sensitive information depending on application flow configuration. Deployments of Apache NiFi with the default Logback configuration do not log Parameter Context values. Upgrading to Apache NiFi 2.0.0 or 1.28.1 is the recommendation mitigation, eliminating Parameter value logging from the flow synchronization process regardless of the Logback configuration.<br></p>
-<h3 id="references-14">References</h3>
+<h3 id="description-12">Description</h3>
+<div>The JndiJmsConnectionFactoryProvider Controller Service, along with the ConsumeJMS and PublishJMS Processors, in Apache NiFi 1.8.0 through 1.21.0 allow an authenticated and authorized user to configure URL and library properties that enable deserialization of untrusted data from a remote location.</div><div>The resolution validates the JNDI URL and restricts locations to a set of allowed schemes.</div><div>You are recommended to upgrade to version 1.22.0 or later which fixes this issue.<br></div>
+<h3 id="references-12">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/9rz5rwn2zc7pfjq7ppqldqlc067tlcwd">https://lists.apache.org/thread/9rz5rwn2zc7pfjq7ppqldqlc067tlcwd</a></li>
+<li><a href="https://nifi.apache.org/security.html#CVE-2023-34212">https://nifi.apache.org/security.html#CVE-2023-34212</a></li>
+<li><a href="https://lists.apache.org/thread/w5rm46fxmvxy216tglf0dv83wo6gnzr5">https://lists.apache.org/thread/w5rm46fxmvxy216tglf0dv83wo6gnzr5</a></li>
 </ul>
 <h3 id="credits-12">Credits</h3>
 <ul>
-<li>David Handermann (finder)</li>
+<li>Veraxy00 of Qianxin TI Center (finder)</li>
+<li>Matei &ldquo;Mal&rdquo; Badanoiu (reporter)</li>
 </ul>
-<h2 id="CVE-2024-56512">Missing Complete Authorization for Parameter and Service References</h2>
-<p>CVE-2024-56512 <a href="./CVE-2024-56512.cve.json">[CVE json]</a> <a href="./CVE-2024-56512.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-12-29T11:14:49.689Z</em></p>
-<h3 id="affected-15">Affected</h3>
+<h2 id="CVE-2023-22832">Improper Restriction of XML External Entity References in ExtractCCDAAttributes</h2>
+<p>CVE-2023-22832 <a href="https://cve.org/CVERecord?id=CVE-2023-22832">[CVE]</a> <a href="./CVE-2023-22832.cve.json">[CVE json]</a> <a href="./CVE-2023-22832.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-02-10T07:45:29.071Z</em></p>
+<h3 id="affected-13">Affected</h3>
 <ul>
-<li>Apache NiFi from 1.10.0 through 2.0.0</li>
+<li>Apache NiFi from 1.2.0 through 1.19.1</li>
 </ul>
-<h3 id="description-15">Description</h3>
-<p>Apache NiFi 1.10.0 through 2.0.0 are missing fine-grained authorization checking for Parameter Contexts, referenced Controller Services, and referenced Parameter Providers, when creating new Process Groups.<br><br>Creating a new Process Group can include binding to a Parameter Context, but in cases where the Process Group did not reference any Parameter values, the framework did not check user authorization for the bound Parameter Context. Missing authorization for a bound Parameter Context enabled clients to download non-sensitive Parameter values after creating the Process Group.<br><br>Creating a new Process Group can also include referencing existing Controller Services or Parameter Providers. The framework did not check user authorization for referenced Controller Services or Parameter Providers, enabling clients to create Process Groups and use these components that were otherwise unauthorized.<br><br>This vulnerability is limited in scope to authenticated users authorized to create Process Groups. The scope is further limited to deployments with component-based authorization policies. Upgrading to Apache NiFi 2.1.0 is the recommended mitigation, which includes authorization checking for Parameter and Controller Service references on Process Group creation.<br></p>
-<h3 id="references-15">References</h3>
+<h3 id="description-13">Description</h3>
+<div>The ExtractCCDAAttributes Processor in Apache NiFi 1.2.0 through 1.19.1 does not restrict XML External Entity references.</div><div>Flow configurations that include the ExtractCCDAAttributes Processor are vulnerable to malicious XML documents that contain Document Type Declarations with XML External Entity references.</div><div>The resolution disables Document Type Declarations and disallows XML External Entity resolution in the ExtractCCDAAttributes Processor.</div>
+<h3 id="references-13">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/cjc8fns5kjsho0s7vonlnojokyfx47wn">https://lists.apache.org/thread/cjc8fns5kjsho0s7vonlnojokyfx47wn</a></li>
+<li><a href="https://nifi.apache.org/security.html#CVE-2023-22832">https://nifi.apache.org/security.html#CVE-2023-22832</a></li>
+<li><a href="https://lists.apache.org/thread/b51qs6y7b7r58vovddkv6wc16g2xbl3w">https://lists.apache.org/thread/b51qs6y7b7r58vovddkv6wc16g2xbl3w</a></li>
 </ul>
 <h3 id="credits-13">Credits</h3>
 <ul>
-<li>Matt Gilman (finder)</li>
+<li>Yi Cai of Chaitin Tech (finder)</li>
 </ul>
-<h2 id="CVE-2025-27017">Potential Insertion of MongoDB Password in Provenance Record</h2>
-<p>CVE-2025-27017 <a href="./CVE-2025-27017.cve.json">[CVE json]</a> <a href="./CVE-2025-27017.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-03-12T16:19:42.969Z</em></p>
-<h3 id="affected-16">Affected</h3>
+<h2 id="CVE-2022-33140">Improper Neutralization of Command Elements in Shell User Group Provider</h2>
+<p>CVE-2022-33140 <a href="https://cve.org/CVERecord?id=CVE-2022-33140">[CVE]</a> <a href="./CVE-2022-33140.cve.json">[CVE json]</a> <a href="./CVE-2022-33140.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-06-15T14:21:09.085Z</em></p>
+<h3 id="affected-14">Affected</h3>
 <ul>
-<li>Apache NiFi from 1.13.0 through 2.2.0</li>
+<li>Apache NiFi from up to 1.16.2 through 1.16.2</li>
+<li>Apache NiFi from 1.10.0 before 1.10.0*</li>
+<li>Apache NiFi Registry from up to 1.16.2 through 1.16.2</li>
+<li>Apache NiFi Registry from 0.6.0 before 0.6.0*</li>
 </ul>
-<h3 id="description-16">Description</h3>
-<p><span style="background-color: rgb(252, 252, 252);">Apache NiFi 1.13.0 through 2.2.0 includes the username and password used to authenticate with MongoDB in the NiFi provenance events that MongoDB components generate during processing. An authorized user with read access to the provenance events of those processors may see the credentials information. Upgrading to Apache NiFi 2.3.0 is the recommended mitigation, which removes the credentials from provenance event records.</span></p>
-<h3 id="references-16">References</h3>
+<h3 id="description-14">Description</h3>
+<p>The optional ShellUserGroupProvider in Apache NiFi 1.10.0 to 1.16.2 and Apache NiFi Registry 0.6.0 to 1.16.2 does not neutralize arguments for group resolution commands, allowing injection of operating system commands on Linux and macOS platforms.</p>
+<p>The ShellUserGroupProvider is not included in the default configuration. Command injection requires ShellUserGroupProvider to be one of the enabled User Group Providers in the Authorizers configuration. Command injection also requires an authenticated user with elevated privileges.  Apache NiFi requires an authenticated user with authorization to modify access policies in order to execute the command. Apache NiFi Registry requires an authenticated user with authorization to read user groups in order to execute the command.</p>
+<p>The resolution removes command formatting based on user-provided arguments.</p>
+<h3 id="references-14">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/d4n5474jkhp82dvnht13pjtlfx7bhn5q">https://lists.apache.org/thread/d4n5474jkhp82dvnht13pjtlfx7bhn5q</a></li>
+<li><a href="https://lists.apache.org/thread/bzs2pcdjsdrh5039oslmfr9mbs9qqdhr">https://lists.apache.org/thread/bzs2pcdjsdrh5039oslmfr9mbs9qqdhr</a></li>
+<li><a href="https://nifi.apache.org/security.html#CVE-2022-33140">https://nifi.apache.org/security.html#CVE-2022-33140</a></li>
+</ul>
+<h2 id="CVE-2022-29265">Improper Restriction of XML External Entity References in Multiple Components</h2>
+<p>CVE-2022-29265 <a href="https://cve.org/CVERecord?id=CVE-2022-29265">[CVE]</a> <a href="./CVE-2022-29265.cve.json">[CVE json]</a> <a href="./CVE-2022-29265.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-04-30T08:01:30.969Z</em></p>
+<h3 id="affected-15">Affected</h3>
+<ul>
+<li>Apache NiFi from 0.0.1 to 1.16.0 through 0.0.1 to 1.16.0</li>
+</ul>
+<h3 id="description-15">Description</h3>
+<p>Multiple components in Apache NiFi 0.0.1 to 1.16.0 do not restrict XML External Entity references in the default configuration.</p>
+<p>The Standard Content Viewer service attempts to resolve XML External Entity references when viewing formatted XML files.</p>
+<p>The following Processors attempt to resolve XML External Entity references when configured with default property values:</p>
+<ul>
+<li>EvaluateXPath</li>
+<li>EvaluateXQuery</li>
+<li>ValidateXml</li>
+</ul>
+<p>Apache NiFi flow configurations that include these Processors are vulnerable to malicious XML documents that contain Document Type Declarations with XML External Entity references.</p>
+<p>The resolution disables Document Type Declarations in the default configuration for these Processors, and disallows XML External Entity resolution in standard services.</p>
+<h3 id="references-15">References</h3>
+<ul>
+<li><a href="https://nifi.apache.org/security.html#CVE-2022-29265">https://nifi.apache.org/security.html#CVE-2022-29265</a></li>
+<li><a href="https://lists.apache.org/thread/47od9kr9n4cyv0mv81jh3pkyx815kyjl">https://lists.apache.org/thread/47od9kr9n4cyv0mv81jh3pkyx815kyjl</a></li>
 </ul>
 <h3 id="credits-14">Credits</h3>
 <ul>
-<li>Robert Creese (finder)</li>
+<li>David Handermann at exceptionfactory.com reported this issue.</li>
 </ul>
-<h2 id="CVE-2025-66524">Deserialization of Untrusted Data in GetAsanaObject Processor</h2>
-<p>CVE-2025-66524 <a href="./CVE-2025-66524.cve.json">[CVE json]</a> <a href="./CVE-2025-66524.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-12-19T09:24:44.035Z</em></p>
-<h3 id="affected-17">Affected</h3>
+<h2 id="CVE-2022-26850">Insufficiently protected credentials</h2>
+<p>CVE-2022-26850 <a href="https://cve.org/CVERecord?id=CVE-2022-26850">[CVE]</a> <a href="./CVE-2022-26850.cve.json">[CVE json]</a> <a href="./CVE-2022-26850.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-04-06T20:48:13.265Z</em></p>
+<h3 id="affected-16">Affected</h3>
 <ul>
-<li>Apache NiFi from 1.20.0 through 2.6.0</li>
+<li>Apache NiFi at NiFi 1.14.0 to 1.15.3</li>
 </ul>
-<h3 id="description-17">Description</h3>
-<p>Apache NiFi 1.20.0 through 2.6.0 include the GetAsanaObject Processor, which requires integration with a configurable Distribute Map Cache Client Service for storing and retrieving state information. The GetAsanaObject Processor used generic Java Object serialization and deserialization without filtering. Unfiltered Java object deserialization does not provide protection against crafted state information stored in the cache server configured for GetAsanaObject. Exploitation requires an Apache NiFi system running with the GetAsanaObject Processor, and direct access to the configured cache server. Upgrading to Apache NiFi 2.7.0 is the recommended mitigation, which replaces Java Object serialization with JSON serialization. Removing the GetAsanaObject Processor located in the nifi-asana-processors-nar bundle also prevents exploitation.</p>
-<h3 id="references-17">References</h3>
+<h3 id="description-16">Description</h3>
+<p>When creating or updating credentials for single-user access, Apache NiFi wrote a copy of the Login Identity Providers configuration to the operating system temporary directory. On most platforms, the operating system temporary directory has global read permissions. NiFi immediately moved the temporary file to the final configuration directory, which significantly limited the window of opportunity for access.</p>
+<p>NiFi 1.16.0 includes updates to replace the Login Identity Providers configuration without writing a file to the operating system temporary directory.</p>
+<h3 id="references-16">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/k9h004ydjg7opdvxr0nfywtzf33z60d7">https://lists.apache.org/thread/k9h004ydjg7opdvxr0nfywtzf33z60d7</a></li>
+<li><a href="https://nifi.apache.org/security.html#CVE-2022-26850">https://nifi.apache.org/security.html#CVE-2022-26850</a></li>
 </ul>
 <h3 id="credits-15">Credits</h3>
 <ul>
-<li>Jaeyeong Lee (finder)</li>
+<li>This issue was discovered by Jonathan Leitschuh (<a href="https://twitter.com/jlleitschuh">https://twitter.com/jlleitschuh</a>)</li>
+</ul>
+<h2 id="CVE-2021-44145">Apache NiFi information disclosure by XXE</h2>
+<p>CVE-2021-44145 <a href="https://cve.org/CVERecord?id=CVE-2021-44145">[CVE]</a> <a href="./CVE-2021-44145.cve.json">[CVE json]</a> <a href="./CVE-2021-44145.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-12-17T08:46:07.497Z</em></p>
+<h3 id="affected-17">Affected</h3>
+<ul>
+<li>Apache NiFi from Apache NiFi through 1.15.0</li>
+</ul>
+<h3 id="description-17">Description</h3>
+<p>In the TransformXML processor of Apache NiFi before 1.15.1 an authenticated user could configure an XSLT file which, if it included malicious external entity calls, may reveal sensitive information.</p>
+<h3 id="references-17">References</h3>
+<ul>
+<li><a href="https://nifi.apache.org/security.html#1.15.1-vulnerabilities">https://nifi.apache.org/security.html#1.15.1-vulnerabilities</a></li>
+</ul>
+<h3 id="credits-16">Credits</h3>
+<ul>
+<li>This issue was discovered by DangKhai at Viettel Cyber Security.</li>
+</ul>
+<h2 id="CVE-2021-33191">MiNiFi CPP arbitrary script execution is possible on the agent&rsquo;s host machine through the c2 protocol</h2>
+<p>CVE-2021-33191 <a href="https://cve.org/CVERecord?id=CVE-2021-33191">[CVE]</a> <a href="./CVE-2021-33191.cve.json">[CVE json]</a> <a href="./CVE-2021-33191.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-08-24T11:14:05.278Z</em></p>
+<h3 id="affected-18">Affected</h3>
+<ul>
+<li>Apache NiFi - MiNiFi C++ from 0.5.0 before Apache NiFi - MiNiFi C++*</li>
+</ul>
+<h3 id="description-18">Description</h3>
+<p>From Apache NiFi MiNiFi C++ version 0.5.0 the c2 protocol implements an &ldquo;agent-update&rdquo; command which was designed to patch the application binary.
+This &ldquo;patching&rdquo; command defaults to calling a trusted binary, but might be modified to an arbitrary value through a &ldquo;c2-update&rdquo;
+command. Said command is then executed using the same privileges as the application binary.  This was addressed in version 0.10.0</p>
+<h3 id="references-18">References</h3>
+<ul>
+<li><a href="https://www.openwall.com/lists/oss-security/2021/08/24/1">https://www.openwall.com/lists/oss-security/2021/08/24/1</a></li>
 </ul>
 
   

@@ -105,374 +105,213 @@
 <p>Do you want disclose a potential security issue for Apache OFBiz? You can read more about the projects&rsquo; security policy on their <a href="https://ofbiz.apache.org/security.html">security page</a>, and email your report to the <a href="mailto:security@ofbiz.apache.org">Apache OFBiz Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://ofbiz.apache.org/security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-26295">RCE vulnerability in latest Apache OFBiz due to Java serialisation using RMI</h2>
-<p>CVE-2021-26295 <a href="./CVE-2021-26295.cve.json">[CVE json]</a> <a href="./CVE-2021-26295.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-03-22T11:54:40.746Z</em></p>
+<h2 id="CVE-2025-61623">Reflected Cross-site Scripting</h2>
+<p>CVE-2025-61623 <a href="https://cve.org/CVERecord?id=CVE-2025-61623">[CVE]</a> <a href="./CVE-2025-61623.cve.json">[CVE json]</a> <a href="./CVE-2025-61623.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-11-12T09:16:48.899Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache OFBiz at 17.12.01 to 17.12.05</li>
+<li>Apache OFBiz before 24.09.03</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Apache OFBiz has unsafe deserialization prior to 17.12.06. An unauthenticated attacker can use this vulnerability to successfully take over Apache OFBiz.</p>
+<p>Reflected cross-site scripting vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 24.09.03.</p><p>Users are recommended to upgrade to version 24.09.03, which fixes the issue.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread.html/r3c1802eaf34aa78a61b4e8e044c214bc94accbd28a11f3a276586a31%40%3Cuser.ofbiz.apache.org%3E">https://lists.apache.org/thread.html/r3c1802eaf34aa78a61b4e8e044c214bc94accbd28a11f3a276586a31%40%3Cuser.ofbiz.apache.org%3E</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13295">https://issues.apache.org/jira/browse/OFBIZ-13295</a></li>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://ofbiz.apache.org/release-notes-24.09.03.html">https://ofbiz.apache.org/release-notes-24.09.03.html</a></li>
+<li><a href="https://lists.apache.org/thread/sb2mngrg766qbqt5g29fo0qblk3v4x5y">https://lists.apache.org/thread/sb2mngrg766qbqt5g29fo0qblk3v4x5y</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Apache OFBiz would like to thank the first report from &ldquo;r00t4dm at Cloud-Penetrating Arrow Lab and Longofo at Knownsec 404 Team&rdquo; and the second report by MagicZero from SGLAB of Legendsec at Qi&rsquo;anxin Group.</li>
+<li>RedHive Team (<a href="mailto:security@hive.red">security@hive.red</a>) <a href="https://hive.red/en/">https://hive.red/en/</a> (finder)</li>
 </ul>
-<h2 id="CVE-2021-29200">RCE vulnerability in latest Apache OFBiz due to Java serialisation using RMI</h2>
-<p>CVE-2021-29200 <a href="./CVE-2021-29200.cve.json">[CVE json]</a> <a href="./CVE-2021-29200.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-04-27T19:46:30.140Z</em></p>
+<h2 id="CVE-2025-59118">Critical Remote Command Execution via Unrestricted File Upload</h2>
+<p>CVE-2025-59118 <a href="https://cve.org/CVERecord?id=CVE-2025-59118">[CVE]</a> <a href="./CVE-2025-59118.cve.json">[CVE json]</a> <a href="./CVE-2025-59118.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-11-12T09:15:52.459Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache OFBiz from Apache OFBiz before 17.12.07</li>
+<li>Apache OFBiz before 24.09.03</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>Apache OFBiz has unsafe deserialization prior to 17.12.07 version
-An unauthenticated user can perform an RCE attack</p>
+<p>Unrestricted Upload of File with Dangerous Type vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 24.09.03.</p><p>Users are recommended to upgrade to version 24.09.03, which fixes the issue.</p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread.html/re21d25d9fb89e36cea910633779c23f144b9b60596b113b7bf1e8097%40%3Cdev.ofbiz.apache.org%3E">https://lists.apache.org/thread.html/re21d25d9fb89e36cea910633779c23f144b9b60596b113b7bf1e8097%40%3Cdev.ofbiz.apache.org%3E</a></li>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://ofbiz.apache.org/release-notes-24.09.03.html">https://ofbiz.apache.org/release-notes-24.09.03.html</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13292">https://issues.apache.org/jira/browse/OFBIZ-13292</a></li>
+<li><a href="https://lists.apache.org/thread/202263kpy7g76pzsy1fm96h9lcmhsqpt">https://lists.apache.org/thread/202263kpy7g76pzsy1fm96h9lcmhsqpt</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>Apache OFBiz would like to thank the first report from &ldquo;r00t4dm at Cloud-Penetrating Arrow Lab, asd of MoyunSec V-Lab <a href="mailto:root@thiscode.cc">root@thiscode.cc</a> and 赖涵 <a href="mailto:1044309102@qq.com">1044309102@qq.com</a>  a bit later</li>
+<li>RedHive Team (<a href="mailto:security@hive.red">security@hive.red</a>) <a href="https://hive.red/en/">https://hive.red/en/</a> (finder)</li>
 </ul>
-<h2 id="CVE-2021-30128">Unsafe deserialization in Apache OFBiz</h2>
-<p>CVE-2021-30128 <a href="./CVE-2021-30128.cve.json">[CVE json]</a> <a href="./CVE-2021-30128.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-04-27T19:47:04.244Z</em></p>
+<h2 id="CVE-2025-54466">RCE Vulnerability in scrum plugin</h2>
+<p>CVE-2025-54466 <a href="https://cve.org/CVERecord?id=CVE-2025-54466">[CVE]</a> <a href="./CVE-2025-54466.cve.json">[CVE json]</a> <a href="./CVE-2025-54466.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-08-15T14:13:40.046Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache OFBiz from Apache OFBiz before 17.12.07</li>
+<li>Apache OFBiz before 24.09.02</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>Apache OFBiz has unsafe deserialization prior to 17.12.07 version</p>
+<p>Improper Control of Generation of Code ('Code Injection') vulnerability leading to a possible RCE in Apache OFBiz&nbsp;scrum plugin.<br><br>This issue affects Apache OFBiz: before 24.09.02 only when the&nbsp;scrum plugin is used.</p><p>Even unauthenticated attackers can exploit this vulnerability.<br></p><p>Users are recommended to upgrade to version 24.09.02, which fixes the issue.</p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread.html/rb3f5cd65f3ddce9b9eb4d6ea6e2919933f0f89b15953769d11003743%40%3Cdev.ofbiz.apache.org%3E">https://lists.apache.org/thread.html/rb3f5cd65f3ddce9b9eb4d6ea6e2919933f0f89b15953769d11003743%40%3Cdev.ofbiz.apache.org%3E</a></li>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://ofbiz.apache.org/release-notes-24.09.02.html">https://ofbiz.apache.org/release-notes-24.09.02.html</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13276">https://issues.apache.org/jira/browse/OFBIZ-13276</a></li>
+<li><a href="https://lists.apache.org/thread/14d0yd9co9gx2mctd3vyz1cc8d39n915">https://lists.apache.org/thread/14d0yd9co9gx2mctd3vyz1cc8d39n915</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>Apache OFBiz would like to thank Litch1 from the Security Team of Alibaba Cloud <a href="mailto:litch1chk@gmail.com">litch1chk@gmail.com</a> for report</li>
+<li>Teeramet Eakwilai <a href="mailto:teeramet@datafarm.co.th">teeramet@datafarm.co.th</a> (finder)</li>
+<li>Thanasin Luangpipat (finder)</li>
+<li>Jarukit Auikritskul (finder)</li>
 </ul>
-<h2 id="CVE-2021-37608">Arbitrary file upload vulnerability in OFBiz</h2>
-<p>CVE-2021-37608 <a href="./CVE-2021-37608.cve.json">[CVE json]</a> <a href="./CVE-2021-37608.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-08-18T07:45:08.867Z</em></p>
+<h2 id="CVE-2025-30676">Stored XSS Vulnerability</h2>
+<p>CVE-2025-30676 <a href="https://cve.org/CVERecord?id=CVE-2025-30676">[CVE]</a> <a href="./CVE-2025-30676.cve.json">[CVE json]</a> <a href="./CVE-2025-30676.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-04-01T14:43:47.266Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache OFBiz from unspecified through 17.12.07</li>
+<li>Apache OFBiz before 18.12.19</li>
 </ul>
 <h3 id="description-3">Description</h3>
-<p>Unrestricted Upload of File with Dangerous Type vulnerability in Apache OFBiz allows an attacker to execute remote commands. This issue affects Apache OFBiz version 17.12.07 and prior versions. Upgrade to at least 17.12.08 or apply patches at <a href="https://issues.apache.org/jira/browse/OFBIZ-12297">https://issues.apache.org/jira/browse/OFBIZ-12297</a>.</p>
+<p>Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS) vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 18.12.19.</p><p>Users are recommended to upgrade to version 18.12.19, which fixes the issue.</p>
 <h3 id="references-3">References</h3>
 <ul>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
 <li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13219">https://issues.apache.org/jira/browse/OFBIZ-13219</a></li>
+<li><a href="https://lists.apache.org/thread/8d718qt8dqthnw1gmyxsq8glfdjklnjf">https://lists.apache.org/thread/8d718qt8dqthnw1gmyxsq8glfdjklnjf</a></li>
 </ul>
 <h3 id="credits-3">Credits</h3>
 <ul>
-<li>Zhujie from Galaxy Security Laboratory <a href="mailto:galaxylab@sina.com">galaxylab@sina.com</a></li>
+<li>Khaled Nassar  (@mindpatch) (finder)</li>
 </ul>
-<h2 id="CVE-2022-25370">Unauth Stored XSS vulnerability in the Birt plugin of Apache OFBiz</h2>
-<p>CVE-2022-25370 <a href="./CVE-2022-25370.cve.json">[CVE json]</a> <a href="./CVE-2022-25370.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-09-02T06:58:56.611Z</em></p>
+<h2 id="CVE-2025-26865">Server-Side Template Injection affecting the ecommerce plugin leading to possible RCE</h2>
+<p>CVE-2025-26865 <a href="https://cve.org/CVERecord?id=CVE-2025-26865">[CVE]</a> <a href="./CVE-2025-26865.cve.json">[CVE json]</a> <a href="./CVE-2025-26865.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-03-10T14:00:48.257Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache OFBiz from Apache OFBiz through 18.12.05</li>
+<li>Apache OFBiz from 18.12.17 before 18.12.18</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<p>Apache OFBiz uses the Birt plugin (<a href="https://eclipse.github.io/birt-website/">https://eclipse.github.io/birt-website/</a>) to create data visualizations and reports.
-In Apache OFBiz release 18.12.05, and earlier versions, by leveraging a vulnerability in Birt (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=538142)">https://bugs.eclipse.org/bugs/show_bug.cgi?id=538142)</a>, an unauthenticated malicious user could perform a stored XSS attack in order to inject a malicious payload and execute it using the stored XSS.</p>
+<p>Improper Neutralization of Special Elements Used in a Template Engine vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: from 18.12.17 before 18.12.18.&nbsp;&nbsp;</p>It's a regression between 18.12.17 and 18.12.18.<br>In case you use something like that, which is not recommended!<br>For security, only official releases should be used.<br><br>In other words, if you use 18.12.17 you are still safe.<br>The version 18.12.17 is not a affected.<br>But something between 18.12.17 and 18.12.18 is.<br><br>In that case, users are recommended to upgrade to version 18.12.18, which fixes the issue.<br>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/vrvzokvxqtc4t6d7g8xgz89xpxcvjofh">https://lists.apache.org/thread/vrvzokvxqtc4t6d7g8xgz89xpxcvjofh</a></li>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-12594">https://issues.apache.org/jira/browse/OFBIZ-12594</a></li>
+<li><a href="https://lists.apache.org/thread/prb48ztk01bflyyjbl6p56wlcc1n5sz7">https://lists.apache.org/thread/prb48ztk01bflyyjbl6p56wlcc1n5sz7</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>Nikita Podotykin from Positive Technologies <a href="mailto:npodotykin@ptsecurity.com">npodotykin@ptsecurity.com</a></li>
-<li>Positive Technologies  zeroday <a href="mailto:zeroday@ptsecurity.com">zeroday@ptsecurity.com</a></li>
+<li>Matei &ldquo;Mal&rdquo; Badanoiu (finder)</li>
 </ul>
-<h2 id="CVE-2022-25371">Unauth Path Traversal with file corruption affecting the Birt plugin of Apache OFBiz</h2>
-<p>CVE-2022-25371 <a href="./CVE-2022-25371.cve.json">[CVE json]</a> <a href="./CVE-2022-25371.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-09-02T07:00:04.371Z</em></p>
+<h2 id="CVE-2024-48962">Bypass SameSite restrictions with target redirection using URL parameters (SSTI and CSRF leading to RCE)</h2>
+<p>CVE-2024-48962 <a href="https://cve.org/CVERecord?id=CVE-2024-48962">[CVE]</a> <a href="./CVE-2024-48962.cve.json">[CVE json]</a> <a href="./CVE-2024-48962.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-02-17T11:17:10.834Z</em></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
-<li>Apache OFBiz from Apache OFBiz through 18.12.05</li>
+<li>Apache OFBiz before 18.12.17</li>
 </ul>
 <h3 id="description-5">Description</h3>
-<p>Apache OFBiz uses the Birt project plugin (<a href="https://eclipse.github.io/birt-website/">https://eclipse.github.io/birt-website/</a>) to create data visualizations and reports.
-By leveraging a bug in Birt (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=538142">https://bugs.eclipse.org/bugs/show_bug.cgi?id=538142</a>) it is possible to perform a remote code execution (RCE) attack in Apache OFBiz, release 18.12.05 and earlier.</p>
+<p>Improper Control of Generation of Code ('Code Injection'), Cross-Site Request Forgery (CSRF), : Improper Neutralization of Special Elements Used in a Template Engine vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 18.12.17.</p><p>Users are recommended to upgrade to version 18.12.17, which fixes the issue.</p>
 <h3 id="references-5">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/bvp3sczqq863lxr1wh7wjvdtjbkcwspq">https://lists.apache.org/thread/bvp3sczqq863lxr1wh7wjvdtjbkcwspq</a></li>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13162">https://issues.apache.org/jira/browse/OFBIZ-13162</a></li>
+<li><a href="https://lists.apache.org/thread/6sddh4pts90cp8ktshqb4xykdp6lb6q6">https://lists.apache.org/thread/6sddh4pts90cp8ktshqb4xykdp6lb6q6</a></li>
 </ul>
 <h3 id="credits-5">Credits</h3>
 <ul>
-<li>Nikita Podotykin from Positive Technologies <a href="mailto:npodotykin@ptsecurity.com">npodotykin@ptsecurity.com</a></li>
-<li>Positive Technologies  zeroday <a href="mailto:zeroday@ptsecurity.com">zeroday@ptsecurity.com</a></li>
+<li>Sebastiano Sartor <a href="mailto:s@sebsrt.xyz">s@sebsrt.xyz</a> (finder)</li>
+<li>Ryan <a href="mailto:marimoo.eth@gmail.com">marimoo.eth@gmail.com</a> (finder)</li>
 </ul>
-<h2 id="CVE-2022-25813">Server-Side Template Injection affecting the ecommerce plugin of Apache OFBiz</h2>
-<p>CVE-2022-25813 <a href="./CVE-2022-25813.cve.json">[CVE json]</a> <a href="./CVE-2022-25813.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-09-02T07:01:21.926Z</em></p>
+<h2 id="CVE-2024-47208">URLs allowing remote use of Groovy expressions, leading to RCE</h2>
+<p>CVE-2024-47208 <a href="https://cve.org/CVERecord?id=CVE-2024-47208">[CVE]</a> <a href="./CVE-2024-47208.cve.json">[CVE json]</a> <a href="./CVE-2024-47208.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-11-18T08:43:11.961Z</em></p>
 <h3 id="affected-6">Affected</h3>
 <ul>
-<li>Apache OFBiz from Apache OFBiz through 18.12.05</li>
+<li>Apache OFBiz before 18.12.17</li>
 </ul>
 <h3 id="description-6">Description</h3>
-<p>In Apache OFBiz, versions 18.12.05 and earlier, an attacker acting as an anonymous user of the ecommerce plugin, can insert a malicious content in a message “Subject” field from the &ldquo;Contact us&rdquo; page. Then a party
-manager needs to list the communications in the party component to activate the SSTI. A RCE is then possible.</p>
+<p>Server-Side Request Forgery (SSRF), Improper Control of Generation of Code ('Code Injection') vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 18.12.17.</p><p>Users are recommended to upgrade to version 18.12.17, which fixes the issue.</p>
 <h3 id="references-6">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/vmj5s0qb59t0lvzf3vol3z1sc3sgyb2b">https://lists.apache.org/thread/vmj5s0qb59t0lvzf3vol3z1sc3sgyb2b</a></li>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13158">https://issues.apache.org/jira/browse/OFBIZ-13158</a></li>
+<li><a href="https://lists.apache.org/thread/022r19skfofhv3lzql33vowlrvqndh11">https://lists.apache.org/thread/022r19skfofhv3lzql33vowlrvqndh11</a></li>
 </ul>
 <h3 id="credits-6">Credits</h3>
 <ul>
-<li>Matei &ldquo;Mal&rdquo; Badanoiu</li>
+<li>孙相 (Sun Xiang) (finder)</li>
 </ul>
-<h2 id="CVE-2022-29063">Java Deserialization via RMI Connection from the Solr plugin of Apache OFBiz</h2>
-<p>CVE-2022-29063 <a href="./CVE-2022-29063.cve.json">[CVE json]</a> <a href="./CVE-2022-29063.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-09-02T07:04:01.683Z</em></p>
+<h2 id="CVE-2024-45507">Prevent use of URLs in files when loading them from Java or Groovy, leading to a RCE</h2>
+<p>CVE-2024-45507 <a href="https://cve.org/CVERecord?id=CVE-2024-45507">[CVE]</a> <a href="./CVE-2024-45507.cve.json">[CVE json]</a> <a href="./CVE-2024-45507.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-09-04T08:08:31.094Z</em></p>
 <h3 id="affected-7">Affected</h3>
 <ul>
-<li>Apache OFBiz from Apache OFBiz through 18.12.05</li>
+<li>Apache OFBiz before 18.12.16</li>
 </ul>
 <h3 id="description-7">Description</h3>
-<p>The Solr plugin of Apache OFBiz is configured by default to automatically make a RMI request on localhost, port 1099. In version 18.12.05 and earlier, by hosting a malicious RMI server on localhost, an attacker may exploit this behavior, at server start-up or on a server restart, in order to run arbitrary code.
-Upgrade to at least 18.12.06 or apply patches at <a href="https://issues.apache.org/jira/browse/OFBIZ-12646">https://issues.apache.org/jira/browse/OFBIZ-12646</a>.</p>
+<p>Server-Side Request Forgery (SSRF), Improper Control of Generation of Code ('Code Injection') vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 18.12.16.</p><p>Users are recommended to upgrade to version 18.12.16, which fixes the issue.</p>
 <h3 id="references-7">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/ytzrjc16pf357zntwk8tjby13kbx9105">https://lists.apache.org/thread/ytzrjc16pf357zntwk8tjby13kbx9105</a></li>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13132">https://issues.apache.org/jira/browse/OFBIZ-13132</a></li>
+<li><a href="https://lists.apache.org/thread/o90dd9lbk1hh3t2557t2y2qvrh92p7wy">https://lists.apache.org/thread/o90dd9lbk1hh3t2557t2y2qvrh92p7wy</a></li>
 </ul>
 <h3 id="credits-7">Credits</h3>
 <ul>
-<li>Matei &ldquo;Mal&rdquo; Badanoiu</li>
+<li>孙相 (Sun Xiang) (finder)</li>
 </ul>
-<h2 id="CVE-2022-29158">Regular Expression Denial of Service (ReDoS) vulnerability in Apache OFBiz</h2>
-<p>CVE-2022-29158 <a href="./CVE-2022-29158.cve.json">[CVE json]</a> <a href="./CVE-2022-29158.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-09-02T07:05:27.871Z</em></p>
+<h2 id="CVE-2024-45195">Confused controller-view authorization logic (forced browsing)</h2>
+<p>CVE-2024-45195 <a href="https://cve.org/CVERecord?id=CVE-2024-45195">[CVE]</a> <a href="./CVE-2024-45195.cve.json">[CVE json]</a> <a href="./CVE-2024-45195.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-09-04T08:08:57.418Z</em></p>
 <h3 id="affected-8">Affected</h3>
 <ul>
-<li>Apache OFBiz from Apache OFBiz through 18.12.05</li>
+<li>Apache OFBiz before 18.12.16</li>
 </ul>
 <h3 id="description-8">Description</h3>
-<p>Apache OFBiz up to version 18.12.05 is vulnerable to Regular Expression Denial of Service (ReDoS) in the way it handles URLs provided by external, unauthenticated users.
-Upgrade to 18.12.06 or apply patches at <a href="https://issues.apache.org/jira/browse/OFBIZ-12599">https://issues.apache.org/jira/browse/OFBIZ-12599</a></p>
+<p>Direct Request ('Forced Browsing') vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 18.12.16.</p><p>Users are recommended to upgrade to version 18.12.16, which fixes the issue.</p>
 <h3 id="references-8">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/7k92rg1o4ql2yw3o0vttkcl2jhq7j928">https://lists.apache.org/thread/7k92rg1o4ql2yw3o0vttkcl2jhq7j928</a></li>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13130">https://issues.apache.org/jira/browse/OFBIZ-13130</a></li>
+<li><a href="https://lists.apache.org/thread/o90dd9lbk1hh3t2557t2y2qvrh92p7wy">https://lists.apache.org/thread/o90dd9lbk1hh3t2557t2y2qvrh92p7wy</a></li>
 </ul>
 <h3 id="credits-8">Credits</h3>
 <ul>
-<li>Tony Torralba and Joseph Farebrother from the GitHub CodeQL team.</li>
-</ul>
-<h2 id="CVE-2022-47501">Arbitrary file reading vulnerability</h2>
-<p>CVE-2022-47501 <a href="./CVE-2022-47501.cve.json">[CVE json]</a> <a href="./CVE-2022-47501.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-04-14T15:00:25.628Z</em></p>
-<h3 id="affected-9">Affected</h3>
-<ul>
-<li>Apache OFBiz from 18.12.06 before 18.12.07</li>
-</ul>
-<h3 id="description-9">Description</h3>
-<p>Arbitrary file reading vulnerability in Apache Software Foundation Apache OFBiz when using the Solr plugin. This is a 
-pre-authentication attack.<br><p>This issue affects Apache OFBiz: before 18.12.07.</p></p>
-<h3 id="references-9">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/k8s76l0whydy45bfm4b69vq0mf94p3wc">https://lists.apache.org/thread/k8s76l0whydy45bfm4b69vq0mf94p3wc</a></li>
-<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
-<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
-</ul>
-<h3 id="credits-9">Credits</h3>
-<ul>
-<li>Skay <a href="mailto:lhcaomail@gmail.com">lhcaomail@gmail.com</a> (finder)</li>
-</ul>
-<h2 id="CVE-2023-46819">Execution of Solr plugin queries without authentication</h2>
-<p>CVE-2023-46819 <a href="./CVE-2023-46819.cve.json">[CVE json]</a> <a href="./CVE-2023-46819.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-12-04T16:11:06.466Z</em></p>
-<h3 id="affected-10">Affected</h3>
-<ul>
-<li>Apache OFBiz before 18.12.09</li>
-</ul>
-<h3 id="description-10">Description</h3>
-<p>Missing Authentication in Apache Software Foundation Apache OFBiz when using the Solr plugin.<br><p>This issue affects Apache OFBiz: before 18.12.09. </p>
-<p><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 18.12.09</span></p></p>
-<h3 id="references-10">References</h3>
-<ul>
-<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
-<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
-<li><a href="https://ofbiz.apache.org/release-notes-18.12.09.html">https://ofbiz.apache.org/release-notes-18.12.09.html</a></li>
-<li><a href="https://lists.apache.org/thread/mm5j0rsbl22q7yb0nmb6h2swbfjbwv99">https://lists.apache.org/thread/mm5j0rsbl22q7yb0nmb6h2swbfjbwv99</a></li>
-</ul>
-<h3 id="credits-10">Credits</h3>
-<ul>
-<li>Anonymous by demand (finder)</li>
-</ul>
-<h2 id="CVE-2023-49070">Pre-auth RCE in Apache Ofbiz 18.12.09 due to XML-RPC still present</h2>
-<p>CVE-2023-49070 <a href="./CVE-2023-49070.cve.json">[CVE json]</a> <a href="./CVE-2023-49070.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-12-20T10:48:11.952Z</em></p>
-<h3 id="affected-11">Affected</h3>
-<ul>
-<li>Apache OFBiz before 18.12.10</li>
-</ul>
-<h3 id="description-11">Description</h3>
-<p>Pre-auth RCE in Apache Ofbiz 18.12.09.<br><br>It&rsquo;s due to XML-RPC <span style="background-color: rgb(255, 255, 255);">no longer maintained</span> still present.<br><p>This issue affects Apache OFBiz: before 18.12.10. <br><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 18.12.10</span></p></p>
-<h3 id="references-11">References</h3>
-<ul>
-<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
-<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
-<li><a href="https://ofbiz.apache.org/release-notes-18.12.10.html">https://ofbiz.apache.org/release-notes-18.12.10.html</a></li>
-<li><a href="https://issues.apache.org/jira/browse/OFBIZ-12812">https://issues.apache.org/jira/browse/OFBIZ-12812</a></li>
-<li><a href="https://lists.apache.org/thread/jmbqk2lp4t4483whzndp5xqlq4f3otg3">https://lists.apache.org/thread/jmbqk2lp4t4483whzndp5xqlq4f3otg3</a></li>
-</ul>
-<h3 id="credits-11">Credits</h3>
-<ul>
-<li>Siebene@ (finder)</li>
-</ul>
-<h2 id="CVE-2023-50968">Arbitrary file properties reading and SSRF attack</h2>
-<p>CVE-2023-50968 <a href="./CVE-2023-50968.cve.json">[CVE json]</a> <a href="./CVE-2023-50968.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-12-26T10:21:57.552Z</em></p>
-<h3 id="affected-12">Affected</h3>
-<ul>
-<li>Apache OFBiz through 18.12.10</li>
-</ul>
-<h3 id="description-12">Description</h3>
-<div>Arbitrary file properties reading vulnerability in Apache Software Foundation Apache OFBiz when user operates an uri call without authorizations.<br></div><div><br></div><div>The same uri can be operated to realize a SSRF attack also  without  authorizations.<br></div><div><br></div>Users are recommended to upgrade to version 18.12.11, which fixes this issue.
-<h3 id="references-12">References</h3>
-<ul>
-<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
-<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
-<li><a href="https://ofbiz.apache.org/release-notes-18.12.11.html">https://ofbiz.apache.org/release-notes-18.12.11.html</a></li>
-<li><a href="https://issues.apache.org/jira/browse/OFBIZ-12875">https://issues.apache.org/jira/browse/OFBIZ-12875</a></li>
-<li><a href="https://lists.apache.org/thread/x5now4bk3llwf3k58kl96qvtjyxwp43q">https://lists.apache.org/thread/x5now4bk3llwf3k58kl96qvtjyxwp43q</a></li>
-</ul>
-<h3 id="credits-12">Credits</h3>
-<ul>
-<li>Yun Peng - 郭 运鹏 <a href="mailto:puata123@outlook.com">puata123@outlook.com</a> (finder)</li>
-</ul>
-<h2 id="CVE-2023-51467">Pre-authentication Remote Code Execution (RCE) vulnerability</h2>
-<p>CVE-2023-51467 <a href="./CVE-2023-51467.cve.json">[CVE json]</a> <a href="./CVE-2023-51467.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-02-02T10:13:56.898Z</em></p>
-<h3 id="affected-13">Affected</h3>
-<ul>
-<li>Apache OFBiz before 18.12.11</li>
-</ul>
-<h3 id="description-13">Description</h3>
-<div><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">The vulnerability permits attackers to circumvent authentication processes, enabling them to remotely <span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">execute arbitrary code</span></span><br></span></span></div>
-<h3 id="references-13">References</h3>
-<ul>
-<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
-<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
-<li><a href="https://ofbiz.apache.org/release-notes-18.12.11.html">https://ofbiz.apache.org/release-notes-18.12.11.html</a></li>
-<li><a href="https://issues.apache.org/jira/browse/OFBIZ-12873">https://issues.apache.org/jira/browse/OFBIZ-12873</a></li>
-<li><a href="https://lists.apache.org/thread/9tmf9qyyhgh6m052rhz7lg9vxn390bdv">https://lists.apache.org/thread/9tmf9qyyhgh6m052rhz7lg9vxn390bdv</a></li>
-<li><a href="https://lists.apache.org/thread/oj2s6objhdq72t6g29omqpcbd1wlp48o">https://lists.apache.org/thread/oj2s6objhdq72t6g29omqpcbd1wlp48o</a></li>
-<li><a href="https://www.openwall.com/lists/oss-security/2023/12/26/3">https://www.openwall.com/lists/oss-security/2023/12/26/3</a></li>
-</ul>
-<h3 id="credits-13">Credits</h3>
-<ul>
-<li>Hasib Vhora, Senior Threat Researcher, SonicWall  (finder)</li>
-<li>Gao Tian (finder)</li>
-<li>L0ne1y (finder)</li>
-</ul>
-<h2 id="CVE-2024-23946">Path traversal or file inclusion</h2>
-<p>CVE-2024-23946 <a href="./CVE-2024-23946.cve.json">[CVE json]</a> <a href="./CVE-2024-23946.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-02-28T15:44:32.259Z</em></p>
-<h3 id="affected-14">Affected</h3>
-<ul>
-<li>Apache OFBiz before 18.12.12</li>
-</ul>
-<h3 id="description-14">Description</h3>
-<p>Possible path traversal in Apache OFBiz allowing file inclusion.<br>Users are recommended to upgrade to version 18.12.12, that fixes the issue.</p>
-<h3 id="references-14">References</h3>
-<ul>
-<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
-<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
-<li><a href="https://ofbiz.apache.org/release-notes-18.12.12.html">https://ofbiz.apache.org/release-notes-18.12.12.html</a></li>
-<li><a href="https://issues.apache.org/jira/browse/OFBIZ-12884">https://issues.apache.org/jira/browse/OFBIZ-12884</a></li>
-<li><a href="https://lists.apache.org/thread/w4lp5ncpzttf41hn5bsc04mzq4o6lw3g">https://lists.apache.org/thread/w4lp5ncpzttf41hn5bsc04mzq4o6lw3g</a></li>
-</ul>
-<h3 id="credits-14">Credits</h3>
-<ul>
-<li>Arun Shaji from trendmicro.com (finder)</li>
-</ul>
-<h2 id="CVE-2024-25065">Path traversal allowing authentication bypass.</h2>
-<p>CVE-2024-25065 <a href="./CVE-2024-25065.cve.json">[CVE json]</a> <a href="./CVE-2024-25065.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-02-28T15:42:48.263Z</em></p>
-<h3 id="affected-15">Affected</h3>
-<ul>
-<li>Apache OFBiz before 18.12.12</li>
-</ul>
-<h3 id="description-15">Description</h3>
-<p>Possible path traversal in Apache OFBiz allowing authentication bypass.<br>Users are recommended to upgrade to version 18.12.12, that fixes the issue.</p>
-<h3 id="references-15">References</h3>
-<ul>
-<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
-<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
-<li><a href="https://ofbiz.apache.org/release-notes-18.12.12.html">https://ofbiz.apache.org/release-notes-18.12.12.html</a></li>
-<li><a href="https://issues.apache.org/jira/browse/OFBIZ-12887">https://issues.apache.org/jira/browse/OFBIZ-12887</a></li>
-<li><a href="https://lists.apache.org/thread/rplfjp7ppn9ro49oo7jsrpj99m113lfc">https://lists.apache.org/thread/rplfjp7ppn9ro49oo7jsrpj99m113lfc</a></li>
-</ul>
-<h3 id="credits-15">Credits</h3>
-<ul>
-<li>YunPeng - 郭 运鹏 <a href="mailto:puata123@outlook.com">puata123@outlook.com</a> (finder)</li>
-</ul>
-<h2 id="CVE-2024-32113">Path traversal leading to RCE</h2>
-<p>CVE-2024-32113 <a href="./CVE-2024-32113.cve.json">[CVE json]</a> <a href="./CVE-2024-32113.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-05-08T14:49:53.237Z</em></p>
-<h3 id="affected-16">Affected</h3>
-<ul>
-<li>Apache OFBiz before 18.12.13</li>
-</ul>
-<h3 id="description-16">Description</h3>
-<p>Improper Limitation of a Pathname to a Restricted Directory (&lsquo;Path Traversal&rsquo;) vulnerability in Apache OFBiz.<p>This issue affects Apache OFBiz: before 18.12.13.</p><p>Users are recommended to upgrade to version 18.12.13, which fixes the issue.</p></p>
-<h3 id="references-16">References</h3>
-<ul>
-<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
-<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
-<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13006">https://issues.apache.org/jira/browse/OFBIZ-13006</a></li>
-<li><a href="https://lists.apache.org/thread/w6s60okgkxp2th1sr8vx0ndmgk68fqrd">https://lists.apache.org/thread/w6s60okgkxp2th1sr8vx0ndmgk68fqrd</a></li>
-</ul>
-<h3 id="credits-16">Credits</h3>
-<ul>
-<li>Qiyi Zhang (RacerZ) @secsys from Fudan (finder)</li>
-</ul>
-<h2 id="CVE-2024-36104">Path traversal leading to a RCE</h2>
-<p>CVE-2024-36104 <a href="./CVE-2024-36104.cve.json">[CVE json]</a> <a href="./CVE-2024-36104.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-06-03T06:55:24.928Z</em></p>
-<h3 id="affected-17">Affected</h3>
-<ul>
-<li>Apache OFBiz before 18.12.14</li>
-</ul>
-<h3 id="description-17">Description</h3>
-<p>Improper Limitation of a Pathname to a Restricted Directory (&lsquo;Path Traversal&rsquo;) vulnerability in Apache OFBiz. <p>This issue affects Apache OFBiz: before 18.12.14.</p><p>Users are recommended to upgrade to version 18.12.14, which fixes the issue.</p></p>
-<h3 id="references-17">References</h3>
-<ul>
-<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
-<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
-<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13092">https://issues.apache.org/jira/browse/OFBIZ-13092</a></li>
-<li><a href="https://lists.apache.org/thread/sv0xr8b1j7mmh5p37yldy9vmnzbodz2o">https://lists.apache.org/thread/sv0xr8b1j7mmh5p37yldy9vmnzbodz2o</a></li>
-</ul>
-<h3 id="credits-17">Credits</h3>
-<ul>
-<li>godspeed (AAA@ZJU) (finder)</li>
+<li>shin24 from National Cyber Security Vietnam (finder)</li>
+<li>LuanPV from National Cyber Security Vietnam (finder)</li>
+<li>Ryan Emmons, Lead Security Researcher at Rapid7 (finder)</li>
+<li>Hasib Vhora, Senior Threat Researcher, SonicWall (finder)</li>
+<li>Xenc from SGLAB of Legendsec at Qi&rsquo;anxin Group (finder)</li>
 </ul>
 <h2 id="CVE-2024-38856">Unauthenticated endpoint could allow execution of screen rendering code</h2>
-<p>CVE-2024-38856 <a href="./CVE-2024-38856.cve.json">[CVE json]</a> <a href="./CVE-2024-38856.osv.json">[OSV json]</a></p>
+<p>CVE-2024-38856 <a href="https://cve.org/CVERecord?id=CVE-2024-38856">[CVE]</a> <a href="./CVE-2024-38856.cve.json">[CVE json]</a> <a href="./CVE-2024-38856.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-08-05T08:20:16.193Z</em></p>
-<h3 id="affected-18">Affected</h3>
+<h3 id="affected-9">Affected</h3>
 <ul>
 <li>Apache OFBiz through 18.12.14</li>
 </ul>
-<h3 id="description-18">Description</h3>
+<h3 id="description-9">Description</h3>
 <p>Incorrect Authorization vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: through 18.12.14.</p><p>Users are recommended to upgrade to version 18.12.15, which fixes the issue.</p>Unauthenticated endpoints could allow execution of screen rendering code of screens if some preconditions are met (such as when the screen definitions don't explicitly check user's permissions because they rely on the configuration of their endpoints).<br>
-<h3 id="references-18">References</h3>
+<h3 id="references-9">References</h3>
 <ul>
 <li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
 <li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
 <li><a href="https://lists.apache.org/thread/olxxjk6b13sl3wh9cmp0k2dscvp24l7w">https://lists.apache.org/thread/olxxjk6b13sl3wh9cmp0k2dscvp24l7w</a></li>
 <li><a href="https://issues.apache.org/jira/browse/OFBIZ-13128">https://issues.apache.org/jira/browse/OFBIZ-13128</a></li>
 </ul>
-<h3 id="credits-18">Credits</h3>
+<h3 id="credits-9">Credits</h3>
 <ul>
 <li>unam4 (finder)</li>
 <li>ruozhi (finder)</li>
@@ -491,195 +330,356 @@ pre-authentication attack.<br><p>This issue affects Apache OFBiz: before 18.12.0
 <li>Nicholas Zubrisky. (finder)</li>
 <li>Y4tacker  (finder)</li>
 </ul>
-<h2 id="CVE-2024-45195">Confused controller-view authorization logic (forced browsing)</h2>
-<p>CVE-2024-45195 <a href="./CVE-2024-45195.cve.json">[CVE json]</a> <a href="./CVE-2024-45195.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-09-04T08:08:57.418Z</em></p>
-<h3 id="affected-19">Affected</h3>
+<h2 id="CVE-2024-36104">Path traversal leading to a RCE</h2>
+<p>CVE-2024-36104 <a href="https://cve.org/CVERecord?id=CVE-2024-36104">[CVE]</a> <a href="./CVE-2024-36104.cve.json">[CVE json]</a> <a href="./CVE-2024-36104.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-06-03T06:55:24.928Z</em></p>
+<h3 id="affected-10">Affected</h3>
 <ul>
-<li>Apache OFBiz before 18.12.16</li>
+<li>Apache OFBiz before 18.12.14</li>
 </ul>
-<h3 id="description-19">Description</h3>
-<p>Direct Request ('Forced Browsing') vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 18.12.16.</p><p>Users are recommended to upgrade to version 18.12.16, which fixes the issue.</p>
-<h3 id="references-19">References</h3>
+<h3 id="description-10">Description</h3>
+<p>Improper Limitation of a Pathname to a Restricted Directory (&lsquo;Path Traversal&rsquo;) vulnerability in Apache OFBiz. <p>This issue affects Apache OFBiz: before 18.12.14.</p><p>Users are recommended to upgrade to version 18.12.14, which fixes the issue.</p></p>
+<h3 id="references-10">References</h3>
 <ul>
 <li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
 <li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
-<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13130">https://issues.apache.org/jira/browse/OFBIZ-13130</a></li>
-<li><a href="https://lists.apache.org/thread/o90dd9lbk1hh3t2557t2y2qvrh92p7wy">https://lists.apache.org/thread/o90dd9lbk1hh3t2557t2y2qvrh92p7wy</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13092">https://issues.apache.org/jira/browse/OFBIZ-13092</a></li>
+<li><a href="https://lists.apache.org/thread/sv0xr8b1j7mmh5p37yldy9vmnzbodz2o">https://lists.apache.org/thread/sv0xr8b1j7mmh5p37yldy9vmnzbodz2o</a></li>
+</ul>
+<h3 id="credits-10">Credits</h3>
+<ul>
+<li>godspeed (AAA@ZJU) (finder)</li>
+</ul>
+<h2 id="CVE-2024-32113">Path traversal leading to RCE</h2>
+<p>CVE-2024-32113 <a href="https://cve.org/CVERecord?id=CVE-2024-32113">[CVE]</a> <a href="./CVE-2024-32113.cve.json">[CVE json]</a> <a href="./CVE-2024-32113.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-05-08T14:49:53.237Z</em></p>
+<h3 id="affected-11">Affected</h3>
+<ul>
+<li>Apache OFBiz before 18.12.13</li>
+</ul>
+<h3 id="description-11">Description</h3>
+<p>Improper Limitation of a Pathname to a Restricted Directory (&lsquo;Path Traversal&rsquo;) vulnerability in Apache OFBiz.<p>This issue affects Apache OFBiz: before 18.12.13.</p><p>Users are recommended to upgrade to version 18.12.13, which fixes the issue.</p></p>
+<h3 id="references-11">References</h3>
+<ul>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13006">https://issues.apache.org/jira/browse/OFBIZ-13006</a></li>
+<li><a href="https://lists.apache.org/thread/w6s60okgkxp2th1sr8vx0ndmgk68fqrd">https://lists.apache.org/thread/w6s60okgkxp2th1sr8vx0ndmgk68fqrd</a></li>
+</ul>
+<h3 id="credits-11">Credits</h3>
+<ul>
+<li>Qiyi Zhang (RacerZ) @secsys from Fudan (finder)</li>
+</ul>
+<h2 id="CVE-2024-25065">Path traversal allowing authentication bypass.</h2>
+<p>CVE-2024-25065 <a href="https://cve.org/CVERecord?id=CVE-2024-25065">[CVE]</a> <a href="./CVE-2024-25065.cve.json">[CVE json]</a> <a href="./CVE-2024-25065.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-02-28T15:42:48.263Z</em></p>
+<h3 id="affected-12">Affected</h3>
+<ul>
+<li>Apache OFBiz before 18.12.12</li>
+</ul>
+<h3 id="description-12">Description</h3>
+<p>Possible path traversal in Apache OFBiz allowing authentication bypass.<br>Users are recommended to upgrade to version 18.12.12, that fixes the issue.</p>
+<h3 id="references-12">References</h3>
+<ul>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://ofbiz.apache.org/release-notes-18.12.12.html">https://ofbiz.apache.org/release-notes-18.12.12.html</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-12887">https://issues.apache.org/jira/browse/OFBIZ-12887</a></li>
+<li><a href="https://lists.apache.org/thread/rplfjp7ppn9ro49oo7jsrpj99m113lfc">https://lists.apache.org/thread/rplfjp7ppn9ro49oo7jsrpj99m113lfc</a></li>
+</ul>
+<h3 id="credits-12">Credits</h3>
+<ul>
+<li>YunPeng - 郭 运鹏 <a href="mailto:puata123@outlook.com">puata123@outlook.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2024-23946">Path traversal or file inclusion</h2>
+<p>CVE-2024-23946 <a href="https://cve.org/CVERecord?id=CVE-2024-23946">[CVE]</a> <a href="./CVE-2024-23946.cve.json">[CVE json]</a> <a href="./CVE-2024-23946.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-02-28T15:44:32.259Z</em></p>
+<h3 id="affected-13">Affected</h3>
+<ul>
+<li>Apache OFBiz before 18.12.12</li>
+</ul>
+<h3 id="description-13">Description</h3>
+<p>Possible path traversal in Apache OFBiz allowing file inclusion.<br>Users are recommended to upgrade to version 18.12.12, that fixes the issue.</p>
+<h3 id="references-13">References</h3>
+<ul>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://ofbiz.apache.org/release-notes-18.12.12.html">https://ofbiz.apache.org/release-notes-18.12.12.html</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-12884">https://issues.apache.org/jira/browse/OFBIZ-12884</a></li>
+<li><a href="https://lists.apache.org/thread/w4lp5ncpzttf41hn5bsc04mzq4o6lw3g">https://lists.apache.org/thread/w4lp5ncpzttf41hn5bsc04mzq4o6lw3g</a></li>
+</ul>
+<h3 id="credits-13">Credits</h3>
+<ul>
+<li>Arun Shaji from trendmicro.com (finder)</li>
+</ul>
+<h2 id="CVE-2023-51467">Pre-authentication Remote Code Execution (RCE) vulnerability</h2>
+<p>CVE-2023-51467 <a href="https://cve.org/CVERecord?id=CVE-2023-51467">[CVE]</a> <a href="./CVE-2023-51467.cve.json">[CVE json]</a> <a href="./CVE-2023-51467.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-02-02T10:13:56.898Z</em></p>
+<h3 id="affected-14">Affected</h3>
+<ul>
+<li>Apache OFBiz before 18.12.11</li>
+</ul>
+<h3 id="description-14">Description</h3>
+<div><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">The vulnerability permits attackers to circumvent authentication processes, enabling them to remotely <span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">execute arbitrary code</span></span><br></span></span></div>
+<h3 id="references-14">References</h3>
+<ul>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://ofbiz.apache.org/release-notes-18.12.11.html">https://ofbiz.apache.org/release-notes-18.12.11.html</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-12873">https://issues.apache.org/jira/browse/OFBIZ-12873</a></li>
+<li><a href="https://lists.apache.org/thread/9tmf9qyyhgh6m052rhz7lg9vxn390bdv">https://lists.apache.org/thread/9tmf9qyyhgh6m052rhz7lg9vxn390bdv</a></li>
+<li><a href="https://lists.apache.org/thread/oj2s6objhdq72t6g29omqpcbd1wlp48o">https://lists.apache.org/thread/oj2s6objhdq72t6g29omqpcbd1wlp48o</a></li>
+<li><a href="https://www.openwall.com/lists/oss-security/2023/12/26/3">https://www.openwall.com/lists/oss-security/2023/12/26/3</a></li>
+</ul>
+<h3 id="credits-14">Credits</h3>
+<ul>
+<li>Hasib Vhora, Senior Threat Researcher, SonicWall  (finder)</li>
+<li>Gao Tian (finder)</li>
+<li>L0ne1y (finder)</li>
+</ul>
+<h2 id="CVE-2023-50968">Arbitrary file properties reading and SSRF attack</h2>
+<p>CVE-2023-50968 <a href="https://cve.org/CVERecord?id=CVE-2023-50968">[CVE]</a> <a href="./CVE-2023-50968.cve.json">[CVE json]</a> <a href="./CVE-2023-50968.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-12-26T10:21:57.552Z</em></p>
+<h3 id="affected-15">Affected</h3>
+<ul>
+<li>Apache OFBiz through 18.12.10</li>
+</ul>
+<h3 id="description-15">Description</h3>
+<div>Arbitrary file properties reading vulnerability in Apache Software Foundation Apache OFBiz when user operates an uri call without authorizations.<br></div><div><br></div><div>The same uri can be operated to realize a SSRF attack also  without  authorizations.<br></div><div><br></div>Users are recommended to upgrade to version 18.12.11, which fixes this issue.
+<h3 id="references-15">References</h3>
+<ul>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://ofbiz.apache.org/release-notes-18.12.11.html">https://ofbiz.apache.org/release-notes-18.12.11.html</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-12875">https://issues.apache.org/jira/browse/OFBIZ-12875</a></li>
+<li><a href="https://lists.apache.org/thread/x5now4bk3llwf3k58kl96qvtjyxwp43q">https://lists.apache.org/thread/x5now4bk3llwf3k58kl96qvtjyxwp43q</a></li>
+</ul>
+<h3 id="credits-15">Credits</h3>
+<ul>
+<li>Yun Peng - 郭 运鹏 <a href="mailto:puata123@outlook.com">puata123@outlook.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2023-49070">Pre-auth RCE in Apache Ofbiz 18.12.09 due to XML-RPC still present</h2>
+<p>CVE-2023-49070 <a href="https://cve.org/CVERecord?id=CVE-2023-49070">[CVE]</a> <a href="./CVE-2023-49070.cve.json">[CVE json]</a> <a href="./CVE-2023-49070.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-12-20T10:48:11.952Z</em></p>
+<h3 id="affected-16">Affected</h3>
+<ul>
+<li>Apache OFBiz before 18.12.10</li>
+</ul>
+<h3 id="description-16">Description</h3>
+<p>Pre-auth RCE in Apache Ofbiz 18.12.09.<br><br>It&rsquo;s due to XML-RPC <span style="background-color: rgb(255, 255, 255);">no longer maintained</span> still present.<br><p>This issue affects Apache OFBiz: before 18.12.10. <br><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 18.12.10</span></p></p>
+<h3 id="references-16">References</h3>
+<ul>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://ofbiz.apache.org/release-notes-18.12.10.html">https://ofbiz.apache.org/release-notes-18.12.10.html</a></li>
+<li><a href="https://issues.apache.org/jira/browse/OFBIZ-12812">https://issues.apache.org/jira/browse/OFBIZ-12812</a></li>
+<li><a href="https://lists.apache.org/thread/jmbqk2lp4t4483whzndp5xqlq4f3otg3">https://lists.apache.org/thread/jmbqk2lp4t4483whzndp5xqlq4f3otg3</a></li>
+</ul>
+<h3 id="credits-16">Credits</h3>
+<ul>
+<li>Siebene@ (finder)</li>
+</ul>
+<h2 id="CVE-2023-46819">Execution of Solr plugin queries without authentication</h2>
+<p>CVE-2023-46819 <a href="https://cve.org/CVERecord?id=CVE-2023-46819">[CVE]</a> <a href="./CVE-2023-46819.cve.json">[CVE json]</a> <a href="./CVE-2023-46819.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-12-04T16:11:06.466Z</em></p>
+<h3 id="affected-17">Affected</h3>
+<ul>
+<li>Apache OFBiz before 18.12.09</li>
+</ul>
+<h3 id="description-17">Description</h3>
+<p>Missing Authentication in Apache Software Foundation Apache OFBiz when using the Solr plugin.<br><p>This issue affects Apache OFBiz: before 18.12.09. </p>
+<p><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 18.12.09</span></p></p>
+<h3 id="references-17">References</h3>
+<ul>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+<li><a href="https://ofbiz.apache.org/release-notes-18.12.09.html">https://ofbiz.apache.org/release-notes-18.12.09.html</a></li>
+<li><a href="https://lists.apache.org/thread/mm5j0rsbl22q7yb0nmb6h2swbfjbwv99">https://lists.apache.org/thread/mm5j0rsbl22q7yb0nmb6h2swbfjbwv99</a></li>
+</ul>
+<h3 id="credits-17">Credits</h3>
+<ul>
+<li>Anonymous by demand (finder)</li>
+</ul>
+<h2 id="CVE-2022-47501">Arbitrary file reading vulnerability</h2>
+<p>CVE-2022-47501 <a href="https://cve.org/CVERecord?id=CVE-2022-47501">[CVE]</a> <a href="./CVE-2022-47501.cve.json">[CVE json]</a> <a href="./CVE-2022-47501.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-04-14T15:00:25.628Z</em></p>
+<h3 id="affected-18">Affected</h3>
+<ul>
+<li>Apache OFBiz from 18.12.06 before 18.12.07</li>
+</ul>
+<h3 id="description-18">Description</h3>
+<p>Arbitrary file reading vulnerability in Apache Software Foundation Apache OFBiz when using the Solr plugin. This is a 
+pre-authentication attack.<br><p>This issue affects Apache OFBiz: before 18.12.07.</p></p>
+<h3 id="references-18">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/k8s76l0whydy45bfm4b69vq0mf94p3wc">https://lists.apache.org/thread/k8s76l0whydy45bfm4b69vq0mf94p3wc</a></li>
+<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
+<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
+</ul>
+<h3 id="credits-18">Credits</h3>
+<ul>
+<li>Skay <a href="mailto:lhcaomail@gmail.com">lhcaomail@gmail.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2022-29158">Regular Expression Denial of Service (ReDoS) vulnerability in Apache OFBiz</h2>
+<p>CVE-2022-29158 <a href="https://cve.org/CVERecord?id=CVE-2022-29158">[CVE]</a> <a href="./CVE-2022-29158.cve.json">[CVE json]</a> <a href="./CVE-2022-29158.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-09-02T07:05:27.871Z</em></p>
+<h3 id="affected-19">Affected</h3>
+<ul>
+<li>Apache OFBiz from Apache OFBiz through 18.12.05</li>
+</ul>
+<h3 id="description-19">Description</h3>
+<p>Apache OFBiz up to version 18.12.05 is vulnerable to Regular Expression Denial of Service (ReDoS) in the way it handles URLs provided by external, unauthenticated users.
+Upgrade to 18.12.06 or apply patches at <a href="https://issues.apache.org/jira/browse/OFBIZ-12599">https://issues.apache.org/jira/browse/OFBIZ-12599</a></p>
+<h3 id="references-19">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7k92rg1o4ql2yw3o0vttkcl2jhq7j928">https://lists.apache.org/thread/7k92rg1o4ql2yw3o0vttkcl2jhq7j928</a></li>
 </ul>
 <h3 id="credits-19">Credits</h3>
 <ul>
-<li>shin24 from National Cyber Security Vietnam (finder)</li>
-<li>LuanPV from National Cyber Security Vietnam (finder)</li>
-<li>Ryan Emmons, Lead Security Researcher at Rapid7 (finder)</li>
-<li>Hasib Vhora, Senior Threat Researcher, SonicWall (finder)</li>
-<li>Xenc from SGLAB of Legendsec at Qi&rsquo;anxin Group (finder)</li>
+<li>Tony Torralba and Joseph Farebrother from the GitHub CodeQL team.</li>
 </ul>
-<h2 id="CVE-2024-45507">Prevent use of URLs in files when loading them from Java or Groovy, leading to a RCE</h2>
-<p>CVE-2024-45507 <a href="./CVE-2024-45507.cve.json">[CVE json]</a> <a href="./CVE-2024-45507.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-09-04T08:08:31.094Z</em></p>
+<h2 id="CVE-2022-29063">Java Deserialization via RMI Connection from the Solr plugin of Apache OFBiz</h2>
+<p>CVE-2022-29063 <a href="https://cve.org/CVERecord?id=CVE-2022-29063">[CVE]</a> <a href="./CVE-2022-29063.cve.json">[CVE json]</a> <a href="./CVE-2022-29063.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-09-02T07:04:01.683Z</em></p>
 <h3 id="affected-20">Affected</h3>
 <ul>
-<li>Apache OFBiz before 18.12.16</li>
+<li>Apache OFBiz from Apache OFBiz through 18.12.05</li>
 </ul>
 <h3 id="description-20">Description</h3>
-<p>Server-Side Request Forgery (SSRF), Improper Control of Generation of Code ('Code Injection') vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 18.12.16.</p><p>Users are recommended to upgrade to version 18.12.16, which fixes the issue.</p>
+<p>The Solr plugin of Apache OFBiz is configured by default to automatically make a RMI request on localhost, port 1099. In version 18.12.05 and earlier, by hosting a malicious RMI server on localhost, an attacker may exploit this behavior, at server start-up or on a server restart, in order to run arbitrary code.
+Upgrade to at least 18.12.06 or apply patches at <a href="https://issues.apache.org/jira/browse/OFBIZ-12646">https://issues.apache.org/jira/browse/OFBIZ-12646</a>.</p>
 <h3 id="references-20">References</h3>
 <ul>
-<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
-<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
-<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13132">https://issues.apache.org/jira/browse/OFBIZ-13132</a></li>
-<li><a href="https://lists.apache.org/thread/o90dd9lbk1hh3t2557t2y2qvrh92p7wy">https://lists.apache.org/thread/o90dd9lbk1hh3t2557t2y2qvrh92p7wy</a></li>
+<li><a href="https://lists.apache.org/thread/ytzrjc16pf357zntwk8tjby13kbx9105">https://lists.apache.org/thread/ytzrjc16pf357zntwk8tjby13kbx9105</a></li>
 </ul>
 <h3 id="credits-20">Credits</h3>
 <ul>
-<li>孙相 (Sun Xiang) (finder)</li>
+<li>Matei &ldquo;Mal&rdquo; Badanoiu</li>
 </ul>
-<h2 id="CVE-2024-47208">URLs allowing remote use of Groovy expressions, leading to RCE</h2>
-<p>CVE-2024-47208 <a href="./CVE-2024-47208.cve.json">[CVE json]</a> <a href="./CVE-2024-47208.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-11-18T08:43:11.961Z</em></p>
+<h2 id="CVE-2022-25813">Server-Side Template Injection affecting the ecommerce plugin of Apache OFBiz</h2>
+<p>CVE-2022-25813 <a href="https://cve.org/CVERecord?id=CVE-2022-25813">[CVE]</a> <a href="./CVE-2022-25813.cve.json">[CVE json]</a> <a href="./CVE-2022-25813.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-09-02T07:01:21.926Z</em></p>
 <h3 id="affected-21">Affected</h3>
 <ul>
-<li>Apache OFBiz before 18.12.17</li>
+<li>Apache OFBiz from Apache OFBiz through 18.12.05</li>
 </ul>
 <h3 id="description-21">Description</h3>
-<p>Server-Side Request Forgery (SSRF), Improper Control of Generation of Code ('Code Injection') vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 18.12.17.</p><p>Users are recommended to upgrade to version 18.12.17, which fixes the issue.</p>
+<p>In Apache OFBiz, versions 18.12.05 and earlier, an attacker acting as an anonymous user of the ecommerce plugin, can insert a malicious content in a message “Subject” field from the &ldquo;Contact us&rdquo; page. Then a party
+manager needs to list the communications in the party component to activate the SSTI. A RCE is then possible.</p>
 <h3 id="references-21">References</h3>
 <ul>
-<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
-<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
-<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13158">https://issues.apache.org/jira/browse/OFBIZ-13158</a></li>
-<li><a href="https://lists.apache.org/thread/022r19skfofhv3lzql33vowlrvqndh11">https://lists.apache.org/thread/022r19skfofhv3lzql33vowlrvqndh11</a></li>
+<li><a href="https://lists.apache.org/thread/vmj5s0qb59t0lvzf3vol3z1sc3sgyb2b">https://lists.apache.org/thread/vmj5s0qb59t0lvzf3vol3z1sc3sgyb2b</a></li>
 </ul>
 <h3 id="credits-21">Credits</h3>
 <ul>
-<li>孙相 (Sun Xiang) (finder)</li>
+<li>Matei &ldquo;Mal&rdquo; Badanoiu</li>
 </ul>
-<h2 id="CVE-2024-48962">Bypass SameSite restrictions with target redirection using URL parameters (SSTI and CSRF leading to RCE)</h2>
-<p>CVE-2024-48962 <a href="./CVE-2024-48962.cve.json">[CVE json]</a> <a href="./CVE-2024-48962.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-02-17T11:17:10.834Z</em></p>
+<h2 id="CVE-2022-25371">Unauth Path Traversal with file corruption affecting the Birt plugin of Apache OFBiz</h2>
+<p>CVE-2022-25371 <a href="https://cve.org/CVERecord?id=CVE-2022-25371">[CVE]</a> <a href="./CVE-2022-25371.cve.json">[CVE json]</a> <a href="./CVE-2022-25371.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-09-02T07:00:04.371Z</em></p>
 <h3 id="affected-22">Affected</h3>
 <ul>
-<li>Apache OFBiz before 18.12.17</li>
+<li>Apache OFBiz from Apache OFBiz through 18.12.05</li>
 </ul>
 <h3 id="description-22">Description</h3>
-<p>Improper Control of Generation of Code ('Code Injection'), Cross-Site Request Forgery (CSRF), : Improper Neutralization of Special Elements Used in a Template Engine vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 18.12.17.</p><p>Users are recommended to upgrade to version 18.12.17, which fixes the issue.</p>
+<p>Apache OFBiz uses the Birt project plugin (<a href="https://eclipse.github.io/birt-website/">https://eclipse.github.io/birt-website/</a>) to create data visualizations and reports.
+By leveraging a bug in Birt (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=538142">https://bugs.eclipse.org/bugs/show_bug.cgi?id=538142</a>) it is possible to perform a remote code execution (RCE) attack in Apache OFBiz, release 18.12.05 and earlier.</p>
 <h3 id="references-22">References</h3>
 <ul>
-<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
-<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
-<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13162">https://issues.apache.org/jira/browse/OFBIZ-13162</a></li>
-<li><a href="https://lists.apache.org/thread/6sddh4pts90cp8ktshqb4xykdp6lb6q6">https://lists.apache.org/thread/6sddh4pts90cp8ktshqb4xykdp6lb6q6</a></li>
+<li><a href="https://lists.apache.org/thread/bvp3sczqq863lxr1wh7wjvdtjbkcwspq">https://lists.apache.org/thread/bvp3sczqq863lxr1wh7wjvdtjbkcwspq</a></li>
 </ul>
 <h3 id="credits-22">Credits</h3>
 <ul>
-<li>Sebastiano Sartor <a href="mailto:s@sebsrt.xyz">s@sebsrt.xyz</a> (finder)</li>
-<li>Ryan <a href="mailto:marimoo.eth@gmail.com">marimoo.eth@gmail.com</a> (finder)</li>
+<li>Nikita Podotykin from Positive Technologies <a href="mailto:npodotykin@ptsecurity.com">npodotykin@ptsecurity.com</a></li>
+<li>Positive Technologies  zeroday <a href="mailto:zeroday@ptsecurity.com">zeroday@ptsecurity.com</a></li>
 </ul>
-<h2 id="CVE-2025-26865">Server-Side Template Injection affecting the ecommerce plugin leading to possible RCE</h2>
-<p>CVE-2025-26865 <a href="./CVE-2025-26865.cve.json">[CVE json]</a> <a href="./CVE-2025-26865.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-03-10T14:00:48.257Z</em></p>
+<h2 id="CVE-2022-25370">Unauth Stored XSS vulnerability in the Birt plugin of Apache OFBiz</h2>
+<p>CVE-2022-25370 <a href="https://cve.org/CVERecord?id=CVE-2022-25370">[CVE]</a> <a href="./CVE-2022-25370.cve.json">[CVE json]</a> <a href="./CVE-2022-25370.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-09-02T06:58:56.611Z</em></p>
 <h3 id="affected-23">Affected</h3>
 <ul>
-<li>Apache OFBiz from 18.12.17 before 18.12.18</li>
+<li>Apache OFBiz from Apache OFBiz through 18.12.05</li>
 </ul>
 <h3 id="description-23">Description</h3>
-<p>Improper Neutralization of Special Elements Used in a Template Engine vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: from 18.12.17 before 18.12.18.&nbsp;&nbsp;</p>It's a regression between 18.12.17 and 18.12.18.<br>In case you use something like that, which is not recommended!<br>For security, only official releases should be used.<br><br>In other words, if you use 18.12.17 you are still safe.<br>The version 18.12.17 is not a affected.<br>But something between 18.12.17 and 18.12.18 is.<br><br>In that case, users are recommended to upgrade to version 18.12.18, which fixes the issue.<br>
+<p>Apache OFBiz uses the Birt plugin (<a href="https://eclipse.github.io/birt-website/">https://eclipse.github.io/birt-website/</a>) to create data visualizations and reports.
+In Apache OFBiz release 18.12.05, and earlier versions, by leveraging a vulnerability in Birt (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=538142)">https://bugs.eclipse.org/bugs/show_bug.cgi?id=538142)</a>, an unauthenticated malicious user could perform a stored XSS attack in order to inject a malicious payload and execute it using the stored XSS.</p>
 <h3 id="references-23">References</h3>
 <ul>
-<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
-<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
-<li><a href="https://issues.apache.org/jira/browse/OFBIZ-12594">https://issues.apache.org/jira/browse/OFBIZ-12594</a></li>
-<li><a href="https://lists.apache.org/thread/prb48ztk01bflyyjbl6p56wlcc1n5sz7">https://lists.apache.org/thread/prb48ztk01bflyyjbl6p56wlcc1n5sz7</a></li>
+<li><a href="https://lists.apache.org/thread/vrvzokvxqtc4t6d7g8xgz89xpxcvjofh">https://lists.apache.org/thread/vrvzokvxqtc4t6d7g8xgz89xpxcvjofh</a></li>
 </ul>
 <h3 id="credits-23">Credits</h3>
 <ul>
-<li>Matei &ldquo;Mal&rdquo; Badanoiu (finder)</li>
+<li>Nikita Podotykin from Positive Technologies <a href="mailto:npodotykin@ptsecurity.com">npodotykin@ptsecurity.com</a></li>
+<li>Positive Technologies  zeroday <a href="mailto:zeroday@ptsecurity.com">zeroday@ptsecurity.com</a></li>
 </ul>
-<h2 id="CVE-2025-30676">Stored XSS Vulnerability</h2>
-<p>CVE-2025-30676 <a href="./CVE-2025-30676.cve.json">[CVE json]</a> <a href="./CVE-2025-30676.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-04-01T14:43:47.266Z</em></p>
+<h2 id="CVE-2021-37608">Arbitrary file upload vulnerability in OFBiz</h2>
+<p>CVE-2021-37608 <a href="https://cve.org/CVERecord?id=CVE-2021-37608">[CVE]</a> <a href="./CVE-2021-37608.cve.json">[CVE json]</a> <a href="./CVE-2021-37608.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-08-18T07:45:08.867Z</em></p>
 <h3 id="affected-24">Affected</h3>
 <ul>
-<li>Apache OFBiz before 18.12.19</li>
+<li>Apache OFBiz from unspecified through 17.12.07</li>
 </ul>
 <h3 id="description-24">Description</h3>
-<p>Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS) vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 18.12.19.</p><p>Users are recommended to upgrade to version 18.12.19, which fixes the issue.</p>
+<p>Unrestricted Upload of File with Dangerous Type vulnerability in Apache OFBiz allows an attacker to execute remote commands. This issue affects Apache OFBiz version 17.12.07 and prior versions. Upgrade to at least 17.12.08 or apply patches at <a href="https://issues.apache.org/jira/browse/OFBIZ-12297">https://issues.apache.org/jira/browse/OFBIZ-12297</a>.</p>
 <h3 id="references-24">References</h3>
 <ul>
-<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
 <li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
-<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13219">https://issues.apache.org/jira/browse/OFBIZ-13219</a></li>
-<li><a href="https://lists.apache.org/thread/8d718qt8dqthnw1gmyxsq8glfdjklnjf">https://lists.apache.org/thread/8d718qt8dqthnw1gmyxsq8glfdjklnjf</a></li>
 </ul>
 <h3 id="credits-24">Credits</h3>
 <ul>
-<li>Khaled Nassar  (@mindpatch) (finder)</li>
+<li>Zhujie from Galaxy Security Laboratory <a href="mailto:galaxylab@sina.com">galaxylab@sina.com</a></li>
 </ul>
-<h2 id="CVE-2025-54466">RCE Vulnerability in scrum plugin</h2>
-<p>CVE-2025-54466 <a href="./CVE-2025-54466.cve.json">[CVE json]</a> <a href="./CVE-2025-54466.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-08-15T14:13:40.046Z</em></p>
+<h2 id="CVE-2021-30128">Unsafe deserialization in Apache OFBiz</h2>
+<p>CVE-2021-30128 <a href="https://cve.org/CVERecord?id=CVE-2021-30128">[CVE]</a> <a href="./CVE-2021-30128.cve.json">[CVE json]</a> <a href="./CVE-2021-30128.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-04-27T19:47:04.244Z</em></p>
 <h3 id="affected-25">Affected</h3>
 <ul>
-<li>Apache OFBiz before 24.09.02</li>
+<li>Apache OFBiz from Apache OFBiz before 17.12.07</li>
 </ul>
 <h3 id="description-25">Description</h3>
-<p>Improper Control of Generation of Code ('Code Injection') vulnerability leading to a possible RCE in Apache OFBiz&nbsp;scrum plugin.<br><br>This issue affects Apache OFBiz: before 24.09.02 only when the&nbsp;scrum plugin is used.</p><p>Even unauthenticated attackers can exploit this vulnerability.<br></p><p>Users are recommended to upgrade to version 24.09.02, which fixes the issue.</p>
+<p>Apache OFBiz has unsafe deserialization prior to 17.12.07 version</p>
 <h3 id="references-25">References</h3>
 <ul>
-<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
-<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
-<li><a href="https://ofbiz.apache.org/release-notes-24.09.02.html">https://ofbiz.apache.org/release-notes-24.09.02.html</a></li>
-<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13276">https://issues.apache.org/jira/browse/OFBIZ-13276</a></li>
-<li><a href="https://lists.apache.org/thread/14d0yd9co9gx2mctd3vyz1cc8d39n915">https://lists.apache.org/thread/14d0yd9co9gx2mctd3vyz1cc8d39n915</a></li>
+<li><a href="https://lists.apache.org/thread.html/rb3f5cd65f3ddce9b9eb4d6ea6e2919933f0f89b15953769d11003743%40%3Cdev.ofbiz.apache.org%3E">https://lists.apache.org/thread.html/rb3f5cd65f3ddce9b9eb4d6ea6e2919933f0f89b15953769d11003743%40%3Cdev.ofbiz.apache.org%3E</a></li>
 </ul>
 <h3 id="credits-25">Credits</h3>
 <ul>
-<li>Teeramet Eakwilai <a href="mailto:teeramet@datafarm.co.th">teeramet@datafarm.co.th</a> (finder)</li>
-<li>Thanasin Luangpipat (finder)</li>
-<li>Jarukit Auikritskul (finder)</li>
+<li>Apache OFBiz would like to thank Litch1 from the Security Team of Alibaba Cloud <a href="mailto:litch1chk@gmail.com">litch1chk@gmail.com</a> for report</li>
 </ul>
-<h2 id="CVE-2025-59118">Critical Remote Command Execution via Unrestricted File Upload</h2>
-<p>CVE-2025-59118 <a href="./CVE-2025-59118.cve.json">[CVE json]</a> <a href="./CVE-2025-59118.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-11-12T09:15:52.459Z</em></p>
+<h2 id="CVE-2021-29200">RCE vulnerability in latest Apache OFBiz due to Java serialisation using RMI</h2>
+<p>CVE-2021-29200 <a href="https://cve.org/CVERecord?id=CVE-2021-29200">[CVE]</a> <a href="./CVE-2021-29200.cve.json">[CVE json]</a> <a href="./CVE-2021-29200.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-04-27T19:46:30.140Z</em></p>
 <h3 id="affected-26">Affected</h3>
 <ul>
-<li>Apache OFBiz before 24.09.03</li>
+<li>Apache OFBiz from Apache OFBiz before 17.12.07</li>
 </ul>
 <h3 id="description-26">Description</h3>
-<p>Unrestricted Upload of File with Dangerous Type vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 24.09.03.</p><p>Users are recommended to upgrade to version 24.09.03, which fixes the issue.</p>
+<p>Apache OFBiz has unsafe deserialization prior to 17.12.07 version
+An unauthenticated user can perform an RCE attack</p>
 <h3 id="references-26">References</h3>
 <ul>
-<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
-<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
-<li><a href="https://ofbiz.apache.org/release-notes-24.09.03.html">https://ofbiz.apache.org/release-notes-24.09.03.html</a></li>
-<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13292">https://issues.apache.org/jira/browse/OFBIZ-13292</a></li>
-<li><a href="https://lists.apache.org/thread/202263kpy7g76pzsy1fm96h9lcmhsqpt">https://lists.apache.org/thread/202263kpy7g76pzsy1fm96h9lcmhsqpt</a></li>
+<li><a href="https://lists.apache.org/thread.html/re21d25d9fb89e36cea910633779c23f144b9b60596b113b7bf1e8097%40%3Cdev.ofbiz.apache.org%3E">https://lists.apache.org/thread.html/re21d25d9fb89e36cea910633779c23f144b9b60596b113b7bf1e8097%40%3Cdev.ofbiz.apache.org%3E</a></li>
 </ul>
 <h3 id="credits-26">Credits</h3>
 <ul>
-<li>RedHive Team (<a href="mailto:security@hive.red">security@hive.red</a>) <a href="https://hive.red/en/">https://hive.red/en/</a> (finder)</li>
+<li>Apache OFBiz would like to thank the first report from &ldquo;r00t4dm at Cloud-Penetrating Arrow Lab, asd of MoyunSec V-Lab <a href="mailto:root@thiscode.cc">root@thiscode.cc</a> and 赖涵 <a href="mailto:1044309102@qq.com">1044309102@qq.com</a>  a bit later</li>
 </ul>
-<h2 id="CVE-2025-61623">Reflected Cross-site Scripting</h2>
-<p>CVE-2025-61623 <a href="./CVE-2025-61623.cve.json">[CVE json]</a> <a href="./CVE-2025-61623.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-11-12T09:16:48.899Z</em></p>
+<h2 id="CVE-2021-26295">RCE vulnerability in latest Apache OFBiz due to Java serialisation using RMI</h2>
+<p>CVE-2021-26295 <a href="https://cve.org/CVERecord?id=CVE-2021-26295">[CVE]</a> <a href="./CVE-2021-26295.cve.json">[CVE json]</a> <a href="./CVE-2021-26295.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-03-22T11:54:40.746Z</em></p>
 <h3 id="affected-27">Affected</h3>
 <ul>
-<li>Apache OFBiz before 24.09.03</li>
+<li>Apache OFBiz at 17.12.01 to 17.12.05</li>
 </ul>
 <h3 id="description-27">Description</h3>
-<p>Reflected cross-site scripting vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 24.09.03.</p><p>Users are recommended to upgrade to version 24.09.03, which fixes the issue.</p>
+<p>Apache OFBiz has unsafe deserialization prior to 17.12.06. An unauthenticated attacker can use this vulnerability to successfully take over Apache OFBiz.</p>
 <h3 id="references-27">References</h3>
 <ul>
-<li><a href="https://issues.apache.org/jira/browse/OFBIZ-13295">https://issues.apache.org/jira/browse/OFBIZ-13295</a></li>
-<li><a href="https://ofbiz.apache.org/download.html">https://ofbiz.apache.org/download.html</a></li>
-<li><a href="https://ofbiz.apache.org/security.html">https://ofbiz.apache.org/security.html</a></li>
-<li><a href="https://ofbiz.apache.org/release-notes-24.09.03.html">https://ofbiz.apache.org/release-notes-24.09.03.html</a></li>
-<li><a href="https://lists.apache.org/thread/sb2mngrg766qbqt5g29fo0qblk3v4x5y">https://lists.apache.org/thread/sb2mngrg766qbqt5g29fo0qblk3v4x5y</a></li>
+<li><a href="https://lists.apache.org/thread.html/r3c1802eaf34aa78a61b4e8e044c214bc94accbd28a11f3a276586a31%40%3Cuser.ofbiz.apache.org%3E">https://lists.apache.org/thread.html/r3c1802eaf34aa78a61b4e8e044c214bc94accbd28a11f3a276586a31%40%3Cuser.ofbiz.apache.org%3E</a></li>
 </ul>
 <h3 id="credits-27">Credits</h3>
 <ul>
-<li>RedHive Team (<a href="mailto:security@hive.red">security@hive.red</a>) <a href="https://hive.red/en/">https://hive.red/en/</a> (finder)</li>
+<li>Apache OFBiz would like to thank the first report from &ldquo;r00t4dm at Cloud-Penetrating Arrow Lab and Longofo at Knownsec 404 Team&rdquo; and the second report by MagicZero from SGLAB of Legendsec at Qi&rsquo;anxin Group.</li>
 </ul>
 
   

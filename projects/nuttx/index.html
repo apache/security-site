@@ -105,121 +105,68 @@
 <p>Do you want disclose a potential security issue for Apache NuttX? You can read more about the projects&rsquo; security policy on their <a href="https://nuttx.apache.org/docs/latest/security.html">security page</a>, and email your report to the <a href="mailto:security@nuttx.apache.org">Apache NuttX Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://nuttx.apache.org/docs/latest/security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2020-17529">Apache NuttX (incubating) Out of Bound Write from invalid fragmentation offset value specified in the IP header</h2>
-<p>CVE-2020-17529 <a href="./CVE-2020-17529.cve.json">[CVE json]</a> <a href="./CVE-2020-17529.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2020-12-09T16:35:02.859Z</em></p>
+<h2 id="CVE-2025-48769">fs/vfs/fs_rename: use after free</h2>
+<p>CVE-2025-48769 <a href="https://cve.org/CVERecord?id=CVE-2025-48769">[CVE]</a> <a href="./CVE-2025-48769.cve.json">[CVE json]</a> <a href="./CVE-2025-48769.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-01T16:14:32.107Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache NuttX (incubating) at 10.0.0</li>
-<li>Apache NuttX (incubating) from unspecified through 9.1.0</li>
+<li>Apache NuttX RTOS from 7.20 before 12.11.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Out-of-bounds Write vulnerability in TCP Stack of Apache NuttX (incubating) versions up to and including 9.1.0 and 10.0.0 allows attacker to corrupt memory by supplying and invalid fragmentation offset value specified in the IP header.  This is only impacts builds with both CONFIG_EXPERIMENTAL  and CONFIG_NET_TCP_REASSEMBLY build flags enabled.</p>
+<p>Use After Free vulnerability was discovered in fs/vfs/fs_rename code of the Apache NuttX RTOS, that due recursive implementation and single buffer use by two different pointer variables allowed arbitrary user provided size buffer reallocation and write to the previously freed heap chunk, that in specific cases could cause unintended virtual filesystem rename/move operation results.</p><p>This issue affects Apache NuttX RTOS: from 7.20 before 12.11.0.</p><p>Users of virtual filesystem based services with write access especially when exposed over the network (i.e. FTP) are affected and recommended to upgrade to version 12.11.0 that fixes the issue.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread.html/r4d71ae3ab96b589835b94ba7ac4cb88a704e7307bceefeab749366f3%40%3Cdev.nuttx.apache.org%3E">https://lists.apache.org/thread.html/r4d71ae3ab96b589835b94ba7ac4cb88a704e7307bceefeab749366f3%40%3Cdev.nuttx.apache.org%3E</a></li>
+<li><a href="https://github.com/apache/nuttx/pull/16455">https://github.com/apache/nuttx/pull/16455</a></li>
+<li><a href="https://lists.apache.org/thread/7m83v11ldfq7bvw72n9t5sccocczocjn">https://lists.apache.org/thread/7m83v11ldfq7bvw72n9t5sccocczocjn</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Apache NuttX would like to thank Forescout for reporting the issue</li>
+<li>Liu, Richard Jiayang <a href="mailto:rjliu3@illinois.edu">rjliu3@illinois.edu</a> (finder)</li>
+<li>Liu, Richard Jiayang <a href="mailto:rjliu3@illinois.edu">rjliu3@illinois.edu</a> (remediation developer)</li>
+<li>Tomek CEDRO <a href="mailto:cederom@apache.org">cederom@apache.org</a> (coordinator)</li>
+<li>Xiang Xiao <a href="mailto:xiaoxiang@apache.org">xiaoxiang@apache.org</a> (remediation reviewer)</li>
+<li>Jiuzhu Dong <a href="mailto:jiuzhudong@apache.org">jiuzhudong@apache.org</a> (remediation reviewer)</li>
 </ul>
-<h2 id="CVE-2020-17528">Apache NuttX (incubating) Out of Bound Write from invalid TCP Urgent length</h2>
-<p>CVE-2020-17528 <a href="./CVE-2020-17528.cve.json">[CVE json]</a> <a href="./CVE-2020-17528.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2020-12-09T16:34:56.566Z</em></p>
+<h2 id="CVE-2025-48768">fs/inode: fs_inoderemove root inode removal</h2>
+<p>CVE-2025-48768 <a href="https://cve.org/CVERecord?id=CVE-2025-48768">[CVE]</a> <a href="./CVE-2025-48768.cve.json">[CVE json]</a> <a href="./CVE-2025-48768.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-01T16:13:58.511Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache NuttX (incubating) at 10.0.0</li>
-<li>Apache NuttX (incubating) from unspecified before 9.1.1</li>
+<li>Apache NuttX RTOS from 10.0.0 before 12.10.0</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>Out-of-bounds Write vulnerability in TCP stack of Apache NuttX (incubating) versions up to and including 9.1.0 and 10.0.0 allows attacker to corrupt memory by supplying arbitrary urgent data pointer offsets within TCP packets including beyond the length of the packet.</p>
+<p>Release of Invalid Pointer or Reference vulnerability was discovered in&nbsp;fs/inode/fs_inoderemove&nbsp;code of the Apache NuttX RTOS that allowed root filesystem inode removal leading to a debug assert trigger (that is disabled by default), NULL pointer dereference (handled differently depending on the target architecture), or in general, a Denial of Service.</p><p>This issue affects Apache NuttX RTOS: from 10.0.0 before 12.10.0.</p><p>Users of filesystem based services with write access that were exposed over the network (i.e. FTP) are affected and recommended to upgrade to version 12.10.0 that fixes the issue.</p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread.html/r7f4215aba288660b41b7e731b6262c8275fa476e91e527a74d2888ea%40%3Cdev.nuttx.apache.org%3E">https://lists.apache.org/thread.html/r7f4215aba288660b41b7e731b6262c8275fa476e91e527a74d2888ea%40%3Cdev.nuttx.apache.org%3E</a></li>
+<li><a href="https://github.com/apache/nuttx/pull/16437">https://github.com/apache/nuttx/pull/16437</a></li>
+<li><a href="https://lists.apache.org/thread/nwo1kd08b7t3dyz082q2pghdxwvxwyvo">https://lists.apache.org/thread/nwo1kd08b7t3dyz082q2pghdxwvxwyvo</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>Apache NuttX would like to thank Forescout for reporting the issue</li>
-</ul>
-<h2 id="CVE-2021-26461">malloc, realloc and memalign implementations are vulnerable to integer wrap-arounds</h2>
-<p>CVE-2021-26461 <a href="./CVE-2021-26461.cve.json">[CVE json]</a> <a href="./CVE-2021-26461.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-06-21T17:05:46.935Z</em></p>
-<h3 id="affected-2">Affected</h3>
-<ul>
-<li>Apache NuttX from Apache NuttX before 10.1.0</li>
-</ul>
-<h3 id="description-2">Description</h3>
-<p>Apache Nuttx Versions prior to 10.1.0 are vulnerable to integer wrap-around in functions malloc, realloc and memalign. This improper memory assignment can lead to arbitrary memory allocation, resulting in unexpected behavior such as a crash or a remote code injection/execution.</p>
-<h3 id="references-2">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread.html/r806fccf8b003ae812d807c6c7d97950d44ed29b2713418cbe3f2bddd%40%3Cdev.nuttx.apache.org%3E">https://lists.apache.org/thread.html/r806fccf8b003ae812d807c6c7d97950d44ed29b2713418cbe3f2bddd%40%3Cdev.nuttx.apache.org%3E</a></li>
-</ul>
-<h3 id="credits-2">Credits</h3>
-<ul>
-<li>Apache NuttX would like to thank Omri Ben-Bassat of Section 52 at Azure Defender for IoT of Microsoft Corp for bringing this issue to our attention.</li>
-</ul>
-<h2 id="CVE-2025-35003">NuttX Bluetooth Stack HCI and UART DoS/RCE Vulnerabilities.</h2>
-<p>CVE-2025-35003 <a href="./CVE-2025-35003.cve.json">[CVE json]</a> <a href="./CVE-2025-35003.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-06-14T22:46:25.637Z</em></p>
-<h3 id="affected-3">Affected</h3>
-<ul>
-<li>Apache NuttX RTOS from 7.25 before 12.9.0</li>
-</ul>
-<h3 id="description-3">Description</h3>
-<p>Improper Restriction of Operations within the Bounds of a Memory Buffer and Stack-based Buffer Overflow vulnerabilities were discovered in Apache NuttX RTOS Bluetooth Stack (HCI and UART components) that may result in system crash, denial of service, or arbitrary code execution, after receiving maliciously crafted packets.</p><p>NuttX's Bluetooth HCI/UART stack users are advised to upgrade to version 12.9.0, which fixes the identified implementation issues.</p><p>This issue affects Apache NuttX: from 7.25 before 12.9.0. <br></p><p></p>
-<h3 id="references-3">References</h3>
-<ul>
-<li><a href="https://github.com/apache/nuttx/pull/16179">https://github.com/apache/nuttx/pull/16179</a></li>
-<li><a href="https://lists.apache.org/thread/k4xzz3jhkx48zxw9vwmqrmm4hmg78vsj">https://lists.apache.org/thread/k4xzz3jhkx48zxw9vwmqrmm4hmg78vsj</a></li>
-</ul>
-<h3 id="credits-3">Credits</h3>
-<ul>
-<li>Chongqing Lei <a href="mailto:leicq@seu.edu.cn">leicq@seu.edu.cn</a> (reporter)</li>
-<li>Zhen Ling <a href="mailto:zhenling@seu.edu.cn">zhenling@seu.edu.cn</a> (reporter)</li>
-<li>Chongqing Lei <a href="mailto:leicq@seu.edu.cn">leicq@seu.edu.cn</a> (remediation developer)</li>
-<li>Tomek CEDRO <a href="mailto:tomek@cedro.info">tomek@cedro.info</a> (coordinator)</li>
-</ul>
-<h2 id="CVE-2025-47868">tools/bdf-converter: Fix loop termination condition.</h2>
-<p>CVE-2025-47868 <a href="./CVE-2025-47868.cve.json">[CVE json]</a> <a href="./CVE-2025-47868.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-06-14T22:53:54.263Z</em></p>
-<h3 id="affected-4">Affected</h3>
-<ul>
-<li>Apache NuttX RTOS: tools/bdf-converter. from 6.9 before 12.9.0</li>
-</ul>
-<h3 id="description-4">Description</h3>
-<p>Out-of-bounds Write resulting in possible Heap-based Buffer Overflow vulnerability was discovered in tools/bdf-converter font conversion utility that is part of Apache NuttX RTOS repository. This standalone program is optional and neither part of NuttX RTOS nor Applications runtime, but active bdf-converter users may be affected when this tool is exposed to external provided user data data (i.e. publicly available automation).</p><p>This issue affects Apache NuttX: from 6.9 before 12.9.0.</p><p>Users are recommended to upgrade to version 12.9.0, which fixes the issue.</p>
-<h3 id="references-4">References</h3>
-<ul>
-<li><a href="https://github.com/apache/nuttx/pull/16000">https://github.com/apache/nuttx/pull/16000</a></li>
-<li><a href="https://lists.apache.org/thread/p4o2lcqgspx3ws1n2p4wmoqbqow1w1pw">https://lists.apache.org/thread/p4o2lcqgspx3ws1n2p4wmoqbqow1w1pw</a></li>
-</ul>
-<h3 id="credits-4">Credits</h3>
-<ul>
-<li>Chánh Phạm <a href="mailto:chanhphamviet@gmail.com">chanhphamviet@gmail.com</a> (finder)</li>
-<li>Nathan Hartman <a href="mailto:hartman.nathan@gmail.com">hartman.nathan@gmail.com</a> (remediation developer)</li>
-<li>Tomek CEDRO <a href="mailto:tomek@cedro.info">tomek@cedro.info</a> (coordinator)</li>
-<li>Alan Carvalho de Assis <a href="mailto:acassis@gmail.com">acassis@gmail.com</a> (remediation reviewer)</li>
-<li>Alin Jerpelea <a href="mailto:jerpelea@gmail.com">jerpelea@gmail.com</a> (remediation reviewer)</li>
-<li>Lee, Lup Yuen <a href="mailto:luppy@appkaki.com">luppy@appkaki.com</a> (remediation reviewer)</li>
-<li>Arnout Engelen <a href="mailto:engelen@apache.org">engelen@apache.org</a> (coordinator)</li>
+<li>Liu, Richard Jiayang <a href="mailto:rjliu3@illinois.edu">rjliu3@illinois.edu</a> (finder)</li>
+<li>Liu, Richard Jiayang <a href="mailto:rjliu3@illinois.edu">rjliu3@illinois.edu</a> (remediation developer)</li>
+<li>Alan Carvalho de Assis <a href="mailto:acassis@apache.org">acassis@apache.org</a> (remediation reviewer)</li>
+<li>Tomek CEDRO <a href="mailto:cederom@apache.org">cederom@apache.org</a> (coordinator)</li>
+<li>Xiang Xiao <a href="mailto:xiaoxiang@apache.org">xiaoxiang@apache.org</a> (remediation reviewer)</li>
+<li>Jiuzhu Dong <a href="mailto:jiuzhudong@apache.org">jiuzhudong@apache.org</a> (remediation reviewer)</li>
 </ul>
 <h2 id="CVE-2025-47869">examples/xmlrpc: Fix calls buffers size.</h2>
-<p>CVE-2025-47869 <a href="./CVE-2025-47869.cve.json">[CVE json]</a> <a href="./CVE-2025-47869.osv.json">[OSV json]</a></p>
+<p>CVE-2025-47869 <a href="https://cve.org/CVERecord?id=CVE-2025-47869">[CVE]</a> <a href="./CVE-2025-47869.cve.json">[CVE json]</a> <a href="./CVE-2025-47869.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-06-14T22:55:02.542Z</em></p>
-<h3 id="affected-5">Affected</h3>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache NuttX RTOS from 6.22 before 12.9.0</li>
 </ul>
-<h3 id="description-5">Description</h3>
+<h3 id="description-2">Description</h3>
 <p>Improper Restriction of Operations within the Bounds of a Memory Buffer vulnerability was discovered in Apache NuttX RTOS apps/exapmles/xmlrpc application. In this example application device stats structure that stored remotely provided parameters had hardcoded buffer size which could lead to buffer overflow. Structure members buffers were updated to valid size of CONFIG_XMLRPC_STRINGSIZE+1.</p><p>This issue affects Apache NuttX RTOS users that may have used or base their code on example application as presented in releases from 6.22 before 12.9.0.</p><p>Users of XMLRPC in Apache NuttX RTOS are advised to review their code 
 for this pattern and update buffer sizes as presented in the version of 
 the example in release 12.9.0.<br></p>
-<h3 id="references-5">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://github.com/apache/nuttx-apps/pull/3027">https://github.com/apache/nuttx-apps/pull/3027</a></li>
 <li><a href="https://lists.apache.org/thread/306qcqyc3bpb2ozh015yxjo9kqs4jbvj">https://lists.apache.org/thread/306qcqyc3bpb2ozh015yxjo9kqs4jbvj</a></li>
 </ul>
-<h3 id="credits-5">Credits</h3>
+<h3 id="credits-2">Credits</h3>
 <ul>
 <li>Chánh Phạm <a href="mailto:chanhphamviet@gmail.com">chanhphamviet@gmail.com</a> (reporter)</li>
 <li>Arnout Engelen <a href="mailto:engelen@apache.org">engelen@apache.org</a> (remediation developer)</li>
@@ -230,50 +177,103 @@ the example in release 12.9.0.<br></p>
 <li>Xiang Xiao <a href="mailto:xiaoxiang781216@gmail.com">xiaoxiang781216@gmail.com</a> (remediation reviewer)</li>
 <li>JianyuWang <a href="mailto:wangjianyu3@xiaomi.com">wangjianyu3@xiaomi.com</a> (remediation reviewer)</li>
 </ul>
-<h2 id="CVE-2025-48768">fs/inode: fs_inoderemove root inode removal</h2>
-<p>CVE-2025-48768 <a href="./CVE-2025-48768.cve.json">[CVE json]</a> <a href="./CVE-2025-48768.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-01-01T16:13:58.511Z</em></p>
+<h2 id="CVE-2025-47868">tools/bdf-converter: Fix loop termination condition.</h2>
+<p>CVE-2025-47868 <a href="https://cve.org/CVERecord?id=CVE-2025-47868">[CVE]</a> <a href="./CVE-2025-47868.cve.json">[CVE json]</a> <a href="./CVE-2025-47868.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-06-14T22:53:54.263Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache NuttX RTOS: tools/bdf-converter. from 6.9 before 12.9.0</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Out-of-bounds Write resulting in possible Heap-based Buffer Overflow vulnerability was discovered in tools/bdf-converter font conversion utility that is part of Apache NuttX RTOS repository. This standalone program is optional and neither part of NuttX RTOS nor Applications runtime, but active bdf-converter users may be affected when this tool is exposed to external provided user data data (i.e. publicly available automation).</p><p>This issue affects Apache NuttX: from 6.9 before 12.9.0.</p><p>Users are recommended to upgrade to version 12.9.0, which fixes the issue.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://github.com/apache/nuttx/pull/16000">https://github.com/apache/nuttx/pull/16000</a></li>
+<li><a href="https://lists.apache.org/thread/p4o2lcqgspx3ws1n2p4wmoqbqow1w1pw">https://lists.apache.org/thread/p4o2lcqgspx3ws1n2p4wmoqbqow1w1pw</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Chánh Phạm <a href="mailto:chanhphamviet@gmail.com">chanhphamviet@gmail.com</a> (finder)</li>
+<li>Nathan Hartman <a href="mailto:hartman.nathan@gmail.com">hartman.nathan@gmail.com</a> (remediation developer)</li>
+<li>Tomek CEDRO <a href="mailto:tomek@cedro.info">tomek@cedro.info</a> (coordinator)</li>
+<li>Alan Carvalho de Assis <a href="mailto:acassis@gmail.com">acassis@gmail.com</a> (remediation reviewer)</li>
+<li>Alin Jerpelea <a href="mailto:jerpelea@gmail.com">jerpelea@gmail.com</a> (remediation reviewer)</li>
+<li>Lee, Lup Yuen <a href="mailto:luppy@appkaki.com">luppy@appkaki.com</a> (remediation reviewer)</li>
+<li>Arnout Engelen <a href="mailto:engelen@apache.org">engelen@apache.org</a> (coordinator)</li>
+</ul>
+<h2 id="CVE-2025-35003">NuttX Bluetooth Stack HCI and UART DoS/RCE Vulnerabilities.</h2>
+<p>CVE-2025-35003 <a href="https://cve.org/CVERecord?id=CVE-2025-35003">[CVE]</a> <a href="./CVE-2025-35003.cve.json">[CVE json]</a> <a href="./CVE-2025-35003.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-06-14T22:46:25.637Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache NuttX RTOS from 7.25 before 12.9.0</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Improper Restriction of Operations within the Bounds of a Memory Buffer and Stack-based Buffer Overflow vulnerabilities were discovered in Apache NuttX RTOS Bluetooth Stack (HCI and UART components) that may result in system crash, denial of service, or arbitrary code execution, after receiving maliciously crafted packets.</p><p>NuttX's Bluetooth HCI/UART stack users are advised to upgrade to version 12.9.0, which fixes the identified implementation issues.</p><p>This issue affects Apache NuttX: from 7.25 before 12.9.0. <br></p><p></p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://github.com/apache/nuttx/pull/16179">https://github.com/apache/nuttx/pull/16179</a></li>
+<li><a href="https://lists.apache.org/thread/k4xzz3jhkx48zxw9vwmqrmm4hmg78vsj">https://lists.apache.org/thread/k4xzz3jhkx48zxw9vwmqrmm4hmg78vsj</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Chongqing Lei <a href="mailto:leicq@seu.edu.cn">leicq@seu.edu.cn</a> (reporter)</li>
+<li>Zhen Ling <a href="mailto:zhenling@seu.edu.cn">zhenling@seu.edu.cn</a> (reporter)</li>
+<li>Chongqing Lei <a href="mailto:leicq@seu.edu.cn">leicq@seu.edu.cn</a> (remediation developer)</li>
+<li>Tomek CEDRO <a href="mailto:tomek@cedro.info">tomek@cedro.info</a> (coordinator)</li>
+</ul>
+<h2 id="CVE-2021-26461">malloc, realloc and memalign implementations are vulnerable to integer wrap-arounds</h2>
+<p>CVE-2021-26461 <a href="https://cve.org/CVERecord?id=CVE-2021-26461">[CVE]</a> <a href="./CVE-2021-26461.cve.json">[CVE json]</a> <a href="./CVE-2021-26461.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-06-21T17:05:46.935Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache NuttX from Apache NuttX before 10.1.0</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Apache Nuttx Versions prior to 10.1.0 are vulnerable to integer wrap-around in functions malloc, realloc and memalign. This improper memory assignment can lead to arbitrary memory allocation, resulting in unexpected behavior such as a crash or a remote code injection/execution.</p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r806fccf8b003ae812d807c6c7d97950d44ed29b2713418cbe3f2bddd%40%3Cdev.nuttx.apache.org%3E">https://lists.apache.org/thread.html/r806fccf8b003ae812d807c6c7d97950d44ed29b2713418cbe3f2bddd%40%3Cdev.nuttx.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Apache NuttX would like to thank Omri Ben-Bassat of Section 52 at Azure Defender for IoT of Microsoft Corp for bringing this issue to our attention.</li>
+</ul>
+<h2 id="CVE-2020-17529">Apache NuttX (incubating) Out of Bound Write from invalid fragmentation offset value specified in the IP header</h2>
+<p>CVE-2020-17529 <a href="https://cve.org/CVERecord?id=CVE-2020-17529">[CVE]</a> <a href="./CVE-2020-17529.cve.json">[CVE json]</a> <a href="./CVE-2020-17529.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2020-12-09T16:35:02.859Z</em></p>
 <h3 id="affected-6">Affected</h3>
 <ul>
-<li>Apache NuttX RTOS from 10.0.0 before 12.10.0</li>
+<li>Apache NuttX (incubating) at 10.0.0</li>
+<li>Apache NuttX (incubating) from unspecified through 9.1.0</li>
 </ul>
 <h3 id="description-6">Description</h3>
-<p>Release of Invalid Pointer or Reference vulnerability was discovered in&nbsp;fs/inode/fs_inoderemove&nbsp;code of the Apache NuttX RTOS that allowed root filesystem inode removal leading to a debug assert trigger (that is disabled by default), NULL pointer dereference (handled differently depending on the target architecture), or in general, a Denial of Service.</p><p>This issue affects Apache NuttX RTOS: from 10.0.0 before 12.10.0.</p><p>Users of filesystem based services with write access that were exposed over the network (i.e. FTP) are affected and recommended to upgrade to version 12.10.0 that fixes the issue.</p>
+<p>Out-of-bounds Write vulnerability in TCP Stack of Apache NuttX (incubating) versions up to and including 9.1.0 and 10.0.0 allows attacker to corrupt memory by supplying and invalid fragmentation offset value specified in the IP header.  This is only impacts builds with both CONFIG_EXPERIMENTAL  and CONFIG_NET_TCP_REASSEMBLY build flags enabled.</p>
 <h3 id="references-6">References</h3>
 <ul>
-<li><a href="https://github.com/apache/nuttx/pull/16437">https://github.com/apache/nuttx/pull/16437</a></li>
-<li><a href="https://lists.apache.org/thread/nwo1kd08b7t3dyz082q2pghdxwvxwyvo">https://lists.apache.org/thread/nwo1kd08b7t3dyz082q2pghdxwvxwyvo</a></li>
+<li><a href="https://lists.apache.org/thread.html/r4d71ae3ab96b589835b94ba7ac4cb88a704e7307bceefeab749366f3%40%3Cdev.nuttx.apache.org%3E">https://lists.apache.org/thread.html/r4d71ae3ab96b589835b94ba7ac4cb88a704e7307bceefeab749366f3%40%3Cdev.nuttx.apache.org%3E</a></li>
 </ul>
 <h3 id="credits-6">Credits</h3>
 <ul>
-<li>Liu, Richard Jiayang <a href="mailto:rjliu3@illinois.edu">rjliu3@illinois.edu</a> (finder)</li>
-<li>Liu, Richard Jiayang <a href="mailto:rjliu3@illinois.edu">rjliu3@illinois.edu</a> (remediation developer)</li>
-<li>Alan Carvalho de Assis <a href="mailto:acassis@apache.org">acassis@apache.org</a> (remediation reviewer)</li>
-<li>Tomek CEDRO <a href="mailto:cederom@apache.org">cederom@apache.org</a> (coordinator)</li>
-<li>Xiang Xiao <a href="mailto:xiaoxiang@apache.org">xiaoxiang@apache.org</a> (remediation reviewer)</li>
-<li>Jiuzhu Dong <a href="mailto:jiuzhudong@apache.org">jiuzhudong@apache.org</a> (remediation reviewer)</li>
+<li>Apache NuttX would like to thank Forescout for reporting the issue</li>
 </ul>
-<h2 id="CVE-2025-48769">fs/vfs/fs_rename: use after free</h2>
-<p>CVE-2025-48769 <a href="./CVE-2025-48769.cve.json">[CVE json]</a> <a href="./CVE-2025-48769.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-01-01T16:14:32.107Z</em></p>
+<h2 id="CVE-2020-17528">Apache NuttX (incubating) Out of Bound Write from invalid TCP Urgent length</h2>
+<p>CVE-2020-17528 <a href="https://cve.org/CVERecord?id=CVE-2020-17528">[CVE]</a> <a href="./CVE-2020-17528.cve.json">[CVE json]</a> <a href="./CVE-2020-17528.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2020-12-09T16:34:56.566Z</em></p>
 <h3 id="affected-7">Affected</h3>
 <ul>
-<li>Apache NuttX RTOS from 7.20 before 12.11.0</li>
+<li>Apache NuttX (incubating) at 10.0.0</li>
+<li>Apache NuttX (incubating) from unspecified before 9.1.1</li>
 </ul>
 <h3 id="description-7">Description</h3>
-<p>Use After Free vulnerability was discovered in fs/vfs/fs_rename code of the Apache NuttX RTOS, that due recursive implementation and single buffer use by two different pointer variables allowed arbitrary user provided size buffer reallocation and write to the previously freed heap chunk, that in specific cases could cause unintended virtual filesystem rename/move operation results.</p><p>This issue affects Apache NuttX RTOS: from 7.20 before 12.11.0.</p><p>Users of virtual filesystem based services with write access especially when exposed over the network (i.e. FTP) are affected and recommended to upgrade to version 12.11.0 that fixes the issue.</p>
+<p>Out-of-bounds Write vulnerability in TCP stack of Apache NuttX (incubating) versions up to and including 9.1.0 and 10.0.0 allows attacker to corrupt memory by supplying arbitrary urgent data pointer offsets within TCP packets including beyond the length of the packet.</p>
 <h3 id="references-7">References</h3>
 <ul>
-<li><a href="https://github.com/apache/nuttx/pull/16455">https://github.com/apache/nuttx/pull/16455</a></li>
-<li><a href="https://lists.apache.org/thread/7m83v11ldfq7bvw72n9t5sccocczocjn">https://lists.apache.org/thread/7m83v11ldfq7bvw72n9t5sccocczocjn</a></li>
+<li><a href="https://lists.apache.org/thread.html/r7f4215aba288660b41b7e731b6262c8275fa476e91e527a74d2888ea%40%3Cdev.nuttx.apache.org%3E">https://lists.apache.org/thread.html/r7f4215aba288660b41b7e731b6262c8275fa476e91e527a74d2888ea%40%3Cdev.nuttx.apache.org%3E</a></li>
 </ul>
 <h3 id="credits-7">Credits</h3>
 <ul>
-<li>Liu, Richard Jiayang <a href="mailto:rjliu3@illinois.edu">rjliu3@illinois.edu</a> (finder)</li>
-<li>Liu, Richard Jiayang <a href="mailto:rjliu3@illinois.edu">rjliu3@illinois.edu</a> (remediation developer)</li>
-<li>Tomek CEDRO <a href="mailto:cederom@apache.org">cederom@apache.org</a> (coordinator)</li>
-<li>Xiang Xiao <a href="mailto:xiaoxiang@apache.org">xiaoxiang@apache.org</a> (remediation reviewer)</li>
-<li>Jiuzhu Dong <a href="mailto:jiuzhudong@apache.org">jiuzhudong@apache.org</a> (remediation reviewer)</li>
+<li>Apache NuttX would like to thank Forescout for reporting the issue</li>
 </ul>
 
   

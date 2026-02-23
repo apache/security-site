@@ -105,25 +105,25 @@
 <p>Do you want disclose a potential security issue for Apache Cocoon? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2022-45135">SQL injection in DatabaseCookieAuthenticatorAction</h2>
-<p>CVE-2022-45135 <a href="./CVE-2022-45135.cve.json">[CVE json]</a> <a href="./CVE-2022-45135.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-11-30T08:05:43.177Z</em></p>
+<h2 id="CVE-2025-24783">continuations may not be private</h2>
+<p>CVE-2025-24783 <a href="https://cve.org/CVERecord?id=CVE-2025-24783">[CVE]</a> <a href="./CVE-2025-24783.cve.json">[CVE json]</a> <a href="./CVE-2025-24783.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-01-27T14:47:41.250Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Cocoon from 2.2.0 before 2.3.0</li>
+<li>Apache Cocoon through *</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Improper Neutralization of Special Elements used in an SQL Command (&lsquo;SQL Injection&rsquo;) vulnerability in Apache Cocoon.<p>This issue affects Apache Cocoon: from 2.2.0 before 2.3.0.</p><p>Users are recommended to upgrade to version 2.3.0, which fixes the issue.</p></p>
+<p>** UNSUPPORTED WHEN ASSIGNED ** Incorrect Usage of Seeds in Pseudo-Random Number Generator (PRNG) vulnerability in Apache Cocoon.</p><p>This issue affects Apache Cocoon: all versions.</p><p>When a continuation is created, it gets a random identifier. Because the random number generator used to generate these identifiers was seeded with the startup time, it may not have been sufficiently unpredictable, and an attacker could use this to guess continuation ids and look up continuations they should not have had access to.</p><p>As a mitigation, you may enable the "session-bound-continuations" option to make sure continuations are not shared across sessions.<br></p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/lsvd1hmr2t2q823x21d5ygzgbj9jpvjp">https://lists.apache.org/thread/lsvd1hmr2t2q823x21d5ygzgbj9jpvjp</a></li>
+<li><a href="https://lists.apache.org/thread/pk86jp5cvn41432op8wv1k8p14mp27nz">https://lists.apache.org/thread/pk86jp5cvn41432op8wv1k8p14mp27nz</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>QSec-Team (finder)</li>
+<li>Xiangfan Wu from the StarMap Team of Legendsec at Qi-Anxin Group (finder)</li>
 </ul>
 <h2 id="CVE-2023-49733">Apache Cocoon&rsquo;s StreamGenerator is vulnerable to XXE injection</h2>
-<p>CVE-2023-49733 <a href="./CVE-2023-49733.cve.json">[CVE json]</a> <a href="./CVE-2023-49733.osv.json">[OSV json]</a></p>
+<p>CVE-2023-49733 <a href="https://cve.org/CVERecord?id=CVE-2023-49733">[CVE]</a> <a href="./CVE-2023-49733.cve.json">[CVE json]</a> <a href="./CVE-2023-49733.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2023-11-30T11:29:43.636Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
@@ -135,22 +135,22 @@
 <ul>
 <li><a href="https://lists.apache.org/thread/t87nntzt6dxw354zbqr9k7l7o1x8gq11">https://lists.apache.org/thread/t87nntzt6dxw354zbqr9k7l7o1x8gq11</a></li>
 </ul>
-<h2 id="CVE-2025-24783">continuations may not be private</h2>
-<p>CVE-2025-24783 <a href="./CVE-2025-24783.cve.json">[CVE json]</a> <a href="./CVE-2025-24783.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-01-27T14:47:41.250Z</em></p>
+<h2 id="CVE-2022-45135">SQL injection in DatabaseCookieAuthenticatorAction</h2>
+<p>CVE-2022-45135 <a href="https://cve.org/CVERecord?id=CVE-2022-45135">[CVE]</a> <a href="./CVE-2022-45135.cve.json">[CVE json]</a> <a href="./CVE-2022-45135.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-11-30T08:05:43.177Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache Cocoon through *</li>
+<li>Apache Cocoon from 2.2.0 before 2.3.0</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>** UNSUPPORTED WHEN ASSIGNED ** Incorrect Usage of Seeds in Pseudo-Random Number Generator (PRNG) vulnerability in Apache Cocoon.</p><p>This issue affects Apache Cocoon: all versions.</p><p>When a continuation is created, it gets a random identifier. Because the random number generator used to generate these identifiers was seeded with the startup time, it may not have been sufficiently unpredictable, and an attacker could use this to guess continuation ids and look up continuations they should not have had access to.</p><p>As a mitigation, you may enable the "session-bound-continuations" option to make sure continuations are not shared across sessions.<br></p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+<p>Improper Neutralization of Special Elements used in an SQL Command (&lsquo;SQL Injection&rsquo;) vulnerability in Apache Cocoon.<p>This issue affects Apache Cocoon: from 2.2.0 before 2.3.0.</p><p>Users are recommended to upgrade to version 2.3.0, which fixes the issue.</p></p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/pk86jp5cvn41432op8wv1k8p14mp27nz">https://lists.apache.org/thread/pk86jp5cvn41432op8wv1k8p14mp27nz</a></li>
+<li><a href="https://lists.apache.org/thread/lsvd1hmr2t2q823x21d5ygzgbj9jpvjp">https://lists.apache.org/thread/lsvd1hmr2t2q823x21d5ygzgbj9jpvjp</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>Xiangfan Wu from the StarMap Team of Legendsec at Qi-Anxin Group (finder)</li>
+<li>QSec-Team (finder)</li>
 </ul>
 
   

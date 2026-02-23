@@ -105,145 +105,40 @@
 <p>Do you want disclose a potential security issue for Apache Ambari? Send your report to the <a href="mailto:security@ambari.apache.org">Apache Ambari Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2020-1936">Stored XSS in Apache Ambari</h2>
-<p>CVE-2020-1936 <a href="./CVE-2020-1936.cve.json">[CVE json]</a> <a href="./CVE-2020-1936.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-03-02T08:54:00.947Z</em></p>
+<h2 id="CVE-2025-23196">Code Injection Vulnerability in Ambari Alert Definition</h2>
+<p>CVE-2025-23196 <a href="https://cve.org/CVERecord?id=CVE-2025-23196">[CVE]</a> <a href="./CVE-2025-23196.cve.json">[CVE json]</a> <a href="./CVE-2025-23196.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-02-03T08:22:23.980Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Ambari from Apache Ambari before 2.7.4</li>
+<li>Apache Ambari from 8 before 2.7.9</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>A cross-site scripting issue was found in Apache Ambari Views.  This was addressed in Apache Ambari 2.7.4.</p>
+<p>A code injection vulnerability exists in the Ambari Alert Definition
+feature, allowing authenticated users to inject and execute arbitrary
+shell commands. The vulnerability arises when defining alert scripts,
+where the script filename field is executed using <code>sh -c</code>. An attacker
+with authenticated access can exploit this vulnerability to inject
+malicious commands, leading to remote code execution on the server. The
+issue has been fixed in the latest versions of Ambari.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread.html/946a9d72e664ad8bc592168d9a2fed88100c6e9f1bdfea08e91a3184%40%3Cuser.ambari.apache.org%3E">https://lists.apache.org/thread.html/946a9d72e664ad8bc592168d9a2fed88100c6e9f1bdfea08e91a3184%40%3Cuser.ambari.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread/70g1l5lxvko7kvhyxmtmklhhfrlon837">https://lists.apache.org/thread/70g1l5lxvko7kvhyxmtmklhhfrlon837</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Apache Ambari would like to thank Krzysztof Przybylski from STM Solutions</li>
-</ul>
-<h2 id="CVE-2020-13924"></h2>
-<p>CVE-2020-13924 <a href="./CVE-2020-13924.cve.json">[CVE json]</a> <a href="./CVE-2020-13924.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-03-17T09:01:22.529Z</em></p>
-<h3 id="affected-1">Affected</h3>
-<ul>
-<li>Apache Ambari from Apache Ambari through 2.6.2.2</li>
-</ul>
-<h3 id="description-1">Description</h3>
-<p>In Apache Ambari versions 2.6.2.2 and earlier, malicious users can construct file names for directory traversal and traverse to other directories to download files.</p>
-<h3 id="references-1">References</h3>
-<ul>
-<li><a href="https://mail-archives.apache.org/mod_mbox/ambari-user/202102.mbox/%3CCAEJYuxEQZ_aPwJdAaSxPu-Dva%3Dhc7zZUx3-pzBORbd23g%2BGH1A%40mail.gmail.com%3E">https://mail-archives.apache.org/mod_mbox/ambari-user/202102.mbox/%3CCAEJYuxEQZ_aPwJdAaSxPu-Dva%3Dhc7zZUx3-pzBORbd23g%2BGH1A%40mail.gmail.com%3E</a></li>
-</ul>
-<h3 id="credits-1">Credits</h3>
-<ul>
-<li>threedr3am</li>
-</ul>
-<h2 id="CVE-2022-42009">A malicious authenticated user can remotely execute arbitrary code in the context of the application.</h2>
-<p>CVE-2022-42009 <a href="./CVE-2022-42009.cve.json">[CVE json]</a> <a href="./CVE-2022-42009.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-07-12T09:58:16.769Z</em></p>
-<h3 id="affected-2">Affected</h3>
-<ul>
-<li>Apache Ambari from 2.7.0 through 2.7.6</li>
-</ul>
-<h3 id="description-2">Description</h3>
-<p>SpringEL injection in the server agent in Apache Ambari version 2.7.0 to 2.7.6 allows a malicious authenticated user to execute arbitrary code remotely. U<span style="background-color: rgb(255, 255, 255);">sers are recommended to upgrade to 2.7.7.</span><br></p>
-<h3 id="references-2">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/6xf477ttz1oxmg0bx0tpdoz2mlqd7sbc">https://lists.apache.org/thread/6xf477ttz1oxmg0bx0tpdoz2mlqd7sbc</a></li>
-</ul>
-<h3 id="credits-2">Credits</h3>
-<ul>
-<li>Jecki Go (<a href="mailto:jecgo@visa.com">jecgo@visa.com</a>) (finder)</li>
-</ul>
-<h2 id="CVE-2022-45855">Allows authenticated metrics consumers to perform RCE</h2>
-<p>CVE-2022-45855 <a href="./CVE-2022-45855.cve.json">[CVE json]</a> <a href="./CVE-2022-45855.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-07-12T09:59:42.590Z</em></p>
-<h3 id="affected-3">Affected</h3>
-<ul>
-<li>Apache Ambari from 2.7.0 through 2.7.6</li>
-</ul>
-<h3 id="description-3">Description</h3>
-<p>SpringEL injection in the metrics source in Apache Ambari version 2.7.0 to 2.7.6 allows a malicious authenticated user to execute arbitrary code remotely. U<span style="background-color: rgb(255, 255, 255);">sers are recommended to upgrade to 2.7.7.</span><br></p>
-<h3 id="references-3">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/302c4hwfjy9lx63jrbhcdx948pxc54l1">https://lists.apache.org/thread/302c4hwfjy9lx63jrbhcdx948pxc54l1</a></li>
-</ul>
-<h3 id="credits-3">Credits</h3>
-<ul>
-<li>rg <a href="mailto:18993610179@163.com">18993610179@163.com</a> (finder)</li>
-</ul>
-<h2 id="CVE-2023-50378">Various XSS problems</h2>
-<p>CVE-2023-50378 <a href="./CVE-2023-50378.cve.json">[CVE json]</a> <a href="./CVE-2023-50378.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-10-03T12:23:04.013Z</em></p>
-<h3 id="affected-4">Affected</h3>
-<ul>
-<li>Apache Ambari from 2.7.0 through 2.7.7</li>
-</ul>
-<h3 id="description-4">Description</h3>
-<p><span style="background-color: transparent;">Lack of proper input validation and constraint enforcement in Apache Ambari prior to 2.7.8  <br><br> Impact : As it will be <span style="background-color: rgb(255, 255, 255);">stored XSS, </span>Could be exploited to perform unauthorized actions, varying from data access to session hijacking and delivering malicious payloads. <br><br></span><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version  2.7.8 which fixes this issue.</span><br><br><br><br></p>
-<h3 id="references-4">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/6hn0thq743vz9gh283s2d87wz8tqh37c">https://lists.apache.org/thread/6hn0thq743vz9gh283s2d87wz8tqh37c</a></li>
-</ul>
-<h2 id="CVE-2023-50379">authenticated users could perform command injection to perform RCE</h2>
-<p>CVE-2023-50379 <a href="./CVE-2023-50379.cve.json">[CVE json]</a> <a href="./CVE-2023-50379.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-02-27T08:26:54.321Z</em></p>
-<h3 id="affected-5">Affected</h3>
-<ul>
-<li>Apache Ambari from 2.7.0 through 2.7.7</li>
-</ul>
-<h3 id="description-5">Description</h3>
-<p><span style="background-color: transparent;">Malicious code injection in Apache Ambari in prior to 2.7.8. </span><span style="background-color: transparent;"><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 2.7.8, which fixes this issue.</span></span><b><span style="background-color: transparent;"><br><br></span></b><span style="background-color: transparent;">Impact:</span><b><span style="background-color: transparent;"><br></span></b><span style="background-color: transparent;">A Cluster Operator can manipulate the request by adding a malicious code injection and gain a root over the cluster main host.</span><br><br></p>
-<h3 id="references-5">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/jglww6h6ngxpo1r6r5fx7ff7z29lnvv8">https://lists.apache.org/thread/jglww6h6ngxpo1r6r5fx7ff7z29lnvv8</a></li>
-</ul>
-<h2 id="CVE-2023-50380">authenticated users could perform XXE to read arbitrary files on the server</h2>
-<p>CVE-2023-50380 <a href="./CVE-2023-50380.cve.json">[CVE json]</a> <a href="./CVE-2023-50380.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-02-27T16:51:31.875Z</em></p>
-<h3 id="affected-6">Affected</h3>
-<ul>
-<li>Apache Ambari from 2.7.0 through 2.7.7</li>
-</ul>
-<h3 id="description-6">Description</h3>
-<p><span style="background-color: transparent;">XML External Entity injection in apache ambari versions &lt;= 2.7.7,&nbsp;<span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 2.7.8, which fixes this issue.</span></span></p><p><span style="background-color: transparent;"><br></span></p><p><span style="background-color: transparent;">More Details:</span></p><p><span style="background-color: transparent;">Oozie Workflow Scheduler had a vulnerability that allowed for root-level file reading and privilege escalation from low-privilege users. The vulnerability was caused through lack of proper user input validation.</span></p><p><span style="background-color: transparent;">This vulnerability is known as an XML External Entity (XXE) injection attack. Attackers can exploit XXE vulnerabilities to read arbitrary files on the server, including sensitive system files. In theory, it might be possible to use this to escalate privileges.</span></p>
-<h3 id="references-6">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/qrt7mq7v7zyrh1qsh1gkg1m7clysvy32">https://lists.apache.org/thread/qrt7mq7v7zyrh1qsh1gkg1m7clysvy32</a></li>
-</ul>
-<h2 id="CVE-2024-51941">Remote Code Injection in Ambari Metrics and AMS Alerts</h2>
-<p>CVE-2024-51941 <a href="./CVE-2024-51941.cve.json">[CVE json]</a> <a href="./CVE-2024-51941.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-09-03T08:07:26.617Z</em></p>
-<h3 id="affected-7">Affected</h3>
-<ul>
-<li>Apache Ambari through 2.7.8</li>
-</ul>
-<h3 id="description-7">Description</h3>
-<p>A remote code injection vulnerability exists in the Ambari Metrics and
-AMS Alerts feature, allowing authenticated users to inject and execute
-arbitrary code. The vulnerability occurs when processing alert
-definitions, where malicious input can be injected into the alert script
-execution path. An attacker with authenticated access can exploit this
-vulnerability to execute arbitrary commands on the server. The issue has
-been fixed in the latest versions of Ambari.</p>
-<h3 id="references-7">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/xq50nlff7o7z1kq3y637clzzl6mjhl8j">https://lists.apache.org/thread/xq50nlff7o7z1kq3y637clzzl6mjhl8j</a></li>
-</ul>
-<h3 id="credits-4">Credits</h3>
-<ul>
-<li>4ra1n (<a href="https://github.com/4ra1n">https://github.com/4ra1n</a>) (finder)</li>
-<li><a href="mailto:h4cking2thegate@gmail.com">h4cking2thegate@gmail.com</a> (reporter)</li>
+<li>Liyw979 (reporter)</li>
+<li>robinzeng2015 (reporter)</li>
+<li>fcgboy (reporter)</li>
+<li>wk2025 (reporter)</li>
 </ul>
 <h2 id="CVE-2025-23195">XML External Entity (XXE) Vulnerability in Ambari/Oozie</h2>
-<p>CVE-2025-23195 <a href="./CVE-2025-23195.cve.json">[CVE json]</a> <a href="./CVE-2025-23195.osv.json">[OSV json]</a></p>
+<p>CVE-2025-23195 <a href="https://cve.org/CVERecord?id=CVE-2025-23195">[CVE]</a> <a href="./CVE-2025-23195.cve.json">[CVE json]</a> <a href="./CVE-2025-23195.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-01-21T21:22:31.147Z</em></p>
-<h3 id="affected-8">Affected</h3>
+<h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache Ambari before 2.7.9</li>
 </ul>
-<h3 id="description-8">Description</h3>
+<h3 id="description-1">Description</h3>
 <p>An XML External Entity (XXE) vulnerability exists in the Ambari/Oozie
 project, allowing an attacker to inject malicious XML entities. This
 vulnerability occurs due to insecure parsing of XML input using the
@@ -252,35 +147,140 @@ resolution. An attacker can exploit this vulnerability to read arbitrary
 files on the server or perform server-side request forgery (SSRF)
 attacks. The issue has been fixed in both Ambari 2.7.9 and the trunk
 branch.</p>
-<h3 id="references-8">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/hsb6mvxd7g37dq1ygtd0pd88gs9tfcwq">https://lists.apache.org/thread/hsb6mvxd7g37dq1ygtd0pd88gs9tfcwq</a></li>
 </ul>
-<h2 id="CVE-2025-23196">Code Injection Vulnerability in Ambari Alert Definition</h2>
-<p>CVE-2025-23196 <a href="./CVE-2025-23196.cve.json">[CVE json]</a> <a href="./CVE-2025-23196.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-02-03T08:22:23.980Z</em></p>
+<h2 id="CVE-2024-51941">Remote Code Injection in Ambari Metrics and AMS Alerts</h2>
+<p>CVE-2024-51941 <a href="https://cve.org/CVERecord?id=CVE-2024-51941">[CVE]</a> <a href="./CVE-2024-51941.cve.json">[CVE json]</a> <a href="./CVE-2024-51941.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-09-03T08:07:26.617Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Ambari through 2.7.8</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>A remote code injection vulnerability exists in the Ambari Metrics and
+AMS Alerts feature, allowing authenticated users to inject and execute
+arbitrary code. The vulnerability occurs when processing alert
+definitions, where malicious input can be injected into the alert script
+execution path. An attacker with authenticated access can exploit this
+vulnerability to execute arbitrary commands on the server. The issue has
+been fixed in the latest versions of Ambari.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/xq50nlff7o7z1kq3y637clzzl6mjhl8j">https://lists.apache.org/thread/xq50nlff7o7z1kq3y637clzzl6mjhl8j</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>4ra1n (<a href="https://github.com/4ra1n">https://github.com/4ra1n</a>) (finder)</li>
+<li><a href="mailto:h4cking2thegate@gmail.com">h4cking2thegate@gmail.com</a> (reporter)</li>
+</ul>
+<h2 id="CVE-2023-50380">authenticated users could perform XXE to read arbitrary files on the server</h2>
+<p>CVE-2023-50380 <a href="https://cve.org/CVERecord?id=CVE-2023-50380">[CVE]</a> <a href="./CVE-2023-50380.cve.json">[CVE json]</a> <a href="./CVE-2023-50380.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-02-27T16:51:31.875Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Ambari from 2.7.0 through 2.7.7</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p><span style="background-color: transparent;">XML External Entity injection in apache ambari versions &lt;= 2.7.7,&nbsp;<span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 2.7.8, which fixes this issue.</span></span></p><p><span style="background-color: transparent;"><br></span></p><p><span style="background-color: transparent;">More Details:</span></p><p><span style="background-color: transparent;">Oozie Workflow Scheduler had a vulnerability that allowed for root-level file reading and privilege escalation from low-privilege users. The vulnerability was caused through lack of proper user input validation.</span></p><p><span style="background-color: transparent;">This vulnerability is known as an XML External Entity (XXE) injection attack. Attackers can exploit XXE vulnerabilities to read arbitrary files on the server, including sensitive system files. In theory, it might be possible to use this to escalate privileges.</span></p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/qrt7mq7v7zyrh1qsh1gkg1m7clysvy32">https://lists.apache.org/thread/qrt7mq7v7zyrh1qsh1gkg1m7clysvy32</a></li>
+</ul>
+<h2 id="CVE-2023-50379">authenticated users could perform command injection to perform RCE</h2>
+<p>CVE-2023-50379 <a href="https://cve.org/CVERecord?id=CVE-2023-50379">[CVE]</a> <a href="./CVE-2023-50379.cve.json">[CVE json]</a> <a href="./CVE-2023-50379.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-02-27T08:26:54.321Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Ambari from 2.7.0 through 2.7.7</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p><span style="background-color: transparent;">Malicious code injection in Apache Ambari in prior to 2.7.8. </span><span style="background-color: transparent;"><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 2.7.8, which fixes this issue.</span></span><b><span style="background-color: transparent;"><br><br></span></b><span style="background-color: transparent;">Impact:</span><b><span style="background-color: transparent;"><br></span></b><span style="background-color: transparent;">A Cluster Operator can manipulate the request by adding a malicious code injection and gain a root over the cluster main host.</span><br><br></p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/jglww6h6ngxpo1r6r5fx7ff7z29lnvv8">https://lists.apache.org/thread/jglww6h6ngxpo1r6r5fx7ff7z29lnvv8</a></li>
+</ul>
+<h2 id="CVE-2023-50378">Various XSS problems</h2>
+<p>CVE-2023-50378 <a href="https://cve.org/CVERecord?id=CVE-2023-50378">[CVE]</a> <a href="./CVE-2023-50378.cve.json">[CVE json]</a> <a href="./CVE-2023-50378.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-10-03T12:23:04.013Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Ambari from 2.7.0 through 2.7.7</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p><span style="background-color: transparent;">Lack of proper input validation and constraint enforcement in Apache Ambari prior to 2.7.8  <br><br> Impact : As it will be <span style="background-color: rgb(255, 255, 255);">stored XSS, </span>Could be exploited to perform unauthorized actions, varying from data access to session hijacking and delivering malicious payloads. <br><br></span><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version  2.7.8 which fixes this issue.</span><br><br><br><br></p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/6hn0thq743vz9gh283s2d87wz8tqh37c">https://lists.apache.org/thread/6hn0thq743vz9gh283s2d87wz8tqh37c</a></li>
+</ul>
+<h2 id="CVE-2022-45855">Allows authenticated metrics consumers to perform RCE</h2>
+<p>CVE-2022-45855 <a href="https://cve.org/CVERecord?id=CVE-2022-45855">[CVE]</a> <a href="./CVE-2022-45855.cve.json">[CVE json]</a> <a href="./CVE-2022-45855.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-07-12T09:59:42.590Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Ambari from 2.7.0 through 2.7.6</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>SpringEL injection in the metrics source in Apache Ambari version 2.7.0 to 2.7.6 allows a malicious authenticated user to execute arbitrary code remotely. U<span style="background-color: rgb(255, 255, 255);">sers are recommended to upgrade to 2.7.7.</span><br></p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/302c4hwfjy9lx63jrbhcdx948pxc54l1">https://lists.apache.org/thread/302c4hwfjy9lx63jrbhcdx948pxc54l1</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>rg <a href="mailto:18993610179@163.com">18993610179@163.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2022-42009">A malicious authenticated user can remotely execute arbitrary code in the context of the application.</h2>
+<p>CVE-2022-42009 <a href="https://cve.org/CVERecord?id=CVE-2022-42009">[CVE]</a> <a href="./CVE-2022-42009.cve.json">[CVE json]</a> <a href="./CVE-2022-42009.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-07-12T09:58:16.769Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache Ambari from 2.7.0 through 2.7.6</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>SpringEL injection in the server agent in Apache Ambari version 2.7.0 to 2.7.6 allows a malicious authenticated user to execute arbitrary code remotely. U<span style="background-color: rgb(255, 255, 255);">sers are recommended to upgrade to 2.7.7.</span><br></p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/6xf477ttz1oxmg0bx0tpdoz2mlqd7sbc">https://lists.apache.org/thread/6xf477ttz1oxmg0bx0tpdoz2mlqd7sbc</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Jecki Go (<a href="mailto:jecgo@visa.com">jecgo@visa.com</a>) (finder)</li>
+</ul>
+<h2 id="CVE-2020-1936">Stored XSS in Apache Ambari</h2>
+<p>CVE-2020-1936 <a href="https://cve.org/CVERecord?id=CVE-2020-1936">[CVE]</a> <a href="./CVE-2020-1936.cve.json">[CVE json]</a> <a href="./CVE-2020-1936.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-03-02T08:54:00.947Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Ambari from Apache Ambari before 2.7.4</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>A cross-site scripting issue was found in Apache Ambari Views.  This was addressed in Apache Ambari 2.7.4.</p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/946a9d72e664ad8bc592168d9a2fed88100c6e9f1bdfea08e91a3184%40%3Cuser.ambari.apache.org%3E">https://lists.apache.org/thread.html/946a9d72e664ad8bc592168d9a2fed88100c6e9f1bdfea08e91a3184%40%3Cuser.ambari.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Apache Ambari would like to thank Krzysztof Przybylski from STM Solutions</li>
+</ul>
+<h2 id="CVE-2020-13924"></h2>
+<p>CVE-2020-13924 <a href="https://cve.org/CVERecord?id=CVE-2020-13924">[CVE]</a> <a href="./CVE-2020-13924.cve.json">[CVE json]</a> <a href="./CVE-2020-13924.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-03-17T09:01:22.529Z</em></p>
 <h3 id="affected-9">Affected</h3>
 <ul>
-<li>Apache Ambari from 8 before 2.7.9</li>
+<li>Apache Ambari from Apache Ambari through 2.6.2.2</li>
 </ul>
 <h3 id="description-9">Description</h3>
-<p>A code injection vulnerability exists in the Ambari Alert Definition
-feature, allowing authenticated users to inject and execute arbitrary
-shell commands. The vulnerability arises when defining alert scripts,
-where the script filename field is executed using <code>sh -c</code>. An attacker
-with authenticated access can exploit this vulnerability to inject
-malicious commands, leading to remote code execution on the server. The
-issue has been fixed in the latest versions of Ambari.</p>
+<p>In Apache Ambari versions 2.6.2.2 and earlier, malicious users can construct file names for directory traversal and traverse to other directories to download files.</p>
 <h3 id="references-9">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/70g1l5lxvko7kvhyxmtmklhhfrlon837">https://lists.apache.org/thread/70g1l5lxvko7kvhyxmtmklhhfrlon837</a></li>
+<li><a href="https://mail-archives.apache.org/mod_mbox/ambari-user/202102.mbox/%3CCAEJYuxEQZ_aPwJdAaSxPu-Dva%3Dhc7zZUx3-pzBORbd23g%2BGH1A%40mail.gmail.com%3E">https://mail-archives.apache.org/mod_mbox/ambari-user/202102.mbox/%3CCAEJYuxEQZ_aPwJdAaSxPu-Dva%3Dhc7zZUx3-pzBORbd23g%2BGH1A%40mail.gmail.com%3E</a></li>
 </ul>
 <h3 id="credits-5">Credits</h3>
 <ul>
-<li>Liyw979 (reporter)</li>
-<li>robinzeng2015 (reporter)</li>
-<li>fcgboy (reporter)</li>
-<li>wk2025 (reporter)</li>
+<li>threedr3am</li>
 </ul>
 
   

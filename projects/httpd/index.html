@@ -105,1187 +105,139 @@
 <p>Do you want disclose a potential security issue for Apache HTTP Server? You can read more about the projects&rsquo; security policy on their <a href="https://httpd.apache.org/security_report.html">security page</a>, and email your report to the <a href="mailto:security@httpd.apache.org">Apache HTTP Server Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://httpd.apache.org/security_report.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2020-13950">mod_proxy_http NULL pointer dereference</h2>
-<p>CVE-2020-13950 <a href="./CVE-2020-13950.cve.json">[CVE json]</a> <a href="./CVE-2020-13950.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-06-10T07:00:03.831Z</em></p>
+<h2 id="CVE-2025-66200">mod_userdir+suexec bypass via AllowOverride FileInfo</h2>
+<p>CVE-2025-66200 <a href="https://cve.org/CVERecord?id=CVE-2025-66200">[CVE]</a> <a href="./CVE-2025-66200.cve.json">[CVE json]</a> <a href="./CVE-2025-66200.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-05T11:02:46.192Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache HTTP Server at 2.4.46</li>
-<li>Apache HTTP Server at 2.4.43</li>
-<li>Apache HTTP Server at 2.4.41</li>
+<li>Apache HTTP Server from 2.4.7 through 2.4.65</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Apache HTTP Server versions 2.4.41 to 2.4.46 mod_proxy_http can be made to crash (NULL pointer dereference) with specially crafted requests using both Content-Length and Transfer-Encoding headers, leading to a Denial of Service</p>
+<p>mod_userdir+suexec bypass via AllowOverride FileInfo vulnerability in Apache HTTP Server. Users with access to use the RequestHeader directive in htaccess can cause some CGI scripts to run under an unexpected userid.</p><p>This issue affects Apache HTTP Server: from 2.4.7 through 2.4.65.</p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-<li><a href="https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E">https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E</a></li>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Reported by Marc Stern (&lt;marc.stern approach.be&gt;)</li>
+<li>Mattias Åsander (Umeå University) (finder)</li>
 </ul>
-<h2 id="CVE-2020-35452">mod_auth_digest possible stack overflow by one nul byte</h2>
-<p>CVE-2020-35452 <a href="./CVE-2020-35452.cve.json">[CVE json]</a> <a href="./CVE-2020-35452.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-06-10T07:01:23.279Z</em></p>
+<h2 id="CVE-2025-65082">CGI environment variable override</h2>
+<p>CVE-2025-65082 <a href="https://cve.org/CVERecord?id=CVE-2025-65082">[CVE]</a> <a href="./CVE-2025-65082.cve.json">[CVE json]</a> <a href="./CVE-2025-65082.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-05T10:46:23.466Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache HTTP Server at 2.4.46</li>
-<li>Apache HTTP Server at 2.4.43</li>
-<li>Apache HTTP Server at 2.4.41</li>
-<li>Apache HTTP Server at 2.4.39</li>
-<li>Apache HTTP Server at 2.4.38</li>
-<li>Apache HTTP Server at 2.4.37</li>
-<li>Apache HTTP Server at 2.4.35</li>
-<li>Apache HTTP Server at 2.4.34</li>
-<li>Apache HTTP Server at 2.4.33</li>
-<li>Apache HTTP Server at 2.4.29</li>
-<li>Apache HTTP Server at 2.4.28</li>
-<li>Apache HTTP Server at 2.4.27</li>
-<li>Apache HTTP Server at 2.4.26</li>
-<li>Apache HTTP Server at 2.4.25</li>
-<li>Apache HTTP Server at 2.4.23</li>
-<li>Apache HTTP Server at 2.4.20</li>
-<li>Apache HTTP Server at 2.4.18</li>
-<li>Apache HTTP Server at 2.4.17</li>
-<li>Apache HTTP Server at 2.4.16</li>
-<li>Apache HTTP Server at 2.4.12</li>
-<li>Apache HTTP Server at 2.4.10</li>
-<li>Apache HTTP Server at 2.4.9</li>
-<li>Apache HTTP Server at 2.4.7</li>
-<li>Apache HTTP Server at 2.4.6</li>
-<li>Apache HTTP Server at 2.4.4</li>
-<li>Apache HTTP Server at 2.4.3</li>
-<li>Apache HTTP Server at 2.4.2</li>
-<li>Apache HTTP Server at 2.4.1</li>
-<li>Apache HTTP Server at 2.4.0</li>
+<li>Apache HTTP Server from 2.4.0 through 2.4.65</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>Apache HTTP Server versions 2.4.0 to 2.4.46 A specially crafted Digest nonce can cause a stack overflow in mod_auth_digest. There is no report of this overflow being exploitable, nor the Apache HTTP Server team could create one, though some particular compiler and/or compilation option might make it possible, with limited consequences anyway due to the size (a single byte) and the value (zero byte) of the overflow</p>
+<p>Improper Neutralization of Escape, Meta, or Control Sequences vulnerability in Apache HTTP Server through environment variables set via the Apache configuration unexpectedly superseding variables calculated by the server for CGI programs.</p><p>This issue affects Apache HTTP Server from 2.4.0 through 2.4.65.</p><p>Users are recommended to upgrade to version 2.4.66 which fixes the issue.</p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-<li><a href="https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E">https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E</a></li>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>This issue was discovered and reported by GHSL team member @antonio-morales (Antonio Morales)</li>
+<li>Mattias Åsander (Umeå University) (finder)</li>
 </ul>
-<h2 id="CVE-2019-17567">mod_proxy_wstunnel tunneling of non Upgraded connections</h2>
-<p>CVE-2019-17567 <a href="./CVE-2019-17567.cve.json">[CVE json]</a> <a href="./CVE-2019-17567.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-06-16T13:33:49.334Z</em></p>
+<h2 id="CVE-2025-59775">NTLM Leakage on Windows through UNC SSRF</h2>
+<p>CVE-2025-59775 <a href="https://cve.org/CVERecord?id=CVE-2025-59775">[CVE]</a> <a href="./CVE-2025-59775.cve.json">[CVE json]</a> <a href="./CVE-2025-59775.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-05T10:17:02.236Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache HTTP Server at 2.4.46</li>
-<li>Apache HTTP Server at 2.4.43</li>
-<li>Apache HTTP Server at 2.4.41</li>
-<li>Apache HTTP Server at 2.4.39</li>
-<li>Apache HTTP Server at 2.4.38</li>
-<li>Apache HTTP Server at 2.4.37</li>
-<li>Apache HTTP Server at 2.4.35</li>
-<li>Apache HTTP Server at 2.4.34</li>
-<li>Apache HTTP Server at 2.4.33</li>
-<li>Apache HTTP Server at 2.4.29</li>
-<li>Apache HTTP Server at 2.4.28</li>
-<li>Apache HTTP Server at 2.4.27</li>
-<li>Apache HTTP Server at 2.4.26</li>
-<li>Apache HTTP Server at 2.4.25</li>
-<li>Apache HTTP Server at 2.4.23</li>
-<li>Apache HTTP Server at 2.4.20</li>
-<li>Apache HTTP Server at 2.4.18</li>
-<li>Apache HTTP Server at 2.4.17</li>
-<li>Apache HTTP Server at 2.4.16</li>
-<li>Apache HTTP Server at 2.4.12</li>
-<li>Apache HTTP Server at 2.4.10</li>
-<li>Apache HTTP Server at 2.4.9</li>
-<li>Apache HTTP Server at 2.4.7</li>
-<li>Apache HTTP Server at 2.4.6</li>
+<li>Apache HTTP Server from 2.4.0 through 2.4.65</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>Apache HTTP Server versions 2.4.6 to 2.4.46 mod_proxy_wstunnel configured on an URL that is not necessarily Upgraded by the origin server was tunneling the whole connection regardless, thus allowing for subsequent requests on the same connection to pass through with no HTTP validation, authentication or authorization possibly configured.</p>
+<p>
+<p>Server-Side Request Forgery (SSRF) vulnerability</p>
+<p> in Apache HTTP Server on Windows</p>
+<p>with <span style="background-color: rgb(247, 247, 247);">AllowEncodedSlashes</span> <span style="background-color: rgb(247, 247, 247);">On</span> and <span style="background-color: rgb(247, 247, 247);">MergeSlashes</span> <span style="background-color: rgb(247, 247, 247);">Off</span>  allows to potentially leak NTLM
+hashes to a malicious server via SSRF and malicious requests or content</p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p></p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-<li><a href="https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E">https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E</a></li>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>Reported by Mikhail Egorov (&lt;0ang3el gmail.com&gt;)</li>
+<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
 </ul>
-<h2 id="CVE-2020-13938">Improper Handling of Insufficient Privileges</h2>
-<p>CVE-2020-13938 <a href="./CVE-2020-13938.cve.json">[CVE json]</a> <a href="./CVE-2020-13938.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-06-10T06:59:41.634Z</em></p>
+<h2 id="CVE-2025-58098">Server Side Includes adds query string to #exec cmd=&hellip; ##</h2>
+<p>CVE-2025-58098 <a href="https://cve.org/CVERecord?id=CVE-2025-58098">[CVE]</a> <a href="./CVE-2025-58098.cve.json">[CVE json]</a> <a href="./CVE-2025-58098.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-05T13:40:37.496Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache HTTP Server at 2.4.46</li>
-<li>Apache HTTP Server at 2.4.43</li>
-<li>Apache HTTP Server at 2.4.41</li>
-<li>Apache HTTP Server at 2.4.39</li>
-<li>Apache HTTP Server at 2.4.38</li>
-<li>Apache HTTP Server at 2.4.37</li>
-<li>Apache HTTP Server at 2.4.35</li>
-<li>Apache HTTP Server at 2.4.34</li>
-<li>Apache HTTP Server at 2.4.33</li>
-<li>Apache HTTP Server at 2.4.29</li>
-<li>Apache HTTP Server at 2.4.28</li>
-<li>Apache HTTP Server at 2.4.27</li>
-<li>Apache HTTP Server at 2.4.26</li>
-<li>Apache HTTP Server at 2.4.25</li>
-<li>Apache HTTP Server at 2.4.23</li>
-<li>Apache HTTP Server at 2.4.20</li>
-<li>Apache HTTP Server at 2.4.18</li>
-<li>Apache HTTP Server at 2.4.17</li>
-<li>Apache HTTP Server at 2.4.16</li>
-<li>Apache HTTP Server at 2.4.12</li>
-<li>Apache HTTP Server at 2.4.10</li>
-<li>Apache HTTP Server at 2.4.9</li>
-<li>Apache HTTP Server at 2.4.7</li>
-<li>Apache HTTP Server at 2.4.6</li>
-<li>Apache HTTP Server at 2.4.4</li>
-<li>Apache HTTP Server at 2.4.3</li>
-<li>Apache HTTP Server at 2.4.2</li>
-<li>Apache HTTP Server at 2.4.1</li>
-<li>Apache HTTP Server at 2.4.0</li>
+<li>Apache HTTP Server before 2.4.66</li>
 </ul>
 <h3 id="description-3">Description</h3>
-<p>Apache HTTP Server versions 2.4.0 to 2.4.46 Unprivileged local users can stop httpd on Windows</p>
+<p>Apache HTTP Server 2.4.65 and earlier with Server Side Includes (SSI) enabled and mod_cgid (but not mod_cgi) passes the shell-escaped query string to #exec cmd="..." directives.</p><p>This issue affects Apache HTTP Server before 2.4.66.</p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p>
 <h3 id="references-3">References</h3>
 <ul>
-<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-<li><a href="https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E">https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E</a></li>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
 </ul>
 <h3 id="credits-3">Credits</h3>
 <ul>
-<li>Discovered by Ivan Zhakov</li>
+<li>Anthony Parfenov (United Rentals, Inc.) (finder)</li>
 </ul>
-<h2 id="CVE-2021-26690">mod_session NULL pointer dereference</h2>
-<p>CVE-2021-26690 <a href="./CVE-2021-26690.cve.json">[CVE json]</a> <a href="./CVE-2021-26690.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-06-10T07:01:40.445Z</em></p>
+<h2 id="CVE-2025-55753">mod_md (ACME), unintended retry intervals</h2>
+<p>CVE-2025-55753 <a href="https://cve.org/CVERecord?id=CVE-2025-55753">[CVE]</a> <a href="./CVE-2025-55753.cve.json">[CVE json]</a> <a href="./CVE-2025-55753.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-12-05T10:17:13.634Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache HTTP Server at 2.4.46</li>
-<li>Apache HTTP Server at 2.4.43</li>
-<li>Apache HTTP Server at 2.4.41</li>
-<li>Apache HTTP Server at 2.4.39</li>
-<li>Apache HTTP Server at 2.4.38</li>
-<li>Apache HTTP Server at 2.4.37</li>
-<li>Apache HTTP Server at 2.4.35</li>
-<li>Apache HTTP Server at 2.4.34</li>
-<li>Apache HTTP Server at 2.4.33</li>
-<li>Apache HTTP Server at 2.4.29</li>
-<li>Apache HTTP Server at 2.4.28</li>
-<li>Apache HTTP Server at 2.4.27</li>
-<li>Apache HTTP Server at 2.4.26</li>
-<li>Apache HTTP Server at 2.4.25</li>
-<li>Apache HTTP Server at 2.4.23</li>
-<li>Apache HTTP Server at 2.4.20</li>
-<li>Apache HTTP Server at 2.4.18</li>
-<li>Apache HTTP Server at 2.4.17</li>
-<li>Apache HTTP Server at 2.4.16</li>
-<li>Apache HTTP Server at 2.4.12</li>
-<li>Apache HTTP Server at 2.4.10</li>
-<li>Apache HTTP Server at 2.4.9</li>
-<li>Apache HTTP Server at 2.4.7</li>
-<li>Apache HTTP Server at 2.4.6</li>
-<li>Apache HTTP Server at 2.4.4</li>
-<li>Apache HTTP Server at 2.4.3</li>
-<li>Apache HTTP Server at 2.4.2</li>
-<li>Apache HTTP Server at 2.4.1</li>
-<li>Apache HTTP Server at 2.4.0</li>
+<li>Apache HTTP Server from 2.4.30 before 2.4.66</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<p>Apache HTTP Server versions 2.4.0 to 2.4.46 A specially crafted Cookie header handled by mod_session can cause a NULL pointer dereference and crash, leading to a possible Denial Of Service</p>
+<p><span style="background-color: rgb(255, 255, 255);">An integer overflow in the case of failed ACME certificate renewal leads, after a number of failures (~30 days in default configurations), to the backoff timer becoming 0. Attempts to renew the certificate then are repeated without delays until it succeeds.</span></p><p>This issue affects Apache HTTP Server: from 2.4.30 before 2.4.66.<br></p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-<li><a href="https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E">https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E</a></li>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>This issue was discovered and reported by GHSL team member @antonio-morales (Antonio Morales)</li>
+<li>Aisle Research (finder)</li>
 </ul>
-<h2 id="CVE-2021-26691">Apache HTTP Server mod_session response handling heap overflow</h2>
-<p>CVE-2021-26691 <a href="./CVE-2021-26691.cve.json">[CVE json]</a> <a href="./CVE-2021-26691.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-06-10T07:01:56.009Z</em></p>
+<h2 id="CVE-2025-54090">&lsquo;RewriteCond expr&rsquo; always evaluates to true in 2.4.64</h2>
+<p>CVE-2025-54090 <a href="https://cve.org/CVERecord?id=CVE-2025-54090">[CVE]</a> <a href="./CVE-2025-54090.cve.json">[CVE json]</a> <a href="./CVE-2025-54090.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-23T13:19:23.112Z</em></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
-<li>Apache HTTP Server at 2.4.46</li>
-<li>Apache HTTP Server at 2.4.43</li>
-<li>Apache HTTP Server at 2.4.41</li>
-<li>Apache HTTP Server at 2.4.39</li>
-<li>Apache HTTP Server at 2.4.38</li>
-<li>Apache HTTP Server at 2.4.37</li>
-<li>Apache HTTP Server at 2.4.35</li>
-<li>Apache HTTP Server at 2.4.34</li>
-<li>Apache HTTP Server at 2.4.33</li>
-<li>Apache HTTP Server at 2.4.29</li>
-<li>Apache HTTP Server at 2.4.28</li>
-<li>Apache HTTP Server at 2.4.27</li>
-<li>Apache HTTP Server at 2.4.26</li>
-<li>Apache HTTP Server at 2.4.25</li>
-<li>Apache HTTP Server at 2.4.23</li>
-<li>Apache HTTP Server at 2.4.20</li>
-<li>Apache HTTP Server at 2.4.18</li>
-<li>Apache HTTP Server at 2.4.17</li>
-<li>Apache HTTP Server at 2.4.16</li>
-<li>Apache HTTP Server at 2.4.12</li>
-<li>Apache HTTP Server at 2.4.10</li>
-<li>Apache HTTP Server at 2.4.9</li>
-<li>Apache HTTP Server at 2.4.7</li>
-<li>Apache HTTP Server at 2.4.6</li>
-<li>Apache HTTP Server at 2.4.4</li>
-<li>Apache HTTP Server at 2.4.3</li>
-<li>Apache HTTP Server at 2.4.2</li>
-<li>Apache HTTP Server at 2.4.1</li>
-<li>Apache HTTP Server at 2.4.0</li>
+<li>Apache HTTP Server at 2.4.64</li>
 </ul>
 <h3 id="description-5">Description</h3>
-<p>In Apache HTTP Server versions 2.4.0 to 2.4.46 a specially crafted SessionHeader sent by an origin server could cause a heap overflow</p>
+<p>A bug in Apache HTTP Server 2.4.64 results in all "RewriteCond expr ..." tests evaluating as "true".<br><br></p><p>Users are recommended to upgrade to version 2.4.65, which fixes the issue.</p>
 <h3 id="references-5">References</h3>
 <ul>
-<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-<li><a href="https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E">https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E</a></li>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h2 id="CVE-2025-53020">HTTP/2 DoS by Memory Increase</h2>
+<p>CVE-2025-53020 <a href="https://cve.org/CVERecord?id=CVE-2025-53020">[CVE]</a> <a href="./CVE-2025-53020.cve.json">[CVE json]</a> <a href="./CVE-2025-53020.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-11T10:30:11.990Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.17 through 2.4.63</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>Late Release of Memory after Effective Lifetime vulnerability in Apache HTTP Server.</p><p>This issue affects Apache HTTP Server: from 2.4.17 up to 2.4.63.</p><p>Users are recommended to upgrade to version 2.4.64, which fixes the issue.</p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
 </ul>
 <h3 id="credits-5">Credits</h3>
 <ul>
-<li>Discovered internally Christophe Jaillet</li>
-</ul>
-<h2 id="CVE-2021-30641">Unexpected URL matching with &lsquo;MergeSlashes OFF&rsquo;</h2>
-<p>CVE-2021-30641 <a href="./CVE-2021-30641.cve.json">[CVE json]</a> <a href="./CVE-2021-30641.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-06-10T07:02:16.829Z</em></p>
-<h3 id="affected-6">Affected</h3>
-<ul>
-<li>Apache HTTP Server at 2.4.46</li>
-<li>Apache HTTP Server at 2.4.43</li>
-<li>Apache HTTP Server at 2.4.41</li>
-<li>Apache HTTP Server at 2.4.39</li>
-</ul>
-<h3 id="description-6">Description</h3>
-<p>Apache HTTP Server versions 2.4.39 to 2.4.46 Unexpected matching behavior with &lsquo;MergeSlashes OFF&rsquo;</p>
-<h3 id="references-6">References</h3>
-<ul>
-<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-<li><a href="https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E">https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E</a></li>
-</ul>
-<h3 id="credits-6">Credits</h3>
-<ul>
-<li>Discovered by Christoph Anton Mitterer</li>
-</ul>
-<h2 id="CVE-2021-31618">NULL pointer dereference on specially crafted HTTP/2 request</h2>
-<p>CVE-2021-31618 <a href="./CVE-2021-31618.cve.json">[CVE json]</a> <a href="./CVE-2021-31618.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-06-15T08:48:10.111Z</em></p>
-<h3 id="affected-7">Affected</h3>
-<ul>
-<li>Apache HTTP Server at 2.4.47</li>
-</ul>
-<h3 id="description-7">Description</h3>
-<p>Apache HTTP Server protocol handler for the HTTP/2 protocol checks received request headers against the size limitations as configured for the server and used for the HTTP/1 protocol as well. On violation of these restrictions and HTTP response is sent to the client with a status code indicating why the request was rejected.</p>
-<p>This rejection response was not fully initialised in the HTTP/2 protocol handler if the offending header was the very first one received or appeared in a a footer. This led to a NULL pointer dereference on initialised memory, crashing reliably the child process. Since such a triggering HTTP/2 request is easy to craft and submit, this can be exploited to DoS the server.</p>
-<p>This issue affected  mod_http2 1.15.17 and Apache HTTP Server version 2.4.47 only. Apache HTTP Server 2.4.47 was never released.</p>
-<h3 id="references-7">References</h3>
-<ul>
-<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-<li><a href="https://seclists.org/oss-sec/2021/q2/206">https://seclists.org/oss-sec/2021/q2/206</a></li>
-</ul>
-<h3 id="credits-7">Credits</h3>
-<ul>
-<li>Apache HTTP server would like to thank  LI ZHI XIN from NSFocus for reporting this.</li>
-</ul>
-<h2 id="CVE-2021-33193">Request splitting via HTTP/2 method injection and mod_proxy</h2>
-<p>CVE-2021-33193 <a href="./CVE-2021-33193.cve.json">[CVE json]</a> <a href="./CVE-2021-33193.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-09-16T12:49:38.115Z</em></p>
-<h3 id="affected-8">Affected</h3>
-<ul>
-<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.48</li>
-</ul>
-<h3 id="description-8">Description</h3>
-<p>A crafted method sent through HTTP/2 will bypass validation and be forwarded by mod_proxy, which can lead to request splitting or cache poisoning.</p>
-<p>This issue affects Apache HTTP Server 2.4.17 to 2.4.48.</p>
-<h3 id="references-8">References</h3>
-<ul>
-<li><a href="https://portswigger.net/research/http2">https://portswigger.net/research/http2</a></li>
-<li><a href="https://github.com/apache/httpd/commit/ecebcc035ccd8d0e2984fe41420d9e944f456b3c.patch">https://github.com/apache/httpd/commit/ecebcc035ccd8d0e2984fe41420d9e944f456b3c.patch</a></li>
-</ul>
-<h3 id="credits-8">Credits</h3>
-<ul>
-<li>Reported by James Kettle of PortSwigger</li>
-</ul>
-<h2 id="CVE-2021-34798">NULL pointer dereference in httpd core</h2>
-<p>CVE-2021-34798 <a href="./CVE-2021-34798.cve.json">[CVE json]</a> <a href="./CVE-2021-34798.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-09-16T14:31:21.975Z</em></p>
-<h3 id="affected-9">Affected</h3>
-<ul>
-<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.48</li>
-</ul>
-<h3 id="description-9">Description</h3>
-<p>Malformed requests may cause the server to dereference a NULL pointer.</p>
-<p>This issue affects Apache HTTP Server 2.4.48 and earlier.</p>
-<h3 id="references-9">References</h3>
-<ul>
-<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-9">Credits</h3>
-<ul>
-<li>The issue was discovered by the Apache HTTP security team</li>
-</ul>
-<h2 id="CVE-2021-36160">mod_proxy_uwsgi out of bound read</h2>
-<p>CVE-2021-36160 <a href="./CVE-2021-36160.cve.json">[CVE json]</a> <a href="./CVE-2021-36160.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-09-16T14:33:49.077Z</em></p>
-<h3 id="affected-10">Affected</h3>
-<ul>
-<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.48</li>
-</ul>
-<h3 id="description-10">Description</h3>
-<p>A carefully crafted request uri-path can cause mod_proxy_uwsgi to read above the allocated memory and crash (DoS).</p>
-<p>This issue affects Apache HTTP Server versions 2.4.30 to 2.4.48 (inclusive).</p>
-<h3 id="references-10">References</h3>
-<ul>
-<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-10">Credits</h3>
-<ul>
-<li>LI ZHI XIN from NSFocus Security Team</li>
-</ul>
-<h2 id="CVE-2021-39275">ap_escape_quotes buffer overflow</h2>
-<p>CVE-2021-39275 <a href="./CVE-2021-39275.cve.json">[CVE json]</a> <a href="./CVE-2021-39275.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-09-16T14:35:11.663Z</em></p>
-<h3 id="affected-11">Affected</h3>
-<ul>
-<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.48</li>
-</ul>
-<h3 id="description-11">Description</h3>
-<p>ap_escape_quotes() may write beyond the end of a buffer when given malicious input.<br>
-No included modules pass untrusted data to these functions, but third-party / external modules may.</p>
-<p>This issue affects Apache HTTP Server 2.4.48 and earlier.</p>
-<h3 id="references-11">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-11">Credits</h3>
-<ul>
-<li>ClusterFuzz</li>
-</ul>
-<h2 id="CVE-2021-40438">mod_proxy SSRF</h2>
-<p>CVE-2021-40438 <a href="./CVE-2021-40438.cve.json">[CVE json]</a> <a href="./CVE-2021-40438.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-09-16T14:37:10.201Z</em></p>
-<h3 id="affected-12">Affected</h3>
-<ul>
-<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.48</li>
-</ul>
-<h3 id="description-12">Description</h3>
-<p>A crafted request uri-path can cause mod_proxy to forward the request to an origin server choosen by the remote user.</p>
-<p>This issue affects Apache HTTP Server 2.4.48 and earlier.</p>
-<h3 id="references-12">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-12">Credits</h3>
-<ul>
-<li>The issue was discovered by the Apache HTTP security team while analysing CVE-2021-36160</li>
-</ul>
-<h2 id="CVE-2021-41524">null pointer dereference in h2 fuzzing</h2>
-<p>CVE-2021-41524 <a href="./CVE-2021-41524.cve.json">[CVE json]</a> <a href="./CVE-2021-41524.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-10-05T11:31:17.600Z</em></p>
-<h3 id="affected-13">Affected</h3>
-<ul>
-<li>Apache HTTP Server at 2.4.49</li>
-</ul>
-<h3 id="description-13">Description</h3>
-<p>While fuzzing the 2.4.49 httpd, a new null pointer dereference was detected during HTTP/2 request processing,
-allowing an external source to DoS the server. This requires a specially crafted request.</p>
-<p>The vulnerability was recently introduced in version 2.4.49. No exploit is known to the project.</p>
-<h3 id="references-13">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-13">Credits</h3>
-<ul>
-<li>Apache httpd team would like to thank LI ZHI XIN from NSFocus Security Team for reporting this issue.</li>
-</ul>
-<h2 id="CVE-2021-41773">Path traversal and file disclosure vulnerability in Apache HTTP Server 2.4.49</h2>
-<p>CVE-2021-41773 <a href="./CVE-2021-41773.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2021-10-11T14:15:40.313Z</em></p>
-<h3 id="affected-14">Affected</h3>
-<ul>
-<li>Apache HTTP Server at Apache HTTP Server 2.4 2.4.49</li>
-</ul>
-<h3 id="description-14">Description</h3>
-<p>A flaw was found in a change made to path normalization in Apache HTTP Server 2.4.49. An attacker could use a path traversal attack to map URLs to files outside the directories configured by Alias-like directives.</p>
-<p>If files outside of these directories are not protected by the usual default configuration &ldquo;require all denied&rdquo;, these requests can succeed. If CGI scripts are also enabled for these aliased pathes, this could allow for remote code execution.</p>
-<p>This issue is known to be exploited in the wild.</p>
-<p>This issue only affects Apache 2.4.49 and not earlier versions.</p>
-<h3 id="credits-14">Credits</h3>
-<ul>
-<li>This issue was reported by Ash Daulton along with the cPanel Security Team</li>
-</ul>
-<h2 id="CVE-2021-42013">Path Traversal and Remote Code Execution in Apache HTTP Server 2.4.49 and 2.4.50 (incomplete fix of CVE-2021-41773)</h2>
-<p>CVE-2021-42013 <a href="./CVE-2021-42013.cve.json">[CVE json]</a> <a href="./CVE-2021-42013.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-10-11T17:31:43.275Z</em></p>
-<h3 id="affected-15">Affected</h3>
-<ul>
-<li>Apache HTTP Server at 2.4.49</li>
-<li>Apache HTTP Server at 2.4.50</li>
-</ul>
-<h3 id="description-15">Description</h3>
-<p>It was found that the fix for CVE-2021-41773 in Apache HTTP Server 2.4.50 was insufficient.  An attacker could use a path traversal attack to map URLs to files outside the directories configured by Alias-like directives.</p>
-<p>If files outside of these directories are not protected by the usual default configuration &ldquo;require all denied&rdquo;, these requests can succeed. If CGI scripts are also enabled for these aliased pathes, this could allow for remote code execution.</p>
-<p>This issue only affects Apache 2.4.49 and Apache 2.4.50 and not earlier versions.</p>
-<h3 id="references-14">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-15">Credits</h3>
-<ul>
-<li>Reported by Juan Escobar from Dreamlab Technologies</li>
-<li>Reported by Fernando Muñoz from NULL Life CTF Team</li>
-<li>Reported by Shungo Kumasaka</li>
-<li>Reported by Nattapon Jongcharoen</li>
-</ul>
-<h2 id="CVE-2021-44224">Possible NULL dereference or SSRF in forward proxy configurations in Apache HTTP Server 2.4.51 and earlier</h2>
-<p>CVE-2021-44224 <a href="./CVE-2021-44224.cve.json">[CVE json]</a> <a href="./CVE-2021-44224.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-12-20T11:06:17.917Z</em></p>
-<h3 id="affected-16">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.7 before Apache HTTP Server 2.4*</li>
-</ul>
-<h3 id="description-16">Description</h3>
-<p>A crafted URI sent to httpd configured as a forward proxy (ProxyRequests on) can cause a crash (NULL pointer dereference) or, for configurations mixing forward and reverse proxy declarations, can allow for requests to be directed to a declared Unix Domain Socket endpoint (Server Side Request Forgery).</p>
-<p>This issue affects Apache HTTP Server 2.4.7 up to 2.4.51 (included).</p>
-<h3 id="references-15">References</h3>
-<ul>
-<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-16">Credits</h3>
-<ul>
-<li>漂亮鼠</li>
-<li>TengMA(@Te3t123)</li>
-</ul>
-<h2 id="CVE-2021-44790">Possible buffer overflow when parsing multipart content in mod_lua of Apache HTTP Server 2.4.51 and earlier</h2>
-<p>CVE-2021-44790 <a href="./CVE-2021-44790.cve.json">[CVE json]</a> <a href="./CVE-2021-44790.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-12-20T11:07:20.265Z</em></p>
-<h3 id="affected-17">Affected</h3>
-<ul>
-<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.51</li>
-</ul>
-<h3 id="description-17">Description</h3>
-<p>A carefully crafted request body can cause a buffer overflow in the mod_lua multipart parser (r:parsebody() called from Lua scripts).
-The Apache httpd team is not aware of an exploit for the vulnerabilty though it might be possible to craft one.</p>
-<p>This issue affects Apache HTTP Server 2.4.51 and earlier.</p>
-<h3 id="references-16">References</h3>
-<ul>
-<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-17">Credits</h3>
-<ul>
-<li>Chamal</li>
-<li>Anonymous working with Trend Micro Zero Day Initiative</li>
-</ul>
-<h2 id="CVE-2022-22719">mod_lua Use of uninitialized value of in r:parsebody</h2>
-<p>CVE-2022-22719 <a href="./CVE-2022-22719.cve.json">[CVE json]</a> <a href="./CVE-2022-22719.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-03-14T10:10:30.113Z</em></p>
-<h3 id="affected-18">Affected</h3>
-<ul>
-<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.52</li>
-</ul>
-<h3 id="description-18">Description</h3>
-<p>A carefully crafted request body can cause a read to a random memory area which could cause the process to crash.</p>
-<p>This issue affects Apache HTTP Server 2.4.52 and earlier.</p>
-<h3 id="references-17">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-18">Credits</h3>
-<ul>
-<li>Chamal De Silva</li>
-</ul>
-<h2 id="CVE-2022-22720">HTTP request smuggling vulnerability in Apache HTTP Server 2.4.52 and earlier</h2>
-<p>CVE-2022-22720 <a href="./CVE-2022-22720.cve.json">[CVE json]</a> <a href="./CVE-2022-22720.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-03-14T10:09:48.647Z</em></p>
-<h3 id="affected-19">Affected</h3>
-<ul>
-<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.52</li>
-</ul>
-<h3 id="description-19">Description</h3>
-<p>Apache HTTP Server 2.4.52 and earlier fails to close inbound connection when errors are encountered discarding the request body, exposing the server to HTTP Request Smuggling</p>
-<h3 id="references-18">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-19">Credits</h3>
-<ul>
-<li>James Kettle &lt;james.kettle portswigger.net&gt;</li>
-</ul>
-<h2 id="CVE-2022-22721">core: Possible buffer overflow with very large or unlimited LimitXMLRequestBody</h2>
-<p>CVE-2022-22721 <a href="./CVE-2022-22721.cve.json">[CVE json]</a> <a href="./CVE-2022-22721.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-03-14T10:08:56.550Z</em></p>
-<h3 id="affected-20">Affected</h3>
-<ul>
-<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.52</li>
-</ul>
-<h3 id="description-20">Description</h3>
-<p>If LimitXMLRequestBody is set to allow request bodies larger than 350MB (defaults to 1M) on 32 bit systems an integer overflow happens which later causes out of bounds writes.</p>
-<p>This issue affects Apache HTTP Server 2.4.52 and earlier.</p>
-<h3 id="references-19">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-20">Credits</h3>
-<ul>
-<li>Anonymous working with Trend Micro Zero Day Initiative</li>
-</ul>
-<h2 id="CVE-2022-22728">libapreq2 multipart form parse memory corruption</h2>
-<p>CVE-2022-22728 <a href="./CVE-2022-22728.cve.json">[CVE json]</a> <a href="./CVE-2022-22728.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-08-25T14:13:38.823Z</em></p>
-<h3 id="affected-21">Affected</h3>
-<ul>
-<li>libapreq2 from unspecified through 2.16</li>
-</ul>
-<h3 id="description-21">Description</h3>
-<p>A flaw in Apache libapreq2 versions 2.16 and earlier could cause a buffer overflow while processing multipart form uploads.  A remote attacker could send a request causing a process crash which could lead to a denial of service attack.</p>
-<h3 id="references-20">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/2fsjoor96d47vtkpf76x4yo06nccvy1y">https://lists.apache.org/thread/2fsjoor96d47vtkpf76x4yo06nccvy1y</a></li>
-</ul>
-<h2 id="CVE-2022-23943">mod_sed: Read/write beyond bounds</h2>
-<p>CVE-2022-23943 <a href="./CVE-2022-23943.cve.json">[CVE json]</a> <a href="./CVE-2022-23943.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-03-14T10:07:36.342Z</em></p>
-<h3 id="affected-22">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4 through 2.4.52</li>
-</ul>
-<h3 id="description-22">Description</h3>
-<p>Out-of-bounds Write vulnerability in mod_sed of Apache HTTP Server allows an attacker to overwrite heap memory with possibly attacker provided data.</p>
-<p>This issue affects Apache HTTP Server 2.4 version 2.4.52 and prior versions.</p>
-<h3 id="references-21">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-21">Credits</h3>
-<ul>
-<li>Ronald Crane (Zippenhop LLC)</li>
-</ul>
-<h2 id="CVE-2022-26377">mod_proxy_ajp: Possible request smuggling</h2>
-<p>CVE-2022-26377 <a href="./CVE-2022-26377.cve.json">[CVE json]</a> <a href="./CVE-2022-26377.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-06-08T09:44:32.521Z</em></p>
-<h3 id="affected-23">Affected</h3>
-<ul>
-<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.53</li>
-</ul>
-<h3 id="description-23">Description</h3>
-<p>Inconsistent Interpretation of HTTP Requests (&lsquo;HTTP Request Smuggling&rsquo;) vulnerability in mod_proxy_ajp of Apache HTTP Server allows an attacker to smuggle requests to the AJP server it forwards requests to.  This issue affects Apache HTTP Server Apache HTTP Server 2.4 version 2.4.53 and prior versions.</p>
-<h3 id="references-22">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-22">Credits</h3>
-<ul>
-<li>Ricter Z @ 360 Noah Lab</li>
-</ul>
-<h2 id="CVE-2022-28330">read beyond bounds in mod_isapi</h2>
-<p>CVE-2022-28330 <a href="./CVE-2022-28330.cve.json">[CVE json]</a> <a href="./CVE-2022-28330.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-06-08T09:44:43.156Z</em></p>
-<h3 id="affected-24">Affected</h3>
-<ul>
-<li>Apache HTTP Server from Apache HTTP Server through 2.4.53</li>
-</ul>
-<h3 id="description-24">Description</h3>
-<p>Apache HTTP Server 2.4.53 and earlier on Windows may read beyond bounds when configured to process requests with the mod_isapi module.</p>
-<h3 id="references-23">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-23">Credits</h3>
-<ul>
-<li>The Apache HTTP Server project would like to thank Ronald Crane (Zippenhop LLC) for reporting this issue</li>
-</ul>
-<h2 id="CVE-2022-28614">read beyond bounds via ap_rwrite() </h2>
-<p>CVE-2022-28614 <a href="./CVE-2022-28614.cve.json">[CVE json]</a> <a href="./CVE-2022-28614.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-06-10T17:43:34.235Z</em></p>
-<h3 id="affected-25">Affected</h3>
-<ul>
-<li>Apache HTTP Server from unspecified through 2.4.53</li>
-</ul>
-<h3 id="description-25">Description</h3>
-<p>The ap_rwrite() function in Apache HTTP Server 2.4.53 and earlier may read unintended memory if an attacker can cause the server to reflect very large input using ap_rwrite() or ap_rputs(), such as with mod_luas r:puts() function.</p>
-<p>Modules compiled and distributed separately from Apache HTTP Server that use the &ldquo;ap_rputs&rdquo; function and may pass it a very large (INT_MAX or larger) string must be compiled against current headers to resolve the issue.</p>
-<h3 id="references-24">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-24">Credits</h3>
-<ul>
-<li>The Apache HTTP Server project would like to thank Ronald Crane (Zippenhop LLC) for reporting this issue</li>
-</ul>
-<h2 id="CVE-2022-28615">Read beyond bounds in ap_strcmp_match()</h2>
-<p>CVE-2022-28615 <a href="./CVE-2022-28615.cve.json">[CVE json]</a> <a href="./CVE-2022-28615.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-06-08T09:45:23.244Z</em></p>
-<h3 id="affected-26">Affected</h3>
-<ul>
-<li>Apache HTTP Server from Apache HTTP Server through 2.4.53</li>
-</ul>
-<h3 id="description-26">Description</h3>
-<p>Apache HTTP Server 2.4.53 and earlier may crash or disclose information due to a read beyond bounds in ap_strcmp_match() when provided with an extremely large input buffer.  While no code distributed with the server can be coerced into such a call, third-party modules or lua scripts that use ap_strcmp_match() may hypothetically be affected.</p>
-<h3 id="references-25">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-25">Credits</h3>
-<ul>
-<li>The Apache HTTP Server project would like to thank Ronald Crane (Zippenhop LLC) for reporting this issue</li>
-</ul>
-<h2 id="CVE-2022-29404">Denial of service in mod_lua r:parsebody</h2>
-<p>CVE-2022-29404 <a href="./CVE-2022-29404.cve.json">[CVE json]</a> <a href="./CVE-2022-29404.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-06-08T09:45:33.924Z</em></p>
-<h3 id="affected-27">Affected</h3>
-<ul>
-<li>Apache HTTP Server from unspecified through 2.4.53</li>
-</ul>
-<h3 id="description-27">Description</h3>
-<p>In Apache HTTP Server 2.4.53 and earlier, a malicious request to a lua script that calls r:parsebody(0) may cause a denial of service due to no default limit on possible input size.</p>
-<h3 id="references-26">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-26">Credits</h3>
-<ul>
-<li>The Apache HTTP Server project would like to thank Ronald Crane (Zippenhop LLC) for reporting this issue</li>
-</ul>
-<h2 id="CVE-2022-30522">mod_sed denial of service</h2>
-<p>CVE-2022-30522 <a href="./CVE-2022-30522.cve.json">[CVE json]</a> <a href="./CVE-2022-30522.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-06-08T09:45:43.331Z</em></p>
-<h3 id="affected-28">Affected</h3>
-<ul>
-<li>Apache HTTP Server at 2.4.53</li>
-</ul>
-<h3 id="description-28">Description</h3>
-<p>If Apache HTTP Server 2.4.53 is configured to do transformations with mod_sed in contexts where the input to mod_sed may be very large, mod_sed may make excessively large memory allocations and trigger an abort.</p>
-<h3 id="references-27">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-27">Credits</h3>
-<ul>
-<li>This issue was found by Brian Moussalli from the JFrog Security Research team</li>
-</ul>
-<h2 id="CVE-2022-30556">Information Disclosure in mod_lua with websockets</h2>
-<p>CVE-2022-30556 <a href="./CVE-2022-30556.cve.json">[CVE json]</a> <a href="./CVE-2022-30556.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-06-08T09:45:55.863Z</em></p>
-<h3 id="affected-29">Affected</h3>
-<ul>
-<li>Apache HTTP Server from unspecified through 2.4.53</li>
-</ul>
-<h3 id="description-29">Description</h3>
-<p>Apache HTTP Server 2.4.53 and earlier may return lengths to applications calling r:wsread() that point past the end of the storage allocated for the buffer.</p>
-<h3 id="references-28">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-28">Credits</h3>
-<ul>
-<li>The Apache HTTP Server project would like to thank Ronald Crane (Zippenhop LLC) for reporting this issue</li>
-</ul>
-<h2 id="CVE-2022-31813">mod_proxy X-Forwarded-For dropped by hop-by-hop mechanism</h2>
-<p>CVE-2022-31813 <a href="./CVE-2022-31813.cve.json">[CVE json]</a> <a href="./CVE-2022-31813.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-06-08T09:46:07.679Z</em></p>
-<h3 id="affected-30">Affected</h3>
-<ul>
-<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.53</li>
-</ul>
-<h3 id="description-30">Description</h3>
-<p>Apache HTTP Server 2.4.53 and earlier may not send the X-Forwarded-* headers to the origin server based on client side Connection header hop-by-hop mechanism.
-This may be used to bypass IP based authentication on the origin server/application.</p>
-<h3 id="references-29">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-29">Credits</h3>
-<ul>
-<li>The Apache HTTP Server project would like to thank Gaetan Ferry (Synacktiv) for reporting this issue</li>
-</ul>
-<h2 id="CVE-2022-37436">mod_proxy prior to 2.4.55 allows a backend to trigger HTTP response splitting</h2>
-<p>CVE-2022-37436 <a href="./CVE-2022-37436.cve.json">[CVE json]</a> <a href="./CVE-2022-37436.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-01-17T19:13:19.999Z</em></p>
-<h3 id="affected-31">Affected</h3>
-<ul>
-<li>Apache HTTP Server before 2.4.55</li>
-</ul>
-<h3 id="description-31">Description</h3>
-<p>Prior to Apache HTTP Server 2.4.55, a malicious backend can cause the response headers to be truncated early, resulting in some headers being incorporated into the response body. If the later headers have any security purpose, they will not be interpreted by the client.</p>
-<h3 id="references-30">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-30">Credits</h3>
-<ul>
-<li>Dimas Fariski Setyawan Putra (@nyxsorcerer) (finder)</li>
-</ul>
-<h2 id="CVE-2022-36760">mod_proxy_ajp Possible request smuggling</h2>
-<p>CVE-2022-36760 <a href="./CVE-2022-36760.cve.json">[CVE json]</a> <a href="./CVE-2022-36760.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-01-17T19:12:02.488Z</em></p>
-<h3 id="affected-32">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4 through 2.4.54</li>
-</ul>
-<h3 id="description-32">Description</h3>
-<p>Inconsistent Interpretation of HTTP Requests (&lsquo;HTTP Request Smuggling&rsquo;) vulnerability in mod_proxy_ajp of Apache HTTP Server allows an attacker to smuggle requests to the AJP server it forwards requests to.  This issue affects Apache HTTP Server Apache HTTP Server 2.4 version 2.4.54 and prior versions.</p>
-<h3 id="references-31">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-31">Credits</h3>
-<ul>
-<li>ZeddYu_Lu from Qi&rsquo;anxin Research Institute of Legendsec at Qi&rsquo;anxin Group (finder)</li>
-</ul>
-<h2 id="CVE-2006-20001">mod_dav out of  bounds read, or write of zero byte</h2>
-<p>CVE-2006-20001 <a href="./CVE-2006-20001.cve.json">[CVE json]</a> <a href="./CVE-2006-20001.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-01-17T19:07:17.134Z</em></p>
-<h3 id="affected-33">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4 through 2.4.54</li>
-</ul>
-<h3 id="description-33">Description</h3>
-<p>A carefully crafted If: request header can cause a memory read, or write of a single zero byte, in a pool (heap) memory location beyond the header value sent. This could cause the process to crash.<br><br>This issue affects Apache HTTP Server 2.4.54 and earlier.<br></p>
-<h3 id="references-32">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h2 id="CVE-2023-25690">HTTP request splitting with mod_rewrite and mod_proxy</h2>
-<p>CVE-2023-25690 <a href="./CVE-2023-25690.cve.json">[CVE json]</a> <a href="./CVE-2023-25690.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-03-07T15:08:45.400Z</em></p>
-<h3 id="affected-34">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.0 through 2.4.55</li>
-</ul>
-<h3 id="description-34">Description</h3>
-<div>Some mod_proxy configurations on Apache HTTP Server versions 2.4.0 through 2.4.55 allow a HTTP Request Smuggling attack.</div><div><br></div><div><div>Configurations are affected when mod_proxy is enabled along with some form of RewriteRule
- or ProxyPassMatch in which a non-specific pattern matches
- some portion of the user-supplied request-target (URL) data and is then
- re-inserted into the proxied request-target using variable 
-substitution. For example, something like:</div><div><br></div><div>RewriteEngine on<br>RewriteRule "^/here/(.*)" "http://example.com:8080/elsewhere?$1"; [P]<br>ProxyPassReverse /here/ http://example.com:8080/</div><br>Request splitting/smuggling could result in bypass of access controls in the proxy server, proxying unintended URLs to existing origin servers, and cache poisoning. Users are recommended to update to at least version 2.4.56 of Apache HTTP Server.<br></div>
-<h3 id="references-33">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-32">Credits</h3>
-<ul>
-<li>Lars Krapf of Adobe (finder)</li>
-</ul>
-<h2 id="CVE-2023-27522">mod_proxy_uwsgi HTTP response splitting</h2>
-<p>CVE-2023-27522 <a href="./CVE-2023-27522.cve.json">[CVE json]</a> <a href="./CVE-2023-27522.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-03-07T15:09:26.534Z</em></p>
-<h3 id="affected-35">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.30 through 2.4.55</li>
-</ul>
-<h3 id="description-35">Description</h3>
-<div>HTTP Response Smuggling vulnerability in Apache HTTP Server via mod_<code>proxy_uwsgi</code>. This issue affects Apache HTTP Server: from 2.4.30 through 2.4.55.</div><div>Special characters in the origin response header can truncate/split the response forwarded to the client.<br></div>
-<h3 id="references-34">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-33">Credits</h3>
-<ul>
-<li>Dimas Fariski Setyawan Putra (nyxsorcerer) (finder)</li>
-</ul>
-<h2 id="CVE-2023-31122">mod_macro buffer over-read</h2>
-<p>CVE-2023-31122 <a href="./CVE-2023-31122.cve.json">[CVE json]</a> <a href="./CVE-2023-31122.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-10-23T06:51:56.755Z</em></p>
-<h3 id="affected-36">Affected</h3>
-<ul>
-<li>Apache HTTP Server through 2.4.57</li>
-</ul>
-<h3 id="description-36">Description</h3>
-<p>Out-of-bounds Read vulnerability in mod_macro of Apache HTTP Server.<p>This issue affects Apache HTTP Server: through 2.4.57.</p></p>
-<h3 id="references-35">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-34">Credits</h3>
-<ul>
-<li>David Shoon (github/davidshoon) (finder)</li>
-</ul>
-<h2 id="CVE-2023-38709">HTTP response splitting</h2>
-<p>CVE-2023-38709 <a href="./CVE-2023-38709.cve.json">[CVE json]</a> <a href="./CVE-2023-38709.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-01-17T11:15:18.205Z</em></p>
-<h3 id="affected-37">Affected</h3>
-<ul>
-<li>Apache HTTP Server through 2.4.58</li>
-</ul>
-<h3 id="description-37">Description</h3>
-<p>Faulty input validation in the core of Apache allows malicious or exploitable backend/content generators to split HTTP responses.<br><br>This issue affects Apache HTTP Server: through 2.4.58.<br></p>
-<h3 id="references-36">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-35">Credits</h3>
-<ul>
-<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
-</ul>
-<h2 id="CVE-2023-43622">DoS in HTTP/2 with initial windows size 0</h2>
-<p>CVE-2023-43622 <a href="./CVE-2023-43622.cve.json">[CVE json]</a> <a href="./CVE-2023-43622.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-10-23T06:50:49.104Z</em></p>
-<h3 id="affected-38">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.55 through 2.4.57</li>
-</ul>
-<h3 id="description-38">Description</h3>
-<p>An attacker, opening a HTTP/2 connection with an initial window size of 0, was able to block handling of that connection indefinitely in Apache HTTP Server. This could be used to exhaust worker resources in the server, similar to the well known &ldquo;slow loris&rdquo; attack pattern.<br><p>This has been fixed in version 2.4.58, so that such connection are terminated properly after the configured connection timeout.</p><p>This issue affects Apache HTTP Server: from 2.4.55 through 2.4.57.</p><p>Users are recommended to upgrade to version 2.4.58, which fixes the issue.</p></p>
-<h3 id="references-37">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-36">Credits</h3>
-<ul>
-<li>Prof. Sven Dietrich (City University of New York) (finder)</li>
-<li>Isa Jafarov (City University of New York) (finder)</li>
-<li>Prof. Heejo Lee (Korea University) (finder)</li>
-<li>Choongin Lee (Korea University) (finder)</li>
-</ul>
-<h2 id="CVE-2023-45802">HTTP/2 stream memory not reclaimed right away on RST</h2>
-<p>CVE-2023-45802 <a href="./CVE-2023-45802.cve.json">[CVE json]</a> <a href="./CVE-2023-45802.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-10-14T09:01:43.211Z</em></p>
-<h3 id="affected-39">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.17 through 2.4.57</li>
-</ul>
-<h3 id="description-39">Description</h3>
-<p>When a HTTP/2 stream was reset (RST frame) by a client, there was a time window were the request&rsquo;s memory resources were not reclaimed immediately. Instead, de-allocation was deferred to connection close. A client could send new requests and resets, keeping the connection busy and open and causing the memory footprint to keep on growing. On connection close, all resources were reclaimed, but the process might run out of memory before that.<br><br>This was found by the reporter during testing of CVE-2023-44487 (HTTP/2 Rapid Reset Exploit) with their own test client. During &ldquo;normal&rdquo; HTTP/2 use, the probability to hit this bug is very low. The kept memory would not become noticeable before the connection closes or times out.<br><br>Users are recommended to upgrade to version 2.4.58, which fixes the issue.<br></p>
-<h3 id="references-38">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-37">Credits</h3>
-<ul>
-<li>Will Dormann of Vul Labs (finder)</li>
-<li>David Warren of Vul Labs (finder)</li>
-</ul>
-<h2 id="CVE-2024-24795">HTTP Response Splitting in multiple modules</h2>
-<p>CVE-2024-24795 <a href="./CVE-2024-24795.cve.json">[CVE json]</a> <a href="./CVE-2024-24795.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-10-03T12:15:08.331Z</em></p>
-<h3 id="affected-40">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.0 through 2.4.58</li>
-</ul>
-<h3 id="description-40">Description</h3>
-<p>HTTP Response splitting in multiple modules in Apache HTTP Server allows an attacker that can inject malicious response headers into backend applications to cause an HTTP desynchronization attack.<br><br>Users are recommended to upgrade to version 2.4.59, which fixes this issue.</p>
-<h3 id="references-39">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-38">Credits</h3>
-<ul>
-<li>Keran Mu, Tsinghua University and Zhongguancun Laboratory. (finder)</li>
-<li>Jianjun Chen, Tsinghua University and Zhongguancun Laboratory. (finder)</li>
-</ul>
-<h2 id="CVE-2024-27316">HTTP/2 DoS by memory exhaustion on endless continuation frames</h2>
-<p>CVE-2024-27316 <a href="./CVE-2024-27316.cve.json">[CVE json]</a> <a href="./CVE-2024-27316.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-22T08:42:12.197Z</em></p>
-<h3 id="affected-41">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.17 through 2.4.58</li>
-</ul>
-<h3 id="description-41">Description</h3>
-<p>HTTP/2 incoming headers exceeding the limit are temporarily buffered in nghttp2 in order to generate an informative HTTP 413 response. If a client does not stop sending headers, this leads to memory exhaustion.</p>
-<h3 id="references-40">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-39">Credits</h3>
-<ul>
-<li>Bartek Nowotarski (<a href="https://nowotarski.info/">https://nowotarski.info/</a>)  (finder)</li>
-</ul>
-<h2 id="CVE-2024-36387">DoS by Null pointer in websocket over HTTP/2</h2>
-<p>CVE-2024-36387 <a href="./CVE-2024-36387.cve.json">[CVE json]</a> <a href="./CVE-2024-36387.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-02T10:05:08.772Z</em></p>
-<h3 id="affected-42">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.55 through 2.4.59</li>
-</ul>
-<h3 id="description-42">Description</h3>
-<p>Serving WebSocket protocol upgrades over a HTTP/2 connection could result in a Null Pointer dereference, leading to a crash of the server process, degrading performance.</p>
-<h3 id="references-41">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-40">Credits</h3>
-<ul>
-<li>Marc Stern (<a href="mailto:marc.stern@approach-cyber.com">marc.stern@approach-cyber.com</a>) (finder)</li>
-</ul>
-<h2 id="CVE-2024-38472">Apache HTTP Server on WIndows UNC SSRF</h2>
-<p>CVE-2024-38472 <a href="./CVE-2024-38472.cve.json">[CVE json]</a> <a href="./CVE-2024-38472.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-11-18T08:50:42.606Z</em></p>
-<h3 id="affected-43">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
-</ul>
-<h3 id="description-43">Description</h3>
-<p>SSRF in Apache HTTP Server on Windows allows to potentially leak NTML hashes to a malicious server via SSRF and <span style="background-color: rgb(255, 255, 255);">malicious requests or content </span><br>Users are recommended to upgrade to version 2.4.60 which fixes this issue.  Note: Existing configurations that access UNC paths will have to configure new directive &ldquo;UNCList&rdquo; to allow access during request processing.</p>
-<h3 id="references-42">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-41">Credits</h3>
-<ul>
-<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
-</ul>
-<h2 id="CVE-2024-38473">Apache HTTP Server proxy encoding problem</h2>
-<p>CVE-2024-38473 <a href="./CVE-2024-38473.cve.json">[CVE json]</a> <a href="./CVE-2024-38473.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-03T12:05:25.367Z</em></p>
-<h3 id="affected-44">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
-</ul>
-<h3 id="description-44">Description</h3>
-<p>Encoding problem in mod_proxy in Apache HTTP Server 2.4.59 and earlier allows request URLs with incorrect encoding to be sent to backend services, potentially bypassing authentication via crafted requests. This affects configurations where mechanisms other than ProxyPass/ProxyPassMatch or RewriteRule with the &lsquo;P&rsquo; flag are used to configure a request to be proxied, such as SetHandler or inadvertent proxying via CVE-2024-39573.  Note that these alternate mechanisms may be used within .htaccess.<br><br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.</p>
-<h3 id="references-43">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-42">Credits</h3>
-<ul>
-<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
-</ul>
-<h2 id="CVE-2024-38474">Apache HTTP Server weakness with encoded question marks in backreferences</h2>
-<p>CVE-2024-38474 <a href="./CVE-2024-38474.cve.json">[CVE json]</a> <a href="./CVE-2024-38474.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-01T18:14:45.297Z</em></p>
-<h3 id="affected-45">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
-</ul>
-<h3 id="description-45">Description</h3>
-<p>Substitution encoding issue in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows attacker to execute scripts in<br>directories permitted by the configuration but not directly reachable by any URL or source disclosure of scripts meant to only to be executed as CGI.<br><br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.<br><br>Some RewriteRules that capture and substitute unsafely will now fail unless rewrite flag &ldquo;UnsafeAllow3F&rdquo; is specified.</p>
-<h3 id="references-44">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-43">Credits</h3>
-<ul>
-<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
-</ul>
-<h2 id="CVE-2024-38475">Apache HTTP Server weakness in mod_rewrite when first segment of substitution matches filesystem path.</h2>
-<p>CVE-2024-38475 <a href="./CVE-2024-38475.cve.json">[CVE json]</a> <a href="./CVE-2024-38475.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-01T18:15:10.846Z</em></p>
-<h3 id="affected-46">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
-</ul>
-<h3 id="description-46">Description</h3>
-<p>Improper escaping of output in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows an attacker to map URLs to filesystem locations that are permitted to be served by the server but are not intentionally/directly reachable by any URL, resulting in code execution or source code disclosure. <br><br>Substitutions in server context that use a backreferences or variables as the first segment of the substitution are affected.  Some unsafe RewiteRules will be broken by this change and the rewrite flag &ldquo;UnsafePrefixStat&rdquo; can be used to opt back in once ensuring the substitution is appropriately constrained.</p>
-<h3 id="references-45">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-44">Credits</h3>
-<ul>
-<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
-</ul>
-<h2 id="CVE-2024-38476">Apache HTTP Server may use exploitable/malicious backend application output to run local handlers via internal redirect</h2>
-<p>CVE-2024-38476 <a href="./CVE-2024-38476.cve.json">[CVE json]</a> <a href="./CVE-2024-38476.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-01T19:20:41.405Z</em></p>
-<h3 id="affected-47">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
-</ul>
-<h3 id="description-47">Description</h3>
-<p>Vulnerability in core of Apache HTTP Server 2.4.59 and earlier are vulnerably to information disclosure, SSRF or local script execution via <span style="background-color: rgb(255, 255, 255);">backend applications whose response headers are malicious or exploitable.</span><br><br>Note: Some legacy uses of the &lsquo;AddType&rsquo; directive to connect a request to a handler must be ported to &lsquo;AddHandler&rsquo; after this fix.<br><br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.</p>
-<h3 id="references-46">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-45">Credits</h3>
-<ul>
-<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
-</ul>
-<h2 id="CVE-2024-38477">Crash resulting in Denial of Service in mod_proxy via a malicious request</h2>
-<p>CVE-2024-38477 <a href="./CVE-2024-38477.cve.json">[CVE json]</a> <a href="./CVE-2024-38477.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-01T18:16:10.377Z</em></p>
-<h3 id="affected-48">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
-</ul>
-<h3 id="description-48">Description</h3>
-<p>null pointer dereference in mod_proxy in Apache HTTP Server 2.4.59 and earlier allows an attacker to crash the server via a malicious request.<br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.</p>
-<h3 id="references-47">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-46">Credits</h3>
-<ul>
-<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
-</ul>
-<h2 id="CVE-2024-39573">mod_rewrite proxy handler substitution</h2>
-<p>CVE-2024-39573 <a href="./CVE-2024-39573.cve.json">[CVE json]</a> <a href="./CVE-2024-39573.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-01T18:16:42.254Z</em></p>
-<h3 id="affected-49">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
-</ul>
-<h3 id="description-49">Description</h3>
-<p>Potential SSRF in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows an attacker to cause unsafe RewriteRules to unexpectedly setup URL&rsquo;s to be handled by mod_proxy.<br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.</p>
-<h3 id="references-48">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-47">Credits</h3>
-<ul>
-<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
-</ul>
-<h2 id="CVE-2024-39884">source code disclosure with handlers configured via AddType</h2>
-<p>CVE-2024-39884 <a href="./CVE-2024-39884.cve.json">[CVE json]</a> <a href="./CVE-2024-39884.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-04T08:41:17.573Z</em></p>
-<h3 id="affected-50">Affected</h3>
-<ul>
-<li>Apache HTTP Server at 2.4.60</li>
-</ul>
-<h3 id="description-50">Description</h3>
-<p>A regression in the core of Apache HTTP Server 2.4.60 ignores some use of the legacy content-type based configuration of handlers.   &ldquo;AddType&rdquo; and similar configuration, under some circumstances where files are requested indirectly, result in source code disclosure of local content. For example, PHP scripts may be served instead of interpreted.<br><br>Users are recommended to upgrade to version 2.4.61, which fixes this issue.</p>
-<h3 id="references-49">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h2 id="CVE-2024-40725">source code disclosure with handlers configured via AddType</h2>
-<p>CVE-2024-40725 <a href="./CVE-2024-40725.cve.json">[CVE json]</a> <a href="./CVE-2024-40725.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-18T09:32:42.028Z</em></p>
-<h3 id="affected-51">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.60 through 2.4.61</li>
-</ul>
-<h3 id="description-51">Description</h3>
-<p>A partial fix for&nbsp; CVE-2024-39884 in the core of Apache HTTP Server 2.4.61 ignores some use of the legacy content-type based configuration of handlers. "AddType" and similar configuration, under some circumstances where files are requested indirectly, result in source code disclosure of local content. For example, PHP scripts may be served instead of interpreted.</p><p></p><p>Users are recommended to upgrade to version 2.4.62, which fixes this issue.</p><br><br>
-<h3 id="references-50">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h2 id="CVE-2024-40898">SSRF with mod_rewrite in server/vhost context on Windows</h2>
-<p>CVE-2024-40898 <a href="./CVE-2024-40898.cve.json">[CVE json]</a> <a href="./CVE-2024-40898.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-07-18T09:55:11.215Z</em></p>
-<h3 id="affected-52">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.0 through 2.4.61</li>
-</ul>
-<h3 id="description-52">Description</h3>
-<p>SSRF in Apache HTTP Server on Windows with mod_rewrite in server/vhost context, allows to potentially leak NTLM hashes to a malicious server via SSRF and <span style="background-color: rgb(255, 255, 255);">malicious requests.<br></span><br>Users are recommended to upgrade to version 2.4.62 which fixes this issue. </p>
-<h3 id="references-51">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-48">Credits</h3>
-<ul>
-<li>Smi1e (DBAPPSecurity Ltd.) (finder)</li>
-<li>xiaojunjie (DBAPPSecurity Ltd.) (finder)</li>
-</ul>
-<h2 id="CVE-2024-42516">HTTP response splitting</h2>
-<p>CVE-2024-42516 <a href="./CVE-2024-42516.cve.json">[CVE json]</a> <a href="./CVE-2024-42516.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-07-11T10:29:33.054Z</em></p>
-<h3 id="affected-53">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.0 through 2.4.63</li>
-</ul>
-<h3 id="description-53">Description</h3>
-<p>HTTP response splitting in the core of Apache HTTP Server allows an attacker who can manipulate the Content-Type response headers of applications hosted or proxied by the server can split the HTTP response.<br><br>This vulnerability was described as CVE-2023-38709 but the patch included in Apache HTTP Server 2.4.59 did not address the issue.<br><br>Users are recommended to upgrade to version 2.4.64, which fixes this issue.</p>
-<h3 id="references-52">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h2 id="CVE-2024-43204">SSRF with mod_headers setting Content-Type header</h2>
-<p>CVE-2024-43204 <a href="./CVE-2024-43204.cve.json">[CVE json]</a> <a href="./CVE-2024-43204.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-07-11T10:33:09.127Z</em></p>
-<h3 id="affected-54">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.0 through 2.4.63</li>
-</ul>
-<h3 id="description-54">Description</h3>
-<p>SSRF in Apache HTTP Server with mod_proxy loaded allows an attacker to send outbound proxy requests to a URL controlled by the attacker.  Requires an unlikely configuration where mod_headers is configured to modify the Content-Type request or response header with a value provided in the HTTP request.<br><br>Users are recommended to upgrade to version 2.4.64 which fixes this issue.</p>
-<h3 id="references-53">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-49">Credits</h3>
-<ul>
-<li>xiaojunjie@安恒信息杭州市滨江区技能大师工作室 (finder)</li>
-</ul>
-<h2 id="CVE-2024-43394">SSRF on Windows due to UNC paths</h2>
-<p>CVE-2024-43394 <a href="./CVE-2024-43394.cve.json">[CVE json]</a> <a href="./CVE-2024-43394.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-07-11T10:29:24.674Z</em></p>
-<h3 id="affected-55">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.0 through 2.4.63</li>
-</ul>
-<h3 id="description-55">Description</h3>
-<p></p><p>Server-Side Request Forgery (SSRF)&nbsp;in Apache HTTP Server on Windows allows to potentially leak NTLM hashes to a malicious server via&nbsp;<br>mod_rewrite or apache expressions that pass unvalidated request input.</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.63.</p>Note: <span style="background-color: rgb(255, 255, 255);">&nbsp;The Apache HTTP Server Project will be setting a higher bar for accepting vulnerability reports regarding SSRF via UNC paths. <br><br>The server offers limited protection against administrators directing the server to open UNC paths.<br></span>Windows servers should limit the hosts they will connect over via SMB based on the nature of NTLM authentication.<br>
-<h3 id="references-54">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-50">Credits</h3>
-<ul>
-<li>Kainan Zhang (@4xpl0r3r) from Fortinet (finder)</li>
-</ul>
-<h2 id="CVE-2024-47252">mod_ssl error log variable escaping</h2>
-<p>CVE-2024-47252 <a href="./CVE-2024-47252.cve.json">[CVE json]</a> <a href="./CVE-2024-47252.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-07-11T10:29:12.847Z</em></p>
-<h3 id="affected-56">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4 through 2.4.63</li>
-</ul>
-<h3 id="description-56">Description</h3>
-<p>Insufficient escaping of user-supplied data in mod_ssl in Apache HTTP Server 2.4.63 and earlier allows an untrusted SSL/TLS client to insert escape characters into log files in some configurations.<br><br>In a logging configuration where CustomLog is used with &ldquo;%{varname}x&rdquo; or &ldquo;%{varname}c&rdquo; to log variables provided by mod_ssl such as SSL_TLS_SNI, no escaping is performed by either mod_log_config or mod_ssl and unsanitized data provided by the client may appear in log files.<br><br></p>
-<h3 id="references-55">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-51">Credits</h3>
-<ul>
-<li>John Runyon (finder)</li>
-</ul>
-<h2 id="CVE-2025-23048">mod_ssl access control bypass with session resumption</h2>
-<p>CVE-2025-23048 <a href="./CVE-2025-23048.cve.json">[CVE json]</a> <a href="./CVE-2025-23048.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-07-11T10:30:23.007Z</em></p>
-<h3 id="affected-57">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.35 through 2.4.63</li>
-</ul>
-<h3 id="description-57">Description</h3>
-<p>In some mod_ssl configurations on Apache HTTP Server 2.4.35 through to 2.4.63, an access control bypass by trusted clients is possible using TLS 1.3 session resumption.<br><br>Configurations are affected when mod_ssl is configured for multiple virtual hosts, with each restricted to a different set of trusted client certificates (for example with a different SSLCACertificateFile/Path setting). In such a case, a client trusted to access one virtual host may be able to access another virtual host, if SSLStrictSNIVHostCheck is not enabled in either virtual host.<br><br></p>
-<h3 id="references-56">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-52">Credits</h3>
-<ul>
-<li>Sven Hebrok, Felix Cramer, Tim Storm, Maximilian Radoy, and Juraj Somorovsky at Paderborn University (finder)</li>
-</ul>
-<h2 id="CVE-2025-49630">mod_proxy_http2 denial of service</h2>
-<p>CVE-2025-49630 <a href="./CVE-2025-49630.cve.json">[CVE json]</a> <a href="./CVE-2025-49630.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-08-13T15:38:59.198Z</em></p>
-<h3 id="affected-58">Affected</h3>
-<ul>
-<li>Apache HTTP Server from 2.4.26 through 2.4.63</li>
-</ul>
-<h3 id="description-58">Description</h3>
-<p>In certain proxy configurations, a denial of service attack against Apache HTTP Server versions 2.4.26 through to 2.4.63 can be triggered by untrusted clients causing an assertion in mod_proxy_http2.<br><br>Configurations affected are a reverse proxy is configured for an HTTP/2 backend, with ProxyPreserveHost set to &ldquo;on&rdquo;.<br></p>
-<h3 id="references-57">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-53">Credits</h3>
-<ul>
-<li>Anthony CORSIEZ (finder)</li>
+<li>Gal Bar Nahum (finder)</li>
 </ul>
 <h2 id="CVE-2025-49812">mod_ssl TLS upgrade attack</h2>
-<p>CVE-2025-49812 <a href="./CVE-2025-49812.cve.json">[CVE json]</a> <a href="./CVE-2025-49812.osv.json">[OSV json]</a></p>
+<p>CVE-2025-49812 <a href="https://cve.org/CVERecord?id=CVE-2025-49812">[CVE]</a> <a href="./CVE-2025-49812.cve.json">[CVE json]</a> <a href="./CVE-2025-49812.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-07-11T10:29:53.093Z</em></p>
-<h3 id="affected-59">Affected</h3>
+<h3 id="affected-7">Affected</h3>
 <ul>
 <li>Apache HTTP Server through 2.4.63</li>
 </ul>
-<h3 id="description-59">Description</h3>
+<h3 id="description-7">Description</h3>
 <p>In some mod_ssl configurations on Apache HTTP Server versions through to 2.4.63, an HTTP desynchronisation attack allows a man-in-the-middle attacker to hijack an HTTP session via a TLS upgrade.<br><br>Only configurations using &ldquo;SSLEngine optional&rdquo; to enable TLS upgrades are affected. Users are recommended to upgrade to version 2.4.64, which removes support for TLS upgrade.</p>
-<h3 id="references-58">References</h3>
+<h3 id="references-7">References</h3>
 <ul>
 <li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
 </ul>
-<h3 id="credits-54">Credits</h3>
+<h3 id="credits-6">Credits</h3>
 <ul>
 <li>Robert Merget (Technology Innovation Institute) (finder)</li>
 <li>Nurullah Erinola (Ruhr University Bochum) (finder)</li>
@@ -1296,124 +248,1172 @@ substitution. For example, something like:</div><div><br></div><div>RewriteEngin
 <li>Juraj Somorovsky (Paderborn University) (finder)</li>
 <li>Jörg Schwenk (Ruhr University Bochum) (finder)</li>
 </ul>
-<h2 id="CVE-2025-53020">HTTP/2 DoS by Memory Increase</h2>
-<p>CVE-2025-53020 <a href="./CVE-2025-53020.cve.json">[CVE json]</a> <a href="./CVE-2025-53020.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-07-11T10:30:11.990Z</em></p>
-<h3 id="affected-60">Affected</h3>
+<h2 id="CVE-2025-49630">mod_proxy_http2 denial of service</h2>
+<p>CVE-2025-49630 <a href="https://cve.org/CVERecord?id=CVE-2025-49630">[CVE]</a> <a href="./CVE-2025-49630.cve.json">[CVE json]</a> <a href="./CVE-2025-49630.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-08-13T15:38:59.198Z</em></p>
+<h3 id="affected-8">Affected</h3>
 <ul>
-<li>Apache HTTP Server from 2.4.17 through 2.4.63</li>
+<li>Apache HTTP Server from 2.4.26 through 2.4.63</li>
 </ul>
-<h3 id="description-60">Description</h3>
-<p>Late Release of Memory after Effective Lifetime vulnerability in Apache HTTP Server.</p><p>This issue affects Apache HTTP Server: from 2.4.17 up to 2.4.63.</p><p>Users are recommended to upgrade to version 2.4.64, which fixes the issue.</p>
-<h3 id="references-59">References</h3>
-<ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
-</ul>
-<h3 id="credits-55">Credits</h3>
-<ul>
-<li>Gal Bar Nahum (finder)</li>
-</ul>
-<h2 id="CVE-2025-54090">&lsquo;RewriteCond expr&rsquo; always evaluates to true in 2.4.64</h2>
-<p>CVE-2025-54090 <a href="./CVE-2025-54090.cve.json">[CVE json]</a> <a href="./CVE-2025-54090.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-07-23T13:19:23.112Z</em></p>
-<h3 id="affected-61">Affected</h3>
-<ul>
-<li>Apache HTTP Server at 2.4.64</li>
-</ul>
-<h3 id="description-61">Description</h3>
-<p>A bug in Apache HTTP Server 2.4.64 results in all "RewriteCond expr ..." tests evaluating as "true".<br><br></p><p>Users are recommended to upgrade to version 2.4.65, which fixes the issue.</p>
-<h3 id="references-60">References</h3>
+<h3 id="description-8">Description</h3>
+<p>In certain proxy configurations, a denial of service attack against Apache HTTP Server versions 2.4.26 through to 2.4.63 can be triggered by untrusted clients causing an assertion in mod_proxy_http2.<br><br>Configurations affected are a reverse proxy is configured for an HTTP/2 backend, with ProxyPreserveHost set to &ldquo;on&rdquo;.<br></p>
+<h3 id="references-8">References</h3>
 <ul>
 <li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
 </ul>
-<h2 id="CVE-2025-55753">mod_md (ACME), unintended retry intervals</h2>
-<p>CVE-2025-55753 <a href="./CVE-2025-55753.cve.json">[CVE json]</a> <a href="./CVE-2025-55753.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-12-05T10:17:13.634Z</em></p>
-<h3 id="affected-62">Affected</h3>
+<h3 id="credits-7">Credits</h3>
 <ul>
-<li>Apache HTTP Server from 2.4.30 before 2.4.66</li>
+<li>Anthony CORSIEZ (finder)</li>
 </ul>
-<h3 id="description-62">Description</h3>
-<p><span style="background-color: rgb(255, 255, 255);">An integer overflow in the case of failed ACME certificate renewal leads, after a number of failures (~30 days in default configurations), to the backoff timer becoming 0. Attempts to renew the certificate then are repeated without delays until it succeeds.</span></p><p>This issue affects Apache HTTP Server: from 2.4.30 before 2.4.66.<br></p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p>
-<h3 id="references-61">References</h3>
+<h2 id="CVE-2025-23048">mod_ssl access control bypass with session resumption</h2>
+<p>CVE-2025-23048 <a href="https://cve.org/CVERecord?id=CVE-2025-23048">[CVE]</a> <a href="./CVE-2025-23048.cve.json">[CVE json]</a> <a href="./CVE-2025-23048.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-11T10:30:23.007Z</em></p>
+<h3 id="affected-9">Affected</h3>
 <ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+<li>Apache HTTP Server from 2.4.35 through 2.4.63</li>
 </ul>
-<h3 id="credits-56">Credits</h3>
-<ul>
-<li>Aisle Research (finder)</li>
-</ul>
-<h2 id="CVE-2025-58098">Server Side Includes adds query string to #exec cmd=&hellip; ##</h2>
-<p>CVE-2025-58098 <a href="./CVE-2025-58098.cve.json">[CVE json]</a> <a href="./CVE-2025-58098.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-12-05T13:40:37.496Z</em></p>
-<h3 id="affected-63">Affected</h3>
-<ul>
-<li>Apache HTTP Server before 2.4.66</li>
-</ul>
-<h3 id="description-63">Description</h3>
-<p>Apache HTTP Server 2.4.65 and earlier with Server Side Includes (SSI) enabled and mod_cgid (but not mod_cgi) passes the shell-escaped query string to #exec cmd="..." directives.</p><p>This issue affects Apache HTTP Server before 2.4.66.</p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p>
-<h3 id="references-62">References</h3>
+<h3 id="description-9">Description</h3>
+<p>In some mod_ssl configurations on Apache HTTP Server 2.4.35 through to 2.4.63, an access control bypass by trusted clients is possible using TLS 1.3 session resumption.<br><br>Configurations are affected when mod_ssl is configured for multiple virtual hosts, with each restricted to a different set of trusted client certificates (for example with a different SSLCACertificateFile/Path setting). In such a case, a client trusted to access one virtual host may be able to access another virtual host, if SSLStrictSNIVHostCheck is not enabled in either virtual host.<br><br></p>
+<h3 id="references-9">References</h3>
 <ul>
 <li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
 </ul>
-<h3 id="credits-57">Credits</h3>
+<h3 id="credits-8">Credits</h3>
 <ul>
-<li>Anthony Parfenov (United Rentals, Inc.) (finder)</li>
+<li>Sven Hebrok, Felix Cramer, Tim Storm, Maximilian Radoy, and Juraj Somorovsky at Paderborn University (finder)</li>
 </ul>
-<h2 id="CVE-2025-59775">NTLM Leakage on Windows through UNC SSRF</h2>
-<p>CVE-2025-59775 <a href="./CVE-2025-59775.cve.json">[CVE json]</a> <a href="./CVE-2025-59775.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-12-05T10:17:02.236Z</em></p>
-<h3 id="affected-64">Affected</h3>
+<h2 id="CVE-2024-47252">mod_ssl error log variable escaping</h2>
+<p>CVE-2024-47252 <a href="https://cve.org/CVERecord?id=CVE-2024-47252">[CVE]</a> <a href="./CVE-2024-47252.cve.json">[CVE json]</a> <a href="./CVE-2024-47252.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-11T10:29:12.847Z</em></p>
+<h3 id="affected-10">Affected</h3>
 <ul>
-<li>Apache HTTP Server from 2.4.0 through 2.4.65</li>
+<li>Apache HTTP Server from 2.4 through 2.4.63</li>
 </ul>
-<h3 id="description-64">Description</h3>
-<p>
-<p>Server-Side Request Forgery (SSRF) vulnerability</p>
-<p> in Apache HTTP Server on Windows</p>
-<p>with <span style="background-color: rgb(247, 247, 247);">AllowEncodedSlashes</span> <span style="background-color: rgb(247, 247, 247);">On</span> and <span style="background-color: rgb(247, 247, 247);">MergeSlashes</span> <span style="background-color: rgb(247, 247, 247);">Off</span>  allows to potentially leak NTLM
-hashes to a malicious server via SSRF and malicious requests or content</p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p></p>
-<h3 id="references-63">References</h3>
+<h3 id="description-10">Description</h3>
+<p>Insufficient escaping of user-supplied data in mod_ssl in Apache HTTP Server 2.4.63 and earlier allows an untrusted SSL/TLS client to insert escape characters into log files in some configurations.<br><br>In a logging configuration where CustomLog is used with &ldquo;%{varname}x&rdquo; or &ldquo;%{varname}c&rdquo; to log variables provided by mod_ssl such as SSL_TLS_SNI, no escaping is performed by either mod_log_config or mod_ssl and unsanitized data provided by the client may appear in log files.<br><br></p>
+<h3 id="references-10">References</h3>
 <ul>
 <li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
 </ul>
-<h3 id="credits-58">Credits</h3>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>John Runyon (finder)</li>
+</ul>
+<h2 id="CVE-2024-43394">SSRF on Windows due to UNC paths</h2>
+<p>CVE-2024-43394 <a href="https://cve.org/CVERecord?id=CVE-2024-43394">[CVE]</a> <a href="./CVE-2024-43394.cve.json">[CVE json]</a> <a href="./CVE-2024-43394.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-11T10:29:24.674Z</em></p>
+<h3 id="affected-11">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.63</li>
+</ul>
+<h3 id="description-11">Description</h3>
+<p></p><p>Server-Side Request Forgery (SSRF)&nbsp;in Apache HTTP Server on Windows allows to potentially leak NTLM hashes to a malicious server via&nbsp;<br>mod_rewrite or apache expressions that pass unvalidated request input.</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.63.</p>Note: <span style="background-color: rgb(255, 255, 255);">&nbsp;The Apache HTTP Server Project will be setting a higher bar for accepting vulnerability reports regarding SSRF via UNC paths. <br><br>The server offers limited protection against administrators directing the server to open UNC paths.<br></span>Windows servers should limit the hosts they will connect over via SMB based on the nature of NTLM authentication.<br>
+<h3 id="references-11">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-10">Credits</h3>
+<ul>
+<li>Kainan Zhang (@4xpl0r3r) from Fortinet (finder)</li>
+</ul>
+<h2 id="CVE-2024-43204">SSRF with mod_headers setting Content-Type header</h2>
+<p>CVE-2024-43204 <a href="https://cve.org/CVERecord?id=CVE-2024-43204">[CVE]</a> <a href="./CVE-2024-43204.cve.json">[CVE json]</a> <a href="./CVE-2024-43204.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-11T10:33:09.127Z</em></p>
+<h3 id="affected-12">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.63</li>
+</ul>
+<h3 id="description-12">Description</h3>
+<p>SSRF in Apache HTTP Server with mod_proxy loaded allows an attacker to send outbound proxy requests to a URL controlled by the attacker.  Requires an unlikely configuration where mod_headers is configured to modify the Content-Type request or response header with a value provided in the HTTP request.<br><br>Users are recommended to upgrade to version 2.4.64 which fixes this issue.</p>
+<h3 id="references-12">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-11">Credits</h3>
+<ul>
+<li>xiaojunjie@安恒信息杭州市滨江区技能大师工作室 (finder)</li>
+</ul>
+<h2 id="CVE-2024-42516">HTTP response splitting</h2>
+<p>CVE-2024-42516 <a href="https://cve.org/CVERecord?id=CVE-2024-42516">[CVE]</a> <a href="./CVE-2024-42516.cve.json">[CVE json]</a> <a href="./CVE-2024-42516.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-07-11T10:29:33.054Z</em></p>
+<h3 id="affected-13">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.63</li>
+</ul>
+<h3 id="description-13">Description</h3>
+<p>HTTP response splitting in the core of Apache HTTP Server allows an attacker who can manipulate the Content-Type response headers of applications hosted or proxied by the server can split the HTTP response.<br><br>This vulnerability was described as CVE-2023-38709 but the patch included in Apache HTTP Server 2.4.59 did not address the issue.<br><br>Users are recommended to upgrade to version 2.4.64, which fixes this issue.</p>
+<h3 id="references-13">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h2 id="CVE-2024-40898">SSRF with mod_rewrite in server/vhost context on Windows</h2>
+<p>CVE-2024-40898 <a href="https://cve.org/CVERecord?id=CVE-2024-40898">[CVE]</a> <a href="./CVE-2024-40898.cve.json">[CVE json]</a> <a href="./CVE-2024-40898.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-18T09:55:11.215Z</em></p>
+<h3 id="affected-14">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.61</li>
+</ul>
+<h3 id="description-14">Description</h3>
+<p>SSRF in Apache HTTP Server on Windows with mod_rewrite in server/vhost context, allows to potentially leak NTLM hashes to a malicious server via SSRF and <span style="background-color: rgb(255, 255, 255);">malicious requests.<br></span><br>Users are recommended to upgrade to version 2.4.62 which fixes this issue. </p>
+<h3 id="references-14">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-12">Credits</h3>
+<ul>
+<li>Smi1e (DBAPPSecurity Ltd.) (finder)</li>
+<li>xiaojunjie (DBAPPSecurity Ltd.) (finder)</li>
+</ul>
+<h2 id="CVE-2024-40725">source code disclosure with handlers configured via AddType</h2>
+<p>CVE-2024-40725 <a href="https://cve.org/CVERecord?id=CVE-2024-40725">[CVE]</a> <a href="./CVE-2024-40725.cve.json">[CVE json]</a> <a href="./CVE-2024-40725.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-18T09:32:42.028Z</em></p>
+<h3 id="affected-15">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.60 through 2.4.61</li>
+</ul>
+<h3 id="description-15">Description</h3>
+<p>A partial fix for&nbsp; CVE-2024-39884 in the core of Apache HTTP Server 2.4.61 ignores some use of the legacy content-type based configuration of handlers. "AddType" and similar configuration, under some circumstances where files are requested indirectly, result in source code disclosure of local content. For example, PHP scripts may be served instead of interpreted.</p><p></p><p>Users are recommended to upgrade to version 2.4.62, which fixes this issue.</p><br><br>
+<h3 id="references-15">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h2 id="CVE-2024-39884">source code disclosure with handlers configured via AddType</h2>
+<p>CVE-2024-39884 <a href="https://cve.org/CVERecord?id=CVE-2024-39884">[CVE]</a> <a href="./CVE-2024-39884.cve.json">[CVE json]</a> <a href="./CVE-2024-39884.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-04T08:41:17.573Z</em></p>
+<h3 id="affected-16">Affected</h3>
+<ul>
+<li>Apache HTTP Server at 2.4.60</li>
+</ul>
+<h3 id="description-16">Description</h3>
+<p>A regression in the core of Apache HTTP Server 2.4.60 ignores some use of the legacy content-type based configuration of handlers.   &ldquo;AddType&rdquo; and similar configuration, under some circumstances where files are requested indirectly, result in source code disclosure of local content. For example, PHP scripts may be served instead of interpreted.<br><br>Users are recommended to upgrade to version 2.4.61, which fixes this issue.</p>
+<h3 id="references-16">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h2 id="CVE-2024-39573">mod_rewrite proxy handler substitution</h2>
+<p>CVE-2024-39573 <a href="https://cve.org/CVERecord?id=CVE-2024-39573">[CVE]</a> <a href="./CVE-2024-39573.cve.json">[CVE json]</a> <a href="./CVE-2024-39573.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-01T18:16:42.254Z</em></p>
+<h3 id="affected-17">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
+</ul>
+<h3 id="description-17">Description</h3>
+<p>Potential SSRF in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows an attacker to cause unsafe RewriteRules to unexpectedly setup URL&rsquo;s to be handled by mod_proxy.<br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.</p>
+<h3 id="references-17">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-13">Credits</h3>
 <ul>
 <li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
 </ul>
-<h2 id="CVE-2025-65082">CGI environment variable override</h2>
-<p>CVE-2025-65082 <a href="./CVE-2025-65082.cve.json">[CVE json]</a> <a href="./CVE-2025-65082.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-12-05T10:46:23.466Z</em></p>
-<h3 id="affected-65">Affected</h3>
+<h2 id="CVE-2024-38477">Crash resulting in Denial of Service in mod_proxy via a malicious request</h2>
+<p>CVE-2024-38477 <a href="https://cve.org/CVERecord?id=CVE-2024-38477">[CVE]</a> <a href="./CVE-2024-38477.cve.json">[CVE json]</a> <a href="./CVE-2024-38477.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-01T18:16:10.377Z</em></p>
+<h3 id="affected-18">Affected</h3>
 <ul>
-<li>Apache HTTP Server from 2.4.0 through 2.4.65</li>
+<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
 </ul>
-<h3 id="description-65">Description</h3>
-<p>Improper Neutralization of Escape, Meta, or Control Sequences vulnerability in Apache HTTP Server through environment variables set via the Apache configuration unexpectedly superseding variables calculated by the server for CGI programs.</p><p>This issue affects Apache HTTP Server from 2.4.0 through 2.4.65.</p><p>Users are recommended to upgrade to version 2.4.66 which fixes the issue.</p>
-<h3 id="references-64">References</h3>
+<h3 id="description-18">Description</h3>
+<p>null pointer dereference in mod_proxy in Apache HTTP Server 2.4.59 and earlier allows an attacker to crash the server via a malicious request.<br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.</p>
+<h3 id="references-18">References</h3>
 <ul>
 <li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-14">Credits</h3>
+<ul>
+<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
+</ul>
+<h2 id="CVE-2024-38476">Apache HTTP Server may use exploitable/malicious backend application output to run local handlers via internal redirect</h2>
+<p>CVE-2024-38476 <a href="https://cve.org/CVERecord?id=CVE-2024-38476">[CVE]</a> <a href="./CVE-2024-38476.cve.json">[CVE json]</a> <a href="./CVE-2024-38476.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-01T19:20:41.405Z</em></p>
+<h3 id="affected-19">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
+</ul>
+<h3 id="description-19">Description</h3>
+<p>Vulnerability in core of Apache HTTP Server 2.4.59 and earlier are vulnerably to information disclosure, SSRF or local script execution via <span style="background-color: rgb(255, 255, 255);">backend applications whose response headers are malicious or exploitable.</span><br><br>Note: Some legacy uses of the &lsquo;AddType&rsquo; directive to connect a request to a handler must be ported to &lsquo;AddHandler&rsquo; after this fix.<br><br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.</p>
+<h3 id="references-19">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-15">Credits</h3>
+<ul>
+<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
+</ul>
+<h2 id="CVE-2024-38475">Apache HTTP Server weakness in mod_rewrite when first segment of substitution matches filesystem path.</h2>
+<p>CVE-2024-38475 <a href="https://cve.org/CVERecord?id=CVE-2024-38475">[CVE]</a> <a href="./CVE-2024-38475.cve.json">[CVE json]</a> <a href="./CVE-2024-38475.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-01T18:15:10.846Z</em></p>
+<h3 id="affected-20">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
+</ul>
+<h3 id="description-20">Description</h3>
+<p>Improper escaping of output in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows an attacker to map URLs to filesystem locations that are permitted to be served by the server but are not intentionally/directly reachable by any URL, resulting in code execution or source code disclosure. <br><br>Substitutions in server context that use a backreferences or variables as the first segment of the substitution are affected.  Some unsafe RewiteRules will be broken by this change and the rewrite flag &ldquo;UnsafePrefixStat&rdquo; can be used to opt back in once ensuring the substitution is appropriately constrained.</p>
+<h3 id="references-20">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-16">Credits</h3>
+<ul>
+<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
+</ul>
+<h2 id="CVE-2024-38474">Apache HTTP Server weakness with encoded question marks in backreferences</h2>
+<p>CVE-2024-38474 <a href="https://cve.org/CVERecord?id=CVE-2024-38474">[CVE]</a> <a href="./CVE-2024-38474.cve.json">[CVE json]</a> <a href="./CVE-2024-38474.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-01T18:14:45.297Z</em></p>
+<h3 id="affected-21">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
+</ul>
+<h3 id="description-21">Description</h3>
+<p>Substitution encoding issue in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows attacker to execute scripts in<br>directories permitted by the configuration but not directly reachable by any URL or source disclosure of scripts meant to only to be executed as CGI.<br><br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.<br><br>Some RewriteRules that capture and substitute unsafely will now fail unless rewrite flag &ldquo;UnsafeAllow3F&rdquo; is specified.</p>
+<h3 id="references-21">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-17">Credits</h3>
+<ul>
+<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
+</ul>
+<h2 id="CVE-2024-38473">Apache HTTP Server proxy encoding problem</h2>
+<p>CVE-2024-38473 <a href="https://cve.org/CVERecord?id=CVE-2024-38473">[CVE]</a> <a href="./CVE-2024-38473.cve.json">[CVE json]</a> <a href="./CVE-2024-38473.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-03T12:05:25.367Z</em></p>
+<h3 id="affected-22">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
+</ul>
+<h3 id="description-22">Description</h3>
+<p>Encoding problem in mod_proxy in Apache HTTP Server 2.4.59 and earlier allows request URLs with incorrect encoding to be sent to backend services, potentially bypassing authentication via crafted requests. This affects configurations where mechanisms other than ProxyPass/ProxyPassMatch or RewriteRule with the &lsquo;P&rsquo; flag are used to configure a request to be proxied, such as SetHandler or inadvertent proxying via CVE-2024-39573.  Note that these alternate mechanisms may be used within .htaccess.<br><br>Users are recommended to upgrade to version 2.4.60, which fixes this issue.</p>
+<h3 id="references-22">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-18">Credits</h3>
+<ul>
+<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
+</ul>
+<h2 id="CVE-2024-38472">Apache HTTP Server on WIndows UNC SSRF</h2>
+<p>CVE-2024-38472 <a href="https://cve.org/CVERecord?id=CVE-2024-38472">[CVE]</a> <a href="./CVE-2024-38472.cve.json">[CVE json]</a> <a href="./CVE-2024-38472.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-11-18T08:50:42.606Z</em></p>
+<h3 id="affected-23">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.59</li>
+</ul>
+<h3 id="description-23">Description</h3>
+<p>SSRF in Apache HTTP Server on Windows allows to potentially leak NTML hashes to a malicious server via SSRF and <span style="background-color: rgb(255, 255, 255);">malicious requests or content </span><br>Users are recommended to upgrade to version 2.4.60 which fixes this issue.  Note: Existing configurations that access UNC paths will have to configure new directive &ldquo;UNCList&rdquo; to allow access during request processing.</p>
+<h3 id="references-23">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-19">Credits</h3>
+<ul>
+<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
+</ul>
+<h2 id="CVE-2024-36387">DoS by Null pointer in websocket over HTTP/2</h2>
+<p>CVE-2024-36387 <a href="https://cve.org/CVERecord?id=CVE-2024-36387">[CVE]</a> <a href="./CVE-2024-36387.cve.json">[CVE json]</a> <a href="./CVE-2024-36387.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-02T10:05:08.772Z</em></p>
+<h3 id="affected-24">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.55 through 2.4.59</li>
+</ul>
+<h3 id="description-24">Description</h3>
+<p>Serving WebSocket protocol upgrades over a HTTP/2 connection could result in a Null Pointer dereference, leading to a crash of the server process, degrading performance.</p>
+<h3 id="references-24">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-20">Credits</h3>
+<ul>
+<li>Marc Stern (<a href="mailto:marc.stern@approach-cyber.com">marc.stern@approach-cyber.com</a>) (finder)</li>
+</ul>
+<h2 id="CVE-2024-27316">HTTP/2 DoS by memory exhaustion on endless continuation frames</h2>
+<p>CVE-2024-27316 <a href="https://cve.org/CVERecord?id=CVE-2024-27316">[CVE]</a> <a href="./CVE-2024-27316.cve.json">[CVE json]</a> <a href="./CVE-2024-27316.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-07-22T08:42:12.197Z</em></p>
+<h3 id="affected-25">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.17 through 2.4.58</li>
+</ul>
+<h3 id="description-25">Description</h3>
+<p>HTTP/2 incoming headers exceeding the limit are temporarily buffered in nghttp2 in order to generate an informative HTTP 413 response. If a client does not stop sending headers, this leads to memory exhaustion.</p>
+<h3 id="references-25">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-21">Credits</h3>
+<ul>
+<li>Bartek Nowotarski (<a href="https://nowotarski.info/">https://nowotarski.info/</a>)  (finder)</li>
+</ul>
+<h2 id="CVE-2024-24795">HTTP Response Splitting in multiple modules</h2>
+<p>CVE-2024-24795 <a href="https://cve.org/CVERecord?id=CVE-2024-24795">[CVE]</a> <a href="./CVE-2024-24795.cve.json">[CVE json]</a> <a href="./CVE-2024-24795.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-10-03T12:15:08.331Z</em></p>
+<h3 id="affected-26">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.58</li>
+</ul>
+<h3 id="description-26">Description</h3>
+<p>HTTP Response splitting in multiple modules in Apache HTTP Server allows an attacker that can inject malicious response headers into backend applications to cause an HTTP desynchronization attack.<br><br>Users are recommended to upgrade to version 2.4.59, which fixes this issue.</p>
+<h3 id="references-26">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-22">Credits</h3>
+<ul>
+<li>Keran Mu, Tsinghua University and Zhongguancun Laboratory. (finder)</li>
+<li>Jianjun Chen, Tsinghua University and Zhongguancun Laboratory. (finder)</li>
+</ul>
+<h2 id="CVE-2023-45802">HTTP/2 stream memory not reclaimed right away on RST</h2>
+<p>CVE-2023-45802 <a href="https://cve.org/CVERecord?id=CVE-2023-45802">[CVE]</a> <a href="./CVE-2023-45802.cve.json">[CVE json]</a> <a href="./CVE-2023-45802.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-10-14T09:01:43.211Z</em></p>
+<h3 id="affected-27">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.17 through 2.4.57</li>
+</ul>
+<h3 id="description-27">Description</h3>
+<p>When a HTTP/2 stream was reset (RST frame) by a client, there was a time window were the request&rsquo;s memory resources were not reclaimed immediately. Instead, de-allocation was deferred to connection close. A client could send new requests and resets, keeping the connection busy and open and causing the memory footprint to keep on growing. On connection close, all resources were reclaimed, but the process might run out of memory before that.<br><br>This was found by the reporter during testing of CVE-2023-44487 (HTTP/2 Rapid Reset Exploit) with their own test client. During &ldquo;normal&rdquo; HTTP/2 use, the probability to hit this bug is very low. The kept memory would not become noticeable before the connection closes or times out.<br><br>Users are recommended to upgrade to version 2.4.58, which fixes the issue.<br></p>
+<h3 id="references-27">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-23">Credits</h3>
+<ul>
+<li>Will Dormann of Vul Labs (finder)</li>
+<li>David Warren of Vul Labs (finder)</li>
+</ul>
+<h2 id="CVE-2023-43622">DoS in HTTP/2 with initial windows size 0</h2>
+<p>CVE-2023-43622 <a href="https://cve.org/CVERecord?id=CVE-2023-43622">[CVE]</a> <a href="./CVE-2023-43622.cve.json">[CVE json]</a> <a href="./CVE-2023-43622.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-10-23T06:50:49.104Z</em></p>
+<h3 id="affected-28">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.55 through 2.4.57</li>
+</ul>
+<h3 id="description-28">Description</h3>
+<p>An attacker, opening a HTTP/2 connection with an initial window size of 0, was able to block handling of that connection indefinitely in Apache HTTP Server. This could be used to exhaust worker resources in the server, similar to the well known &ldquo;slow loris&rdquo; attack pattern.<br><p>This has been fixed in version 2.4.58, so that such connection are terminated properly after the configured connection timeout.</p><p>This issue affects Apache HTTP Server: from 2.4.55 through 2.4.57.</p><p>Users are recommended to upgrade to version 2.4.58, which fixes the issue.</p></p>
+<h3 id="references-28">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-24">Credits</h3>
+<ul>
+<li>Prof. Sven Dietrich (City University of New York) (finder)</li>
+<li>Isa Jafarov (City University of New York) (finder)</li>
+<li>Prof. Heejo Lee (Korea University) (finder)</li>
+<li>Choongin Lee (Korea University) (finder)</li>
+</ul>
+<h2 id="CVE-2023-38709">HTTP response splitting</h2>
+<p>CVE-2023-38709 <a href="https://cve.org/CVERecord?id=CVE-2023-38709">[CVE]</a> <a href="./CVE-2023-38709.cve.json">[CVE json]</a> <a href="./CVE-2023-38709.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-01-17T11:15:18.205Z</em></p>
+<h3 id="affected-29">Affected</h3>
+<ul>
+<li>Apache HTTP Server through 2.4.58</li>
+</ul>
+<h3 id="description-29">Description</h3>
+<p>Faulty input validation in the core of Apache allows malicious or exploitable backend/content generators to split HTTP responses.<br><br>This issue affects Apache HTTP Server: through 2.4.58.<br></p>
+<h3 id="references-29">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-25">Credits</h3>
+<ul>
+<li>Orange Tsai (@orange_8361) from DEVCORE (finder)</li>
+</ul>
+<h2 id="CVE-2023-31122">mod_macro buffer over-read</h2>
+<p>CVE-2023-31122 <a href="https://cve.org/CVERecord?id=CVE-2023-31122">[CVE]</a> <a href="./CVE-2023-31122.cve.json">[CVE json]</a> <a href="./CVE-2023-31122.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-10-23T06:51:56.755Z</em></p>
+<h3 id="affected-30">Affected</h3>
+<ul>
+<li>Apache HTTP Server through 2.4.57</li>
+</ul>
+<h3 id="description-30">Description</h3>
+<p>Out-of-bounds Read vulnerability in mod_macro of Apache HTTP Server.<p>This issue affects Apache HTTP Server: through 2.4.57.</p></p>
+<h3 id="references-30">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-26">Credits</h3>
+<ul>
+<li>David Shoon (github/davidshoon) (finder)</li>
+</ul>
+<h2 id="CVE-2023-27522">mod_proxy_uwsgi HTTP response splitting</h2>
+<p>CVE-2023-27522 <a href="https://cve.org/CVERecord?id=CVE-2023-27522">[CVE]</a> <a href="./CVE-2023-27522.cve.json">[CVE json]</a> <a href="./CVE-2023-27522.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-03-07T15:09:26.534Z</em></p>
+<h3 id="affected-31">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.30 through 2.4.55</li>
+</ul>
+<h3 id="description-31">Description</h3>
+<div>HTTP Response Smuggling vulnerability in Apache HTTP Server via mod_<code>proxy_uwsgi</code>. This issue affects Apache HTTP Server: from 2.4.30 through 2.4.55.</div><div>Special characters in the origin response header can truncate/split the response forwarded to the client.<br></div>
+<h3 id="references-31">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-27">Credits</h3>
+<ul>
+<li>Dimas Fariski Setyawan Putra (nyxsorcerer) (finder)</li>
+</ul>
+<h2 id="CVE-2023-25690">HTTP request splitting with mod_rewrite and mod_proxy</h2>
+<p>CVE-2023-25690 <a href="https://cve.org/CVERecord?id=CVE-2023-25690">[CVE]</a> <a href="./CVE-2023-25690.cve.json">[CVE json]</a> <a href="./CVE-2023-25690.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-03-07T15:08:45.400Z</em></p>
+<h3 id="affected-32">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.0 through 2.4.55</li>
+</ul>
+<h3 id="description-32">Description</h3>
+<div>Some mod_proxy configurations on Apache HTTP Server versions 2.4.0 through 2.4.55 allow a HTTP Request Smuggling attack.</div><div><br></div><div><div>Configurations are affected when mod_proxy is enabled along with some form of RewriteRule
+ or ProxyPassMatch in which a non-specific pattern matches
+ some portion of the user-supplied request-target (URL) data and is then
+ re-inserted into the proxied request-target using variable 
+substitution. For example, something like:</div><div><br></div><div>RewriteEngine on<br>RewriteRule "^/here/(.*)" "http://example.com:8080/elsewhere?$1"; [P]<br>ProxyPassReverse /here/ http://example.com:8080/</div><br>Request splitting/smuggling could result in bypass of access controls in the proxy server, proxying unintended URLs to existing origin servers, and cache poisoning. Users are recommended to update to at least version 2.4.56 of Apache HTTP Server.<br></div>
+<h3 id="references-32">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-28">Credits</h3>
+<ul>
+<li>Lars Krapf of Adobe (finder)</li>
+</ul>
+<h2 id="CVE-2022-37436">mod_proxy prior to 2.4.55 allows a backend to trigger HTTP response splitting</h2>
+<p>CVE-2022-37436 <a href="https://cve.org/CVERecord?id=CVE-2022-37436">[CVE]</a> <a href="./CVE-2022-37436.cve.json">[CVE json]</a> <a href="./CVE-2022-37436.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-01-17T19:13:19.999Z</em></p>
+<h3 id="affected-33">Affected</h3>
+<ul>
+<li>Apache HTTP Server before 2.4.55</li>
+</ul>
+<h3 id="description-33">Description</h3>
+<p>Prior to Apache HTTP Server 2.4.55, a malicious backend can cause the response headers to be truncated early, resulting in some headers being incorporated into the response body. If the later headers have any security purpose, they will not be interpreted by the client.</p>
+<h3 id="references-33">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-29">Credits</h3>
+<ul>
+<li>Dimas Fariski Setyawan Putra (@nyxsorcerer) (finder)</li>
+</ul>
+<h2 id="CVE-2022-36760">mod_proxy_ajp Possible request smuggling</h2>
+<p>CVE-2022-36760 <a href="https://cve.org/CVERecord?id=CVE-2022-36760">[CVE]</a> <a href="./CVE-2022-36760.cve.json">[CVE json]</a> <a href="./CVE-2022-36760.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-01-17T19:12:02.488Z</em></p>
+<h3 id="affected-34">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4 through 2.4.54</li>
+</ul>
+<h3 id="description-34">Description</h3>
+<p>Inconsistent Interpretation of HTTP Requests (&lsquo;HTTP Request Smuggling&rsquo;) vulnerability in mod_proxy_ajp of Apache HTTP Server allows an attacker to smuggle requests to the AJP server it forwards requests to.  This issue affects Apache HTTP Server Apache HTTP Server 2.4 version 2.4.54 and prior versions.</p>
+<h3 id="references-34">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-30">Credits</h3>
+<ul>
+<li>ZeddYu_Lu from Qi&rsquo;anxin Research Institute of Legendsec at Qi&rsquo;anxin Group (finder)</li>
+</ul>
+<h2 id="CVE-2022-31813">mod_proxy X-Forwarded-For dropped by hop-by-hop mechanism</h2>
+<p>CVE-2022-31813 <a href="https://cve.org/CVERecord?id=CVE-2022-31813">[CVE]</a> <a href="./CVE-2022-31813.cve.json">[CVE json]</a> <a href="./CVE-2022-31813.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-06-08T09:46:07.679Z</em></p>
+<h3 id="affected-35">Affected</h3>
+<ul>
+<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.53</li>
+</ul>
+<h3 id="description-35">Description</h3>
+<p>Apache HTTP Server 2.4.53 and earlier may not send the X-Forwarded-* headers to the origin server based on client side Connection header hop-by-hop mechanism.
+This may be used to bypass IP based authentication on the origin server/application.</p>
+<h3 id="references-35">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-31">Credits</h3>
+<ul>
+<li>The Apache HTTP Server project would like to thank Gaetan Ferry (Synacktiv) for reporting this issue</li>
+</ul>
+<h2 id="CVE-2022-30556">Information Disclosure in mod_lua with websockets</h2>
+<p>CVE-2022-30556 <a href="https://cve.org/CVERecord?id=CVE-2022-30556">[CVE]</a> <a href="./CVE-2022-30556.cve.json">[CVE json]</a> <a href="./CVE-2022-30556.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-06-08T09:45:55.863Z</em></p>
+<h3 id="affected-36">Affected</h3>
+<ul>
+<li>Apache HTTP Server from unspecified through 2.4.53</li>
+</ul>
+<h3 id="description-36">Description</h3>
+<p>Apache HTTP Server 2.4.53 and earlier may return lengths to applications calling r:wsread() that point past the end of the storage allocated for the buffer.</p>
+<h3 id="references-36">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-32">Credits</h3>
+<ul>
+<li>The Apache HTTP Server project would like to thank Ronald Crane (Zippenhop LLC) for reporting this issue</li>
+</ul>
+<h2 id="CVE-2022-30522">mod_sed denial of service</h2>
+<p>CVE-2022-30522 <a href="https://cve.org/CVERecord?id=CVE-2022-30522">[CVE]</a> <a href="./CVE-2022-30522.cve.json">[CVE json]</a> <a href="./CVE-2022-30522.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-06-08T09:45:43.331Z</em></p>
+<h3 id="affected-37">Affected</h3>
+<ul>
+<li>Apache HTTP Server at 2.4.53</li>
+</ul>
+<h3 id="description-37">Description</h3>
+<p>If Apache HTTP Server 2.4.53 is configured to do transformations with mod_sed in contexts where the input to mod_sed may be very large, mod_sed may make excessively large memory allocations and trigger an abort.</p>
+<h3 id="references-37">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-33">Credits</h3>
+<ul>
+<li>This issue was found by Brian Moussalli from the JFrog Security Research team</li>
+</ul>
+<h2 id="CVE-2022-29404">Denial of service in mod_lua r:parsebody</h2>
+<p>CVE-2022-29404 <a href="https://cve.org/CVERecord?id=CVE-2022-29404">[CVE]</a> <a href="./CVE-2022-29404.cve.json">[CVE json]</a> <a href="./CVE-2022-29404.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-06-08T09:45:33.924Z</em></p>
+<h3 id="affected-38">Affected</h3>
+<ul>
+<li>Apache HTTP Server from unspecified through 2.4.53</li>
+</ul>
+<h3 id="description-38">Description</h3>
+<p>In Apache HTTP Server 2.4.53 and earlier, a malicious request to a lua script that calls r:parsebody(0) may cause a denial of service due to no default limit on possible input size.</p>
+<h3 id="references-38">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-34">Credits</h3>
+<ul>
+<li>The Apache HTTP Server project would like to thank Ronald Crane (Zippenhop LLC) for reporting this issue</li>
+</ul>
+<h2 id="CVE-2022-28615">Read beyond bounds in ap_strcmp_match()</h2>
+<p>CVE-2022-28615 <a href="https://cve.org/CVERecord?id=CVE-2022-28615">[CVE]</a> <a href="./CVE-2022-28615.cve.json">[CVE json]</a> <a href="./CVE-2022-28615.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-06-08T09:45:23.244Z</em></p>
+<h3 id="affected-39">Affected</h3>
+<ul>
+<li>Apache HTTP Server from Apache HTTP Server through 2.4.53</li>
+</ul>
+<h3 id="description-39">Description</h3>
+<p>Apache HTTP Server 2.4.53 and earlier may crash or disclose information due to a read beyond bounds in ap_strcmp_match() when provided with an extremely large input buffer.  While no code distributed with the server can be coerced into such a call, third-party modules or lua scripts that use ap_strcmp_match() may hypothetically be affected.</p>
+<h3 id="references-39">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-35">Credits</h3>
+<ul>
+<li>The Apache HTTP Server project would like to thank Ronald Crane (Zippenhop LLC) for reporting this issue</li>
+</ul>
+<h2 id="CVE-2022-28614">read beyond bounds via ap_rwrite() </h2>
+<p>CVE-2022-28614 <a href="https://cve.org/CVERecord?id=CVE-2022-28614">[CVE]</a> <a href="./CVE-2022-28614.cve.json">[CVE json]</a> <a href="./CVE-2022-28614.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-06-10T17:43:34.235Z</em></p>
+<h3 id="affected-40">Affected</h3>
+<ul>
+<li>Apache HTTP Server from unspecified through 2.4.53</li>
+</ul>
+<h3 id="description-40">Description</h3>
+<p>The ap_rwrite() function in Apache HTTP Server 2.4.53 and earlier may read unintended memory if an attacker can cause the server to reflect very large input using ap_rwrite() or ap_rputs(), such as with mod_luas r:puts() function.</p>
+<p>Modules compiled and distributed separately from Apache HTTP Server that use the &ldquo;ap_rputs&rdquo; function and may pass it a very large (INT_MAX or larger) string must be compiled against current headers to resolve the issue.</p>
+<h3 id="references-40">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-36">Credits</h3>
+<ul>
+<li>The Apache HTTP Server project would like to thank Ronald Crane (Zippenhop LLC) for reporting this issue</li>
+</ul>
+<h2 id="CVE-2022-28330">read beyond bounds in mod_isapi</h2>
+<p>CVE-2022-28330 <a href="https://cve.org/CVERecord?id=CVE-2022-28330">[CVE]</a> <a href="./CVE-2022-28330.cve.json">[CVE json]</a> <a href="./CVE-2022-28330.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-06-08T09:44:43.156Z</em></p>
+<h3 id="affected-41">Affected</h3>
+<ul>
+<li>Apache HTTP Server from Apache HTTP Server through 2.4.53</li>
+</ul>
+<h3 id="description-41">Description</h3>
+<p>Apache HTTP Server 2.4.53 and earlier on Windows may read beyond bounds when configured to process requests with the mod_isapi module.</p>
+<h3 id="references-41">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-37">Credits</h3>
+<ul>
+<li>The Apache HTTP Server project would like to thank Ronald Crane (Zippenhop LLC) for reporting this issue</li>
+</ul>
+<h2 id="CVE-2022-26377">mod_proxy_ajp: Possible request smuggling</h2>
+<p>CVE-2022-26377 <a href="https://cve.org/CVERecord?id=CVE-2022-26377">[CVE]</a> <a href="./CVE-2022-26377.cve.json">[CVE json]</a> <a href="./CVE-2022-26377.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-06-08T09:44:32.521Z</em></p>
+<h3 id="affected-42">Affected</h3>
+<ul>
+<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.53</li>
+</ul>
+<h3 id="description-42">Description</h3>
+<p>Inconsistent Interpretation of HTTP Requests (&lsquo;HTTP Request Smuggling&rsquo;) vulnerability in mod_proxy_ajp of Apache HTTP Server allows an attacker to smuggle requests to the AJP server it forwards requests to.  This issue affects Apache HTTP Server Apache HTTP Server 2.4 version 2.4.53 and prior versions.</p>
+<h3 id="references-42">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-38">Credits</h3>
+<ul>
+<li>Ricter Z @ 360 Noah Lab</li>
+</ul>
+<h2 id="CVE-2022-23943">mod_sed: Read/write beyond bounds</h2>
+<p>CVE-2022-23943 <a href="https://cve.org/CVERecord?id=CVE-2022-23943">[CVE]</a> <a href="./CVE-2022-23943.cve.json">[CVE json]</a> <a href="./CVE-2022-23943.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-03-14T10:07:36.342Z</em></p>
+<h3 id="affected-43">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4 through 2.4.52</li>
+</ul>
+<h3 id="description-43">Description</h3>
+<p>Out-of-bounds Write vulnerability in mod_sed of Apache HTTP Server allows an attacker to overwrite heap memory with possibly attacker provided data.</p>
+<p>This issue affects Apache HTTP Server 2.4 version 2.4.52 and prior versions.</p>
+<h3 id="references-43">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-39">Credits</h3>
+<ul>
+<li>Ronald Crane (Zippenhop LLC)</li>
+</ul>
+<h2 id="CVE-2022-22728">libapreq2 multipart form parse memory corruption</h2>
+<p>CVE-2022-22728 <a href="https://cve.org/CVERecord?id=CVE-2022-22728">[CVE]</a> <a href="./CVE-2022-22728.cve.json">[CVE json]</a> <a href="./CVE-2022-22728.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-08-25T14:13:38.823Z</em></p>
+<h3 id="affected-44">Affected</h3>
+<ul>
+<li>libapreq2 from unspecified through 2.16</li>
+</ul>
+<h3 id="description-44">Description</h3>
+<p>A flaw in Apache libapreq2 versions 2.16 and earlier could cause a buffer overflow while processing multipart form uploads.  A remote attacker could send a request causing a process crash which could lead to a denial of service attack.</p>
+<h3 id="references-44">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/2fsjoor96d47vtkpf76x4yo06nccvy1y">https://lists.apache.org/thread/2fsjoor96d47vtkpf76x4yo06nccvy1y</a></li>
+</ul>
+<h2 id="CVE-2022-22721">core: Possible buffer overflow with very large or unlimited LimitXMLRequestBody</h2>
+<p>CVE-2022-22721 <a href="https://cve.org/CVERecord?id=CVE-2022-22721">[CVE]</a> <a href="./CVE-2022-22721.cve.json">[CVE json]</a> <a href="./CVE-2022-22721.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-03-14T10:08:56.550Z</em></p>
+<h3 id="affected-45">Affected</h3>
+<ul>
+<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.52</li>
+</ul>
+<h3 id="description-45">Description</h3>
+<p>If LimitXMLRequestBody is set to allow request bodies larger than 350MB (defaults to 1M) on 32 bit systems an integer overflow happens which later causes out of bounds writes.</p>
+<p>This issue affects Apache HTTP Server 2.4.52 and earlier.</p>
+<h3 id="references-45">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-40">Credits</h3>
+<ul>
+<li>Anonymous working with Trend Micro Zero Day Initiative</li>
+</ul>
+<h2 id="CVE-2022-22720">HTTP request smuggling vulnerability in Apache HTTP Server 2.4.52 and earlier</h2>
+<p>CVE-2022-22720 <a href="https://cve.org/CVERecord?id=CVE-2022-22720">[CVE]</a> <a href="./CVE-2022-22720.cve.json">[CVE json]</a> <a href="./CVE-2022-22720.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-03-14T10:09:48.647Z</em></p>
+<h3 id="affected-46">Affected</h3>
+<ul>
+<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.52</li>
+</ul>
+<h3 id="description-46">Description</h3>
+<p>Apache HTTP Server 2.4.52 and earlier fails to close inbound connection when errors are encountered discarding the request body, exposing the server to HTTP Request Smuggling</p>
+<h3 id="references-46">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-41">Credits</h3>
+<ul>
+<li>James Kettle &lt;james.kettle portswigger.net&gt;</li>
+</ul>
+<h2 id="CVE-2022-22719">mod_lua Use of uninitialized value of in r:parsebody</h2>
+<p>CVE-2022-22719 <a href="https://cve.org/CVERecord?id=CVE-2022-22719">[CVE]</a> <a href="./CVE-2022-22719.cve.json">[CVE json]</a> <a href="./CVE-2022-22719.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-03-14T10:10:30.113Z</em></p>
+<h3 id="affected-47">Affected</h3>
+<ul>
+<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.52</li>
+</ul>
+<h3 id="description-47">Description</h3>
+<p>A carefully crafted request body can cause a read to a random memory area which could cause the process to crash.</p>
+<p>This issue affects Apache HTTP Server 2.4.52 and earlier.</p>
+<h3 id="references-47">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-42">Credits</h3>
+<ul>
+<li>Chamal De Silva</li>
+</ul>
+<h2 id="CVE-2021-44790">Possible buffer overflow when parsing multipart content in mod_lua of Apache HTTP Server 2.4.51 and earlier</h2>
+<p>CVE-2021-44790 <a href="https://cve.org/CVERecord?id=CVE-2021-44790">[CVE]</a> <a href="./CVE-2021-44790.cve.json">[CVE json]</a> <a href="./CVE-2021-44790.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-12-20T11:07:20.265Z</em></p>
+<h3 id="affected-48">Affected</h3>
+<ul>
+<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.51</li>
+</ul>
+<h3 id="description-48">Description</h3>
+<p>A carefully crafted request body can cause a buffer overflow in the mod_lua multipart parser (r:parsebody() called from Lua scripts).
+The Apache httpd team is not aware of an exploit for the vulnerabilty though it might be possible to craft one.</p>
+<p>This issue affects Apache HTTP Server 2.4.51 and earlier.</p>
+<h3 id="references-48">References</h3>
+<ul>
+<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-43">Credits</h3>
+<ul>
+<li>Chamal</li>
+<li>Anonymous working with Trend Micro Zero Day Initiative</li>
+</ul>
+<h2 id="CVE-2021-44224">Possible NULL dereference or SSRF in forward proxy configurations in Apache HTTP Server 2.4.51 and earlier</h2>
+<p>CVE-2021-44224 <a href="https://cve.org/CVERecord?id=CVE-2021-44224">[CVE]</a> <a href="./CVE-2021-44224.cve.json">[CVE json]</a> <a href="./CVE-2021-44224.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-12-20T11:06:17.917Z</em></p>
+<h3 id="affected-49">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4.7 before Apache HTTP Server 2.4*</li>
+</ul>
+<h3 id="description-49">Description</h3>
+<p>A crafted URI sent to httpd configured as a forward proxy (ProxyRequests on) can cause a crash (NULL pointer dereference) or, for configurations mixing forward and reverse proxy declarations, can allow for requests to be directed to a declared Unix Domain Socket endpoint (Server Side Request Forgery).</p>
+<p>This issue affects Apache HTTP Server 2.4.7 up to 2.4.51 (included).</p>
+<h3 id="references-49">References</h3>
+<ul>
+<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-44">Credits</h3>
+<ul>
+<li>漂亮鼠</li>
+<li>TengMA(@Te3t123)</li>
+</ul>
+<h2 id="CVE-2021-42013">Path Traversal and Remote Code Execution in Apache HTTP Server 2.4.49 and 2.4.50 (incomplete fix of CVE-2021-41773)</h2>
+<p>CVE-2021-42013 <a href="https://cve.org/CVERecord?id=CVE-2021-42013">[CVE]</a> <a href="./CVE-2021-42013.cve.json">[CVE json]</a> <a href="./CVE-2021-42013.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-10-11T17:31:43.275Z</em></p>
+<h3 id="affected-50">Affected</h3>
+<ul>
+<li>Apache HTTP Server at 2.4.49</li>
+<li>Apache HTTP Server at 2.4.50</li>
+</ul>
+<h3 id="description-50">Description</h3>
+<p>It was found that the fix for CVE-2021-41773 in Apache HTTP Server 2.4.50 was insufficient.  An attacker could use a path traversal attack to map URLs to files outside the directories configured by Alias-like directives.</p>
+<p>If files outside of these directories are not protected by the usual default configuration &ldquo;require all denied&rdquo;, these requests can succeed. If CGI scripts are also enabled for these aliased pathes, this could allow for remote code execution.</p>
+<p>This issue only affects Apache 2.4.49 and Apache 2.4.50 and not earlier versions.</p>
+<h3 id="references-50">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-45">Credits</h3>
+<ul>
+<li>Reported by Juan Escobar from Dreamlab Technologies</li>
+<li>Reported by Fernando Muñoz from NULL Life CTF Team</li>
+<li>Reported by Shungo Kumasaka</li>
+<li>Reported by Nattapon Jongcharoen</li>
+</ul>
+<h2 id="CVE-2021-41773">Path traversal and file disclosure vulnerability in Apache HTTP Server 2.4.49</h2>
+<p>CVE-2021-41773 <a href="https://cve.org/CVERecord?id=CVE-2021-41773">[CVE]</a> <a href="./CVE-2021-41773.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2021-10-11T14:15:40.313Z</em></p>
+<h3 id="affected-51">Affected</h3>
+<ul>
+<li>Apache HTTP Server at Apache HTTP Server 2.4 2.4.49</li>
+</ul>
+<h3 id="description-51">Description</h3>
+<p>A flaw was found in a change made to path normalization in Apache HTTP Server 2.4.49. An attacker could use a path traversal attack to map URLs to files outside the directories configured by Alias-like directives.</p>
+<p>If files outside of these directories are not protected by the usual default configuration &ldquo;require all denied&rdquo;, these requests can succeed. If CGI scripts are also enabled for these aliased pathes, this could allow for remote code execution.</p>
+<p>This issue is known to be exploited in the wild.</p>
+<p>This issue only affects Apache 2.4.49 and not earlier versions.</p>
+<h3 id="credits-46">Credits</h3>
+<ul>
+<li>This issue was reported by Ash Daulton along with the cPanel Security Team</li>
+</ul>
+<h2 id="CVE-2021-41524">null pointer dereference in h2 fuzzing</h2>
+<p>CVE-2021-41524 <a href="https://cve.org/CVERecord?id=CVE-2021-41524">[CVE]</a> <a href="./CVE-2021-41524.cve.json">[CVE json]</a> <a href="./CVE-2021-41524.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-10-05T11:31:17.600Z</em></p>
+<h3 id="affected-52">Affected</h3>
+<ul>
+<li>Apache HTTP Server at 2.4.49</li>
+</ul>
+<h3 id="description-52">Description</h3>
+<p>While fuzzing the 2.4.49 httpd, a new null pointer dereference was detected during HTTP/2 request processing,
+allowing an external source to DoS the server. This requires a specially crafted request.</p>
+<p>The vulnerability was recently introduced in version 2.4.49. No exploit is known to the project.</p>
+<h3 id="references-51">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-47">Credits</h3>
+<ul>
+<li>Apache httpd team would like to thank LI ZHI XIN from NSFocus Security Team for reporting this issue.</li>
+</ul>
+<h2 id="CVE-2021-40438">mod_proxy SSRF</h2>
+<p>CVE-2021-40438 <a href="https://cve.org/CVERecord?id=CVE-2021-40438">[CVE]</a> <a href="./CVE-2021-40438.cve.json">[CVE json]</a> <a href="./CVE-2021-40438.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-09-16T14:37:10.201Z</em></p>
+<h3 id="affected-53">Affected</h3>
+<ul>
+<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.48</li>
+</ul>
+<h3 id="description-53">Description</h3>
+<p>A crafted request uri-path can cause mod_proxy to forward the request to an origin server choosen by the remote user.</p>
+<p>This issue affects Apache HTTP Server 2.4.48 and earlier.</p>
+<h3 id="references-52">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-48">Credits</h3>
+<ul>
+<li>The issue was discovered by the Apache HTTP security team while analysing CVE-2021-36160</li>
+</ul>
+<h2 id="CVE-2021-39275">ap_escape_quotes buffer overflow</h2>
+<p>CVE-2021-39275 <a href="https://cve.org/CVERecord?id=CVE-2021-39275">[CVE]</a> <a href="./CVE-2021-39275.cve.json">[CVE json]</a> <a href="./CVE-2021-39275.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-09-16T14:35:11.663Z</em></p>
+<h3 id="affected-54">Affected</h3>
+<ul>
+<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.48</li>
+</ul>
+<h3 id="description-54">Description</h3>
+<p>ap_escape_quotes() may write beyond the end of a buffer when given malicious input.<br>
+No included modules pass untrusted data to these functions, but third-party / external modules may.</p>
+<p>This issue affects Apache HTTP Server 2.4.48 and earlier.</p>
+<h3 id="references-53">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-49">Credits</h3>
+<ul>
+<li>ClusterFuzz</li>
+</ul>
+<h2 id="CVE-2021-36160">mod_proxy_uwsgi out of bound read</h2>
+<p>CVE-2021-36160 <a href="https://cve.org/CVERecord?id=CVE-2021-36160">[CVE]</a> <a href="./CVE-2021-36160.cve.json">[CVE json]</a> <a href="./CVE-2021-36160.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-09-16T14:33:49.077Z</em></p>
+<h3 id="affected-55">Affected</h3>
+<ul>
+<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.48</li>
+</ul>
+<h3 id="description-55">Description</h3>
+<p>A carefully crafted request uri-path can cause mod_proxy_uwsgi to read above the allocated memory and crash (DoS).</p>
+<p>This issue affects Apache HTTP Server versions 2.4.30 to 2.4.48 (inclusive).</p>
+<h3 id="references-54">References</h3>
+<ul>
+<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-50">Credits</h3>
+<ul>
+<li>LI ZHI XIN from NSFocus Security Team</li>
+</ul>
+<h2 id="CVE-2021-34798">NULL pointer dereference in httpd core</h2>
+<p>CVE-2021-34798 <a href="https://cve.org/CVERecord?id=CVE-2021-34798">[CVE]</a> <a href="./CVE-2021-34798.cve.json">[CVE json]</a> <a href="./CVE-2021-34798.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-09-16T14:31:21.975Z</em></p>
+<h3 id="affected-56">Affected</h3>
+<ul>
+<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.48</li>
+</ul>
+<h3 id="description-56">Description</h3>
+<p>Malformed requests may cause the server to dereference a NULL pointer.</p>
+<p>This issue affects Apache HTTP Server 2.4.48 and earlier.</p>
+<h3 id="references-55">References</h3>
+<ul>
+<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+</ul>
+<h3 id="credits-51">Credits</h3>
+<ul>
+<li>The issue was discovered by the Apache HTTP security team</li>
+</ul>
+<h2 id="CVE-2021-33193">Request splitting via HTTP/2 method injection and mod_proxy</h2>
+<p>CVE-2021-33193 <a href="https://cve.org/CVERecord?id=CVE-2021-33193">[CVE]</a> <a href="./CVE-2021-33193.cve.json">[CVE json]</a> <a href="./CVE-2021-33193.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-09-16T12:49:38.115Z</em></p>
+<h3 id="affected-57">Affected</h3>
+<ul>
+<li>Apache HTTP Server from Apache HTTP Server 2.4 through 2.4.48</li>
+</ul>
+<h3 id="description-57">Description</h3>
+<p>A crafted method sent through HTTP/2 will bypass validation and be forwarded by mod_proxy, which can lead to request splitting or cache poisoning.</p>
+<p>This issue affects Apache HTTP Server 2.4.17 to 2.4.48.</p>
+<h3 id="references-56">References</h3>
+<ul>
+<li><a href="https://portswigger.net/research/http2">https://portswigger.net/research/http2</a></li>
+<li><a href="https://github.com/apache/httpd/commit/ecebcc035ccd8d0e2984fe41420d9e944f456b3c.patch">https://github.com/apache/httpd/commit/ecebcc035ccd8d0e2984fe41420d9e944f456b3c.patch</a></li>
+</ul>
+<h3 id="credits-52">Credits</h3>
+<ul>
+<li>Reported by James Kettle of PortSwigger</li>
+</ul>
+<h2 id="CVE-2021-31618">NULL pointer dereference on specially crafted HTTP/2 request</h2>
+<p>CVE-2021-31618 <a href="https://cve.org/CVERecord?id=CVE-2021-31618">[CVE]</a> <a href="./CVE-2021-31618.cve.json">[CVE json]</a> <a href="./CVE-2021-31618.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-06-15T08:48:10.111Z</em></p>
+<h3 id="affected-58">Affected</h3>
+<ul>
+<li>Apache HTTP Server at 2.4.47</li>
+</ul>
+<h3 id="description-58">Description</h3>
+<p>Apache HTTP Server protocol handler for the HTTP/2 protocol checks received request headers against the size limitations as configured for the server and used for the HTTP/1 protocol as well. On violation of these restrictions and HTTP response is sent to the client with a status code indicating why the request was rejected.</p>
+<p>This rejection response was not fully initialised in the HTTP/2 protocol handler if the offending header was the very first one received or appeared in a a footer. This led to a NULL pointer dereference on initialised memory, crashing reliably the child process. Since such a triggering HTTP/2 request is easy to craft and submit, this can be exploited to DoS the server.</p>
+<p>This issue affected  mod_http2 1.15.17 and Apache HTTP Server version 2.4.47 only. Apache HTTP Server 2.4.47 was never released.</p>
+<h3 id="references-57">References</h3>
+<ul>
+<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+<li><a href="https://seclists.org/oss-sec/2021/q2/206">https://seclists.org/oss-sec/2021/q2/206</a></li>
+</ul>
+<h3 id="credits-53">Credits</h3>
+<ul>
+<li>Apache HTTP server would like to thank  LI ZHI XIN from NSFocus for reporting this.</li>
+</ul>
+<h2 id="CVE-2021-30641">Unexpected URL matching with &lsquo;MergeSlashes OFF&rsquo;</h2>
+<p>CVE-2021-30641 <a href="https://cve.org/CVERecord?id=CVE-2021-30641">[CVE]</a> <a href="./CVE-2021-30641.cve.json">[CVE json]</a> <a href="./CVE-2021-30641.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-06-10T07:02:16.829Z</em></p>
+<h3 id="affected-59">Affected</h3>
+<ul>
+<li>Apache HTTP Server at 2.4.46</li>
+<li>Apache HTTP Server at 2.4.43</li>
+<li>Apache HTTP Server at 2.4.41</li>
+<li>Apache HTTP Server at 2.4.39</li>
+</ul>
+<h3 id="description-59">Description</h3>
+<p>Apache HTTP Server versions 2.4.39 to 2.4.46 Unexpected matching behavior with &lsquo;MergeSlashes OFF&rsquo;</p>
+<h3 id="references-58">References</h3>
+<ul>
+<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+<li><a href="https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E">https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-54">Credits</h3>
+<ul>
+<li>Discovered by Christoph Anton Mitterer</li>
+</ul>
+<h2 id="CVE-2021-26691">Apache HTTP Server mod_session response handling heap overflow</h2>
+<p>CVE-2021-26691 <a href="https://cve.org/CVERecord?id=CVE-2021-26691">[CVE]</a> <a href="./CVE-2021-26691.cve.json">[CVE json]</a> <a href="./CVE-2021-26691.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-06-10T07:01:56.009Z</em></p>
+<h3 id="affected-60">Affected</h3>
+<ul>
+<li>Apache HTTP Server at 2.4.46</li>
+<li>Apache HTTP Server at 2.4.43</li>
+<li>Apache HTTP Server at 2.4.41</li>
+<li>Apache HTTP Server at 2.4.39</li>
+<li>Apache HTTP Server at 2.4.38</li>
+<li>Apache HTTP Server at 2.4.37</li>
+<li>Apache HTTP Server at 2.4.35</li>
+<li>Apache HTTP Server at 2.4.34</li>
+<li>Apache HTTP Server at 2.4.33</li>
+<li>Apache HTTP Server at 2.4.29</li>
+<li>Apache HTTP Server at 2.4.28</li>
+<li>Apache HTTP Server at 2.4.27</li>
+<li>Apache HTTP Server at 2.4.26</li>
+<li>Apache HTTP Server at 2.4.25</li>
+<li>Apache HTTP Server at 2.4.23</li>
+<li>Apache HTTP Server at 2.4.20</li>
+<li>Apache HTTP Server at 2.4.18</li>
+<li>Apache HTTP Server at 2.4.17</li>
+<li>Apache HTTP Server at 2.4.16</li>
+<li>Apache HTTP Server at 2.4.12</li>
+<li>Apache HTTP Server at 2.4.10</li>
+<li>Apache HTTP Server at 2.4.9</li>
+<li>Apache HTTP Server at 2.4.7</li>
+<li>Apache HTTP Server at 2.4.6</li>
+<li>Apache HTTP Server at 2.4.4</li>
+<li>Apache HTTP Server at 2.4.3</li>
+<li>Apache HTTP Server at 2.4.2</li>
+<li>Apache HTTP Server at 2.4.1</li>
+<li>Apache HTTP Server at 2.4.0</li>
+</ul>
+<h3 id="description-60">Description</h3>
+<p>In Apache HTTP Server versions 2.4.0 to 2.4.46 a specially crafted SessionHeader sent by an origin server could cause a heap overflow</p>
+<h3 id="references-59">References</h3>
+<ul>
+<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+<li><a href="https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E">https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-55">Credits</h3>
+<ul>
+<li>Discovered internally Christophe Jaillet</li>
+</ul>
+<h2 id="CVE-2021-26690">mod_session NULL pointer dereference</h2>
+<p>CVE-2021-26690 <a href="https://cve.org/CVERecord?id=CVE-2021-26690">[CVE]</a> <a href="./CVE-2021-26690.cve.json">[CVE json]</a> <a href="./CVE-2021-26690.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-06-10T07:01:40.445Z</em></p>
+<h3 id="affected-61">Affected</h3>
+<ul>
+<li>Apache HTTP Server at 2.4.46</li>
+<li>Apache HTTP Server at 2.4.43</li>
+<li>Apache HTTP Server at 2.4.41</li>
+<li>Apache HTTP Server at 2.4.39</li>
+<li>Apache HTTP Server at 2.4.38</li>
+<li>Apache HTTP Server at 2.4.37</li>
+<li>Apache HTTP Server at 2.4.35</li>
+<li>Apache HTTP Server at 2.4.34</li>
+<li>Apache HTTP Server at 2.4.33</li>
+<li>Apache HTTP Server at 2.4.29</li>
+<li>Apache HTTP Server at 2.4.28</li>
+<li>Apache HTTP Server at 2.4.27</li>
+<li>Apache HTTP Server at 2.4.26</li>
+<li>Apache HTTP Server at 2.4.25</li>
+<li>Apache HTTP Server at 2.4.23</li>
+<li>Apache HTTP Server at 2.4.20</li>
+<li>Apache HTTP Server at 2.4.18</li>
+<li>Apache HTTP Server at 2.4.17</li>
+<li>Apache HTTP Server at 2.4.16</li>
+<li>Apache HTTP Server at 2.4.12</li>
+<li>Apache HTTP Server at 2.4.10</li>
+<li>Apache HTTP Server at 2.4.9</li>
+<li>Apache HTTP Server at 2.4.7</li>
+<li>Apache HTTP Server at 2.4.6</li>
+<li>Apache HTTP Server at 2.4.4</li>
+<li>Apache HTTP Server at 2.4.3</li>
+<li>Apache HTTP Server at 2.4.2</li>
+<li>Apache HTTP Server at 2.4.1</li>
+<li>Apache HTTP Server at 2.4.0</li>
+</ul>
+<h3 id="description-61">Description</h3>
+<p>Apache HTTP Server versions 2.4.0 to 2.4.46 A specially crafted Cookie header handled by mod_session can cause a NULL pointer dereference and crash, leading to a possible Denial Of Service</p>
+<h3 id="references-60">References</h3>
+<ul>
+<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+<li><a href="https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E">https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-56">Credits</h3>
+<ul>
+<li>This issue was discovered and reported by GHSL team member @antonio-morales (Antonio Morales)</li>
+</ul>
+<h2 id="CVE-2020-35452">mod_auth_digest possible stack overflow by one nul byte</h2>
+<p>CVE-2020-35452 <a href="https://cve.org/CVERecord?id=CVE-2020-35452">[CVE]</a> <a href="./CVE-2020-35452.cve.json">[CVE json]</a> <a href="./CVE-2020-35452.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-06-10T07:01:23.279Z</em></p>
+<h3 id="affected-62">Affected</h3>
+<ul>
+<li>Apache HTTP Server at 2.4.46</li>
+<li>Apache HTTP Server at 2.4.43</li>
+<li>Apache HTTP Server at 2.4.41</li>
+<li>Apache HTTP Server at 2.4.39</li>
+<li>Apache HTTP Server at 2.4.38</li>
+<li>Apache HTTP Server at 2.4.37</li>
+<li>Apache HTTP Server at 2.4.35</li>
+<li>Apache HTTP Server at 2.4.34</li>
+<li>Apache HTTP Server at 2.4.33</li>
+<li>Apache HTTP Server at 2.4.29</li>
+<li>Apache HTTP Server at 2.4.28</li>
+<li>Apache HTTP Server at 2.4.27</li>
+<li>Apache HTTP Server at 2.4.26</li>
+<li>Apache HTTP Server at 2.4.25</li>
+<li>Apache HTTP Server at 2.4.23</li>
+<li>Apache HTTP Server at 2.4.20</li>
+<li>Apache HTTP Server at 2.4.18</li>
+<li>Apache HTTP Server at 2.4.17</li>
+<li>Apache HTTP Server at 2.4.16</li>
+<li>Apache HTTP Server at 2.4.12</li>
+<li>Apache HTTP Server at 2.4.10</li>
+<li>Apache HTTP Server at 2.4.9</li>
+<li>Apache HTTP Server at 2.4.7</li>
+<li>Apache HTTP Server at 2.4.6</li>
+<li>Apache HTTP Server at 2.4.4</li>
+<li>Apache HTTP Server at 2.4.3</li>
+<li>Apache HTTP Server at 2.4.2</li>
+<li>Apache HTTP Server at 2.4.1</li>
+<li>Apache HTTP Server at 2.4.0</li>
+</ul>
+<h3 id="description-62">Description</h3>
+<p>Apache HTTP Server versions 2.4.0 to 2.4.46 A specially crafted Digest nonce can cause a stack overflow in mod_auth_digest. There is no report of this overflow being exploitable, nor the Apache HTTP Server team could create one, though some particular compiler and/or compilation option might make it possible, with limited consequences anyway due to the size (a single byte) and the value (zero byte) of the overflow</p>
+<h3 id="references-61">References</h3>
+<ul>
+<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+<li><a href="https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E">https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-57">Credits</h3>
+<ul>
+<li>This issue was discovered and reported by GHSL team member @antonio-morales (Antonio Morales)</li>
+</ul>
+<h2 id="CVE-2020-13950">mod_proxy_http NULL pointer dereference</h2>
+<p>CVE-2020-13950 <a href="https://cve.org/CVERecord?id=CVE-2020-13950">[CVE]</a> <a href="./CVE-2020-13950.cve.json">[CVE json]</a> <a href="./CVE-2020-13950.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-06-10T07:00:03.831Z</em></p>
+<h3 id="affected-63">Affected</h3>
+<ul>
+<li>Apache HTTP Server at 2.4.46</li>
+<li>Apache HTTP Server at 2.4.43</li>
+<li>Apache HTTP Server at 2.4.41</li>
+</ul>
+<h3 id="description-63">Description</h3>
+<p>Apache HTTP Server versions 2.4.41 to 2.4.46 mod_proxy_http can be made to crash (NULL pointer dereference) with specially crafted requests using both Content-Length and Transfer-Encoding headers, leading to a Denial of Service</p>
+<h3 id="references-62">References</h3>
+<ul>
+<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+<li><a href="https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E">https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-58">Credits</h3>
+<ul>
+<li>Reported by Marc Stern (&lt;marc.stern approach.be&gt;)</li>
+</ul>
+<h2 id="CVE-2020-13938">Improper Handling of Insufficient Privileges</h2>
+<p>CVE-2020-13938 <a href="https://cve.org/CVERecord?id=CVE-2020-13938">[CVE]</a> <a href="./CVE-2020-13938.cve.json">[CVE json]</a> <a href="./CVE-2020-13938.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-06-10T06:59:41.634Z</em></p>
+<h3 id="affected-64">Affected</h3>
+<ul>
+<li>Apache HTTP Server at 2.4.46</li>
+<li>Apache HTTP Server at 2.4.43</li>
+<li>Apache HTTP Server at 2.4.41</li>
+<li>Apache HTTP Server at 2.4.39</li>
+<li>Apache HTTP Server at 2.4.38</li>
+<li>Apache HTTP Server at 2.4.37</li>
+<li>Apache HTTP Server at 2.4.35</li>
+<li>Apache HTTP Server at 2.4.34</li>
+<li>Apache HTTP Server at 2.4.33</li>
+<li>Apache HTTP Server at 2.4.29</li>
+<li>Apache HTTP Server at 2.4.28</li>
+<li>Apache HTTP Server at 2.4.27</li>
+<li>Apache HTTP Server at 2.4.26</li>
+<li>Apache HTTP Server at 2.4.25</li>
+<li>Apache HTTP Server at 2.4.23</li>
+<li>Apache HTTP Server at 2.4.20</li>
+<li>Apache HTTP Server at 2.4.18</li>
+<li>Apache HTTP Server at 2.4.17</li>
+<li>Apache HTTP Server at 2.4.16</li>
+<li>Apache HTTP Server at 2.4.12</li>
+<li>Apache HTTP Server at 2.4.10</li>
+<li>Apache HTTP Server at 2.4.9</li>
+<li>Apache HTTP Server at 2.4.7</li>
+<li>Apache HTTP Server at 2.4.6</li>
+<li>Apache HTTP Server at 2.4.4</li>
+<li>Apache HTTP Server at 2.4.3</li>
+<li>Apache HTTP Server at 2.4.2</li>
+<li>Apache HTTP Server at 2.4.1</li>
+<li>Apache HTTP Server at 2.4.0</li>
+</ul>
+<h3 id="description-64">Description</h3>
+<p>Apache HTTP Server versions 2.4.0 to 2.4.46 Unprivileged local users can stop httpd on Windows</p>
+<h3 id="references-63">References</h3>
+<ul>
+<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+<li><a href="https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E">https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E</a></li>
 </ul>
 <h3 id="credits-59">Credits</h3>
 <ul>
-<li>Mattias Åsander (Umeå University) (finder)</li>
+<li>Discovered by Ivan Zhakov</li>
 </ul>
-<h2 id="CVE-2025-66200">mod_userdir+suexec bypass via AllowOverride FileInfo</h2>
-<p>CVE-2025-66200 <a href="./CVE-2025-66200.cve.json">[CVE json]</a> <a href="./CVE-2025-66200.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-12-05T11:02:46.192Z</em></p>
-<h3 id="affected-66">Affected</h3>
+<h2 id="CVE-2019-17567">mod_proxy_wstunnel tunneling of non Upgraded connections</h2>
+<p>CVE-2019-17567 <a href="https://cve.org/CVERecord?id=CVE-2019-17567">[CVE]</a> <a href="./CVE-2019-17567.cve.json">[CVE json]</a> <a href="./CVE-2019-17567.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-06-16T13:33:49.334Z</em></p>
+<h3 id="affected-65">Affected</h3>
 <ul>
-<li>Apache HTTP Server from 2.4.7 through 2.4.65</li>
+<li>Apache HTTP Server at 2.4.46</li>
+<li>Apache HTTP Server at 2.4.43</li>
+<li>Apache HTTP Server at 2.4.41</li>
+<li>Apache HTTP Server at 2.4.39</li>
+<li>Apache HTTP Server at 2.4.38</li>
+<li>Apache HTTP Server at 2.4.37</li>
+<li>Apache HTTP Server at 2.4.35</li>
+<li>Apache HTTP Server at 2.4.34</li>
+<li>Apache HTTP Server at 2.4.33</li>
+<li>Apache HTTP Server at 2.4.29</li>
+<li>Apache HTTP Server at 2.4.28</li>
+<li>Apache HTTP Server at 2.4.27</li>
+<li>Apache HTTP Server at 2.4.26</li>
+<li>Apache HTTP Server at 2.4.25</li>
+<li>Apache HTTP Server at 2.4.23</li>
+<li>Apache HTTP Server at 2.4.20</li>
+<li>Apache HTTP Server at 2.4.18</li>
+<li>Apache HTTP Server at 2.4.17</li>
+<li>Apache HTTP Server at 2.4.16</li>
+<li>Apache HTTP Server at 2.4.12</li>
+<li>Apache HTTP Server at 2.4.10</li>
+<li>Apache HTTP Server at 2.4.9</li>
+<li>Apache HTTP Server at 2.4.7</li>
+<li>Apache HTTP Server at 2.4.6</li>
 </ul>
-<h3 id="description-66">Description</h3>
-<p>mod_userdir+suexec bypass via AllowOverride FileInfo vulnerability in Apache HTTP Server. Users with access to use the RequestHeader directive in htaccess can cause some CGI scripts to run under an unexpected userid.</p><p>This issue affects Apache HTTP Server: from 2.4.7 through 2.4.65.</p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p>
-<h3 id="references-65">References</h3>
+<h3 id="description-65">Description</h3>
+<p>Apache HTTP Server versions 2.4.6 to 2.4.46 mod_proxy_wstunnel configured on an URL that is not necessarily Upgraded by the origin server was tunneling the whole connection regardless, thus allowing for subsequent requests on the same connection to pass through with no HTTP validation, authentication or authorization possibly configured.</p>
+<h3 id="references-64">References</h3>
 <ul>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+<li><a href="http://httpd.apache.org/security/vulnerabilities_24.html">http://httpd.apache.org/security/vulnerabilities_24.html</a></li>
+<li><a href="https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E">https://lists.apache.org/thread.html/re026d3da9d7824bd93b9f871c0fdda978d960c7e62d8c43cba8d0bf3%40%3Ccvs.httpd.apache.org%3E</a></li>
 </ul>
 <h3 id="credits-60">Credits</h3>
 <ul>
-<li>Mattias Åsander (Umeå University) (finder)</li>
+<li>Reported by Mikhail Egorov (&lt;0ang3el gmail.com&gt;)</li>
+</ul>
+<h2 id="CVE-2006-20001">mod_dav out of  bounds read, or write of zero byte</h2>
+<p>CVE-2006-20001 <a href="https://cve.org/CVERecord?id=CVE-2006-20001">[CVE]</a> <a href="./CVE-2006-20001.cve.json">[CVE json]</a> <a href="./CVE-2006-20001.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-01-17T19:07:17.134Z</em></p>
+<h3 id="affected-66">Affected</h3>
+<ul>
+<li>Apache HTTP Server from 2.4 through 2.4.54</li>
+</ul>
+<h3 id="description-66">Description</h3>
+<p>A carefully crafted If: request header can cause a memory read, or write of a single zero byte, in a pool (heap) memory location beyond the header value sent. This could cause the process to crash.<br><br>This issue affects Apache HTTP Server 2.4.54 and earlier.<br></p>
+<h3 id="references-65">References</h3>
+<ul>
+<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">https://httpd.apache.org/security/vulnerabilities_24.html</a></li>
 </ul>
 
   

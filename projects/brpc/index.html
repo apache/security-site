@@ -105,112 +105,112 @@
 <p>Do you want disclose a potential security issue for Apache bRPC? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2023-31039">ServerOptions.pid_file may cause arbitrary code execution</h2>
-<p>CVE-2023-31039 <a href="./CVE-2023-31039.cve.json">[CVE json]</a> <a href="./CVE-2023-31039.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-05-08T08:57:09.633Z</em></p>
+<h2 id="CVE-2025-60021">Remote command injection vulnerability in heap builtin service</h2>
+<p>CVE-2025-60021 <a href="https://cve.org/CVERecord?id=CVE-2025-60021">[CVE]</a> <a href="./CVE-2025-60021.cve.json">[CVE json]</a> <a href="./CVE-2025-60021.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-16T08:39:21.612Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache bRPC from 0.9.0 before 1.5.0</li>
+<li>Apache bRPC from 1.11.0 before 1.15.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p><span style="background-color: rgb(255, 255, 255);">Security vulnerability </span>in Apache bRPC &lt;1.5.0 on all platforms allows attackers to execute arbitrary code via ServerOptions::pid_file.<br>An attacker that can influence the ServerOptions pid_file parameter with which the bRPC server is started can execute arbitrary code with the permissions of the bRPC process.<br><br>Solution:<br>1. upgrade to bRPC &gt;= 1.5.0, download link: <a target="_blank" rel="nofollow" href="https://dist.apache.org/repos/dist/release/brpc/1.5.0/"><a href="https://dist.apache.org/repos/dist/release/brpc/1.5.0/">https://dist.apache.org/repos/dist/release/brpc/1.5.0/</a></a><br>2. If you are using an old version of bRPC and hard to upgrade, you can apply this patch: <a target="_blank" rel="nofollow" href="https://github.com/apache/brpc/pull/2218"><a href="https://github.com/apache/brpc/pull/2218">https://github.com/apache/brpc/pull/2218</a></a></p>
+<p>Remote command injection vulnerability in heap profiler builtin service in Apache bRPC ((all versions &lt; 1.15.0)) on all platforms allows attacker to inject remote command.</p><p></p>Root Cause: The bRPC heap profiler built-in service (/pprof/heap) does not validate the user-provided extra_options parameter and executes it as a command-line argument. Attackers can execute remote commands using the extra_options parameter..<br><br>Affected scenarios:&nbsp;Use the built-in bRPC heap profiler service to perform jemalloc memory profiling.<br><br>How to Fix: we provide two methods, you can choose one of them:<br><br>1. Upgrade bRPC to version 1.15.0.<br>2. Apply this patch (<a target="_blank" rel="nofollow" href="https://github.com/apache/brpc/pull/3101">https://github.com/apache/brpc/pull/3101</a>) manually.<b><br></b><p></p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/jqpttrqbc38yhckgp67xk399hqxnz7jn">https://lists.apache.org/thread/jqpttrqbc38yhckgp67xk399hqxnz7jn</a></li>
-</ul>
-<h2 id="CVE-2023-45757">The builtin service rpcz page has an XSS attack vulnerability</h2>
-<p>CVE-2023-45757 <a href="./CVE-2023-45757.cve.json">[CVE json]</a> <a href="./CVE-2023-45757.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-10-16T08:01:36.036Z</em></p>
-<h3 id="affected-1">Affected</h3>
-<ul>
-<li>Apache bRPC from 0.9.0 through 1.6.0</li>
-</ul>
-<h3 id="description-1">Description</h3>
-<p><span style="background-color: rgb(255, 255, 255);">Security vulnerability </span>in Apache bRPC &lt;=1.6.0 on all platforms allows attackers to inject XSS code to the builtin rpcz page.<br>An attacker that can send http request to bRPC server with rpcz enabled can inject arbitrary XSS code to the builtin rpcz page.<br><br>Solution<span style="background-color: rgba(0, 0, 0, 0.2);"> (choose one of three)</span>:<br>1. upgrade to bRPC &gt; 1.6.0, download link: <a target="_blank" rel="nofollow" href="https://dist.apache.org/repos/dist/release/brpc/1.6.1/"><a href="https://dist.apache.org/repos/dist/release/brpc/1.6.1/">https://dist.apache.org/repos/dist/release/brpc/1.6.1/</a></a><br>2. If you are using an old version of bRPC and hard to upgrade, you can apply this patch: <a target="_blank" rel="nofollow" href="https://github.com/apache/brpc/pull/2411"><a href="https://github.com/apache/brpc/pull/2411">https://github.com/apache/brpc/pull/2411</a></a><br>3. disable rpcz feature</p>
-<h3 id="references-1">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/6syxv32fqgl30brfpttrk4rfsb983hl4">https://lists.apache.org/thread/6syxv32fqgl30brfpttrk4rfsb983hl4</a></li>
-</ul>
-<h2 id="CVE-2024-23452">HTTP request smuggling vulnerability</h2>
-<p>CVE-2024-23452 <a href="./CVE-2024-23452.cve.json">[CVE json]</a> <a href="./CVE-2024-23452.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-02-08T09:00:00.820Z</em></p>
-<h3 id="affected-2">Affected</h3>
-<ul>
-<li>Apache bRPC from 0.9.5 before 1.8.0</li>
-</ul>
-<h3 id="description-2">Description</h3>
-<p>Request smuggling vulnerability in HTTP server in Apache bRPC 0.9.5~1.7.0 on all platforms allows attacker to smuggle request.<br><br><p><b>Vulnerability Cause Description：</b><u></u><u></u></p><p>The http_parser does not comply with the RFC-7230 HTTP 1.1 specification.</p><br><b>Attack scenario:<br></b><span style="background-color: rgb(255, 255, 255);">If a message is received with both a Transfer-Encoding and a Content-Length header field, such a message might indicate an attempt to perform request smuggling or response splitting.</span><br><p>One particular attack scenario is that a bRPC made http server on the backend receiving requests in one persistent connection from frontend server that uses TE to parse request with the logic that &lsquo;chunk&rsquo; is contained in the TE field. in that case an attacker can smuggle a request into the connection to the backend server. <br></p><br><b>Solution:<br></b>You can choose one solution from below:<br><span style="background-color: rgb(255, 255, 255);">1. Upgrade bRPC to version 1.8.0, which fixes this issue. Download link: </span><a target="_blank" rel="nofollow" href="https://github.com/apache/brpc/releases/tag/1.8.0"><a href="https://github.com/apache/brpc/releases/tag/1.8.0">https://github.com/apache/brpc/releases/tag/1.8.0</a><br></a>2. Apply this patch: <a target="_blank" rel="nofollow" href="https://github.com/apache/brpc/pull/2518"><a href="https://github.com/apache/brpc/pull/2518">https://github.com/apache/brpc/pull/2518</a></a><br><br></p>
-<h3 id="references-2">References</h3>
-<ul>
-<li><a href="https://github.com/apache/brpc/releases/tag/1.8.0">https://github.com/apache/brpc/releases/tag/1.8.0</a></li>
-<li><a href="https://github.com/apache/brpc/pull/2518">https://github.com/apache/brpc/pull/2518</a></li>
-<li><a href="https://lists.apache.org/thread/kkvdpwyr2s2yt9qvvxfdzon012898vxd">https://lists.apache.org/thread/kkvdpwyr2s2yt9qvvxfdzon012898vxd</a></li>
+<li><a href="https://lists.apache.org/thread/co5rkdxogomk42nhogox1ojfpw3mword">https://lists.apache.org/thread/co5rkdxogomk42nhogox1ojfpw3mword</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Pingtao Wei of 2012 Laboratories (finder)</li>
-<li>Ziyang Chen of 2012 Laboratories (finder)</li>
-<li>Haoran Zhi of 2012 Laboratories (finder)</li>
-<li>Hongpei Li of 2012 Laboratories (finder)</li>
-</ul>
-<h2 id="CVE-2025-54472">Redis Parser Remote Denial of Service</h2>
-<p>CVE-2025-54472 <a href="./CVE-2025-54472.cve.json">[CVE json]</a> <a href="./CVE-2025-54472.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-08-12T02:14:20.765Z</em></p>
-<h3 id="affected-3">Affected</h3>
-<ul>
-<li>Apache bRPC before 1.14.1</li>
-</ul>
-<h3 id="description-3">Description</h3>
-<p>Unlimited memory allocation in redis protocol parser in Apache bRPC (all versions &lt; 1.14.1) on all platforms allows attackers to crash the service via network.<br><br></p>
-<p><span style="background-color: rgb(255, 255, 255);">Root Cause: In the bRPC Redis protocol parser code, memory for arrays or strings of corresponding sizes is allocated based on the integers read from the network. If the integer read from the network is too large, it may cause a bad alloc error and lead to the program crashing. Attackers can exploit this feature by sending special data packets to the bRPC service to carry out a denial-of-service attack on it.<br></span>The bRPC 1.14.0 version tried to fix this issue by limited the memory allocation size, however, the limitation checking code is not well implemented that may cause integer overflow and evade such limitation. So the 1.14.0 version is also vulnerable, although the integer range that affect version 1.14.0 is different from that affect version &lt; 1.14.0.<br><br></p>
-<p><span style="background-color: rgb(255, 255, 255);">Affected scenarios: Using bRPC as a Redis server to provide network services to untrusted clients, or using bRPC as a Redis client to call untrusted Redis services.</span></p>
-<p><br><br>How to Fix: we provide two methods, you can choose one of them:<br><br>1. Upgrade bRPC to version 1.14.1.<br>2. Apply this patch (<a target="_blank" rel="nofollow" href="https://github.com/apache/brpc/pull/3050"><a href="https://github.com/apache/brpc/pull/3050">https://github.com/apache/brpc/pull/3050</a></a>) manually.<br><br><span style="background-color: rgb(255, 255, 255);">No matter you choose which method, you should note that the patch limits the maximum length of memory allocated for each time in the bRPC Redis parser. The default limit is 64M. If some of you redis request or response have a size larger than 64M, you might encounter error after upgrade. For such case, you can modify the gflag <span style="background-color: rgb(255, 255, 255);">redis_max_allocation_size to set a larger limit.</span></span><br><br></p>
-<h3 id="references-3">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/r3xsy3wvs4kmfhc281173k5b6ll1xt2m">https://lists.apache.org/thread/r3xsy3wvs4kmfhc281173k5b6ll1xt2m</a></li>
-</ul>
-<h3 id="credits-1">Credits</h3>
-<ul>
-<li>Tyler Zars (reporter)</li>
+<li>Simcha Kosman (reporter)</li>
 </ul>
 <h2 id="CVE-2025-59789">Stack Exhaustion via Unbounded Recursion in JSON Parser</h2>
-<p>CVE-2025-59789 <a href="./CVE-2025-59789.cve.json">[CVE json]</a> <a href="./CVE-2025-59789.osv.json">[OSV json]</a></p>
+<p>CVE-2025-59789 <a href="https://cve.org/CVERecord?id=CVE-2025-59789">[CVE]</a> <a href="./CVE-2025-59789.cve.json">[CVE json]</a> <a href="./CVE-2025-59789.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-12-01T02:28:22.223Z</em></p>
-<h3 id="affected-4">Affected</h3>
+<h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache bRPC before 1.15.0</li>
 </ul>
-<h3 id="description-4">Description</h3>
+<h3 id="description-1">Description</h3>
 <p>Uncontrolled recursion in the json2pb component in Apache bRPC (version &lt; 1.15.0) on all platforms allows remote attackers to make the server crash via sending deep recursive json data.<br><br>Root Cause:<br>The bRPC json2pb component uses rapidjson to parse json data from the network. The rapidjson parser uses a recursive parsing method by default. If the input json has a large depth of recursive structure, the parser function may run into stack overflow.<br><br>Affected Scenarios:<br>Use bRPC server with protobuf message to serve http+json requests from untrusted network. Or directly use JsonToProtoMessage to convert json from untrusted input.</p>
 <p><br><br>How to Fix: <br>(<span style="background-color: rgb(255, 255, 255);">Choose one of the following options) </span><br>1. Upgrade bRPC to version 1.15.0, which fixes this issue.<br><span style="background-color: rgb(255, 255, 255);">2. Apply this patch: </span><a target="_blank" rel="nofollow" href="https://github.com/apache/brpc/pull/3099"><a href="https://github.com/apache/brpc/pull/3099">https://github.com/apache/brpc/pull/3099</a></a></p>
 <p><br><br>Note:<br>No matter which option</p>
 <p><span style="background-color: rgb(255, 255, 255);">you choose</span>, you should know that the fix introduces a recursion depth limit with default value 100. It affects these functions: </p>
 <p><span style="background-color: rgb(255, 255, 255);">ProtoMessageToJson, ProtoMessageToProtoJson, JsonToProtoMessage, and ProtoJsonToProtoMessage.</span></p>
 <p>If your requests contain json or protobuf messages that have a depth exceeding the limit, the request will be failed after applying the fix. You can modify the gflag json2pb_max_recursion_depth to change the limit.</p>
-<h3 id="references-4">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/ozmcsztcpxn61jxod8jo8q46jo0oc1zx">https://lists.apache.org/thread/ozmcsztcpxn61jxod8jo8q46jo0oc1zx</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>Tyler Zars (finder)</li>
 </ul>
-<h2 id="CVE-2025-60021">Remote command injection vulnerability in heap builtin service</h2>
-<p>CVE-2025-60021 <a href="./CVE-2025-60021.cve.json">[CVE json]</a> <a href="./CVE-2025-60021.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-01-16T08:39:21.612Z</em></p>
-<h3 id="affected-5">Affected</h3>
+<h2 id="CVE-2025-54472">Redis Parser Remote Denial of Service</h2>
+<p>CVE-2025-54472 <a href="https://cve.org/CVERecord?id=CVE-2025-54472">[CVE]</a> <a href="./CVE-2025-54472.cve.json">[CVE json]</a> <a href="./CVE-2025-54472.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-08-12T02:14:20.765Z</em></p>
+<h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache bRPC from 1.11.0 before 1.15.0</li>
+<li>Apache bRPC before 1.14.1</li>
 </ul>
-<h3 id="description-5">Description</h3>
-<p>Remote command injection vulnerability in heap profiler builtin service in Apache bRPC ((all versions &lt; 1.15.0)) on all platforms allows attacker to inject remote command.</p><p></p>Root Cause: The bRPC heap profiler built-in service (/pprof/heap) does not validate the user-provided extra_options parameter and executes it as a command-line argument. Attackers can execute remote commands using the extra_options parameter..<br><br>Affected scenarios:&nbsp;Use the built-in bRPC heap profiler service to perform jemalloc memory profiling.<br><br>How to Fix: we provide two methods, you can choose one of them:<br><br>1. Upgrade bRPC to version 1.15.0.<br>2. Apply this patch (<a target="_blank" rel="nofollow" href="https://github.com/apache/brpc/pull/3101">https://github.com/apache/brpc/pull/3101</a>) manually.<b><br></b><p></p>
-<h3 id="references-5">References</h3>
+<h3 id="description-2">Description</h3>
+<p>Unlimited memory allocation in redis protocol parser in Apache bRPC (all versions &lt; 1.14.1) on all platforms allows attackers to crash the service via network.<br><br></p>
+<p><span style="background-color: rgb(255, 255, 255);">Root Cause: In the bRPC Redis protocol parser code, memory for arrays or strings of corresponding sizes is allocated based on the integers read from the network. If the integer read from the network is too large, it may cause a bad alloc error and lead to the program crashing. Attackers can exploit this feature by sending special data packets to the bRPC service to carry out a denial-of-service attack on it.<br></span>The bRPC 1.14.0 version tried to fix this issue by limited the memory allocation size, however, the limitation checking code is not well implemented that may cause integer overflow and evade such limitation. So the 1.14.0 version is also vulnerable, although the integer range that affect version 1.14.0 is different from that affect version &lt; 1.14.0.<br><br></p>
+<p><span style="background-color: rgb(255, 255, 255);">Affected scenarios: Using bRPC as a Redis server to provide network services to untrusted clients, or using bRPC as a Redis client to call untrusted Redis services.</span></p>
+<p><br><br>How to Fix: we provide two methods, you can choose one of them:<br><br>1. Upgrade bRPC to version 1.14.1.<br>2. Apply this patch (<a target="_blank" rel="nofollow" href="https://github.com/apache/brpc/pull/3050"><a href="https://github.com/apache/brpc/pull/3050">https://github.com/apache/brpc/pull/3050</a></a>) manually.<br><br><span style="background-color: rgb(255, 255, 255);">No matter you choose which method, you should note that the patch limits the maximum length of memory allocated for each time in the bRPC Redis parser. The default limit is 64M. If some of you redis request or response have a size larger than 64M, you might encounter error after upgrade. For such case, you can modify the gflag <span style="background-color: rgb(255, 255, 255);">redis_max_allocation_size to set a larger limit.</span></span><br><br></p>
+<h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/co5rkdxogomk42nhogox1ojfpw3mword">https://lists.apache.org/thread/co5rkdxogomk42nhogox1ojfpw3mword</a></li>
+<li><a href="https://lists.apache.org/thread/r3xsy3wvs4kmfhc281173k5b6ll1xt2m">https://lists.apache.org/thread/r3xsy3wvs4kmfhc281173k5b6ll1xt2m</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Tyler Zars (reporter)</li>
+</ul>
+<h2 id="CVE-2024-23452">HTTP request smuggling vulnerability</h2>
+<p>CVE-2024-23452 <a href="https://cve.org/CVERecord?id=CVE-2024-23452">[CVE]</a> <a href="./CVE-2024-23452.cve.json">[CVE json]</a> <a href="./CVE-2024-23452.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-02-08T09:00:00.820Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache bRPC from 0.9.5 before 1.8.0</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Request smuggling vulnerability in HTTP server in Apache bRPC 0.9.5~1.7.0 on all platforms allows attacker to smuggle request.<br><br><p><b>Vulnerability Cause Description：</b><u></u><u></u></p><p>The http_parser does not comply with the RFC-7230 HTTP 1.1 specification.</p><br><b>Attack scenario:<br></b><span style="background-color: rgb(255, 255, 255);">If a message is received with both a Transfer-Encoding and a Content-Length header field, such a message might indicate an attempt to perform request smuggling or response splitting.</span><br><p>One particular attack scenario is that a bRPC made http server on the backend receiving requests in one persistent connection from frontend server that uses TE to parse request with the logic that &lsquo;chunk&rsquo; is contained in the TE field. in that case an attacker can smuggle a request into the connection to the backend server. <br></p><br><b>Solution:<br></b>You can choose one solution from below:<br><span style="background-color: rgb(255, 255, 255);">1. Upgrade bRPC to version 1.8.0, which fixes this issue. Download link: </span><a target="_blank" rel="nofollow" href="https://github.com/apache/brpc/releases/tag/1.8.0"><a href="https://github.com/apache/brpc/releases/tag/1.8.0">https://github.com/apache/brpc/releases/tag/1.8.0</a><br></a>2. Apply this patch: <a target="_blank" rel="nofollow" href="https://github.com/apache/brpc/pull/2518"><a href="https://github.com/apache/brpc/pull/2518">https://github.com/apache/brpc/pull/2518</a></a><br><br></p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://github.com/apache/brpc/releases/tag/1.8.0">https://github.com/apache/brpc/releases/tag/1.8.0</a></li>
+<li><a href="https://github.com/apache/brpc/pull/2518">https://github.com/apache/brpc/pull/2518</a></li>
+<li><a href="https://lists.apache.org/thread/kkvdpwyr2s2yt9qvvxfdzon012898vxd">https://lists.apache.org/thread/kkvdpwyr2s2yt9qvvxfdzon012898vxd</a></li>
 </ul>
 <h3 id="credits-3">Credits</h3>
 <ul>
-<li>Simcha Kosman (reporter)</li>
+<li>Pingtao Wei of 2012 Laboratories (finder)</li>
+<li>Ziyang Chen of 2012 Laboratories (finder)</li>
+<li>Haoran Zhi of 2012 Laboratories (finder)</li>
+<li>Hongpei Li of 2012 Laboratories (finder)</li>
+</ul>
+<h2 id="CVE-2023-45757">The builtin service rpcz page has an XSS attack vulnerability</h2>
+<p>CVE-2023-45757 <a href="https://cve.org/CVERecord?id=CVE-2023-45757">[CVE]</a> <a href="./CVE-2023-45757.cve.json">[CVE json]</a> <a href="./CVE-2023-45757.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-10-16T08:01:36.036Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache bRPC from 0.9.0 through 1.6.0</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p><span style="background-color: rgb(255, 255, 255);">Security vulnerability </span>in Apache bRPC &lt;=1.6.0 on all platforms allows attackers to inject XSS code to the builtin rpcz page.<br>An attacker that can send http request to bRPC server with rpcz enabled can inject arbitrary XSS code to the builtin rpcz page.<br><br>Solution<span style="background-color: rgba(0, 0, 0, 0.2);"> (choose one of three)</span>:<br>1. upgrade to bRPC &gt; 1.6.0, download link: <a target="_blank" rel="nofollow" href="https://dist.apache.org/repos/dist/release/brpc/1.6.1/"><a href="https://dist.apache.org/repos/dist/release/brpc/1.6.1/">https://dist.apache.org/repos/dist/release/brpc/1.6.1/</a></a><br>2. If you are using an old version of bRPC and hard to upgrade, you can apply this patch: <a target="_blank" rel="nofollow" href="https://github.com/apache/brpc/pull/2411"><a href="https://github.com/apache/brpc/pull/2411">https://github.com/apache/brpc/pull/2411</a></a><br>3. disable rpcz feature</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/6syxv32fqgl30brfpttrk4rfsb983hl4">https://lists.apache.org/thread/6syxv32fqgl30brfpttrk4rfsb983hl4</a></li>
+</ul>
+<h2 id="CVE-2023-31039">ServerOptions.pid_file may cause arbitrary code execution</h2>
+<p>CVE-2023-31039 <a href="https://cve.org/CVERecord?id=CVE-2023-31039">[CVE]</a> <a href="./CVE-2023-31039.cve.json">[CVE json]</a> <a href="./CVE-2023-31039.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-05-08T08:57:09.633Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache bRPC from 0.9.0 before 1.5.0</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p><span style="background-color: rgb(255, 255, 255);">Security vulnerability </span>in Apache bRPC &lt;1.5.0 on all platforms allows attackers to execute arbitrary code via ServerOptions::pid_file.<br>An attacker that can influence the ServerOptions pid_file parameter with which the bRPC server is started can execute arbitrary code with the permissions of the bRPC process.<br><br>Solution:<br>1. upgrade to bRPC &gt;= 1.5.0, download link: <a target="_blank" rel="nofollow" href="https://dist.apache.org/repos/dist/release/brpc/1.5.0/"><a href="https://dist.apache.org/repos/dist/release/brpc/1.5.0/">https://dist.apache.org/repos/dist/release/brpc/1.5.0/</a></a><br>2. If you are using an old version of bRPC and hard to upgrade, you can apply this patch: <a target="_blank" rel="nofollow" href="https://github.com/apache/brpc/pull/2218"><a href="https://github.com/apache/brpc/pull/2218">https://github.com/apache/brpc/pull/2218</a></a></p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/jqpttrqbc38yhckgp67xk399hqxnz7jn">https://lists.apache.org/thread/jqpttrqbc38yhckgp67xk399hqxnz7jn</a></li>
 </ul>
 
   

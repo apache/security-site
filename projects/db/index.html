@@ -105,28 +105,14 @@
 <p>Do you want disclose a potential security issue for Apache DB? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-41616">Apache ddlutils 1.0 readobject vulnerability</h2>
-<p>CVE-2021-41616 <a href="./CVE-2021-41616.cve.json">[CVE json]</a> <a href="./CVE-2021-41616.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-09-30T07:51:31.141Z</em></p>
-<h3 id="affected">Affected</h3>
-<ul>
-<li>Apache DB ddlutils at 1.0</li>
-</ul>
-<h3 id="description">Description</h3>
-<p>Apache DB DdlUtils 1.0 included a BinaryObjectsHelper that was intended for use when migrating database data with a SQL data type of BINARY, VARBINARY, LONGVARBINARY, or BLOB between databases using the ddlutils features. The BinaryObjectsHelper  class was insecure and used ObjectInputStream.readObject without validating that the input data was safe to deserialize.</p>
-<p>Please note that DdlUtils is no longer being actively developed. To address the insecurity of the BinaryObjectHelper class, the following changes to DdlUtils have been made: (1) BinaryObjectsHelper.java has been deleted from the DdlUtils source repository and the DdlUtils feature of propagating data of SQL binary types is therefore no longer present in DdlUtils; (2) The ddlutils-1.0 release has been removed from the Apache Release Distribution Infrastructure; (3) The DdlUtils web site has been updated to indicate that DdlUtils is now available only as source code, not as a packaged release.</p>
-<h3 id="references">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread.html/r3d7a8303a820144f5e2d1fd0b067e18d419421b58346b53b58d3fa72%40%3Cannounce.apache.org%3E">https://lists.apache.org/thread.html/r3d7a8303a820144f5e2d1fd0b067e18d419421b58346b53b58d3fa72%40%3Cannounce.apache.org%3E</a></li>
-</ul>
 <h2 id="CVE-2022-46337">LDAP injection vulnerability in authenticator</h2>
-<p>CVE-2022-46337 <a href="./CVE-2022-46337.cve.json">[CVE json]</a> <a href="./CVE-2022-46337.osv.json">[OSV json]</a></p>
+<p>CVE-2022-46337 <a href="https://cve.org/CVERecord?id=CVE-2022-46337">[CVE]</a> <a href="./CVE-2022-46337.cve.json">[CVE json]</a> <a href="./CVE-2022-46337.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-01-02T18:36:19.559Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected">Affected</h3>
 <ul>
 <li>Apache Derby from 10.1.1.0 through 10.16.1.1</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description">Description</h3>
 <p>A cleverly devised username might bypass LDAP authentication checks. In
 LDAP-authenticated Derby installations, this could let an attacker fill
 up the disk by creating junk Derby databases. In LDAP-authenticated
@@ -146,13 +132,27 @@ releases which correspond, respectively, with Java LTS versions 17, 11,
 and 8.
 <br>
 <br></p>
-<h3 id="references-1">References</h3>
+<h3 id="references">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/q23kvvtoohgzwybxpwozmvvk17rp0td3">https://lists.apache.org/thread/q23kvvtoohgzwybxpwozmvvk17rp0td3</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
 <li>This issue was discovered by ﻿4ra1n and Y4tacker, who also proposed the fix. (finder)</li>
+</ul>
+<h2 id="CVE-2021-41616">Apache ddlutils 1.0 readobject vulnerability</h2>
+<p>CVE-2021-41616 <a href="https://cve.org/CVERecord?id=CVE-2021-41616">[CVE]</a> <a href="./CVE-2021-41616.cve.json">[CVE json]</a> <a href="./CVE-2021-41616.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-09-30T07:51:31.141Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache DB ddlutils at 1.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Apache DB DdlUtils 1.0 included a BinaryObjectsHelper that was intended for use when migrating database data with a SQL data type of BINARY, VARBINARY, LONGVARBINARY, or BLOB between databases using the ddlutils features. The BinaryObjectsHelper  class was insecure and used ObjectInputStream.readObject without validating that the input data was safe to deserialize.</p>
+<p>Please note that DdlUtils is no longer being actively developed. To address the insecurity of the BinaryObjectHelper class, the following changes to DdlUtils have been made: (1) BinaryObjectsHelper.java has been deleted from the DdlUtils source repository and the DdlUtils feature of propagating data of SQL binary types is therefore no longer present in DdlUtils; (2) The ddlutils-1.0 release has been removed from the Apache Release Distribution Infrastructure; (3) The DdlUtils web site has been updated to indicate that DdlUtils is now available only as source code, not as a packaged release.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r3d7a8303a820144f5e2d1fd0b067e18d419421b58346b53b58d3fa72%40%3Cannounce.apache.org%3E">https://lists.apache.org/thread.html/r3d7a8303a820144f5e2d1fd0b067e18d419421b58346b53b58d3fa72%40%3Cannounce.apache.org%3E</a></li>
 </ul>
 
   

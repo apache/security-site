@@ -105,55 +105,62 @@
 <p>Do you want disclose a potential security issue for Apache Archiva? You can read more about the projects&rsquo; security policy on their <a href="https://archiva.apache.org/security.html">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://archiva.apache.org/security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2022-29405">Apache Archiva Arbitrary user password reset vulnerability</h2>
-<p>CVE-2022-29405 <a href="./CVE-2022-29405.cve.json">[CVE json]</a> <a href="./CVE-2022-29405.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-05-25T07:11:14.322Z</em></p>
+<h2 id="CVE-2024-27140">reflected XSS</h2>
+<p>CVE-2024-27140 <a href="https://cve.org/CVERecord?id=CVE-2024-27140">[CVE]</a> <a href="./CVE-2024-27140.cve.json">[CVE json]</a> <a href="./CVE-2024-27140.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-03-01T15:40:06.489Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Archiva from 2.2 through 2.2.7</li>
+<li>Apache Archiva from 2.0.0 through *</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>In Apache Archiva, any registered user can reset password for any users.  This is fixed in Archiva 2.2.8</p>
+<div>** UNSUPPORTED WHEN ASSIGNED **<br></div><div><br></div><div>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache Archiva.</div><p>This issue affects Apache Archiva: from 2.0.0.</p><p></p><p></p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users. Alternatively, you could configure a HTTP proxy in front of your Archiva instance to only forward requests that do not have malicious characters in the URL.<br></p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p><p></p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://archiva.apache.org/docs/2.2.8/release-notes.html">https://archiva.apache.org/docs/2.2.8/release-notes.html</a></li>
-</ul>
-<h2 id="CVE-2022-40308">Apache Archiva prior to 2.2.9 may allow the anonymous user to read arbitrary files</h2>
-<p>CVE-2022-40308 <a href="./CVE-2022-40308.cve.json">[CVE json]</a> <a href="./CVE-2022-40308.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-11-15T13:08:09.007Z</em></p>
-<h3 id="affected-1">Affected</h3>
-<ul>
-<li>Apache Archiva from Apache Archiva through 2.2.8</li>
-</ul>
-<h3 id="description-1">Description</h3>
-<p>If anonymous read enabled, it&rsquo;s possible to read the database file directly without logging in.</p>
-<h3 id="references-1">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/x01pnn0jjsw512cscxsbxzrjmz64n4cc">https://lists.apache.org/thread/x01pnn0jjsw512cscxsbxzrjmz64n4cc</a></li>
+<li><a href="https://lists.apache.org/thread/xrn6nt904ozh3jym60c3f5hj2fb75pjy">https://lists.apache.org/thread/xrn6nt904ozh3jym60c3f5hj2fb75pjy</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Thanks to L3yx of Syclover Security Team</li>
+<li>sandr0 / Sandro Bauer (sandr0.xyz) (finder)</li>
+<li>BTullis / Ben Tullis (wikimedia.org) (finder)</li>
+<li>sbassett / Scott Bassett (wikimedia.org) (finder)</li>
+<li>L0ne1y (finder)</li>
 </ul>
-<h2 id="CVE-2022-40309">Apache Archiva prior to 2.2.9 allows an authenticated user to delete arbitrary directories</h2>
-<p>CVE-2022-40309 <a href="./CVE-2022-40309.cve.json">[CVE json]</a> <a href="./CVE-2022-40309.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-11-15T13:09:01.491Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h2 id="CVE-2024-27139">incorrect authentication potentially leading to account takeover</h2>
+<p>CVE-2024-27139 <a href="https://cve.org/CVERecord?id=CVE-2024-27139">[CVE]</a> <a href="./CVE-2024-27139.cve.json">[CVE json]</a> <a href="./CVE-2024-27139.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-03-01T15:40:48.119Z</em></p>
+<h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache Archiva from unspecified through 2.2.8</li>
+<li>Apache Archiva from 2.0.0 through *</li>
 </ul>
-<h3 id="description-2">Description</h3>
-<p>Users with write permissions to a repository can delete arbitrary directories.</p>
-<h3 id="references-2">References</h3>
+<h3 id="description-1">Description</h3>
+<p>** UNSUPPORTED WHEN ASSIGNED **<br><div><br></div><div>Incorrect Authorization vulnerability in Apache Archiva: a vulnerability in Apache Archiva allows an unauthenticated attacker to modify account data, potentially leading to account takeover.<br></div><p>This issue affects Apache Archiva: from 2.0.0.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.<br></p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.<br></p></p>
+<h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/1odl4p85r96n27k577jk6ftrp19xfc27">https://lists.apache.org/thread/1odl4p85r96n27k577jk6ftrp19xfc27</a></li>
+<li><a href="https://lists.apache.org/thread/qr8b7r86p1hkn0dc0q827s981kf1bgd8">https://lists.apache.org/thread/qr8b7r86p1hkn0dc0q827s981kf1bgd8</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>Thanks to L3yx of Syclover Security Team</li>
+<li>1uHrm of cyberkl (reporter)</li>
+</ul>
+<h2 id="CVE-2024-27138">disabling user registration is not effective</h2>
+<p>CVE-2024-27138 <a href="https://cve.org/CVERecord?id=CVE-2024-27138">[CVE]</a> <a href="./CVE-2024-27138.cve.json">[CVE json]</a> <a href="./CVE-2024-27138.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-03-01T15:41:11.276Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Archiva from 2.0.0 through *</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<div>** UNSUPPORTED WHEN ASSIGNED ** Incorrect Authorization vulnerability in Apache Archiva.</div><div><br></div><div>Apache Archiva has a setting to disable user registration, however this restriction can be bypassed. As Apache Archiva has been retired, we do not expect to release a version of Apache Archiva that fixes this issue. You are recommended to look into migrating to a different solution, or isolate your instance from any untrusted users.<br></div><p></p><div>NOTE: This vulnerability only affects products that are no longer supported by the maintainer</div><div><br></div><br><p></p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/070qcpclcb3sqk1hn8j5lvzohp30k1m2">https://lists.apache.org/thread/070qcpclcb3sqk1hn8j5lvzohp30k1m2</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Florian Hauser, @frycos (reporter)</li>
 </ul>
 <h2 id="CVE-2023-28158">Apache Archiva privilege escalation</h2>
-<p>CVE-2023-28158 <a href="./CVE-2023-28158.cve.json">[CVE json]</a> <a href="./CVE-2023-28158.osv.json">[OSV json]</a></p>
+<p>CVE-2023-28158 <a href="https://cve.org/CVERecord?id=CVE-2023-28158">[CVE]</a> <a href="./CVE-2023-28158.cve.json">[CVE json]</a> <a href="./CVE-2023-28158.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2023-03-29T12:21:30.415Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
@@ -165,63 +172,56 @@
 <ul>
 <li><a href="https://lists.apache.org/thread/8pm6d5y9cptznm0bdny3n8voovmm0dtt">https://lists.apache.org/thread/8pm6d5y9cptznm0bdny3n8voovmm0dtt</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-3">Credits</h3>
 <ul>
 <li>sandr0 (sandr0.xyz)  (finder)</li>
 </ul>
-<h2 id="CVE-2024-27138">disabling user registration is not effective</h2>
-<p>CVE-2024-27138 <a href="./CVE-2024-27138.cve.json">[CVE json]</a> <a href="./CVE-2024-27138.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-03-01T15:41:11.276Z</em></p>
+<h2 id="CVE-2022-40309">Apache Archiva prior to 2.2.9 allows an authenticated user to delete arbitrary directories</h2>
+<p>CVE-2022-40309 <a href="https://cve.org/CVERecord?id=CVE-2022-40309">[CVE]</a> <a href="./CVE-2022-40309.cve.json">[CVE json]</a> <a href="./CVE-2022-40309.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-11-15T13:09:01.491Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache Archiva from 2.0.0 through *</li>
+<li>Apache Archiva from unspecified through 2.2.8</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<div>** UNSUPPORTED WHEN ASSIGNED ** Incorrect Authorization vulnerability in Apache Archiva.</div><div><br></div><div>Apache Archiva has a setting to disable user registration, however this restriction can be bypassed. As Apache Archiva has been retired, we do not expect to release a version of Apache Archiva that fixes this issue. You are recommended to look into migrating to a different solution, or isolate your instance from any untrusted users.<br></div><p></p><div>NOTE: This vulnerability only affects products that are no longer supported by the maintainer</div><div><br></div><br><p></p>
+<p>Users with write permissions to a repository can delete arbitrary directories.</p>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/070qcpclcb3sqk1hn8j5lvzohp30k1m2">https://lists.apache.org/thread/070qcpclcb3sqk1hn8j5lvzohp30k1m2</a></li>
-</ul>
-<h3 id="credits-3">Credits</h3>
-<ul>
-<li>Florian Hauser, @frycos (reporter)</li>
-</ul>
-<h2 id="CVE-2024-27139">incorrect authentication potentially leading to account takeover</h2>
-<p>CVE-2024-27139 <a href="./CVE-2024-27139.cve.json">[CVE json]</a> <a href="./CVE-2024-27139.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-03-01T15:40:48.119Z</em></p>
-<h3 id="affected-5">Affected</h3>
-<ul>
-<li>Apache Archiva from 2.0.0 through *</li>
-</ul>
-<h3 id="description-5">Description</h3>
-<p>** UNSUPPORTED WHEN ASSIGNED **<br><div><br></div><div>Incorrect Authorization vulnerability in Apache Archiva: a vulnerability in Apache Archiva allows an unauthenticated attacker to modify account data, potentially leading to account takeover.<br></div><p>This issue affects Apache Archiva: from 2.0.0.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.<br></p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.<br></p></p>
-<h3 id="references-5">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/qr8b7r86p1hkn0dc0q827s981kf1bgd8">https://lists.apache.org/thread/qr8b7r86p1hkn0dc0q827s981kf1bgd8</a></li>
+<li><a href="https://lists.apache.org/thread/1odl4p85r96n27k577jk6ftrp19xfc27">https://lists.apache.org/thread/1odl4p85r96n27k577jk6ftrp19xfc27</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>1uHrm of cyberkl (reporter)</li>
+<li>Thanks to L3yx of Syclover Security Team</li>
 </ul>
-<h2 id="CVE-2024-27140">reflected XSS</h2>
-<p>CVE-2024-27140 <a href="./CVE-2024-27140.cve.json">[CVE json]</a> <a href="./CVE-2024-27140.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-03-01T15:40:06.489Z</em></p>
-<h3 id="affected-6">Affected</h3>
+<h2 id="CVE-2022-40308">Apache Archiva prior to 2.2.9 may allow the anonymous user to read arbitrary files</h2>
+<p>CVE-2022-40308 <a href="https://cve.org/CVERecord?id=CVE-2022-40308">[CVE]</a> <a href="./CVE-2022-40308.cve.json">[CVE json]</a> <a href="./CVE-2022-40308.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-11-15T13:08:09.007Z</em></p>
+<h3 id="affected-5">Affected</h3>
 <ul>
-<li>Apache Archiva from 2.0.0 through *</li>
+<li>Apache Archiva from Apache Archiva through 2.2.8</li>
 </ul>
-<h3 id="description-6">Description</h3>
-<div>** UNSUPPORTED WHEN ASSIGNED **<br></div><div><br></div><div>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache Archiva.</div><p>This issue affects Apache Archiva: from 2.0.0.</p><p></p><p></p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users. Alternatively, you could configure a HTTP proxy in front of your Archiva instance to only forward requests that do not have malicious characters in the URL.<br></p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p><p></p>
-<h3 id="references-6">References</h3>
+<h3 id="description-5">Description</h3>
+<p>If anonymous read enabled, it&rsquo;s possible to read the database file directly without logging in.</p>
+<h3 id="references-5">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/xrn6nt904ozh3jym60c3f5hj2fb75pjy">https://lists.apache.org/thread/xrn6nt904ozh3jym60c3f5hj2fb75pjy</a></li>
+<li><a href="https://lists.apache.org/thread/x01pnn0jjsw512cscxsbxzrjmz64n4cc">https://lists.apache.org/thread/x01pnn0jjsw512cscxsbxzrjmz64n4cc</a></li>
 </ul>
 <h3 id="credits-5">Credits</h3>
 <ul>
-<li>sandr0 / Sandro Bauer (sandr0.xyz) (finder)</li>
-<li>BTullis / Ben Tullis (wikimedia.org) (finder)</li>
-<li>sbassett / Scott Bassett (wikimedia.org) (finder)</li>
-<li>L0ne1y (finder)</li>
+<li>Thanks to L3yx of Syclover Security Team</li>
+</ul>
+<h2 id="CVE-2022-29405">Apache Archiva Arbitrary user password reset vulnerability</h2>
+<p>CVE-2022-29405 <a href="https://cve.org/CVERecord?id=CVE-2022-29405">[CVE]</a> <a href="./CVE-2022-29405.cve.json">[CVE json]</a> <a href="./CVE-2022-29405.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-05-25T07:11:14.322Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Archiva from 2.2 through 2.2.7</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>In Apache Archiva, any registered user can reset password for any users.  This is fixed in Archiva 2.2.8</p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://archiva.apache.org/docs/2.2.8/release-notes.html">https://archiva.apache.org/docs/2.2.8/release-notes.html</a></li>
 </ul>
 
   

@@ -105,181 +105,214 @@
 <p>Do you want disclose a potential security issue for Apache DolphinScheduler? You can read more about the projects&rsquo; security policy on their <a href="https://github.com/apache/dolphinscheduler/blob/dev/docs/docs/en/contribute/join/security.md">security page</a>, and email your report to the <a href="mailto:security@dolphinscheduler.apache.org">Apache DolphinScheduler Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://github.com/apache/dolphinscheduler/blob/dev/docs/docs/en/contribute/join/security.md">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2020-13922">Apache DolphinScheduler (incubating) Permission vulnerability</h2>
-<p>CVE-2020-13922 <a href="./CVE-2020-13922.cve.json">[CVE json]</a> <a href="./CVE-2020-13922.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-01-11T09:18:42.255Z</em></p>
+<h2 id="CVE-2024-43202">Remote Code Execution Vulnerability</h2>
+<p>CVE-2024-43202 <a href="https://cve.org/CVERecord?id=CVE-2024-43202">[CVE]</a> <a href="./CVE-2024-43202.cve.json">[CVE json]</a> <a href="./CVE-2024-43202.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-08-20T07:29:41.648Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache DolphinScheduler from Apache DolphinScheduler before 1.3.2</li>
+<li>Apache DolphinScheduler from 3.0.0 before 3.2.2</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Versions of Apache DolphinScheduler prior to 1.3.2 allowed an ordinary user under any tenant to override another users password through the API interface.</p>
+<p>Exposure of Remote Code Execution in Apache Dolphinscheduler.<br><br>This issue affects Apache DolphinScheduler: before 3.2.2. <br><br>We recommend users to upgrade Apache DolphinScheduler to version 3.2.2, which fixes the issue.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://www.mail-archive.com/announce%40apache.org/msg06076.html">https://www.mail-archive.com/announce%40apache.org/msg06076.html</a></li>
+<li><a href="https://github.com/apache/dolphinscheduler/pull/15758">https://github.com/apache/dolphinscheduler/pull/15758</a></li>
+<li><a href="https://lists.apache.org/thread/nlmdp7q7l7o3l27778vxc5px24ncr5r5">https://lists.apache.org/thread/nlmdp7q7l7o3l27778vxc5px24ncr5r5</a></li>
+<li><a href="https://lists.apache.org/thread/qbhk9wqyxhrn4z7m4m343wqxpwg926nh">https://lists.apache.org/thread/qbhk9wqyxhrn4z7m4m343wqxpwg926nh</a></li>
+<li><a href="https://www.cve.org/CVERecord?id=CVE-2023-49109">https://www.cve.org/CVERecord?id=CVE-2023-49109</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>This issue was discovered by xuxiang of DtDream security</li>
+<li>an4er (reporter)</li>
 </ul>
-<h2 id="CVE-2021-27644">DolphinScheduler mysql jdbc connector parameters deserialize remote code execution</h2>
-<p>CVE-2021-27644 <a href="./CVE-2021-27644.cve.json">[CVE json]</a> <a href="./CVE-2021-27644.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-11-01T09:12:08.670Z</em></p>
+<h2 id="CVE-2024-43166">CWE-276 Incorrect Default Permissions</h2>
+<p>CVE-2024-43166 <a href="https://cve.org/CVERecord?id=CVE-2024-43166">[CVE]</a> <a href="./CVE-2024-43166.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2025-09-18T09:38:13.985Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache DolphinScheduler from Apache DolphinScheduler before 1.3.6</li>
+<li>Apache DolphinScheduler before 3.2.2</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>In Apache DolphinScheduler before 1.3.6 versions, authorized users can use SQL injection in the data source center. (Only applicable to MySQL data source with internal login account password)</p>
+<p>Incorrect Default Permissions vulnerability in Apache DolphinScheduler.</p><p>This issue affects Apache DolphinScheduler: before 3.2.2.</p><p>Users are recommended to upgrade to version <span style="background-color: rgb(255, 255, 255);">3.3.1</span>, which fixes the issue.</p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread.html/r35d6acf021486a390a7ea09e6650c2fe19e72522bd484791d606a6e6%40%3Cdev.dolphinscheduler.apache.org%3E">https://lists.apache.org/thread.html/r35d6acf021486a390a7ea09e6650c2fe19e72522bd484791d606a6e6%40%3Cdev.dolphinscheduler.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread/8zd69zkkx55qp365xp4tml1xh9og5lhk">https://lists.apache.org/thread/8zd69zkkx55qp365xp4tml1xh9og5lhk</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>This issue was discovered by Jinchen Sheng of Ant FG Security Lab</li>
+<li>L0ne1y (reporter)</li>
 </ul>
-<h2 id="CVE-2022-25598">Apache DolphinScheduler user registration is vulnerable to ReDoS attacks</h2>
-<p>CVE-2022-25598 <a href="./CVE-2022-25598.cve.json">[CVE json]</a> <a href="./CVE-2022-25598.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-11-01T03:18:38.664Z</em></p>
+<h2 id="CVE-2024-43115">Alert Script Attack</h2>
+<p>CVE-2024-43115 <a href="https://cve.org/CVERecord?id=CVE-2024-43115">[CVE]</a> <a href="./CVE-2024-43115.cve.json">[CVE json]</a> <a href="./CVE-2024-43115.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-09-03T08:38:26.012Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache DolphinScheduler from Apache DolphinScheduler before 2.0.5</li>
+<li>Apache DolphinScheduler before 3.2.2</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>Apache DolphinScheduler user registration is vulnerable to Regular express Denial of Service (ReDoS) attacks, Apache DolphinScheduler users should upgrade to version 2.0.5 or higher.Uncontrolled Resource Consumption vulnerability in <strong>COMPONENT</strong> of Apache DolphinScheduler allows an attacker to <strong>IMPACT</strong>.  This issue affects Apache DolphinScheduler Apache DolphinScheduler versions prior to 2.0.5.</p>
+<div>Improper Input Validation vulnerability in Apache DolphinScheduler. An <span style="background-color: rgb(255, 255, 255);">authenticated user can execute any shell script server by alert script.</span><br></div><p>This issue affects Apache DolphinScheduler: before 3.2.2.</p><p>Users are recommended to upgrade to version <span style="background-color: rgb(255, 255, 255);">3.3.1</span>, which fixes the issue.</p><br>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/hwnw7xr969sg5nv84wz75nfr2c76fl93">https://lists.apache.org/thread/hwnw7xr969sg5nv84wz75nfr2c76fl93</a></li>
+<li><a href="https://lists.apache.org/thread/qm36nrsv1vrr2j4o5q2wo75h3686hrnj">https://lists.apache.org/thread/qm36nrsv1vrr2j4o5q2wo75h3686hrnj</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>This issue was discovered by Zheng Wang of HIT</li>
+<li>L0ne1y (reporter)</li>
 </ul>
-<h2 id="CVE-2022-26884">Apache DolphinScheduler exposes files without authentication</h2>
-<p>CVE-2022-26884 <a href="./CVE-2022-26884.cve.json">[CVE json]</a> <a href="./CVE-2022-26884.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-10-28T01:44:55.028Z</em></p>
+<h2 id="CVE-2024-30188">Resource File Read And Write Vulnerability</h2>
+<p>CVE-2024-30188 <a href="https://cve.org/CVERecord?id=CVE-2024-30188">[CVE]</a> <a href="./CVE-2024-30188.cve.json">[CVE json]</a> <a href="./CVE-2024-30188.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-08-09T12:45:43.623Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache DolphinScheduler from Apache DolphinScheduler before 2.0.6</li>
+<li>Apache DolphinScheduler from 3.1.0 before 3.2.2</li>
 </ul>
 <h3 id="description-3">Description</h3>
-<p>Users can read any files by log server, Apache DolphinScheduler users should upgrade to version 2.0.6 or higher.</p>
+<p>File read and write vulnerability in Apache DolphinScheduler ,  authenticated users can illegally access additional resource files.<br><p>This issue affects Apache DolphinScheduler: from 3.1.0 before 3.2.2.</p><p>Users are recommended to upgrade to version 3.2.2, which fixes the issue.</p></p>
 <h3 id="references-3">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/xfdst5y4hnrm2ntmc5jzrgmw2htyyb9c">https://lists.apache.org/thread/xfdst5y4hnrm2ntmc5jzrgmw2htyyb9c</a></li>
-</ul>
-<h2 id="CVE-2022-26885">Apache DolphinScheduler config file read by task risk</h2>
-<p>CVE-2022-26885 <a href="./CVE-2022-26885.cve.json">[CVE json]</a> <a href="./CVE-2022-26885.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-11-24T11:55:57.562Z</em></p>
-<h3 id="affected-4">Affected</h3>
-<ul>
-<li>Apache DolphinScheduler from Apache DolphinScheduler before 2.0.6</li>
-</ul>
-<h3 id="description-4">Description</h3>
-<p>When using tasks to read config files, there is a risk of database password disclosure.   We recommend you upgrade to version 2.0.6 or higher.</p>
-<h3 id="references-4">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/z7084r9cs2r26cszkkgjqpb5bhnxqssp">https://lists.apache.org/thread/z7084r9cs2r26cszkkgjqpb5bhnxqssp</a></li>
-</ul>
-<h2 id="CVE-2022-34662">Apache DolphinScheduler prior to 3.0.0 allows path traversal</h2>
-<p>CVE-2022-34662 <a href="./CVE-2022-34662.cve.json">[CVE json]</a> <a href="./CVE-2022-34662.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-11-01T15:28:47.599Z</em></p>
-<h3 id="affected-5">Affected</h3>
-<ul>
-<li>Apache DolphinScheduler from Apache DolphinScheduler through 3.0.0-beta-1</li>
-</ul>
-<h3 id="description-5">Description</h3>
-<p>When users add resources to the resource center with a relation path will cause path traversal issues and only for logged-in users. You could upgrade to version 3.0.0 or higher</p>
-<h3 id="references-5">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/pbdzqf9ntxyvs4cr0x2dgk9zlf43btz8">https://lists.apache.org/thread/pbdzqf9ntxyvs4cr0x2dgk9zlf43btz8</a></li>
+<li><a href="https://lists.apache.org/thread/tbrt42mnr42bq6scxwt6bjr3s2pwyd07">https://lists.apache.org/thread/tbrt42mnr42bq6scxwt6bjr3s2pwyd07</a></li>
 </ul>
 <h3 id="credits-3">Credits</h3>
 <ul>
-<li>This issue was discovered by Jigang Dong of M1QLin Security Team</li>
+<li>L0ne1y (reporter)</li>
+<li>drun1baby (reporter)</li>
+<li>Zevi (reporter)</li>
+<li>Xun Bai (reporter)</li>
 </ul>
-<h2 id="CVE-2022-45462">Apache DolphinScheduler prior to 2.0.5 have command execution vulnerability</h2>
-<p>CVE-2022-45462 <a href="./CVE-2022-45462.cve.json">[CVE json]</a> <a href="./CVE-2022-45462.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-11-23T02:24:20.816Z</em></p>
-<h3 id="affected-6">Affected</h3>
+<h2 id="CVE-2024-29831">RCE by arbitrary js execution</h2>
+<p>CVE-2024-29831 <a href="https://cve.org/CVERecord?id=CVE-2024-29831">[CVE]</a> <a href="./CVE-2024-29831.cve.json">[CVE json]</a> <a href="./CVE-2024-29831.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-08-09T14:21:46.981Z</em></p>
+<h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache DolphinScheduler from unspecified through 2.0.5</li>
+<li>Apache DolphinScheduler through 3.2.1</li>
 </ul>
-<h3 id="description-6">Description</h3>
-<p>Alarm instance management has command injection when there is a specific command configured. It is only for logged-in users. We recommend you upgrade to version 2.0.6 or higher</p>
-<h3 id="references-6">References</h3>
+<h3 id="description-4">Description</h3>
+<p>Improper Input Validation vulnerability in Apache DolphinScheduler. An <span style="background-color: rgb(255, 255, 255);">authenticated user can cause arbitrary, unsandboxed javascript to be executed on the server. If you are using the switch task plugin, please upgrade to version 3.2.2.<br></span></p>
+<h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/2f126y32bf1v3mvxkdgt2jr5j3l1t01w">https://lists.apache.org/thread/2f126y32bf1v3mvxkdgt2jr5j3l1t01w</a></li>
+<li><a href="https://lists.apache.org/thread/x1ch0x5om3srtbnp7rtsvdszho3mdrq0">https://lists.apache.org/thread/x1ch0x5om3srtbnp7rtsvdszho3mdrq0</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>This issue was discovered by Jigang Dong of M1QLin Security Team</li>
+<li>yerest (reporter)</li>
+<li>L0ne1y (reporter)</li>
+<li>My Long (reporter)</li>
 </ul>
-<h2 id="CVE-2022-45875">Remote command execution Vulnerability in script alert plugin</h2>
-<p>CVE-2022-45875 <a href="./CVE-2022-45875.cve.json">[CVE json]</a> <a href="./CVE-2022-45875.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-11-22T08:37:58.550Z</em></p>
-<h3 id="affected-7">Affected</h3>
-<ul>
-<li>Apache DolphinScheduler from 3.0 through 3.0.1</li>
-<li>Apache DolphinScheduler from 3.1 through 3.1.0</li>
-</ul>
-<h3 id="description-7">Description</h3>
-<p>Improper validation of script alert plugin parameters in Apache DolphinScheduler to avoid remote command execution vulnerability.  This issue affects Apache DolphinScheduler version 3.0.1 and prior versions; version 3.1.0 and prior versions.<br><span style="background-color: rgb(255, 255, 255);">This attack can be performed only by authenticated users which can login to DS.</span><br><br></p>
-<h3 id="references-7">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/r0wqzkjsoq17j6ww381kmpx3jjp9hb6r">https://lists.apache.org/thread/r0wqzkjsoq17j6ww381kmpx3jjp9hb6r</a></li>
-</ul>
-<h3 id="credits-5">Credits</h3>
-<ul>
-<li>4ra1n of Chaitin Tech (finder)</li>
-</ul>
-<h2 id="CVE-2023-25601">Apache DolphinScheduler 3.0.0 to 3.1.1 python gateway has improper authentication</h2>
-<p>CVE-2023-25601 <a href="./CVE-2023-25601.cve.json">[CVE json]</a> <a href="./CVE-2023-25601.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-04-20T15:06:54.846Z</em></p>
-<h3 id="affected-8">Affected</h3>
-<ul>
-<li>Apache DolphinScheduler from 3.0.0 before 3.1.2</li>
-</ul>
-<h3 id="description-8">Description</h3>
-<p>On version 3.0.0 through 3.1.1, Apache DolphinScheduler&rsquo;s python gateway suffered from improper authentication: an attacker could use a socket bytes attack without authentication. This issue has been fixed from version 3.1.2 onwards. For users who use version 3.0.0 to 3.1.1, you can turn off the python-gateway function by changing the value <code>python-gateway.enabled=false</code> in configuration file <code>application.yaml</code>. If you are using the python gateway, please upgrade to version 3.1.2 or above.<br></p>
-<h3 id="references-8">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/25g77jqczp3t8cz56hk1p65q7m6c64rf">https://lists.apache.org/thread/25g77jqczp3t8cz56hk1p65q7m6c64rf</a></li>
-</ul>
-<h2 id="CVE-2023-48796">Sensitive information disclosure</h2>
-<p>CVE-2023-48796 <a href="./CVE-2023-48796.cve.json">[CVE json]</a> <a href="./CVE-2023-48796.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-11-28T05:01:20.066Z</em></p>
-<h3 id="affected-9">Affected</h3>
-<ul>
-<li>Apache DolphinScheduler from 3.0.0 before 3.0.2</li>
-</ul>
-<h3 id="description-9">Description</h3>
-<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache DolphinScheduler.<br><br>The information exposed to unauthorized actors may include sensitive data such as database credentials.<br><br>Users who can&rsquo;t upgrade to the fixed version can also set environment variable <code>MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE=health,metrics,prometheus</code> to workaround this, or add the following section in the <code>application.yaml</code> file<br><br><br><code>&lt;br&gt;management:&lt;br&gt;&amp;nbsp; endpoints:&lt;br&gt;&amp;nbsp; &amp;nbsp; web:&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; exposure:&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; include: health,metrics,prometheus&lt;br&gt;</code><br><p><br></p><p>This issue affects Apache DolphinScheduler: from 3.0.0 before 3.0.2.</p><p>Users are recommended to upgrade to version 3.0.2, which fixes the issue.</p></p>
-<h3 id="references-9">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/ffrmkcwgr2lcz0f5nnnyswhpn3fytsvo">https://lists.apache.org/thread/ffrmkcwgr2lcz0f5nnnyswhpn3fytsvo</a></li>
-</ul>
-<h2 id="CVE-2023-49068">Information Leakage Vulnerability</h2>
-<p>CVE-2023-49068 <a href="./CVE-2023-49068.cve.json">[CVE json]</a> <a href="./CVE-2023-49068.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-11-27T09:49:38.223Z</em></p>
-<h3 id="affected-10">Affected</h3>
+<h2 id="CVE-2024-23320">Arbitrary js execution as root for authenticated users</h2>
+<p>CVE-2024-23320 <a href="https://cve.org/CVERecord?id=CVE-2024-23320">[CVE]</a> <a href="./CVE-2024-23320.cve.json">[CVE json]</a> <a href="./CVE-2024-23320.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-02-23T16:36:40.046Z</em></p>
+<h3 id="affected-5">Affected</h3>
 <ul>
 <li>Apache DolphinScheduler before 3.2.1</li>
 </ul>
-<h3 id="description-10">Description</h3>
-<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache DolphinScheduler.<p>This issue affects Apache DolphinScheduler: before 3.2.1.<br></p><p>Users are recommended to upgrade to version 3.2.1, which fixes the issue. At the time of disclosure of this advisory, this version has not yet been released. In the mean time, we recommend you make sure the logs are only available to trusted operators.<br></p></p>
-<h3 id="references-10">References</h3>
+<h3 id="description-5">Description</h3>
+<p>Improper Input Validation vulnerability in Apache DolphinScheduler. An <span style="background-color: rgb(255, 255, 255);">authenticated user can cause arbitrary, unsandboxed javascript to be executed on the server.<br></span><br><br>This issue is a legacy of CVE-2023-49299. We didn&rsquo;t fix it completely in CVE-2023-49299, and we added one more patch to fix it.<p><br></p><p>This issue affects Apache DolphinScheduler: until 3.2.1.</p><p><br></p><p>Users are recommended to upgrade to version 3.2.1, which fixes the issue.</p><br><br></p>
+<h3 id="references-5">References</h3>
 <ul>
-<li><a href="https://github.com/apache/dolphinscheduler/pull/15192">https://github.com/apache/dolphinscheduler/pull/15192</a></li>
-<li><a href="https://lists.apache.org/thread/jn6kr6mjdgtfgpxoq9j8q4pkfsq8zmpq">https://lists.apache.org/thread/jn6kr6mjdgtfgpxoq9j8q4pkfsq8zmpq</a></li>
+<li><a href="https://github.com/apache/dolphinscheduler/pull/15487">https://github.com/apache/dolphinscheduler/pull/15487</a></li>
+<li><a href="https://lists.apache.org/thread/tnf99qoc6tlnwrny4t1zk6mfszgdsokm">https://lists.apache.org/thread/tnf99qoc6tlnwrny4t1zk6mfszgdsokm</a></li>
+<li><a href="https://lists.apache.org/thread/25qhfvlksozzp6j9y8ozznvjdjp3lxqq">https://lists.apache.org/thread/25qhfvlksozzp6j9y8ozznvjdjp3lxqq</a></li>
+<li><a href="https://lists.apache.org/thread/p7rwzdgrztdfps8x1bwx646f1mn0x6cp">https://lists.apache.org/thread/p7rwzdgrztdfps8x1bwx646f1mn0x6cp</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>xuesong.zhou (finder)</li>
+<li>Nbxiglk (finder)</li>
+<li>Huang Atao (finder)</li>
+</ul>
+<h2 id="CVE-2023-51770">Arbitrary File Read Vulnerability</h2>
+<p>CVE-2023-51770 <a href="https://cve.org/CVERecord?id=CVE-2023-51770">[CVE]</a> <a href="./CVE-2023-51770.cve.json">[CVE json]</a> <a href="./CVE-2023-51770.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-02-20T06:00:50.765Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler from 1.2.0 before 3.2.1</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>Arbitrary File Read Vulnerability in Apache Dolphinscheduler.<br><br>This issue affects Apache DolphinScheduler: before 3.2.1. <br><br>We recommend users to upgrade Apache DolphinScheduler to version 3.2.1, which fixes the issue.</p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://github.com/apache/dolphinscheduler/pull/15433">https://github.com/apache/dolphinscheduler/pull/15433</a></li>
+<li><a href="https://lists.apache.org/thread/4t8bdjqnfhldh73gy9p0whlgvnnbtn7g">https://lists.apache.org/thread/4t8bdjqnfhldh73gy9p0whlgvnnbtn7g</a></li>
+<li><a href="https://lists.apache.org/thread/gpks573kn00ofxn7n9gkg6o47d03p5rw">https://lists.apache.org/thread/gpks573kn00ofxn7n9gkg6o47d03p5rw</a></li>
 </ul>
 <h3 id="credits-6">Credits</h3>
 <ul>
-<li>Y4tacker and 4ra1n from Y4secTeam (finder)</li>
+<li>zhiwei (finder)</li>
+<li>rg (finder)</li>
+</ul>
+<h2 id="CVE-2023-50270">Session do not expire after password change</h2>
+<p>CVE-2023-50270 <a href="https://cve.org/CVERecord?id=CVE-2023-50270">[CVE]</a> <a href="./CVE-2023-50270.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2024-02-23T10:17:33.021Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler from 1.3.8 through 3.2.0</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>Session Fixation Apache DolphinScheduler before version 3.2.0, which session is still valid after the password change.<br><br>Users are recommended to upgrade to version 3.2.1, which fixes this issue.</p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://github.com/apache/dolphinscheduler/pull/15219">https://github.com/apache/dolphinscheduler/pull/15219</a></li>
+<li><a href="https://lists.apache.org/thread/lmnf21obyos920dnvbfpwq29c1sd2r9r">https://lists.apache.org/thread/lmnf21obyos920dnvbfpwq29c1sd2r9r</a></li>
+<li><a href="https://lists.apache.org/thread/94prw8hyk60vvw7s6cs3tr708qzqlwl6">https://lists.apache.org/thread/94prw8hyk60vvw7s6cs3tr708qzqlwl6</a></li>
+<li><a href="https://www.openwall.com/lists/oss-security/2024/02/20/3">https://www.openwall.com/lists/oss-security/2024/02/20/3</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>lujiefsi (finder)</li>
+<li>Qing Xu (finder)</li>
+</ul>
+<h2 id="CVE-2023-49620">Authenticated users could delete UDFs in resource center they were not authorized for</h2>
+<p>CVE-2023-49620 <a href="https://cve.org/CVERecord?id=CVE-2023-49620">[CVE]</a> <a href="./CVE-2023-49620.cve.json">[CVE json]</a> <a href="./CVE-2023-49620.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-11-30T08:16:57.761Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler from 2.0.0 before 3.1.0</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>Before DolphinScheduler version 3.1.0, the login user could delete UDF function in the resource center unauthorized (which almost used in sql task), with unauthorized access vulnerability (IDOR), but after version 3.1.0 we fixed this issue. We mark this cve as moderate level because it still requires user login to operate, please upgrade to version 3.1.0 to avoid this vulnerability</p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://github.com/apache/dolphinscheduler/pull/10307">https://github.com/apache/dolphinscheduler/pull/10307</a></li>
+<li><a href="https://lists.apache.org/thread/zm4t1ykj4cro1c8183q7y32z0yzfz8yj">https://lists.apache.org/thread/zm4t1ykj4cro1c8183q7y32z0yzfz8yj</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>Yuanheng Lab of zhongfu (finder)</li>
+</ul>
+<h2 id="CVE-2023-49299">Arbitrary js execute as root for authenticated users</h2>
+<p>CVE-2023-49299 <a href="https://cve.org/CVERecord?id=CVE-2023-49299">[CVE]</a> <a href="./CVE-2023-49299.cve.json">[CVE json]</a> <a href="./CVE-2023-49299.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-12-30T16:30:14.065Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler before 3.1.9</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>Improper Input Validation vulnerability in Apache DolphinScheduler. An <span style="background-color: rgb(255, 255, 255);">authenticated user can cause arbitrary, unsandboxed javascript to be executed on the server.</span><p>This issue affects Apache DolphinScheduler: until 3.1.9.</p><p>Users are recommended to upgrade to version 3.1.9, which fixes the issue.</p></p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://github.com/apache/dolphinscheduler/pull/15228">https://github.com/apache/dolphinscheduler/pull/15228</a></li>
+<li><a href="https://lists.apache.org/thread/tnf99qoc6tlnwrny4t1zk6mfszgdsokm">https://lists.apache.org/thread/tnf99qoc6tlnwrny4t1zk6mfszgdsokm</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>Eluen Siebene (finder)</li>
+</ul>
+<h2 id="CVE-2023-49250">Insecure TLS TrustManager used in HttpUtil</h2>
+<p>CVE-2023-49250 <a href="https://cve.org/CVERecord?id=CVE-2023-49250">[CVE]</a> <a href="./CVE-2023-49250.cve.json">[CVE json]</a> <a href="./CVE-2023-49250.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-02-20T05:59:07.770Z</em></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler through 3.2.0</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<p><span style="background-color: rgb(255, 255, 255);">Because the HttpUtils class did not verify certificates, an attacker that could perform a Man-in-the-Middle (MITM) attack on outgoing https connections could impersonate the server.</span><br></p><p>This issue affects Apache DolphinScheduler: before 3.2.0.</p><p>Users are recommended to upgrade to version 3.2.1, which fixes the issue.</p><br>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://github.com/apache/dolphinscheduler/pull/15288">https://github.com/apache/dolphinscheduler/pull/15288</a></li>
+<li><a href="https://lists.apache.org/thread/wgs2jvhbmq8xnd6rmg0ymz73nyj7b3qn">https://lists.apache.org/thread/wgs2jvhbmq8xnd6rmg0ymz73nyj7b3qn</a></li>
 </ul>
 <h2 id="CVE-2023-49109">Remote Code Execution in Apache Dolphinscheduler</h2>
-<p>CVE-2023-49109 <a href="./CVE-2023-49109.cve.json">[CVE json]</a> <a href="./CVE-2023-49109.osv.json">[OSV json]</a></p>
+<p>CVE-2023-49109 <a href="https://cve.org/CVERecord?id=CVE-2023-49109">[CVE]</a> <a href="./CVE-2023-49109.cve.json">[CVE json]</a> <a href="./CVE-2023-49109.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-02-20T06:02:40.133Z</em></p>
 <h3 id="affected-11">Affected</h3>
 <ul>
@@ -293,215 +326,182 @@
 <li><a href="https://lists.apache.org/thread/6kgsl93vtqlbdk6otttl0d8wmlspk0m5">https://lists.apache.org/thread/6kgsl93vtqlbdk6otttl0d8wmlspk0m5</a></li>
 <li><a href="https://lists.apache.org/thread/5b6yq2gov0fsy9x5dkvo8ws4rr45vkn8">https://lists.apache.org/thread/5b6yq2gov0fsy9x5dkvo8ws4rr45vkn8</a></li>
 </ul>
-<h3 id="credits-7">Credits</h3>
+<h3 id="credits-10">Credits</h3>
 <ul>
 <li>Y4tacker and 4ra1n from Y4secTeam (finder)</li>
 </ul>
-<h2 id="CVE-2023-49250">Insecure TLS TrustManager used in HttpUtil</h2>
-<p>CVE-2023-49250 <a href="./CVE-2023-49250.cve.json">[CVE json]</a> <a href="./CVE-2023-49250.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-02-20T05:59:07.770Z</em></p>
+<h2 id="CVE-2023-49068">Information Leakage Vulnerability</h2>
+<p>CVE-2023-49068 <a href="https://cve.org/CVERecord?id=CVE-2023-49068">[CVE]</a> <a href="./CVE-2023-49068.cve.json">[CVE json]</a> <a href="./CVE-2023-49068.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-11-27T09:49:38.223Z</em></p>
 <h3 id="affected-12">Affected</h3>
-<ul>
-<li>Apache DolphinScheduler through 3.2.0</li>
-</ul>
-<h3 id="description-12">Description</h3>
-<p><span style="background-color: rgb(255, 255, 255);">Because the HttpUtils class did not verify certificates, an attacker that could perform a Man-in-the-Middle (MITM) attack on outgoing https connections could impersonate the server.</span><br></p><p>This issue affects Apache DolphinScheduler: before 3.2.0.</p><p>Users are recommended to upgrade to version 3.2.1, which fixes the issue.</p><br>
-<h3 id="references-12">References</h3>
-<ul>
-<li><a href="https://github.com/apache/dolphinscheduler/pull/15288">https://github.com/apache/dolphinscheduler/pull/15288</a></li>
-<li><a href="https://lists.apache.org/thread/wgs2jvhbmq8xnd6rmg0ymz73nyj7b3qn">https://lists.apache.org/thread/wgs2jvhbmq8xnd6rmg0ymz73nyj7b3qn</a></li>
-</ul>
-<h2 id="CVE-2023-49299">Arbitrary js execute as root for authenticated users</h2>
-<p>CVE-2023-49299 <a href="./CVE-2023-49299.cve.json">[CVE json]</a> <a href="./CVE-2023-49299.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-12-30T16:30:14.065Z</em></p>
-<h3 id="affected-13">Affected</h3>
-<ul>
-<li>Apache DolphinScheduler before 3.1.9</li>
-</ul>
-<h3 id="description-13">Description</h3>
-<p>Improper Input Validation vulnerability in Apache DolphinScheduler. An <span style="background-color: rgb(255, 255, 255);">authenticated user can cause arbitrary, unsandboxed javascript to be executed on the server.</span><p>This issue affects Apache DolphinScheduler: until 3.1.9.</p><p>Users are recommended to upgrade to version 3.1.9, which fixes the issue.</p></p>
-<h3 id="references-13">References</h3>
-<ul>
-<li><a href="https://github.com/apache/dolphinscheduler/pull/15228">https://github.com/apache/dolphinscheduler/pull/15228</a></li>
-<li><a href="https://lists.apache.org/thread/tnf99qoc6tlnwrny4t1zk6mfszgdsokm">https://lists.apache.org/thread/tnf99qoc6tlnwrny4t1zk6mfszgdsokm</a></li>
-</ul>
-<h3 id="credits-8">Credits</h3>
-<ul>
-<li>Eluen Siebene (finder)</li>
-</ul>
-<h2 id="CVE-2023-49620">Authenticated users could delete UDFs in resource center they were not authorized for</h2>
-<p>CVE-2023-49620 <a href="./CVE-2023-49620.cve.json">[CVE json]</a> <a href="./CVE-2023-49620.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-11-30T08:16:57.761Z</em></p>
-<h3 id="affected-14">Affected</h3>
-<ul>
-<li>Apache DolphinScheduler from 2.0.0 before 3.1.0</li>
-</ul>
-<h3 id="description-14">Description</h3>
-<p>Before DolphinScheduler version 3.1.0, the login user could delete UDF function in the resource center unauthorized (which almost used in sql task), with unauthorized access vulnerability (IDOR), but after version 3.1.0 we fixed this issue. We mark this cve as moderate level because it still requires user login to operate, please upgrade to version 3.1.0 to avoid this vulnerability</p>
-<h3 id="references-14">References</h3>
-<ul>
-<li><a href="https://github.com/apache/dolphinscheduler/pull/10307">https://github.com/apache/dolphinscheduler/pull/10307</a></li>
-<li><a href="https://lists.apache.org/thread/zm4t1ykj4cro1c8183q7y32z0yzfz8yj">https://lists.apache.org/thread/zm4t1ykj4cro1c8183q7y32z0yzfz8yj</a></li>
-</ul>
-<h3 id="credits-9">Credits</h3>
-<ul>
-<li>Yuanheng Lab of zhongfu (finder)</li>
-</ul>
-<h2 id="CVE-2023-50270">Session do not expire after password change</h2>
-<p>CVE-2023-50270 <a href="./CVE-2023-50270.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2024-02-23T10:17:33.021Z</em></p>
-<h3 id="affected-15">Affected</h3>
-<ul>
-<li>Apache DolphinScheduler from 1.3.8 through 3.2.0</li>
-</ul>
-<h3 id="description-15">Description</h3>
-<p>Session Fixation Apache DolphinScheduler before version 3.2.0, which session is still valid after the password change.<br><br>Users are recommended to upgrade to version 3.2.1, which fixes this issue.</p>
-<h3 id="references-15">References</h3>
-<ul>
-<li><a href="https://github.com/apache/dolphinscheduler/pull/15219">https://github.com/apache/dolphinscheduler/pull/15219</a></li>
-<li><a href="https://lists.apache.org/thread/lmnf21obyos920dnvbfpwq29c1sd2r9r">https://lists.apache.org/thread/lmnf21obyos920dnvbfpwq29c1sd2r9r</a></li>
-<li><a href="https://lists.apache.org/thread/94prw8hyk60vvw7s6cs3tr708qzqlwl6">https://lists.apache.org/thread/94prw8hyk60vvw7s6cs3tr708qzqlwl6</a></li>
-<li><a href="https://www.openwall.com/lists/oss-security/2024/02/20/3">https://www.openwall.com/lists/oss-security/2024/02/20/3</a></li>
-</ul>
-<h3 id="credits-10">Credits</h3>
-<ul>
-<li>lujiefsi (finder)</li>
-<li>Qing Xu (finder)</li>
-</ul>
-<h2 id="CVE-2023-51770">Arbitrary File Read Vulnerability</h2>
-<p>CVE-2023-51770 <a href="./CVE-2023-51770.cve.json">[CVE json]</a> <a href="./CVE-2023-51770.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-02-20T06:00:50.765Z</em></p>
-<h3 id="affected-16">Affected</h3>
-<ul>
-<li>Apache DolphinScheduler from 1.2.0 before 3.2.1</li>
-</ul>
-<h3 id="description-16">Description</h3>
-<p>Arbitrary File Read Vulnerability in Apache Dolphinscheduler.<br><br>This issue affects Apache DolphinScheduler: before 3.2.1. <br><br>We recommend users to upgrade Apache DolphinScheduler to version 3.2.1, which fixes the issue.</p>
-<h3 id="references-16">References</h3>
-<ul>
-<li><a href="https://github.com/apache/dolphinscheduler/pull/15433">https://github.com/apache/dolphinscheduler/pull/15433</a></li>
-<li><a href="https://lists.apache.org/thread/4t8bdjqnfhldh73gy9p0whlgvnnbtn7g">https://lists.apache.org/thread/4t8bdjqnfhldh73gy9p0whlgvnnbtn7g</a></li>
-<li><a href="https://lists.apache.org/thread/gpks573kn00ofxn7n9gkg6o47d03p5rw">https://lists.apache.org/thread/gpks573kn00ofxn7n9gkg6o47d03p5rw</a></li>
-</ul>
-<h3 id="credits-11">Credits</h3>
-<ul>
-<li>zhiwei (finder)</li>
-<li>rg (finder)</li>
-</ul>
-<h2 id="CVE-2024-23320">Arbitrary js execution as root for authenticated users</h2>
-<p>CVE-2024-23320 <a href="./CVE-2024-23320.cve.json">[CVE json]</a> <a href="./CVE-2024-23320.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-02-23T16:36:40.046Z</em></p>
-<h3 id="affected-17">Affected</h3>
 <ul>
 <li>Apache DolphinScheduler before 3.2.1</li>
 </ul>
-<h3 id="description-17">Description</h3>
-<p>Improper Input Validation vulnerability in Apache DolphinScheduler. An <span style="background-color: rgb(255, 255, 255);">authenticated user can cause arbitrary, unsandboxed javascript to be executed on the server.<br></span><br><br>This issue is a legacy of CVE-2023-49299. We didn&rsquo;t fix it completely in CVE-2023-49299, and we added one more patch to fix it.<p><br></p><p>This issue affects Apache DolphinScheduler: until 3.2.1.</p><p><br></p><p>Users are recommended to upgrade to version 3.2.1, which fixes the issue.</p><br><br></p>
-<h3 id="references-17">References</h3>
+<h3 id="description-12">Description</h3>
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache DolphinScheduler.<p>This issue affects Apache DolphinScheduler: before 3.2.1.<br></p><p>Users are recommended to upgrade to version 3.2.1, which fixes the issue. At the time of disclosure of this advisory, this version has not yet been released. In the mean time, we recommend you make sure the logs are only available to trusted operators.<br></p></p>
+<h3 id="references-12">References</h3>
 <ul>
-<li><a href="https://github.com/apache/dolphinscheduler/pull/15487">https://github.com/apache/dolphinscheduler/pull/15487</a></li>
-<li><a href="https://lists.apache.org/thread/tnf99qoc6tlnwrny4t1zk6mfszgdsokm">https://lists.apache.org/thread/tnf99qoc6tlnwrny4t1zk6mfszgdsokm</a></li>
-<li><a href="https://lists.apache.org/thread/25qhfvlksozzp6j9y8ozznvjdjp3lxqq">https://lists.apache.org/thread/25qhfvlksozzp6j9y8ozznvjdjp3lxqq</a></li>
-<li><a href="https://lists.apache.org/thread/p7rwzdgrztdfps8x1bwx646f1mn0x6cp">https://lists.apache.org/thread/p7rwzdgrztdfps8x1bwx646f1mn0x6cp</a></li>
+<li><a href="https://github.com/apache/dolphinscheduler/pull/15192">https://github.com/apache/dolphinscheduler/pull/15192</a></li>
+<li><a href="https://lists.apache.org/thread/jn6kr6mjdgtfgpxoq9j8q4pkfsq8zmpq">https://lists.apache.org/thread/jn6kr6mjdgtfgpxoq9j8q4pkfsq8zmpq</a></li>
+</ul>
+<h3 id="credits-11">Credits</h3>
+<ul>
+<li>Y4tacker and 4ra1n from Y4secTeam (finder)</li>
+</ul>
+<h2 id="CVE-2023-48796">Sensitive information disclosure</h2>
+<p>CVE-2023-48796 <a href="https://cve.org/CVERecord?id=CVE-2023-48796">[CVE]</a> <a href="./CVE-2023-48796.cve.json">[CVE json]</a> <a href="./CVE-2023-48796.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-11-28T05:01:20.066Z</em></p>
+<h3 id="affected-13">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler from 3.0.0 before 3.0.2</li>
+</ul>
+<h3 id="description-13">Description</h3>
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache DolphinScheduler.<br><br>The information exposed to unauthorized actors may include sensitive data such as database credentials.<br><br>Users who can&rsquo;t upgrade to the fixed version can also set environment variable <code>MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE=health,metrics,prometheus</code> to workaround this, or add the following section in the <code>application.yaml</code> file<br><br><br><code>&lt;br&gt;management:&lt;br&gt;&amp;nbsp; endpoints:&lt;br&gt;&amp;nbsp; &amp;nbsp; web:&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; exposure:&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; include: health,metrics,prometheus&lt;br&gt;</code><br><p><br></p><p>This issue affects Apache DolphinScheduler: from 3.0.0 before 3.0.2.</p><p>Users are recommended to upgrade to version 3.0.2, which fixes the issue.</p></p>
+<h3 id="references-13">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/ffrmkcwgr2lcz0f5nnnyswhpn3fytsvo">https://lists.apache.org/thread/ffrmkcwgr2lcz0f5nnnyswhpn3fytsvo</a></li>
+</ul>
+<h2 id="CVE-2023-25601">Apache DolphinScheduler 3.0.0 to 3.1.1 python gateway has improper authentication</h2>
+<p>CVE-2023-25601 <a href="https://cve.org/CVERecord?id=CVE-2023-25601">[CVE]</a> <a href="./CVE-2023-25601.cve.json">[CVE json]</a> <a href="./CVE-2023-25601.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-04-20T15:06:54.846Z</em></p>
+<h3 id="affected-14">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler from 3.0.0 before 3.1.2</li>
+</ul>
+<h3 id="description-14">Description</h3>
+<p>On version 3.0.0 through 3.1.1, Apache DolphinScheduler&rsquo;s python gateway suffered from improper authentication: an attacker could use a socket bytes attack without authentication. This issue has been fixed from version 3.1.2 onwards. For users who use version 3.0.0 to 3.1.1, you can turn off the python-gateway function by changing the value <code>python-gateway.enabled=false</code> in configuration file <code>application.yaml</code>. If you are using the python gateway, please upgrade to version 3.1.2 or above.<br></p>
+<h3 id="references-14">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/25g77jqczp3t8cz56hk1p65q7m6c64rf">https://lists.apache.org/thread/25g77jqczp3t8cz56hk1p65q7m6c64rf</a></li>
+</ul>
+<h2 id="CVE-2022-45875">Remote command execution Vulnerability in script alert plugin</h2>
+<p>CVE-2022-45875 <a href="https://cve.org/CVERecord?id=CVE-2022-45875">[CVE]</a> <a href="./CVE-2022-45875.cve.json">[CVE json]</a> <a href="./CVE-2022-45875.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-11-22T08:37:58.550Z</em></p>
+<h3 id="affected-15">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler from 3.0 through 3.0.1</li>
+<li>Apache DolphinScheduler from 3.1 through 3.1.0</li>
+</ul>
+<h3 id="description-15">Description</h3>
+<p>Improper validation of script alert plugin parameters in Apache DolphinScheduler to avoid remote command execution vulnerability.  This issue affects Apache DolphinScheduler version 3.0.1 and prior versions; version 3.1.0 and prior versions.<br><span style="background-color: rgb(255, 255, 255);">This attack can be performed only by authenticated users which can login to DS.</span><br><br></p>
+<h3 id="references-15">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/r0wqzkjsoq17j6ww381kmpx3jjp9hb6r">https://lists.apache.org/thread/r0wqzkjsoq17j6ww381kmpx3jjp9hb6r</a></li>
 </ul>
 <h3 id="credits-12">Credits</h3>
 <ul>
-<li>xuesong.zhou (finder)</li>
-<li>Nbxiglk (finder)</li>
-<li>Huang Atao (finder)</li>
+<li>4ra1n of Chaitin Tech (finder)</li>
 </ul>
-<h2 id="CVE-2024-29831">RCE by arbitrary js execution</h2>
-<p>CVE-2024-29831 <a href="./CVE-2024-29831.cve.json">[CVE json]</a> <a href="./CVE-2024-29831.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-08-09T14:21:46.981Z</em></p>
-<h3 id="affected-18">Affected</h3>
+<h2 id="CVE-2022-45462">Apache DolphinScheduler prior to 2.0.5 have command execution vulnerability</h2>
+<p>CVE-2022-45462 <a href="https://cve.org/CVERecord?id=CVE-2022-45462">[CVE]</a> <a href="./CVE-2022-45462.cve.json">[CVE json]</a> <a href="./CVE-2022-45462.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-11-23T02:24:20.816Z</em></p>
+<h3 id="affected-16">Affected</h3>
 <ul>
-<li>Apache DolphinScheduler through 3.2.1</li>
+<li>Apache DolphinScheduler from unspecified through 2.0.5</li>
 </ul>
-<h3 id="description-18">Description</h3>
-<p>Improper Input Validation vulnerability in Apache DolphinScheduler. An <span style="background-color: rgb(255, 255, 255);">authenticated user can cause arbitrary, unsandboxed javascript to be executed on the server. If you are using the switch task plugin, please upgrade to version 3.2.2.<br></span></p>
-<h3 id="references-18">References</h3>
+<h3 id="description-16">Description</h3>
+<p>Alarm instance management has command injection when there is a specific command configured. It is only for logged-in users. We recommend you upgrade to version 2.0.6 or higher</p>
+<h3 id="references-16">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/x1ch0x5om3srtbnp7rtsvdszho3mdrq0">https://lists.apache.org/thread/x1ch0x5om3srtbnp7rtsvdszho3mdrq0</a></li>
+<li><a href="https://lists.apache.org/thread/2f126y32bf1v3mvxkdgt2jr5j3l1t01w">https://lists.apache.org/thread/2f126y32bf1v3mvxkdgt2jr5j3l1t01w</a></li>
 </ul>
 <h3 id="credits-13">Credits</h3>
 <ul>
-<li>yerest (reporter)</li>
-<li>L0ne1y (reporter)</li>
-<li>My Long (reporter)</li>
+<li>This issue was discovered by Jigang Dong of M1QLin Security Team</li>
 </ul>
-<h2 id="CVE-2024-30188">Resource File Read And Write Vulnerability</h2>
-<p>CVE-2024-30188 <a href="./CVE-2024-30188.cve.json">[CVE json]</a> <a href="./CVE-2024-30188.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-08-09T12:45:43.623Z</em></p>
-<h3 id="affected-19">Affected</h3>
+<h2 id="CVE-2022-34662">Apache DolphinScheduler prior to 3.0.0 allows path traversal</h2>
+<p>CVE-2022-34662 <a href="https://cve.org/CVERecord?id=CVE-2022-34662">[CVE]</a> <a href="./CVE-2022-34662.cve.json">[CVE json]</a> <a href="./CVE-2022-34662.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-11-01T15:28:47.599Z</em></p>
+<h3 id="affected-17">Affected</h3>
 <ul>
-<li>Apache DolphinScheduler from 3.1.0 before 3.2.2</li>
+<li>Apache DolphinScheduler from Apache DolphinScheduler through 3.0.0-beta-1</li>
 </ul>
-<h3 id="description-19">Description</h3>
-<p>File read and write vulnerability in Apache DolphinScheduler ,  authenticated users can illegally access additional resource files.<br><p>This issue affects Apache DolphinScheduler: from 3.1.0 before 3.2.2.</p><p>Users are recommended to upgrade to version 3.2.2, which fixes the issue.</p></p>
-<h3 id="references-19">References</h3>
+<h3 id="description-17">Description</h3>
+<p>When users add resources to the resource center with a relation path will cause path traversal issues and only for logged-in users. You could upgrade to version 3.0.0 or higher</p>
+<h3 id="references-17">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/tbrt42mnr42bq6scxwt6bjr3s2pwyd07">https://lists.apache.org/thread/tbrt42mnr42bq6scxwt6bjr3s2pwyd07</a></li>
+<li><a href="https://lists.apache.org/thread/pbdzqf9ntxyvs4cr0x2dgk9zlf43btz8">https://lists.apache.org/thread/pbdzqf9ntxyvs4cr0x2dgk9zlf43btz8</a></li>
 </ul>
 <h3 id="credits-14">Credits</h3>
 <ul>
-<li>L0ne1y (reporter)</li>
-<li>drun1baby (reporter)</li>
-<li>Zevi (reporter)</li>
-<li>Xun Bai (reporter)</li>
+<li>This issue was discovered by Jigang Dong of M1QLin Security Team</li>
 </ul>
-<h2 id="CVE-2024-43115">Alert Script Attack</h2>
-<p>CVE-2024-43115 <a href="./CVE-2024-43115.cve.json">[CVE json]</a> <a href="./CVE-2024-43115.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-09-03T08:38:26.012Z</em></p>
+<h2 id="CVE-2022-26885">Apache DolphinScheduler config file read by task risk</h2>
+<p>CVE-2022-26885 <a href="https://cve.org/CVERecord?id=CVE-2022-26885">[CVE]</a> <a href="./CVE-2022-26885.cve.json">[CVE json]</a> <a href="./CVE-2022-26885.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-11-24T11:55:57.562Z</em></p>
+<h3 id="affected-18">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler from Apache DolphinScheduler before 2.0.6</li>
+</ul>
+<h3 id="description-18">Description</h3>
+<p>When using tasks to read config files, there is a risk of database password disclosure.   We recommend you upgrade to version 2.0.6 or higher.</p>
+<h3 id="references-18">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/z7084r9cs2r26cszkkgjqpb5bhnxqssp">https://lists.apache.org/thread/z7084r9cs2r26cszkkgjqpb5bhnxqssp</a></li>
+</ul>
+<h2 id="CVE-2022-26884">Apache DolphinScheduler exposes files without authentication</h2>
+<p>CVE-2022-26884 <a href="https://cve.org/CVERecord?id=CVE-2022-26884">[CVE]</a> <a href="./CVE-2022-26884.cve.json">[CVE json]</a> <a href="./CVE-2022-26884.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-10-28T01:44:55.028Z</em></p>
+<h3 id="affected-19">Affected</h3>
+<ul>
+<li>Apache DolphinScheduler from Apache DolphinScheduler before 2.0.6</li>
+</ul>
+<h3 id="description-19">Description</h3>
+<p>Users can read any files by log server, Apache DolphinScheduler users should upgrade to version 2.0.6 or higher.</p>
+<h3 id="references-19">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/xfdst5y4hnrm2ntmc5jzrgmw2htyyb9c">https://lists.apache.org/thread/xfdst5y4hnrm2ntmc5jzrgmw2htyyb9c</a></li>
+</ul>
+<h2 id="CVE-2022-25598">Apache DolphinScheduler user registration is vulnerable to ReDoS attacks</h2>
+<p>CVE-2022-25598 <a href="https://cve.org/CVERecord?id=CVE-2022-25598">[CVE]</a> <a href="./CVE-2022-25598.cve.json">[CVE json]</a> <a href="./CVE-2022-25598.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-11-01T03:18:38.664Z</em></p>
 <h3 id="affected-20">Affected</h3>
 <ul>
-<li>Apache DolphinScheduler before 3.2.2</li>
+<li>Apache DolphinScheduler from Apache DolphinScheduler before 2.0.5</li>
 </ul>
 <h3 id="description-20">Description</h3>
-<div>Improper Input Validation vulnerability in Apache DolphinScheduler. An <span style="background-color: rgb(255, 255, 255);">authenticated user can execute any shell script server by alert script.</span><br></div><p>This issue affects Apache DolphinScheduler: before 3.2.2.</p><p>Users are recommended to upgrade to version <span style="background-color: rgb(255, 255, 255);">3.3.1</span>, which fixes the issue.</p><br>
+<p>Apache DolphinScheduler user registration is vulnerable to Regular express Denial of Service (ReDoS) attacks, Apache DolphinScheduler users should upgrade to version 2.0.5 or higher.Uncontrolled Resource Consumption vulnerability in <strong>COMPONENT</strong> of Apache DolphinScheduler allows an attacker to <strong>IMPACT</strong>.  This issue affects Apache DolphinScheduler Apache DolphinScheduler versions prior to 2.0.5.</p>
 <h3 id="references-20">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/qm36nrsv1vrr2j4o5q2wo75h3686hrnj">https://lists.apache.org/thread/qm36nrsv1vrr2j4o5q2wo75h3686hrnj</a></li>
+<li><a href="https://lists.apache.org/thread/hwnw7xr969sg5nv84wz75nfr2c76fl93">https://lists.apache.org/thread/hwnw7xr969sg5nv84wz75nfr2c76fl93</a></li>
 </ul>
 <h3 id="credits-15">Credits</h3>
 <ul>
-<li>L0ne1y (reporter)</li>
+<li>This issue was discovered by Zheng Wang of HIT</li>
 </ul>
-<h2 id="CVE-2024-43166">CWE-276 Incorrect Default Permissions</h2>
-<p>CVE-2024-43166 <a href="./CVE-2024-43166.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2025-09-18T09:38:13.985Z</em></p>
+<h2 id="CVE-2021-27644">DolphinScheduler mysql jdbc connector parameters deserialize remote code execution</h2>
+<p>CVE-2021-27644 <a href="https://cve.org/CVERecord?id=CVE-2021-27644">[CVE]</a> <a href="./CVE-2021-27644.cve.json">[CVE json]</a> <a href="./CVE-2021-27644.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-11-01T09:12:08.670Z</em></p>
 <h3 id="affected-21">Affected</h3>
 <ul>
-<li>Apache DolphinScheduler before 3.2.2</li>
+<li>Apache DolphinScheduler from Apache DolphinScheduler before 1.3.6</li>
 </ul>
 <h3 id="description-21">Description</h3>
-<p>Incorrect Default Permissions vulnerability in Apache DolphinScheduler.</p><p>This issue affects Apache DolphinScheduler: before 3.2.2.</p><p>Users are recommended to upgrade to version <span style="background-color: rgb(255, 255, 255);">3.3.1</span>, which fixes the issue.</p>
+<p>In Apache DolphinScheduler before 1.3.6 versions, authorized users can use SQL injection in the data source center. (Only applicable to MySQL data source with internal login account password)</p>
 <h3 id="references-21">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/8zd69zkkx55qp365xp4tml1xh9og5lhk">https://lists.apache.org/thread/8zd69zkkx55qp365xp4tml1xh9og5lhk</a></li>
+<li><a href="https://lists.apache.org/thread.html/r35d6acf021486a390a7ea09e6650c2fe19e72522bd484791d606a6e6%40%3Cdev.dolphinscheduler.apache.org%3E">https://lists.apache.org/thread.html/r35d6acf021486a390a7ea09e6650c2fe19e72522bd484791d606a6e6%40%3Cdev.dolphinscheduler.apache.org%3E</a></li>
 </ul>
 <h3 id="credits-16">Credits</h3>
 <ul>
-<li>L0ne1y (reporter)</li>
+<li>This issue was discovered by Jinchen Sheng of Ant FG Security Lab</li>
 </ul>
-<h2 id="CVE-2024-43202">Remote Code Execution Vulnerability</h2>
-<p>CVE-2024-43202 <a href="./CVE-2024-43202.cve.json">[CVE json]</a> <a href="./CVE-2024-43202.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-08-20T07:29:41.648Z</em></p>
+<h2 id="CVE-2020-13922">Apache DolphinScheduler (incubating) Permission vulnerability</h2>
+<p>CVE-2020-13922 <a href="https://cve.org/CVERecord?id=CVE-2020-13922">[CVE]</a> <a href="./CVE-2020-13922.cve.json">[CVE json]</a> <a href="./CVE-2020-13922.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-01-11T09:18:42.255Z</em></p>
 <h3 id="affected-22">Affected</h3>
 <ul>
-<li>Apache DolphinScheduler from 3.0.0 before 3.2.2</li>
+<li>Apache DolphinScheduler from Apache DolphinScheduler before 1.3.2</li>
 </ul>
 <h3 id="description-22">Description</h3>
-<p>Exposure of Remote Code Execution in Apache Dolphinscheduler.<br><br>This issue affects Apache DolphinScheduler: before 3.2.2. <br><br>We recommend users to upgrade Apache DolphinScheduler to version 3.2.2, which fixes the issue.</p>
+<p>Versions of Apache DolphinScheduler prior to 1.3.2 allowed an ordinary user under any tenant to override another users password through the API interface.</p>
 <h3 id="references-22">References</h3>
 <ul>
-<li><a href="https://github.com/apache/dolphinscheduler/pull/15758">https://github.com/apache/dolphinscheduler/pull/15758</a></li>
-<li><a href="https://lists.apache.org/thread/nlmdp7q7l7o3l27778vxc5px24ncr5r5">https://lists.apache.org/thread/nlmdp7q7l7o3l27778vxc5px24ncr5r5</a></li>
-<li><a href="https://lists.apache.org/thread/qbhk9wqyxhrn4z7m4m343wqxpwg926nh">https://lists.apache.org/thread/qbhk9wqyxhrn4z7m4m343wqxpwg926nh</a></li>
-<li><a href="https://www.cve.org/CVERecord?id=CVE-2023-49109">https://www.cve.org/CVERecord?id=CVE-2023-49109</a></li>
+<li><a href="https://www.mail-archive.com/announce%40apache.org/msg06076.html">https://www.mail-archive.com/announce%40apache.org/msg06076.html</a></li>
 </ul>
 <h3 id="credits-17">Credits</h3>
 <ul>
-<li>an4er (reporter)</li>
+<li>This issue was discovered by xuxiang of DtDream security</li>
 </ul>
 
   

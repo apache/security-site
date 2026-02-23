@@ -105,36 +105,36 @@
 <p>Do you want disclose a potential security issue for Apache Web Services? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2022-40705">Apache SOAP: XML External Entity Injection (XXE) allows unauthenticated users to read arbitrary files via HTTP</h2>
-<p>CVE-2022-40705 <a href="./CVE-2022-40705.cve.json">[CVE json]</a> <a href="./CVE-2022-40705.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-09-22T08:11:36.490Z</em></p>
+<h2 id="CVE-2022-45378">Apache SOAP allows unauthenticated users to potentially invoke arbitrary code</h2>
+<p>CVE-2022-45378 <a href="https://cve.org/CVERecord?id=CVE-2022-45378">[CVE]</a> <a href="./CVE-2022-45378.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2022-11-14T14:06:51.577Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache SOAP from 2.2 before Apache SOAP*</li>
+<li>Apache SOAP at 2.3</li>
+<li>Apache SOAP from Apache SOAP before 2.3</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>An Improper Restriction of XML External Entity Reference vulnerability in RPCRouterServlet of Apache SOAP allows an attacker to read arbitrary files over HTTP. This issue affects Apache SOAP version 2.2 and later versions. It is unknown whether previous versions are also affected.  NOTE: This vulnerability only affects products that are no longer supported by the maintainer</p>
+<p>In the default configuration of Apache SOAP, an RPCRouterServlet is available without authentication. This gives an attacker the possibility to invoke methods on the classpath that meet certain criteria. Depending on what classes are available on the classpath this might even lead to arbitrary remote code execution. NOTE: This vulnerability only affects products that are no longer supported by the maintainer</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/02yo04w93rdjmllz4454lvodn5xzhwhl">https://lists.apache.org/thread/02yo04w93rdjmllz4454lvodn5xzhwhl</a></li>
+<li><a href="https://lists.apache.org/thread/g4l64s283njhnph2otx7q4gs2j952d31">https://lists.apache.org/thread/g4l64s283njhnph2otx7q4gs2j952d31</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
 <li>Apache would like to thank TsungShu Chiu (CHT Security) for reporting this issue</li>
 </ul>
-<h2 id="CVE-2022-45378">Apache SOAP allows unauthenticated users to potentially invoke arbitrary code</h2>
-<p>CVE-2022-45378 <a href="./CVE-2022-45378.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2022-11-14T14:06:51.577Z</em></p>
+<h2 id="CVE-2022-40705">Apache SOAP: XML External Entity Injection (XXE) allows unauthenticated users to read arbitrary files via HTTP</h2>
+<p>CVE-2022-40705 <a href="https://cve.org/CVERecord?id=CVE-2022-40705">[CVE]</a> <a href="./CVE-2022-40705.cve.json">[CVE json]</a> <a href="./CVE-2022-40705.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-09-22T08:11:36.490Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache SOAP at 2.3</li>
-<li>Apache SOAP from Apache SOAP before 2.3</li>
+<li>Apache SOAP from 2.2 before Apache SOAP*</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>In the default configuration of Apache SOAP, an RPCRouterServlet is available without authentication. This gives an attacker the possibility to invoke methods on the classpath that meet certain criteria. Depending on what classes are available on the classpath this might even lead to arbitrary remote code execution. NOTE: This vulnerability only affects products that are no longer supported by the maintainer</p>
+<p>An Improper Restriction of XML External Entity Reference vulnerability in RPCRouterServlet of Apache SOAP allows an attacker to read arbitrary files over HTTP. This issue affects Apache SOAP version 2.2 and later versions. It is unknown whether previous versions are also affected.  NOTE: This vulnerability only affects products that are no longer supported by the maintainer</p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/g4l64s283njhnph2otx7q4gs2j952d31">https://lists.apache.org/thread/g4l64s283njhnph2otx7q4gs2j952d31</a></li>
+<li><a href="https://lists.apache.org/thread/02yo04w93rdjmllz4454lvodn5xzhwhl">https://lists.apache.org/thread/02yo04w93rdjmllz4454lvodn5xzhwhl</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>

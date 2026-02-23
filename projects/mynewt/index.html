@@ -105,77 +105,82 @@
 <p>Do you want disclose a potential security issue for Apache Mynewt? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2024-24746">Denial of service in NimBLE Bluetooth stack</h2>
-<p>CVE-2024-24746 <a href="./CVE-2024-24746.cve.json">[CVE json]</a> <a href="./CVE-2024-24746.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-04-10T07:39:33.115Z</em></p>
+<h2 id="CVE-2025-62235">Incorrect handling of SMP Security Request could lead to undesirable pairing</h2>
+<p>CVE-2025-62235 <a href="https://cve.org/CVERecord?id=CVE-2025-62235">[CVE]</a> <a href="./CVE-2025-62235.cve.json">[CVE json]</a> <a href="./CVE-2025-62235.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-10T09:42:36.935Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache NimBLE through 1.6.0</li>
+<li>Apache Mynewt NimBLE through 1.8.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Loop with Unreachable Exit Condition (&lsquo;Infinite Loop&rsquo;) vulnerability in Apache NimBLE. <br><br>Specially crafted GATT operation can cause infinite loop in GATT server leading to denial of service in Bluetooth stack or device.<br><br><span style="background-color: var(--wht);">This issue affects Apache NimBLE: through 1.6.0.<br></span><span style="background-color: var(--wht);">Users are recommended to upgrade to version 1.7.0, which fixes the issue.</span></p>
+<p>Authentication Bypass by Spoofing vulnerability in Apache NimBLE.</p>Receiving specially crafted Security Request could lead to removal of original bond<span style="background-color: rgb(255, 255, 255);">&nbsp;and re-bond with impostor.</span><br><p>This issue affects Apache NimBLE: through 1.8.0.</p><p>Users are recommended to upgrade to version 1.9.0, which fixes the issue.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/bptkzc0o2ymjk8qqzqdmy39kcmh27078">https://lists.apache.org/thread/bptkzc0o2ymjk8qqzqdmy39kcmh27078</a></li>
-<li><a href="https://github.com/apache/mynewt-nimble/commit/d42a0ebe6632bd0c318560e4293a522634f60594">https://github.com/apache/mynewt-nimble/commit/d42a0ebe6632bd0c318560e4293a522634f60594</a></li>
+<li><a href="https://github.com/apache/mynewt-nimble/commit/41f67e391e788c5feef9030026cc5cbc5431838a">https://github.com/apache/mynewt-nimble/commit/41f67e391e788c5feef9030026cc5cbc5431838a</a></li>
+<li><a href="https://lists.apache.org/thread/rw2mrpfwb9d9wmq4h4b6ctcd6gpkk2ho">https://lists.apache.org/thread/rw2mrpfwb9d9wmq4h4b6ctcd6gpkk2ho</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Iván Arce from Quarkslab Vulnerability Reports team (reporter)</li>
+<li>Tommaso Sacchetti <a href="mailto:tommaso.sacchetti@gmail.com">tommaso.sacchetti@gmail.com</a> (reporter)</li>
 </ul>
-<h2 id="CVE-2024-47248">Buffer overflow in NimBLE MESH Bluetooth stack</h2>
-<p>CVE-2024-47248 <a href="./CVE-2024-47248.cve.json">[CVE json]</a> <a href="./CVE-2024-47248.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-12-06T07:39:45.067Z</em></p>
+<h2 id="CVE-2025-53477">NULL Pointer Dereference in NimBLE host HCI layer</h2>
+<p>CVE-2025-53477 <a href="https://cve.org/CVERecord?id=CVE-2025-53477">[CVE]</a> <a href="./CVE-2025-53477.cve.json">[CVE json]</a> <a href="./CVE-2025-53477.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-10T09:45:08.352Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache NimBLE through 1.7.0</li>
+<li>Apache Mynewt NimBLE through 1.8.0</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>Buffer Copy without Checking Size of Input ('Classic Buffer Overflow') vulnerability in Apache NimBLE.</p>Specially crafted MESH message could result in memory corruption when non-default build configuration is used.<br><p>This issue affects Apache NimBLE: through 1.7.0.</p><p>Users are recommended to upgrade to version 1.8.0, which fixes the issue.</p>
+<p>NULL Pointer Dereference vulnerability in Apache Nimble.</p><span style="background-color: rgb(255, 255, 255);">Missing validation of HCI connection complete or HCI command TX buffer could lead to NULL pointer dereference.</span><br>This issue requires disabled asserts and broken or bogus Bluetooth controller and thus severity is considered low.<br><br><p>This issue affects Apache NimBLE: through 1.8.0.</p><p>Users are recommended to upgrade to version 1.9.0, which fixes the issue.</p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/z8m7jqh54xybf9kz8q2l3tz92zsj7tmz">https://lists.apache.org/thread/z8m7jqh54xybf9kz8q2l3tz92zsj7tmz</a></li>
+<li><a href="https://github.com/apache/mynewt-nimble/commit/0caf9baeb271ede85fcc5237ab87ddbf938600da">https://github.com/apache/mynewt-nimble/commit/0caf9baeb271ede85fcc5237ab87ddbf938600da</a></li>
+<li><a href="https://github.com/apache/mynewt-nimble/commit/3160b8c4c7ff8db4e0f9badcdf7df684b151e077">https://github.com/apache/mynewt-nimble/commit/3160b8c4c7ff8db4e0f9badcdf7df684b151e077</a></li>
+<li><a href="https://lists.apache.org/thread/1dxthc132hwm2tzvjblrtnschcsbw2vo">https://lists.apache.org/thread/1dxthc132hwm2tzvjblrtnschcsbw2vo</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>Wei Che Kao (Xiaobye), graduate student from National Yang Ming Chiao Tung University, Dept. of CS, Security and Systems Lab. (reporter)</li>
+<li>雷重庆 <a href="mailto:leicq@seu.edu.cn">leicq@seu.edu.cn</a> (reporter)</li>
 </ul>
-<h2 id="CVE-2024-47249">Lack of input sanitization leading to out-of-bound reads in multiple advertisement handler</h2>
-<p>CVE-2024-47249 <a href="./CVE-2024-47249.cve.json">[CVE json]</a> <a href="./CVE-2024-47249.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-12-06T07:49:57.242Z</em></p>
+<h2 id="CVE-2025-53470">Out-of-Bounds Write Vulnerability in NimBLE HCI H4 driver</h2>
+<p>CVE-2025-53470 <a href="https://cve.org/CVERecord?id=CVE-2025-53470">[CVE]</a> <a href="./CVE-2025-53470.cve.json">[CVE json]</a> <a href="./CVE-2025-53470.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-10T09:46:32.072Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache NimBLE through 1.7.0</li>
+<li>Apache Mynewt NimBLE through 1.8</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>Improper Validation of Array Index vulnerability in Apache NimBLE.</p>Lack of input validation for HCI events from controller could result in out-of-bound memory corruption and crash.<br>This issue requires broken or bogus Bluetooth controller and thus severity is considered low.<br><p>This issue affects Apache NimBLE: through 1.7.0.</p><p>Users are recommended to upgrade to version 1.8.0, which fixes the issue.</p>
+<p>Out-of-bounds Read vulnerability in Apache  NimBLE HCI H4 driver. Specially crafted HCI event could lead to invalid memory read in H4 driver.</p><p>This issue affects Apache NimBLE: through 1.8.&nbsp;</p><p>This issue requires a broken or bogus Bluetooth controller and thus severity is considered low.</p><p>Users are recommended to upgrade to version 1.9, which fixes the issue.</p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/7ckxw6481dp68ons627pjcb27c75n0mq">https://lists.apache.org/thread/7ckxw6481dp68ons627pjcb27c75n0mq</a></li>
+<li><a href="https://github.com/apache/mynewt-nimble/commit/b973df0c6cf7b30efbf8eb2cafdc1ee843464b76">https://github.com/apache/mynewt-nimble/commit/b973df0c6cf7b30efbf8eb2cafdc1ee843464b76</a></li>
+<li><a href="https://lists.apache.org/thread/32sm0944dyod4sdql77stgyw9xb2msc0">https://lists.apache.org/thread/32sm0944dyod4sdql77stgyw9xb2msc0</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>Eunkyu Lee (reporter)</li>
+<li>雷重庆 <a href="mailto:leicq@seu.edu.cn">leicq@seu.edu.cn</a> (reporter)</li>
 </ul>
-<h2 id="CVE-2024-47250">Lack of input validation in HCI advertising report could lead to potential out-of-bound access</h2>
-<p>CVE-2024-47250 <a href="./CVE-2024-47250.cve.json">[CVE json]</a> <a href="./CVE-2024-47250.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-12-06T07:50:00.629Z</em></p>
+<h2 id="CVE-2025-52435">Invalid error handling in pause encryption procedure in NimBLE controller</h2>
+<p>CVE-2025-52435 <a href="https://cve.org/CVERecord?id=CVE-2025-52435">[CVE]</a> <a href="./CVE-2025-52435.cve.json">[CVE json]</a> <a href="./CVE-2025-52435.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-01-10T09:47:08.833Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache NimBLE through 1.7.0</li>
+<li>Apache Mynewt NimBLE through 1.8.0</li>
 </ul>
 <h3 id="description-3">Description</h3>
-<p>Out-of-bounds Read vulnerability in Apache NimBLE.</p><span style="background-color: rgb(255, 255, 255);">Missing proper validation of HCI advertising report could lead to out-of-bound access when parsing HCI event and thus bogus G</span>AP 'device found' events being sent.<br>This issue requires broken or bogus Bluetooth controller and thus severity is considered low.<br><p>This issue affects Apache NimBLE: through 1.7.0.<br></p><p>Users are recommended to upgrade to version 1.8.0, which fixes the issue.</p>
+<p>J2EE Misconfiguration: Data Transmission Without Encryption vulnerability in Apache NimBLE.</p>Improper handling of Pause Encryption procedure on Link Layer results in a previously encrypted connection being left in un-encrypted state <span style="background-color: rgb(255, 255, 255);">allowing an eavesdropper to observe the remainder of the exchange</span>.<br><p>This issue affects Apache NimBLE: through &lt;= 1.8.0.</p><p>Users are recommended to upgrade to version 1.9.0, which fixes the issue.</p>
 <h3 id="references-3">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/zdb50spojlqbn0yxd866mbzqjt2vpt85">https://lists.apache.org/thread/zdb50spojlqbn0yxd866mbzqjt2vpt85</a></li>
+<li><a href="https://github.com/apache/mynewt-nimble/commit/164f1c23c18a290908df76ed83fe848bfe4a4903">https://github.com/apache/mynewt-nimble/commit/164f1c23c18a290908df76ed83fe848bfe4a4903</a></li>
+<li><a href="https://github.com/apache/mynewt-nimble/commit/ec3d75e909fa6dcadf1836fefc4432794a673d18">https://github.com/apache/mynewt-nimble/commit/ec3d75e909fa6dcadf1836fefc4432794a673d18</a></li>
+<li><a href="https://lists.apache.org/thread/ow8dzpsqfh9llfclh5fzh6z237brzc0s">https://lists.apache.org/thread/ow8dzpsqfh9llfclh5fzh6z237brzc0s</a></li>
 </ul>
 <h3 id="credits-3">Credits</h3>
 <ul>
-<li>Eunkyu Lee (reporter)</li>
+<li>Henrik Schnor <a href="mailto:henrik.schnor@mailbox.org">henrik.schnor@mailbox.org</a> (reporter)</li>
 </ul>
 <h2 id="CVE-2024-51569">Lack of input sanitization leading to out-of-bound reads in Number of Completed Packets HCI event handler</h2>
-<p>CVE-2024-51569 <a href="./CVE-2024-51569.cve.json">[CVE json]</a> <a href="./CVE-2024-51569.osv.json">[OSV json]</a></p>
+<p>CVE-2024-51569 <a href="https://cve.org/CVERecord?id=CVE-2024-51569">[CVE]</a> <a href="./CVE-2024-51569.cve.json">[CVE json]</a> <a href="./CVE-2024-51569.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-12-06T07:50:42.419Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
@@ -191,79 +196,74 @@
 <ul>
 <li>Eunkyu Lee (reporter)</li>
 </ul>
-<h2 id="CVE-2025-52435">Invalid error handling in pause encryption procedure in NimBLE controller</h2>
-<p>CVE-2025-52435 <a href="./CVE-2025-52435.cve.json">[CVE json]</a> <a href="./CVE-2025-52435.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-01-10T09:47:08.833Z</em></p>
+<h2 id="CVE-2024-47250">Lack of input validation in HCI advertising report could lead to potential out-of-bound access</h2>
+<p>CVE-2024-47250 <a href="https://cve.org/CVERecord?id=CVE-2024-47250">[CVE]</a> <a href="./CVE-2024-47250.cve.json">[CVE json]</a> <a href="./CVE-2024-47250.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-12-06T07:50:00.629Z</em></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
-<li>Apache Mynewt NimBLE through 1.8.0</li>
+<li>Apache NimBLE through 1.7.0</li>
 </ul>
 <h3 id="description-5">Description</h3>
-<p>J2EE Misconfiguration: Data Transmission Without Encryption vulnerability in Apache NimBLE.</p>Improper handling of Pause Encryption procedure on Link Layer results in a previously encrypted connection being left in un-encrypted state <span style="background-color: rgb(255, 255, 255);">allowing an eavesdropper to observe the remainder of the exchange</span>.<br><p>This issue affects Apache NimBLE: through &lt;= 1.8.0.</p><p>Users are recommended to upgrade to version 1.9.0, which fixes the issue.</p>
+<p>Out-of-bounds Read vulnerability in Apache NimBLE.</p><span style="background-color: rgb(255, 255, 255);">Missing proper validation of HCI advertising report could lead to out-of-bound access when parsing HCI event and thus bogus G</span>AP 'device found' events being sent.<br>This issue requires broken or bogus Bluetooth controller and thus severity is considered low.<br><p>This issue affects Apache NimBLE: through 1.7.0.<br></p><p>Users are recommended to upgrade to version 1.8.0, which fixes the issue.</p>
 <h3 id="references-5">References</h3>
 <ul>
-<li><a href="https://github.com/apache/mynewt-nimble/commit/164f1c23c18a290908df76ed83fe848bfe4a4903">https://github.com/apache/mynewt-nimble/commit/164f1c23c18a290908df76ed83fe848bfe4a4903</a></li>
-<li><a href="https://github.com/apache/mynewt-nimble/commit/ec3d75e909fa6dcadf1836fefc4432794a673d18">https://github.com/apache/mynewt-nimble/commit/ec3d75e909fa6dcadf1836fefc4432794a673d18</a></li>
-<li><a href="https://lists.apache.org/thread/ow8dzpsqfh9llfclh5fzh6z237brzc0s">https://lists.apache.org/thread/ow8dzpsqfh9llfclh5fzh6z237brzc0s</a></li>
+<li><a href="https://lists.apache.org/thread/zdb50spojlqbn0yxd866mbzqjt2vpt85">https://lists.apache.org/thread/zdb50spojlqbn0yxd866mbzqjt2vpt85</a></li>
 </ul>
 <h3 id="credits-5">Credits</h3>
 <ul>
-<li>Henrik Schnor <a href="mailto:henrik.schnor@mailbox.org">henrik.schnor@mailbox.org</a> (reporter)</li>
+<li>Eunkyu Lee (reporter)</li>
 </ul>
-<h2 id="CVE-2025-53470">Out-of-Bounds Write Vulnerability in NimBLE HCI H4 driver</h2>
-<p>CVE-2025-53470 <a href="./CVE-2025-53470.cve.json">[CVE json]</a> <a href="./CVE-2025-53470.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-01-10T09:46:32.072Z</em></p>
+<h2 id="CVE-2024-47249">Lack of input sanitization leading to out-of-bound reads in multiple advertisement handler</h2>
+<p>CVE-2024-47249 <a href="https://cve.org/CVERecord?id=CVE-2024-47249">[CVE]</a> <a href="./CVE-2024-47249.cve.json">[CVE json]</a> <a href="./CVE-2024-47249.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-12-06T07:49:57.242Z</em></p>
 <h3 id="affected-6">Affected</h3>
 <ul>
-<li>Apache Mynewt NimBLE through 1.8</li>
+<li>Apache NimBLE through 1.7.0</li>
 </ul>
 <h3 id="description-6">Description</h3>
-<p>Out-of-bounds Read vulnerability in Apache  NimBLE HCI H4 driver. Specially crafted HCI event could lead to invalid memory read in H4 driver.</p><p>This issue affects Apache NimBLE: through 1.8.&nbsp;</p><p>This issue requires a broken or bogus Bluetooth controller and thus severity is considered low.</p><p>Users are recommended to upgrade to version 1.9, which fixes the issue.</p>
+<p>Improper Validation of Array Index vulnerability in Apache NimBLE.</p>Lack of input validation for HCI events from controller could result in out-of-bound memory corruption and crash.<br>This issue requires broken or bogus Bluetooth controller and thus severity is considered low.<br><p>This issue affects Apache NimBLE: through 1.7.0.</p><p>Users are recommended to upgrade to version 1.8.0, which fixes the issue.</p>
 <h3 id="references-6">References</h3>
 <ul>
-<li><a href="https://github.com/apache/mynewt-nimble/commit/b973df0c6cf7b30efbf8eb2cafdc1ee843464b76">https://github.com/apache/mynewt-nimble/commit/b973df0c6cf7b30efbf8eb2cafdc1ee843464b76</a></li>
-<li><a href="https://lists.apache.org/thread/32sm0944dyod4sdql77stgyw9xb2msc0">https://lists.apache.org/thread/32sm0944dyod4sdql77stgyw9xb2msc0</a></li>
+<li><a href="https://lists.apache.org/thread/7ckxw6481dp68ons627pjcb27c75n0mq">https://lists.apache.org/thread/7ckxw6481dp68ons627pjcb27c75n0mq</a></li>
 </ul>
 <h3 id="credits-6">Credits</h3>
 <ul>
-<li>雷重庆 <a href="mailto:leicq@seu.edu.cn">leicq@seu.edu.cn</a> (reporter)</li>
+<li>Eunkyu Lee (reporter)</li>
 </ul>
-<h2 id="CVE-2025-53477">NULL Pointer Dereference in NimBLE host HCI layer</h2>
-<p>CVE-2025-53477 <a href="./CVE-2025-53477.cve.json">[CVE json]</a> <a href="./CVE-2025-53477.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-01-10T09:45:08.352Z</em></p>
+<h2 id="CVE-2024-47248">Buffer overflow in NimBLE MESH Bluetooth stack</h2>
+<p>CVE-2024-47248 <a href="https://cve.org/CVERecord?id=CVE-2024-47248">[CVE]</a> <a href="./CVE-2024-47248.cve.json">[CVE json]</a> <a href="./CVE-2024-47248.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-12-06T07:39:45.067Z</em></p>
 <h3 id="affected-7">Affected</h3>
 <ul>
-<li>Apache Mynewt NimBLE through 1.8.0</li>
+<li>Apache NimBLE through 1.7.0</li>
 </ul>
 <h3 id="description-7">Description</h3>
-<p>NULL Pointer Dereference vulnerability in Apache Nimble.</p><span style="background-color: rgb(255, 255, 255);">Missing validation of HCI connection complete or HCI command TX buffer could lead to NULL pointer dereference.</span><br>This issue requires disabled asserts and broken or bogus Bluetooth controller and thus severity is considered low.<br><br><p>This issue affects Apache NimBLE: through 1.8.0.</p><p>Users are recommended to upgrade to version 1.9.0, which fixes the issue.</p>
+<p>Buffer Copy without Checking Size of Input ('Classic Buffer Overflow') vulnerability in Apache NimBLE.</p>Specially crafted MESH message could result in memory corruption when non-default build configuration is used.<br><p>This issue affects Apache NimBLE: through 1.7.0.</p><p>Users are recommended to upgrade to version 1.8.0, which fixes the issue.</p>
 <h3 id="references-7">References</h3>
 <ul>
-<li><a href="https://github.com/apache/mynewt-nimble/commit/0caf9baeb271ede85fcc5237ab87ddbf938600da">https://github.com/apache/mynewt-nimble/commit/0caf9baeb271ede85fcc5237ab87ddbf938600da</a></li>
-<li><a href="https://github.com/apache/mynewt-nimble/commit/3160b8c4c7ff8db4e0f9badcdf7df684b151e077">https://github.com/apache/mynewt-nimble/commit/3160b8c4c7ff8db4e0f9badcdf7df684b151e077</a></li>
-<li><a href="https://lists.apache.org/thread/1dxthc132hwm2tzvjblrtnschcsbw2vo">https://lists.apache.org/thread/1dxthc132hwm2tzvjblrtnschcsbw2vo</a></li>
+<li><a href="https://lists.apache.org/thread/z8m7jqh54xybf9kz8q2l3tz92zsj7tmz">https://lists.apache.org/thread/z8m7jqh54xybf9kz8q2l3tz92zsj7tmz</a></li>
 </ul>
 <h3 id="credits-7">Credits</h3>
 <ul>
-<li>雷重庆 <a href="mailto:leicq@seu.edu.cn">leicq@seu.edu.cn</a> (reporter)</li>
+<li>Wei Che Kao (Xiaobye), graduate student from National Yang Ming Chiao Tung University, Dept. of CS, Security and Systems Lab. (reporter)</li>
 </ul>
-<h2 id="CVE-2025-62235">Incorrect handling of SMP Security Request could lead to undesirable pairing</h2>
-<p>CVE-2025-62235 <a href="./CVE-2025-62235.cve.json">[CVE json]</a> <a href="./CVE-2025-62235.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-01-10T09:42:36.935Z</em></p>
+<h2 id="CVE-2024-24746">Denial of service in NimBLE Bluetooth stack</h2>
+<p>CVE-2024-24746 <a href="https://cve.org/CVERecord?id=CVE-2024-24746">[CVE]</a> <a href="./CVE-2024-24746.cve.json">[CVE json]</a> <a href="./CVE-2024-24746.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-04-10T07:39:33.115Z</em></p>
 <h3 id="affected-8">Affected</h3>
 <ul>
-<li>Apache Mynewt NimBLE through 1.8.0</li>
+<li>Apache NimBLE through 1.6.0</li>
 </ul>
 <h3 id="description-8">Description</h3>
-<p>Authentication Bypass by Spoofing vulnerability in Apache NimBLE.</p>Receiving specially crafted Security Request could lead to removal of original bond<span style="background-color: rgb(255, 255, 255);">&nbsp;and re-bond with impostor.</span><br><p>This issue affects Apache NimBLE: through 1.8.0.</p><p>Users are recommended to upgrade to version 1.9.0, which fixes the issue.</p>
+<p>Loop with Unreachable Exit Condition (&lsquo;Infinite Loop&rsquo;) vulnerability in Apache NimBLE. <br><br>Specially crafted GATT operation can cause infinite loop in GATT server leading to denial of service in Bluetooth stack or device.<br><br><span style="background-color: var(--wht);">This issue affects Apache NimBLE: through 1.6.0.<br></span><span style="background-color: var(--wht);">Users are recommended to upgrade to version 1.7.0, which fixes the issue.</span></p>
 <h3 id="references-8">References</h3>
 <ul>
-<li><a href="https://github.com/apache/mynewt-nimble/commit/41f67e391e788c5feef9030026cc5cbc5431838a">https://github.com/apache/mynewt-nimble/commit/41f67e391e788c5feef9030026cc5cbc5431838a</a></li>
-<li><a href="https://lists.apache.org/thread/rw2mrpfwb9d9wmq4h4b6ctcd6gpkk2ho">https://lists.apache.org/thread/rw2mrpfwb9d9wmq4h4b6ctcd6gpkk2ho</a></li>
+<li><a href="https://lists.apache.org/thread/bptkzc0o2ymjk8qqzqdmy39kcmh27078">https://lists.apache.org/thread/bptkzc0o2ymjk8qqzqdmy39kcmh27078</a></li>
+<li><a href="https://github.com/apache/mynewt-nimble/commit/d42a0ebe6632bd0c318560e4293a522634f60594">https://github.com/apache/mynewt-nimble/commit/d42a0ebe6632bd0c318560e4293a522634f60594</a></li>
 </ul>
 <h3 id="credits-8">Credits</h3>
 <ul>
-<li>Tommaso Sacchetti <a href="mailto:tommaso.sacchetti@gmail.com">tommaso.sacchetti@gmail.com</a> (reporter)</li>
+<li>Iván Arce from Quarkslab Vulnerability Reports team (reporter)</li>
 </ul>
 
   

@@ -105,35 +105,72 @@
 <p>Do you want disclose a potential security issue for Apache Tapestry? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2020-17531">Deserialization flaw in EOL Tapestry 4.</h2>
-<p>CVE-2020-17531 <a href="./CVE-2020-17531.cve.json">[CVE json]</a> <a href="./CVE-2020-17531.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2020-12-08T12:41:08.137Z</em></p>
+<h2 id="CVE-2022-46366">Apache Tapestry prior to version 4 (EOL) allows RCE though deserialization of untrusted input</h2>
+<p>CVE-2022-46366 <a href="https://cve.org/CVERecord?id=CVE-2022-46366">[CVE]</a> <a href="./CVE-2022-46366.cve.json">[CVE json]</a> <a href="./CVE-2022-46366.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-12-02T13:44:12.576Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Tapestry from Apache Tapestry 4 through 4</li>
+<li>Apache Tapestry from Apache Tapestry before 4.0.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>A Java Serialization vulnerability was found in Apache Tapestry 4. Apache Tapestry 4 will attempt to deserialize the &ldquo;sp&rdquo; parameter even before invoking the page&rsquo;s validate method, leading to deserialization without authentication.</p>
-<p>Apache Tapestry 4 reached end of life in 2008 and no update to address this issue will be released.  Apache Tapestry 5 versions are not vulnerable to this issue.  Users of Apache Tapestry 4 should upgrade to the latest Apache Tapestry 5 version.</p>
+<p>Apache Tapestry 3.x allows deserialization of untrusted data, leading to remote code execution. This issue is similar to but distinct from CVE-2020-17531, which applies the the (also unsupported) 4.x version line. NOTE: This vulnerability only affects Apache Tapestry version line 3.x, which is no longer supported by the maintainer. Users are recommended to upgrade to a supported version line of Apache Tapestry</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread.html/r700a6aa234dbff0555d4187bdc8274d7e4c0afbf35b9a3457f09ee76%40%3Cusers.tapestry.apache.org%3E">https://lists.apache.org/thread.html/r700a6aa234dbff0555d4187bdc8274d7e4c0afbf35b9a3457f09ee76%40%3Cusers.tapestry.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread/bwn1vjrvz1hq0wbdzj23wz322244swhj">https://lists.apache.org/thread/bwn1vjrvz1hq0wbdzj23wz322244swhj</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>Apache Tapestry would like to thank Adrian Bravo (@adrianbravon) for reporting this issue.</li>
+<li>Apache would like to thank Ilyass El Hadi from Mandiant for reporting this issue</li>
+</ul>
+<h2 id="CVE-2022-31781">Regular Expression Denial of Service (ReDoS) in ContentType.java. (GHSL-2022-022)</h2>
+<p>CVE-2022-31781 <a href="https://cve.org/CVERecord?id=CVE-2022-31781">[CVE]</a> <a href="./CVE-2022-31781.cve.json">[CVE json]</a> <a href="./CVE-2022-31781.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-07-13T07:23:23.997Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Tapestry from 5.8.1 before 5.8.1</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Apache Tapestry up to version 5.8.1 is vulnerable to Regular Expression Denial of Service (ReDoS) in the way it handles Content Types. Specially crafted Content Types may cause catastrophic backtracking, taking exponential time to complete.</p>
+<p>Specifically, this is about the regular expression used on the parameter of the org.apache.tapestry5.http.ContentType class.</p>
+<p>Apache Tapestry 5.8.2 has a fix for this vulnerability.</p>
+<p>Notice the vulnerability cannot be triggered by web requests in Tapestry code alone. It would only happen if there&rsquo;s some non-Tapestry codepath passing some outside input to the ContentType class constructor.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://www.openwall.com/lists/oss-security/2022/07/12/3">https://www.openwall.com/lists/oss-security/2022/07/12/3</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>CodeQL team members <a href="https://github.com/atorralba">@atorralba (Tony Torralba)</a> and <a href="https://github.com/joefarebrother">@joefarebrother (Joseph Farebrother)</a>.</li>
+</ul>
+<h2 id="CVE-2021-30638">An Information Disclosure due to insufficient input validation exists in Apache Tapestry 5.4.0 and later</h2>
+<p>CVE-2021-30638 <a href="https://cve.org/CVERecord?id=CVE-2021-30638">[CVE]</a> <a href="./CVE-2021-30638.cve.json">[CVE json]</a> <a href="./CVE-2021-30638.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-04-27T18:27:24.498Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Tapestry from Apache Tapestry  before Apache Tapestry 5.6.4</li>
+<li>Apache Tapestry from Apache Tapestry before Apache Tapestry 5.7.2</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Information Exposure vulnerability in context asset handling of Apache Tapestry allows an attacker to download files inside WEB-INF if using a specially-constructed URL.  This was caused by an incomplete fix for CVE-2020-13953.  This issue affects Apache Tapestry Apache Tapestry 5.4.0 version to Apache Tapestry 5.6.3; Apache Tapestry 5.7.0 version and Apache Tapestry 5.7.1.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r37dab61fc7f7088d4311e7f995ef4117d58d86a675f0256caa6991eb%40%3Cusers.tapestry.apache.org%3E">https://lists.apache.org/thread.html/r37dab61fc7f7088d4311e7f995ef4117d58d86a675f0256caa6991eb%40%3Cusers.tapestry.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>This vulnerability was discovered by Kc Udonsi of Trend Micro</li>
 </ul>
 <h2 id="CVE-2021-27850">Bypass of the fix for CVE-2019-0195</h2>
-<p>CVE-2021-27850 <a href="./CVE-2021-27850.cve.json">[CVE json]</a> <a href="./CVE-2021-27850.osv.json">[OSV json]</a></p>
+<p>CVE-2021-27850 <a href="https://cve.org/CVERecord?id=CVE-2021-27850">[CVE]</a> <a href="./CVE-2021-27850.cve.json">[CVE json]</a> <a href="./CVE-2021-27850.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2021-04-15T07:35:21.760Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache Tapestry at Apache Tapestry 5.5.0</li>
 <li>Apache Tapestry at Apache Tapestry 5.7.0</li>
 <li>Apache Tapestry from Apache Tapestry 5.4.5 before Apache Tapestry 5.4.0*</li>
 <li>Apache Tapestry from Apache Tapestry 5.6.2 before Apache Tapestry 5.6.0*</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>A critical unauthenticated remote code execution vulnerability was found
 all recent versions of Apache Tapestry.
 The affected versions include 5.4.5, 5.5.0, 5.6.2 and 5.7.0.</p>
@@ -162,68 +199,31 @@ chain that leads to RCE (e.g. CommonsBeanUtils1 from ysoserial).Solution for thi
 <li>For Apache Tapestry 5.4.0 to 5.6.1, upgrade to 5.6.2 or later.</li>
 <li>For Apache Tapestry 5.7.0, upgrade to 5.7.1 or later.</li>
 </ul>
-<h3 id="references-1">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread.html/r237ff7f286bda31682c254550c1ebf92b0ec61329b32fbeb2d1c8751%40%3Cusers.tapestry.apache.org%3E">https://lists.apache.org/thread.html/r237ff7f286bda31682c254550c1ebf92b0ec61329b32fbeb2d1c8751%40%3Cusers.tapestry.apache.org%3E</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-3">Credits</h3>
 <ul>
 <li>Apache Tapestry would like to thank Johannes Moritz for finding and notifying this vulnerability</li>
 </ul>
-<h2 id="CVE-2021-30638">An Information Disclosure due to insufficient input validation exists in Apache Tapestry 5.4.0 and later</h2>
-<p>CVE-2021-30638 <a href="./CVE-2021-30638.cve.json">[CVE json]</a> <a href="./CVE-2021-30638.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-04-27T18:27:24.498Z</em></p>
-<h3 id="affected-2">Affected</h3>
-<ul>
-<li>Apache Tapestry from Apache Tapestry  before Apache Tapestry 5.6.4</li>
-<li>Apache Tapestry from Apache Tapestry before Apache Tapestry 5.7.2</li>
-</ul>
-<h3 id="description-2">Description</h3>
-<p>Information Exposure vulnerability in context asset handling of Apache Tapestry allows an attacker to download files inside WEB-INF if using a specially-constructed URL.  This was caused by an incomplete fix for CVE-2020-13953.  This issue affects Apache Tapestry Apache Tapestry 5.4.0 version to Apache Tapestry 5.6.3; Apache Tapestry 5.7.0 version and Apache Tapestry 5.7.1.</p>
-<h3 id="references-2">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread.html/r37dab61fc7f7088d4311e7f995ef4117d58d86a675f0256caa6991eb%40%3Cusers.tapestry.apache.org%3E">https://lists.apache.org/thread.html/r37dab61fc7f7088d4311e7f995ef4117d58d86a675f0256caa6991eb%40%3Cusers.tapestry.apache.org%3E</a></li>
-</ul>
-<h3 id="credits-2">Credits</h3>
-<ul>
-<li>This vulnerability was discovered by Kc Udonsi of Trend Micro</li>
-</ul>
-<h2 id="CVE-2022-31781">Regular Expression Denial of Service (ReDoS) in ContentType.java. (GHSL-2022-022)</h2>
-<p>CVE-2022-31781 <a href="./CVE-2022-31781.cve.json">[CVE json]</a> <a href="./CVE-2022-31781.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-07-13T07:23:23.997Z</em></p>
-<h3 id="affected-3">Affected</h3>
-<ul>
-<li>Apache Tapestry from 5.8.1 before 5.8.1</li>
-</ul>
-<h3 id="description-3">Description</h3>
-<p>Apache Tapestry up to version 5.8.1 is vulnerable to Regular Expression Denial of Service (ReDoS) in the way it handles Content Types. Specially crafted Content Types may cause catastrophic backtracking, taking exponential time to complete.</p>
-<p>Specifically, this is about the regular expression used on the parameter of the org.apache.tapestry5.http.ContentType class.</p>
-<p>Apache Tapestry 5.8.2 has a fix for this vulnerability.</p>
-<p>Notice the vulnerability cannot be triggered by web requests in Tapestry code alone. It would only happen if there&rsquo;s some non-Tapestry codepath passing some outside input to the ContentType class constructor.</p>
-<h3 id="references-3">References</h3>
-<ul>
-<li><a href="https://www.openwall.com/lists/oss-security/2022/07/12/3">https://www.openwall.com/lists/oss-security/2022/07/12/3</a></li>
-</ul>
-<h3 id="credits-3">Credits</h3>
-<ul>
-<li>CodeQL team members <a href="https://github.com/atorralba">@atorralba (Tony Torralba)</a> and <a href="https://github.com/joefarebrother">@joefarebrother (Joseph Farebrother)</a>.</li>
-</ul>
-<h2 id="CVE-2022-46366">Apache Tapestry prior to version 4 (EOL) allows RCE though deserialization of untrusted input</h2>
-<p>CVE-2022-46366 <a href="./CVE-2022-46366.cve.json">[CVE json]</a> <a href="./CVE-2022-46366.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-12-02T13:44:12.576Z</em></p>
+<h2 id="CVE-2020-17531">Deserialization flaw in EOL Tapestry 4.</h2>
+<p>CVE-2020-17531 <a href="https://cve.org/CVERecord?id=CVE-2020-17531">[CVE]</a> <a href="./CVE-2020-17531.cve.json">[CVE json]</a> <a href="./CVE-2020-17531.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2020-12-08T12:41:08.137Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache Tapestry from Apache Tapestry before 4.0.0</li>
+<li>Apache Tapestry from Apache Tapestry 4 through 4</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<p>Apache Tapestry 3.x allows deserialization of untrusted data, leading to remote code execution. This issue is similar to but distinct from CVE-2020-17531, which applies the the (also unsupported) 4.x version line. NOTE: This vulnerability only affects Apache Tapestry version line 3.x, which is no longer supported by the maintainer. Users are recommended to upgrade to a supported version line of Apache Tapestry</p>
+<p>A Java Serialization vulnerability was found in Apache Tapestry 4. Apache Tapestry 4 will attempt to deserialize the &ldquo;sp&rdquo; parameter even before invoking the page&rsquo;s validate method, leading to deserialization without authentication.</p>
+<p>Apache Tapestry 4 reached end of life in 2008 and no update to address this issue will be released.  Apache Tapestry 5 versions are not vulnerable to this issue.  Users of Apache Tapestry 4 should upgrade to the latest Apache Tapestry 5 version.</p>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/bwn1vjrvz1hq0wbdzj23wz322244swhj">https://lists.apache.org/thread/bwn1vjrvz1hq0wbdzj23wz322244swhj</a></li>
+<li><a href="https://lists.apache.org/thread.html/r700a6aa234dbff0555d4187bdc8274d7e4c0afbf35b9a3457f09ee76%40%3Cusers.tapestry.apache.org%3E">https://lists.apache.org/thread.html/r700a6aa234dbff0555d4187bdc8274d7e4c0afbf35b9a3457f09ee76%40%3Cusers.tapestry.apache.org%3E</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>Apache would like to thank Ilyass El Hadi from Mandiant for reporting this issue</li>
+<li>Apache Tapestry would like to thank Adrian Bravo (@adrianbravon) for reporting this issue.</li>
 </ul>
 
   

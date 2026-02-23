@@ -105,26 +105,28 @@
 <p>Do you want disclose a potential security issue for Apache EventMesh? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2023-26512">Apache EventMesh RabbitMQ-Connector plugin allows RCE through deserialization of untrusted data</h2>
-<p>CVE-2023-26512 <a href="./CVE-2023-26512.cve.json">[CVE json]</a> <a href="./CVE-2023-26512.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-07-27T09:32:16.269Z</em></p>
+<h2 id="CVE-2024-56180">raft Hessian Deserialization Vulnerability allowing remote code execution</h2>
+<p>CVE-2024-56180 <a href="https://cve.org/CVERecord?id=CVE-2024-56180">[CVE]</a> <a href="./CVE-2024-56180.cve.json">[CVE json]</a> <a href="./CVE-2024-56180.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-02-14T15:26:18.633Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache EventMesh (incubating) RabbitMQ connector from 1.7.0 through 1.8.0</li>
+<li>Apache EventMesh from 1.10.1 before 1.11.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>CWE-502 Deserialization of Untrusted Data at the <span style="background-color: rgb(255, 255, 255);">rabbitmq-connector plugin</span> module in Apache EventMesh (incubating) V1.7.0\V1.8.0 on windows\linux\mac os e.g. platforms allows attackers to send controlled message and</p>
-<p><span style="background-color: rgb(255, 255, 255);">remote code execute</span> via rabbitmq messages. Users can use the code under the master branch in project repo to fix this issue, we will release the new version as soon as possible.</p>
+<p><span style="background-color: rgb(255, 255, 255);">CWE-502 Deserialization of Untrusted Data at the eventmesh-meta-raft</span><span style="background-color: rgb(255, 255, 255);"> plugin</span><span style="background-color: rgb(255, 255, 255);"> module in Apache EventMesh master branch without release version on windows\linux\mac os e.g. platforms allows attackers to send controlled message and </span><span style="background-color: rgb(255, 255, 255);">remote code execute</span><span style="background-color: rgb(255, 255, 255);"> via hessian d</span><span style="background-color: rgb(255, 255, 255);">eserialization rpc protocol</span><span style="background-color: rgb(255, 255, 255);">. Users can use the code under the master branch in project repo or version 1.11.0 to fix this issue.</span><br></p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/zb1d62wh8o8pvntrnx4t1hj8vz0pm39p">https://lists.apache.org/thread/zb1d62wh8o8pvntrnx4t1hj8vz0pm39p</a></li>
+<li><a href="https://lists.apache.org/thread/k9fw0t5r7t1vbx53gs8d1r8c54rhx0wd">https://lists.apache.org/thread/k9fw0t5r7t1vbx53gs8d1r8c54rhx0wd</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>xuxiaoyu of HW GTS shengjian lab (reporter)</li>
+<li>yulate (reporter)</li>
+<li>Au5t1n (reporter)</li>
+<li>h3h3qaq (reporter)</li>
+<li>X1r0z (reporter)</li>
 </ul>
 <h2 id="CVE-2024-39954">SSRF</h2>
-<p>CVE-2024-39954 <a href="./CVE-2024-39954.cve.json">[CVE json]</a> <a href="./CVE-2024-39954.osv.json">[OSV json]</a></p>
+<p>CVE-2024-39954 <a href="https://cve.org/CVERecord?id=CVE-2024-39954">[CVE]</a> <a href="./CVE-2024-39954.cve.json">[CVE json]</a> <a href="./CVE-2024-39954.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-08-20T08:56:38.252Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
@@ -140,25 +142,23 @@
 <ul>
 <li>Mak1r 808 <a href="mailto:808mak1r@gmail.com">808mak1r@gmail.com</a> (reporter)</li>
 </ul>
-<h2 id="CVE-2024-56180">raft Hessian Deserialization Vulnerability allowing remote code execution</h2>
-<p>CVE-2024-56180 <a href="./CVE-2024-56180.cve.json">[CVE json]</a> <a href="./CVE-2024-56180.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-02-14T15:26:18.633Z</em></p>
+<h2 id="CVE-2023-26512">Apache EventMesh RabbitMQ-Connector plugin allows RCE through deserialization of untrusted data</h2>
+<p>CVE-2023-26512 <a href="https://cve.org/CVERecord?id=CVE-2023-26512">[CVE]</a> <a href="./CVE-2023-26512.cve.json">[CVE json]</a> <a href="./CVE-2023-26512.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-07-27T09:32:16.269Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache EventMesh from 1.10.1 before 1.11.0</li>
+<li>Apache EventMesh (incubating) RabbitMQ connector from 1.7.0 through 1.8.0</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p><span style="background-color: rgb(255, 255, 255);">CWE-502 Deserialization of Untrusted Data at the eventmesh-meta-raft</span><span style="background-color: rgb(255, 255, 255);"> plugin</span><span style="background-color: rgb(255, 255, 255);"> module in Apache EventMesh master branch without release version on windows\linux\mac os e.g. platforms allows attackers to send controlled message and </span><span style="background-color: rgb(255, 255, 255);">remote code execute</span><span style="background-color: rgb(255, 255, 255);"> via hessian d</span><span style="background-color: rgb(255, 255, 255);">eserialization rpc protocol</span><span style="background-color: rgb(255, 255, 255);">. Users can use the code under the master branch in project repo or version 1.11.0 to fix this issue.</span><br></p>
+<p>CWE-502 Deserialization of Untrusted Data at the <span style="background-color: rgb(255, 255, 255);">rabbitmq-connector plugin</span> module in Apache EventMesh (incubating) V1.7.0\V1.8.0 on windows\linux\mac os e.g. platforms allows attackers to send controlled message and</p>
+<p><span style="background-color: rgb(255, 255, 255);">remote code execute</span> via rabbitmq messages. Users can use the code under the master branch in project repo to fix this issue, we will release the new version as soon as possible.</p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/k9fw0t5r7t1vbx53gs8d1r8c54rhx0wd">https://lists.apache.org/thread/k9fw0t5r7t1vbx53gs8d1r8c54rhx0wd</a></li>
+<li><a href="https://lists.apache.org/thread/zb1d62wh8o8pvntrnx4t1hj8vz0pm39p">https://lists.apache.org/thread/zb1d62wh8o8pvntrnx4t1hj8vz0pm39p</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>yulate (reporter)</li>
-<li>Au5t1n (reporter)</li>
-<li>h3h3qaq (reporter)</li>
-<li>X1r0z (reporter)</li>
+<li>xuxiaoyu of HW GTS shengjian lab (reporter)</li>
 </ul>
 
   

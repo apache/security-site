@@ -105,63 +105,43 @@
 <p>Do you want disclose a potential security issue for Apache Karaf? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2021-41766">Insecure Java Deserialization in Apache Karaf</h2>
-<p>CVE-2021-41766 <a href="./CVE-2021-41766.cve.json">[CVE json]</a> <a href="./CVE-2021-41766.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-01-25T14:39:43.793Z</em></p>
+<h2 id="CVE-2026-24656">Decanter log-socket collector has deserialization vulnerability</h2>
+<p>CVE-2026-24656 <a href="https://cve.org/CVERecord?id=CVE-2026-24656">[CVE]</a> <a href="./CVE-2026-24656.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2026-01-26T09:41:22.803Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Karaf from Apache Karaf before 4.3.6</li>
+<li>Apache Karaf before 2.12.0</li>
+<li>Apache Karaf at 2.12.0</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Apache Karaf allows monitoring of applications and the Java runtime by
-using the Java Management Extensions (JMX).
-JMX is a Java RMI based technology that relies on Java serialized
-objects for client server communication.
-Whereas the default JMX implementation is hardened against
-unauthenticated deserialization attacks, the implementation
-used by Apache Karaf is not protected against this kind of attack.</p>
-<p>The impact of Java deserialization vulnerabilities strongly depends
-on the classes that are available within the targets
-class path.
-Generally speaking, deserialization of untrusted data does always
-represent a high security risk and should be prevented.</p>
-<p>The risk is low as, by default, Karaf uses a limited set of classes in the JMX server class path.
-It depends of system scoped classes (e.g. jar in the lib folder).</p>
+<p>Deserialization of Untrusted Data vulnerability in Apache Karaf Decanter.</p><br>The Decanter log socket collector exposes the port 4560, without authentication. If the collector exposes allowed classes property, this configuration can be bypassed.<br>It means that the log socket collector is vulnerable to deserialization of untrusted data, eventually causing DoS.<br><br><br>NB: Decanter log socket collector is not installed by default. Users who have not installed Decanter log socket are not impacted by this issue.<br><br><p>This issue affects Apache Karaf Decanter before 2.12.0.</p><p>Users are recommended to upgrade to version 2.12.0, which fixes the issue.</p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://karaf.apache.org/security/cve-2021-41766.txt">https://karaf.apache.org/security/cve-2021-41766.txt</a></li>
+<li><a href="https://lists.apache.org/thread/dc5wmdn6hyc992olntkl75kk04ndzx34">https://lists.apache.org/thread/dc5wmdn6hyc992olntkl75kk04ndzx34</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>This issue was reported by Daniel Heyne, Konstantin Samuel and Tobias Neitzel.</li>
+<li>r00t4dm (finder)</li>
 </ul>
-<h2 id="CVE-2022-22932">Path traversal flaws</h2>
-<p>CVE-2022-22932 <a href="./CVE-2022-22932.cve.json">[CVE json]</a> <a href="./CVE-2022-22932.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-01-25T14:53:17.546Z</em></p>
+<h2 id="CVE-2024-34365">Cave SSRF and arbitrary file access</h2>
+<p>CVE-2024-34365 <a href="https://cve.org/CVERecord?id=CVE-2024-34365">[CVE]</a> <a href="./CVE-2024-34365.cve.json">[CVE json]</a> <a href="./CVE-2024-34365.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-05-09T06:49:03.305Z</em></p>
 <h3 id="affected-1">Affected</h3>
 <ul>
-<li>Apache Karaf from Apache Karaf before 4.2.15</li>
+<li>Apache Karaf Cave through *</li>
 </ul>
 <h3 id="description-1">Description</h3>
-<p>Apache Karaf obr:* commands and run goal on the karaf-maven-plugin have partial
-path traversal which allows to break out of expected folder.</p>
-<p>The risk is low as obr:* commands are not very used and the entry is set by user.</p>
-<p>This has been fixed in revision:</p>
-<p><a href="https://gitbox.apache.org/repos/asf?p=karaf.git;h=36a2bc4">https://gitbox.apache.org/repos/asf?p=karaf.git;h=36a2bc4</a>
-<a href="https://gitbox.apache.org/repos/asf?p=karaf.git;h=52b70cf">https://gitbox.apache.org/repos/asf?p=karaf.git;h=52b70cf</a></p>
-<p>Mitigation: Apache Karaf users should upgrade to 4.2.15 or 4.3.6
-or later as soon as possible, or use correct path.</p>
-<p>JIRA Tickets: <a href="https://issues.apache.org/jira/browse/KARAF-7326">https://issues.apache.org/jira/browse/KARAF-7326</a></p>
+<p>** UNSUPPORTED WHEN ASSIGNED ** Improper Input Validation vulnerability in Apache Karaf Cave.<p>This issue affects all versions of Apache Karaf Cave.</p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.<p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p></p>
 <h3 id="references-1">References</h3>
 <ul>
-<li><a href="https://karaf.apache.org/security/cve-2022-22932.txt">https://karaf.apache.org/security/cve-2022-22932.txt</a></li>
+<li><a href="https://karaf.apache.org/security/cve-2024-34365.txt">https://karaf.apache.org/security/cve-2024-34365.txt</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>This issue was discovered and reported by GHSL team member Jaroslav Lobacevski</li>
+<li>cigar (finder)</li>
 </ul>
 <h2 id="CVE-2022-40145">JDBC JAAS LDAP injection</h2>
-<p>CVE-2022-40145 <a href="./CVE-2022-40145.cve.json">[CVE json]</a> <a href="./CVE-2022-40145.osv.json">[OSV json]</a></p>
+<p>CVE-2022-40145 <a href="https://cve.org/CVERecord?id=CVE-2022-40145">[CVE]</a> <a href="./CVE-2022-40145.cve.json">[CVE json]</a> <a href="./CVE-2022-40145.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-12-21T15:53:26.357Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
@@ -178,40 +158,60 @@ or later as soon as possible, or use correct path.</p>
 <ul>
 <li>Xun Bai <a href="mailto:bbbbear68@gmail.com">bbbbear68@gmail.com</a> (reporter)</li>
 </ul>
-<h2 id="CVE-2024-34365">Cave SSRF and arbitrary file access</h2>
-<p>CVE-2024-34365 <a href="./CVE-2024-34365.cve.json">[CVE json]</a> <a href="./CVE-2024-34365.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-05-09T06:49:03.305Z</em></p>
+<h2 id="CVE-2022-22932">Path traversal flaws</h2>
+<p>CVE-2022-22932 <a href="https://cve.org/CVERecord?id=CVE-2022-22932">[CVE]</a> <a href="./CVE-2022-22932.cve.json">[CVE json]</a> <a href="./CVE-2022-22932.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-01-25T14:53:17.546Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache Karaf Cave through *</li>
+<li>Apache Karaf from Apache Karaf before 4.2.15</li>
 </ul>
 <h3 id="description-3">Description</h3>
-<p>** UNSUPPORTED WHEN ASSIGNED ** Improper Input Validation vulnerability in Apache Karaf Cave.<p>This issue affects all versions of Apache Karaf Cave.</p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.<p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p></p>
+<p>Apache Karaf obr:* commands and run goal on the karaf-maven-plugin have partial
+path traversal which allows to break out of expected folder.</p>
+<p>The risk is low as obr:* commands are not very used and the entry is set by user.</p>
+<p>This has been fixed in revision:</p>
+<p><a href="https://gitbox.apache.org/repos/asf?p=karaf.git;h=36a2bc4">https://gitbox.apache.org/repos/asf?p=karaf.git;h=36a2bc4</a>
+<a href="https://gitbox.apache.org/repos/asf?p=karaf.git;h=52b70cf">https://gitbox.apache.org/repos/asf?p=karaf.git;h=52b70cf</a></p>
+<p>Mitigation: Apache Karaf users should upgrade to 4.2.15 or 4.3.6
+or later as soon as possible, or use correct path.</p>
+<p>JIRA Tickets: <a href="https://issues.apache.org/jira/browse/KARAF-7326">https://issues.apache.org/jira/browse/KARAF-7326</a></p>
 <h3 id="references-3">References</h3>
 <ul>
-<li><a href="https://karaf.apache.org/security/cve-2024-34365.txt">https://karaf.apache.org/security/cve-2024-34365.txt</a></li>
+<li><a href="https://karaf.apache.org/security/cve-2022-22932.txt">https://karaf.apache.org/security/cve-2022-22932.txt</a></li>
 </ul>
 <h3 id="credits-3">Credits</h3>
 <ul>
-<li>cigar (finder)</li>
+<li>This issue was discovered and reported by GHSL team member Jaroslav Lobacevski</li>
 </ul>
-<h2 id="CVE-2026-24656">Decanter log-socket collector has deserialization vulnerability</h2>
-<p>CVE-2026-24656 <a href="./CVE-2026-24656.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2026-01-26T09:41:22.803Z</em></p>
+<h2 id="CVE-2021-41766">Insecure Java Deserialization in Apache Karaf</h2>
+<p>CVE-2021-41766 <a href="https://cve.org/CVERecord?id=CVE-2021-41766">[CVE]</a> <a href="./CVE-2021-41766.cve.json">[CVE json]</a> <a href="./CVE-2021-41766.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-01-25T14:39:43.793Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache Karaf before 2.12.0</li>
-<li>Apache Karaf at 2.12.0</li>
+<li>Apache Karaf from Apache Karaf before 4.3.6</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<p>Deserialization of Untrusted Data vulnerability in Apache Karaf Decanter.</p><br>The Decanter log socket collector exposes the port 4560, without authentication. If the collector exposes allowed classes property, this configuration can be bypassed.<br>It means that the log socket collector is vulnerable to deserialization of untrusted data, eventually causing DoS.<br><br><br>NB: Decanter log socket collector is not installed by default. Users who have not installed Decanter log socket are not impacted by this issue.<br><br><p>This issue affects Apache Karaf Decanter before 2.12.0.</p><p>Users are recommended to upgrade to version 2.12.0, which fixes the issue.</p>
+<p>Apache Karaf allows monitoring of applications and the Java runtime by
+using the Java Management Extensions (JMX).
+JMX is a Java RMI based technology that relies on Java serialized
+objects for client server communication.
+Whereas the default JMX implementation is hardened against
+unauthenticated deserialization attacks, the implementation
+used by Apache Karaf is not protected against this kind of attack.</p>
+<p>The impact of Java deserialization vulnerabilities strongly depends
+on the classes that are available within the targets
+class path.
+Generally speaking, deserialization of untrusted data does always
+represent a high security risk and should be prevented.</p>
+<p>The risk is low as, by default, Karaf uses a limited set of classes in the JMX server class path.
+It depends of system scoped classes (e.g. jar in the lib folder).</p>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/dc5wmdn6hyc992olntkl75kk04ndzx34">https://lists.apache.org/thread/dc5wmdn6hyc992olntkl75kk04ndzx34</a></li>
+<li><a href="https://karaf.apache.org/security/cve-2021-41766.txt">https://karaf.apache.org/security/cve-2021-41766.txt</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>r00t4dm (finder)</li>
+<li>This issue was reported by Daniel Heyne, Konstantin Samuel and Tobias Neitzel.</li>
 </ul>
 
   

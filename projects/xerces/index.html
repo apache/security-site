@@ -105,36 +105,36 @@
 <p>Do you want disclose a potential security issue for Apache Xerces? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2022-23437">Infinite loop within Apache XercesJ xml parser</h2>
-<p>CVE-2022-23437 <a href="./CVE-2022-23437.cve.json">[CVE json]</a> <a href="./CVE-2022-23437.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-01-24T14:59:39.857Z</em></p>
+<h2 id="CVE-2024-23807">Use-after-free on external DTD scan</h2>
+<p>CVE-2024-23807 <a href="https://cve.org/CVERecord?id=CVE-2024-23807">[CVE]</a> <a href="./CVE-2024-23807.cve.json">[CVE json]</a> <a href="./CVE-2024-23807.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-02-28T13:50:38.265Z</em></p>
 <h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Xerces C++ from 3.0.0 before 3.2.5</li>
+</ul>
+<h3 id="description">Description</h3>
+<div>The Apache Xerces C++ XML parser on versions 3.0.0 before 3.2.5 contains a use-after-free error triggered during the scanning of external DTDs.</div><div><br></div><div>Users are recommended to upgrade to version 3.2.5 which fixes the issue, or mitigate the issue by disabling DTD processing. This can be accomplished via the DOM using a standard parser feature, or via SAX using the XERCES_DISABLE_DTD environment variable.<br></div><div><br></div><div>This issue has been disclosed before as CVE-2018-1311, but unfortunately that advisory incorrectly stated the issue would be fixed in version 3.2.3 or 3.2.4.<br></div>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://github.com/apache/xerces-c/pull/54">https://github.com/apache/xerces-c/pull/54</a></li>
+<li><a href="https://lists.apache.org/thread/c497tgn864tsbm8w0bo3f0d81s07zk9r">https://lists.apache.org/thread/c497tgn864tsbm8w0bo3f0d81s07zk9r</a></li>
+</ul>
+<h2 id="CVE-2022-23437">Infinite loop within Apache XercesJ xml parser</h2>
+<p>CVE-2022-23437 <a href="https://cve.org/CVERecord?id=CVE-2022-23437">[CVE]</a> <a href="./CVE-2022-23437.cve.json">[CVE json]</a> <a href="./CVE-2022-23437.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-01-24T14:59:39.857Z</em></p>
+<h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache Xerces from Apache XercesJ through 2.12.1</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-1">Description</h3>
 <p>There&rsquo;s a vulnerability within the Apache Xerces Java (XercesJ) XML parser when handling specially crafted XML document payloads. This causes, the XercesJ XML parser to wait in an infinite loop, which may sometimes consume system resources for prolonged duration. This vulnerability is present within XercesJ version 2.12.1 and the previous versions.</p>
-<h3 id="references">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/6pjwm10bb69kq955fzr1n0nflnjd27dl">https://lists.apache.org/thread/6pjwm10bb69kq955fzr1n0nflnjd27dl</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
 <li>This issue was discovered by Sergey Temnikov and Ziyi Luo, from Amazon Corretto/JDK Team</li>
-</ul>
-<h2 id="CVE-2024-23807">Use-after-free on external DTD scan</h2>
-<p>CVE-2024-23807 <a href="./CVE-2024-23807.cve.json">[CVE json]</a> <a href="./CVE-2024-23807.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-02-28T13:50:38.265Z</em></p>
-<h3 id="affected-1">Affected</h3>
-<ul>
-<li>Apache Xerces C++ from 3.0.0 before 3.2.5</li>
-</ul>
-<h3 id="description-1">Description</h3>
-<div>The Apache Xerces C++ XML parser on versions 3.0.0 before 3.2.5 contains a use-after-free error triggered during the scanning of external DTDs.</div><div><br></div><div>Users are recommended to upgrade to version 3.2.5 which fixes the issue, or mitigate the issue by disabling DTD processing. This can be accomplished via the DOM using a standard parser feature, or via SAX using the XERCES_DISABLE_DTD environment variable.<br></div><div><br></div><div>This issue has been disclosed before as CVE-2018-1311, but unfortunately that advisory incorrectly stated the issue would be fixed in version 3.2.3 or 3.2.4.<br></div>
-<h3 id="references-1">References</h3>
-<ul>
-<li><a href="https://github.com/apache/xerces-c/pull/54">https://github.com/apache/xerces-c/pull/54</a></li>
-<li><a href="https://lists.apache.org/thread/c497tgn864tsbm8w0bo3f0d81s07zk9r">https://lists.apache.org/thread/c497tgn864tsbm8w0bo3f0d81s07zk9r</a></li>
 </ul>
 
   

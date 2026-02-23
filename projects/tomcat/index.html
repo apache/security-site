@@ -105,512 +105,533 @@
 <p>Do you want disclose a potential security issue for Apache Tomcat? You can read more about the projects&rsquo; security policy on their <a href="https://tomcat.apache.org/security.html">security page</a>, and email your report to the <a href="mailto:security@tomcat.apache.org">Apache Tomcat Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://tomcat.apache.org/security.html">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2020-17527">Apache Tomcat: Request header mix-up between HTTP/2 streams</h2>
-<p>CVE-2020-17527 <a href="./CVE-2020-17527.cve.json">[CVE json]</a> <a href="./CVE-2020-17527.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2020-12-03T18:25:33.380Z</em></p>
+<h2 id="CVE-2026-24734">OCSP revocation bypass</h2>
+<p>CVE-2026-24734 <a href="https://cve.org/CVERecord?id=CVE-2026-24734">[CVE]</a> <a href="./CVE-2026-24734.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2026-02-17T18:53:09.659Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
-<li>Apache Tomcat at Apache Tomcat 10 10.0.0-M1 to 10.0.0-M9</li>
-<li>Apache Tomcat at Apache Tomcat 9 9.0.0-M1 to 9.0.39</li>
-<li>Apache Tomcat at Apache Tomcat 8.5 8.5.0 to 8.5.59</li>
+<li>Apache Tomcat Native from 1.1.23 through 1.1.34</li>
+<li>Apache Tomcat Native from 1.2.0 through 1.2.39</li>
+<li>Apache Tomcat Native from 1.3.0 through 1.3.4</li>
+<li>Apache Tomcat Native from 2.0.0 through 2.0.11</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.17</li>
+<li>Apache Tomcat from 10.1.0-M7 through 10.1.51</li>
+<li>Apache Tomcat from 9.0.83 through 9.0.114</li>
+<li>Apache Tomcat through 8.5.100</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>While investigating bug 64830 it was discovered that Apache Tomcat 10.0.0-M1 to 10.0.0-M9, 9.0.0-M1 to 9.0.39 and 8.5.0 to 8.5.59 could re-use an HTTP request header value from the previous stream received on an HTTP/2 connection for the request associated with the subsequent stream. While this would most likely lead to an error and the closure of the HTTP/2 connection, it is possible that information could leak between requests.</p>
+<p>Improper Input Validation vulnerability in Apache Tomcat Native, Apache Tomcat.</p><p>When using an OCSP responder, Tomcat Native (and Tomcat's FFM port of the Tomcat Native code) did not complete verification or freshness checks on the OCSP response which could allow certificate revocation to be bypassed.</p><p>This issue affects Apache Tomcat Native:&nbsp; from 1.3.0 through 1.3.4, from 2.0.0 through 2.0.11; Apache Tomcat: from 11.0.0-M1 through 11.0.17, from 10.1.0-M7 through 10.1.51, from 9.0.83 through 9.0.114.<br></p><p>The following versions were EOL at the time the CVE was created but are 
+known to be affected: <span style="background-color: rgb(255, 255, 255);">from 1.1.23 through 1.1.34, from 1.2.0 through 1.2.39.&nbsp;Older EOL versions are not affected.</span></p><p>Apache Tomcat Native users are recommended to upgrade to versions 1.3.5 or later or 2.0.12 or later, which fix the issue.</p>Apache Tomcat users are recommended to upgrade to versions 11.0.18 or later, 10.1.52 or later or 9.0.115 or later which fix the issue.<br>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread.html/rce5ac9a40173651d540babce59f6f3825f12c6d4e886ba00823b11e5%40%3Cannounce.tomcat.apache.org%3E">https://lists.apache.org/thread.html/rce5ac9a40173651d540babce59f6f3825f12c6d4e886ba00823b11e5%40%3Cannounce.tomcat.apache.org%3E</a></li>
-</ul>
-<h2 id="CVE-2021-24122">Apache Tomcat information disclosure</h2>
-<p>CVE-2021-24122 <a href="./CVE-2021-24122.cve.json">[CVE json]</a> <a href="./CVE-2021-24122.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-01-14T14:26:04.037Z</em></p>
-<h3 id="affected-1">Affected</h3>
-<ul>
-<li>Apache Tomcat from Apache Tomcat 10 before 10.0.0-M10</li>
-<li>Apache Tomcat from Apache Tomcat 9 before 9.0.40</li>
-<li>Apache Tomcat from Apache Tomcat 8.5 before 8.5.60</li>
-<li>Apache Tomcat from Apache Tomcat 7 before 7.0.106</li>
-</ul>
-<h3 id="description-1">Description</h3>
-<p>When serving resources from a network location using the NTFS file system, Apache Tomcat versions 10.0.0-M1 to 10.0.0-M9, 9.0.0.M1 to 9.0.39, 8.5.0 to 8.5.59 and 7.0.0 to 7.0.106 were susceptible to JSP source code disclosure in some configurations. The root cause was the unexpected behaviour of the JRE API File.getCanonicalPath() which in turn was caused by the inconsistent behaviour of the Windows API (FindFirstFileW) in some circumstances.</p>
-<h3 id="references-1">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread.html/r1595889b083e05986f42b944dc43060d6b083022260b6ea64d2cec52%40%3Cannounce.tomcat.apache.org%3E">https://lists.apache.org/thread.html/r1595889b083e05986f42b944dc43060d6b083022260b6ea64d2cec52%40%3Cannounce.tomcat.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread/292dlmx3fz1888v6v16221kpozq56gml">https://lists.apache.org/thread/292dlmx3fz1888v6v16221kpozq56gml</a></li>
 </ul>
 <h3 id="credits">Credits</h3>
 <ul>
-<li>This issue was identified by Ilja Brander.</li>
+<li>Joshua Rogers (@MegaManSec) (finder)</li>
 </ul>
-<h2 id="CVE-2021-25122">Apache Tomcat h2c request mix-up</h2>
-<p>CVE-2021-25122 <a href="./CVE-2021-25122.cve.json">[CVE json]</a> <a href="./CVE-2021-25122.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-03-01T11:12:28.219Z</em></p>
+<h2 id="CVE-2026-24733">Security constraint bypass with HTTP/0.9</h2>
+<p>CVE-2026-24733 <a href="https://cve.org/CVERecord?id=CVE-2026-24733">[CVE]</a> <a href="./CVE-2026-24733.cve.json">[CVE json]</a> <a href="./CVE-2026-24733.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-02-17T18:50:40.418Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.14</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.49</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.112</li>
+<li>Apache Tomcat through 8.5.100</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Improper Input Validation vulnerability in Apache Tomcat.<br></p><p>Tomcat did not limit HTTP/0.9 requests to the GET method. If a security 
+constraint was configured to allow HEAD requests to a URI but deny GET 
+requests, the user could bypass that constraint on GET requests by 
+sending a (specification invalid) HEAD request using HTTP/0.9.<br></p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.14, from 10.1.0-M1 through 10.1.49, from 9.0.0.M1 through 9.0.112.<br></p><p>Older, EOL versions are also affected.</p><p>Users are recommended to upgrade to version 11.0.15 or later, 10.1.50 or later or 9.0.113 or later, which fixes the issue.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/6xk3t65qpn1myp618krtfotbjn1qt90f">https://lists.apache.org/thread/6xk3t65qpn1myp618krtfotbjn1qt90f</a></li>
+</ul>
+<h2 id="CVE-2025-66614">Client certificate verification bypass due to virtual host mapping</h2>
+<p>CVE-2025-66614 <a href="https://cve.org/CVERecord?id=CVE-2025-66614">[CVE]</a> <a href="./CVE-2025-66614.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2026-02-17T18:48:25.348Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache Tomcat from Apache Tomcat 10 before 10.0.2</li>
-<li>Apache Tomcat from Apache Tomcat 9 before 9.0.42</li>
-<li>Apache Tomcat from Apache Tomcat 8.5 before 8.5.62</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.14</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.49</li>
+<li>Apache Tomcat from 9.0.0-M1 through 9.0.112</li>
+<li>Apache Tomcat from 8.5.0 through 8.5.100</li>
+<li>Apache Tomcat before 8.5.0</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>When responding to new h2c connection requests, Apache Tomcat versions 10.0.0-M1 to 10.0.0, 9.0.0.M1 to 9.0.41 and 8.5.0 to 8.5.61 could duplicate request headers and a limited amount of request body from one request to another meaning user A and user B could both see the results of user A&rsquo;s request.</p>
+<p>Improper Input Validation vulnerability.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.14, from 10.1.0-M1 through 10.1.49, from 9.0.0-M1 through 9.0.112.</p>The following versions were EOL at the time the CVE was created but are 
+known to be affected: 8.5.0 through 8.5.100. Older EOL versions are not affected.<br><p>Tomcat did not validate that the host name provided via the SNI 
+extension was the same as the host name provided in the HTTP host header 
+field. If Tomcat was configured with more than one virtual host and the 
+TLS configuration for one of those hosts did not require client 
+certificate authentication but another one did, it was possible for a 
+client to bypass the client certificate authentication by sending 
+different host names in the SNI extension and the HTTP host header field.
+<br>
+<br>The vulnerability only applies if client certificate authentication is 
+only enforced at the Connector. It does not apply if client certificate 
+authentication is enforced at the web application.<br></p><p>Users are recommended to upgrade to version 11.0.15 or later, 10.1.50 or later or 9.0.113 or later, which fix the issue.</p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread.html/r7b95bc248603360501f18c8eb03bb6001ec0ee3296205b34b07105b7%40%3Cannounce.tomcat.apache.org%3E">https://lists.apache.org/thread.html/r7b95bc248603360501f18c8eb03bb6001ec0ee3296205b34b07105b7%40%3Cannounce.tomcat.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread/vw6lxtlh2qbqwpb61wd3sv1flm2nttw7">https://lists.apache.org/thread/vw6lxtlh2qbqwpb61wd3sv1flm2nttw7</a></li>
 </ul>
-<h2 id="CVE-2021-25329">Incomplete fix for CVE-2020-9484</h2>
-<p>CVE-2021-25329 <a href="./CVE-2021-25329.cve.json">[CVE json]</a> <a href="./CVE-2021-25329.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-03-01T12:01:51.094Z</em></p>
+<h2 id="CVE-2025-61795">Delayed cleaning of multi-part upload temporary files may lead to DoS</h2>
+<p>CVE-2025-61795 <a href="https://cve.org/CVERecord?id=CVE-2025-61795">[CVE]</a> <a href="./CVE-2025-61795.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2025-10-29T11:37:37.868Z</em></p>
 <h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache Tomcat from Apache Tomcat 10 before 10.0.0</li>
-<li>Apache Tomcat from Apache Tomcat 9 before 9.0.41</li>
-<li>Apache Tomcat from Apache Tomcat 8.5 before 8.5.61</li>
-<li>Apache Tomcat from Apache Tomcat 7 before 7.0.107</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.11</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.46</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.109</li>
+<li>Apache Tomcat from 8.5.0 through 8.5.100</li>
+<li>Apache Tomcat from 3 before 8.5.0</li>
+<li>Apache Tomcat from 10.0.0-M1 through 10.0.27</li>
 </ul>
 <h3 id="description-3">Description</h3>
-<p>The fix for CVE-2020-9484 was incomplete. When using Apache Tomcat 10.0.0-M1 to 10.0.0, 9.0.0.M1 to 9.0.41, 8.5.0 to 8.5.61 or 7.0.0. to 7.0.107 with a configuration edge case that was highly unlikely to be used, the Tomcat instance was still vulnerable to CVE-2020-9494. Note that both the previously published prerequisites for CVE-2020-9484 and the previously published mitigations for CVE-2020-9484 also apply to this issue.</p>
+<p>Improper Resource Shutdown or Release vulnerability in Apache Tomcat.</p><div><p>If an error occurred (including exceeding limits) during the processing of a multipart upload, temporary copies of the uploaded parts written to disc were not cleaned up immediately but left for the garbage collection process to delete. Depending on JVM settings, application memory usage and application load, it was possible that space for the temporary copies of uploaded parts would be filled faster than GC cleared it, leading to a DoS.</p></div><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.11, from 10.1.0-M1 through 10.1.46, from 9.0.0.M1 through 9.0.109.</p>The following versions were EOL at the time the CVE was created but are 
+known to be affected: 8.5.0 though 8.5.100. Other, older, EOL versions may also be affected.<br><p>Users are recommended to upgrade to version 11.0.12 or later, 10.1.47 or later or 9.0.110 or later which fixes the issue.</p>
 <h3 id="references-3">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread.html/rfe62fbf9d4c314f166fe8c668e50e5d9dd882a99447f26f0367474bf%40%3Cannounce.tomcat.apache.org%3E">https://lists.apache.org/thread.html/rfe62fbf9d4c314f166fe8c668e50e5d9dd882a99447f26f0367474bf%40%3Cannounce.tomcat.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread/wm9mx8brmx9g4zpywm06ryrtvd3160pp">https://lists.apache.org/thread/wm9mx8brmx9g4zpywm06ryrtvd3160pp</a></li>
 </ul>
 <h3 id="credits-1">Credits</h3>
 <ul>
-<li>This issue was identified by Trung Pham of Viettel Cyber Security.</li>
+<li>sw0rd1ight (<a href="https://github.com/sw0rd1ight">https://github.com/sw0rd1ight</a>) (finder)</li>
 </ul>
-<h2 id="CVE-2021-30639">DoS after non-blocking IO error</h2>
-<p>CVE-2021-30639 <a href="./CVE-2021-30639.cve.json">[CVE json]</a> <a href="./CVE-2021-30639.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-07-12T13:20:34.738Z</em></p>
+<h2 id="CVE-2025-55754">console manipulation via escape sequences in log messages</h2>
+<p>CVE-2025-55754 <a href="https://cve.org/CVERecord?id=CVE-2025-55754">[CVE]</a> <a href="./CVE-2025-55754.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2025-10-29T11:38:22.595Z</em></p>
 <h3 id="affected-4">Affected</h3>
 <ul>
-<li>Apache Tomcat at Apache Tomcat 10 10.0.3 to 10.0.4</li>
-<li>Apache Tomcat at Apache Tomcat 9 9.0.44</li>
-<li>Apache Tomcat at Apache Tomcat 8.5 8.5.64</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.10</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.44</li>
+<li>Apache Tomcat from 9.0.40 through 9.0.108</li>
+<li>Apache Tomcat from 8.5.60 through 8.5.100</li>
+<li>Apache Tomcat from 3 before 8.5.0</li>
+<li>Apache Tomcat from 10.0.0-M1 through 10.0.27</li>
 </ul>
 <h3 id="description-4">Description</h3>
-<p>A vulnerability in Apache Tomcat allows an attacker to remotely trigger a denial of service. An error introduced as part of a change to improve error handling during non-blocking I/O meant that the error flag associated with the Request object was not reset between requests. This meant that once a non-blocking I/O error occurred, all future requests handled by that request object would fail. Users were able to trigger non-blocking I/O errors, e.g. by dropping a connection, thereby creating the possibility of triggering a DoS.
-Applications that do not use non-blocking I/O are not exposed to this vulnerability. This issue affects Apache Tomcat 10.0.3 to 10.0.4; 9.0.44; 8.5.64.</p>
+<p>Improper Neutralization of Escape, Meta, or Control Sequences vulnerability in Apache Tomcat.</p><div><p>Tomcat did not escape ANSI escape sequences in log messages. If Tomcat was running in a console on a Windows operating system, and the console supported ANSI escape sequences, it was possible for an attacker to use a specially crafted URL to inject ANSI escape sequences to manipulate the console and the clipboard and attempt to trick an administrator into running an attacker controlled command. While no attack vector was found, it may have been possible to mount this attack on other operating systems.</p></div><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.10, from 10.1.0-M1 through 10.1.44, from 9.0.40 through 9.0.108.</p>The following versions were EOL at the time the CVE was created but are 
+known to be affected: 8.5.60 though 8.5.100. Other, older, EOL versions may also be affected.<br><p>Users are recommended to upgrade to version 11.0.11 or later, 10.1.45 or later or 9.0.109 or later, which fix the issue.</p>
 <h3 id="references-4">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread.html/rd84fae1f474597bdf358f5bdc0a5c453c507bd527b83e8be6b5ea3f4%40%3Cannounce.tomcat.apache.org%3E">https://lists.apache.org/thread.html/rd84fae1f474597bdf358f5bdc0a5c453c507bd527b83e8be6b5ea3f4%40%3Cannounce.tomcat.apache.org%3E</a></li>
-</ul>
-<h2 id="CVE-2021-30640">Auth weakness in JNDIRealm</h2>
-<p>CVE-2021-30640 <a href="./CVE-2021-30640.cve.json">[CVE json]</a> <a href="./CVE-2021-30640.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-07-12T13:14:16.116Z</em></p>
-<h3 id="affected-5">Affected</h3>
-<ul>
-<li>Apache Tomcat at Apache Tomcat 10 10.0.0-M1 to 10.0.5</li>
-<li>Apache Tomcat at Apache Tomcat 9 9.0.0.M1 to 9.0.45</li>
-<li>Apache Tomcat at Apache Tomcat 8.5 8.5.0 to 8.5.65</li>
-<li>Apache Tomcat at Apache Tomcat 7 7.0.0 to 7.0.108</li>
-</ul>
-<h3 id="description-5">Description</h3>
-<p>A vulnerability in the JNDI Realm of Apache Tomcat allows an attacker to authenticate using variations of a valid user name and/or to bypass some of the protection provided by the LockOut Realm.  This issue affects Apache Tomcat 10.0.0-M1 to 10.0.5; 9.0.0.M1 to 9.0.45; 8.5.0 to 8.5.65.</p>
-<h3 id="references-5">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread.html/r59f9ef03929d32120f91f4ea7e6e79edd5688d75d0a9b65fd26d1fe8%40%3Cannounce.tomcat.apache.org%3E">https://lists.apache.org/thread.html/r59f9ef03929d32120f91f4ea7e6e79edd5688d75d0a9b65fd26d1fe8%40%3Cannounce.tomcat.apache.org%3E</a></li>
-</ul>
-<h2 id="CVE-2021-33037">Incorrect Transfer-Encoding handling with HTTP/1.0</h2>
-<p>CVE-2021-33037 <a href="./CVE-2021-33037.cve.json">[CVE json]</a> <a href="./CVE-2021-33037.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-07-12T13:31:58.821Z</em></p>
-<h3 id="affected-6">Affected</h3>
-<ul>
-<li>Apache Tomcat at Apache Tomcat 10 10.0.0-M1 to 10.0.6</li>
-<li>Apache Tomcat at Apache Tomcat 9 9.0.0.M1 to 9.0.46</li>
-<li>Apache Tomcat at Apache Tomcat 8 8.5.0 to 8.5.66</li>
-</ul>
-<h3 id="description-6">Description</h3>
-<p>Apache Tomcat 10.0.0-M1 to 10.0.6, 9.0.0.M1 to 9.0.46 and 8.5.0 to 8.5.66 did not correctly parse the HTTP transfer-encoding request header in some circumstances leading to the possibility to request smuggling when used with a reverse proxy. Specifically:</p>
-<ul>
-<li>Tomcat incorrectly ignored the transfer encoding header if the client declared it would only accept an HTTP/1.0 response;</li>
-<li>Tomcat honoured the identify encoding; and</li>
-<li>Tomcat did not ensure that, if present, the chunked encoding was the final encoding.</li>
-</ul>
-<h3 id="references-6">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread.html/r612a79269b0d5e5780c62dfd34286a8037232fec0bc6f1a7e60c9381%40%3Cannounce.tomcat.apache.org%3E">https://lists.apache.org/thread.html/r612a79269b0d5e5780c62dfd34286a8037232fec0bc6f1a7e60c9381%40%3Cannounce.tomcat.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread/j7w54hqbkfcn0xb9xy0wnx8w5nymcbqd">https://lists.apache.org/thread/j7w54hqbkfcn0xb9xy0wnx8w5nymcbqd</a></li>
 </ul>
 <h3 id="credits-2">Credits</h3>
 <ul>
-<li>The Apache Tomcat Security Team would like to thank Bahruz Jabiyev, Steven Sprecher and Kaan Onarlioglu of NEU seclab for identifying and reporting this issue.</li>
+<li>Elysee Franchuk of MOBIA Technology Innovations (finder)</li>
 </ul>
-<h2 id="CVE-2021-41079">Apache Tomcat DoS with unexpected TLS packet</h2>
-<p>CVE-2021-41079 <a href="./CVE-2021-41079.cve.json">[CVE json]</a> <a href="./CVE-2021-41079.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-09-15T17:56:16.883Z</em></p>
-<h3 id="affected-7">Affected</h3>
+<h2 id="CVE-2025-55752">Directory traversal via rewrite with possible RCE if PUT is enabled</h2>
+<p>CVE-2025-55752 <a href="https://cve.org/CVERecord?id=CVE-2025-55752">[CVE]</a> <a href="./CVE-2025-55752.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2025-10-29T11:38:53.688Z</em></p>
+<h3 id="affected-5">Affected</h3>
 <ul>
-<li>Apache Tomcat at Apache Tomcat 8.5 8.5.0 to 8.5.63</li>
-<li>Apache Tomcat at Apache Tomcat 9 9.0.0-M1 to 9.0.43</li>
-<li>Apache Tomcat at Apache Tomcat 10 10.0.0-M1 to 10.0.2</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.10</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.44</li>
+<li>Apache Tomcat from 9.0.0.M11 through 9.0.108</li>
+<li>Apache Tomcat from 8.5.6 through 8.5.100</li>
+<li>Apache Tomcat from 3 before 8.5.0</li>
+<li>Apache Tomcat from 10.0.0-M1 through 10.0.27</li>
 </ul>
-<h3 id="description-7">Description</h3>
-<p>Apache Tomcat 8.5.0 to 8.5.63, 9.0.0-M1 to 9.0.43 and 10.0.0-M1 to 10.0.2 did not properly validate incoming TLS packets. When Tomcat was configured to use NIO+OpenSSL or NIO2+OpenSSL for TLS, a specially crafted packet could be used to trigger an infinite loop resulting in a denial of service.</p>
-<h3 id="references-7">References</h3>
+<h3 id="description-5">Description</h3>
+<p>Relative Path Traversal vulnerability in Apache Tomcat.</p><div><p>The fix for bug 60013 introduced a regression where the       rewritten URL was normalized before it was decoded. This introduced the       possibility that, for rewrite rules that rewrite query parameters to the       URL, an attacker could manipulate the request URI to bypass security       constraints including the protection for /WEB-INF/ and /META-INF/. If PUT requests were also enabled then malicious files could be uploaded leading to remote code execution. PUT requests are normally limited to trusted users and it is considered unlikely that PUT requests would be enabled in conjunction with a rewrite that manipulated the URI.</p></div><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.10, from 10.1.0-M1 through 10.1.44, from 9.0.0.M11 through 9.0.108.</p>The following versions were EOL at the time the CVE was created but are 
+known to be affected: 8.5.6 though 8.5.100. Other, older, EOL versions may also be affected.<br><p>Users are recommended to upgrade to version 11.0.11 or later, 10.1.45 or later or 9.0.109 or later, which fix the issue.</p>
+<h3 id="references-5">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread.html/rccdef0349fdf4fb73a4e4403095446d7fe6264e0a58e2df5c6799434%40%3Cannounce.tomcat.apache.org%3E">https://lists.apache.org/thread.html/rccdef0349fdf4fb73a4e4403095446d7fe6264e0a58e2df5c6799434%40%3Cannounce.tomcat.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread/n05kjcwyj1s45ovs8ll1qrrojhfb1tog">https://lists.apache.org/thread/n05kjcwyj1s45ovs8ll1qrrojhfb1tog</a></li>
 </ul>
 <h3 id="credits-3">Credits</h3>
 <ul>
-<li>The Apache Tomcat security team would like to thank Thomas Wozenilek for originally reporting this issue and David Frankson of Infinite Campus for also providing a test case that reproduced the issue.</li>
+<li>Chumy Tsai (github.com/Jimmy01240397) @ CyCraft Technology Intern (finder)</li>
 </ul>
-<h2 id="CVE-2021-42340">DoS via memory leak with WebSocket connections</h2>
-<p>CVE-2021-42340 <a href="./CVE-2021-42340.cve.json">[CVE json]</a> <a href="./CVE-2021-42340.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2021-10-14T14:26:25.345Z</em></p>
-<h3 id="affected-8">Affected</h3>
+<h2 id="CVE-2025-55668">session fixation via rewrite valve</h2>
+<p>CVE-2025-55668 <a href="https://cve.org/CVERecord?id=CVE-2025-55668">[CVE]</a> <a href="./CVE-2025-55668.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2025-10-29T11:39:27.849Z</em></p>
+<h3 id="affected-6">Affected</h3>
 <ul>
-<li>Apache Tomcat at Apache Tomcat 10 10.0.0-M10 to 10.0.11</li>
-<li>Apache Tomcat at Apache Tomcat 10 10.1.0-M1 to 10.1.0-M5</li>
-<li>Apache Tomcat at Apache Tomcat 9 9.0.40 to 9.0.53</li>
-<li>Apache Tomcat at Apache Tomcat 8 8.5.60 to 8.5.71</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.7</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.41</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.105</li>
+<li>Apache Tomcat from 8 before 9.0.0.M1</li>
 </ul>
-<h3 id="description-8">Description</h3>
-<p>The fix for bug 63362 present in Apache Tomcat 10.1.0-M1 to 10.1.0-M5, 10.0.0-M1 to 10.0.11, 9.0.40 to 9.0.53 and 8.5.60 to 8.5.71 introduced a memory leak. The object introduced to collect metrics for HTTP upgrade connections was not released for WebSocket connections once the connection was closed. This created a memory leak that, over time, could lead to a denial of service via an OutOfMemoryError.</p>
-<h3 id="references-8">References</h3>
+<h3 id="description-6">Description</h3>
+<p>Session Fixation vulnerability in Apache Tomcat via rewrite valve.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.7, from 10.1.0-M1 through 10.1.41, from 9.0.0.M1 through 9.0.105.<br>Older, EOL versions may also be affected.</p><p>Users are recommended to upgrade to version 11.0.8, 10.1.42 or 9.0.106, which fix the issue.</p>
+<h3 id="references-6">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread.html/r83a35be60f06aca2065f188ee542b9099695d57ced2e70e0885f905c%40%3Cannounce.tomcat.apache.org%3E">https://lists.apache.org/thread.html/r83a35be60f06aca2065f188ee542b9099695d57ced2e70e0885f905c%40%3Cannounce.tomcat.apache.org%3E</a></li>
-</ul>
-<h2 id="CVE-2021-43980">Apache Tomcat: Information disclosure</h2>
-<p>CVE-2021-43980 <a href="./CVE-2021-43980.cve.json">[CVE json]</a> <a href="./CVE-2021-43980.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-09-28T13:18:54.072Z</em></p>
-<h3 id="affected-9">Affected</h3>
-<ul>
-<li>Apache Tomcat at 10.1.0-M1 to 10.1.0-M12</li>
-<li>Apache Tomcat at 10.0.0-M1 to 10.0.18</li>
-<li>Apache Tomcat at 9.0.0-M1 to 9.0.60</li>
-<li>Apache Tomcat at 8.5.0 to 8.5.77</li>
-</ul>
-<h3 id="description-9">Description</h3>
-<p>The simplified implementation of blocking reads and writes introduced in Tomcat 10 and back-ported to Tomcat 9.0.47 onwards exposed a long standing (but extremely hard to trigger) concurrency bug in Apache Tomcat 10.1.0 to 10.1.0-M12, 10.0.0-M1 to 10.0.18, 9.0.0-M1 to 9.0.60 and 8.5.0 to 8.5.77 that could cause client connections to share an Http11Processor instance resulting in responses, or part responses, to be received by the wrong client.</p>
-<h3 id="references-9">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/3jjqbsp6j88b198x5rmg99b1qr8ht3g3">https://lists.apache.org/thread/3jjqbsp6j88b198x5rmg99b1qr8ht3g3</a></li>
+<li><a href="https://lists.apache.org/thread/v6bknr96rl7l1qxkl1c03v0qdvbbqs47">https://lists.apache.org/thread/v6bknr96rl7l1qxkl1c03v0qdvbbqs47</a></li>
 </ul>
 <h3 id="credits-4">Credits</h3>
 <ul>
-<li>Thanks to Adam Thomas, Richard Hernandez and Ryan Schmitt for discovering the issue and working with the Tomcat security team to identify the root cause and appropriate fix.</li>
+<li>Greg K (<a href="https://github.com/gregk4sec">https://github.com/gregk4sec</a>) (finder)</li>
 </ul>
-<h2 id="CVE-2022-23181">Local privilege escalation with FileStore</h2>
-<p>CVE-2022-23181 <a href="./CVE-2022-23181.cve.json">[CVE json]</a> <a href="./CVE-2022-23181.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-01-26T11:25:59.878Z</em></p>
-<h3 id="affected-10">Affected</h3>
+<h2 id="CVE-2025-53506">DoS via excessive h2 streams at connection start</h2>
+<p>CVE-2025-53506 <a href="https://cve.org/CVERecord?id=CVE-2025-53506">[CVE]</a> <a href="./CVE-2025-53506.cve.json">[CVE json]</a> <a href="./CVE-2025-53506.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T11:40:57.934Z</em></p>
+<h3 id="affected-7">Affected</h3>
 <ul>
-<li>Apache Tomcat at Apache Tomcat 10.1 10.1.0-M1 to 10.1.0-M8</li>
-<li>Apache Tomcat at Apache Tomcat 10.0 10.0.0-M5 to 10.0.14</li>
-<li>Apache Tomcat at Apache Tomcat 9 9.0.35 to 9.0.56</li>
-<li>Apache Tomcat at Apache Tomcat 8 8.5.55 to 8.5.73</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.8</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.42</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.106</li>
 </ul>
-<h3 id="description-10">Description</h3>
-<p>The fix for bug CVE-2020-9484 introduced a time of check, time of use vulnerability into Apache Tomcat 10.1.0-M1 to 10.1.0-M8, 10.0.0-M5 to 10.0.14, 9.0.35 to 9.0.56 and 8.5.55 to 8.5.73 that allowed a local attacker to perform actions with the privileges of the user that the Tomcat process is using. This issue is only exploitable when Tomcat is configured to persist sessions using the FileStore.</p>
-<h3 id="references-10">References</h3>
+<h3 id="description-7">Description</h3>
+<p>Uncontrolled Resource Consumption vulnerability in Apache Tomcat if an HTTP/2 client did not acknowledge the initial settings frame that reduces the maximum permitted concurrent streams.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.8, from 10.1.0-M1 through 10.1.42, from 9.0.0.M1 through 9.0.106.</p><p>Users are recommended to upgrade to version 11.0.9, 10.1.43 or 9.0.107, which fix the issue.</p>
+<h3 id="references-7">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/l8x62p3k19yfcb208jo4zrb83k5mfwg9">https://lists.apache.org/thread/l8x62p3k19yfcb208jo4zrb83k5mfwg9</a></li>
-</ul>
-<h2 id="CVE-2022-25762">Response mix-up with WebSocket concurrent send and close</h2>
-<p>CVE-2022-25762 <a href="./CVE-2022-25762.cve.json">[CVE json]</a> <a href="./CVE-2022-25762.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-05-12T20:00:18.925Z</em></p>
-<h3 id="affected-11">Affected</h3>
-<ul>
-<li>Apache Tomcat at Apache Tomcat 9 9.0.0.M1 to 9.0.20</li>
-<li>Apache Tomcat at Apache Tomcat 8.5 8.5.0 to 8.5.75</li>
-</ul>
-<h3 id="description-11">Description</h3>
-<p>If a web application sends a WebSocket message concurrently with the WebSocket connection closing when running on Apache Tomcat 8.5.0 to 8.5.75 or Apache Tomcat 9.0.0.M1 to 9.0.20, it is possible that the application will continue to use the socket after it has been closed. The error handling triggered in this case could cause the a pooled object to be placed in the pool twice. This could result in subsequent connections using the same object concurrently which could result in data being returned to the wrong use and/or other errors.</p>
-<h3 id="references-11">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/6ckmjfb1k61dyzkto9vm2k5jvt4o7w7c">https://lists.apache.org/thread/6ckmjfb1k61dyzkto9vm2k5jvt4o7w7c</a></li>
-</ul>
-<h2 id="CVE-2022-29885">EncryptInterceptor does not provide complete protection on insecure networks</h2>
-<p>CVE-2022-29885 <a href="./CVE-2022-29885.cve.json">[CVE json]</a> <a href="./CVE-2022-29885.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-05-11T16:28:52.897Z</em></p>
-<h3 id="affected-12">Affected</h3>
-<ul>
-<li>Apache Tomcat at Apache Tomcat 10.1 10.1.0-M1 to 10.1.0-M14</li>
-<li>Apache Tomcat at Apache Tomcat 10 10.0.0-M1 to 10.0.20</li>
-<li>Apache Tomcat at Apache Tomcat 9 9.0.13 to 9.0.62</li>
-<li>Apache Tomcat at Apache Tomcat 8.5 8.5.38 to 8.5.78</li>
-</ul>
-<h3 id="description-12">Description</h3>
-<p>The documentation of Apache Tomcat 10.1.0-M1 to 10.1.0-M14, 10.0.0-M1 to 10.0.20, 9.0.13 to 9.0.62 and 8.5.38 to 8.5.78 for the EncryptInterceptor incorrectly stated it enabled Tomcat clustering to run over an untrusted network. This was not correct. While the EncryptInterceptor does provide confidentiality and integrity protection, it does not protect against all risks associated with running over any untrusted network, particularly DoS risks.</p>
-<h3 id="references-12">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/2b4qmhbcyqvc7dyfpjyx54c03x65vhcv">https://lists.apache.org/thread/2b4qmhbcyqvc7dyfpjyx54c03x65vhcv</a></li>
+<li><a href="https://lists.apache.org/thread/p09775q0rd185m6zz98krg0fp45j8kr0">https://lists.apache.org/thread/p09775q0rd185m6zz98krg0fp45j8kr0</a></li>
 </ul>
 <h3 id="credits-5">Credits</h3>
 <ul>
-<li>This issue was reported to the Apache Tomcat Security team by 4ra1n.</li>
+<li>Kanatoko (finder)</li>
 </ul>
-<h2 id="CVE-2022-34305">XSS in examples web application</h2>
-<p>CVE-2022-34305 <a href="./CVE-2022-34305.cve.json">[CVE json]</a> <a href="./CVE-2022-34305.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-06-23T10:22:24.067Z</em></p>
-<h3 id="affected-13">Affected</h3>
+<h2 id="CVE-2025-52520">DoS via integer overflow in multipart file upload</h2>
+<p>CVE-2025-52520 <a href="https://cve.org/CVERecord?id=CVE-2025-52520">[CVE]</a> <a href="./CVE-2025-52520.cve.json">[CVE json]</a> <a href="./CVE-2025-52520.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T11:41:28.130Z</em></p>
+<h3 id="affected-8">Affected</h3>
 <ul>
-<li>Apache Tomcat at Apache Tomcat 8.5 8.5.50 to 8.5.81</li>
-<li>Apache Tomcat at Apache Tomcat 9 9.0.30 to 9.0.64</li>
-<li>Apache Tomcat at Apache Tomcat 10.0 10.0.0-M1 to 10.0.22</li>
-<li>Apache Tomcat at Apache Tomcat 10.1 10.1.0-M1 to 10.1.0-M16</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.8</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.42</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.106</li>
 </ul>
-<h3 id="description-13">Description</h3>
-<p>In Apache Tomcat 10.1.0-M1 to 10.1.0-M16, 10.0.0-M1 to 10.0.22, 9.0.30 to 9.0.64 and 8.5.50 to 8.5.81 the Form authentication example in the examples web application displayed user provided data without filtering, exposing a XSS vulnerability.</p>
-<h3 id="references-13">References</h3>
+<h3 id="description-8">Description</h3>
+<p>For some unlikely configurations of multipart upload, an Integer Overflow vulnerability in Apache Tomcat could lead to a DoS via bypassing of size limits.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.8, from 10.1.0-M1 through 10.1.42, from 9.0.0.M1 through 9.0.106.</p><p>Users are recommended to upgrade to version 11.0.9, 10.1.43 or 9.0.107, which fix the issue.</p>
+<h3 id="references-8">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/k04zk0nq6w57m72w5gb0r6z9ryhmvr4k">https://lists.apache.org/thread/k04zk0nq6w57m72w5gb0r6z9ryhmvr4k</a></li>
-</ul>
-<h2 id="CVE-2022-42252">Apache Tomcat request smuggling via malformed content-length</h2>
-<p>CVE-2022-42252 <a href="./CVE-2022-42252.cve.json">[CVE json]</a> <a href="./CVE-2022-42252.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2022-11-18T12:36:02.907Z</em></p>
-<h3 id="affected-14">Affected</h3>
-<ul>
-<li>Apache Tomcat at Apache Tomcat 10.1.x 10.1.0-M1 to 10.1.0</li>
-<li>Apache Tomcat at Apache Tomcat 10.0.x 10.0.0-M1 to 10.0.26</li>
-<li>Apache Tomcat at Apache Tomcat 9.0.x 9.0.0-M1 to 9.0.67</li>
-<li>Apache Tomcat at Apache Tomcat 8.5.x 8.5.0 to 8.5.82</li>
-</ul>
-<h3 id="description-14">Description</h3>
-<p>If Apache Tomcat 8.5.0 to 8.5.82, 9.0.0-M1 to 9.0.67, 10.0.0-M1 to 10.0.26 or 10.1.0-M1 to 10.1.0 was configured to ignore invalid HTTP headers via setting rejectIllegalHeader to false (the default for 8.5.x only), Tomcat did not reject a request containing an invalid Content-Length header making a request smuggling attack possible if Tomcat was located behind a reverse proxy that also failed to reject the request with the invalid header.</p>
-<h3 id="references-14">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/zzcxzvqfdqn515zfs3dxb7n8gty589sq">https://lists.apache.org/thread/zzcxzvqfdqn515zfs3dxb7n8gty589sq</a></li>
+<li><a href="https://lists.apache.org/thread/trqq01bbxw6c92zx69kx2mw2qgmfy0o5">https://lists.apache.org/thread/trqq01bbxw6c92zx69kx2mw2qgmfy0o5</a></li>
 </ul>
 <h3 id="credits-6">Credits</h3>
 <ul>
-<li>Thanks to Sam Shahsavar who discovered this issue and reported it to the Apache Tomcat security team.</li>
+<li>Saravana Kumar (finder)</li>
 </ul>
-<h2 id="CVE-2022-45143">JsonErrorReportValve escaping</h2>
-<p>CVE-2022-45143 <a href="./CVE-2022-45143.cve.json">[CVE json]</a> <a href="./CVE-2022-45143.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T11:35:28.968Z</em></p>
-<h3 id="affected-15">Affected</h3>
+<h2 id="CVE-2025-52434">APR/Native Connector crash leading to DoS</h2>
+<p>CVE-2025-52434 <a href="https://cve.org/CVERecord?id=CVE-2025-52434">[CVE]</a> <a href="./CVE-2025-52434.cve.json">[CVE json]</a> <a href="./CVE-2025-52434.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T11:42:49.909Z</em></p>
+<h3 id="affected-9">Affected</h3>
 <ul>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.1</li>
-<li>Apache Tomcat from 9.0.40 through 9.0.68</li>
-<li>Apache Tomcat at 8.5.83</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.106</li>
 </ul>
-<h3 id="description-15">Description</h3>
-<p>The JsonErrorReportValve in Apache Tomcat 8.5.83, 9.0.40 to 9.0.68 and 10.1.0-M1 to 10.1.1 did not escape the type, message or description values. In some circumstances these are constructed from user provided data and it was therefore possible for users to supply values that invalidated or manipulated the JSON output.</p>
-<h3 id="references-15">References</h3>
+<h3 id="description-9">Description</h3>
+<p>Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') vulnerability in Apache Tomcat when using the APR/Native connector. This was particularly noticeable with client initiated closes of HTTP/2 connections.</p><p>This issue affects Apache Tomcat: from 9.0.0.M1 through 9.0.106.</p><p>Users are recommended to upgrade to version 9.0.107, which fixes the issue.</p>
+<h3 id="references-9">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/yqkd183xrw3wqvnpcg3osbcryq85fkzj">https://lists.apache.org/thread/yqkd183xrw3wqvnpcg3osbcryq85fkzj</a></li>
-</ul>
-<h2 id="CVE-2023-28708">JSESSIONID Cookie missing secure attribute in some configurations</h2>
-<p>CVE-2023-28708 <a href="./CVE-2023-28708.cve.json">[CVE json]</a> <a href="./CVE-2023-28708.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T12:07:08.322Z</em></p>
-<h3 id="affected-16">Affected</h3>
-<ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M2</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.5</li>
-<li>Apache Tomcat from 9.0.0-M1 through 9.0.71</li>
-<li>Apache Tomcat from 8.5.0 through 8.5.85</li>
-</ul>
-<h3 id="description-16">Description</h3>
-<div>
-<div>
-<p>When using the RemoteIpFilter with requests received from a    reverse proxy via HTTP that include the X-Forwarded-Proto    header set to https, session cookies created by Apache Tomcat 11.0.0-M1 to 11.0.0.-M2, 10.1.0-M1 to 10.1.5, 9.0.0-M1 to 9.0.71 and 8.5.0 to 8.5.85 did not&nbsp;include the secure attribute. This could result in the user agent&nbsp;<span style="background-color: var(--wht);">transmitting the session cookie over an insecure channel.</span></p></div>
-</div>
-<h3 id="references-16">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/hdksc59z3s7tm39x0pp33mtwdrt8qr67">https://lists.apache.org/thread/hdksc59z3s7tm39x0pp33mtwdrt8qr67</a></li>
-</ul>
-<h2 id="CVE-2023-28709">Fix for CVE-2023-24998 is incomplete</h2>
-<p>CVE-2023-28709 <a href="./CVE-2023-28709.cve.json">[CVE json]</a> <a href="./CVE-2023-28709.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-05-22T10:09:00.405Z</em></p>
-<h3 id="affected-17">Affected</h3>
-<ul>
-<li>Apache Tomcat from 11.0.0-M2 through 11.0.0-M4</li>
-<li>Apache Tomcat from 10.1.5 through 10.1.7</li>
-<li>Apache Tomcat from 9.0.71 through 9.0.73</li>
-<li>Apache Tomcat from 8.5.85 through 8.5.87</li>
-</ul>
-<h3 id="description-17">Description</h3>
-<div><p>The fix for CVE-2023-24998 was incomplete for Apache Tomcat 11.0.0-M2 to 11.0.0-M4, 10.1.5 to 10.1.7, 9.0.71 to 9.0.73 and 8.5.85 to 8.5.87. If non-default HTTP       connector settings were used such that the maxParameterCount&nbsp;could be reached using query string parameters and a request was       submitted that supplied exactly maxParameterCount parameters&nbsp;<span style="background-color: var(--wht);">in the query string, the limit for uploaded request parts could be&nbsp;</span><span style="background-color: var(--wht);">bypassed with the potential for a denial of service to occur.</span></p></div><br>
-<h3 id="references-17">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/7wvxonzwb7k9hx9jt3q33cmy7j97jo3j">https://lists.apache.org/thread/7wvxonzwb7k9hx9jt3q33cmy7j97jo3j</a></li>
+<li><a href="https://lists.apache.org/thread/gxgh65004f25y8519coth6w7vchww030">https://lists.apache.org/thread/gxgh65004f25y8519coth6w7vchww030</a></li>
 </ul>
 <h3 id="credits-7">Credits</h3>
 <ul>
-<li>Chenwei Jiang, Chenfeng Nie and Yue Yang from the Huawei Nebula Security Lab (finder)</li>
+<li>Nacl (finder)</li>
+<li>12SqweR (finder)</li>
+<li>WHOAMI (finder)</li>
+<li>yyzmoon (finder)</li>
 </ul>
-<h2 id="CVE-2023-34981">AJP response header mix-up</h2>
-<p>CVE-2023-34981 <a href="./CVE-2023-34981.cve.json">[CVE json]</a> <a href="./CVE-2023-34981.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2023-06-21T10:26:13.887Z</em></p>
-<h3 id="affected-18">Affected</h3>
+<h2 id="CVE-2025-49125">Security constraint bypass for pre/post-resources</h2>
+<p>CVE-2025-49125 <a href="https://cve.org/CVERecord?id=CVE-2025-49125">[CVE]</a> <a href="./CVE-2025-49125.cve.json">[CVE json]</a> <a href="./CVE-2025-49125.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T11:43:27.486Z</em></p>
+<h3 id="affected-10">Affected</h3>
 <ul>
-<li>Apache Tomcat at 11.0.0-M5</li>
-<li>Apache Tomcat at 10.1.8</li>
-<li>Apache Tomcat at 9.0.74</li>
-<li>Apache Tomcat at 8.5.88</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.7</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.41</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.105</li>
 </ul>
-<h3 id="description-18">Description</h3>
-<p>A regression in the fix for bug 66512 in Apache Tomcat 11.0.0-M5, 10.1.8, 9.0.74 and 8.5.88 meant that, if a response did not include any HTTP headers no AJP SEND_HEADERS messare woudl be sent for the response which in turn meant that at least one AJP proxy (mod_proxy_ajp) would use the response headers from the previous request leading to an information leak.</p>
-<h3 id="references-18">References</h3>
+<h3 id="description-10">Description</h3>
+<p>Authentication Bypass Using an Alternate Path or Channel vulnerability in Apache Tomcat.&nbsp; When using PreResources or PostResources mounted other than at the root of the web application, it was possible to access those resources via an unexpected path. That path was likely not to be protected by the same security constraints as the expected path, allowing those security constraints to be bypassed.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.7, from 10.1.0-M1 through 10.1.41, from 9.0.0.M1 through 9.0.105.</p><p>Users are recommended to upgrade to version 11.0.8, 10.1.42 or 9.0.106, which fix the issue.</p>
+<h3 id="references-10">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/j1ksjh9m9gx1q60rtk1sbzmxhvj5h5qz">https://lists.apache.org/thread/j1ksjh9m9gx1q60rtk1sbzmxhvj5h5qz</a></li>
+<li><a href="https://lists.apache.org/thread/m66cytbfrty9k7dc4cg6tl1czhsnbywk">https://lists.apache.org/thread/m66cytbfrty9k7dc4cg6tl1czhsnbywk</a></li>
 </ul>
 <h3 id="credits-8">Credits</h3>
 <ul>
-<li>Hidenobu Hayashi and Yuichiro Fukubayashi of M3, Inc. (finder)</li>
+<li>Greg K (<a href="https://github.com/gregk4sec">https://github.com/gregk4sec</a>) (finder)</li>
 </ul>
-<h2 id="CVE-2023-41080">Open redirect with FORM authentication</h2>
-<p>CVE-2023-41080 <a href="./CVE-2023-41080.cve.json">[CVE json]</a> <a href="./CVE-2023-41080.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T12:04:38.029Z</em></p>
-<h3 id="affected-19">Affected</h3>
+<h2 id="CVE-2025-49124">exe side-loading via icalcs.exe in Tomcat installer for Windows</h2>
+<p>CVE-2025-49124 <a href="https://cve.org/CVERecord?id=CVE-2025-49124">[CVE]</a> <a href="./CVE-2025-49124.cve.json">[CVE json]</a> <a href="./CVE-2025-49124.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T11:44:21.737Z</em></p>
+<h3 id="affected-11">Affected</h3>
 <ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M10</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.0.12</li>
-<li>Apache Tomcat from 9.0.0-M1 through 9.0.79</li>
-<li>Apache Tomcat from 8.5.0 through 8.5.92</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.7</li>
+<li>Apache Tomcat from 10.1.0 through 10.1.41</li>
+<li>Apache Tomcat from 9.0.23 through 9.0.105</li>
 </ul>
-<h3 id="description-19">Description</h3>
-<p>URL Redirection to Untrusted Site (&lsquo;Open Redirect&rsquo;) vulnerability in FORM authentication feature Apache Tomcat.<p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M10, from 10.1.0-M1 through 10.0.12, from 9.0.0-M1 through 9.0.79 and from 8.5.0 through 8.5.92.</p>The vulnerability is limited to the ROOT (default) web application.</p>
-<h3 id="references-19">References</h3>
+<h3 id="description-11">Description</h3>
+<p>Untrusted Search Path vulnerability in Apache Tomcat installer for Windows. During installation, the Tomcat installer for Windows used icacls.exe without specifying a full path.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.7, from 10.1.0 through 10.1.41, from 9.0.23 through 9.0.105.</p><p>Users are recommended to upgrade to version 11.0.8, 10.1.42 or 9.0.106, which fix the issue.</p>
+<h3 id="references-11">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/71wvwprtx2j2m54fovq9zr7gbm2wow2f">https://lists.apache.org/thread/71wvwprtx2j2m54fovq9zr7gbm2wow2f</a></li>
+<li><a href="https://lists.apache.org/thread/lnow7tt2j6hb9kcpkggx32ht6o90vqzv">https://lists.apache.org/thread/lnow7tt2j6hb9kcpkggx32ht6o90vqzv</a></li>
 </ul>
 <h3 id="credits-9">Credits</h3>
 <ul>
-<li>This vulnerability was reported responsibly to the Tomcat security team by Yiheng Cao. (finder)</li>
+<li>T. Doğa Gelişli <a href="https://linkedin.com/in/tdogagelisli/">https://linkedin.com/in/tdogagelisli/</a> (finder)</li>
 </ul>
-<h2 id="CVE-2023-41081">Unexpected use of first declared worker in mod_jk for unmapped request</h2>
-<p>CVE-2023-41081 <a href="./CVE-2023-41081.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2023-09-28T21:30:55.612Z</em></p>
-<h3 id="affected-20">Affected</h3>
+<h2 id="CVE-2025-48989">h2 DoS - Made You Reset</h2>
+<p>CVE-2025-48989 <a href="https://cve.org/CVERecord?id=CVE-2025-48989">[CVE]</a> <a href="./CVE-2025-48989.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2025-10-29T11:45:00.142Z</em></p>
+<h3 id="affected-12">Affected</h3>
 <ul>
-<li>Apache Tomcat Connectors from 1.2.0 through 1.2.48</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.9</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.43</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.107</li>
+<li>Apache Tomcat from 8.5.0 through 8.5.100</li>
 </ul>
-<h3 id="description-20">Description</h3>
-<div><p>Important: Authentication Bypass CVE-2023-41081
-<br>
-</p><p>The mod_jk component of <span style="background-color: rgb(255, 255, 255);">Apache Tomcat Connectors&nbsp;</span>in some circumstances, such as when a configuration included&nbsp;"JkOptions +ForwardDirectories" but the configuration did not       provide explicit mounts for all possible proxied requests, mod_jk would       use an implicit mapping and map the request to the first defined worker.&nbsp;<span style="background-color: var(--wht);">Such an implicit mapping could result in the unintended exposure of the&nbsp;</span><span style="background-color: var(--wht);">status worker and/or bypass security constraints configured in httpd. As&nbsp;</span><span style="background-color: var(--wht);">of JK 1.2.49, the implicit mapping functionality has been removed and all&nbsp;</span><span style="background-color: var(--wht);">mappings must now be via explicit configuration.&nbsp;</span><span style="background-color: var(--wht);">Only mod_jk is affected&nbsp;</span><span style="background-color: var(--wht);">by this issue. The ISAPI redirector is not affected.</span></p></div><p>This issue affects Apache Tomcat Connectors <span style="background-color: rgb(255, 255, 255);">(mod_jk only)</span>: from 1.2.0 through 1.2.48.</p><p>Users are recommended to upgrade to version 1.2.49, which fixes the issue.</p><h2>History<br></h2><h2></h2><p>2023-09-13 Original advisory
-<br>2023-09-28 Updated summary<br></p>
-<h3 id="references-20">References</h3>
+<h3 id="description-12">Description</h3>
+<p>Improper Resource Shutdown or Release vulnerability in Apache Tomcat made Tomcat vulnerable to the made you reset attack.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.9, from 10.1.0-M1 through 10.1.43 and from 9.0.0.M1 through 9.0.107. Older, EOL versions may also be affected.</p><p>Users are recommended to upgrade to one of versions 11.0.10, 10.1.44 or 9.0.108 which fix the issue.</p>
+<h3 id="references-12">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/rd1r26w7271jyqgzr4492tooyt583d8b">https://lists.apache.org/thread/rd1r26w7271jyqgzr4492tooyt583d8b</a></li>
-<li><a href="https://www.openwall.com/lists/oss-security/2023/09/13/2">https://www.openwall.com/lists/oss-security/2023/09/13/2</a></li>
-<li><a href="https://lists.debian.org/debian-lts-announce/2023/09/msg00027.html">https://lists.debian.org/debian-lts-announce/2023/09/msg00027.html</a></li>
+<li><a href="https://lists.apache.org/thread/9ydfg0xr0tchmglcprhxgwhj0hfwxlyf">https://lists.apache.org/thread/9ydfg0xr0tchmglcprhxgwhj0hfwxlyf</a></li>
 </ul>
 <h3 id="credits-10">Credits</h3>
 <ul>
-<li>Karl von Randow (finder)</li>
+<li>Gal Bar Nahum, Anat Bremler-Barr, and Yaniv Harel of Tel Aviv University (finder)</li>
 </ul>
-<h2 id="CVE-2023-42794">FileUpload: DoS due to accumulation of temporary files on Windows</h2>
-<p>CVE-2023-42794 <a href="./CVE-2023-42794.cve.json">[CVE json]</a> <a href="./CVE-2023-42794.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T12:04:08.371Z</em></p>
-<h3 id="affected-21">Affected</h3>
+<h2 id="CVE-2025-48988">FileUpload large number of parts with headers DoS</h2>
+<p>CVE-2025-48988 <a href="https://cve.org/CVERecord?id=CVE-2025-48988">[CVE]</a> <a href="./CVE-2025-48988.cve.json">[CVE json]</a> <a href="./CVE-2025-48988.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T11:45:34.776Z</em></p>
+<h3 id="affected-13">Affected</h3>
 <ul>
-<li>Apache Tomcat from 9.0.70 through 9.0.80</li>
-<li>Apache Tomcat from 8.5.85 through 8.5.93</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.7</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.41</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.105</li>
 </ul>
-<h3 id="description-21">Description</h3>
-<p>Incomplete Cleanup vulnerability in Apache Tomcat.<br><br>The internal fork of Commons FileUpload packaged with Apache Tomcat 9.0.70 through 9.0.80 and 8.5.85 through 8.5.93 included an unreleased,
-in progress refactoring that exposed a potential denial of service on
-Windows if a web application opened a stream for an uploaded file but
-failed to close the stream. The file would never be deleted from disk
-creating the possibility of an eventual denial of service due to the
-disk being full.
-<br><p><span style="background-color: var(--wht);">Users are recommended to upgrade to version 9.0.81 onwards or 8.5.94 onwards, which fixes the issue.</span><br></p></p>
-<h3 id="references-21">References</h3>
+<h3 id="description-13">Description</h3>
+<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.7, from 10.1.0-M1 through 10.1.41, from 9.0.0.M1 through 9.0.105.</p><p>Users are recommended to upgrade to version 11.0.8, 10.1.42 or 9.0.106, which fix the issue.</p>
+<h3 id="references-13">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/vvbr2ms7lockj1hlhz5q3wmxb2mwcw82">https://lists.apache.org/thread/vvbr2ms7lockj1hlhz5q3wmxb2mwcw82</a></li>
+<li><a href="https://lists.apache.org/thread/nzkqsok8t42qofgqfmck536mtyzygp18">https://lists.apache.org/thread/nzkqsok8t42qofgqfmck536mtyzygp18</a></li>
 </ul>
 <h3 id="credits-11">Credits</h3>
 <ul>
-<li>Mohammad Khedmatgozar (cellbox) (finder)</li>
+<li>TERASOLUNA Framework Security Team of NTT DATA Group Corporation (finder)</li>
 </ul>
-<h2 id="CVE-2023-42795">Failure during request clean-up leads to sensitive data leaking to subsequent requests</h2>
-<p>CVE-2023-42795 <a href="./CVE-2023-42795.cve.json">[CVE json]</a> <a href="./CVE-2023-42795.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T12:02:56.986Z</em></p>
-<h3 id="affected-22">Affected</h3>
+<h2 id="CVE-2025-46701">Security constraint bypass for CGI scripts</h2>
+<p>CVE-2025-46701 <a href="https://cve.org/CVERecord?id=CVE-2025-46701">[CVE]</a> <a href="./CVE-2025-46701.cve.json">[CVE json]</a> <a href="./CVE-2025-46701.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T11:46:00.351Z</em></p>
+<h3 id="affected-14">Affected</h3>
 <ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M11</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.13</li>
-<li>Apache Tomcat from 9.0.0-M1 through 9.0.80</li>
-<li>Apache Tomcat from 8.5.0 through 8.5.93</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.6</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.40</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.104</li>
 </ul>
-<h3 id="description-22">Description</h3>
-<p>Incomplete Cleanup vulnerability in Apache Tomcat.<p>When recycling various internal objects in Apache Tomcat from 11.0.0-M1 through 11.0.0-M11, from 10.1.0-M1 through 10.1.13, from 9.0.0-M1 through 9.0.80 and from 8.5.0 through 8.5.93, an error could
-cause Tomcat to skip some parts of the recycling process leading to
-information leaking from the current request/response to the next.<br></p><p>Users are recommended to upgrade to version 11.0.0-M12 onwards, 10.1.14 onwards, 9.0.81 onwards or 8.5.94 onwards, which fixes the issue.</p></p>
-<h3 id="references-22">References</h3>
+<h3 id="description-14">Description</h3>
+<p>Improper Handling of Case Sensitivity vulnerability in Apache Tomcat's GCI servlet allows security constraint bypass of security constraints that apply to the pathInfo component of a URI mapped to the CGI servlet.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.6, from 10.1.0-M1 through 10.1.40, from 9.0.0.M1 through 9.0.104.</p><p>Users are recommended to upgrade to version 11.0.7, 10.1.41 or 9.0.105, which fixes the issue.</p>
+<h3 id="references-14">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/065jfyo583490r9j2v73nhpyxdob56lw">https://lists.apache.org/thread/065jfyo583490r9j2v73nhpyxdob56lw</a></li>
-</ul>
-<h2 id="CVE-2023-45648">Trailer header parsing too lenient</h2>
-<p>CVE-2023-45648 <a href="./CVE-2023-45648.cve.json">[CVE json]</a> <a href="./CVE-2023-45648.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T12:00:45.261Z</em></p>
-<h3 id="affected-23">Affected</h3>
-<ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M11</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.13</li>
-<li>Apache Tomcat from 9.0.0-M1 through 9.0.81</li>
-<li>Apache Tomcat from 8.5.0 through 8.5.93</li>
-</ul>
-<h3 id="description-23">Description</h3>
-<p>Improper Input Validation vulnerability in Apache Tomcat.<p>Tomcat <span style="background-color: rgb(255, 255, 255);">from 11.0.0-M1 through 11.0.0-M11, from 10.1.0-M1 through 10.1.13, from 9.0.0-M1 through 9.0.81 and from 8.5.0 through 8.5.93</span> did not correctly parse HTTP trailer headers. A specially
-crafted, invalid trailer header could cause Tomcat to treat a single
-request as multiple requests leading to the possibility of request
-smuggling when behind a reverse proxy.<br></p><p><span style="background-color: var(--wht);">Users are recommended to upgrade to version 11.0.0-M12 onwards, 10.1.14 onwards, 9.0.81 onwards or 8.5.94 onwards, which fix the issue.</span><br></p></p>
-<h3 id="references-23">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/2pv8yz1pyp088tsxfb7ogltk9msk0jdp">https://lists.apache.org/thread/2pv8yz1pyp088tsxfb7ogltk9msk0jdp</a></li>
+<li><a href="https://lists.apache.org/thread/xhqqk9w5q45srcdqhogdk04lhdscv30j">https://lists.apache.org/thread/xhqqk9w5q45srcdqhogdk04lhdscv30j</a></li>
 </ul>
 <h3 id="credits-12">Credits</h3>
 <ul>
-<li>Keran Mu and Jianjun Chen from Tsinghua University and Zhongguancun Laboratory (finder)</li>
+<li>Greg K (<a href="https://github.com/gregk4sec">https://github.com/gregk4sec</a>) (finder)</li>
 </ul>
-<h2 id="CVE-2023-46589">HTTP request smuggling via malformed trailer headers</h2>
-<p>CVE-2023-46589 <a href="./CVE-2023-46589.cve.json">[CVE json]</a> <a href="./CVE-2023-46589.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T12:00:21.984Z</em></p>
-<h3 id="affected-24">Affected</h3>
+<h2 id="CVE-2025-31651">Bypass of rules in Rewrite Valve</h2>
+<p>CVE-2025-31651 <a href="https://cve.org/CVERecord?id=CVE-2025-31651">[CVE]</a> <a href="./CVE-2025-31651.cve.json">[CVE json]</a> <a href="./CVE-2025-31651.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T11:46:25.018Z</em></p>
+<h3 id="affected-15">Affected</h3>
 <ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M10</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.15</li>
-<li>Apache Tomcat from 9.0.0-M1 through 9.0.82</li>
-<li>Apache Tomcat from 8.5.0 through 8.5.95</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.5</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.39</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.102</li>
 </ul>
-<h3 id="description-24">Description</h3>
-<p>Improper Input Validation vulnerability in Apache Tomcat.<p>Tomcat <span style="background-color: rgb(255, 255, 255);">from 11.0.0-M1 through 11.0.0-M10, from 10.1.0-M1 through 10.1.15, from 9.0.0-M1 through 9.0.82 and from 8.5.0 through 8.5.95</span> did not correctly parse HTTP trailer headers. A trailer header that exceeded the header size limit could cause Tomcat to treat a single
-request as multiple requests leading to the possibility of request
-smuggling when behind a reverse proxy.<br></p><p><span style="background-color: var(--wht);">Users are recommended to upgrade to version 11.0.0-M11 onwards, 10.1.16 onwards, 9.0.83 onwards or 8.5.96 onwards, which fix the issue.</span></p><br></p>
-<h3 id="references-24">References</h3>
+<h3 id="description-15">Description</h3>
+<p>Improper Neutralization of Escape, Meta, or Control Sequences vulnerability in Apache Tomcat.&nbsp;For a subset of unlikely rewrite rule configurations, it was possible 
+for a specially crafted request to bypass some rewrite rules. If those 
+rewrite rules effectively enforced security constraints, those 
+constraints could be bypassed.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.5, from 10.1.0-M1 through 10.1.39, from 9.0.0.M1 through 9.0.102.</p><p>Users are recommended to upgrade to version [FIXED_VERSION], which fixes the issue.</p>
+<h3 id="references-15">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/0rqq6ktozqc42ro8hhxdmmdjm1k1tpxr">https://lists.apache.org/thread/0rqq6ktozqc42ro8hhxdmmdjm1k1tpxr</a></li>
+<li><a href="https://lists.apache.org/list.html?announce@tomcat.apache.org">https://lists.apache.org/list.html?announce@tomcat.apache.org</a></li>
 </ul>
 <h3 id="credits-13">Credits</h3>
 <ul>
-<li>Norihito Aimoto (OSSTech Corporation)  (finder)</li>
+<li>COSCO Shipping Lines DIC (finder)</li>
 </ul>
-<h2 id="CVE-2024-21733">Leaking of unrelated request bodies in default error page</h2>
-<p>CVE-2024-21733 <a href="./CVE-2024-21733.cve.json">[CVE json]</a> <a href="./CVE-2024-21733.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T11:59:57.792Z</em></p>
-<h3 id="affected-25">Affected</h3>
+<h2 id="CVE-2025-31650">DoS via malformed HTTP/2 PRIORITY_UPDATE frame</h2>
+<p>CVE-2025-31650 <a href="https://cve.org/CVERecord?id=CVE-2025-31650">[CVE]</a> <a href="./CVE-2025-31650.cve.json">[CVE json]</a> <a href="./CVE-2025-31650.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-08-08T11:42:59.031Z</em></p>
+<h3 id="affected-16">Affected</h3>
 <ul>
-<li>Apache Tomcat from 8.5.7 through 8.5.63</li>
-<li>Apache Tomcat from 9.0.0-M11 through 9.0.43</li>
+<li>Apache Tomcat from 9.0.76 through 9.0.102</li>
+<li>Apache Tomcat from 10.1.10 through 10.1.39</li>
+<li>Apache Tomcat from 11.0.0-M2 through 11.0.5</li>
 </ul>
-<h3 id="description-25">Description</h3>
-<p>Generation of Error Message Containing Sensitive Information vulnerability in Apache Tomcat.<p>This issue affects Apache Tomcat: from 8.5.7 through 8.5.63, from 9.0.0-M11 through 9.0.43.</p><p>Users are recommended to upgrade to version 8.5.64 onwards or 9.0.44 onwards, which contain a fix for the issue.</p></p>
-<h3 id="references-25">References</h3>
+<h3 id="description-16">Description</h3>
+<p>Improper Input Validation vulnerability in Apache Tomcat. Incorrect error handling for some invalid HTTP priority headers resulted in incomplete clean-up of the failed request which created a memory leak. A large number of such requests could trigger an OutOfMemoryException resulting in a denial of service.</p><p>This issue affects Apache Tomcat: from 9.0.76 through 9.0.102, from 10.1.10 through 10.1.39, from 11.0.0-M2 through 11.0.5.</p><p>Users are recommended to upgrade to version 9.0.104, 10.1.40 or 11.0.6 which fix the issue.</p>
+<h3 id="references-16">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/h9bjqdd0odj6lhs2o96qgowcc6hb0cfz">https://lists.apache.org/thread/h9bjqdd0odj6lhs2o96qgowcc6hb0cfz</a></li>
+<li><a href="https://lists.apache.org/thread/j6zzk0y3yym9pzfzkq5vcyxzz0yzh826">https://lists.apache.org/thread/j6zzk0y3yym9pzfzkq5vcyxzz0yzh826</a></li>
+</ul>
+<h2 id="CVE-2025-24813">Potential RCE and/or information disclosure and/or information corruption with partial PUT</h2>
+<p>CVE-2025-24813 <a href="https://cve.org/CVERecord?id=CVE-2025-24813">[CVE]</a> <a href="./CVE-2025-24813.cve.json">[CVE json]</a> <a href="./CVE-2025-24813.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T11:49:42.250Z</em></p>
+<h3 id="affected-17">Affected</h3>
+<ul>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.2</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.34</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.98</li>
+</ul>
+<h3 id="description-17">Description</h3>
+<p>Path Equivalence: 'file.Name' (Internal Dot) leading to&nbsp;<span style="background-color: var(--wht);">Remote Code Execution and/or Information disclosure&nbsp;</span><span style="background-color: var(--wht);">and/or malicious content added to uploaded files via write enabled&nbsp;</span><span style="background-color: var(--wht);">Default Servlet</span>&nbsp;in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.2, from 10.1.0-M1 through 10.1.34, from 9.0.0.M1 through 9.0.98.</p><div><p>If all of the following were true, a malicious user was able to view       security sensitive files and/or inject content into those files:<br>-&nbsp;<span style="background-color: var(--wht);">writes enabled for the default servlet (disabled by default)<br></span><span style="background-color: var(--wht);">- support for partial PUT (enabled by default)<br></span><span style="background-color: var(--wht);">- a target URL for security sensitive uploads that was a sub-directory of&nbsp;</span><span style="background-color: var(--wht);">a target URL for public uploads<br>-&nbsp;</span><span style="background-color: var(--wht);">attacker knowledge of the names of security sensitive files being&nbsp;</span><span style="background-color: var(--wht);">uploaded<br>-&nbsp;</span><span style="background-color: var(--wht);">the security sensitive files also being uploaded via partial PUT</span></p><p><span style="background-color: var(--wht);">If all of the following were true, a malicious user was able to</span>       perform remote code execution:<br><span style="background-color: var(--wht);">- writes enabled for the default servlet (disabled by default)<br>-&nbsp;</span><span style="background-color: var(--wht);">support for partial PUT (enabled by default)<br>-&nbsp;</span><span style="background-color: var(--wht);">application was using Tomcat's file based session persistence with the&nbsp;</span><span style="background-color: var(--wht);">default storage location<br>-&nbsp;</span><span style="background-color: var(--wht);">application included a library that may be leveraged in a&nbsp;</span><span style="background-color: var(--wht);">deserialization attack</span></p><p><span style="background-color: var(--wht);">Users are recommended to upgrade to version 11.0.3, 10.1.35 or 9.0.98, which fixes the issue.</span></p></div>
+<h3 id="references-17">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/j5fkjv2k477os90nczf2v9l61fb0kkgq">https://lists.apache.org/thread/j5fkjv2k477os90nczf2v9l61fb0kkgq</a></li>
 </ul>
 <h3 id="credits-14">Credits</h3>
 <ul>
-<li>xer0dayz from company Sn1perSecurity LLC (finder)</li>
+<li>COSCO Shipping Lines DIC (finder)</li>
+<li>sw0rd1ight (<a href="https://github.com/sw0rd1ight">https://github.com/sw0rd1ight</a>) (finder)</li>
 </ul>
-<h2 id="CVE-2024-23672">WebSocket DoS with incomplete closing handshake</h2>
-<p>CVE-2024-23672 <a href="./CVE-2024-23672.cve.json">[CVE json]</a> <a href="./CVE-2024-23672.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T11:57:07.493Z</em></p>
+<h2 id="CVE-2024-56337">RCE due to TOCTOU issue in JSP compilation - CVE-2024-50379 mitigation was incomplete</h2>
+<p>CVE-2024-56337 <a href="https://cve.org/CVERecord?id=CVE-2024-56337">[CVE]</a> <a href="./CVE-2024-56337.cve.json">[CVE json]</a> <a href="./CVE-2024-56337.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T11:52:34.749Z</em></p>
+<h3 id="affected-18">Affected</h3>
+<ul>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.1</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.33</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.97</li>
+</ul>
+<h3 id="description-18">Description</h3>
+<p>Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.1, from 10.1.0-M1 through 10.1.33, from 9.0.0.M1 through 9.0.97.</p><p>The mitigation for CVE-2024-50379 was incomplete.</p><p>Users running Tomcat on a case insensitive file system with the default servlet write enabled (readonly initialisation 
+parameter set to the non-default value of false) may need additional configuration to fully mitigate CVE-2024-50379 depending on which version of Java they are using with Tomcat:<br>- running on Java 8 or Java 11: the system property&nbsp;sun.io.useCanonCaches must be explicitly set to false (it defaults to true)<br>- running on Java 17: the&nbsp;system property sun.io.useCanonCaches, if set, must be set to false&nbsp;(it defaults to false)<br>- running on Java 21 onwards: no further configuration is required&nbsp;(the system property and the problematic cache have been removed)</p><p><span style="background-color: var(--wht);">Tomcat 11.0.3, 10.1.35 and 9.0.99 onwards will include checks that&nbsp;sun.io.useCanonCaches is set appropriately before allowing the default servlet to be write enabled on a case insensitive file system. Tomcat will also set&nbsp;sun.io.useCanonCaches to false by default where it can.</span></p>
+<h3 id="references-18">References</h3>
+<ul>
+<li><a href="https://www.cve.org/CVERecord?id=CVE-2024-50379">https://www.cve.org/CVERecord?id=CVE-2024-50379</a></li>
+<li><a href="https://lists.apache.org/thread/b2b9qrgjrz1kvo4ym8y2wkfdvwoq6qbp">https://lists.apache.org/thread/b2b9qrgjrz1kvo4ym8y2wkfdvwoq6qbp</a></li>
+</ul>
+<h3 id="credits-15">Credits</h3>
+<ul>
+<li>This vulnerability was first reported by Nacl, WHOAMI, Yemoli and Ruozhi. (finder)</li>
+<li>This vulnerability was independently reported with a very helpful PoC by dawu@knownsec 404 team and Sunflower@knownsec 404 team (finder)</li>
+</ul>
+<h2 id="CVE-2024-54677">DoS in examples web application</h2>
+<p>CVE-2024-54677 <a href="https://cve.org/CVERecord?id=CVE-2024-54677">[CVE]</a> <a href="./CVE-2024-54677.cve.json">[CVE json]</a> <a href="./CVE-2024-54677.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T11:50:12.395Z</em></p>
+<h3 id="affected-19">Affected</h3>
+<ul>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.1</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.33</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.97</li>
+</ul>
+<h3 id="description-19">Description</h3>
+<p>Uncontrolled Resource Consumption vulnerability in the examples web application provided with Apache Tomcat leads to denial of service.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.1, from 10.1.0-M1 through 10.1.33, from 9.0.0.M1 through 9.9.97.</p><p>Users are recommended to upgrade to version 11.0.2, 10.1.34 or 9.0.98, which fixes the issue.</p>
+<h3 id="references-19">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/tdtbbxpg5trdwc2wnopcth9ccvdftq2n">https://lists.apache.org/thread/tdtbbxpg5trdwc2wnopcth9ccvdftq2n</a></li>
+</ul>
+<h2 id="CVE-2024-52318">Incorrect JSP tag recycling leads to XSS</h2>
+<p>CVE-2024-52318 <a href="https://cve.org/CVERecord?id=CVE-2024-52318">[CVE]</a> <a href="./CVE-2024-52318.cve.json">[CVE json]</a> <a href="./CVE-2024-52318.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-11-18T12:21:44.105Z</em></p>
+<h3 id="affected-20">Affected</h3>
+<ul>
+<li>Apache Tomcat at 11.0.0</li>
+<li>Apache Tomcat at 10.1.31</li>
+<li>Apache Tomcat at 9.0.96</li>
+</ul>
+<h3 id="description-20">Description</h3>
+<p>Incorrect object recycling and reuse vulnerability in Apache Tomcat.</p><p>This issue affects Apache Tomcat: 11.0.0, 10.1.31, 9.0.96.</p><p>Users are recommended to upgrade to version 11.0.1, 10.1.32 or 9.0.97, which fixes the issue.</p>
+<h3 id="references-20">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/co243cw1nlh6p521c5265cm839wkqdp9">https://lists.apache.org/thread/co243cw1nlh6p521c5265cm839wkqdp9</a></li>
+</ul>
+<h2 id="CVE-2024-52317">Request/response mix-up with HTTP/2</h2>
+<p>CVE-2024-52317 <a href="https://cve.org/CVERecord?id=CVE-2024-52317">[CVE]</a> <a href="./CVE-2024-52317.cve.json">[CVE json]</a> <a href="./CVE-2024-52317.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-11-18T11:37:01.194Z</em></p>
+<h3 id="affected-21">Affected</h3>
+<ul>
+<li>Apache Tomcat from 11.0.0-M23 through 11.0.0-M26</li>
+<li>Apache Tomcat from 10.1.27 through 10.1.30</li>
+<li>Apache Tomcat from 9.0.92 through 9.0.95</li>
+</ul>
+<h3 id="description-21">Description</h3>
+<p>Incorrect object re-cycling and re-use vulnerability in Apache Tomcat.&nbsp;Incorrect recycling of the request and response used by HTTP/2 requests 
+could lead to request and/or response mix-up between users.</p><p>This issue affects Apache Tomcat: from 11.0.0-M23 through 11.0.0-M26, from 10.1.27 through 10.1.30, from 9.0.92 through 9.0.95.</p><p>Users are recommended to upgrade to version 11.0.0, 10.1.31 or 9.0.96, which fixes the issue.</p>
+<h3 id="references-21">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/ty376mrxy1mmxtw3ogo53nc9l3co3dfs">https://lists.apache.org/thread/ty376mrxy1mmxtw3ogo53nc9l3co3dfs</a></li>
+</ul>
+<h2 id="CVE-2024-52316">Authentication bypass when using Jakarta Authentication API</h2>
+<p>CVE-2024-52316 <a href="https://cve.org/CVERecord?id=CVE-2024-52316">[CVE]</a> <a href="./CVE-2024-52316.cve.json">[CVE json]</a> <a href="./CVE-2024-52316.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T11:51:21.348Z</em></p>
+<h3 id="affected-22">Affected</h3>
+<ul>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M26</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.30</li>
+<li>Apache Tomcat from 9.0.0-M1 through 9.0.95</li>
+</ul>
+<h3 id="description-22">Description</h3>
+<p>Unchecked Error Condition vulnerability in Apache Tomcat. If Tomcat is configured to use a custom Jakarta Authentication (formerly JASPIC)&nbsp;ServerAuthContext component which may throw an exception during the authentication process without explicitly setting an HTTP status to indicate failure, the authentication may not fail, allowing the user to bypass the authentication process. There are no known Jakarta&nbsp;Authentication components that behave in this way.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M26, from 10.1.0-M1 through 10.1.30, from 9.0.0-M1 through 9.0.95.</p><p>Users are recommended to upgrade to version 11.0.0, 10.1.31 or 9.0.96, which fix the issue.</p>
+<h3 id="references-22">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/lopzlqh91jj9n334g02om08sbysdb928">https://lists.apache.org/thread/lopzlqh91jj9n334g02om08sbysdb928</a></li>
+</ul>
+<h2 id="CVE-2024-50379">RCE due to TOCTOU issue in JSP compilation</h2>
+<p>CVE-2024-50379 <a href="https://cve.org/CVERecord?id=CVE-2024-50379">[CVE]</a> <a href="./CVE-2024-50379.cve.json">[CVE json]</a> <a href="./CVE-2024-50379.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T11:51:38.009Z</em></p>
+<h3 id="affected-23">Affected</h3>
+<ul>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.1</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.33</li>
+<li>Apache Tomcat from 9.0.0.M1 through 9.0.97</li>
+</ul>
+<h3 id="description-23">Description</h3>
+<p>Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability during JSP compilation in Apache Tomcat permits an RCE on case insensitive file systems when the default servlet is enabled for write (non-default configuration).</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.1, from 10.1.0-M1 through 10.1.33, from 9.0.0.M1 through 9.0.97.</p><p>Users are recommended to upgrade to version 11.0.2, 10.1.34 or 9.0.98, which fixes the issue.</p>
+<h3 id="references-23">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/y6lj6q1xnp822g6ro70tn19sgtjmr80r">https://lists.apache.org/thread/y6lj6q1xnp822g6ro70tn19sgtjmr80r</a></li>
+</ul>
+<h3 id="credits-16">Credits</h3>
+<ul>
+<li>Nacl, WHOAMI, Yemoli and Ruozhi (finder)</li>
+</ul>
+<h2 id="CVE-2024-46544">mod_jk: local users can view and modify configuration</h2>
+<p>CVE-2024-46544 <a href="https://cve.org/CVERecord?id=CVE-2024-46544">[CVE]</a> <a href="./CVE-2024-46544.cve.json">[CVE json]</a> <a href="./CVE-2024-46544.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2024-09-23T10:51:17.287Z</em></p>
+<h3 id="affected-24">Affected</h3>
+<ul>
+<li>Apache Tomcat Connectors from 1.2.9-beta through 1.2.49</li>
+</ul>
+<h3 id="description-24">Description</h3>
+<p>Incorrect Default Permissions vulnerability in Apache Tomcat Connectors allows local users to view and modify shared memory containing mod_jk configuration which may lead to information disclosure and/or denial of service.</p><p>This issue affects Apache Tomcat Connectors: from 1.2.9-beta through 1.2.49. Only mod_jk on Unix like systems is affected. Neither the ISAPI redirector nor mod_jk on Windows is affected.<br></p><p>Users are recommended to upgrade to version 1.2.50, which fixes the issue.</p>
+<h3 id="references-24">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/q1gp7cc38hs1r8gj8gfnopwznd5fpr4d">https://lists.apache.org/thread/q1gp7cc38hs1r8gj8gfnopwznd5fpr4d</a></li>
+</ul>
+<h2 id="CVE-2024-38286">Denial of Service</h2>
+<p>CVE-2024-38286 <a href="https://cve.org/CVERecord?id=CVE-2024-38286">[CVE]</a> <a href="./CVE-2024-38286.cve.json">[CVE json]</a> <a href="./CVE-2024-38286.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T11:54:52.747Z</em></p>
+<h3 id="affected-25">Affected</h3>
+<ul>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M20</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.24</li>
+<li>Apache Tomcat from 9.0.13 through 9.0.89</li>
+</ul>
+<h3 id="description-25">Description</h3>
+<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M20, from 10.1.0-M1 through 10.1.24, from 9.0.13 through 9.0.89. Older, unsupported versions may also be affected.<br></p><p>Users are recommended to upgrade to version 11.0.0-M21, 10.1.25, or 9.0.90, which fixes the issue.</p><p></p><div>Apache Tomcat, under certain configurations on any platform, allows an attacker to cause an OutOfMemoryError by abusing the TLS handshake process.<br></div><br><p></p>
+<h3 id="references-25">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/wms60cvbsz3fpbz9psxtfx8r41jl6d4s">https://lists.apache.org/thread/wms60cvbsz3fpbz9psxtfx8r41jl6d4s</a></li>
+</ul>
+<h3 id="credits-17">Credits</h3>
+<ul>
+<li>Ozaki, North Grid Corporation (reporter)</li>
+</ul>
+<h2 id="CVE-2024-34750">HTTP/2 excess header handling DoS</h2>
+<p>CVE-2024-34750 <a href="https://cve.org/CVERecord?id=CVE-2024-34750">[CVE]</a> <a href="./CVE-2024-34750.cve.json">[CVE json]</a> <a href="./CVE-2024-34750.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T11:55:37.796Z</em></p>
 <h3 id="affected-26">Affected</h3>
 <ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M16</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.18</li>
-<li>Apache Tomcat from 9.0.0-M1 through 9.0.85</li>
-<li>Apache Tomcat from 8.5.0 through 8.5.98</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M20</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.24</li>
+<li>Apache Tomcat from 9.0.0-M1 through 9.0.89</li>
 </ul>
 <h3 id="description-26">Description</h3>
-<p>Denial of Service via incomplete cleanup vulnerability in Apache Tomcat. It was possible for WebSocket clients to keep WebSocket connections open leading to increased resource consumption.<p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M16, from 10.1.0-M1 through 10.1.18, from 9.0.0-M1 through 9.0.85, from 8.5.0 through 8.5.98.</p><p>Users are recommended to upgrade to version 11.0.0-M17, 10.1.19, 9.0.86 or 8.5.99 which fix the issue.</p></p>
+<p>Improper Handling of Exceptional Conditions, Uncontrolled Resource Consumption vulnerability in Apache Tomcat. When processing an HTTP/2 stream, Tomcat did not handle some cases of excessive HTTP headers correctly. This led to a miscounting of active HTTP/2 streams which in turn led to the use of an incorrect infinite timeout which allowed connections to remain open which should have been closed.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M20, from 10.1.0-M1 through 10.1.24, from 9.0.0-M1 through 9.0.89.</p><p>Users are recommended to upgrade to version 11.0.0-M21, 10.1.25 or 9.0.90, which fixes the issue.</p>
 <h3 id="references-26">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/cmpswfx6tj4s7x0nxxosvfqs11lvdx2f">https://lists.apache.org/thread/cmpswfx6tj4s7x0nxxosvfqs11lvdx2f</a></li>
+<li><a href="https://lists.apache.org/thread/4kqf0bc9gxymjc2x7v3p7dvplnl77y8l">https://lists.apache.org/thread/4kqf0bc9gxymjc2x7v3p7dvplnl77y8l</a></li>
+</ul>
+<h3 id="credits-18">Credits</h3>
+<ul>
+<li>devme4f from VNPT-VCI (finder)</li>
 </ul>
 <h2 id="CVE-2024-24549">HTTP/2 header handling DoS</h2>
-<p>CVE-2024-24549 <a href="./CVE-2024-24549.cve.json">[CVE json]</a> <a href="./CVE-2024-24549.osv.json">[OSV json]</a></p>
+<p>CVE-2024-24549 <a href="https://cve.org/CVERecord?id=CVE-2024-24549">[CVE]</a> <a href="./CVE-2024-24549.cve.json">[CVE json]</a> <a href="./CVE-2024-24549.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-10-29T11:56:21.050Z</em></p>
 <h3 id="affected-27">Affected</h3>
 <ul>
@@ -625,462 +646,513 @@ smuggling when behind a reverse proxy.<br></p><p><span style="background-color: 
 <ul>
 <li><a href="https://lists.apache.org/thread/4c50rmomhbbsdgfjsgwlb51xdwfjdcvg">https://lists.apache.org/thread/4c50rmomhbbsdgfjsgwlb51xdwfjdcvg</a></li>
 </ul>
-<h3 id="credits-15">Credits</h3>
+<h3 id="credits-19">Credits</h3>
 <ul>
 <li>Bartek Nowotarski (finder)</li>
 </ul>
-<h2 id="CVE-2024-34750">HTTP/2 excess header handling DoS</h2>
-<p>CVE-2024-34750 <a href="./CVE-2024-34750.cve.json">[CVE json]</a> <a href="./CVE-2024-34750.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T11:55:37.796Z</em></p>
+<h2 id="CVE-2024-23672">WebSocket DoS with incomplete closing handshake</h2>
+<p>CVE-2024-23672 <a href="https://cve.org/CVERecord?id=CVE-2024-23672">[CVE]</a> <a href="./CVE-2024-23672.cve.json">[CVE json]</a> <a href="./CVE-2024-23672.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T11:57:07.493Z</em></p>
 <h3 id="affected-28">Affected</h3>
 <ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M20</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.24</li>
-<li>Apache Tomcat from 9.0.0-M1 through 9.0.89</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M16</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.18</li>
+<li>Apache Tomcat from 9.0.0-M1 through 9.0.85</li>
+<li>Apache Tomcat from 8.5.0 through 8.5.98</li>
 </ul>
 <h3 id="description-28">Description</h3>
-<p>Improper Handling of Exceptional Conditions, Uncontrolled Resource Consumption vulnerability in Apache Tomcat. When processing an HTTP/2 stream, Tomcat did not handle some cases of excessive HTTP headers correctly. This led to a miscounting of active HTTP/2 streams which in turn led to the use of an incorrect infinite timeout which allowed connections to remain open which should have been closed.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M20, from 10.1.0-M1 through 10.1.24, from 9.0.0-M1 through 9.0.89.</p><p>Users are recommended to upgrade to version 11.0.0-M21, 10.1.25 or 9.0.90, which fixes the issue.</p>
+<p>Denial of Service via incomplete cleanup vulnerability in Apache Tomcat. It was possible for WebSocket clients to keep WebSocket connections open leading to increased resource consumption.<p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M16, from 10.1.0-M1 through 10.1.18, from 9.0.0-M1 through 9.0.85, from 8.5.0 through 8.5.98.</p><p>Users are recommended to upgrade to version 11.0.0-M17, 10.1.19, 9.0.86 or 8.5.99 which fix the issue.</p></p>
 <h3 id="references-28">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/4kqf0bc9gxymjc2x7v3p7dvplnl77y8l">https://lists.apache.org/thread/4kqf0bc9gxymjc2x7v3p7dvplnl77y8l</a></li>
+<li><a href="https://lists.apache.org/thread/cmpswfx6tj4s7x0nxxosvfqs11lvdx2f">https://lists.apache.org/thread/cmpswfx6tj4s7x0nxxosvfqs11lvdx2f</a></li>
 </ul>
-<h3 id="credits-16">Credits</h3>
-<ul>
-<li>devme4f from VNPT-VCI (finder)</li>
-</ul>
-<h2 id="CVE-2024-38286">Denial of Service</h2>
-<p>CVE-2024-38286 <a href="./CVE-2024-38286.cve.json">[CVE json]</a> <a href="./CVE-2024-38286.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T11:54:52.747Z</em></p>
+<h2 id="CVE-2024-21733">Leaking of unrelated request bodies in default error page</h2>
+<p>CVE-2024-21733 <a href="https://cve.org/CVERecord?id=CVE-2024-21733">[CVE]</a> <a href="./CVE-2024-21733.cve.json">[CVE json]</a> <a href="./CVE-2024-21733.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T11:59:57.792Z</em></p>
 <h3 id="affected-29">Affected</h3>
 <ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M20</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.24</li>
-<li>Apache Tomcat from 9.0.13 through 9.0.89</li>
+<li>Apache Tomcat from 8.5.7 through 8.5.63</li>
+<li>Apache Tomcat from 9.0.0-M11 through 9.0.43</li>
 </ul>
 <h3 id="description-29">Description</h3>
-<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M20, from 10.1.0-M1 through 10.1.24, from 9.0.13 through 9.0.89. Older, unsupported versions may also be affected.<br></p><p>Users are recommended to upgrade to version 11.0.0-M21, 10.1.25, or 9.0.90, which fixes the issue.</p><p></p><div>Apache Tomcat, under certain configurations on any platform, allows an attacker to cause an OutOfMemoryError by abusing the TLS handshake process.<br></div><br><p></p>
+<p>Generation of Error Message Containing Sensitive Information vulnerability in Apache Tomcat.<p>This issue affects Apache Tomcat: from 8.5.7 through 8.5.63, from 9.0.0-M11 through 9.0.43.</p><p>Users are recommended to upgrade to version 8.5.64 onwards or 9.0.44 onwards, which contain a fix for the issue.</p></p>
 <h3 id="references-29">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/wms60cvbsz3fpbz9psxtfx8r41jl6d4s">https://lists.apache.org/thread/wms60cvbsz3fpbz9psxtfx8r41jl6d4s</a></li>
-</ul>
-<h3 id="credits-17">Credits</h3>
-<ul>
-<li>Ozaki, North Grid Corporation (reporter)</li>
-</ul>
-<h2 id="CVE-2024-46544">mod_jk: local users can view and modify configuration</h2>
-<p>CVE-2024-46544 <a href="./CVE-2024-46544.cve.json">[CVE json]</a> <a href="./CVE-2024-46544.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-09-23T10:51:17.287Z</em></p>
-<h3 id="affected-30">Affected</h3>
-<ul>
-<li>Apache Tomcat Connectors from 1.2.9-beta through 1.2.49</li>
-</ul>
-<h3 id="description-30">Description</h3>
-<p>Incorrect Default Permissions vulnerability in Apache Tomcat Connectors allows local users to view and modify shared memory containing mod_jk configuration which may lead to information disclosure and/or denial of service.</p><p>This issue affects Apache Tomcat Connectors: from 1.2.9-beta through 1.2.49. Only mod_jk on Unix like systems is affected. Neither the ISAPI redirector nor mod_jk on Windows is affected.<br></p><p>Users are recommended to upgrade to version 1.2.50, which fixes the issue.</p>
-<h3 id="references-30">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/q1gp7cc38hs1r8gj8gfnopwznd5fpr4d">https://lists.apache.org/thread/q1gp7cc38hs1r8gj8gfnopwznd5fpr4d</a></li>
-</ul>
-<h2 id="CVE-2024-50379">RCE due to TOCTOU issue in JSP compilation</h2>
-<p>CVE-2024-50379 <a href="./CVE-2024-50379.cve.json">[CVE json]</a> <a href="./CVE-2024-50379.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T11:51:38.009Z</em></p>
-<h3 id="affected-31">Affected</h3>
-<ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.1</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.33</li>
-<li>Apache Tomcat from 9.0.0.M1 through 9.0.97</li>
-</ul>
-<h3 id="description-31">Description</h3>
-<p>Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability during JSP compilation in Apache Tomcat permits an RCE on case insensitive file systems when the default servlet is enabled for write (non-default configuration).</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.1, from 10.1.0-M1 through 10.1.33, from 9.0.0.M1 through 9.0.97.</p><p>Users are recommended to upgrade to version 11.0.2, 10.1.34 or 9.0.98, which fixes the issue.</p>
-<h3 id="references-31">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/y6lj6q1xnp822g6ro70tn19sgtjmr80r">https://lists.apache.org/thread/y6lj6q1xnp822g6ro70tn19sgtjmr80r</a></li>
-</ul>
-<h3 id="credits-18">Credits</h3>
-<ul>
-<li>Nacl, WHOAMI, Yemoli and Ruozhi (finder)</li>
-</ul>
-<h2 id="CVE-2024-52316">Authentication bypass when using Jakarta Authentication API</h2>
-<p>CVE-2024-52316 <a href="./CVE-2024-52316.cve.json">[CVE json]</a> <a href="./CVE-2024-52316.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T11:51:21.348Z</em></p>
-<h3 id="affected-32">Affected</h3>
-<ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M26</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.30</li>
-<li>Apache Tomcat from 9.0.0-M1 through 9.0.95</li>
-</ul>
-<h3 id="description-32">Description</h3>
-<p>Unchecked Error Condition vulnerability in Apache Tomcat. If Tomcat is configured to use a custom Jakarta Authentication (formerly JASPIC)&nbsp;ServerAuthContext component which may throw an exception during the authentication process without explicitly setting an HTTP status to indicate failure, the authentication may not fail, allowing the user to bypass the authentication process. There are no known Jakarta&nbsp;Authentication components that behave in this way.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M26, from 10.1.0-M1 through 10.1.30, from 9.0.0-M1 through 9.0.95.</p><p>Users are recommended to upgrade to version 11.0.0, 10.1.31 or 9.0.96, which fix the issue.</p>
-<h3 id="references-32">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/lopzlqh91jj9n334g02om08sbysdb928">https://lists.apache.org/thread/lopzlqh91jj9n334g02om08sbysdb928</a></li>
-</ul>
-<h2 id="CVE-2024-52317">Request/response mix-up with HTTP/2</h2>
-<p>CVE-2024-52317 <a href="./CVE-2024-52317.cve.json">[CVE json]</a> <a href="./CVE-2024-52317.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-11-18T11:37:01.194Z</em></p>
-<h3 id="affected-33">Affected</h3>
-<ul>
-<li>Apache Tomcat from 11.0.0-M23 through 11.0.0-M26</li>
-<li>Apache Tomcat from 10.1.27 through 10.1.30</li>
-<li>Apache Tomcat from 9.0.92 through 9.0.95</li>
-</ul>
-<h3 id="description-33">Description</h3>
-<p>Incorrect object re-cycling and re-use vulnerability in Apache Tomcat.&nbsp;Incorrect recycling of the request and response used by HTTP/2 requests 
-could lead to request and/or response mix-up between users.</p><p>This issue affects Apache Tomcat: from 11.0.0-M23 through 11.0.0-M26, from 10.1.27 through 10.1.30, from 9.0.92 through 9.0.95.</p><p>Users are recommended to upgrade to version 11.0.0, 10.1.31 or 9.0.96, which fixes the issue.</p>
-<h3 id="references-33">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/ty376mrxy1mmxtw3ogo53nc9l3co3dfs">https://lists.apache.org/thread/ty376mrxy1mmxtw3ogo53nc9l3co3dfs</a></li>
-</ul>
-<h2 id="CVE-2024-52318">Incorrect JSP tag recycling leads to XSS</h2>
-<p>CVE-2024-52318 <a href="./CVE-2024-52318.cve.json">[CVE json]</a> <a href="./CVE-2024-52318.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2024-11-18T12:21:44.105Z</em></p>
-<h3 id="affected-34">Affected</h3>
-<ul>
-<li>Apache Tomcat at 11.0.0</li>
-<li>Apache Tomcat at 10.1.31</li>
-<li>Apache Tomcat at 9.0.96</li>
-</ul>
-<h3 id="description-34">Description</h3>
-<p>Incorrect object recycling and reuse vulnerability in Apache Tomcat.</p><p>This issue affects Apache Tomcat: 11.0.0, 10.1.31, 9.0.96.</p><p>Users are recommended to upgrade to version 11.0.1, 10.1.32 or 9.0.97, which fixes the issue.</p>
-<h3 id="references-34">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/co243cw1nlh6p521c5265cm839wkqdp9">https://lists.apache.org/thread/co243cw1nlh6p521c5265cm839wkqdp9</a></li>
-</ul>
-<h2 id="CVE-2024-54677">DoS in examples web application</h2>
-<p>CVE-2024-54677 <a href="./CVE-2024-54677.cve.json">[CVE json]</a> <a href="./CVE-2024-54677.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T11:50:12.395Z</em></p>
-<h3 id="affected-35">Affected</h3>
-<ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.1</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.33</li>
-<li>Apache Tomcat from 9.0.0.M1 through 9.0.97</li>
-</ul>
-<h3 id="description-35">Description</h3>
-<p>Uncontrolled Resource Consumption vulnerability in the examples web application provided with Apache Tomcat leads to denial of service.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.1, from 10.1.0-M1 through 10.1.33, from 9.0.0.M1 through 9.9.97.</p><p>Users are recommended to upgrade to version 11.0.2, 10.1.34 or 9.0.98, which fixes the issue.</p>
-<h3 id="references-35">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/tdtbbxpg5trdwc2wnopcth9ccvdftq2n">https://lists.apache.org/thread/tdtbbxpg5trdwc2wnopcth9ccvdftq2n</a></li>
-</ul>
-<h2 id="CVE-2024-56337">RCE due to TOCTOU issue in JSP compilation - CVE-2024-50379 mitigation was incomplete</h2>
-<p>CVE-2024-56337 <a href="./CVE-2024-56337.cve.json">[CVE json]</a> <a href="./CVE-2024-56337.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T11:52:34.749Z</em></p>
-<h3 id="affected-36">Affected</h3>
-<ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.1</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.33</li>
-<li>Apache Tomcat from 9.0.0.M1 through 9.0.97</li>
-</ul>
-<h3 id="description-36">Description</h3>
-<p>Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.1, from 10.1.0-M1 through 10.1.33, from 9.0.0.M1 through 9.0.97.</p><p>The mitigation for CVE-2024-50379 was incomplete.</p><p>Users running Tomcat on a case insensitive file system with the default servlet write enabled (readonly initialisation 
-parameter set to the non-default value of false) may need additional configuration to fully mitigate CVE-2024-50379 depending on which version of Java they are using with Tomcat:<br>- running on Java 8 or Java 11: the system property&nbsp;sun.io.useCanonCaches must be explicitly set to false (it defaults to true)<br>- running on Java 17: the&nbsp;system property sun.io.useCanonCaches, if set, must be set to false&nbsp;(it defaults to false)<br>- running on Java 21 onwards: no further configuration is required&nbsp;(the system property and the problematic cache have been removed)</p><p><span style="background-color: var(--wht);">Tomcat 11.0.3, 10.1.35 and 9.0.99 onwards will include checks that&nbsp;sun.io.useCanonCaches is set appropriately before allowing the default servlet to be write enabled on a case insensitive file system. Tomcat will also set&nbsp;sun.io.useCanonCaches to false by default where it can.</span></p>
-<h3 id="references-36">References</h3>
-<ul>
-<li><a href="https://www.cve.org/CVERecord?id=CVE-2024-50379">https://www.cve.org/CVERecord?id=CVE-2024-50379</a></li>
-<li><a href="https://lists.apache.org/thread/b2b9qrgjrz1kvo4ym8y2wkfdvwoq6qbp">https://lists.apache.org/thread/b2b9qrgjrz1kvo4ym8y2wkfdvwoq6qbp</a></li>
-</ul>
-<h3 id="credits-19">Credits</h3>
-<ul>
-<li>This vulnerability was first reported by Nacl, WHOAMI, Yemoli and Ruozhi. (finder)</li>
-<li>This vulnerability was independently reported with a very helpful PoC by dawu@knownsec 404 team and Sunflower@knownsec 404 team (finder)</li>
-</ul>
-<h2 id="CVE-2025-24813">Potential RCE and/or information disclosure and/or information corruption with partial PUT</h2>
-<p>CVE-2025-24813 <a href="./CVE-2025-24813.cve.json">[CVE json]</a> <a href="./CVE-2025-24813.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T11:49:42.250Z</em></p>
-<h3 id="affected-37">Affected</h3>
-<ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.2</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.34</li>
-<li>Apache Tomcat from 9.0.0.M1 through 9.0.98</li>
-</ul>
-<h3 id="description-37">Description</h3>
-<p>Path Equivalence: 'file.Name' (Internal Dot) leading to&nbsp;<span style="background-color: var(--wht);">Remote Code Execution and/or Information disclosure&nbsp;</span><span style="background-color: var(--wht);">and/or malicious content added to uploaded files via write enabled&nbsp;</span><span style="background-color: var(--wht);">Default Servlet</span>&nbsp;in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.2, from 10.1.0-M1 through 10.1.34, from 9.0.0.M1 through 9.0.98.</p><div><p>If all of the following were true, a malicious user was able to view       security sensitive files and/or inject content into those files:<br>-&nbsp;<span style="background-color: var(--wht);">writes enabled for the default servlet (disabled by default)<br></span><span style="background-color: var(--wht);">- support for partial PUT (enabled by default)<br></span><span style="background-color: var(--wht);">- a target URL for security sensitive uploads that was a sub-directory of&nbsp;</span><span style="background-color: var(--wht);">a target URL for public uploads<br>-&nbsp;</span><span style="background-color: var(--wht);">attacker knowledge of the names of security sensitive files being&nbsp;</span><span style="background-color: var(--wht);">uploaded<br>-&nbsp;</span><span style="background-color: var(--wht);">the security sensitive files also being uploaded via partial PUT</span></p><p><span style="background-color: var(--wht);">If all of the following were true, a malicious user was able to</span>       perform remote code execution:<br><span style="background-color: var(--wht);">- writes enabled for the default servlet (disabled by default)<br>-&nbsp;</span><span style="background-color: var(--wht);">support for partial PUT (enabled by default)<br>-&nbsp;</span><span style="background-color: var(--wht);">application was using Tomcat's file based session persistence with the&nbsp;</span><span style="background-color: var(--wht);">default storage location<br>-&nbsp;</span><span style="background-color: var(--wht);">application included a library that may be leveraged in a&nbsp;</span><span style="background-color: var(--wht);">deserialization attack</span></p><p><span style="background-color: var(--wht);">Users are recommended to upgrade to version 11.0.3, 10.1.35 or 9.0.98, which fixes the issue.</span></p></div>
-<h3 id="references-37">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/j5fkjv2k477os90nczf2v9l61fb0kkgq">https://lists.apache.org/thread/j5fkjv2k477os90nczf2v9l61fb0kkgq</a></li>
+<li><a href="https://lists.apache.org/thread/h9bjqdd0odj6lhs2o96qgowcc6hb0cfz">https://lists.apache.org/thread/h9bjqdd0odj6lhs2o96qgowcc6hb0cfz</a></li>
 </ul>
 <h3 id="credits-20">Credits</h3>
 <ul>
-<li>COSCO Shipping Lines DIC (finder)</li>
-<li>sw0rd1ight (<a href="https://github.com/sw0rd1ight">https://github.com/sw0rd1ight</a>) (finder)</li>
+<li>xer0dayz from company Sn1perSecurity LLC (finder)</li>
 </ul>
-<h2 id="CVE-2025-31650">DoS via malformed HTTP/2 PRIORITY_UPDATE frame</h2>
-<p>CVE-2025-31650 <a href="./CVE-2025-31650.cve.json">[CVE json]</a> <a href="./CVE-2025-31650.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-08-08T11:42:59.031Z</em></p>
-<h3 id="affected-38">Affected</h3>
+<h2 id="CVE-2023-46589">HTTP request smuggling via malformed trailer headers</h2>
+<p>CVE-2023-46589 <a href="https://cve.org/CVERecord?id=CVE-2023-46589">[CVE]</a> <a href="./CVE-2023-46589.cve.json">[CVE json]</a> <a href="./CVE-2023-46589.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T12:00:21.984Z</em></p>
+<h3 id="affected-30">Affected</h3>
 <ul>
-<li>Apache Tomcat from 9.0.76 through 9.0.102</li>
-<li>Apache Tomcat from 10.1.10 through 10.1.39</li>
-<li>Apache Tomcat from 11.0.0-M2 through 11.0.5</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M10</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.15</li>
+<li>Apache Tomcat from 9.0.0-M1 through 9.0.82</li>
+<li>Apache Tomcat from 8.5.0 through 8.5.95</li>
 </ul>
-<h3 id="description-38">Description</h3>
-<p>Improper Input Validation vulnerability in Apache Tomcat. Incorrect error handling for some invalid HTTP priority headers resulted in incomplete clean-up of the failed request which created a memory leak. A large number of such requests could trigger an OutOfMemoryException resulting in a denial of service.</p><p>This issue affects Apache Tomcat: from 9.0.76 through 9.0.102, from 10.1.10 through 10.1.39, from 11.0.0-M2 through 11.0.5.</p><p>Users are recommended to upgrade to version 9.0.104, 10.1.40 or 11.0.6 which fix the issue.</p>
-<h3 id="references-38">References</h3>
+<h3 id="description-30">Description</h3>
+<p>Improper Input Validation vulnerability in Apache Tomcat.<p>Tomcat <span style="background-color: rgb(255, 255, 255);">from 11.0.0-M1 through 11.0.0-M10, from 10.1.0-M1 through 10.1.15, from 9.0.0-M1 through 9.0.82 and from 8.5.0 through 8.5.95</span> did not correctly parse HTTP trailer headers. A trailer header that exceeded the header size limit could cause Tomcat to treat a single
+request as multiple requests leading to the possibility of request
+smuggling when behind a reverse proxy.<br></p><p><span style="background-color: var(--wht);">Users are recommended to upgrade to version 11.0.0-M11 onwards, 10.1.16 onwards, 9.0.83 onwards or 8.5.96 onwards, which fix the issue.</span></p><br></p>
+<h3 id="references-30">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/j6zzk0y3yym9pzfzkq5vcyxzz0yzh826">https://lists.apache.org/thread/j6zzk0y3yym9pzfzkq5vcyxzz0yzh826</a></li>
-</ul>
-<h2 id="CVE-2025-31651">Bypass of rules in Rewrite Valve</h2>
-<p>CVE-2025-31651 <a href="./CVE-2025-31651.cve.json">[CVE json]</a> <a href="./CVE-2025-31651.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T11:46:25.018Z</em></p>
-<h3 id="affected-39">Affected</h3>
-<ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.5</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.39</li>
-<li>Apache Tomcat from 9.0.0.M1 through 9.0.102</li>
-</ul>
-<h3 id="description-39">Description</h3>
-<p>Improper Neutralization of Escape, Meta, or Control Sequences vulnerability in Apache Tomcat.&nbsp;For a subset of unlikely rewrite rule configurations, it was possible 
-for a specially crafted request to bypass some rewrite rules. If those 
-rewrite rules effectively enforced security constraints, those 
-constraints could be bypassed.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.5, from 10.1.0-M1 through 10.1.39, from 9.0.0.M1 through 9.0.102.</p><p>Users are recommended to upgrade to version [FIXED_VERSION], which fixes the issue.</p>
-<h3 id="references-39">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/list.html?announce@tomcat.apache.org">https://lists.apache.org/list.html?announce@tomcat.apache.org</a></li>
+<li><a href="https://lists.apache.org/thread/0rqq6ktozqc42ro8hhxdmmdjm1k1tpxr">https://lists.apache.org/thread/0rqq6ktozqc42ro8hhxdmmdjm1k1tpxr</a></li>
 </ul>
 <h3 id="credits-21">Credits</h3>
 <ul>
-<li>COSCO Shipping Lines DIC (finder)</li>
+<li>Norihito Aimoto (OSSTech Corporation)  (finder)</li>
 </ul>
-<h2 id="CVE-2025-46701">Security constraint bypass for CGI scripts</h2>
-<p>CVE-2025-46701 <a href="./CVE-2025-46701.cve.json">[CVE json]</a> <a href="./CVE-2025-46701.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T11:46:00.351Z</em></p>
-<h3 id="affected-40">Affected</h3>
+<h2 id="CVE-2023-45648">Trailer header parsing too lenient</h2>
+<p>CVE-2023-45648 <a href="https://cve.org/CVERecord?id=CVE-2023-45648">[CVE]</a> <a href="./CVE-2023-45648.cve.json">[CVE json]</a> <a href="./CVE-2023-45648.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T12:00:45.261Z</em></p>
+<h3 id="affected-31">Affected</h3>
 <ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.6</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.40</li>
-<li>Apache Tomcat from 9.0.0.M1 through 9.0.104</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M11</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.13</li>
+<li>Apache Tomcat from 9.0.0-M1 through 9.0.81</li>
+<li>Apache Tomcat from 8.5.0 through 8.5.93</li>
 </ul>
-<h3 id="description-40">Description</h3>
-<p>Improper Handling of Case Sensitivity vulnerability in Apache Tomcat's GCI servlet allows security constraint bypass of security constraints that apply to the pathInfo component of a URI mapped to the CGI servlet.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.6, from 10.1.0-M1 through 10.1.40, from 9.0.0.M1 through 9.0.104.</p><p>Users are recommended to upgrade to version 11.0.7, 10.1.41 or 9.0.105, which fixes the issue.</p>
-<h3 id="references-40">References</h3>
+<h3 id="description-31">Description</h3>
+<p>Improper Input Validation vulnerability in Apache Tomcat.<p>Tomcat <span style="background-color: rgb(255, 255, 255);">from 11.0.0-M1 through 11.0.0-M11, from 10.1.0-M1 through 10.1.13, from 9.0.0-M1 through 9.0.81 and from 8.5.0 through 8.5.93</span> did not correctly parse HTTP trailer headers. A specially
+crafted, invalid trailer header could cause Tomcat to treat a single
+request as multiple requests leading to the possibility of request
+smuggling when behind a reverse proxy.<br></p><p><span style="background-color: var(--wht);">Users are recommended to upgrade to version 11.0.0-M12 onwards, 10.1.14 onwards, 9.0.81 onwards or 8.5.94 onwards, which fix the issue.</span><br></p></p>
+<h3 id="references-31">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/xhqqk9w5q45srcdqhogdk04lhdscv30j">https://lists.apache.org/thread/xhqqk9w5q45srcdqhogdk04lhdscv30j</a></li>
+<li><a href="https://lists.apache.org/thread/2pv8yz1pyp088tsxfb7ogltk9msk0jdp">https://lists.apache.org/thread/2pv8yz1pyp088tsxfb7ogltk9msk0jdp</a></li>
 </ul>
 <h3 id="credits-22">Credits</h3>
 <ul>
-<li>Greg K (<a href="https://github.com/gregk4sec">https://github.com/gregk4sec</a>) (finder)</li>
+<li>Keran Mu and Jianjun Chen from Tsinghua University and Zhongguancun Laboratory (finder)</li>
 </ul>
-<h2 id="CVE-2025-48988">FileUpload large number of parts with headers DoS</h2>
-<p>CVE-2025-48988 <a href="./CVE-2025-48988.cve.json">[CVE json]</a> <a href="./CVE-2025-48988.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T11:45:34.776Z</em></p>
-<h3 id="affected-41">Affected</h3>
+<h2 id="CVE-2023-42795">Failure during request clean-up leads to sensitive data leaking to subsequent requests</h2>
+<p>CVE-2023-42795 <a href="https://cve.org/CVERecord?id=CVE-2023-42795">[CVE]</a> <a href="./CVE-2023-42795.cve.json">[CVE json]</a> <a href="./CVE-2023-42795.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T12:02:56.986Z</em></p>
+<h3 id="affected-32">Affected</h3>
 <ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.7</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.41</li>
-<li>Apache Tomcat from 9.0.0.M1 through 9.0.105</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M11</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.13</li>
+<li>Apache Tomcat from 9.0.0-M1 through 9.0.80</li>
+<li>Apache Tomcat from 8.5.0 through 8.5.93</li>
 </ul>
-<h3 id="description-41">Description</h3>
-<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.7, from 10.1.0-M1 through 10.1.41, from 9.0.0.M1 through 9.0.105.</p><p>Users are recommended to upgrade to version 11.0.8, 10.1.42 or 9.0.106, which fix the issue.</p>
-<h3 id="references-41">References</h3>
+<h3 id="description-32">Description</h3>
+<p>Incomplete Cleanup vulnerability in Apache Tomcat.<p>When recycling various internal objects in Apache Tomcat from 11.0.0-M1 through 11.0.0-M11, from 10.1.0-M1 through 10.1.13, from 9.0.0-M1 through 9.0.80 and from 8.5.0 through 8.5.93, an error could
+cause Tomcat to skip some parts of the recycling process leading to
+information leaking from the current request/response to the next.<br></p><p>Users are recommended to upgrade to version 11.0.0-M12 onwards, 10.1.14 onwards, 9.0.81 onwards or 8.5.94 onwards, which fixes the issue.</p></p>
+<h3 id="references-32">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/nzkqsok8t42qofgqfmck536mtyzygp18">https://lists.apache.org/thread/nzkqsok8t42qofgqfmck536mtyzygp18</a></li>
+<li><a href="https://lists.apache.org/thread/065jfyo583490r9j2v73nhpyxdob56lw">https://lists.apache.org/thread/065jfyo583490r9j2v73nhpyxdob56lw</a></li>
+</ul>
+<h2 id="CVE-2023-42794">FileUpload: DoS due to accumulation of temporary files on Windows</h2>
+<p>CVE-2023-42794 <a href="https://cve.org/CVERecord?id=CVE-2023-42794">[CVE]</a> <a href="./CVE-2023-42794.cve.json">[CVE json]</a> <a href="./CVE-2023-42794.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T12:04:08.371Z</em></p>
+<h3 id="affected-33">Affected</h3>
+<ul>
+<li>Apache Tomcat from 9.0.70 through 9.0.80</li>
+<li>Apache Tomcat from 8.5.85 through 8.5.93</li>
+</ul>
+<h3 id="description-33">Description</h3>
+<p>Incomplete Cleanup vulnerability in Apache Tomcat.<br><br>The internal fork of Commons FileUpload packaged with Apache Tomcat 9.0.70 through 9.0.80 and 8.5.85 through 8.5.93 included an unreleased,
+in progress refactoring that exposed a potential denial of service on
+Windows if a web application opened a stream for an uploaded file but
+failed to close the stream. The file would never be deleted from disk
+creating the possibility of an eventual denial of service due to the
+disk being full.
+<br><p><span style="background-color: var(--wht);">Users are recommended to upgrade to version 9.0.81 onwards or 8.5.94 onwards, which fixes the issue.</span><br></p></p>
+<h3 id="references-33">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/vvbr2ms7lockj1hlhz5q3wmxb2mwcw82">https://lists.apache.org/thread/vvbr2ms7lockj1hlhz5q3wmxb2mwcw82</a></li>
 </ul>
 <h3 id="credits-23">Credits</h3>
 <ul>
-<li>TERASOLUNA Framework Security Team of NTT DATA Group Corporation (finder)</li>
+<li>Mohammad Khedmatgozar (cellbox) (finder)</li>
 </ul>
-<h2 id="CVE-2025-48989">h2 DoS - Made You Reset</h2>
-<p>CVE-2025-48989 <a href="./CVE-2025-48989.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2025-10-29T11:45:00.142Z</em></p>
-<h3 id="affected-42">Affected</h3>
+<h2 id="CVE-2023-41081">Unexpected use of first declared worker in mod_jk for unmapped request</h2>
+<p>CVE-2023-41081 <a href="https://cve.org/CVERecord?id=CVE-2023-41081">[CVE]</a> <a href="./CVE-2023-41081.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2023-09-28T21:30:55.612Z</em></p>
+<h3 id="affected-34">Affected</h3>
 <ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.9</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.43</li>
-<li>Apache Tomcat from 9.0.0.M1 through 9.0.107</li>
-<li>Apache Tomcat from 8.5.0 through 8.5.100</li>
+<li>Apache Tomcat Connectors from 1.2.0 through 1.2.48</li>
 </ul>
-<h3 id="description-42">Description</h3>
-<p>Improper Resource Shutdown or Release vulnerability in Apache Tomcat made Tomcat vulnerable to the made you reset attack.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.9, from 10.1.0-M1 through 10.1.43 and from 9.0.0.M1 through 9.0.107. Older, EOL versions may also be affected.</p><p>Users are recommended to upgrade to one of versions 11.0.10, 10.1.44 or 9.0.108 which fix the issue.</p>
-<h3 id="references-42">References</h3>
+<h3 id="description-34">Description</h3>
+<div><p>Important: Authentication Bypass CVE-2023-41081
+<br>
+</p><p>The mod_jk component of <span style="background-color: rgb(255, 255, 255);">Apache Tomcat Connectors&nbsp;</span>in some circumstances, such as when a configuration included&nbsp;"JkOptions +ForwardDirectories" but the configuration did not       provide explicit mounts for all possible proxied requests, mod_jk would       use an implicit mapping and map the request to the first defined worker.&nbsp;<span style="background-color: var(--wht);">Such an implicit mapping could result in the unintended exposure of the&nbsp;</span><span style="background-color: var(--wht);">status worker and/or bypass security constraints configured in httpd. As&nbsp;</span><span style="background-color: var(--wht);">of JK 1.2.49, the implicit mapping functionality has been removed and all&nbsp;</span><span style="background-color: var(--wht);">mappings must now be via explicit configuration.&nbsp;</span><span style="background-color: var(--wht);">Only mod_jk is affected&nbsp;</span><span style="background-color: var(--wht);">by this issue. The ISAPI redirector is not affected.</span></p></div><p>This issue affects Apache Tomcat Connectors <span style="background-color: rgb(255, 255, 255);">(mod_jk only)</span>: from 1.2.0 through 1.2.48.</p><p>Users are recommended to upgrade to version 1.2.49, which fixes the issue.</p><h2>History<br></h2><h2></h2><p>2023-09-13 Original advisory
+<br>2023-09-28 Updated summary<br></p>
+<h3 id="references-34">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/9ydfg0xr0tchmglcprhxgwhj0hfwxlyf">https://lists.apache.org/thread/9ydfg0xr0tchmglcprhxgwhj0hfwxlyf</a></li>
+<li><a href="https://lists.apache.org/thread/rd1r26w7271jyqgzr4492tooyt583d8b">https://lists.apache.org/thread/rd1r26w7271jyqgzr4492tooyt583d8b</a></li>
+<li><a href="https://www.openwall.com/lists/oss-security/2023/09/13/2">https://www.openwall.com/lists/oss-security/2023/09/13/2</a></li>
+<li><a href="https://lists.debian.org/debian-lts-announce/2023/09/msg00027.html">https://lists.debian.org/debian-lts-announce/2023/09/msg00027.html</a></li>
 </ul>
 <h3 id="credits-24">Credits</h3>
 <ul>
-<li>Gal Bar Nahum, Anat Bremler-Barr, and Yaniv Harel of Tel Aviv University (finder)</li>
+<li>Karl von Randow (finder)</li>
 </ul>
-<h2 id="CVE-2025-49124">exe side-loading via icalcs.exe in Tomcat installer for Windows</h2>
-<p>CVE-2025-49124 <a href="./CVE-2025-49124.cve.json">[CVE json]</a> <a href="./CVE-2025-49124.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T11:44:21.737Z</em></p>
-<h3 id="affected-43">Affected</h3>
+<h2 id="CVE-2023-41080">Open redirect with FORM authentication</h2>
+<p>CVE-2023-41080 <a href="https://cve.org/CVERecord?id=CVE-2023-41080">[CVE]</a> <a href="./CVE-2023-41080.cve.json">[CVE json]</a> <a href="./CVE-2023-41080.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T12:04:38.029Z</em></p>
+<h3 id="affected-35">Affected</h3>
 <ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.7</li>
-<li>Apache Tomcat from 10.1.0 through 10.1.41</li>
-<li>Apache Tomcat from 9.0.23 through 9.0.105</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M10</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.0.12</li>
+<li>Apache Tomcat from 9.0.0-M1 through 9.0.79</li>
+<li>Apache Tomcat from 8.5.0 through 8.5.92</li>
 </ul>
-<h3 id="description-43">Description</h3>
-<p>Untrusted Search Path vulnerability in Apache Tomcat installer for Windows. During installation, the Tomcat installer for Windows used icacls.exe without specifying a full path.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.7, from 10.1.0 through 10.1.41, from 9.0.23 through 9.0.105.</p><p>Users are recommended to upgrade to version 11.0.8, 10.1.42 or 9.0.106, which fix the issue.</p>
-<h3 id="references-43">References</h3>
+<h3 id="description-35">Description</h3>
+<p>URL Redirection to Untrusted Site (&lsquo;Open Redirect&rsquo;) vulnerability in FORM authentication feature Apache Tomcat.<p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M10, from 10.1.0-M1 through 10.0.12, from 9.0.0-M1 through 9.0.79 and from 8.5.0 through 8.5.92.</p>The vulnerability is limited to the ROOT (default) web application.</p>
+<h3 id="references-35">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/lnow7tt2j6hb9kcpkggx32ht6o90vqzv">https://lists.apache.org/thread/lnow7tt2j6hb9kcpkggx32ht6o90vqzv</a></li>
+<li><a href="https://lists.apache.org/thread/71wvwprtx2j2m54fovq9zr7gbm2wow2f">https://lists.apache.org/thread/71wvwprtx2j2m54fovq9zr7gbm2wow2f</a></li>
 </ul>
 <h3 id="credits-25">Credits</h3>
 <ul>
-<li>T. Doğa Gelişli <a href="https://linkedin.com/in/tdogagelisli/">https://linkedin.com/in/tdogagelisli/</a> (finder)</li>
+<li>This vulnerability was reported responsibly to the Tomcat security team by Yiheng Cao. (finder)</li>
 </ul>
-<h2 id="CVE-2025-49125">Security constraint bypass for pre/post-resources</h2>
-<p>CVE-2025-49125 <a href="./CVE-2025-49125.cve.json">[CVE json]</a> <a href="./CVE-2025-49125.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T11:43:27.486Z</em></p>
-<h3 id="affected-44">Affected</h3>
+<h2 id="CVE-2023-34981">AJP response header mix-up</h2>
+<p>CVE-2023-34981 <a href="https://cve.org/CVERecord?id=CVE-2023-34981">[CVE]</a> <a href="./CVE-2023-34981.cve.json">[CVE json]</a> <a href="./CVE-2023-34981.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-06-21T10:26:13.887Z</em></p>
+<h3 id="affected-36">Affected</h3>
 <ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.7</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.41</li>
-<li>Apache Tomcat from 9.0.0.M1 through 9.0.105</li>
+<li>Apache Tomcat at 11.0.0-M5</li>
+<li>Apache Tomcat at 10.1.8</li>
+<li>Apache Tomcat at 9.0.74</li>
+<li>Apache Tomcat at 8.5.88</li>
 </ul>
-<h3 id="description-44">Description</h3>
-<p>Authentication Bypass Using an Alternate Path or Channel vulnerability in Apache Tomcat.&nbsp; When using PreResources or PostResources mounted other than at the root of the web application, it was possible to access those resources via an unexpected path. That path was likely not to be protected by the same security constraints as the expected path, allowing those security constraints to be bypassed.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.7, from 10.1.0-M1 through 10.1.41, from 9.0.0.M1 through 9.0.105.</p><p>Users are recommended to upgrade to version 11.0.8, 10.1.42 or 9.0.106, which fix the issue.</p>
-<h3 id="references-44">References</h3>
+<h3 id="description-36">Description</h3>
+<p>A regression in the fix for bug 66512 in Apache Tomcat 11.0.0-M5, 10.1.8, 9.0.74 and 8.5.88 meant that, if a response did not include any HTTP headers no AJP SEND_HEADERS messare woudl be sent for the response which in turn meant that at least one AJP proxy (mod_proxy_ajp) would use the response headers from the previous request leading to an information leak.</p>
+<h3 id="references-36">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/m66cytbfrty9k7dc4cg6tl1czhsnbywk">https://lists.apache.org/thread/m66cytbfrty9k7dc4cg6tl1czhsnbywk</a></li>
+<li><a href="https://lists.apache.org/thread/j1ksjh9m9gx1q60rtk1sbzmxhvj5h5qz">https://lists.apache.org/thread/j1ksjh9m9gx1q60rtk1sbzmxhvj5h5qz</a></li>
 </ul>
 <h3 id="credits-26">Credits</h3>
 <ul>
-<li>Greg K (<a href="https://github.com/gregk4sec">https://github.com/gregk4sec</a>) (finder)</li>
+<li>Hidenobu Hayashi and Yuichiro Fukubayashi of M3, Inc. (finder)</li>
 </ul>
-<h2 id="CVE-2025-52434">APR/Native Connector crash leading to DoS</h2>
-<p>CVE-2025-52434 <a href="./CVE-2025-52434.cve.json">[CVE json]</a> <a href="./CVE-2025-52434.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T11:42:49.909Z</em></p>
-<h3 id="affected-45">Affected</h3>
+<h2 id="CVE-2023-28709">Fix for CVE-2023-24998 is incomplete</h2>
+<p>CVE-2023-28709 <a href="https://cve.org/CVERecord?id=CVE-2023-28709">[CVE]</a> <a href="./CVE-2023-28709.cve.json">[CVE json]</a> <a href="./CVE-2023-28709.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2023-05-22T10:09:00.405Z</em></p>
+<h3 id="affected-37">Affected</h3>
 <ul>
-<li>Apache Tomcat from 9.0.0.M1 through 9.0.106</li>
+<li>Apache Tomcat from 11.0.0-M2 through 11.0.0-M4</li>
+<li>Apache Tomcat from 10.1.5 through 10.1.7</li>
+<li>Apache Tomcat from 9.0.71 through 9.0.73</li>
+<li>Apache Tomcat from 8.5.85 through 8.5.87</li>
 </ul>
-<h3 id="description-45">Description</h3>
-<p>Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') vulnerability in Apache Tomcat when using the APR/Native connector. This was particularly noticeable with client initiated closes of HTTP/2 connections.</p><p>This issue affects Apache Tomcat: from 9.0.0.M1 through 9.0.106.</p><p>Users are recommended to upgrade to version 9.0.107, which fixes the issue.</p>
-<h3 id="references-45">References</h3>
+<h3 id="description-37">Description</h3>
+<div><p>The fix for CVE-2023-24998 was incomplete for Apache Tomcat 11.0.0-M2 to 11.0.0-M4, 10.1.5 to 10.1.7, 9.0.71 to 9.0.73 and 8.5.85 to 8.5.87. If non-default HTTP       connector settings were used such that the maxParameterCount&nbsp;could be reached using query string parameters and a request was       submitted that supplied exactly maxParameterCount parameters&nbsp;<span style="background-color: var(--wht);">in the query string, the limit for uploaded request parts could be&nbsp;</span><span style="background-color: var(--wht);">bypassed with the potential for a denial of service to occur.</span></p></div><br>
+<h3 id="references-37">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/gxgh65004f25y8519coth6w7vchww030">https://lists.apache.org/thread/gxgh65004f25y8519coth6w7vchww030</a></li>
+<li><a href="https://lists.apache.org/thread/7wvxonzwb7k9hx9jt3q33cmy7j97jo3j">https://lists.apache.org/thread/7wvxonzwb7k9hx9jt3q33cmy7j97jo3j</a></li>
 </ul>
 <h3 id="credits-27">Credits</h3>
 <ul>
-<li>Nacl (finder)</li>
-<li>12SqweR (finder)</li>
-<li>WHOAMI (finder)</li>
-<li>yyzmoon (finder)</li>
+<li>Chenwei Jiang, Chenfeng Nie and Yue Yang from the Huawei Nebula Security Lab (finder)</li>
 </ul>
-<h2 id="CVE-2025-52520">DoS via integer overflow in multipart file upload</h2>
-<p>CVE-2025-52520 <a href="./CVE-2025-52520.cve.json">[CVE json]</a> <a href="./CVE-2025-52520.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T11:41:28.130Z</em></p>
-<h3 id="affected-46">Affected</h3>
+<h2 id="CVE-2023-28708">JSESSIONID Cookie missing secure attribute in some configurations</h2>
+<p>CVE-2023-28708 <a href="https://cve.org/CVERecord?id=CVE-2023-28708">[CVE]</a> <a href="./CVE-2023-28708.cve.json">[CVE json]</a> <a href="./CVE-2023-28708.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T12:07:08.322Z</em></p>
+<h3 id="affected-38">Affected</h3>
 <ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.8</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.42</li>
-<li>Apache Tomcat from 9.0.0.M1 through 9.0.106</li>
+<li>Apache Tomcat from 11.0.0-M1 through 11.0.0-M2</li>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.5</li>
+<li>Apache Tomcat from 9.0.0-M1 through 9.0.71</li>
+<li>Apache Tomcat from 8.5.0 through 8.5.85</li>
 </ul>
-<h3 id="description-46">Description</h3>
-<p>For some unlikely configurations of multipart upload, an Integer Overflow vulnerability in Apache Tomcat could lead to a DoS via bypassing of size limits.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.8, from 10.1.0-M1 through 10.1.42, from 9.0.0.M1 through 9.0.106.</p><p>Users are recommended to upgrade to version 11.0.9, 10.1.43 or 9.0.107, which fix the issue.</p>
-<h3 id="references-46">References</h3>
+<h3 id="description-38">Description</h3>
+<div>
+<div>
+<p>When using the RemoteIpFilter with requests received from a    reverse proxy via HTTP that include the X-Forwarded-Proto    header set to https, session cookies created by Apache Tomcat 11.0.0-M1 to 11.0.0.-M2, 10.1.0-M1 to 10.1.5, 9.0.0-M1 to 9.0.71 and 8.5.0 to 8.5.85 did not&nbsp;include the secure attribute. This could result in the user agent&nbsp;<span style="background-color: var(--wht);">transmitting the session cookie over an insecure channel.</span></p></div>
+</div>
+<h3 id="references-38">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/trqq01bbxw6c92zx69kx2mw2qgmfy0o5">https://lists.apache.org/thread/trqq01bbxw6c92zx69kx2mw2qgmfy0o5</a></li>
+<li><a href="https://lists.apache.org/thread/hdksc59z3s7tm39x0pp33mtwdrt8qr67">https://lists.apache.org/thread/hdksc59z3s7tm39x0pp33mtwdrt8qr67</a></li>
+</ul>
+<h2 id="CVE-2022-45143">JsonErrorReportValve escaping</h2>
+<p>CVE-2022-45143 <a href="https://cve.org/CVERecord?id=CVE-2022-45143">[CVE]</a> <a href="./CVE-2022-45143.cve.json">[CVE json]</a> <a href="./CVE-2022-45143.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2025-10-29T11:35:28.968Z</em></p>
+<h3 id="affected-39">Affected</h3>
+<ul>
+<li>Apache Tomcat from 10.1.0-M1 through 10.1.1</li>
+<li>Apache Tomcat from 9.0.40 through 9.0.68</li>
+<li>Apache Tomcat at 8.5.83</li>
+</ul>
+<h3 id="description-39">Description</h3>
+<p>The JsonErrorReportValve in Apache Tomcat 8.5.83, 9.0.40 to 9.0.68 and 10.1.0-M1 to 10.1.1 did not escape the type, message or description values. In some circumstances these are constructed from user provided data and it was therefore possible for users to supply values that invalidated or manipulated the JSON output.</p>
+<h3 id="references-39">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/yqkd183xrw3wqvnpcg3osbcryq85fkzj">https://lists.apache.org/thread/yqkd183xrw3wqvnpcg3osbcryq85fkzj</a></li>
+</ul>
+<h2 id="CVE-2022-42252">Apache Tomcat request smuggling via malformed content-length</h2>
+<p>CVE-2022-42252 <a href="https://cve.org/CVERecord?id=CVE-2022-42252">[CVE]</a> <a href="./CVE-2022-42252.cve.json">[CVE json]</a> <a href="./CVE-2022-42252.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-11-18T12:36:02.907Z</em></p>
+<h3 id="affected-40">Affected</h3>
+<ul>
+<li>Apache Tomcat at Apache Tomcat 10.1.x 10.1.0-M1 to 10.1.0</li>
+<li>Apache Tomcat at Apache Tomcat 10.0.x 10.0.0-M1 to 10.0.26</li>
+<li>Apache Tomcat at Apache Tomcat 9.0.x 9.0.0-M1 to 9.0.67</li>
+<li>Apache Tomcat at Apache Tomcat 8.5.x 8.5.0 to 8.5.82</li>
+</ul>
+<h3 id="description-40">Description</h3>
+<p>If Apache Tomcat 8.5.0 to 8.5.82, 9.0.0-M1 to 9.0.67, 10.0.0-M1 to 10.0.26 or 10.1.0-M1 to 10.1.0 was configured to ignore invalid HTTP headers via setting rejectIllegalHeader to false (the default for 8.5.x only), Tomcat did not reject a request containing an invalid Content-Length header making a request smuggling attack possible if Tomcat was located behind a reverse proxy that also failed to reject the request with the invalid header.</p>
+<h3 id="references-40">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/zzcxzvqfdqn515zfs3dxb7n8gty589sq">https://lists.apache.org/thread/zzcxzvqfdqn515zfs3dxb7n8gty589sq</a></li>
 </ul>
 <h3 id="credits-28">Credits</h3>
 <ul>
-<li>Saravana Kumar (finder)</li>
+<li>Thanks to Sam Shahsavar who discovered this issue and reported it to the Apache Tomcat security team.</li>
 </ul>
-<h2 id="CVE-2025-53506">DoS via excessive h2 streams at connection start</h2>
-<p>CVE-2025-53506 <a href="./CVE-2025-53506.cve.json">[CVE json]</a> <a href="./CVE-2025-53506.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-29T11:40:57.934Z</em></p>
-<h3 id="affected-47">Affected</h3>
+<h2 id="CVE-2022-34305">XSS in examples web application</h2>
+<p>CVE-2022-34305 <a href="https://cve.org/CVERecord?id=CVE-2022-34305">[CVE]</a> <a href="./CVE-2022-34305.cve.json">[CVE json]</a> <a href="./CVE-2022-34305.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-06-23T10:22:24.067Z</em></p>
+<h3 id="affected-41">Affected</h3>
 <ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.8</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.42</li>
-<li>Apache Tomcat from 9.0.0.M1 through 9.0.106</li>
+<li>Apache Tomcat at Apache Tomcat 8.5 8.5.50 to 8.5.81</li>
+<li>Apache Tomcat at Apache Tomcat 9 9.0.30 to 9.0.64</li>
+<li>Apache Tomcat at Apache Tomcat 10.0 10.0.0-M1 to 10.0.22</li>
+<li>Apache Tomcat at Apache Tomcat 10.1 10.1.0-M1 to 10.1.0-M16</li>
 </ul>
-<h3 id="description-47">Description</h3>
-<p>Uncontrolled Resource Consumption vulnerability in Apache Tomcat if an HTTP/2 client did not acknowledge the initial settings frame that reduces the maximum permitted concurrent streams.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.8, from 10.1.0-M1 through 10.1.42, from 9.0.0.M1 through 9.0.106.</p><p>Users are recommended to upgrade to version 11.0.9, 10.1.43 or 9.0.107, which fix the issue.</p>
-<h3 id="references-47">References</h3>
+<h3 id="description-41">Description</h3>
+<p>In Apache Tomcat 10.1.0-M1 to 10.1.0-M16, 10.0.0-M1 to 10.0.22, 9.0.30 to 9.0.64 and 8.5.50 to 8.5.81 the Form authentication example in the examples web application displayed user provided data without filtering, exposing a XSS vulnerability.</p>
+<h3 id="references-41">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/p09775q0rd185m6zz98krg0fp45j8kr0">https://lists.apache.org/thread/p09775q0rd185m6zz98krg0fp45j8kr0</a></li>
+<li><a href="https://lists.apache.org/thread/k04zk0nq6w57m72w5gb0r6z9ryhmvr4k">https://lists.apache.org/thread/k04zk0nq6w57m72w5gb0r6z9ryhmvr4k</a></li>
+</ul>
+<h2 id="CVE-2022-29885">EncryptInterceptor does not provide complete protection on insecure networks</h2>
+<p>CVE-2022-29885 <a href="https://cve.org/CVERecord?id=CVE-2022-29885">[CVE]</a> <a href="./CVE-2022-29885.cve.json">[CVE json]</a> <a href="./CVE-2022-29885.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-05-11T16:28:52.897Z</em></p>
+<h3 id="affected-42">Affected</h3>
+<ul>
+<li>Apache Tomcat at Apache Tomcat 10.1 10.1.0-M1 to 10.1.0-M14</li>
+<li>Apache Tomcat at Apache Tomcat 10 10.0.0-M1 to 10.0.20</li>
+<li>Apache Tomcat at Apache Tomcat 9 9.0.13 to 9.0.62</li>
+<li>Apache Tomcat at Apache Tomcat 8.5 8.5.38 to 8.5.78</li>
+</ul>
+<h3 id="description-42">Description</h3>
+<p>The documentation of Apache Tomcat 10.1.0-M1 to 10.1.0-M14, 10.0.0-M1 to 10.0.20, 9.0.13 to 9.0.62 and 8.5.38 to 8.5.78 for the EncryptInterceptor incorrectly stated it enabled Tomcat clustering to run over an untrusted network. This was not correct. While the EncryptInterceptor does provide confidentiality and integrity protection, it does not protect against all risks associated with running over any untrusted network, particularly DoS risks.</p>
+<h3 id="references-42">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/2b4qmhbcyqvc7dyfpjyx54c03x65vhcv">https://lists.apache.org/thread/2b4qmhbcyqvc7dyfpjyx54c03x65vhcv</a></li>
 </ul>
 <h3 id="credits-29">Credits</h3>
 <ul>
-<li>Kanatoko (finder)</li>
+<li>This issue was reported to the Apache Tomcat Security team by 4ra1n.</li>
 </ul>
-<h2 id="CVE-2025-55668">session fixation via rewrite valve</h2>
-<p>CVE-2025-55668 <a href="./CVE-2025-55668.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2025-10-29T11:39:27.849Z</em></p>
-<h3 id="affected-48">Affected</h3>
+<h2 id="CVE-2022-25762">Response mix-up with WebSocket concurrent send and close</h2>
+<p>CVE-2022-25762 <a href="https://cve.org/CVERecord?id=CVE-2022-25762">[CVE]</a> <a href="./CVE-2022-25762.cve.json">[CVE json]</a> <a href="./CVE-2022-25762.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-05-12T20:00:18.925Z</em></p>
+<h3 id="affected-43">Affected</h3>
 <ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.7</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.41</li>
-<li>Apache Tomcat from 9.0.0.M1 through 9.0.105</li>
-<li>Apache Tomcat from 8 before 9.0.0.M1</li>
+<li>Apache Tomcat at Apache Tomcat 9 9.0.0.M1 to 9.0.20</li>
+<li>Apache Tomcat at Apache Tomcat 8.5 8.5.0 to 8.5.75</li>
 </ul>
-<h3 id="description-48">Description</h3>
-<p>Session Fixation vulnerability in Apache Tomcat via rewrite valve.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.7, from 10.1.0-M1 through 10.1.41, from 9.0.0.M1 through 9.0.105.<br>Older, EOL versions may also be affected.</p><p>Users are recommended to upgrade to version 11.0.8, 10.1.42 or 9.0.106, which fix the issue.</p>
-<h3 id="references-48">References</h3>
+<h3 id="description-43">Description</h3>
+<p>If a web application sends a WebSocket message concurrently with the WebSocket connection closing when running on Apache Tomcat 8.5.0 to 8.5.75 or Apache Tomcat 9.0.0.M1 to 9.0.20, it is possible that the application will continue to use the socket after it has been closed. The error handling triggered in this case could cause the a pooled object to be placed in the pool twice. This could result in subsequent connections using the same object concurrently which could result in data being returned to the wrong use and/or other errors.</p>
+<h3 id="references-43">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/v6bknr96rl7l1qxkl1c03v0qdvbbqs47">https://lists.apache.org/thread/v6bknr96rl7l1qxkl1c03v0qdvbbqs47</a></li>
+<li><a href="https://lists.apache.org/thread/6ckmjfb1k61dyzkto9vm2k5jvt4o7w7c">https://lists.apache.org/thread/6ckmjfb1k61dyzkto9vm2k5jvt4o7w7c</a></li>
+</ul>
+<h2 id="CVE-2022-23181">Local privilege escalation with FileStore</h2>
+<p>CVE-2022-23181 <a href="https://cve.org/CVERecord?id=CVE-2022-23181">[CVE]</a> <a href="./CVE-2022-23181.cve.json">[CVE json]</a> <a href="./CVE-2022-23181.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-01-26T11:25:59.878Z</em></p>
+<h3 id="affected-44">Affected</h3>
+<ul>
+<li>Apache Tomcat at Apache Tomcat 10.1 10.1.0-M1 to 10.1.0-M8</li>
+<li>Apache Tomcat at Apache Tomcat 10.0 10.0.0-M5 to 10.0.14</li>
+<li>Apache Tomcat at Apache Tomcat 9 9.0.35 to 9.0.56</li>
+<li>Apache Tomcat at Apache Tomcat 8 8.5.55 to 8.5.73</li>
+</ul>
+<h3 id="description-44">Description</h3>
+<p>The fix for bug CVE-2020-9484 introduced a time of check, time of use vulnerability into Apache Tomcat 10.1.0-M1 to 10.1.0-M8, 10.0.0-M5 to 10.0.14, 9.0.35 to 9.0.56 and 8.5.55 to 8.5.73 that allowed a local attacker to perform actions with the privileges of the user that the Tomcat process is using. This issue is only exploitable when Tomcat is configured to persist sessions using the FileStore.</p>
+<h3 id="references-44">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/l8x62p3k19yfcb208jo4zrb83k5mfwg9">https://lists.apache.org/thread/l8x62p3k19yfcb208jo4zrb83k5mfwg9</a></li>
+</ul>
+<h2 id="CVE-2021-43980">Apache Tomcat: Information disclosure</h2>
+<p>CVE-2021-43980 <a href="https://cve.org/CVERecord?id=CVE-2021-43980">[CVE]</a> <a href="./CVE-2021-43980.cve.json">[CVE json]</a> <a href="./CVE-2021-43980.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2022-09-28T13:18:54.072Z</em></p>
+<h3 id="affected-45">Affected</h3>
+<ul>
+<li>Apache Tomcat at 10.1.0-M1 to 10.1.0-M12</li>
+<li>Apache Tomcat at 10.0.0-M1 to 10.0.18</li>
+<li>Apache Tomcat at 9.0.0-M1 to 9.0.60</li>
+<li>Apache Tomcat at 8.5.0 to 8.5.77</li>
+</ul>
+<h3 id="description-45">Description</h3>
+<p>The simplified implementation of blocking reads and writes introduced in Tomcat 10 and back-ported to Tomcat 9.0.47 onwards exposed a long standing (but extremely hard to trigger) concurrency bug in Apache Tomcat 10.1.0 to 10.1.0-M12, 10.0.0-M1 to 10.0.18, 9.0.0-M1 to 9.0.60 and 8.5.0 to 8.5.77 that could cause client connections to share an Http11Processor instance resulting in responses, or part responses, to be received by the wrong client.</p>
+<h3 id="references-45">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/3jjqbsp6j88b198x5rmg99b1qr8ht3g3">https://lists.apache.org/thread/3jjqbsp6j88b198x5rmg99b1qr8ht3g3</a></li>
 </ul>
 <h3 id="credits-30">Credits</h3>
 <ul>
-<li>Greg K (<a href="https://github.com/gregk4sec">https://github.com/gregk4sec</a>) (finder)</li>
+<li>Thanks to Adam Thomas, Richard Hernandez and Ryan Schmitt for discovering the issue and working with the Tomcat security team to identify the root cause and appropriate fix.</li>
 </ul>
-<h2 id="CVE-2025-55752">Directory traversal via rewrite with possible RCE if PUT is enabled</h2>
-<p>CVE-2025-55752 <a href="./CVE-2025-55752.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2025-10-29T11:38:53.688Z</em></p>
-<h3 id="affected-49">Affected</h3>
+<h2 id="CVE-2021-42340">DoS via memory leak with WebSocket connections</h2>
+<p>CVE-2021-42340 <a href="https://cve.org/CVERecord?id=CVE-2021-42340">[CVE]</a> <a href="./CVE-2021-42340.cve.json">[CVE json]</a> <a href="./CVE-2021-42340.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-10-14T14:26:25.345Z</em></p>
+<h3 id="affected-46">Affected</h3>
 <ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.10</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.44</li>
-<li>Apache Tomcat from 9.0.0.M11 through 9.0.108</li>
-<li>Apache Tomcat from 8.5.6 through 8.5.100</li>
-<li>Apache Tomcat from 3 before 8.5.0</li>
-<li>Apache Tomcat from 10.0.0-M1 through 10.0.27</li>
+<li>Apache Tomcat at Apache Tomcat 10 10.0.0-M10 to 10.0.11</li>
+<li>Apache Tomcat at Apache Tomcat 10 10.1.0-M1 to 10.1.0-M5</li>
+<li>Apache Tomcat at Apache Tomcat 9 9.0.40 to 9.0.53</li>
+<li>Apache Tomcat at Apache Tomcat 8 8.5.60 to 8.5.71</li>
 </ul>
-<h3 id="description-49">Description</h3>
-<p>Relative Path Traversal vulnerability in Apache Tomcat.</p><div><p>The fix for bug 60013 introduced a regression where the       rewritten URL was normalized before it was decoded. This introduced the       possibility that, for rewrite rules that rewrite query parameters to the       URL, an attacker could manipulate the request URI to bypass security       constraints including the protection for /WEB-INF/ and /META-INF/. If PUT requests were also enabled then malicious files could be uploaded leading to remote code execution. PUT requests are normally limited to trusted users and it is considered unlikely that PUT requests would be enabled in conjunction with a rewrite that manipulated the URI.</p></div><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.10, from 10.1.0-M1 through 10.1.44, from 9.0.0.M11 through 9.0.108.</p>The following versions were EOL at the time the CVE was created but are 
-known to be affected: 8.5.6 though 8.5.100. Other, older, EOL versions may also be affected.<br><p>Users are recommended to upgrade to version 11.0.11 or later, 10.1.45 or later or 9.0.109 or later, which fix the issue.</p>
-<h3 id="references-49">References</h3>
+<h3 id="description-46">Description</h3>
+<p>The fix for bug 63362 present in Apache Tomcat 10.1.0-M1 to 10.1.0-M5, 10.0.0-M1 to 10.0.11, 9.0.40 to 9.0.53 and 8.5.60 to 8.5.71 introduced a memory leak. The object introduced to collect metrics for HTTP upgrade connections was not released for WebSocket connections once the connection was closed. This created a memory leak that, over time, could lead to a denial of service via an OutOfMemoryError.</p>
+<h3 id="references-46">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/n05kjcwyj1s45ovs8ll1qrrojhfb1tog">https://lists.apache.org/thread/n05kjcwyj1s45ovs8ll1qrrojhfb1tog</a></li>
+<li><a href="https://lists.apache.org/thread.html/r83a35be60f06aca2065f188ee542b9099695d57ced2e70e0885f905c%40%3Cannounce.tomcat.apache.org%3E">https://lists.apache.org/thread.html/r83a35be60f06aca2065f188ee542b9099695d57ced2e70e0885f905c%40%3Cannounce.tomcat.apache.org%3E</a></li>
+</ul>
+<h2 id="CVE-2021-41079">Apache Tomcat DoS with unexpected TLS packet</h2>
+<p>CVE-2021-41079 <a href="https://cve.org/CVERecord?id=CVE-2021-41079">[CVE]</a> <a href="./CVE-2021-41079.cve.json">[CVE json]</a> <a href="./CVE-2021-41079.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-09-15T17:56:16.883Z</em></p>
+<h3 id="affected-47">Affected</h3>
+<ul>
+<li>Apache Tomcat at Apache Tomcat 8.5 8.5.0 to 8.5.63</li>
+<li>Apache Tomcat at Apache Tomcat 9 9.0.0-M1 to 9.0.43</li>
+<li>Apache Tomcat at Apache Tomcat 10 10.0.0-M1 to 10.0.2</li>
+</ul>
+<h3 id="description-47">Description</h3>
+<p>Apache Tomcat 8.5.0 to 8.5.63, 9.0.0-M1 to 9.0.43 and 10.0.0-M1 to 10.0.2 did not properly validate incoming TLS packets. When Tomcat was configured to use NIO+OpenSSL or NIO2+OpenSSL for TLS, a specially crafted packet could be used to trigger an infinite loop resulting in a denial of service.</p>
+<h3 id="references-47">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/rccdef0349fdf4fb73a4e4403095446d7fe6264e0a58e2df5c6799434%40%3Cannounce.tomcat.apache.org%3E">https://lists.apache.org/thread.html/rccdef0349fdf4fb73a4e4403095446d7fe6264e0a58e2df5c6799434%40%3Cannounce.tomcat.apache.org%3E</a></li>
 </ul>
 <h3 id="credits-31">Credits</h3>
 <ul>
-<li>Chumy Tsai (github.com/Jimmy01240397) @ CyCraft Technology Intern (finder)</li>
+<li>The Apache Tomcat security team would like to thank Thomas Wozenilek for originally reporting this issue and David Frankson of Infinite Campus for also providing a test case that reproduced the issue.</li>
 </ul>
-<h2 id="CVE-2025-55754">console manipulation via escape sequences in log messages</h2>
-<p>CVE-2025-55754 <a href="./CVE-2025-55754.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2025-10-29T11:38:22.595Z</em></p>
-<h3 id="affected-50">Affected</h3>
+<h2 id="CVE-2021-33037">Incorrect Transfer-Encoding handling with HTTP/1.0</h2>
+<p>CVE-2021-33037 <a href="https://cve.org/CVERecord?id=CVE-2021-33037">[CVE]</a> <a href="./CVE-2021-33037.cve.json">[CVE json]</a> <a href="./CVE-2021-33037.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-07-12T13:31:58.821Z</em></p>
+<h3 id="affected-48">Affected</h3>
 <ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.10</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.44</li>
-<li>Apache Tomcat from 9.0.40 through 9.0.108</li>
-<li>Apache Tomcat from 8.5.60 through 8.5.100</li>
-<li>Apache Tomcat from 3 before 8.5.0</li>
-<li>Apache Tomcat from 10.0.0-M1 through 10.0.27</li>
+<li>Apache Tomcat at Apache Tomcat 10 10.0.0-M1 to 10.0.6</li>
+<li>Apache Tomcat at Apache Tomcat 9 9.0.0.M1 to 9.0.46</li>
+<li>Apache Tomcat at Apache Tomcat 8 8.5.0 to 8.5.66</li>
 </ul>
-<h3 id="description-50">Description</h3>
-<p>Improper Neutralization of Escape, Meta, or Control Sequences vulnerability in Apache Tomcat.</p><div><p>Tomcat did not escape ANSI escape sequences in log messages. If Tomcat was running in a console on a Windows operating system, and the console supported ANSI escape sequences, it was possible for an attacker to use a specially crafted URL to inject ANSI escape sequences to manipulate the console and the clipboard and attempt to trick an administrator into running an attacker controlled command. While no attack vector was found, it may have been possible to mount this attack on other operating systems.</p></div><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.10, from 10.1.0-M1 through 10.1.44, from 9.0.40 through 9.0.108.</p>The following versions were EOL at the time the CVE was created but are 
-known to be affected: 8.5.60 though 8.5.100. Other, older, EOL versions may also be affected.<br><p>Users are recommended to upgrade to version 11.0.11 or later, 10.1.45 or later or 9.0.109 or later, which fix the issue.</p>
-<h3 id="references-50">References</h3>
+<h3 id="description-48">Description</h3>
+<p>Apache Tomcat 10.0.0-M1 to 10.0.6, 9.0.0.M1 to 9.0.46 and 8.5.0 to 8.5.66 did not correctly parse the HTTP transfer-encoding request header in some circumstances leading to the possibility to request smuggling when used with a reverse proxy. Specifically:</p>
 <ul>
-<li><a href="https://lists.apache.org/thread/j7w54hqbkfcn0xb9xy0wnx8w5nymcbqd">https://lists.apache.org/thread/j7w54hqbkfcn0xb9xy0wnx8w5nymcbqd</a></li>
+<li>Tomcat incorrectly ignored the transfer encoding header if the client declared it would only accept an HTTP/1.0 response;</li>
+<li>Tomcat honoured the identify encoding; and</li>
+<li>Tomcat did not ensure that, if present, the chunked encoding was the final encoding.</li>
+</ul>
+<h3 id="references-48">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r612a79269b0d5e5780c62dfd34286a8037232fec0bc6f1a7e60c9381%40%3Cannounce.tomcat.apache.org%3E">https://lists.apache.org/thread.html/r612a79269b0d5e5780c62dfd34286a8037232fec0bc6f1a7e60c9381%40%3Cannounce.tomcat.apache.org%3E</a></li>
 </ul>
 <h3 id="credits-32">Credits</h3>
 <ul>
-<li>Elysee Franchuk of MOBIA Technology Innovations (finder)</li>
+<li>The Apache Tomcat Security Team would like to thank Bahruz Jabiyev, Steven Sprecher and Kaan Onarlioglu of NEU seclab for identifying and reporting this issue.</li>
 </ul>
-<h2 id="CVE-2025-61795">Delayed cleaning of multi-part upload temporary files may lead to DoS</h2>
-<p>CVE-2025-61795 <a href="./CVE-2025-61795.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2025-10-29T11:37:37.868Z</em></p>
+<h2 id="CVE-2021-30640">Auth weakness in JNDIRealm</h2>
+<p>CVE-2021-30640 <a href="https://cve.org/CVERecord?id=CVE-2021-30640">[CVE]</a> <a href="./CVE-2021-30640.cve.json">[CVE json]</a> <a href="./CVE-2021-30640.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-07-12T13:14:16.116Z</em></p>
+<h3 id="affected-49">Affected</h3>
+<ul>
+<li>Apache Tomcat at Apache Tomcat 10 10.0.0-M1 to 10.0.5</li>
+<li>Apache Tomcat at Apache Tomcat 9 9.0.0.M1 to 9.0.45</li>
+<li>Apache Tomcat at Apache Tomcat 8.5 8.5.0 to 8.5.65</li>
+<li>Apache Tomcat at Apache Tomcat 7 7.0.0 to 7.0.108</li>
+</ul>
+<h3 id="description-49">Description</h3>
+<p>A vulnerability in the JNDI Realm of Apache Tomcat allows an attacker to authenticate using variations of a valid user name and/or to bypass some of the protection provided by the LockOut Realm.  This issue affects Apache Tomcat 10.0.0-M1 to 10.0.5; 9.0.0.M1 to 9.0.45; 8.5.0 to 8.5.65.</p>
+<h3 id="references-49">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r59f9ef03929d32120f91f4ea7e6e79edd5688d75d0a9b65fd26d1fe8%40%3Cannounce.tomcat.apache.org%3E">https://lists.apache.org/thread.html/r59f9ef03929d32120f91f4ea7e6e79edd5688d75d0a9b65fd26d1fe8%40%3Cannounce.tomcat.apache.org%3E</a></li>
+</ul>
+<h2 id="CVE-2021-30639">DoS after non-blocking IO error</h2>
+<p>CVE-2021-30639 <a href="https://cve.org/CVERecord?id=CVE-2021-30639">[CVE]</a> <a href="./CVE-2021-30639.cve.json">[CVE json]</a> <a href="./CVE-2021-30639.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-07-12T13:20:34.738Z</em></p>
+<h3 id="affected-50">Affected</h3>
+<ul>
+<li>Apache Tomcat at Apache Tomcat 10 10.0.3 to 10.0.4</li>
+<li>Apache Tomcat at Apache Tomcat 9 9.0.44</li>
+<li>Apache Tomcat at Apache Tomcat 8.5 8.5.64</li>
+</ul>
+<h3 id="description-50">Description</h3>
+<p>A vulnerability in Apache Tomcat allows an attacker to remotely trigger a denial of service. An error introduced as part of a change to improve error handling during non-blocking I/O meant that the error flag associated with the Request object was not reset between requests. This meant that once a non-blocking I/O error occurred, all future requests handled by that request object would fail. Users were able to trigger non-blocking I/O errors, e.g. by dropping a connection, thereby creating the possibility of triggering a DoS.
+Applications that do not use non-blocking I/O are not exposed to this vulnerability. This issue affects Apache Tomcat 10.0.3 to 10.0.4; 9.0.44; 8.5.64.</p>
+<h3 id="references-50">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/rd84fae1f474597bdf358f5bdc0a5c453c507bd527b83e8be6b5ea3f4%40%3Cannounce.tomcat.apache.org%3E">https://lists.apache.org/thread.html/rd84fae1f474597bdf358f5bdc0a5c453c507bd527b83e8be6b5ea3f4%40%3Cannounce.tomcat.apache.org%3E</a></li>
+</ul>
+<h2 id="CVE-2021-25329">Incomplete fix for CVE-2020-9484</h2>
+<p>CVE-2021-25329 <a href="https://cve.org/CVERecord?id=CVE-2021-25329">[CVE]</a> <a href="./CVE-2021-25329.cve.json">[CVE json]</a> <a href="./CVE-2021-25329.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-03-01T12:01:51.094Z</em></p>
 <h3 id="affected-51">Affected</h3>
 <ul>
-<li>Apache Tomcat from 11.0.0-M1 through 11.0.11</li>
-<li>Apache Tomcat from 10.1.0-M1 through 10.1.46</li>
-<li>Apache Tomcat from 9.0.0.M1 through 9.0.109</li>
-<li>Apache Tomcat from 8.5.0 through 8.5.100</li>
-<li>Apache Tomcat from 3 before 8.5.0</li>
-<li>Apache Tomcat from 10.0.0-M1 through 10.0.27</li>
+<li>Apache Tomcat from Apache Tomcat 10 before 10.0.0</li>
+<li>Apache Tomcat from Apache Tomcat 9 before 9.0.41</li>
+<li>Apache Tomcat from Apache Tomcat 8.5 before 8.5.61</li>
+<li>Apache Tomcat from Apache Tomcat 7 before 7.0.107</li>
 </ul>
 <h3 id="description-51">Description</h3>
-<p>Improper Resource Shutdown or Release vulnerability in Apache Tomcat.</p><div><p>If an error occurred (including exceeding limits) during the processing of a multipart upload, temporary copies of the uploaded parts written to disc were not cleaned up immediately but left for the garbage collection process to delete. Depending on JVM settings, application memory usage and application load, it was possible that space for the temporary copies of uploaded parts would be filled faster than GC cleared it, leading to a DoS.</p></div><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.11, from 10.1.0-M1 through 10.1.46, from 9.0.0.M1 through 9.0.109.</p>The following versions were EOL at the time the CVE was created but are 
-known to be affected: 8.5.0 though 8.5.100. Other, older, EOL versions may also be affected.<br><p>Users are recommended to upgrade to version 11.0.12 or later, 10.1.47 or later or 9.0.110 or later which fixes the issue.</p>
+<p>The fix for CVE-2020-9484 was incomplete. When using Apache Tomcat 10.0.0-M1 to 10.0.0, 9.0.0.M1 to 9.0.41, 8.5.0 to 8.5.61 or 7.0.0. to 7.0.107 with a configuration edge case that was highly unlikely to be used, the Tomcat instance was still vulnerable to CVE-2020-9494. Note that both the previously published prerequisites for CVE-2020-9484 and the previously published mitigations for CVE-2020-9484 also apply to this issue.</p>
 <h3 id="references-51">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/wm9mx8brmx9g4zpywm06ryrtvd3160pp">https://lists.apache.org/thread/wm9mx8brmx9g4zpywm06ryrtvd3160pp</a></li>
+<li><a href="https://lists.apache.org/thread.html/rfe62fbf9d4c314f166fe8c668e50e5d9dd882a99447f26f0367474bf%40%3Cannounce.tomcat.apache.org%3E">https://lists.apache.org/thread.html/rfe62fbf9d4c314f166fe8c668e50e5d9dd882a99447f26f0367474bf%40%3Cannounce.tomcat.apache.org%3E</a></li>
 </ul>
 <h3 id="credits-33">Credits</h3>
 <ul>
-<li>sw0rd1ight (<a href="https://github.com/sw0rd1ight">https://github.com/sw0rd1ight</a>) (finder)</li>
+<li>This issue was identified by Trung Pham of Viettel Cyber Security.</li>
+</ul>
+<h2 id="CVE-2021-25122">Apache Tomcat h2c request mix-up</h2>
+<p>CVE-2021-25122 <a href="https://cve.org/CVERecord?id=CVE-2021-25122">[CVE]</a> <a href="./CVE-2021-25122.cve.json">[CVE json]</a> <a href="./CVE-2021-25122.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-03-01T11:12:28.219Z</em></p>
+<h3 id="affected-52">Affected</h3>
+<ul>
+<li>Apache Tomcat from Apache Tomcat 10 before 10.0.2</li>
+<li>Apache Tomcat from Apache Tomcat 9 before 9.0.42</li>
+<li>Apache Tomcat from Apache Tomcat 8.5 before 8.5.62</li>
+</ul>
+<h3 id="description-52">Description</h3>
+<p>When responding to new h2c connection requests, Apache Tomcat versions 10.0.0-M1 to 10.0.0, 9.0.0.M1 to 9.0.41 and 8.5.0 to 8.5.61 could duplicate request headers and a limited amount of request body from one request to another meaning user A and user B could both see the results of user A&rsquo;s request.</p>
+<h3 id="references-52">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r7b95bc248603360501f18c8eb03bb6001ec0ee3296205b34b07105b7%40%3Cannounce.tomcat.apache.org%3E">https://lists.apache.org/thread.html/r7b95bc248603360501f18c8eb03bb6001ec0ee3296205b34b07105b7%40%3Cannounce.tomcat.apache.org%3E</a></li>
+</ul>
+<h2 id="CVE-2021-24122">Apache Tomcat information disclosure</h2>
+<p>CVE-2021-24122 <a href="https://cve.org/CVERecord?id=CVE-2021-24122">[CVE]</a> <a href="./CVE-2021-24122.cve.json">[CVE json]</a> <a href="./CVE-2021-24122.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2021-01-14T14:26:04.037Z</em></p>
+<h3 id="affected-53">Affected</h3>
+<ul>
+<li>Apache Tomcat from Apache Tomcat 10 before 10.0.0-M10</li>
+<li>Apache Tomcat from Apache Tomcat 9 before 9.0.40</li>
+<li>Apache Tomcat from Apache Tomcat 8.5 before 8.5.60</li>
+<li>Apache Tomcat from Apache Tomcat 7 before 7.0.106</li>
+</ul>
+<h3 id="description-53">Description</h3>
+<p>When serving resources from a network location using the NTFS file system, Apache Tomcat versions 10.0.0-M1 to 10.0.0-M9, 9.0.0.M1 to 9.0.39, 8.5.0 to 8.5.59 and 7.0.0 to 7.0.106 were susceptible to JSP source code disclosure in some configurations. The root cause was the unexpected behaviour of the JRE API File.getCanonicalPath() which in turn was caused by the inconsistent behaviour of the Windows API (FindFirstFileW) in some circumstances.</p>
+<h3 id="references-53">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/r1595889b083e05986f42b944dc43060d6b083022260b6ea64d2cec52%40%3Cannounce.tomcat.apache.org%3E">https://lists.apache.org/thread.html/r1595889b083e05986f42b944dc43060d6b083022260b6ea64d2cec52%40%3Cannounce.tomcat.apache.org%3E</a></li>
+</ul>
+<h3 id="credits-34">Credits</h3>
+<ul>
+<li>This issue was identified by Ilja Brander.</li>
+</ul>
+<h2 id="CVE-2020-17527">Apache Tomcat: Request header mix-up between HTTP/2 streams</h2>
+<p>CVE-2020-17527 <a href="https://cve.org/CVERecord?id=CVE-2020-17527">[CVE]</a> <a href="./CVE-2020-17527.cve.json">[CVE json]</a> <a href="./CVE-2020-17527.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2020-12-03T18:25:33.380Z</em></p>
+<h3 id="affected-54">Affected</h3>
+<ul>
+<li>Apache Tomcat at Apache Tomcat 10 10.0.0-M1 to 10.0.0-M9</li>
+<li>Apache Tomcat at Apache Tomcat 9 9.0.0-M1 to 9.0.39</li>
+<li>Apache Tomcat at Apache Tomcat 8.5 8.5.0 to 8.5.59</li>
+</ul>
+<h3 id="description-54">Description</h3>
+<p>While investigating bug 64830 it was discovered that Apache Tomcat 10.0.0-M1 to 10.0.0-M9, 9.0.0-M1 to 9.0.39 and 8.5.0 to 8.5.59 could re-use an HTTP request header value from the previous stream received on an HTTP/2 connection for the request associated with the subsequent stream. While this would most likely lead to an error and the closure of the HTTP/2 connection, it is possible that information could leak between requests.</p>
+<h3 id="references-54">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/rce5ac9a40173651d540babce59f6f3825f12c6d4e886ba00823b11e5%40%3Cannounce.tomcat.apache.org%3E">https://lists.apache.org/thread.html/rce5ac9a40173651d540babce59f6f3825f12c6d4e886ba00823b11e5%40%3Cannounce.tomcat.apache.org%3E</a></li>
 </ul>
 
   
