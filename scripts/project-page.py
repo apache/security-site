@@ -2,6 +2,7 @@
 
 import json
 import os.path
+from operator import itemgetter
 from os.path import dirname, realpath
 from collections import defaultdict
 import subprocess
@@ -144,7 +145,7 @@ layout: single
     project_page.write('on [security@apache.org](mailto:security@apache.org)')
     project_page.write('\n{.bg-warning}')
 
-    for advisory in advisories[pmc]:
+    for advisory in sorted(advisories[pmc], key=itemgetter('ID'), reverse=True):
         cve_id = advisory['ID']
         cve = fetch_cve(cve_id)
 
