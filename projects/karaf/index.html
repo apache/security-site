@@ -111,7 +111,7 @@
 <h3 id="affected">Affected</h3>
 <ul>
 <li>Apache Karaf before 2.12.0</li>
-<li>Apache Karaf at 2.12.0</li>
+<li>Apache Karaf at 2.12.0 unaffected</li>
 </ul>
 <h3 id="description">Description</h3>
 <p>Deserialization of Untrusted Data vulnerability in Apache Karaf Decanter.</p><br>The Decanter log socket collector exposes the port 4560, without authentication. If the collector exposes allowed classes property, this configuration can be bypassed.<br>It means that the log socket collector is vulnerable to deserialization of untrusted data, eventually causing DoS.<br><br><br>NB: Decanter log socket collector is not installed by default. Users who have not installed Decanter log socket are not impacted by this issue.<br><br><p>This issue affects Apache Karaf Decanter before 2.12.0.</p><p>Users are recommended to upgrade to version 2.12.0, which fixes the issue.</p>

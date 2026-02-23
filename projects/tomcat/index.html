@@ -117,7 +117,7 @@
 <li>Apache Tomcat from 11.0.0-M1 through 11.0.17</li>
 <li>Apache Tomcat from 10.1.0-M7 through 10.1.51</li>
 <li>Apache Tomcat from 9.0.83 through 9.0.114</li>
-<li>Apache Tomcat through 8.5.100</li>
+<li>Apache Tomcat through 8.5.100 unaffected</li>
 </ul>
 <h3 id="description">Description</h3>
 <p>Improper Input Validation vulnerability in Apache Tomcat Native, Apache Tomcat.</p><p>When using an OCSP responder, Tomcat Native (and Tomcat's FFM port of the Tomcat Native code) did not complete verification or freshness checks on the OCSP response which could allow certificate revocation to be bypassed.</p><p>This issue affects Apache Tomcat Native:&nbsp; from 1.3.0 through 1.3.4, from 2.0.0 through 2.0.11; Apache Tomcat: from 11.0.0-M1 through 11.0.17, from 10.1.0-M7 through 10.1.51, from 9.0.83 through 9.0.114.<br></p><p>The following versions were EOL at the time the CVE was created but are 
@@ -158,7 +158,7 @@ sending a (specification invalid) HEAD request using HTTP/0.9.<br></p><p>This is
 <li>Apache Tomcat from 10.1.0-M1 through 10.1.49</li>
 <li>Apache Tomcat from 9.0.0-M1 through 9.0.112</li>
 <li>Apache Tomcat from 8.5.0 through 8.5.100</li>
-<li>Apache Tomcat before 8.5.0</li>
+<li>Apache Tomcat before 8.5.0 unaffected</li>
 </ul>
 <h3 id="description-2">Description</h3>
 <p>Improper Input Validation vulnerability.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.14, from 10.1.0-M1 through 10.1.49, from 9.0.0-M1 through 9.0.112.</p>The following versions were EOL at the time the CVE was created but are 
@@ -186,8 +186,8 @@ authentication is enforced at the web application.<br></p><p>Users are recommend
 <li>Apache Tomcat from 10.1.0-M1 through 10.1.46</li>
 <li>Apache Tomcat from 9.0.0.M1 through 9.0.109</li>
 <li>Apache Tomcat from 8.5.0 through 8.5.100</li>
-<li>Apache Tomcat from 3 before 8.5.0</li>
-<li>Apache Tomcat from 10.0.0-M1 through 10.0.27</li>
+<li>Apache Tomcat from 3 before 8.5.0 unknown</li>
+<li>Apache Tomcat from 10.0.0-M1 through 10.0.27 unknown</li>
 </ul>
 <h3 id="description-3">Description</h3>
 <p>Improper Resource Shutdown or Release vulnerability in Apache Tomcat.</p><div><p>If an error occurred (including exceeding limits) during the processing of a multipart upload, temporary copies of the uploaded parts written to disc were not cleaned up immediately but left for the garbage collection process to delete. Depending on JVM settings, application memory usage and application load, it was possible that space for the temporary copies of uploaded parts would be filled faster than GC cleared it, leading to a DoS.</p></div><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.11, from 10.1.0-M1 through 10.1.46, from 9.0.0.M1 through 9.0.109.</p>The following versions were EOL at the time the CVE was created but are 
@@ -209,8 +209,8 @@ known to be affected: 8.5.0 though 8.5.100. Other, older, EOL versions may also 
 <li>Apache Tomcat from 10.1.0-M1 through 10.1.44</li>
 <li>Apache Tomcat from 9.0.40 through 9.0.108</li>
 <li>Apache Tomcat from 8.5.60 through 8.5.100</li>
-<li>Apache Tomcat from 3 before 8.5.0</li>
-<li>Apache Tomcat from 10.0.0-M1 through 10.0.27</li>
+<li>Apache Tomcat from 3 before 8.5.0 unknown</li>
+<li>Apache Tomcat from 10.0.0-M1 through 10.0.27 unknown</li>
 </ul>
 <h3 id="description-4">Description</h3>
 <p>Improper Neutralization of Escape, Meta, or Control Sequences vulnerability in Apache Tomcat.</p><div><p>Tomcat did not escape ANSI escape sequences in log messages. If Tomcat was running in a console on a Windows operating system, and the console supported ANSI escape sequences, it was possible for an attacker to use a specially crafted URL to inject ANSI escape sequences to manipulate the console and the clipboard and attempt to trick an administrator into running an attacker controlled command. While no attack vector was found, it may have been possible to mount this attack on other operating systems.</p></div><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.10, from 10.1.0-M1 through 10.1.44, from 9.0.40 through 9.0.108.</p>The following versions were EOL at the time the CVE was created but are 
@@ -232,8 +232,8 @@ known to be affected: 8.5.60 though 8.5.100. Other, older, EOL versions may also
 <li>Apache Tomcat from 10.1.0-M1 through 10.1.44</li>
 <li>Apache Tomcat from 9.0.0.M11 through 9.0.108</li>
 <li>Apache Tomcat from 8.5.6 through 8.5.100</li>
-<li>Apache Tomcat from 3 before 8.5.0</li>
-<li>Apache Tomcat from 10.0.0-M1 through 10.0.27</li>
+<li>Apache Tomcat from 3 before 8.5.0 unknown</li>
+<li>Apache Tomcat from 10.0.0-M1 through 10.0.27 unknown</li>
 </ul>
 <h3 id="description-5">Description</h3>
 <p>Relative Path Traversal vulnerability in Apache Tomcat.</p><div><p>The fix for bug 60013 introduced a regression where the       rewritten URL was normalized before it was decoded. This introduced the       possibility that, for rewrite rules that rewrite query parameters to the       URL, an attacker could manipulate the request URI to bypass security       constraints including the protection for /WEB-INF/ and /META-INF/. If PUT requests were also enabled then malicious files could be uploaded leading to remote code execution. PUT requests are normally limited to trusted users and it is considered unlikely that PUT requests would be enabled in conjunction with a rewrite that manipulated the URI.</p></div><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.10, from 10.1.0-M1 through 10.1.44, from 9.0.0.M11 through 9.0.108.</p>The following versions were EOL at the time the CVE was created but are 
@@ -254,7 +254,7 @@ known to be affected: 8.5.6 though 8.5.100. Other, older, EOL versions may also 
 <li>Apache Tomcat from 11.0.0-M1 through 11.0.7</li>
 <li>Apache Tomcat from 10.1.0-M1 through 10.1.41</li>
 <li>Apache Tomcat from 9.0.0.M1 through 9.0.105</li>
-<li>Apache Tomcat from 8 before 9.0.0.M1</li>
+<li>Apache Tomcat from 8 before 9.0.0.M1 unknown</li>
 </ul>
 <h3 id="description-6">Description</h3>
 <p>Session Fixation vulnerability in Apache Tomcat via rewrite valve.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.7, from 10.1.0-M1 through 10.1.41, from 9.0.0.M1 through 9.0.105.<br>Older, EOL versions may also be affected.</p><p>Users are recommended to upgrade to version 11.0.8, 10.1.42 or 9.0.106, which fix the issue.</p>
@@ -370,7 +370,7 @@ known to be affected: 8.5.6 though 8.5.100. Other, older, EOL versions may also 
 <li>Apache Tomcat from 11.0.0-M1 through 11.0.9</li>
 <li>Apache Tomcat from 10.1.0-M1 through 10.1.43</li>
 <li>Apache Tomcat from 9.0.0.M1 through 9.0.107</li>
-<li>Apache Tomcat from 8.5.0 through 8.5.100</li>
+<li>Apache Tomcat from 8.5.0 through 8.5.100 unknown</li>
 </ul>
 <h3 id="description-12">Description</h3>
 <p>Improper Resource Shutdown or Release vulnerability in Apache Tomcat made Tomcat vulnerable to the made you reset attack.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.9, from 10.1.0-M1 through 10.1.43 and from 9.0.0.M1 through 9.0.107. Older, EOL versions may also be affected.</p><p>Users are recommended to upgrade to one of versions 11.0.10, 10.1.44 or 9.0.108 which fix the issue.</p>

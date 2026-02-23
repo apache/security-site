@@ -198,7 +198,7 @@
 <p><em>Last updated: 2023-01-14T09:33:37.695Z</em></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
-<li>Apache Shiro before 1.11.0</li>
+<li>Apache Shiro before 1.11.0 unaffected</li>
 </ul>
 <h3 id="description-5">Description</h3>
 <p><span style="background-color: rgb(255, 255, 255);">When using Apache Shiro before 1.11.0 together with Spring Boot 2.6+, a specially crafted HTTP request may cause an authentication bypass.<br><br></span>The authentication bypass occurs when Shiro and Spring Boot are using different pattern-matching techniques. Both Shiro and Spring Boot &lt; 2.6 default to Ant style pattern matching.<br><p>Mitigation: Update to Apache Shiro 1.11.0, or set the following Spring Boot configuration value:  <code>spring.mvc.pathmatch.matching-strategy = ant_path_matcher</code><br></p></p>
