@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## XXE vulnerability in jackrabbit-spi-commons ## { #CVE-2025-53689 }
 
-CVE-2025-53689 [\[CVE json\]](./CVE-2025-53689.cve.json) [\[OSV json\]](./CVE-2025-53689.osv.json)
+CVE-2025-53689 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-53689) [\[CVE json\]](./CVE-2025-53689.cve.json) [\[OSV json\]](./CVE-2025-53689.osv.json)
 
 
 
@@ -44,7 +44,7 @@ Blind XXE Vulnerabilities in jackrabbit-spi-commons and jackrabbit-core in Apach
 
 ## Apache Jackrabbit RMI access can lead to RCE ## { #CVE-2023-37895 }
 
-CVE-2023-37895 [\[CVE json\]](./CVE-2023-37895.cve.json)
+CVE-2023-37895 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-37895) [\[CVE json\]](./CVE-2023-37895.cve.json)
 
 _Last updated: 2023-07-25T14:02:07.695Z_
 

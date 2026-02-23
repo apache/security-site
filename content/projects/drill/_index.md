@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## XXE Vulnerability in XML Format Reader ## { #CVE-2023-48362 }
 
-CVE-2023-48362 [\[CVE json\]](./CVE-2023-48362.cve.json) [\[OSV json\]](./CVE-2023-48362.osv.json)
+CVE-2023-48362 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-48362) [\[CVE json\]](./CVE-2023-48362.cve.json) [\[OSV json\]](./CVE-2023-48362.osv.json)
 
 
 

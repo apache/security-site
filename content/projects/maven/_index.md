@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Maven Archetype integration-test may package local settings into the published artifact, possibly containing credentials ## { #CVE-2024-47197 }
 
-CVE-2024-47197 [\[CVE json\]](./CVE-2024-47197.cve.json) [\[OSV json\]](./CVE-2024-47197.osv.json)
+CVE-2024-47197 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-47197) [\[CVE json\]](./CVE-2024-47197.cve.json) [\[OSV json\]](./CVE-2024-47197.osv.json)
 
 
 
@@ -46,7 +46,7 @@ or a snapshot) their credentials would be published without them knowing.</span>
 
 ## Commandline class shell injection vulnerabilities ## { #CVE-2022-29599 }
 
-CVE-2022-29599 [\[CVE json\]](./CVE-2022-29599.cve.json) [\[OSV json\]](./CVE-2022-29599.osv.json)
+CVE-2022-29599 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-29599) [\[CVE json\]](./CVE-2022-29599.cve.json) [\[OSV json\]](./CVE-2022-29599.osv.json)
 
 
 
@@ -68,7 +68,7 @@ In Apache Maven maven-shared-utils prior to version 3.3.3, the Commandline class
 
 ## block repositories using http by default ## { #CVE-2021-26291 }
 
-CVE-2021-26291 [\[CVE json\]](./CVE-2021-26291.cve.json) [\[OSV json\]](./CVE-2021-26291.osv.json)
+CVE-2021-26291 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-26291) [\[CVE json\]](./CVE-2021-26291.cve.json) [\[OSV json\]](./CVE-2021-26291.osv.json)
 
 
 

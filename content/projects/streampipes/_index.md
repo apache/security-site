@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Leverage of User ID for Privilege Escalation ## { #CVE-2025-47411 }
 
-CVE-2025-47411 [\[CVE json\]](./CVE-2025-47411.cve.json) [\[OSV json\]](./CVE-2025-47411.osv.json)
+CVE-2025-47411 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-47411) [\[CVE json\]](./CVE-2025-47411.cve.json) [\[OSV json\]](./CVE-2025-47411.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2026-01-01T16:41:48.353Z_
 
 ## Possibility of SSRF in pipeline element installation process ## { #CVE-2024-31979 }
 
-CVE-2024-31979 [\[CVE json\]](./CVE-2024-31979.cve.json) [\[OSV json\]](./CVE-2024-31979.osv.json)
+CVE-2024-31979 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-31979) [\[CVE json\]](./CVE-2024-31979.cve.json) [\[OSV json\]](./CVE-2024-31979.osv.json)
 
 
 
@@ -65,7 +65,7 @@ Server-Side Request Forgery (SSRF) vulnerability in Apache StreamPipes during in
 
 ## Potential remote code execution (RCE) via file upload ## { #CVE-2024-31411 }
 
-CVE-2024-31411 [\[CVE json\]](./CVE-2024-31411.cve.json) [\[OSV json\]](./CVE-2024-31411.osv.json)
+CVE-2024-31411 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-31411) [\[CVE json\]](./CVE-2024-31411.cve.json) [\[OSV json\]](./CVE-2024-31411.osv.json)
 
 
 
@@ -90,7 +90,7 @@ Unrestricted Upload of File with dangerous type vulnerability in Apache StreamPi
 
 ## Potential creation of multiple identical accounts ## { #CVE-2024-30471 }
 
-CVE-2024-30471 [\[CVE json\]](./CVE-2024-30471.cve.json) [\[OSV json\]](./CVE-2024-30471.osv.json)
+CVE-2024-30471 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-30471) [\[CVE json\]](./CVE-2024-30471.cve.json) [\[OSV json\]](./CVE-2024-30471.osv.json)
 
 
 
@@ -115,7 +115,7 @@ Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability in Apache Stream
 
 ## Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG) in Recovery Token Generation ## { #CVE-2024-29868 }
 
-CVE-2024-29868 [\[CVE json\]](./CVE-2024-29868.cve.json) [\[OSV json\]](./CVE-2024-29868.osv.json)
+CVE-2024-29868 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-29868) [\[CVE json\]](./CVE-2024-29868.cve.json) [\[OSV json\]](./CVE-2024-29868.osv.json)
 
 
 
@@ -141,7 +141,7 @@ Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG) vulnerabilit
 
 ## Resources Permission Escalation ## { #CVE-2024-24778 }
 
-CVE-2024-24778 [\[CVE json\]](./CVE-2024-24778.cve.json) [\[OSV json\]](./CVE-2024-24778.osv.json)
+CVE-2024-24778 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-24778) [\[CVE json\]](./CVE-2024-24778.cve.json) [\[OSV json\]](./CVE-2024-24778.osv.json)
 
 
 
@@ -162,7 +162,7 @@ _Last updated: 2025-03-03T10:37:02.610Z_
 
 ## Privilege escalation through non-admin user ## { #CVE-2023-31469 }
 
-CVE-2023-31469 [\[CVE json\]](./CVE-2023-31469.cve.json) [\[OSV json\]](./CVE-2023-31469.osv.json)
+CVE-2023-31469 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-31469) [\[CVE json\]](./CVE-2023-31469.cve.json) [\[OSV json\]](./CVE-2023-31469.osv.json)
 
 
 

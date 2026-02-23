@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## RAFT and deserialization vulnerability ## { #CVE-2025-26866 }
 
-CVE-2025-26866 [\[CVE json\]](./CVE-2025-26866.cve.json) [\[OSV json\]](./CVE-2025-26866.osv.json)
+CVE-2025-26866 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-26866) [\[CVE json\]](./CVE-2025-26866.cve.json) [\[OSV json\]](./CVE-2025-26866.osv.json)
 
 
 
@@ -48,7 +48,7 @@ _Last updated: 2025-12-12T09:23:05.196Z_
 
 ## Fixed JWT Token(Secret) ## { #CVE-2024-43441 }
 
-CVE-2024-43441 [\[CVE json\]](./CVE-2024-43441.cve.json) [\[OSV json\]](./CVE-2024-43441.osv.json)
+CVE-2024-43441 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-43441) [\[CVE json\]](./CVE-2024-43441.cve.json) [\[OSV json\]](./CVE-2024-43441.osv.json)
 
 
 
@@ -73,7 +73,7 @@ _Last updated: 2024-12-24T11:59:55.141Z_
 
 ## Bypass whitelist in Auth mode ## { #CVE-2024-27349 }
 
-CVE-2024-27349 [\[CVE json\]](./CVE-2024-27349.cve.json) [\[OSV json\]](./CVE-2024-27349.osv.json)
+CVE-2024-27349 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27349) [\[CVE json\]](./CVE-2024-27349.cve.json) [\[OSV json\]](./CVE-2024-27349.osv.json)
 
 
 
@@ -98,7 +98,7 @@ Authentication Bypass by Spoofing vulnerability in Apache HugeGraph-Server.<p>Th
 
 ## Command execution in gremlin ## { #CVE-2024-27348 }
 
-CVE-2024-27348 [\[CVE json\]](./CVE-2024-27348.cve.json) [\[OSV json\]](./CVE-2024-27348.osv.json)
+CVE-2024-27348 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27348) [\[CVE json\]](./CVE-2024-27348.cve.json) [\[OSV json\]](./CVE-2024-27348.osv.json)
 
 
 
@@ -124,7 +124,7 @@ RCE-Remote Command Execution vulnerability in Apache HugeGraph-Server.<p>This is
 
 ## SSRF in Hubble connection page ## { #CVE-2024-27347 }
 
-CVE-2024-27347 [\[CVE json\]](./CVE-2024-27347.cve.json) [\[OSV json\]](./CVE-2024-27347.osv.json)
+CVE-2024-27347 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27347) [\[CVE json\]](./CVE-2024-27347.cve.json) [\[OSV json\]](./CVE-2024-27347.osv.json)
 
 
 

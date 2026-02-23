@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## h2 webconsole (available only in prototype mode) should nevertheless be disabled by default. ## { #CVE-2022-42467 }
 
-CVE-2022-42467 [\[CVE json\]](./CVE-2022-42467.cve.json) [\[OSV json\]](./CVE-2022-42467.osv.json)
+CVE-2022-42467 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-42467) [\[CVE json\]](./CVE-2022-42467.cve.json) [\[OSV json\]](./CVE-2022-42467.osv.json)
 
 
 
@@ -51,7 +51,7 @@ Note also that the h2 webconsole is never available in production mode, so these
 
 ## XSS vulnerability, eg for String properties. ## { #CVE-2022-42466 }
 
-CVE-2022-42466 [\[CVE json\]](./CVE-2022-42466.cve.json) [\[OSV json\]](./CVE-2022-42466.osv.json)
+CVE-2022-42466 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-42466) [\[CVE json\]](./CVE-2022-42466.cve.json) [\[OSV json\]](./CVE-2022-42466.osv.json)
 
 
 

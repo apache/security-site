@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## parsing OOXML based files (xlsx, docx, etc.), poi-ooxml could read unexpected data if underlying zip has duplicate zip entry names ## { #CVE-2025-31672 }
 
-CVE-2025-31672 [\[CVE json\]](./CVE-2025-31672.cve.json) [\[OSV json\]](./CVE-2025-31672.osv.json)
+CVE-2025-31672 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-31672) [\[CVE json\]](./CVE-2025-31672.cve.json) [\[OSV json\]](./CVE-2025-31672.osv.json)
 
 
 
@@ -37,7 +37,7 @@ Improper Input Validation vulnerability in Apache POI. The issue affects the par
 
 ## A carefully crafted TNEF file can cause an out of memory exception ## { #CVE-2022-26336 }
 
-CVE-2022-26336 [\[CVE json\]](./CVE-2022-26336.cve.json) [\[OSV json\]](./CVE-2022-26336.osv.json)
+CVE-2022-26336 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-26336) [\[CVE json\]](./CVE-2022-26336.cve.json) [\[OSV json\]](./CVE-2022-26336.osv.json)
 
 
 
@@ -62,7 +62,7 @@ A shortcoming in the HMEF package of poi-scratchpad (Apache POI) allows an attac
 
 ## XMLBeans XML Entity Expansion ## { #CVE-2021-23926 }
 
-CVE-2021-23926 [\[CVE json\]](./CVE-2021-23926.cve.json) [\[OSV json\]](./CVE-2021-23926.osv.json)
+CVE-2021-23926 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-23926) [\[CVE json\]](./CVE-2021-23926.cve.json) [\[OSV json\]](./CVE-2021-23926.osv.json)
 
 
 

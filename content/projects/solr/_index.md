@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Insufficient file-access checking in standalone core-creation requests ## { #CVE-2026-22444 }
 
-CVE-2026-22444 [\[CVE json\]](./CVE-2026-22444.cve.json) [\[OSV json\]](./CVE-2026-22444.osv.json)
+CVE-2026-22444 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-22444) [\[CVE json\]](./CVE-2026-22444.cve.json) [\[OSV json\]](./CVE-2026-22444.osv.json)
 
 
 
@@ -40,7 +40,7 @@ The "create core" API of Apache Solr 8.6 through 9.10.0 lacks sufficient input v
 
 ## Unauthorized bypass of certain "predefined permission" rules in the RuleBasedAuthorizationPlugin ## { #CVE-2026-22022 }
 
-CVE-2026-22022 [\[CVE json\]](./CVE-2026-22022.cve.json) [\[OSV json\]](./CVE-2026-22022.osv.json)
+CVE-2026-22022 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-22022) [\[CVE json\]](./CVE-2026-22022.cve.json) [\[OSV json\]](./CVE-2026-22022.osv.json)
 
 
 
@@ -65,7 +65,7 @@ Deployments of Apache Solr 5.3.0 through 9.10.0 that rely on Solr's "Rule Based 
 
 ## Core-creation with "trusted" configset can use arbitrary untrusted files ## { #CVE-2025-24814 }
 
-CVE-2025-24814 [\[CVE json\]](./CVE-2025-24814.cve.json) [\[OSV json\]](./CVE-2025-24814.osv.json)
+CVE-2025-24814 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-24814) [\[CVE json\]](./CVE-2025-24814.cve.json) [\[OSV json\]](./CVE-2025-24814.osv.json)
 
 
 
@@ -90,7 +90,7 @@ _Last updated: 2025-01-27T08:58:06.761Z_
 
 ## Configset upload on Windows allows arbitrary path write-access ## { #CVE-2024-52012 }
 
-CVE-2024-52012 [\[CVE json\]](./CVE-2024-52012.cve.json) [\[OSV json\]](./CVE-2024-52012.osv.json)
+CVE-2024-52012 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-52012) [\[CVE json\]](./CVE-2024-52012.cve.json) [\[OSV json\]](./CVE-2024-52012.osv.json)
 
 
 
@@ -115,7 +115,7 @@ _Last updated: 2025-01-27T08:54:39.844Z_
 
 ## ConfigSets created during a backup restore command are trusted implicitly ## { #CVE-2024-45217 }
 
-CVE-2024-45217 [\[CVE json\]](./CVE-2024-45217.cve.json) [\[OSV json\]](./CVE-2024-45217.osv.json)
+CVE-2024-45217 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45217) [\[CVE json\]](./CVE-2024-45217.cve.json) [\[OSV json\]](./CVE-2024-45217.osv.json)
 
 
 
@@ -141,7 +141,7 @@ _Last updated: 2024-10-16T07:51:15.128Z_
 
 ## Authentication bypass possible using a fake URL Path ending ## { #CVE-2024-45216 }
 
-CVE-2024-45216 [\[CVE json\]](./CVE-2024-45216.cve.json) [\[OSV json\]](./CVE-2024-45216.osv.json)
+CVE-2024-45216 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45216) [\[CVE json\]](./CVE-2024-45216.cve.json) [\[OSV json\]](./CVE-2024-45216.osv.json)
 
 
 
@@ -167,7 +167,7 @@ _Last updated: 2024-12-03T17:55:26.574Z_
 
 ## Solr-Operator liveness and readiness probes may leak basic auth credentials ## { #CVE-2024-31391 }
 
-CVE-2024-31391 [\[CVE json\]](./CVE-2024-31391.cve.json) [\[OSV json\]](./CVE-2024-31391.osv.json)
+CVE-2024-31391 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-31391) [\[CVE json\]](./CVE-2024-31391.cve.json) [\[OSV json\]](./CVE-2024-31391.osv.json)
 
 
 
@@ -192,7 +192,7 @@ Insertion of Sensitive Information into Log File vulnerability in the Apache Sol
 
 ## Backup/Restore APIs allow for deployment of executables in malicious ConfigSets ## { #CVE-2023-50386 }
 
-CVE-2023-50386 [\[CVE json\]](./CVE-2023-50386.cve.json) [\[OSV json\]](./CVE-2023-50386.osv.json)
+CVE-2023-50386 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-50386) [\[CVE json\]](./CVE-2023-50386.cve.json) [\[OSV json\]](./CVE-2023-50386.osv.json)
 
 
 
@@ -218,7 +218,7 @@ Improper Control of Dynamically-Managed Code Resources, Unrestricted Upload of F
 
 ## Solr can expose ZooKeeper credentials via Streaming Expressions ## { #CVE-2023-50298 }
 
-CVE-2023-50298 [\[CVE json\]](./CVE-2023-50298.cve.json) [\[OSV json\]](./CVE-2023-50298.osv.json)
+CVE-2023-50298 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-50298) [\[CVE json\]](./CVE-2023-50298.cve.json) [\[OSV json\]](./CVE-2023-50298.osv.json)
 
 
 
@@ -244,7 +244,7 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ## Solr Schema Designer blindly "trusts" all configsets, possibly leading to RCE by unauthenticated users ## { #CVE-2023-50292 }
 
-CVE-2023-50292 [\[CVE json\]](./CVE-2023-50292.cve.json) [\[OSV json\]](./CVE-2023-50292.osv.json)
+CVE-2023-50292 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-50292) [\[CVE json\]](./CVE-2023-50292.cve.json) [\[OSV json\]](./CVE-2023-50292.osv.json)
 
 
 
@@ -270,7 +270,7 @@ Incorrect Permission Assignment for Critical Resource, Improper Control of Dynam
 
 ## System Property redaction logic inconsistency can lead to leaked passwords ## { #CVE-2023-50291 }
 
-CVE-2023-50291 [\[CVE json\]](./CVE-2023-50291.cve.json) [\[OSV json\]](./CVE-2023-50291.osv.json)
+CVE-2023-50291 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-50291) [\[CVE json\]](./CVE-2023-50291.cve.json) [\[OSV json\]](./CVE-2023-50291.osv.json)
 
 
 
@@ -296,7 +296,7 @@ Insufficiently Protected Credentials vulnerability in Apache Solr.<p></p><p>This
 
 ## Host environment variables are published via the Metrics API ## { #CVE-2023-50290 }
 
-CVE-2023-50290 [\[CVE json\]](./CVE-2023-50290.cve.json) [\[OSV json\]](./CVE-2023-50290.osv.json)
+CVE-2023-50290 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-50290) [\[CVE json\]](./CVE-2023-50290.cve.json) [\[OSV json\]](./CVE-2023-50290.osv.json)
 
 
 
@@ -317,7 +317,7 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ## Apache Solr information disclosure vulnerability through DataImportHandler ## { #CVE-2021-44548 }
 
-CVE-2021-44548 [\[CVE json\]](./CVE-2021-44548.cve.json) [\[OSV json\]](./CVE-2021-44548.osv.json)
+CVE-2021-44548 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-44548) [\[CVE json\]](./CVE-2021-44548.cve.json) [\[OSV json\]](./CVE-2021-44548.osv.json)
 
 
 
@@ -347,7 +347,7 @@ This issue affects all Apache Solr versions prior to 8.11.1. This issue only aff
 
 ## Apache Solr Unprivileged users may be able to perform unauthorized read/write to collections ## { #CVE-2021-29943 }
 
-CVE-2021-29943 [\[CVE json\]](./CVE-2021-29943.cve.json) [\[OSV json\]](./CVE-2021-29943.osv.json)
+CVE-2021-29943 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-29943) [\[CVE json\]](./CVE-2021-29943.cve.json) [\[OSV json\]](./CVE-2021-29943.osv.json)
 
 
 
@@ -372,7 +372,7 @@ When using ConfigurableInternodeAuthHadoopPlugin for authentication, Apache Solr
 
 ## Misapplied Zookeeper ACLs can result in leakage of configured authentication and authorization settings ## { #CVE-2021-29262 }
 
-CVE-2021-29262 [\[CVE json\]](./CVE-2021-29262.cve.json) [\[OSV json\]](./CVE-2021-29262.osv.json)
+CVE-2021-29262 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-29262) [\[CVE json\]](./CVE-2021-29262.cve.json) [\[OSV json\]](./CVE-2021-29262.osv.json)
 
 
 
@@ -398,7 +398,7 @@ Additionally, with any ZkACLProvider, if the security.json is already present, S
 
 ## SSRF vulnerability with the Replication handler ## { #CVE-2021-27905 }
 
-CVE-2021-27905 [\[CVE json\]](./CVE-2021-27905.cve.json) [\[OSV json\]](./CVE-2021-27905.osv.json)
+CVE-2021-27905 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-27905) [\[CVE json\]](./CVE-2021-27905.cve.json) [\[OSV json\]](./CVE-2021-27905.osv.json)
 
 
 

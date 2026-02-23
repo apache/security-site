@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Out of bounds write in URI parser of native HDFS client ## { #CVE-2025-27821 }
 
-CVE-2025-27821 [\[CVE json\]](./CVE-2025-27821.cve.json) [\[OSV json\]](./CVE-2025-27821.osv.json)
+CVE-2025-27821 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27821) [\[CVE json\]](./CVE-2025-27821.cve.json) [\[OSV json\]](./CVE-2025-27821.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2026-01-26T09:44:12.099Z_
 
 ## Temporary File Local Information Disclosure ## { #CVE-2024-23454 }
 
-CVE-2024-23454 [\[CVE json\]](./CVE-2024-23454.cve.json) [\[OSV json\]](./CVE-2024-23454.osv.json)
+CVE-2024-23454 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-23454) [\[CVE json\]](./CVE-2024-23454.cve.json) [\[OSV json\]](./CVE-2024-23454.osv.json)
 
 
 
@@ -71,7 +71,7 @@ by all other local users.
 
 ## Privilege escalation in Apache Hadoop Yarn container-executor binary on Linux systems ## { #CVE-2023-26031 }
 
-CVE-2023-26031 [\[CVE json\]](./CVE-2023-26031.cve.json) [\[OSV json\]](./CVE-2023-26031.osv.json)
+CVE-2023-26031 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-26031) [\[CVE json\]](./CVE-2023-26031.cve.json) [\[OSV json\]](./CVE-2023-26031.osv.json)
 
 
 
@@ -100,7 +100,7 @@ _Last updated: 2024-12-31T00:51:13.948Z_
 
 ## Arbitrary file write in FileUtil#unpackEntries on Windows ## { #CVE-2022-26612 }
 
-CVE-2022-26612 [\[CVE json\]](./CVE-2022-26612.cve.json)
+CVE-2022-26612 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-26612) [\[CVE json\]](./CVE-2022-26612.cve.json)
 
 _Last updated: 2022-04-07T17:32:32.075Z_
 
@@ -128,7 +128,7 @@ This was addressed in Apache Hadoop 3.2.3
 
 ## Command injection in org.apache.hadoop.fs.FileUtil.unTarUsingTar ## { #CVE-2022-25168 }
 
-CVE-2022-25168 [\[CVE json\]](./CVE-2022-25168.cve.json) [\[OSV json\]](./CVE-2022-25168.osv.json)
+CVE-2022-25168 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-25168) [\[CVE json\]](./CVE-2022-25168.cve.json) [\[OSV json\]](./CVE-2022-25168.osv.json)
 
 
 
@@ -165,7 +165,7 @@ Users should upgrade to Apache Hadoop 2.10.2, 3.2.4, 3.3.3 or upper (including H
 
 ## Heap buffer overflow in libhdfs native library ## { #CVE-2021-37404 }
 
-CVE-2021-37404 [\[CVE json\]](./CVE-2021-37404.cve.json) [\[OSV json\]](./CVE-2021-37404.osv.json)
+CVE-2021-37404 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-37404) [\[CVE json\]](./CVE-2021-37404.cve.json) [\[OSV json\]](./CVE-2021-37404.osv.json)
 
 
 
@@ -193,7 +193,7 @@ There is a potential heap buffer overflow in Apache Hadoop libhdfs native code. 
 
 ## Apache Hadoop Privilege escalation vulnerability ## { #CVE-2021-33036 }
 
-CVE-2021-33036 [\[CVE json\]](./CVE-2021-33036.cve.json) [\[OSV json\]](./CVE-2021-33036.osv.json)
+CVE-2021-33036 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-33036) [\[CVE json\]](./CVE-2021-33036.cve.json) [\[OSV json\]](./CVE-2021-33036.osv.json)
 
 
 
@@ -218,7 +218,7 @@ In Apache Hadoop 2.2.0 to 2.10.1, 3.0.0-alpha1 to 3.1.4, 3.2.0 to 3.2.2, and 3.3
 
 ## Apache Hadoop YARN remote code execution in ZKConfigurationStore of capacity scheduler ## { #CVE-2021-25642 }
 
-CVE-2021-25642 [\[CVE json\]](./CVE-2021-25642.cve.json) [\[OSV json\]](./CVE-2021-25642.osv.json)
+CVE-2021-25642 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-25642) [\[CVE json\]](./CVE-2021-25642.cve.json) [\[OSV json\]](./CVE-2021-25642.osv.json)
 
 
 

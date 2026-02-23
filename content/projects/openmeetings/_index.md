@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Deserialisation of untrusted data in cluster mode ## { #CVE-2024-54676 }
 
-CVE-2024-54676 [\[CVE json\]](./CVE-2024-54676.cve.json) [\[OSV json\]](./CVE-2024-54676.osv.json)
+CVE-2024-54676 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-54676) [\[CVE json\]](./CVE-2024-54676.cve.json) [\[OSV json\]](./CVE-2024-54676.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2025-01-08T08:40:01.385Z_
 
 ## allows null-byte Injection ## { #CVE-2023-29246 }
 
-CVE-2023-29246 [\[CVE json\]](./CVE-2023-29246.cve.json) [\[OSV json\]](./CVE-2023-29246.osv.json)
+CVE-2023-29246 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-29246) [\[CVE json\]](./CVE-2023-29246.cve.json) [\[OSV json\]](./CVE-2023-29246.osv.json)
 
 
 
@@ -65,7 +65,7 @@ _Last updated: 2023-05-12T01:21:14.732Z_
 
 ## allows bypass authentication ## { #CVE-2023-29032 }
 
-CVE-2023-29032 [\[CVE json\]](./CVE-2023-29032.cve.json) [\[OSV json\]](./CVE-2023-29032.osv.json)
+CVE-2023-29032 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-29032) [\[CVE json\]](./CVE-2023-29032.cve.json) [\[OSV json\]](./CVE-2023-29032.osv.json)
 
 
 
@@ -90,7 +90,7 @@ _Last updated: 2023-05-12T01:19:51.993Z_
 
 ## insufficient check of invitation hash ## { #CVE-2023-28936 }
 
-CVE-2023-28936 [\[CVE json\]](./CVE-2023-28936.cve.json) [\[OSV json\]](./CVE-2023-28936.osv.json)
+CVE-2023-28936 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-28936) [\[CVE json\]](./CVE-2023-28936.cve.json) [\[OSV json\]](./CVE-2023-28936.osv.json)
 
 
 
@@ -115,7 +115,7 @@ Attacker can access arbitrary recording/room<br><br>Vendor: The Apache Software 
 
 ## allows user impersonation ## { #CVE-2023-28326 }
 
-CVE-2023-28326 [\[CVE json\]](./CVE-2023-28326.cve.json) [\[OSV json\]](./CVE-2023-28326.osv.json)
+CVE-2023-28326 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-28326) [\[CVE json\]](./CVE-2023-28326.cve.json) [\[OSV json\]](./CVE-2023-28326.osv.json)
 
 
 
@@ -140,7 +140,7 @@ _Last updated: 2023-03-28T14:34:57.762Z_
 
 ## Apache OpenMeetings: bandwidth can be overloaded with public web service ## { #CVE-2021-27576 }
 
-CVE-2021-27576 [\[CVE json\]](./CVE-2021-27576.cve.json) [\[OSV json\]](./CVE-2021-27576.osv.json)
+CVE-2021-27576 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-27576) [\[CVE json\]](./CVE-2021-27576.cve.json) [\[OSV json\]](./CVE-2021-27576.osv.json)
 
 
 

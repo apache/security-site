@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Arbitrary code execution when loading a malicious data file ## { #CVE-2024-52338 }
 
-CVE-2024-52338 [\[CVE json\]](./CVE-2024-52338.cve.json) [\[OSV json\]](./CVE-2024-52338.osv.json)
+CVE-2024-52338 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-52338) [\[CVE json\]](./CVE-2024-52338.cve.json) [\[OSV json\]](./CVE-2024-52338.osv.json)
 
 
 
@@ -43,7 +43,7 @@ version of the package, untrusted data can read into a Table and its internal to
 
 ## AWS WebIdentityToken exposure in log files ## { #CVE-2024-41178 }
 
-CVE-2024-41178 [\[CVE json\]](./CVE-2024-41178.cve.json) [\[OSV json\]](./CVE-2024-41178.osv.json)
+CVE-2024-41178 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-41178) [\[CVE json\]](./CVE-2024-41178.cve.json) [\[OSV json\]](./CVE-2024-41178.osv.json)
 
 
 
@@ -68,7 +68,7 @@ Exposure of temporary credentials in logs&nbsp;in Apache Arrow Rust Object Store
 
 ## Arbitrary code execution when loading a malicious data file ## { #CVE-2023-47248 }
 
-CVE-2023-47248 [\[CVE json\]](./CVE-2023-47248.cve.json) [\[OSV json\]](./CVE-2023-47248.osv.json)
+CVE-2023-47248 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-47248) [\[CVE json\]](./CVE-2023-47248.cve.json) [\[OSV json\]](./CVE-2023-47248.osv.json)
 
 
 

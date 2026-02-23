@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## An XML external entity (XXE) injection vulnerability exists in the Nutch DmozParser ## { #CVE-2021-23901 }
 
-CVE-2021-23901 [\[CVE json\]](./CVE-2021-23901.cve.json) [\[OSV json\]](./CVE-2021-23901.osv.json)
+CVE-2021-23901 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-23901) [\[CVE json\]](./CVE-2021-23901.cve.json) [\[OSV json\]](./CVE-2021-23901.osv.json)
 
 
 

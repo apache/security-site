@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Use-after-free on external DTD scan ## { #CVE-2024-23807 }
 
-CVE-2024-23807 [\[CVE json\]](./CVE-2024-23807.cve.json) [\[OSV json\]](./CVE-2024-23807.osv.json)
+CVE-2024-23807 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-23807) [\[CVE json\]](./CVE-2024-23807.cve.json) [\[OSV json\]](./CVE-2024-23807.osv.json)
 
 
 
@@ -37,7 +37,7 @@ _Last updated: 2024-02-28T13:50:38.265Z_
 
 ## Infinite loop within Apache XercesJ xml parser ## { #CVE-2022-23437 }
 
-CVE-2022-23437 [\[CVE json\]](./CVE-2022-23437.cve.json) [\[OSV json\]](./CVE-2022-23437.osv.json)
+CVE-2022-23437 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-23437) [\[CVE json\]](./CVE-2022-23437.cve.json) [\[OSV json\]](./CVE-2022-23437.osv.json)
 
 
 

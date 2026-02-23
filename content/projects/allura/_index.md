@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Stored authenticated XSS ## { #CVE-2024-38379 }
 
-CVE-2024-38379 [\[CVE json\]](./CVE-2024-38379.cve.json) [\[OSV json\]](./CVE-2024-38379.osv.json)
+CVE-2024-38379 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-38379) [\[CVE json\]](./CVE-2024-38379.cve.json) [\[OSV json\]](./CVE-2024-38379.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2025-02-06T14:32:32.361Z_
 
 ## sensitive information exposure via DNS rebinding ## { #CVE-2024-36471 }
 
-CVE-2024-36471 [\[CVE json\]](./CVE-2024-36471.cve.json) [\[OSV json\]](./CVE-2024-36471.osv.json)
+CVE-2024-36471 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-36471) [\[CVE json\]](./CVE-2024-36471.cve.json) [\[OSV json\]](./CVE-2024-36471.osv.json)
 
 
 
@@ -65,7 +65,7 @@ _Last updated: 2024-06-10T21:55:03.113Z_
 
 ## sensitive information exposure via import ## { #CVE-2023-46851 }
 
-CVE-2023-46851 [\[CVE json\]](./CVE-2023-46851.cve.json) [\[OSV json\]](./CVE-2023-46851.osv.json)
+CVE-2023-46851 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-46851) [\[CVE json\]](./CVE-2023-46851.cve.json) [\[OSV json\]](./CVE-2023-46851.osv.json)
 
 
 

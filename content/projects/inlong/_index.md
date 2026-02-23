@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## An arbitrary file read vulnerability for JDBC ## { #CVE-2025-27531 }
 
-CVE-2025-27531 [\[CVE json\]](./CVE-2025-27531.cve.json) [\[OSV json\]](./CVE-2025-27531.osv.json)
+CVE-2025-27531 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27531) [\[CVE json\]](./CVE-2025-27531.cve.json) [\[OSV json\]](./CVE-2025-27531.osv.json)
 
 
 
@@ -46,7 +46,7 @@ _Last updated: 2025-02-28T12:24:23.760Z_
 
 ## JDBC Vulnerability for Invisible Character Bypass Leading to Arbitrary File Read ## { #CVE-2025-27528 }
 
-CVE-2025-27528 [\[CVE json\]](./CVE-2025-27528.cve.json) [\[OSV json\]](./CVE-2025-27528.osv.json)
+CVE-2025-27528 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27528) [\[CVE json\]](./CVE-2025-27528.cve.json) [\[OSV json\]](./CVE-2025-27528.osv.json)
 
 
 
@@ -78,7 +78,7 @@ JDBC and leads to arbitrary file reading.&nbsp;</span><span style="background-co
 
 ## JDBC Vulnerability For URLEncode and backspace bypass ## { #CVE-2025-27526 }
 
-CVE-2025-27526 [\[CVE json\]](./CVE-2025-27526.cve.json) [\[OSV json\]](./CVE-2025-27526.osv.json)
+CVE-2025-27526 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27526) [\[CVE json\]](./CVE-2025-27526.cve.json) [\[OSV json\]](./CVE-2025-27526.osv.json)
 
 
 
@@ -106,7 +106,7 @@ _Last updated: 2025-05-28T08:07:33.686Z_
 
 ## JDBC Vulnerability during verification processing ## { #CVE-2025-27522 }
 
-CVE-2025-27522 [\[CVE json\]](./CVE-2025-27522.cve.json) [\[OSV json\]](./CVE-2025-27522.osv.json)
+CVE-2025-27522 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27522) [\[CVE json\]](./CVE-2025-27522.cve.json) [\[OSV json\]](./CVE-2025-27522.osv.json)
 
 
 
@@ -135,7 +135,7 @@ _Last updated: 2025-05-28T08:06:02.351Z_
 
 ## Remote Code Execution vulnerability ## { #CVE-2024-36268 }
 
-CVE-2024-36268 [\[CVE json\]](./CVE-2024-36268.cve.json) [\[OSV json\]](./CVE-2024-36268.osv.json)
+CVE-2024-36268 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-36268) [\[CVE json\]](./CVE-2024-36268.cve.json) [\[OSV json\]](./CVE-2024-36268.osv.json)
 
 
 
@@ -164,7 +164,7 @@ _Last updated: 2024-08-02T09:44:23.542Z_
 
 ## Logged-in user could exploit an arbitrary file read vulnerability ## { #CVE-2024-26580 }
 
-CVE-2024-26580 [\[CVE json\]](./CVE-2024-26580.cve.json) [\[OSV json\]](./CVE-2024-26580.osv.json)
+CVE-2024-26580 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-26580) [\[CVE json\]](./CVE-2024-26580.cve.json) [\[OSV json\]](./CVE-2024-26580.osv.json)
 
 
 
@@ -195,7 +195,7 @@ Deserialization of Untrusted Data vulnerability in Apache InLong.<p>This issue a
 
 ## Apache Inlong JDBC Vulnerability ## { #CVE-2024-26579 }
 
-CVE-2024-26579 [\[CVE json\]](./CVE-2024-26579.cve.json) [\[OSV json\]](./CVE-2024-26579.osv.json)
+CVE-2024-26579 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-26579) [\[CVE json\]](./CVE-2024-26579.cve.json) [\[OSV json\]](./CVE-2024-26579.osv.json)
 
 
 
@@ -225,7 +225,7 @@ Deserialization of Untrusted Data vulnerability in Apache InLong.<p>This issue a
 
 ## Arbitrary File Read Vulnerability in Apache InLong Manager ## { #CVE-2023-51785 }
 
-CVE-2023-51785 [\[CVE json\]](./CVE-2023-51785.cve.json) [\[OSV json\]](./CVE-2023-51785.osv.json)
+CVE-2023-51785 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-51785) [\[CVE json\]](./CVE-2023-51785.cve.json) [\[OSV json\]](./CVE-2023-51785.osv.json)
 
 
 
@@ -252,7 +252,7 @@ Deserialization of Untrusted Data vulnerability in Apache InLong.<p>This issue a
 
 ## Remote Code Execution vulnerability in Apache InLong Manager ## { #CVE-2023-51784 }
 
-CVE-2023-51784 [\[CVE json\]](./CVE-2023-51784.cve.json) [\[OSV json\]](./CVE-2023-51784.osv.json)
+CVE-2023-51784 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-51784) [\[CVE json\]](./CVE-2023-51784.cve.json) [\[OSV json\]](./CVE-2023-51784.osv.json)
 
 
 
@@ -277,7 +277,7 @@ Improper Control of Generation of Code ('Code Injection') vulnerability in Apach
 
 ## Apache inlong has an Arbitrary File Read Vulnerability ## { #CVE-2023-46227 }
 
-CVE-2023-46227 [\[CVE json\]](./CVE-2023-46227.cve.json) [\[OSV json\]](./CVE-2023-46227.osv.json)
+CVE-2023-46227 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-46227) [\[CVE json\]](./CVE-2023-46227.cve.json) [\[OSV json\]](./CVE-2023-46227.osv.json)
 
 
 
@@ -311,7 +311,7 @@ Deserialization of Untrusted Data Vulnerability in Apache Software Foundation Ap
 
 ## Jdbc Connection Security Bypass in InLong ## { #CVE-2023-43668 }
 
-CVE-2023-43668 [\[CVE json\]](./CVE-2023-43668.cve.json) [\[OSV json\]](./CVE-2023-43668.osv.json)
+CVE-2023-43668 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-43668) [\[CVE json\]](./CVE-2023-43668.cve.json) [\[OSV json\]](./CVE-2023-43668.osv.json)
 
 
 
@@ -345,7 +345,7 @@ Authorization Bypass Through User-Controlled Key vulnerability in Apache InLong.
 
 ## Log Injection in Global functions ## { #CVE-2023-43667 }
 
-CVE-2023-43667 [\[CVE json\]](./CVE-2023-43667.cve.json) [\[OSV json\]](./CVE-2023-43667.osv.json)
+CVE-2023-43667 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-43667) [\[CVE json\]](./CVE-2023-43667.cve.json) [\[OSV json\]](./CVE-2023-43667.osv.json)
 
 
 
@@ -369,7 +369,7 @@ and trace malicious activities.&nbsp;</span>Users are advised to upgrade to Apac
 
 ## General user Unauthorized access User Management ## { #CVE-2023-43666 }
 
-CVE-2023-43666 [\[CVE json\]](./CVE-2023-43666.cve.json) [\[OSV json\]](./CVE-2023-43666.osv.json)
+CVE-2023-43666 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-43666) [\[CVE json\]](./CVE-2023-43666.cve.json) [\[OSV json\]](./CVE-2023-43666.osv.json)
 
 
 
@@ -396,7 +396,7 @@ Insufficient Verification of Data Authenticity vulnerability in Apache InLong.<p
 
 ## SQL injection in audit endpoint ## { #CVE-2023-35088 }
 
-CVE-2023-35088 [\[CVE json\]](./CVE-2023-35088.cve.json) [\[OSV json\]](./CVE-2023-35088.osv.json)
+CVE-2023-35088 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-35088) [\[CVE json\]](./CVE-2023-35088.cve.json) [\[OSV json\]](./CVE-2023-35088.osv.json)
 
 
 
@@ -425,7 +425,7 @@ Users are advised to upgrade to Apache InLong's 1.8.0 or cherry-pick [1] to solv
 
 ## JDBC URL bypassing by allowLoadLocalInfileInPath param ## { #CVE-2023-34434 }
 
-CVE-2023-34434 [\[CVE json\]](./CVE-2023-34434.cve.json) [\[OSV json\]](./CVE-2023-34434.osv.json)
+CVE-2023-34434 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-34434) [\[CVE json\]](./CVE-2023-34434.cve.json) [\[OSV json\]](./CVE-2023-34434.osv.json)
 
 
 
@@ -454,7 +454,7 @@ The attacker could bypass the current logic and achieve arbitrary file reading. 
 
 ## General user can delete and update process ## { #CVE-2023-34189 }
 
-CVE-2023-34189 [\[CVE json\]](./CVE-2023-34189.cve.json) [\[OSV json\]](./CVE-2023-34189.osv.json)
+CVE-2023-34189 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-34189) [\[CVE json\]](./CVE-2023-34189.cve.json) [\[OSV json\]](./CVE-2023-34189.osv.json)
 
 
 
@@ -479,7 +479,7 @@ Users are advised to upgrade to Apache InLong's 1.8.0 or cherry-pick <a target="
 
 ## IDOR make users can bind any cluster ## { #CVE-2023-31454 }
 
-CVE-2023-31454 [\[CVE json\]](./CVE-2023-31454.cve.json) [\[OSV json\]](./CVE-2023-31454.osv.json)
+CVE-2023-31454 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-31454) [\[CVE json\]](./CVE-2023-31454.cve.json) [\[OSV json\]](./CVE-2023-31454.osv.json)
 
 
 
@@ -504,7 +504,7 @@ Incorrect Permission Assignment for Critical Resource Vulnerability in Apache So
 
 ## IDOR make users can delete others' subscription ## { #CVE-2023-31453 }
 
-CVE-2023-31453 [\[CVE json\]](./CVE-2023-31453.cve.json) [\[OSV json\]](./CVE-2023-31453.osv.json)
+CVE-2023-31453 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-31453) [\[CVE json\]](./CVE-2023-31453.cve.json) [\[OSV json\]](./CVE-2023-31453.osv.json)
 
 
 
@@ -532,7 +532,7 @@ of the deleted subscription</span><span style="background-color: rgb(255, 255, 2
 
 ## Attackers can change the immutable name and type of nodes ## { #CVE-2023-31206 }
 
-CVE-2023-31206 [\[CVE json\]](./CVE-2023-31206.cve.json) [\[OSV json\]](./CVE-2023-31206.osv.json)
+CVE-2023-31206 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-31206) [\[CVE json\]](./CVE-2023-31206.cve.json) [\[OSV json\]](./CVE-2023-31206.osv.json)
 
 
 
@@ -553,7 +553,7 @@ Exposure of Resource to Wrong Sphere Vulnerability in Apache Software Foundation
 
 ## Attackers can change the immutable name and type of cluster ## { #CVE-2023-31103 }
 
-CVE-2023-31103 [\[CVE json\]](./CVE-2023-31103.cve.json) [\[OSV json\]](./CVE-2023-31103.osv.json)
+CVE-2023-31103 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-31103) [\[CVE json\]](./CVE-2023-31103.cve.json) [\[OSV json\]](./CVE-2023-31103.osv.json)
 
 
 
@@ -575,7 +575,7 @@ Attackers can change the immutable name and type of cluster of InLong.&nbsp;User
 
 ## Users who joined later can see the data of deleted users ## { #CVE-2023-31101 }
 
-CVE-2023-31101 [\[CVE json\]](./CVE-2023-31101.cve.json) [\[OSV json\]](./CVE-2023-31101.osv.json)
+CVE-2023-31101 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-31101) [\[CVE json\]](./CVE-2023-31101.cve.json) [\[OSV json\]](./CVE-2023-31101.osv.json)
 
 
 
@@ -600,7 +600,7 @@ Insecure Default Initialization of Resource Vulnerability in Apache Software Fou
 
 ## Weak Password Implementation in InLong ## { #CVE-2023-31098 }
 
-CVE-2023-31098 [\[CVE json\]](./CVE-2023-31098.cve.json) [\[OSV json\]](./CVE-2023-31098.osv.json)
+CVE-2023-31098 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-31098) [\[CVE json\]](./CVE-2023-31098.cve.json) [\[OSV json\]](./CVE-2023-31098.osv.json)
 
 
 
@@ -628,7 +628,7 @@ symbol), attackers can easily guess the user's password and access the account.<
 
 ## Insecure direct object references for inlong sources ## { #CVE-2023-31066 }
 
-CVE-2023-31066 [\[CVE json\]](./CVE-2023-31066.cve.json) [\[OSV json\]](./CVE-2023-31066.osv.json)
+CVE-2023-31066 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-31066) [\[CVE json\]](./CVE-2023-31066.cve.json) [\[OSV json\]](./CVE-2023-31066.osv.json)
 
 
 
@@ -653,7 +653,7 @@ Files or Directories Accessible to External Parties vulnerability in Apache Soft
 
 ## Insufficient Session Expiration in InLong ## { #CVE-2023-31065 }
 
-CVE-2023-31065 [\[CVE json\]](./CVE-2023-31065.cve.json) [\[OSV json\]](./CVE-2023-31065.osv.json)
+CVE-2023-31065 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-31065) [\[CVE json\]](./CVE-2023-31065.cve.json) [\[OSV json\]](./CVE-2023-31065.osv.json)
 
 
 
@@ -686,7 +686,7 @@ Users are advised to upgrade to Apache InLong's 1.7.0 or cherry-pick <a target="
 
 ## Insecurity direct object references cancelling applications ## { #CVE-2023-31064 }
 
-CVE-2023-31064 [\[CVE json\]](./CVE-2023-31064.cve.json) [\[OSV json\]](./CVE-2023-31064.osv.json)
+CVE-2023-31064 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-31064) [\[CVE json\]](./CVE-2023-31064.cve.json) [\[OSV json\]](./CVE-2023-31064.osv.json)
 
 
 
@@ -711,7 +711,7 @@ Files or Directories Accessible to External Parties vulnerability in Apache Soft
 
 ## Privilege escalation vulnerability for InLong ## { #CVE-2023-31062 }
 
-CVE-2023-31062 [\[CVE json\]](./CVE-2023-31062.cve.json) [\[OSV json\]](./CVE-2023-31062.osv.json)
+CVE-2023-31062 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-31062) [\[CVE json\]](./CVE-2023-31062.cve.json) [\[OSV json\]](./CVE-2023-31062.osv.json)
 
 
 
@@ -740,7 +740,7 @@ using the returned cookie<span style="background-color: rgb(255, 255, 255);">.</
 
 ## JDBC URL bypassing by adding blanks ## { #CVE-2023-31058 }
 
-CVE-2023-31058 [\[CVE json\]](./CVE-2023-31058.cve.json) [\[OSV json\]](./CVE-2023-31058.osv.json)
+CVE-2023-31058 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-31058) [\[CVE json\]](./CVE-2023-31058.cve.json) [\[OSV json\]](./CVE-2023-31058.osv.json)
 
 
 
@@ -770,7 +770,7 @@ Deserialization of Untrusted Data Vulnerability in Apache Software Foundation Ap
 
 ## SQL injection in apache inLong 1.5.0 ## { #CVE-2023-30465 }
 
-CVE-2023-30465 [\[CVE json\]](./CVE-2023-30465.cve.json) [\[OSV json\]](./CVE-2023-30465.osv.json)
+CVE-2023-30465 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-30465) [\[CVE json\]](./CVE-2023-30465.cve.json) [\[OSV json\]](./CVE-2023-30465.osv.json)
 
 
 
@@ -797,7 +797,7 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 
 ## JDBC Deserialization Vulnerability in InLong ## { #CVE-2023-27296 }
 
-CVE-2023-27296 [\[CVE json\]](./CVE-2023-27296.cve.json) [\[OSV json\]](./CVE-2023-27296.osv.json)
+CVE-2023-27296 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-27296) [\[CVE json\]](./CVE-2023-27296.cve.json) [\[OSV json\]](./CVE-2023-27296.osv.json)
 
 
 
@@ -828,7 +828,7 @@ Deserialization of Untrusted Data vulnerability in Apache Software Foundation Ap
 
 ## Jdbc Connection Security Bypass ## { #CVE-2023-24997 }
 
-CVE-2023-24997 [\[CVE json\]](./CVE-2023-24997.cve.json) [\[OSV json\]](./CVE-2023-24997.osv.json)
+CVE-2023-24997 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-24997) [\[CVE json\]](./CVE-2023-24997.cve.json) [\[OSV json\]](./CVE-2023-24997.osv.json)
 
 
 
@@ -853,7 +853,7 @@ Deserialization of Untrusted Data vulnerability in Apache Software Foundation Ap
 
 ## Jdbc Connection causes arbitrary file reading in InLong ## { #CVE-2023-24977 }
 
-CVE-2023-24977 [\[CVE json\]](./CVE-2023-24977.cve.json) [\[OSV json\]](./CVE-2023-24977.osv.json)
+CVE-2023-24977 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-24977) [\[CVE json\]](./CVE-2023-24977.cve.json) [\[OSV json\]](./CVE-2023-24977.osv.json)
 
 
 
@@ -878,7 +878,7 @@ Out-of-bounds Read vulnerability in Apache Software Foundation Apache InLong.<p>
 
 ## Deserialization attack in Apache InLong prior to version 1.3.0 allows RCE via JDBC ## { #CVE-2022-40955 }
 
-CVE-2022-40955 [\[CVE json\]](./CVE-2022-40955.cve.json) [\[OSV json\]](./CVE-2022-40955.osv.json)
+CVE-2022-40955 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-40955) [\[CVE json\]](./CVE-2022-40955.cve.json) [\[OSV json\]](./CVE-2022-40955.osv.json)
 
 
 

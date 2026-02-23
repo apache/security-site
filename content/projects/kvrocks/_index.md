@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## MONITOR command reveals plaintext credentials to non-admins ## { #CVE-2025-59792 }
 
-CVE-2025-59792 [\[CVE json\]](./CVE-2025-59792.cve.json) [\[OSV json\]](./CVE-2025-59792.osv.json)
+CVE-2025-59792 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-59792) [\[CVE json\]](./CVE-2025-59792.cve.json) [\[OSV json\]](./CVE-2025-59792.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2025-11-28T14:21:21.082Z_
 
 ## RESET command grants admin privileges ## { #CVE-2025-59790 }
 
-CVE-2025-59790 [\[CVE json\]](./CVE-2025-59790.cve.json) [\[OSV json\]](./CVE-2025-59790.osv.json)
+CVE-2025-59790 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-59790) [\[CVE json\]](./CVE-2025-59790.cve.json) [\[OSV json\]](./CVE-2025-59790.osv.json)
 
 
 
@@ -65,7 +65,7 @@ _Last updated: 2025-11-28T14:20:28.481Z_
 
 ## The server was crashed by the negative offset ## { #CVE-2025-26413 }
 
-CVE-2025-26413 [\[CVE json\]](./CVE-2025-26413.cve.json) [\[OSV json\]](./CVE-2025-26413.osv.json)
+CVE-2025-26413 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-26413) [\[CVE json\]](./CVE-2025-26413.cve.json) [\[OSV json\]](./CVE-2025-26413.osv.json)
 
 
 
@@ -90,7 +90,7 @@ _Last updated: 2025-04-22T10:35:30.358Z_
 
 ## Cross-Protocol Scripting Vulnerability ## { #CVE-2025-25069 }
 
-CVE-2025-25069 [\[CVE json\]](./CVE-2025-25069.cve.json) [\[OSV json\]](./CVE-2025-25069.osv.json)
+CVE-2025-25069 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-25069) [\[CVE json\]](./CVE-2025-25069.cve.json) [\[OSV json\]](./CVE-2025-25069.osv.json)
 
 
 

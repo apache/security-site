@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Cross-Site Scripting (XSS) in JSPWiki Image plugin ## { #CVE-2025-24854 }
 
-CVE-2025-24854 [\[CVE json\]](./CVE-2025-24854.cve.json) [\[OSV json\]](./CVE-2025-24854.osv.json)
+CVE-2025-24854 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-24854) [\[CVE json\]](./CVE-2025-24854.cve.json) [\[OSV json\]](./CVE-2025-24854.osv.json)
 
 
 
@@ -43,7 +43,7 @@ information about the victim.<br></div><div><br></div><div>Apache JSPWiki users 
 
 ## Cross-Site Scripting (XSS) in JSPWiki Header Link processing ## { #CVE-2025-24853 }
 
-CVE-2025-24853 [\[CVE json\]](./CVE-2025-24853.cve.json) [\[OSV json\]](./CVE-2025-24853.osv.json)
+CVE-2025-24853 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-24853) [\[CVE json\]](./CVE-2025-24853.cve.json) [\[OSV json\]](./CVE-2025-24853.osv.json)
 
 
 
@@ -73,7 +73,7 @@ victim.
 
 ## Cross-site scripting vulnerability on upload page ## { #CVE-2024-27136 }
 
-CVE-2024-27136 [\[CVE json\]](./CVE-2024-27136.cve.json) [\[OSV json\]](./CVE-2024-27136.osv.json)
+CVE-2024-27136 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27136) [\[CVE json\]](./CVE-2024-27136.cve.json) [\[OSV json\]](./CVE-2024-27136.osv.json)
 
 
 
@@ -99,7 +99,7 @@ XSS in Upload page in Apache JSPWiki 2.12.1 and priors allows the attacker to ex
 
 ## XSS Injection points in several plugins ## { #CVE-2022-46907 }
 
-CVE-2022-46907 [\[CVE json\]](./CVE-2022-46907.cve.json) [\[OSV json\]](./CVE-2022-46907.osv.json)
+CVE-2022-46907 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-46907) [\[CVE json\]](./CVE-2022-46907.cve.json) [\[OSV json\]](./CVE-2022-46907.osv.json)
 
 
 
@@ -124,7 +124,7 @@ A carefully crafted request on several JSPWiki plugins could trigger an XSS vuln
 
 ## User Group Privilege Escalation ## { #CVE-2022-34158 }
 
-CVE-2022-34158 [\[CVE json\]](./CVE-2022-34158.cve.json) [\[OSV json\]](./CVE-2022-34158.osv.json)
+CVE-2022-34158 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-34158) [\[CVE json\]](./CVE-2022-34158.cve.json) [\[OSV json\]](./CVE-2022-34158.osv.json)
 
 
 
@@ -149,7 +149,7 @@ A carefully crafted invocation on the Image plugin could trigger an CSRF vulnera
 
 ## Apache JSPWiki Cross-site scripting vulnerability on WeblogPlugin ## { #CVE-2022-28732 }
 
-CVE-2022-28732 [\[CVE json\]](./CVE-2022-28732.cve.json) [\[OSV json\]](./CVE-2022-28732.osv.json)
+CVE-2022-28732 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-28732) [\[CVE json\]](./CVE-2022-28732.cve.json) [\[OSV json\]](./CVE-2022-28732.osv.json)
 
 
 
@@ -174,7 +174,7 @@ A carefully crafted request on WeblogPlugin could trigger an XSS vulnerability o
 
 ## Apache JSPWiki CSRF in UserPreferences.jsp ## { #CVE-2022-28731 }
 
-CVE-2022-28731 [\[CVE json\]](./CVE-2022-28731.cve.json) [\[OSV json\]](./CVE-2022-28731.osv.json)
+CVE-2022-28731 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-28731) [\[CVE json\]](./CVE-2022-28731.cve.json) [\[OSV json\]](./CVE-2022-28731.osv.json)
 
 
 
@@ -199,7 +199,7 @@ A carefully crafted request on UserPreferences.jsp could trigger an CSRF vulnera
 
 ## Apache JSPWiki Cross-site scripting vulnerability on AJAXPreview.jsp ## { #CVE-2022-28730 }
 
-CVE-2022-28730 [\[CVE json\]](./CVE-2022-28730.cve.json) [\[OSV json\]](./CVE-2022-28730.osv.json)
+CVE-2022-28730 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-28730) [\[CVE json\]](./CVE-2022-28730.cve.json) [\[OSV json\]](./CVE-2022-28730.osv.json)
 
 
 
@@ -228,7 +228,7 @@ Apache JSPWiki users should upgrade to 2.11.3 or later.
 
 ## XSS vulnerability on XHRHtml2Markup.jsp in JSPWiki 2.11.2 ## { #CVE-2022-27166 }
 
-CVE-2022-27166 [\[CVE json\]](./CVE-2022-27166.cve.json) [\[OSV json\]](./CVE-2022-27166.osv.json)
+CVE-2022-27166 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-27166) [\[CVE json\]](./CVE-2022-27166.cve.json) [\[OSV json\]](./CVE-2022-27166.osv.json)
 
 
 
@@ -253,7 +253,7 @@ A carefully crafted request on XHRHtml2Markup.jsp could trigger an XSS vulnerabi
 
 ## Apache JSPWiki Cross-site scripting vulnerability on User Preferences screen ## { #CVE-2022-24948 }
 
-CVE-2022-24948 [\[CVE json\]](./CVE-2022-24948.cve.json) [\[OSV json\]](./CVE-2022-24948.osv.json)
+CVE-2022-24948 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-24948) [\[CVE json\]](./CVE-2022-24948.cve.json) [\[OSV json\]](./CVE-2022-24948.osv.json)
 
 
 
@@ -278,7 +278,7 @@ A carefully crafted user preferences for submission could trigger an XSS vulnera
 
 ## Apache JSPWiki CSRF Account Takeover ## { #CVE-2022-24947 }
 
-CVE-2022-24947 [\[CVE json\]](./CVE-2022-24947.cve.json) [\[OSV json\]](./CVE-2022-24947.osv.json)
+CVE-2022-24947 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-24947) [\[CVE json\]](./CVE-2022-24947.cve.json) [\[OSV json\]](./CVE-2022-24947.osv.json)
 
 
 
@@ -303,7 +303,7 @@ Apache JSPWiki user preferences form is vulnerable to CSRF attacks, which can le
 
 ## Arbitrary file deletion on logout ## { #CVE-2021-44140 }
 
-CVE-2021-44140 [\[CVE json\]](./CVE-2021-44140.cve.json) [\[OSV json\]](./CVE-2021-44140.osv.json)
+CVE-2021-44140 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-44140) [\[CVE json\]](./CVE-2021-44140.cve.json) [\[OSV json\]](./CVE-2021-44140.osv.json)
 
 
 
@@ -329,7 +329,7 @@ Remote attackers may delete arbitrary files in a system hosting a JSPWiki instan
 
 ## XSS vulnerability on Denounce plugin ## { #CVE-2021-40369 }
 
-CVE-2021-40369 [\[CVE json\]](./CVE-2021-40369.cve.json) [\[OSV json\]](./CVE-2021-40369.osv.json)
+CVE-2021-40369 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-40369) [\[CVE json\]](./CVE-2021-40369.cve.json) [\[OSV json\]](./CVE-2021-40369.osv.json)
 
 
 

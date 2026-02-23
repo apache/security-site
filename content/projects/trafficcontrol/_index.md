@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## ReDoS issue in Traffic Router configuration ## { #CVE-2025-61581 }
 
-CVE-2025-61581 [\[CVE json\]](./CVE-2025-61581.cve.json) [\[OSV json\]](./CVE-2025-61581.osv.json)
+CVE-2025-61581 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-61581) [\[CVE json\]](./CVE-2025-61581.cve.json) [\[OSV json\]](./CVE-2025-61581.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2025-10-16T08:40:10.117Z_
 
 ## SQL Injection in Traffic Ops endpoint PUT deliveryservice_request_comments ## { #CVE-2024-45387 }
 
-CVE-2024-45387 [\[CVE json\]](./CVE-2024-45387.cve.json)
+CVE-2024-45387 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45387) [\[CVE json\]](./CVE-2024-45387.cve.json)
 
 _Last updated: 2024-12-23T15:30:11.661Z_
 
@@ -64,7 +64,7 @@ _Last updated: 2024-12-23T15:30:11.661Z_
 
 ## Server-Side Request Forgery in Traffic Ops endpoint POST /user/login/oauth ## { #CVE-2022-23206 }
 
-CVE-2022-23206 [\[CVE json\]](./CVE-2022-23206.cve.json) [\[OSV json\]](./CVE-2022-23206.osv.json)
+CVE-2022-23206 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-23206) [\[CVE json\]](./CVE-2022-23206.cve.json) [\[OSV json\]](./CVE-2022-23206.osv.json)
 
 
 
@@ -89,7 +89,7 @@ In Apache Traffic Control Traffic Ops prior to 6.1.0 or 5.1.6, an unprivileged u
 
 ## LDAP filter injection vulnerability in Traffic Ops ## { #CVE-2021-43350 }
 
-CVE-2021-43350 [\[CVE json\]](./CVE-2021-43350.cve.json) [\[OSV json\]](./CVE-2021-43350.osv.json)
+CVE-2021-43350 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-43350) [\[CVE json\]](./CVE-2021-43350.cve.json) [\[OSV json\]](./CVE-2021-43350.osv.json)
 
 
 
@@ -114,7 +114,7 @@ An unauthenticated Apache Traffic Control Traffic Ops user can send a request wi
 
 ## Apache Traffic Control Traffic Ops Email Injection Vulnerability ## { #CVE-2021-42009 }
 
-CVE-2021-42009 [\[CVE json\]](./CVE-2021-42009.cve.json) [\[OSV json\]](./CVE-2021-42009.osv.json)
+CVE-2021-42009 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-42009) [\[CVE json\]](./CVE-2021-42009.cve.json) [\[OSV json\]](./CVE-2021-42009.osv.json)
 
 
 

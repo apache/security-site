@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Revision API Improper Access Control leads to Information Disclosure ## { #CVE-2026-24735 }
 
-CVE-2026-24735 [\[CVE json\]](./CVE-2026-24735.cve.json) [\[OSV json\]](./CVE-2026-24735.osv.json)
+CVE-2026-24735 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24735) [\[CVE json\]](./CVE-2026-24735.cve.json) [\[OSV json\]](./CVE-2026-24735.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2026-02-04T10:41:53.728Z_
 
 ## Using externally referenced images can leak user privacy. ## { #CVE-2025-29868 }
 
-CVE-2025-29868 [\[CVE json\]](./CVE-2025-29868.cve.json) [\[OSV json\]](./CVE-2025-29868.osv.json)
+CVE-2025-29868 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-29868) [\[CVE json\]](./CVE-2025-29868.cve.json) [\[OSV json\]](./CVE-2025-29868.osv.json)
 
 
 
@@ -66,7 +66,7 @@ _Last updated: 2025-04-01T07:56:26.883Z_
 
 ## Predictable Authorization Token Using UUIDv1 ## { #CVE-2024-45719 }
 
-CVE-2024-45719 [\[CVE json\]](./CVE-2024-45719.cve.json) [\[OSV json\]](./CVE-2024-45719.osv.json)
+CVE-2024-45719 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45719) [\[CVE json\]](./CVE-2024-45719.cve.json) [\[OSV json\]](./CVE-2024-45719.osv.json)
 
 
 
@@ -91,7 +91,7 @@ _Last updated: 2024-11-22T14:36:42.714Z_
 
 ## The link to reset the user's password will remain valid after sending a new link ## { #CVE-2024-41890 }
 
-CVE-2024-41890 [\[CVE json\]](./CVE-2024-41890.cve.json) [\[OSV json\]](./CVE-2024-41890.osv.json)
+CVE-2024-41890 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-41890) [\[CVE json\]](./CVE-2024-41890.cve.json) [\[OSV json\]](./CVE-2024-41890.osv.json)
 
 
 
@@ -116,7 +116,7 @@ _Last updated: 2024-08-09T14:53:26.714Z_
 
 ## The link for resetting user password is not Single-Use ## { #CVE-2024-41888 }
 
-CVE-2024-41888 [\[CVE json\]](./CVE-2024-41888.cve.json) [\[OSV json\]](./CVE-2024-41888.osv.json)
+CVE-2024-41888 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-41888) [\[CVE json\]](./CVE-2024-41888.cve.json) [\[OSV json\]](./CVE-2024-41888.osv.json)
 
 
 
@@ -141,7 +141,7 @@ _Last updated: 2024-08-09T14:55:12.877Z_
 
 ## Avatar URL leaked user email addresses ## { #CVE-2024-40761 }
 
-CVE-2024-40761 [\[CVE json\]](./CVE-2024-40761.cve.json) [\[OSV json\]](./CVE-2024-40761.osv.json)
+CVE-2024-40761 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-40761) [\[CVE json\]](./CVE-2024-40761.cve.json) [\[OSV json\]](./CVE-2024-40761.osv.json)
 
 
 
@@ -166,7 +166,7 @@ _Last updated: 2024-09-25T07:31:07.119Z_
 
 ## XSS vulnerability when changing personal website ## { #CVE-2024-29217 }
 
-CVE-2024-29217 [\[CVE json\]](./CVE-2024-29217.cve.json) [\[OSV json\]](./CVE-2024-29217.osv.json)
+CVE-2024-29217 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-29217) [\[CVE json\]](./CVE-2024-29217.cve.json) [\[OSV json\]](./CVE-2024-29217.osv.json)
 
 
 
@@ -191,7 +191,7 @@ Improper Neutralization of Input During Web Page Generation ('Cross-site Scripti
 
 ## Repeated submission at registration created duplicate users with the same name ## { #CVE-2024-26578 }
 
-CVE-2024-26578 [\[CVE json\]](./CVE-2024-26578.cve.json) [\[OSV json\]](./CVE-2024-26578.osv.json)
+CVE-2024-26578 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-26578) [\[CVE json\]](./CVE-2024-26578.cve.json) [\[OSV json\]](./CVE-2024-26578.osv.json)
 
 
 
@@ -216,7 +216,7 @@ Concurrent Execution using Shared Resource with Improper Synchronization ('Race 
 
 ## XSS vulnerability when submitting summary ## { #CVE-2024-23349 }
 
-CVE-2024-23349 [\[CVE json\]](./CVE-2024-23349.cve.json) [\[OSV json\]](./CVE-2024-23349.osv.json)
+CVE-2024-23349 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-23349) [\[CVE json\]](./CVE-2024-23349.cve.json) [\[OSV json\]](./CVE-2024-23349.osv.json)
 
 
 
@@ -241,7 +241,7 @@ Improper Neutralization of Input During Web Page Generation ('Cross-site Scripti
 
 ## Pixel Flood Attack by uploading the large pixel file ## { #CVE-2024-22393 }
 
-CVE-2024-22393 [\[CVE json\]](./CVE-2024-22393.cve.json) [\[OSV json\]](./CVE-2024-22393.osv.json)
+CVE-2024-22393 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-22393) [\[CVE json\]](./CVE-2024-22393.cve.json) [\[OSV json\]](./CVE-2024-22393.osv.json)
 
 
 
@@ -266,7 +266,7 @@ Unrestricted Upload of File with Dangerous Type vulnerability in Apache Answer.<
 
 ## Repeated submissions using scripts resulted in an abnormal number of collections for questions. ## { #CVE-2023-49619 }
 
-CVE-2023-49619 [\[CVE json\]](./CVE-2023-49619.cve.json) [\[OSV json\]](./CVE-2023-49619.osv.json)
+CVE-2023-49619 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-49619) [\[CVE json\]](./CVE-2023-49619.cve.json) [\[OSV json\]](./CVE-2023-49619.osv.json)
 
 
 

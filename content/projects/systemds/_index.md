@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Denial of service in readExternal method ## { #CVE-2022-26477 }
 
-CVE-2022-26477 [\[CVE json\]](./CVE-2022-26477.cve.json) [\[OSV json\]](./CVE-2022-26477.osv.json)
+CVE-2022-26477 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-26477) [\[CVE json\]](./CVE-2022-26477.cve.json) [\[OSV json\]](./CVE-2022-26477.osv.json)
 
 
 

@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## URL fetching can be used to exfiltrate arbitrary INI file values and environment variables ## { #CVE-2025-64407 }
 
-CVE-2025-64407 [\[CVE json\]](./CVE-2025-64407.cve.json) [\[OSV json\]](./CVE-2025-64407.osv.json)
+CVE-2025-64407 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-64407) [\[CVE json\]](./CVE-2025-64407.cve.json) [\[OSV json\]](./CVE-2025-64407.osv.json)
 
 
 
@@ -44,7 +44,7 @@ permission to do so. Such URI scheme allows to include system configuration data
 
 ## Possible memory corruption during CSV import ## { #CVE-2025-64406 }
 
-CVE-2025-64406 [\[CVE json\]](./CVE-2025-64406.cve.json) [\[OSV json\]](./CVE-2025-64406.osv.json)
+CVE-2025-64406 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-64406) [\[CVE json\]](./CVE-2025-64406.cve.json) [\[OSV json\]](./CVE-2025-64406.osv.json)
 
 
 
@@ -70,7 +70,7 @@ _Last updated: 2025-11-12T09:11:45.438Z_
 
 ## Remote documents loaded without prompt via DDE function ## { #CVE-2025-64405 }
 
-CVE-2025-64405 [\[CVE json\]](./CVE-2025-64405.cve.json) [\[OSV json\]](./CVE-2025-64405.osv.json)
+CVE-2025-64405 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-64405) [\[CVE json\]](./CVE-2025-64405.cve.json) [\[OSV json\]](./CVE-2025-64405.osv.json)
 
 
 
@@ -99,7 +99,7 @@ permission to do so.</p><p>This issue affects Apache OpenOffice: through 4.1.15.
 
 ## Remote documents loaded without prompt via background and bullet images ## { #CVE-2025-64404 }
 
-CVE-2025-64404 [\[CVE json\]](./CVE-2025-64404.cve.json) [\[OSV json\]](./CVE-2025-64404.osv.json)
+CVE-2025-64404 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-64404) [\[CVE json\]](./CVE-2025-64404.cve.json) [\[OSV json\]](./CVE-2025-64404.osv.json)
 
 
 
@@ -128,7 +128,7 @@ permission to do so.</p><p>This issue affects Apache OpenOffice: through 4.1.15.
 
 ## Remote documents loaded without prompt via "external data sources" in Calc ## { #CVE-2025-64403 }
 
-CVE-2025-64403 [\[CVE json\]](./CVE-2025-64403.cve.json) [\[OSV json\]](./CVE-2025-64403.osv.json)
+CVE-2025-64403 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-64403) [\[CVE json\]](./CVE-2025-64403.cve.json) [\[OSV json\]](./CVE-2025-64403.osv.json)
 
 
 
@@ -155,7 +155,7 @@ to be loaded without prompt.</p><p>This issue affects Apache OpenOffice: through
 
 ## Remote documents loaded without prompt via OLE objects ## { #CVE-2025-64402 }
 
-CVE-2025-64402 [\[CVE json\]](./CVE-2025-64402.cve.json) [\[OSV json\]](./CVE-2025-64402.osv.json)
+CVE-2025-64402 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-64402) [\[CVE json\]](./CVE-2025-64402.cve.json) [\[OSV json\]](./CVE-2025-64402.osv.json)
 
 
 
@@ -184,7 +184,7 @@ permission to do so.</p><p>This issue affects Apache OpenOffice: through 4.1.15.
 
 ## Remote documents loaded without prompt via IFrame ## { #CVE-2025-64401 }
 
-CVE-2025-64401 [\[CVE json\]](./CVE-2025-64401.cve.json) [\[OSV json\]](./CVE-2025-64401.osv.json)
+CVE-2025-64401 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-64401) [\[CVE json\]](./CVE-2025-64401.cve.json) [\[OSV json\]](./CVE-2025-64401.osv.json)
 
 
 
@@ -213,7 +213,7 @@ permission to do so.</p><p>This issue affects Apache OpenOffice: through 4.1.15.
 
 ## Macro URL arbitrary script execution ## { #CVE-2023-47804 }
 
-CVE-2023-47804 [\[CVE json\]](./CVE-2023-47804.cve.json)
+CVE-2023-47804 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-47804) [\[CVE json\]](./CVE-2023-47804.cve.json)
 
 _Last updated: 2023-12-29T14:31:22.075Z_
 
@@ -237,7 +237,7 @@ _Last updated: 2023-12-29T14:31:22.075Z_
 
 ## Macro URL arbitrary script execution ## { #CVE-2022-47502 }
 
-CVE-2022-47502 [\[CVE json\]](./CVE-2022-47502.cve.json)
+CVE-2022-47502 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-47502) [\[CVE json\]](./CVE-2022-47502.cve.json)
 
 _Last updated: 2023-04-05T12:45:10.294Z_
 
@@ -262,7 +262,7 @@ _Last updated: 2023-04-05T12:45:10.294Z_
 
 ## Empty entry in Java class path ## { #CVE-2022-38745 }
 
-CVE-2022-38745 [\[CVE json\]](./CVE-2022-38745.cve.json)
+CVE-2022-38745 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-38745) [\[CVE json\]](./CVE-2022-38745.cve.json)
 
 _Last updated: 2023-03-24T15:56:44.525Z_
 
@@ -286,7 +286,7 @@ _Last updated: 2023-03-24T15:56:44.525Z_
 
 ## Apache OpenOffice Weak Master Keys ## { #CVE-2022-37401 }
 
-CVE-2022-37401 [\[CVE json\]](./CVE-2022-37401.cve.json) [\[OSV json\]](./CVE-2022-37401.osv.json)
+CVE-2022-37401 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-37401) [\[CVE json\]](./CVE-2022-37401.cve.json) [\[OSV json\]](./CVE-2022-37401.osv.json)
 
 
 
@@ -311,7 +311,7 @@ Apache OpenOffice supports the storage of passwords for web connections in the u
 
 ## Apache OpenOffice Static Initialization Vector Allows to Recover Passwords for Web Connections Without Knowing the Master Password ## { #CVE-2022-37400 }
 
-CVE-2022-37400 [\[CVE json\]](./CVE-2022-37400.cve.json) [\[OSV json\]](./CVE-2022-37400.osv.json)
+CVE-2022-37400 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-37400) [\[CVE json\]](./CVE-2022-37400.cve.json) [\[OSV json\]](./CVE-2022-37400.osv.json)
 
 
 
@@ -337,7 +337,7 @@ Reference: CVE-2022-26306 - LibreOffice
 
 ## Content Manipulation with Certificate Validation Attack ## { #CVE-2021-41832 }
 
-CVE-2021-41832 [\[CVE json\]](./CVE-2021-41832.cve.json) [\[OSV json\]](./CVE-2021-41832.osv.json)
+CVE-2021-41832 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-41832) [\[CVE json\]](./CVE-2021-41832.cve.json) [\[OSV json\]](./CVE-2021-41832.osv.json)
 
 
 
@@ -368,7 +368,7 @@ See CVE-2021-25635 for the LibreOffice advisory.
 
 ## Timestamp Manipulation with Signature Wrapping ## { #CVE-2021-41831 }
 
-CVE-2021-41831 [\[CVE json\]](./CVE-2021-41831.cve.json) [\[OSV json\]](./CVE-2021-41831.osv.json)
+CVE-2021-41831 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-41831) [\[CVE json\]](./CVE-2021-41831.cve.json) [\[OSV json\]](./CVE-2021-41831.osv.json)
 
 
 
@@ -399,7 +399,7 @@ See CVE-2021-25634 for the LibreOffice advisory.
 
 ## Double Certificate Attack ## { #CVE-2021-41830 }
 
-CVE-2021-41830 [\[CVE json\]](./CVE-2021-41830.cve.json) [\[OSV json\]](./CVE-2021-41830.osv.json)
+CVE-2021-41830 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-41830) [\[CVE json\]](./CVE-2021-41830.cve.json) [\[OSV json\]](./CVE-2021-41830.osv.json)
 
 
 
@@ -431,7 +431,7 @@ See CVE-2021-25633 for the LibreOffice advisory.
 
 ## Billion Laughs ## { #CVE-2021-40439 }
 
-CVE-2021-40439 [\[CVE json\]](./CVE-2021-40439.cve.json) [\[OSV json\]](./CVE-2021-40439.osv.json)
+CVE-2021-40439 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-40439) [\[CVE json\]](./CVE-2021-40439.cve.json) [\[OSV json\]](./CVE-2021-40439.osv.json)
 
 
 
@@ -457,7 +457,7 @@ expat in version 4.1.11 is patched.
 
 ## Buffer overflow from a crafted DBF file ## { #CVE-2021-33035 }
 
-CVE-2021-33035 [\[CVE json\]](./CVE-2021-33035.cve.json) [\[OSV json\]](./CVE-2021-33035.osv.json)
+CVE-2021-33035 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-33035) [\[CVE json\]](./CVE-2021-33035.cve.json) [\[OSV json\]](./CVE-2021-33035.osv.json)
 
 
 
@@ -488,7 +488,7 @@ This issue is fixed in Apache OpenOffice 4.1.11
 
 ## Code execution in Apache OpenOffice via non-http(s) schemes in Hyperlinks ## { #CVE-2021-30245 }
 
-CVE-2021-30245 [\[CVE json\]](./CVE-2021-30245.cve.json) [\[OSV json\]](./CVE-2021-30245.osv.json)
+CVE-2021-30245 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-30245) [\[CVE json\]](./CVE-2021-30245.cve.json) [\[OSV json\]](./CVE-2021-30245.osv.json)
 
 
 
@@ -513,7 +513,7 @@ The project received a report that all versions of Apache OpenOffice through 4.1
 
 ## DEB packaging for Apache OpenOffice 4.1.8 installed with a non-root userid and groupid ## { #CVE-2021-28129 }
 
-CVE-2021-28129 [\[CVE json\]](./CVE-2021-28129.cve.json) [\[OSV json\]](./CVE-2021-28129.osv.json)
+CVE-2021-28129 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-28129) [\[CVE json\]](./CVE-2021-28129.cve.json) [\[OSV json\]](./CVE-2021-28129.osv.json)
 
 
 

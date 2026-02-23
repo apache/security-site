@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Xalan Java XSLT library is vulnerable to an integer truncation issue when processing malicious XSLT stylesheets ## { #CVE-2022-34169 }
 
-CVE-2022-34169 [\[CVE json\]](./CVE-2022-34169.cve.json) [\[OSV json\]](./CVE-2022-34169.osv.json)
+CVE-2022-34169 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-34169) [\[CVE json\]](./CVE-2022-34169.cve.json) [\[OSV json\]](./CVE-2022-34169.osv.json)
 
 
 

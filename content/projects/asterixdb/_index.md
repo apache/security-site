@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## unzip directory traversal ## { #CVE-2020-9479 }
 
-CVE-2020-9479 [\[CVE json\]](./CVE-2020-9479.cve.json) [\[OSV json\]](./CVE-2020-9479.osv.json)
+CVE-2020-9479 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-9479) [\[CVE json\]](./CVE-2020-9479.cve.json) [\[OSV json\]](./CVE-2020-9479.osv.json)
 
 
 

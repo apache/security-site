@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Helix front hard-coded secret in the express-session ## { #CVE-2024-22281 }
 
-CVE-2024-22281 [\[CVE json\]](./CVE-2024-22281.cve.json) [\[OSV json\]](./CVE-2024-22281.osv.json)
+CVE-2024-22281 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-22281) [\[CVE json\]](./CVE-2024-22281.cve.json) [\[OSV json\]](./CVE-2024-22281.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2024-08-20T22:11:36.792Z_
 
 ## Deserialization vulnerability in Helix workflow and REST ## { #CVE-2023-38647 }
 
-CVE-2023-38647 [\[CVE json\]](./CVE-2023-38647.cve.json) [\[OSV json\]](./CVE-2023-38647.osv.json)
+CVE-2023-38647 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-38647) [\[CVE json\]](./CVE-2023-38647.cve.json) [\[OSV json\]](./CVE-2023-38647.osv.json)
 
 
 
@@ -65,7 +65,7 @@ _Last updated: 2023-07-26T07:52:23.420Z_
 
 ## Open redirect ## { #CVE-2022-47500 }
 
-CVE-2022-47500 [\[CVE json\]](./CVE-2022-47500.cve.json) [\[OSV json\]](./CVE-2022-47500.osv.json)
+CVE-2022-47500 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-47500) [\[CVE json\]](./CVE-2022-47500.cve.json) [\[OSV json\]](./CVE-2022-47500.osv.json)
 
 
 

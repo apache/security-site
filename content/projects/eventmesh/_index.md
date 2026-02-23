@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## raft Hessian Deserialization Vulnerability allowing remote code execution ## { #CVE-2024-56180 }
 
-CVE-2024-56180 [\[CVE json\]](./CVE-2024-56180.cve.json) [\[OSV json\]](./CVE-2024-56180.osv.json)
+CVE-2024-56180 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-56180) [\[CVE json\]](./CVE-2024-56180.cve.json) [\[OSV json\]](./CVE-2024-56180.osv.json)
 
 
 
@@ -43,7 +43,7 @@ _Last updated: 2025-02-14T15:26:18.633Z_
 
 ## SSRF ## { #CVE-2024-39954 }
 
-CVE-2024-39954 [\[CVE json\]](./CVE-2024-39954.cve.json) [\[OSV json\]](./CVE-2024-39954.osv.json)
+CVE-2024-39954 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-39954) [\[CVE json\]](./CVE-2024-39954.cve.json) [\[OSV json\]](./CVE-2024-39954.osv.json)
 
 
 
@@ -68,7 +68,7 @@ CWE-918 Server-Side Request Forgery (SSRF) in eventmesh-runtime module in <span 
 
 ## Apache EventMesh RabbitMQ-Connector plugin allows RCE through deserialization of untrusted data ## { #CVE-2023-26512 }
 
-CVE-2023-26512 [\[CVE json\]](./CVE-2023-26512.cve.json) [\[OSV json\]](./CVE-2023-26512.osv.json)
+CVE-2023-26512 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-26512) [\[CVE json\]](./CVE-2023-26512.cve.json) [\[OSV json\]](./CVE-2023-26512.osv.json)
 
 
 

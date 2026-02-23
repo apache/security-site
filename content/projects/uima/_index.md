@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Potential untrusted code execution when deserializing certain binary CAS formats ## { #CVE-2023-39913 }
 
-CVE-2023-39913 [\[CVE json\]](./CVE-2023-39913.cve.json) [\[OSV json\]](./CVE-2023-39913.osv.json)
+CVE-2023-39913 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-39913) [\[CVE json\]](./CVE-2023-39913.cve.json) [\[OSV json\]](./CVE-2023-39913.osv.json)
 
 
 
@@ -43,7 +43,7 @@ Deserialization of Untrusted Data, Improper Input Validation vulnerability in Ap
 
 ## DUCC (EOL) allows RCE ## { #CVE-2023-28935 }
 
-CVE-2023-28935 [\[CVE json\]](./CVE-2023-28935.cve.json) [\[OSV json\]](./CVE-2023-28935.osv.json)
+CVE-2023-28935 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-28935) [\[CVE json\]](./CVE-2023-28935.cve.json) [\[OSV json\]](./CVE-2023-28935.osv.json)
 
 
 
@@ -68,7 +68,7 @@ _Last updated: 2023-03-30T09:10:09.175Z_
 
 ## Apache UIMA prior to 3.3.1 has a path traversal vulnerability when extracting (PEAR) archives ## { #CVE-2022-32287 }
 
-CVE-2022-32287 [\[CVE json\]](./CVE-2022-32287.cve.json) [\[OSV json\]](./CVE-2022-32287.osv.json)
+CVE-2022-32287 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-32287) [\[CVE json\]](./CVE-2022-32287.cve.json) [\[OSV json\]](./CVE-2022-32287.osv.json)
 
 
 

@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Improper input validation of console codes ## { #CVE-2024-35164 }
 
-CVE-2024-35164 [\[CVE json\]](./CVE-2024-35164.cve.json) [\[OSV json\]](./CVE-2024-35164.osv.json)
+CVE-2024-35164 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-35164) [\[CVE json\]](./CVE-2024-35164.cve.json) [\[OSV json\]](./CVE-2024-35164.osv.json)
 
 
 
@@ -41,7 +41,7 @@ with the privileges of the running guacd process.</div><div><br></div><div>Users
 
 ## Integer overflow in handling of VNC image buffers ## { #CVE-2023-43826 }
 
-CVE-2023-43826 [\[CVE json\]](./CVE-2023-43826.cve.json) [\[OSV json\]](./CVE-2023-43826.osv.json)
+CVE-2023-43826 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-43826) [\[CVE json\]](./CVE-2023-43826.cve.json) [\[OSV json\]](./CVE-2023-43826.osv.json)
 
 
 
@@ -67,7 +67,7 @@ _Last updated: 2023-12-19T19:50:08.611Z_
 
 ## Use-after-free in handling of RDP audio input buffer ## { #CVE-2023-30576 }
 
-CVE-2023-30576 [\[CVE json\]](./CVE-2023-30576.cve.json) [\[OSV json\]](./CVE-2023-30576.osv.json)
+CVE-2023-30576 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-30576) [\[CVE json\]](./CVE-2023-30576.cve.json) [\[OSV json\]](./CVE-2023-30576.osv.json)
 
 
 
@@ -92,7 +92,7 @@ Apache Guacamole 0.9.10 through 1.5.1 may continue to reference a freed RDP audi
 
 ## Incorrect calculation of Guacamole protocol element lengths ## { #CVE-2023-30575 }
 
-CVE-2023-30575 [\[CVE json\]](./CVE-2023-30575.cve.json) [\[OSV json\]](./CVE-2023-30575.osv.json)
+CVE-2023-30575 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-30575) [\[CVE json\]](./CVE-2023-30575.cve.json) [\[OSV json\]](./CVE-2023-30575.osv.json)
 
 
 
@@ -117,7 +117,7 @@ Apache Guacamole 1.5.1 and older may incorrectly calculate the lengths of instru
 
 ## Improper validation of SAML responses ## { #CVE-2021-43999 }
 
-CVE-2021-43999 [\[CVE json\]](./CVE-2021-43999.cve.json) [\[OSV json\]](./CVE-2021-43999.osv.json)
+CVE-2021-43999 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-43999) [\[CVE json\]](./CVE-2021-43999.cve.json) [\[OSV json\]](./CVE-2021-43999.osv.json)
 
 
 
@@ -143,7 +143,7 @@ Apache Guacamole 1.2.0 and 1.3.0 do not properly validate responses received fro
 
 ## Private tunnel identifier may be included in the non-private details of active connections ## { #CVE-2021-41767 }
 
-CVE-2021-41767 [\[CVE json\]](./CVE-2021-41767.cve.json) [\[OSV json\]](./CVE-2021-41767.osv.json)
+CVE-2021-41767 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-41767) [\[CVE json\]](./CVE-2021-41767.cve.json) [\[OSV json\]](./CVE-2021-41767.osv.json)
 
 
 

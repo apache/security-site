@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Potential malicious code execution from trusted packages in the parquet-avro module when reading an Avro schema from a Parquet file metadata ## { #CVE-2025-46762 }
 
-CVE-2025-46762 [\[CVE json\]](./CVE-2025-46762.cve.json) [\[OSV json\]](./CVE-2025-46762.osv.json)
+CVE-2025-46762 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-46762) [\[CVE json\]](./CVE-2025-46762.cve.json) [\[OSV json\]](./CVE-2025-46762.osv.json)
 
 
 
@@ -42,7 +42,7 @@ _Last updated: 2025-05-06T09:08:12.043Z_
 
 ## Arbitrary code execution in the parquet-avro module when reading an Avro schema from a Parquet file metadata ## { #CVE-2025-30065 }
 
-CVE-2025-30065 [\[CVE json\]](./CVE-2025-30065.cve.json) [\[OSV json\]](./CVE-2025-30065.osv.json)
+CVE-2025-30065 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-30065) [\[CVE json\]](./CVE-2025-30065.cve.json) [\[OSV json\]](./CVE-2025-30065.osv.json)
 
 
 
@@ -67,7 +67,7 @@ _Last updated: 2025-07-11T10:32:31.431Z_
 
 ## Apache Parquet-MR potential DoS in case of malicious Parquet file ## { #CVE-2021-41561 }
 
-CVE-2021-41561 [\[CVE json\]](./CVE-2021-41561.cve.json) [\[OSV json\]](./CVE-2021-41561.osv.json)
+CVE-2021-41561 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-41561) [\[CVE json\]](./CVE-2021-41561.cve.json) [\[OSV json\]](./CVE-2021-41561.osv.json)
 
 
 

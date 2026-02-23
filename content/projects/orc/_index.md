@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Potential Heap Buffer Overflow during C++ LZO Decompression ## { #CVE-2025-47436 }
 
-CVE-2025-47436 [\[CVE json\]](./CVE-2025-47436.cve.json) [\[OSV json\]](./CVE-2025-47436.osv.json)
+CVE-2025-47436 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-47436) [\[CVE json\]](./CVE-2025-47436.cve.json) [\[OSV json\]](./CVE-2025-47436.osv.json)
 
 
 

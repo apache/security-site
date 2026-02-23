@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Remote Code Execution in Lucene.Net.Replicator ## { #CVE-2024-43383 }
 
-CVE-2024-43383 [\[CVE json\]](./CVE-2024-43383.cve.json) [\[OSV json\]](./CVE-2024-43383.osv.json)
+CVE-2024-43383 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-43383) [\[CVE json\]](./CVE-2024-43383.cve.json) [\[OSV json\]](./CVE-2024-43383.osv.json)
 
 
 

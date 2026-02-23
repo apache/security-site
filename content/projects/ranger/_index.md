@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Improper Neutralization of Formula Elements in a CSV File ## { #CVE-2024-55532 }
 
-CVE-2024-55532 [\[CVE json\]](./CVE-2024-55532.cve.json) [\[OSV json\]](./CVE-2024-55532.osv.json)
+CVE-2024-55532 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-55532) [\[CVE json\]](./CVE-2024-55532.cve.json) [\[OSV json\]](./CVE-2024-55532.osv.json)
 
 
 
@@ -40,7 +40,7 @@ Improper Neutralization of Formula Elements in Export CSV feature of Apache Rang
 
 ## SSRF in Edit Service page - Add logic to filter requests to localhost ## { #CVE-2024-45479 }
 
-CVE-2024-45479 [\[CVE json\]](./CVE-2024-45479.cve.json) [\[OSV json\]](./CVE-2024-45479.osv.json)
+CVE-2024-45479 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45479) [\[CVE json\]](./CVE-2024-45479.cve.json) [\[OSV json\]](./CVE-2024-45479.osv.json)
 
 
 
@@ -65,7 +65,7 @@ SSRF vulnerability in Edit Service Page of Apache Ranger UI in Apache Ranger Ver
 
 ## Stored XSS in Edit Service page - Add logic to validate user input ## { #CVE-2024-45478 }
 
-CVE-2024-45478 [\[CVE json\]](./CVE-2024-45478.cve.json) [\[OSV json\]](./CVE-2024-45478.osv.json)
+CVE-2024-45478 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45478) [\[CVE json\]](./CVE-2024-45478.cve.json) [\[OSV json\]](./CVE-2024-45478.osv.json)
 
 
 
@@ -90,7 +90,7 @@ Stored XSS vulnerability in Edit Service Page of Apache Ranger UI in Apache Rang
 
 ## code execution vulnerability in policy expressions ## { #CVE-2022-45048 }
 
-CVE-2022-45048 [\[CVE json\]](./CVE-2022-45048.cve.json) [\[OSV json\]](./CVE-2022-45048.osv.json)
+CVE-2022-45048 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-45048) [\[CVE json\]](./CVE-2022-45048.cve.json) [\[OSV json\]](./CVE-2022-45048.osv.json)
 
 
 
@@ -115,7 +115,7 @@ _Last updated: 2023-05-05T07:50:14.288Z_
 
 ## Permissions problem in the Apache Ranger Hive Plugin ## { #CVE-2021-40331 }
 
-CVE-2021-40331 [\[CVE json\]](./CVE-2021-40331.cve.json) [\[OSV json\]](./CVE-2021-40331.osv.json)
+CVE-2021-40331 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-40331) [\[CVE json\]](./CVE-2021-40331.cve.json) [\[OSV json\]](./CVE-2021-40331.osv.json)
 
 
 

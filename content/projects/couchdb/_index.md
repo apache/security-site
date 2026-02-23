@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Privilege Escalation Using _design Documents ## { #CVE-2023-45725 }
 
-CVE-2023-45725 [\[CVE json\]](./CVE-2023-45725.cve.json) [\[OSV json\]](./CVE-2023-45725.osv.json)
+CVE-2023-45725 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-45725) [\[CVE json\]](./CVE-2023-45725.cve.json) [\[OSV json\]](./CVE-2023-45725.osv.json)
 
 
 
@@ -45,7 +45,7 @@ Design document functions which receive a user http request object may expose au
 
 ## Information sharing via couchjs processes ## { #CVE-2023-26268 }
 
-CVE-2023-26268 [\[CVE json\]](./CVE-2023-26268.cve.json) [\[OSV json\]](./CVE-2023-26268.osv.json)
+CVE-2023-26268 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-26268) [\[CVE json\]](./CVE-2023-26268.cve.json) [\[OSV json\]](./CVE-2023-26268.osv.json)
 
 
 
@@ -73,7 +73,7 @@ _Last updated: 2023-12-12T22:58:48.382Z_
 
 ## Remote Code Execution Vulnerability in Packaging ## { #CVE-2022-24706 }
 
-CVE-2022-24706 [\[CVE json\]](./CVE-2022-24706.cve.json) [\[OSV json\]](./CVE-2022-24706.osv.json)
+CVE-2022-24706 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-24706) [\[CVE json\]](./CVE-2022-24706.cve.json) [\[OSV json\]](./CVE-2022-24706.osv.json)
 
 
 
@@ -100,7 +100,7 @@ In Apache CouchDB prior to 3.2.2, an attacker can access an improperly secured d
 
 ## Privilege escalation vulnerability when using HTML attachments ## { #CVE-2021-38295 }
 
-CVE-2021-38295 [\[CVE json\]](./CVE-2021-38295.cve.json) [\[OSV json\]](./CVE-2021-38295.osv.json)
+CVE-2021-38295 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-38295) [\[CVE json\]](./CVE-2021-38295.cve.json) [\[OSV json\]](./CVE-2021-38295.osv.json)
 
 
 

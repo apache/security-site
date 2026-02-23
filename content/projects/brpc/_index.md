@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Remote command injection vulnerability in heap builtin service ## { #CVE-2025-60021 }
 
-CVE-2025-60021 [\[CVE json\]](./CVE-2025-60021.cve.json) [\[OSV json\]](./CVE-2025-60021.osv.json)
+CVE-2025-60021 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-60021) [\[CVE json\]](./CVE-2025-60021.cve.json) [\[OSV json\]](./CVE-2025-60021.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2026-01-16T08:39:21.612Z_
 
 ## Stack Exhaustion via Unbounded Recursion in JSON Parser ## { #CVE-2025-59789 }
 
-CVE-2025-59789 [\[CVE json\]](./CVE-2025-59789.cve.json) [\[OSV json\]](./CVE-2025-59789.osv.json)
+CVE-2025-59789 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-59789) [\[CVE json\]](./CVE-2025-59789.cve.json) [\[OSV json\]](./CVE-2025-59789.osv.json)
 
 
 
@@ -75,7 +75,7 @@ Uncontrolled recursion in the json2pb component in Apache bRPC (version &lt; 1.1
 
 ## Redis Parser Remote Denial of Service ## { #CVE-2025-54472 }
 
-CVE-2025-54472 [\[CVE json\]](./CVE-2025-54472.cve.json) [\[OSV json\]](./CVE-2025-54472.osv.json)
+CVE-2025-54472 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-54472) [\[CVE json\]](./CVE-2025-54472.cve.json) [\[OSV json\]](./CVE-2025-54472.osv.json)
 
 
 
@@ -106,7 +106,7 @@ Unlimited memory allocation in redis protocol parser in Apache bRPC (all version
 
 ## HTTP request smuggling vulnerability ## { #CVE-2024-23452 }
 
-CVE-2024-23452 [\[CVE json\]](./CVE-2024-23452.cve.json) [\[OSV json\]](./CVE-2024-23452.osv.json)
+CVE-2024-23452 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-23452) [\[CVE json\]](./CVE-2024-23452.cve.json) [\[OSV json\]](./CVE-2024-23452.osv.json)
 
 
 
@@ -136,7 +136,7 @@ Request smuggling vulnerability in HTTP server in Apache bRPC 0.9.5~1.7.0 on all
 
 ## The builtin service rpcz page has an XSS attack vulnerability ## { #CVE-2023-45757 }
 
-CVE-2023-45757 [\[CVE json\]](./CVE-2023-45757.cve.json) [\[OSV json\]](./CVE-2023-45757.osv.json)
+CVE-2023-45757 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-45757) [\[CVE json\]](./CVE-2023-45757.cve.json) [\[OSV json\]](./CVE-2023-45757.osv.json)
 
 
 
@@ -157,7 +157,7 @@ _Last updated: 2023-10-16T08:01:36.036Z_
 
 ## ServerOptions.pid_file may cause arbitrary code execution ## { #CVE-2023-31039 }
 
-CVE-2023-31039 [\[CVE json\]](./CVE-2023-31039.cve.json) [\[OSV json\]](./CVE-2023-31039.osv.json)
+CVE-2023-31039 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-31039) [\[CVE json\]](./CVE-2023-31039.cve.json) [\[OSV json\]](./CVE-2023-31039.osv.json)
 
 
 

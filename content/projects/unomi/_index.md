@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Unomi log injection ## { #CVE-2021-31164 }
 
-CVE-2021-31164 [\[CVE json\]](./CVE-2021-31164.cve.json) [\[OSV json\]](./CVE-2021-31164.osv.json)
+CVE-2021-31164 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-31164) [\[CVE json\]](./CVE-2021-31164.cve.json) [\[OSV json\]](./CVE-2021-31164.osv.json)
 
 
 
@@ -37,7 +37,7 @@ Apache Unomi prior to version 1.5.5 allows CRLF log injection because of the lac
 
 ## Remote Code Execution in Apache Unomi ## { #CVE-2020-13942 }
 
-CVE-2020-13942 [\[CVE json\]](./CVE-2020-13942.cve.json) [\[OSV json\]](./CVE-2020-13942.osv.json)
+CVE-2020-13942 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-13942) [\[CVE json\]](./CVE-2020-13942.cve.json) [\[OSV json\]](./CVE-2020-13942.osv.json)
 
 
 

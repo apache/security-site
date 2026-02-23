@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Security Vulnerability in Lucene Replicator - Deserialization Issue ## { #CVE-2024-45772 }
 
-CVE-2024-45772 [\[CVE json\]](./CVE-2024-45772.cve.json) [\[OSV json\]](./CVE-2024-45772.osv.json)
+CVE-2024-45772 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45772) [\[CVE json\]](./CVE-2024-45772.cve.json) [\[OSV json\]](./CVE-2024-45772.osv.json)
 
 
 

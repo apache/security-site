@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## XXE vulnerability in outdated XWork component ## { #CVE-2025-68493 }
 
-CVE-2025-68493 [\[CVE json\]](./CVE-2025-68493.cve.json) [\[OSV json\]](./CVE-2025-68493.osv.json)
+CVE-2025-68493 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-68493) [\[CVE json\]](./CVE-2025-68493.cve.json) [\[OSV json\]](./CVE-2025-68493.osv.json)
 
 
 
@@ -37,7 +37,7 @@ _Last updated: 2026-01-11T11:40:53.869Z_
 
 ## File leak in multipart request processing causes disk exhaustion (DoS) - version ranges fixed ## { #CVE-2025-66675 }
 
-CVE-2025-66675 [\[CVE json\]](./CVE-2025-66675.cve.json) [\[OSV json\]](./CVE-2025-66675.osv.json)
+CVE-2025-66675 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66675) [\[CVE json\]](./CVE-2025-66675.cve.json) [\[OSV json\]](./CVE-2025-66675.osv.json)
 
 
 
@@ -64,7 +64,7 @@ _Last updated: 2025-12-10T07:13:32.174Z_
 
 ## File leak in multipart request processing causes disk exhaustion (DoS) ## { #CVE-2025-64775 }
 
-CVE-2025-64775 [\[CVE json\]](./CVE-2025-64775.cve.json) [\[OSV json\]](./CVE-2025-64775.osv.json)
+CVE-2025-64775 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-64775) [\[CVE json\]](./CVE-2025-64775.cve.json) [\[OSV json\]](./CVE-2025-64775.osv.json)
 
 
 
@@ -90,7 +90,7 @@ _Last updated: 2025-12-07T08:27:17.883Z_
 
 ## Improper Output Neutralization for Logs ## { #CVE-2025-54656 }
 
-CVE-2025-54656 [\[CVE json\]](./CVE-2025-54656.cve.json) [\[OSV json\]](./CVE-2025-54656.osv.json)
+CVE-2025-54656 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-54656) [\[CVE json\]](./CVE-2025-54656.cve.json) [\[OSV json\]](./CVE-2025-54656.osv.json)
 
 
 
@@ -115,7 +115,7 @@ _Last updated: 2025-07-30T15:58:00.516Z_
 
 ## Mixing setters for uploaded files and normal fields can allow bypass file upload checks ## { #CVE-2024-53677 }
 
-CVE-2024-53677 [\[CVE json\]](./CVE-2024-53677.cve.json) [\[OSV json\]](./CVE-2024-53677.osv.json)
+CVE-2024-53677 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-53677) [\[CVE json\]](./CVE-2024-53677.cve.json) [\[OSV json\]](./CVE-2024-53677.osv.json)
 
 
 
@@ -136,7 +136,7 @@ _Last updated: 2024-12-20T15:44:02.694Z_
 
 ## File upload component had a directory traversal vulnerability ## { #CVE-2023-50164 }
 
-CVE-2023-50164 [\[CVE json\]](./CVE-2023-50164.cve.json)
+CVE-2023-50164 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-50164) [\[CVE json\]](./CVE-2023-50164.cve.json)
 
 _Last updated: 2023-12-12T09:26:27.763Z_
 
@@ -161,7 +161,7 @@ _Last updated: 2023-12-12T09:26:27.763Z_
 
 ## excessive disk usage ## { #CVE-2023-41835 }
 
-CVE-2023-41835 [\[CVE json\]](./CVE-2023-41835.cve.json)
+CVE-2023-41835 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-41835) [\[CVE json\]](./CVE-2023-41835.cve.json)
 
 _Last updated: 2023-12-12T08:42:17.762Z_
 
@@ -182,7 +182,7 @@ _Last updated: 2023-12-12T08:42:17.762Z_
 
 ## DoS via OOM owing to no sanity limit on normal form fields in multipart forms ## { #CVE-2023-34396 }
 
-CVE-2023-34396 [\[CVE json\]](./CVE-2023-34396.cve.json) [\[OSV json\]](./CVE-2023-34396.osv.json)
+CVE-2023-34396 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-34396) [\[CVE json\]](./CVE-2023-34396.cve.json) [\[OSV json\]](./CVE-2023-34396.osv.json)
 
 
 
@@ -208,7 +208,7 @@ Allocation of Resources Without Limits or Throttling vulnerability in Apache Sof
 
 ## DoS via OOM owing to not properly checking of list bounds ## { #CVE-2023-34149 }
 
-CVE-2023-34149 [\[CVE json\]](./CVE-2023-34149.cve.json) [\[OSV json\]](./CVE-2023-34149.osv.json)
+CVE-2023-34149 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-34149) [\[CVE json\]](./CVE-2023-34149.cve.json) [\[OSV json\]](./CVE-2023-34149.osv.json)
 
 
 
@@ -234,7 +234,7 @@ Allocation of Resources Without Limits or Throttling vulnerability in Apache Sof
 
 ## Forced OGNL evaluation, when evaluated on raw not validated user input in tag attributes, may lead to RCE. ## { #CVE-2021-31805 }
 
-CVE-2021-31805 [\[CVE json\]](./CVE-2021-31805.cve.json) [\[OSV json\]](./CVE-2021-31805.osv.json)
+CVE-2021-31805 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-31805) [\[CVE json\]](./CVE-2021-31805.cve.json) [\[OSV json\]](./CVE-2021-31805.osv.json)
 
 
 

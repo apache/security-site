@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Unauthorized directory access due to missing path normalization ## { #CVE-2025-66518 }
 
-CVE-2025-66518 [\[CVE json\]](./CVE-2025-66518.cve.json) [\[OSV json\]](./CVE-2025-66518.osv.json)
+CVE-2025-66518 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66518) [\[CVE json\]](./CVE-2025-66518.cve.json) [\[OSV json\]](./CVE-2025-66518.osv.json)
 
 
 

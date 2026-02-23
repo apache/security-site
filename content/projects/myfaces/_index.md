@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Cross-Site Request Forgery (CSRF) vulnerability in Apache MyFaces ## { #CVE-2021-26296 }
 
-CVE-2021-26296 [\[CVE json\]](./CVE-2021-26296.cve.json) [\[OSV json\]](./CVE-2021-26296.osv.json)
+CVE-2021-26296 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-26296) [\[CVE json\]](./CVE-2021-26296.cve.json) [\[OSV json\]](./CVE-2021-26296.osv.json)
 
 
 

@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Auth bypass when accessing static files only on case-insensitive filesystems ## { #CVE-2026-23903 }
 
-CVE-2026-23903 [\[CVE json\]](./CVE-2026-23903.cve.json) [\[OSV json\]](./CVE-2026-23903.osv.json)
+CVE-2026-23903 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23903) [\[CVE json\]](./CVE-2026-23903.cve.json) [\[OSV json\]](./CVE-2026-23903.osv.json)
 
 
 
@@ -41,7 +41,7 @@ _Last updated: 2026-02-09T09:26:19.996Z_
 
 ## Brute force attack possible to determine valid user names ## { #CVE-2026-23901 }
 
-CVE-2026-23901 [\[CVE json\]](./CVE-2026-23901.cve.json) [\[OSV json\]](./CVE-2026-23901.osv.json)
+CVE-2026-23901 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23901) [\[CVE json\]](./CVE-2026-23901.cve.json) [\[OSV json\]](./CVE-2026-23901.osv.json)
 
 
 
@@ -68,7 +68,7 @@ _Last updated: 2026-02-10T09:25:49.952Z_
 
 ## URL Redirection to Untrusted Site ('Open Redirect') vulnerability in FORM authentication feature Apache Shiro. ## { #CVE-2023-46750 }
 
-CVE-2023-46750 [\[CVE json\]](./CVE-2023-46750.cve.json) [\[OSV json\]](./CVE-2023-46750.osv.json)
+CVE-2023-46750 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-46750) [\[CVE json\]](./CVE-2023-46750.cve.json) [\[OSV json\]](./CVE-2023-46750.osv.json)
 
 
 
@@ -94,7 +94,7 @@ _Last updated: 2023-12-14T08:15:56.341Z_
 
 ## Apache Shiro before 1.13.0 or 2.0.0-alpha-4, may be susceptible to a path traversal attack that results in an authentication bypass when used together with path rewriting  ## { #CVE-2023-46749 }
 
-CVE-2023-46749 [\[CVE json\]](./CVE-2023-46749.cve.json) [\[OSV json\]](./CVE-2023-46749.osv.json)
+CVE-2023-46749 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-46749) [\[CVE json\]](./CVE-2023-46749.cve.json) [\[OSV json\]](./CVE-2023-46749.osv.json)
 
 
 
@@ -116,7 +116,7 @@ Apache Shiro before 1.13.0 or 2.0.0-alpha-4, may be susceptible to a path traver
 
 ## Apache Shiro before 1.12.0, or 2.0.0-alpha-3, may be susceptible to a path traversal attack when used together with APIs or other web frameworks that route requests based on non-normalized requests. ## { #CVE-2023-34478 }
 
-CVE-2023-34478 [\[CVE json\]](./CVE-2023-34478.cve.json) [\[OSV json\]](./CVE-2023-34478.osv.json)
+CVE-2023-34478 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-34478) [\[CVE json\]](./CVE-2023-34478.cve.json) [\[OSV json\]](./CVE-2023-34478.osv.json)
 
 
 
@@ -143,7 +143,7 @@ Apache Shiro, before 1.12.0 or 2.0.0-alpha-3, <span style="background-color: rgb
 
 ## Apache Shiro before 1.11.0, when used with Spring Boot 2.6+, may allow authentication bypass through a specially crafted HTTP request ## { #CVE-2023-22602 }
 
-CVE-2023-22602 [\[CVE json\]](./CVE-2023-22602.cve.json)
+CVE-2023-22602 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-22602) [\[CVE json\]](./CVE-2023-22602.cve.json)
 
 _Last updated: 2023-01-14T09:33:37.695Z_
 
@@ -166,7 +166,7 @@ _Last updated: 2023-01-14T09:33:37.695Z_
 
 ## Authentication Bypass Vulnerability in Shiro when forwarding or including via RequestDispatcher ## { #CVE-2022-40664 }
 
-CVE-2022-40664 [\[CVE json\]](./CVE-2022-40664.cve.json) [\[OSV json\]](./CVE-2022-40664.osv.json)
+CVE-2022-40664 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-40664) [\[CVE json\]](./CVE-2022-40664.cve.json) [\[OSV json\]](./CVE-2022-40664.osv.json)
 
 
 
@@ -191,7 +191,7 @@ Apache Shiro before 1.10.0, Authentication Bypass Vulnerability in Shiro when fo
 
 ## Authentication Bypass Vulnerability ## { #CVE-2022-32532 }
 
-CVE-2022-32532 [\[CVE json\]](./CVE-2022-32532.cve.json) [\[OSV json\]](./CVE-2022-32532.osv.json)
+CVE-2022-32532 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-32532) [\[CVE json\]](./CVE-2022-32532.cve.json) [\[OSV json\]](./CVE-2022-32532.osv.json)
 
 
 
@@ -216,7 +216,7 @@ Apache Shiro before 1.9.1, A RegexRequestMatcher can be misconfigured to be bypa
 
 ## Apache Shiro before 1.8.0, when using Apache Shiro with Spring Boot, a specially crafted HTTP request may cause an authentication bypass ## { #CVE-2021-41303 }
 
-CVE-2021-41303 [\[CVE json\]](./CVE-2021-41303.cve.json) [\[OSV json\]](./CVE-2021-41303.osv.json)
+CVE-2021-41303 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-41303) [\[CVE json\]](./CVE-2021-41303.cve.json) [\[OSV json\]](./CVE-2021-41303.osv.json)
 
 
 

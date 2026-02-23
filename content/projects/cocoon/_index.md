@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## continuations may not be private ## { #CVE-2025-24783 }
 
-CVE-2025-24783 [\[CVE json\]](./CVE-2025-24783.cve.json) [\[OSV json\]](./CVE-2025-24783.osv.json)
+CVE-2025-24783 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-24783) [\[CVE json\]](./CVE-2025-24783.cve.json) [\[OSV json\]](./CVE-2025-24783.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2025-01-27T14:47:41.250Z_
 
 ## Apache Cocoon's StreamGenerator is vulnerable to XXE injection ## { #CVE-2023-49733 }
 
-CVE-2023-49733 [\[CVE json\]](./CVE-2023-49733.cve.json) [\[OSV json\]](./CVE-2023-49733.osv.json)
+CVE-2023-49733 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-49733) [\[CVE json\]](./CVE-2023-49733.cve.json) [\[OSV json\]](./CVE-2023-49733.osv.json)
 
 
 
@@ -61,7 +61,7 @@ Improper Restriction of XML External Entity Reference vulnerability in Apache Co
 
 ## SQL injection in DatabaseCookieAuthenticatorAction ## { #CVE-2022-45135 }
 
-CVE-2022-45135 [\[CVE json\]](./CVE-2022-45135.cve.json) [\[OSV json\]](./CVE-2022-45135.osv.json)
+CVE-2022-45135 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-45135) [\[CVE json\]](./CVE-2022-45135.cve.json) [\[OSV json\]](./CVE-2022-45135.osv.json)
 
 
 

@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Authentication bypass issue. If the path does not contain / and contain . authentication is not required ## { #CVE-2024-56325 }
 
-CVE-2024-56325 [\[CVE json\]](./CVE-2024-56325.cve.json) [\[OSV json\]](./CVE-2024-56325.osv.json)
+CVE-2024-56325 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-56325) [\[CVE json\]](./CVE-2024-56325.cve.json) [\[OSV json\]](./CVE-2024-56325.osv.json)
 
 
 
@@ -42,7 +42,7 @@ A new user gets added bypassing authentication, enabling the user to control Pin
 
 ## Unauthorized endpoint exposed sensitive information ## { #CVE-2024-39676 }
 
-CVE-2024-39676 [\[CVE json\]](./CVE-2024-39676.cve.json) [\[OSV json\]](./CVE-2024-39676.osv.json)
+CVE-2024-39676 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-39676) [\[CVE json\]](./CVE-2024-39676.cve.json) [\[OSV json\]](./CVE-2024-39676.osv.json)
 
 
 
@@ -67,7 +67,7 @@ _Last updated: 2024-07-24T07:41:07.886Z_
 
 ## Pinot query endpoint and the realtime ingestion layer has a vulnerability in unprotected environments due to a groovy function support ## { #CVE-2022-26112 }
 
-CVE-2022-26112 [\[CVE json\]](./CVE-2022-26112.cve.json) [\[OSV json\]](./CVE-2022-26112.osv.json)
+CVE-2022-26112 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-26112) [\[CVE json\]](./CVE-2022-26112.cve.json) [\[OSV json\]](./CVE-2022-26112.osv.json)
 
 
 
@@ -92,7 +92,7 @@ In 0.10.0 or older versions of Apache Pinot, Pinot query endpoint and realtime i
 
 ## Pinot segment push endpoint has a vulnerability in unprotected environments ## { #CVE-2022-23974 }
 
-CVE-2022-23974 [\[CVE json\]](./CVE-2022-23974.cve.json) [\[OSV json\]](./CVE-2022-23974.osv.json)
+CVE-2022-23974 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-23974) [\[CVE json\]](./CVE-2022-23974.cve.json) [\[OSV json\]](./CVE-2022-23974.osv.json)
 
 
 

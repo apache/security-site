@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## SQL injection via maliciously crafted identifiers ## { #CVE-2025-62228 }
 
-CVE-2025-62228 [\[CVE json\]](./CVE-2025-62228.cve.json) [\[OSV json\]](./CVE-2025-62228.osv.json)
+CVE-2025-62228 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-62228) [\[CVE json\]](./CVE-2025-62228.cve.json) [\[OSV json\]](./CVE-2025-62228.osv.json)
 
 
 
@@ -45,7 +45,7 @@ _Last updated: 2025-10-09T13:15:41.457Z_
 
 ## Apache Flink Stateful Functions allowed HTTP header injection due to Improper Neutralization of CRLF Sequences ## { #CVE-2023-41834 }
 
-CVE-2023-41834 [\[CVE json\]](./CVE-2023-41834.cve.json) [\[OSV json\]](./CVE-2023-41834.osv.json)
+CVE-2023-41834 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-41834) [\[CVE json\]](./CVE-2023-41834.cve.json) [\[OSV json\]](./CVE-2023-41834.osv.json)
 
 
 
@@ -70,7 +70,7 @@ Improper Neutralization of CRLF Sequences in HTTP Headers in Apache Flink Statef
 
 ## Apache Flink directory traversal attack: reading remote files through the REST API ## { #CVE-2020-17519 }
 
-CVE-2020-17519 [\[CVE json\]](./CVE-2020-17519.cve.json) [\[OSV json\]](./CVE-2020-17519.osv.json)
+CVE-2020-17519 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-17519) [\[CVE json\]](./CVE-2020-17519.cve.json) [\[OSV json\]](./CVE-2020-17519.osv.json)
 
 
 
@@ -96,7 +96,7 @@ All users should upgrade to Flink 1.11.3 or 1.12.0 if their Flink instance(s) ar
 
 ## Apache Flink directory traversal attack: remote file writing through the REST API ## { #CVE-2020-17518 }
 
-CVE-2020-17518 [\[CVE json\]](./CVE-2020-17518.cve.json) [\[OSV json\]](./CVE-2020-17518.osv.json)
+CVE-2020-17518 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-17518) [\[CVE json\]](./CVE-2020-17518.cve.json) [\[OSV json\]](./CVE-2020-17518.osv.json)
 
 
 

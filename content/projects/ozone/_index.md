@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Improper authentication when generating S3 secrets ## { #CVE-2024-45106 }
 
-CVE-2024-45106 [\[CVE json\]](./CVE-2024-45106.cve.json) [\[OSV json\]](./CVE-2024-45106.osv.json)
+CVE-2024-45106 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45106) [\[CVE json\]](./CVE-2024-45106.cve.json) [\[OSV json\]](./CVE-2024-45106.osv.json)
 
 
 
@@ -41,7 +41,7 @@ Improper authentication of an HTTP endpoint in the S3 Gateway of Apache Ozone 1.
 
 ## Missing mutual TLS authentication in one of the service internal Ozone Storage Container Manager endpoints ## { #CVE-2023-39196 }
 
-CVE-2023-39196 [\[CVE json\]](./CVE-2023-39196.cve.json) [\[OSV json\]](./CVE-2023-39196.osv.json)
+CVE-2023-39196 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-39196) [\[CVE json\]](./CVE-2023-39196.cve.json) [\[OSV json\]](./CVE-2023-39196.osv.json)
 
 
 
@@ -62,7 +62,7 @@ Improper Authentication vulnerability in Apache Ozone.<br><br>The vulnerability 
 
 ## Unauthenticated access to Ozone Recon HTTP endpoints ## { #CVE-2021-41532 }
 
-CVE-2021-41532 [\[CVE json\]](./CVE-2021-41532.cve.json) [\[OSV json\]](./CVE-2021-41532.osv.json)
+CVE-2021-41532 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-41532) [\[CVE json\]](./CVE-2021-41532.cve.json) [\[OSV json\]](./CVE-2021-41532.osv.json)
 
 
 
@@ -87,7 +87,7 @@ In Apache Ozone before 1.2.0, Recon HTTP endpoints provide access to OM, SCM and
 
 ## Owners of the S3 tokens are not validated ## { #CVE-2021-39236 }
 
-CVE-2021-39236 [\[CVE json\]](./CVE-2021-39236.cve.json) [\[OSV json\]](./CVE-2021-39236.osv.json)
+CVE-2021-39236 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-39236) [\[CVE json\]](./CVE-2021-39236.cve.json) [\[OSV json\]](./CVE-2021-39236.osv.json)
 
 
 
@@ -112,7 +112,7 @@ In Apache Ozone before 1.2.0, Authenticated users with valid Ozone S3 credential
 
 ## Access mode of block tokens are not enforced ## { #CVE-2021-39235 }
 
-CVE-2021-39235 [\[CVE json\]](./CVE-2021-39235.cve.json) [\[OSV json\]](./CVE-2021-39235.osv.json)
+CVE-2021-39235 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-39235) [\[CVE json\]](./CVE-2021-39235.cve.json) [\[OSV json\]](./CVE-2021-39235.osv.json)
 
 
 
@@ -137,7 +137,7 @@ In Apache Ozone before 1.2.0, Ozone Datanode doesn't check the access mode param
 
 ## Raw block data can be read bypassing ACL/authorization ## { #CVE-2021-39234 }
 
-CVE-2021-39234 [\[CVE json\]](./CVE-2021-39234.cve.json) [\[OSV json\]](./CVE-2021-39234.osv.json)
+CVE-2021-39234 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-39234) [\[CVE json\]](./CVE-2021-39234.cve.json) [\[OSV json\]](./CVE-2021-39234.osv.json)
 
 
 
@@ -162,7 +162,7 @@ In Apache Ozone versions prior to 1.2.0, Authenticated users knowing the ID of a
 
 ## Container-related datanode operations can be called without authorization ## { #CVE-2021-39233 }
 
-CVE-2021-39233 [\[CVE json\]](./CVE-2021-39233.cve.json) [\[OSV json\]](./CVE-2021-39233.osv.json)
+CVE-2021-39233 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-39233) [\[CVE json\]](./CVE-2021-39233.cve.json) [\[OSV json\]](./CVE-2021-39233.osv.json)
 
 
 
@@ -187,7 +187,7 @@ In Apache Ozone versions prior to 1.2.0, Container related Datanode requests of 
 
 ## Missing admin check for SCM related admin commands ## { #CVE-2021-39232 }
 
-CVE-2021-39232 [\[CVE json\]](./CVE-2021-39232.cve.json) [\[OSV json\]](./CVE-2021-39232.osv.json)
+CVE-2021-39232 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-39232) [\[CVE json\]](./CVE-2021-39232.cve.json) [\[OSV json\]](./CVE-2021-39232.osv.json)
 
 
 
@@ -212,7 +212,7 @@ In Apache Ozone versions prior to 1.2.0, certain admin related SCM commands can 
 
 ## Missing authentication/authorization on internal RPC endpoints ## { #CVE-2021-39231 }
 
-CVE-2021-39231 [\[CVE json\]](./CVE-2021-39231.cve.json) [\[OSV json\]](./CVE-2021-39231.osv.json)
+CVE-2021-39231 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-39231) [\[CVE json\]](./CVE-2021-39231.cve.json) [\[OSV json\]](./CVE-2021-39231.osv.json)
 
 
 
@@ -237,7 +237,7 @@ In Apache Ozone versions prior to 1.2.0, Various internal server-to-server RPC e
 
 ## Original block tokens are persisted and can be retrieved ## { #CVE-2021-36372 }
 
-CVE-2021-36372 [\[CVE json\]](./CVE-2021-36372.cve.json) [\[OSV json\]](./CVE-2021-36372.osv.json)
+CVE-2021-36372 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-36372) [\[CVE json\]](./CVE-2021-36372.cve.json) [\[OSV json\]](./CVE-2021-36372.osv.json)
 
 
 
@@ -262,7 +262,7 @@ In Apache Ozone versions prior to 1.2.0, Initially generated block tokens are pe
 
 ## Ozone S3 Gateway allows bucket and key access to non authenticated users  ## { #CVE-2020-17517 }
 
-CVE-2020-17517 [\[CVE json\]](./CVE-2020-17517.cve.json) [\[OSV json\]](./CVE-2020-17517.osv.json)
+CVE-2020-17517 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-17517) [\[CVE json\]](./CVE-2020-17517.cve.json) [\[OSV json\]](./CVE-2020-17517.osv.json)
 
 
 

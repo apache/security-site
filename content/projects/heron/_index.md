@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## CRLF log injection ## { #CVE-2021-42010 }
 
-CVE-2021-42010 [\[CVE json\]](./CVE-2021-42010.cve.json) [\[OSV json\]](./CVE-2021-42010.osv.json)
+CVE-2021-42010 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-42010) [\[CVE json\]](./CVE-2021-42010.cve.json) [\[OSV json\]](./CVE-2021-42010.osv.json)
 
 
 

@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Decanter log-socket collector has deserialization vulnerability ## { #CVE-2026-24656 }
 
-CVE-2026-24656 [\[CVE json\]](./CVE-2026-24656.cve.json)
+CVE-2026-24656 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24656) [\[CVE json\]](./CVE-2026-24656.cve.json)
 
 _Last updated: 2026-01-26T09:41:22.803Z_
 
@@ -39,7 +39,7 @@ _Last updated: 2026-01-26T09:41:22.803Z_
 
 ## Cave SSRF and arbitrary file access ## { #CVE-2024-34365 }
 
-CVE-2024-34365 [\[CVE json\]](./CVE-2024-34365.cve.json) [\[OSV json\]](./CVE-2024-34365.osv.json)
+CVE-2024-34365 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-34365) [\[CVE json\]](./CVE-2024-34365.cve.json) [\[OSV json\]](./CVE-2024-34365.osv.json)
 
 
 
@@ -64,7 +64,7 @@ _Last updated: 2024-05-09T06:49:03.305Z_
 
 ## JDBC JAAS LDAP injection ## { #CVE-2022-40145 }
 
-CVE-2022-40145 [\[CVE json\]](./CVE-2022-40145.cve.json) [\[OSV json\]](./CVE-2022-40145.osv.json)
+CVE-2022-40145 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-40145) [\[CVE json\]](./CVE-2022-40145.cve.json) [\[OSV json\]](./CVE-2022-40145.osv.json)
 
 
 
@@ -90,7 +90,7 @@ _Last updated: 2022-12-21T15:53:26.357Z_
 
 ## Path traversal flaws ## { #CVE-2022-22932 }
 
-CVE-2022-22932 [\[CVE json\]](./CVE-2022-22932.cve.json) [\[OSV json\]](./CVE-2022-22932.osv.json)
+CVE-2022-22932 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-22932) [\[CVE json\]](./CVE-2022-22932.cve.json) [\[OSV json\]](./CVE-2022-22932.osv.json)
 
 
 
@@ -128,7 +128,7 @@ JIRA Tickets: https://issues.apache.org/jira/browse/KARAF-7326
 
 ## Insecure Java Deserialization in Apache Karaf ## { #CVE-2021-41766 }
 
-CVE-2021-41766 [\[CVE json\]](./CVE-2021-41766.cve.json) [\[OSV json\]](./CVE-2021-41766.osv.json)
+CVE-2021-41766 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-41766) [\[CVE json\]](./CVE-2021-41766.cve.json) [\[OSV json\]](./CVE-2021-41766.osv.json)
 
 
 

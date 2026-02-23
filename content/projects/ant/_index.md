@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## XML External Entity vulnerability in Apache Ivy ## { #CVE-2022-46751 }
 
-CVE-2022-46751 [\[CVE json\]](./CVE-2022-46751.cve.json) [\[OSV json\]](./CVE-2022-46751.osv.json)
+CVE-2022-46751 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-46751) [\[CVE json\]](./CVE-2022-46751.cve.json) [\[OSV json\]](./CVE-2022-46751.osv.json)
 
 
 
@@ -44,7 +44,7 @@ Improper Restriction of XML External Entity Reference, XML Injection (aka Blind 
 
 ## Apache Ivy allows path traversal in the presence of a malicious repository ## { #CVE-2022-37866 }
 
-CVE-2022-37866 [\[CVE json\]](./CVE-2022-37866.cve.json) [\[OSV json\]](./CVE-2022-37866.osv.json)
+CVE-2022-37866 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-37866) [\[CVE json\]](./CVE-2022-37866.cve.json) [\[OSV json\]](./CVE-2022-37866.osv.json)
 
 
 
@@ -84,7 +84,7 @@ Users of Apache Ivy 2.0.0 to 2.5.1 should upgrade to Ivy 2.5.1.
 
 ## Apache Ivy allows creating/overwriting any file on the system ## { #CVE-2022-37865 }
 
-CVE-2022-37865 [\[CVE json\]](./CVE-2022-37865.cve.json) [\[OSV json\]](./CVE-2022-37865.osv.json)
+CVE-2022-37865 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-37865) [\[CVE json\]](./CVE-2022-37865.cve.json) [\[OSV json\]](./CVE-2022-37865.osv.json)
 
 
 
@@ -119,7 +119,7 @@ Ivy users of version 2.4.0 to 2.5.0 should upgrade to Ivy 2.5.1.
 
 ## Apache Ant ZIP, and ZIP based, archive denial of service vulnerability ## { #CVE-2021-36374 }
 
-CVE-2021-36374 [\[CVE json\]](./CVE-2021-36374.cve.json) [\[OSV json\]](./CVE-2021-36374.osv.json)
+CVE-2021-36374 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-36374) [\[CVE json\]](./CVE-2021-36374.cve.json) [\[OSV json\]](./CVE-2021-36374.osv.json)
 
 
 
@@ -149,7 +149,7 @@ Commonly used derived formats from ZIP archives are for instance JAR files and m
 
 ## Apache Ant TAR archive denial of service vulnerability ## { #CVE-2021-36373 }
 
-CVE-2021-36373 [\[CVE json\]](./CVE-2021-36373.cve.json)
+CVE-2021-36373 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-36373) [\[CVE json\]](./CVE-2021-36373.cve.json)
 
 _Last updated: 2021-07-14T06:08:32.303Z_
 

@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Portals Jetspeed XSS, CSRF, SSRF, and XXE issues ## { #CVE-2022-32533 }
 
-CVE-2022-32533 [\[CVE json\]](./CVE-2022-32533.cve.json) [\[OSV json\]](./CVE-2022-32533.osv.json)
+CVE-2022-32533 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-32533) [\[CVE json\]](./CVE-2022-32533.cve.json) [\[OSV json\]](./CVE-2022-32533.osv.json)
 
 
 
@@ -43,7 +43,7 @@ NOTE: Apache Jetspeed is a dormant project of Apache Portals and no updates will
 
 ## XSS vulnerability in the MVCBean JSP portlet maven archetype ## { #CVE-2021-36739 }
 
-CVE-2021-36739 [\[CVE json\]](./CVE-2021-36739.cve.json) [\[OSV json\]](./CVE-2021-36739.osv.json)
+CVE-2021-36739 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-36739) [\[CVE json\]](./CVE-2021-36739.cve.json) [\[OSV json\]](./CVE-2021-36739.osv.json)
 
 
 
@@ -64,7 +64,7 @@ The "first name" and "last name" fields of the Apache Pluto 3.1.0 MVCBean JSP po
 
 ## XSS vulnerability in the JSP version of the Apache Pluto Applicant MVCBean CDI portlet ## { #CVE-2021-36738 }
 
-CVE-2021-36738 [\[CVE json\]](./CVE-2021-36738.cve.json) [\[OSV json\]](./CVE-2021-36738.osv.json)
+CVE-2021-36738 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-36738) [\[CVE json\]](./CVE-2021-36738.cve.json) [\[OSV json\]](./CVE-2021-36738.osv.json)
 
 
 
@@ -85,7 +85,7 @@ The input fields in the JSP version of the Apache Pluto Applicant MVCBean CDI po
 
 ## XSS in V3 Demo Portlet ## { #CVE-2021-36737 }
 
-CVE-2021-36737 [\[CVE json\]](./CVE-2021-36737.cve.json) [\[OSV json\]](./CVE-2021-36737.osv.json)
+CVE-2021-36737 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-36737) [\[CVE json\]](./CVE-2021-36737.cve.json) [\[OSV json\]](./CVE-2021-36737.osv.json)
 
 
 

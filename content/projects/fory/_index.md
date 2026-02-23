@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Python RCE via unguarded pickle fallback serializer in pyfory ## { #CVE-2025-61622 }
 
-CVE-2025-61622 [\[CVE json\]](./CVE-2025-61622.cve.json) [\[OSV json\]](./CVE-2025-61622.osv.json)
+CVE-2025-61622 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-61622) [\[CVE json\]](./CVE-2025-61622.cve.json) [\[OSV json\]](./CVE-2025-61622.osv.json)
 
 
 
@@ -41,7 +41,7 @@ _Last updated: 2025-10-04T14:58:38.087Z_
 
 ## Denial of Service (DoS) due to Deserialization of Untrusted malicious large Data ## { #CVE-2025-59328 }
 
-CVE-2025-59328 [\[CVE json\]](./CVE-2025-59328.cve.json) [\[OSV json\]](./CVE-2025-59328.osv.json)
+CVE-2025-59328 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-59328) [\[CVE json\]](./CVE-2025-59328.cve.json) [\[OSV json\]](./CVE-2025-59328.osv.json)
 
 
 

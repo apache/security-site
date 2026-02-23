@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## LDAP Injection Vulnerability in Apache Kerby ## { #CVE-2023-25613 }
 
-CVE-2023-25613 [\[CVE json\]](./CVE-2023-25613.cve.json) [\[OSV json\]](./CVE-2023-25613.osv.json)
+CVE-2023-25613 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-25613) [\[CVE json\]](./CVE-2023-25613.cve.json) [\[OSV json\]](./CVE-2023-25613.osv.json)
 
 
 
@@ -40,7 +40,7 @@ An LDAP Injection vulnerability exists in the&nbsp;LdapIdentityBackend of Apache
 
 ## StartTLS and SASL confidentiality protection bypass ## { #CVE-2021-33900 }
 
-CVE-2021-33900 [\[CVE json\]](./CVE-2021-33900.cve.json) [\[OSV json\]](./CVE-2021-33900.osv.json)
+CVE-2021-33900 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-33900) [\[CVE json\]](./CVE-2021-33900.cve.json) [\[OSV json\]](./CVE-2021-33900.osv.json)
 
 
 

@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Possible RCE when deserializing incoming messages by the server node ## { #CVE-2024-52577 }
 
-CVE-2024-52577 [\[CVE json\]](./CVE-2024-52577.cve.json) [\[OSV json\]](./CVE-2024-52577.osv.json)
+CVE-2024-52577 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-52577) [\[CVE json\]](./CVE-2024-52577.cve.json) [\[OSV json\]](./CVE-2024-52577.osv.json)
 
 
 

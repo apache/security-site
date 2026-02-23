@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## basic-auth logs plaintext credentials at info level ## { #CVE-2025-62232 }
 
-CVE-2025-62232 [\[CVE json\]](./CVE-2025-62232.cve.json) [\[OSV json\]](./CVE-2025-62232.osv.json)
+CVE-2025-62232 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-62232) [\[CVE json\]](./CVE-2025-62232.cve.json) [\[OSV json\]](./CVE-2025-62232.osv.json)
 
 
 
@@ -40,7 +40,7 @@ Sensitive data exposure via logging in basic-auth leads to plaintext usernames a
 
 ## improper validation of issuer from introspection discovery url in plugin openid-connect ## { #CVE-2025-46647 }
 
-CVE-2025-46647 [\[CVE json\]](./CVE-2025-46647.cve.json) [\[OSV json\]](./CVE-2025-46647.osv.json)
+CVE-2025-46647 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-46647) [\[CVE json\]](./CVE-2025-46647.cve.json) [\[OSV json\]](./CVE-2025-46647.osv.json)
 
 
 
@@ -65,7 +65,7 @@ _Last updated: 2025-07-02T01:08:54.683Z_
 
 ## Local listening file permissions in APISIX plugin runner allow a local attacker to elevate privileges ## { #CVE-2025-27446 }
 
-CVE-2025-27446 [\[CVE json\]](./CVE-2025-27446.cve.json) [\[OSV json\]](./CVE-2025-27446.osv.json)
+CVE-2025-27446 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27446) [\[CVE json\]](./CVE-2025-27446.cve.json) [\[OSV json\]](./CVE-2025-27446.osv.json)
 
 
 
@@ -90,7 +90,7 @@ _Last updated: 2025-07-06T03:41:43.412Z_
 
 ## Forward-Auth Request Smuggling ## { #CVE-2024-32638 }
 
-CVE-2024-32638 [\[CVE json\]](./CVE-2024-32638.cve.json) [\[OSV json\]](./CVE-2024-32638.osv.json)
+CVE-2024-32638 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-32638) [\[CVE json\]](./CVE-2024-32638.cve.json) [\[OSV json\]](./CVE-2024-32638.osv.json)
 
 
 
@@ -115,7 +115,7 @@ _Last updated: 2025-10-15T03:54:43.662Z_
 
 ## apisix/jwt-auth may leak secrets in error response ## { #CVE-2022-29266 }
 
-CVE-2022-29266 [\[CVE json\]](./CVE-2022-29266.cve.json) [\[OSV json\]](./CVE-2022-29266.osv.json)
+CVE-2022-29266 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-29266) [\[CVE json\]](./CVE-2022-29266.cve.json) [\[OSV json\]](./CVE-2022-29266.osv.json)
 
 
 
@@ -140,7 +140,7 @@ In Apache APISIX before 2.13.1, the jwt-auth plugin has a security issue that le
 
 ## Apache APISIX: the body_schema check in request-validation plugin can be bypassed ## { #CVE-2022-25757 }
 
-CVE-2022-25757 [\[CVE json\]](./CVE-2022-25757.cve.json) [\[OSV json\]](./CVE-2022-25757.osv.json)
+CVE-2022-25757 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-25757) [\[CVE json\]](./CVE-2022-25757.cve.json) [\[OSV json\]](./CVE-2022-25757.osv.json)
 
 
 
@@ -172,7 +172,7 @@ The fix in APISIX is to re-encode the validated JSON input back into the request
 
 ## apisix/batch-requests plugin allows overwriting the X-REAL-IP header ## { #CVE-2022-24112 }
 
-CVE-2022-24112 [\[CVE json\]](./CVE-2022-24112.cve.json) [\[OSV json\]](./CVE-2022-24112.osv.json)
+CVE-2022-24112 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-24112) [\[CVE json\]](./CVE-2022-24112.cve.json) [\[OSV json\]](./CVE-2022-24112.osv.json)
 
 
 
@@ -203,7 +203,7 @@ There is a check in the batch-requests plugin which overrides the client IP with
 
 ## security vulnerability on unauthorized access. ## { #CVE-2021-45232 }
 
-CVE-2021-45232 [\[CVE json\]](./CVE-2021-45232.cve.json) [\[OSV json\]](./CVE-2021-45232.osv.json)
+CVE-2021-45232 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-45232) [\[CVE json\]](./CVE-2021-45232.cve.json) [\[OSV json\]](./CVE-2021-45232.osv.json)
 
 
 
@@ -231,7 +231,7 @@ In Apache APISIX Dashboard before 2.10.1, the Manager API uses two frameworks an
 
 ## Path traversal in request_uri variable ## { #CVE-2021-43557 }
 
-CVE-2021-43557 [\[CVE json\]](./CVE-2021-43557.cve.json) [\[OSV json\]](./CVE-2021-43557.osv.json)
+CVE-2021-43557 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-43557) [\[CVE json\]](./CVE-2021-43557.cve.json) [\[OSV json\]](./CVE-2021-43557.osv.json)
 
 
 
@@ -255,7 +255,7 @@ Some other plugins also have the same issue. And it may affect the developer's c
 
 ## Bypass network access control ## { #CVE-2021-33190 }
 
-CVE-2021-33190 [\[CVE json\]](./CVE-2021-33190.cve.json) [\[OSV json\]](./CVE-2021-33190.osv.json)
+CVE-2021-33190 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-33190) [\[CVE json\]](./CVE-2021-33190.cve.json) [\[OSV json\]](./CVE-2021-33190.osv.json)
 
 
 

@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## User with MODIFY permission on ALL KEYSPACES can escalate privileges to superuser via unsafe actions (4.0.16 only) ## { #CVE-2025-26467 }
 
-CVE-2025-26467 [\[CVE json\]](./CVE-2025-26467.cve.json) [\[OSV json\]](./CVE-2025-26467.osv.json)
+CVE-2025-26467 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-26467) [\[CVE json\]](./CVE-2025-26467.cve.json) [\[OSV json\]](./CVE-2025-26467.osv.json)
 
 
 
@@ -47,7 +47,7 @@ _Last updated: 2025-08-25T13:14:47.609Z_
 
 ## CassandraNetworkAuthorizer and CassandraCIDRAuthorizer can be bypassed allowing access to different network regions ## { #CVE-2025-24860 }
 
-CVE-2025-24860 [\[CVE json\]](./CVE-2025-24860.cve.json) [\[OSV json\]](./CVE-2025-24860.osv.json)
+CVE-2025-24860 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-24860) [\[CVE json\]](./CVE-2025-24860.cve.json) [\[OSV json\]](./CVE-2025-24860.osv.json)
 
 
 
@@ -74,7 +74,7 @@ _Last updated: 2025-02-04T10:17:53.494Z_
 
 ## User with MODIFY permission on ALL KEYSPACES can escalate privileges to superuser via unsafe actions ## { #CVE-2025-23015 }
 
-CVE-2025-23015 [\[CVE json\]](./CVE-2025-23015.cve.json) [\[OSV json\]](./CVE-2025-23015.osv.json)
+CVE-2025-23015 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-23015) [\[CVE json\]](./CVE-2025-23015.cve.json) [\[OSV json\]](./CVE-2025-23015.osv.json)
 
 
 
@@ -112,7 +112,7 @@ Privilege Defined With Unsafe Actions vulnerability in Apache Cassandra. An user
 
 ## unrestricted deserialization of JMX authentication credentials ## { #CVE-2024-27137 }
 
-CVE-2024-27137 [\[CVE json\]](./CVE-2024-27137.cve.json) [\[OSV json\]](./CVE-2024-27137.osv.json)
+CVE-2024-27137 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27137) [\[CVE json\]](./CVE-2024-27137.cve.json) [\[OSV json\]](./CVE-2024-27137.osv.json)
 
 
 
@@ -140,7 +140,7 @@ unauthorized operations.<br></p><p>This is same vulnerability that CVE-2020-1394
 
 ## Privilege escalation when enabling FQL/Audit logs ## { #CVE-2023-30601 }
 
-CVE-2023-30601 [\[CVE json\]](./CVE-2023-30601.cve.json) [\[OSV json\]](./CVE-2023-30601.osv.json)
+CVE-2023-30601 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-30601) [\[CVE json\]](./CVE-2023-30601.cve.json) [\[OSV json\]](./CVE-2023-30601.osv.json)
 
 
 
@@ -166,7 +166,7 @@ Privilege escalation when enabling FQL/Audit logs allows user with JMX access to
 
 ## Remote code execution for scripted UDFs ## { #CVE-2021-44521 }
 
-CVE-2021-44521 [\[CVE json\]](./CVE-2021-44521.cve.json) [\[OSV json\]](./CVE-2021-44521.osv.json)
+CVE-2021-44521 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-44521) [\[CVE json\]](./CVE-2021-44521.cve.json) [\[OSV json\]](./CVE-2021-44521.osv.json)
 
 
 

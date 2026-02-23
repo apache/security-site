@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Prevent inefficient internal conversion from BigDecimal at large scale ## { #CVE-2023-33008 }
 
-CVE-2023-33008 [\[CVE json\]](./CVE-2023-33008.cve.json) [\[OSV json\]](./CVE-2023-33008.osv.json)
+CVE-2023-33008 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-33008) [\[CVE json\]](./CVE-2023-33008.cve.json) [\[OSV json\]](./CVE-2023-33008.osv.json)
 
 
 

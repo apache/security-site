@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache James: denial of service through JMAP HTML to text conversion ## { #CVE-2024-45626 }
 
-CVE-2024-45626 [\[CVE json\]](./CVE-2024-45626.cve.json) [\[OSV json\]](./CVE-2024-45626.osv.json)
+CVE-2024-45626 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45626) [\[CVE json\]](./CVE-2024-45626.cve.json) [\[OSV json\]](./CVE-2024-45626.osv.json)
 
 
 
@@ -42,7 +42,7 @@ Apache James server JMAP HTML to text plain implementation in versions below 3.8
 
 ## Apache James: denial of service through the use of IMAP literals ## { #CVE-2024-37358 }
 
-CVE-2024-37358 [\[CVE json\]](./CVE-2024-37358.cve.json) [\[OSV json\]](./CVE-2024-37358.osv.json)
+CVE-2024-37358 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-37358) [\[CVE json\]](./CVE-2024-37358.cve.json) [\[OSV json\]](./CVE-2024-37358.osv.json)
 
 
 
@@ -69,7 +69,7 @@ Similarly to CVE-2024-34055, Apache James is vulnerable to denial of service thr
 
 ## Mime4J DOM header injection ## { #CVE-2024-21742 }
 
-CVE-2024-21742 [\[CVE json\]](./CVE-2024-21742.cve.json) [\[OSV json\]](./CVE-2024-21742.osv.json)
+CVE-2024-21742 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-21742) [\[CVE json\]](./CVE-2024-21742.cve.json) [\[OSV json\]](./CVE-2024-21742.osv.json)
 
 
 
@@ -94,7 +94,7 @@ Improper input validation allows for header injection in MIME4J library when usi
 
 ## SMTP smuggling in Apache James ## { #CVE-2023-51747 }
 
-CVE-2023-51747 [\[CVE json\]](./CVE-2023-51747.cve.json) [\[OSV json\]](./CVE-2023-51747.osv.json)
+CVE-2023-51747 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-51747) [\[CVE json\]](./CVE-2023-51747.cve.json) [\[OSV json\]](./CVE-2023-51747.osv.json)
 
 
 
@@ -122,7 +122,7 @@ Apache James prior to versions 3.8.1 and 3.7.5 is vulnerable to SMTP smuggling.<
 
 ## Privilege escalation via JMX pre-authentication deserialisation ## { #CVE-2023-51518 }
 
-CVE-2023-51518 [\[CVE json\]](./CVE-2023-51518.cve.json) [\[OSV json\]](./CVE-2023-51518.osv.json)
+CVE-2023-51518 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-51518) [\[CVE json\]](./CVE-2023-51518.cve.json) [\[OSV json\]](./CVE-2023-51518.osv.json)
 
 
 
@@ -149,7 +149,7 @@ Apache James prior to version 3.7.5 and 3.8.0 exposes a JMX endpoint on localhos
 
 ## Privilege escalation through unauthenticated JMX ## { #CVE-2023-26269 }
 
-CVE-2023-26269 [\[CVE json\]](./CVE-2023-26269.cve.json) [\[OSV json\]](./CVE-2023-26269.osv.json)
+CVE-2023-26269 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-26269) [\[CVE json\]](./CVE-2023-26269.cve.json) [\[OSV json\]](./CVE-2023-26269.osv.json)
 
 
 
@@ -175,7 +175,7 @@ malicious local user.</div><div>Administrators are advised to disable JMX, or se
 
 ## Temporary File Information Disclosure ## { #CVE-2022-45935 }
 
-CVE-2022-45935 [\[CVE json\]](./CVE-2022-45935.cve.json) [\[OSV json\]](./CVE-2022-45935.osv.json)
+CVE-2022-45935 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-45935) [\[CVE json\]](./CVE-2022-45935.cve.json) [\[OSV json\]](./CVE-2022-45935.osv.json)
 
 
 
@@ -200,7 +200,7 @@ Usage of temporary files with insecure permissions by the Apache James server al
 
 ## Temporary File Information Disclosure in MIME4J TempFileStorageProvider ## { #CVE-2022-45787 }
 
-CVE-2022-45787 [\[CVE json\]](./CVE-2022-45787.cve.json) [\[OSV json\]](./CVE-2022-45787.osv.json)
+CVE-2022-45787 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-45787) [\[CVE json\]](./CVE-2022-45787.cve.json) [\[OSV json\]](./CVE-2022-45787.osv.json)
 
 
 
@@ -225,7 +225,7 @@ Unproper laxist permissions on the temporary files used by MIME4J TempFileStorag
 
 ## STARTTLS command injection in Apache JAMES ## { #CVE-2022-28220 }
 
-CVE-2022-28220 [\[CVE json\]](./CVE-2022-28220.cve.json) [\[OSV json\]](./CVE-2022-28220.osv.json)
+CVE-2022-28220 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-28220) [\[CVE json\]](./CVE-2022-28220.cve.json) [\[OSV json\]](./CVE-2022-28220.osv.json)
 
 
 
@@ -254,7 +254,7 @@ Fix of CVE-2021-38542, which solved similar problem fron Apache James 3.6.1, is 
 
 ## Path traversal in Apache James 3.6.1 ## { #CVE-2022-22931 }
 
-CVE-2022-22931 [\[CVE json\]](./CVE-2022-22931.cve.json) [\[OSV json\]](./CVE-2022-22931.osv.json)
+CVE-2022-22931 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-22931) [\[CVE json\]](./CVE-2022-22931.cve.json) [\[OSV json\]](./CVE-2022-22931.osv.json)
 
 
 
@@ -286,7 +286,7 @@ This enables a user to access other users data stores (limited to user names bei
 
 ## Sieve file storage vulnerable to path traversal attacks ## { #CVE-2021-40525 }
 
-CVE-2021-40525 [\[CVE json\]](./CVE-2021-40525.cve.json) [\[OSV json\]](./CVE-2021-40525.osv.json)
+CVE-2021-40525 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-40525) [\[CVE json\]](./CVE-2021-40525.cve.json) [\[OSV json\]](./CVE-2021-40525.osv.json)
 
 
 
@@ -313,7 +313,7 @@ Distributed and Cassandra based products are also not impacted.
 
 ## Apache James IMAP parsing Denial Of Service ## { #CVE-2021-40111 }
 
-CVE-2021-40111 [\[CVE json\]](./CVE-2021-40111.cve.json) [\[OSV json\]](./CVE-2021-40111.osv.json)
+CVE-2021-40111 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-40111) [\[CVE json\]](./CVE-2021-40111.cve.json) [\[OSV json\]](./CVE-2021-40111.osv.json)
 
 
 
@@ -340,7 +340,7 @@ This vulnerability had been patched in Apache James 3.6.1 and higher. We recomme
 
 ## Apache James IMAP vulnerable to a ReDoS ## { #CVE-2021-40110 }
 
-CVE-2021-40110 [\[CVE json\]](./CVE-2021-40110.cve.json) [\[OSV json\]](./CVE-2021-40110.osv.json)
+CVE-2021-40110 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-40110) [\[CVE json\]](./CVE-2021-40110.cve.json) [\[OSV json\]](./CVE-2021-40110.osv.json)
 
 
 
@@ -367,7 +367,7 @@ We recommend upgrading to Apache James 3.6.1 or higher , which enforce the use o
 
 ## Apache James vulnerable to STARTTLS command injection (IMAP and POP3) ## { #CVE-2021-38542 }
 
-CVE-2021-38542 [\[CVE json\]](./CVE-2021-38542.cve.json) [\[OSV json\]](./CVE-2021-38542.osv.json)
+CVE-2021-38542 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-38542) [\[CVE json\]](./CVE-2021-38542.cve.json) [\[OSV json\]](./CVE-2021-38542.osv.json)
 
 
 

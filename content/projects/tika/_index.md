@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Update to CVE-2025-54988 to expand scope of artifacts affected ## { #CVE-2025-66516 }
 
-CVE-2025-66516 [\[CVE json\]](./CVE-2025-66516.cve.json) [\[OSV json\]](./CVE-2025-66516.osv.json)
+CVE-2025-66516 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66516) [\[CVE json\]](./CVE-2025-66516.cve.json) [\[OSV json\]](./CVE-2025-66516.osv.json)
 
 
 
@@ -39,7 +39,7 @@ Critical XXE in Apache Tika tika-core (1.13-3.2.1), tika-pdf-module (2.0.0-3.2.1
 
 ## XXE vulnerability in PDFParser's handling of XFA ## { #CVE-2025-54988 }
 
-CVE-2025-54988 [\[CVE json\]](./CVE-2025-54988.cve.json) [\[OSV json\]](./CVE-2025-54988.osv.json)
+CVE-2025-54988 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-54988) [\[CVE json\]](./CVE-2025-54988.cve.json) [\[OSV json\]](./CVE-2025-54988.osv.json)
 
 
 
@@ -64,7 +64,7 @@ Critical XXE in Apache Tika (tika-parser-pdf-module) in Apache Tika 1.13 through
 
 ## Incomplete fix and new regex DoS in StandardsExtractingContentHandler ## { #CVE-2022-33879 }
 
-CVE-2022-33879 [\[CVE json\]](./CVE-2022-33879.cve.json) [\[OSV json\]](./CVE-2022-33879.osv.json)
+CVE-2022-33879 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-33879) [\[CVE json\]](./CVE-2022-33879.cve.json) [\[OSV json\]](./CVE-2022-33879.osv.json)
 
 
 
@@ -89,7 +89,7 @@ The initial fixes in CVE-2022-30126 and CVE-2022-30973 for regexes in the Standa
 
 ## Missing fix for CVE-2022-30126 in 1.28.2 ## { #CVE-2022-30973 }
 
-CVE-2022-30973 [\[CVE json\]](./CVE-2022-30973.cve.json) [\[OSV json\]](./CVE-2022-30973.osv.json)
+CVE-2022-30973 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-30973) [\[CVE json\]](./CVE-2022-30973.cve.json) [\[OSV json\]](./CVE-2022-30973.osv.json)
 
 
 
@@ -114,7 +114,7 @@ We failed to apply the fix for CVE-2022-30126 to the 1.x branch in the 1.28.2 re
 
 ## Apache Tika Regular Expression Denial of Service in Standards Extractor ## { #CVE-2022-30126 }
 
-CVE-2022-30126 [\[CVE json\]](./CVE-2022-30126.cve.json) [\[OSV json\]](./CVE-2022-30126.osv.json)
+CVE-2022-30126 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-30126) [\[CVE json\]](./CVE-2022-30126.cve.json) [\[OSV json\]](./CVE-2022-30126.osv.json)
 
 
 
@@ -139,7 +139,7 @@ In Apache Tika, a regular expression in our StandardsText class, used by the Sta
 
 ## Apache Tika BPGParser Memory Usage DoS ## { #CVE-2022-25169 }
 
-CVE-2022-25169 [\[CVE json\]](./CVE-2022-25169.cve.json) [\[OSV json\]](./CVE-2022-25169.osv.json)
+CVE-2022-25169 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-25169) [\[CVE json\]](./CVE-2022-25169.cve.json) [\[OSV json\]](./CVE-2022-25169.osv.json)
 
 
 
@@ -161,7 +161,7 @@ The BPG parser in versions of Apache Tika before 1.28.2 and 2.4.0 may allocate a
 
 ## Infinite loop in Apache Tika's MP3 parser ## { #CVE-2021-28657 }
 
-CVE-2021-28657 [\[CVE json\]](./CVE-2021-28657.cve.json) [\[OSV json\]](./CVE-2021-28657.osv.json)
+CVE-2021-28657 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-28657) [\[CVE json\]](./CVE-2021-28657.cve.json) [\[OSV json\]](./CVE-2021-28657.osv.json)
 
 
 

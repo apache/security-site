@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Deserialization of untrusted data in the Hessian Component of Apache Cayenne 4.1 with older Java versions ## { #CVE-2022-24289 }
 
-CVE-2022-24289 [\[CVE json\]](./CVE-2022-24289.cve.json) [\[OSV json\]](./CVE-2022-24289.osv.json)
+CVE-2022-24289 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-24289) [\[CVE json\]](./CVE-2022-24289.cve.json) [\[OSV json\]](./CVE-2022-24289.osv.json)
 
 
 

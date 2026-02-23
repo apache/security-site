@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Command injection leading to RCE ## { #CVE-2016-15057 }
 
-CVE-2016-15057 [\[CVE json\]](./CVE-2016-15057.cve.json) [\[OSV json\]](./CVE-2016-15057.osv.json)
+CVE-2016-15057 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2016-15057) [\[CVE json\]](./CVE-2016-15057.cve.json) [\[OSV json\]](./CVE-2016-15057.osv.json)
 
 
 

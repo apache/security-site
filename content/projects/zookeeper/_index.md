@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Insufficient Permission Check in AdminServer Snapshot/Restore Commands ## { #CVE-2025-58457 }
 
-CVE-2025-58457 [\[CVE json\]](./CVE-2025-58457.cve.json) [\[OSV json\]](./CVE-2025-58457.osv.json)
+CVE-2025-58457 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-58457) [\[CVE json\]](./CVE-2025-58457.cve.json) [\[OSV json\]](./CVE-2025-58457.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2025-09-24T09:29:42.132Z_
 
 ## Authentication bypass with IP-based authentication in Admin Server ## { #CVE-2024-51504 }
 
-CVE-2024-51504 [\[CVE json\]](./CVE-2024-51504.cve.json) [\[OSV json\]](./CVE-2024-51504.osv.json)
+CVE-2024-51504 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-51504) [\[CVE json\]](./CVE-2024-51504.cve.json) [\[OSV json\]](./CVE-2024-51504.osv.json)
 
 
 
@@ -66,7 +66,7 @@ When using IPAuthenticationProvider in ZooKeeper Admin Server there is a possibi
 
 ## Information disclosure in persistent watcher handling ## { #CVE-2024-23944 }
 
-CVE-2024-23944 [\[CVE json\]](./CVE-2024-23944.cve.json) [\[OSV json\]](./CVE-2024-23944.osv.json)
+CVE-2024-23944 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-23944) [\[CVE json\]](./CVE-2024-23944.cve.json) [\[OSV json\]](./CVE-2024-23944.osv.json)
 
 
 
@@ -93,7 +93,7 @@ Information disclosure in persistent watchers handling in Apache ZooKeeper due t
 
 ## Authorization bypass in SASL Quorum Peer Authentication ## { #CVE-2023-44981 }
 
-CVE-2023-44981 [\[CVE json\]](./CVE-2023-44981.cve.json) [\[OSV json\]](./CVE-2023-44981.osv.json)
+CVE-2023-44981 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-44981) [\[CVE json\]](./CVE-2023-44981.cve.json) [\[OSV json\]](./CVE-2023-44981.osv.json)
 
 
 

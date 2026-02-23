@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Deserialization vulnerability in ShardingSphere Agent ## { #CVE-2023-28754 }
 
-CVE-2023-28754 [\[CVE json\]](./CVE-2023-28754.cve.json) [\[OSV json\]](./CVE-2023-28754.osv.json)
+CVE-2023-28754 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-28754) [\[CVE json\]](./CVE-2023-28754.cve.json) [\[OSV json\]](./CVE-2023-28754.osv.json)
 
 
 
@@ -41,7 +41,7 @@ An attacker can use SnakeYAML to deserialize java.net.URLClassLoader and make it
 
 ## MySQL authentication bypass ## { #CVE-2022-45347 }
 
-CVE-2022-45347 [\[CVE json\]](./CVE-2022-45347.cve.json) [\[OSV json\]](./CVE-2022-45347.osv.json)
+CVE-2022-45347 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-45347) [\[CVE json\]](./CVE-2022-45347.cve.json) [\[OSV json\]](./CVE-2022-45347.osv.json)
 
 
 
@@ -66,7 +66,7 @@ Apache ShardingSphere-Proxy prior to 5.3.0 when using MySQL as database backend 
 
 ## Apache ShardingSphere ElasticJob-UI allows RCE via event trace data source JDBC ## { #CVE-2022-31764 }
 
-CVE-2022-31764 [\[CVE json\]](./CVE-2022-31764.cve.json)
+CVE-2022-31764 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-31764) [\[CVE json\]](./CVE-2022-31764.cve.json)
 
 _Last updated: 2022-11-01T08:18:58.682Z_
 
@@ -82,7 +82,7 @@ The premise of this attack is that the attacker has obtained the account and pas
 
 ## Access-Token in ElasticJob UI causes password disclosure ## { #CVE-2022-22733 }
 
-CVE-2022-22733 [\[CVE json\]](./CVE-2022-22733.cve.json) [\[OSV json\]](./CVE-2022-22733.osv.json)
+CVE-2022-22733 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-22733) [\[CVE json\]](./CVE-2022-22733.cve.json) [\[OSV json\]](./CVE-2022-22733.osv.json)
 
 
 
@@ -103,7 +103,7 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ## Deserialization of Untrusted Data ## { #CVE-2021-26558 }
 
-CVE-2021-26558 [\[CVE json\]](./CVE-2021-26558.cve.json) [\[OSV json\]](./CVE-2021-26558.osv.json)
+CVE-2021-26558 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-26558) [\[CVE json\]](./CVE-2021-26558.cve.json) [\[OSV json\]](./CVE-2021-26558.osv.json)
 
 
 

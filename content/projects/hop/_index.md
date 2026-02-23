@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## ID isn't escaped when generating HTML ## { #CVE-2024-24683 }
 
-CVE-2024-24683 [\[CVE json\]](./CVE-2024-24683.cve.json) [\[OSV json\]](./CVE-2024-24683.osv.json)
+CVE-2024-24683 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-24683) [\[CVE json\]](./CVE-2024-24683.cve.json) [\[OSV json\]](./CVE-2024-24683.osv.json)
 
 
 

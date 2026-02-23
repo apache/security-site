@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## mod_dav_svn denial-of-service via control characters in paths ## { #CVE-2024-46901 }
 
-CVE-2024-46901 [\[CVE json\]](./CVE-2024-46901.cve.json) [\[OSV json\]](./CVE-2024-46901.osv.json)
+CVE-2024-46901 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-46901) [\[CVE json\]](./CVE-2024-46901.cve.json) [\[OSV json\]](./CVE-2024-46901.osv.json)
 
 
 
@@ -40,7 +40,7 @@ Insufficient validation of filenames against control characters in Apache Subver
 
 ## Command line argument injection on Windows platforms ## { #CVE-2024-45720 }
 
-CVE-2024-45720 [\[CVE json\]](./CVE-2024-45720.cve.json) [\[OSV json\]](./CVE-2024-45720.osv.json)
+CVE-2024-45720 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45720) [\[CVE json\]](./CVE-2024-45720.cve.json) [\[OSV json\]](./CVE-2024-45720.osv.json)
 
 
 
@@ -66,7 +66,7 @@ On Windows platforms, a "best fit" character encoding conversion of command line
 
 ## Apache Subversion mod_dav_svn is vulnerable to memory corruption ## { #CVE-2022-24070 }
 
-CVE-2022-24070 [\[CVE json\]](./CVE-2022-24070.cve.json) [\[OSV json\]](./CVE-2022-24070.osv.json)
+CVE-2022-24070 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-24070) [\[CVE json\]](./CVE-2022-24070.cve.json) [\[OSV json\]](./CVE-2022-24070.osv.json)
 
 
 
@@ -93,7 +93,7 @@ Subversion's mod_dav_svn is vulnerable to memory corruption.  While looking up p
 
 ## Apache Subversion SVN authz protected copyfrom paths regression ## { #CVE-2021-28544 }
 
-CVE-2021-28544 [\[CVE json\]](./CVE-2021-28544.cve.json) [\[OSV json\]](./CVE-2021-28544.osv.json)
+CVE-2021-28544 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-28544) [\[CVE json\]](./CVE-2021-28544.cve.json) [\[OSV json\]](./CVE-2021-28544.osv.json)
 
 
 
@@ -118,7 +118,7 @@ Apache Subversion SVN authz protected copyfrom paths regression  Subversion serv
 
 ## Remote unauthenticated denial-of-service in Subversion mod_authz_svn ## { #CVE-2020-17525 }
 
-CVE-2020-17525 [\[CVE json\]](./CVE-2020-17525.cve.json)
+CVE-2020-17525 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-17525) [\[CVE json\]](./CVE-2020-17525.cve.json)
 
 _Last updated: 2021-03-17T09:12:33.507Z_
 

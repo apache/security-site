@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Malicious code execution via path traversal ## { #CVE-2024-23673 }
 
-CVE-2024-23673 [\[CVE json\]](./CVE-2024-23673.cve.json) [\[OSV json\]](./CVE-2024-23673.osv.json)
+CVE-2024-23673 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-23673) [\[CVE json\]](./CVE-2024-23673.cve.json) [\[OSV json\]](./CVE-2024-23673.osv.json)
 
 
 
@@ -40,7 +40,7 @@ Users are recommended to upgrade to version 2.11.0, which fixes this issue. It i
 
 ## Requests to certain paths managed by the Apache Sling Resource Merger can lead to DoS ## { #CVE-2023-26513 }
 
-CVE-2023-26513 [\[CVE json\]](./CVE-2023-26513.cve.json) [\[OSV json\]](./CVE-2023-26513.osv.json)
+CVE-2023-26513 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-26513) [\[CVE json\]](./CVE-2023-26513.cve.json) [\[OSV json\]](./CVE-2023-26513.osv.json)
 
 
 
@@ -65,7 +65,7 @@ Excessive Iteration vulnerability in Apache Software Foundation Apache Sling Res
 
 ## Apache Sling does not allow to handle i18n content in a secure way ## { #CVE-2023-25621 }
 
-CVE-2023-25621 [\[CVE json\]](./CVE-2023-25621.cve.json) [\[OSV json\]](./CVE-2023-25621.osv.json)
+CVE-2023-25621 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-25621) [\[CVE json\]](./CVE-2023-25621.cve.json) [\[OSV json\]](./CVE-2023-25621.osv.json)
 
 
 
@@ -86,7 +86,7 @@ Privilege Escalation vulnerability in Apache Software Foundation Apache Sling.<b
 
 ## JNDI injection into Apache sling-org-apache-sling-jcr-base ## { #CVE-2023-25141 }
 
-CVE-2023-25141 [\[CVE json\]](./CVE-2023-25141.cve.json) [\[OSV json\]](./CVE-2023-25141.osv.json)
+CVE-2023-25141 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-25141) [\[CVE json\]](./CVE-2023-25141.cve.json) [\[OSV json\]](./CVE-2023-25141.osv.json)
 
 
 
@@ -111,7 +111,7 @@ _Last updated: 2023-02-14T10:19:00.558Z_
 
 ## XSS in CMS Reference / UI Components ## { #CVE-2023-22849 }
 
-CVE-2023-22849 [\[CVE json\]](./CVE-2023-22849.cve.json) [\[OSV json\]](./CVE-2023-22849.osv.json)
+CVE-2023-22849 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-22849) [\[CVE json\]](./CVE-2023-22849.cve.json) [\[OSV json\]](./CVE-2023-22849.osv.json)
 
 
 
@@ -136,7 +136,7 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 
 ## Multiple parsing problems in the Apache Sling Commons JSON module ## { #CVE-2022-47937 }
 
-CVE-2022-47937 [\[CVE json\]](./CVE-2022-47937.cve.json) [\[OSV json\]](./CVE-2022-47937.osv.json)
+CVE-2022-47937 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-47937) [\[CVE json\]](./CVE-2022-47937.cve.json) [\[OSV json\]](./CVE-2022-47937.osv.json)
 
 
 
@@ -167,7 +167,7 @@ Apache Sling project, but may of course use other JSON libraries.<br></div></div
 
 ## XSS in CMS Site Group Detail ## { #CVE-2022-46769 }
 
-CVE-2022-46769 [\[CVE json\]](./CVE-2022-46769.cve.json) [\[OSV json\]](./CVE-2022-46769.osv.json)
+CVE-2022-46769 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-46769) [\[CVE json\]](./CVE-2022-46769.cve.json) [\[OSV json\]](./CVE-2022-46769.osv.json)
 
 
 
@@ -192,7 +192,7 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 
 ## Include-based XSS ## { #CVE-2022-45064 }
 
-CVE-2022-45064 [\[CVE json\]](./CVE-2022-45064.cve.json) [\[OSV json\]](./CVE-2022-45064.osv.json)
+CVE-2022-45064 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-45064) [\[CVE json\]](./CVE-2022-45064.cve.json) [\[OSV json\]](./CVE-2022-45064.osv.json)
 
 
 
@@ -217,7 +217,7 @@ _Last updated: 2023-04-13T10:01:10.930Z_
 
 ## XSS in Sling CMS Reference App Taxonomy Path ## { #CVE-2022-43670 }
 
-CVE-2022-43670 [\[CVE json\]](./CVE-2022-43670.cve.json) [\[OSV json\]](./CVE-2022-43670.osv.json)
+CVE-2022-43670 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-43670) [\[CVE json\]](./CVE-2022-43670.cve.json) [\[OSV json\]](./CVE-2022-43670.osv.json)
 
 
 
@@ -242,7 +242,7 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 
 ## log injection in Sling logging ## { #CVE-2022-32549 }
 
-CVE-2022-32549 [\[CVE json\]](./CVE-2022-32549.cve.json) [\[OSV json\]](./CVE-2022-32549.osv.json)
+CVE-2022-32549 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-32549) [\[CVE json\]](./CVE-2022-32549.cve.json) [\[OSV json\]](./CVE-2022-32549.osv.json)
 
 
 
@@ -268,7 +268,7 @@ Apache Sling Commons Log <= 5.4.0 and Apache Sling API <= 2.25.0 are vulnerable 
 
 ## SMTPS server hostname not checked when making TLS connection to SMTPS server ## { #CVE-2021-44549 }
 
-CVE-2021-44549 [\[CVE json\]](./CVE-2021-44549.cve.json) [\[OSV json\]](./CVE-2021-44549.osv.json)
+CVE-2021-44549 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-44549) [\[CVE json\]](./CVE-2021-44549.cve.json) [\[OSV json\]](./CVE-2021-44549.osv.json)
 
 
 

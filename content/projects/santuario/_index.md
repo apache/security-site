@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Private Key disclosure in debug-log output ## { #CVE-2023-44483 }
 
-CVE-2023-44483 [\[CVE json\]](./CVE-2023-44483.cve.json) [\[OSV json\]](./CVE-2023-44483.osv.json)
+CVE-2023-44483 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-44483) [\[CVE json\]](./CVE-2023-44483.cve.json) [\[OSV json\]](./CVE-2023-44483.osv.json)
 
 
 
@@ -42,7 +42,7 @@ All versions of Apache Santuario - XML Security for Java prior to 2.2.6, 2.3.4, 
 
 ## Bypass of the secureValidation property ## { #CVE-2021-40690 }
 
-CVE-2021-40690 [\[CVE json\]](./CVE-2021-40690.cve.json) [\[OSV json\]](./CVE-2021-40690.osv.json)
+CVE-2021-40690 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-40690) [\[CVE json\]](./CVE-2021-40690.cve.json) [\[OSV json\]](./CVE-2021-40690.osv.json)
 
 
 

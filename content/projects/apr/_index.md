@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Unexpected lax shared memory permissions ## { #CVE-2023-49582 }
 
-CVE-2023-49582 [\[CVE json\]](./CVE-2023-49582.cve.json) [\[OSV json\]](./CVE-2023-49582.osv.json)
+CVE-2023-49582 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-49582) [\[CVE json\]](./CVE-2023-49582.cve.json) [\[OSV json\]](./CVE-2023-49582.osv.json)
 
 
 
@@ -40,7 +40,7 @@ Lax permissions set by the Apache Portable Runtime library on Unix platforms wou
 
 ##  Windows out-of-bounds write in apr_socket_sendv function ## { #CVE-2022-28331 }
 
-CVE-2022-28331 [\[CVE json\]](./CVE-2022-28331.cve.json) [\[OSV json\]](./CVE-2022-28331.osv.json)
+CVE-2022-28331 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-28331) [\[CVE json\]](./CVE-2022-28331.cve.json) [\[OSV json\]](./CVE-2022-28331.osv.json)
 
 
 
@@ -65,7 +65,7 @@ On Windows, Apache Portable Runtime 1.7.0 and earlier may write beyond the end o
 
 ## out-of-bounds writes in the apr_base64 family of functions ## { #CVE-2022-25147 }
 
-CVE-2022-25147 [\[CVE json\]](./CVE-2022-25147.cve.json) [\[OSV json\]](./CVE-2022-25147.osv.json)
+CVE-2022-25147 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-25147) [\[CVE json\]](./CVE-2022-25147.cve.json) [\[OSV json\]](./CVE-2022-25147.osv.json)
 
 
 
@@ -90,7 +90,7 @@ _Last updated: 2023-01-31T15:54:46.758Z_
 
 ## out-of-bound writes in the apr_encode family of functions  ## { #CVE-2022-24963 }
 
-CVE-2022-24963 [\[CVE json\]](./CVE-2022-24963.cve.json) [\[OSV json\]](./CVE-2022-24963.osv.json)
+CVE-2022-24963 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-24963) [\[CVE json\]](./CVE-2022-24963.cve.json) [\[OSV json\]](./CVE-2022-24963.osv.json)
 
 
 
@@ -115,7 +115,7 @@ Integer Overflow or Wraparound vulnerability in apr_encode functions of Apache P
 
 ## Regression of CVE-2017-12613 ## { #CVE-2021-35940 }
 
-CVE-2021-35940 [\[CVE json\]](./CVE-2021-35940.cve.json) [\[OSV json\]](./CVE-2021-35940.osv.json)
+CVE-2021-35940 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-35940) [\[CVE json\]](./CVE-2021-35940.cve.json) [\[OSV json\]](./CVE-2021-35940.osv.json)
 
 
 

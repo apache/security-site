@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Server-Side Request Forgery in Apache ShenYu ## { #CVE-2023-25753 }
 
-CVE-2023-25753 [\[CVE json\]](./CVE-2023-25753.cve.json) [\[OSV json\]](./CVE-2023-25753.osv.json)
+CVE-2023-25753 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-25753) [\[CVE json\]](./CVE-2023-25753.cve.json) [\[OSV json\]](./CVE-2023-25753.osv.json)
 
 
 
@@ -46,7 +46,7 @@ _Last updated: 2023-10-19T08:35:28.691Z_
 
 ## Apache ShenYu Admin ultra vires ## { #CVE-2022-42735 }
 
-CVE-2022-42735 [\[CVE json\]](./CVE-2022-42735.cve.json) [\[OSV json\]](./CVE-2022-42735.osv.json)
+CVE-2022-42735 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-42735) [\[CVE json\]](./CVE-2022-42735.cve.json) [\[OSV json\]](./CVE-2022-42735.osv.json)
 
 
 
@@ -75,7 +75,7 @@ Improper Privilege Management vulnerability in Apache Software Foundation Apache
 
 ## Apache ShenYu Admin Improper Privilege Management ## { #CVE-2022-37435 }
 
-CVE-2022-37435 [\[CVE json\]](./CVE-2022-37435.cve.json) [\[OSV json\]](./CVE-2022-37435.osv.json)
+CVE-2022-37435 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-37435) [\[CVE json\]](./CVE-2022-37435.cve.json) [\[OSV json\]](./CVE-2022-37435.osv.json)
 
 
 
@@ -101,7 +101,7 @@ This issue affects Apache ShenYu 2.4.2 and 2.4.3.
 
 ## Apache ShenYu (incubating) Regular expression denial of service ## { #CVE-2022-26650 }
 
-CVE-2022-26650 [\[CVE json\]](./CVE-2022-26650.cve.json)
+CVE-2022-26650 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-26650) [\[CVE json\]](./CVE-2022-26650.cve.json)
 
 _Last updated: 2022-06-18T12:30:20.191Z_
 
@@ -121,7 +121,7 @@ This issue affects Apache ShenYu (incubating) 2.4.0, 2.4.1 and 2.4.2.
 
 ## Apache ShenYu (incubating) missing authentication allows gateway registration ## { #CVE-2022-23945 }
 
-CVE-2022-23945 [\[CVE json\]](./CVE-2022-23945.cve.json) [\[OSV json\]](./CVE-2022-23945.osv.json)
+CVE-2022-23945 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-23945) [\[CVE json\]](./CVE-2022-23945.cve.json) [\[OSV json\]](./CVE-2022-23945.osv.json)
 
 
 
@@ -143,7 +143,7 @@ This issue affects Apache ShenYu (incubating) 2.4.0 and 2.4.1.
 
 ## Apache ShenYu (incubating) Improper access control ## { #CVE-2022-23944 }
 
-CVE-2022-23944 [\[CVE json\]](./CVE-2022-23944.cve.json) [\[OSV json\]](./CVE-2022-23944.osv.json)
+CVE-2022-23944 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-23944) [\[CVE json\]](./CVE-2022-23944.cve.json) [\[OSV json\]](./CVE-2022-23944.osv.json)
 
 
 
@@ -166,7 +166,7 @@ This issue affects Apache ShenYu (incubating) 2.4.0 and 2.4.1.
 
 ## Apache ShenYu (incubating) Password leakage ## { #CVE-2022-23223 }
 
-CVE-2022-23223 [\[CVE json\]](./CVE-2022-23223.cve.json) [\[OSV json\]](./CVE-2022-23223.osv.json)
+CVE-2022-23223 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-23223) [\[CVE json\]](./CVE-2022-23223.cve.json) [\[OSV json\]](./CVE-2022-23223.osv.json)
 
 
 
@@ -189,7 +189,7 @@ This issue affects Apache ShenYu (incubating) 2.4.0 and 2.4.1.
 
 ## Apache ShenYu (incubating) Groovy Code Injection and SpEL Injection ## { #CVE-2021-45029 }
 
-CVE-2021-45029 [\[CVE json\]](./CVE-2021-45029.cve.json) [\[OSV json\]](./CVE-2021-45029.osv.json)
+CVE-2021-45029 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-45029) [\[CVE json\]](./CVE-2021-45029.cve.json) [\[OSV json\]](./CVE-2021-45029.osv.json)
 
 
 
@@ -213,7 +213,7 @@ This issue affects Apache ShenYu (incubating)  2.4.0 and 2.4.1.
 
 ## Apache ShenYu Admin bypass JWT authentication ## { #CVE-2021-37580 }
 
-CVE-2021-37580 [\[CVE json\]](./CVE-2021-37580.cve.json) [\[OSV json\]](./CVE-2021-37580.osv.json)
+CVE-2021-37580 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-37580) [\[CVE json\]](./CVE-2021-37580.cve.json) [\[OSV json\]](./CVE-2021-37580.osv.json)
 
 
 

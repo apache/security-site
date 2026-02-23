@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## PSL (Public Suffix List) validation bypass ## { #CVE-2025-27820 }
 
-CVE-2025-27820 [\[CVE json\]](./CVE-2025-27820.cve.json) [\[OSV json\]](./CVE-2025-27820.osv.json)
+CVE-2025-27820 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27820) [\[CVE json\]](./CVE-2025-27820.cve.json) [\[OSV json\]](./CVE-2025-27820.osv.json)
 
 
 

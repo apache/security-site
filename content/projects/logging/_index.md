@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Missing TLS hostname verification in Socket appender ## { #CVE-2025-68161 }
 
-CVE-2025-68161 [\[CVE json\]](./CVE-2025-68161.cve.json) [\[OSV json\]](./CVE-2025-68161.osv.json)
+CVE-2025-68161 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-68161) [\[CVE json\]](./CVE-2025-68161.cve.json) [\[OSV json\]](./CVE-2025-68161.osv.json)
 
 
 
@@ -46,7 +46,7 @@ _Last updated: 2025-12-19T06:41:01.682Z_
 
 ## Improper escaping with JSONLayout ## { #CVE-2025-54813 }
 
-CVE-2025-54813 [\[CVE json\]](./CVE-2025-54813.cve.json) [\[OSV json\]](./CVE-2025-54813.osv.json)
+CVE-2025-54813 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-54813) [\[CVE json\]](./CVE-2025-54813.cve.json) [\[OSV json\]](./CVE-2025-54813.osv.json)
 
 
 
@@ -72,7 +72,7 @@ _Last updated: 2025-08-22T18:45:40.110Z_
 
 ## Improper HTML escaping in HTMLLayout ## { #CVE-2025-54812 }
 
-CVE-2025-54812 [\[CVE json\]](./CVE-2025-54812.cve.json) [\[OSV json\]](./CVE-2025-54812.osv.json)
+CVE-2025-54812 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-54812) [\[CVE json\]](./CVE-2025-54812.cve.json) [\[OSV json\]](./CVE-2025-54812.osv.json)
 
 
 
@@ -111,7 +111,7 @@ In order to activate this, the following sequence must occur:</p>
 
 ## SQL injection when using ODBC appender ## { #CVE-2023-31038 }
 
-CVE-2023-31038 [\[CVE json\]](./CVE-2023-31038.cve.json) [\[OSV json\]](./CVE-2023-31038.osv.json)
+CVE-2023-31038 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-31038) [\[CVE json\]](./CVE-2023-31038.cve.json) [\[OSV json\]](./CVE-2023-31038.osv.json)
 
 
 
@@ -132,7 +132,7 @@ _Last updated: 2023-05-08T08:55:53.262Z_
 
 ## Apache Log4j 1.x (EOL) allows DoS in Chainsaw and SocketAppender ## { #CVE-2023-26464 }
 
-CVE-2023-26464 [\[CVE json\]](./CVE-2023-26464.cve.json)
+CVE-2023-26464 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-26464) [\[CVE json\]](./CVE-2023-26464.cve.json)
 
 _Last updated: 2023-04-20T07:55:37.341Z_
 
@@ -157,7 +157,7 @@ hashmap or hashtable (depending on which logging component is in use) to be proc
 
 ##  A deserialization flaw in the Chainsaw component of Log4j 1 can lead to malicious code execution. ## { #CVE-2022-23307 }
 
-CVE-2022-23307 [\[CVE json\]](./CVE-2022-23307.cve.json) [\[OSV json\]](./CVE-2022-23307.osv.json)
+CVE-2022-23307 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-23307) [\[CVE json\]](./CVE-2022-23307.cve.json) [\[OSV json\]](./CVE-2022-23307.osv.json)
 
 
 
@@ -183,7 +183,7 @@ CVE-2020-9493 identified a deserialization issue that was present in Apache Chai
 
 ## SQL injection in JDBC Appender in Apache Log4j V1 ## { #CVE-2022-23305 }
 
-CVE-2022-23305 [\[CVE json\]](./CVE-2022-23305.cve.json) [\[OSV json\]](./CVE-2022-23305.osv.json)
+CVE-2022-23305 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-23305) [\[CVE json\]](./CVE-2022-23305.cve.json) [\[OSV json\]](./CVE-2022-23305.osv.json)
 
 
 
@@ -213,7 +213,7 @@ Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log
 
 ## Deserialization of untrusted data in JMSSink in Apache Log4j 1.x ## { #CVE-2022-23302 }
 
-CVE-2022-23302 [\[CVE json\]](./CVE-2022-23302.cve.json) [\[OSV json\]](./CVE-2022-23302.osv.json)
+CVE-2022-23302 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-23302) [\[CVE json\]](./CVE-2022-23302.cve.json) [\[OSV json\]](./CVE-2022-23302.osv.json)
 
 
 
@@ -243,7 +243,7 @@ Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log
 
 ## Apache Log4j2 does not always protect from infinite recursion in lookup evaluation ## { #CVE-2021-45105 }
 
-CVE-2021-45105 [\[CVE json\]](./CVE-2021-45105.cve.json) [\[OSV json\]](./CVE-2021-45105.osv.json)
+CVE-2021-45105 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-45105) [\[CVE json\]](./CVE-2021-45105.cve.json) [\[OSV json\]](./CVE-2021-45105.osv.json)
 
 
 
@@ -269,7 +269,7 @@ Apache Log4j2 versions 2.0-alpha1 through 2.16.0 (excluding 2.12.3 and 2.3.1) di
 
 ## Apache Log4j2 Thread Context Lookup Pattern vulnerable to remote code execution in certain non-default configurations ## { #CVE-2021-45046 }
 
-CVE-2021-45046 [\[CVE json\]](./CVE-2021-45046.cve.json) [\[OSV json\]](./CVE-2021-45046.osv.json)
+CVE-2021-45046 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-45046) [\[CVE json\]](./CVE-2021-45046.cve.json) [\[OSV json\]](./CVE-2021-45046.osv.json)
 
 
 
@@ -300,7 +300,7 @@ Log4j 2.16.0 (Java 8), 2.12.2 (Java 7), and 2.3.1 (Java 6) fix this issue by rem
 
 ## Apache Log4j2 vulnerable to RCE via JDBC Appender when attacker controls configuration server ## { #CVE-2021-44832 }
 
-CVE-2021-44832 [\[CVE json\]](./CVE-2021-44832.cve.json) [\[OSV json\]](./CVE-2021-44832.osv.json)
+CVE-2021-44832 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-44832) [\[CVE json\]](./CVE-2021-44832.cve.json) [\[OSV json\]](./CVE-2021-44832.osv.json)
 
 
 
@@ -322,7 +322,7 @@ Apache Log4j2 versions 2.0-beta7 through 2.17.0 (excluding security fix releases
 
 ## Apache Log4j2 JNDI features do not protect against attacker controlled LDAP and other JNDI related endpoints ## { #CVE-2021-44228 }
 
-CVE-2021-44228 [\[CVE json\]](./CVE-2021-44228.cve.json) [\[OSV json\]](./CVE-2021-44228.osv.json)
+CVE-2021-44228 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-44228) [\[CVE json\]](./CVE-2021-44228.cve.json) [\[OSV json\]](./CVE-2021-44228.osv.json)
 
 
 
@@ -352,7 +352,7 @@ Note that this vulnerability is specific to log4j-core and does not affect log4n
 
 ## Deserialization of untrusted data in JMSAppender in Apache Log4j 1.2 ## { #CVE-2021-4104 }
 
-CVE-2021-4104 [\[CVE json\]](./CVE-2021-4104.cve.json) [\[OSV json\]](./CVE-2021-4104.osv.json)
+CVE-2021-4104 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-4104) [\[CVE json\]](./CVE-2021-4104.cve.json) [\[OSV json\]](./CVE-2021-4104.osv.json)
 
 
 
@@ -379,7 +379,7 @@ Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log
 
 ## Java deserialization in Chainsaw ## { #CVE-2020-9493 }
 
-CVE-2020-9493 [\[CVE json\]](./CVE-2020-9493.cve.json) [\[OSV json\]](./CVE-2020-9493.osv.json)
+CVE-2020-9493 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-9493) [\[CVE json\]](./CVE-2020-9493.cve.json) [\[OSV json\]](./CVE-2020-9493.osv.json)
 
 
 

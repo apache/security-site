@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## reflected XSS ## { #CVE-2024-27140 }
 
-CVE-2024-27140 [\[CVE json\]](./CVE-2024-27140.cve.json) [\[OSV json\]](./CVE-2024-27140.osv.json)
+CVE-2024-27140 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27140) [\[CVE json\]](./CVE-2024-27140.cve.json) [\[OSV json\]](./CVE-2024-27140.osv.json)
 
 
 
@@ -43,7 +43,7 @@ _Last updated: 2024-03-01T15:40:06.489Z_
 
 ## incorrect authentication potentially leading to account takeover ## { #CVE-2024-27139 }
 
-CVE-2024-27139 [\[CVE json\]](./CVE-2024-27139.cve.json) [\[OSV json\]](./CVE-2024-27139.osv.json)
+CVE-2024-27139 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27139) [\[CVE json\]](./CVE-2024-27139.cve.json) [\[OSV json\]](./CVE-2024-27139.osv.json)
 
 
 
@@ -68,7 +68,7 @@ _Last updated: 2024-03-01T15:40:48.119Z_
 
 ## disabling user registration is not effective ## { #CVE-2024-27138 }
 
-CVE-2024-27138 [\[CVE json\]](./CVE-2024-27138.cve.json) [\[OSV json\]](./CVE-2024-27138.osv.json)
+CVE-2024-27138 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27138) [\[CVE json\]](./CVE-2024-27138.cve.json) [\[OSV json\]](./CVE-2024-27138.osv.json)
 
 
 
@@ -93,7 +93,7 @@ _Last updated: 2024-03-01T15:41:11.276Z_
 
 ## Apache Archiva privilege escalation ## { #CVE-2023-28158 }
 
-CVE-2023-28158 [\[CVE json\]](./CVE-2023-28158.cve.json) [\[OSV json\]](./CVE-2023-28158.osv.json)
+CVE-2023-28158 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-28158) [\[CVE json\]](./CVE-2023-28158.cve.json) [\[OSV json\]](./CVE-2023-28158.osv.json)
 
 
 
@@ -118,7 +118,7 @@ Privilege escalation via stored XSS using the file upload service to upload mali
 
 ## Apache Archiva prior to 2.2.9 allows an authenticated user to delete arbitrary directories ## { #CVE-2022-40309 }
 
-CVE-2022-40309 [\[CVE json\]](./CVE-2022-40309.cve.json) [\[OSV json\]](./CVE-2022-40309.osv.json)
+CVE-2022-40309 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-40309) [\[CVE json\]](./CVE-2022-40309.cve.json) [\[OSV json\]](./CVE-2022-40309.osv.json)
 
 
 
@@ -143,7 +143,7 @@ Users with write permissions to a repository can delete arbitrary directories.
 
 ## Apache Archiva prior to 2.2.9 may allow the anonymous user to read arbitrary files ## { #CVE-2022-40308 }
 
-CVE-2022-40308 [\[CVE json\]](./CVE-2022-40308.cve.json) [\[OSV json\]](./CVE-2022-40308.osv.json)
+CVE-2022-40308 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-40308) [\[CVE json\]](./CVE-2022-40308.cve.json) [\[OSV json\]](./CVE-2022-40308.osv.json)
 
 
 
@@ -169,7 +169,7 @@ If anonymous read enabled, it's possible to read the database file directly with
 
 ## Apache Archiva Arbitrary user password reset vulnerability ## { #CVE-2022-29405 }
 
-CVE-2022-29405 [\[CVE json\]](./CVE-2022-29405.cve.json) [\[OSV json\]](./CVE-2022-29405.osv.json)
+CVE-2022-29405 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-29405) [\[CVE json\]](./CVE-2022-29405.cve.json) [\[OSV json\]](./CVE-2022-29405.osv.json)
 
 
 

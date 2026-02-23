@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Deserialization of untrusted Data in Apache Seata Server ## { #CVE-2025-53606 }
 
-CVE-2025-53606 [\[CVE json\]](./CVE-2025-53606.cve.json) [\[OSV json\]](./CVE-2025-53606.osv.json)
+CVE-2025-53606 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-53606) [\[CVE json\]](./CVE-2025-53606.cve.json) [\[OSV json\]](./CVE-2025-53606.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2025-08-08T09:22:52.076Z_
 
 ## Deserialization of untrusted Data in Apache Seata Server ## { #CVE-2025-32897 }
 
-CVE-2025-32897 [\[CVE json\]](./CVE-2025-32897.cve.json) [\[OSV json\]](./CVE-2025-32897.osv.json)
+CVE-2025-32897 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-32897) [\[CVE json\]](./CVE-2025-32897.cve.json) [\[OSV json\]](./CVE-2025-32897.osv.json)
 
 
 
@@ -62,7 +62,7 @@ _Last updated: 2025-06-28T18:25:15.298Z_
 
 ## compression bomb attack in Apache Seata Server ## { #CVE-2024-54016 }
 
-CVE-2024-54016 [\[CVE json\]](./CVE-2024-54016.cve.json) [\[OSV json\]](./CVE-2024-54016.osv.json)
+CVE-2024-54016 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-54016) [\[CVE json\]](./CVE-2024-54016.cve.json) [\[OSV json\]](./CVE-2024-54016.osv.json)
 
 
 
@@ -87,7 +87,7 @@ _Last updated: 2025-03-20T08:59:24.157Z_
 
 ## Deserialization of untrusted Data in jraft mode in Apache Seata Server ## { #CVE-2024-47552 }
 
-CVE-2024-47552 [\[CVE json\]](./CVE-2024-47552.cve.json) [\[OSV json\]](./CVE-2024-47552.osv.json)
+CVE-2024-47552 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-47552) [\[CVE json\]](./CVE-2024-47552.cve.json) [\[OSV json\]](./CVE-2024-47552.osv.json)
 
 
 
@@ -113,7 +113,7 @@ _Last updated: 2025-03-20T08:57:58.136Z_
 
 ## Remote Code Execution vulnerability via Hessian Deserialization in Apache Seata Server ## { #CVE-2024-22399 }
 
-CVE-2024-22399 [\[CVE json\]](./CVE-2024-22399.cve.json) [\[OSV json\]](./CVE-2024-22399.osv.json)
+CVE-2024-22399 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-22399) [\[CVE json\]](./CVE-2024-22399.cve.json) [\[OSV json\]](./CVE-2024-22399.osv.json)
 
 
 

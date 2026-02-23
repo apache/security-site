@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## XSS in HTTP Webconsole Plugin ## { #CVE-2025-27867 }
 
-CVE-2025-27867 [\[CVE json\]](./CVE-2025-27867.cve.json) [\[OSV json\]](./CVE-2025-27867.osv.json)
+CVE-2025-27867 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27867) [\[CVE json\]](./CVE-2025-27867.cve.json) [\[OSV json\]](./CVE-2025-27867.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2025-03-12T15:51:23.297Z_
 
 ## XSS in services console ## { #CVE-2025-25247 }
 
-CVE-2025-25247 [\[CVE json\]](./CVE-2025-25247.cve.json) [\[OSV json\]](./CVE-2025-25247.osv.json)
+CVE-2025-25247 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-25247) [\[CVE json\]](./CVE-2025-25247.cve.json) [\[OSV json\]](./CVE-2025-25247.osv.json)
 
 
 
@@ -66,7 +66,7 @@ _Last updated: 2025-02-10T11:16:58.175Z_
 
 ## XSS in healthcheck webconsole plugin ## { #CVE-2023-38435 }
 
-CVE-2023-38435 [\[CVE json\]](./CVE-2023-38435.cve.json) [\[OSV json\]](./CVE-2023-38435.osv.json)
+CVE-2023-38435 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-38435) [\[CVE json\]](./CVE-2023-38435.cve.json) [\[OSV json\]](./CVE-2023-38435.osv.json)
 
 
 

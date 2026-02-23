@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## XSS in Oozie Web Console ## { #CVE-2025-26796 }
 
-CVE-2025-26796 [\[CVE json\]](./CVE-2025-26796.cve.json) [\[OSV json\]](./CVE-2025-26796.osv.json)
+CVE-2025-26796 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-26796) [\[CVE json\]](./CVE-2025-26796.cve.json) [\[OSV json\]](./CVE-2025-26796.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2025-03-22T12:23:17.532Z_
 
 ## Oozie local privilege escalation ## { #CVE-2020-35451 }
 
-CVE-2020-35451 [\[CVE json\]](./CVE-2020-35451.cve.json) [\[OSV json\]](./CVE-2020-35451.osv.json)
+CVE-2020-35451 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-35451) [\[CVE json\]](./CVE-2020-35451.cve.json) [\[OSV json\]](./CVE-2020-35451.osv.json)
 
 
 

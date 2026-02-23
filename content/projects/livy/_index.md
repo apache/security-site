@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Livy (Incubating) is vulnerable to cross site scripting ## { #CVE-2021-26544 }
 
-CVE-2021-26544 [\[CVE json\]](./CVE-2021-26544.cve.json) [\[OSV json\]](./CVE-2021-26544.osv.json)
+CVE-2021-26544 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-26544) [\[CVE json\]](./CVE-2021-26544.cve.json) [\[OSV json\]](./CVE-2021-26544.osv.json)
 
 
 

@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Deserialization of untrusted Data ## { #CVE-2025-48459 }
 
-CVE-2025-48459 [\[CVE json\]](./CVE-2025-48459.cve.json) [\[OSV json\]](./CVE-2025-48459.osv.json)
+CVE-2025-48459 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-48459) [\[CVE json\]](./CVE-2025-48459.cve.json) [\[OSV json\]](./CVE-2025-48459.osv.json)
 
 
 
@@ -43,7 +43,7 @@ _Last updated: 2025-09-24T07:57:20.978Z_
 
 ## DoS Vulnerability ## { #CVE-2025-48392 }
 
-CVE-2025-48392 [\[CVE json\]](./CVE-2025-48392.cve.json) [\[OSV json\]](./CVE-2025-48392.osv.json)
+CVE-2025-48392 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-48392) [\[CVE json\]](./CVE-2025-48392.cve.json) [\[OSV json\]](./CVE-2025-48392.osv.json)
 
 
 
@@ -69,7 +69,7 @@ _Last updated: 2025-09-24T07:59:48.976Z_
 
 ## Exposure of Sensitive Information in IoTDB OpenID Authentication ## { #CVE-2025-26864 }
 
-CVE-2025-26864 [\[CVE json\]](./CVE-2025-26864.cve.json) [\[OSV json\]](./CVE-2025-26864.osv.json)
+CVE-2025-26864 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-26864) [\[CVE json\]](./CVE-2025-26864.cve.json) [\[OSV json\]](./CVE-2025-26864.osv.json)
 
 
 
@@ -95,7 +95,7 @@ _Last updated: 2025-05-14T10:44:11.661Z_
 
 ## Exposure of Sensitive Information in IoTDB JDBC driver ## { #CVE-2025-26795 }
 
-CVE-2025-26795 [\[CVE json\]](./CVE-2025-26795.cve.json) [\[OSV json\]](./CVE-2025-26795.osv.json)
+CVE-2025-26795 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-26795) [\[CVE json\]](./CVE-2025-26795.cve.json) [\[OSV json\]](./CVE-2025-26795.osv.json)
 
 
 
@@ -121,7 +121,7 @@ _Last updated: 2025-05-14T10:43:01.849Z_
 
 ## SSRF Vulnerability (EOL) ## { #CVE-2024-36448 }
 
-CVE-2024-36448 [\[CVE json\]](./CVE-2024-36448.cve.json) [\[OSV json\]](./CVE-2024-36448.osv.json)
+CVE-2024-36448 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-36448) [\[CVE json\]](./CVE-2024-36448.cve.json) [\[OSV json\]](./CVE-2024-36448.osv.json)
 
 
 
@@ -146,7 +146,7 @@ _Last updated: 2024-08-05T09:53:35.819Z_
 
 ## Remote Code Execution with untrusted URI of User-defined function ## { #CVE-2024-24780 }
 
-CVE-2024-24780 [\[CVE json\]](./CVE-2024-24780.cve.json) [\[OSV json\]](./CVE-2024-24780.osv.json)
+CVE-2024-24780 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-24780) [\[CVE json\]](./CVE-2024-24780.cve.json) [\[OSV json\]](./CVE-2024-24780.osv.json)
 
 
 
@@ -172,7 +172,7 @@ _Last updated: 2025-05-14T10:42:18.799Z_
 
 ## Unsafe deserialize map in Sync Tool ## { #CVE-2023-51656 }
 
-CVE-2023-51656 [\[CVE json\]](./CVE-2023-51656.cve.json) [\[OSV json\]](./CVE-2023-51656.osv.json)
+CVE-2023-51656 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-51656) [\[CVE json\]](./CVE-2023-51656.cve.json) [\[OSV json\]](./CVE-2023-51656.osv.json)
 
 
 
@@ -193,7 +193,7 @@ Deserialization of Untrusted Data vulnerability in Apache IoTDB.<p>This issue af
 
 ## Remote Code Execution (RCE) risk via the UDF ## { #CVE-2023-46226 }
 
-CVE-2023-46226 [\[CVE json\]](./CVE-2023-46226.cve.json) [\[OSV json\]](./CVE-2023-46226.osv.json)
+CVE-2023-46226 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-46226) [\[CVE json\]](./CVE-2023-46226.cve.json) [\[OSV json\]](./CVE-2023-46226.osv.json)
 
 
 
@@ -218,7 +218,7 @@ Remote Code Execution vulnerability in Apache IoTDB.<p>This issue affects Apache
 
 ## apache/iotdb-web-workbench: forge the JWTToken to access workbench ## { #CVE-2023-30771 }
 
-CVE-2023-30771 [\[CVE json\]](./CVE-2023-30771.cve.json) [\[OSV json\]](./CVE-2023-30771.osv.json)
+CVE-2023-30771 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-30771) [\[CVE json\]](./CVE-2023-30771.cve.json) [\[OSV json\]](./CVE-2023-30771.osv.json)
 
 
 
@@ -239,7 +239,7 @@ Incorrect Authorization vulnerability in Apache Software Foundation Apache IoTDB
 
 ## Apache IoTDB grafana-connector Login Bypass Vulnerability ## { #CVE-2023-24831 }
 
-CVE-2023-24831 [\[CVE json\]](./CVE-2023-24831.cve.json) [\[OSV json\]](./CVE-2023-24831.osv.json)
+CVE-2023-24831 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-24831) [\[CVE json\]](./CVE-2023-24831.cve.json) [\[OSV json\]](./CVE-2023-24831.osv.json)
 
 
 
@@ -260,7 +260,7 @@ Improper Authentication vulnerability in Apache Software Foundation Apache IoTDB
 
 ## apache/iotdb-web-workbench: create a user without authorization ## { #CVE-2023-24830 }
 
-CVE-2023-24830 [\[CVE json\]](./CVE-2023-24830.cve.json) [\[OSV json\]](./CVE-2023-24830.osv.json)
+CVE-2023-24830 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-24830) [\[CVE json\]](./CVE-2023-24830.cve.json) [\[OSV json\]](./CVE-2023-24830.osv.json)
 
 
 
@@ -281,7 +281,7 @@ Improper Authentication vulnerability in Apache Software Foundation Apache IoTDB
 
 ## apache/iotdb-web-workbench: forge the JWTToken to access workbench ## { #CVE-2023-24829 }
 
-CVE-2023-24829 [\[CVE json\]](./CVE-2023-24829.cve.json) [\[OSV json\]](./CVE-2023-24829.osv.json)
+CVE-2023-24829 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-24829) [\[CVE json\]](./CVE-2023-24829.cve.json) [\[OSV json\]](./CVE-2023-24829.osv.json)
 
 
 
@@ -302,7 +302,7 @@ Incorrect Authorization vulnerability in Apache Software Foundation Apache IoTDB
 
 ## Apache IoTDB prior to 0.13.3 allows DoS ## { #CVE-2022-43766 }
 
-CVE-2022-43766 [\[CVE json\]](./CVE-2022-43766.cve.json) [\[OSV json\]](./CVE-2022-43766.osv.json)
+CVE-2022-43766 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-43766) [\[CVE json\]](./CVE-2022-43766.cve.json) [\[OSV json\]](./CVE-2022-43766.osv.json)
 
 
 
@@ -327,7 +327,7 @@ Apache IoTDB version 0.12.2 to 0.12.6, 0.13.0 to 0.13.2 are vulnerable to a Deni
 
 ## No authorization of DatabaseConnectController in grafana-connector.  ## { #CVE-2022-38370 }
 
-CVE-2022-38370 [\[CVE json\]](./CVE-2022-38370.cve.json) [\[OSV json\]](./CVE-2022-38370.osv.json)
+CVE-2022-38370 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-38370) [\[CVE json\]](./CVE-2022-38370.cve.json) [\[OSV json\]](./CVE-2022-38370.osv.json)
 
 
 
@@ -348,7 +348,7 @@ Apache IoTDB grafana-connector version 0.13.0 contains an interface without auth
 
 ## Login check vulnerability by session Id ## { #CVE-2022-38369 }
 
-CVE-2022-38369 [\[CVE json\]](./CVE-2022-38369.cve.json) [\[OSV json\]](./CVE-2022-38369.osv.json)
+CVE-2022-38369 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-38369) [\[CVE json\]](./CVE-2022-38369.cve.json) [\[OSV json\]](./CVE-2022-38369.osv.json)
 
 
 

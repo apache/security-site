@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Console XXE on Keymaster parameters ## { #CVE-2026-23795 }
 
-CVE-2026-23795 [\[CVE json\]](./CVE-2026-23795.cve.json) [\[OSV json\]](./CVE-2026-23795.osv.json)
+CVE-2026-23795 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23795) [\[CVE json\]](./CVE-2026-23795.cve.json) [\[OSV json\]](./CVE-2026-23795.osv.json)
 
 
 
@@ -42,7 +42,7 @@ _Last updated: 2026-02-03T15:14:33.685Z_
 
 ## Reflected XSS on Enduser Login ## { #CVE-2026-23794 }
 
-CVE-2026-23794 [\[CVE json\]](./CVE-2026-23794.cve.json) [\[OSV json\]](./CVE-2026-23794.osv.json)
+CVE-2026-23794 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23794) [\[CVE json\]](./CVE-2026-23794.cve.json) [\[OSV json\]](./CVE-2026-23794.osv.json)
 
 
 
@@ -69,7 +69,7 @@ _Last updated: 2026-02-03T15:15:22.918Z_
 
 ## Default AES key used for internal password encryption ## { #CVE-2025-65998 }
 
-CVE-2025-65998 [\[CVE json\]](./CVE-2025-65998.cve.json) [\[OSV json\]](./CVE-2025-65998.osv.json)
+CVE-2025-65998 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-65998) [\[CVE json\]](./CVE-2025-65998.cve.json) [\[OSV json\]](./CVE-2025-65998.osv.json)
 
 
 
@@ -96,7 +96,7 @@ _Last updated: 2025-11-24T13:46:58.386Z_
 
 ## Remote Code Execution by delegated administrators ## { #CVE-2025-57738 }
 
-CVE-2025-57738 [\[CVE json\]](./CVE-2025-57738.cve.json) [\[OSV json\]](./CVE-2025-57738.osv.json)
+CVE-2025-57738 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-57738) [\[CVE json\]](./CVE-2025-57738.cve.json) [\[OSV json\]](./CVE-2025-57738.osv.json)
 
 
 
@@ -123,7 +123,7 @@ Apache Syncope offers the ability to extend / customize the base behavior on eve
 
 ## Stored XSS in Console and Enduser ## { #CVE-2024-45031 }
 
-CVE-2024-45031 [\[CVE json\]](./CVE-2024-45031.cve.json) [\[OSV json\]](./CVE-2024-45031.osv.json)
+CVE-2024-45031 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45031) [\[CVE json\]](./CVE-2024-45031.cve.json) [\[OSV json\]](./CVE-2024-45031.osv.json)
 
 
 
@@ -150,7 +150,7 @@ When editing objects in the Syncope Console, incomplete HTML tags could be used 
 
 ## HTML tags can be injected into Console or Enduser text fields ## { #CVE-2024-38503 }
 
-CVE-2024-38503 [\[CVE json\]](./CVE-2024-38503.cve.json) [\[OSV json\]](./CVE-2024-38503.osv.json)
+CVE-2024-38503 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-38503) [\[CVE json\]](./CVE-2024-38503.cve.json) [\[OSV json\]](./CVE-2024-38503.osv.json)
 
 
 

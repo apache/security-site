@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Remote Code Execution Vulnerability ## { #CVE-2024-43202 }
 
-CVE-2024-43202 [\[CVE json\]](./CVE-2024-43202.cve.json) [\[OSV json\]](./CVE-2024-43202.osv.json)
+CVE-2024-43202 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-43202) [\[CVE json\]](./CVE-2024-43202.cve.json) [\[OSV json\]](./CVE-2024-43202.osv.json)
 
 
 
@@ -43,7 +43,7 @@ Exposure of Remote Code Execution in Apache Dolphinscheduler.<br><br>This issue 
 
 ## CWE-276 Incorrect Default Permissions ## { #CVE-2024-43166 }
 
-CVE-2024-43166 [\[CVE json\]](./CVE-2024-43166.cve.json)
+CVE-2024-43166 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-43166) [\[CVE json\]](./CVE-2024-43166.cve.json)
 
 _Last updated: 2025-09-18T09:38:13.985Z_
 
@@ -66,7 +66,7 @@ _Last updated: 2025-09-18T09:38:13.985Z_
 
 ## Alert Script Attack ## { #CVE-2024-43115 }
 
-CVE-2024-43115 [\[CVE json\]](./CVE-2024-43115.cve.json) [\[OSV json\]](./CVE-2024-43115.osv.json)
+CVE-2024-43115 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-43115) [\[CVE json\]](./CVE-2024-43115.cve.json) [\[OSV json\]](./CVE-2024-43115.osv.json)
 
 
 
@@ -91,7 +91,7 @@ _Last updated: 2025-09-03T08:38:26.012Z_
 
 ## Resource File Read And Write Vulnerability ## { #CVE-2024-30188 }
 
-CVE-2024-30188 [\[CVE json\]](./CVE-2024-30188.cve.json) [\[OSV json\]](./CVE-2024-30188.osv.json)
+CVE-2024-30188 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-30188) [\[CVE json\]](./CVE-2024-30188.cve.json) [\[OSV json\]](./CVE-2024-30188.osv.json)
 
 
 
@@ -119,7 +119,7 @@ File read and write vulnerability in Apache DolphinScheduler ,&nbsp; authenticat
 
 ## RCE by arbitrary js execution ## { #CVE-2024-29831 }
 
-CVE-2024-29831 [\[CVE json\]](./CVE-2024-29831.cve.json) [\[OSV json\]](./CVE-2024-29831.osv.json)
+CVE-2024-29831 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-29831) [\[CVE json\]](./CVE-2024-29831.cve.json) [\[OSV json\]](./CVE-2024-29831.osv.json)
 
 
 
@@ -146,7 +146,7 @@ Improper Input Validation vulnerability in Apache DolphinScheduler. An <span sty
 
 ## Arbitrary js execution as root for authenticated users ## { #CVE-2024-23320 }
 
-CVE-2024-23320 [\[CVE json\]](./CVE-2024-23320.cve.json) [\[OSV json\]](./CVE-2024-23320.osv.json)
+CVE-2024-23320 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-23320) [\[CVE json\]](./CVE-2024-23320.cve.json) [\[OSV json\]](./CVE-2024-23320.osv.json)
 
 
 
@@ -176,7 +176,7 @@ Improper Input Validation vulnerability in Apache DolphinScheduler. An <span sty
 
 ## Arbitrary File Read Vulnerability ## { #CVE-2023-51770 }
 
-CVE-2023-51770 [\[CVE json\]](./CVE-2023-51770.cve.json) [\[OSV json\]](./CVE-2023-51770.osv.json)
+CVE-2023-51770 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-51770) [\[CVE json\]](./CVE-2023-51770.cve.json) [\[OSV json\]](./CVE-2023-51770.osv.json)
 
 
 
@@ -204,7 +204,7 @@ Arbitrary File Read Vulnerability in Apache Dolphinscheduler.<br><br>This issue 
 
 ## Session do not expire after password change ## { #CVE-2023-50270 }
 
-CVE-2023-50270 [\[CVE json\]](./CVE-2023-50270.cve.json)
+CVE-2023-50270 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-50270) [\[CVE json\]](./CVE-2023-50270.cve.json)
 
 _Last updated: 2024-02-23T10:17:33.021Z_
 
@@ -231,7 +231,7 @@ Session Fixation Apache DolphinScheduler before version 3.2.0, which session is 
 
 ## Authenticated users could delete UDFs in resource center they were not authorized for ## { #CVE-2023-49620 }
 
-CVE-2023-49620 [\[CVE json\]](./CVE-2023-49620.cve.json) [\[OSV json\]](./CVE-2023-49620.osv.json)
+CVE-2023-49620 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-49620) [\[CVE json\]](./CVE-2023-49620.cve.json) [\[OSV json\]](./CVE-2023-49620.osv.json)
 
 
 
@@ -257,7 +257,7 @@ Before DolphinScheduler version 3.1.0, the login user could delete UDF function 
 
 ## Arbitrary js execute as root for authenticated users ## { #CVE-2023-49299 }
 
-CVE-2023-49299 [\[CVE json\]](./CVE-2023-49299.cve.json) [\[OSV json\]](./CVE-2023-49299.osv.json)
+CVE-2023-49299 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-49299) [\[CVE json\]](./CVE-2023-49299.cve.json) [\[OSV json\]](./CVE-2023-49299.osv.json)
 
 
 
@@ -283,7 +283,7 @@ Improper Input Validation vulnerability in Apache DolphinScheduler. An&nbsp;<spa
 
 ## Insecure TLS TrustManager used in HttpUtil ## { #CVE-2023-49250 }
 
-CVE-2023-49250 [\[CVE json\]](./CVE-2023-49250.cve.json) [\[OSV json\]](./CVE-2023-49250.osv.json)
+CVE-2023-49250 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-49250) [\[CVE json\]](./CVE-2023-49250.cve.json) [\[OSV json\]](./CVE-2023-49250.osv.json)
 
 
 
@@ -305,7 +305,7 @@ _Last updated: 2024-02-20T05:59:07.770Z_
 
 ## Remote Code Execution in Apache Dolphinscheduler ## { #CVE-2023-49109 }
 
-CVE-2023-49109 [\[CVE json\]](./CVE-2023-49109.cve.json) [\[OSV json\]](./CVE-2023-49109.osv.json)
+CVE-2023-49109 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-49109) [\[CVE json\]](./CVE-2023-49109.cve.json) [\[OSV json\]](./CVE-2023-49109.osv.json)
 
 
 
@@ -332,7 +332,7 @@ Exposure of Remote Code Execution in Apache Dolphinscheduler.<br><br>This issue 
 
 ## Information Leakage Vulnerability ## { #CVE-2023-49068 }
 
-CVE-2023-49068 [\[CVE json\]](./CVE-2023-49068.cve.json) [\[OSV json\]](./CVE-2023-49068.osv.json)
+CVE-2023-49068 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-49068) [\[CVE json\]](./CVE-2023-49068.cve.json) [\[OSV json\]](./CVE-2023-49068.osv.json)
 
 
 
@@ -358,7 +358,7 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ## Sensitive information disclosure ## { #CVE-2023-48796 }
 
-CVE-2023-48796 [\[CVE json\]](./CVE-2023-48796.cve.json) [\[OSV json\]](./CVE-2023-48796.osv.json)
+CVE-2023-48796 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-48796) [\[CVE json\]](./CVE-2023-48796.cve.json) [\[OSV json\]](./CVE-2023-48796.osv.json)
 
 
 
@@ -379,7 +379,7 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ## Apache DolphinScheduler 3.0.0 to 3.1.1 python gateway has improper authentication ## { #CVE-2023-25601 }
 
-CVE-2023-25601 [\[CVE json\]](./CVE-2023-25601.cve.json) [\[OSV json\]](./CVE-2023-25601.osv.json)
+CVE-2023-25601 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-25601) [\[CVE json\]](./CVE-2023-25601.cve.json) [\[OSV json\]](./CVE-2023-25601.osv.json)
 
 
 
@@ -400,7 +400,7 @@ On version 3.0.0 through 3.1.1, Apache DolphinScheduler's python gateway suffere
 
 ## Remote command execution Vulnerability in script alert plugin ## { #CVE-2022-45875 }
 
-CVE-2022-45875 [\[CVE json\]](./CVE-2022-45875.cve.json) [\[OSV json\]](./CVE-2022-45875.osv.json)
+CVE-2022-45875 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-45875) [\[CVE json\]](./CVE-2022-45875.cve.json) [\[OSV json\]](./CVE-2022-45875.osv.json)
 
 
 
@@ -426,7 +426,7 @@ Improper validation of script alert plugin parameters in Apache DolphinScheduler
 
 ## Apache DolphinScheduler prior to 2.0.5 have command execution vulnerability ## { #CVE-2022-45462 }
 
-CVE-2022-45462 [\[CVE json\]](./CVE-2022-45462.cve.json) [\[OSV json\]](./CVE-2022-45462.osv.json)
+CVE-2022-45462 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-45462) [\[CVE json\]](./CVE-2022-45462.cve.json) [\[OSV json\]](./CVE-2022-45462.osv.json)
 
 
 
@@ -451,7 +451,7 @@ Alarm instance management has command injection when there is a specific command
 
 ## Apache DolphinScheduler prior to 3.0.0 allows path traversal ## { #CVE-2022-34662 }
 
-CVE-2022-34662 [\[CVE json\]](./CVE-2022-34662.cve.json) [\[OSV json\]](./CVE-2022-34662.osv.json)
+CVE-2022-34662 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-34662) [\[CVE json\]](./CVE-2022-34662.cve.json) [\[OSV json\]](./CVE-2022-34662.osv.json)
 
 
 
@@ -476,7 +476,7 @@ When users add resources to the resource center with a relation path will cause 
 
 ## Apache DolphinScheduler config file read by task risk ## { #CVE-2022-26885 }
 
-CVE-2022-26885 [\[CVE json\]](./CVE-2022-26885.cve.json) [\[OSV json\]](./CVE-2022-26885.osv.json)
+CVE-2022-26885 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-26885) [\[CVE json\]](./CVE-2022-26885.cve.json) [\[OSV json\]](./CVE-2022-26885.osv.json)
 
 
 
@@ -497,7 +497,7 @@ When using tasks to read config files, there is a risk of database password disc
 
 ## Apache DolphinScheduler exposes files without authentication ## { #CVE-2022-26884 }
 
-CVE-2022-26884 [\[CVE json\]](./CVE-2022-26884.cve.json) [\[OSV json\]](./CVE-2022-26884.osv.json)
+CVE-2022-26884 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-26884) [\[CVE json\]](./CVE-2022-26884.cve.json) [\[OSV json\]](./CVE-2022-26884.osv.json)
 
 
 
@@ -518,7 +518,7 @@ Users can read any files by log server, Apache DolphinScheduler users should upg
 
 ## Apache DolphinScheduler user registration is vulnerable to ReDoS attacks ## { #CVE-2022-25598 }
 
-CVE-2022-25598 [\[CVE json\]](./CVE-2022-25598.cve.json) [\[OSV json\]](./CVE-2022-25598.osv.json)
+CVE-2022-25598 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-25598) [\[CVE json\]](./CVE-2022-25598.cve.json) [\[OSV json\]](./CVE-2022-25598.osv.json)
 
 
 
@@ -543,7 +543,7 @@ Apache DolphinScheduler user registration is vulnerable to Regular express Denia
 
 ## DolphinScheduler mysql jdbc connector parameters deserialize remote code execution ## { #CVE-2021-27644 }
 
-CVE-2021-27644 [\[CVE json\]](./CVE-2021-27644.cve.json) [\[OSV json\]](./CVE-2021-27644.osv.json)
+CVE-2021-27644 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-27644) [\[CVE json\]](./CVE-2021-27644.cve.json) [\[OSV json\]](./CVE-2021-27644.osv.json)
 
 
 
@@ -569,7 +569,7 @@ In Apache DolphinScheduler before 1.3.6 versions, authorized users can use SQL i
 
 ## Apache DolphinScheduler (incubating) Permission vulnerability ## { #CVE-2020-13922 }
 
-CVE-2020-13922 [\[CVE json\]](./CVE-2020-13922.cve.json) [\[OSV json\]](./CVE-2020-13922.osv.json)
+CVE-2020-13922 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-13922) [\[CVE json\]](./CVE-2020-13922.cve.json) [\[OSV json\]](./CVE-2020-13922.osv.json)
 
 
 

@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Deserialization of Untrusted Data in GetAsanaObject Processor ## { #CVE-2025-66524 }
 
-CVE-2025-66524 [\[CVE json\]](./CVE-2025-66524.cve.json) [\[OSV json\]](./CVE-2025-66524.osv.json)
+CVE-2025-66524 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66524) [\[CVE json\]](./CVE-2025-66524.cve.json) [\[OSV json\]](./CVE-2025-66524.osv.json)
 
 
 
@@ -40,7 +40,7 @@ Apache NiFi 1.20.0 through 2.6.0 include the GetAsanaObject Processor, which req
 
 ## Potential Insertion of MongoDB Password in Provenance Record ## { #CVE-2025-27017 }
 
-CVE-2025-27017 [\[CVE json\]](./CVE-2025-27017.cve.json) [\[OSV json\]](./CVE-2025-27017.osv.json)
+CVE-2025-27017 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27017) [\[CVE json\]](./CVE-2025-27017.cve.json) [\[OSV json\]](./CVE-2025-27017.osv.json)
 
 
 
@@ -65,7 +65,7 @@ _Last updated: 2025-03-12T16:19:42.969Z_
 
 ## Missing Complete Authorization for Parameter and Service References ## { #CVE-2024-56512 }
 
-CVE-2024-56512 [\[CVE json\]](./CVE-2024-56512.cve.json) [\[OSV json\]](./CVE-2024-56512.osv.json)
+CVE-2024-56512 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-56512) [\[CVE json\]](./CVE-2024-56512.cve.json) [\[OSV json\]](./CVE-2024-56512.osv.json)
 
 
 
@@ -90,7 +90,7 @@ Apache NiFi 1.10.0 through 2.0.0 are missing fine-grained authorization checking
 
 ## Potential Insertion of Sensitive Parameter Values in Debug Log ## { #CVE-2024-52067 }
 
-CVE-2024-52067 [\[CVE json\]](./CVE-2024-52067.cve.json) [\[OSV json\]](./CVE-2024-52067.osv.json)
+CVE-2024-52067 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-52067) [\[CVE json\]](./CVE-2024-52067.cve.json) [\[OSV json\]](./CVE-2024-52067.osv.json)
 
 
 
@@ -116,7 +116,7 @@ Apache NiFi 1.16.0 through 1.28.0 and 2.0.0-M1 through 2.0.0-M4 include optional
 
 ## Improper Neutralization of Input in Parameter Description ## { #CVE-2024-45477 }
 
-CVE-2024-45477 [\[CVE json\]](./CVE-2024-45477.cve.json) [\[OSV json\]](./CVE-2024-45477.osv.json)
+CVE-2024-45477 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45477) [\[CVE json\]](./CVE-2024-45477.cve.json) [\[OSV json\]](./CVE-2024-45477.osv.json)
 
 
 
@@ -142,7 +142,7 @@ Apache NiFi 1.10.0 through 1.27.0 and 2.0.0-M1 through 2.0.0-M3 support a descri
 
 ## Improper Neutralization of Input in Parameter Context Description ## { #CVE-2024-37389 }
 
-CVE-2024-37389 [\[CVE json\]](./CVE-2024-37389.cve.json) [\[OSV json\]](./CVE-2024-37389.osv.json)
+CVE-2024-37389 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-37389) [\[CVE json\]](./CVE-2024-37389.cve.json) [\[OSV json\]](./CVE-2024-37389.osv.json)
 
 
 
@@ -168,7 +168,7 @@ Apache NiFi 1.10.0 through 1.26.0 and 2.0.0-M1 through 2.0.0-M3 support a descri
 
 ## Improper Neutralization of Input in Advanced User Interface for Jolt ## { #CVE-2023-49145 }
 
-CVE-2023-49145 [\[CVE json\]](./CVE-2023-49145.cve.json) [\[OSV json\]](./CVE-2023-49145.osv.json)
+CVE-2023-49145 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-49145) [\[CVE json\]](./CVE-2023-49145.cve.json) [\[OSV json\]](./CVE-2023-49145.osv.json)
 
 
 
@@ -195,7 +195,7 @@ JavaScript code can be executed within the session context of the authenticated 
 
 ## Incorrect Certificate Validation in InvokeHTTP for MiNiFi C++ ## { #CVE-2023-41180 }
 
-CVE-2023-41180 [\[CVE json\]](./CVE-2023-41180.cve.json) [\[OSV json\]](./CVE-2023-41180.osv.json)
+CVE-2023-41180 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-41180) [\[CVE json\]](./CVE-2023-41180.cve.json) [\[OSV json\]](./CVE-2023-41180.osv.json)
 
 
 
@@ -220,7 +220,7 @@ _Last updated: 2023-09-03T15:52:48.640Z_
 
 ## Incomplete Validation of JDBC and JNDI Connection URLs ## { #CVE-2023-40037 }
 
-CVE-2023-40037 [\[CVE json\]](./CVE-2023-40037.cve.json) [\[OSV json\]](./CVE-2023-40037.osv.json)
+CVE-2023-40037 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-40037) [\[CVE json\]](./CVE-2023-40037.cve.json) [\[OSV json\]](./CVE-2023-40037.osv.json)
 
 
 
@@ -246,7 +246,7 @@ Apache NiFi 1.21.0 through 1.23.0 support JDBC and JNDI JMS access in several Pr
 
 ## Potential Code Injection with Properties Referencing Remote Resources ## { #CVE-2023-36542 }
 
-CVE-2023-36542 [\[CVE json\]](./CVE-2023-36542.cve.json) [\[OSV json\]](./CVE-2023-36542.osv.json)
+CVE-2023-36542 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-36542) [\[CVE json\]](./CVE-2023-36542.cve.json) [\[OSV json\]](./CVE-2023-36542.osv.json)
 
 
 
@@ -272,7 +272,7 @@ Apache NiFi 0.0.2 through 1.22.0 include Processors and Controller Services that
 
 ## Potential Code Injection with Database Services using H2 ## { #CVE-2023-34468 }
 
-CVE-2023-34468 [\[CVE json\]](./CVE-2023-34468.cve.json) [\[OSV json\]](./CVE-2023-34468.osv.json)
+CVE-2023-34468 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-34468) [\[CVE json\]](./CVE-2023-34468.cve.json) [\[OSV json\]](./CVE-2023-34468.osv.json)
 
 
 
@@ -298,7 +298,7 @@ _Last updated: 2023-06-12T15:09:17.702Z_
 
 ## Potential Deserialization of Untrusted Data with JNDI in JMS Components ## { #CVE-2023-34212 }
 
-CVE-2023-34212 [\[CVE json\]](./CVE-2023-34212.cve.json) [\[OSV json\]](./CVE-2023-34212.osv.json)
+CVE-2023-34212 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-34212) [\[CVE json\]](./CVE-2023-34212.cve.json) [\[OSV json\]](./CVE-2023-34212.osv.json)
 
 
 
@@ -325,7 +325,7 @@ _Last updated: 2023-06-12T15:10:30.889Z_
 
 ## Improper Restriction of XML External Entity References in ExtractCCDAAttributes ## { #CVE-2023-22832 }
 
-CVE-2023-22832 [\[CVE json\]](./CVE-2023-22832.cve.json) [\[OSV json\]](./CVE-2023-22832.osv.json)
+CVE-2023-22832 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-22832) [\[CVE json\]](./CVE-2023-22832.cve.json) [\[OSV json\]](./CVE-2023-22832.osv.json)
 
 
 
@@ -351,7 +351,7 @@ _Last updated: 2023-02-10T07:45:29.071Z_
 
 ## Improper Neutralization of Command Elements in Shell User Group Provider ## { #CVE-2022-33140 }
 
-CVE-2022-33140 [\[CVE json\]](./CVE-2022-33140.cve.json) [\[OSV json\]](./CVE-2022-33140.osv.json)
+CVE-2022-33140 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-33140) [\[CVE json\]](./CVE-2022-33140.cve.json) [\[OSV json\]](./CVE-2022-33140.osv.json)
 
 
 
@@ -380,7 +380,7 @@ The resolution removes command formatting based on user-provided arguments.
 
 ## Improper Restriction of XML External Entity References in Multiple Components ## { #CVE-2022-29265 }
 
-CVE-2022-29265 [\[CVE json\]](./CVE-2022-29265.cve.json) [\[OSV json\]](./CVE-2022-29265.osv.json)
+CVE-2022-29265 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-29265) [\[CVE json\]](./CVE-2022-29265.cve.json) [\[OSV json\]](./CVE-2022-29265.osv.json)
 
 
 
@@ -418,7 +418,7 @@ The resolution disables Document Type Declarations in the default configuration 
 
 ## Insufficiently protected credentials ## { #CVE-2022-26850 }
 
-CVE-2022-26850 [\[CVE json\]](./CVE-2022-26850.cve.json) [\[OSV json\]](./CVE-2022-26850.osv.json)
+CVE-2022-26850 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-26850) [\[CVE json\]](./CVE-2022-26850.cve.json) [\[OSV json\]](./CVE-2022-26850.osv.json)
 
 
 
@@ -446,7 +446,7 @@ NiFi 1.16.0 includes updates to replace the Login Identity Providers configurati
 
 ## Apache NiFi information disclosure by XXE ## { #CVE-2021-44145 }
 
-CVE-2021-44145 [\[CVE json\]](./CVE-2021-44145.cve.json) [\[OSV json\]](./CVE-2021-44145.osv.json)
+CVE-2021-44145 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-44145) [\[CVE json\]](./CVE-2021-44145.cve.json) [\[OSV json\]](./CVE-2021-44145.osv.json)
 
 
 
@@ -471,7 +471,7 @@ In the TransformXML processor of Apache NiFi before 1.15.1 an authenticated user
 
 ## MiNiFi CPP arbitrary script execution is possible on the agent's host machine through the c2 protocol ## { #CVE-2021-33191 }
 
-CVE-2021-33191 [\[CVE json\]](./CVE-2021-33191.cve.json) [\[OSV json\]](./CVE-2021-33191.osv.json)
+CVE-2021-33191 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-33191) [\[CVE json\]](./CVE-2021-33191.cve.json) [\[OSV json\]](./CVE-2021-33191.osv.json)
 
 
 

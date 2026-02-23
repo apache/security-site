@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Stored XSS vulnerability ## { #CVE-2025-54057 }
 
-CVE-2025-54057 [\[CVE json\]](./CVE-2025-54057.cve.json) [\[OSV json\]](./CVE-2025-54057.osv.json)
+CVE-2025-54057 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-54057) [\[CVE json\]](./CVE-2025-54057.cve.json) [\[OSV json\]](./CVE-2025-54057.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2025-11-27T02:19:21.627Z_
 
 ## Service unavailability impact in NodeJS agent(version <= 0.5.0) ## { #CVE-2022-36127 }
 
-CVE-2022-36127 [\[CVE json\]](./CVE-2022-36127.cve.json) [\[OSV json\]](./CVE-2022-36127.osv.json)
+CVE-2022-36127 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-36127) [\[CVE json\]](./CVE-2022-36127.cve.json) [\[OSV json\]](./CVE-2022-36127.osv.json)
 
 
 

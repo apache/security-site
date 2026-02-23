@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Code Injection Vulnerability in Ambari Alert Definition ## { #CVE-2025-23196 }
 
-CVE-2025-23196 [\[CVE json\]](./CVE-2025-23196.cve.json) [\[OSV json\]](./CVE-2025-23196.osv.json)
+CVE-2025-23196 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-23196) [\[CVE json\]](./CVE-2025-23196.cve.json) [\[OSV json\]](./CVE-2025-23196.osv.json)
 
 
 
@@ -49,7 +49,7 @@ issue has been fixed in the latest versions of Ambari.
 
 ## XML External Entity (XXE) Vulnerability in Ambari/Oozie ## { #CVE-2025-23195 }
 
-CVE-2025-23195 [\[CVE json\]](./CVE-2025-23195.cve.json) [\[OSV json\]](./CVE-2025-23195.osv.json)
+CVE-2025-23195 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-23195) [\[CVE json\]](./CVE-2025-23195.cve.json) [\[OSV json\]](./CVE-2025-23195.osv.json)
 
 
 
@@ -77,7 +77,7 @@ branch.
 
 ## Remote Code Injection in Ambari Metrics and AMS Alerts ## { #CVE-2024-51941 }
 
-CVE-2024-51941 [\[CVE json\]](./CVE-2024-51941.cve.json) [\[OSV json\]](./CVE-2024-51941.osv.json)
+CVE-2024-51941 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-51941) [\[CVE json\]](./CVE-2024-51941.cve.json) [\[OSV json\]](./CVE-2024-51941.osv.json)
 
 
 
@@ -109,7 +109,7 @@ vulnerability to execute arbitrary commands on the server. The issue has
 
 ## authenticated users could perform XXE to read arbitrary files on the server ## { #CVE-2023-50380 }
 
-CVE-2023-50380 [\[CVE json\]](./CVE-2023-50380.cve.json) [\[OSV json\]](./CVE-2023-50380.osv.json)
+CVE-2023-50380 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-50380) [\[CVE json\]](./CVE-2023-50380.cve.json) [\[OSV json\]](./CVE-2023-50380.osv.json)
 
 
 
@@ -130,7 +130,7 @@ _Last updated: 2024-02-27T16:51:31.875Z_
 
 ## authenticated users could perform command injection to perform RCE ## { #CVE-2023-50379 }
 
-CVE-2023-50379 [\[CVE json\]](./CVE-2023-50379.cve.json) [\[OSV json\]](./CVE-2023-50379.osv.json)
+CVE-2023-50379 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-50379) [\[CVE json\]](./CVE-2023-50379.cve.json) [\[OSV json\]](./CVE-2023-50379.osv.json)
 
 
 
@@ -151,7 +151,7 @@ _Last updated: 2024-02-27T08:26:54.321Z_
 
 ## Various XSS problems ## { #CVE-2023-50378 }
 
-CVE-2023-50378 [\[CVE json\]](./CVE-2023-50378.cve.json) [\[OSV json\]](./CVE-2023-50378.osv.json)
+CVE-2023-50378 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-50378) [\[CVE json\]](./CVE-2023-50378.cve.json) [\[OSV json\]](./CVE-2023-50378.osv.json)
 
 
 
@@ -172,7 +172,7 @@ _Last updated: 2024-10-03T12:23:04.013Z_
 
 ## Allows authenticated metrics consumers to perform RCE ## { #CVE-2022-45855 }
 
-CVE-2022-45855 [\[CVE json\]](./CVE-2022-45855.cve.json) [\[OSV json\]](./CVE-2022-45855.osv.json)
+CVE-2022-45855 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-45855) [\[CVE json\]](./CVE-2022-45855.cve.json) [\[OSV json\]](./CVE-2022-45855.osv.json)
 
 
 
@@ -197,7 +197,7 @@ SpringEL injection in the metrics source in Apache Ambari version 2.7.0 to 2.7.6
 
 ## A malicious authenticated user can remotely execute arbitrary code in the context of the application. ## { #CVE-2022-42009 }
 
-CVE-2022-42009 [\[CVE json\]](./CVE-2022-42009.cve.json) [\[OSV json\]](./CVE-2022-42009.osv.json)
+CVE-2022-42009 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-42009) [\[CVE json\]](./CVE-2022-42009.cve.json) [\[OSV json\]](./CVE-2022-42009.osv.json)
 
 
 
@@ -222,7 +222,7 @@ SpringEL injection in the server agent in Apache Ambari version 2.7.0 to 2.7.6 a
 
 ## Stored XSS in Apache Ambari ## { #CVE-2020-1936 }
 
-CVE-2020-1936 [\[CVE json\]](./CVE-2020-1936.cve.json) [\[OSV json\]](./CVE-2020-1936.osv.json)
+CVE-2020-1936 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-1936) [\[CVE json\]](./CVE-2020-1936.cve.json) [\[OSV json\]](./CVE-2020-1936.osv.json)
 
 
 
@@ -247,7 +247,7 @@ A cross-site scripting issue was found in Apache Ambari Views.  This was address
 
 ##  ## { #CVE-2020-13924 }
 
-CVE-2020-13924 [\[CVE json\]](./CVE-2020-13924.cve.json) [\[OSV json\]](./CVE-2020-13924.osv.json)
+CVE-2020-13924 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-13924) [\[CVE json\]](./CVE-2020-13924.cve.json) [\[OSV json\]](./CVE-2020-13924.osv.json)
 
 
 

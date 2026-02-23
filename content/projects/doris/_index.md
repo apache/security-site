@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Improper Access Control results in bypassing a "read-only" mode for doris-mcp-server MCP Server ## { #CVE-2025-58337 }
 
-CVE-2025-58337 [\[CVE json\]](./CVE-2025-58337.cve.json) [\[OSV json\]](./CVE-2025-58337.osv.json)
+CVE-2025-58337 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-58337) [\[CVE json\]](./CVE-2025-58337.cve.json) [\[OSV json\]](./CVE-2025-58337.osv.json)
 
 
 
@@ -43,7 +43,7 @@ Bypasses read-only mode; attackers with read-only access may perform unauthorize
 
 ## allows admin users to read arbitrary files through the REST API ## { #CVE-2024-48019 }
 
-CVE-2024-48019 [\[CVE json\]](./CVE-2024-48019.cve.json) [\[OSV json\]](./CVE-2024-48019.osv.json)
+CVE-2024-48019 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-48019) [\[CVE json\]](./CVE-2024-48019.cve.json) [\[OSV json\]](./CVE-2024-48019.osv.json)
 
 
 
@@ -70,7 +70,7 @@ files from the server filesystem through path traversal.</span><br></p><p>Users 
 
 ## Downloading arbitrary remote jar files resulting in remote command execution ## { #CVE-2024-27438 }
 
-CVE-2024-27438 [\[CVE json\]](./CVE-2024-27438.cve.json) [\[OSV json\]](./CVE-2024-27438.osv.json)
+CVE-2024-27438 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27438) [\[CVE json\]](./CVE-2024-27438.cve.json) [\[OSV json\]](./CVE-2024-27438.osv.json)
 
 
 
@@ -91,7 +91,7 @@ Download of Code Without Integrity Check vulnerability in Apache Doris.<br>The j
 
 ## Possible race condition ## { #CVE-2024-26307 }
 
-CVE-2024-26307 [\[CVE json\]](./CVE-2024-26307.cve.json) [\[OSV json\]](./CVE-2024-26307.osv.json)
+CVE-2024-26307 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-26307) [\[CVE json\]](./CVE-2024-26307.cve.json) [\[OSV json\]](./CVE-2024-26307.osv.json)
 
 
 
@@ -113,7 +113,7 @@ Possible race condition vulnerability in Apache Doris.<br>Some of code using `ch
 
 ## Missing API authentication allowed DoS ## { #CVE-2023-41314 }
 
-CVE-2023-41314 [\[CVE json\]](./CVE-2023-41314.cve.json) [\[OSV json\]](./CVE-2023-41314.osv.json)
+CVE-2023-41314 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-41314) [\[CVE json\]](./CVE-2023-41314.cve.json) [\[OSV json\]](./CVE-2023-41314.osv.json)
 
 
 
@@ -134,7 +134,7 @@ The api /api/snapshot and /api/get_log_file would allow unauthenticated access.<
 
 ## Timing Attack weakness ## { #CVE-2023-41313 }
 
-CVE-2023-41313 [\[CVE json\]](./CVE-2023-41313.cve.json) [\[OSV json\]](./CVE-2023-41313.osv.json)
+CVE-2023-41313 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-41313) [\[CVE json\]](./CVE-2023-41313.cve.json) [\[OSV json\]](./CVE-2023-41313.osv.json)
 
 
 
@@ -159,7 +159,7 @@ _Last updated: 2024-03-12T10:16:14.512Z_
 
 ## Apache Doris hardcoded cryptography initialization ## { #CVE-2022-23942 }
 
-CVE-2022-23942 [\[CVE json\]](./CVE-2022-23942.cve.json) [\[OSV json\]](./CVE-2022-23942.osv.json)
+CVE-2022-23942 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-23942) [\[CVE json\]](./CVE-2022-23942.cve.json) [\[OSV json\]](./CVE-2022-23942.osv.json)
 
 
 

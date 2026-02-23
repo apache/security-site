@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Configuration files uploaded by administrative users are not check properly ## { #CVE-2025-50151 }
 
-CVE-2025-50151 [\[CVE json\]](./CVE-2025-50151.cve.json) [\[OSV json\]](./CVE-2025-50151.osv.json)
+CVE-2025-50151 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-50151) [\[CVE json\]](./CVE-2025-50151.cve.json) [\[OSV json\]](./CVE-2025-50151.osv.json)
 
 
 
@@ -36,7 +36,7 @@ _Last updated: 2025-07-21T09:32:27.896Z_
 
 ## Administrative users can create files outside the server directory space via the admin UI ## { #CVE-2025-49656 }
 
-CVE-2025-49656 [\[CVE json\]](./CVE-2025-49656.cve.json) [\[OSV json\]](./CVE-2025-49656.osv.json)
+CVE-2025-49656 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-49656) [\[CVE json\]](./CVE-2025-49656.cve.json) [\[OSV json\]](./CVE-2025-49656.osv.json)
 
 
 
@@ -61,7 +61,7 @@ _Last updated: 2025-07-21T09:30:16.936Z_
 
 ## Exposure of execution in script engine expressions. ## { #CVE-2023-32200 }
 
-CVE-2023-32200 [\[CVE json\]](./CVE-2023-32200.cve.json) [\[OSV json\]](./CVE-2023-32200.osv.json)
+CVE-2023-32200 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-32200) [\[CVE json\]](./CVE-2023-32200.cve.json) [\[OSV json\]](./CVE-2023-32200.osv.json)
 
 
 
@@ -89,7 +89,7 @@ remote user to execute javascript via a SPARQL query.<br><p>This issue affects A
 
 ## Exposure of arbitrary execution in script engine expressions. ## { #CVE-2023-22665 }
 
-CVE-2023-22665 [\[CVE json\]](./CVE-2023-22665.cve.json) [\[OSV json\]](./CVE-2023-22665.osv.json)
+CVE-2023-22665 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-22665) [\[CVE json\]](./CVE-2023-22665.cve.json) [\[OSV json\]](./CVE-2023-22665.osv.json)
 
 
 
@@ -114,7 +114,7 @@ There is insufficient checking of user queries in Apache Jena versions 4.7.0 and
 
 ## Apache Jena SDB allows arbitrary deserialisation via JDBC ## { #CVE-2022-45136 }
 
-CVE-2022-45136 [\[CVE json\]](./CVE-2022-45136.cve.json) [\[OSV json\]](./CVE-2022-45136.osv.json)
+CVE-2022-45136 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-45136) [\[CVE json\]](./CVE-2022-45136.cve.json) [\[OSV json\]](./CVE-2022-45136.osv.json)
 
 
 
@@ -141,7 +141,7 @@ Apache Jena SDB has been EOL since December 2020 and users should migrate to alt
 
 ## Processing external DTDs ## { #CVE-2022-28890 }
 
-CVE-2022-28890 [\[CVE json\]](./CVE-2022-28890.cve.json) [\[OSV json\]](./CVE-2022-28890.osv.json)
+CVE-2022-28890 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-28890) [\[CVE json\]](./CVE-2022-28890.cve.json) [\[OSV json\]](./CVE-2022-28890.osv.json)
 
 
 
@@ -166,7 +166,7 @@ A vulnerability in the RDF/XML parser of Apache Jena allows an attacker to cause
 
 ## XML External Entity (XXE) vulnerability ## { #CVE-2021-39239 }
 
-CVE-2021-39239 [\[CVE json\]](./CVE-2021-39239.cve.json) [\[OSV json\]](./CVE-2021-39239.osv.json)
+CVE-2021-39239 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-39239) [\[CVE json\]](./CVE-2021-39239.cve.json) [\[OSV json\]](./CVE-2021-39239.osv.json)
 
 
 
@@ -187,7 +187,7 @@ A vulnerability in XML processing in Apache Jena, in versions up to 4.1.0, may a
 
 ## Display information UI XSS ## { #CVE-2021-33192 }
 
-CVE-2021-33192 [\[CVE json\]](./CVE-2021-33192.cve.json) [\[OSV json\]](./CVE-2021-33192.osv.json)
+CVE-2021-33192 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-33192) [\[CVE json\]](./CVE-2021-33192.cve.json) [\[OSV json\]](./CVE-2021-33192.osv.json)
 
 
 

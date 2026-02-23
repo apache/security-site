@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Accumulo 2.1.0 may incorrectly validate cached credentials ## { #CVE-2023-34340 }
 
-CVE-2023-34340 [\[CVE json\]](./CVE-2023-34340.cve.json) [\[OSV json\]](./CVE-2023-34340.osv.json)
+CVE-2023-34340 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-34340) [\[CVE json\]](./CVE-2023-34340.cve.json) [\[OSV json\]](./CVE-2023-34340.osv.json)
 
 
 
@@ -37,7 +37,7 @@ Improper Authentication vulnerability in Apache Software Foundation Apache Accum
 
 ## Apache Accumulo Improper Handling of Insufficient Permissions ## { #CVE-2020-17533 }
 
-CVE-2020-17533 [\[CVE json\]](./CVE-2020-17533.cve.json) [\[OSV json\]](./CVE-2020-17533.osv.json)
+CVE-2020-17533 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-17533) [\[CVE json\]](./CVE-2020-17533.cve.json) [\[OSV json\]](./CVE-2020-17533.osv.json)
 
 
 

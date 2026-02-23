@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Untrusted JMS configuration can lead to RCE ## { #CVE-2025-48913 }
 
-CVE-2025-48913 [\[CVE json\]](./CVE-2025-48913.cve.json) [\[OSV json\]](./CVE-2025-48913.osv.json)
+CVE-2025-48913 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-48913) [\[CVE json\]](./CVE-2025-48913.cve.json) [\[OSV json\]](./CVE-2025-48913.osv.json)
 
 
 
@@ -42,7 +42,7 @@ If untrusted users are allowed to configure JMS for Apache CXF, previously they 
 
 ## Denial of Service and sensitive data exposure in logs ## { #CVE-2025-48795 }
 
-CVE-2025-48795 [\[CVE json\]](./CVE-2025-48795.cve.json) [\[OSV json\]](./CVE-2025-48795.osv.json)
+CVE-2025-48795 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-48795) [\[CVE json\]](./CVE-2025-48795.cve.json) [\[OSV json\]](./CVE-2025-48795.osv.json)
 
 
 
@@ -70,7 +70,7 @@ Apache CXF stores large stream based messages as temporary files on the local fi
 
 ## Denial of Service vulnerability with temporary files ## { #CVE-2025-23184 }
 
-CVE-2025-23184 [\[CVE json\]](./CVE-2025-23184.cve.json) [\[OSV json\]](./CVE-2025-23184.osv.json)
+CVE-2025-23184 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-23184) [\[CVE json\]](./CVE-2025-23184.cve.json) [\[OSV json\]](./CVE-2025-23184.osv.json)
 
 
 
@@ -93,7 +93,7 @@ A potential denial of service vulnerability is present in versions of Apache CXF
 
 ## Unrestricted memory consumption in CXF HTTP clients ## { #CVE-2024-41172 }
 
-CVE-2024-41172 [\[CVE json\]](./CVE-2024-41172.cve.json) [\[OSV json\]](./CVE-2024-41172.osv.json)
+CVE-2024-41172 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-41172) [\[CVE json\]](./CVE-2024-41172.cve.json) [\[OSV json\]](./CVE-2024-41172.osv.json)
 
 
 
@@ -114,7 +114,7 @@ In versions of Apache CXF before 3.6.4 and 4.0.5 (3.5.x and lower versions are n
 
 ## Apache CXF Denial of Service vulnerability in JOSE ## { #CVE-2024-32007 }
 
-CVE-2024-32007 [\[CVE json\]](./CVE-2024-32007.cve.json) [\[OSV json\]](./CVE-2024-32007.osv.json)
+CVE-2024-32007 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-32007) [\[CVE json\]](./CVE-2024-32007.cve.json) [\[OSV json\]](./CVE-2024-32007.osv.json)
 
 
 
@@ -139,7 +139,7 @@ An improper input validation of the&nbsp;p2c parameter in the Apache CXF JOSE co
 
 ## SSRF vulnerability via WADL stylesheet parameter ## { #CVE-2024-29736 }
 
-CVE-2024-29736 [\[CVE json\]](./CVE-2024-29736.cve.json) [\[OSV json\]](./CVE-2024-29736.osv.json)
+CVE-2024-29736 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-29736) [\[CVE json\]](./CVE-2024-29736.cve.json) [\[OSV json\]](./CVE-2024-29736.osv.json)
 
 
 
@@ -164,7 +164,7 @@ A SSRF vulnerability in WADL service description in versions of Apache CXF befor
 
 ## Apache CXF SSRF Vulnerability using the Aegis databinding ## { #CVE-2024-28752 }
 
-CVE-2024-28752 [\[CVE json\]](./CVE-2024-28752.cve.json) [\[OSV json\]](./CVE-2024-28752.osv.json)
+CVE-2024-28752 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-28752) [\[CVE json\]](./CVE-2024-28752.cve.json) [\[OSV json\]](./CVE-2024-28752.osv.json)
 
 
 
@@ -189,7 +189,7 @@ A SSRF vulnerability using the Aegis DataBinding in versions of Apache CXF befor
 
 ## Apache CXF SSRF Vulnerability ## { #CVE-2022-46364 }
 
-CVE-2022-46364 [\[CVE json\]](./CVE-2022-46364.cve.json) [\[OSV json\]](./CVE-2022-46364.osv.json)
+CVE-2022-46364 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-46364) [\[CVE json\]](./CVE-2022-46364.cve.json) [\[OSV json\]](./CVE-2022-46364.osv.json)
 
 
 
@@ -215,7 +215,7 @@ A SSRF vulnerability in parsing the&nbsp;href attribute of XOP:Include in MTOM r
 
 ## Apache CXF directory listing / code exfiltration ## { #CVE-2022-46363 }
 
-CVE-2022-46363 [\[CVE json\]](./CVE-2022-46363.cve.json) [\[OSV json\]](./CVE-2022-46363.osv.json)
+CVE-2022-46363 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-46363) [\[CVE json\]](./CVE-2022-46363.cve.json) [\[OSV json\]](./CVE-2022-46363.osv.json)
 
 
 
@@ -241,7 +241,7 @@ A vulnerability in Apache CXF before versions 3.5.5 and 3.4.10 allows an attacke
 
 ## Apache CXF Denial of service vulnerability in parsing JSON via JsonMapObjectReaderWriter ## { #CVE-2021-30468 }
 
-CVE-2021-30468 [\[CVE json\]](./CVE-2021-30468.cve.json) [\[OSV json\]](./CVE-2021-30468.osv.json)
+CVE-2021-30468 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-30468) [\[CVE json\]](./CVE-2021-30468.cve.json) [\[OSV json\]](./CVE-2021-30468.osv.json)
 
 
 
@@ -264,7 +264,7 @@ This issue affects Apache CXF versions prior to 3.4.4; Apache CXF versions prior
 
 ## OAuth 2 authorization service vulnerable to DDos attacks ## { #CVE-2021-22696 }
 
-CVE-2021-22696 [\[CVE json\]](./CVE-2021-22696.cve.json) [\[OSV json\]](./CVE-2021-22696.osv.json)
+CVE-2021-22696 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-22696) [\[CVE json\]](./CVE-2021-22696.cve.json) [\[OSV json\]](./CVE-2021-22696.osv.json)
 
 
 
@@ -291,7 +291,7 @@ This issue affects Apache CXF versions prior to 3.4.3; Apache CXF versions prior
 
 ## Apache CXF Reflected XSS in the services listing page via the styleSheetPath ## { #CVE-2020-13954 }
 
-CVE-2020-13954 [\[CVE json\]](./CVE-2020-13954.cve.json) [\[OSV json\]](./CVE-2020-13954.osv.json)
+CVE-2020-13954 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-13954) [\[CVE json\]](./CVE-2020-13954.cve.json) [\[OSV json\]](./CVE-2020-13954.osv.json)
 
 
 

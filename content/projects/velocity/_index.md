@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Velocity Tools XSS Vulnerability ## { #CVE-2020-13959 }
 
-CVE-2020-13959 [\[CVE json\]](./CVE-2020-13959.cve.json) [\[OSV json\]](./CVE-2020-13959.osv.json)
+CVE-2020-13959 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-13959) [\[CVE json\]](./CVE-2020-13959.cve.json) [\[OSV json\]](./CVE-2020-13959.osv.json)
 
 
 
@@ -41,7 +41,7 @@ XSS vulnerabilities allow attackers to execute arbitrary JavaScript in the conte
 
 ## Velocity Sandbox Bypass ## { #CVE-2020-13936 }
 
-CVE-2020-13936 [\[CVE json\]](./CVE-2020-13936.cve.json) [\[OSV json\]](./CVE-2020-13936.osv.json)
+CVE-2020-13936 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-13936) [\[CVE json\]](./CVE-2020-13936.cve.json) [\[OSV json\]](./CVE-2020-13936.osv.json)
 
 
 

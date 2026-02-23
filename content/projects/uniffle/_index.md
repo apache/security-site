@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Insecure SSL Configuration in Uniffle HTTP Client ## { #CVE-2025-68637 }
 
-CVE-2025-68637 [\[CVE json\]](./CVE-2025-68637.cve.json) [\[OSV json\]](./CVE-2025-68637.osv.json)
+CVE-2025-68637 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-68637) [\[CVE json\]](./CVE-2025-68637.cve.json) [\[OSV json\]](./CVE-2025-68637.osv.json)
 
 
 

@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Incorrect datasource authorization on REST API ## { #CVE-2025-55675 }
 
-CVE-2025-55675 [\[CVE json\]](./CVE-2025-55675.cve.json) [\[OSV json\]](./CVE-2025-55675.osv.json)
+CVE-2025-55675 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-55675) [\[CVE json\]](./CVE-2025-55675.cve.json) [\[OSV json\]](./CVE-2025-55675.osv.json)
 
 
 
@@ -41,7 +41,7 @@ _Last updated: 2025-08-14T13:18:52.601Z_
 
 ## Improper SQL authorisation, parse not checking for specific engine functions ## { #CVE-2025-55674 }
 
-CVE-2025-55674 [\[CVE json\]](./CVE-2025-55674.cve.json) [\[OSV json\]](./CVE-2025-55674.osv.json)
+CVE-2025-55674 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-55674) [\[CVE json\]](./CVE-2025-55674.cve.json) [\[OSV json\]](./CVE-2025-55674.osv.json)
 
 
 
@@ -68,7 +68,7 @@ _Last updated: 2025-08-14T13:18:08.885Z_
 
 ## Metadata exposure in embedded charts ## { #CVE-2025-55673 }
 
-CVE-2025-55673 [\[CVE json\]](./CVE-2025-55673.cve.json) [\[OSV json\]](./CVE-2025-55673.osv.json)
+CVE-2025-55673 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-55673) [\[CVE json\]](./CVE-2025-55673.cve.json) [\[OSV json\]](./CVE-2025-55673.osv.json)
 
 
 
@@ -94,7 +94,7 @@ _Last updated: 2025-08-14T13:16:25.157Z_
 
 ## Stored XSS on charts metadata ## { #CVE-2025-55672 }
 
-CVE-2025-55672 [\[CVE json\]](./CVE-2025-55672.cve.json) [\[OSV json\]](./CVE-2025-55672.osv.json)
+CVE-2025-55672 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-55672) [\[CVE json\]](./CVE-2025-55672.cve.json) [\[OSV json\]](./CVE-2025-55672.osv.json)
 
 
 
@@ -121,7 +121,7 @@ _Last updated: 2025-08-14T13:17:31.272Z_
 
 ## Improper authorization bypass on row level security via SQL Injection ## { #CVE-2025-48912 }
 
-CVE-2025-48912 [\[CVE json\]](./CVE-2025-48912.cve.json) [\[OSV json\]](./CVE-2025-48912.osv.json)
+CVE-2025-48912 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-48912) [\[CVE json\]](./CVE-2025-48912.cve.json) [\[OSV json\]](./CVE-2025-48912.osv.json)
 
 
 
@@ -148,7 +148,7 @@ _Last updated: 2025-05-30T08:26:07.560Z_
 
 ## Incorrect authorization leading to resource ownership takeover ## { #CVE-2025-27696 }
 
-CVE-2025-27696 [\[CVE json\]](./CVE-2025-27696.cve.json) [\[OSV json\]](./CVE-2025-27696.osv.json)
+CVE-2025-27696 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27696) [\[CVE json\]](./CVE-2025-27696.cve.json) [\[OSV json\]](./CVE-2025-27696.osv.json)
 
 
 
@@ -174,7 +174,7 @@ _Last updated: 2025-09-01T09:52:51.812Z_
 
 ## SQLLab Improper readonly query validation allows unauthorized write access ## { #CVE-2024-55633 }
 
-CVE-2024-55633 [\[CVE json\]](./CVE-2024-55633.cve.json) [\[OSV json\]](./CVE-2024-55633.osv.json)
+CVE-2024-55633 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-55633) [\[CVE json\]](./CVE-2024-55633.cve.json) [\[OSV json\]](./CVE-2024-55633.osv.json)
 
 
 
@@ -201,7 +201,7 @@ _Last updated: 2025-02-12T09:35:41.246Z_
 
 ## Lower privilege users are able to create Role when FAB_ADD_SECURITY_API is enabled ## { #CVE-2024-53949 }
 
-CVE-2024-53949 [\[CVE json\]](./CVE-2024-53949.cve.json) [\[OSV json\]](./CVE-2024-53949.osv.json)
+CVE-2024-53949 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-53949) [\[CVE json\]](./CVE-2024-53949.cve.json) [\[OSV json\]](./CVE-2024-53949.osv.json)
 
 
 
@@ -227,7 +227,7 @@ _Last updated: 2025-02-12T09:34:35.897Z_
 
 ## Error verbosity exposes metadata in analytics databases ## { #CVE-2024-53948 }
 
-CVE-2024-53948 [\[CVE json\]](./CVE-2024-53948.cve.json) [\[OSV json\]](./CVE-2024-53948.osv.json)
+CVE-2024-53948 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-53948) [\[CVE json\]](./CVE-2024-53948.cve.json) [\[OSV json\]](./CVE-2024-53948.osv.json)
 
 
 
@@ -253,7 +253,7 @@ _Last updated: 2024-12-09T13:35:29.219Z_
 
 ## Improper SQL authorisation, parse not checking for specific postgres functions ## { #CVE-2024-53947 }
 
-CVE-2024-53947 [\[CVE json\]](./CVE-2024-53947.cve.json) [\[OSV json\]](./CVE-2024-53947.osv.json)
+CVE-2024-53947 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-53947) [\[CVE json\]](./CVE-2024-53947.cve.json) [\[OSV json\]](./CVE-2024-53947.osv.json)
 
 
 
@@ -280,7 +280,7 @@ _Last updated: 2024-12-09T13:35:08.136Z_
 
 ## Improper SQL authorisation, parse not checking for specific engine functions ## { #CVE-2024-39887 }
 
-CVE-2024-39887 [\[CVE json\]](./CVE-2024-39887.cve.json) [\[OSV json\]](./CVE-2024-39887.osv.json)
+CVE-2024-39887 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-39887) [\[CVE json\]](./CVE-2024-39887.cve.json) [\[OSV json\]](./CVE-2024-39887.osv.json)
 
 
 
@@ -306,7 +306,7 @@ _Last updated: 2024-07-16T09:20:08.872Z_
 
 ## Server arbitrary file read ## { #CVE-2024-34693 }
 
-CVE-2024-34693 [\[CVE json\]](./CVE-2024-34693.cve.json) [\[OSV json\]](./CVE-2024-34693.osv.json)
+CVE-2024-34693 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-34693) [\[CVE json\]](./CVE-2024-34693.cve.json) [\[OSV json\]](./CVE-2024-34693.osv.json)
 
 
 
@@ -333,7 +333,7 @@ Improper Input Validation vulnerability in Apache Superset, allows for an authen
 
 ## Incorrect datasource authorization on explore REST API  ## { #CVE-2024-28148 }
 
-CVE-2024-28148 [\[CVE json\]](./CVE-2024-28148.cve.json) [\[OSV json\]](./CVE-2024-28148.osv.json)
+CVE-2024-28148 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-28148) [\[CVE json\]](./CVE-2024-28148.cve.json) [\[OSV json\]](./CVE-2024-28148.osv.json)
 
 
 
@@ -359,7 +359,7 @@ _Last updated: 2024-05-08T08:31:47.011Z_
 
 ## Improper error handling on alerts ## { #CVE-2024-27315 }
 
-CVE-2024-27315 [\[CVE json\]](./CVE-2024-27315.cve.json) [\[OSV json\]](./CVE-2024-27315.osv.json)
+CVE-2024-27315 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27315) [\[CVE json\]](./CVE-2024-27315.cve.json) [\[OSV json\]](./CVE-2024-27315.osv.json)
 
 
 
@@ -386,7 +386,7 @@ _Last updated: 2024-10-03T12:30:58.178Z_
 
 ## Improper authorization validation on dashboards and charts import ## { #CVE-2024-26016 }
 
-CVE-2024-26016 [\[CVE json\]](./CVE-2024-26016.cve.json) [\[OSV json\]](./CVE-2024-26016.osv.json)
+CVE-2024-26016 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-26016) [\[CVE json\]](./CVE-2024-26016.cve.json) [\[OSV json\]](./CVE-2024-26016.osv.json)
 
 
 
@@ -413,7 +413,7 @@ A low privilege authenticated user <span style="background-color: rgb(255, 255, 
 
 ## Improper data authorization when creating a new dataset ## { #CVE-2024-24779 }
 
-CVE-2024-24779 [\[CVE json\]](./CVE-2024-24779.cve.json) [\[OSV json\]](./CVE-2024-24779.osv.json)
+CVE-2024-24779 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-24779) [\[CVE json\]](./CVE-2024-24779.cve.json) [\[OSV json\]](./CVE-2024-24779.osv.json)
 
 
 
@@ -440,7 +440,7 @@ Apache Superset with custom roles that include `can write on dataset` and withou
 
 ## Improper validation of SQL statements allows for unauthorized access to data  ## { #CVE-2024-24773 }
 
-CVE-2024-24773 [\[CVE json\]](./CVE-2024-24773.cve.json) [\[OSV json\]](./CVE-2024-24773.osv.json)
+CVE-2024-24773 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-24773) [\[CVE json\]](./CVE-2024-24773.cve.json) [\[OSV json\]](./CVE-2024-24773.osv.json)
 
 
 
@@ -467,7 +467,7 @@ Improper parsing of nested SQL statements on SQLLab would allow authenticated us
 
 ## Improper Neutralisation of custom SQL on embedded context ## { #CVE-2024-24772 }
 
-CVE-2024-24772 [\[CVE json\]](./CVE-2024-24772.cve.json) [\[OSV json\]](./CVE-2024-24772.osv.json)
+CVE-2024-24772 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-24772) [\[CVE json\]](./CVE-2024-24772.cve.json) [\[OSV json\]](./CVE-2024-24772.osv.json)
 
 
 
@@ -494,7 +494,7 @@ A guest user could exploit a chart data REST API and send arbitrary SQL statemen
 
 ## Allows for uncontrolled resource consumption via a ZIP bomb (version range fix for CVE-2023-46104) ## { #CVE-2024-23952 }
 
-CVE-2024-23952 [\[CVE json\]](./CVE-2024-23952.cve.json) [\[OSV json\]](./CVE-2024-23952.osv.json)
+CVE-2024-23952 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-23952) [\[CVE json\]](./CVE-2024-23952.cve.json) [\[OSV json\]](./CVE-2024-23952.osv.json)
 
 
 
@@ -520,7 +520,7 @@ This is a duplicate for CVE-2023-46104. With correct CVE version ranges for affe
 
 ## SQL Injection on where_in JINJA macro ## { #CVE-2023-49736 }
 
-CVE-2023-49736 [\[CVE json\]](./CVE-2023-49736.cve.json) [\[OSV json\]](./CVE-2023-49736.osv.json)
+CVE-2023-49736 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-49736) [\[CVE json\]](./CVE-2023-49736.cve.json) [\[OSV json\]](./CVE-2023-49736.osv.json)
 
 
 
@@ -546,7 +546,7 @@ A where_in JINJA macro <span style="background-color: rgb(255, 255, 255);">allow
 
 ## Privilege Escalation Vulnerability ## { #CVE-2023-49734 }
 
-CVE-2023-49734 [\[CVE json\]](./CVE-2023-49734.cve.json) [\[OSV json\]](./CVE-2023-49734.osv.json)
+CVE-2023-49734 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-49734) [\[CVE json\]](./CVE-2023-49734.cve.json) [\[OSV json\]](./CVE-2023-49734.osv.json)
 
 
 
@@ -572,7 +572,7 @@ An authenticated Gamma user has the ability to create a dashboard and add charts
 
 ## Stored XSS in Dashboard Title and Chart Title ## { #CVE-2023-49657 }
 
-CVE-2023-49657 [\[CVE json\]](./CVE-2023-49657.cve.json) [\[OSV json\]](./CVE-2023-49657.osv.json)
+CVE-2023-49657 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-49657) [\[CVE json\]](./CVE-2023-49657.cve.json) [\[OSV json\]](./CVE-2023-49657.osv.json)
 
 
 
@@ -598,7 +598,7 @@ _Last updated: 2024-01-29T08:35:36.887Z_
 
 ## Allows for uncontrolled resource consumption via a ZIP bomb ## { #CVE-2023-46104 }
 
-CVE-2023-46104 [\[CVE json\]](./CVE-2023-46104.cve.json) [\[OSV json\]](./CVE-2023-46104.osv.json)
+CVE-2023-46104 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-46104) [\[CVE json\]](./CVE-2023-46104.cve.json) [\[OSV json\]](./CVE-2023-46104.osv.json)
 
 
 
@@ -624,7 +624,7 @@ Uncontrolled resource consumption can be triggered by authenticated attacker tha
 
 ## Stored XSS on API endpoint ## { #CVE-2023-43701 }
 
-CVE-2023-43701 [\[CVE json\]](./CVE-2023-43701.cve.json) [\[OSV json\]](./CVE-2023-43701.osv.json)
+CVE-2023-43701 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-43701) [\[CVE json\]](./CVE-2023-43701.cve.json) [\[OSV json\]](./CVE-2023-43701.osv.json)
 
 
 
@@ -649,7 +649,7 @@ Improper payload validation and an improper REST API response type, made it poss
 
 ## Sensitive information disclosure on db connection details ## { #CVE-2023-42505 }
 
-CVE-2023-42505 [\[CVE json\]](./CVE-2023-42505.cve.json) [\[OSV json\]](./CVE-2023-42505.osv.json)
+CVE-2023-42505 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-42505) [\[CVE json\]](./CVE-2023-42505.cve.json) [\[OSV json\]](./CVE-2023-42505.osv.json)
 
 
 
@@ -674,7 +674,7 @@ _Last updated: 2023-11-28T16:26:56.352Z_
 
 ## Lack of rate limiting allows for possible denial of service ## { #CVE-2023-42504 }
 
-CVE-2023-42504 [\[CVE json\]](./CVE-2023-42504.cve.json) [\[OSV json\]](./CVE-2023-42504.osv.json)
+CVE-2023-42504 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-42504) [\[CVE json\]](./CVE-2023-42504.cve.json) [\[OSV json\]](./CVE-2023-42504.osv.json)
 
 
 
@@ -699,7 +699,7 @@ _Last updated: 2023-11-29T09:18:09.316Z_
 
 ## Open Redirect Vulnerability ## { #CVE-2023-42502 }
 
-CVE-2023-42502 [\[CVE json\]](./CVE-2023-42502.cve.json) [\[OSV json\]](./CVE-2023-42502.osv.json)
+CVE-2023-42502 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-42502) [\[CVE json\]](./CVE-2023-42502.cve.json) [\[OSV json\]](./CVE-2023-42502.osv.json)
 
 
 
@@ -724,7 +724,7 @@ An authenticated attacker with update datasets permission could change a dataset
 
 ## Unnecessary read permissions within the Gamma role ## { #CVE-2023-42501 }
 
-CVE-2023-42501 [\[CVE json\]](./CVE-2023-42501.cve.json) [\[OSV json\]](./CVE-2023-42501.osv.json)
+CVE-2023-42501 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-42501) [\[CVE json\]](./CVE-2023-42501.cve.json) [\[OSV json\]](./CVE-2023-42501.osv.json)
 
 
 
@@ -749,7 +749,7 @@ Unnecessary read permissions within the Gamma role would allow authenticated use
 
 ## Privilege escalation with default examples database ## { #CVE-2023-40610 }
 
-CVE-2023-40610 [\[CVE json\]](./CVE-2023-40610.cve.json) [\[OSV json\]](./CVE-2023-40610.osv.json)
+CVE-2023-40610 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-40610) [\[CVE json\]](./CVE-2023-40610.cve.json) [\[OSV json\]](./CVE-2023-40610.osv.json)
 
 
 
@@ -774,7 +774,7 @@ Improper authorization check and possible privilege escalation on Apache Superse
 
 ## Possible Unauthorized Registration of SQLite Database Connections ## { #CVE-2023-39265 }
 
-CVE-2023-39265 [\[CVE json\]](./CVE-2023-39265.cve.json) [\[OSV json\]](./CVE-2023-39265.osv.json)
+CVE-2023-39265 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-39265) [\[CVE json\]](./CVE-2023-39265.cve.json) [\[OSV json\]](./CVE-2023-39265.osv.json)
 
 
 
@@ -799,7 +799,7 @@ Apache Superset would allow for SQLite database connections to be incorrectly re
 
 ## Stack traces enabled by default ## { #CVE-2023-39264 }
 
-CVE-2023-39264 [\[CVE json\]](./CVE-2023-39264.cve.json) [\[OSV json\]](./CVE-2023-39264.osv.json)
+CVE-2023-39264 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-39264) [\[CVE json\]](./CVE-2023-39264.cve.json) [\[OSV json\]](./CVE-2023-39264.osv.json)
 
 
 
@@ -824,7 +824,7 @@ By default, stack traces for errors were enabled, which resulted in the exposure
 
 ## Metadata db write access can lead to remote code execution ## { #CVE-2023-37941 }
 
-CVE-2023-37941 [\[CVE json\]](./CVE-2023-37941.cve.json) [\[OSV json\]](./CVE-2023-37941.osv.json)
+CVE-2023-37941 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-37941) [\[CVE json\]](./CVE-2023-37941.cve.json) [\[OSV json\]](./CVE-2023-37941.osv.json)
 
 
 
@@ -853,7 +853,7 @@ process itself. Gaining access to that database should
 
 ## Improper API permission for low privilege users allows for SSRF ## { #CVE-2023-36388 }
 
-CVE-2023-36388 [\[CVE json\]](./CVE-2023-36388.cve.json) [\[OSV json\]](./CVE-2023-36388.osv.json)
+CVE-2023-36388 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-36388) [\[CVE json\]](./CVE-2023-36388.cve.json) [\[OSV json\]](./CVE-2023-36388.osv.json)
 
 
 
@@ -878,7 +878,7 @@ Improper REST API permission in Apache Superset up to and including 2.1.0 allows
 
 ## Improper API permission for low privilege users ## { #CVE-2023-36387 }
 
-CVE-2023-36387 [\[CVE json\]](./CVE-2023-36387.cve.json) [\[OSV json\]](./CVE-2023-36387.osv.json)
+CVE-2023-36387 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-36387) [\[CVE json\]](./CVE-2023-36387.cve.json) [\[OSV json\]](./CVE-2023-36387.osv.json)
 
 
 
@@ -904,7 +904,7 @@ An improper default REST API permission for Gamma users in Apache Superset up to
 
 ## SQL parser edge case bypasses data access authorization ## { #CVE-2023-32672 }
 
-CVE-2023-32672 [\[CVE json\]](./CVE-2023-32672.cve.json) [\[OSV json\]](./CVE-2023-32672.osv.json)
+CVE-2023-32672 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-32672) [\[CVE json\]](./CVE-2023-32672.cve.json) [\[OSV json\]](./CVE-2023-32672.osv.json)
 
 
 
@@ -929,7 +929,7 @@ An Incorrect authorisation check in SQLLab in Apache Superset versions up to and
 
 ## Database connection password leak ## { #CVE-2023-30776 }
 
-CVE-2023-30776 [\[CVE json\]](./CVE-2023-30776.cve.json)
+CVE-2023-30776 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-30776) [\[CVE json\]](./CVE-2023-30776.cve.json)
 
 _Last updated: 2023-06-15T07:29:48.154Z_
 
@@ -953,7 +953,7 @@ An authenticated user with specific data permissions could access database conne
 
 ## Improper Authorization check on import charts ## { #CVE-2023-27526 }
 
-CVE-2023-27526 [\[CVE json\]](./CVE-2023-27526.cve.json) [\[OSV json\]](./CVE-2023-27526.osv.json)
+CVE-2023-27526 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-27526) [\[CVE json\]](./CVE-2023-27526.cve.json) [\[OSV json\]](./CVE-2023-27526.osv.json)
 
 
 
@@ -978,7 +978,7 @@ A non Admin authenticated user could incorrectly create resources using the impo
 
 ## Incorrect default permissions for Gamma role ## { #CVE-2023-27525 }
 
-CVE-2023-27525 [\[CVE json\]](./CVE-2023-27525.cve.json) [\[OSV json\]](./CVE-2023-27525.osv.json)
+CVE-2023-27525 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-27525) [\[CVE json\]](./CVE-2023-27525.cve.json) [\[OSV json\]](./CVE-2023-27525.osv.json)
 
 
 
@@ -1003,7 +1003,7 @@ An authenticated user with Gamma role authorization could have access to metadat
 
 ## Session validation vulnerability when using provided default SECRET_KEY ## { #CVE-2023-27524 }
 
-CVE-2023-27524 [\[CVE json\]](./CVE-2023-27524.cve.json) [\[OSV json\]](./CVE-2023-27524.osv.json)
+CVE-2023-27524 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-27524) [\[CVE json\]](./CVE-2023-27524.cve.json) [\[OSV json\]](./CVE-2023-27524.osv.json)
 
 
 
@@ -1028,7 +1028,7 @@ Session Validation attacks in Apache Superset versions up to and including 2.0.1
 
 ## Improper data permission validation on Jinja templated queries ## { #CVE-2023-27523 }
 
-CVE-2023-27523 [\[CVE json\]](./CVE-2023-27523.cve.json) [\[OSV json\]](./CVE-2023-27523.osv.json)
+CVE-2023-27523 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-27523) [\[CVE json\]](./CVE-2023-27523.cve.json) [\[OSV json\]](./CVE-2023-27523.osv.json)
 
 
 
@@ -1053,7 +1053,7 @@ Improper data authorization check on Jinja templated queries in Apache Superset&
 
 ## Possible SSRF on import datasets ## { #CVE-2023-25504 }
 
-CVE-2023-25504 [\[CVE json\]](./CVE-2023-25504.cve.json) [\[OSV json\]](./CVE-2023-25504.osv.json)
+CVE-2023-25504 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-25504) [\[CVE json\]](./CVE-2023-25504.cve.json) [\[OSV json\]](./CVE-2023-25504.osv.json)
 
 
 
@@ -1080,7 +1080,7 @@ is deployed. This vulnerability exists&nbsp;</span>in Apache Superset versions u
 
 ## Dashboard metadata information leak ## { #CVE-2022-45438 }
 
-CVE-2022-45438 [\[CVE json\]](./CVE-2022-45438.cve.json) [\[OSV json\]](./CVE-2022-45438.osv.json)
+CVE-2022-45438 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-45438) [\[CVE json\]](./CVE-2022-45438.cve.json) [\[OSV json\]](./CVE-2022-45438.osv.json)
 
 
 
@@ -1106,7 +1106,7 @@ When explicitly enabling the feature flag DASHBOARD_CACHE (disabled by default),
 
 ## Open Redirect Vulnerability ## { #CVE-2022-43721 }
 
-CVE-2022-43721 [\[CVE json\]](./CVE-2022-43721.cve.json) [\[OSV json\]](./CVE-2022-43721.osv.json)
+CVE-2022-43721 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-43721) [\[CVE json\]](./CVE-2022-43721.cve.json) [\[OSV json\]](./CVE-2022-43721.osv.json)
 
 
 
@@ -1132,7 +1132,7 @@ An authenticated attacker with update datasets permission could change a dataset
 
 ## Improper rendering of user input ## { #CVE-2022-43720 }
 
-CVE-2022-43720 [\[CVE json\]](./CVE-2022-43720.cve.json) [\[OSV json\]](./CVE-2022-43720.osv.json)
+CVE-2022-43720 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-43720) [\[CVE json\]](./CVE-2022-43720.cve.json) [\[OSV json\]](./CVE-2022-43720.osv.json)
 
 
 
@@ -1158,7 +1158,7 @@ An authenticated attacker with write CSS template permissions can create a recor
 
 ## Cross Site Request Forgery (CSRF) on accept, request access API ## { #CVE-2022-43719 }
 
-CVE-2022-43719 [\[CVE json\]](./CVE-2022-43719.cve.json) [\[OSV json\]](./CVE-2022-43719.osv.json)
+CVE-2022-43719 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-43719) [\[CVE json\]](./CVE-2022-43719.cve.json) [\[OSV json\]](./CVE-2022-43719.osv.json)
 
 
 
@@ -1185,7 +1185,7 @@ Two legacy REST API endpoints for approval and request access are vulnerable to 
 
 ## Cross-Site Scripting vulnerability on upload forms ## { #CVE-2022-43718 }
 
-CVE-2022-43718 [\[CVE json\]](./CVE-2022-43718.cve.json) [\[OSV json\]](./CVE-2022-43718.osv.json)
+CVE-2022-43718 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-43718) [\[CVE json\]](./CVE-2022-43718.cve.json) [\[OSV json\]](./CVE-2022-43718.osv.json)
 
 
 
@@ -1211,7 +1211,7 @@ Upload data forms do not correctly render user input leading to possible XSS att
 
 ## Cross-Site Scripting on dashboards ## { #CVE-2022-43717 }
 
-CVE-2022-43717 [\[CVE json\]](./CVE-2022-43717.cve.json) [\[OSV json\]](./CVE-2022-43717.osv.json)
+CVE-2022-43717 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-43717) [\[CVE json\]](./CVE-2022-43717.cve.json) [\[OSV json\]](./CVE-2022-43717.osv.json)
 
 
 
@@ -1237,7 +1237,7 @@ Dashboard rendering does not sufficiently sanitize the content of markdown compo
 
 ## SQL injection vulnerability in adhoc clauses ## { #CVE-2022-41703 }
 
-CVE-2022-41703 [\[CVE json\]](./CVE-2022-41703.cve.json) [\[OSV json\]](./CVE-2022-41703.osv.json)
+CVE-2022-41703 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-41703) [\[CVE json\]](./CVE-2022-41703.cve.json) [\[OSV json\]](./CVE-2022-41703.osv.json)
 
 
 
@@ -1264,7 +1264,7 @@ A vulnerability in the SQL Alchemy connector of Apache Superset allows an authen
 
 ## SQL injection vulnerability in chart data API ## { #CVE-2022-27479 }
 
-CVE-2022-27479 [\[CVE json\]](./CVE-2022-27479.cve.json) [\[OSV json\]](./CVE-2022-27479.osv.json)
+CVE-2022-27479 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-27479) [\[CVE json\]](./CVE-2022-27479.cve.json) [\[OSV json\]](./CVE-2022-27479.osv.json)
 
 
 
@@ -1286,7 +1286,7 @@ Apache Superset before 1.4.2 is vulnerable to SQL injection in chart data reques
 
 ## API sensitive information leak ## { #CVE-2021-44451 }
 
-CVE-2021-44451 [\[CVE json\]](./CVE-2021-44451.cve.json) [\[OSV json\]](./CVE-2021-44451.osv.json)
+CVE-2021-44451 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-44451) [\[CVE json\]](./CVE-2021-44451.cve.json) [\[OSV json\]](./CVE-2021-44451.osv.json)
 
 
 
@@ -1311,7 +1311,7 @@ Apache Superset up to and including 1.3.2 allowed for registered database connec
 
 ## Possible log injection ## { #CVE-2021-42250 }
 
-CVE-2021-42250 [\[CVE json\]](./CVE-2021-42250.cve.json) [\[OSV json\]](./CVE-2021-42250.osv.json)
+CVE-2021-42250 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-42250) [\[CVE json\]](./CVE-2021-42250.cve.json) [\[OSV json\]](./CVE-2021-42250.osv.json)
 
 
 
@@ -1336,7 +1336,7 @@ Improper output neutralization for Logs. A specific Apache Superset HTTP endpoin
 
 ## Credentials leak ## { #CVE-2021-41972 }
 
-CVE-2021-41972 [\[CVE json\]](./CVE-2021-41972.cve.json) [\[OSV json\]](./CVE-2021-41972.osv.json)
+CVE-2021-41972 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-41972) [\[CVE json\]](./CVE-2021-41972.cve.json) [\[OSV json\]](./CVE-2021-41972.osv.json)
 
 
 
@@ -1363,7 +1363,7 @@ Apache Superset up to and including 1.3.1 allowed for database connections passw
 
 ## Possible SQL Injection when template processing is enabled ## { #CVE-2021-41971 }
 
-CVE-2021-41971 [\[CVE json\]](./CVE-2021-41971.cve.json) [\[OSV json\]](./CVE-2021-41971.osv.json)
+CVE-2021-41971 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-41971) [\[CVE json\]](./CVE-2021-41971.cve.json) [\[OSV json\]](./CVE-2021-41971.osv.json)
 
 
 
@@ -1389,7 +1389,7 @@ Apache Superset up to and including 1.3.0 when configured with ENABLE_TEMPLATE_P
 
 ## Improper access to dataset metadata information  ## { #CVE-2021-37839 }
 
-CVE-2021-37839 [\[CVE json\]](./CVE-2021-37839.cve.json) [\[OSV json\]](./CVE-2021-37839.osv.json)
+CVE-2021-37839 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-37839) [\[CVE json\]](./CVE-2021-37839.cve.json) [\[OSV json\]](./CVE-2021-37839.osv.json)
 
 
 
@@ -1414,7 +1414,7 @@ Apache Superset up to 1.5.1 allowed for authenticated users to access metadata i
 
 ## XSS vulnerability on Explore page ## { #CVE-2021-32609 }
 
-CVE-2021-32609 [\[CVE json\]](./CVE-2021-32609.cve.json) [\[OSV json\]](./CVE-2021-32609.osv.json)
+CVE-2021-32609 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-32609) [\[CVE json\]](./CVE-2021-32609.cve.json) [\[OSV json\]](./CVE-2021-32609.osv.json)
 
 
 
@@ -1439,7 +1439,7 @@ Apache Superset up to and including 1.1 does not sanitize titles correctly on th
 
 ## Apache Superset Open Redirect  ## { #CVE-2021-28125 }
 
-CVE-2021-28125 [\[CVE json\]](./CVE-2021-28125.cve.json) [\[OSV json\]](./CVE-2021-28125.osv.json)
+CVE-2021-28125 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-28125) [\[CVE json\]](./CVE-2021-28125.cve.json) [\[OSV json\]](./CVE-2021-28125.osv.json)
 
 
 
@@ -1466,7 +1466,7 @@ Apache Superset up to and including 1.0.1 allowed for the creation of an externa
 
 ## Apache Superset stored XSS on Dashboard markdown ## { #CVE-2021-27907 }
 
-CVE-2021-27907 [\[CVE json\]](./CVE-2021-27907.cve.json) [\[OSV json\]](./CVE-2021-27907.osv.json)
+CVE-2021-27907 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-27907) [\[CVE json\]](./CVE-2021-27907.cve.json) [\[OSV json\]](./CVE-2021-27907.osv.json)
 
 
 

@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Cypher injection vulnerability in Camel-Neo4j component ## { #CVE-2025-66169 }
 
-CVE-2025-66169 [\[CVE json\]](./CVE-2025-66169.cve.json) [\[OSV json\]](./CVE-2025-66169.osv.json)
+CVE-2025-66169 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66169) [\[CVE json\]](./CVE-2025-66169.cve.json) [\[OSV json\]](./CVE-2025-66169.osv.json)
 
 
 
@@ -42,7 +42,7 @@ _Last updated: 2026-01-14T11:45:34.042Z_
 
 ## Camel-Undertow Message Header Injection via Improper Filtering ## { #CVE-2025-30177 }
 
-CVE-2025-30177 [\[CVE json\]](./CVE-2025-30177.cve.json) [\[OSV json\]](./CVE-2025-30177.osv.json)
+CVE-2025-30177 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-30177) [\[CVE json\]](./CVE-2025-30177.cve.json) [\[OSV json\]](./CVE-2025-30177.osv.json)
 
 
 
@@ -72,7 +72,7 @@ _Last updated: 2025-04-01T16:32:28.939Z_
 
 ## Camel Message Header Injection through request parameters ## { #CVE-2025-29891 }
 
-CVE-2025-29891 [\[CVE json\]](./CVE-2025-29891.cve.json) [\[OSV json\]](./CVE-2025-29891.osv.json)
+CVE-2025-29891 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-29891) [\[CVE json\]](./CVE-2025-29891.cve.json) [\[OSV json\]](./CVE-2025-29891.osv.json)
 
 
 
@@ -103,7 +103,7 @@ _Last updated: 2025-03-13T08:19:35.754Z_
 
 ## Camel Message Header Injection via Improper Filtering ## { #CVE-2025-27636 }
 
-CVE-2025-27636 [\[CVE json\]](./CVE-2025-27636.cve.json) [\[OSV json\]](./CVE-2025-27636.osv.json)
+CVE-2025-27636 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27636) [\[CVE json\]](./CVE-2025-27636.cve.json) [\[OSV json\]](./CVE-2025-27636.osv.json)
 
 
 
@@ -132,7 +132,7 @@ _Last updated: 2025-03-17T14:20:17.925Z_
 
 ## Camel-CassandraQL: Unsafe Deserialization from CassandraAggregationRepository ## { #CVE-2024-23114 }
 
-CVE-2024-23114 [\[CVE json\]](./CVE-2024-23114.cve.json) [\[OSV json\]](./CVE-2024-23114.osv.json)
+CVE-2024-23114 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-23114) [\[CVE json\]](./CVE-2024-23114.cve.json) [\[OSV json\]](./CVE-2024-23114.osv.json)
 
 
 
@@ -161,7 +161,7 @@ Deserialization of Untrusted Data vulnerability in Apache Camel CassandraQL Comp
 
 ## Apache Camel issue on ExchangeCreatedEvent ## { #CVE-2024-22371 }
 
-CVE-2024-22371 [\[CVE json\]](./CVE-2024-22371.cve.json)
+CVE-2024-22371 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-22371) [\[CVE json\]](./CVE-2024-22371.cve.json)
 
 _Last updated: 2024-02-26T09:22:36.071Z_
 
@@ -188,7 +188,7 @@ Exposure of sensitive data by by crafting a malicious EventFactory and providing
 
 ## Camel-SQL: Unsafe Deserialization from JDBCAggregationRepository ## { #CVE-2024-22369 }
 
-CVE-2024-22369 [\[CVE json\]](./CVE-2024-22369.cve.json) [\[OSV json\]](./CVE-2024-22369.osv.json)
+CVE-2024-22369 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-22369) [\[CVE json\]](./CVE-2024-22369.cve.json) [\[OSV json\]](./CVE-2024-22369.osv.json)
 
 
 
@@ -219,7 +219,7 @@ Deserialization of Untrusted Data vulnerability in Apache Camel SQL Component<p>
 
 ## Temporary file information disclosure in Camel-Jira ## { #CVE-2023-34442 }
 
-CVE-2023-34442 [\[CVE json\]](./CVE-2023-34442.cve.json) [\[OSV json\]](./CVE-2023-34442.osv.json)
+CVE-2023-34442 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-34442) [\[CVE json\]](./CVE-2023-34442.cve.json) [\[OSV json\]](./CVE-2023-34442.osv.json)
 
 
 

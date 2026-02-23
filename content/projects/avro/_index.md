@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Code injection on Java generated code ## { #CVE-2025-33042 }
 
-CVE-2025-33042 [\[CVE json\]](./CVE-2025-33042.cve.json) [\[OSV json\]](./CVE-2025-33042.osv.json)
+CVE-2025-33042 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-33042) [\[CVE json\]](./CVE-2025-33042.cve.json) [\[OSV json\]](./CVE-2025-33042.osv.json)
 
 
 
@@ -41,7 +41,7 @@ _Last updated: 2026-02-13T11:47:01.866Z_
 
 ## Arbitrary Code Execution when reading Avro schema (Java SDK) ## { #CVE-2024-47561 }
 
-CVE-2024-47561 [\[CVE json\]](./CVE-2024-47561.cve.json) [\[OSV json\]](./CVE-2024-47561.osv.json)
+CVE-2024-47561 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-47561) [\[CVE json\]](./CVE-2024-47561.cve.json) [\[OSV json\]](./CVE-2024-47561.osv.json)
 
 
 
@@ -66,7 +66,7 @@ Schema parsing in the Java SDK of Apache Avro 1.11.3 and previous versions allow
 
 ## Memory when deserializing untrusted data in Avro Java SDK ## { #CVE-2023-39410 }
 
-CVE-2023-39410 [\[CVE json\]](./CVE-2023-39410.cve.json)
+CVE-2023-39410 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-39410) [\[CVE json\]](./CVE-2023-39410.cve.json)
 
 _Last updated: 2025-02-06T14:33:53.747Z_
 
@@ -90,7 +90,7 @@ _Last updated: 2025-02-06T14:33:53.747Z_
 
 ## Integer overflow when reading corrupted .avro file in Avro Rust SDK ## { #CVE-2022-36125 }
 
-CVE-2022-36125 [\[CVE json\]](./CVE-2022-36125.cve.json) [\[OSV json\]](./CVE-2022-36125.osv.json)
+CVE-2022-36125 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-36125) [\[CVE json\]](./CVE-2022-36125.cve.json) [\[OSV json\]](./CVE-2022-36125.osv.json)
 
 
 
@@ -115,7 +115,7 @@ It is possible to crash (panic) an application by providing a corrupted data to 
 
 ## Memory overconsumption in Avro Rust SDK ## { #CVE-2022-36124 }
 
-CVE-2022-36124 [\[CVE json\]](./CVE-2022-36124.cve.json) [\[OSV json\]](./CVE-2022-36124.osv.json)
+CVE-2022-36124 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-36124) [\[CVE json\]](./CVE-2022-36124.cve.json) [\[OSV json\]](./CVE-2022-36124.osv.json)
 
 
 
@@ -140,7 +140,7 @@ It is possible for a Reader to consume memory beyond the allowed constraints and
 
 ## Denial of service while reading data in Avro Rust SDK ## { #CVE-2022-35724 }
 
-CVE-2022-35724 [\[CVE json\]](./CVE-2022-35724.cve.json) [\[OSV json\]](./CVE-2022-35724.osv.json)
+CVE-2022-35724 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-35724) [\[CVE json\]](./CVE-2022-35724.cve.json) [\[OSV json\]](./CVE-2022-35724.osv.json)
 
 
 
@@ -165,7 +165,7 @@ It is possible to provide data to be read that leads the reader to loop in cycle
 
 ## Possible DOS vulnerabilities in C# Avro SDK ## { #CVE-2021-43045 }
 
-CVE-2021-43045 [\[CVE json\]](./CVE-2021-43045.cve.json) [\[OSV json\]](./CVE-2021-43045.osv.json)
+CVE-2021-43045 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-43045) [\[CVE json\]](./CVE-2021-43045.cve.json) [\[OSV json\]](./CVE-2021-43045.osv.json)
 
 
 

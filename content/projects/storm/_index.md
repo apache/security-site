@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Local Information Disclosure Vulnerability in Storm-core on Unix-Like systems due temporary files ## { #CVE-2023-43123 }
 
-CVE-2023-43123 [\[CVE json\]](./CVE-2023-43123.cve.json) [\[OSV json\]](./CVE-2023-43123.osv.json)
+CVE-2023-43123 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-43123) [\[CVE json\]](./CVE-2023-43123.cve.json) [\[OSV json\]](./CVE-2023-43123.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2023-11-23T09:16:32.695Z_
 
 ## Unsafe Pre-Authentication Deserialization In Workers ## { #CVE-2021-40865 }
 
-CVE-2021-40865 [\[CVE json\]](./CVE-2021-40865.cve.json) [\[OSV json\]](./CVE-2021-40865.osv.json)
+CVE-2021-40865 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-40865) [\[CVE json\]](./CVE-2021-40865.cve.json) [\[OSV json\]](./CVE-2021-40865.osv.json)
 
 
 
@@ -67,7 +67,7 @@ An Unsafe Deserialization vulnerability exists in the worker services of the Apa
 
 ## Shell Command Injection Vulnerability in Nimbus Thrift Server ## { #CVE-2021-38294 }
 
-CVE-2021-38294 [\[CVE json\]](./CVE-2021-38294.cve.json) [\[OSV json\]](./CVE-2021-38294.osv.json)
+CVE-2021-38294 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-38294) [\[CVE json\]](./CVE-2021-38294.cve.json) [\[OSV json\]](./CVE-2021-38294.osv.json)
 
 
 

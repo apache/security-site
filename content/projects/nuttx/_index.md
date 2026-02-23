@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## fs/vfs/fs_rename: use after free ## { #CVE-2025-48769 }
 
-CVE-2025-48769 [\[CVE json\]](./CVE-2025-48769.cve.json) [\[OSV json\]](./CVE-2025-48769.osv.json)
+CVE-2025-48769 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-48769) [\[CVE json\]](./CVE-2025-48769.cve.json) [\[OSV json\]](./CVE-2025-48769.osv.json)
 
 
 
@@ -45,7 +45,7 @@ _Last updated: 2026-01-01T16:14:32.107Z_
 
 ## fs/inode: fs_inoderemove root inode removal ## { #CVE-2025-48768 }
 
-CVE-2025-48768 [\[CVE json\]](./CVE-2025-48768.cve.json) [\[OSV json\]](./CVE-2025-48768.osv.json)
+CVE-2025-48768 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-48768) [\[CVE json\]](./CVE-2025-48768.cve.json) [\[OSV json\]](./CVE-2025-48768.osv.json)
 
 
 
@@ -76,7 +76,7 @@ _Last updated: 2026-01-01T16:13:58.511Z_
 
 ## examples/xmlrpc: Fix calls buffers size. ## { #CVE-2025-47869 }
 
-CVE-2025-47869 [\[CVE json\]](./CVE-2025-47869.cve.json) [\[OSV json\]](./CVE-2025-47869.osv.json)
+CVE-2025-47869 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-47869) [\[CVE json\]](./CVE-2025-47869.cve.json) [\[OSV json\]](./CVE-2025-47869.osv.json)
 
 
 
@@ -111,7 +111,7 @@ the example in release 12.9.0.<br></p>
 
 ## tools/bdf-converter: Fix loop termination condition. ## { #CVE-2025-47868 }
 
-CVE-2025-47868 [\[CVE json\]](./CVE-2025-47868.cve.json) [\[OSV json\]](./CVE-2025-47868.osv.json)
+CVE-2025-47868 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-47868) [\[CVE json\]](./CVE-2025-47868.cve.json) [\[OSV json\]](./CVE-2025-47868.osv.json)
 
 
 
@@ -143,7 +143,7 @@ _Last updated: 2025-06-14T22:53:54.263Z_
 
 ## NuttX Bluetooth Stack HCI and UART DoS/RCE Vulnerabilities. ## { #CVE-2025-35003 }
 
-CVE-2025-35003 [\[CVE json\]](./CVE-2025-35003.cve.json) [\[OSV json\]](./CVE-2025-35003.osv.json)
+CVE-2025-35003 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-35003) [\[CVE json\]](./CVE-2025-35003.cve.json) [\[OSV json\]](./CVE-2025-35003.osv.json)
 
 
 
@@ -172,7 +172,7 @@ _Last updated: 2025-06-14T22:46:25.637Z_
 
 ## malloc, realloc and memalign implementations are vulnerable to integer wrap-arounds ## { #CVE-2021-26461 }
 
-CVE-2021-26461 [\[CVE json\]](./CVE-2021-26461.cve.json) [\[OSV json\]](./CVE-2021-26461.osv.json)
+CVE-2021-26461 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-26461) [\[CVE json\]](./CVE-2021-26461.cve.json) [\[OSV json\]](./CVE-2021-26461.osv.json)
 
 
 
@@ -197,7 +197,7 @@ Apache Nuttx Versions prior to 10.1.0 are vulnerable to integer wrap-around in f
 
 ## Apache NuttX (incubating) Out of Bound Write from invalid fragmentation offset value specified in the IP header ## { #CVE-2020-17529 }
 
-CVE-2020-17529 [\[CVE json\]](./CVE-2020-17529.cve.json) [\[OSV json\]](./CVE-2020-17529.osv.json)
+CVE-2020-17529 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-17529) [\[CVE json\]](./CVE-2020-17529.cve.json) [\[OSV json\]](./CVE-2020-17529.osv.json)
 
 
 
@@ -223,7 +223,7 @@ Out-of-bounds Write vulnerability in TCP Stack of Apache NuttX (incubating) vers
 
 ## Apache NuttX (incubating) Out of Bound Write from invalid TCP Urgent length ## { #CVE-2020-17528 }
 
-CVE-2020-17528 [\[CVE json\]](./CVE-2020-17528.cve.json) [\[OSV json\]](./CVE-2020-17528.osv.json)
+CVE-2020-17528 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-17528) [\[CVE json\]](./CVE-2020-17528.cve.json) [\[OSV json\]](./CVE-2020-17528.osv.json)
 
 
 

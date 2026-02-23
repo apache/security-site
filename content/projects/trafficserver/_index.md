@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Remote DoS via memory exhaustion in ESI Plugin ## { #CVE-2025-49763 }
 
-CVE-2025-49763 [\[CVE json\]](./CVE-2025-49763.cve.json) [\[OSV json\]](./CVE-2025-49763.osv.json)
+CVE-2025-49763 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-49763) [\[CVE json\]](./CVE-2025-49763.cve.json) [\[OSV json\]](./CVE-2025-49763.osv.json)
 
 
 
@@ -41,7 +41,7 @@ _Last updated: 2025-06-19T10:07:13.563Z_
 
 ## Client IP address from PROXY protocol is not used for ACL ## { #CVE-2025-31698 }
 
-CVE-2025-31698 [\[CVE json\]](./CVE-2025-31698.cve.json) [\[OSV json\]](./CVE-2025-31698.osv.json)
+CVE-2025-31698 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-31698) [\[CVE json\]](./CVE-2025-31698.cve.json) [\[OSV json\]](./CVE-2025-31698.osv.json)
 
 
 
@@ -63,7 +63,7 @@ _Last updated: 2025-06-19T10:07:45.344Z_
 
 ## Expect header field can unreasonably retain resource ## { #CVE-2024-56202 }
 
-CVE-2024-56202 [\[CVE json\]](./CVE-2024-56202.cve.json) [\[OSV json\]](./CVE-2024-56202.osv.json)
+CVE-2024-56202 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-56202) [\[CVE json\]](./CVE-2024-56202.cve.json) [\[OSV json\]](./CVE-2024-56202.osv.json)
 
 
 
@@ -89,7 +89,7 @@ _Last updated: 2025-03-06T11:09:09.771Z_
 
 ## ACL is not fully compatible with older versions ## { #CVE-2024-56196 }
 
-CVE-2024-56196 [\[CVE json\]](./CVE-2024-56196.cve.json) [\[OSV json\]](./CVE-2024-56196.osv.json)
+CVE-2024-56196 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-56196) [\[CVE json\]](./CVE-2024-56196.cve.json) [\[OSV json\]](./CVE-2024-56196.osv.json)
 
 
 
@@ -114,7 +114,7 @@ _Last updated: 2025-03-06T11:21:46.767Z_
 
 ## Intercept plugins are not access controlled ## { #CVE-2024-56195 }
 
-CVE-2024-56195 [\[CVE json\]](./CVE-2024-56195.cve.json) [\[OSV json\]](./CVE-2024-56195.osv.json)
+CVE-2024-56195 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-56195) [\[CVE json\]](./CVE-2024-56195.cve.json) [\[OSV json\]](./CVE-2024-56195.osv.json)
 
 
 
@@ -140,7 +140,7 @@ _Last updated: 2025-03-06T11:23:34.892Z_
 
 ## Malformed chunked message body allows request smuggling ## { #CVE-2024-53868 }
 
-CVE-2024-53868 [\[CVE json\]](./CVE-2024-53868.cve.json) [\[OSV json\]](./CVE-2024-53868.osv.json)
+CVE-2024-53868 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-53868) [\[CVE json\]](./CVE-2024-53868.cve.json) [\[OSV json\]](./CVE-2024-53868.osv.json)
 
 
 
@@ -166,7 +166,7 @@ _Last updated: 2025-04-03T08:58:55.409Z_
 
 ## Server process can fail to drop privilege ## { #CVE-2024-50306 }
 
-CVE-2024-50306 [\[CVE json\]](./CVE-2024-50306.cve.json) [\[OSV json\]](./CVE-2024-50306.osv.json)
+CVE-2024-50306 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-50306) [\[CVE json\]](./CVE-2024-50306.cve.json) [\[OSV json\]](./CVE-2024-50306.osv.json)
 
 
 
@@ -192,7 +192,7 @@ _Last updated: 2024-11-14T09:55:41.120Z_
 
 ## Valid Host field value can cause crashes ## { #CVE-2024-50305 }
 
-CVE-2024-50305 [\[CVE json\]](./CVE-2024-50305.cve.json) [\[OSV json\]](./CVE-2024-50305.osv.json)
+CVE-2024-50305 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-50305) [\[CVE json\]](./CVE-2024-50305.cve.json) [\[OSV json\]](./CVE-2024-50305.osv.json)
 
 
 
@@ -213,7 +213,7 @@ _Last updated: 2024-11-14T09:54:18.691Z_
 
 ## Cache key plugin is vulnerable to cache poisoning attack ## { #CVE-2024-38479 }
 
-CVE-2024-38479 [\[CVE json\]](./CVE-2024-38479.cve.json) [\[OSV json\]](./CVE-2024-38479.osv.json)
+CVE-2024-38479 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-38479) [\[CVE json\]](./CVE-2024-38479.cve.json) [\[OSV json\]](./CVE-2024-38479.osv.json)
 
 
 
@@ -235,7 +235,7 @@ _Last updated: 2024-12-19T08:48:33.164Z_
 
 ## Request smuggling via pipelining after a chunked message body ## { #CVE-2024-38311 }
 
-CVE-2024-38311 [\[CVE json\]](./CVE-2024-38311.cve.json) [\[OSV json\]](./CVE-2024-38311.osv.json)
+CVE-2024-38311 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-38311) [\[CVE json\]](./CVE-2024-38311.cve.json) [\[OSV json\]](./CVE-2024-38311.osv.json)
 
 
 
@@ -262,7 +262,7 @@ _Last updated: 2025-03-06T11:34:14.593Z_
 
 ## Invalid Accept-Encoding can force forwarding requests ## { #CVE-2024-35296 }
 
-CVE-2024-35296 [\[CVE json\]](./CVE-2024-35296.cve.json) [\[OSV json\]](./CVE-2024-35296.osv.json)
+CVE-2024-35296 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-35296) [\[CVE json\]](./CVE-2024-35296.cve.json) [\[OSV json\]](./CVE-2024-35296.osv.json)
 
 
 
@@ -288,7 +288,7 @@ _Last updated: 2024-07-26T09:11:09.740Z_
 
 ## Incomplete check for chunked trailer section allows request smuggling ## { #CVE-2024-35161 }
 
-CVE-2024-35161 [\[CVE json\]](./CVE-2024-35161.cve.json) [\[OSV json\]](./CVE-2024-35161.osv.json)
+CVE-2024-35161 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-35161) [\[CVE json\]](./CVE-2024-35161.cve.json) [\[OSV json\]](./CVE-2024-35161.osv.json)
 
 
 
@@ -314,7 +314,7 @@ _Last updated: 2024-08-13T08:48:31.440Z_
 
 ## HTTP/2 CONTINUATION frames can be utilized for DoS attack ## { #CVE-2024-31309 }
 
-CVE-2024-31309 [\[CVE json\]](./CVE-2024-31309.cve.json) [\[OSV json\]](./CVE-2024-31309.osv.json)
+CVE-2024-31309 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-31309) [\[CVE json\]](./CVE-2024-31309.cve.json) [\[OSV json\]](./CVE-2024-31309.osv.json)
 
 
 
@@ -340,7 +340,7 @@ _Last updated: 2024-04-10T15:16:21.844Z_
 
 ## s3_auth plugin problem with hash calculation ## { #CVE-2023-41752 }
 
-CVE-2023-41752 [\[CVE json\]](./CVE-2023-41752.cve.json) [\[OSV json\]](./CVE-2023-41752.osv.json)
+CVE-2023-41752 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-41752) [\[CVE json\]](./CVE-2023-41752.cve.json) [\[OSV json\]](./CVE-2023-41752.osv.json)
 
 
 
@@ -366,7 +366,7 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ## Malformed http/2 frames can cause an abort ## { #CVE-2023-39456 }
 
-CVE-2023-39456 [\[CVE json\]](./CVE-2023-39456.cve.json) [\[OSV json\]](./CVE-2023-39456.osv.json)
+CVE-2023-39456 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-39456) [\[CVE json\]](./CVE-2023-39456.cve.json) [\[OSV json\]](./CVE-2023-39456.osv.json)
 
 
 
@@ -391,7 +391,7 @@ Improper Input Validation vulnerability in Apache Traffic Server with malformed 
 
 ## Incomplete field name check allows request smuggling ## { #CVE-2023-38522 }
 
-CVE-2023-38522 [\[CVE json\]](./CVE-2023-38522.cve.json) [\[OSV json\]](./CVE-2023-38522.osv.json)
+CVE-2023-38522 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-38522) [\[CVE json\]](./CVE-2023-38522.cve.json) [\[OSV json\]](./CVE-2023-38522.osv.json)
 
 
 
@@ -417,7 +417,7 @@ _Last updated: 2024-08-13T08:46:41.192Z_
 
 ## Differential fuzzing for HTTP request parsing discrepancies ## { #CVE-2023-33934 }
 
-CVE-2023-33934 [\[CVE json\]](./CVE-2023-33934.cve.json)
+CVE-2023-33934 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-33934) [\[CVE json\]](./CVE-2023-33934.cve.json)
 
 _Last updated: 2023-09-28T08:24:06.964Z_
 
@@ -441,7 +441,7 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Tra
 
 ## s3_auth plugin problem with hash calculation ## { #CVE-2023-33933 }
 
-CVE-2023-33933 [\[CVE json\]](./CVE-2023-33933.cve.json) [\[OSV json\]](./CVE-2023-33933.osv.json)
+CVE-2023-33933 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-33933) [\[CVE json\]](./CVE-2023-33933.cve.json) [\[OSV json\]](./CVE-2023-33933.osv.json)
 
 
 
@@ -466,7 +466,7 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ## Configuration option to block the PUSH method in ATS didn't work ## { #CVE-2023-30631 }
 
-CVE-2023-30631 [\[CVE json\]](./CVE-2023-30631.cve.json) [\[OSV json\]](./CVE-2023-30631.osv.json)
+CVE-2023-30631 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-30631) [\[CVE json\]](./CVE-2023-30631.cve.json) [\[OSV json\]](./CVE-2023-30631.osv.json)
 
 
 
@@ -491,7 +491,7 @@ Improper Input Validation vulnerability in Apache Software Foundation Apache Tra
 
 ## Invalid Range header causes a crash ## { #CVE-2022-47185 }
 
-CVE-2022-47185 [\[CVE json\]](./CVE-2022-47185.cve.json) [\[OSV json\]](./CVE-2022-47185.osv.json)
+CVE-2022-47185 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-47185) [\[CVE json\]](./CVE-2022-47185.cve.json) [\[OSV json\]](./CVE-2022-47185.osv.json)
 
 
 
@@ -516,7 +516,7 @@ Improper input validation vulnerability on the range header in Apache Software F
 
 ## The TRACE method can be use to disclose network information ## { #CVE-2022-47184 }
 
-CVE-2022-47184 [\[CVE json\]](./CVE-2022-47184.cve.json) [\[OSV json\]](./CVE-2022-47184.osv.json)
+CVE-2022-47184 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-47184) [\[CVE json\]](./CVE-2022-47184.cve.json) [\[OSV json\]](./CVE-2022-47184.osv.json)
 
 
 
@@ -541,7 +541,7 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ## Security issues with the xdebug plugin ## { #CVE-2022-40743 }
 
-CVE-2022-40743 [\[CVE json\]](./CVE-2022-40743.cve.json) [\[OSV json\]](./CVE-2022-40743.osv.json)
+CVE-2022-40743 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-40743) [\[CVE json\]](./CVE-2022-40743.cve.json) [\[OSV json\]](./CVE-2022-40743.osv.json)
 
 
 
@@ -566,7 +566,7 @@ Improper Input Validation vulnerability for the xdebug plugin in Apache Software
 
 ## Improperly reading the client requests ## { #CVE-2022-37392 }
 
-CVE-2022-37392 [\[CVE json\]](./CVE-2022-37392.cve.json) [\[OSV json\]](./CVE-2022-37392.osv.json)
+CVE-2022-37392 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-37392) [\[CVE json\]](./CVE-2022-37392.cve.json) [\[OSV json\]](./CVE-2022-37392.osv.json)
 
 
 
@@ -591,7 +591,7 @@ Improper Check for Unusual or Exceptional Conditions vulnerability in handling t
 
 ## Improperly handled requests can cause crashes in specific plugins ## { #CVE-2022-32749 }
 
-CVE-2022-32749 [\[CVE json\]](./CVE-2022-32749.cve.json) [\[OSV json\]](./CVE-2022-32749.osv.json)
+CVE-2022-32749 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-32749) [\[CVE json\]](./CVE-2022-32749.cve.json) [\[OSV json\]](./CVE-2022-32749.osv.json)
 
 
 
@@ -620,7 +620,7 @@ Improper Check for Unusual or Exceptional Conditions vulnerability handling requ
 
 ## HTTP/2 framing vulnerabilities  ## { #CVE-2022-31780 }
 
-CVE-2022-31780 [\[CVE json\]](./CVE-2022-31780.cve.json) [\[OSV json\]](./CVE-2022-31780.osv.json)
+CVE-2022-31780 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-31780) [\[CVE json\]](./CVE-2022-31780.cve.json) [\[OSV json\]](./CVE-2022-31780.osv.json)
 
 
 
@@ -645,7 +645,7 @@ Improper Input Validation vulnerability in HTTP/2 frame handling of Apache Traff
 
 ## Improper HTTP/2 scheme and method validation ## { #CVE-2022-31779 }
 
-CVE-2022-31779 [\[CVE json\]](./CVE-2022-31779.cve.json) [\[OSV json\]](./CVE-2022-31779.osv.json)
+CVE-2022-31779 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-31779) [\[CVE json\]](./CVE-2022-31779.cve.json) [\[OSV json\]](./CVE-2022-31779.osv.json)
 
 
 
@@ -670,7 +670,7 @@ Improper Input Validation vulnerability in HTTP/2 header parsing of Apache Traff
 
 ## Transfer-Encoding not treated as hop-by-hop ## { #CVE-2022-31778 }
 
-CVE-2022-31778 [\[CVE json\]](./CVE-2022-31778.cve.json) [\[OSV json\]](./CVE-2022-31778.osv.json)
+CVE-2022-31778 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-31778) [\[CVE json\]](./CVE-2022-31778.cve.json) [\[OSV json\]](./CVE-2022-31778.osv.json)
 
 
 
@@ -695,7 +695,7 @@ Improper Input Validation vulnerability in handling the Transfer-Encoding header
 
 ##  Insufficient Validation of HTTP/1.x Headers ## { #CVE-2022-28129 }
 
-CVE-2022-28129 [\[CVE json\]](./CVE-2022-28129.cve.json) [\[OSV json\]](./CVE-2022-28129.osv.json)
+CVE-2022-28129 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-28129) [\[CVE json\]](./CVE-2022-28129.cve.json) [\[OSV json\]](./CVE-2022-28129.osv.json)
 
 
 
@@ -720,7 +720,7 @@ Improper Input Validation vulnerability in HTTP/1.1 header parsing of Apache Tra
 
 ## Improper input validation on HTTP/2 headers  ## { #CVE-2022-25763 }
 
-CVE-2022-25763 [\[CVE json\]](./CVE-2022-25763.cve.json) [\[OSV json\]](./CVE-2022-25763.osv.json)
+CVE-2022-25763 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-25763) [\[CVE json\]](./CVE-2022-25763.cve.json) [\[OSV json\]](./CVE-2022-25763.osv.json)
 
 
 
@@ -745,7 +745,7 @@ Improper Input Validation vulnerability in HTTP/2 request validation of Apache T
 
 ## Improper authentication vulnerability in TLS origin verification ## { #CVE-2021-44759 }
 
-CVE-2021-44759 [\[CVE json\]](./CVE-2021-44759.cve.json) [\[OSV json\]](./CVE-2021-44759.osv.json)
+CVE-2021-44759 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-44759) [\[CVE json\]](./CVE-2021-44759.cve.json) [\[OSV json\]](./CVE-2021-44759.osv.json)
 
 
 
@@ -770,7 +770,7 @@ Improper Authentication vulnerability in TLS origin validation of Apache Traffic
 
 ## HTTP request line fuzzing attacks ## { #CVE-2021-44040 }
 
-CVE-2021-44040 [\[CVE json\]](./CVE-2021-44040.cve.json) [\[OSV json\]](./CVE-2021-44040.osv.json)
+CVE-2021-44040 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-44040) [\[CVE json\]](./CVE-2021-44040.cve.json) [\[OSV json\]](./CVE-2021-44040.osv.json)
 
 
 
@@ -795,7 +795,7 @@ Improper Input Validation vulnerability in request line parsing of Apache Traffi
 
 ## heap-buffer-overflow with stats-over-http plugin ## { #CVE-2021-43082 }
 
-CVE-2021-43082 [\[CVE json\]](./CVE-2021-43082.cve.json) [\[OSV json\]](./CVE-2021-43082.osv.json)
+CVE-2021-43082 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-43082) [\[CVE json\]](./CVE-2021-43082.cve.json) [\[OSV json\]](./CVE-2021-43082.osv.json)
 
 
 
@@ -820,7 +820,7 @@ Buffer Copy without Checking Size of Input ('Classic Buffer Overflow') vulnerabi
 
 ## ATS stops accepting connections on FreeBSD ## { #CVE-2021-41585 }
 
-CVE-2021-41585 [\[CVE json\]](./CVE-2021-41585.cve.json) [\[OSV json\]](./CVE-2021-41585.osv.json)
+CVE-2021-41585 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-41585) [\[CVE json\]](./CVE-2021-41585.cve.json) [\[OSV json\]](./CVE-2021-41585.osv.json)
 
 
 
@@ -845,7 +845,7 @@ Improper Input Validation vulnerability in accepting socket connections in Apach
 
 ## Not validating origin TLS certificate ## { #CVE-2021-38161 }
 
-CVE-2021-38161 [\[CVE json\]](./CVE-2021-38161.cve.json) [\[OSV json\]](./CVE-2021-38161.osv.json)
+CVE-2021-38161 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-38161) [\[CVE json\]](./CVE-2021-38161.cve.json) [\[OSV json\]](./CVE-2021-38161.osv.json)
 
 
 
@@ -866,7 +866,7 @@ Improper Authentication vulnerability in TLS origin verification of Apache Traff
 
 ## Protocol vs scheme mismatch ## { #CVE-2021-37150 }
 
-CVE-2021-37150 [\[CVE json\]](./CVE-2021-37150.cve.json) [\[OSV json\]](./CVE-2021-37150.osv.json)
+CVE-2021-37150 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-37150) [\[CVE json\]](./CVE-2021-37150.cve.json) [\[OSV json\]](./CVE-2021-37150.osv.json)
 
 
 
@@ -887,7 +887,7 @@ Improper Input Validation vulnerability in header parsing of Apache Traffic Serv
 
 ## Request Smuggling - multiple attacks ## { #CVE-2021-37149 }
 
-CVE-2021-37149 [\[CVE json\]](./CVE-2021-37149.cve.json) [\[OSV json\]](./CVE-2021-37149.osv.json)
+CVE-2021-37149 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-37149) [\[CVE json\]](./CVE-2021-37149.cve.json) [\[OSV json\]](./CVE-2021-37149.osv.json)
 
 
 
@@ -912,7 +912,7 @@ Improper Input Validation vulnerability in header parsing of Apache Traffic Serv
 
 ## Request Smuggling - transfer encoding validation ## { #CVE-2021-37148 }
 
-CVE-2021-37148 [\[CVE json\]](./CVE-2021-37148.cve.json) [\[OSV json\]](./CVE-2021-37148.osv.json)
+CVE-2021-37148 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-37148) [\[CVE json\]](./CVE-2021-37148.cve.json) [\[OSV json\]](./CVE-2021-37148.osv.json)
 
 
 
@@ -937,7 +937,7 @@ Improper input validation vulnerability in header parsing of Apache Traffic Serv
 
 ## Request Smuggling - LF line ending ## { #CVE-2021-37147 }
 
-CVE-2021-37147 [\[CVE json\]](./CVE-2021-37147.cve.json) [\[OSV json\]](./CVE-2021-37147.osv.json)
+CVE-2021-37147 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-37147) [\[CVE json\]](./CVE-2021-37147.cve.json) [\[OSV json\]](./CVE-2021-37147.osv.json)
 
 
 
@@ -962,7 +962,7 @@ Improper input validation vulnerability in header parsing of Apache Traffic Serv
 
 ## Dynamic stack buffer overflow in cachekey plugin ## { #CVE-2021-35474 }
 
-CVE-2021-35474 [\[CVE json\]](./CVE-2021-35474.cve.json) [\[OSV json\]](./CVE-2021-35474.osv.json)
+CVE-2021-35474 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-35474) [\[CVE json\]](./CVE-2021-35474.cve.json) [\[OSV json\]](./CVE-2021-35474.osv.json)
 
 
 
@@ -983,7 +983,7 @@ Stack-based Buffer Overflow vulnerability in cachekey plugin of Apache Traffic S
 
 ## Reading HTTP/2 frames too many times ## { #CVE-2021-32567 }
 
-CVE-2021-32567 [\[CVE json\]](./CVE-2021-32567.cve.json) [\[OSV json\]](./CVE-2021-32567.osv.json)
+CVE-2021-32567 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-32567) [\[CVE json\]](./CVE-2021-32567.cve.json) [\[OSV json\]](./CVE-2021-32567.osv.json)
 
 
 
@@ -1004,7 +1004,7 @@ Improper Input Validation vulnerability in HTTP/2 of Apache Traffic Server allow
 
 ## Specific sequence of HTTP/2 frames can cause ATS to crash ## { #CVE-2021-32566 }
 
-CVE-2021-32566 [\[CVE json\]](./CVE-2021-32566.cve.json) [\[OSV json\]](./CVE-2021-32566.osv.json)
+CVE-2021-32566 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-32566) [\[CVE json\]](./CVE-2021-32566.cve.json) [\[OSV json\]](./CVE-2021-32566.osv.json)
 
 
 
@@ -1025,7 +1025,7 @@ Improper Input Validation vulnerability in HTTP/2 of Apache Traffic Server allow
 
 ## HTTP Request Smuggling, content length with invalid charters ## { #CVE-2021-32565 }
 
-CVE-2021-32565 [\[CVE json\]](./CVE-2021-32565.cve.json) [\[OSV json\]](./CVE-2021-32565.osv.json)
+CVE-2021-32565 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-32565) [\[CVE json\]](./CVE-2021-32565.cve.json) [\[OSV json\]](./CVE-2021-32565.osv.json)
 
 
 
@@ -1046,7 +1046,7 @@ Invalid values in the Content-Length header sent to Apache Traffic Server allows
 
 ## slicer plugin crash ## { #CVE-2021-27737 }
 
-CVE-2021-27737 [\[CVE json\]](./CVE-2021-27737.cve.json)
+CVE-2021-27737 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-27737) [\[CVE json\]](./CVE-2021-27737.cve.json)
 
 _Last updated: 2021-05-17T17:41:59.734Z_
 
@@ -1061,7 +1061,7 @@ Apache Traffic Server 9.0.0 is vulnerable to a remote DOS attack on the experime
 
 ## Incorrect handling of url fragment leads to cache poisoning ## { #CVE-2021-27577 }
 
-CVE-2021-27577 [\[CVE json\]](./CVE-2021-27577.cve.json) [\[OSV json\]](./CVE-2021-27577.osv.json)
+CVE-2021-27577 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-27577) [\[CVE json\]](./CVE-2021-27577.cve.json) [\[OSV json\]](./CVE-2021-27577.osv.json)
 
 
 
@@ -1082,7 +1082,7 @@ Incorrect handling of url fragment vulnerability of Apache Traffic Server allows
 
 ## Apache Traffic Server negative cache option is vulnerable to a cache poisoning attack ## { #CVE-2020-17509 }
 
-CVE-2020-17509 [\[CVE json\]](./CVE-2020-17509.cve.json) [\[OSV json\]](./CVE-2020-17509.osv.json)
+CVE-2020-17509 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-17509) [\[CVE json\]](./CVE-2020-17509.cve.json) [\[OSV json\]](./CVE-2020-17509.osv.json)
 
 
 
@@ -1104,7 +1104,7 @@ Apache Traffic Server negative cache option is vulnerable to a cache poisoning a
 
 ## Apache Traffic Server ESI plugin has a memory disclosure vulnerability ## { #CVE-2020-17508 }
 
-CVE-2020-17508 [\[CVE json\]](./CVE-2020-17508.cve.json) [\[OSV json\]](./CVE-2020-17508.osv.json)
+CVE-2020-17508 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-17508) [\[CVE json\]](./CVE-2020-17508.cve.json) [\[OSV json\]](./CVE-2020-17508.osv.json)
 
 
 

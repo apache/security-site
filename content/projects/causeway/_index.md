@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Java deserialization vulnerability to authenticated attackers ## { #CVE-2025-64408 }
 
-CVE-2025-64408 [\[CVE json\]](./CVE-2025-64408.cve.json) [\[OSV json\]](./CVE-2025-64408.osv.json)
+CVE-2025-64408 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-64408) [\[CVE json\]](./CVE-2025-64408.cve.json) [\[OSV json\]](./CVE-2025-64408.osv.json)
 
 
 

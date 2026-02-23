@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Unauthorized Exposure of Sensitive Data ## { #CVE-2024-23321 }
 
-CVE-2024-23321 [\[CVE json\]](./CVE-2024-23321.cve.json) [\[OSV json\]](./CVE-2024-23321.osv.json)
+CVE-2024-23321 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-23321) [\[CVE json\]](./CVE-2024-23321.cve.json) [\[OSV json\]](./CVE-2024-23321.osv.json)
 
 
 
@@ -47,7 +47,7 @@ _Last updated: 2024-07-22T09:24:05.796Z_
 
 ## Possible remote code execution when using the update configuration function ## { #CVE-2023-37582 }
 
-CVE-2023-37582 [\[CVE json\]](./CVE-2023-37582.cve.json) [\[OSV json\]](./CVE-2023-37582.osv.json)
+CVE-2023-37582 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-37582) [\[CVE json\]](./CVE-2023-37582.cve.json) [\[OSV json\]](./CVE-2023-37582.osv.json)
 
 
 
@@ -74,7 +74,7 @@ _Last updated: 2023-07-12T09:26:16.623Z_
 
 ## Possible remote code execution vulnerability when using the update configuration function ## { #CVE-2023-33246 }
 
-CVE-2023-33246 [\[CVE json\]](./CVE-2023-33246.cve.json) [\[OSV json\]](./CVE-2023-33246.osv.json)
+CVE-2023-33246 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-33246) [\[CVE json\]](./CVE-2023-33246.cve.json) [\[OSV json\]](./CVE-2023-33246.osv.json)
 
 
 

@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Incorrect handling of SMP Security Request could lead to undesirable pairing ## { #CVE-2025-62235 }
 
-CVE-2025-62235 [\[CVE json\]](./CVE-2025-62235.cve.json) [\[OSV json\]](./CVE-2025-62235.osv.json)
+CVE-2025-62235 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-62235) [\[CVE json\]](./CVE-2025-62235.cve.json) [\[OSV json\]](./CVE-2025-62235.osv.json)
 
 
 
@@ -41,7 +41,7 @@ _Last updated: 2026-01-10T09:42:36.935Z_
 
 ## NULL Pointer Dereference in NimBLE host HCI layer ## { #CVE-2025-53477 }
 
-CVE-2025-53477 [\[CVE json\]](./CVE-2025-53477.cve.json) [\[OSV json\]](./CVE-2025-53477.osv.json)
+CVE-2025-53477 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-53477) [\[CVE json\]](./CVE-2025-53477.cve.json) [\[OSV json\]](./CVE-2025-53477.osv.json)
 
 
 
@@ -68,7 +68,7 @@ _Last updated: 2026-01-10T09:45:08.352Z_
 
 ## Out-of-Bounds Write Vulnerability in NimBLE HCI H4 driver ## { #CVE-2025-53470 }
 
-CVE-2025-53470 [\[CVE json\]](./CVE-2025-53470.cve.json) [\[OSV json\]](./CVE-2025-53470.osv.json)
+CVE-2025-53470 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-53470) [\[CVE json\]](./CVE-2025-53470.cve.json) [\[OSV json\]](./CVE-2025-53470.osv.json)
 
 
 
@@ -94,7 +94,7 @@ _Last updated: 2026-01-10T09:46:32.072Z_
 
 ## Invalid error handling in pause encryption procedure in NimBLE controller ## { #CVE-2025-52435 }
 
-CVE-2025-52435 [\[CVE json\]](./CVE-2025-52435.cve.json) [\[OSV json\]](./CVE-2025-52435.osv.json)
+CVE-2025-52435 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-52435) [\[CVE json\]](./CVE-2025-52435.cve.json) [\[OSV json\]](./CVE-2025-52435.osv.json)
 
 
 
@@ -121,7 +121,7 @@ _Last updated: 2026-01-10T09:47:08.833Z_
 
 ## Lack of input sanitization leading to out-of-bound reads in Number of Completed Packets HCI event handler ## { #CVE-2024-51569 }
 
-CVE-2024-51569 [\[CVE json\]](./CVE-2024-51569.cve.json) [\[OSV json\]](./CVE-2024-51569.osv.json)
+CVE-2024-51569 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-51569) [\[CVE json\]](./CVE-2024-51569.cve.json) [\[OSV json\]](./CVE-2024-51569.osv.json)
 
 
 
@@ -146,7 +146,7 @@ _Last updated: 2024-12-06T07:50:42.419Z_
 
 ## Lack of input validation in HCI advertising report could lead to potential out-of-bound access ## { #CVE-2024-47250 }
 
-CVE-2024-47250 [\[CVE json\]](./CVE-2024-47250.cve.json) [\[OSV json\]](./CVE-2024-47250.osv.json)
+CVE-2024-47250 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-47250) [\[CVE json\]](./CVE-2024-47250.cve.json) [\[OSV json\]](./CVE-2024-47250.osv.json)
 
 
 
@@ -171,7 +171,7 @@ _Last updated: 2024-12-06T07:50:00.629Z_
 
 ## Lack of input sanitization leading to out-of-bound reads in multiple advertisement handler ## { #CVE-2024-47249 }
 
-CVE-2024-47249 [\[CVE json\]](./CVE-2024-47249.cve.json) [\[OSV json\]](./CVE-2024-47249.osv.json)
+CVE-2024-47249 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-47249) [\[CVE json\]](./CVE-2024-47249.cve.json) [\[OSV json\]](./CVE-2024-47249.osv.json)
 
 
 
@@ -196,7 +196,7 @@ _Last updated: 2024-12-06T07:49:57.242Z_
 
 ## Buffer overflow in NimBLE MESH Bluetooth stack ## { #CVE-2024-47248 }
 
-CVE-2024-47248 [\[CVE json\]](./CVE-2024-47248.cve.json) [\[OSV json\]](./CVE-2024-47248.osv.json)
+CVE-2024-47248 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-47248) [\[CVE json\]](./CVE-2024-47248.cve.json) [\[OSV json\]](./CVE-2024-47248.osv.json)
 
 
 
@@ -221,7 +221,7 @@ _Last updated: 2024-12-06T07:39:45.067Z_
 
 ## Denial of service in NimBLE Bluetooth stack ## { #CVE-2024-24746 }
 
-CVE-2024-24746 [\[CVE json\]](./CVE-2024-24746.cve.json) [\[OSV json\]](./CVE-2024-24746.osv.json)
+CVE-2024-24746 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-24746) [\[CVE json\]](./CVE-2024-24746.cve.json) [\[OSV json\]](./CVE-2024-24746.osv.json)
 
 
 

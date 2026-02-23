@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Weak Encryption Algorithm in StreamPark ## { #CVE-2025-54981 }
 
-CVE-2025-54981 [\[CVE json\]](./CVE-2025-54981.cve.json) [\[OSV json\]](./CVE-2025-54981.osv.json)
+CVE-2025-54981 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-54981) [\[CVE json\]](./CVE-2025-54981.cve.json) [\[OSV json\]](./CVE-2025-54981.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2025-12-12T15:10:32.960Z_
 
 ## Use hard-coded key vulnerability ## { #CVE-2025-54947 }
 
-CVE-2025-54947 [\[CVE json\]](./CVE-2025-54947.cve.json) [\[OSV json\]](./CVE-2025-54947.osv.json)
+CVE-2025-54947 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-54947) [\[CVE json\]](./CVE-2025-54947.cve.json) [\[OSV json\]](./CVE-2025-54947.osv.json)
 
 
 
@@ -65,7 +65,7 @@ _Last updated: 2025-12-12T15:11:36.470Z_
 
 ## Uses the user’s password as the secret key ## { #CVE-2025-53960 }
 
-CVE-2025-53960 [\[CVE json\]](./CVE-2025-53960.cve.json) [\[OSV json\]](./CVE-2025-53960.osv.json)
+CVE-2025-53960 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-53960) [\[CVE json\]](./CVE-2025-53960.cve.json) [\[OSV json\]](./CVE-2025-53960.osv.json)
 
 
 
@@ -90,7 +90,7 @@ _Last updated: 2025-12-16T10:08:35.119Z_
 
 ## Authenticated users can trigger remote command execution ## { #CVE-2025-30001 }
 
-CVE-2025-30001 [\[CVE json\]](./CVE-2025-30001.cve.json) [\[OSV json\]](./CVE-2025-30001.osv.json)
+CVE-2025-30001 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-30001) [\[CVE json\]](./CVE-2025-30001.cve.json) [\[OSV json\]](./CVE-2025-30001.osv.json)
 
 
 
@@ -115,7 +115,7 @@ _Last updated: 2025-10-10T09:52:24.458Z_
 
 ## SQL injection vulnerability ## { #CVE-2024-48988 }
 
-CVE-2024-48988 [\[CVE json\]](./CVE-2024-48988.cve.json) [\[OSV json\]](./CVE-2024-48988.osv.json)
+CVE-2024-48988 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-48988) [\[CVE json\]](./CVE-2024-48988.cve.json) [\[OSV json\]](./CVE-2024-48988.osv.json)
 
 
 
@@ -140,7 +140,7 @@ _Last updated: 2025-08-22T16:18:41.486Z_
 
 ## Apache StreamPark IDOR Vulnerability ## { #CVE-2024-34457 }
 
-CVE-2024-34457 [\[CVE json\]](./CVE-2024-34457.cve.json) [\[OSV json\]](./CVE-2024-34457.osv.json)
+CVE-2024-34457 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-34457) [\[CVE json\]](./CVE-2024-34457.cve.json) [\[OSV json\]](./CVE-2024-34457.osv.json)
 
 
 
@@ -165,7 +165,7 @@ _Last updated: 2024-09-11T11:03:06.370Z_
 
 ## maven build params could trigger remote command execution ## { #CVE-2024-29737 }
 
-CVE-2024-29737 [\[CVE json\]](./CVE-2024-29737.cve.json) [\[OSV json\]](./CVE-2024-29737.osv.json)
+CVE-2024-29737 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-29737) [\[CVE json\]](./CVE-2024-29737.cve.json) [\[OSV json\]](./CVE-2024-29737.osv.json)
 
 
 
@@ -190,7 +190,7 @@ In streampark, the project module integrates Maven's compilation capabilities. T
 
 ## FreeMarker SSTI RCE Vulnerability ## { #CVE-2024-29178 }
 
-CVE-2024-29178 [\[CVE json\]](./CVE-2024-29178.cve.json) [\[OSV json\]](./CVE-2024-29178.osv.json)
+CVE-2024-29178 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-29178) [\[CVE json\]](./CVE-2024-29178.cve.json) [\[OSV json\]](./CVE-2024-29178.osv.json)
 
 
 
@@ -215,7 +215,7 @@ _Last updated: 2024-07-18T11:15:55.181Z_
 
 ## Information leakage vulnerability ## { #CVE-2024-29120 }
 
-CVE-2024-29120 [\[CVE json\]](./CVE-2024-29120.cve.json) [\[OSV json\]](./CVE-2024-29120.osv.json)
+CVE-2024-29120 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-29120) [\[CVE json\]](./CVE-2024-29120.cve.json) [\[OSV json\]](./CVE-2024-29120.osv.json)
 
 
 
@@ -240,7 +240,7 @@ In Streampark (version &lt; <span style="background-color: rgb(255, 255, 255);">
 
 ## session not invalidated after logout ## { #CVE-2024-29070 }
 
-CVE-2024-29070 [\[CVE json\]](./CVE-2024-29070.cve.json) [\[OSV json\]](./CVE-2024-29070.osv.json)
+CVE-2024-29070 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-29070) [\[CVE json\]](./CVE-2024-29070.cve.json) [\[OSV json\]](./CVE-2024-29070.osv.json)
 
 
 
@@ -265,7 +265,7 @@ On versions before 2.1.4,&nbsp;session is not invalidated after logout. When the
 
 ## Unchecked maven build params could trigger remote command execution ## { #CVE-2023-52291 }
 
-CVE-2023-52291 [\[CVE json\]](./CVE-2023-52291.cve.json) [\[OSV json\]](./CVE-2023-52291.osv.json)
+CVE-2023-52291 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-52291) [\[CVE json\]](./CVE-2023-52291.cve.json) [\[OSV json\]](./CVE-2023-52291.osv.json)
 
 
 
@@ -290,7 +290,7 @@ In streampark, the project module integrates Maven's compilation capabilities. T
 
 ## Unchecked SQL query fields trigger SQL injection vulnerability ## { #CVE-2023-52290 }
 
-CVE-2023-52290 [\[CVE json\]](./CVE-2023-52290.cve.json) [\[OSV json\]](./CVE-2023-52290.osv.json)
+CVE-2023-52290 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-52290) [\[CVE json\]](./CVE-2023-52290.cve.json) [\[OSV json\]](./CVE-2023-52290.osv.json)
 
 
 
@@ -315,7 +315,7 @@ _Last updated: 2024-07-16T07:37:36.828Z_
 
 ## Authenticated system users could trigger remote command execution ## { #CVE-2023-49898 }
 
-CVE-2023-49898 [\[CVE json\]](./CVE-2023-49898.cve.json) [\[OSV json\]](./CVE-2023-49898.osv.json)
+CVE-2023-49898 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-49898) [\[CVE json\]](./CVE-2023-49898.cve.json) [\[OSV json\]](./CVE-2023-49898.osv.json)
 
 
 
@@ -336,7 +336,7 @@ _Last updated: 2023-12-15T12:13:22.953Z_
 
 ## Authenticated system users could trigger SQL injection vulnerability ## { #CVE-2023-30867 }
 
-CVE-2023-30867 [\[CVE json\]](./CVE-2023-30867.cve.json) [\[OSV json\]](./CVE-2023-30867.osv.json)
+CVE-2023-30867 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-30867) [\[CVE json\]](./CVE-2023-30867.cve.json) [\[OSV json\]](./CVE-2023-30867.osv.json)
 
 
 
@@ -357,7 +357,7 @@ _Last updated: 2023-12-15T12:13:59.544Z_
 
 ## Logic error causing any account reset ## { #CVE-2022-46365 }
 
-CVE-2022-46365 [\[CVE json\]](./CVE-2022-46365.cve.json) [\[OSV json\]](./CVE-2022-46365.osv.json)
+CVE-2022-46365 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-46365) [\[CVE json\]](./CVE-2022-46365.cve.json) [\[OSV json\]](./CVE-2022-46365.osv.json)
 
 
 
@@ -378,7 +378,7 @@ _Last updated: 2023-05-01T14:53:47.030Z_
 
 ## Upload any file to any directory ## { #CVE-2022-45802 }
 
-CVE-2022-45802 [\[CVE json\]](./CVE-2022-45802.cve.json) [\[OSV json\]](./CVE-2022-45802.osv.json)
+CVE-2022-45802 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-45802) [\[CVE json\]](./CVE-2022-45802.cve.json) [\[OSV json\]](./CVE-2022-45802.osv.json)
 
 
 
@@ -399,7 +399,7 @@ _Last updated: 2023-06-26T10:23:44.595Z_
 
 ## LDAP Injection Vulnerability ## { #CVE-2022-45801 }
 
-CVE-2022-45801 [\[CVE json\]](./CVE-2022-45801.cve.json) [\[OSV json\]](./CVE-2022-45801.osv.json)
+CVE-2022-45801 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-45801) [\[CVE json\]](./CVE-2022-45801.cve.json) [\[OSV json\]](./CVE-2022-45801.osv.json)
 
 
 

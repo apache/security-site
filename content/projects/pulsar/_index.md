@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Sensitive information logged in Pulsar's Apache Kafka Connectors ## { #CVE-2025-30677 }
 
-CVE-2025-30677 [\[CVE json\]](./CVE-2025-30677.cve.json)
+CVE-2025-30677 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-30677) [\[CVE json\]](./CVE-2025-30677.cve.json)
 
 _Last updated: 2025-04-09T11:16:21.827Z_
 
@@ -49,7 +49,7 @@ _Last updated: 2025-04-09T11:16:21.827Z_
 
 ## Improper Authorization For Namespace and Topic Management Endpoints ## { #CVE-2024-29834 }
 
-CVE-2024-29834 [\[CVE json\]](./CVE-2024-29834.cve.json) [\[OSV json\]](./CVE-2024-29834.osv.json)
+CVE-2024-29834 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-29834) [\[CVE json\]](./CVE-2024-29834.cve.json) [\[OSV json\]](./CVE-2024-29834.osv.json)
 
 
 
@@ -75,7 +75,7 @@ _Last updated: 2024-04-02T19:24:43.888Z_
 
 ## Improper Authorization For Topic-Level Policy Management ## { #CVE-2024-28098 }
 
-CVE-2024-28098 [\[CVE json\]](./CVE-2024-28098.cve.json) [\[OSV json\]](./CVE-2024-28098.osv.json)
+CVE-2024-28098 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-28098) [\[CVE json\]](./CVE-2024-28098.cve.json) [\[OSV json\]](./CVE-2024-28098.osv.json)
 
 
 
@@ -101,7 +101,7 @@ The vulnerability allows authenticated users with only produce or consume permis
 
 ## Pulsar Functions Worker Allows Unauthorized File Access and Unauthorized HTTP/HTTPS Proxying ## { #CVE-2024-27894 }
 
-CVE-2024-27894 [\[CVE json\]](./CVE-2024-27894.cve.json) [\[OSV json\]](./CVE-2024-27894.osv.json)
+CVE-2024-27894 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27894) [\[CVE json\]](./CVE-2024-27894.cve.json) [\[OSV json\]](./CVE-2024-27894.osv.json)
 
 
 
@@ -131,7 +131,7 @@ The Pulsar Functions Worker includes a capability that permits authenticated use
 
 ## Pulsar Functions Worker's Archive Extraction Vulnerability Allows Unauthorized File Modification ## { #CVE-2024-27317 }
 
-CVE-2024-27317 [\[CVE json\]](./CVE-2024-27317.cve.json) [\[OSV json\]](./CVE-2024-27317.osv.json)
+CVE-2024-27317 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27317) [\[CVE json\]](./CVE-2024-27317.cve.json) [\[OSV json\]](./CVE-2024-27317.osv.json)
 
 
 
@@ -157,7 +157,7 @@ In Pulsar Functions Worker, authenticated users can upload functions in jar or n
 
 ## Improper Input Validation in Pulsar Function Worker allows Remote Code Execution ## { #CVE-2024-27135 }
 
-CVE-2024-27135 [\[CVE json\]](./CVE-2024-27135.cve.json) [\[OSV json\]](./CVE-2024-27135.osv.json)
+CVE-2024-27135 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27135) [\[CVE json\]](./CVE-2024-27135.cve.json) [\[OSV json\]](./CVE-2024-27135.osv.json)
 
 
 
@@ -187,7 +187,7 @@ Improper input validation in the Pulsar Function Worker allows a malicious authe
 
 ## Timing attack in SASL token signature verification ## { #CVE-2023-51437 }
 
-CVE-2023-51437 [\[CVE json\]](./CVE-2023-51437.cve.json) [\[OSV json\]](./CVE-2023-51437.osv.json)
+CVE-2023-51437 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-51437) [\[CVE json\]](./CVE-2023-51437.cve.json) [\[OSV json\]](./CVE-2023-51437.osv.json)
 
 
 
@@ -217,7 +217,7 @@ Observable timing discrepancy vulnerability in Apache Pulsar SASL Authentication
 
 ## Incorrect Authorization for Function Worker Can Leak Sink/Source Credentials ## { #CVE-2023-37579 }
 
-CVE-2023-37579 [\[CVE json\]](./CVE-2023-37579.cve.json) [\[OSV json\]](./CVE-2023-37579.osv.json)
+CVE-2023-37579 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-37579) [\[CVE json\]](./CVE-2023-37579.cve.json) [\[OSV json\]](./CVE-2023-37579.osv.json)
 
 
 
@@ -243,7 +243,7 @@ Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsa
 
 ## Improper Authentication for WebSocket Proxy Endpoint Allows DoS ## { #CVE-2023-37544 }
 
-CVE-2023-37544 [\[CVE json\]](./CVE-2023-37544.cve.json) [\[OSV json\]](./CVE-2023-37544.osv.json)
+CVE-2023-37544 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-37544) [\[CVE json\]](./CVE-2023-37544.cve.json) [\[OSV json\]](./CVE-2023-37544.osv.json)
 
 
 
@@ -272,7 +272,7 @@ Improper Authentication vulnerability in Apache Pulsar WebSocket Proxy allows an
 
 ## Broker does not always disconnect client when authentication data expires ## { #CVE-2023-31007 }
 
-CVE-2023-31007 [\[CVE json\]](./CVE-2023-31007.cve.json) [\[OSV json\]](./CVE-2023-31007.osv.json)
+CVE-2023-31007 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-31007) [\[CVE json\]](./CVE-2023-31007.cve.json) [\[OSV json\]](./CVE-2023-31007.osv.json)
 
 
 
@@ -299,7 +299,7 @@ Improper Authentication vulnerability in Apache Software Foundation Apache Pulsa
 
 ## Incorrect Authorization for Function Worker when using mTLS Authentication through Pulsar Proxy ## { #CVE-2023-30429 }
 
-CVE-2023-30429 [\[CVE json\]](./CVE-2023-30429.cve.json) [\[OSV json\]](./CVE-2023-30429.osv.json)
+CVE-2023-30429 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-30429) [\[CVE json\]](./CVE-2023-30429.cve.json) [\[OSV json\]](./CVE-2023-30429.osv.json)
 
 
 
@@ -325,7 +325,7 @@ Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsa
 
 ## Incorrect Authorization Validation for Rest Producer ## { #CVE-2023-30428 }
 
-CVE-2023-30428 [\[CVE json\]](./CVE-2023-30428.cve.json) [\[OSV json\]](./CVE-2023-30428.osv.json)
+CVE-2023-30428 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-30428) [\[CVE json\]](./CVE-2023-30428.cve.json) [\[OSV json\]](./CVE-2023-30428.osv.json)
 
 
 
@@ -352,7 +352,7 @@ Incorrect Authorization vulnerability in Apache Software Foundation Apache Pulsa
 
 ## Improper Authentication for Pulsar Proxy Statistics Endpoint ## { #CVE-2022-34321 }
 
-CVE-2022-34321 [\[CVE json\]](./CVE-2022-34321.cve.json) [\[OSV json\]](./CVE-2022-34321.osv.json)
+CVE-2022-34321 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-34321) [\[CVE json\]](./CVE-2022-34321.cve.json) [\[OSV json\]](./CVE-2022-34321.osv.json)
 
 
 
@@ -381,7 +381,7 @@ Improper Authentication vulnerability in Apache Pulsar Proxy allows an attacker 
 
 ## Apache Pulsar C++/Python OAuth Clients prior to 3.0.0 were vulnerable to an MITM attack due to Disabled Certificate Validation ## { #CVE-2022-33684 }
 
-CVE-2022-33684 [\[CVE json\]](./CVE-2022-33684.cve.json)
+CVE-2022-33684 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-33684) [\[CVE json\]](./CVE-2022-33684.cve.json)
 
 _Last updated: 2022-11-04T15:46:59.823Z_
 
@@ -423,7 +423,7 @@ Any users running the C++ and Python Client for 2.6 or less should upgrade to on
 
 ## Disabled Certificate Validation makes Broker, Proxy Admin Clients vulnerable to MITM attack  ## { #CVE-2022-33683 }
 
-CVE-2022-33683 [\[CVE json\]](./CVE-2022-33683.cve.json) [\[OSV json\]](./CVE-2022-33683.osv.json)
+CVE-2022-33683 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-33683) [\[CVE json\]](./CVE-2022-33683.cve.json) [\[OSV json\]](./CVE-2022-33683.osv.json)
 
 
 
@@ -456,7 +456,7 @@ This issue affects Apache Pulsar Broker and Proxy versions 2.7.0 to 2.7.4; 2.8.0
 
 ## Disabled Hostname Verification makes Brokers, Proxies vulnerable to MITM attack ## { #CVE-2022-33682 }
 
-CVE-2022-33682 [\[CVE json\]](./CVE-2022-33682.cve.json) [\[OSV json\]](./CVE-2022-33682.osv.json)
+CVE-2022-33682 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-33682) [\[CVE json\]](./CVE-2022-33682.cve.json) [\[OSV json\]](./CVE-2022-33682.osv.json)
 
 
 
@@ -489,7 +489,7 @@ This issue affects Apache Pulsar Broker, Proxy, and WebSocket Proxy versions 2.7
 
 ## Improper Hostname Verification in Java Client and Proxy can expose authentication data via MITM ## { #CVE-2022-33681 }
 
-CVE-2022-33681 [\[CVE json\]](./CVE-2022-33681.cve.json) [\[OSV json\]](./CVE-2022-33681.osv.json)
+CVE-2022-33681 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-33681) [\[CVE json\]](./CVE-2022-33681.cve.json) [\[OSV json\]](./CVE-2022-33681.osv.json)
 
 
 
@@ -524,7 +524,7 @@ This issue affects Apache Pulsar Java Client versions 2.7.0 to 2.7.4; 2.8.0 to 2
 
 ## Apache Pulsar Proxy target broker address isn't validated ## { #CVE-2022-24280 }
 
-CVE-2022-24280 [\[CVE json\]](./CVE-2022-24280.cve.json) [\[OSV json\]](./CVE-2022-24280.osv.json)
+CVE-2022-24280 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-24280) [\[CVE json\]](./CVE-2022-24280.cve.json) [\[OSV json\]](./CVE-2022-24280.osv.json)
 
 
 
@@ -557,7 +557,7 @@ This issue affects Apache Pulsar Proxy versions 2.7.0 to 2.7.4; 2.8.0 to 2.8.2; 
 
 ## Pulsar Admin API allows access to data from other tenants using getMessageById API ## { #CVE-2021-41571 }
 
-CVE-2021-41571 [\[CVE json\]](./CVE-2021-41571.cve.json) [\[OSV json\]](./CVE-2021-41571.osv.json)
+CVE-2021-41571 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-41571) [\[CVE json\]](./CVE-2021-41571.cve.json) [\[OSV json\]](./CVE-2021-41571.osv.json)
 
 
 
@@ -586,7 +586,7 @@ This issue affects Apache Pulsar Apache Pulsar version 2.8.0 and prior versions;
 
 ## Authentication with JWT allows use of “none”-algorithm ## { #CVE-2021-22160 }
 
-CVE-2021-22160 [\[CVE json\]](./CVE-2021-22160.cve.json) [\[OSV json\]](./CVE-2021-22160.osv.json)
+CVE-2021-22160 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-22160) [\[CVE json\]](./CVE-2021-22160.cve.json) [\[OSV json\]](./CVE-2021-22160.osv.json)
 
 
 

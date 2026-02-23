@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Uncontrolled Resource Consumption via Crafted XPath Expressions ## { #CVE-2026-24343 }
 
-CVE-2026-24343 [\[CVE json\]](./CVE-2026-24343.cve.json) [\[OSV json\]](./CVE-2026-24343.osv.json)
+CVE-2026-24343 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24343) [\[CVE json\]](./CVE-2026-24343.cve.json) [\[OSV json\]](./CVE-2026-24343.osv.json)
 
 
 
@@ -36,7 +36,7 @@ _Last updated: 2026-02-09T15:07:42.730Z_
 
 ## Jmx JNDI injection vulnerability ## { #CVE-2025-48208 }
 
-CVE-2025-48208 [\[CVE json\]](./CVE-2025-48208.cve.json) [\[OSV json\]](./CVE-2025-48208.osv.json)
+CVE-2025-48208 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-48208) [\[CVE json\]](./CVE-2025-48208.cve.json) [\[OSV json\]](./CVE-2025-48208.osv.json)
 
 
 
@@ -73,7 +73,7 @@ _Last updated: 2025-09-09T09:31:33.928Z_
 
 ## RCE by parse http sitemap xml response ## { #CVE-2025-24404 }
 
-CVE-2025-24404 [\[CVE json\]](./CVE-2025-24404.cve.json) [\[OSV json\]](./CVE-2025-24404.osv.json)
+CVE-2025-24404 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-24404) [\[CVE json\]](./CVE-2025-24404.cve.json) [\[OSV json\]](./CVE-2025-24404.osv.json)
 
 
 
@@ -111,7 +111,7 @@ _Last updated: 2025-09-09T09:30:57.298Z_
 
 ## Server-Side Request Forgery (SSRF) in Api Config Oss ## { #CVE-2024-56736 }
 
-CVE-2024-56736 [\[CVE json\]](./CVE-2024-56736.cve.json) [\[OSV json\]](./CVE-2024-56736.osv.json)
+CVE-2024-56736 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-56736) [\[CVE json\]](./CVE-2024-56736.cve.json) [\[OSV json\]](./CVE-2024-56736.osv.json)
 
 
 
@@ -138,7 +138,7 @@ _Last updated: 2025-04-16T15:38:09.273Z_
 
 ## Exposure sensitive token via http GET method with query string ## { #CVE-2024-45791 }
 
-CVE-2024-45791 [\[CVE json\]](./CVE-2024-45791.cve.json) [\[OSV json\]](./CVE-2024-45791.osv.json)
+CVE-2024-45791 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45791) [\[CVE json\]](./CVE-2024-45791.cve.json) [\[OSV json\]](./CVE-2024-45791.osv.json)
 
 
 
@@ -164,7 +164,7 @@ _Last updated: 2024-11-18T08:45:21.798Z_
 
 ## Exists Native Deser RCE and file writing vulnerabilities ## { #CVE-2024-45505 }
 
-CVE-2024-45505 [\[CVE json\]](./CVE-2024-45505.cve.json) [\[OSV json\]](./CVE-2024-45505.osv.json)
+CVE-2024-45505 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45505) [\[CVE json\]](./CVE-2024-45505.cve.json) [\[OSV json\]](./CVE-2024-45505.osv.json)
 
 
 
@@ -193,7 +193,7 @@ _Last updated: 2024-11-18T08:44:44.304Z_
 
 ## RCE by snakeYaml deser load malicious xml  ## { #CVE-2024-42323 }
 
-CVE-2024-42323 [\[CVE json\]](./CVE-2024-42323.cve.json) [\[OSV json\]](./CVE-2024-42323.osv.json)
+CVE-2024-42323 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-42323) [\[CVE json\]](./CVE-2024-42323.cve.json) [\[OSV json\]](./CVE-2024-42323.osv.json)
 
 
 
@@ -220,7 +220,7 @@ _Last updated: 2024-09-21T09:30:13.062Z_
 
 ## RCE by notice template injection vulnerability ## { #CVE-2024-41151 }
 
-CVE-2024-41151 [\[CVE json\]](./CVE-2024-41151.cve.json) [\[OSV json\]](./CVE-2024-41151.osv.json)
+CVE-2024-41151 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-41151) [\[CVE json\]](./CVE-2024-41151.cve.json) [\[OSV json\]](./CVE-2024-41151.osv.json)
 
 
 

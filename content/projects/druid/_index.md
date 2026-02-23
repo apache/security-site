@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Authentication Bypass via LDAP Anonymous Bind ## { #CVE-2026-23906 }
 
-CVE-2026-23906 [\[CVE json\]](./CVE-2026-23906.cve.json) [\[OSV json\]](./CVE-2026-23906.osv.json)
+CVE-2026-23906 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23906) [\[CVE json\]](./CVE-2026-23906.cve.json) [\[OSV json\]](./CVE-2026-23906.osv.json)
 
 
 
@@ -36,7 +36,7 @@ _Last updated: 2026-02-10T09:28:07.546Z_
 
 ## Kerberos authenticaton chooses a cryptographically unsecure secret if not configured explicitly. ## { #CVE-2025-59390 }
 
-CVE-2025-59390 [\[CVE json\]](./CVE-2025-59390.cve.json) [\[OSV json\]](./CVE-2025-59390.osv.json)
+CVE-2025-59390 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-59390) [\[CVE json\]](./CVE-2025-59390.cve.json) [\[OSV json\]](./CVE-2025-59390.osv.json)
 
 
 
@@ -70,7 +70,7 @@ advised to configure a strong&nbsp;<code>`druid.auth.authenticator.kerberos.cook
 
 ## Server-Side Request Forgery and Cross-Site Scripting ## { #CVE-2025-27888 }
 
-CVE-2025-27888 [\[CVE json\]](./CVE-2025-27888.cve.json) [\[OSV json\]](./CVE-2025-27888.osv.json)
+CVE-2025-27888 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27888) [\[CVE json\]](./CVE-2025-27888.cve.json) [\[OSV json\]](./CVE-2025-27888.osv.json)
 
 
 
@@ -96,7 +96,7 @@ _Last updated: 2025-03-24T07:41:49.543Z_
 
 ## Users can provide MySQL JDBC properties not on allow list ## { #CVE-2024-45537 }
 
-CVE-2024-45537 [\[CVE json\]](./CVE-2024-45537.cve.json) [\[OSV json\]](./CVE-2024-45537.osv.json)
+CVE-2024-45537 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45537) [\[CVE json\]](./CVE-2024-45537.cve.json) [\[OSV json\]](./CVE-2024-45537.osv.json)
 
 
 
@@ -121,7 +121,7 @@ _Last updated: 2024-09-19T09:29:22.203Z_
 
 ## Padding oracle in druid-pac4j extension that allows an attacker to manipulate a pac4j session cookie via Padding Oracle Attack ## { #CVE-2024-45384 }
 
-CVE-2024-45384 [\[CVE json\]](./CVE-2024-45384.cve.json) [\[OSV json\]](./CVE-2024-45384.osv.json)
+CVE-2024-45384 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45384) [\[CVE json\]](./CVE-2024-45384.cve.json) [\[OSV json\]](./CVE-2024-45384.osv.json)
 
 
 
@@ -148,7 +148,7 @@ druid.auth.pac4j.cookiePassphrase as a precaution.<br><p></p>
 
 ## Clickjacking in the web console ## { #CVE-2022-28889 }
 
-CVE-2022-28889 [\[CVE json\]](./CVE-2022-28889.cve.json) [\[OSV json\]](./CVE-2022-28889.osv.json)
+CVE-2022-28889 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-28889) [\[CVE json\]](./CVE-2022-28889.cve.json) [\[OSV json\]](./CVE-2022-28889.osv.json)
 
 
 
@@ -169,7 +169,7 @@ In Apache Druid 0.22.1 and earlier, the server did not set appropriate headers t
 
 ## Reflected XSS on certain HTTP endpoints ## { #CVE-2021-44791 }
 
-CVE-2021-44791 [\[CVE json\]](./CVE-2021-44791.cve.json) [\[OSV json\]](./CVE-2021-44791.osv.json)
+CVE-2021-44791 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-44791) [\[CVE json\]](./CVE-2021-44791.cve.json) [\[OSV json\]](./CVE-2021-44791.osv.json)
 
 
 
@@ -194,7 +194,7 @@ In Apache Druid 0.22.1 and earlier, certain specially-crafted links result in un
 
 ## Apache Druid: The HTTP inputSource allows authenticated users to read data from other sources than intended (incomplete fix of CVE-2021-26920) ## { #CVE-2021-36749 }
 
-CVE-2021-36749 [\[CVE json\]](./CVE-2021-36749.cve.json) [\[OSV json\]](./CVE-2021-36749.osv.json)
+CVE-2021-36749 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-36749) [\[CVE json\]](./CVE-2021-36749.cve.json) [\[OSV json\]](./CVE-2021-36749.osv.json)
 
 
 
@@ -222,7 +222,7 @@ This issue was previously mentioned as being fixed in 0.21.0 as per CVE-2021-269
 
 ## Apache Druid: The HTTP inputSource allows authenticated users to read data from other sources than intended ## { #CVE-2021-26920 }
 
-CVE-2021-26920 [\[CVE json\]](./CVE-2021-26920.cve.json) [\[OSV json\]](./CVE-2021-26920.osv.json)
+CVE-2021-26920 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-26920) [\[CVE json\]](./CVE-2021-26920.cve.json) [\[OSV json\]](./CVE-2021-26920.osv.json)
 
 
 
@@ -247,7 +247,7 @@ In the Druid ingestion system, the InputSource is used for reading data from a c
 
 ## Apache Druid Authenticated users can execute arbitrary code from malicious MySQL database systems. ## { #CVE-2021-26919 }
 
-CVE-2021-26919 [\[CVE json\]](./CVE-2021-26919.cve.json) [\[OSV json\]](./CVE-2021-26919.osv.json)
+CVE-2021-26919 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-26919) [\[CVE json\]](./CVE-2021-26919.cve.json) [\[OSV json\]](./CVE-2021-26919.osv.json)
 
 
 
@@ -272,7 +272,7 @@ Apache Druid allows users to read data from other database systems using JDBC. T
 
 ## Authenticated users can override system configurations in their requests which allows them to execute arbitrary code. ## { #CVE-2021-25646 }
 
-CVE-2021-25646 [\[CVE json\]](./CVE-2021-25646.cve.json) [\[OSV json\]](./CVE-2021-25646.osv.json)
+CVE-2021-25646 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-25646) [\[CVE json\]](./CVE-2021-25646.cve.json) [\[OSV json\]](./CVE-2021-25646.osv.json)
 
 
 

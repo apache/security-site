@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## LDAP injection vulnerability in authenticator ## { #CVE-2022-46337 }
 
-CVE-2022-46337 [\[CVE json\]](./CVE-2022-46337.cve.json) [\[OSV json\]](./CVE-2022-46337.osv.json)
+CVE-2022-46337 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-46337) [\[CVE json\]](./CVE-2022-46337.cve.json) [\[OSV json\]](./CVE-2022-46337.osv.json)
 
 
 
@@ -58,7 +58,7 @@ and 8.
 
 ## Apache ddlutils 1.0 readobject vulnerability ## { #CVE-2021-41616 }
 
-CVE-2021-41616 [\[CVE json\]](./CVE-2021-41616.cve.json) [\[OSV json\]](./CVE-2021-41616.osv.json)
+CVE-2021-41616 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-41616) [\[CVE json\]](./CVE-2021-41616.cve.json) [\[OSV json\]](./CVE-2021-41616.osv.json)
 
 
 

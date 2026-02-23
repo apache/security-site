@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## IDOR via self-service API ## { #CVE-2025-58137 }
 
-CVE-2025-58137 [\[CVE json\]](./CVE-2025-58137.cve.json)
+CVE-2025-58137 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-58137) [\[CVE json\]](./CVE-2025-58137.cve.json)
 
 _Last updated: 2025-12-12T09:20:50.539Z_
 
@@ -42,7 +42,7 @@ _Last updated: 2025-12-12T09:20:50.539Z_
 
 ## Server Key not masked ## { #CVE-2025-58130 }
 
-CVE-2025-58130 [\[CVE json\]](./CVE-2025-58130.cve.json)
+CVE-2025-58130 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-58130) [\[CVE json\]](./CVE-2025-58130.cve.json)
 
 _Last updated: 2025-12-12T09:20:05.211Z_
 
@@ -68,7 +68,7 @@ _Last updated: 2025-12-12T09:20:05.211Z_
 
 ## weak password policy ## { #CVE-2025-23408 }
 
-CVE-2025-23408 [\[CVE json\]](./CVE-2025-23408.cve.json)
+CVE-2025-23408 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-23408) [\[CVE json\]](./CVE-2025-23408.cve.json)
 
 _Last updated: 2025-12-12T09:18:57.063Z_
 
@@ -93,7 +93,7 @@ _Last updated: 2025-12-12T09:18:57.063Z_
 
 ## SQL injection vulnerabilities in offices API endpoint ## { #CVE-2024-32838 }
 
-CVE-2024-32838 [\[CVE json\]](./CVE-2024-32838.cve.json) [\[OSV json\]](./CVE-2024-32838.osv.json)
+CVE-2024-32838 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-32838) [\[CVE json\]](./CVE-2024-32838.cve.json) [\[OSV json\]](./CVE-2024-32838.osv.json)
 
 
 
@@ -119,7 +119,7 @@ SQL Injection vulnerability in various API endpoints - offices, dashboards, etc.
 
 ## Under certain system configurations, the sqlSearch parameter for specific endpoints was vulnerable to SQL injection attacks, potentially allowing attackers to manipulate database queries.  ## { #CVE-2024-23539 }
 
-CVE-2024-23539 [\[CVE json\]](./CVE-2024-23539.cve.json) [\[OSV json\]](./CVE-2024-23539.osv.json)
+CVE-2024-23539 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-23539) [\[CVE json\]](./CVE-2024-23539.cve.json) [\[OSV json\]](./CVE-2024-23539.osv.json)
 
 
 
@@ -145,7 +145,7 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 
 ## Under certain system configurations, the sqlSearch parameter was vulnerable to SQL injection attacks, potentially allowing attackers to manipulate database queries. ## { #CVE-2024-23538 }
 
-CVE-2024-23538 [\[CVE json\]](./CVE-2024-23538.cve.json) [\[OSV json\]](./CVE-2024-23538.osv.json)
+CVE-2024-23538 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-23538) [\[CVE json\]](./CVE-2024-23538.cve.json) [\[OSV json\]](./CVE-2024-23538.osv.json)
 
 
 
@@ -172,7 +172,7 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 
 ## Under certain circumstances, this vulnerability allowed users, without specific permissions, to escalate their privileges to any role.  ## { #CVE-2024-23537 }
 
-CVE-2024-23537 [\[CVE json\]](./CVE-2024-23537.cve.json) [\[OSV json\]](./CVE-2024-23537.osv.json)
+CVE-2024-23537 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-23537) [\[CVE json\]](./CVE-2024-23537.cve.json) [\[OSV json\]](./CVE-2024-23537.osv.json)
 
 
 
@@ -198,7 +198,7 @@ Improper Privilege Management vulnerability in Apache Fineract.<p>This issue aff
 
 ## SQL injection vulnerability in certain procedure calls  ## { #CVE-2023-25197 }
 
-CVE-2023-25197 [\[CVE json\]](./CVE-2023-25197.cve.json) [\[OSV json\]](./CVE-2023-25197.osv.json)
+CVE-2023-25197 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-25197) [\[CVE json\]](./CVE-2023-25197.cve.json) [\[OSV json\]](./CVE-2023-25197.osv.json)
 
 
 
@@ -224,7 +224,7 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 
 ## SQL injection vulnerability  ## { #CVE-2023-25196 }
 
-CVE-2023-25196 [\[CVE json\]](./CVE-2023-25196.cve.json) [\[OSV json\]](./CVE-2023-25196.osv.json)
+CVE-2023-25196 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-25196) [\[CVE json\]](./CVE-2023-25196.cve.json) [\[OSV json\]](./CVE-2023-25196.osv.json)
 
 
 
@@ -250,7 +250,7 @@ Improper Neutralization of Special Elements used in an SQL Command ('SQL Injecti
 
 ## SSRF template type vulnerability in certain authenticated users ## { #CVE-2023-25195 }
 
-CVE-2023-25195 [\[CVE json\]](./CVE-2023-25195.cve.json) [\[OSV json\]](./CVE-2023-25195.osv.json)
+CVE-2023-25195 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-25195) [\[CVE json\]](./CVE-2023-25195.cve.json) [\[OSV json\]](./CVE-2023-25195.osv.json)
 
 
 
@@ -276,7 +276,7 @@ Server-Side Request Forgery (SSRF) vulnerability in Apache Software Foundation A
 
 ## Apache Fineract allowed an authenticated user to perform remote code execution due to path traversal ## { #CVE-2022-44635 }
 
-CVE-2022-44635 [\[CVE json\]](./CVE-2022-44635.cve.json) [\[OSV json\]](./CVE-2022-44635.osv.json)
+CVE-2022-44635 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-44635) [\[CVE json\]](./CVE-2022-44635.cve.json) [\[OSV json\]](./CVE-2022-44635.osv.json)
 
 
 
@@ -302,7 +302,7 @@ Apache Fineract allowed an authenticated user to perform remote code execution d
 
 ## disabled hostname verificiation ## { #CVE-2020-17514 }
 
-CVE-2020-17514 [\[CVE json\]](./CVE-2020-17514.cve.json) [\[OSV json\]](./CVE-2020-17514.osv.json)
+CVE-2020-17514 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-17514) [\[CVE json\]](./CVE-2020-17514.cve.json) [\[OSV json\]](./CVE-2020-17514.osv.json)
 
 
 

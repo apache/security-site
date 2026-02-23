@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Unauthenticated insecure access ## { #CVE-2025-32896 }
 
-CVE-2025-32896 [\[CVE json\]](./CVE-2025-32896.cve.json) [\[OSV json\]](./CVE-2025-32896.osv.json)
+CVE-2025-32896 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-32896) [\[CVE json\]](./CVE-2025-32896.cve.json) [\[OSV json\]](./CVE-2025-32896.osv.json)
 
 
 
@@ -42,7 +42,7 @@ _Last updated: 2025-06-19T08:34:42.552Z_
 
 ## Arbitrary file read vulnerability ## { #CVE-2023-49198 }
 
-CVE-2023-49198 [\[CVE json\]](./CVE-2023-49198.cve.json) [\[OSV json\]](./CVE-2023-49198.osv.json)
+CVE-2023-49198 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-49198) [\[CVE json\]](./CVE-2023-49198.cve.json) [\[OSV json\]](./CVE-2023-49198.osv.json)
 
 
 
@@ -67,7 +67,7 @@ Mysql security vulnerability in Apache SeaTunnel.<br><br><tt><span style="backgr
 
 ## Authentication bypass ## { #CVE-2023-48396 }
 
-CVE-2023-48396 [\[CVE json\]](./CVE-2023-48396.cve.json)
+CVE-2023-48396 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-48396) [\[CVE json\]](./CVE-2023-48396.cve.json)
 
 _Last updated: 2024-07-30T08:15:30.810Z_
 

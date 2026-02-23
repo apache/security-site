@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## mod_userdir+suexec bypass via AllowOverride FileInfo ## { #CVE-2025-66200 }
 
-CVE-2025-66200 [\[CVE json\]](./CVE-2025-66200.cve.json) [\[OSV json\]](./CVE-2025-66200.osv.json)
+CVE-2025-66200 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66200) [\[CVE json\]](./CVE-2025-66200.cve.json) [\[OSV json\]](./CVE-2025-66200.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2025-12-05T11:02:46.192Z_
 
 ## CGI environment variable override ## { #CVE-2025-65082 }
 
-CVE-2025-65082 [\[CVE json\]](./CVE-2025-65082.cve.json) [\[OSV json\]](./CVE-2025-65082.osv.json)
+CVE-2025-65082 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-65082) [\[CVE json\]](./CVE-2025-65082.cve.json) [\[OSV json\]](./CVE-2025-65082.osv.json)
 
 
 
@@ -65,7 +65,7 @@ _Last updated: 2025-12-05T10:46:23.466Z_
 
 ## NTLM Leakage on Windows through UNC SSRF ## { #CVE-2025-59775 }
 
-CVE-2025-59775 [\[CVE json\]](./CVE-2025-59775.cve.json) [\[OSV json\]](./CVE-2025-59775.osv.json)
+CVE-2025-59775 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-59775) [\[CVE json\]](./CVE-2025-59775.cve.json) [\[OSV json\]](./CVE-2025-59775.osv.json)
 
 
 
@@ -97,7 +97,7 @@ hashes to a malicious server via SSRF and malicious requests or content</p><p>Us
 
 ## Server Side Includes adds query string to #exec cmd=... ## { #CVE-2025-58098 }
 
-CVE-2025-58098 [\[CVE json\]](./CVE-2025-58098.cve.json) [\[OSV json\]](./CVE-2025-58098.osv.json)
+CVE-2025-58098 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-58098) [\[CVE json\]](./CVE-2025-58098.cve.json) [\[OSV json\]](./CVE-2025-58098.osv.json)
 
 
 
@@ -122,7 +122,7 @@ _Last updated: 2025-12-05T13:40:37.496Z_
 
 ## mod_md (ACME), unintended retry intervals ## { #CVE-2025-55753 }
 
-CVE-2025-55753 [\[CVE json\]](./CVE-2025-55753.cve.json) [\[OSV json\]](./CVE-2025-55753.osv.json)
+CVE-2025-55753 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-55753) [\[CVE json\]](./CVE-2025-55753.cve.json) [\[OSV json\]](./CVE-2025-55753.osv.json)
 
 
 
@@ -147,7 +147,7 @@ _Last updated: 2025-12-05T10:17:13.634Z_
 
 ## 'RewriteCond expr' always evaluates to true in 2.4.64 ## { #CVE-2025-54090 }
 
-CVE-2025-54090 [\[CVE json\]](./CVE-2025-54090.cve.json) [\[OSV json\]](./CVE-2025-54090.osv.json)
+CVE-2025-54090 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-54090) [\[CVE json\]](./CVE-2025-54090.cve.json) [\[OSV json\]](./CVE-2025-54090.osv.json)
 
 
 
@@ -168,7 +168,7 @@ _Last updated: 2025-07-23T13:19:23.112Z_
 
 ## HTTP/2 DoS by Memory Increase ## { #CVE-2025-53020 }
 
-CVE-2025-53020 [\[CVE json\]](./CVE-2025-53020.cve.json) [\[OSV json\]](./CVE-2025-53020.osv.json)
+CVE-2025-53020 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-53020) [\[CVE json\]](./CVE-2025-53020.cve.json) [\[OSV json\]](./CVE-2025-53020.osv.json)
 
 
 
@@ -193,7 +193,7 @@ _Last updated: 2025-07-11T10:30:11.990Z_
 
 ## mod_ssl TLS upgrade attack ## { #CVE-2025-49812 }
 
-CVE-2025-49812 [\[CVE json\]](./CVE-2025-49812.cve.json) [\[OSV json\]](./CVE-2025-49812.osv.json)
+CVE-2025-49812 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-49812) [\[CVE json\]](./CVE-2025-49812.cve.json) [\[OSV json\]](./CVE-2025-49812.osv.json)
 
 
 
@@ -225,7 +225,7 @@ In some mod_ssl configurations on Apache HTTP Server versions through to 2.4.63,
 
 ## mod_proxy_http2 denial of service ## { #CVE-2025-49630 }
 
-CVE-2025-49630 [\[CVE json\]](./CVE-2025-49630.cve.json) [\[OSV json\]](./CVE-2025-49630.osv.json)
+CVE-2025-49630 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-49630) [\[CVE json\]](./CVE-2025-49630.cve.json) [\[OSV json\]](./CVE-2025-49630.osv.json)
 
 
 
@@ -250,7 +250,7 @@ In certain proxy configurations, a denial of service attack against&nbsp;Apache 
 
 ## mod_ssl access control bypass with session resumption ## { #CVE-2025-23048 }
 
-CVE-2025-23048 [\[CVE json\]](./CVE-2025-23048.cve.json) [\[OSV json\]](./CVE-2025-23048.osv.json)
+CVE-2025-23048 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-23048) [\[CVE json\]](./CVE-2025-23048.cve.json) [\[OSV json\]](./CVE-2025-23048.osv.json)
 
 
 
@@ -275,7 +275,7 @@ In some mod_ssl configurations on Apache HTTP Server 2.4.35 through to 2.4.63, a
 
 ## mod_ssl error log variable escaping ## { #CVE-2024-47252 }
 
-CVE-2024-47252 [\[CVE json\]](./CVE-2024-47252.cve.json) [\[OSV json\]](./CVE-2024-47252.osv.json)
+CVE-2024-47252 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-47252) [\[CVE json\]](./CVE-2024-47252.cve.json) [\[OSV json\]](./CVE-2024-47252.osv.json)
 
 
 
@@ -300,7 +300,7 @@ Insufficient escaping of user-supplied data in mod_ssl in Apache HTTP Server 2.4
 
 ## SSRF on Windows due to UNC paths ## { #CVE-2024-43394 }
 
-CVE-2024-43394 [\[CVE json\]](./CVE-2024-43394.cve.json) [\[OSV json\]](./CVE-2024-43394.osv.json)
+CVE-2024-43394 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-43394) [\[CVE json\]](./CVE-2024-43394.cve.json) [\[OSV json\]](./CVE-2024-43394.osv.json)
 
 
 
@@ -325,7 +325,7 @@ _Last updated: 2025-07-11T10:29:24.674Z_
 
 ## SSRF with mod_headers setting Content-Type header ## { #CVE-2024-43204 }
 
-CVE-2024-43204 [\[CVE json\]](./CVE-2024-43204.cve.json) [\[OSV json\]](./CVE-2024-43204.osv.json)
+CVE-2024-43204 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-43204) [\[CVE json\]](./CVE-2024-43204.cve.json) [\[OSV json\]](./CVE-2024-43204.osv.json)
 
 
 
@@ -350,7 +350,7 @@ SSRF in Apache HTTP Server with mod_proxy loaded allows an attacker to send outb
 
 ## HTTP response splitting ## { #CVE-2024-42516 }
 
-CVE-2024-42516 [\[CVE json\]](./CVE-2024-42516.cve.json) [\[OSV json\]](./CVE-2024-42516.osv.json)
+CVE-2024-42516 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-42516) [\[CVE json\]](./CVE-2024-42516.cve.json) [\[OSV json\]](./CVE-2024-42516.osv.json)
 
 
 
@@ -371,7 +371,7 @@ HTTP response splitting in the core of Apache HTTP Server allows an attacker who
 
 ## SSRF with mod_rewrite in server/vhost context on Windows ## { #CVE-2024-40898 }
 
-CVE-2024-40898 [\[CVE json\]](./CVE-2024-40898.cve.json) [\[OSV json\]](./CVE-2024-40898.osv.json)
+CVE-2024-40898 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-40898) [\[CVE json\]](./CVE-2024-40898.cve.json) [\[OSV json\]](./CVE-2024-40898.osv.json)
 
 
 
@@ -397,7 +397,7 @@ SSRF in Apache HTTP Server on Windows with mod_rewrite in server/vhost context, 
 
 ## source code disclosure with handlers configured via AddType ## { #CVE-2024-40725 }
 
-CVE-2024-40725 [\[CVE json\]](./CVE-2024-40725.cve.json) [\[OSV json\]](./CVE-2024-40725.osv.json)
+CVE-2024-40725 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-40725) [\[CVE json\]](./CVE-2024-40725.cve.json) [\[OSV json\]](./CVE-2024-40725.osv.json)
 
 
 
@@ -418,7 +418,7 @@ _Last updated: 2024-07-18T09:32:42.028Z_
 
 ## source code disclosure with handlers configured via AddType ## { #CVE-2024-39884 }
 
-CVE-2024-39884 [\[CVE json\]](./CVE-2024-39884.cve.json) [\[OSV json\]](./CVE-2024-39884.osv.json)
+CVE-2024-39884 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-39884) [\[CVE json\]](./CVE-2024-39884.cve.json) [\[OSV json\]](./CVE-2024-39884.osv.json)
 
 
 
@@ -439,7 +439,7 @@ A regression in the core of Apache HTTP Server 2.4.60 ignores some use of the le
 
 ## mod_rewrite proxy handler substitution ## { #CVE-2024-39573 }
 
-CVE-2024-39573 [\[CVE json\]](./CVE-2024-39573.cve.json) [\[OSV json\]](./CVE-2024-39573.osv.json)
+CVE-2024-39573 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-39573) [\[CVE json\]](./CVE-2024-39573.cve.json) [\[OSV json\]](./CVE-2024-39573.osv.json)
 
 
 
@@ -464,7 +464,7 @@ Potential SSRF in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows an
 
 ## Crash resulting in Denial of Service in mod_proxy via a malicious request ## { #CVE-2024-38477 }
 
-CVE-2024-38477 [\[CVE json\]](./CVE-2024-38477.cve.json) [\[OSV json\]](./CVE-2024-38477.osv.json)
+CVE-2024-38477 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-38477) [\[CVE json\]](./CVE-2024-38477.cve.json) [\[OSV json\]](./CVE-2024-38477.osv.json)
 
 
 
@@ -489,7 +489,7 @@ null pointer dereference in mod_proxy in Apache HTTP Server 2.4.59 and earlier a
 
 ## Apache HTTP Server may use exploitable/malicious backend application output to run local handlers via internal redirect ## { #CVE-2024-38476 }
 
-CVE-2024-38476 [\[CVE json\]](./CVE-2024-38476.cve.json) [\[OSV json\]](./CVE-2024-38476.osv.json)
+CVE-2024-38476 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-38476) [\[CVE json\]](./CVE-2024-38476.cve.json) [\[OSV json\]](./CVE-2024-38476.osv.json)
 
 
 
@@ -514,7 +514,7 @@ Vulnerability in core of Apache HTTP Server 2.4.59 and earlier are vulnerably to
 
 ## Apache HTTP Server weakness in mod_rewrite when first segment of substitution matches filesystem path. ## { #CVE-2024-38475 }
 
-CVE-2024-38475 [\[CVE json\]](./CVE-2024-38475.cve.json) [\[OSV json\]](./CVE-2024-38475.osv.json)
+CVE-2024-38475 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-38475) [\[CVE json\]](./CVE-2024-38475.cve.json) [\[OSV json\]](./CVE-2024-38475.osv.json)
 
 
 
@@ -539,7 +539,7 @@ Improper escaping of output in mod_rewrite in Apache HTTP Server 2.4.59 and earl
 
 ## Apache HTTP Server weakness with encoded question marks in backreferences ## { #CVE-2024-38474 }
 
-CVE-2024-38474 [\[CVE json\]](./CVE-2024-38474.cve.json) [\[OSV json\]](./CVE-2024-38474.osv.json)
+CVE-2024-38474 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-38474) [\[CVE json\]](./CVE-2024-38474.cve.json) [\[OSV json\]](./CVE-2024-38474.osv.json)
 
 
 
@@ -564,7 +564,7 @@ Substitution encoding issue in mod_rewrite in Apache HTTP Server 2.4.59 and earl
 
 ## Apache HTTP Server proxy encoding problem ## { #CVE-2024-38473 }
 
-CVE-2024-38473 [\[CVE json\]](./CVE-2024-38473.cve.json) [\[OSV json\]](./CVE-2024-38473.osv.json)
+CVE-2024-38473 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-38473) [\[CVE json\]](./CVE-2024-38473.cve.json) [\[OSV json\]](./CVE-2024-38473.osv.json)
 
 
 
@@ -589,7 +589,7 @@ Encoding problem in mod_proxy in Apache HTTP Server 2.4.59 and earlier allows re
 
 ## Apache HTTP Server on WIndows UNC SSRF ## { #CVE-2024-38472 }
 
-CVE-2024-38472 [\[CVE json\]](./CVE-2024-38472.cve.json) [\[OSV json\]](./CVE-2024-38472.osv.json)
+CVE-2024-38472 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-38472) [\[CVE json\]](./CVE-2024-38472.cve.json) [\[OSV json\]](./CVE-2024-38472.osv.json)
 
 
 
@@ -614,7 +614,7 @@ SSRF in Apache HTTP Server on Windows allows to potentially leak NTML hashes to 
 
 ## DoS by Null pointer in websocket over HTTP/2 ## { #CVE-2024-36387 }
 
-CVE-2024-36387 [\[CVE json\]](./CVE-2024-36387.cve.json) [\[OSV json\]](./CVE-2024-36387.osv.json)
+CVE-2024-36387 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-36387) [\[CVE json\]](./CVE-2024-36387.cve.json) [\[OSV json\]](./CVE-2024-36387.osv.json)
 
 
 
@@ -639,7 +639,7 @@ Serving WebSocket protocol upgrades over a HTTP/2 connection could result in a N
 
 ## HTTP/2 DoS by memory exhaustion on endless continuation frames ## { #CVE-2024-27316 }
 
-CVE-2024-27316 [\[CVE json\]](./CVE-2024-27316.cve.json) [\[OSV json\]](./CVE-2024-27316.osv.json)
+CVE-2024-27316 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27316) [\[CVE json\]](./CVE-2024-27316.cve.json) [\[OSV json\]](./CVE-2024-27316.osv.json)
 
 
 
@@ -664,7 +664,7 @@ HTTP/2 incoming headers exceeding the limit are temporarily buffered in nghttp2 
 
 ## HTTP Response Splitting in multiple modules ## { #CVE-2024-24795 }
 
-CVE-2024-24795 [\[CVE json\]](./CVE-2024-24795.cve.json) [\[OSV json\]](./CVE-2024-24795.osv.json)
+CVE-2024-24795 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-24795) [\[CVE json\]](./CVE-2024-24795.cve.json) [\[OSV json\]](./CVE-2024-24795.osv.json)
 
 
 
@@ -690,7 +690,7 @@ HTTP Response splitting in multiple modules in Apache HTTP Server allows an atta
 
 ## HTTP/2 stream memory not reclaimed right away on RST ## { #CVE-2023-45802 }
 
-CVE-2023-45802 [\[CVE json\]](./CVE-2023-45802.cve.json) [\[OSV json\]](./CVE-2023-45802.osv.json)
+CVE-2023-45802 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-45802) [\[CVE json\]](./CVE-2023-45802.cve.json) [\[OSV json\]](./CVE-2023-45802.osv.json)
 
 
 
@@ -716,7 +716,7 @@ When a HTTP/2 stream was reset (RST frame) by a client, there was a time window 
 
 ## DoS in HTTP/2 with initial windows size 0 ## { #CVE-2023-43622 }
 
-CVE-2023-43622 [\[CVE json\]](./CVE-2023-43622.cve.json) [\[OSV json\]](./CVE-2023-43622.osv.json)
+CVE-2023-43622 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-43622) [\[CVE json\]](./CVE-2023-43622.cve.json) [\[OSV json\]](./CVE-2023-43622.osv.json)
 
 
 
@@ -744,7 +744,7 @@ An attacker, opening a HTTP/2 connection with an initial window size of 0, was a
 
 ## HTTP response splitting ## { #CVE-2023-38709 }
 
-CVE-2023-38709 [\[CVE json\]](./CVE-2023-38709.cve.json) [\[OSV json\]](./CVE-2023-38709.osv.json)
+CVE-2023-38709 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-38709) [\[CVE json\]](./CVE-2023-38709.cve.json) [\[OSV json\]](./CVE-2023-38709.osv.json)
 
 
 
@@ -769,7 +769,7 @@ Faulty input validation in the core of Apache allows malicious or exploitable ba
 
 ## mod_macro buffer over-read ## { #CVE-2023-31122 }
 
-CVE-2023-31122 [\[CVE json\]](./CVE-2023-31122.cve.json) [\[OSV json\]](./CVE-2023-31122.osv.json)
+CVE-2023-31122 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-31122) [\[CVE json\]](./CVE-2023-31122.cve.json) [\[OSV json\]](./CVE-2023-31122.osv.json)
 
 
 
@@ -794,7 +794,7 @@ Out-of-bounds Read vulnerability in mod_macro of Apache HTTP Server.<p>This issu
 
 ## mod_proxy_uwsgi HTTP response splitting ## { #CVE-2023-27522 }
 
-CVE-2023-27522 [\[CVE json\]](./CVE-2023-27522.cve.json) [\[OSV json\]](./CVE-2023-27522.osv.json)
+CVE-2023-27522 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-27522) [\[CVE json\]](./CVE-2023-27522.cve.json) [\[OSV json\]](./CVE-2023-27522.osv.json)
 
 
 
@@ -819,7 +819,7 @@ _Last updated: 2023-03-07T15:09:26.534Z_
 
 ## HTTP request splitting with mod_rewrite and mod_proxy ## { #CVE-2023-25690 }
 
-CVE-2023-25690 [\[CVE json\]](./CVE-2023-25690.cve.json) [\[OSV json\]](./CVE-2023-25690.osv.json)
+CVE-2023-25690 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-25690) [\[CVE json\]](./CVE-2023-25690.cve.json) [\[OSV json\]](./CVE-2023-25690.osv.json)
 
 
 
@@ -848,7 +848,7 @@ substitution. For example, something like:</div><div><br></div><div>RewriteEngin
 
 ## mod_proxy prior to 2.4.55 allows a backend to trigger HTTP response splitting ## { #CVE-2022-37436 }
 
-CVE-2022-37436 [\[CVE json\]](./CVE-2022-37436.cve.json) [\[OSV json\]](./CVE-2022-37436.osv.json)
+CVE-2022-37436 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-37436) [\[CVE json\]](./CVE-2022-37436.cve.json) [\[OSV json\]](./CVE-2022-37436.osv.json)
 
 
 
@@ -873,7 +873,7 @@ Prior to Apache HTTP Server 2.4.55, a malicious backend can cause the response h
 
 ## mod_proxy_ajp Possible request smuggling ## { #CVE-2022-36760 }
 
-CVE-2022-36760 [\[CVE json\]](./CVE-2022-36760.cve.json) [\[OSV json\]](./CVE-2022-36760.osv.json)
+CVE-2022-36760 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-36760) [\[CVE json\]](./CVE-2022-36760.cve.json) [\[OSV json\]](./CVE-2022-36760.osv.json)
 
 
 
@@ -898,7 +898,7 @@ Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling') vulnerab
 
 ## mod_proxy X-Forwarded-For dropped by hop-by-hop mechanism ## { #CVE-2022-31813 }
 
-CVE-2022-31813 [\[CVE json\]](./CVE-2022-31813.cve.json) [\[OSV json\]](./CVE-2022-31813.osv.json)
+CVE-2022-31813 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-31813) [\[CVE json\]](./CVE-2022-31813.cve.json) [\[OSV json\]](./CVE-2022-31813.osv.json)
 
 
 
@@ -924,7 +924,7 @@ This may be used to bypass IP based authentication on the origin server/applicat
 
 ## Information Disclosure in mod_lua with websockets ## { #CVE-2022-30556 }
 
-CVE-2022-30556 [\[CVE json\]](./CVE-2022-30556.cve.json) [\[OSV json\]](./CVE-2022-30556.osv.json)
+CVE-2022-30556 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-30556) [\[CVE json\]](./CVE-2022-30556.cve.json) [\[OSV json\]](./CVE-2022-30556.osv.json)
 
 
 
@@ -949,7 +949,7 @@ Apache HTTP Server 2.4.53 and earlier may return lengths to applications calling
 
 ## mod_sed denial of service ## { #CVE-2022-30522 }
 
-CVE-2022-30522 [\[CVE json\]](./CVE-2022-30522.cve.json) [\[OSV json\]](./CVE-2022-30522.osv.json)
+CVE-2022-30522 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-30522) [\[CVE json\]](./CVE-2022-30522.cve.json) [\[OSV json\]](./CVE-2022-30522.osv.json)
 
 
 
@@ -974,7 +974,7 @@ If Apache HTTP Server 2.4.53 is configured to do transformations with mod_sed in
 
 ## Denial of service in mod_lua r:parsebody ## { #CVE-2022-29404 }
 
-CVE-2022-29404 [\[CVE json\]](./CVE-2022-29404.cve.json) [\[OSV json\]](./CVE-2022-29404.osv.json)
+CVE-2022-29404 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-29404) [\[CVE json\]](./CVE-2022-29404.cve.json) [\[OSV json\]](./CVE-2022-29404.osv.json)
 
 
 
@@ -999,7 +999,7 @@ In Apache HTTP Server 2.4.53 and earlier, a malicious request to a lua script th
 
 ## Read beyond bounds in ap_strcmp_match() ## { #CVE-2022-28615 }
 
-CVE-2022-28615 [\[CVE json\]](./CVE-2022-28615.cve.json) [\[OSV json\]](./CVE-2022-28615.osv.json)
+CVE-2022-28615 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-28615) [\[CVE json\]](./CVE-2022-28615.cve.json) [\[OSV json\]](./CVE-2022-28615.osv.json)
 
 
 
@@ -1024,7 +1024,7 @@ Apache HTTP Server 2.4.53 and earlier may crash or disclose information due to a
 
 ## read beyond bounds via ap_rwrite()  ## { #CVE-2022-28614 }
 
-CVE-2022-28614 [\[CVE json\]](./CVE-2022-28614.cve.json) [\[OSV json\]](./CVE-2022-28614.osv.json)
+CVE-2022-28614 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-28614) [\[CVE json\]](./CVE-2022-28614.cve.json) [\[OSV json\]](./CVE-2022-28614.osv.json)
 
 
 
@@ -1051,7 +1051,7 @@ Modules compiled and distributed separately from Apache HTTP Server that use the
 
 ## read beyond bounds in mod_isapi ## { #CVE-2022-28330 }
 
-CVE-2022-28330 [\[CVE json\]](./CVE-2022-28330.cve.json) [\[OSV json\]](./CVE-2022-28330.osv.json)
+CVE-2022-28330 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-28330) [\[CVE json\]](./CVE-2022-28330.cve.json) [\[OSV json\]](./CVE-2022-28330.osv.json)
 
 
 
@@ -1076,7 +1076,7 @@ Apache HTTP Server 2.4.53 and earlier on Windows may read beyond bounds when con
 
 ## mod_proxy_ajp: Possible request smuggling ## { #CVE-2022-26377 }
 
-CVE-2022-26377 [\[CVE json\]](./CVE-2022-26377.cve.json) [\[OSV json\]](./CVE-2022-26377.osv.json)
+CVE-2022-26377 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-26377) [\[CVE json\]](./CVE-2022-26377.cve.json) [\[OSV json\]](./CVE-2022-26377.osv.json)
 
 
 
@@ -1101,7 +1101,7 @@ Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling') vulnerab
 
 ## mod_sed: Read/write beyond bounds ## { #CVE-2022-23943 }
 
-CVE-2022-23943 [\[CVE json\]](./CVE-2022-23943.cve.json) [\[OSV json\]](./CVE-2022-23943.osv.json)
+CVE-2022-23943 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-23943) [\[CVE json\]](./CVE-2022-23943.cve.json) [\[OSV json\]](./CVE-2022-23943.osv.json)
 
 
 
@@ -1128,7 +1128,7 @@ This issue affects Apache HTTP Server 2.4 version 2.4.52 and prior versions.
 
 ## libapreq2 multipart form parse memory corruption ## { #CVE-2022-22728 }
 
-CVE-2022-22728 [\[CVE json\]](./CVE-2022-22728.cve.json) [\[OSV json\]](./CVE-2022-22728.osv.json)
+CVE-2022-22728 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-22728) [\[CVE json\]](./CVE-2022-22728.cve.json) [\[OSV json\]](./CVE-2022-22728.osv.json)
 
 
 
@@ -1149,7 +1149,7 @@ A flaw in Apache libapreq2 versions 2.16 and earlier could cause a buffer overfl
 
 ## core: Possible buffer overflow with very large or unlimited LimitXMLRequestBody ## { #CVE-2022-22721 }
 
-CVE-2022-22721 [\[CVE json\]](./CVE-2022-22721.cve.json) [\[OSV json\]](./CVE-2022-22721.osv.json)
+CVE-2022-22721 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-22721) [\[CVE json\]](./CVE-2022-22721.cve.json) [\[OSV json\]](./CVE-2022-22721.osv.json)
 
 
 
@@ -1176,7 +1176,7 @@ This issue affects Apache HTTP Server 2.4.52 and earlier.
 
 ## HTTP request smuggling vulnerability in Apache HTTP Server 2.4.52 and earlier ## { #CVE-2022-22720 }
 
-CVE-2022-22720 [\[CVE json\]](./CVE-2022-22720.cve.json) [\[OSV json\]](./CVE-2022-22720.osv.json)
+CVE-2022-22720 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-22720) [\[CVE json\]](./CVE-2022-22720.cve.json) [\[OSV json\]](./CVE-2022-22720.osv.json)
 
 
 
@@ -1201,7 +1201,7 @@ Apache HTTP Server 2.4.52 and earlier fails to close inbound connection when err
 
 ## mod_lua Use of uninitialized value of in r:parsebody ## { #CVE-2022-22719 }
 
-CVE-2022-22719 [\[CVE json\]](./CVE-2022-22719.cve.json) [\[OSV json\]](./CVE-2022-22719.osv.json)
+CVE-2022-22719 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-22719) [\[CVE json\]](./CVE-2022-22719.cve.json) [\[OSV json\]](./CVE-2022-22719.osv.json)
 
 
 
@@ -1228,7 +1228,7 @@ This issue affects Apache HTTP Server 2.4.52 and earlier.
 
 ## Possible buffer overflow when parsing multipart content in mod_lua of Apache HTTP Server 2.4.51 and earlier ## { #CVE-2021-44790 }
 
-CVE-2021-44790 [\[CVE json\]](./CVE-2021-44790.cve.json) [\[OSV json\]](./CVE-2021-44790.osv.json)
+CVE-2021-44790 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-44790) [\[CVE json\]](./CVE-2021-44790.cve.json) [\[OSV json\]](./CVE-2021-44790.osv.json)
 
 
 
@@ -1257,7 +1257,7 @@ This issue affects Apache HTTP Server 2.4.51 and earlier.
 
 ## Possible NULL dereference or SSRF in forward proxy configurations in Apache HTTP Server 2.4.51 and earlier ## { #CVE-2021-44224 }
 
-CVE-2021-44224 [\[CVE json\]](./CVE-2021-44224.cve.json) [\[OSV json\]](./CVE-2021-44224.osv.json)
+CVE-2021-44224 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-44224) [\[CVE json\]](./CVE-2021-44224.cve.json) [\[OSV json\]](./CVE-2021-44224.osv.json)
 
 
 
@@ -1285,7 +1285,7 @@ This issue affects Apache HTTP Server 2.4.7 up to 2.4.51 (included).
 
 ## Path Traversal and Remote Code Execution in Apache HTTP Server 2.4.49 and 2.4.50 (incomplete fix of CVE-2021-41773) ## { #CVE-2021-42013 }
 
-CVE-2021-42013 [\[CVE json\]](./CVE-2021-42013.cve.json) [\[OSV json\]](./CVE-2021-42013.osv.json)
+CVE-2021-42013 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-42013) [\[CVE json\]](./CVE-2021-42013.cve.json) [\[OSV json\]](./CVE-2021-42013.osv.json)
 
 
 
@@ -1318,7 +1318,7 @@ This issue only affects Apache 2.4.49 and Apache 2.4.50 and not earlier versions
 
 ## Path traversal and file disclosure vulnerability in Apache HTTP Server 2.4.49 ## { #CVE-2021-41773 }
 
-CVE-2021-41773 [\[CVE json\]](./CVE-2021-41773.cve.json)
+CVE-2021-41773 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-41773) [\[CVE json\]](./CVE-2021-41773.cve.json)
 
 _Last updated: 2021-10-11T14:15:40.313Z_
 
@@ -1343,7 +1343,7 @@ This issue only affects Apache 2.4.49 and not earlier versions.
 
 ## null pointer dereference in h2 fuzzing ## { #CVE-2021-41524 }
 
-CVE-2021-41524 [\[CVE json\]](./CVE-2021-41524.cve.json) [\[OSV json\]](./CVE-2021-41524.osv.json)
+CVE-2021-41524 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-41524) [\[CVE json\]](./CVE-2021-41524.cve.json) [\[OSV json\]](./CVE-2021-41524.osv.json)
 
 
 
@@ -1371,7 +1371,7 @@ The vulnerability was recently introduced in version 2.4.49. No exploit is known
 
 ## mod_proxy SSRF ## { #CVE-2021-40438 }
 
-CVE-2021-40438 [\[CVE json\]](./CVE-2021-40438.cve.json) [\[OSV json\]](./CVE-2021-40438.osv.json)
+CVE-2021-40438 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-40438) [\[CVE json\]](./CVE-2021-40438.cve.json) [\[OSV json\]](./CVE-2021-40438.osv.json)
 
 
 
@@ -1398,7 +1398,7 @@ This issue affects Apache HTTP Server 2.4.48 and earlier.
 
 ## ap_escape_quotes buffer overflow ## { #CVE-2021-39275 }
 
-CVE-2021-39275 [\[CVE json\]](./CVE-2021-39275.cve.json) [\[OSV json\]](./CVE-2021-39275.osv.json)
+CVE-2021-39275 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-39275) [\[CVE json\]](./CVE-2021-39275.cve.json) [\[OSV json\]](./CVE-2021-39275.osv.json)
 
 
 
@@ -1426,7 +1426,7 @@ This issue affects Apache HTTP Server 2.4.48 and earlier.
 
 ## mod_proxy_uwsgi out of bound read ## { #CVE-2021-36160 }
 
-CVE-2021-36160 [\[CVE json\]](./CVE-2021-36160.cve.json) [\[OSV json\]](./CVE-2021-36160.osv.json)
+CVE-2021-36160 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-36160) [\[CVE json\]](./CVE-2021-36160.cve.json) [\[OSV json\]](./CVE-2021-36160.osv.json)
 
 
 
@@ -1453,7 +1453,7 @@ This issue affects Apache HTTP Server versions 2.4.30 to 2.4.48 (inclusive).
 
 ## NULL pointer dereference in httpd core ## { #CVE-2021-34798 }
 
-CVE-2021-34798 [\[CVE json\]](./CVE-2021-34798.cve.json) [\[OSV json\]](./CVE-2021-34798.osv.json)
+CVE-2021-34798 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-34798) [\[CVE json\]](./CVE-2021-34798.cve.json) [\[OSV json\]](./CVE-2021-34798.osv.json)
 
 
 
@@ -1481,7 +1481,7 @@ This issue affects Apache HTTP Server 2.4.48 and earlier.
 
 ## Request splitting via HTTP/2 method injection and mod_proxy ## { #CVE-2021-33193 }
 
-CVE-2021-33193 [\[CVE json\]](./CVE-2021-33193.cve.json) [\[OSV json\]](./CVE-2021-33193.osv.json)
+CVE-2021-33193 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-33193) [\[CVE json\]](./CVE-2021-33193.cve.json) [\[OSV json\]](./CVE-2021-33193.osv.json)
 
 
 
@@ -1509,7 +1509,7 @@ This issue affects Apache HTTP Server 2.4.17 to 2.4.48.
 
 ## NULL pointer dereference on specially crafted HTTP/2 request ## { #CVE-2021-31618 }
 
-CVE-2021-31618 [\[CVE json\]](./CVE-2021-31618.cve.json) [\[OSV json\]](./CVE-2021-31618.osv.json)
+CVE-2021-31618 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-31618) [\[CVE json\]](./CVE-2021-31618.cve.json) [\[OSV json\]](./CVE-2021-31618.osv.json)
 
 
 
@@ -1539,7 +1539,7 @@ This issue affected  mod_http2 1.15.17 and Apache HTTP Server version 2.4.47 onl
 
 ## Unexpected URL matching with 'MergeSlashes OFF' ## { #CVE-2021-30641 }
 
-CVE-2021-30641 [\[CVE json\]](./CVE-2021-30641.cve.json) [\[OSV json\]](./CVE-2021-30641.osv.json)
+CVE-2021-30641 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-30641) [\[CVE json\]](./CVE-2021-30641.cve.json) [\[OSV json\]](./CVE-2021-30641.osv.json)
 
 
 
@@ -1568,7 +1568,7 @@ Apache HTTP Server versions 2.4.39 to 2.4.46 Unexpected matching behavior with '
 
 ## Apache HTTP Server mod_session response handling heap overflow ## { #CVE-2021-26691 }
 
-CVE-2021-26691 [\[CVE json\]](./CVE-2021-26691.cve.json) [\[OSV json\]](./CVE-2021-26691.osv.json)
+CVE-2021-26691 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-26691) [\[CVE json\]](./CVE-2021-26691.cve.json) [\[OSV json\]](./CVE-2021-26691.osv.json)
 
 
 
@@ -1622,7 +1622,7 @@ In Apache HTTP Server versions 2.4.0 to 2.4.46 a specially crafted SessionHeader
 
 ## mod_session NULL pointer dereference ## { #CVE-2021-26690 }
 
-CVE-2021-26690 [\[CVE json\]](./CVE-2021-26690.cve.json) [\[OSV json\]](./CVE-2021-26690.osv.json)
+CVE-2021-26690 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-26690) [\[CVE json\]](./CVE-2021-26690.cve.json) [\[OSV json\]](./CVE-2021-26690.osv.json)
 
 
 
@@ -1676,7 +1676,7 @@ Apache HTTP Server versions 2.4.0 to 2.4.46 A specially crafted Cookie header ha
 
 ## mod_auth_digest possible stack overflow by one nul byte ## { #CVE-2020-35452 }
 
-CVE-2020-35452 [\[CVE json\]](./CVE-2020-35452.cve.json) [\[OSV json\]](./CVE-2020-35452.osv.json)
+CVE-2020-35452 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-35452) [\[CVE json\]](./CVE-2020-35452.cve.json) [\[OSV json\]](./CVE-2020-35452.osv.json)
 
 
 
@@ -1730,7 +1730,7 @@ Apache HTTP Server versions 2.4.0 to 2.4.46 A specially crafted Digest nonce can
 
 ## mod_proxy_http NULL pointer dereference ## { #CVE-2020-13950 }
 
-CVE-2020-13950 [\[CVE json\]](./CVE-2020-13950.cve.json) [\[OSV json\]](./CVE-2020-13950.osv.json)
+CVE-2020-13950 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-13950) [\[CVE json\]](./CVE-2020-13950.cve.json) [\[OSV json\]](./CVE-2020-13950.osv.json)
 
 
 
@@ -1758,7 +1758,7 @@ Apache HTTP Server versions 2.4.41 to 2.4.46 mod_proxy_http can be made to crash
 
 ## Improper Handling of Insufficient Privileges ## { #CVE-2020-13938 }
 
-CVE-2020-13938 [\[CVE json\]](./CVE-2020-13938.cve.json) [\[OSV json\]](./CVE-2020-13938.osv.json)
+CVE-2020-13938 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-13938) [\[CVE json\]](./CVE-2020-13938.cve.json) [\[OSV json\]](./CVE-2020-13938.osv.json)
 
 
 
@@ -1812,7 +1812,7 @@ Apache HTTP Server versions 2.4.0 to 2.4.46 Unprivileged local users can stop ht
 
 ## mod_proxy_wstunnel tunneling of non Upgraded connections ## { #CVE-2019-17567 }
 
-CVE-2019-17567 [\[CVE json\]](./CVE-2019-17567.cve.json) [\[OSV json\]](./CVE-2019-17567.osv.json)
+CVE-2019-17567 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2019-17567) [\[CVE json\]](./CVE-2019-17567.cve.json) [\[OSV json\]](./CVE-2019-17567.osv.json)
 
 
 
@@ -1861,7 +1861,7 @@ Apache HTTP Server versions 2.4.6 to 2.4.46 mod_proxy_wstunnel configured on an 
 
 ## mod_dav out of  bounds read, or write of zero byte ## { #CVE-2006-20001 }
 
-CVE-2006-20001 [\[CVE json\]](./CVE-2006-20001.cve.json) [\[OSV json\]](./CVE-2006-20001.osv.json)
+CVE-2006-20001 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2006-20001) [\[CVE json\]](./CVE-2006-20001.cve.json) [\[OSV json\]](./CVE-2006-20001.osv.json)
 
 
 

@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## An authenticated user can perform XSS and potentially impersonate another user ## { #CVE-2024-46910 }
 
-CVE-2024-46910 [\[CVE json\]](./CVE-2024-46910.cve.json) [\[OSV json\]](./CVE-2024-46910.osv.json)
+CVE-2024-46910 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-46910) [\[CVE json\]](./CVE-2024-46910.cve.json) [\[OSV json\]](./CVE-2024-46910.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2025-10-17T15:29:29.800Z_
 
 ## zip path traversal in import functionality ## { #CVE-2022-34271 }
 
-CVE-2022-34271 [\[CVE json\]](./CVE-2022-34271.cve.json) [\[OSV json\]](./CVE-2022-34271.osv.json)
+CVE-2022-34271 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-34271) [\[CVE json\]](./CVE-2022-34271.cve.json) [\[OSV json\]](./CVE-2022-34271.osv.json)
 
 
 

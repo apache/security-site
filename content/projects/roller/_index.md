@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Insufficient Session Expiration on Password Change ## { #CVE-2025-24859 }
 
-CVE-2025-24859 [\[CVE json\]](./CVE-2025-24859.cve.json) [\[OSV json\]](./CVE-2025-24859.osv.json)
+CVE-2025-24859 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-24859) [\[CVE json\]](./CVE-2025-24859.cve.json) [\[OSV json\]](./CVE-2025-24859.osv.json)
 
 
 
@@ -46,7 +46,7 @@ The vulnerability is fixed in Apache Roller 6.1.5 by implementing centralized se
 
 ## Weakness in CSRF protection allows privilege escalation ## { #CVE-2024-46911 }
 
-CVE-2024-46911 [\[CVE json\]](./CVE-2024-46911.cve.json) [\[OSV json\]](./CVE-2024-46911.osv.json)
+CVE-2024-46911 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-46911) [\[CVE json\]](./CVE-2024-46911.cve.json) [\[OSV json\]](./CVE-2024-46911.osv.json)
 
 
 
@@ -71,7 +71,7 @@ _Last updated: 2024-10-11T21:53:17.272Z_
 
 ## Insufficient input validation for some user profile and bookmark fields when Roller in untested-users mode ## { #CVE-2024-25090 }
 
-CVE-2024-25090 [\[CVE json\]](./CVE-2024-25090.cve.json) [\[OSV json\]](./CVE-2024-25090.osv.json)
+CVE-2024-25090 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-25090) [\[CVE json\]](./CVE-2024-25090.cve.json) [\[OSV json\]](./CVE-2024-25090.osv.json)
 
 
 
@@ -96,7 +96,7 @@ _Last updated: 2024-07-26T08:36:45.293Z_
 
 ## Roller's weblog category, weblog settings and file-upload features did not properly sanitize input could be exploited to perform Reflected Cross Site Scripting (XSS) even on a Roller site configured for untrusted users. ## { #CVE-2023-37581 }
 
-CVE-2023-37581 [\[CVE json\]](./CVE-2023-37581.cve.json)
+CVE-2023-37581 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-37581) [\[CVE json\]](./CVE-2023-37581.cve.json)
 
 _Last updated: 2023-08-24T08:15:22.581Z_
 
@@ -120,7 +120,7 @@ _Last updated: 2023-08-24T08:15:22.581Z_
 
 ## regex injection leading to DoS ## { #CVE-2021-33580 }
 
-CVE-2021-33580 [\[CVE json\]](./CVE-2021-33580.cve.json) [\[OSV json\]](./CVE-2021-33580.osv.json)
+CVE-2021-33580 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-33580) [\[CVE json\]](./CVE-2021-33580.cve.json) [\[OSV json\]](./CVE-2021-33580.osv.json)
 
 
 

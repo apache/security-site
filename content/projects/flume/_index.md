@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Flume prior to 1.11.0 has an Improper Input Validation (JNDI Injection) in JMSSource ## { #CVE-2022-42468 }
 
-CVE-2022-42468 [\[CVE json\]](./CVE-2022-42468.cve.json) [\[OSV json\]](./CVE-2022-42468.osv.json)
+CVE-2022-42468 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-42468) [\[CVE json\]](./CVE-2022-42468.cve.json) [\[OSV json\]](./CVE-2022-42468.osv.json)
 
 
 
@@ -38,7 +38,7 @@ Apache Flume versions 1.4.0 through 1.10.1 are vulnerable to a remote code execu
 
 ## Improper Input Validation (JNDI Injection) in JMSMessageConsumer ## { #CVE-2022-34916 }
 
-CVE-2022-34916 [\[CVE json\]](./CVE-2022-34916.cve.json) [\[OSV json\]](./CVE-2022-34916.osv.json)
+CVE-2022-34916 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-34916) [\[CVE json\]](./CVE-2022-34916.cve.json) [\[OSV json\]](./CVE-2022-34916.osv.json)
 
 
 
@@ -64,7 +64,7 @@ Apache Flume versions 1.4.0 through 1.10.0 are vulnerable to a remote code execu
 
 ## Apache Flume vulnerable to a JNDI RCE in JMSSource  ## { #CVE-2022-25167 }
 
-CVE-2022-25167 [\[CVE json\]](./CVE-2022-25167.cve.json) [\[OSV json\]](./CVE-2022-25167.osv.json)
+CVE-2022-25167 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-25167) [\[CVE json\]](./CVE-2022-25167.cve.json) [\[OSV json\]](./CVE-2022-25167.osv.json)
 
 
 

@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Password Exposure ## { #CVE-2025-59355 }
 
-CVE-2025-59355 [\[CVE json\]](./CVE-2025-59355.cve.json) [\[OSV json\]](./CVE-2025-59355.osv.json)
+CVE-2025-59355 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-59355) [\[CVE json\]](./CVE-2025-59355.cve.json) [\[OSV json\]](./CVE-2025-59355.osv.json)
 
 
 
@@ -44,7 +44,7 @@ _Last updated: 2026-01-19T08:37:22.783Z_
 
 ## Arbitrary File Read via Double URL Encoding Bypass ## { #CVE-2025-29847 }
 
-CVE-2025-29847 [\[CVE json\]](./CVE-2025-29847.cve.json) [\[OSV json\]](./CVE-2025-29847.osv.json)
+CVE-2025-29847 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-29847) [\[CVE json\]](./CVE-2025-29847.cve.json) [\[OSV json\]](./CVE-2025-29847.osv.json)
 
 
 
@@ -78,7 +78,7 @@ moderate<br><p><b>Solution</b><br>Continuously check if the connection informati
 
 ## JDBC Datasource Module with Mysql has file read vulnerability ## { #CVE-2024-45627 }
 
-CVE-2024-45627 [\[CVE json\]](./CVE-2024-45627.cve.json) [\[OSV json\]](./CVE-2024-45627.osv.json)
+CVE-2024-45627 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45627) [\[CVE json\]](./CVE-2024-45627.cve.json) [\[OSV json\]](./CVE-2024-45627.osv.json)
 
 
 
@@ -108,7 +108,7 @@ of parameters, an attacker configuring malicious Mysql JDBC parameters in the Da
 
 ## Commons Lang's RandomStringUtils Random string security vulnerability ## { #CVE-2024-39928 }
 
-CVE-2024-39928 [\[CVE json\]](./CVE-2024-39928.cve.json) [\[OSV json\]](./CVE-2024-39928.osv.json)
+CVE-2024-39928 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-39928) [\[CVE json\]](./CVE-2024-39928.cve.json) [\[OSV json\]](./CVE-2024-39928.osv.json)
 
 
 
@@ -138,7 +138,7 @@ In Apache Linkis &lt;= 1.5.0, a Random string security vulnerability in Spark En
 
 ## Engine material management Arbitrary file deletion vulnerability ## { #CVE-2024-27182 }
 
-CVE-2024-27182 [\[CVE json\]](./CVE-2024-27182.cve.json) [\[OSV json\]](./CVE-2024-27182.osv.json)
+CVE-2024-27182 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27182) [\[CVE json\]](./CVE-2024-27182.cve.json) [\[OSV json\]](./CVE-2024-27182.osv.json)
 
 
 
@@ -175,7 +175,7 @@ Arbitrary file deletion in Basic management services on
 
 ## Privilege Escalation Attack vulnerability ## { #CVE-2024-27181 }
 
-CVE-2024-27181 [\[CVE json\]](./CVE-2024-27181.cve.json) [\[OSV json\]](./CVE-2024-27181.osv.json)
+CVE-2024-27181 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27181) [\[CVE json\]](./CVE-2024-27181.cve.json) [\[OSV json\]](./CVE-2024-27181.osv.json)
 
 
 
@@ -208,7 +208,7 @@ Privilege Escalation in Basic management services where the attacking user is
 
 ## DataSource module Oracle SQL Database Password Logged ## { #CVE-2023-50740 }
 
-CVE-2023-50740 [\[CVE json\]](./CVE-2023-50740.cve.json) [\[OSV json\]](./CVE-2023-50740.osv.json)
+CVE-2023-50740 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-50740) [\[CVE json\]](./CVE-2023-50740.cve.json) [\[OSV json\]](./CVE-2023-50740.osv.json)
 
 
 
@@ -232,7 +232,7 @@ In Apache Linkis &lt;=1.4.0, The password is printed to the log when using the O
 
 ## JDBC Datasource Module with DB2 has JNDI Injection vulnerability ## { #CVE-2023-49566 }
 
-CVE-2023-49566 [\[CVE json\]](./CVE-2023-49566.cve.json) [\[OSV json\]](./CVE-2023-49566.osv.json)
+CVE-2023-49566 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-49566) [\[CVE json\]](./CVE-2023-49566.cve.json) [\[OSV json\]](./CVE-2023-49566.osv.json)
 
 
 
@@ -273,7 +273,7 @@ This attack requires the attacker to obtain an authorized account from Linkis be
 
 ## DataSource Remote code execution vulnerability ## { #CVE-2023-46801 }
 
-CVE-2023-46801 [\[CVE json\]](./CVE-2023-46801.cve.json) [\[OSV json\]](./CVE-2023-46801.osv.json)
+CVE-2023-46801 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-46801) [\[CVE json\]](./CVE-2023-46801.cve.json) [\[OSV json\]](./CVE-2023-46801.osv.json)
 
 
 
@@ -304,7 +304,7 @@ This attack requires the attacker to obtain an authorized account from Linkis be
 
 ## DatasourceManager module has a  JDBC parameter judgment logic vulnerability that allows for arbitrary file reading ## { #CVE-2023-41916 }
 
-CVE-2023-41916 [\[CVE json\]](./CVE-2023-41916.cve.json) [\[OSV json\]](./CVE-2023-41916.osv.json)
+CVE-2023-41916 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-41916) [\[CVE json\]](./CVE-2023-41916.cve.json) [\[OSV json\]](./CVE-2023-41916.osv.json)
 
 
 
@@ -335,7 +335,7 @@ of parameters, an attacker configuring malicious Mysql JDBC parameters in the Da
 
 ## Apache Linkis DatasourceManager module has a deserialization command execution ## { #CVE-2023-29216 }
 
-CVE-2023-29216 [\[CVE json\]](./CVE-2023-29216.cve.json) [\[OSV json\]](./CVE-2023-29216.osv.json)
+CVE-2023-29216 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-29216) [\[CVE json\]](./CVE-2023-29216.cve.json) [\[OSV json\]](./CVE-2023-29216.osv.json)
 
 
 
@@ -367,7 +367,7 @@ remote code execution.<br> Versions of Apache Linkis &lt;= 1.3.0 will be affecte
 
 ## Apache Linkis JDBC EngineCon  has a deserialization command execution ## { #CVE-2023-29215 }
 
-CVE-2023-29215 [\[CVE json\]](./CVE-2023-29215.cve.json) [\[OSV json\]](./CVE-2023-29215.osv.json)
+CVE-2023-29215 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-29215) [\[CVE json\]](./CVE-2023-29215.cve.json) [\[OSV json\]](./CVE-2023-29215.osv.json)
 
 
 
@@ -396,7 +396,7 @@ deserialization vulnerability and eventually lead to remote code execution. Ther
 
 ## Apache Linkis gateway module token authentication bypass ## { #CVE-2023-27987 }
 
-CVE-2023-27987 [\[CVE json\]](./CVE-2023-27987.cve.json)
+CVE-2023-27987 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-27987) [\[CVE json\]](./CVE-2023-27987.cve.json)
 
 _Last updated: 2023-04-14T07:51:52.905Z_
 
@@ -430,7 +430,7 @@ We recommend users upgrade the version of Linkis to version 1.3.2 And modify the
 
 ## Apache Linkis Mangaer module engineConn material upload exists Zip Slip issue ## { #CVE-2023-27603 }
 
-CVE-2023-27603 [\[CVE json\]](./CVE-2023-27603.cve.json)
+CVE-2023-27603 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-27603) [\[CVE json\]](./CVE-2023-27603.cve.json)
 
 _Last updated: 2023-04-14T07:17:48.297Z_
 
@@ -464,7 +464,7 @@ We recommend users upgrade the version of Linkis to version 1.3.2.
 
 ## Apache Linkis publicsercice module unrestricted upload of file ## { #CVE-2023-27602 }
 
-CVE-2023-27602 [\[CVE json\]](./CVE-2023-27602.cve.json) [\[OSV json\]](./CVE-2023-27602.osv.json)
+CVE-2023-27602 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-27602) [\[CVE json\]](./CVE-2023-27602.cve.json) [\[OSV json\]](./CVE-2023-27602.osv.json)
 
 
 
@@ -495,7 +495,7 @@ We recommend users upgrade the version of Linkis to version 1.3.2.&nbsp;<br></sp
 
 ## The DatasourceManager module has a serialization attack vulnerability ## { #CVE-2022-44645 }
 
-CVE-2022-44645 [\[CVE json\]](./CVE-2022-44645.cve.json) [\[OSV json\]](./CVE-2022-44645.osv.json)
+CVE-2022-44645 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-44645) [\[CVE json\]](./CVE-2022-44645.cve.json) [\[OSV json\]](./CVE-2022-44645.osv.json)
 
 
 
@@ -524,7 +524,7 @@ In Apache Linkis &lt;=1.3.0 when used with the MySQL Connector/J in the data sou
 
 ## The DatasourceManager module has a Local File Read Vulnerability ## { #CVE-2022-44644 }
 
-CVE-2022-44644 [\[CVE json\]](./CVE-2022-44644.cve.json) [\[OSV json\]](./CVE-2022-44644.osv.json)
+CVE-2022-44644 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-44644) [\[CVE json\]](./CVE-2022-44644.cve.json) [\[OSV json\]](./CVE-2022-44644.osv.json)
 
 
 
@@ -550,7 +550,7 @@ In Apache Linkis &lt;=1.3.0 when used with the MySQL Connector/J in the data sou
 
 ## The Apache Linkis JDBC EngineConn module has a RCE Vulnerability ## { #CVE-2022-39944 }
 
-CVE-2022-39944 [\[CVE json\]](./CVE-2022-39944.cve.json) [\[OSV json\]](./CVE-2022-39944.osv.json)
+CVE-2022-39944 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-39944) [\[CVE json\]](./CVE-2022-39944.cve.json) [\[OSV json\]](./CVE-2022-39944.osv.json)
 
 
 

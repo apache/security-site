@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## XSS vulnerability in User Lookup impacting user privileges ## { #CVE-2024-53679 }
 
-CVE-2024-53679 [\[CVE json\]](./CVE-2024-53679.cve.json) [\[OSV json\]](./CVE-2024-53679.osv.json)
+CVE-2024-53679 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-53679) [\[CVE json\]](./CVE-2024-53679.cve.json) [\[OSV json\]](./CVE-2024-53679.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2025-03-25T09:33:43.087Z_
 
 ## SQL injection vulnerability in New Block Allocation form ## { #CVE-2024-53678 }
 
-CVE-2024-53678 [\[CVE json\]](./CVE-2024-53678.cve.json) [\[OSV json\]](./CVE-2024-53678.osv.json)
+CVE-2024-53678 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-53678) [\[CVE json\]](./CVE-2024-53678.cve.json) [\[OSV json\]](./CVE-2024-53678.osv.json)
 
 
 

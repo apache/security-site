@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache Calcite: potential XEE attacks ## { #CVE-2022-39135 }
 
-CVE-2022-39135 [\[CVE json\]](./CVE-2022-39135.cve.json) [\[OSV json\]](./CVE-2022-39135.osv.json)
+CVE-2022-39135 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-39135) [\[CVE json\]](./CVE-2022-39135.cve.json) [\[OSV json\]](./CVE-2022-39135.osv.json)
 
 
 
@@ -42,7 +42,7 @@ From Apache Calcite 1.32.0 onwards, Document Type Declarations and XML External 
 
 ## Apache Calcite Avatica JDBC driver `httpclient_impl` connection property can be used as an RCE vector ## { #CVE-2022-36364 }
 
-CVE-2022-36364 [\[CVE json\]](./CVE-2022-36364.cve.json) [\[OSV json\]](./CVE-2022-36364.osv.json)
+CVE-2022-36364 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-36364) [\[CVE json\]](./CVE-2022-36364.cve.json) [\[OSV json\]](./CVE-2022-36364.osv.json)
 
 
 

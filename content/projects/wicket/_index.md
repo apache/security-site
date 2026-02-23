@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## An attacker can intentionally trigger a memory leak ## { #CVE-2024-53299 }
 
-CVE-2024-53299 [\[CVE json\]](./CVE-2024-53299.cve.json) [\[OSV json\]](./CVE-2024-53299.osv.json)
+CVE-2024-53299 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-53299) [\[CVE json\]](./CVE-2024-53299.cve.json) [\[OSV json\]](./CVE-2024-53299.osv.json)
 
 
 
@@ -43,7 +43,7 @@ The request handling in the core in Apache Wicket 7.0.0 on any platform allows a
 
 ## Remote code execution via XSLT injection ## { #CVE-2024-36522 }
 
-CVE-2024-36522 [\[CVE json\]](./CVE-2024-36522.cve.json) [\[OSV json\]](./CVE-2024-36522.osv.json)
+CVE-2024-36522 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-36522) [\[CVE json\]](./CVE-2024-36522.cve.json) [\[OSV json\]](./CVE-2024-36522.osv.json)
 
 
 
@@ -70,7 +70,7 @@ The default configuration of XSLTResourceStream.java is vulnerable to remote cod
 
 ## Possible bypass of CSRF protection ## { #CVE-2024-27439 }
 
-CVE-2024-27439 [\[CVE json\]](./CVE-2024-27439.cve.json) [\[OSV json\]](./CVE-2024-27439.osv.json)
+CVE-2024-27439 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27439) [\[CVE json\]](./CVE-2024-27439.cve.json) [\[OSV json\]](./CVE-2024-27439.osv.json)
 
 
 
@@ -96,7 +96,7 @@ An error in the evaluation of the fetch metadata headers could allow a bypass of
 
 ## DNS proxy and possible amplification attack ## { #CVE-2021-23937 }
 
-CVE-2021-23937 [\[CVE json\]](./CVE-2021-23937.cve.json) [\[OSV json\]](./CVE-2021-23937.osv.json)
+CVE-2021-23937 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-23937) [\[CVE json\]](./CVE-2021-23937.cve.json) [\[OSV json\]](./CVE-2021-23937.osv.json)
 
 
 

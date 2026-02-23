@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Expression Injection leading to RCE ## { #CVE-2025-53192 }
 
-CVE-2025-53192 [\[CVE json\]](./CVE-2025-53192.cve.json) [\[OSV json\]](./CVE-2025-53192.osv.json)
+CVE-2025-53192 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-53192) [\[CVE json\]](./CVE-2025-53192.cve.json) [\[OSV json\]](./CVE-2025-53192.osv.json)
 
 
 
@@ -42,7 +42,7 @@ Attackers may be able to bypass the restrictions by leveraging class objects tha
 
 ## FileUpload DoS via part headers ## { #CVE-2025-48976 }
 
-CVE-2025-48976 [\[CVE json\]](./CVE-2025-48976.cve.json) [\[OSV json\]](./CVE-2025-48976.osv.json)
+CVE-2025-48976 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-48976) [\[CVE json\]](./CVE-2025-48976.cve.json) [\[OSV json\]](./CVE-2025-48976.osv.json)
 
 
 
@@ -68,7 +68,7 @@ _Last updated: 2025-06-16T15:00:47.037Z_
 
 ## ClassUtils.getClass(...) can throw a StackOverflowError on very long inputs ## { #CVE-2025-48924 }
 
-CVE-2025-48924 [\[CVE json\]](./CVE-2025-48924.cve.json) [\[OSV json\]](./CVE-2025-48924.osv.json)
+CVE-2025-48924 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-48924) [\[CVE json\]](./CVE-2025-48924.cve.json) [\[OSV json\]](./CVE-2025-48924.osv.json)
 
 
 
@@ -95,7 +95,7 @@ StackOverflowError could&nbsp;cause an application to stop.</p><p>Users are reco
 
 ## Apache Commons BeanUtils: PropertyUtilsBean does not suppresses an enum's declaredClass property by default ## { #CVE-2025-48734 }
 
-CVE-2025-48734 [\[CVE json\]](./CVE-2025-48734.cve.json) [\[OSV json\]](./CVE-2025-48734.osv.json)
+CVE-2025-48734 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-48734) [\[CVE json\]](./CVE-2025-48734.cve.json) [\[OSV json\]](./CVE-2025-48734.osv.json)
 
 
 
@@ -129,7 +129,7 @@ Users of the artifact org.apache.commons:commons-beanutils2
 
 ## Uncontrolled Resource Consumption when loading untrusted configurations in 1.x ## { #CVE-2025-46392 }
 
-CVE-2025-46392 [\[CVE json\]](./CVE-2025-46392.cve.json) [\[OSV json\]](./CVE-2025-46392.osv.json)
+CVE-2025-46392 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-46392) [\[CVE json\]](./CVE-2025-46392.cve.json) [\[OSV json\]](./CVE-2025-46392.osv.json)
 
 
 
@@ -152,7 +152,7 @@ _Last updated: 2025-05-09T09:34:18.561Z_
 
 ## Failing to find an FTP file can reveal the URI's password in an error message ## { #CVE-2025-30474 }
 
-CVE-2025-30474 [\[CVE json\]](./CVE-2025-30474.cve.json) [\[OSV json\]](./CVE-2025-30474.osv.json)
+CVE-2025-30474 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-30474) [\[CVE json\]](./CVE-2025-30474.cve.json) [\[OSV json\]](./CVE-2025-30474.osv.json)
 
 
 
@@ -178,7 +178,7 @@ _Last updated: 2025-03-23T14:15:49.617Z_
 
 ## Possible path traversal issue when using NameScope.DESCENDENT ## { #CVE-2025-27553 }
 
-CVE-2025-27553 [\[CVE json\]](./CVE-2025-27553.cve.json) [\[OSV json\]](./CVE-2025-27553.osv.json)
+CVE-2025-27553 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27553) [\[CVE json\]](./CVE-2025-27553.cve.json) [\[OSV json\]](./CVE-2025-27553.osv.json)
 
 
 
@@ -207,7 +207,7 @@ a descendent of the base file, without throwing an exception.</span><br><p>This 
 
 ## Possible denial of service attack on untrusted input to XmlStreamReader ## { #CVE-2024-47554 }
 
-CVE-2024-47554 [\[CVE json\]](./CVE-2024-47554.cve.json) [\[OSV json\]](./CVE-2024-47554.osv.json)
+CVE-2024-47554 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-47554) [\[CVE json\]](./CVE-2024-47554.cve.json) [\[OSV json\]](./CVE-2024-47554.osv.json)
 
 
 
@@ -232,7 +232,7 @@ _Last updated: 2024-10-03T11:32:46.805Z_
 
 ## StackOverflowError calling ListDelimiterHandler.flatten(Object, int) with a cyclical object tree ## { #CVE-2024-29133 }
 
-CVE-2024-29133 [\[CVE json\]](./CVE-2024-29133.cve.json) [\[OSV json\]](./CVE-2024-29133.osv.json)
+CVE-2024-29133 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-29133) [\[CVE json\]](./CVE-2024-29133.cve.json) [\[OSV json\]](./CVE-2024-29133.osv.json)
 
 
 
@@ -257,7 +257,7 @@ Out-of-bounds Write vulnerability in Apache Commons Configuration.<p>This issue 
 
 ## StackOverflowError adding property in AbstractListDelimiterHandler.flattenIterator() ## { #CVE-2024-29131 }
 
-CVE-2024-29131 [\[CVE json\]](./CVE-2024-29131.cve.json) [\[OSV json\]](./CVE-2024-29131.osv.json)
+CVE-2024-29131 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-29131) [\[CVE json\]](./CVE-2024-29131.cve.json) [\[OSV json\]](./CVE-2024-29131.osv.json)
 
 
 
@@ -282,7 +282,7 @@ Out-of-bounds Write vulnerability in Apache Commons Configuration.<p>This issue 
 
 ## OutOfMemoryError unpacking broken Pack200 file ## { #CVE-2024-26308 }
 
-CVE-2024-26308 [\[CVE json\]](./CVE-2024-26308.cve.json) [\[OSV json\]](./CVE-2024-26308.osv.json)
+CVE-2024-26308 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-26308) [\[CVE json\]](./CVE-2024-26308.cve.json) [\[OSV json\]](./CVE-2024-26308.osv.json)
 
 
 
@@ -307,7 +307,7 @@ Allocation of Resources Without Limits or Throttling vulnerability in Apache Com
 
 ## Denial of service caused by an infinite loop for a corrupted DUMP file ## { #CVE-2024-25710 }
 
-CVE-2024-25710 [\[CVE json\]](./CVE-2024-25710.cve.json) [\[OSV json\]](./CVE-2024-25710.osv.json)
+CVE-2024-25710 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-25710) [\[CVE json\]](./CVE-2024-25710.cve.json) [\[OSV json\]](./CVE-2024-25710.osv.json)
 
 
 
@@ -332,7 +332,7 @@ Loop with Unreachable Exit Condition ('Infinite Loop') vulnerability in Apache C
 
 ## Denial of service via CPU consumption for malformed TAR file ## { #CVE-2023-42503 }
 
-CVE-2023-42503 [\[CVE json\]](./CVE-2023-42503.cve.json) [\[OSV json\]](./CVE-2023-42503.osv.json)
+CVE-2023-42503 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-42503) [\[CVE json\]](./CVE-2023-42503.cve.json) [\[OSV json\]](./CVE-2023-42503.osv.json)
 
 
 
@@ -357,7 +357,7 @@ Improper Input Validation, Uncontrolled Resource Consumption vulnerability in Ap
 
 ## FileUpload DoS with excessive parts ## { #CVE-2023-24998 }
 
-CVE-2023-24998 [\[CVE json\]](./CVE-2023-24998.cve.json) [\[OSV json\]](./CVE-2023-24998.osv.json)
+CVE-2023-24998 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-24998) [\[CVE json\]](./CVE-2023-24998.cve.json) [\[OSV json\]](./CVE-2023-24998.osv.json)
 
 
 
@@ -388,7 +388,7 @@ _Last updated: 2023-02-23T09:34:40.480Z_
 
 ## Apache Commons BCEL prior to 6.6.0 allows producing arbitrary bytecode via out-of-bounds writing ## { #CVE-2022-42920 }
 
-CVE-2022-42920 [\[CVE json\]](./CVE-2022-42920.cve.json) [\[OSV json\]](./CVE-2022-42920.osv.json)
+CVE-2022-42920 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-42920) [\[CVE json\]](./CVE-2022-42920.cve.json) [\[OSV json\]](./CVE-2022-42920.osv.json)
 
 
 
@@ -413,7 +413,7 @@ Apache Commons BCEL has a number of APIs that would normally only allow changing
 
 ## Apache Commons Text prior to 1.10.0 allows RCE when applied to untrusted input due to insecure interpolation defaults ## { #CVE-2022-42889 }
 
-CVE-2022-42889 [\[CVE json\]](./CVE-2022-42889.cve.json) [\[OSV json\]](./CVE-2022-42889.osv.json)
+CVE-2022-42889 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-42889) [\[CVE json\]](./CVE-2022-42889.cve.json) [\[OSV json\]](./CVE-2022-42889.osv.json)
 
 
 
@@ -441,7 +441,7 @@ Applications using the interpolation defaults in the affected versions may be vu
 
 ## Apache Commons Configuration insecure interpolation defaults ## { #CVE-2022-33980 }
 
-CVE-2022-33980 [\[CVE json\]](./CVE-2022-33980.cve.json) [\[OSV json\]](./CVE-2022-33980.osv.json)
+CVE-2022-33980 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-33980) [\[CVE json\]](./CVE-2022-33980.cve.json) [\[OSV json\]](./CVE-2022-33980.osv.json)
 
 
 
@@ -469,7 +469,7 @@ Users are recommended to upgrade to Apache Commons Configuration 2.8.0, which di
 
 ## Apache Commons Net's FTP client trusts the host from PASV response by default ## { #CVE-2021-37533 }
 
-CVE-2021-37533 [\[CVE json\]](./CVE-2021-37533.cve.json) [\[OSV json\]](./CVE-2021-37533.osv.json)
+CVE-2021-37533 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-37533) [\[CVE json\]](./CVE-2021-37533.cve.json) [\[OSV json\]](./CVE-2021-37533.osv.json)
 
 
 
@@ -496,7 +496,7 @@ The default in version 3.9.0 is now false to ignore such hosts, as cURL does. Se
 
 ## Apache Commons Compress 1.0 to 1.20 denial of service vulnerability ## { #CVE-2021-36090 }
 
-CVE-2021-36090 [\[CVE json\]](./CVE-2021-36090.cve.json) [\[OSV json\]](./CVE-2021-36090.osv.json)
+CVE-2021-36090 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-36090) [\[CVE json\]](./CVE-2021-36090.cve.json) [\[OSV json\]](./CVE-2021-36090.osv.json)
 
 
 
@@ -523,7 +523,7 @@ When reading a specially crafted ZIP archive, Compress can be made to allocate l
 
 ## Apache Commons Compress 1.1 to 1.20 denial of service vulnerability ## { #CVE-2021-35517 }
 
-CVE-2021-35517 [\[CVE json\]](./CVE-2021-35517.cve.json) [\[OSV json\]](./CVE-2021-35517.osv.json)
+CVE-2021-35517 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-35517) [\[CVE json\]](./CVE-2021-35517.cve.json) [\[OSV json\]](./CVE-2021-35517.osv.json)
 
 
 
@@ -550,7 +550,7 @@ When reading a specially crafted TAR archive, Compress can be made to allocate l
 
 ## Apache Commons Compress 1.6 to 1.20 denial of service vulnerability ## { #CVE-2021-35516 }
 
-CVE-2021-35516 [\[CVE json\]](./CVE-2021-35516.cve.json) [\[OSV json\]](./CVE-2021-35516.osv.json)
+CVE-2021-35516 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-35516) [\[CVE json\]](./CVE-2021-35516.cve.json) [\[OSV json\]](./CVE-2021-35516.osv.json)
 
 
 
@@ -577,7 +577,7 @@ When reading a specially crafted 7Z archive, Compress can be made to allocate la
 
 ## Apache Commons Compress 1.6 to 1.20 denial of service vulnerability ## { #CVE-2021-35515 }
 
-CVE-2021-35515 [\[CVE json\]](./CVE-2021-35515.cve.json) [\[OSV json\]](./CVE-2021-35515.osv.json)
+CVE-2021-35515 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-35515) [\[CVE json\]](./CVE-2021-35515.cve.json) [\[OSV json\]](./CVE-2021-35515.osv.json)
 
 
 
@@ -604,7 +604,7 @@ When reading a specially crafted 7Z archive, the construction of the list of cod
 
 ## Possible limited path traversal vulnerabily in Apache Commons IO  ## { #CVE-2021-29425 }
 
-CVE-2021-29425 [\[CVE json\]](./CVE-2021-29425.cve.json) [\[OSV json\]](./CVE-2021-29425.osv.json)
+CVE-2021-29425 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-29425) [\[CVE json\]](./CVE-2021-29425.cve.json) [\[OSV json\]](./CVE-2021-29425.osv.json)
 
 
 

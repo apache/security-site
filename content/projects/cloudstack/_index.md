@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Lack of user permission validation leading to data leak for few APIs ## { #CVE-2025-59454 }
 
-CVE-2025-59454 [\[CVE json\]](./CVE-2025-59454.cve.json) [\[OSV json\]](./CVE-2025-59454.osv.json)
+CVE-2025-59454 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-59454) [\[CVE json\]](./CVE-2025-59454.cve.json) [\[OSV json\]](./CVE-2025-59454.osv.json)
 
 
 
@@ -45,7 +45,7 @@ In Apache CloudStack, a gap in access control checks affected the APIs <pre>- cr
 
 ## Potential remote code execution on Javascript engine defined rules ## { #CVE-2025-59302 }
 
-CVE-2025-59302 [\[CVE json\]](./CVE-2025-59302.cve.json) [\[OSV json\]](./CVE-2025-59302.osv.json)
+CVE-2025-59302 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-59302) [\[CVE json\]](./CVE-2025-59302.cve.json) [\[OSV json\]](./CVE-2025-59302.osv.json)
 
 
 
@@ -71,7 +71,7 @@ _Last updated: 2025-11-27T11:46:23.798Z_
 
 ## Insecure access of user's API/Secret Keys in the same domain ## { #CVE-2025-47849 }
 
-CVE-2025-47849 [\[CVE json\]](./CVE-2025-47849.cve.json) [\[OSV json\]](./CVE-2025-47849.osv.json)
+CVE-2025-47849 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-47849) [\[CVE json\]](./CVE-2025-47849.cve.json) [\[OSV json\]](./CVE-2025-47849.osv.json)
 
 
 
@@ -100,7 +100,7 @@ _Last updated: 2025-06-11T03:59:42.176Z_
 
 ## Domain Admin can reset Admin password in Root Domain ## { #CVE-2025-47713 }
 
-CVE-2025-47713 [\[CVE json\]](./CVE-2025-47713.cve.json) [\[OSV json\]](./CVE-2025-47713.osv.json)
+CVE-2025-47713 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-47713) [\[CVE json\]](./CVE-2025-47713.cve.json) [\[OSV json\]](./CVE-2025-47713.osv.json)
 
 
 
@@ -128,7 +128,7 @@ _Last updated: 2025-06-11T03:59:55.628Z_
 
 ## Unauthorised template/ISO list access to the domain/resource admins ## { #CVE-2025-30675 }
 
-CVE-2025-30675 [\[CVE json\]](./CVE-2025-30675.cve.json) [\[OSV json\]](./CVE-2025-30675.osv.json)
+CVE-2025-30675 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-30675) [\[CVE json\]](./CVE-2025-30675.cve.json) [\[OSV json\]](./CVE-2025-30675.osv.json)
 
 
 
@@ -156,7 +156,7 @@ _Last updated: 2025-06-11T04:00:06.854Z_
 
 ## CKS cluster in project exposes user API keys ## { #CVE-2025-26521 }
 
-CVE-2025-26521 [\[CVE json\]](./CVE-2025-26521.cve.json) [\[OSV json\]](./CVE-2025-26521.osv.json)
+CVE-2025-26521 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-26521) [\[CVE json\]](./CVE-2025-26521.cve.json) [\[OSV json\]](./CVE-2025-26521.osv.json)
 
 
 
@@ -184,7 +184,7 @@ When an Apache CloudStack user-account creates a CKS-based Kubernetes cluster in
 
 ## Unauthorised access to dedicated resources in Quota plugin ## { #CVE-2025-22829 }
 
-CVE-2025-22829 [\[CVE json\]](./CVE-2025-22829.cve.json) [\[OSV json\]](./CVE-2025-22829.osv.json)
+CVE-2025-22829 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-22829) [\[CVE json\]](./CVE-2025-22829.cve.json) [\[OSV json\]](./CVE-2025-22829.osv.json)
 
 
 
@@ -211,7 +211,7 @@ The CloudStack Quota plugin has an improper privilege management logic in versio
 
 ## Unauthorised access to annotations ## { #CVE-2025-22828 }
 
-CVE-2025-22828 [\[CVE json\]](./CVE-2025-22828.cve.json) [\[OSV json\]](./CVE-2025-22828.osv.json)
+CVE-2025-22828 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-22828) [\[CVE json\]](./CVE-2025-22828.cve.json) [\[OSV json\]](./CVE-2025-22828.osv.json)
 
 
 
@@ -237,7 +237,7 @@ _Last updated: 2025-01-13T12:40:18.771Z_
 
 ## Directly downloaded templates can be used to abuse KVM-based infrastructure ## { #CVE-2024-50386 }
 
-CVE-2024-50386 [\[CVE json\]](./CVE-2024-50386.cve.json) [\[OSV json\]](./CVE-2024-50386.osv.json)
+CVE-2024-50386 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-50386) [\[CVE json\]](./CVE-2024-50386.cve.json) [\[OSV json\]](./CVE-2024-50386.osv.json)
 
 
 
@@ -265,7 +265,7 @@ Account users in Apache CloudStack by default are allowed to register templates 
 
 ## Request origin validation bypass makes account takeover possible ## { #CVE-2024-45693 }
 
-CVE-2024-45693 [\[CVE json\]](./CVE-2024-45693.cve.json) [\[OSV json\]](./CVE-2024-45693.osv.json)
+CVE-2024-45693 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45693) [\[CVE json\]](./CVE-2024-45693.cve.json) [\[OSV json\]](./CVE-2024-45693.osv.json)
 
 
 
@@ -294,7 +294,7 @@ _Last updated: 2024-10-16T10:39:13.974Z_
 
 ## Incomplete session invalidation on web interface logout ## { #CVE-2024-45462 }
 
-CVE-2024-45462 [\[CVE json\]](./CVE-2024-45462.cve.json) [\[OSV json\]](./CVE-2024-45462.osv.json)
+CVE-2024-45462 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45462) [\[CVE json\]](./CVE-2024-45462.cve.json) [\[OSV json\]](./CVE-2024-45462.osv.json)
 
 
 
@@ -323,7 +323,7 @@ _Last updated: 2024-10-16T10:39:03.528Z_
 
 ## Access checks not enforced in Quota ## { #CVE-2024-45461 }
 
-CVE-2024-45461 [\[CVE json\]](./CVE-2024-45461.cve.json) [\[OSV json\]](./CVE-2024-45461.osv.json)
+CVE-2024-45461 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45461) [\[CVE json\]](./CVE-2024-45461.cve.json) [\[OSV json\]](./CVE-2024-45461.osv.json)
 
 
 
@@ -351,7 +351,7 @@ _Last updated: 2025-02-12T09:30:16.539Z_
 
 ## Uploaded and registered templates and volumes can be used to abuse KVM-based infrastructure ## { #CVE-2024-45219 }
 
-CVE-2024-45219 [\[CVE json\]](./CVE-2024-45219.cve.json) [\[OSV json\]](./CVE-2024-45219.osv.json)
+CVE-2024-45219 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45219) [\[CVE json\]](./CVE-2024-45219.cve.json) [\[OSV json\]](./CVE-2024-45219.osv.json)
 
 
 
@@ -379,7 +379,7 @@ Account users in Apache CloudStack by default are allowed to upload and register
 
 ## Unauthorised Network List Access ## { #CVE-2024-42222 }
 
-CVE-2024-42222 [\[CVE json\]](./CVE-2024-42222.cve.json) [\[OSV json\]](./CVE-2024-42222.osv.json)
+CVE-2024-42222 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-42222) [\[CVE json\]](./CVE-2024-42222.cve.json) [\[OSV json\]](./CVE-2024-42222.osv.json)
 
 
 
@@ -408,7 +408,7 @@ _Last updated: 2024-08-07T06:49:40.024Z_
 
 ## User Key Exposure to Domain Admins ## { #CVE-2024-42062 }
 
-CVE-2024-42062 [\[CVE json\]](./CVE-2024-42062.cve.json) [\[OSV json\]](./CVE-2024-42062.osv.json)
+CVE-2024-42062 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-42062) [\[CVE json\]](./CVE-2024-42062.cve.json) [\[OSV json\]](./CVE-2024-42062.osv.json)
 
 
 
@@ -436,7 +436,7 @@ CloudStack account-users by default use username and password based authenticati
 
 ## SAML Signature Exclusion ## { #CVE-2024-41107 }
 
-CVE-2024-41107 [\[CVE json\]](./CVE-2024-41107.cve.json) [\[OSV json\]](./CVE-2024-41107.osv.json)
+CVE-2024-41107 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-41107) [\[CVE json\]](./CVE-2024-41107.cve.json) [\[OSV json\]](./CVE-2024-41107.osv.json)
 
 
 
@@ -468,7 +468,7 @@ _Last updated: 2024-07-19T10:11:15.224Z_
 
 ## Integration API service uses dynamic port when disabled ## { #CVE-2024-39864 }
 
-CVE-2024-39864 [\[CVE json\]](./CVE-2024-39864.cve.json) [\[OSV json\]](./CVE-2024-39864.osv.json)
+CVE-2024-39864 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-39864) [\[CVE json\]](./CVE-2024-39864.cve.json) [\[OSV json\]](./CVE-2024-39864.osv.json)
 
 
 
@@ -498,7 +498,7 @@ _Last updated: 2024-07-05T13:39:23.006Z_
 
 ## Unauthenticated cluster service port leads to remote execution ## { #CVE-2024-38346 }
 
-CVE-2024-38346 [\[CVE json\]](./CVE-2024-38346.cve.json) [\[OSV json\]](./CVE-2024-38346.osv.json)
+CVE-2024-38346 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-38346) [\[CVE json\]](./CVE-2024-38346.cve.json) [\[OSV json\]](./CVE-2024-38346.osv.json)
 
 
 
@@ -528,7 +528,7 @@ _Last updated: 2024-07-05T13:39:11.185Z_
 
 ## The extraconfig feature can be abused to load hypervisor resources on a VM instance ## { #CVE-2024-29008 }
 
-CVE-2024-29008 [\[CVE json\]](./CVE-2024-29008.cve.json) [\[OSV json\]](./CVE-2024-29008.osv.json)
+CVE-2024-29008 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-29008) [\[CVE json\]](./CVE-2024-29008.cve.json) [\[OSV json\]](./CVE-2024-29008.osv.json)
 
 
 
@@ -554,7 +554,7 @@ _Last updated: 2024-04-04T10:58:44.745Z_
 
 ## When downloading templates or ISOs, the management server and SSVM follow HTTP redirects with potentially dangerous consequences ## { #CVE-2024-29007 }
 
-CVE-2024-29007 [\[CVE json\]](./CVE-2024-29007.cve.json) [\[OSV json\]](./CVE-2024-29007.osv.json)
+CVE-2024-29007 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-29007) [\[CVE json\]](./CVE-2024-29007.cve.json) [\[OSV json\]](./CVE-2024-29007.osv.json)
 
 
 
@@ -580,7 +580,7 @@ _Last updated: 2024-04-04T10:58:20.239Z_
 
 ## x-forwarded-for HTTP header parsed by default ## { #CVE-2024-29006 }
 
-CVE-2024-29006 [\[CVE json\]](./CVE-2024-29006.cve.json) [\[OSV json\]](./CVE-2024-29006.osv.json)
+CVE-2024-29006 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-29006) [\[CVE json\]](./CVE-2024-29006.cve.json) [\[OSV json\]](./CVE-2024-29006.osv.json)
 
 
 
@@ -606,7 +606,7 @@ _Last updated: 2024-04-04T10:59:16.384Z_
 
 ## Apache CloudStack SAML Single Sign-On XXE ## { #CVE-2022-35741 }
 
-CVE-2022-35741 [\[CVE json\]](./CVE-2022-35741.cve.json) [\[OSV json\]](./CVE-2022-35741.osv.json)
+CVE-2022-35741 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-35741) [\[CVE json\]](./CVE-2022-35741.cve.json) [\[OSV json\]](./CVE-2022-35741.osv.json)
 
 
 
@@ -631,7 +631,7 @@ Apache CloudStack version 4.5.0 and later has a SAML 2.0 authentication Service 
 
 ## Apache Cloudstack insecure random number generation affects project email invitation ## { #CVE-2022-26779 }
 
-CVE-2022-26779 [\[CVE json\]](./CVE-2022-26779.cve.json) [\[OSV json\]](./CVE-2022-26779.osv.json)
+CVE-2022-26779 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-26779) [\[CVE json\]](./CVE-2022-26779.cve.json) [\[OSV json\]](./CVE-2022-26779.osv.json)
 
 
 

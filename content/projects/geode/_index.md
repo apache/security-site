@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## CSRF attacks through GET requests to the Management and Monitoring REST API that can execute gfsh commands on the target system ## { #CVE-2025-47410 }
 
-CVE-2025-47410 [\[CVE json\]](./CVE-2025-47410.cve.json) [\[OSV json\]](./CVE-2025-47410.osv.json)
+CVE-2025-47410 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-47410) [\[CVE json\]](./CVE-2025-47410.cve.json) [\[OSV json\]](./CVE-2025-47410.osv.json)
 
 
 
@@ -44,7 +44,7 @@ Apache Geode is vulnerable to CSRF attacks through GET requests to the Managemen
 
 ## Reflected XSS ## { #CVE-2024-44088 }
 
-CVE-2024-44088 [\[CVE json\]](./CVE-2024-44088.cve.json) [\[OSV json\]](./CVE-2024-44088.osv.json)
+CVE-2024-44088 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-44088) [\[CVE json\]](./CVE-2024-44088.cve.json) [\[OSV json\]](./CVE-2024-44088.osv.json)
 
 
 
@@ -73,7 +73,7 @@ _Last updated: 2025-10-14T14:36:50.748Z_
 
 ## Apache Geode deserialization of untrusted data flaw when using REST API on Java 8 or Java 11 ## { #CVE-2022-37023 }
 
-CVE-2022-37023 [\[CVE json\]](./CVE-2022-37023.cve.json) [\[OSV json\]](./CVE-2022-37023.osv.json)
+CVE-2022-37023 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-37023) [\[CVE json\]](./CVE-2022-37023.cve.json) [\[OSV json\]](./CVE-2022-37023.osv.json)
 
 
 
@@ -96,7 +96,7 @@ Any user wishing to protect against deserialization attacks involving REST APIs 
 
 ## Apache Geode deserialization of untrusted data flaw when using JMX over RMI on Java 11 ## { #CVE-2022-37022 }
 
-CVE-2022-37022 [\[CVE json\]](./CVE-2022-37022.cve.json) [\[OSV json\]](./CVE-2022-37022.osv.json)
+CVE-2022-37022 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-37022) [\[CVE json\]](./CVE-2022-37022.cve.json) [\[OSV json\]](./CVE-2022-37022.osv.json)
 
 
 
@@ -119,7 +119,7 @@ Any user wishing to protect against deserialization attacks involving JMX or RMI
 
 ## Apache Geode deserialization of untrusted data flaw when using JMX over RMI on Java 8.  ## { #CVE-2022-37021 }
 
-CVE-2022-37021 [\[CVE json\]](./CVE-2022-37021.cve.json) [\[OSV json\]](./CVE-2022-37021.osv.json)
+CVE-2022-37021 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-37021) [\[CVE json\]](./CVE-2022-37021.cve.json) [\[OSV json\]](./CVE-2022-37021.osv.json)
 
 
 
@@ -144,7 +144,7 @@ If upgrading to Java 11 is not possible, then upgrade to Apache Geode 1.15 and s
 
 ## Apache Geode stored Cross-Site Scripting (XSS) via data injection vulnerability in Pulse web application ## { #CVE-2022-34870 }
 
-CVE-2022-34870 [\[CVE json\]](./CVE-2022-34870.cve.json) [\[OSV json\]](./CVE-2022-34870.osv.json)
+CVE-2022-34870 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-34870) [\[CVE json\]](./CVE-2022-34870.cve.json) [\[OSV json\]](./CVE-2022-34870.osv.json)
 
 
 
@@ -165,7 +165,7 @@ Apache Geode versions up to 1.15.0 are vulnerable to a Cross-Site Scripting (XSS
 
 ## Apache Geode log file redaction of sensitive information vulnerability ## { #CVE-2021-34797 }
 
-CVE-2021-34797 [\[CVE json\]](./CVE-2021-34797.cve.json) [\[OSV json\]](./CVE-2021-34797.osv.json)
+CVE-2021-34797 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-34797) [\[CVE json\]](./CVE-2021-34797.cve.json) [\[OSV json\]](./CVE-2021-34797.osv.json)
 
 
 

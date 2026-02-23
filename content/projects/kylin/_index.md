@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Server-Side Request Forgery ## { #CVE-2025-61735 }
 
-CVE-2025-61735 [\[CVE json\]](./CVE-2025-61735.cve.json) [\[OSV json\]](./CVE-2025-61735.osv.json)
+CVE-2025-61735 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-61735) [\[CVE json\]](./CVE-2025-61735.cve.json) [\[OSV json\]](./CVE-2025-61735.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2026-02-02T07:35:53.853Z_
 
 ## improper restriction of file read ## { #CVE-2025-61734 }
 
-CVE-2025-61734 [\[CVE json\]](./CVE-2025-61734.cve.json) [\[OSV json\]](./CVE-2025-61734.osv.json)
+CVE-2025-61734 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-61734) [\[CVE json\]](./CVE-2025-61734.cve.json) [\[OSV json\]](./CVE-2025-61734.osv.json)
 
 
 
@@ -66,7 +66,7 @@ _Last updated: 2026-02-02T07:35:03.252Z_
 
 ## Authentication bypass ## { #CVE-2025-61733 }
 
-CVE-2025-61733 [\[CVE json\]](./CVE-2025-61733.cve.json) [\[OSV json\]](./CVE-2025-61733.osv.json)
+CVE-2025-61733 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-61733) [\[CVE json\]](./CVE-2025-61733.cve.json) [\[OSV json\]](./CVE-2025-61733.osv.json)
 
 
 
@@ -91,7 +91,7 @@ _Last updated: 2026-02-02T07:33:38.093Z_
 
 ## The remote code execution via jdbc url ## { #CVE-2025-30067 }
 
-CVE-2025-30067 [\[CVE json\]](./CVE-2025-30067.cve.json) [\[OSV json\]](./CVE-2025-30067.osv.json)
+CVE-2025-30067 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-30067) [\[CVE json\]](./CVE-2025-30067.cve.json) [\[OSV json\]](./CVE-2025-30067.osv.json)
 
 
 
@@ -117,7 +117,7 @@ If an attacker gets access to Kylin's system or project admin permission, the JD
 
 ## SSRF vulnerability in the diagnosis api ## { #CVE-2024-48944 }
 
-CVE-2024-48944 [\[CVE json\]](./CVE-2024-48944.cve.json) [\[OSV json\]](./CVE-2024-48944.osv.json)
+CVE-2024-48944 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-48944) [\[CVE json\]](./CVE-2024-48944.cve.json) [\[OSV json\]](./CVE-2024-48944.osv.json)
 
 
 
@@ -147,7 +147,7 @@ through
 
 ## Session fixation in web interface ## { #CVE-2024-23590 }
 
-CVE-2024-23590 [\[CVE json\]](./CVE-2024-23590.cve.json) [\[OSV json\]](./CVE-2024-23590.osv.json)
+CVE-2024-23590 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-23590) [\[CVE json\]](./CVE-2024-23590.cve.json) [\[OSV json\]](./CVE-2024-23590.osv.json)
 
 
 
@@ -172,7 +172,7 @@ _Last updated: 2024-11-04T09:27:04.256Z_
 
 ## Insufficiently protected credentials in config file ## { #CVE-2023-29055 }
 
-CVE-2023-29055 [\[CVE json\]](./CVE-2023-29055.cve.json) [\[OSV json\]](./CVE-2023-29055.osv.json)
+CVE-2023-29055 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-29055) [\[CVE json\]](./CVE-2023-29055.cve.json) [\[OSV json\]](./CVE-2023-29055.osv.json)
 
 
 
@@ -197,7 +197,7 @@ _Last updated: 2024-01-29T12:20:52.048Z_
 
 ## Command injection by Diagnosis Controller ## { #CVE-2022-44621 }
 
-CVE-2022-44621 [\[CVE json\]](./CVE-2022-44621.cve.json) [\[OSV json\]](./CVE-2022-44621.osv.json)
+CVE-2022-44621 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-44621) [\[CVE json\]](./CVE-2022-44621.cve.json) [\[OSV json\]](./CVE-2022-44621.osv.json)
 
 
 
@@ -222,7 +222,7 @@ Diagnosis Controller miss parameter validation, so user may attacked by command 
 
 ## Command injection by Useless configuration ## { #CVE-2022-43396 }
 
-CVE-2022-43396 [\[CVE json\]](./CVE-2022-43396.cve.json) [\[OSV json\]](./CVE-2022-43396.osv.json)
+CVE-2022-43396 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-43396) [\[CVE json\]](./CVE-2022-43396.cve.json) [\[OSV json\]](./CVE-2022-43396.osv.json)
 
 
 
@@ -247,7 +247,7 @@ In the fix for CVE-2022-24697, a blacklist is used to filter user input commands
 
 ## Apache Kylin prior to 4.0.2 allows command injection when the configuration overwrites function overwrites system parameters ## { #CVE-2022-24697 }
 
-CVE-2022-24697 [\[CVE json\]](./CVE-2022-24697.cve.json) [\[OSV json\]](./CVE-2022-24697.osv.json)
+CVE-2022-24697 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-24697) [\[CVE json\]](./CVE-2022-24697.cve.json) [\[OSV json\]](./CVE-2022-24697.osv.json)
 
 
 
@@ -274,7 +274,7 @@ Kylin's cube designer function has a command injection vulnerability when overwr
 
 ## Hardcoded credentials ## { #CVE-2021-45458 }
 
-CVE-2021-45458 [\[CVE json\]](./CVE-2021-45458.cve.json) [\[OSV json\]](./CVE-2021-45458.osv.json)
+CVE-2021-45458 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-45458) [\[CVE json\]](./CVE-2021-45458.cve.json) [\[OSV json\]](./CVE-2021-45458.osv.json)
 
 
 
@@ -302,7 +302,7 @@ This issue affects Apache Kylin 2 version 2.6.6 and prior versions; Apache Kylin
 
 ## Overly broad CORS configuration  ## { #CVE-2021-45457 }
 
-CVE-2021-45457 [\[CVE json\]](./CVE-2021-45457.cve.json) [\[OSV json\]](./CVE-2021-45457.osv.json)
+CVE-2021-45457 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-45457) [\[CVE json\]](./CVE-2021-45457.cve.json) [\[OSV json\]](./CVE-2021-45457.osv.json)
 
 
 
@@ -331,7 +331,7 @@ This issue affects Apache Kylin 2 version 2.6.6 and prior versions; Apache Kylin
 
 ## Command injection ## { #CVE-2021-45456 }
 
-CVE-2021-45456 [\[CVE json\]](./CVE-2021-45456.cve.json) [\[OSV json\]](./CVE-2021-45456.osv.json)
+CVE-2021-45456 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-45456) [\[CVE json\]](./CVE-2021-45456.cve.json) [\[OSV json\]](./CVE-2021-45456.osv.json)
 
 
 
@@ -357,7 +357,7 @@ This issue affects Apache Kylin 4.0.0.
 
 ## Mysql JDBC Connector Deserialize RCE ## { #CVE-2021-36774 }
 
-CVE-2021-36774 [\[CVE json\]](./CVE-2021-36774.cve.json) [\[OSV json\]](./CVE-2021-36774.osv.json)
+CVE-2021-36774 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-36774) [\[CVE json\]](./CVE-2021-36774.cve.json) [\[OSV json\]](./CVE-2021-36774.osv.json)
 
 
 
@@ -384,7 +384,7 @@ This issue affects Apache Kylin 2 version 2.6.6 and prior versions; Apache Kylin
 
 ## Apache Kylin unsafe class loading ## { #CVE-2021-31522 }
 
-CVE-2021-31522 [\[CVE json\]](./CVE-2021-31522.cve.json) [\[OSV json\]](./CVE-2021-31522.osv.json)
+CVE-2021-31522 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-31522) [\[CVE json\]](./CVE-2021-31522.cve.json) [\[OSV json\]](./CVE-2021-31522.osv.json)
 
 
 
@@ -412,7 +412,7 @@ This issue affects Apache Kylin 2 version 2.6.6 and prior versions; Apache Kylin
 
 ## Improper Access Control to Streaming Coordinator & SSRF ## { #CVE-2021-27738 }
 
-CVE-2021-27738 [\[CVE json\]](./CVE-2021-27738.cve.json) [\[OSV json\]](./CVE-2021-27738.osv.json)
+CVE-2021-27738 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-27738) [\[CVE json\]](./CVE-2021-27738.cve.json) [\[OSV json\]](./CVE-2021-27738.osv.json)
 
 
 

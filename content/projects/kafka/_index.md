@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Possible RCE/Denial of service attack via SASL JAAS JndiLoginModule configuration ## { #CVE-2025-27819 }
 
-CVE-2025-27819 [\[CVE json\]](./CVE-2025-27819.cve.json) [\[OSV json\]](./CVE-2025-27819.osv.json)
+CVE-2025-27819 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27819) [\[CVE json\]](./CVE-2025-27819.cve.json) [\[OSV json\]](./CVE-2025-27819.osv.json)
 
 
 
@@ -42,7 +42,7 @@ _Last updated: 2025-06-10T07:54:40.206Z_
 
 ## Possible RCE attack via SASL JAAS LdapLoginModule configuration ## { #CVE-2025-27818 }
 
-CVE-2025-27818 [\[CVE json\]](./CVE-2025-27818.cve.json) [\[OSV json\]](./CVE-2025-27818.osv.json)
+CVE-2025-27818 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27818) [\[CVE json\]](./CVE-2025-27818.cve.json) [\[OSV json\]](./CVE-2025-27818.osv.json)
 
 
 
@@ -68,7 +68,7 @@ A possible security vulnerability has been identified in Apache Kafka.<br>This r
 
 ## Arbitrary file read and SSRF vulnerability ## { #CVE-2025-27817 }
 
-CVE-2025-27817 [\[CVE json\]](./CVE-2025-27817.cve.json) [\[OSV json\]](./CVE-2025-27817.osv.json)
+CVE-2025-27817 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27817) [\[CVE json\]](./CVE-2025-27817.cve.json) [\[OSV json\]](./CVE-2025-27817.osv.json)
 
 
 
@@ -99,7 +99,7 @@ _Last updated: 2025-06-10T07:55:12.969Z_
 
 ## SCRAM authentication vulnerable to replay attacks when used without encryption ## { #CVE-2024-56128 }
 
-CVE-2024-56128 [\[CVE json\]](./CVE-2024-56128.cve.json)
+CVE-2024-56128 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-56128) [\[CVE json\]](./CVE-2024-56128.cve.json)
 
 _Last updated: 2024-12-18T13:38:00.297Z_
 
@@ -127,7 +127,7 @@ _Last updated: 2024-12-18T13:38:00.297Z_
 
 ## Privilege escalation to filesystem read-access via automatic ConfigProvider ## { #CVE-2024-31141 }
 
-CVE-2024-31141 [\[CVE json\]](./CVE-2024-31141.cve.json) [\[OSV json\]](./CVE-2024-31141.osv.json)
+CVE-2024-31141 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-31141) [\[CVE json\]](./CVE-2024-31141.cve.json) [\[OSV json\]](./CVE-2024-31141.osv.json)
 
 
 
@@ -156,7 +156,7 @@ Files or Directories Accessible to External Parties, Improper Privilege Manageme
 
 ## Potential incorrect access control during migration from ZK mode to KRaft mode ## { #CVE-2024-27309 }
 
-CVE-2024-27309 [\[CVE json\]](./CVE-2024-27309.cve.json) [\[OSV json\]](./CVE-2024-27309.osv.json)
+CVE-2024-27309 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27309) [\[CVE json\]](./CVE-2024-27309.cve.json) [\[OSV json\]](./CVE-2024-27309.osv.json)
 
 
 
@@ -178,7 +178,7 @@ _Last updated: 2024-04-12T06:58:42.007Z_
 
 ## Possible RCE/Denial of service attack via SASL JAAS JndiLoginModule configuration using Kafka Connect  ## { #CVE-2023-25194 }
 
-CVE-2023-25194 [\[CVE json\]](./CVE-2023-25194.cve.json)
+CVE-2023-25194 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-25194) [\[CVE json\]](./CVE-2023-25194.cve.json)
 
 _Last updated: 2023-07-21T11:35:22.991Z_
 
@@ -203,7 +203,7 @@ A possible security vulnerability has been identified in Apache Kafka Connect AP
 
 ## Unauthenticated clients may cause OutOfMemoryError on Apache Kafka Brokers ## { #CVE-2022-34917 }
 
-CVE-2022-34917 [\[CVE json\]](./CVE-2022-34917.cve.json) [\[OSV json\]](./CVE-2022-34917.osv.json)
+CVE-2022-34917 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-34917) [\[CVE json\]](./CVE-2022-34917.cve.json) [\[OSV json\]](./CVE-2022-34917.osv.json)
 
 
 
@@ -248,7 +248,7 @@ We advise the users to upgrade the Kafka installations to one of the 3.2.3, 3.1.
 
 ## Timing Attack Vulnerability for Apache Kafka Connect and Clients ## { #CVE-2021-38153 }
 
-CVE-2021-38153 [\[CVE json\]](./CVE-2021-38153.cve.json) [\[OSV json\]](./CVE-2021-38153.osv.json)
+CVE-2021-38153 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-38153) [\[CVE json\]](./CVE-2021-38153.cve.json) [\[OSV json\]](./CVE-2021-38153.osv.json)
 
 
 

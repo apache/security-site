@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Apache SOAP allows unauthenticated users to potentially invoke arbitrary code ## { #CVE-2022-45378 }
 
-CVE-2022-45378 [\[CVE json\]](./CVE-2022-45378.cve.json)
+CVE-2022-45378 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-45378) [\[CVE json\]](./CVE-2022-45378.cve.json)
 
 _Last updated: 2022-11-14T14:06:51.577Z_
 
@@ -39,7 +39,7 @@ In the default configuration of Apache SOAP, an RPCRouterServlet is available wi
 
 ## Apache SOAP: XML External Entity Injection (XXE) allows unauthenticated users to read arbitrary files via HTTP ## { #CVE-2022-40705 }
 
-CVE-2022-40705 [\[CVE json\]](./CVE-2022-40705.cve.json) [\[OSV json\]](./CVE-2022-40705.osv.json)
+CVE-2022-40705 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-40705) [\[CVE json\]](./CVE-2022-40705.cve.json) [\[OSV json\]](./CVE-2022-40705.osv.json)
 
 
 

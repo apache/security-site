@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## MINA applications using unbounded deserialization may allow RCE ## { #CVE-2024-52046 }
 
-CVE-2024-52046 [\[CVE json\]](./CVE-2024-52046.cve.json)
+CVE-2024-52046 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-52046) [\[CVE json\]](./CVE-2024-52046.cve.json)
 
 _Last updated: 2025-02-12T09:33:34.969Z_
 
@@ -54,7 +54,7 @@ This issue affects MINA core versions 2.0.X, 2.1.X and 2.2.X, and will be fixed 
 
 ## integrity check bypass ## { #CVE-2024-41909 }
 
-CVE-2024-41909 [\[CVE json\]](./CVE-2024-41909.cve.json) [\[OSV json\]](./CVE-2024-41909.osv.json)
+CVE-2024-41909 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-41909) [\[CVE json\]](./CVE-2024-41909.cve.json) [\[OSV json\]](./CVE-2024-41909.osv.json)
 
 
 
@@ -82,7 +82,7 @@ attack<br></div><div><br></div><div>The mitigations to prevent this type of atta
 
 ## Information disclosure bugs with RootedFilesystem ## { #CVE-2023-35887 }
 
-CVE-2023-35887 [\[CVE json\]](./CVE-2023-35887.cve.json) [\[OSV json\]](./CVE-2023-35887.osv.json)
+CVE-2023-35887 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-35887) [\[CVE json\]](./CVE-2023-35887.cve.json) [\[OSV json\]](./CVE-2023-35887.osv.json)
 
 
 
@@ -107,7 +107,7 @@ Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apac
 
 ## Apache MINA SSHD: Java unsafe deserialization vulnerability ## { #CVE-2022-45047 }
 
-CVE-2022-45047 [\[CVE json\]](./CVE-2022-45047.cve.json) [\[OSV json\]](./CVE-2022-45047.osv.json)
+CVE-2022-45047 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-45047) [\[CVE json\]](./CVE-2022-45047.cve.json) [\[OSV json\]](./CVE-2022-45047.osv.json)
 
 
 
@@ -132,7 +132,7 @@ Class org.apache.sshd.server.keyprovider.SimpleGeneratorHostKeyProvider in Apach
 
 ## Apache MINA HTTP listener DOS ## { #CVE-2021-41973 }
 
-CVE-2021-41973 [\[CVE json\]](./CVE-2021-41973.cve.json) [\[OSV json\]](./CVE-2021-41973.osv.json)
+CVE-2021-41973 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-41973) [\[CVE json\]](./CVE-2021-41973.cve.json) [\[OSV json\]](./CVE-2021-41973.osv.json)
 
 
 
@@ -153,7 +153,7 @@ In Apache MINA, a specifically crafted, malformed HTTP request may cause the HTT
 
 ## DoS/OOM leak vulnerability in Apache Mina SSHD Server ## { #CVE-2021-30129 }
 
-CVE-2021-30129 [\[CVE json\]](./CVE-2021-30129.cve.json) [\[OSV json\]](./CVE-2021-30129.osv.json)
+CVE-2021-30129 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-30129) [\[CVE json\]](./CVE-2021-30129.cve.json) [\[OSV json\]](./CVE-2021-30129.osv.json)
 
 
 

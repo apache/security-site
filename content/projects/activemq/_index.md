@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Deserialization of Untrusted Data ## { #CVE-2025-54539 }
 
-CVE-2025-54539 [\[CVE json\]](./CVE-2025-54539.cve.json) [\[OSV json\]](./CVE-2025-54539.osv.json)
+CVE-2025-54539 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-54539) [\[CVE json\]](./CVE-2025-54539.cve.json) [\[OSV json\]](./CVE-2025-54539.osv.json)
 
 
 
@@ -40,7 +40,7 @@ A Deserialization of Untrusted Data vulnerability exists in the Apache ActiveMQ 
 
 ## deserialization allowlist bypass ## { #CVE-2025-29953 }
 
-CVE-2025-29953 [\[CVE json\]](./CVE-2025-29953.cve.json) [\[OSV json\]](./CVE-2025-29953.osv.json)
+CVE-2025-29953 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-29953) [\[CVE json\]](./CVE-2025-29953.cve.json) [\[OSV json\]](./CVE-2025-29953.osv.json)
 
 
 
@@ -65,7 +65,7 @@ _Last updated: 2025-04-18T15:23:28.244Z_
 
 ## Unchecked buffer length can cause excessive memory allocation ## { #CVE-2025-27533 }
 
-CVE-2025-27533 [\[CVE json\]](./CVE-2025-27533.cve.json) [\[OSV json\]](./CVE-2025-27533.osv.json)
+CVE-2025-27533 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27533) [\[CVE json\]](./CVE-2025-27533.cve.json) [\[OSV json\]](./CVE-2025-27533.osv.json)
 
 
 
@@ -89,7 +89,7 @@ _Last updated: 2025-05-07T08:58:58.430Z_
 
 ## Address routing-type can be updated by user without the createAddress permission ## { #CVE-2025-27427 }
 
-CVE-2025-27427 [\[CVE json\]](./CVE-2025-27427.cve.json) [\[OSV json\]](./CVE-2025-27427.osv.json)
+CVE-2025-27427 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27427) [\[CVE json\]](./CVE-2025-27427.cve.json) [\[OSV json\]](./CVE-2025-27427.osv.json)
 
 
 
@@ -118,7 +118,7 @@ _Last updated: 2025-04-01T07:26:53.803Z_
 
 ## Passwords leaking from broker properties in the debug log ## { #CVE-2025-27391 }
 
-CVE-2025-27391 [\[CVE json\]](./CVE-2025-27391.cve.json) [\[OSV json\]](./CVE-2025-27391.osv.json)
+CVE-2025-27391 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27391) [\[CVE json\]](./CVE-2025-27391.cve.json) [\[OSV json\]](./CVE-2025-27391.osv.json)
 
 
 
@@ -143,7 +143,7 @@ _Last updated: 2025-04-09T14:42:30.509Z_
 
 ## Jolokia and REST API were not secured with default configuration ## { #CVE-2024-32114 }
 
-CVE-2024-32114 [\[CVE json\]](./CVE-2024-32114.cve.json) [\[OSV json\]](./CVE-2024-32114.osv.json)
+CVE-2024-32114 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-32114) [\[CVE json\]](./CVE-2024-32114.cve.json) [\[OSV json\]](./CVE-2024-32114.osv.json)
 
 
 
@@ -171,7 +171,7 @@ In Apache ActiveMQ 6.x, the default configuration doesn't secure the API web con
 
 ## Authenticated users could perform RCE via Jolokia MBeans ## { #CVE-2023-50780 }
 
-CVE-2023-50780 [\[CVE json\]](./CVE-2023-50780.cve.json) [\[OSV json\]](./CVE-2023-50780.osv.json)
+CVE-2023-50780 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-50780) [\[CVE json\]](./CVE-2023-50780.cve.json) [\[OSV json\]](./CVE-2023-50780.osv.json)
 
 
 
@@ -196,7 +196,7 @@ _Last updated: 2024-10-14T16:03:33.323Z_
 
 ## Unbounded deserialization causes ActiveMQ to be vulnerable to a remote code execution (RCE) attack ## { #CVE-2023-46604 }
 
-CVE-2023-46604 [\[CVE json\]](./CVE-2023-46604.cve.json)
+CVE-2023-46604 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-46604) [\[CVE json\]](./CVE-2023-46604.cve.json)
 
 _Last updated: 2023-11-28T15:02:26.708Z_
 
@@ -237,7 +237,7 @@ which fixes this issue.</div>
 
 ## Insufficient API restrictions on Jolokia allow authenticated users to perform RCE ## { #CVE-2022-41678 }
 
-CVE-2022-41678 [\[CVE json\]](./CVE-2022-41678.cve.json)
+CVE-2022-41678 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-41678) [\[CVE json\]](./CVE-2022-41678.cve.json)
 
 _Last updated: 2024-05-31T08:42:39.786Z_
 
@@ -282,7 +282,7 @@ jdk.management.jfr.FlightRecorderMXBeanImpl which exists on Java version above 1
 
 ## HTML Injection in ActiveMQ Artemis Web Console ## { #CVE-2022-35278 }
 
-CVE-2022-35278 [\[CVE json\]](./CVE-2022-35278.cve.json) [\[OSV json\]](./CVE-2022-35278.osv.json)
+CVE-2022-35278 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-35278) [\[CVE json\]](./CVE-2022-35278.cve.json) [\[OSV json\]](./CVE-2022-35278.osv.json)
 
 
 
@@ -307,7 +307,7 @@ In Apache ActiveMQ Artemis prior to 2.24.0, an attacker could show malicious con
 
 ## Apache ActiveMQ Artemis DoS ## { #CVE-2022-23913 }
 
-CVE-2022-23913 [\[CVE json\]](./CVE-2022-23913.cve.json) [\[OSV json\]](./CVE-2022-23913.osv.json)
+CVE-2022-23913 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-23913) [\[CVE json\]](./CVE-2022-23913.cve.json) [\[OSV json\]](./CVE-2022-23913.osv.json)
 
 
 
@@ -328,7 +328,7 @@ In Apache ActiveMQ Artemis prior to 2.20.0 or 2.19.1, an attacker could partiall
 
 ## Flaw in ActiveMQ Artemis OpenWire support ## { #CVE-2021-26118 }
 
-CVE-2021-26118 [\[CVE json\]](./CVE-2021-26118.cve.json) [\[OSV json\]](./CVE-2021-26118.osv.json)
+CVE-2021-26118 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-26118) [\[CVE json\]](./CVE-2021-26118.cve.json) [\[OSV json\]](./CVE-2021-26118.osv.json)
 
 
 
@@ -353,7 +353,7 @@ While investigating ARTEMIS-2964 it was found that the creation of advisory mess
 
 ## ActiveMQ: LDAP-Authentication does not verify passwords on servers with anonymous bind ## { #CVE-2021-26117 }
 
-CVE-2021-26117 [\[CVE json\]](./CVE-2021-26117.cve.json) [\[OSV json\]](./CVE-2021-26117.osv.json)
+CVE-2021-26117 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-26117) [\[CVE json\]](./CVE-2021-26117.cve.json) [\[OSV json\]](./CVE-2021-26117.osv.json)
 
 
 
@@ -379,7 +379,7 @@ The optional ActiveMQ LDAP login module can be configured to use anonymous acces
 
 ##  ## { #CVE-2020-13947 }
 
-CVE-2020-13947 [\[CVE json\]](./CVE-2020-13947.cve.json) [\[OSV json\]](./CVE-2020-13947.osv.json)
+CVE-2020-13947 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-13947) [\[CVE json\]](./CVE-2020-13947.cve.json) [\[OSV json\]](./CVE-2020-13947.osv.json)
 
 
 

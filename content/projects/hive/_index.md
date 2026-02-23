@@ -15,7 +15,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## SQL injection vulnerability when processing delete column statistics requests via the HMS Thrift APIs ## { #CVE-2025-62728 }
 
-CVE-2025-62728 [\[CVE json\]](./CVE-2025-62728.cve.json) [\[OSV json\]](./CVE-2025-62728.osv.json)
+CVE-2025-62728 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-62728) [\[CVE json\]](./CVE-2025-62728.cve.json) [\[OSV json\]](./CVE-2025-62728.osv.json)
 
 
 
@@ -40,7 +40,7 @@ _Last updated: 2025-11-26T10:29:43.944Z_
 
 ## Credentials file created with non restrictive permissions ## { #CVE-2024-29869 }
 
-CVE-2024-29869 [\[CVE json\]](./CVE-2024-29869.cve.json) [\[OSV json\]](./CVE-2024-29869.osv.json)
+CVE-2024-29869 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-29869) [\[CVE json\]](./CVE-2024-29869.cve.json) [\[OSV json\]](./CVE-2024-29869.osv.json)
 
 
 
@@ -68,7 +68,7 @@ Hive creates a credentials file to a temporary directory in the file system with
 
 ## Timing Attack Against Signature in LLAP util ## { #CVE-2024-23953 }
 
-CVE-2024-23953 [\[CVE json\]](./CVE-2024-23953.cve.json) [\[OSV json\]](./CVE-2024-23953.osv.json)
+CVE-2024-23953 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-23953) [\[CVE json\]](./CVE-2024-23953.cve.json) [\[OSV json\]](./CVE-2024-23953.osv.json)
 
 
 
@@ -98,7 +98,7 @@ Use of Arrays.equals() in <span style="background-color: rgb(255, 255, 255);">Ll
 
 ## CookieSigner exposes the correct signature when message verification fails ## { #CVE-2024-23945 }
 
-CVE-2024-23945 [\[CVE json\]](./CVE-2024-23945.cve.json) [\[OSV json\]](./CVE-2024-23945.osv.json)
+CVE-2024-23945 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-23945) [\[CVE json\]](./CVE-2024-23945.cve.json) [\[OSV json\]](./CVE-2024-23945.osv.json)
 
 
 
@@ -135,7 +135,7 @@ Signing cookies is an application security feature that adds a digital signature
 
 ## Arbitrary command execution via JDBC driver ## { #CVE-2023-35701 }
 
-CVE-2023-35701 [\[CVE json\]](./CVE-2023-35701.cve.json) [\[OSV json\]](./CVE-2023-35701.osv.json)
+CVE-2023-35701 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-35701) [\[CVE json\]](./CVE-2023-35701.cve.json) [\[OSV json\]](./CVE-2023-35701.osv.json)
 
 
 
@@ -160,7 +160,7 @@ Improper Control of Generation of Code ('Code Injection') vulnerability in Apach
 
 ## Deserialization of untrusted data when fetching partitions from the Metastore ## { #CVE-2022-41137 }
 
-CVE-2022-41137 [\[CVE json\]](./CVE-2022-41137.cve.json) [\[OSV json\]](./CVE-2022-41137.osv.json)
+CVE-2022-41137 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-41137) [\[CVE json\]](./CVE-2022-41137.cve.json) [\[OSV json\]](./CVE-2022-41137.osv.json)
 
 
 
@@ -188,7 +188,7 @@ Apache Hive&nbsp;Metastore (HMS) uses&nbsp;<span style="background-color: rgb(25
 
 ## Apache Hive Security vulnerability in Hive with UDFs ## { #CVE-2021-34538 }
 
-CVE-2021-34538 [\[CVE json\]](./CVE-2021-34538.cve.json) [\[OSV json\]](./CVE-2021-34538.osv.json)
+CVE-2021-34538 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-34538) [\[CVE json\]](./CVE-2021-34538.cve.json) [\[OSV json\]](./CVE-2021-34538.osv.json)
 
 
 
@@ -213,7 +213,7 @@ Apache Hive before 3.1.3 "CREATE" and "DROP" function operations does not check 
 
 ## Timing attack in Cookie signature verification ## { #CVE-2020-1926 }
 
-CVE-2020-1926 [\[CVE json\]](./CVE-2020-1926.cve.json) [\[OSV json\]](./CVE-2020-1926.osv.json)
+CVE-2020-1926 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-1926) [\[CVE json\]](./CVE-2020-1926.cve.json) [\[OSV json\]](./CVE-2020-1926.osv.json)
 
 
 
