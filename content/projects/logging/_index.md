@@ -139,7 +139,7 @@ _Last updated: 2023-04-20T07:55:37.341Z_
 ### Affected
 
 * Apache Log4j from 1.0.4 before 2
-* Apache Log4j from 2 through *
+* Apache Log4j from 2 through * unaffected
 
 
 ### Description

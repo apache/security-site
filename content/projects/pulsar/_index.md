@@ -392,7 +392,7 @@ _Last updated: 2022-11-04T15:46:59.823Z_
 * Apache Pulsar from 2.9 through 2.9.2
 * Apache Pulsar from 2.10 through 2.10.1
 * Apache Pulsar from 2.6 and earlier through 2.6.4
-* Apache Pulsar from 3.0.0 before 3.0*
+* Apache Pulsar from 3.0.0 before 3.0* unaffected
 
 
 ### Description

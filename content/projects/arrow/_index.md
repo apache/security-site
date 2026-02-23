@@ -22,7 +22,7 @@ _Last updated: 2026-02-20T09:56:40.992Z_
 ### Affected
 
 * Apache Arrow from 15.0.0 through 23.0.0
-* Apache Arrow at 23.0.1
+* Apache Arrow at 23.0.1 unaffected
 
 
 ### Description

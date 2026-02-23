@@ -157,7 +157,7 @@ _Last updated: 2021-07-14T06:08:32.303Z_
 
 * Apache Ant from Apache Ant 1.9.x through 1.9.15
 * Apache Ant from Apache Ant 1.10.x through 1.10.10
-* Apache Ant from Apache Ant before 1.9.0
+* Apache Ant from Apache Ant before 1.9.0 unaffected
 
 
 ### Description

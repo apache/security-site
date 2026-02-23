@@ -21,7 +21,7 @@ _Last updated: 2025-02-12T09:33:34.969Z_
 
 ### Affected
 
-* Apache MINA from 2.0 through 2.0.26
+* Apache MINA from 2.0 through 2.0.26 unknown
 * Apache MINA from 2.1 through 2.1.9
 * Apache MINA from 2.2 through 2.2.3
 

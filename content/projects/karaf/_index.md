@@ -22,7 +22,7 @@ _Last updated: 2026-01-26T09:41:22.803Z_
 ### Affected
 
 * Apache Karaf before 2.12.0
-* Apache Karaf at 2.12.0
+* Apache Karaf at 2.12.0 unaffected
 
 
 ### Description

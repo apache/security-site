@@ -28,7 +28,7 @@ _Last updated: 2026-02-17T18:53:09.659Z_
 * Apache Tomcat from 11.0.0-M1 through 11.0.17
 * Apache Tomcat from 10.1.0-M7 through 10.1.51
 * Apache Tomcat from 9.0.83 through 9.0.114
-* Apache Tomcat through 8.5.100
+* Apache Tomcat through 8.5.100 unaffected
 
 
 ### Description
@@ -83,7 +83,7 @@ _Last updated: 2026-02-17T18:48:25.348Z_
 * Apache Tomcat from 10.1.0-M1 through 10.1.49
 * Apache Tomcat from 9.0.0-M1 through 9.0.112
 * Apache Tomcat from 8.5.0 through 8.5.100
-* Apache Tomcat before 8.5.0
+* Apache Tomcat before 8.5.0 unaffected
 
 
 ### Description
@@ -117,8 +117,8 @@ _Last updated: 2025-10-29T11:37:37.868Z_
 * Apache Tomcat from 10.1.0-M1 through 10.1.46
 * Apache Tomcat from 9.0.0.M1 through 9.0.109
 * Apache Tomcat from 8.5.0 through 8.5.100
-* Apache Tomcat from 3 before 8.5.0
-* Apache Tomcat from 10.0.0-M1 through 10.0.27
+* Apache Tomcat from 3 before 8.5.0 unknown
+* Apache Tomcat from 10.0.0-M1 through 10.0.27 unknown
 
 
 ### Description
@@ -146,8 +146,8 @@ _Last updated: 2025-10-29T11:38:22.595Z_
 * Apache Tomcat from 10.1.0-M1 through 10.1.44
 * Apache Tomcat from 9.0.40 through 9.0.108
 * Apache Tomcat from 8.5.60 through 8.5.100
-* Apache Tomcat from 3 before 8.5.0
-* Apache Tomcat from 10.0.0-M1 through 10.0.27
+* Apache Tomcat from 3 before 8.5.0 unknown
+* Apache Tomcat from 10.0.0-M1 through 10.0.27 unknown
 
 
 ### Description
@@ -175,8 +175,8 @@ _Last updated: 2025-10-29T11:38:53.688Z_
 * Apache Tomcat from 10.1.0-M1 through 10.1.44
 * Apache Tomcat from 9.0.0.M11 through 9.0.108
 * Apache Tomcat from 8.5.6 through 8.5.100
-* Apache Tomcat from 3 before 8.5.0
-* Apache Tomcat from 10.0.0-M1 through 10.0.27
+* Apache Tomcat from 3 before 8.5.0 unknown
+* Apache Tomcat from 10.0.0-M1 through 10.0.27 unknown
 
 
 ### Description
@@ -203,7 +203,7 @@ _Last updated: 2025-10-29T11:39:27.849Z_
 * Apache Tomcat from 11.0.0-M1 through 11.0.7
 * Apache Tomcat from 10.1.0-M1 through 10.1.41
 * Apache Tomcat from 9.0.0.M1 through 9.0.105
-* Apache Tomcat from 8 before 9.0.0.M1
+* Apache Tomcat from 8 before 9.0.0.M1 unknown
 
 
 ### Description
@@ -365,7 +365,7 @@ _Last updated: 2025-10-29T11:45:00.142Z_
 * Apache Tomcat from 11.0.0-M1 through 11.0.9
 * Apache Tomcat from 10.1.0-M1 through 10.1.43
 * Apache Tomcat from 9.0.0.M1 through 9.0.107
-* Apache Tomcat from 8.5.0 through 8.5.100
+* Apache Tomcat from 8.5.0 through 8.5.100 unknown
 
 
 ### Description

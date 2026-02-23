@@ -245,8 +245,8 @@ _Last updated: 2024-05-31T08:42:39.786Z_
 
 * Apache ActiveMQ before 5.16.6
 * Apache ActiveMQ from 5.17.0 before 5.17.4
-* Apache ActiveMQ at 5.18.0
-* Apache ActiveMQ at 6.0.0
+* Apache ActiveMQ at 5.18.0 unaffected
+* Apache ActiveMQ at 6.0.0 unaffected
 
 
 ### Description

@@ -223,7 +223,7 @@ _Last updated: 2024-02-26T09:22:36.071Z_
 
 ### Affected
 
-* Apache Camel from 1.x through 1.6.0
+* Apache Camel from 1.x through 1.6.0 unaffected
 * Apache Camel from 3.21.x through 3.21.3
 * Apache Camel from 3.22.x through 3.22.0
 * Apache Camel from 4.0.x through 4.0.3

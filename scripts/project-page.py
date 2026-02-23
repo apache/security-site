@@ -185,6 +185,8 @@ layout: single
               project_page.write(' before ' + version['lessThan'])
             if 'lessThanOrEqual' in version.keys():
               project_page.write(' through ' + version['lessThanOrEqual'])
+            if version['status'] != 'affected':
+              project_page.write(' ' + version['status'])
             project_page.write('\n')
         project_page.write('\n\n### Description\n\n')
         for desc in cna['descriptions']:

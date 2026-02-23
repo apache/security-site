@@ -47,7 +47,7 @@ _Last updated: 2024-12-23T15:30:11.661Z_
 ### Affected
 
 * Apache Traffic Control from 8.0.0 through 8.0.1
-* Apache Traffic Control from 7.0.0 before 8.0.0
+* Apache Traffic Control from 7.0.0 before 8.0.0 unaffected
 
 
 ### Description

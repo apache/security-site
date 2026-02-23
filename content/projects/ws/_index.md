@@ -22,7 +22,7 @@ _Last updated: 2022-11-14T14:06:51.577Z_
 ### Affected
 
 * Apache SOAP at 2.3
-* Apache SOAP from Apache SOAP before 2.3
+* Apache SOAP from Apache SOAP before 2.3 unknown
 
 
 ### Description

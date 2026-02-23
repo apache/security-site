@@ -149,7 +149,7 @@ _Last updated: 2023-01-14T09:33:37.695Z_
 
 ### Affected
 
-* Apache Shiro before 1.11.0
+* Apache Shiro before 1.11.0 unaffected
 
 
 ### Description

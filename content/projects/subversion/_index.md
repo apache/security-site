@@ -124,7 +124,7 @@ _Last updated: 2021-03-17T09:12:33.507Z_
 
 ### Affected
 
-* Apache Subversion at mod_authz_svn 1.10.7
+* Apache Subversion at mod_authz_svn 1.10.7 unaffected
 * Apache Subversion from mod_authz_svn before 1.14.1
 
 

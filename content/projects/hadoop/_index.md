@@ -109,7 +109,7 @@ _Last updated: 2022-04-07T17:32:32.075Z_
 * Apache Hadoop at 3.3.1
 * Apache Hadoop at 3.3.2
 * Apache Hadoop from unspecified before 3.2.3
-* Apache Hadoop from 3.4 before All*
+* Apache Hadoop from 3.4 before All* unaffected
 
 
 ### Description

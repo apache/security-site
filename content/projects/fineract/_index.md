@@ -22,7 +22,7 @@ _Last updated: 2025-12-12T09:20:50.539Z_
 ### Affected
 
 * Apache Fineract through 1.11.0
-* Apache Fineract at 1.12.1
+* Apache Fineract at 1.12.1 unaffected
 
 
 ### Description
@@ -49,7 +49,7 @@ _Last updated: 2025-12-12T09:20:05.211Z_
 ### Affected
 
 * Apache Fineract through 1.11.0
-* Apache Fineract at 1.12.1
+* Apache Fineract at 1.12.1 unaffected
 
 
 ### Description
@@ -75,7 +75,7 @@ _Last updated: 2025-12-12T09:18:57.063Z_
 ### Affected
 
 * Apache Fineract through 1.10.1
-* Apache Fineract at 1.11.0
+* Apache Fineract at 1.11.0 unaffected
 
 
 ### Description
