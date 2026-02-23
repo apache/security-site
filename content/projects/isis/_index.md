@@ -13,33 +13,6 @@ Do you want disclose a potential security issue for Apache Isis? Send your repor
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
-## XSS vulnerability, eg for String properties. ## { #CVE-2022-42466 }
-
-CVE-2022-42466 [\[CVE json\]](./CVE-2022-42466.cve.json) [\[OSV json\]](./CVE-2022-42466.osv.json)
-
-
-
-_Last updated: 2022-10-19T07:20:06.791Z_
-
-### Affected
-
-* Apache Isis from unspecified before 2.0.0-M9
-
-
-### Description
-
-Prior to 2.0.0-M9, it was possible for an end-user to set the value of an editable string property of a domain object to a value that would be rendered unchanged when the value was saved.  In particular, the end-user could enter javascript or similar and this would be executed.
-
-As of this release, the inputted strings are properly escaped when rendered.
-
-### References
-* https://lists.apache.org/thread/83ftj5jgtv3mbm28w3trjyvd591jztrz
-
-
-### Credits
-* Apache Isis would like to thank Qing Xu for reporting this issue
-
-
 ## h2 webconsole (available only in prototype mode) should nevertheless be disabled by default. ## { #CVE-2022-42467 }
 
 CVE-2022-42467 [\[CVE json\]](./CVE-2022-42467.cve.json) [\[OSV json\]](./CVE-2022-42467.osv.json)
@@ -74,3 +47,30 @@ Note also that the h2 webconsole is never available in production mode, so these
 
 ### Credits
 * William Thomson
+
+
+## XSS vulnerability, eg for String properties. ## { #CVE-2022-42466 }
+
+CVE-2022-42466 [\[CVE json\]](./CVE-2022-42466.cve.json) [\[OSV json\]](./CVE-2022-42466.osv.json)
+
+
+
+_Last updated: 2022-10-19T07:20:06.791Z_
+
+### Affected
+
+* Apache Isis from unspecified before 2.0.0-M9
+
+
+### Description
+
+Prior to 2.0.0-M9, it was possible for an end-user to set the value of an editable string property of a domain object to a value that would be rendered unchanged when the value was saved.  In particular, the end-user could enter javascript or similar and this would be executed.
+
+As of this release, the inputted strings are properly escaped when rendered.
+
+### References
+* https://lists.apache.org/thread/83ftj5jgtv3mbm28w3trjyvd591jztrz
+
+
+### Credits
+* Apache Isis would like to thank Qing Xu for reporting this issue

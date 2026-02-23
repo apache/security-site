@@ -13,29 +13,29 @@ Do you want disclose a potential security issue for Apache Helix? Send your repo
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
-## Open redirect ## { #CVE-2022-47500 }
+## Helix front hard-coded secret in the express-session ## { #CVE-2024-22281 }
 
-CVE-2022-47500 [\[CVE json\]](./CVE-2022-47500.cve.json) [\[OSV json\]](./CVE-2022-47500.osv.json)
+CVE-2024-22281 [\[CVE json\]](./CVE-2024-22281.cve.json) [\[OSV json\]](./CVE-2024-22281.osv.json)
 
 
 
-_Last updated: 2022-12-19T09:23:48.197Z_
+_Last updated: 2024-08-20T22:11:36.792Z_
 
 ### Affected
 
-* Apache Helix from 0.8.0 through 1.0.4
+* Apache Helix Front (UI) through *
 
 
 ### Description
 
-URL Redirection to Untrusted Site ('Open Redirect') vulnerability in Apache Software Foundation Apache Helix UI component.<p>This issue affects Apache Helix all releases from 0.8.0 to 1.0.4.</p><p></p><b>Solution</b>: removed the the forward component since it was improper designed for UI embedding.<br><br><span style="background-color: rgb(255, 255, 255);">&nbsp;User please upgrade to 1.1.0 to fix this issue.<br></span><br>
+<p>** UNSUPPORTED WHEN ASSIGNED ** The Apache Helix Front (UI) component contained a hard-coded secret, allowing an attacker to spoof sessions by generating their own fake cookies.<br></p><p>This issue affects Apache Helix Front (UI): all versions.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
 
 ### References
-* https://lists.apache.org/thread/lr74xtxxbb1t3dfn5qzzwl2xjr3qlbmh
+* https://lists.apache.org/thread/zt26fpmrqx3fzcy8nv3b43kb3xllo5ny
 
 
 ### Credits
-* This issue was discovered by Everardo Padilla Saca (reporter)
+* Jonathan Leitschuh (finder)
 
 
 ## Deserialization vulnerability in Helix workflow and REST ## { #CVE-2023-38647 }
@@ -63,26 +63,26 @@ _Last updated: 2023-07-26T07:52:23.420Z_
 * Qing Xu (reporter)
 
 
-## Helix front hard-coded secret in the express-session ## { #CVE-2024-22281 }
+## Open redirect ## { #CVE-2022-47500 }
 
-CVE-2024-22281 [\[CVE json\]](./CVE-2024-22281.cve.json) [\[OSV json\]](./CVE-2024-22281.osv.json)
+CVE-2022-47500 [\[CVE json\]](./CVE-2022-47500.cve.json) [\[OSV json\]](./CVE-2022-47500.osv.json)
 
 
 
-_Last updated: 2024-08-20T22:11:36.792Z_
+_Last updated: 2022-12-19T09:23:48.197Z_
 
 ### Affected
 
-* Apache Helix Front (UI) through *
+* Apache Helix from 0.8.0 through 1.0.4
 
 
 ### Description
 
-<p>** UNSUPPORTED WHEN ASSIGNED ** The Apache Helix Front (UI) component contained a hard-coded secret, allowing an attacker to spoof sessions by generating their own fake cookies.<br></p><p>This issue affects Apache Helix Front (UI): all versions.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+URL Redirection to Untrusted Site ('Open Redirect') vulnerability in Apache Software Foundation Apache Helix UI component.<p>This issue affects Apache Helix all releases from 0.8.0 to 1.0.4.</p><p></p><b>Solution</b>: removed the the forward component since it was improper designed for UI embedding.<br><br><span style="background-color: rgb(255, 255, 255);">&nbsp;User please upgrade to 1.1.0 to fix this issue.<br></span><br>
 
 ### References
-* https://lists.apache.org/thread/zt26fpmrqx3fzcy8nv3b43kb3xllo5ny
+* https://lists.apache.org/thread/lr74xtxxbb1t3dfn5qzzwl2xjr3qlbmh
 
 
 ### Credits
-* Jonathan Leitschuh (finder)
+* This issue was discovered by Everardo Padilla Saca (reporter)

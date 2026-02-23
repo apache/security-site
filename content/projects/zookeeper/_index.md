@@ -13,32 +13,55 @@ Do you want disclose a potential security issue for Apache ZooKeeper? You can re
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://zookeeper.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
-## Authorization bypass in SASL Quorum Peer Authentication ## { #CVE-2023-44981 }
+## Insufficient Permission Check in AdminServer Snapshot/Restore Commands ## { #CVE-2025-58457 }
 
-CVE-2023-44981 [\[CVE json\]](./CVE-2023-44981.cve.json) [\[OSV json\]](./CVE-2023-44981.osv.json)
+CVE-2025-58457 [\[CVE json\]](./CVE-2025-58457.cve.json) [\[OSV json\]](./CVE-2025-58457.osv.json)
 
 
 
-_Last updated: 2023-10-11T11:55:41.759Z_
+_Last updated: 2025-09-24T09:29:42.132Z_
 
 ### Affected
 
-* Apache ZooKeeper from 3.9.0 before 3.9.1
-* Apache ZooKeeper from 3.8.0 through 3.8.2
-* Apache ZooKeeper from 3.7.0 through 3.7.1
-* Apache ZooKeeper before 3.7.0
+* Apache ZooKeeper from 3.9.0 before 3.9.4
 
 
 ### Description
 
-Authorization Bypass Through User-Controlled Key vulnerability in Apache ZooKeeper. If SASL Quorum Peer authentication is enabled in ZooKeeper (<code>quorum.auth.enableSasl=</code><code>true)</code>, the authorization is done by verifying that the instance part in SASL authentication ID is listed in zoo.cfg server list. The instance part in SASL auth ID is optional and if it's missing, like 'eve@EXAMPLE.COM', the authorization check will be skipped.&nbsp;<span style="background-color: rgb(255, 255, 255);">As a result an arbitrary endpoint could join the cluster and begin propagating counterfeit changes to the leader, essentially giving it complete read-write access to the data tree.&nbsp;<span style="background-color: rgb(255, 255, 255);">Quorum Peer authentication is not enabled by default.</span><br><br></span><span style="background-color: var(--wht);">Users are recommended to upgrade to version 3.9.1, 3.8.3, 3.7.2, which fixes the issue.<br><br></span><span style="background-color: rgb(255, 255, 255);">Alternately ensure the ensemble election/quorum communication is protected by a firewall as this will mitigate the issue.<br><br><span style="background-color: rgb(255, 255, 255);">See the documentation for more details on correct cluster administration.</span></span><br>
+<p>Improper permission check in ZooKeeper AdminServer lets authorized clients to run snapshot and restore command with insufficient permissions.</p><p>This issue affects Apache ZooKeeper: from 3.9.0 before 3.9.4.</p><p>Users are recommended to upgrade to version 3.9.4, which fixes the issue.</p><p>The issue can be mitigated by disabling both commands (via <code>admin.snapshot.enabled</code> and <code>admin.restore.enabled</code>), disabling the whole AdminServer interface (via <code>admin.enableServer</code>), or ensuring that the root ACL does not provide open permissions. (Note that ZooKeeper ACLs are not recursive, so this does not impact operations on child nodes besides notifications from recursive watches.)</p>
 
 ### References
-* https://lists.apache.org/thread/wf0yrk84dg1942z1o74kd8nycg6pgm5b
+* https://lists.apache.org/thread/r5yol0kkhx2fzw22pxk1ozwm3oc6yxrx
 
 
 ### Credits
 * Damien Diederen <ddiederen@apache.org> (reporter)
+
+
+## Authentication bypass with IP-based authentication in Admin Server ## { #CVE-2024-51504 }
+
+CVE-2024-51504 [\[CVE json\]](./CVE-2024-51504.cve.json) [\[OSV json\]](./CVE-2024-51504.osv.json)
+
+
+
+_Last updated: 2024-11-07T09:52:02.061Z_
+
+### Affected
+
+* Apache ZooKeeper from 3.9.0 before 3.9.3
+
+
+### Description
+
+When using IPAuthenticationProvider in ZooKeeper Admin Server there is a possibility of Authentication Bypass by Spoofing -- this only impacts IP based authentication implemented in ZooKeeper Admin Server. Default configuration of client's IP address detection in&nbsp;IPAuthenticationProvider, which uses HTTP request headers, is weak&nbsp;and allows an attacker to bypass authentication via spoofing client's IP address in request headers. Default configuration honors X-Forwarded-For HTTP header to read client's IP address. X-Forwarded-For request header is mainly used by proxy servers to identify the client and can be easily spoofed by an attacker pretending that the request comes from a different IP address. Admin Server commands, such as snapshot and restore arbitrarily can be executed on successful exploitation which could potentially lead to information leakage or service availability issues. Users are recommended to upgrade to version 3.9.3, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/b3qrmpkto5r6989qr61fw9y2x646kqlh
+
+
+### Credits
+* 4ra1n (reporter)
+* Y4tacker (reporter)
 
 
 ## Information disclosure in persistent watcher handling ## { #CVE-2024-23944 }
@@ -68,51 +91,28 @@ Information disclosure in persistent watchers handling in Apache ZooKeeper due t
 * 周吉安(寒泉) <zhoujian.zja@alibaba-inc.com> (reporter)
 
 
-## Authentication bypass with IP-based authentication in Admin Server ## { #CVE-2024-51504 }
+## Authorization bypass in SASL Quorum Peer Authentication ## { #CVE-2023-44981 }
 
-CVE-2024-51504 [\[CVE json\]](./CVE-2024-51504.cve.json) [\[OSV json\]](./CVE-2024-51504.osv.json)
+CVE-2023-44981 [\[CVE json\]](./CVE-2023-44981.cve.json) [\[OSV json\]](./CVE-2023-44981.osv.json)
 
 
 
-_Last updated: 2024-11-07T09:52:02.061Z_
+_Last updated: 2023-10-11T11:55:41.759Z_
 
 ### Affected
 
-* Apache ZooKeeper from 3.9.0 before 3.9.3
+* Apache ZooKeeper from 3.9.0 before 3.9.1
+* Apache ZooKeeper from 3.8.0 through 3.8.2
+* Apache ZooKeeper from 3.7.0 through 3.7.1
+* Apache ZooKeeper before 3.7.0
 
 
 ### Description
 
-When using IPAuthenticationProvider in ZooKeeper Admin Server there is a possibility of Authentication Bypass by Spoofing -- this only impacts IP based authentication implemented in ZooKeeper Admin Server. Default configuration of client's IP address detection in&nbsp;IPAuthenticationProvider, which uses HTTP request headers, is weak&nbsp;and allows an attacker to bypass authentication via spoofing client's IP address in request headers. Default configuration honors X-Forwarded-For HTTP header to read client's IP address. X-Forwarded-For request header is mainly used by proxy servers to identify the client and can be easily spoofed by an attacker pretending that the request comes from a different IP address. Admin Server commands, such as snapshot and restore arbitrarily can be executed on successful exploitation which could potentially lead to information leakage or service availability issues. Users are recommended to upgrade to version 3.9.3, which fixes this issue.
+Authorization Bypass Through User-Controlled Key vulnerability in Apache ZooKeeper. If SASL Quorum Peer authentication is enabled in ZooKeeper (<code>quorum.auth.enableSasl=</code><code>true)</code>, the authorization is done by verifying that the instance part in SASL authentication ID is listed in zoo.cfg server list. The instance part in SASL auth ID is optional and if it's missing, like 'eve@EXAMPLE.COM', the authorization check will be skipped.&nbsp;<span style="background-color: rgb(255, 255, 255);">As a result an arbitrary endpoint could join the cluster and begin propagating counterfeit changes to the leader, essentially giving it complete read-write access to the data tree.&nbsp;<span style="background-color: rgb(255, 255, 255);">Quorum Peer authentication is not enabled by default.</span><br><br></span><span style="background-color: var(--wht);">Users are recommended to upgrade to version 3.9.1, 3.8.3, 3.7.2, which fixes the issue.<br><br></span><span style="background-color: rgb(255, 255, 255);">Alternately ensure the ensemble election/quorum communication is protected by a firewall as this will mitigate the issue.<br><br><span style="background-color: rgb(255, 255, 255);">See the documentation for more details on correct cluster administration.</span></span><br>
 
 ### References
-* https://lists.apache.org/thread/b3qrmpkto5r6989qr61fw9y2x646kqlh
-
-
-### Credits
-* 4ra1n (reporter)
-* Y4tacker (reporter)
-
-
-## Insufficient Permission Check in AdminServer Snapshot/Restore Commands ## { #CVE-2025-58457 }
-
-CVE-2025-58457 [\[CVE json\]](./CVE-2025-58457.cve.json) [\[OSV json\]](./CVE-2025-58457.osv.json)
-
-
-
-_Last updated: 2025-09-24T09:29:42.132Z_
-
-### Affected
-
-* Apache ZooKeeper from 3.9.0 before 3.9.4
-
-
-### Description
-
-<p>Improper permission check in ZooKeeper AdminServer lets authorized clients to run snapshot and restore command with insufficient permissions.</p><p>This issue affects Apache ZooKeeper: from 3.9.0 before 3.9.4.</p><p>Users are recommended to upgrade to version 3.9.4, which fixes the issue.</p><p>The issue can be mitigated by disabling both commands (via <code>admin.snapshot.enabled</code> and <code>admin.restore.enabled</code>), disabling the whole AdminServer interface (via <code>admin.enableServer</code>), or ensuring that the root ACL does not provide open permissions. (Note that ZooKeeper ACLs are not recursive, so this does not impact operations on child nodes besides notifications from recursive watches.)</p>
-
-### References
-* https://lists.apache.org/thread/r5yol0kkhx2fzw22pxk1ozwm3oc6yxrx
+* https://lists.apache.org/thread/wf0yrk84dg1942z1o74kd8nycg6pgm5b
 
 
 ### Credits

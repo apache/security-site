@@ -13,140 +13,62 @@ Do you want disclose a potential security issue for Apache Hertzbeat? You can re
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://hertzbeat.apache.org/docs/help/security_model/). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
-## RCE by notice template injection vulnerability ## { #CVE-2024-41151 }
+## Uncontrolled Resource Consumption via Crafted XPath Expressions ## { #CVE-2026-24343 }
 
-CVE-2024-41151 [\[CVE json\]](./CVE-2024-41151.cve.json) [\[OSV json\]](./CVE-2024-41151.osv.json)
+CVE-2026-24343 [\[CVE json\]](./CVE-2026-24343.cve.json) [\[OSV json\]](./CVE-2026-24343.osv.json)
 
 
 
-_Last updated: 2025-04-16T11:19:50.180Z_
+_Last updated: 2026-02-09T15:07:42.730Z_
 
 ### Affected
 
-* Apache HertzBeat before 1.6.1
+* Apache HertzBeat from 1.7.1 before 1.8.0
 
 
 ### Description
 
-<p>Deserialization of Untrusted Data vulnerability in Apache HertzBeat.</p>This vulnerability can only be exploited by authorized attackers.<br><p></p><p>This issue affects Apache HertzBeat: before 1.6.1.</p><p>Users are recommended to upgrade to version 1.6.1, which fixes the issue.</p>
+<p>Improper Neutralization of Data within XPath Expressions ('XPath Injection') vulnerability in Apache HertzBeat.</p><p>This issue affects Apache HertzBeat: from 1.7.1 before 1.8.0.</p><p>Users are recommended to upgrade to version 1.8.0, which fixes the issue.</p>
 
 ### References
-* https://lists.apache.org/thread/p33tg0vo5nh6kscth4262ktsqo3h5lqo
-* https://lists.apache.org/thread/oor9nw6nh2ojnfw8d8oxrv40cbtk5mwj
+* https://lists.apache.org/thread/b2k3jqwffrbo2sy6bl4n0f68kp8bfo1n
 
 
-### Credits
-* Li Yi Wei (finder)
-* Elin Kai (finder)
+## Jmx JNDI injection vulnerability ## { #CVE-2025-48208 }
 
-
-## RCE by snakeYaml deser load malicious xml  ## { #CVE-2024-42323 }
-
-CVE-2024-42323 [\[CVE json\]](./CVE-2024-42323.cve.json) [\[OSV json\]](./CVE-2024-42323.osv.json)
+CVE-2025-48208 [\[CVE json\]](./CVE-2025-48208.cve.json) [\[OSV json\]](./CVE-2025-48208.osv.json)
 
 
 
-_Last updated: 2024-09-21T09:30:13.062Z_
+_Last updated: 2025-09-09T09:31:33.928Z_
 
 ### Affected
 
-* Apache HertzBeat before 1.6.0
+* Apache HertzBeat (incubating) through 1.7.2
 
 
 ### Description
 
-<p>SnakeYaml Deser Load Malicious xml rce vulnerability in Apache HertzBeat (incubating).&nbsp;</p>This vulnerability can only be exploited by authorized attackers.<br><p>This issue affects Apache HertzBeat (incubating): before 1.6.0.</p><p>Users are recommended to upgrade to version 1.6.0, which fixes the issue.</p><br>
+<p>Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection') vulnerability in Apache HertzBeat .</p>
+
+
+
+
+
+
+
+
+
+
+<p>The attacker needs to have an authenticated account with access, and the attack can only be triggered by crafting custom commands. A successful attack would result in arbitrary script execution.</p><p>This issue affects Apache HertzBeat: through 1.7.2.</p><p>Users are recommended to upgrade to version [1.7.3], which fixes the issue.</p>
 
 ### References
-* https://lists.apache.org/thread/r0c4tost4bllqc1n9q6rmzs1slgsq63t
-* https://lists.apache.org/thread/dwpwm572sbwon1mknlwhkpbom2y7skbx
+* https://lists.apache.org/thread/3zrr3oo67pxxx7wgzj80kglltfshngn2
 
 
 ### Credits
-* Yulate (reporter)
-* Liufeng Yi  (reporter)
-
-
-## Exists Native Deser RCE and file writing vulnerabilities ## { #CVE-2024-45505 }
-
-CVE-2024-45505 [\[CVE json\]](./CVE-2024-45505.cve.json) [\[OSV json\]](./CVE-2024-45505.osv.json)
-
-
-
-_Last updated: 2024-11-18T08:44:44.304Z_
-
-### Affected
-
-* Apache HertzBeat before 1.6.1
-
-
-### Description
-
-<p>Improper Neutralization of Special Elements used in a Command ('Command Injection') vulnerability in Apache HertzBeat (incubating).</p>This vulnerability can only be exploited by authorized attackers.<br><p>This issue affects Apache HertzBeat (incubating): before 1.6.1.</p><p>Users are recommended to upgrade to version 1.6.1, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread/h8k14o1bfyod66p113pkgnt1s52p6p19
-* https://lists.apache.org/thread/gvbc68krhqhht7mkkkx7k13k6k6fdhy0
-
-
-### Credits
-* Unam4 (finder)
-* Springkilll (finder)
-* yemoli (finder)
-* yulate (finder)
-
-
-## Exposure sensitive token via http GET method with query string ## { #CVE-2024-45791 }
-
-CVE-2024-45791 [\[CVE json\]](./CVE-2024-45791.cve.json) [\[OSV json\]](./CVE-2024-45791.osv.json)
-
-
-
-_Last updated: 2024-11-18T08:45:21.798Z_
-
-### Affected
-
-* Apache HertzBeat before 1.6.1
-
-
-### Description
-
-<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache HertzBeat.</p><p>This issue affects Apache HertzBeat: before 1.6.1.</p><p>Users are recommended to upgrade to version 1.6.1, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread/jmbsfjsvrfnvosh1ftrm3ry4j3sb7doz
-* https://lists.apache.org/thread/lvsczrp8kdynppmzyxtkh4ord4gpw1ph
-
-
-### Credits
-* Ícaro Torres (finder)
-
-
-## Server-Side Request Forgery (SSRF) in Api Config Oss ## { #CVE-2024-56736 }
-
-CVE-2024-56736 [\[CVE json\]](./CVE-2024-56736.cve.json) [\[OSV json\]](./CVE-2024-56736.osv.json)
-
-
-
-_Last updated: 2025-04-16T15:38:09.273Z_
-
-### Affected
-
-* Apache HertzBeat before 1.7.0
-
-
-### Description
-
-<p>Server-Side Request Forgery (SSRF) vulnerability in Apache HertzBeat.</p><p>This issue affects Apache HertzBeat (incubating): before 1.7.0.</p><p>Users are recommended to upgrade to version 1.7.0, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread/kdzg36h9yxp0q0n4lhcfppxntjy8rj1x
-* https://lists.apache.org/thread/lwfhsllos1rx9v8k0yhl252cbpqpn0sv
-
-
-### Credits
-* tonghuaroot (finder)
-* zyufoye (finder)
+* F10wers13eiCHeng (finder)
+* aftersnow (finder)
 
 
 ## RCE by parse http sitemap xml response ## { #CVE-2025-24404 }
@@ -187,38 +109,137 @@ _Last updated: 2025-09-09T09:30:57.298Z_
 * Zoiltin (finder)
 
 
-## Jmx JNDI injection vulnerability ## { #CVE-2025-48208 }
+## Server-Side Request Forgery (SSRF) in Api Config Oss ## { #CVE-2024-56736 }
 
-CVE-2025-48208 [\[CVE json\]](./CVE-2025-48208.cve.json) [\[OSV json\]](./CVE-2025-48208.osv.json)
+CVE-2024-56736 [\[CVE json\]](./CVE-2024-56736.cve.json) [\[OSV json\]](./CVE-2024-56736.osv.json)
 
 
 
-_Last updated: 2025-09-09T09:31:33.928Z_
+_Last updated: 2025-04-16T15:38:09.273Z_
 
 ### Affected
 
-* Apache HertzBeat (incubating) through 1.7.2
+* Apache HertzBeat before 1.7.0
 
 
 ### Description
 
-<p>Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection') vulnerability in Apache HertzBeat .</p>
-
-
-
-
-
-
-
-
-
-
-<p>The attacker needs to have an authenticated account with access, and the attack can only be triggered by crafting custom commands. A successful attack would result in arbitrary script execution.</p><p>This issue affects Apache HertzBeat: through 1.7.2.</p><p>Users are recommended to upgrade to version [1.7.3], which fixes the issue.</p>
+<p>Server-Side Request Forgery (SSRF) vulnerability in Apache HertzBeat.</p><p>This issue affects Apache HertzBeat (incubating): before 1.7.0.</p><p>Users are recommended to upgrade to version 1.7.0, which fixes the issue.</p>
 
 ### References
-* https://lists.apache.org/thread/3zrr3oo67pxxx7wgzj80kglltfshngn2
+* https://lists.apache.org/thread/kdzg36h9yxp0q0n4lhcfppxntjy8rj1x
+* https://lists.apache.org/thread/lwfhsllos1rx9v8k0yhl252cbpqpn0sv
 
 
 ### Credits
-* F10wers13eiCHeng (finder)
-* aftersnow (finder)
+* tonghuaroot (finder)
+* zyufoye (finder)
+
+
+## Exposure sensitive token via http GET method with query string ## { #CVE-2024-45791 }
+
+CVE-2024-45791 [\[CVE json\]](./CVE-2024-45791.cve.json) [\[OSV json\]](./CVE-2024-45791.osv.json)
+
+
+
+_Last updated: 2024-11-18T08:45:21.798Z_
+
+### Affected
+
+* Apache HertzBeat before 1.6.1
+
+
+### Description
+
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache HertzBeat.</p><p>This issue affects Apache HertzBeat: before 1.6.1.</p><p>Users are recommended to upgrade to version 1.6.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/jmbsfjsvrfnvosh1ftrm3ry4j3sb7doz
+* https://lists.apache.org/thread/lvsczrp8kdynppmzyxtkh4ord4gpw1ph
+
+
+### Credits
+* Ícaro Torres (finder)
+
+
+## Exists Native Deser RCE and file writing vulnerabilities ## { #CVE-2024-45505 }
+
+CVE-2024-45505 [\[CVE json\]](./CVE-2024-45505.cve.json) [\[OSV json\]](./CVE-2024-45505.osv.json)
+
+
+
+_Last updated: 2024-11-18T08:44:44.304Z_
+
+### Affected
+
+* Apache HertzBeat before 1.6.1
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in a Command ('Command Injection') vulnerability in Apache HertzBeat (incubating).</p>This vulnerability can only be exploited by authorized attackers.<br><p>This issue affects Apache HertzBeat (incubating): before 1.6.1.</p><p>Users are recommended to upgrade to version 1.6.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/h8k14o1bfyod66p113pkgnt1s52p6p19
+* https://lists.apache.org/thread/gvbc68krhqhht7mkkkx7k13k6k6fdhy0
+
+
+### Credits
+* Unam4 (finder)
+* Springkilll (finder)
+* yemoli (finder)
+* yulate (finder)
+
+
+## RCE by snakeYaml deser load malicious xml  ## { #CVE-2024-42323 }
+
+CVE-2024-42323 [\[CVE json\]](./CVE-2024-42323.cve.json) [\[OSV json\]](./CVE-2024-42323.osv.json)
+
+
+
+_Last updated: 2024-09-21T09:30:13.062Z_
+
+### Affected
+
+* Apache HertzBeat before 1.6.0
+
+
+### Description
+
+<p>SnakeYaml Deser Load Malicious xml rce vulnerability in Apache HertzBeat (incubating).&nbsp;</p>This vulnerability can only be exploited by authorized attackers.<br><p>This issue affects Apache HertzBeat (incubating): before 1.6.0.</p><p>Users are recommended to upgrade to version 1.6.0, which fixes the issue.</p><br>
+
+### References
+* https://lists.apache.org/thread/r0c4tost4bllqc1n9q6rmzs1slgsq63t
+* https://lists.apache.org/thread/dwpwm572sbwon1mknlwhkpbom2y7skbx
+
+
+### Credits
+* Yulate (reporter)
+* Liufeng Yi  (reporter)
+
+
+## RCE by notice template injection vulnerability ## { #CVE-2024-41151 }
+
+CVE-2024-41151 [\[CVE json\]](./CVE-2024-41151.cve.json) [\[OSV json\]](./CVE-2024-41151.osv.json)
+
+
+
+_Last updated: 2025-04-16T11:19:50.180Z_
+
+### Affected
+
+* Apache HertzBeat before 1.6.1
+
+
+### Description
+
+<p>Deserialization of Untrusted Data vulnerability in Apache HertzBeat.</p>This vulnerability can only be exploited by authorized attackers.<br><p></p><p>This issue affects Apache HertzBeat: before 1.6.1.</p><p>Users are recommended to upgrade to version 1.6.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/p33tg0vo5nh6kscth4262ktsqo3h5lqo
+* https://lists.apache.org/thread/oor9nw6nh2ojnfw8d8oxrv40cbtk5mwj
+
+
+### Credits
+* Li Yi Wei (finder)
+* Elin Kai (finder)

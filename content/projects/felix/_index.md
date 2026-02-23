@@ -13,31 +13,29 @@ Do you want disclose a potential security issue for Apache Felix? Send your repo
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
-## XSS in healthcheck webconsole plugin ## { #CVE-2023-38435 }
+## XSS in HTTP Webconsole Plugin ## { #CVE-2025-27867 }
 
-CVE-2023-38435 [\[CVE json\]](./CVE-2023-38435.cve.json) [\[OSV json\]](./CVE-2023-38435.osv.json)
+CVE-2025-27867 [\[CVE json\]](./CVE-2025-27867.cve.json) [\[OSV json\]](./CVE-2025-27867.osv.json)
 
 
 
-_Last updated: 2023-07-31T08:08:18.396Z_
+_Last updated: 2025-03-12T15:51:23.297Z_
 
 ### Affected
 
-* Apache Felix Healthcheck Webconsole Plugin through 2.0.2
+* Apache Felix HTTP Webconsole Plugin from 1.x through 1.2.0
 
 
 ### Description
 
-
-
-An improper neutralization of input during web page generation ('Cross-site Scripting') [CWE-79] vulnerability in Apache Felix Healthcheck Webconsole Plugin version 2.0.2 and prior may allow an attacker to perform a reflected cross-site scripting (XSS) attack.<br><br><span style="background-color: rgb(255, 255, 255);">Upgrade to Apache Felix Healthcheck Webconsole Plugin 2.1.0 or higher.</span>
+<p>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache Felix HTTP Webconsole Plugin.</p><p>This issue affects Apache Felix HTTP Webconsole Plugin: from Version 1.X through 1.2.0.</p><p>Users are recommended to upgrade to version 1.2.2, which fixes the issue.</p>
 
 ### References
-* https://lists.apache.org/thread/r3blhp3onr4rdbkgdyglqnccg0v79pfv
+* https://lists.apache.org/thread/y83f2rvm8bccr5ctgv7mzxd69p6f77dp
 
 
 ### Credits
-*  This vulnerability was found by xray web vulnerability scanner (github.com/chaitin/xray) (finder)
+* Viktor Mares (me@viktormares.com) (finder)
 
 
 ## XSS in services console ## { #CVE-2025-25247 }
@@ -66,26 +64,28 @@ _Last updated: 2025-02-10T11:16:58.175Z_
 * Viktor Mares (me@viktormares.com) (finder)
 
 
-## XSS in HTTP Webconsole Plugin ## { #CVE-2025-27867 }
+## XSS in healthcheck webconsole plugin ## { #CVE-2023-38435 }
 
-CVE-2025-27867 [\[CVE json\]](./CVE-2025-27867.cve.json) [\[OSV json\]](./CVE-2025-27867.osv.json)
+CVE-2023-38435 [\[CVE json\]](./CVE-2023-38435.cve.json) [\[OSV json\]](./CVE-2023-38435.osv.json)
 
 
 
-_Last updated: 2025-03-12T15:51:23.297Z_
+_Last updated: 2023-07-31T08:08:18.396Z_
 
 ### Affected
 
-* Apache Felix HTTP Webconsole Plugin from 1.x through 1.2.0
+* Apache Felix Healthcheck Webconsole Plugin through 2.0.2
 
 
 ### Description
 
-<p>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache Felix HTTP Webconsole Plugin.</p><p>This issue affects Apache Felix HTTP Webconsole Plugin: from Version 1.X through 1.2.0.</p><p>Users are recommended to upgrade to version 1.2.2, which fixes the issue.</p>
+
+
+An improper neutralization of input during web page generation ('Cross-site Scripting') [CWE-79] vulnerability in Apache Felix Healthcheck Webconsole Plugin version 2.0.2 and prior may allow an attacker to perform a reflected cross-site scripting (XSS) attack.<br><br><span style="background-color: rgb(255, 255, 255);">Upgrade to Apache Felix Healthcheck Webconsole Plugin 2.1.0 or higher.</span>
 
 ### References
-* https://lists.apache.org/thread/y83f2rvm8bccr5ctgv7mzxd69p6f77dp
+* https://lists.apache.org/thread/r3blhp3onr4rdbkgdyglqnccg0v79pfv
 
 
 ### Credits
-* Viktor Mares (me@viktormares.com) (finder)
+*  This vulnerability was found by xray web vulnerability scanner (github.com/chaitin/xray) (finder)

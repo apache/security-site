@@ -13,82 +13,55 @@ Do you want disclose a potential security issue for Apache Spark? You can read m
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://spark.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
-## Apache Spark Key Negotiation Vulnerability ## { #CVE-2021-38296 }
+## RPC encryption defaults to unauthenticated AES-CTR mode, enabling man-in-the-middle ciphertext modification attacks ## { #CVE-2025-55039 }
 
-CVE-2021-38296 [\[CVE json\]](./CVE-2021-38296.cve.json) [\[OSV json\]](./CVE-2021-38296.osv.json)
+CVE-2025-55039 [\[CVE json\]](./CVE-2025-55039.cve.json) [\[OSV json\]](./CVE-2025-55039.osv.json)
 
 
 
-_Last updated: 2022-03-10T08:16:48.042Z_
+_Last updated: 2025-10-14T20:48:57.896Z_
 
 ### Affected
 
-* Apache Spark from up to and including version 3.1.2 through 3.1.2
+* Apache Spark from 3.5.0 before 3.5.2
+* Apache Spark before 3.4.4
+* Apache Spark from 3.5.0 before 3.5.2
+* Apache Spark before 3.4.4
 
 
 ### Description
 
-Apache Spark supports end-to-end encryption of RPC connections via "spark.authenticate" and "spark.network.crypto.enabled". In versions 3.1.2 and earlier, it uses a bespoke mutual authentication protocol that allows for full encryption key recovery. After an initial interactive attack, this would allow someone to decrypt plaintext traffic offline. Note that this does not affect security mechanisms controlled by "spark.authenticate.enableSaslEncryption", "spark.io.encryption.enabled", "spark.ssl", "spark.ui.strictTransportSecurity".  Update to Apache Spark 3.1.3 or later
+<p>This issue affects Apache Spark versions before  3.4.4,&nbsp;3.5.2 and 4.0.0.</p><p></p>Apache Spark versions before 4.0.0, 3.5.2 and 3.4.4 use an insecure default network encryption cipher for RPC communication between nodes.<p></p><p>When <code>spark.network.crypto.enabled</code> is set to true (it is set to false by default), but <code>spark.network.crypto.cipher</code> is not explicitly configured, Spark defaults to AES in CTR mode (<code>AES/CTR/NoPadding</code>), which provides encryption without authentication.</p><p>This vulnerability allows a man-in-the-middle attacker to modify encrypted RPC traffic undetected by flipping bits in ciphertext, potentially compromising heartbeat messages or application data and affecting the integrity of Spark workflows.<br></p><p>To mitigate this issue, users should either configure <code>spark.network.crypto.cipher</code> to <code>AES/GCM/NoPadding</code> to enable authenticated encryption or</p><p>enable SSL encryption by setting <code>spark.ssl.enabled</code> to true, which provides stronger transport security.</p>
 
 ### References
-* https://lists.apache.org/thread/70x8fw2gx3g9ty7yk0f2f1dlpqml2smd
+* https://lists.apache.org/thread/zrgyy9l85nm2c7vk36vr7bkyorg3w4qq
 
 
-### Credits
-* Steve Weis (Databricks)
+## Shell command injection via Spark UI ## { #CVE-2023-32007 }
 
-
-## Apache Spark XSS vulnerability in log viewer UI Javascript ## { #CVE-2022-31777 }
-
-CVE-2022-31777 [\[CVE json\]](./CVE-2022-31777.cve.json) [\[OSV json\]](./CVE-2022-31777.osv.json)
+CVE-2023-32007 [\[CVE json\]](./CVE-2023-32007.cve.json) [\[OSV json\]](./CVE-2023-32007.osv.json)
 
 
 
-_Last updated: 2022-11-01T15:31:47.242Z_
+_Last updated: 2023-05-02T08:37:02.283Z_
 
 ### Affected
 
-* Apache Spark at 3.3.0
-* Apache Spark from 3.2.1 and earlier through 3.2.1
+* Apache Spark from 3.1.1 before 3.2.2
 
 
 ### Description
 
-A stored cross-site scripting (XSS) vulnerability in Apache Spark 3.2.1 and earlier, and 3.3.0, allows remote attackers to execute arbitrary JavaScript in the web browser of a user, by including a malicious payload into the logs which would be returned in logs rendered in the UI.
+<div>** UNSUPPORTED WHEN ASSIGNED ** The Apache Spark UI offers the possibility to enable ACLs via the configuration option spark.acls.enable. With an authentication filter, this checks whether a user has access permissions to view or modify the application. If ACLs are enabled, a code path in HttpSecurityFilter can allow someone to perform impersonation by providing an arbitrary user name. A malicious user might then be able to reach a permission check function that will ultimately build a Unix shell command based on their input, and execute it. This will result in arbitrary shell command execution as the user Spark is currently running as. This issue was disclosed earlier as CVE-2022-33891, but incorrectly claimed version 3.1.3 (which has since gone EOL) would not be affected.</div><div>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</div><div>Users are recommended to upgrade to a supported version of Apache Spark, such as version 3.4.0.<br></div>
 
 ### References
-* https://lists.apache.org/thread/60mgbswq2lsmrxykfxpqq13ztkm2ht6q
+* https://www.cve.org/CVERecord?id=CVE-2022-33891
+* https://spark.apache.org/security.html
+* https://lists.apache.org/thread/poxgnxhhnzz735kr1wos366l5vdbb0nv
 
 
 ### Credits
-* Florian Walter (Veracode)
-
-
-## Apache Spark shell command injection vulnerability via Spark UI ## { #CVE-2022-33891 }
-
-CVE-2022-33891 [\[CVE json\]](./CVE-2022-33891.cve.json) [\[OSV json\]](./CVE-2022-33891.osv.json)
-
-
-
-_Last updated: 2022-07-18T06:58:42.467Z_
-
-### Affected
-
-* Apache Spark from 3.0.3 and earlier through 3.0.3
-* Apache Spark from 3.1.1 to 3.1.2 through 3.1.2
-* Apache Spark from 3.2.0 to 3.2.1 through 3.2.1
-
-
-### Description
-
-The Apache Spark UI offers the possibility to enable ACLs via the configuration option spark.acls.enable. With an authentication filter, this checks whether a user has access permissions to view or modify the application. If ACLs are enabled, a code path in HttpSecurityFilter can allow someone to perform impersonation by providing an arbitrary user name. A malicious user might then be able to reach a permission check function that will ultimately build a Unix shell command based on their input, and execute it. This will result in arbitrary shell command execution as the user Spark is currently running as. This affects Apache Spark versions 3.0.3 and earlier, versions 3.1.1 to 3.1.2, and versions 3.2.0 to 3.2.1.
-
-### References
-* https://lists.apache.org/thread/p847l3kopoo5bjtmxrcwk21xp6tjxqlc
-
-
-### Credits
-*  Kostya Kortchinsky (Databricks)
+* Sven Krewitt, Flashpoint (reporter)
 
 
 ## Apache Spark proxy-user privilege escalation from malicious configuration class ## { #CVE-2023-22946 }
@@ -119,52 +92,79 @@ default of "false", and is not overridden by submitted applications.<br></div>
 * Yi Wu (Databricks) (remediation developer)
 
 
-## Shell command injection via Spark UI ## { #CVE-2023-32007 }
+## Apache Spark shell command injection vulnerability via Spark UI ## { #CVE-2022-33891 }
 
-CVE-2023-32007 [\[CVE json\]](./CVE-2023-32007.cve.json) [\[OSV json\]](./CVE-2023-32007.osv.json)
+CVE-2022-33891 [\[CVE json\]](./CVE-2022-33891.cve.json) [\[OSV json\]](./CVE-2022-33891.osv.json)
 
 
 
-_Last updated: 2023-05-02T08:37:02.283Z_
+_Last updated: 2022-07-18T06:58:42.467Z_
 
 ### Affected
 
-* Apache Spark from 3.1.1 before 3.2.2
+* Apache Spark from 3.0.3 and earlier through 3.0.3
+* Apache Spark from 3.1.1 to 3.1.2 through 3.1.2
+* Apache Spark from 3.2.0 to 3.2.1 through 3.2.1
 
 
 ### Description
 
-<div>** UNSUPPORTED WHEN ASSIGNED ** The Apache Spark UI offers the possibility to enable ACLs via the configuration option spark.acls.enable. With an authentication filter, this checks whether a user has access permissions to view or modify the application. If ACLs are enabled, a code path in HttpSecurityFilter can allow someone to perform impersonation by providing an arbitrary user name. A malicious user might then be able to reach a permission check function that will ultimately build a Unix shell command based on their input, and execute it. This will result in arbitrary shell command execution as the user Spark is currently running as. This issue was disclosed earlier as CVE-2022-33891, but incorrectly claimed version 3.1.3 (which has since gone EOL) would not be affected.</div><div>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</div><div>Users are recommended to upgrade to a supported version of Apache Spark, such as version 3.4.0.<br></div>
+The Apache Spark UI offers the possibility to enable ACLs via the configuration option spark.acls.enable. With an authentication filter, this checks whether a user has access permissions to view or modify the application. If ACLs are enabled, a code path in HttpSecurityFilter can allow someone to perform impersonation by providing an arbitrary user name. A malicious user might then be able to reach a permission check function that will ultimately build a Unix shell command based on their input, and execute it. This will result in arbitrary shell command execution as the user Spark is currently running as. This affects Apache Spark versions 3.0.3 and earlier, versions 3.1.1 to 3.1.2, and versions 3.2.0 to 3.2.1.
 
 ### References
-* https://www.cve.org/CVERecord?id=CVE-2022-33891
-* https://spark.apache.org/security.html
-* https://lists.apache.org/thread/poxgnxhhnzz735kr1wos366l5vdbb0nv
+* https://lists.apache.org/thread/p847l3kopoo5bjtmxrcwk21xp6tjxqlc
 
 
 ### Credits
-* Sven Krewitt, Flashpoint (reporter)
+*  Kostya Kortchinsky (Databricks)
 
 
-## RPC encryption defaults to unauthenticated AES-CTR mode, enabling man-in-the-middle ciphertext modification attacks ## { #CVE-2025-55039 }
+## Apache Spark XSS vulnerability in log viewer UI Javascript ## { #CVE-2022-31777 }
 
-CVE-2025-55039 [\[CVE json\]](./CVE-2025-55039.cve.json) [\[OSV json\]](./CVE-2025-55039.osv.json)
+CVE-2022-31777 [\[CVE json\]](./CVE-2022-31777.cve.json) [\[OSV json\]](./CVE-2022-31777.osv.json)
 
 
 
-_Last updated: 2025-10-14T20:48:57.896Z_
+_Last updated: 2022-11-01T15:31:47.242Z_
 
 ### Affected
 
-* Apache Spark from 3.5.0 before 3.5.2
-* Apache Spark before 3.4.4
-* Apache Spark from 3.5.0 before 3.5.2
-* Apache Spark before 3.4.4
+* Apache Spark at 3.3.0
+* Apache Spark from 3.2.1 and earlier through 3.2.1
 
 
 ### Description
 
-<p>This issue affects Apache Spark versions before  3.4.4,&nbsp;3.5.2 and 4.0.0.</p><p></p>Apache Spark versions before 4.0.0, 3.5.2 and 3.4.4 use an insecure default network encryption cipher for RPC communication between nodes.<p></p><p>When <code>spark.network.crypto.enabled</code> is set to true (it is set to false by default), but <code>spark.network.crypto.cipher</code> is not explicitly configured, Spark defaults to AES in CTR mode (<code>AES/CTR/NoPadding</code>), which provides encryption without authentication.</p><p>This vulnerability allows a man-in-the-middle attacker to modify encrypted RPC traffic undetected by flipping bits in ciphertext, potentially compromising heartbeat messages or application data and affecting the integrity of Spark workflows.<br></p><p>To mitigate this issue, users should either configure <code>spark.network.crypto.cipher</code> to <code>AES/GCM/NoPadding</code> to enable authenticated encryption or</p><p>enable SSL encryption by setting <code>spark.ssl.enabled</code> to true, which provides stronger transport security.</p>
+A stored cross-site scripting (XSS) vulnerability in Apache Spark 3.2.1 and earlier, and 3.3.0, allows remote attackers to execute arbitrary JavaScript in the web browser of a user, by including a malicious payload into the logs which would be returned in logs rendered in the UI.
 
 ### References
-* https://lists.apache.org/thread/zrgyy9l85nm2c7vk36vr7bkyorg3w4qq
+* https://lists.apache.org/thread/60mgbswq2lsmrxykfxpqq13ztkm2ht6q
+
+
+### Credits
+* Florian Walter (Veracode)
+
+
+## Apache Spark Key Negotiation Vulnerability ## { #CVE-2021-38296 }
+
+CVE-2021-38296 [\[CVE json\]](./CVE-2021-38296.cve.json) [\[OSV json\]](./CVE-2021-38296.osv.json)
+
+
+
+_Last updated: 2022-03-10T08:16:48.042Z_
+
+### Affected
+
+* Apache Spark from up to and including version 3.1.2 through 3.1.2
+
+
+### Description
+
+Apache Spark supports end-to-end encryption of RPC connections via "spark.authenticate" and "spark.network.crypto.enabled". In versions 3.1.2 and earlier, it uses a bespoke mutual authentication protocol that allows for full encryption key recovery. After an initial interactive attack, this would allow someone to decrypt plaintext traffic offline. Note that this does not affect security mechanisms controlled by "spark.authenticate.enableSaslEncryption", "spark.io.encryption.enabled", "spark.ssl", "spark.ui.strictTransportSecurity".  Update to Apache Spark 3.1.3 or later
+
+### References
+* https://lists.apache.org/thread/70x8fw2gx3g9ty7yk0f2f1dlpqml2smd
+
+
+### Credits
+* Steve Weis (Databricks)

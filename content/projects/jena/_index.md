@@ -13,127 +13,50 @@ Do you want disclose a potential security issue for Apache Jena? Send your repor
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
-## Display information UI XSS ## { #CVE-2021-33192 }
+## Configuration files uploaded by administrative users are not check properly ## { #CVE-2025-50151 }
 
-CVE-2021-33192 [\[CVE json\]](./CVE-2021-33192.cve.json) [\[OSV json\]](./CVE-2021-33192.osv.json)
+CVE-2025-50151 [\[CVE json\]](./CVE-2025-50151.cve.json) [\[OSV json\]](./CVE-2025-50151.osv.json)
 
 
 
-_Last updated: 2021-07-05T09:09:33.148Z_
+_Last updated: 2025-07-21T09:32:27.896Z_
 
 ### Affected
 
-* Apache Jena Fuseki at Apache Jena Fuseki2 2.0.0 to 4.0.0
+* Apache Jena through 5.4.0
 
 
 ### Description
 
-A vulnerability in the HTML pages of Apache Jena Fuseki allows an attacker to execute arbitrary javascript on certain page views.  This issue affects Apache Jena Fuseki from version 2.0.0 to version 4.0.0 (inclusive).
+<div>File access paths in configuration files uploaded by users with administrator access are not validated.</div><div><p>This issue affects Apache Jena version up to 5.4.0.</p><p>Users are recommended to upgrade to version 5.5.0, which does not allow arbitrary configuration upload.</p><br></div>
 
 ### References
-* https://lists.apache.org/thread.html/r684d8943d755a96fe90f8cd8df196737b6bde3f2b74e15a9bd479975%40%3Cusers.jena.apache.org%3E
+* https://lists.apache.org/thread/12gks5z40gh9bszn1xk8mz34gz586xss
+
+
+## Administrative users can create files outside the server directory space via the admin UI ## { #CVE-2025-49656 }
+
+CVE-2025-49656 [\[CVE json\]](./CVE-2025-49656.cve.json) [\[OSV json\]](./CVE-2025-49656.osv.json)
+
+
+
+_Last updated: 2025-07-21T09:30:16.936Z_
+
+### Affected
+
+* Apache Jena through 5.4.0
+
+
+### Description
+
+<p>Users with administrator access can create databases files outside the files area of the Fuseki server.</p><p>This issue affects Apache Jena version up to 5.4.0.</p><p>Users are recommended to upgrade to version 5.5.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/qmm21som8zct813vx6dfd1phnfro6mwq
 
 
 ### Credits
-* Apache Jena would like to thank Luka Safonov for reporting this issue.
-
-
-## XML External Entity (XXE) vulnerability ## { #CVE-2021-39239 }
-
-CVE-2021-39239 [\[CVE json\]](./CVE-2021-39239.cve.json) [\[OSV json\]](./CVE-2021-39239.osv.json)
-
-
-
-_Last updated: 2021-09-16T14:16:06.658Z_
-
-### Affected
-
-* Apache Jena from unspecified before 4.1.0
-
-
-### Description
-
-A vulnerability in XML processing in Apache Jena, in versions up to 4.1.0, may allow an attacker to execute XML External Entities (XXE), including exposing the contents of local files to a remote server.
-
-### References
-* https://lists.apache.org/thread.html/rf44d529c54ef1d0097e813f576a0823a727e1669a9f610d3221d493d%40%3Cusers.jena.apache.org%3E
-
-
-## Processing external DTDs ## { #CVE-2022-28890 }
-
-CVE-2022-28890 [\[CVE json\]](./CVE-2022-28890.cve.json) [\[OSV json\]](./CVE-2022-28890.osv.json)
-
-
-
-_Last updated: 2022-05-05T08:34:36.622Z_
-
-### Affected
-
-* Apache Jena from Apache Jena through 4.4.0
-
-
-### Description
-
-A vulnerability in the RDF/XML parser of Apache Jena allows an attacker to cause an external DTD to be retrieved.  This issue affects Apache Jena version 4.4.0 and prior versions.  Apache Jena 4.2.x and 4.3.x do not allow external entities.
-
-### References
-* https://lists.apache.org/thread/h88oh642455wljo0p5jgzs9phk4gj878
-
-
-### Credits
-* Apache Jena would like to thank Feras Daragma, Avishag Shapira & Amit Laish (GE Digital, Cyber Security Lab) for their report.
-
-
-## Apache Jena SDB allows arbitrary deserialisation via JDBC ## { #CVE-2022-45136 }
-
-CVE-2022-45136 [\[CVE json\]](./CVE-2022-45136.cve.json) [\[OSV json\]](./CVE-2022-45136.osv.json)
-
-
-
-_Last updated: 2022-11-14T15:41:09.479Z_
-
-### Affected
-
-* Apache Jena SDB from unspecified through 3.17.0
-
-
-### Description
-
-Apache Jena SDB 3.17.0 and earlier is vulnerable to a JDBC Deserialisation attack if the attacker is able to control the JDBC URL used or cause the underlying database server to return malicious data.  The mySQL JDBC driver in particular is known to be vulnerable to this class of attack.  As a result an application using Apache Jena SDB can be subject to RCE when connected to a malicious database server.
-
-Apache Jena SDB has been EOL since December 2020 and users should migrate to alternative options e.g. Apache Jena TDB 2
-
-### References
-* https://lists.apache.org/thread/mc77cdl5stgjtjoldk467gdf756qjt31
-
-
-### Credits
-* Apache Jena would like to thank Crilwa & LaNyer640 for reporting this issue
-
-
-## Exposure of arbitrary execution in script engine expressions. ## { #CVE-2023-22665 }
-
-CVE-2023-22665 [\[CVE json\]](./CVE-2023-22665.cve.json) [\[OSV json\]](./CVE-2023-22665.osv.json)
-
-
-
-_Last updated: 2023-04-25T07:09:43.803Z_
-
-### Affected
-
-* Apache Jena through 4.7.0
-
-
-### Description
-
-There is insufficient checking of user queries in Apache Jena versions 4.7.0 and earlier, when invoking custom scripts. It allows a remote user to execute arbitrary javascript via a SPARQL query.
-
-### References
-* https://lists.apache.org/thread/s0dmpsxcwqs57l4qfs415klkgmhdxq7s
-
-
-### Credits
-* L3yx of Syclover Security Team (reporter)
+* Noriaki Iwasaki; Cyber Defense Institute, Inc (reporter)
 
 
 ## Exposure of execution in script engine expressions. ## { #CVE-2023-32200 }
@@ -164,47 +87,124 @@ remote user to execute javascript via a SPARQL query.<br><p>This issue affects A
 * s3gundo of Alibaba (reporter)
 
 
-## Administrative users can create files outside the server directory space via the admin UI ## { #CVE-2025-49656 }
+## Exposure of arbitrary execution in script engine expressions. ## { #CVE-2023-22665 }
 
-CVE-2025-49656 [\[CVE json\]](./CVE-2025-49656.cve.json) [\[OSV json\]](./CVE-2025-49656.osv.json)
+CVE-2023-22665 [\[CVE json\]](./CVE-2023-22665.cve.json) [\[OSV json\]](./CVE-2023-22665.osv.json)
 
 
 
-_Last updated: 2025-07-21T09:30:16.936Z_
+_Last updated: 2023-04-25T07:09:43.803Z_
 
 ### Affected
 
-* Apache Jena through 5.4.0
+* Apache Jena through 4.7.0
 
 
 ### Description
 
-<p>Users with administrator access can create databases files outside the files area of the Fuseki server.</p><p>This issue affects Apache Jena version up to 5.4.0.</p><p>Users are recommended to upgrade to version 5.5.0, which fixes the issue.</p>
+There is insufficient checking of user queries in Apache Jena versions 4.7.0 and earlier, when invoking custom scripts. It allows a remote user to execute arbitrary javascript via a SPARQL query.
 
 ### References
-* https://lists.apache.org/thread/qmm21som8zct813vx6dfd1phnfro6mwq
+* https://lists.apache.org/thread/s0dmpsxcwqs57l4qfs415klkgmhdxq7s
 
 
 ### Credits
-* Noriaki Iwasaki; Cyber Defense Institute, Inc (reporter)
+* L3yx of Syclover Security Team (reporter)
 
 
-## Configuration files uploaded by administrative users are not check properly ## { #CVE-2025-50151 }
+## Apache Jena SDB allows arbitrary deserialisation via JDBC ## { #CVE-2022-45136 }
 
-CVE-2025-50151 [\[CVE json\]](./CVE-2025-50151.cve.json) [\[OSV json\]](./CVE-2025-50151.osv.json)
+CVE-2022-45136 [\[CVE json\]](./CVE-2022-45136.cve.json) [\[OSV json\]](./CVE-2022-45136.osv.json)
 
 
 
-_Last updated: 2025-07-21T09:32:27.896Z_
+_Last updated: 2022-11-14T15:41:09.479Z_
 
 ### Affected
 
-* Apache Jena through 5.4.0
+* Apache Jena SDB from unspecified through 3.17.0
 
 
 ### Description
 
-<div>File access paths in configuration files uploaded by users with administrator access are not validated.</div><div><p>This issue affects Apache Jena version up to 5.4.0.</p><p>Users are recommended to upgrade to version 5.5.0, which does not allow arbitrary configuration upload.</p><br></div>
+Apache Jena SDB 3.17.0 and earlier is vulnerable to a JDBC Deserialisation attack if the attacker is able to control the JDBC URL used or cause the underlying database server to return malicious data.  The mySQL JDBC driver in particular is known to be vulnerable to this class of attack.  As a result an application using Apache Jena SDB can be subject to RCE when connected to a malicious database server.
+
+Apache Jena SDB has been EOL since December 2020 and users should migrate to alternative options e.g. Apache Jena TDB 2
 
 ### References
-* https://lists.apache.org/thread/12gks5z40gh9bszn1xk8mz34gz586xss
+* https://lists.apache.org/thread/mc77cdl5stgjtjoldk467gdf756qjt31
+
+
+### Credits
+* Apache Jena would like to thank Crilwa & LaNyer640 for reporting this issue
+
+
+## Processing external DTDs ## { #CVE-2022-28890 }
+
+CVE-2022-28890 [\[CVE json\]](./CVE-2022-28890.cve.json) [\[OSV json\]](./CVE-2022-28890.osv.json)
+
+
+
+_Last updated: 2022-05-05T08:34:36.622Z_
+
+### Affected
+
+* Apache Jena from Apache Jena through 4.4.0
+
+
+### Description
+
+A vulnerability in the RDF/XML parser of Apache Jena allows an attacker to cause an external DTD to be retrieved.  This issue affects Apache Jena version 4.4.0 and prior versions.  Apache Jena 4.2.x and 4.3.x do not allow external entities.
+
+### References
+* https://lists.apache.org/thread/h88oh642455wljo0p5jgzs9phk4gj878
+
+
+### Credits
+* Apache Jena would like to thank Feras Daragma, Avishag Shapira & Amit Laish (GE Digital, Cyber Security Lab) for their report.
+
+
+## XML External Entity (XXE) vulnerability ## { #CVE-2021-39239 }
+
+CVE-2021-39239 [\[CVE json\]](./CVE-2021-39239.cve.json) [\[OSV json\]](./CVE-2021-39239.osv.json)
+
+
+
+_Last updated: 2021-09-16T14:16:06.658Z_
+
+### Affected
+
+* Apache Jena from unspecified before 4.1.0
+
+
+### Description
+
+A vulnerability in XML processing in Apache Jena, in versions up to 4.1.0, may allow an attacker to execute XML External Entities (XXE), including exposing the contents of local files to a remote server.
+
+### References
+* https://lists.apache.org/thread.html/rf44d529c54ef1d0097e813f576a0823a727e1669a9f610d3221d493d%40%3Cusers.jena.apache.org%3E
+
+
+## Display information UI XSS ## { #CVE-2021-33192 }
+
+CVE-2021-33192 [\[CVE json\]](./CVE-2021-33192.cve.json) [\[OSV json\]](./CVE-2021-33192.osv.json)
+
+
+
+_Last updated: 2021-07-05T09:09:33.148Z_
+
+### Affected
+
+* Apache Jena Fuseki at Apache Jena Fuseki2 2.0.0 to 4.0.0
+
+
+### Description
+
+A vulnerability in the HTML pages of Apache Jena Fuseki allows an attacker to execute arbitrary javascript on certain page views.  This issue affects Apache Jena Fuseki from version 2.0.0 to version 4.0.0 (inclusive).
+
+### References
+* https://lists.apache.org/thread.html/r684d8943d755a96fe90f8cd8df196737b6bde3f2b74e15a9bd479975%40%3Cusers.jena.apache.org%3E
+
+
+### Credits
+* Apache Jena would like to thank Luka Safonov for reporting this issue.

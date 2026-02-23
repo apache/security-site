@@ -13,25 +13,83 @@ Do you want disclose a potential security issue for Apache HugeGraph? You can re
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://hugegraph.apache.org/docs/guides/security). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
-## SSRF in Hubble connection page ## { #CVE-2024-27347 }
+## RAFT and deserialization vulnerability ## { #CVE-2025-26866 }
 
-CVE-2024-27347 [\[CVE json\]](./CVE-2024-27347.cve.json) [\[OSV json\]](./CVE-2024-27347.osv.json)
+CVE-2025-26866 [\[CVE json\]](./CVE-2025-26866.cve.json) [\[OSV json\]](./CVE-2025-26866.osv.json)
 
 
 
-_Last updated: 2024-04-22T14:07:30.816Z_
+_Last updated: 2025-12-12T09:23:05.196Z_
 
 ### Affected
 
-* Apache HugeGraph-Hubble from 1.0.0 before 1.3.0
+* Apache HugeGraph-Server from 1.0.0 before 1.7.0
 
 
 ### Description
 
-Server-Side Request Forgery (SSRF) vulnerability in Apache HugeGraph-Hubble.<p>This issue affects Apache HugeGraph-Hubble: from 1.0.0 before 1.3.0.</p><p>Users are recommended to upgrade to version 1.3.0, which fixes the issue.</p>
+<p></p>
+
+<span style="background-color: rgb(255, 255, 255);">A remote code execution vulnerability exists where a malicious Raft node can exploit insecure Hessian deserialization within the PD store. The fix enforces IP-based authentication to restrict cluster membership and implements a strict class whitelist to harden the Hessian serialization process against object injection attacks.</span><br>
+
+<p></p><p>Users are recommended to upgrade to version 1.7.0, which fixes the issue.</p>
 
 ### References
-* https://lists.apache.org/thread/z0v71148slfkw60hsp35pl7ddjyvg01l
+* https://github.com/apache/incubator-hugegraph/pull/2735
+* https://lists.apache.org/thread/ko8jkwbjbb99m45pg4sgo5xsm8gx9nsq
+
+
+### Credits
+* shukuang (reporter)
+* yulate (reporter)
+* X1r0z (reporter)
+* haohao0103 (remediation developer)
+
+
+## Fixed JWT Token(Secret) ## { #CVE-2024-43441 }
+
+CVE-2024-43441 [\[CVE json\]](./CVE-2024-43441.cve.json) [\[OSV json\]](./CVE-2024-43441.osv.json)
+
+
+
+_Last updated: 2024-12-24T11:59:55.141Z_
+
+### Affected
+
+* Apache HugeGraph-Server from 1.0.0 before 1.5.0
+
+
+### Description
+
+<p>Authentication Bypass by Assumed-Immutable Data vulnerability in Apache HugeGraph-Server.</p><p>This issue affects Apache HugeGraph-Server: from 1.0.0 before 1.5.0.</p><p>Users are recommended to upgrade to version 1.5.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/h2607yv32wgcrywov960jpxhvsmmlf12
+
+
+### Credits
+* L0ne1y (reporter)
+
+
+## Bypass whitelist in Auth mode ## { #CVE-2024-27349 }
+
+CVE-2024-27349 [\[CVE json\]](./CVE-2024-27349.cve.json) [\[OSV json\]](./CVE-2024-27349.osv.json)
+
+
+
+_Last updated: 2024-04-22T14:08:39.984Z_
+
+### Affected
+
+* Apache HugeGraph-Server from 1.0.0 before 1.3.0
+
+
+### Description
+
+Authentication Bypass by Spoofing vulnerability in Apache HugeGraph-Server.<p>This issue affects Apache HugeGraph-Server: from 1.0.0 before 1.3.0.</p><p>Users are recommended to upgrade to version 1.3.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/dz9n9lndqfsf64t72o73r7sttrc6ocsd
 
 
 ### Credits
@@ -64,84 +122,26 @@ RCE-Remote Command Execution vulnerability in Apache HugeGraph-Server.<p>This is
 * 6right of moresec (reporter)
 
 
-## Bypass whitelist in Auth mode ## { #CVE-2024-27349 }
+## SSRF in Hubble connection page ## { #CVE-2024-27347 }
 
-CVE-2024-27349 [\[CVE json\]](./CVE-2024-27349.cve.json) [\[OSV json\]](./CVE-2024-27349.osv.json)
+CVE-2024-27347 [\[CVE json\]](./CVE-2024-27347.cve.json) [\[OSV json\]](./CVE-2024-27347.osv.json)
 
 
 
-_Last updated: 2024-04-22T14:08:39.984Z_
+_Last updated: 2024-04-22T14:07:30.816Z_
 
 ### Affected
 
-* Apache HugeGraph-Server from 1.0.0 before 1.3.0
+* Apache HugeGraph-Hubble from 1.0.0 before 1.3.0
 
 
 ### Description
 
-Authentication Bypass by Spoofing vulnerability in Apache HugeGraph-Server.<p>This issue affects Apache HugeGraph-Server: from 1.0.0 before 1.3.0.</p><p>Users are recommended to upgrade to version 1.3.0, which fixes the issue.</p>
+Server-Side Request Forgery (SSRF) vulnerability in Apache HugeGraph-Hubble.<p>This issue affects Apache HugeGraph-Hubble: from 1.0.0 before 1.3.0.</p><p>Users are recommended to upgrade to version 1.3.0, which fixes the issue.</p>
 
 ### References
-* https://lists.apache.org/thread/dz9n9lndqfsf64t72o73r7sttrc6ocsd
+* https://lists.apache.org/thread/z0v71148slfkw60hsp35pl7ddjyvg01l
 
 
 ### Credits
 * 6right of moresec (reporter)
-
-
-## Fixed JWT Token(Secret) ## { #CVE-2024-43441 }
-
-CVE-2024-43441 [\[CVE json\]](./CVE-2024-43441.cve.json) [\[OSV json\]](./CVE-2024-43441.osv.json)
-
-
-
-_Last updated: 2024-12-24T11:59:55.141Z_
-
-### Affected
-
-* Apache HugeGraph-Server from 1.0.0 before 1.5.0
-
-
-### Description
-
-<p>Authentication Bypass by Assumed-Immutable Data vulnerability in Apache HugeGraph-Server.</p><p>This issue affects Apache HugeGraph-Server: from 1.0.0 before 1.5.0.</p><p>Users are recommended to upgrade to version 1.5.0, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread/h2607yv32wgcrywov960jpxhvsmmlf12
-
-
-### Credits
-* L0ne1y (reporter)
-
-
-## RAFT and deserialization vulnerability ## { #CVE-2025-26866 }
-
-CVE-2025-26866 [\[CVE json\]](./CVE-2025-26866.cve.json) [\[OSV json\]](./CVE-2025-26866.osv.json)
-
-
-
-_Last updated: 2025-12-12T09:23:05.196Z_
-
-### Affected
-
-* Apache HugeGraph-Server from 1.0.0 before 1.7.0
-
-
-### Description
-
-<p></p>
-
-<span style="background-color: rgb(255, 255, 255);">A remote code execution vulnerability exists where a malicious Raft node can exploit insecure Hessian deserialization within the PD store. The fix enforces IP-based authentication to restrict cluster membership and implements a strict class whitelist to harden the Hessian serialization process against object injection attacks.</span><br>
-
-<p></p><p>Users are recommended to upgrade to version 1.7.0, which fixes the issue.</p>
-
-### References
-* https://github.com/apache/incubator-hugegraph/pull/2735
-* https://lists.apache.org/thread/ko8jkwbjbb99m45pg4sgo5xsm8gx9nsq
-
-
-### Credits
-* shukuang (reporter)
-* yulate (reporter)
-* X1r0z (reporter)
-* haohao0103 (remediation developer)
