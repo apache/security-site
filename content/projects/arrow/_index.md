@@ -13,6 +13,31 @@ Do you want disclose a potential security issue for Apache Arrow? You can read m
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://arrow.apache.org/docs/dev/format/Security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Potential use-after-free when reading IPC file with pre-buffering ## { #CVE-2026-25087 }
+
+CVE-2026-25087 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-25087) [\[CVE json\]](./CVE-2026-25087.cve.json)
+
+_Last updated: 2026-02-20T09:56:40.992Z_
+
+### Affected
+
+* Apache Arrow from 15.0.0 through 23.0.0
+* Apache Arrow at 23.0.1
+
+
+### Description
+
+<p>Use After Free vulnerability in Apache Arrow C++.</p><p>This issue affects Apache Arrow C++ from 15.0.0 through 23.0.0. It can be triggered when reading an Arrow IPC file (but not an IPC stream) with pre-buffering enabled, if the IPC file contains data with variadic buffers (such as Binary View and String View data). Depending on the number of variadic buffers in a record batch column and on the temporal sequence of multi-threaded IO, a write to a dangling pointer could occur. The value (a `std::shared_ptr&lt;Buffer&gt;` object)&nbsp;that is written to the dangling pointer is not under direct control of the attacker.</p><p>Pre-buffering is disabled by default but can be enabled using a specific C++ API call (`RecordBatchFileReader::PreBufferMetadata`). The functionality is not exposed in language bindings (Python, Ruby, C GLib), so these bindings are not vulnerable.</p><p>The most likely consequence of this issue would be random crashes or memory corruption when reading specific kinds of IPC files. If the application allows ingesting IPC files from untrusted sources, this could plausibly be exploited for denial of service. Inducing more targeted kinds of misbehavior (such as confidential data extraction from the running process) depends on memory allocation and multi-threaded IO temporal patterns that are unlikely to be easily controlled by an attacker.</p><p>Advice for users of Arrow C++:</p><p>1. check whether you enable pre-buffering on the IPC file reader (using&nbsp;`RecordBatchFileReader::PreBufferMetadata`)</p><p>2. if so, either disable pre-buffering (which may have adverse performance consequences), or switch to Arrow 23.0.1 which is not vulnerable</p><p><br></p>
+
+### References
+* https://github.com/apache/arrow/pull/48925
+* https://lists.apache.org/thread/mpm4ld1qony30tchfpjtk5b11tcyvmwh
+
+
+### Credits
+* Emi Galle (reporter)
+
+
 ## Arbitrary code execution when loading a malicious data file ## { #CVE-2024-52338 }
 
 CVE-2024-52338 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-52338) [\[CVE json\]](./CVE-2024-52338.cve.json) [\[OSV json\]](./CVE-2024-52338.osv.json)

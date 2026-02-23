@@ -13,6 +13,62 @@ Do you want disclose a potential security issue for Apache Camel? You can read m
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://camel.apache.org/security/). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Deserialization of Untrusted Data in Camel LevelDB ## { #CVE-2026-25747 }
+
+CVE-2026-25747 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-25747) [\[CVE json\]](./CVE-2026-25747.cve.json) [\[OSV json\]](./CVE-2026-25747.osv.json)
+
+
+
+_Last updated: 2026-02-22T15:56:14.254Z_
+
+### Affected
+
+* Apache Camel from 4.10.0 before 4.10.9
+* Apache Camel from 4.14.0 before 4.14.5
+* Apache Camel from 4.15.0 before 4.18.0
+
+
+### Description
+
+<p>Deserialization of Untrusted Data vulnerability in Apache Camel LevelDB component.</p><span style="background-color: rgb(255, 255, 255);">The Camel-LevelDB DefaultLevelDBSerializer class deserializes data read from the LevelDB aggregation repository using java.io.ObjectInputStream without applying any ObjectInputFilter or class-loading restrictions. An attacker who can write to the LevelDB database files used by a Camel application can inject a crafted serialized Java object that, when deserialized during normal aggregation repository operations, results in arbitrary code execution in the context of the application.</span><br><p>This issue affects Apache Camel: from 4.10.0 before 4.10.8, from 4.14.0 before 4.14.5, from 4.15.0 before 4.18.0.</p><p>Users are recommended to upgrade to version 4.18.0, which fixes the issue. For the 4.10.x LTS releases, users are recommended to upgrade to 4.10.9, while for 4.14.x LTS releases, users are recommended to upgrade to 4.14.5</p>
+
+### References
+* https://github.com/oscerd/CVE-2026-25747
+* https://camel.apache.org/security/CVE-2026-25747.html
+
+
+### Credits
+* Andrea Cosentino (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Keycloak: Cross-Realm Token Acceptance Bypass in KeycloakSecurityPolicy ## { #CVE-2026-23552 }
+
+CVE-2026-23552 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23552) [\[CVE json\]](./CVE-2026-23552.cve.json) [\[OSV json\]](./CVE-2026-23552.osv.json)
+
+
+
+_Last updated: 2026-02-22T15:55:13.482Z_
+
+### Affected
+
+* Apache Camel from 4.15.0 before 4.18.0
+
+
+### Description
+
+<p>Cross-Realm Token Acceptance Bypass in KeycloakSecurityPolicy Apache Camel Keycloak component.&nbsp;</p><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">The Camel-Keycloak KeycloakSecurityPolicy does not validate the iss (issuer) claim of JWT tokens against the configured realm. A token issued by one Keycloak realm is silently accepted by a policy configured for a completely different realm, breaking tenant isolation.</span></span><br><p>This issue affects Apache Camel: from 4.15.0 before 4.18.0.</p><p>Users are recommended to upgrade to version 4.18.0, which fixes the issue.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-23552.html
+* https://github.com/oscerd/CVE-2026-23552
+
+
+### Credits
+* Andrea Cosentino (finder)
+* Andrea Cosentino (remediation developer)
+
+
 ## Cypher injection vulnerability in Camel-Neo4j component ## { #CVE-2025-66169 }
 
 CVE-2025-66169 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66169) [\[CVE json\]](./CVE-2025-66169.cve.json) [\[OSV json\]](./CVE-2025-66169.osv.json)

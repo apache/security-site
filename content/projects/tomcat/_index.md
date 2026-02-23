@@ -13,6 +13,98 @@ Do you want disclose a potential security issue for Apache Tomcat? You can read 
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://tomcat.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## OCSP revocation bypass ## { #CVE-2026-24734 }
+
+CVE-2026-24734 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24734) [\[CVE json\]](./CVE-2026-24734.cve.json)
+
+_Last updated: 2026-02-17T18:53:09.659Z_
+
+### Affected
+
+* Apache Tomcat Native from 1.1.23 through 1.1.34
+* Apache Tomcat Native from 1.2.0 through 1.2.39
+* Apache Tomcat Native from 1.3.0 through 1.3.4
+* Apache Tomcat Native from 2.0.0 through 2.0.11
+* Apache Tomcat from 11.0.0-M1 through 11.0.17
+* Apache Tomcat from 10.1.0-M7 through 10.1.51
+* Apache Tomcat from 9.0.83 through 9.0.114
+* Apache Tomcat through 8.5.100
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache Tomcat Native, Apache Tomcat.</p><p>When using an OCSP responder, Tomcat Native (and Tomcat's FFM port of the Tomcat Native code) did not complete verification or freshness checks on the OCSP response which could allow certificate revocation to be bypassed.</p><p>This issue affects Apache Tomcat Native:&nbsp; from 1.3.0 through 1.3.4, from 2.0.0 through 2.0.11; Apache Tomcat: from 11.0.0-M1 through 11.0.17, from 10.1.0-M7 through 10.1.51, from 9.0.83 through 9.0.114.<br></p><p>The following versions were EOL at the time the CVE was created but are 
+known to be affected: <span style="background-color: rgb(255, 255, 255);">from 1.1.23 through 1.1.34, from 1.2.0 through 1.2.39.&nbsp;Older EOL versions are not affected.</span></p><p>Apache Tomcat Native users are recommended to upgrade to versions 1.3.5 or later or 2.0.12 or later, which fix the issue.</p>Apache Tomcat users are recommended to upgrade to versions 11.0.18 or later, 10.1.52 or later or 9.0.115 or later which fix the issue.<br>
+
+### References
+* https://lists.apache.org/thread/292dlmx3fz1888v6v16221kpozq56gml
+
+
+### Credits
+* Joshua Rogers (@MegaManSec) (finder)
+
+
+## Security constraint bypass with HTTP/0.9 ## { #CVE-2026-24733 }
+
+CVE-2026-24733 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24733) [\[CVE json\]](./CVE-2026-24733.cve.json) [\[OSV json\]](./CVE-2026-24733.osv.json)
+
+
+
+_Last updated: 2026-02-17T18:50:40.418Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.14
+* Apache Tomcat from 10.1.0-M1 through 10.1.49
+* Apache Tomcat from 9.0.0.M1 through 9.0.112
+* Apache Tomcat through 8.5.100
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache Tomcat.<br></p><p>Tomcat did not limit HTTP/0.9 requests to the GET method. If a security 
+constraint was configured to allow HEAD requests to a URI but deny GET 
+requests, the user could bypass that constraint on GET requests by 
+sending a (specification invalid) HEAD request using HTTP/0.9.<br></p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.14, from 10.1.0-M1 through 10.1.49, from 9.0.0.M1 through 9.0.112.<br></p><p>Older, EOL versions are also affected.</p><p>Users are recommended to upgrade to version 11.0.15 or later, 10.1.50 or later or 9.0.113 or later, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/6xk3t65qpn1myp618krtfotbjn1qt90f
+
+
+## Client certificate verification bypass due to virtual host mapping ## { #CVE-2025-66614 }
+
+CVE-2025-66614 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66614) [\[CVE json\]](./CVE-2025-66614.cve.json)
+
+_Last updated: 2026-02-17T18:48:25.348Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.14
+* Apache Tomcat from 10.1.0-M1 through 10.1.49
+* Apache Tomcat from 9.0.0-M1 through 9.0.112
+* Apache Tomcat from 8.5.0 through 8.5.100
+* Apache Tomcat before 8.5.0
+
+
+### Description
+
+<p>Improper Input Validation vulnerability.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.14, from 10.1.0-M1 through 10.1.49, from 9.0.0-M1 through 9.0.112.</p>The following versions were EOL at the time the CVE was created but are 
+known to be affected: 8.5.0 through 8.5.100. Older EOL versions are not affected.<br><p>Tomcat did not validate that the host name provided via the SNI 
+extension was the same as the host name provided in the HTTP host header 
+field. If Tomcat was configured with more than one virtual host and the 
+TLS configuration for one of those hosts did not require client 
+certificate authentication but another one did, it was possible for a 
+client to bypass the client certificate authentication by sending 
+different host names in the SNI extension and the HTTP host header field.
+<br>
+<br>The vulnerability only applies if client certificate authentication is 
+only enforced at the Connector. It does not apply if client certificate 
+authentication is enforced at the web application.<br></p><p>Users are recommended to upgrade to version 11.0.15 or later, 10.1.50 or later or 9.0.113 or later, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/vw6lxtlh2qbqwpb61wd3sv1flm2nttw7
+
+
 ## Delayed cleaning of multi-part upload temporary files may lead to DoS ## { #CVE-2025-61795 }
 
 CVE-2025-61795 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-61795) [\[CVE json\]](./CVE-2025-61795.cve.json)

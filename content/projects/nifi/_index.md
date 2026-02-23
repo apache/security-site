@@ -13,6 +13,31 @@ Do you want disclose a potential security issue for Apache NiFi? You can read mo
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://nifi.apache.org/documentation/security/). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Missing Authorization of Restricted Permissions for Component Updates ## { #CVE-2026-25903 }
+
+CVE-2026-25903 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-25903) [\[CVE json\]](./CVE-2026-25903.cve.json) [\[OSV json\]](./CVE-2026-25903.osv.json)
+
+
+
+_Last updated: 2026-02-17T09:54:42.673Z_
+
+### Affected
+
+* Apache NiFi from 1.1.0 before 2.8.0
+
+
+### Description
+
+Apache NiFi 1.1.0 through 2.7.2 are missing authorization when updating configuration properties on extension components that have specific Required Permissions based on the Restricted annotation. The Restricted annotation indicates additional privileges required to add the annotated component to the flow configuration, but framework authorization did not check restricted status when updating a component previously added. The missing authorization requires a more privileged user to add a restricted component to the flow configuration, but permits a less privileged user to make property configuration changes. Apache NiFi installations that do not implement different levels of authorization for Restricted components are not subject to this vulnerability because the framework enforces write permissions as the security boundary. Upgrading to Apache NiFi 2.8.0 is the recommended mitigation.
+
+### References
+* https://lists.apache.org/thread/jf6bkt9sk6xvshy8xyxv3vtlxd340345
+
+
+### Credits
+* David Handermann (finder)
+
+
 ## Deserialization of Untrusted Data in GetAsanaObject Processor ## { #CVE-2025-66524 }
 
 CVE-2025-66524 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66524) [\[CVE json\]](./CVE-2025-66524.cve.json) [\[OSV json\]](./CVE-2025-66524.osv.json)
