@@ -26,6 +26,7 @@ so they do not need to be notified.
 
 Still, as a token of our appreciation, we'd like to thank a number of such reporters here:
 
+* [Naveen S](https://www.linkedin.com/in/naveens72/) and [M Ajmal](https://www.linkedin.com/in/ajmalmoochingal/) for notifying us of a leaked GitHub token.
 * [owen](https://hackerone.com/owen0x) for notifying us of a leaked Nx Cloud read-write token.
 * [Priya Dharshan (JPD)](https://www.linkedin.com/in/priya-dharshan-474246225/) for notifying us of a problematic reference to an unclaimed NPM package namespace allowing resource squatting.
 * [Aviv Keller](https://linkedin.com/in/redyetidev) for helping identify a number of XSS problems in various Apache project websites, and for helping fix a large number of complex GitHub Actions permissions issues.
