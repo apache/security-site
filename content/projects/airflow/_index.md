@@ -72,7 +72,7 @@ CVE-2025-68675 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-68675) [\[CVE jso
 
 
 
-_Last updated: 2026-02-21T01:56:37.167Z_
+_Last updated: 2026-02-24T05:48:09.000Z_
 
 ### Affected
 
@@ -321,6 +321,32 @@ _Last updated: 2025-04-07T08:31:55.441Z_
 * nxczje (reporter)
 
 
+## Connection Secrets not masked in UI when Connection are added via Airflow cli ## { #CVE-2025-27555 }
+
+CVE-2025-27555 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27555) [\[CVE json\]](./CVE-2025-27555.cve.json) [\[OSV json\]](./CVE-2025-27555.osv.json)
+
+
+
+_Last updated: 2026-02-24T10:09:58.046Z_
+
+### Affected
+
+* Apache Airflow before 2.11.1
+
+
+### Description
+
+Airflow versions before 2.11.1 have a vulnerability that allows authenticated users with audit log access to see sensitive values in audit logs which they should not see. When sensitive connection parameters were set via airflow CLI, values of those variables appeared in the audit log and were stored unencrypted in the Airflow database. While this risk is limited to users with audit log access, it is recommended to upgrade to Airflow 2.11.1 or a later version, which addresses this issue. Users who previously used the CLI to set connections should manually delete entries with those connection sensitive values from the log table. This is similar but not the same issue as CVE-2024-50378
+
+### References
+* https://github.com/apache/airflow/pull/61882
+* https://lists.apache.org/thread/nxovkp319jo8vg498gql1yswtb2frbkw
+
+
+### Credits
+* sw0rd1ight (finder)
+
+
 ## SQL injection in MySQL provider core function ## { #CVE-2025-27018 }
 
 CVE-2025-27018 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27018) [\[CVE json\]](./CVE-2025-27018.cve.json) [\[OSV json\]](./CVE-2025-27018.osv.json)
@@ -346,6 +372,32 @@ _Last updated: 2025-03-19T09:06:05.242Z_
 
 ### Credits
 * Vincent55 (DEVCORE Internship Program) (finder)
+
+
+## SSTI to Code Execution in Airflow through Shared DB Information ## { #CVE-2024-56373 }
+
+CVE-2024-56373 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-56373) [\[CVE json\]](./CVE-2024-56373.cve.json) [\[OSV json\]](./CVE-2024-56373.osv.json)
+
+
+
+_Last updated: 2026-02-24T10:06:39.270Z_
+
+### Affected
+
+* Apache Airflow before 2.11.1
+
+
+### Description
+
+<p>DAG Author (who already has quite a lot of permissions) could manipulate database of Airflow 2 in the way to execute arbitrary code in the web-server context, which they should normally not be able to do, leading to potentially remote code execution in the context of web-server (server-side) as a result of a user viewing historical task information.</p>The functionality responsible for that (log template history) has been disabled by default in 2.11.1 and users should upgrade to Airflow 3 if they want to continue to use log template history. They can also manually modify historical log file names if they want to see historical logs that were generated before the last log template change.
+
+### References
+* https://github.com/apache/airflow/pull/61880
+* https://lists.apache.org/thread/2vrmrhcht6g7cp5yjxpnrk2wtrncm6cy
+
+
+### Credits
+* Seokchan Yoon. (finder)
 
 
 ## Secrets not masked in UI when sensitive variables are set via Airflow cli ## { #CVE-2024-50378 }

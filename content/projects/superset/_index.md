@@ -13,6 +13,137 @@ Do you want disclose a potential security issue for Apache Superset? You can rea
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://superset.apache.org/docs/security/). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## SQLLab Read-Only Bypass on PostgreSQL ## { #CVE-2026-23984 }
+
+CVE-2026-23984 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23984) [\[CVE json\]](./CVE-2026-23984.cve.json) [\[OSV json\]](./CVE-2026-23984.osv.json)
+
+
+
+_Last updated: 2026-02-24T12:51:05.623Z_
+
+### Affected
+
+* Apache Superset from 0.0.0 before 6.0.0
+
+
+### Description
+
+<p>An Improper Input Validation vulnerability exists in Apache Superset that allows an authenticated user with SQLLab access to bypass the read-only verification check when using a PostgreSQL database connection.<br>While the system effectively blocks standard Data Manipulation Language (DML) statements (e.g., INSERT, UPDATE, DELETE) on read-only connections, it fails to detect them in specially crafted SQL statements.</p><p>This issue affects Apache Superset: before 6.0.0.</p><p>Users are recommended to upgrade to version 6.0.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/72cmgxtvp9pclto4ln1chbs1227nwd26
+
+
+### Credits
+* Trung Đức Lê (reporter)
+* Beto de Almeida (remediation developer)
+
+
+## Sensitive Data Exposure via REST API (disabled by default) ## { #CVE-2026-23983 }
+
+CVE-2026-23983 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23983) [\[CVE json\]](./CVE-2026-23983.cve.json) [\[OSV json\]](./CVE-2026-23983.osv.json)
+
+
+
+_Last updated: 2026-02-24T12:52:09.887Z_
+
+### Affected
+
+* Apache Superset from 0.0.0 before 6.0.0
+
+
+### Description
+
+<p>A Sensitive Data Exposure vulnerability exists in Apache Superset allowing authenticated users to retrieve sensitive user information. The Tag endpoint (disabled by default) allows users to retrieve a list of objects associated with a specific tag.<br>When these associated objects include Users, the API response improperly serializes and returns sensitive fields, including password hashes (pbkdf2), email addresses, and login statistics. This vulnerability allows authenticated users with low privileges (e.g., Gamma role) to view sensitive authentication data </p><p>This issue affects Apache Superset: before 6.0.0.</p><p>Users are recommended to upgrade to version 6.0.0, which fixes the issue or make sure&nbsp;TAGGING_SYSTEM is False (Apache Superset current default)</p>
+
+### References
+* https://lists.apache.org/thread/62mgbc5hc8026skp69kb6vqozj3pr5ww
+
+
+### Credits
+* Krzysztof Maurek (reporter)
+* Daniel Gaspar (remediation developer)
+
+
+## Improper Authorization in Dataset Creation Allows Access Control Bypass ## { #CVE-2026-23982 }
+
+CVE-2026-23982 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23982) [\[CVE json\]](./CVE-2026-23982.cve.json) [\[OSV json\]](./CVE-2026-23982.osv.json)
+
+
+
+_Last updated: 2026-02-24T12:52:42.954Z_
+
+### Affected
+
+* Apache Superset from 0.0.0 before 6.0.0
+
+
+### Description
+
+<p>An Improper Authorization vulnerability exists in Apache Superset that allows a low-privileged user to bypass data access controls. When creating a dataset, Superset enforces permission checks to prevent users from querying unauthorized data. However, an authenticated attacker with permissions to write datasets and read charts can bypass these checks by overwriting the SQL query of an existing dataset.</p><p>This issue affects Apache Superset: before 6.0.0.</p><p>Users are recommended to upgrade to version 6.0.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/9lvbzwkw4rxgdvbpfvnnnfcll92v75fp
+
+
+### Credits
+* River Koh (reporter)
+* Daniel Gaspar (remediation developer)
+
+
+## Improper Neutralization of Special Elements used in a SQL Command ## { #CVE-2026-23980 }
+
+CVE-2026-23980 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23980) [\[CVE json\]](./CVE-2026-23980.cve.json) [\[OSV json\]](./CVE-2026-23980.osv.json)
+
+
+
+_Last updated: 2026-02-24T12:54:08.623Z_
+
+### Affected
+
+* Apache Superset from 0.0.0 before 6.0.0
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in a SQL Command ('SQL Injection') vulnerability in Apache Superset allows an authenticated user with read access to conduct error-based SQL injection via the sqlExpression or where parameters.</p><p>This issue affects Apache Superset: before 6.0.0.</p><p>Users are recommended to upgrade to version 6.0.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/h4l02zw1pr2vywv0dc5zjn3grdcdhwf4
+
+
+### Credits
+* Pritam Chakkerwar (finder)
+* Dhanush Nayak (reporter)
+* Pedro Sousa (remediation developer)
+
+
+## Exposure of Sensitive Information via Incomplete ClickHouse Function Filtering ## { #CVE-2026-23969 }
+
+CVE-2026-23969 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23969) [\[CVE json\]](./CVE-2026-23969.cve.json) [\[OSV json\]](./CVE-2026-23969.osv.json)
+
+
+
+_Last updated: 2026-02-24T13:02:53.998Z_
+
+### Affected
+
+* Apache Superset from 0.0.0 before 4.1.2
+
+
+### Description
+
+<p>Apache Superset utilizes a configurable dictionary, DISALLOWED_SQL_FUNCTIONS, to restrict the execution of potentially sensitive SQL functions within SQL Lab and charts. While this feature included restrictions for engines like PostgreSQL, a vulnerability was reported where the default list for the ClickHouse engine was incomplete.</p><p>This issue affects Apache Superset: before 4.1.2.</p><p>Users are recommended to upgrade to version 4.1.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/2q22sp4oj3krcgdkxchhtht0vgwp2wnd
+
+
+### Credits
+* Saif Salah (reporter)
+* Daniel Gaspar (remediation developer)
+
+
 ## Incorrect datasource authorization on REST API ## { #CVE-2025-55675 }
 
 CVE-2025-55675 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-55675) [\[CVE json\]](./CVE-2025-55675.cve.json) [\[OSV json\]](./CVE-2025-55675.osv.json)
