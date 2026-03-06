@@ -56,3 +56,16 @@ security reports or developing fixes.
 To get more insight in a projects' dependency tree, it can be
 useful to create [SBOMs](https://sbom.security.apache.org/)
 for their published artifacts.
+
+### Release automation
+
+Making it more lightweight to create a release could help get
+security improvements in the hands of users faster. One thing
+that can help for that is to help projects achieve
+[reproducible builds](https://cwiki.apache.org/confluence/display/SECURITY/Reproducible+Builds)
+and then [stage release candidates from CI](https://infra.apache.org/release-signing.html#automated-release-signing).
+
+A good first step might be to offer to act as
+[release manager](https://www.apache.org/legal/release-policy.html)
+for a release, so you get a hands-on experience of the status
+quo. Many projects allow committers to RM, not just PMC members.
