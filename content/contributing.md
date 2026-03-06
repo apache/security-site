@@ -54,8 +54,17 @@ security reports or developing fixes.
 ### Help creating SBOMs
 
 To get more insight in a projects' dependency tree, it can be
-useful to create [SBOMs](https://sbom.security.apache.org/)
-for their published artifacts.
+useful to help their build/release process to include creating
+[SBOMs](https://sbom.security.apache.org/) for their published
+artifacts.
+
+### Analyzing advisories in dependencies
+
+When security advisories are published for dependencies of ASF
+projects, it is useful to help analyze whether the project is
+[actually impacted](https://cwiki.apache.org/confluence/display/SECURITY/Dealing+with+security+advisories+for+dependencies)
+by these issue, share that information, and help get the
+dependency replaced/updated.
 
 ### Release automation
 
