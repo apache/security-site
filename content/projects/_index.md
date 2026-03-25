@@ -99,7 +99,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache OFBiz](https://ofbiz.apache.org/security.html) |  [Apache OFBiz Security Team](mailto:security@ofbiz.apache.org) | [Advisories](https://ofbiz.apache.org/security.html) |
 | [Apache OpenMeetings](https://openmeetings.apache.org/security.html) |  [Apache OpenMeetings Security Team](mailto:security@openmeetings.apache.org) | |
 | [Apache OpenOffice](https://openoffice.apache.org/security) |  [Apache OpenOffice Security Team](mailto:security@openoffice.apache.org) | [Advisories](https://www.openoffice.org/security/bulletin.html) |
-| [Apache ORC](https://orc.apache.org/security/) |  [Apache ORC Security Team](mailto:security@orc.apache.org) | |
+| [Apache ORC](https://orc.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Ozone |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Parquet |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache PDFBox](https://pdfbox.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
