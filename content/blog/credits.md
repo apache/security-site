@@ -16,9 +16,7 @@ various Apache [mailinglists](https://www.apache.org/foundation/mailinglists.htm
 urgency to upgrade to our users.
 
 The Apache Software Foundation, being a volunteer organization, does not have
-a bug bounty program. However, some Apache projects are covered under 3rd-party
-bounty programs such as the
-[HackerOne Internet Bug Bounty](https://hackerone.com/ibb).
+a bug bounty program.
 
 Valid reports about our project infrastructure are typically not eligible
 for a CVE, as downstream users do not need to take any action,
