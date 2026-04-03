@@ -47,6 +47,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Drill |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Druid](https://druid.apache.org/docs/latest/operations/security-overview.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Dubbo](https://dubbo.apache.org/en/docs/notices/security/) |  [Apache Dubbo Security Team](mailto:security@dubbo.apache.org) | |
+| [Apache ECharts](https://echarts.apache.org/handbook/en/best-practices/security/#) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache EventMesh |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Felix |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Fineract](https://fineract.apache.org/security.html) |  [Apache Fineract Security Team](mailto:security@fineract.apache.org) | [Advisories](https://fineract.apache.org/security.html) |
