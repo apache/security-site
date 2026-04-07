@@ -13,54 +13,6 @@ Do you want disclose a potential security issue for Apache Traffic Server? You c
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://github.com/apache/trafficserver/security/policy). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
-## Malformed chunked message body allows request smuggling ## { #CVE-2025-65114 }
-
-CVE-2025-65114 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-65114) [\[CVE json\]](./CVE-2025-65114.cve.json) [\[OSV json\]](./CVE-2025-65114.osv.json)
-
-
-
-_Last updated: 2026-04-02T15:55:25.500Z_
-
-### Affected
-
-* Apache Traffic Server from 9.0.0 through 9.2.12
-* Apache Traffic Server from 10.0.0 through 10.1.1
-
-
-### Description
-
-<p><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">Apache Traffic Server allows request smuggling if c</span>hunked messages are malformed.</span>&nbsp;</p><p>This issue affects Apache Traffic Server: from 9.0.0 through 9.2.12, from 10.0.0 through 10.1.1.</p><p>Users are recommended to upgrade to version 9.2.13 or 10.1.2, which fix the issue.</p>
-
-### References
-* https://lists.apache.org/thread/2s11roxlv1j8ph6q52rqo1klvl01n14q
-
-
-### Credits
-* Katsutoshi Ikenoya (reporter)
-
-
-## A simple legitimate POST request causes a crash ## { #CVE-2025-58136 }
-
-CVE-2025-58136 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-58136) [\[CVE json\]](./CVE-2025-58136.cve.json) [\[OSV json\]](./CVE-2025-58136.osv.json)
-
-
-
-_Last updated: 2026-04-02T15:54:44.268Z_
-
-### Affected
-
-* Apache Traffic Server from 10.0.0 through 10.1.1
-* Apache Traffic Server from 9.0.0 through 9.2.12
-
-
-### Description
-
-<p>A bug in POST request handling causes a crash under a certain condition.</p><p>This issue affects Apache Traffic Server: from 10.0.0 through 10.1.1, from 9.0.0 through 9.2.12.</p><p>Users are recommended to upgrade to version 10.1.2 or 9.2.13, which fix the issue.</p>A workaround for older versions is to set&nbsp;<span style="background-color: rgb(255, 255, 255);">proxy.config.http.request_buffer_enabled to 0 (the default value is 0).&nbsp;</span><br>
-
-### References
-* https://lists.apache.org/thread/2s11roxlv1j8ph6q52rqo1klvl01n14q
-
-
 ## Remote DoS via memory exhaustion in ESI Plugin ## { #CVE-2025-49763 }
 
 CVE-2025-49763 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-49763) [\[CVE json\]](./CVE-2025-49763.cve.json) [\[OSV json\]](./CVE-2025-49763.osv.json)

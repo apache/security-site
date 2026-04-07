@@ -13,6 +13,66 @@ Do you want disclose a potential security issue for Apache ActiveMQ? You can rea
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://activemq.apache.org/security-advisories). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Authenticated users could perform RCE via Jolokia MBeans ## { #CVE-2026-34197 }
+
+CVE-2026-34197 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34197) [\[CVE json\]](./CVE-2026-34197.cve.json) [\[OSV json\]](./CVE-2026-34197.osv.json)
+
+
+
+_Last updated: 2026-04-07T07:50:07.939Z_
+
+### Affected
+
+* Apache ActiveMQ Broker before 5.19.4
+* Apache ActiveMQ Broker from 6.0.0 before 6.2.3
+* Apache ActiveMQ before 5.19.4
+* Apache ActiveMQ from 6.0.0 before 6.2.3
+
+
+### Description
+
+<p>Improper Input Validation, Improper Control of Generation of Code ('Code Injection') vulnerability in Apache ActiveMQ Broker, Apache ActiveMQ.</p><span style="background-color: rgb(255, 255, 255);">Apache ActiveMQ Classic exposes the Jolokia JMX-HTTP bridge at&nbsp;</span><span style="background-color: rgb(255, 255, 255);">/api/jolokia/ on the web console. The default Jolokia access policy permits&nbsp;</span><span style="background-color: rgb(255, 255, 255);">exec operations on all ActiveMQ&nbsp;</span><span style="background-color: rgb(255, 255, 255);">MBeans (org.apache.activemq:*), including</span><br><span style="background-color: rgb(255, 255, 255);">BrokerService.addNetworkConnec</span><span style="background-color: rgb(255, 255, 255);">tor(String) and <span style="background-color: rgb(255, 255, 255);">BrokerService.addConnector</span><span style="background-color: rgb(255, 255, 255);">(String)</span>. <br><br>An authenticated attacker </span><span style="background-color: rgb(255, 255, 255);">can&nbsp;</span><span style="background-color: rgb(255, 255, 255);">invoke these operations with a crafted discovery URI that triggers the VM&nbsp;</span><span style="background-color: rgb(255, 255, 255);">transport's brokerConfig parameter to load a remote Spring XML application&nbsp;</span><span style="background-color: rgb(255, 255, 255);">context using ResourceXmlApplicationContext. <br>Because Spring's&nbsp;</span><span style="background-color: rgb(255, 255, 255);">ResourceXmlApplicationContext instantiates all singleton beans before the&nbsp;</span><span style="background-color: rgb(255, 255, 255);">BrokerService validates the configuration, arbitrary code execution occurs&nbsp;</span><span style="background-color: rgb(255, 255, 255);">on the broker's JVM through bean factory methods such as Runtime.exec().</span><br><p>This issue affects Apache ActiveMQ Broker: before 5.19.4, from 6.0.0 before 6.2.3; Apache ActiveMQ: .</p><p>Users are recommended to upgrade to version 5.19.5 or 6.2.3, which fixes the issue.</p>
+
+### References
+* https://activemq.apache.org/security-advisories.data/CVE-2026-34197-announcement.txt
+
+
+### Credits
+* Naveen Sunkavally (Horizon3.ai) (finder)
+
+
+## Improper Limitation of a Pathname to a Restricted Classpath Directory ## { #CVE-2026-33227 }
+
+CVE-2026-33227 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-33227) [\[CVE json\]](./CVE-2026-33227.cve.json) [\[OSV json\]](./CVE-2026-33227.osv.json)
+
+
+
+_Last updated: 2026-04-07T07:50:57.542Z_
+
+### Affected
+
+* Apache ActiveMQ Client before 5.19.3
+* Apache ActiveMQ Client from 6.0.0 before 6.2.2
+* Apache ActiveMQ Broker before 5.19.3
+* Apache ActiveMQ Broker from 6.0.0 before 6.2.2
+* Apache ActiveMQ before 5.19.3
+* Apache ActiveMQ from 6.0.0 before 6.2.2
+* Apache ActiveMQ Web before 5.19.3
+* Apache ActiveMQ Web from 6.0.0 before 6.2.2
+
+
+### Description
+
+<p>Improper validation and restriction of a classpath path name vulnerability in Apache ActiveMQ Client, Apache ActiveMQ Broker, Apache ActiveMQ All.</p>In two instances (when creating a Stomp consumer and also browsing messages in the Web console) an authenticated user provided "key" value could be constructed to traverse the classpath due to path concatenation. As a result, the application is exposed to a classpath path resource loading vulnerability that could potentially be chained together with another attack to lead to exploit.<p>This issue affects Apache ActiveMQ Client: before 5.19.3, from 6.0.0 before 6.2.2; Apache ActiveMQ Broker: before 5.19.3, from 6.0.0 before 6.2.2; Apache ActiveMQ All: before 5.19.3, from 6.0.0 before 6.2.2.</p><p>Users are recommended to upgrade to version 5.19.4 or 6.2.3, which fixes the issue. Note: 5.19.3 and 6.2.2 also fix this issue, but that is limited to non-Windows environments due to a path separator resolution bug fixed in 5.19.4 and 6.2.3.&nbsp;</p>
+
+### References
+* https://activemq.apache.org/security-advisories.data/CVE-2026-33227-announcement.txt
+
+
+### Credits
+* Dawei Wang (finder)
+
+
 ## MQTT control packet remaining length field is not properly validated ## { #CVE-2025-66168 }
 
 CVE-2025-66168 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66168) [\[CVE json\]](./CVE-2025-66168.cve.json) [\[OSV json\]](./CVE-2025-66168.osv.json)

@@ -121,7 +121,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache ShenYu |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Shiro](https://shiro.apache.org/security-reports.html) |  [Apache Shiro Security Team](mailto:security@shiro.apache.org) | |
 | [Apache SINGA](https://singa.apache.org/security.html) |  [Apache SINGA Security Team](mailto:security@singa.apache.org) | |
-| Apache SkyWalking |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache SkyWalking](https://skywalking.apache.org/docs/main/next/en/security/readme/) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Sling](https://sling.apache.org/project-information/security.html) |  [Apache Sling Security Team](mailto:security@sling.apache.org) | |
 | [Apache Solr](https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity) |  [Apache Solr Security Team](mailto:security@solr.apache.org) | [Advisories](https://solr.apache.org/security.html#recent-cve-reports-for-apache-solr) |
 | [Apache SpamAssassin](https://cwiki.apache.org/confluence/display/SPAMASSASSIN/SecurityPolicy) |  [Apache SpamAssassin Security Team](mailto:security@spamassassin.apache.org) | |

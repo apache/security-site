@@ -17,7 +17,7 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 CVE-2026-29171 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-29171) [\[CVE json\]](./CVE-2026-29171.cve.json)
 
-_Last updated: 2026-03-08T05:36:46.274Z_
+_Last updated: 2026-04-07T09:59:49.600Z_
 
 ### Affected
 
