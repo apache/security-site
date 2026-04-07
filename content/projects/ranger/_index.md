@@ -13,6 +13,56 @@ Do you want disclose a potential security issue for Apache Ranger? Send your rep
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Hostname verification bypass in NiFiRegistryClient and NifiClient ## { #CVE-2025-59060 }
+
+CVE-2025-59060 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-59060) [\[CVE json\]](./CVE-2025-59060.cve.json) [\[OSV json\]](./CVE-2025-59060.osv.json)
+
+
+
+_Last updated: 2026-03-03T10:46:51.061Z_
+
+### Affected
+
+* Apache Ranger through 2.7.0
+
+
+### Description
+
+<p>Hostname verification bypass issue in Apache Ranger NiFiRegistryClient/NiFiClient is reported in Apache Ranger versions &lt;= 2.7.0.</p>Users are recommended to upgrade to version 2.8.0, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/c4plx81z3xs86vgl3fd95y3q7hhtff05
+
+
+### Credits
+* Nikita Markevich <markevich.nikita1@gmail.com> (finder)
+
+
+## Remote Code Execution Vulnerability in NashornScriptEngineCreator ## { #CVE-2025-59059 }
+
+CVE-2025-59059 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-59059) [\[CVE json\]](./CVE-2025-59059.cve.json) [\[OSV json\]](./CVE-2025-59059.osv.json)
+
+
+
+_Last updated: 2026-03-03T10:46:03.383Z_
+
+### Affected
+
+* Apache Ranger through 2.7.0
+
+
+### Description
+
+Remote Code Execution Vulnerability in NashornScriptEngineCreator is reported in Apache Ranger versions &lt;= 2.7.0.<br>Users are recommended to upgrade to version 2.8.0, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/z47q86rho80390lf2qcmoc2josvs0gtv
+
+
+### Credits
+* chengtianyi <chengtianyi@huawei.com> (finder)
+
+
 ## Improper Neutralization of Formula Elements in a CSV File ## { #CVE-2024-55532 }
 
 CVE-2024-55532 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-55532) [\[CVE json\]](./CVE-2024-55532.cve.json) [\[OSV json\]](./CVE-2024-55532.osv.json)

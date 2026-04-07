@@ -75,7 +75,7 @@ sending a (specification invalid) HEAD request using HTTP/0.9.<br></p><p>This is
 
 CVE-2025-66614 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66614) [\[CVE json\]](./CVE-2025-66614.cve.json)
 
-_Last updated: 2026-02-17T18:48:25.348Z_
+_Last updated: 2026-03-24T09:46:30.194Z_
 
 ### Affected
 

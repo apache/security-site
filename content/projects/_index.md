@@ -22,6 +22,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache APISIX |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Portable Runtime (APR)](https://apr.apache.org/security_report.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Arrow](https://arrow.apache.org/docs/dev/format/Security.html) |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Artemis |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache AsterixDB |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Atlas |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Avro |  [Apache Security Team](mailto:security@apache.org) | |

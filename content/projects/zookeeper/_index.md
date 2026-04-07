@@ -13,6 +13,58 @@ Do you want disclose a potential security issue for Apache ZooKeeper? You can re
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://zookeeper.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Sensitive information disclosure in client configuration handling ## { #CVE-2026-24308 }
+
+CVE-2026-24308 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24308) [\[CVE json\]](./CVE-2026-24308.cve.json) [\[OSV json\]](./CVE-2026-24308.osv.json)
+
+
+
+_Last updated: 2026-03-07T08:51:03.330Z_
+
+### Affected
+
+* Apache ZooKeeper from 3.9.0 through 3.9.4
+* Apache ZooKeeper from 3.8.0 through 3.8.5
+
+
+### Description
+
+<code>Improper handling of configuration values in ZKConfig in Apache ZooKeeper 3.8.5 and 3.9.4 on all platforms allows an attacker to expose sensitive information stored in client configuration in the client's logfile. Configuration values are exposed at INFO level logging rendering potential production systems affected by the issue.&nbsp;</code>Users are recommended to upgrade to version 3.8.6 or 3.9.5 which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/qng3rtzv2pqkmko4rhv85jfplkyrgqdr
+
+
+### Credits
+* Youlong Chen <chenyoulong20g@ict.ac.cn> (reporter)
+
+
+## Reverse-DNS fallback enables hostname verification bypass in ZooKeeper ZKTrustManager ## { #CVE-2026-24281 }
+
+CVE-2026-24281 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24281) [\[CVE json\]](./CVE-2026-24281.cve.json) [\[OSV json\]](./CVE-2026-24281.osv.json)
+
+
+
+_Last updated: 2026-03-07T08:50:30.345Z_
+
+### Affected
+
+* Apache ZooKeeper from 3.9.0 through 3.9.4
+* Apache ZooKeeper from 3.8.0 through 3.8.5
+
+
+### Description
+
+Hostname verification in Apache ZooKeeper ZKTrustManager falls back to reverse DNS (PTR) when IP SAN validation fails, allowing attackers who control or spoof PTR records to impersonate ZooKeeper servers or clients with a valid certificate for the PTR name. It's important to note that attacker must present a certificate which is trusted by ZKTrustManager which makes the attack vector harder to exploit. Users are recommended to upgrade to version 3.8.6 or 3.9.5, which fixes this issue by introducing a new configuration option to disable reverse DNS lookup in client and quorum protocols.<br><br><br><br><br><br>
+
+### References
+* https://lists.apache.org/thread/088ddsbrzhd5lxzbqf5n24yg0mwh9jt2
+
+
+### Credits
+* Nikita Markevich <markevich.nikita1@gmail.com> (reporter)
+
+
 ## Insufficient Permission Check in AdminServer Snapshot/Restore Commands ## { #CVE-2025-58457 }
 
 CVE-2025-58457 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-58457) [\[CVE json\]](./CVE-2025-58457.cve.json) [\[OSV json\]](./CVE-2025-58457.osv.json)

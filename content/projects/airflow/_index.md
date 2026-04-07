@@ -13,13 +13,173 @@ Do you want disclose a potential security issue for Apache Airflow? Send your re
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## TLS Certificate Verification Disabled in Databricks Provider K8s Token Exchange ## { #CVE-2026-32794 }
+
+CVE-2026-32794 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-32794) [\[CVE json\]](./CVE-2026-32794.cve.json) [\[OSV json\]](./CVE-2026-32794.osv.json)
+
+
+
+_Last updated: 2026-03-30T21:43:36.022Z_
+
+### Affected
+
+* Apache Airflow Provider for Databricks from 1.10.0 before 1.12.0
+
+
+### Description
+
+<p>Improper Certificate Validation vulnerability in Apache Airflow Provider for Databricks. Provider code did not validate certificates for connections to Databricks back-end which could result in a man-of-a-middle attack that traffic is intercepted and manipulated or credentials exfiltrated w/o notice.</p><p>This issue affects Apache Airflow Provider for Databricks: from 1.10.0 before 1.12.0.</p><p>Users are recommended to upgrade to version 1.12.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/airflow/pull/63704
+* https://lists.apache.org/thread/hn17yqsgsdtl81llvhf80rkp53hnz5nb
+
+
+### Credits
+* Kai Aizen (reporter)
+* Marcin Wojtyczka (remediation developer)
+
+
+## Execution API HITL Endpoints Missing Per-Task Authorization ## { #CVE-2026-30911 }
+
+CVE-2026-30911 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-30911) [\[CVE json\]](./CVE-2026-30911.cve.json) [\[OSV json\]](./CVE-2026-30911.osv.json)
+
+
+
+_Last updated: 2026-03-17T10:53:00.535Z_
+
+### Affected
+
+* Apache Airflow from 3.1.0 before 3.1.8
+
+
+### Description
+
+Apache Airflow versions 3.1.0 through 3.1.7 missing authorization vulnerability in the Execution API's Human-in-the-Loop (HITL) endpoints that allows any authenticated task instance to read, approve, or reject HITL workflows belonging to any other task instance.<br><br><br>Users are recommended to upgrade to Apache Airflow 3.1.8 or later, which resolves this issue.<br><br>
+
+### References
+* https://github.com/apache/airflow/pull/62886
+* https://lists.apache.org/thread/1rs2v7fcko2otl6n9ytthcj87cmsgx51
+
+
+### Credits
+* Kai Aizen (finder)
+* Aritra Basu (remediation developer)
+
+
+## Path of session token in cookie does not consider base_url - session hijacking via co-hosted applications ## { #CVE-2026-28779 }
+
+CVE-2026-28779 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-28779) [\[CVE json\]](./CVE-2026-28779.cve.json) [\[OSV json\]](./CVE-2026-28779.osv.json)
+
+
+
+_Last updated: 2026-03-17T10:43:18.236Z_
+
+### Affected
+
+* Apache Airflow from 3.0.0 before 3.1.8
+
+
+### Description
+
+Apache Airflow versions 3.1.0 through 3.1.7&nbsp;<span style="background-color: rgb(255, 255, 255);">session token (_token) in cookies is set to path=/ regardless of the configured [webserver] base_url or [api] base_url.<br><p>This allows any application co-hosted under the same domain to capture valid Airflow session tokens from HTTP request headers, allowing full session takeover without attacking Airflow itself.</p></span>Users are recommended to upgrade to Apache Airflow 3.1.8 or later, which resolves this issue.<br>
+
+### References
+* https://github.com/apache/airflow/pull/62771
+* https://lists.apache.org/thread/r4n5znb8mcq14wo9v8ndml36nxlksdqb
+
+
+### Credits
+* Daniel Wolf (finder)
+* Daniel Wolf (remediation developer)
+
+
+## DAG authorization bypass ## { #CVE-2026-28563 }
+
+CVE-2026-28563 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-28563) [\[CVE json\]](./CVE-2026-28563.cve.json) [\[OSV json\]](./CVE-2026-28563.osv.json)
+
+
+
+_Last updated: 2026-03-17T10:54:55.864Z_
+
+### Affected
+
+* Apache Airflow from 3.0.0 before 3.1.8
+
+
+### Description
+
+Apache Airflow versions 3.1.0 through 3.1.7 /ui/dependencies endpoint returns the full DAG dependency graph without filtering by authorized DAG IDs. This allows an authenticated user with only DAG Dependencies permission to enumerate DAGs they are not authorized to view.<br><br><br>Users are recommended to upgrade to Apache Airflow 3.1.8 or later, which resolves this issue.<br><br><br>
+
+### References
+* https://github.com/apache/airflow/pull/62046
+* https://lists.apache.org/thread/dwzf62qg9z8wvfsjknpfd8bvtwghd49s
+
+
+### Credits
+* Masamune - Unit515 OPSWAT (finder)
+* Shubham Raj (remediation developer)
+
+
+## Wildcard DagVersion Listing Bypasses Per‑DAG RBAC and Leaks Metadata ## { #CVE-2026-26929 }
+
+CVE-2026-26929 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-26929) [\[CVE json\]](./CVE-2026-26929.cve.json) [\[OSV json\]](./CVE-2026-26929.osv.json)
+
+
+
+_Last updated: 2026-03-17T10:54:03.388Z_
+
+### Affected
+
+* Apache Airflow from 3.0.0 before 3.1.8
+
+
+### Description
+
+Apache Airflow versions 3.0.0 through 3.1.7<span style="background-color: rgb(255, 255, 255);">&nbsp;FastAPI DagVersion listing API does not apply per-DAG authorization filtering when the request is made with dag_id set to "~" (wildcard for all DAGs). As a result, version metadata of DAGs that the requester is not authorized to access is returned.</span><br><br><br>Users are recommended to upgrade to Apache Airflow 3.1.8 or later, which resolves this issue.<br><br><br>
+
+### References
+* https://github.com/apache/airflow/pull/61675
+* https://lists.apache.org/thread/g5o6khx83jwqvdyn0mlyb0krt35cs9ss
+
+
+### Credits
+* Pierre Jeambrun (remediation developer)
+
+
+## Apache Airflow AWS Auth Manager - Host Header Injection Leading to SAML Authentication Bypass ## { #CVE-2026-25604 }
+
+CVE-2026-25604 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-25604) [\[CVE json\]](./CVE-2026-25604.cve.json) [\[OSV json\]](./CVE-2026-25604.osv.json)
+
+
+
+_Last updated: 2026-03-09T10:39:37.628Z_
+
+### Affected
+
+* Apache Airflow Providers Amazon from 8.0.0 before 9.22.0
+
+
+### Description
+
+<p>In AWS Auth manager, the origin of the SAML authentication has been used as provided by the client and not verified against the actual instance URL.&nbsp;<br>This allowed to gain access to different instances with potentially different access controls by reusing SAML response from other instances.</p>You should upgrade to 9.22.0 version of provider if you use AWS Auth Manager.<br><br>
+
+### References
+* https://github.com/apache/airflow/pull/61368
+* https://lists.apache.org/thread/spwwrsmwxod7fpttcd7n7zs46j839l77
+
+
+### Credits
+* Sungwuk Jung (finder)
+
+
 ## Assigning single DAG permission leaked all DAGs Import Errors ## { #CVE-2026-24098 }
 
 CVE-2026-24098 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24098) [\[CVE json\]](./CVE-2026-24098.cve.json) [\[OSV json\]](./CVE-2026-24098.osv.json)
 
 
 
-_Last updated: 2026-02-09T10:32:52.180Z_
+_Last updated: 2026-03-10T18:13:52.941Z_
 
 ### Affected
 
@@ -64,6 +224,34 @@ Apache Airflow versions 3.1.0 through 3.1.6 contain an authorization flaw that c
 ### Credits
 * 34selen (finder)
 * Shubham Raj (remediation developer)
+
+
+## Unsafe Pickle Deserialization in apache-airflow-providers-http leading to RCE via HttpOperator ## { #CVE-2025-69219 }
+
+CVE-2025-69219 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-69219) [\[CVE json\]](./CVE-2025-69219.cve.json) [\[OSV json\]](./CVE-2025-69219.osv.json)
+
+
+
+_Last updated: 2026-03-09T10:19:56.479Z_
+
+### Affected
+
+* Apache Airflow Providers Http from 5.1.0 before 6.0.0
+
+
+### Description
+
+<p>A user with access to the DB could craft a database entry that would result in executing code on Triggerer - which gives anyone who have access to DB the same permissions as Dag Author. Since direct DB access is not usual and recommended for Airflow, the likelihood of it making any damage is low.<br><br>You should upgrade to version 6.0.0 of the provider to avoid even that risk.</p>
+
+### References
+* https://github.com/apache/airflow/pull/61662
+* https://lists.apache.org/thread/zjkfb2njklro68tqzym092r4w65m5dq0
+
+
+### Credits
+* skypher (finder)
+* Shauryae1337 (GitHub: https://github.com/Shauryae1337) (finder)
+* Ahmet Artuç (finder)
 
 
 ## proxy credentials for various providers might leak in task logs ## { #CVE-2025-68675 }
@@ -169,6 +357,36 @@ A vulnerability in Apache Airflow allowed authenticated UI users to view secret 
 ### Credits
 * William Ashe (finder)
 * Amogh Desai (remediation developer)
+
+
+## Disclosure of secrets to UI via kwargs ## { #CVE-2025-65995 }
+
+CVE-2025-65995 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-65995) [\[CVE json\]](./CVE-2025-65995.cve.json) [\[OSV json\]](./CVE-2025-65995.osv.json)
+
+
+
+_Last updated: 2026-03-08T19:08:56.440Z_
+
+### Affected
+
+* Apache Airflow from 3.0.0 before 3.1.4
+* Apache Airflow before 2.11.1
+
+
+### Description
+
+When a DAG failed during parsing, Airflow’s error-reporting in the UI could include the full kwargs passed to the operators. If those kwargs contained sensitive values (such as secrets), they might be exposed in the UI tracebacks to authenticated users who had permission to view that DAG.&nbsp;<br><br>The issue has been fixed in Airflow 3.1.4 and 2.11.1, and users are strongly advised to upgrade to prevent potential disclosure of sensitive information.
+
+### References
+* https://github.com/apache/airflow/pull/58252
+* https://lists.apache.org/thread/1qzlrjo2wmlzs0rrgzgslj2pzkor0dr2
+* https://github.com/apache/airflow/pull/61883
+
+
+### Credits
+* Frieder Gottman (Cariad) (finder)
+* Jens Scheffler (Bosch) (reporter)
+* Jens Scheffler (Bosch) (remediation developer)
 
 
 ## Privilege boundary bypass in bulk APIs (create action can upsert existing Pools/Connections/Variables) ## { #CVE-2025-62503 }
@@ -327,7 +545,7 @@ CVE-2025-27555 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27555) [\[CVE jso
 
 
 
-_Last updated: 2026-02-24T10:09:58.046Z_
+_Last updated: 2026-03-11T15:10:00.713Z_
 
 ### Affected
 

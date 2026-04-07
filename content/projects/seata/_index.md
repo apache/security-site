@@ -44,7 +44,7 @@ CVE-2025-32897 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-32897) [\[CVE jso
 
 
 
-_Last updated: 2025-06-28T18:25:15.298Z_
+_Last updated: 2026-03-30T02:05:32.515Z_
 
 ### Affected
 
@@ -91,7 +91,7 @@ CVE-2024-47552 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-47552) [\[CVE jso
 
 
 
-_Last updated: 2025-03-20T08:57:58.136Z_
+_Last updated: 2026-03-30T02:08:11.034Z_
 
 ### Affected
 

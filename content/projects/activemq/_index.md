@@ -13,6 +13,39 @@ Do you want disclose a potential security issue for Apache ActiveMQ? You can rea
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://activemq.apache.org/security-advisories). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## MQTT control packet remaining length field is not properly validated ## { #CVE-2025-66168 }
+
+CVE-2025-66168 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66168) [\[CVE json\]](./CVE-2025-66168.cve.json) [\[OSV json\]](./CVE-2025-66168.osv.json)
+
+
+
+_Last updated: 2026-03-04T08:44:58.889Z_
+
+### Affected
+
+* Apache ActiveMQ before 5.19.2
+* Apache ActiveMQ from 6.0.0 before 6.1.9
+* Apache ActiveMQ from 6.2.0 before 6.2.1
+* Apache ActiveMQ All Module before 5.19.2
+* Apache ActiveMQ All Module from 6.0.0 before 6.1.9
+* Apache ActiveMQ All Module from 6.2.0 before 6.2.1
+* Apache ActiveMQ MQTT Module before 5.19.2
+* Apache ActiveMQ MQTT Module from 6.0.0 before 6.1.9
+* Apache ActiveMQ MQTT Module from 6.2.0 before 6.2.1
+
+
+### Description
+
+<p><span style="background-color: rgb(255, 255, 255);">Apache ActiveMQ does not properly validate the remaining length field which may lead to an overflow during the decoding of malformed packets.&nbsp;</span><span style="background-color: rgb(255, 255, 255);">When this integer overflow occurs, ActiveMQ may incorrectly compute the total Remaining Length and subsequently misinterpret the payload as multiple MQTT control packets which makes<span style="background-color: rgb(255, 255, 255);">&nbsp;the broker susceptible to unexpected behavior when interacting with non-compliant clients.</span>&nbsp;</span><span style="background-color: rgb(255, 255, 255);">This behavior violates the MQTT v3.1.1 specification, which restricts Remaining Length to a maximum of 4 bytes.</span>&nbsp;The scenario occurs on established connections after the authentication process. Brokers that are not enabling mqtt transport connectors are not impacted.</p><p>This issue affects Apache ActiveMQ: before 5.19.2, 6.0.0 to 6.1.8, and 6.2.0</p><p>Users are recommended to upgrade to version 5.19.2, 6.1.9, or 6.2.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/13n8mkrb2jf2y6yyhpgrkmpqcm7djyto
+
+
+### Credits
+* Gai Tanaka <641.work123@gmail.com> (finder)
+
+
 ## Deserialization of Untrusted Data ## { #CVE-2025-54539 }
 
 CVE-2025-54539 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-54539) [\[CVE json\]](./CVE-2025-54539.cve.json) [\[OSV json\]](./CVE-2025-54539.osv.json)

