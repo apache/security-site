@@ -105,21 +105,38 @@
 <p>Do you want disclose a potential security issue for Apache Livy (Incubating)? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2025-60012">Restrict file access</h2>
+<p>CVE-2025-60012 <a href="https://cve.org/CVERecord?id=CVE-2025-60012">[CVE]</a> <a href="./CVE-2025-60012.cve.json">[CVE json]</a> <a href="./CVE-2025-60012.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-03-13T15:23:05.927Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Livy from 0.7.0-incubating before 0.9.0-incubating</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Malicious configuration can lead to unauthorized file access in Apache Livy.</p><p>This issue affects Apache Livy 0.7.0 and 0.8.0 when connecting to Apache&nbsp;Spark 3.1 or later.</p><p>A request that includes a Spark configuration value supported from Apache&nbsp;Spark version 3.1 can lead to users gaining access to files they do not have permissions to.</p><p>For the vulnerability to be exploitable, the user needs to have access to Apache Livy's REST or JDBC interface and be able to send requests with arbitrary Spark configuration values.</p><p>Users are recommended to upgrade to version 0.9.0 or later, which fixes the issue.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/gpc85fwrgrbglpk9gm8tmcjzqnctx64w">https://lists.apache.org/thread/gpc85fwrgrbglpk9gm8tmcjzqnctx64w</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Furue Hideyuki (finder)</li>
+</ul>
 <h2 id="CVE-2021-26544">Apache Livy (Incubating) is vulnerable to cross site scripting</h2>
 <p>CVE-2021-26544 <a href="https://cve.org/CVERecord?id=CVE-2021-26544">[CVE]</a> <a href="./CVE-2021-26544.cve.json">[CVE json]</a> <a href="./CVE-2021-26544.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2021-02-20T08:56:02.977Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache Livy (Incubating) at 0.7.0-incubating</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-1">Description</h3>
 <p>Livy server version 0.7.0-incubating (only) is vulnerable to a cross site scripting issue in the session name.  A malicious user could use this flaw to access logs and results of other users&rsquo; sessions and run jobs with their privileges.  This issue is fixed in Livy 0.7.1-incubating.</p>
-<h3 id="references">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://github.com/apache/incubator-livy/commit/4d8a912699683b973eee76d4e91447d769a0cb0d">https://github.com/apache/incubator-livy/commit/4d8a912699683b973eee76d4e91447d769a0cb0d</a></li>
 <li><a href="https://lists.apache.org/thread.html/r2db14e7fd1e5ec2519e8828d43529bad623d75698cc7918af3a3f3ed%40%3Cuser.livy.apache.org%3E">https://lists.apache.org/thread.html/r2db14e7fd1e5ec2519e8828d43529bad623d75698cc7918af3a3f3ed%40%3Cuser.livy.apache.org%3E</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>We would like to thank Andras Beni for reporting this issue</li>
 </ul>

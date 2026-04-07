@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.111.3">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Apache Artemis security advisories </title>
+
+  
+  <meta name="description" content="Security information for Apache Artemis"> 
+  
+  
+  
+  
+  
+  <meta name="robots" content="noindex">
+  
+
+  
+
+  <meta name="author" content="">
+
+
+  <meta property="og:title" content="Apache Artemis security advisories" />
+<meta property="og:description" content="Security information for Apache Artemis" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://security.apache.org/projects/artemis/" />
+
+  
+
+
+
+
+  
+  
+   <link href="/projects/artemis/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
+
+  <link rel="canonical" href="https://security.apache.org/projects/artemis/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Apache Security Team</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Apache Security Team</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog" >Blog</a></li>
+    
+    <li><a href="https://www.apache.org/licenses/" >License</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
+    
+    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
+    
+    <li><a href="https://www.apache.org" >Apache</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+
+<div id="hero" class="wrap">
+  <h1>Apache Artemis security advisories</h1>
+    <p>Security information for Apache Artemis</p>
+</div>
+<div id="project-box">
+<div id="project">
+
+ <h1 id="reporting">Reporting</h1>
+<p>Do you want disclose a potential security issue for Apache Artemis? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<h1 id="advisories">Advisories</h1>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-32642">Temporary address auto-created for OpenWire consumer without createAddress permission</h2>
+<p>CVE-2026-32642 <a href="https://cve.org/CVERecord?id=CVE-2026-32642">[CVE]</a> <a href="./CVE-2026-32642.cve.json">[CVE json]</a> <a href="./CVE-2026-32642.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-03-24T07:54:40.342Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Artemis from 2.50.0 through 2.52.0</li>
+<li>Apache ActiveMQ Artemis from 2.0.0 through 2.44.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Incorrect Authorization (CWE-863)&nbsp;vulnerability in Apache Artemis, Apache ActiveMQ Artemis exists when an application using the OpenWire protocol attempts to create a non-durable JMS topic subscription on an address that doesn't exist with an authenticated user which has the "createDurableQueue" permission but does not have the "createAddress" permission and address auto-creation is disabled. In this circumstance, a temporary address will be created whereas the attempt to create the non-durable subscription should instead fail since the user is not authorized to create the corresponding address. When the OpenWire connection is closed the address is removed.</p><p>This issue affects Apache Artemis: from 2.50.0 through 2.52.0; Apache ActiveMQ Artemis: from 2.0.0 through 2.44.0.</p><p>Users are recommended to upgrade to version 2.53.0, which fixes the issue.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/4wlrp31ngq2yb54sf4kjb3bl41t4xgtp">https://lists.apache.org/thread/4wlrp31ngq2yb54sf4kjb3bl41t4xgtp</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Stephen Higgs <a href="mailto:shiggs@redhat.com">shiggs@redhat.com</a> (reporter)</li>
+</ul>
+<h2 id="CVE-2026-27446">Auth bypass for Core downstream federation</h2>
+<p>CVE-2026-27446 <a href="https://cve.org/CVERecord?id=CVE-2026-27446">[CVE]</a> <a href="./CVE-2026-27446.cve.json">[CVE json]</a> <a href="./CVE-2026-27446.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-03-17T15:30:04.446Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Artemis from 2.50.0 through 2.51.0</li>
+<li>Apache ActiveMQ Artemis from 2.11.0 through 2.44.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Missing Authentication for Critical Function (CWE-306) vulnerability in Apache Artemis, Apache ActiveMQ Artemis. An unauthenticated remote attacker can use the Core protocol to force a target broker to establish an outbound Core federation connection to an attacker-controlled rogue broker. This could potentially result in message injection into any queue and/or message exfiltration from any queue via the rogue broker. This impacts environments that allow both:</p><p>- incoming Core protocol connections from untrusted sources to the broker</p><p>- outgoing Core protocol connections from the broker to untrusted targets</p><p>This issue affects:</p><p>- Apache Artemis from 2.50.0 through 2.51.0</p><p>- Apache ActiveMQ Artemis from 2.11.0 through 2.44.0.</p><p>Users are recommended to upgrade to Apache Artemis version 2.52.0, which fixes the issue.</p><p>The issue can be mitigated by one of the following:</p><p>- Remove Core protocol support from any acceptor receiving connections from untrusted sources. Incoming Core protocol connections are supported by default via the "artemis" acceptor listening on port 61616. See the "protocols" URL parameter configured for the acceptor. An acceptor URL without this parameter supports all protocols by default, including Core.</p><p>- Use two-way SSL (i.e. certificate-based authentication) in order to force every client to present the proper SSL certificate when establishing a connection before any message protocol handshake is attempted. This will prevent unauthenticated exploitation of this vulnerability.</p><p>- Implement and deploy a Core interceptor to deny all Core downstream federation connect packets. Such packets have a type of (int) -16 or (byte)&nbsp;0xfffffff0. Documentation for interceptors is available at&nbsp;<a target="_blank" rel="nofollow" href="https://artemis.apache.org/components/artemis/documentation/latest/intercepting-operations.html">https://artemis.apache.org/components/artemis/documentation/latest/intercepting-operations.html</a>.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/jwpsdc8tdxotm98od8n8n30fqlzoc8gg">https://lists.apache.org/thread/jwpsdc8tdxotm98od8n8n30fqlzoc8gg</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Hardik Mehta <a href="mailto:mehtahardik@proton.me">mehtahardik@proton.me</a> (finder)</li>
+</ul>
+
+  
+</div>
+</div>
+</main>
+  <footer> 
+    <footer id="footer">
+    <p>&copy; The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+  </footer>
+ 
+</footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/main.js" type="text/javascript">
+  </script>
+</body>
+
+</html>
