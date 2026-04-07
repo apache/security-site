@@ -54,7 +54,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Fineract](https://fineract.apache.org/security.html) |  [Apache Fineract Security Team](mailto:security@fineract.apache.org) | [Advisories](https://fineract.apache.org/security.html) |
 | [Apache Flink](https://flink.apache.org/what-is-flink/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://flink.apache.org/what-is-flink/security/) |
 | Apache Fory |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Geode |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Geode](https://geode.apache.org/docs/guide/20/security/security_model.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Geronimo](https://geronimo.apache.org/security-reports.html) |  [Apache Geronimo Security Team](mailto:security@geronimo.apache.org) | |
 | Apache Gobblin |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Guacamole](https://guacamole.apache.org/security/) |  [Apache Guacamole Security Team](mailto:security@guacamole.apache.org) | [Advisories](https://guacamole.apache.org/security/) |
