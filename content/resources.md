@@ -59,6 +59,13 @@ your security model is well-documented, you're ready to process any findings,
 and contact [mailto:security@apache.org](security@apache.org) so we can see
 if we can find someone to perform such an audit.
 
+## Access to tools
+
+Some vendors or initiatives provide access to tools to Open Source developers in general or ASF project members in particular. An incomplete list:
+
+* [Claude for Open Source](https://claude.com/contact-sales/claude-for-oss)
+* The [ASF Responsible AI Initiative](https://www.apache.org/foundation/initiatives/responsibleai) aims to provide ASF projects with access to AI models and tooling, though this is not open for applications yet.
+
 ## Fuzzing
 
 Especially if your project is written in a language that does not provide
