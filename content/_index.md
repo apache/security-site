@@ -8,4 +8,5 @@ description: The Apache Security Team provides help and advice to Apache project
   <a class="button outline big" href="/projects">Projects</a>
   <a class="button outline big" href="/blog">Blog</a>
   <a class="button outline big" href="/contributing">Contributing</a>
+  <a class="button outline big" href="/resources">Resources</a>
 </div>
