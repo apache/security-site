@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.111.3">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> ASF Security Resources </title>
+
+  
+  <meta name="description" content="Resources available to ASF projects"> 
+  
+  
+  
+  
+  
+
+  
+
+  <meta name="author" content="">
+
+
+  <meta property="og:title" content="ASF Security Resources" />
+<meta property="og:description" content="Resources available to ASF projects" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://security.apache.org/resources/" /><meta property="article:section" content="" />
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  <link rel="canonical" href="https://security.apache.org/resources/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Apache Security Team</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Apache Security Team</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog" >Blog</a></li>
+    
+    <li><a href="https://www.apache.org/licenses/" >License</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
+    
+    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
+    
+    <li><a href="https://www.apache.org" >Apache</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+
+<div id="hero" class="wrap">
+  <h1>ASF Security Resources</h1>
+    <p>Resources available to ASF projects</p>
+</div>
+<div id="project-box">
+<div id="project">
+
+ <p>If you&rsquo;re an Apache Software Foundation project, there are
+a number of resources available to you:</p>
+<h2 id="information">Information</h2>
+<p>You can find information around security topics with an ASF-specific
+slant at <a href="https://cwiki.apache.org/confluence/display/SECURITY">https://cwiki.apache.org/confluence/display/SECURITY</a></p>
+<p>For a more interactive experience, <a href="/contributing/#join-the-conversation">join the conversation</a></p>
+<h2 id="security-report-triage">Security report triage</h2>
+<p>The Security Team provides initial triage for reports coming in through
+<a href="security@apache.org">mailto:security@apache.org</a>, so as project you won&rsquo;t even
+have to see the most obvious invalid ones. Of course, we cannot be experts on
+all ASF projects and will err on the safe side. You can make our triage more
+effective by clearly <a href="https://cwiki.apache.org/confluence/display/SECURITY/Documenting+your+security+model">documenting your security model</a>,
+which we will use as a basis for the triage.</p>
+<h2 id="project-specific-security-lists">Project-specific security lists</h2>
+<p>If you&rsquo;re a mature project, you can apply for a direct project-specific
+<code>security@project.apache.org</code> list and take more responsibility for the
+vulnerability handling process for your project. This will remove the
+initial triage by the Security Team from your process, and put you in the
+driver&rsquo;s seat. The Security Team will still monitor your list as a line
+of defense against things falling through the cracks, but it is now
+primarily your responsibility.</p>
+<h2 id="tracking-of-in-flight-security-reports">Tracking of in-flight security reports</h2>
+<p>The Security Team keeps track of your in-flight security reports. If you
+would like an overview of your projects&rsquo; open issues, feel free to request
+one through <a href="security@apache.org">mailto:security@apache.org</a>. We may make
+this available more easily in the future, but generally it is more effective
+to focus more on making sure fewer reports are in-flight (e.g. fast triage,
+prioritizing fixes, making frequent releases) than on improving the capacity
+for tracking more of them.</p>
+<h2 id="bug-bounty-programs">Bug Bounty Programs</h2>
+<p>The ASF <a href="/blog/credits">does not run a bug bounty program</a>, and a number of
+the Bug Bounty programs have stopped around beginning of April 2026 as they
+need redefinition of their models with AI generated security reports. The
+industry works on ways to supplant the bug bounty programs.</p>
+<h2 id="security-audit">Security Audit</h2>
+<p>The ASF does not routinely perform security audits of ASF projects, but
+there are several 3rd-party initiatives that may be interested in this.
+If you would like to see a security audit done for your project, make sure
+your security model is well-documented, you&rsquo;re ready to process any findings,
+and contact <a href="security@apache.org">mailto:security@apache.org</a> so we can see
+if we can find someone to perform such an audit.</p>
+<h2 id="fuzzing">Fuzzing</h2>
+<p>Especially if your project is written in a language that does not provide
+memory-safety and it has clearly-defined interfaces that are designed to
+process untrusted input, it can be helpful to &lsquo;fuzz&rsquo; these interfaces. The
+Google OSS-FUZZ project can provide resources to help build and run these
+fuzzers.</p>
+
+  
+</div>
+</div>
+</main>
+  <footer> 
+    <footer id="footer">
+    <p>&copy; The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+  </footer>
+ 
+</footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/main.js" type="text/javascript">
+  </script>
+</body>
+
+</html>
