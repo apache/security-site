@@ -44,11 +44,10 @@ for tracking more of them.
 
 ## Bug Bounty Programs
 
-The ASF [does not run a bug bounty program](/blog/credits), but if you'd like to
-propose your project for inclusion in a 3rd-party program contact
-[mailto:security@apache.org](security@apache.org). Generally our experience is
-that while bug bounty programmes do turn up issues, you'll have to be prepared
-to deal with some low-quality/invalid reports.
+The ASF [does not run a bug bounty program](/blog/credits), and a number of
+the Bug Bounty programs have stopped around beginning of April 2026 as they
+need redefinition of their models with AI generated security reports. The
+industry works on ways to supplant the bug bounty programs.
 
 ## Security Audit
 
