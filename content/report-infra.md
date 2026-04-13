@@ -12,4 +12,4 @@ There are some classes of common reports that we consider invalid up-front:
 * Systems that disclose the versions of the servers and software we use
 * Data that is publicly accessible in our bug tracking systems
 
-If you think you have found an infrastructure issue other than the ones listed above, contact <a href="mailto:root@apache.org">root@apache.org</a>
+If you think you have found an infrastructure issue other than the ones listed above, contact <a href="mailto:security@infra.apache.org">security@infra.apache.org</a>
