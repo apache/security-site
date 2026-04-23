@@ -16,6 +16,8 @@ expected. You can find the security model pages, as well as the email address
 you can use to report potential vulnerabilities, [here](/projects).
 
 Please send one plain-text, unencrypted, email for each vulnerability you are reporting to [security@apache.org](mailto:security@apache.org). We may ask you to resubmit your report if you send it as an image, movie, HTML, or PDF attachment when you could as easily describe it with plain text.
+By sending your report to this address you agree that information from this report
+may be made public after triage (for invalid issues) or after the release of the fix.
 
 ## Handling
 
@@ -25,5 +27,8 @@ An overview of the vulnerability handling process is:
 * The appropriate project's security team works privately with the reporter to resolve the vulnerability.
 * The project creates a new release of the package the vulnerability affects to deliver its fix.
 * The project publicly announces the vulnerability and describes how to apply the fix.
+
+We will [credit](https://security.apache.org/blog/credits/) you in the public advisory.
+As a rule we will use the credit information from the initial report, we may not honor later requests for credit updates.
 
 Committers should read a [more detailed description of the process](https://apache.org/security/committers.html). Reporters of security vulnerabilities may also find it useful.
