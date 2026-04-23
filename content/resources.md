@@ -24,7 +24,7 @@ which we will use as a basis for the triage.
 
 ## Project-specific security lists
 
-If you're a mature project, you can apply for a direct project-specific
+If you're a mature project, you can [apply for](https://selfserve.apache.org/mailinglist-new.html) a direct project-specific
 `security@project.apache.org` list and take more responsibility for the
 vulnerability handling process for your project. This will remove the
 initial triage by the Security Team from your process, and put you in the
