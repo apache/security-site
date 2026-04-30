@@ -3,8 +3,6 @@ title: huntr.com discontinued
 author: Arnout Engelen
 date: 2026-04-29
 description: The ASF is will no longer accept huntr.com security reports
-# marked as draft so it's not included in the index
-draft: true
 ---
 
 For a while now, 3rd-party bug bounty platform huntr.com has offered bounties for vulnerabilities in some ASF projects. Since reporters reporting through huntr.com didn't use our documented disclosure process we didn't provide any guarantees, but we'd periodically evaluate them as a courtesy.
