@@ -12,4 +12,7 @@ through this platform. We have notified huntr.com of this but
 received no response.
    
 If you don't care about the huntr.com bounty, you may evaluate
- your report against the projects' security model (typically linked from https://security.apache.org/projects/) and submit through the official channel. Note that there is no bug bounty, though.
+your report against the projects' security model (typically linked from https://security.apache.org/projects/)
+and submit through the official channel, mentioning the Huntr UUID of
+your previous report.
+Note that there is no bug bounty, though.
