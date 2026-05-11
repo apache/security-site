@@ -17,7 +17,8 @@ you can use to report potential vulnerabilities, [here](/projects).
 
 Please send one plain-text, unencrypted, email for each vulnerability you are reporting to [security@apache.org](mailto:security@apache.org). We may ask you to resubmit your report if you send it as an image, movie, HTML, or PDF attachment when you could as easily describe it with plain text.
 By sending your report to this address you agree that information from this report
-may be made public after triage (for invalid issues) or after the release of the fix.
+may be made public after triage (for invalid issues) or after the release of the fix,
+unless you explicitly request otherwise.
 
 ## Handling
 
