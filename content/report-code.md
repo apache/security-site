@@ -30,6 +30,6 @@ An overview of the vulnerability handling process is:
 * The project publicly announces the vulnerability and describes how to apply the fix.
 
 We will [credit](https://security.apache.org/blog/credits/) you in the public advisory.
-As a rule we will use the credit information from the initial report, we may not honor later requests for credit updates.
+As a rule we will use the credit information from the initial report, we may not honor later requests for credit updates or additions.
 
 Committers should read a [more detailed description of the process](https://apache.org/security/committers.html). Reporters of security vulnerabilities may also find it useful.
