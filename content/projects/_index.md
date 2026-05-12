@@ -14,7 +14,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache ActiveMQ](https://activemq.apache.org/security-advisories) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://activemq.apache.org/security-advisories) |
 | Apache AGE |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Airavata |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Airflow |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Airflow](https://airflow.apache.org/docs/apache-airflow/stable/security/security_model.html) |  [Apache Airflow Security Team](mailto:security@airflow.apache.org) | |
 | Apache Allura |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Ambari |  [Apache Ambari Security Team](mailto:security@ambari.apache.org) | |
 | [Apache Answer](https://answer.apache.org/community/security-model) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://answer.apache.org/community/security/) |
