@@ -9,7 +9,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from gmail_gcloud import gmail_service, history_from, messages_by_label
 from gmail_gcloud_subscriber import gmail_subscribe
-from gmail_label_cache import refresh_label_cache, get_label_by_name, get_label_by_id
+from gmail_label_cache import refresh_label_cache, get_label_by_name, get_label_by_id, validate_label_name
 import threading
 from optparse import OptionParser
 import os
@@ -74,7 +74,7 @@ def refresh_thread(label):
     if not label:
         return;
 
-    assert all(c.isalnum() or c in set("., /-_():=+") for c in label['name'])
+    validate_label_name(label['name'])
     os.makedirs(options.target + '/'.join(label['name'].split('/')[:-1]), exist_ok=True)
     with open(f"{options.target}/{label['name']}.json", "w") as f:
         json.dump(messages(label), f, indent=2)

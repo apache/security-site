@@ -1,6 +1,24 @@
 from gmail_gcloud import gmail_service
 import os
 
+_LABEL_NAME_EXTRA_CHARS = set("., /-_():=+")
+
+def validate_label_name(name):
+    """Reject label names that would escape a target directory when used as a relative path.
+
+    Raises ValueError on disallowed characters, absolute paths, or any '.'/'..'/empty
+    path components. Uses an exception rather than `assert` so the check still runs
+    under `python -O`.
+    """
+    for c in name:
+        if not (c.isalnum() or c in _LABEL_NAME_EXTRA_CHARS):
+            raise ValueError(f"label name {name!r} contains disallowed character {c!r}")
+    if name.startswith("/"):
+        raise ValueError(f"label name {name!r} must not be absolute")
+    for part in name.split("/"):
+        if part in ("", ".", ".."):
+            raise ValueError(f"label name {name!r} contains invalid path component {part!r}")
+
 # TODO load from disk
 labels = {}
 

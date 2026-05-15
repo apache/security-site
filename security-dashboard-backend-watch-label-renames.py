@@ -1,5 +1,5 @@
 from gmail_gcloud_subscriber import gmail_subscribe
-from gmail_label_cache import refresh_label_cache
+from gmail_label_cache import refresh_label_cache, validate_label_name
 import os
 import threading
 from time import sleep
@@ -15,8 +15,8 @@ parser.add_option("-t", "--target", help="Directory to populate")
 target_directory = options['target'] or "email-classification/"
 
 def label_updated(labelId, old, new):
-    assert all(c.isalnum() or c in set("., /-_():=+") for c in old)
-    assert all(c.isalnum() or c in set("., /-_():=+") for c in new)
+    validate_label_name(old)
+    validate_label_name(new)
     if os.path.isfile(f"{target_directory}/{old}.json"):
         if os.path.isfile(f"{target_directory}/{new}.json"):
             # likely merged
