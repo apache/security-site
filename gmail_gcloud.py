@@ -47,7 +47,7 @@ def messages_by_label(label_id):
     messages = []
     while request is not None:
         response = request.execute()
-        messages.extend(response['messages'])
+        messages.extend(response.get('messages', []))
         request = gmail_service.users().messages().list_next(request, response)
 
     return messages
