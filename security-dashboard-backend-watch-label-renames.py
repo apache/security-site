@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 from gmail_gcloud_subscriber import gmail_subscribe
 from gmail_label_cache import refresh_label_cache, validate_label_name
 from optparse import OptionParser
