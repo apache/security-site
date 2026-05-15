@@ -75,7 +75,7 @@ def refresh_thread(label):
         return;
 
     validate_label_name(label['name'])
-    os.makedirs(options.target + '/'.join(label['name'].split('/')[:-1]), exist_ok=True)
+    os.makedirs(options.target + '/' + '/'.join(label['name'].split('/')[:-1]), exist_ok=True)
     with open(f"{options.target}/{label['name']}.json", "w") as f:
         json.dump(messages(label), f, indent=2)
 

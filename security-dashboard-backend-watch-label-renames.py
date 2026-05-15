@@ -21,7 +21,7 @@ def label_updated(labelId, old, new):
             # likely merged
             subprocess.run(["git", "rm", "-f", f"{old}.json"], cwd=options.target)
         else:
-            os.makedirs(options.target + '/'.join(new.split('/')[:-1]), exist_ok=True)
+            os.makedirs(options.target + '/' + '/'.join(new.split('/')[:-1]), exist_ok=True)
             result = subprocess.run(["git", "mv", f"{old}.json", f"{new}.json"], cwd=options.target)
             if result.returncode != 0:
                 print(f"Move failed (status code {result.returncode}), just removing")
