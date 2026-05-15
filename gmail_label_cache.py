@@ -1,4 +1,5 @@
 from gmail_gcloud import gmail_service
+import json
 import os
 
 _LABEL_NAME_EXTRA_CHARS = set("., /-_():=+")
@@ -19,12 +20,35 @@ def validate_label_name(name):
         if part in ("", ".", ".."):
             raise ValueError(f"label name {name!r} contains invalid path component {part!r}")
 
-# TODO load from disk
+_CACHE_FILENAME = "gmail_label_cache.json"
+_loaded = False
 labels = {}
+
+def _cache_path(target_dir):
+    return os.path.join(target_dir, _CACHE_FILENAME)
+
+def _load_labels(target_dir):
+    try:
+        with open(_cache_path(target_dir)) as f:
+            labels.update(json.load(f))
+    except FileNotFoundError:
+        pass
+
+def _save_labels(target_dir):
+    path = _cache_path(target_dir)
+    tmp = path + ".tmp"
+    with open(tmp, "w") as f:
+        json.dump(labels, f, indent=2, sort_keys=True)
+    os.replace(tmp, path)
 
 # refreshes the cache and returns any labels
 # whose names changed
-def refresh_label_cache():
+def refresh_label_cache(target_dir):
+    global _loaded
+    if not _loaded:
+        _load_labels(target_dir)
+        _loaded = True
+
     old_labels = labels
 
     label_list = gmail_service.users().labels().list(
@@ -42,7 +66,7 @@ def refresh_label_cache():
             })
         labels[l['id']] = l['name']
 
-    # TODO write to disk
+    _save_labels(target_dir)
     return result
 
 def get_label_by_name(name):

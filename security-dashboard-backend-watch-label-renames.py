@@ -34,7 +34,7 @@ def label_updated(labelId, old, new):
 def poll_label_changes(interval=10):
     while True:
         print("Polling for label changes")
-        for change in refresh_label_cache():
+        for change in refresh_label_cache(options.target):
             old = change['old_name']
             new = change['name']
             if old != new:
