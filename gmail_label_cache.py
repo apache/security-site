@@ -56,10 +56,6 @@ def get_label_by_name(name):
     return None
 
 def get_label_by_id(labelId):
-    old_name = None
-    if labelId in labels:
-        old_name = labels['labelId']
-
     label = gmail_service.users().labels().get(
         userId=os.getenv('GMAIL_USER_ID'),
         id=labelId
@@ -68,6 +64,5 @@ def get_label_by_id(labelId):
 
     return {
         'id': labelId,
-        'old_name': old_name,
         'name': new_name,
     }
