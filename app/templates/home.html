@@ -1,0 +1,23 @@
+{% if current_user.is_authenticated %}
+  <div class="user-info">
+    <a href="{{ url_for('client.home') }}"><span>{{ current_user.fullname }}</span></a>
+    (<code>{{ current_user.uid }}</code>)
+  </div>
+  <div class="user-pmcs">
+    {% if current_user.pmcs %}
+      PMC member of: {{ current_user.pmcs | join(", ") }}
+    {% else %}
+      Not a PMC member of any project.
+    {% endif %}
+  </div>
+  <div class="flex-grow-0">
+    <a href="{{ url_for("oauth_endpoint") }}?logout=/"
+       class="btn btn-outline-secondary btn-sm">log out</a>
+  </div>
+{% else %}
+  <div class="flex-grow-0">
+    <a href="#"
+       onclick="location.href='/auth?login=' + window.location.pathname;"
+       class="btn btn-secondary btn-sm">log in</a>
+  </div>
+{% endif %}
