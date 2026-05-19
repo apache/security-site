@@ -17,9 +17,10 @@
 
 """Security issue dashboard for the Apache Software Foundation"""
 
-from app import utils
+from app import reports, utils
 from app.config import AppConfig
 import asfquart
+import asfquart.auth
 import os
 import pathlib
 from typing import Any
@@ -44,6 +45,16 @@ CLIENT = quart.Blueprint(
 @CLIENT.route("/")
 async def home():
     return await quart.render_template("home.html")
+
+@CLIENT.route("/project/<project>")
+async def project(project: str):
+    user = await utils.UserSession.create()
+    if not user.is_authenticated:
+        raise asfquart.auth.AuthenticationFailed(asfquart.auth.Requirements.E_NOT_LOGGED_IN)
+    if project not in user.pmcs:
+        raise asfquart.auth.AuthenticationFailed(f"You are not a member of the {name} PMC.")
+    r = await reports.reports_for_pmc(project)
+    return await quart.render_template("project.html", project_name=project, reports=r)
 
 def _register_routes(quart_app: asfquart.base.QuartApp) -> None:
     quart_app.register_blueprint(CLIENT)

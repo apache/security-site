@@ -5,7 +5,10 @@
   </div>
   <div class="user-pmcs">
     {% if current_user.pmcs %}
-      PMC member of: {{ current_user.pmcs | join(", ") }}
+      PMC member of:
+      {% for pmc in current_user.pmcs %}
+      <a href="{{ url_for('client.project', project=pmc) }}">{{ pmc }}</a>
+      {% endfor %}
     {% else %}
       Not a PMC member of any project.
     {% endif %}

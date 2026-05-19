@@ -1,0 +1,12 @@
+<h1>{{ name }}</h1>
+
+<h2>Reports</h2>
+{% if reports %}
+  <ul>
+    {% for report in reports %}
+      <li>{{ report.title }}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No reports.</p>
+{% endif %}
