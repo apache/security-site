@@ -17,6 +17,8 @@
 
 import pathlib
 import pydantic
+from asfquart.base import QuartApp
+from typing import cast
 
 class AppConfig(pydantic.BaseModel):
     data_dir: str
@@ -24,6 +26,10 @@ class AppConfig(pydantic.BaseModel):
 
     state_dir: str
     """Local persistent data"""
+
+    @property
+    def data_dir_path(self) -> pathlib.Path:
+        return pathlib.Path(self.data_dir)
 
     @property
     def state_dir_path(self) -> pathlib.Path:
@@ -36,3 +42,11 @@ def load_app_config(cfg_path: pathlib.Path) -> AppConfig:
         raise RuntimeError(f"Config file {cfg_path} does not exist")
 
     return AppConfig.model_validate(yaml.safe_load(cfg_path.read_text()))
+
+def setup_app_config(quart_app: QuartApp, app_config: AppConfig) -> None:
+    quart_app.extensions["app_config"] = app_config
+
+def get() -> AppConfig:
+    import asfquart
+
+    return cast("AppConfig", asfquart.APP.extensions["app_config"])

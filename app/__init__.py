@@ -46,6 +46,43 @@ CLIENT = quart.Blueprint(
 async def home():
     return await quart.render_template("home.html")
 
+def _state_sort_key(state: str) -> tuple[int, str]:
+    if state == "untriaged":
+        return (0, "")
+    elif state == "confirmed":
+        return (1, "")
+    elif state == "disclosure":
+        return (3, "")
+    elif state.startswith("non-issue"):
+        return (4, state)
+    else:
+        return (2, state)
+
+_STATE_TITLES: dict[str, str] = {
+    "untriaged": "Untriaged",
+    "confirmed": "Confirmed",
+    "disclosure": "Waiting for disclosure",
+    "non-issue-docs": "Non-issue: pending documentation improvements",
+    "non-issue-feedback": "Non-issue: pending feedback to reporter",
+    "non-issue-upstream": "Non-issue: pending upstream",
+}
+_STATE_DESCRIPTIONS: dict[str, str] = {
+    "untriaged": "After initial analysis, either reject the issue and provide feedback to the reporter, or accept it and allocate a CVE",
+    "confirmed": "The PMC has accepted and is working on these issues. For those that don't have CVEs allocated yet, this can be done now",
+    "disclosure": "A fix for these issues has been released. When you are happy with the advisory in the cveprocess tool, you can send them by moving the state to READY and using the 'Send these Emails' button on the 'OSS/ASF Emails' tab in cveprocess.",
+    "non-issue-upstream": "Make sure the issue is fixed upstream and a release is made with the fix, or find an alternative to the problematic upstream component",
+}
+
+def _state_title(state: str) -> str:
+    if state in _STATE_TITLES:
+        return _STATE_TITLES[state]
+    if state.startswith("non-issue-"):
+        return f"Non-issues: {state.removeprefix('non-issue-')}"
+    return f"Waiting for {state}"
+
+def _state_description(state: str) -> str:
+    return _STATE_DESCRIPTIONS.get(state, "")
+
 @CLIENT.route("/project/<project>")
 async def project(project: str):
     user = await utils.UserSession.create()
@@ -53,8 +90,15 @@ async def project(project: str):
         raise asfquart.auth.AuthenticationFailed(asfquart.auth.Requirements.E_NOT_LOGGED_IN)
     if project not in user.pmcs:
         raise asfquart.auth.AuthenticationFailed(f"You are not a member of the {name} PMC.")
-    r = await reports.reports_for_pmc(project)
-    return await quart.render_template("project.html", project_name=project, reports=r)
+    r = await reports.load_project_reports(project)
+    states = sorted(dict.fromkeys(report.state for report in r), key=_state_sort_key)
+    sections = [
+        (_state_title(state), _state_description(state), [report for report in r if report.state == state])
+        for state in states
+    ]
+    return await quart.render_template("project.html",
+        project_name=project,
+        sections=sections)
 
 def _register_routes(quart_app: asfquart.base.QuartApp) -> None:
     quart_app.register_blueprint(CLIENT)
@@ -85,6 +129,8 @@ def create_app(test_environment: bool = False) -> asfquart.base.QuartApp:
         token_file = None
 
     quart_app = asfquart.construct("security-dashboard", app_dir, cfg_file, token_file)
+
+    config.setup_app_config(quart_app, app_config)
 
     _register_routes(quart_app)
     _setup_context(quart_app, app_config)

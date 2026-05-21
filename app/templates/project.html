@@ -1,12 +1,25 @@
 <h1>{{ name }}</h1>
 
 <h2>Reports</h2>
-{% if reports %}
-  <ul>
-    {% for report in reports %}
-      <li>{{ report.title }}</li>
-    {% endfor %}
-  </ul>
+{% if sections %}
+  {% for title, description, reports in sections %}
+    <h3>{{ title }}</h3>
+    {% if description %}
+      <p>{{ description }}</p>
+    {% endif %}
+    <ul>
+      {% for report in reports %}
+      <li><a href="{{ report.asf_member_link }}">{{ report.title }}</a>
+	{% if report.cves %}
+          <br>
+	  {% for cve in report.cves %}
+	    <a href="https://cveprocess.apache.org/cve5/{{cve}}">{{ cve }}</a>
+	  {% endfor %}
+	{% endif %}
+	</li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
 {% else %}
   <p>No reports.</p>
 {% endif %}
