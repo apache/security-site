@@ -2,7 +2,7 @@ from gmail_gcloud import gmail_service
 import json
 import os
 
-_LABEL_NAME_EXTRA_CHARS = set("., /-_():=+")
+_LABEL_NAME_EXTRA_CHARS = set("., /-_():=+#")
 
 def validate_label_name(name):
     """Reject label names that would escape a target directory when used as a relative path.
