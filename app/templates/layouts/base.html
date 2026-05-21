@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description"
+          content="{%- block description -%}{%- endblock description -%}" />
+    <title>
+      {% block title %}
+      {% endblock title %}
+    </title>
+    {% block stylesheets %}
+      <link rel="stylesheet"
+            href="{{ url_for('client.static', filename='vendor/css/bootstrap.min.css') }}" />
+      <link rel="stylesheet"
+            href="{{ url_for('client.static', filename='vendor/css/bootstrap-icons.min.css') }}" />
+      <link rel="stylesheet" href="/assets/css/app.css" />
+      <link rel="icon"
+            type="image/x-icon"
+            href="https://apache.org/favicons/favicon.ico" />
+
+      {% if svelte_page is defined %}
+        {% for css in css_for_svelte_page(svelte_page) %}<link rel="stylesheet" href="/assets/{{ css }}" />{% endfor %}
+      {% endif %}
+    {% endblock stylesheets %}
+    {% block head_extra %}
+    {% endblock head_extra %}
+  </head>
+  <body class="{%- block body_class -%}{%- endblock body_class -%}">
+    <div class="wrapper">
+      <div class="ribbon fixed-top"></div>
+      <div class="content d-flex">
+        {% include "includes/sidebar.html" %}
+
+        <div class="main-container flex-column flex-grow-1 {% block main_class %}{% endblock main_class %}">
+          <main class="main-content">
+            {% if dev_mode %}
+              <div class="warning-banner mt-2 mb-2 p-2">
+                This BAT instance is running in dev mode <strong>NOT</strong> connected to production data.
+              </div>
+            {% endif %}
+            {% if self.page_title() | trim %}
+              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-2 border-bottom">
+                <h4>
+                  {% block page_title %}
+                  {% endblock page_title %}
+                </h4>
+                {% block page_subtitle %}
+                {% endblock page_subtitle %}
+              </div>
+            {% endif %}
+            {% block content %}
+            {% endblock content %}
+          </main>
+          {% include "includes/footer.html" %}
+
+        </div>
+      </div>
+    </div>
+    {% block javascripts %}
+      <script src="{{ url_for('client.static', filename='vendor/js/bootstrap.bundle.min.js') }}"></script>
+
+      <script>
+          function toggleSidebar() {
+              const sidebar = document.querySelector('.sidebar');
+              sidebar.classList.toggle('collapsed');
+
+              if (sidebar.classList.contains("collapsed")) {
+                  document.cookie = "sidebar=collapsed; path=/"
+              } else {
+                  document.cookie = "sidebar=visible; path=/"
+              }
+          }
+      </script>
+
+      {% if svelte_page is defined %}
+        <script type="module" src="{{ asset('js/pages/' + svelte_page + '.ts') }}"></script>
+      {% endif %}
+    {% endblock javascripts %}
+  </body>
+</html>

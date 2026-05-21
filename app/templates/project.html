@@ -1,5 +1,13 @@
-<h1>Currently open security reports for {{ project_name }}</h1>
+{% extends "layouts/base.html" %}
 
+{% block title %}
+<h1>Currently open security reports for {{ project_name }}</h1>
+{% endblock title %}
+{% block page_title %}
+<h1>Currently open security reports for {{ project_name }}</h1>
+{% endblock page_title %}
+
+{% block content %}
 <p>
 This dashboard gives an overview of the security reports
 currently tracked by the Apache Security Team for {{ project_name }}.
@@ -41,3 +49,4 @@ If you see anything that seems incorrect, email
 {% else %}
   <p>No reports.</p>
 {% endif %}
+{% endblock content %}
