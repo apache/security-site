@@ -19,7 +19,7 @@ creds.refresh(Request())
 # careful: service objects should not be shared across threads
 gmail_service = build('gmail', 'v1', credentials=creds)
 
-def history_from(start_history_id):
+def history(start_history_id: int, end_history_id: int):
     request = gmail_service.users().history().list(
         userId=os.getenv('GMAIL_USER_ID'),
         startHistoryId=start_history_id,
@@ -33,7 +33,10 @@ def history_from(start_history_id):
     records = []
     while request is not None:
         response = request.execute()
-        records.extend(response.get('history', []))
+        for record in response.get('history', []):
+            if int(record['id']) > end_history_id:
+                return records
+            records.append(record)
         request = gmail_service.users().history().list_next(request, response)
 
     return records

@@ -7,7 +7,7 @@ from google.auth.transport.requests import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
-from gmail_gcloud import gmail_service, history_from, messages_by_label
+from gmail_gcloud import gmail_service, history, messages_by_label
 from gmail_gcloud_subscriber import gmail_subscribe
 from gmail_label_cache import refresh_label_cache, get_label_by_name, get_label_by_id, validate_label_name
 import threading
@@ -85,6 +85,7 @@ def update_history_records(records):
         for msg in record['messages']:
             messageIds.add(msg['id'])
 
+    print(f"Getting labels for {len(messageIds)} message id's")
     labelIds = set()
     for messageId in messageIds:
         try:
@@ -99,8 +100,10 @@ def update_history_records(records):
             if e.resp.status != 404:
                 raise e
 
+    print(f"Updating {len(labelIds)} labels")
     for labelId in labelIds:
         label = get_label_by_id(labelId)
+        print(f"Updating {label}")
         if is_thread_label(label['name']):
             print(f"Label {label['name']}")
             refresh_thread(label)
@@ -129,14 +132,14 @@ processing_lock = threading.Lock()
 def subscription_callback(message):
     global last_processed_history_id
     with processing_lock:
-        historyId = json.loads(message.data)['historyId']
-        print(f"Got notified of new messages, starting at {historyId}")
-        records = history_from(last_processed_history_id)
-        print(f"Updating")
+        history_id = json.loads(message.data)['historyId']
+        print(f"Got notified of new messages, starting at {history_id}")
+        records = history(last_processed_history_id, history_id)
+        print(f"Updating {len(records)} records")
         if records:
             update_history_records(records)
             update_last_processed_history_id(max(int(r['id']) for r in records))
-        print(f"Updated")
+        print(f"Updated, waiting for next pub/sub message")
         message.ack()
 
 streaming_pull = gmail_subscribe(subscription_callback)
