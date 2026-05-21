@@ -10,10 +10,6 @@
       {% endblock title %}
     </title>
     {% block stylesheets %}
-      <link rel="stylesheet"
-            href="{{ url_for('client.static', filename='vendor/css/bootstrap.min.css') }}" />
-      <link rel="stylesheet"
-            href="{{ url_for('client.static', filename='vendor/css/bootstrap-icons.min.css') }}" />
       <link rel="stylesheet" href="/assets/css/app.css" />
       <link rel="icon"
             type="image/x-icon"
@@ -34,17 +30,12 @@
 
         <div class="main-container flex-column flex-grow-1 {% block main_class %}{% endblock main_class %}">
           <main class="main-content">
-            {% if dev_mode %}
-              <div class="warning-banner mt-2 mb-2 p-2">
-                This BAT instance is running in dev mode <strong>NOT</strong> connected to production data.
-              </div>
-            {% endif %}
             {% if self.page_title() | trim %}
               <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-2 border-bottom">
-                <h4>
+                <h1>
                   {% block page_title %}
                   {% endblock page_title %}
-                </h4>
+                </h1>
                 {% block page_subtitle %}
                 {% endblock page_subtitle %}
               </div>
@@ -58,8 +49,6 @@
       </div>
     </div>
     {% block javascripts %}
-      <script src="{{ url_for('client.static', filename='vendor/js/bootstrap.bundle.min.js') }}"></script>
-
       <script>
           function toggleSidebar() {
               const sidebar = document.querySelector('.sidebar');

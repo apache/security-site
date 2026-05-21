@@ -1,26 +1,36 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+Security reports
+{% endblock title %}
+{% block page_title %}
+Security reports
+{% endblock page_title %}
+
+
+{% block content %}
+
+<p>
+This dashboard gives an overview of the security reports
+currently tracked by the Apache Security Team.
+</p>
+
+<p>
 {% if current_user.is_authenticated %}
-  <div class="user-info">
-    <a href="{{ url_for('client.home') }}"><span>{{ current_user.fullname }}</span></a>
-    (<code>{{ current_user.uid }}</code>)
-  </div>
-  <div class="user-pmcs">
-    {% if current_user.pmcs %}
-      PMC member of:
-      {% for pmc in current_user.pmcs %}
-      <a href="{{ url_for('client.project', project=pmc) }}">{{ pmc }}</a>
-      {% endfor %}
-    {% else %}
-      Not a PMC member of any project.
-    {% endif %}
-  </div>
-  <div class="flex-grow-0">
-    <a href="{{ url_for("oauth_endpoint") }}?logout=/"
-       class="btn btn-outline-secondary btn-sm">log out</a>
-  </div>
+  {% if current_user.pmcs %}
+    Select a project:
+    <ul>
+    {% for pmc in current_user.pmcs %}
+    <li><a href="{{ url_for('client.project', project=pmc) }}">{{ pmc }}</a></li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    Not a PMC member of any project.
+  {% endif %}
 {% else %}
-  <div class="flex-grow-0">
-    <a href="#"
-       onclick="location.href='/auth?login=' + window.location.pathname;"
+<a href="#" onclick="location.href='/auth?login=' + window.location.pathname;"
        class="btn btn-secondary btn-sm">log in</a>
-  </div>
+</div>
 {% endif %}
+</p>
+{% endblock content %}
