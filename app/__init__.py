@@ -83,13 +83,16 @@ def _state_title(state: str) -> str:
 def _state_description(state: str) -> str:
     return _STATE_DESCRIPTIONS.get(state, "")
 
-@CLIENT.route("/project/<project>")
-async def project(project: str):
+async def _require_pmc_member(project: str) -> None:
     user = await utils.UserSession.create()
     if not user.is_authenticated:
         raise asfquart.auth.AuthenticationFailed(asfquart.auth.Requirements.E_NOT_LOGGED_IN)
     if project not in user.pmcs:
-        raise asfquart.auth.AuthenticationFailed(f"You are not a member of the {name} PMC.")
+        raise asfquart.auth.AuthenticationFailed(f"You are not a member of the {project} PMC.")
+
+@CLIENT.route("/project/<project>")
+async def project(project: str):
+    await _require_pmc_member(project)
     r = await reports.load_project_reports(project)
     states = sorted(dict.fromkeys(report.state for report in r), key=_state_sort_key)
     sections = [
@@ -99,6 +102,21 @@ async def project(project: str):
     return await quart.render_template("project.html",
         project_name=project,
         sections=sections)
+
+@CLIENT.route("/api/project/<project>/reports")
+async def project_reports_api(project: str):
+    await _require_pmc_member(project)
+    r = await reports.load_project_reports(project)
+    return quart.jsonify([
+        {
+            "cves": report.cves,
+            "title": report.title,
+            "asf_member_link": report.asf_member_link,
+            "state": report.state,
+            "date": report.date.isoformat(),
+        }
+        for report in r
+    ])
 
 def _register_routes(quart_app: asfquart.base.QuartApp) -> None:
     quart_app.register_blueprint(CLIENT)
