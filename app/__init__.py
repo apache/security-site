@@ -44,6 +44,9 @@ CLIENT = quart.Blueprint(
 
 @CLIENT.route("/")
 async def home():
+    user = await utils.UserSession.create()
+    if user.is_authenticated and len(user.pmcs) == 1:
+        return quart.redirect(quart.url_for("client.project", project=user.pmcs[0]))
     return await quart.render_template("home.html")
 
 def _state_sort_key(state: str) -> tuple[int, str]:
