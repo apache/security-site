@@ -1,0 +1,14 @@
+[Unit]
+Description=ASF Security Dashboard Frontend
+
+[Service]
+Type=exec
+WorkingDirectory=/opt/dashboard-frontend
+PIDFile=/opt/dashboard-frontend/state/dashboard-frontend.pid
+ExecStart=/opt/dashboard-frontend/scripts/run.sh
+ExecReload=/bin/kill -SIGINT $MAINPID
+KillSignal=SIGINT
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

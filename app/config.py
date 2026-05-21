@@ -20,12 +20,24 @@ import pydantic
 from asfquart.base import QuartApp
 from typing import cast
 
+class ServerConfig(pydantic.BaseModel):
+    host: str = "0.0.0.0"
+    port: int = 8080
+    access_log: str = "-"
+    error_log: str = "-"
+
+    @property
+    def bind(self) -> str:
+        return f"{self.host}:{self.port}"
+
 class AppConfig(pydantic.BaseModel):
     data_dir: str
     """Base directory of issue metadata"""
 
     state_dir: str
     """Local persistent data"""
+
+    server: ServerConfig = ServerConfig()
 
     @property
     def data_dir_path(self) -> pathlib.Path:
@@ -50,3 +62,30 @@ def get() -> AppConfig:
     import asfquart
 
     return cast("AppConfig", asfquart.APP.extensions["app_config"])
+
+if __name__ == "__main__":
+    import argparse
+    import sys
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--bind", action="store_true")
+    parser.add_argument("--access-log", action="store_true")
+    parser.add_argument("--error-log", action="store_true")
+    parser.add_argument("--pid-file", action="store_true")
+    args = parser.parse_args(sys.argv[1:])
+
+    if args.bind:
+        config = load_app_config(pathlib.Path("config.yaml"))
+        print(config.server.bind)
+
+    if args.access_log:
+        config = load_app_config(pathlib.Path("config.yaml"))
+        print(config.server.access_log)
+
+    if args.error_log:
+        config = load_app_config(pathlib.Path("config.yaml"))
+        print(config.server.error_log)
+
+    if args.pid_file:
+        config = load_app_config(pathlib.Path("config.yaml"))
+        print(config.base.state_dir_path / "dashboard-config.pid")
