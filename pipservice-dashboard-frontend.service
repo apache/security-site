@@ -5,7 +5,7 @@ Description=ASF Security Dashboard Frontend
 Type=exec
 WorkingDirectory=/opt/dashboard-frontend
 PIDFile=/opt/dashboard-frontend/state/dashboard-frontend.pid
-ExecStart=/usr/local/bin/uv run server.py
+ExecStart=/usr/local/bin/uv run hypercorn server:application
 ExecReload=/bin/kill -SIGINT $MAINPID
 Restart=always
 
