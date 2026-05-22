@@ -80,32 +80,22 @@ def refresh_thread(label):
         json.dump(messages(label), f, indent=2)
 
 def update_history_records(records):
-    messageIds = set()
-    for record in records:
-        for msg in record['messages']:
-            messageIds.add(msg['id'])
-
-    print(f"Getting labels for {len(messageIds)} message id's")
     labelIds = set()
-    for messageId in messageIds:
-        try:
-            msg = gmail_service.users().messages().get(
-                    userId=os.getenv('GMAIL_USER_ID'),
-                    id=messageId,
-                    format="full"
-            ).execute()
-            if 'labelIds' in msg:
-                labelIds = labelIds.union(msg['labelIds'])
-        except HttpError as e:
-            if e.resp.status != 404:
-                raise e
+    for record in records:
+        for event in [ "messagesAdded", "messagesDeleted", "labelsAdded", "labelsRemoved" ]:
+            if event in record:
+                for msg in record[event]:
+                    if 'labelIds' in msg:
+                        for labelId in msg['labelIds']:
+                            labelIds.add(labelId)
 
     print(f"Updating {len(labelIds)} labels")
+    n = 0
     for labelId in labelIds:
         label = get_label_by_id(labelId)
-        print(f"Updating {label}")
-        if is_thread_label(label['name']):
-            print(f"Label {label['name']}")
+        n = n + 1
+        if label and is_thread_label(label['name']):
+            print(f"Updating {label['name']} ({n}/{len(labelIds)})")
             refresh_thread(label)
 
 # Refreshing a single label:
@@ -131,6 +121,7 @@ processing_lock = threading.Lock()
 
 def subscription_callback(message):
     global last_processed_history_id
+    print("Got callback")
     with processing_lock:
         history_id = json.loads(message.data)['historyId']
         print(f"Got notified of new messages, starting at {history_id}")
@@ -142,5 +133,6 @@ def subscription_callback(message):
         print(f"Updated, waiting for next pub/sub message")
         message.ack()
 
+print("Subscribing")
 streaming_pull = gmail_subscribe(subscription_callback)
 print(streaming_pull.result())
