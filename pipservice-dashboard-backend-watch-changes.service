@@ -4,8 +4,8 @@ Description=ASF Security Dashboard Backend
 [Service]
 Type=exec
 WorkingDirectory=/opt/dashboard-backend
-PIDFile=/opt/dashboard-backend/dashboard-backend.pid
-ExecStart=/opt/dashboard-backend/scripts/run.sh
+PIDFile=/opt/dashboard-backend/dashboard-backend-watch-changes.pid
+ExecStart=/usr/local/bin/uv run security-dashboard-backend-watch-changes.py
 ExecReload=/bin/kill -SIGINT $MAINPID
 KillSignal=SIGINT
 Restart=always
