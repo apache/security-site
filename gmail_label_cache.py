@@ -1,4 +1,5 @@
 from gmail_gcloud import gmail_service
+from googleapiclient.errors import HttpError
 import json
 import os
 
@@ -80,10 +81,17 @@ def get_label_by_name(name):
     return None
 
 def get_label_by_id(labelId):
-    label = gmail_service.users().labels().get(
-        userId=os.getenv('GMAIL_USER_ID'),
-        id=labelId
-    ).execute()
+    try:
+        label = gmail_service.users().labels().get(
+            userId=os.getenv('GMAIL_USER_ID'),
+            id=labelId
+        ).execute()
+    except HttpError as e:
+        if e.resp.status == 404:
+            return None
+        else:
+            raise e
+
     new_name = label['name']
 
     return {
