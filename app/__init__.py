@@ -86,16 +86,26 @@ def _state_title(state: str) -> str:
 def _state_description(state: str) -> str:
     return _STATE_DESCRIPTIONS.get(state, "")
 
-async def _require_pmc_member(project: str) -> None:
+def _asf_group_acl(project, pmc_membership, project_membership):
+    return (
+        project in pmc_membership
+        or (
+            project in config.get().pmcs_with_security_emails
+            and project in project_membership
+        )
+    )
+
+async def _require_authorization_for(project: str) -> None:
     user = await utils.UserSession.create()
     if not user.is_authenticated:
         raise asfquart.auth.AuthenticationFailed(asfquart.auth.Requirements.E_NOT_LOGGED_IN)
-    if project not in user.pmcs:
+    if (not _asf_group_acl(project, user.pmcs, user.projects)
+        and not _asf_group_acl("security", user.pmcs, user.projects)):
         raise asfquart.auth.AuthenticationFailed(f"You are not a member of the {project} PMC.")
 
 @CLIENT.route("/project/<project>")
 async def project(project: str):
-    await _require_pmc_member(project)
+    await _require_authorization_for(project)
     r = await reports.load_project_reports(project)
     states = sorted(dict.fromkeys(report.state for report in r), key=_state_sort_key)
     sections = [
@@ -108,7 +118,7 @@ async def project(project: str):
 
 @CLIENT.route("/api/project/<project>/reports")
 async def project_reports_api(project: str):
-    await _require_pmc_member(project)
+    await _require_authorization_for(project)
     r = await reports.load_project_reports(project)
     return quart.jsonify([
         {

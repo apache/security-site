@@ -37,6 +37,9 @@ class AppConfig(pydantic.BaseModel):
     state_dir: str
     """Local persistent data"""
 
+    pmcs_with_security_emails: list[str] = []
+    """PMCs that have a dedicated security@ list"""
+
     server: ServerConfig = ServerConfig()
 
     @property

@@ -39,6 +39,10 @@ class UserSession:
     def pmcs(self) -> list[str]:
         return self.client_session.committees if self.client_session else []
 
+    @property
+    def projects(self) -> list[str]:
+        return self.client_session.projects if self.client_session else []
+
     @classmethod
     async def create(cls) -> Self:
         try:
