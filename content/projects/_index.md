@@ -53,7 +53,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Felix |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Fineract](https://fineract.apache.org/security.html) |  [Apache Fineract Security Team](mailto:security@fineract.apache.org) | [Advisories](https://fineract.apache.org/security.html) |
 | [Apache Flink](https://flink.apache.org/what-is-flink/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://flink.apache.org/what-is-flink/security/) |
-| Apache Fory |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Fory](https://fory.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://fory.apache.org/security/) |
 | [Apache Geode](https://geode.apache.org/docs/guide/20/security/security_model.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Geronimo](https://geronimo.apache.org/security-reports.html) |  [Apache Geronimo Security Team](mailto:security@geronimo.apache.org) | |
 | Apache Gobblin |  [Apache Security Team](mailto:security@apache.org) | |
@@ -132,7 +132,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache StreamPipes |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Struts](https://struts.apache.org/security.html) |  [Apache Struts Security Team](mailto:security@struts.apache.org) | [Advisories](https://cwiki.apache.org/confluence/display/WW/Security+Bulletins) |
 | [Apache Subversion](https://subversion.apache.org/security/) |  [Apache Subversion Security Team](mailto:security@subversion.apache.org) | [Advisories](https://subversion.apache.org/security/) |
-| [Apache Superset](https://superset.apache.org/docs/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://superset.apache.org/docs/security/cves) |
+| [Apache Superset](https://github.com/apache/superset/blob/master/.github/SECURITY.md) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://superset.apache.org/docs/security/cves) |
 | Apache Syncope |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://syncope.apache.org/security) |
 | Apache SystemDS |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Tapestry |  [Apache Security Team](mailto:security@apache.org) | |
