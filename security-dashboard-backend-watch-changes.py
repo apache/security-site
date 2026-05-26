@@ -25,6 +25,7 @@ import subprocess
 
 parser = OptionParser()
 parser.add_option("-t", "--target", default="email-classification", help="Directory to populate")
+parser.add_option("-s", "--single")
 (options, args) = parser.parse_args()
 
 def is_thread_label(label):
@@ -98,17 +99,6 @@ def update_history_records(records):
             print(f"Updating {label['name']} ({n}/{len(labelIds)})")
             refresh_thread(label)
 
-# Refreshing a single label:
-#refresh_label_cache()
-#label = get_label_by_name("zzz-admin")
-#print(f"Refreshing {label}")
-#refresh_thread(label)
-#print(f"done")
-#exit(1)
-
-#update_history_records(history.get('history', []))
-#print("done")
-
 with open(f"{options.target}/last_processed_history_id.txt") as f:
     last_processed_history_id = int(f.read().strip())
 def update_last_processed_history_id(i):
@@ -133,6 +123,16 @@ def subscription_callback(message):
         print(f"Updated, waiting for next pub/sub message")
         message.ack()
 
-print("Subscribing")
-streaming_pull = gmail_subscribe(subscription_callback)
-print(streaming_pull.result())
+if options.single:
+    # Refreshing a single label:
+    refresh_label_cache(options.target)
+    label = get_label_by_name(options.single)
+    if label:
+        print(f"Refreshing {label}")
+        refresh_thread(label)
+    else:
+        print(f"Label {options.single} not found")
+else:
+    print("Subscribing")
+    streaming_pull = gmail_subscribe(subscription_callback)
+    print(streaming_pull.result())
