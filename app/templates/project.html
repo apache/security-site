@@ -33,7 +33,7 @@ If you see anything that seems incorrect, email
       <p>{{ description }}</p>
     {% endif %}
     <ul>
-      {% for report in reports %}
+      {% for report in reports|sort(attribute='timestamp') %}
       <li>{{ report.date }} <!-- {{ report.security_team_name }} --><a href="{{ report.asf_member_link }}">{{ report.title }}</a>
 	{% if report.cves %}
           <br>
