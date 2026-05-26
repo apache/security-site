@@ -40,6 +40,9 @@ class AppConfig(pydantic.BaseModel):
     pmcs_with_security_emails: list[str] = []
     """PMCs that have a dedicated security@ list"""
 
+    pmcs_using_jira: dict[str, str] = {}
+    """PMCs that track security issues in (private) Jira issues"""
+
     server: ServerConfig = ServerConfig()
 
     @property

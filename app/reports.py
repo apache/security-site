@@ -31,6 +31,8 @@ class Report:
     """internal label the security team assigned to the thread,
        not to be exposed"""
     cves: list[str]
+    jira: str
+    """If this project tracks security issues in private jira issues, the Jira ID"""
     title: str
     asf_member_link: str
     """link to the first email in the thread. this might only be
@@ -52,12 +54,20 @@ def _asf_member_link(email):
     messageid = email['message_id'].replace(' ', '+').replace('+', '%2B').replace('=', '%3D').replace('@', '%40')
     return f"https://lists.apache.org/thread/{messageid}?<{listid}>"
 
-def load_project_report(path: pathlib.Path) -> Report | None:
+def load_pmc_report(pmc: str, path: pathlib.Path) -> Report | None:
     with open(path) as f:
         emails = json.loads(f.read())
 
     m = re.match(r"(?:CVE-\S+\s+)*CVE-\S+", path.name)
     cves = m.group(0).split() if m else []
+
+    jira = None
+    if pmc in config.get().pmcs_using_jira:
+        print(path.name)
+        m = re.match(r"\S+ (\d+) .*", path.name)
+        if m:
+            jira = config.get().pmcs_using_jira[pmc] + "-" + m.group(1)
+            print(jira)
 
     if cves:
         state = "confirmed"
@@ -84,17 +94,18 @@ def load_project_report(path: pathlib.Path) -> Report | None:
     return Report(
         path.name,
         cves,
+        jira,
         title,
         _asf_member_link(first_email),
         state,
         datetime.datetime.fromtimestamp(first_email['mailtime'], tz=datetime.timezone.utc),
     )
 
-async def load_project_reports(project: str) -> list[Report]:
-    if not re.fullmatch(r"[a-z0-9]+", project):
-        raise ValueError("invalid project name: {project!r}")
+async def load_pmc_reports(pmc: str) -> list[Report]:
+    if not re.fullmatch(r"[a-z0-9]+", pmc):
+        raise ValueError("invalid PMC name: {pmc!r}")
 
-    d = config.get().data_dir_path / project
+    d = config.get().data_dir_path / pmc
     threads = list(d.glob('**/*.json'))
 
-    return [ r for r in (load_project_report(t) for t in threads) if r is not None ]
+    return [ r for r in (load_pmc_report(pmc, t) for t in threads) if r is not None ]

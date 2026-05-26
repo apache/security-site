@@ -106,7 +106,7 @@ async def _require_authorization_for(project: str) -> None:
 @CLIENT.route("/project/<project>")
 async def project(project: str):
     await _require_authorization_for(project)
-    r = await reports.load_project_reports(project)
+    r = await reports.load_pmc_reports(project)
     states = sorted(dict.fromkeys(report.state for report in r), key=_state_sort_key)
     sections = [
         (_state_title(state), _state_description(state), [report for report in r if report.state == state])

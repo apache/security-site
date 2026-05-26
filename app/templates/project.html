@@ -34,7 +34,13 @@ If you see anything that seems incorrect, email
     {% endif %}
     <ul>
       {% for report in reports|sort(attribute='timestamp') %}
-      <li>{{ report.date }} <!-- {{ report.security_team_name }} --><a href="{{ report.asf_member_link }}">{{ report.title }}</a>
+      <li>
+	{{ report.date }}
+	<!-- {{ report.security_team_name }} -->
+	{% if report.jira %}
+	<a href="https://issues.apache.org/jira/browse/{{report.jira}}">{{report.jira}}</a>
+	{% endif %}
+	<a href="{{ report.asf_member_link }}">{{ report.title }}</a>
 	{% if report.cves %}
           <br>
 	  {% for cve in report.cves %}
