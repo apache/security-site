@@ -34,7 +34,7 @@ If you see anything that seems incorrect, email
     {% endif %}
     <ul>
       {% for report in reports %}
-      <li><!-- {{ report.security_team_name }} --><a href="{{ report.asf_member_link }}">{{ report.title }}</a>
+      <li>{{ report.date }} <!-- {{ report.security_team_name }} --><a href="{{ report.asf_member_link }}">{{ report.title }}</a>
 	{% if report.cves %}
           <br>
 	  {% for cve in report.cves %}

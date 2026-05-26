@@ -40,7 +40,11 @@ class Report:
 
     state: str
 
-    date: datetime.datetime
+    timestamp: datetime.datetime
+
+    @property
+    def date(self) -> datetime.date:
+        return self.timestamp.date()
 
 def _asf_member_link(email):
     _, address = parseaddr(email['to'])
