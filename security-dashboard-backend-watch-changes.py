@@ -131,7 +131,7 @@ if options.single:
         print(f"Refreshing {label}")
         refresh_thread(label)
     else:
-        path = f"{options.target}/{options.single}"
+        path = f"{options.target}/{options.single}.json"
         if os.path.exists(path):
             print(f"Label {options.single} no longer found upstream, deleting")
             os.remove(path)
