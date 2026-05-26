@@ -48,7 +48,7 @@ def _asf_member_link(email):
     messageid = email['message_id'].replace(' ', '+').replace('+', '%2B').replace('=', '%3D').replace('@', '%40')
     return f"https://lists.apache.org/thread/{messageid}?<{listid}>"
 
-def load_project_report(path: pathlib.Path) -> Report:
+def load_project_report(path: pathlib.Path) -> Report | None:
     with open(path) as f:
         emails = json.loads(f.read())
 
@@ -65,6 +65,10 @@ def load_project_report(path: pathlib.Path) -> Report:
             state = "confirmed"
         else:
             state = m.groups()[0]
+
+    if not emails:
+        print(f"Empty label: {path.name}")
+        return None
 
     first_email = emails[0]
     title = first_email['subj'].strip() or "(untitled)"
@@ -89,4 +93,4 @@ async def load_project_reports(project: str) -> list[Report]:
     d = config.get().data_dir_path / project
     threads = list(d.glob('**/*.json'))
 
-    return [ load_project_report(thread) for thread in threads ]
+    return [ r for r in (load_project_report(t) for t in threads) if r is not None ]
