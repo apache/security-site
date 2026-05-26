@@ -36,6 +36,7 @@ If you see anything that seems incorrect, email
       <tbody>
         {% for report in reports|sort(attribute='date') %}
         <tr>
+          <!-- {{ report.security_team_name }} -->
           <td class="reports-date">{{ report.date.strftime('%Y-%m-%d') }}</td>
           <td class="reports-jira">
             {% if report.jira %}
