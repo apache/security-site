@@ -15,5 +15,10 @@ Copy `.env.example` to `.env` and populate it with actual secrets.
 
 Run 2 jobs:
 
-    python3 ./email-classification-watch-changes.py
-    python3 ./email-classification-watch-label-renames.py
+    python3 ./security-dashboard-backend-watch-changes.py
+    python3 ./security-dashboard-backend-watch-label-renames.py
+
+If a label is out-of-date for some reason, you can also manually
+trigger it to be updated:
+
+    python3 ./security-dashboard-backend-watch-changes.py -s single-label

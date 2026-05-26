@@ -131,7 +131,13 @@ if options.single:
         print(f"Refreshing {label}")
         refresh_thread(label)
     else:
-        print(f"Label {options.single} not found")
+        path = f"{options.target}/{options.single}"
+        if os.path.exists(path):
+            print(f"Label {options.single} no longer found upstream, deleting")
+            os.remove(path)
+        else:
+            print(f"Label {options.single} not found")
+
 else:
     print("Subscribing")
     streaming_pull = gmail_subscribe(subscription_callback)
