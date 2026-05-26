@@ -99,8 +99,11 @@ async def _require_authorization_for(project: str) -> None:
     user = await utils.UserSession.create()
     if not user.is_authenticated:
         raise asfquart.auth.AuthenticationFailed(asfquart.auth.Requirements.E_NOT_LOGGED_IN)
-    if (not _asf_group_acl(project, user.pmcs, user.projects)
-        and not _asf_group_acl("security", user.pmcs, user.projects)):
+    pmcs = list(user.pmcs)
+    if user.is_root and "infra" not in pmcs:
+        pmcs.append("infra")
+    if (not _asf_group_acl(project, pmcs, user.projects)
+        and not _asf_group_acl("security", pmcs, user.projects)):
         raise asfquart.auth.AuthenticationFailed(f"You are not a member of the {project} PMC.")
 
 @CLIENT.route("/project/<project>")

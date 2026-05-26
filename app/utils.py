@@ -43,6 +43,10 @@ class UserSession:
     def projects(self) -> list[str]:
         return self.client_session.projects if self.client_session else []
 
+    @property
+    def is_root(self) -> bool:
+        return bool(self.client_session and self.client_session.isRoot)
+
     @classmethod
     async def create(cls) -> Self:
         try:
