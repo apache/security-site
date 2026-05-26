@@ -47,6 +47,13 @@ class UserSession:
     def is_root(self) -> bool:
         return bool(self.client_session and self.client_session.isRoot)
 
+    @property
+    def accessible_pmcs(self) -> list[str]:
+        pmcs = list(self.pmcs)
+        if self.is_root and "infra" not in pmcs:
+            pmcs.append("infra")
+        return pmcs
+
     @classmethod
     async def create(cls) -> Self:
         try:

@@ -45,8 +45,8 @@ CLIENT = quart.Blueprint(
 @CLIENT.route("/")
 async def home():
     user = await utils.UserSession.create()
-    if user.is_authenticated and len(user.pmcs) == 1:
-        return quart.redirect(quart.url_for("client.project", project=user.pmcs[0]))
+    if user.is_authenticated and len(user.accessible_pmcs) == 1:
+        return quart.redirect(quart.url_for("client.project", project=user.accessible_pmcs[0]))
     return await quart.render_template("home.html")
 
 def _state_sort_key(state: str) -> tuple[int, str]:
@@ -99,9 +99,7 @@ async def _require_authorization_for(project: str) -> None:
     user = await utils.UserSession.create()
     if not user.is_authenticated:
         raise asfquart.auth.AuthenticationFailed(asfquart.auth.Requirements.E_NOT_LOGGED_IN)
-    pmcs = list(user.pmcs)
-    if user.is_root and "infra" not in pmcs:
-        pmcs.append("infra")
+    pmcs = user.accessible_pmcs
     if (not _asf_group_acl(project, pmcs, user.projects)
         and not _asf_group_acl("security", pmcs, user.projects)):
         raise asfquart.auth.AuthenticationFailed(f"You are not a member of the {project} PMC.")

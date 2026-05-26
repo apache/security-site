@@ -17,10 +17,10 @@ currently tracked by the Apache Security Team.
 
 <p>
 {% if current_user.is_authenticated %}
-  {% if current_user.pmcs %}
+  {% if current_user.accessible_pmcs %}
     Select a project:
     <ul>
-    {% for pmc in current_user.pmcs %}
+    {% for pmc in current_user.accessible_pmcs %}
     <li><a href="{{ url_for('client.project', project=pmc) }}">{{ pmc }}</a></li>
     {% endfor %}
     </ul>

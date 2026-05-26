@@ -5,8 +5,8 @@
     (<code>{{ current_user.uid }}</code>)
   </div>
   <div class="user-pmcs">
-    {% if current_user.pmcs %}
-      {% for pmc in current_user.pmcs %}
+    {% if current_user.accessible_pmcs %}
+      {% for pmc in current_user.accessible_pmcs %}
       [ <a href="{{ url_for('client.project', project=pmc) }}">{{ pmc }}</a> ]
       {% endfor %}
     {% else %}
