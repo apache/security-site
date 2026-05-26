@@ -37,13 +37,18 @@ If you see anything that seems incorrect, email
         {% for report in reports|sort(attribute='date') %}
         <tr>
           <td class="reports-date">{{ report.date.strftime('%Y-%m-%d') }}</td>
-          <td class="reports-ids">
+          <td class="reports-jira">
             {% if report.jira %}
-              <div><a href="https://issues.apache.org/jira/browse/{{report.jira}}">#{{ report.jira.split('-')[-1] }}</a></div>
+              <a href="https://issues.apache.org/jira/browse/{{report.jira}}">#{{ report.jira.split('-')[-1] }}</a>
             {% endif %}
+          </td>
+          <td class="reports-cves">
             {% for cve in report.cves %}
               <div><a href="https://cveprocess.apache.org/cve5/{{cve}}">{{ cve }}</a></div>
             {% endfor %}
+            {% if report.state == 'confirmed' and not report.cves %}
+              <div><a href="https://cveprocess.apache.org/allocatecve?pmc={{ project_name|urlencode }}&amp;title={{ report.sanitized_title|urlencode }}">allocate CVE</a></div>
+            {% endif %}
           </td>
           <td class="reports-title">
             <a href="{{ report.asf_member_link }}" title="{{ report.title }}">{{ report.title }}</a>

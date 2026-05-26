@@ -48,6 +48,12 @@ class Report:
     def date(self) -> datetime.date:
         return self.timestamp.date()
 
+    @property
+    def sanitized_title(self) -> str:
+        cleaned = re.sub(r"[^A-Za-z0-9 .\-()]", " ", self.title)
+        cleaned = re.sub(r"\s+", " ", cleaned).strip()
+        return cleaned[:200]
+
 def _asf_member_link(email):
     _, address = parseaddr(email['to'])
     listid = address.replace('@', '.')
