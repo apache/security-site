@@ -120,7 +120,7 @@ async def project(project: str):
 @CLIENT.route("/api/project/<project>/reports")
 async def project_reports_api(project: str):
     await _require_authorization_for(project)
-    r = await reports.load_project_reports(project)
+    r = await reports.load_pmc_reports(project)
     return quart.jsonify([
         {
             "cves": report.cves,
