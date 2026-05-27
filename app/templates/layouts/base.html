@@ -49,19 +49,6 @@
       </div>
     </div>
     {% block javascripts %}
-      <script>
-          function toggleSidebar() {
-              const sidebar = document.querySelector('.sidebar');
-              sidebar.classList.toggle('collapsed');
-
-              if (sidebar.classList.contains("collapsed")) {
-                  document.cookie = "sidebar=collapsed; path=/"
-              } else {
-                  document.cookie = "sidebar=visible; path=/"
-              }
-          }
-      </script>
-
       {% if svelte_page is defined %}
         <script type="module" src="{{ asset('js/pages/' + svelte_page + '.ts') }}"></script>
       {% endif %}

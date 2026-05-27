@@ -28,7 +28,7 @@ currently tracked by the Apache Security Team.
     Not a PMC member of any project.
   {% endif %}
 {% else %}
-<a href="#" onclick="location.href='/auth?login=' + window.location.pathname;"
+<a href="/auth?login={{ request.path|urlencode }}"
        class="btn btn-secondary btn-sm">log in</a>
 </div>
 {% endif %}

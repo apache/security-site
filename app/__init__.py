@@ -142,6 +142,25 @@ def _setup_context(quart_app: asfquart.base.QuartApp, app_config: AppConfig) -> 
             "current_user": await utils.UserSession.create()
         }
 
+_CSP = "; ".join([
+    "default-src 'self'",
+    "script-src 'self'",
+    "style-src 'self'",
+    "img-src 'self' https://apache.org",
+    "connect-src 'self'",
+    "frame-ancestors 'none'",
+    "base-uri 'none'",
+    "form-action 'self'",
+])
+
+def _setup_security_headers(quart_app: asfquart.base.QuartApp) -> None:
+    @quart_app.after_request
+    async def add_security_headers(response: quart.Response) -> quart.Response:
+        response.headers.setdefault("Content-Security-Policy", _CSP)
+        response.headers.setdefault("X-Content-Type-Options", "nosniff")
+        response.headers.setdefault("Referrer-Policy", "strict-origin-when-cross-origin")
+        return response
+
 def create_app(test_environment: bool = False) -> asfquart.base.QuartApp:
     from app import config
     app_dir = None
@@ -166,5 +185,6 @@ def create_app(test_environment: bool = False) -> asfquart.base.QuartApp:
 
     _register_routes(quart_app)
     _setup_context(quart_app, app_config)
+    _setup_security_headers(quart_app)
 
     return quart_app

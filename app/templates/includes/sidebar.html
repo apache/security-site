@@ -19,8 +19,7 @@
   </div>
 {% else %}
   <div class="flex-grow-0">
-    <a href="#"
-       onclick="location.href='/auth?login=' + window.location.pathname;"
+    <a href="/auth?login={{ request.path|urlencode }}"
        class="btn btn-secondary btn-sm">log in</a>
   </div>
 {% endif %}
