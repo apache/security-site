@@ -5,8 +5,8 @@ Description=ASF Security Dashboard Backend
 Environment=PYTHONUNBUFFERED=1
 Environment=HOME=/root
 Type=exec
-WorkingDirectory=/opt/dashboard-backend
-PIDFile=/opt/dashboard-backend/dashboard-backend-watch-changes.pid
+WorkingDirectory=/opt/dashboard-backend-watch-changes
+PIDFile=/opt/dashboard-backend-watch-changes/dashboard-backend-watch-changes.pid
 ExecStart=/usr/local/bin/uv run security-dashboard-backend-watch-changes.py -t /opt/email-classification
 ExecReload=/bin/kill -SIGINT $MAINPID
 KillSignal=SIGINT
