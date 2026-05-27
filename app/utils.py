@@ -56,9 +56,5 @@ class UserSession:
 
     @classmethod
     async def create(cls) -> Self:
-        try:
-            client_session = await asfquart.session.read()
-            return cls(client_session)
-        except ASFQuartException as ex:
-            #TODO
-            exit(1)
+        client_session = await asfquart.session.read()
+        return cls(client_session)
