@@ -34,11 +34,19 @@ def is_thread_label(label):
         not "000-ignore" in label and
         not "/github" in label)
 
+def decode_rfc2047(value):
+    # Untrusted: fall back to the raw value on malformed encoded-words
+    # or unknown charsets rather than crashing the daemon.
+    try:
+        return str(make_header(decode_header(value)))
+    except Exception:
+        return value
+
 def messages(label):
     msgs = messages_by_label(label['id'])
 
     result = []
-    
+
     def get_relevant_fields(m):
         subject = "";
         frm = "";
@@ -46,8 +54,10 @@ def messages(label):
         message_id = "";
         for header in m['payload']['headers']:
             if header['name'].lower() == "subject":
-                subject = header['value'];
+                subject = decode_rfc2047(header['value']);
             if header['name'].lower() == "from":
+                # Store raw: decoding before RFC 5322 parsing lets encoded-words
+                # smuggle address syntax (<, >, @, ,) into the display-name slot.
                 frm = header['value'];
             if header['name'].lower() == "to":
                 to = header['value'];
