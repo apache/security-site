@@ -18,6 +18,7 @@
 from app import config
 import dataclasses
 import datetime
+from email.header import decode_header
 from email.utils import parseaddr
 from enum import Enum, auto
 import json
@@ -91,7 +92,15 @@ def load_pmc_report(pmc: str, path: pathlib.Path) -> Report | None:
         return None
 
     first_email = emails[0]
-    title = first_email['subj'].strip() or "(untitled)"
+    raw_subject = first_email['subj']
+    try:
+        title = "".join(
+            s.decode(c or "ascii", errors="replace") if isinstance(s, bytes) else s
+            for s, c in decode_header(raw_subject)
+        )
+    except Exception:
+        title = raw_subject
+    title = title.strip() or "(untitled)"
     if title.startswith("[SECURITY] "):
         title = title.removeprefix("[SECURITY] ")
     elif title.startswith("[Security] "):
