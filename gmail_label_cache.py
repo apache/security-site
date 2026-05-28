@@ -80,6 +80,14 @@ def get_label_by_name(name):
 
     return None
 
+def get_labels_by_prefix(prefix):
+    prefix_slash = prefix.rstrip("/") + "/"
+    return [
+        {'id': k, 'name': labels[k]}
+        for k in labels
+        if labels[k] == prefix or labels[k].startswith(prefix_slash)
+    ]
+
 def get_label_by_id(labelId):
     try:
         label = gmail_service.users().labels().get(

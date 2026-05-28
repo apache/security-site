@@ -9,7 +9,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from gmail_gcloud import gmail_service, history, messages_by_label
 from gmail_gcloud_subscriber import gmail_subscribe
-from gmail_label_cache import refresh_label_cache, get_label_by_name, get_label_by_id, validate_label_name
+from gmail_label_cache import refresh_label_cache, get_label_by_name, get_label_by_id, get_labels_by_prefix, validate_label_name
 import threading
 from optparse import OptionParser
 import os
@@ -26,6 +26,7 @@ import subprocess
 parser = OptionParser()
 parser.add_option("-t", "--target", default="email-classification", help="Directory to populate")
 parser.add_option("-s", "--single")
+parser.add_option("-p", "--project", help="Refresh all known labels under this project prefix")
 (options, args) = parser.parse_args()
 
 def is_thread_label(label):
@@ -155,6 +156,14 @@ if options.single:
             os.remove(path)
         else:
             print(f"Label {options.single} not found")
+
+elif options.project:
+    refresh_label_cache(options.target)
+    project_labels = [l for l in get_labels_by_prefix(options.project) if is_thread_label(l['name'])]
+    print(f"Refreshing {len(project_labels)} labels under {options.project}")
+    for n, label in enumerate(project_labels, 1):
+        print(f"Refreshing {label['name']} ({n}/{len(project_labels)})")
+        refresh_thread(label)
 
 else:
     print("Subscribing")
