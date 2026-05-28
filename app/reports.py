@@ -19,7 +19,7 @@ from app import config
 import dataclasses
 import datetime
 from email.header import decode_header
-from email.utils import parseaddr
+from email.utils import getaddresses
 from enum import Enum, auto
 import json
 import pathlib
@@ -58,10 +58,16 @@ class Report:
         cleaned = re.sub(r"\s+", " ", cleaned).strip()
         return cleaned[:200]
 
+def _apache_list_address(email):
+    for _, address in getaddresses([email['to']]):
+        if address.endswith('.apache.org'):
+            return address
+    return None
+
 def _asf_member_link(email):
-    _, address = parseaddr(email['to'])
-    if address.endswith('.apache.org'):
-        listid = address.replace('@', '.')
+    apache_list_address = _apache_list_address(email)
+    if apache_list_address:
+        listid = apache_list_address.replace('@', '.')
     else:
         listid = 'security.apache.org'
     messageid = email['message_id'].replace(' ', '+').replace('+', '%2B').replace('=', '%3D').replace('@', '%40')
@@ -69,8 +75,7 @@ def _asf_member_link(email):
 
 def _project_link(emails):
     for email in emails[:5]:
-        _, address = parseaddr(email['to'])
-        if address.endswith('.apache.org'):
+        if _apache_list_address(email):
             return _asf_member_link(email)
     return None
 
