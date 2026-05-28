@@ -51,6 +51,8 @@ def messages(label):
         subject = "";
         frm = "";
         to = "";
+        cc = "";
+        reply_to = "";
         message_id = "";
         for header in m['payload']['headers']:
             if header['name'].lower() == "subject":
@@ -61,6 +63,10 @@ def messages(label):
                 frm = header['value'];
             if header['name'].lower() == "to":
                 to = header['value'];
+            if header['name'].lower() == "cc":
+                cc = header['value'];
+            if header['name'].lower() == "reply-to":
+                reply_to = header['value'];
             if header['name'].lower() == "message-id":
                 message_id = header['value'];
         return {
@@ -68,6 +74,8 @@ def messages(label):
                 'subj': subject,
                 'from': frm,
                 'to': to,
+                'cc': cc,
+                'reply_to': reply_to,
                 'message_id': message_id
         }
 
