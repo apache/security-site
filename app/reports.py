@@ -59,7 +59,10 @@ class Report:
         return cleaned[:200]
 
 def _apache_list_address(email):
-    for _, address in getaddresses([email['to']]):
+    addresses = list(getaddresses([email['to']]))
+    if 'cc' in email:
+        addresses.extend(getaddresses([email['cc']]))
+    for _, address in addresses:
         if address.endswith('.apache.org'):
             return address
     return None

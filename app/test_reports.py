@@ -50,3 +50,44 @@ def test_project_link_returns_none_when_no_apache_recipient():
         {'to': 'disclosure@vendor.example', 'message_id': '<b@vendor.example>'},
     ]
     assert _project_link(emails) is None
+
+
+def test_asf_member_link_uses_cc_when_to_is_non_apache():
+    email = {
+        'to': 'reporter@aisle.com',
+        'cc': 'security@cassandra.apache.org',
+        'message_id': '<abc@aisle.com>',
+    }
+    assert _asf_member_link(email) == (
+        'https://lists.apache.org/thread/'
+        '<abc%40aisle.com>'
+        '?<security.cassandra.apache.org>'
+    )
+
+
+def test_asf_member_link_prefers_to_over_cc():
+    email = {
+        'to': 'security@cassandra.apache.org',
+        'cc': 'security@kafka.apache.org',
+        'message_id': '<abc@cassandra.apache.org>',
+    }
+    assert _asf_member_link(email) == (
+        'https://lists.apache.org/thread/'
+        '<abc%40cassandra.apache.org>'
+        '?<security.cassandra.apache.org>'
+    )
+
+
+def test_project_link_finds_apache_address_in_cc():
+    emails = [
+        {
+            'to': 'reporter@aisle.com',
+            'cc': 'security@cassandra.apache.org',
+            'message_id': '<a@aisle.com>',
+        },
+    ]
+    assert _project_link(emails) == (
+        'https://lists.apache.org/thread/'
+        '<a%40aisle.com>'
+        '?<security.cassandra.apache.org>'
+    )
