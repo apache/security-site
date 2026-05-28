@@ -57,7 +57,10 @@ class Report:
 
 def _asf_member_link(email):
     _, address = parseaddr(email['to'])
-    listid = address.replace('@', '.')
+    if address.endswith('.apache.org'):
+        listid = address.replace('@', '.')
+    else:
+        listid = 'security.apache.org'
     messageid = email['message_id'].replace(' ', '+').replace('+', '%2B').replace('=', '%3D').replace('@', '%40')
     return f"https://lists.apache.org/thread/{messageid}?<{listid}>"
 
