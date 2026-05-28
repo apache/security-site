@@ -1,4 +1,4 @@
-from app.reports import _asf_member_link
+from app.reports import _asf_member_link, _project_link
 
 
 def test_asf_member_link_non_apache_to_uses_security_apache_org():
@@ -23,3 +23,30 @@ def test_asf_member_link_apache_to_uses_to_domain():
         '<abc123%40cassandra.apache.org>'
         '?<security.cassandra.apache.org>'
     )
+
+
+def test_project_link_returns_first_apache_email():
+    emails = [
+        {'to': 'reporter@aisle.com', 'message_id': '<a@aisle.com>'},
+        {'to': 'security@cassandra.apache.org', 'message_id': '<b@cassandra.apache.org>'},
+        {'to': 'security@cassandra.apache.org', 'message_id': '<c@cassandra.apache.org>'},
+    ]
+    assert _project_link(emails) == (
+        'https://lists.apache.org/thread/'
+        '<b%40cassandra.apache.org>'
+        '?<security.cassandra.apache.org>'
+    )
+
+
+def test_project_link_only_considers_first_five():
+    emails = [{'to': 'reporter@aisle.com', 'message_id': f'<{i}@aisle.com>'} for i in range(5)]
+    emails.append({'to': 'security@cassandra.apache.org', 'message_id': '<late@cassandra.apache.org>'})
+    assert _project_link(emails) is None
+
+
+def test_project_link_returns_none_when_no_apache_recipient():
+    emails = [
+        {'to': 'reporter@aisle.com', 'message_id': '<a@aisle.com>'},
+        {'to': 'disclosure@vendor.example', 'message_id': '<b@vendor.example>'},
+    ]
+    assert _project_link(emails) is None

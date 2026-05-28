@@ -40,6 +40,9 @@ class Report:
        available to ASF members. make-report.py does something
        smarter to give a link that's likely to also be accessible
        by PMC members that are not ASF members."""
+    link: str
+    """link to the email archive for project members who may not
+       necessarily be ASF members."""
 
     state: str
 
@@ -63,6 +66,13 @@ def _asf_member_link(email):
         listid = 'security.apache.org'
     messageid = email['message_id'].replace(' ', '+').replace('+', '%2B').replace('=', '%3D').replace('@', '%40')
     return f"https://lists.apache.org/thread/{messageid}?<{listid}>"
+
+def _project_link(emails):
+    for email in emails[:5]:
+        _, address = parseaddr(email['to'])
+        if address.endswith('.apache.org'):
+            return _asf_member_link(email)
+    return None
 
 def load_pmc_report(pmc: str, path: pathlib.Path) -> Report | None:
     with open(path) as f:
@@ -115,6 +125,7 @@ def load_pmc_report(pmc: str, path: pathlib.Path) -> Report | None:
         jira,
         title,
         _asf_member_link(first_email),
+        _project_link(emails) or _asf_member_link(first_email),
         state,
         datetime.datetime.fromtimestamp(first_email['mailtime'], tz=datetime.timezone.utc),
     )
