@@ -21,10 +21,35 @@ import datetime
 from email.header import decode_header
 from email.utils import getaddresses
 from enum import Enum, auto
+import hashlib
 import json
 import pathlib
 from quart import current_app
 import re
+
+@dataclasses.dataclass(frozen=True)
+class Reporter:
+    name: str
+    email: str
+
+    @property
+    def display_name(self) -> str:
+        return self.name or self.email or "unknown"
+
+    @property
+    def initials(self) -> str:
+        source = self.name or self.email.split('@', 1)[0]
+        letters = [w[0] for w in re.split(r'\s+', source) if w]
+        if not letters:
+            return '?'
+        return ''.join(letters[:3]).upper()
+
+    @property
+    def color(self) -> str:
+        digest = hashlib.md5(self.email.lower().encode()).hexdigest()
+        hue = int(digest[:4], 16) % 360
+        return f"hsl({hue}, 55%, 45%)"
+
 
 @dataclasses.dataclass(frozen=True)
 class Report:
@@ -43,6 +68,7 @@ class Report:
     link: str
     """link to the email archive for project members who may not
        necessarily be ASF members."""
+    reporter: Reporter | None
 
     state: str
 
@@ -81,6 +107,18 @@ def _project_link(emails):
         if _apache_list_address(email):
             return _asf_member_link(email)
     return None
+
+def _reporter(email) -> Reporter | None:
+    addresses = [a for a in getaddresses([email.get('from', '')]) if a[1]]
+    if not addresses:
+        return None
+    name, address = addresses[0]
+    if ' via ' in name and address.endswith('.apache.org'):
+        reply_to_addresses = [a for a in getaddresses([email.get('reply_to', '')]) if a[1]]
+        if not reply_to_addresses:
+            return None
+        name, address = reply_to_addresses[0]
+    return Reporter(name=name, email=address)
 
 def load_pmc_report(pmc: str, path: pathlib.Path) -> Report | None:
     with open(path) as f:
@@ -134,6 +172,7 @@ def load_pmc_report(pmc: str, path: pathlib.Path) -> Report | None:
         title,
         _asf_member_link(first_email),
         _project_link(emails) or _asf_member_link(first_email),
+        _reporter(first_email),
         state,
         datetime.datetime.fromtimestamp(first_email['mailtime'], tz=datetime.timezone.utc),
     )

@@ -145,7 +145,7 @@ def _setup_context(quart_app: asfquart.base.QuartApp, app_config: AppConfig) -> 
 _CSP = "; ".join([
     "default-src 'self'",
     "script-src 'self'",
-    "style-src 'self'",
+    "style-src 'self' 'unsafe-inline'",
     "img-src 'self' https://apache.org",
     "connect-src 'self'",
     "frame-ancestors 'none'",

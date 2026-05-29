@@ -1,4 +1,4 @@
-from app.reports import _asf_member_link, _project_link
+from app.reports import Reporter, _asf_member_link, _project_link, _reporter
 
 
 def test_asf_member_link_non_apache_to_uses_security_apache_org():
@@ -91,3 +91,33 @@ def test_project_link_finds_apache_address_in_cc():
         '<a%40aisle.com>'
         '?<security.cassandra.apache.org>'
     )
+
+
+def test_reporter_uses_from_when_not_via():
+    email = {'from': 'Jane Q. Reporter <jane@aisle.com>'}
+    assert _reporter(email) == Reporter(name='Jane Q. Reporter', email='jane@aisle.com')
+
+
+def test_reporter_falls_back_to_reply_to_when_via_apache():
+    email = {
+        'from': 'Jane Reporter via Security <security@cassandra.apache.org>',
+        'reply_to': 'Jane Reporter <jane@aisle.com>',
+    }
+    assert _reporter(email) == Reporter(name='Jane Reporter', email='jane@aisle.com')
+
+
+def test_reporter_returns_none_when_via_apache_and_no_reply_to():
+    email = {'from': 'Jane Reporter via Security <security@cassandra.apache.org>'}
+    assert _reporter(email) is None
+
+
+def test_reporter_returns_none_when_from_missing():
+    assert _reporter({}) is None
+
+
+def test_reporter_initials_from_name():
+    assert Reporter(name='Jane Q. Reporter', email='jane@aisle.com').initials == 'JQR'
+
+
+def test_reporter_initials_fall_back_to_email_local_part():
+    assert Reporter(name='', email='alice@example.com').initials == 'A'

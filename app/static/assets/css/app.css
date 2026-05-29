@@ -142,14 +142,39 @@ footer p {
 
 .reports-table td {
   padding: 0.25rem 0.5rem;
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 .reports-date,
 .reports-jira,
-.reports-cves {
-  width: 1%;
+.reports-cves,
+.reports-reporter {
+  width: 1px;
   white-space: nowrap;
+}
+
+.reports-jira,
+.reports-cves {
+  padding: 0.25rem 0.25rem;
+}
+
+.reports-jira:empty,
+.reports-cves:empty {
+  padding: 0;
+  width: 0;
+}
+
+.reporter-initials {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .reports-title {
