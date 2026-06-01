@@ -98,7 +98,15 @@ def test_reporter_uses_from_when_not_via():
     assert _reporter(email) == Reporter(name='Jane Q. Reporter', email='jane@aisle.com')
 
 
-def test_reporter_falls_back_to_reply_to_when_via_apache():
+def test_reporter_falls_back_to_reply_to_when_via_security_list():
+    email = {
+        'from': '\"Jane Reporter via Security\" <security@apache.org>',
+        'reply_to': 'Jane Reporter <jane@aisle.com>',
+    }
+    assert _reporter(email) == Reporter(name='Jane Reporter', email='jane@aisle.com')
+
+
+def test_reporter_falls_back_to_reply_to_when_via_project_list():
     email = {
         'from': 'Jane Reporter via Security <security@cassandra.apache.org>',
         'reply_to': 'Jane Reporter <jane@aisle.com>',

@@ -119,7 +119,7 @@ def _reporter(email) -> Reporter | None:
     if not addresses:
         return None
     name, address = addresses[0]
-    if ' via ' in name and address.endswith('.apache.org'):
+    if ' via ' in name and address.endswith('apache.org'):
         reply_to_addresses = [a for a in getaddresses([email.get('reply_to', '')]) if a[1]]
         if not reply_to_addresses:
             return None
