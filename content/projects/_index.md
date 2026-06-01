@@ -106,7 +106,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Ozone |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Parquet |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache PDFBox](https://pdfbox.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Pekko |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Pekko](https://pekko.apache.org/docs/pekko/current/security/index.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Pinot |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache PLC4X |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache POI](https://poi.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
