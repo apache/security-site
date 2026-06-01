@@ -33,7 +33,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Calcite |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Camel](https://camel.apache.org/manual/security-model.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Carbondata](https://carbondata.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Cassandra |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Cassandra](cassandra.apache.org/doc/latest/cassandra/managing/operating/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Causeway |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Cayenne |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache CloudStack](https://cloudstack.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | |
