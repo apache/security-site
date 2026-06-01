@@ -37,6 +37,12 @@ class Reporter:
         return self.name or self.email or "unknown"
 
     @property
+    def tooltip(self) -> str:
+        if self.name and self.email:
+            return f"{self.name} <{self.email}>"
+        return self.email or self.name or "unknown"
+
+    @property
     def initials(self) -> str:
         source = self.name or self.email.split('@', 1)[0]
         letters = [w[0] for w in re.split(r'\s+', source) if w]
