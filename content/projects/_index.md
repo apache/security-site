@@ -33,7 +33,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Calcite |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Camel](https://camel.apache.org/manual/security-model.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Carbondata](https://carbondata.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache Cassandra](cassandra.apache.org/doc/latest/cassandra/managing/operating/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Cassandra](https://cassandra.apache.org/doc/latest/cassandra/managing/operating/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Causeway |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Cayenne |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache CloudStack](https://cloudstack.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | |
@@ -69,7 +69,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Hudi](https://hudi.apache.org/contribute/security) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache HugeGraph](https://hugegraph.apache.org/docs/guides/security) |  [Apache HugeGraph Security Team](mailto:security@hugegraph.apache.org) | [Advisories](https://hugegraph.apache.org/docs/guides/security) |
 | [Apache Iceberg](https://iceberg.apache.org/security/) |  [Apache Iceberg Security Team](mailto:security@iceberg.apache.org) | |
-| [Apache Ignite](https://ignite.apache.org/docs/latest/security/security-model) |  [Apache Ignite Security Team](mailto:security@ignite.apache.org) | |
+| [Apache Ignite](https://ignite.apache.org/docs/ignite3/3.1.0/understand/architecture/security#security-model) |  [Apache Ignite Security Team](mailto:security@ignite.apache.org) | |
 | Apache Impala |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache InLong](https://inlong.apache.org/docs/next/security/) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache IoTDB |  [Apache Security Team](mailto:security@apache.org) | |
@@ -111,7 +111,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache PLC4X |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache POI](https://poi.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Pulsar](https://github.com/apache/pulsar/security/policy) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Ranger |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Ranger](https://cwiki.apache.org/confluence/display/RANGER/Lock+down+Apache+Ranger+for+production+deployments) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://cwiki.apache.org/confluence/display/RANGER/Vulnerabilities+found+in+Ranger) |
 | [Apache RocketMQ](https://rocketmq.apache.org/docs/security/01security/) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Roller |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Santuario](https://santuario.apache.org/secadv.html) |  [Apache Security Team](mailto:security@apache.org) | |
