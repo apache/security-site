@@ -105,16 +105,172 @@
 <p>Do you want disclose a potential security issue for Apache MINA? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-48827">Path traversal in org.apache.sshd:sshd-git</h2>
+<p>CVE-2026-48827 <a href="https://cve.org/CVERecord?id=CVE-2026-48827">[CVE]</a> <a href="./CVE-2026-48827.cve.json">[CVE json]</a> <a href="./CVE-2026-48827.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-01T08:37:39.905Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache MINA SSHD from 2.0.0 through 2.17.1</li>
+<li>Apache MINA SSHD from 3.0.0-M1 through 3.0.0-M3</li>
+</ul>
+<h3 id="description">Description</h3>
+<div>Path traversal vulnerability in Apache MINA SSHD bundle sshd-git. Lack of path validation in git-upload-pack, git-receive-pack, and other git operations allows users authenticated over SSH access to git repositories outside the configured git server root directory.</div><div><br></div><div>Applications are affected if they use org.apache.sshd:sshd-git. Applications not using sshd-git are not affected.</div><div><br></div><div>Users are advised to upgrade affected applications to Apche MINA SSHD 2.18.0, which fixes the issue.</div><div><br></div><div>The issue also is present in the pre-release milestones 3.0.0-M1 to 3.0.0-M3 for a new upcoming new major version 3.0.0. Again, applications are affected only if they use sshd-git. Upgrade affected applications to 3.0.0-M4.</div><div><br></div><div>We would like to point out that a professional git server should not rely solely on file system layout and permissions, but should implement additional security controls to govern access to git repositories and operations allowed on particular git repositories.</div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/910kq9ghm6js0k1yhhbrdm9sf5tqq9c9">https://lists.apache.org/thread/910kq9ghm6js0k1yhhbrdm9sf5tqq9c9</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>j0hndo (<a href="mailto:dohyun4466@gmail.com">dohyun4466@gmail.com</a>) (finder)</li>
+</ul>
+<h2 id="CVE-2026-47065">Critical Deserialization Allow-list Bypass via resolveProxyClass - ZDRES-232</h2>
+<p>CVE-2026-47065 <a href="https://cve.org/CVERecord?id=CVE-2026-47065">[CVE]</a> <a href="./CVE-2026-47065.cve.json">[CVE json]</a> <a href="./CVE-2026-47065.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-03T22:29:54.026Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache MINA from 2.2.0 before 2.2.8</li>
+<li>Apache MINA from 2.1.0 before 2.1.13</li>
+<li>Apache MINA from 2.0.0 before 2.0.29</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>ZDRES-232: resolveProxyClass Not Overridden - acceptMatchers Filter Bypass via java.lang.reflect.Proxy</p>
+<p>Assessment: Fully addressed.</p>
+<p>When the serialised stream contains a TC_PROXYCLASSDESC (the marker 
+for a java.lang.reflect.Proxy ), JDK’s ObjectInputStream.readProxyDesc()
+ is
+dispatched. JDK then calls the default 
+ObjectInputStream.resolveProxyClass(interfaces) implementation, which 
+performs Class.forName(intf, false, latestUserDefinedLoader()) for EACH 
+interface name and constructs the proxy class â€” bypassing the accepted
+ classes list .</p>
+<p>ZDRES-233: Class.forName(name, initialize=true, classLoader) in 
+readClassDescriptor Triggers Static Initialiser of Allow-Listed Classes</p>
+<p>Assessment: Fully addressed.</p>
+<p>For ANY class on the allow-list, deserialising a stream that names it triggers the class’s 
+ (static initialiser) BEFORE any instance is constructed. This means an 
+attacker who supplies a class name on the allow-list (e.g., the 
+developer wrote accept(“com.myapp.*") , attacker supplies 
+com.myapp.SomeClass ) causes &lt;clinit&gt; of SomeClass â€” and many 
+real-world classes have side-effecting static initialisers</p>
+<p>Both issues have been fixed.</p><br>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/y7xj1bl8qo47p9bktb11hg5v6k1d4dyj">https://lists.apache.org/thread/y7xj1bl8qo47p9bktb11hg5v6k1d4dyj</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Venkatraman Kumar, SecureIn (reporter)</li>
+<li>keda (GitHub: @yuui25) (reporter)</li>
+</ul>
+<h2 id="CVE-2026-42779">AbstractIoBuffer.resolveClass() null-clazz Branch Skips acceptMatchers Filter — Full Object Deserialization RCE (take 2)</h2>
+<p>CVE-2026-42779 <a href="https://cve.org/CVERecord?id=CVE-2026-42779">[CVE]</a> <a href="./CVE-2026-42779.cve.json">[CVE json]</a> <a href="./CVE-2026-42779.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-05-01T10:00:40.665Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache MINA from 2.2.X through 2.2.6</li>
+<li>Apache MINA from 2.1.X through 2.1.11</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<div><div>The fix for CVE-2026-41635 was not applied to the 2.1.X and 2.2.X branches. Here was the original issue description:</div><div><div></div></div><br></div><div><br></div><div>Apache <b>MINA</b>'s <i>AbstractIoBuffer.resolveClass()</i> contains two branches, one of them (for static classes or primitive types) does not check the class at all, bypassing the classname allowlist and allowing arbitrary code to be executed.</div><div><br></div><div>The fix checks if the class is present in the accepted class filter <b>before</b> calling <i>Class.forName()</i>. </div><div><br></div><div></div>Affected versions are Apache MINA 2.1.0 &lt;= 2.1.11, and 2.2.0 &lt;= 2.2.6.
+<br>
+<br>
+The problem is resolved in Apache MINA 2.1.12, and 2.2.7 by 
+applying the classname allowlist earlier.
+<br>
+<br>
+Affected are applications using Apache MINA that call  IoBuffer.getObject().
+<br>
+<br>
+Applications using Apache MINA are advised to upgrade.
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/fhlx5k91hrkgyzh7yk1nghrn3k27gxy0">https://lists.apache.org/thread/fhlx5k91hrkgyzh7yk1nghrn3k27gxy0</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Venkatraman Kumar, Securin (reporter)</li>
+</ul>
+<h2 id="CVE-2026-42778">CWE-502 Deserialization of Untrusted Data (take 2)</h2>
+<p>CVE-2026-42778 <a href="https://cve.org/CVERecord?id=CVE-2026-42778">[CVE]</a> <a href="./CVE-2026-42778.cve.json">[CVE json]</a> <a href="./CVE-2026-42778.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-05-01T10:01:08.442Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache MINA from 2.2.X through 2.2.6</li>
+<li>Apache MINA from 2.1.X through 2.1.11</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<div>The fix for CVE-2026-41409 was not applied to the 2.1.X and 2.2.X branches. Here was the original issue description:</div><div><div><br></div><div>The fix for CVE-2024-52046 in Apache MINA AbstractIoBuffer.getObject() was incomplete. The classname allowlist of classes allowed to be deserialized was applied too late after a static initializer in a class to be read might already have been executed.</div><div><br></div><div>Affected versions are Apache MINA 2.1.0 &lt;= 2.1.11, and 2.2.0 &lt;= 2.2.6.</div><div><br></div><div>The problem is resolved in Apache MINA 2.1.12, and 2.2.7 by 
+applying the classname allowlist earlier.</div><div><br></div><div>Affected are applications using Apache MINA that call IoBuffer.getObject().</div><div><br></div><div>Applications using Apache MINA are advised to upgrade</div></div><div><br></div><div>The fix for CVE-2024-52046 in Apache MINA AbstractIoBuffer.getObject() was incomplete. The classname allowlist of classes allowed to be deserialized was applied too late after a static initializer in a class to be read might already have been executed.</div><div><br></div><div>Affected versions are Apache MINA 2.1.0 &lt;= 2.1.110, and 2.2.0 &lt;= 2.2.6.</div><div><br></div><div>The problem is resolved in Apache MINA 2.1.12, and 2.2.7 by 
+applying the classname allowlist earlier.</div><div><br></div><div>Affected are applications using Apache MINA that call IoBuffer.getObject().</div><div><br></div><div>Applications using Apache MINA are advised to upgrade</div><br>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/fhlx5k91hrkgyzh7yk1nghrn3k27gxy0">https://lists.apache.org/thread/fhlx5k91hrkgyzh7yk1nghrn3k27gxy0</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Venkatraman Kumar, Securin (reporter)</li>
+</ul>
+<h2 id="CVE-2026-41635">AbstractIoBuffer.resolveClass() null-clazz Branch Skips acceptMatchers Filter — Full Object Deserialization RCE</h2>
+<p>CVE-2026-41635 <a href="https://cve.org/CVERecord?id=CVE-2026-41635">[CVE]</a> <a href="./CVE-2026-41635.cve.json">[CVE json]</a> <a href="./CVE-2026-41635.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-04-27T09:15:40.308Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache MINA from 2.2.0 through 2.2.5</li>
+<li>Apache MINA from 2.1.0 through 2.1.10</li>
+<li>Apache MINA from 2.0.0 through 2.0.27</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<div>Apache <b>MINA</b>'s <i>AbstractIoBuffer.resolveClass()</i> contains two branches, one of them (for static classes or primitive types) does not check the class at all, bypassing the classname allowlist and allowing arbitrary code to be executed.</div><div><br></div><div>The fix checks if the class is present in the accepted class filter&nbsp;<b>before</b> calling&nbsp;<i>Class.forName()</i>.&nbsp;</div><div><br></div><div></div>Affected versions are Apache MINA 2.0.0 &lt;= 2.0.27, 2.1.0 &lt;= 2.1.10, and
+<br>
+2.2.0 &lt;= 2.2.5.
+<br>
+<br>
+The problem is resolved in Apache MINA 2.0.28, 2.1.11, and 2.2.6 by 
+applying the classname allowlist earlier.
+<br>
+<br>
+Affected are applications using Apache MINA that call&nbsp; IoBuffer.getObject().
+<br>
+<br>
+Applications using Apache MINA are advised to upgrade.<div></div>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/1l91w1mqsb3lwfd504fs045ylxntt2tm">https://lists.apache.org/thread/1l91w1mqsb3lwfd504fs045ylxntt2tm</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Venkatraman Kumar, Securin (reporter)</li>
+</ul>
+<h2 id="CVE-2026-41409">CWE-502 Deserialization of Untrusted Data</h2>
+<p>CVE-2026-41409 <a href="https://cve.org/CVERecord?id=CVE-2026-41409">[CVE]</a> <a href="./CVE-2026-41409.cve.json">[CVE json]</a> <a href="./CVE-2026-41409.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-04-27T09:20:11.275Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache MINA from 2.2.0 through 2.2.5</li>
+<li>Apache MINA from 2.1.0 through 2.1.10</li>
+<li>Apache MINA from 2.0.0 through 2.0.27</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<div>The fix for CVE-2024-52046 in Apache MINA AbstractIoBuffer.getObject() was incomplete. The classname allowlist of classes allowed to be deserialized was applied too late after a static initializer in a class to be read might already have been executed.</div><div><br></div><div>Affected versions are Apache MINA 2.0.0 &lt;= 2.0.27, 2.1.0 &lt;= 2.1.10, and 2.2.0 &lt;= 2.2.5.</div><div><br></div><div>The problem is resolved in Apache MINA 2.0.28, 2.1.11, and 2.2.6 by 
+applying the classname allowlist earlier.</div><div><br></div><div>Affected are applications using Apache MINA that call IoBuffer.getObject().</div><div><br></div><div>Applications using Apache MINA are advised to upgrade</div><br>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/9ddvsq6c4l5bhwq8l14sob4f8qjvx5c9">https://lists.apache.org/thread/9ddvsq6c4l5bhwq8l14sob4f8qjvx5c9</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Venkatraman Kumar, Securin (reporter)</li>
+</ul>
 <h2 id="CVE-2024-52046">MINA applications using unbounded deserialization may allow RCE</h2>
 <p>CVE-2024-52046 <a href="https://cve.org/CVERecord?id=CVE-2024-52046">[CVE]</a> <a href="./CVE-2024-52046.cve.json">[CVE json]</a></p>
 <p><em>Last updated: 2025-02-12T09:33:34.969Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-6">Affected</h3>
 <ul>
 <li>Apache MINA from 2.0 through 2.0.26 unknown</li>
 <li>Apache MINA from 2.1 through 2.1.9</li>
 <li>Apache MINA from 2.2 through 2.2.3</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-6">Description</h3>
 <div>
 			<div>
 				<div>
@@ -129,91 +285,91 @@ potentially leading to remote code execution (RCE) attacks.
 			</div>
 		</div><div>
 <p>This issue affects MINA core versions 2.0.X, 2.1.X and 2.2.X, and will be fixed by the releases 2.0.27, 2.1.10 and 2.2.4.<br></div><div><br></div><div>It&rsquo;s also important to note that an application using MINA core library will only be affected if the <span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">IoBuffer#getObject</span></span>() method is called, and this specific method is potentially called when adding a ProtocolCodecFilter instance using the <span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(212, 212, 212);">ObjectSerializationCodecFactory</span></span></span> class in the filter chain. If your application is specifically using those classes, you have to upgrade to the latest version of MINA core library.</div><div><br></div><div>Upgrading will  not be enough: you also need to explicitly allow the classes the decoder will accept in the <span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(212, 212, 212);">ObjectSerializationDecoder</span></span></span> instance, using one of the three new methods:</div><div><br></div><div><div><div><p>    /<strong></p><p>     * Accept class names where the supplied ClassNameMatcher matches for</p><p>     * deserialization, unless they are otherwise rejected.</p><p>     *</p><p>     * @param classNameMatcher the matcher to use</p><p>     */</p><p>    public void <span style="background-color: rgb(212, 212, 212);">accept</span>(ClassNameMatcher classNameMatcher)</p><p><br></p><p>    /</strong></p><p>     * Accept class names that match the supplied pattern for</p><p>     * deserialization, unless they are otherwise rejected.</p><p>     *</p><p>     * @param pattern standard Java regexp</p><p>     */</p><p>    public void accept(Pattern pattern) <br></p><p><br></p><p>    /**</p><p>     * Accept the wildcard specified classes for deserialization,</p><p>     * unless they are otherwise rejected.</p><p>     *</p><p>     * @param patterns Wildcard file name patterns as defined by</p><p>     *                  {@link org.apache.commons.io.FilenameUtils#wildcardMatch(String, String) FilenameUtils.wildcardMatch}</p><p>     */</p><p>    public void accept(String&hellip; patterns)<br></p></div><div><br></div><div>By default, the decoder will reject <em>all</em> classes that will be present in the incoming data.</div><div><br></div><div><br></div><div>Note: The FtpServer, SSHd and Vysper sub-project are not affected by this issue.<br></div></div></div></p>
-<h3 id="references">References</h3>
+<h3 id="references-6">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/4wxktgjpggdbto15d515wdctohb0qmv8">https://lists.apache.org/thread/4wxktgjpggdbto15d515wdctohb0qmv8</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-6">Credits</h3>
 <ul>
 <li>The initial report was submitted by Bofei Chen, with all the necessary bits to reproduce the RCE (finder)</li>
 </ul>
 <h2 id="CVE-2024-41909">integrity check bypass</h2>
 <p>CVE-2024-41909 <a href="https://cve.org/CVERecord?id=CVE-2024-41909">[CVE]</a> <a href="./CVE-2024-41909.cve.json">[CVE json]</a> <a href="./CVE-2024-41909.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-08-12T16:00:27.622Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-7">Affected</h3>
 <ul>
 <li>Apache MINA SSHD through 2.11.0</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-7">Description</h3>
 <div>Like many other SSH implementations, Apache MINA SSHD suffered from the issue that is more widely known as CVE-2023-48795. An attacker that can intercept traffic between client and server could drop certain packets from the stream, potentially causing client and server to consequently end up with a connection for which 
 some security features have been downgraded or disabled, aka a Terrapin 
 attack<br></div><div><br></div><div>The mitigations to prevent this type of attack were implemented in Apache MINA SSHD 2.12.0, both client and server side. Users are recommended to upgrade to at least this version. Note that both the client and the server implementation must have mitigations applied against this issue, otherwise the connection may still be affected.<br></div>
-<h3 id="references-1">References</h3>
+<h3 id="references-7">References</h3>
 <ul>
 <li><a href="https://github.com/apache/mina-sshd/issues/445">https://github.com/apache/mina-sshd/issues/445</a></li>
 <li><a href="https://lists.apache.org/thread/vwf1ot8wx1njyy8n19j5j2tcnjnozt3b">https://lists.apache.org/thread/vwf1ot8wx1njyy8n19j5j2tcnjnozt3b</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-7">Credits</h3>
 <ul>
 <li>Fabian Bäumer (finder)</li>
 </ul>
 <h2 id="CVE-2023-35887">Information disclosure bugs with RootedFilesystem</h2>
 <p>CVE-2023-35887 <a href="https://cve.org/CVERecord?id=CVE-2023-35887">[CVE]</a> <a href="./CVE-2023-35887.cve.json">[CVE json]</a> <a href="./CVE-2023-35887.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2023-07-19T07:18:05.211Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-8">Affected</h3>
 <ul>
 <li>Apache MINA SSHD from 1.0 before 2.10</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-8">Description</h3>
 <p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Software Foundation Apache MINA.<br><br>In SFTP servers implemented using Apache MINA SSHD that use a RootedFileSystem, logged users may be able to discover &ldquo;exists/does not exist&rdquo; information about items outside the rooted tree via paths including parent navigation (&quot;..&quot;) beyond the root, or involving symlinks.<br><br>This issue affects Apache MINA: from 1.0 before 2.10. Users are recommended to upgrade to 2.10<br></p>
-<h3 id="references-2">References</h3>
+<h3 id="references-8">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/b9qgtqvhnvgfpn0w1gz918p21p53tqk2">https://lists.apache.org/thread/b9qgtqvhnvgfpn0w1gz918p21p53tqk2</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-8">Credits</h3>
 <ul>
 <li>Andrew Pikler (finder)</li>
 </ul>
 <h2 id="CVE-2022-45047">Apache MINA SSHD: Java unsafe deserialization vulnerability</h2>
 <p>CVE-2022-45047 <a href="https://cve.org/CVERecord?id=CVE-2022-45047">[CVE]</a> <a href="./CVE-2022-45047.cve.json">[CVE json]</a> <a href="./CVE-2022-45047.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-11-16T09:03:02.600Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-9">Affected</h3>
 <ul>
 <li>Apache MINA SSHD from unspecified through 2.9.1</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-9">Description</h3>
 <p>Class org.apache.sshd.server.keyprovider.SimpleGeneratorHostKeyProvider in Apache MINA SSHD &lt;= 2.9.1 uses Java deserialization to load a serialized java.security.PrivateKey. The class is one of several implementations that an implementor using Apache MINA SSHD can choose for loading the host keys of an SSH server.</p>
-<h3 id="references-3">References</h3>
+<h3 id="references-9">References</h3>
 <ul>
 <li><a href="https://www.mail-archive.com/dev%40mina.apache.org/msg39312.html">https://www.mail-archive.com/dev%40mina.apache.org/msg39312.html</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits-9">Credits</h3>
 <ul>
 <li>The Apache MINA SSHD team would like to thank Zhang Zewei, NOFOCUS, for reporting this issue.</li>
 </ul>
 <h2 id="CVE-2021-41973">Apache MINA HTTP listener DOS</h2>
 <p>CVE-2021-41973 <a href="https://cve.org/CVERecord?id=CVE-2021-41973">[CVE]</a> <a href="./CVE-2021-41973.cve.json">[CVE json]</a> <a href="./CVE-2021-41973.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2021-11-01T08:33:24.585Z</em></p>
-<h3 id="affected-4">Affected</h3>
+<h3 id="affected-10">Affected</h3>
 <ul>
 <li>Apache MINA from Apache MINA before 2.1.5</li>
 </ul>
-<h3 id="description-4">Description</h3>
+<h3 id="description-10">Description</h3>
 <p>In Apache MINA, a specifically crafted, malformed HTTP request may cause the HTTP Header decoder to loop indefinitely.  The decoder assumed that the HTTP Header begins at the beginning of the buffer and loops if there is more data than expected.  Please update MINA to 2.1.5 or greater.</p>
-<h3 id="references-4">References</h3>
+<h3 id="references-10">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread.html/r0b907da9340d5ff4e6c1a4798ef4e79700a668657f27cca8a39e9250%40%3Cdev.mina.apache.org%3E">https://lists.apache.org/thread.html/r0b907da9340d5ff4e6c1a4798ef4e79700a668657f27cca8a39e9250%40%3Cdev.mina.apache.org%3E</a></li>
 </ul>
 <h2 id="CVE-2021-30129">DoS/OOM leak vulnerability in Apache Mina SSHD Server</h2>
 <p>CVE-2021-30129 <a href="https://cve.org/CVERecord?id=CVE-2021-30129">[CVE]</a> <a href="./CVE-2021-30129.cve.json">[CVE json]</a> <a href="./CVE-2021-30129.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2021-07-12T12:00:59.616Z</em></p>
-<h3 id="affected-5">Affected</h3>
+<h3 id="affected-11">Affected</h3>
 <ul>
 <li>Apache Mina SSHD from 2.0.0 before Apache Mina SSHD*</li>
 </ul>
-<h3 id="description-5">Description</h3>
+<h3 id="description-11">Description</h3>
 <p>A vulnerability in sshd-core of Apache Mina SSHD allows an attacker to overflow the server causing an OutOfMemory error.  This issue affects the SFTP and port forwarding features of Apache Mina SSHD version 2.0.0 and later versions.  It was addressed in Apache Mina SSHD 2.7.0</p>
-<h3 id="references-5">References</h3>
+<h3 id="references-11">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread.html/r6d4f78e192a0c8eabd671a018da464024642980ecd24096bde6db36f%40%3Cusers.mina.apache.org%3E">https://lists.apache.org/thread.html/r6d4f78e192a0c8eabd671a018da464024642980ecd24096bde6db36f%40%3Cusers.mina.apache.org%3E</a></li>
 </ul>

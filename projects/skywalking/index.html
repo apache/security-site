@@ -105,33 +105,67 @@
 <p>Do you want disclose a potential security issue for Apache SkyWalking? You can read more about the projects&rsquo; security policy on their <a href="https://skywalking.apache.org/docs/main/next/en/security/readme/">security page</a>, and email your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the <a href="https://skywalking.apache.org/docs/main/next/en/security/readme/">project security page</a>. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-34476">Server-Side Request Forgery via SW-URL Header in MCP Server</h2>
+<p>CVE-2026-34476 <a href="https://cve.org/CVERecord?id=CVE-2026-34476">[CVE]</a> <a href="./CVE-2026-34476.cve.json">[CVE json]</a> <a href="./CVE-2026-34476.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-04-13T13:00:58.883Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache SkyWalking MCP at 0.1.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<div>Server-Side Request Forgery via SW-URL Header vulnerability in Apache SkyWalking MCP.<p></p><p>This issue affects Apache SkyWalking MCP: 0.1.0.</p>Users are recommended to upgrade to version 0.2.0, which fixes this issue.<br></div><br>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/v0k1xyzzbtnpyrwxwyn36pbspr8rhjnr">https://lists.apache.org/thread/v0k1xyzzbtnpyrwxwyn36pbspr8rhjnr</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Andrea Cosentino <a href="mailto:ancosen@gmail.com">ancosen@gmail.com</a> (reporter)</li>
+</ul>
+<h2 id="CVE-2026-30778">The SkyWalking OAP /debugging/config/dump endpoint may leak sensitive configuration information of MySQL/PostgreSQL.</h2>
+<p>CVE-2026-30778 <a href="https://cve.org/CVERecord?id=CVE-2026-30778">[CVE]</a> <a href="./CVE-2026-30778.cve.json">[CVE json]</a> <a href="./CVE-2026-30778.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-04-15T10:54:23.696Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache SkyWalking from 9.7.0 through 10.3.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>The SkyWalking OAP /debugging/config/dump endpoint may leak sensitive configuration information of MySQL/PostgreSQL.</p><p>This issue affects Apache SkyWalking: from 9.7.0 through 10.3.0.</p><p>Users are recommended to upgrade to version 10.4.0, which fixes the issue.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/pvf35o3tp1rqhmrhzj6fg31gvqrqcvn3">https://lists.apache.org/thread/pvf35o3tp1rqhmrhzj6fg31gvqrqcvn3</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li><a href="mailto:shuiboye@gmail.com">shuiboye@gmail.com</a> (reporter)</li>
+</ul>
 <h2 id="CVE-2025-54057">Stored XSS vulnerability</h2>
 <p>CVE-2025-54057 <a href="https://cve.org/CVERecord?id=CVE-2025-54057">[CVE]</a> <a href="./CVE-2025-54057.cve.json">[CVE json]</a> <a href="./CVE-2025-54057.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-03-28T02:37:46.791Z</em></p>
-<h3 id="affected">Affected</h3>
+<p><em>Last updated: 2026-04-13T12:24:00.847Z</em></p>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache SkyWalking through 10.2.0</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-2">Description</h3>
 <p>Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS) vulnerability in Apache SkyWalking.</p><p>This issue affects Apache SkyWalking: &lt;= 10.2.0.</p><p>Users are recommended to upgrade to version 10.3.0, which fixes the issue.</p>
-<h3 id="references">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/sl2x2tx8y007x0mo746yddx2lvnv9tcr">https://lists.apache.org/thread/sl2x2tx8y007x0mo746yddx2lvnv9tcr</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-2">Credits</h3>
 <ul>
 <li>Vinh Nguyễn Quang (<a href="mailto:vinhnq4902@gmail.com">vinhnq4902@gmail.com</a>) (reporter)</li>
 </ul>
 <h2 id="CVE-2022-36127">Service unavailability impact in NodeJS agent(version &lt;= 0.5.0)</h2>
 <p>CVE-2022-36127 <a href="https://cve.org/CVERecord?id=CVE-2022-36127">[CVE]</a> <a href="./CVE-2022-36127.cve.json">[CVE json]</a> <a href="./CVE-2022-36127.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-07-18T11:24:38.575Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache SkyWalking NodeJS Agent from Apache SkyWalking NodeJS Agent through 0.5.0</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>A vulnerability in Apache SkyWalking NodeJS Agent prior to 0.5.1. The vulnerability will cause NodeJS services that has this agent installed to be unavailable if the OAP is unhealthy and NodeJS agent can&rsquo;t establish the connection.</p>
-<h3 id="references-1">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/x238wo4r5goy39dxdjcmlofp6gcdnqr3">https://lists.apache.org/thread/x238wo4r5goy39dxdjcmlofp6gcdnqr3</a></li>
 </ul>

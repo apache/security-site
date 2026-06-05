@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.111.3">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Apache Thrift security advisories </title>
+
+  
+  <meta name="description" content="Security information for Apache Thrift"> 
+  
+  
+  
+  
+  
+  <meta name="robots" content="noindex">
+  
+
+  
+
+  <meta name="author" content="">
+
+
+  <meta property="og:title" content="Apache Thrift security advisories" />
+<meta property="og:description" content="Security information for Apache Thrift" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://security.apache.org/projects/thrift/" />
+
+  
+
+
+
+
+  
+  
+   <link href="/projects/thrift/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
+
+  <link rel="canonical" href="https://security.apache.org/projects/thrift/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Apache Security Team</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Apache Security Team</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog" >Blog</a></li>
+    
+    <li><a href="https://www.apache.org/licenses/" >License</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
+    
+    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
+    
+    <li><a href="https://www.apache.org" >Apache</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+
+<div id="hero" class="wrap">
+  <h1>Apache Thrift security advisories</h1>
+    <p>Security information for Apache Thrift</p>
+</div>
+<div id="project-box">
+<div id="project">
+
+ <h1 id="reporting">Reporting</h1>
+<p>Do you want disclose a potential security issue for Apache Thrift? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
+<h1 id="advisories">Advisories</h1>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-43870">Node.js web_server.js multi-vulnerability</h2>
+<p>CVE-2026-43870 <a href="https://cve.org/CVERecord?id=CVE-2026-43870">[CVE]</a> <a href="./CVE-2026-43870.cve.json">[CVE json]</a> <a href="./CVE-2026-43870.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-05-05T07:45:34.804Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.23.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Origin Validation Error, Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'), Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Request/Response Splitting'), Uncontrolled Resource Consumption vulnerability in Apache Thrift.</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/pgtfq44ltc9t63kxcbqmwqzt45pnhqdy">https://lists.apache.org/thread/pgtfq44ltc9t63kxcbqmwqzt45pnhqdy</a></li>
+</ul>
+<h2 id="CVE-2026-43869">TSSLTransportFactory.java hostname verification</h2>
+<p>CVE-2026-43869 <a href="https://cve.org/CVERecord?id=CVE-2026-43869">[CVE]</a> <a href="./CVE-2026-43869.cve.json">[CVE json]</a> <a href="./CVE-2026-43869.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-05-05T07:25:46.713Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.23.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Improper Validation of Certificate with Host Mismatch vulnerability in Apache Thrift.</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/3hsgl1b69wzq3ry39scqbv2dhyl3j52r">https://lists.apache.org/thread/3hsgl1b69wzq3ry39scqbv2dhyl3j52r</a></li>
+</ul>
+<h2 id="CVE-2026-43868">Rust implementation vulnerable to CVE-2020-13949 pattern</h2>
+<p>CVE-2026-43868 <a href="https://cve.org/CVERecord?id=CVE-2026-43868">[CVE]</a> <a href="./CVE-2026-43868.cve.json">[CVE json]</a> <a href="./CVE-2026-43868.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-05-05T07:49:46.378Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.23.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Memory Allocation with Excessive Size Value vulnerability in Apache Thrift.</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/zj76dtwnbbs1m7z3focf4wd51pqpsmn9">https://lists.apache.org/thread/zj76dtwnbbs1m7z3focf4wd51pqpsmn9</a></li>
+</ul>
+<h2 id="CVE-2026-41636">Node.js skip() recursion</h2>
+<p>CVE-2026-41636 <a href="https://cve.org/CVERecord?id=CVE-2026-41636">[CVE]</a> <a href="./CVE-2026-41636.cve.json">[CVE json]</a> <a href="./CVE-2026-41636.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-05-18T16:56:58.433Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.23.0</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Uncontrolled Recursion vulnerability in Apache Thrift Node.js bindings</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql">https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Sion Park (L3G4CY Security Research) (finder)</li>
+<li>Yu Bao – <a href="mailto:yubao@paypal.com">yubao@paypal.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2026-41607">C++ JSON OOB read</h2>
+<p>CVE-2026-41607 <a href="https://cve.org/CVERecord?id=CVE-2026-41607">[CVE]</a> <a href="./CVE-2026-41607.cve.json">[CVE json]</a> <a href="./CVE-2026-41607.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-04-28T09:21:46.727Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.23.0</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Out-of-bounds Read vulnerability in Apache Thrift.</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql">https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Hasnain Lakhani (finder)</li>
+</ul>
+<h2 id="CVE-2026-41606">c_glib dispatch stack overflow</h2>
+<p>CVE-2026-41606 <a href="https://cve.org/CVERecord?id=CVE-2026-41606">[CVE]</a> <a href="./CVE-2026-41606.cve.json">[CVE json]</a> <a href="./CVE-2026-41606.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-04-28T09:21:09.783Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.23.0</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Uncontrolled Recursion vulnerability in Apache Thrift.</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql">https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Hasnain Lakhani (finder)</li>
+</ul>
+<h2 id="CVE-2026-41605">Swift Compact Protocol integer overflow</h2>
+<p>CVE-2026-41605 <a href="https://cve.org/CVERecord?id=CVE-2026-41605">[CVE]</a> <a href="./CVE-2026-41605.cve.json">[CVE json]</a> <a href="./CVE-2026-41605.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-04-28T09:20:43.166Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.23.0</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>Integer Overflow or Wraparound vulnerability in Apache Thrift.</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql">https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Hasnain Lakhani (finder)</li>
+</ul>
+<h2 id="CVE-2026-41604">Swift Range crash in skip()</h2>
+<p>CVE-2026-41604 <a href="https://cve.org/CVERecord?id=CVE-2026-41604">[CVE]</a> <a href="./CVE-2026-41604.cve.json">[CVE json]</a> <a href="./CVE-2026-41604.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-04-28T09:20:12.306Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.23.0</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>Out-of-bounds Read vulnerability in Apache Thrift.</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql">https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Hasnain Lakhani (finder)</li>
+</ul>
+<h2 id="CVE-2026-41603">Java TSSLTransportFactory hostname verification</h2>
+<p>CVE-2026-41603 <a href="https://cve.org/CVERecord?id=CVE-2026-41603">[CVE]</a> <a href="./CVE-2026-41603.cve.json">[CVE json]</a> <a href="./CVE-2026-41603.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-05-18T16:57:00.465Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.23.0</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>Improper Validation of Certificate with Host Mismatch vulnerability in Apache Thrift.</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql">https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Yu Bao – <a href="mailto:yubao@paypal.com">yubao@paypal.com</a> (finder)</li>
+<li>(finder)</li>
+</ul>
+<h2 id="CVE-2026-41602">Go TFramedTransport uint32 overflow</h2>
+<p>CVE-2026-41602 <a href="https://cve.org/CVERecord?id=CVE-2026-41602">[CVE]</a> <a href="./CVE-2026-41602.cve.json">[CVE json]</a> <a href="./CVE-2026-41602.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-04-28T09:19:05.731Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.23.0</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>Integer Overflow or Wraparound vulnerability in Apache Thrift TFramedTransport Go language implementation</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql">https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>김범수 (finder)</li>
+</ul>
+<h2 id="CVE-2025-48431">Specially crafted input can crash a c_glib Thrift server with invalid pointer error.</h2>
+<p>CVE-2025-48431 <a href="https://cve.org/CVERecord?id=CVE-2025-48431">[CVE]</a> <a href="./CVE-2025-48431.cve.json">[CVE json]</a> <a href="./CVE-2025-48431.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-04-28T09:11:42.895Z</em></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.23.0</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<p>Mismatched Memory Management Routines vulnerability in Apache Thrift c_glib language bindings.</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.<br><br>Description: Specially crafted requests can crash an c_glib-based Thrift server with a clean but fatal "free(): invalid pointer" error message.<br><br></p>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql">https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>Hasnain Lakhani (finder)</li>
+<li>Hasnain Lakhani (remediation developer)</li>
+</ul>
+
+  
+</div>
+</div>
+</main>
+  <footer> 
+    <footer id="footer">
+    <p>&copy; The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+  </footer>
+ 
+</footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/main.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

@@ -105,17 +105,56 @@
 <p>Do you want disclose a potential security issue for Apache Web Services? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-42404">Unrestricted HTTP Redirect Following in Policy References</h2>
+<p>CVE-2026-42404 <a href="https://cve.org/CVERecord?id=CVE-2026-42404">[CVE]</a> <a href="./CVE-2026-42404.cve.json">[CVE json]</a> <a href="./CVE-2026-42404.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-05-01T09:46:48.474Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Neethi before 3.2.2</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Apache Neethi does not impose any restrictions on URIs when manually fetching remote policy references through the PolicyReference API. When an application explicitly calls the API to retrieve a policy from a remote URI, an outbound request is made for arbitrary protocols and internal IP adddresses. From 3.2.2, only http or https URIs are allowed, and link-local/multicast/any-local addresses are forbidden.<br><br>Users are recommended to upgrade to version 3.2.2, which fixes this issue.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/zdspnt64zznyjyn648553kptx69w23oq">https://lists.apache.org/thread/zdspnt64zznyjyn648553kptx69w23oq</a></li>
+</ul>
+<h2 id="CVE-2026-42403">Circular Policy Reference Infinite Loop</h2>
+<p>CVE-2026-42403 <a href="https://cve.org/CVERecord?id=CVE-2026-42403">[CVE]</a> <a href="./CVE-2026-42403.cve.json">[CVE json]</a> <a href="./CVE-2026-42403.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-05-01T09:36:06.796Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Neethi before 3.2.2</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Apache Neethi does not properly detect circular references in policy definitions. When a WS-Policy document contains circular policy references (where Policy A references Policy B which references Policy A), the policy normalization process can enter an infinite loop or cause excessive recursion, leading to a stack overflow or application hang. An attacker can craft malicious policy documents with circular references to cause a Denial of Service condition<br><br>Users are recommended to upgrade to version 3.2.2, which fixes this issue.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/zm6t8skkkskjwk1881l4m4n0l7dqclzo">https://lists.apache.org/thread/zm6t8skkkskjwk1881l4m4n0l7dqclzo</a></li>
+</ul>
+<h2 id="CVE-2026-42402">Policy Normalization Unbounded Resource Allocation DoS</h2>
+<p>CVE-2026-42402 <a href="https://cve.org/CVERecord?id=CVE-2026-42402">[CVE]</a> <a href="./CVE-2026-42402.cve.json">[CVE json]</a> <a href="./CVE-2026-42402.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-05-01T09:35:22.670Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Neethi before 3.2.2</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Apache Neethi is vulnerable to a Denial of Service attack through algorithmic complexity in policy normalization. Specially crafted WS-Policy documents can trigger an exponential Cartesian cross-product expansion during the normalization process, causing unbounded memory allocation that exhausts the JVM heap. This occurs when the normalization process generates an excessive number of policy alternatives without bounds, leading to runtime memory exhaustion.<br><br>Users should upgrade to 3.2.2 which limits the maximum number of normalized policy alternatives.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/p826j0phhmr9f83wzpmys1y0bdfrr2q4">https://lists.apache.org/thread/p826j0phhmr9f83wzpmys1y0bdfrr2q4</a></li>
+</ul>
 <h2 id="CVE-2022-45378">Apache SOAP allows unauthenticated users to potentially invoke arbitrary code</h2>
 <p>CVE-2022-45378 <a href="https://cve.org/CVERecord?id=CVE-2022-45378">[CVE]</a> <a href="./CVE-2022-45378.cve.json">[CVE json]</a></p>
 <p><em>Last updated: 2022-11-14T14:06:51.577Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache SOAP at 2.3</li>
 <li>Apache SOAP from Apache SOAP before 2.3 unknown</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>In the default configuration of Apache SOAP, an RPCRouterServlet is available without authentication. This gives an attacker the possibility to invoke methods on the classpath that meet certain criteria. Depending on what classes are available on the classpath this might even lead to arbitrary remote code execution. NOTE: This vulnerability only affects products that are no longer supported by the maintainer</p>
-<h3 id="references">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/g4l64s283njhnph2otx7q4gs2j952d31">https://lists.apache.org/thread/g4l64s283njhnph2otx7q4gs2j952d31</a></li>
 </ul>
@@ -126,13 +165,13 @@
 <h2 id="CVE-2022-40705">Apache SOAP: XML External Entity Injection (XXE) allows unauthenticated users to read arbitrary files via HTTP</h2>
 <p>CVE-2022-40705 <a href="https://cve.org/CVERecord?id=CVE-2022-40705">[CVE]</a> <a href="./CVE-2022-40705.cve.json">[CVE json]</a> <a href="./CVE-2022-40705.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-09-22T08:11:36.490Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-4">Affected</h3>
 <ul>
 <li>Apache SOAP from 2.2 before Apache SOAP*</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-4">Description</h3>
 <p>An Improper Restriction of XML External Entity Reference vulnerability in RPCRouterServlet of Apache SOAP allows an attacker to read arbitrary files over HTTP. This issue affects Apache SOAP version 2.2 and later versions. It is unknown whether previous versions are also affected.  NOTE: This vulnerability only affects products that are no longer supported by the maintainer</p>
-<h3 id="references-1">References</h3>
+<h3 id="references-4">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/02yo04w93rdjmllz4454lvodn5xzhwhl">https://lists.apache.org/thread/02yo04w93rdjmllz4454lvodn5xzhwhl</a></li>
 </ul>

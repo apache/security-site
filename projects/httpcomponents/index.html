@@ -105,23 +105,40 @@
 <p>Do you want disclose a potential security issue for Apache HttpComponents? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-40542">SCRAM-SHA-256 mutual authentication bypass may cause the client to accept authentication without proper mutual authentication verification</h2>
+<p>CVE-2026-40542 <a href="https://cve.org/CVERecord?id=CVE-2026-40542">[CVE]</a> <a href="./CVE-2026-40542.cve.json">[CVE json]</a> <a href="./CVE-2026-40542.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-04-22T07:07:19.055Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache HttpClient from 5.6 before 5.6.1</li>
+</ul>
+<h3 id="description">Description</h3>
+<p><code>Missing critical step in authentication in Apache HttpClient 5.6 allows an attacker to cause the client to accept SCRAM-SHA-256 authentication without proper mutual authentication verification. Users are recommended to upgrade to version 5.6.1, which fixes this issue.</code><br></p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/tfmgv86xr0z1y096vs3z0y315t1v3o97">https://lists.apache.org/thread/tfmgv86xr0z1y096vs3z0y315t1v3o97</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Rasmus Moorats (finder)</li>
+</ul>
 <h2 id="CVE-2025-27820">PSL (Public Suffix List) validation bypass</h2>
 <p>CVE-2025-27820 <a href="https://cve.org/CVERecord?id=CVE-2025-27820">[CVE]</a> <a href="./CVE-2025-27820.cve.json">[CVE json]</a> <a href="./CVE-2025-27820.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-06-04T11:19:13.066Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache HttpComponents from 5.4.0 before 5.4.3</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-1">Description</h3>
 <p><code>A bug in PSL validation logic in Apache HttpClient 5.4.x disables domain checks, affecting cookie management and host name verification. Discovered by the Apache HttpClient team. Fixed in the 5.4.3 release<br></code></p>
-<h3 id="references">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://github.com/apache/httpcomponents-client/pull/574">https://github.com/apache/httpcomponents-client/pull/574</a></li>
 <li><a href="https://github.com/apache/httpcomponents-client/pull/621">https://github.com/apache/httpcomponents-client/pull/621</a></li>
 <li><a href="https://hc.apache.org/httpcomponents-client-5.4.x/index.html">https://hc.apache.org/httpcomponents-client-5.4.x/index.html</a></li>
 <li><a href="https://lists.apache.org/thread/55xhs40ncqv97qvoocok44995xp5kqn8">https://lists.apache.org/thread/55xhs40ncqv97qvoocok44995xp5kqn8</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>Joe Gallo (remediation developer)</li>
 </ul>

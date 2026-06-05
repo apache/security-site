@@ -105,39 +105,59 @@
 <p>Do you want disclose a potential security issue for Apache Artemis? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-40914">Address routing-type can be updated by STOMP protocol user without the createAddress permission</h2>
+<p>CVE-2026-40914 <a href="https://cve.org/CVERecord?id=CVE-2026-40914">[CVE]</a> <a href="./CVE-2026-40914.cve.json">[CVE json]</a> <a href="./CVE-2026-40914.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-05-28T12:28:55.897Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Artemis Stomp Protocol from 2.50.0 through 2.53.0</li>
+<li>Apache ActiveMQ Artemis Stomp Protocol from 2.0.0 through 2.44.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p></p><p>A vulnerability exists in Apache Artemis whereby an application using the STOMP protocol with security credentials that grant either the consume or send permission on an address can augment the routing-type supported by that address even if said user doesn't have the createAddress permission for that particular address. A user could successfully send a message to an address or consume a message from a queue with a routing-type not supported by the corresponding address when that operation should actually be rejected on the basis that the user doesn't have permission to change the routing-type of the address. Even though the user was already granted permission to send and/or consume messages, they should not be able to augment the routing-type of the address without the createAddress permission.</p><p></p><p>This issue affects Apache Artemis: from 2.50.0 through 2.53.0; Apache ActiveMQ Artemis: from 2.0.0 through 2.44.0.</p><p>Users are recommended to upgrade to version 2.54.0, which fixes the issue.</p><p></p><p></p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/6q3st8dlorz2q05svqn11k1xl7jkmm4c">https://lists.apache.org/thread/6q3st8dlorz2q05svqn11k1xl7jkmm4c</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>bugbunny.ai (tool)</li>
+<li>Isaac David <a href="mailto:isaac@bugbunny.ai">isaac@bugbunny.ai</a> (reporter)</li>
+<li>Arthur Gervais <a href="mailto:arthur@bugbunny.ai">arthur@bugbunny.ai</a> (reporter)</li>
+</ul>
 <h2 id="CVE-2026-32642">Temporary address auto-created for OpenWire consumer without createAddress permission</h2>
 <p>CVE-2026-32642 <a href="https://cve.org/CVERecord?id=CVE-2026-32642">[CVE]</a> <a href="./CVE-2026-32642.cve.json">[CVE json]</a> <a href="./CVE-2026-32642.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-03-24T07:54:40.342Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache Artemis from 2.50.0 through 2.52.0</li>
 <li>Apache ActiveMQ Artemis from 2.0.0 through 2.44.0</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-1">Description</h3>
 <p>Incorrect Authorization (CWE-863)&nbsp;vulnerability in Apache Artemis, Apache ActiveMQ Artemis exists when an application using the OpenWire protocol attempts to create a non-durable JMS topic subscription on an address that doesn't exist with an authenticated user which has the "createDurableQueue" permission but does not have the "createAddress" permission and address auto-creation is disabled. In this circumstance, a temporary address will be created whereas the attempt to create the non-durable subscription should instead fail since the user is not authorized to create the corresponding address. When the OpenWire connection is closed the address is removed.</p><p>This issue affects Apache Artemis: from 2.50.0 through 2.52.0; Apache ActiveMQ Artemis: from 2.0.0 through 2.44.0.</p><p>Users are recommended to upgrade to version 2.53.0, which fixes the issue.</p>
-<h3 id="references">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/4wlrp31ngq2yb54sf4kjb3bl41t4xgtp">https://lists.apache.org/thread/4wlrp31ngq2yb54sf4kjb3bl41t4xgtp</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>Stephen Higgs <a href="mailto:shiggs@redhat.com">shiggs@redhat.com</a> (reporter)</li>
 </ul>
 <h2 id="CVE-2026-27446">Auth bypass for Core downstream federation</h2>
 <p>CVE-2026-27446 <a href="https://cve.org/CVERecord?id=CVE-2026-27446">[CVE]</a> <a href="./CVE-2026-27446.cve.json">[CVE json]</a> <a href="./CVE-2026-27446.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-03-17T15:30:04.446Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache Artemis from 2.50.0 through 2.51.0</li>
 <li>Apache ActiveMQ Artemis from 2.11.0 through 2.44.0</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-2">Description</h3>
 <p>Missing Authentication for Critical Function (CWE-306) vulnerability in Apache Artemis, Apache ActiveMQ Artemis. An unauthenticated remote attacker can use the Core protocol to force a target broker to establish an outbound Core federation connection to an attacker-controlled rogue broker. This could potentially result in message injection into any queue and/or message exfiltration from any queue via the rogue broker. This impacts environments that allow both:</p><p>- incoming Core protocol connections from untrusted sources to the broker</p><p>- outgoing Core protocol connections from the broker to untrusted targets</p><p>This issue affects:</p><p>- Apache Artemis from 2.50.0 through 2.51.0</p><p>- Apache ActiveMQ Artemis from 2.11.0 through 2.44.0.</p><p>Users are recommended to upgrade to Apache Artemis version 2.52.0, which fixes the issue.</p><p>The issue can be mitigated by one of the following:</p><p>- Remove Core protocol support from any acceptor receiving connections from untrusted sources. Incoming Core protocol connections are supported by default via the "artemis" acceptor listening on port 61616. See the "protocols" URL parameter configured for the acceptor. An acceptor URL without this parameter supports all protocols by default, including Core.</p><p>- Use two-way SSL (i.e. certificate-based authentication) in order to force every client to present the proper SSL certificate when establishing a connection before any message protocol handshake is attempted. This will prevent unauthenticated exploitation of this vulnerability.</p><p>- Implement and deploy a Core interceptor to deny all Core downstream federation connect packets. Such packets have a type of (int) -16 or (byte)&nbsp;0xfffffff0. Documentation for interceptors is available at&nbsp;<a target="_blank" rel="nofollow" href="https://artemis.apache.org/components/artemis/documentation/latest/intercepting-operations.html">https://artemis.apache.org/components/artemis/documentation/latest/intercepting-operations.html</a>.</p>
-<h3 id="references-1">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/jwpsdc8tdxotm98od8n8n30fqlzoc8gg">https://lists.apache.org/thread/jwpsdc8tdxotm98od8n8n30fqlzoc8gg</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-2">Credits</h3>
 <ul>
 <li>Hardik Mehta <a href="mailto:mehtahardik@proton.me">mehtahardik@proton.me</a> (finder)</li>
 </ul>
