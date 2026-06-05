@@ -103,7 +103,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache OpenMeetings](https://openmeetings.apache.org/security.html) |  [Apache OpenMeetings Security Team](mailto:security@openmeetings.apache.org) | |
 | [Apache OpenOffice](https://openoffice.apache.org/security) |  [Apache OpenOffice Security Team](mailto:security@openoffice.apache.org) | [Advisories](https://www.openoffice.org/security/bulletin.html) |
 | [Apache ORC](https://orc.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://orc.apache.org/security/) |
-| Apache Ozone |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Ozone |  [Apache Ozone Security Team](mailto:security@ozone.apache.org) | |
 | Apache Parquet |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache PDFBox](https://pdfbox.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Pekko](https://pekko.apache.org/docs/pekko/current/security/index.html) |  [Apache Security Team](mailto:security@apache.org) | |
