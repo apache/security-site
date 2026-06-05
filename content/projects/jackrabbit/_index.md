@@ -13,6 +13,32 @@ Do you want disclose a potential security issue for Apache Jackrabbit? You can r
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://jackrabbit.apache.org/jcr/security-reports.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## JNDI injection risk with JndiRepositoryFactory ## { #CVE-2025-58782 }
+
+CVE-2025-58782 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-58782) [\[CVE json\]](./CVE-2025-58782.cve.json) [\[OSV json\]](./CVE-2025-58782.osv.json)
+
+
+
+_Last updated: 2026-04-10T15:55:02.565Z_
+
+### Affected
+
+* Apache Jackrabbit Core from 1.0.0 through 2.22.1
+* Apache Jackrabbit JCR Commons from 1.0.0 through 2.22.1
+
+
+### Description
+
+<p>Deserialization of Untrusted Data vulnerability in Apache Jackrabbit Core and Apache Jackrabbit JCR Commons.</p><p>This issue affects Apache Jackrabbit Core: from 1.0.0 through 2.22.1; Apache Jackrabbit JCR Commons: from 1.0.0 through 2.22.1.</p><span style="background-color: rgb(255, 255, 255);">Deployments that accept JNDI URIs for JCR lookup from untrusted users allows them to inject malicious JNDI references, potentially leading to arbitrary code execution through deserialization of untrusted data.</span><br><p>Users are recommended to upgrade to version 2.22.2. JCR lookup through JNDI has been disabled by default in 2.22.2. Users of this feature need to enable it explicitly and are adviced to review their use of JNDI URI for JCR lookup.</p>
+
+### References
+* https://lists.apache.org/thread/t4wdrost6dh17dh406g792j9wq6xmy6v
+
+
+### Credits
+* James John (reporter)
+
+
 ## XXE vulnerability in jackrabbit-spi-commons ## { #CVE-2025-53689 }
 
 CVE-2025-53689 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-53689) [\[CVE json\]](./CVE-2025-53689.cve.json) [\[OSV json\]](./CVE-2025-53689.osv.json)

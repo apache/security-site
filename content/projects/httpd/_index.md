@@ -13,6 +13,292 @@ Do you want disclose a potential security issue for Apache HTTP Server? You can 
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://httpd.apache.org/security_report.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## mod_proxy_ajp: Heap Over-Read and memory disclosure in  ajp_parse_data() ## { #CVE-2026-34059 }
+
+CVE-2026-34059 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34059) [\[CVE json\]](./CVE-2026-34059.cve.json) [\[OSV json\]](./CVE-2026-34059.osv.json)
+
+
+
+_Last updated: 2026-05-04T12:39:41.105Z_
+
+### Affected
+
+* Apache HTTP Server through 2.4.66
+
+
+### Description
+
+<p>Buffer Over-read vulnerability in Apache HTTP Server.</p><p>This issue affects Apache HTTP Server: through 2.4.66.</p><p>Users are recommended to upgrade to version 2.4.67, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Elhanan Haenel (finder)
+
+
+## mod_proxy_ajp: Heap Buffer Over-Read Due to Missing Null-Termination Check (ajp_msg_get_string) ## { #CVE-2026-34032 }
+
+CVE-2026-34032 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34032) [\[CVE json\]](./CVE-2026-34032.cve.json) [\[OSV json\]](./CVE-2026-34032.osv.json)
+
+
+
+_Last updated: 2026-06-04T16:35:28.706Z_
+
+### Affected
+
+* Apache HTTP Server through 2.4.66
+
+
+### Description
+
+<p>Improper Null Termination, Out-of-bounds Read vulnerability in Apache HTTP Server.</p><p>This issue affects Apache HTTP Server: through 2.4.66.</p><p>Users are recommended to upgrade to version 2.4.67, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Tianshuo Han (<hantianshuo233@gmail.com>) (finder)
+* Jérôme Djouder (finder)
+* Sajeeb Lohani working with TrendAI Zero Day Initiative (finder)
+
+
+## Off-by-one OOB reads in AJP getter functions ## { #CVE-2026-33857 }
+
+CVE-2026-33857 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-33857) [\[CVE json\]](./CVE-2026-33857.cve.json) [\[OSV json\]](./CVE-2026-33857.osv.json)
+
+
+
+_Last updated: 2026-05-04T13:07:29.296Z_
+
+### Affected
+
+* Apache HTTP Server through 2.4.66
+
+
+### Description
+
+<p>Out-of-bounds Read vulnerability in mod_proxy_ajp of 
+
+Apache HTTP Server.</p><p>This issue affects Apache HTTP Server: through 2.4.66.</p><p>Users are recommended to upgrade to version 2.4.67, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Elhanan Haenel (finder)
+
+
+## multiple modules: HTTP response splitting forwarding malicious status line ## { #CVE-2026-33523 }
+
+CVE-2026-33523 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-33523) [\[CVE json\]](./CVE-2026-33523.cve.json) [\[OSV json\]](./CVE-2026-33523.osv.json)
+
+
+
+_Last updated: 2026-05-04T14:40:39.823Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.66
+
+
+### Description
+
+<p>HTTP response splitting vulnerability in multiple Apache HTTP Server modules with untrusted or compromised backend servers.</p><p>This issue affects Apache HTTP Server: from through 2.4.66.</p><p>Users are recommended to upgrade to version 2.4.67, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Haruki Oyama (Waseda University) (finder)
+* Merih Mengisteab (finder)
+* Dawit Jeong (finder)
+
+
+## mod_authn_socache crash ## { #CVE-2026-33007 }
+
+CVE-2026-33007 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-33007) [\[CVE json\]](./CVE-2026-33007.cve.json) [\[OSV json\]](./CVE-2026-33007.osv.json)
+
+
+
+_Last updated: 2026-05-05T14:54:49.081Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.66
+
+
+### Description
+
+A NULL pointer dereference in the mod_authn_socache in Apache HTTP Server 2.4.66 and earlier allows an unauthenticated remote user to crash a child process in a caching forward proxy configuration.<br><br>Users are recommended to upgrade to version 2.4.67, which fixes this issue.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Pavel Kohout, Aisle Research, Aisle.com (finder)
+* Arkadi Vainbrand (finder)
+
+
+## mod_auth_digest timing attack ## { #CVE-2026-33006 }
+
+CVE-2026-33006 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-33006) [\[CVE json\]](./CVE-2026-33006.cve.json) [\[OSV json\]](./CVE-2026-33006.osv.json)
+
+
+
+_Last updated: 2026-05-04T14:41:59.911Z_
+
+### Affected
+
+* Apache HTTP Server through 2.4.66
+
+
+### Description
+
+A timing attack against mod_auth_digest in Apache HTTP Server 2.4.66 allows a bypass of Digest authentication by a remote attacker.<br><br>Users are recommended to upgrade to version 2.4.67, which fixes this issue.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Nitescu Lucian (finder)
+
+
+## mod_dav_lock indirect lock crash ## { #CVE-2026-29169 }
+
+CVE-2026-29169 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-29169) [\[CVE json\]](./CVE-2026-29169.cve.json) [\[OSV json\]](./CVE-2026-29169.osv.json)
+
+
+
+_Last updated: 2026-05-05T16:53:52.408Z_
+
+### Affected
+
+* Apache HTTP Server through 2.4.66
+
+
+### Description
+
+A NULL pointer dereference in mod_dav_lock in Apache HTTP Server 2.4.66 and earlier may allow an attacker to crash the server with a malicious request.mod_dav_lock is not used internally by mod_dav or mod_dav_fs.<br><br>The only known use-case for mod_dav_lock was mod_dav_svn from Apache Subversion earlier than version 1.2.0.<br><br>Users are recommended to upgrade to version 2.4.67, which fixes this issue, or remove mod_dav_lock.<br>Note: The above incorrectly stated "upgrade to version 2.4.66" when first published.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Pavel Kohout, Aisle Research, Aisle.com (finder)
+
+
+## mod_md unrestricted OCSP response ## { #CVE-2026-29168 }
+
+CVE-2026-29168 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-29168) [\[CVE json\]](./CVE-2026-29168.cve.json) [\[OSV json\]](./CVE-2026-29168.osv.json)
+
+
+
+_Last updated: 2026-05-08T18:04:07.527Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.30 through 2.4.66
+
+
+### Description
+
+<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache HTTP Server's&nbsp; mod_md via OCSP response data.</p><p>This issue affects Apache HTTP Server: from 2.4.30 through 2.4.66.</p><p>Users are recommended to upgrade to version 2.4.67, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Pavel Kohout, Aisle Research, Aisle.com (finder)
+
+
+## buffer overflow in mod_proxy_ajp via  ajp_msg_check_header() ## { #CVE-2026-28780 }
+
+CVE-2026-28780 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-28780) [\[CVE json\]](./CVE-2026-28780.cve.json) [\[OSV json\]](./CVE-2026-28780.osv.json)
+
+
+
+_Last updated: 2026-05-05T21:29:39.951Z_
+
+### Affected
+
+* Apache HTTP Server through 2.4.66
+
+
+### Description
+
+<p>Heap-based Buffer Overflow vulnerability in mod_proxy_ajp of Apache HTTP Server.<br>If mod_proxy_ajp connects to a malicious AJP server this AJP server can send a malicious AJP message back to mod_proxy_ajp and cause it to write 4 attacker controlled bytes after the end of a heap based buffer.</p><p>This issue affects Apache HTTP Server: through 2.4.66.</p><p>Users are recommended to upgrade to version 2.4.67, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Andrew Lacambra (finder)
+* Elhanan Haenel (finder)
+* Tianshuo Han (<hantianshuo233@gmail.com>) (finder)
+* Tristan Madani (finder)
+
+
+## mod_rewrite elevation of privileges via ap_expr ## { #CVE-2026-24072 }
+
+CVE-2026-24072 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24072) [\[CVE json\]](./CVE-2026-24072.cve.json) [\[OSV json\]](./CVE-2026-24072.osv.json)
+
+
+
+_Last updated: 2026-05-04T12:37:56.221Z_
+
+### Affected
+
+* Apache HTTP Server through 2.4.66
+
+
+### Description
+
+An escalation of privilege bug in various modules in Apache HTTP 2.4.66 and earlier allows local .htaccess authors to read files with the privileges of the httpd user.<br><br>Users are recommended to upgrade to version 2.4.67, which fixes this issue.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* y7syeu (finder)
+
+
+## http2: double free and possible RCE on early reset ## { #CVE-2026-23918 }
+
+CVE-2026-23918 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23918) [\[CVE json\]](./CVE-2026-23918.cve.json) [\[OSV json\]](./CVE-2026-23918.osv.json)
+
+
+
+_Last updated: 2026-05-04T14:44:27.003Z_
+
+### Affected
+
+* Apache HTTP Server at 2.4.66
+
+
+### Description
+
+<p>Double Free and possible RCE vulnerability in Apache HTTP Server with the HTTP/2 protocol.</p><p>This issue affects Apache HTTP Server: 2.4.66.</p><p>Users are recommended to upgrade to version 2.4.67, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Bartlomiej Dmitruk, striga.ai (finder)
+* Stanislaw Strzalkowski, isec.pl (finder)
+
+
 ## mod_userdir+suexec bypass via AllowOverride FileInfo ## { #CVE-2025-66200 }
 
 CVE-2025-66200 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66200) [\[CVE json\]](./CVE-2025-66200.cve.json) [\[OSV json\]](./CVE-2025-66200.osv.json)

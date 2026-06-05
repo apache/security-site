@@ -13,6 +13,127 @@ Do you want disclose a potential security issue for Apache Kafka? You can read m
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://kafka.apache.org/project-security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Improper Authorization in CONSUMER_GROUP_DESCRIBE API ## { #CVE-2026-41115 }
+
+CVE-2026-41115 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-41115) [\[CVE json\]](./CVE-2026-41115.cve.json) [\[OSV json\]](./CVE-2026-41115.osv.json)
+
+
+
+_Last updated: 2026-06-02T08:56:41.838Z_
+
+### Affected
+
+* Apache Kafka from 4.0.0 through 4.3.0
+
+
+### Description
+
+<div>An improper authorization vulnerability has been identified in Apache Kafka.</div><div>The implementation of the CONSUMER_GROUP_DESCRIBE (69) API validates the DESCRIBE operation on the GROUP resource instead of the READ operation that documented in the official kafka documentation and the KIP-848. This discrepancy can result in misconfigured Access Control Lists (ACLs) and unintended security postures, like granting READ permission to users who should not be able to join/sync groups, or allowing users without READ permission (but with DESCRIBE permission) to access sensitive group metadata.<br><br>The correct permission for CONSUMER_GROUP_DESCRIBE API is DESCRIBE GROUP so the current implementation is correct. However, the kafka documentation as well as the KIP-848 will be updated to reflect the correct permission. We advise the Kafka users to review existing group ACLs to ensure the principle of least privilege.</div><div><br></div>
+
+### References
+* https://kafka.apache.org/cve-list
+
+
+### Credits
+* Luke Chen <showuon@gmail.com> (finder)
+
+
+## Kafka Producer Message Corruption and Misrouting via Buffer Pool Race Condition ## { #CVE-2026-35554 }
+
+CVE-2026-35554 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-35554) [\[CVE json\]](./CVE-2026-35554.cve.json) [\[OSV json\]](./CVE-2026-35554.osv.json)
+
+
+
+_Last updated: 2026-04-07T13:07:01.788Z_
+
+### Affected
+
+* Apache Kafka Clients from 2.8.0 through 3.9.1
+* Apache Kafka Clients from 4.0.0 through 4.0.1
+* Apache Kafka Clients from 4.1.0 through 4.1.1
+
+
+### Description
+
+<p></p><p>A race condition in the <strong>Apache Kafka Java producer client’s buffer pool management</strong> can cause messages to be silently delivered to incorrect topics.</p><p>When a produce batch expires due to <code>delivery.timeout.ms</code> while a network request containing that batch is still in flight, the batch’s <code>ByteBuffer</code> is prematurely deallocated and returned to the buffer pool. If a subsequent producer batch—potentially destined for a different topic—reuses this freed buffer before the original network request completes, the buffer contents may become corrupted. This can result in messages being delivered to unintended topics without any error being reported to the producer.<br></p><p><strong>Data Confidentiality:</strong><br>Messages intended for one topic may be delivered to a different topic, potentially exposing sensitive data to consumers who have access to the destination topic but not the intended source topic.</p><p><strong>Data Integrity:</strong><br>Consumers on the receiving topic may encounter unexpected or incompatible messages, leading to deserialization failures, processing errors, and corrupted downstream data.</p><p>This issue affects <strong>Apache Kafka versions ≤ 3.9.1, ≤ 4.0.1, and&nbsp; ≤ 4.1.1</strong>.</p><p>Kafka users are advised to upgrade to <strong>3.9.2, 4.0.2, 4.1.2, 4.2.0, or later</strong> to address this vulnerability.</p><br><p></p>
+
+### References
+* https://issues.apache.org/jira/browse/KAFKA-19012
+* https://lists.apache.org/thread/f07x7j8ovyqhjd1to25jsnqbm6wj01d6
+
+
+### Credits
+* Bharath Vissapragada <bharathv@apache.org> (reporter)
+* Donny Nadolny <donny.nadolny@hotmail.com> (finder)
+* Donny Nadolny <donny.nadolny@hotmail.com> (remediation developer)
+
+
+## Information Exposure Through Network Client Log Output ## { #CVE-2026-33558 }
+
+CVE-2026-33558 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-33558) [\[CVE json\]](./CVE-2026-33558.cve.json) [\[OSV json\]](./CVE-2026-33558.osv.json)
+
+
+
+_Last updated: 2026-04-18T14:13:55.292Z_
+
+### Affected
+
+* Apache Kafka from 0.11.0 through 3.9.1
+* Apache Kafka at 4.0.0
+* Apache Kafka Clients from 0.11.0 through 3.9.1
+* Apache Kafka Clients at 4.0.0
+
+
+### Description
+
+<div>Information exposure vulnerability has been identified in Apache Kafka.</div><div>The NetworkClient component will output entire requests and responses information in the DEBUG log level in the logs. By default, the log level is set to INFO level. If the DEBUG level is enabled, the sensitive information will be exposed via the requests and responses output log. The entire lists of impacted requests and responses are:</div><div><ol>
+<li>AlterConfigsRequest</li>
+<li>AlterUserScramCredentialsRequest</li>
+<li>ExpireDelegationTokenRequest</li>
+<li>IncrementalAlterConfigsRequest</li>
+<li>RenewDelegationTokenRequest</li>
+<li>SaslAuthenticateRequest</li>
+<li>createDelegationTokenResponse</li>
+<li>describeDelegationTokenResponse</li>
+<li>SaslAuthenticateResponse</li>
+</ol><br>This issue affects Apache Kafka: from any version supported the listed API above through v3.9.1, v4.0.0. We advise the Kafka users to upgrade to v3.9.2, v4.0.1, or later to avoid this vulnerability.&nbsp;&nbsp;<br><br></div>
+
+### References
+* https://kafka.apache.org/cve-list
+* https://lists.apache.org/thread/pz5g4ky3h0k91tfd14p0dzqjp80960kl
+
+
+### Credits
+* Alyssa Huang <ahuang@confluent.io> (finder)
+* Luke Chen <showuon@gmail.com> (finder)
+
+
+## Missing JWT token validation in OAUTHBEARER authentication ## { #CVE-2026-33557 }
+
+CVE-2026-33557 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-33557) [\[CVE json\]](./CVE-2026-33557.cve.json) [\[OSV json\]](./CVE-2026-33557.osv.json)
+
+
+
+_Last updated: 2026-04-18T14:14:44.004Z_
+
+### Affected
+
+* Apache Kafka from 4.1.0 through 4.1.1
+
+
+### Description
+
+<div>A possible security vulnerability has been identified in Apache Kafka.</div><div>By default, the broker property `sasl.oauthbearer.jwt.validator.class` is&nbsp;set to `org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator`. It accepts any JWT token without validating its&nbsp;signature, issuer, or audience. An attacker can generate a JWT&nbsp;token from any issuer with the `preferred_username` set to any user, and the broker will accept it.</div><div>We advise the Kafka users using kafka v4.1.0 or v4.1.1 to set the config `sasl.oauthbearer.jwt.validator.class` to `org.apache.kafka.common.security.oauthbearer.BrokerJwtValidator` explicitly to avoid this vulnerability. Since Kafka v4.1.2 and v4.2.0 and later, the issue is fixed and will correctly validate the JWT token.</div><br>
+
+### References
+* https://kafka.apache.org/cve-list
+* https://lists.apache.org/thread/v57o00hm6yszdpdnvqx2ss4561yh953h
+
+
+### Credits
+* Павел Романов <promanov1994@gmail.com> (finder)
+
+
 ## Possible RCE/Denial of service attack via SASL JAAS JndiLoginModule configuration ## { #CVE-2025-27819 }
 
 CVE-2025-27819 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27819) [\[CVE json\]](./CVE-2025-27819.cve.json) [\[OSV json\]](./CVE-2025-27819.osv.json)

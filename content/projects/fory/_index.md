@@ -13,6 +13,56 @@ Do you want disclose a potential security issue for Apache Fory? You can read mo
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://fory.apache.org/security/). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Java ReplaceResolverSerializer deserialization checks bypass ## { #CVE-2026-50076 }
+
+CVE-2026-50076 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50076) [\[CVE json\]](./CVE-2026-50076.cve.json) [\[OSV json\]](./CVE-2026-50076.osv.json)
+
+
+
+_Last updated: 2026-06-04T09:08:27.361Z_
+
+### Affected
+
+* Apache Fory before 1.1.0
+
+
+### Description
+
+<p>Deserialization of Untrusted Data in the Java replace-resolve path in Apache Fory fory-core Java SDK before 1.1.0 on Java/JVM platforms allows a remote attacker to bypass class registration, TypeChecker, and DisallowedList checks and invoke classpath-present readResolve/readExternal hooks via crafted Fory serialized data.</p><p>Users are recommended to upgrade to version 1.1.0 or later, which fixes this issue.</p><br>
+
+### References
+* https://fory.apache.org/security
+
+
+### Credits
+* Venkatraman Kumar (r3dw0lfsec), Securin (reporter)
+
+
+## PyFory ReduceSerializer Incomplete Policy Enforcement ## { #CVE-2026-48207 }
+
+CVE-2026-48207 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48207) [\[CVE json\]](./CVE-2026-48207.cve.json) [\[OSV json\]](./CVE-2026-48207.osv.json)
+
+
+
+_Last updated: 2026-05-21T12:44:21.497Z_
+
+### Affected
+
+* Apache Fory from 0.13.0 before 1.0.0
+
+
+### Description
+
+<p><span style="background-color: rgb(255, 255, 255);">Deserialization of untrusted data in Apache Fory PyFory. PyFory's ReduceSerializer could bypass documented DeserializationPolicy validation hooks during reduce-state restoration and global-name resolution. An application is vulnerable if it deserializes attacker-controlled data using PyFory Python-native mode with strict mode disabled and relies on DeserializationPolicy to restrict unsafe classes, functions, or module attributes.</span></p><p>This issue affects Apache Fory: from before 1.0.0.</p><p><span style="background-color: rgb(255, 255, 255);">Mitigation: Users of Apache Fory are recommended to upgrade to version 1.0.0 or later, which enforces DeserializationPolicy validation for the affected ReduceSerializer paths and thus fixes this issue.</span><br><br><br></p>
+
+### References
+* https://fory.apache.org/security/#cve-2026-48207-pyfory-reduceserializer-deserializationpolicy-bypass
+
+
+### Credits
+* Lide Wen (reporter)
+
+
 ## Python RCE via unguarded pickle fallback serializer in pyfory ## { #CVE-2025-61622 }
 
 CVE-2025-61622 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-61622) [\[CVE json\]](./CVE-2025-61622.cve.json) [\[OSV json\]](./CVE-2025-61622.osv.json)

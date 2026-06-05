@@ -13,6 +13,32 @@ Do you want disclose a potential security issue for Apache Commons? You can read
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://commons.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## StackOverflowError for YAML input with cycles ## { #CVE-2026-45205 }
+
+CVE-2026-45205 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-45205) [\[CVE json\]](./CVE-2026-45205.cve.json) [\[OSV json\]](./CVE-2026-45205.osv.json)
+
+
+
+_Last updated: 2026-05-14T11:22:48.661Z_
+
+### Affected
+
+* Apache Commons Configuration from 2.2 before 2.15.0
+
+
+### Description
+
+<p>Uncontrolled Recursion vulnerability in Apache Commons.</p>When processing an untrusted configuration file, Commons Configuration will throw a StackOverflowError for YAML input with cycles.<br><p>This issue affects Apache Commons: from 2.2 before 2.15.0.</p><p>Users are recommended to upgrade to version 2.15.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/commons-configuration/pull/634
+* https://lists.apache.org/thread/q3q3j10ohcqhs6o0rg1v7kz6kk27vtkk
+
+
+### Credits
+* Erichen, Institute of Computing Technology, Chinese Academy of Sciences (reporter)
+
+
 ## Expression Injection leading to RCE ## { #CVE-2025-53192 }
 
 CVE-2025-53192 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-53192) [\[CVE json\]](./CVE-2025-53192.cve.json) [\[OSV json\]](./CVE-2025-53192.osv.json)

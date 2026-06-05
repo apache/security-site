@@ -13,6 +13,437 @@ Do you want disclose a potential security issue for Apache OFBiz? You can read m
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://ofbiz.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Improper Validation in traverseContent Service Enables Authenticated Groovy Code Execution ## { #CVE-2026-46586 }
+
+CVE-2026-46586 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-46586) [\[CVE json\]](./CVE-2026-46586.cve.json) [\[OSV json\]](./CVE-2026-46586.osv.json)
+
+
+
+_Last updated: 2026-05-19T09:41:46.590Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.06
+
+
+### Description
+
+<p>Improper Control of Generation of Code ('Code Injection'), Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection') vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 24.09.06.</p><p>Users are recommended to upgrade to version 24.09.06, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/7mgjl81nrpxqtfcg6h5qtrx7wztbl4js
+
+
+### Credits
+* lwd3c (finder)
+
+
+## Authentication Bypass via Password-Change Logic Flaw Leading to RCE ## { #CVE-2026-45434 }
+
+CVE-2026-45434 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-45434) [\[CVE json\]](./CVE-2026-45434.cve.json) [\[OSV json\]](./CVE-2026-45434.osv.json)
+
+
+
+_Last updated: 2026-05-19T09:40:31.930Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.06
+
+
+### Description
+
+<p>Improper Authentication vulnerability in Apache OFBiz via Password-Change Logic Flaw Leading to Remote Code Execution</p><p>This issue affects Apache OFBiz: before 24.09.06.</p><p>Users are recommended to upgrade to version 24.09.06, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/yw4owrzl0yho1yx7oqxvr6xjkmln9tq8
+
+
+### Credits
+* Mike Cole (reporter)
+
+
+## Improper Authorization in Scheduled Job Creation Allows Low-Privileged Users to Submit System Jobs ## { #CVE-2026-45187 }
+
+CVE-2026-45187 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-45187) [\[CVE json\]](./CVE-2026-45187.cve.json) [\[OSV json\]](./CVE-2026-45187.osv.json)
+
+
+
+_Last updated: 2026-05-19T09:39:30.906Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.06
+
+
+### Description
+
+<p>Improper Authorization vulnerability in Apache OFBiz Webtools.</p><p>This issue affects Apache OFBiz: before 24.09.06.</p><p>Users are recommended to upgrade to version 24.09.06, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/pcmfyxjyk7dg0btxqg9h7cr30yg8mr7k
+
+
+### Credits
+* Qiulin Deng (reporter)
+
+
+## Authentication Bypass due to Improper Neutralization of LDAP Special Elements in DN Construction ## { #CVE-2026-41919 }
+
+CVE-2026-41919 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-41919) [\[CVE json\]](./CVE-2026-41919.cve.json) [\[OSV json\]](./CVE-2026-41919.osv.json)
+
+
+
+_Last updated: 2026-05-19T09:37:00.903Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.06
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection') vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 24.09.06.</p><p>Users are recommended to upgrade to version 24.09.06, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/592czh9o69n74c036vy30fnqknocw74p
+
+
+### Credits
+* zhaokaifei (China Telecom) (reporter)
+
+
+## Authenticated Remote Code Execution via Unsafe Template Expansion in email services ## { #CVE-2026-35086 }
+
+CVE-2026-35086 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-35086) [\[CVE json\]](./CVE-2026-35086.cve.json) [\[OSV json\]](./CVE-2026-35086.osv.json)
+
+
+
+_Last updated: 2026-05-19T09:36:05.258Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.06
+
+
+### Description
+
+<p>Improper Control of Generation of Code ('Code Injection') vulnerability in email services of Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 24.09.06.</p><p>Users are recommended to upgrade to version 24.09.06, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/g0s37yhnh2xwfts400crb2w8s337hgjx
+
+
+### Credits
+* Hyunwoo Kim (@v4bel) (reporter)
+
+
+## Unauthenticated RCE via Default JWT Signing Key and Widget Template Injection ## { #CVE-2026-31986 }
+
+CVE-2026-31986 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-31986) [\[CVE json\]](./CVE-2026-31986.cve.json) [\[OSV json\]](./CVE-2026-31986.osv.json)
+
+
+
+_Last updated: 2026-05-19T09:34:42.293Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.06
+
+
+### Description
+
+<p>Use of Hard-coded Cryptographic Key vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 24.09.06.</p><p>Users are recommended to upgrade to version 24.09.06, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/2hl9xoqm8tq8b22x6vnmtp7tg3opcqgc
+
+
+### Credits
+* Lidor B / thisis0xczar of Novee Security (reporter)
+
+
+## Improper Input Validation in UI Factory Classes Leads to SSRF and Blind File Access ## { #CVE-2026-31910 }
+
+CVE-2026-31910 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-31910) [\[CVE json\]](./CVE-2026-31910.cve.json) [\[OSV json\]](./CVE-2026-31910.osv.json)
+
+
+
+_Last updated: 2026-05-19T09:33:43.399Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.06
+
+
+### Description
+
+<p>Server-Side Request Forgery (SSRF) vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 24.09.06.</p><p>Users are recommended to upgrade to version 24.09.06, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/2smc4c4o056ovd2hoq1l29593y5y29vh
+
+
+### Credits
+* Voyag3r-Security (reporter)
+
+
+## Unauthenticated Shipment Label Image Disclosure ## { #CVE-2026-31909 }
+
+CVE-2026-31909 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-31909) [\[CVE json\]](./CVE-2026-31909.cve.json) [\[OSV json\]](./CVE-2026-31909.osv.json)
+
+
+
+_Last updated: 2026-05-19T09:32:51.623Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.06
+
+
+### Description
+
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 24.09.06.</p><p>Users are recommended to upgrade to version 24.09.06, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/0hpopzz1qrhkzsbt3ncofs6qo0545r2h
+
+
+### Credits
+* Dohyun Yun (H4uN) (reporter)
+
+
+## Reflected XSS via Improper HTML Attribute Escaping in Layered-Modal Dialog Parameters ## { #CVE-2026-31906 }
+
+CVE-2026-31906 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-31906) [\[CVE json\]](./CVE-2026-31906.cve.json) [\[OSV json\]](./CVE-2026-31906.osv.json)
+
+
+
+_Last updated: 2026-05-19T09:30:23.994Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.06
+
+
+### Description
+
+<p>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 24.09.06.</p><p>Users are recommended to upgrade to version 24.09.06, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/1fblqdo89d3ps8kgtcnkcq8sh7gwkcpn
+
+
+### Credits
+* Sho Odagiri of GMO Cybersecurity by Ierae, Inc. (reporter)
+
+
+## Cross-Tenant Data Exposure via Program Export Feature ## { #CVE-2026-31388 }
+
+CVE-2026-31388 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-31388) [\[CVE json\]](./CVE-2026-31388.cve.json) [\[OSV json\]](./CVE-2026-31388.osv.json)
+
+
+
+_Last updated: 2026-05-19T09:28:35.638Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.06
+
+
+### Description
+
+<p>Improper Access Control vulnerability in Apache OFBiz in multi-tenant deployments.</p><p>This issue affects Apache OFBiz: before 24.09.06.</p><p>Users are recommended to upgrade to version 24.09.06, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/npjchvnpnosoqpto46s2om12jd9s7py7
+
+
+### Credits
+* Krishna Uprit (reporter)
+
+
+## Cookie Manipulation Allows Authenticated JWT Forgery and Account Impersonation ## { #CVE-2026-31387 }
+
+CVE-2026-31387 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-31387) [\[CVE json\]](./CVE-2026-31387.cve.json) [\[OSV json\]](./CVE-2026-31387.osv.json)
+
+
+
+_Last updated: 2026-05-19T09:27:10.241Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.06
+
+
+### Description
+
+<p>Improper Authentication vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 24.09.06.</p><p>Users are recommended to upgrade to version 24.09.06, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/3wgybgdvmbfvly24zm4sb4y53fc1pqcf
+
+
+### Credits
+* Sho Odagiri of GMO Cybersecurity by Ierae, Inc. (reporter)
+
+
+## FreeMarker SSTI via Duplicate Parameter Sanitization Bypass ## { #CVE-2026-31380 }
+
+CVE-2026-31380 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-31380) [\[CVE json\]](./CVE-2026-31380.cve.json) [\[OSV json\]](./CVE-2026-31380.osv.json)
+
+
+
+_Last updated: 2026-05-19T09:24:43.138Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.06
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection') vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 24.09.06.</p><p>Users are recommended to upgrade to version 24.09.06, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/v2brvq1tf4q491obkxv8p7fc5qfshc08
+
+
+### Credits
+* Sho Odagiri of GMO Cybersecurity by Ierae, Inc. (reporter)
+
+
+## Path Traversal and File Upload Validation Bypass Leading to Arbitrary File Write, Stored XSS and RCE in Catalog Manager ## { #CVE-2026-31379 }
+
+CVE-2026-31379 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-31379) [\[CVE json\]](./CVE-2026-31379.cve.json) [\[OSV json\]](./CVE-2026-31379.osv.json)
+
+
+
+_Last updated: 2026-05-19T09:22:53.895Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.06
+
+
+### Description
+
+<p>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'), Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'), Improper Control of Generation of Code ('Code Injection') vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 24.09.06.</p><p>Users are recommended to upgrade to version 24.09.06, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/1tcnkxjm0s6n1ohfb21brl25dt0hv9by
+
+
+### Credits
+* Sho Odagiri of GMO Cybersecurity by Ierae, Inc. (reporter)
+* Emily Bishop of 992labs (reporter)
+
+
+## JSON Attribute Override and URL Allowlist Bypass Leads to Remote Code Execution ## { #CVE-2026-31378 }
+
+CVE-2026-31378 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-31378) [\[CVE json\]](./CVE-2026-31378.cve.json) [\[OSV json\]](./CVE-2026-31378.osv.json)
+
+
+
+_Last updated: 2026-05-19T09:21:23.935Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.06
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 24.09.06.</p><p>Users are recommended to upgrade to version 24.09.06, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/cbl8qkqtxv90m6ssfwd58bnoh933v38t
+
+
+### Credits
+* Sho Odagiri of GMO Cybersecurity by Ierae, Inc. (reporter)
+
+
+## Low-Privilege SSRF in Content Component ## { #CVE-2026-29226 }
+
+CVE-2026-29226 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-29226) [\[CVE json\]](./CVE-2026-29226.cve.json) [\[OSV json\]](./CVE-2026-29226.osv.json)
+
+
+
+_Last updated: 2026-05-19T09:19:35.072Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.06
+
+
+### Description
+
+<p>Server-Side Request Forgery (SSRF) vulnerability in Apache OFBiz via Content component operations.</p><p>This issue affects Apache OFBiz: before 24.09.06.</p><p>Users are recommended to upgrade to version 24.09.06, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/6707wys8jxzmowxggn4cmtwwk9ygl2tr
+
+
+### Credits
+* Lidor B / thisis0xczar of Novee Security (reporter)
+* Sho Odagiri of GMO Cybersecurity by Ierae, Inc. (reporter)
+* duanjinshi@163.com (reporter)
+
+
+## Low-Privilege LFI in Content Component ## { #CVE-2026-29220 }
+
+CVE-2026-29220 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-29220) [\[CVE json\]](./CVE-2026-29220.cve.json) [\[OSV json\]](./CVE-2026-29220.osv.json)
+
+
+
+_Last updated: 2026-05-19T09:17:05.818Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.06
+
+
+### Description
+
+<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache OFBiz.</p><p>This issue affects Apache OFBiz: before 24.09.06.</p><p>Users are recommended to upgrade to version 24.09.06, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5hjnmt9no6mmtg8sxq3mhonzff1vkd5m
+
+
+### Credits
+* Lidor B / thisis0xczar of Novee Security (reporter)
+* Venkatraman Kumar, Securin (reporter)
+
+
+## Low-Privilege SSTI Leading to RCE in the Content Component ## { #CVE-2026-29207 }
+
+CVE-2026-29207 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-29207) [\[CVE json\]](./CVE-2026-29207.cve.json) [\[OSV json\]](./CVE-2026-29207.osv.json)
+
+
+
+_Last updated: 2026-05-19T09:18:23.188Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.06
+
+
+### Description
+
+Improper Neutralization of Special Elements Used in a Template Engine vulnerability in Apache OFBiz.<br><br>This issue affects Apache OFBiz: before 24.09.06.<br><br>Users are recommended to upgrade to version 24.09.06, which fixes the issue.<br><br>Please note that in the updated version, "Data Resource" records with <code>dataTemplateTypeId = "FTL"</code> are no longer supported.<br>
+Additionally, in the updated version, the "Ecommerce Customer" security group no longer includes content management grants. Users are advised to remove these permissions from any production site as well.<code></code><code></code><br><p><code></code></p>
+
+### References
+* https://lists.apache.org/thread/3rcrp8bh3x6ovrj5xnc0fm1f0nrn52r0
+
+
+### Credits
+* Lidor B / thisis0xczar of Novee Security (reporter)
+* Sho Odagiri of GMO Cybersecurity by Ierae, Inc. (reporter)
+
+
 ## Reflected Cross-site Scripting ## { #CVE-2025-61623 }
 
 CVE-2025-61623 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-61623) [\[CVE json\]](./CVE-2025-61623.cve.json) [\[OSV json\]](./CVE-2025-61623.osv.json)
@@ -164,7 +595,7 @@ CVE-2024-48962 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-48962) [\[CVE jso
 
 
 
-_Last updated: 2025-02-17T11:17:10.834Z_
+_Last updated: 2026-05-04T14:55:18.092Z_
 
 ### Affected
 

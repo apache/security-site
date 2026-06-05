@@ -13,6 +13,31 @@ Do you want disclose a potential security issue for Apache NiFi? You can read mo
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://nifi.apache.org/documentation/security/). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Missing Execute Code Required Permission on TinkerpopClientService ## { #CVE-2026-39816 }
+
+CVE-2026-39816 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-39816) [\[CVE json\]](./CVE-2026-39816.cve.json) [\[OSV json\]](./CVE-2026-39816.osv.json)
+
+
+
+_Last updated: 2026-05-08T13:38:11.640Z_
+
+### Affected
+
+* Apache NiFi from 2.0.0-M1 through 2.8.0
+
+
+### Description
+
+The optional extension component TinkerpopClientService is missing the Restricted annotation with the Execute Code Required Permission in Apache NiFi 2.0.0-M1 through 2.8.0. The TinkerpopClientService supports configuration of ByteCode Submission for the Script Submission Type, enabling Groovy Script execution in the service prior to submitting the query. The missing Restricted annotation allows users without the Execute Code Permission to configure the Service in installations that use fine-grained authorization and have the optional TinkerpopClientService installed. Apache NiFi installations that do not have the nifi-other-graph-services-nar installed are not subject to this vulnerability. Upgrading to Apache NiFi 2.9.0 is the recommended mitigation.
+
+### References
+* https://lists.apache.org/thread/gh9g7xwvv4l20gzff6q3367snf35ctcb
+
+
+### Credits
+* John Walker from ZeroPath (finder)
+
+
 ## Missing Authorization of Restricted Permissions for Component Updates ## { #CVE-2026-25903 }
 
 CVE-2026-25903 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-25903) [\[CVE json\]](./CVE-2026-25903.cve.json) [\[OSV json\]](./CVE-2026-25903.osv.json)

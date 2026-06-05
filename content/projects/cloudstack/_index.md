@@ -13,6 +13,189 @@ Do you want disclose a potential security issue for Apache CloudStack? You can r
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://cloudstack.apache.org/security/). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Proxmox Extension Allows Unauthorized Cross-Tenant Instance Access ## { #CVE-2026-25199 }
+
+CVE-2026-25199 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-25199) [\[CVE json\]](./CVE-2026-25199.cve.json) [\[OSV json\]](./CVE-2026-25199.osv.json)
+
+
+
+_Last updated: 2026-05-08T12:23:04.078Z_
+
+### Affected
+
+* Apache CloudStack from 4.21.0 through 4.22.0
+
+
+### Description
+
+<div>Instances deployed via the Proxmox extension allow unauthorized access to instances belonging to other tenants.</div><div><br></div><div>This issue affects Apache CloudStack: from 4.21.0.0 through 4.22.0.0.</div><div><br></div><div>The Proxmox extension for CloudStack improperly uses a user-editable instance setting, <code>proxmox_vmid</code>, to associate CloudStack instances with Proxmox virtual machines. Because this value is not restricted or validated against tenant ownership and Proxmox VM IDs are predictable, a non-privileged attacker can modify the setting to reference a VM belonging to another account. This allows unauthorized cross-tenant access and enables full control over the targeted VM, including starting, stopping, and destroying the virtual machine.</div><div><br></div><div>Users are recommended to upgrade to version 4.22.0.1, which fixes this issue.</div><div><br></div><div>As a workaround for the existing installations,&nbsp;editing of the <code>proxmox_vmid</code> instance detail by users can be prevented by adding this detail name to the global configuration parameter <code>- user.vm.denied.details</code>.</div>
+
+### References
+* https://lists.apache.org/thread/n8mt5b7wkpysstb8w7rr9f02kc5cq2xm
+
+
+### Credits
+* Sander Grendelman <sander.grendelman@axians.com> (reporter)
+
+
+## Unauthenticated Command Injection in Direct Download Templates ## { #CVE-2026-25077 }
+
+CVE-2026-25077 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-25077) [\[CVE json\]](./CVE-2026-25077.cve.json) [\[OSV json\]](./CVE-2026-25077.osv.json)
+
+
+
+_Last updated: 2026-05-08T12:21:33.362Z_
+
+### Affected
+
+* Apache CloudStack from 4.11.0 through 4.20.2.0
+* Apache CloudStack from 4.21.0.0 through 4.22.0.0
+
+
+### Description
+
+<p>Account users are allowed by default to register templates to be downloaded directly to the primary storage for deploying instances using the KVM hypervisor. Due to missing file name sanitization, an attacker can register malicious templates to execute arbitrary code on the KVM hosts. This can result in the compromise of resource integrity and confidentiality, data loss, denial of service, and availability of the KVM-based infrastructure managed by CloudStack.<br></p><p>Users are recommended to upgrade to Apache CloudStack versions 4.20.3.0 or 4.22.0.1, or later, which fixes this issue.</p>
+
+### References
+* https://lists.apache.org/thread/n8mt5b7wkpysstb8w7rr9f02kc5cq2xm
+
+
+### Credits
+* Reza at HazardLab (https://hazardlab.ninja) (reporter)
+
+
+## Domain/account resources limits not honored ## { #CVE-2025-69233 }
+
+CVE-2025-69233 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-69233) [\[CVE json\]](./CVE-2025-69233.cve.json) [\[OSV json\]](./CVE-2025-69233.osv.json)
+
+
+
+_Last updated: 2026-05-08T12:19:36.271Z_
+
+### Affected
+
+* Apache CloudStack from 4.0.0 through 4.20.2.0
+* Apache CloudStack from 4.21.0.0 through 4.22.0.0
+
+
+### Description
+
+Due to multiple time-of-check time-of-use race conditions in the resource count check and increment logic, as well as missing validations, users of the platform are able to exceed the allocation limits configured for their accounts/domains. This can be used by an attacker to degrade the infrastructure's resources and lead to denial of service conditions.<br><br>Users are recommended to upgrade to Apache CloudStack versions 4.20.3.0 or 4.22.0.1, or later, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/n8mt5b7wkpysstb8w7rr9f02kc5cq2xm
+
+
+### Credits
+* Fernando Oliveira <ferolicar82@gmail.com> (reporter)
+* Gustavo Viana <viana.gust@gmail.com> (reporter)
+
+
+## MinIO policy remains intact on bucket deletion ## { #CVE-2025-66467 }
+
+CVE-2025-66467 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66467) [\[CVE json\]](./CVE-2025-66467.cve.json) [\[OSV json\]](./CVE-2025-66467.osv.json)
+
+
+
+_Last updated: 2026-05-08T12:16:09.128Z_
+
+### Affected
+
+* Apache CloudStack from 4.19.0.0 through 4.20.2.0
+* Apache CloudStack from 4.21.0.0 through 4.22.0.0
+
+
+### Description
+
+Missing MinIO policy cleanup on bucket deletion via Apache CloudStack allows users to retain access to buckets which they previously owned. If another user creates a new bucket with the same name, the previous owners can gain unauthorized read and write access to it by using the previously generated access and secret keys.<br><br>Users are recommended to upgrade to Apache CloudStack versions 4.20.3.0 or 4.22.0.1, or later, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/n8mt5b7wkpysstb8w7rr9f02kc5cq2xm
+
+
+### Credits
+* Roman Kozello <roman.kozello@gmail.com> (reporter)
+
+
+## Any user can attach a volume in their VMs from backups they should not have access to ## { #CVE-2025-66172 }
+
+CVE-2025-66172 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66172) [\[CVE json\]](./CVE-2025-66172.cve.json) [\[OSV json\]](./CVE-2025-66172.osv.json)
+
+
+
+_Last updated: 2026-05-08T12:13:30.758Z_
+
+### Affected
+
+* Apache CloudStack from 4.21.0.0 through 4.22.0.0
+
+
+### Description
+
+The CloudStack Backup plugin has an improper access logic in versions 4.21.0.0 and 4.22.0.0. Anyone with authenticated user-account access in CloudStack 4.21.0.0+ environments, where this plugin is enabled and have access to specific APIs can restore a volume from any other user's backups and attach the volume to their own VMs.<br><br>Backup plugin users using CloudStack 4.21.0.0+ are recommended to upgrade to CloudStack version 4.22.0.1, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/n8mt5b7wkpysstb8w7rr9f02kc5cq2xm
+
+
+### Credits
+* Gabriel Pordeus (reporter)
+
+
+## Any user can create a new VM from backups they should not have access to ## { #CVE-2025-66171 }
+
+CVE-2025-66171 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66171) [\[CVE json\]](./CVE-2025-66171.cve.json) [\[OSV json\]](./CVE-2025-66171.osv.json)
+
+
+
+_Last updated: 2026-05-08T12:11:10.736Z_
+
+### Affected
+
+* Apache CloudStack from 4.21.0.0 through 4.22.0.0
+
+
+### Description
+
+The CloudStack Backup plugin has an improper access logic in versions 4.21.0.0 and 4.22.0.0. Anyone with authenticated user-account access in CloudStack 4.21.0.0+ environments, where this plugin is enabled and have access to specific APIs can create new VMs using backups of any other user of the environment.<br><br>Backup plugin users using CloudStack 4.21.0.0+ are recommended to upgrade to CloudStack version 4.22.0.1, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/n8mt5b7wkpysstb8w7rr9f02kc5cq2xm
+
+
+### Credits
+* Fabricio Duarte <fabricio.duarte.jr@gmail.com> (reporter)
+* Gabriel Ortiga Fernandes <gabriel.ortiga@hotmail.com> (reporter)
+* Gabriel Pordeus Santos <gabrielpordeus@gmail.com> (reporter)
+
+
+## Any user can list backups that they should not have access to ## { #CVE-2025-66170 }
+
+CVE-2025-66170 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66170) [\[CVE json\]](./CVE-2025-66170.cve.json) [\[OSV json\]](./CVE-2025-66170.osv.json)
+
+
+
+_Last updated: 2026-05-08T12:06:38.994Z_
+
+### Affected
+
+* Apache CloudStack from 4.21.0.0 through 4.22.0.0
+
+
+### Description
+
+<p></p>The CloudStack Backup plugin has an improper authorization logic in versions 4.21.0.0 and 4.22.0.0. Anyone with authenticated user-account access in CloudStack 4.21.0.0+ environments, where this plugin is enabled and has access to specific APIs can list backups from any account in the environment. This vulnerability does not allow them to see the contents of the backup.<p></p><p>Users are recommended to upgrade to version 4.22.0.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/n8mt5b7wkpysstb8w7rr9f02kc5cq2xm
+
+
+### Credits
+* Gabriel Ortiga Fernandes <gabriel.ortiga@hotmail.com> (reporter)
+* Fabricio Duarte <fabricio.duarte.jr@gmail.com> (reporter)
+* Gabriel Pordeus Santos <gabrielpordeus@gmail.com> (reporter)
+
+
 ## Lack of user permission validation leading to data leak for few APIs ## { #CVE-2025-59454 }
 
 CVE-2025-59454 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-59454) [\[CVE json\]](./CVE-2025-59454.cve.json) [\[OSV json\]](./CVE-2025-59454.osv.json)

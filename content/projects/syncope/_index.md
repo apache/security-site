@@ -13,6 +13,60 @@ Do you want disclose a potential security issue for Apache Syncope? Send your re
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## JexlContextBuilder Information Disclosure ## { #CVE-2026-42797 }
+
+CVE-2026-42797 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-42797) [\[CVE json\]](./CVE-2026-42797.cve.json) [\[OSV json\]](./CVE-2026-42797.osv.json)
+
+
+
+_Last updated: 2026-05-25T15:01:00.581Z_
+
+### Affected
+
+* Apache Syncope from 3.0 through 3.0.16
+* Apache Syncope from 4.0 through 4.0.5
+* Apache Syncope from 4.1 through 4.1.0
+
+
+### Description
+
+<p>Exposure of Sensitive Information Through Data Queries vulnerability in Apache Syncope.</p><p>An administrator with adequate entitlements for Derived Schemas can create a malicious JEXL expression which allows any administrator with sufficient entitlements for User read to access User-related security-sensitive information.</p><p>This issue affects Apache Syncope: 3.0 through 3.0.16, 4.0 through 4.0.5, 4.1.0.</p><p>Users are recommended to upgrade to version 4.0.6 / 4.1.1, which fix this issue by further restricting the JEXL expression definition.</p>
+
+### References
+* https://lists.apache.org/thread/5y7d277sntyytrmxnx2tfjr9ftcpq1s6
+
+
+### Credits
+* elin kai (finder)
+
+
+## Post-auth RCE via Groovy static ## { #CVE-2026-42782 }
+
+CVE-2026-42782 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-42782) [\[CVE json\]](./CVE-2026-42782.cve.json) [\[OSV json\]](./CVE-2026-42782.osv.json)
+
+
+
+_Last updated: 2026-05-25T14:59:04.113Z_
+
+### Affected
+
+* Apache Syncope from 3.0 through 3.0.16
+* Apache Syncope from 4.0 through 4.0.5
+* Apache Syncope from 4.1 through 4.1.0
+
+
+### Description
+
+<p>Improper Isolation or Compartmentalization vulnerability in Apache Syncope.</p><p>An administrator with adequate entitlements for Implementations can create a malicious Groovy class containing&nbsp;untrusted code reaching a non-sandboxed execution path via the class static initializer.</p><p>This issue affects Apache Syncope: 3.0 through 3.0.16, 4.0 through 4.0.5, 4.1.0.</p><p></p><p>Users are recommended to upgrade to version 4.0.6 / 4.1.1, which fix this issue by forcing even the static initializer in Groovy code to run in a sandbox.</p>
+
+### References
+* https://lists.apache.org/thread/b869ms0ofrd129f7tgsn9flxgv9ztg2r
+
+
+### Credits
+* Trung Nguyen, CyStack (finder)
+
+
 ## Console XXE on Keymaster parameters ## { #CVE-2026-23795 }
 
 CVE-2026-23795 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23795) [\[CVE json\]](./CVE-2026-23795.cve.json) [\[OSV json\]](./CVE-2026-23795.osv.json)

@@ -13,6 +13,463 @@ Do you want disclose a potential security issue for Apache Tomcat? You can read 
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://tomcat.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Security constraints not correctly applied ## { #CVE-2026-43515 }
+
+CVE-2026-43515 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-43515) [\[CVE json\]](./CVE-2026-43515.cve.json)
+
+_Last updated: 2026-06-04T09:57:52.473Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.21
+* Apache Tomcat from 10.1.0-M1 through 10.1.54
+* Apache Tomcat from 9.0.0.M1 through 9.0.117
+* Apache Tomcat from 8.5.0 through 8.5.100
+* Apache Tomcat from 7.0.0 through 7.0.109
+* Apache Tomcat before 7.0.0 unknown
+
+
+### Description
+
+<p>Improper Authorization vulnerability when multiple method constraints define an HTTP method for the same extension in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.21, from 10.1.0-M1 through 10.1.54, from 9.0.0.M1 through 9.0.117, from 8.5.0 through 8.5.100, from 7.0.0 through 7.0.109.</p><p>Users are recommended to upgrade to version 11.0.22, 10.1.55 or 9.0.118 which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/746nxfxod0wsocxtmv8pb8nkgmwpc6bb
+
+
+## AJP secret compared in non-constant time ## { #CVE-2026-43514 }
+
+CVE-2026-43514 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-43514) [\[CVE json\]](./CVE-2026-43514.cve.json)
+
+_Last updated: 2026-05-12T15:32:17.251Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.21
+* Apache Tomcat from 10.1.0-M1 through 10.1.54
+* Apache Tomcat from 9.0.0.M1 through 9.0.117
+* Apache Tomcat from 8.5.0 through 8.5.100
+* Apache Tomcat from 7.0.0 through 7.0.109
+* Apache Tomcat before 7.00 unknown
+
+
+### Description
+
+<p>Observable Timing Discrepancy <span style="background-color: rgb(255, 255, 255);">vulnerability&nbsp;</span>when comparing AJP secret in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.21, from 10.1.0-M1 through 10.1.54, from 9.0.0.M1 through 9.0.117, from 8.5.0 through 8.5.100, from 7.0.0 through 7.0.109.<br>Older unsupported versions may also be affected.</p><p>Users are recommended to upgrade to version 11.0.22, 10.1.55 or 9.0.118 which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/2k654v5cq123npfsd1b2kk1y30owqb1m
+
+
+## LockOutRealm treats user names as case-sensitive ## { #CVE-2026-43513 }
+
+CVE-2026-43513 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-43513) [\[CVE json\]](./CVE-2026-43513.cve.json)
+
+_Last updated: 2026-05-12T15:26:30.429Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.21
+* Apache Tomcat from 10.1.0-M1 through 10.1.54
+* Apache Tomcat from 9.0.0.M1 through 9.0.117
+* Apache Tomcat from 8.5.0 through 8.5.100
+* Apache Tomcat from 7.0.0 through 7.0.109
+* Apache Tomcat before 7.00 unknown
+
+
+### Description
+
+<p>Improper Handling of Case Sensitivity vulnerability in LockOutRealm in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.21, from 10.1.0-M1 through 10.1.54, from 9.0.0.M1 through 9.0.117, from 8.5.0 through 8.5.100, from 7.0.0 through 7.0.109.<br>Older unsupported versions may also be affected.</p><p>Users are recommended to upgrade to version 11.0.22, 10.1.55 or 9.0.118 which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/ytjcgldshj73lcnd1sh95od5hrghwogp
+
+
+## Digest authenticator will authenticate any unknown user ## { #CVE-2026-43512 }
+
+CVE-2026-43512 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-43512) [\[CVE json\]](./CVE-2026-43512.cve.json)
+
+_Last updated: 2026-05-12T15:24:13.584Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.21
+* Apache Tomcat from 10.1.0-M1 through 10.1.54
+* Apache Tomcat from 9.0.0.M1 through 9.0.117
+* Apache Tomcat from 8.5.0 through 8.5.100
+* Apache Tomcat from 7.0.0 through 7.0.109
+* Apache Tomcat before 7.0.0 unknown
+
+
+### Description
+
+<p>DEPRECATED: Authentication Bypass Issues vulnerability in digest authentication in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.21, from 10.1.0-M1 through 10.1.54, from 9.0.0.M1 through 9.0.117, from 8.5.0 through 8.5.100, from before 7.0.0.<br>Older unsupported versions any also be affect</p><p>Users are recommended to upgrade to version 11.0.22, 10.1.55 or 9.0.118 which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/7x09x7o12solvclslw3sz0288xc8wx73
+
+
+## WebSocket authentication header exposure ## { #CVE-2026-42498 }
+
+CVE-2026-42498 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-42498) [\[CVE json\]](./CVE-2026-42498.cve.json) [\[OSV json\]](./CVE-2026-42498.osv.json)
+
+
+
+_Last updated: 2026-05-12T15:18:02.449Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.21
+* Apache Tomcat from 10.1.0-M1 through 10.1.54
+* Apache Tomcat from 9.0.2 through 9.0.117
+* Apache Tomcat from 8.5.24 through 8.5.100
+* Apache Tomcat from 7.0.83 through 7.0.109
+
+
+### Description
+
+<p>Exposure of HTTP Authentication Header to unexpected hosts during WebSocket authentication vulnerability in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.21, from 10.1.0-M1 through 10.1.54, from 9.0.2 through 9.0.117, from 8.5.24 through 8.5.100, from 7.0.83 through 7.0.109.</p><p>Users are recommended to upgrade to version 11.0.22, 10.1.55 or 9.0.118, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/n61zwf75jrv09rz90j4jssncm244bwdb
+
+
+### Credits
+* lokerxx (finder)
+
+
+## HTTP/2 request headers not validated ## { #CVE-2026-41293 }
+
+CVE-2026-41293 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-41293) [\[CVE json\]](./CVE-2026-41293.cve.json) [\[OSV json\]](./CVE-2026-41293.osv.json)
+
+
+
+_Last updated: 2026-05-12T15:19:39.777Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.21
+* Apache Tomcat from 10.1.0-M1 through 10.1.54
+* Apache Tomcat from 9.0.0.M1 through 9.0.117
+* Apache Tomcat from 10.0.0-M1 through 10.0.27
+* Apache Tomcat from 8.5.0 through 8.5.100
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.21, from 10.1.0-M1 through 10.1.54, from 9.0.0.M1 through 9.0.117, from 10.0.0-M1 through 10.0.27.<br>Older, end of support versions may also be affected.</p><p>Users are recommended to upgrade to version [FIXED_VERSION], which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/qwg0q16z7xkb2qrr853wdll5531mvl1r
+
+
+### Credits
+* Dawit Jeong (@dawitngoliath) (finder)
+
+
+## Unbounded read in WebDAV LOCK and PROPFIND handling ## { #CVE-2026-41284 }
+
+CVE-2026-41284 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-41284) [\[CVE json\]](./CVE-2026-41284.cve.json) [\[OSV json\]](./CVE-2026-41284.osv.json)
+
+
+
+_Last updated: 2026-05-12T15:15:06.069Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.21
+* Apache Tomcat from 10.1.0-M1 through 10.1.54
+* Apache Tomcat from 9.0.0.M1 through 9.0.117
+* Apache Tomcat from 10.0.0-M1 through 10.0.27
+* Apache Tomcat from 8.5.0 through 8.5.100
+* Apache Tomcat from 4.0 through 7.0.109
+
+
+### Description
+
+<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.21, from 10.1.0-M1 through 10.1.54, from 9.0.0.M1 through 9.0.117.<br>Older, unsupported versions may also be affected.</p><p>Users are recommended to upgrade to version [FIXED_VERSION], which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/2nvqjr7ovjmvx2vbhb7s61ycd5msc8qc
+
+
+### Credits
+* Dariusz Gońda (finder)
+
+
+## OCSP checks sometimes soft-fail with FFM even when soft-fail is disabled ## { #CVE-2026-34500 }
+
+CVE-2026-34500 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34500) [\[CVE json\]](./CVE-2026-34500.cve.json) [\[OSV json\]](./CVE-2026-34500.osv.json)
+
+
+
+_Last updated: 2026-04-09T19:51:26.249Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M14 through 11.0.20
+* Apache Tomcat from 10.1.22 through 10.1.53
+* Apache Tomcat from 9.0.92 through 9.0.116
+
+
+### Description
+
+<p>CLIENT_CERT authentication does not fail as expected for some scenarios when soft fail is disabled and FFM is used in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M14 through 11.0.20, from 10.1.22 through 10.1.53, from 9.0.92 through 9.0.116.</p><p>Users are recommended to upgrade to version 11.0.21, 10.1.54 or 9.0.117, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/7rcl4zdxryc8hy3htyfyxkbqpxjtfdl2
+
+
+### Credits
+* Haruki Oyama (Waseda University) (finder)
+
+
+## Cloud membership for clustering component exposed the Kubernetes bearer token ## { #CVE-2026-34487 }
+
+CVE-2026-34487 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34487) [\[CVE json\]](./CVE-2026-34487.cve.json) [\[OSV json\]](./CVE-2026-34487.osv.json)
+
+
+
+_Last updated: 2026-04-09T19:50:53.750Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.20
+* Apache Tomcat from 10.1.0-M1 through 10.1.53
+* Apache Tomcat from 9.0.13 through 9.0.116
+
+
+### Description
+
+<p>Insertion of Sensitive Information into Log File vulnerability in the cloud membership for clustering component of Apache Tomcat exposed the Kubernetes bearer token.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.20, from 10.1.0-M1 through 10.1.53, from 9.0.13 through 9.0.116.</p><p>Users are recommended to upgrade to version 11.0.21, 10.1.54 or 9.0.117, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/4xpkwolpkrj8v5xzp5nyovtlqp3y850h
+
+
+### Credits
+* Bartlomiej Dmitruk, striga.ai (finder)
+
+
+## Fix for CVE-2026-29146 allowed bypass of EncryptInterceptor ## { #CVE-2026-34486 }
+
+CVE-2026-34486 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34486) [\[CVE json\]](./CVE-2026-34486.cve.json) [\[OSV json\]](./CVE-2026-34486.osv.json)
+
+
+
+_Last updated: 2026-04-09T19:50:23.342Z_
+
+### Affected
+
+* Apache Tomcat at 11.0.20
+* Apache Tomcat at 10.1.53
+* Apache Tomcat at 9.0.116
+
+
+### Description
+
+<p>Missing Encryption of Sensitive Data vulnerability in Apache Tomcat due to the&nbsp;fix for CVE-2026-29146 allowing the bypass of the EncryptInterceptor.</p><p>This issue affects Apache Tomcat: 11.0.20, 10.1.53, 9.0.116.</p><p>Users are recommended to upgrade to version 11.0.21, 10.1.54 or 9.0.117, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/9510k5p5zdvt9pkkgtyp85mvwxo2qrly
+
+
+### Credits
+* Bartlomiej Dmitruk at striga.ai (finder)
+
+
+## Incomplete escaping of JSON access logs ## { #CVE-2026-34483 }
+
+CVE-2026-34483 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34483) [\[CVE json\]](./CVE-2026-34483.cve.json)
+
+_Last updated: 2026-04-09T19:49:51.643Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.20
+* Apache Tomcat from 10.1.0-M1 through 10.1.53
+* Apache Tomcat from 9.0.40 through 9.0.116
+* Apache Tomcat from 8.5.84 through 8.5.100
+* Apache Tomcat through 8.5.83 unaffected
+
+
+### Description
+
+<p>Improper Encoding or Escaping of Output vulnerability in the JsonAccessLogValve component of Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.20, from 10.1.0-M1 through 10.1.53, from 9.0.40 through 9.0.116.</p><p>Users are recommended to upgrade to version 11.0.21, 10.1.54 or 9.0.117 , which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/j1w7304yonlr8vo1tkb5nfs7od1y228b
+
+
+### Credits
+* Bartlomiej Dmitruk, striga.ai (finder)
+
+
+## Fix for CVE-2025-66614 is incomplete ## { #CVE-2026-32990 }
+
+CVE-2026-32990 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-32990) [\[CVE json\]](./CVE-2026-32990.cve.json) [\[OSV json\]](./CVE-2026-32990.osv.json)
+
+
+
+_Last updated: 2026-04-09T19:49:26.655Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.15 through 11.0.19
+* Apache Tomcat from 10.1.50 through 10.1.52
+* Apache Tomcat from 9.0.113 through 9.0.115
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache Tomcat due to an incomplete fix of CVE-2025-66614.</p><p>This issue affects Apache Tomcat: from 11.0.15 through 11.0.19, from 10.1.50 through 10.1.52, from 9.0.113 through 9.0.115.</p><p>Users are recommended to upgrade to version 11.0.20, 10.1.53 or 9.0.116, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/1nl9zqft0ksqlhlkd3j4obyjz1ghoyn7
+
+
+### Credits
+* zhengg (finder)
+
+
+## EncryptInterceptor vulnerable to padding oracle attack by default ## { #CVE-2026-29146 }
+
+CVE-2026-29146 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-29146) [\[CVE json\]](./CVE-2026-29146.cve.json) [\[OSV json\]](./CVE-2026-29146.osv.json)
+
+
+
+_Last updated: 2026-04-09T19:48:55.475Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.18
+* Apache Tomcat from 10.0.0-M1 through 10.1.52
+* Apache Tomcat from 9.0.13 through 9.0.115
+* Apache Tomcat from 8.5.38 through 8.5.100
+* Apache Tomcat from 7.0.100 through 7.0.109
+
+
+### Description
+
+<p>Padding Oracle vulnerability in Apache Tomcat's EncryptInterceptor with default configuration.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.18, from 10.0.0-M1 through 10.1.52, from 9.0.13 through 9..115, from 8.5.38 through 8.5.100, from 7.0.100 through 7.0.109.</p><p>Users are recommended to upgrade to version 11.0.19, 10.1.53 and 9.0.116, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/lzt04z2pb3dc5tk85obn80xygw3z1p0w
+
+
+### Credits
+* Uri Katz and Avi Lumelsky (Oligo Security) (finder)
+
+
+## OCSP checks sometimes soft-fail even when soft-fail is disabled ## { #CVE-2026-29145 }
+
+CVE-2026-29145 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-29145) [\[CVE json\]](./CVE-2026-29145.cve.json)
+
+_Last updated: 2026-04-09T19:48:12.636Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.18
+* Apache Tomcat from 10.1.0-M7 through 10.1.52
+* Apache Tomcat from 9.0.83 through 9.0.115
+* Apache Tomcat through 8.5.100 unaffected
+* Apache Tomcat Native from 1.1.23 through 1.1.34
+* Apache Tomcat Native from 1.2.0 through 1.2.39
+* Apache Tomcat Native from 1.3.0 through 1.3.6
+* Apache Tomcat Native from 2.0.0 through 2.0.13
+
+
+### Description
+
+<p>CLIENT_CERT authentication does not fail as expected for some scenarios when soft fail is disabled vulnerability in Apache Tomcat, Apache Tomcat Native.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.18, from 10.1.0-M7 through 10.1.52, from 9.0.83 through 9.0.115; Apache Tomcat Native: from 1.1.23 through 1.1.34, from 1.2.0 through 1.2.39, from 1.3.0 through 1.3.6, from 2.0.0 through 2.0.13.</p><p>Users are recommended to upgrade to version Tomcat Native 1.3.7 or 2.0.14 and Tomcat 11.0.20, 10.1.53 and 9.0.116, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/yz5fxmhd2j43wgqykssdo7kltws57jfz
+
+
+### Credits
+* gregk4sec (https://github.com/gregk4sec) (finder)
+
+
+## TLS cipher order is not preserved ## { #CVE-2026-29129 }
+
+CVE-2026-29129 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-29129) [\[CVE json\]](./CVE-2026-29129.cve.json) [\[OSV json\]](./CVE-2026-29129.osv.json)
+
+
+
+_Last updated: 2026-04-09T19:47:40.805Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.16 through 11.0.18
+* Apache Tomcat from 10.1.51 through 10.1.52
+* Apache Tomcat from 9.0.114 through 9.0.115
+
+
+### Description
+
+<p>Configured cipher preference order not preserved vulnerability in Apache Tomcat.</p><p>This issue affects Apache Tomcat: from 11.0.16 through 11.0.18, from 10.1.51 through 10.1.52, from 9.0.114 through 9.0.115.</p><p>Users are recommended to upgrade to version 11.0.20, 10.1.53 or 9.0.116, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/r4h1t6f8xhxsxfm6c2z5cprolsosho3f
+
+
+## Occasionally open redirect ## { #CVE-2026-25854 }
+
+CVE-2026-25854 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-25854) [\[CVE json\]](./CVE-2026-25854.cve.json)
+
+_Last updated: 2026-04-09T19:47:07.298Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.18
+* Apache Tomcat from 10.1.0-M1 through 10.1.52
+* Apache Tomcat from 9.0.0.M23 through 9.0.115
+* Apache Tomcat from 8.5.30 through 8.5.100
+* Apache Tomcat through 7.0.109 unaffected
+
+
+### Description
+
+<p>Occasional URL redirection to untrusted Site ('Open Redirect') vulnerability in Apache Tomcat via the LoadBalancerDrainingValve.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.18, from 10.1.0-M1 through 10.1.52, from 9.0.0.M23 through 9.0.115, from 8.5.30 through 8.5.100.<br>Other, unsupported versions may also be affected</p><p>Users are recommended to upgrade to version 11.0.20, 10.1.53 or 9.0.116, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/ghct3b6o74bp2vm7q875s1zh0dqrz3h0
+
+
+### Credits
+* gregk4sec (https://github.com/gregk4sec) (finder)
+
+
+## Request smuggling via invalid chunk extension ## { #CVE-2026-24880 }
+
+CVE-2026-24880 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24880) [\[CVE json\]](./CVE-2026-24880.cve.json)
+
+_Last updated: 2026-04-09T19:46:23.955Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.18
+* Apache Tomcat from 10.1.0-M1 through 10.1.52
+* Apache Tomcat from 9.0.0.M1 through 9.0.115
+* Apache Tomcat from 8.5.0 through 8.5.100
+* Apache Tomcat from 7.0.0 through 7.0.109
+* Apache Tomcat before 7.0.0 unknown
+* Apache Tomcat from 8.0.0-RC1 through 8.0.53 unknown
+
+
+### Description
+
+<p>Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling') vulnerability in Apache Tomcat via invalid chunk extension.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.18, from 10.1.0-M1 through 10.1.52, from 9.0.0.M1 through 9.0.115, from 8.5.0 through 8.5.100, from 7.0.0 through 7.0.109.<br>Other, unsupported versions may also be affected.</p><p>Users are recommended to upgrade to version 11.0.20, 10.1.52 or 9.0.116, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/2c682qnlg2tv4o5knlggqbl9yc2gb5sn
+
+
+### Credits
+* Xclow3n (finder)
+
+
 ## OCSP revocation bypass ## { #CVE-2026-24734 }
 
 CVE-2026-24734 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24734) [\[CVE json\]](./CVE-2026-24734.cve.json)

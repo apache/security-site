@@ -13,13 +13,231 @@ Do you want disclose a potential security issue for Apache Logging? You can read
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://logging.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Silent log event loss in XMLLayout due to unescaped XML 1.0 forbidden characters ## { #CVE-2026-40023 }
+
+CVE-2026-40023 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40023) [\[CVE json\]](./CVE-2026-40023.cve.json) [\[OSV json\]](./CVE-2026-40023.osv.json)
+
+
+
+_Last updated: 2026-04-10T15:45:43.003Z_
+
+### Affected
+
+* Apache Log4cxx before 1.7.0
+* Apache Log4cxx (Conan) before 1.7.0
+* Apache Log4cxx (Brew) before 1.7.0
+
+
+### Description
+
+<p>Apache Log4cxx's <code><a target="_blank" rel="nofollow" href="https://logging.apache.org/log4cxx/1.7.0/classlog4cxx_1_1xml_1_1XMLLayout.html">XMLLayout</a></code>, in versions before 1.7.0, fails to sanitize characters forbidden by the <a target="_blank" rel="nofollow" href="https://www.w3.org/TR/xml/#charsets">XML 1.0 specification</a> in log messages, NDC, and MDC property keys and values, producing invalid XML output. Conforming XML parsers must reject such documents with a fatal error, which may cause downstream log processing systems to drop or fail to index affected records.</p><p>An attacker who can influence logged data can exploit this to suppress individual log records, impairing audit trails and detection of malicious activity.</p><p>Users are advised to upgrade to Apache Log4cxx <code>1.7.0</code>, which fixes this issue.</p>
+
+### References
+* https://github.com/apache/logging-log4cxx/pull/609
+* https://logging.apache.org/security.html#CVE-2026-40023
+* https://logging.apache.org/cyclonedx/vdr.xml
+* https://logging.apache.org/log4cxx/1.7.0/classlog4cxx_1_1xml_1_1XMLLayout.html
+* https://lists.apache.org/thread/y15cv3zblg3dfwr5vy6ddbnl4zyrzr8b
+
+
+### Credits
+* Olawale Titiloye (finder)
+
+
+## Silent log event loss in XmlLayout and XmlLayoutSchemaLog4J due to unescaped XML 1.0 forbidden characters ## { #CVE-2026-40021 }
+
+CVE-2026-40021 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40021) [\[CVE json\]](./CVE-2026-40021.cve.json) [\[OSV json\]](./CVE-2026-40021.osv.json)
+
+
+
+_Last updated: 2026-04-10T15:44:08.554Z_
+
+### Affected
+
+* Apache Log4net before 3.3.0
+
+
+### Description
+
+<p>Apache Log4net's <code><a target="_blank" rel="nofollow" href="https://logging.apache.org/log4net/manual/configuration/layouts.html#layout-list">XmlLayout</a></code> and <code><a target="_blank" rel="nofollow" href="https://logging.apache.org/log4net/manual/configuration/layouts.html#layout-list">XmlLayoutSchemaLog4J</a></code>, in versions before 3.3.0, fail to sanitize characters forbidden by the <a target="_blank" rel="nofollow" href="https://www.w3.org/TR/xml/#charsets">XML 1.0 specification</a> in MDC property keys and values, as well as the identity field that may carry attacker-influenced data. This causes an exception during serialization and the silent loss of the affected log event.</p><p>An attacker who can influence any of these fields can exploit this to suppress individual log records, impairing audit trails and detection of malicious activity.</p><p>Users are advised to upgrade to Apache Log4net <code>3.3.0</code>, which fixes this issue.</p>
+
+### References
+* https://github.com/apache/logging-log4net/pull/280
+* https://logging.apache.org/security.html#CVE-2026-40021
+* https://logging.apache.org/cyclonedx/vdr.xml
+* https://logging.apache.org/log4net/manual/configuration/layouts.html
+* https://lists.apache.org/thread/q8otftjswhk69n3kxslqg7cobr0x4st7
+
+
+### Credits
+* f00dat (finder)
+
+
+## Improper serialization of non-finite floating-point values in JsonTemplateLayout ## { #CVE-2026-34481 }
+
+CVE-2026-34481 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34481) [\[CVE json\]](./CVE-2026-34481.cve.json) [\[OSV json\]](./CVE-2026-34481.osv.json)
+
+
+
+_Last updated: 2026-04-10T15:42:52.673Z_
+
+### Affected
+
+* Apache Log4j JSON Template Layout from 2.14.0 before 2.25.4
+* Apache Log4j JSON Template Layout from 3.0.0-alpha1 through 3.0.0-beta3
+
+
+### Description
+
+<p>Apache Log4j's <code><a target="_blank" rel="nofollow" href="https://logging.apache.org/log4j/2.x/manual/json-template-layout.html">JsonTemplateLayout</a></code>, in versions up to and including 2.25.3, produces invalid JSON output when log events contain non-finite floating-point values (<code>NaN</code>, <code>Infinity</code>, or <code>-Infinity</code>), which are prohibited by RFC 8259. This may cause downstream log processing systems to reject or fail to index affected records.</p><p>An attacker can exploit this issue only if both of the following conditions are met:</p><ul><li>The application uses <code>JsonTemplateLayout</code>.</li><li>The application logs a <code>MapMessage</code> containing an attacker-controlled floating-point value.</li></ul><p>Users are advised to upgrade to Apache Log4j JSON Template Layout 2.25.4, which corrects this issue.</p>
+
+### References
+* https://github.com/apache/logging-log4j2/pull/4080
+* https://logging.apache.org/security.html#CVE-2026-34481
+* https://logging.apache.org/cyclonedx/vdr.xml
+* https://logging.apache.org/log4j/2.x/manual/json-template-layout.html
+* https://lists.apache.org/thread/n34zdv00gbkdbzt2rx9rf5mqz6lhopcv
+
+
+### Credits
+* Ap4sh (Samy Medjahed) and Ethicxz (Eliott Laurie) (finder)
+
+
+## Silent log event loss in XmlLayout due to unescaped XML 1.0 forbidden characters ## { #CVE-2026-34480 }
+
+CVE-2026-34480 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34480) [\[CVE json\]](./CVE-2026-34480.cve.json) [\[OSV json\]](./CVE-2026-34480.osv.json)
+
+
+
+_Last updated: 2026-04-10T15:41:58.452Z_
+
+### Affected
+
+* Apache Log4j Core from 2.0-alpha1 before 2.25.4
+* Apache Log4j Core from 3.0.0-alpha1 through 3.0.0-beta3
+
+
+### Description
+
+<p>Apache Log4j Core's <code><a target="_blank" rel="nofollow" href="https://logging.apache.org/log4j/2.x/manual/layouts.html#XmlLayout">XmlLayout</a></code>, in versions up to and including 2.25.3, fails to sanitize characters forbidden by the <a target="_blank" rel="nofollow" href="https://www.w3.org/TR/xml/#charsets">XML 1.0 specification</a> producing invalid XML output whenever a log message or MDC value contains such characters.</p><p>The impact depends on the StAX implementation in use:</p><ul><li><strong>JRE built-in StAX:</strong> Forbidden characters are silently written to the output, producing malformed XML. Conforming parsers must reject such documents with a fatal error, which may cause downstream log-processing systems to drop the affected records.</li><li><strong>Alternative StAX implementations</strong> (e.g., <a target="_blank" rel="nofollow" href="https://github.com/FasterXML/woodstox">Woodstox</a>, a transitive dependency of the Jackson XML Dataformat module): An exception is thrown during the logging call, and the log event is never delivered to its intended appender, only to Log4j's internal status logger.</li></ul><p>Users are advised to upgrade to Apache Log4j Core <code>2.25.4</code>, which corrects this issue by sanitizing forbidden characters before XML output.</p>
+
+### References
+* https://github.com/apache/logging-log4j2/pull/4077
+* https://logging.apache.org/security.html#CVE-2026-34480
+* https://logging.apache.org/cyclonedx/vdr.xml
+* https://logging.apache.org/log4j/2.x/manual/layouts.html#XmlLayout
+* https://lists.apache.org/thread/5x0hcnng0chhghp6jgjdp3qmbbhfjzhb
+
+
+### Credits
+* Ap4sh (Samy Medjahed) and Ethicxz (Eliott Laurie) (original reporters) (finder)
+* jabaltarik1 (independently) (finder)
+
+
+## Silent log event loss in Log4j1XmlLayout due to unescaped XML 1.0 forbidden characters ## { #CVE-2026-34479 }
+
+CVE-2026-34479 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34479) [\[CVE json\]](./CVE-2026-34479.cve.json) [\[OSV json\]](./CVE-2026-34479.osv.json)
+
+
+
+_Last updated: 2026-04-10T15:41:04.182Z_
+
+### Affected
+
+* Apache Log4j 1 to Log4j 2 bridge from 2.7 before 2.25.4
+* Apache Log4j 1 to Log4j 2 bridge from 3.0.0-alpha1 through 3.0.0-beta2
+
+
+### Description
+
+<p>The <code>Log4j1XmlLayout</code> from the Apache Log4j 1-to-Log4j 2 bridge fails to escape characters forbidden by the XML 1.0 standard, producing malformed XML output. Conforming XML parsers are required to reject documents containing such characters with a fatal error, which may cause downstream log processing systems to drop or fail to index affected records.</p><p>Two groups of users are affected:</p><ul><li>Those using <code>Log4j1XmlLayout</code> directly in a Log4j Core 2 configuration file.</li><li>Those using the Log4j 1 configuration compatibility layer with <code>org.apache.log4j.xml.XMLLayout</code> specified as the layout class.</li></ul><p>Users are advised to upgrade to Apache Log4j 1-to-Log4j 2 bridge version 2.25.4, which corrects this issue.</p><p><strong>Note:</strong> The Apache Log4j 1-to-Log4j 2 bridge is deprecated and will not be present in Log4j 3. Users are encouraged to consult the <a target="_blank" rel="nofollow" href="https://logging.apache.org/log4j/2.x/migrate-from-log4j1.html">Log4j 1 to Log4j 2 migration guide</a>, and specifically the section on eliminating reliance on the bridge.</p>
+
+### References
+* https://github.com/apache/logging-log4j2/pull/4078
+* https://logging.apache.org/security.html#CVE-2026-34479
+* https://logging.apache.org/cyclonedx/vdr.xml
+* https://logging.apache.org/log4j/2.x/migrate-from-log4j1.html
+* https://lists.apache.org/thread/gd0hp6mj17rn3kj279vgy4p7kd4zz5on
+
+
+### Credits
+* Ap4sh (Samy Medjahed) and Ethicxz (Eliott Laurie) (original reporters) (finder)
+* jabaltarik1 (independently) (finder)
+
+
+## Log injection in Rfc5424Layout due to silent configuration incompatibility ## { #CVE-2026-34478 }
+
+CVE-2026-34478 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34478) [\[CVE json\]](./CVE-2026-34478.cve.json) [\[OSV json\]](./CVE-2026-34478.osv.json)
+
+
+
+_Last updated: 2026-04-10T15:40:07.991Z_
+
+### Affected
+
+* Apache Log4j Core from 2.21.0 before 2.25.4
+* Apache Log4j Core from 3.0.0-beta1 through 3.0.0-beta3
+
+
+### Description
+
+<p>Apache Log4j Core's <code><a target="_blank" rel="nofollow" href="https://logging.apache.org/log4j/2.x/manual/layouts.html#RFC5424Layout">Rfc5424Layout</a></code>, in versions 2.21.0 through 2.25.3, is vulnerable to log injection via CRLF sequences due to undocumented renames of security-relevant configuration attributes.</p><p>Two distinct issues affect users of stream-based syslog services who configure <code>Rfc5424Layout</code> directly:</p><ul><li>The <code>newLineEscape</code> attribute was silently renamed, causing newline escaping to stop working for users of TCP framing (RFC 6587), exposing them to CRLF injection in log output.</li><li>The <code>useTlsMessageFormat</code> attribute was silently renamed, causing users of TLS framing (RFC 5425) to be silently downgraded to unframed TCP (RFC 6587), without newline escaping.</li></ul><p>Users of the <code>SyslogAppender</code> are not affected, as its configuration attributes were not modified.</p><p>Users are advised to upgrade to Apache Log4j Core 2.25.4, which corrects this issue.</p>
+
+### References
+* https://github.com/apache/logging-log4j2/pull/4074
+* https://logging.apache.org/security.html#CVE-2026-34478
+* https://logging.apache.org/cyclonedx/vdr.xml
+* https://logging.apache.org/log4j/2.x/manual/layouts.html#RFC5424Layout
+* https://lists.apache.org/thread/3k1clr2l6vkdnl4cbhjrnt1nyjvb5gwt
+
+
+### Credits
+* Samuli Leinonen (finder)
+
+
+## verifyHostName attribute silently ignored in TLS configuration, allowing hostname verification bypass ## { #CVE-2026-34477 }
+
+CVE-2026-34477 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34477) [\[CVE json\]](./CVE-2026-34477.cve.json) [\[OSV json\]](./CVE-2026-34477.osv.json)
+
+
+
+_Last updated: 2026-04-10T15:36:10.071Z_
+
+### Affected
+
+* Apache Log4j Core from 2.12.0 before 2.25.4
+* Apache Log4j Core from 3.0.0-alpha1 through 3.0.0-beta3
+
+
+### Description
+
+<p>The fix for <a target="_blank" rel="nofollow" href="https://logging.apache.org/security.html#CVE-2025-68161">CVE-2025-68161</a> was incomplete: it addressed hostname verification only when enabled via the <a target="_blank" rel="nofollow" href="https://logging.apache.org/log4j/2.x/manual/systemproperties.html#log4j2.sslVerifyHostName"><code>log4j2.sslVerifyHostName</code></a> system property, but not when configured through the <code><a target="_blank" rel="nofollow" href="https://logging.apache.org/log4j/2.x/manual/appenders/network.html#SslConfiguration-attr-verifyHostName">verifyHostName</a></code> attribute of the <code>&lt;Ssl&gt;</code> element.</p><p>Although the <code>verifyHostName</code> configuration attribute was introduced in Log4j Core 2.12.0, it was silently ignored in all versions through 2.25.3, leaving TLS connections vulnerable to interception regardless of the configured value.</p><p>A network-based attacker may be able to perform a man-in-the-middle attack when <strong>all</strong> of the following conditions are met:</p><ol><li>An SMTP, Socket, or Syslog appender is in use.</li><li>TLS is configured via a nested <code>&lt;Ssl&gt;</code> element.</li><li>The attacker can present a certificate issued by a CA trusted by the appender's configured trust store, or by the default Java trust store if none is configured.</li></ol><p>This issue does not affect users of the HTTP appender, which uses a separate <code><a target="_blank" rel="nofollow" href="https://logging.apache.org/log4j/2.x/manual/appenders/network.html#HttpAppender-attr-verifyHostName">verifyHostname</a></code> attribute that was not subject to this bug and verifies host names by default.</p><p>Users are advised to upgrade to Apache Log4j Core 2.25.4, which corrects this issue.</p>
+
+### References
+* https://github.com/apache/logging-log4j2/pull/4075
+* https://logging.apache.org/security.html#CVE-2026-34477
+* https://logging.apache.org/cyclonedx/vdr.xml
+* https://logging.apache.org/log4j/2.x/manual/appenders/network.html#SslConfiguration-attr-verifyHostName
+* https://lists.apache.org/thread/lkx8cl46t2bvkcwfcb2pd43ygc097lq4
+
+
+### Credits
+* Samuli Leinonen (original reporter) (finder)
+* Naresh Kandula (independently) (finder)
+* Vitaly Simonovich (independently) (finder)
+* Raijuna (independently) (finder)
+* Danish Siddiqui (djvirus, independently) (finder)
+* Markus Magnuson (independently) (finder)
+* Haruki Oyama (Waseda University, independently) (finder)
+
+
 ## Missing TLS hostname verification in Socket appender ## { #CVE-2025-68161 }
 
 CVE-2025-68161 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-68161) [\[CVE json\]](./CVE-2025-68161.cve.json) [\[OSV json\]](./CVE-2025-68161.osv.json)
 
 
 
-_Last updated: 2025-12-19T06:41:01.682Z_
+_Last updated: 2026-04-10T16:18:30.716Z_
 
 ### Affected
 

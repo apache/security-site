@@ -13,6 +13,31 @@ Do you want disclose a potential security issue for Apache Livy (Incubating)? Se
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Unauthorized directory access ## { #CVE-2025-66249 }
+
+CVE-2025-66249 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66249) [\[CVE json\]](./CVE-2025-66249.cve.json) [\[OSV json\]](./CVE-2025-66249.osv.json)
+
+
+
+_Last updated: 2026-04-10T15:57:26.189Z_
+
+### Affected
+
+* Apache Livy from 0.3.0-incubating before 0.9.0-incubating
+
+
+### Description
+
+<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache Livy.</p><p>This issue affects Apache Livy: from 0.3.0 before 0.9.0.</p><p>The vulnerability can only be exploited with non-default Apache Livy Server settings. If&nbsp;the configuration value "livy.file.local-dir-whitelist" is set to a non-default value, the directory checking can be bypassed.</p><p>Users are recommended to upgrade to version 0.9.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/1xwphsfn4jbtym4k4o0zlvwfogwqwwc3
+
+
+### Credits
+* Hiroki Egawa (finder)
+
+
 ## Restrict file access ## { #CVE-2025-60012 }
 
 CVE-2025-60012 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-60012) [\[CVE json\]](./CVE-2025-60012.cve.json) [\[OSV json\]](./CVE-2025-60012.osv.json)

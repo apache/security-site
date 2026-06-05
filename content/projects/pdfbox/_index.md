@@ -13,6 +13,39 @@ Do you want disclose a potential security issue for Apache PDFBox? You can read 
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://pdfbox.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Path Traversal in PDFBox ExtractEmbeddedFiles Example Code ## { #CVE-2026-33929 }
+
+CVE-2026-33929 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-33929) [\[CVE json\]](./CVE-2026-33929.cve.json) [\[OSV json\]](./CVE-2026-33929.osv.json)
+
+
+
+_Last updated: 2026-04-14T08:09:38.140Z_
+
+### Affected
+
+* Apache PDFBox Examples from 2.0.24 through 2.0.36
+* Apache PDFBox Examples from 3.0.0 through 3.0.7
+
+
+### Description
+
+<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache PDFBox Examples.</p><p>This issue affects the 
+ExtractEmbeddedFiles example in Apache PDFBox: from 2.0.24 through 2.0.36, from 3.0.0 through 3.0.7.</p><p>
+Users are recommended to update to version 2.0.37 or 3.0.8 once 
+available. Until then, they should apply the fix provided in GitHub PR 
+427.</p><p>The ExtractEmbeddedFiles example contained a path traversal vulnerability (CWE-22) mentioned in CVE-2026-23907. However the change in the releases 2.0.36 and 3.0.7 is flawed because it doesn't consider the file path separator. Because of that, a user having writing rights on /home/ABC could be victim to a malicious PDF resulting in a write attempt to any path starting with&nbsp;/home/ABC, e.g.&nbsp;"/home/ABCDEF".</p><p>Users who have copied this example into their production code should apply the mentioned change. The example 
+has been changed accordingly and is available in the project repository.</p>
+
+### References
+* https://github.com/apache/pdfbox/pull/427/changes
+* https://lists.apache.org/thread/op3lyx1ngzy4qycn06l6hljyf28ff0zs
+* https://lists.apache.org/thread/j8l07tgzy9dm8d8n0f3c45h7zg7t3ld6
+
+
+### Credits
+* Kaixuan Li (finder)
+
+
 ## Path Traversal in PDFBox ExtractEmbeddedFiles Example Code ## { #CVE-2026-23907 }
 
 CVE-2026-23907 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23907) [\[CVE json\]](./CVE-2026-23907.cve.json)

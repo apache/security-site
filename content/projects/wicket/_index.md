@@ -13,6 +13,102 @@ Do you want disclose a potential security issue for Apache Wicket? Send your rep
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Possible malicious path traversal in FolderUploadsFileManager ## { #CVE-2026-43975 }
+
+CVE-2026-43975 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-43975) [\[CVE json\]](./CVE-2026-43975.cve.json) [\[OSV json\]](./CVE-2026-43975.osv.json)
+
+
+
+_Last updated: 2026-05-06T08:28:37.545Z_
+
+### Affected
+
+* Apache Wicket from 10.0.0 through 10.8.0
+* Apache Wicket from 9.0.0 through 9.22.0
+* Apache Wicket from 8.0.0 through 8.17
+
+
+### Description
+
+<p><code>FolderUploadsFileManager</code> in Apache Wicket does not validate or sanitize the <code>uploadFieldId</code> parameter or the <code>clientFileName</code>
+ before constructing file paths, allowing an unauthenticated attacker to
+ write arbitrary files outside the intended upload directory or read 
+files from arbitrary locations on the server.</p><p>This issue affects Apache Wicket: from 8.0.0 through 8.17.0, from 9.0.0 through 9.22.0, from 10.0.0 through 10.8.0.</p><p>Users are recommended to upgrade to version 10.9.0, which fixes the issue.</p><br>
+
+### References
+* https://github.com/apache/wicket/pull/1432
+* https://lists.apache.org/thread/xp2jrdk6ppv1zcmxb4w1mk2lg1dw3hbr
+
+
+## crafted URLs can bypass PackageResourceGuard ## { #CVE-2026-43646 }
+
+CVE-2026-43646 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-43646) [\[CVE json\]](./CVE-2026-43646.cve.json) [\[OSV json\]](./CVE-2026-43646.osv.json)
+
+
+
+_Last updated: 2026-05-06T08:31:55.175Z_
+
+### Affected
+
+* Apache Wicket from 8.0.0 through 8.17.0
+* Apache Wicket from 9.0.0 through 9.22.0
+* Apache Wicket from 10.0.0 through 10.8.0
+
+
+### Description
+
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Wicket.</p><p>This issue affects Apache Wicket: from 8.0.0 through 8.17.0, from 9.0.0 through 9.22.0, from 10.0.0 through 10.8.0.</p><p>Users are recommended to upgrade to version 10.9.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/6zqcvjyz4lsqty1z2g5hg7pl5fqk88rs
+
+
+## crafted strings can break out of the JavaScript sequence ## { #CVE-2026-42509 }
+
+CVE-2026-42509 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-42509) [\[CVE json\]](./CVE-2026-42509.cve.json) [\[OSV json\]](./CVE-2026-42509.osv.json)
+
+
+
+_Last updated: 2026-05-06T08:34:07.745Z_
+
+### Affected
+
+* Apache Wicket from 8.0.0 through 8.17.0
+* Apache Wicket from 9.0.0 through 9.22.0
+* Apache Wicket from 10.0.0 through 10.8.0
+
+
+### Description
+
+<p>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache Wicket.</p><p>This issue affects Apache Wicket: from 8.0.0 through 8.17.0, 9.0.0, from 10.0.0 through 10.8.0.</p><p>Users are recommended to upgrade to version 10.9.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/52nrq4tt07gxz4r6sj5gyocz5s6bprjp
+
+
+## possible session fixation using AuthenticatedWebSession ## { #CVE-2026-40010 }
+
+CVE-2026-40010 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40010) [\[CVE json\]](./CVE-2026-40010.cve.json) [\[OSV json\]](./CVE-2026-40010.osv.json)
+
+
+
+_Last updated: 2026-05-06T08:34:37.475Z_
+
+### Affected
+
+* Apache Wicket from 10.0.0 through 10.8.0
+* Apache Wicket from 8.0.0 through 8.17.0
+* Apache Wicket from 9.0.0 through 9.22.0
+
+
+### Description
+
+<p>Missing invocation of Servlet http web request method changeSessionId after session binding can be exploited for a&nbsp;session fixation attack in Apache Wicket.</p><p>This issue affects Apache Wicket: from 8.0.0 through 8.17.0, 9.0.0, from 10.0.0 through 10.8.0.</p><p>Users are recommended to upgrade to version 10.9.0, which fixes the issue.</p><br>
+
+### References
+* https://lists.apache.org/thread/61wsc0xdtfd5oozojfx7by9w3jwgkmv1
+
+
 ## An attacker can intentionally trigger a memory leak ## { #CVE-2024-53299 }
 
 CVE-2024-53299 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-53299) [\[CVE json\]](./CVE-2024-53299.cve.json) [\[OSV json\]](./CVE-2024-53299.osv.json)

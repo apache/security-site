@@ -13,6 +13,32 @@ Do you want disclose a potential security issue for Apache Solr? You can read mo
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Enabling BasicAuth using bin/solr CLI configures additional insecure users ## { #CVE-2026-44825 }
+
+CVE-2026-44825 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44825) [\[CVE json\]](./CVE-2026-44825.cve.json) [\[OSV json\]](./CVE-2026-44825.osv.json)
+
+
+
+_Last updated: 2026-06-01T08:02:13.681Z_
+
+### Affected
+
+* Apache Solr from 9.4.0 through 9.10.1
+* Apache Solr at 10.0.0
+
+
+### Description
+
+<h3></h3>Hardcoded credentials in the Basic Authentication setup tool (<code>bin/solr auth enable</code>) in Apache Solr versions 9.4.0 through 9.10.1 and 10.0.0 allows a remote attacker to gain full administrative access to the cluster via publicly known default credentials installed silently alongside the user-specified account. <br><br>As an immediate workaround without upgrading, delete the template users (<code>superadmin</code>, <code>admin</code>, <code>search</code>, <code>index</code>) from <code>security.json</code>&nbsp;or change their passwords.<br><span style="background-color: rgb(255, 255, 255);">The future, not yet released, versions 9.11.0 and 10.1.0 will not be vulnerable, and it will be enough to upgrade to solve the issue.<br><br>Not affected:<br></span><ul><li>Clusters where bin/solr auth enable was <b>not</b> used to bootstrap BasicAuth</li><li>Clusters where template users have been assigned strong passwords after bootstrap</li></ul>
+
+### References
+* https://lists.apache.org/thread/5xg6xr99glocp3zsg9ht2zlbwlrst7ch
+
+
+### Credits
+* Naveen Sunkavally, Horizon3.ai (finder)
+
+
 ## Insufficient file-access checking in standalone core-creation requests ## { #CVE-2026-22444 }
 
 CVE-2026-22444 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-22444) [\[CVE json\]](./CVE-2026-22444.cve.json) [\[OSV json\]](./CVE-2026-22444.osv.json)

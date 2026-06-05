@@ -13,6 +13,83 @@ Do you want disclose a potential security issue for Apache CXF? Send your report
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## LDAP Injection vulnerability in XKMS LDAP Repository ## { #CVE-2026-44930 }
+
+CVE-2026-44930 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44930) [\[CVE json\]](./CVE-2026-44930.cve.json) [\[OSV json\]](./CVE-2026-44930.osv.json)
+
+
+
+_Last updated: 2026-05-22T12:16:45.335Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.1
+* Apache CXF from 4.0.0 before 4.1.6
+* Apache CXF before 3.6.11
+
+
+### Description
+
+An LDAP injection vulnerability in the LDAP Certificate repository of the XKMS server in Apache CXF may allow an attacker to retrieve arbitrary certificates from the repository.&nbsp;<br>Users are recommended to upgrade to versions 4.2.1, 4.1.6 or 3.6.11, which fix this issue.
+
+### References
+* https://lists.apache.org/thread/c1zqxppo1m5z3kbdhjn5p991zk09ynkh
+
+
+## XXE vulnerability in WS-Transfer functionality ## { #CVE-2026-44618 }
+
+CVE-2026-44618 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44618) [\[CVE json\]](./CVE-2026-44618.cve.json) [\[OSV json\]](./CVE-2026-44618.osv.json)
+
+
+
+_Last updated: 2026-05-22T12:17:12.799Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.1
+* Apache CXF from 4.0.0 before 4.1.6
+* Apache CXF before 3.6.11
+
+
+### Description
+
+Insecure XML parser configuration in Apache CXF's WS-Transfer module may allow attackers to perform XXE attacks.<br>Users are recommended to upgrade to versions 4.2.1, 4.1.6 or 3.6.11, which fix this issue.
+
+### References
+* https://lists.apache.org/thread/c7vb015f8ljmjl44030mn0yfq71f7sd7
+
+
+### Credits
+* Credit to IcySun (icysun@qq.com), 广东东方思维科技有限公司 (finder)
+
+
+## Incomplete fix for CVE-2025-48913 (Untrusted JMS configuration can lead to RCE) ## { #CVE-2026-44417 }
+
+CVE-2026-44417 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44417) [\[CVE json\]](./CVE-2026-44417.cve.json) [\[OSV json\]](./CVE-2026-44417.osv.json)
+
+
+
+_Last updated: 2026-05-22T12:17:23.985Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.1
+* Apache CXF from 4.0.0 before 4.1.6
+* Apache CXF before 3.6.11
+
+
+### Description
+
+The fix for&nbsp;CVE-2025-48913: Apache CXF: Untrusted JMS configuration can lead to RCE was not complete, meaning that another path in the code might lead to code execution capabilities, if untrusted users are allowed to configure JMS for Apache CXF. <br>Users are recommended to upgrade to versions 4.2.1, 4.1.6 or 3.6.11, which fix this issue.
+
+### References
+* https://lists.apache.org/thread/bqg6gjy2cx7rfyqjxcpv3jwjvmclvz4o
+
+
+### Credits
+* Github / twitter - https://github.com/exploitintel / @exploit_intel (finder)
+
+
 ## Untrusted JMS configuration can lead to RCE ## { #CVE-2025-48913 }
 
 CVE-2025-48913 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-48913) [\[CVE json\]](./CVE-2025-48913.cve.json) [\[OSV json\]](./CVE-2025-48913.osv.json)

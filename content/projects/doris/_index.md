@@ -13,6 +13,32 @@ Do you want disclose a potential security issue for Apache Doris? You can read m
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://doris.apache.org/docs/dev/admin-manual/auth/security-overview). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## MCP SQL inject ## { #CVE-2025-66335 }
+
+CVE-2025-66335 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66335) [\[CVE json\]](./CVE-2025-66335.cve.json) [\[OSV json\]](./CVE-2025-66335.osv.json)
+
+
+
+_Last updated: 2026-04-17T09:41:43.983Z_
+
+### Affected
+
+* Apache Doris MCP Server from 0.1.0 before 0.6.1
+
+
+### Description
+
+<div>Apache Doris MCP Server versions earlier than 0.6.1 are affected by an improper neutralization flaw in query context handling that may allow execution of unintended SQL statements and bypass of intended query validation and access restrictions through the MCP query execution interface. Version 0.6.1 and later are not affected.
+</div><br>
+
+### References
+* https://lists.apache.org/thread/odp0fyyst8kxm7hhm9z4d1snh1y4hjpy
+
+
+### Credits
+* Tomer Peled, Senior Security Researcher at Akamai (reporter)
+
+
 ## Improper Access Control results in bypassing a "read-only" mode for doris-mcp-server MCP Server ## { #CVE-2025-58337 }
 
 CVE-2025-58337 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-58337) [\[CVE json\]](./CVE-2025-58337.cve.json) [\[OSV json\]](./CVE-2025-58337.osv.json)

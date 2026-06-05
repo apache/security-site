@@ -13,6 +13,57 @@ Do you want disclose a potential security issue for Apache Flink? You can read m
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://flink.apache.org/what-is-flink/security/). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Server-Side Request Forgery and local file access in Kubernetes Operator ## { #CVE-2026-40564 }
+
+CVE-2026-40564 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40564) [\[CVE json\]](./CVE-2026-40564.cve.json)
+
+_Last updated: 2026-05-26T14:43:13.154Z_
+
+### Affected
+
+* Apache Flink Kubernetes Operator from 1.3.0 before 1.15.0
+
+
+### Description
+
+<p>Files or Directories Accessible to External Parties, Server-Side Request Forgery (SSRF) vulnerability in Apache Flink Kubernetes Operator.</p>The FlinkSessionJob jarURI is currently not validated so that it points to user-owned files or addresses.&nbsp;<span style="background-color: rgb(255, 255, 255);">&nbsp;This lets a user with CR create permissions read files from the operator pod's filesystem and pull content from any backing store reachable through Flink's pluggable filesystem layer <span style="background-color: rgb(255, 255, 255);">and access them through the submitted Flink job</span>. Furthermore for fetching from http/https addresses&nbsp;<span style="background-color: rgb(255, 255, 255);">there is currently no allowlist on the URI scheme, no host check, no IP-range restriction, and no protection against pointing the URI at internal or link-local addresses.</span></span><div><p>This issue affects Apache Flink Kubernetes Operator: from 1.3.0 before 1.15.0.</p><p>Users are recommended to upgrade to version 1.15.0, which fixes the issue.</p></div>
+
+### References
+* https://lists.apache.org/thread/jvxs2kh2o60sl7qkl5nss4r5phzfl4cz
+
+
+### Credits
+* Andrea Cosentino (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Remote code execution via SQL injection in code generation ## { #CVE-2026-35194 }
+
+CVE-2026-35194 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-35194) [\[CVE json\]](./CVE-2026-35194.cve.json) [\[OSV json\]](./CVE-2026-35194.osv.json)
+
+
+
+_Last updated: 2026-05-15T15:27:25.824Z_
+
+### Affected
+
+* Apache Flink from 1.15.0 before 1.20.4,2.0.2,2.1.2,2.2.1
+
+
+### Description
+
+<div><div>Code injection in SQL code generation in Apache Flink 1.15.0 through 1.20.x and 2.0.0 through 2.x allows authenticated users with query submission privileges to execute arbitrary code on TaskManagers via maliciously crafted SQL queries. The vulnerability affects JSON functions (1.15.0+) and LIKE expressions with ESCAPE clauses (1.17.0+). User-controlled strings are interpolated into generated Java code without proper escaping, allowing attackers to break out of string literals and inject arbitrary expressions.</div><div>Users are recommended to upgrade to either version 1.20.4, 2.0.2, 2.1.2 or 2.2.1, which fixes this issue.</div>
+  
+  </div><br>
+
+### References
+* https://lists.apache.org/thread/qh52bw4hhvy7n2owd8b3bt51mz0lvj9x
+
+
+### Credits
+* Yaswant Katakam, Confluent InfoSec (finder)
+
+
 ## SQL injection via maliciously crafted identifiers ## { #CVE-2025-62228 }
 
 CVE-2025-62228 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-62228) [\[CVE json\]](./CVE-2025-62228.cve.json) [\[OSV json\]](./CVE-2025-62228.osv.json)

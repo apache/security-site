@@ -13,6 +13,27 @@ Do you want disclose a potential security issue for Apache Ignite? You can read 
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://ignite.apache.org/docs/ignite3/3.1.0/understand/architecture/security#security-model). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## REST HTTP arbitrary file read vulnerability ## { #CVE-2025-48977 }
+
+CVE-2025-48977 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-48977) [\[CVE json\]](./CVE-2025-48977.cve.json) [\[OSV json\]](./CVE-2025-48977.osv.json)
+
+
+
+_Last updated: 2026-05-28T08:58:05.304Z_
+
+### Affected
+
+* Apache Ignite from 2.0.0 through 2.17.0
+
+
+### Description
+
+<p>Relative Path Traversal vulnerability in Apache Ignite REST API.</p>Authenticated REST API users can read any file on the server with "cmd=log" command and a log path crafted in a certain way.<br><p>This issue affects Apache Ignite: from 2.0.0 through 2.17.0.</p><p>Users are recommended to upgrade to version 2.18.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/hgct6918sowd8l58yjohryhpxx81t4n1
+
+
 ## Possible RCE when deserializing incoming messages by the server node ## { #CVE-2024-52577 }
 
 CVE-2024-52577 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-52577) [\[CVE json\]](./CVE-2024-52577.cve.json) [\[OSV json\]](./CVE-2024-52577.osv.json)

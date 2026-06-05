@@ -13,6 +13,33 @@ Do you want disclose a potential security issue for Apache Calcite? Send your re
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## A user-controled model can load arbitrary classes, leading to code execution ## { #CVE-2026-46718 }
+
+CVE-2026-46718 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-46718) [\[CVE json\]](./CVE-2026-46718.cve.json) [\[OSV json\]](./CVE-2026-46718.osv.json)
+
+
+
+_Last updated: 2026-06-02T09:17:49.528Z_
+
+### Affected
+
+* Apache Calcite from 1.5.0 before 1.42
+
+
+### Description
+
+<p>Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection') vulnerability in Apache Calcite.</p><p>This issue affects Apache Calcite: from 1.5.0 before 1.42.</p><p>Users are recommended to upgrade to version 1.42, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/9s37svo343w5ck1ovh478lkzcqk4949v
+
+
+### Credits
+* pyn3rd (finder)
+* uname (finder)
+* 4ra1n (finder)
+
+
 ## Apache Calcite: potential XEE attacks ## { #CVE-2022-39135 }
 
 CVE-2022-39135 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-39135) [\[CVE json\]](./CVE-2022-39135.cve.json) [\[OSV json\]](./CVE-2022-39135.osv.json)

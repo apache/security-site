@@ -13,6 +13,34 @@ Do you want disclose a potential security issue for Apache Artemis? Send your re
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Address routing-type can be updated by STOMP protocol user without the createAddress permission ## { #CVE-2026-40914 }
+
+CVE-2026-40914 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40914) [\[CVE json\]](./CVE-2026-40914.cve.json) [\[OSV json\]](./CVE-2026-40914.osv.json)
+
+
+
+_Last updated: 2026-05-28T12:28:55.897Z_
+
+### Affected
+
+* Apache Artemis Stomp Protocol from 2.50.0 through 2.53.0
+* Apache ActiveMQ Artemis Stomp Protocol from 2.0.0 through 2.44.0
+
+
+### Description
+
+<p></p><p>A vulnerability exists in Apache Artemis whereby an application using the STOMP protocol with security credentials that grant either the consume or send permission on an address can augment the routing-type supported by that address even if said user doesn't have the createAddress permission for that particular address. A user could successfully send a message to an address or consume a message from a queue with a routing-type not supported by the corresponding address when that operation should actually be rejected on the basis that the user doesn't have permission to change the routing-type of the address. Even though the user was already granted permission to send and/or consume messages, they should not be able to augment the routing-type of the address without the createAddress permission.</p><p></p><p>This issue affects Apache Artemis: from 2.50.0 through 2.53.0; Apache ActiveMQ Artemis: from 2.0.0 through 2.44.0.</p><p>Users are recommended to upgrade to version 2.54.0, which fixes the issue.</p><p></p><p></p>
+
+### References
+* https://lists.apache.org/thread/6q3st8dlorz2q05svqn11k1xl7jkmm4c
+
+
+### Credits
+* bugbunny.ai (tool)
+* Isaac David <isaac@bugbunny.ai> (reporter)
+* Arthur Gervais <arthur@bugbunny.ai> (reporter)
+
+
 ## Temporary address auto-created for OpenWire consumer without createAddress permission ## { #CVE-2026-32642 }
 
 CVE-2026-32642 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-32642) [\[CVE json\]](./CVE-2026-32642.cve.json) [\[OSV json\]](./CVE-2026-32642.osv.json)

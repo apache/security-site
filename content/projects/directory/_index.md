@@ -13,6 +13,38 @@ Do you want disclose a potential security issue for Apache Directory? Send your 
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## LDAP client implementation does not verify if the server certificate matches the intended LDAP hostname ## { #CVE-2026-35563 }
+
+CVE-2026-35563 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-35563) [\[CVE json\]](./CVE-2026-35563.cve.json) [\[OSV json\]](./CVE-2026-35563.osv.json)
+
+
+
+_Last updated: 2026-06-01T07:38:34.650Z_
+
+### Affected
+
+* Apache Directory LDAP API from 2.0.0 through 2.1.7
+
+
+### Description
+
+It was identified that the LDAP client implementation in version 2.1.7 does not verify if the server certificate matches the intended LDAP 
+hostname. While the underlying code validates the certificate chain 
+against a trusted authority, the absence of endpoint identification 
+allows a valid certificate issued for an entirely unrelated host to be 
+improperly accepted. This oversight leaves the connection highly 
+vulnerable to server impersonation and complete connection compromise.<div><br></div><div>The
+ root cause of this vulnerability lies in the incomplete TLS server 
+identity verification within the LDAP client implementation.</div><div><br></div><div>The attacker requires MITM capability on the network to exploit this vulnerability. This attacker must be able to present a certificate trusted by the client's configured trust store.</div><div><br></div><div>The hostname verification has been enforced in the new version of the LDAP API</div>
+
+### References
+* https://lists.apache.org/thread/5rc2nzqxp1m9wknyf93r8dnp46fhc1nn
+
+
+### Credits
+* Rafał Łykowski and Łukasz Kollbek of Qualtrics (finder)
+
+
 ## LDAP Injection Vulnerability in Apache Kerby ## { #CVE-2023-25613 }
 
 CVE-2023-25613 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-25613) [\[CVE json\]](./CVE-2023-25613.cve.json) [\[OSV json\]](./CVE-2023-25613.osv.json)

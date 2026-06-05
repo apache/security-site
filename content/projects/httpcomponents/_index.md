@@ -13,6 +13,31 @@ Do you want disclose a potential security issue for Apache HttpComponents? Send 
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## SCRAM-SHA-256 mutual authentication bypass may cause the client to accept authentication without proper mutual authentication verification ## { #CVE-2026-40542 }
+
+CVE-2026-40542 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40542) [\[CVE json\]](./CVE-2026-40542.cve.json) [\[OSV json\]](./CVE-2026-40542.osv.json)
+
+
+
+_Last updated: 2026-04-22T07:07:19.055Z_
+
+### Affected
+
+* Apache HttpClient from 5.6 before 5.6.1
+
+
+### Description
+
+<code>Missing critical step in authentication in Apache HttpClient 5.6 allows an attacker to cause the client to accept SCRAM-SHA-256 authentication without proper mutual authentication verification. Users are recommended to upgrade to version 5.6.1, which fixes this issue.</code><br>
+
+### References
+* https://lists.apache.org/thread/tfmgv86xr0z1y096vs3z0y315t1v3o97
+
+
+### Credits
+* Rasmus Moorats (finder)
+
+
 ## PSL (Public Suffix List) validation bypass ## { #CVE-2025-27820 }
 
 CVE-2025-27820 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27820) [\[CVE json\]](./CVE-2025-27820.cve.json) [\[OSV json\]](./CVE-2025-27820.osv.json)

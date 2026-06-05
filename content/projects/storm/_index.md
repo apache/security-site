@@ -13,6 +13,116 @@ Do you want disclose a potential security issue for Apache Storm? You can read m
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://storm.apache.org/security-model.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Anonymous principal assigned on TLS client certificate verification failure ## { #CVE-2026-41081 }
+
+CVE-2026-41081 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-41081) [\[CVE json\]](./CVE-2026-41081.cve.json) [\[OSV json\]](./CVE-2026-41081.osv.json)
+
+
+
+_Last updated: 2026-04-27T13:10:44.288Z_
+
+### Affected
+
+* Apache Storm Client before 2.8.7
+
+
+### Description
+
+<b>Improper Handling of TLS Client Authentication Failure Leading to Anonymous Principal Assignment in Apache Storm</b><br><br><b>Versions Affected:</b> up to 2.8.7<br><br><b>Description: </b>When TLS transport is enabled in Apache Storm without requiring client certificate authentication (the default configuration), the TlsTransportPlugin assigns a fallback principal (CN=ANONYMOUS) if no client certificate is presented or if certificate verification fails. The underlying SSLPeerUnverifiedException is caught and suppressed rather than rejecting the connection.<br><br>This fail-open behavior means an unauthenticated client can establish a TLS connection and receive a valid principal identity. If the configured authorizer (e.g., SimpleACLAuthorizer) does not explicitly deny access to CN=ANONYMOUS, this may result in unauthorized access to Storm services. The condition is logged at debug level only, reducing visibility in production.<br><br><b>Impact:</b> Unauthenticated clients may be assigned a principal identity, potentially bypassing authorization in permissive or misconfigured environments.<br><br><b>Mitigation:</b> Users should upgrade to 2.8.7 in which TLS authentication failures are handled in a fail-closed manner.<br><br><b>Users who cannot upgrade immediately should:</b><br>- Enable mandatory client certificate authentication (nimbus.thrift.tls.client.auth.required: true)<br>- Ensure authorization rules explicitly deny access to CN=ANONYMOUS<br>- Review all ACL configurations for implicit default-allow behavior<br>
+
+### References
+* https://lists.apache.org/thread/plxx5l29dvplk5rwzdcq53rdfl6v4gs8
+
+
+### Credits
+* K (finder)
+
+
+## Disabling TLS verification for Prometheus Reporter also disables it for all other connections ## { #CVE-2026-40557 }
+
+CVE-2026-40557 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40557) [\[CVE json\]](./CVE-2026-40557.cve.json) [\[OSV json\]](./CVE-2026-40557.osv.json)
+
+
+
+_Last updated: 2026-04-27T13:12:09.640Z_
+
+### Affected
+
+* Apache Storm Prometheus Reporter from 2.6.3 before 2.8.7
+
+
+### Description
+
+<p><strong>Improper Certificate Validation via Global SSL Context Downgrade in Apache Storm Prometheus Reporter</strong></p>
+<p><b>Versions Affected: </b>from 2.6.3 to 2.8.6</p>
+<p><b>Description:&nbsp;</b></p><p><span style="background-color: rgb(255, 255, 255);">In production deployments where an administrator enables </span><code>storm.daemon.metrics.reporter.plugin.prometheus.skip_tls_validation&nbsp;</code>(by default it is disabled)&nbsp;<span style="background-color: rgb(255, 255, 255);">intending to affect only the Prometheus reporter, the undocumented global side effect creates an attack surface across every TLS-protected communication channel in the Storm daemon.</span><b><br></b></p><p>The <code>PrometheusPreparableReporter</code> class implements an <code>INSECURE_TRUST_MANAGER</code> that accepts all SSL certificates without validation, with empty <code>checkClientTrusted</code> and <code>checkServerTrusted</code> methods. Most critically, when the <code>storm.daemon.metrics.reporter.plugin.prometheus.skip_tls_validation</code> configuration option is enabled (default = disabled) for HTTPS Prometheus PushGateway connections, the <code>INSECURE_CONNECTION_FACTORY</code> calls <code>SSLContext.setDefault(sslContext)</code>, which globally replaces the JVM's default SSL context rather than applying the insecure context only to the Prometheus connection. This payload flows through storm.yaml configuration → <code>PrometheusPreparableReporter.prepare()</code> → <code>INSECURE_CONNECTION_FACTORY</code> → <code>SSLContext.setDefault()</code>, resulting in a JVM-wide TLS security downgrade. All subsequent HTTPS connections in the process - including ZooKeeper, Thrift, Netty, and UI connections - silently trust all certificates, including self-signed, expired, and attacker-generated ones, enabling man-in-the-middle interception of cluster state, topology submissions, tuple data, and administrative credentials.<br></p>
+
+<p><b>Mitigation:</b> 2.x users should upgrade to 2.8.7 if the Prometheus Metrics Reporter is used. Prometheus Metrics Reporter Users who cannot upgrade immediately should remove the <code>storm.daemon.metrics.reporter.plugin.prometheus.skip_tls_validation: true</code> setting from their storm.yaml configuration and instead configure a proper truststore containing the PushGateway's certificate.<br></p>
+<br>
+
+### References
+* https://lists.apache.org/thread/f5bv68z1y5xstz22psjk05p3wn86knjq
+
+
+### Credits
+* K (finder)
+
+
+## Stored Cross-Site Scripting (XSS) via Unsanitized Topology Metadata in Storm UI ## { #CVE-2026-35565 }
+
+CVE-2026-35565 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-35565) [\[CVE json\]](./CVE-2026-35565.cve.json) [\[OSV json\]](./CVE-2026-35565.osv.json)
+
+
+
+_Last updated: 2026-04-13T09:10:15.976Z_
+
+### Affected
+
+* Apache Storm UI before 2.8.6
+
+
+### Description
+
+<p><strong>Stored Cross-Site Scripting (XSS) via Unsanitized Topology Metadata in Apache Storm UI</strong></p>
+<p><strong>Versions Affected:</strong> before 2.8.6</p>
+<p><strong>Description:</strong> The Storm UI visualization component interpolates topology metadata including component IDs, stream names, and grouping values directly into HTML via <code>innerHTML</code> in <code>parseNode()</code> and <code>parseEdge()</code> without sanitization at any layer. An authenticated user with topology submission rights could craft a topology containing malicious HTML/JavaScript in component identifiers (e.g., a bolt ID containing an <code>onerror</code> event handler). This payload flows through Nimbus → Thrift → the Visualization API → vis.js tooltip rendering, resulting in stored cross-site scripting.&nbsp;</p><p>In multi-tenant deployments where topology submission is available to less-trusted users but the UI is accessed by operators or administrators, this enables privilege escalation through script execution in an admin's browser session.</p>
+<p><strong>Mitigation:</strong>&nbsp;2.x users should upgrade to 2.8.6. Users who cannot upgrade immediately should monkey-patch the <code>parseNode()</code> and <code>parseEdge()</code> functions in the visualization JavaScript file to HTML-escape all API-supplied values including <code>nodeId</code>, <code>:capacity</code>, <code>:latency</code>, <code>:component</code>, <code>:stream</code>, and <code>:grouping</code>&nbsp;before interpolation into tooltip HTML strings, and should additionally restrict topology submission to trusted users via Nimbus ACLs as a defense-in-depth measure.&nbsp;A guide on how to do this is available in the release notes of 2.8.6.</p><b>Credit:</b> This issue was discovered while investigating another report by K.<br>
+
+### References
+* https://storm.apache.org/2026/04/12/storm286-released.html
+
+
+## RCE through Unsafe Deserialization via Kerberos TGT Credential Handling ## { #CVE-2026-35337 }
+
+CVE-2026-35337 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-35337) [\[CVE json\]](./CVE-2026-35337.cve.json) [\[OSV json\]](./CVE-2026-35337.osv.json)
+
+
+
+_Last updated: 2026-04-13T09:11:04.526Z_
+
+### Affected
+
+* Apache Storm Client before 2.8.6
+
+
+### Description
+
+<p><b>Deserialization of Untrusted Data vulnerability in Apache Storm.</b></p><p><strong>Versions Affected:</strong>
+before 2.8.6.</p>
+<p><strong>Description:</strong>
+When processing topology credentials submitted via the Nimbus Thrift API, Storm deserializes the base64-encoded TGT blob using <code>ObjectInputStream.readObject()</code> without any class filtering or validation.&nbsp;An authenticated user with topology submission rights could supply a crafted serialized object in the <code>"TGT"</code> credential field, leading to remote code execution in both the Nimbus and Worker JVMs.</p>
+<p><strong>Mitigation:</strong>
+2.x users should upgrade to 2.8.6.</p>
+<p>Users who cannot upgrade immediately should monkey-patch an <code>ObjectInputFilter</code> allow-list to <code>ClientAuthUtils.deserializeKerberosTicket()</code> restricting deserialized classes to <code>javax.security.auth.kerberos.KerberosTicket</code> and its known dependencies. A guide on how to do this is available in the release notes of 2.8.6.</p><p><span style="background-color: rgb(255, 255, 255);"><b>Credit:</b> This issue was discovered by K.</span><br></p>
+
+### References
+* https://storm.apache.org/2026/04/12/storm286-released.html
+
+
+### Credits
+* K (finder)
+
+
 ## Local Information Disclosure Vulnerability in Storm-core on Unix-Like systems due temporary files ## { #CVE-2023-43123 }
 
 CVE-2023-43123 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-43123) [\[CVE json\]](./CVE-2023-43123.cve.json) [\[OSV json\]](./CVE-2023-43123.osv.json)

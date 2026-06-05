@@ -13,6 +13,81 @@ Do you want disclose a potential security issue for Apache APISIX? You can read 
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://github.com/apache/apisix/blob/master/THREAT_MODEL.md). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Plugin tencent-cloud-cls log export uses plaintext HTTP ## { #CVE-2026-31924 }
+
+CVE-2026-31924 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-31924) [\[CVE json\]](./CVE-2026-31924.cve.json) [\[OSV json\]](./CVE-2026-31924.osv.json)
+
+
+
+_Last updated: 2026-04-14T08:08:04.772Z_
+
+### Affected
+
+* Apache APISIX from 2.99.0 through 3.15.0
+
+
+### Description
+
+<p>Cleartext Transmission of Sensitive Information vulnerability in Apache APISIX.</p>tencent-cloud-cls log export uses plaintext HTTP<br><p>This issue affects Apache APISIX: from 2.99.0 through 3.15.0.</p><p>Users are recommended to upgrade to version 3.16.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/sqxjjlt87c1q28db28ztdxylm5pgwohq
+
+
+### Credits
+* Oleh Konko (finder)
+
+
+## Openid-connect `tls_verify` field is disabled by default ## { #CVE-2026-31923 }
+
+CVE-2026-31923 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-31923) [\[CVE json\]](./CVE-2026-31923.cve.json) [\[OSV json\]](./CVE-2026-31923.osv.json)
+
+
+
+_Last updated: 2026-04-14T08:38:57.640Z_
+
+### Affected
+
+* Apache APISIX from 0.7 through 3.15.0
+
+
+### Description
+
+<p>Cleartext Transmission of Sensitive Information vulnerability in Apache APISIX.</p>This can occur due to `ssl_verify` in openid-connect plugin configuration being set to false by default.<br><p>This issue affects Apache APISIX: from 0.7 through 3.15.0.</p><p>Users are recommended to upgrade to version 3.16.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/0pjs72l7qj83j3srw1l1toyj24bsgkds
+
+
+### Credits
+* Oleh Konko (reporter)
+
+
+## forward auth plugin allows header injection ## { #CVE-2026-31908 }
+
+CVE-2026-31908 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-31908) [\[CVE json\]](./CVE-2026-31908.cve.json) [\[OSV json\]](./CVE-2026-31908.osv.json)
+
+
+
+_Last updated: 2026-04-14T08:06:15.933Z_
+
+### Affected
+
+* Apache APISIX from 2.12.0 through 3.15.0
+
+
+### Description
+
+<p>Header injection vulnerability in Apache APISIX.</p><span style="background-color: rgb(255, 255, 255);">The attacker can take advantage of certain configuration in forward-auth plugin to inject malicious headers.</span><br><p>This issue affects Apache APISIX: from 2.12.0 through 3.15.0.</p><p>Users are recommended to upgrade to version 3.16.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/sob643s5lztov7x579j8o0c444t36n6b
+
+
+### Credits
+* SeungMyung Lee (reporter)
+
+
 ## basic-auth logs plaintext credentials at info level ## { #CVE-2025-62232 }
 
 CVE-2025-62232 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-62232) [\[CVE json\]](./CVE-2025-62232.cve.json) [\[OSV json\]](./CVE-2025-62232.osv.json)

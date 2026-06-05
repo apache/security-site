@@ -80,7 +80,7 @@ CVE-2025-47869 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-47869) [\[CVE jso
 
 
 
-_Last updated: 2025-06-14T22:55:02.542Z_
+_Last updated: 2026-05-08T13:35:33.530Z_
 
 ### Affected
 
@@ -115,7 +115,7 @@ CVE-2025-47868 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-47868) [\[CVE jso
 
 
 
-_Last updated: 2025-06-14T22:53:54.263Z_
+_Last updated: 2026-05-08T13:34:11.805Z_
 
 ### Affected
 
@@ -147,7 +147,7 @@ CVE-2025-35003 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-35003) [\[CVE jso
 
 
 
-_Last updated: 2025-06-14T22:46:25.637Z_
+_Last updated: 2026-05-08T13:32:43.156Z_
 
 ### Affected
 

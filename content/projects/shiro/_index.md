@@ -13,6 +13,114 @@ Do you want disclose a potential security issue for Apache Shiro? You can read m
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://shiro.apache.org/security-reports.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Jakarta EE open redirect via untrusted Referer in post-login redirect flow ## { #CVE-2026-48589 }
+
+CVE-2026-48589 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48589) [\[CVE json\]](./CVE-2026-48589.cve.json) [\[OSV json\]](./CVE-2026-48589.osv.json)
+
+
+
+_Last updated: 2026-05-25T20:20:09.531Z_
+
+### Affected
+
+* Apache Shiro from 2.0.0-alpha-0 through 2.2.0
+* Apache Shiro from 3.0.0-alpha-0 through 3.0.0-alpha-1
+
+
+### Description
+
+<span style="background-color: rgb(255, 255, 255);">Apache Shiro’s Jakarta EE module used the HTTP Referer header in certain cases to issue redirect after a user login.<br>In affected versions, insufficient validation of this client-controlled value could allow an attacker to influence the redirect target in applications using the Jakarta EE module.<br>This issue affects Apache Shiro from 2.0-alpha to 2.2.0, and 3.0.0-alpha-1, only when using shiro-jakarta-ee integration module.</span><br>
+
+### References
+* https://shiro.apache.org/security-reports.html#cve_2026_48589
+
+
+### Credits
+* Bartlomiej Dmitruk <bartek@striga.ai> (finder)
+* Lenny Primak <lenny@flowlogix.com> (remediation developer)
+
+
+## Open redirect and SSRF (requires valid credentials) ## { #CVE-2026-44598 }
+
+CVE-2026-44598 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44598) [\[CVE json\]](./CVE-2026-44598.cve.json) [\[OSV json\]](./CVE-2026-44598.osv.json)
+
+
+
+_Last updated: 2026-05-25T20:19:50.656Z_
+
+### Affected
+
+* Apache Shiro Jakarta EE module from 2.0.0-alpha-0 through 2.1.0
+* Apache Shiro Jakarta EE module from 3.0.0-alpha-0 through 3.0.0-alpha-1
+
+
+### Description
+
+<p>With valid login credentials, URL Redirection to Untrusted Site ('Open Redirect'), Server-Side Request Forgery (SSRF) vulnerability in Apache Shiro.<br></p><p></p><p>This issue affects Apache Shiro from 2.0-alpha to 2.1.0, and 3.0.0-alpha-1,&nbsp;<span style="background-color: rgb(255, 255, 255);">only w</span><span style="background-color: rgb(255, 255, 255);">hen using shiro-jakarta-ee integration module.</span></p><p>Users are recommended to upgrade to version 2.1.1, or 3.0.0-alpha-2 or later, which fixes the issue by encrypting the cookie.</p><p>After successful login, Jakarta EE integration module uses shiroSavedRequest cookie to redirect to a particular web page after login.<br>This cookie was not validated, and can be forged to send a HTTP GET request from the server itself to an arbitrary URL from the cookie.</p>
+
+### References
+* https://shiro.apache.org/security-reports.html#cve_2026_44598
+
+
+### Credits
+* James Love <jameslove2k22@gmail.com> (finder)
+* Lenny Primak <lenny@flowlogix.com> (remediation developer)
+
+
+## Shiro's native session and rememberMe cookies do not have secure flag set by default ## { #CVE-2026-43828 }
+
+CVE-2026-43828 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-43828) [\[CVE json\]](./CVE-2026-43828.cve.json) [\[OSV json\]](./CVE-2026-43828.osv.json)
+
+
+
+_Last updated: 2026-05-25T20:19:30.172Z_
+
+### Affected
+
+* Apache Shiro from 1.0 through 2.1.0
+* Apache Shiro from 3.0.0-alpha-0 through 3.0.0-alpha-1
+
+
+### Description
+
+<p>Default configurations of Apache Shiro send sensitive cookies in HTTPS session without 'Secure' attribute.</p><p></p><p>This issue affects Apache Shiro from 1.0 to 2.1.0, and 3.0.0-alpha-1.</p><p>Users are recommended to upgrade to version 2.1.1, or 3.0.0-alpha-2 or later, which fixes the issue.</p>In the affected versions, Shiro-native session manager, as well as Remember-Me manager sends JSESSIONID and rememberMe cookies without 'secure' attribute by default.<p></p>
+
+### References
+* https://shiro.apache.org/security-reports.html#cve_2026_43828
+
+
+### Credits
+* Meteor_Kai <1318723916@qq.com> (finder)
+* Lenny Primak <lenny@flowlogix.com> (remediation developer)
+
+
+## Session fixation: new session is not created after login by default ## { #CVE-2026-43827 }
+
+CVE-2026-43827 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-43827) [\[CVE json\]](./CVE-2026-43827.cve.json) [\[OSV json\]](./CVE-2026-43827.osv.json)
+
+
+
+_Last updated: 2026-05-25T20:19:09.384Z_
+
+### Affected
+
+* Apache Shiro from 1.0 through 2.1.0
+* Apache Shiro from 3.0.0-alpha-0 through 3.0.0-alpha-1
+
+
+### Description
+
+<p><span style="background-color: rgb(255, 255, 255);">Default configurations of Apache Shiro have a s</span>ession fixation vulnerability.</p><p>This issue affects Apache Shiro from 1.0 to 2.1.0, and 3.0.0-alpha-1.</p><p>Users are recommended to upgrade to version 2.1.1, or 3.0.0-alpha-2 or later, which fixes the issue.</p>In the affected versions, when a session already exists, it is not invalidated upon successful login, nor is a new session being generated with a new ID.<br><br>
+
+### References
+* https://shiro.apache.org/security-reports.html#cve_2026_43827
+
+
+### Credits
+* Rasmus Moorats <xx@nns.ee> (finder)
+* Lenny Primak <lenny@flowlogix.com> (remediation developer)
+
+
 ## Auth bypass when accessing static files only on case-insensitive filesystems ## { #CVE-2026-23903 }
 
 CVE-2026-23903 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23903) [\[CVE json\]](./CVE-2026-23903.cve.json) [\[OSV json\]](./CVE-2026-23903.osv.json)

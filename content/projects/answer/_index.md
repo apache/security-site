@@ -19,7 +19,7 @@ CVE-2026-24735 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24735) [\[CVE jso
 
 
 
-_Last updated: 2026-02-04T10:41:53.728Z_
+_Last updated: 2026-06-03T06:48:19.838Z_
 
 ### Affected
 

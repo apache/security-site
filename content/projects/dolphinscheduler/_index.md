@@ -13,6 +13,94 @@ Do you want disclose a potential security issue for Apache DolphinScheduler? You
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://github.com/apache/dolphinscheduler/blob/dev/docs/docs/en/contribute/join/security.md). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Users are able to use tenants that are not defined on the platform during workflow execution. ## { #CVE-2026-23902 }
+
+CVE-2026-23902 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23902) [\[CVE json\]](./CVE-2026-23902.cve.json) [\[OSV json\]](./CVE-2026-23902.osv.json)
+
+
+
+_Last updated: 2026-04-24T10:56:16.919Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.1
+
+
+### Description
+
+<p>Incorrect Authorization vulnerability in Apache DolphinScheduler allows authenticated users with system login permissions to use tenants that are not defined on the platform during workflow execution.<br><br>This issue affects Apache DolphinScheduler versions prior to 3.4.1.&nbsp;</p><p>Users are recommended to upgrade to version 3.4.1, which fixes this issue.<br></p>
+
+### References
+* https://lists.apache.org/thread/hy4ntb2gys8150zfmnxhsd5ph0hoh7s9
+
+
+### Credits
+* Jihang Yu (reporter)
+
+
+## Deserialization of untrusted data in RPC ## { #CVE-2025-62233 }
+
+CVE-2025-62233 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-62233) [\[CVE json\]](./CVE-2025-62233.cve.json) [\[OSV json\]](./CVE-2025-62233.osv.json)
+
+
+
+_Last updated: 2026-04-24T10:54:53.855Z_
+
+### Affected
+
+* Apache DolphinScheduler from 3.2.0 before 3.3.1
+
+
+### Description
+
+<p>Deserialization of Untrusted Data vulnerability in Apache DolphinScheduler RPC module.</p><p>This issue affects Apache DolphinScheduler:&nbsp;</p><p>Version &gt;= 3.2.0 and &lt; 3.3.1.</p>Attackers who can access the Master or Worker nodes can compromise the system by creating a StandardRpcRequest, injecting a malicious class type into it, and sending RPC requests to the DolphinScheduler Master/Worker nodes.<br><p>Users are recommended to upgrade to version [3.3.1], which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/79s80h51r4z5d4l2xs5xy364rmmo1bw0
+
+
+### Credits
+* 75Acol, fcgboy, ch0wn, zer0duck (finder)
+
+
+## Users can access sensitive information through the actuator endpoint. ## { #CVE-2025-62188 }
+
+CVE-2025-62188 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-62188) [\[CVE json\]](./CVE-2025-62188.cve.json)
+
+_Last updated: 2026-04-08T09:09:06.393Z_
+
+### Affected
+
+* Apache DolphinScheduler from 3.1.0 before 3.2.0
+
+
+### Description
+
+<p>An <strong>Exposure of Sensitive Information to an Unauthorized Actor</strong> vulnerability exists in Apache DolphinScheduler.<br>
+This vulnerability may allow unauthorized actors to access sensitive information, including database credentials.</p>
+<p>This issue affects <strong>Apache DolphinScheduler versions 3.1.*</strong>.</p>
+<p>Users are recommended to upgrade to:<br></p>
+
+
+<p></p><ul><li><strong>version ≥ 3.2.0</strong> if using <strong>3.1.x</strong></li></ul><p></p>
+
+<p>As a temporary workaround, users who cannot upgrade immediately may restrict the exposed management endpoints by setting the following environment variable:</p>
+```<br>MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE=health,metrics,prometheus<br>```<br>
+<p>Alternatively, add the following configuration to the <code>application.yaml</code> file:</p>
+```<br>management:<br>&nbsp; &nbsp;endpoints:<br>&nbsp; &nbsp; &nbsp;web:<br>&nbsp; &nbsp; &nbsp; &nbsp; exposure:<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; include: health,metrics,prometheus<br>```<br>
+<p>This issue has been reported as <strong>CVE-2023-48796</strong>:<br>
+<a target="_blank" rel="nofollow" href="https://cveprocess.apache.org/cve5/CVE-2023-48796">https://cveprocess.apache.org/cve5/CVE-2023-48796</a></p><br>
+
+### References
+* https://lists.apache.org/thread/ffrmkcwgr2lcz0f5nnnyswhpn3fytsvo
+* https://www.cve.org/CVERecord?id=CVE-2023-48796
+
+
+### Credits
+* w aiyou (finder)
+* 魏大创 (reporter)
+
+
 ## Remote Code Execution Vulnerability ## { #CVE-2024-43202 }
 
 CVE-2024-43202 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-43202) [\[CVE json\]](./CVE-2024-43202.cve.json) [\[OSV json\]](./CVE-2024-43202.osv.json)

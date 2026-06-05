@@ -13,6 +13,83 @@ Do you want disclose a potential security issue for Apache OpenMeetings? You can
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://openmeetings.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Login Credentials Passed via GET Query Parameters ## { #CVE-2026-34020 }
+
+CVE-2026-34020 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34020) [\[CVE json\]](./CVE-2026-34020.cve.json) [\[OSV json\]](./CVE-2026-34020.osv.json)
+
+
+
+_Last updated: 2026-04-09T15:52:02.110Z_
+
+### Affected
+
+* Apache OpenMeetings from 3.1.3 before 9.0.0
+
+
+### Description
+
+<p>Use of GET Request Method With Sensitive Query Strings vulnerability in Apache OpenMeetings.</p><p>The REST login endpoint uses HTTP GET method with username and password passed as query parameters.&nbsp;<span style="background-color: rgb(255, 255, 255);">Please check references regarding possible impact</span><br></p><p>This issue affects Apache OpenMeetings: from 3.1.3 before 9.0.0.</p><p>Users are recommended to upgrade to version 9.0.0, which fixes the issue.</p>
+
+### References
+* https://owasp.org/www-community/vulnerabilities/Information_exposure_through_query_strings_in_url
+* https://lists.apache.org/thread/2h3h9do5tp17xldr0nps1yjmkx4vs3db
+
+
+### Credits
+* 4ra2n (A code security AI agent) (finder)
+
+
+## Hardcoded Remember-Me Cookie Encryption Key and Salt ## { #CVE-2026-33266 }
+
+CVE-2026-33266 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-33266) [\[CVE json\]](./CVE-2026-33266.cve.json) [\[OSV json\]](./CVE-2026-33266.osv.json)
+
+
+
+_Last updated: 2026-04-09T15:52:32.475Z_
+
+### Affected
+
+* Apache OpenMeetings from 6.1.0 before 9.0.0
+
+
+### Description
+
+<p>Use of Hard-coded Cryptographic Key vulnerability in Apache OpenMeetings.</p><p>The remember-me cookie encryption key is set to default value in openmeetings.properties and not being auto-rotated. <span style="background-color: rgb(255, 255, 255);">In case OM admin hasn't changed the default encryption key, an attacker who has stolen a cookie from a logged-in user can get full user credentials.</span><br></p><p>This issue affects Apache OpenMeetings: from 6.1.0 before 9.0.0.</p><p>Users are recommended to upgrade to version 9.0.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/b05jnp9563v49zq494lox9kjbhhf2w66
+
+
+### Credits
+* 4ra2n (A code security AI agent) (finder)
+
+
+## Insufficient checks in FileWebService ## { #CVE-2026-33005 }
+
+CVE-2026-33005 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-33005) [\[CVE json\]](./CVE-2026-33005.cve.json) [\[OSV json\]](./CVE-2026-33005.osv.json)
+
+
+
+_Last updated: 2026-04-09T15:52:49.573Z_
+
+### Affected
+
+* Apache OpenMeetings from 3.1.0 before 9.0.0
+
+
+### Description
+
+<p>Improper Handling of Insufficient Privileges vulnerability in Apache OpenMeetings.</p><p>Any registered user can query web service with their credentials and get files/sub-folders of any folder by ID (metadata only NOT contents). Metadata includes id, type, name and some other field. Full list of fields get be checked at&nbsp;FileItemDTO&nbsp;object.</p><p>This issue affects Apache OpenMeetings: from 3.10 before 9.0.0.</p><p>Users are recommended to upgrade to version 9.0.0, which fixes the issue.</p>
+
+### References
+* https://openmeetings.apache.org/openmeetings-db/apidocs/org.apache.openmeetings.db/org/apache/openmeetings/db/dto/file/FileItemDTO.html
+* https://lists.apache.org/thread/pttoprd628g3xr6lpp3bm1z8m3z8t4p7
+
+
+### Credits
+* 4ra2n (A code security AI agent) (finder)
+
+
 ## Deserialisation of untrusted data in cluster mode ## { #CVE-2024-54676 }
 
 CVE-2024-54676 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-54676) [\[CVE json\]](./CVE-2024-54676.cve.json) [\[OSV json\]](./CVE-2024-54676.osv.json)

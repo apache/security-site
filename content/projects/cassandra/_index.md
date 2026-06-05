@@ -13,6 +13,85 @@ Do you want disclose a potential security issue for Apache Cassandra? You can re
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://cassandra.apache.org/doc/latest/cassandra/managing/operating/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Authenticated DoS via ALTER ROLE Password Hashing ## { #CVE-2026-32588 }
+
+CVE-2026-32588 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-32588) [\[CVE json\]](./CVE-2026-32588.cve.json) [\[OSV json\]](./CVE-2026-32588.osv.json)
+
+
+
+_Last updated: 2026-04-08T14:57:32.286Z_
+
+### Affected
+
+* Apache Cassandra from 4.0 through 4.0.19
+* Apache Cassandra from 4.1 through 4.1.10
+* Apache Cassandra from 5.0 through 5.0.6
+* Apache Cassandra at 6.0-alpha1
+
+
+### Description
+
+Authenticated DoS over CQL in Apache Cassandra 4.0, 4.1, 5.0 allows authenticated user to raise query latencies via repeated password changes.<br>Users are recommended to upgrade to version 4.0.20, 4.1.11, 5.0.7, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/2tnwjdnss378glxrsmnlzz3k53ftphrc
+
+
+### Credits
+* Youlong Chen, Institute of Computing Technology, Chinese Academy of Sciences (reporter)
+
+
+## cqlsh history sensitive information leak ## { #CVE-2026-27315 }
+
+CVE-2026-27315 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-27315) [\[CVE json\]](./CVE-2026-27315.cve.json) [\[OSV json\]](./CVE-2026-27315.osv.json)
+
+
+
+_Last updated: 2026-04-07T16:40:48.899Z_
+
+### Affected
+
+* Apache Cassandra from 4.0 through 4.0.19
+
+
+### Description
+
+Sensitive Information Leak in cqlsh in Apache Cassandra 4.0 allows access to sensitive information, like passwords, from previously executed cqlsh command via <span style="background-color: rgb(255, 255, 255);">&nbsp;~/.cassandra/cqlsh_history&nbsp;<span style="background-color: rgb(255, 255, 255);">local file access.<br></span></span><br>Users are recommended to upgrade to version 4.0.20, which fixes this issue.<br><br>--<br>Description: Cassandra's command-line tool, cqlsh, provides a command history feature that allows users to recall previously executed commands using the up/down arrow keys. These history records are saved in the ~/.cassandra/cqlsh_history file in the user's home directory.<br><br>However, cqlsh does not redact sensitive information when saving command history. This means that if a user executes operations involving passwords (such as logging in or creating users) within cqlsh, these passwords are permanently stored in cleartext in the history file on the disk.<br><br><br>
+
+### References
+* https://issues.apache.org/jira/browse/CASSANDRA-21180
+* https://lists.apache.org/thread/ft77zrk2mzt8qsch4g6jqjj4901d22k3
+
+
+### Credits
+* Youlong Chen, Institute of Computing Technology, Chinese Academy of Sciences (reporter)
+
+
+## Privilege escalation via ADD IDENTITY authorization bypass ## { #CVE-2026-27314 }
+
+CVE-2026-27314 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-27314) [\[CVE json\]](./CVE-2026-27314.cve.json) [\[OSV json\]](./CVE-2026-27314.osv.json)
+
+
+
+_Last updated: 2026-04-07T16:33:42.799Z_
+
+### Affected
+
+* Apache Cassandra from 5.0 through 5.0.6
+
+
+### Description
+
+<span style="background-color: rgb(255, 255, 255);">Privilege escalation&nbsp;</span>in Apache Cassandra 5.0 on an mTLS environment using MutualTlsAuthenticator&nbsp;allows a user with only CREATE permission&nbsp;to associate their own certificate identity with an arbitrary role,<br>including a superuser role, and authenticate as that role&nbsp;via ADD IDENTITY.<br><br>Users are recommended to upgrade to version 5.0.7+, which fixes this issue.&nbsp;<p><br></p><br>
+
+### References
+* https://lists.apache.org/thread/zrng82ddy4rpsmfyk582v6hqxcqrbz7f
+
+
+### Credits
+* Sho Odagiri, GMO Cybersecurity by Ierae, Inc. (reporter)
+
+
 ## User with MODIFY permission on ALL KEYSPACES can escalate privileges to superuser via unsafe actions (4.0.16 only) ## { #CVE-2025-26467 }
 
 CVE-2025-26467 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-26467) [\[CVE json\]](./CVE-2025-26467.cve.json) [\[OSV json\]](./CVE-2025-26467.osv.json)
