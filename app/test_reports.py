@@ -1,4 +1,58 @@
-from app.reports import Reporter, _asf_member_link, _project_link, _reporter
+import json
+import types
+
+from app import reports
+from app.reports import Reporter, _asf_member_link, _project_link, _reporter, load_pmc_report
+
+
+def _write_report(path, label, *, subj="[SECURITY] a flaw"):
+    path = path.parent / label
+    path.write_text(json.dumps([
+        {
+            "subj": subj,
+            "from": "Jane Reporter <jane@aisle.com>",
+            "to": "security@cassandra.apache.org",
+            "message_id": "<abc@cassandra.apache.org>",
+            "mailtime": 1700000000,
+        }
+    ]))
+    return path
+
+
+def test_subproject_after_leading_date(tmp_path, monkeypatch):
+    monkeypatch.setattr(
+        reports.config, "get", lambda: types.SimpleNamespace(pmcs_using_jira={})
+    )
+    path = _write_report(tmp_path, "2024-03-01 native a flaw wf untriaged.json")
+    report = load_pmc_report("commons", path)
+    assert report.subproject == "native"
+
+
+def test_subproject_after_single_cve(tmp_path, monkeypatch):
+    monkeypatch.setattr(
+        reports.config, "get", lambda: types.SimpleNamespace(pmcs_using_jira={})
+    )
+    path = _write_report(tmp_path, "CVE-2024-1234 lang a flaw.json")
+    report = load_pmc_report("commons", path)
+    assert report.subproject == "lang"
+
+
+def test_subproject_after_multiple_cves(tmp_path, monkeypatch):
+    monkeypatch.setattr(
+        reports.config, "get", lambda: types.SimpleNamespace(pmcs_using_jira={})
+    )
+    path = _write_report(tmp_path, "CVE-2024-1234 CVE-2024-5678 io a flaw.json")
+    report = load_pmc_report("commons", path)
+    assert report.subproject == "io"
+
+
+def test_subproject_none_when_no_prefix(tmp_path, monkeypatch):
+    monkeypatch.setattr(
+        reports.config, "get", lambda: types.SimpleNamespace(pmcs_using_jira={})
+    )
+    path = _write_report(tmp_path, "single.json")
+    report = load_pmc_report("commons", path)
+    assert report.subproject is None
 
 
 def test_asf_member_link_non_apache_to_uses_security_apache_org():

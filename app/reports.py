@@ -78,6 +78,9 @@ class Report:
 
     state: str
 
+    subproject: str | None
+    """For PMCs split across subprojects, the subproject this report belongs to."""
+
     timestamp: datetime.datetime
 
     @property
@@ -152,6 +155,10 @@ def load_pmc_report(pmc: str, path: pathlib.Path) -> Report | None:
         else:
             state = m.groups()[0]
 
+    # the subproject is the word after the leading date or CVE(s)
+    m = re.match(r"(?:(?:CVE-\S+\s+)*CVE-\S+|\d{4}-\d{2}-\d{2})\s+(\S+)", path.name)
+    subproject = m.group(1) if m else None
+
     if not emails:
         print(f"Empty label: {path.name}")
         return None
@@ -180,6 +187,7 @@ def load_pmc_report(pmc: str, path: pathlib.Path) -> Report | None:
         _project_link(emails) or _asf_member_link(first_email),
         _reporter(first_email),
         state,
+        subproject,
         datetime.datetime.fromtimestamp(first_email['mailtime'], tz=datetime.timezone.utc),
     )
 

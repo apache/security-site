@@ -134,7 +134,8 @@ async def project(project: str):
     ]
     return await quart.render_template("project.html",
         project_name=project,
-        sections=sections)
+        sections=sections,
+        show_subproject=project in config.get().pmcs_with_subprojects)
 
 @CLIENT.route("/api/project/<project>/reports")
 async def project_reports_api(project: str):

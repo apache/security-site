@@ -43,6 +43,9 @@ class AppConfig(pydantic.BaseModel):
     pmcs_using_jira: dict[str, str] = {}
     """PMCs that track security issues in (private) Jira issues"""
 
+    pmcs_with_subprojects: list[str] = []
+    """PMCs whose reports are split across subprojects."""
+
     server: ServerConfig = ServerConfig()
 
     @property

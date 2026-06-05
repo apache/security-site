@@ -38,6 +38,9 @@ If you see anything that seems incorrect, email
         <tr>
           <!-- {{ report.security_team_name }} -->
           <td class="reports-date">{{ report.date.strftime('%Y-%m-%d') }}</td>
+          {% if show_subproject %}
+          <td class="reports-subproject">{{ report.subproject or "" }}</td>
+          {% endif %}
           <td class="reports-jira">
             {%- if report.jira -%}
               <a href="https://issues.apache.org/jira/browse/{{report.jira}}">#{{ report.jira.split('-')[-1] }}</a>
