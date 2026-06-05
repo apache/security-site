@@ -27,6 +27,10 @@ currently tracked by the Apache Security Team.
   {% else %}
     Not a PMC member of any project.
   {% endif %}
+  <p>
+    See
+    <a href="{{ url_for('client.statistics_dashboard') }}">project security debt over time</a>{% if current_user.in_security_team %} (all projects){% else %} for your projects{% endif %}.
+  </p>
 {% else %}
 <a href="/auth?login={{ request.path|urlencode }}"
        class="btn btn-secondary btn-sm">log in</a>

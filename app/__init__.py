@@ -17,7 +17,7 @@
 
 """Security issue dashboard for the Apache Software Foundation"""
 
-from app import reports, utils
+from app import reports, statistics, utils
 from app.config import AppConfig
 import asfquart
 import asfquart.auth
@@ -103,6 +103,25 @@ async def _require_authorization_for(project: str) -> None:
     if (not _asf_group_acl(project, pmcs, user.projects)
         and not _asf_group_acl("security", pmcs, user.projects)):
         raise asfquart.auth.AuthenticationFailed(f"You are not a member of the {project} PMC.")
+
+async def _require_authentication() -> utils.UserSession:
+    user = await utils.UserSession.create()
+    if not user.is_authenticated:
+        raise asfquart.auth.AuthenticationFailed(asfquart.auth.Requirements.E_NOT_LOGGED_IN)
+    return user
+
+@CLIENT.route("/statistics")
+async def statistics_dashboard():
+    await _require_authentication()
+    return await quart.render_template("statistics.html")
+
+@CLIENT.route("/api/statistics/debt")
+async def statistics_debt_api():
+    user = await _require_authentication()
+    # security team members see every project; everyone else sees only the
+    # projects they can access (the same set shown on their front page).
+    allowed = None if user.in_security_team else user.accessible_pmcs
+    return quart.jsonify(statistics.compute_debt_chart(pmcs=allowed))
 
 @CLIENT.route("/project/<project>")
 async def project(project: str):

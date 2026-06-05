@@ -1,0 +1,24 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+Project security debt
+{% endblock title %}
+{% block page_title %}
+Project security debt
+{% endblock page_title %}
+
+{% block content %}
+<p>
+This chart shows each project's <b>security debt</b> over the past year, one
+line per project. Debt is the cumulative ages of open issues, plus a constant per open issue.
+</p>
+
+<div id="debt-chart" style="width: 100%; height: 640px;"></div>
+<p id="debt-chart-status"></p>
+{% endblock content %}
+
+{% block javascripts %}
+  {{ super() }}
+  <script src="/assets/js/echarts.min.js"></script>
+  <script src="/assets/js/debt-chart.js"></script>
+{% endblock javascripts %}

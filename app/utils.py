@@ -54,6 +54,10 @@ class UserSession:
             pmcs.append("infra")
         return pmcs
 
+    @property
+    def in_security_team(self) -> bool:
+        return "security" in self.pmcs or "security" in self.projects
+
     @classmethod
     async def create(cls) -> Self:
         client_session = await asfquart.session.read()
