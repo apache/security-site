@@ -73,7 +73,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache HugeGraph](https://hugegraph.apache.org/docs/guides/security) |  [Apache HugeGraph Security Team](mailto:security@hugegraph.apache.org) | [Advisories](https://hugegraph.apache.org/docs/guides/security) |
 | [Apache Iceberg](https://iceberg.apache.org/security/) |  [Apache Iceberg Security Team](mailto:security@iceberg.apache.org) | |
 | [Apache Ignite](https://ignite.apache.org/docs/ignite3/3.1.0/understand/architecture/security#security-model) |  [Apache Ignite Security Team](mailto:security@ignite.apache.org) | |
-| Apache Impala |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Impala](https://github.com/apache/impala/blob/master/SECURITY.md) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache InLong](https://inlong.apache.org/docs/next/security/) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache IoTDB |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Jackrabbit](https://jackrabbit.apache.org/jcr/security-reports.html) |  [Apache Jackrabbit Security Team](mailto:security@jackrabbit.apache.org) | [Advisories](https://jackrabbit.apache.org/jcr/security-reports.html) |
