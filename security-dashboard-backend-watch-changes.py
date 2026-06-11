@@ -9,7 +9,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from gmail_gcloud import gmail_service, history, messages_by_label
 from gmail_gcloud_subscriber import gmail_subscribe
-from gmail_label_cache import refresh_label_cache, get_label_by_name, get_label_by_id, get_labels_by_prefix, validate_label_name
+from gmail_label_cache import refresh_label_cache, get_label_by_name, get_label_by_id, get_labels_by_prefix, validate_label_name, delete_label_file
 import threading
 from optparse import OptionParser
 import os
@@ -150,15 +150,21 @@ if options.single:
         print(f"Refreshing {label}")
         refresh_thread(label)
     else:
-        path = f"{options.target}/{options.single}.json"
-        if os.path.exists(path):
-            print(f"Label {options.single} no longer found upstream, deleting")
-            os.remove(path)
+        if delete_label_file(options.target, options.single):
+            print(f"Label {options.single} no longer found upstream, deleted")
         else:
             print(f"Label {options.single} not found")
 
 elif options.project:
-    refresh_label_cache(options.target)
+    changes = refresh_label_cache(options.target)
+    # Remove files for labels under this project that disappeared upstream.
+    prefix = options.project.rstrip("/")
+    prefix_slash = prefix + "/"
+    for change in changes:
+        old = change['old_name']
+        if change['name'] is None and (old == prefix or old.startswith(prefix_slash)):
+            print(f"Label '{old}' deleted upstream, removing")
+            delete_label_file(options.target, old)
     project_labels = [l for l in get_labels_by_prefix(options.project) if is_thread_label(l['name'])]
     print(f"Refreshing {len(project_labels)} labels under {options.project}")
     for n, label in enumerate(project_labels, 1):

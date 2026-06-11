@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from gmail_gcloud_subscriber import gmail_subscribe
-from gmail_label_cache import refresh_label_cache, validate_label_name
+from gmail_label_cache import refresh_label_cache, validate_label_name, delete_label_file
 from optparse import OptionParser
 import os
 import threading
@@ -22,7 +22,7 @@ def label_updated(labelId, old, new):
     if os.path.isfile(f"{options.target}/{old}.json"):
         if os.path.isfile(f"{options.target}/{new}.json"):
             # likely merged
-            subprocess.run(["git", "rm", "-f", f"{old}.json"], cwd=options.target)
+            delete_label_file(options.target, old)
         else:
             os.makedirs(options.target + '/' + '/'.join(new.split('/')[:-1]), exist_ok=True)
             result = subprocess.run(["git", "mv", f"{old}.json", f"{new}.json"], cwd=options.target)
@@ -39,7 +39,10 @@ def poll_label_changes(interval=10):
         for change in refresh_label_cache(options.target):
             old = change['old_name']
             new = change['name']
-            if old != new:
+            if new is None:
+                print(f"Label '{old}' deleted upstream, removing")
+                delete_label_file(options.target, old)
+            elif old != new:
                 label_updated(change['id'], old, new)
         sleep(interval)
 
