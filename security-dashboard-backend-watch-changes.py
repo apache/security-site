@@ -96,8 +96,9 @@ def refresh_thread(label):
 
     validate_label_name(label['name'])
     os.makedirs(options.target + '/' + '/'.join(label['name'].split('/')[:-1]), exist_ok=True)
+    msgs = messages(label)
     with open(f"{options.target}/{label['name']}.json", "w") as f:
-        json.dump(messages(label), f, indent=2)
+        json.dump(msgs, f, indent=2)
 
 def update_history_records(records):
     labelIds = set()
