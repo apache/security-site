@@ -156,7 +156,7 @@ def load_pmc_report(pmc: str, path: pathlib.Path) -> Report | None:
             state = m.groups()[0]
 
     # the subproject is the word after the leading date or CVE(s)
-    m = re.match(r"(?:(?:CVE-\S+\s+)*CVE-\S+|\d{4}-\d{2}-\d{2})\s+(\S+)", path.name)
+    m = re.match(r"(?:(?:CVE-\S+\s+)*CVE-\S+|\d{4}-\d{2}-\d{2})\s+(\w+)", path.name)
     subproject = m.group(1) if m else None
 
     if not emails:
