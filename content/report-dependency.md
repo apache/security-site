@@ -11,9 +11,10 @@ Practical steps you can take in this situation are:
 
 * Check the projects' public communication channels, such as their website, issue tracker and development mailinglists, to see if the advisory has already been discussed there.
 * Check the projects' current source version control system to see if the dependency has already been upgraded. If so, then you can expect the next release to mitigate this risk.
+* Check the projects' current source version control system to see if automation has already flagged the issue, for example Dependabot opening pull requests on GitHub.
 
 If you cannot find existing information on whether the project is affected by the issue in the advisory, it may be up to you, as a part of the project community, to participate in its handling. Ensure you provide detailed information when starting a discussion - review how the project uses the dependency and have your opinion on the priority to upgrade, or even remove, the dependency. Contributions upgrading the dependency to a version that is not affected by the problem are generally welcomed, though will not typically expedite the release schedule.
 
-If your analysis identifies a broader issue related to the dependencies advisory, please share that information with us with the appropriate level of detail through the private channels described [here](https://security.apache.org/report-code).
+To influence release schedules, please provide a proof-of-concept report that the advisory affects the Apache Software Foundation project in question (not the dependency) through the private channels described [here](https://security.apache.org/report-code). If your analysis identifies other or related issues affecting the project, report these through the private channels.
 
 If you have verified the issue does not impact the project, it is an appreciated contribution if you can share this analysis through the project's public channels, so others can review this work and make their own risk assessment.
