@@ -112,6 +112,8 @@ elif pmc == 'turbine':
     projects = maven_projects(pmc) + maven_projects(pmc, prefix = "org/apache/fulcrum")
 elif pmc == 'wc':
     projects = maven_projects(pmc) + maven_projects(pmc, prefix = "org/apache/wss4j")
+elif pmc == 'ant':
+    projects = maven_projects(pmc) + maven_projects(pmc, prefix = "org/apache/ivy")
 else:
     projects = maven_projects(pmc)
 
