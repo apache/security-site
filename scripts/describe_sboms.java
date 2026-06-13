@@ -1,6 +1,6 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
 
-//DEPS org.cyclonedx:cyclonedx-core-java:8.0.3
+//DEPS org.cyclonedx:cyclonedx-core-java:12.2.0
 //DEPS org.apache.maven:maven-artifact:3.9.9
 
 import java.io.File;
@@ -22,7 +22,6 @@ import java.util.stream.Collectors;
 
 import org.apache.maven.artifact.versioning.ComparableVersion;
 
-import org.cyclonedx.BomGeneratorFactory;
 import org.cyclonedx.CycloneDxSchema;
 import org.cyclonedx.generators.xml.BomXmlGenerator;
 import org.cyclonedx.model.Bom;
