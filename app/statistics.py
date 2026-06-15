@@ -28,12 +28,12 @@ import re
 # issues that have since been closed: <data_dir>/<tree>/<project>/**/*.json
 _CLOSED_TREES = (
     "zzz-resolved",
-    "zzz-non-issues",
+    "zzz-non-issue",
     "archive/zzz-resolved",
-    "archive/zzz-non-issues",
+    "archive/zzz-non-issue",
 )
 # Top-level entries under the data dir that are not themselves projects.
-_NON_PROJECT_DIRS = {"zzz-resolved", "zzz-non-issues", "archive"}
+_NON_PROJECT_DIRS = {"zzz-resolved", "zzz-non-issue", "archive"}
 
 
 @dataclasses.dataclass(frozen=True)
