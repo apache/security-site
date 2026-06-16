@@ -67,7 +67,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Hive](https://hive.apache.org/mailing_lists.html) |  [Apache Hive Security Team](mailto:security@hive.apache.org) | |
 | [Apache Hop](https://hop.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache HttpComponents](https://hc.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache HTTP Server](https://httpd.apache.org/security_report.html) |  [Apache HTTP Server Security Team](mailto:security@httpd.apache.org) | [Advisories](https://httpd.apache.org/security/vulnerabilities_24.html) |
+| [Apache HTTP Server](https://github.com/apache/httpd/blob/trunk/SECURITY.md) |  [Apache HTTP Server Security Team](mailto:security@httpd.apache.org) | [Advisories](https://httpd.apache.org/security/vulnerabilities_24.html) |
 | [Apache Hudi](https://hudi.apache.org/contribute/security) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache HugeGraph](https://hugegraph.apache.org/docs/guides/security) |  [Apache HugeGraph Security Team](mailto:security@hugegraph.apache.org) | [Advisories](https://hugegraph.apache.org/docs/guides/security) |
 | [Apache Iceberg](https://iceberg.apache.org/security/) |  [Apache Iceberg Security Team](mailto:security@iceberg.apache.org) | |
