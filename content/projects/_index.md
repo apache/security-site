@@ -143,7 +143,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Syncope |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://syncope.apache.org/security) |
 | Apache SystemDS |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Tapestry |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Thrift |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Thrift](https://github.com/apache/thrift/blob/master/doc/thrift-threat-model.md) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Tika](https://tika.apache.org/security-model.html) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://tika.apache.org/security.html) |
 | [Apache Tomcat](https://tomcat.apache.org/security.html) |  [Apache Tomcat Security Team](mailto:security@tomcat.apache.org) | [Advisories](https://tomcat.apache.org/security.html) |
 | [Apache Traffic Server](https://github.com/apache/trafficserver/security/policy) |  [Apache Traffic Server Security Team](mailto:security@trafficserver.apache.org) | |
