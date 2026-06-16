@@ -28,7 +28,11 @@ If you see anything that seems incorrect, email
 <h2>Reports</h2>
 {% if sections %}
   {% for title, description, reports in sections %}
-    <h3>{{ title }}</h3>
+    <h3>{{ title }}
+      {% if reports|length > 5 %}
+      ({{ reports|length }})
+      {% endif %}
+    </h3>
     {% if description %}
       <p>{{ description }}</p>
     {% endif %}
