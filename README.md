@@ -38,6 +38,7 @@ canonical locations.
 | TLP                                                                                                               | SBOMs                               | Build       | SBOM Tools | Comments
 | ------------------------------------------------------------------------------------------------------------------| ----------------------------------- | ----------- | ---------- | --------
 | [Airflow](https://airflow.apache.org/)       [:clipboard:](https://projects.apache.org/committee.html?airflow)    | [:mag:](sboms/README.md#airflow)    | pip<br>npm | cdxgen     | [SBOMs publication](https://airflow.apache.org/docs/apache-airflow/stable/security/sbom.html)
+| [Ant](https://ant.apache.org/)               [:clipboard:](https://projects.apache.org/committee.html?ant)        | [:mag:](sboms/README.md#ant)        | Ant       | Apache CycloneDX Antlib |
 | [Arrow](https://arrow.apache.org/)           [:clipboard:](https://projects.apache.org/committee.html?arrow)      | [:mag:](sboms/README.md#arrow)      | Maven<br>... | CDX Maven P | Go? Python?
 | [Avro](https://avro.apache.org/)             [:clipboard:](https://projects.apache.org/committee.html?avro)       | [:mag:](sboms/README.md#avro)       | Maven<br>... | CDX Maven P | Python, C/C++/C#, PHP, ...
 | [Camel](https://camel.apache.org/)           [:clipboard:](https://projects.apache.org/committee.html?camel)      | [:mag:](sboms/README.md#camel)      | Maven     | CDX Maven P |

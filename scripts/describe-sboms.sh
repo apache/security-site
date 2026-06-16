@@ -80,6 +80,8 @@ function describeReleasesFromBaseStrict() {
 
 describeReleasesFromBasedir airflow Airflow - apache-airflow
 
+describeReleasesFromBase ant "CycloneDX Antlib" ant-cyclonedx org.apache.ant -
+
 describeReleasesFromBase arrow Arrow -
 describeReleasesFromBase avro Avro -
 describeReleasesFromBase camel Camel -
