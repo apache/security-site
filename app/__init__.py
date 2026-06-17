@@ -118,10 +118,29 @@ async def statistics_dashboard():
 @CLIENT.route("/api/statistics/debt")
 async def statistics_debt_api():
     user = await _require_authentication()
+
+    requested_pmcs = {
+        pmc.strip()
+        for pmc in quart.request.args.getlist("pmc")
+    }
+
+    if requested_pmcs:
+        for pmc in requested_pmcs:
+            if pmc not in user.accessible_pmcs and not user.in_security_team:
+                quart.abort(403)
+
     # security team members see every project; everyone else sees only the
     # projects they can access (the same set shown on their front page).
-    allowed = None if user.in_security_team else user.accessible_pmcs
-    return quart.jsonify(statistics.compute_debt_chart(pmcs=allowed))
+    if requested_pmcs:
+        pmcs = requested_pmcs
+    elif user.in_security_team:
+        pmcs = None
+    elif user.accessible_pmcs:
+        pmcs = user.accessible_pmcs
+    else:
+        quart.abort(403)
+    now = datetime.datetime.now(tz=datetime.timezone.utc)
+    return quart.jsonify(statistics.compute_debt_chart(now, pmcs=pmcs))
 
 @CLIENT.route("/project/<project>")
 async def project(project: str):

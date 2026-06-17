@@ -43,7 +43,7 @@ class IssueWindow:
     closed: datetime.date | None
 
     def is_open_at(self, when: datetime.date) -> bool:
-        return self.opened <= when and (self.closed is None or self.closed > when)
+        return self.opened <= when and (self.closed is None or when < self.closed)
 
     def debt_at(self, when: datetime.date) -> int:
         """Debt contribution at `when`: days since the issue was opened plus a constant."""
@@ -154,7 +154,7 @@ def _week_end_dates(now: datetime.datetime, weeks: int) -> list[datetime.date]:
 
 
 def compute_debt_chart(
-    now: datetime.datetime | None = None,
+    now: datetime.datetime,
     weeks: int = 2 * 52,
     pmcs: "set[str] | list[str] | None" = None,
 ) -> dict:
@@ -168,8 +168,6 @@ def compute_debt_chart(
     If `pmcs` is given, only those projects are included; otherwise every
     project is included.
     """
-    if now is None:
-        now = datetime.datetime.now(tz=datetime.timezone.utc)
     boundaries = _week_end_dates(now, weeks)
 
     pmc_names = list_pmcs()

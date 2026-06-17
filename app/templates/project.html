@@ -25,6 +25,9 @@ If you see anything that seems incorrect, email
 <a href="mailto:security@apache.org">security@apache.org</a>
 </p>
 
+<div id="debt-chart" style="width: 100%; height: 320px;"></div>
+<p id="debt-chart-status"></p>
+
 <h2>Reports</h2>
 {% if sections %}
   {% for title, description, reports in sections %}
@@ -77,3 +80,9 @@ If you see anything that seems incorrect, email
   <p>No reports.</p>
 {% endif %}
 {% endblock content %}
+
+{% block javascripts %}
+  {{ super() }}
+  <script src="/assets/js/echarts.min.js"></script>
+  <script src="/assets/js/debt-chart.js"></script>
+{% endblock javascripts %}

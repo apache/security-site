@@ -34,7 +34,10 @@
   var chart = echarts.init(el);
   chart.showLoading();
 
-  fetch("/api/statistics/debt", { headers: { Accept: "application/json" } })
+  const match = window.location.pathname.match(/^\/project\/([^/]+)/);
+  const pmc = match ? `?pmc=${match[1]}` : "";
+
+  fetch("/api/statistics/debt" + pmc, { headers: { Accept: "application/json" } })
     .then(function (response) {
       if (!response.ok) {
         throw new Error("HTTP " + response.status);
