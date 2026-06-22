@@ -102,6 +102,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Nutch](https://nutch.apache.org/documentation/security/#security-model) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://nutch.apache.org/documentation/security/#nutch-cve-list) |
 | [Apache NuttX](https://nuttx.apache.org/docs/latest/security.html) |  [Apache NuttX Security Team](mailto:security@nuttx.apache.org) | [Advisories](https://nuttx.apache.org/docs/latest/security.html#nuttx-cves) |
 | [Apache OFBiz](https://ofbiz.apache.org/security.html) |  [Apache OFBiz Security Team](mailto:security@ofbiz.apache.org) | [Advisories](https://ofbiz.apache.org/security.html) |
+| [Apache OpenDAL](https://github.com/apache/opendal/blob/main/SECURITY-THREAT-MODEL.md) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache OpenMeetings](https://openmeetings.apache.org/security.html) |  [Apache OpenMeetings Security Team](mailto:security@openmeetings.apache.org) | |
 | Apache OpenNLP |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache OpenOffice](https://openoffice.apache.org/security) |  [Apache OpenOffice Security Team](mailto:security@openoffice.apache.org) | [Advisories](https://www.openoffice.org/security/bulletin.html) |
