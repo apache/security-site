@@ -16,6 +16,9 @@ Apache Software Foundation produced SBOMs
 ### CycloneDX Antlib
 - 0.1: [1 SBOM](ant/ant-cyclonedx-0.1.md)
 
+### Props Antlib
+- 1.0.0: [1 SBOM](ant/ant-props-1.0.0.md)
+
 ## Arrow
 - 11.0.0: [1 SBOM](arrow/arrow-11.0.0.md)
 - 15.0.2: [1 SBOM](arrow/arrow-15.0.2.md)
