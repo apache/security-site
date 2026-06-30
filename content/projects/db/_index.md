@@ -23,7 +23,22 @@ _Last updated: 2024-01-02T18:36:19.559Z_
 
 ### Affected
 
-* Apache Derby from 10.1.1.0 through 10.16.1.1
+* Apache Derby from 10.1.1.0 through 10.1.3.1
+* Apache Derby from 10.2.1.6 through 10.2.2.0
+* Apache Derby from 10.3.1.4 through 10.3.3.0
+* Apache Derby from 10.4.1.3 through 10.4.2.0
+* Apache Derby from 10.5.1.1 through 10.5.3.0
+* Apache Derby from 10.6.1.0 through 10.6.2.1
+* Apache Derby at 10.7.1.1
+* Apache Derby from 10.8.1.2 through 10.8.3.0
+* Apache Derby at 10.9.1.0
+* Apache Derby from 10.10.1.1 through 10.10.2.0
+* Apache Derby at 10.11.1.1
+* Apache Derby at 10.12.1.1
+* Apache Derby at 10.13.1.1
+* Apache Derby at 10.14.2.0
+* Apache Derby from 10.15.1.3 through 10.15.2.0
+* Apache Derby at 10.16.1.1
 
 
 ### Description

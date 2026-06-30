@@ -324,9 +324,9 @@ _Last updated: 2026-04-03T14:58:52.459Z_
 
 ### Affected
 
-* Apache Camel from 4.10.0 before 4.10.9
-* Apache Camel from 4.14.0 before 4.14.5
-* Apache Camel from 4.15.0 before 4.18.0
+* Apache Camel LevelDB from 3.0.0 before 4.10.9
+* Apache Camel LevelDB from 4.14.0 before 4.14.5
+* Apache Camel LevelDB from 4.15.0 before 4.18.0
 
 
 ### Description

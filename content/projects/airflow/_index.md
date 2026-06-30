@@ -13,6 +13,88 @@ Do you want disclose a potential security issue for Apache Airflow? You can read
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://airflow.apache.org/docs/apache-airflow/stable/security/security_model.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Path traversal in SFTPHook.retrieve_directory allows local file write outside the destination directory via malicious server-supplied directory-entry names ## { #CVE-2026-50203 }
+
+CVE-2026-50203 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50203) [\[CVE json\]](./CVE-2026-50203.cve.json) [\[OSV json\]](./CVE-2026-50203.osv.json)
+
+
+
+_Last updated: 2026-06-17T01:48:06.460Z_
+
+### Affected
+
+* Apache Airflow SFTP provider before 5.8.1
+
+
+### Description
+
+A path traversal in the SFTP provider (`SFTPHook.retrieve_directory` / `SFTPOperator(operation=get)`) let a malicious or compromised remote SFTP server write files outside the configured local destination directory via crafted directory-entry names. No Airflow account is required — the attack surface is any deployment downloading directories from an untrusted SFTP server. Upgrade `apache-airflow-providers-sftp` to 5.8.1 or later.
+
+### References
+* https://github.com/apache/airflow/pull/67985
+* https://lists.apache.org/thread/7f4b284oh44c1n95oq8mh1qc7y1lr9dx
+
+
+### Credits
+* secuholic (finder)
+* Venkatraman Kumar (r3dw0lfsec), Securin (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## Path traversal in GCSToSambaOperator via GCS object names ## { #CVE-2026-49818 }
+
+CVE-2026-49818 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49818) [\[CVE json\]](./CVE-2026-49818.cve.json) [\[OSV json\]](./CVE-2026-49818.osv.json)
+
+
+
+_Last updated: 2026-06-10T17:37:51.189Z_
+
+### Affected
+
+* Apache Airflow Samba provider before 4.12.6
+
+
+### Description
+
+The Apache Airflow Samba provider&#x27;s `GCSToSambaOperator` joined GCS object names to the SMB destination path without a containment check, so an object named with `../` segments resolved a write path outside the configured `destination_path`. An attacker able to write objects into the source GCS bucket — typically an external data producer distinct from the trusted DAG author — could write files to arbitrary locations on the Samba target when the operator ran. Upgrade apache-airflow-providers-samba to 4.12.6 or later, which validates the resolved destination stays within `destination_path`.
+
+### References
+* https://github.com/apache/airflow/pull/67857
+* https://lists.apache.org/thread/3vs0m3p51psgf54tts18d6336g24x3sf
+
+
+### Credits
+* secuholic (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## FTP Provider does not protect FTPS data channel (missing PROT_P) ## { #CVE-2026-49486 }
+
+CVE-2026-49486 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49486) [\[CVE json\]](./CVE-2026-49486.cve.json) [\[OSV json\]](./CVE-2026-49486.osv.json)
+
+
+
+_Last updated: 2026-06-26T07:20:08.333Z_
+
+### Affected
+
+* Apache Airflow FTP provider before 3.15.1
+
+
+### Description
+
+The Apache Airflow FTP provider&#x27;s `FTPSHook.get_conn()` created an `ftplib.FTP_TLS` connection but never called `prot_p()`, so although the control channel was TLS-protected the data channel was transmitted in cleartext. Any deployment using `FTPSHook` or `FTPSFileTransmitOperator` to move files over FTPS exposed file contents and credentials-in-transit to a network attacker able to observe the data connection. Upgrade apache-airflow-providers-ftp to `3.15.1` or later, which issues `PROT P` to encrypt the data channel.
+
+### References
+* https://github.com/apache/airflow/pull/67946
+* https://lists.apache.org/thread/gwnsxlt9hfj5pc543wxtogbnjdn04xj1
+
+
+### Credits
+* Andrew Rukin (Arenadata) (finder)
+* Shubham Raj (remediation developer)
+
+
 ## JWT Token Exposure in KubernetesExecutor Command-Line Arguments ## { #CVE-2026-49298 }
 
 CVE-2026-49298 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49298) [\[CVE json\]](./CVE-2026-49298.cve.json) [\[OSV json\]](./CVE-2026-49298.osv.json)
@@ -520,7 +602,7 @@ _Last updated: 2026-05-29T08:45:19.890Z_
 
 ### Description
 
-Apache Airflow&#x27;s SMTP provider `SmtpHook` called Python&#x27;s `smtplib.SMTP.starttls()` without an SSL context, so no certificate validation was performed on the TLS upgrade. A man-in-the-middle between the Airflow worker and the SMTP server could present a self-signed certificate, complete the STARTTLS upgrade, and capture the SMTP credentials sent during the subsequent `login()` call. Users are advised to upgrade to the `apache-airflow-providers-smtp` version that contains the fix.
+Apache Airflow's SMTP provider `SmtpHook` called Python's `smtplib.SMTP.starttls()` without an SSL context, so no certificate validation was performed on the TLS upgrade. A man-in-the-middle between the Airflow worker and the SMTP server could present a self-signed certificate, complete the STARTTLS upgrade, and capture the SMTP credentials sent during the subsequent `login()` call. Users are advised to upgrade to the `apache-airflow-providers-smtp` version that contains the fix.
 
 ### References
 * https://github.com/apache/airflow/pull/65346
@@ -1194,12 +1276,12 @@ _Last updated: 2026-03-10T18:13:52.941Z_
 
 ### Affected
 
-* Apache Airflow before 3.1.7
+* Apache Airflow from 3.0.0 before 3.1.7
 
 
 ### Description
 
-Apache Airflow versions before 3.1.7, has vulnerability that allows authenticated UI users with permission to one or more specific Dags to view import errors generated by other Dags they did not have access to. <br><br>Users are advised to upgrade to 3.1.7 or later, which resolves this issue
+Apache Airflow versions 3.0.0 - 3.1.7, has vulnerability that allows authenticated UI users with permission to one or more specific Dags to view import errors generated by other Dags they did not have access to. <br><br>Users are advised to upgrade to 3.1.7 or later, which resolves this issue
 
 ### References
 * https://github.com/apache/airflow/pull/60801
@@ -1275,15 +1357,17 @@ _Last updated: 2026-02-24T05:48:09.000Z_
 
 ### Affected
 
-* Apache Airflow before 3.1.6
+* Apache Airflow from 3.0.0 before 3.1.6
+* Apache Airflow before 2.11.1
 
 
 ### Description
 
-In Apache Airflow versions before 3.1.6, the proxies and proxy fields within a Connection may include proxy URLs containing embedded authentication information. These fields were not treated as sensitive by default and therefore were not automatically masked in log output. As a result, when such connections are rendered or printed to logs, proxy credentials embedded in these fields could be exposed.<br><br>Users are recommended to upgrade to 3.1.6 or later, which fixes this issue
+In Apache Airflow versions before 3.1.6, and 2.11.1 the proxies and proxy fields within a Connection may include proxy URLs containing embedded authentication information. These fields were not treated as sensitive by default and therefore were not automatically masked in log output. As a result, when such connections are rendered or printed to logs, proxy credentials embedded in these fields could be exposed.<br><br>Users are recommended to upgrade to 3.1.6 or later for Airflow 3, and 2.11.1 or later for Airflow 2 which fixes this issue
 
 ### References
 * https://lists.apache.org/thread/x6kply4nqd4vc4wgxtm6g9r2tt63s8c5
+* https://github.com/apache/airflow/pull/59688
 
 
 ### Credits

@@ -45,6 +45,7 @@ issue has been fixed in the latest versions of Ambari.
 * robinzeng2015 (reporter)
 * fcgboy (reporter)
 * wk2025 (reporter)
+* Tari from Sangfor Company (reporter)
 
 
 ## XML External Entity (XXE) Vulnerability in Ambari/Oozie ## { #CVE-2025-23195 }

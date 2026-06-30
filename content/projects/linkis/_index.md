@@ -224,6 +224,7 @@ _Last updated: 2024-03-06T13:44:51.798Z_
 In Apache Linkis &lt;=1.4.0, The password is printed to the log when using the Oracle data source of the Linkis data source module.&nbsp;<br>We recommend users upgrade the version of Linkis to version 1.5.0<br>
 
 ### References
+* https://lists.apache.org/thread/5o342chnpyd6rps68ygzfkzycxl998yo
 
 
 ### Credits
@@ -327,10 +328,12 @@ of parameters, an attacker configuring malicious Mysql JDBC parameters in the Da
 
 
 ### References
+* https://lists.apache.org/thread/dxkpwyoxy1jpdwlpqp15zvo0jxn4v729
 
 
 ### Credits
 * Pho3n1x  (reporter)
+*  L0ne1y (reporter)
 
 
 ## Apache Linkis DatasourceManager module has a deserialization command execution ## { #CVE-2023-29216 }
@@ -343,19 +346,21 @@ _Last updated: 2024-07-13T14:57:28.538Z_
 
 ### Affected
 
-* Apache Linkis through 1.3.1
+* Apache Linkis before 1.6.0
 
 
 ### Description
 
 
 
-In Apache Linkis &lt;=1.3.1, because the parameters are not
+In Apache Linkis &lt;=1.5.0, because the parameters are not
 effectively filtered, the attacker uses the MySQL data source and malicious parameters to
 configure a new data source to trigger a deserialization vulnerability, eventually leading to
-remote code execution.<br> Versions of Apache Linkis &lt;= 1.3.0 will be affected.<br>We recommend users upgrade the version of Linkis to version 1.3.2.
+remote code execution.<br> Versions of Apache Linkis &lt;= 
 
-<br>
+1.5.0
+
+ will be affected.<br>We recommend users upgrade the version of Linkis to version 1.6.0.<br>
 
 ### References
 * https://lists.apache.org/thread/18vv0m32oy51nzk8tbz13qdl5569y55l

@@ -138,6 +138,7 @@ _Last updated: 2024-12-06T07:50:42.419Z_
 
 ### References
 * https://lists.apache.org/thread/q0vs5rddx1lho30xnpsrvpzgxqmywnhs
+* https://github.com/apache/mynewt-nimble/commit/4e3ac5b6e7c7df63a594c4ff6839e266b4ccfed9
 
 
 ### Credits
@@ -163,6 +164,8 @@ _Last updated: 2024-12-06T07:50:00.629Z_
 
 ### References
 * https://lists.apache.org/thread/zdb50spojlqbn0yxd866mbzqjt2vpt85
+* https://github.com/apache/mynewt-nimble/commit/3b7a32ea09a3bffaab831ee0ab193a2375fc4df6
+* https://github.com/apache/mynewt-nimble/commit/23d61150ddae4bc8356356d7ef09d816fb89da45
 
 
 ### Credits
@@ -188,6 +191,7 @@ _Last updated: 2024-12-06T07:49:57.242Z_
 
 ### References
 * https://lists.apache.org/thread/7ckxw6481dp68ons627pjcb27c75n0mq
+* https://github.com/apache/mynewt-nimble/commit/f39330866a85fa4de49246e9d21334bc8d14f0a1
 
 
 ### Credits
@@ -213,6 +217,7 @@ _Last updated: 2024-12-06T07:39:45.067Z_
 
 ### References
 * https://lists.apache.org/thread/z8m7jqh54xybf9kz8q2l3tz92zsj7tmz
+* https://github.com/apache/mynewt-nimble/commit/4f75c0b3b466186beff40e8489870c6cee076aaa
 
 
 ### Credits
@@ -242,4 +247,4 @@ Loop with Unreachable Exit Condition ('Infinite Loop') vulnerability in Apache N
 
 
 ### Credits
-* Iván Arce from Quarkslab Vulnerability Reports team (reporter)
+* Baptiste Boyer from Quarkslab Vulnerability Reports team (reporter)

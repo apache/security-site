@@ -64,7 +64,7 @@ advised to configure a strong&nbsp;<code>`druid.auth.authenticator.kerberos.cook
 
 
 ### Credits
-* Luke Smith (smithluke1966@gmail.com) (finder)
+* Luke “Daeda1us” Smith (finder)
 * 1nfocalypse (analyst)
 
 

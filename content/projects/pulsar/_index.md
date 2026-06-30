@@ -187,9 +187,7 @@ Improper input validation in the Pulsar Function Worker allows a malicious authe
 
 ## Timing attack in SASL token signature verification ## { #CVE-2023-51437 }
 
-CVE-2023-51437 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-51437) [\[CVE json\]](./CVE-2023-51437.cve.json) [\[OSV json\]](./CVE-2023-51437.osv.json)
-
-
+CVE-2023-51437 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-51437) [\[CVE json\]](./CVE-2023-51437.cve.json)
 
 _Last updated: 2024-07-22T08:38:34.087Z_
 
@@ -207,6 +205,7 @@ Observable timing discrepancy vulnerability in Apache Pulsar SASL Authentication
 
 ### References
 * https://lists.apache.org/thread/5kgmvvolf5tzp5rz9xjwfg2ncwvqqgl5
+* https://www.openwall.com/lists/oss-security/2024/02/07/1
 
 
 ### Credits

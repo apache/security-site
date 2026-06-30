@@ -53,7 +53,7 @@ _Last updated: 2024-10-14T08:55:23.574Z_
 
 ### Description
 
-<p>** UNSUPPORTED WHEN ASSIGNED ** Improper Authentication vulnerability in Apache Submarine Commons Utils.</p><p>This issue affects Apache Submarine Commons Utils: from 0.8.0.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+<p>** UNSUPPORTED WHEN ASSIGNED ** Improper Authentication vulnerability in Apache Submarine Commons Utils.</p><p>If the user doesn't explicitly set `submarine.auth.default.secret`, a default value will be used.<br></p><p>This issue affects Apache Submarine Commons Utils: from 0.8.0.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
 
 ### References
 * https://github.com/apache/submarine/pull/1125

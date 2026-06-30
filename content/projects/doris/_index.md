@@ -13,6 +13,31 @@ Do you want disclose a potential security issue for Apache Doris? You can read m
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://doris.apache.org/docs/dev/admin-manual/auth/security-overview). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## SQL injection leading the authentication bypass ## { #CVE-2025-66336 }
+
+CVE-2025-66336 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66336) [\[CVE json\]](./CVE-2025-66336.cve.json) [\[OSV json\]](./CVE-2025-66336.osv.json)
+
+
+
+_Last updated: 2026-06-22T06:55:16.362Z_
+
+### Affected
+
+* Apache Doris MCP Server from 0.1.0 before 0.6.1
+
+
+### Description
+
+Apache Doris MCP Server contains a SQL injection vulnerability in a metadata query path. A user-controlled database name is directly interpolated into a SQL query, and the query is executed without passing the caller's authorization context. This may allow an authenticated attacker, or an anonymous attacker if authentication is disabled, to bypass SQL security validation and access metadata outside the intended database scope.<br><br>Affected users are recommended to upgrade to Doris version 0.6.1 or later, which fixes the issue.
+
+### References
+* https://lists.apache.org/thread/4l4v3m7ofwrgp4s4s98pjb5l03fcrzo2
+
+
+### Credits
+* cherno.x. (reporter)
+
+
 ## MCP SQL inject ## { #CVE-2025-66335 }
 
 CVE-2025-66335 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66335) [\[CVE json\]](./CVE-2025-66335.cve.json) [\[OSV json\]](./CVE-2025-66335.osv.json)

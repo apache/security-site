@@ -28,16 +28,90 @@ _Last updated: 2026-02-20T16:45:37.070Z_
 
 ### Description
 
-<b>Authentication Bypass Issue</b><br><br><span style="background-color: rgba(29, 28, 29, 0.04);">If the path does not contain / and contain., authentication is not required.<br><br><b>Expected Normal Request and Response Example</b><br><br><span style="background-color: rgba(29, 28, 29, 0.04);">curl -X POST -H "Content-Type: application/json" -d {\"username\":\"hack2\",\"password\":\"hack\",\"component\":\"CONTROLLER\",\"role\":\"ADMIN\",\"tables\":[],\"permissions\":[],\"usernameWithComponent\":\"hack_CONTROLLER\"} <a target="_blank" rel="nofollow" href="http://{server_ip}:9000/users">http://{server_ip}:9000/users</a><br><br>
-Return: {"code":401,"error":"HTTP 401 Unauthorized"}</span><br><br><br><b>Malicious Request and Response Example</b> <br><br>curl -X POST -H "Content-Type: application/json" -d '{\"username\":\"hack\",\"password\":\"hack\",\"component\":\"CONTROLLER\",\"role\":\"ADMIN\",\"tables\":[],\"permissions\":[],\"usernameWithComponent\":\"hack_CONTROLLER\"}'<b> </b><a target="_blank" rel="nofollow" href="http://{serverip}:9000/users;"><b>http://{serverip}:9000/users;</b></a><b>.</b><br><br>
-Return: {"users":{}}
-<br><br>
- 
 
-A new user gets added bypassing authentication, enabling the user to control Pinot.</span><br><br>
+
+
+
+
+
+<p><b>Authentication Bypass Vulnerability in Apache Pinot (CVE-2024-56325)</b></p>
+<p><br></p>
+<p>Apache Pinot versions prior to <b>1.3.0</b> contain an authentication bypass vulnerability affecting REST endpoints in the Controller and Broker components.</p>
+<p><br></p>
+<p></p><h3><b>Description</b></h3><p></p>
+<p><br></p>
+<p>The vulnerability is caused by improper handling of HTTP request paths containing <b>matrix parameters (;) combined with dot (.) characters</b>. Under certain crafted path conditions (for example, /users;.), the request could be incorrectly classified as an unprotected resource. As a result, authentication checks were skipped.</p>
+<p><br></p>
+<p>This may allow an unauthenticated attacker to invoke protected administrative APIs if the Pinot Controller or Broker endpoints are accessible.</p>
+<p><br></p>
+<p>This issue is classified as:</p>
+<p></p><ul><li>
+<p><b>CWE-288: Authentication Bypass Using an Alternate Path or Channel</b></p>
+</li></ul><p></p>
+<p><br></p>
+<p></p><h3><b>Example</b></h3><p></p>
+<p><br></p>
+<p><b>Expected behavior (authentication enforced):</b></p>
+
+
+<pre><code>curl -X POST -H "Content-Type: application/json" \
+  -d '{"username":"hack2","password":"hack","component":"CONTROLLER","role":"ADMIN","tables":[],"permissions":[],"usernameWithComponent":"hack_CONTROLLER"}' \
+  http://{server_ip}:9000/users</code></pre>
+
+
+<p>Response:</p>
+
+
+<pre><code>{"code":401,"error":"HTTP 401 Unauthorized"}</code></pre>
+
+
+<p><b>Crafted request triggering bypass (pre-1.3.0 only):</b></p>
+
+
+<pre><code>curl -X POST -H "Content-Type: application/json" \
+  -d '{"username":"hack","password":"hack","component":"CONTROLLER","role":"ADMIN","tables":[],"permissions":[],"usernameWithComponent":"hack_CONTROLLER"}' \
+  http://{server_ip}:9000/users;.</code></pre>
+
+
+<p>In vulnerable versions, this request could bypass authentication and succeed.</p>
+<p><br></p>
+<p></p><h3><b>Impact</b></h3><p></p>
+<p><br></p>
+<p>If exploited, an unauthenticated attacker may gain administrative access, including the ability to create users and modify cluster configuration.</p>
+<p><br></p>
+<p>The vulnerability is only exploitable if:</p>
+<p></p><ul><li>
+<p>Authentication is enabled, and</p>
+</li><li>
+<p>Controller or Broker APIs are reachable by the attacker.</p>
+</li></ul><p></p>
+<p><br></p>
+<p></p><h3><b>Affected Versions</b></h3><p></p>
+<p></p><ul><li>
+<p>Apache Pinot versions <b>earlier than 1.3.0</b></p>
+</li></ul><p></p>
+<p><br></p>
+<p></p><h3><b>Fixed Version</b></h3><p></p>
+<p></p><ul><li>
+<p>Apache Pinot <b>1.3.0</b></p>
+</li></ul><p></p>
+<p><br></p>
+<p>The fix ensures matrix parameters are stripped from request paths before evaluating authentication requirements.</p>
+<p><br></p>
+Users are strongly encouraged to upgrade to version 1.3.0 or later.<p></p>
+
+
+
 
 ### References
 * https://lists.apache.org/thread/ksf8qsndr1h66otkbjz2wrzsbw992r8v
+
+
+### Credits
+* 75Acol at Huawei (finder)
+* fcgboy at Huawei (finder)
+* wk2025 at Huawei (finder)
+* leo at Huawei (finder)
 
 
 ## Unauthorized endpoint exposed sensitive information ## { #CVE-2024-39676 }

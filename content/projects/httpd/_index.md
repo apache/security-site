@@ -13,6 +13,293 @@ Do you want disclose a potential security issue for Apache HTTP Server? You can 
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://github.com/apache/httpd/blob/trunk/SECURITY.md). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## mod_http2 denial of service ## { #CVE-2026-49975 }
+
+CVE-2026-49975 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49975) [\[CVE json\]](./CVE-2026-49975.cve.json) [\[OSV json\]](./CVE-2026-49975.osv.json)
+
+
+
+_Last updated: 2026-06-08T15:26:08.775Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.17 through 2.4.67
+
+
+### Description
+
+<p>Memory Allocation with Excessive Size Value vulnerability in Apache HTTP Server's mod_http leads to denial of service via malicious HTTP requests.</p><p>This issue affects Apache HTTP Server: from 2.4.17 through 2.4.67.</p><p><br></p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Quang Luong of Calif.IO in collaboration with OpenAI Codex (finder)
+
+
+## mod_http2 memory corruption when file handles exhausted ## { #CVE-2026-48913 }
+
+CVE-2026-48913 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48913) [\[CVE json\]](./CVE-2026-48913.cve.json) [\[OSV json\]](./CVE-2026-48913.osv.json)
+
+
+
+_Last updated: 2026-06-08T15:24:55.228Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.55 through 2.4.67
+
+
+### Description
+
+<p>Use After Free vulnerability in Apache HTTP Server module mod_http2 when file handles are already exhausted.</p><p>This issue affects Apache HTTP Server: from 2.4.55 through 2.4.67.</p><p><br></p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Sam Lovejoy, IBM X-Force Offensive Research (XOR) (finder)
+
+
+## Heap Underflow in `ap_regname` via Signed Char Overflow ## { #CVE-2026-44631 }
+
+CVE-2026-44631 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44631) [\[CVE json\]](./CVE-2026-44631.cve.json) [\[OSV json\]](./CVE-2026-44631.osv.json)
+
+
+
+_Last updated: 2026-06-08T15:19:26.351Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.67
+
+
+### Description
+
+<p>Buffer Underwrite vulnerability in Apache HTTP Server on crafted regular expressions in the configuration.</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.67.</p><p>Users are recommended to upgrade to version 2.4.68, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Zhenpeng (Leo) Lin at depthfirst (finder)
+* Bartlomiej Dmitruk (finder)
+
+
+## Loop in `proxy_ftp_handler` in mod_proxy_ftp ## { #CVE-2026-44186 }
+
+CVE-2026-44186 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44186) [\[CVE json\]](./CVE-2026-44186.cve.json) [\[OSV json\]](./CVE-2026-44186.osv.json)
+
+
+
+_Last updated: 2026-06-08T15:11:17.549Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.67
+
+
+### Description
+
+<p>Loop with Unreachable Exit Condition ('Infinite Loop') vulnerability in the mod_proxy_ftp module in Apache HTTP Server with an attacker controlled backend FTP server.</p><p>This issue affects undefined: from 2.4.0 through 2.4.67.</p><p>Users are recommended to upgrade to version 2.4.68, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Zhenpeng (Leo) Lin at depthfirst (finder)
+
+
+## Stack Buffer Over-Read in mod_ssl OCSP `send_request` ## { #CVE-2026-44185 }
+
+CVE-2026-44185 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44185) [\[CVE json\]](./CVE-2026-44185.cve.json) [\[OSV json\]](./CVE-2026-44185.osv.json)
+
+
+
+_Last updated: 2026-06-08T15:22:16.097Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.67
+
+
+### Description
+
+<p>Buffer Over-read vulnerability in Apache HTTP Server via outbound OCSP requests to an attacker controlled OCSP server</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.67.</p><p>Users are recommended to upgrade to version 2.4.68, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Zhenpeng (Leo) Lin at depthfirst (finder)
+
+
+## escalation of privilege through expressions in .htaccess in multiple modules ## { #CVE-2026-44119 }
+
+CVE-2026-44119 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44119) [\[CVE json\]](./CVE-2026-44119.cve.json) [\[OSV json\]](./CVE-2026-44119.osv.json)
+
+
+
+_Last updated: 2026-06-08T15:17:34.711Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.67
+
+
+### Description
+
+<p>Improper Privilege Management vulnerability in Apache HTTP Server 2.4.67 and earlier allows local .htaccess authors to read files with the privileges of the httpd user.</p><p>This issue affects Apache HTTP Server: from through 2.4.67.</p><p>Users are recommended to upgrade to version 2.4.68, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Lucian Nitescu (finder)
+* as3617 (@real_as3617) at ENKI Whitehat (finder)
+* Zhang San (finder)
+* Martin Petrák (finder)
+* joaovicdev (finder)
+* Rooting | Lucas Torres (finder)
+* R4mbb of KRsecurity (finder)
+* gggggggga@Xiaomi ShadowBlade Security Lab (finder)
+* NikKrian of H3C Security Center(h3c.com) (finder)
+* lokerxx (finder)
+
+
+## OOB Read in `merge_response_headers` can cause crash ## { #CVE-2026-43951 }
+
+CVE-2026-43951 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-43951) [\[CVE json\]](./CVE-2026-43951.cve.json) [\[OSV json\]](./CVE-2026-43951.osv.json)
+
+
+
+_Last updated: 2026-06-08T15:16:17.975Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.67
+
+
+### Description
+
+<p>Out-of-bounds Read vulnerability in Apache HTTP Server with mod_headers and mod_mime and multiple response languages.</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.67.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Zhenpeng (Leo) Lin at depthfirst (finder)
+
+
+## mod_xml2enc heap overflow ## { #CVE-2026-42536 }
+
+CVE-2026-42536 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-42536) [\[CVE json\]](./CVE-2026-42536.cve.json) [\[OSV json\]](./CVE-2026-42536.osv.json)
+
+
+
+_Last updated: 2026-06-08T15:23:49.951Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.67
+
+
+### Description
+
+<p>Heap-based Buffer Overflow vulnerability in Apache HTTP Server with&nbsp;mod_xml2enc, xml2StartParse, and untrusted content</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.67.</p><p>Users are recommended to upgrade to version 2.4.68, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Zhenpeng (Leo) Lin at depthfirst (finder)
+
+
+## mod_dav_fs protected directory access ## { #CVE-2026-42535 }
+
+CVE-2026-42535 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-42535) [\[CVE json\]](./CVE-2026-42535.cve.json) [\[OSV json\]](./CVE-2026-42535.osv.json)
+
+
+
+_Last updated: 2026-06-08T15:14:54.481Z_
+
+### Affected
+
+* Apache HTTP Server through 2.4.67
+
+
+### Description
+
+A path handling issue in mod_dav_fs in Apache 2.4.67 and earlier&nbsp;allows a WebDAV content author to directly manipulate trusted DAV property databases, potentially causing child process crashes.<br><br>Users are recommended to upgrade to version 2.4.68, which fixes this issue.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Zhenpeng (Leo) Lin at depthfirst (finder)
+
+
+## ProxyPassReverseCookieMap buffer overflow ## { #CVE-2026-34356 }
+
+CVE-2026-34356 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34356) [\[CVE json\]](./CVE-2026-34356.cve.json) [\[OSV json\]](./CVE-2026-34356.osv.json)
+
+
+
+_Last updated: 2026-06-08T15:12:26.477Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.67
+
+
+### Description
+
+<p>Heap-based Buffer Overflow vulnerability in Apache HTTP Server with malicious backend servers and ProxyPassReverseCookie*</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.67.</p><p>Users are recommended to upgrade to version 2.4.68, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Arkadi Vainbrand (finder)
+* depthfirst (depthfirst.com) (finder)
+
+
+## mod_proxy_html buffer overflow ## { #CVE-2026-34355 }
+
+CVE-2026-34355 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34355) [\[CVE json\]](./CVE-2026-34355.cve.json) [\[OSV json\]](./CVE-2026-34355.osv.json)
+
+
+
+_Last updated: 2026-06-08T15:20:36.831Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.67
+
+
+### Description
+
+A buffer overflow in mod_proxy_html in Apache HTTP Server 2.4.67 and earlier allows an attack by an untrusted backend.<br>Users are recommended to upgrade to version 2.4.68, which fixes this issue.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Elhanan Haenel (finder)
+* Junhui Lee (finder)
+
+
 ## mod_proxy_ajp: Heap Over-Read and memory disclosure in  ajp_parse_data() ## { #CVE-2026-34059 }
 
 CVE-2026-34059 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34059) [\[CVE json\]](./CVE-2026-34059.cve.json) [\[OSV json\]](./CVE-2026-34059.osv.json)
@@ -170,6 +457,31 @@ A timing attack against mod_auth_digest in Apache HTTP Server 2.4.66 allows a by
 * Nitescu Lucian (finder)
 
 
+## mod_proxy_ftp XSS ## { #CVE-2026-29170 }
+
+CVE-2026-29170 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-29170) [\[CVE json\]](./CVE-2026-29170.cve.json) [\[OSV json\]](./CVE-2026-29170.osv.json)
+
+
+
+_Last updated: 2026-06-08T15:10:13.886Z_
+
+### Affected
+
+* Apache HTTP Server through 2.4.67
+
+
+### Description
+
+A cross-site scripting vulnerability exists in mod_proxy_ftp's HTML directory list generation in Apache HTTP Server 2.4.67 and earlier when listing FTP directory contents either via forward or reverse proxy configuration.<br><br>Users are recommended to upgrade to version 2.4.68, which fixes this issue.
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Pavel Kohout, Aisle Research, Aisle.com (finder)
+
+
 ## mod_dav_lock indirect lock crash ## { #CVE-2026-29169 }
 
 CVE-2026-29169 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-29169) [\[CVE json\]](./CVE-2026-29169.cve.json) [\[OSV json\]](./CVE-2026-29169.osv.json)
@@ -211,6 +523,31 @@ _Last updated: 2026-05-08T18:04:07.527Z_
 ### Description
 
 <p>Allocation of Resources Without Limits or Throttling vulnerability in Apache HTTP Server's&nbsp; mod_md via OCSP response data.</p><p>This issue affects Apache HTTP Server: from 2.4.30 through 2.4.66.</p><p>Users are recommended to upgrade to version 2.4.67, which fixes the issue.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Pavel Kohout, Aisle Research, Aisle.com (finder)
+
+
+## mod_ldap per-dir use-after-free ## { #CVE-2026-29167 }
+
+CVE-2026-29167 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-29167) [\[CVE json\]](./CVE-2026-29167.cve.json) [\[OSV json\]](./CVE-2026-29167.osv.json)
+
+
+
+_Last updated: 2026-06-08T15:08:08.305Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.0 through 2.4.67
+
+
+### Description
+
+<p>Use After Free vulnerability in Apache HTTP Server with mod_ldap in per-directory configuration</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.67.</p><p>Users are recommended to upgrade to version 2.4.68, which fixes the issue.</p>
 
 ### References
 * https://httpd.apache.org/security/vulnerabilities_24.html
@@ -888,7 +1225,7 @@ _Last updated: 2024-11-18T08:50:42.606Z_
 
 ### Description
 
-SSRF in Apache HTTP Server on Windows allows to potentially leak NTML hashes to a malicious server via SSRF and&nbsp;<span style="background-color: rgb(255, 255, 255);">malicious requests or content </span><br>Users are recommended to upgrade to version 2.4.60 which fixes this issue.&nbsp; Note: Existing configurations that access UNC paths will have to configure new directive "UNCList" to allow access during request processing.
+SSRF in Apache HTTP Server on Windows allows to potentially leak NTLM hashes to a malicious server via SSRF and&nbsp;<span style="background-color: rgb(255, 255, 255);">malicious requests or content </span><br>Users are recommended to upgrade to version 2.4.60 which fixes this issue.&nbsp; Note: Existing configurations that access UNC paths will have to configure new directive "UNCList" to allow access during request processing.
 
 ### References
 * https://httpd.apache.org/security/vulnerabilities_24.html
@@ -925,9 +1262,7 @@ Serving WebSocket protocol upgrades over a HTTP/2 connection could result in a N
 
 ## HTTP/2 DoS by memory exhaustion on endless continuation frames ## { #CVE-2024-27316 }
 
-CVE-2024-27316 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27316) [\[CVE json\]](./CVE-2024-27316.cve.json) [\[OSV json\]](./CVE-2024-27316.osv.json)
-
-
+CVE-2024-27316 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27316) [\[CVE json\]](./CVE-2024-27316.cve.json)
 
 _Last updated: 2024-07-22T08:42:12.197Z_
 
@@ -942,6 +1277,8 @@ HTTP/2 incoming headers exceeding the limit are temporarily buffered in nghttp2 
 
 ### References
 * https://httpd.apache.org/security/vulnerabilities_24.html
+* https://www.openwall.com/lists/oss-security/2024/04/03/16
+* http://www.openwall.com/lists/oss-security/2024/04/04/4
 
 
 ### Credits

@@ -13,6 +13,181 @@ Do you want disclose a potential security issue for Apache Answer? You can read 
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://answer.apache.org/community/security-model). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Unlisted Questions Accessible via Direct API Access ## { #CVE-2026-34905 }
+
+CVE-2026-34905 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34905) [\[CVE json\]](./CVE-2026-34905.cve.json) [\[OSV json\]](./CVE-2026-34905.osv.json)
+
+
+
+_Last updated: 2026-06-09T07:35:55.677Z_
+
+### Affected
+
+* Apache Answer through 2.0.0
+
+
+### Description
+
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.0.</p>The unlisted question feature did not enforce access restrictions on direct API endpoints, allowing authenticated users to discover and access unlisted questions, their answers, comments, and revision history.<br><p>Users are recommended to upgrade to version 2.0.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/khxoft96sptr2kh0cpzgw7f6qwv0ltcf
+
+
+### Credits
+* Hamed Kohi (reporter)
+
+
+## HTML Content Injection in Email ## { #CVE-2026-34033 }
+
+CVE-2026-34033 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34033) [\[CVE json\]](./CVE-2026-34033.cve.json) [\[OSV json\]](./CVE-2026-34033.osv.json)
+
+
+
+_Last updated: 2026-06-09T07:35:14.622Z_
+
+### Affected
+
+* Apache Answer through 2.0.0
+
+
+### Description
+
+<p>Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS) vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.0.</p>User-supplied content was included in notification emails without proper escaping, allowing authenticated users to inject arbitrary HTML into emails sent to other users.<br><p>Users are recommended to upgrade to version 2.0.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/wrfd9blbfotfg479jr8vlwfx6pwr9sgj
+
+
+### Credits
+* Reimar Fritz (reporter)
+
+
+## The custom avatar was not properly validated ## { #CVE-2026-34031 }
+
+CVE-2026-34031 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34031) [\[CVE json\]](./CVE-2026-34031.cve.json) [\[OSV json\]](./CVE-2026-34031.osv.json)
+
+
+
+_Last updated: 2026-06-09T07:34:37.370Z_
+
+### Affected
+
+* Apache Answer through 2.0.0
+
+
+### Description
+
+<p>Unrestricted Upload of File with Dangerous Type vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.0.</p>The server did not sufficiently validate user-supplied image URLs, allowing arbitrary external content to be embedded as profile images, which could expose users to unintended external requests and tracking by third-party servers.<br><p>Users are recommended to upgrade to version 2.0.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/rwtxy39t54to9kv3dqtbjsbdpyk4jkd2
+
+
+### Credits
+* Reimar Fritz (reporter)
+
+
+## Uploading specially crafted TIFF files causes an Out-of-Memory error ## { #CVE-2026-33582 }
+
+CVE-2026-33582 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-33582) [\[CVE json\]](./CVE-2026-33582.cve.json) [\[OSV json\]](./CVE-2026-33582.osv.json)
+
+
+
+_Last updated: 2026-06-09T07:34:00.786Z_
+
+### Affected
+
+* Apache Answer through 2.0.0
+
+
+### Description
+
+<p>Unrestricted Upload of File with Dangerous Type vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.0.</p>A crafted TIFF image could trigger excessive memory allocation during image decoding, allowing an authenticated user to cause the server process to crash.<br><p>Users are recommended to upgrade to version 2.0.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/3sgpx4cwsgpnt66xv3cqvtc8z4st1kbq
+
+
+### Credits
+* Andy Gill, ZephrSec Ltd (reporter)
+
+
+## AdminToken not invalidated after admin deactivation ## { #CVE-2026-25700 }
+
+CVE-2026-25700 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-25700) [\[CVE json\]](./CVE-2026-25700.cve.json) [\[OSV json\]](./CVE-2026-25700.osv.json)
+
+
+
+_Last updated: 2026-06-10T14:56:58.543Z_
+
+### Affected
+
+* Apache Answer through 2.0.0
+
+
+### Description
+
+<p>Improper Restriction of Security Token Assignment vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.0.</p>Previously issued administrative tokens were not invalidated after an administrator account was suspended, deleted, or deactivated, allowing continued access to administrative APIs until the token expired.<br><p>Users are recommended to upgrade to version 2.0.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/ftw52mlxknjm29vo1mnqovj53z2kh96y
+
+
+### Credits
+* Sho Odagiri (reporter)
+
+
+## Authorization Bypass in Timeline API ## { #CVE-2026-25699 }
+
+CVE-2026-25699 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-25699) [\[CVE json\]](./CVE-2026-25699.cve.json) [\[OSV json\]](./CVE-2026-25699.osv.json)
+
+
+
+_Last updated: 2026-06-09T07:33:11.641Z_
+
+### Affected
+
+* Apache Answer through 2.0.0
+
+
+### Description
+
+<p>Exposure of Private Personal Information to an Unauthorized Actor vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.0.</p>Timeline-related APIs lacked proper authorization checks, allowing regular authenticated users to access deleted, private, or unapproved content and its revision history.<br><p>Users are recommended to upgrade to version 2.0.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/c36k4hzwhncqo0qfn5fg57f1gkjhyfv8
+
+
+### Credits
+* Sho Odagiri (reporter)
+
+
+## XSS in AI Answer Rendering ## { #CVE-2026-25688 }
+
+CVE-2026-25688 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-25688) [\[CVE json\]](./CVE-2026-25688.cve.json) [\[OSV json\]](./CVE-2026-25688.osv.json)
+
+
+
+_Last updated: 2026-06-09T07:32:22.140Z_
+
+### Affected
+
+* Apache Answer through 2.0.0
+
+
+### Description
+
+<p>Improper Neutralization of Alternate XSS Syntax vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.0.</p>AI-generated response content was rendered in the browser without proper sanitization, allowing malicious scripts to be executed when the content was viewed.<br><p>Users are recommended to upgrade to version 2.0.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/x42joj43rqb38ms5q60f7bgq3qbo7t5q
+
+
+### Credits
+* Sho Odagiri (reporter)
+
+
 ## Revision API Improper Access Control leads to Information Disclosure ## { #CVE-2026-24735 }
 
 CVE-2026-24735 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24735) [\[CVE json\]](./CVE-2026-24735.cve.json) [\[OSV json\]](./CVE-2026-24735.osv.json)

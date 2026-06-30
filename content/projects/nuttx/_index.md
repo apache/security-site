@@ -101,12 +101,12 @@ the example in release 12.9.0.<br></p>
 ### Credits
 * Chánh Phạm <chanhphamviet@gmail.com> (reporter)
 * Arnout Engelen <engelen@apache.org> (remediation developer)
-* Tomek CEDRO <tomek@cedro.info> (coordinator)
-* Alan Carvalho de Assis <acassis@gmail.com> (remediation reviewer)
-* Alin Jerpelea <jerpelea@gmail.com> (remediation reviewer)
-* Lee, Lup Yuen <luppy@appkaki.com> (remediation reviewer)
-* Xiang Xiao <xiaoxiang781216@gmail.com> (remediation reviewer)
-* JianyuWang <wangjianyu3@xiaomi.com> (remediation reviewer)
+* Tomek CEDRO <cederom@apache.org> (coordinator)
+* Alan Carvalho de Assis <acassis@apache.org> (remediation reviewer)
+* Alin Jerpelea <jerpelea@apache.org> (remediation reviewer)
+* Lup Yuen Lee <lupyuen@apache.org> (remediation reviewer)
+* Xiang Xiao <xiaoxiang@apache.org> (remediation reviewer)
+* Jianyu Wang <wangjianyu3@xiaomi.com> (remediation reviewer)
 
 
 ## tools/bdf-converter: Fix loop termination condition. ## { #CVE-2025-47868 }
@@ -134,10 +134,10 @@ _Last updated: 2026-05-08T13:34:11.805Z_
 ### Credits
 * Chánh Phạm <chanhphamviet@gmail.com> (finder)
 * Nathan Hartman <hartman.nathan@gmail.com> (remediation developer)
-* Tomek CEDRO <tomek@cedro.info> (coordinator)
-* Alan Carvalho de Assis <acassis@gmail.com> (remediation reviewer)
-* Alin Jerpelea <jerpelea@gmail.com> (remediation reviewer)
-* Lee, Lup Yuen <luppy@appkaki.com> (remediation reviewer)
+* Tomek CEDRO <cederom@apache.org> (coordinator)
+* Alan Carvalho de Assis <acassis@apache.org> (remediation reviewer)
+* Alin Jerpelea <jerpelea@apache.org> (remediation reviewer)
+* Lup Yuen Lee <lupyuen@apache.org> (remediation reviewer)
 * Arnout Engelen <engelen@apache.org> (coordinator)
 
 
@@ -167,7 +167,10 @@ _Last updated: 2026-05-08T13:32:43.156Z_
 * Chongqing Lei <leicq@seu.edu.cn> (reporter)
 * Zhen Ling <zhenling@seu.edu.cn> (reporter)
 * Chongqing Lei <leicq@seu.edu.cn> (remediation developer)
-* Tomek CEDRO <tomek@cedro.info> (coordinator)
+* Tomek CEDRO <cederom@apache.org> (coordinator)
+* Lup Yuen Lee <lupyuen@apache.org> (remediation reviewer)
+* Xiang Xiao <xiaoxiang@apache.org> (remediation reviewer)
+* Arnout Engelen <engelen@apache.org> (coordinator)
 
 
 ## malloc, realloc and memalign implementations are vulnerable to integer wrap-arounds ## { #CVE-2021-26461 }
