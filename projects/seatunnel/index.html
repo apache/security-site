@@ -142,18 +142,22 @@
 <li>jiahua huang (reporter)</li>
 </ul>
 <h2 id="CVE-2023-48396">Authentication bypass</h2>
-<p>CVE-2023-48396 <a href="https://cve.org/CVERecord?id=CVE-2023-48396">[CVE]</a> <a href="./CVE-2023-48396.cve.json">[CVE json]</a></p>
+<p>CVE-2023-48396 <a href="https://cve.org/CVERecord?id=CVE-2023-48396">[CVE]</a> <a href="./CVE-2023-48396.cve.json">[CVE json]</a> <a href="./CVE-2023-48396.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-07-30T08:15:30.810Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
-<li>Apache SeaTunnel at 1.0.0</li>
+<li>Apache SeaTunnel Web at 1.0.0</li>
 </ul>
 <h3 id="description-2">Description</h3>
-<p>Web Authentication vulnerability in Apache SeaTunnel.<p>This issue affects Apache SeaTunnel: 1.0.0.</p><p>Users are recommended to upgrade to version 1.0.1, which fixes the issue.</p></p>
+<p>Web Authentication vulnerability in Apache SeaTunnel. <span style="background-color: rgb(255, 255, 255);">Since the jwt key is hardcoded in the application, an attacker can forge
+any token to log in any user.<br><br></span>Attacker can get <span style="background-color: rgb(255, 255, 255);">secret key in <span style="background-color: rgb(255, 255, 255);">/seatunnel-server/seatunnel-app/src/main/resources/application.yml and then create a token.</span></span><br><p>This issue affects Apache SeaTunnel: 1.0.0.</p><p>Users are recommended to upgrade to version 1.0.1, which fixes the issue.</p></p>
 <h3 id="references-2">References</h3>
 <ul>
-<li><a href="https://lists.apache.org/thread/hbwcp33zmgghhhhjhkjlo3g092t3xqf4">https://lists.apache.org/thread/hbwcp33zmgghhhhjhkjlo3g092t3xqf4</a></li>
-<li><a href="https://lists.apache.org/thread/%3CCAFBzuDO=+L_EO=VFD8i5W5AcDOzKLz_ORGJrJxsdxEFjHTBSjQ@mail.gmail.com%3E?%3Cprivate.seatunnel.apache.org%3E">https://lists.apache.org/thread/%3CCAFBzuDO=+L_EO=VFD8i5W5AcDOzKLz_ORGJrJxsdxEFjHTBSjQ@mail.gmail.com%3E?%3Cprivate.seatunnel.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread/1tdxfjksx0vb9gtyt77wlr6rdcy1qwmw">https://lists.apache.org/thread/1tdxfjksx0vb9gtyt77wlr6rdcy1qwmw</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>jiahua huang / Joyh (reporter)</li>
 </ul>
 
   

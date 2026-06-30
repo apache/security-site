@@ -105,14 +105,40 @@
 <p>Do you want disclose a potential security issue for Apache Directory? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-57915">Kerberos Pre-Authentication Bypass</h2>
+<p>CVE-2026-57915 <a href="https://cve.org/CVERecord?id=CVE-2026-57915">[CVE]</a> <a href="./CVE-2026-57915.cve.json">[CVE json]</a> <a href="./CVE-2026-57915.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-26T12:09:53.178Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Kerby before 2.1.2</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>It is possible to bypass the Kerberos pre-authentication check in Apache Kerby by sending a PA-DATA with an unrecognized or unsupported type. Users are recommended to upgrade to version 2.1.2, which fixes this issue.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/1y3glgh3kzwoxo5m2lq504cjlh1dsrfh">https://lists.apache.org/thread/1y3glgh3kzwoxo5m2lq504cjlh1dsrfh</a></li>
+</ul>
+<h2 id="CVE-2026-57914">StackOverflow on parsing deeply nested ASN1 structures</h2>
+<p>CVE-2026-57914 <a href="https://cve.org/CVERecord?id=CVE-2026-57914">[CVE]</a> <a href="./CVE-2026-57914.cve.json">[CVE json]</a> <a href="./CVE-2026-57914.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-26T11:28:25.784Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Kerby before 2.1.2</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>By sending a deeply nested ASN1 structure to a Apache Kerby client or service, it&rsquo;s possible to trigger a StackOverFlow Exception which can lead to denial of service issues. Users are recommended to upgrade to version 2.1.2, which fixes this issue.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/w98h2q8wz0bq97vhz4vf55hqomcb2j1m">https://lists.apache.org/thread/w98h2q8wz0bq97vhz4vf55hqomcb2j1m</a></li>
+</ul>
 <h2 id="CVE-2026-35563">LDAP client implementation does not verify if the server certificate matches the intended LDAP hostname</h2>
 <p>CVE-2026-35563 <a href="https://cve.org/CVERecord?id=CVE-2026-35563">[CVE]</a> <a href="./CVE-2026-35563.cve.json">[CVE json]</a> <a href="./CVE-2026-35563.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-06-01T07:38:34.650Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache Directory LDAP API from 2.0.0 through 2.1.7</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-2">Description</h3>
 <p>It was identified that the LDAP client implementation in version 2.1.7 does not verify if the server certificate matches the intended LDAP
 hostname. While the underlying code validates the certificate chain
 against a trusted authority, the absence of endpoint identification
@@ -121,7 +147,7 @@ improperly accepted. This oversight leaves the connection highly
 vulnerable to server impersonation and complete connection compromise.<div><br></div><div>The
 root cause of this vulnerability lies in the incomplete TLS server
 identity verification within the LDAP client implementation.</div><div><br></div><div>The attacker requires MITM capability on the network to exploit this vulnerability. This attacker must be able to present a certificate trusted by the client&rsquo;s configured trust store.</div><div><br></div><div>The hostname verification has been enforced in the new version of the LDAP API</div></p>
-<h3 id="references">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/5rc2nzqxp1m9wknyf93r8dnp46fhc1nn">https://lists.apache.org/thread/5rc2nzqxp1m9wknyf93r8dnp46fhc1nn</a></li>
 </ul>
@@ -132,13 +158,13 @@ identity verification within the LDAP client implementation.</div><div><br></div
 <h2 id="CVE-2023-25613">LDAP Injection Vulnerability in Apache Kerby</h2>
 <p>CVE-2023-25613 <a href="https://cve.org/CVERecord?id=CVE-2023-25613">[CVE]</a> <a href="./CVE-2023-25613.cve.json">[CVE json]</a> <a href="./CVE-2023-25613.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-01-18T09:14:01.669Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
-<li>Apache Kerby before 2.0.3</li>
+<li>Apache Kerby LDAP Backend before 2.0.3</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>An LDAP Injection vulnerability exists in the LdapIdentityBackend of Apache Kerby before 2.0.3. </p>
-<h3 id="references-1">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/ynz3hhbbq6d980fzpncwbh5jd8mkyt5y">https://lists.apache.org/thread/ynz3hhbbq6d980fzpncwbh5jd8mkyt5y</a></li>
 </ul>
@@ -149,13 +175,13 @@ identity verification within the LDAP client implementation.</div><div><br></div
 <h2 id="CVE-2021-33900">StartTLS and SASL confidentiality protection bypass</h2>
 <p>CVE-2021-33900 <a href="https://cve.org/CVERecord?id=CVE-2021-33900">[CVE]</a> <a href="./CVE-2021-33900.cve.json">[CVE json]</a> <a href="./CVE-2021-33900.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2021-07-26T07:00:11.196Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-4">Affected</h3>
 <ul>
 <li>Apache Directory Studio from unspecified through 2.0.0.v20210213-M16</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-4">Description</h3>
 <p>While investigating DIRSTUDIO-1219 it was noticed that configured StartTLS encryption was not applied when any SASL authentication mechanism (DIGEST-MD5, GSSAPI) was used. While investigating DIRSTUDIO-1220 it was noticed that any configured SASL confidentiality layer was not applied. This issue affects Apache Directory Studio version 2.0.0.v20210213-M16 and prior versions.</p>
-<h3 id="references-2">References</h3>
+<h3 id="references-4">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread.html/rb1dbcc43a5b406e45d335343a1704f4233de613140a01929d102fdc9%40%3Cusers.directory.apache.org%3E">https://lists.apache.org/thread.html/rb1dbcc43a5b406e45d335343a1704f4233de613140a01929d102fdc9%40%3Cusers.directory.apache.org%3E</a></li>
 </ul>

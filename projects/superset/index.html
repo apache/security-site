@@ -297,7 +297,7 @@
 <li>Apache Superset through 4.1.1</li>
 </ul>
 <h3 id="description-10">Description</h3>
-<p>Improper Authorization vulnerability in Apache Superset allows ownership takeover of dashboards, charts or datasets by authenticated users with read permissions.</p><p>This issue affects Apache Superset: through 4.1.1.</p><p>Users are recommended to upgrade to version 4.1.2 or above, which fixes the issue.</p>
+<p>Incorrect Authorization vulnerability in Apache Superset allows ownership takeover of dashboards, charts or datasets by authenticated users with read permissions.</p><p>This issue affects Apache Superset: through 4.1.1.</p><p>Users are recommended to upgrade to version 4.1.2 or above, which fixes the issue.</p>
 <h3 id="references-10">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/k2od03bxnxs6vcp80sr03ywcxl194413">https://lists.apache.org/thread/k2od03bxnxs6vcp80sr03ywcxl194413</a></li>
@@ -883,17 +883,20 @@ process itself. Gaining access to that database should
 <li>NTT DATA (finder)</li>
 </ul>
 <h2 id="CVE-2023-27524">Session validation vulnerability when using provided default SECRET_KEY</h2>
-<p>CVE-2023-27524 <a href="https://cve.org/CVERecord?id=CVE-2023-27524">[CVE]</a> <a href="./CVE-2023-27524.cve.json">[CVE json]</a> <a href="./CVE-2023-27524.osv.json">[OSV json]</a></p>
+<p>CVE-2023-27524 <a href="https://cve.org/CVERecord?id=CVE-2023-27524">[CVE]</a> <a href="./CVE-2023-27524.cve.json">[CVE json]</a></p>
 <p><em>Last updated: 2024-04-08T09:07:29.864Z</em></p>
 <h3 id="affected-43">Affected</h3>
 <ul>
 <li>Apache Superset through 2.0.1</li>
 </ul>
 <h3 id="description-43">Description</h3>
-<p>Session Validation attacks in Apache Superset versions up to and including 2.0.1. Installations that have not altered the default configured SECRET_KEY according to installation instructions allow for an attacker to authenticate and access unauthorized resources. This does not affect Superset administrators who have changed the default value for SECRET_KEY config.</p>
+<p>Session Validation attacks in Apache Superset versions up to and including 2.0.1. Installations that have not altered the default configured SECRET_KEY according to installation instructions allow for an attacker to authenticate and access unauthorized resources. This does not affect Superset administrators who have changed the default value for SECRET_KEY config.<br><br>All superset installations should always set a unique secure random SECRET_KEY. Your SECRET_KEY is used to securely sign all session cookies and encrypting sensitive information on the database.<br>Add a strong SECRET_KEY to your <code>superset_config.py</code> file like:<br><br>SECRET_KEY = &lt;YOUR_OWN_RANDOM_GENERATED_SECRET_KEY&gt;<br><br>Alternatively you can set it with <code>SUPERSET_SECRET_KEY</code> environment variable.<br></p>
 <h3 id="references-43">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/n0ftx60sllf527j7g11kmt24wvof8xyk">https://lists.apache.org/thread/n0ftx60sllf527j7g11kmt24wvof8xyk</a></li>
+<li><a href="https://www.openwall.com/lists/oss-security/2023/04/24/2">https://www.openwall.com/lists/oss-security/2023/04/24/2</a></li>
+<li><a href="https://packetstormsecurity.com/files/172522/Apache-Superset-2.0.0-Authentication-Bypass.html">https://packetstormsecurity.com/files/172522/Apache-Superset-2.0.0-Authentication-Bypass.html</a></li>
+<li><a href="https://packetstormsecurity.com/files/175094/Apache-Superset-2.0.0-Remote-Code-Execution.html">https://packetstormsecurity.com/files/175094/Apache-Superset-2.0.0-Remote-Code-Execution.html</a></li>
 </ul>
 <h3 id="credits-43">Credits</h3>
 <ul>

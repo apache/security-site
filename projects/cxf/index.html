@@ -105,259 +105,466 @@
 <p>Do you want disclose a potential security issue for Apache CXF? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-50645">No restriction on attachment headers per message</h2>
+<p>CVE-2026-50645 <a href="https://cve.org/CVERecord?id=CVE-2026-50645">[CVE]</a> <a href="./CVE-2026-50645.cve.json">[CVE json]</a> <a href="./CVE-2026-50645.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-12T09:06:59.203Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache CXF from 4.2.0 before 4.2.2</li>
+<li>Apache CXF before 4.1.7</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>There is no restriction on the amount of attachment headers that a message can contain when being deserialized by Apache CXF, which can lead to uncontrolled resource consumption or a denial of service attack. Users are recommended to upgrade to versions 4.2.2 or 4.1.7, which fix this issue by imposing a maximum default of 500 attachments per message.<br><br></p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/24zb7cqcvykhwm0j797dmdq25s61mj93">https://lists.apache.org/thread/24zb7cqcvykhwm0j797dmdq25s61mj93</a></li>
+</ul>
+<h2 id="CVE-2026-50634">WS JSON request filter trusts metadata from an unvalidated first signature entry</h2>
+<p>CVE-2026-50634 <a href="https://cve.org/CVERecord?id=CVE-2026-50634">[CVE]</a> <a href="./CVE-2026-50634.cve.json">[CVE json]</a> <a href="./CVE-2026-50634.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-25T06:51:16.599Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache CXF from 4.2.0 before 4.2.2</li>
+<li>Apache CXF from 4.0.0 before 4.1.7</li>
+<li>Apache CXF before 3.6.12</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>A vulnerability in Apache CXF&rsquo;s JwsJsonContainerRequestFilter can be exploited to cause CXF to process metadata that was not authenticated by the accepted signature. This can bypass the application&rsquo;s assumption<br>
+that accepted <code>Content-Type</code> or protected HTTP-header metadata came from a verified signature entry, and may steer downstream JAX-RS entity parsing or signed-header consistency checks. Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fix this issue.<br><br></p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/9nfwh9d3m4kznxrk1mz98hl0jml18k0p">https://lists.apache.org/thread/9nfwh9d3m4kznxrk1mz98hl0jml18k0p</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Mitchell Benjamin / Revamp Studio. (finder)</li>
+</ul>
+<h2 id="CVE-2026-50633">JNDI Injection vulnerability in DispatchMDBMessageListenerImpl</h2>
+<p>CVE-2026-50633 <a href="https://cve.org/CVERecord?id=CVE-2026-50633">[CVE]</a> <a href="./CVE-2026-50633.cve.json">[CVE json]</a> <a href="./CVE-2026-50633.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-25T06:49:37.691Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache CXF from 4.2.0 before 4.2.2</li>
+<li>Apache CXF from 4.0.0 before 4.1.7</li>
+<li>Apache CXF before 3.6.12</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>A JNDI Injection vulnerability has been discovered in Apache CXF&rsquo;s JCA integration module, which can allow for code execution, if an attacker is able to manipulate the JCA deployment descriptor (ra.xml) or runtime activation parameters. Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/1czhgovkgzdkyp3t61wthn0foogh2grf">https://lists.apache.org/thread/1czhgovkgzdkyp3t61wthn0foogh2grf</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Venkatraman Kumar (r3dw0lfsec), Securin (finder)</li>
+</ul>
+<h2 id="CVE-2026-50632">JNDI Injection Vulnerability in JMSConfigFactory</h2>
+<p>CVE-2026-50632 <a href="https://cve.org/CVERecord?id=CVE-2026-50632">[CVE]</a> <a href="./CVE-2026-50632.cve.json">[CVE json]</a> <a href="./CVE-2026-50632.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-25T06:47:58.029Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache CXF from 4.2.0 before 4.2.2</li>
+<li>Apache CXF from 4.0.0 before 4.1.7</li>
+<li>Apache CXF before 3.6.12</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>A further incomplete fix for a previous advisory CVE-2026-44417 (Untrusted JMS configuration can lead to RCE) for Apache CXF has been identified, which can allow code execution capabilities, if untrusted users are allowed to configure JMS for Apache CXF. Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue. <br></p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/740ghch5z5y675cn2kzgtyo5k37n6qcw">https://lists.apache.org/thread/740ghch5z5y675cn2kzgtyo5k37n6qcw</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Venkatraman Kumar (r3dw0lfsec), Securin (finder)</li>
+</ul>
+<h2 id="CVE-2026-50631">OAuth2: TOCTOU Race Condition in Refresh Token Processing</h2>
+<p>CVE-2026-50631 <a href="https://cve.org/CVERecord?id=CVE-2026-50631">[CVE]</a> <a href="./CVE-2026-50631.cve.json">[CVE json]</a> <a href="./CVE-2026-50631.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-25T06:40:52.934Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache CXF from 4.2.0 before 4.2.2</li>
+<li>Apache CXF from 4.0.0 before 4.1.7</li>
+<li>Apache CXF before 3.6.12</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>A race condition in AbstractOAuthDataProvider allows concurrent requests using the same Refresh Token to bypass single-use semantics and generate multiple valid Access Tokens, when &lsquo;recycleRefreshTokens&rsquo; is set to false. A leaked refresh token can be replayed concurrently by multiple attackers or threads. Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.<br></p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/s83t3x4r626o9h8rt0ryr1w7w53l1vv8">https://lists.apache.org/thread/s83t3x4r626o9h8rt0ryr1w7w53l1vv8</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Guanping Zhang reported this vulnerability. (finder)</li>
+</ul>
+<h2 id="CVE-2026-50630">OAuth2: HTTP Response Splitting via WWW-Authenticate Realm Injection</h2>
+<p>CVE-2026-50630 <a href="https://cve.org/CVERecord?id=CVE-2026-50630">[CVE]</a> <a href="./CVE-2026-50630.cve.json">[CVE json]</a> <a href="./CVE-2026-50630.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-25T06:42:38.758Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache CXF from 4.2.0 before 4.2.2</li>
+<li>Apache CXF from 4.0.0 before 4.1.7</li>
+<li>Apache CXF before 3.6.12</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>A CRLF injection vulnerability exists in the OAuth2 AuthorizationUtils class. When constructing the WWW-Authenticate response header, the &lsquo;realm&rsquo; parameter is concatenated without sanitizing Carriage Return (CR) and Line Feed (LF) characters. If an attacker can control the realm value, they can inject arbitrary HTTP headers or split the HTTP response entirely. Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.<br></p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/bt7vnjzzkpd6vdhkxv103poor1jy5trm">https://lists.apache.org/thread/bt7vnjzzkpd6vdhkxv103poor1jy5trm</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Guanping Zhang reported this vulnerability. (finder)</li>
+</ul>
+<h2 id="CVE-2026-50629">OAuth2: Log Injection via Unsanitized Client Identifier</h2>
+<p>CVE-2026-50629 <a href="https://cve.org/CVERecord?id=CVE-2026-50629">[CVE]</a> <a href="./CVE-2026-50629.cve.json">[CVE json]</a> <a href="./CVE-2026-50629.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-25T06:43:46.623Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache CXF from 4.2.0 before 4.2.2</li>
+<li>Apache CXF from 4.0.0 before 4.1.7</li>
+<li>Apache CXF before 3.6.12</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>The &lsquo;clientId&rsquo; parameter from incoming HTTP requests is directly concatenated into OAuth2 server log warning messages without sanitizing control characters. This allows an attacker to inject arbitrary content, including fake log entries, into the server&rsquo;s log files. Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.<br></p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/xw95po30p8th58ms1no6b0f2375cql00">https://lists.apache.org/thread/xw95po30p8th58ms1no6b0f2375cql00</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Guanping Zhang reported this vulnerability. (finder)</li>
+</ul>
+<h2 id="CVE-2026-50628">OAuth2: Inverted IP Binding Check Defeats Security Control</h2>
+<p>CVE-2026-50628 <a href="https://cve.org/CVERecord?id=CVE-2026-50628">[CVE]</a> <a href="./CVE-2026-50628.cve.json">[CVE json]</a> <a href="./CVE-2026-50628.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-25T06:38:43.915Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache CXF from 4.2.0 before 4.2.2</li>
+<li>Apache CXF from 4.0.0 before 4.1.7</li>
+<li>Apache CXF before 3.6.12</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>A logic error in OAuthRequestFilter rejects legitimate requests originating from the bound IP address, while blindly allowing requests from any other IP address. Enabling this<br>
+security feature inadvertently creates an inverse security check. Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.<br></p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/vb3ho8lf228gh90m1fpnohf2008xrdxk">https://lists.apache.org/thread/vb3ho8lf228gh90m1fpnohf2008xrdxk</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>Guanping Zhang reported this vulnerability (finder)</li>
+</ul>
+<h2 id="CVE-2026-50627">OAuth2: Missing JWT Audience and Issuer Validation in Access Token Validator</h2>
+<p>CVE-2026-50627 <a href="https://cve.org/CVERecord?id=CVE-2026-50627">[CVE]</a> <a href="./CVE-2026-50627.cve.json">[CVE json]</a> <a href="./CVE-2026-50627.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-25T06:36:34.767Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache CXF from 4.2.0 before 4.2.2</li>
+<li>Apache CXF from 4.0.0 before 4.1.7</li>
+<li>Apache CXF before 3.6.12</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>The JwtAccessTokenValidator class in Apache CXF fails to validate the &lsquo;aud&rsquo; (Audience) claims of incoming JWT access tokens. This allows a JWT issued for one Resource Server to be successfully replayed against a completely different Resource Server, leading to Token Confusion/Routing attacks. Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.<br></p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/0jfzz9q992957b99tw7hodcqjfyxwb1m">https://lists.apache.org/thread/0jfzz9q992957b99tw7hodcqjfyxwb1m</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>Guanping Zhang reported this vulnerability. (finder)</li>
+</ul>
+<h2 id="CVE-2026-50623">Authentication Bypass in OAuth2 TokenIntrospectionService</h2>
+<p>CVE-2026-50623 <a href="https://cve.org/CVERecord?id=CVE-2026-50623">[CVE]</a> <a href="./CVE-2026-50623.cve.json">[CVE json]</a> <a href="./CVE-2026-50623.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-25T06:34:24.353Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache CXF from 4.2.0 before 4.2.2</li>
+<li>Apache CXF from 4.0.0 before 4.1.7</li>
+<li>Apache CXF before 3.6.12</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>An authentication bypass vulnerability exists in the OAuth2 TokenIntrospectionService in Apache CXF. Due to a missing &rsquo;throw&rsquo; keyword in the security context check, the introspection endpoint (/services/oauth2/introspect) can be accessed by any unauthenticated network attacker. However note that this is a safeguard only in the case that someone forgot to enable authentication on the service. Users are recommended to upgrade to version 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.<br><br></p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/ydzj8m5mqmjy13xgyj9mkk9hfff63qq7">https://lists.apache.org/thread/ydzj8m5mqmjy13xgyj9mkk9hfff63qq7</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>Guanping Zhang reported this vulnerability. (finder)</li>
+</ul>
+<h2 id="CVE-2026-49875">XML External Entity (XXE) Injection in W3CMultiSchemaFactory and EndpointReferenceUtils</h2>
+<p>CVE-2026-49875 <a href="https://cve.org/CVERecord?id=CVE-2026-49875">[CVE]</a> <a href="./CVE-2026-49875.cve.json">[CVE json]</a> <a href="./CVE-2026-49875.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-25T06:58:56.041Z</em></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache CXF from 4.2.0 before 4.2.2</li>
+<li>Apache CXF from 4.0.0 before 4.1.7</li>
+<li>Apache CXF before 3.6.12</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<p>Apache CXF&rsquo;s EndpointReferenceUtils and W3CMultiSchemaFactory classes construct a SAXParserFactory without the necessary JAXP hardening configurations, enabling out-of-band (OOB)
+external entity resolution. Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fix this issue.<br><br></p>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/3kb9w5bg90xcp06fccoz9k3gpsvyy79o">https://lists.apache.org/thread/3kb9w5bg90xcp06fccoz9k3gpsvyy79o</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>Venkatraman Kumar (r3dw0lfsec), Securin (finder)</li>
+</ul>
 <h2 id="CVE-2026-44930">LDAP Injection vulnerability in XKMS LDAP Repository</h2>
 <p>CVE-2026-44930 <a href="https://cve.org/CVERecord?id=CVE-2026-44930">[CVE]</a> <a href="./CVE-2026-44930.cve.json">[CVE json]</a> <a href="./CVE-2026-44930.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-22T12:16:45.335Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-11">Affected</h3>
 <ul>
 <li>Apache CXF from 4.2.0 before 4.2.1</li>
 <li>Apache CXF from 4.0.0 before 4.1.6</li>
 <li>Apache CXF before 3.6.11</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-11">Description</h3>
 <p>An LDAP injection vulnerability in the LDAP Certificate repository of the XKMS server in Apache CXF may allow an attacker to retrieve arbitrary certificates from the repository. <br>Users are recommended to upgrade to versions 4.2.1, 4.1.6 or 3.6.11, which fix this issue.</p>
-<h3 id="references">References</h3>
+<h3 id="references-11">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/c1zqxppo1m5z3kbdhjn5p991zk09ynkh">https://lists.apache.org/thread/c1zqxppo1m5z3kbdhjn5p991zk09ynkh</a></li>
 </ul>
 <h2 id="CVE-2026-44618">XXE vulnerability in WS-Transfer functionality</h2>
 <p>CVE-2026-44618 <a href="https://cve.org/CVERecord?id=CVE-2026-44618">[CVE]</a> <a href="./CVE-2026-44618.cve.json">[CVE json]</a> <a href="./CVE-2026-44618.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-22T12:17:12.799Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-12">Affected</h3>
 <ul>
 <li>Apache CXF from 4.2.0 before 4.2.1</li>
 <li>Apache CXF from 4.0.0 before 4.1.6</li>
 <li>Apache CXF before 3.6.11</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-12">Description</h3>
 <p>Insecure XML parser configuration in Apache CXF&rsquo;s WS-Transfer module may allow attackers to perform XXE attacks.<br>Users are recommended to upgrade to versions 4.2.1, 4.1.6 or 3.6.11, which fix this issue.</p>
-<h3 id="references-1">References</h3>
+<h3 id="references-12">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/c7vb015f8ljmjl44030mn0yfq71f7sd7">https://lists.apache.org/thread/c7vb015f8ljmjl44030mn0yfq71f7sd7</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-10">Credits</h3>
 <ul>
 <li>Credit to IcySun (<a href="mailto:icysun@qq.com">icysun@qq.com</a>), 广东东方思维科技有限公司 (finder)</li>
 </ul>
 <h2 id="CVE-2026-44417">Incomplete fix for CVE-2025-48913 (Untrusted JMS configuration can lead to RCE)</h2>
 <p>CVE-2026-44417 <a href="https://cve.org/CVERecord?id=CVE-2026-44417">[CVE]</a> <a href="./CVE-2026-44417.cve.json">[CVE json]</a> <a href="./CVE-2026-44417.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-22T12:17:23.985Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-13">Affected</h3>
 <ul>
 <li>Apache CXF from 4.2.0 before 4.2.1</li>
 <li>Apache CXF from 4.0.0 before 4.1.6</li>
 <li>Apache CXF before 3.6.11</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-13">Description</h3>
 <p>The fix for CVE-2025-48913: Apache CXF: Untrusted JMS configuration can lead to RCE was not complete, meaning that another path in the code might lead to code execution capabilities, if untrusted users are allowed to configure JMS for Apache CXF. <br>Users are recommended to upgrade to versions 4.2.1, 4.1.6 or 3.6.11, which fix this issue.</p>
-<h3 id="references-2">References</h3>
+<h3 id="references-13">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/bqg6gjy2cx7rfyqjxcpv3jwjvmclvz4o">https://lists.apache.org/thread/bqg6gjy2cx7rfyqjxcpv3jwjvmclvz4o</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-11">Credits</h3>
 <ul>
 <li>Github / twitter - <a href="https://github.com/exploitintel">https://github.com/exploitintel</a> / @exploit_intel (finder)</li>
 </ul>
 <h2 id="CVE-2025-48913">Untrusted JMS configuration can lead to RCE</h2>
 <p>CVE-2025-48913 <a href="https://cve.org/CVERecord?id=CVE-2025-48913">[CVE]</a> <a href="./CVE-2025-48913.cve.json">[CVE json]</a> <a href="./CVE-2025-48913.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-08-08T09:21:18.803Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-14">Affected</h3>
 <ul>
 <li>Apache CXF from 4.1.0 before 4.1.3</li>
 <li>Apache CXF from 4.0.0 before 4.0.9</li>
 <li>Apache CXF before 3.6.8</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-14">Description</h3>
 <p>If untrusted users are allowed to configure JMS for Apache CXF, previously they could use RMI or LDAP URLs, potentially leading to code execution capabilities.  This interface is now restricted to reject those protocols, removing this possibility.<br><br>Users are recommended to upgrade to versions 3.6.8, 4.0.9 or 4.1.3, which fix this issue.</p>
-<h3 id="references-3">References</h3>
+<h3 id="references-14">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/f1nv488ztc0js4g5ml2v88mzkzslyh83">https://lists.apache.org/thread/f1nv488ztc0js4g5ml2v88mzkzslyh83</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-12">Credits</h3>
 <ul>
 <li>M Bhatt (r34p3r) OWASP GenAI Security Project &amp; Blake Gatto (b1oo) Shrewd Research (finder)</li>
 </ul>
 <h2 id="CVE-2025-48795">Denial of Service and sensitive data exposure in logs</h2>
 <p>CVE-2025-48795 <a href="https://cve.org/CVERecord?id=CVE-2025-48795">[CVE]</a> <a href="./CVE-2025-48795.cve.json">[CVE json]</a> <a href="./CVE-2025-48795.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-07-15T14:26:43.340Z</em></p>
-<h3 id="affected-4">Affected</h3>
+<h3 id="affected-15">Affected</h3>
 <ul>
 <li>Apache CXF from 3.5.10 before 3.5.11</li>
 <li>Apache CXF from 3.6.5 before 3.6.6</li>
 <li>Apache CXF from 4.0.6 before 4.0.7</li>
 <li>Apache CXF from 4.1.0 before 4.1.1</li>
 </ul>
-<h3 id="description-4">Description</h3>
+<h3 id="description-15">Description</h3>
 <p>Apache CXF stores large stream based messages as temporary files on the local filesystem. A bug was introduced which means that the entire temporary file is read into memory and then logged. An attacker might be able to exploit this to cause a denial of service attack by causing an out of memory exception. In addition, it is possible to configure CXF to encrypt temporary files to prevent sensitive credentials from being cached unencrypted on the local filesystem, however this bug means that the cached files are written out to logs unencrypted.<br><br>Users are recommended to upgrade to versions 3.5.11, 3.6.6, 4.0.7 or 4.1.1, which fixes this issue.</p>
-<h3 id="references-4">References</h3>
+<h3 id="references-15">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/vo5qv02mvv5plmb6z2xf1ktjmrpv3jmn">https://lists.apache.org/thread/vo5qv02mvv5plmb6z2xf1ktjmrpv3jmn</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits-13">Credits</h3>
 <ul>
 <li>MAUGIN Thomas <a href="https://github.com/Thom-x">https://github.com/Thom-x</a>, Qlik (finder)</li>
 </ul>
 <h2 id="CVE-2025-23184">Denial of Service vulnerability with temporary files</h2>
 <p>CVE-2025-23184 <a href="https://cve.org/CVERecord?id=CVE-2025-23184">[CVE]</a> <a href="./CVE-2025-23184.cve.json">[CVE json]</a> <a href="./CVE-2025-23184.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-01-21T09:35:35.654Z</em></p>
-<h3 id="affected-5">Affected</h3>
+<h3 id="affected-16">Affected</h3>
 <ul>
 <li>Apache CXF before 3.5.10</li>
 <li>Apache CXF from 3.6.0 before 3.6.5</li>
 <li>Apache CXF from 4.0.0 before 4.0.6</li>
 </ul>
-<h3 id="description-5">Description</h3>
+<h3 id="description-16">Description</h3>
 <p>A potential denial of service vulnerability is present in versions of Apache CXF before 3.5.10, 3.6.5 and 4.0.6. In some edge cases, the CachedOutputStream instances may not be closed and, if backed by temporary files, may fill up the file system (it applies to servers and clients).<br><br></p>
-<h3 id="references-5">References</h3>
+<h3 id="references-16">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/lfs8l63rnctnj2skfrxyys7v8fgnt122">https://lists.apache.org/thread/lfs8l63rnctnj2skfrxyys7v8fgnt122</a></li>
 </ul>
 <h2 id="CVE-2024-41172">Unrestricted memory consumption in CXF HTTP clients</h2>
 <p>CVE-2024-41172 <a href="https://cve.org/CVERecord?id=CVE-2024-41172">[CVE]</a> <a href="./CVE-2024-41172.cve.json">[CVE json]</a> <a href="./CVE-2024-41172.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-07-19T08:50:42.522Z</em></p>
-<h3 id="affected-6">Affected</h3>
+<h3 id="affected-17">Affected</h3>
 <ul>
 <li>Apache CXF from 3.6.0, 4.0.0 before 3.6.4, 4.0.5</li>
 </ul>
-<h3 id="description-6">Description</h3>
+<h3 id="description-17">Description</h3>
 <p>In versions of Apache CXF before 3.6.4 and 4.0.5 (3.5.x and lower versions are not impacted), a CXF HTTP client conduit may prevent HTTPClient instances from being garbage collected and it is possible that memory consumption will continue to increase, eventually causing the application to run  out of memory<br></p>
-<h3 id="references-6">References</h3>
+<h3 id="references-17">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/n2hvbrgwpdtcqdccod8by28ynnolybl6">https://lists.apache.org/thread/n2hvbrgwpdtcqdccod8by28ynnolybl6</a></li>
 </ul>
 <h2 id="CVE-2024-32007">Apache CXF Denial of Service vulnerability in JOSE</h2>
 <p>CVE-2024-32007 <a href="https://cve.org/CVERecord?id=CVE-2024-32007">[CVE]</a> <a href="./CVE-2024-32007.cve.json">[CVE json]</a> <a href="./CVE-2024-32007.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-07-19T08:50:30.464Z</em></p>
-<h3 id="affected-7">Affected</h3>
+<h3 id="affected-18">Affected</h3>
 <ul>
 <li>Apache CXF before 4.0.5, 3.6.4, 3.5.9</li>
 </ul>
-<h3 id="description-7">Description</h3>
+<h3 id="description-18">Description</h3>
 <p>An improper input validation of the p2c parameter in the Apache CXF JOSE code before 4.0.5, 3.6.4 and 3.5.9 allows an attacker to perform a denial of service attack by specifying a large value for this parameter in a token. <br></p>
-<h3 id="references-7">References</h3>
+<h3 id="references-18">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/stwrgsr1llb73nkl16klv9vjqgmmx633">https://lists.apache.org/thread/stwrgsr1llb73nkl16klv9vjqgmmx633</a></li>
 </ul>
-<h3 id="credits-4">Credits</h3>
+<h3 id="credits-14">Credits</h3>
 <ul>
 <li>Jingcheng Yang and Jianjun Chen from Sichuan University and Zhongguancun Lab. (finder)</li>
 </ul>
 <h2 id="CVE-2024-29736">SSRF vulnerability via WADL stylesheet parameter</h2>
 <p>CVE-2024-29736 <a href="https://cve.org/CVERecord?id=CVE-2024-29736">[CVE]</a> <a href="./CVE-2024-29736.cve.json">[CVE json]</a> <a href="./CVE-2024-29736.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-07-19T08:50:06.520Z</em></p>
-<h3 id="affected-8">Affected</h3>
+<h3 id="affected-19">Affected</h3>
 <ul>
 <li>Apache CXF before 3.5.9, 3.6.4, 4.0.5</li>
 </ul>
-<h3 id="description-8">Description</h3>
+<h3 id="description-19">Description</h3>
 <p>A SSRF vulnerability in WADL service description in versions of Apache CXF before 4.0.5, 3.6.4 and 3.5.9 allows an attacker to perform SSRF style attacks on REST webservices. The attack only applies if a custom stylesheet parameter is configured.</p>
-<h3 id="references-8">References</h3>
+<h3 id="references-19">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/4jtpsswn2r6xommol54p5mg263ysgdw2">https://lists.apache.org/thread/4jtpsswn2r6xommol54p5mg263ysgdw2</a></li>
 </ul>
-<h3 id="credits-5">Credits</h3>
+<h3 id="credits-15">Credits</h3>
 <ul>
 <li>Tobias S. Fink (finder)</li>
 </ul>
 <h2 id="CVE-2024-28752">Apache CXF SSRF Vulnerability using the Aegis databinding</h2>
 <p>CVE-2024-28752 <a href="https://cve.org/CVERecord?id=CVE-2024-28752">[CVE]</a> <a href="./CVE-2024-28752.cve.json">[CVE json]</a> <a href="./CVE-2024-28752.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-03-15T10:28:02.596Z</em></p>
-<h3 id="affected-9">Affected</h3>
+<h3 id="affected-20">Affected</h3>
 <ul>
 <li>Apache CXF before 4.0.4, 3.6.3, 3.5.8</li>
 </ul>
-<h3 id="description-9">Description</h3>
+<h3 id="description-20">Description</h3>
 <p>A SSRF vulnerability using the Aegis DataBinding in versions of Apache CXF before 4.0.4, 3.6.3 and 3.5.8 allows an attacker to perform SSRF style attacks on webservices that take at least one parameter of any type. Users of other data bindings (including the default databinding) are not impacted.<br><br></p>
-<h3 id="references-9">References</h3>
+<h3 id="references-20">References</h3>
 <ul>
 <li><a href="https://cxf.apache.org/security-advisories.data/CVE-2024-28752.txt">https://cxf.apache.org/security-advisories.data/CVE-2024-28752.txt</a></li>
 </ul>
-<h3 id="credits-6">Credits</h3>
+<h3 id="credits-16">Credits</h3>
 <ul>
 <li>Tobias S. Fink (finder)</li>
 </ul>
 <h2 id="CVE-2022-46364">Apache CXF SSRF Vulnerability</h2>
 <p>CVE-2022-46364 <a href="https://cve.org/CVERecord?id=CVE-2022-46364">[CVE]</a> <a href="./CVE-2022-46364.cve.json">[CVE json]</a> <a href="./CVE-2022-46364.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-12-13T15:44:20.951Z</em></p>
-<h3 id="affected-10">Affected</h3>
+<h3 id="affected-21">Affected</h3>
 <ul>
 <li>Apache CXF before 3.5.5</li>
 <li>Apache CXF before 3.4.10</li>
 </ul>
-<h3 id="description-10">Description</h3>
+<h3 id="description-21">Description</h3>
 <p>A SSRF vulnerability in parsing the href attribute of XOP:Include in MTOM requests in versions of Apache CXF before 3.5.5 and 3.4.10 allows an attacker to perform SSRF style attacks on webservices that take at least one parameter of any type. </p>
-<h3 id="references-10">References</h3>
+<h3 id="references-21">References</h3>
 <ul>
 <li><a href="https://cxf.apache.org/security-advisories.data/CVE-2022-46364.txt?version=1&amp;modificationDate=1670944472739&amp;api=v2">https://cxf.apache.org/security-advisories.data/CVE-2022-46364.txt?version=1&amp;modificationDate=1670944472739&amp;api=v2</a></li>
 </ul>
-<h3 id="credits-7">Credits</h3>
+<h3 id="credits-17">Credits</h3>
 <ul>
 <li>thanat0s from Beijin Qihoo 360 adlab (finder)</li>
 </ul>
 <h2 id="CVE-2022-46363">Apache CXF directory listing / code exfiltration</h2>
 <p>CVE-2022-46363 <a href="https://cve.org/CVERecord?id=CVE-2022-46363">[CVE]</a> <a href="./CVE-2022-46363.cve.json">[CVE json]</a> <a href="./CVE-2022-46363.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-12-13T14:47:26.050Z</em></p>
-<h3 id="affected-11">Affected</h3>
+<h3 id="affected-22">Affected</h3>
 <ul>
 <li>Apache CXF from 3.5 before 3.5.5</li>
 <li>Apache CXF from 3.4 before 3.4.10</li>
 </ul>
-<h3 id="description-11">Description</h3>
+<h3 id="description-22">Description</h3>
 <p>A vulnerability in Apache CXF before versions 3.5.5 and 3.4.10 allows an attacker to perform a remote directory listing or code exfiltration. The vulnerability only applies when the CXFServlet is configured with both the static-resources-list and redirect-query-check attributes. These attributes are not supposed to be used together, and so the vulnerability can only arise if the CXF service is misconfigured.<br><br></p>
-<h3 id="references-11">References</h3>
+<h3 id="references-22">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/pdzo1qgyplf4y523tnnzrcm7hoco3l8c">https://lists.apache.org/thread/pdzo1qgyplf4y523tnnzrcm7hoco3l8c</a></li>
 </ul>
-<h3 id="credits-8">Credits</h3>
+<h3 id="credits-18">Credits</h3>
 <ul>
 <li>thanat0s from Beijin Qihoo 360 adlab (finder)</li>
 </ul>
 <h2 id="CVE-2021-30468">Apache CXF Denial of service vulnerability in parsing JSON via JsonMapObjectReaderWriter</h2>
 <p>CVE-2021-30468 <a href="https://cve.org/CVERecord?id=CVE-2021-30468">[CVE]</a> <a href="./CVE-2021-30468.cve.json">[CVE json]</a> <a href="./CVE-2021-30468.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2021-06-16T11:56:32.302Z</em></p>
-<h3 id="affected-12">Affected</h3>
+<h3 id="affected-23">Affected</h3>
 <ul>
 <li>Apache CXF from Apache CXF before 3.4.4</li>
 </ul>
-<h3 id="description-12">Description</h3>
+<h3 id="description-23">Description</h3>
 <p>A vulnerability in the JsonMapObjectReaderWriter of Apache CXF allows an attacker to submit malformed JSON to a web service, which results in the thread getting stuck in an infinite loop, consuming CPU indefinitely.</p>
 <p>This issue affects Apache CXF versions prior to 3.4.4; Apache CXF versions prior to 3.3.11.</p>
-<h3 id="references-12">References</h3>
+<h3 id="references-23">References</h3>
 <ul>
 <li><a href="http://cxf.apache.org/security-advisories.data/CVE-2021-30468.txt.asc">http://cxf.apache.org/security-advisories.data/CVE-2021-30468.txt.asc</a></li>
 </ul>
 <h2 id="CVE-2021-22696">OAuth 2 authorization service vulnerable to DDos attacks</h2>
 <p>CVE-2021-22696 <a href="https://cve.org/CVERecord?id=CVE-2021-22696">[CVE]</a> <a href="./CVE-2021-22696.cve.json">[CVE json]</a> <a href="./CVE-2021-22696.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2021-04-02T09:58:49.120Z</em></p>
-<h3 id="affected-13">Affected</h3>
+<h3 id="affected-24">Affected</h3>
 <ul>
 <li>Apache CXF from unspecified before 3.4.3</li>
 </ul>
-<h3 id="description-13">Description</h3>
+<h3 id="description-24">Description</h3>
 <p>CXF supports (via JwtRequestCodeFilter) passing OAuth 2 parameters via a JWT token as opposed to query parameters (see: The OAuth 2.0 Authorization Framework: JWT Secured Authorization Request (JAR)). Instead of sending a JWT token as a &ldquo;request&rdquo; parameter, the spec also supports specifying a URI from which to retrieve a JWT token from via the &ldquo;request_uri&rdquo; parameter.</p>
 <p>CXF was not validating the &ldquo;request_uri&rdquo; parameter (apart from ensuring it uses &ldquo;https) and was making a REST request to the parameter in the request to retrieve a token.</p>
 <p>This means that CXF was vulnerable to DDos attacks on the authorization server, as specified in section 10.4.1 of the spec.</p>
 <p>This issue affects Apache CXF versions prior to 3.4.3; Apache CXF versions prior to 3.3.10.</p>
-<h3 id="references-13">References</h3>
+<h3 id="references-24">References</h3>
 <ul>
 <li><a href="https://cxf.apache.org/security-advisories.data/CVE-2021-22696.txt.asc">https://cxf.apache.org/security-advisories.data/CVE-2021-22696.txt.asc</a></li>
 </ul>
 <h2 id="CVE-2020-13954">Apache CXF Reflected XSS in the services listing page via the styleSheetPath</h2>
 <p>CVE-2020-13954 <a href="https://cve.org/CVERecord?id=CVE-2020-13954">[CVE]</a> <a href="./CVE-2020-13954.cve.json">[CVE json]</a> <a href="./CVE-2020-13954.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2020-11-12T12:45:31.751Z</em></p>
-<h3 id="affected-14">Affected</h3>
+<h3 id="affected-25">Affected</h3>
 <ul>
 <li>Apache CXF from unspecified before 3.4.1</li>
 </ul>
-<h3 id="description-14">Description</h3>
+<h3 id="description-25">Description</h3>
 <p>By default, Apache CXF creates a /services page containing a listing of the available endpoint names and addresses. This webpage is vulnerable to a reflected Cross-Site Scripting (XSS) attack via the styleSheetPath, which allows a malicious actor to inject javascript into the web page.</p>
 <p>This vulnerability affects all versions of Apache CXF prior to 3.4.1 and 3.3.8.</p>
 <p>Please note that this is a separate issue to CVE-2019-17573.</p>
-<h3 id="references-14">References</h3>
+<h3 id="references-25">References</h3>
 <ul>
 <li><a href="http://cxf.apache.org/security-advisories.data/CVE-2020-13954.txt.asc?version=1&amp;modificationDate=1605183670659&amp;api=v2">http://cxf.apache.org/security-advisories.data/CVE-2020-13954.txt.asc?version=1&amp;modificationDate=1605183670659&amp;api=v2</a></li>
 </ul>
-<h3 id="credits-9">Credits</h3>
+<h3 id="credits-19">Credits</h3>
 <ul>
 <li>Thanks to Ryan Lambeth for reporting this issue.</li>
 </ul>
