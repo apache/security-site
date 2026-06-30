@@ -13,6 +13,87 @@ Do you want disclose a potential security issue for Apache Shiro? You can read m
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://shiro.apache.org/security-reports.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Remember-me cookie isn't checked for expiry on the server ## { #CVE-2026-56130 }
+
+CVE-2026-56130 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-56130) [\[CVE json\]](./CVE-2026-56130.cve.json) [\[OSV json\]](./CVE-2026-56130.osv.json)
+
+
+
+_Last updated: 2026-06-25T08:44:28.652Z_
+
+### Affected
+
+* Apache Shiro from 1.2.4 through 2.99.99
+* Apache Shiro from 3.0.0-alpha-0 through 3.0.0-alpha-1
+
+
+### Description
+
+<p>"Remember me" cookie age is not verified on the server. This potentially allows an attacker to intercept a valid cookie and reuse it indefinitely, even after the configured expiration time has passed.<br>This issue affects all Apache Shiro versions from 1.2.4 through 2.x, and 3.0.0-alpha-1, only when RememberMe functionality is enabled.<br></p><p>Upgrade to version 3.0.0 or later, which fixes the issue.<br></p>
+
+### References
+* https://lists.apache.org/thread/9k9b3bmlq516ylvf7cdp3dlrtdtmxbmo
+
+
+### Credits
+* Richard Bradley (finder)
+* Lenny Primak <lenny@flowlogix.com> (remediation developer)
+
+
+## Authentication bypass in Guice-Web integration ## { #CVE-2026-56091 }
+
+CVE-2026-56091 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-56091) [\[CVE json\]](./CVE-2026-56091.cve.json) [\[OSV json\]](./CVE-2026-56091.osv.json)
+
+
+
+_Last updated: 2026-06-25T08:45:18.079Z_
+
+### Affected
+
+* Apache Shiro through 2.99.99
+* Apache Shiro from 3.0.0-alpha-0 through 3.0.0-alpha-1
+
+
+### Description
+
+When using Apache Shiro with the shiro-guice module in a web servlet context, a specially crafted HTTP request may cause an authentication bypass.<br>This vulnerability is similar to <a target="_blank" rel="nofollow" href="https://www.cve.org/CVERecord?id=CVE-2020-1957[CVE-2020-1957">https://www.cve.org/CVERecord?id=CVE-2020-1957</a>, except that it affects the `shiro-guice` module instead of the `shiro-spring` module.<br><br>This issue affects all Apache Shiro versions through 2.x, and 3.0.0-alpha-1 only when using `shiro-guice` module in a web servlet context.<br><br>Upgrade to version 3.0.0 or later, which fixes the issue.<br>
+
+### References
+* https://lists.apache.org/thread/onmtxmy2qonbpx7xlw3o34x8sctv47r7
+
+
+### Credits
+* LocalHost <localhost.detect@gmail.com> (finder)
+* Lenny Primak <lenny@flowlogix.com> (remediation developer)
+
+
+## LDAP DN Injection in DefaultLdapRealm ## { #CVE-2026-49268 }
+
+CVE-2026-49268 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49268) [\[CVE json\]](./CVE-2026-49268.cve.json) [\[OSV json\]](./CVE-2026-49268.osv.json)
+
+
+
+_Last updated: 2026-06-17T13:07:43.325Z_
+
+### Affected
+
+* Apache Shiro through 2.2.0
+* Apache Shiro from 3.0.0-alpha-0 through 3.0.0-alpha-1
+
+
+### Description
+
+A remote attacker can inject LDAP special characters into the Distinguished Name (DN) construction in DefaultLdapRealm class. User-supplied username input is directly concatenated into the LDAP DN template without any escaping of RFC 2253 special characters. This allows an attacker to manipulate the DN structure used for LDAP bind authentication, potentially bypassing authentication or impersonating other users.<br><br>This issue affects all Apache Shiro versions through 2.2.0, and 3.0.0-alpha-1 when using&nbsp;<span style="background-color: rgb(239, 239, 239);">DefaultLdapRealm</span><br>Upgrade to Apache Shiro 2.2.1 or 3.0.0-alpha-2 or later, which fixes the issue.
+
+### References
+* https://lists.apache.org/thread/svszql3od8td7hn6conyj2oq70v53b5s
+
+
+### Credits
+* zhaokaifei (reporter) - ChinaTelecom (finder)
+* Lenny Primak <lenny@flowlogix.com> (remediation developer)
+
+
 ## Jakarta EE open redirect via untrusted Referer in post-login redirect flow ## { #CVE-2026-48589 }
 
 CVE-2026-48589 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48589) [\[CVE json\]](./CVE-2026-48589.cve.json) [\[OSV json\]](./CVE-2026-48589.osv.json)

@@ -39,6 +39,31 @@ _Last updated: 2026-05-04T15:17:30.858Z_
 * qx L (finder)
 
 
+## Stored XSS in Create Entity page ## { #CVE-2025-62198 }
+
+CVE-2025-62198 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-62198) [\[CVE json\]](./CVE-2025-62198.cve.json) [\[OSV json\]](./CVE-2025-62198.osv.json)
+
+
+
+_Last updated: 2026-06-22T07:47:10.790Z_
+
+### Affected
+
+* Apache Atlas through 2.4.0
+
+
+### Description
+
+<p>An authenticated user can perform XSS.</p><p>This issue affects Apache Atlas <span style="background-color: rgb(255, 255, 255);">versions </span>2.4.0 and earlier.</p><p>Users are recommended to upgrade to version 2.5.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/nv893lhz3ok08f25j3v4z1to5nrpdp7k
+
+
+### Credits
+* Grzegorz Misiun (finder)
+
+
 ## An authenticated user can perform XSS and potentially impersonate another user ## { #CVE-2024-46910 }
 
 CVE-2024-46910 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-46910) [\[CVE json\]](./CVE-2024-46910.cve.json) [\[OSV json\]](./CVE-2024-46910.osv.json)
@@ -61,7 +86,8 @@ _Last updated: 2025-10-17T15:29:29.800Z_
 
 
 ### Credits
-* basavaraj@seciqtech.com (finder)
+* SecIQ Technologies LLP (finder)
+* Darpan Patel (SecIQ Technologies) (finder)
 
 
 ## zip path traversal in import functionality ## { #CVE-2022-34271 }

@@ -13,6 +13,48 @@ Do you want disclose a potential security issue for Apache Directory? Send your 
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Kerberos Pre-Authentication Bypass ## { #CVE-2026-57915 }
+
+CVE-2026-57915 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-57915) [\[CVE json\]](./CVE-2026-57915.cve.json) [\[OSV json\]](./CVE-2026-57915.osv.json)
+
+
+
+_Last updated: 2026-06-26T12:09:53.178Z_
+
+### Affected
+
+* Apache Kerby before 2.1.2
+
+
+### Description
+
+It is possible to bypass the Kerberos pre-authentication check in Apache Kerby by sending a PA-DATA with an unrecognized or unsupported type. Users are recommended to upgrade to version 2.1.2, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/1y3glgh3kzwoxo5m2lq504cjlh1dsrfh
+
+
+## StackOverflow on parsing deeply nested ASN1 structures ## { #CVE-2026-57914 }
+
+CVE-2026-57914 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-57914) [\[CVE json\]](./CVE-2026-57914.cve.json) [\[OSV json\]](./CVE-2026-57914.osv.json)
+
+
+
+_Last updated: 2026-06-26T11:28:25.784Z_
+
+### Affected
+
+* Apache Kerby before 2.1.2
+
+
+### Description
+
+By sending a deeply nested ASN1 structure to a Apache Kerby client or service, it's possible to trigger a StackOverFlow Exception which can lead to denial of service issues. Users are recommended to upgrade to version 2.1.2, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/w98h2q8wz0bq97vhz4vf55hqomcb2j1m
+
+
 ## LDAP client implementation does not verify if the server certificate matches the intended LDAP hostname ## { #CVE-2026-35563 }
 
 CVE-2026-35563 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-35563) [\[CVE json\]](./CVE-2026-35563.cve.json) [\[OSV json\]](./CVE-2026-35563.osv.json)
@@ -55,7 +97,7 @@ _Last updated: 2024-01-18T09:14:01.669Z_
 
 ### Affected
 
-* Apache Kerby before 2.0.3
+* Apache Kerby LDAP Backend before 2.0.3
 
 
 ### Description

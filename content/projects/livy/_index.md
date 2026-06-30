@@ -1,12 +1,12 @@
 ---
-title: Apache Livy (Incubating) security advisories
-description: Security information for Apache Livy (Incubating)
+title: Apache Livy security advisories
+description: Security information for Apache Livy
 layout: single
 ---
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Livy (Incubating)? Send your report to the [Apache Security Team](mailto:security@apache.org).
+Do you want disclose a potential security issue for Apache Livy? Send your report to the [Apache Security Team](mailto:security@apache.org).
 
 # Advisories
 

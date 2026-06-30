@@ -13,6 +13,131 @@ Do you want disclose a potential security issue for Apache Kvrocks? Send your re
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## RESTORE IntSet Integer Overflow Leads to Remote DoS ## { #CVE-2026-54226 }
+
+CVE-2026-54226 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-54226) [\[CVE json\]](./CVE-2026-54226.cve.json) [\[OSV json\]](./CVE-2026-54226.osv.json)
+
+
+
+_Last updated: 2026-06-25T07:59:22.966Z_
+
+### Affected
+
+* Apache Kvrocks from 2.6.0 through 2.15.0
+
+
+### Description
+
+<p>A vulnerability in Apache Kvrocks.</p><p>This issue affects Apache Kvrocks: from 2.6.0 through 2.15.0.</p><p>Users are recommended to upgrade to version 2.16.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/pnglz29zh804rd3257fbh56cqgy1q65g
+
+
+### Credits
+* 朱少扬 (reporter)
+
+
+## Stack buffer overflow in Lua bit.tohex() ## { #CVE-2026-46752 }
+
+CVE-2026-46752 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-46752) [\[CVE json\]](./CVE-2026-46752.cve.json) [\[OSV json\]](./CVE-2026-46752.osv.json)
+
+
+
+_Last updated: 2026-06-25T08:00:16.837Z_
+
+### Affected
+
+* Apache Kvrocks from 2.0.4 through 2.15.0
+
+
+### Description
+
+<p>Redis Lua HEAP overflow in cjson library vulnerability in Apache Kvrocks.</p><p>This issue affects Apache Kvrocks: from 2.0.4 through 2.15.0.</p><p>Users are recommended to upgrade to version 2.16.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/11sr3bkkhkk0q01odgw6ddsj7fzo31pt
+
+
+### Credits
+* Jincheng Yang (reporter)
+
+
+## Does not remove the unsafe loadstring function from its Lua sandbox, allowing a user who can run EVAL scripts to load crafted, unvalidated bytecode that crashes the server process, resulting in a remote denial of service. ## { #CVE-2026-46751 }
+
+CVE-2026-46751 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-46751) [\[CVE json\]](./CVE-2026-46751.cve.json) [\[OSV json\]](./CVE-2026-46751.osv.json)
+
+
+
+_Last updated: 2026-06-25T08:00:59.029Z_
+
+### Affected
+
+* Apache Kvrocks from 2.2.0 through 2.15.0
+
+
+### Description
+
+<p>A vulnerability in Apache Kvrocks.</p><p>This issue affects Apache Kvrocks: from 2.2.0 through 2.15.0.</p><p>Users are recommended to upgrade to version 2.16.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/cjjk4gq1nkb7pooqc37gz0blvdkqgv5z
+
+
+### Credits
+* 4ra2n (A code security AI agent) (finder)
+
+
+## Replication Fullsync Path Traversal via Unvalidated Filename Handling ## { #CVE-2026-45188 }
+
+CVE-2026-45188 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-45188) [\[CVE json\]](./CVE-2026-45188.cve.json) [\[OSV json\]](./CVE-2026-45188.osv.json)
+
+
+
+_Last updated: 2026-06-25T08:01:48.602Z_
+
+### Affected
+
+* Apache Kvrocks from 1.0.0 through 2.15.0
+
+
+### Description
+
+<p>Relative Path Traversal vulnerability in Apache Kvrocks.</p><p>This issue affects Apache Kvrocks: from 1.0.0 through 2.15.0.</p><p>Users are recommended to upgrade to version 2.16.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/hxw1zxmpm12x6dltpyr9fpmnbz632jft
+
+
+### Credits
+* @Brubbish of VARAS@IIE (reporter)
+
+
+## Improper permission for the APPLYBATCH command ## { #CVE-2026-41566 }
+
+CVE-2026-41566 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-41566) [\[CVE json\]](./CVE-2026-41566.cve.json) [\[OSV json\]](./CVE-2026-41566.osv.json)
+
+
+
+_Last updated: 2026-06-25T08:04:24.570Z_
+
+### Affected
+
+* Apache Kvrocks from 2.8.0 through 2.15.0
+
+
+### Description
+
+<p>Improper Handling of Insufficient Permissions or Privileges vulnerability in Apache Kvrocks.</p><p>This issue affects Apache Kvrocks: 2.8.0.</p><p>Users are recommended to upgrade to version 2.16.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/zng5lp7psgkcv9jnm9tztdlm3rmzfydl
+
+
+### Credits
+* Qing Xu (reporter)
+
+
 ## MONITOR command reveals plaintext credentials to non-admins ## { #CVE-2025-59792 }
 
 CVE-2025-59792 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-59792) [\[CVE json\]](./CVE-2025-59792.cve.json) [\[OSV json\]](./CVE-2025-59792.osv.json)

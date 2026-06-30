@@ -186,7 +186,7 @@ Deserialization of Untrusted Data vulnerability in Apache InLong.<p>This issue a
 <p></p>
 
 ### References
-* https://lists.apache.org/thread/xvomf66l58x4dmoyzojflvx52gkzcdmk
+* https://lists.apache.org/thread/1w1yp1bg5sjvn46dszkf00tz1vfs0frc
 
 
 ### Credits
@@ -358,13 +358,17 @@ _Last updated: 2024-09-27T11:45:32.709Z_
 
 ### Description
 
-Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.8.0, the a<span style="background-color: rgb(255, 255, 255);">ttacker can create misleading or false records, making it harder to audit
-and trace malicious activities.&nbsp;</span>Users are advised to upgrade to Apache InLong's 1.8.0 or cherry-pick [1] to solve it.</p><p>
+Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection') vulnerability in Apache InLong.<p>This issue affects Apache InLong: from 1.4.0 through 1.8.0, the a<span style="background-color: rgb(255, 255, 255);">ttacker can create misleading or false log records, making it harder to audit
+and trace malicious activities.&nbsp;</span>Users are advised to upgrade to Apache InLong's 1.9.0 or cherry-pick [1] to solve it.</p><p>
 
 <span style="background-color: rgb(255, 255, 255);">[1] </span><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/8628">https://github.com/apache/inlong/pull/8628</a></p><p></p>
 
 ### References
 * https://lists.apache.org/thread/spnb378g268p1f902fr9kqyph2k8n543
+
+
+### Credits
+* Jayway (finder)
 
 
 ## General user Unauthorized access User Management ## { #CVE-2023-43666 }

@@ -189,6 +189,10 @@ _Last updated: 2024-12-03T17:55:26.574Z_
 
 ### Credits
 * Liu Huajin (reporter)
+* 75Acol (finder)
+* robinzeng2015 (finder)
+* stan fang (finder)
+* zer0duck (finder)
 
 
 ## Solr-Operator liveness and readiness probes may leak basic auth credentials ## { #CVE-2024-31391 }

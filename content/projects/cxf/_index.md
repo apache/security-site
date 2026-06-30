@@ -13,6 +13,301 @@ Do you want disclose a potential security issue for Apache CXF? Send your report
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## No restriction on attachment headers per message ## { #CVE-2026-50645 }
+
+CVE-2026-50645 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50645) [\[CVE json\]](./CVE-2026-50645.cve.json) [\[OSV json\]](./CVE-2026-50645.osv.json)
+
+
+
+_Last updated: 2026-06-12T09:06:59.203Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.2
+* Apache CXF before 4.1.7
+
+
+### Description
+
+There is no restriction on the amount of attachment headers that a message can contain when being deserialized by Apache CXF, which can lead to uncontrolled resource consumption or a denial of service attack.&nbsp;Users are recommended to upgrade to versions 4.2.2 or 4.1.7, which fix this issue by imposing a maximum default of 500 attachments per message.<br><br>
+
+### References
+* https://lists.apache.org/thread/24zb7cqcvykhwm0j797dmdq25s61mj93
+
+
+## WS JSON request filter trusts metadata from an unvalidated first signature entry ## { #CVE-2026-50634 }
+
+CVE-2026-50634 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50634) [\[CVE json\]](./CVE-2026-50634.cve.json) [\[OSV json\]](./CVE-2026-50634.osv.json)
+
+
+
+_Last updated: 2026-06-25T06:51:16.599Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.2
+* Apache CXF from 4.0.0 before 4.1.7
+* Apache CXF before 3.6.12
+
+
+### Description
+
+A vulnerability in Apache CXF's&nbsp;JwsJsonContainerRequestFilter can be exploited to cause&nbsp;CXF to process metadata that was not authenticated by the accepted signature.&nbsp;This can bypass the application's assumption<br>
+that accepted `Content-Type` or protected HTTP-header metadata came from a verified signature entry, and may steer downstream JAX-RS entity parsing or signed-header consistency checks. Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fix this issue.<br><br>
+
+### References
+* https://lists.apache.org/thread/9nfwh9d3m4kznxrk1mz98hl0jml18k0p
+
+
+### Credits
+* Mitchell Benjamin / Revamp Studio. (finder)
+
+
+## JNDI Injection vulnerability in DispatchMDBMessageListenerImpl ## { #CVE-2026-50633 }
+
+CVE-2026-50633 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50633) [\[CVE json\]](./CVE-2026-50633.cve.json) [\[OSV json\]](./CVE-2026-50633.osv.json)
+
+
+
+_Last updated: 2026-06-25T06:49:37.691Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.2
+* Apache CXF from 4.0.0 before 4.1.7
+* Apache CXF before 3.6.12
+
+
+### Description
+
+A JNDI Injection vulnerability has been discovered in Apache CXF's JCA integration module, which can allow for code execution, if an attacker is able to manipulate the JCA deployment descriptor (ra.xml) or runtime activation parameters.&nbsp;Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/1czhgovkgzdkyp3t61wthn0foogh2grf
+
+
+### Credits
+* Venkatraman Kumar (r3dw0lfsec), Securin (finder)
+
+
+## JNDI Injection Vulnerability in JMSConfigFactory ## { #CVE-2026-50632 }
+
+CVE-2026-50632 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50632) [\[CVE json\]](./CVE-2026-50632.cve.json) [\[OSV json\]](./CVE-2026-50632.osv.json)
+
+
+
+_Last updated: 2026-06-25T06:47:58.029Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.2
+* Apache CXF from 4.0.0 before 4.1.7
+* Apache CXF before 3.6.12
+
+
+### Description
+
+A further incomplete fix for&nbsp;a previous advisory CVE-2026-44417&nbsp;(Untrusted JMS configuration can lead to RCE) for Apache CXF has been identified, which can allow code execution capabilities, if untrusted users are allowed to configure JMS for Apache CXF. Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue. <br>
+
+### References
+* https://lists.apache.org/thread/740ghch5z5y675cn2kzgtyo5k37n6qcw
+
+
+### Credits
+* Venkatraman Kumar (r3dw0lfsec), Securin (finder)
+
+
+## OAuth2: TOCTOU Race Condition in Refresh Token Processing ## { #CVE-2026-50631 }
+
+CVE-2026-50631 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50631) [\[CVE json\]](./CVE-2026-50631.cve.json) [\[OSV json\]](./CVE-2026-50631.osv.json)
+
+
+
+_Last updated: 2026-06-25T06:40:52.934Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.2
+* Apache CXF from 4.0.0 before 4.1.7
+* Apache CXF before 3.6.12
+
+
+### Description
+
+A race condition in AbstractOAuthDataProvider allows concurrent requests using the same Refresh Token to bypass single-use semantics and generate multiple valid Access Tokens, when 'recycleRefreshTokens' is set to false. A leaked refresh token can be replayed concurrently by multiple attackers or threads.&nbsp;Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.<br>
+
+### References
+* https://lists.apache.org/thread/s83t3x4r626o9h8rt0ryr1w7w53l1vv8
+
+
+### Credits
+* Guanping Zhang reported this vulnerability. (finder)
+
+
+## OAuth2: HTTP Response Splitting via WWW-Authenticate Realm Injection ## { #CVE-2026-50630 }
+
+CVE-2026-50630 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50630) [\[CVE json\]](./CVE-2026-50630.cve.json) [\[OSV json\]](./CVE-2026-50630.osv.json)
+
+
+
+_Last updated: 2026-06-25T06:42:38.758Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.2
+* Apache CXF from 4.0.0 before 4.1.7
+* Apache CXF before 3.6.12
+
+
+### Description
+
+A CRLF injection vulnerability exists in the OAuth2 AuthorizationUtils class. When constructing the WWW-Authenticate response header, the 'realm' parameter is concatenated without sanitizing Carriage Return (CR) and Line Feed (LF) characters. If an attacker can control the realm value, they can inject arbitrary HTTP headers or split the HTTP response entirely.&nbsp;Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.<br>
+
+### References
+* https://lists.apache.org/thread/bt7vnjzzkpd6vdhkxv103poor1jy5trm
+
+
+### Credits
+* Guanping Zhang reported this vulnerability. (finder)
+
+
+## OAuth2: Log Injection via Unsanitized Client Identifier ## { #CVE-2026-50629 }
+
+CVE-2026-50629 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50629) [\[CVE json\]](./CVE-2026-50629.cve.json) [\[OSV json\]](./CVE-2026-50629.osv.json)
+
+
+
+_Last updated: 2026-06-25T06:43:46.623Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.2
+* Apache CXF from 4.0.0 before 4.1.7
+* Apache CXF before 3.6.12
+
+
+### Description
+
+The 'clientId' parameter from incoming HTTP requests is directly concatenated into OAuth2 server log warning messages without sanitizing control characters. This allows an attacker to inject arbitrary content, including fake log entries, into the server's log files.&nbsp;Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.<br>
+
+### References
+* https://lists.apache.org/thread/xw95po30p8th58ms1no6b0f2375cql00
+
+
+### Credits
+* Guanping Zhang reported this vulnerability. (finder)
+
+
+## OAuth2: Inverted IP Binding Check Defeats Security Control ## { #CVE-2026-50628 }
+
+CVE-2026-50628 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50628) [\[CVE json\]](./CVE-2026-50628.cve.json) [\[OSV json\]](./CVE-2026-50628.osv.json)
+
+
+
+_Last updated: 2026-06-25T06:38:43.915Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.2
+* Apache CXF from 4.0.0 before 4.1.7
+* Apache CXF before 3.6.12
+
+
+### Description
+
+A logic error in OAuthRequestFilter rejects legitimate requests originating from the bound IP address, while blindly allowing requests from any other IP address. Enabling this<br>
+security feature inadvertently creates an inverse security check.&nbsp;Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.<br>
+
+### References
+* https://lists.apache.org/thread/vb3ho8lf228gh90m1fpnohf2008xrdxk
+
+
+### Credits
+* Guanping Zhang reported this vulnerability (finder)
+
+
+## OAuth2: Missing JWT Audience and Issuer Validation in Access Token Validator ## { #CVE-2026-50627 }
+
+CVE-2026-50627 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50627) [\[CVE json\]](./CVE-2026-50627.cve.json) [\[OSV json\]](./CVE-2026-50627.osv.json)
+
+
+
+_Last updated: 2026-06-25T06:36:34.767Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.2
+* Apache CXF from 4.0.0 before 4.1.7
+* Apache CXF before 3.6.12
+
+
+### Description
+
+The JwtAccessTokenValidator class in Apache CXF fails to validate the 'aud' (Audience) claims of incoming JWT access tokens. This allows a JWT issued for one Resource Server to be successfully replayed against a completely different Resource Server, leading to Token Confusion/Routing attacks.&nbsp;Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.<br>
+
+### References
+* https://lists.apache.org/thread/0jfzz9q992957b99tw7hodcqjfyxwb1m
+
+
+### Credits
+* Guanping Zhang reported this vulnerability. (finder)
+
+
+## Authentication Bypass in OAuth2 TokenIntrospectionService ## { #CVE-2026-50623 }
+
+CVE-2026-50623 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50623) [\[CVE json\]](./CVE-2026-50623.cve.json) [\[OSV json\]](./CVE-2026-50623.osv.json)
+
+
+
+_Last updated: 2026-06-25T06:34:24.353Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.2
+* Apache CXF from 4.0.0 before 4.1.7
+* Apache CXF before 3.6.12
+
+
+### Description
+
+An authentication bypass vulnerability exists in the OAuth2 TokenIntrospectionService in Apache CXF.&nbsp;Due to a missing 'throw' keyword in the security context check, the introspection endpoint (/services/oauth2/introspect) can be accessed by any unauthenticated network attacker. However note that this is a safeguard only in the case that someone forgot to enable authentication on the service.&nbsp;Users are recommended to upgrade to version 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.<br><br>
+
+### References
+* https://lists.apache.org/thread/ydzj8m5mqmjy13xgyj9mkk9hfff63qq7
+
+
+### Credits
+* Guanping Zhang reported this vulnerability. (finder)
+
+
+## XML External Entity (XXE) Injection in W3CMultiSchemaFactory and EndpointReferenceUtils ## { #CVE-2026-49875 }
+
+CVE-2026-49875 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49875) [\[CVE json\]](./CVE-2026-49875.cve.json) [\[OSV json\]](./CVE-2026-49875.osv.json)
+
+
+
+_Last updated: 2026-06-25T06:58:56.041Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.2
+* Apache CXF from 4.0.0 before 4.1.7
+* Apache CXF before 3.6.12
+
+
+### Description
+
+Apache CXF's EndpointReferenceUtils and W3CMultiSchemaFactory classes construct a SAXParserFactory without the necessary JAXP hardening configurations, enabling out-of-band (OOB) 
+external entity resolution.&nbsp;Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fix this issue.<br><br>
+
+### References
+* https://lists.apache.org/thread/3kb9w5bg90xcp06fccoz9k3gpsvyy79o
+
+
+### Credits
+* Venkatraman Kumar (r3dw0lfsec), Securin (finder)
+
+
 ## LDAP Injection vulnerability in XKMS LDAP Repository ## { #CVE-2026-44930 }
 
 CVE-2026-44930 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44930) [\[CVE json\]](./CVE-2026-44930.cve.json) [\[OSV json\]](./CVE-2026-44930.osv.json)

@@ -13,6 +13,159 @@ Do you want disclose a potential security issue for Apache DolphinScheduler? You
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://github.com/apache/dolphinscheduler/blob/dev/docs/docs/en/contribute/join/security.md). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## General user can mint admin access tokens via /access-tokens ## { #CVE-2026-49050 }
+
+CVE-2026-49050 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49050) [\[CVE json\]](./CVE-2026-49050.cve.json) [\[OSV json\]](./CVE-2026-49050.osv.json)
+
+
+
+_Last updated: 2026-06-17T01:46:54.058Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.2
+
+
+### Description
+
+<p>General user can mint admin access tokens via /access-tokens</p><p>This issue affects Apache DolphinScheduler: before 3.4.2.</p><p>Users are recommended to upgrade to version 3.4.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/0lc4t5k6h6nhd8t4hshgjk6yp3cl8sb0
+
+
+### Credits
+* George Chen(https://github.com/geo-chen) (finder)
+
+
+## An incorrect authorization vulnerability allows authenticated users to access alert instances associated with alert groups they do not have permission to access. ## { #CVE-2026-47340 }
+
+CVE-2026-47340 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-47340) [\[CVE json\]](./CVE-2026-47340.cve.json) [\[OSV json\]](./CVE-2026-47340.osv.json)
+
+
+
+_Last updated: 2026-06-17T01:44:26.990Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.2
+
+
+### Description
+
+<p>Allow authenticated users to access alert instances associated with alert groups they do not have permission to access. in Apache DolphinScheduler.</p><p>This issue affects Apache DolphinScheduler: before 3.4.2.</p><p>Users are recommended to upgrade to version 3.4.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/gx6v1wjb6qg3fzksxomysspy2gw54ooc
+
+
+### Credits
+* thesecguy45@gmail.com (finder)
+* udolemi (S2W) (finder)
+
+
+## Incorrect Authorization vulnerability allows users to access workflow instance information belonging to projects they do not have permission to access. ## { #CVE-2026-42357 }
+
+CVE-2026-42357 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-42357) [\[CVE json\]](./CVE-2026-42357.cve.json) [\[OSV json\]](./CVE-2026-42357.osv.json)
+
+
+
+_Last updated: 2026-06-17T06:31:34.851Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.1
+
+
+### Description
+
+<p>Incorrect Authorization vulnerability allows users to access workflow instance information belonging to projects they do not have permission to access.<br><br>This issue affects Apache DolphinScheduler versions prior to 3.4.2.<br></p><p>Users are recommended to upgrade to version 3.4.2, which fixes this issue.<br></p><br>
+
+### References
+* https://lists.apache.org/thread/74l2rrz32w2chn7vz64313gk7ox5wjtr
+
+
+### Credits
+* Yicheng Yu(https://github.com/FHMTT) (finder)
+
+
+## Incorrect Authorization vulnerability allows users with system login privileges to delete task definitions in unauthorized projects ## { #CVE-2026-41280 }
+
+CVE-2026-41280 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-41280) [\[CVE json\]](./CVE-2026-41280.cve.json) [\[OSV json\]](./CVE-2026-41280.osv.json)
+
+
+
+_Last updated: 2026-06-17T06:32:49.794Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.2
+
+
+### Description
+
+<p>Incorrect Authorization vulnerability allows users with system login privileges to delete task definitions in unauthorized projects<br><br>This issue affects Apache DolphinScheduler versions prior to 3.4.2. </p><p>Users are recommended to upgrade to version 3.4.2, which fixes this issue.<br></p><br>
+
+### References
+* https://lists.apache.org/thread/5bv1njp3lbbbj11y20td5yz1b4nmrtvw
+
+
+### Credits
+* Yicheng Yu(https://github.com/FHMTT) (finder)
+
+
+## The `/v2` experimental interface lacks permission checks ## { #CVE-2026-32967 }
+
+CVE-2026-32967 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-32967) [\[CVE json\]](./CVE-2026-32967.cve.json) [\[OSV json\]](./CVE-2026-32967.osv.json)
+
+
+
+_Last updated: 2026-06-17T01:41:50.516Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.2
+
+
+### Description
+
+<p>Incorrect Authorization vulnerability of `/v2` experimental interface in Apache DolphinScheduler.</p><p>This issue affects Apache DolphinScheduler: before 3.4.2.</p><p>Users are recommended to upgrade to version 3.4.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5o5jrg1snkmrto96wg015wgbh7hyckzc
+
+
+### Credits
+* b0b0haha (603571786@qq.com) (finder)
+* j311yl0v3u (2439839508@qq.com) (finder)
+
+
+## DataSource API Missing Authorization Check Leads to Arbitrary Data Source Metadata Disclosure ## { #CVE-2026-32966 }
+
+CVE-2026-32966 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-32966) [\[CVE json\]](./CVE-2026-32966.cve.json) [\[OSV json\]](./CVE-2026-32966.osv.json)
+
+
+
+_Last updated: 2026-06-17T08:48:15.528Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.2
+
+
+### Description
+
+<p>DataSource API Missing Authorization Check Leads to Arbitrary Data Source Metadata Disclosure in Apache DolphinScheduler.</p><p>This issue affects Apache DolphinScheduler: before 3.4.2.</p><p>Users are recommended to upgrade to version 3.4.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/4f1fojpj26z9y5nd1ko845gcknpn75g2
+
+
+### Credits
+* b0b0haha (603571786@qq.com) (finder)
+* j311yl0v3u (2439839508@qq.com) (finder)
+
+
 ## Users are able to use tenants that are not defined on the platform during workflow execution. ## { #CVE-2026-23902 }
 
 CVE-2026-23902 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23902) [\[CVE json\]](./CVE-2026-23902.cve.json) [\[OSV json\]](./CVE-2026-23902.osv.json)
@@ -131,7 +284,9 @@ Exposure of Remote Code Execution in Apache Dolphinscheduler.<br><br>This issue 
 
 ## CWE-276 Incorrect Default Permissions ## { #CVE-2024-43166 }
 
-CVE-2024-43166 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-43166) [\[CVE json\]](./CVE-2024-43166.cve.json)
+CVE-2024-43166 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-43166) [\[CVE json\]](./CVE-2024-43166.cve.json) [\[OSV json\]](./CVE-2024-43166.osv.json)
+
+
 
 _Last updated: 2025-09-18T09:38:13.985Z_
 
@@ -454,15 +609,19 @@ _Last updated: 2025-11-28T05:01:20.066Z_
 
 ### Affected
 
-* Apache DolphinScheduler from 3.0.0 before 3.0.2
+* Apache DolphinScheduler before < 3.0.2 and 3.1.0 < 3.2.0.
 
 
 ### Description
 
-Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache DolphinScheduler.<br><br>The information exposed to unauthorized actors may include sensitive data such as database credentials.<br><br>Users who can't upgrade to the fixed version can also set environment variable `MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE=health,metrics,prometheus` to workaround this, or add the following section in the `application.yaml` file<br><br><br>```<br>management:<br>&nbsp; endpoints:<br>&nbsp; &nbsp; web:<br>&nbsp; &nbsp; &nbsp; exposure:<br>&nbsp; &nbsp; &nbsp; &nbsp; include: health,metrics,prometheus<br>```<br><p><br></p><p>This issue affects Apache DolphinScheduler: from 3.0.0 before 3.0.2.</p><p>Users are recommended to upgrade to version 3.0.2, which fixes the issue.</p>
+Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache DolphinScheduler.<br><br>The information exposed to unauthorized actors may include sensitive data such as database credentials.<br><br>Users who can't upgrade to the fixed version can also set environment variable `MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE=health,metrics,prometheus` to workaround this, or add the following section in the `application.yaml` file<br><br><br>```<br>management:<br>&nbsp; endpoints:<br>&nbsp; &nbsp; web:<br>&nbsp; &nbsp; &nbsp; exposure:<br>&nbsp; &nbsp; &nbsp; &nbsp; include: health,metrics,prometheus<br>```<br><p><br></p><p>This issue affects Apache DolphinScheduler: <span style="background-color: rgb(255, 255, 255);">&lt; 3.0.2 and&nbsp;<span style="background-color: rgb(255, 255, 255);">3.1.0 &lt; 3.2.0</span></span>.</p><p>Users are recommended to upgrade to version 3.0.6 or 3.3.2</p>
 
 ### References
 * https://lists.apache.org/thread/ffrmkcwgr2lcz0f5nnnyswhpn3fytsvo
+
+
+### Credits
+* whobushibaby (finder)
 
 
 ## Apache DolphinScheduler 3.0.0 to 3.1.1 python gateway has improper authentication ## { #CVE-2023-25601 }

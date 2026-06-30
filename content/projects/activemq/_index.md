@@ -13,6 +13,268 @@ Do you want disclose a potential security issue for Apache ActiveMQ? You can rea
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://github.com/apache/activemq/blob/main/SECURITY.md). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Temporary destination ownership takeover ## { #CVE-2026-54475 }
+
+CVE-2026-54475 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-54475) [\[CVE json\]](./CVE-2026-54475.cve.json) [\[OSV json\]](./CVE-2026-54475.osv.json)
+
+
+
+_Last updated: 2026-06-30T09:48:27.404Z_
+
+### Affected
+
+* Apache ActiveMQ Broker before 5.19.8
+* Apache ActiveMQ Broker from 6.0.0 before 6.2.7
+* Apache ActiveMQ All before 5.19.8
+* Apache ActiveMQ All from 6.0.0 before 6.2.7
+* Apache ActiveMQ before 5.19.8
+* Apache ActiveMQ from 6.0.0 before 6.2.7
+
+
+### Description
+
+<p>Missing Authorization vulnerability in Apache ActiveMQ Broker, Apache ActiveMQ All, Apache ActiveMQ.</p>Apache ActiveMQ Classic temporary destinations are expected to be isolated to the connection that created them. The isolation can be broken as this is only checked in the client, allowing a&nbsp;different connection to consume from another connection's temporary<br>destination.<br><p>This issue affects Apache ActiveMQ Broker: before 5.19.8, from 6.0.0 before 6.2.7; Apache ActiveMQ All: before 5.19.8, from 6.0.0 before 6.2.7; Apache ActiveMQ: before 5.19.8, from 6.0.0 before 6.2.7.</p><p>Users are recommended to upgrade to version 6.2.7, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/85f3q7mkh71y7qwyn6wvgw0bw4jl06ys
+
+
+### Credits
+* Leon Johnson (github: lokerxx) (finder)
+
+
+## Unbounded memory allocation in OpenWire property unmarshalling ## { #CVE-2026-53917 }
+
+CVE-2026-53917 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-53917) [\[CVE json\]](./CVE-2026-53917.cve.json) [\[OSV json\]](./CVE-2026-53917.osv.json)
+
+
+
+_Last updated: 2026-06-30T09:49:16.202Z_
+
+### Affected
+
+* Apache ActiveMQ before 5.19.8
+* Apache ActiveMQ from 6.0.0 before 6.2.7
+* Apache ActiveMQ All before 5.19.8
+* Apache ActiveMQ All from 6.0.0 before 6.2.7
+* Apache ActiveMQ Client before 5.19.8
+* Apache ActiveMQ Client from 6.0.0 before 6.2.7
+* Apache ActiveMQ Broker before 5.19.8
+* Apache ActiveMQ Broker from 6.0.0 before 6.2.7
+
+
+### Description
+
+<p>Memory Allocation with Excessive Size Value vulnerability in Apache ActiveMQ, Apache ActiveMQ All, Apache ActiveMQ Client, Apache ActiveMQ Broker.</p>An authenticated user can cause a broker DoS by sending a crafted OpenWire Message with a large encoded size value for the map. <span style="background-color: rgb(255, 255, 255);">OpenWire message property maps are unmarshaled without size validation</span>&nbsp;which can trigger OOM and crash the broker.<br><p>This issue affects Apache ActiveMQ: before 5.19.8, from 6.0.0 before 6.2.7; Apache ActiveMQ All: before 5.19.8, from 6.0.0 before 6.2.7; Apache ActiveMQ Client: before 5.19.8, from 6.0.0 before 6.2.7; Apache ActiveMQ Broker: before 5.19.8, from 6.0.0 before 6.2.7.</p><p>Users are recommended to upgrade to version 6.2.7 or 5.19.8, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/grrd1mwgkgblqjbwkkq6dvmdxd9ov2dx
+
+
+### Credits
+* tonghuaroot (finder)
+
+
+## Unbounded header buffer in STOMP NIO codec ## { #CVE-2026-53916 }
+
+CVE-2026-53916 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-53916) [\[CVE json\]](./CVE-2026-53916.cve.json) [\[OSV json\]](./CVE-2026-53916.osv.json)
+
+
+
+_Last updated: 2026-06-30T09:49:54.244Z_
+
+### Affected
+
+* Apache ActiveMQ before 5.19.8
+* Apache ActiveMQ from 6.0.0 before 6.2.7
+* Apache ActiveMQ All before 5.19.8
+* Apache ActiveMQ All from 6.0.0 before 6.2.7
+* Apache ActiveMQ Stomp before 5.19.8
+* Apache ActiveMQ Stomp from 6.0.0 before 6.2.7
+
+
+### Description
+
+<p>Memory Allocation with Excessive Size Value vulnerability in Apache ActiveMQ, Apache ActiveMQ All, Apache ActiveMQ Stomp.<br></p>An unauthenticated client that opens a STOMP NIO connection can send header bytes that never terminate which makes the broker buffer them without limit,&nbsp;exhausting&nbsp;the JVM heap. <br><p>This issue affects Apache ActiveMQ: before 5.19.8, from 6.0.0 before 6.2.7; Apache ActiveMQ All: before 5.19.8, from 6.0.0 before 6.2.7; Apache ActiveMQ Stomp: before 5.19.8, from 6.0.0 before 6.2.7.</p><p>Users are recommended to upgrade to version 6.2.7 or 5.19.8, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/07hjsj88hqgsb7vvg6ttsj56ts9vjs5n
+
+
+### Credits
+* tonghuaroot (finder)
+
+
+## Stored XSS via Unescaped values in ActiveMQ Web Console ## { #CVE-2026-52760 }
+
+CVE-2026-52760 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-52760) [\[CVE json\]](./CVE-2026-52760.cve.json) [\[OSV json\]](./CVE-2026-52760.osv.json)
+
+
+
+_Last updated: 2026-06-30T09:50:28.410Z_
+
+### Affected
+
+* Apache ActiveMQ before 5.19.8
+* Apache ActiveMQ from 6.0.0 before 6.2.7
+* Apache ActiveMQ Web Console before 5.19.8
+* Apache ActiveMQ Web Console from 6.0.0 before 6.2.7
+
+
+### Description
+
+<p>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache ActiveMQ, Apache ActiveMQ Web Console.</p>The browse page in the web console renders a message Id directly without sanitization. This allows an authenticated producer to send a&nbsp;message with a JMS message ID that has been&nbsp;crafted to contain HTML/JavaScript such that when&nbsp;an administrator browses the queue in the Web Console, the payload executes in their browser.<br><p>This issue affects Apache ActiveMQ: before 5.19.8, from 6.0.0 before 6.2.7; Apache ActiveMQ Web Console: before 5.19.8, from 6.0.0 before 6.2.7.</p><p>Users are recommended to upgrade to version 6.2.7 or 5.19.8, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/d3mhyo2116nomz2lwxppyy4pclvdxq3n
+
+
+### Credits
+* Biswajeet Ray (finder)
+
+
+## Pre-authentication OpenWire DoS following fix for CVE-2026-49270 ## { #CVE-2026-50750 }
+
+CVE-2026-50750 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50750) [\[CVE json\]](./CVE-2026-50750.cve.json) [\[OSV json\]](./CVE-2026-50750.osv.json)
+
+
+
+_Last updated: 2026-06-30T09:51:55.636Z_
+
+### Affected
+
+* Apache ActiveMQ Broker from 5.19.7 before 5.19.8
+* Apache ActiveMQ Broker from 6.2.6 before 6.2.7
+* Apache ActiveMQ from 5.19.7 before 5.19.8
+* Apache ActiveMQ from 6.2.6 before 6.2.7
+* Apache ActiveMQ All from 5.19.7 before 5.19.8
+* Apache ActiveMQ All from 6.2.6 before 6.2.7
+
+
+### Description
+
+<p>Denial of Service via Out of Memory vulnerability in Apache ActiveMQ Broker, Apache ActiveMQ, Apache ActiveMQ All.</p>Following the fix for  CVE-2026-49270&nbsp;an unauthenticated attacker can now cause broker OOM by sending an repeated BrokerInfo commands without sending&nbsp;a ConnectionInfo, until the broker will crash with OOM.<br><p>This issue affects Apache ActiveMQ Broker: from 5.19.7 before 5.19.8, from 6.2.6 before 6.2.7; Apache ActiveMQ: from 5.19.7 before 5.19.8, from 6.2.6 before 6.2.7; Apache ActiveMQ All: from 5.19.7 before 5.19.8, from 6.2.6 before 6.2.7.</p><p>Users are recommended to upgrade to version 6.2.7, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/nhkmbdym61yp6wwy0dny8w1p46sm87kr
+
+
+## Pre-authentication OpenWire memory-allocation DoS during wire format negotiation ## { #CVE-2026-50734 }
+
+CVE-2026-50734 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50734) [\[CVE json\]](./CVE-2026-50734.cve.json) [\[OSV json\]](./CVE-2026-50734.osv.json)
+
+
+
+_Last updated: 2026-06-30T09:53:02.137Z_
+
+### Affected
+
+* Apache ActiveMQ Client before 5.19.8
+* Apache ActiveMQ Client from 6.0.0 before 6.2.7
+* Apache ActiveMQ before 5.19.8
+* Apache ActiveMQ from 6.0.0 before 6.2.7
+* Apache ActiveMQ All before 5.19.8
+* Apache ActiveMQ All from 6.0.0 before 6.2.7
+
+
+### Description
+
+<p>Memory Allocation with Excessive Size Value vulnerability in Apache ActiveMQ Client, Apache ActiveMQ, Apache ActiveMQ All.</p><span style="background-color: rgb(255, 255, 255);">An unauthenticated network attacker can cause a broker DoS by sending a crafted WireFormatInfo frame with a malicious large size value. The value is not validate and causes the broker to attempt allocation during pre-auth negotiation which can trigger OOM and crash the broker.</span><br><p>This issue affects Apache ActiveMQ Client: before 5.19.8, from 6.0.0 before 6.2.7; Apache ActiveMQ: before 5.19.8, from 6.0.0 before 6.2.7; Apache ActiveMQ All: before 5.19.8, from 6.0.0 before 6.2.7.</p><p>Users are recommended to upgrade to version 6.2.7 or 5.19.8, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/nxso951fnvf72qf9m475mpz4yf931xk0
+
+
+### Credits
+* Andrej Tomci (finder)
+
+
+## Authenticated web users retain admin access by default in the Web Console ## { #CVE-2026-49877 }
+
+CVE-2026-49877 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49877) [\[CVE json\]](./CVE-2026-49877.cve.json) [\[OSV json\]](./CVE-2026-49877.osv.json)
+
+
+
+_Last updated: 2026-06-30T09:53:41.777Z_
+
+### Affected
+
+* Apache ActiveMQ before 5.19.8
+* Apache ActiveMQ from 6.0.0 before 6.2.7
+
+
+### Description
+
+<p>Improper Authorization vulnerability in Apache ActiveMQ.</p><span style="background-color: rgb(255, 255, 255);">An authenticated low-privilege Web Console user by default can access /admin/* paths in the Web Console. The default Jetty settings incorrectly did not limit those paths to only admins.</span><br><p>This issue affects Apache ActiveMQ: before 5.19.8, from 6.0.0 before 6.2.7.</p><p>Users are recommended to upgrade to version 6.2.7 or 5.19.8, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/w82vtc3q02j5ot94tnyy1197y3wb98hl
+
+
+### Credits
+* Leon Johnson (github: lokerxx) (finder)
+
+
+## LdapNetworkConnector instantiates denied transports and a remote-properties broker ## { #CVE-2026-49434 }
+
+CVE-2026-49434 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49434) [\[CVE json\]](./CVE-2026-49434.cve.json) [\[OSV json\]](./CVE-2026-49434.osv.json)
+
+
+
+_Last updated: 2026-06-30T09:55:28.407Z_
+
+### Affected
+
+* Apache ActiveMQ Broker before 5.19.8
+* Apache ActiveMQ Broker from 6.0.0 before 6.2.7
+* Apache ActiveMQ before 5.19.8
+* Apache ActiveMQ from 6.0.0 before 6.2.7
+* Apache ActiveMQ All before 5.19.8
+* Apache ActiveMQ All from 6.0.0 before 6.2.7
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache ActiveMQ Broker, Apache ActiveMQ, Apache ActiveMQ All.</p><span style="background-color: rgb(255, 255, 255);">An attacker that has access to publish or modify entries in LDAP that match the configured </span><span style="background-color: rgb(255, 255, 255);">searchBase and searchFilter can instantiate denied transports inside the broker JVM. This can be used to <span style="background-color: rgb(255, 255, 255);">fetch an attacker URL and spawn a </span><span style="background-color: rgb(255, 255, 255);">second BrokerService inside the same JVM.</span></span><br><p>This issue affects Apache ActiveMQ Broker: before 5.19.8, from 6.0.0 before 6.2.7; Apache ActiveMQ: before 5.19.8, from 6.0.0 before 6.2.7; Apache ActiveMQ All: before 5.19.8, from 6.0.0 before 6.2.7.<br></p><p>Users are recommended to upgrade to version 6.2.7 or 5.19.8, which fixes the issue.</p><p></p>
+
+### References
+* https://lists.apache.org/thread/hcjh7kdk4l85tb9ksmvcnkhso1ngj50o
+
+
+### Credits
+* @Add Content (finder)
+
+
+## STOMP negative content-length enables denial of service ## { #CVE-2026-49432 }
+
+CVE-2026-49432 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49432) [\[CVE json\]](./CVE-2026-49432.cve.json) [\[OSV json\]](./CVE-2026-49432.osv.json)
+
+
+
+_Last updated: 2026-06-30T09:54:37.498Z_
+
+### Affected
+
+* Apache ActiveMQ before 5.19.8
+* Apache ActiveMQ from 6.0.0 before 6.2.7
+* Apache ActiveMQ All before 5.19.8
+* Apache ActiveMQ All from 6.0.0 before 6.2.7
+* Apache ActiveMQ Stomp before 5.19.8
+* Apache ActiveMQ Stomp from 6.0.0 before 6.2.7
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache ActiveMQ, Apache ActiveMQ All, Apache ActiveMQ Stomp.</p><span style="background-color: rgb(255, 255, 255);">A remote unauthenticated peer that can reach an exposed STOMP connector can trigger denial-of-service behavior by sending a negative content-length. For the NIO STOMP transport, an attacker can keep streaming body bytes and grow the per-connection command buffer beyond configured limits to cause OOM. For the blocking STOMP protocol, an error will instead force abnormal transport exception handling for the affected connection and closure.</span><br><p>This issue affects Apache ActiveMQ: before 5.19.8, from 6.0.0 before 6.2.7; Apache ActiveMQ All: before 5.19.8, from 6.0.0 before 6.2.7; Apache ActiveMQ Stomp: before 5.19.8, from 6.0.0 before 6.2.7.<br></p><p></p><p>Users are recommended to upgrade to version 6.2.7 or 5.19.8, which fixes the issue.</p><p></p>
+
+### References
+* https://lists.apache.org/thread/fsjb26605syqr8xks249h8gkp86t55d2
+
+
+### Credits
+* Youngjoon Kim (finder)
+
+
 ## Durable Subscription Disclosure via Crafted BrokerInfo (OpenWire) ## { #CVE-2026-49270 }
 
 CVE-2026-49270 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49270) [\[CVE json\]](./CVE-2026-49270.cve.json) [\[OSV json\]](./CVE-2026-49270.osv.json)
@@ -234,7 +496,7 @@ CVE-2026-41043 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-41043) [\[CVE jso
 
 
 
-_Last updated: 2026-04-24T10:16:19.200Z_
+_Last updated: 2026-06-26T22:01:21.682Z_
 
 ### Affected
 
@@ -366,13 +628,19 @@ _Last updated: 2026-04-08T15:39:05.835Z_
 
 * Apache ActiveMQ Broker before 5.19.4
 * Apache ActiveMQ Broker from 6.0.0 before 6.2.3
+* Apache ActiveMQ All before 5.19.4
+* Apache ActiveMQ All from 6.0.0 before 6.2.3
 * Apache ActiveMQ before 5.19.4
 * Apache ActiveMQ from 6.0.0 before 6.2.3
 
 
 ### Description
 
-<p>Improper Input Validation, Improper Control of Generation of Code ('Code Injection') vulnerability in Apache ActiveMQ Broker, Apache ActiveMQ.</p><span style="background-color: rgb(255, 255, 255);">Apache ActiveMQ Classic exposes the Jolokia JMX-HTTP bridge at&nbsp;</span><span style="background-color: rgb(255, 255, 255);">/api/jolokia/ on the web console. The default Jolokia access policy permits&nbsp;</span><span style="background-color: rgb(255, 255, 255);">exec operations on all ActiveMQ&nbsp;</span><span style="background-color: rgb(255, 255, 255);">MBeans (org.apache.activemq:*), including</span><br><span style="background-color: rgb(255, 255, 255);">BrokerService.addNetworkConnec</span><span style="background-color: rgb(255, 255, 255);">tor(String) and <span style="background-color: rgb(255, 255, 255);">BrokerService.addConnector</span><span style="background-color: rgb(255, 255, 255);">(String)</span>. <br><br>An authenticated attacker </span><span style="background-color: rgb(255, 255, 255);">can&nbsp;</span><span style="background-color: rgb(255, 255, 255);">invoke these operations with a crafted discovery URI that triggers the VM&nbsp;</span><span style="background-color: rgb(255, 255, 255);">transport's brokerConfig parameter to load a remote Spring XML application&nbsp;</span><span style="background-color: rgb(255, 255, 255);">context using ResourceXmlApplicationContext. <br>Because Spring's&nbsp;</span><span style="background-color: rgb(255, 255, 255);">ResourceXmlApplicationContext instantiates all singleton beans before the&nbsp;</span><span style="background-color: rgb(255, 255, 255);">BrokerService validates the configuration, arbitrary code execution occurs&nbsp;</span><span style="background-color: rgb(255, 255, 255);">on the broker's JVM through bean factory methods such as Runtime.exec().</span><br><p>This issue affects Apache ActiveMQ Broker: before 5.19.4, from 6.0.0 before 6.2.3; Apache ActiveMQ: .</p><p>Users are recommended to upgrade to version 5.19.5 or 6.2.3, which fixes the issue.</p>
+Improper Input Validation, Improper Control of Generation of Code ('Code Injection') vulnerability in Apache ActiveMQ Broker, Apache ActiveMQ.<br><br>Apache ActiveMQ Classic exposes the Jolokia JMX-HTTP bridge at /api/jolokia/ on the web console. The default Jolokia access policy permits exec operations on all ActiveMQ MBeans (org.apache.activemq:*), including<br>BrokerService.addNetworkConnector(String) and BrokerService.addConnector(String).<br><br>An authenticated attacker can invoke these operations with a crafted discovery URI that triggers the VM transport's brokerConfig parameter to load a remote Spring XML application context using ResourceXmlApplicationContext.<br>Because Spring's ResourceXmlApplicationContext instantiates all singleton beans before the BrokerService validates the configuration, arbitrary code execution occurs on the broker's JVM through bean factory methods such as Runtime.exec().<br><br>
+
+<span style="background-color: rgb(255, 255, 255);">This issue affects Apache ActiveMQ Broker: before 5.19.4, from 6.0.0 before 6.2.3; Apache ActiveMQ All: before 5.19.4, from 6.0.0 before 6.2.3; Apache ActiveMQ: before 5.19.4, from 6.0.0 before 6.2.3.</span>
+
+<br><br>Users are recommended to upgrade to version 5.19.4 or 6.2.3, which fixes the issue<br><br>
 
 ### References
 * https://activemq.apache.org/security-advisories.data/CVE-2026-34197-announcement.txt
@@ -396,15 +664,23 @@ _Last updated: 2026-04-08T15:44:44.530Z_
 * Apache ActiveMQ Client from 6.0.0 before 6.2.2
 * Apache ActiveMQ Broker before 5.19.3
 * Apache ActiveMQ Broker from 6.0.0 before 6.2.2
-* Apache ActiveMQ before 5.19.3
-* Apache ActiveMQ from 6.0.0 before 6.2.2
+* Apache ActiveMQ All before 5.19.3
+* Apache ActiveMQ All from 6.0.0 before 6.2.2
 * Apache ActiveMQ Web before 5.19.3
 * Apache ActiveMQ Web from 6.0.0 before 6.2.2
+* Apache ActiveMQ before 5.19.3
+* Apache ActiveMQ from 6.0.0 before 6.2.2
 
 
 ### Description
 
-<p>Improper validation and restriction of a classpath path name vulnerability in Apache ActiveMQ Client, Apache ActiveMQ Broker, Apache ActiveMQ All.</p>In two instances (when creating a Stomp consumer and also browsing messages in the Web console) an authenticated user provided "key" value could be constructed to traverse the classpath due to path concatenation. As a result, the application is exposed to a classpath path resource loading vulnerability that could potentially be chained together with another attack to lead to exploit.<p>This issue affects Apache ActiveMQ Client: before 5.19.3, from 6.0.0 before 6.2.2; Apache ActiveMQ Broker: before 5.19.3, from 6.0.0 before 6.2.2; Apache ActiveMQ All: before 5.19.3, from 6.0.0 before 6.2.2.</p><p>Users are recommended to upgrade to version 5.19.4 or 6.2.3, which fixes the issue. Note: 5.19.3 and 6.2.2 also fix this issue, but that is limited to non-Windows environments due to a path separator resolution bug fixed in 5.19.4 and 6.2.3.&nbsp;</p>
+<p>Improper validation and restriction of a classpath path name vulnerability in 
+
+ Apache ActiveMQ Client, Apache ActiveMQ Broker, Apache ActiveMQ All, Apache ActiveMQ Web, Apache ActiveMQ.
+
+<br><br>In two instances (when creating a Stomp consumer and also browsing messages in the Web console) an authenticated user provided "key" value could be constructed to traverse the classpath due to path concatenation. As a result, the application is exposed to a classpath path resource loading vulnerability that could potentially be chained together with another attack to lead to exploit.</p><p>
+
+</p><p>This issue affects Apache ActiveMQ Client: before 5.19.3, from 6.0.0 before 6.2.2; Apache ActiveMQ Broker: before 5.19.3, from 6.0.0 before 6.2.2; Apache ActiveMQ All: before 5.19.3, from 6.0.0 before 6.2.2; Apache ActiveMQ Web: before 5.19.3, from 6.0.0 before 6.2.2; Apache ActiveMQ: before 5.19.3, from 6.0.0 before 6.2.2.</p>Users are recommended to upgrade to version 5.19.4 or 6.2.3, which fixes the issue. Note: 5.19.3 and 6.2.2 also fix this issue, but that is limited to non-Windows environments due to a path separator resolution bug fixed in 5.19.4 and 6.2.3.<br><p></p>
 
 ### References
 * https://activemq.apache.org/security-advisories.data/CVE-2026-33227-announcement.txt
@@ -437,10 +713,12 @@ _Last updated: 2026-04-10T10:52:26.234Z_
 
 ### Description
 
-<p><span style="background-color: rgb(255, 255, 255);">Apache ActiveMQ does not properly validate the remaining length field which may lead to an overflow during the decoding of malformed packets.&nbsp;</span><span style="background-color: rgb(255, 255, 255);">When this integer overflow occurs, ActiveMQ may incorrectly compute the total Remaining Length and subsequently misinterpret the payload as multiple MQTT control packets which makes<span style="background-color: rgb(255, 255, 255);">&nbsp;the broker susceptible to unexpected behavior when interacting with non-compliant clients.</span>&nbsp;</span><span style="background-color: rgb(255, 255, 255);">This behavior violates the MQTT v3.1.1 specification, which restricts Remaining Length to a maximum of 4 bytes.</span>&nbsp;The scenario occurs on established connections after the authentication process. Brokers that are not enabling mqtt transport connectors are not impacted.</p><p>This issue affects Apache ActiveMQ: before 5.19.2, 6.0.0 to 6.1.8, and 6.2.0</p><p>Users are recommended to upgrade to version 5.19.2, 6.1.9, or 6.2.1, which fixes the issue.</p>
+<p><span style="background-color: rgb(255, 255, 255);"><b>WARNING:</b><br><br></span><span style="background-color: rgb(239, 250, 102);">Users of 6.x should upgrade to 6.2.4 or later as the fix was missed in previous 6.x releases.</span><span style="background-color: rgb(255, 255, 255);"><br><br>See the&nbsp; following for more details:<br><a target="_blank" rel="nofollow" href="https://activemq.apache.org/security-advisories.data/CVE-2026-40046-announcement.txt">https://activemq.apache.org/security-advisories.data/CVE-2026-40046-announcement.txt</a><br><a target="_blank" rel="nofollow" href="https://www.cve.org/CVERecord?id=CVE-2026-40046">https://www.cve.org/CVERecord?id=CVE-2026-40046</a><br></span><span style="background-color: rgb(255, 255, 255);"><br></span></p><p><span style="background-color: rgb(255, 255, 255);"><b>Original Report:</b></span></p><p><span style="background-color: rgb(255, 255, 255);">Apache ActiveMQ does not properly validate the remaining length field which may lead to an overflow during the decoding of malformed packets.&nbsp;</span><span style="background-color: rgb(255, 255, 255);">When this integer overflow occurs, ActiveMQ may incorrectly compute the total Remaining Length and subsequently misinterpret the payload as multiple MQTT control packets which makes<span style="background-color: rgb(255, 255, 255);">&nbsp;the broker susceptible to unexpected behavior when interacting with non-compliant clients.</span>&nbsp;</span><span style="background-color: rgb(255, 255, 255);">This behavior violates the MQTT v3.1.1 specification, which restricts Remaining Length to a maximum of 4 bytes.</span>&nbsp;The scenario occurs on established connections after the authentication process. Brokers that are not enabling mqtt transport connectors are not impacted.</p><p>This issue affects Apache ActiveMQ: before 5.19.2, 6.0.0 to 6.1.8, and 6.2.0</p><p>Users are recommended to upgrade to version 5.19.2, 6.1.9, or 6.2.1, which fixes the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/13n8mkrb2jf2y6yyhpgrkmpqcm7djyto
+* https://www.cve.org/CVERecord?id=CVE-2026-40046
+* https://activemq.apache.org/security-advisories.data/CVE-2026-40046-announcement.txt
 
 
 ### Credits
@@ -689,11 +967,9 @@ _Last updated: 2024-05-31T08:42:39.786Z_
 org.jolokia.http.AgentServlet to handler request to /api/jolokia<br><br>org.jolokia.http.HttpRequestHandler#handlePostRequest is able to
 create JmxRequest through JSONObject. And calls to
 org.jolokia.http.HttpRequestHandler#executeRequest.<br><br>Into deeper calling stacks,
-org.jolokia.handler.ExecHandler#doHandleRequest is able to invoke
-through refection.
-
-And then, RCE is able to be achieved via
-jdk.management.jfr.FlightRecorderMXBeanImpl which exists on Java version above 11.
+org.jolokia.handler.ExecHandler#doHandleRequest can be invoked
+through refection. This could lead to RCE through via
+various mbeans. One example is unrestricted deserialization in jdk.management.jfr.FlightRecorderMXBeanImpl which exists on Java version above 11.
 <br><br>
 1 Call newRecording.
 <br>
@@ -706,12 +982,15 @@ jdk.management.jfr.FlightRecorderMXBeanImpl which exists on Java version above 1
 ### References
 * https://activemq.apache.org/security-advisories.data/CVE-2022-41678-announcement.txt
 * https://lists.apache.org/thread/7g17kwbtjl011mm4tr8bn1vnoq9wh4sl
+* https://www.openwall.com/lists/oss-security/2023/11/28/1
+* https://security.netapp.com/advisory/ntap-20240216-0004/
 
 
 ### Credits
 * wangxin@threatbook.cn (finder)
 * wangzhendong@threatbook.cn (finder)
 * honglonglong@threatbook.cn (finder)
+* Matei "Mal" Badanoiu (finder)
 
 
 ## HTML Injection in ActiveMQ Artemis Web Console ## { #CVE-2022-35278 }

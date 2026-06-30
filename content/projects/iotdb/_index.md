@@ -65,6 +65,58 @@ _Last updated: 2026-03-09T08:57:43.961Z_
 * Mapta / BugBunny_ai (finder)
 
 
+## Path Traversal Vulnerability ## { #CVE-2025-64152 }
+
+CVE-2025-64152 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-64152) [\[CVE json\]](./CVE-2025-64152.cve.json) [\[OSV json\]](./CVE-2025-64152.osv.json)
+
+
+
+_Last updated: 2026-06-26T12:16:26.834Z_
+
+### Affected
+
+* Apache IoTDB from 1.0.0 before 1.3.6
+* Apache IoTDB from 2.0.0 before 2.0.7
+
+
+### Description
+
+<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache IoTDB.</p><p>This issue affects Apache IoTDB: from 1.0.0 before 1.3.6, from 2.0.0 before 2.0.7.</p><p>Users are recommended to upgrade to version 1.3.6 and 2.0.7, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/sjms84rlt4g78fwmjcowxmtjp1q8b9q4
+
+
+### Credits
+* Yan Nan (Detecon Security Lab) (finder)
+
+
+## Path Traversal Vulnerability ## { #CVE-2025-55017 }
+
+CVE-2025-55017 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-55017) [\[CVE json\]](./CVE-2025-55017.cve.json) [\[OSV json\]](./CVE-2025-55017.osv.json)
+
+
+
+_Last updated: 2026-06-26T12:15:51.835Z_
+
+### Affected
+
+* Apache IoTDB from 2.0.0 before 2.0.6
+* Apache IoTDB from 1.0.0 before 1.3.6
+
+
+### Description
+
+<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache IoTDB.</p><p>This issue affects Apache IoTDB: from 2.0.0 before 2.0.6, from 1.0.0 before 1.3.6.</p><p>Users are recommended to upgrade to version 1.3.6 and 2.0.6, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/lk08wlxq9sp64mo8hw6wvjxd3bh3lpqg
+
+
+### Credits
+* qx (finder)
+
+
 ## Deserialization of untrusted Data ## { #CVE-2025-48459 }
 
 CVE-2025-48459 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-48459) [\[CVE json\]](./CVE-2025-48459.cve.json) [\[OSV json\]](./CVE-2025-48459.osv.json)

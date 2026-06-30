@@ -27,7 +27,6 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Atlas |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Avro |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Axis |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache Baremaps](https://github.com/apache/incubator-baremaps/blob/main/SECURITY.md) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache BookKeeper |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache bRPC](https://github.com/apache/brpc/blob/master/THREAT_MODEL.md) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Calcite |  [Apache Security Team](mailto:security@apache.org) | |
@@ -38,6 +37,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Cayenne |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache CloudStack](https://cloudstack.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Commons](https://commons.apache.org/security.html) |  [Apache Commons Security Team](mailto:security@commons.apache.org) | [Advisories](https://commons.apache.org/security.html#Known_Security_Vulnerabilities) |
+| Apache Cordova |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache CouchDB |  [Apache CouchDB Security Team](mailto:security@couchdb.apache.org) | |
 | Apache CXF |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache DB |  [Apache Security Team](mailto:security@apache.org) | |
@@ -89,7 +89,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Kyuubi |  [Apache Kyuubi Security Team](mailto:security@kyuubi.apache.org) | |
 | [Apache Libcloud](https://libcloud.apache.org/security.html) |  [Apache Libcloud Security Team](mailto:security@libcloud.apache.org) | |
 | Apache Linkis |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Livy (Incubating) |  [Apache Security Team](mailto:security@apache.org) | |
+| Apache Livy |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Logging](https://logging.apache.org/security.html) |  [Apache Logging Security Team](mailto:security@logging.apache.org) | [Advisories](https://logging.apache.org/security.html) |
 | Apache Lucene |  [Apache Lucene Security Team](mailto:security@lucene.apache.org) | |
 | Apache Lucene.NET |  [Apache Security Team](mailto:security@apache.org) | |

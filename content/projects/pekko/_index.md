@@ -26,11 +26,14 @@ _Last updated: 2025-06-11T17:44:21.510Z_
 * Apache Pekko Management from 1.0.0 before 1.1.1
 * Apache Pekko Management from 1.0.0 before 1.1.1
 * Apache Pekko Management from 1.0.0 before 1.1.1
+* Akka Management before 1.6.1
+* Akka Management before 1.6.1
+* Akka Management before 1.6.1
 
 
 ### Description
 
-<div>If you enable Basic Authentication in Pekko Management using the Java DSL, the authenticator may not be properly applied.<br></div><div>Users that rely on authentication instead of making sure the Management API ports are only available to trusted users are recommended to upgrade to version 1.1.1, which fixes this issue.</div>
+<div>If you enable Basic Authentication in Pekko Management using the Java DSL, the authenticator may not be properly applied.<br></div><div>Users that rely on authentication instead of making sure the Management API ports are only available to trusted users are recommended to upgrade to version 1.1.1, which fixes this issue.</div><div><br></div><div>Akka was affected by the same issue and has released the fix in version 1.6.1.</div>
 
 ### References
 * https://github.com/apache/pekko-management/pull/418

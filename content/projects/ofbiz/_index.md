@@ -13,6 +13,57 @@ Do you want disclose a potential security issue for Apache OFBiz? You can read m
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://ofbiz.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## DataResource Low-Privileged Authenticated FreeMarker Template Injection Leads to Remote Code Execution ## { #CVE-2026-50223 }
+
+CVE-2026-50223 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50223) [\[CVE json\]](./CVE-2026-50223.cve.json) [\[OSV json\]](./CVE-2026-50223.osv.json)
+
+
+
+_Last updated: 2026-06-10T22:23:48.015Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.07
+
+
+### Description
+
+<p>Improper Control of Generation of Code ('Code Injection') vulnerability in Apache OFBiz allows a low-privileged authenticated user with Content/DataResource editing privileges to perform template injection attacks that could lead to Remote Code Execution.</p><p>This issue affects Apache OFBiz: before 24.09.07.</p><p>Users are recommended to upgrade to version 24.09.07, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/trr2p4zokg54glqlhjnglt4yr7n8t5xd
+
+
+### Credits
+* yi (reporter)
+* Jongyeon Lee (reporter)
+
+
+## Privilege Escalation via updateOrRemove Authorization Bypass ## { #CVE-2026-47342 }
+
+CVE-2026-47342 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-47342) [\[CVE json\]](./CVE-2026-47342.cve.json) [\[OSV json\]](./CVE-2026-47342.osv.json)
+
+
+
+_Last updated: 2026-06-10T22:29:05.548Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.07
+
+
+### Description
+
+<p></p><p>A privilege escalation vulnerability in Apache OFBiz allows a low-privileged authenticated user to obtain higher privileges</p><p></p><p>This issue affects Apache OFBiz: before 24.09.07.</p><p>Users are recommended to upgrade to version 24.09.07, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/xqph4qjm163kmp0tcg9dodl6js499n75
+
+
+### Credits
+* Le Huynh Duc (lwd3c) (finder)
+
+
 ## Improper Validation in traverseContent Service Enables Authenticated Groovy Code Execution ## { #CVE-2026-46586 }
 
 CVE-2026-46586 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-46586) [\[CVE json\]](./CVE-2026-46586.cve.json) [\[OSV json\]](./CVE-2026-46586.osv.json)
@@ -615,7 +666,7 @@ _Last updated: 2026-05-04T14:55:18.092Z_
 
 ### Credits
 * Sebastiano Sartor <s@sebsrt.xyz> (finder)
-* Ryan <marimoo.eth@gmail.com> (finder)
+* Ryan Chan <https://www.linkedin.com/in/ryanchan07/> (finder)
 
 
 ## URLs allowing remote use of Groovy expressions, leading to RCE ## { #CVE-2024-47208 }
@@ -986,6 +1037,7 @@ Missing Authentication in Apache Software Foundation Apache OFBiz when using the
 * https://ofbiz.apache.org/security.html
 * https://ofbiz.apache.org/release-notes-18.12.09.html
 * https://lists.apache.org/thread/mm5j0rsbl22q7yb0nmb6h2swbfjbwv99
+* https://issues.apache.org/jira/browse/OFBIZ-12792
 
 
 ### Credits

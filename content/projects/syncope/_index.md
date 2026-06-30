@@ -204,9 +204,7 @@ When editing objects in the Syncope Console, incomplete HTML tags could be used 
 
 ## HTML tags can be injected into Console or Enduser text fields ## { #CVE-2024-38503 }
 
-CVE-2024-38503 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-38503) [\[CVE json\]](./CVE-2024-38503.cve.json) [\[OSV json\]](./CVE-2024-38503.osv.json)
-
-
+CVE-2024-38503 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-38503) [\[CVE json\]](./CVE-2024-38503.cve.json)
 
 _Last updated: 2024-09-11T11:11:10.160Z_
 
@@ -222,6 +220,7 @@ When editing a user, group or any object in the Syncope Console, HTML tags could
 
 ### References
 * https://syncope.apache.org/security#cve-2024-38503-html-tags-can-be-injected-into-console-or-enduser
+* https://www.openwall.com/lists/oss-security/2024/07/22/3
 
 
 ### Credits

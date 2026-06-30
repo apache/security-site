@@ -53,11 +53,12 @@ _Last updated: 2026-03-30T02:05:32.515Z_
 
 ### Description
 
-<p>Deserialization of Untrusted Data vulnerability in Apache Seata (incubating).</p><span style="background-color: rgb(255, 255, 255);">This security vulnerability is the same as CVE-2024-47552, but the version range described in the CVE-2024-47552 definition is too narrow.</span><br><p>This issue affects Apache Seata (incubating): from 2.0.0 before 2.3.0.</p><p>Users are recommended to upgrade to version 2.3.0, which fixes the issue.</p>
+<p>Deserialization of Untrusted Data vulnerability in Apache Seata (incubating).</p><span style="background-color: rgb(255, 255, 255);">This security vulnerability is the same as CVE-2024-47552, but the version range described in the CVE-2024-47552 definition is too narrow.</span><br><p>This issue affects Apache Seata (incubating): from 2.0.0 before 2.3.0.</p><b>Severity Justification:</b><br>The Apache Seata security team assesses the severity of this vulnerability as "Low" due to stringent real-world mitigating factors. First, the vulnerability is strictly isolated to the Raft cluster mode, an optional and non-default feature introduced in v2.0.0, while most users rely on the unaffected traditional architecture. Second, Seata is an internal middleware; communication between TC and RM/TM occurs entirely within trusted internal networks. An attacker would require prior, unauthorized access to the Intranet to exploit this, making external exploitation highly improbable.<br><p>Users are recommended to upgrade to version 2.3.0, which fixes the issue.</p>
 
 ### References
 * https://www.cve.org/CVERecord?id=CVE-2024-47552
 * https://lists.apache.org/thread/9fhtf7yvpjpzlwd1m0wfgg6tp2btxpy1
+* https://github.com/apache/incubator-seata/commit/20cd9625d23f99b71fefc83b8db96c14092a9950
 
 
 ## compression bomb attack in Apache Seata Server ## { #CVE-2024-54016 }
@@ -100,10 +101,14 @@ _Last updated: 2026-03-30T02:08:11.034Z_
 
 ### Description
 
-<p>Deserialization of Untrusted Data vulnerability in Apache Seata (incubating).</p><p>This issue affects Apache Seata (incubating): from 2.0.0 before 2.2.0.</p><p>Users are recommended to upgrade to version 2.2.0, which fixes the issue.</p>
+<div>Deserialization of Untrusted Data vulnerability in Apache Seata (incubating).</div><div>
+</div><div><br>This issue affects Apache Seata (incubating): from 2.0.0 before 2.2.0.</div><div>
+</div><div><br><b>Severity Justification:</b></div><div>The Apache Seata security team assesses the severity of this vulnerability as "Low" due to stringent real-world mitigating factors. First, the vulnerability is strictly isolated to the Raft cluster mode, an optional and non-default feature introduced in v2.0.0, while most users rely on the unaffected traditional architecture. Second, Seata is an internal middleware; communication between TC and RM/TM occurs entirely within trusted internal networks. An attacker would require prior, unauthorized access to the Intranet to exploit this, making external exploitation highly improbable.</div><div>
+</div><div><br>Users are recommended to upgrade to version 2.2.0, which fixes the issue.</div><br>
 
 ### References
 * https://lists.apache.org/thread/652o82vzk9qrtgksk55cfgpbvdgtkch0
+* https://github.com/apache/incubator-seata/commit/20cd9625d23f99b71fefc83b8db96c14092a9950
 
 
 ### Credits

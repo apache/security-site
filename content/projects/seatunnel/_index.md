@@ -67,19 +67,25 @@ Mysql security vulnerability in Apache SeaTunnel.<br><br><tt><span style="backgr
 
 ## Authentication bypass ## { #CVE-2023-48396 }
 
-CVE-2023-48396 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-48396) [\[CVE json\]](./CVE-2023-48396.cve.json)
+CVE-2023-48396 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-48396) [\[CVE json\]](./CVE-2023-48396.cve.json) [\[OSV json\]](./CVE-2023-48396.osv.json)
+
+
 
 _Last updated: 2024-07-30T08:15:30.810Z_
 
 ### Affected
 
-* Apache SeaTunnel at 1.0.0
+* Apache SeaTunnel Web at 1.0.0
 
 
 ### Description
 
-Web Authentication vulnerability in Apache SeaTunnel.<p>This issue affects Apache SeaTunnel: 1.0.0.</p><p>Users are recommended to upgrade to version 1.0.1, which fixes the issue.</p>
+Web Authentication vulnerability in Apache SeaTunnel.&nbsp;<span style="background-color: rgb(255, 255, 255);">Since the jwt key is hardcoded in the application, an attacker can forge
+any token to log in any user.<br><br></span>Attacker can get&nbsp;<span style="background-color: rgb(255, 255, 255);">secret key in&nbsp;<span style="background-color: rgb(255, 255, 255);">/seatunnel-server/seatunnel-app/src/main/resources/application.yml and then create a token.</span></span><br><p>This issue affects Apache SeaTunnel: 1.0.0.</p><p>Users are recommended to upgrade to version 1.0.1, which fixes the issue.</p>
 
 ### References
-* https://lists.apache.org/thread/hbwcp33zmgghhhhjhkjlo3g092t3xqf4
-* https://lists.apache.org/thread/%3CCAFBzuDO=+L_EO=VFD8i5W5AcDOzKLz_ORGJrJxsdxEFjHTBSjQ@mail.gmail.com%3E?%3Cprivate.seatunnel.apache.org%3E
+* https://lists.apache.org/thread/1tdxfjksx0vb9gtyt77wlr6rdcy1qwmw
+
+
+### Credits
+* jiahua huang / Joyh (reporter)

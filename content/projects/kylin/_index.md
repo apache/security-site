@@ -36,6 +36,10 @@ _Last updated: 2026-02-02T07:35:53.853Z_
 
 ### Credits
 * liuhuajin <liuhuajin1@huawei.com> (finder)
+* 75Acol (finder)
+* fcgboy (finder)
+* stan fang (finder)
+* zer0duck (finder)
 
 
 ## improper restriction of file read ## { #CVE-2025-61734 }
@@ -62,6 +66,10 @@ _Last updated: 2026-02-02T07:35:03.252Z_
 
 ### Credits
 * liuhuajin <liuhuajin1@huawei.com> (finder)
+* 75Acol (finder)
+* fcgboy (finder)
+* stan fang (finder)
+* zer0duck (finder)
 
 
 ## Authentication bypass ## { #CVE-2025-61733 }
@@ -87,6 +95,10 @@ _Last updated: 2026-02-02T07:33:38.093Z_
 
 ### Credits
 * liuhuajin <liuhuajin1@huawei.com> (finder)
+* 75Acol (finder)
+* fcgboy (finder)
+* stan fang (finder)
+* zer0duck (finder)
 
 
 ## The remote code execution via jdbc url ## { #CVE-2025-30067 }

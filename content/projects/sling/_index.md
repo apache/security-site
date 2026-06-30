@@ -136,9 +136,7 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 
 ## Multiple parsing problems in the Apache Sling Commons JSON module ## { #CVE-2022-47937 }
 
-CVE-2022-47937 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-47937) [\[CVE json\]](./CVE-2022-47937.cve.json) [\[OSV json\]](./CVE-2022-47937.osv.json)
-
-
+CVE-2022-47937 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-47937) [\[CVE json\]](./CVE-2022-47937.cve.json)
 
 _Last updated: 2024-03-29T09:39:29.809Z_
 
@@ -149,8 +147,7 @@ _Last updated: 2024-03-29T09:39:29.809Z_
 
 ### Description
 
-<div>** UNSUPPORTED WHEN ASSIGNED ** <br></div><div><br></div><div>Improper input validation in the Apache Sling Commons JSON bundle allows an attacker to trigger unexpected errors by supplying specially-crafted input.</div><div><br></div><div><div>NOTE: This vulnerability 
-only affects products that are no longer supported by the maintainer</div><div><br></div><div>The org.apache.sling.commons.json bundle has been deprecated as of March
+<div>Improper input validation in the Apache Sling Commons JSON bundle allows an attacker to trigger unexpected errors by supplying specially-crafted input.</div><div><br><div>The org.apache.sling.commons.json bundle has been deprecated as of March
  2017 and should not be used anymore. Consumers are encouraged to 
 consider the Apache Sling Commons Johnzon OSGi bundle provided by the 
 Apache Sling project, but may of course use other JSON libraries.<br></div></div>
@@ -159,6 +156,7 @@ Apache Sling project, but may of course use other JSON libraries.<br></div></div
 * https://issues.apache.org/jira/browse/SLING-6536
 * https://github.com/apache/sling-org-apache-sling-commons-johnzon
 * https://lists.apache.org/thread/sws7z50x47gv0c38q4kx6ktqrvrrg1pm
+* https://www.openwall.com/lists/oss-security/2023/05/15/2
 
 
 ### Credits

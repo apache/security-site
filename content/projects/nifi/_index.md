@@ -13,6 +13,106 @@ Do you want disclose a potential security issue for Apache NiFi? You can read mo
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://nifi.apache.org/documentation/security/). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Missing Validation for Proxy Host Headers ## { #CVE-2026-54665 }
+
+CVE-2026-54665 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-54665) [\[CVE json\]](./CVE-2026-54665.cve.json) [\[OSV json\]](./CVE-2026-54665.osv.json)
+
+
+
+_Last updated: 2026-06-22T07:34:12.067Z_
+
+### Affected
+
+* Apache NiFi from 0.0.1 before 2.10.0
+
+
+### Description
+
+Apache NiFi 0.0.1 through 2.9.0 support building qualified URLs from one of several HTTP request headers that provide an alternative to the standard Host header without validating the values provided. Apache NiFi 1.6.0 introduced a configurable application property to restrict values provided in the HTTP Host header, but did not apply the validation to alternative Proxy and Forwarded headers. The absence of proxy host header validation allowed a client to instruct Apache NiFi web services to construct invalid qualified URLs for redirection or data references. Upgrading to Apache NiFi 2.10.0 is the recommended mitigation, which implements validation for the X-ProxyHost and X-Forwarded-Host HTTP request headers based on the nifi.web.proxy.host property. Enabling header validation requires configuring the application with HTTPS. Reverse proxy servers in front of Apache NiFi are responsible for filtering input request headers and providing allowed values to the application.
+
+### References
+* https://lists.apache.org/thread/y0yoblon8f6dp00qz5r90cxq5n6g4j6k
+
+
+### Credits
+* Jose Rivas (finder)
+
+
+## Missing Authorization of Restricted Permissions when Replacing Flow Contents ## { #CVE-2026-44914 }
+
+CVE-2026-44914 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44914) [\[CVE json\]](./CVE-2026-44914.cve.json) [\[OSV json\]](./CVE-2026-44914.osv.json)
+
+
+
+_Last updated: 2026-06-22T07:38:00.013Z_
+
+### Affected
+
+* Apache NiFi from 1.12.0 through 2.9.0
+
+
+### Description
+
+Apache NiFi 1.12.0 through 2.9.0 are missing authorization when replacing Process Groups that include extension components with specific Required Permissions based on the Restricted annotation. The Restricted annotation indicates additional privileges required, but framework authorization did not check restricted status when handling requests to replace Process Groups. The missing authorization permits a user with general write access to add components with Restricted status. Apache NiFi installations that do not implement specific authorization for Restricted components are not subject to this vulnerability because the framework enforces write permissions as the security boundary. Upgrading to Apache NiFi 2.9.0 is the recommended mitigation, which removes the implementation of Restricted status authorization from the framework.<br>
+
+### References
+* https://lists.apache.org/thread/ydr34t03xd1n0t9oogpzogjrd5y93838
+
+
+### Credits
+* Roberto Suggi Liverani from NATO Cyber Security Centre (NCSC) (finder)
+
+
+## Improper Escaping of Table Names in CaptureChangeMySQL ## { #CVE-2026-44913 }
+
+CVE-2026-44913 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44913) [\[CVE json\]](./CVE-2026-44913.cve.json) [\[OSV json\]](./CVE-2026-44913.osv.json)
+
+
+
+_Last updated: 2026-06-22T07:36:39.632Z_
+
+### Affected
+
+* Apache NiFi from 1.2.0 through 2.9.0
+
+
+### Description
+
+Improper escaping of database table names in the CaptureChangeMySQL Processor included with Apache NiFi 1.2.0 through 2.9.0 allows for injecting SQL commands using crafted naming. Manual quoted boundaries added in Apache NiFi 1.8.0 narrowed the scope of potential injection options, but did not cover additional strategies. Apache NiFi installations that do not use the CaptureChangeMySQL Processor are not subject to this vulnerability. Upgrading to Apache NiFi 2.10.0 is the recommended mitigation, which incorporates more robust identifier escaping.
+
+### References
+* https://lists.apache.org/thread/c8vkt5rz4dqql6sjxgrr3zdkbt1sfmsl
+
+
+### Credits
+* Roberto Suggi Liverani from NATO Cyber Security Centre (NCSC) (finder)
+
+
+## Incorrect Authorization for Configuration Verification Requests ## { #CVE-2026-44911 }
+
+CVE-2026-44911 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44911) [\[CVE json\]](./CVE-2026-44911.cve.json) [\[OSV json\]](./CVE-2026-44911.osv.json)
+
+
+
+_Last updated: 2026-06-22T07:37:09.411Z_
+
+### Affected
+
+* Apache NiFi from 1.15.0 through 2.9.0
+
+
+### Description
+
+<div>Authorization handling for component configuration verification requests in Apache NiFi 1.15.0 through 2.9.0 allows clients with read access to submit proposed configuration properties. The proposed properties override current configuration, enabling users with read access to invoke predefined verification methods with alternative settings. Apache NiFi installations that do not implement different levels of authorization for viewing and modifying component configuration are not subject to this vulnerability. Upgrading to Apache NiFi 2.10.0 is the recommended mitigation, requiring write access to submit configuration verification requests.</div>
+
+### References
+* https://lists.apache.org/thread/wrj3t4k2bwd2cztyp078f5kj3722qfzy
+
+
+### Credits
+* Kaixuan Li from Nanyang Technological University (finder)
+
+
 ## Missing Execute Code Required Permission on TinkerpopClientService ## { #CVE-2026-39816 }
 
 CVE-2026-39816 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-39816) [\[CVE json\]](./CVE-2026-39816.cve.json) [\[OSV json\]](./CVE-2026-39816.osv.json)

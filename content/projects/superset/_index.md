@@ -292,7 +292,7 @@ _Last updated: 2025-09-01T09:52:51.812Z_
 
 ### Description
 
-<p>Improper Authorization vulnerability in Apache Superset allows ownership takeover of dashboards, charts or datasets by authenticated users with read permissions.</p><p>This issue affects Apache Superset: through 4.1.1.</p><p>Users are recommended to upgrade to version 4.1.2 or above, which fixes the issue.</p>
+<p>Incorrect Authorization vulnerability in Apache Superset allows ownership takeover of dashboards, charts or datasets by authenticated users with read permissions.</p><p>This issue affects Apache Superset: through 4.1.1.</p><p>Users are recommended to upgrade to version 4.1.2 or above, which fixes the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/k2od03bxnxs6vcp80sr03ywcxl194413
@@ -1134,9 +1134,7 @@ An authenticated user with Gamma role authorization could have access to metadat
 
 ## Session validation vulnerability when using provided default SECRET_KEY ## { #CVE-2023-27524 }
 
-CVE-2023-27524 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-27524) [\[CVE json\]](./CVE-2023-27524.cve.json) [\[OSV json\]](./CVE-2023-27524.osv.json)
-
-
+CVE-2023-27524 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-27524) [\[CVE json\]](./CVE-2023-27524.cve.json)
 
 _Last updated: 2024-04-08T09:07:29.864Z_
 
@@ -1147,10 +1145,13 @@ _Last updated: 2024-04-08T09:07:29.864Z_
 
 ### Description
 
-Session Validation attacks in Apache Superset versions up to and including 2.0.1. Installations that have not altered the default configured SECRET_KEY according to installation instructions allow for an attacker to authenticate and access unauthorized resources. This does not affect Superset administrators who have changed the default value for SECRET_KEY config.
+Session Validation attacks in Apache Superset versions up to and including 2.0.1. Installations that have not altered the default configured SECRET_KEY according to installation instructions allow for an attacker to authenticate and access unauthorized resources. This does not affect Superset administrators who have changed the default value for SECRET_KEY config.<br><br>All superset installations should always set a unique secure random SECRET_KEY. Your SECRET_KEY is used to securely sign all session cookies and encrypting sensitive information on the database.<br>Add a strong SECRET_KEY to your `superset_config.py` file like:<br><br>SECRET_KEY = &lt;YOUR_OWN_RANDOM_GENERATED_SECRET_KEY&gt;<br><br>Alternatively you can set it with `SUPERSET_SECRET_KEY` environment variable.<br>
 
 ### References
 * https://lists.apache.org/thread/n0ftx60sllf527j7g11kmt24wvof8xyk
+* https://www.openwall.com/lists/oss-security/2023/04/24/2
+* https://packetstormsecurity.com/files/172522/Apache-Superset-2.0.0-Authentication-Bypass.html
+* https://packetstormsecurity.com/files/175094/Apache-Superset-2.0.0-Remote-Code-Execution.html
 
 
 ### Credits
