@@ -19,7 +19,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache Ambari |  [Apache Ambari Security Team](mailto:security@ambari.apache.org) | |
 | [Apache Answer](https://answer.apache.org/community/security-model) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://answer.apache.org/community/security/) |
 | [Apache Ant](https://ant.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache APISIX](https://github.com/apache/apisix/blob/master/THREAT_MODEL.md) |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache APISIX](https://apisix.apache.org/docs/apisix/security-threat-model/) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Portable Runtime (APR)](https://apr.apache.org/security_report.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Arrow](https://arrow.apache.org/docs/dev/format/Security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Artemis](https://github.com/apache/artemis/blob/main/docs/user-manual/threat-model.adoc) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://artemis.apache.org/components/artemis/security) |
