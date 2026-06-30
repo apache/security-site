@@ -138,9 +138,10 @@ def _project_issue_windows(pmc: str) -> list[IssueWindow]:
         tree_dir = data_dir / tree / pmc
         if tree_dir.is_dir():
             for path in tree_dir.glob("**/*.json"):
-                w = _issue_window(path, closed=True)
-                if w is not None:
-                    windows.append(w)
+                if (not (path.name.startswith("zzz") or path.name.startswith("aaa"))):
+                    w = _issue_window(path, closed=True)
+                    if w is not None:
+                        windows.append(w)
 
     return windows
 
