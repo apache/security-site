@@ -77,7 +77,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache IoTDB |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Jackrabbit](https://jackrabbit.apache.org/jcr/security-reports.html) |  [Apache Jackrabbit Security Team](mailto:security@jackrabbit.apache.org) | [Advisories](https://jackrabbit.apache.org/jcr/security-reports.html) |
 | Apache James |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Jena |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Jena](https://github.com/apache/jena/blob/main/THREAT_MODEL.md) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache JMeter](https://jmeter.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Johnzon](https://johnzon.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache JSPWiki](https://jspwiki-wiki.apache.org/Wiki.jsp?page=Security) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE) |
