@@ -30,7 +30,7 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | Apache BookKeeper |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache bRPC](https://github.com/apache/brpc/blob/master/THREAT_MODEL.md) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Calcite |  [Apache Security Team](mailto:security@apache.org) | |
-| [Apache Camel](https://camel.apache.org/manual/security-model.html) |  [Apache Security Team](mailto:security@apache.org) | |
+| [Apache Camel](https://camel.apache.org/manual/security-model.html) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://camel.apache.org/security/index.html) |
 | [Apache Carbondata](https://carbondata.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Cassandra](https://cassandra.apache.org/doc/latest/cassandra/managing/operating/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Causeway |  [Apache Security Team](mailto:security@apache.org) | |
