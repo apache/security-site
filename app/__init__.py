@@ -114,7 +114,7 @@ async def _require_authentication() -> utils.UserSession:
 @CLIENT.route("/statistics")
 async def statistics_dashboard():
     await _require_authentication()
-    return await quart.render_template("statistics.html")
+    return await quart.render_template("statistics.html", debt_constant=statistics.DEBT_CONSTANT)
 
 @CLIENT.route("/api/statistics/debt")
 async def statistics_debt_api():
@@ -154,6 +154,7 @@ async def project(project: str):
     ]
     return await quart.render_template("project.html",
         project_name=project,
+        debt_constant=statistics.DEBT_CONSTANT,
         sections=sections,
         show_subproject=project in config.get().pmcs_with_subprojects)
 

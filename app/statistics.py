@@ -24,6 +24,8 @@ import json
 import pathlib
 import re
 
+DEBT_CONSTANT = 30
+
 # Trees that sit at the data-dir root and mirror the per-project layout, holding
 # issues that have since been closed: <data_dir>/<tree>/<project>/**/*.json
 _CLOSED_TREES = (
@@ -47,7 +49,7 @@ class IssueWindow:
 
     def debt_at(self, when: datetime.date) -> int:
         """Debt contribution at `when`: days since the issue was opened plus a constant."""
-        return 100 + (when - self.opened).days
+        return DEBT_CONSTANT + (when - self.opened).days
 
 
 _CVE_PUSHED_SUFFIX = "was pushed to cve.org"
