@@ -95,12 +95,19 @@ class Report:
         cleaned = re.sub(r"\s+", " ", cleaned).strip()
         return cleaned[:200]
 
+def _known_bad_address(time, address):
+    mailtime = datetime.datetime.fromtimestamp(time, tz=datetime.timezone.utc).date()
+    spark_retirement = datetime.date.fromisoformat("2026-02-16")
+    if address == 'security@spark.apache.org' and spark_retirement < mailtime:
+        return True
+    return False
+
 def _apache_list_address(email):
     addresses = list(getaddresses([email['to']]))
     if 'cc' in email:
         addresses.extend(getaddresses([email['cc']]))
     for _, address in addresses:
-        if address.endswith('.apache.org'):
+        if address.endswith('.apache.org') and not _known_bad_address(email['mailtime'], address):
             return address
     return None
 
