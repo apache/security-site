@@ -63,6 +63,8 @@ class Report:
     """internal label the security team assigned to the thread,
        not to be exposed"""
     cves: list[str]
+    github: (str, str)
+    """If this project tracks security issues in private GitHub issues, the GitHub issue link (title and url)"""
     jira: str
     """If this project tracks security issues in private jira issues, the Jira ID"""
     title: str
@@ -138,11 +140,18 @@ def load_pmc_report(pmc: str, path: pathlib.Path) -> Report | None:
 
     jira = None
     if pmc in config.get().pmcs_using_jira:
-        print(path.name)
         m = re.match(r"\S+ (\d+) .*", path.name)
         if m:
             jira = config.get().pmcs_using_jira[pmc] + "-" + m.group(1)
-            print(jira)
+
+    github = None
+    if pmc in config.get().pmcs_using_github:
+        for email in emails:
+            m = re.match(r"^\[.*#(\d+)\)$", email['subj'])
+            if m:
+                issue_nr = m.group(1)
+                github = (f"#{issue_nr}", f"https://github.com/{config.get().pmcs_using_github[pmc]}/issues/{issue_nr}")
+                break
 
     if cves:
         state = "confirmed"
@@ -181,6 +190,7 @@ def load_pmc_report(pmc: str, path: pathlib.Path) -> Report | None:
     return Report(
         path.name,
         cves,
+        github,
         jira,
         title,
         _asf_member_link(first_email),
