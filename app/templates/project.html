@@ -83,8 +83,18 @@ If you see anything that seems incorrect, email
 {% else %}
   <center>
     <p class="congrats">Congratulations! Your project is back to 0 open security reports!</p>
-    <img src="/assets/img/tokio.jpg">
-    <p>Tokio helps vigilantly watch your codebase.</p>
+    {% set mascot, alt, captions = [
+        ('tokio.jpg', 'Tokio the cat',
+                      ['Tokio helps vigilantly watch your codebase.',
+                       'Tokio personally answers poorly written security reports by walking across the keyboard.',
+                       "Tokio's draft reply to the latest AI-generated report: hjkl;;;;;;;dfgw."]),
+        ('mamba.jpg', 'Mamba the dog',
+                      ['Mamba ate all your security reports.',
+                       'Mamba is not fat, just furry. And your backlog is not gone, just resolved.',
+                       'Mamba sat on the backlog until it stopped moving.']),
+    ]|random %}
+    <img src="/assets/img/{{ mascot }}" alt="{{ alt }}">
+    <p>{{ captions|random }}</p>
   </center>
 {% endif %}
 {% endblock content %}
