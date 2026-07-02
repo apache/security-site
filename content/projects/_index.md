@@ -21,44 +21,26 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Ant](https://ant.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache APISIX](https://github.com/apache/apisix/blob/master/THREAT_MODEL.md) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Portable Runtime (APR)](https://apr.apache.org/security_report.html) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Aries |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Arrow](https://arrow.apache.org/docs/dev/format/Security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Artemis](https://github.com/apache/artemis/blob/main/docs/user-manual/threat-model.adoc) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://artemis.apache.org/components/artemis/security) |
 | Apache AsterixDB |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Atlas |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Attic |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Avro |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Axis |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Beam |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Bigtop |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache BookKeeper |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Brooklyn |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache bRPC](https://github.com/apache/brpc/blob/master/THREAT_MODEL.md) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache BuildStream |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache BVal |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Calcite |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Camel](https://camel.apache.org/manual/security-model.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Carbondata](https://carbondata.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Cassandra](https://cassandra.apache.org/doc/latest/cassandra/managing/operating/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Causeway |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Cayenne |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Celeborn |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Celix |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache CloudStack](https://cloudstack.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Community Development |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Commons](https://commons.apache.org/security.html) |  [Apache Commons Security Team](mailto:security@commons.apache.org) | [Advisories](https://commons.apache.org/security.html#Known_Security_Vulnerabilities) |
 | Apache Cordova |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache CouchDB |  [Apache CouchDB Security Team](mailto:security@couchdb.apache.org) | |
-| Apache Creadur |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache cTAKES |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Curator |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache CXF |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Daffodil |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache DataFu |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache DataFusion |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache DataSketches |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache DB |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache DeltaSpike |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache DevLake](https://devlake.apache.org/docs/v1.0/GettingStarted/Authentication) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Directory |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache DolphinScheduler](https://github.com/apache/dolphinscheduler/blob/dev/docs/docs/en/contribute/join/security.md) |  [Apache DolphinScheduler Security Team](mailto:security@dolphinscheduler.apache.org) | |
@@ -67,26 +49,17 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Druid](https://druid.apache.org/docs/latest/operations/security-overview.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Dubbo](https://dubbo.apache.org/en/docs/notices/security/) |  [Apache Dubbo Security Team](mailto:security@dubbo.apache.org) | |
 | [Apache ECharts](https://echarts.apache.org/handbook/en/best-practices/security/#) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Empire-db |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache EventMesh |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Felix |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Fesod (Incubating) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Fineract](https://fineract.apache.org/security.html) |  [Apache Fineract Security Team](mailto:security@fineract.apache.org) | [Advisories](https://fineract.apache.org/security.html) |
-| Apache Flagon |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Flex |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Flink](https://flink.apache.org/what-is-flink/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://flink.apache.org/what-is-flink/security/) |
 | Apache Fluss (Incubating) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Fory](https://fory.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://fory.apache.org/security/) |
-| Apache FreeMarker |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Geode](https://geode.apache.org/docs/guide/20/security/security_model.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Geronimo](https://geronimo.apache.org/security-reports.html) |  [Apache Geronimo Security Team](mailto:security@geronimo.apache.org) | |
-| Apache Gluten |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Gobblin |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Grails |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Gravitino |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Groovy |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Guacamole](https://guacamole.apache.org/security/) |  [Apache Guacamole Security Team](mailto:security@guacamole.apache.org) | [Advisories](https://guacamole.apache.org/security/) |
-| Apache Gump |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Hadoop](https://hadoop.apache.org/mailing_lists.html) |  [Apache Hadoop Security Team](mailto:security@hadoop.apache.org) | [Advisories](https://hadoop.apache.org/cve_list.html) |
 | [Apache HBase](https://hbase.apache.org/security-model/) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Helix |  [Apache Security Team](mailto:security@apache.org) | |
@@ -100,7 +73,6 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Iceberg](https://iceberg.apache.org/security/) |  [Apache Iceberg Security Team](mailto:security@iceberg.apache.org) | |
 | [Apache Ignite](https://ignite.apache.org/docs/ignite3/3.1.0/understand/architecture/security#security-model) |  [Apache Ignite Security Team](mailto:security@ignite.apache.org) | |
 | [Apache Impala](https://github.com/apache/impala/blob/master/SECURITY.md) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Incubator |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache InLong](https://inlong.apache.org/docs/next/security/) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache IoTDB |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Jackrabbit](https://jackrabbit.apache.org/jcr/security-reports.html) |  [Apache Jackrabbit Security Team](mailto:security@jackrabbit.apache.org) | [Advisories](https://jackrabbit.apache.org/jcr/security-reports.html) |
@@ -109,11 +81,9 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache JMeter](https://jmeter.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Johnzon](https://johnzon.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache JSPWiki](https://jspwiki-wiki.apache.org/Wiki.jsp?page=Security) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE) |
-| Apache Juneau |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Kafka](https://kafka.apache.org/project-security.html) |  [Apache Kafka Security Team](mailto:security@kafka.apache.org) | [Advisories](https://kafka.apache.org/cve-list.html) |
 | Apache Karaf |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Knox |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Kudu |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Kvrocks |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Kylin |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Kyuubi |  [Apache Kyuubi Security Team](mailto:security@kyuubi.apache.org) | |
@@ -123,55 +93,37 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Logging](https://logging.apache.org/security.html) |  [Apache Logging Security Team](mailto:security@logging.apache.org) | [Advisories](https://logging.apache.org/security.html) |
 | Apache Lucene |  [Apache Lucene Security Team](mailto:security@lucene.apache.org) | |
 | Apache Lucene.NET |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache MADlib |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Magpie |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Mahout |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache ManifoldCF |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Maven](https://maven.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache MINA |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache MyFaces |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Mynewt |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache NetBeans |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache NiFi](https://nifi.apache.org/documentation/security/) |  [Apache NiFi Security Team](mailto:security@nifi.apache.org) | [Advisories](https://nifi.apache.org/documentation/security/) |
 | [Apache Nutch](https://nutch.apache.org/documentation/security/#security-model) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://nutch.apache.org/documentation/security/#nutch-cve-list) |
 | [Apache NuttX](https://nuttx.apache.org/docs/latest/security.html) |  [Apache NuttX Security Team](mailto:security@nuttx.apache.org) | [Advisories](https://nuttx.apache.org/docs/latest/security.html#nuttx-cves) |
 | [Apache OFBiz](https://ofbiz.apache.org/security.html) |  [Apache OFBiz Security Team](mailto:security@ofbiz.apache.org) | [Advisories](https://ofbiz.apache.org/security.html) |
 | [Apache OpenDAL](https://github.com/apache/opendal/blob/main/SECURITY-THREAT-MODEL.md) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache OpenJPA |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache OpenMeetings](https://openmeetings.apache.org/security.html) |  [Apache OpenMeetings Security Team](mailto:security@openmeetings.apache.org) | |
 | Apache OpenNLP |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache OpenOffice](https://openoffice.apache.org/security) |  [Apache OpenOffice Security Team](mailto:security@openoffice.apache.org) | [Advisories](https://www.openoffice.org/security/bulletin.html) |
-| Apache OpenWebBeans |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache OpenWhisk |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache ORC](https://orc.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://orc.apache.org/security/) |
 | Apache Ozone |  [Apache Ozone Security Team](mailto:security@ozone.apache.org) | |
 | [Apache Paimon](https://github.com/apache/paimon/blob/master/SECURITY.md) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Parquet |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache PDFBox](https://pdfbox.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Pekko](https://pekko.apache.org/docs/pekko/current/security/index.html) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache mod_perl |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Phoenix |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Pig |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Pinot |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache PLC4X |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache POI](https://poi.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Polaris |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Pony Mail (Incubating) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Pulsar](https://github.com/apache/pulsar/security/policy) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Qpid |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Ranger](https://cwiki.apache.org/confluence/display/RANGER/Lock+down+Apache+Ranger+for+production+deployments) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://cwiki.apache.org/confluence/display/RANGER/Vulnerabilities+found+in+Ranger) |
-| Apache Ratis |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache RocketMQ](https://rocketmq.apache.org/docs/security/01security/) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Roller |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Royale |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Rya |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Samza |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Santuario](https://santuario.apache.org/secadv.html) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache SDAP |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Seata](https://seata.apache.org/docs/next/security/secret-key) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache SeaTunnel](https://seatunnel.apache.org/security) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Sedona |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Serf |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache ServiceComb |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache ShardingSphere](https://shardingsphere.apache.org/community/en/security/) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache ShenYu |  [Apache Security Team](mailto:security@apache.org) | |
@@ -183,7 +135,6 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Solr](https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity) |  [Apache Solr Security Team](mailto:security@solr.apache.org) | [Advisories](https://solr.apache.org/security.html#recent-cve-reports-for-apache-solr) |
 | [Apache SpamAssassin](https://cwiki.apache.org/confluence/display/SPAMASSASSIN/SecurityPolicy) |  [Apache SpamAssassin Security Team](mailto:security@spamassassin.apache.org) | |
 | [Apache Spark](https://spark.apache.org/security.html) |  [Apache Spark Security Team](mailto:security@spark.apache.org) | [Advisories](https://spark.apache.org/security.html) |
-| Apache Steve |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Storm](https://storm.apache.org/security-model.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache StormCrawler](https://stormcrawler.apache.org/security/) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://stormcrawler.apache.org/security/) |
 | [Apache StreamPark](https://streampark.apache.org/community/security/) |  [Apache Security Team](mailto:security@apache.org) | |
@@ -191,36 +142,23 @@ To report a vulnerability in an Apache project that is not listed below, contact
 | [Apache Struts](https://struts.apache.org/security.html) |  [Apache Struts Security Team](mailto:security@struts.apache.org) | [Advisories](https://cwiki.apache.org/confluence/display/WW/Security+Bulletins) |
 | [Apache Subversion](https://subversion.apache.org/security/) |  [Apache Subversion Security Team](mailto:security@subversion.apache.org) | [Advisories](https://subversion.apache.org/security/) |
 | [Apache Superset](https://github.com/apache/superset/blob/master/.github/SECURITY.md) |  [Apache Superset Security Team](mailto:security@superset.apache.org) | [Advisories](https://superset.apache.org/docs/security/cves) |
-| Apache Synapse |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Syncope |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://syncope.apache.org/security) |
 | Apache SystemDS |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Tapestry |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Tcl |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Teaclave |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Tez |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Thrift](https://github.com/apache/thrift/blob/master/doc/thrift-threat-model.md) |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Tika](https://tika.apache.org/security-model.html) |  [Apache Security Team](mailto:security@apache.org) | [Advisories](https://tika.apache.org/security.html) |
-| Apache TinkerPop |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Tomcat](https://tomcat.apache.org/security.html) |  [Apache Tomcat Security Team](mailto:security@tomcat.apache.org) | [Advisories](https://tomcat.apache.org/security.html) |
-| Apache TomEE |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Traffic Server](https://github.com/apache/trafficserver/security/policy) |  [Apache Traffic Server Security Team](mailto:security@trafficserver.apache.org) | |
-| Apache Training |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache TsFile |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Turbine |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache TVM](https://tvm.apache.org/docs/reference/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache UIMA |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Uniffle |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Unomi |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache VCL |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Velocity](https://velocity.apache.org/#security-model) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Wayang |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Whimsy |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Wicket |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Web Services |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Xalan |  [Apache Security Team](mailto:security@apache.org) | |
 | Apache Xerces |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache XML Graphics](https://xmlgraphics.apache.org/security.html) |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache Yetus |  [Apache Security Team](mailto:security@apache.org) | |
-| Apache YuniKorn |  [Apache Security Team](mailto:security@apache.org) | |
 | [Apache Zeppelin](https://zeppelin.apache.org/security.html) |  [Apache Zeppelin Security Team](mailto:security@zeppelin.apache.org) | |
 | [Apache ZooKeeper](https://zookeeper.apache.org/security.html) |  [Apache ZooKeeper Security Team](mailto:security@zookeeper.apache.org) | |
