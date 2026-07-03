@@ -118,6 +118,19 @@
   border-radius: 6px;
 }
 
+/* Project logo (optional): only cards whose project publishes a logo carry an
+   <img class="project-logo">. float:right lifts it out of the normal flow to the
+   card's top-right corner; the name and link list then flow down the left and
+   wrap beside it, filling the otherwise empty right gutter. max-width/height cap
+   the size and object-fit:contain preserves aspect ratio inside that box. */
+#project-tabs .project-logo {
+  float: right;
+  max-width: 96px;
+  max-height: 96px;
+  margin: 0 0 0.3rem 0.6rem;
+  object-fit: contain;
+}
+
 /* Project name: the card's bold title on its own line. display:block puts the
    nested link list beneath it. `> li > strong` matches only the name, not the
    deeper bold contact label. */

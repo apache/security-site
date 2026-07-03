@@ -48,7 +48,7 @@ layout: single
 
 Here is a list of pages ASF projects maintain to provide information on known security vulnerabilities. Each entry also has the security contact for reporting new vulnerabilities related to that project. Note that not all project security teams have a dedicated address for reporting new vulnerabilities.
 
-To report a vulnerability in an Apache project that is not listed below, contact the [Apache Security Team](mailto:security@apache.org).
+To report a vulnerability in an Apache project that is not listed below, contact the [Apache Security Team](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20project%20name%20here).
 
 Use the tabs below to jump to projects by their initial. Every project lists a security contact; some also publish a security page and a list of advisories.
 """)
@@ -89,7 +89,7 @@ def project_letter(name):
     c = d[0].upper() if d else '#'
     return c if c.isalpha() else '#'
 
-def project_md_lines(p):
+def project_md_lines(pmc, p):
     # Each project is a Markdown list item: a bold name plus a nested list of
     # labelled links. Security contact comes first and is always present.
     if not p.get('contact') or p['contact'] == 'security@apache.org':
@@ -104,18 +104,33 @@ def project_md_lines(p):
     # Standard mailto: a bare address plus a prefilled subject, so no mail
     # client trips over a non-standard "Name <address>" recipient.
     contact_href = 'mailto:%s?subject=%s' % (quote(contact_addr, safe='@'), quote(subject))
+    # Optional logo floated to the card's right (see custom.css). Only projects
+    # that publish a logo carry a logo_link in project-coordinates.json; the
+    # inline HTML <img> passes through Goldmark (unsafe=true) and the **name**
+    # after it is still parsed as Markdown bold.
+    name_md = '**%s**' % p['name']
+    if p.get('logo_link'):
+        name_md = '<img class="project-logo" src="%s" alt="" loading="lazy"> %s' % (
+            html.escape(p['logo_link'], quote=True), name_md)
     lines = [
-        '- **%s**' % p['name'],
+        '- %s' % name_md,
         # The required contact is shown on its own line as the bare address, so
         # the reader sees exactly where the report goes. The label is bold to
         # stand out.
         '  - **Security contact:**\\',
-        '    [%s](%s)' % (contact_addr, contact_href),
+        '    [%s](%s)' % (contact_addr, contact_href)
     ]
-    if p.get('link'):
-        lines.append('  - Security page: [%s](%s)' % (urlparse(p['link']).netloc or 'security page', p['link']))
     if p.get('advisory_link'):
-        lines.append('  - Advisories: [%s](%s)' % (urlparse(p['advisory_link']).netloc or 'advisories', p['advisory_link']))
+        lines.append('  - Advisories:\\')
+        lines.append('    [%s](%s)' % (urlparse(p['advisory_link']).netloc or 'advisories', p['advisory_link']))
+    elif pmc in advisories:
+        # Fall back to the generated per-project page, but only when we actually
+        # emit one (pmc in advisories); otherwise /projects/<pmc>/ would 404.
+        lines.append('  - Advisories (experimental):\\')
+        lines.append('    [security.apache.org](/projects/%s/)' % pmc)
+    if p.get('link'):
+        lines.append('  - Security page:\\')
+        lines.append('    [%s](%s)' % (urlparse(p['link']).netloc or 'security page', p['link']))
     return lines
 
 # Group projects by their initial letter (non-letters bucket under '#').
@@ -128,7 +143,7 @@ for pmc in sorted(set(list(project_coordinates.keys()) + list(advisories.keys())
 
     p = coordinates(pmc)
     assert p, 'All projects with advisories, including [%s], should have coordinates' % pmc
-    overview[project_letter(p['name'])].append((display_name(p['name']).lower(), p))
+    overview[project_letter(p['name'])].append((display_name(p['name']).lower(), pmc, p))
 
 # Letters A-Z first, then the '#' bucket for anything non-alphabetic.
 letters = sorted(overview.keys(), key=lambda c: (c == '#', c))
@@ -153,8 +168,8 @@ for i, letter in enumerate(letters):
     lines.append('')
     lines.append('## %s {.panel-letter}' % letter)
     lines.append('')
-    for _, p in sorted(overview[letter], key=lambda e: e[0]):
-        lines += project_md_lines(p)
+    for _, pmc, p in sorted(overview[letter], key=lambda e: e[0]):
+        lines += project_md_lines(pmc, p)
     lines.append('')
     lines.append('</section>')
 lines.append('</div>')
