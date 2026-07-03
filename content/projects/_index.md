@@ -107,6 +107,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/aries/default.png" alt="" loading="lazy"> **Apache Aries**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Aries)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/arrow/default.png" alt="" loading="lazy"> **Apache Arrow**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Arrow)
@@ -150,9 +152,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/beam/default.png" alt="" loading="lazy"> **Apache Beam**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Beam)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/bigtop/default.png" alt="" loading="lazy"> **Apache Bigtop**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Bigtop)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/bookkeeper/default.png" alt="" loading="lazy"> **Apache BookKeeper**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20BookKeeper)
@@ -161,6 +167,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/brooklyn/default.png" alt="" loading="lazy"> **Apache Brooklyn**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Brooklyn)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/brpc/default.png" alt="" loading="lazy"> **Apache bRPC**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20bRPC)
@@ -171,9 +179,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - **Apache BuildStream**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20BuildStream)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/bval/default.png" alt="" loading="lazy"> **Apache BVal**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20BVal)
+  - Advisories (experimental):\
+    none so far
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="C">
@@ -195,6 +207,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/carbondata/default.png" alt="" loading="lazy"> **Apache Carbondata**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Carbondata)
+  - Advisories (experimental):\
+    none so far
   - Security page:\
     [carbondata.apache.org](https://carbondata.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/cassandra/default.png" alt="" loading="lazy"> **Apache Cassandra**
@@ -217,9 +231,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/celeborn/default.png" alt="" loading="lazy"> **Apache Celeborn**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Celeborn)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/celix/default.png" alt="" loading="lazy"> **Apache Celix**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Celix)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/cloudstack/default.png" alt="" loading="lazy"> **Apache CloudStack**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20CloudStack)
@@ -237,6 +255,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - **Apache Community Development**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Community%20Development)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/cordova/default.png" alt="" loading="lazy"> **Apache Cordova**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Cordova)
@@ -250,12 +270,18 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/creadur/default.png" alt="" loading="lazy"> **Apache Creadur**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Creadur)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/ctakes/default.png" alt="" loading="lazy"> **Apache cTAKES**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20cTAKES)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/curator/default.png" alt="" loading="lazy"> **Apache Curator**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Curator)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/cxf/default.png" alt="" loading="lazy"> **Apache CXF**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20CXF)
@@ -270,15 +296,23 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/daffodil/default.png" alt="" loading="lazy"> **Apache Daffodil**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Daffodil)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/datafu/default.png" alt="" loading="lazy"> **Apache DataFu**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20DataFu)
+  - Advisories (experimental):\
+    none so far
 - **Apache DataFusion**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20DataFusion)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/datasketches/default.png" alt="" loading="lazy"> **Apache DataSketches**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20DataSketches)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/db/default.png" alt="" loading="lazy"> **Apache DB**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20DB)
@@ -287,9 +321,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/deltaspike/default.png" alt="" loading="lazy"> **Apache DeltaSpike**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20DeltaSpike)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/devlake/default.png" alt="" loading="lazy"> **Apache DevLake**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20DevLake)
+  - Advisories (experimental):\
+    none so far
   - Security page:\
     [devlake.apache.org](https://devlake.apache.org/docs/v1.0/GettingStarted/Authentication)
 - <img class="project-logo" src="https://www.apache.org/logos/res/directory/default.png" alt="" loading="lazy"> **Apache Directory**
@@ -346,6 +384,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - **Apache Empire-db**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Empire-db)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/eventmesh/default.png" alt="" loading="lazy"> **Apache EventMesh**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20EventMesh)
@@ -377,9 +417,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/flagon/default.png" alt="" loading="lazy"> **Apache Flagon**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Flagon)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/flex/default.png" alt="" loading="lazy"> **Apache Flex**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Flex)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/flink/default.png" alt="" loading="lazy"> **Apache Flink**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Flink)
@@ -402,6 +446,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/freemarker/default.png" alt="" loading="lazy"> **Apache FreeMarker**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20FreeMarker)
+  - Advisories (experimental):\
+    none so far
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="G">
@@ -418,11 +464,15 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/geronimo/default.png" alt="" loading="lazy"> **Apache Geronimo**
   - **Security contact:**\
     [security@geronimo.apache.org](mailto:security@geronimo.apache.org?subject=%5BFINDING%5D)
+  - Advisories (experimental):\
+    none so far
   - Security page:\
     [geronimo.apache.org](https://geronimo.apache.org/security-reports.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/gluten/default.png" alt="" loading="lazy"> **Apache Gluten**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Gluten)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/gobblin/default.png" alt="" loading="lazy"> **Apache Gobblin**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Gobblin)
@@ -431,6 +481,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/grails/default.png" alt="" loading="lazy"> **Apache Grails**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Grails)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/gravitino/default.png" alt="" loading="lazy"> **Apache Gravitino**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Gravitino)
@@ -439,6 +491,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/groovy/default.png" alt="" loading="lazy"> **Apache Groovy**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Groovy)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/guacamole/default.png" alt="" loading="lazy"> **Apache Guacamole**
   - **Security contact:**\
     [security@guacamole.apache.org](mailto:security@guacamole.apache.org?subject=%5BFINDING%5D)
@@ -449,6 +503,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/gump/default.png" alt="" loading="lazy"> **Apache Gump**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Gump)
+  - Advisories (experimental):\
+    none so far
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="H">
@@ -465,6 +521,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/hbase/default.png" alt="" loading="lazy"> **Apache HBase**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20HBase)
+  - Advisories (experimental):\
+    none so far
   - Security page:\
     [hbase.apache.org](https://hbase.apache.org/security-model/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/helix/default.png" alt="" loading="lazy"> **Apache Helix**
@@ -510,6 +568,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/hudi/default.png" alt="" loading="lazy"> **Apache Hudi**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Hudi)
+  - Advisories (experimental):\
+    none so far
   - Security page:\
     [hudi.apache.org](https://hudi.apache.org/contribute/security)
 - <img class="project-logo" src="https://www.apache.org/logos/res/hugegraph/default.png" alt="" loading="lazy"> **Apache HugeGraph**
@@ -528,6 +588,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/iceberg/default.png" alt="" loading="lazy"> **Apache Iceberg**
   - **Security contact:**\
     [security@iceberg.apache.org](mailto:security@iceberg.apache.org?subject=%5BFINDING%5D)
+  - Advisories (experimental):\
+    none so far
   - Security page:\
     [iceberg.apache.org](https://iceberg.apache.org/security/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/ignite/default.png" alt="" loading="lazy"> **Apache Ignite**
@@ -582,6 +644,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/jmeter/default.png" alt="" loading="lazy"> **Apache JMeter**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20JMeter)
+  - Advisories (experimental):\
+    none so far
   - Security page:\
     [jmeter.apache.org](https://jmeter.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/johnzon/default.png" alt="" loading="lazy"> **Apache Johnzon**
@@ -601,6 +665,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/juneau/default.png" alt="" loading="lazy"> **Apache Juneau**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Juneau)
+  - Advisories (experimental):\
+    none so far
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="K">
@@ -627,6 +693,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/kudu/default.png" alt="" loading="lazy"> **Apache Kudu**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Kudu)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/kvrocks/default.png" alt="" loading="lazy"> **Apache Kvrocks**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Kvrocks)
@@ -651,6 +719,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/libcloud/default.png" alt="" loading="lazy"> **Apache Libcloud**
   - **Security contact:**\
     [security@libcloud.apache.org](mailto:security@libcloud.apache.org?subject=%5BFINDING%5D)
+  - Advisories (experimental):\
+    none so far
   - Security page:\
     [libcloud.apache.org](https://libcloud.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/linkis/default.png" alt="" loading="lazy"> **Apache Linkis**
@@ -689,12 +759,18 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/madlib/default.png" alt="" loading="lazy"> **Apache MADlib**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20MADlib)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/magpie/default.png" alt="" loading="lazy"> **Apache Magpie**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Magpie)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/mahout/default.png" alt="" loading="lazy"> **Apache Mahout**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Mahout)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/manifoldcf/default.png" alt="" loading="lazy"> **Apache ManifoldCF**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20ManifoldCF)
@@ -715,6 +791,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/perl/default.png" alt="" loading="lazy"> **Apache mod_perl**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20mod_perl)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/myfaces/default.png" alt="" loading="lazy"> **Apache MyFaces**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20MyFaces)
@@ -734,6 +812,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/netbeans/default.png" alt="" loading="lazy"> **Apache NetBeans**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20NetBeans)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/nifi/default.png" alt="" loading="lazy"> **Apache NiFi**
   - **Security contact:**\
     [security@nifi.apache.org](mailto:security@nifi.apache.org?subject=%5BFINDING%5D)
@@ -771,11 +851,15 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/opendal/default.png" alt="" loading="lazy"> **Apache OpenDAL**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20OpenDAL)
+  - Advisories (experimental):\
+    none so far
   - Security page:\
     [github.com](https://github.com/apache/opendal/blob/main/SECURITY-THREAT-MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/openjpa/default.png" alt="" loading="lazy"> **Apache OpenJPA**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20OpenJPA)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/openmeetings/default.png" alt="" loading="lazy"> **Apache OpenMeetings**
   - **Security contact:**\
     [security@openmeetings.apache.org](mailto:security@openmeetings.apache.org?subject=%5BFINDING%5D)
@@ -798,9 +882,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/openwebbeans/default.png" alt="" loading="lazy"> **Apache OpenWebBeans**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20OpenWebBeans)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/openwhisk/default.png" alt="" loading="lazy"> **Apache OpenWhisk**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20OpenWhisk)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/orc/default.png" alt="" loading="lazy"> **Apache ORC**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20ORC)
@@ -822,6 +910,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/paimon/default.png" alt="" loading="lazy"> **Apache Paimon**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Paimon)
+  - Advisories (experimental):\
+    none so far
   - Security page:\
     [github.com](https://github.com/apache/paimon/blob/master/SECURITY.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/parquet/default.png" alt="" loading="lazy"> **Apache Parquet**
@@ -846,9 +936,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/phoenix/default.png" alt="" loading="lazy"> **Apache Phoenix**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Phoenix)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/pig/default.png" alt="" loading="lazy"> **Apache Pig**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Pig)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/pinot/default.png" alt="" loading="lazy"> **Apache Pinot**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Pinot)
@@ -899,6 +993,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/qpid/default.png" alt="" loading="lazy"> **Apache Qpid**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Qpid)
+  - Advisories (experimental):\
+    none so far
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="R">
@@ -915,6 +1011,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/ratis/default.png" alt="" loading="lazy"> **Apache Ratis**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Ratis)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/rocketmq/default.png" alt="" loading="lazy"> **Apache RocketMQ**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20RocketMQ)
@@ -930,9 +1028,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/royale/default.png" alt="" loading="lazy"> **Apache Royale**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Royale)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/rya/default.png" alt="" loading="lazy"> **Apache Rya**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Rya)
+  - Advisories (experimental):\
+    none so far
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="S">
@@ -942,6 +1044,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/samza/default.png" alt="" loading="lazy"> **Apache Samza**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Samza)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/santuario/default.png" alt="" loading="lazy"> **Apache Santuario**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Santuario)
@@ -952,6 +1056,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/sdap/default.png" alt="" loading="lazy"> **Apache SDAP**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20SDAP)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/seata/default.png" alt="" loading="lazy"> **Apache Seata**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Seata)
@@ -969,9 +1075,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/sedona/default.png" alt="" loading="lazy"> **Apache Sedona**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Sedona)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/serf/default.png" alt="" loading="lazy"> **Apache Serf**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Serf)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/servicecomb/default.png" alt="" loading="lazy"> **Apache ServiceComb**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20ServiceComb)
@@ -999,6 +1109,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/singa/default.png" alt="" loading="lazy"> **Apache SINGA**
   - **Security contact:**\
     [security@singa.apache.org](mailto:security@singa.apache.org?subject=%5BFINDING%5D)
+  - Advisories (experimental):\
+    none so far
   - Security page:\
     [singa.apache.org](https://singa.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/sis/default.png" alt="" loading="lazy"> **Apache SIS**
@@ -1044,6 +1156,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/steve/default.png" alt="" loading="lazy"> **Apache Steve**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Steve)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/storm/default.png" alt="" loading="lazy"> **Apache Storm**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Storm)
@@ -1094,6 +1208,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/synapse/default.png" alt="" loading="lazy"> **Apache Synapse**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Synapse)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/syncope/default.png" alt="" loading="lazy"> **Apache Syncope**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Syncope)
@@ -1118,12 +1234,18 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/tcl/default.png" alt="" loading="lazy"> **Apache Tcl**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Tcl)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/teaclave/default.png" alt="" loading="lazy"> **Apache Teaclave**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Teaclave)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/tez/default.png" alt="" loading="lazy"> **Apache Tez**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Tez)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/thrift/default.png" alt="" loading="lazy"> **Apache Thrift**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Thrift)
@@ -1141,6 +1263,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/tinkerpop/default.png" alt="" loading="lazy"> **Apache TinkerPop**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20TinkerPop)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/tomcat/default.png" alt="" loading="lazy"> **Apache Tomcat**
   - **Security contact:**\
     [security@tomcat.apache.org](mailto:security@tomcat.apache.org?subject=%5BFINDING%5D)
@@ -1151,6 +1275,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/tomee/default.png" alt="" loading="lazy"> **Apache TomEE**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20TomEE)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/trafficserver/default.png" alt="" loading="lazy"> **Apache Traffic Server**
   - **Security contact:**\
     [security@trafficserver.apache.org](mailto:security@trafficserver.apache.org?subject=%5BFINDING%5D)
@@ -1161,15 +1287,23 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/training/default.png" alt="" loading="lazy"> **Apache Training**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Training)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/tsfile/default.png" alt="" loading="lazy"> **Apache TsFile**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20TsFile)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/turbine/default.png" alt="" loading="lazy"> **Apache Turbine**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Turbine)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/tvm/default.png" alt="" loading="lazy"> **Apache TVM**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20TVM)
+  - Advisories (experimental):\
+    none so far
   - Security page:\
     [tvm.apache.org](https://tvm.apache.org/docs/reference/security.html)
 
@@ -1220,6 +1354,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/wayang/default.png" alt="" loading="lazy"> **Apache Wayang**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Wayang)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/ws/default.png" alt="" loading="lazy"> **Apache Web Services**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Web%20Services)
@@ -1228,6 +1364,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/whimsy/default.png" alt="" loading="lazy"> **Apache Whimsy**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Whimsy)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/wicket/default.png" alt="" loading="lazy"> **Apache Wicket**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Wicket)
@@ -1265,9 +1403,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/yetus/default.png" alt="" loading="lazy"> **Apache Yetus**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Yetus)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/yunikorn/default.png" alt="" loading="lazy"> **Apache YuniKorn**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20YuniKorn)
+  - Advisories (experimental):\
+    none so far
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="Z">

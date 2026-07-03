@@ -123,11 +123,14 @@ def project_md_lines(pmc, p):
     if p.get('advisory_link'):
         lines.append('  - Advisories:\\')
         lines.append('    [%s](%s)' % (urlparse(p['advisory_link']).netloc or 'advisories', p['advisory_link']))
-    elif pmc in advisories:
-        # Fall back to the generated per-project page, but only when we actually
-        # emit one (pmc in advisories); otherwise /projects/<pmc>/ would 404.
+    else:
+        # Fall back to the generated per-project page
         lines.append('  - Advisories (experimental):\\')
-        lines.append('    [security.apache.org](/projects/%s/)' % pmc)
+        if pmc in advisories:
+            # A page exists for this project, so link to it.
+            lines.append('    [security.apache.org](/projects/%s/)' % pmc)
+        else:
+            lines.append('    none so far')
     if p.get('link'):
         lines.append('  - Security page:\\')
         lines.append('    [%s](%s)' % (urlparse(p['link']).netloc or 'security page', p['link']))
