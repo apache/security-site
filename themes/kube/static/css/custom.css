@@ -96,17 +96,18 @@
   white-space: nowrap;
 }
 
-/* Project list: responsive card grid. auto-fill + minmax(420px,1fr) packs as
-   many >=420px columns as fit and shares leftover width equally, no media
-   queries. 420px gives roughly 3 columns on a wide screen (wider than the old
-   320px so the two-line contact isn't cramped) and collapses to fewer as the
-   viewport narrows. `> ul` targets only the outer list, not the nested lists. */
+/* Project list: responsive card grid. auto-fill + minmax(320px,1fr) packs as
+   many >=320px columns as fit and shares leftover width equally, no media
+   queries. 320px gives roughly 4 columns on a wide screen; the logo floated
+   into each card's right gutter takes up the slack the two-line labels leave,
+   so cards stay readable at this narrower width. Collapses to fewer columns as
+   the viewport narrows. `> ul` targets only the outer list, not the nested. */
 #project-tabs .project-tab-panel > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 0.75rem;
 }
 
@@ -121,12 +122,14 @@
 /* Project logo (optional): only cards whose project publishes a logo carry an
    <img class="project-logo">. float:right lifts it out of the normal flow to the
    card's top-right corner; the name and link list then flow down the left and
-   wrap beside it, filling the otherwise empty right gutter. max-width/height cap
-   the size and object-fit:contain preserves aspect ratio inside that box. */
+   wrap beside it, filling the otherwise empty right gutter. max-width:50% keeps
+   the logo to at most half the card so the text always has the other half; the
+   max-height guards very tall logos and object-fit:contain preserves aspect
+   ratio inside that box. */
 #project-tabs .project-logo {
   float: right;
-  max-width: 96px;
-  max-height: 96px;
+  max-width: 50%;
+  max-height: 160px;
   margin: 0 0 0.3rem 0.6rem;
   object-fit: contain;
 }
