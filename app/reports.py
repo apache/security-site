@@ -107,6 +107,8 @@ def _apache_list_address(email):
     if 'cc' in email:
         addresses.extend(getaddresses([email['cc']]))
     for _, address in addresses:
+        if address == "officesecurity@lists.freedesktop.org":
+            return "security@openoffice.apache.org"
         if address.endswith('.apache.org') and not _known_bad_address(email['mailtime'], address):
             return address
     return None
