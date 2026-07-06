@@ -252,11 +252,6 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [commons.apache.org](https://commons.apache.org/security.html#Known_Security_Vulnerabilities)
   - Security page:\
     [commons.apache.org](https://commons.apache.org/security.html)
-- **Apache Community Development**
-  - **Security contact:**\
-    [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Community%20Development)
-  - Advisories (experimental):\
-    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/cordova/default.png" alt="" loading="lazy"> **Apache Cordova**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Cordova)
@@ -641,6 +636,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Jena)
   - Advisories (experimental):\
     [security.apache.org](/projects/jena/)
+  - Security page:\
+    [github.com](https://github.com/apache/jena/blob/main/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/jmeter/default.png" alt="" loading="lazy"> **Apache JMeter**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20JMeter)
