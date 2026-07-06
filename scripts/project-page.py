@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import html
 import json
 import os.path
 from operator import itemgetter
@@ -7,6 +8,7 @@ from os.path import dirname, realpath
 from collections import defaultdict
 import subprocess
 from urllib.request import urlopen
+from urllib.parse import urlparse, quote
 
 # manually maintained
 with open('project-coordinates.json', 'r') as p:
@@ -46,10 +48,9 @@ layout: single
 
 Here is a list of pages ASF projects maintain to provide information on known security vulnerabilities. Each entry also has the security contact for reporting new vulnerabilities related to that project. Note that not all project security teams have a dedicated address for reporting new vulnerabilities.
 
-To report a vulnerability in an Apache project that is not listed below, contact the [Apache Security Team](mailto:security@apache.org).
+To report a vulnerability in an Apache project that is not listed below, contact the [Apache Security Team](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20project%20name%20here).
 
-| Project security page | Contact | |
-| --- | --- | --- |
+Use the tabs below to jump to projects by their initial. Every project lists a security contact; some also publish a security page and a list of advisories.
 """)
 
 def coordinates(pmc):
@@ -79,7 +80,64 @@ def fetch_cve(cve_id):
         cve = json.loads(d.read())
         return cve
 
-# Projects overview page
+# Projects overview page, rendered as Ponymail-style alphabetical tabs.
+def display_name(name):
+    return name[len('Apache '):].lstrip() if name.startswith('Apache ') else name
+
+def project_letter(name):
+    d = display_name(name)
+    c = d[0].upper() if d else '#'
+    return c if c.isalpha() else '#'
+
+def project_md_lines(pmc, p):
+    # Each project is a Markdown list item: a bold name plus a nested list of
+    # labelled links. Security contact comes first and is always present.
+    if not p.get('contact') or p['contact'] == 'security@apache.org':
+        # The shared Security Team list handles every project, so name the
+        # project in the subject to help routing.
+        contact_addr = 'security@apache.org'
+        subject = '[FINDING] %s' % p['name']
+    else:
+        # A project-specific list already knows which project it is.
+        contact_addr = p['contact']
+        subject = '[FINDING]'
+    # Standard mailto: a bare address plus a prefilled subject, so no mail
+    # client trips over a non-standard "Name <address>" recipient.
+    contact_href = 'mailto:%s?subject=%s' % (quote(contact_addr, safe='@'), quote(subject))
+    # Optional logo floated to the card's right (see custom.css). Only projects
+    # that publish a logo carry a logo_link in project-coordinates.json; the
+    # inline HTML <img> passes through Goldmark (unsafe=true) and the **name**
+    # after it is still parsed as Markdown bold.
+    name_md = '**%s**' % p['name']
+    if p.get('logo_link'):
+        name_md = '<img class="project-logo" src="%s" alt="" loading="lazy"> %s' % (
+            html.escape(p['logo_link'], quote=True), name_md)
+    lines = [
+        '- %s' % name_md,
+        # The required contact is shown on its own line as the bare address, so
+        # the reader sees exactly where the report goes. The label is bold to
+        # stand out.
+        '  - **Security contact:**\\',
+        '    [%s](%s)' % (contact_addr, contact_href)
+    ]
+    if p.get('advisory_link'):
+        lines.append('  - Advisories:\\')
+        lines.append('    [%s](%s)' % (urlparse(p['advisory_link']).netloc or 'advisories', p['advisory_link']))
+    else:
+        # Fall back to the generated per-project page
+        lines.append('  - Advisories (experimental):\\')
+        if pmc in advisories:
+            # A page exists for this project, so link to it.
+            lines.append('    [security.apache.org](/projects/%s/)' % pmc)
+        else:
+            lines.append('    none so far')
+    if p.get('link'):
+        lines.append('  - Security page:\\')
+        lines.append('    [%s](%s)' % (urlparse(p['link']).netloc or 'security page', p['link']))
+    return lines
+
+# Group projects by their initial letter (non-letters bucket under '#').
+overview = defaultdict(list)
 for pmc in sorted(set(list(project_coordinates.keys()) + list(advisories.keys()))):
     if pmc == 'dummy':
         continue
@@ -88,22 +146,38 @@ for pmc in sorted(set(list(project_coordinates.keys()) + list(advisories.keys())
 
     p = coordinates(pmc)
     assert p, 'All projects with advisories, including [%s], should have coordinates' % pmc
-    if 'link' in p.keys() and p['link']:
-        projects_page.write('| [%s](%s) | ' % (p['name'], p['link']))
-    else:
-        projects_page.write("| %s | " % p['name'])
+    overview[project_letter(p['name'])].append((display_name(p['name']).lower(), pmc, p))
 
-    if not 'contact' in p.keys() or p['contact'] == 'security@apache.org':
-        projects_page.write(' [Apache Security Team](mailto:security@apache.org) |')
-    else:
-        projects_page.write(' [%s Security Team](mailto:%s) |' % (p['name'], p['contact']))
+# Letters A-Z first, then the '#' bucket for anything non-alphabetic.
+letters = sorted(overview.keys(), key=lambda c: (c == '#', c))
 
-    if 'advisory_link' in p.keys() and p['advisory_link']:
-        projects_page.write(' [Advisories](%s) |\n' % (p['advisory_link']))
-    #elif len(advisories[pmc]) > 0:
-    #    projects_page.write(' [Advisories](%s) |\n' % pmc)
-    else:
-        projects_page.write(' |\n')
+# Only the tab controls need to be HTML: the container, nav and buttons. Each
+# panel is an HTML <section> so the tab script can show/hide it, but a blank
+# line after the opening tag hands control back to Goldmark, so the heading and
+# the project list inside are plain Markdown. Wrapper tags stay at column 0 so
+# Goldmark keeps recognising them as HTML blocks rather than indented code.
+lines = [
+    '<div id="project-tabs" class="project-tabs">',
+    '<nav class="project-tabs-nav" role="tablist" aria-label="Projects by initial">',
+]
+for i, letter in enumerate(letters):
+    lines.append('  <button type="button" class="project-tab%s" role="tab" data-letter="%s" aria-selected="%s">%s</button>' % (
+        ' active' if i == 0 else '', letter, 'true' if i == 0 else 'false', letter))
+lines.append('</nav>')
+lines.append('<div class="project-tabs-panels">')
+for i, letter in enumerate(letters):
+    lines.append('<section class="project-tab-panel%s" role="tabpanel" data-letter="%s">' % (
+        ' active' if i == 0 else '', letter))
+    lines.append('')
+    lines.append('## %s {.panel-letter}' % letter)
+    lines.append('')
+    for _, pmc, p in sorted(overview[letter], key=lambda e: e[0]):
+        lines += project_md_lines(pmc, p)
+    lines.append('')
+    lines.append('</section>')
+lines.append('</div>')
+lines.append('</div>')
+projects_page.write('\n' + '\n'.join(lines) + '\n')
 
 for pmc in advisories.keys():
     if pmc == 'dummy':
