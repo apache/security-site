@@ -105,16 +105,33 @@
 <p>Do you want disclose a potential security issue for Apache OpenNLP? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-43825">Unsafe Java Deserialization in SvmDoccatModel</h2>
+<p>CVE-2026-43825 <a href="https://cve.org/CVERecord?id=CVE-2026-43825">[CVE]</a> <a href="./CVE-2026-43825.cve.json">[CVE json]</a> <a href="./CVE-2026-43825.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-06T15:41:58.595Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache OpenNLP :: Core :: ML :: LibSVM from 3.0.0-M1 before 3.0.0-M4</li>
+</ul>
+<h3 id="description">Description</h3>
+<p><b>Untrusted Java Deserialization in Apache OpenNLP SvmDoccatModel</b><br><br><b>Versions Affected:</b><br>  before 3.0.0-M4 (libsvm document categorization module; introduced in<br>  OPENNLP-1808 and only present on the 3.x line)<br><br><b>Description:</b><br>SvmDoccatModel.deserialize(InputStream) reads an attacker-controlled<br>stream with java.io.ObjectInputStream and calls readObject() without an<br>ObjectInputFilter installed. ObjectInputStream materialises every class<br>referenced in the stream before the resulting object is cast to<br>SvmDoccatModel, so the cast that follows readObject() executes only<br>after the foreign object graph has already been deserialised in full.<br><br>If a Java deserialization gadget chain is available on the consumer&rsquo;s<br>classpath, a crafted payload supplied to<br>deserialize() executes arbitrary code in the JVM that loads it. Apache<br>OpenNLP itself does not ship a known gadget chain, so the realistic<br>risk is to downstream applications that embed the libsvm module<br>alongside vulnerable transitive dependencies. The method is public and<br>static, so any caller can pass an untrusted stream to it directly.<br><br>The practical impact is remote code execution against processes that<br>load SvmDoccatModel instances from untrusted or semi-trusted origins.<br><br><b>Mitigation:</b><br><br>3.x users should upgrade to 3.0.0-M4.<br><br>Users who cannot upgrade immediately should treat all serialized<br>SvmDoccatModel streams as untrusted input unless their provenance is<br>verified, and should avoid invoking SvmDoccatModel.deserialize() on<br>streams supplied by end users or fetched from third-party sources<br>without integrity checks.<br><br></p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/c7kom0pgk9cbpfnbooh5m3g85ndf50hn">https://lists.apache.org/thread/c7kom0pgk9cbpfnbooh5m3g85ndf50hn</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Subramanian S (finder)</li>
+</ul>
 <h2 id="CVE-2026-42440">OOM DoS via Unbounded Array Allocation in AbstractModelReader</h2>
 <p>CVE-2026-42440 <a href="https://cve.org/CVERecord?id=CVE-2026-42440">[CVE]</a> <a href="./CVE-2026-42440.cve.json">[CVE json]</a> <a href="./CVE-2026-42440.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-06-30T04:39:58.456Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache OpenNLP from 2.0 before 2.5.9</li>
 <li>Apache OpenNLP from 3.0.0-M1 before 3.0.0-M3</li>
 <li>Apache OpenNLP before 1.9.5</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-1">Description</h3>
 <p><b>OOM Denial of Service via Unbounded Array Allocation in Apache OpenNLP AbstractModelReader&nbsp;</b></p><p><b>Versions Affected:</b>&nbsp;</p>before 1.9.5<br><p>before 2.5.9</p><p>before 3.0.0-M3&nbsp;</p><p><b>Description:</b></p>
 <p>The <code>AbstractModelReader</code> methods <code>getOutcomes()</code>, <code>getOutcomePatterns()</code>, and <code>getPredicates()</code> each read a 32-bit signed integer count field from a binary model stream and pass that value directly to an array allocation (<code>new String[numOutcomes]</code>, <code>new int[numOCTypes][]</code>, <code>new String[NUM_PREDS]</code>) without validating that the value is non-negative or within a reasonable bound. The count is therefore fully attacker-controlled when the model file originates from an untrusted source.</p>
 <p>A crafted <code>.bin</code> model file in which any of these count fields is set to <code>Integer.MAX_VALUE</code> (or any value large enough to exhaust the available heap) triggers an <code>OutOfMemoryError</code> at the array allocation itself, before the corresponding label or pattern data is consumed from the stream. The error occurs very early in deserialization: for a GIS model, <code>getOutcomes()</code> is reached after only the model-type string, the correction constant, and the correction parameter have been read; so the attacker pays no meaningful size cost to weaponize a payload, and a single small file can crash a JVM that loads it. Any code path that deserializes a <code>.bin</code> model is affected, including direct use of <code>GenericModelReader</code> and any higher-level component that delegates to it during model load.</p>
@@ -126,36 +143,17 @@
 </ul>
 <p><b>Note:</b> The fix introduces an upper bound on each of the three count fields, checked before array allocation; counts that are negative or exceed the bound cause an <code>IllegalArgumentException</code> to be thrown and the read to fail fast with no large allocation. The default bound is 10,000,000, which is well above the entry counts of legitimate OpenNLP models but far below any value that would threaten heap exhaustion. Deployments that legitimately need to load models with more entries than the default can raise the limit at JVM startup by setting the <code>OPENNLP_MAX_ENTRIES</code> system property to the desired positive integer (e.g. <code>-DOPENNLP_MAX_ENTRIES=50000000</code>); invalid or non-positive values fall back to the default.</p>
 <p>Users who cannot upgrade immediately should treat all <code>.bin</code> model files as untrusted input unless their provenance is verified, and should avoid loading models supplied by end users or fetched from third-party repositories without integrity checks.&nbsp;</p>
-<h3 id="references">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/s8xlkx1gqbxfsq48py5h6jphjvgqp1jo">https://lists.apache.org/thread/s8xlkx1gqbxfsq48py5h6jphjvgqp1jo</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>Subramanian S (finder)</li>
 </ul>
 <h2 id="CVE-2026-42027">Arbitrary Class Instantiation via Model Manifest in ExtensionLoader</h2>
 <p>CVE-2026-42027 <a href="https://cve.org/CVERecord?id=CVE-2026-42027">[CVE]</a> <a href="./CVE-2026-42027.cve.json">[CVE json]</a> <a href="./CVE-2026-42027.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-06-30T07:17:51.901Z</em></p>
-<h3 id="affected-1">Affected</h3>
-<ul>
-<li>Apache OpenNLP from 2.0 before 2.5.9</li>
-<li>Apache OpenNLP from 3.0.0-M1 before 3.0.0-M3</li>
-<li>Apache OpenNLP before 1.9.5</li>
-</ul>
-<h3 id="description-1">Description</h3>
-<div><div><p><b>Arbitrary Class Instantiation via Model Manifest in Apache OpenNLP ExtensionLoader</b></p></div></div><div><div><p><b>Versions Affected:&nbsp;</b>before 1.9.5, before 2.5.9, before 3.0.0-M3</p></div></div><div><div><p><b>Description:</b>&nbsp;</p><p>The <code>ExtensionLoader.instantiateExtension(Class, String)</code>&nbsp;method loads a class by its fully-qualified name via <code>Class.forName()</code>&nbsp;and invokes its no-arg constructor, with the class name sourced from the <code>manifest.properties</code>&nbsp;entry of a model archive. The existing <code>isAssignableFrom</code>&nbsp;check correctly rejects classes that are not subtypes of the expected extension interface (<code>BaseToolFactory</code>&nbsp;for <code>factory=</code>, <code>ArtifactSerializer</code>&nbsp;for <code>serializer-class-*</code>), but the check runs <em><b>after</b></em>&nbsp;<code>Class.forName()</code>&nbsp;has already loaded and initialized the named class. </p><p><code>Class.forName()</code>&nbsp;with default initialization semantics executes the target class's static initializer before returning, so an attacker who can supply a crafted model archive can cause the static initializer of any class on the classpath to run during model loading, regardless of whether that class passes the subsequent type check. </p><p>Exploitation requires a class with attacker-useful side effects in its static initializer (for example, JNDI lookup, outbound network I/O, or filesystem access) to be <b>present on the classpath</b>, so this is not a drop-in remote code execution; however, the attack surface grows as third-party model distribution becomes more common (community model repositories, Hugging Face-style sharing), where users routinely load model files from origins they do not control. A secondary, narrower vector affects deployments that ship legitimate <code>BaseToolFactory</code>&nbsp;or <code>ArtifactSerializer</code>&nbsp;subclasses with side-effecting no-arg constructors: a malicious manifest can name such a class and force its constructor to run during model load.</p></div></div><div><div><p><b>Mitigation:</b>&nbsp;</p><p></p><ul><li>2.x users should upgrade to 2.5.9. </li><li>3.x users should upgrade to 3.0.0-M3. </li></ul><p></p><p>Note: The fix introduces a package-prefix allowlist that is consulted before <code>Class.forName()</code>&nbsp;is invoked, so the static initializer of a disallowed class is never executed. Classes under the <code>opennlp.</code>&nbsp;prefix remain permitted by default. Deployments that load models referencing factories or serializers outside <code>opennlp.*</code>&nbsp;must opt those packages in, either programmatically via <code>ExtensionLoader.registerAllowedPackage(String)</code>&nbsp;before the first model load, or by setting the <code><b>OPENNLP_EXT_ALLOWED_PACKAGES</b></code>&nbsp;system property to a comma-separated list of allowed package prefixes. </p><p>Users who cannot upgrade immediately should ensure that all model files are sourced from <b>trusted origins</b>&nbsp;and should audit their classpath for classes with side-effecting static initializers or constructors, particularly any that perform JNDI lookups, network requests, or filesystem operations during class initialization.</p></div></div><br><br>
-<h3 id="references-1">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/ltlo4powjfc0w2w2yyl1o5tc7q1gcb2y">https://lists.apache.org/thread/ltlo4powjfc0w2w2yyl1o5tc7q1gcb2y</a></li>
-</ul>
-<h3 id="credits-1">Credits</h3>
-<ul>
-<li>Subramanian S (finder)</li>
-</ul>
-<h2 id="CVE-2026-40682">XXE via Dictionary Parsing in DictionaryEntryPersistor</h2>
-<p>CVE-2026-40682 <a href="https://cve.org/CVERecord?id=CVE-2026-40682">[CVE]</a> <a href="./CVE-2026-40682.cve.json">[CVE json]</a> <a href="./CVE-2026-40682.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-30T04:40:05.111Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache OpenNLP from 2.0 before 2.5.9</li>
@@ -163,15 +161,34 @@
 <li>Apache OpenNLP before 1.9.5</li>
 </ul>
 <h3 id="description-2">Description</h3>
+<div><div><p><b>Arbitrary Class Instantiation via Model Manifest in Apache OpenNLP ExtensionLoader</b></p></div></div><div><div><p><b>Versions Affected:&nbsp;</b>before 1.9.5, before 2.5.9, before 3.0.0-M3</p></div></div><div><div><p><b>Description:</b>&nbsp;</p><p>The <code>ExtensionLoader.instantiateExtension(Class, String)</code>&nbsp;method loads a class by its fully-qualified name via <code>Class.forName()</code>&nbsp;and invokes its no-arg constructor, with the class name sourced from the <code>manifest.properties</code>&nbsp;entry of a model archive. The existing <code>isAssignableFrom</code>&nbsp;check correctly rejects classes that are not subtypes of the expected extension interface (<code>BaseToolFactory</code>&nbsp;for <code>factory=</code>, <code>ArtifactSerializer</code>&nbsp;for <code>serializer-class-*</code>), but the check runs <em><b>after</b></em>&nbsp;<code>Class.forName()</code>&nbsp;has already loaded and initialized the named class. </p><p><code>Class.forName()</code>&nbsp;with default initialization semantics executes the target class's static initializer before returning, so an attacker who can supply a crafted model archive can cause the static initializer of any class on the classpath to run during model loading, regardless of whether that class passes the subsequent type check. </p><p>Exploitation requires a class with attacker-useful side effects in its static initializer (for example, JNDI lookup, outbound network I/O, or filesystem access) to be <b>present on the classpath</b>, so this is not a drop-in remote code execution; however, the attack surface grows as third-party model distribution becomes more common (community model repositories, Hugging Face-style sharing), where users routinely load model files from origins they do not control. A secondary, narrower vector affects deployments that ship legitimate <code>BaseToolFactory</code>&nbsp;or <code>ArtifactSerializer</code>&nbsp;subclasses with side-effecting no-arg constructors: a malicious manifest can name such a class and force its constructor to run during model load.</p></div></div><div><div><p><b>Mitigation:</b>&nbsp;</p><p></p><ul><li>2.x users should upgrade to 2.5.9. </li><li>3.x users should upgrade to 3.0.0-M3. </li></ul><p></p><p>Note: The fix introduces a package-prefix allowlist that is consulted before <code>Class.forName()</code>&nbsp;is invoked, so the static initializer of a disallowed class is never executed. Classes under the <code>opennlp.</code>&nbsp;prefix remain permitted by default. Deployments that load models referencing factories or serializers outside <code>opennlp.*</code>&nbsp;must opt those packages in, either programmatically via <code>ExtensionLoader.registerAllowedPackage(String)</code>&nbsp;before the first model load, or by setting the <code><b>OPENNLP_EXT_ALLOWED_PACKAGES</b></code>&nbsp;system property to a comma-separated list of allowed package prefixes. </p><p>Users who cannot upgrade immediately should ensure that all model files are sourced from <b>trusted origins</b>&nbsp;and should audit their classpath for classes with side-effecting static initializers or constructors, particularly any that perform JNDI lookups, network requests, or filesystem operations during class initialization.</p></div></div><br><br>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/ltlo4powjfc0w2w2yyl1o5tc7q1gcb2y">https://lists.apache.org/thread/ltlo4powjfc0w2w2yyl1o5tc7q1gcb2y</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Subramanian S (finder)</li>
+</ul>
+<h2 id="CVE-2026-40682">XXE via Dictionary Parsing in DictionaryEntryPersistor</h2>
+<p>CVE-2026-40682 <a href="https://cve.org/CVERecord?id=CVE-2026-40682">[CVE]</a> <a href="./CVE-2026-40682.cve.json">[CVE json]</a> <a href="./CVE-2026-40682.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-30T04:40:05.111Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache OpenNLP from 2.0 before 2.5.9</li>
+<li>Apache OpenNLP from 3.0.0-M1 before 3.0.0-M3</li>
+<li>Apache OpenNLP before 1.9.5</li>
+</ul>
+<h3 id="description-3">Description</h3>
 <p><strong>XML External Entity (XXE) via Unsanitized Dictionary Parsing in Apache OpenNLP DictionaryEntryPersistor</strong></p>
 <p><strong>Versions Affected:</strong> before 2.5.9, before 3.0.0-M3</p>
 <p><strong>Description:</strong> The <code>DictionaryEntryPersistor</code> class initializes a static <code>SAXParserFactory</code> at class-load time without enabling <code>FEATURE_SECURE_PROCESSING</code> or disabling DTD processing. When <code>create(InputStream, EntryInserter)</code> is invoked, the only feature set on the <code>XMLReader</code> is namespace support — external entity resolution and DOCTYPE declarations remain fully enabled. An attacker who can supply a crafted dictionary file (e.g., a stop-word list or domain dictionary) containing a malicious DOCTYPE declaration can trigger local file disclosure via <code>file://</code> entity references or server-side request forgery via <code>http://</code> entity references during SAX parsing, before the application processes a single dictionary entry. This is inconsistent with the project's own <code>XmlUtil.createSaxParser()</code> helper, which correctly sets <code>FEATURE_SECURE_PROCESSING</code> and <code>disallow-doctype-decl</code> and is used by all other XML parsing paths in the codebase. The public <code>Dictionary(InputStream)</code> constructor delegates directly to this method and is the documented API for loading user-supplied dictionaries, making untrusted input a realistic scenario.</p>
 <p><strong>Mitigation:</strong> 2.x users should upgrade to 2.5.9. 3.x users should upgrade to 3.0.0-M3. Users who cannot upgrade immediately should ensure that all dictionary files are sourced from trusted origins and should consider wrapping the <code>Dictionary(InputStream)</code> constructor with input validation that rejects any XML containing a DOCTYPE declaration before it reaches the parser.<br></p>
-<h3 id="references-2">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/r6jpt0qr9nj67gqhppqg7jxf8vsbo0w6">https://lists.apache.org/thread/r6jpt0qr9nj67gqhppqg7jxf8vsbo0w6</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-3">Credits</h3>
 <ul>
 <li>Subramanian S (finder)</li>
 </ul>

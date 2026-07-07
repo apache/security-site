@@ -105,20 +105,77 @@
 <p>Do you want disclose a potential security issue for Apache Lucene.NET? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-47898">XXE vulnerability in Lucene.Net.Analysis.Common PatternParser</h2>
+<p>CVE-2026-47898 <a href="https://cve.org/CVERecord?id=CVE-2026-47898">[CVE]</a> <a href="./CVE-2026-47898.cve.json">[CVE json]</a> <a href="./CVE-2026-47898.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-03T07:47:36.852Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Lucene.Net from 4.8.0-beta00005 before 4.8.0-beta00018</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Improper Restriction of XML External Entity Reference vulnerability in Apache Lucene.Net (Lucene.Net.Analysis.Common library).</p><p>This issue affects Apache Lucene.Net.Analysis.Common: from 4.8.0-beta00005 before 4.8.0-beta00018.</p><p>Users are recommended to upgrade to version 4.8.0-beta00018, which fixes the issue.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7yn9k6sbbsk18yco5y2hszpcf8dst489">https://lists.apache.org/thread/7yn9k6sbbsk18yco5y2hszpcf8dst489</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Daniel Cervera (reporter)</li>
+<li>Paul Irwin (coordinator)</li>
+<li>Shad Storhaug (remediation reviewer)</li>
+</ul>
+<h2 id="CVE-2026-47897">Arbitrary file write from malicious server to Lucene.Net.Replicator client</h2>
+<p>CVE-2026-47897 <a href="https://cve.org/CVERecord?id=CVE-2026-47897">[CVE]</a> <a href="./CVE-2026-47897.cve.json">[CVE json]</a> <a href="./CVE-2026-47897.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-03T07:48:10.017Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Lucene.Net from 4.8.0-beta00005 before 4.8.0-beta00018</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache Lucene.Net (Lucene.Net.Replicator library).</p><p>This issue affects Apache Lucene.Net.Replicator: from 4.8.0-beta00005 before 4.8.0-beta00018.</p><p>Users are recommended to upgrade to version 4.8.0-beta00018, which fixes the issue.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/on1j3zmvgtf8n9fw78z3lyf6dn94p5zc">https://lists.apache.org/thread/on1j3zmvgtf8n9fw78z3lyf6dn94p5zc</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Daniel Cervera (reporter)</li>
+<li>Paul Irwin (coordinator)</li>
+<li>Shad Storhaug (remediation reviewer)</li>
+</ul>
+<h2 id="CVE-2026-47896">Unauthenticated arbitrary file read on the Lucene.Net.Replicator replication server</h2>
+<p>CVE-2026-47896 <a href="https://cve.org/CVERecord?id=CVE-2026-47896">[CVE]</a> <a href="./CVE-2026-47896.cve.json">[CVE json]</a> <a href="./CVE-2026-47896.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-03T07:48:34.009Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Lucene.Net from 4.8.0-beta00005 before 4.8.0-beta00018</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache Lucene.Net (Lucene.Net.Replicator library).</p><p>This issue affects Apache Lucene.Net.Replicator: from 4.8.0-beta00005 through 4.8.0-beta00017.</p><p>Users are recommended to upgrade to version 4.8.0-beta00018, which fixes the issue.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7y9gbt17p55fh1zltks4pnh719wq9sqt">https://lists.apache.org/thread/7y9gbt17p55fh1zltks4pnh719wq9sqt</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Daniel Cervera (reporter)</li>
+<li>Paul Irwin (coordinator)</li>
+<li>Shad Storhaug (remediation reviewer)</li>
+</ul>
 <h2 id="CVE-2024-43383">Remote Code Execution in Lucene.Net.Replicator</h2>
 <p>CVE-2024-43383 <a href="https://cve.org/CVERecord?id=CVE-2024-43383">[CVE]</a> <a href="./CVE-2024-43383.cve.json">[CVE json]</a> <a href="./CVE-2024-43383.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-10-31T09:57:26.362Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache Lucene.Net.Replicator from 4.8.0-beta00005 through 4.8.0-beta00016</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>Deserialization of Untrusted Data vulnerability in Apache Lucene.Net.Replicator.</p><p>This issue affects Apache Lucene.NET's Replicator library: from 4.8.0-beta00005 through 4.8.0-beta00016.</p><p>An attacker that can intercept traffic between a replication client and server, or control the target replication node URL, can provide a specially-crafted JSON response that is deserialized as an attacker-provided exception type. This can result in remote code execution or other potential unauthorized access.<br></p><p>Users are recommended to upgrade to version 4.8.0-beta00017, which fixes the issue.</p>
-<h3 id="references">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/wlz1p76dxpt4rl9o29voxjd5zl7717nh">https://lists.apache.org/thread/wlz1p76dxpt4rl9o29voxjd5zl7717nh</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-3">Credits</h3>
 <ul>
 <li>Summ3r, Vidar-Team (reporter)</li>
 <li>Apache Lucene (remediation developer)</li>
