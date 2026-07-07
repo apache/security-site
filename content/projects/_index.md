@@ -55,7 +55,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - Advisories:\
     [activemq.apache.org](https://activemq.apache.org/security-advisories)
   - Security page:\
-    [github.com](https://github.com/apache/activemq/blob/main/SECURITY.md)
+    [github.com](https://github.com/apache/activemq/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/age/default.png" alt="" loading="lazy"> **Apache AGE**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20AGE)
@@ -554,7 +554,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - Advisories:\
     [httpd.apache.org](https://httpd.apache.org/security/vulnerabilities_24.html)
   - Security page:\
-    [github.com](https://github.com/apache/httpd/blob/trunk/SECURITY.md)
+    [github.com](https://github.com/apache/httpd/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/httpcomponents/default.png" alt="" loading="lazy"> **Apache HttpComponents**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20HttpComponents)
@@ -602,7 +602,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - Advisories (experimental):\
     [security.apache.org](/projects/impala/)
   - Security page:\
-    [github.com](https://github.com/apache/impala/blob/master/SECURITY.md)
+    [github.com](https://github.com/apache/impala/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/inlong/default.png" alt="" loading="lazy"> **Apache InLong**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20InLong)
@@ -912,7 +912,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - Advisories (experimental):\
     none so far
   - Security page:\
-    [github.com](https://github.com/apache/paimon/blob/master/SECURITY.md)
+    [github.com](https://github.com/apache/paimon/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/parquet/default.png" alt="" loading="lazy"> **Apache Parquet**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Parquet)
@@ -1203,7 +1203,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - Advisories:\
     [superset.apache.org](https://superset.apache.org/docs/security/cves)
   - Security page:\
-    [github.com](https://github.com/apache/superset/blob/master/.github/SECURITY.md)
+    [github.com](https://github.com/apache/superset/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/synapse/default.png" alt="" loading="lazy"> **Apache Synapse**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Synapse)

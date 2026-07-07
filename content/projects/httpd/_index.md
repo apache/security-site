@@ -6,11 +6,11 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache HTTP Server? You can read more about the projects' security policy on their [security page](https://github.com/apache/httpd/blob/trunk/SECURITY.md), and email your report to the [Apache HTTP Server Security Team](mailto:security@httpd.apache.org).
+Do you want disclose a potential security issue for Apache HTTP Server? You can read more about the projects' security policy on their [security page](https://github.com/apache/httpd/security/policy), and email your report to the [Apache HTTP Server Security Team](mailto:security@httpd.apache.org).
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://github.com/apache/httpd/blob/trunk/SECURITY.md). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://github.com/apache/httpd/security/policy). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
 ## mod_http2 denial of service ## { #CVE-2026-49975 }
