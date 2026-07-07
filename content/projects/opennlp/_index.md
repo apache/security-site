@@ -13,6 +13,31 @@ Do you want disclose a potential security issue for Apache OpenNLP? Send your re
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Unsafe Java Deserialization in SvmDoccatModel ## { #CVE-2026-43825 }
+
+CVE-2026-43825 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-43825) [\[CVE json\]](./CVE-2026-43825.cve.json) [\[OSV json\]](./CVE-2026-43825.osv.json)
+
+
+
+_Last updated: 2026-07-06T15:41:58.595Z_
+
+### Affected
+
+* Apache OpenNLP :: Core :: ML :: LibSVM from 3.0.0-M1 before 3.0.0-M4
+
+
+### Description
+
+<b>Untrusted Java Deserialization in Apache OpenNLP SvmDoccatModel</b><br><br><b>Versions Affected:</b><br>&nbsp; before 3.0.0-M4 (libsvm document categorization module; introduced in<br>&nbsp; OPENNLP-1808 and only present on the 3.x line)<br><br><b>Description:</b><br>SvmDoccatModel.deserialize(InputStream) reads an attacker-controlled<br>stream with java.io.ObjectInputStream and calls readObject() without an<br>ObjectInputFilter installed. ObjectInputStream materialises every class<br>referenced in the stream before the resulting object is cast to<br>SvmDoccatModel, so the cast that follows readObject() executes only<br>after the foreign object graph has already been deserialised in full.<br><br>If a Java deserialization gadget chain is available on the consumer's<br>classpath, a crafted payload supplied to<br>deserialize() executes arbitrary code in the JVM that loads it. Apache<br>OpenNLP itself does not ship a known gadget chain, so the realistic<br>risk is to downstream applications that embed the libsvm module<br>alongside vulnerable transitive dependencies. The method is public and<br>static, so any caller can pass an untrusted stream to it directly.<br><br>The practical impact is remote code execution against processes that<br>load SvmDoccatModel instances from untrusted or semi-trusted origins.<br><br><b>Mitigation:</b><br><br>3.x users should upgrade to 3.0.0-M4.<br><br>Users who cannot upgrade immediately should treat all serialized<br>SvmDoccatModel streams as untrusted input unless their provenance is<br>verified, and should avoid invoking SvmDoccatModel.deserialize() on<br>streams supplied by end users or fetched from third-party sources<br>without integrity checks.<br><br>
+
+### References
+* https://lists.apache.org/thread/c7kom0pgk9cbpfnbooh5m3g85ndf50hn
+
+
+### Credits
+* Subramanian S (finder)
+
+
 ## OOM DoS via Unbounded Array Allocation in AbstractModelReader ## { #CVE-2026-42440 }
 
 CVE-2026-42440 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-42440) [\[CVE json\]](./CVE-2026-42440.cve.json) [\[OSV json\]](./CVE-2026-42440.osv.json)

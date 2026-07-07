@@ -79,7 +79,7 @@ CVE-2026-34481 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34481) [\[CVE jso
 
 
 
-_Last updated: 2026-04-10T15:42:52.673Z_
+_Last updated: 2026-07-06T09:02:11.538Z_
 
 ### Affected
 

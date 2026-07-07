@@ -65,6 +65,90 @@ _Last updated: 2026-03-09T08:57:43.961Z_
 * Mapta / BugBunny_ai (finder)
 
 
+## Path Traversal in DataNode Internal RPC Trigger JAR Upload Allows Arbitrary File Write ## { #CVE-2026-24014 }
+
+CVE-2026-24014 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24014) [\[CVE json\]](./CVE-2026-24014.cve.json) [\[OSV json\]](./CVE-2026-24014.osv.json)
+
+
+
+_Last updated: 2026-07-06T08:34:23.903Z_
+
+### Affected
+
+* Apache IoTDB from 1.3.3 before 2.0.8
+
+
+### Description
+
+<p>Apache IoTDB DataNode’s internal RPC interface for creating Trigger instances uses the uploaded Trigger JAR name to build a file path without sufficient validation. If the internal DataNode RPC port is exposed to an untrusted network, an attacker may use path traversal sequences in the JAR name to write files outside the intended Trigger installation directory. This could allow arbitrary file write with the permissions of the IoTDB process.</p><p>This issue affects Apache IoTDB: from 1.3.3 before 2.0.8.</p><p>Users are recommended to upgrade to version 2.0.8, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/38298f803gb5j9nlhf0l9zkf34o90h3m
+
+
+### Credits
+* Yan Nan (Detecon Security Lab). (finder)
+
+
+## Authentication Bypass via Forged SessionID in Thrift RPC ## { #CVE-2026-24013 }
+
+CVE-2026-24013 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24013) [\[CVE json\]](./CVE-2026-24013.cve.json) [\[OSV json\]](./CVE-2026-24013.osv.json)
+
+
+
+_Last updated: 2026-07-06T07:17:46.194Z_
+
+### Affected
+
+* Apache IoTDB from 1.3.3 before 2.0.8
+
+
+### Description
+
+<p>Authentication Bypass by Spoofing vulnerability in Apache IoTDB.<br><span style="background-color: rgb(255, 255, 255);">Certain Thrift RPC query handlers lack strict validation of the sessionId
+parameter. An attacker can construct requests with a forged sessionId and,
+without performing openSession authentication, receive valid query results.
+This allows authentication bypass and unauthorized reading of time-series
+data.</span><br></p><p>This issue affects Apache IoTDB: from 1.3.3 before 2.0.8.</p><p>Users are recommended to upgrade to version 2.0.8, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/6pwkgnqhbm56mvn309f87snm84s0b75y
+
+
+### Credits
+* Yan Nan (Detecon Security Lab) (finder)
+
+
+## Denial of Service via Resource Exhaustion in Aggregation Query ## { #CVE-2026-24012 }
+
+CVE-2026-24012 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24012) [\[CVE json\]](./CVE-2026-24012.cve.json) [\[OSV json\]](./CVE-2026-24012.osv.json)
+
+
+
+_Last updated: 2026-07-06T07:19:25.470Z_
+
+### Affected
+
+* Apache IoTDB from 1.3.3 before 2.0.8
+
+
+### Description
+
+<p>Uncontrolled Resource Consumption vulnerability in Apache IoTDB.&nbsp;</p><p>Some interface<span style="background-color: rgb(255, 255, 255);">&nbsp;fails to impose reasonable</span><span style="background-color: rgb(255, 255, 255);">
+limits on the time span and aggregation interval of the query.&nbsp;</span><span style="background-color: rgb(255, 255, 255);">An attacker</span><span style="background-color: rgb(255, 255, 255);">
+can construct a request with extreme parameters (e.g., a very large time</span><span style="background-color: rgb(255, 255, 255);">
+range combined with a minimal interval).&nbsp;</span><span style="background-color: rgb(255, 255, 255);">This forces the DataNode to build</span><span style="background-color: rgb(255, 255, 255);">
+an enormous result set in memory, which exhausts the Java heap and causes</span><span style="background-color: rgb(255, 255, 255);">
+the DataNode process to crash.</span></p><p>This issue affects Apache IoTDB: from 1.3.3 before 2.0.8.</p><p>Users are recommended to upgrade to version 2.0.8, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/0g5th1t2vj6j8hm5t9w3xh9n6f6ht9z8
+
+
+### Credits
+* Yan Nan (Detecon Security Lab) (finder)
+
+
 ## Path Traversal Vulnerability ## { #CVE-2025-64152 }
 
 CVE-2025-64152 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-64152) [\[CVE json\]](./CVE-2025-64152.cve.json) [\[OSV json\]](./CVE-2025-64152.osv.json)

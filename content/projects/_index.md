@@ -488,6 +488,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Groovy)
   - Advisories (experimental):\
     none so far
+  - Security page:\
+    [github.com](https://github.com/apache/groovy/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/guacamole/default.png" alt="" loading="lazy"> **Apache Guacamole**
   - **Security contact:**\
     [security@guacamole.apache.org](mailto:security@guacamole.apache.org?subject=%5BFINDING%5D)
@@ -1145,7 +1147,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [cwiki.apache.org](https://cwiki.apache.org/confluence/display/SPAMASSASSIN/SecurityPolicy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/spark/default.png" alt="" loading="lazy"> **Apache Spark**
   - **Security contact:**\
-    [security@spark.apache.org](mailto:security@spark.apache.org?subject=%5BFINDING%5D)
+    [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Spark)
   - Advisories:\
     [spark.apache.org](https://spark.apache.org/security.html)
   - Security page:\

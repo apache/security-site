@@ -9,7 +9,7 @@ let
     p.jsonschema
     p.requests
     p.cvss
-    p.dateutil
+    p.python-dateutil
     p.langcodes
     p.progress
   ]);

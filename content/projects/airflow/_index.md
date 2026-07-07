@@ -123,6 +123,33 @@ A bug in Apache Airflow&#x27;s KubernetesExecutor caused JWT tokens used by work
 * Anish Giri (remediation developer)
 
 
+## Path traversal via GCS object names → local/SFTP filesystem (GCSToSFTPOperator + GCSTimeSpanFileTransformOperator) ## { #CVE-2026-49297 }
+
+CVE-2026-49297 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49297) [\[CVE json\]](./CVE-2026-49297.cve.json) [\[OSV json\]](./CVE-2026-49297.osv.json)
+
+
+
+_Last updated: 2026-07-04T05:57:06.977Z_
+
+### Affected
+
+* Apache Airflow Google provider before 22.2.1
+
+
+### Description
+
+Apache Airflow&#x27;s Google provider operators `GCSToSFTPOperator` and `GCSTimeSpanFileTransformOperator` joined GCS object names returned by the bucket listing API directly to a destination filesystem path without normalisation or containment check. A user with write access to the source GCS bucket (typically a different trust principal than the DAG author — partner uploads, ingest-only service accounts, public-data buckets) could create an object whose name contains `..` segments and cause the DAG run to write the downloaded blob outside the configured destination (the SFTP `destination_path` for `GCSToSFTPOperator`; the worker-local temp directory for `GCSTimeSpanFileTransformOperator`), enabling overwrite of arbitrary files on the SFTP server or the worker host. Affects deployments that ingest from buckets writable by less-trusted principals. Users are advised to upgrade to `apache-airflow-providers-google` 22.2.1 or later.
+
+### References
+* https://github.com/apache/airflow/pull/67667
+* https://lists.apache.org/thread/cb5nvoxsj1q7rv878cyqgtg150w0zglq?users@airflow.apache.org
+
+
+### Credits
+* anonymous (finder)
+* Jarek Potiuk (remediation developer)
+
+
 ## No certificate validation on SMTP STARTTLS connections ## { #CVE-2026-49267 }
 
 CVE-2026-49267 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49267) [\[CVE json\]](./CVE-2026-49267.cve.json) [\[OSV json\]](./CVE-2026-49267.osv.json)
@@ -602,7 +629,7 @@ _Last updated: 2026-05-29T08:45:19.890Z_
 
 ### Description
 
-Apache Airflow's SMTP provider `SmtpHook` called Python's `smtplib.SMTP.starttls()` without an SSL context, so no certificate validation was performed on the TLS upgrade. A man-in-the-middle between the Airflow worker and the SMTP server could present a self-signed certificate, complete the STARTTLS upgrade, and capture the SMTP credentials sent during the subsequent `login()` call. Users are advised to upgrade to the `apache-airflow-providers-smtp` version that contains the fix.
+Apache Airflow&#x27;s SMTP provider `SmtpHook` called Python&#x27;s `smtplib.SMTP.starttls()` without an SSL context, so no certificate validation was performed on the TLS upgrade. A man-in-the-middle between the Airflow worker and the SMTP server could present a self-signed certificate, complete the STARTTLS upgrade, and capture the SMTP credentials sent during the subsequent `login()` call. Users are advised to upgrade to the `apache-airflow-providers-smtp` version that contains the fix.
 
 ### References
 * https://github.com/apache/airflow/pull/65346
