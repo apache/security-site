@@ -68,6 +68,33 @@ The Apache Airflow Samba provider&#x27;s `GCSToSambaOperator` joined GCS object 
 * Jarek Potiuk (remediation developer)
 
 
+## Task-instance API exposes secrets in deferred trigger kwargs ## { #CVE-2026-49487 }
+
+CVE-2026-49487 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49487) [\[CVE json\]](./CVE-2026-49487.cve.json) [\[OSV json\]](./CVE-2026-49487.osv.json)
+
+
+
+_Last updated: 2026-07-07T09:19:35.370Z_
+
+### Affected
+
+* Apache Airflow before 3.3.0
+
+
+### Description
+
+In Apache Airflow before 3.3.0, the REST API task-instance detail and list<br>endpoints returned a deferred task&#x27;s trigger kwargs without masking. When a<br>deferred operator passed a secret (for example a provider API key) into its<br>trigger, any authenticated user with DAG-scoped task-instance read access for<br>that DAG could read that secret in clear text while the task was deferred.<br>Users should upgrade to apache-airflow 3.3.0 or later, which masks sensitive<br>values in trigger kwargs returned by the API.
+
+### References
+* https://github.com/apache/airflow/pull/67868
+* https://lists.apache.org/thread/qlw6pozlzlfhkvmbgqsbjlq6vj4v0pc4
+
+
+### Credits
+* Andrew Rukin (Arenadata) (finder)
+* Jarek Potiuk (@potiuk) (remediation developer)
+
+
 ## FTP Provider does not protect FTPS data channel (missing PROT_P) ## { #CVE-2026-49486 }
 
 CVE-2026-49486 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49486) [\[CVE json\]](./CVE-2026-49486.cve.json) [\[OSV json\]](./CVE-2026-49486.osv.json)
@@ -150,6 +177,33 @@ Apache Airflow&#x27;s Google provider operators `GCSToSFTPOperator` and `GCSTime
 * Jarek Potiuk (remediation developer)
 
 
+## Per-DAG read bypass discloses co-located DAGs' source via GET /api/v2/dagSources/{dag_id} ## { #CVE-2026-49296 }
+
+CVE-2026-49296 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49296) [\[CVE json\]](./CVE-2026-49296.cve.json) [\[OSV json\]](./CVE-2026-49296.osv.json)
+
+
+
+_Last updated: 2026-07-07T09:18:11.178Z_
+
+### Affected
+
+* Apache Airflow from 3.0.0 before 3.3.0
+
+
+### Description
+
+Before apache-airflow 3.3.0, a user authorized to read one Dag could disclose the source of other Dags co-located in the same source file. `GET /api/v2/dagSources/{dag_id}` — and the equivalent Dag-source view in the UI — returned the entire source file without redacting Dags the caller was not authorized to read, bypassing per-DAG read authorization. Deployments that co-locate multiple Dags in a single file and rely on per-DAG access control to limit source visibility are affected; single-Dag-per-file deployments are not. Upgrade to apache-airflow 3.3.0 or later.
+
+### References
+* https://github.com/apache/airflow/pull/67662
+* https://lists.apache.org/thread/qqv41t3oydkn9o14r2rfz1wkdrsp5jzn
+
+
+### Credits
+* Matteo Panzeri (Università di Pavia), GitHub @matte1782 (finder)
+* Jarek Potiuk (remediation developer)
+
+
 ## No certificate validation on SMTP STARTTLS connections ## { #CVE-2026-49267 }
 
 CVE-2026-49267 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49267) [\[CVE json\]](./CVE-2026-49267.cve.json) [\[OSV json\]](./CVE-2026-49267.osv.json)
@@ -175,6 +229,88 @@ Apache Airflow&#x27;s EmailOperator and the underlying `airflow.utils.email` hel
 ### Credits
 * Francis Bergin (@francisbergin) (finder)
 * Jarek Potiuk (remediation developer)
+
+
+## Config API leaks per-key secrets backend kwargs - masker bypass on synthetic options ## { #CVE-2026-48892 }
+
+CVE-2026-48892 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48892) [\[CVE json\]](./CVE-2026-48892.cve.json) [\[OSV json\]](./CVE-2026-48892.osv.json)
+
+
+
+_Last updated: 2026-07-07T09:16:24.501Z_
+
+### Affected
+
+* Apache Airflow before 3.3.0
+
+
+### Description
+
+The Config API in Apache Airflow surfaced per-key secrets-backend overrides (environment variables like `AIRFLOW__SECRETS__BACKEND_KWARG__SECRET_ID` and `AIRFLOW__WORKERS__SECRETS_BACKEND_KWARG__SECRET_ID`) as synthetic config options whose option names were not in `sensitive_config_values`, so the masker did not redact them. An authenticated UI/API user with Config read permission could retrieve plaintext secrets-backend credentials (Vault `role_id` / `secret_id`, etc.) from the Config API output. Affects deployments that configure secrets backends via per-key environment overrides. Users are advised to upgrade to `apache-airflow` 3.3.0 or later.
+
+### References
+* https://github.com/apache/airflow/pull/67622
+* https://lists.apache.org/thread/pq5yy40079h6tzh3fxvw28dd8dbk72hk
+
+
+### Credits
+* Omkhar Arasaratnam (@omkhar) (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## /ui/dependencies scheduling graph leaks unreadable Dag identifiers via trigger/sensor dep.source/dep.target ## { #CVE-2026-48891 }
+
+CVE-2026-48891 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48891) [\[CVE json\]](./CVE-2026-48891.cve.json) [\[OSV json\]](./CVE-2026-48891.osv.json)
+
+
+
+_Last updated: 2026-07-07T09:17:27.452Z_
+
+### Affected
+
+* Apache Airflow before 3.3.0
+
+
+### Description
+
+A bug in Apache Airflow&#x27;s `/ui/dependencies` scheduling graph endpoint applied the caller&#x27;s readable-Dag filter to the top-level serialized Dag key but still emitted referenced Dag IDs through the `dep.source` and `dep.target` fields of trigger / sensor dependency entries. An authenticated UI user with read permission on some Dags could enumerate the identifiers of other Dags they were not authorized to read by inspecting the dependency graph for trigger / sensor references. Affects deployments that rely on per-Dag read scoping to keep Dag identifiers private across teams. This is a residual gap in the fix for CVE-2026-28563, which filtered the top-level Dag key but did not propagate the filter into the trigger / sensor dep-source / dep-target fields. Users who already upgraded for CVE-2026-28563 should additionally upgrade to `apache-airflow` 3.3.0 or later to cover the residual trigger / sensor dependency leak.
+
+### References
+* https://github.com/apache/airflow/pull/67627
+* https://www.cve.org/CVERecord?id=CVE-2026-28563
+* https://lists.apache.org/thread/wzc8nflg94rq6w8f5tvtlo0o3g4wjrfl
+
+
+### Credits
+* Mitchell Benjamin / Revamp Studio (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## Bulk JSON Variables bypass should_hide_value_for_key - redact() called without the key ## { #CVE-2026-48828 }
+
+CVE-2026-48828 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48828) [\[CVE json\]](./CVE-2026-48828.cve.json) [\[OSV json\]](./CVE-2026-48828.osv.json)
+
+
+
+_Last updated: 2026-07-07T09:18:51.039Z_
+
+### Affected
+
+* Apache Airflow before 3.3.0
+
+
+### Description
+
+The Bulk Variables API in Apache Airflow called the redactor without passing the variable&#x27;s key, so the key-based `should_hide_value_for_key` check (which triggers on secret-suffixed key names like `*_password` / `*_token` / `*_secret`) could not fire for JSON-decodable variable values. An authenticated UI/API user with bulk Variable read permission could retrieve plaintext values from JSON variables whose key would otherwise trigger redaction. Affects deployments that store sensitive values in JSON-typed Airflow Variables under secret-suffixed key names. Users are advised to upgrade to `apache-airflow` 3.3.0 or later (the fix landed on `main` after 3.2.2; no 3.2.x backport).
+
+### References
+* https://github.com/apache/airflow/pull/67495
+* https://lists.apache.org/thread/y9kf314t6dhnv994hr11wj3tbow847yc
+
+
+### Credits
+* Omkhar Arasaratnam (@omkhar) (finder)
+* Shubham Raj (@shubhamraj-git) (remediation developer)
 
 
 ## revoke_token() unreachable in FabAuthManager / KeycloakAuthManager logout path ## { #CVE-2026-48726 }
@@ -629,7 +765,7 @@ _Last updated: 2026-05-29T08:45:19.890Z_
 
 ### Description
 
-Apache Airflow&#x27;s SMTP provider `SmtpHook` called Python&#x27;s `smtplib.SMTP.starttls()` without an SSL context, so no certificate validation was performed on the TLS upgrade. A man-in-the-middle between the Airflow worker and the SMTP server could present a self-signed certificate, complete the STARTTLS upgrade, and capture the SMTP credentials sent during the subsequent `login()` call. Users are advised to upgrade to the `apache-airflow-providers-smtp` version that contains the fix.
+Apache Airflow's SMTP provider `SmtpHook` called Python's `smtplib.SMTP.starttls()` without an SSL context, so no certificate validation was performed on the TLS upgrade. A man-in-the-middle between the Airflow worker and the SMTP server could present a self-signed certificate, complete the STARTTLS upgrade, and capture the SMTP credentials sent during the subsequent `login()` call. Users are advised to upgrade to the `apache-airflow-providers-smtp` version that contains the fix.
 
 ### References
 * https://github.com/apache/airflow/pull/65346
