@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://security.apache.org/schemas/project-coordinates.schema.json",
+  "title": "Apache project security coordinates",
+  "description": "Hand-maintained security coordinates for Apache projects, keyed by PMC/committee id. Consumed by scripts/project-page.py to build the projects overview and by external tools.",
+  "type": "object",
+  "propertyNames": {
+    "pattern": "^(\\$schema|[a-z0-9][a-z0-9-]*)$"
+  },
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Optional reference to this schema so editors validate the file. Ignored by the site generator (keys starting with '$' are not treated as projects)."
+    }
+  },
+  "additionalProperties": {
+    "$ref": "#/$defs/project"
+  },
+  "$defs": {
+    "urlOrNull": {
+      "type": ["string", "null"],
+      "format": "uri"
+    },
+    "project": {
+      "type": "object",
+      "description": "Security coordinates for a single project. The six core fields are always present (null when unknown) so consumers need no per-field presence checks.",
+      "required": [
+        "name",
+        "security_model_link",
+        "security_model_source",
+        "advisory_link",
+        "contact",
+        "logo_link"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Human-readable project name, e.g. \"Apache Kafka\"."
+        },
+        "security_model_link": {
+          "$ref": "#/$defs/urlOrNull",
+          "description": "URL of the project's human-facing (HTML) security page or threat model, shown on the site. Null when the project has none."
+        },
+        "security_model_source": {
+          "$ref": "#/$defs/urlOrNull",
+          "description": "URL of an AI-friendly plain-text/Markdown version of the security page. Not rendered on the site; used by external tooling to fetch text instead of HTML. Null when unavailable."
+        },
+        "advisory_link": {
+          "$ref": "#/$defs/urlOrNull",
+          "description": "URL of the project's published list of security advisories. Null when the project has none."
+        },
+        "contact": {
+          "type": "string",
+          "format": "email",
+          "minLength": 1,
+          "description": "Security reporting address. Defaults to security@apache.org when the project has no dedicated list."
+        },
+        "logo_link": {
+          "$ref": "#/$defs/urlOrNull",
+          "description": "URL of the project logo shown next to its name. Null when no logo is available."
+        },
+        "contributing": {
+          "$ref": "#/$defs/urlOrNull",
+          "description": "Optional URL of the project's contributing guide."
+        },
+        "dependency_advisory_triage": {
+          "$ref": "#/$defs/urlOrNull",
+          "description": "Optional URL of the project's dependency-advisory triage data (e.g. VEX or suppression file)."
+        }
+      }
+    }
+  }
+}

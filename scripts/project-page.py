@@ -12,7 +12,8 @@ from urllib.parse import urlparse, quote
 
 # manually maintained
 with open('project-coordinates.json', 'r') as p:
-    project_coordinates = json.load(p)
+    # Drop editor-only meta keys (e.g. "$schema"); every remaining key is a project.
+    project_coordinates = {k: v for k, v in json.load(p).items() if not k.startswith('$')}
 
 # fetched from https://projects.apache.org/json/foundation/committees.json
 with open('committees.json', 'r') as cs:
@@ -131,9 +132,9 @@ def project_md_lines(pmc, p):
             lines.append('    [security.apache.org](/projects/%s/)' % pmc)
         else:
             lines.append('    none so far')
-    if p.get('link'):
+    if p.get('security_model_link'):
         lines.append('  - Security page:\\')
-        lines.append('    [%s](%s)' % (urlparse(p['link']).netloc or 'security page', p['link']))
+        lines.append('    [%s](%s)' % (urlparse(p['security_model_link']).netloc or 'security page', p['security_model_link']))
     return lines
 
 # Group projects by their initial letter (non-letters bucket under '#').
@@ -198,8 +199,8 @@ layout: single
 """ % (p['name'], p['name']))
     project_page.write('# Reporting\n\n')
     project_page.write('Do you want disclose a potential security issue for %s? ' % p['name'])
-    if 'link' in p.keys() and p['link']:
-        project_page.write("You can read more about the projects' security policy on their [security page](%s), and email your report to the " % p['link'])
+    if 'security_model_link' in p.keys() and p['security_model_link']:
+        project_page.write("You can read more about the projects' security policy on their [security page](%s), and email your report to the " % p['security_model_link'])
     else:
         project_page.write('Send your report to the ')
     if not 'contact' in p.keys() or p['contact'] == 'security@apache.org':
@@ -211,8 +212,8 @@ layout: single
 
     project_page.write('\n\nThis section is experimental: it provides advisories since 2023 and ')
     project_page.write('may lag behind the official CVE publications. ')
-    if 'link' in p.keys() and p['link']:
-        project_page.write('It may also lack details found on the [project security page](%s). ' % p['link'])
+    if 'security_model_link' in p.keys() and p['security_model_link']:
+        project_page.write('It may also lack details found on the [project security page](%s). ' % p['security_model_link'])
 
     project_page.write('If you have any feedback on how you would like this data to be provided, ')
     project_page.write('you are welcome to reach out on our public [mailinglist](/mailinglist) or privately ')

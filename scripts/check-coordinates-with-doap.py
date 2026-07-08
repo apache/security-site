@@ -29,7 +29,8 @@ def fetch_doap(url):
 
 # manually maintained
 with open('project-coordinates.json', 'r') as p:
-    project_coordinates = json.load(p)
+    # Drop editor-only meta keys (e.g. "$schema"); every remaining key is a project.
+    project_coordinates = {k: v for k, v in json.load(p).items() if not k.startswith('$')}
 
 from rdflib.namespace import DefinedNamespace, Namespace
 from rdflib.term import URIRef
