@@ -13,6 +13,31 @@ Do you want disclose a potential security issue for Apache Helix? Send your repo
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Permissive CORS Configuration in REST API Allows Unrestricted Cross-Origin ## { #CVE-2026-57111 }
+
+CVE-2026-57111 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-57111) [\[CVE json\]](./CVE-2026-57111.cve.json) [\[OSV json\]](./CVE-2026-57111.osv.json)
+
+
+
+_Last updated: 2026-07-09T07:08:43.930Z_
+
+### Affected
+
+* Apache Helix REST through 2.0.0
+
+
+### Description
+
+Permissive Cross-Origin Resource Sharing (CORS) in the REST API (helix-rest, org.apache.helix.rest.server.filters.CORSFilter) in Apache Helix through 2.0.0 on all platforms allows a remote attacker controlling a web page visited by an authorized user to read responses from and issue cross-origin requests to administrative REST endpoints via a cross-origin request from an arbitrary origin, since the filter unconditionally returns Access-Control-Allow-Origin: * together with Access-Control-Allow-Credentials: true and reflects arbitrary Access-Control-Request-Method / Access-Control-Request-Headers values in preflight responses. Users are recommended to upgrade to version 2.0.1, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/wy2yv90lvqzx46vkg35xrtfddffq9cfj
+
+
+### Credits
+* Aastha Aggarwal (https://github.com/Aastha2602) (reporter)
+
+
 ## Helix front hard-coded secret in the express-session ## { #CVE-2024-22281 }
 
 CVE-2024-22281 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-22281) [\[CVE json\]](./CVE-2024-22281.cve.json) [\[OSV json\]](./CVE-2024-22281.osv.json)

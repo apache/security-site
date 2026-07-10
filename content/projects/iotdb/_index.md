@@ -13,6 +13,224 @@ Do you want disclose a potential security issue for Apache IoTDB? Send your repo
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Out-of-bounds reads in C++ client TsBlock deserializer crash client process on malformed server data ## { #CVE-2026-40454 }
+
+CVE-2026-40454 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40454) [\[CVE json\]](./CVE-2026-40454.cve.json) [\[OSV json\]](./CVE-2026-40454.osv.json)
+
+
+
+_Last updated: 2026-07-10T07:18:58.462Z_
+
+### Affected
+
+* Apache IoTDB C++ client from 1.3.5 before 1.3.8
+* Apache IoTDB C++ client from 2.0.5 before 2.0.10
+
+
+### Description
+
+<p>Out-of-bounds Read, Improper Input Validation vulnerability in Apache IoTDB C++ client.<br><span style="background-color: rgb(255, 255, 255);">Out-of-bounds reads in IoTDB C++ client TsBlock deserializer crash client
+process on malformed server data.</span><br></p><p>This issue affects Apache IoTDB C++ client: from 1.3.5 before 1.3.8, from 2.0.5 before 2.0.10.</p><p>Users are recommended to upgrade to version 2.0.10, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/9wml325g6bpovw0jf5ymtc3xl7fwlkrn
+
+
+### Credits
+* bugbunny.ai (finder)
+
+
+## Authorization bypass in /rest/v2/fastLastQuery exposes last-value data to unauthorized authenticated users ## { #CVE-2026-40452 }
+
+CVE-2026-40452 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40452) [\[CVE json\]](./CVE-2026-40452.cve.json) [\[OSV json\]](./CVE-2026-40452.osv.json)
+
+
+
+_Last updated: 2026-07-10T07:16:03.259Z_
+
+### Affected
+
+* Apache IoTDB from 1.3.5 before 1.3.8
+* Apache IoTDB from 2.0.5 before 2.0.10
+
+
+### Description
+
+<p>Incorrect Authorization, Improper Access Control vulnerability in Apache IoTDB.<br>Authorization bypass in /rest/v2/fastLastQuery exposes last-value data to unauthorized authenticated users.<br></p><p>This issue affects Apache IoTDB: from 1.3.5 before 1.3.8, from 2.0.5 before 2.0.10.</p><p>Users are recommended to upgrade to version 2.0.10, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/04j2l6dosyboor4o2gvrzbrcrpllmh95
+
+
+### Credits
+* bugbunny.ai (finder)
+
+
+## Authenticated users can escalate to full tree-path access by renaming themselves to __internal_auditor ## { #CVE-2026-40009 }
+
+CVE-2026-40009 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40009) [\[CVE json\]](./CVE-2026-40009.cve.json) [\[OSV json\]](./CVE-2026-40009.osv.json)
+
+
+
+_Last updated: 2026-07-10T07:15:02.989Z_
+
+### Affected
+
+* Apache IoTDB from 2.0.8 before 2.0.10
+
+
+### Description
+
+<p>Improper Privilege Management, Improper Access Control vulnerability in Apache IoTDB.<br><span style="background-color: rgb(255, 255, 255);">Authenticated users can escalate to full tree-path access by renaming
+themselves to __internal_auditor.</span><br></p><p>This issue affects Apache IoTDB: from 2.0.8 before 2.0.10.</p><p>Users are recommended to upgrade to version 2.0.10, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/65hh7dh28rcxlzdzwdpt630321tr8b61
+
+
+### Credits
+* bugbunny.ai (finder)
+
+
+## Arbitrary Class Instantiation via Pipe Transfer RPC ## { #CVE-2026-40008 }
+
+CVE-2026-40008 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40008) [\[CVE json\]](./CVE-2026-40008.cve.json) [\[OSV json\]](./CVE-2026-40008.osv.json)
+
+
+
+_Last updated: 2026-07-10T07:13:24.628Z_
+
+### Affected
+
+* Apache IoTDB from 1.0.0 before 2.0.10
+
+
+### Description
+
+<p>Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection') vulnerability in Apache IoTDB.<br><span style="background-color: rgb(255, 255, 255);">The pipe processor reads a fully
+qualified Java class name and
+instantiates it using Class.forName().newInstance() without any
+validation or allowlisting.</span><br></p><p>This issue affects Apache IoTDB: from 1.0.0 before 2.0.10.</p><p>Users are recommended to upgrade to version 2.0.10, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/fm8cpvzbox2qqy99ztglm8wkk1nrg9ng
+
+
+### Credits
+* Andrea Cosentino (finder)
+
+
+## Unauthenticated unbounded recursion in IoTDB AirGap receiver's E-language prefix parser causes per-connection StackOverflowError ## { #CVE-2026-40007 }
+
+CVE-2026-40007 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40007) [\[CVE json\]](./CVE-2026-40007.cve.json) [\[OSV json\]](./CVE-2026-40007.osv.json)
+
+
+
+_Last updated: 2026-07-10T07:12:27.092Z_
+
+### Affected
+
+* Apache IoTDB from 1.0.0 before 2.0.10
+
+
+### Description
+
+<p>Uncontrolled Recursion, Uncontrolled Resource Consumption vulnerability in Apache IoTDB.<br><span style="background-color: rgb(255, 255, 255);">When pipe_air_gap_receiver_enabled=true, the IoTDB AirGap receiver's
+readLength method calls itself recursively each time it recognises the
+E-language prefix in socket data, with no depth limit. An unauthenticated
+attacker can send a stream of repeated E-language prefixes that drives the
+recursion arbitrarily deep, exhausting the receiver thread's JVM stack and
+raising StackOverflowError.</span><br></p><p>This issue affects Apache IoTDB: from 1.0.0 before 2.0.10.</p><p>Users are recommended to upgrade to version 2.0.10, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/tr23kh6kp8drrsv8ypv1mqm4v5kyy23m
+
+
+### Credits
+* bugbunny.ai (finder)
+
+
+## Unauthenticated heap-exhaustion DoS via unbounded allocation in IoTDB AirGap pipe receiver ## { #CVE-2026-40006 }
+
+CVE-2026-40006 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40006) [\[CVE json\]](./CVE-2026-40006.cve.json) [\[OSV json\]](./CVE-2026-40006.osv.json)
+
+
+
+_Last updated: 2026-07-10T07:10:51.432Z_
+
+### Affected
+
+* Apache IoTDB from 1.0.0 before 2.0.10
+
+
+### Description
+
+<p>Memory Allocation with Excessive Size Value, Allocation of Resources Without Limits or Throttling, Missing Authentication for Critical Function vulnerability in Apache IoTDB.<br><span style="background-color: rgb(255, 255, 255);">When pipe_air_gap_receiver_enabled=true, the IoTDB AirGap pipe receiver
+accepts raw TCP connections on port 9780 with no authentication. The
+readLength method reads an attacker-controlled 32-bit integer from the
+socket and readData passes it directly to new byte[length] with no
+upper-bound check. An unauthenticated attacker can cause the JVM to attempt
+an allocation of up to 2,147,483,647 bytes per connection, exhausting heap
+memory and crashing or severely degrading the DataNode process.</span><br></p><p>This issue affects Apache IoTDB: from 1.0.0 before 2.0.10.</p><p>Users are recommended to upgrade to version 2.0.10, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/rfpt7m9fvdrw37r3ow5omp2n914z6zqk
+
+
+### Credits
+* bugbunny.ai (finder)
+
+
+## Path Traversal in Pipe File Transfer Receiver ## { #CVE-2026-40005 }
+
+CVE-2026-40005 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40005) [\[CVE json\]](./CVE-2026-40005.cve.json) [\[OSV json\]](./CVE-2026-40005.osv.json)
+
+
+
+_Last updated: 2026-07-10T07:09:44.506Z_
+
+### Affected
+
+* Apache IoTDB from 1.0.0 before 2.0.10
+
+
+### Description
+
+<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache IoTDB.<br><span style="background-color: rgb(255, 255, 255);">An attacker can write arbitrary files anywhere the IoTDB process has write permissions with unsafe API.</span><br></p><p>This issue affects Apache IoTDB: from 1.0.0 before 2.0.10.</p><p>Users are recommended to upgrade to version 2.0.10, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/zw2vkbmy5xkf5y8g237v81hrs4c6b5lq
+
+
+### Credits
+* Andrea Cosentino (finder)
+
+
+## REST Basic Authentication Accepts Stale Cached Credentials ## { #CVE-2026-28564 }
+
+CVE-2026-28564 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-28564) [\[CVE json\]](./CVE-2026-28564.cve.json) [\[OSV json\]](./CVE-2026-28564.osv.json)
+
+
+
+_Last updated: 2026-07-10T07:08:01.156Z_
+
+### Affected
+
+* Apache IoTDB from 1.0.0 before 2.0.10
+
+
+### Description
+
+<p>Insufficient Session Expiration, Authentication Bypass by Capture-replay vulnerability in Apache IoTDB.<br>REST Basic Authentication Accepts Stale Cached Credentials<br></p><p>This issue affects Apache IoTDB: from 1.0.0 before 2.0.10.</p><p>Users are recommended to upgrade to version 2.0.10, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/l38wpy7flvvfwv4rkps87l5z8gprnfy0
+
+
+### Credits
+* Aristore (https://github.com/aristorechina) (finder)
+
+
 ## JEXL Expression Injection Vulnerability ## { #CVE-2026-24713 }
 
 CVE-2026-24713 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24713) [\[CVE json\]](./CVE-2026-24713.cve.json) [\[OSV json\]](./CVE-2026-24713.osv.json)

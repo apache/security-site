@@ -74,7 +74,7 @@ CVE-2026-49487 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49487) [\[CVE jso
 
 
 
-_Last updated: 2026-07-07T09:19:35.370Z_
+_Last updated: 2026-07-07T12:26:03.726Z_
 
 ### Affected
 
@@ -183,7 +183,7 @@ CVE-2026-49296 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49296) [\[CVE jso
 
 
 
-_Last updated: 2026-07-07T09:18:11.178Z_
+_Last updated: 2026-07-07T12:26:02.148Z_
 
 ### Affected
 
@@ -237,7 +237,7 @@ CVE-2026-48892 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48892) [\[CVE jso
 
 
 
-_Last updated: 2026-07-07T09:16:24.501Z_
+_Last updated: 2026-07-07T12:25:58.879Z_
 
 ### Affected
 
@@ -264,7 +264,7 @@ CVE-2026-48891 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48891) [\[CVE jso
 
 
 
-_Last updated: 2026-07-07T09:17:27.452Z_
+_Last updated: 2026-07-07T12:26:00.634Z_
 
 ### Affected
 
@@ -292,7 +292,7 @@ CVE-2026-48828 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48828) [\[CVE jso
 
 
 
-_Last updated: 2026-07-07T09:18:51.039Z_
+_Last updated: 2026-07-07T12:25:57.319Z_
 
 ### Affected
 
@@ -885,33 +885,6 @@ The Keycloak authentication manager in `apache-airflow-providers-keycloak` did n
 * Haruki Oyama (Waseda University) (finder)
 
 
-## Import Errors API Leaks Unauthorized DAG Stack Traces via Incomplete Per-File RBAC Enforcement ## { #CVE-2026-40913 }
-
-CVE-2026-40913 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40913) [\[CVE json\]](./CVE-2026-40913.cve.json) [\[OSV json\]](./CVE-2026-40913.osv.json)
-
-
-
-_Last updated: 2026-05-29T14:31:20.201Z_
-
-### Affected
-
-* Apache Airflow
-
-
-### Description
-
-The public Import Errors API can return unredacted stack traces from files containing DAGs the caller is not authorized to read. File-to-DAG resolution compares absolute paths against relative paths, so in real deployments it often returns an empty set and the single endpoint falls through to returning the raw error. The list endpoint also builds its per-file authorization decision from only the caller-visible subset of DAGs, so a file containing a mix of readable and unreadable DAGs passes the authorization check. Users with the `Op` permission for any DAG on a shared file can read import errors for files containing DAGs they cannot access, leaking stack traces, internal paths, and source-line context. A previously-shipped fix in `apache/airflow#65329` (merged 2026-04-16) was reverted by `apache/airflow#67465` (merged 2026-05-25) because the redact-when-no-readable-DAGs approach required a new dedicated permission with multi-team scoping that does not yet exist. Proper fix is being designed under `apache/airflow#67461` (open feature request). Apache Airflow 3.2.2 ships without a fix; users running deployments that rely on per-DAG authorization for import-error visibility should restrict access to the Import Errors API until the proper fix ships.
-
-### References
-* https://github.com/apache/airflow/pull/65329
-* https://lists.apache.org/thread/24gfd127xkyx86bvvol1q8bvh53z029t
-
-
-### Credits
-* se1en (finder)
-* Jarek Potiuk (remediation developer)
-
-
 ## Arbitrary File Read via Log Symlink following in FileTaskHandler ## { #CVE-2026-40861 }
 
 CVE-2026-40861 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40861) [\[CVE json\]](./CVE-2026-40861.cve.json) [\[OSV json\]](./CVE-2026-40861.osv.json)
@@ -1046,6 +1019,38 @@ _Last updated: 2026-04-13T14:36:29.251Z_
 ### Credits
 * wooseokdotkim (finder)
 * Amogh Desai (remediation developer)
+
+
+## DAG author RCE on webserver via unrestricted import_string() in BaseSerialization.deserialize() ## { #CVE-2026-33264 }
+
+CVE-2026-33264 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-33264) [\[CVE json\]](./CVE-2026-33264.cve.json) [\[OSV json\]](./CVE-2026-33264.osv.json)
+
+
+
+_Last updated: 2026-07-07T12:25:55.676Z_
+
+### Affected
+
+* Apache Airflow before 3.3.0
+
+
+### Description
+
+A bug in `BaseSerialization.deserialize()` allowed unrestricted `import_string()` of attacker-controlled class paths when the Scheduler / API Server loaded a serialized DAG: a DAG author could embed a malicious trigger into a DAG to gain remote code execution on the API Server / Scheduler process, crossing the Airflow security boundary that DAG-author code must never execute in those processes. Users are advised to upgrade to `apache-airflow` 3.3.0 or later. As a defense-in-depth mitigation, deployments where DAG-author trust is limited can restrict the `[core] allowed_deserialization_classes` config to a narrow allowlist.
+
+### References
+* https://github.com/apache/airflow/pull/66002
+* https://github.com/apache/airflow/pull/68528
+* https://lists.apache.org/thread/otvdw8qt2y7xy2n5nq9xby9ky4rf5ltj
+
+
+### Credits
+* Ziyu Lin (finder)
+* bugbunny.ai (tool)
+* intadd (GitHub handle: @intadd) (finder)
+* K (finder)
+* Amogh Desai (@amoghrajesh) (remediation developer)
+* Jarek Potiuk (remediation developer)
 
 
 ## TLS Certificate Verification Disabled in Databricks Provider K8s Token Exchange ## { #CVE-2026-32794 }
