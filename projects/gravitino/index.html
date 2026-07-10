@@ -105,20 +105,37 @@
 <p>Do you want disclose a potential security issue for Apache Gravitino? Send your report to the <a href="mailto:security@apache.org">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-41042">Unauthenticated callers can supply a malicious H2 JDBC URL through the testConnection API, which executes arbitrary Java code on the server via H2&rsquo;s INIT parameter</h2>
+<p>CVE-2026-41042 <a href="https://cve.org/CVERecord?id=CVE-2026-41042">[CVE]</a> <a href="./CVE-2026-41042.cve.json">[CVE json]</a> <a href="./CVE-2026-41042.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-08T11:38:53.337Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Gravitino before 1.2.1</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Unauthenticated callers can supply a malicious H2 JDBC URL through the testConnection API, which executes arbitrary Java code on the server via H2's INIT parameter. Vulnerability in Apache Gravitino.</p><p>This issue affects Apache Gravitino: before 1.2.1.</p><p>Users are recommended to upgrade to version 1.2.1, which fixes the issue.</p>This issue only happens when using H2, and H2 is mainly used for testing and local development. Also, Gravitino is typically deployed in the internal environment, so the severity is low.
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/vdh88wc6j5b38v65ncb111wbbnkf6bvm">https://lists.apache.org/thread/vdh88wc6j5b38v65ncb111wbbnkf6bvm</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Junjie Li (Xidian University, <a href="https://github.com/jackieya">https://github.com/jackieya</a>) (reporter)</li>
+</ul>
 <h2 id="CVE-2025-53648">SQL misconfiguration can access or truncate files</h2>
 <p>CVE-2025-53648 <a href="https://cve.org/CVERecord?id=CVE-2025-53648">[CVE]</a> <a href="./CVE-2025-53648.cve.json">[CVE json]</a> <a href="./CVE-2025-53648.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-06-30T13:35:54.650Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache Gravitino from 0.5.0 before 1.0.0</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-1">Description</h3>
 <p></p>SQL misconfiguration in the Gravitino UI, in versions 1.0.0 and below, can allow a malicious user to read or truncate files.<br>Users are recommended to upgrade to version 1.0.0, which fixes this issue.<p></p>
-<h3 id="references">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/s0hytcv17z52dwp5dojjjwgrtqtyh2xk">https://lists.apache.org/thread/s0hytcv17z52dwp5dojjjwgrtqtyh2xk</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>A1kaid@ThreatBook VulTeam (reporter)</li>
 <li>Le1a@ThreatBook VulTeam (finder)</li>

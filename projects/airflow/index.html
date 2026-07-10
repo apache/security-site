@@ -146,7 +146,7 @@
 </ul>
 <h2 id="CVE-2026-49487">Task-instance API exposes secrets in deferred trigger kwargs</h2>
 <p>CVE-2026-49487 <a href="https://cve.org/CVERecord?id=CVE-2026-49487">[CVE]</a> <a href="./CVE-2026-49487.cve.json">[CVE json]</a> <a href="./CVE-2026-49487.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-07-07T09:19:35.370Z</em></p>
+<p><em>Last updated: 2026-07-07T12:26:03.726Z</em></p>
 <h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache Airflow before 3.3.0</li>
@@ -223,7 +223,7 @@
 </ul>
 <h2 id="CVE-2026-49296">Per-DAG read bypass discloses co-located DAGs&rsquo; source via GET /api/v2/dagSources/{dag_id}</h2>
 <p>CVE-2026-49296 <a href="https://cve.org/CVERecord?id=CVE-2026-49296">[CVE]</a> <a href="./CVE-2026-49296.cve.json">[CVE json]</a> <a href="./CVE-2026-49296.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-07-07T09:18:11.178Z</em></p>
+<p><em>Last updated: 2026-07-07T12:26:02.148Z</em></p>
 <h3 id="affected-6">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.3.0</li>
@@ -261,7 +261,7 @@
 </ul>
 <h2 id="CVE-2026-48892">Config API leaks per-key secrets backend kwargs - masker bypass on synthetic options</h2>
 <p>CVE-2026-48892 <a href="https://cve.org/CVERecord?id=CVE-2026-48892">[CVE]</a> <a href="./CVE-2026-48892.cve.json">[CVE json]</a> <a href="./CVE-2026-48892.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-07-07T09:16:24.501Z</em></p>
+<p><em>Last updated: 2026-07-07T12:25:58.879Z</em></p>
 <h3 id="affected-8">Affected</h3>
 <ul>
 <li>Apache Airflow before 3.3.0</li>
@@ -280,7 +280,7 @@
 </ul>
 <h2 id="CVE-2026-48891">/ui/dependencies scheduling graph leaks unreadable Dag identifiers via trigger/sensor dep.source/dep.target</h2>
 <p>CVE-2026-48891 <a href="https://cve.org/CVERecord?id=CVE-2026-48891">[CVE]</a> <a href="./CVE-2026-48891.cve.json">[CVE json]</a> <a href="./CVE-2026-48891.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-07-07T09:17:27.452Z</em></p>
+<p><em>Last updated: 2026-07-07T12:26:00.634Z</em></p>
 <h3 id="affected-9">Affected</h3>
 <ul>
 <li>Apache Airflow before 3.3.0</li>
@@ -300,7 +300,7 @@
 </ul>
 <h2 id="CVE-2026-48828">Bulk JSON Variables bypass should_hide_value_for_key - redact() called without the key</h2>
 <p>CVE-2026-48828 <a href="https://cve.org/CVERecord?id=CVE-2026-48828">[CVE]</a> <a href="./CVE-2026-48828.cve.json">[CVE json]</a> <a href="./CVE-2026-48828.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-07-07T09:18:51.039Z</em></p>
+<p><em>Last updated: 2026-07-07T12:25:57.319Z</em></p>
 <h3 id="affected-10">Affected</h3>
 <ul>
 <li>Apache Airflow before 3.3.0</li>
@@ -721,40 +721,21 @@
 <ul>
 <li>Haruki Oyama (Waseda University) (finder)</li>
 </ul>
-<h2 id="CVE-2026-40913">Import Errors API Leaks Unauthorized DAG Stack Traces via Incomplete Per-File RBAC Enforcement</h2>
-<p>CVE-2026-40913 <a href="https://cve.org/CVERecord?id=CVE-2026-40913">[CVE]</a> <a href="./CVE-2026-40913.cve.json">[CVE json]</a> <a href="./CVE-2026-40913.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-05-29T14:31:20.201Z</em></p>
-<h3 id="affected-32">Affected</h3>
-<ul>
-<li>Apache Airflow</li>
-</ul>
-<h3 id="description-32">Description</h3>
-<p>The public Import Errors API can return unredacted stack traces from files containing DAGs the caller is not authorized to read. File-to-DAG resolution compares absolute paths against relative paths, so in real deployments it often returns an empty set and the single endpoint falls through to returning the raw error. The list endpoint also builds its per-file authorization decision from only the caller-visible subset of DAGs, so a file containing a mix of readable and unreadable DAGs passes the authorization check. Users with the <code>Op</code> permission for any DAG on a shared file can read import errors for files containing DAGs they cannot access, leaking stack traces, internal paths, and source-line context. A previously-shipped fix in <code>apache/airflow#65329</code> (merged 2026-04-16) was reverted by <code>apache/airflow#67465</code> (merged 2026-05-25) because the redact-when-no-readable-DAGs approach required a new dedicated permission with multi-team scoping that does not yet exist. Proper fix is being designed under <code>apache/airflow#67461</code> (open feature request). Apache Airflow 3.2.2 ships without a fix; users running deployments that rely on per-DAG authorization for import-error visibility should restrict access to the Import Errors API until the proper fix ships.</p>
-<h3 id="references-32">References</h3>
-<ul>
-<li><a href="https://github.com/apache/airflow/pull/65329">https://github.com/apache/airflow/pull/65329</a></li>
-<li><a href="https://lists.apache.org/thread/24gfd127xkyx86bvvol1q8bvh53z029t">https://lists.apache.org/thread/24gfd127xkyx86bvvol1q8bvh53z029t</a></li>
-</ul>
-<h3 id="credits-32">Credits</h3>
-<ul>
-<li>se1en (finder)</li>
-<li>Jarek Potiuk (remediation developer)</li>
-</ul>
 <h2 id="CVE-2026-40861">Arbitrary File Read via Log Symlink following in FileTaskHandler</h2>
 <p>CVE-2026-40861 <a href="https://cve.org/CVERecord?id=CVE-2026-40861">[CVE]</a> <a href="./CVE-2026-40861.cve.json">[CVE json]</a> <a href="./CVE-2026-40861.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-06-01T07:55:36.142Z</em></p>
-<h3 id="affected-33">Affected</h3>
+<h3 id="affected-32">Affected</h3>
 <ul>
 <li>Apache Airflow before 3.2.2</li>
 </ul>
-<h3 id="description-33">Description</h3>
+<h3 id="description-32">Description</h3>
 <p>A Dag author could either (a) create a symlink under their task's log directory pointing to an arbitrary file readable by the API server process (read-path attack — e.g. <code>/etc/passwd</code> or <code>airflow.cfg</code>) or (b) supply a <code>task_id</code> containing <code>..</code> sequences accepted by the Task SDK's <code>KEY_REGEX</code> (write-path attack), and in both cases the FileTaskHandler resolves the log path outside the configured <code>base_log_folder</code>, leaking or overwriting arbitrary files. Only affects deployments where the worker log folder is shared with the API server. Users are advised to upgrade to <code>apache-airflow</code> 3.2.2 or later. As a defense-in-depth mitigation, deploy the worker and API server with separate log volumes so that worker-controlled paths cannot reach the API server's filesystem.</p>
-<h3 id="references-33">References</h3>
+<h3 id="references-32">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/65325">https://github.com/apache/airflow/pull/65325</a></li>
 <li><a href="https://lists.apache.org/thread/823334db2559xjlwt59gpzjz47thnscl">https://lists.apache.org/thread/823334db2559xjlwt59gpzjz47thnscl</a></li>
 </ul>
-<h3 id="credits-33">Credits</h3>
+<h3 id="credits-32">Credits</h3>
 <ul>
 <li>Silas Boch (finder)</li>
 <li>Lakshmikanthan K (letchupkt) (finder)</li>
@@ -763,18 +744,18 @@
 <h2 id="CVE-2026-40690">Assets graph view bypasses DAG level access control displaying unrelated topologies and all DAGs names to unauthorized users</h2>
 <p>CVE-2026-40690 <a href="https://cve.org/CVERecord?id=CVE-2026-40690">[CVE]</a> <a href="./CVE-2026-40690.cve.json">[CVE json]</a> <a href="./CVE-2026-40690.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-04-24T12:35:28.702Z</em></p>
-<h3 id="affected-34">Affected</h3>
+<h3 id="affected-33">Affected</h3>
 <ul>
 <li>Apache Airflow before 3.2.1</li>
 </ul>
-<h3 id="description-34">Description</h3>
+<h3 id="description-33">Description</h3>
 <p>The asset dependency graph did not restrict nodes by the viewer&rsquo;s DAG read permissions: a user with read access to at least one DAG could browse the asset graph for any other asset in the deployment and learn the existence and names of DAGs and assets outside their authorized scope.<br><br>Users are recommended to upgrade to version 3.2.1, which fixes this issue.<br></p>
-<h3 id="references-34">References</h3>
+<h3 id="references-33">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/65273">https://github.com/apache/airflow/pull/65273</a></li>
 <li><a href="https://lists.apache.org/thread/bqt7y4g2cpj396b0sd20lv510ff19ndl">https://lists.apache.org/thread/bqt7y4g2cpj396b0sd20lv510ff19ndl</a></li>
 </ul>
-<h3 id="credits-34">Credits</h3>
+<h3 id="credits-33">Credits</h3>
 <ul>
 <li>Saurabh (finder)</li>
 <li>Jarek Potiuk (remediation developer)</li>
@@ -782,18 +763,18 @@
 <h2 id="CVE-2026-38743">Dags endpoint might provide access to otherwise inaccessible entities</h2>
 <p>CVE-2026-38743 <a href="https://cve.org/CVERecord?id=CVE-2026-38743">[CVE]</a> <a href="./CVE-2026-38743.cve.json">[CVE json]</a> <a href="./CVE-2026-38743.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-04-24T12:36:37.917Z</em></p>
-<h3 id="affected-35">Affected</h3>
+<h3 id="affected-34">Affected</h3>
 <ul>
 <li>Apache Airflow before 3.2.1</li>
 </ul>
-<h3 id="description-35">Description</h3>
+<h3 id="description-34">Description</h3>
 <p></p><span style="background-color: rgb(255, 255, 255);">The authenticated </span><code>/ui/dags</code><span style="background-color: rgb(255, 255, 255);">&nbsp;endpoint did not enforce per-DAG access control on embedded Human-in-the-Loop (HITL) and TaskInstance records: a logged-in Airflow user with read access to at least one DAG could retrieve HITL prompts (including their request parameters) and full TaskInstance details for DAGs outside their authorized scope. Because HITL prompts and TaskInstance fields routinely carry operator parameters and free-form context attached to a task, the leak widens visibility of DAG-run data beyond the intended per-DAG RBAC boundary for every authenticated user.<br></span><br>Users are recommended to upgrade to version 3.2.1 , which fixes this issue.
-<h3 id="references-35">References</h3>
+<h3 id="references-34">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/64822">https://github.com/apache/airflow/pull/64822</a></li>
 <li><a href="https://lists.apache.org/thread/sk2wj0x48o8qb4p7c47gvnhjbm0mg396">https://lists.apache.org/thread/sk2wj0x48o8qb4p7c47gvnhjbm0mg396</a></li>
 </ul>
-<h3 id="credits-35">Credits</h3>
+<h3 id="credits-34">Credits</h3>
 <ul>
 <li>Jed Cunningham (finder)</li>
 <li>Kevin Yang (remediation developer)</li>
@@ -801,18 +782,18 @@
 <h2 id="CVE-2026-34538">Authorization bypass in DagRun wait endpoint (XCom exposure)</h2>
 <p>CVE-2026-34538 <a href="https://cve.org/CVERecord?id=CVE-2026-34538">[CVE]</a> <a href="./CVE-2026-34538.cve.json">[CVE json]</a> <a href="./CVE-2026-34538.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-04-09T09:09:19.260Z</em></p>
-<h3 id="affected-36">Affected</h3>
+<h3 id="affected-35">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.2.0</li>
 </ul>
-<h3 id="description-36">Description</h3>
+<h3 id="description-35">Description</h3>
 <p>Apache Airflow versions 3.0.0 through 3.1.8 <span style="background-color: rgb(255, 255, 255);">DagRun wait endpoint returns XCom result values even to users who only have DAG Run read permissions, such as the Viewer role.<span style="background-color: rgb(255, 255, 255);">This behavior conflicts with the FAB RBAC model, which treats XCom as a separate protected resource, and with the security model documentation that defines the Viewer role as read-only.</span><br></span><br><span style="background-color: rgb(255, 255, 255);">Airflow uses the FAB Auth Manager to manage access control on a per-resource basis. The Viewer role is intended to be read-only by default, and the security model documentation defines Viewer users as those who can inspect DAGs without accessing sensitive execution results.</span><br><br>Users are recommended to upgrade to Apache Airflow 3.2.0 which resolves this issue.<br><br><br></p>
-<h3 id="references-36">References</h3>
+<h3 id="references-35">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/64415">https://github.com/apache/airflow/pull/64415</a></li>
 <li><a href="https://lists.apache.org/thread/9mq3msqhmgjwdzbr6bgthj4brb3oz9fl">https://lists.apache.org/thread/9mq3msqhmgjwdzbr6bgthj4brb3oz9fl</a></li>
 </ul>
-<h3 id="credits-36">Credits</h3>
+<h3 id="credits-35">Credits</h3>
 <ul>
 <li>selen (finder)</li>
 <li>Kevin Yang (remediation developer)</li>
@@ -820,21 +801,45 @@
 <h2 id="CVE-2026-33858">Unsafe Deserialization via Legacy Serialization Keys (__type/__var) Bypass in XCom API</h2>
 <p>CVE-2026-33858 <a href="https://cve.org/CVERecord?id=CVE-2026-33858">[CVE]</a> <a href="./CVE-2026-33858.cve.json">[CVE json]</a> <a href="./CVE-2026-33858.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-04-13T14:36:29.251Z</em></p>
-<h3 id="affected-37">Affected</h3>
+<h3 id="affected-36">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.1.8 before 3.2.0</li>
 </ul>
-<h3 id="description-37">Description</h3>
+<h3 id="description-36">Description</h3>
 <p>Dag Authors, who normally should not be able to execute code in the webserver context could craft XCom payload causing the webserver to execute arbitrary code. Since Dag Authors are already highly trusted, severity of this issue is Low.</p><br>Users are recommended to upgrade to Apache Airflow 3.2.0, which resolves this issue.<br><br><br><br>
-<h3 id="references-37">References</h3>
+<h3 id="references-36">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/64148">https://github.com/apache/airflow/pull/64148</a></li>
 <li><a href="https://lists.apache.org/thread/1npt3o2x81s0gw9tmfcv4n7p1z9hdmy0">https://lists.apache.org/thread/1npt3o2x81s0gw9tmfcv4n7p1z9hdmy0</a></li>
 </ul>
-<h3 id="credits-37">Credits</h3>
+<h3 id="credits-36">Credits</h3>
 <ul>
 <li>wooseokdotkim (finder)</li>
 <li>Amogh Desai (remediation developer)</li>
+</ul>
+<h2 id="CVE-2026-33264">DAG author RCE on webserver via unrestricted import_string() in BaseSerialization.deserialize()</h2>
+<p>CVE-2026-33264 <a href="https://cve.org/CVERecord?id=CVE-2026-33264">[CVE]</a> <a href="./CVE-2026-33264.cve.json">[CVE json]</a> <a href="./CVE-2026-33264.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-07T12:25:55.676Z</em></p>
+<h3 id="affected-37">Affected</h3>
+<ul>
+<li>Apache Airflow before 3.3.0</li>
+</ul>
+<h3 id="description-37">Description</h3>
+<p>A bug in <code>BaseSerialization.deserialize()</code> allowed unrestricted <code>import_string()</code> of attacker-controlled class paths when the Scheduler / API Server loaded a serialized DAG: a DAG author could embed a malicious trigger into a DAG to gain remote code execution on the API Server / Scheduler process, crossing the Airflow security boundary that DAG-author code must never execute in those processes. Users are advised to upgrade to <code>apache-airflow</code> 3.3.0 or later. As a defense-in-depth mitigation, deployments where DAG-author trust is limited can restrict the <code>[core] allowed_deserialization_classes</code> config to a narrow allowlist.</p>
+<h3 id="references-37">References</h3>
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/66002">https://github.com/apache/airflow/pull/66002</a></li>
+<li><a href="https://github.com/apache/airflow/pull/68528">https://github.com/apache/airflow/pull/68528</a></li>
+<li><a href="https://lists.apache.org/thread/otvdw8qt2y7xy2n5nq9xby9ky4rf5ltj">https://lists.apache.org/thread/otvdw8qt2y7xy2n5nq9xby9ky4rf5ltj</a></li>
+</ul>
+<h3 id="credits-37">Credits</h3>
+<ul>
+<li>Ziyu Lin (finder)</li>
+<li>bugbunny.ai (tool)</li>
+<li>intadd (GitHub handle: @intadd) (finder)</li>
+<li>K (finder)</li>
+<li>Amogh Desai (@amoghrajesh) (remediation developer)</li>
+<li>Jarek Potiuk (remediation developer)</li>
 </ul>
 <h2 id="CVE-2026-32794">TLS Certificate Verification Disabled in Databricks Provider K8s Token Exchange</h2>
 <p>CVE-2026-32794 <a href="https://cve.org/CVERecord?id=CVE-2026-32794">[CVE]</a> <a href="./CVE-2026-32794.cve.json">[CVE json]</a> <a href="./CVE-2026-32794.osv.json">[OSV json]</a></p>
