@@ -23,9 +23,8 @@ import app
 application = app.create_app()
 
 if __name__ == "__main__":
-    # dev: start directly
-    # prod would likely use hypercorn
-
+    # for development: start directly in debug mode
+    # prod uses hypercorn (scripts/run.sh) instead
     application.run(
         use_reloader=True,
         debug=True,

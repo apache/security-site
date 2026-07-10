@@ -61,7 +61,7 @@ class Reporter:
 class Report:
     security_team_name: str
     """internal label the security team assigned to the thread,
-       not to be exposed"""
+       this is not a secret but not meant for external communication"""
     cves: list[str]
     github: (str, str)
     """If this project tracks security issues in private GitHub issues, the GitHub issue link (title and url)"""
@@ -212,7 +212,7 @@ def load_pmc_report(pmc: str, path: pathlib.Path) -> Report | None:
 
 async def load_pmc_reports(pmc: str) -> list[Report]:
     if not re.fullmatch(r"[a-z0-9]+", pmc):
-        raise ValueError("invalid PMC name: {pmc!r}")
+        raise ValueError(f"invalid PMC name: {pmc!r}")
 
     d = config.get().data_dir_path / pmc
     threads = list(d.glob('**/*.json'))
