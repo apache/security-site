@@ -25,10 +25,10 @@ def label_updated(labelId, old, new):
             delete_label_file(options.target, old)
         else:
             os.makedirs(options.target + '/' + '/'.join(new.split('/')[:-1]), exist_ok=True)
-            result = subprocess.run(["git", "mv", f"{old}.json", f"{new}.json"], cwd=options.target)
+            result = subprocess.run(["git", "mv", "--", f"{old}.json", f"{new}.json"], cwd=options.target)
             if result.returncode != 0:
                 print(f"Git move of {labelId} ('{old}' to '{new}') failed (status code {result.returncode}), just moving")
-                result = subprocess.run(["mv", f"{old}.json", f"{new}.json"], cwd=options.target)
+                result = subprocess.run(["mv", "--", f"{old}.json", f"{new}.json"], cwd=options.target)
                 if result.returncode != 0:
                     print(f"Regular move of {labelId} ('{old}' to '{new}') also failed (status code {result.returncode}), removing old")
                     os.remove(f"{options.target}/{old}.json")

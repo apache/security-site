@@ -13,6 +13,10 @@ def validate_label_name(name):
     path components. Uses an exception rather than `assert` so the check still runs
     under `python -O`.
     """
+    if not name:
+        raise ValueError(f"label name is empty")
+    if not name[0].isalnum():
+        raise ValueError(f"label name must start with alphanumeric")
     for c in name:
         if not (c.isalnum() or c in _LABEL_NAME_EXTRA_CHARS):
             raise ValueError(f"label name {name!r} contains disallowed character {c!r}")
@@ -33,7 +37,7 @@ def delete_label_file(target_dir, name):
     path = os.path.join(target_dir, f"{name}.json")
     if not os.path.isfile(path):
         return False
-    result = subprocess.run(["git", "rm", "-f", f"{name}.json"], cwd=target_dir)
+    result = subprocess.run(["git", "rm", "-f", "--", f"{name}.json"], cwd=target_dir)
     if result.returncode != 0:
         print(f"Git remove of '{name}' failed (status code {result.returncode}), just removing")
         os.remove(path)
