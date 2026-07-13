@@ -54,26 +54,13 @@ class IssueWindow:
 
 _CVE_PUSHED_SUFFIX = "was pushed to cve.org"
 
+def _cve(path: pathlib.Path) -> str:
+    stem = path.stem
+    if stem.startswith("CVE-"):
+        return stem.split(' ', 1)[0]
+    return None
 
-def _drop_repeat_cve_pushed(emails: list) -> list:
-    """Keep only the first 'was pushed to cve.org' notification in a thread.
-
-    These notifications can recur and would otherwise drag the close date
-    (the last email's mailtime) later than the issue was really resolved.
-    """
-    result = []
-    seen_pushed = False
-    for email in emails:
-        subj = (email.get("subj") or "").strip().lower()
-        if subj.endswith(_CVE_PUSHED_SUFFIX):
-            if seen_pushed:
-                continue
-            seen_pushed = True
-        result.append(email)
-    return result
-
-
-def _issue_window(path: pathlib.Path, *, closed: bool) -> IssueWindow | None:
+def _issue_window(old_cve_close_dates: dict[str, datetime], path: pathlib.Path, closed: bool) -> IssueWindow | None:
     """Extract the open/close dates from a thread JSON, or None if unusable.
 
     `opened` is the first email's mailtime; for closed issues `closed` is the
@@ -86,19 +73,28 @@ def _issue_window(path: pathlib.Path, *, closed: bool) -> IssueWindow | None:
         return None
     if not emails:
         return None
-    emails = _drop_repeat_cve_pushed(emails)
     opened_ts = emails[0].get("mailtime")
     if opened_ts is None:
         return None
     opened = datetime.datetime.fromtimestamp(opened_ts, tz=datetime.timezone.utc).date()
     closed_date: datetime.date | None = None
     if closed:
-        closed_ts = emails[-1].get("mailtime", opened_ts)
-        closed_date = datetime.datetime.fromtimestamp(
-            closed_ts, tz=datetime.timezone.utc
-        ).date()
-        if closed_date < opened:
-            closed_date = opened
+        cve = _cve(path)
+        if cve in old_cve_close_dates:
+            closed_date = old_cve_close_dates[cve]
+        else:
+            closed_ts = opened_ts
+            for email in emails:
+                closed_ts = email.get("mailtime", closed_ts)
+                subj = (email.get("subj") or "").strip().lower()
+                if subj.endswith(_CVE_PUSHED_SUFFIX):
+                    # Skip any follow-ups after the CVE has been published
+                    break
+            closed_date = datetime.datetime.fromtimestamp(
+                closed_ts, tz=datetime.timezone.utc
+            ).date()
+            if closed_date < opened:
+                closed_date = opened
     return IssueWindow(opened, closed_date)
 
 
@@ -127,12 +123,13 @@ def list_pmcs() -> list[str]:
 def _project_issue_windows(pmc: str) -> list[IssueWindow]:
     """Open/close windows for every issue of a project, open and closed alike."""
     data_dir = config.get().data_dir_path
+    old_cve_close_dates = config.get().old_cve_close_dates
     windows: list[IssueWindow] = []
 
     open_dir = data_dir / pmc
     if open_dir.is_dir():
         for path in open_dir.glob("**/*.json"):
-            w = _issue_window(path, closed=False)
+            w = _issue_window(old_cve_close_dates, path, closed=False)
             if w is not None:
                 windows.append(w)
 
@@ -141,7 +138,7 @@ def _project_issue_windows(pmc: str) -> list[IssueWindow]:
         if tree_dir.is_dir():
             for path in tree_dir.glob("**/*.json"):
                 if (not (path.name.startswith("zzz") or path.name.startswith("aaa"))):
-                    w = _issue_window(path, closed=True)
+                    w = _issue_window(old_cve_close_dates, path, closed=True)
                     if w is not None:
                         windows.append(w)
 

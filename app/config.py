@@ -15,6 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
+from datetime import date
 import pathlib
 import pydantic
 from asfquart.base import QuartApp
@@ -36,6 +37,9 @@ class AppConfig(pydantic.BaseModel):
 
     state_dir: str
     """Local persistent data"""
+
+    old_cve_close_dates: dict[str, date]
+    """Some manual exceptions from before we had vulnogram, to prevent them from getting necromanced in the stats"""
 
     pmcs_with_security_emails: list[str] = []
     """PMCs that have a dedicated security@ list"""
