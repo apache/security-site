@@ -80,7 +80,10 @@ function describeReleasesFromBaseStrict() {
 
 describeReleasesFromBasedir airflow Airflow - apache-airflow
 
+describeReleasesFromBase ant "AntUnit" ant-antunit org.apache.ant -
 describeReleasesFromBase ant "CycloneDX Antlib" ant-cyclonedx org.apache.ant -
+describeReleasesFromBase ant "Ivy" ivy org.apache.ivy -
+describeReleasesFromBase ant "Props Antlib" ant-props org.apache.ant -
 
 describeReleasesFromBase arrow Arrow -
 describeReleasesFromBase avro Avro -

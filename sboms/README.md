@@ -10,7 +10,17 @@ Apache Software Foundation produced SBOMs
 - 2.10.2: [21 SBOMs](airflow/airflow-2.10.2.md)
 
 ## Ant
+### AntUnit
+- 1.5.0: [1 SBOM](ant/ant-antunit-1.5.0.md)
+
+### CycloneDX Antlib
 - 0.1: [1 SBOM](ant/ant-cyclonedx-0.1.md)
+
+### Ivy
+- 2.6.0: [1 SBOM](ant/ivy-2.6.0.md)
+
+### Props Antlib
+- 1.0.0: [1 SBOM](ant/ant-props-1.0.0.md)
 
 ## Arrow
 - 11.0.0: [1 SBOM](arrow/arrow-11.0.0.md)
