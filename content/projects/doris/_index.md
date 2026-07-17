@@ -6,12 +6,37 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Doris? You can read more about the projects' security policy on their [security page](https://doris.apache.org/docs/dev/admin-manual/auth/security-overview), and email your report to the [Apache Security Team](mailto:security@apache.org).
+Do you want disclose a potential security issue for Apache Doris? You can read more about the projects' security policy on their [security page](https://github.com/apache/doris/blob/master/threat-model.md), and email your report to the [Apache Security Team](mailto:security@apache.org).
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://doris.apache.org/docs/dev/admin-manual/auth/security-overview). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://github.com/apache/doris/blob/master/threat-model.md). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
+
+## Improper Authentication in Frontend HTTP API ## { #CVE-2026-58319 }
+
+CVE-2026-58319 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58319) [\[CVE json\]](./CVE-2026-58319.cve.json) [\[OSV json\]](./CVE-2026-58319.osv.json)
+
+
+
+_Last updated: 2026-07-14T09:36:25.369Z_
+
+### Affected
+
+* Apache Doris from 2.1.0 before 3.1.0
+
+
+### Description
+
+Certain Apache Doris FE HTTP REST administrative APIs were accessible without proper authentication. An unauthenticated attacker with network access to the FE HTTP service could perform unauthorized administrative operations, potentially affecting cluster integrity and availability and leading to cluster instability or denial of service. <br><br>This issue affects Apache Doris versions prior to 3.1.0. Users are advised to upgrade to Apache Doris 3.1.0 or later.
+
+### References
+* https://lists.apache.org/thread/cob5mxkyr1k81o8v91hox2hld6zh25b4
+
+
+### Credits
+* Calvin Kirs, Security Researcher at SelectDB (finder)
+
 
 ## SQL injection leading the authentication bypass ## { #CVE-2025-66336 }
 

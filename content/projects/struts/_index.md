@@ -6,11 +6,11 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Struts? You can read more about the projects' security policy on their [security page](https://struts.apache.org/security.html), and email your report to the [Apache Struts Security Team](mailto:security@struts.apache.org).
+Do you want disclose a potential security issue for Apache Struts? You can read more about the projects' security policy on their [security page](https://github.com/apache/struts/blob/main/THREAT_MODEL.md), and email your report to the [Apache Struts Security Team](mailto:security@struts.apache.org).
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://struts.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://github.com/apache/struts/blob/main/THREAT_MODEL.md). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
 ## XXE vulnerability in outdated XWork component ## { #CVE-2025-68493 }

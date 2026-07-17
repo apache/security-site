@@ -13,6 +13,31 @@ Do you want disclose a potential security issue for Apache Ant? You can read mor
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://ant.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## PackagerResolver path traversal vulnerability ## { #CVE-2026-26032 }
+
+CVE-2026-26032 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-26032) [\[CVE json\]](./CVE-2026-26032.cve.json) [\[OSV json\]](./CVE-2026-26032.osv.json)
+
+
+
+_Last updated: 2026-07-15T18:49:39.291Z_
+
+### Affected
+
+* Apache Ivy from 2.0.0 through 2.5.3
+
+
+### Description
+
+The PackagerResolver of Apache Ivy is able to download online<br>artifacts and to (re)package them in a format defined by a<br>packager.xml file. This repackaging is done by an Ant script, which is<br>stored in a subdirectory of the configured "buildRoot" directory. This<br>subdirectory is calculated based on modules coordinates, like the<br>organisation, name or version.<br><br>If one of the coordinates contains "../" sequences - which are valid<br>characters for Ivy coordinates in general- it is possible to break out<br>of the configured "buildRoot" directory where other files can be<br>overwritten.<br><br>In order to exploit this vulnerability an attacker needs to have<br>access to a packager repository and add or modify the coordinates in<br>ivy.xml files to have such "../" sequences.<br><br>Users of Apache Ivy 2.0.0 to 2.5.3 (inclusive) should upgrade to Ivy 2.6.0.
+
+### References
+* https://lists.apache.org/thread/4d9dzrlnoplvywnyj9x6w84kxg7n3jyq
+
+
+### Credits
+* yudeshui of dhgate security (reporter)
+
+
 ## XML External Entity vulnerability in Apache Ivy ## { #CVE-2022-46751 }
 
 CVE-2022-46751 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-46751) [\[CVE json\]](./CVE-2022-46751.cve.json) [\[OSV json\]](./CVE-2022-46751.osv.json)

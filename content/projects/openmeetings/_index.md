@@ -13,6 +13,31 @@ Do you want disclose a potential security issue for Apache OpenMeetings? You can
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://openmeetings.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Arbitrary File Read ## { #CVE-2026-49488 }
+
+CVE-2026-49488 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49488) [\[CVE json\]](./CVE-2026-49488.cve.json) [\[OSV json\]](./CVE-2026-49488.osv.json)
+
+
+
+_Last updated: 2026-07-14T09:51:40.069Z_
+
+### Affected
+
+* Apache OpenMeetings from 5.0.0 before 9.1.0
+
+
+### Description
+
+<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache OpenMeetings.</p><p>This issue affects Apache OpenMeetings: from 5.0.0 before 9.1.0.<br><span style="background-color: rgb(255, 255, 255);">An attacker with moderator rights in any room can read arbitrary files accessible to the OS account running the OM server, including credentials and secrets, via a crafted download request.</span></p><p>Users are recommended to upgrade to version 9.1.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/74zf32shox9oy62b7t55mvcj874bxqnj
+
+
+### Credits
+* follycat and Y0n3er (finder)
+
+
 ## Login Credentials Passed via GET Query Parameters ## { #CVE-2026-34020 }
 
 CVE-2026-34020 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34020) [\[CVE json\]](./CVE-2026-34020.cve.json) [\[OSV json\]](./CVE-2026-34020.osv.json)
