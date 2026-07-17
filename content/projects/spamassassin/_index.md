@@ -6,11 +6,16 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache SpamAssassin? You can read more about the projects' security policy on their [security page](https://cwiki.apache.org/confluence/display/SPAMASSASSIN/SecurityPolicy), and email your report to the [Apache SpamAssassin Security Team](mailto:security@spamassassin.apache.org).
+Do you want disclose a potential security issue for Apache SpamAssassin? Send your report to the [Apache SpamAssassin Security Team](mailto:security%40spamassassin.apache.org?subject=%5BFINDING%5D%20Apache%20SpamAssassin).
+
+You can read more about the security policy on:
+
+- [Apache SpamAssassin security model](https://cwiki.apache.org/confluence/display/SPAMASSASSIN/SecurityPolicy)
+
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://cwiki.apache.org/confluence/display/SPAMASSASSIN/SecurityPolicy). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
 ## Apache SpamAssassin has an OS Command Injection vulnerability ## { #CVE-2020-1946 }

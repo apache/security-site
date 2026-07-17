@@ -6,11 +6,16 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Seata? You can read more about the projects' security policy on their [security page](https://seata.apache.org/docs/next/security/secret-key), and email your report to the [Apache Security Team](mailto:security@apache.org).
+Do you want disclose a potential security issue for Apache Seata? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Seata).
+
+You can read more about the security policy on:
+
+- [Apache Seata security model](https://seata.apache.org/docs/next/security/secret-key)
+
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://seata.apache.org/docs/next/security/secret-key). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
 ## Deserialization of untrusted Data in Apache Seata Server ## { #CVE-2025-53606 }

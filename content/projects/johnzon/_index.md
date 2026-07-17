@@ -6,11 +6,16 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Johnzon? You can read more about the projects' security policy on their [security page](https://johnzon.apache.org/security.html), and email your report to the [Apache Security Team](mailto:security@apache.org).
+Do you want disclose a potential security issue for Apache Johnzon? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Johnzon).
+
+You can read more about the security policy on:
+
+- [Apache Johnzon security model](https://johnzon.apache.org/security.html)
+
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://johnzon.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
 ## Prevent inefficient internal conversion from BigDecimal at large scale ## { #CVE-2023-33008 }

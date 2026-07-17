@@ -6,11 +6,16 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Airflow? You can read more about the projects' security policy on their [security page](https://airflow.apache.org/docs/apache-airflow/stable/security/security_model.html), and email your report to the [Apache Airflow Security Team](mailto:security@airflow.apache.org).
+Do you want disclose a potential security issue for Apache Airflow? Send your report to the [Apache Airflow Security Team](mailto:security%40airflow.apache.org?subject=%5BFINDING%5D%20Apache%20Airflow).
+
+You can read more about the security policy on:
+
+- [Apache Airflow security model](https://airflow.apache.org/docs/apache-airflow/stable/security/security_model.html)
+
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://airflow.apache.org/docs/apache-airflow/stable/security/security_model.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
 ## FAB auth manager: a DAG named "DAGs" hijacks the global all-DAGs permission (access_control privilege escalation via resource_name() collision) ## { #CVE-2026-59245 }

@@ -54,8 +54,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20ActiveMQ)
   - Advisories:\
     [activemq.apache.org](https://activemq.apache.org/security-advisories)
-  - Security page:\
-    [github.com](https://github.com/apache/activemq/security/policy)
+  - Security model:
+    - [Apache ActiveMQ security model](https://github.com/apache/activemq/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/age/default.png" alt="" loading="lazy"> **Apache AGE**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20AGE)
@@ -71,8 +71,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@airflow.apache.org](mailto:security@airflow.apache.org?subject=%5BFINDING%5D)
   - Advisories (experimental):\
     [security.apache.org](/projects/airflow/)
-  - Security page:\
-    [airflow.apache.org](https://airflow.apache.org/docs/apache-airflow/stable/security/security_model.html)
+  - Security model:
+    - [Apache Airflow security model](https://airflow.apache.org/docs/apache-airflow/stable/security/security_model.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/allura/default.png" alt="" loading="lazy"> **Apache Allura**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Allura)
@@ -88,22 +88,22 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Answer)
   - Advisories:\
     [answer.apache.org](https://answer.apache.org/community/security/)
-  - Security page:\
-    [answer.apache.org](https://answer.apache.org/community/security-model)
+  - Security model:
+    - [Apache Answer security model](https://answer.apache.org/community/security-model)
 - <img class="project-logo" src="https://www.apache.org/logos/res/ant/default.png" alt="" loading="lazy"> **Apache Ant**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Ant)
   - Advisories (experimental):\
     [security.apache.org](/projects/ant/)
-  - Security page:\
-    [ant.apache.org](https://ant.apache.org/security.html)
+  - Security model:
+    - [Apache Ant security model](https://ant.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/apisix/default.png" alt="" loading="lazy"> **Apache APISIX**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20APISIX)
   - Advisories (experimental):\
     [security.apache.org](/projects/apisix/)
-  - Security page:\
-    [github.com](https://github.com/apache/apisix/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache APISIX security model](https://github.com/apache/apisix/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/aries/default.png" alt="" loading="lazy"> **Apache Aries**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Aries)
@@ -114,15 +114,15 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Arrow)
   - Advisories (experimental):\
     [security.apache.org](/projects/arrow/)
-  - Security page:\
-    [arrow.apache.org](https://arrow.apache.org/docs/dev/format/Security.html)
+  - Security model:
+    - [Apache Arrow security model](https://arrow.apache.org/docs/dev/format/Security.html)
 - **Apache Artemis**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Artemis)
   - Advisories:\
     [artemis.apache.org](https://artemis.apache.org/components/artemis/security)
-  - Security page:\
-    [github.com](https://github.com/apache/artemis/blob/main/docs/user-manual/threat-model.adoc)
+  - Security model:
+    - [Apache Artemis security model](https://github.com/apache/artemis/blob/main/docs/user-manual/threat-model.adoc)
 - <img class="project-logo" src="https://www.apache.org/logos/res/asterixdb/default.png" alt="" loading="lazy"> **Apache AsterixDB**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20AsterixDB)
@@ -138,15 +138,15 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Avro)
   - Advisories (experimental):\
     [security.apache.org](/projects/avro/)
-  - Security page:\
-    [avro.apache.org](https://avro.apache.org/project/security/)
+  - Security model:
+    - [Apache Avro security model](https://avro.apache.org/project/security/)
 - **Apache Axis**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Axis)
   - Advisories (experimental):\
     [security.apache.org](/projects/axis/)
-  - Security page:\
-    [github.com](https://github.com/apache/axis-axis2-java-core/security/policy)
+  - Security model:
+    - [Apache Axis security model](https://github.com/apache/axis-axis2-java-core/security/policy)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="B">
@@ -178,8 +178,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20bRPC)
   - Advisories (experimental):\
     [security.apache.org](/projects/brpc/)
-  - Security page:\
-    [github.com](https://github.com/apache/brpc/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache bRPC security model](https://github.com/apache/brpc/blob/master/THREAT_MODEL.md)
 - **Apache BuildStream**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20BuildStream)
@@ -206,22 +206,22 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Camel)
   - Advisories (experimental):\
     [security.apache.org](/projects/camel/)
-  - Security page:\
-    [camel.apache.org](https://camel.apache.org/manual/security-model.html)
+  - Security model:
+    - [Apache Camel security model](https://camel.apache.org/manual/security-model.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/carbondata/default.png" alt="" loading="lazy"> **Apache Carbondata**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Carbondata)
   - Advisories (experimental):\
     none so far
-  - Security page:\
-    [carbondata.apache.org](https://carbondata.apache.org/security.html)
+  - Security model:
+    - [Apache Carbondata security model](https://carbondata.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/cassandra/default.png" alt="" loading="lazy"> **Apache Cassandra**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Cassandra)
   - Advisories (experimental):\
     [security.apache.org](/projects/cassandra/)
-  - Security page:\
-    [cassandra.apache.org](https://cassandra.apache.org/doc/latest/cassandra/managing/operating/security.html)
+  - Security model:
+    - [Apache Cassandra security model](https://cassandra.apache.org/doc/latest/cassandra/managing/operating/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/causeway/default.png" alt="" loading="lazy"> **Apache Causeway**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Causeway)
@@ -247,15 +247,18 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20CloudStack)
   - Advisories (experimental):\
     [security.apache.org](/projects/cloudstack/)
-  - Security page:\
-    [github.com](https://github.com/apache/cloudstack/blob/main/THREAT_MODEL.md)
+  - Security model:
+    - [Apache CloudStack security model](https://github.com/apache/cloudstack/blob/main/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/commons/default.png" alt="" loading="lazy"> **Apache Commons**
   - **Security contact:**\
     [security@commons.apache.org](mailto:security@commons.apache.org?subject=%5BFINDING%5D)
   - Advisories:\
     [commons.apache.org](https://commons.apache.org/security.html#Known_Security_Vulnerabilities)
-  - Security page:\
-    [commons.apache.org](https://commons.apache.org/security.html)
+  - Security models:
+    - [Apache Commons security model](https://commons.apache.org/threat_model.html)
+    - [Apache Commons Configuration security model](https://commons.apache.org/proper/commons-configuration/security.html)
+    - [Apache Commons Imaging security model](https://commons.apache.org/proper/commons-imaging/security.html)
+    - [Apache Commons XML security model](https://commons.apache.org/sandbox/commons-xml/threat_model.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/cordova/default.png" alt="" loading="lazy"> **Apache Cordova**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Cordova)
@@ -271,8 +274,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Creadur)
   - Advisories (experimental):\
     none so far
-  - Security page:\
-    [github.com](https://github.com/apache/creadur-rat/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Creadur security model](https://github.com/apache/creadur-rat/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/ctakes/default.png" alt="" loading="lazy"> **Apache cTAKES**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20cTAKES)
@@ -288,8 +291,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20CXF)
   - Advisories (experimental):\
     [security.apache.org](/projects/cxf/)
-  - Security page:\
-    [github.com](https://github.com/apache/cxf/blob/main/THREAT_MODEL.md)
+  - Security model:
+    - [Apache CXF security model](https://github.com/apache/cxf/blob/main/THREAT_MODEL.md)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="D">
@@ -321,8 +324,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20DB)
   - Advisories (experimental):\
     [security.apache.org](/projects/db/)
-  - Security page:\
-    [github.com](https://github.com/apache/db-jdo/blob/main/THREAT_MODEL.md)
+  - Security model:
+    - [Apache DB security model](https://github.com/apache/db-jdo/blob/main/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/deltaspike/default.png" alt="" loading="lazy"> **Apache DeltaSpike**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20DeltaSpike)
@@ -333,50 +336,50 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20DevLake)
   - Advisories (experimental):\
     none so far
-  - Security page:\
-    [devlake.apache.org](https://devlake.apache.org/docs/v1.0/GettingStarted/Authentication)
+  - Security model:
+    - [Apache DevLake security model](https://devlake.apache.org/docs/v1.0/GettingStarted/Authentication)
 - <img class="project-logo" src="https://www.apache.org/logos/res/directory/default.png" alt="" loading="lazy"> **Apache Directory**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Directory)
   - Advisories (experimental):\
     [security.apache.org](/projects/directory/)
-  - Security page:\
-    [github.com](https://github.com/apache/directory-server/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Directory security model](https://github.com/apache/directory-server/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/dolphinscheduler/default.png" alt="" loading="lazy"> **Apache DolphinScheduler**
   - **Security contact:**\
     [security@dolphinscheduler.apache.org](mailto:security@dolphinscheduler.apache.org?subject=%5BFINDING%5D)
   - Advisories (experimental):\
     [security.apache.org](/projects/dolphinscheduler/)
-  - Security page:\
-    [github.com](https://github.com/apache/dolphinscheduler/blob/dev/docs/docs/en/contribute/join/security.md)
+  - Security model:
+    - [Apache DolphinScheduler security model](https://github.com/apache/dolphinscheduler/blob/dev/docs/docs/en/contribute/join/security.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/doris/default.png" alt="" loading="lazy"> **Apache Doris**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Doris)
   - Advisories (experimental):\
     [security.apache.org](/projects/doris/)
-  - Security page:\
-    [github.com](https://github.com/apache/doris/blob/master/threat-model.md)
+  - Security model:
+    - [Apache Doris security model](https://github.com/apache/doris/blob/master/threat-model.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/drill/default.png" alt="" loading="lazy"> **Apache Drill**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Drill)
   - Advisories (experimental):\
     [security.apache.org](/projects/drill/)
-  - Security page:\
-    [github.com](https://github.com/apache/drill/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Drill security model](https://github.com/apache/drill/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/druid/default.png" alt="" loading="lazy"> **Apache Druid**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Druid)
   - Advisories (experimental):\
     [security.apache.org](/projects/druid/)
-  - Security page:\
-    [druid.apache.org](https://druid.apache.org/docs/latest/operations/security-overview.html)
+  - Security model:
+    - [Apache Druid security model](https://druid.apache.org/docs/latest/operations/security-overview.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/dubbo/default.png" alt="" loading="lazy"> **Apache Dubbo**
   - **Security contact:**\
     [security@dubbo.apache.org](mailto:security@dubbo.apache.org?subject=%5BFINDING%5D)
   - Advisories (experimental):\
     [security.apache.org](/projects/dubbo/)
-  - Security page:\
-    [github.com](https://github.com/apache/dubbo/blob/3.3/docs/threat-model.md)
+  - Security model:
+    - [Apache Dubbo security model](https://github.com/apache/dubbo/blob/3.3/docs/threat-model.md)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="E">
@@ -388,8 +391,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20ECharts)
   - Advisories (experimental):\
     [security.apache.org](/projects/echarts/)
-  - Security page:\
-    [echarts.apache.org](https://echarts.apache.org/handbook/en/best-practices/security/#)
+  - Security model:
+    - [Apache ECharts security model](https://echarts.apache.org/handbook/en/best-practices/security/#)
 - **Apache Empire-db**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Empire-db)
@@ -421,8 +424,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@fineract.apache.org](mailto:security@fineract.apache.org?subject=%5BFINDING%5D)
   - Advisories:\
     [fineract.apache.org](https://fineract.apache.org/security.html)
-  - Security page:\
-    [github.com](https://github.com/apache/fineract/security/policy)
+  - Security model:
+    - [Apache Fineract security model](https://github.com/apache/fineract/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/flagon/default.png" alt="" loading="lazy"> **Apache Flagon**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Flagon)
@@ -438,8 +441,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Flink)
   - Advisories:\
     [flink.apache.org](https://flink.apache.org/what-is-flink/security/)
-  - Security page:\
-    [flink.apache.org](https://flink.apache.org/what-is-flink/security/)
+  - Security model:
+    - [Apache Flink security model](https://flink.apache.org/what-is-flink/security/)
 - **Apache Fluss (Incubating)**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Fluss%20%28Incubating%29)
@@ -450,8 +453,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Fory)
   - Advisories:\
     [fory.apache.org](https://fory.apache.org/security/)
-  - Security page:\
-    [github.com](https://github.com/apache/fory/blob/main/docs/security/threat-model.md)
+  - Security model:
+    - [Apache Fory security model](https://github.com/apache/fory/blob/main/docs/security/threat-model.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/freemarker/default.png" alt="" loading="lazy"> **Apache FreeMarker**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20FreeMarker)
@@ -468,15 +471,15 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Geode)
   - Advisories (experimental):\
     [security.apache.org](/projects/geode/)
-  - Security page:\
-    [geode.apache.org](https://geode.apache.org/docs/guide/20/security/security_model.html)
+  - Security model:
+    - [Apache Geode security model](https://geode.apache.org/docs/guide/20/security/security_model.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/geronimo/default.png" alt="" loading="lazy"> **Apache Geronimo**
   - **Security contact:**\
     [security@geronimo.apache.org](mailto:security@geronimo.apache.org?subject=%5BFINDING%5D)
   - Advisories (experimental):\
     none so far
-  - Security page:\
-    [geronimo.apache.org](https://geronimo.apache.org/security-reports.html)
+  - Security model:
+    - [Apache Geronimo security model](https://geronimo.apache.org/security-reports.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/gluten/default.png" alt="" loading="lazy"> **Apache Gluten**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Gluten)
@@ -492,8 +495,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Grails)
   - Advisories (experimental):\
     none so far
-  - Security page:\
-    [github.com](https://github.com/apache/grails-core/blob/8.0.x/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Grails security model](https://github.com/apache/grails-core/blob/8.0.x/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/gravitino/default.png" alt="" loading="lazy"> **Apache Gravitino**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Gravitino)
@@ -504,15 +507,15 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Groovy)
   - Advisories (experimental):\
     none so far
-  - Security page:\
-    [github.com](https://github.com/apache/groovy/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Groovy security model](https://github.com/apache/groovy/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/guacamole/default.png" alt="" loading="lazy"> **Apache Guacamole**
   - **Security contact:**\
     [security@guacamole.apache.org](mailto:security@guacamole.apache.org?subject=%5BFINDING%5D)
   - Advisories:\
     [guacamole.apache.org](https://guacamole.apache.org/security/)
-  - Security page:\
-    [guacamole.apache.org](https://guacamole.apache.org/security/)
+  - Security model:
+    - [Apache Guacamole security model](https://guacamole.apache.org/security/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/gump/default.png" alt="" loading="lazy"> **Apache Gump**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Gump)
@@ -529,71 +532,71 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@hadoop.apache.org](mailto:security@hadoop.apache.org?subject=%5BFINDING%5D)
   - Advisories:\
     [hadoop.apache.org](https://hadoop.apache.org/cve_list.html)
-  - Security page:\
-    [github.com](https://github.com/apache/hadoop/security/policy)
+  - Security model:
+    - [Apache Hadoop security model](https://github.com/apache/hadoop/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/hbase/default.png" alt="" loading="lazy"> **Apache HBase**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20HBase)
   - Advisories (experimental):\
     none so far
-  - Security page:\
-    [hbase.apache.org](https://hbase.apache.org/security-model/)
+  - Security model:
+    - [Apache HBase security model](https://hbase.apache.org/security-model/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/helix/default.png" alt="" loading="lazy"> **Apache Helix**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Helix)
   - Advisories (experimental):\
     [security.apache.org](/projects/helix/)
-  - Security page:\
-    [github.com](https://github.com/apache/helix/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Helix security model](https://github.com/apache/helix/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/hertzbeat/default.png" alt="" loading="lazy"> **Apache Hertzbeat**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Hertzbeat)
   - Advisories (experimental):\
     [security.apache.org](/projects/hertzbeat/)
-  - Security page:\
-    [hertzbeat.apache.org](https://hertzbeat.apache.org/docs/help/security_model/)
+  - Security model:
+    - [Apache Hertzbeat security model](https://hertzbeat.apache.org/docs/help/security_model/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/hive/default.png" alt="" loading="lazy"> **Apache Hive**
   - **Security contact:**\
     [security@hive.apache.org](mailto:security@hive.apache.org?subject=%5BFINDING%5D)
   - Advisories (experimental):\
     [security.apache.org](/projects/hive/)
-  - Security page:\
-    [github.com](https://github.com/apache/hive/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Hive security model](https://github.com/apache/hive/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/hop/default.png" alt="" loading="lazy"> **Apache Hop**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Hop)
   - Advisories (experimental):\
     [security.apache.org](/projects/hop/)
-  - Security page:\
-    [github.com](https://github.com/apache/hop/blob/main/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Hop security model](https://github.com/apache/hop/blob/main/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/httpd/default.png" alt="" loading="lazy"> **Apache HTTP Server**
   - **Security contact:**\
     [security@httpd.apache.org](mailto:security@httpd.apache.org?subject=%5BFINDING%5D)
   - Advisories:\
     [httpd.apache.org](https://httpd.apache.org/security/vulnerabilities_24.html)
-  - Security page:\
-    [github.com](https://github.com/apache/httpd/security/policy)
+  - Security model:
+    - [Apache HTTP Server security model](https://github.com/apache/httpd/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/httpcomponents/default.png" alt="" loading="lazy"> **Apache HttpComponents**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20HttpComponents)
   - Advisories (experimental):\
     [security.apache.org](/projects/httpcomponents/)
-  - Security page:\
-    [hc.apache.org](https://hc.apache.org/security.html)
+  - Security model:
+    - [Apache HttpComponents security model](https://hc.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/hudi/default.png" alt="" loading="lazy"> **Apache Hudi**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Hudi)
   - Advisories (experimental):\
     none so far
-  - Security page:\
-    [hudi.apache.org](https://hudi.apache.org/contribute/security)
+  - Security model:
+    - [Apache Hudi security model](https://hudi.apache.org/contribute/security)
 - <img class="project-logo" src="https://www.apache.org/logos/res/hugegraph/default.png" alt="" loading="lazy"> **Apache HugeGraph**
   - **Security contact:**\
     [security@hugegraph.apache.org](mailto:security@hugegraph.apache.org?subject=%5BFINDING%5D)
   - Advisories:\
     [hugegraph.apache.org](https://hugegraph.apache.org/docs/guides/security)
-  - Security page:\
-    [hugegraph.apache.org](https://hugegraph.apache.org/docs/guides/security)
+  - Security model:
+    - [Apache HugeGraph security model](https://hugegraph.apache.org/docs/guides/security)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="I">
@@ -605,36 +608,36 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@iceberg.apache.org](mailto:security@iceberg.apache.org?subject=%5BFINDING%5D)
   - Advisories (experimental):\
     none so far
-  - Security page:\
-    [github.com](https://github.com/apache/iceberg/blob/main/SECURITY-THREAT-MODEL.md)
+  - Security model:
+    - [Apache Iceberg security model](https://github.com/apache/iceberg/blob/main/SECURITY-THREAT-MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/ignite/default.png" alt="" loading="lazy"> **Apache Ignite**
   - **Security contact:**\
     [security@ignite.apache.org](mailto:security@ignite.apache.org?subject=%5BFINDING%5D)
   - Advisories (experimental):\
     [security.apache.org](/projects/ignite/)
-  - Security page:\
-    [ignite.apache.org](https://ignite.apache.org/docs/ignite3/3.1.0/understand/architecture/security#security-model)
+  - Security model:
+    - [Apache Ignite security model](https://ignite.apache.org/docs/ignite3/3.1.0/understand/architecture/security#security-model)
 - <img class="project-logo" src="https://www.apache.org/logos/res/impala/default.png" alt="" loading="lazy"> **Apache Impala**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Impala)
   - Advisories (experimental):\
     [security.apache.org](/projects/impala/)
-  - Security page:\
-    [github.com](https://github.com/apache/impala/security/policy)
+  - Security model:
+    - [Apache Impala security model](https://github.com/apache/impala/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/inlong/default.png" alt="" loading="lazy"> **Apache InLong**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20InLong)
   - Advisories (experimental):\
     [security.apache.org](/projects/inlong/)
-  - Security page:\
-    [inlong.apache.org](https://inlong.apache.org/docs/next/security/)
+  - Security model:
+    - [Apache InLong security model](https://inlong.apache.org/docs/next/security/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/iotdb/default.png" alt="" loading="lazy"> **Apache IoTDB**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20IoTDB)
   - Advisories (experimental):\
     [security.apache.org](/projects/iotdb/)
-  - Security page:\
-    [github.com](https://github.com/apache/iotdb/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache IoTDB security model](https://github.com/apache/iotdb/blob/master/THREAT_MODEL.md)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="J">
@@ -646,8 +649,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@jackrabbit.apache.org](mailto:security@jackrabbit.apache.org?subject=%5BFINDING%5D)
   - Advisories:\
     [jackrabbit.apache.org](https://jackrabbit.apache.org/jcr/security-reports.html)
-  - Security page:\
-    [jackrabbit.apache.org](https://jackrabbit.apache.org/jcr/security-reports.html)
+  - Security model:
+    - [Apache Jackrabbit security model](https://jackrabbit.apache.org/jcr/security-reports.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/james/default.png" alt="" loading="lazy"> **Apache James**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20James)
@@ -658,29 +661,29 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Jena)
   - Advisories (experimental):\
     [security.apache.org](/projects/jena/)
-  - Security page:\
-    [github.com](https://github.com/apache/jena/blob/main/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Jena security model](https://github.com/apache/jena/blob/main/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/jmeter/default.png" alt="" loading="lazy"> **Apache JMeter**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20JMeter)
   - Advisories (experimental):\
     none so far
-  - Security page:\
-    [github.com](https://github.com/apache/jmeter/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache JMeter security model](https://github.com/apache/jmeter/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/johnzon/default.png" alt="" loading="lazy"> **Apache Johnzon**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Johnzon)
   - Advisories (experimental):\
     [security.apache.org](/projects/johnzon/)
-  - Security page:\
-    [johnzon.apache.org](https://johnzon.apache.org/security.html)
+  - Security model:
+    - [Apache Johnzon security model](https://johnzon.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/jspwiki/default.png" alt="" loading="lazy"> **Apache JSPWiki**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20JSPWiki)
   - Advisories:\
     [jspwiki-wiki.apache.org](https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE)
-  - Security page:\
-    [github.com](https://github.com/apache/jspwiki/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache JSPWiki security model](https://github.com/apache/jspwiki/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/juneau/default.png" alt="" loading="lazy"> **Apache Juneau**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Juneau)
@@ -697,8 +700,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@kafka.apache.org](mailto:security@kafka.apache.org?subject=%5BFINDING%5D)
   - Advisories:\
     [kafka.apache.org](https://kafka.apache.org/cve-list.html)
-  - Security page:\
-    [kafka.apache.org](https://kafka.apache.org/project-security.html)
+  - Security model:
+    - [Apache Kafka security model](https://kafka.apache.org/project-security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/karaf/default.png" alt="" loading="lazy"> **Apache Karaf**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Karaf)
@@ -714,15 +717,15 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Kudu)
   - Advisories (experimental):\
     none so far
-  - Security page:\
-    [github.com](https://github.com/apache/kudu/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Kudu security model](https://github.com/apache/kudu/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/kvrocks/default.png" alt="" loading="lazy"> **Apache Kvrocks**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Kvrocks)
   - Advisories (experimental):\
     [security.apache.org](/projects/kvrocks/)
-  - Security page:\
-    [github.com](https://github.com/apache/kvrocks/blob/unstable/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Kvrocks security model](https://github.com/apache/kvrocks/blob/unstable/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/kylin/default.png" alt="" loading="lazy"> **Apache Kylin**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Kylin)
@@ -744,8 +747,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@libcloud.apache.org](mailto:security@libcloud.apache.org?subject=%5BFINDING%5D)
   - Advisories (experimental):\
     none so far
-  - Security page:\
-    [libcloud.apache.org](https://libcloud.apache.org/security.html)
+  - Security model:
+    - [Apache Libcloud security model](https://libcloud.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/linkis/default.png" alt="" loading="lazy"> **Apache Linkis**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Linkis)
@@ -761,8 +764,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@logging.apache.org](mailto:security@logging.apache.org?subject=%5BFINDING%5D)
   - Advisories:\
     [logging.apache.org](https://logging.apache.org/security.html)
-  - Security page:\
-    [logging.apache.org](https://logging.apache.org/security.html)
+  - Security model:
+    - [Apache Logging security model](https://logging.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/lucene/default.png" alt="" loading="lazy"> **Apache Lucene**
   - **Security contact:**\
     [security@lucene.apache.org](mailto:security@lucene.apache.org?subject=%5BFINDING%5D)
@@ -789,8 +792,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Magpie)
   - Advisories (experimental):\
     none so far
-  - Security page:\
-    [github.com](https://github.com/apache/magpie/blob/main/docs/security/threat-model.md)
+  - Security model:
+    - [Apache Magpie security model](https://github.com/apache/magpie/blob/main/docs/security/threat-model.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/mahout/default.png" alt="" loading="lazy"> **Apache Mahout**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Mahout)
@@ -806,8 +809,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Maven)
   - Advisories (experimental):\
     [security.apache.org](/projects/maven/)
-  - Security page:\
-    [github.com](https://github.com/apache/maven/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Maven security model](https://github.com/apache/maven/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/mina/default.png" alt="" loading="lazy"> **Apache MINA**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20MINA)
@@ -844,22 +847,22 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@nifi.apache.org](mailto:security@nifi.apache.org?subject=%5BFINDING%5D)
   - Advisories:\
     [nifi.apache.org](https://nifi.apache.org/documentation/security/)
-  - Security page:\
-    [nifi.apache.org](https://nifi.apache.org/documentation/security/)
+  - Security model:
+    - [Apache NiFi security model](https://nifi.apache.org/documentation/security/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/nutch/default.png" alt="" loading="lazy"> **Apache Nutch**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Nutch)
   - Advisories:\
     [nutch.apache.org](https://nutch.apache.org/documentation/security/#nutch-cve-list)
-  - Security page:\
-    [github.com](https://github.com/apache/nutch/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Nutch security model](https://github.com/apache/nutch/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/nuttx/default.png" alt="" loading="lazy"> **Apache NuttX**
   - **Security contact:**\
     [security@nuttx.apache.org](mailto:security@nuttx.apache.org?subject=%5BFINDING%5D)
   - Advisories:\
     [nuttx.apache.org](https://nuttx.apache.org/docs/latest/security.html#nuttx-cves)
-  - Security page:\
-    [nuttx.apache.org](https://nuttx.apache.org/docs/latest/security.html)
+  - Security model:
+    - [Apache NuttX security model](https://nuttx.apache.org/docs/latest/security.html)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="O">
@@ -871,15 +874,15 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@ofbiz.apache.org](mailto:security@ofbiz.apache.org?subject=%5BFINDING%5D)
   - Advisories:\
     [ofbiz.apache.org](https://ofbiz.apache.org/security.html)
-  - Security page:\
-    [ofbiz.apache.org](https://ofbiz.apache.org/security.html)
+  - Security model:
+    - [Apache OFBiz security model](https://ofbiz.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/opendal/default.png" alt="" loading="lazy"> **Apache OpenDAL**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20OpenDAL)
   - Advisories (experimental):\
     none so far
-  - Security page:\
-    [github.com](https://github.com/apache/opendal/blob/main/SECURITY-THREAT-MODEL.md)
+  - Security model:
+    - [Apache OpenDAL security model](https://github.com/apache/opendal/blob/main/SECURITY-THREAT-MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/openjpa/default.png" alt="" loading="lazy"> **Apache OpenJPA**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20OpenJPA)
@@ -890,8 +893,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@openmeetings.apache.org](mailto:security@openmeetings.apache.org?subject=%5BFINDING%5D)
   - Advisories (experimental):\
     [security.apache.org](/projects/openmeetings/)
-  - Security page:\
-    [openmeetings.apache.org](https://openmeetings.apache.org/security.html)
+  - Security model:
+    - [Apache OpenMeetings security model](https://openmeetings.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/opennlp/default.png" alt="" loading="lazy"> **Apache OpenNLP**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20OpenNLP)
@@ -902,8 +905,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@openoffice.apache.org](mailto:security@openoffice.apache.org?subject=%5BFINDING%5D)
   - Advisories:\
     [www.openoffice.org](https://www.openoffice.org/security/bulletin.html)
-  - Security page:\
-    [openoffice.apache.org](https://openoffice.apache.org/security)
+  - Security model:
+    - [Apache OpenOffice security model](https://openoffice.apache.org/security)
 - <img class="project-logo" src="https://www.apache.org/logos/res/openwebbeans/default.png" alt="" loading="lazy"> **Apache OpenWebBeans**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20OpenWebBeans)
@@ -919,15 +922,15 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20ORC)
   - Advisories:\
     [orc.apache.org](https://orc.apache.org/security/)
-  - Security page:\
-    [orc.apache.org](https://orc.apache.org/security/)
+  - Security model:
+    - [Apache ORC security model](https://orc.apache.org/security/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/ozone/default.png" alt="" loading="lazy"> **Apache Ozone**
   - **Security contact:**\
     [security@ozone.apache.org](mailto:security@ozone.apache.org?subject=%5BFINDING%5D)
   - Advisories (experimental):\
     [security.apache.org](/projects/ozone/)
-  - Security page:\
-    [github.com](https://github.com/apache/ozone/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Ozone security model](https://github.com/apache/ozone/blob/master/THREAT_MODEL.md)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="P">
@@ -939,29 +942,29 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Paimon)
   - Advisories (experimental):\
     none so far
-  - Security page:\
-    [github.com](https://github.com/apache/paimon/security/policy)
+  - Security model:
+    - [Apache Paimon security model](https://github.com/apache/paimon/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/parquet/default.png" alt="" loading="lazy"> **Apache Parquet**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Parquet)
   - Advisories (experimental):\
     [security.apache.org](/projects/parquet/)
-  - Security page:\
-    [github.com](https://github.com/apache/parquet-java/blob/master/SECURITY.md)
+  - Security model:
+    - [Apache Parquet security model](https://github.com/apache/parquet-java/blob/master/SECURITY.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/pdfbox/default.png" alt="" loading="lazy"> **Apache PDFBox**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20PDFBox)
   - Advisories (experimental):\
     [security.apache.org](/projects/pdfbox/)
-  - Security page:\
-    [pdfbox.apache.org](https://pdfbox.apache.org/security.html)
+  - Security model:
+    - [Apache PDFBox security model](https://pdfbox.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/pekko/default.png" alt="" loading="lazy"> **Apache Pekko**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Pekko)
   - Advisories (experimental):\
     [security.apache.org](/projects/pekko/)
-  - Security page:\
-    [pekko.apache.org](https://pekko.apache.org/docs/pekko/current/security/index.html)
+  - Security model:
+    - [Apache Pekko security model](https://pekko.apache.org/docs/pekko/current/security/index.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/phoenix/default.png" alt="" loading="lazy"> **Apache Phoenix**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Phoenix)
@@ -982,22 +985,22 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20PLC4X)
   - Advisories (experimental):\
     [security.apache.org](/projects/plc4x/)
-  - Security page:\
-    [github.com](https://github.com/apache/plc4x/blob/develop/THREAT-MODEL.md)
+  - Security model:
+    - [Apache PLC4X security model](https://github.com/apache/plc4x/blob/develop/THREAT-MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/poi/default.png" alt="" loading="lazy"> **Apache POI**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20POI)
   - Advisories (experimental):\
     [security.apache.org](/projects/poi/)
-  - Security page:\
-    [poi.apache.org](https://poi.apache.org/security.html)
+  - Security model:
+    - [Apache POI security model](https://poi.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/polaris/default.png" alt="" loading="lazy"> **Apache Polaris**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Polaris)
   - Advisories (experimental):\
     [security.apache.org](/projects/polaris/)
-  - Security page:\
-    [github.com](https://github.com/apache/polaris/blob/main/SECURITY-THREAT-MODEL.md)
+  - Security model:
+    - [Apache Polaris security model](https://github.com/apache/polaris/blob/main/SECURITY-THREAT-MODEL.md)
 - **Apache Pony Mail**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Pony%20Mail)
@@ -1008,15 +1011,15 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Portable%20Runtime%20%28APR%29)
   - Advisories (experimental):\
     [security.apache.org](/projects/apr/)
-  - Security page:\
-    [apr.apache.org](https://apr.apache.org/security_report.html)
+  - Security model:
+    - [Apache Portable Runtime (APR) security model](https://apr.apache.org/security_report.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/pulsar/default.png" alt="" loading="lazy"> **Apache Pulsar**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Pulsar)
   - Advisories (experimental):\
     [security.apache.org](/projects/pulsar/)
-  - Security page:\
-    [github.com](https://github.com/apache/pulsar/security/policy)
+  - Security model:
+    - [Apache Pulsar security model](https://github.com/apache/pulsar/security/policy)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="Q">
@@ -1039,8 +1042,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Ranger)
   - Advisories:\
     [cwiki.apache.org](https://cwiki.apache.org/confluence/display/RANGER/Vulnerabilities+found+in+Ranger)
-  - Security page:\
-    [github.com](https://github.com/apache/ranger/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Ranger security model](https://github.com/apache/ranger/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/ratis/default.png" alt="" loading="lazy"> **Apache Ratis**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Ratis)
@@ -1051,8 +1054,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20RocketMQ)
   - Advisories (experimental):\
     [security.apache.org](/projects/rocketmq/)
-  - Security page:\
-    [rocketmq.apache.org](https://rocketmq.apache.org/docs/security/01security/)
+  - Security model:
+    - [Apache RocketMQ security model](https://rocketmq.apache.org/docs/security/01security/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/roller/default.png" alt="" loading="lazy"> **Apache Roller**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Roller)
@@ -1084,8 +1087,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Santuario)
   - Advisories (experimental):\
     [security.apache.org](/projects/santuario/)
-  - Security page:\
-    [github.com](https://github.com/apache/santuario-xml-security-java/blob/main/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Santuario security model](https://github.com/apache/santuario-xml-security-java/blob/main/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/sdap/default.png" alt="" loading="lazy"> **Apache SDAP**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20SDAP)
@@ -1096,15 +1099,15 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Seata)
   - Advisories (experimental):\
     [security.apache.org](/projects/seata/)
-  - Security page:\
-    [seata.apache.org](https://seata.apache.org/docs/next/security/secret-key)
+  - Security model:
+    - [Apache Seata security model](https://seata.apache.org/docs/next/security/secret-key)
 - <img class="project-logo" src="https://www.apache.org/logos/res/seatunnel/default.png" alt="" loading="lazy"> **Apache SeaTunnel**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20SeaTunnel)
   - Advisories (experimental):\
     [security.apache.org](/projects/seatunnel/)
-  - Security page:\
-    [seatunnel.apache.org](https://seatunnel.apache.org/security)
+  - Security model:
+    - [Apache SeaTunnel security model](https://seatunnel.apache.org/security)
 - <img class="project-logo" src="https://www.apache.org/logos/res/sedona/default.png" alt="" loading="lazy"> **Apache Sedona**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Sedona)
@@ -1125,29 +1128,29 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20ShardingSphere)
   - Advisories (experimental):\
     [security.apache.org](/projects/shardingsphere/)
-  - Security page:\
-    [shardingsphere.apache.org](https://shardingsphere.apache.org/community/en/security/)
+  - Security model:
+    - [Apache ShardingSphere security model](https://shardingsphere.apache.org/community/en/security/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/shenyu/default.png" alt="" loading="lazy"> **Apache ShenYu**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20ShenYu)
   - Advisories (experimental):\
     [security.apache.org](/projects/shenyu/)
-  - Security page:\
-    [github.com](https://github.com/apache/shenyu/blob/master/SECURITY_MODEL.md)
+  - Security model:
+    - [Apache ShenYu security model](https://github.com/apache/shenyu/blob/master/SECURITY_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/shiro/default.png" alt="" loading="lazy"> **Apache Shiro**
   - **Security contact:**\
     [security@shiro.apache.org](mailto:security@shiro.apache.org?subject=%5BFINDING%5D)
   - Advisories (experimental):\
     [security.apache.org](/projects/shiro/)
-  - Security page:\
-    [shiro.apache.org](https://shiro.apache.org/security-reports.html)
+  - Security model:
+    - [Apache Shiro security model](https://shiro.apache.org/security-reports.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/singa/default.png" alt="" loading="lazy"> **Apache SINGA**
   - **Security contact:**\
     [security@singa.apache.org](mailto:security@singa.apache.org?subject=%5BFINDING%5D)
   - Advisories (experimental):\
     none so far
-  - Security page:\
-    [singa.apache.org](https://singa.apache.org/security.html)
+  - Security model:
+    - [Apache SINGA security model](https://singa.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/sis/default.png" alt="" loading="lazy"> **Apache SIS**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20SIS)
@@ -1158,36 +1161,36 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20SkyWalking)
   - Advisories (experimental):\
     [security.apache.org](/projects/skywalking/)
-  - Security page:\
-    [skywalking.apache.org](https://skywalking.apache.org/docs/main/next/en/security/readme/)
+  - Security model:
+    - [Apache SkyWalking security model](https://skywalking.apache.org/docs/main/next/en/security/readme/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/sling/default.png" alt="" loading="lazy"> **Apache Sling**
   - **Security contact:**\
     [security@sling.apache.org](mailto:security@sling.apache.org?subject=%5BFINDING%5D)
   - Advisories (experimental):\
     [security.apache.org](/projects/sling/)
-  - Security page:\
-    [github.com](https://github.com/apache/sling/blob/master/docs/threat-model.md)
+  - Security model:
+    - [Apache Sling security model](https://github.com/apache/sling/blob/master/docs/threat-model.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/solr/default.png" alt="" loading="lazy"> **Apache Solr**
   - **Security contact:**\
     [security@solr.apache.org](mailto:security@solr.apache.org?subject=%5BFINDING%5D)
   - Advisories:\
     [solr.apache.org](https://solr.apache.org/security.html#recent-cve-reports-for-apache-solr)
-  - Security page:\
-    [cwiki.apache.org](https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity)
+  - Security model:
+    - [Apache Solr security model](https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity)
 - <img class="project-logo" src="https://www.apache.org/logos/res/spamassassin/default.png" alt="" loading="lazy"> **Apache SpamAssassin**
   - **Security contact:**\
     [security@spamassassin.apache.org](mailto:security@spamassassin.apache.org?subject=%5BFINDING%5D)
   - Advisories (experimental):\
     [security.apache.org](/projects/spamassassin/)
-  - Security page:\
-    [cwiki.apache.org](https://cwiki.apache.org/confluence/display/SPAMASSASSIN/SecurityPolicy)
+  - Security model:
+    - [Apache SpamAssassin security model](https://cwiki.apache.org/confluence/display/SPAMASSASSIN/SecurityPolicy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/spark/default.png" alt="" loading="lazy"> **Apache Spark**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Spark)
   - Advisories:\
     [spark.apache.org](https://spark.apache.org/security.html)
-  - Security page:\
-    [spark.apache.org](https://spark.apache.org/security.html)
+  - Security model:
+    - [Apache Spark security model](https://spark.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/steve/default.png" alt="" loading="lazy"> **Apache Steve**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Steve)
@@ -1198,57 +1201,57 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Storm)
   - Advisories (experimental):\
     [security.apache.org](/projects/storm/)
-  - Security page:\
-    [storm.apache.org](https://storm.apache.org/security-model.html)
+  - Security model:
+    - [Apache Storm security model](https://storm.apache.org/security-model.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/stormcrawler/default.png" alt="" loading="lazy"> **Apache StormCrawler**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20StormCrawler)
   - Advisories:\
     [stormcrawler.apache.org](https://stormcrawler.apache.org/security/)
-  - Security page:\
-    [stormcrawler.apache.org](https://stormcrawler.apache.org/security/)
+  - Security model:
+    - [Apache StormCrawler security model](https://stormcrawler.apache.org/security/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/streampark/default.png" alt="" loading="lazy"> **Apache StreamPark**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20StreamPark)
   - Advisories (experimental):\
     [security.apache.org](/projects/streampark/)
-  - Security page:\
-    [streampark.apache.org](https://streampark.apache.org/community/security/)
+  - Security model:
+    - [Apache StreamPark security model](https://streampark.apache.org/community/security/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/streampipes/default.png" alt="" loading="lazy"> **Apache StreamPipes**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20StreamPipes)
   - Advisories (experimental):\
     [security.apache.org](/projects/streampipes/)
-  - Security page:\
-    [github.com](https://github.com/apache/streampipes/blob/dev/THREAT_MODEL.md)
+  - Security model:
+    - [Apache StreamPipes security model](https://github.com/apache/streampipes/blob/dev/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/struts/default.png" alt="" loading="lazy"> **Apache Struts**
   - **Security contact:**\
     [security@struts.apache.org](mailto:security@struts.apache.org?subject=%5BFINDING%5D)
   - Advisories:\
     [cwiki.apache.org](https://cwiki.apache.org/confluence/display/WW/Security+Bulletins)
-  - Security page:\
-    [github.com](https://github.com/apache/struts/blob/main/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Struts security model](https://github.com/apache/struts/blob/main/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/subversion/default.png" alt="" loading="lazy"> **Apache Subversion**
   - **Security contact:**\
     [security@subversion.apache.org](mailto:security@subversion.apache.org?subject=%5BFINDING%5D)
   - Advisories:\
     [subversion.apache.org](https://subversion.apache.org/security/)
-  - Security page:\
-    [subversion.apache.org](https://subversion.apache.org/security/)
+  - Security model:
+    - [Apache Subversion security model](https://subversion.apache.org/security/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/superset/default.png" alt="" loading="lazy"> **Apache Superset**
   - **Security contact:**\
     [security@superset.apache.org](mailto:security@superset.apache.org?subject=%5BFINDING%5D)
   - Advisories:\
     [superset.apache.org](https://superset.apache.org/docs/security/cves)
-  - Security page:\
-    [github.com](https://github.com/apache/superset/security/policy)
+  - Security model:
+    - [Apache Superset security model](https://github.com/apache/superset/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/synapse/default.png" alt="" loading="lazy"> **Apache Synapse**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Synapse)
   - Advisories (experimental):\
     none so far
-  - Security page:\
-    [github.com](https://github.com/apache/synapse/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Synapse security model](https://github.com/apache/synapse/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/syncope/default.png" alt="" loading="lazy"> **Apache Syncope**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Syncope)
@@ -1270,8 +1273,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Tapestry)
   - Advisories (experimental):\
     [security.apache.org](/projects/tapestry/)
-  - Security page:\
-    [github.com](https://github.com/apache/tapestry-5/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Tapestry security model](https://github.com/apache/tapestry-5/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/tcl/default.png" alt="" loading="lazy"> **Apache Tcl**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Tcl)
@@ -1292,15 +1295,15 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Thrift)
   - Advisories (experimental):\
     [security.apache.org](/projects/thrift/)
-  - Security page:\
-    [github.com](https://github.com/apache/thrift/blob/master/doc/thrift-threat-model.md)
+  - Security model:
+    - [Apache Thrift security model](https://github.com/apache/thrift/blob/master/doc/thrift-threat-model.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/tika/default.png" alt="" loading="lazy"> **Apache Tika**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Tika)
   - Advisories:\
     [tika.apache.org](https://tika.apache.org/security.html)
-  - Security page:\
-    [tika.apache.org](https://tika.apache.org/security-model.html)
+  - Security model:
+    - [Apache Tika security model](https://tika.apache.org/security-model.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/tinkerpop/default.png" alt="" loading="lazy"> **Apache TinkerPop**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20TinkerPop)
@@ -1311,8 +1314,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@tomcat.apache.org](mailto:security@tomcat.apache.org?subject=%5BFINDING%5D)
   - Advisories:\
     [tomcat.apache.org](https://tomcat.apache.org/security.html)
-  - Security page:\
-    [tomcat.apache.org](https://tomcat.apache.org/security.html)
+  - Security model:
+    - [Apache Tomcat security model](https://tomcat.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/tomee/default.png" alt="" loading="lazy"> **Apache TomEE**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20TomEE)
@@ -1323,8 +1326,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@trafficserver.apache.org](mailto:security@trafficserver.apache.org?subject=%5BFINDING%5D)
   - Advisories (experimental):\
     [security.apache.org](/projects/trafficserver/)
-  - Security page:\
-    [github.com](https://github.com/apache/trafficserver/security/policy)
+  - Security model:
+    - [Apache Traffic Server security model](https://github.com/apache/trafficserver/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/training/default.png" alt="" loading="lazy"> **Apache Training**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Training)
@@ -1345,8 +1348,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20TVM)
   - Advisories (experimental):\
     none so far
-  - Security page:\
-    [tvm.apache.org](https://tvm.apache.org/docs/reference/security.html)
+  - Security model:
+    - [Apache TVM security model](https://tvm.apache.org/docs/reference/security.html)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="U">
@@ -1368,8 +1371,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Unomi)
   - Advisories (experimental):\
     [security.apache.org](/projects/unomi/)
-  - Security page:\
-    [github.com](https://github.com/apache/unomi/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Unomi security model](https://github.com/apache/unomi/blob/master/THREAT_MODEL.md)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="V">
@@ -1386,8 +1389,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Velocity)
   - Advisories (experimental):\
     [security.apache.org](/projects/velocity/)
-  - Security page:\
-    [velocity.apache.org](https://velocity.apache.org/#security-model)
+  - Security model:
+    - [Apache Velocity security model](https://velocity.apache.org/#security-model)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="W">
@@ -1435,8 +1438,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20XML%20Graphics)
   - Advisories (experimental):\
     [security.apache.org](/projects/xmlgraphics/)
-  - Security page:\
-    [xmlgraphics.apache.org](https://xmlgraphics.apache.org/security.html)
+  - Security model:
+    - [Apache XML Graphics security model](https://xmlgraphics.apache.org/security.html)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="Y">
@@ -1464,15 +1467,15 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@zeppelin.apache.org](mailto:security@zeppelin.apache.org?subject=%5BFINDING%5D)
   - Advisories (experimental):\
     [security.apache.org](/projects/zeppelin/)
-  - Security page:\
-    [github.com](https://github.com/apache/zeppelin/blob/master/THREAT_MODEL.md)
+  - Security model:
+    - [Apache Zeppelin security model](https://github.com/apache/zeppelin/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/zookeeper/default.png" alt="" loading="lazy"> **Apache ZooKeeper**
   - **Security contact:**\
     [security@zookeeper.apache.org](mailto:security@zookeeper.apache.org?subject=%5BFINDING%5D)
   - Advisories (experimental):\
     [security.apache.org](/projects/zookeeper/)
-  - Security page:\
-    [zookeeper.apache.org](https://zookeeper.apache.org/security.html)
+  - Security model:
+    - [Apache ZooKeeper security model](https://zookeeper.apache.org/security.html)
 
 </section>
 </div>

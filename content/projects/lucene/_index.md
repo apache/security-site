@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Lucene? Send your report to the [Apache Lucene Security Team](mailto:security@lucene.apache.org).
+Do you want disclose a potential security issue for Apache Lucene? Send your report to the [Apache Lucene Security Team](mailto:security%40lucene.apache.org?subject=%5BFINDING%5D%20Apache%20Lucene).
 
 # Advisories
 
