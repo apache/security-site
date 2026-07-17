@@ -82,7 +82,7 @@ CVE-2026-41636 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-41636) [\[CVE jso
 
 
 
-_Last updated: 2026-05-18T16:56:58.433Z_
+_Last updated: 2026-07-15T20:56:45.279Z_
 
 ### Affected
 
@@ -200,32 +200,6 @@ _Last updated: 2026-04-28T09:20:12.306Z_
 
 ### Credits
 * Hasnain Lakhani (finder)
-
-
-## Java TSSLTransportFactory hostname verification ## { #CVE-2026-41603 }
-
-CVE-2026-41603 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-41603) [\[CVE json\]](./CVE-2026-41603.cve.json) [\[OSV json\]](./CVE-2026-41603.osv.json)
-
-
-
-_Last updated: 2026-05-18T16:57:00.465Z_
-
-### Affected
-
-* Apache Thrift before 0.23.0
-
-
-### Description
-
-<p>Improper Validation of Certificate with Host Mismatch vulnerability in Apache Thrift.</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql
-
-
-### Credits
-* Yu Bao – yubao@paypal.com (finder)
-*  (finder)
 
 
 ## Go TFramedTransport uint32 overflow ## { #CVE-2026-41602 }

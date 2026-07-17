@@ -13,6 +13,58 @@ Do you want disclose a potential security issue for Apache Tomcat? You can read 
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://tomcat.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## EncryptInterceptor requirements not clearly documented ## { #CVE-2026-59084 }
+
+CVE-2026-59084 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59084) [\[CVE json\]](./CVE-2026-59084.cve.json) [\[OSV json\]](./CVE-2026-59084.osv.json)
+
+
+
+_Last updated: 2026-07-14T08:24:29.946Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.23
+* Apache Tomcat from 10.1.0-M1 through 10.1.56
+* Apache Tomcat from 9.0.13 through 9.0.119
+* Apache Tomcat from 8.5.38 through 8.5.100
+* Apache Tomcat from 7.0.100 through 7.0.109
+
+
+### Description
+
+<p>Insufficient Technical Documentation vulnerability in Apache Tomcat since the requirements to securely configure the EncryptInterceptor were not clearly documented.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.23, from 10.1.0-M1 through 10.1.56, from 9.0.13 through 9.0.119, from 8.5.38 through 8.5.100, from 7.0.100 through 7.0.109.&nbsp;Other versions that have reached end of support may also be affected.</p><p>Users are recommended to upgrade to version 11.0.24, 10.1.57 or 9.0.120 which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/7w9746ootcxo0gvx26xjpw80l31f1qw7
+
+
+### Credits
+* NDIx (reporter)
+
+
+## Incorrect URL decoding in RewriteValve may allow security control bypass ## { #CVE-2026-59083 }
+
+CVE-2026-59083 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59083) [\[CVE json\]](./CVE-2026-59083.cve.json)
+
+_Last updated: 2026-07-14T08:13:32.606Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.23
+* Apache Tomcat from 10.1.0-M1 through 10.1.56
+* Apache Tomcat from 9.0.0.M1 through 9.0.119
+* Apache Tomcat from 8.5.0 through 8.5.100
+* Apache Tomcat before 8.0.0 unaffected
+
+
+### Description
+
+<p>Improper Handling of URL Encoding (Hex Encoding) vulnerability in Apache Tomcat's rewrite valve allowed security constraint bypass for some configurations.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.23, from 10.1.0-M1 through 10.1.56, from 9.0.0.M1 through 9.0.119, from 8.5.0 through 8.5.100.&nbsp;Other versions that have reached end of support may also be affected.</p><p>Users are recommended to upgrade to version 11.0.24, 10.1.57 or 9.0.120, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/3g63zos2gkjo5vgnrk8kxmosv47w6wbq
+
+
 ## Authentication bypass with JNDIRealm and GSSAPI authenticated bind ## { #CVE-2026-55957 }
 
 CVE-2026-55957 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-55957) [\[CVE json\]](./CVE-2026-55957.cve.json)

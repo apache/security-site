@@ -13,6 +13,83 @@ Do you want disclose a potential security issue for Apache Kylin? Send your repo
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Improper authorization in job information retrieval ## { #CVE-2026-62393 }
+
+CVE-2026-62393 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-62393) [\[CVE json\]](./CVE-2026-62393.cve.json) [\[OSV json\]](./CVE-2026-62393.osv.json)
+
+
+
+_Last updated: 2026-07-14T12:19:26.389Z_
+
+### Affected
+
+* Apache Kylin from 4 through 5.0.3
+
+
+### Description
+
+<p>Improper Handling of Insufficient Permissions or Privileges vulnerability in Apache Kylin.&nbsp;Improper authorization in job information retrieval, where an attacker may get access to unauthorized jobs in other projects.</p><p>This issue affects Apache Kylin: from 4 through 5.0.3.</p><p>Users are recommended to upgrade to version 5.0.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/xg8dcyjw0nkq5y8dhq3r25x3rxc62x9j
+
+
+### Credits
+* Yicheng <yyc2569580673@gmail.com> (finder)
+* Haoran Zhao (finder)
+* Lei Zhang (finder)
+
+
+## OS Command Injection via Async Query API ## { #CVE-2026-62392 }
+
+CVE-2026-62392 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-62392) [\[CVE json\]](./CVE-2026-62392.cve.json) [\[OSV json\]](./CVE-2026-62392.osv.json)
+
+
+
+_Last updated: 2026-07-14T12:18:55.913Z_
+
+### Affected
+
+* Apache Kylin from 4 through 5.0.3
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability in Apache Kylin. A backend API may bring job config parameters to OS command line.</p><p>This issue affects Apache Kylin: from 4 through 5.0.3.</p><p>Users are recommended to upgrade to version 5.0.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/9hof8lxo3mzshsh5r77mskzqlkns09gn
+
+
+### Credits
+* Suraj Kattimuttathu Suresh <sksuraj@ucsb.edu> (finder)
+
+
+## SQL Injection Vulnerability in Catalog Cache Refresh API ## { #CVE-2026-62390 }
+
+CVE-2026-62390 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-62390) [\[CVE json\]](./CVE-2026-62390.cve.json) [\[OSV json\]](./CVE-2026-62390.osv.json)
+
+
+
+_Last updated: 2026-07-14T12:09:39.268Z_
+
+### Affected
+
+* Apache Kylin from 4 through 5.0.3
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Kylin. A backend API refreshing table catalog may cause the injection to the generated SQL.</p><p>This issue affects Apache Kylin: from 4 through 5.0.3.</p><p>Users are recommended to upgrade to version 5.0.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/zdrj93txvdjj07f88s43d2pcg2gomvjc
+
+
+### Credits
+* 罗鑫 <lx2317103712@gmail.com> (finder)
+
+
 ## Server-Side Request Forgery ## { #CVE-2025-61735 }
 
 CVE-2025-61735 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-61735) [\[CVE json\]](./CVE-2025-61735.cve.json) [\[OSV json\]](./CVE-2025-61735.osv.json)

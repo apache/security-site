@@ -13,6 +13,60 @@ Do you want disclose a potential security issue for Apache Airflow? You can read
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://airflow.apache.org/docs/apache-airflow/stable/security/security_model.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## FAB auth manager: a DAG named "DAGs" hijacks the global all-DAGs permission (access_control privilege escalation via resource_name() collision) ## { #CVE-2026-59245 }
+
+CVE-2026-59245 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59245) [\[CVE json\]](./CVE-2026-59245.cve.json) [\[OSV json\]](./CVE-2026-59245.osv.json)
+
+
+
+_Last updated: 2026-07-13T15:05:19.788Z_
+
+### Affected
+
+* Apache Airflow FAB provider before 3.7.2
+
+
+### Description
+
+In the Apache Airflow FAB auth manager, a DAG whose `dag_id` is `DAGs` collided with the global all-DAGs permission resource name produced by `resource_name()`, so a user granted per-DAG `access_control` on that one DAG was silently granted the global all-DAGs permission (privilege escalation). The escalation triggers when a DAG named `DAGs` exists and a lower-privileged user is given per-DAG access to it, granting that user read/edit access to every DAG. Users are advised to upgrade to `apache-airflow-providers-fab` 3.7.2 or later, which disambiguates the resource-name collision.
+
+### References
+* https://github.com/apache/airflow/pull/69106
+* https://lists.apache.org/thread/70f37q3mwov1vm3zolrfxlzds278c78h
+
+
+### Credits
+* Tran Hieu (h1tr3xnull) (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## Git provider hook defaults to StrictHostKeyChecking=no, disabling SSH host-key verification ## { #CVE-2026-58065 }
+
+CVE-2026-58065 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58065) [\[CVE json\]](./CVE-2026-58065.cve.json) [\[OSV json\]](./CVE-2026-58065.osv.json)
+
+
+
+_Last updated: 2026-07-13T15:00:48.144Z_
+
+### Affected
+
+* Apache Airflow Git provider before 0.4.1
+
+
+### Description
+
+The Apache Airflow Git provider runs its git-over-SSH operations with `StrictHostKeyChecking=no` by default, disabling SSH host-key verification. An attacker who can intercept the network path between an Airflow worker and the Git server can impersonate the server (man-in-the-middle), capturing the SSH deploy key or injecting malicious repository content. Deployments that use the Git DAG bundle or Git provider to clone over SSH with a deploy key are affected. The fix changes the default to verify host keys; upgrade to apache-airflow-providers-git `0.4.1` or later and configure a `known_hosts` file.
+
+### References
+* https://github.com/apache/airflow/pull/69103
+* https://lists.apache.org/thread/fjmclngfksz2kp7llpcjxzdz568h0zhc
+
+
+### Credits
+* Siyang Wu (independent researcher) (finder)
+* Ephraim Anierobi (remediation developer)
+
+
 ## Path traversal in SFTPHook.retrieve_directory allows local file write outside the destination directory via malicious server-supplied directory-entry names ## { #CVE-2026-50203 }
 
 CVE-2026-50203 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50203) [\[CVE json\]](./CVE-2026-50203.cve.json) [\[OSV json\]](./CVE-2026-50203.osv.json)
