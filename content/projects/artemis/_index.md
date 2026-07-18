@@ -6,11 +6,16 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Artemis? You can read more about the projects' security policy on their [security page](https://github.com/apache/artemis/blob/main/docs/user-manual/threat-model.adoc), and email your report to the [Apache Security Team](mailto:security@apache.org).
+Do you want disclose a potential security issue for Apache Artemis? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Artemis).
+
+You can read more about the security policy on:
+
+- [Apache Artemis security model](https://github.com/apache/artemis/blob/main/docs/user-manual/threat-model.adoc)
+
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://github.com/apache/artemis/blob/main/docs/user-manual/threat-model.adoc). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
 ## Address routing-type can be updated by STOMP protocol user without the createAddress permission ## { #CVE-2026-40914 }

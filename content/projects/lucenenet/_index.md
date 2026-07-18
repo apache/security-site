@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Lucene.NET? Send your report to the [Apache Security Team](mailto:security@apache.org).
+Do you want disclose a potential security issue for Apache Lucene.NET? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Lucene.NET).
 
 # Advisories
 
