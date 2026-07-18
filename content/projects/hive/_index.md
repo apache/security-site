@@ -6,11 +6,16 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Hive? You can read more about the projects' security policy on their [security page](https://github.com/apache/hive/blob/master/THREAT_MODEL.md), and email your report to the [Apache Hive Security Team](mailto:security@hive.apache.org).
+Do you want disclose a potential security issue for Apache Hive? Send your report to the [Apache Hive Security Team](mailto:security@hive.apache.org?subject=Hive).
+
+You can read more about the security policy on:
+
+- [Apache Hive security model](https://github.com/apache/hive/blob/master/THREAT_MODEL.md)
+
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://github.com/apache/hive/blob/master/THREAT_MODEL.md). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
 ## SQL injection vulnerability when processing delete column statistics requests via the HMS Thrift APIs ## { #CVE-2025-62728 }

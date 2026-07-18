@@ -49,7 +49,7 @@ layout: single
 
 Here is a list of pages ASF projects maintain to provide information on known security vulnerabilities. Each entry also has the security contact for reporting new vulnerabilities related to that project. Note that not all project security teams have a dedicated address for reporting new vulnerabilities.
 
-To report a vulnerability in an Apache project that is not listed below, contact the [Apache Security Team](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20project%20name%20here).
+To report a vulnerability in an Apache project that is not listed below, contact the [Apache Security Team](mailto:security@apache.org?subject=Project%20name%20here).
 
 Use the tabs below to jump to projects by their initial. Every project lists a security contact; some also publish a security page and a list of advisories.
 """)
@@ -90,6 +90,23 @@ def project_letter(name):
     c = d[0].upper() if d else '#'
     return c if c.isalpha() else '#'
 
+def security_models(p):
+    # The PMC's own security model first, then one per project it ships that
+    # publishes a model of its own. Most PMCs have only the umbrella entry; a
+    # PMC with several projects carries a "projects" list in the coordinates.
+    models = []
+    if p.get('security_model_link'):
+        models.append((p['name'], p['security_model_link']))
+    for project in p.get('projects') or []:
+        if project.get('security_model_link'):
+            models.append((project['name'], project['security_model_link']))
+    return models
+
+def security_model_md_lines(models, indent):
+    # One Markdown list item per security model, each labelled with the name of the project it covers.
+    # Callers supply the indent the surrounding list needs.
+    return ['%s- [%s security model](%s)' % (indent, name, link) for name, link in models]
+
 def project_md_lines(pmc, p):
     # Each project is a Markdown list item: a bold name plus a nested list of
     # labelled links. Security contact comes first and is always present.
@@ -97,14 +114,13 @@ def project_md_lines(pmc, p):
         # The shared Security Team list handles every project, so name the
         # project in the subject to help routing.
         contact_addr = 'security@apache.org'
-        subject = '[FINDING] %s' % p['name']
     else:
         # A project-specific list already knows which project it is.
         contact_addr = p['contact']
-        subject = '[FINDING]'
+    quoted_subject = quote(display_name(p['name']))
     # Standard mailto: a bare address plus a prefilled subject, so no mail
     # client trips over a non-standard "Name <address>" recipient.
-    contact_href = 'mailto:%s?subject=%s' % (quote(contact_addr, safe='@'), quote(subject))
+    contact_href = 'mailto:%s?subject=%s' % (quote(contact_addr, safe='@'), quoted_subject)
     # Optional logo floated to the card's right (see custom.css). Only projects
     # that publish a logo carry a logo_link in project-coordinates.json; the
     # inline HTML <img> passes through Goldmark (unsafe=true) and the **name**
@@ -132,9 +148,10 @@ def project_md_lines(pmc, p):
             lines.append('    [security.apache.org](/projects/%s/)' % pmc)
         else:
             lines.append('    none so far')
-    if p.get('security_model_link'):
-        lines.append('  - Security page:\\')
-        lines.append('    [%s](%s)' % (urlparse(p['security_model_link']).netloc or 'security page', p['security_model_link']))
+    models = security_models(p)
+    if models:
+        lines.append('  - Security model:' if len(models) == 1 else '  - Security models:')
+        lines += security_model_md_lines(models, '    ')
     return lines
 
 # Group projects by their initial letter (non-letters bucket under '#').
@@ -197,23 +214,29 @@ layout: single
 ---
 
 """ % (p['name'], p['name']))
+    models = security_models(p)
     project_page.write('# Reporting\n\n')
     project_page.write('Do you want disclose a potential security issue for %s? ' % p['name'])
-    if 'security_model_link' in p.keys() and p['security_model_link']:
-        project_page.write("You can read more about the projects' security policy on their [security page](%s), and email your report to the " % p['security_model_link'])
-    else:
-        project_page.write('Send your report to the ')
+    project_page.write('Send your report to the ')
+    quoted_subject = quote(display_name(p['name']))
     if not 'contact' in p.keys() or p['contact'] == 'security@apache.org':
-        project_page.write('[Apache Security Team](mailto:security@apache.org).')
+        project_page.write('[Apache Security Team](mailto:security@apache.org?subject=%s).' % quoted_subject)
     else:
-        project_page.write('[%s Security Team](mailto:%s).' % (p['name'], p['contact']))
+        project_page.write('[%s Security Team](mailto:%s?subject=%s).' % (p['name'], quote(p['contact'], safe='@'), quoted_subject))
+    if models:
+        # A PMC that ships several projects publishes one security model per
+        # project, so these are listed rather than woven into the sentence.
+        project_page.write("\n\nYou can read more about the security policy on:\n\n")
+        project_page.write('\n'.join(security_model_md_lines(models, '')))
+        project_page.write('\n')
 
     project_page.write('\n\n# Advisories')
 
     project_page.write('\n\nThis section is experimental: it provides advisories since 2023 and ')
     project_page.write('may lag behind the official CVE publications. ')
-    if 'security_model_link' in p.keys() and p['security_model_link']:
-        project_page.write('It may also lack details found on the [project security page](%s). ' % p['security_model_link'])
+    if models:
+        project_page.write('It may also lack details found on the project security page%s linked above. ' % (
+            's' if len(models) > 1 else ''))
 
     project_page.write('If you have any feedback on how you would like this data to be provided, ')
     project_page.write('you are welcome to reach out on our public [mailinglist](/mailinglist) or privately ')

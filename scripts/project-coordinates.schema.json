@@ -14,7 +14,7 @@
     }
   },
   "additionalProperties": {
-    "$ref": "#/$defs/project"
+    "$ref": "#/$defs/pmc"
   },
   "$defs": {
     "urlOrNull": {
@@ -23,16 +23,12 @@
     },
     "project": {
       "type": "object",
-      "description": "Security coordinates for a single project. The six core fields are always present (null when unknown) so consumers need no per-field presence checks.",
+      "description": "A named piece of software with its own security model. Used both on its own, for the individual projects a PMC ships (see 'pmc/projects'), and as the base a 'pmc' extends. This definition deliberately does not forbid extra properties: 'additionalProperties: false' only sees the properties declared alongside it, so it would reject the extra keys a 'pmc' adds on top. Each place that uses this definition closes itself with 'unevaluatedProperties: false' instead, which does account for inherited properties.",
       "required": [
         "name",
         "security_model_link",
-        "security_model_source",
-        "advisory_link",
-        "contact",
-        "logo_link"
+        "security_model_source"
       ],
-      "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string",
@@ -46,7 +42,26 @@
         "security_model_source": {
           "$ref": "#/$defs/urlOrNull",
           "description": "URL of an AI-friendly plain-text/Markdown version of the security page. Not rendered on the site; used by external tooling to fetch text instead of HTML. Null when unavailable."
-        },
+        }
+      }
+    },
+    "pmc": {
+      "description": "Security coordinates for a single PMC (or podling), keyed by committee id. Extends 'project': a PMC has a name and its own security model, plus the reporting and advisory coordinates below. The six core fields are always present (null when unknown) so consumers need no per-field presence checks.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/project"
+        }
+      ],
+      "required": [
+        "name",
+        "security_model_link",
+        "security_model_source",
+        "advisory_link",
+        "contact",
+        "logo_link"
+      ],
+      "unevaluatedProperties": false,
+      "properties": {
         "advisory_link": {
           "$ref": "#/$defs/urlOrNull",
           "description": "URL of the project's published list of security advisories. Null when the project has none."
@@ -68,6 +83,19 @@
         "dependency_advisory_triage": {
           "$ref": "#/$defs/urlOrNull",
           "description": "Optional URL of the project's dependency-advisory triage data (e.g. VEX or suppression file)."
+        },
+        "projects": {
+          "type": "array",
+          "minItems": 1,
+          "description": "Optional list of the individual projects this PMC ships, for PMCs that maintain more than one. Only needed when a project publishes a security model of its own, distinct from the PMC-wide one above; the PMC's reporting and advisory coordinates cover them all.",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/project"
+              }
+            ],
+            "unevaluatedProperties": false
+          }
         }
       }
     }
