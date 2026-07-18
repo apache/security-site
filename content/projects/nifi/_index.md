@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache NiFi? Send your report to the [Apache NiFi Security Team](mailto:security%40nifi.apache.org?subject=%5BFINDING%5D%20Apache%20NiFi).
+Do you want disclose a potential security issue for Apache NiFi? Send your report to the [Apache NiFi Security Team](mailto:security@nifi.apache.org?subject=NiFi).
 
 You can read more about the security policy on:
 

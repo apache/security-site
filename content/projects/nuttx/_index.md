@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache NuttX? Send your report to the [Apache NuttX Security Team](mailto:security%40nuttx.apache.org?subject=%5BFINDING%5D%20Apache%20NuttX).
+Do you want disclose a potential security issue for Apache NuttX? Send your report to the [Apache NuttX Security Team](mailto:security@nuttx.apache.org?subject=NuttX).
 
 You can read more about the security policy on:
 

@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache ZooKeeper? Send your report to the [Apache ZooKeeper Security Team](mailto:security%40zookeeper.apache.org?subject=%5BFINDING%5D%20Apache%20ZooKeeper).
+Do you want disclose a potential security issue for Apache ZooKeeper? Send your report to the [Apache ZooKeeper Security Team](mailto:security@zookeeper.apache.org?subject=ZooKeeper).
 
 You can read more about the security policy on:
 

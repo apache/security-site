@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Ambari? Send your report to the [Apache Ambari Security Team](mailto:security%40ambari.apache.org?subject=%5BFINDING%5D%20Apache%20Ambari).
+Do you want disclose a potential security issue for Apache Ambari? Send your report to the [Apache Ambari Security Team](mailto:security@ambari.apache.org?subject=Ambari).
 
 # Advisories
 

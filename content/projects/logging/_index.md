@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Logging? Send your report to the [Apache Logging Security Team](mailto:security%40logging.apache.org?subject=%5BFINDING%5D%20Apache%20Logging).
+Do you want disclose a potential security issue for Apache Logging? Send your report to the [Apache Logging Security Team](mailto:security@logging.apache.org?subject=Logging).
 
 You can read more about the security policy on:
 

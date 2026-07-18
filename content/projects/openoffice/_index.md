@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache OpenOffice? Send your report to the [Apache OpenOffice Security Team](mailto:security%40openoffice.apache.org?subject=%5BFINDING%5D%20Apache%20OpenOffice).
+Do you want disclose a potential security issue for Apache OpenOffice? Send your report to the [Apache OpenOffice Security Team](mailto:security@openoffice.apache.org?subject=OpenOffice).
 
 You can read more about the security policy on:
 

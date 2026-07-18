@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Airflow? Send your report to the [Apache Airflow Security Team](mailto:security%40airflow.apache.org?subject=%5BFINDING%5D%20Apache%20Airflow).
+Do you want disclose a potential security issue for Apache Airflow? Send your report to the [Apache Airflow Security Team](mailto:security@airflow.apache.org?subject=Airflow).
 
 You can read more about the security policy on:
 

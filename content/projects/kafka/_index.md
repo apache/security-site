@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Kafka? Send your report to the [Apache Kafka Security Team](mailto:security%40kafka.apache.org?subject=%5BFINDING%5D%20Apache%20Kafka).
+Do you want disclose a potential security issue for Apache Kafka? Send your report to the [Apache Kafka Security Team](mailto:security@kafka.apache.org?subject=Kafka).
 
 You can read more about the security policy on:
 

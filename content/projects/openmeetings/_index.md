@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache OpenMeetings? Send your report to the [Apache OpenMeetings Security Team](mailto:security%40openmeetings.apache.org?subject=%5BFINDING%5D%20Apache%20OpenMeetings).
+Do you want disclose a potential security issue for Apache OpenMeetings? Send your report to the [Apache OpenMeetings Security Team](mailto:security@openmeetings.apache.org?subject=OpenMeetings).
 
 You can read more about the security policy on:
 

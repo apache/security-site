@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Hive? Send your report to the [Apache Hive Security Team](mailto:security%40hive.apache.org?subject=%5BFINDING%5D%20Apache%20Hive).
+Do you want disclose a potential security issue for Apache Hive? Send your report to the [Apache Hive Security Team](mailto:security@hive.apache.org?subject=Hive).
 
 You can read more about the security policy on:
 

@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache HTTP Server? Send your report to the [Apache HTTP Server Security Team](mailto:security%40httpd.apache.org?subject=%5BFINDING%5D%20Apache%20HTTP%20Server).
+Do you want disclose a potential security issue for Apache HTTP Server? Send your report to the [Apache HTTP Server Security Team](mailto:security@httpd.apache.org?subject=HTTP%20Server).
 
 You can read more about the security policy on:
 

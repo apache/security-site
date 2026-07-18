@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Velocity? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Velocity).
+Do you want disclose a potential security issue for Apache Velocity? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Velocity).
 
 You can read more about the security policy on:
 

@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Camel? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Camel).
+Do you want disclose a potential security issue for Apache Camel? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Camel).
 
 You can read more about the security policy on:
 

@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Any23? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Any23).
+Do you want disclose a potential security issue for Apache Any23? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Any23).
 
 # Advisories
 

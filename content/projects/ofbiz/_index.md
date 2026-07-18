@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache OFBiz? Send your report to the [Apache OFBiz Security Team](mailto:security%40ofbiz.apache.org?subject=%5BFINDING%5D%20Apache%20OFBiz).
+Do you want disclose a potential security issue for Apache OFBiz? Send your report to the [Apache OFBiz Security Team](mailto:security@ofbiz.apache.org?subject=OFBiz).
 
 You can read more about the security policy on:
 

@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Shiro? Send your report to the [Apache Shiro Security Team](mailto:security%40shiro.apache.org?subject=%5BFINDING%5D%20Apache%20Shiro).
+Do you want disclose a potential security issue for Apache Shiro? Send your report to the [Apache Shiro Security Team](mailto:security@shiro.apache.org?subject=Shiro).
 
 You can read more about the security policy on:
 

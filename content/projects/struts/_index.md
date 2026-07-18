@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Struts? Send your report to the [Apache Struts Security Team](mailto:security%40struts.apache.org?subject=%5BFINDING%5D%20Apache%20Struts).
+Do you want disclose a potential security issue for Apache Struts? Send your report to the [Apache Struts Security Team](mailto:security@struts.apache.org?subject=Struts).
 
 You can read more about the security policy on:
 

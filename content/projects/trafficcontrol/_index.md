@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Traffic Control? Send your report to the [Apache Traffic Control Security Team](mailto:security%40trafficcontrol.apache.org?subject=%5BFINDING%5D%20Apache%20Traffic%20Control).
+Do you want disclose a potential security issue for Apache Traffic Control? Send your report to the [Apache Traffic Control Security Team](mailto:security@trafficcontrol.apache.org?subject=Traffic%20Control).
 
 You can read more about the security policy on:
 

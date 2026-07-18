@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Guacamole? Send your report to the [Apache Guacamole Security Team](mailto:security%40guacamole.apache.org?subject=%5BFINDING%5D%20Apache%20Guacamole).
+Do you want disclose a potential security issue for Apache Guacamole? Send your report to the [Apache Guacamole Security Team](mailto:security@guacamole.apache.org?subject=Guacamole).
 
 You can read more about the security policy on:
 

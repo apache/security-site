@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Traffic Server? Send your report to the [Apache Traffic Server Security Team](mailto:security%40trafficserver.apache.org?subject=%5BFINDING%5D%20Apache%20Traffic%20Server).
+Do you want disclose a potential security issue for Apache Traffic Server? Send your report to the [Apache Traffic Server Security Team](mailto:security@trafficserver.apache.org?subject=Traffic%20Server).
 
 You can read more about the security policy on:
 

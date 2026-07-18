@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Subversion? Send your report to the [Apache Subversion Security Team](mailto:security%40subversion.apache.org?subject=%5BFINDING%5D%20Apache%20Subversion).
+Do you want disclose a potential security issue for Apache Subversion? Send your report to the [Apache Subversion Security Team](mailto:security@subversion.apache.org?subject=Subversion).
 
 You can read more about the security policy on:
 

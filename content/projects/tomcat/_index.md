@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Tomcat? Send your report to the [Apache Tomcat Security Team](mailto:security%40tomcat.apache.org?subject=%5BFINDING%5D%20Apache%20Tomcat).
+Do you want disclose a potential security issue for Apache Tomcat? Send your report to the [Apache Tomcat Security Team](mailto:security@tomcat.apache.org?subject=Tomcat).
 
 You can read more about the security policy on:
 

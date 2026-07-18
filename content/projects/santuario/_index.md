@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Santuario? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Santuario).
+Do you want disclose a potential security issue for Apache Santuario? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Santuario).
 
 You can read more about the security policy on:
 

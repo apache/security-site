@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache ShenYu? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20ShenYu).
+Do you want disclose a potential security issue for Apache ShenYu? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=ShenYu).
 
 You can read more about the security policy on:
 

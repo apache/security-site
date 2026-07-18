@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Hadoop? Send your report to the [Apache Hadoop Security Team](mailto:security%40hadoop.apache.org?subject=%5BFINDING%5D%20Apache%20Hadoop).
+Do you want disclose a potential security issue for Apache Hadoop? Send your report to the [Apache Hadoop Security Team](mailto:security@hadoop.apache.org?subject=Hadoop).
 
 You can read more about the security policy on:
 

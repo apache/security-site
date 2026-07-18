@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache HugeGraph? Send your report to the [Apache HugeGraph Security Team](mailto:security%40hugegraph.apache.org?subject=%5BFINDING%5D%20Apache%20HugeGraph).
+Do you want disclose a potential security issue for Apache HugeGraph? Send your report to the [Apache HugeGraph Security Team](mailto:security@hugegraph.apache.org?subject=HugeGraph).
 
 You can read more about the security policy on:
 

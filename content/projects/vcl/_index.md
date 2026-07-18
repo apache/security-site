@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache VCL? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20VCL).
+Do you want disclose a potential security issue for Apache VCL? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=VCL).
 
 # Advisories
 

@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Solr? Send your report to the [Apache Solr Security Team](mailto:security%40solr.apache.org?subject=%5BFINDING%5D%20Apache%20Solr).
+Do you want disclose a potential security issue for Apache Solr? Send your report to the [Apache Solr Security Team](mailto:security@solr.apache.org?subject=Solr).
 
 You can read more about the security policy on:
 

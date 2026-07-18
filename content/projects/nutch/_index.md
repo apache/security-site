@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Nutch? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20Nutch).
+Do you want disclose a potential security issue for Apache Nutch? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Nutch).
 
 You can read more about the security policy on:
 

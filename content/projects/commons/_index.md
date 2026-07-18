@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Commons? Send your report to the [Apache Commons Security Team](mailto:security%40commons.apache.org?subject=%5BFINDING%5D%20Apache%20Commons).
+Do you want disclose a potential security issue for Apache Commons? Send your report to the [Apache Commons Security Team](mailto:security@commons.apache.org?subject=Commons).
 
 You can read more about the security policy on:
 
