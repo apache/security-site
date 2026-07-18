@@ -49,7 +49,7 @@ layout: single
 
 Here is a list of pages ASF projects maintain to provide information on known security vulnerabilities. Each entry also has the security contact for reporting new vulnerabilities related to that project. Note that not all project security teams have a dedicated address for reporting new vulnerabilities.
 
-To report a vulnerability in an Apache project that is not listed below, contact the [Apache Security Team](mailto:security@apache.org?subject=%5BFINDING%5D%20Apache%20project%20name%20here).
+To report a vulnerability in an Apache project that is not listed below, contact the [Apache Security Team](mailto:security@apache.org?subject=Project%20name%20here).
 
 Use the tabs below to jump to projects by their initial. Every project lists a security contact; some also publish a security page and a list of advisories.
 """)
@@ -114,14 +114,13 @@ def project_md_lines(pmc, p):
         # The shared Security Team list handles every project, so name the
         # project in the subject to help routing.
         contact_addr = 'security@apache.org'
-        subject = '[FINDING] %s' % p['name']
     else:
         # A project-specific list already knows which project it is.
         contact_addr = p['contact']
-        subject = '[FINDING]'
+    quoted_subject = quote(display_name(p['name']))
     # Standard mailto: a bare address plus a prefilled subject, so no mail
     # client trips over a non-standard "Name <address>" recipient.
-    contact_href = 'mailto:%s?subject=%s' % (quote(contact_addr, safe='@'), quote(subject))
+    contact_href = 'mailto:%s?subject=%s' % (quote(contact_addr, safe='@'), quoted_subject)
     # Optional logo floated to the card's right (see custom.css). Only projects
     # that publish a logo carry a logo_link in project-coordinates.json; the
     # inline HTML <img> passes through Goldmark (unsafe=true) and the **name**
@@ -219,11 +218,11 @@ layout: single
     project_page.write('# Reporting\n\n')
     project_page.write('Do you want disclose a potential security issue for %s? ' % p['name'])
     project_page.write('Send your report to the ')
-    subject = '[FINDING] %s' % p['name']
+    quoted_subject = quote(display_name(p['name']))
     if not 'contact' in p.keys() or p['contact'] == 'security@apache.org':
-        project_page.write('[Apache Security Team](mailto:security@apache.org?subject=%s).' % quote(subject))
+        project_page.write('[Apache Security Team](mailto:security@apache.org?subject=%s).' % quoted_subject)
     else:
-        project_page.write('[%s Security Team](mailto:%s?subject=%s).' % (p['name'], quote(p['contact']), quote(subject)))
+        project_page.write('[%s Security Team](mailto:%s?subject=%s).' % (p['name'], quote(p['contact'], safe='@'), quoted_subject))
     if models:
         # A PMC that ships several projects publishes one security model per
         # project, so these are listed rather than woven into the sentence.
