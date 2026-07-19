@@ -6,11 +6,16 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Solr? You can read more about the projects' security policy on their [security page](https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity), and email your report to the [Apache Solr Security Team](mailto:security@solr.apache.org).
+Do you want disclose a potential security issue for Apache Solr? Send your report to the [Apache Solr Security Team](mailto:security@solr.apache.org?subject=Solr).
+
+You can read more about the security policy on:
+
+- [Apache Solr security model](https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity)
+
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
 ## Enabling BasicAuth using bin/solr CLI configures additional insecure users ## { #CVE-2026-44825 }

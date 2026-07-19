@@ -6,12 +6,47 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Logging? You can read more about the projects' security policy on their [security page](https://logging.apache.org/security.html), and email your report to the [Apache Logging Security Team](mailto:security@logging.apache.org).
+Do you want disclose a potential security issue for Apache Logging? Send your report to the [Apache Logging Security Team](mailto:security@logging.apache.org?subject=Logging).
+
+You can read more about the security policy on:
+
+- [Apache Logging security model](https://logging.apache.org/security.html)
+
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the [project security page](https://logging.apache.org/security.html). If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
+
+## Improper serialization of non-finite floating-point values in MapMessage.asJson() ## { #CVE-2026-49844 }
+
+CVE-2026-49844 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49844) [\[CVE json\]](./CVE-2026-49844.cve.json) [\[OSV json\]](./CVE-2026-49844.osv.json)
+
+
+
+_Last updated: 2026-07-10T21:14:52.822Z_
+
+### Affected
+
+* Apache Log4j API from 2.13.1 before 2.25.5
+* Apache Log4j API from 2.26.0 before 2.26.1
+* Apache Log4j API from 3.0.0-alpha1 through 3.0.0-beta2
+
+
+### Description
+
+<p>Improper encoding of non-finite floating-point values during <code>MapMessage</code> JSON serialization in Apache Log4j API produces output that is not valid JSON. This issue affects Apache Log4j API versions 2.13.1 through 2.25.4 and version 2.26.0.</p><p>The fix for CVE-2026-34481 did not cover all code paths: when a <code>MapMessage</code> contains a non-finite IEEE 754 value (<code>NaN</code>, <code>Infinity</code>, or <code>-Infinity</code>), <code>MapMessage.asJson()</code> emits the corresponding bare token. RFC 8259 does not permit these tokens, so a conformant parser rejects the resulting document.</p><p>The defect is reachable only when both of the following conditions hold:</p><ul><li>The application uses the <a target="_blank" rel="nofollow" href="https://logging.apache.org/log4j/2.x/manual/json-template-layout.html#event-template-resolver-message"><code>message</code> resolver</a> of <code>JsonTemplateLayout</code> or any other layout that relies on <code>MapMessage.asJson()</code> or <code>MapMessage.getFormattedMessage(new String[]{"JSON"})</code>.</li><li>The application logs a <code>MapMessage</code> that contains an attacker-controlled floating-point value.</li></ul><p>An attacker who can supply a non-finite value can cause the affected layout to emit malformed JSON, which may corrupt the enclosing log record or disrupt downstream log ingestion and parsing.</p><p>Users are advised to upgrade to Apache Log4j API 2.25.5 or 2.26.1, both of which emit RFC 8259-compliant JSON for non-finite values.</p>
+
+### References
+* https://logging.apache.org/log4j/2.x/manual/json-template-layout.html#event-template-resolver-message
+* https://github.com/apache/logging-log4j2/pull/4163
+* https://logging.apache.org/cyclonedx/vdr.xml
+* https://logging.apache.org/security.html#CVE-2026-49844
+
+
+### Credits
+* Himanshu Anand (finder)
+
 
 ## Silent log event loss in XMLLayout due to unescaped XML 1.0 forbidden characters ## { #CVE-2026-40023 }
 
@@ -79,7 +114,7 @@ CVE-2026-34481 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34481) [\[CVE jso
 
 
 
-_Last updated: 2026-07-06T09:02:11.538Z_
+_Last updated: 2026-07-11T04:55:35.716Z_
 
 ### Affected
 

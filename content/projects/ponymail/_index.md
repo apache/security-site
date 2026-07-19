@@ -1,12 +1,12 @@
 ---
-title: Apache Pony Mail (Incubating) security advisories
-description: Security information for Apache Pony Mail (Incubating)
+title: Apache Pony Mail security advisories
+description: Security information for Apache Pony Mail
 layout: single
 ---
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Pony Mail (Incubating)? Send your report to the [Apache Security Team](mailto:security@apache.org).
+Do you want disclose a potential security issue for Apache Pony Mail? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Pony%20Mail).
 
 # Advisories
 

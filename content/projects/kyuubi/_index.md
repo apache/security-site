@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Kyuubi? Send your report to the [Apache Kyuubi Security Team](mailto:security@kyuubi.apache.org).
+Do you want disclose a potential security issue for Apache Kyuubi? Send your report to the [Apache Kyuubi Security Team](mailto:security@kyuubi.apache.org?subject=Kyuubi).
 
 # Advisories
 

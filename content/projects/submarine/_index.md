@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Submarine? Send your report to the [Apache Security Team](mailto:security@apache.org).
+Do you want disclose a potential security issue for Apache Submarine? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Submarine).
 
 # Advisories
 
@@ -19,7 +19,7 @@ CVE-2024-36265 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-36265) [\[CVE jso
 
 
 
-_Last updated: 2024-06-12T14:12:08.874Z_
+_Last updated: 2026-07-14T09:56:45.149Z_
 
 ### Affected
 

@@ -6,12 +6,40 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Accumulo? Send your report to the [Apache Security Team](mailto:security@apache.org).
+Do you want disclose a potential security issue for Apache Accumulo? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Accumulo).
 
 # Advisories
 
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
+
+## A user can trigger a graceful shutdown of services without the relevant system permissions ## { #CVE-2026-62764 }
+
+CVE-2026-62764 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-62764) [\[CVE json\]](./CVE-2026-62764.cve.json) [\[OSV json\]](./CVE-2026-62764.osv.json)
+
+
+
+_Last updated: 2026-07-17T08:35:41.303Z_
+
+### Affected
+
+* Apache Accumulo from 2.1.4 through 2.1.5
+
+
+### Description
+
+<p>Improper Handling of Insufficient Privileges vulnerability in Apache Accumulo.<br>An authenticated, but low-privileged user without system permissions may<br>issue a remote command to gracefully shutdown system components<br>(compaction-coordinator, compactor, gc, manager, monitor, tserver, or sserver),<br>leading to a denial of service.</p><p>This issue affects Apache Accumulo 2.1.4 and 2.1.5.</p><p>Users are recommended to upgrade to version 2.1.6, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/accumulo/issues/6478
+* https://accumulo.apache.org/release/accumulo-2.1.6/
+* https://accumulo.apache.org/downloads/
+* https://lists.apache.org/thread/qclg736k93oqn4qrpw9wxjbb3jhn6gm1
+
+
+### Credits
+* Fabian Fleischer (reporter)
+
 
 ## Accumulo 2.1.0 may incorrectly validate cached credentials ## { #CVE-2023-34340 }
 

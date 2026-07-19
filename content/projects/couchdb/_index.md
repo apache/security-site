@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache CouchDB? Send your report to the [Apache CouchDB Security Team](mailto:security@couchdb.apache.org).
+Do you want disclose a potential security issue for Apache CouchDB? Send your report to the [Apache CouchDB Security Team](mailto:security@couchdb.apache.org?subject=CouchDB).
 
 # Advisories
 
