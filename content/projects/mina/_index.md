@@ -13,6 +13,110 @@ Do you want disclose a potential security issue for Apache MINA? Send your repor
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Remote execution of JGit commands can write files on the server ## { #CVE-2026-58624 }
+
+CVE-2026-58624 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58624) [\[CVE json\]](./CVE-2026-58624.cve.json) [\[OSV json\]](./CVE-2026-58624.osv.json)
+
+
+
+_Last updated: 2026-07-20T20:27:36.709Z_
+
+### Affected
+
+* Apache MINA SSHD from 2.0.0 through 2.18.0
+* Apache MINA SSHD from 3.0.0-M1 through 3.0.0-M4
+
+
+### Description
+
+<div>Improper input validation in sshd-git in Apache MINA SSHD. Apache MINA SSHD is a Java library for client-side and server-side SSH.</div><div><br></div><div>Component org.apache.sshd:sshd-git provides though its GitPgmCommandFactory a way to configure an Apache MINA SSHD server such that SSH clients can remotely execute git commands via the JGit library on git repositories stored on the server.</div><div><br></div><div>This GitPgmCommandFactory allowed a user authenticated via SSH to run any JGit command available, including commands that could write files at arbitrary places such as git archive with the --output option.</div><div><br></div><div>Affected are SSH servers implemented with Apache MINA SSHD and using the GitPgmCommandFactory. If the GitPgmCommandFactory is not configured on the server, the server is not affected.</div><div><br></div><div>It is recommended to upgrade affected servers to Apache MINA SSHD 2.19.0 or 3.0.0-M5, which fix this issue.</div><div><br></div><div>The issue is fixed by restricting the available commands to a small whitelist of uncritical commands (such as git log). git archive is also allowed, but its --output argument is ignored and the archive is always sent through the SSH channel to the client.<br></div>
+
+### References
+* https://lists.apache.org/thread/7c3cry6pdy6hj1q0f28rc72x4o4tlyjo
+
+
+### Credits
+* Unbbal (finder)
+
+
+## SSH certificate options lack validations ## { #CVE-2026-56624 }
+
+CVE-2026-56624 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-56624) [\[CVE json\]](./CVE-2026-56624.cve.json) [\[OSV json\]](./CVE-2026-56624.osv.json)
+
+
+
+_Last updated: 2026-07-20T20:28:23.266Z_
+
+### Affected
+
+* Apache MINA SSHD from 2.0.0 through 2.18.0
+* Apache MINA SSHD from 3.0.0-M1 through 3.0.0-M4
+
+
+### Description
+
+<div>Improper certificate validation in Apache MINA SSHD (server-side).&nbsp;Apache MINA SSHD is a Java library for client-side and server-side SSH.</div><div><br></div><div>Server-side OpenSSH user certificate validation during user authentication in an Apache MINA SSHD server did not check for the unsupported force-command or verify-required options that could be embedded in the certificate, nor did it validate these options. As a result it was possible that a user could authenticate with such a certificate that included a force-command option but still was able to execute other commands. What other command exactly would be available to the user depends on the implementation of the server.</div><div><br></div><div>This issue is fixed in Apache MINA SSHD 2.19.0 and 3.0.0-M5. Applications are advised to upgrade to these versions.</div><div><br></div><div>The fix rejects OpenSSH user certificates that include these options, since Apache MINA SSHD implements neither force-command nor sk-*-cert-v01@openssh.com user certificates (which are the only ones for which verify-required would make sense).</div>
+
+### References
+* https://lists.apache.org/thread/o4c2jml522j3z80gbryqzc2f1253ltp6
+
+
+### Credits
+* Mitchell Benjamin (finder)
+
+
+## Path traversal in org.apache.sshd:sshd-git on Windows ## { #CVE-2026-56623 }
+
+CVE-2026-56623 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-56623) [\[CVE json\]](./CVE-2026-56623.cve.json) [\[OSV json\]](./CVE-2026-56623.osv.json)
+
+
+
+_Last updated: 2026-07-20T20:29:07.039Z_
+
+### Affected
+
+* Apache MINA SSHD from 2.0.0 through 2.18.0
+* Apache MINA SSHD from 3.0.0-M1 through 3.0.0-M4
+
+
+### Description
+
+<div>Path traversal on Windows in Apache MINA SSHD component sshd-git.&nbsp;Apache MINA SSHD is a Java library for client-side and server-side SSH.</div><div><br></div><div>A git server implemented with Apache MINA SSHD component sshd-git and running on Windows could allow an authenticated remote user access to git repositories outside of the configured server-side root directory. The path validation applied for&nbsp;CVE-2026-48827 in Apache MINA SSHD 2.18.0 and 3.0.0-M4 was partly ineffective for Servers running on Windows.</div><div><br></div><div><div>Applications are affected if they use org.apache.sshd:sshd-git to implement a git server and run on Windows. Applications not using sshd-git or not running on Windows are not affected.</div><div><br></div><div>Users are advised to upgrade affected applications to Apache MINA SSHD 2.19.0, which fixes the issue.</div><div><br></div><div>The issue also is present in the pre-release milestones 3.0.0-M1 to 3.0.0-M4 for a new upcoming new major version 3.0.0. Again, applications are affected only if they use sshd-git and run on Windows. Upgrade affected applications to 3.0.0-M5.</div><div></div></div>
+
+### References
+* https://lists.apache.org/thread/bhw26snzgvk0mtqqp5dcyjvczp4kcqky
+
+
+### Credits
+* Unbbal (finder)
+
+
+## Path traversal in SCP file reception ## { #CVE-2026-56452 }
+
+CVE-2026-56452 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-56452) [\[CVE json\]](./CVE-2026-56452.cve.json) [\[OSV json\]](./CVE-2026-56452.osv.json)
+
+
+
+_Last updated: 2026-07-20T20:26:25.352Z_
+
+### Affected
+
+* Apache MINA SSHD through 2.18.0
+* Apache MINA SSHD from 3.0.0-M1 through 3.0.0-M4
+
+
+### Description
+
+<div>Path traversal in the sshd-scp component of Apache MINA SSHD.&nbsp;Apache MINA SSHD is a Java library for client-side and server-side SSH.</div><div><br></div><div>The implementation of receiving files or directories via SCP did not validate filenames in SCP "C" or "D" commands. A malicious sender could send filenames containing paths, resulting in files to be written in attacker-controlled places.</div><div><br></div><div>The issue affects only</div><div><ul><li>applications that use no longer supported Apache MINA SSHD versions &lt; 2.0.0 and use the SCP functions to receive files,</li><li>or applications using sshd-scp in Apache MINA SSHD &gt;= 2.0.0 to receive files.</li></ul></div><div>Applications using Apache MINA SSHD &gt;= 2.0.0 not using sshd-scp are not affected.</div><div><br></div><div>The issue is fixed in Apache MINA 2.19.0 and 3.0.0-M5. Affected applications are advised to upgrade to these versions.<br></div><div><br></div>
+
+### References
+* https://lists.apache.org/thread/xgoqvmksmd94fsqnzqjdtfjxf35os9no
+
+
+### Credits
+* Unbbal (finder)
+
+
 ## Path traversal in org.apache.sshd:sshd-git ## { #CVE-2026-48827 }
 
 CVE-2026-48827 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48827) [\[CVE json\]](./CVE-2026-48827.cve.json) [\[OSV json\]](./CVE-2026-48827.osv.json)

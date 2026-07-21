@@ -24,7 +24,7 @@ CVE-2026-59245 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59245) [\[CVE jso
 
 
 
-_Last updated: 2026-07-13T15:05:19.788Z_
+_Last updated: 2026-07-19T16:30:45.992Z_
 
 ### Affected
 
@@ -51,7 +51,7 @@ CVE-2026-58065 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58065) [\[CVE jso
 
 
 
-_Last updated: 2026-07-13T15:00:48.144Z_
+_Last updated: 2026-07-19T16:29:11.369Z_
 
 ### Affected
 

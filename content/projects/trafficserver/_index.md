@@ -18,6 +18,32 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## DoS vulnerability in HTTP/2 via stalled flow-control conditions ## { #CVE-2026-59173 }
+
+CVE-2026-59173 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59173) [\[CVE json\]](./CVE-2026-59173.cve.json) [\[OSV json\]](./CVE-2026-59173.osv.json)
+
+
+
+_Last updated: 2026-07-18T12:52:08.684Z_
+
+### Affected
+
+* Apache Traffic Server from 9.0.0 through 9.2.13
+* Apache Traffic Server from 10.0.0 through 10.1.2
+
+
+### Description
+
+<p>Uncontrolled Resource Consumption vulnerability in Apache Traffic Server.</p><p>This issue affects Apache Traffic Server: from 9.0.0 through 9.1.13, from 10.0.0 through 10.1.2.</p><p>Users are recommended to upgrade to version 9.1.14 or 10.1.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/lhlbhphmv5dsfgx1fx84mgonzbocpzhd
+
+
+### Credits
+* Okta Red Team (reporter)
+
+
 ## Malformed chunked message body allows request smuggling ## { #CVE-2025-65114 }
 
 CVE-2025-65114 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-65114) [\[CVE json\]](./CVE-2025-65114.cve.json) [\[OSV json\]](./CVE-2025-65114.osv.json)

@@ -18,6 +18,108 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Out-of-Bounds Read via sun.misc.Unsafe in zero-copy java deserialization ## { #CVE-2026-64609 }
+
+CVE-2026-64609 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-64609) [\[CVE json\]](./CVE-2026-64609.cve.json) [\[OSV json\]](./CVE-2026-64609.osv.json)
+
+
+
+_Last updated: 2026-07-21T09:34:51.016Z_
+
+### Affected
+
+* Apache Fory from 0.11.0 before 1.4.0
+* Apache Fory from 0.5.0 before 0.11.0
+
+
+### Description
+
+<span style="background-color: rgb(255, 255, 255);">Out-of-bounds read via sun.misc.Unsafe in Apache Fory. When out-of-band zero-copy deserialization is used, readAlignedVarUint() can read beyond the bounds of the underlying buffer. Out-of-band zero-copy deserialization is an opt-in feature; applications that do not use it are not affected.</span><br><br><span style="background-color: rgb(255, 255, 255);">This issue affects Apache Fory (formerly Apache Fury): from 0.5.0 before 1.4.0. Versions before 0.11.0 were published under the Maven coordinates org.apache.fury:fury-core.</span><br><br><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 1.4.0, which fixes the issue.</span><br>
+
+### References
+* https://lists.apache.org/thread/rdv22ks3b0cxh0r52w3ghxgkxqso3f1b
+
+
+### Credits
+* Feng Ning from Innora Security Research (reporter)
+
+
+## Heap type confusion and out-of-bounds read/write in C++ compatible-mode field-skip paths ## { #CVE-2026-64608 }
+
+CVE-2026-64608 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-64608) [\[CVE json\]](./CVE-2026-64608.cve.json) [\[OSV json\]](./CVE-2026-64608.osv.json)
+
+
+
+_Last updated: 2026-07-21T09:34:04.322Z_
+
+### Affected
+
+* Apache Fory from 0.14.0 before 1.4.0
+
+
+### Description
+
+Heap type confusion and out-of-bounds read/write in the Apache Fory C++ implementation. When deserializing data in compatible mode, the field-skip paths do not correctly validate the declared field types against the actual data, so input with an inconsistent schema can cause type confusion and out-of-bounds memory access. Only the C++ implementation is affected; other language implementations of Apache Fory are not.<br><br>This issue affects Apache Fory C++: from 0.14.0 before 1.4.0.<br><br>Users are recommended to upgrade to version 1.4.0, which fixes the issue.<br>
+
+### References
+* https://lists.apache.org/thread/wl05slf57zzoq1s4pg4tk6nx6mjyjr4b
+
+
+### Credits
+* Nguyen Van Hiep (@hypnguyen1209) from MBBank (reporter)
+
+
+## Class-registration bypass through an auto-admitted SerializedLambda capturing interface ## { #CVE-2026-64606 }
+
+CVE-2026-64606 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-64606) [\[CVE json\]](./CVE-2026-64606.cve.json) [\[OSV json\]](./CVE-2026-64606.osv.json)
+
+
+
+_Last updated: 2026-07-21T10:43:47.368Z_
+
+### Affected
+
+* Apache Fory from 0.11.0 before 1.4.0
+* Apache Fory from 0.5.0 before 0.11.0
+
+
+### Description
+
+<p>Deserialization of untrusted data vulnerability that may allow class-registration checks to be bypassed during Java lambda deserialization. Only lambda capture class is affected<br></p><p>This issue affects Apache Fory: from before 1.4.0.</p><p>Users are recommended to upgrade to version 1.4.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/py6fbvm9nk1gxdd85rbzbozwzfh0jrsc
+
+
+### Credits
+* Charles Vosburgh (reporter)
+
+
+## Rust MetaString heap use-after-free ## { #CVE-2026-60080 }
+
+CVE-2026-60080 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-60080) [\[CVE json\]](./CVE-2026-60080.cve.json) [\[OSV json\]](./CVE-2026-60080.osv.json)
+
+
+
+_Last updated: 2026-07-21T10:54:15.045Z_
+
+### Affected
+
+* Apache Fory from 0.13.0 through 1.3.0
+
+
+### Description
+
+<p></p>Use After Free vulnerability in the Rust deserialization logic of Apache Fory. This issue affects Apache Fory from 0.13.0 through 1.3.0.<br><br> A crafted Fory payload could cause undefined behavior, process crash, or potential memory disclosure.<br><br>Users are recommended to upgrade to version 1.4.0, which fixes the issue.<br>
+
+### References
+* https://lists.apache.org/thread/svnq03f3ls7vsgk8md4hjmmw1z6stbvy
+
+
+### Credits
+* Nguyen Van Hiep (@hypnguyen1209) from MBBank (reporter)
+
+
 ## Java ReplaceResolverSerializer deserialization checks bypass ## { #CVE-2026-50076 }
 
 CVE-2026-50076 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50076) [\[CVE json\]](./CVE-2026-50076.cve.json) [\[OSV json\]](./CVE-2026-50076.osv.json)
