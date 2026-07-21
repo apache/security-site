@@ -109,72 +109,142 @@
 </ul>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-64609">Out-of-Bounds Read via sun.misc.Unsafe in zero-copy java deserialization</h2>
+<p>CVE-2026-64609 <a href="https://cve.org/CVERecord?id=CVE-2026-64609">[CVE]</a> <a href="./CVE-2026-64609.cve.json">[CVE json]</a> <a href="./CVE-2026-64609.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-21T09:34:51.016Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Fory from 0.11.0 before 1.4.0</li>
+<li>Apache Fory from 0.5.0 before 0.11.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p><span style="background-color: rgb(255, 255, 255);">Out-of-bounds read via sun.misc.Unsafe in Apache Fory. When out-of-band zero-copy deserialization is used, readAlignedVarUint() can read beyond the bounds of the underlying buffer. Out-of-band zero-copy deserialization is an opt-in feature; applications that do not use it are not affected.</span><br><br><span style="background-color: rgb(255, 255, 255);">This issue affects Apache Fory (formerly Apache Fury): from 0.5.0 before 1.4.0. Versions before 0.11.0 were published under the Maven coordinates org.apache.fury:fury-core.</span><br><br><span style="background-color: rgb(255, 255, 255);">Users are recommended to upgrade to version 1.4.0, which fixes the issue.</span><br></p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/rdv22ks3b0cxh0r52w3ghxgkxqso3f1b">https://lists.apache.org/thread/rdv22ks3b0cxh0r52w3ghxgkxqso3f1b</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Feng Ning from Innora Security Research (reporter)</li>
+</ul>
+<h2 id="CVE-2026-64608">Heap type confusion and out-of-bounds read/write in C++ compatible-mode field-skip paths</h2>
+<p>CVE-2026-64608 <a href="https://cve.org/CVERecord?id=CVE-2026-64608">[CVE]</a> <a href="./CVE-2026-64608.cve.json">[CVE json]</a> <a href="./CVE-2026-64608.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-21T09:34:04.322Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Fory from 0.14.0 before 1.4.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Heap type confusion and out-of-bounds read/write in the Apache Fory C++ implementation. When deserializing data in compatible mode, the field-skip paths do not correctly validate the declared field types against the actual data, so input with an inconsistent schema can cause type confusion and out-of-bounds memory access. Only the C++ implementation is affected; other language implementations of Apache Fory are not.<br><br>This issue affects Apache Fory C++: from 0.14.0 before 1.4.0.<br><br>Users are recommended to upgrade to version 1.4.0, which fixes the issue.<br></p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/wl05slf57zzoq1s4pg4tk6nx6mjyjr4b">https://lists.apache.org/thread/wl05slf57zzoq1s4pg4tk6nx6mjyjr4b</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Nguyen Van Hiep (@hypnguyen1209) from MBBank (reporter)</li>
+</ul>
+<h2 id="CVE-2026-64606">Class-registration bypass through an auto-admitted SerializedLambda capturing interface</h2>
+<p>CVE-2026-64606 <a href="https://cve.org/CVERecord?id=CVE-2026-64606">[CVE]</a> <a href="./CVE-2026-64606.cve.json">[CVE json]</a> <a href="./CVE-2026-64606.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-21T10:43:47.368Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Fory from 0.11.0 before 1.4.0</li>
+<li>Apache Fory from 0.5.0 before 0.11.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Deserialization of untrusted data vulnerability that may allow class-registration checks to be bypassed during Java lambda deserialization. Only lambda capture class is affected<br></p><p>This issue affects Apache Fory: from before 1.4.0.</p><p>Users are recommended to upgrade to version 1.4.0, which fixes the issue.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/py6fbvm9nk1gxdd85rbzbozwzfh0jrsc">https://lists.apache.org/thread/py6fbvm9nk1gxdd85rbzbozwzfh0jrsc</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Charles Vosburgh (reporter)</li>
+</ul>
+<h2 id="CVE-2026-60080">Rust MetaString heap use-after-free</h2>
+<p>CVE-2026-60080 <a href="https://cve.org/CVERecord?id=CVE-2026-60080">[CVE]</a> <a href="./CVE-2026-60080.cve.json">[CVE json]</a> <a href="./CVE-2026-60080.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-21T10:54:15.045Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Fory from 0.13.0 through 1.3.0</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p></p>Use After Free vulnerability in the Rust deserialization logic of Apache Fory. This issue affects Apache Fory from 0.13.0 through 1.3.0.<br><br> A crafted Fory payload could cause undefined behavior, process crash, or potential memory disclosure.<br><br>Users are recommended to upgrade to version 1.4.0, which fixes the issue.<br>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/svnq03f3ls7vsgk8md4hjmmw1z6stbvy">https://lists.apache.org/thread/svnq03f3ls7vsgk8md4hjmmw1z6stbvy</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Nguyen Van Hiep (@hypnguyen1209) from MBBank (reporter)</li>
+</ul>
 <h2 id="CVE-2026-50076">Java ReplaceResolverSerializer deserialization checks bypass</h2>
 <p>CVE-2026-50076 <a href="https://cve.org/CVERecord?id=CVE-2026-50076">[CVE]</a> <a href="./CVE-2026-50076.cve.json">[CVE json]</a> <a href="./CVE-2026-50076.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-06-04T09:08:27.361Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-4">Affected</h3>
 <ul>
 <li>Apache Fory before 1.1.0</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-4">Description</h3>
 <p>Deserialization of Untrusted Data in the Java replace-resolve path in Apache Fory fory-core Java SDK before 1.1.0 on Java/JVM platforms allows a remote attacker to bypass class registration, TypeChecker, and DisallowedList checks and invoke classpath-present readResolve/readExternal hooks via crafted Fory serialized data.</p><p>Users are recommended to upgrade to version 1.1.0 or later, which fixes this issue.</p><br>
-<h3 id="references">References</h3>
+<h3 id="references-4">References</h3>
 <ul>
 <li><a href="https://fory.apache.org/security">https://fory.apache.org/security</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-4">Credits</h3>
 <ul>
 <li>Venkatraman Kumar (r3dw0lfsec), Securin (reporter)</li>
 </ul>
 <h2 id="CVE-2026-48207">PyFory ReduceSerializer Incomplete Policy Enforcement</h2>
 <p>CVE-2026-48207 <a href="https://cve.org/CVERecord?id=CVE-2026-48207">[CVE]</a> <a href="./CVE-2026-48207.cve.json">[CVE json]</a> <a href="./CVE-2026-48207.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-21T12:44:21.497Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-5">Affected</h3>
 <ul>
 <li>Apache Fory from 0.13.0 before 1.0.0</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-5">Description</h3>
 <p><span style="background-color: rgb(255, 255, 255);">Deserialization of untrusted data in Apache Fory PyFory. PyFory's ReduceSerializer could bypass documented DeserializationPolicy validation hooks during reduce-state restoration and global-name resolution. An application is vulnerable if it deserializes attacker-controlled data using PyFory Python-native mode with strict mode disabled and relies on DeserializationPolicy to restrict unsafe classes, functions, or module attributes.</span></p><p>This issue affects Apache Fory: from before 1.0.0.</p><p><span style="background-color: rgb(255, 255, 255);">Mitigation: Users of Apache Fory are recommended to upgrade to version 1.0.0 or later, which enforces DeserializationPolicy validation for the affected ReduceSerializer paths and thus fixes this issue.</span><br><br><br></p>
-<h3 id="references-1">References</h3>
+<h3 id="references-5">References</h3>
 <ul>
 <li><a href="https://fory.apache.org/security/#cve-2026-48207-pyfory-reduceserializer-deserializationpolicy-bypass">https://fory.apache.org/security/#cve-2026-48207-pyfory-reduceserializer-deserializationpolicy-bypass</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-5">Credits</h3>
 <ul>
 <li>Lide Wen (reporter)</li>
 </ul>
 <h2 id="CVE-2025-61622">Python RCE via unguarded pickle fallback serializer in pyfory</h2>
 <p>CVE-2025-61622 <a href="https://cve.org/CVERecord?id=CVE-2025-61622">[CVE]</a> <a href="./CVE-2025-61622.cve.json">[CVE json]</a> <a href="./CVE-2025-61622.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-10-04T14:58:38.087Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-6">Affected</h3>
 <ul>
 <li>Apache Fory from 0.12.0 through 0.12.2</li>
 <li>Apache Fory from 0.1.0 through 0.10.3</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-6">Description</h3>
 <p><span style="background-color: rgb(255, 255, 255);">Deserialization of untrusted data in python in <span style="background-color: rgb(255, 255, 255);">pyfory </span>versions 0.12.0 through 0.12.2, or the <span style="background-color: rgb(255, 255, 255);">legacy <span style="background-color: rgb(255, 255, 255);">pyfury versions from</span></span><span style="background-color: rgb(255, 255, 255);"> 0.1.0 through 0.10.3:</span> allows arbitrary code execution. An application is vulnerable if it reads pyfory serialized data from untrusted sources. <span style="background-color: rgb(255, 255, 255);">An attacker can craft a data stream that selects pickle-fallback serializer during deserialization, leading to the execution of <code>pickle.loads</code>, which is vulnerable to <span style="background-color: rgb(255, 255, 255);">remote code execution.<br><br>Users are recommended to upgrade to pyfory version 0.12.3 or later, which has removed pickle fallback serializer and thus fixes this issue.<br></span></span></span><br></p>
-<h3 id="references-2">References</h3>
+<h3 id="references-6">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/vfn9hp9qt06db5yo1gmj3l114o3o2csd">https://lists.apache.org/thread/vfn9hp9qt06db5yo1gmj3l114o3o2csd</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-6">Credits</h3>
 <ul>
 <li>bugbunny.ai (reporter)</li>
 </ul>
 <h2 id="CVE-2025-59328">Denial of Service (DoS) due to Deserialization of Untrusted malicious large Data</h2>
 <p>CVE-2025-59328 <a href="https://cve.org/CVERecord?id=CVE-2025-59328">[CVE]</a> <a href="./CVE-2025-59328.cve.json">[CVE json]</a> <a href="./CVE-2025-59328.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-09-15T16:26:55.892Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-7">Affected</h3>
 <ul>
 <li>Apache Fory from 0.5.0 through 0.12.1</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-7">Description</h3>
 <p></p><p>A vulnerability in Apache Fory allows a remote attacker to cause a Denial of Service (DoS). The issue stems from the insecure deserialization of untrusted data. An attacker can supply a <strong>large, specially crafted data payload</strong>&nbsp;that, when processed, consumes an excessive amount of CPU resources during the deserialization process. This leads to CPU exhaustion, rendering the application or system using the Apache Fory library unresponsive and unavailable to legitimate users.</p><p>Users of Apache Fory are strongly advised to upgrade to version <strong>0.12.2 or later</strong>&nbsp;to mitigate this vulnerability. Developers of libraries and applications that depend on Apache Fory should update their dependency requirements to Apache Fory <strong>0.12.2 or later</strong>&nbsp;and release new versions of their software.</p><p></p>
-<h3 id="references-3">References</h3>
+<h3 id="references-7">References</h3>
 <ul>
 <li><a href="https://fory.apache.org/security/">https://fory.apache.org/security/</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits-7">Credits</h3>
 <ul>
 <li>r00t4dm of meituan security (reporter)</li>
 </ul>
