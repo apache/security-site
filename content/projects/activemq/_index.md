@@ -10,7 +10,7 @@ Do you want disclose a potential security issue for Apache ActiveMQ? Send your r
 
 You can read more about the security policy on:
 
-- [Apache ActiveMQ security model](https://github.com/apache/activemq/security/policy)
+- [Apache ActiveMQ security model](https://github.com/apache/activemq/blob/main/THREAT_MODEL.md)
 
 
 # Advisories

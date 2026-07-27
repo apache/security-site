@@ -10,7 +10,7 @@ Do you want disclose a potential security issue for Apache DolphinScheduler? Sen
 
 You can read more about the security policy on:
 
-- [Apache DolphinScheduler security model](https://github.com/apache/dolphinscheduler/blob/dev/docs/docs/en/contribute/join/security.md)
+- [Apache DolphinScheduler security model](https://github.com/apache/dolphinscheduler/blob/dev/docs/docs/en/contribute/join/security-model.md)
 
 
 # Advisories

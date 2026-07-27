@@ -10,7 +10,7 @@ Do you want disclose a potential security issue for Apache Kafka? Send your repo
 
 You can read more about the security policy on:
 
-- [Apache Kafka security model](https://kafka.apache.org/project-security.html)
+- [Apache Kafka security model](https://github.com/apache/kafka/blob/trunk/docs/security/security-model.md)
 
 
 # Advisories

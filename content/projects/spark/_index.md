@@ -10,7 +10,7 @@ Do you want disclose a potential security issue for Apache Spark? Send your repo
 
 You can read more about the security policy on:
 
-- [Apache Spark security model](https://spark.apache.org/security.html)
+- [Apache Spark security model](https://spark.apache.org/docs/latest/security.html)
 
 
 # Advisories

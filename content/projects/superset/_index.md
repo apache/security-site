@@ -11,11 +11,12 @@ Do you want disclose a potential security issue for Apache Superset? Send your r
 You can read more about the security policy on:
 
 - [Apache Superset security model](https://github.com/apache/superset/security/policy)
+- [Apache Superset Kubernetes Operator security model](https://github.com/apache/superset-kubernetes-operator/blob/main/docs/reference/security.md)
 
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
 ## SQLLab Read-Only Bypass on PostgreSQL ## { #CVE-2026-23984 }

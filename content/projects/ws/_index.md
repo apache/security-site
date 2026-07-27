@@ -8,10 +8,93 @@ layout: single
 
 Do you want disclose a potential security issue for Apache Web Services? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Web%20Services).
 
+You can read more about the security policy on:
+
+- [Apache Axiom security model](https://github.com/apache/ws-axiom/blob/master/THREAT-MODEL.md)
+- [Apache XmlSchema security model](https://github.com/apache/ws-xmlschema/blob/master/THREAT-MODEL.md)
+- [Apache Neethi security model](https://github.com/apache/ws-neethi/blob/master/THREAT-MODEL.md)
+- [Apache WSS4J security model](https://github.com/apache/ws-wss4j/blob/master/THREAT-MODEL.md)
+
+
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
+
+## Remote PolicyReference fetch lacks resource bounds ## { #CVE-2026-66144 }
+
+CVE-2026-66144 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66144) [\[CVE json\]](./CVE-2026-66144.cve.json) [\[OSV json\]](./CVE-2026-66144.osv.json)
+
+
+
+_Last updated: 2026-07-24T12:08:26.736Z_
+
+### Affected
+
+* Apache Neethi before 3.2.3
+
+
+### Description
+
+Although remote policy references are not retrieved during policy normalization, if they are manually retrieved via the API it can cause a denial of service attack if a huge policy is retrieved. Users are recommended to upgrade to version 3.2.3, which fixes this issue by imposing a default maximum size on data read from remote policy references.
+
+### References
+* https://lists.apache.org/thread/80xwwbhkqvbwkkmco6yl6fr5xkpdysjf
+
+
+### Credits
+* Reported by LTSHFWJT (finder)
+
+
+## Missing global alternative-output budget across policy computation paths ## { #CVE-2026-66143 }
+
+CVE-2026-66143 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66143) [\[CVE json\]](./CVE-2026-66143.cve.json) [\[OSV json\]](./CVE-2026-66143.osv.json)
+
+
+
+_Last updated: 2026-07-24T12:07:51.381Z_
+
+### Affected
+
+* Apache Neethi before 3.2.3
+
+
+### Description
+
+It is possible to bypass the&nbsp;<span style="background-color: rgb(255, 255, 255);">maximum number of normalized policy alternatives that was introduced in Apache Neethi 3.2.2 via certain crafted policies, which may lead to a denial of service attack via resource consumption.&nbsp;</span>Users are recommended to upgrade to version 3.2.3, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/s6o6p5pvcbcsk54dlg6j699t5gxol28w
+
+
+### Credits
+* Reported by LTSHFWJT (finder)
+
+
+## Uncontrolled recursion in policy processing ## { #CVE-2026-66142 }
+
+CVE-2026-66142 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66142) [\[CVE json\]](./CVE-2026-66142.cve.json) [\[OSV json\]](./CVE-2026-66142.osv.json)
+
+
+
+_Last updated: 2026-07-24T12:07:24.609Z_
+
+### Affected
+
+* Apache Neethi before 3.2.3
+
+
+### Description
+
+Apache Neethi is vulnerable to uncontrolled recursion when parsing policies that lack policy Ids or with deeply nested structures, which may lead to a denial of service attack when parsing policies due to runtime memory exhaustion. Users are recommended to upgrade to version 3.2.3, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/fomwtwt4pzzhxn4fyn3skykto913vfzt
+
+
+### Credits
+* Reported by LTSHFWJT (finder)
+
 
 ## Unrestricted HTTP Redirect Following in Policy References ## { #CVE-2026-42404 }
 

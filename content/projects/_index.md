@@ -55,7 +55,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - Advisories:\
     [activemq.apache.org](https://activemq.apache.org/security-advisories)
   - Security model:
-    - [Apache ActiveMQ security model](https://github.com/apache/activemq/security/policy)
+    - [Apache ActiveMQ security model](https://github.com/apache/activemq/blob/main/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/age/default.png" alt="" loading="lazy"> **Apache AGE**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=AGE)
@@ -103,7 +103,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - Advisories (experimental):\
     [security.apache.org](/projects/apisix/)
   - Security model:
-    - [Apache APISIX security model](https://github.com/apache/apisix/blob/master/THREAT_MODEL.md)
+    - [Apache APISIX security model](https://github.com/apache/apisix/blob/master/docs/en/latest/security-threat-model.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/aries/default.png" alt="" loading="lazy"> **Apache Aries**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Aries)
@@ -145,8 +145,10 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Axis)
   - Advisories (experimental):\
     [security.apache.org](/projects/axis/)
-  - Security model:
-    - [Apache Axis security model](https://github.com/apache/axis-axis2-java-core/security/policy)
+  - Security models:
+    - [Apache Axis2 Java Core security model](https://github.com/apache/axis-axis2-java-core/security/policy)
+    - [Apache Axis2 Java Rampart security model](https://github.com/apache/axis-axis2-java-rampart/security/policy)
+    - [Apache Axis2 C Core security model](https://github.com/apache/axis-axis2-c-core/security/policy)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="B">
@@ -212,7 +214,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Carbondata)
   - Advisories (experimental):\
-    none so far
+    [security.apache.org](/projects/carbondata/)
   - Security model:
     - [Apache Carbondata security model](https://carbondata.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/cassandra/default.png" alt="" loading="lazy"> **Apache Cassandra**
@@ -221,7 +223,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - Advisories (experimental):\
     [security.apache.org](/projects/cassandra/)
   - Security model:
-    - [Apache Cassandra security model](https://cassandra.apache.org/doc/latest/cassandra/managing/operating/security.html)
+    - [Apache Cassandra security model](https://github.com/apache/cassandra/blob/trunk/doc/modules/cassandra/pages/reference/security-model.adoc)
 - <img class="project-logo" src="https://www.apache.org/logos/res/causeway/default.png" alt="" loading="lazy"> **Apache Causeway**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Causeway)
@@ -351,7 +353,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - Advisories (experimental):\
     [security.apache.org](/projects/dolphinscheduler/)
   - Security model:
-    - [Apache DolphinScheduler security model](https://github.com/apache/dolphinscheduler/blob/dev/docs/docs/en/contribute/join/security.md)
+    - [Apache DolphinScheduler security model](https://github.com/apache/dolphinscheduler/blob/dev/docs/docs/en/contribute/join/security-model.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/doris/default.png" alt="" loading="lazy"> **Apache Doris**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Doris)
@@ -460,6 +462,9 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=FreeMarker)
   - Advisories (experimental):\
     none so far
+  - Security models:
+    - [Apache FreeMarker security model](https://github.com/apache/freemarker/security/policy)
+    - [Apache FreeMarker Online Tester security model](https://github.com/apache/freemarker-online-tester/security/policy)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="G">
@@ -495,8 +500,9 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Grails)
   - Advisories (experimental):\
     none so far
-  - Security model:
+  - Security models:
     - [Apache Grails security model](https://github.com/apache/grails-core/blob/8.0.x/THREAT_MODEL.md)
+    - [Apache Grails Spring Security security model](https://github.com/apache/grails-spring-security/blob/8.0.x/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/gravitino/default.png" alt="" loading="lazy"> **Apache Gravitino**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Gravitino)
@@ -538,7 +544,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=HBase)
   - Advisories (experimental):\
-    none so far
+    [security.apache.org](/projects/hbase/)
   - Security model:
     - [Apache HBase security model](https://hbase.apache.org/security-model/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/helix/default.png" alt="" loading="lazy"> **Apache Helix**
@@ -649,8 +655,10 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@jackrabbit.apache.org](mailto:security@jackrabbit.apache.org?subject=Jackrabbit)
   - Advisories:\
     [jackrabbit.apache.org](https://jackrabbit.apache.org/jcr/security-reports.html)
-  - Security model:
-    - [Apache Jackrabbit security model](https://jackrabbit.apache.org/jcr/security-reports.html)
+  - Security models:
+    - [Apache Jackrabbit security model](https://github.com/apache/jackrabbit/blob/trunk/THREAT_MODEL.md)
+    - [Apache Jackrabbit Oak security model](https://github.com/apache/jackrabbit-oak/blob/trunk/THREAT_MODEL.md)
+    - [Apache Jackrabbit FileVault security model](https://github.com/apache/jackrabbit-filevault/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/james/default.png" alt="" loading="lazy"> **Apache James**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=James)
@@ -701,7 +709,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - Advisories:\
     [kafka.apache.org](https://kafka.apache.org/cve-list.html)
   - Security model:
-    - [Apache Kafka security model](https://kafka.apache.org/project-security.html)
+    - [Apache Kafka security model](https://github.com/apache/kafka/blob/trunk/docs/security/security-model.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/karaf/default.png" alt="" loading="lazy"> **Apache Karaf**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Karaf)
@@ -712,6 +720,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Knox)
   - Advisories (experimental):\
     [security.apache.org](/projects/knox/)
+  - Security model:
+    - [Apache Knox security model](https://github.com/apache/knox/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/kudu/default.png" alt="" loading="lazy"> **Apache Kudu**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Kudu)
@@ -950,14 +960,14 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - Advisories (experimental):\
     [security.apache.org](/projects/parquet/)
   - Security model:
-    - [Apache Parquet security model](https://github.com/apache/parquet-java/blob/master/SECURITY.md)
+    - [Apache Parquet security model](https://github.com/apache/parquet-java/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/pdfbox/default.png" alt="" loading="lazy"> **Apache PDFBox**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=PDFBox)
   - Advisories (experimental):\
     [security.apache.org](/projects/pdfbox/)
   - Security model:
-    - [Apache PDFBox security model](https://pdfbox.apache.org/security.html)
+    - [Apache PDFBox security model](https://github.com/apache/pdfbox/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/pekko/default.png" alt="" loading="lazy"> **Apache Pekko**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Pekko)
@@ -999,8 +1009,9 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Polaris)
   - Advisories (experimental):\
     [security.apache.org](/projects/polaris/)
-  - Security model:
+  - Security models:
     - [Apache Polaris security model](https://github.com/apache/polaris/blob/main/SECURITY-THREAT-MODEL.md)
+    - [Apache Polaris Tools security model](https://github.com/apache/polaris-tools/blob/main/SECURITY-THREAT-MODEL.md)
 - **Apache Pony Mail**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Pony%20Mail)
@@ -1143,7 +1154,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - Advisories (experimental):\
     [security.apache.org](/projects/shiro/)
   - Security model:
-    - [Apache Shiro security model](https://shiro.apache.org/security-reports.html)
+    - [Apache Shiro security model](https://shiro.apache.org/security-model.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/singa/default.png" alt="" loading="lazy"> **Apache SINGA**
   - **Security contact:**\
     [security@singa.apache.org](mailto:security@singa.apache.org?subject=SINGA)
@@ -1176,7 +1187,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - Advisories:\
     [solr.apache.org](https://solr.apache.org/security.html#recent-cve-reports-for-apache-solr)
   - Security model:
-    - [Apache Solr security model](https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity)
+    - [Apache Solr security model](https://github.com/apache/solr/blob/main/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/spamassassin/default.png" alt="" loading="lazy"> **Apache SpamAssassin**
   - **Security contact:**\
     [security@spamassassin.apache.org](mailto:security@spamassassin.apache.org?subject=SpamAssassin)
@@ -1190,7 +1201,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - Advisories:\
     [spark.apache.org](https://spark.apache.org/security.html)
   - Security model:
-    - [Apache Spark security model](https://spark.apache.org/security.html)
+    - [Apache Spark security model](https://spark.apache.org/docs/latest/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/steve/default.png" alt="" loading="lazy"> **Apache Steve**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Steve)
@@ -1243,8 +1254,9 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@superset.apache.org](mailto:security@superset.apache.org?subject=Superset)
   - Advisories:\
     [superset.apache.org](https://superset.apache.org/docs/security/cves)
-  - Security model:
+  - Security models:
     - [Apache Superset security model](https://github.com/apache/superset/security/policy)
+    - [Apache Superset Kubernetes Operator security model](https://github.com/apache/superset-kubernetes-operator/blob/main/docs/reference/security.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/synapse/default.png" alt="" loading="lazy"> **Apache Synapse**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Synapse)
@@ -1285,6 +1297,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Teaclave)
   - Advisories (experimental):\
     none so far
+  - Security models:
+    - [Apache Teaclave security model](https://github.com/apache/teaclave/blob/main/docs/security-model.md)
+    - [Apache Teaclave (Rust Crates) security model](https://github.com/apache/teaclave-crates/blob/main/docs/security-model.md)
+    - [Apache Teaclave TrustZone SDK security model](https://github.com/apache/teaclave-trustzone-sdk/blob/main/docs/security-model.md)
+    - [Apache Teaclave SGX SDK security model](https://github.com/apache/teaclave-sgx-sdk/blob/main/docs/security-model.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/tez/default.png" alt="" loading="lazy"> **Apache Tez**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Tez)
@@ -1309,25 +1326,30 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=TinkerPop)
   - Advisories (experimental):\
     none so far
+  - Security model:
+    - [Apache TinkerPop security model](https://github.com/apache/tinkerpop/blob/master/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/tomcat/default.png" alt="" loading="lazy"> **Apache Tomcat**
   - **Security contact:**\
     [security@tomcat.apache.org](mailto:security@tomcat.apache.org?subject=Tomcat)
   - Advisories:\
     [tomcat.apache.org](https://tomcat.apache.org/security.html)
   - Security model:
-    - [Apache Tomcat security model](https://tomcat.apache.org/security.html)
+    - [Apache Tomcat security model](https://tomcat.apache.org/security-model.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/tomee/default.png" alt="" loading="lazy"> **Apache TomEE**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=TomEE)
   - Advisories (experimental):\
     none so far
+  - Security model:
+    - [Apache TomEE security model](https://github.com/apache/tomee/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/trafficserver/default.png" alt="" loading="lazy"> **Apache Traffic Server**
   - **Security contact:**\
     [security@trafficserver.apache.org](mailto:security@trafficserver.apache.org?subject=Traffic%20Server)
   - Advisories (experimental):\
     [security.apache.org](/projects/trafficserver/)
-  - Security model:
+  - Security models:
     - [Apache Traffic Server security model](https://github.com/apache/trafficserver/security/policy)
+    - [Apache Traffic Server Ingress Controller security model](https://github.com/apache/trafficserver-ingress-controller/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/training/default.png" alt="" loading="lazy"> **Apache Training**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Training)
@@ -1407,6 +1429,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Web%20Services)
   - Advisories (experimental):\
     [security.apache.org](/projects/ws/)
+  - Security models:
+    - [Apache Axiom security model](https://github.com/apache/ws-axiom/blob/master/THREAT-MODEL.md)
+    - [Apache XmlSchema security model](https://github.com/apache/ws-xmlschema/blob/master/THREAT-MODEL.md)
+    - [Apache Neethi security model](https://github.com/apache/ws-neethi/blob/master/THREAT-MODEL.md)
+    - [Apache WSS4J security model](https://github.com/apache/ws-wss4j/blob/master/THREAT-MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/whimsy/default.png" alt="" loading="lazy"> **Apache Whimsy**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Whimsy)

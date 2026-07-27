@@ -10,7 +10,7 @@ Do you want disclose a potential security issue for Apache Tomcat? Send your rep
 
 You can read more about the security policy on:
 
-- [Apache Tomcat security model](https://tomcat.apache.org/security.html)
+- [Apache Tomcat security model](https://tomcat.apache.org/security-model.html)
 
 
 # Advisories

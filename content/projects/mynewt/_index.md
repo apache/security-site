@@ -13,6 +13,163 @@ Do you want disclose a potential security issue for Apache Mynewt? Send your rep
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Mesh Proxy SAR reassembly unbounded append and unchecked failure ## { #CVE-2026-46452 }
+
+CVE-2026-46452 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-46452) [\[CVE json\]](./CVE-2026-46452.cve.json) [\[OSV json\]](./CVE-2026-46452.osv.json)
+
+
+
+_Last updated: 2026-07-24T12:11:41.257Z_
+
+### Affected
+
+* Apache NimBLE through 1.9.0
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache NimBLE in Mesh Proxy SAR reassembly could result in passing broken data toward application resulting in memory pressure and unstable parsing behavior.</p><p>This issue affects Apache NimBLE: through 1.9.0.</p><p>Users are recommended to upgrade to version 1.10.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/mynewt-nimble/commit/593f95227a4073efde840a9bb34614929dfa7ed1
+* https://lists.apache.org/thread/ym80ogxj3398khvxxogxroz4gvgw3ssg
+
+
+### Credits
+* Yicheng Yang <orangeyyc.mail@gmail.com> (reporter)
+
+
+## NULL pointer dereference vulnerability in SMP LTK request ## { #CVE-2026-45816 }
+
+CVE-2026-45816 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-45816) [\[CVE json\]](./CVE-2026-45816.cve.json) [\[OSV json\]](./CVE-2026-45816.osv.json)
+
+
+
+_Last updated: 2026-07-24T12:11:08.240Z_
+
+### Affected
+
+* Apache NimBLE through 1.9.0
+
+
+### Description
+
+<p>NULL Pointer Dereference vulnerability in Apache NimBLE in&nbsp;LE Long Term Key Request event.</p>This requires disabled asserts (otherwise assert would trigger before NULL dereference) and bogus (or misbehaving) controller, thus severity is low.<br><br><p>This issue affects Apache NimBLE: through 1.9.0.</p><p>Users are recommended to upgrade to version 1.10.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/mynewt-nimble/commit/9448c5f495eb55018121b24a9dab5305c9222ea1
+* https://lists.apache.org/thread/psppdk5j8jnq1m4jn96tnfofspgqvzvn
+
+
+### Credits
+* Chongqing Lei <leicq@seu.edu.cn> (reporter)
+
+
+## Remote reachable assertion in ATT Read Multiple Variable Response handler ## { #CVE-2026-45815 }
+
+CVE-2026-45815 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-45815) [\[CVE json\]](./CVE-2026-45815.cve.json) [\[OSV json\]](./CVE-2026-45815.osv.json)
+
+
+
+_Last updated: 2026-07-24T12:10:37.291Z_
+
+### Affected
+
+* Apache NimBLE through 1.9.0
+
+
+### Description
+
+<p>Reachable Assertion vulnerability in Apache NimBLE.<br>A specially crafted&nbsp;<span style="background-color: rgb(255, 255, 255);">ATT Read Multiple Variable Response (BLE_ATT_OP_READ_MULT_VAR_RSP) may trigger assert in ATT parser.</span></p><p><span style="background-color: rgb(255, 255, 255);">Severity is medium as this requires DUT to first send <span style="background-color: rgb(255, 255, 255);">ATT Read Multiple Variable Request.</span></span></p><p>This issue affects Apache NimBLE: through 1.9.0.</p><p>Users are recommended to upgrade to version 1.10.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/mynewt-nimble/commit/fae6a4874309ba0175d2c444e20f8a6bde007425
+* https://lists.apache.org/thread/3d09hgo5zmm7dnryst3tb9857hk1bbos
+
+
+### Credits
+* Amemoyoi https://github.com/Amemoyoi (reporter)
+
+
+## Incorrect data validation in BASS add/modify source operation ## { #CVE-2026-45813 }
+
+CVE-2026-45813 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-45813) [\[CVE json\]](./CVE-2026-45813.cve.json) [\[OSV json\]](./CVE-2026-45813.osv.json)
+
+
+
+_Last updated: 2026-07-24T12:10:10.910Z_
+
+### Affected
+
+* Apache NimBLE through 1.9.0
+
+
+### Description
+
+<p>Out-of-bounds Write, Integer Underflow (Wrap or Wraparound) vulnerability in Apache NimBLE BASS service.<br>Improper validation when parsing BASS service&nbsp; "Add Source" and "Modify Source" operation PDU could results in stack buffer overflow or arbitrary out-of-bound read.<br></p><p>This can be triggered by nearby devices over Bluetooth connection, however pairing is required prior to accessing BASS service, which depending on device configuration may or may not require user action.</p><p>This issue affects Apache NimBLE: through 1.9.0.</p><p>Users are recommended to upgrade to version 1.10.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/mynewt-nimble/pull/2232
+* https://lists.apache.org/thread/vc1ny73w243z5wr6t0y10gc6t2c9cytw
+
+
+### Credits
+* VulnCheck (reporter)
+* 侯朋朋 <pengpeng@iscas.ac.cn> (reporter)
+
+
+## OOB Read via sizeof(pointer) in Legacy Advertising Report Handler ## { #CVE-2026-45812 }
+
+CVE-2026-45812 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-45812) [\[CVE json\]](./CVE-2026-45812.cve.json) [\[OSV json\]](./CVE-2026-45812.osv.json)
+
+
+
+_Last updated: 2026-07-24T12:09:37.486Z_
+
+### Affected
+
+* Apache NimBLE through 1.9.0
+
+
+### Description
+
+<p>Incorrect Calculation of Buffer Size vulnerability in Apache NimBLE when processing&nbsp;Legacy Advertising Report HCI event.</p><p><span style="background-color: rgb(255, 255, 255);">When a single HCI advertising report event bundles multiple reports, NimBLE miscalculated the offset to the next report. This can cause the host to read past the end of the buffer and deliver a GAP event with bogus data to the application.</span><br><br><span style="background-color: rgb(255, 255, 255);">Severity is low: NimBLE's own controller never batches multiple reports into one event, so this only matters when NimBLE's host is paired with a third-party controller that does.</span></p><p>This issue affects Apache NimBLE: through 1.9.0.</p><p>Users are recommended to upgrade to version 1.10.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/mynewt-nimble/commit/605c7585408bc3674818eeb7b6f478a8aefe9746
+* https://lists.apache.org/thread/rll5m1ly2vg8jr76lp5ohrtspr5vlofy
+
+
+### Credits
+* VulnCheck (reporter)
+
+
+## Buffer overflow in socket HCI transport ## { #CVE-2026-45811 }
+
+CVE-2026-45811 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-45811) [\[CVE json\]](./CVE-2026-45811.cve.json) [\[OSV json\]](./CVE-2026-45811.osv.json)
+
+
+
+_Last updated: 2026-07-24T12:09:09.262Z_
+
+### Affected
+
+* Apache NimBLE through 1.9.0
+
+
+### Description
+
+<p>Buffer Copy without Checking Size of Input ('Classic Buffer Overflow') vulnerability in Apache NimBLE.<br><span style="background-color: rgb(255, 255, 255);">The HCI socket transport did not check whether a received HCI event would fit the configured event pool before copying it, allowing a buffer overflow. Severity is low: exploitation requires either a misconfigured pool size or a malicious/compromised controller on the other end of the HCI socket link, not over-the-air Bluetooth access.</span></p><p>This issue affects Apache NimBLE: through 1.9.0.</p><p>Users are recommended to upgrade to version 1.10.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/mynewt-nimble/commit/dcc4e4f026109eecd507de9479bb5019306a4a41
+* https://lists.apache.org/thread/5mkz68y1py0o6zmxtc3l1o8grtrb78m0
+
+
+### Credits
+* Yicheng Yang, Secsys Lab, Fudan University (reporter)
+
+
 ## Incorrect handling of SMP Security Request could lead to undesirable pairing ## { #CVE-2025-62235 }
 
 CVE-2025-62235 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-62235) [\[CVE json\]](./CVE-2025-62235.cve.json) [\[OSV json\]](./CVE-2025-62235.osv.json)

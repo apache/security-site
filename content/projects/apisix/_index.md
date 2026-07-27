@@ -10,7 +10,7 @@ Do you want disclose a potential security issue for Apache APISIX? Send your rep
 
 You can read more about the security policy on:
 
-- [Apache APISIX security model](https://github.com/apache/apisix/blob/master/THREAT_MODEL.md)
+- [Apache APISIX security model](https://github.com/apache/apisix/blob/master/docs/en/latest/security-threat-model.md)
 
 
 # Advisories

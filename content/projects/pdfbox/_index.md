@@ -10,7 +10,7 @@ Do you want disclose a potential security issue for Apache PDFBox? Send your rep
 
 You can read more about the security policy on:
 
-- [Apache PDFBox security model](https://pdfbox.apache.org/security.html)
+- [Apache PDFBox security model](https://github.com/apache/pdfbox/security/policy)
 
 
 # Advisories

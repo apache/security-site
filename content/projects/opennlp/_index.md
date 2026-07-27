@@ -13,6 +13,32 @@ Do you want disclose a potential security issue for Apache OpenNLP? Send your re
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Arbitrary Class Instantiation in GeneratorFactory via Feature Descriptor XML ## { #CVE-2026-63317 }
+
+CVE-2026-63317 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63317) [\[CVE json\]](./CVE-2026-63317.cve.json) [\[OSV json\]](./CVE-2026-63317.osv.json)
+
+
+
+_Last updated: 2026-07-24T08:07:43.962Z_
+
+### Affected
+
+* Apache OpenNLP from 3.0.0-M1 before 3.0.0-M4
+* Apache OpenNLP before 2.5.11
+
+
+### Description
+
+<b>Arbitrary Class Instantiation via XML Feature Generator Descriptor and Format Name in Apache OpenNLP</b><br><br>Versions Affected: <br><br>- before 2.5.10<br>- before 3.0.0-M5<br><br><b>Description:</b> <br><br>Three code paths in Apache OpenNLP load a class by its fully-qualified name via Class.forName() and invoke its no-arg constructor without any prior validation of the class name or its type.&nbsp;<br><br>The affected paths are: <br><br>(1) GeneratorFactory, which reads the class attribute of generator elements in an XML feature generator descriptor; such descriptors are embedded as artifacts in model archives (e.g. TokenNameFinder and POSTagger models) and are parsed during model loading, so an attacker who can supply a crafted model archive controls the class name directly. <br><br>(2) StreamFactoryRegistry.getFactory(Class, String), which falls back to interpreting an unregistered format name as the fully-qualified class name of an ObjectStreamFactory; this is exploitable in applications that pass untrusted format names (e.g. exposing the -format parameter of the command-line tooling to external input). <br><br>(3) StringInterners, which instantiates the interner implementation named by the opennlp.interner.class system property; this value is normally deployer-controlled, so it is hardened as defense in depth rather than being independently attacker-reachable.<br><br>Exploitation requires a class with attacker-useful side effects in its static initializer or no-arg constructor (JNDI lookup, outbound network I/O, filesystem access) to be present on the classpath, so this is not drop-in remote code execution. T<br><br><b>Mitigation:</b> <br><br>Upgrade to a fixed release. <br><br>The fix routes all three paths through ExtensionLoader.instantiateExtension(...), which consults a package-prefix allowlist before Class.forName() is invoked, so a disallowed class is never loaded, initialized, or constructed. <br>Classes under the opennlp. prefix remain permitted by default. Deployments that load models referencing feature generator factories, object stream factories, or string interners outside opennlp.* must opt those packages in, either programmatically via ExtensionLoader.registerAllowedPackage(String) before the first model load, or by setting the OPENNLP_EXT_ALLOWED_PACKAGES system property to a comma-separated list of allowed package prefixes. <br><br>Users who cannot upgrade immediately should ensure all model files and format names are sourced from trusted origins and should audit their classpath for classes with side-effecting static initializers or constructors.<br><br>
+
+### References
+* https://lists.apache.org/thread/myr446n8t3gv8gq8wbpxm41olx16d8yj
+
+
+### Credits
+* Subramanian S (finder)
+
+
 ## Unsafe Java Deserialization in SvmDoccatModel ## { #CVE-2026-43825 }
 
 CVE-2026-43825 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-43825) [\[CVE json\]](./CVE-2026-43825.cve.json) [\[OSV json\]](./CVE-2026-43825.osv.json)

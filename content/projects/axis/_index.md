@@ -10,12 +10,14 @@ Do you want disclose a potential security issue for Apache Axis? Send your repor
 
 You can read more about the security policy on:
 
-- [Apache Axis security model](https://github.com/apache/axis-axis2-java-core/security/policy)
+- [Apache Axis2 Java Core security model](https://github.com/apache/axis-axis2-java-core/security/policy)
+- [Apache Axis2 Java Rampart security model](https://github.com/apache/axis-axis2-java-rampart/security/policy)
+- [Apache Axis2 C Core security model](https://github.com/apache/axis-axis2-c-core/security/policy)
 
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
 ## Apache Axis 1.x (EOL) may allow SSRF when untrusted input is passed to the service admin HTTP API ## { #CVE-2023-51441 }

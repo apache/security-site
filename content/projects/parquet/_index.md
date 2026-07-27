@@ -10,7 +10,7 @@ Do you want disclose a potential security issue for Apache Parquet? Send your re
 
 You can read more about the security policy on:
 
-- [Apache Parquet security model](https://github.com/apache/parquet-java/blob/master/SECURITY.md)
+- [Apache Parquet security model](https://github.com/apache/parquet-java/security/policy)
 
 
 # Advisories

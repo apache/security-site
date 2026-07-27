@@ -10,7 +10,7 @@ Do you want disclose a potential security issue for Apache Shiro? Send your repo
 
 You can read more about the security policy on:
 
-- [Apache Shiro security model](https://shiro.apache.org/security-reports.html)
+- [Apache Shiro security model](https://shiro.apache.org/security-model.html)
 
 
 # Advisories

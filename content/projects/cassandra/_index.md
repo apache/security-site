@@ -10,7 +10,7 @@ Do you want disclose a potential security issue for Apache Cassandra? Send your 
 
 You can read more about the security policy on:
 
-- [Apache Cassandra security model](https://cassandra.apache.org/doc/latest/cassandra/managing/operating/security.html)
+- [Apache Cassandra security model](https://github.com/apache/cassandra/blob/trunk/doc/modules/cassandra/pages/reference/security-model.adoc)
 
 
 # Advisories

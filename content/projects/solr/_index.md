@@ -10,7 +10,7 @@ Do you want disclose a potential security issue for Apache Solr? Send your repor
 
 You can read more about the security policy on:
 
-- [Apache Solr security model](https://cwiki.apache.org/confluence/display/SOLR/SolrSecurity)
+- [Apache Solr security model](https://github.com/apache/solr/blob/main/THREAT_MODEL.md)
 
 
 # Advisories
