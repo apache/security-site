@@ -214,7 +214,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Carbondata)
   - Advisories (experimental):\
-    [security.apache.org](/projects/carbondata/)
+    none so far
   - Security model:
     - [Apache Carbondata security model](https://carbondata.apache.org/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/cassandra/default.png" alt="" loading="lazy"> **Apache Cassandra**
