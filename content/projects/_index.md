@@ -203,6 +203,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Calcite)
   - Advisories (experimental):\
     [security.apache.org](/projects/calcite/)
+  - Security model:
+    - [Apache Calcite security model](https://calcite.apache.org/docs/security_threat_model.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/camel/default.png" alt="" loading="lazy"> **Apache Camel**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Camel)
