@@ -109,162 +109,427 @@
 </ul>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-66053">Python TSSLSocket Hostname Matcher Import</h2>
+<p>CVE-2026-66053 <a href="https://cve.org/CVERecord?id=CVE-2026-66053">[CVE]</a> <a href="./CVE-2026-66053.cve.json">[CVE json]</a> <a href="./CVE-2026-66053.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-27T11:18:43.366Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.24.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Improper Validation of Certificate with Host Mismatch vulnerability in Apache Thrift Python bindings.</p><p>This issue affects Apache Thrift: before 0.24.0.</p><p>Users are recommended to upgrade to version 0.24.0, which fixes the issue.<br><br>This replaces&nbsp;CVE-2026-41603</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9">https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9</a></li>
+<li><a href="https://lists.apache.org/thread/w4k5dnv1x58knwlhpo9x0or5xh220y65">https://lists.apache.org/thread/w4k5dnv1x58knwlhpo9x0or5xh220y65</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Yu Bao – <a href="mailto:yubao@paypal.com">yubao@paypal.com</a>, who works for paypal.com (finder)</li>
+</ul>
+<h2 id="CVE-2026-58662">C++ THeaderTransport::readString() info-header length bounds bypass</h2>
+<p>CVE-2026-58662 <a href="https://cve.org/CVERecord?id=CVE-2026-58662">[CVE]</a> <a href="./CVE-2026-58662.cve.json">[CVE json]</a> <a href="./CVE-2026-58662.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-27T11:17:20.407Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.24.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Improper Validation of Specified Quantity in Input, Out-of-bounds Read vulnerability in Apache Thrift C++ bindings.</p><p>This issue affects Apache Thrift: before 0.24.0.</p><p>Users are recommended to upgrade to version 0.24.0, which fixes the issue.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9">https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9</a></li>
+<li><a href="https://lists.apache.org/thread/13mzvylr3r3nktxrh5k1h30ng1t1sw1d">https://lists.apache.org/thread/13mzvylr3r3nktxrh5k1h30ng1t1sw1d</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Javid Khan <a href="mailto:dxbjavid@gmail.com">dxbjavid@gmail.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2026-58389">Rust binary protocol non-strict path missing string size limit</h2>
+<p>CVE-2026-58389 <a href="https://cve.org/CVERecord?id=CVE-2026-58389">[CVE]</a> <a href="./CVE-2026-58389.cve.json">[CVE json]</a> <a href="./CVE-2026-58389.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-27T11:14:25.617Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.24.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache Thrift Rust bindings.</p><p>This issue affects Apache Thrift: before 0.24.0.</p><p>Users are recommended to upgrade to version 0.24.0, which fixes the issue.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9">https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9</a></li>
+<li><a href="https://lists.apache.org/thread/ht2mjt8m3vz9v0h5pqzvc4r4nzfxwtrw">https://lists.apache.org/thread/ht2mjt8m3vz9v0h5pqzvc4r4nzfxwtrw</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Javid Khan <a href="mailto:dxbjavid@gmail.com">dxbjavid@gmail.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2026-58023">c_glib heap out-of-bounds read in transport leftover-bytes path</h2>
+<p>CVE-2026-58023 <a href="https://cve.org/CVERecord?id=CVE-2026-58023">[CVE]</a> <a href="./CVE-2026-58023.cve.json">[CVE json]</a> <a href="./CVE-2026-58023.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-27T11:12:35.855Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.24.0</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Out-of-bounds Read vulnerability in Apache Thrift c_glib bindings.</p><p>This issue affects Apache Thrift: before 0.24.0.</p><p>Users are recommended to upgrade to version 0.24.0, which fixes the issue.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9">https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9</a></li>
+<li><a href="https://lists.apache.org/thread/z2myopbovxngfvchdz8hddots9p5ffbt">https://lists.apache.org/thread/z2myopbovxngfvchdz8hddots9p5ffbt</a></li>
+</ul>
+<h2 id="CVE-2026-55971">C++ ZLIB heap buffer overflow (write) in THeaderTransport::untransform()</h2>
+<p>CVE-2026-55971 <a href="https://cve.org/CVERecord?id=CVE-2026-55971">[CVE]</a> <a href="./CVE-2026-55971.cve.json">[CVE json]</a> <a href="./CVE-2026-55971.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-27T11:11:18.790Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.24.0</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Heap-based Buffer Overflow vulnerability in Apache Thrift C++ bindings.</p><p>This issue affects Apache Thrift: before 0.24.0.</p><p>Users are recommended to upgrade to version 0.24.0, which fixes the issue.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9">https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9</a></li>
+<li><a href="https://lists.apache.org/thread/xjs36m6kjxpmrmzwck636msg3nvoqnmx">https://lists.apache.org/thread/xjs36m6kjxpmrmzwck636msg3nvoqnmx</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Ghaith Abdulreda (finder)</li>
+</ul>
+<h2 id="CVE-2026-55970">C++ heap out-of-bounds read in THeaderTransport::readHeaderFormat()</h2>
+<p>CVE-2026-55970 <a href="https://cve.org/CVERecord?id=CVE-2026-55970">[CVE]</a> <a href="./CVE-2026-55970.cve.json">[CVE json]</a> <a href="./CVE-2026-55970.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-27T11:09:36.113Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.24.0</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Buffer Over-read vulnerability in Apache Thrift C++ bindings.</p><p>This issue affects Apache Thrift: before 0.24.0.</p><p>Users are recommended to upgrade to version 0.24.0, which fixes the issue.</p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9">https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9</a></li>
+<li><a href="https://lists.apache.org/thread/8pbnw4dyxxc9opp6qq725jhrzg25v8q7">https://lists.apache.org/thread/8pbnw4dyxxc9opp6qq725jhrzg25v8q7</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Ghaith Abdulreda (finder)</li>
+</ul>
+<h2 id="CVE-2026-55969">integer overflow in TProtocol::checkReadBytesAvailable()</h2>
+<p>CVE-2026-55969 <a href="https://cve.org/CVERecord?id=CVE-2026-55969">[CVE]</a> <a href="./CVE-2026-55969.cve.json">[CVE json]</a> <a href="./CVE-2026-55969.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-27T11:07:43.565Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.24.0</li>
+<li>Apache Thrift before 0.24.0</li>
+<li>Apache Thrift before 0.24.0</li>
+<li>Apache Thrift before 0.24.0</li>
+<li>Apache Thrift before 0.24.0</li>
+<li>Apache Thrift before 0.24.0</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>Integer Overflow or Wraparound vulnerability in Apache Thrift C++, c_glib, Go, netstd, Delphi and Haxe bindings.</p><p>This issue affects Apache Thrift: before 0.24.0.</p><p>Users are recommended to upgrade to version 0.24.0, which fixes the issue.</p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9">https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9</a></li>
+<li><a href="https://lists.apache.org/thread/xmkgd107k795hyrg5kf97mny30sgl5bo">https://lists.apache.org/thread/xmkgd107k795hyrg5kf97mny30sgl5bo</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Ghaith Abdulreda (finder)</li>
+<li>Javid Khan (finder)</li>
+<li>Apache Thrift Developers (finder)</li>
+</ul>
+<h2 id="CVE-2026-55968">Node.js quadratic-time DoS in server receive transports</h2>
+<p>CVE-2026-55968 <a href="https://cve.org/CVERecord?id=CVE-2026-55968">[CVE]</a> <a href="./CVE-2026-55968.cve.json">[CVE json]</a> <a href="./CVE-2026-55968.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-27T11:06:12.486Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.24.0</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>Inefficient Algorithmic Complexity, Allocation of Resources Without Limits or Throttling vulnerability in Apache Thrift Node.js bindings.</p><p>This issue affects Apache Thrift: before 0.24.0.</p><p>Users are recommended to upgrade to version 0.24.0, which fixes the issue.</p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9">https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9</a></li>
+<li><a href="https://lists.apache.org/thread/gxhhfyr6flr5vzr4qnxm13p6fc41qstp">https://lists.apache.org/thread/gxhhfyr6flr5vzr4qnxm13p6fc41qstp</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>Song Jihoon (finder)</li>
+</ul>
+<h2 id="CVE-2026-49158">Ruby THeaderTransport ZLIB Decompression Bomb</h2>
+<p>CVE-2026-49158 <a href="https://cve.org/CVERecord?id=CVE-2026-49158">[CVE]</a> <a href="./CVE-2026-49158.cve.json">[CVE json]</a> <a href="./CVE-2026-49158.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-27T11:05:01.307Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.24.0</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>Improper Handling of Highly Compressed Data (Data Amplification) vulnerability in Apache Thrift Ruby bindings.</p><p>This issue affects Apache Thrift: before 0.24.0.</p><p>Users are recommended to upgrade to version 0.24.0, which fixes the issue.</p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9">https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9</a></li>
+<li><a href="https://lists.apache.org/thread/fmjl8l415tj9zwlob8v2dr5hq1d0hts7">https://lists.apache.org/thread/fmjl8l415tj9zwlob8v2dr5hq1d0hts7</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>LTSHFWJT <a href="mailto:1719636402@qq.com">1719636402@qq.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2026-48586">TZlibTransport Decompression Size Limit</h2>
+<p>CVE-2026-48586 <a href="https://cve.org/CVERecord?id=CVE-2026-48586">[CVE]</a> <a href="./CVE-2026-48586.cve.json">[CVE json]</a> <a href="./CVE-2026-48586.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-27T11:02:50.181Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.24.0</li>
+<li>Apache Thrift before 0.24.0</li>
+<li>Apache Thrift before 0.24.0</li>
+<li>Apache Thrift before 0.24.0</li>
+<li>Apache Thrift before 0.24.0</li>
+<li>Apache Thrift before 0.24.0</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>Improper Handling of Highly Compressed Data (Data Amplification) vulnerability in Apache Thrift C++, Java, Python, Go, D, C/GLib bindings.</p><p>This issue affects Apache Thrift: before 0.24.0.</p><p>Users are recommended to upgrade to version 0.24.0, which fixes the issue.</p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9">https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9</a></li>
+<li><a href="https://lists.apache.org/thread/p008svsjf9p6bj47wyyf5dgglq5z7xoq">https://lists.apache.org/thread/p008svsjf9p6bj47wyyf5dgglq5z7xoq</a></li>
+</ul>
+<h2 id="CVE-2026-48145">C++ TSSLSocket matchName() RFC 6125 Wildcard Bypass</h2>
+<p>CVE-2026-48145 <a href="https://cve.org/CVERecord?id=CVE-2026-48145">[CVE]</a> <a href="./CVE-2026-48145.cve.json">[CVE json]</a> <a href="./CVE-2026-48145.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-27T10:59:40.690Z</em></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.24.0</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<p>Improper Validation of Certificate with Host Mismatch vulnerability in Apache Thrift C++ bindings.</p><p>This issue affects Apache Thrift: before 0.24.0.</p><p>Users are recommended to upgrade to version 0.24.0, which fixes the issue.</p>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9">https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9</a></li>
+<li><a href="https://lists.apache.org/thread/2popgc4ks1l87jjho1w5fpk5k4x06b7h">https://lists.apache.org/thread/2popgc4ks1l87jjho1w5fpk5k4x06b7h</a></li>
+</ul>
+<h2 id="CVE-2026-48144">c_glib TLS Client Missing Hostname Verification</h2>
+<p>CVE-2026-48144 <a href="https://cve.org/CVERecord?id=CVE-2026-48144">[CVE]</a> <a href="./CVE-2026-48144.cve.json">[CVE json]</a> <a href="./CVE-2026-48144.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-27T10:58:24.417Z</em></p>
+<h3 id="affected-11">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.24.0</li>
+</ul>
+<h3 id="description-11">Description</h3>
+<p>Improper Validation of Certificate with Host Mismatch vulnerability in Apache Thrift c_glib bindings.</p><p>This issue affects Apache Thrift: before 0.24.0.</p><p>Users are recommended to upgrade to version 0.24.0, which fixes the issue.</p>
+<h3 id="references-11">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9">https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9</a></li>
+<li><a href="https://lists.apache.org/thread/2xoltfxgzf5jyhcwq6y07spts5cn6ppj">https://lists.apache.org/thread/2xoltfxgzf5jyhcwq6y07spts5cn6ppj</a></li>
+</ul>
+<h2 id="CVE-2026-45112">Unbounded Read Leading to Denial of Service</h2>
+<p>CVE-2026-45112 <a href="https://cve.org/CVERecord?id=CVE-2026-45112">[CVE]</a> <a href="./CVE-2026-45112.cve.json">[CVE json]</a> <a href="./CVE-2026-45112.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-27T10:57:25.527Z</em></p>
+<h3 id="affected-12">Affected</h3>
+<ul>
+<li>Apache Thrift from 0.19.0 before 0.24.0</li>
+</ul>
+<h3 id="description-12">Description</h3>
+<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache Thrift Java bindings.</p><p>This issue affects Apache Thrift: from 0.19.0 before 0.24.0.</p><p>Users are recommended to upgrade to version 0.24.0, which fixes the issue.</p>
+<h3 id="references-12">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9">https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9</a></li>
+<li><a href="https://lists.apache.org/thread/hl9kmf1z2o3lxvspoj3g9ykl8lj9mdxc">https://lists.apache.org/thread/hl9kmf1z2o3lxvspoj3g9ykl8lj9mdxc</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>IcySun &amp; Yashon (finder)</li>
+</ul>
+<h2 id="CVE-2026-43871">TCompactProtocol varint byte-count limit</h2>
+<p>CVE-2026-43871 <a href="https://cve.org/CVERecord?id=CVE-2026-43871">[CVE]</a> <a href="./CVE-2026-43871.cve.json">[CVE json]</a> <a href="./CVE-2026-43871.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-27T10:56:06.868Z</em></p>
+<h3 id="affected-13">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.24.0</li>
+<li>Apache Thrift before 0.24.0</li>
+<li>Apache Thrift before 0.24.0</li>
+<li>Apache Thrift before 0.24.0</li>
+</ul>
+<h3 id="description-13">Description</h3>
+<p>Loop with Unreachable Exit Condition (&lsquo;Infinite Loop&rsquo;) vulnerability in Apache Thrift Python, Go, PHP and Java bindings.<p>This issue affects Apache Thrift: before 0.24.0.</p><p>Users are recommended to upgrade to version 0.24.0, which fixes the issue.</p></p>
+<h3 id="references-13">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9">https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9</a></li>
+<li><a href="https://lists.apache.org/thread/l4dwf14zbyqsmkc28c99ojj3t3gg9qby">https://lists.apache.org/thread/l4dwf14zbyqsmkc28c99ojj3t3gg9qby</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>Yu Bao - <a href="mailto:yubao@paypal.com">yubao@paypal.com</a>, who works for paypal.com (finder)</li>
+</ul>
 <h2 id="CVE-2026-43870">Node.js web_server.js multi-vulnerability</h2>
 <p>CVE-2026-43870 <a href="https://cve.org/CVERecord?id=CVE-2026-43870">[CVE]</a> <a href="./CVE-2026-43870.cve.json">[CVE json]</a> <a href="./CVE-2026-43870.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-05T07:45:34.804Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-14">Affected</h3>
 <ul>
 <li>Apache Thrift before 0.23.0</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-14">Description</h3>
 <p>Origin Validation Error, Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal'), Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Request/Response Splitting'), Uncontrolled Resource Consumption vulnerability in Apache Thrift.</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
-<h3 id="references">References</h3>
+<h3 id="references-14">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/pgtfq44ltc9t63kxcbqmwqzt45pnhqdy">https://lists.apache.org/thread/pgtfq44ltc9t63kxcbqmwqzt45pnhqdy</a></li>
 </ul>
 <h2 id="CVE-2026-43869">TSSLTransportFactory.java hostname verification</h2>
 <p>CVE-2026-43869 <a href="https://cve.org/CVERecord?id=CVE-2026-43869">[CVE]</a> <a href="./CVE-2026-43869.cve.json">[CVE json]</a> <a href="./CVE-2026-43869.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-05T07:25:46.713Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-15">Affected</h3>
 <ul>
 <li>Apache Thrift before 0.23.0</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-15">Description</h3>
 <p>Improper Validation of Certificate with Host Mismatch vulnerability in Apache Thrift.</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
-<h3 id="references-1">References</h3>
+<h3 id="references-15">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/3hsgl1b69wzq3ry39scqbv2dhyl3j52r">https://lists.apache.org/thread/3hsgl1b69wzq3ry39scqbv2dhyl3j52r</a></li>
 </ul>
 <h2 id="CVE-2026-43868">Rust implementation vulnerable to CVE-2020-13949 pattern</h2>
 <p>CVE-2026-43868 <a href="https://cve.org/CVERecord?id=CVE-2026-43868">[CVE]</a> <a href="./CVE-2026-43868.cve.json">[CVE json]</a> <a href="./CVE-2026-43868.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-05T07:49:46.378Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-16">Affected</h3>
 <ul>
 <li>Apache Thrift before 0.23.0</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-16">Description</h3>
 <p>Memory Allocation with Excessive Size Value vulnerability in Apache Thrift.</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
-<h3 id="references-2">References</h3>
+<h3 id="references-16">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/zj76dtwnbbs1m7z3focf4wd51pqpsmn9">https://lists.apache.org/thread/zj76dtwnbbs1m7z3focf4wd51pqpsmn9</a></li>
 </ul>
 <h2 id="CVE-2026-41636">Node.js skip() recursion</h2>
 <p>CVE-2026-41636 <a href="https://cve.org/CVERecord?id=CVE-2026-41636">[CVE]</a> <a href="./CVE-2026-41636.cve.json">[CVE json]</a> <a href="./CVE-2026-41636.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-07-15T20:56:45.279Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-17">Affected</h3>
 <ul>
 <li>Apache Thrift before 0.23.0</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-17">Description</h3>
 <p>Uncontrolled Recursion vulnerability in Apache Thrift Node.js bindings</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
-<h3 id="references-3">References</h3>
+<h3 id="references-17">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql">https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-10">Credits</h3>
 <ul>
 <li>Sion Park (L3G4CY Security Research) (finder)</li>
 <li>Yu Bao – <a href="mailto:yubao@paypal.com">yubao@paypal.com</a> (finder)</li>
 </ul>
+<h2 id="CVE-2026-41608">Unbounded Zlib Decompression in Python THeaderTransport</h2>
+<p>CVE-2026-41608 <a href="https://cve.org/CVERecord?id=CVE-2026-41608">[CVE]</a> <a href="./CVE-2026-41608.cve.json">[CVE json]</a> <a href="./CVE-2026-41608.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-07-27T10:53:37.845Z</em></p>
+<h3 id="affected-18">Affected</h3>
+<ul>
+<li>Apache Thrift before 0.24.0</li>
+</ul>
+<h3 id="description-18">Description</h3>
+<p>Improper Handling of Highly Compressed Data (Data Amplification) vulnerability in Apache Thrift Python bindings.</p><p>This issue affects Apache Thrift: before 0.24.0.</p><p>Users are recommended to upgrade to version 0.24.0, which fixes the issue.</p>
+<h3 id="references-18">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9">https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9</a></li>
+<li><a href="https://lists.apache.org/thread/vwsbcwqdpwdtp8qkjo11ol6rodbfm21f">https://lists.apache.org/thread/vwsbcwqdpwdtp8qkjo11ol6rodbfm21f</a></li>
+</ul>
 <h2 id="CVE-2026-41607">C++ JSON OOB read</h2>
 <p>CVE-2026-41607 <a href="https://cve.org/CVERecord?id=CVE-2026-41607">[CVE]</a> <a href="./CVE-2026-41607.cve.json">[CVE json]</a> <a href="./CVE-2026-41607.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-04-28T09:21:46.727Z</em></p>
-<h3 id="affected-4">Affected</h3>
+<h3 id="affected-19">Affected</h3>
 <ul>
 <li>Apache Thrift before 0.23.0</li>
 </ul>
-<h3 id="description-4">Description</h3>
+<h3 id="description-19">Description</h3>
 <p>Out-of-bounds Read vulnerability in Apache Thrift.</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
-<h3 id="references-4">References</h3>
+<h3 id="references-19">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql">https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-11">Credits</h3>
 <ul>
 <li>Hasnain Lakhani (finder)</li>
 </ul>
 <h2 id="CVE-2026-41606">c_glib dispatch stack overflow</h2>
 <p>CVE-2026-41606 <a href="https://cve.org/CVERecord?id=CVE-2026-41606">[CVE]</a> <a href="./CVE-2026-41606.cve.json">[CVE json]</a> <a href="./CVE-2026-41606.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-04-28T09:21:09.783Z</em></p>
-<h3 id="affected-5">Affected</h3>
+<h3 id="affected-20">Affected</h3>
 <ul>
 <li>Apache Thrift before 0.23.0</li>
 </ul>
-<h3 id="description-5">Description</h3>
+<h3 id="description-20">Description</h3>
 <p>Uncontrolled Recursion vulnerability in Apache Thrift.</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
-<h3 id="references-5">References</h3>
+<h3 id="references-20">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql">https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-12">Credits</h3>
 <ul>
 <li>Hasnain Lakhani (finder)</li>
 </ul>
 <h2 id="CVE-2026-41605">Swift Compact Protocol integer overflow</h2>
 <p>CVE-2026-41605 <a href="https://cve.org/CVERecord?id=CVE-2026-41605">[CVE]</a> <a href="./CVE-2026-41605.cve.json">[CVE json]</a> <a href="./CVE-2026-41605.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-04-28T09:20:43.166Z</em></p>
-<h3 id="affected-6">Affected</h3>
+<h3 id="affected-21">Affected</h3>
 <ul>
 <li>Apache Thrift before 0.23.0</li>
 </ul>
-<h3 id="description-6">Description</h3>
+<h3 id="description-21">Description</h3>
 <p>Integer Overflow or Wraparound vulnerability in Apache Thrift.</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
-<h3 id="references-6">References</h3>
+<h3 id="references-21">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql">https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits-13">Credits</h3>
 <ul>
 <li>Hasnain Lakhani (finder)</li>
 </ul>
 <h2 id="CVE-2026-41604">Swift Range crash in skip()</h2>
 <p>CVE-2026-41604 <a href="https://cve.org/CVERecord?id=CVE-2026-41604">[CVE]</a> <a href="./CVE-2026-41604.cve.json">[CVE json]</a> <a href="./CVE-2026-41604.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-04-28T09:20:12.306Z</em></p>
-<h3 id="affected-7">Affected</h3>
+<h3 id="affected-22">Affected</h3>
 <ul>
 <li>Apache Thrift before 0.23.0</li>
 </ul>
-<h3 id="description-7">Description</h3>
+<h3 id="description-22">Description</h3>
 <p>Out-of-bounds Read vulnerability in Apache Thrift.</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
-<h3 id="references-7">References</h3>
+<h3 id="references-22">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql">https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql</a></li>
 </ul>
-<h3 id="credits-4">Credits</h3>
+<h3 id="credits-14">Credits</h3>
 <ul>
 <li>Hasnain Lakhani (finder)</li>
 </ul>
 <h2 id="CVE-2026-41602">Go TFramedTransport uint32 overflow</h2>
 <p>CVE-2026-41602 <a href="https://cve.org/CVERecord?id=CVE-2026-41602">[CVE]</a> <a href="./CVE-2026-41602.cve.json">[CVE json]</a> <a href="./CVE-2026-41602.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-04-28T09:19:05.731Z</em></p>
-<h3 id="affected-8">Affected</h3>
+<h3 id="affected-23">Affected</h3>
 <ul>
 <li>Apache Thrift before 0.23.0</li>
 </ul>
-<h3 id="description-8">Description</h3>
+<h3 id="description-23">Description</h3>
 <p>Integer Overflow or Wraparound vulnerability in Apache Thrift TFramedTransport Go language implementation</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.</p>
-<h3 id="references-8">References</h3>
+<h3 id="references-23">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql">https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql</a></li>
 </ul>
-<h3 id="credits-5">Credits</h3>
+<h3 id="credits-15">Credits</h3>
 <ul>
 <li>김범수 (finder)</li>
 </ul>
 <h2 id="CVE-2025-48431">Specially crafted input can crash a c_glib Thrift server with invalid pointer error.</h2>
 <p>CVE-2025-48431 <a href="https://cve.org/CVERecord?id=CVE-2025-48431">[CVE]</a> <a href="./CVE-2025-48431.cve.json">[CVE json]</a> <a href="./CVE-2025-48431.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-04-28T09:11:42.895Z</em></p>
-<h3 id="affected-9">Affected</h3>
+<h3 id="affected-24">Affected</h3>
 <ul>
 <li>Apache Thrift before 0.23.0</li>
 </ul>
-<h3 id="description-9">Description</h3>
+<h3 id="description-24">Description</h3>
 <p>Mismatched Memory Management Routines vulnerability in Apache Thrift c_glib language bindings.</p><p>This issue affects Apache Thrift: before 0.23.0.</p><p>Users are recommended to upgrade to version 0.23.0, which fixes the issue.<br><br>Description: Specially crafted requests can crash an c_glib-based Thrift server with a clean but fatal "free(): invalid pointer" error message.<br><br></p>
-<h3 id="references-9">References</h3>
+<h3 id="references-24">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql">https://lists.apache.org/thread/lb4j0zyd5f3g36cos0wql925przpnwql</a></li>
 </ul>
-<h3 id="credits-6">Credits</h3>
+<h3 id="credits-16">Credits</h3>
 <ul>
 <li>Hasnain Lakhani (finder)</li>
 <li>Hasnain Lakhani (remediation developer)</li>
