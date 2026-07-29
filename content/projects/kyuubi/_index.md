@@ -13,6 +13,32 @@ Do you want disclose a potential security issue for Apache Kyuubi? Send your rep
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Unrestricted access via Kyuubi engine-ui proxy ## { #CVE-2026-23904 }
+
+CVE-2026-23904 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23904) [\[CVE json\]](./CVE-2026-23904.cve.json) [\[OSV json\]](./CVE-2026-23904.osv.json)
+
+
+
+_Last updated: 2026-07-29T04:15:21.816Z_
+
+### Affected
+
+* Apache Kyuubi from 1.8.0 before 1.12.0
+
+
+### Description
+
+<p><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);">Kyuubi Engine UI proxy accepts a host and port from the request path and proxies HTTP requests to that destination.&nbsp;</span></span><span style="background-color: rgb(255, 255, 255);">A remote requester with network access to the proxy can cause the Kyuubi server to send HTTP requests to arbitrary reachable hosts, resulting in SSRF or open-proxy behavior.</span><br></p><p>This issue affects Apache Kyuubi: from 1.8.0 before 1.12.0.</p><p>Users are recommended to upgrade to version 1.12.0, which disables the proxy by default.&nbsp;To restore proxied Engine UI, set kyuubi.frontend.rest.engine.ui.proxy.enabled=true and configure allowed target hosts with kyuubi.frontend.rest.engine.ui.proxy.hosts.</p>
+
+### References
+* https://github.com/apache/kyuubi/pull/7483
+* https://lists.apache.org/thread/ps79fcfx49ox9kwgztc5t5bw0tyhck9m
+
+
+### Credits
+* Ícaro Torres (reporter)
+
+
 ## Unauthorized directory access due to missing path normalization ## { #CVE-2025-66518 }
 
 CVE-2025-66518 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66518) [\[CVE json\]](./CVE-2025-66518.cve.json) [\[OSV json\]](./CVE-2025-66518.osv.json)

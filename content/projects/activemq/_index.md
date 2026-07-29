@@ -18,6 +18,68 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Authorization bypass via temporary composite destinations ## { #CVE-2026-61487 }
+
+CVE-2026-61487 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-61487) [\[CVE json\]](./CVE-2026-61487.cve.json) [\[OSV json\]](./CVE-2026-61487.osv.json)
+
+
+
+_Last updated: 2026-07-28T13:32:36.487Z_
+
+### Affected
+
+* Apache ActiveMQ Broker before 5.19.9
+* Apache ActiveMQ Broker from 6.0.0 before 6.2.8
+* Apache ActiveMQ All before 5.19.9
+* Apache ActiveMQ All from 6.0.0 before 6.2.8
+* Apache ActiveMQ before 5.19.9
+* Apache ActiveMQ from 6.0.0 before 6.2.8
+
+
+### Description
+
+<p>Improper Authorization vulnerability in Apache ActiveMQ Broker, Apache ActiveMQ All, Apache ActiveMQ.</p><span style="background-color: rgb(255, 255, 255);"> An authenticated low-privilege user can bypass a per-destination
+write ACL by sending to an ActiveMQ temporary composite destination whose physical name is a
+comma-separated composite of real queues.&nbsp;</span><span style="background-color: rgb(255, 255, 255);">This allows publishing messages to any of the destinations in the list without proper write ACL permissions because the authorization check is bypassed due to the composite destination being marked as temporary.</span><br><p>This issue affects Apache ActiveMQ Broker: before 5.19.9, from 6.0.0 before 6.2.8; Apache ActiveMQ All: before 5.19.9, from 6.0.0 before 6.2.8; Apache ActiveMQ: before 5.19.9, from 6.0.0 before 6.2.8.</p><p>Users are recommended to upgrade to version 5.19.9, 6.2.8 or 6.3.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/6rwn6cq65dy4lhmsmjf2bxnhbmhkcswz
+
+
+### Credits
+* Claude and Ada Logics (finder)
+
+
+## AMQP NIO negative frame size validation bypass leading to DoS ## { #CVE-2026-59878 }
+
+CVE-2026-59878 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59878) [\[CVE json\]](./CVE-2026-59878.cve.json) [\[OSV json\]](./CVE-2026-59878.osv.json)
+
+
+
+_Last updated: 2026-07-28T13:33:50.227Z_
+
+### Affected
+
+* Apache ActiveMQ AMQP before 5.19.9
+* Apache ActiveMQ AMQP from 6.0.0 before 6.2.8
+* Apache ActiveMQ before 5.19.9
+* Apache ActiveMQ from 6.0.0 before 6.2.8
+* Apache ActiveMQ All before 5.19.9
+* Apache ActiveMQ All from 6.0.0 before 6.2.8
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache ActiveMQ AMQP, Apache ActiveMQ, Apache ActiveMQ All.</p>A remote unauthenticated peer that can reach an exposed AMQP NIO connector can trigger denial-of-service behavior by sending a frame size value. This cause the NIO threads to die and if done rapidly enough can lead to exhaustion of the NIO thread pool denying service to other connections.<br><p>This issue affects Apache ActiveMQ AMQP: before 5.19.9, from 6.0.0 before 6.2.8; Apache ActiveMQ: before 5.19.9, from 6.0.0 before 6.2.8; Apache ActiveMQ All: before 5.19.9, from 6.0.0 before 6.2.8.</p><p>Users are recommended to upgrade to version 5.19.9, 6.2.8, or 6.3.0 which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/dnyx4d2oldshcj4lthso7b53y4bqmjvn
+
+
+### Credits
+* zx (Jace) (finder)
+
+
 ## Temporary destination ownership takeover ## { #CVE-2026-54475 }
 
 CVE-2026-54475 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-54475) [\[CVE json\]](./CVE-2026-54475.cve.json) [\[OSV json\]](./CVE-2026-54475.osv.json)
