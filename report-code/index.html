@@ -102,16 +102,52 @@
 <div id="project">
 
  <p>We warmly welcome reports of potential security vulnerabilities in our codebases.</p>
-<p><strong>Only use the security contacts to report undisclosed security vulnerabilities in Apache projects and manage the process of fixing such vulnerabilities. We cannot accept regular bug reports or other security-related queries at these addresses. We will ignore mail sent to these addresses that does not relate to an undisclosed security problem in an Apache project.</strong></p>
-<p>Note that results from source code security analysis tools are not accepted without additional analysis showing the problem indeed violates the projects&rsquo; security model, as such tools commonly produce a significant amount of false positives.</p>
-<p>A security vulnerability is a bug that breaks reasonable expectations of the
-project in a way that affects confidentiality, integrity or availability. Some
-projects have published a &lsquo;Security Model&rsquo; to clarify which guarantees can be
-expected. You can find the security model pages, as well as the email address
-you can use to report potential vulnerabilities, <a href="/projects">here</a>.</p>
-<p>Please send one plain-text, unencrypted, email for each vulnerability you are reporting to <a href="mailto:security@apache.org">security@apache.org</a>. We will reject your report and ask you to resubmit it if you send it as an image, movie, HTML, Markdown, or PDF attachment when you could as easily describe it with plain text.
-By sending your report to this address you agree that information from this report
-may be made public after triage (for invalid issues) or after the release of the fix,
+<p>Only use the security contacts to report <strong>undisclosed security vulnerabilities in ASF projects</strong>
+and manage the process of fixing such vulnerabilities.
+In particular, this means that:</p>
+<ul>
+<li>Your report must concern a <strong>security vulnerability</strong>.
+We cannot accept regular bug reports, support requests, or other security-related queries at these addresses.</li>
+<li>The vulnerability must be <strong>undisclosed</strong>.
+A vulnerability with a CVE number is in most cases already publicly disclosed by the ASF itself.
+In particular, do not forward security scanner findings that report an ASF project as affected by a known CVE.</li>
+<li>The vulnerability must affect an <strong>ASF project</strong>.
+If it affects a dependency of an ASF project instead,
+see <a href="/report-dependency">Reporting security issues in dependencies</a>.</li>
+</ul>
+<p>We will ignore mail sent to these addresses
+that does not meet these requirements.</p>
+<p>A <strong>security vulnerability</strong> is a bug that breaks reasonable expectations of the project
+in a way that affects confidentiality, integrity, or availability.
+Some projects have published a &lsquo;Security Model&rsquo;
+to clarify which guarantees can be expected.
+You can find the security model pages on the <a href="/projects">projects overview</a>.
+Note that results from source code security analysis tools are not accepted without additional analysis
+showing that the problem indeed violates the project&rsquo;s security model,
+as such tools commonly produce a significant amount of false positives.</p>
+<p>Send your report to the project&rsquo;s security address
+listed on the <a href="/projects">projects overview</a>.
+If the affected project is not listed there,
+or you are unsure which project is affected,
+send your report to <a href="mailto:security@apache.org">security@apache.org</a> instead.</p>
+<p>Every email you send must meet the following requirements:</p>
+<ul>
+<li>Start the subject line with <code>[SECURITY]</code>.
+This matches an exclusion rule on our spam filter
+and ensures that your report is not accidentally discarded.</li>
+<li>Report only one vulnerability per email.</li>
+<li>Write your report in plain text and do not encrypt it.</li>
+<li>Explain why you believe the defect is a security issue.
+If the project publishes a security model
+on the <a href="/projects">projects overview</a>,
+describe which of its guarantees the defect breaks.</li>
+<li>Do not send your report as an image, movie, HTML, Markdown, or PDF attachment
+when you could as easily describe it in plain text.
+We will reject such reports and ask you to resubmit them.</li>
+</ul>
+<p>By sending your report you agree
+that information from it may be made public
+after triage (for invalid issues) or after the release of the fix,
 unless you explicitly request otherwise.</p>
 <h2 id="handling">Handling</h2>
 <p>An overview of the vulnerability handling process is:</p>
