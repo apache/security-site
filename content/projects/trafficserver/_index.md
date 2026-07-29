@@ -19,6 +19,89 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## HTTP/2 multiplexed origin sessions are reused without certificate re-verification ## { #CVE-2026-65325 }
+
+CVE-2026-65325 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-65325) [\[CVE json\]](./CVE-2026-65325.cve.json) [\[OSV json\]](./CVE-2026-65325.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:23:24.104Z_
+
+### Affected
+
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server reuses multiplexed HTTP/2 origin connections without verifying the server certificate covers the new request hostname.</p><p>This issue affects Apache Traffic Server: from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Apache Community (reporter)
+* Omkhar Arasaratnam (reporter)
+
+
+## HTTP/2 and HTTP/3 dechunking removes per-stream buffer cap, allowing memory exhaustion ## { #CVE-2026-65324 }
+
+CVE-2026-65324 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-65324) [\[CVE json\]](./CVE-2026-65324.cve.json) [\[OSV json\]](./CVE-2026-65324.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:17:42.240Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server drops the per-stream buffer cap when dechunking HTTP/2 or HTTP/3 responses, letting a slow client exhaust server memory.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Apache Community (reporter)
+* Omkhar Arasaratnam (reporter)
+
+
+## HPACK encoder desynchronizes from the decoder after a failed header encode ## { #CVE-2026-65100 }
+
+CVE-2026-65100 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-65100) [\[CVE json\]](./CVE-2026-65100.cve.json) [\[OSV json\]](./CVE-2026-65100.osv.json)
+
+
+
+_Last updated: 2026-07-29T09:06:12.502Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server updates the HTTP/2 HPACK dynamic table before confirming the header block encoded successfully, so an encode failure leaves the encoder out of sync with the peer decoder and corrupts subsequent header blocks on the connection.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Omkhar Arasaratnam (reporter)
+* Apache Community (reporter)
+
+
 ## DoS vulnerability in HTTP/2 via stalled flow-control conditions ## { #CVE-2026-59173 }
 
 CVE-2026-59173 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59173) [\[CVE json\]](./CVE-2026-59173.cve.json) [\[OSV json\]](./CVE-2026-59173.osv.json)
@@ -43,6 +126,964 @@ _Last updated: 2026-07-18T12:52:08.684Z_
 
 ### Credits
 * Okta Red Team (reporter)
+
+
+## Plugins resetting the redirect counter enable SSRF amplification ## { #CVE-2026-58189 }
+
+CVE-2026-58189 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58189) [\[CVE json\]](./CVE-2026-58189.cve.json) [\[OSV json\]](./CVE-2026-58189.osv.json)
+
+
+
+_Last updated: 2026-07-29T09:05:13.041Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server allows redirect-limit bypass when plugins reset the retry counter, enabling SSRF amplification.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Omkhar Arasaratnam (reporter)
+
+
+## Memory-safety and limit-bypass errors across experimental plugins ## { #CVE-2026-58188 }
+
+CVE-2026-58188 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58188) [\[CVE json\]](./CVE-2026-58188.cve.json) [\[OSV json\]](./CVE-2026-58188.osv.json)
+
+
+
+_Last updated: 2026-07-29T09:04:20.085Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Several Apache Traffic Server experimental plugins have memory-safety and limit-bypass errors.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Yon Harlicaj (reporter)
+* Apache Community (reporter)
+* Omkhar Arasaratnam (reporter)
+
+
+## Multiplexer plugin chunk decoder enables a denial of service ## { #CVE-2026-58187 }
+
+CVE-2026-58187 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58187) [\[CVE json\]](./CVE-2026-58187.cve.json) [\[OSV json\]](./CVE-2026-58187.osv.json)
+
+
+
+_Last updated: 2026-07-29T09:03:17.157Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>The Apache Traffic Server multiplexer plugin overruns its chunk-decode buffer on upstream input, enabling denial of service.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Omkhar Arasaratnam (reporter)
+
+
+## webp_transform plugin decodes unsafely and mislabels degraded responses ## { #CVE-2026-58186 }
+
+CVE-2026-58186 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58186) [\[CVE json\]](./CVE-2026-58186.cve.json) [\[OSV json\]](./CVE-2026-58186.osv.json)
+
+
+
+_Last updated: 2026-07-29T09:01:35.556Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>The Apache Traffic Server webp_transform plugin can decode unsafely and serve mislabeled, cacheable responses.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Omkhar Arasaratnam (reporter)
+
+
+## Use-after-free in the intercept plugin ## { #CVE-2026-58185 }
+
+CVE-2026-58185 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58185) [\[CVE json\]](./CVE-2026-58185.cve.json) [\[OSV json\]](./CVE-2026-58185.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:57:42.562Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>The Apache Traffic Server intercept plugin has a use-after-free.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Omkhar Arasaratnam (reporter)
+
+
+## header_rewrite plugin cookie handling can corrupt memory ## { #CVE-2026-58184 }
+
+CVE-2026-58184 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58184) [\[CVE json\]](./CVE-2026-58184.cve.json) [\[OSV json\]](./CVE-2026-58184.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:56:45.008Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>The Apache Traffic Server header_rewrite plugin can crash or corrupt memory during cookie operations and CIDR condition matching.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Omkhar Arasaratnam (reporter)
+
+
+## prefetch plugin can crash on attacker-influenced input ## { #CVE-2026-58183 }
+
+CVE-2026-58183 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58183) [\[CVE json\]](./CVE-2026-58183.cve.json) [\[OSV json\]](./CVE-2026-58183.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:55:45.403Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>The Apache Traffic Server prefetch plugin can crash when processing attacker-influenced input.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Omkhar Arasaratnam (reporter)
+
+
+## ts_lua plugin has initialization and resource-handling errors ## { #CVE-2026-58182 }
+
+CVE-2026-58182 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58182) [\[CVE json\]](./CVE-2026-58182.cve.json) [\[OSV json\]](./CVE-2026-58182.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:54:41.470Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>The Apache Traffic Server ts_lua plugin mishandles initialization, transform context, and per-instance state.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Omkhar Arasaratnam (reporter)
+
+
+## uri_signing and url_sig plugins can exhaust the stack or crash ## { #CVE-2026-58181 }
+
+CVE-2026-58181 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58181) [\[CVE json\]](./CVE-2026-58181.cve.json) [\[OSV json\]](./CVE-2026-58181.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:46:00.299Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>The Apache Traffic Server uri_signing and url_sig plugins can exhaust the stack or crash on attacker input.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Apache Community (reporter)
+* Omkhar Arasaratnam (reporter)
+
+
+## txn_box plugin overflows the stack from attacker input ## { #CVE-2026-58180 }
+
+CVE-2026-58180 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58180) [\[CVE json\]](./CVE-2026-58180.cve.json) [\[OSV json\]](./CVE-2026-58180.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:45:10.821Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>The Apache Traffic Server txn_box plugin overflows the stack from attacker-controlled input.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Apache Community (reporter)
+
+
+## regex_remap plugin overflows the stack from attacker input ## { #CVE-2026-58179 }
+
+CVE-2026-58179 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58179) [\[CVE json\]](./CVE-2026-58179.cve.json) [\[OSV json\]](./CVE-2026-58179.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:44:28.901Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>The Apache Traffic Server regex_remap plugin overflows the stack and integers from substitution input.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Apache Community (reporter)
+
+
+## ESI plugin allows uncontrolled recursion and server-side request forgery ## { #CVE-2026-58178 }
+
+CVE-2026-58178 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58178) [\[CVE json\]](./CVE-2026-58178.cve.json) [\[OSV json\]](./CVE-2026-58178.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:43:21.506Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>The Apache Traffic Server ESI plugin can recurse without bound and fetch attacker-controlled URLs.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Apache Community (reporter)
+
+
+## Memory-safety and path-traversal errors in the Cripts framework ## { #CVE-2026-58177 }
+
+CVE-2026-58177 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58177) [\[CVE json\]](./CVE-2026-58177.cve.json) [\[OSV json\]](./CVE-2026-58177.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:42:36.014Z_
+
+### Affected
+
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>The Apache Traffic Server Cripts framework has out-of-bounds writes, path traversal, and use-after-free errors.</p><p>This issue affects Apache Traffic Server: from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Apache Community (reporter)
+* Omkhar Arasaratnam (reporter)
+
+
+## HostDB SRV handling leaks memory ## { #CVE-2026-58175 }
+
+CVE-2026-58175 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58175) [\[CVE json\]](./CVE-2026-58175.cve.json) [\[OSV json\]](./CVE-2026-58175.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:41:45.146Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server leaks memory when handling HostDB SRV records.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Omkhar Arasaratnam (reporter)
+
+
+## Remap configuration lifetime and TOCTOU errors cause use-after-free ## { #CVE-2026-58164 }
+
+CVE-2026-58164 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58164) [\[CVE json\]](./CVE-2026-58164.cve.json) [\[OSV json\]](./CVE-2026-58164.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:37:38.531Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server has use-after-free and time-of-check/time-of-use errors in remap configuration handling.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Apache Community (reporter)
+* Omkhar Arasaratnam (reporter)
+
+
+## Cache deserialization and lifetime errors can corrupt state or crash the server ## { #CVE-2026-58163 }
+
+CVE-2026-58163 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58163) [\[CVE json\]](./CVE-2026-58163.cve.json) [\[OSV json\]](./CVE-2026-58163.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:36:53.072Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server mishandles on-disk cache fields and object lifetimes, corrupting state or crashing.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Apache Community (reporter)
+* Omkhar Arasaratnam (reporter)
+
+
+## Certifier plugin trusts client SNI when generating certificates ## { #CVE-2026-58162 }
+
+CVE-2026-58162 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58162) [\[CVE json\]](./CVE-2026-58162.cve.json) [\[OSV json\]](./CVE-2026-58162.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:36:12.596Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>The Apache Traffic Server certifier plugin generates certificates based on attacker-controlled client SNI.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Omkhar Arasaratnam (reporter)
+
+
+## Memory-safety errors in TLS and SNI handling can crash the server ## { #CVE-2026-58161 }
+
+CVE-2026-58161 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58161) [\[CVE json\]](./CVE-2026-58161.cve.json) [\[OSV json\]](./CVE-2026-58161.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:35:35.583Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server can crash from null dereferences and dangling references in TLS and SNI handling.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Omkhar Arasaratnam (reporter)
+
+
+## Out-of-bounds reads while parsing DNS responses ## { #CVE-2026-58160 }
+
+CVE-2026-58160 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58160) [\[CVE json\]](./CVE-2026-58160.cve.json) [\[OSV json\]](./CVE-2026-58160.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:34:31.111Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server reads out of bounds while parsing DNS answers.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Apache Community (reporter)
+* Omkhar Arasaratnam (reporter)
+
+
+## Listener and ACL handling allow access-control bypass ## { #CVE-2026-58159 }
+
+CVE-2026-58159 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58159) [\[CVE json\]](./CVE-2026-58159.cve.json) [\[OSV json\]](./CVE-2026-58159.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:31:14.552Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server can bypass IP access controls on UDS listeners and through ACL matching errors.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Apache Community (reporter)
+* Omkhar Arasaratnam (reporter)
+
+
+## PROXY protocol parsing has port truncation and a stack overflow ## { #CVE-2026-58158 }
+
+CVE-2026-58158 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58158) [\[CVE json\]](./CVE-2026-58158.cve.json) [\[OSV json\]](./CVE-2026-58158.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:26:27.296Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server mishandles PROXY protocol input, truncating ports and overflowing the stack.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Apache Community (reporter)
+
+
+## Improper server-session reuse can expose data across client connections ## { #CVE-2026-58157 }
+
+CVE-2026-58157 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58157) [\[CVE json\]](./CVE-2026-58157.cve.json) [\[OSV json\]](./CVE-2026-58157.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:25:47.725Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server can reuse server sessions and tunnels improperly, exposing data across client connections.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Apache Community (reporter)
+* Omkhar Arasaratnam (reporter)
+
+
+## URL and port parsing errors allow access-control bypass ## { #CVE-2026-58156 }
+
+CVE-2026-58156 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58156) [\[CVE json\]](./CVE-2026-58156.cve.json) [\[OSV json\]](./CVE-2026-58156.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:25:07.986Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server mis-parses ports in URLs and userinfo, allowing port-based access-control bypass.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Apache Community (reporter)
+* Omkhar Arasaratnam (reporter)
+
+
+## Header-name length truncation enables header aliasing and request smuggling ## { #CVE-2026-58155 }
+
+CVE-2026-58155 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58155) [\[CVE json\]](./CVE-2026-58155.cve.json) [\[OSV json\]](./CVE-2026-58155.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:24:30.308Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server truncates over-long header names, allowing header aliasing, request smuggling, and policy bypass.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Omkhar Arasaratnam (reporter)
+
+
+## Memory-safety errors in MIME and header parsing ## { #CVE-2026-58154 }
+
+CVE-2026-58154 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58154) [\[CVE json\]](./CVE-2026-58154.cve.json) [\[OSV json\]](./CVE-2026-58154.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:23:57.475Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server can write out of bounds or overflow integers while parsing MIME and HTTP headers.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Michael Bommarito (reporter)
+* Apache Community (reporter)
+* Omkhar Arasaratnam (reporter)
+
+
+## HTTP/2 to HTTP/1 conversion forwards origin trailers to clients unsafely ## { #CVE-2026-58153 }
+
+CVE-2026-58153 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58153) [\[CVE json\]](./CVE-2026-58153.cve.json) [\[OSV json\]](./CVE-2026-58153.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:17:07.259Z_
+
+### Affected
+
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server forwards HTTP/2 origin trailers to HTTP/1 clients without proper chunked framing when converting HTTP/2 to HTTP/1.</p><p>This issue affects Apache Traffic Server: from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Apache Community (reporter)
+* Omkhar Arasaratnam (reporter)
+
+
+## Integer-handling errors in HPACK/XPACK decoding corrupt memory ## { #CVE-2026-58152 }
+
+CVE-2026-58152 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58152) [\[CVE json\]](./CVE-2026-58152.cve.json) [\[OSV json\]](./CVE-2026-58152.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:16:17.147Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server mishandles integers while decoding HPACK/XPACK headers, corrupting memory.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Apache Community (reporter)
+* Javid Khan (reporter)
+
+
+## Abusive HTTP/2 framing can exhaust resources and crash the server ## { #CVE-2026-58151 }
+
+CVE-2026-58151 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58151) [\[CVE json\]](./CVE-2026-58151.cve.json) [\[OSV json\]](./CVE-2026-58151.osv.json)
+
+
+
+_Last updated: 2026-07-29T08:15:41.513Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server can be crashed or driven to resource exhaustion by abusive HTTP/2 framing and flow-control.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Apache Community (reporter)
+* Omkhar Arasaratnam (reporter)
+
+
+## HTTP/2 requests with Transfer-Encoding are not rejected, allowing request smuggling ## { #CVE-2026-58150 }
+
+CVE-2026-58150 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58150) [\[CVE json\]](./CVE-2026-58150.cve.json) [\[OSV json\]](./CVE-2026-58150.osv.json)
+
+
+
+_Last updated: 2026-07-29T07:30:24.423Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server does not reject Transfer-Encoding in HTTP/2 requests, allowing downgrade request smuggling.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Apache Community (reporter)
+
+
+## Malformed chunked message body allows request smuggling ## { #CVE-2026-57834 }
+
+CVE-2026-57834 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-57834) [\[CVE json\]](./CVE-2026-57834.cve.json) [\[OSV json\]](./CVE-2026-57834.osv.json)
+
+
+
+_Last updated: 2026-07-29T07:25:43.006Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server allows request smuggling if chunked messages are malformed.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Haruki Oyama (reporter)
+* Katsutoshi Ikenoya (LY Corporation) (reporter)
+* Apache Community (reporter)
+
+
+## SNI to Host header matching policy is not properly enforced ## { #CVE-2026-41920 }
+
+CVE-2026-41920 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-41920) [\[CVE json\]](./CVE-2026-41920.cve.json) [\[OSV json\]](./CVE-2026-41920.osv.json)
+
+
+
+_Last updated: 2026-07-29T07:17:57.749Z_
+
+### Affected
+
+* Apache Traffic Server from 9.0.0 through 9.1.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Improper Access Control vulnerability in Apache Traffic Server.</p><p>This issue affects Apache Traffic Server: from 9.0.0 through 9.1.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.1.15 or 10.1.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* JD Marsters (Bhut Red) (reporter)
+* Apache Community (reporter)
+
+
+## Buffer overflow via Host field that has a long string value ## { #CVE-2026-33930 }
+
+CVE-2026-33930 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-33930) [\[CVE json\]](./CVE-2026-33930.cve.json) [\[OSV json\]](./CVE-2026-33930.osv.json)
+
+
+
+_Last updated: 2026-07-29T07:23:50.719Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 9.0.0 through 9.2.14
+* Apache Traffic Server from 10.0.0 through 10.1.3
+
+
+### Description
+
+<p>Apache Traffic Server copies the client Host header into a fixed-size stack buffer without a bound during redirect handling, so an over-long Host header overflows the stack when redirect following is enabled.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Pengpeng Hou (reporter)
+
+
+## Untrusted @ headers can spoof ATS internal metadata ## { #CVE-2026-33267 }
+
+CVE-2026-33267 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-33267) [\[CVE json\]](./CVE-2026-33267.cve.json) [\[OSV json\]](./CVE-2026-33267.osv.json)
+
+
+
+_Last updated: 2026-07-29T07:21:47.559Z_
+
+### Affected
+
+* Apache Traffic Server from 9.2.0 through 9.2.14
+* Apache Traffic Server from 10.1.0 through 10.1.3
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache Traffic Server.</p><p>This issue affects Apache Traffic Server: from 9.2.0 through 9.2.14, from 10.1.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Charlie Campbell (reporter)
+* Apache Community (reporter)
+
+
+## Request smuggling via chunked extension quoted-string parsing ## { #CVE-2026-24033 }
+
+CVE-2026-24033 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24033) [\[CVE json\]](./CVE-2026-24033.cve.json) [\[OSV json\]](./CVE-2026-24033.osv.json)
+
+
+
+_Last updated: 2026-07-29T07:22:37.470Z_
+
+### Affected
+
+* Apache Traffic Server from 10.0.0 through 10.1.3
+* Apache Traffic Server from 9.0.0 through 9.2.14
+
+
+### Description
+
+<p>Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling') vulnerability in Apache Traffic Server.</p><p>This issue affects Apache Traffic Server: from 10.0.0 through 10.1.3, from 9.0.0 through 9.2.14.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Rajat Raghav (reporter)
+* Katsutoshi Ikenoya (LY Corporation) (reporter)
+
+
+## Regex mappings match with malicious domain names ## { #CVE-2026-22068 }
+
+CVE-2026-22068 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-22068) [\[CVE json\]](./CVE-2026-22068.cve.json) [\[OSV json\]](./CVE-2026-22068.osv.json)
+
+
+
+_Last updated: 2026-07-29T07:18:58.921Z_
+
+### Affected
+
+* Apache Traffic Server from 10.0.x through 10.1.3
+* Apache Traffic Server from 9.0.x through 9.2.14
+
+
+### Description
+
+<p>Regular Expression without Anchors vulnerability in Apache Traffic Server.</p><p>This issue affects Apache Traffic Server: from 10.0.X through 10.1.3, from 9.0.X through 9.2.14.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
+
+
+### Credits
+* Omkhar Arasaratnam (reporter)
+* Apache Community (reporter)
 
 
 ## Malformed chunked message body allows request smuggling ## { #CVE-2025-65114 }

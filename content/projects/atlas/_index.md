@@ -13,6 +13,31 @@ Do you want disclose a potential security issue for Apache Atlas? Send your repo
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Missing Authorization on Admin Endpoints ## { #CVE-2026-50622 }
+
+CVE-2026-50622 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50622) [\[CVE json\]](./CVE-2026-50622.cve.json) [\[OSV json\]](./CVE-2026-50622.osv.json)
+
+
+
+_Last updated: 2026-07-29T09:10:07.076Z_
+
+### Affected
+
+* Apache Atlas from 0.8.0 through 2.5.0
+
+
+### Description
+
+<p><b>Description:</b><br>Missing Authorization&nbsp;in Apache Atlas.<br>A missing authorization vulnerability in Apache Atlas's admin endpoints allows any authenticated user, regardless of their assigned role, to perform administrative operations.<br></p><p></p><p><b>Affect Version:</b><br>This issue affects Apache Atlas: from 0.8 through 2.5.0.<br></p><b>Mitigation:</b><br>Users are recommended to upgrade to version 2.6.0, which fixes the issue.
+
+### References
+* https://lists.apache.org/thread/6r9vs7g5gkp983pwvky781hofdozhgzn
+
+
+### Credits
+* Geo (finder)
+
+
 ## Script injection allows access to unintended data ## { #CVE-2026-40563 }
 
 CVE-2026-40563 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40563) [\[CVE json\]](./CVE-2026-40563.cve.json) [\[OSV json\]](./CVE-2026-40563.osv.json)

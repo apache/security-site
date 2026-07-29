@@ -13,6 +13,50 @@ Do you want disclose a potential security issue for Apache Wicket? Send your rep
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## leaked and missing CSP headers ## { #CVE-2026-66391 }
+
+CVE-2026-66391 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66391) [\[CVE json\]](./CVE-2026-66391.cve.json) [\[OSV json\]](./CVE-2026-66391.osv.json)
+
+
+
+_Last updated: 2026-07-28T14:49:40.413Z_
+
+### Affected
+
+* Apache Wicket from 9.0.0 through 9.23.0
+* Apache Wicket from 10.0.0 through 10.9.0
+
+
+### Description
+
+<p>Use of Insufficiently Random Values, Protection Mechanism Failure vulnerability in Apache Wicket.</p><p>This issue affects Apache Wicket: from 9.0.0 through 9.23.0, from 10.0.0 through 10.9.0.</p><p>Users are recommended to upgrade to version 10.10.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/hfzcgjsbmmthzchtb8b8nv47d95scmqk
+
+
+## crafted Link URL strings can break out of the JavaScript sequence ## { #CVE-2026-66390 }
+
+CVE-2026-66390 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66390) [\[CVE json\]](./CVE-2026-66390.cve.json) [\[OSV json\]](./CVE-2026-66390.osv.json)
+
+
+
+_Last updated: 2026-07-28T14:49:11.657Z_
+
+### Affected
+
+* Apache Wicket from 9.0.0 through 9.23.0
+* Apache Wicket from 10.0.0 through 10.9.0
+
+
+### Description
+
+<p>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache Wicket.</p><p>This issue affects Apache Wicket: from 9.0.0 through 9.23.0, from 10.0.0 through 10.9.0.</p><p>Users are recommended to upgrade to version 10.10.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/67814fo0zocv3161bk1cr0ypvrkxky43
+
+
 ## Possible malicious path traversal in FolderUploadsFileManager ## { #CVE-2026-43975 }
 
 CVE-2026-43975 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-43975) [\[CVE json\]](./CVE-2026-43975.cve.json) [\[OSV json\]](./CVE-2026-43975.osv.json)

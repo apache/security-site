@@ -18,6 +18,32 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## DoS via WebSocket chat example ## { #CVE-2026-66299 }
+
+CVE-2026-66299 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66299) [\[CVE json\]](./CVE-2026-66299.cve.json)
+
+_Last updated: 2026-07-28T14:29:15.948Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M20 through 11.0.24
+* Apache Tomcat from 10.1.24 through 10.1.57
+* Apache Tomcat from 9.0.89 through 9.0.120
+* Apache Tomcat through 8.5.100 unaffected
+
+
+### Description
+
+<p>Uncontrolled Resource Consumption vulnerability in Apache Tomcat's WebSocket chat example.</p><p>This issue affects Apache Tomcat: from 11.0.0-M20 through 11.0.24, from 10.1.24 through 10.1.57, from 9.0.89 through 9.0.120. Users who have followed the security guidance to remove the examples web application are not affected by this issue.</p><p>Users are recommended to remove the examples web application or to upgrade to version 11.0.25, 10.1.58 or 9.0.121 (when released), which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/8owczcc1o8qw1rxmg9gvfk4w2jnh4l5k
+
+
+### Credits
+* 4ra1n, pyn3rd and unam4 (finder)
+
+
 ## EncryptInterceptor requirements not clearly documented ## { #CVE-2026-59084 }
 
 CVE-2026-59084 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59084) [\[CVE json\]](./CVE-2026-59084.cve.json) [\[OSV json\]](./CVE-2026-59084.osv.json)

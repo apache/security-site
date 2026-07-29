@@ -19,7 +19,7 @@ CVE-2026-63317 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63317) [\[CVE jso
 
 
 
-_Last updated: 2026-07-24T08:07:43.962Z_
+_Last updated: 2026-07-28T16:57:50.528Z_
 
 ### Affected
 

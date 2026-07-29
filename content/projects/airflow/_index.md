@@ -45,6 +45,33 @@ In the Apache Airflow FAB auth manager, a DAG whose `dag_id` is `DAGs` collided 
 * Jarek Potiuk (remediation developer)
 
 
+## FAB auth manager: JWT signature verification disabled by default for Azure AD OAuth (`verify_signature` defaults to `False`) ## { #CVE-2026-59243 }
+
+CVE-2026-59243 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59243) [\[CVE json\]](./CVE-2026-59243.cve.json) [\[OSV json\]](./CVE-2026-59243.osv.json)
+
+
+
+_Last updated: 2026-07-28T10:25:25.203Z_
+
+### Affected
+
+* Apache Airflow FAB provider before 3.7.3
+
+
+### Description
+
+The FAB auth manager&#x27;s Azure AD OAuth login defaulted `verify_signature=False` when decoding the ID token, so an attacker able to present a forged or unsigned (`alg:none`) ID token to the OAuth callback could bypass authentication and log in as an arbitrary user, including one holding the Admin role (CWE-347). Deployments running the FAB auth manager with the Azure AD OAuth login path under its default configuration are affected; the Authentik path already defaulted to `True`. This issue affects `apache-airflow-providers-fab` before 3.7.3. Users are advised to upgrade to `apache-airflow-providers-fab` 3.7.3, which defaults `verify_signature=True`.
+
+### References
+* https://github.com/apache/airflow/pull/69374
+* https://lists.apache.org/thread/x4784l7z00tl3gw4tv2dmvoon77rxgpl
+
+
+### Credits
+* MalHyuk (finder)
+* Jarek Potiuk (remediation developer)
+
+
 ## Git provider hook defaults to StrictHostKeyChecking=no, disabling SSH host-key verification ## { #CVE-2026-58065 }
 
 CVE-2026-58065 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58065) [\[CVE json\]](./CVE-2026-58065.cve.json) [\[OSV json\]](./CVE-2026-58065.osv.json)
