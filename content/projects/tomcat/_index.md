@@ -1700,7 +1700,9 @@ disk being full.
 
 ## Unexpected use of first declared worker in mod_jk for unmapped request ## { #CVE-2023-41081 }
 
-CVE-2023-41081 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-41081) [\[CVE json\]](./CVE-2023-41081.cve.json)
+CVE-2023-41081 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-41081) [\[CVE json\]](./CVE-2023-41081.cve.json) [\[OSV json\]](./CVE-2023-41081.osv.json)
+
+
 
 _Last updated: 2023-09-28T21:30:55.612Z_
 

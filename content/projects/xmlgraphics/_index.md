@@ -45,7 +45,9 @@ _Last updated: 2024-10-09T12:04:02.004Z_
 
 ## Information disclosure vulnerability ## { #CVE-2022-44730 }
 
-CVE-2022-44730 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-44730) [\[CVE json\]](./CVE-2022-44730.cve.json)
+CVE-2022-44730 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-44730) [\[CVE json\]](./CVE-2022-44730.cve.json) [\[OSV json\]](./CVE-2022-44730.osv.json)
+
+
 
 _Last updated: 2023-08-22T14:04:18.758Z_
 
@@ -65,7 +67,9 @@ Server-Side Request Forgery (SSRF) vulnerability in Apache Software Foundation A
 
 ## Information disclosure vulnerability ## { #CVE-2022-44729 }
 
-CVE-2022-44729 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-44729) [\[CVE json\]](./CVE-2022-44729.cve.json)
+CVE-2022-44729 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-44729) [\[CVE json\]](./CVE-2022-44729.cve.json) [\[OSV json\]](./CVE-2022-44729.osv.json)
+
+
 
 _Last updated: 2023-08-22T14:12:19.621Z_
 

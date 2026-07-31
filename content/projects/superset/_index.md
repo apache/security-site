@@ -1118,7 +1118,9 @@ An Incorrect authorisation check in SQLLab in Apache Superset versions up to and
 
 ## Database connection password leak ## { #CVE-2023-30776 }
 
-CVE-2023-30776 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-30776) [\[CVE json\]](./CVE-2023-30776.cve.json)
+CVE-2023-30776 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-30776) [\[CVE json\]](./CVE-2023-30776.cve.json) [\[OSV json\]](./CVE-2023-30776.osv.json)
+
+
 
 _Last updated: 2023-06-15T07:29:48.154Z_
 
@@ -1192,7 +1194,9 @@ An authenticated user with Gamma role authorization could have access to metadat
 
 ## Session validation vulnerability when using provided default SECRET_KEY ## { #CVE-2023-27524 }
 
-CVE-2023-27524 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-27524) [\[CVE json\]](./CVE-2023-27524.cve.json)
+CVE-2023-27524 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-27524) [\[CVE json\]](./CVE-2023-27524.cve.json) [\[OSV json\]](./CVE-2023-27524.osv.json)
+
+
 
 _Last updated: 2024-04-08T09:07:29.864Z_
 

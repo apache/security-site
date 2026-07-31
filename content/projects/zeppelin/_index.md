@@ -20,7 +20,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## LDAP filter injection in LdapRealm — incomplete fix of CVE-2024-31867 ## { #CVE-2026-44617 }
 
-CVE-2026-44617 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44617) [\[CVE json\]](./CVE-2026-44617.cve.json)
+CVE-2026-44617 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44617) [\[CVE json\]](./CVE-2026-44617.cve.json) [\[OSV json\]](./CVE-2026-44617.osv.json)
+
+
 
 _Last updated: 2026-07-30T15:22:27.856Z_
 

@@ -141,7 +141,9 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 
 ## Multiple parsing problems in the Apache Sling Commons JSON module ## { #CVE-2022-47937 }
 
-CVE-2022-47937 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-47937) [\[CVE json\]](./CVE-2022-47937.cve.json)
+CVE-2022-47937 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-47937) [\[CVE json\]](./CVE-2022-47937.cve.json) [\[OSV json\]](./CVE-2022-47937.osv.json)
+
+
 
 _Last updated: 2024-03-29T09:39:29.809Z_
 

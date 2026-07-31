@@ -53,7 +53,9 @@ has been changed accordingly and is available in the project repository.</p>
 
 ## Path Traversal in PDFBox ExtractEmbeddedFiles Example Code ## { #CVE-2026-23907 }
 
-CVE-2026-23907 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23907) [\[CVE json\]](./CVE-2026-23907.cve.json)
+CVE-2026-23907 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23907) [\[CVE json\]](./CVE-2026-23907.cve.json) [\[OSV json\]](./CVE-2026-23907.osv.json)
+
+
 
 _Last updated: 2026-03-10T16:53:49.159Z_
 

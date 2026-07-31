@@ -20,7 +20,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Sensitive information logged in Pulsar's Apache Kafka Connectors ## { #CVE-2025-30677 }
 
-CVE-2025-30677 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-30677) [\[CVE json\]](./CVE-2025-30677.cve.json)
+CVE-2025-30677 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-30677) [\[CVE json\]](./CVE-2025-30677.cve.json) [\[OSV json\]](./CVE-2025-30677.osv.json)
+
+
 
 _Last updated: 2025-04-09T11:16:21.827Z_
 
@@ -192,7 +194,9 @@ Improper input validation in the Pulsar Function Worker allows a malicious authe
 
 ## Timing attack in SASL token signature verification ## { #CVE-2023-51437 }
 
-CVE-2023-51437 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-51437) [\[CVE json\]](./CVE-2023-51437.cve.json)
+CVE-2023-51437 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-51437) [\[CVE json\]](./CVE-2023-51437.cve.json) [\[OSV json\]](./CVE-2023-51437.osv.json)
+
+
 
 _Last updated: 2024-07-22T08:38:34.087Z_
 

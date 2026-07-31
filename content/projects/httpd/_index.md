@@ -1267,7 +1267,9 @@ Serving WebSocket protocol upgrades over a HTTP/2 connection could result in a N
 
 ## HTTP/2 DoS by memory exhaustion on endless continuation frames ## { #CVE-2024-27316 }
 
-CVE-2024-27316 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27316) [\[CVE json\]](./CVE-2024-27316.cve.json)
+CVE-2024-27316 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-27316) [\[CVE json\]](./CVE-2024-27316.cve.json) [\[OSV json\]](./CVE-2024-27316.osv.json)
+
+
 
 _Last updated: 2024-07-22T08:42:12.197Z_
 

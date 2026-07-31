@@ -218,7 +218,9 @@ permission to do so.</p><p>This issue affects Apache OpenOffice: through 4.1.15.
 
 ## Macro URL arbitrary script execution ## { #CVE-2023-47804 }
 
-CVE-2023-47804 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-47804) [\[CVE json\]](./CVE-2023-47804.cve.json)
+CVE-2023-47804 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-47804) [\[CVE json\]](./CVE-2023-47804.cve.json) [\[OSV json\]](./CVE-2023-47804.osv.json)
+
+
 
 _Last updated: 2023-12-29T14:31:22.075Z_
 
@@ -242,7 +244,9 @@ _Last updated: 2023-12-29T14:31:22.075Z_
 
 ## Macro URL arbitrary script execution ## { #CVE-2022-47502 }
 
-CVE-2022-47502 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-47502) [\[CVE json\]](./CVE-2022-47502.cve.json)
+CVE-2022-47502 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-47502) [\[CVE json\]](./CVE-2022-47502.cve.json) [\[OSV json\]](./CVE-2022-47502.osv.json)
+
+
 
 _Last updated: 2023-04-05T12:45:10.294Z_
 
@@ -267,7 +271,9 @@ _Last updated: 2023-04-05T12:45:10.294Z_
 
 ## Empty entry in Java class path ## { #CVE-2022-38745 }
 
-CVE-2022-38745 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-38745) [\[CVE json\]](./CVE-2022-38745.cve.json)
+CVE-2022-38745 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-38745) [\[CVE json\]](./CVE-2022-38745.cve.json) [\[OSV json\]](./CVE-2022-38745.osv.json)
+
+
 
 _Last updated: 2023-03-24T15:56:44.525Z_
 

@@ -223,7 +223,9 @@ _Last updated: 2026-04-24T10:54:53.855Z_
 
 ## Users can access sensitive information through the actuator endpoint. ## { #CVE-2025-62188 }
 
-CVE-2025-62188 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-62188) [\[CVE json\]](./CVE-2025-62188.cve.json)
+CVE-2025-62188 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-62188) [\[CVE json\]](./CVE-2025-62188.cve.json) [\[OSV json\]](./CVE-2025-62188.osv.json)
+
+
 
 _Last updated: 2026-04-08T09:09:06.393Z_
 
@@ -452,7 +454,9 @@ Arbitrary File Read Vulnerability in Apache Dolphinscheduler.<br><br>This issue 
 
 ## Session do not expire after password change ## { #CVE-2023-50270 }
 
-CVE-2023-50270 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-50270) [\[CVE json\]](./CVE-2023-50270.cve.json)
+CVE-2023-50270 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-50270) [\[CVE json\]](./CVE-2023-50270.cve.json) [\[OSV json\]](./CVE-2023-50270.osv.json)
+
+
 
 _Last updated: 2024-02-23T10:17:33.021Z_
 

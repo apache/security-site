@@ -71,7 +71,9 @@ Schema parsing in the Java SDK of Apache Avro 1.11.3 and previous versions allow
 
 ## Memory when deserializing untrusted data in Avro Java SDK ## { #CVE-2023-39410 }
 
-CVE-2023-39410 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-39410) [\[CVE json\]](./CVE-2023-39410.cve.json)
+CVE-2023-39410 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-39410) [\[CVE json\]](./CVE-2023-39410.cve.json) [\[OSV json\]](./CVE-2023-39410.osv.json)
+
+
 
 _Last updated: 2025-02-06T14:33:53.747Z_
 

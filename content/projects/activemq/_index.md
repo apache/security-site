@@ -975,7 +975,9 @@ _Last updated: 2024-10-14T16:03:33.323Z_
 
 ## Unbounded deserialization causes ActiveMQ to be vulnerable to a remote code execution (RCE) attack ## { #CVE-2023-46604 }
 
-CVE-2023-46604 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-46604) [\[CVE json\]](./CVE-2023-46604.cve.json)
+CVE-2023-46604 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-46604) [\[CVE json\]](./CVE-2023-46604.cve.json) [\[OSV json\]](./CVE-2023-46604.osv.json)
+
+
 
 _Last updated: 2023-11-28T15:02:26.708Z_
 

@@ -3021,7 +3021,9 @@ Apache Airflow, versions before 2.7.1, is affected by a vulnerability that allow
 
 ## Session fixation in Apache Airflow web interface ## { #CVE-2023-40273 }
 
-CVE-2023-40273 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-40273) [\[CVE json\]](./CVE-2023-40273.cve.json)
+CVE-2023-40273 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-40273) [\[CVE json\]](./CVE-2023-40273.cve.json) [\[OSV json\]](./CVE-2023-40273.osv.json)
+
+
 
 _Last updated: 2023-09-12T06:41:25.454Z_
 

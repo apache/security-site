@@ -124,7 +124,9 @@ UserManager lack of checks allows impersonation in Apache JSPWiki up to 2.12.3 w
 
 ## Error Handling - Reveals Error Details ## { #CVE-2026-28811 }
 
-CVE-2026-28811 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-28811) [\[CVE json\]](./CVE-2026-28811.cve.json)
+CVE-2026-28811 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-28811) [\[CVE json\]](./CVE-2026-28811.cve.json) [\[OSV json\]](./CVE-2026-28811.osv.json)
+
+
 
 _Last updated: 2026-07-30T12:17:16.969Z_
 

@@ -141,7 +141,9 @@ _Last updated: 2024-12-20T15:44:02.694Z_
 
 ## File upload component had a directory traversal vulnerability ## { #CVE-2023-50164 }
 
-CVE-2023-50164 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-50164) [\[CVE json\]](./CVE-2023-50164.cve.json)
+CVE-2023-50164 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-50164) [\[CVE json\]](./CVE-2023-50164.cve.json) [\[OSV json\]](./CVE-2023-50164.osv.json)
+
+
 
 _Last updated: 2023-12-12T09:26:27.763Z_
 
@@ -166,7 +168,9 @@ _Last updated: 2023-12-12T09:26:27.763Z_
 
 ## excessive disk usage ## { #CVE-2023-41835 }
 
-CVE-2023-41835 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-41835) [\[CVE json\]](./CVE-2023-41835.cve.json)
+CVE-2023-41835 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-41835) [\[CVE json\]](./CVE-2023-41835.cve.json) [\[OSV json\]](./CVE-2023-41835.osv.json)
+
+
 
 _Last updated: 2023-12-12T08:42:17.762Z_
 
