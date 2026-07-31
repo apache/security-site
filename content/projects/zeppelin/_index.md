@@ -18,6 +18,110 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## LDAP filter injection in LdapRealm — incomplete fix of CVE-2024-31867 ## { #CVE-2026-44617 }
+
+CVE-2026-44617 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44617) [\[CVE json\]](./CVE-2026-44617.cve.json)
+
+_Last updated: 2026-07-30T15:22:27.856Z_
+
+### Affected
+
+* Apache Zeppelin from 0.11.1 before 0.12.1
+
+
+### Description
+
+LDAP filter injection vulnerability in Apache Zeppelin. LdapRealm used RFC 4514 distinguished-name escaping when constructing LDAP search filters instead of RFC 4515 filter escaping, leaving special filter characters insufficiently escaped. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is an incomplete fix of CVE-2024-31867. This issue affects Apache Zeppelin versions 0.11.1, 0.11.2, and 0.12.0. Users are recommended to upgrade to version 0.12.1, which fixes this issue.
+
+### References
+* https://github.com/apache/zeppelin/pull/5226
+* https://www.cve.org/CVERecord?id=CVE-2024-31867
+* https://lists.apache.org/thread/s65t6n3s1v4j5b1w7zvv5w73ko69m1zv
+
+
+### Credits
+* decsecre452 (finder)
+
+
+## LDAP injection in ActiveDirectoryGroupRealm filter construction ## { #CVE-2026-44616 }
+
+CVE-2026-44616 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44616) [\[CVE json\]](./CVE-2026-44616.cve.json) [\[OSV json\]](./CVE-2026-44616.osv.json)
+
+
+
+_Last updated: 2026-07-30T15:21:17.273Z_
+
+### Affected
+
+* Apache Zeppelin from 0.6.0 before 0.12.1
+
+
+### Description
+
+LDAP injection vulnerability in Apache Zeppelin. ActiveDirectoryGroupRealm constructed LDAP search filters without escaping user-controlled input, allowing an authenticated attacker to inject LDAP filter syntax through the user-search endpoint &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and potentially expose directory information. The role-lookup path was also affected after successful LDAP authentication. This issue affects Apache Zeppelin versions 0.6.0 through 0.12.0. Users are recommended to upgrade to version 0.12.1, which &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fixes this issue.
+
+### References
+* https://github.com/apache/zeppelin/pull/5226
+* https://lists.apache.org/thread/p6llqpvcszpg1wc8kx5ncfkdbms3g0rn
+
+
+### Credits
+* Andrea Cosentino from Apache Software Foundation (finder)
+
+
+## Path traversal in NotebookRepo note and folder path composition ## { #CVE-2026-44615 }
+
+CVE-2026-44615 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44615) [\[CVE json\]](./CVE-2026-44615.cve.json) [\[OSV json\]](./CVE-2026-44615.osv.json)
+
+
+
+_Last updated: 2026-07-30T15:35:21.810Z_
+
+### Affected
+
+* Apache Zeppelin from 0.9.0 before 0.12.1
+
+
+### Description
+
+Path traversal vulnerability in Apache Zeppelin. When FileSystemNotebookRepo is configured, an authenticated attacker with permission to rename a note, or access to folder operations, could supply traversal segments in note or folder paths. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Zeppelin composed these values into filesystem paths using the server's filesystem or Hadoop identity without ensuring that the result remained under the configured notebook directory. This could allow notebook files or directories to be moved, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;written, or deleted outside the notebook root. This issue affects Apache Zeppelin versions 0.9.0 through 0.12.0. Users are recommended to upgrade to version 0.12.1, which fixes this issue.
+
+### References
+* https://github.com/apache/zeppelin/pull/5227
+* https://github.com/apache/zeppelin/pull/5248
+* https://lists.apache.org/thread/ps1f0symnyxzq8c2dc3244v051jcwp40
+
+
+### Credits
+* Green-m (finder)
+
+
+## Cross-site request forgery in REST and WebSocket request handling ## { #CVE-2026-44613 }
+
+CVE-2026-44613 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44613) [\[CVE json\]](./CVE-2026-44613.cve.json) [\[OSV json\]](./CVE-2026-44613.osv.json)
+
+
+
+_Last updated: 2026-07-30T15:19:35.612Z_
+
+### Affected
+
+* Apache Zeppelin from 0.6.0 before 0.12.1
+
+
+### Description
+
+Cross-Site Request Forgery (CSRF) vulnerability in Apache Zeppelin. The default CORS configuration allowed cross-origin state-changing requests and accepted text/plain request bodies, allowing an attacker who lures an authenticated user to a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;malicious site to perform actions on the user's behalf through REST and WebSocket endpoints. This issue affects Apache Zeppelin versions 0.6.0 through 0.12.0. Users are recommended to upgrade to version 0.12.1, which fixes this issue.
+
+### References
+* https://github.com/apache/zeppelin/pull/5229
+* https://lists.apache.org/thread/94trzcny14c1csgotsnkyrfsflt30b2c
+
+
+### Credits
+* Reza (HazardLab Ninja) and Nir Zadok (finder)
+
+
 ## Arbitrary file read by adding malicious JDBC connection string ## { #CVE-2024-52279 }
 
 CVE-2024-52279 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-52279) [\[CVE json\]](./CVE-2024-52279.cve.json) [\[OSV json\]](./CVE-2024-52279.osv.json)

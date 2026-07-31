@@ -19,6 +19,32 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Regular Expression Denial of Service (ReDoS) in SQL Parser ## { #CVE-2026-23985 }
+
+CVE-2026-23985 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23985) [\[CVE json\]](./CVE-2026-23985.cve.json) [\[OSV json\]](./CVE-2026-23985.osv.json)
+
+
+
+_Last updated: 2026-07-30T16:09:19.372Z_
+
+### Affected
+
+* Apache Superset before 6.0.0
+
+
+### Description
+
+<p>A Regular Expression Denial of Service (ReDoS) vulnerability exists in Apache Superset versions 1.5.0 through 5.0.0. The vulnerability is located in the sql_parse.py component, specifically within the SQL_REGEX used for parsing SQL statements in the sqlparse library integration.<br>The affected regular expression contains overlapping disjunctions that share a common outer quantifier. An authenticated attacker can exploit this by sending a maliciously crafted input string (specifically a long sequence of backslashes or similar characters) to endpoints that process SQL queries</p><p>This issue affects Apache Superset: before 6.0.0.</p><p>Users are recommended to upgrade to version 6.0.0, which fixes the issue.&nbsp;</p><p>Workarounds:<br>● WAF Rules: Implement Web Application Firewall (WAF) rules to detect and block<br>requests containing excessively long sequences of backslashes or suspicious repeated<br>patterns in the queries.extras.where parameter.<br>● Rate Limiting: Ensure strict rate limiting is applied to the /api/v1/chart/data endpoint to<br>reduce the impact of potential attacks.</p>
+
+### References
+* https://lists.apache.org/thread/fdy7tx7glv90ypd7qnm1g1pt7nn336qx
+
+
+### Credits
+* Trung Đức Lê (reporter)
+* Beto de Almeida (remediation developer)
+
+
 ## SQLLab Read-Only Bypass on PostgreSQL ## { #CVE-2026-23984 }
 
 CVE-2026-23984 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23984) [\[CVE json\]](./CVE-2026-23984.cve.json) [\[OSV json\]](./CVE-2026-23984.osv.json)
@@ -94,6 +120,32 @@ _Last updated: 2026-02-24T12:52:42.954Z_
 
 ### Credits
 * River Koh (reporter)
+* Daniel Gaspar (remediation developer)
+
+
+## Improper Authorization in Chart Update allowing Dashboard Modification ## { #CVE-2026-23981 }
+
+CVE-2026-23981 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23981) [\[CVE json\]](./CVE-2026-23981.cve.json) [\[OSV json\]](./CVE-2026-23981.osv.json)
+
+
+
+_Last updated: 2026-07-30T16:08:22.552Z_
+
+### Affected
+
+* Apache Superset from 0.0.0 before 6.0.0
+
+
+### Description
+
+<p>An Improper Authorization vulnerability exists in Apache Superset allowing an authenticated user with permissions to update charts to modify dashboards they do not own. When updating a chart's properties via the REST API, a user can provide a list of dashboard IDs (dashboards) to associate the chart with. The validation logic in the UpdateChartCommand failed to verify that the user had write permissions for the target dashboards specified in the request body. </p><p>This issue affects Apache Superset: before 6.0.0.</p><p>Users are recommended to upgrade to version 6.0.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/k7q9z27t901xvqnkwgyns1l7w1dj3csf
+
+
+### Credits
+* Đỗ Thành Đạt (reporter)
 * Daniel Gaspar (remediation developer)
 
 
