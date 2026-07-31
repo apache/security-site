@@ -1538,7 +1538,9 @@ _Last updated: 2024-08-13T08:46:41.192Z_
 
 ## Differential fuzzing for HTTP request parsing discrepancies ## { #CVE-2023-33934 }
 
-CVE-2023-33934 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-33934) [\[CVE json\]](./CVE-2023-33934.cve.json)
+CVE-2023-33934 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-33934) [\[CVE json\]](./CVE-2023-33934.cve.json) [\[OSV json\]](./CVE-2023-33934.osv.json)
+
+
 
 _Last updated: 2023-09-28T08:24:06.964Z_
 

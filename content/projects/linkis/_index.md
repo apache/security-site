@@ -401,7 +401,9 @@ deserialization vulnerability and eventually lead to remote code execution. Ther
 
 ## Apache Linkis gateway module token authentication bypass ## { #CVE-2023-27987 }
 
-CVE-2023-27987 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-27987) [\[CVE json\]](./CVE-2023-27987.cve.json)
+CVE-2023-27987 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-27987) [\[CVE json\]](./CVE-2023-27987.cve.json) [\[OSV json\]](./CVE-2023-27987.osv.json)
+
+
 
 _Last updated: 2023-04-14T07:51:52.905Z_
 
@@ -435,7 +437,9 @@ We recommend users upgrade the version of Linkis to version 1.3.2 And modify the
 
 ## Apache Linkis Mangaer module engineConn material upload exists Zip Slip issue ## { #CVE-2023-27603 }
 
-CVE-2023-27603 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-27603) [\[CVE json\]](./CVE-2023-27603.cve.json)
+CVE-2023-27603 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-27603) [\[CVE json\]](./CVE-2023-27603.cve.json) [\[OSV json\]](./CVE-2023-27603.osv.json)
+
+
 
 _Last updated: 2023-04-14T07:17:48.297Z_
 

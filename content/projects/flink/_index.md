@@ -20,7 +20,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Server-Side Request Forgery and local file access in Kubernetes Operator ## { #CVE-2026-40564 }
 
-CVE-2026-40564 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40564) [\[CVE json\]](./CVE-2026-40564.cve.json)
+CVE-2026-40564 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40564) [\[CVE json\]](./CVE-2026-40564.cve.json) [\[OSV json\]](./CVE-2026-40564.osv.json)
+
+
 
 _Last updated: 2026-05-26T14:43:13.154Z_
 

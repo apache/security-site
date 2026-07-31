@@ -15,7 +15,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## Improper validation of user-supplied URLs leading to SSRF ## { #CVE-2026-49328 }
 
-CVE-2026-49328 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49328) [\[CVE json\]](./CVE-2026-49328.cve.json)
+CVE-2026-49328 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49328) [\[CVE json\]](./CVE-2026-49328.cve.json) [\[OSV json\]](./CVE-2026-49328.osv.json)
+
+
 
 _Last updated: 2026-06-01T10:10:32.924Z_
 

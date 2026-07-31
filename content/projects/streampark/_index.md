@@ -145,7 +145,9 @@ _Last updated: 2025-08-22T16:18:41.486Z_
 
 ## Apache StreamPark IDOR Vulnerability ## { #CVE-2024-34457 }
 
-CVE-2024-34457 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-34457) [\[CVE json\]](./CVE-2024-34457.cve.json)
+CVE-2024-34457 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-34457) [\[CVE json\]](./CVE-2024-34457.cve.json) [\[OSV json\]](./CVE-2024-34457.osv.json)
+
+
 
 _Last updated: 2024-09-11T11:03:06.370Z_
 

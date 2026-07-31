@@ -18,6 +18,136 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Markdown parser allows XSS injection in Markdown error processing ## { #CVE-2026-48910 }
+
+CVE-2026-48910 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48910) [\[CVE json\]](./CVE-2026-48910.cve.json) [\[OSV json\]](./CVE-2026-48910.osv.json)
+
+
+
+_Last updated: 2026-07-30T12:19:35.157Z_
+
+### Affected
+
+* Apache JSPWiki through 2.12.3
+
+
+### Description
+
+<p>A carefully crafted editing request could trigger an XSS vulnerability 
+on Apache JSPWiki when parsing errors on the markdown renderer, which 
+could allow the attacker to execute javascript in the victim's browser 
+and get some sensitive information about the victim.
+</p><p>This issue affects Apache JSPWiki: through 2.12.3.</p><p>Users are recommended to upgrade to version 2.12.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/yvbdjnocw5qq3xkbjs9h77ghlg0bsw2c
+
+
+### Credits
+* Justin Ng from Cyver Security Agency of Singapore / Inland Reveue Authority of Singapore (finder)
+
+
+## Pre-Authentication Arbitrary Wiki Markup Rendering ## { #CVE-2026-28814 }
+
+CVE-2026-28814 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-28814) [\[CVE json\]](./CVE-2026-28814.cve.json) [\[OSV json\]](./CVE-2026-28814.osv.json)
+
+
+
+_Last updated: 2026-07-30T12:19:01.429Z_
+
+### Affected
+
+* Apache JSPWiki before 2.12.4
+
+
+### Description
+
+Arbitrary Wiki Markup rendering due to lack of authentication in Apache JSPWiki up to 2.12.3 allows attacker to obtain sensitive data stored in JSPWiki variables.<br>Users are recommended to upgrade to version 2.12.4 or 3.0.0, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/8vv0311bvrrqxsyn913pcwf7pctyk52w
+
+
+### Credits
+* Miguel Regala (Fisher) - Hadrian.io (finder)
+
+
+## JSPWiki vulnerable to JSON hijacking ## { #CVE-2026-28813 }
+
+CVE-2026-28813 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-28813) [\[CVE json\]](./CVE-2026-28813.cve.json) [\[OSV json\]](./CVE-2026-28813.osv.json)
+
+
+
+_Last updated: 2026-07-30T12:18:27.400Z_
+
+### Affected
+
+* Apache JSPWiki before 2.12.4
+
+
+### Description
+
+Apache JSPWiki, up to 2.12.3, is vulnerable to JSON Hijacking, which leads to csrf vulnerabilities.<br>Users are recommended to upgrade to version 2.12.4, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/56440mymwkxt1hf3j8hjpo41yco7gotv
+
+
+### Credits
+* Janne Jalkannen from Apache JSPWiki (finder)
+
+
+## UserManager does not sanity-check user database at startup ## { #CVE-2026-28812 }
+
+CVE-2026-28812 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-28812) [\[CVE json\]](./CVE-2026-28812.cve.json) [\[OSV json\]](./CVE-2026-28812.osv.json)
+
+
+
+_Last updated: 2026-07-30T12:17:53.394Z_
+
+### Affected
+
+* Apache JSPWiki before 2.12.4
+
+
+### Description
+
+UserManager lack of checks allows impersonation in Apache JSPWiki up to 2.12.3 which may allow attackers to escalate privileges.<br>Users are recommended to upgrade to version 2.12.4 or newer which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/n3m666d6t6871dldvz3ct49ooqkbgw2p
+
+
+### Credits
+* Florian Holeczek from Apache JSPWiki (finder)
+
+
+## Error Handling - Reveals Error Details ## { #CVE-2026-28811 }
+
+CVE-2026-28811 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-28811) [\[CVE json\]](./CVE-2026-28811.cve.json) [\[OSV json\]](./CVE-2026-28811.osv.json)
+
+
+
+_Last updated: 2026-07-30T12:17:16.969Z_
+
+### Affected
+
+* Apache JSPWiki before up to 3.0.0
+
+
+### Description
+
+Debug Messages Revealing Unnecessary Information in Apache JSPWiki up to 2.12.3.<br>Users are recommended to upgrade to version 2.12.4, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/2dm414zzjo3pvhjz6mvqy3b5yhvnkcg5
+* https://jspwiki-wiki.apache.org/Wiki.jsp?page=CVE-2026-28811
+
+
+### Credits
+* Cristian Borlovan from Ounce Labs (finder)
+
+
 ## Cross-Site Scripting (XSS) in JSPWiki Image plugin ## { #CVE-2025-24854 }
 
 CVE-2025-24854 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-24854) [\[CVE json\]](./CVE-2025-24854.cve.json) [\[OSV json\]](./CVE-2025-24854.osv.json)

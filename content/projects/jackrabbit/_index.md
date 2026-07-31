@@ -77,7 +77,9 @@ Blind XXE Vulnerabilities in jackrabbit-spi-commons and jackrabbit-core in Apach
 
 ## Apache Jackrabbit RMI access can lead to RCE ## { #CVE-2023-37895 }
 
-CVE-2023-37895 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-37895) [\[CVE json\]](./CVE-2023-37895.cve.json)
+CVE-2023-37895 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-37895) [\[CVE json\]](./CVE-2023-37895.cve.json) [\[OSV json\]](./CVE-2023-37895.osv.json)
+
+
 
 _Last updated: 2023-07-25T14:02:07.695Z_
 

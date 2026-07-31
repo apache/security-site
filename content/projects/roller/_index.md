@@ -96,7 +96,9 @@ _Last updated: 2024-07-26T08:36:45.293Z_
 
 ## Roller's weblog category, weblog settings and file-upload features did not properly sanitize input could be exploited to perform Reflected Cross Site Scripting (XSS) even on a Roller site configured for untrusted users. ## { #CVE-2023-37581 }
 
-CVE-2023-37581 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-37581) [\[CVE json\]](./CVE-2023-37581.cve.json)
+CVE-2023-37581 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-37581) [\[CVE json\]](./CVE-2023-37581.cve.json) [\[OSV json\]](./CVE-2023-37581.osv.json)
+
+
 
 _Last updated: 2023-08-24T08:15:22.581Z_
 

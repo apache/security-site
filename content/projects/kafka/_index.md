@@ -225,7 +225,9 @@ _Last updated: 2025-06-10T07:55:12.969Z_
 
 ## SCRAM authentication vulnerable to replay attacks when used without encryption ## { #CVE-2024-56128 }
 
-CVE-2024-56128 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-56128) [\[CVE json\]](./CVE-2024-56128.cve.json)
+CVE-2024-56128 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-56128) [\[CVE json\]](./CVE-2024-56128.cve.json) [\[OSV json\]](./CVE-2024-56128.osv.json)
+
+
 
 _Last updated: 2024-12-18T13:38:00.297Z_
 
@@ -304,7 +306,9 @@ _Last updated: 2024-04-12T06:58:42.007Z_
 
 ## Possible RCE/Denial of service attack via SASL JAAS JndiLoginModule configuration using Kafka Connect  ## { #CVE-2023-25194 }
 
-CVE-2023-25194 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-25194) [\[CVE json\]](./CVE-2023-25194.cve.json)
+CVE-2023-25194 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-25194) [\[CVE json\]](./CVE-2023-25194.cve.json) [\[OSV json\]](./CVE-2023-25194.osv.json)
+
+
 
 _Last updated: 2023-07-21T11:35:22.991Z_
 

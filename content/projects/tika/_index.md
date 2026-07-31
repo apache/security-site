@@ -18,6 +18,58 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## unpack endpoint in tika-server allows configuration with unsecureFeatures=false ## { #CVE-2026-66756 }
+
+CVE-2026-66756 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66756) [\[CVE json\]](./CVE-2026-66756.cve.json) [\[OSV json\]](./CVE-2026-66756.osv.json)
+
+
+
+_Last updated: 2026-07-30T19:18:03.257Z_
+
+### Affected
+
+* Apache Tika from 4.0.0-alpha-1 before 4.0.0-beta-1
+
+
+### Description
+
+<p>Improper Protection of Alternate Path vulnerability in Apache Tika.</p><p>This issue affects Apache Tika: from 4.0.0-alpha-1 before 4.0.0-beta-1.</p><p>Users are recommended to upgrade to version 4.0.0-beta-1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/ynjg5lxwhqpc83pczf5y5561o2l4o568
+
+
+### Credits
+* George Chen discovered this issue and proposed fixes (finder)
+
+
+## Arbitrary Local File Read in ISArchiveParser ## { #CVE-2026-66755 }
+
+CVE-2026-66755 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66755) [\[CVE json\]](./CVE-2026-66755.cve.json) [\[OSV json\]](./CVE-2026-66755.osv.json)
+
+
+
+_Last updated: 2026-07-30T19:16:23.163Z_
+
+### Affected
+
+* Apache Tika from 1.8 before 3.3.2
+* Apache Tika from 4.0.0-alpha-1 before 4.0.0-beta-1
+
+
+### Description
+
+Relative Path Traversal in the ISA-Tab parser in Apache Software Foundation Apache Tika from 1.8 through 3.3.1, and 4.0.0-alpha-1, allows an attacker who can place files in a directory that the application subsequently parses to read arbitrary files accessible to the Tika process and have their contents emitted into the extracted text output, via a "Study Assay File Name" value in the ISA-Tab investigation file that traverses outside the dataset directory. Users are recommended to upgrade to version 3.3.2 or 4.0.0-beta-1, which fixes this issue.<br><br>
+
+### References
+* https://lists.apache.org/thread/0hcctcp9s5lxgq2ookp4o6chltk99f8r
+
+
+### Credits
+* Reported by BugQore, who supplied a patch in PR #2873. (finder)
+* Independently reported with proposed fix by Rui Heng Koh. (finder)
+
+
 ## Update to CVE-2025-54988 to expand scope of artifacts affected ## { #CVE-2025-66516 }
 
 CVE-2025-66516 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66516) [\[CVE json\]](./CVE-2025-66516.cve.json) [\[OSV json\]](./CVE-2025-66516.osv.json)

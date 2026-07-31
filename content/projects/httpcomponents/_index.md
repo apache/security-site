@@ -18,6 +18,31 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Connection Leak on Content-Encoding Decode Error Leads to Pool Exhaustion DoS ## { #CVE-2026-64607 }
+
+CVE-2026-64607 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-64607) [\[CVE json\]](./CVE-2026-64607.cve.json) [\[OSV json\]](./CVE-2026-64607.osv.json)
+
+
+
+_Last updated: 2026-07-31T10:12:13.331Z_
+
+### Affected
+
+* Apache HttpComponents Client from 5.0-alpha through 5.6.2
+
+
+### Description
+
+<p>HttpClient based on the classic i/o model fails to correctly release the underlying connection back to the connection manager if it encounters an invalid or unsupported `<span style="background-color: rgb(255, 255, 255);">Content-Encoding` header value in the response message.&nbsp;Please note this defect does not affect HttpClient based on the async i/o model.</span></p><p>This issue affects Apache HttpComponents Client: from 5.0-alpha1 through 5.6.2.&nbsp;</p>
+
+### References
+* https://lists.apache.org/thread/qqfzo3fqcdk4l5496vz95ppvl4ty511q
+
+
+### Credits
+* Yu Bao <by111@126.com> (finder)
+
+
 ## HPackDecoder Unlimited Header List Size Before SETTINGS ACK ## { #CVE-2026-54428 }
 
 CVE-2026-54428 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-54428) [\[CVE json\]](./CVE-2026-54428.cve.json) [\[OSV json\]](./CVE-2026-54428.osv.json)

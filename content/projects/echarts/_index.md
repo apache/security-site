@@ -20,7 +20,9 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## XSS in Lines series tooltip rendering ## { #CVE-2026-45249 }
 
-CVE-2026-45249 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-45249) [\[CVE json\]](./CVE-2026-45249.cve.json)
+CVE-2026-45249 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-45249) [\[CVE json\]](./CVE-2026-45249.cve.json) [\[OSV json\]](./CVE-2026-45249.osv.json)
+
+
 
 _Last updated: 2026-05-25T17:40:58.037Z_
 

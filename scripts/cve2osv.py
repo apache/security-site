@@ -57,7 +57,7 @@ def reference(reference):
   url = reference['url']
   if 'jira' in url:
     t = 'REPORT'
-  elif 'x_refsource_CONFIRM' in reference['tags']:
+  elif 'x_refsource_CONFIRM' in reference.get('tags', []):
     t = 'ADVISORY'
   else:
     t = 'WEB'
