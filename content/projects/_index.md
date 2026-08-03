@@ -160,6 +160,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Beam)
   - Advisories (experimental):\
     none so far
+- **Apache BifroMQ**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=BifroMQ)
+  - Advisories (experimental):\
+    none so far
+  - Security model:
+    - [Apache BifroMQ security model](https://bifromq.apache.org/docs/admin_guide/security/intro/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/bigtop/default.png" alt="" loading="lazy"> **Apache Bigtop**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Bigtop)
