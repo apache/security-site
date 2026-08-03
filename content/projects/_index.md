@@ -454,9 +454,9 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [flink.apache.org](https://flink.apache.org/what-is-flink/security/)
   - Security model:
     - [Apache Flink security model](https://flink.apache.org/what-is-flink/security/)
-- **Apache Fluss (Incubating)**
+- **Apache Fluss**
   - **Security contact:**\
-    [security@apache.org](mailto:security@apache.org?subject=Fluss%20%28Incubating%29)
+    [security@apache.org](mailto:security@apache.org?subject=Fluss)
   - Advisories (experimental):\
     [security.apache.org](/projects/fluss/)
 - **Apache Fory**
