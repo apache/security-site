@@ -1,12 +1,12 @@
 ---
-title: Apache Fluss (Incubating) security advisories
-description: Security information for Apache Fluss (Incubating)
+title: Apache Fluss security advisories
+description: Security information for Apache Fluss
 layout: single
 ---
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Fluss (Incubating)? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Fluss%20%28Incubating%29).
+Do you want disclose a potential security issue for Apache Fluss? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Fluss).
 
 # Advisories
 
