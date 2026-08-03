@@ -111,70 +111,42 @@
 </ul>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2026-66713">deserialization of untrusted Data</h2>
-<p>CVE-2026-66713 <a href="https://cve.org/CVERecord?id=CVE-2026-66713">[CVE]</a> <a href="./CVE-2026-66713.cve.json">[CVE json]</a> <a href="./CVE-2026-66713.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-07-28T13:44:22.395Z</em></p>
-<h3 id="affected">Affected</h3>
-<ul>
-<li>Apache Axis2/Java through 2.0.0</li>
-</ul>
-<h3 id="description">Description</h3>
-<p><span style="background-color: rgb(255, 255, 255);">Deserialization</span> <span style="background-color: rgb(255, 255, 255);">of</span> <span style="background-color: rgb(255, 255, 255);">Untrusted</span> <span style="background-color: rgb(255, 255, 255);">Data</span> <span style="background-color: rgb(255, 255, 255);">(CWE-502)</span> <span style="background-color: rgb(255, 255, 255);">in</span> <span style="background-color: rgb(255, 255, 255);">the</span> <span style="background-color: rgb(255, 255, 255);">Tribes-based</span> <span style="background-color: rgb(255, 255, 255);">clustering</span> <span style="background-color: rgb(255, 255, 255);">component</span>
-<br><span style="background-color: rgb(255, 255, 255);">  in Apache Software Foundation Apache Axis2/Java through 2.0.0 on Apache Tomcat</span>
-<br><span style="background-color: rgb(255, 255, 255);">  </span><span style="background-color: rgb(255, 255, 255);">(only</span> <span style="background-color: rgb(255, 255, 255);">when</span> <span style="background-color: rgb(255, 255, 255);">Tribes</span> <span style="background-color: rgb(255, 255, 255);">clustering</span> <span style="background-color: rgb(255, 255, 255);">is</span> <span style="background-color: rgb(255, 255, 255);">enabled,</span> <span style="background-color: rgb(255, 255, 255);">which</span> <span style="background-color: rgb(255, 255, 255);">is</span> <span style="background-color: rgb(255, 255, 255);">off</span> <span style="background-color: rgb(255, 255, 255);">by</span> <span style="background-color: rgb(255, 255, 255);">default)</span> <span style="background-color: rgb(255, 255, 255);">allows</span> <span style="background-color: rgb(255, 255, 255);">an</span>
-<br><span style="background-color: rgb(255, 255, 255);">  unauthenticated remote attacker with network access to the clustering port to</span>
-<br><span style="background-color: rgb(255, 255, 255);">  execute</span> <span style="background-color: rgb(255, 255, 255);">arbitrary</span> <span style="background-color: rgb(255, 255, 255);">code</span> <span style="background-color: rgb(255, 255, 255);">via</span> <span style="background-color: rgb(255, 255, 255);">a</span> <span style="background-color: rgb(255, 255, 255);">crafted</span> <span style="background-color: rgb(255, 255, 255);">serialized</span> <span style="background-color: rgb(255, 255, 255);">Java</span> <span style="background-color: rgb(255, 255, 255);">object</span> <span style="background-color: rgb(255, 255, 255);">delivered</span> <span style="background-color: rgb(255, 255, 255);">to</span> <span style="background-color: rgb(255, 255, 255);">the</span> <span style="background-color: rgb(255, 255, 255);">cluster</span>
-<br><span style="background-color: rgb(255, 255, 255);">  </span><span style="background-color: rgb(255, 255, 255);">channel</span> <span style="background-color: rgb(255, 255, 255);">and</span> <span style="background-color: rgb(255, 255, 255);">deserialized</span> <span style="background-color: rgb(255, 255, 255);">in</span>
-<br><span style="background-color: rgb(255, 255, 255);">  org.apache.axis2.clustering.tribes.Axis2ChannelListener#messageReceived. Users are</span>
-<br><span style="background-color: rgb(255, 255, 255);">  recommended</span> <span style="background-color: rgb(255, 255, 255);">to</span> <span style="background-color: rgb(255, 255, 255);">upgrade</span> <span style="background-color: rgb(255, 255, 255);">to</span> <span style="background-color: rgb(255, 255, 255);">version</span> <span style="background-color: rgb(255, 255, 255);">2.0.1,</span> <span style="background-color: rgb(255, 255, 255);">which</span> <span style="background-color: rgb(255, 255, 255);">fixes</span> <span style="background-color: rgb(255, 255, 255);">this</span> <span style="background-color: rgb(255, 255, 255);">issue</span> <span style="background-color: rgb(255, 255, 255);">by</span> <span style="background-color: rgb(255, 255, 255);">removing</span> <span style="background-color: rgb(255, 255, 255);">the</span>
-<br><span style="background-color: rgb(255, 255, 255);">  clustering feature entirely.</span><br>
-<br></p>
-<br>
-<h3 id="references">References</h3>
-<ul>
-<li><a href="https://github.com/apache/axis-axis2-java-core/commit/e6f53b230bddcb40577c84ff290ba51e7265fa15">https://github.com/apache/axis-axis2-java-core/commit/e6f53b230bddcb40577c84ff290ba51e7265fa15</a></li>
-<li><a href="https://lists.apache.org/thread/fgggbv3sjjqw7p6q0j88gspt9b2rb728">https://lists.apache.org/thread/fgggbv3sjjqw7p6q0j88gspt9b2rb728</a></li>
-</ul>
-<h3 id="credits">Credits</h3>
-<ul>
-<li>liuhuajin of Huawei (finder)</li>
-</ul>
 <h2 id="CVE-2023-51441">Apache Axis 1.x (EOL) may allow SSRF when untrusted input is passed to the service admin HTTP API</h2>
 <p>CVE-2023-51441 <a href="https://cve.org/CVERecord?id=CVE-2023-51441">[CVE]</a> <a href="./CVE-2023-51441.cve.json">[CVE json]</a> <a href="./CVE-2023-51441.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-01-31T09:07:08.922Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected">Affected</h3>
 <ul>
 <li>Apache Axis through 1.3</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description">Description</h3>
 <p>** UNSUPPORTED WHEN ASSIGNED ** Improper Input Validation vulnerability in Apache Axis allowed users with access to the admin service to perform possible SSRF<br><p>This issue affects Apache Axis: through 1.3.</p><p>As Axis 1 has been EOL we recommend you migrate to a different SOAP engine, such as Apache Axis 2/Java. Alternatively you could use a build of Axis with the patch from <a target="_blank" rel="nofollow" href="https://github.com/apache/axis-axis1-java/commit/685c309febc64aa393b2d64a05f90e7eb9f73e06"><a href="https://github.com/apache/axis-axis1-java/commit/685c309febc64aa393b2d64a05f90e7eb9f73e06">https://github.com/apache/axis-axis1-java/commit/685c309febc64aa393b2d64a05f90e7eb9f73e06</a></a> applied. The Apache Axis project does not expect to create an Axis 1.x release
 fixing this problem, though contributors that would like to work towards
 this are welcome.</p>
 </p>
-<h3 id="references-1">References</h3>
+<h3 id="references">References</h3>
 <ul>
 <li><a href="https://github.com/apache/axis-axis1-java/commit/685c309febc64aa393b2d64a05f90e7eb9f73e06">https://github.com/apache/axis-axis1-java/commit/685c309febc64aa393b2d64a05f90e7eb9f73e06</a></li>
 <li><a href="https://lists.apache.org/thread/8nrm5thop8f82pglx4o0jg8wmvy6d9yd">https://lists.apache.org/thread/8nrm5thop8f82pglx4o0jg8wmvy6d9yd</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits">Credits</h3>
 <ul>
 <li>thiscodecc of MoyunSec Vlab and Bing (finder)</li>
 </ul>
 <h2 id="CVE-2023-40743">Apache Axis 1.x (EOL) may allow RCE when untrusted input is passed to getService</h2>
 <p>CVE-2023-40743 <a href="https://cve.org/CVERecord?id=CVE-2023-40743">[CVE]</a> <a href="./CVE-2023-40743.cve.json">[CVE json]</a> <a href="./CVE-2023-40743.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2023-09-05T14:42:08.579Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache Axis through 1.3</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-1">Description</h3>
 <div>** UNSUPPORTED WHEN ASSIGNED ** When integrating Apache Axis 1.x in an application, it may not have been obvious that looking up a service through "ServiceFactory.getService" allows potentially dangerous lookup mechanisms such as LDAP. When passing untrusted input to this API method, this could expose the application to DoS, SSRF and even attacks leading to RCE.</div><div><br></div><div>As Axis 1 has been EOL we recommend you migrate to a different SOAP engine, such as Apache Axis 2/Java. As a workaround, you may review your code to verify no untrusted or unsanitized input is passed to "ServiceFactory.getService", or by applying the patch from <a target="_blank" rel="nofollow" href="https://github.com/apache/axis-axis1-java/commit/7e66753427466590d6def0125e448d2791723210">https://github.com/apache/axis-axis1-java/commit/7e66753427466590d6def0125e448d2791723210</a>. The Apache Axis project does not expect to create an Axis 1.x release fixing this problem, though contributors that would like to work towards this are welcome.<br></div>
-<h3 id="references-2">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://github.com/apache/axis-axis1-java/commit/7e66753427466590d6def0125e448d2791723210">https://github.com/apache/axis-axis1-java/commit/7e66753427466590d6def0125e448d2791723210</a></li>
 <li><a href="https://lists.apache.org/thread/gs0qgk2mgss7zfhzdd6ftfjvm4kp7v82">https://lists.apache.org/thread/gs0qgk2mgss7zfhzdd6ftfjvm4kp7v82</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>Letian Yuan (finder)</li>
 </ul>
