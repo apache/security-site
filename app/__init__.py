@@ -143,9 +143,19 @@ async def statistics_debt_api():
     now = datetime.datetime.now(tz=datetime.timezone.utc)
     return quart.jsonify(statistics.compute_debt_chart(now, pmcs=pmcs))
 
+async def _audit_access(project: str):
+    user = await utils.UserSession.create()
+
+    # Out-of-PMC access, such as security team or other admin
+    # access, is OK but logged with more scrutiny
+    mark = "" if project in user.pmcs else "[*]"
+
+    print(f"User {user.uid} accessed project {project}{mark}")
+
 @CLIENT.route("/project/<project>")
 async def project(project: str):
     await _require_authorization_for(project)
+    await _audit_access(project)
     r = await reports.load_pmc_reports(project)
     states = sorted(dict.fromkeys(report.state for report in r), key=_state_sort_key)
     sections = [
@@ -161,6 +171,7 @@ async def project(project: str):
 @CLIENT.route("/api/project/<project>/reports")
 async def project_reports_api(project: str):
     await _require_authorization_for(project)
+    await _audit_access(project)
     r = await reports.load_pmc_reports(project)
     return quart.jsonify([
         {
