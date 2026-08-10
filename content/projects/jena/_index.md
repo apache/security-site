@@ -18,6 +18,27 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Web requests using SPARQL Update can escape file restrictions ## { #CVE-2026-61372 }
+
+CVE-2026-61372 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-61372) [\[CVE json\]](./CVE-2026-61372.cve.json) [\[OSV json\]](./CVE-2026-61372.osv.json)
+
+
+
+_Last updated: 2026-08-03T15:19:33.471Z_
+
+### Affected
+
+* Apache Jena Fuseki through 6.1.0
+
+
+### Description
+
+<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache Jena Fuseki.</p><p>This issue affects Apache Jena Fuseki: through 6.1.0.</p><p>Users are recommended to upgrade to version 6.2.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/h206tpxtbzts7m254og6ffqljjdjkm84
+
+
 ## Configuration files uploaded by administrative users are not check properly ## { #CVE-2025-50151 }
 
 CVE-2025-50151 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-50151) [\[CVE json\]](./CVE-2025-50151.cve.json) [\[OSV json\]](./CVE-2025-50151.osv.json)

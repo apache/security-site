@@ -18,6 +18,160 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Residual Administrative API Key Access After Role or Account Revocation ## { #CVE-2026-60053 }
+
+CVE-2026-60053 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-60053) [\[CVE json\]](./CVE-2026-60053.cve.json) [\[OSV json\]](./CVE-2026-60053.osv.json)
+
+
+
+_Last updated: 2026-08-05T15:13:06.027Z_
+
+### Affected
+
+* Apache Answer through 2.0.1
+
+
+### Description
+
+<p>Insufficient Session Expiration vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.1.</p>Administrative API keys remained usable after the owning administrator was demoted or the account was marked inactive, suspended, or deleted, allowing continued access until the keys were explicitly removed.<br><p>Users are recommended to upgrade to version 2.0.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/2vkcj3bdvso6cywnklt2vtkc2m4o0b5c
+
+
+### Credits
+* yangxi (reporter)
+
+
+## Unauthorized disclosure of deleted or pending answer content ## { #CVE-2026-60023 }
+
+CVE-2026-60023 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-60023) [\[CVE json\]](./CVE-2026-60023.cve.json) [\[OSV json\]](./CVE-2026-60023.osv.json)
+
+
+
+_Last updated: 2026-08-05T15:12:01.731Z_
+
+### Affected
+
+* Apache Answer through 2.0.1
+
+
+### Description
+
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.1.</p>Deleted or pending answers could be retrieved by unauthorized users through the single-answer read path when the parent question remained visible, exposing answer content that should not have been accessible.<br><p>Users are recommended to upgrade to version 2.0.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/rq3ygd0j9cchkbmh99dqf8624s7r8y49
+
+
+### Credits
+* yangxi (reporter)
+
+
+## Missing authorization in revision audit reject allows authenticated users to reject pending revisions ## { #CVE-2026-50749 }
+
+CVE-2026-50749 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50749) [\[CVE json\]](./CVE-2026-50749.cve.json) [\[OSV json\]](./CVE-2026-50749.osv.json)
+
+
+
+_Last updated: 2026-08-05T15:11:00.104Z_
+
+### Affected
+
+* Apache Answer through 2.0.1
+
+
+### Description
+
+<p>Improper Authorization vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.1.</p>Any authenticated user can reject arbitrary pending edit-revisions without review permission due to a missing authorization check on the reject operation.<br><p>Users are recommended to upgrade to version 2.0.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/ogk461yr4w9o95k15bkjxk2kpbkrbnln
+
+
+### Credits
+* tonghuaroot (reporter)
+* Mattia Campanelli (reporter)
+* Cavan Loughran (reporter)
+* Xi Yang (reporter)
+
+
+## Improper authorization in avatar update cleanup allows authenticated users to delete arbitrary uploaded files by URL ## { #CVE-2026-48912 }
+
+CVE-2026-48912 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48912) [\[CVE json\]](./CVE-2026-48912.cve.json) [\[OSV json\]](./CVE-2026-48912.osv.json)
+
+
+
+_Last updated: 2026-08-05T15:10:03.446Z_
+
+### Affected
+
+* Apache Answer through 2.0.1
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.1.</p> A missing ownership check in the avatar-cleanup logic allows any authenticated user to delete other users' uploaded files by supplying their file URLs.<br><p>Users are recommended to upgrade to version 2.0.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/b9jnttmspd9kp4vgbvb32dcqb4201flq
+
+
+### Credits
+* tonghuaroot (reporter)
+
+
+## Unauthenticated OAuth Email-Binding Account Takeover via Existing User Confirmation Flow ## { #CVE-2026-48911 }
+
+CVE-2026-48911 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48911) [\[CVE json\]](./CVE-2026-48911.cve.json) [\[OSV json\]](./CVE-2026-48911.osv.json)
+
+
+
+_Last updated: 2026-08-05T15:09:10.774Z_
+
+### Affected
+
+* Apache Answer through 2.0.1
+
+
+### Description
+
+<p>Insufficient Verification of Data Authenticity vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.1.</p>A missing authorization check in the external-login email binding flow allows unauthenticated attackers to take over arbitrary user accounts by tricking victims into clicking a crafted confirmation link.<br><p>Users are recommended to upgrade to version 2.0.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/mrlwtdnhqqgfbchjgq6rffkz67o8wyv8
+
+
+### Credits
+* tonghuaroot (reporter)
+* yangxi (reporter)
+
+
+## Denial of service via crafted Accept-Language header parsing ## { #CVE-2026-48834 }
+
+CVE-2026-48834 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48834) [\[CVE json\]](./CVE-2026-48834.cve.json) [\[OSV json\]](./CVE-2026-48834.osv.json)
+
+
+
+_Last updated: 2026-08-05T15:07:31.168Z_
+
+### Affected
+
+* Apache Answer through 2.0.1
+
+
+### Description
+
+<p>Improper Handling of Length Parameter Inconsistency vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.1.</p>Unauthenticated attackers can cause a denial of service via a specially crafted Accept-Language header that triggers excessive CPU consumption during parsing.<br><p>Users are recommended to upgrade to version 2.0.2, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/0yg5smwnbrhqs55m5h61gn42mcs8s95p
+
+
+### Credits
+* tonghuaroot (reporter)
+
+
 ## Unlisted Questions Accessible via Direct API Access ## { #CVE-2026-34905 }
 
 CVE-2026-34905 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34905) [\[CVE json\]](./CVE-2026-34905.cve.json) [\[OSV json\]](./CVE-2026-34905.osv.json)

@@ -18,6 +18,106 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Uncontrolled Resource Consumption through Decompression of HTTP Requests ## { #CVE-2026-68981 }
+
+CVE-2026-68981 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68981) [\[CVE json\]](./CVE-2026-68981.cve.json) [\[OSV json\]](./CVE-2026-68981.osv.json)
+
+
+
+_Last updated: 2026-08-03T19:59:53.029Z_
+
+### Affected
+
+* Apache NiFi from 1.5.0 through 2.10.0
+
+
+### Description
+
+Apache NiFi 1.5.0 through 2.10.0 support gzip-encoded HTTP requests for the application REST API using a Jersey encoding filter. The framework enforced a configurable maximum request size on the compressed payload rather than the decompressed output, allowing a malicious client to send crafted requests that could consume excessive amounts of memory. Upgrading to Apache NiFi 2.11.0 is the recommended mitigation, which relocates response compression to Jetty Server and disables decompression of gzip-encoded HTTP requests.
+
+### References
+* https://lists.apache.org/thread/vxrqn7poyf1wx6gdy7c0dxqfqkctjngg
+
+
+### Credits
+* mak3bread (Minseong Kim) (finder)
+
+
+## Authorization Bypass for Parameter Context Asset Deletion ## { #CVE-2026-68980 }
+
+CVE-2026-68980 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68980) [\[CVE json\]](./CVE-2026-68980.cve.json) [\[OSV json\]](./CVE-2026-68980.osv.json)
+
+
+
+_Last updated: 2026-08-03T19:58:50.048Z_
+
+### Affected
+
+* Apache NiFi from 2.0.0 through 2.10.0
+
+
+### Description
+
+Apache NiFi 2.0.0 through 2.10.0 support creating, reading, and deleting Assets associated with Parameter Contexts through the REST API. The framework authorizes asset deletion against the owning Parameter Context using the supplied Parameter Context Identifier and Asset Identifier. The framework performed authorized based on the supplied Parameter Context Identifier without verifying the requested Identifier against the stored Identifier. Apache NiFi installations that do not implement different levels of authorization across Parameter Contexts are not subject to this vulnerability, because the framework enforces write permissions as the security boundary. Upgrading to Apache NiFi 2.11.0 is the recommended mitigation, which verifies Parameter Context ownership of the requested Asset before deletion using the same strategy applied to Asset read operations.
+
+### References
+* https://lists.apache.org/thread/yo8k6tt3zxjm49zzhly3453v0xhwm3o1
+
+
+### Credits
+* mak3bread (Minseong Kim) (finder)
+
+
+## Missing Authorization for Components Referenced by Parameter Context Updates ## { #CVE-2026-68979 }
+
+CVE-2026-68979 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68979) [\[CVE json\]](./CVE-2026-68979.cve.json) [\[OSV json\]](./CVE-2026-68979.osv.json)
+
+
+
+_Last updated: 2026-08-03T20:00:00.439Z_
+
+### Affected
+
+* Apache NiFi from 1.10.0 through 2.10.0
+
+
+### Description
+
+Apache NiFi 1.10.0 through 2.10.0 provide a Parameter Context update REST API method that does not enforce authorization checking on components referencing Parameter values. Updating a Parameter Context can change parameter values that affect referencing components, but framework authorization was limited to read and write privileges on the Parameter Context itself. As a result of the missing authorization, an authenticated user authorized to modify a Parameter Context, but not authorized on referencing components, could alter Parameter values affecting those components. In deployments where a Parameter value contains executable scripting content, updating a Parameter can result in code execution during automatic component validation, without starting the referencing component. The impact was limited to stopped components by existing verification checks, and the issue applies only to deployments that use component-level authorization policies. Upgrading to Apache NiFi 2.11.0 is the recommended mitigation, which aligns the Parameter Context update method authorization with other methods, adding authorization checking on affected components.
+
+### References
+* https://lists.apache.org/thread/xwz8wsss2ovx07tns96rkc3n7cm4xfrq
+
+
+### Credits
+* D0HY30N (finder)
+
+
+## Incorrect Authorization for Parameter Context Validation Requests ## { #CVE-2026-62354 }
+
+CVE-2026-62354 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-62354) [\[CVE json\]](./CVE-2026-62354.cve.json) [\[OSV json\]](./CVE-2026-62354.osv.json)
+
+
+
+_Last updated: 2026-08-03T19:57:33.492Z_
+
+### Affected
+
+* Apache NiFi from 1.10.0 through 2.10.0
+
+
+### Description
+
+Authorization handling for Parameter Context validation requests in Apache NiFi 1.10.0 through 2.10.0 allows clients with read access to submit proposed Parameter values. The proposed values override current configuration, enabling users with read access to invoke predefined component validation methods with alternative settings. Apache NiFi installations that do not implement different levels of authorization for viewing and modifying Parameter Context configuration are not subject to this vulnerability. Upgrading to Apache NiFi 2.11.0 is the recommended mitigation, requiring write access to submit Parameter Context validation requests.
+
+### References
+* https://lists.apache.org/thread/l17xcnnf1rm7qljmypyjxmh62cx4o4wj
+
+
+### Credits
+* Nguyen Van Hiep from MBBank (finder)
+
+
 ## Missing Validation for Proxy Host Headers ## { #CVE-2026-54665 }
 
 CVE-2026-54665 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-54665) [\[CVE json\]](./CVE-2026-54665.cve.json) [\[OSV json\]](./CVE-2026-54665.osv.json)

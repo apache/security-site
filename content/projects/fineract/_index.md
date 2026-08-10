@@ -81,7 +81,7 @@ CVE-2026-35152 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-35152) [\[CVE jso
 
 
 
-_Last updated: 2026-07-15T09:19:53.550Z_
+_Last updated: 2026-08-05T12:05:58.976Z_
 
 ### Affected
 

@@ -19,6 +19,31 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## register endpoint reads attacker-controlled storage location before allowed-locations validation ## { #CVE-2026-64640 }
+
+CVE-2026-64640 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-64640) [\[CVE json\]](./CVE-2026-64640.cve.json) [\[OSV json\]](./CVE-2026-64640.osv.json)
+
+
+
+_Last updated: 2026-08-06T09:08:05.017Z_
+
+### Affected
+
+* Apache Polaris through 1.6.0
+
+
+### Description
+
+Apache Polaris did not consistently validate storage locations supplied during table and view registration.<br><br><div>An authenticated principal with permission to register a table or view could, depending on the affected release and registration path, cause Polaris to use the catalog's storage credentials to read a caller-selected Iceberg metadata file before verifying that the file was within the catalog's allowed storage locations.</div><div>If the catalog's underlying credentials could read an object outside&nbsp;that boundary, this could disclose limited information from the object.</div><br><div>Polaris could also accept registration metadata located within an allowed location that contained references to storage locations outside the allowed boundary.</div><div>This second condition did not itself cause Polaris to read the&nbsp;referenced external locations during registration.</div><br><div>The demonstrated impact is limited to confidentiality.</div><div>No unauthorized data&nbsp;modification or availability impact has been demonstrated.</div><br><div>The server-side read requires a deployment using S3 credential vending and an object outside the allowed locations that the catalog's underlying storage credentials can read.</div><div>Exploitation requires an authenticated principal with&nbsp;table- or view-registration privileges.</div>
+
+### References
+* https://lists.apache.org/thread/scd8p9wy8b9j3om5wohbotpfycnmmjl4
+
+
+### Credits
+* Andrea Cosentino (finder)
+
+
 ## write.metadata.path changes could bypass location validation and broaden delegated storage access ## { #CVE-2026-42812 }
 
 CVE-2026-42812 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-42812) [\[CVE json\]](./CVE-2026-42812.cve.json) [\[OSV json\]](./CVE-2026-42812.osv.json)
