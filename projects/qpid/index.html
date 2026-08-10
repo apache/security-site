@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta name="generator" content="Hugo 0.111.3">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Apache Qpid security advisories </title>
+
+  
+  <meta name="description" content="Security information for Apache Qpid"> 
+  
+  
+  
+  
+  
+  <meta name="robots" content="noindex">
+  
+
+  
+
+  <meta name="author" content="">
+
+
+  <meta property="og:title" content="Apache Qpid security advisories" />
+<meta property="og:description" content="Security information for Apache Qpid" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://security.apache.org/projects/qpid/" />
+
+  
+
+
+
+
+  
+  
+   <link href="/projects/qpid/index.xml" rel="alternate" type="application/rss+xml" title="Apache Security Team" /> 
+
+  <link rel="canonical" href="https://security.apache.org/projects/qpid/">  
+
+  <link href="/css/font.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/kube.legenda.css" rel="stylesheet" type="text/css">
+  <link href="/css/highlight.css" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+
+ <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  <script src="/js/jquery-2.1.4.min.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript" src="/js/tocbot.min.js"></script>
+</head>
+
+
+<body class="page-kube">
+  <header> <div class="show-sm">
+    <div id="nav-toggle-box">
+      <div id="nav-toggle-brand">
+        <a href="/">Apache Security Team</a>
+      </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
+    </div>
+  </div>
+  <div class="hide-sm" id="top">
+    <div id="top-brand">
+      <a href="/" title="home">Apache Security Team</a>
+    </div>
+    <nav id="top-nav-main">
+      <ul>
+       
+       
+    <li><a href="/blog" >Blog</a></li>
+    
+    <li><a href="https://www.apache.org/licenses/" >License</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/sponsorship.html" >Sponsorship</a></li>
+    
+    <li><a href="https://www.apache.org/foundation/thanks.html" >Thanks</a></li>
+    
+    <li><a href="https://privacy.apache.org/policies/privacy-policy-public.html" >Privacy</a></li>
+    
+    <li><a href="https://www.apache.org" >Apache</a></li>
+    
+      </ul>
+    </nav>
+    <nav id="top-nav-extra"> 
+      <ul>
+          
+      </ul>
+    </nav>
+  </div>
+ </header>
+  <main>
+
+<div id="hero" class="wrap">
+  <h1>Apache Qpid security advisories</h1>
+    <p>Security information for Apache Qpid</p>
+</div>
+<div id="project-box">
+<div id="project">
+
+ <h1 id="reporting">Reporting</h1>
+<p>Do you want disclose a potential security issue for Apache Qpid? Send your report to the <a href="mailto:security@apache.org?subject=Qpid">Apache Security Team</a>.</p>
+<h1 id="advisories">Advisories</h1>
+<p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-68080">Unbounded echo flow responses can lead to denial of service</h2>
+<p>CVE-2026-68080 <a href="https://cve.org/CVERecord?id=CVE-2026-68080">[CVE]</a> <a href="./CVE-2026-68080.cve.json">[CVE json]</a> <a href="./CVE-2026-68080.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:51:18.656Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Qpid Broker-J through 10.0.1</li>
+</ul>
+<h3 id="description">Description</h3>
+<div>It was not possible to govern the rate at which the broker would respond to an echo flow, enabling an authenticated attacker to cause excessive resource usage and potential denial of service.</div><div>This issue affects Apache Qpid Broker-J: through 10.0.1.</div><div>Users are recommended to upgrade to version 10.1.0, which fixes the issue.</div>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/tcnrv5nhmnsrzz92o4owxgycro6llt57">https://lists.apache.org/thread/tcnrv5nhmnsrzz92o4owxgycro6llt57</a></li>
+</ul>
+<h2 id="CVE-2026-68078">Unable to govern the maximum number of transfer frames per incoming delivery</h2>
+<p>CVE-2026-68078 <a href="https://cve.org/CVERecord?id=CVE-2026-68078">[CVE]</a> <a href="./CVE-2026-68078.cve.json">[CVE json]</a> <a href="./CVE-2026-68078.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:43:32.321Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Qpid Broker-J through 10.0.1</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<div>It was not possible to govern the maximum number of transfer frames per incoming delivery, enabling an authenticated attacker to cause excessive resource usage and potential denial of service.</div><div>This issue affects Apache Qpid Broker-J: through 10.0.1.</div><div>Users are recommended to upgrade to version 10.1.0, which fixes the issue.</div>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/m8gs6pfp1fmbgwcjr8zsgn95hfh15f8o">https://lists.apache.org/thread/m8gs6pfp1fmbgwcjr8zsgn95hfh15f8o</a></li>
+</ul>
+<h2 id="CVE-2026-68077">Unbounded disposition range handling can lead to denial of service</h2>
+<p>CVE-2026-68077 <a href="https://cve.org/CVERecord?id=CVE-2026-68077">[CVE]</a> <a href="./CVE-2026-68077.cve.json">[CVE json]</a> <a href="./CVE-2026-68077.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:41:03.741Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Qpid Broker-J through 10.0.1</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<div>An authenticated attacker can craft a disposition frame with large or illegal ranges causing excessive CPU usage due to naive range handling, leading to denial of service.</div><div>This issue affects Apache Qpid Broker-J: through 10.0.1.</div><div>Users are recommended to upgrade to version 10.1.0, which fixes the issue.</div>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/gzc78gdrlw2711v8jzgmsto8bqvg28y8">https://lists.apache.org/thread/gzc78gdrlw2711v8jzgmsto8bqvg28y8</a></li>
+</ul>
+<h2 id="CVE-2026-68075">Incoming session flow control window can be exceeded</h2>
+<p>CVE-2026-68075 <a href="https://cve.org/CVERecord?id=CVE-2026-68075">[CVE]</a> <a href="./CVE-2026-68075.cve.json">[CVE json]</a> <a href="./CVE-2026-68075.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:35:58.182Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Qpid Broker-J through 10.0.1</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<div>An authenticated attacker could exceed the session flow control incoming window potentially leading to denial of service.</div><div>This issue affects Apache Qpid Broker-J: through 10.0.1.</div><div>Users are recommended to upgrade to version 10.1.0, which fixes the issue.</div>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/lht725jgkowmyyjl039roffg6pyvbxz0">https://lists.apache.org/thread/lht725jgkowmyyjl039roffg6pyvbxz0</a></li>
+</ul>
+<h2 id="CVE-2026-68074">Unbounded symbol value caching can lead to pre-authentication resource exhaustion</h2>
+<p>CVE-2026-68074 <a href="https://cve.org/CVERecord?id=CVE-2026-68074">[CVE]</a> <a href="./CVE-2026-68074.cve.json">[CVE json]</a> <a href="./CVE-2026-68074.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:19:51.744Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Qpid Broker-J through 10.0.1</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<div>A pre-authentication attacker could leverage unbounded symbol value caching to cause resource exhaustion leading to denial of service.</div><div>This issue affects Apache Qpid Broker-J: through 10.0.1.</div><div>Users are recommended to upgrade to version 10.1.0, which fixes the issue.</div>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/9t1pvl36z69ssww6449od5g0tszqnhjs">https://lists.apache.org/thread/9t1pvl36z69ssww6449od5g0tszqnhjs</a></li>
+</ul>
+<h2 id="CVE-2026-68073">Unbounded type nesting can lead to pre-authentication stack overflow</h2>
+<p>CVE-2026-68073 <a href="https://cve.org/CVERecord?id=CVE-2026-68073">[CVE]</a> <a href="./CVE-2026-68073.cve.json">[CVE json]</a> <a href="./CVE-2026-68073.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:32:20.617Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Qpid Broker-J through 10.0.1</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<div>A pre-authentication attacker could leverage type nesting to cause a StackOverflowError potentially leading to denial of service.</div><div>This issue affects Apache Qpid Broker-J: through 10.0.1.</div><div>Users are recommended to upgrade to version 10.1.0, which fixes the issue.</div>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/djz1gnrk882vzjo8rykyf9bnywqbvwwr">https://lists.apache.org/thread/djz1gnrk882vzjo8rykyf9bnywqbvwwr</a></li>
+</ul>
+<h2 id="CVE-2026-68060">Type size/count handling can lead to excessive allocation pre-authentication</h2>
+<p>CVE-2026-68060 <a href="https://cve.org/CVERecord?id=CVE-2026-68060">[CVE]</a> <a href="./CVE-2026-68060.cve.json">[CVE json]</a> <a href="./CVE-2026-68060.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:26:23.306Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Qpid Broker-J through 10.0.1</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<div>A pre-authentication attacker could leverage type size/count handling to cause excessive allocation leading to potential denial of service.</div><div>This issue affects Apache Qpid Broker-J: through 10.0.1.</div><div>Users are recommended to upgrade to version 10.1.0, which fixes the issue.</div>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/0slvl8h25w3z4opnh08yyn8l3chko5c9">https://lists.apache.org/thread/0slvl8h25w3z4opnh08yyn8l3chko5c9</a></li>
+</ul>
+<h2 id="CVE-2026-67592">Unable to govern the maximum number of transfer frames per incoming delivery</h2>
+<p>CVE-2026-67592 <a href="https://cve.org/CVERecord?id=CVE-2026-67592">[CVE]</a> <a href="./CVE-2026-67592.cve.json">[CVE json]</a> <a href="./CVE-2026-67592.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:44:14.457Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache Qpid ProtonJ2 through 1.1.0</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<div>It was not possible to govern the maximum number of transfer frames per incoming delivery, enabling an authenticated attacker to cause excessive resource usage and potential denial of service.</div><div>This issue affects Apache Qpid ProtonJ2: through 1.1.0.</div><div>Users are recommended to upgrade to version 1.2.0, which fixes the issue</div>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/b4pv9hfdk7ox78pss77sb4nzwjrvqhhz">https://lists.apache.org/thread/b4pv9hfdk7ox78pss77sb4nzwjrvqhhz</a></li>
+</ul>
+<h2 id="CVE-2026-67591">Incoming session flow control window can be exceeded</h2>
+<p>CVE-2026-67591 <a href="https://cve.org/CVERecord?id=CVE-2026-67591">[CVE]</a> <a href="./CVE-2026-67591.cve.json">[CVE json]</a> <a href="./CVE-2026-67591.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:38:21.990Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Qpid ProtonJ2 through 1.1.0</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<div>An authenticated attacker could exceed the session flow control incoming window potentially leading to denial of service.</div><div>This issue affects Apache Qpid ProtonJ2: through 1.1.0.</div><div>Users are recommended to upgrade to version 1.2.0, which fixes the issue.</div>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/rwmggh2bkm6qotxpdfcplht3jgw5n036">https://lists.apache.org/thread/rwmggh2bkm6qotxpdfcplht3jgw5n036</a></li>
+</ul>
+<h2 id="CVE-2026-67590">Unbounded type nesting can lead to pre-authentication stackoverflow</h2>
+<p>CVE-2026-67590 <a href="https://cve.org/CVERecord?id=CVE-2026-67590">[CVE]</a> <a href="./CVE-2026-67590.cve.json">[CVE json]</a> <a href="./CVE-2026-67590.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:33:34.406Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache Qpid ProtonJ2 through 1.1.0</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<div>A pre-authentication attacker could leverage type nesting to cause a StackOverflowError potentially leading to denial of service.</div><div>This issue affects Apache Qpid ProtonJ2: through 1.1.0.</div><div>Users are recommended to upgrade to version 1.2.0, which fixes the issue.</div>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/kmov6k7f3moqy01m1s370fl61vgos3ly">https://lists.apache.org/thread/kmov6k7f3moqy01m1s370fl61vgos3ly</a></li>
+</ul>
+<h2 id="CVE-2026-67589">Type size/count handling can lead to excessive allocation pre-authentication</h2>
+<p>CVE-2026-67589 <a href="https://cve.org/CVERecord?id=CVE-2026-67589">[CVE]</a> <a href="./CVE-2026-67589.cve.json">[CVE json]</a> <a href="./CVE-2026-67589.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:28:10.043Z</em></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache Qpid ProtonJ2 through 1.1.0</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<div>A pre-authentication attacker could leverage type size/count handling to cause excessive allocation leading to potential denial of service.</div><div>This issue affects Apache Qpid ProtonJ2: through 1.1.0.</div><div>Users are recommended to upgrade to version 1.2.0, which fixes the issue.</div>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/bs24x4778dh72xtfs299cy8krvdlo47q">https://lists.apache.org/thread/bs24x4778dh72xtfs299cy8krvdlo47q</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Apache Qpid security team (finder)</li>
+<li><a href="mailto:xxy010605@gmail.com">xxy010605@gmail.com</a> (reporter)</li>
+</ul>
+<h2 id="CVE-2026-67588">Unbounded symbol value caching can lead to pre-authentication resource exhaustion</h2>
+<p>CVE-2026-67588 <a href="https://cve.org/CVERecord?id=CVE-2026-67588">[CVE]</a> <a href="./CVE-2026-67588.cve.json">[CVE json]</a> <a href="./CVE-2026-67588.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:21:39.842Z</em></p>
+<h3 id="affected-11">Affected</h3>
+<ul>
+<li>Apache Qpid ProtonJ2 through 1.1.0</li>
+</ul>
+<h3 id="description-11">Description</h3>
+<div>A pre-authentication attacker could leverage unbounded symbol value caching to cause resource exhaustion leading to denial of service.</div><div>This issue affects Apache Qpid ProtonJ2: through 1.1.0.</div><div>Users are recommended to upgrade to version 1.2.0, which fixes the issue.</div>
+<h3 id="references-11">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/vk4j02dzggfdrdkwvzmqo4jro2tgj0jt">https://lists.apache.org/thread/vk4j02dzggfdrdkwvzmqo4jro2tgj0jt</a></li>
+</ul>
+<h2 id="CVE-2026-67555">Unable to govern the maximum number of transfer frames per incoming delivery</h2>
+<p>CVE-2026-67555 <a href="https://cve.org/CVERecord?id=CVE-2026-67555">[CVE]</a> <a href="./CVE-2026-67555.cve.json">[CVE json]</a> <a href="./CVE-2026-67555.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:43:53.150Z</em></p>
+<h3 id="affected-12">Affected</h3>
+<ul>
+<li>Apache Qpid Proton Dotnet through 1.0.0</li>
+</ul>
+<h3 id="description-12">Description</h3>
+<div>It was not possible to govern the maximum number of transfer frames per incoming delivery, enabling an authenticated attacker to cause excessive resource usage and potential denial of service</div><div>This issue affects Apache Qpid Proton-Dotnet: through 1.0.0.</div><div>Users are recommended to upgrade to version 1.1.0, which fixes the issue.</div>
+<h3 id="references-12">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/dwrb02dp714lvlfxdj4o5bc9h3z54sw3">https://lists.apache.org/thread/dwrb02dp714lvlfxdj4o5bc9h3z54sw3</a></li>
+</ul>
+<h2 id="CVE-2026-67554">Unbounded disposition range handling can lead to denial of service</h2>
+<p>CVE-2026-67554 <a href="https://cve.org/CVERecord?id=CVE-2026-67554">[CVE]</a> <a href="./CVE-2026-67554.cve.json">[CVE json]</a> <a href="./CVE-2026-67554.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:41:21.799Z</em></p>
+<h3 id="affected-13">Affected</h3>
+<ul>
+<li>Apache Qpid Proton Dotnet through 1.0.0</li>
+</ul>
+<h3 id="description-13">Description</h3>
+<div>An authenticated attacker can craft a disposition frame with large or illegal ranges causing excessive CPU usage due to naive range handling, leading to denial of service.</div><div>This issue affects Apache Qpid Proton-Dotnet: through 1.0.0.</div><div>Users are recommended to upgrade to version 1.1.0, which fixes the issue.</div>
+<h3 id="references-13">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/5ndlowz29464ytj98gz9z9ljhwnmb2hm">https://lists.apache.org/thread/5ndlowz29464ytj98gz9z9ljhwnmb2hm</a></li>
+</ul>
+<h2 id="CVE-2026-67553">Incoming session flow control window can be exceeded</h2>
+<p>CVE-2026-67553 <a href="https://cve.org/CVERecord?id=CVE-2026-67553">[CVE]</a> <a href="./CVE-2026-67553.cve.json">[CVE json]</a> <a href="./CVE-2026-67553.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:37:23.826Z</em></p>
+<h3 id="affected-14">Affected</h3>
+<ul>
+<li>Apache Qpid Proton Dotnet through 1.0.0</li>
+</ul>
+<h3 id="description-14">Description</h3>
+<div>An authenticated attacker could exceed the session flow control incoming window potentially leading to denial of service.</div><div>This issue affects Apache Qpid Proton-Dotnet: through 1.0.0.</div><div>Users are recommended to upgrade to version 1.1.0, which fixes the issue.</div>
+<h3 id="references-14">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/hvsncmcbgjrn85crs909nf4y3dqqrywo">https://lists.apache.org/thread/hvsncmcbgjrn85crs909nf4y3dqqrywo</a></li>
+</ul>
+<h2 id="CVE-2026-67552">Unbounded type nesting can lead to pre-authentication stackoverflow</h2>
+<p>CVE-2026-67552 <a href="https://cve.org/CVERecord?id=CVE-2026-67552">[CVE]</a> <a href="./CVE-2026-67552.cve.json">[CVE json]</a> <a href="./CVE-2026-67552.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:32:53.769Z</em></p>
+<h3 id="affected-15">Affected</h3>
+<ul>
+<li>Apache Qpid Proton Dotnet through 1.0.0</li>
+</ul>
+<h3 id="description-15">Description</h3>
+<div>A pre-authentication attacker could leverage type nesting to cause a StackOverflowError potentially leading to denial of service.</div><div>This issue affects Apache Qpid Proton-Dotnet through 1.0.0.</div><div>Users are recommended to upgrade to version 1.1.0, which fixes the issue</div>
+<h3 id="references-15">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/4dyg0gycrv55ox4oywqght61b053g8xj">https://lists.apache.org/thread/4dyg0gycrv55ox4oywqght61b053g8xj</a></li>
+</ul>
+<h2 id="CVE-2026-67551">Type size/count handling can lead to excessive allocation pre-authentication</h2>
+<p>CVE-2026-67551 <a href="https://cve.org/CVERecord?id=CVE-2026-67551">[CVE]</a> <a href="./CVE-2026-67551.cve.json">[CVE json]</a> <a href="./CVE-2026-67551.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:27:20.446Z</em></p>
+<h3 id="affected-16">Affected</h3>
+<ul>
+<li>Apache Qpid Proton Dotnet through 1.0.0</li>
+</ul>
+<h3 id="description-16">Description</h3>
+<div> pre-authentication attacker could leverage type size/count handling to cause excessive allocation leading to potential denial of service.</div><div>This issue affects Apache Qpid Proton-Dotnet: through 1.0.0.</div><div>Users are recommended to upgrade to version 1.1.0, which fixes the issue.</div>
+<h3 id="references-16">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/o566fhkrr3gg0lyzt24xwvz9w94oo6ro">https://lists.apache.org/thread/o566fhkrr3gg0lyzt24xwvz9w94oo6ro</a></li>
+</ul>
+<h2 id="CVE-2026-67465">Unbounded symbol value caching can lead to pre-authentication resource exhaustion</h2>
+<p>CVE-2026-67465 <a href="https://cve.org/CVERecord?id=CVE-2026-67465">[CVE]</a> <a href="./CVE-2026-67465.cve.json">[CVE json]</a> <a href="./CVE-2026-67465.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:21:00.415Z</em></p>
+<h3 id="affected-17">Affected</h3>
+<ul>
+<li>Apache Qpid Proton Dotnet through 1.0.0</li>
+</ul>
+<h3 id="description-17">Description</h3>
+<p>A pre-authentication attacker could leverage unbounded symbol value caching to cause resource exhaustion leading to denial of service.</p><p>This issue affects Apache Qpid Proton-Dotnet: through 1.0.0.</p><p>Users are recommended to upgrade to version 1.1.0, which fixes the issue.</p>
+<h3 id="references-17">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/zl2pj5fo32lbyrwof89tdyrgt67bbo0m">https://lists.apache.org/thread/zl2pj5fo32lbyrwof89tdyrgt67bbo0m</a></li>
+</ul>
+<h2 id="CVE-2026-66277">Unable to govern the maximum number of transfer frames per incoming delivery</h2>
+<p>CVE-2026-66277 <a href="https://cve.org/CVERecord?id=CVE-2026-66277">[CVE]</a> <a href="./CVE-2026-66277.cve.json">[CVE json]</a> <a href="./CVE-2026-66277.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:42:26.473Z</em></p>
+<h3 id="affected-18">Affected</h3>
+<ul>
+<li>Apache Qpid Proton-J through 0.34.1</li>
+</ul>
+<h3 id="description-18">Description</h3>
+<p>It was not possible to govern the maximum number of transfer frames per incoming delivery, enabling an authenticated attacker to cause excessive resource usage and potential denial of service.</p><p>This issue affects Apache Qpid Proton-J: through 0.34.1.</p><p>Users are recommended to upgrade to version 0.35.0, which fixes the issue.</p>
+<h3 id="references-18">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/48tflr3sx0sxq9bcdy5rh06oy3gmwx02">https://lists.apache.org/thread/48tflr3sx0sxq9bcdy5rh06oy3gmwx02</a></li>
+</ul>
+<h2 id="CVE-2026-66276">Unbounded disposition range handling can lead to denial of service</h2>
+<p>CVE-2026-66276 <a href="https://cve.org/CVERecord?id=CVE-2026-66276">[CVE]</a> <a href="./CVE-2026-66276.cve.json">[CVE json]</a> <a href="./CVE-2026-66276.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:39:26.606Z</em></p>
+<h3 id="affected-19">Affected</h3>
+<ul>
+<li>Apache Qpid Proton-J through 0.34.1</li>
+</ul>
+<h3 id="description-19">Description</h3>
+<div>An authenticated attacker can craft a disposition frame with large or illegal ranges causing excessive CPU usage due to naive range handling, leading to denial of service.</div><p>This issue affects Apache Qpid Proton-J: through 0.34.1.</p><p>Users are recommended to upgrade to version 0.35.0, which fixes the issue.</p>
+<h3 id="references-19">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/14nj0lpsqpnd3q0hw0t0tw44qvdo1jc2">https://lists.apache.org/thread/14nj0lpsqpnd3q0hw0t0tw44qvdo1jc2</a></li>
+</ul>
+<h2 id="CVE-2026-66275">Incoming session flow control window can be exceeded</h2>
+<p>CVE-2026-66275 <a href="https://cve.org/CVERecord?id=CVE-2026-66275">[CVE]</a> <a href="./CVE-2026-66275.cve.json">[CVE json]</a> <a href="./CVE-2026-66275.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:34:44.424Z</em></p>
+<h3 id="affected-20">Affected</h3>
+<ul>
+<li>Apache Qpid Proton-J through 0.34.1</li>
+</ul>
+<h3 id="description-20">Description</h3>
+<p>An authenticated attacker could exceed the session flow control incoming window potentially leading to denial of service.</p><p>This issue affects Apache Qpid Proton-J: through 0.34.1.</p><p>Users are recommended to upgrade to version 0.35.0, which fixes the issue.</p>
+<h3 id="references-20">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/jds59nxrgcxtlx7xl0kvl5hqt07thxzt">https://lists.apache.org/thread/jds59nxrgcxtlx7xl0kvl5hqt07thxzt</a></li>
+</ul>
+<h2 id="CVE-2026-66274">Unbounded type nesting can lead to pre-authentication stackoverflow</h2>
+<p>CVE-2026-66274 <a href="https://cve.org/CVERecord?id=CVE-2026-66274">[CVE]</a> <a href="./CVE-2026-66274.cve.json">[CVE json]</a> <a href="./CVE-2026-66274.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:29:40.499Z</em></p>
+<h3 id="affected-21">Affected</h3>
+<ul>
+<li>Apache Qpid Proton-J through 0.34.1</li>
+</ul>
+<h3 id="description-21">Description</h3>
+<p>A pre-authentication attacker could leverage type nesting to cause a StackOverflowError potentially leading to denial of service.</p><p>This issue affects Apache Qpid Proton-J: through 0.34.1.</p><p>Users are recommended to upgrade to version 0.35.0, which fixes the issue.</p>
+<h3 id="references-21">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/h7xolzws2by2qhdjf7scbx87foxojb5h">https://lists.apache.org/thread/h7xolzws2by2qhdjf7scbx87foxojb5h</a></li>
+</ul>
+<h2 id="CVE-2026-66273">Type size/count handling can lead to excessive allocation pre-authentication</h2>
+<p>CVE-2026-66273 <a href="https://cve.org/CVERecord?id=CVE-2026-66273">[CVE]</a> <a href="./CVE-2026-66273.cve.json">[CVE json]</a> <a href="./CVE-2026-66273.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:23:28.044Z</em></p>
+<h3 id="affected-22">Affected</h3>
+<ul>
+<li>Apache Qpid Proton-J through 0.34.1</li>
+</ul>
+<h3 id="description-22">Description</h3>
+<p>A pre-authentication attacker could leverage type size/count handling to cause excessive allocation leading to potential denial of service.</p><p>This issue affects Apache Qpid Proton-J: through 0.34.1.</p><p>Users are recommended to upgrade to version 0.35.0, which fixes the issue.</p>
+<h3 id="references-22">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/z34s9v5w05qk4qqtz5fs3v9wpxz6fnbh">https://lists.apache.org/thread/z34s9v5w05qk4qqtz5fs3v9wpxz6fnbh</a></li>
+</ul>
+<h2 id="CVE-2026-66257">Unbounded symbol value caching can lead to pre-authentication resource exhaustion</h2>
+<p>CVE-2026-66257 <a href="https://cve.org/CVERecord?id=CVE-2026-66257">[CVE]</a> <a href="./CVE-2026-66257.cve.json">[CVE json]</a> <a href="./CVE-2026-66257.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-05T05:17:56.848Z</em></p>
+<h3 id="affected-23">Affected</h3>
+<ul>
+<li>Apache Qpid Proton-J through 0.34.1</li>
+</ul>
+<h3 id="description-23">Description</h3>
+<p>A pre-authentication attacker could leverage unbounded symbol value caching to cause resource exhaustion leading to denial of service.</p><p>This issue affects Apache Qpid Proton-J: through 0.34.1.</p><p>Users are recommended to upgrade to version 0.35.0, which fixes the issue.</p>
+<h3 id="references-23">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/dnczt6bgfcq2x6q8ljco177h1qmv59fm">https://lists.apache.org/thread/dnczt6bgfcq2x6q8ljco177h1qmv59fm</a></li>
+</ul>
+
+  
+</div>
+</div>
+</main>
+  <footer> 
+    <footer id="footer">
+    <p>&copy; The Apache Software Foundation. Built using the <a href="https://github.com/jeblister/kube" target="_blank" rel="noopener noreferrer">kube Theme for Hugo</a>. Apache and the Apache feather logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
+  </footer>
+ 
+</footer>
+
+
+  <script src="/js/kube.js" type="text/javascript">
+  </script>
+  <script src="/js/kube.legenda.js" type="text/javascript">
+  </script>
+  <script src="/js/main.js" type="text/javascript">
+  </script>
+</body>
+
+</html>

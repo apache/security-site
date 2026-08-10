@@ -110,14 +110,31 @@
 </ul>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-64640">register endpoint reads attacker-controlled storage location before allowed-locations validation</h2>
+<p>CVE-2026-64640 <a href="https://cve.org/CVERecord?id=CVE-2026-64640">[CVE]</a> <a href="./CVE-2026-64640.cve.json">[CVE json]</a> <a href="./CVE-2026-64640.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-06T09:08:05.017Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Polaris through 1.6.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Apache Polaris did not consistently validate storage locations supplied during table and view registration.<br><br><div>An authenticated principal with permission to register a table or view could, depending on the affected release and registration path, cause Polaris to use the catalog&rsquo;s storage credentials to read a caller-selected Iceberg metadata file before verifying that the file was within the catalog&rsquo;s allowed storage locations.</div><div>If the catalog&rsquo;s underlying credentials could read an object outside that boundary, this could disclose limited information from the object.</div><br><div>Polaris could also accept registration metadata located within an allowed location that contained references to storage locations outside the allowed boundary.</div><div>This second condition did not itself cause Polaris to read the referenced external locations during registration.</div><br><div>The demonstrated impact is limited to confidentiality.</div><div>No unauthorized data modification or availability impact has been demonstrated.</div><br><div>The server-side read requires a deployment using S3 credential vending and an object outside the allowed locations that the catalog&rsquo;s underlying storage credentials can read.</div><div>Exploitation requires an authenticated principal with table- or view-registration privileges.</div></p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/scd8p9wy8b9j3om5wohbotpfycnmmjl4">https://lists.apache.org/thread/scd8p9wy8b9j3om5wohbotpfycnmmjl4</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Andrea Cosentino (finder)</li>
+</ul>
 <h2 id="CVE-2026-42812">write.metadata.path changes could bypass location validation and broaden delegated storage access</h2>
 <p>CVE-2026-42812 <a href="https://cve.org/CVERecord?id=CVE-2026-42812">[CVE]</a> <a href="./CVE-2026-42812.cve.json">[CVE json]</a> <a href="./CVE-2026-42812.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-04T16:28:09.922Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache Polaris before 1.4.1</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-1">Description</h3>
 <p><span style="background-color: rgb(255, 255, 255);">In Apache Iceberg, the table&rsquo;s metadata files are control files: they tell readers
 which data files belong to the table and which table version to read.
 <br><br>
@@ -177,18 +194,18 @@ reduce the persisted / credential-vending variant, but it does not prevent
 the
 underlying defect: Polaris still skips the intended pre-write location check
 when only <code>write.metadata.path</code> changes.</span><br></p>
-<h3 id="references">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/wxd2wj3p0smvrk84msv317wg5tp3jtw9">https://lists.apache.org/thread/wxd2wj3p0smvrk84msv317wg5tp3jtw9</a></li>
 </ul>
 <h2 id="CVE-2026-42811">could broaden vended GCS credentials through unescaped identifier content in access-boundary CEL conditions</h2>
 <p>CVE-2026-42811 <a href="https://cve.org/CVERecord?id=CVE-2026-42811">[CVE]</a> <a href="./CVE-2026-42811.cve.json">[CVE json]</a> <a href="./CVE-2026-42811.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-04T16:26:53.369Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache Polaris before 1.4.1</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-2">Description</h3>
 <p><span style="background-color: rgb(255, 255, 255);">In plain terms, Apache Polaris is supposed to issue short-lived GCS credentials
 that
 only work for one table&rsquo;s files, but a crafted namespace or table name can
@@ -235,18 +252,18 @@ effectively bucket-wide within the configured bucket.
 privileges for setup. A separate least-privilege Polaris RBAC variant
 has not yet been tested on GCS. However, the storage-credential
 broadening behavior itself has been confirmed on GCS.</span></span><br></p>
-<h3 id="references-1">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/hovn5hmkj9wj7v9cd8sn67svg03klgvg">https://lists.apache.org/thread/hovn5hmkj9wj7v9cd8sn67svg03klgvg</a></li>
 </ul>
 <h2 id="CVE-2026-42810">could broaden vended S3 credentials through wildcard-bearing namespace or table names</h2>
 <p>CVE-2026-42810 <a href="https://cve.org/CVERecord?id=CVE-2026-42810">[CVE]</a> <a href="./CVE-2026-42810.cve.json">[CVE json]</a> <a href="./CVE-2026-42810.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-04T16:48:47.000Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache Polaris before 1.4.1</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-3">Description</h3>
 <p><span style="background-color: rgb(255, 255, 255);">Apache Polaris accepts literal <code>*</code> characters in namespace and table names. When it
 later builds temporary S3 access policies for delegated table access, those
 same characters appear to be reused unescaped in S3 IAM resource patterns
@@ -292,18 +309,18 @@ problem. The confirmed write-capable variant means the issue is not limited
 to
 disclosure.</span><br></li>
 </ul>
-<h3 id="references-2">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/gg3qq9sqg4hdjmprqy46p40xmln61dm9">https://lists.apache.org/thread/gg3qq9sqg4hdjmprqy46p40xmln61dm9</a></li>
 </ul>
 <h2 id="CVE-2026-42809">staged table creation could vend storage credentials for unvalidated locations</h2>
 <p>CVE-2026-42809 <a href="https://cve.org/CVERecord?id=CVE-2026-42809">[CVE]</a> <a href="./CVE-2026-42809.cve.json">[CVE json]</a> <a href="./CVE-2026-42809.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-04T16:36:14.167Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-4">Affected</h3>
 <ul>
 <li>Apache Polaris before 1.4.1</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-4">Description</h3>
 <p><span style="background-color: rgb(255, 255, 255);">Apache Polaris can issue broad temporary (&ldquo;vended&rdquo;) storage credentials during
 staged
 table creation before the effective table location has been validated or
@@ -327,7 +344,7 @@ credential vending. Those fields are secondary to the main custom-<code>location
 exploit, but they are still attacker-influenced location inputs that should
 be
 validated before any credentials are issued.</span><br></p>
-<h3 id="references-3">References</h3>
+<h3 id="references-4">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/8tfsr8y7pgq6rdcvjx95hkcr47td671r">https://lists.apache.org/thread/8tfsr8y7pgq6rdcvjx95hkcr47td671r</a></li>
 </ul>
