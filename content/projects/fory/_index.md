@@ -18,6 +18,83 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Out-of-bounds heap read in C++ struct deserializer tagged-int fast-path ## { #CVE-2026-71560 }
+
+CVE-2026-71560 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-71560) [\[CVE json\]](./CVE-2026-71560.cve.json) [\[OSV json\]](./CVE-2026-71560.osv.json)
+
+
+
+_Last updated: 2026-08-07T08:53:32.515Z_
+
+### Affected
+
+* Apache Fory from 0.14.0 before 1.5.0
+
+
+### Description
+
+<p>Out-of-bounds Read vulnerability in Apache Fory C++ deserialization.<br><br>This issue affects Apache Fory C++ versions from 0.14.0 before 1.5.0 when deserializing structs containing tagged integer fields. A crafted input payload may trigger an out-of-bounds heap read in the tagged integer fast-path deserializer, potentially causing information disclosure or denial of service.</p>
+<p>Users are recommended to upgrade to Apache Fory 1.5.0, which fixes this issue. Applications that do not use Apache Fory C++ or do not use tagged integer fields are not affected.</p><br>
+
+### References
+* https://lists.apache.org/thread/xl2g544kctbgozccnj35qts43p452y5x
+
+
+### Credits
+* Zhixi "Jace Sun", independent security researcher (reporter)
+
+
+## Uncaught panic (remote DoS) in Go meta-string decoder from untrusted metadata ## { #CVE-2026-71559 }
+
+CVE-2026-71559 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-71559) [\[CVE json\]](./CVE-2026-71559.cve.json) [\[OSV json\]](./CVE-2026-71559.osv.json)
+
+
+
+_Last updated: 2026-08-07T08:56:04.066Z_
+
+### Affected
+
+* Apache Fory from 0.16.0 before 1.5.0
+
+
+### Description
+
+<p>Deserialization of Untrusted Data vulnerability in the Go implementation of Apache Fory allows an attacker to cause a denial of service by supplying crafted data containing malformed type metadata, which triggers an uncaught panic.</p><p>This issue affects Apache Fory: from 0.16.0 before 1.5.0.&nbsp; Users of other language implementations are not affected.</p><p>Users are recommended to upgrade to version 1.5.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/f28bw002p32yt723rvv3dcwdkljys8r3
+
+
+### Credits
+* Zhixi "Jace Sun", independent security researcher (reporter)
+
+
+## Heap type confusion in C++ polymorphic smart-pointer deserialization ## { #CVE-2026-71558 }
+
+CVE-2026-71558 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-71558) [\[CVE json\]](./CVE-2026-71558.cve.json) [\[OSV json\]](./CVE-2026-71558.osv.json)
+
+
+
+_Last updated: 2026-08-07T08:54:53.115Z_
+
+### Affected
+
+* Apache Fory from 0.14.0 before 1.5.0
+
+
+### Description
+
+<p>Heap type confusion vulnerability in Apache Fory C++ deserialization.<br><br>This issue affects Apache Fory C++ versions from 0.14.0 before 1.5.0. A crafted input payload can bypass type compatibility checks during polymorphic smart-pointer deserialization, causing an object of an incompatible type to be treated as the declared base type. This may result in undefined behavior and potentially lead to denial of service or arbitrary code execution.</p>
+<p>Users are recommended to upgrade to Apache Fory 1.5.0, which fixes this issue. Applications not using Apache Fory C++ polymorphic smart-pointer deserialization are not affected.</p><br>
+
+### References
+* https://lists.apache.org/thread/oywndv60jwqdv6j37t7bc1qbcc4b235r
+
+
+### Credits
+* Zhixi "Jace Sun", independent security researcher (reporter)
+
+
 ## Out-of-Bounds Read via sun.misc.Unsafe in zero-copy java deserialization ## { #CVE-2026-64609 }
 
 CVE-2026-64609 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-64609) [\[CVE json\]](./CVE-2026-64609.cve.json) [\[OSV json\]](./CVE-2026-64609.osv.json)

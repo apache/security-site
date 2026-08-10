@@ -18,13 +18,329 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Revocation bypass in DefaultEncryptingOAuthDataProvider ## { #CVE-2026-68481 }
+
+CVE-2026-68481 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68481) [\[CVE json\]](./CVE-2026-68481.cve.json) [\[OSV json\]](./CVE-2026-68481.osv.json)
+
+
+
+_Last updated: 2026-08-06T11:22:36.450Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.3
+* Apache CXF from 4.0.0 before 4.1.8
+* Apache CXF before 3.6.12
+
+
+### Description
+
+In Apache CXF's DefaultEncryptingOAuthDataProvider, revoked access tokens still decrypt successfully, and TokenIntrospectionService reports active:true. The same applies to refresh tokens. This violates the RFC stipulations that 'The authorization server MUST invalidate the token.' and 'introspection of a revoked token MUST return {"active":false}'. Users are recommended to upgrade to versions 4.2.3 or 4.1.8 or 3.6.12, which fix this issue.
+
+### References
+* https://lists.apache.org/thread/88c0h10yjb2b8201o1km3st71fs2zw2b
+
+
+### Credits
+* Guanping Zhang reported this vulnerability (finder)
+
+
+## DefaultEncryptingCodeDataProvider allows unlimited authorization code replay ## { #CVE-2026-68079 }
+
+CVE-2026-68079 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68079) [\[CVE json\]](./CVE-2026-68079.cve.json) [\[OSV json\]](./CVE-2026-68079.osv.json)
+
+
+
+_Last updated: 2026-08-06T11:22:56.675Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.3
+* Apache CXF from 4.0.0 before 4.1.8
+* Apache CXF before 3.6.12
+
+
+### Description
+
+In Apache CXF's DefaultEncryptingCodeDataProvider,&nbsp;a captured authorization code can be redeemed an unlimited number of times due to a flaw in the implementation of the&nbsp;removeCodeGrant functionality. This violates the RFC requirement that&nbsp;"The authorization code MUST NOT be used more than once." Users are recommended to upgrade to versions 4.2.3 or 4.1.8 or 3.6.12, which fix this issue.
+
+### References
+* https://lists.apache.org/thread/6m06gdqz4rxhy9g90qz9lyqx2gqmf13o
+
+
+### Credits
+* Guanping Zhang reported this vulnerability (finder)
+
+
+## Unsafe deserialization of inbound JMS ObjectMessage ## { #CVE-2026-66909 }
+
+CVE-2026-66909 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66909) [\[CVE json\]](./CVE-2026-66909.cve.json) [\[OSV json\]](./CVE-2026-66909.osv.json)
+
+
+
+_Last updated: 2026-08-06T10:23:22.148Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.3
+* Apache CXF from 4.0.0 before 4.1.8
+* Apache CXF before 3.6.12
+
+
+### Description
+
+<span style="background-color: rgb(252, 252, 251);">Apache CXF's JMS transport deserializes the body of any inbound </span><code>JMS ObjectMessage</code><span style="background-color: rgb(252, 252, 251);">&nbsp;using native Java deserialization, with no type restrictions in place. An</span><span style="background-color: rgb(252, 252, 251);">y attacker able to place a message on the service's JMS destination can submit a malicious serialized object, leading to denial of service or, if a suitable gadget class is on </span><span style="background-color: rgb(252, 252, 251);">the </span><span style="background-color: rgb(252, 252, 251);">classpath, </span><span style="background-color: rgb(252, 252, 251);">remote </span><span style="background-color: rgb(252, 252, 251);">code </span><span style="background-color: rgb(252, 252, 251);">execution. </span><span style="background-color: rgb(252, 252, 251);">The </span><span style="background-color: rgb(252, 252, 251);">fix </span><span style="background-color: rgb(252, 252, 251);">disables </span><span style="background-color: rgb(252, 252, 251);"><code>ObjectMessage</code></span><span style="background-color: rgb(252, 252, 251);">&nbsp;deserialization </span><span style="background-color: rgb(252, 252, 251);">by </span><span style="background-color: rgb(252, 252, 251);">default, </span><span style="background-color: rgb(252, 252, 251);">with </span><span style="background-color: rgb(252, 252, 251);">a </span><span style="background-color: rgb(252, 252, 251);">configuration </span><span style="background-color: rgb(252, 252, 251);">switch </span><span style="background-color: rgb(252, 252, 251);">to </span><span style="background-color: rgb(252, 252, 251);">re-enable </span><span style="background-color: rgb(252, 252, 251);">it </span><span style="background-color: rgb(252, 252, 251);">if </span><span style="background-color: rgb(252, 252, 251);">needed.&nbsp;</span>Users are recommended to upgrade to versions 4.2.3 or 4.1.8 or 3.6.12, which fix this issue.
+
+### References
+* https://lists.apache.org/thread/lr5d4tg6tf7j29jmw8wt242oowonjqpx
+
+
+### Credits
+* Reported by n0mi1k (finder)
+
+
+## Self-issued ID token claims validation skipped ## { #CVE-2026-65583 }
+
+CVE-2026-65583 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-65583) [\[CVE json\]](./CVE-2026-65583.cve.json) [\[OSV json\]](./CVE-2026-65583.osv.json)
+
+
+
+_Last updated: 2026-08-06T11:23:16.168Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.3
+* Apache CXF from 4.0.0 before 4.1.8
+* Apache CXF before 3.6.12
+
+
+### Description
+
+Apache CXF’s OIDC relying-party token validation could accept self-issued ID tokens without enforcing required claim checks (issuer/subject/audience/time and sub_jwk binding), enabling authentication bypass with crafted tokens. However, note that self-issued ID tokens are not accepted by default in the validator. Users are recommended to upgrade to versions 4.2.3 or 4.1.8 or 3.6.12, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/fzj8yzgfl53gclxrcdrnrx3grcpkq51j
+
+
+### Credits
+* Guanping Zhang reported this vulnerability. (finder)
+
+
+## XXE via WSDL/XSD import parsing ## { #CVE-2026-65432 }
+
+CVE-2026-65432 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-65432) [\[CVE json\]](./CVE-2026-65432.cve.json) [\[OSV json\]](./CVE-2026-65432.osv.json)
+
+
+
+_Last updated: 2026-08-06T10:26:07.597Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.3
+* Apache CXF from 4.0.0 before 4.1.8
+* Apache CXF before 3.6.12
+
+
+### Description
+
+<span style="background-color: rgb(253, 253, 252);">Apache CXF reads a top-level WSDL through its hardened </span><code>StaxUtils</code><span style="background-color: rgb(253, 253, 252);">&nbsp;path, which disables XML DTDs and external entities. However, any </span><code>&lt;wsdl:import&gt;</code><span style="background-color: rgb(253, 253, 252);">&nbsp;or </span><code>&lt;xsd:import&gt;</code><span style="background-color: rgb(253, 253, 252);">&nbsp;referenced from that top-level WSDL is handed off to WSDL4J, which does </span><strong>not</strong><span style="background-color: rgb(253, 253, 252);">&nbsp;disable </span><span style="background-color: rgb(253, 253, 252);">DOCTYPE </span><span style="background-color: rgb(253, 253, 252);">declarations </span><span style="background-color: rgb(253, 253, 252);">or </span><span style="background-color: rgb(253, 253, 252);">external </span><span style="background-color: rgb(253, 253, 252);">entities. </span><span style="background-color: rgb(253, 253, 252);">As </span><span style="background-color: rgb(253, 253, 252);">a </span><span style="background-color: rgb(253, 253, 252);">result, </span><span style="background-color: rgb(253, 253, 252);">the </span><span style="background-color: rgb(253, 253, 252);">protections </span><span style="background-color: rgb(253, 253, 252);">applied </span><span style="background-color: rgb(253, 253, 252);">to </span><span style="background-color: rgb(253, 253, 252);">the </span><span style="background-color: rgb(253, 253, 252);">top-level </span><span style="background-color: rgb(253, 253, 252);">document </span><span style="background-color: rgb(253, 253, 252);">do </span><span style="background-color: rgb(253, 253, 252);">not </span><span style="background-color: rgb(253, 253, 252);">extend </span><span style="background-color: rgb(253, 253, 252);">to </span><span style="background-color: rgb(253, 253, 252);">imported </span><span style="background-color: rgb(253, 253, 252);">documents, </span><span style="background-color: rgb(253, 253, 252);">leaving </span><span style="background-color: rgb(253, 253, 252);">imported </span><span style="background-color: rgb(253, 253, 252);">WSDL/XSD </span><span style="background-color: rgb(253, 253, 252);">content </span><span style="background-color: rgb(253, 253, 252);">vulnerable </span><span style="background-color: rgb(253, 253, 252);">to </span><span style="background-color: rgb(253, 253, 252);">XML </span><span style="background-color: rgb(253, 253, 252);">External </span><span style="background-color: rgb(253, 253, 252);">Entity </span><span style="background-color: rgb(253, 253, 252);">(XXE) </span><span style="background-color: rgb(253, 253, 252);">attacks.&nbsp;</span>Users are recommended to upgrade to versions 4.2.3 or 4.1.8 or 3.6.12, which fix this issue.
+
+### References
+* https://lists.apache.org/thread/5qs207krzg51jl3zs3cvnl5lt9njp8c3
+
+
+### Credits
+* Reported by n0mi1k (finder)
+
+
+## Denial of service via message header attachments ## { #CVE-2026-64958 }
+
+CVE-2026-64958 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-64958) [\[CVE json\]](./CVE-2026-64958.cve.json) [\[OSV json\]](./CVE-2026-64958.osv.json)
+
+
+
+_Last updated: 2026-08-06T10:13:02.649Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.3
+* Apache CXF from 4.0.0 before 4.1.8
+* Apache CXF before 3.6.12
+
+
+### Description
+
+An incomplete fix for&nbsp;CVE-2026-50645 means that it is still possible to perform a denial of service attack on Apache CXF by sending a message with many attachment headers. Users are recommended to upgrade to versions 4.2.3 or 4.1.8 or 3.6.12, which fix this issue.
+
+### References
+* https://lists.apache.org/thread/trsnkxc2f21585zlt819blvchgl6oykb
+
+
+### Credits
+* Markus Vogl, RISE GmbH (finder)
+
+
+## JwtRequestCodeFilter silently overrides outer PKCE and nonce parameters ## { #CVE-2026-63687 }
+
+CVE-2026-63687 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63687) [\[CVE json\]](./CVE-2026-63687.cve.json) [\[OSV json\]](./CVE-2026-63687.osv.json)
+
+
+
+_Last updated: 2026-08-06T11:23:42.840Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.3
+* Apache CXF from 4.0.0 before 4.1.8
+* Apache CXF before 3.6.12
+
+
+### Description
+
+Apache CXF's JwtRequestCodeFilter copies all claims from a signed request JWT into the authorization parameter map without excluding security-sensitive parameters. A client that can produce a validly-signed request JWT (e.g., one whose client_secret is known or compromised) can thereby substitute the code_challenge, code_challenge_method, nonce, and state values that were set in the outer HTTP request, undermining PKCE integrity and OpenID Connect replay protection. Users are recommended to upgrade to versions 4.2.3 or 4.1.8 or 3.6.12, which fix this issue.
+
+### References
+* https://lists.apache.org/thread/drcq4chmt0btx86f17o47j17r378hzpw
+
+
+### Credits
+* Guanping Zhang reported this vulnerability. (finder)
+
+
+## OAuth2 Dynamic Client Registration Scope Self-Escalation ## { #CVE-2026-61466 }
+
+CVE-2026-61466 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-61466) [\[CVE json\]](./CVE-2026-61466.cve.json) [\[OSV json\]](./CVE-2026-61466.osv.json)
+
+
+
+_Last updated: 2026-08-06T11:24:26.209Z_
+
+### Affected
+
+* Apache CXF before 3.6.12
+* Apache CXF from 4.0.0 before 4.1.8
+* Apache CXF from 4.2.0 before 4.2.3
+
+
+### Description
+
+<p>In Apache CXF's OAuth2 Dynamic Client Registration endpoint, the authorization server accepts and stores the `scope` value supplied in the client registration request verbatim, without validating it against an AS-defined allowlist. This could lead to a client self-assigning privileged scopes at registration time. Users are recommended to upgrade to versions 4.2.3 or 4.1.8 or 3.6.12, which fix this issue.</p>
+
+### References
+* https://lists.apache.org/thread/2l1r16g79tpxd7fzrzr2q9oscwrjgljs
+
+
+### Credits
+* Guanping Zhang reported this vulnerability. (finder)
+
+
+## No default restriction on the amount of form parameters per message ## { #CVE-2026-57819 }
+
+CVE-2026-57819 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-57819) [\[CVE json\]](./CVE-2026-57819.cve.json) [\[OSV json\]](./CVE-2026-57819.osv.json)
+
+
+
+_Last updated: 2026-08-06T10:12:25.051Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.3
+* Apache CXF from 4.0.0 before 4.1.8
+* Apache CXF before 3.6.12
+
+
+### Description
+
+Apache CXF allows to set a limit on the number of form parameters in a JAX-RS message via the "maxFormParameterCount" configuration option. However, no default limit is set which may lead to denial of service attacks when processing&nbsp; requests with very large numbers of form parameters. Users are recommended to upgrade to versions 4.2.3 or 4.1.8 or 3.6.12, which fix this issue by using a default limit of 500 parameters.
+
+### References
+* https://lists.apache.org/thread/2n14mk01bjc3lrsyhzrkwy8h86289mov
+
+
+## OAuth2 Authorization Code Replay via TOCTOU in JCacheCodeDataProvider ## { #CVE-2026-57818 }
+
+CVE-2026-57818 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-57818) [\[CVE json\]](./CVE-2026-57818.cve.json) [\[OSV json\]](./CVE-2026-57818.osv.json)
+
+
+
+_Last updated: 2026-08-06T11:24:52.308Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.3
+* Apache CXF from 4.0.0 before 4.1.8
+* Apache CXF before 3.6.12
+
+
+### Description
+
+A race condition in JCacheCodeDataProvider allows an attacker to redeem a single authorization code multiple times via concurrent requests, resulting in the issuance of multiple distinct, valid access tokens. Users are recommended to upgrade to versions 4.2.3, 4.1.8 or 3.6.12, which fix this issue.<br>
+
+### References
+* https://lists.apache.org/thread/7q08mz8bcbosp25wok7gr537zlp15mfz
+
+
+### Credits
+* Guanping Zhang reported this vulnerability (finder)
+
+
+## The authorization code hash (c_hash) is not enforced for the hybrid OIDC flow ## { #CVE-2026-57817 }
+
+CVE-2026-57817 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-57817) [\[CVE json\]](./CVE-2026-57817.cve.json) [\[OSV json\]](./CVE-2026-57817.osv.json)
+
+
+
+_Last updated: 2026-08-06T10:24:04.605Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.3
+* Apache CXF from 4.0.0 before 4.1.8
+* Apache CXF before 3.6.12
+
+
+### Description
+
+The OpenID Connect Core 1.0 specification mandates that the RP MUST validate the `c_hash` parameter when operating in the Hybrid Flow.&nbsp;If an Apache CXF RP is integrated with a non-compliant or misconfigured Identity Provider (IdP) that omits the `c_hash`, the RP becomes vulnerable to Authorization Code Substitution/Injection attacks.&nbsp;Users are recommended to upgrade to versions 4.2.3 or 4.1.8 or 3.6.12, which fix this issue.
+
+### References
+* https://lists.apache.org/thread/pj63c3pf7kkp1xhr53do704fwj3t3htn
+
+
+### Credits
+* Guanping Zhang reported this vulnerability. (finder)
+
+
+## Denial of Service attack via large attachments ## { #CVE-2026-54225 }
+
+CVE-2026-54225 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-54225) [\[CVE json\]](./CVE-2026-54225.cve.json) [\[OSV json\]](./CVE-2026-54225.osv.json)
+
+
+
+_Last updated: 2026-08-06T10:11:39.713Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.3
+* Apache CXF from 4.0.0 before 4.1.8
+* Apache CXF before 3.6.12
+
+
+### Description
+
+Apache CXF allows to control the maximum attachment size via the&nbsp;"attachment-max-size". Prior to Apache CXF 4.2.3 and 4.1.8 and 3.6.12, there was no default placed on this size, meaning that a denial of service attack is possible if the user doesn't explicitly set the limit. Users should update to Apache CXF 4.2.3 or 4.1.8 or 3.6.12 which fixes this problem by imposing a default attachment size limit of 50mb.
+
+### References
+* https://lists.apache.org/thread/h2bjqm6g58z0j6893qzh728kdtk1byfy
+
+
 ## No restriction on attachment headers per message ## { #CVE-2026-50645 }
 
 CVE-2026-50645 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50645) [\[CVE json\]](./CVE-2026-50645.cve.json) [\[OSV json\]](./CVE-2026-50645.osv.json)
 
 
 
-_Last updated: 2026-06-12T09:06:59.203Z_
+_Last updated: 2026-08-07T11:18:25.630Z_
 
 ### Affected
 

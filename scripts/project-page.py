@@ -33,6 +33,15 @@ with open('podlings-history.json', 'r') as ph:
 with open('podlings.json', 'r') as ps:
     project_committees = {**project_committees, **(json.load(ps))}
 
+# A project only makes it onto the overview when it has coordinates of its own,
+# so a new PMC or podling stays invisible until someone adds an entry. Warn about
+# the ones still missing, rather than letting the gap go unnoticed.
+NO_COORDINATES_NEEDED = {'attic', 'comdev', 'incubator'}  # committees that ship no software
+missing_coordinates = sorted(set(project_committees) - set(project_coordinates)
+                             - set(project_committees_retired) - NO_COORDINATES_NEEDED)
+if missing_coordinates:
+    print('WARNING: no entry in project-coordinates.json for: %s' % ', '.join(missing_coordinates))
+
 # fetched from https://cveprocess.apache.org/publicjson
 with open('publicjson', 'r') as p:
     advisories = defaultdict(list)

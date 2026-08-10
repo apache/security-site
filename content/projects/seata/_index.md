@@ -1,16 +1,16 @@
 ---
-title: Apache Seata security advisories
-description: Security information for Apache Seata
+title: Apache Seata (Incubating) security advisories
+description: Security information for Apache Seata (Incubating)
 layout: single
 ---
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Seata? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Seata).
+Do you want disclose a potential security issue for Apache Seata (Incubating)? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Seata%20%28Incubating%29).
 
 You can read more about the security policy on:
 
-- [Apache Seata security model](https://seata.apache.org/docs/next/security/secret-key)
+- [Apache Seata (Incubating) security model](https://seata.apache.org/docs/next/security/secret-key)
 
 
 # Advisories

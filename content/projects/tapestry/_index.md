@@ -18,6 +18,31 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Possible classpath file download through URL manipulation ## { #CVE-2026-61899 }
+
+CVE-2026-61899 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-61899) [\[CVE json\]](./CVE-2026-61899.cve.json) [\[OSV json\]](./CVE-2026-61899.osv.json)
+
+
+
+_Last updated: 2026-08-10T10:36:02.028Z_
+
+### Affected
+
+* Apache Tapestry from 5.5.0 before 5.9.1
+
+
+### Description
+
+Vulnerability in tapestry-core in Apache Tapestry 5.5.0+ on all platforms allows attackers to d<span style="background-color: rgb(255, 255, 255);">ownload clsspath assets</span> via specially crafted URLs.<br>Users are recommended to upgrade to version 5.9.1, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/6j3yojqrdsxkrfz52d0zjyrf5n9xttmw
+
+
+### Credits
+* Ilyass El Hadi (finder)
+
+
 ## Apache Tapestry prior to version 4 (EOL) allows RCE though deserialization of untrusted input ## { #CVE-2022-46366 }
 
 CVE-2022-46366 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-46366) [\[CVE json\]](./CVE-2022-46366.cve.json) [\[OSV json\]](./CVE-2022-46366.osv.json)

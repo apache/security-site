@@ -83,6 +83,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@ambari.apache.org](mailto:security@ambari.apache.org?subject=Ambari)
   - Advisories (experimental):\
     [security.apache.org](/projects/ambari/)
+- <img class="project-logo" src="https://www.apache.org/logos/res/amoro/default.png" alt="" loading="lazy"> **Apache Amoro (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=Amoro%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/answer/default.png" alt="" loading="lazy"> **Apache Answer**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Answer)
@@ -133,6 +138,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Atlas)
   - Advisories (experimental):\
     [security.apache.org](/projects/atlas/)
+- <img class="project-logo" src="https://www.apache.org/logos/res/auron/default.png" alt="" loading="lazy"> **Apache Auron (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=Auron%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/avro/default.png" alt="" loading="lazy"> **Apache Avro**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Avro)
@@ -160,13 +170,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Beam)
   - Advisories (experimental):\
     none so far
-- **Apache BifroMQ**
+- **Apache BifroMQ (Incubating)**
   - **Security contact:**\
-    [security@apache.org](mailto:security@apache.org?subject=BifroMQ)
+    [security@apache.org](mailto:security@apache.org?subject=BifroMQ%20%28Incubating%29)
   - Advisories (experimental):\
     none so far
   - Security model:
-    - [Apache BifroMQ security model](https://bifromq.apache.org/docs/admin_guide/security/intro/)
+    - [Apache BifroMQ (Incubating) security model](https://bifromq.apache.org/docs/admin_guide/security/intro/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/bigtop/default.png" alt="" loading="lazy"> **Apache Bigtop**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Bigtop)
@@ -194,6 +204,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=BuildStream)
   - Advisories (experimental):\
     none so far
+- **Apache Burr (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=Burr%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/bval/default.png" alt="" loading="lazy"> **Apache BVal**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=BVal)
@@ -212,6 +227,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security.apache.org](/projects/calcite/)
   - Security model:
     - [Apache Calcite security model](https://calcite.apache.org/docs/security_threat_model.html)
+- **Apache Caldera (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=Caldera%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/camel/default.png" alt="" loading="lazy"> **Apache Camel**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Camel)
@@ -226,6 +246,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     none so far
   - Security model:
     - [Apache Carbondata security model](https://carbondata.apache.org/security.html)
+- <img class="project-logo" src="https://www.apache.org/logos/res/casbin/default.png" alt="" loading="lazy"> **Apache Casbin (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=Casbin%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/cassandra/default.png" alt="" loading="lazy"> **Apache Cassandra**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Cassandra)
@@ -253,6 +278,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Celix)
   - Advisories (experimental):\
     none so far
+- <img class="project-logo" src="https://www.apache.org/logos/res/cloudberry/default.png" alt="" loading="lazy"> **Apache Cloudberry (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=Cloudberry%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
+  - Security model:
+    - [Apache Cloudberry (Incubating) security model](https://cloudberry.apache.org/community/security)
 - <img class="project-logo" src="https://www.apache.org/logos/res/cloudstack/default.png" alt="" loading="lazy"> **Apache CloudStack**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=CloudStack)
@@ -425,7 +457,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Felix)
   - Advisories (experimental):\
     [security.apache.org](/projects/felix/)
-- **Apache Fesod (Incubating)**
+- <img class="project-logo" src="https://www.apache.org/logos/res/fesod/default.png" alt="" loading="lazy"> **Apache Fesod (Incubating)**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Fesod%20%28Incubating%29)
   - Advisories (experimental):\
@@ -454,11 +486,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [flink.apache.org](https://flink.apache.org/what-is-flink/security/)
   - Security model:
     - [Apache Flink security model](https://flink.apache.org/what-is-flink/security/)
-- **Apache Fluss**
+- <img class="project-logo" src="https://www.apache.org/logos/res/fluss/default.png" alt="" loading="lazy"> **Apache Fluss**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Fluss)
-  - Advisories (experimental):\
-    [security.apache.org](/projects/fluss/)
+  - Advisories:\
+    [fluss.apache.org](https://fluss.apache.org/community/security/)
+  - Security model:
+    - [Apache Fluss security model](https://fluss.apache.org/docs/security/overview/)
 - **Apache Fory**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Fory)
@@ -480,6 +514,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 
 ## G {.panel-letter}
 
+- **Apache GeaFlow (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=GeaFlow%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/geode/default.png" alt="" loading="lazy"> **Apache Geode**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Geode)
@@ -512,6 +551,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - Security models:
     - [Apache Grails security model](https://github.com/apache/grails-core/blob/8.0.x/THREAT_MODEL.md)
     - [Apache Grails Spring Security security model](https://github.com/apache/grails-spring-security/blob/8.0.x/THREAT_MODEL.md)
+- <img class="project-logo" src="https://www.apache.org/logos/res/graphar/default.png" alt="" loading="lazy"> **Apache GraphAr (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=GraphAr%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/gravitino/default.png" alt="" loading="lazy"> **Apache Gravitino**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Gravitino)
@@ -549,6 +593,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [hadoop.apache.org](https://hadoop.apache.org/cve_list.html)
   - Security model:
     - [Apache Hadoop security model](https://github.com/apache/hadoop/security/policy)
+- **Apache Hamilton (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=Hamilton%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
+  - Security model:
+    - [Apache Hamilton (Incubating) security model](https://github.com/apache/hamilton/blob/main/SECURITY.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/hbase/default.png" alt="" loading="lazy"> **Apache HBase**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=HBase)
@@ -625,6 +676,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     none so far
   - Security model:
     - [Apache Iceberg security model](https://github.com/apache/iceberg/blob/main/SECURITY-THREAT-MODEL.md)
+- <img class="project-logo" src="https://www.apache.org/logos/res/iggy/default.png" alt="" loading="lazy"> **Apache Iggy (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=Iggy%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
+  - Security model:
+    - [Apache Iggy (Incubating) security model](https://github.com/apache/iggy/blob/master/SECURITY.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/ignite/default.png" alt="" loading="lazy"> **Apache Ignite**
   - **Security contact:**\
     [security@ignite.apache.org](mailto:security@ignite.apache.org?subject=Ignite)
@@ -724,6 +782,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Karaf)
   - Advisories (experimental):\
     [security.apache.org](/projects/karaf/)
+- **Apache KIE (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=KIE%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/knox/default.png" alt="" loading="lazy"> **Apache Knox**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Knox)
@@ -926,6 +989,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [www.openoffice.org](https://www.openoffice.org/security/bulletin.html)
   - Security model:
     - [Apache OpenOffice security model](https://openoffice.apache.org/security)
+- <img class="project-logo" src="https://www.apache.org/logos/res/openserverless/default.png" alt="" loading="lazy"> **Apache OpenServerless (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=OpenServerless%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/openwebbeans/default.png" alt="" loading="lazy"> **Apache OpenWebBeans**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=OpenWebBeans)
@@ -943,6 +1011,21 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [orc.apache.org](https://orc.apache.org/security/)
   - Security model:
     - [Apache ORC security model](https://orc.apache.org/security/)
+- **Apache Ossie (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=Ossie%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
+- **Apache Otava (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=Otava%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
+- <img class="project-logo" src="https://www.apache.org/logos/res/ozhera/default.png" alt="" loading="lazy"> **Apache OzHera (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=OzHera%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/ozone/default.png" alt="" loading="lazy"> **Apache Ozone**
   - **Security contact:**\
     [security@ozone.apache.org](mailto:security@ozone.apache.org?subject=Ozone)
@@ -977,6 +1060,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security.apache.org](/projects/pdfbox/)
   - Security model:
     - [Apache PDFBox security model](https://github.com/apache/pdfbox/security/policy)
+- <img class="project-logo" src="https://www.apache.org/logos/res/pegasus/default.png" alt="" loading="lazy"> **Apache Pegasus (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=Pegasus%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/pekko/default.png" alt="" loading="lazy"> **Apache Pekko**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Pekko)
@@ -1021,7 +1109,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - Security models:
     - [Apache Polaris security model](https://github.com/apache/polaris/blob/main/SECURITY-THREAT-MODEL.md)
     - [Apache Polaris Tools security model](https://github.com/apache/polaris-tools/blob/main/SECURITY-THREAT-MODEL.md)
-- **Apache Pony Mail**
+- <img class="project-logo" src="https://www.apache.org/logos/res/ponymail/default.png" alt="" loading="lazy"> **Apache Pony Mail**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Pony%20Mail)
   - Advisories (experimental):\
@@ -1033,6 +1121,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security.apache.org](/projects/apr/)
   - Security model:
     - [Apache Portable Runtime (APR) security model](https://apr.apache.org/security_report.html)
+- **Apache PouchDB (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=PouchDB%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/pulsar/default.png" alt="" loading="lazy"> **Apache Pulsar**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Pulsar)
@@ -1050,7 +1143,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Qpid)
   - Advisories (experimental):\
-    none so far
+    [security.apache.org](/projects/qpid/)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="R">
@@ -1067,6 +1160,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 - <img class="project-logo" src="https://www.apache.org/logos/res/ratis/default.png" alt="" loading="lazy"> **Apache Ratis**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Ratis)
+  - Advisories (experimental):\
+    none so far
+- <img class="project-logo" src="https://www.apache.org/logos/res/resilientdb/default.png" alt="" loading="lazy"> **Apache ResilientDB (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=ResilientDB%20%28Incubating%29)
   - Advisories (experimental):\
     none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/rocketmq/default.png" alt="" loading="lazy"> **Apache RocketMQ**
@@ -1114,13 +1212,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=SDAP)
   - Advisories (experimental):\
     none so far
-- <img class="project-logo" src="https://www.apache.org/logos/res/seata/default.png" alt="" loading="lazy"> **Apache Seata**
+- <img class="project-logo" src="https://www.apache.org/logos/res/seata/default.png" alt="" loading="lazy"> **Apache Seata (Incubating)**
   - **Security contact:**\
-    [security@apache.org](mailto:security@apache.org?subject=Seata)
+    [security@apache.org](mailto:security@apache.org?subject=Seata%20%28Incubating%29)
   - Advisories (experimental):\
     [security.apache.org](/projects/seata/)
   - Security model:
-    - [Apache Seata security model](https://seata.apache.org/docs/next/security/secret-key)
+    - [Apache Seata (Incubating) security model](https://seata.apache.org/docs/next/security/secret-key)
 - <img class="project-logo" src="https://www.apache.org/logos/res/seatunnel/default.png" alt="" loading="lazy"> **Apache SeaTunnel**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=SeaTunnel)
@@ -1311,6 +1409,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     - [Apache Teaclave (Rust Crates) security model](https://github.com/apache/teaclave-crates/blob/main/docs/security-model.md)
     - [Apache Teaclave TrustZone SDK security model](https://github.com/apache/teaclave-trustzone-sdk/blob/main/docs/security-model.md)
     - [Apache Teaclave SGX SDK security model](https://github.com/apache/teaclave-sgx-sdk/blob/main/docs/security-model.md)
+- **Apache Texera (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=Texera%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
+  - Security model:
+    - [Apache Texera (Incubating) security model](https://github.com/apache/texera/blob/main/SECURITY.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/tez/default.png" alt="" loading="lazy"> **Apache Tez**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Tez)
@@ -1351,6 +1456,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     none so far
   - Security model:
     - [Apache TomEE security model](https://github.com/apache/tomee/security/policy)
+- <img class="project-logo" src="https://www.apache.org/logos/res/toree/default.png" alt="" loading="lazy"> **Apache Toree (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=Toree%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/trafficserver/default.png" alt="" loading="lazy"> **Apache Traffic Server**
   - **Security contact:**\
     [security@trafficserver.apache.org](mailto:security@trafficserver.apache.org?subject=Traffic%20Server)
@@ -1476,6 +1586,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security.apache.org](/projects/xmlgraphics/)
   - Security model:
     - [Apache XML Graphics security model](https://xmlgraphics.apache.org/security.html)
+- **Apache XTable (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=XTable%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="Y">

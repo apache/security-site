@@ -18,6 +18,28 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## RPC service denial of service via unchecked Thrift string length ## { #CVE-2026-44630 }
+
+CVE-2026-44630 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44630) [\[CVE json\]](./CVE-2026-44630.cve.json) [\[OSV json\]](./CVE-2026-44630.osv.json)
+
+
+
+_Last updated: 2026-08-10T09:25:10.202Z_
+
+### Affected
+
+* Apache IoTDB before 1.3.8
+* Apache IoTDB from 2.0.0 before 2.0.10
+
+
+### Description
+
+<p>Improper validation of length fields in the Apache IoTDB RPC service may allow a remote unauthenticated attacker to cause a denial of service. By sending a crafted malformed Thrift frame, an attacker can cause IoTDB to allocate an excessive amount of memory and crash with an OutOfMemoryError.<br></p><p>This issue affects Apache IoTDB: before 1.3.8, from 2.0.0 before 2.0.9.</p><p>Users are recommended to upgrade to version 2.0.10, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/tfsgd9whbq79lgjvdzj44hw0fhsofly8
+
+
 ## Out-of-bounds reads in C++ client TsBlock deserializer crash client process on malformed server data ## { #CVE-2026-40454 }
 
 CVE-2026-40454 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40454) [\[CVE json\]](./CVE-2026-40454.cve.json) [\[OSV json\]](./CVE-2026-40454.osv.json)

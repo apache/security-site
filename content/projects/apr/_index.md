@@ -18,13 +18,139 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Heap buffer overflow in APR memcached client ## { #CVE-2026-34502 }
+
+CVE-2026-34502 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34502) [\[CVE json\]](./CVE-2026-34502.cve.json) [\[OSV json\]](./CVE-2026-34502.osv.json)
+
+
+
+_Last updated: 2026-08-06T14:31:06.399Z_
+
+### Affected
+
+* Apache Portable Runtime Utility from 1.3.0 through 1.6.3
+
+
+### Description
+
+<p>Heap-based Buffer Overflow vulnerability in Apache Portable Runtime Utility memcached client</p><p>This issue affects Apache Portable Runtime Utility: from 1.3.0 through 1.6.3.<br></p>
+
+### References
+* https://lists.apache.org/thread/spk5643m4vq0mb8h5b9hz9gkp57ombl8
+
+
+### Credits
+* Elhanan Haenel (finder)
+
+
+## Heap buffer overflow in APR redis client ## { #CVE-2026-34501 }
+
+CVE-2026-34501 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34501) [\[CVE json\]](./CVE-2026-34501.cve.json) [\[OSV json\]](./CVE-2026-34501.osv.json)
+
+
+
+_Last updated: 2026-08-06T14:31:46.904Z_
+
+### Affected
+
+* Apache Portable Runtime Utility from 1.6.0 through 1.6.3
+
+
+### Description
+
+<p>Heap-based Buffer Overflow vulnerability in Apache Portable Runtime Utility redis client.</p><p>This issue affects Apache Portable Runtime Utility: from 1.6.0 through 1.6.3.</p><p>Users are recommended to upgrade to version 1.6.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/o8h6c7cq86fplxlnry6c3rn9x0ovq8mv
+
+
+### Credits
+* Elhanan Haenel (finder)
+
+
+## SQL Injection in apr_dbd_oracle ## { #CVE-2026-34191 }
+
+CVE-2026-34191 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34191) [\[CVE json\]](./CVE-2026-34191.cve.json) [\[OSV json\]](./CVE-2026-34191.osv.json)
+
+
+
+_Last updated: 2026-08-06T14:32:23.055Z_
+
+### Affected
+
+* Apache Portable Runtime Utility from 1.6.0 through 1.6.3
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Portable Runtime Utility via apr_dbd_oracle provider.</p><p>This issue affects Apache Portable Runtime Utility: from 1.6.0 through 1.6.3<br></p>
+
+### References
+* https://lists.apache.org/thread/8xch90zogywwpo5wnsf4o088mkxy4qtf
+
+
+### Credits
+* Elhanan Haenel (finder)
+
+
+## apr-util XML stack recursion crash ## { #CVE-2026-32327 }
+
+CVE-2026-32327 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-32327) [\[CVE json\]](./CVE-2026-32327.cve.json) [\[OSV json\]](./CVE-2026-32327.osv.json)
+
+
+
+_Last updated: 2026-08-06T14:32:41.688Z_
+
+### Affected
+
+* Apache Portable Runtime Utility through 1.6.3
+
+
+### Description
+
+A bug in APR-util version 1.6.3 (and earlier) allows a stack recursion attack against any library consumer which parses XML from untrusted sources and uses the&nbsp;apr_xml_quote_elem() function.<br><br>Users are recommended to upgrade to version 1.6.4, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/hq27vj8yfno9tkwv0fpj6jksfzgxvth1
+
+
+### Credits
+* Younghyo Cho @ CISLab, SeoulTech (finder)
+* 4ra1n, pyn3rd and unam4 (finder)
+
+
+## apr_password_validate() vulnerable to timing attack ## { #CVE-2025-49506 }
+
+CVE-2025-49506 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-49506) [\[CVE json\]](./CVE-2025-49506.cve.json) [\[OSV json\]](./CVE-2025-49506.osv.json)
+
+
+
+_Last updated: 2026-08-06T14:33:11.589Z_
+
+### Affected
+
+* Apache Portable Runtime Utility from 1.2.0 through 1.6.3
+
+
+### Description
+
+<div>APR-util versions 1.6.3 (and earlier) function apr_password_validate() was not constant-time with regards to hashes or passwords comparisons, potentially leaking their content via a side channel timing attack particularly on platforms without crypt() such as&nbsp;<span style="background-color: rgb(255, 255, 255);">&nbsp;Windows, BeOS, NetWare, or Android.</span></div><div>Users are recommended to upgrade to version 1.6.4, which fixes this issue.<br></div><div></div>
+
+### References
+* https://lists.apache.org/thread/2v8o3bj9pb7lfcr57bdnjg9xfkj04mg5
+
+
+### Credits
+* Michael Rowley <michael csirt.global> (finder)
+
+
 ## Unexpected lax shared memory permissions ## { #CVE-2023-49582 }
 
 CVE-2023-49582 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-49582) [\[CVE json\]](./CVE-2023-49582.cve.json) [\[OSV json\]](./CVE-2023-49582.osv.json)
 
 
 
-_Last updated: 2024-08-26T14:03:42.543Z_
+_Last updated: 2026-08-06T13:47:55.389Z_
 
 ### Affected
 

@@ -51,7 +51,7 @@ CVE-2026-44616 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-44616) [\[CVE jso
 
 
 
-_Last updated: 2026-07-30T15:21:17.273Z_
+_Last updated: 2026-08-06T10:08:34.789Z_
 
 ### Affected
 
