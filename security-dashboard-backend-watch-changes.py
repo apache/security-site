@@ -157,7 +157,9 @@ def update_history_records(records, history_id):
     n = 0
     for labelId in labelIds:
         label = get_label_by_id(labelId)
-        if is_thread_label(label['name']):
+        if not label:
+            print(f"Label {labelId} no longer found - TODO remove it?")
+        elif is_thread_label(label['name']):
             print(f"Updating {label['name']} ({n}/{len(labelIds)})")
             if already_refreshed(label, history_id):
                 print(f"Label {label['name']} already current as of {history_id}")
