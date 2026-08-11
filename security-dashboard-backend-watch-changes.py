@@ -76,10 +76,53 @@ def refresh_thread(label):
 
     validate_label_name(label['name'])
     os.makedirs(options.target + '/' + '/'.join(label['name'].split('/')[:-1]), exist_ok=True)
-    with open(f"{options.target}/{label['name']}.json", "w") as f:
-        json.dump(messages(label), f, indent=2)
+    # Build the whole list before touching the file: messages() makes one API
+    # call per message and can fail partway (rate limit), which would otherwise
+    # leave a truncated .json behind for consumers to read.
+    msgs = messages(label)
+    path = f"{options.target}/{label['name']}.json"
+    with open(path + ".tmp", "w") as f:
+        json.dump(msgs, f, indent=2)
+    os.replace(path + ".tmp", path)
 
-def update_history_records(records):
+# labelId -> {"name": ..., "history_id": ...}, meaning: the on-disk JSON for
+# this label reflects the mailbox at least as of history_id. Lets a retry of a
+# batch that died partway (typically on the rate limit) skip the labels it
+# already finished, instead of replaying the whole batch and burning the same
+# quota again.
+_LEDGER_PATH = f"{options.target}/refreshed_labels.json"
+
+def _load_ledger():
+    try:
+        with open(_LEDGER_PATH) as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {}
+
+refreshed_labels = _load_ledger()
+
+def _save_ledger():
+    with open(_LEDGER_PATH + ".tmp", "w") as f:
+        json.dump(refreshed_labels, f, indent=2, sort_keys=True)
+    os.replace(_LEDGER_PATH + ".tmp", _LEDGER_PATH)
+
+def already_refreshed(label, history_id):
+    entry = refreshed_labels.get(label['id'])
+    # A rename moves the file this entry describes, and a rename onto an
+    # existing label deletes it (see email-classification-watch-label-renames.py),
+    # so a name mismatch invalidates the entry whatever its history_id says.
+    return (entry is not None and
+            entry['name'] == label['name'] and
+            entry['history_id'] >= history_id)
+
+def record_refreshed(label, history_id):
+    refreshed_labels[label['id']] = {
+        'name': label['name'],
+        'history_id': history_id,
+    }
+    _save_ledger()
+
+def update_history_records(records, history_id):
     messageIds = set()
     for record in records:
         for msg in record['messages']:
@@ -105,8 +148,14 @@ def update_history_records(records):
         label = get_label_by_id(labelId)
         print(f"Updating {label}")
         if is_thread_label(label['name']):
+            if already_refreshed(label, history_id):
+                print(f"Label {label['name']} already current as of {history_id}")
+                continue
             print(f"Label {label['name']}")
             refresh_thread(label)
+            # Only after the file is durably in place: dying in between costs
+            # one redundant refresh next time, which is the safe direction.
+            record_refreshed(label, history_id)
 
 # Refreshing a single label:
 #refresh_label_cache()
@@ -137,8 +186,9 @@ def subscription_callback(message):
         records = history(last_processed_history_id, history_id)
         print(f"Updating {len(records)} records")
         if records:
-            update_history_records(records)
-            update_last_processed_history_id(max(int(r['id']) for r in records))
+            target_history_id = max(int(r['id']) for r in records)
+            update_history_records(records, target_history_id)
+            update_last_processed_history_id(target_history_id)
         print(f"Updated, waiting for next pub/sub message")
         message.ack()
 
