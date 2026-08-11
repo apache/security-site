@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 import json
+from email.header import decode_header, make_header
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -9,7 +10,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from gmail_gcloud import gmail_service, history, messages_by_label
 from gmail_gcloud_subscriber import gmail_subscribe
-from gmail_label_cache import refresh_label_cache, get_label_by_name, get_label_by_id, validate_label_name
+from gmail_label_cache import refresh_label_cache, get_label_by_name, get_label_by_id, get_labels_by_prefix, validate_label_name, delete_label_file
 import threading
 from optparse import OptionParser
 import os
@@ -25,6 +26,8 @@ import subprocess
 
 parser = OptionParser()
 parser.add_option("-t", "--target", default="email-classification", help="Directory to populate")
+parser.add_option("-s", "--single")
+parser.add_option("-p", "--project", help="Refresh all known labels under this project prefix")
 (options, args) = parser.parse_args()
 
 def is_thread_label(label):
@@ -33,23 +36,39 @@ def is_thread_label(label):
         not "000-ignore" in label and
         not "/github" in label)
 
+def decode_rfc2047(value):
+    # Untrusted: fall back to the raw value on malformed encoded-words
+    # or unknown charsets rather than crashing the daemon.
+    try:
+        return str(make_header(decode_header(value)))
+    except Exception:
+        return value
+
 def messages(label):
     msgs = messages_by_label(label['id'])
 
     result = []
-    
+
     def get_relevant_fields(m):
         subject = "";
         frm = "";
         to = "";
+        cc = "";
+        reply_to = "";
         message_id = "";
         for header in m['payload']['headers']:
             if header['name'].lower() == "subject":
-                subject = header['value'];
+                subject = decode_rfc2047(header['value']);
             if header['name'].lower() == "from":
+                # Store raw: decoding before RFC 5322 parsing lets encoded-words
+                # smuggle address syntax (<, >, @, ,) into the display-name slot.
                 frm = header['value'];
             if header['name'].lower() == "to":
                 to = header['value'];
+            if header['name'].lower() == "cc":
+                cc = header['value'];
+            if header['name'].lower() == "reply-to":
+                reply_to = header['value'];
             if header['name'].lower() == "message-id":
                 message_id = header['value'];
         return {
@@ -57,6 +76,8 @@ def messages(label):
                 'subj': subject,
                 'from': frm,
                 'to': to,
+                'cc': cc,
+                'reply_to': reply_to,
                 'message_id': message_id
         }
 
@@ -123,31 +144,21 @@ def record_refreshed(label, history_id):
     _save_ledger()
 
 def update_history_records(records, history_id):
-    messageIds = set()
-    for record in records:
-        for msg in record['messages']:
-            messageIds.add(msg['id'])
-
-    print(f"Getting labels for {len(messageIds)} message id's")
     labelIds = set()
-    for messageId in messageIds:
-        try:
-            msg = gmail_service.users().messages().get(
-                    userId=os.getenv('GMAIL_USER_ID'),
-                    id=messageId,
-                    format="full"
-            ).execute()
-            if 'labelIds' in msg:
-                labelIds = labelIds.union(msg['labelIds'])
-        except HttpError as e:
-            if e.resp.status != 404:
-                raise e
+    for record in records:
+        for event in [ "messagesAdded", "messagesDeleted", "labelsAdded", "labelsRemoved" ]:
+            if event in record:
+                for msg in record[event]:
+                    if 'labelIds' in msg:
+                        for labelId in msg['labelIds']:
+                            labelIds.add(labelId)
 
     print(f"Updating {len(labelIds)} labels")
+    n = 0
     for labelId in labelIds:
         label = get_label_by_id(labelId)
-        print(f"Updating {label}")
         if is_thread_label(label['name']):
+            print(f"Updating {label['name']} ({n}/{len(labelIds)})")
             if already_refreshed(label, history_id):
                 print(f"Label {label['name']} already current as of {history_id}")
                 continue
@@ -156,17 +167,7 @@ def update_history_records(records, history_id):
             # Only after the file is durably in place: dying in between costs
             # one redundant refresh next time, which is the safe direction.
             record_refreshed(label, history_id)
-
-# Refreshing a single label:
-#refresh_label_cache()
-#label = get_label_by_name("zzz-admin")
-#print(f"Refreshing {label}")
-#refresh_thread(label)
-#print(f"done")
-#exit(1)
-
-#update_history_records(history.get('history', []))
-#print("done")
+        n = n + 1
 
 with open(f"{options.target}/last_processed_history_id.txt") as f:
     last_processed_history_id = int(f.read().strip())
@@ -180,6 +181,7 @@ processing_lock = threading.Lock()
 
 def subscription_callback(message):
     global last_processed_history_id
+    print("Got callback")
     with processing_lock:
         history_id = json.loads(message.data)['historyId']
         print(f"Got notified of new messages, starting at {history_id}")
@@ -192,5 +194,48 @@ def subscription_callback(message):
         print(f"Updated, waiting for next pub/sub message")
         message.ack()
 
-streaming_pull = gmail_subscribe(subscription_callback)
-print(streaming_pull.result())
+if options.single:
+    # Refreshing a single label:
+    refresh_label_cache(options.target)
+    label = get_label_by_name(options.single)
+    if label:
+        print(f"Refreshing {label}")
+        refresh_thread(label)
+    else:
+        if delete_label_file(options.target, options.single):
+            print(f"Label {options.single} no longer found upstream, deleted")
+        else:
+            print(f"Label {options.single} not found")
+
+elif options.project:
+    refresh_label_cache(options.target)
+    prefix = options.project.rstrip("/")
+    prefix_labels = get_labels_by_prefix(options.project)
+    upstream_names = {l['name'] for l in prefix_labels}
+
+    # Remove thread files on disk under this project that no longer
+    # correspond to an upstream label (deleted or renamed away). Only
+    # the project's own directory (and its own label file) is scanned.
+    project_dir = os.path.join(options.target, prefix)
+    on_disk = []
+    if os.path.isfile(project_dir + ".json"):
+        on_disk.append(prefix)
+    for root, dirs, files in os.walk(project_dir):
+        for fn in files:
+            if fn.endswith(".json"):
+                on_disk.append(os.path.relpath(os.path.join(root, fn), options.target)[:-len(".json")])
+    for name in on_disk:
+        if name not in upstream_names:
+            print(f"Thread '{name}' no longer in upstream list, removing")
+            delete_label_file(options.target, name)
+
+    project_labels = [l for l in prefix_labels if is_thread_label(l['name'])]
+    print(f"Refreshing {len(project_labels)} labels under {options.project}")
+    for n, label in enumerate(project_labels, 1):
+        print(f"Refreshing {label['name']} ({n}/{len(project_labels)})")
+        refresh_thread(label)
+
+else:
+    print("Subscribing")
+    streaming_pull = gmail_subscribe(subscription_callback)
+    print(streaming_pull.result())
