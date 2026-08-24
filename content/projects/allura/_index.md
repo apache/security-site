@@ -13,6 +13,116 @@ Do you want disclose a potential security issue for Apache Allura? Send your rep
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Git command injection ## { #CVE-2026-73240 }
+
+CVE-2026-73240 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73240) [\[CVE json\]](./CVE-2026-73240.cve.json) [\[OSV json\]](./CVE-2026-73240.osv.json)
+
+
+
+_Last updated: 2026-08-12T16:41:16.893Z_
+
+### Affected
+
+* Apache Allura before 1.19.1
+
+
+### Description
+
+<p>Specifically crafted inputs may lead to git argument injection in Apache Allura.</p><p>This issue affects Apache Allura: before 1.19.1.</p><p>Users are recommended to upgrade to version 1.19.1, which fixes the issue.</p>
+
+### References
+* https://allura.apache.org/posts/2026-allura-1.19.1.html
+* https://lists.apache.org/thread/10gnxblhomk2z4gxcyyb4t3p4zxsdddv
+
+
+## Missing permission checks IDOR ## { #CVE-2026-73239 }
+
+CVE-2026-73239 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73239) [\[CVE json\]](./CVE-2026-73239.cve.json) [\[OSV json\]](./CVE-2026-73239.osv.json)
+
+
+
+_Last updated: 2026-08-12T16:41:39.780Z_
+
+### Affected
+
+* Apache Allura before 1.19.1
+
+
+### Description
+
+<p>Insecure Direct Object Reference (IDOR) due to missing permission checks for multiple Artifact types&nbsp;in Apache Allura.</p><p>This issue affects Apache Allura: before 1.19.1.</p><p>Users are recommended to upgrade to version 1.19.1, which fixes the issue.</p>
+
+### References
+* https://allura.apache.org/posts/2026-allura-1.19.1.html
+* https://lists.apache.org/thread/ryn6yomo897d43ovrd47g02t8ycmbxb3
+
+
+## XSS in code display ## { #CVE-2026-73238 }
+
+CVE-2026-73238 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73238) [\[CVE json\]](./CVE-2026-73238.cve.json) [\[OSV json\]](./CVE-2026-73238.osv.json)
+
+
+
+_Last updated: 2026-08-12T16:41:57.464Z_
+
+### Affected
+
+* Apache Allura before 1.19.1
+
+
+### Description
+
+<p>XSS vulnerability in code display in Apache Allura.</p><p>This issue affects Apache Allura: before 1.19.1.</p><p>Users are recommended to upgrade to version 1.19.1, which fixes the issue.</p>
+
+### References
+* https://allura.apache.org/posts/2026-allura-1.19.1.html
+* https://lists.apache.org/thread/bbzhnvqlwvwbprnfg4g41s8wkc5bdfmk
+
+
+## XSS in markdown pipeline ## { #CVE-2026-73237 }
+
+CVE-2026-73237 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73237) [\[CVE json\]](./CVE-2026-73237.cve.json) [\[OSV json\]](./CVE-2026-73237.osv.json)
+
+
+
+_Last updated: 2026-08-12T16:42:26.194Z_
+
+### Affected
+
+* Apache Allura from 1.10.0 before 1.19.1
+
+
+### Description
+
+<p>XSS vulnerability in Markdown handling in Apache Allura.</p><p>This issue affects Apache Allura: from 1.10.0 before 1.19.1.</p><p>Users are recommended to upgrade to version 1.19.1, which fixes the issue.</p>
+
+### References
+* https://allura.apache.org/posts/2026-allura-1.19.1.html
+* https://lists.apache.org/thread/p7bd1yz9v9wbsbc6hz3tjxozxnwyzqz0
+
+
+## Server-side request forgery ## { #CVE-2026-69223 }
+
+CVE-2026-69223 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-69223) [\[CVE json\]](./CVE-2026-69223.cve.json) [\[OSV json\]](./CVE-2026-69223.osv.json)
+
+
+
+_Last updated: 2026-08-11T17:03:03.256Z_
+
+### Affected
+
+* Apache Allura before 1.19.1
+
+
+### Description
+
+<p>Apache Allura's webhooks are vulnerable to&nbsp;Server-Side Request Forgery (SSRF).</p><p>This issue affects Apache Allura: before 1.19.1.</p><p>Users are recommended to upgrade to version 1.19.1, which fixes the issue.</p>
+
+### References
+* https://allura.apache.org/posts/2026-allura-1.19.1.html
+* https://lists.apache.org/thread/9xpltfm6nombd7rdrx5o0hh8kxmm82pb
+
+
 ## Stored authenticated XSS ## { #CVE-2024-38379 }
 
 CVE-2024-38379 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-38379) [\[CVE json\]](./CVE-2024-38379.cve.json) [\[OSV json\]](./CVE-2024-38379.osv.json)

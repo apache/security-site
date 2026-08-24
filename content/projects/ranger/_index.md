@@ -266,13 +266,13 @@ _Last updated: 2026-08-10T10:26:31.190Z_
 * Andrea Cosentino (finder)
 
 
-## Hostname verification bypass in NiFiRegistryClient and NifiClient ## { #CVE-2025-59060 }
+## Hostname verification bypass in NiFiRegistryClient ## { #CVE-2025-59060 }
 
 CVE-2025-59060 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-59060) [\[CVE json\]](./CVE-2025-59060.cve.json) [\[OSV json\]](./CVE-2025-59060.osv.json)
 
 
 
-_Last updated: 2026-03-03T10:46:51.061Z_
+_Last updated: 2026-08-21T20:11:10.266Z_
 
 ### Affected
 

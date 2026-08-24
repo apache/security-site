@@ -24,7 +24,7 @@ CVE-2026-68981 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68981) [\[CVE jso
 
 
 
-_Last updated: 2026-08-03T19:59:53.029Z_
+_Last updated: 2026-08-19T04:13:13.429Z_
 
 ### Affected
 

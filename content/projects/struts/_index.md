@@ -18,6 +18,138 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Unbounded growth of localized-text caches driven by the request locale ## { #CVE-2026-73635 }
+
+CVE-2026-73635 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73635) [\[CVE json\]](./CVE-2026-73635.cve.json) [\[OSV json\]](./CVE-2026-73635.osv.json)
+
+
+
+_Last updated: 2026-08-15T10:38:06.706Z_
+
+### Affected
+
+* Apache Struts from 2.0.0 through 2.3.37
+* Apache Struts from 2.5.0 through 2.5.33
+* Apache Struts from 6.0.0 through 6.10.0
+* Apache Struts from 7.0.0 through 7.2.1
+
+
+### Description
+
+Allocation of resources without limits or throttling vulnerability in Apache Struts. When no fixed locale is configured, the locale used for localized-text lookups is taken from the incoming request, allowing an unauthenticated remote client to cause the framework's internal localized-text caches to grow without bound and exhaust the Java heap, denying service to other users. Applications that configure a fixed locale are not affected.<br><br>This issue affects Apache Struts: from 2.0.0 through 2.3.37, from 2.5.0 through 2.5.33, from 6.0.0 through 6.10.0, from 7.0.0 through 7.2.1.<br><br>Users are recommended to upgrade to version 6.11.0 or 7.3.0, which fixes the issue.
+
+### References
+* https://cwiki.apache.org/confluence/display/WW/S2-074
+
+
+### Credits
+* Kuniyoshi Noguchi (野口 晋義), (@KuniNogu) (finder)
+
+
+## Unbounded read of a Content Security Policy violation report ## { #CVE-2026-73634 }
+
+CVE-2026-73634 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73634) [\[CVE json\]](./CVE-2026-73634.cve.json) [\[OSV json\]](./CVE-2026-73634.osv.json)
+
+
+
+_Last updated: 2026-08-15T10:37:36.431Z_
+
+### Affected
+
+* Apache Struts from 6.0.0 through 6.10.0
+* Apache Struts from 7.0.0 through 7.2.1
+
+
+### Description
+
+Uncontrolled resource consumption vulnerability in Apache Struts. An application that exposes an endpoint collecting Content Security Policy violation reports reads the submitted report into memory without bounding how much it will accept, so a single request can exhaust the heap and deny service to other users. Such endpoints are ordinarily reachable without authentication. The core distribution maps no such endpoint by default; applications that do not collect violation reports are not affected.<br><br>This issue affects Apache Struts: from 6.0.0 through 6.10.0, from 7.0.0 through 7.2.1.<br><br>Users are recommended to upgrade to version 6.11.0 or 7.3.0, which fixes the issue.
+
+### References
+* https://cwiki.apache.org/confluence/display/WW/S2-073
+
+
+### Credits
+* Michael Mullins (finder)
+
+
+## Unbounded read of a JSON request body ## { #CVE-2026-73633 }
+
+CVE-2026-73633 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73633) [\[CVE json\]](./CVE-2026-73633.cve.json) [\[OSV json\]](./CVE-2026-73633.osv.json)
+
+
+
+_Last updated: 2026-08-14T13:48:43.280Z_
+
+### Affected
+
+* Apache Struts from 2.1.8 through 2.3.37
+* Apache Struts from 2.5.0 through 2.5.33
+* Apache Struts from 6.0.0 through 6.10.0
+* Apache Struts from 7.0.0 through 7.2.1
+
+
+### Description
+
+Uncontrolled resource consumption vulnerability in the JSON plugin of Apache Struts. When an application is configured to populate actions from a JSON request body, the plugin reads that body into memory without bounding how much it will accept, so a single request can exhaust the heap and deny service to other users. The plugin's configurable JSON input length limit does not bound this read. The JSON plugin is an optional component; applications that do not use it, or use it without enabling JSON request-body handling, are not affected.<br><br>This issue affects Apache Struts: from 2.1.8 through 2.3.37, from 2.5.0 through 2.5.33, from 6.0.0 through 6.10.0, from 7.0.0 through 7.2.1.<br><br>Users are recommended to upgrade to version 6.11.0 or 7.3.0, which fixes the issue.
+
+### References
+* https://cwiki.apache.org/confluence/display/WW/S2-072
+
+
+### Credits
+* Michael Mullins (finder)
+
+
+## Shared serialization state in the JSON plugin ## { #CVE-2026-73632 }
+
+CVE-2026-73632 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73632) [\[CVE json\]](./CVE-2026-73632.cve.json) [\[OSV json\]](./CVE-2026-73632.osv.json)
+
+
+
+_Last updated: 2026-08-15T10:38:52.132Z_
+
+### Affected
+
+* Apache Struts at 7.2.1
+
+
+### Description
+
+Exposure of data element to wrong session vulnerability in the JSON plugin of Apache Struts. Per-response serialization state could be shared across concurrent requests, allowing response content associated with one request to become observable in another. Only the SMD / JSON-RPC handling of the JSON interceptor is affected, which is not enabled by default; applications using the json result type are not affected.<br><br>This issue affects Apache Struts: 7.2.1.<br><br>Users are recommended to upgrade to version 7.3.0, which fixes the issue.
+
+### References
+* https://cwiki.apache.org/confluence/display/WW/S2-071
+
+
+### Credits
+* g0w6y (https://github.com/g0w6y) (finder)
+
+
+## Shared parsing state in the JSON plugin ## { #CVE-2026-73631 }
+
+CVE-2026-73631 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73631) [\[CVE json\]](./CVE-2026-73631.cve.json) [\[OSV json\]](./CVE-2026-73631.osv.json)
+
+
+
+_Last updated: 2026-08-15T10:38:27.083Z_
+
+### Affected
+
+* Apache Struts at 7.2.1
+
+
+### Description
+
+Exposure of data element to wrong session vulnerability in the JSON plugin of Apache Struts. Per-request parsing state could be shared across concurrent requests, allowing data associated with one request to become observable in another, and configured parsing limits not to be enforced as intended. Populating actions from a JSON request body is not enabled by default; applications that do not use the JSON plugin are not affected.<br><br>This issue affects Apache Struts: 7.2.1.<br><br>Users are recommended to upgrade to version 7.3.0, which fixes the issue.
+
+### References
+* https://cwiki.apache.org/confluence/display/WW/S2-070
+
+
+### Credits
+* g0w6y (https://github.com/g0w6y) (finder)
+
+
 ## XXE vulnerability in outdated XWork component ## { #CVE-2025-68493 }
 
 CVE-2025-68493 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-68493) [\[CVE json\]](./CVE-2025-68493.cve.json) [\[OSV json\]](./CVE-2025-68493.osv.json)
