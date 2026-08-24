@@ -1295,6 +1295,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [solr.apache.org](https://solr.apache.org/security.html#recent-cve-reports-for-apache-solr)
   - Security model:
     - [Apache Solr security model](https://github.com/apache/solr/blob/main/THREAT_MODEL.md)
+- **Apache Sourcelume**
+  - **Security contact:**\
+    [security@sourcelume.apache.org](mailto:security@sourcelume.apache.org?subject=Sourcelume)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/spamassassin/default.png" alt="" loading="lazy"> **Apache SpamAssassin**
   - **Security contact:**\
     [security@spamassassin.apache.org](mailto:security@spamassassin.apache.org?subject=SpamAssassin)
