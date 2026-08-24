@@ -18,13 +18,38 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## TLS hostname verification silently disabled on the async transport (default config, MITM) ## { #CVE-2026-71290 }
+
+CVE-2026-71290 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-71290) [\[CVE json\]](./CVE-2026-71290.cve.json) [\[OSV json\]](./CVE-2026-71290.osv.json)
+
+
+
+_Last updated: 2026-08-13T08:56:10.759Z_
+
+### Affected
+
+* Apache HttpComponents Client from 5.4-alpha through 5.6.3
+
+
+### Description
+
+<p>Improper TLS hostname verification vulnerability in Apache HttpComponents Client 5.4 or newer.&nbsp;HostnameVerificationPolicy#BUILTIN setting has no effect when used with the async version of HttpClient. An attacker that can intercept and modify traffic between the client and the server can impersonate the server by presenting a valid certificate for a different domain.&nbsp;<br></p><p>Please note the classic version of HttpClient is not affected by this vulnerability.&nbsp;</p><p>Affected users are recommended to upgrade to at least version 5.6.4, which fixes the issue.<br></p>
+
+### References
+* https://lists.apache.org/thread/bhf7g2zwpom2ohvwjjjlonc93br2s8vq
+
+
+### Credits
+* n0mi1k (finder)
+
+
 ## Connection Leak on Content-Encoding Decode Error Leads to Pool Exhaustion DoS ## { #CVE-2026-64607 }
 
 CVE-2026-64607 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-64607) [\[CVE json\]](./CVE-2026-64607.cve.json) [\[OSV json\]](./CVE-2026-64607.osv.json)
 
 
 
-_Last updated: 2026-07-31T10:12:13.331Z_
+_Last updated: 2026-08-13T08:52:34.618Z_
 
 ### Affected
 

@@ -18,6 +18,265 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Agent Installer — Command Injection to RCE via Default Credentials ## { #CVE-2026-63046 }
+
+CVE-2026-63046 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63046) [\[CVE json\]](./CVE-2026-63046.cve.json) [\[OSV json\]](./CVE-2026-63046.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:37:55.621Z_
+
+### Affected
+
+* Apache InLong from 2.0.0 before 2.4.0
+
+
+### Description
+
+<p>Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Apache InLong.&nbsp;<span style="background-color: rgb(255, 255, 255);">Agent Installer's ModuleManager executes arbitrary shell
+commands via ExcuteLinux.exeCmd() with no filtering or whitelist
+validation. </span></p><p>This issue affects Apache InLong: from 2.0.0 before 2.4.0.</p><p></p><p><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's  2.4.0 or cherry-pick [1]/[2] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/12151">https://github.com/apache/inlong/pull/12151</a>.</span></p><p><span style="background-color: rgb(255, 255, 255);">[2]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/12155">https://github.com/apache/inlong/pull/12155</a>.</span></p><p></p>
+
+### References
+* https://lists.apache.org/thread/2pgz70rz9ozfm7vm5c33po3yyspq846y
+
+
+### Credits
+* IcySun (finder)
+
+
+## Authenticated SSRF via POST /api/node/testConnection ## { #CVE-2026-63044 }
+
+CVE-2026-63044 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63044) [\[CVE json\]](./CVE-2026-63044.cve.json) [\[OSV json\]](./CVE-2026-63044.osv.json)
+
+
+
+_Last updated: 2026-08-20T15:56:57.925Z_
+
+### Affected
+
+* Apache InLong from 2.0.0 before 2.4.0
+
+
+### Description
+
+<p>Server-Side Request Forgery (SSRF) vulnerability in Apache InLong.&nbsp;<span style="background-color: rgb(255, 255, 255);">&nbsp;Any </span><span style="background-color: rgb(255, 255, 255);">authenticated</span><span style="background-color: rgb(255, 255, 255);">&nbsp;user (no admin role required) can cause the&nbsp;</span><span style="background-color: rgb(255, 255, 255);">InLong Manager server to make outbound HTTP requests or TCP connections to</span><br><span style="background-color: rgb(255, 255, 255);">arbitrary internal hosts and ports.</span></p><p>This issue affects Apache InLong: from 2.0.0 before 2.4.0.</p><p></p><p><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's  2.4.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/12130">https://github.com/apache/inlong/pull/12130</a>.</span></p><p></p>
+
+### References
+* https://lists.apache.org/thread/b3rtzssd8hdk0dyq4y6mpdx6jj5ro4g6
+
+
+### Credits
+* Geo (finder)
+
+
+## Agent path traversal via unvalidated file source path ## { #CVE-2026-63043 }
+
+CVE-2026-63043 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63043) [\[CVE json\]](./CVE-2026-63043.cve.json) [\[OSV json\]](./CVE-2026-63043.osv.json)
+
+
+
+_Last updated: 2026-08-20T15:53:04.708Z_
+
+### Affected
+
+* Apache InLong from 2.0.0 before 2.4.0
+
+
+### Description
+
+<p>Relative Path Traversal vulnerability in Apache InLong.&nbsp;<span style="background-color: rgb(255, 255, 255);">Arbitrary file read from the Agent host filesystem.</span></p><p>This issue affects Apache InLong: from 2.0.0 before 2.4.0.</p><p></p><p><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's  2.4.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/12146">https://github.com/apache/inlong/pull/12146</a>.</span></p><p></p>
+
+### References
+* https://lists.apache.org/thread/0ohn861tzd9g7nsosd6oz3of6dvhvqnk
+
+
+### Credits
+* dyingman1 (finder)
+
+
+## Missing authorization on DataNode management endpoints ## { #CVE-2026-63042 }
+
+CVE-2026-63042 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63042) [\[CVE json\]](./CVE-2026-63042.cve.json) [\[OSV json\]](./CVE-2026-63042.osv.json)
+
+
+
+_Last updated: 2026-08-20T15:50:01.022Z_
+
+### Affected
+
+* Apache InLong from 2.0.0 before 2.4.0
+
+
+### Description
+
+<p>Files or Directories Accessible to External Parties vulnerability in Apache InLong. Any user who can authenticate to the manager can create, modify and delete Data Node definitions.</p><p>This issue affects Apache InLong: from 2.0.0 before 2.4.0.</p><p></p><p><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's  2.4.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/12161">https://github.com/apache/inlong/pull/12161</a>.</span></p>
+
+### References
+* https://lists.apache.org/thread/wxs4jfjkoo6rlyovhrx8bo74rfmzwbk7
+
+
+### Credits
+* tonghuaroot (finder)
+
+
+## Missing authorization in StreamSource forceDelete ## { #CVE-2026-63040 }
+
+CVE-2026-63040 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63040) [\[CVE json\]](./CVE-2026-63040.cve.json) [\[OSV json\]](./CVE-2026-63040.osv.json)
+
+
+
+_Last updated: 2026-08-20T15:48:42.564Z_
+
+### Affected
+
+* Apache InLong from 2.0.0 before 2.4.0
+
+
+### Description
+
+<p>Files or Directories Accessible to External Parties vulnerability in Apache InLong.&nbsp;StreamSource&nbsp;<span style="background-color: rgb(255, 255, 255);">performs no </span><span style="background-color: rgb(255, 255, 255);">authorization</span><span style="background-color: rgb(255, 255, 255);">&nbsp;check, a</span><span style="background-color: rgb(255, 255, 255);">ny&nbsp;</span><span style="background-color: rgb(255, 255, 255);">authenticated user can logically delete ALL stream sources.</span></p><p>This issue affects Apache InLong: from 2.0.0 before 2.4.0.</p><p></p><p><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's  2.4.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/12145">https://github.com/apache/inlong/pull/12145</a>.</span></p><p></p>
+
+### References
+* https://lists.apache.org/thread/sbqrk88cjv3r9rnqfqgn31ox4711offy
+
+
+### Credits
+* Mingrui Liu (finder)
+
+
+## SQL Injection via Unvalidated MyBatis Dollar-Sign Interpolation in AuditAlertRuleService ## { #CVE-2026-63039 }
+
+CVE-2026-63039 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63039) [\[CVE json\]](./CVE-2026-63039.cve.json) [\[OSV json\]](./CVE-2026-63039.osv.json)
+
+
+
+_Last updated: 2026-08-20T15:43:51.402Z_
+
+### Affected
+
+* Apache InLong from 2.0.0 before 2.4.0
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache InLong. <span style="background-color: rgb(255, 255, 255);">This allows an attacker to inject<span style="background-color: rgb(255, 255, 255);">&nbsp;the string value into
+the SQL statement, enabling SQL injection.</span></span><span style="background-color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255);"><br></span></span></p><p>This issue affects Apache InLong: from 2.0.0 before 2.4.0.</p><p></p><p><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's  2.4.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/12080">https://github.com/apache/inlong/pull/12080</a>.</span></p><p></p><br><br>
+
+### References
+* https://lists.apache.org/thread/wzpsgwcx2hxj025pcml0loxr16kl93qt
+
+
+### Credits
+* Andrea Cosentino (finder)
+
+
+## SQL Injection via String Concatenation Vulnerability Report ## { #CVE-2026-63038 }
+
+CVE-2026-63038 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63038) [\[CVE json\]](./CVE-2026-63038.cve.json) [\[OSV json\]](./CVE-2026-63038.osv.json)
+
+
+
+_Last updated: 2026-08-20T15:42:40.312Z_
+
+### Affected
+
+* Apache InLong from 2.0.0 before 2.4.0
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache InLong. <span style="background-color: rgb(255, 255, 255);">This allows an attacker to inject arbitrary SQL code through the
+dbName, tableName, schemaName, and username parameters.&nbsp;</span></p><p>This issue affects Apache InLong: from 2.0.0 before 2.4.0.</p><p></p><p><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's  2.4.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/issues/12135">https://github.com/apache/inlong/issues/12135</a>.</span></p><p></p><br>
+
+### References
+* https://lists.apache.org/thread/79w0cfnkhs3hctv8yn861qx3qwlc3p37
+
+
+### Credits
+* zhaokaifei (finder)
+
+
+## Unauthenticated SQL injection in Manager OpenAPI audit alert rule list endpoint ## { #CVE-2026-63037 }
+
+CVE-2026-63037 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63037) [\[CVE json\]](./CVE-2026-63037.cve.json) [\[OSV json\]](./CVE-2026-63037.osv.json)
+
+
+
+_Last updated: 2026-08-20T15:37:30.661Z_
+
+### Affected
+
+* Apache InLong from 2.0.0 before 2.4.0
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache InLong.&nbsp;<span style="background-color: rgb(255, 255, 255);">This appears to allow SQL injection in the ORDER BY clause against the
+Manager backend database.</span></p><p>This issue affects Apache InLong: from 2.0.0 before 2.4.0.</p><p></p><p><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's  2.4.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1]&nbsp;<a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/issues/12079">https://github.com/apache/inlong/issues/12079</a>.</span></p><p></p>
+
+### References
+* https://lists.apache.org/thread/po2gvsl30mfjk9cy415hsbzrmqkqpd5r
+
+
+### Credits
+* cat dg (finder)
+
+
+## Ordinary users can create new packages ## { #CVE-2026-63016 }
+
+CVE-2026-63016 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63016) [\[CVE json\]](./CVE-2026-63016.cve.json) [\[OSV json\]](./CVE-2026-63016.osv.json)
+
+
+
+_Last updated: 2026-08-20T15:32:39.423Z_
+
+### Affected
+
+* Apache InLong from 2.0.0 before 2.4.0
+
+
+### Description
+
+<p>Uncontrolled Resource Consumption vulnerability in Apache InLong. Users could affect operational configuration or allow upload of&nbsp;non-official packages.</p><p>This issue affects Apache InLong: from 2.0.0 before 2.4.0.</p><p></p><p><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's  2.4.0 or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/11732">
+
+</a><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/11732">https://github.com/apache/inlong/pull/12095</a></span></p><p></p>
+
+### References
+* https://lists.apache.org/thread/jmsn2slhqmmw7kt24zqcnw6tyjnrcykp
+
+
+### Credits
+* Tycho Knight (finder)
+
+
+## Non-template responsible persons can view template information ## { #CVE-2026-63015 }
+
+CVE-2026-63015 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63015) [\[CVE json\]](./CVE-2026-63015.cve.json) [\[OSV json\]](./CVE-2026-63015.osv.json)
+
+
+
+_Last updated: 2026-08-20T15:29:24.817Z_
+
+### Affected
+
+* Apache InLong from 2.0.0 before 2.4.0
+
+
+### Description
+
+<p>Uncontrolled Resource Consumption vulnerability in Apache InLong.&nbsp;Non-template responsible persons can view template information.</p><p>This issue affects Apache InLong: from 2.0.0 before 2.4.0.</p><p></p><p><span style="background-color: var(--wht);">Users are advised to upgrade to Apache InLong's  2.4.0&nbsp;or cherry-pick [1] to solve it.</span></p><p><span style="background-color: rgb(255, 255, 255);">[1] <a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/11732">
+
+</a><a target="_blank" rel="nofollow" href="https://github.com/apache/inlong/pull/11732">https://github.com/apache/inlong/pull/12093</a></span></p><p></p>
+
+### References
+* https://lists.apache.org/thread/b7bvsg59bo619rywwpd7tj66rkzz62k4
+
+
+### Credits
+* Tycho Knight (finder)
+
+
 ## An arbitrary file read vulnerability for JDBC ## { #CVE-2025-27531 }
 
 CVE-2025-27531 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-27531) [\[CVE json\]](./CVE-2025-27531.cve.json) [\[OSV json\]](./CVE-2025-27531.osv.json)

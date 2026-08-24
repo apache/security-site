@@ -125,7 +125,7 @@ CVE-2026-32967 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-32967) [\[CVE jso
 
 
 
-_Last updated: 2026-06-17T01:41:50.516Z_
+_Last updated: 2026-08-21T08:22:51.583Z_
 
 ### Affected
 

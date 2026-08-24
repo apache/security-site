@@ -18,6 +18,31 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## SSRF via set_skywalking_url Tool and GraphQL Expression Injection in MCP Server ## { #CVE-2026-34884 }
+
+CVE-2026-34884 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34884) [\[CVE json\]](./CVE-2026-34884.cve.json) [\[OSV json\]](./CVE-2026-34884.osv.json)
+
+
+
+_Last updated: 2026-08-18T03:21:11.514Z_
+
+### Affected
+
+* Apache SkyWalking MCP at 0.1.0
+
+
+### Description
+
+<p></p><div><div>SSRF via set_skywalking_url Tool and GraphQL expression injection vulnerability in Apache SkyWalking MCP.</div></div><p></p><p>This issue affects Apache SkyWalking MCP: 0.1.0.</p>Users are recommended to upgrade to version 0.2.0, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/s447p6h5dfr02lx17v27phoksgb8mkkp
+
+
+### Credits
+* Andrea Cosentino <ancosen@gmail.com> (reporter)
+
+
 ## Server-Side Request Forgery via SW-URL Header in MCP Server ## { #CVE-2026-34476 }
 
 CVE-2026-34476 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34476) [\[CVE json\]](./CVE-2026-34476.cve.json) [\[OSV json\]](./CVE-2026-34476.osv.json)

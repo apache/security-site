@@ -18,6 +18,339 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Cross-team authorization bypass in the asset materialization and dag-run result endpoints ## { #CVE-2026-68971 }
+
+CVE-2026-68971 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68971) [\[CVE json\]](./CVE-2026-68971.cve.json) [\[OSV json\]](./CVE-2026-68971.osv.json)
+
+
+
+_Last updated: 2026-08-12T15:24:09.501Z_
+
+### Affected
+
+* Apache Airflow before 3.3.1
+
+
+### Description
+
+Apache Airflow&#x27;s asset materialization endpoint (`POST /api/v2/assets/{asset_id}/materialize`) and the XCom result check on `wait_dag_run_until_finished` authorized the target Dag without its team, unlike every other authorization site. A team-aware auth manager distinguishes a team-scoped Dag from a global one by that field -- the Keycloak auth manager, for example, checks the `DAG` resource instead of `DAG:&lt;team&gt;` -- so the team-scoped permission that should gate the request was never consulted. In a deployment running multi-team mode with a team-aware auth manager, an authenticated user in one team could trigger Dag runs belonging to another team, supplying their own `dag_run_id` and `conf`, and could read another team&#x27;s XCom values. Deployments using the FAB auth manager are unaffected, as it has no multi-team support. Users are advised to upgrade to apache-airflow 3.3.1 or later, which resolves the Dag&#x27;s team at both sites.
+
+### References
+* https://github.com/apache/airflow/pull/70893
+* https://lists.apache.org/thread/kfxqqwgojdjdnt6bxg3ord4y41y334fo
+
+
+### Credits
+* @haoxucu (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## Values of a list-shaped Variable are not masked in task logs and the Rendered Templates UI ## { #CVE-2026-68970 }
+
+CVE-2026-68970 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68970) [\[CVE json\]](./CVE-2026-68970.cve.json) [\[OSV json\]](./CVE-2026-68970.osv.json)
+
+
+
+_Last updated: 2026-08-12T15:24:51.786Z_
+
+### Affected
+
+* Apache Airflow before 3.3.1
+
+
+### Description
+
+Apache Airflow&#x27;s Task SDK did not mask the contents of a Variable whose JSON value is a list, so secrets stored in that shape appeared in cleartext in task logs and in the Rendered Templates UI. Masking was applied only when the deserialized value was a string or a dict; a list at the top level matched neither and was returned unmasked. Any authenticated user able to read the logs or rendered templates of a task that references such a Variable could recover the values, with no special configuration required. This is the list-shaped counterpart of CVE-2026-59244, whose fix covered the dict case only, so deployments that upgraded in response to that advisory remain affected and must upgrade again. Users are advised to upgrade to apache-airflow 3.3.1 or later.
+
+### References
+* https://github.com/apache/airflow/pull/70891
+* https://www.cve.org/CVERecord?id=CVE-2026-59244
+* https://lists.apache.org/thread/kkrlnbsk47oght4h38mcd3h2kcb8dt28
+
+
+### Credits
+* Raphael Zanarelli (@zanarellidev) (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## Bulk Variable and Connection endpoints record secret values in the audit log in cleartext ## { #CVE-2026-68969 }
+
+CVE-2026-68969 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68969) [\[CVE json\]](./CVE-2026-68969.cve.json) [\[OSV json\]](./CVE-2026-68969.osv.json)
+
+
+
+_Last updated: 2026-08-18T16:43:40.170Z_
+
+### Affected
+
+* Apache Airflow before 3.3.1
+
+
+### Description
+
+Apache Airflow wrote Variable values and Connection `extra` contents to the audit log in cleartext when they were submitted through the bulk endpoints (`PATCH /api/v2/variables` and `PATCH /api/v2/connections`). The audit-log masking recognised only top-level request fields, and a bulk request nests its entities two levels below, so no masking was applied to them. Any authenticated user with audit-log read access -- who need not hold Variables or Connections read at all -- could recover those secrets verbatim, and the Connection `extra` copy is stored unencrypted in the log while the connection table encrypts it. The Airflow UI&#x27;s *Import Variables* action posts to this endpoint, so an ordinary operator import wrote every secret in the file to the log. This is a different code path from CVE-2026-50204: that fix shipped in 3.3.0 and covers the single-entity endpoints only, so deployments that upgraded in response to that advisory remain affected and must upgrade again. Users are advised to upgrade to apache-airflow 3.3.1 or later.
+
+### References
+* https://github.com/apache/airflow/pull/70890
+* https://www.cve.org/CVERecord?id=CVE-2026-50204
+* https://lists.apache.org/thread/p3jr90jgp2brto4vwcrx680f3x11y70c
+
+
+### Credits
+* Jarek Potiuk (remediation developer)
+* Harish Kolla (@Har1sh-k) (finder)
+
+
+## Authorization bypass in the Backfill API through conflicting interpretations of the backfill id ## { #CVE-2026-68968 }
+
+CVE-2026-68968 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68968) [\[CVE json\]](./CVE-2026-68968.cve.json) [\[OSV json\]](./CVE-2026-68968.osv.json)
+
+
+
+_Last updated: 2026-08-18T16:43:04.336Z_
+
+### Affected
+
+* Apache Airflow before 3.3.1
+
+
+### Description
+
+Apache Airflow&#x27;s Backfill API authorized a request against a Dag id supplied by the caller whenever the `backfill_id` path segment failed to parse. The authorization dependency parsed it with `int()` while the route handler parsed it as pydantic&#x27;s `NonNegativeInt`, which accepts values `int()` rejects (`1.0` coerces to `1`); FastAPI resolves dependencies before endpoint validation, so the two acted on different Dags. An authenticated user holding edit permission on any single Dag could therefore read, pause and cancel backfills belonging to any other Dag, including moving another Dag&#x27;s queued runs to `failed`. No non-default configuration is required and backfill ids are sequential, so finding a target is trivial. Users are advised to upgrade to apache-airflow 3.3.1 or later, which parses the backfill id with the same type the routes declare.
+
+### References
+* https://github.com/apache/airflow/pull/70889
+* https://lists.apache.org/thread/f9zmw6xs5b4syhwzbl6fsxm4kf2632ol
+
+
+### Credits
+* Jarek Potiuk (remediation developer)
+* Harish Kolla (@Har1sh-k) (finder)
+
+
+## amazon SSM / Secrets Manager backends: team-scope guard bypass resolves another team's Connection or Variable ## { #CVE-2026-68872 }
+
+CVE-2026-68872 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68872) [\[CVE json\]](./CVE-2026-68872.cve.json) [\[OSV json\]](./CVE-2026-68872.osv.json)
+
+
+
+_Last updated: 2026-08-10T18:21:17.038Z_
+
+### Affected
+
+* Apache Airflow Amazon provider before 9.34.0
+
+
+### Description
+
+The AWS Systems Manager Parameter Store and Secrets Manager backends in Apache Airflow&#x27;s Amazon provider resolved a team-scoped Connection or Variable id through the team-agnostic lookup when the team-scoped lookup missed. In a deployment running multi-team mode with either backend, a caller in one team could resolve a secret belonging to another team by supplying an id that spells out that team&#x27;s namespace, obtaining its credentials in full. No unusual configuration is required beyond enabling multi-team mode and using one of these backends. Users are advised to upgrade to apache-airflow-providers-amazon 9.34.0 or later, which refuses the team-agnostic fall-through for an id that could name a team namespace.
+
+### References
+* https://github.com/apache/airflow/pull/70878
+* https://lists.apache.org/thread/9nd31g40rd2zpgwwymskvjpfq1xnmllg
+
+
+### Credits
+* Apache Airflow security team (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## yandex Lockbox backend: team-scope guard bypass resolves another team's Connection or Variable ## { #CVE-2026-68871 }
+
+CVE-2026-68871 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68871) [\[CVE json\]](./CVE-2026-68871.cve.json) [\[OSV json\]](./CVE-2026-68871.osv.json)
+
+
+
+_Last updated: 2026-08-10T18:18:18.472Z_
+
+### Affected
+
+* Apache Airflow Yandex provider before 4.5.1
+
+
+### Description
+
+The Yandex Lockbox secrets backend in Apache Airflow&#x27;s Yandex provider resolved a team-scoped Connection or Variable id through the team-agnostic lookup when the team-scoped lookup missed. In a deployment running multi-team mode with this backend, a caller in one team could resolve a secret belonging to another team by supplying an id that spells out that team&#x27;s namespace, obtaining its credentials in full. No unusual configuration is required beyond enabling multi-team mode and using this backend. Users are advised to upgrade to apache-airflow-providers-yandex 4.5.1 or later, which refuses the team-agnostic fall-through for an id that could name a team namespace.
+
+### References
+* https://github.com/apache/airflow/pull/70877
+* https://lists.apache.org/thread/jlj9tv085txk4t0j029mvh43mz89o63c
+
+
+### Credits
+* Apache Airflow security team (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## microsoft.azure Key Vault backend: team-scope guard bypass resolves another team's Connection or Variable ## { #CVE-2026-68870 }
+
+CVE-2026-68870 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68870) [\[CVE json\]](./CVE-2026-68870.cve.json) [\[OSV json\]](./CVE-2026-68870.osv.json)
+
+
+
+_Last updated: 2026-08-10T18:10:29.342Z_
+
+### Affected
+
+* Apache Airflow Microsoft Azure provider before 14.1.0
+
+
+### Description
+
+The Azure Key Vault secrets backend in Apache Airflow&#x27;s Microsoft Azure provider resolved a team-scoped Connection or Variable id through the team-agnostic lookup when the team-scoped lookup missed. In a deployment running multi-team mode with this backend, a caller in one team could resolve a secret belonging to another team by supplying an id that spells out that team&#x27;s namespace, obtaining its credentials in full. No unusual configuration is required beyond enabling multi-team mode and using this backend. Users are advised to upgrade to apache-airflow-providers-microsoft-azure 14.1.0 or later, which refuses the team-agnostic fall-through for an id that could name a team namespace.
+
+### References
+* https://github.com/apache/airflow/pull/70876
+* https://github.com/apache/airflow/pull/70899
+* https://lists.apache.org/thread/dtkk6vtfoj1y4zjyd6s3mzg0v5g9yg0p
+
+
+### Credits
+* Apache Airflow security team (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## google Secret Manager backend: team scope is never applied, exposing every team's Connections and Variables ## { #CVE-2026-68868 }
+
+CVE-2026-68868 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68868) [\[CVE json\]](./CVE-2026-68868.cve.json) [\[OSV json\]](./CVE-2026-68868.osv.json)
+
+
+
+_Last updated: 2026-08-12T10:33:13.058Z_
+
+### Affected
+
+* Apache Airflow Google provider before 22.3.0
+
+
+### Description
+
+The Google Cloud Secret Manager secrets backend in Apache Airflow&#x27;s Google provider never applied the team scope when resolving Connections and Variables: the caller&#x27;s `team_name` was accepted by the backend but dropped at the internal call boundary, so every lookup resolved against the team-agnostic secret name. In a deployment running multi-team mode with this backend, a task or Dag belonging to one team resolved another team&#x27;s Connection or Variable, obtaining its credentials in full. No unusual configuration is required beyond enabling multi-team mode and using this backend. Users are advised to upgrade to apache-airflow-providers-google 22.3.0 or later, which builds and applies the team-scoped secret name.
+
+### References
+* https://github.com/apache/airflow/pull/70869
+* https://lists.apache.org/thread/03h5y0fmqlh0yf055zlocxh591ozx69x
+
+
+### Credits
+* Apache Airflow security team (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## Connections test API: team-scope guard bypass resolves another team's environment Connection ## { #CVE-2026-68076 }
+
+CVE-2026-68076 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68076) [\[CVE json\]](./CVE-2026-68076.cve.json) [\[OSV json\]](./CVE-2026-68076.osv.json)
+
+
+
+_Last updated: 2026-08-12T15:23:21.465Z_
+
+### Affected
+
+* Apache Airflow before 3.3.1
+
+
+### Description
+
+Apache Airflow&#x27;s environment-variable secrets backend resolved a team-scoped Connection or Variable from the wrong team&#x27;s scope. The guard meant to prevent this only ran when no team scope was supplied, and its pattern could not match a team name containing an underscore, which team names are allowed to contain. When the guard did not apply, the lookup fell through to an unconditional global read that resolved the stored `AIRFLOW_CONN__&lt;TEAM&gt;___&lt;ID&gt;` variable regardless of which team asked. In multi-team mode an authenticated user of one team could therefore have `POST /api/v2/connections/test` resolve another team&#x27;s Connection and authenticate outward with that team&#x27;s credentials; the endpoint uses the credentials rather than returning them. Exploitation requires `[core] multi_team` enabled, `[core] test_connection` set to `Enabled` (it ships `Disabled`), team-scoped secrets provisioned as environment variables in the API-server process, and knowledge of the encoded identifier. Redirecting the test at an attacker-controlled host is separately blocked. Users are advised to upgrade to apache-airflow 3.3.1 or later.
+
+### References
+* https://github.com/apache/airflow/pull/70736
+* https://github.com/apache/airflow/pull/70902
+* https://lists.apache.org/thread/v4mc51dgmrc1t82mhzsngsgzo2gxsf2l
+
+
+### Credits
+* Andrew Rukin (Arenadata) (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## DAG-author remote code execution on the Scheduler via a Serde `Callback` deserialization gadget ## { #CVE-2026-67587 }
+
+CVE-2026-67587 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-67587) [\[CVE json\]](./CVE-2026-67587.cve.json) [\[OSV json\]](./CVE-2026-67587.osv.json)
+
+
+
+_Last updated: 2026-08-12T15:32:09.019Z_
+
+### Affected
+
+* Apache Airflow from 3.3.0 before 3.3.1
+
+
+### Description
+
+Apache Airflow&#x27;s Task SDK rebuilt a `Callback` object from serialized data by re-running its constructor, which imports the module named by the stored callback path. Because `SyncCallback` is itself an Airflow class it passes the default `allowed_deserialization_classes` allow-list, so tightening that setting does not help. A Dag author — who controls a task instance&#x27;s `next_kwargs` through the task execution API — can therefore cause an arbitrary module to be imported inside the scheduler process, when the scheduler&#x27;s `awaiting_input` timeout sweep deserializes that value. No non-default configuration is required; the sweep runs unconditionally. Versions before 3.3.0 are not affected: the class existed, but the scheduler sweep that reaches it did not. This is a separate code path from CVE-2026-58076 and CVE-2026-67260, which cover different gadgets reaching deserialization — applying either of those fixes does not address this one. Users are advised to upgrade to apache-airflow 3.3.1 or later.
+
+### References
+* https://github.com/apache/airflow/pull/70704
+* https://www.cve.org/CVERecord?id=CVE-2026-58076
+* https://www.cve.org/CVERecord?id=CVE-2026-67260
+* https://lists.apache.org/thread/o00ww4n69qojvsckb464dtwd2nhzy6t0
+
+
+### Credits
+* Nguyen Van Hiep (@hypnguyen1209), MBBank (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## DAG-author remote code execution on the Scheduler via awaiting_input next_kwargs deserialization ## { #CVE-2026-67260 }
+
+CVE-2026-67260 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-67260) [\[CVE json\]](./CVE-2026-67260.cve.json) [\[OSV json\]](./CVE-2026-67260.osv.json)
+
+
+
+_Last updated: 2026-08-12T15:33:01.084Z_
+
+### Affected
+
+* Apache Airflow from 3.3.0 before 3.3.1
+
+
+### Description
+
+Apache Airflow 3.3.0 moved human-in-the-loop tasks from the triggerer to a new `awaiting_input` task state swept by the scheduler. That sweep deserializes the task instance&#x27;s `next_kwargs` without an allow-list, so a Dag author — who controls that value through the task execution API — can cause an arbitrary module import and object instantiation inside the scheduler process, or terminate the scheduler job. No non-default configuration is required: the sweep runs unconditionally every 15 seconds, and the default `allowed_deserialization_classes` setting does not cover this code path. Versions before 3.3.0 are not affected, because human-in-the-loop tasks deferred onto the triggerer instead. This is a different code path from CVE-2026-58076, which covers the same unguarded exception-node deserialization reached elsewhere — deployments that applied that fix must upgrade for this issue as well. Users are advised to upgrade to apache-airflow 3.3.1 or later.
+
+### References
+* https://github.com/apache/airflow/pull/70685
+* https://www.cve.org/CVERecord?id=CVE-2026-58076
+* https://lists.apache.org/thread/vygr0fh82cjzjp5k4vtfmboxryvm3lyn
+
+
+### Credits
+* Erik Villegas (GitHub: @erik-451) (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## Config API: team-scoped Celery broker secret disclosed to a Viewer (multi-team masking bypass) ## { #CVE-2026-65017 }
+
+CVE-2026-65017 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-65017) [\[CVE json\]](./CVE-2026-65017.cve.json) [\[OSV json\]](./CVE-2026-65017.osv.json)
+
+
+
+_Last updated: 2026-08-12T15:31:24.771Z_
+
+### Affected
+
+* Apache Airflow from 3.3.0 before 3.3.1
+
+
+### Description
+
+Apache Airflow&#x27;s Config API did not mask team-scoped sensitive configuration values in multi-team deployments. When an administrator has enabled multi-team mode and exposed the Config API, an authenticated Viewer holding only configuration-read access — with no prior access to the secret — could read a team-scoped Celery broker URL, including its embedded credentials, in cleartext, while the equivalent global option was correctly masked. The secrets masker matched only base section and option names and did not normalize team-prefixed sections before the sensitivity check (CWE-200). This is a distinct masker bypass from CVE-2026-48828 and CVE-2026-48892: deployments that upgraded to apache-airflow 3.3.0 to address those issues remain affected by this team-scoped variant. Users are advised to upgrade to apache-airflow 3.3.1 or later, which normalizes team-scoped sections before masking.
+
+### References
+* https://github.com/apache/airflow/pull/70755
+* https://www.cve.org/CVERecord?id=CVE-2026-48828
+* https://www.cve.org/CVERecord?id=CVE-2026-48892
+* https://lists.apache.org/thread/kykn94kjf0tntx4wywtvjowh5bzdgf38
+
+
+### Credits
+* Andrew Rukin (Arenadata) (finder)
+* Jarek Potiuk (remediation developer)
+
+
 ## FAB auth manager: a DAG named "DAGs" hijacks the global all-DAGs permission (access_control privilege escalation via resource_name() collision) ## { #CVE-2026-59245 }
 
 CVE-2026-59245 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59245) [\[CVE json\]](./CVE-2026-59245.cve.json) [\[OSV json\]](./CVE-2026-59245.osv.json)
@@ -43,6 +376,33 @@ In the Apache Airflow FAB auth manager, a DAG whose `dag_id` is `DAGs` collided 
 ### Credits
 * Tran Hieu (h1tr3xnull) (finder)
 * Jarek Potiuk (remediation developer)
+
+
+## Secrets masker: `var.json` Variable values not masked in the Rendered Templates UI ## { #CVE-2026-59244 }
+
+CVE-2026-59244 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59244) [\[CVE json\]](./CVE-2026-59244.cve.json) [\[OSV json\]](./CVE-2026-59244.osv.json)
+
+
+
+_Last updated: 2026-08-12T15:43:15.962Z_
+
+### Affected
+
+* Apache Airflow before 3.3.1
+
+
+### Description
+
+Apache Airflow&#x27;s secrets masker did not mask `var.json` Variable values whose value is a dict in the Rendered Templates UI — the dict value failed an `isinstance(str)` guard — so a secret stored as a JSON Variable and referenced in a template via `var.json` was displayed in cleartext to any user with access to that task&#x27;s Rendered Templates view. Users are advised to upgrade to apache-airflow 3.3.1 or later, which masks nested Variable values regardless of type.
+
+### References
+* https://github.com/apache/airflow/pull/68975
+* https://lists.apache.org/thread/fncod6vttfo5fvmfs3h9r8s2kmm9j1n6
+
+
+### Credits
+* Juan Pablo Guereca (@jpgerek) (finder)
+* Juan Pablo Guereca (@jpgerek) (remediation developer)
 
 
 ## FAB auth manager: JWT signature verification disabled by default for Azure AD OAuth (`verify_signature` defaults to `False`) ## { #CVE-2026-59243 }
@@ -72,6 +432,61 @@ The FAB auth manager&#x27;s Azure AD OAuth login defaulted `verify_signature=Fal
 * Jarek Potiuk (remediation developer)
 
 
+## Arbitrary airflow.* class instantiation on the API server via the XCom deserialize endpoint ## { #CVE-2026-59242 }
+
+CVE-2026-59242 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59242) [\[CVE json\]](./CVE-2026-59242.cve.json) [\[OSV json\]](./CVE-2026-59242.osv.json)
+
+
+
+_Last updated: 2026-08-12T15:34:59.496Z_
+
+### Affected
+
+* Apache Airflow before 3.3.1
+
+
+### Description
+
+Apache Airflow&#x27;s XCom `GET /api/v2/{...}/xcomEntries/{key}?deserialize=true` endpoint passed a string-literal payload through `BaseXCom.deserialize_value` without the `_check_forbidden_xcom_keys` guard, allowing an authenticated API user with XCom write-and-read access to instantiate arbitrary `airflow.*` classes on the API server (CWE-502). An authenticated user who can write an XCom value and then read it back with `deserialize=true` triggers the unsafe instantiation. Users are advised to upgrade to apache-airflow 3.3.1 or later, which rejects reserved XCom serialization keys submitted as JSON string literals.
+
+### References
+* https://github.com/apache/airflow/pull/69378
+* https://lists.apache.org/thread/dm0520yhh4mn7qknyoh45r2w6c5qg2mg
+
+
+### Credits
+* localhost-detect (@localhost-detect) (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## Unguarded import_string() of airflow_exc_ser / base_exc_ser exception nodes in BaseSerialization.deserialize enables DAG-author RCE on Scheduler / API Server ## { #CVE-2026-58076 }
+
+CVE-2026-58076 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58076) [\[CVE json\]](./CVE-2026-58076.cve.json) [\[OSV json\]](./CVE-2026-58076.osv.json)
+
+
+
+_Last updated: 2026-08-12T15:40:58.403Z_
+
+### Affected
+
+* Apache Airflow from 3.0.0 before 3.3.1
+
+
+### Description
+
+Apache Airflow&#x27;s serialization layer reconstructed exception nodes by calling `import_string()` on a class name taken from the serialized blob and instantiating it with arguments from the same blob, with no restriction on what could be imported. An operator&#x27;s `executor_config` reaches that branch, so a Dag author could place a value there that causes an arbitrary callable to be imported and invoked -- for example `subprocess.check_output`, or `builtins.eval` on the `builtins`-prefixed variant. The code runs in the **Scheduler**, which reconstructs serialized Dags in its normal loop with no request involved, and in the **API server**, on any authenticated read of the Dag such as `GET /api/v2/dags/{dag_id}/details`. Both are components the Airflow security model states must never execute Dag-author code, and both hold the metadata database credentials and the JWT signing secret. No non-default configuration is required. This is a **different sink from CVE-2026-33264**, which covered only the trigger branch of the same deserializer: deployments that upgraded in response to that advisory are still affected through the exception branch and must upgrade again. Users are advised to upgrade to apache-airflow 3.3.1 or later, which restricts the imported class to a subclass of `BaseException`.
+
+### References
+* https://github.com/apache/airflow/pull/68511
+* https://www.cve.org/CVERecord?id=CVE-2026-33264
+* https://lists.apache.org/thread/t81p688t15jozxsng8521o60nh2kfsos
+
+
+### Credits
+* Jan Kahmen (turingpoint), GitHub: @kah-ja (finder)
+* Jarek Potiuk (remediation developer)
+
+
 ## Git provider hook defaults to StrictHostKeyChecking=no, disabling SSH host-key verification ## { #CVE-2026-58065 }
 
 CVE-2026-58065 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58065) [\[CVE json\]](./CVE-2026-58065.cve.json) [\[OSV json\]](./CVE-2026-58065.osv.json)
@@ -97,6 +512,34 @@ The Apache Airflow Git provider runs its git-over-SSH operations with `StrictHos
 ### Credits
 * Siyang Wu (independent researcher) (finder)
 * Ephraim Anierobi (remediation developer)
+
+
+## Airflow Variables were not masked in the UI for authenticated users ## { #CVE-2026-54183 }
+
+CVE-2026-54183 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-54183) [\[CVE json\]](./CVE-2026-54183.cve.json) [\[OSV json\]](./CVE-2026-54183.osv.json)
+
+
+
+_Last updated: 2026-08-12T15:34:17.762Z_
+
+### Affected
+
+* Apache Airflow before 3.3.1
+
+
+### Description
+
+Apache Airflow&#x27;s secrets masker hides values stored under sensitive key names when they are displayed in the UI. The masker&#x27;s recursion-depth limit did not descend into values nested inside a list, tuple, or set beyond that limit, so an Airflow Variable holding such a deeply-nested value was shown unmasked in the Variables UI. The exposure is limited to the UI: any authenticated user who can see the Variable in the UI can already read its full value through the Variables REST API, so this does not disclose data the user could not otherwise obtain — the masking is a shoulder-surfing defense for the UI, not an access-control boundary.<br><br>This is an incomplete-fix follow-up to CVE-2026-42358, whose fix made only the dictionary walk unbounded; lists, tuples, and sets beyond the depth limit remained unmasked in the UI. Deployments that applied the CVE-2026-42358 fix should also upgrade to address this residual case. Upgrade to apache-airflow 3.3.1 or later.
+
+### References
+* https://github.com/apache/airflow/pull/68422
+* https://www.cve.org/CVERecord?id=CVE-2026-42358
+* https://lists.apache.org/thread/z5mrdq6c60f2wyx4cc64cj8nv0dxd9lo
+
+
+### Credits
+* Omkhar Arasaratnam (@omkhar) (finder)
+* Jarek Potiuk (remediation developer)
 
 
 ## Path traversal in SFTPHook.retrieve_directory allows local file write outside the destination directory via malicious server-supplied directory-entry names ## { #CVE-2026-50203 }

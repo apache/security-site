@@ -18,6 +18,542 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## SAML2 Signature Validation Silently Skipped for Cert-less IdP ## { #CVE-2026-68745 }
+
+CVE-2026-68745 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68745) [\[CVE json\]](./CVE-2026-68745.cve.json) [\[OSV json\]](./CVE-2026-68745.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:21:27.609Z_
+
+### Affected
+
+* Apache CloudStack from 4.5.2 through 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+Certificate validation failures in SAML authentication in Apache CloudStack 4.20.3.0 and 4.22.1.0 on all platforms allow a malicious agent to forge a SAML response to the management server. The agent will have to spoof the ip address of the IdP or get an url of its own choosing registered in the management server, after which it can allow logging on with forged signatures.<br><br>Users are recommended to upgrade to versions 4.20.3.1 or 4.22.1.1 and above, which fix this issue.
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* Katriel Moses <katriel.moses@gmail.com> (reporter)
+
+
+## Unauthorised comment creation and disclosure ## { #CVE-2026-66797 }
+
+CVE-2026-66797 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66797) [\[CVE json\]](./CVE-2026-66797.cve.json) [\[OSV json\]](./CVE-2026-66797.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:21:57.156Z_
+
+### Affected
+
+* Apache CloudStack from 4.16.0.0 through 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+<div>Improper access control in CloudStack's annotation functionality allows unauthorized&nbsp;comment creation and disclosure.</div><div><br></div><div>The <code>addAnnotation</code> and <code>listAnnotation</code> APIs perform an ownership check when an entity's UUID is specified, but fail to honor its result correctly. This lets any authenticated user write annotations to, and disclose existing annotations/comments on, an entity they don't own by simply supplying its UUID.</div><div><br></div><div>This issue affects Apache CloudStack: from 4.15.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.<br></div><div><br></div><div>Users are recommended to upgrade to version 4.20.3.1 or 4.22.1.1 or later, which fixes the issue.</div><br>
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* Łukasz Bawolski <lukasz.bawolski@exea.pl> (finder)
+
+
+## ProjectRole & ProjectRolePermission authorization issue ## { #CVE-2026-66722 }
+
+CVE-2026-66722 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66722) [\[CVE json\]](./CVE-2026-66722.cve.json) [\[OSV json\]](./CVE-2026-66722.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:22:35.208Z_
+
+### Affected
+
+* Apache CloudStack from 4.15.0.0 through 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+<div>Improper authorization for CRUD operations on Project Roles and Project Role permissions for domain admins in CloudStack.</div><div><br></div><div>A Domain Admin can create, update, delete, and list project roles and project role permissions for projects in any domain, not just their own. The check only confirms the caller is a Domain Admin, without verifying whether the target project belongs to their domain or subdomain. This allows a malicious Domain Admin to tamper with project roles and permissions across unrelated domains.</div><div><br></div><div>This issue affects Apache CloudStack: from 4.15.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.<br></div><div><br></div><div>Users are recommended to upgrade to version 4.20.3.1 or 4.22.1.1 or later, which fixes the issue.<br></div>
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* KQ Wu <kqmailbox@163.com> (finder)
+
+
+## Authorization issue with listHostTags for domain admins ## { #CVE-2026-66721 }
+
+CVE-2026-66721 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66721) [\[CVE json\]](./CVE-2026-66721.cve.json) [\[OSV json\]](./CVE-2026-66721.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:22:59.422Z_
+
+### Affected
+
+* Apache CloudStack from 4.12.0.0 through 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+<div>Missing authorization issue for domain admins in CloudStack's host tags listing functionality.</div><div><br></div><div>Domain Admins, by default, have permission to call the <code>listHostTags</code> API, but the API returns host tags for every host in the environment without domain scoping. It should instead be restricted to only the hosts dedicated to that admin's domain.</div><div><br></div><div>This issue affects Apache CloudStack: from 4.12.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.</div><div><br></div>Users are recommended to upgrade to version 4.20.3.1 or 4.22.1.1 or later, which fixes the issue.
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* KQ Wu <kqmailbox@163.com> (finder)
+
+
+## Webhook Deliveries Incorrect Access ## { #CVE-2026-65613 }
+
+CVE-2026-65613 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-65613) [\[CVE json\]](./CVE-2026-65613.cve.json) [\[OSV json\]](./CVE-2026-65613.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:23:29.878Z_
+
+### Affected
+
+* Apache CloudStack from 4.20.0.0 through 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache CloudStack's Webhook module while listing and deleting deliveries.</p><p>This issue affects Apache CloudStack: from 4.20.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.</p><p>Users are recommended to upgrade to version 4.20.3.1 or 4.22.1.1 or later, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* Łukasz Bawolski <Lukasz.Bawolski@exea.pl> (reporter)
+
+
+## Improper access control in Kubernetes Service (CKS) cluster manipulation ## { #CVE-2026-62440 }
+
+CVE-2026-62440 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-62440) [\[CVE json\]](./CVE-2026-62440.cve.json) [\[OSV json\]](./CVE-2026-62440.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:23:54.134Z_
+
+### Affected
+
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+<p>Improper Access Control vulnerability in Apache CloudStack's Kubernetes Service (CKS) plugin, allowing cross-tenant manipulation of the Kubernetes cluster while adding and removing nodes.</p><p>This issue affects Apache CloudStack: from 4.21.0.0 through 4.22.1.0.</p><p>Users are recommended to upgrade to version 4.22.1.1 or later, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* George Chen (GitHub: geo-chen) (reporter)
+* D0HY30N (GitHub: D0HY30N) (reporter)
+
+
+## Authenticated pre-validation SSRF in registerTemplate ## { #CVE-2026-61422 }
+
+CVE-2026-61422 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-61422) [\[CVE json\]](./CVE-2026-61422.cve.json) [\[OSV json\]](./CVE-2026-61422.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:24:36.997Z_
+
+### Affected
+
+* Apache CloudStack at 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+Authenticated pre-validation SSRF vulnerability in Apache CloudStack's template and ISO registration functionality.<br><br>When registering a template or ISO, CloudStack makes a live HTTP HEAD/GET call to determine file size for secondary storage usage-limit checks, and this happens before URL validation is performed. However, this does not pose a malicious template or ISO registration risk, as URL validation still occurs prior to the actual download by the Secondary Storage VM.<p>This issue affects Apache CloudStack: in 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.</p><p>Users are recommended to upgrade to version 4.20.3.1 or 4.22.1.1 or later, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* Yuliang Xiao <xyl1509410143@outlook.com> (reporter)
+
+
+## Get and Run Diagnostics Command Injection ## { #CVE-2026-61400 }
+
+CVE-2026-61400 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-61400) [\[CVE json\]](./CVE-2026-61400.cve.json) [\[OSV json\]](./CVE-2026-61400.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:25:01.740Z_
+
+### Affected
+
+* Apache CloudStack from 4.14.0.0 through 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in a Command ('Command Injection') vulnerability in Apache CloudStack's run and get diagnostics functionality for the system VMs and virtual routers.<br><br>An authenticated user holding the permissions required to invoke either `getDiagnosticsData` or `runDiagnostics` can achieve arbitrary command execution on the system VM and/or Virtual Router instances, with commands running as root (or as the diagnostics-process user, at minimum). This represents a full compromise of the affected instance and, depending on network segmentation, may provide a foothold for lateral movement within the CloudStack-managed infrastructure, including access to guest network traffic handled by the compromised Virtual Router.</p><p></p><div>The getDiagnosticsData and runDiagnostics APIs are restricted to only Admin role accounts by default.<br></div><div><p>This issue affects Apache CloudStack: from 4.20.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.</p><p>Users are recommended to upgrade to version 4.20.3.1 or 4.22.1.1 or later, which fixes the issue.</p></div><p></p>
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* Łukasz Bawolski <Lukasz.Bawolski@exea.pl> (reporter)
+
+
+## Cross-Site Scripting (XSS) Vulnerability in Lock User Function in UI ## { #CVE-2026-61399 }
+
+CVE-2026-61399 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-61399) [\[CVE json\]](./CVE-2026-61399.cve.json) [\[OSV json\]](./CVE-2026-61399.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:25:22.261Z_
+
+### Affected
+
+* Apache CloudStack from 4.20.0.0 through 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+<p>Improper Encoding or Escaping of Output vulnerability in Apache CloudStack's UI while using Lock User Functionality.</p><p>This issue affects Apache CloudStack: from 4.20.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.</p><p>Users are recommended to upgrade to version 4.20.3.1 or 4.22.1.1 or later, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* Łukasz Bawolski <Lukasz.Bawolski@exea.pl> (reporter)
+
+
+## Cross-Site Scripting (XSS) Vulnerability in Instance Reset Password Function in UI ## { #CVE-2026-61398 }
+
+CVE-2026-61398 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-61398) [\[CVE json\]](./CVE-2026-61398.cve.json) [\[OSV json\]](./CVE-2026-61398.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:25:46.538Z_
+
+### Affected
+
+* Apache CloudStack from 4.15.1.0 through 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+<p>Improper Encoding or Escaping of Output vulnerability in Apache CloudStack's UI while using Instance Reset Password functionality.</p><p>This issue affects Apache CloudStack: from 4.15.1.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.</p><p>Users are recommended to upgrade to version 4.20.3.1 or 4.22.1.1 or later, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* Łukasz Bawolski <Lukasz.Bawolski@exea.pl> (reporter)
+
+
+## OAuth2 Token Cross-Request Leak ## { #CVE-2026-61397 }
+
+CVE-2026-61397 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-61397) [\[CVE json\]](./CVE-2026-61397.cve.json) [\[OSV json\]](./CVE-2026-61397.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:26:22.132Z_
+
+### Affected
+
+* Apache CloudStack from 4.19.0.0 through 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache CloudStack's OAuth2 authentication plugin and Google OAuth integration.</p><p>This issue affects Apache CloudStack: from 4.19.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.</p><p>Users are recommended to upgrade to version 4.20.3.1 or 4.22.1.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* Katriel Moses <katriel.moses@gmail.com> (reporter)
+* "Network and Cloud Laboratory (NaCl) KMITL" <nacl@kmitl.ac.th> (reporter)
+* Paratpanu Pechsaman <66010542@kmitl.ac.th> (analyst)
+* Nutthawat Charoensiriphong <68010321@kmitl.ac.th> (analyst)
+* Panabordee Panitchakit <68010697@kmitl.ac.th> (analyst)
+
+
+## Missing Privilege Check in Two-Factor Authentication Disable Flow ## { #CVE-2026-59799 }
+
+CVE-2026-59799 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59799) [\[CVE json\]](./CVE-2026-59799.cve.json) [\[OSV json\]](./CVE-2026-59799.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:26:50.990Z_
+
+### Affected
+
+* Apache CloudStack from 4.18.0.0 through 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+<p>Improper Privilege Management vulnerability in Apache CloudStack's Two-factor authentication plugin allowing bypass of the two-factor authentication disable flow.</p><p>This issue affects Apache CloudStack: from 4.18.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.</p><p>Users are recommended to upgrade to version 4.20.3.1 or 4.22.1.1 or later, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* Erichen <chenyoulong20g@ict.ac.cn> (reporter)
+
+
+## LDAP provider configuration disclosure ## { #CVE-2026-59780 }
+
+CVE-2026-59780 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59780) [\[CVE json\]](./CVE-2026-59780.cve.json) [\[OSV json\]](./CVE-2026-59780.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:27:15.624Z_
+
+### Affected
+
+* Apache CloudStack from 4.2.0.0 through 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache CloudStack's LDAP authentication plugin while listing LDAP providers.</p><p></p><div><div><div><div></div></div></div></div><div><div><div><div><div><div><div><p>LDAP configurations can be listed by any authenticated user with access to the <em>listLdapConfigurations</em> API. By default, this API is available to all default roles.</p></div></div></div></div></div></div></div><p></p><p>This issue affects Apache CloudStack: from 4.2.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.</p><p>Users are recommended to upgrade to version 4.20.3.1 or 4.22.1.1 or later, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* Łukasz Bawolski <Lukasz.Bawolski@exea.pl> (reporter)
+
+
+## Sensitive Information Disclosure via Cleartext Storage in AsyncJob ## { #CVE-2026-59657 }
+
+CVE-2026-59657 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59657) [\[CVE json\]](./CVE-2026-59657.cve.json) [\[OSV json\]](./CVE-2026-59657.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:27:52.170Z_
+
+### Affected
+
+* Apache CloudStack from 4.0.0 through 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+<p>Cleartext Storage of Sensitive Information vulnerability in Apache CloudStack with AsyncJob storage in the database.</p><p>This issue affects Apache CloudStack: from 4.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.</p><p>Users are recommended to upgrade to version 4.20.3.1 or 4.22.1.1 or later, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* Davi Torres <davift@gmail.com> (reporter)
+
+
+## Unauthenticated OAuth provider client-secret disclosure ## { #CVE-2026-59655 }
+
+CVE-2026-59655 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59655) [\[CVE json\]](./CVE-2026-59655.cve.json) [\[OSV json\]](./CVE-2026-59655.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:28:13.175Z_
+
+### Affected
+
+* Apache CloudStack from 4.19.0.0 through 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache CloudStack's OAuth authentication plugin while listing OAuth providers.</p><p>This issue affects Apache CloudStack: from 4.19.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.</p><p>Users are recommended to upgrade to version 4.20.3.1 or 4.22.1.1 or later, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* Yuliang Xiao <xyl1509410143@outlook.com> (reporter)
+* Stijn Simons <stijn.simons@portofantwerpbruges.com> (reporter)
+
+
+## DoS caused by database connections leak ## { #CVE-2026-59654 }
+
+CVE-2026-59654 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59654) [\[CVE json\]](./CVE-2026-59654.cve.json) [\[OSV json\]](./CVE-2026-59654.osv.json)
+
+
+
+_Last updated: 2026-08-21T12:32:59.667Z_
+
+### Affected
+
+* Apache CloudStack from 4.7.0 through 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+<p>Missing Release of Resource after Effective Lifetime vulnerability in Apache CloudStack's scoped global configuration functionality. It affects different modules and plugins of the CloudStack management server, including Quota, Host-HA, etc., and may lead to eventual denial of service (DoS) scenario for the management server.</p><p>This issue affects Apache CloudStack: from 4.7.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.</p><p>Users are recommended to upgrade to version 4.20.3.1 or 4.22.1.1 or later, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/7cgf37clcpjj4g2hl7rnyoq1th3ht9r4
+
+
+### Credits
+* Henrique Sato <henriquesato2003@gmail.com> (reporter)
+
+
+## Server-Side Request Forgery (SSRF) vulnerability in webhook module ## { #CVE-2026-59085 }
+
+CVE-2026-59085 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59085) [\[CVE json\]](./CVE-2026-59085.cve.json) [\[OSV json\]](./CVE-2026-59085.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:28:50.341Z_
+
+### Affected
+
+* Apache CloudStack from 4.20.0.0 through 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+<p></p><p>Server-Side Request Forgery (SSRF) vulnerability in Apache CloudStack's webhook module, exploitable via webhook delivery requests.</p><p>This issue affects Apache CloudStack: from 4.20.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.</p><p>Users are recommended to upgrade to version 4.20.3.1 or 4.22.1.1 or later, which fixes the issue.</p><p></p>
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* Jonathan Leitschuh <jonathan.leitschuh@gmail.com> (finder)
+* Łukasz Bawolski <Lukasz.Bawolski@exea.pl> (finder)
+* George Chen (GitHub: geo-chen) (finder)
+
+
+## Improper access control in Userdata reference APIs ## { #CVE-2026-50222 }
+
+CVE-2026-50222 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50222) [\[CVE json\]](./CVE-2026-50222.cve.json) [\[OSV json\]](./CVE-2026-50222.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:29:16.822Z_
+
+### Affected
+
+* Apache CloudStack from 4.18.0.0 through 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+<p>Missing Authorization, Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache CloudStack's Userdata reference APIs.</p><p>Several userdata-related APIs in Apache CloudStack, including <code>deleteUserData</code>, <code>linkUserDataToTemplate</code>, <code>resetUserDataForVirtualMachine</code>, <code>deployVirtualMachine</code>, and <code>updateVirtualMachine</code>, exhibit missing or insufficient access control validation, potentially allowing cross-tenant/cross-account access to userdata resources that belong to other tenants.</p><p>This issue affects Apache CloudStack: from 4.18.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.</p><p>The deleteCniConfiguration API, introduced in 4.21.0.0, also exhibits similar behaviour and lacks access validation.</p><p>Users are recommended to upgrade to version 4.20.3.1 or 4.22.1.1 or later, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* Bernardo De Marco Gonçalves <bernardomg2004@gmail.com> (reporter)
+* Yuliang Xiao <xyl1509410143@outlook.com> (reporter)
+* Łukasz Bawolski <Lukasz.Bawolski@exea.pl> (reporter)
+* George Chen (GitHub: geo-chen) (reporter)
+* KQ Wu <kqmailbox@163.com> (reporter)
+
+
+## RCE and SSRF in direct download, metalink and NFS templates ## { #CVE-2026-50112 }
+
+CVE-2026-50112 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50112) [\[CVE json\]](./CVE-2026-50112.cve.json) [\[OSV json\]](./CVE-2026-50112.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:29:39.850Z_
+
+### Affected
+
+* Apache CloudStack from 4.14.0.0 through 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+<p><b>SSRF via Metalink Mirror URL Resolution:</b></p><p>An authenticated tenant can register a template pointing to an attacker-controlled metalink file containing internal targets. The Secondary Storage VM will retrieve the data and persist it as a template file, which can later be downloaded through normal APIs.</p><p><b>RCE on KVM hypervisor via NFS, Metalink files with/without Direct Downloads:</b></p><p>An authenticated CloudStack tenant holding the default User role can execute arbitrary shell commands as root on the KVM hypervisor host that runs other tenants' VMs. This is cross-tenant root on the underlying compute, reachable via the public CloudStack API.<br></p><p>When a User registers a VM template with directDownload=true and a URL pointing to a .metalink file, the management server fetches the metalink XML and dispatches download to the KVM agent. Inner URLs inside the metalink XML are never re-validated against the scheme allowlist.<br></p><p>These issues affect Apache CloudStack: from 4.14.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.</p><p>Users are recommended to upgrade to version 4.20.3.1 or 4.22.1.1 or later, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* K (reporter)
+* Samy Ghannad <samy@samyghannad.com> (reporter)
+* Katriel Moses <katriel.moses@gmail.com> (reporter)
+* Venkatraman Kumar <venkatraman.kumar@securin.io> (reporter)
+* Łukasz Bawolski <Lukasz.Bawolski@exea.pl> (reporter)
+
+
+## OS Command Injection due to unsanitized mount command ## { #CVE-2026-47359 }
+
+CVE-2026-47359 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-47359) [\[CVE json\]](./CVE-2026-47359.cve.json) [\[OSV json\]](./CVE-2026-47359.osv.json)
+
+
+
+_Last updated: 2026-08-21T08:30:06.507Z_
+
+### Affected
+
+* Apache CloudStack from 4.20.0.0 through 4.20.3.0
+* Apache CloudStack from 4.21.0.0 through 4.22.1.0
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability in Apache CloudStack's NAS backup provider plugin.&nbsp;The addBackupRepository API (available since 4.20.0.0) and updateBackupRepository API (introduced in 4.22.0.0) accept unsanitized command options for the backup repository. A malicious operator account can exploit this to inject arbitrary commands that execute on the KVM hypervisor host when any account subsequently performs a backup restore.</p><p>This issue affects Apache CloudStack: from 4.20.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.</p><p>Users are recommended to upgrade to version 4.20.3.1 or 4.22.1.1 or later, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/g6cwddtjrwbh1d56wjz4cfp3fzfm4kbc
+
+
+### Credits
+* 김우석 <wooseokdotkim@gmail.com> (reporter)
+* Łukasz Bawolski <Lukasz.Bawolski@exea.pl> (reporter)
+
+
 ## Proxmox Extension Allows Unauthorized Cross-Tenant Instance Access ## { #CVE-2026-25199 }
 
 CVE-2026-25199 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-25199) [\[CVE json\]](./CVE-2026-25199.cve.json) [\[OSV json\]](./CVE-2026-25199.osv.json)
