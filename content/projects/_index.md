@@ -133,6 +133,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=AsterixDB)
   - Advisories (experimental):\
     [security.apache.org](/projects/asterixdb/)
+- **Apache Asyncband (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=Asyncband%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/atlas/default.png" alt="" loading="lazy"> **Apache Atlas**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Atlas)
@@ -881,6 +886,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Mahout)
   - Advisories (experimental):\
     none so far
+- **Apache Maka (Incubating)**
+  - **Security contact:**\
+    [security@apache.org](mailto:security@apache.org?subject=Maka%20%28Incubating%29)
+  - Advisories (experimental):\
+    none so far
+  - Security model:
+    - [Apache Maka (Incubating) security model](https://github.com/apache/maka/blob/main/SECURITY.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/manifoldcf/default.png" alt="" loading="lazy"> **Apache ManifoldCF**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=ManifoldCF)
