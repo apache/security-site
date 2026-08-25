@@ -24,7 +24,7 @@ CVE-2026-49050 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49050) [\[CVE jso
 
 
 
-_Last updated: 2026-06-17T01:46:54.058Z_
+_Last updated: 2026-08-25T06:32:16.645Z_
 
 ### Affected
 

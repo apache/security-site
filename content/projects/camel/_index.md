@@ -18,6 +18,231 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Camel-Undertow: the endpoint discarded the undertow-specific header filter strategy in favour of the base HTTP one, so the undertow filtering never ran on endpoint-configured routes ## { #CVE-2026-78329 }
+
+CVE-2026-78329 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-78329) [\[CVE json\]](./CVE-2026-78329.cve.json) [\[OSV json\]](./CVE-2026-78329.osv.json)
+
+
+
+_Last updated: 2026-08-24T16:22:14.568Z_
+
+### Affected
+
+* Apache Camel from 4.11.0 before 4.14.9
+* Apache Camel from 4.15.0 before 4.18.4
+* Apache Camel from 4.19.0 before 4.22.0
+
+
+### Description
+
+<p>Improper input validation vulnerability in Apache Camel Undertow component.</p><p>This issue affects Apache Camel: from 4.11.0 before 4.14.9, from 4.15.0 before 4.18.4, from 4.19.0 before 4.22.0.</p><p>UndertowEndpoint defaulted its headerFilterStrategy field to the base HttpHeaderFilterStrategy and pushed that instance into the UndertowHttpBinding it creates lazily, overwriting the UndertowHeaderFilterStrategy that DefaultUndertowHttpBinding installs in its own constructor. Unless a deployment supplied a custom binding or an explicit headerFilterStrategy, the undertow-specific filtering therefore never executed on endpoint-configured routes: the strategy object was constructed and immediately replaced before it could be consulted. The consequence is that the legacy websocket. Exchange-header prefix was not filtered at the undertow transport boundary in either direction, so an undertow HTTP consumer mapped inbound wire headers of that form onto the Exchange, where an undertow WebSocket producer reads them as dispatch directives and can be made to deliver to a peer other than the one the route selected; and header names that undertow itself does not accept were mapped onto the Exchange rather than being skipped. Rest DSL consumers were never affected, because UndertowComponent assigns UndertowRestHeaderFilterStrategy explicitly, which extends the undertow strategy. This is not a regression of CVE-2025-30177: the base HttpHeaderFilterStrategy configures the inbound Camel-prefix filter itself, so the protection introduced by that advisory continued to work through the base class and was never lost. What the change did was leave the undertow strategy orphaned on the endpoint path, with the effect that two subsequent corrections written into it - one skipping header names undertow rejects, one filtering the legacy websocket. prefix in both directions - were applied to a class the endpoint no longer used and never took effect in the releases that shipped them.</p><p>Users are recommended to upgrade to version 4.22.0, which fixes the issue. If users are on the 4.14.x LTS releases stream, then they are suggested to upgrade to 4.14.9. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.4. For deployments that cannot upgrade immediately, configure the strategy explicitly rather than relying on the default, for example by binding an UndertowHeaderFilterStrategy in the registry and referencing it on the endpoint as undertow:http://0.0.0.0:8080/foo?headerFilterStrategy=#myStrategy, and additionally strip the dispatch headers at the trust boundary with removeHeaders(“websocket.*”). Note a residual limitation that upgrading does not remove: the undertow component deliberately keeps the websocket. values as part of its externally visible API contract, and UndertowProducer reads them with in.getHeader, which does not consult a HeaderFilterStrategy at all. The restored filtering is therefore defence in depth at the undertow transport boundary only. A route that carries an untrusted message from a non-undertow consumer into an undertow producer is not protected by this fix and must strip those headers itself.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-78329.html
+
+
+### Credits
+* Andrea Cosentino from Apache Software Foundation (finder)
+* Barak Srour from Apiiro (finder)
+* Andrea Cosentino from Apache Software Foundation (remediation developer)
+
+
+## Camel-Atmosphere-Websocket: WebSocket dispatch header injection ## { #CVE-2026-71300 }
+
+CVE-2026-71300 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-71300) [\[CVE json\]](./CVE-2026-71300.cve.json) [\[OSV json\]](./CVE-2026-71300.osv.json)
+
+
+
+_Last updated: 2026-08-24T16:21:12.809Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.14.9
+* Apache Camel from 4.15.0 before 4.18.4
+* Apache Camel from 4.19.0 before 4.22.0
+
+
+### Description
+
+<p>Improper input validation vulnerability in Apache Camel Atmosphere Websocket component.</p><p>This issue affects Apache Camel: from 4.0.0 before 4.14.9, from 4.15.0 before 4.18.4, from 4.19.0 before 4.22.0.</p><p>The camel-atmosphere-websocket producer selects which connected WebSocket peers a message is delivered to through Exchange headers, and the string values of those headers sat outside the Camel namespace: websocket.connectionKey and websocket.connectionKey.list, along with websocket.sendToAll, websocket.eventType and websocket.errorType. WebsocketEndpoint extends ServletEndpoint and so inherits HttpHeaderFilterStrategy, which filters only the Camel and camel prefixes; the dotted names therefore fell outside the filtered namespace and were admitted in both directions by every HTTP-family consumer. In a route bridging an HTTP consumer into an atmosphere-websocket producer, an external sender could supply the list header and take over the producer's dispatch decision. WebsocketProducer.process tests the list header before the single-key header, so an injected value discarded the recipient the route had selected: a notification intended for one connected client could be suppressed, or delivered instead to a different client whose connection key the sender knows. The header need not be a query parameter and need not be supplied as a list literally - Camel's HTTP binding promotes a repeated header name, and a bracketed value, to a List when mapping onto the Exchange - so an ordinary inbound HTTP header is sufficient to reach the list-valued branch. This is distinct from CVE-2026-55993, which concerns the consumer-side query-parameter path in the same component. The behaviour dates back to the introduction of these constants, first released in 2.17.0, and was unchanged until this fix.</p><p>Users are recommended to upgrade to version 4.22.0, which fixes the issue. If users are on the 4.14.x LTS releases stream, then they are suggested to upgrade to 4.14.9. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.4. For deployments that cannot upgrade immediately, strip the dispatch headers at the trust boundary before the producer, for example with removeHeaders(“websocket.*”) placed between the HTTP consumer and the atmosphere-websocket producer. Note that the fix renames the header string values into the Camel namespace, which is a breaking change for routes that set them by literal string: routes referencing the WebsocketConstants fields symbolically are unaffected, and the change is documented in the upgrade guides. As defence in depth, do not bridge an untrusted HTTP consumer directly into a WebSocket producer whose dispatch is header-driven without stripping the dispatch namespace first.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-71300.html
+
+
+### Credits
+* Barak Srour from Apiiro (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-platform-http-main: when JWT authentication was configured with a keystore but no issuer or audience, the iss and aud claims were never validated, so any unexpired token signed by a trusted key was accepted ## { #CVE-2026-66908 }
+
+CVE-2026-66908 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66908) [\[CVE json\]](./CVE-2026-66908.cve.json) [\[OSV json\]](./CVE-2026-66908.osv.json)
+
+
+
+_Last updated: 2026-08-24T16:14:14.095Z_
+
+### Affected
+
+* Apache Camel from 4.8.0 before 4.22.0
+
+
+### Description
+
+<p>Improper Authentication vulnerability in Apache Camel Platform HTTP Main component.</p><p>This issue affects Apache Camel: from 4.8.0 before 4.22.0.</p><p>The camel-main embedded HTTP server can protect its endpoints with JWT authentication, configured through authenticationEnabled together with the JWT keystore properties. JWTAuthenticationConfigurer.buildJwtOptions returned null when neither jwtIssuer nor jwtAudience was configured, and the caller then skipped the JWTAuthOptions.setJWTOptions call entirely, so the Vert.x JWTAuth instance was built from the keystore alone. The result was that inbound tokens were checked only for signature and expiry: the iss and aud claims were not validated at all. Nothing signalled this - the server started normally and reported no warning - so a deployment configured the documented way silently enforced less than the operator believed it had enabled, and the component documentation itself presented signature and expiry checking as the default with issuer and audience as an optional extra. Both the application server and the management server were affected, because the omission was in each of the two configureAuthentication paths. Any unexpired token signed by any key the configured keystore trusts was therefore accepted, regardless of which issuer minted it or which audience it was intended for. How far that reaches depends on the trust set of the keystore: where the signing key belongs to a shared or multi-tenant identity provider, a token legitimately issued for an entirely different audience is accepted, while a keystore holding a dedicated signer narrows it to reuse of tokens minted for other services within the same trust domain. The jwtIssuer and jwtAudience options did not exist before 4.21.0, so on earlier releases there was no supported way to have these claims enforced at all.</p><p>Users are recommended to upgrade to version 4.22.0, which fixes the issue. From 4.22.0 the server refuses to start when a JWT keystore is configured but neither jwtIssuer nor jwtAudience is set, naming the properties involved, and a deployment that genuinely wants signature and expiry validation only must say so explicitly with the new jwtAllowMissingIssuerAndAudience option, which defaults to false. This behaviour is fixed only on 4.22.0. The 4.14.9 and 4.18.4 releases do not change the default: they add the jwtIssuer and jwtAudience options so that operators on those maintenance lines can enforce the claims by configuration, and an installation that upgrades to 4.14.9 or 4.18.4 without also setting at least one of those two properties is still accepting any unexpired token signed by a trusted key. Users on 4.14.x or 4.18.x should therefore upgrade to 4.14.9 or 4.18.4 and then set jwtIssuer, jwtAudience, or both. Releases from 4.8.0 up to and including 4.21.x offer no way to enforce these claims and should be moved to a version that does. Independently of version, restrict the JWT keystore to the smallest possible trust set - ideally a signer dedicated to this service rather than a shared identity-provider key - and where a gateway already validates issuer and audience in front of the server, ensure it cannot be bypassed.</p><p>Notes:</p><p>The JIRA ticket:&nbsp;<a href="https://issues.apache.org/jira/browse/CAMEL-24281" rel="noopener nofollow noreferrer">https://issues.apache.org/jira/browse/CAMEL-24281</a>&nbsp;refers to the various commits that resolved the issue, and has more details.</p><p>The fail-closed guard could not be backported. The jwtIssuer and jwtAudience options were themselves only introduced in 4.21.0 by CAMEL-23525, so on camel-4.18.x and camel-4.14.x there was nothing an operator could set to satisfy the requirement and the guard would have broken every JWT deployment on those branches with no remedy available.&nbsp;</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-66908.html
+
+
+### Credits
+* n0mi1k (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Google-Storage: the consumer appended the remote object name to the configured downloadFileName directory without constraining the result ## { #CVE-2026-66907 }
+
+CVE-2026-66907 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66907) [\[CVE json\]](./CVE-2026-66907.cve.json) [\[OSV json\]](./CVE-2026-66907.osv.json)
+
+
+
+_Last updated: 2026-08-24T14:07:53.814Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.14.9
+* Apache Camel from 4.15.0 before 4.18.4
+* Apache Camel from 4.19.0 before 4.22.0
+
+
+### Description
+
+<p>Relative path traversal vulnerability in Apache Camel Google Storage component.</p><p>This issue affects Apache Camel: from 4.0.0 before 4.14.9, from 4.15.0 before 4.18.4, from 4.19.0 before 4.22.0.</p><p>The camel-google-storage consumer downloads Google Cloud Storage objects to the local filesystem when the downloadFileName option is set. That option is documented as a folder or a filename, and when its value contains no expression token the consumer builds the local destination by appending the object name to it: evaluateFileExpression sets the Exchange file-name header to the remote object name and evaluates downloadFileName + "/${file:name}". The ${file:name} token returns the file-name header verbatim, unlike ${file:onlyname}, which applies FileUtil.stripPath to it. The resulting string was passed directly to new File(result) and blob.downloadTo(file.toPath()) with no lexical normalization and no check that the destination stayed inside the configured directory. The object name is not route-controlled data: the consumer lists the bucket, iterates every returned blob and creates one exchange per object from blob.getBlobId().getName() verbatim, and the filter option that could restrict those names is not applied at all unless it has been explicitly set. Google Cloud Storage object names are opaque UTF-8 keys that the service stores and lists exactly as written, with no server-side canonicalization, and a forward slash is only a display convention for pseudo-directories, so a key containing parent-directory segments survives round-tripping intact. An object name containing such segments therefore resolved to a location outside the configured downloadFileName directory, letting anyone able to influence the names present in the consumed bucket cause Camel to create or overwrite a file at a location of their choosing, with the privileges of the Camel process. Depending on what the process can write to, overwriting a file outside the download directory can escalate beyond the loss of integrity of that file. The downloadFileName option is an ordinary consumer parameter and carries no security marker, so nothing signalled to users that its value was not being enforced as a containment boundary. The defect is consumer-only; the producer has no download-to-file sink. Camel's other file-download consumers - camel-file, camel-ftp, camel-smb, camel-mina-sftp, camel-azure-files and the Azure Storage download paths - already constrained their local downloads to the configured directory using a path-segment boundary check; camel-google-storage was the remaining object-store download sink not covered by that work.</p><p>Users are recommended to upgrade to version 4.22.0, which fixes the issue. If users are on the 4.14.x LTS releases stream, then they are suggested to upgrade to 4.14.9. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.4. For deployments that cannot upgrade immediately, set the filter option to a regular expression that accepts only simple single-segment object names, so that any name carrying a path separator or a parent-directory segment is excluded before an exchange is created; note that no filtering whatsoever is applied when the option is left unset, and that the expression is matched against the whole object name. Alternatively, give downloadFileName an explicit expression that does not carry the remote path through, for example one built on ${file:onlyname} rather than the implicit ${file:name}, keeping in mind that a downloadFileName containing an expression is treated as route-author-controlled and is not covered by the containment check added in the fix. As defence in depth, treat the object names in any externally writable bucket as untrusted input and do not derive local filesystem paths from them.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-66907.html
+
+
+### Credits
+* n0mi1k (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Azure-Storage-Blob: the downloadBlobToFile operation built the local download target from the remote blob name without constraining it to the configured fileDir ## { #CVE-2026-66906 }
+
+CVE-2026-66906 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66906) [\[CVE json\]](./CVE-2026-66906.cve.json) [\[OSV json\]](./CVE-2026-66906.osv.json)
+
+
+
+_Last updated: 2026-08-24T14:07:23.634Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.14.9
+* Apache Camel from 4.15.0 before 4.18.4
+* Apache Camel from 4.19.0 before 4.22.0
+
+
+### Description
+
+<p>Relative path traversal vulnerability in Apache Camel Azure Storage Blob component.</p><p>This issue affects Apache Camel: from 4.0.0 before 4.14.9, from 4.15.0 before 4.18.4, from 4.19.0 before 4.22.0.</p><p>The camel-azure-storage-blob component can download an Azure Storage blob to the local filesystem through its downloadBlobToFile operation, writing into the directory named by the fileDir endpoint option, which is documented as usable from both the producer and the consumer. BlobOperations.downloadBlobToFile built the local target by joining fileDir with the remote blob name exactly as the Azure SDK reported it (new File(fileDir, client.getBlobName())) and passed the result straight to the SDK download call, with no lexical normalization and no check that the resolved location stayed inside fileDir. The blob name is not route-controlled data: the consumer enumerates the container in BlobConsumer.createBatchExchangesFromContainer, which lists blobs and creates one exchange per entry from BlobItem.getName() verbatim, applying no name filtering by default. A blob name containing parent-directory segments therefore resolved to a location outside the configured fileDir, letting anyone able to influence the names present in the consumed container cause Camel to create or overwrite a file at a location of their choosing, with the privileges of the Camel process. Depending on what the process can write to, overwriting a file outside the download directory can escalate beyond the loss of integrity of that file. Azure Storage blob containers use a flat namespace in which the blob name is an opaque key, so a name carrying such segments is stored and listed as given. The fileDir option is an ordinary common-group configuration parameter and carries no security marker, so nothing signalled to users that its value was not being enforced as a containment boundary. Camel's other file-download consumers - camel-file, camel-ftp, camel-smb, camel-mina-sftp and camel-azure-files - already constrained their local downloads to the configured directory using a path-segment boundary check; the camel-azure-storage-blob download path was not covered by that work.</p><p>Users are recommended to upgrade to version 4.22.0, which fixes the issue. If users are on the 4.14.x LTS releases stream, then they are suggested to upgrade to 4.14.9. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.4. For deployments that cannot upgrade immediately, constrain the names the consumer will act on using the regex endpoint option, which is applied to each listed blob name as a full-string match, so that only simple single-segment names are accepted and any name carrying a path separator or a parent-directory segment is filtered out before an exchange is created; the prefix option can additionally narrow the listing server-side, noting that when both are set regex takes priority and prefix is ignored. Alternatively, avoid the downloadBlobToFile operation on untrusted containers and write the payload from the route under a file name the route itself controls, rather than one taken from the remote listing. As defence in depth, treat the blob names in any externally writable container as untrusted input and do not derive local filesystem paths from them.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-66906.html
+
+
+### Credits
+* Hiep Nguyen (finder)
+* n0mi1k (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Knative: CloudEvent extension fields received in structured content mode were mapped onto message headers without applying any header filter strategy ## { #CVE-2026-63621 }
+
+CVE-2026-63621 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63621) [\[CVE json\]](./CVE-2026-63621.cve.json) [\[OSV json\]](./CVE-2026-63621.osv.json)
+
+
+
+_Last updated: 2026-08-24T14:06:32.101Z_
+
+### Affected
+
+* Apache Camel from 3.15.0 before 4.14.9
+* Apache Camel from 4.15.0 before 4.18.4
+* Apache Camel from 4.19.0 before 4.21.0
+
+
+### Description
+
+<p>Improper Input Validation, Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection') vulnerability in Apache Camel Knative component</p>The Knative consumer in camel-knative maps inbound CloudEvent attributes onto Camel message headers. In binary content mode the HTTP-header path filters Camel-internal headers through KnativeHttpHeaderFilterStrategy, but in structured content mode (Content-Type application/cloudevents+json) the CloudEvent extension fields are read directly from the JSON body and every extension key is copied into the Exchange headers without applying any HeaderFilterStrategy (CloudEventProcessors, spec versions 1.0, 1.0.1 and 1.0.2). As a result, an unauthenticated attacker can inject Camel-internal headers (e.g. CamelHttpUri, CamelHttpPath, CamelFileName) via a structured-mode CloudEvent request, matched case-insensitively against Camel's header map. When a route forwards messages from a Knative consumer to a header-driven component such as camel-http or camel-file, the injected headers override configured values, enabling server-side request forgery (SSRF), path traversal or message-dispatch redirection depending on the route. This is an incomplete fix of the inbound header filtering previously added for the binary content-mode path, and is the same pattern addressed in camel-cxf/camel-knative (CVE-2026-47323), camel-undertow (CVE-2025-30177), the broader incoming-header filter (CVE-2025-27636 and CVE-2025-29891), and the non-HTTP strategies (CVE-2026-40453).<br><p>This issue affects Apache Camel: from 3.15.0 before 4.14.9, from 4.15.0 before 4.18.4, from 4.19.0 before 4.21.0.</p>Users are recommended to upgrade to version 4.22.0, which fixes the issue. If users are on the 4.18.x LTS releases stream, then they are suggested to upgrade to 4.18.4. If users are on the 4.14.x LTS releases stream, then they are suggested to upgrade to 4.14.9. The non-LTS releases 4.15.0 through 4.17.0 and 4.19.0 through 4.21.0 are affected but do not receive a maintenance fix; users on those versions should upgrade to 4.18.4 or 4.22.0.
+
+### References
+* https://camel.apache.org/security/CVE-2026-63621.html
+
+
+### Credits
+* Andrea Cosentino (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Azure-Storage-DataLake: the downloadToFile operation built the local download target from the remote path name without constraining it to the configured fileDir ## { #CVE-2026-60093 }
+
+CVE-2026-60093 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-60093) [\[CVE json\]](./CVE-2026-60093.cve.json) [\[OSV json\]](./CVE-2026-60093.osv.json)
+
+
+
+_Last updated: 2026-08-24T14:06:02.406Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.14.9
+* Apache Camel from 4.15.0 before 4.18.4
+* Apache Camel from 4.19.0 before 4.22.0
+
+
+### Description
+
+<p>Relative path traversal vulnerability in Apache Camel Azure-Storage Datalake component</p><p>This issue affects Apache Camel: from 4.0.0 before 4.14.9, from 4.15.0 before 4.18.4, from 4.19.0 before 4.22.0.</p><p>The camel-azure-storage-datalake component can download an Azure Data Lake Storage Gen2 file to the local filesystem through its downloadToFile operation, writing into the directory named by the fileDir endpoint option. DataLakeFileOperations.downloadToFile built the local target by joining fileDir with the remote path name exactly as the Azure SDK reported it (new File(fileDir, fileClientWrapper.getFileName())) and passed the result straight to the SDK download call, with no lexical normalization and no check that the resolved location stayed inside fileDir. The remote name is not route-controlled data: the consumer enumerates the filesystem in DataLakeConsumer.createBatchExchangesFromPath, which lists paths and creates one exchange per entry from PathItem.getName() verbatim, applying no name filtering by default. A path name containing parent-directory segments therefore resolved to a location outside the configured fileDir, letting anyone able to influence the names present in the consumed Data Lake filesystem cause Camel to create or overwrite a file at a location of their choosing, with the privileges of the Camel process. Depending on what the process can write to, overwriting a file outside the download directory can escalate beyond the loss of integrity of that file. The fileDir option is an ordinary common-group configuration parameter and carries no security marker, so nothing signalled to users that its value was not being enforced as a containment boundary. Camel's other file-download consumers - camel-file, camel-ftp, camel-smb, camel-mina-sftp and camel-azure-files - already constrained their local downloads to the configured directory using a path-segment boundary check; the camel-azure-storage-datalake download path was not covered by that work.</p><p>Users are recommended to upgrade to version 4.22.0, which fixes the issue. If users are on the 4.14.x LTS releases stream, then they are suggested to upgrade to 4.14.9. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.4. For deployments that cannot upgrade immediately, constrain the names the consumer will act on using the regex endpoint option, which is applied to each listed path name as a full-string match, so that only simple single-segment names are accepted and any name carrying a path separator or a parent-directory segment is filtered out before an exchange is created. Alternatively, avoid the downloadToFile operation on untrusted filesystems and write the payload from the route under a file name the route itself controls, rather than one taken from the remote listing. As defence in depth, treat the object names in any externally writable Data Lake filesystem as untrusted input and do not derive local filesystem paths from them.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-60093.html
+
+
+### Credits
+* Hiep Nguyen (finder)
+* n0mi1k (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Mail: the MimeMultipart data format copied MIME headers onto the Camel message without a header filter strategy when unmarshalling with headersInline enabled ## { #CVE-2026-59230 }
+
+CVE-2026-59230 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59230) [\[CVE json\]](./CVE-2026-59230.cve.json) [\[OSV json\]](./CVE-2026-59230.osv.json)
+
+
+
+_Last updated: 2026-08-24T16:09:32.233Z_
+
+### Affected
+
+* Apache Camel from 2.17.0 before 4.14.9
+* Apache Camel from 4.15.0 before 4.18.4
+* Apache Camel from 4.19.0 before 4.22.0
+
+
+### Description
+
+<p>Improper input validation vulnerability in Apache Camel.</p><p>This issue affects Apache Camel: from 2.17.0 before 4.14.9, from 4.15.0 before 4.18.4, from 4.19.0 before 4.22.0.</p><p>The camel-mail component ships a MimeMultipart data format that can unmarshal a MIME multipart message. When it is configured with headersInline set to true, the unmarshal path copies the MIME headers of the incoming message onto the Camel message: it enumerates every header that is not one of the three standard ones it generates itself - Message-ID, MIME-Version and Content-Type - and calls setHeader for each, applying no HeaderFilterStrategy. The names of those MIME headers come from the message being unmarshalled, so a sender able to influence the message could place a header whose name falls in the Camel-internal namespace and have it set on the Exchange. Camel components read control headers from that namespace to override their configured behaviour - the camel-sql producer, for instance, takes the statement to execute from a Camel header when one is present - so an injected header could redirect what a downstream step in the route does with data the route author never intended it to take from the message. Which sinks are reachable, and what the consequences are, depends entirely on what the route does after the unmarshal step. The camel-mail consumer already applied a header filter strategy on its own inbound path, so this was the parallel inbound path into the same component that the earlier hardening did not cover. The affected copy is reached only when headersInline is enabled, which is not the default: with the default setting the MIME headers are surfaced as attachments rather than as message headers, and are not affected. The behaviour dates back to the introduction of the data format in 2.17.0 and was present on every release line until this fix.</p><p>Users are recommended to upgrade to version 4.22.0, which fixes the issue. If users are on the 4.14.x LTS releases stream, then they are suggested to upgrade to 4.14.9. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.4. For deployments that cannot upgrade immediately, leave headersInline at its default of false where the inline headers are not needed, since the copy is only reached when it is enabled. Where it must stay enabled, strip Camel-internal headers immediately after the unmarshal step, for example with removeHeaders(“Camel*”) placed before any processor or producer that reads control headers, and do not unmarshal MIME content from an untrusted sender into a route that dispatches on header values. As defence in depth, treat the header names of any MIME message arriving from outside the trust boundary as untrusted input.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-59230.html
+
+
+### Credits
+* Atuin - Automated Vulnerability Discovery Engine, anciety of Tencent Xuanwu Lab (finder)
+* Andrea Cosentino (remediation developer)
+
+
 ## An inbound Camel-namespace filter was added to Sns2HeaderFilterStrategy to align it with sibling components ## { #CVE-2026-56140 }
 
 CVE-2026-56140 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-56140) [\[CVE json\]](./CVE-2026-56140.cve.json) [\[OSV json\]](./CVE-2026-56140.osv.json)

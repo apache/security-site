@@ -18,6 +18,90 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## SSRF vulnerability in Hive Avro Serde due to Insufficient input validation on avro.schema.url ## { #CVE-2026-55976 }
+
+CVE-2026-55976 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-55976) [\[CVE json\]](./CVE-2026-55976.cve.json) [\[OSV json\]](./CVE-2026-55976.osv.json)
+
+
+
+_Last updated: 2026-08-24T19:34:22.629Z_
+
+### Affected
+
+* Apache Hive from 2.1.0 through 4.2.0
+
+
+### Description
+
+<p>Server-Side Request Forgery (SSRF) in Avro SerDe schema resolution in Apache Hive before 4.2.1 allows an authenticated remote attacker with CREATE TABLE privilege to cause the Hive server to fetch an attacker-controlled URL when resolving the <code>avro.schema.url</code>&nbsp;table property on an Avro table that is subsequently queried. This can expose cloud instance metadata, internal network services, or local server files to the Hive process identity. Users are recommended to upgrade to version 4.2.1, which fixes this issue.</p><p>Attacker access requirements:</p><ul><li>Network access to HiveServer2 / Metastore: required (remote attacker model).</li><li>Valid Hive authentication: required.</li><li>CREATE TABLE (or equivalent) privilege: required, so the attacker can set <code>avro.schema.url</code>&nbsp;in table properties.</li><li>SELECT privilege on the malicious table: not required for the creator, who can typically query their own table; any other user granted SELECT can also trigger the fetch.</li><li>Write access to the table LOCATION: not required; the attack uses the schema URL, not the data path.</li><li>Admin / superuser privileges: not required; an ordinary authenticated user with DDL rights is sufficient.</li><li>External tables enabled: typically required in practice, and enabled by default in most deployments.</li></ul><p>Detection guidance:</p><ul><li>Inspect metastore / Hive table metadata for Avro tables whose <code>avro.schema.url</code>&nbsp;uses unexpected schemes such as http, https, file, or ftp, or points at link-local / cloud metadata addresses (for example 169.254.169.254) or other internal hosts.</li><li>Review HiveServer2 and Metastore logs around CREATE/ALTER TABLE and queries against Avro tables for schema-resolution failures or outbound fetches of <code>avro.schema.url</code>.</li><li>Correlate CREATE TABLE / ALTER TABLE activity that sets <code>avro.schema.url</code>&nbsp;with subsequent SELECT activity on the same table, especially when the URL target is unusual for schema distribution.</li><li>On cloud deployments, check instance / VPC flow logs and metadata service access logs for unexpected requests from Hive host identities shortly after Avro DDL or query activity.</li></ul><br>
+
+### References
+* https://github.com/apache/hive
+* https://issues.apache.org/jira/browse/HIVE-29671
+* https://github.com/apache/hive/commit/45049202df35cea382616624de3fe8d252aa2d00
+* https://lists.apache.org/thread/6d56mk501fp4f8cb5wvrpj2jwd9knt05
+
+
+### Credits
+* zhaokaifei (reporter)
+
+
+## Unauthenticated authentication bypass in HiveServer2 HTTP SAML bearer-token validation allows impersonation of any Hive user ## { #CVE-2026-53561 }
+
+CVE-2026-53561 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-53561) [\[CVE json\]](./CVE-2026-53561.cve.json) [\[OSV json\]](./CVE-2026-53561.osv.json)
+
+
+
+_Last updated: 2026-08-24T19:34:40.993Z_
+
+### Affected
+
+* Apache Hive from 4.0.0 through 4.2.0
+
+
+### Description
+
+An improper authentication vulnerability in HiveServer2 SAML bearer-token validation in Apache Hive 4.0.0 through 4.2.0 (and later unreleased branches) on deployments using HTTP transport with hive.server2.authentication=SAML allows an unauthenticated network attacker to authenticate as an arbitrary Hive user and obtain an authenticated HiveServer2 session via a forged Authorization: Bearer token sent to the /cliservice HTTP endpoint. Users are recommended to upgrade to 4.2.1 version that includes the fix for this issue.<br><br><i>Access / authorization required</i>: No Hive credentials, SAML IdP login, or knowledge of the server signing secret is required. The attacker only needs network reachability to the HiveServer2 HTTP port (typically /cliservice), directly or through a reverse proxy such as Apache Knox that forwards unauthenticated requests to HS2. The instance must have SAML authentication enabled in HTTP mode. Deployments where Knox handles SSO and HiveServer2 uses LDAP/Kerberos (not native SAML mode) are not affected by this specific issue.<br>
+
+### References
+* https://github.com/apache/hive
+* https://issues.apache.org/jira/browse/HIVE-29653
+* https://github.com/apache/hive/commit/6ca06ca1104ff7462363087a867d70d546134774
+* https://lists.apache.org/thread/6d56mk501fp4f8cb5wvrpj2jwd9knt05
+
+
+### Credits
+* Andrew Rukin (Arenadata) (reporter)
+
+
+## SQL Injection vulnerability in HiveMetaStore partition-name direct-SQL paths ## { #CVE-2026-49845 }
+
+CVE-2026-49845 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49845) [\[CVE json\]](./CVE-2026-49845.cve.json) [\[OSV json\]](./CVE-2026-49845.osv.json)
+
+
+
+_Last updated: 2026-08-24T19:33:58.098Z_
+
+### Affected
+
+* Apache Hive from 4.0.0 through 4.2.0
+
+
+### Description
+
+<span>SQL injection in Hive Metastore direct SQL partition-name resolution in Apache Hive before 4.2.1 on all platforms allows authenticated users with access to Hive Metastore APIs to read, modify, or affect unintended partition metadata (including statistics updates, truncation targets, and file-metadata cache operations) via crafted partition names in metastore RPC requests when direct SQL is enabled (the default). Users are recommended to upgrade to version 4.2.1, which fixes this issue.</span><br><br><b>Details about the issue:</b><br><span>Several Hive Metastore RPCs resolve partitions by full partition name (PART_NAME) through direct-SQL helpers. In those paths, client-supplied partition names are embedded into SQL using string concatenation (DirectSqlUpdatePart.quoteString() → '...') instead of bind parameters.&nbsp;A partition name containing a single quote (and crafted SQL) can alter the generated WHERE clause so that lookups intended for one partition match additional rows. That can affect reads, stats updates, truncate targets, metadata-cache targets, and related operations when metastore.try.direct.sql is enabled (default: true).&nbsp;</span>An authenticated or network-trusted caller with the ability to invoke Hive Metastore partition-name APIs against a target table (directly or via Hive/other clients), when direct SQL is enabled can perform this attack. Also, the impact is mainly within table &amp; partition targeting (read/update/truncate/drop/cache the wrong partitions in a table they can reference), not arbitrary cross-database access via this bug alone.<br>
+
+### References
+* https://github.com/apache/hive
+* https://github.com/apache/hive/commit/ca64f08a8e43db9845b47d5fa2e96f7fdea7288e
+* https://issues.apache.org/jira/browse/HIVE-29622
+* https://lists.apache.org/thread/6d56mk501fp4f8cb5wvrpj2jwd9knt05
+
+
+### Credits
+* Leon Johnson (reporter)
+
+
 ## SQL injection vulnerability when processing delete column statistics requests via the HMS Thrift APIs ## { #CVE-2025-62728 }
 
 CVE-2025-62728 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-62728) [\[CVE json\]](./CVE-2025-62728.cve.json) [\[OSV json\]](./CVE-2025-62728.osv.json)
