@@ -24,6 +24,7 @@ so they do not need to be notified.
 
 Still, as a token of our appreciation, we'd like to thank a number of such reporters here:
 
+* [BINARLY REsearch team](https://www.binarly.io/research) for notifying us of leaked GitHub tokens.
 * [Sahar Shlichove](https://www.linkedin.com/in/sahar042/), JFrog for notifying us of a leaked 3rd-party service token.
 * [Naveen S](https://www.linkedin.com/in/naveens72/) and [M Ajmal](https://www.linkedin.com/in/ajmalmoochingal/) for notifying us of a leaked GitHub token.
 * [owen](https://hackerone.com/owen0x) for notifying us of a leaked Nx Cloud read-write token.
