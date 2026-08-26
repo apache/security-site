@@ -994,6 +994,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=OpenNLP)
   - Advisories (experimental):\
     [security.apache.org](/projects/opennlp/)
+  - Security model:
+    - [Apache OpenNLP security model](https://github.com/apache/opennlp/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/openoffice/default.png" alt="" loading="lazy"> **Apache OpenOffice**
   - **Security contact:**\
     [security@openoffice.apache.org](mailto:security@openoffice.apache.org?subject=OpenOffice)
