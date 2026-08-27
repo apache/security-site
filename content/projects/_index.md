@@ -1091,6 +1091,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Phoenix)
   - Advisories (experimental):\
     none so far
+  - Security model:
+    - [Apache Phoenix security model](https://phoenix.apache.org/security-model/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/pig/default.png" alt="" loading="lazy"> **Apache Pig**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Pig)
