@@ -1586,6 +1586,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Wicket)
   - Advisories (experimental):\
     [security.apache.org](/projects/wicket/)
+  - Security model:
+    - [Apache Wicket security model](https://github.com/apache/wicket/security/policy)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="X">
