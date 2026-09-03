@@ -607,7 +607,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     - [Apache Hamilton (Incubating) security model](https://github.com/apache/hamilton/blob/main/SECURITY.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/hbase/default.png" alt="" loading="lazy"> **Apache HBase**
   - **Security contact:**\
-    [security@apache.org](mailto:security@apache.org?subject=HBase)
+    [security@hbase.apache.org](mailto:security@hbase.apache.org?subject=HBase)
   - Advisories (experimental):\
     [security.apache.org](/projects/hbase/)
   - Security model:
@@ -1088,7 +1088,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     - [Apache Pekko security model](https://pekko.apache.org/docs/pekko/current/security/index.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/phoenix/default.png" alt="" loading="lazy"> **Apache Phoenix**
   - **Security contact:**\
-    [security@apache.org](mailto:security@apache.org?subject=Phoenix)
+    [security@phoenix.apache.org](mailto:security@phoenix.apache.org?subject=Phoenix)
   - Advisories (experimental):\
     none so far
   - Security model:
