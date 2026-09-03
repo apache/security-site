@@ -74,7 +74,7 @@ CVE-2026-68979 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68979) [\[CVE jso
 
 
 
-_Last updated: 2026-08-03T20:00:00.439Z_
+_Last updated: 2026-09-01T12:29:30.785Z_
 
 ### Affected
 

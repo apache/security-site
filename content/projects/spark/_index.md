@@ -18,6 +18,31 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## XSS Vulnerability in Spark Web 3.5.4 ## { #CVE-2026-32773 }
+
+CVE-2026-32773 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-32773) [\[CVE json\]](./CVE-2026-32773.cve.json) [\[OSV json\]](./CVE-2026-32773.osv.json)
+
+
+
+_Last updated: 2026-09-02T10:51:15.145Z_
+
+### Affected
+
+* Apache Spark from 3.0.0 before 3.5.8
+
+
+### Description
+
+There is a lack of XSS escaping in the Spark History Server prior to 3.5.8 which allows a malicious Spark job to generate arbitrary unescaped frontend code which could lead to a minimal privilege escalation in browser. Users are encouraged to upgrade to Spark 3.5.8 or later.<br><br>This CVE is marked as "low" since the path to exploit requires both relatively high permissions (ability to launch a Spark job) and <span>requires tricking a user with higher permissions to log in and visit the Spark history web page.</span><br><br>Users are encouraged to upgrade their Spark history servers to Spark 3.5.8 or later.
+
+### References
+* https://lists.apache.org/thread/k36prh3oxl1z6ov7w8rpmfnt07hmzw3v
+
+
+### Credits
+* Yann Gourio (finder)
+
+
 ## RPC encryption defaults to unauthenticated AES-CTR mode, enabling man-in-the-middle ciphertext modification attacks ## { #CVE-2025-55039 }
 
 CVE-2025-55039 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-55039) [\[CVE json\]](./CVE-2025-55039.cve.json) [\[OSV json\]](./CVE-2025-55039.osv.json)

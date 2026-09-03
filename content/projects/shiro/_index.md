@@ -18,6 +18,37 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Server-side POST request may be steered to an alternate host ## { #CVE-2026-58301 }
+
+CVE-2026-58301 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58301) [\[CVE json\]](./CVE-2026-58301.cve.json) [\[OSV json\]](./CVE-2026-58301.osv.json)
+
+
+
+_Last updated: 2026-08-31T07:40:34.128Z_
+
+### Affected
+
+* Apache Shiro from 2.0.0-alpha-0 through 3.0.0
+
+
+### Description
+
+When Apache Shiro is used with the Jakarta EE integration module, a low-privileged user can craft an HTTP request that causes the server to initiate a connection to an attacker-controlled URL and transmit attacker-controlled data. This vulnerability affects Apache Shiro versions 2.x through 3.0.0 only in deployments that use the Jakarta EE integration module.<br><br>Mitigation: Upgrade to version 3.0.1 or later, which fixes the issue. +<br>Alternatively, you can set the `org.apache.shiro.form-resubmit-host` (String) and `org.apache.shiro.form-resubmit-port` (Integer) system properties to restrict the host and port that Shiro will connect to when resubmitting a form.
+
+### References
+* https://lists.apache.org/thread/g1g84ovof5fnonvc5o89wym2jzt77fww
+
+
+### Credits
+* liyi.zhou@sydney.edu.au (Liyi), https://lzhou1110.github.io/ (finder)
+* ziyue0530@gmail.com (Ziyue), https://zyy0530.github.io/ (finder)
+* cshe0476@uni.sydney.edu.au (Strick), https://str1ckl4nd.github.io/ (finder)
+* chng0012@uni.sydney.edu.au (Maurice), http://maurice.busystar.org/ (finder)
+* cyu210608@gmail.com (Chenchen), https://7thparkk.github.io/ (finder)
+* Lenny Primak <lenny@flowlogix.com> (remediation developer)
+* Andrea Cosentino (remediation reviewer)
+
+
 ## Remember-me cookie isn't checked for expiry on the server ## { #CVE-2026-56130 }
 
 CVE-2026-56130 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-56130) [\[CVE json\]](./CVE-2026-56130.cve.json) [\[OSV json\]](./CVE-2026-56130.osv.json)
