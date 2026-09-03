@@ -18,6 +18,146 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Authenticated WebSocket session survives end of HTTP session ## { #CVE-2026-73180 }
+
+CVE-2026-73180 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73180) [\[CVE json\]](./CVE-2026-73180.cve.json)
+
+_Last updated: 2026-08-25T22:02:05.424Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.24
+* Apache Tomcat from 10.1.0-M1 through 10.1.57
+* Apache Tomcat from 9.0.0.M1 through 9.0.120
+* Apache Tomcat from 8.5.0 through 8.5.100
+* Apache Tomcat from 7.0.43 through 7.0.109
+* Apache Tomcat before 7.0.43 unaffected
+
+
+### Description
+
+<p>Insufficient Session Expiration vulnerability in Apache Tomcat meant that if the session ID for an authenticated HTTP session was changed after a WebSocket connection had been established under that authenticated HTTP session, the WebSokcet session would not be closed as required by the Jakarta WebSocket specification when the HTTP session ended.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.24, from 10.1.0-M1 through 10.1.57, from 9.0.0.M1 through 9.0.120.</p><p>The following versions were EOL at the time the CVE was created but are 
+known to be affected: from 8.5.0 through 8.5.100, from 7.0.43 through 7.0.109.&nbsp;Other unsupported versions may also be affected.</p><p>Users are recommended to upgrade to version 11.0.25, 10.1.58 or 9.0.121, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/3j15vztszpyqss253mjq5v1kp7s6hooq
+
+
+### Credits
+* 0xCc.zhang (finder)
+
+
+## DoS via allocation leak in HTTP/2 backlog tracking when a stream is reset ## { #CVE-2026-68763 }
+
+CVE-2026-68763 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68763) [\[CVE json\]](./CVE-2026-68763.cve.json)
+
+_Last updated: 2026-08-25T22:00:46.348Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.24
+* Apache Tomcat from 10.1.0-M1 through 10.1.57
+* Apache Tomcat from 9.0.39 through 9.0.120
+* Apache Tomcat from 8.5.59 through 8.5.100
+* Apache Tomcat through 7.0.109 unaffected
+
+
+### Description
+
+<p>Uncontrolled Resource Consumption vulnerability in Apache Tomcat&nbsp;via an allocation leak in the HTTP/2 backlog tracking when a stream is reset</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.24, from 10.1.0-M1 through 10.1.57, from 9.0.39 through 9.0.120.</p><p>The following versions were EOL at the time the CVE was created but are 
+known to be affected: from 8.5.59 through 8.5.100.&nbsp;Other unsupported versions may also be affected.</p><p>Users are recommended to upgrade to version 11.0.25, 10.1.58 or 9.0.121, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/tv51ty39ppv41v04hdtkp9dp7tg02nzl
+
+
+### Credits
+* Zhen Kong (finder)
+
+
+## Principal lookup can fail open in some cases ## { #CVE-2026-68569 }
+
+CVE-2026-68569 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68569) [\[CVE json\]](./CVE-2026-68569.cve.json)
+
+_Last updated: 2026-08-25T21:59:32.072Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.24
+* Apache Tomcat from 10.1.0-M1 through 10.1.57
+* Apache Tomcat from 9.0.0.M1 through 9.0.120
+* Apache Tomcat from 8.5.0 through 8.5.100
+* Apache Tomcat from 7.0.0 through 70.109
+* Apache Tomcat before 7.0.0 unknown
+
+
+### Description
+
+<p>Improper Authentication vulnerability in Apache Tomcat meant that in some circumstances (e.g. CLIENT-CERT, SPNEGO) that a user would be authenticated even if the user did not exist in the DataSourceRealm.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.24, from 10.1.0-M1 through 10.1.57, from 9.0.0.M1 through 9.0.120.</p><p></p><p>The following versions were EOL at the time the CVE was created but are 
+known to be affected: from 8.5.0 through 8.5.100, from 7.0.0 through 7.0.109. Other unsupported versions may also be affected.</p><p></p><p>Users are recommended to upgrade to version 11.0.25, 10.1.58 or 9.0.121, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/8robqo76q0osxgw0b5lcwgz0hcf9h4zc
+
+
+## Redirect after FORM auth may bypass method specific constraints ## { #CVE-2026-68525 }
+
+CVE-2026-68525 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68525) [\[CVE json\]](./CVE-2026-68525.cve.json)
+
+_Last updated: 2026-08-25T21:57:41.237Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.24
+* Apache Tomcat from 10.1.0-M1 through 10.1.57
+* Apache Tomcat from 9.0.0.M1 through 9.0.120
+* Apache Tomcat from 8.5.0 through 8.5.100
+* Apache Tomcat from 7.0.0 through 7.0.109
+* Apache Tomcat before 7.0.0 unknown
+
+
+### Description
+
+<p>Incorrect Authorization vulnerability in Apache Tomcat's FORM authentication process allows the bypassing of a security constraint that limits user has access to a resource POST but not GET.</p><p></p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.24, from 10.1.0-M1 through 10.1.57, from 9.0.0.M1 through 9.0.120.</p><p></p><p>The following versions were EOL at the time the CVE was created but are 
+known to be affected: from 8.5.0 through 8.5.100, from 7.0.0 through 7.0.109. Other unsupported versions may also be affected.</p><p></p><p></p><p></p><p>Users are recommended to upgrade to version 11.0.25, 10.1.58 or 9.0.121, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/x1y2lfsgzxwzc456f8954vbvgn03zhd7
+
+
+### Credits
+* 4ra1n, pyn3rd and unam4 (finder)
+
+
+## Servlet role references can bypass declarative role constraints ## { #CVE-2026-66422 }
+
+CVE-2026-66422 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66422) [\[CVE json\]](./CVE-2026-66422.cve.json)
+
+_Last updated: 2026-08-25T21:55:30.486Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.24
+* Apache Tomcat from 10.1.0-M1 through 10.1.57
+* Apache Tomcat from 9.0.25 through 9.0.120
+* Apache Tomcat from 8.5.46 through 8.5.100
+* Apache Tomcat from 7.0.97 through 7.0.109
+* Apache Tomcat before 7.0.97 unaffected
+
+
+### Description
+
+<p>Improper Authorization vulnerability in Apache Tomcat cause by security-role-ref definitions being incorrectly used as role aliases within the Realm in additional to the correct usage with Request.isUserInRole().</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.24, from 10.1.0-M1 through 10.1.57, from 9.0.25 through 9.0.120.</p><p>The following versions were EOL at the time the CVE was created but are 
+known to be affected: from 8.5.46 through 8.5.100, from 7.0.97 through 7.0.109. Other unsupported versions may also be affected.</p><p>Users are recommended to upgrade to version 11.0.25, 10.1.58 or 9.0.121, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/j5plylz1b2vhqvbkqn7k58nygxhcpk73
+
+
+### Credits
+* 4ra1n, pyn3rd and unam4 (finder)
+
+
 ## DoS via WebSocket chat example ## { #CVE-2026-66299 }
 
 CVE-2026-66299 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66299) [\[CVE json\]](./CVE-2026-66299.cve.json)
@@ -38,6 +178,147 @@ _Last updated: 2026-07-28T14:29:15.948Z_
 
 ### References
 * https://lists.apache.org/thread/8owczcc1o8qw1rxmg9gvfk4w2jnh4l5k
+
+
+### Credits
+* 4ra1n, pyn3rd and unam4 (finder)
+
+
+## RewriteValve [N] restarts at the second rule and may bypass access control ## { #CVE-2026-65927 }
+
+CVE-2026-65927 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-65927) [\[CVE json\]](./CVE-2026-65927.cve.json)
+
+_Last updated: 2026-08-25T21:53:14.011Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.24
+* Apache Tomcat from 10.1.0-M1 through 10.1.57
+* Apache Tomcat from 9.0.0.M1 through 9.0.120
+* Apache Tomcat from 8.5.0 through 8.5.100
+* Apache Tomcat from 7.0.0 through 7.0.109 unaffected
+* Apache Tomcat before 7.0.0 unaffected
+
+
+### Description
+
+<p>Off-by-one Error vulnerability in Apache Tomcat impacting the [N] flag on the rewrite valves causes rewrite processing to restart at the second rule rather than the first rule.</p><p></p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.24, from 10.1.0-M1 through 10.1.57, from 9.0.0.M1 through 9.0.120.</p><p>The following versions were EOL at the time the CVE was created but are 
+known to be affected: from 8.5.0 through 8.5.100. Other unsupported versions may also be affected.</p><p>Users are recommended to upgrade to version 11.0.25, 10.1.58 or 9.0.121 which fix the issue.</p><p></p>
+
+### References
+* https://lists.apache.org/thread/st1dx1zyn5y7ny2s0sscmh6lrv3worr4
+
+
+### Credits
+* 4ra1n, pyn3rd and unam4 (finder)
+
+
+## Limited replay attack possible with DIGEST authentication ## { #CVE-2026-65905 }
+
+CVE-2026-65905 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-65905) [\[CVE json\]](./CVE-2026-65905.cve.json) [\[OSV json\]](./CVE-2026-65905.osv.json)
+
+
+
+_Last updated: 2026-08-25T21:51:52.441Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.24
+* Apache Tomcat from 10.1.0-M1 through 10.1.57
+* Apache Tomcat from 9.0.0.M1 through 9.0.120
+* Apache Tomcat from 8.5.0 through 8.5.100
+* Apache Tomcat from 7.0.30 through 7.0.109
+
+
+### Description
+
+<p>Authentication Bypass by Capture-replay vulnerability in Apache Tomcat's DIGEST authenticator. If, before windowSize requests have been made, a client makes a DIGEST 
+authenticated request with a nonceCount on the upper boundary of the 
+replay window then that request is replayable once only while the 
+associated nonceCount remains within the replay window.</p><p>&nbsp;
+<br>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.24, from 10.1.0-M1 through 10.1.57, from 9.0.0.M1 through 9.0.120.</p><p>The following versions were EOL at the time the CVE was created but are 
+known to be affected:&nbsp;from 8.5.0 through 8.5.100, from 7.0.30 through 7.0.109. Other unsupported versions may also be affected.</p><p>Users are recommended to upgrade to version 11.0.25, 10.1.58 or 9.0.121, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/9v114xlpgbzrrbzz5vf9f6r2q4wnxwwj
+
+
+### Credits
+* 4ra1n, pyn3rd and unam4 (finder)
+
+
+## HTTP/2 no-authority bypass of strict SNI validation - CVE-2026-32990 fix incomplete ## { #CVE-2026-65637 }
+
+CVE-2026-65637 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-65637) [\[CVE json\]](./CVE-2026-65637.cve.json) [\[OSV json\]](./CVE-2026-65637.osv.json)
+
+
+
+_Last updated: 2026-08-25T21:50:07.962Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.20 through 11.0.24
+* Apache Tomcat from 10.1.53 through 10.1.57
+* Apache Tomcat from 9.0.115 through 9.0.120
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache Tomcat due to incomplete fix for CVE-2026-32990.</p><p>This issue affects Apache Tomcat: from 11.0.20 through 11.0.24, from 10.1.53 through 10.1.57, from 9.0.115 through 9.0.120.</p><p>Users are recommended to upgrade to version 11.0.25, 10.1.58 or 9.0.121, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/djog953z1ohsyt25bdvhfzbmsy22vgcj
+
+
+### Credits
+* Parag Ambildhuke (https://github.com/paragxa) (finder)
+
+
+## TOCTOU when setting specific permissions for Unix Domain Sockets ## { #CVE-2026-65183 }
+
+CVE-2026-65183 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-65183) [\[CVE json\]](./CVE-2026-65183.cve.json)
+
+_Last updated: 2026-08-25T21:47:14.963Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.24
+* Apache Tomcat from 10.1.0-M1 through 10.1.57
+* Apache Tomcat from 9.0.42 through 9.0.120
+* Apache Tomcat from 8.5.0 through 8.5.100 unaffected
+* Apache Tomcat from 7.0.0 through 7.0.109 unaffected
+
+
+### Description
+
+<p>Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability in Apache Tomcat when creating unix domain sockets allows an unauthorised local user to access the unix domain socket.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.24, from 10.1.0-M1 through 10.1.57, from 9.0.42 through 9.0.120.</p><p>Users are recommended to upgrade to version 11.0.25, 10.1.58, 9.0.121, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/748o4st6d5dk6n3l7tgzo5yl68gg05c0
+
+
+## Bypass longest prefix security constraint ## { #CVE-2026-65182 }
+
+CVE-2026-65182 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-65182) [\[CVE json\]](./CVE-2026-65182.cve.json)
+
+_Last updated: 2026-08-25T21:45:47.425Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.24
+* Apache Tomcat from 10.1.0-M1 through 10.1.57
+* Apache Tomcat from 9.0.0.M1 through 9.0.120
+* Apache Tomcat from 8.5.0 through 8.5.100
+* Apache Tomcat from 7.0.0 through 7.0.109
+* Apache Tomcat before 7.0.0 unknown
+
+
+### Description
+
+<p>Improper Access Control, Incorrect Authorization vulnerability in Apache Tomcat leads to security constraint bypass if a constraint for a longer path is specified before a more restrictive constraint for a shorter sub-path.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.24, from 10.1.0-M1 through 10.1.57, from 9.0.0.M1 through 9.0.120, from 8.5.0 through 8.5.100, from 7.0.0 through 7.0.109.</p><p>Users are recommended to upgrade to version 11.0.25, 10.1.58, 9.0.121, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/joosxvzc9b49ttj8lj0jw9mqt0ml767m
 
 
 ### Credits

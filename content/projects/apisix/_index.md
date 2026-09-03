@@ -18,6 +18,106 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## ldap-auth plugin cross-subtree identity impersonation ## { #CVE-2026-75020 }
+
+CVE-2026-75020 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-75020) [\[CVE json\]](./CVE-2026-75020.cve.json) [\[OSV json\]](./CVE-2026-75020.osv.json)
+
+
+
+_Last updated: 2026-08-27T09:14:31.212Z_
+
+### Affected
+
+* Apache APISIX from 2.11.0 through 3.17.0
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection') vulnerability in Apache APISIX.</p>A caller who holds valid credentials for one entry in the LDAP directory can authenticate through APISIX as a consumer mapped to a different entry, one the plugin's configured scope was meant to keep out of reach.<br><p>This issue affects Apache APISIX: from 2.11.0 through 3.17.0.</p><p>Users are recommended to upgrade to version 3.18.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/d4007wk6dbl9mxy5h05zxwn8fsg13bxt
+
+
+### Credits
+* MopMonk AI (reporter)
+
+
+## Unauthenticated CPU-exhaustion DoS ## { #CVE-2026-75005 }
+
+CVE-2026-75005 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-75005) [\[CVE json\]](./CVE-2026-75005.cve.json) [\[OSV json\]](./CVE-2026-75005.osv.json)
+
+
+
+_Last updated: 2026-08-27T09:15:31.332Z_
+
+### Affected
+
+* Apache APISIX at 3.17.0
+
+
+### Description
+
+<p>Inefficient Algorithmic Complexity vulnerability in Apache APISIX.<br><br> A single small request can pin a gateway worker at 100% CPU for an extended period in graphql-limit-count routes.<br></p><p>This issue affects Apache APISIX: 3.17.0.</p><p>Users are recommended to upgrade to version 3.18.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/wfs7c9l8sokrh9hzv84lno12nx2zxpjk
+
+
+### Credits
+* Md. Amdadul Bari (reporter)
+
+
+## Cross-user response poisoning in serverless plugins ## { #CVE-2026-74848 }
+
+CVE-2026-74848 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-74848) [\[CVE json\]](./CVE-2026-74848.cve.json) [\[OSV json\]](./CVE-2026-74848.osv.json)
+
+
+
+_Last updated: 2026-08-27T09:16:06.269Z_
+
+### Affected
+
+* Apache APISIX from 2.12.0 through 3.17.0
+
+
+### Description
+
+<p>Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling') vulnerability in Apache APISIX.<br><br>An attacker could make other clients receive attacker-chosen or other users' responses on serverless-plugin routes.<br></p><p>This issue affects Apache APISIX: from 2.12.0 through 3.17.0.</p><p>Users are recommended to upgrade to version 3.18.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/xdgpszmw8dw4wvmfxy043d83m150kx3n
+
+
+### Credits
+* Xclow3n (Rajat Raghav) (reporter)
+
+
+## attach-consumer-label does not strip client-supplied consumer-label headers ## { #CVE-2026-63041 }
+
+CVE-2026-63041 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63041) [\[CVE json\]](./CVE-2026-63041.cve.json) [\[OSV json\]](./CVE-2026-63041.osv.json)
+
+
+
+_Last updated: 2026-08-26T11:34:58.193Z_
+
+### Affected
+
+* Apache APISIX from 3.11.0 through 3.17.0
+
+
+### Description
+
+<p>Reliance on Untrusted Inputs in a Security Decision vulnerability in Apache APISIX.</p>This vulnerability allows an attacker to escalate privilege or perform an authorization bypass by sending certain values that the attach-consumer-label plugin does not sanitise correctly.<br><p>This issue affects Apache APISIX: from 3.11.0 through 3.17.0.</p><p>Users are recommended to upgrade to version 3.18.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/yg9tgn699rz7kyglw82m1775do8frjr4
+
+
+### Credits
+* tonghuaroot (reporter)
+
+
 ## Improper authentication in cas-auth plugin ## { #CVE-2026-49872 }
 
 CVE-2026-49872 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49872) [\[CVE json\]](./CVE-2026-49872.cve.json) [\[OSV json\]](./CVE-2026-49872.osv.json)

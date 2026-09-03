@@ -49,7 +49,7 @@ CVE-2026-66755 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66755) [\[CVE jso
 
 
 
-_Last updated: 2026-07-30T19:16:23.163Z_
+_Last updated: 2026-09-01T12:05:16.381Z_
 
 ### Affected
 
