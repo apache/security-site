@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache HBase? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=HBase).
+Do you want disclose a potential security issue for Apache HBase? Send your report to the [Apache HBase Security Team](mailto:security@hbase.apache.org?subject=HBase).
 
 You can read more about the security policy on:
 
