@@ -78,6 +78,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Allura)
   - Advisories (experimental):\
     [security.apache.org](/projects/allura/)
+  - Security model:
+    - [Apache Allura security model](https://github.com/apache/allura/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/ambari/default.png" alt="" loading="lazy"> **Apache Ambari**
   - **Security contact:**\
     [security@ambari.apache.org](mailto:security@ambari.apache.org?subject=Ambari)
@@ -693,8 +695,9 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@ignite.apache.org](mailto:security@ignite.apache.org?subject=Ignite)
   - Advisories (experimental):\
     [security.apache.org](/projects/ignite/)
-  - Security model:
-    - [Apache Ignite security model](https://ignite.apache.org/docs/ignite3/3.1.0/understand/architecture/security#security-model)
+  - Security models:
+    - [Apache Ignite security model](https://ignite.apache.org/docs/latest/security/security-model)
+    - [Apache Ignite 3 security model](https://ignite.apache.org/docs/ignite3/3.1.0/understand/architecture/security#security-model)
 - <img class="project-logo" src="https://www.apache.org/logos/res/impala/default.png" alt="" loading="lazy"> **Apache Impala**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Impala)
@@ -811,8 +814,9 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Kvrocks)
   - Advisories (experimental):\
     [security.apache.org](/projects/kvrocks/)
-  - Security model:
+  - Security models:
     - [Apache Kvrocks security model](https://github.com/apache/kvrocks/blob/unstable/THREAT_MODEL.md)
+    - [Apache Kvrocks Controller security model](https://github.com/apache/kvrocks-controller/blob/unstable/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/kylin/default.png" alt="" loading="lazy"> **Apache Kylin**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Kylin)
