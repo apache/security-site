@@ -19,7 +19,7 @@ CVE-2026-61486 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-61486) [\[CVE jso
 
 
 
-_Last updated: 2026-08-05T06:44:06.722Z_
+_Last updated: 2026-09-04T15:55:45.726Z_
 
 ### Affected
 
@@ -61,7 +61,7 @@ CVE-2026-61484 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-61484) [\[CVE jso
 
 
 
-_Last updated: 2026-08-05T06:42:01.626Z_
+_Last updated: 2026-09-04T15:54:47.949Z_
 
 ### Affected
 
@@ -82,7 +82,7 @@ CVE-2026-61483 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-61483) [\[CVE jso
 
 
 
-_Last updated: 2026-08-05T06:35:55.863Z_
+_Last updated: 2026-09-04T15:53:36.291Z_
 
 ### Affected
 

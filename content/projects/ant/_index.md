@@ -18,6 +18,27 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Path traversal in ftp and scp tasks allows arbitrary file write ## { #CVE-2026-78254 }
+
+CVE-2026-78254 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-78254) [\[CVE json\]](./CVE-2026-78254.cve.json) [\[OSV json\]](./CVE-2026-78254.osv.json)
+
+
+
+_Last updated: 2026-09-07T07:41:52.694Z_
+
+### Affected
+
+* Apache Ant from 1.2 before 1.10.18
+
+
+### Description
+
+<div>The ftp and scp tasks of Apache Ant can download files from a remote server. A malicious server can provide relative paths that allow it to write outside of the dedicated target directory for the download, making it possible to overwrite files of the attacker's choice using the permissions of the user running Ant in versions prior to Ant 1.10.18. </div><div><br></div><div>In order to exploit this vulnerability, the server would either have to be malicious&nbsp;or be subject to a machine-in-the-middle attack. Additionally&nbsp;in the case of scp or the ftp task using ftps the server must pass the server identity checks performed by the tasks.</div><div><br></div><div>For ftp tasks not using ftps a malicious server could act as a machine-in-the-middle to provide malicious files.</div><div><br></div><div>Starting with Ant 1.10.18 both tasks will prevent writing outside of the destination directory by default. An option is available to disable this behavior in the unlikely case that the  old behavior is required by existing build files.</div><div><br></div><div>Mitigations:</div><div><br></div><div>Users of scp and ftp (when using ftps) in any version of Ant should not bypass server identity checks. Users of ftp not using ftps should switch to ftps where possible.</div><div><br></div>All users are recommended to upgrade to Apache Ant 1.10.18, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/05s46qrlbhd06c6rsgvxh8zo0l4p9scz
+
+
 ## PackagerResolver path traversal vulnerability ## { #CVE-2026-26032 }
 
 CVE-2026-26032 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-26032) [\[CVE json\]](./CVE-2026-26032.cve.json) [\[OSV json\]](./CVE-2026-26032.osv.json)

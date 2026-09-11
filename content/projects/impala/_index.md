@@ -18,6 +18,106 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## RCE via External Data Source Class Loading ## { #CVE-2026-65181 }
+
+CVE-2026-65181 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-65181) [\[CVE json\]](./CVE-2026-65181.cve.json) [\[OSV json\]](./CVE-2026-65181.osv.json)
+
+
+
+_Last updated: 2026-09-09T10:40:47.268Z_
+
+### Affected
+
+* Apache Impala from 2.7.0 through 4.5.1
+
+
+### Description
+
+Insufficient authorization of Data Source tables in Impala 2.7-4.5 allows a client with privileges to upload a file to remote storage and create a table to execute arbitrary Java code.<br>Users are recommended to upgrade to version 4.5.2, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/2ty3srsh96j86xxg4g1hbo5rwvszwcnl
+
+
+### Credits
+* zhaokaifei ChinaTelecom (reporter)
+
+
+## Secrets Exfiltration via SSRF ## { #CVE-2026-57866 }
+
+CVE-2026-57866 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-57866) [\[CVE json\]](./CVE-2026-57866.cve.json) [\[OSV json\]](./CVE-2026-57866.osv.json)
+
+
+
+_Last updated: 2026-09-09T10:39:32.832Z_
+
+### Affected
+
+* Apache Impala from 4.4.0 through 4.5.1
+
+
+### Description
+
+Server side request forgery in Apache Impala versions 4.4.x and 4.5.x.&nbsp; Authenticated Impala users with permissions to execute the&nbsp;<span><span>ai_generate_text() function can exfiltrate secrets provided by the credential providers configured in the `<code>hadoop.security.credential.provider.path` property of `</code>core-site.xml`. The secret's key must be known to the user.</span></span><br>
+
+### References
+* https://lists.apache.org/thread/nnk4660cbs6dmmkch7ch7wwb3g9myw7j
+
+
+### Credits
+* Andrey Rukin (Arenadata) (reporter)
+
+
+## SAML authentication bypass via forged bearer token ## { #CVE-2026-56207 }
+
+CVE-2026-56207 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-56207) [\[CVE json\]](./CVE-2026-56207.cve.json) [\[OSV json\]](./CVE-2026-56207.osv.json)
+
+
+
+_Last updated: 2026-09-09T10:36:50.910Z_
+
+### Affected
+
+* Apache Impala from 4.0.0 through 4.5.1
+
+
+### Description
+
+<p>Signature of Bearer token is not verified in last step of SAML2 authentication for Impala's hs2-http interface, allowing altering user name and acting as another user.</p><p>This issue affects Apache Impala: &gt;=4.0.0.</p><p>Users are recommended to upgrade to version 4.5.2, which fixes this issue.</p>
+
+### References
+* https://lists.apache.org/thread/20cov78py0zqzx7dyq39ktythkwn91zs
+
+
+### Credits
+* Andrew Rukin (Arenadata) (reporter)
+
+
+## Avro Schema URL Server-Side Request Forgery ## { #CVE-2026-54048 }
+
+CVE-2026-54048 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-54048) [\[CVE json\]](./CVE-2026-54048.cve.json) [\[OSV json\]](./CVE-2026-54048.osv.json)
+
+
+
+_Last updated: 2026-09-09T10:33:43.525Z_
+
+### Affected
+
+* Apache Impala from 2.0.0 through 4.5.1
+
+
+### Description
+
+Specifying tblproperties('avro.schema.url'='<a target="_blank" rel="nofollow" href="http://...'">http://...'</a>) or with a 'file:///' URI on a table in Impala 2.0.0 to 4.5.1 on all platforms allows an attacker to trigger a GET request to internal endpoints they may not have access to but that Impala does and the response my be exposed via parsing error messages.<br>Users are recommended to upgrade to version 4.5.2, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/cn3q4s8yx924ndlm3gt04o6g4rfm980c
+
+
+### Credits
+* zhaokaifei ChinaTelecom (reporter)
+
+
 ## Impala logs contain secrets ## { #CVE-2021-28131 }
 
 CVE-2021-28131 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-28131) [\[CVE json\]](./CVE-2021-28131.cve.json) [\[OSV json\]](./CVE-2021-28131.osv.json)

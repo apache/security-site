@@ -18,6 +18,56 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## CWE-79 stored XSS in Booster UI dashboard widgets (incomplete fix of CVE-2025-54057) ## { #CVE-2026-85229 }
+
+CVE-2026-85229 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85229) [\[CVE json\]](./CVE-2026-85229.cve.json) [\[OSV json\]](./CVE-2026-85229.osv.json)
+
+
+
+_Last updated: 2026-09-04T06:50:47.909Z_
+
+### Affected
+
+* Apache SkyWalking from 10.2.0 through 10.4.0
+
+
+### Description
+
+<p><span>** UNSUPPORTED WHEN ASSIGNED **&nbsp;</span>Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in Apache SkyWalking Booster UI.</p><p>This issue affects Apache SkyWalking UI : from 10.2.0 through 10.4.0.</p><p>Users are recommended to upgrade to Horizon UI 1.0.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/oswo0kxr7g2jgdoz3wd923nslo36jsv8
+
+
+### Credits
+* n0mi1k (reporter)
+
+
+## PagerDuty alarm hook transmits the integration routing key over cleartext HTTP ## { #CVE-2026-71216 }
+
+CVE-2026-71216 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-71216) [\[CVE json\]](./CVE-2026-71216.cve.json) [\[OSV json\]](./CVE-2026-71216.osv.json)
+
+
+
+_Last updated: 2026-09-04T00:09:39.233Z_
+
+### Affected
+
+* Apache SkyWalking from 9.6.0 through 11.0.0
+
+
+### Description
+
+<p><span>PagerDuty alarm hook transmits the integration routing key over cleartext HTTP.</span></p><p>PagerDuty serves this endpoint over HTTPS and will<br>normally answer plain HTTP with a redirect. That does not remove the exposure.<br>The initial POST -- including the JSON body containing the routing key -- is<br>written to the socket unencrypted before any redirect response is received.<br>Redirection affects only whether the request is retried securely, not whether<br>the first copy left the host in the clear.<span></span></p><p>This issue affects Apache SkyWalking: from 9.6.0 through 11.0.0.</p><p>Users are recommended to upgrade to version 11.0.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/ktfk9p59p89lqk4zdq0twk6nj6ssnsfk
+
+
+### Credits
+* ambesh.infosec@gmail.com (reporter)
+
+
 ## SSRF via set_skywalking_url Tool and GraphQL Expression Injection in MCP Server ## { #CVE-2026-34884 }
 
 CVE-2026-34884 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34884) [\[CVE json\]](./CVE-2026-34884.cve.json) [\[OSV json\]](./CVE-2026-34884.osv.json)

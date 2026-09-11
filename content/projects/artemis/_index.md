@@ -18,6 +18,199 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Message selector wildcard handling could lead to denial of service ## { #CVE-2026-75880 }
+
+CVE-2026-75880 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-75880) [\[CVE json\]](./CVE-2026-75880.cve.json) [\[OSV json\]](./CVE-2026-75880.osv.json)
+
+
+
+_Last updated: 2026-09-10T04:33:09.851Z_
+
+### Affected
+
+* Apache Artemis from 2.50.0 through 2.56.0
+* Apache ActiveMQ Artemis from 1.0.0 through 2.44.0
+
+
+### Description
+
+<p>An authenticated client could attach a consumer with a selector containing crafted wildcard usage that results in excessive evaluation during message delivery attempts, occupying a shared broker thread and leading to denial of service.</p><div>This issue affects Apache Artemis: from 2.50.0 through 2.56.0; Apache ActiveMQ Artemis: from 1.0.0 through 2.44.0.</div><div><br>Users are recommended to upgrade to version 2.57.0, which fixes this issue.</div>
+
+### References
+* https://lists.apache.org/thread/db34g9qoxd8p08086cr95683fkb8wm5r
+
+
+### Credits
+* Mike Read (finder)
+
+
+## Pre-authentication Openwire protocol handling can result in queue deletion ## { #CVE-2026-67593 }
+
+CVE-2026-67593 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-67593) [\[CVE json\]](./CVE-2026-67593.cve.json) [\[OSV json\]](./CVE-2026-67593.osv.json)
+
+
+
+_Last updated: 2026-09-10T04:40:11.068Z_
+
+### Affected
+
+* Apache Artemis from 2.50.0 through 2.56.0
+* Apache Artemis from 2.50.0 through 2.56.0
+* Apache ActiveMQ Artemis from 1.0.0 through 2.44.0
+* Apache ActiveMQ Artemis from 2.32.0 through 2.44.0
+
+
+### Description
+
+<p>A remote attacker can craft an Openwire RemoveSubscriptionInfo command to cause the deletion of a queue on the Artemis broker before the connection authentication and authorization stage or at any time thereafter. </p><p>This issue affects Apache Artemis: from 2.50.0 through 2.56.0; Apache ActiveMQ Artemis: from 1.0.0 through 2.44.0.</p><p>Users are recommended to upgrade to version 2.57.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/zlglnsg8s5xv8n56d15dm5mf00h2d8xs
+
+
+### Credits
+* Daniel Birtwhistle (finder)
+* krsecurity(kongr) (reporter)
+* Dilrevx, NSSL, SJTU (reporter)
+
+
+## Missing authentication on CORE protocol session reattachment ## { #CVE-2026-57967 }
+
+CVE-2026-57967 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-57967) [\[CVE json\]](./CVE-2026-57967.cve.json) [\[OSV json\]](./CVE-2026-57967.osv.json)
+
+
+
+_Last updated: 2026-09-10T04:42:57.322Z_
+
+### Affected
+
+* Apache Artemis from 2.50.0 through 2.56.0
+* Apache ActiveMQ Artemis from 1.0.0 through 2.44.0
+
+
+### Description
+
+<p>An unauthenticated remote attacker can craft a CORE protocol SESSION_REATTACH packet to steal an existing session and assume ongoing execution of the previously authenticated session.</p><p>This issue affects Apache Artemis: from 2.50.0 through 2.56.0; Apache ActiveMQ Artemis: from 1.0.0 through 2.44.0.</p><p>Users are recommended to upgrade to version 2.57.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/fxfjqrdsnksw5f17zs3yqo864lblgv6y
+
+
+### Credits
+* Domenico Francesco Bruscino (finder)
+* Fedrick Sequeira (reporter)
+
+
+## Message-based management parameter deserialization may lead to denial of service ## { #CVE-2026-57822 }
+
+CVE-2026-57822 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-57822) [\[CVE json\]](./CVE-2026-57822.cve.json) [\[OSV json\]](./CVE-2026-57822.osv.json)
+
+
+
+_Last updated: 2026-09-10T04:46:30.053Z_
+
+### Affected
+
+* Apache Artemis from 2.50.0 through 2.56.0
+* Apache ActiveMQ Artemis from 1.3.0 through 2.44.0
+
+
+### Description
+
+<p>When the broker is processing message-based management requests, sent by an authenticated messaging client that is authorized with MANAGE permission to perform management-via-messaging, the parameter processing can trigger Java deserialization of certain method parameters that the broker will not utilise. The permitted types allow to craft a payload causing excessive computation and pinning the processing thread, leading to denial of service.<br></p><p><span>This issue affects Apache Artemis: from 2.50.0 through 2.56.0; Apache ActiveMQ Artemis: from 1.3.0 through 2.44.0.</span></p><p>Users are recommended to upgrade to version 2.57.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/0jmovbbvdo22zq1r91jrlhv02ck7jqzp
+
+
+### Credits
+* Clebert Suconic (finder)
+* Mike Read (reporter)
+
+
+## Pre-Authentication Cluster Credential Exposure to Discovered Peers ## { #CVE-2026-49364 }
+
+CVE-2026-49364 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49364) [\[CVE json\]](./CVE-2026-49364.cve.json) [\[OSV json\]](./CVE-2026-49364.osv.json)
+
+
+
+_Last updated: 2026-09-10T04:49:18.247Z_
+
+### Affected
+
+* Apache Artemis from 2.50.0 through 2.56.0
+* Apache Artemis from 2.50.0 through 2.56.0
+* Apache ActiveMQ Artemis from 1.0.0 through 2.44.0
+* Apache ActiveMQ Artemis from 1.0.0 through 2.44.0
+
+
+### Description
+
+<p>An unauthenticated network-adjacent attacker can leverage discovery to capture cluster administrative credentials during the initial cluster connection handshake.<br><span><br>This issue affects Apache Artemis: from 2.50.0 through 2.56.0; Apache ActiveMQ Artemis: from 1.0.0 through 2.44.0.</span></p><p>Users are recommended to upgrade to version 2.57.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/4qbgcz3k38q30bfbf7hphtomrdc8l8n8
+
+
+### Credits
+* Domenico Francesco Bruscino (finder)
+
+
+## Pre-Authentication Information Disclosure in CORE Protocol Topology Subscription ## { #CVE-2026-49363 }
+
+CVE-2026-49363 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49363) [\[CVE json\]](./CVE-2026-49363.cve.json) [\[OSV json\]](./CVE-2026-49363.osv.json)
+
+
+
+_Last updated: 2026-09-10T04:51:45.409Z_
+
+### Affected
+
+* Apache Artemis from 2.50.0 through 2.56.0
+* Apache ActiveMQ Artemis from 1.0.0 through 2.44.0
+
+
+### Description
+
+<p>An unauthenticated remote attacker connecting with the CORE protocol can discover cluster node details by sending a SUBSCRIBE_TOPOLOGY request prior to authentication.</p><p>This issue affects Apache Artemis: from 2.50.0 through 2.56.0; Apache ActiveMQ Artemis: from 1.0.0 through 2.44.0.</p><p>Users are recommended to upgrade to version 2.57.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/syjch88zw6pfdoso9vs46m23xkgxjbxo
+
+
+### Credits
+* Domenico Francesco Bruscino (finder)
+
+
+## Missing Authentication in CORE Protocol Handler Allows Unauthorized Queue Creation ## { #CVE-2026-49362 }
+
+CVE-2026-49362 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49362) [\[CVE json\]](./CVE-2026-49362.cve.json) [\[OSV json\]](./CVE-2026-49362.osv.json)
+
+
+
+_Last updated: 2026-09-10T10:11:10.956Z_
+
+### Affected
+
+* Apache Artemis from 2.50.0 through 2.56.0
+* Apache ActiveMQ Artemis from 1.0.0 through 2.44.0
+
+
+### Description
+
+<p><span>An unauthenticated remote attacker can create arbitrary durable queues via the CORE protocol</span>, leading to unauthorized broker state manipulation and potential denial of service.<span><br></span><span><br>This issue affects Apache Artemis: from 2.50.0 through 2.56.0; Apache ActiveMQ Artemis: from 1.0.0 through 2.44.0.</span></p><p>Users are recommended to upgrade to version 2.57.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/3828w4tm5mfpflmoprb5oxfgwhq3xw0v
+
+
+### Credits
+* Domenico Francesco Bruscino (finder)
+* Fedrick Sequeira (reporter)
+* Mike Read (reporter)
+* Tiago Ventura (reporter)
+
+
 ## Address routing-type can be updated by STOMP protocol user without the createAddress permission ## { #CVE-2026-40914 }
 
 CVE-2026-40914 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40914) [\[CVE json\]](./CVE-2026-40914.cve.json) [\[OSV json\]](./CVE-2026-40914.osv.json)

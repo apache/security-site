@@ -509,7 +509,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=FreeMarker)
   - Advisories (experimental):\
-    none so far
+    [security.apache.org](/projects/freemarker/)
   - Security models:
     - [Apache FreeMarker security model](https://github.com/apache/freemarker/security/policy)
     - [Apache FreeMarker Online Tester security model](https://github.com/apache/freemarker-online-tester/security/policy)
