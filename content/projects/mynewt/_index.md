@@ -8,9 +8,16 @@ layout: single
 
 Do you want disclose a potential security issue for Apache Mynewt? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Mynewt).
 
+You can read more about the security policy on:
+
+- [Apache Mynewt security model](https://github.com/apache/mynewt-core/blob/master/THREAT_MODEL.md)
+- [Apache NimBLE security model](https://github.com/apache/mynewt-nimble/blob/master/THREAT_MODEL.md)
+- [Apache mcumgr security model](https://github.com/apache/mynewt-mcumgr/blob/master/THREAT_MODEL.md)
+
+
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
 ## Mesh Proxy SAR reassembly unbounded append and unchecked failure ## { #CVE-2026-46452 }

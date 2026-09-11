@@ -11,11 +11,16 @@ Do you want disclose a potential security issue for Apache Camel? Send your repo
 You can read more about the security policy on:
 
 - [Apache Camel security model](https://camel.apache.org/manual/security-model.html)
+- [Apache Camel K security model](https://github.com/apache/camel-k/blob/main/docs/threat-model.md)
+- [Apache Camel Kafka Connector security model](https://camel.apache.org/camel-kafka-connector/next/security-model.html)
+- [Apache Camel Kamelets security model](https://camel.apache.org/camel-kamelets/next/security-model.html)
+- [Apache Camel Karaf security model](https://github.com/apache/camel-karaf/blob/main/docs/modules/ROOT/pages/security-model.adoc)
+- [Apache Camel Quarkus security model](https://camel.apache.org/camel-quarkus/next/user-guide/security-model.html)
 
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
 ## Camel K Builder trait mavenProfiles ValueSources resolve tenant-named secrets in operator namespace ## { #CVE-2026-80354 }
