@@ -109,21 +109,89 @@
 </ul>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-65181">RCE via External Data Source Class Loading</h2>
+<p>CVE-2026-65181 <a href="https://cve.org/CVERecord?id=CVE-2026-65181">[CVE]</a> <a href="./CVE-2026-65181.cve.json">[CVE json]</a> <a href="./CVE-2026-65181.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-09T10:40:47.268Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Impala from 2.7.0 through 4.5.1</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Insufficient authorization of Data Source tables in Impala 2.7-4.5 allows a client with privileges to upload a file to remote storage and create a table to execute arbitrary Java code.<br>Users are recommended to upgrade to version 4.5.2, which fixes this issue.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/2ty3srsh96j86xxg4g1hbo5rwvszwcnl">https://lists.apache.org/thread/2ty3srsh96j86xxg4g1hbo5rwvszwcnl</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>zhaokaifei ChinaTelecom (reporter)</li>
+</ul>
+<h2 id="CVE-2026-57866">Secrets Exfiltration via SSRF</h2>
+<p>CVE-2026-57866 <a href="https://cve.org/CVERecord?id=CVE-2026-57866">[CVE]</a> <a href="./CVE-2026-57866.cve.json">[CVE json]</a> <a href="./CVE-2026-57866.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-09T10:39:32.832Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Impala from 4.4.0 through 4.5.1</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Server side request forgery in Apache Impala versions 4.4.x and 4.5.x.  Authenticated Impala users with permissions to execute the <span><span>ai_generate_text() function can exfiltrate secrets provided by the credential providers configured in the <code>&lt;code&gt;hadoop.security.credential.provider.path</code> property of <code>&lt;/code&gt;core-site.xml</code>. The secret&rsquo;s key must be known to the user.</span></span><br></p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/nnk4660cbs6dmmkch7ch7wwb3g9myw7j">https://lists.apache.org/thread/nnk4660cbs6dmmkch7ch7wwb3g9myw7j</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Andrey Rukin (Arenadata) (reporter)</li>
+</ul>
+<h2 id="CVE-2026-56207">SAML authentication bypass via forged bearer token</h2>
+<p>CVE-2026-56207 <a href="https://cve.org/CVERecord?id=CVE-2026-56207">[CVE]</a> <a href="./CVE-2026-56207.cve.json">[CVE json]</a> <a href="./CVE-2026-56207.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-09T10:36:50.910Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Impala from 4.0.0 through 4.5.1</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Signature of Bearer token is not verified in last step of SAML2 authentication for Impala's hs2-http interface, allowing altering user name and acting as another user.</p><p>This issue affects Apache Impala: &gt;=4.0.0.</p><p>Users are recommended to upgrade to version 4.5.2, which fixes this issue.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/20cov78py0zqzx7dyq39ktythkwn91zs">https://lists.apache.org/thread/20cov78py0zqzx7dyq39ktythkwn91zs</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Andrew Rukin (Arenadata) (reporter)</li>
+</ul>
+<h2 id="CVE-2026-54048">Avro Schema URL Server-Side Request Forgery</h2>
+<p>CVE-2026-54048 <a href="https://cve.org/CVERecord?id=CVE-2026-54048">[CVE]</a> <a href="./CVE-2026-54048.cve.json">[CVE json]</a> <a href="./CVE-2026-54048.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-09T10:33:43.525Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Impala from 2.0.0 through 4.5.1</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Specifying tblproperties(&lsquo;avro.schema.url&rsquo;=&rsquo;<a target="_blank" rel="nofollow" href="http://...'">http://&hellip;&rsquo;</a>) or with a &lsquo;file:///&rsquo; URI on a table in Impala 2.0.0 to 4.5.1 on all platforms allows an attacker to trigger a GET request to internal endpoints they may not have access to but that Impala does and the response my be exposed via parsing error messages.<br>Users are recommended to upgrade to version 4.5.2, which fixes this issue.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/cn3q4s8yx924ndlm3gt04o6g4rfm980c">https://lists.apache.org/thread/cn3q4s8yx924ndlm3gt04o6g4rfm980c</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>zhaokaifei ChinaTelecom (reporter)</li>
+</ul>
 <h2 id="CVE-2021-28131">Impala logs contain secrets</h2>
 <p>CVE-2021-28131 <a href="https://cve.org/CVERecord?id=CVE-2021-28131">[CVE]</a> <a href="./CVE-2021-28131.cve.json">[CVE json]</a> <a href="./CVE-2021-28131.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2021-07-22T09:44:57.855Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-4">Affected</h3>
 <ul>
 <li>Apache Impala from Apache Impala through 3.4.0</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-4">Description</h3>
 <p>Impala sessions use a 16 byte secret to verify that the session is not being hijacked by another user. However, these secrets appear in the Impala logs, therefore Impala users with access to the logs can use another authenticated user&rsquo;s sessions with specially constructed requests. This means the attacker is able to execute statements for which they don&rsquo;t have the necessary privileges otherwise.</p>
 <p>Impala deployments with Apache Sentry or Apache Ranger authorization enabled may be vulnerable to privilege escalation if an authenticated attacker is able to hijack a session or query from another authenticated user with privileges not assigned to the attacker.</p>
 <p>Impala deployments with audit logging enabled may be vulnerable to incorrect audit logging as a user could undertake actions that were logged under the name of a different authenticated user.</p>
 <p>Constructing an attack requires a high degree of technical sophistication and access to the Impala system as an authenticated user.</p>
 <p>Mitigation: If an Impala deployment uses Apache Sentry, Apache Ranger or audit logging, then users should upgrade to a version of Impala with the fix for IMPALA-10600. The Impala 4.0 release includes this fix. This hides session secrets from the logs to eliminate the risk of any attack using this mechanism.</p>
 <p>In lieu of an upgrade, restricting access to logs that expose secrets will reduce the risk of an attack. Restricting access to the Impala deployment to trusted users will also reduce the risk of an attack. Log redaction techniques can be used to redact secrets from the logs.</p>
-<h3 id="references">References</h3>
+<h3 id="references-4">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread.html/rb54f54a91b7abaf1ed772f3a9cec290153c24881b25567b06f1b4a8c%40%3Cuser.impala.apache.org%3E">https://lists.apache.org/thread.html/rb54f54a91b7abaf1ed772f3a9cec290153c24881b25567b06f1b4a8c%40%3Cuser.impala.apache.org%3E</a></li>
 </ul>

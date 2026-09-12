@@ -109,16 +109,29 @@
 </ul>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-78254">Path traversal in ftp and scp tasks allows arbitrary file write</h2>
+<p>CVE-2026-78254 <a href="https://cve.org/CVERecord?id=CVE-2026-78254">[CVE]</a> <a href="./CVE-2026-78254.cve.json">[CVE json]</a> <a href="./CVE-2026-78254.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-07T07:41:52.694Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Ant from 1.2 before 1.10.18</li>
+</ul>
+<h3 id="description">Description</h3>
+<div>The ftp and scp tasks of Apache Ant can download files from a remote server. A malicious server can provide relative paths that allow it to write outside of the dedicated target directory for the download, making it possible to overwrite files of the attacker's choice using the permissions of the user running Ant in versions prior to Ant 1.10.18. </div><div><br></div><div>In order to exploit this vulnerability, the server would either have to be malicious&nbsp;or be subject to a machine-in-the-middle attack. Additionally&nbsp;in the case of scp or the ftp task using ftps the server must pass the server identity checks performed by the tasks.</div><div><br></div><div>For ftp tasks not using ftps a malicious server could act as a machine-in-the-middle to provide malicious files.</div><div><br></div><div>Starting with Ant 1.10.18 both tasks will prevent writing outside of the destination directory by default. An option is available to disable this behavior in the unlikely case that the  old behavior is required by existing build files.</div><div><br></div><div>Mitigations:</div><div><br></div><div>Users of scp and ftp (when using ftps) in any version of Ant should not bypass server identity checks. Users of ftp not using ftps should switch to ftps where possible.</div><div><br></div>All users are recommended to upgrade to Apache Ant 1.10.18, which fixes this issue.
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/05s46qrlbhd06c6rsgvxh8zo0l4p9scz">https://lists.apache.org/thread/05s46qrlbhd06c6rsgvxh8zo0l4p9scz</a></li>
+</ul>
 <h2 id="CVE-2026-26032">PackagerResolver path traversal vulnerability</h2>
 <p>CVE-2026-26032 <a href="https://cve.org/CVERecord?id=CVE-2026-26032">[CVE]</a> <a href="./CVE-2026-26032.cve.json">[CVE json]</a> <a href="./CVE-2026-26032.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-07-15T18:49:39.291Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache Ivy from 2.0.0 through 2.5.3</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-1">Description</h3>
 <p>The PackagerResolver of Apache Ivy is able to download online<br>artifacts and to (re)package them in a format defined by a<br>packager.xml file. This repackaging is done by an Ant script, which is<br>stored in a subdirectory of the configured &ldquo;buildRoot&rdquo; directory. This<br>subdirectory is calculated based on modules coordinates, like the<br>organisation, name or version.<br><br>If one of the coordinates contains &ldquo;../&rdquo; sequences - which are valid<br>characters for Ivy coordinates in general- it is possible to break out<br>of the configured &ldquo;buildRoot&rdquo; directory where other files can be<br>overwritten.<br><br>In order to exploit this vulnerability an attacker needs to have<br>access to a packager repository and add or modify the coordinates in<br>ivy.xml files to have such &ldquo;../&rdquo; sequences.<br><br>Users of Apache Ivy 2.0.0 to 2.5.3 (inclusive) should upgrade to Ivy 2.6.0.</p>
-<h3 id="references">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/4d9dzrlnoplvywnyj9x6w84kxg7n3jyq">https://lists.apache.org/thread/4d9dzrlnoplvywnyj9x6w84kxg7n3jyq</a></li>
 </ul>
@@ -129,13 +142,13 @@
 <h2 id="CVE-2022-46751">XML External Entity vulnerability in Apache Ivy</h2>
 <p>CVE-2022-46751 <a href="https://cve.org/CVERecord?id=CVE-2022-46751">[CVE]</a> <a href="./CVE-2022-46751.cve.json">[CVE json]</a> <a href="./CVE-2022-46751.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2023-08-21T06:54:55.281Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache Ivy from 1.0.0 through 2.5.1</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-2">Description</h3>
 <p>Improper Restriction of XML External Entity Reference, XML Injection (aka Blind XPath Injection) vulnerability in Apache Software Foundation Apache Ivy.<p>This issue affects any version of Apache Ivy prior to 2.5.2.</p><p>When Apache Ivy prior to 2.5.2 parses XML files - either its own configuration, Ivy files or Apache Maven POMs - it will allow downloading external document type definitions and expand any entity references contained therein when used.</p><p>This can be used to exfiltrate data, access resources only the machine running Ivy has access to or disturb the execution of Ivy in different ways.</p><p>Starting with Ivy 2.5.2 DTD processing is disabled by default except when parsing Maven POMs where the default is to allow DTD processing but only to include a DTD snippet shipping with Ivy that is needed to deal with existing Maven POMs that are not valid XML files but are nevertheless accepted by Maven. Access can be be made more lenient via newly introduced system properties where needed.<br></p><p>Users of Ivy prior to version 2.5.2 can use Java system properties to restrict processing of external DTDs, see the section about &ldquo;JAXP Properties for External Access restrictions&rdquo; inside Oracle&rsquo;s &ldquo;Java API for XML Processing (JAXP) Security Guide&rdquo;.<br></p></p>
-<h3 id="references-1">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://docs.oracle.com/en/java/javase/13/security/java-api-xml-processing-jaxp-security-guide.html#GUID-94ABC0EE-9DC8-44F0-84AD-47ADD5340477">https://docs.oracle.com/en/java/javase/13/security/java-api-xml-processing-jaxp-security-guide.html#GUID-94ABC0EE-9DC8-44F0-84AD-47ADD5340477</a></li>
 <li><a href="https://gitbox.apache.org/repos/asf?p=ant-ivy.git;a=commit;h=2be17bc18b0e1d4123007d579e43ba1a4b6fab3d">https://gitbox.apache.org/repos/asf?p=ant-ivy.git;a=commit;h=2be17bc18b0e1d4123007d579e43ba1a4b6fab3d</a></li>
@@ -150,11 +163,11 @@
 <h2 id="CVE-2022-37866">Apache Ivy allows path traversal in the presence of a malicious repository</h2>
 <p>CVE-2022-37866 <a href="https://cve.org/CVERecord?id=CVE-2022-37866">[CVE]</a> <a href="./CVE-2022-37866.cve.json">[CVE json]</a> <a href="./CVE-2022-37866.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-11-07T13:15:44.826Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache Ivy from 2.0.0 before *</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>When Apache Ivy downloads artifacts from a repository it stores them in
 the local file system based on a user-supplied &ldquo;pattern&rdquo; that may
 include placeholders for artifacts coordinates like the organisation,
@@ -168,7 +181,7 @@ by the remote repository as Ivy will issue http requests containing &ldquo;..&rd
 sequences and a &ldquo;normal&rdquo; repository will not interpret them as part of
 the artifact coordinates.</p>
 <p>Users of Apache Ivy 2.0.0 to 2.5.1 should upgrade to Ivy 2.5.1.</p>
-<h3 id="references-2">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/htxbr8oc464hxrgroftnz3my70whk93b">https://lists.apache.org/thread/htxbr8oc464hxrgroftnz3my70whk93b</a></li>
 </ul>
@@ -179,11 +192,11 @@ the artifact coordinates.</p>
 <h2 id="CVE-2022-37865">Apache Ivy allows creating/overwriting any file on the system</h2>
 <p>CVE-2022-37865 <a href="https://cve.org/CVERecord?id=CVE-2022-37865">[CVE]</a> <a href="./CVE-2022-37865.cve.json">[CVE json]</a> <a href="./CVE-2022-37865.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-11-07T10:53:07.179Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-4">Affected</h3>
 <ul>
 <li>Apache Ivy from 2.4.0 before *</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-4">Description</h3>
 <p>With Apache Ivy 2.4.0 an optional packaging attribute has been
 introduced that allows artifacts to be unpacked on the fly if they used
 pack200 or zip packaging.</p>
@@ -193,7 +206,7 @@ archive containing absolute paths or paths that try to traverse
 &ldquo;upwards&rdquo; using &ldquo;..&rdquo; sequences can then write files to any location on
 the local fie system that the user executing Ivy has write access to.</p>
 <p>Ivy users of version 2.4.0 to 2.5.0 should upgrade to Ivy 2.5.1.</p>
-<h3 id="references-3">References</h3>
+<h3 id="references-4">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/gqvvv7qsm2dfjg6xzsw1s2h08tbr0sdy">https://lists.apache.org/thread/gqvvv7qsm2dfjg6xzsw1s2h08tbr0sdy</a></li>
 </ul>
@@ -204,16 +217,16 @@ the local fie system that the user executing Ivy has write access to.</p>
 <h2 id="CVE-2021-36374">Apache Ant ZIP, and ZIP based, archive denial of service vulnerability</h2>
 <p>CVE-2021-36374 <a href="https://cve.org/CVERecord?id=CVE-2021-36374">[CVE]</a> <a href="./CVE-2021-36374.cve.json">[CVE json]</a> <a href="./CVE-2021-36374.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2021-07-19T07:37:04.488Z</em></p>
-<h3 id="affected-4">Affected</h3>
+<h3 id="affected-5">Affected</h3>
 <ul>
 <li>Apache Ant from 1.4 before Apache Ant*</li>
 <li>Apache Ant from Apache Ant 1.9.x through 1.9.15</li>
 <li>Apache Ant from Apache Ant 1.10.x through 1.10.10</li>
 </ul>
-<h3 id="description-4">Description</h3>
+<h3 id="description-5">Description</h3>
 <p>When reading a specially crafted ZIP archive, or a derived formats, an Apache Ant build can be made to allocate large amounts of memory that leads to an out of memory error, even for small inputs. This can be used to disrupt builds using Apache Ant.</p>
 <p>Commonly used derived formats from ZIP archives are for instance JAR files and many office files.  Apache Ant prior to 1.9.16 and 1.10.11 were affected.</p>
-<h3 id="references-4">References</h3>
+<h3 id="references-5">References</h3>
 <ul>
 <li><a href="https://ant.apache.org/security.html">https://ant.apache.org/security.html</a></li>
 <li><a href="https://lists.apache.org/thread.html/rdd5412a5b9a25aed2a02c3317052d38a97128314d50bc1ed36e81d38%40%3Cuser.ant.apache.org%3E">https://lists.apache.org/thread.html/rdd5412a5b9a25aed2a02c3317052d38a97128314d50bc1ed36e81d38%40%3Cuser.ant.apache.org%3E</a></li>
@@ -225,16 +238,16 @@ the local fie system that the user executing Ivy has write access to.</p>
 <h2 id="CVE-2021-36373">Apache Ant TAR archive denial of service vulnerability</h2>
 <p>CVE-2021-36373 <a href="https://cve.org/CVERecord?id=CVE-2021-36373">[CVE]</a> <a href="./CVE-2021-36373.cve.json">[CVE json]</a></p>
 <p><em>Last updated: 2021-07-14T06:08:32.303Z</em></p>
-<h3 id="affected-5">Affected</h3>
+<h3 id="affected-6">Affected</h3>
 <ul>
 <li>Apache Ant from Apache Ant 1.9.x through 1.9.15</li>
 <li>Apache Ant from Apache Ant 1.10.x through 1.10.10</li>
 <li>Apache Ant from Apache Ant before 1.9.0 unaffected</li>
 </ul>
-<h3 id="description-5">Description</h3>
+<h3 id="description-6">Description</h3>
 <p>When reading a specially crafted TAR archive an Apache Ant build can be made to allocate large amounts of memory that finally leads to an out of memory error, even for small inputs. This can be used to disrupt builds using Apache Ant.
 Apache Ant prior to 1.9.16 and 1.10.11 were affected.</p>
-<h3 id="references-5">References</h3>
+<h3 id="references-6">References</h3>
 <ul>
 <li><a href="https://ant.apache.org/security.html">https://ant.apache.org/security.html</a></li>
 <li><a href="https://lists.apache.org/thread.html/r54afdab05e01de970649c2d91a993f68a6b00cd73e6e34e16c832d46%40%3Cuser.ant.apache.org%3E">https://lists.apache.org/thread.html/r54afdab05e01de970649c2d91a993f68a6b00cd73e6e34e16c832d46%40%3Cuser.ant.apache.org%3E</a></li>
