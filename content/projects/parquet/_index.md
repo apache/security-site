@@ -18,6 +18,31 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## File-controlled KMS URL is forwarded to pluggable KmsClient that skips host validation ## { #CVE-2026-73334 }
+
+CVE-2026-73334 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73334) [\[CVE json\]](./CVE-2026-73334.cve.json) [\[OSV json\]](./CVE-2026-73334.osv.json)
+
+
+
+_Last updated: 2026-09-09T10:48:34.905Z_
+
+### Affected
+
+* Apache Parquet Hadoop from 1.12 through 1.18.0
+
+
+### Description
+
+Potential problem for users of the&nbsp;org.apache.parquet.crypto.keytools package in Apache Parquet, versions 1.12 to 1.18. <br>This package enables users to encrypt Parquet files via an envelope encryption mechanism that wraps (encrypts) data keys via a Key Management Service (KMS).&nbsp;<br>On the reader side, the KMS URL can be application-controlled or file-controlled.<br><span>If the user does not leverage application control for this parameter, a file-controlled KMS URL is forwarded to a pluggable KmsClient implementation. <br>If the pluggable implementation does not perform host validation, a KMS token can be sent to a malicious host set by an attacker in the file.<br><br></span>Before the problem is fixed, users are recommended to&nbsp;leverage application control for KMS URL parameter in readers (versions 1.12-1.18).<br>After the problem is fixed (presumably in version 1.19), the upgrade will disable file-controlled KMS URL by default. Users of the KMS URL parameter&nbsp;<br>will have two options then:&nbsp;leverage application control for KMS URL parameter in readers, or enable file-controlled&nbsp;KMS URL (via a new app parameter).<br>The latter option will explicitly require (in the new parameter documentation) to validate the KMS URL and use authentication in the custom implementation of the KMS client plug in.
+
+### References
+* https://lists.apache.org/thread/ro2vomk9xxhv34xhvopgys96c9j8ojm0
+
+
+### Credits
+* n0mi1k (finder)
+
+
 ## Potential malicious code execution from trusted packages in the parquet-avro module when reading an Avro schema from a Parquet file metadata ## { #CVE-2025-46762 }
 
 CVE-2025-46762 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-46762) [\[CVE json\]](./CVE-2025-46762.cve.json) [\[OSV json\]](./CVE-2025-46762.osv.json)

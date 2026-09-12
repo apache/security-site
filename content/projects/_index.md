@@ -78,6 +78,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Allura)
   - Advisories (experimental):\
     [security.apache.org](/projects/allura/)
+  - Security model:
+    - [Apache Allura security model](https://github.com/apache/allura/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/ambari/default.png" alt="" loading="lazy"> **Apache Ambari**
   - **Security contact:**\
     [security@ambari.apache.org](mailto:security@ambari.apache.org?subject=Ambari)
@@ -242,8 +244,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Camel)
   - Advisories (experimental):\
     [security.apache.org](/projects/camel/)
-  - Security model:
+  - Security models:
     - [Apache Camel security model](https://camel.apache.org/manual/security-model.html)
+    - [Apache Camel K security model](https://github.com/apache/camel-k/blob/main/docs/threat-model.md)
+    - [Apache Camel Kafka Connector security model](https://camel.apache.org/camel-kafka-connector/next/security-model.html)
+    - [Apache Camel Kamelets security model](https://camel.apache.org/camel-kamelets/next/security-model.html)
+    - [Apache Camel Karaf security model](https://github.com/apache/camel-karaf/blob/main/docs/modules/ROOT/pages/security-model.adoc)
+    - [Apache Camel Quarkus security model](https://camel.apache.org/camel-quarkus/next/user-guide/security-model.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/carbondata/default.png" alt="" loading="lazy"> **Apache Carbondata**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Carbondata)
@@ -339,8 +346,9 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=CXF)
   - Advisories (experimental):\
     [security.apache.org](/projects/cxf/)
-  - Security model:
+  - Security models:
     - [Apache CXF security model](https://github.com/apache/cxf/blob/main/THREAT_MODEL.md)
+    - [Apache CXF Fediz security model](https://github.com/apache/cxf-fediz/blob/main/THREAT_MODEL.md)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="D">
@@ -391,8 +399,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Directory)
   - Advisories (experimental):\
     [security.apache.org](/projects/directory/)
-  - Security model:
+  - Security models:
     - [Apache Directory security model](https://github.com/apache/directory-server/blob/master/THREAT_MODEL.md)
+    - [Apache Directory SCIMple security model](https://github.com/apache/directory-scimple/blob/develop/THREAT_MODEL.md)
+    - [Apache Fortress Web security model](https://github.com/apache/directory-fortress-commander/blob/master/README-SECURITY-MODEL.md)
+    - [Apache Fortress Rest security model](https://github.com/apache/directory-fortress-enmasse/blob/master/README-SECURITY-MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/dolphinscheduler/default.png" alt="" loading="lazy"> **Apache DolphinScheduler**
   - **Security contact:**\
     [security@dolphinscheduler.apache.org](mailto:security@dolphinscheduler.apache.org?subject=DolphinScheduler)
@@ -509,7 +520,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=FreeMarker)
   - Advisories (experimental):\
-    none so far
+    [security.apache.org](/projects/freemarker/)
   - Security models:
     - [Apache FreeMarker security model](https://github.com/apache/freemarker/security/policy)
     - [Apache FreeMarker Online Tester security model](https://github.com/apache/freemarker-online-tester/security/policy)
@@ -679,8 +690,13 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@iceberg.apache.org](mailto:security@iceberg.apache.org?subject=Iceberg)
   - Advisories (experimental):\
     none so far
-  - Security model:
+  - Security models:
     - [Apache Iceberg security model](https://github.com/apache/iceberg/blob/main/SECURITY-THREAT-MODEL.md)
+    - [Apache Iceberg C++ security model](https://github.com/apache/iceberg-cpp/blob/main/SECURITY-THREAT-MODEL.md)
+    - [Apache Iceberg Go security model](https://github.com/apache/iceberg-go/blob/main/SECURITY-THREAT-MODEL.md)
+    - [Apache Iceberg Python security model](https://github.com/apache/iceberg-python/blob/main/SECURITY-THREAT-MODEL.md)
+    - [Apache Iceberg Rust security model](https://github.com/apache/iceberg-rust/blob/main/SECURITY-THREAT-MODEL.md)
+    - [Apache Iceberg Terraform security model](https://github.com/apache/iceberg-terraform/blob/main/SECURITY-THREAT-MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/iggy/default.png" alt="" loading="lazy"> **Apache Iggy (Incubating)**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Iggy%20%28Incubating%29)
@@ -693,8 +709,9 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@ignite.apache.org](mailto:security@ignite.apache.org?subject=Ignite)
   - Advisories (experimental):\
     [security.apache.org](/projects/ignite/)
-  - Security model:
-    - [Apache Ignite security model](https://ignite.apache.org/docs/ignite3/3.1.0/understand/architecture/security#security-model)
+  - Security models:
+    - [Apache Ignite security model](https://ignite.apache.org/docs/latest/security/security-model)
+    - [Apache Ignite 3 security model](https://ignite.apache.org/docs/ignite3/3.1.0/understand/architecture/security#security-model)
 - <img class="project-logo" src="https://www.apache.org/logos/res/impala/default.png" alt="" loading="lazy"> **Apache Impala**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Impala)
@@ -811,8 +828,9 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Kvrocks)
   - Advisories (experimental):\
     [security.apache.org](/projects/kvrocks/)
-  - Security model:
+  - Security models:
     - [Apache Kvrocks security model](https://github.com/apache/kvrocks/blob/unstable/THREAT_MODEL.md)
+    - [Apache Kvrocks Controller security model](https://github.com/apache/kvrocks-controller/blob/unstable/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/kylin/default.png" alt="" loading="lazy"> **Apache Kylin**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Kylin)
@@ -925,6 +943,10 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Mynewt)
   - Advisories (experimental):\
     [security.apache.org](/projects/mynewt/)
+  - Security models:
+    - [Apache Mynewt security model](https://github.com/apache/mynewt-core/blob/master/THREAT_MODEL.md)
+    - [Apache NimBLE security model](https://github.com/apache/mynewt-nimble/blob/master/THREAT_MODEL.md)
+    - [Apache mcumgr security model](https://github.com/apache/mynewt-mcumgr/blob/master/THREAT_MODEL.md)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="N">
@@ -975,8 +997,10 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=OpenDAL)
   - Advisories (experimental):\
     none so far
-  - Security model:
+  - Security models:
     - [Apache OpenDAL security model](https://github.com/apache/opendal/blob/main/SECURITY-THREAT-MODEL.md)
+    - [Apache OpenDAL Oli security model](https://github.com/apache/opendal-oli/blob/main/THREAT_MODEL.md)
+    - [Apache OpenDAL Reqsign security model](https://github.com/apache/opendal-reqsign/blob/main/THREAT_MODEL.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/openjpa/default.png" alt="" loading="lazy"> **Apache OpenJPA**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=OpenJPA)

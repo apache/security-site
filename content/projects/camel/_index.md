@@ -11,12 +11,83 @@ Do you want disclose a potential security issue for Apache Camel? Send your repo
 You can read more about the security policy on:
 
 - [Apache Camel security model](https://camel.apache.org/manual/security-model.html)
+- [Apache Camel K security model](https://github.com/apache/camel-k/blob/main/docs/threat-model.md)
+- [Apache Camel Kafka Connector security model](https://camel.apache.org/camel-kafka-connector/next/security-model.html)
+- [Apache Camel Kamelets security model](https://camel.apache.org/camel-kamelets/next/security-model.html)
+- [Apache Camel Karaf security model](https://github.com/apache/camel-karaf/blob/main/docs/modules/ROOT/pages/security-model.adoc)
+- [Apache Camel Quarkus security model](https://camel.apache.org/camel-quarkus/next/user-guide/security-model.html)
 
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
+
+## Camel K Builder trait mavenProfiles ValueSources resolve tenant-named secrets in operator namespace ## { #CVE-2026-80354 }
+
+CVE-2026-80354 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-80354) [\[CVE json\]](./CVE-2026-80354.cve.json) [\[OSV json\]](./CVE-2026-80354.osv.json)
+
+
+
+_Last updated: 2026-09-10T07:43:22.127Z_
+
+### Affected
+
+* Apache Camel K from 2.0.0 before 2.9.3
+* Apache Camel K from 2.10.1 before 2.10.2
+
+
+### Description
+
+<p>Authorization bypass through User-Controlled key vulnerability in Apache Camel K.</p><p>An authorization vulnerability in custom resource resolution allows a tenant to reference secrets by name in the operator namespace, potentially exposing secrets belonging to other tenants or operator components.</p><p>This issue affects Apache Camel K: from 2.0.0 before 2.9.3, from 2.10.1 before 2.10.2.</p><p>Users are recommended to upgrade to version 2.9.3, 2.10.2 or 2.11.0, which fixes the issue.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-80354.html
+
+
+## Camel K Master trait serviceAccountName YAML injection lets CR author apply arbitrary objects ## { #CVE-2026-80352 }
+
+CVE-2026-80352 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-80352) [\[CVE json\]](./CVE-2026-80352.cve.json) [\[OSV json\]](./CVE-2026-80352.osv.json)
+
+
+
+_Last updated: 2026-09-10T07:41:32.066Z_
+
+### Affected
+
+* Apache Camel K from 2.0.0 before 2.9.3
+* Apache Camel K from 2.10.1 before 2.10.2
+
+
+### Description
+
+<p>Improper Control of Generation of Code ('Code Injection') vulnerability in Apache Camel K.</p><p>A YAML injection vulnerability in custom resource configuration allows an authorized CR author to inject arbitrary Kubernetes objects, potentially enabling unauthorized resource creation with the privileges of the operator.</p><p>This issue affects Apache Camel K: from 2.0.0 before 2.9.3, from 2.10.1 before 2.10.2.</p><p>Users are recommended to upgrade to version 2.9.3, 2.10.2 or 2.11.0, which fixes the issue.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-80352.html
+
+
+## Camel K Tenant repositories reach Maven execution inside operator pod ## { #CVE-2026-80351 }
+
+CVE-2026-80351 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-80351) [\[CVE json\]](./CVE-2026-80351.cve.json) [\[OSV json\]](./CVE-2026-80351.osv.json)
+
+
+
+_Last updated: 2026-09-10T07:42:56.372Z_
+
+### Affected
+
+* Apache Camel K from 2.0.0 before 2.9.3
+* Apache Camel K from 2.10.1 before 2.10.2
+
+
+### Description
+
+<p>Improper neutralization of directives in dynamically evaluated code ('eval injection') vulnerability in Apache Camel K.</p><p>An improper neutralization of directives in dynamically evaluated Maven configuration allows tenant-controlled repository content to influence code execution within the operator pod, potentially enabling tenants to execute arbitrary code with the privileges of the operator.</p><p>This issue affects Apache Camel K: from 2.0.0 before 2.9.3, from 2.10.1 before 2.10.2.</p><p>Users are recommended to upgrade to version 2.9.3, 2.10.2 or 2.11.0, which fixes the issue.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-80351.html
+
 
 ## Camel-Undertow: the endpoint discarded the undertow-specific header filter strategy in favour of the base HTTP one, so the undertow filtering never ran on endpoint-configured routes ## { #CVE-2026-78329 }
 

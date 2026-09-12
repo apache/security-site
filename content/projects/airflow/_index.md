@@ -18,6 +18,35 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## FAB Azure AD OAuth: id_token issuer/audience not validated — cross-tenant authentication bypass ## { #CVE-2026-75156 }
+
+CVE-2026-75156 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-75156) [\[CVE json\]](./CVE-2026-75156.cve.json) [\[OSV json\]](./CVE-2026-75156.osv.json)
+
+
+
+_Last updated: 2026-09-08T16:46:40.725Z_
+
+### Affected
+
+* Apache Airflow FAB provider from 3.7.3 before 3.8.1
+
+
+### Description
+
+Apache Airflow FAB provider versions 3.7.3 through 3.8.0 do not validate the issuer or audience of Azure AD `id_token`s during OAuth login. Deployments are affected only when the FAB auth manager is configured with Azure AD as an OAuth provider. Because the signing keys are fetched from Microsoft&#x27;s **multi-tenant** JWKS endpoint, an `id_token` minted in *any* Azure tenant — including one the attacker creates — passes signature verification, and the username and role assignments are then read from that attacker-controlled token. Anyone able to register an Azure tenant can therefore authenticate to the Airflow UI with no prior access to the deployment.<br><br>The fix for **CVE-2026-59243** was incomplete, and this advisory closes the remaining gap: that fix made the provider verify the `id_token` signature, but did not add issuer or audience checks. Operators who already applied the CVE-2026-59243 fix are **still affected and must upgrade again** — 3.7.3 is the release that shipped that fix, so every version containing it falls inside this affected range. Upgrade to apache-airflow-providers-fab `3.8.1` or later.
+
+### References
+* https://github.com/apache/airflow/pull/71735
+* https://lists.apache.org/thread/n3l6z4jfdxj4p0t8l7m6olkq6xsc6f76
+* https://www.cve.org/CVERecord?id=CVE-2026-59243
+
+
+### Credits
+* Roberto Nunes (finder)
+* NEO AI Engineer (@neo-ai-engineer, ProjectDiscovery) (tool)
+* Jarek Potiuk (remediation developer)
+
+
 ## Cross-team authorization bypass in the asset materialization and dag-run result endpoints ## { #CVE-2026-68971 }
 
 CVE-2026-68971 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68971) [\[CVE json\]](./CVE-2026-68971.cve.json) [\[OSV json\]](./CVE-2026-68971.osv.json)
@@ -493,7 +522,7 @@ CVE-2026-58065 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58065) [\[CVE jso
 
 
 
-_Last updated: 2026-07-19T16:29:11.369Z_
+_Last updated: 2026-09-07T14:41:08.735Z_
 
 ### Affected
 

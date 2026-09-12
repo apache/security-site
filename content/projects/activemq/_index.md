@@ -18,6 +18,36 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Spoofing of RemoveSubscription clientId ## { #CVE-2026-74761 }
+
+CVE-2026-74761 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-74761) [\[CVE json\]](./CVE-2026-74761.cve.json) [\[OSV json\]](./CVE-2026-74761.osv.json)
+
+
+
+_Last updated: 2026-09-09T11:10:04.585Z_
+
+### Affected
+
+* Apache ActiveMQ Broker from 6.0.0 before 6.3.2
+* Apache ActiveMQ Broker before 5.19.11
+* Apache ActiveMQ All from 6.0.0 before 6.3.2
+* Apache ActiveMQ All before 5.19.11
+* Apache ActiveMQ from 6.0.0 before 6.3.2
+* Apache ActiveMQ before 5.19.11
+
+
+### Description
+
+<div>Improper input validation in TopicRegion in Apache ActiveMQ, Apache ActiveMQ Broker, and Apache ActiveMQ All&nbsp;on all platforms.</div><div><br></div><div>An authenticated client can spoof clientId when removing a durable topic subscription.</div><div><p>This issue affects Apache ActiveMQ Broker: before 5.19.11, from 6.0.0 before 6.3.2; Apache ActiveMQ All: before 5.19.11, from 6.0.0 before 6.3.2; Apache ActiveMQ: before 5.19.11, from 6.0.0 before 6.3.2.</p><p>Users are recommended to upgrade to version 6.3.2 or 5.19.11 which fixes the issue.</p></div><div><br></div>
+
+### References
+* https://lists.apache.org/thread/n9md06jo7ccqmj2mntx4kpcl2d5xqntz
+
+
+### Credits
+* Wanxin Yin (yaklang.io) (finder)
+
+
 ## Authorization bypass via temporary composite destinations ## { #CVE-2026-61487 }
 
 CVE-2026-61487 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-61487) [\[CVE json\]](./CVE-2026-61487.cve.json) [\[OSV json\]](./CVE-2026-61487.osv.json)

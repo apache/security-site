@@ -8,10 +8,115 @@ layout: single
 
 Do you want disclose a potential security issue for Apache Allura? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Allura).
 
+You can read more about the security policy on:
+
+- [Apache Allura security model](https://github.com/apache/allura/security/policy)
+
+
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
+
+## Information exposure via search ## { #CVE-2026-81270 }
+
+CVE-2026-81270 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-81270) [\[CVE json\]](./CVE-2026-81270.cve.json) [\[OSV json\]](./CVE-2026-81270.osv.json)
+
+
+
+_Last updated: 2026-09-04T06:59:43.722Z_
+
+### Affected
+
+* Apache Allura through 1.20.0
+
+
+### Description
+
+<p>Apache Allura: exposure of non-public information via search.</p><p>This issue affects Apache Allura: through 1.20.0.</p><p>Users are recommended to upgrade to version 1.21.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/xvg5m12k3nngcomfrgvkvdy54srjmtyg
+
+
+### Credits
+* n0mi1k (reporter)
+
+
+## Stored XSS via code repositories ## { #CVE-2026-80190 }
+
+CVE-2026-80190 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-80190) [\[CVE json\]](./CVE-2026-80190.cve.json) [\[OSV json\]](./CVE-2026-80190.osv.json)
+
+
+
+_Last updated: 2026-09-04T07:04:52.220Z_
+
+### Affected
+
+* Apache Allura through 1.20.0
+
+
+### Description
+
+<p>Apache Allura: stored XSS via SVN code repositories.&nbsp; Git repositories are not known to be affected.&nbsp; The vulnerability is likely mitigated via default CSP headers.</p><p>This issue affects Apache Allura: through 1.20.0.</p><p>Users are recommended to upgrade to version 1.21.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/fsj2dgdzskky4wkckhh3fth0ogj5trq2
+
+
+### Credits
+* n0mi1k (reporter)
+
+
+## Server-side request forgery ## { #CVE-2026-80181 }
+
+CVE-2026-80181 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-80181) [\[CVE json\]](./CVE-2026-80181.cve.json) [\[OSV json\]](./CVE-2026-80181.osv.json)
+
+
+
+_Last updated: 2026-09-04T06:52:36.375Z_
+
+### Affected
+
+* Apache Allura through 1.20.0
+
+
+### Description
+
+<p><span>Apache Allura's<span>&nbsp;</span></span><span>webhooks</span><span><span>&nbsp;</span>are vulnerable to Server-Side Request Forgery (SSRF).</span><br></p><p>This issue affects Apache Allura: through 1.20.0.</p><p>Users are recommended to upgrade to version 1.21.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/v4nplqchsmdg9sdhp91f8hn03rlq8y7s
+
+
+### Credits
+* n0mi1k (reporter)
+
+
+## Stored XSS via markdown HTML processing ## { #CVE-2026-80180 }
+
+CVE-2026-80180 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-80180) [\[CVE json\]](./CVE-2026-80180.cve.json) [\[OSV json\]](./CVE-2026-80180.osv.json)
+
+
+
+_Last updated: 2026-09-04T06:50:09.433Z_
+
+### Affected
+
+* Apache Allura through 1.20.0
+
+
+### Description
+
+<p>Stored XSS via markdown HTML processing&nbsp;in Apache Allura.</p><p>This issue affects Apache Allura: from through 1.20.0.</p><p>Users are recommended to upgrade to version&nbsp;1.21.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/rjo2hjhp76qhl9f3br8jq909mohvzkpq
+
+
+### Credits
+* n0mi1k (reporter)
+
 
 ## Unauthenticated REST disclosure ## { #CVE-2026-75099 }
 

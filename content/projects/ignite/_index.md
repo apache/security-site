@@ -10,12 +10,13 @@ Do you want disclose a potential security issue for Apache Ignite? Send your rep
 
 You can read more about the security policy on:
 
-- [Apache Ignite security model](https://ignite.apache.org/docs/ignite3/3.1.0/understand/architecture/security#security-model)
+- [Apache Ignite security model](https://ignite.apache.org/docs/latest/security/security-model)
+- [Apache Ignite 3 security model](https://ignite.apache.org/docs/ignite3/3.1.0/understand/architecture/security#security-model)
 
 
 # Advisories
 
-This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
+This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
 ## REST HTTP arbitrary file read vulnerability ## { #CVE-2025-48977 }
