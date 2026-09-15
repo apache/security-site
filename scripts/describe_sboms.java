@@ -1,6 +1,6 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
 
-//DEPS org.cyclonedx:cyclonedx-core-java:12.2.0
+//DEPS org.cyclonedx:cyclonedx-core-java:13.2.0
 //DEPS org.apache.maven:maven-artifact:3.9.9
 
 import java.io.File;
@@ -163,7 +163,7 @@ public class describe_sboms {
         } else {
             out.print(" | " + bom.getComponents().size());
             print(bom.getComponents().stream().collect(Collectors.groupingBy(c -> c.getType().getTypeName(), Collectors.counting())), "");
-            print(bom.getComponents().stream().filter(c -> Component.Type.LIBRARY.equals(c.getType()))
+            print(bom.getComponents().stream().filter(c -> Component.Type.LIBRARY.equals(c.getType()) && c.getPurl() != null)
                     .collect(Collectors.groupingBy(c -> extractPurlGroup(c.getPurl()), Collectors.counting())), "- ");
         }
         //out.print("<br>" + ((bom.getDependencies() == null) ? "**NO** " : "") + "deps tree");
