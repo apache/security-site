@@ -9,5 +9,4 @@ httpserver = ahapi.simple(
     log_stdout=True,
 )
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(httpserver.loop())
+asyncio.run(httpserver.loop())
