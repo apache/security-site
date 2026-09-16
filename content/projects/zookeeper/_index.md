@@ -18,6 +18,139 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Operational log forgery via newline injection in EnsembleAuthenticationProvider ## { #CVE-2026-84501 }
+
+CVE-2026-84501 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-84501) [\[CVE json\]](./CVE-2026-84501.cve.json) [\[OSV json\]](./CVE-2026-84501.osv.json)
+
+
+
+_Last updated: 2026-09-16T09:28:09.271Z_
+
+### Affected
+
+* Apache ZooKeeper from 3.9.0 through 3.9.5
+* Apache ZooKeeper from 3.8.0 through 3.8.6
+
+
+### Description
+
+<p>An unauthenticated attacker can inject arbitrary fake log lines into Apache ZooKeeper's operational log by sending a crafted add_auth("ensemble", ...) request containing newline characters (\n). When the ensemble name doesn't match, EnsembleAuthenticationProvider.handleAuthentication() logs the raw, unsanitized name via LOG.warn(). Because SLF4J's {} placeholder preserves embedded newlines, the attacker can forge complete log entries — with arbitrary timestamps, log levels, class names, and messages — that are visually indistinguishable from genuine ZooKeeper log output.<br><span><br>This issue affects Apache ZooKeeper: from 3.9.0 through 3.9.5, from 3.8.0 through 3.8.6.<br></span><span><br>Users are recommended to upgrade to version 3.8.7 or 3.9.6, which fixes the issue.</span></p>
+
+### References
+* https://lists.apache.org/thread/ohby1g6zjt72p0w79rhbr41nczzvr33y
+
+
+### Credits
+* Youlong Chen Institute of Computing Technology <chenyoulong20g@ict.ac.cn> (finder)
+
+
+## Audit log injection via unsanitized output from multiple sources ## { #CVE-2026-84439 }
+
+CVE-2026-84439 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-84439) [\[CVE json\]](./CVE-2026-84439.cve.json) [\[OSV json\]](./CVE-2026-84439.osv.json)
+
+
+
+_Last updated: 2026-09-16T09:27:45.211Z_
+
+### Affected
+
+* Apache ZooKeeper from 3.9.0 through 3.9.5
+* Apache ZooKeeper from 3.8.0 through 3.8.6
+
+
+### Description
+
+<p>When audit logging is enabled (<code>zookeeper.audit.enable=true</code>), an unauthenticated attacker can inject arbitrary fields into Apache ZooKeeper's audit log by sending a digest authentication request with tab characters (<code>\t</code>) embedded in the username. Because the audit log uses tab-separated&nbsp;<code>key=value</code>&nbsp;format, the injected tabs are parsed as legitimate field separators, allowing the attacker to spoof audit results (e.g., injecting&nbsp;<code>result=success</code>), forge operation types, and corrupt forensic evidence.<br><span><br>A log injection vulnerability in Apache ZooKeeper allows a client that can call&nbsp;</span><code>setACL</code><span>&nbsp;</span><span>to inject forged key-value fields into</span><span>&nbsp;</span><code>zookeeper_audit.log</code><span>. When audit logging is enabled, the server serializes attacker-controlled digest ACL ids into the</span><span>&nbsp;</span><code>acl=</code><span>&nbsp;</span><span>audit field without escaping tab characters. Because audit events are emitted as tab-separated</span><span>&nbsp;</span><code>key=value</code><span>&nbsp;</span><span>records, a crafted ACL id can make one successful</span><span>&nbsp;</span><code>setAcl</code><span>&nbsp;</span><span>event appear to contain forged fields such as</span><span>&nbsp;</span><code>operation=delete</code><span>&nbsp;</span><span>and</span><span>&nbsp;</span><code>znode=/forged</code><span>. This undermines the integrity of downstream audit parsing, alerting, and incident response.</span><span><br></span><span><br>This issue affects Apache ZooKeeper: from 3.9.0 through 3.9.5, from 3.8.0 through 3.8.6.<br></span><span><br>Users are recommended to upgrade to version 3.9.6 or 3.8.7, which fixes the issue.</span></p>
+
+### References
+* https://lists.apache.org/thread/b7qnjvqjh393l0j07tmnb5ggg40sx3m6
+
+
+### Credits
+* Youlong Chen Institute of Computing Technology <chenyoulong20g@ict.ac.cn> (reporter)
+
+
+## Missing ACL check on deleteContainer opcode allows unauthorized deletion of any empty persistent/container znode ## { #CVE-2026-79993 }
+
+CVE-2026-79993 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-79993) [\[CVE json\]](./CVE-2026-79993.cve.json) [\[OSV json\]](./CVE-2026-79993.osv.json)
+
+
+
+_Last updated: 2026-09-16T09:27:21.440Z_
+
+### Affected
+
+* Apache ZooKeeper from 3.9.0 through 3.9.5
+* Apache ZooKeeper from 3.8.0 through 3.8.6
+
+
+### Description
+
+<p><span>The `deleteContainer` opcode (0x14/20) is processed without verifying the caller's ACL permissions, allowing any authenticated client to delete specific znodes in the data tree regardless of the ACL restrictions on the znode or its parent. This opcode is considered internal-only and the official client doesn't have API for it, but a&nbsp;</span><span>client that can open a plain TCP session on the ZooKeeper client port (2181 by default)&nbsp;</span><span>- with NO authentication and NO ACL permissions - can delete any</span><span>&nbsp;empty persistent znode (including regular persistent nodes, container&nbsp;</span><span>nodes, and TTL nodes) by issuing the raw protocol OpCode deleteContainer (20).&nbsp;</span><span>The deleteContainer request path completely skips both the session check and&nbsp;</span><span>the DELETE ACL check that are enforced by the regular delete (OpCode 2) path.&nbsp;</span><span>This is an authorization bypass / ACL enforcement bug.<br></span><span><br>This issue affects Apache ZooKeeper: from 3.9.0 through 3.9.5, from 3.8.0 through 3.8.6.<br></span><span><br>Users are recommended to upgrade to version 3.9.6 or 3.8.7, which fixes the issue.</span></p>
+
+### References
+* https://lists.apache.org/thread/9cw3rmrzhqpct26v8j18fy41bghlq8y5
+
+
+### Credits
+* K <sec-reports@outlook.com> (reporter)
+* z f <tinkerzf@gmail.com> (reporter)
+* 布豪 <1958304602@qq.com> (finder)
+
+
+## Improper validation of certificate with host mismatch in FIPS mode ## { #CVE-2026-59969 }
+
+CVE-2026-59969 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59969) [\[CVE json\]](./CVE-2026-59969.cve.json) [\[OSV json\]](./CVE-2026-59969.osv.json)
+
+
+
+_Last updated: 2026-09-16T09:26:59.171Z_
+
+### Affected
+
+* Apache ZooKeeper from 3.9.0 through 3.9.5
+* Apache ZooKeeper from 3.8.0 through 3.8.6
+
+
+### Description
+
+<p>Apache ZooKeeper quorum TLS fails to enforce peer hostname verification in FIPS-mode deployments. When <code>sslQuorum=true</code>, <code>zookeeper.fips-mode=true</code>, <code>ssl.quorum.hostnameVerification=true</code>, and <code>ssl.quorum.clientHostnameVerification=true</code>&nbsp;are enabled, the Java <code>SSLSocket</code>&nbsp;quorum path accepts a CA-trusted peer certificate whose SAN does not match the connected host. A malicious or misissued peer certificate can therefore join quorum traffic, participate in leader election, and enter replication flows.</p><p>Users are recommended to upgrade to version 3.8.7 or 3.9.6, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/qf9kwsgtgbgtvwls6f41281846xg0rss
+
+
+### Credits
+* Erichen <chenyoulong20g@ict.ac.cn> (reporter)
+
+
+## Information disclosure via SetWatches reconnect replay ## { #CVE-2026-59739 }
+
+CVE-2026-59739 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59739) [\[CVE json\]](./CVE-2026-59739.cve.json) [\[OSV json\]](./CVE-2026-59739.osv.json)
+
+
+
+_Last updated: 2026-09-16T09:26:36.333Z_
+
+### Affected
+
+* Apache ZooKeeper from 3.9.0 through 3.9.5
+* Apache ZooKeeper from 3.8.0 through 3.8.6
+
+
+### Description
+
+Information disclosure via SetWatches reconnect replay in Apache ZooKeeper due to missing ACL check.&nbsp;An attacker can discover ACL-restricted paths by registering exists-watches on non-existent paths, then reconnecting after the paths are created with restricted ACLs. Issue is caused by incomplete fix for&nbsp;CVE-2024-23944 (ZOOKEEPER-4799).&nbsp;The fix added ACL checking to WatchManager.triggerWatch(). However, DataTree.setWatches() — the SetWatches/SetWatches2 reconnect replay handler — still calls watcher.process(event) with null ACL, bypassing the check entirely. It's important to note that only the path is exposed by this vulnerability, not the data of znode, but since znode path can contain sensitive information like user name or login ID, this issue is potentially critical.<br><br>Users are recommended to upgrade to version 3.9.6, 3.8.7 which fixes the issue.
+
+### References
+* https://lists.apache.org/thread/v0lrwsbdxvx6w67p3z7fxf3hzyncq55l
+
+
+### Credits
+* NGUYEN HONG QUAN <hongquanvp11@gmail.com> (reporter)
+* n0mi1k <nomilksec@gmail.com> (reporter)
+
+
 ## Sensitive information disclosure in client configuration handling ## { #CVE-2026-24308 }
 
 CVE-2026-24308 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24308) [\[CVE json\]](./CVE-2026-24308.cve.json) [\[OSV json\]](./CVE-2026-24308.osv.json)

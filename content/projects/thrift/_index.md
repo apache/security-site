@@ -476,7 +476,7 @@ CVE-2026-41608 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-41608) [\[CVE jso
 
 
 
-_Last updated: 2026-08-01T15:15:08.921Z_
+_Last updated: 2026-09-14T21:15:42.689Z_
 
 ### Affected
 
