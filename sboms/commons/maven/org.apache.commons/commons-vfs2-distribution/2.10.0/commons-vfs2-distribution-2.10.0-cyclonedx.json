@@ -1,0 +1,4253 @@
+{
+  "bomFormat" : "CycloneDX",
+  "specVersion" : "1.6",
+  "serialNumber" : "urn:uuid:ded10e99-80f2-37fa-b99b-c112ba2d95b3",
+  "version" : 1,
+  "metadata" : {
+    "lifecycles" : [
+      {
+        "phase" : "build"
+      }
+    ],
+    "tools" : {
+      "components" : [
+        {
+          "type" : "library",
+          "author" : "OWASP Foundation",
+          "group" : "org.cyclonedx",
+          "name" : "cyclonedx-maven-plugin",
+          "version" : "2.9.1",
+          "description" : "CycloneDX Maven plugin",
+          "hashes" : [
+            {
+              "alg" : "MD5",
+              "content" : "9c7a565cf28cce58557d0c621c5ea4b1"
+            },
+            {
+              "alg" : "SHA-1",
+              "content" : "be882d5a22050bfa9d19090b1420c188617d0e1c"
+            },
+            {
+              "alg" : "SHA-256",
+              "content" : "698e0f37184a5b28c245c4065fd036dfce253b52f82fbb7113d81d36326cc249"
+            },
+            {
+              "alg" : "SHA-512",
+              "content" : "c0f0b11026858166f872a2eb54719492e5cecaa0bc9cd6b30b3ecb4a174eed220f4a1b5829d18d6734128e778d3cb3db7ffed177c92866133129cb29081814a0"
+            },
+            {
+              "alg" : "SHA-384",
+              "content" : "d80964707dfe5caca8c70521d5066f57589304c0a657e6fbc7c0614ea0fc7b3b3dbe7778361eee0f54ba111e9cb0ffcb"
+            },
+            {
+              "alg" : "SHA3-384",
+              "content" : "80bc3a275d9514bc457461ff52a72add8c7ecbbc01d8912efce57139016c544ee776981851be0a58fa977ab4221f703f"
+            },
+            {
+              "alg" : "SHA3-256",
+              "content" : "142317d6f245390f4fd2d0c100b16281b8dfc5c0c2cff86943bdcc97039cb699"
+            },
+            {
+              "alg" : "SHA3-512",
+              "content" : "af0fb9137c90b65d1a07f72e4d51ae509956cdb8800f35c961b037cdda1fe4a14ce3b496cef71ba85f1621affcfe29cd42704ae4191ff0b090a9602087c8997b"
+            }
+          ]
+        }
+      ]
+    },
+    "component" : {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-distribution@2.10.0?type=pom",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-distribution",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Distribution archives.",
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-distribution@2.10.0?type=pom",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-distribution/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-distribution"
+        }
+      ]
+    },
+    "properties" : [
+      {
+        "name" : "maven.goal",
+        "value" : "makeBom"
+      },
+      {
+        "name" : "maven.scopes",
+        "value" : "compile,provided,runtime,system"
+      },
+      {
+        "name" : "cdx:reproducible",
+        "value" : "enabled"
+      }
+    ]
+  },
+  "components" : [
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "df535626616b23cdb5555c40e556155e"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "a306167fdb88152403c8b00595b1502ffacd5b76"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "adf9dfb77a44f7b6e2dba3779cfa7142ab8a1f618eb7a9741083822e8d14be13"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "c8302e679e0d0f0d9467f263dc37e792f35802e9762f78a7fb5a59108668d3751bc63f415c61e46a4eca409f306091abb6ef8bc95c2bc72807a0f91553195c7a"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "c135ca13ef64d1eaa4bae40f4d5cb44ff028b15fffc68d69d281fb2758fbff1c0731d2438beb9145641b4660b98a0b84"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "8e3d55557ac1f220bdef567f65723cb1131b34c6c585090a08f83af0f75906e1cd6420da361093bd345e3f11a12a6dd5"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "78b4553aaf3cb58558d0a6739b3f6e7bd50911509169eb35d41ed77c151592e5"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "7a53485b995eed3c3f446ba1ddbc599f83bec62a950cb9e870c999e05fa39f8fac514493cfafc910af633cc5d6ab29ec218ac301af70c51475c4bd45bd8a232b"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "commons-logging",
+      "name" : "commons-logging",
+      "version" : "1.3.4",
+      "description" : "Apache Commons Logging is a thin adapter allowing configurable bridging to other, well-known logging systems.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "e7a1e7cb6a89241ed9bfec4c25b6c645"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "b9fc14968d63a8b8a8a2c1885fe3e90564239708"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "bc2dfe32f1ef06509e6a065144c1adf7b420eabf11a87f30bd127f8faa332016"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "102f83e2a274d1ee4b089cf59f9c8d43d65dda6080d108f0589ce807e142a68129e2e55b249088da2e753e9bfe0bbc39a3dc90661cd357f2d0d177a010c9a5c9"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "674aed20a02e029060e5ea27c7b2a8be5efd822aa9bfaff9ae90ca9f19e29b572aed5c5d83a949d24fb66079b2331541"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "c82454e0084203b76ded77d142f6b3e20622dbfd16049c7052c3f287b0396853f1420207b3f39ea9195639f4c443618d"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "5b0dd398f23ef580c65f252b1016acea846bd251cfc25205adeabe36e2d13ace"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "7595f0d87790488608b979eeb9f49c4430ba5f2bb1de20bfb37e49eb46d70dcf2474f4ba9dd07a0408bf302e90ed27d5a94d34414fa08464fec064084794c890"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-logging/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/LOGGING"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf/commons-logging"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-lang3",
+      "version" : "3.17.0",
+      "description" : "Apache Commons Lang, a package of Java utility classes for the classes that are in java.lang's hierarchy, or are considered to be so standard as to justify existence in java.lang. The code is tested using the latest revision of the JDK for supported LTS releases: 8, 11, 17 and 21 currently. See https://github.com/apache/commons-lang/blob/master/.github/workflows/maven.yml Please ensure your build environment is up-to-date and kindly report any build issues.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "7730df72b7fdff4a3a32d89a314f826a"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "b17d2136f0460dcc0d2016ceefca8723bdf4ee70"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "6ee731df5c8e5a2976a1ca023b6bb320ea8d3539fbe64c8a1d5cb765127c33b4"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "dfd5ff7fe7f852b9caabc81e5a00e20616f98405085f059b64dc2121feb5fa6cb327e11a3d2f954c079811c31f6fd484e90f932d45078796fbfa7dbf1f1eb5aa"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "c6ed55a5c2b05332890a43a3ea73b30f42dc23c92ebd054a8b0d29ca8f49fb9361f7325cfa90715be457804b087221b5"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "bb9e148a87928c3053bcccee361d5d8d81b3c6ea41a390d96c615afd242409f909361c945f3b4238a297e4ebb2ed413b"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "f28f34565f25dd65fd1a47916e917df9e3ff2c6721897ea57391a238227c96a2"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "4c8e7a5f10d091bb240e7eb59287d0e4e4420e7a2d2be2b8060111e479540ffae89040377c99ec7f458cd54e1ac0ed0778951cd1f34d5d90571b8a303fbb9baf"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-lang/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/LANG"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-lang.git"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/commons-io/commons-io@2.18.0?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "commons-io",
+      "name" : "commons-io",
+      "version" : "2.18.0",
+      "description" : "The Apache Commons IO library contains utility classes, stream implementations, file filters, file comparators, endian transformation classes, and much more.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "8cce74ccf461cd6502ae04c908eca917"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "44084ef756763795b31c578403dd028ff4a22950"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "f3ca0f8d63c40e23a56d54101c60d5edee136b42d84bfb85bc7963093109cf8b"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "786778529435d8a14ab6ce2176cdf2b9ee6585a71893b785f26257122166dcefc7c4af3f612eda3974b06c16d06fc357178bf28b9b74010e9bc04c33221adc2f"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "4be7ad9b352412ddad3eb00f2e44f1236216d3e713546d34d71f3aa8e589b06636abf22dad0c28e11a0cd7b54ea0496a"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "d003d33c2cd37806d9d8f0576b65fd51fc1f02bfed7716279474556ef98abfaaddb5b5622762b64458bec6b57f77ceca"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "89019fd824ce65aa33554a848dce2ca47f09c3a261fd22c699342d99579e91d9"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "6edaba8f76bd3e96421ae3611fb32414b064c5ef2fdefd7402f3052c5849e06aa6dfdd218a6df97b25cdd7997df0c9d643af960c4294f2e89dffb052b4b9d8cd"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/commons-io/commons-io@2.18.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-io/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/IO"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-io.git"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?classifier=sources&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "5551c0c45e149b0b33238835f641a623"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "8ee4df022b06e80f15c77f8b41b20dfbaf732f7f"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "8a87831e1bebbb78ed537770ee1aa623db656c1509f92284cbcaa4266525ab7f"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "d78710596a0d47f307248c7f44693d43bb6c7bc27453e2ee7e1faf76e045cd5e1f42fff20a1339095081acb79ad43429c83f56949d87b3b9b6970b3a5cc8bb4b"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "c7948d7def0c02e9d0d89bc1491071678dc6553b8ab0737dac25f82f74871090dc456e04f8e5babc8dcfe09e3421e521"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "6b58f28f863089f2af1c1268dd5da08252e1bcb8f9d9a5f0c49961a199d5bc630bc61bd82073938540e670ce822b6bc6"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "a5764d5ceb18d8dbca2c3c144b107215aca656d6fbcb632b619d66e34cc472cb"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "54a7c69734bce5d5f0b928d40082788fcc8b30cea4025528b2c4d52c9b6aa19a01d8f87f8613a7c3d6b0e9038bc864cc9b0e06e3e7011699f4f77095ed7eeb51"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?classifier=sources&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?classifier=javadoc&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "8947dadc06c324be85a6e634b1e2de2d"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "1f0fc1088905c434428f8112c82baaefd8f78772"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "e98e2678292b810eff931b376fcf8c2617050fe03140414b256bf3be0993488f"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "11425406a418e86bca0ebf69e5e35047ae37caf36237aa355ebf766a1d29b2b23ab50fb139f3497edac5b9cdffc32abe756ae7c856db1452c7079dcc444899d3"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "1c945a6406cb95dffbb63c070d7f1de5ce4315cdef2d9e49026e22fb4ae7464be222b156b6f0cc39e1a8f42039fe813e"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "87ac301f0e2b71bf27587d6477cb0dea70a919c879500a9b36aceee46cca54a7dac955ffd9551392d8f4d872ff621b04"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "5a86928e3c9472c5c96cb99339dfcaa2764c12b13f18d7d43f0a811acc875995"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "0f13e3623a05a3ede47e638c68037c882c2504907df034a4aaf6efeaae5aa123e06de01f8dda58b9acfcd085f219dd9defd71534988de4ca634e4d91ea8a9fdc"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?classifier=javadoc&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?classifier=tests&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "c9c747cc666287212121b733bb122d8e"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "fc466d24614de4f7de63baa040c5efa39f1c629b"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "6cc6533a0185da78c6a579fcf78eccbe5c0d4470d832948324d8c2a9831c41fc"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "029e07ffc4d50e95c623f9889584fa68c6fd0cc96cdb6f97a6893ceaf4dd987f9d3b96ff55377d0a0f9854608d764a0e4b22eeea231d11cdde3468c217724b14"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "2e228b2008a9647644ee6537fbe5cb2d3d22e50d9a9fa5b9a6019e639773652c5dc7a2383bb32e76608583219b5bb36e"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "a28c90810eb47c8826aed35d43e9ec065c3fb825daf62aa7eb43d9013c31610ec04f10d0745d597b12abecea4717e0e6"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "02983fbb6582444875242026bd49325cce0100c527cc863918eed8c94568148f"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "6f9972e0fb39a7a9484fb4baaaaa7064893f9c817b24cb4c662d146ec3afbbdaf600e2cc3a62c31698f4cae91a81fe1875f630aac67b1fe37796c3f8c3713dc7"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?classifier=tests&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?classifier=test-sources&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "562a0d98050796dbd3833e69dbb224b7"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "2834ea660c244d34e3c4d26e01be41697a3dcf88"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "d7222e59c2bf0844c77d979dfcaa5f1130e3fcfd581956cb69120d4c4bb330fc"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "ee8efbe4eedd19d0165b335cc57f938318bcc3b0b2b3cae161116ce06cbfd27bf393453c4dc39b6df0a466698e87c39784c51abc8c70d09972d9ec8948020b39"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "06441d9ffa0f3b937525fa32e6587ea9b8df12f397f4f8b0d268d430d44f3194ca7ca852146cc31f466b797cf67c0589"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "d9bf504a5b2e5cb339bc73202b3478f229a9d3d603a9e674e749a5b7d0925193f22f0df997674e7a7ddfb2b7943e3612"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "f91fa589b7a6e3799beda0ca65859149891e5d7984896f925bc73ab80af3a05a"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "974c8a2b72cb1cdb0584b22e5db53ae3b2345c04bc2013ce7df749c98eea00dee9fc4d163888f59aa31a9ced0410590dd9ae931ba5a4256805a677851375ca7a"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?classifier=test-sources&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-ant",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS Ant Tasks.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "554481d49ea9eefbf69653d9a65e3524"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "5fddcca84a523dbe76efe52108a7c1f14b5dc96f"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "f8cf327de45b6da525339640b182b0246444ba70551e4e74a52d67e3b6d73d62"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "4a09d333483df8de8be09bebd73bb068738485cbe558879ec8cb1270ecdffb08801bd2e9d9face378f924fb0b81c57844a578d9c2cac710d987d61d57990a1c5"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "d5aa919448f42d2d45c9570df1b7cee64a4135e21b00e040fefbfbadadac6a0b0c632b812f28849d066af372f193c3f5"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "0298fef9ccd49b810a0483d68deab29ab266a9f7512fbba0568a68f309f1888bf8387be84b5586c5f40d14f88fb6b499"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "ec0446b1394dfba4257d83ccd6ce22aa1c9f8beb502d04bddae86b19ec9b1fc5"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "4270a797bc37a32a8d9d4cd0fd80a71bd5bbc2aa045638aee89edda73e0827b3fb52a3cebbe5e086e04e594062165c711fab3cb44be096f81e8d7da470109598"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-ant/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-ant"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.ant/ant@1.10.15?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.ant",
+      "name" : "ant",
+      "version" : "1.10.15",
+      "description" : "master POM",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "688b6e5ca5900863c26af4fe4ee7e924"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "da854f5503ee061a5a3b2cfcbe98ee27aa4a5ef9"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "763acda4a69588c9ea8817a952851ff0c2fc4bffa1d081c2565dc407f29d5794"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "d5109838090a4463098c4a82c171d07b92d42633010e045388fb8a68744fdcdd2b07a75a9fb56783e83ecbcc80664119ccc44537993125d6724956e114508316"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "346e03bb241031fbb3941463cdbbe5a8bca2ca72e34a8ae01959891f963ca5c789cd9f5b4b743539b1fececebeb0d25a"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "9cdc37dce024e2ca15b5a6e47725964bfa6b20c1772969017a093d29e144135a75842a0716bf597acd12b4fbd5882e57"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "c3f3875aa7a96132ca860e8a297b33e7fe36b0c9ccbcc31ae931936f8687a3eb"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "beacff02db1fd51c1758511998e873d2c54e27d811fb51812bdc1f28b470f989a7adf762110900d0388864d10cc98cbc3c9e5fc9a6224b1137d55d00351c0c8e"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.ant/ant@1.10.15?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://ant.apache.org/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://builds.apache.org/job/Ant-Build-from-POMs/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://nowhere.net/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/bugzilla/"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/ant-dev"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf/ant.git/ant"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.ant/ant-launcher@1.10.15?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.ant",
+      "name" : "ant-launcher",
+      "version" : "1.10.15",
+      "description" : "master POM",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "32e60fe28d324dc9cd7ffbc29f8f3730"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "81431ce614ae38b187de683381f4a35a1db3b1c6"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "5c8551990307a032336d98ddaed549a39a689f07d4d4c6b950601bf22b3d6a1b"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "6fc2b33cde07493704c201b759e6813ba5f60ffd3925a52bb097a7fffedbc950bcc4fbc93fe0a86ec2a41872b16b92868b6be87632d3e8e0dc89a5b4143ccb9e"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "d03acc5fc0bf3049a7a21bb27ebf6c457ce6907b73f2eeb7278b8a98fb41b87fb9f59e516572a73417ef15e58bdb4640"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "debecd815ae9b5b8ec22f401088c7178bda2fe835e4cf26147bdc90d0275b9b111907966140b3684e49c9ca3a576345a"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "1f7d41e186067ecb6160b8f72794c7befed5651b5d1cc673e05b136746fdd602"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "13fb946ae1f02b82c2cfb364e4ea27ad21ac3bb41c178865bc1aca6ee2ccbbbed7450811eab52fe647b6593e4b9b40264250ef79d2de19218c1fe90f6bbb9196"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.ant/ant-launcher@1.10.15?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://ant.apache.org/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://builds.apache.org/job/Ant-Build-from-POMs/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://nowhere.net/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/bugzilla/"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/ant-dev"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf/ant.git/ant-launcher"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?classifier=sources&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-ant",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS Ant Tasks.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "61c90000e754ee8eba5fba4059f2c2a1"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "412669b027688c9fc654ddb9fef25ed5003213be"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "05f93214b1977984dbd62555add63b60155e0f17c15f7c558629b3b7735f8128"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "bae4894fd92295438afca837ce54f57ea34670df10549f59e9fb96a48affef9947eaf7c4bde66edf0703e4c3f8f06caf4df6231f269eb6cd9cb5ad226ebc13f4"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "2eefa6af32ed1790365f8aeb28a77741fed4bd03c695b73cc35c6e36abe3b7eb8fee948f1151c4dd8d96a86ad298ae6d"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "f927c36057bb73e0ce9217673791ce5d943dc7059fb5312e7ffc1706c6de99d896a22ac3ebaf484419c5e5c5ceb89ec3"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "583c17bcc74d5cec20bdfd339d19d2e09c0717f546853925d326ccca6e675651"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "a727b651000304659472a62b0b6aa01a7a844d8882a0c07bcfc343b9e4ca4a3abba01191b0b95460411bd5b4de54db447f7b87b6d1881ac5967849664210fb9b"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?classifier=sources&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-ant/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-ant"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?classifier=javadoc&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-ant",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS Ant Tasks.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "14cd3275e17b4273f2ab22ccb846678a"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "f538070c5dc44a6f81c5f87e6314880c2ce66d6b"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "c4956789424a378dde89c9dd247e0345df8baeb1d82da17124e6f4b84203806c"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "5c31f1ea3853bfa913ba6793c209b4bbf1f72d25e7d31777439d64804e93628d482890c803abd4ad2a0a066163871eace8305ed9f286fbfc9ee96dae817120d8"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "997d669366c444f259129f1b4dffb0c57af37a60a05e8857bcdacc4bf2618083008c9eb173f14f46a1180f23f8ae09cd"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "aea45b9cb4b74d482a8c1efd881fa0be3f45861872abdbe3d2e21d13d0c89f1a9b4658591c8e1a9b649a296dfc5b3f31"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "a0ce547557096568e70f82146503b6947e60ceb520df469e9de9032b5d283884"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "e002d7b20b123919f2410a41aa7f25f5c124cb07c3bfe955900c632a5c0ab05d6bf96c15b307670206dd2957565373e79c9614340df3be2cc18a0b719254c338"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?classifier=javadoc&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-ant/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-ant"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?classifier=tests&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-ant",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS Ant Tasks.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "71c9746bb7d6059e09dcf229d20d2c67"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "4984e57a8b825a26e1a4dca3db5e9cd1ca170026"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "57c73f41d8f712a112ba5d187fa2c197817a52f73235387b08f05b9c470c506d"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "5f7173b730e6305646e6d915c01bd01e09a21333d7175e5893e2b252f13369b70fac90a9053908b6a1f852abe6a2731eb3676a20a0623527d34390ca7e7ad5c2"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "7f6407b85ec7f6e999718d4107f1dc61c0ab3be8c45c93a116f3aaf596a04bc4c3c244907eacbef1e43a749996450fd6"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "6aa8a454d32c2d51df25022843d9f01826ff611b30ddd9b9f837a5effb549cfc9cf8a21e782c91f8ed378d29bc5459a2"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "29b40aa1224f0a3721548a76db7f8acada6562e202148db4c586e171beb5983b"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "3d2a66f54ac95051e20aa1736de1950fed4bdde56f585c8ab73678e8187bfc5e6de67d07fbebba40c2687d3616527fbd0555225f293cb24d86cdd8831968a94f"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?classifier=tests&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-ant/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-ant"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?classifier=test-sources&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-ant",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS Ant Tasks.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "7bb886455226da888ae0951b2b817d60"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "5e55a9dc19f2c0b7d8d0067ce54226915777dbc0"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "dcc9997bdc926d3b9e84744de77e7e8d6c202e781eb7d8500a20693b53213c9d"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "4d17f028783a842be35121ba5c877f6d22e19d293d469ac2155cb874f58a7a1586af57a98eee37fdd28199b94fa9c1d0f1174f8f5f16f3ffebe4328488a06a21"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "82646ca21cfe8bf91bb843064b80c8a1a3e8c97db955be31f89b0770706290d530b31ca40be82bcd6794735eadff155b"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "f7b056187caca8a1cf014074e04319126d7277537311f1be235e7fb5a8f72fe28f1c66cffe402c3ade56b4e188ea1857"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "5c50b6902f74964ebe0a33d768efaed9ee1f1c9f695fe639d00a0da751733ea8"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "631410da7585f9cdd505a466e6bab2face07f542a4cd7ba2a6382a52f5cc03ce9128bf14ba590e1c5b62f74ea220172114d10d4c9833274d5547ce35cfc54b52"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?classifier=test-sources&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-ant/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-ant"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-examples@2.10.0?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-examples",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Examples.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "eae1cd9fe1c8ab2652d94c13a333785d"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "9f2311bce23909fe8f6992215b372d9510f9e60e"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "f49781c21c8c98a25793ebc5935526392546e387955825dc3a012cc4e55db27c"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "fb1ea40a3d4bb54f215287f42306f9981dd3e8a5ef2955aab9123e73ccadd20f25d0318983ee9862db600a2bd77097014aea654fe6fdb23a29553f2899fc1583"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "0b56c7464e2c702d8d170cdc18f575147ef7139466ac320dd2160f0f454aab6ec82ea47b3667f33940b813a0bf9112af"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "1174f0599684d7726c99391e836b27fdd1de8daa9c77e6e8219133f8a5725052786e2142b7e1addcd2dc320b48423b26"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "9b695fc6d9f112890c7d935d8593a34115b0f79c24b73e5643910f87e5e30dd8"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "dd8b8ce865a7549c58590300fb05f22fcd73c28b4b02444b40cdfc2c9d8f3f275240f61e2e39eb527418e241aff99e2d6d8ef1caf19d5918b9d20412f2987b53"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-examples@2.10.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-examples/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-examples"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/commons-httpclient/commons-httpclient@3.1?type=jar",
+      "publisher" : "Apache Software Foundation",
+      "group" : "commons-httpclient",
+      "name" : "commons-httpclient",
+      "version" : "3.1",
+      "description" : "The HttpClient component supports the client-side of RFC 1945 (HTTP/1.0) and RFC 2616 (HTTP/1.1) , several related specifications (RFC 2109 (Cookies) , RFC 2617 (HTTP Authentication) , etc.), and provides a framework by which new request types (methods) or HTTP extensions can be created easily.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "8ad8c9229ef2d59ab9f59f7050e846a5"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "964cd74171f427720480efdec40a7c7f6e58426a"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "dbd4953d013e10e7c1cc3701a3e6ccd8c950c892f08d804fabfac21705930443"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "85e79d4fdb266861910ef95bcd6e82a7f091c9bfbc63dbe2112383ea4d53a5b7a378b54e7c472fbdfde923f30c72d9cad626f8fabb0b9c70d1dfb095add73359"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "973e966839aaaddea4af4dd43c6dea59eeeca88b8e452af0a35efeb3c920592b110c5a366fc46f75c404d1c7fa4a7443"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "0c77f4cf3c1d38d7de2cf42a7ff98a0be313ed739d20b62354278bbb7ac12f5c8be656d38e297689ddb8c7ff707f9cc4"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "00c433b1cdaa88af6b91f41a5f1030c95beee1044de84880862f329d1af5821a"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "2fdd42541ff607906620cca573c4ce0ddaac10eb90ce6d755ba4c4e41a6166869748ff79937ebface698407a42aa47abf931ab4ecf996e672344d1a992b39025"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-1.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/commons-httpclient/commons-httpclient@3.1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://jakarta.apache.org/httpcomponents/httpclient-3.x/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "http://issues.apache.org/jira/browse/HTTPCLIENT"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "http://mail-archives.apache.org/mod_mbox/jakarta-httpcomponents-dev/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "http://svn.apache.org/repos/asf/jakarta/httpcomponents/oac.hc3x/trunk"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/commons-codec/commons-codec@1.18.0?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "commons-codec",
+      "name" : "commons-codec",
+      "version" : "1.18.0",
+      "description" : "The Apache Commons Codec component contains encoders and decoders for formats such as Base16, Base32, Base64, digest, and Hexadecimal. In addition to these widely used encoders and decoders, the codec package also maintains a collection of phonetic encoding utilities.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "5b5a1f050c6935b9f61fa2c878ec87ac"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "a97b70292dd3d245210fd5882c61710755291e64"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "c90ebcb0c3006a4bbb105d70b6a80f5504ea592dda04c432e13559abd05dfaff"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "8967c08a0f2d1bdd0d46eb912037bb30dca0a8e88c0d4f8a8e7304a40db7df68904a3dcf46da0970754478ddf4e4e773219fba490d99d60be5db1b324b4fadbe"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "ad8fd153f7d04c370cdea0c581cc8d93cb60ad883014d95986878f43a232f8d025519428ac8e423258834a58ad7c442c"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "d14af0a7c12f8183078ae15ded8e097375213e2f006cf9ca82594e4cebda1a0aba328e35c50dd3c418c792e6eaa44433"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "26447b3242cc666563936d84871fd9582ee1175c846dde69ba74056289579178"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "598b84d80a90869b24be93386f5f8a845b54c508da1d5b461ba8535d3c46681eefd39b500d395d89eba9d22fd56bbc57d0df6c37a8a344eb6af740e64ed1c695"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/commons-codec/commons-codec@1.18.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-codec/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/CODEC"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/commons-codec"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.httpcomponents",
+      "name" : "httpclient",
+      "version" : "4.5.14",
+      "description" : "Apache HttpComponents Client",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "2cb357c4b763f47e58af6cad47df6ba3"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "1194890e6f56ec29177673f2f12d0b8e627dec98"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "c8bc7e1c51a6d4ce72f40d2ebbabf1c4b68bfe76e732104b04381b493478e9d6"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "a084ef30fb0a2a25397d8fab439fe68f67e294bf53153e2e1355b8df92886d40fe6abe35dc84f014245f7158e92641bcbd98019b4fbbd9e5a0db495b160b4ced"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "c8ccaa1fa8ba7c421413e3c30375bd9c31284e837c476fd831e18043ad4187e92166f49554123108891241bed674b95d"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "9a17dfcf12b2af3a9b006ec369f9bc78ba322348bf1a01146e0d4f3fec2bed6cbe8b2193fac5b4d5a0c3036c06477510"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "48f0a61b691e22dec9d6db8e0b58be4ca17a42a2846c82f0875de21f72bb0faa"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "4ad2c9adc761b7e813330f0dcad3f9978702896c7d0cbf81f60a472d550e320b1527be425ba597c8c9352d587e32e1d46ceb4c73e99c70a6190df4c699a7c2a9"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://hc.apache.org/httpcomponents-client-ga"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "http://issues.apache.org/jira/browse/HTTPCLIENT"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "http://mail-archives.apache.org/mod_mbox/hc-httpclient-users/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/httpcomponents-client/tree/4.5.14/httpclient"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.httpcomponents/httpcore@4.4.16?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.httpcomponents",
+      "name" : "httpcore",
+      "version" : "4.4.16",
+      "description" : "Apache HttpComponents Core (blocking I/O)",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "28d2cd9bf8789fd2ec774fb88436ebd1"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "51cf043c87253c9f58b539c9f7e44c8894223850"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "6c9b3dd142a09dc468e23ad39aad6f75a0f2b85125104469f026e52a474e464f"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "168026436a6bcf5e96c0c59606638abbdc30de4b405ae55afde70fdf2895e267a3d48bba6bdadc5a89f38e31da3d9a9dc91e1cab7ea76f5e04322cf1ec63b838"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "ba9ceaee1a37ca3201d6a1315ecb0327b495489efd0baa155c219c475df8d3eb69fe77ab0026563db406497626da6562"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "b9dc44dcc7cc86d5036f26d54c4003a2d72808ae7b07a0808bb53505c6d4281b5ad213eb1f3d0fef1113dec57cb0dfe1"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "fd8ab51846476c6c18822151c9ec07b39a9633010b5d20ea937fc6910407bc64"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "b42fa528242981a9d70e4f68ab75a24292df5112c44c21b6f18cb9201ce747885ba1d4dc69bc3d14d0da46a6c2638f937c11bc45749abeb55dc89ddada90cdda"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.httpcomponents/httpcore@4.4.16?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://hc.apache.org/httpcomponents-core-ga"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "http://issues.apache.org/jira/browse/HTTPCORE"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "http://mail-archives.apache.org/mod_mbox/hc-httpclient-users/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/httpcomponents-core/tree/4.4.16/httpcore"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.httpcomponents.client5/httpclient5@5.4.1?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.httpcomponents.client5",
+      "name" : "httpclient5",
+      "version" : "5.4.1",
+      "description" : "Apache HttpComponents Client",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "a114dfe3b3e460e2a209c01961ed7709"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "ce913081e592ee8eeee35c4e577d7dce13cba7a4"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "c6c6fc60cbb3edd9e823d9226d608ff3135eb48bd2049bb83bdbc3ef4a911138"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "00125c1bb25a00b3a21bbcf77a555ada9c84814af01c3fa350e25fc3af1546e0699abb50ecc7a1e646c1572ca43a4165905c5c4bf8f763df8aeb29c001f78334"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "85ef2e6d2c901e47338a9eeb23cd6254feb9bb70abc9578a9e9a95f3c84162fb3049145e4a01017e2e80b2060111cde8"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "555d404c69d4e8d8d197f38b12c72a77bda672776dd87712a5e971cf09002b4c12c8f4eb91caaac0ae575d6a7ddcf0fc"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "791d2f80934ecabd4696f8e7d781ff2e0f502e35c38e7dade4f760bfcd46b082"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "da08f04f7d3570d067498abb3a3313b24bfb5b4e4e60c7dded17276deada5049f2d4404ff9d72cfd1bc5376713564957977c0ffd0a72b9180d167bfd0320f8ab"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.httpcomponents.client5/httpclient5@5.4.1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://hc.apache.org/httpcomponents-client-5.4.x/5.4.1/httpclient5/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/HTTPCLIENT"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?httpclient-users@hc.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/httpcomponents-client/tree/5.4.1/httpclient5"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.httpcomponents.core5/httpcore5@5.3.3?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.httpcomponents.core5",
+      "name" : "httpcore5",
+      "version" : "5.3.3",
+      "description" : "Apache HttpComponents HTTP/1.1 core components",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "a9907d5075364fd1edffa5988517578d"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "d6c702631841d1f3202c1f10973a98bab833fe23"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "087b7ae9bde9d3518b4b5d06f3560d7fd0db04098655e76b64e791773847d503"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "11870ace0af32a14a27f8ede0eae0ae59be36aed266b896fc9cfe41fef51befb53b51c49b1453b264bce5d4e2ddd2bd326d893fb50b89d396cb3ac0ba783935c"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "a535be8848babb6771b98032d5ab6753ddcf515296aae2a38928dde2afc6bd1a0a95d53716afc8cfb197acef1ab94725"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "bfcb7c0b6633d734a8437e4a12c0c160c30657534cd641b9b0a001f73720f3f927a32f859d89c2cf0f1e03d155134b5e"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "c7228a63dff7f014cce92cd2f23d11dc42fed03f59b893c5b838aa20cea9dce0"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "f228d11f9ae52a898a1f8be4d4243effb5566fe125434052ff8bc4cd084d108870a6f63551d7834fab4c595b82df000b2384cdcdb611ce5cd68a63bdb82fba8c"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.httpcomponents.core5/httpcore5@5.3.3?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://hc.apache.org/httpcomponents-core-5.3.x/5.3.3/httpcore5/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/HTTPCORE"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?httpclient-users@hc.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/httpcomponents-core/tree/5.3.3/httpcore5"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.httpcomponents.core5/httpcore5-h2@5.3.1?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.httpcomponents.core5",
+      "name" : "httpcore5-h2",
+      "version" : "5.3.1",
+      "description" : "Apache HttpComponents HTTP/2 Core Components",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "4cf50639992f2796200049e778ac64ed"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "760c34db3ba41b0ffa07e956bc308d3a12356915"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "963e194a972aa3daf09287c921ed5a2dd4c3985c44185b0138002943025bed6a"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "cd8f75113c419477d640550643646778af863254e26225dc4ff5e8b1e3ab59ca52495505bfe4bf8735ca6ec5f571620bf53203bffddb176791c14b7f5ed97d76"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "8c5db09b1e9c26ff4e9eb31b590e116afba000e2d96a0d4d7efe4e274c8ce056eeebc3a60d4996bdf7d597a303638e09"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "85117ec342bbd322ed4483b58780cee0a54fb392bd14f46cbc7f2de89e7f878bfef8bba06a241eec46a9a10a8faf515a"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "f0fd290266eec9968a962e3f3834bae9d31a636b77468065fcdab78e27fcb23f"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "178d26cc9f55940c2de8af3df712ff23417bf80908843d27fb4c9a33ca5105b3e3da15fcda7455147d0639861ec8053827e9ab6cebd0320fdbc15b63aae28ae9"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.httpcomponents.core5/httpcore5-h2@5.3.1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://hc.apache.org/httpcomponents-core-5.3.x/5.3.1/httpcore5-h2/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/HTTPCORE"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?httpclient-users@hc.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/apache/httpcomponents-core/tree/5.3.1/httpcore5-h2"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar",
+      "publisher" : "QOS.ch",
+      "group" : "org.slf4j",
+      "name" : "slf4j-api",
+      "version" : "2.0.16",
+      "description" : "The slf4j API",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "c8de8f5d740584cb24b5652cfba8b3c4"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "0172931663a09a1fa515567af5fbef00897d3c04"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "a12578dde1ba00bd9b816d388a0b879928d00bab3c83c240f7013bf4196c579a"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "91c2e7b30f24649bb3edfc7f138c2b7dc715ad36963af159defb80a71205eb7e4c5bcc80d779ef993b567a56724064f190c93985f32665a8df85198a03a2f1bb"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "ed0cc7ad67343b9fe4df03ea534025bf9d90c112b33cd8920f29890d923c349b69820c9c42b9e8882047af848b74f99d"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "331ac707cfa4b2bda44deffce7d2a640abb9ae12968cb1ac4879ba1b45542e3d3ce1016c812ff1f2449336bc7ea6bebb"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "3f68204951bb4baedc34fdd7194d0801042268aba0c58ac5d760779510743fbb"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "d7a2f7359e7b2cd6ae3650d28352bf8789acf5855a3596a3be2a236a94931abf8bacf0d6a457afa43164be53abb19cc223ef4f030822a3295c036c078527e361"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "MIT",
+            "url" : "https://opensource.org/license/mit/"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://www.slf4j.org"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/qos-ch/slf4j/slf4j-parent/slf4j-api"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-examples@2.10.0?classifier=sources&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-examples",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Examples.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "094dd40be5ffd531c08a9760781d9481"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "b137145a37faa611811d65afed1cc5d895440478"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "11cb90283f66923871f75d190cdda258bc73e8e50d5a2ce783e500a085b1c882"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "ea29566758ddee1e2716b9e5df6c6133e786ee71d76acf8c70dd7969024e5dcc995453c34eec904164209a744eb7344d87ce0922bb3a124088515a577f2b7b8b"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "93139c70cd9150617d5a3bb6a3f38fe6c83f141b3894934cb28bc5b86ce758cd47ec899595e555d6bb12e99146cf7cd9"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "ee1895cdb2149d3009e96c32a00d57b313c47c6d10d5fa455c089fbb88ff2a2e52eb934f9f0a2dcd7cef6aa3c763e7fd"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "02641635fef604b0d739c088082807779b530f75d29f077fbb464f1657ac93f4"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "e8add6e565f18ca00d85899d76df4e54abd13a78e50bf07a2f9ed5b4807ee225d118c14b436e81e2584772f0f7877442b0277b6cf1a45dc46d2842ae0d097f5c"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-examples@2.10.0?classifier=sources&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-examples/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-examples"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-examples@2.10.0?classifier=javadoc&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-examples",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Examples.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "08b01c1c686701e9d84990eb6d683626"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "39849050f6684a4d0196d77daf5878a800e68627"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "dad798c41840075bec126cac262c847405b3e5367a8cdc5c9a0c0f316b97018e"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "41af35eb78d0646e32dafe63cecbe766bc97072f17c112d19abe89a4ff76a3401501c6a6912fb0d4886fc31fabb35235aff9d9e506d58b0515294b5e03890823"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "6e57003c3e3e064863f9db4dc1068980f02c067f77ed2263b015f381351012f589a31a6509c0bdb2e0fb214e215ee02d"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "7f710e4fe52c931d1f870b984d725e09548a3328eba5f7a521bb7c8db9005aa2f8e782d1a2c8d8c767bb6b9435064aba"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "45375abf28c9e2e7632b545614215d9e527221607ccb2f070879b23f0e27d715"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "a96f9ecd4946700b730995db81ff377055385a293bd5460d2eb894621511df9bbccc9cfba76e285bb7337b72c05b3ae4145af875902fcba7e4bb092cd1f377f9"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-examples@2.10.0?classifier=javadoc&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-examples/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-examples"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-hdfs",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Apache Hadoop HDFS provider.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "e04a40f678f3e9bc8e6892cf71a38d19"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "144fd0afb87ba4cfbc587369655758c3448a3424"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "2eab1c5689314617b450767d713be3cfdec6d717fd17e6d4a980d19ec693ccbb"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "ca910d25bc4e812e19f47b16423ed7c8eb796821e39415c9a3546c3587e7f5087788547cd058de1172d25c72fbe12da8b0ebd6d11c36ff5f8ab2aaaf90971748"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "4d1e2cf59e939b9a77bd704f8473c80439a5c4627d93bfe3d74fa91d492893468b681e099b6a2376148a966e6c5059a6"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "349f1659a4f1203a5f60e2daa45405c376e48b3dad533e7521358796fb04435c436a2b66daff51c100884d4786b2a7ec"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "a692a17ccbd5838e95e14360b8f4f6530b9aee7d9747b848869fc6a5611c7b27"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "2f7c225d8fd8b1c98505de1d3f682c45ea10008a20d640497596b01f0087877336656f3e427818ac6d387904703cb3630587b4205c928878c6e3721a8597cdae"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-hdfs/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-hdfs"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.hadoop/hadoop-hdfs-client@3.4.1?type=jar",
+      "publisher" : "Apache Software Foundation",
+      "group" : "org.apache.hadoop",
+      "name" : "hadoop-hdfs-client",
+      "version" : "3.4.1",
+      "description" : "Apache Hadoop HDFS Client",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "5af6dbd95230fcf15b66d1a5a39ac505"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "be2f7995190ed2c8eae05522fdc549d7dad6eacf"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "d002ccda9c7f26a4834bbdfb9068a498cdf5642e813b9c1541085153e3cb2cf1"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "ab42824dea066641cb35c751c5d0b71bb3c855b74b7fa1816dc09a33a73e95dd4cfca4758c77ede3d6a948857bb4855a58a658e54856374a2877439cbcbd50c9"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "78ad3777a324ce9592c12a3cef6cc7a4935e151d0a8ad44ced27e2cf66f4e75173fa8b2d06d49fd2c2cfb93de4964d17"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "9bbba47073ae24a4a7a050e1594842e3537d0cf650e25c5d604e699967be00c842cafbe3d0ec3eeafbc721bbfe160000"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "3fffb819fe6c828463a03ac6f2a61d7714d4536e8cbd3895681e7bbe9fd5970f"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "987447d3da676ae6f26d5529da53d622316e74eb306eaed919514cfb5d89263fe58a650c84d64605388c9f085c9cc8cd5310520fdc093409aecb153742004f9d"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.hadoop/hadoop-hdfs-client@3.4.1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.12.7?type=jar",
+      "publisher" : "FasterXML",
+      "group" : "com.fasterxml.jackson.core",
+      "name" : "jackson-annotations",
+      "version" : "2.12.7",
+      "description" : "Core annotations used for value types, used by Jackson data binding package.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "a9f4e4700f6670614028753302a995ed"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "2042461b754cd65ab2dd74a9f19f442b54625f19"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "3cacef714a89f3d68b69fa11263afa55a6aa2fdef1fff93ded22caa16b54687c"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "732e3b150cbbaf8b898776b5d6213247be30814f2fb587861caf6ae9460896d67522882e414a93b6c2b7390959878608bc7376962460cb8f15ef5fdb5ab086f7"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "906f1f74d43e3a60f43ee957bafb5bc5750e933b6b71dac0c7125a56f5727a849062bb62f1c6ba789bef20fc5e68b7cb"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "dfa43e7f9d933181878ddc0af5f2a1dca00abee03a4d12e209df7ddb575c54fd96aa2e225296f706b7302b880e4efa85"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "1b802bc3d40103e20dd970d49433edd2abd5a0698eb2fc75a9fc3f7e0c12f8ec"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "e645dd454214afb69229a6fca35c6657c7a3dbf9f392b4505358d47e8352bd8ef074aa741d1a6acf61e269d318f568886a1676165937cdacb5d42f3113767a22"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.12.7?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://github.com/FasterXML/jackson"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/FasterXML/jackson-annotations/issues"
+        },
+        {
+          "type" : "vcs",
+          "url" : "http://github.com/FasterXML/jackson-annotations"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.12.7.1?type=jar",
+      "publisher" : "FasterXML",
+      "group" : "com.fasterxml.jackson.core",
+      "name" : "jackson-databind",
+      "version" : "2.12.7.1",
+      "description" : "General data-binding functionality for Jackson: works on core streaming API",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "5c2dab5ceb80bddf3350ecc90bd99314"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "48d6674adb5a077f2c04b42795e2e7624997b8b9"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "3f504cac405ce066d5665ff69541484d5322f35ac7a7ec6104cf86a01008e02d"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "16e718c25929fd608e9d4f59bbd345f8c5269b8f907e926d3312c8ce04298e7e5ee756a7e0ac214f9b181369af78047ff28d10c5ae6541480ff6ac288db92f22"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "f008ce8248d957dbd249a4add4e4cf30290760915ddb289846779c63e5cd0eed76aaf70ebbcc6df8f2d946bd1063e575"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "6d1a4eda38144955fbc8dd914e81e9141057d26326fa474f21f5a2c8cf3da40ee782cdaea6bd8116242aba1e5f1662ab"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "f24430199c1760e6c97aa4d6c2f898895696cff33d10e2455273377b05284997"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "6a7e1144ee7c540c87d6e5e023dd9980a2eb164c829625d0ae7ce1a2a87c7d366facb3545cf13dfad1ca8131c2d04df3153f018db8470dbf18b70e41bc6e6942"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.12.7.1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://github.com/FasterXML/jackson"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/FasterXML/jackson-databind/issues"
+        },
+        {
+          "type" : "vcs",
+          "url" : "http://github.com/FasterXML/jackson-databind"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.12.7?type=jar",
+      "publisher" : "FasterXML",
+      "group" : "com.fasterxml.jackson.core",
+      "name" : "jackson-core",
+      "version" : "2.12.7",
+      "description" : "Core Jackson processing abstractions (aka Streaming API), implementation for JSON",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "e90114f7c87c241568606cc9e2c61cb1"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "04669a54b799c105572aa8de2a1ae0fe64a17745"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "3987a6a335046e226e56b81d69668fb5a91b155ea7fd96b0851adbb7d4ac1ca6"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "cd40c6bd75e8901a0bd94a7f7334468addc0622e0ad6ecd93ff0b17acbf8e1e9644a8d065cc5716016aefa97244bc2cdd3c119828d3b55d12a87b375063ce04c"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "1ae6da6fa9afe18b99c0a14e885e532b68c2666f9dbadb2e24972660a5e020d26b5f0aa40b5099a50e70191e66dfd7d6"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "99a1a0b75dfca0953ee3f26e39c9108698fac321d9f9373874eb868fc3e9a9be4a7d016f6ea32e707e9109646ca3dea4"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "fd78c90d339163e3b28868610cb5b8f3a45dd999f0b67f79696ae738ca06d357"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "b889e7b796db4ffcc153c3a672fe8705be5e02ec8efffd2e99f47e534418bbfbcc03677954ff245ba7c1d11229ff20f8dec0883b6af82c461162868bafee841e"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.12.7?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://github.com/FasterXML/jackson-core"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/FasterXML/jackson-core/issues"
+        },
+        {
+          "type" : "vcs",
+          "url" : "http://github.com/FasterXML/jackson-core"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.hadoop/hadoop-common@3.4.1?type=jar",
+      "publisher" : "Apache Software Foundation",
+      "group" : "org.apache.hadoop",
+      "name" : "hadoop-common",
+      "version" : "3.4.1",
+      "description" : "Apache Hadoop Common",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "8ab474f0676f9732c75fbe72a9e3e554"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "9d88de42cb87e5e17d6be936ef4f16db88cbfd25"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "85ab34eb0efc42651290991473341fc77491de2e0cfa7f2d02d20c57abed3aeb"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "9b4ebd769d16ae4337d02b2a0c65dfd54f8830b767234da1bed79eae5b5261ca6a5a0369417509ae946ed1905c97aeb4d97e90401300a28df3afbd34d1904c6e"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "5c5a1fed7a21328d6e03ae6a618baf2e18d9d54592ffd097e3b17c07cd21bbe87ad58331d6d233444567ffff6f626db1"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "25ae922faf27b63310518c2de31541127f37d74c763fcd7d3b01c33d72ca87eec44e7dae3a5f62f9c058d8e78b9b906e"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "ff1016597cc696158ed505bf7029a8810d05c86338eb8d0b95bd04a7880a6c64"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "8e1d218a828c628520e0e0319ce641377f17666796c22649904dc6fc167e9feab949d159e0e2a341539ff05b9e287108dc8ecbb5c8f4ab635ee26595fd69432b"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.hadoop/hadoop-common@3.4.1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.hadoop/hadoop-hdfs@3.4.1?type=jar",
+      "publisher" : "Apache Software Foundation",
+      "group" : "org.apache.hadoop",
+      "name" : "hadoop-hdfs",
+      "version" : "3.4.1",
+      "description" : "Apache Hadoop HDFS",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "df28e682018548464f05a471ca791670"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "8545078b39e33416cb70ccef1bb22f2c88fb6b6c"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "91d1bcdb554dcf95d2daa12c7c0ef706c64692c21e9edcf2059d4683bedb0cc6"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "a47fc38e3143cc83efe1ff360585e9952b70efe02bec24ed214e2a0269fa69a78e05721009c3854ab2823b1988189d25146f40d4df2844c4ea9c13e60f540093"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "2d8fef39430eb94f95fdc88a41addd537da9001bb065c5471d1e6444d4affd1527a1baf52f45755e9f65d5f7c53c6cd5"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "20f5930d75e6469c74812543f54bb6486c4f1e7ebf103685de5c3d7b75c9f9cece6f21b2753f33c4f976ee9e6e201c0f"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "1eab019ddddd441c3bd08af42b519479adef874e051d55f5ac4be91bc45dbee0"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "652bcc0144ab65f117c6c0d2b89627d2e575257d7ed9095fffb8a27c062754607659d96b46bdfcb996056e469c31f11085aee4ab8e3c8db5a2201339e204430d"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.hadoop/hadoop-hdfs@3.4.1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?classifier=sources&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-hdfs",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Apache Hadoop HDFS provider.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "05a4d01c4857fbb2e4f2b6d129ee8d30"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "55aef39a2fc7f7a1f2303c47a343eae121d7284a"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "1b008aa5e3a46ad8c672de7e654b40778f5b45996ca4bd341142d7547d1551b2"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "efcfd183a7452c6dbffa810093e8b051968fc8dd64cd89a2102b39822188f1b5ffb980cac2d5f39c6634d8741ab36089dba033f59733c43cb1b585b8a9453509"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "aff3586e0ced9ab9c1a6691c586f16001afec45bb2800e858ffa4eb5256125354dee32055fd07ca29a78854d6120c012"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "b30b662e50f008915424bec6185be32688938278210a487905820d7778ec8871db69a60a62321382dc15892eb693b81d"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "54a338c0dce52c5f141e01bef073a4058c27293f57db689dbebcff927677a7de"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "34b13c8a01e14308754705b2ed1d275647492a8d2bb8c24333832643fc443da14a91fc5fdb4d2662ecb5d3f76c265732bd9c61fb8a089fffe4402a010504becb"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?classifier=sources&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-hdfs/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-hdfs"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?classifier=javadoc&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-hdfs",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Apache Hadoop HDFS provider.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "2d937cce1fceb046361b19c47358b865"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "a98c7d32579560cc24ca2d5799555c6cdd2f7111"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "69705779a86b23264d0608cec444dda34b209170f6e11612f720b56ad8a8c25d"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "ac54351f12e40edc57ed365c241fe078f5ad63e41e0924c2fde49ae5b419be98fbcf1ea66bece440306cf7377d04cc06a73a9982383dfb8b9979a2aceba1c045"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "89180cf9c25a3c14ade15460951839e63ae8db34ef3a4f83f3bfce664db9f777ef8b46f884a6723765e6f57744b70efa"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "c819965a7fd4b2772d3c8b49fc84f575c7aa766fb76d089ffc975b84c0bcfa8d4674f63bd3f3e82bf72bca7e758ab560"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "d58462295901d2f39f21b18db6b4518a3c7f182a70160a5d4bc9fad8a273227a"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "e5ddf9d16b38f0571012fd73d57d4bdea5b33a37beede5dd7b162ea6192dcf8963a61d825b8c93e5769d9b56691d0213f3f8adfab45add422449cfb2cd4486a6"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?classifier=javadoc&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-hdfs/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-hdfs"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?classifier=tests&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-hdfs",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Apache Hadoop HDFS provider.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "ec04de638e5c257f4577b9a2ed44e9cc"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "f6ef7549baa622b646597a8c5fb86ebd8d5e594a"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "9e5723f210d9633d0bd1349999b425efd4cb2cd5ddb41970bfd37953a4805dd8"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "024b3b39561d62b044a62622d1e10ace5234e55af1bdbaaa9f046562aed50d3a6732ab488767fdc675bf2dca0eda0faf055b806e7a5dfa4eba730ab28de8c991"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "f6648e21fdf7d0182b53bd5031cdf6069c71e31891a842f34d66eebb0b9086c15e5472e1609b70300ebc71afbb061d48"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "90109a8e1d7301398e4815915f51539ffffe242b093a9aab26c6e901b1f1c57013322423d527837ba696626d4ca321a1"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "bf051b4283e7bf89868706d90de522f560a869e05f5a4593c2e6fc7043d1e179"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "f3064ea59ab8e53b7af43f3113f8e21ee9d04e4a1dfb17041a1e2a398e07dd1d30205160bef11759874299d52da45fdcadc0247be542dc5e664c45a4b12ae0aa"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?classifier=tests&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-hdfs/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-hdfs"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?classifier=test-sources&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-hdfs",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Apache Hadoop HDFS provider.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "1c6ee01340b2c1f31985df013acbb09f"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "33f8ed8e583cbdfabb3d4ed1e3cb26d118dd2e3b"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "152fbd5edad79e85f8de9bd3ab79ce246d87de48865cc5fa777d383d834521c2"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "2bfc30b3fd1647656e543379f71ba0116fef0ae9aaa9604ccac782030e91dbe79464c72076a8375b96bc05c886c9e134be490ce20663b2d71ebb3bd7d4bbae80"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "010f2dfa3ad66e7afc30b08b2bbb80a92048cff2fca69840bd27ca8a808eb725fc81f3fd3528e988ac0dc3a8fb5e0d31"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "7203338c53f9f49586abbf34fb8a3da0e0d3f48c4f26875da387b62f53ab91e64795f4fc5373d73665a1be9ed4dff3c3"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "5a8f47f879b0b4e20521fb7211e93d1aa4f21f92b663675be8e9b724e2d8e886"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "ad064f117f6de5688d04be90ccb4d5c0f6daa3852b8a7792a323a9b35f8f5522f944accfceeabc943775f7563814d03742ccef8c283572598fdcc628cdfd503d"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?classifier=test-sources&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-hdfs/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-hdfs"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-jackrabbit1",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Jackrabbit-based WebDAV provider.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "d4da3336058aafc07f586915dbabc2f9"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "1ba40e5a26bd898f6020dcc6c4dfb98d29e9cf5a"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "60066ec62487df8334397779e5694da0c70628753d3ff625a8bb8af4fe621ecf"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "974efc46e19ed807ffefc45cd5574d3f0715be2cda198b88431ff0cca9aab84f03fd3b5fbc968841c577553eb6594d96b5b3bb55a7c0ad64406ee06266214790"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "bd55cf39e11212d0afe78d9b55f9276686bb85aeb7bc3d594a7fcdef6f8ad2c8f30511ab6b777f6ac94e140dae2fe13d"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "3feb1f9018eee4c28c31b426f3b67e3bf6f1945b96ab7c93a691bf94784e8f5d39768055cdc7b0b4d863c677f4c66a97"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "616694b31651650d355946417d122c721faa591e22e002988a623ff76593cd2f"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "90e1192817a01911dcca41f3c5386db213abfa14f5470c2527f099c149bdfc35562a810ad668da710799621845c29af802c382c724f6bd1a1c7d70cc5890ea5d"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-jackrabbit1/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-jackrabbit1"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.jackrabbit/jackrabbit-webdav@1.6.5?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.jackrabbit",
+      "name" : "jackrabbit-webdav",
+      "version" : "1.6.5",
+      "description" : "WebDAV library used by the Jackrabbit WebDAV support",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "1d573cf67bcff173d91dd1d194334b66"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "5afbee7ce7bcf1c47d7e54e24afcd533cb6776ae"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "cbb7b48b813d38aa60e664fc483afdad5e46745cac140c8e41694a50afdf6222"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "4578d402aa82d48b8d1307826f34119266c79f06a0f976e3b524e125571aba18bb4ef65821d54f79c53b58f6f413a14297ae22f304102bb6c984c39f7ecc5a43"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "5c9986464106bf2e37a8236a1e1834871c70b5a4d1038963934e070b1ae77d5af17a608a60c67d1aba7ea8ae3e6a4e1a"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "58e7c08d5fa8d35f04e386e7aca4dcceceaaff8c05cd0b7cd5168848837dc2d7d32adad95d3f74940d782162cbfa8ad9"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "c12c2b913443115adf0cf6dcca1f351d32df87e739ceaaf4e46b80fff6b12ab8"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "7959569fde61c7f5e69f79644ecdac301e38606a35406c3b124465cb846515242d182c4f9d5f771aa5f2ad450e0dd44c5e2896ba592f3569a7c4f8a732cea0d8"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.jackrabbit/jackrabbit-webdav@1.6.5?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://jackrabbit.apache.org/jackrabbit-parent/jackrabbit-webdav/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "http://issues.apache.org/jira/browse/JCR"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "http://mail-archives.apache.org/mod_mbox/jackrabbit-announce/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "http://svn.apache.org/viewvc/jackrabbit/parent/tags/1.6.5/jackrabbit-webdav"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.jackrabbit/jackrabbit-jcr-commons@1.6.5?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.jackrabbit",
+      "name" : "jackrabbit-jcr-commons",
+      "version" : "1.6.5",
+      "description" : "General purpose classes for use with the JCR API",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "d4a3a9629f22a0a987853419eeb9eb1d"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "0c65d825fd75f1ca3db19d553d9f453a13307175"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "c196043a8789bbe34e9d4873132fcda1ddaccccb4e4ceb028ffa78d765ab24d8"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "6e1af6a18be0ff0035c0c3cefebfa98e7edb8c74c7520e4c29a54d23cfbeb41b86318d81b073058f99f5f1327216afa5d693101bfdda79d2047d989ac6042bf8"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "0d61f39fd32ef27b97e3ea5adb4f0a345f286c7dc2e40ef8af91809166e1671ae06022291e84d05523574f9f302550a1"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "a45164ceaf66736297b25ea9dcdb6fde628354764401a4ce48301a723f9b30692aab3c83cf0563ce00176c255583ef87"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "6db1ba3aac1cc5b26e38980f093da4e42787ba1e1724d67cf86e86922518c794"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "1ec61e2bd6b1a3e851066f5bef4fe20854adf2627e8662f129855f6167dba0f79e16fd49abccf6ee9251e113b1262dc0476f90c03864068f4851b7e23cb42919"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.jackrabbit/jackrabbit-jcr-commons@1.6.5?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://jackrabbit.apache.org/jackrabbit-parent/jackrabbit-jcr-commons/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "http://issues.apache.org/jira/browse/JCR"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "http://mail-archives.apache.org/mod_mbox/jackrabbit-announce/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "http://svn.apache.org/viewvc/jackrabbit/parent/tags/1.6.5/jackrabbit-jcr-commons"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?classifier=sources&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-jackrabbit1",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Jackrabbit-based WebDAV provider.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "b80276ae126a75e445429a70cb33fccb"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "34c1c70e7af99be1fa4ddf0d47b09ce518fecc86"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "01dc2f79f70319a848365ef8152405a81da0d35033de43763f59ad93a09989c6"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "ec17ff9ff8d5b9f78dc8691e53d4c2768d4a89802e4e3352b05a0a91bd0689918d40e73b5a817085374a55c3efd8510c83b74a2e11923290fd36633b12afb4fb"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "f8edb346c6e7a8551edb61b7bf4447baa95a2a0aa7af740d11edd88e0a9ae529748015bc9c7ec6d1f3c9e62b39e83078"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "f9dfdc95ed1dbe2d39695e9f3385b94189689267cba7ef3b088b1d053d37064fc1bbb7c6930936faf869501eee153c50"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "7d8cb6e8e678c5b83396611690b0052cd40254accfc05a25249204bda24139f9"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "df1c18e8b759ed2724b3ec7e940327e56d9b071444d3f523e04ee8797b342d2daad5e6ee060e5b217b904f2e5b5ec66bfb2ba68b891591c799254238dde1fe9a"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?classifier=sources&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-jackrabbit1/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-jackrabbit1"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?classifier=javadoc&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-jackrabbit1",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Jackrabbit-based WebDAV provider.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "6ecda9a57df38c98ba8a2eeb005e8195"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "6106f4d613eca059ff8c1575c51552aae7cef69c"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "cdd3cd8d978da3f9510b4f77307f693255de2fe3f1829d6b07883227a6729e6e"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "5c52501451c4cbec8dcd5d9c047ba41174c3cfc971cb3d54202075c867a053dec54637adbdf3ea2d9532037373c0641e726411677956c755894ea55f6df3e262"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "266cfff65d458e22d95e6338547316a39673c2ce441a568745e54652d195b434efa0798a6106e4e69ffcb3ecc143e8e1"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "7d3a63fcac2484f74927f8510c19b6ae15edc8b7e9877e6e6f34d830399f04ac526140afde84ffa443c365a833f6bdf6"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "021771195f8cc2e23ec3a2c6a1b40a60de25394fbdff3671a6858820fd567461"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "d1c9f1f394b16489d70f395f7609ad4e56627c47c1e987773baf74c65cceeff113d82eaaa63c759ef5634747ed7aeb54e9238f9c2d7825a91c97bb778d5ce7de"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?classifier=javadoc&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-jackrabbit1/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-jackrabbit1"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?classifier=tests&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-jackrabbit1",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Jackrabbit-based WebDAV provider.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "924eec86b4bbb7e982032192e9226a92"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "a80c60620b5ced3ef8e8274140e3f8803495fdea"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "854d2778a0f29e7b555b2af3e30e1e2ea25285ca8dca1f460a1504b1a0db46ef"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "b19764473f9b1c45f48eef6504315e09fa924a3fc38063ffff91982665a5ac70e0c90699724e5661cb0ac7dd9c2f950e97a1a1b2160db683fce6e1d9d0bf3340"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "15d9f22fe5fa6f9e6aa5687dbce251e0c325c29539ee687c1ff7259704d180d3328cc5e22aced534056baa7496eed968"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "a2aabc2dacb05a13703c5e48f1581cc50331d9ede400f8b9fd5df20e5113ffa8c0e55e01d1788a8b6dce265f93e38675"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "71087142978e12aa49c55605e17776eb010adccd6977ae8fa99a84455dedc18d"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "d06de222ff989dd294cfc68829b256e8b0e0ffbdd592841320f413ca0c746503bc5737203c31d61134461a56926db4ee80d7f53e3487a27ab89df9824fefd39e"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?classifier=tests&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-jackrabbit1/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-jackrabbit1"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?classifier=test-sources&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-jackrabbit1",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Jackrabbit-based WebDAV provider.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "3f1bf6ef4d4dbe9d42cb709fcd4a1359"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "0ee7137c2caaa176ca6b76bb978e8eeaf04e84fe"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "5fc2067978355d694c4ef3da41311c0fe471c19170aaac58ef32f18564b13ce7"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "e3234bdf7e6577049d3a82ed34ba4f06a6f39459376cecdbdaefcaf7002ec21544e4ce6f01f27e3b3c3eecef4d2def403cbeedcf70cf2024e911435af52fc9f2"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "3ab2abf57dc69a000a52dfe7f16ce5c27169b14e94683a275bcce187a26cbed002730be1e52a0c1245c0d3e8db781c2f"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "77c08fb222a6937f0b2177775a8a9c1018e40c90db4a2e51fd87006274f21d9d425b508521246ab983c86e082f89ffe0"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "dc78813eb7d63bff4a200e55c14d0f230283c93c190facd1b3060e86644704ec"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "b15c75393276d54f7a5ec9a9dfc8d5f29cad6ad3ffbae47b6bb349ba8d100bdfa81c0d78f838522897fa3201563b25b76b669b145c819d90aa54b0e0bfe8f6dd"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?classifier=test-sources&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-jackrabbit1/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-jackrabbit1"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-jackrabbit2",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Jackrabbit2-based WebDAV provider.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "de3231028cc042c2e9d22e446b66f448"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "65b5e7d648b9fd038a57dc4f3e6106f2e52d9146"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "7ae9702484be4871f17e43923e1e34c09cd0b183de956593447a07bc4df4f4d7"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "e31450a4be4bc100607f3a3a48622f9c08227be9cdbda5e7758c7d0d5888c0e52fbe1bfd4438fb67638ee8ed6f02383003d402429494492373535948d6dbc464"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "50351d573aedcaaea01ee82a998f12767e684328a322fa2655e1e0ceded0ddd34d1353718f42d3a8c4824a68dfdb340b"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "e847986aae2d53409f6bd9f7cf4c95dc46f94f5f90435645bad8db8dd58ab0d47e472a33271b1b7805d38df1ea3cfbd7"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "ca046ed473b82a5f0678ebe3ebeae36c2ad51822047181cfa826bc23eacb5016"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "661276ea42cdb8961ba43414697ab3ecda6927dee2c748d59b72cb8a3a5a082eb9271b08139c4ab7a69beb210331785fe99f6da104f5a0f9c8776ab15c155b77"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-jackrabbit2/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-jackrabbit2"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?classifier=sources&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-jackrabbit2",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Jackrabbit2-based WebDAV provider.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "79aadd0f1a46b14c0daf1b15d5c49d12"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "4f6fef5bd5f1b1a92fa903ecbd1c408f5eea41e9"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "7efac501a9b90a5316aac16519ef7f002ada74a21a3af78024c66199e037380b"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "35ea8118c7a7b92b4f7db3dcd20b0f903763e22fde42c5e85534999ba054bdf91aeb025facec486789dc741d2b13083275c0a60b07604cfc9c55001dd3eb9cec"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "33f31a6efddb2fda4dd019ac3cc346b6f946a0e81d2b259bd3b2ff1f1f176ef7b738bf4f48e873f62d43fecf8c6cb66b"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "1428967b16998743adc92d1db42694fcc9663b05a0aecce9d28a8dd32fdf785b99d57e40f664ae6f9eb972ee541cb895"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "53b078ce9c1c4f3cfc4361f985e6e20ddf548174b029c945d03cdb1568f5fcb1"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "e9212c0889474bca56b0d432b5db3d66c5d4d2473714bc31156e1b1aabf06827decfd95f4628746a3f0f2aad698e57e348c958532a232f0c6cf4e883bbf25312"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?classifier=sources&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-jackrabbit2/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-jackrabbit2"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?classifier=javadoc&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-jackrabbit2",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Jackrabbit2-based WebDAV provider.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "e02c813250cefca39d5c4ea8c0a47878"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "5e2e76f6262d9cab1e8202f3b2a8a4074bebe66f"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "d30f0851cd3b3430cc37e04e99a08b175c57d04dd97cd5a58477db8519bf741f"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "309b3a29ecf5f8957d096374b8e327e5e7bae2e75451afdfd1d1935df1950f3a44455868b2521f1afdcf1776379df476b1aa12656d2e909d48017be1ce3f1907"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "089f084febb722aa53c881c0cc3d2821899aca0f39accb97ec0412aaeb705aa15c1562ccf7c83cd5a7afb30e853b0a5f"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "09ef7a1cd9caa9028b338bdd99c788dfa268124f3a561c763ce784d01f708c0c071c4f95da1ffdf123a2089be19f4cb3"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "f2cee1f449a6dfd3df8e35e19adc484226a9d81865bdb04bd5af6e7c41a4db0d"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "97d0851b108d127bdf91d97f75b7d2222bceb5843c3b2c861633c6d9d390b7a8669ebeca8b48b622b379c472268b93828e7825d21f1172db081f25d61d159299"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?classifier=javadoc&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-jackrabbit2/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-jackrabbit2"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?classifier=tests&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-jackrabbit2",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Jackrabbit2-based WebDAV provider.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "dc8abfd68c6d55413bec8aa305ef6b24"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "7aa42c32de610bd4c16d8cf6004e93afce9647ee"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "f0e47aed43f905af409f7b56f44d80fb2baed0f8e6dc3c85c05bf8b7671866cf"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "969eaba9dc2e0c0c853082310595b9e2260af6cfb5ba6d8bb85144819c3fa37124381856aac32d3df894ba79bc5742e23b6f4d113cbaa0dd57a805e656af99d0"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "fa5c59193112cce614c8d89736830d1197aaa736ba11d5fd37e9fc0f0086ea51535902571328f805361e83610bcb8c88"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "ac7e8fa9a497ed8f9937ac6b33495f97ba59d8bf0551ffbd9212d086a52ac1452c3ed86a687c8d3574a5a57528d3c4ae"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "5f1b91fedc6d534594eb49e993bd47b770fee1eff0eb38bdd9f534cdcfa99e2e"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "6e7a9084bbb06139988d904d2eaea5761bde884ed7a7ed2175949de3d0db2ab37d1e608fe7c3d3dad3d59739aa3e0163bcf41fa6430e9afd0901ba96c2001fc6"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?classifier=tests&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-jackrabbit2/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-jackrabbit2"
+        }
+      ]
+    },
+    {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?classifier=test-sources&type=jar",
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-vfs2-jackrabbit2",
+      "version" : "2.10.0",
+      "description" : "Apache Commons VFS is a Virtual File System library - Jackrabbit2-based WebDAV provider.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "acfbee2cc5d3ee2604a3bf587d29bfc6"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "050909a6091c8807de726bc5ddee34368b926eb0"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "7239112c70e14a0b66b42a6d25fc3208a4b98864e31d0bd3abb2d3de0dbf1070"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "3a6342ea4f8dbfc5004767f98e39b655639f8338bd401d69948d708c0b4fe5d29101a4977f0ededba5210ebac9d4f66a7f26fa5fff0540c040c15b489e99928e"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "a202432fd09a388ea91b43c2b8c056a3c6923ee40b2299ff0834bd7a89ffda56678c26acc9f5205323297195cfa0023f"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "f2c6f7d3b4d3440da893510d7d149f05bcf12f2b359dddfe0c63aaac22d734b4bf2c31e26811f06745c8c50c5d5d1065"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "442b75f80b27b844baf07fc7cedb8360e0655d589ddc94f5e6e595ba1e5ab728"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "8edc0528d802c69755dae432df9e1995fb1340a431aa4809344a17e0199b353bae2de0a84bd083675e031a6311aafd7c018cb84ea65aa29b980b05bc29ce21dc"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?classifier=test-sources&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-vfs/commons-vfs2-jackrabbit2/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://github.com/apache/commons-parent/actions"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/VFS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=commons-vfs.git/commons-vfs2-jackrabbit2"
+        }
+      ]
+    }
+  ],
+  "dependencies" : [
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-distribution@2.10.0?type=pom",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?classifier=sources&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?classifier=javadoc&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?classifier=tests&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?classifier=test-sources&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?classifier=sources&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?classifier=javadoc&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?classifier=tests&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?classifier=test-sources&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-examples@2.10.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-examples@2.10.0?classifier=sources&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-examples@2.10.0?classifier=javadoc&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?classifier=sources&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?classifier=javadoc&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?classifier=tests&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?classifier=test-sources&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?classifier=sources&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?classifier=javadoc&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?classifier=tests&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?classifier=test-sources&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?classifier=sources&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?classifier=javadoc&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?classifier=tests&type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?classifier=test-sources&type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+      "dependsOn" : [
+        "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar",
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/commons-io/commons-io@2.18.0?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?classifier=sources&type=jar",
+      "dependsOn" : [
+        "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar",
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?classifier=javadoc&type=jar",
+      "dependsOn" : [
+        "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar",
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?classifier=tests&type=jar",
+      "dependsOn" : [
+        "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar",
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?classifier=test-sources&type=jar",
+      "dependsOn" : [
+        "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar",
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.ant/ant@1.10.15?type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.ant/ant@1.10.15?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.ant/ant-launcher@1.10.15?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.ant/ant-launcher@1.10.15?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?classifier=sources&type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.ant/ant@1.10.15?type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?classifier=javadoc&type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.ant/ant@1.10.15?type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?classifier=tests&type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.ant/ant@1.10.15?type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-ant@2.10.0?classifier=test-sources&type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.ant/ant@1.10.15?type=jar",
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-examples@2.10.0?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/commons-httpclient/commons-httpclient@3.1?type=jar",
+        "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+        "pkg:maven/org.apache.httpcomponents.client5/httpclient5@5.4.1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/commons-httpclient/commons-httpclient@3.1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+        "pkg:maven/commons-codec/commons-codec@1.18.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/commons-codec/commons-codec@1.18.0?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.httpcomponents/httpcore@4.4.16?type=jar",
+        "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+        "pkg:maven/commons-codec/commons-codec@1.18.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.httpcomponents/httpcore@4.4.16?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.httpcomponents.client5/httpclient5@5.4.1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.httpcomponents.core5/httpcore5@5.3.3?type=jar",
+        "pkg:maven/org.apache.httpcomponents.core5/httpcore5-h2@5.3.1?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.httpcomponents.core5/httpcore5@5.3.3?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.httpcomponents.core5/httpcore5-h2@5.3.1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.httpcomponents.core5/httpcore5@5.3.3?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-examples@2.10.0?classifier=sources&type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/commons-httpclient/commons-httpclient@3.1?type=jar",
+        "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+        "pkg:maven/org.apache.httpcomponents.client5/httpclient5@5.4.1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-examples@2.10.0?classifier=javadoc&type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/commons-httpclient/commons-httpclient@3.1?type=jar",
+        "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+        "pkg:maven/org.apache.httpcomponents.client5/httpclient5@5.4.1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/org.apache.hadoop/hadoop-hdfs-client@3.4.1?type=jar",
+        "pkg:maven/org.apache.hadoop/hadoop-common@3.4.1?type=jar",
+        "pkg:maven/org.apache.hadoop/hadoop-hdfs@3.4.1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.hadoop/hadoop-hdfs-client@3.4.1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+        "pkg:maven/org.apache.httpcomponents/httpcore@4.4.16?type=jar",
+        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.12.7?type=jar",
+        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.12.7.1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.12.7?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.12.7.1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.12.7?type=jar",
+        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.12.7?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.12.7?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.hadoop/hadoop-common@3.4.1?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.hadoop/hadoop-hdfs@3.4.1?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?classifier=sources&type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/org.apache.hadoop/hadoop-hdfs-client@3.4.1?type=jar",
+        "pkg:maven/org.apache.hadoop/hadoop-common@3.4.1?type=jar",
+        "pkg:maven/org.apache.hadoop/hadoop-hdfs@3.4.1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?classifier=javadoc&type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/org.apache.hadoop/hadoop-hdfs-client@3.4.1?type=jar",
+        "pkg:maven/org.apache.hadoop/hadoop-common@3.4.1?type=jar",
+        "pkg:maven/org.apache.hadoop/hadoop-hdfs@3.4.1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?classifier=tests&type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/org.apache.hadoop/hadoop-hdfs-client@3.4.1?type=jar",
+        "pkg:maven/org.apache.hadoop/hadoop-common@3.4.1?type=jar",
+        "pkg:maven/org.apache.hadoop/hadoop-hdfs@3.4.1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-hdfs@2.10.0?classifier=test-sources&type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/org.apache.hadoop/hadoop-hdfs-client@3.4.1?type=jar",
+        "pkg:maven/org.apache.hadoop/hadoop-common@3.4.1?type=jar",
+        "pkg:maven/org.apache.hadoop/hadoop-hdfs@3.4.1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar",
+        "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+        "pkg:maven/commons-httpclient/commons-httpclient@3.1?type=jar",
+        "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+        "pkg:maven/org.apache.jackrabbit/jackrabbit-webdav@1.6.5?type=jar",
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.jackrabbit/jackrabbit-webdav@1.6.5?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.jackrabbit/jackrabbit-jcr-commons@1.6.5?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar",
+        "pkg:maven/commons-httpclient/commons-httpclient@3.1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.jackrabbit/jackrabbit-jcr-commons@1.6.5?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?classifier=sources&type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar",
+        "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+        "pkg:maven/commons-httpclient/commons-httpclient@3.1?type=jar",
+        "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+        "pkg:maven/org.apache.jackrabbit/jackrabbit-webdav@1.6.5?type=jar",
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?classifier=javadoc&type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar",
+        "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+        "pkg:maven/commons-httpclient/commons-httpclient@3.1?type=jar",
+        "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+        "pkg:maven/org.apache.jackrabbit/jackrabbit-webdav@1.6.5?type=jar",
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?classifier=tests&type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar",
+        "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+        "pkg:maven/commons-httpclient/commons-httpclient@3.1?type=jar",
+        "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+        "pkg:maven/org.apache.jackrabbit/jackrabbit-webdav@1.6.5?type=jar",
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit1@2.10.0?classifier=test-sources&type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar",
+        "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+        "pkg:maven/commons-httpclient/commons-httpclient@3.1?type=jar",
+        "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+        "pkg:maven/org.apache.jackrabbit/jackrabbit-webdav@1.6.5?type=jar",
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+        "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+        "pkg:maven/org.apache.jackrabbit/jackrabbit-webdav@1.6.5?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar",
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?classifier=sources&type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+        "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+        "pkg:maven/org.apache.jackrabbit/jackrabbit-webdav@1.6.5?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar",
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?classifier=javadoc&type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+        "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+        "pkg:maven/org.apache.jackrabbit/jackrabbit-webdav@1.6.5?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar",
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?classifier=tests&type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+        "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+        "pkg:maven/org.apache.jackrabbit/jackrabbit-webdav@1.6.5?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar",
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-vfs2-jackrabbit2@2.10.0?classifier=test-sources&type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.commons/commons-vfs2@2.10.0?type=jar",
+        "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
+        "pkg:maven/org.apache.httpcomponents/httpclient@4.5.14?type=jar",
+        "pkg:maven/org.apache.jackrabbit/jackrabbit-webdav@1.6.5?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.17.0?type=jar",
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar"
+      ]
+    }
+  ]
+}

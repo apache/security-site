@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bom serialNumber="urn:uuid:1e733b34-18c1-412a-9214-2f2aa58e156e" version="1" xmlns="http://cyclonedx.org/schema/bom/1.4">
+  <metadata>
+    <timestamp>2025-08-20T10:28:13Z</timestamp>
+    <tools>
+      <tool>
+        <vendor>OWASP Foundation</vendor>
+        <name>CycloneDX Maven plugin</name>
+        <version>2.7.10</version>
+        <hashes>
+          <hash alg="MD5">1cc7f6a0382f8bb2f758d6a6ea401d1b</hash>
+          <hash alg="SHA-1">a4297947a1f2d7d453105db542651614bbd37f38</hash>
+          <hash alg="SHA-256">bd0fdd8f2f2116eee5e715aeac1580f19eb7a10ec2b6f805b53567067658e872</hash>
+          <hash alg="SHA-512">9cde8352a427e10b96cae01348fc7cfe5d4aa9cd0a5e5dd93b414ce3bb7d112993c3b3004e53af52567fbfa16de0704ec59a5556a635ad70571fd124ae389f39</hash>
+          <hash alg="SHA-384">93d7bf5b5c735347edfbfbd66810273ca840f9a322b816d22d44c3d8e8255c09e86570bb23712aeb0cade0f478be5aeb</hash>
+        </hashes>
+      </tool>
+    </tools>
+    <component type="library" bom-ref="pkg:maven/org.apache.hadoop/hadoop-project-dist@3.4.2?type=pom">
+      <publisher>Apache Software Foundation</publisher>
+      <group>org.apache.hadoop</group>
+      <name>hadoop-project-dist</name>
+      <version>3.4.2</version>
+      <description>Apache Hadoop Project Dist POM</description>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.hadoop/hadoop-project-dist@3.4.2?type=pom</purl>
+      <externalReferences><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
+    </component>
+    <properties>
+      <property name="maven.goal">makeBom</property>
+      <property name="maven.scopes">compile,provided,runtime,system</property>
+    </properties>
+  </metadata>
+  <components>
+    <component type="library" bom-ref="pkg:maven/org.apache.hadoop/hadoop-annotations@3.4.2?type=jar">
+      <publisher>Apache Software Foundation</publisher>
+      <group>org.apache.hadoop</group>
+      <name>hadoop-annotations</name>
+      <version>3.4.2</version>
+      <description>Apache Hadoop Annotations</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">41c05515f02b9417bc13c836df656195</hash>
+        <hash alg="SHA-1">36dfd27e7b37ab49400e7bf67d75664f3139ec05</hash>
+        <hash alg="SHA-256">48fd931eb47c3b93b7cd1943d2fb075549fc17b1cb2739182498ef198b853d58</hash>
+        <hash alg="SHA-512">826eebfac4575902f98cf078254dc616151ec1da3bc81f752042c7c2ab11a9703faaa62f9129a06b020dc65b8b90cba9368060eea4db81dbaa112912b28e700a</hash>
+        <hash alg="SHA-384">562dc8f57900fad7d8253f2302c836e809a0785b6b9a9bd5975ea5ef330aa70b784d71115175b5ee488afee8502aca73</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.hadoop/hadoop-annotations@3.4.2?type=jar</purl>
+      <externalReferences><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/jdk.tools/jdk.tools@1.8?type=jar">
+      <group>jdk.tools</group>
+      <name>jdk.tools</name>
+      <version>1.8</version>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">a0c543c1b33721482940d8bd2589f1c0</hash>
+        <hash alg="SHA-1">fa1b027fbcfb373a05b68b8e3489c7d0d2e8bbbf</hash>
+        <hash alg="SHA-256">4ab22ce378dd2193f294c130ab7c57298ef68686dfd3d38ea1f3cb6ec6150779</hash>
+        <hash alg="SHA-512">91b7d8a39be3528ed54c5212a3fe5acb3667e9152432755e3f6bfded245e98e84f84b47cf837311cbf9086c1ab1b43b9c66ed76fa82eb2c5fb17ed6aa52c3457</hash>
+        <hash alg="SHA-384">4c5eaac7a645060d6e35d7b58dcc7c1a6029c69885315ae0f7e925ff68240956d6e64d2387dd35bb7de625e47c137df6</hash>
+      </hashes>
+      <purl>pkg:maven/jdk.tools/jdk.tools@1.8?type=jar</purl>
+    </component>
+  </components>
+  <dependencies>
+    <dependency ref="pkg:maven/org.apache.hadoop/hadoop-project-dist@3.4.2?type=pom">
+      <dependency ref="pkg:maven/org.apache.hadoop/hadoop-annotations@3.4.2?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.hadoop/hadoop-annotations@3.4.2?type=jar">
+      <dependency ref="pkg:maven/jdk.tools/jdk.tools@1.8?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/jdk.tools/jdk.tools@1.8?type=jar"/>
+  </dependencies>
+</bom>

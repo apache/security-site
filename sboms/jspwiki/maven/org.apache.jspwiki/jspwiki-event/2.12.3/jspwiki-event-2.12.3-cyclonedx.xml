@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bom serialNumber="urn:uuid:45c7819d-0507-3e47-9512-1df054090eb6" version="1" xmlns="http://cyclonedx.org/schema/bom/1.6">
+  <metadata>
+    <lifecycles>
+      <lifecycle>
+        <phase>build</phase>
+      </lifecycle>
+    </lifecycles>
+    <tools>
+      <components>
+        <component type="library">
+          <author>OWASP Foundation</author>
+          <group>org.cyclonedx</group>
+          <name>cyclonedx-maven-plugin</name>
+          <version>2.9.1</version>
+          <description>CycloneDX Maven plugin</description>
+          <hashes>
+            <hash alg="MD5">9c7a565cf28cce58557d0c621c5ea4b1</hash>
+            <hash alg="SHA-1">be882d5a22050bfa9d19090b1420c188617d0e1c</hash>
+            <hash alg="SHA-256">698e0f37184a5b28c245c4065fd036dfce253b52f82fbb7113d81d36326cc249</hash>
+            <hash alg="SHA-512">c0f0b11026858166f872a2eb54719492e5cecaa0bc9cd6b30b3ecb4a174eed220f4a1b5829d18d6734128e778d3cb3db7ffed177c92866133129cb29081814a0</hash>
+            <hash alg="SHA-384">d80964707dfe5caca8c70521d5066f57589304c0a657e6fbc7c0614ea0fc7b3b3dbe7778361eee0f54ba111e9cb0ffcb</hash>
+            <hash alg="SHA3-384">80bc3a275d9514bc457461ff52a72add8c7ecbbc01d8912efce57139016c544ee776981851be0a58fa977ab4221f703f</hash>
+            <hash alg="SHA3-256">142317d6f245390f4fd2d0c100b16281b8dfc5c0c2cff86943bdcc97039cb699</hash>
+            <hash alg="SHA3-512">af0fb9137c90b65d1a07f72e4d51ae509956cdb8800f35c961b037cdda1fe4a14ce3b496cef71ba85f1621affcfe29cd42704ae4191ff0b090a9602087c8997b</hash>
+          </hashes>
+        </component>
+      </components>
+    </tools>
+    <component type="library" bom-ref="pkg:maven/org.apache.jspwiki/jspwiki-event@2.12.3?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.jspwiki</group>
+      <name>jspwiki-event</name>
+      <version>2.12.3</version>
+      <description>Apache JSPWiki is a leading open source WikiWiki engine, feature-rich
+    and built around standard JEE components (Java, servlets, JSP).</description>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.jspwiki/jspwiki-event@2.12.3?type=jar</purl>
+      <externalReferences>
+        <reference type="vulnerability-assertion">
+          <url>https://jspwiki.apache.org/cyclonedx/vdr.xml</url>
+        </reference>
+        <reference type="website">
+          <url>https://jspwiki.apache.org/jspwiki-event/</url>
+        </reference>
+        <reference type="build-system">
+          <url>https://builds.apache.org/job/JSPWiki</url>
+        </reference>
+        <reference type="distribution-intake">
+          <url>https://repository.apache.org/service/local/staging/deploy/maven2</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>http://issues.apache.org/jira/browse/JSPWIKI</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>http://mail-archives.apache.org/mod_mbox/jspwiki-dev/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/apache/jspwiki/jspwiki-event</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <properties>
+      <property name="maven.goal">makeBom</property>
+      <property name="maven.scopes">compile,provided,runtime,system</property>
+      <property name="cdx:reproducible">enabled</property>
+    </properties>
+  </metadata>
+  <components>
+    <component type="library" bom-ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.25.1?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.logging.log4j</group>
+      <name>log4j-api</name>
+      <version>2.25.1</version>
+      <description>The logging API of the Log4j project.
+    Library and application code can log through this API.
+    It contains a simple built-in implementation (`SimpleLogger`) for trivial use cases.
+    Production applications are recommended to use Log4j API in combination with a fully-fledged implementation, such as Log4j Core.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">efcc09f4d0eca5b7aa983f38caa08a8d</hash>
+        <hash alg="SHA-1">c7acbbd6f110cd1457c628da46245e355b1ee57a</hash>
+        <hash alg="SHA-256">20b9c77c0a9e54d1063a39e551dcaf98c7d8e7a4994648f84d0b9e14c71f7215</hash>
+        <hash alg="SHA-512">0422500e4522ad2752f363758ff0abea55b73195cf38784328b9ed17f4b3356546923d6b7c67de4a6bbb8d54e42063e6df2f4548eb6136da99a0452437b20aae</hash>
+        <hash alg="SHA-384">6ef565b0557127fa87aafaea4534c2a8fbb133f8e3533997331350184e4a8831924005727fcd30cbfdc74b07ae17e93b</hash>
+        <hash alg="SHA3-384">461685e33a6a19d084bcf8fd5f8f8975429518473bc105bf4115ef2a728d5b8042654c3fa6bc217267be385e8c44b96a</hash>
+        <hash alg="SHA3-256">c00b35a0112be5c33a759d39862e5f76aa992bffb5b7033a3be169d4b4ec7550</hash>
+        <hash alg="SHA3-512">95a8eaef0c3b57c0ce194a84c9954eaac5ce9296c3a4c57d3b13aadddfaa36d1e0529b72efb6a8c69f9c76c7395172d2ce5ae9a7f4b902b47982d3371ea826db</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.logging.log4j/log4j-api@2.25.1?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://logging.apache.org/log4j/2.x/</url>
+        </reference>
+        <reference type="build-system">
+          <url>https://github.com/apache/logging-log4j2/actions</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/apache/logging-log4j2/issues</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>https://lists.apache.org/list.html?log4j-user@logging.apache.org</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/apache/logging-log4j2</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.logging.log4j/log4j-core@2.25.1?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.logging.log4j</group>
+      <name>log4j-core</name>
+      <version>2.25.1</version>
+      <description>A versatile, industrial-grade, and reference implementation of the Log4j API.
+    It bundles a rich set of components to assist various use cases:
+    Appenders targeting files, network sockets, databases, SMTP servers;
+    Layouts that can render CSV, HTML, JSON, Syslog, etc. formatted outputs;
+    Filters that can be configured using log event rates, regular expressions, scripts, time, etc.
+    It contains several extension points to introduce custom components, if needed.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">ec95ac453934a56229ace160e28aa791</hash>
+        <hash alg="SHA-1">32b3a228d5a30a4528b6c7354fe6cff9524d89e7</hash>
+        <hash alg="SHA-256">78c232747855464b182f0abf78a99a22c88d4d270ff585343dab55576d7420e2</hash>
+        <hash alg="SHA-512">f980579477a00759882e43ec60842a3f79264d16cb4823de271444a2919e2e8733fedb46cebb30e809824ba131ddc10bef32106cc1afa3057659a29a24937479</hash>
+        <hash alg="SHA-384">315e67f907336d270474f093848798eef8d4c4f54774f90c6a8d065e7adb2f3e3ed35dacb5f1d83c72a558dee9085370</hash>
+        <hash alg="SHA3-384">460c886d36b4531e1ff85b5e9f4d213afd49eddd1e1d7fdd4382b8b773835aa93a8bc0068e68192dcbe9327fb29fc10b</hash>
+        <hash alg="SHA3-256">e96193dbf004e7c140952ddc58dcbbafd038b9994dce87203b5f4ea4df9012ec</hash>
+        <hash alg="SHA3-512">32c56681fdfceaf68209432abbf1cefb434809855c66f9fb2a980238585c62122d270a360b2c4b3850ff6080fe810445809d5b7c164c81667fdeb495b5f36392</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.logging.log4j/log4j-core@2.25.1?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://logging.apache.org/log4j/2.x/</url>
+        </reference>
+        <reference type="build-system">
+          <url>https://github.com/apache/logging-log4j2/actions</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/apache/logging-log4j2/issues</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>https://lists.apache.org/list.html?log4j-user@logging.apache.org</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/apache/logging-log4j2</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.commons/commons-lang3@3.18.0?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.commons</group>
+      <name>commons-lang3</name>
+      <version>3.18.0</version>
+      <description>Apache Commons Lang, a package of Java utility classes for the
+  classes that are in java.lang's hierarchy, or are considered to be so
+  standard as to justify existence in java.lang.
+
+  The code is tested using the latest revision of the JDK for supported
+  LTS releases: 8, 11, 17 and 21 currently.
+  See https://github.com/apache/commons-lang/blob/master/.github/workflows/maven.yml
+  
+  Please ensure your build environment is up-to-date and kindly report any build issues.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">48b9886957920a4cdb602780ca345087</hash>
+        <hash alg="SHA-1">fb14946f0e39748a6571de0635acbe44e7885491</hash>
+        <hash alg="SHA-256">4eeeae8d20c078abb64b015ec158add383ac581571cddc45c68f0c9ae0230720</hash>
+        <hash alg="SHA-512">c2c9d497fc1be411050f4011b2407764b78aa098eb42925af8a197eabdbc25b507f09fb898805e9bed4815f35236a508ee5b096e36f363df4d407232d50fc832</hash>
+        <hash alg="SHA-384">4fb3f101106e4ce3666d5c15d276ba86f7683a0ef35f0384edfcd579ea454275edbb7400795d265ec3a38e39997e79b8</hash>
+        <hash alg="SHA3-384">aada7e3612cf3f6190a19fa7c3db74df1e13ec56b300be9bb4317d261d5877c84ab59ba9a09168becdbd82cd41961395</hash>
+        <hash alg="SHA3-256">306d286d0bd7549c203cc802fd755d354c4f7926fa023f4e83623ba1a6261250</hash>
+        <hash alg="SHA3-512">f6f1ecc684e309d7b9fc5c343792508fee935cd2119d962721662c5af88e4864ba6f47a863e083714f315f926c156de1970cd2fb577449bdfdc7bf98a4a451fa</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.commons/commons-lang3@3.18.0?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://commons.apache.org/proper/commons-lang/</url>
+        </reference>
+        <reference type="build-system">
+          <url>https://github.com/apache/commons-lang/actions</url>
+        </reference>
+        <reference type="distribution-intake">
+          <url>https://repository.apache.org/service/local/staging/deploy/maven2</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://issues.apache.org/jira/browse/LANG</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>https://mail-archives.apache.org/mod_mbox/commons-user/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://gitbox.apache.org/repos/asf/commons-lang.git</url>
+        </reference>
+      </externalReferences>
+    </component>
+  </components>
+  <dependencies>
+    <dependency ref="pkg:maven/org.apache.jspwiki/jspwiki-event@2.12.3?type=jar">
+      <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.25.1?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-core@2.25.1?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.commons/commons-lang3@3.18.0?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.25.1?type=jar"/>
+    <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-core@2.25.1?type=jar">
+      <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.25.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.commons/commons-lang3@3.18.0?type=jar"/>
+  </dependencies>
+</bom>

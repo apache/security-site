@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bom serialNumber="urn:uuid:f71edfcc-1342-3b4a-a9e2-ab349024844c" version="1" xmlns="http://cyclonedx.org/schema/bom/1.6">
+  <metadata>
+    <lifecycles>
+      <lifecycle>
+        <phase>build</phase>
+      </lifecycle>
+    </lifecycles>
+    <tools>
+      <components>
+        <component type="library">
+          <author>OWASP Foundation</author>
+          <group>org.cyclonedx</group>
+          <name>cyclonedx-maven-plugin</name>
+          <version>2.9.1</version>
+          <description>CycloneDX Maven plugin</description>
+          <hashes>
+            <hash alg="MD5">9c7a565cf28cce58557d0c621c5ea4b1</hash>
+            <hash alg="SHA-1">be882d5a22050bfa9d19090b1420c188617d0e1c</hash>
+            <hash alg="SHA-256">698e0f37184a5b28c245c4065fd036dfce253b52f82fbb7113d81d36326cc249</hash>
+            <hash alg="SHA-512">c0f0b11026858166f872a2eb54719492e5cecaa0bc9cd6b30b3ecb4a174eed220f4a1b5829d18d6734128e778d3cb3db7ffed177c92866133129cb29081814a0</hash>
+            <hash alg="SHA-384">d80964707dfe5caca8c70521d5066f57589304c0a657e6fbc7c0614ea0fc7b3b3dbe7778361eee0f54ba111e9cb0ffcb</hash>
+            <hash alg="SHA3-384">80bc3a275d9514bc457461ff52a72add8c7ecbbc01d8912efce57139016c544ee776981851be0a58fa977ab4221f703f</hash>
+            <hash alg="SHA3-256">142317d6f245390f4fd2d0c100b16281b8dfc5c0c2cff86943bdcc97039cb699</hash>
+            <hash alg="SHA3-512">af0fb9137c90b65d1a07f72e4d51ae509956cdb8800f35c961b037cdda1fe4a14ce3b496cef71ba85f1621affcfe29cd42704ae4191ff0b090a9602087c8997b</hash>
+          </hashes>
+        </component>
+      </components>
+    </tools>
+    <component type="library" bom-ref="pkg:maven/org.apache.jspwiki.wikipages/jspwiki-wikipages-de@2.12.3?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.jspwiki.wikipages</group>
+      <name>jspwiki-wikipages-de</name>
+      <version>2.12.3</version>
+      <description>Apache JSPWiki is a leading open source WikiWiki engine, feature-rich
+    and built around standard JEE components (Java, servlets, JSP).</description>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.jspwiki.wikipages/jspwiki-wikipages-de@2.12.3?type=jar</purl>
+      <externalReferences>
+        <reference type="vulnerability-assertion">
+          <url>https://jspwiki.apache.org/cyclonedx/vdr.xml</url>
+        </reference>
+        <reference type="website">
+          <url>https://jspwiki.apache.org/jspwiki-wikipages-builder/jspwiki-wikipages-de/</url>
+        </reference>
+        <reference type="build-system">
+          <url>https://builds.apache.org/job/JSPWiki</url>
+        </reference>
+        <reference type="distribution-intake">
+          <url>https://repository.apache.org/service/local/staging/deploy/maven2</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>http://issues.apache.org/jira/browse/JSPWIKI</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>http://mail-archives.apache.org/mod_mbox/jspwiki-dev/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/apache/jspwiki/jspwiki-wikipages-builder/jspwiki-wikipages-de</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <properties>
+      <property name="maven.goal">makeBom</property>
+      <property name="maven.scopes">compile,provided,runtime,system</property>
+      <property name="cdx:reproducible">enabled</property>
+    </properties>
+  </metadata>
+  <components>
+    <component type="library" bom-ref="pkg:maven/org.apache.jspwiki/jspwiki-markdown@2.12.3?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.jspwiki</group>
+      <name>jspwiki-markdown</name>
+      <version>2.12.3</version>
+      <description>Apache JSPWiki markdown support</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">06282445496b7a4865e3aa774e3f93ee</hash>
+        <hash alg="SHA-1">1ee29cdd186f434fca94313624f0d3e308a2743b</hash>
+        <hash alg="SHA-256">714dd9ccbb0b982245b9b4f47fefec177d30e7a4d19f965685311cd9e6999ac3</hash>
+        <hash alg="SHA-512">8c9188e6ee92cc71d621fab86ac79ade5ea08266c7beed071a4a14cf3541146cb6f93adb124b55ad6d7120eb0be06824a859bfd0bdfdadff9f53d62f4566c496</hash>
+        <hash alg="SHA-384">957c77c333e438818f20ed1df47a21aa58c44228e97d5ff136effe8e2fb4db76a4bdf268f663d07b3cfb9576fe361ce9</hash>
+        <hash alg="SHA3-384">00c4b231b48424e2427264fad8c3c21f7c52ffaa6b3e30efd3540fb5b3e0d90690045a511375eb06061b8d91ffa456f2</hash>
+        <hash alg="SHA3-256">f3a2db49199ff80e9ddb71ae651bda1091f8a5eb1243c407d49918a64d591668</hash>
+        <hash alg="SHA3-512">fbbcdd8269f306adc535c966d0ba361679aa8f6fc27ef41ff20e535623c459a2d4cf8db3659a68fa5953e1aa4b05973b3767f02d3a82b998fbe53123c26ab9ba</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.jspwiki/jspwiki-markdown@2.12.3?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://jspwiki.apache.org/jspwiki-markdown/</url>
+        </reference>
+        <reference type="build-system">
+          <url>https://builds.apache.org/job/JSPWiki</url>
+        </reference>
+        <reference type="distribution-intake">
+          <url>https://repository.apache.org/service/local/staging/deploy/maven2</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>http://issues.apache.org/jira/browse/JSPWIKI</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>http://mail-archives.apache.org/mod_mbox/jspwiki-dev/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/apache/jspwiki/jspwiki-markdown</url>
+        </reference>
+      </externalReferences>
+    </component>
+  </components>
+  <dependencies>
+    <dependency ref="pkg:maven/org.apache.jspwiki.wikipages/jspwiki-wikipages-de@2.12.3?type=jar">
+      <dependency ref="pkg:maven/org.apache.jspwiki/jspwiki-markdown@2.12.3?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.jspwiki/jspwiki-markdown@2.12.3?type=jar"/>
+  </dependencies>
+</bom>

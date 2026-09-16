@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bom serialNumber="urn:uuid:0053122a-bed3-4d38-bb28-c0406bb06a9b" version="1" xmlns="http://cyclonedx.org/schema/bom/1.4">
+  <metadata>
+    <timestamp>2025-08-20T10:46:14Z</timestamp>
+    <tools>
+      <tool>
+        <vendor>OWASP Foundation</vendor>
+        <name>CycloneDX Maven plugin</name>
+        <version>2.7.10</version>
+        <hashes>
+          <hash alg="MD5">1cc7f6a0382f8bb2f758d6a6ea401d1b</hash>
+          <hash alg="SHA-1">a4297947a1f2d7d453105db542651614bbd37f38</hash>
+          <hash alg="SHA-256">bd0fdd8f2f2116eee5e715aeac1580f19eb7a10ec2b6f805b53567067658e872</hash>
+          <hash alg="SHA-512">9cde8352a427e10b96cae01348fc7cfe5d4aa9cd0a5e5dd93b414ce3bb7d112993c3b3004e53af52567fbfa16de0704ec59a5556a635ad70571fd124ae389f39</hash>
+          <hash alg="SHA-384">93d7bf5b5c735347edfbfbd66810273ca840f9a322b816d22d44c3d8e8255c09e86570bb23712aeb0cade0f478be5aeb</hash>
+        </hashes>
+      </tool>
+    </tools>
+    <component type="library" bom-ref="pkg:maven/org.apache.hadoop/hadoop-yarn-applications-catalog-docker@3.4.2?type=pom">
+      <publisher>Apache Software Foundation</publisher>
+      <group>org.apache.hadoop</group>
+      <name>hadoop-yarn-applications-catalog-docker</name>
+      <version>3.4.2</version>
+      <description>Apache Hadoop Project POM</description>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.hadoop/hadoop-yarn-applications-catalog-docker@3.4.2?type=pom</purl>
+      <externalReferences><reference type="website"><url>https://maven.apache.org</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
+    </component>
+    <properties>
+      <property name="maven.goal">makeBom</property>
+      <property name="maven.scopes">compile,provided,runtime,system</property>
+    </properties>
+  </metadata>
+  <components>
+    <component type="library" bom-ref="pkg:maven/org.apache.hadoop/hadoop-yarn-applications-catalog-webapp@3.4.2?type=war">
+      <group>org.apache.hadoop</group>
+      <name>hadoop-yarn-applications-catalog-webapp</name>
+      <version>3.4.2</version>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">521e5402c2ba0c7ae782d05e309a83d3</hash>
+        <hash alg="SHA-1">130ae6aaac420b4323bc4628350c00f58a2014ad</hash>
+        <hash alg="SHA-256">a5725a522a8f15d7ac531a1201ffe88d7019dd6ff64876f6cbdce7adab2b2b73</hash>
+        <hash alg="SHA-512">637d4b7e05049c1a2551730eb7778334b8361c96d1226da8a7b9c7b67e7628cb9d5e4887701e6f7f9fad4adfe5fd75514be96620435d12fe11352805625e2977</hash>
+        <hash alg="SHA-384">33193fe2d229027d13b962350d23416e45e153bd734ae44347fa1dac6f79afeee8d02491702e2ce2fc395544896c5b55</hash>
+      </hashes>
+      <purl>pkg:maven/org.apache.hadoop/hadoop-yarn-applications-catalog-webapp@3.4.2?type=war</purl>
+    </component>
+  </components>
+  <dependencies>
+    <dependency ref="pkg:maven/org.apache.hadoop/hadoop-yarn-applications-catalog-docker@3.4.2?type=pom">
+      <dependency ref="pkg:maven/org.apache.hadoop/hadoop-yarn-applications-catalog-webapp@3.4.2?type=war"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.hadoop/hadoop-yarn-applications-catalog-webapp@3.4.2?type=war"/>
+  </dependencies>
+</bom>

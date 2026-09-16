@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bom serialNumber="urn:uuid:8a7f4378-cd51-3ff6-891d-29b65bee1566" version="1" xmlns="http://cyclonedx.org/schema/bom/1.6">
+  <metadata>
+    <lifecycles>
+      <lifecycle>
+        <phase>build</phase>
+      </lifecycle>
+    </lifecycles>
+    <tools>
+      <components>
+        <component type="library">
+          <author>OWASP Foundation</author>
+          <group>org.cyclonedx</group>
+          <name>cyclonedx-maven-plugin</name>
+          <version>2.9.1</version>
+          <description>CycloneDX Maven plugin</description>
+          <hashes>
+            <hash alg="MD5">9c7a565cf28cce58557d0c621c5ea4b1</hash>
+            <hash alg="SHA-1">be882d5a22050bfa9d19090b1420c188617d0e1c</hash>
+            <hash alg="SHA-256">698e0f37184a5b28c245c4065fd036dfce253b52f82fbb7113d81d36326cc249</hash>
+            <hash alg="SHA-512">c0f0b11026858166f872a2eb54719492e5cecaa0bc9cd6b30b3ecb4a174eed220f4a1b5829d18d6734128e778d3cb3db7ffed177c92866133129cb29081814a0</hash>
+            <hash alg="SHA-384">d80964707dfe5caca8c70521d5066f57589304c0a657e6fbc7c0614ea0fc7b3b3dbe7778361eee0f54ba111e9cb0ffcb</hash>
+            <hash alg="SHA3-384">80bc3a275d9514bc457461ff52a72add8c7ecbbc01d8912efce57139016c544ee776981851be0a58fa977ab4221f703f</hash>
+            <hash alg="SHA3-256">142317d6f245390f4fd2d0c100b16281b8dfc5c0c2cff86943bdcc97039cb699</hash>
+            <hash alg="SHA3-512">af0fb9137c90b65d1a07f72e4d51ae509956cdb8800f35c961b037cdda1fe4a14ce3b496cef71ba85f1621affcfe29cd42704ae4191ff0b090a9602087c8997b</hash>
+          </hashes>
+        </component>
+      </components>
+    </tools>
+    <component type="library" bom-ref="pkg:maven/org.apache.jspwiki/jspwiki-api@2.12.3?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.jspwiki</group>
+      <name>jspwiki-api</name>
+      <version>2.12.3</version>
+      <description>Apache JSPWiki is a leading open source WikiWiki engine, feature-rich
+    and built around standard JEE components (Java, servlets, JSP).</description>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.jspwiki/jspwiki-api@2.12.3?type=jar</purl>
+      <externalReferences>
+        <reference type="vulnerability-assertion">
+          <url>https://jspwiki.apache.org/cyclonedx/vdr.xml</url>
+        </reference>
+        <reference type="website">
+          <url>https://jspwiki.apache.org/jspwiki-api/</url>
+        </reference>
+        <reference type="build-system">
+          <url>https://builds.apache.org/job/JSPWiki</url>
+        </reference>
+        <reference type="distribution-intake">
+          <url>https://repository.apache.org/service/local/staging/deploy/maven2</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>http://issues.apache.org/jira/browse/JSPWIKI</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>http://mail-archives.apache.org/mod_mbox/jspwiki-dev/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/apache/jspwiki/jspwiki-api</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <properties>
+      <property name="maven.goal">makeBom</property>
+      <property name="maven.scopes">compile,provided,runtime,system</property>
+      <property name="cdx:reproducible">enabled</property>
+    </properties>
+  </metadata>
+  <components>
+    <component type="library" bom-ref="pkg:maven/org.apache.jspwiki/jspwiki-event@2.12.3?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.jspwiki</group>
+      <name>jspwiki-event</name>
+      <version>2.12.3</version>
+      <description>Apache JSPWiki is a leading open source WikiWiki engine, feature-rich
+    and built around standard JEE components (Java, servlets, JSP).</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">c5c88e11529551de142f0fb48781037d</hash>
+        <hash alg="SHA-1">6239b052393d658691f1d04938fad194bad002b2</hash>
+        <hash alg="SHA-256">393d11045284d0aba3ccbe75830adbfa4ee82512d5fbce1a42216698d5811281</hash>
+        <hash alg="SHA-512">e64aad7f07d8ea109f0b1fc09e891ac3203a0531e12368cbbb183ea8f62c33a99b207862664fc88916eb59e1066fa6a24ff700b0d01757e74c7c3134003ee102</hash>
+        <hash alg="SHA-384">daecdf85f5762eeb24b31a5681f691d7f1c75b86687ccd963b3f3834632e7f8bbb50b8822204d8ef4470411f88c27c29</hash>
+        <hash alg="SHA3-384">9d9d278befecfff759c33dfe36350ceffc82f9fb7a2c6856a57f2b6dfdb2b9d68dda55aa76c32ae6b5359a5dfde68009</hash>
+        <hash alg="SHA3-256">aed934966b233f238a4bce46c76e573f009b68db4d253ad09a8b19448ee38fbe</hash>
+        <hash alg="SHA3-512">0ff8834cf551b42a678c8d9893dc5835fdc6260867d76063331e353ea73d1b9683e6531aea67e2ec2870b827f9ed461b0b1b4530d5e9c740b646b75e51a1ea38</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.jspwiki/jspwiki-event@2.12.3?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://jspwiki.apache.org/jspwiki-event/</url>
+        </reference>
+        <reference type="build-system">
+          <url>https://builds.apache.org/job/JSPWiki</url>
+        </reference>
+        <reference type="distribution-intake">
+          <url>https://repository.apache.org/service/local/staging/deploy/maven2</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>http://issues.apache.org/jira/browse/JSPWIKI</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>http://mail-archives.apache.org/mod_mbox/jspwiki-dev/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/apache/jspwiki/jspwiki-event</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.logging.log4j/log4j-core@2.25.1?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.logging.log4j</group>
+      <name>log4j-core</name>
+      <version>2.25.1</version>
+      <description>A versatile, industrial-grade, and reference implementation of the Log4j API.
+    It bundles a rich set of components to assist various use cases:
+    Appenders targeting files, network sockets, databases, SMTP servers;
+    Layouts that can render CSV, HTML, JSON, Syslog, etc. formatted outputs;
+    Filters that can be configured using log event rates, regular expressions, scripts, time, etc.
+    It contains several extension points to introduce custom components, if needed.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">ec95ac453934a56229ace160e28aa791</hash>
+        <hash alg="SHA-1">32b3a228d5a30a4528b6c7354fe6cff9524d89e7</hash>
+        <hash alg="SHA-256">78c232747855464b182f0abf78a99a22c88d4d270ff585343dab55576d7420e2</hash>
+        <hash alg="SHA-512">f980579477a00759882e43ec60842a3f79264d16cb4823de271444a2919e2e8733fedb46cebb30e809824ba131ddc10bef32106cc1afa3057659a29a24937479</hash>
+        <hash alg="SHA-384">315e67f907336d270474f093848798eef8d4c4f54774f90c6a8d065e7adb2f3e3ed35dacb5f1d83c72a558dee9085370</hash>
+        <hash alg="SHA3-384">460c886d36b4531e1ff85b5e9f4d213afd49eddd1e1d7fdd4382b8b773835aa93a8bc0068e68192dcbe9327fb29fc10b</hash>
+        <hash alg="SHA3-256">e96193dbf004e7c140952ddc58dcbbafd038b9994dce87203b5f4ea4df9012ec</hash>
+        <hash alg="SHA3-512">32c56681fdfceaf68209432abbf1cefb434809855c66f9fb2a980238585c62122d270a360b2c4b3850ff6080fe810445809d5b7c164c81667fdeb495b5f36392</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.logging.log4j/log4j-core@2.25.1?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://logging.apache.org/log4j/2.x/</url>
+        </reference>
+        <reference type="build-system">
+          <url>https://github.com/apache/logging-log4j2/actions</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/apache/logging-log4j2/issues</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>https://lists.apache.org/list.html?log4j-user@logging.apache.org</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/apache/logging-log4j2</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.jspwiki/jspwiki-util@2.12.3?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.jspwiki</group>
+      <name>jspwiki-util</name>
+      <version>2.12.3</version>
+      <description>Apache JSPWiki is a leading open source WikiWiki engine, feature-rich
+    and built around standard JEE components (Java, servlets, JSP).</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">f00b41b1b50041bf5993d2fa1b68f6ce</hash>
+        <hash alg="SHA-1">b9aeed8b4c172fa32a7d8f0c4709a8014a94b916</hash>
+        <hash alg="SHA-256">557e2d05f7da0fd90e3bb4bddc63ed4e97cda134c187dd83801faa0dc13ba89a</hash>
+        <hash alg="SHA-512">a5f90af84939ce198cd5750fa04daa93c5ba9345141b14bc582da615715d69013d780e82c831f7ba14f03916c8d3bd4903db76aac53b920aa3b430fb5900e85d</hash>
+        <hash alg="SHA-384">d6e1f1fde927909ab288acbea63a3cdfa58171e1fea4a2aa6553f19767f940429d8f3975f70117863ef7260d30e3e572</hash>
+        <hash alg="SHA3-384">27216476c4d35606ff5214ae93d3cab25759307e0a7caddc0de1831e24613e6692b622badc1c5efcc83771c5334a8f50</hash>
+        <hash alg="SHA3-256">dec5dd424dfa0842b3456114643c6ae52c01a04b91d962252254385033e2f4ba</hash>
+        <hash alg="SHA3-512">6baff8fbbdcc64d7d7f03f88ed7f12b24d4f0a4d67b095e41a490caf332ea99bab70864daa1d76d8a0ad11f1a6fdd697882c2a75174356b26a2d396b89ba6918</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.jspwiki/jspwiki-util@2.12.3?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://jspwiki.apache.org/jspwiki-util/</url>
+        </reference>
+        <reference type="build-system">
+          <url>https://builds.apache.org/job/JSPWiki</url>
+        </reference>
+        <reference type="distribution-intake">
+          <url>https://repository.apache.org/service/local/staging/deploy/maven2</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>http://issues.apache.org/jira/browse/JSPWIKI</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>http://mail-archives.apache.org/mod_mbox/jspwiki-dev/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/apache/jspwiki/jspwiki-util</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.sun.mail/logging-mailhandler@1.6.2?type=jar">
+      <publisher>Oracle</publisher>
+      <group>com.sun.mail</group>
+      <name>logging-mailhandler</name>
+      <version>1.6.2</version>
+      <description>JavaMail API logging handler</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">31be5a050f3efedfd9d3b1320e665cc2</hash>
+        <hash alg="SHA-1">3cd9498fbdb160b5f1a364a5548f7844879855ee</hash>
+        <hash alg="SHA-256">990e91388821481eb7fb6df2a394184b8b65d673c39add37a100c3a753450f52</hash>
+        <hash alg="SHA-512">ced2ebb9175ad9aceee1aa1f5ca50f052896a1cc77a9e808e12af6b9db4b68cb2c2171b71d78141999c3adf3b4301812566ea16a3462e0c2d608b938470ea53e</hash>
+        <hash alg="SHA-384">37dc0f3ade04f4d615e79ff137c4d4d027853c6e1b825ea1b85b35e2e3339c3828c9cb03381f1876f7470133fb8a76c3</hash>
+        <hash alg="SHA3-384">097d3b4623058c0318ee0c42585d6f1e83a731c68c0959fb948037ae9895f0d0e961beece88999ca6b3cb8198db26f8a</hash>
+        <hash alg="SHA3-256">7d49d9bb11243bfce9c3f5042646fb9dba480e8e56dd19fc332094a2ece0e20d</hash>
+        <hash alg="SHA3-512">ac16e7987b71301fd64146f499e78fc8f340fb3896c18d1de6946c0a7bdb7416edfa8410bd2361365f77898b974d3f08f14dc7d3f4328e309e7531518f611e47</hash>
+      </hashes>
+      <licenses>
+        <expression>(CDDL-1.0 OR GPL-2.0-with-classpath-exception)</expression>
+      </licenses>
+      <purl>pkg:maven/com.sun.mail/logging-mailhandler@1.6.2?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://javaee.github.io/javamail/parent-distrib/logging-mailhandler</url>
+        </reference>
+        <reference type="distribution-intake">
+          <url>https://maven.java.net/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/javaee/javamail/issues</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/javaee/javamail/parent-distrib/logging-mailhandler</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.sun.mail/mailapi@1.6.2?type=jar">
+      <publisher>Oracle</publisher>
+      <group>com.sun.mail</group>
+      <name>mailapi</name>
+      <version>1.6.2</version>
+      <description>JavaMail API (no providers)</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">b89a9ff8ac681f01dfd06798a008f0af</hash>
+        <hash alg="SHA-1">208b6439dfbe6713c384ebf54ecd62cd4423cc50</hash>
+        <hash alg="SHA-256">d37c0f88efa5973ccb4100f4cc49aee3510cd01ab25012d1f085b1b798ae2ebb</hash>
+        <hash alg="SHA-512">72f2e7f843ae92986d384166835588e5b4299b271e4b26158248418843e4a9c885ab50fc4284e2504807c59b0af1d59a6b27b7543784ca746377ae815edd1143</hash>
+        <hash alg="SHA-384">8478e628b400d624664f044219a74cb12962968fc96333ad58884c975fe39305b045f89c9a7518eda19d2031000e4c26</hash>
+        <hash alg="SHA3-384">6162cc9a369e47ab98e72c660e90c1b97c09b01dc438b3dd889a401c4db366f4b1ddac7d1a9641aad9f1f8dcd5f22ccf</hash>
+        <hash alg="SHA3-256">c10a54013a9177e258830240eb9c58ab9971db10b602a0be6eaaa0e0a6354333</hash>
+        <hash alg="SHA3-512">4994293cb0dfec961a807eae29fc206d14873942ca0f2e5a379cd95a0ee4271dee20b8162974a98fe091a124d9387f4fe1251defa4b568b755a30ecf399e0697</hash>
+      </hashes>
+      <licenses>
+        <expression>(CDDL-1.0 OR GPL-2.0-with-classpath-exception)</expression>
+      </licenses>
+      <purl>pkg:maven/com.sun.mail/mailapi@1.6.2?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://javaee.github.io/javamail/mailapi</url>
+        </reference>
+        <reference type="distribution-intake">
+          <url>https://maven.java.net/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/javaee/javamail/issues</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/javaee/javamail/mailapi</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.sun.mail/javax.mail@1.6.2?type=jar">
+      <publisher>Oracle</publisher>
+      <group>com.sun.mail</group>
+      <name>javax.mail</name>
+      <version>1.6.2</version>
+      <description>JavaMail API</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">0b81d022797740d72d21620781841374</hash>
+        <hash alg="SHA-1">935151eb71beff17a2ffac15dd80184a99a0514f</hash>
+        <hash alg="SHA-256">45b515e7104944c09e45b9c7bb1ce5dff640486374852dd2b2e80cc3752dfa11</hash>
+        <hash alg="SHA-512">d76243093d93c556ae399ce9b65ea35bc5a7e12703110108cf8eaa314d8f9b094034dd530438189775f61f0994727cac6f68efb8eab2f13349922b08eb00d4ec</hash>
+        <hash alg="SHA-384">44300db745c6a065b5ca907e04d06bc42e42d4bf59470b24d2c40f889cf8fc79f0793997321874b2c25bc269900f9c51</hash>
+        <hash alg="SHA3-384">4884616293856fe9d2ed2c6bb838f32d645ccab65a05b949351e6d93d6ed9ea408c8666ef17e19bd033c25545bafb490</hash>
+        <hash alg="SHA3-256">905d9b5869f8ee5ad4b1027293beb5af5051aa2b929f52500611beedd2d5c992</hash>
+        <hash alg="SHA3-512">bec15cc6423179fb27e01c149e9c761a5cc98844e47f2182101d69f84736a85390da487eef7cc2dca94992c14d6ba7fe3d5833d2ad554731bec439ef11d547d8</hash>
+      </hashes>
+      <licenses>
+        <expression>(CDDL-1.0 OR GPL-2.0-with-classpath-exception)</expression>
+      </licenses>
+      <purl>pkg:maven/com.sun.mail/javax.mail@1.6.2?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://javaee.github.io/javamail/javax.mail</url>
+        </reference>
+        <reference type="distribution-intake">
+          <url>https://maven.java.net/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/javaee/javamail/issues</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/javaee/javamail/javax.mail</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/javax.activation/activation@1.1?type=jar">
+      <group>javax.activation</group>
+      <name>activation</name>
+      <version>1.1</version>
+      <description>JavaBeans Activation Framework (JAF) is a standard extension to the Java platform that lets you take advantage of standard services to: determine the type of an arbitrary piece of data; encapsulate access to it; discover the operations available on it; and instantiate the appropriate bean to perform the operation(s).</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">8ae38e87cd4f86059c0294a8fe3e0b18</hash>
+        <hash alg="SHA-1">e6cb541461c2834bdea3eb920f1884d1eb508b50</hash>
+        <hash alg="SHA-256">2881c79c9d6ef01c58e62beea13e9d1ac8b8baa16f2fc198ad6e6776defdcdd3</hash>
+        <hash alg="SHA-512">c0ff5bf3ace7acc1b31fcc109cee48d9eb8f025ae15a31dc91eca760933bdb97c93f05d61e95af1e317859d72e5f179f897f5bf3df0e3810f4212d43bacee4bd</hash>
+        <hash alg="SHA-384">c4ee54d80a2e67e819700051d6cfa01a17631c89f942b8690afb601e491f02d7497fe57bd5c70edfb9b444ae8222b846</hash>
+        <hash alg="SHA3-384">de0777d2d1d7aad105defb12aed17ef38abfe89db2449c5243fa3c69304ea24dd8df0881330351d0733313e8f7252814</hash>
+        <hash alg="SHA3-256">5fb94d2742cc3d44abad42c5d61b9c7464a2ef33bc58b4b5b121d49799123460</hash>
+        <hash alg="SHA3-512">c5e37fe3d9c420a9035f1160eb1d396e94f01851c01c6e2f19f19a221bfc484e63f9660c7377f58aa65246b95a9eb799ac4e6798c0b20f658edf00a4435e1efa</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>CDDL-1.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/javax.activation/activation@1.1?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://java.sun.com/products/javabeans/jaf/index.jsp</url>
+        </reference>
+        <reference type="distribution">
+          <url>https://maven-repository.dev.java.net/nonav/repository/javax.activation/jars/activation-1.1.jar</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/commons-io/commons-io@2.20.0?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>commons-io</group>
+      <name>commons-io</name>
+      <version>2.20.0</version>
+      <description>The Apache Commons IO library contains utility classes, stream implementations, file filters,
+file comparators, endian transformation classes, and much more.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">94e7e6b9b5fe82388687b584d3571081</hash>
+        <hash alg="SHA-1">36f3474daec2849c149e877614e7f979b2082cd2</hash>
+        <hash alg="SHA-256">df90bba0fe3cb586b7f164e78fe8f8f4da3f2dd5c27fa645f888100ccc25dd72</hash>
+        <hash alg="SHA-512">fea08e150473673b0608eaee3ae1cb4e73834039db80d3b758710d6baf3a5840a0878a4eb64739ae9bb21ccc7148c8520fe873616a3f6d5cdb4305deabdd015c</hash>
+        <hash alg="SHA-384">22db5e18e3512ed44474e75a124a052d5a1a6f35ce458f6a201a5ccc9510c57c10c117dba80ac6ce91745cf2b51e63f2</hash>
+        <hash alg="SHA3-384">a70700d24df3c276ff387c359e0e940b834e413b72a49917de9a82615836eca8cca1bee1ed71790606c795da795e9151</hash>
+        <hash alg="SHA3-256">a8d044d3a4a069d0f20d24112b6427a3a6f02a925b31b932721d1f545ff32cec</hash>
+        <hash alg="SHA3-512">3417bf811d7e5fc1e71b8540f3379751434ea8540c421ff2c8bb5f5ce34401cd0ad8a829b65aa55e055c57141181762c4827099352c2bba453e48ad2df67526a</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/commons-io/commons-io@2.20.0?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://commons.apache.org/proper/commons-io/</url>
+        </reference>
+        <reference type="build-system">
+          <url>https://github.com/apache/commons-io/actions</url>
+        </reference>
+        <reference type="distribution-intake">
+          <url>https://repository.apache.org/service/local/staging/deploy/maven2</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://issues.apache.org/jira/browse/IO</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>https://mail-archives.apache.org/mod_mbox/commons-user/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://gitbox.apache.org/repos/asf?p=commons-io.git</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/jaxen/jaxen@2.0.0?type=jar">
+      <publisher>The Jaxen Project</publisher>
+      <group>jaxen</group>
+      <name>jaxen</name>
+      <version>2.0.0</version>
+      <description>Jaxen is a universal XPath engine for Java.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">674d5bd86b7838fe431b0277856e97ae</hash>
+        <hash alg="SHA-1">bd6a33b0fda054a5678010df843cc999f288dc6c</hash>
+        <hash alg="SHA-256">9499e487a66268f47b8307d130cd1e13a58392105e98a51f6a525db79c615cc5</hash>
+        <hash alg="SHA-512">dc4d2686c65bfb0c2936e8c0eb4d517152aa284ed28a7880165a4247564823f34e1e9f06785a9dbad7b4cbe90486d3e9aed4c32c75d485d29bd15b8d7642b6f9</hash>
+        <hash alg="SHA-384">fdbb322d3af5f63a3aa39419734de3cae39daa4b1b01b43b97c2074502e9f737dc4031a159438a9bf75d7dadfabd56ae</hash>
+        <hash alg="SHA3-384">ecc8beb677e957adba96ed6cffbf343388713ccac411193c20bf5b919e0db9e1dabe1a7725130cc75eeb9640844b6c19</hash>
+        <hash alg="SHA3-256">572fdde162d406c7221fb5ae3d885f6c0f5d6c3d56140a2a31152e487439c58b</hash>
+        <hash alg="SHA3-512">1ed5f4959ffb6fe24748e582dd1d0efddd5ac79aec3db09c1faf7ed246e9e2674ea40103d24ce954b02d660379cec4a2c1042dac3b81f6c7e63152e99be18b5e</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <name>BSD License 2.0</name>
+          <url>https://raw.githubusercontent.com/jaxen-xpath/jaxen/master/LICENSE.txt</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/jaxen/jaxen@2.0.0?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://www.cafeconleche.org/jaxen/jaxen</url>
+        </reference>
+        <reference type="distribution-intake">
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/jaxen-xpath/jaxen/issues</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>https://markmail.org/search/?q=list%3Aorg.codehaus.jaxen.user</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/jaxen-xpath/jaxen/jaxen</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.jdom/jdom2@2.0.6?type=jar">
+      <publisher>JDOM</publisher>
+      <group>org.jdom</group>
+      <name>jdom2</name>
+      <version>2.0.6</version>
+      <description>A complete, Java-based solution for accessing, manipulating, 
+		and outputting XML data</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">86a30c9b1ddc08ca155747890db423b7</hash>
+        <hash alg="SHA-1">6f14738ec2e9dd0011e343717fa624a10f8aab64</hash>
+        <hash alg="SHA-256">1345f11ba606d15603d6740551a8c21947c0215640770ec67271fe78bea97cf5</hash>
+        <hash alg="SHA-512">315791dc16bc6240d81da7fee9ae325102ff7db19a57805335d189bc747abc4d1c80144589ebf956613b93b2263c7565fdf171aca0c6c598616eb3f0bdf4cc58</hash>
+        <hash alg="SHA-384">6240f6747c788c1d512aa1383ff5648dc1c528504010d1dea0667cfa7b291e5521ad70521a8753e52c057edbdc190d36</hash>
+        <hash alg="SHA3-384">5905840ddfa1bdad2bf8cc3b61a0509c438de94585473b5e4a4dccd8c653fe0a97b094b6703b502605b1141ad6b83d23</hash>
+        <hash alg="SHA3-256">e46ea1f3ddd97c9e6a5714ed0e4f981962f4c11c28ec96f63edff801c202921a</hash>
+        <hash alg="SHA3-512">4db8ae655765f69ffd94f4cfbf1d637a9159bb015af198902449ad0f9654b41aa3ec8695e36c358ce36ec7d3ebb67feafd955be6eefdb5d72f308e95a97ab8a9</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <name>Similar to Apache License but with the acknowledgment clause removed</name>
+          <url>https://raw.github.com/hunterhacker/jdom/master/LICENSE.txt</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.jdom/jdom2@2.0.6?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://www.jdom.org</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>http://jdom.markmail.org/</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.25.1?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.logging.log4j</group>
+      <name>log4j-api</name>
+      <version>2.25.1</version>
+      <description>The logging API of the Log4j project.
+    Library and application code can log through this API.
+    It contains a simple built-in implementation (`SimpleLogger`) for trivial use cases.
+    Production applications are recommended to use Log4j API in combination with a fully-fledged implementation, such as Log4j Core.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">efcc09f4d0eca5b7aa983f38caa08a8d</hash>
+        <hash alg="SHA-1">c7acbbd6f110cd1457c628da46245e355b1ee57a</hash>
+        <hash alg="SHA-256">20b9c77c0a9e54d1063a39e551dcaf98c7d8e7a4994648f84d0b9e14c71f7215</hash>
+        <hash alg="SHA-512">0422500e4522ad2752f363758ff0abea55b73195cf38784328b9ed17f4b3356546923d6b7c67de4a6bbb8d54e42063e6df2f4548eb6136da99a0452437b20aae</hash>
+        <hash alg="SHA-384">6ef565b0557127fa87aafaea4534c2a8fbb133f8e3533997331350184e4a8831924005727fcd30cbfdc74b07ae17e93b</hash>
+        <hash alg="SHA3-384">461685e33a6a19d084bcf8fd5f8f8975429518473bc105bf4115ef2a728d5b8042654c3fa6bc217267be385e8c44b96a</hash>
+        <hash alg="SHA3-256">c00b35a0112be5c33a759d39862e5f76aa992bffb5b7033a3be169d4b4ec7550</hash>
+        <hash alg="SHA3-512">95a8eaef0c3b57c0ce194a84c9954eaac5ce9296c3a4c57d3b13aadddfaa36d1e0529b72efb6a8c69f9c76c7395172d2ce5ae9a7f4b902b47982d3371ea826db</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.logging.log4j/log4j-api@2.25.1?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://logging.apache.org/log4j/2.x/</url>
+        </reference>
+        <reference type="build-system">
+          <url>https://github.com/apache/logging-log4j2/actions</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/apache/logging-log4j2/issues</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>https://lists.apache.org/list.html?log4j-user@logging.apache.org</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/apache/logging-log4j2</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.logging.log4j/log4j-1.2-api@2.25.1?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.logging.log4j</group>
+      <name>log4j-1.2-api</name>
+      <version>2.25.1</version>
+      <description>The Apache Log4j 1.x Compatibility API</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">743f46757f485b3258cf68243492cf3d</hash>
+        <hash alg="SHA-1">08b3667ec8ee781429169b612b7ca6d6a30682b9</hash>
+        <hash alg="SHA-256">6b3babf23e3dd6f3d9db992beb7cf12ea96ba2a19164d61d1ab3e5ce7ba42c2b</hash>
+        <hash alg="SHA-512">f602032089312df6a9cc01b466bc6e9ae774df013cdee30b86598ddcd9c1f9ee964d1e8bd28e7f5d2948c81c7e7fd01fc3dae56b051a418cc5c99d3ff3c5b721</hash>
+        <hash alg="SHA-384">3acdf23152509caa39e16d286db5a09026ed68eebf090bbe1d6f812b313edc47d3ddabd0318ec40b6339229cfa6c216f</hash>
+        <hash alg="SHA3-384">2aa83469042972c0b46bd8c3c5e7cc7f7b393a0008e65b5d2277fc1188c0f1cea52fe2f4f9ffa1a38bfb84249e537d83</hash>
+        <hash alg="SHA3-256">8e2c750ca0f1461ffe3185b6ab8c9a085544c93ca2704f1f57143c85a11985ef</hash>
+        <hash alg="SHA3-512">735fa1f4a8a58b567e2ef1a286deec300e955ec7371c60372b5a9ab26b05aff1d9d16962855799b0e549069afc1436cd8e12b03e5a1c64d0a5c412f1a0a2cda0</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.logging.log4j/log4j-1.2-api@2.25.1?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://logging.apache.org/log4j/2.x/</url>
+        </reference>
+        <reference type="build-system">
+          <url>https://github.com/apache/logging-log4j2/actions</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/apache/logging-log4j2/issues</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>https://lists.apache.org/list.html?log4j-user@logging.apache.org</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/apache/logging-log4j2</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.commons/commons-lang3@3.18.0?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.commons</group>
+      <name>commons-lang3</name>
+      <version>3.18.0</version>
+      <description>Apache Commons Lang, a package of Java utility classes for the
+  classes that are in java.lang's hierarchy, or are considered to be so
+  standard as to justify existence in java.lang.
+
+  The code is tested using the latest revision of the JDK for supported
+  LTS releases: 8, 11, 17 and 21 currently.
+  See https://github.com/apache/commons-lang/blob/master/.github/workflows/maven.yml
+  
+  Please ensure your build environment is up-to-date and kindly report any build issues.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">48b9886957920a4cdb602780ca345087</hash>
+        <hash alg="SHA-1">fb14946f0e39748a6571de0635acbe44e7885491</hash>
+        <hash alg="SHA-256">4eeeae8d20c078abb64b015ec158add383ac581571cddc45c68f0c9ae0230720</hash>
+        <hash alg="SHA-512">c2c9d497fc1be411050f4011b2407764b78aa098eb42925af8a197eabdbc25b507f09fb898805e9bed4815f35236a508ee5b096e36f363df4d407232d50fc832</hash>
+        <hash alg="SHA-384">4fb3f101106e4ce3666d5c15d276ba86f7683a0ef35f0384edfcd579ea454275edbb7400795d265ec3a38e39997e79b8</hash>
+        <hash alg="SHA3-384">aada7e3612cf3f6190a19fa7c3db74df1e13ec56b300be9bb4317d261d5877c84ab59ba9a09168becdbd82cd41961395</hash>
+        <hash alg="SHA3-256">306d286d0bd7549c203cc802fd755d354c4f7926fa023f4e83623ba1a6261250</hash>
+        <hash alg="SHA3-512">f6f1ecc684e309d7b9fc5c343792508fee935cd2119d962721662c5af88e4864ba6f47a863e083714f315f926c156de1970cd2fb577449bdfdc7bf98a4a451fa</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.commons/commons-lang3@3.18.0?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://commons.apache.org/proper/commons-lang/</url>
+        </reference>
+        <reference type="build-system">
+          <url>https://github.com/apache/commons-lang/actions</url>
+        </reference>
+        <reference type="distribution-intake">
+          <url>https://repository.apache.org/service/local/staging/deploy/maven2</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://issues.apache.org/jira/browse/LANG</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>https://mail-archives.apache.org/mod_mbox/commons-user/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://gitbox.apache.org/repos/asf/commons-lang.git</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/javax.servlet/javax.servlet-api@3.1.0?type=jar">
+      <publisher>GlassFish Community</publisher>
+      <group>javax.servlet</group>
+      <name>javax.servlet-api</name>
+      <version>3.1.0</version>
+      <description>Java.net - The Source for Java Technology Collaboration</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">79de69e9f5ed8c7fcb8342585732bbf7</hash>
+        <hash alg="SHA-1">3cd63d075497751784b2fa84be59432f4905bf7c</hash>
+        <hash alg="SHA-256">af456b2dd41c4e82cf54f3e743bc678973d9fe35bd4d3071fa05c7e5333b8482</hash>
+        <hash alg="SHA-512">32f7e3565c6cdf3d9a562f8fd597fe5059af0cf6b05b772a144a74bbc95927ac275eb38374538ec1c72adcce4c8e1e2c9f774a7b545db56b8085af0065e4a1e5</hash>
+        <hash alg="SHA-384">8bf960fd053ef6ad1c3535824311f676b9ad537678b85f855dd5d6d726e391f8a7be9c9c76a8ae3ce8bfe671c1e2c942</hash>
+        <hash alg="SHA3-384">e8f3282c08ceeed02947a13e886a3d75a6ea63e4f869a0e0bcbcf622e7cbffc81ed7bc045e82820443b6572c897cc4cc</hash>
+        <hash alg="SHA3-256">8acc3481503989e1a78ad619bcbdc005b616c13736522b52e5ae5d782e8a0216</hash>
+        <hash alg="SHA3-512">ab5f85d424640ddcf6fc13a41d12ffdee0be9508cd4cdc581168b31cf7917323f6e0d984a0631068e0e01c098098fe0037d1c4176352fd89ba3a4da5d641ca3d</hash>
+      </hashes>
+      <licenses>
+        <expression>(CDDL-1.0 OR GPL-2.0-with-classpath-exception)</expression>
+      </licenses>
+      <purl>pkg:maven/javax.servlet/javax.servlet-api@3.1.0?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>http://servlet-spec.java.net</url>
+        </reference>
+        <reference type="distribution-intake">
+          <url>https://maven.java.net/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>http://java.net/jira/browse/SERVLET_SPEC</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>users@servlet-spec.java.net</url>
+        </reference>
+        <reference type="vcs">
+          <url>http://java.net/projects/glassfish/sources/svn/show/tags/javax.servlet-api-3.1.0</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/javax.servlet.jsp/javax.servlet.jsp-api@2.3.3?type=jar">
+      <publisher>Oracle</publisher>
+      <group>javax.servlet.jsp</group>
+      <name>javax.servlet.jsp-api</name>
+      <version>2.3.3</version>
+      <description>Java.net - The Source for Java Technology Collaboration</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">f6676a5961328c41c5e722da5e48d047</hash>
+        <hash alg="SHA-1">81191ab80e342912dc9cea735c30ff4eddc64de3</hash>
+        <hash alg="SHA-256">409a534d275ef0958a2c1692472da30e3706bfe6933d56c039376f53f13689b7</hash>
+        <hash alg="SHA-512">9ac69ebc00d00e5edb28302fdd515c8e678cad1c2cbacbad487b3d84c74827563fca378383061ce03b8d9ee50f99ced9418cc9d8d64e49eef32270232d660c8a</hash>
+        <hash alg="SHA-384">f9e54c75a0449a64501ec54f41bf834dd1131345666c48eada30e296f5c46695290088f1b0be6c8b13f719380722408a</hash>
+        <hash alg="SHA3-384">36eddccbb6c138d331541b6cfc6166353de46d9cb79976aa08d2b9f50380a0e8ea94c53ddcb2e00b0721dd4923528e64</hash>
+        <hash alg="SHA3-256">38b51e21f65ad9f94cc26316dd2bdd277a660b51105951230652826067066511</hash>
+        <hash alg="SHA3-512">09481ab1f354b79f34e7da94b2eb41792464842e4815ac558236a2c404253f6279a0845f33937c3cdd757c4b5ce7497d803a56063635a97ad06c6068f12a0265</hash>
+      </hashes>
+      <licenses>
+        <expression>(CDDL-1.0 OR GPL-2.0-with-classpath-exception)</expression>
+      </licenses>
+      <purl>pkg:maven/javax.servlet.jsp/javax.servlet.jsp-api@2.3.3?type=jar</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://javaee.github.io/javaee-jsp-api</url>
+        </reference>
+        <reference type="distribution-intake">
+          <url>https://maven.java.net/service/local/staging/deploy/maven2/</url>
+        </reference>
+        <reference type="issue-tracker">
+          <url>https://github.com/javaee/javaee-jsp-api/issues/</url>
+        </reference>
+        <reference type="mailing-list">
+          <url>dev@jsp.java.net</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/javaee/javaee-jsp-api</url>
+        </reference>
+      </externalReferences>
+    </component>
+  </components>
+  <dependencies>
+    <dependency ref="pkg:maven/org.apache.jspwiki/jspwiki-api@2.12.3?type=jar">
+      <dependency ref="pkg:maven/org.apache.jspwiki/jspwiki-event@2.12.3?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.jspwiki/jspwiki-util@2.12.3?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.25.1?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-1.2-api@2.25.1?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.commons/commons-lang3@3.18.0?type=jar"/>
+      <dependency ref="pkg:maven/javax.servlet/javax.servlet-api@3.1.0?type=jar"/>
+      <dependency ref="pkg:maven/javax.servlet.jsp/javax.servlet.jsp-api@2.3.3?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.jspwiki/jspwiki-event@2.12.3?type=jar">
+      <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.25.1?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-core@2.25.1?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.commons/commons-lang3@3.18.0?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.25.1?type=jar"/>
+    <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-core@2.25.1?type=jar">
+      <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.25.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.commons/commons-lang3@3.18.0?type=jar"/>
+    <dependency ref="pkg:maven/org.apache.jspwiki/jspwiki-util@2.12.3?type=jar">
+      <dependency ref="pkg:maven/com.sun.mail/logging-mailhandler@1.6.2?type=jar"/>
+      <dependency ref="pkg:maven/com.sun.mail/javax.mail@1.6.2?type=jar"/>
+      <dependency ref="pkg:maven/commons-io/commons-io@2.20.0?type=jar"/>
+      <dependency ref="pkg:maven/jaxen/jaxen@2.0.0?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.25.1?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-core@2.25.1?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.commons/commons-lang3@3.18.0?type=jar"/>
+      <dependency ref="pkg:maven/org.jdom/jdom2@2.0.6?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/com.sun.mail/logging-mailhandler@1.6.2?type=jar">
+      <dependency ref="pkg:maven/com.sun.mail/mailapi@1.6.2?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/com.sun.mail/mailapi@1.6.2?type=jar"/>
+    <dependency ref="pkg:maven/com.sun.mail/javax.mail@1.6.2?type=jar">
+      <dependency ref="pkg:maven/javax.activation/activation@1.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/javax.activation/activation@1.1?type=jar"/>
+    <dependency ref="pkg:maven/commons-io/commons-io@2.20.0?type=jar"/>
+    <dependency ref="pkg:maven/jaxen/jaxen@2.0.0?type=jar"/>
+    <dependency ref="pkg:maven/org.jdom/jdom2@2.0.6?type=jar"/>
+    <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-1.2-api@2.25.1?type=jar">
+      <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.25.1?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/javax.servlet/javax.servlet-api@3.1.0?type=jar"/>
+    <dependency ref="pkg:maven/javax.servlet.jsp/javax.servlet.jsp-api@2.3.3?type=jar"/>
+  </dependencies>
+</bom>
