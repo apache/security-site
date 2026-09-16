@@ -67,12 +67,14 @@ def parse_sbom(sbom):
         print('Error parsing ' + sbom[2])
         raise e
     for package in parser.get_packages():
-        dep_purl = simplify_purl(get_purl(package))
-        if dep_purl:
-            if dep_purl in purls:
-                links.add_edge(sbom_purl, dep_purl)
-            elif 'apache' in dep_purl:
-                missing[pmc][dep_purl] = sbom[2]
+        raw_dep_purl = get_purl(package)
+        if raw_dep_purl:
+            dep_purl = simplify_purl(raw_dep_purl)
+            if dep_purl:
+                if dep_purl in purls:
+                    links.add_edge(sbom_purl, dep_purl)
+                elif 'apache' in dep_purl:
+                    missing[pmc][dep_purl] = sbom[2]
 
 list(map(parse_sbom, sboms))
 
@@ -84,6 +86,37 @@ links.remove_edge("pkg:maven/org.apache.camel.kamelets/camel-kamelets", "pkg:mav
 # will probably have to exclude commons-configuration2 depending on hadoop-hdfs-client
 # via commons-vfs once commons-vfs has a release which publishes an SBOM
 links.remove_edge("pkg:maven/org.apache.commons/commons-configuration2", "pkg:maven/org.apache.hadoop/hadoop-hdfs-client")
+# Haven't checked where these links comes from, seems incorrect/outdated - is it picking up groovy-all?
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-ant")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-astbuilder")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-cli-picocli")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-cli-commons")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-contracts")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-console")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-datetime")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-dateutil")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-docgenerator")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-ginq")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-groovydoc")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-jmx")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-json")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-jsr223")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-macro")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-macro-library")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-nio")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-servlet")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-groovysh")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-sql")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-swing")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-templates")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-test")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-test-junit5")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-testng")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-toml")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-typecheckers")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-yaml")
+links.remove_edge("pkg:maven/org.apache.groovy/groovy", "pkg:maven/org.apache.groovy/groovy-xml")
 
 try:
     simplified = nx.transitive_reduction(links)
