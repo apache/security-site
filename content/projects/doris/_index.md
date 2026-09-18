@@ -18,6 +18,61 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Authorization bypass allowing a low-privilege user to read/write/drop arbitrary tables ## { #CVE-2026-72524 }
+
+CVE-2026-72524 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-72524) [\[CVE json\]](./CVE-2026-72524.cve.json) [\[OSV json\]](./CVE-2026-72524.osv.json)
+
+
+
+_Last updated: 2026-09-14T09:58:11.532Z_
+
+### Affected
+
+* Apache Doris from 3.1.0 through 3.1.*
+* Apache Doris from 4.0.0 through 4.0.7
+* Apache Doris from 4.1.0 through 4.1.3
+
+
+### Description
+
+<p>Incorrect Authorization vulnerability in Apache Doris allows an authenticated user to bypass privilege checks and access or modify data they are not authorized to.</p><p>This issue affects Apache Doris: from 3.1.0 through 3.1.*, from 4.0.0 through 4.0.7, and from 4.1.0 through 4.1.3.</p><p>Users are recommended to upgrade to a fixed release (4.0.8 or 4.1.4), which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/sxlno9bngg3gk59rxqq7yfqm7bfyj3ph
+
+
+### Credits
+* Calvin Kirs, Security Researcher at SelectDB (finder)
+
+
+## Authorization bypass leading to unauthorized data access ## { #CVE-2026-68570 }
+
+CVE-2026-68570 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68570) [\[CVE json\]](./CVE-2026-68570.cve.json) [\[OSV json\]](./CVE-2026-68570.osv.json)
+
+
+
+_Last updated: 2026-09-14T10:00:12.763Z_
+
+### Affected
+
+* Apache Doris from 2.0.0 through 2.1.*
+* Apache Doris from 3.0.0 through 3.0.*
+* Apache Doris from 4.0.0 before 4.0.8
+* Apache Doris from 4.1.0 before 4.1.4
+
+
+### Description
+
+<p>Incorrect Authorization vulnerability in Apache Doris allows an authenticated user to bypass privilege checks and access data they are not authorized to read, resulting in unauthorized disclosure of information.</p><p>This issue affects Apache Doris: from 2.0.0 through 2.1.*, from 3.0.0 through 3.0.*, from 4.0.0 before 4.0.8, and from 4.1.0 before 4.1.4.</p><p>Users are recommended to upgrade to a fixed release (4.0.8 or 4.1.4), which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/rp2gr6d7rb4y8slxh3fojmhb1rl5ms03
+
+
+### Credits
+* Calvin Kirs, Security Researcher at SelectDB (finder)
+
+
 ## Improper Authentication in Frontend HTTP API ## { #CVE-2026-58319 }
 
 CVE-2026-58319 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58319) [\[CVE json\]](./CVE-2026-58319.cve.json) [\[OSV json\]](./CVE-2026-58319.osv.json)

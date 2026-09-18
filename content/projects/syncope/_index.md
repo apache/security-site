@@ -18,6 +18,602 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## SRA OAuth2 JWT signature verification bypass ## { #CVE-2026-87802 }
+
+CVE-2026-87802 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-87802) [\[CVE json\]](./CVE-2026-87802.cve.json) [\[OSV json\]](./CVE-2026-87802.osv.json)
+
+
+
+_Last updated: 2026-09-14T10:22:23.718Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Improper verification of cryptographic signature vulnerability in Apache Syncope.</p><p>When SRA is configured for OAuth 2.0 without JWKS set URI assigned, an attacker can forge arbitrary JWTs to impersonate any user identity and permissions, gaining full access to services proxied by SRA.<br><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.</p><p>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</p>
+
+### References
+* https://lists.apache.org/thread/gx83cootj00kn8hqd73x1bp8441np33d
+
+
+### Credits
+* MopMonk AI (finder)
+
+
+## JWT subject spoofing ## { #CVE-2026-87785 }
+
+CVE-2026-87785 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-87785) [\[CVE json\]](./CVE-2026-87785.cve.json) [\[OSV json\]](./CVE-2026-87785.osv.json)
+
+
+
+_Last updated: 2026-09-14T10:38:05.709Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Authentication bypass by spoofing vulnerability in Apache Syncope.</p><p>When the configured JWKS settings for internal JWT authentication are disclosed (at least protocol and key), an attacker can spoof another user's privileges after completing a successful authentication and obtaining a valid JWT.<br><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.</p><p>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</p>
+
+### References
+* https://lists.apache.org/thread/3t3om8mny7ng52q053pdzpmtdtosnqoo
+
+
+### Credits
+* Alon Galili (finder)
+
+
+## AES Secret Key disclosure via log output ## { #CVE-2026-87779 }
+
+CVE-2026-87779 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-87779) [\[CVE json\]](./CVE-2026-87779.cve.json) [\[OSV json\]](./CVE-2026-87779.osv.json)
+
+
+
+_Last updated: 2026-09-14T10:42:47.297Z_
+
+### Affected
+
+* Apache Syncope from 3.0.15 through 3.0.16
+* Apache Syncope from 4.0.3 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Insertion of sensitive information into log file vulnerability in Apache Syncope.</p><p>When AES key of non-standard length (not 16/24/32 bytes) is configured, Syncope will pad the provided value with random characters. The resulting key value is logged.</p><p>This issue affects Apache Syncope: from 3.0.15 through 3.0.16, from 4.0.3 through 4.0.7, from 4.1.0-M0 through 4.1.2.</p><p>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</p>
+
+### References
+* https://lists.apache.org/thread/3t3om8mny7ng52q053pdzpmtdtosnqoo
+
+
+### Credits
+* CyberLeo (finder)
+
+
+## Cypher Injection via FIQL Search on Neo4j Persistence ## { #CVE-2026-86460 }
+
+CVE-2026-86460 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86460) [\[CVE json\]](./CVE-2026-86460.cve.json) [\[OSV json\]](./CVE-2026-86460.osv.json)
+
+
+
+_Last updated: 2026-09-14T10:43:51.066Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Cypher injection vulnerability in the Neo4j persistence layer when processing some FIQL search&nbsp;conditions.</p><p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.</p><p>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</p>
+
+### References
+* https://lists.apache.org/thread/cwcc0pz53q6cr0tms9dh5hycboqocw0d
+
+
+### Credits
+* CyberLeo (finder)
+* Ho1aAs (finder)
+
+
+## SQL injection via sort parameter in Task search ## { #CVE-2026-82232 }
+
+CVE-2026-82232 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82232) [\[CVE json\]](./CVE-2026-82232.cve.json) [\[OSV json\]](./CVE-2026-82232.osv.json)
+
+
+
+_Last updated: 2026-09-14T10:45:31.072Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Improper neutralization of special elements used in an SQL command ('SQL injection') vulnerability in Apache Syncope.</p><p>An administrator with adequate entitlements can achieve execution of arbitrary SQL via stacked queries, leveraging unsanitized sort clauses for Task search.<br><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.</p><p>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</p>
+
+### References
+* https://lists.apache.org/thread/v5zrdqcn0w0v4pk1d22ndt7frcrplo2b
+
+
+### Credits
+* Alon Galili (finder)
+
+
+## OIDCC4UI provider list discloses client secrets to any authenticated user ## { #CVE-2026-78336 }
+
+CVE-2026-78336 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-78336) [\[CVE json\]](./CVE-2026-78336.cve.json) [\[OSV json\]](./CVE-2026-78336.osv.json)
+
+
+
+_Last updated: 2026-09-14T12:23:43.613Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Insertion of sensitive information into sent data vulnerability in Apache Syncope.</p><p>Any authenticated user can query for the list of available OIDC providers configured for SSO with Console and Enduser. The returned payload contains all configuration settings, including client secrets, regardless of the entitlements owned by the caller.</p><p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.</p><p>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</p>
+
+### References
+* https://lists.apache.org/thread/h399sqmf4wgnfxxpd6x9lm3m672rrsjt
+
+
+### Credits
+* Moritz Theile (finder)
+
+
+## Privilege escalation for admin user via JWT authentication ## { #CVE-2026-78330 }
+
+CVE-2026-78330 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-78330) [\[CVE json\]](./CVE-2026-78330.cve.json) [\[OSV json\]](./CVE-2026-78330.osv.json)
+
+
+
+_Last updated: 2026-09-14T12:24:48.921Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Incorrect privilege assignment vulnerability in Apache Syncope.<br><br>When the configured JWKS settings for internal JWT authentication are disclosed (at least protocol and key), an attacker can obtain admin privileges after completing a successful authentication and obtaining a valid low-privileges JWT.</p><p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.</p><p>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</p>
+
+### References
+* https://lists.apache.org/thread/vkqmmpwcdson285vtmzpbj9psw35hyo9
+
+
+### Credits
+* Moritz Theile (finder)
+
+
+## Unauthenticated reflected XSS in Console and Enduser ## { #CVE-2026-78318 }
+
+CVE-2026-78318 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-78318) [\[CVE json\]](./CVE-2026-78318.cve.json) [\[OSV json\]](./CVE-2026-78318.osv.json)
+
+
+
+_Last updated: 2026-09-14T12:29:22.121Z_
+
+### Affected
+
+* Apache Syncope from 4.0.4 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in Apache Syncope.</p><p>The notification message, as optionally shown by Console's and Enduser's login pages can be instructed to display HTML tags with unsafe JS inline, via malicious HTTP link generation.</p><p>This issue affects Apache Syncope: from 4.0.4 through 4.0.7, from 4.1.0-M0 through 4.1.2.</p><p>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</p>
+
+### References
+* https://lists.apache.org/thread/wmo15rczvd0w3ywjgqdrcznkb1v3qy9r
+
+
+### Credits
+* Alon Galili (finder)
+
+
+## Information disclosure via one-hop JEXL navigation past the JexlContextBuilder name denylist ## { #CVE-2026-77883 }
+
+CVE-2026-77883 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-77883) [\[CVE json\]](./CVE-2026-77883.cve.json) [\[OSV json\]](./CVE-2026-77883.osv.json)
+
+
+
+_Last updated: 2026-09-14T12:30:46.191Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Exposure of sensitive information through data queries vulnerability in Apache Syncope.</p>An administrator with adequate entitlements for Derived Schemas can create a malicious JEXL expression which allows any administrator with sufficient entitlements for User read to access LinkedAccount's (if present) or Manager's (if defined) sensitive information, possibly including hashed credentials.<br><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.<br><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.
+
+### References
+* https://lists.apache.org/thread/oshwdz2k4cl3042y39zq0yl4qkxbd83p
+
+
+### Credits
+* n0mi1k (finder)
+
+
+## ClientApp update entitlement not effective ## { #CVE-2026-77181 }
+
+CVE-2026-77181 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-77181) [\[CVE json\]](./CVE-2026-77181.cve.json) [\[OSV json\]](./CVE-2026-77181.osv.json)
+
+
+
+_Last updated: 2026-09-14T12:47:54.589Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Incorrect Authorization vulnerability in Apache Syncope.</p><p>An administrator with ClientApp's update entitlement is unable to perform the related operation, while&nbsp;ClientApp's create entitlement is checked both for create and update operations on ClientApp.</p><p></p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.<br><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.<p></p>
+
+### References
+* https://lists.apache.org/thread/swqj31jhbz7hmmkjy42461zp9rhh9lwy
+
+
+### Credits
+* n0mi1k (finder)
+
+
+## Groovy Sandbox escape for empty CommandArgs ## { #CVE-2026-77147 }
+
+CVE-2026-77147 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-77147) [\[CVE json\]](./CVE-2026-77147.cve.json) [\[OSV json\]](./CVE-2026-77147.osv.json)
+
+
+
+_Last updated: 2026-09-14T12:49:35.032Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Improper Control of Generation of Code ('Code Injection') vulnerability in Apache Syncope.<br><br>An administrator with adequate entitlements for Implementations can create a malicious Groovy Command class containing untrusted code in their CommandArgs static implementation,&nbsp;bypassing the Groovy security sandbox.<br><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.<br><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</p>
+
+### References
+* https://lists.apache.org/thread/qr464o2lyj3rxp8b0q25ssn0qwjxyrgz
+
+
+### Credits
+* n0mi1k (finder)
+
+
+## SQL injection via unsanitized entityKey and opEvent in Audit Events search ## { #CVE-2026-77051 }
+
+CVE-2026-77051 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-77051) [\[CVE json\]](./CVE-2026-77051.cve.json) [\[OSV json\]](./CVE-2026-77051.osv.json)
+
+
+
+_Last updated: 2026-09-14T12:52:43.348Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Syncope.</p><p></p><div>An administrator with adequate entitlements can achieve execution of arbitrary SQL via stacked queries, leveraging unsanitized entityKey and opEvent parameters.<br><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.</div><br><div>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</div><p></p>
+
+### References
+* https://lists.apache.org/thread/lv2mm7wojmxwz29jr0zy469p9zbz23f7
+
+
+### Credits
+* n0mi1k (finder)
+* Ho1aAs (finder)
+
+
+## Incomplete authorization checks for Group members deprovisioning ## { #CVE-2026-75030 }
+
+CVE-2026-75030 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-75030) [\[CVE json\]](./CVE-2026-75030.cve.json) [\[OSV json\]](./CVE-2026-75030.osv.json)
+
+
+
+_Last updated: 2026-09-14T12:54:13.146Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Missing Authorization vulnerability in Apache Syncope.</p><p>An administrator with task execution entitlements might be able to mass (de)provision group members, regardless of their group-related administration capabilities.</p><p></p><div>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.</div><br><div>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</div><p></p>
+
+### References
+* https://lists.apache.org/thread/94rx818lj8sjx85h8pory9xcsst9xvot
+
+
+### Credits
+* n0mi1k (finder)
+
+
+## Nested secrets leak cleartext into audit records readable ## { #CVE-2026-75015 }
+
+CVE-2026-75015 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-75015) [\[CVE json\]](./CVE-2026-75015.cve.json) [\[OSV json\]](./CVE-2026-75015.osv.json)
+
+
+
+_Last updated: 2026-09-14T12:55:21.398Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Insufficiently Protected Credentials vulnerability in Apache Syncope.<br><br>Audit events, when sent to the configured store, are not sufficiently masked for the sensitive values they might carry on their payloads, thus allowing administrators to access such sensitive values.</p><p></p><div>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.</div><br><div>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</div><p></p>
+
+### References
+* https://lists.apache.org/thread/nns7711kyomy28r7rh2pps06ymd5s99k
+
+
+### Credits
+* n0mi1k (finder)
+
+
+## Cross-realm disclosure of confidential ConnId bundles configuration values ## { #CVE-2026-73668 }
+
+CVE-2026-73668 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73668) [\[CVE json\]](./CVE-2026-73668.cve.json) [\[OSV json\]](./CVE-2026-73668.osv.json)
+
+
+
+_Last updated: 2026-09-14T12:51:39.579Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Incorrect Authorization vulnerability in Apache Syncope.</p><p></p><div>An administrator with adequate entitlements in a given Realm may be able to read via REST the full Connector configuration, confidential properties included, scoped in another Realm and thus be able to effectively duplicate such Connector instance into the Realm they have administration rights for.<br><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.</div><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.<p></p>
+
+### References
+* https://lists.apache.org/thread/4lgsbbgc72mngf6mc1q5b1cj3d9nyphn
+
+
+### Credits
+* n0mi1k (finder)
+
+
+## Non-recursive Any search could skip Realms restrictions ## { #CVE-2026-73579 }
+
+CVE-2026-73579 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73579) [\[CVE json\]](./CVE-2026-73579.cve.json) [\[OSV json\]](./CVE-2026-73579.osv.json)
+
+
+
+_Last updated: 2026-09-14T12:56:24.516Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Incorrect Authorization vulnerability in Apache Syncope.</p><p>Any search requests are transformed into SQL, Neo4J or Elasticsearch / Opensearch queries, depending on the actual deployment configuration.<br>An important component of such transformation is the Realms filter, which ensures that the search results are matching the requester's permissions.<br>For non-recursive search requests it is possible that such Realms filter is rendered as empty, thus voiding any restriction on requester privileges.</p><p></p><div>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.</div><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.<br><p></p>
+
+### References
+* https://lists.apache.org/thread/ykwnkrt2b43d0wm1phh94pqqyjb6qyhx
+
+
+### Credits
+* n0mi1k (finder)
+
+
+## Delegating users can grant unowned Roles ## { #CVE-2026-73470 }
+
+CVE-2026-73470 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73470) [\[CVE json\]](./CVE-2026-73470.cve.json) [\[OSV json\]](./CVE-2026-73470.osv.json)
+
+
+
+_Last updated: 2026-09-14T12:58:15.369Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Improper Privilege Management vulnerability in Apache Syncope.</p><p></p><div>Delegations can be created or updated with Roles not owned by the delegating User, or not for the same Realm subtree under the delegation management was granted for.<br><br></div><div>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.</div><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.<p></p>
+
+### References
+* https://lists.apache.org/thread/13hph8sgx3wo6m103x0oc0zydf5rkl8y
+
+
+### Credits
+* n0mi1k (finder)
+
+
+## Cross-Realm boundaries reconciliation bypass ## { #CVE-2026-73370 }
+
+CVE-2026-73370 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73370) [\[CVE json\]](./CVE-2026-73370.cve.json) [\[OSV json\]](./CVE-2026-73370.osv.json)
+
+
+
+_Last updated: 2026-09-14T13:07:57.207Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Incorrect Authorization vulnerability in Apache Syncope.</p><p>Delegated administration security checks performed by Reconciliation service's pull and push, being incomplete, could accept calls by administrator not provided with adequate entitlements.</p><p></p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.<br><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.<p></p>
+
+### References
+* https://lists.apache.org/thread/prv0k3mvorzhngdw405sgb87ckw105gz
+
+
+### Credits
+* n0mi1k (finder)
+
+
+## Cross-Realm authorization bypass in delegated administration ## { #CVE-2026-73236 }
+
+CVE-2026-73236 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73236) [\[CVE json\]](./CVE-2026-73236.cve.json) [\[OSV json\]](./CVE-2026-73236.osv.json)
+
+
+
+_Last updated: 2026-09-14T13:23:16.597Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Incorrect Authorization vulnerability in Apache Syncope.</p><p>Delegated administration security checks are based on Realm hierarchy and enforced via prefix matches.<br>Due to incorrect implementation, two sibling Realms whose names&nbsp;begin with the same string cannot be correctly distinguished, resulting in incorrect authorization.</p><p></p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.<br><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.<p></p>
+
+### References
+* https://lists.apache.org/thread/5m8t357n2xt38ym5l2rrgbjyztd97yjv
+
+
+### Credits
+* Aleksandar Djordjevic (finder)
+* n0mi1k (finder)
+
+
+## CSV export spreadsheet formula injection ## { #CVE-2026-73195 }
+
+CVE-2026-73195 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73195) [\[CVE json\]](./CVE-2026-73195.cve.json) [\[OSV json\]](./CVE-2026-73195.osv.json)
+
+
+
+_Last updated: 2026-09-14T13:23:46.423Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Improper Encoding or Escaping of Output vulnerability in Apache Syncope.</p><p>Authenticated users can store a spreadsheet formula payload in one of their own plain attributes. When such users are included in a CSV export and the generated CSV file is opened by a spreadsheet application, the formula may be executed.</p><p></p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.<br><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.<p></p>
+
+### References
+* https://lists.apache.org/thread/lg1opo92y789v259folgvmg6n28l42cj
+
+
+### Credits
+* meifukun (finder)
+
+
+## CAS service URL injection via Forwarded HTTP headers ## { #CVE-2026-73191 }
+
+CVE-2026-73191 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73191) [\[CVE json\]](./CVE-2026-73191.cve.json) [\[OSV json\]](./CVE-2026-73191.osv.json)
+
+
+
+_Last updated: 2026-09-14T13:24:21.540Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>URL Redirection to Untrusted Site ('Open Redirect') vulnerability in Apache Syncope.</p><p></p>When the Syncope SRA is configured for CAS authentication, the target Apereo CAS instance's URL is calculated by unconditionally looking at client-supplied forwarded HTTP headers.<br><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.<br><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.<p></p>
+
+### References
+* https://lists.apache.org/thread/vx9bons1znhdkdpsxwjpy6qqqjc8xqtk
+
+
+### Credits
+* meifukun (finder)
+
+
+## JWT Access Token takeover ## { #CVE-2026-73178 }
+
+CVE-2026-73178 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73178) [\[CVE json\]](./CVE-2026-73178.cve.json) [\[OSV json\]](./CVE-2026-73178.osv.json)
+
+
+
+_Last updated: 2026-09-14T13:06:18.661Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.7
+* Apache Syncope from 4.1.0-M0 through 4.1.2
+
+
+### Description
+
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Syncope.<br><br>An administrator with adequate entitlements can get access via REST to the list of existing Access Tokens, including their signed JWT body.<br>These values can be then used to perform further REST requests, impersonating users with higher administration entitlements.</p><p></p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.<br><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.<p></p>
+
+### References
+* https://lists.apache.org/thread/owcdm0stb39mnkpyps0h6yw4gp2olnkj
+
+
+### Credits
+* n0mi1k (finder)
+
+
 ## RCE via Groovy Sandbox bypass ## { #CVE-2026-63071 }
 
 CVE-2026-63071 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63071) [\[CVE json\]](./CVE-2026-63071.cve.json) [\[OSV json\]](./CVE-2026-63071.osv.json)

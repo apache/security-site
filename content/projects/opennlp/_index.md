@@ -18,6 +18,90 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## ReDoS / stack exhaustion in RegexNameFinderFactory built-in EMAIL and URL patterns ## { #CVE-2026-82617 }
+
+CVE-2026-82617 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82617) [\[CVE json\]](./CVE-2026-82617.cve.json) [\[OSV json\]](./CVE-2026-82617.osv.json)
+
+
+
+_Last updated: 2026-09-11T17:50:41.903Z_
+
+### Affected
+
+* Apache OpenNLP from 3.0.0-M1 before 3.0.0-M6
+* Apache OpenNLP from 2.0.0 before 2.5.12
+
+
+### Description
+
+<p><span>The two built-in name-finder patterns exposed by
+</span><code>opennlp.tools.namefind.RegexNameFinderFactory</code><span> - </span><code>DEFAULT_REGEX_NAME_FINDER.EMAIL</code><span>
+and </span><code>DEFAULT_REGEX_NAME_FINDER.URL</code><span>&nbsp;- contain ambiguous nested quantifiers. An
+application that obtains these finders through
+</span><code>RegexNameFinderFactory.getDefaultRegexNameFinders(...)</code><span> and then applies them to
+untrusted text through </span><code>RegexNameFinder.find(String[])</code><span> or </span><code>RegexNameFinder.find(String)</code><span>
+can be driven into super-linear backtracking or into unbounded matcher recursion by a
+small crafted input.</span></p>
+
+<p>For the EMAIL pattern, a long run of local-part characters that is never followed by an
+<code>@</code> forces the matcher to re-scan to end-of-input from every starting offset. Cost grows
+quadratically with input length: an input of approximately 32 KB consumes several seconds
+of CPU in a single <code>find()</code> call and returns no match, and each doubling of the input
+multiplies the cost roughly four-fold.</p>
+
+<p>For the URL pattern, the query-string sub-expression nests a capturing repetition inside
+an outer repetition. The JDK matcher recurses once per query token, so an input of
+approximately 4 KB containing many <code>&amp;</code>-separated tokens exhausts the thread stack and
+causes <code>java.lang.StackOverflowError</code> to propagate out of <code>find()</code>, terminating the
+calling thread. On a thread created with a smaller stack (for example <code>-Xss512k</code>, typical
+of server worker pools) approximately 1 KB is sufficient.</p>
+
+<p>In both cases an attacker who can supply text for analysis can convert a single request
+into seconds to minutes of pinned CPU, or into an abrupt thread death, denying service to
+the embedding application. No authentication, special configuration, or model file is
+required beyond the application having selected one of the two built-in finders.</p>
+
+<p>This issue affects Apache OpenNLP: from 2.0.0 through 2.5.11; from 3.0.0-M1 through
+3.0.0-M5.</p><p>
+
+</p><p>Users are recommended to upgrade to version 2.5.12, or to 3.0.0-M6 for users tracking the
+3.0.0 milestone line, which fix the issue.</p>
+
+<p><br></p>
+
+### References
+* https://lists.apache.org/thread/spzhcxxszqdpppg70m1zz2l3mv29mhl3
+
+
+### Credits
+* n0mi1k (finder)
+
+
+## OOM DoS via Unbounded Array Allocation in SymSpellModelSerializer ## { #CVE-2026-67211 }
+
+CVE-2026-67211 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-67211) [\[CVE json\]](./CVE-2026-67211.cve.json) [\[OSV json\]](./CVE-2026-67211.osv.json)
+
+
+
+_Last updated: 2026-09-11T17:48:46.164Z_
+
+### Affected
+
+* Apache OpenNLP from 3.0.0-M4 before 3.0.0-M6
+
+
+### Description
+
+<b>OOM Denial of Service via Unbounded Map Pre-Sizing in Apache OpenNLP SymSpellModelSerializer</b><br><br><b>Versions Affected:</b> <br><br>- 3.0.0-M4<br>- 3.0.0-M5<br><br>(The opennlp-spellcheck extension was introduced in 3.0.0-M4. Releases 1.x and 2.x do not contain the affected code.)<br><br><b>Description:</b><br><br>The SymSpellModelSerializer.create() method reads two 32-bit signed integer count fields (unigramCount and bigramCount) from a binary SymSpell model stream and passes each value directly to LinkedHashMap.newLinkedHashMap() after validating only that it is non-negative. No upper bound is applied, so the count is fully attacker-controlled when the model file originates from an untrusted source.<br><br>A crafted .bin model file in which either count field is set to Integer.MAX_VALUE (or any value large enough to exhaust the available heap) causes the map to be pre-sized to a capacity of 2^30 entries. The oversized backing array is allocated on the first put() into that map, requesting 4–8 GB depending on whether compressed oops are in effect, and the load fails with an OutOfMemoryError. Because the count fields sit immediately after a fixed-size header (magic, format version, three UTF strings, the configuration fields, and the edit-distance identifier) the attacker pays no meaningful size cost to weaponize a payload: a file of well under 100 bytes plus a single real entry is sufficient to crash a JVM that loads it.<br><br>Any code path that deserializes a SymSpell model is affected, including SymSpellModels.deserialize(InputStream), SymSpellModels.fromBytes(byte[]), classpath model loading via SymSpellModelResolver.resolveByLanguage(String), the CorrectTextTool command-line tool, and model-archive loading through the registered ArtifactSerializer. The opennlp-spellcheck extension ships in the official OpenNLP binary distribution.<br><br>The practical impact is denial of service against processes that load SymSpell model files from untrusted or semi-trusted origins.<br><br><b>Mitigation:</b><br><br>- 3.x users should upgrade to 3.0.0-M6.<br><br>Note: The fix applies an upper bound to both count fields, checked before the map is pre-sized; counts that are negative or exceed the bound cause an IOException to be thrown and the read to fail fast with no large allocation. The bound is the existing AbstractModelReader.MAX_ENTRIES limit introduced earlie, which the current change promotes to public visibility so that serializers implementing their own binary format can share it. The default bound is 10,000,000, which is well above the entry counts of legitimate SymSpell dictionaries but far below any value that would threaten heap exhaustion. Deployments that legitimately need to load larger dictionaries can raise the limit at JVM startup by setting the OPENNLP_MAX_ENTRIES system property to the desired positive integer (e.g. -DOPENNLP_MAX_ENTRIES=50000000); invalid or non-positive values fall back to the default. Note that this property is shared with the model-reader limit and raising it relaxes both.<br><br>Users who cannot upgrade immediately should treat all SymSpell .bin model files as untrusted input unless their provenance is verified, and should avoid loading models supplied by end users or fetched from third-party repositories without integrity checks.<br><br>
+
+### References
+* https://lists.apache.org/thread/gnobdsj640c60xl76q8g9o73c7jsybjm
+
+
+### Credits
+* Arpit Jain / arpitjain099 (finder)
+
+
 ## Arbitrary Class Instantiation in GeneratorFactory via Feature Descriptor XML ## { #CVE-2026-63317 }
 
 CVE-2026-63317 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63317) [\[CVE json\]](./CVE-2026-63317.cve.json) [\[OSV json\]](./CVE-2026-63317.osv.json)

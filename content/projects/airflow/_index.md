@@ -18,13 +18,243 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Connection-editor remote code execution on the Scheduler via Kafka connection callback configuration ## { #CVE-2026-86792 }
+
+CVE-2026-86792 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86792) [\[CVE json\]](./CVE-2026-86792.cve.json) [\[OSV json\]](./CVE-2026-86792.osv.json)
+
+
+
+_Last updated: 2026-09-16T14:44:26.808Z_
+
+### Affected
+
+* Apache Airflow Apache Kafka provider from 1.15.0 before 2.0.0
+
+
+### Description
+
+Apache Airflow Apache Kafka provider versions 1.15.0 before 2.0.0 resolve dotted-path strings found in a Kafka connection&#x27;s `extra` field into Python callables via `import_string`, with no allowlist, and hand them to the confluent-kafka client which invokes them. Deployments that have enabled the Kafka event producer — `dag_run_events_enabled` or `task_instance_events_enabled`, both disabled by default — build that client inside the scheduler process, so a user whose only privilege is editing Airflow connections gains arbitrary code execution in the control plane; the Airflow security model limits connection-configuration users to code execution on workers, not the scheduler. Deployments using Google Managed Kafka are not affected, because that code path overwrites any user-supplied `oauth_cb`; plain brokers and Amazon MSK are exposed. Users are recommended to upgrade to apache-airflow-providers-apache-kafka 2.0.0 or later, which adds an allowlist configuration option for connection-string callbacks.
+
+### References
+* https://github.com/apache/airflow/pull/72208
+* https://lists.apache.org/thread/jl4gpok02313yh3rvtvj8qbo11c6zpr2?users@airflow.apache.org
+* https://lists.apache.org/thread/jl4gpok02313yh3rvtvj8qbo11c6zpr2
+
+
+### Credits
+* Claude Security Scans (tool)
+* Christos Bisias (remediation developer)
+
+
+## FAB Authentik provider: id_token issuer/audience not validated ## { #CVE-2026-86466 }
+
+CVE-2026-86466 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86466) [\[CVE json\]](./CVE-2026-86466.cve.json) [\[OSV json\]](./CVE-2026-86466.osv.json)
+
+
+
+_Last updated: 2026-09-16T14:44:32.186Z_
+
+### Affected
+
+* Apache Airflow FAB provider before 3.9.0
+
+
+### Description
+
+Apache Airflow FAB provider: the Authentik OAuth path in the FAB auth manager does not validate the issuer or audience claims of the id_token it accepts. An attacker holding a token that the same Authentik identity provider minted for a different client application can present it to Airflow and be authenticated as the user it names, because the audience claim is never checked. Affects deployments using the FAB auth manager with Authentik OAuth where the same Authentik instance also serves other applications; the attacker needs a valid token for any of those other applications, not for Airflow.<br><br>CVE-2026-75156 corrected the same missing validation on the Azure AD path in this file; the Authentik path was left unchanged and is fixed here. Deployments that applied the CVE-2026-75156 fix and use Authentik must also upgrade for this one.<br><br>Users of apache-airflow-providers-fab are recommended to upgrade to version 3.9.0 or later, which fixes the issue.
+
+### References
+* https://github.com/apache/airflow/pull/72645
+* https://lists.apache.org/thread/qh7fobs16p2hgln2yblbgf8ty4dvf4y7?users@airflow.apache.org
+* https://www.cve.org/CVERecord?id=CVE-2026-75156
+* https://lists.apache.org/thread/qh7fobs16p2hgln2yblbgf8ty4dvf4y7
+
+
+### Credits
+* Ritik Chaddha & NEO by ProjectDiscovery (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## Akeyless secrets backend: team-scope guard bypass via user-controlled key ## { #CVE-2026-86465 }
+
+CVE-2026-86465 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86465) [\[CVE json\]](./CVE-2026-86465.cve.json) [\[OSV json\]](./CVE-2026-86465.osv.json)
+
+
+
+_Last updated: 2026-09-16T14:44:31.052Z_
+
+### Affected
+
+* Apache Airflow Akeyless provider before 0.3.1
+
+
+### Description
+
+Apache Airflow Akeyless provider: the Akeyless secrets backend&#x27;s team-scope guard can be bypassed with a user-controlled key. In a multi-team deployment, a Dag author scoped to one team can supply a Variable key containing a path separator that causes the backend to resolve a secret belonging to a different team, because the lookup path is concatenated from an unvalidated key after the team-scoped lookup misses. The Execution API Variables route accepts a path-shaped key, so this is reachable from ordinary Dag code.<br><br>Affects multi-team deployments using the Akeyless secrets backend. Single-team deployments are not affected, as there is no cross-team boundary to cross. This is the same class as CVE-2026-68870, CVE-2026-68871 and CVE-2026-68872 in the Azure Key Vault, Yandex Lockbox and Amazon secrets backends.<br><br>Users of apache-airflow-providers-akeyless are recommended to upgrade to version 0.3.1 or later, which fixes the issue.
+
+### References
+* https://github.com/apache/airflow/pull/72646
+* https://lists.apache.org/thread/vczt5xgqjv8ot8fpp1vdq3rmnfm50w0g?users@airflow.apache.org
+* https://www.cve.org/CVERecord?id=CVE-2026-68870
+* https://www.cve.org/CVERecord?id=CVE-2026-68871
+* https://www.cve.org/CVERecord?id=CVE-2026-68872
+* https://lists.apache.org/thread/vczt5xgqjv8ot8fpp1vdq3rmnfm50w0g
+
+
+### Credits
+* ReturnZero (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## FAB Admin password PATCH does not invalidate database-backed sessions ## { #CVE-2026-86462 }
+
+CVE-2026-86462 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86462) [\[CVE json\]](./CVE-2026-86462.cve.json) [\[OSV json\]](./CVE-2026-86462.osv.json)
+
+
+
+_Last updated: 2026-09-16T14:44:29.995Z_
+
+### Affected
+
+* Apache Airflow FAB provider from 3.2.0 before 3.9.0
+
+
+### Description
+
+Apache Airflow FAB provider: changing a user&#x27;s password through the Admin user-edit PATCH endpoint does not invalidate that user&#x27;s existing database-backed sessions. An attacker who already holds a copy of the victim&#x27;s session cookie keeps full access as that user after the password change, so the password reset does not evict them. Affects deployments using the FAB auth manager with database-backed sessions; an administrator (or the user themselves) performing a routine password change is the trigger, and no attacker interaction with the endpoint is needed.<br><br>This is a second, independent route to the outcome addressed by CVE-2026-82311, which corrected an identifier comparison in the session-invalidation helper. That fix does not repair this endpoint, because the PATCH path never calls the helper at all. Deployments that applied the CVE-2026-82311 fix must also upgrade for this one.<br><br>Users of apache-airflow-providers-fab are recommended to upgrade to version 3.9.0 or later, which fixes the issue.
+
+### References
+* https://github.com/apache/airflow/pull/72657
+* https://lists.apache.org/thread/7sr4sggfv5fhhl3qgphcq0rlhg81do1s?users@airflow.apache.org
+* https://www.cve.org/CVERecord?id=CVE-2026-82311
+* https://lists.apache.org/thread/7sr4sggfv5fhhl3qgphcq0rlhg81do1s
+
+
+### Credits
+* OpenSec Intelligence (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## FAB password reset never invalidates sessions: string/int _user_id comparison is always false ## { #CVE-2026-82311 }
+
+CVE-2026-82311 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82311) [\[CVE json\]](./CVE-2026-82311.cve.json) [\[OSV json\]](./CVE-2026-82311.osv.json)
+
+
+
+_Last updated: 2026-09-16T14:44:28.944Z_
+
+### Affected
+
+* Apache Airflow FAB provider from 2.4.2 before 3.9.0
+
+
+### Description
+
+Apache Airflow FAB provider: resetting a user&#x27;s password does not delete that user&#x27;s existing database-backed sessions, despite documented behaviour that it does. The cleanup compares the string identifier Flask-Login stores in the session against the user&#x27;s integer database identifier, so the comparison never matches and no session is removed. An attacker who already holds a copy of the victim&#x27;s session cookie keeps access as that user after the password change, so the reset does not evict them.<br><br>Affects deployments using the FAB auth manager with `[fab] session_backend=database`. The trigger is an administrator (or the user) running the supported password-reset command as a containment action after a session cookie has been compromised; the secure-cookie backend is out of scope, as it documents that it cannot centrally delete sessions.<br><br>apache-airflow-providers-fab 3.9.0 also fixes CVE-2026-86462, a second, independent route to the same outcome via the Admin user-edit endpoint; a single upgrade closes both.<br><br>Users of apache-airflow-providers-fab are recommended to upgrade to version 3.9.0 or later, which compares the identifiers consistently.
+
+### References
+* https://github.com/apache/airflow/pull/72198
+* https://lists.apache.org/thread/mmplwl93shy615shkpp9p4fzyjvr4yqw?users@airflow.apache.org
+* https://www.cve.org/CVERecord?id=CVE-2026-86462
+* https://lists.apache.org/thread/mmplwl93shy615shkpp9p4fzyjvr4yqw
+
+
+### Credits
+* Mayank Jangid (OpenSec) (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## FAB auth manager: deactivated users retain and renew Core API JWT access ## { #CVE-2026-82310 }
+
+CVE-2026-82310 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82310) [\[CVE json\]](./CVE-2026-82310.cve.json) [\[OSV json\]](./CVE-2026-82310.osv.json)
+
+
+
+_Last updated: 2026-09-16T14:44:27.846Z_
+
+### Affected
+
+* Apache Airflow FAB provider from 2.0.0 before 3.9.0
+
+
+### Description
+
+Apache Airflow FAB provider: deactivating a user account does not stop tokens issued to that account before deactivation. Password authentication correctly rejects the disabled account, but the Core API continues to accept an existing, unexpired token naming it, and lets that token mint a replacement — so the account keeps its role-scoped access indefinitely after an administrator has disabled it. The user replays their own legitimate credential; no signature forgery or privilege escalation is involved, and the access stays within the roles the account already held.<br><br>Affects deployments using Airflow 3 with the FAB auth manager and Core API token authentication, where an administrator deactivates an account whose row remains in the database and whose previously issued token has not expired. The trigger is administrative deactivation as a containment action, which silently fails to contain.<br><br>Users of apache-airflow-providers-fab are recommended to upgrade to version 3.9.0 or later, which rejects tokens naming a deactivated account.
+
+### References
+* https://github.com/apache/airflow/pull/72199
+* https://lists.apache.org/thread/85h9r50bmy8vgkgr5nyddryj1p5pxxy2?users@airflow.apache.org
+* https://lists.apache.org/thread/85h9r50bmy8vgkgr5nyddryj1p5pxxy2
+
+
+### Credits
+* Mayank Jangid (OpenSec) (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## Any realm client's credentials mint an Airflow session JWT ## { #CVE-2026-76187 }
+
+CVE-2026-76187 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-76187) [\[CVE json\]](./CVE-2026-76187.cve.json) [\[OSV json\]](./CVE-2026-76187.osv.json)
+
+
+
+_Last updated: 2026-09-16T14:44:25.736Z_
+
+### Affected
+
+* Apache Airflow Keycloak provider before 0.10.0
+
+
+### Description
+
+Apache Airflow Keycloak provider: the unauthenticated token endpoint accepts a client-credentials grant for any confidential client registered in the Keycloak realm, not only the client configured for Airflow. No allowlist restricts which client ids may authenticate, so the credentials of an unrelated application that happens to share the realm are valid Airflow login credentials, and Airflow mints a signed session token for that application&#x27;s service account. The endpoint also answers unauthenticated credential guesses against Keycloak under Airflow&#x27;s identity.<br><br>Affects deployments using the Keycloak auth manager whose realm is shared with other confidential clients. The attacker needs valid credentials for any one of those clients, not for Airflow. Resource authorization is still evaluated per subject, so the access gained is whatever that service account holds, plus any endpoint gated only on being authenticated.<br><br>Users of apache-airflow-providers-keycloak are recommended to upgrade to version 0.10.0 or later, which accepts only the configured client on that grant.
+
+### References
+* https://github.com/apache/airflow/pull/72205
+* https://lists.apache.org/thread/j1b9ddljxphqvoc41z7gthj4zh34vmlw?users@airflow.apache.org
+* https://lists.apache.org/thread/5cqh5ojl3718ogb0q1dcd9vdr47z7gp3
+
+
+### Credits
+* Claude Security Scans (tool)
+* Jarek Potiuk (remediation developer)
+
+
+## Keycloak token cookies not bound to Airflow session identity ## { #CVE-2026-76186 }
+
+CVE-2026-76186 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-76186) [\[CVE json\]](./CVE-2026-76186.cve.json) [\[OSV json\]](./CVE-2026-76186.osv.json)
+
+
+
+_Last updated: 2026-09-16T14:44:19.051Z_
+
+### Affected
+
+* Apache Airflow Keycloak provider before 0.10.0
+
+
+### Description
+
+Apache Airflow Keycloak provider: from Airflow 3.3 the Keycloak auth manager takes a user&#x27;s identity from the signed Airflow session token but takes the Keycloak access and refresh tokens used for every authorization decision from separate, unauthenticated cookies, and never checks that the two describe the same subject. A user who holds any valid Airflow login of their own, together with another subject&#x27;s Keycloak access or refresh token obtained out of band, can pair the two: Airflow then authorizes requests with the foreign token&#x27;s privileges while the session identity, audit log and cache keys continue to name the attacker&#x27;s own account. The refresh path re-issues an Airflow session token for the original identity carrying the foreign tokens, so the mismatched pairing survives across sessions.<br><br>Affects deployments running Airflow 3.3 or later with the Keycloak auth manager. Earlier versions carried the Keycloak tokens inside the signed session token, so the binding existed and was lost when they moved into separate cookies.<br><br>Users of apache-airflow-providers-keycloak are recommended to upgrade to version 0.10.0 or later, which binds the cookie-supplied tokens to the session identity.
+
+### References
+* https://github.com/apache/airflow/pull/72207
+* https://lists.apache.org/thread/5cqh5ojl3718ogb0q1dcd9vdr47z7gp3?users@airflow.apache.org
+* https://lists.apache.org/thread/5cqh5ojl3718ogb0q1dcd9vdr47z7gp3
+
+
+### Credits
+* Claude Security Scans (tool)
+* Jarek Potiuk (remediation developer)
+
+
 ## FAB Azure AD OAuth: id_token issuer/audience not validated — cross-tenant authentication bypass ## { #CVE-2026-75156 }
 
 CVE-2026-75156 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-75156) [\[CVE json\]](./CVE-2026-75156.cve.json) [\[OSV json\]](./CVE-2026-75156.osv.json)
 
 
 
-_Last updated: 2026-09-08T16:46:40.725Z_
+_Last updated: 2026-09-16T14:46:22.794Z_
 
 ### Affected
 
@@ -53,7 +283,7 @@ CVE-2026-68971 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68971) [\[CVE jso
 
 
 
-_Last updated: 2026-08-12T15:24:09.501Z_
+_Last updated: 2026-09-16T14:46:20.610Z_
 
 ### Affected
 
@@ -80,7 +310,7 @@ CVE-2026-68970 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68970) [\[CVE jso
 
 
 
-_Last updated: 2026-08-12T15:24:51.786Z_
+_Last updated: 2026-09-16T14:47:05.846Z_
 
 ### Affected
 
@@ -108,7 +338,7 @@ CVE-2026-68969 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68969) [\[CVE jso
 
 
 
-_Last updated: 2026-08-18T16:43:40.170Z_
+_Last updated: 2026-09-16T14:47:04.500Z_
 
 ### Affected
 
@@ -136,7 +366,7 @@ CVE-2026-68968 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68968) [\[CVE jso
 
 
 
-_Last updated: 2026-08-18T16:43:04.336Z_
+_Last updated: 2026-09-16T14:47:02.989Z_
 
 ### Affected
 
@@ -163,7 +393,7 @@ CVE-2026-68872 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68872) [\[CVE jso
 
 
 
-_Last updated: 2026-08-10T18:21:17.038Z_
+_Last updated: 2026-09-16T14:46:13.734Z_
 
 ### Affected
 
@@ -190,7 +420,7 @@ CVE-2026-68871 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68871) [\[CVE jso
 
 
 
-_Last updated: 2026-08-10T18:18:18.472Z_
+_Last updated: 2026-09-16T14:46:11.681Z_
 
 ### Affected
 
@@ -217,7 +447,7 @@ CVE-2026-68870 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68870) [\[CVE jso
 
 
 
-_Last updated: 2026-08-10T18:10:29.342Z_
+_Last updated: 2026-09-16T14:46:09.502Z_
 
 ### Affected
 
@@ -245,7 +475,7 @@ CVE-2026-68868 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68868) [\[CVE jso
 
 
 
-_Last updated: 2026-08-12T10:33:13.058Z_
+_Last updated: 2026-09-16T14:46:15.844Z_
 
 ### Affected
 
@@ -272,7 +502,7 @@ CVE-2026-68076 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68076) [\[CVE jso
 
 
 
-_Last updated: 2026-08-12T15:23:21.465Z_
+_Last updated: 2026-09-16T15:05:05.218Z_
 
 ### Affected
 
@@ -300,7 +530,7 @@ CVE-2026-67587 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-67587) [\[CVE jso
 
 
 
-_Last updated: 2026-08-12T15:32:09.019Z_
+_Last updated: 2026-09-16T14:46:59.901Z_
 
 ### Affected
 
@@ -329,7 +559,7 @@ CVE-2026-67260 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-67260) [\[CVE jso
 
 
 
-_Last updated: 2026-08-12T15:33:01.084Z_
+_Last updated: 2026-09-16T14:46:57.273Z_
 
 ### Affected
 
@@ -357,7 +587,7 @@ CVE-2026-65017 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-65017) [\[CVE jso
 
 
 
-_Last updated: 2026-08-12T15:31:24.771Z_
+_Last updated: 2026-09-16T14:47:01.247Z_
 
 ### Affected
 
@@ -386,7 +616,7 @@ CVE-2026-59245 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59245) [\[CVE jso
 
 
 
-_Last updated: 2026-07-19T16:30:45.992Z_
+_Last updated: 2026-09-16T14:45:59.383Z_
 
 ### Affected
 
@@ -413,7 +643,7 @@ CVE-2026-59244 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59244) [\[CVE jso
 
 
 
-_Last updated: 2026-08-12T15:43:15.962Z_
+_Last updated: 2026-09-16T14:46:03.573Z_
 
 ### Affected
 
@@ -440,7 +670,7 @@ CVE-2026-59243 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59243) [\[CVE jso
 
 
 
-_Last updated: 2026-07-28T10:25:25.203Z_
+_Last updated: 2026-09-16T14:46:01.303Z_
 
 ### Affected
 
@@ -467,7 +697,7 @@ CVE-2026-59242 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59242) [\[CVE jso
 
 
 
-_Last updated: 2026-08-12T15:34:59.496Z_
+_Last updated: 2026-09-16T14:45:57.373Z_
 
 ### Affected
 
@@ -494,7 +724,7 @@ CVE-2026-58076 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58076) [\[CVE jso
 
 
 
-_Last updated: 2026-08-12T15:40:58.403Z_
+_Last updated: 2026-09-16T14:46:54.580Z_
 
 ### Affected
 
@@ -522,7 +752,7 @@ CVE-2026-58065 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58065) [\[CVE jso
 
 
 
-_Last updated: 2026-09-07T14:41:08.735Z_
+_Last updated: 2026-09-16T15:05:21.274Z_
 
 ### Affected
 
@@ -549,7 +779,7 @@ CVE-2026-54183 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-54183) [\[CVE jso
 
 
 
-_Last updated: 2026-08-12T15:34:17.762Z_
+_Last updated: 2026-09-16T14:46:55.864Z_
 
 ### Affected
 
@@ -632,7 +862,7 @@ CVE-2026-49487 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49487) [\[CVE jso
 
 
 
-_Last updated: 2026-07-07T12:26:03.726Z_
+_Last updated: 2026-09-16T14:45:52.041Z_
 
 ### Affected
 
@@ -659,7 +889,7 @@ CVE-2026-49486 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49486) [\[CVE jso
 
 
 
-_Last updated: 2026-06-26T07:20:08.333Z_
+_Last updated: 2026-09-16T14:45:46.269Z_
 
 ### Affected
 
@@ -741,7 +971,7 @@ CVE-2026-49296 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49296) [\[CVE jso
 
 
 
-_Last updated: 2026-07-07T12:26:02.148Z_
+_Last updated: 2026-09-16T14:45:50.190Z_
 
 ### Affected
 
@@ -795,7 +1025,7 @@ CVE-2026-48892 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48892) [\[CVE jso
 
 
 
-_Last updated: 2026-07-07T12:25:58.879Z_
+_Last updated: 2026-09-16T14:45:44.357Z_
 
 ### Affected
 
@@ -822,7 +1052,7 @@ CVE-2026-48891 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48891) [\[CVE jso
 
 
 
-_Last updated: 2026-07-07T12:26:00.634Z_
+_Last updated: 2026-09-16T14:45:48.267Z_
 
 ### Affected
 
@@ -850,7 +1080,7 @@ CVE-2026-48828 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48828) [\[CVE jso
 
 
 
-_Last updated: 2026-07-07T12:25:57.319Z_
+_Last updated: 2026-09-16T14:45:42.320Z_
 
 ### Affected
 
