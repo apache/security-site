@@ -109,22 +109,442 @@
 </ul>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-87802">SRA OAuth2 JWT signature verification bypass</h2>
+<p>CVE-2026-87802 <a href="https://cve.org/CVERecord?id=CVE-2026-87802">[CVE]</a> <a href="./CVE-2026-87802.cve.json">[CVE json]</a> <a href="./CVE-2026-87802.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T10:22:23.718Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Improper verification of cryptographic signature vulnerability in Apache Syncope.</p><p>When SRA is configured for OAuth 2.0 without JWKS set URI assigned, an attacker can forge arbitrary JWTs to impersonate any user identity and permissions, gaining full access to services proxied by SRA.<br><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.</p><p>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/gx83cootj00kn8hqd73x1bp8441np33d">https://lists.apache.org/thread/gx83cootj00kn8hqd73x1bp8441np33d</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>MopMonk AI (finder)</li>
+</ul>
+<h2 id="CVE-2026-87785">JWT subject spoofing</h2>
+<p>CVE-2026-87785 <a href="https://cve.org/CVERecord?id=CVE-2026-87785">[CVE]</a> <a href="./CVE-2026-87785.cve.json">[CVE json]</a> <a href="./CVE-2026-87785.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T10:38:05.709Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Authentication bypass by spoofing vulnerability in Apache Syncope.</p><p>When the configured JWKS settings for internal JWT authentication are disclosed (at least protocol and key), an attacker can spoof another user's privileges after completing a successful authentication and obtaining a valid JWT.<br><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.</p><p>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/3t3om8mny7ng52q053pdzpmtdtosnqoo">https://lists.apache.org/thread/3t3om8mny7ng52q053pdzpmtdtosnqoo</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Alon Galili (finder)</li>
+</ul>
+<h2 id="CVE-2026-87779">AES Secret Key disclosure via log output</h2>
+<p>CVE-2026-87779 <a href="https://cve.org/CVERecord?id=CVE-2026-87779">[CVE]</a> <a href="./CVE-2026-87779.cve.json">[CVE json]</a> <a href="./CVE-2026-87779.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T10:42:47.297Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.15 through 3.0.16</li>
+<li>Apache Syncope from 4.0.3 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Insertion of sensitive information into log file vulnerability in Apache Syncope.</p><p>When AES key of non-standard length (not 16/24/32 bytes) is configured, Syncope will pad the provided value with random characters. The resulting key value is logged.</p><p>This issue affects Apache Syncope: from 3.0.15 through 3.0.16, from 4.0.3 through 4.0.7, from 4.1.0-M0 through 4.1.2.</p><p>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/3t3om8mny7ng52q053pdzpmtdtosnqoo">https://lists.apache.org/thread/3t3om8mny7ng52q053pdzpmtdtosnqoo</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>CyberLeo (finder)</li>
+</ul>
+<h2 id="CVE-2026-86460">Cypher Injection via FIQL Search on Neo4j Persistence</h2>
+<p>CVE-2026-86460 <a href="https://cve.org/CVERecord?id=CVE-2026-86460">[CVE]</a> <a href="./CVE-2026-86460.cve.json">[CVE json]</a> <a href="./CVE-2026-86460.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T10:43:51.066Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Cypher injection vulnerability in the Neo4j persistence layer when processing some FIQL search&nbsp;conditions.</p><p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.</p><p>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/cwcc0pz53q6cr0tms9dh5hycboqocw0d">https://lists.apache.org/thread/cwcc0pz53q6cr0tms9dh5hycboqocw0d</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>CyberLeo (finder)</li>
+<li>Ho1aAs (finder)</li>
+</ul>
+<h2 id="CVE-2026-82232">SQL injection via sort parameter in Task search</h2>
+<p>CVE-2026-82232 <a href="https://cve.org/CVERecord?id=CVE-2026-82232">[CVE]</a> <a href="./CVE-2026-82232.cve.json">[CVE json]</a> <a href="./CVE-2026-82232.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T10:45:31.072Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Improper neutralization of special elements used in an SQL command ('SQL injection') vulnerability in Apache Syncope.</p><p>An administrator with adequate entitlements can achieve execution of arbitrary SQL via stacked queries, leveraging unsanitized sort clauses for Task search.<br><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.</p><p>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/v5zrdqcn0w0v4pk1d22ndt7frcrplo2b">https://lists.apache.org/thread/v5zrdqcn0w0v4pk1d22ndt7frcrplo2b</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Alon Galili (finder)</li>
+</ul>
+<h2 id="CVE-2026-78336">OIDCC4UI provider list discloses client secrets to any authenticated user</h2>
+<p>CVE-2026-78336 <a href="https://cve.org/CVERecord?id=CVE-2026-78336">[CVE]</a> <a href="./CVE-2026-78336.cve.json">[CVE json]</a> <a href="./CVE-2026-78336.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T12:23:43.613Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Insertion of sensitive information into sent data vulnerability in Apache Syncope.</p><p>Any authenticated user can query for the list of available OIDC providers configured for SSO with Console and Enduser. The returned payload contains all configuration settings, including client secrets, regardless of the entitlements owned by the caller.</p><p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.</p><p>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/h399sqmf4wgnfxxpd6x9lm3m672rrsjt">https://lists.apache.org/thread/h399sqmf4wgnfxxpd6x9lm3m672rrsjt</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Moritz Theile (finder)</li>
+</ul>
+<h2 id="CVE-2026-78330">Privilege escalation for admin user via JWT authentication</h2>
+<p>CVE-2026-78330 <a href="https://cve.org/CVERecord?id=CVE-2026-78330">[CVE]</a> <a href="./CVE-2026-78330.cve.json">[CVE json]</a> <a href="./CVE-2026-78330.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T12:24:48.921Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>Incorrect privilege assignment vulnerability in Apache Syncope.<br><br>When the configured JWKS settings for internal JWT authentication are disclosed (at least protocol and key), an attacker can obtain admin privileges after completing a successful authentication and obtaining a valid low-privileges JWT.</p><p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.</p><p>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/vkqmmpwcdson285vtmzpbj9psw35hyo9">https://lists.apache.org/thread/vkqmmpwcdson285vtmzpbj9psw35hyo9</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>Moritz Theile (finder)</li>
+</ul>
+<h2 id="CVE-2026-78318">Unauthenticated reflected XSS in Console and Enduser</h2>
+<p>CVE-2026-78318 <a href="https://cve.org/CVERecord?id=CVE-2026-78318">[CVE]</a> <a href="./CVE-2026-78318.cve.json">[CVE json]</a> <a href="./CVE-2026-78318.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T12:29:22.121Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache Syncope from 4.0.4 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in Apache Syncope.</p><p>The notification message, as optionally shown by Console's and Enduser's login pages can be instructed to display HTML tags with unsafe JS inline, via malicious HTTP link generation.</p><p>This issue affects Apache Syncope: from 4.0.4 through 4.0.7, from 4.1.0-M0 through 4.1.2.</p><p>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/wmo15rczvd0w3ywjgqdrcznkb1v3qy9r">https://lists.apache.org/thread/wmo15rczvd0w3ywjgqdrcznkb1v3qy9r</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>Alon Galili (finder)</li>
+</ul>
+<h2 id="CVE-2026-77883">Information disclosure via one-hop JEXL navigation past the JexlContextBuilder name denylist</h2>
+<p>CVE-2026-77883 <a href="https://cve.org/CVERecord?id=CVE-2026-77883">[CVE]</a> <a href="./CVE-2026-77883.cve.json">[CVE json]</a> <a href="./CVE-2026-77883.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T12:30:46.191Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>Exposure of sensitive information through data queries vulnerability in Apache Syncope.</p>An administrator with adequate entitlements for Derived Schemas can create a malicious JEXL expression which allows any administrator with sufficient entitlements for User read to access LinkedAccount's (if present) or Manager's (if defined) sensitive information, possibly including hashed credentials.<br><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.<br><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/oshwdz2k4cl3042y39zq0yl4qkxbd83p">https://lists.apache.org/thread/oshwdz2k4cl3042y39zq0yl4qkxbd83p</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>n0mi1k (finder)</li>
+</ul>
+<h2 id="CVE-2026-77181">ClientApp update entitlement not effective</h2>
+<p>CVE-2026-77181 <a href="https://cve.org/CVERecord?id=CVE-2026-77181">[CVE]</a> <a href="./CVE-2026-77181.cve.json">[CVE json]</a> <a href="./CVE-2026-77181.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T12:47:54.589Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>Incorrect Authorization vulnerability in Apache Syncope.</p><p>An administrator with ClientApp's update entitlement is unable to perform the related operation, while&nbsp;ClientApp's create entitlement is checked both for create and update operations on ClientApp.</p><p></p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.<br><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.<p></p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/swqj31jhbz7hmmkjy42461zp9rhh9lwy">https://lists.apache.org/thread/swqj31jhbz7hmmkjy42461zp9rhh9lwy</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>n0mi1k (finder)</li>
+</ul>
+<h2 id="CVE-2026-77147">Groovy Sandbox escape for empty CommandArgs</h2>
+<p>CVE-2026-77147 <a href="https://cve.org/CVERecord?id=CVE-2026-77147">[CVE]</a> <a href="./CVE-2026-77147.cve.json">[CVE json]</a> <a href="./CVE-2026-77147.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T12:49:35.032Z</em></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<p>Improper Control of Generation of Code ('Code Injection') vulnerability in Apache Syncope.<br><br>An administrator with adequate entitlements for Implementations can create a malicious Groovy Command class containing untrusted code in their CommandArgs static implementation,&nbsp;bypassing the Groovy security sandbox.<br><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.<br><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</p>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/qr464o2lyj3rxp8b0q25ssn0qwjxyrgz">https://lists.apache.org/thread/qr464o2lyj3rxp8b0q25ssn0qwjxyrgz</a></li>
+</ul>
+<h3 id="credits-10">Credits</h3>
+<ul>
+<li>n0mi1k (finder)</li>
+</ul>
+<h2 id="CVE-2026-77051">SQL injection via unsanitized entityKey and opEvent in Audit Events search</h2>
+<p>CVE-2026-77051 <a href="https://cve.org/CVERecord?id=CVE-2026-77051">[CVE]</a> <a href="./CVE-2026-77051.cve.json">[CVE json]</a> <a href="./CVE-2026-77051.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T12:52:43.348Z</em></p>
+<h3 id="affected-11">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-11">Description</h3>
+<p>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Syncope.</p><p></p><div>An administrator with adequate entitlements can achieve execution of arbitrary SQL via stacked queries, leveraging unsanitized entityKey and opEvent parameters.<br><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.</div><br><div>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</div><p></p>
+<h3 id="references-11">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/lv2mm7wojmxwz29jr0zy469p9zbz23f7">https://lists.apache.org/thread/lv2mm7wojmxwz29jr0zy469p9zbz23f7</a></li>
+</ul>
+<h3 id="credits-11">Credits</h3>
+<ul>
+<li>n0mi1k (finder)</li>
+<li>Ho1aAs (finder)</li>
+</ul>
+<h2 id="CVE-2026-75030">Incomplete authorization checks for Group members deprovisioning</h2>
+<p>CVE-2026-75030 <a href="https://cve.org/CVERecord?id=CVE-2026-75030">[CVE]</a> <a href="./CVE-2026-75030.cve.json">[CVE json]</a> <a href="./CVE-2026-75030.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T12:54:13.146Z</em></p>
+<h3 id="affected-12">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-12">Description</h3>
+<p>Missing Authorization vulnerability in Apache Syncope.</p><p>An administrator with task execution entitlements might be able to mass (de)provision group members, regardless of their group-related administration capabilities.</p><p></p><div>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.</div><br><div>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</div><p></p>
+<h3 id="references-12">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/94rx818lj8sjx85h8pory9xcsst9xvot">https://lists.apache.org/thread/94rx818lj8sjx85h8pory9xcsst9xvot</a></li>
+</ul>
+<h3 id="credits-12">Credits</h3>
+<ul>
+<li>n0mi1k (finder)</li>
+</ul>
+<h2 id="CVE-2026-75015">Nested secrets leak cleartext into audit records readable</h2>
+<p>CVE-2026-75015 <a href="https://cve.org/CVERecord?id=CVE-2026-75015">[CVE]</a> <a href="./CVE-2026-75015.cve.json">[CVE json]</a> <a href="./CVE-2026-75015.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T12:55:21.398Z</em></p>
+<h3 id="affected-13">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-13">Description</h3>
+<p>Insufficiently Protected Credentials vulnerability in Apache Syncope.<br><br>Audit events, when sent to the configured store, are not sufficiently masked for the sensitive values they might carry on their payloads, thus allowing administrators to access such sensitive values.</p><p></p><div>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.</div><br><div>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.</div><p></p>
+<h3 id="references-13">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/nns7711kyomy28r7rh2pps06ymd5s99k">https://lists.apache.org/thread/nns7711kyomy28r7rh2pps06ymd5s99k</a></li>
+</ul>
+<h3 id="credits-13">Credits</h3>
+<ul>
+<li>n0mi1k (finder)</li>
+</ul>
+<h2 id="CVE-2026-73668">Cross-realm disclosure of confidential ConnId bundles configuration values</h2>
+<p>CVE-2026-73668 <a href="https://cve.org/CVERecord?id=CVE-2026-73668">[CVE]</a> <a href="./CVE-2026-73668.cve.json">[CVE json]</a> <a href="./CVE-2026-73668.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T12:51:39.579Z</em></p>
+<h3 id="affected-14">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-14">Description</h3>
+<p>Incorrect Authorization vulnerability in Apache Syncope.</p><p></p><div>An administrator with adequate entitlements in a given Realm may be able to read via REST the full Connector configuration, confidential properties included, scoped in another Realm and thus be able to effectively duplicate such Connector instance into the Realm they have administration rights for.<br><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.</div><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.<p></p>
+<h3 id="references-14">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/4lgsbbgc72mngf6mc1q5b1cj3d9nyphn">https://lists.apache.org/thread/4lgsbbgc72mngf6mc1q5b1cj3d9nyphn</a></li>
+</ul>
+<h3 id="credits-14">Credits</h3>
+<ul>
+<li>n0mi1k (finder)</li>
+</ul>
+<h2 id="CVE-2026-73579">Non-recursive Any search could skip Realms restrictions</h2>
+<p>CVE-2026-73579 <a href="https://cve.org/CVERecord?id=CVE-2026-73579">[CVE]</a> <a href="./CVE-2026-73579.cve.json">[CVE json]</a> <a href="./CVE-2026-73579.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T12:56:24.516Z</em></p>
+<h3 id="affected-15">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-15">Description</h3>
+<p>Incorrect Authorization vulnerability in Apache Syncope.</p><p>Any search requests are transformed into SQL, Neo4J or Elasticsearch / Opensearch queries, depending on the actual deployment configuration.<br>An important component of such transformation is the Realms filter, which ensures that the search results are matching the requester's permissions.<br>For non-recursive search requests it is possible that such Realms filter is rendered as empty, thus voiding any restriction on requester privileges.</p><p></p><div>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.</div><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.<br><p></p>
+<h3 id="references-15">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/ykwnkrt2b43d0wm1phh94pqqyjb6qyhx">https://lists.apache.org/thread/ykwnkrt2b43d0wm1phh94pqqyjb6qyhx</a></li>
+</ul>
+<h3 id="credits-15">Credits</h3>
+<ul>
+<li>n0mi1k (finder)</li>
+</ul>
+<h2 id="CVE-2026-73470">Delegating users can grant unowned Roles</h2>
+<p>CVE-2026-73470 <a href="https://cve.org/CVERecord?id=CVE-2026-73470">[CVE]</a> <a href="./CVE-2026-73470.cve.json">[CVE json]</a> <a href="./CVE-2026-73470.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T12:58:15.369Z</em></p>
+<h3 id="affected-16">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-16">Description</h3>
+<p>Improper Privilege Management vulnerability in Apache Syncope.</p><p></p><div>Delegations can be created or updated with Roles not owned by the delegating User, or not for the same Realm subtree under the delegation management was granted for.<br><br></div><div>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.</div><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.<p></p>
+<h3 id="references-16">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/13hph8sgx3wo6m103x0oc0zydf5rkl8y">https://lists.apache.org/thread/13hph8sgx3wo6m103x0oc0zydf5rkl8y</a></li>
+</ul>
+<h3 id="credits-16">Credits</h3>
+<ul>
+<li>n0mi1k (finder)</li>
+</ul>
+<h2 id="CVE-2026-73370">Cross-Realm boundaries reconciliation bypass</h2>
+<p>CVE-2026-73370 <a href="https://cve.org/CVERecord?id=CVE-2026-73370">[CVE]</a> <a href="./CVE-2026-73370.cve.json">[CVE json]</a> <a href="./CVE-2026-73370.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T13:07:57.207Z</em></p>
+<h3 id="affected-17">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-17">Description</h3>
+<p>Incorrect Authorization vulnerability in Apache Syncope.</p><p>Delegated administration security checks performed by Reconciliation service's pull and push, being incomplete, could accept calls by administrator not provided with adequate entitlements.</p><p></p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.<br><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.<p></p>
+<h3 id="references-17">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/prv0k3mvorzhngdw405sgb87ckw105gz">https://lists.apache.org/thread/prv0k3mvorzhngdw405sgb87ckw105gz</a></li>
+</ul>
+<h3 id="credits-17">Credits</h3>
+<ul>
+<li>n0mi1k (finder)</li>
+</ul>
+<h2 id="CVE-2026-73236">Cross-Realm authorization bypass in delegated administration</h2>
+<p>CVE-2026-73236 <a href="https://cve.org/CVERecord?id=CVE-2026-73236">[CVE]</a> <a href="./CVE-2026-73236.cve.json">[CVE json]</a> <a href="./CVE-2026-73236.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T13:23:16.597Z</em></p>
+<h3 id="affected-18">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-18">Description</h3>
+<p>Incorrect Authorization vulnerability in Apache Syncope.</p><p>Delegated administration security checks are based on Realm hierarchy and enforced via prefix matches.<br>Due to incorrect implementation, two sibling Realms whose names&nbsp;begin with the same string cannot be correctly distinguished, resulting in incorrect authorization.</p><p></p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.<br><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.<p></p>
+<h3 id="references-18">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/5m8t357n2xt38ym5l2rrgbjyztd97yjv">https://lists.apache.org/thread/5m8t357n2xt38ym5l2rrgbjyztd97yjv</a></li>
+</ul>
+<h3 id="credits-18">Credits</h3>
+<ul>
+<li>Aleksandar Djordjevic (finder)</li>
+<li>n0mi1k (finder)</li>
+</ul>
+<h2 id="CVE-2026-73195">CSV export spreadsheet formula injection</h2>
+<p>CVE-2026-73195 <a href="https://cve.org/CVERecord?id=CVE-2026-73195">[CVE]</a> <a href="./CVE-2026-73195.cve.json">[CVE json]</a> <a href="./CVE-2026-73195.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T13:23:46.423Z</em></p>
+<h3 id="affected-19">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-19">Description</h3>
+<p>Improper Encoding or Escaping of Output vulnerability in Apache Syncope.</p><p>Authenticated users can store a spreadsheet formula payload in one of their own plain attributes. When such users are included in a CSV export and the generated CSV file is opened by a spreadsheet application, the formula may be executed.</p><p></p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.<br><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.<p></p>
+<h3 id="references-19">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/lg1opo92y789v259folgvmg6n28l42cj">https://lists.apache.org/thread/lg1opo92y789v259folgvmg6n28l42cj</a></li>
+</ul>
+<h3 id="credits-19">Credits</h3>
+<ul>
+<li>meifukun (finder)</li>
+</ul>
+<h2 id="CVE-2026-73191">CAS service URL injection via Forwarded HTTP headers</h2>
+<p>CVE-2026-73191 <a href="https://cve.org/CVERecord?id=CVE-2026-73191">[CVE]</a> <a href="./CVE-2026-73191.cve.json">[CVE json]</a> <a href="./CVE-2026-73191.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T13:24:21.540Z</em></p>
+<h3 id="affected-20">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-20">Description</h3>
+<p>URL Redirection to Untrusted Site ('Open Redirect') vulnerability in Apache Syncope.</p><p></p>When the Syncope SRA is configured for CAS authentication, the target Apereo CAS instance's URL is calculated by unconditionally looking at client-supplied forwarded HTTP headers.<br><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.<br><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.<p></p>
+<h3 id="references-20">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/vx9bons1znhdkdpsxwjpy6qqqjc8xqtk">https://lists.apache.org/thread/vx9bons1znhdkdpsxwjpy6qqqjc8xqtk</a></li>
+</ul>
+<h3 id="credits-20">Credits</h3>
+<ul>
+<li>meifukun (finder)</li>
+</ul>
+<h2 id="CVE-2026-73178">JWT Access Token takeover</h2>
+<p>CVE-2026-73178 <a href="https://cve.org/CVERecord?id=CVE-2026-73178">[CVE]</a> <a href="./CVE-2026-73178.cve.json">[CVE json]</a> <a href="./CVE-2026-73178.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-14T13:06:18.661Z</em></p>
+<h3 id="affected-21">Affected</h3>
+<ul>
+<li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
+<li>Apache Syncope from 4.0.0-M0 through 4.0.7</li>
+<li>Apache Syncope from 4.1.0-M0 through 4.1.2</li>
+</ul>
+<h3 id="description-21">Description</h3>
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Syncope.<br><br>An administrator with adequate entitlements can get access via REST to the list of existing Access Tokens, including their signed JWT body.<br>These values can be then used to perform further REST requests, impersonating users with higher administration entitlements.</p><p></p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.<br><br>Users are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.<p></p>
+<h3 id="references-21">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/owcdm0stb39mnkpyps0h6yw4gp2olnkj">https://lists.apache.org/thread/owcdm0stb39mnkpyps0h6yw4gp2olnkj</a></li>
+</ul>
+<h3 id="credits-21">Credits</h3>
+<ul>
+<li>n0mi1k (finder)</li>
+</ul>
 <h2 id="CVE-2026-63071">RCE via Groovy Sandbox bypass</h2>
 <p>CVE-2026-63071 <a href="https://cve.org/CVERecord?id=CVE-2026-63071">[CVE]</a> <a href="./CVE-2026-63071.cve.json">[CVE json]</a> <a href="./CVE-2026-63071.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-07-20T14:19:15.560Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-22">Affected</h3>
 <ul>
 <li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
 <li>Apache Syncope from 4.0.0-M0 through 4.0.6</li>
 <li>Apache Syncope from 4.1.0-M0 through 4.1.1</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-22">Description</h3>
 <p>Improper Isolation or Compartmentalization vulnerability in Apache Syncope.<br><br>An administrator with adequate entitlements for Implementations can create a malicious Groovy class containing untrusted code bypassing the Groovy security sandbox.</p><p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.6, from 4.1.0-M0 through 4.1.1.</p><p>Users are recommended to upgrade to version 4.0.7 / 4.1.2, which fix this issue by tightening the Groovy security sandbox.</p>
-<h3 id="references">References</h3>
+<h3 id="references-22">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/2236mlm6hbvs6g16yqz5y9s8bb7q1lo1">https://lists.apache.org/thread/2236mlm6hbvs6g16yqz5y9s8bb7q1lo1</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-22">Credits</h3>
 <ul>
 <li>elin kai (finder)</li>
 <li>无聊 (finder)</li>
@@ -132,41 +552,41 @@
 <h2 id="CVE-2026-62418">Low-privileged authenticated SSRF in Connectors and Resources check</h2>
 <p>CVE-2026-62418 <a href="https://cve.org/CVERecord?id=CVE-2026-62418">[CVE]</a> <a href="./CVE-2026-62418.cve.json">[CVE json]</a> <a href="./CVE-2026-62418.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-07-20T14:27:00.668Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-23">Affected</h3>
 <ul>
 <li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
 <li>Apache Syncope from 4.0.0-M0 through 4.0.6</li>
 <li>Apache Syncope from 4.1.0-M0 through 4.1.1</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-23">Description</h3>
 <p></p><p>Low-privileged authenticated Server-Side Request Forgery (SSRF) 
 vulnerability in Apache Syncope via Connectors and Resources check.</p>
 <p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.6, from 4.1.0-M0 through 4.1.1.</p>
 <p>Users are recommended to upgrade to version 4.0.7 / 4.1.2, which fix this issue.</p><p></p>
-<h3 id="references-1">References</h3>
+<h3 id="references-23">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/n632drbsmfr6t3p6jt6jwbjvokqdyszb">https://lists.apache.org/thread/n632drbsmfr6t3p6jt6jwbjvokqdyszb</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-23">Credits</h3>
 <ul>
 <li>Adrián Leal Castaño (finder)</li>
 </ul>
 <h2 id="CVE-2026-62183">User self-service privilege escalation</h2>
 <p>CVE-2026-62183 <a href="https://cve.org/CVERecord?id=CVE-2026-62183">[CVE]</a> <a href="./CVE-2026-62183.cve.json">[CVE json]</a> <a href="./CVE-2026-62183.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-07-20T14:23:15.458Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-24">Affected</h3>
 <ul>
 <li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
 <li>Apache Syncope from 4.0.0-M0 through 4.0.6</li>
 <li>Apache Syncope from 4.1.0-M0 through 4.1.1</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-24">Description</h3>
 <p>Improper Privilege Management vulnerability in Apache Syncope.<br><br>When:<br><br>* the all-Java user workflow adapter is configured, or<br>* the Flowable user workflow adapter is configured, bearing a BPMN definition not requiring admin approval for user self registration of self update requests</p>the following scenario could happen.<br><div>A REST API call can allow the user to grant themselves one or more of defined Roles, thus gaining their Entitlements and becoming in fact an administrator; the actual Entitlements gained depend on the Roles that are effectively defined on the specific Syncope deployment.</div><div><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.6, from 4.1.0-M0 through 4.1.1.<br><br>Users are recommended to upgrade to version 4.0.7 / 4.1.2, which fix this issue.<br></div>
-<h3 id="references-2">References</h3>
+<h3 id="references-24">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/6r8cngvy43y2yk4jj3w060dt8vx0yzpr">https://lists.apache.org/thread/6r8cngvy43y2yk4jj3w060dt8vx0yzpr</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-24">Credits</h3>
 <ul>
 <li>Nic Jones (finder)</li>
 <li>elin kai (finder)</li>
@@ -174,113 +594,113 @@ vulnerability in Apache Syncope via Connectors and Resources check.</p>
 <h2 id="CVE-2026-57308">SQL injection vulnerability in Audit Events search</h2>
 <p>CVE-2026-57308 <a href="https://cve.org/CVERecord?id=CVE-2026-57308">[CVE]</a> <a href="./CVE-2026-57308.cve.json">[CVE json]</a> <a href="./CVE-2026-57308.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-07-20T14:21:50.872Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-25">Affected</h3>
 <ul>
 <li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
 <li>Apache Syncope from 4.0.0-M0 through 4.0.6</li>
 <li>Apache Syncope from 4.1.0-M0 through 4.1.1</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-25">Description</h3>
 <p>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Syncope.</p><p>An administrator with adequate entitlements can achieve&nbsp;execution of arbitrary SQL via stacked queries, leveraging unsanitized sort parameters.</p><p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.6, from 4.1.0-M0 through 4.1.1.<br></p><p>Users are recommended to upgrade to version 4.0.7 / 4.1.2, which fix this issue.</p>
-<h3 id="references-3">References</h3>
+<h3 id="references-25">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/g0gpctj90pbczbjl5jr33t8gr1gltg8v">https://lists.apache.org/thread/g0gpctj90pbczbjl5jr33t8gr1gltg8v</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits-25">Credits</h3>
 <ul>
 <li>Lennart Hostettler (finder)</li>
 </ul>
 <h2 id="CVE-2026-53421">Remote Code Execution via Scripted Connector</h2>
 <p>CVE-2026-53421 <a href="https://cve.org/CVERecord?id=CVE-2026-53421">[CVE]</a> <a href="./CVE-2026-53421.cve.json">[CVE json]</a> <a href="./CVE-2026-53421.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-07-20T14:21:06.192Z</em></p>
-<h3 id="affected-4">Affected</h3>
+<h3 id="affected-26">Affected</h3>
 <ul>
 <li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
 <li>Apache Syncope from 4.0.0-M0 through 4.0.6</li>
 <li>Apache Syncope from 4.1.0-M0 through 4.1.1</li>
 </ul>
-<h3 id="description-4">Description</h3>
+<h3 id="description-26">Description</h3>
 <p>Improper Isolation or Compartmentalization vulnerability in Apache Syncope.</p><p></p><p>An administrator with adequate entitlements can achieve remote code execution through the connector subsystem by relying on scripted connectors' (REST and SQL) capability to run Groovy scripts.<br><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.6, from 4.1.0-M0 through 4.1.1.<br></p><p></p><p>Users are recommended to upgrade to version 4.0.7 / 4.1.2, which fix this issue by hardening the Groovy security sandbox.</p><p></p>
-<h3 id="references-4">References</h3>
+<h3 id="references-26">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/nmzvz6gb2ldm30wvyk613r8dfrb6r8yx">https://lists.apache.org/thread/nmzvz6gb2ldm30wvyk613r8dfrb6r8yx</a></li>
 </ul>
-<h3 id="credits-4">Credits</h3>
+<h3 id="credits-26">Credits</h3>
 <ul>
 <li>follycat, Y0n3er (finder)</li>
 </ul>
 <h2 id="CVE-2026-53405">Remote Code Execution via Flowable BPMN Groovy ScriptTask</h2>
 <p>CVE-2026-53405 <a href="https://cve.org/CVERecord?id=CVE-2026-53405">[CVE]</a> <a href="./CVE-2026-53405.cve.json">[CVE json]</a> <a href="./CVE-2026-53405.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-07-20T14:20:04.039Z</em></p>
-<h3 id="affected-5">Affected</h3>
+<h3 id="affected-27">Affected</h3>
 <ul>
 <li>Apache Syncope from 3.0.0-M0 through 3.0.16</li>
 <li>Apache Syncope from 4.0.0-M0 through 4.0.6</li>
 <li>Apache Syncope from 4.1.0-M0 through 4.1.1</li>
 </ul>
-<h3 id="description-5">Description</h3>
+<h3 id="description-27">Description</h3>
 <p>Improper Isolation or Compartmentalization vulnerability in Apache Syncope.</p><p>An administrator with adequate entitlements can import arbitrary BPMN process definitions via the REST API and then start the process. When a BPMN process containing a Groovy scriptTask is imported and&nbsp;started, the Groovy script is executed directly on the server, with no sandbox.<br></p><p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.6, from 4.1.0-M0 through 4.1.1.<br></p><p></p><p>Users are recommended to upgrade to version 4.0.7 / 4.1.2, which fix this issue by wrapping Flowable's&nbsp;Groovy scriptTasks with security sandbox.</p>
-<h3 id="references-5">References</h3>
+<h3 id="references-27">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/vdq0tk6ylffz6trbgbllj9kb1ndzff7k">https://lists.apache.org/thread/vdq0tk6ylffz6trbgbllj9kb1ndzff7k</a></li>
 </ul>
-<h3 id="credits-5">Credits</h3>
+<h3 id="credits-27">Credits</h3>
 <ul>
 <li>follycat, Y0n3er (finder)</li>
 </ul>
 <h2 id="CVE-2026-42797">JexlContextBuilder Information Disclosure</h2>
 <p>CVE-2026-42797 <a href="https://cve.org/CVERecord?id=CVE-2026-42797">[CVE]</a> <a href="./CVE-2026-42797.cve.json">[CVE json]</a> <a href="./CVE-2026-42797.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-25T15:01:00.581Z</em></p>
-<h3 id="affected-6">Affected</h3>
+<h3 id="affected-28">Affected</h3>
 <ul>
 <li>Apache Syncope from 3.0 through 3.0.16</li>
 <li>Apache Syncope from 4.0 through 4.0.5</li>
 <li>Apache Syncope from 4.1 through 4.1.0</li>
 </ul>
-<h3 id="description-6">Description</h3>
+<h3 id="description-28">Description</h3>
 <p>Exposure of Sensitive Information Through Data Queries vulnerability in Apache Syncope.</p><p>An administrator with adequate entitlements for Derived Schemas can create a malicious JEXL expression which allows any administrator with sufficient entitlements for User read to access User-related security-sensitive information.</p><p>This issue affects Apache Syncope: 3.0 through 3.0.16, 4.0 through 4.0.5, 4.1.0.</p><p>Users are recommended to upgrade to version 4.0.6 / 4.1.1, which fix this issue by further restricting the JEXL expression definition.</p>
-<h3 id="references-6">References</h3>
+<h3 id="references-28">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/5y7d277sntyytrmxnx2tfjr9ftcpq1s6">https://lists.apache.org/thread/5y7d277sntyytrmxnx2tfjr9ftcpq1s6</a></li>
 </ul>
-<h3 id="credits-6">Credits</h3>
+<h3 id="credits-28">Credits</h3>
 <ul>
 <li>elin kai (finder)</li>
 </ul>
 <h2 id="CVE-2026-42782">Post-auth RCE via Groovy static</h2>
 <p>CVE-2026-42782 <a href="https://cve.org/CVERecord?id=CVE-2026-42782">[CVE]</a> <a href="./CVE-2026-42782.cve.json">[CVE json]</a> <a href="./CVE-2026-42782.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-25T14:59:04.113Z</em></p>
-<h3 id="affected-7">Affected</h3>
+<h3 id="affected-29">Affected</h3>
 <ul>
 <li>Apache Syncope from 3.0 through 3.0.16</li>
 <li>Apache Syncope from 4.0 through 4.0.5</li>
 <li>Apache Syncope from 4.1 through 4.1.0</li>
 </ul>
-<h3 id="description-7">Description</h3>
+<h3 id="description-29">Description</h3>
 <p>Improper Isolation or Compartmentalization vulnerability in Apache Syncope.</p><p>An administrator with adequate entitlements for Implementations can create a malicious Groovy class containing&nbsp;untrusted code reaching a non-sandboxed execution path via the class static initializer.</p><p>This issue affects Apache Syncope: 3.0 through 3.0.16, 4.0 through 4.0.5, 4.1.0.</p><p></p><p>Users are recommended to upgrade to version 4.0.6 / 4.1.1, which fix this issue by forcing even the static initializer in Groovy code to run in a sandbox.</p>
-<h3 id="references-7">References</h3>
+<h3 id="references-29">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/b869ms0ofrd129f7tgsn9flxgv9ztg2r">https://lists.apache.org/thread/b869ms0ofrd129f7tgsn9flxgv9ztg2r</a></li>
 </ul>
-<h3 id="credits-7">Credits</h3>
+<h3 id="credits-29">Credits</h3>
 <ul>
 <li>Trung Nguyen, CyStack (finder)</li>
 </ul>
 <h2 id="CVE-2026-23795">Console XXE on Keymaster parameters</h2>
 <p>CVE-2026-23795 <a href="https://cve.org/CVERecord?id=CVE-2026-23795">[CVE]</a> <a href="./CVE-2026-23795.cve.json">[CVE json]</a> <a href="./CVE-2026-23795.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-02-03T15:14:33.685Z</em></p>
-<h3 id="affected-8">Affected</h3>
+<h3 id="affected-30">Affected</h3>
 <ul>
 <li>Apache Syncope from 3.0 through 3.0.15</li>
 <li>Apache Syncope from 4.0 through 4.0.3</li>
 </ul>
-<h3 id="description-8">Description</h3>
+<h3 id="description-30">Description</h3>
 <p>Improper Restriction of XML External Entity Reference vulnerability in Apache Syncope Console.<br>An administrator with adequate entitlements to create or edit Keymaster parameters via Console can construct malicious XML text to launch an XXE attack, thereby causing sensitive data leakage occurs.</p><p>This issue affects Apache Syncope: from 3.0 through 3.0.15, from 4.0 through 4.0.3.</p><p>Users are recommended to upgrade to version 3.0.16 / 4.0.4, which fix this issue.</p>
-<h3 id="references-8">References</h3>
+<h3 id="references-30">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/mzgbdn8hzk8vr94o660njcc7w62c2pos">https://lists.apache.org/thread/mzgbdn8hzk8vr94o660njcc7w62c2pos</a></li>
 </ul>
-<h3 id="credits-8">Credits</h3>
+<h3 id="credits-30">Credits</h3>
 <ul>
 <li>follycat (finder)</li>
 <li>Y0n3er (finder)</li>
@@ -288,18 +708,18 @@ vulnerability in Apache Syncope via Connectors and Resources check.</p>
 <h2 id="CVE-2026-23794">Reflected XSS on Enduser Login</h2>
 <p>CVE-2026-23794 <a href="https://cve.org/CVERecord?id=CVE-2026-23794">[CVE]</a> <a href="./CVE-2026-23794.cve.json">[CVE json]</a> <a href="./CVE-2026-23794.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-02-03T15:15:22.918Z</em></p>
-<h3 id="affected-9">Affected</h3>
+<h3 id="affected-31">Affected</h3>
 <ul>
 <li>Apache Syncope from 3.0 through 3.0.15</li>
 <li>Apache Syncope from 4.0 through 4.0.3</li>
 </ul>
-<h3 id="description-9">Description</h3>
+<h3 id="description-31">Description</h3>
 <p>Reflected XSS in Apache Syncope's Enduser Login page.<br>An attacker that tricks a legitimate user into clicking a malicious link and logging in to Syncope Enduser could steal that user's credentials.</p><p>This issue affects Apache Syncope: from 3.0 through 3.0.15, from 4.0 through 4.0.3.</p><p>Users are recommended to upgrade to version 3.0.16 / 4.0.4, which fix this issue.</p>
-<h3 id="references-9">References</h3>
+<h3 id="references-31">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/7h30ghqdsf3spl3h7gdmscxofrm8ygjo">https://lists.apache.org/thread/7h30ghqdsf3spl3h7gdmscxofrm8ygjo</a></li>
 </ul>
-<h3 id="credits-9">Credits</h3>
+<h3 id="credits-31">Credits</h3>
 <ul>
 <li>Kasper Karlsson (finder)</li>
 <li>Karin Taliga (finder)</li>
@@ -307,56 +727,56 @@ vulnerability in Apache Syncope via Connectors and Resources check.</p>
 <h2 id="CVE-2025-65998">Default AES key used for internal password encryption</h2>
 <p>CVE-2025-65998 <a href="https://cve.org/CVERecord?id=CVE-2025-65998">[CVE]</a> <a href="./CVE-2025-65998.cve.json">[CVE json]</a> <a href="./CVE-2025-65998.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-11-24T13:46:58.386Z</em></p>
-<h3 id="affected-10">Affected</h3>
+<h3 id="affected-32">Affected</h3>
 <ul>
 <li>Apache Syncope from 2.1 through 2.1.14</li>
 <li>Apache Syncope from 3.0 through 3.0.14</li>
 <li>Apache Syncope from 4.0 through 4.0.2</li>
 </ul>
-<h3 id="description-10">Description</h3>
+<h3 id="description-32">Description</h3>
 <p>Apache Syncope can be configured to store the user password values in the internal database with AES encryption, though this is not the default option.</p><p>When AES is configured, the default key value, hard-coded in the source code, is always used. This allows a malicious attacker, once obtained access to the internal database content, to reconstruct the original cleartext password values.<br>This is not affecting encrypted plain attributes, whose values are also stored using AES encryption.</p><p>Users are recommended to upgrade to version 3.0.15 / 4.0.3, which fix this issue.</p>
-<h3 id="references-10">References</h3>
+<h3 id="references-32">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/fjh0tb0d1xkbphc5ogdsc348ppz88cts">https://lists.apache.org/thread/fjh0tb0d1xkbphc5ogdsc348ppz88cts</a></li>
 </ul>
-<h3 id="credits-10">Credits</h3>
+<h3 id="credits-32">Credits</h3>
 <ul>
 <li>Clemens Bergmann (Technical University of Darmstadt) (finder)</li>
 </ul>
 <h2 id="CVE-2025-57738">Remote Code Execution by delegated administrators</h2>
 <p>CVE-2025-57738 <a href="https://cve.org/CVERecord?id=CVE-2025-57738">[CVE]</a> <a href="./CVE-2025-57738.cve.json">[CVE json]</a> <a href="./CVE-2025-57738.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-10-20T14:43:38.022Z</em></p>
-<h3 id="affected-11">Affected</h3>
+<h3 id="affected-33">Affected</h3>
 <ul>
 <li>Apache Syncope from 2.1 through 2.1.14</li>
 <li>Apache Syncope from 3.0 through 3.0.13</li>
 <li>Apache Syncope from 4.0 through 4.0.1</li>
 </ul>
-<h3 id="description-11">Description</h3>
+<h3 id="description-33">Description</h3>
 <p>Apache Syncope offers the ability to extend / customize the base behavior on every deployment by allowing to provide custom implementations of a few Java interfaces; such implementations can be provided either as Java or Groovy classes, with the latter being particularly attractive as the machinery is set for runtime reload.<br>Such a feature has been available for a while, but recently it was discovered that a malicious administrator can inject Groovy code that can be executed remotely by a running Apache Syncope Core instance.<br>Users are recommended to upgrade to version 3.0.14 / 4.0.2, which fix this issue by forcing the Groovy code to run in a sandbox.</p>
-<h3 id="references-11">References</h3>
+<h3 id="references-33">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/x7cv6xv7z76y49grdr1hgj1pzw5zbby6">https://lists.apache.org/thread/x7cv6xv7z76y49grdr1hgj1pzw5zbby6</a></li>
 </ul>
-<h3 id="credits-11">Credits</h3>
+<h3 id="credits-33">Credits</h3>
 <ul>
 <li>Mike Cole (Mantel Group) (finder)</li>
 </ul>
 <h2 id="CVE-2024-45031">Stored XSS in Console and Enduser</h2>
 <p>CVE-2024-45031 <a href="https://cve.org/CVERecord?id=CVE-2024-45031">[CVE]</a> <a href="./CVE-2024-45031.cve.json">[CVE json]</a> <a href="./CVE-2024-45031.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-09-01T09:41:27.665Z</em></p>
-<h3 id="affected-12">Affected</h3>
+<h3 id="affected-34">Affected</h3>
 <ul>
 <li>Apache Syncope from 2.1 through 2.1.14</li>
 <li>Apache Syncope from 3.0 through 3.0.8</li>
 </ul>
-<h3 id="description-12">Description</h3>
+<h3 id="description-34">Description</h3>
 <p>When editing objects in the Syncope Console, incomplete HTML tags could be used to bypass HTML sanitization. This made it possible to inject stored XSS payloads which would trigger for other users during ordinary usage of the application.<br>XSS payloads could also be injected in Syncope Enduser when editing “Personal Information” or “User Requests”: such payloads would trigger for administrators in Syncope Console, thus enabling session hijacking.<br><br>Users are recommended to upgrade to version 3.0.9, which fixes this issue.</p>
-<h3 id="references-12">References</h3>
+<h3 id="references-34">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/fn567pfmo3s55ofkc42drz8b4kgbhp9m">https://lists.apache.org/thread/fn567pfmo3s55ofkc42drz8b4kgbhp9m</a></li>
 </ul>
-<h3 id="credits-12">Credits</h3>
+<h3 id="credits-34">Credits</h3>
 <ul>
 <li>Kasper Karlsson, Omegapoint (finder)</li>
 <li>Pontus Hanssen, Omegapoint (finder)</li>
@@ -364,19 +784,19 @@ vulnerability in Apache Syncope via Connectors and Resources check.</p>
 <h2 id="CVE-2024-38503">HTML tags can be injected into Console or Enduser text fields</h2>
 <p>CVE-2024-38503 <a href="https://cve.org/CVERecord?id=CVE-2024-38503">[CVE]</a> <a href="./CVE-2024-38503.cve.json">[CVE json]</a> <a href="./CVE-2024-38503.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-09-11T11:11:10.160Z</em></p>
-<h3 id="affected-13">Affected</h3>
+<h3 id="affected-35">Affected</h3>
 <ul>
 <li>Apache Syncope from 2.1 through 2.1.14</li>
 <li>Apache Syncope from 3.0 through 3.0.7</li>
 </ul>
-<h3 id="description-13">Description</h3>
+<h3 id="description-35">Description</h3>
 <p>When editing a user, group or any object in the Syncope Console, HTML tags could be added to any text field and could lead to potential exploits.<br>The same vulnerability was found in the Syncope Enduser, when editing “Personal Information” or “User Requests”.<br><br>Users are recommended to upgrade to version 3.0.8, which fixes this issue.</p>
-<h3 id="references-13">References</h3>
+<h3 id="references-35">References</h3>
 <ul>
 <li><a href="https://syncope.apache.org/security#cve-2024-38503-html-tags-can-be-injected-into-console-or-enduser">https://syncope.apache.org/security#cve-2024-38503-html-tags-can-be-injected-into-console-or-enduser</a></li>
 <li><a href="https://www.openwall.com/lists/oss-security/2024/07/22/3">https://www.openwall.com/lists/oss-security/2024/07/22/3</a></li>
 </ul>
-<h3 id="credits-13">Credits</h3>
+<h3 id="credits-35">Credits</h3>
 <ul>
 <li>Basalt IT-Security Team (finder)</li>
 </ul>
