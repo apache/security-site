@@ -13,6 +13,31 @@ Do you want disclose a potential security issue for Apache Karaf? Send your repo
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Improper release of ClassLoader references via static ThreadLocal caching ## { #CVE-2026-92230 }
+
+CVE-2026-92230 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-92230) [\[CVE json\]](./CVE-2026-92230.cve.json) [\[OSV json\]](./CVE-2026-92230.osv.json)
+
+
+
+_Last updated: 2026-09-17T18:38:22.061Z_
+
+### Affected
+
+* Apache Karaf before 4.4.11
+
+
+### Description
+
+Apache Karaf's XmlUtils cached XML parser/transformer factories in static ThreadLocal fields on long-lived container threads. Because a ThreadLocal value outlives the OSGi bundle that created it, repeated bundle or feature install, update, or refresh operations can leave successive bundle ClassLoader's pinned in memory and unreachable for garbage collection, leading to unbounded Metaspace growth and eventual denial of service of the Karaf instance.
+
+### References
+* https://lists.apache.org/thread/pxgqjvsmzgpvgly1qf1w300qxsp8bxdj
+
+
+### Credits
+* Baoquan Cui & Yucheng Qiu (reporter)
+
+
 ## Decanter log-socket collector has deserialization vulnerability ## { #CVE-2026-24656 }
 
 CVE-2026-24656 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24656) [\[CVE json\]](./CVE-2026-24656.cve.json)
