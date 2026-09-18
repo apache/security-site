@@ -126,7 +126,7 @@ CVE-2026-40542 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40542) [\[CVE jso
 
 
 
-_Last updated: 2026-04-22T07:07:19.055Z_
+_Last updated: 2026-09-17T00:44:38.138Z_
 
 ### Affected
 

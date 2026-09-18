@@ -248,6 +248,33 @@ Apache Airflow Keycloak provider: from Airflow 3.3 the Keycloak auth manager tak
 * Jarek Potiuk (remediation developer)
 
 
+## Asset queued-events DELETE endpoints gated on Dag READ instead of Dag EDIT (asset-triggered scheduling suppression) ## { #CVE-2026-75157 }
+
+CVE-2026-75157 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-75157) [\[CVE json\]](./CVE-2026-75157.cve.json) [\[OSV json\]](./CVE-2026-75157.osv.json)
+
+
+
+_Last updated: 2026-09-18T07:51:21.855Z_
+
+### Affected
+
+* Apache Airflow before 3.3.2
+
+
+### Description
+
+Apache Airflow's asset queued-events DELETE endpoints checked the caller's Dag-axis permission with `READ` instead of `EDIT`. Any authenticated user who could read a Dag could therefore delete that Dag's queued asset events, silently suppressing asset-triggered scheduling for it — a state-changing action gated on a read-only permission. Deployments are affected whenever asset-triggered scheduling is in use and Dag read access is granted more widely than Dag edit access, which is the normal RBAC arrangement; no special configuration is required. Upgrade to apache-airflow 3.3.2 or later.
+
+### References
+* https://github.com/apache/airflow/pull/71736
+* https://lists.apache.org/thread/f2ngj296z48b3x14ss3pgbs41lbnlgmp
+
+
+### Credits
+* n0mi1k (finder)
+* Jarek Potiuk (remediation developer)
+
+
 ## FAB Azure AD OAuth: id_token issuer/audience not validated — cross-tenant authentication bypass ## { #CVE-2026-75156 }
 
 CVE-2026-75156 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-75156) [\[CVE json\]](./CVE-2026-75156.cve.json) [\[OSV json\]](./CVE-2026-75156.osv.json)
