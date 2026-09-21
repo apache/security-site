@@ -43,7 +43,7 @@ We do not directly provide any compliance statements or reports (such as [SOC](h
 
 Nonetheless, many organizations that use Apache software projects have successfully passed various audits and received the corresponding certification.
 
-This is in part due to the fact that as a responsible Open Source Steward, we have a solid [governance structure](https://apache.org/foundation/governance/) in place, with [Program Management Committees](https://apache.org/foundation/governance/pmcs.html) overseeing the projects, and [the board](https://apache.org/foundation/governance/board.html) setting overall policy for the foundation.
+This is in part due to the fact that as a responsible Open Source Steward, we have a solid [governance structure](https://apache.org/foundation/governance/) in place, with [Project Management Committees](https://apache.org/foundation/governance/pmcs.html) overseeing the projects, and [the board](https://apache.org/foundation/governance/board.html) setting overall policy for the foundation.
 
 In particular, any software that is released will adhere to the [release policy](https://www.apache.org/legal/release-policy.html) and follows [best practices](https://infra.apache.org/release-publishing.html), and security issues are handled according to our [security process](https://apache.org/security/committers.html).
 
