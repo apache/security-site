@@ -24,7 +24,7 @@ CVE-2026-33929 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-33929) [\[CVE jso
 
 
 
-_Last updated: 2026-04-14T08:09:38.140Z_
+_Last updated: 2026-09-18T12:07:53.868Z_
 
 ### Affected
 
@@ -57,7 +57,7 @@ CVE-2026-23907 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23907) [\[CVE jso
 
 
 
-_Last updated: 2026-03-10T16:53:49.159Z_
+_Last updated: 2026-09-18T12:05:48.881Z_
 
 ### Affected
 

@@ -24,7 +24,7 @@ CVE-2026-75880 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-75880) [\[CVE jso
 
 
 
-_Last updated: 2026-09-10T04:33:09.851Z_
+_Last updated: 2026-09-18T14:37:13.256Z_
 
 ### Affected
 

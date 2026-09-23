@@ -79,7 +79,7 @@ known to be affected: from 8.5.59 through 8.5.100.&nbsp;Other unsupported versio
 
 CVE-2026-68569 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68569) [\[CVE json\]](./CVE-2026-68569.cve.json)
 
-_Last updated: 2026-08-25T21:59:32.072Z_
+_Last updated: 2026-09-21T11:06:10.114Z_
 
 ### Affected
 
