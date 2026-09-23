@@ -109,20 +109,40 @@
 </ul>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-70410">Unrestricted class initialization when instantiating plugins</h2>
+<p>CVE-2026-70410 <a href="https://cve.org/CVERecord?id=CVE-2026-70410">[CVE]</a> <a href="./CVE-2026-70410.cve.json">[CVE json]</a> <a href="./CVE-2026-70410.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-22T15:39:44.908Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Calcite Avatica before 1.29.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection') vulnerability in Apache Calcite Avatica. Plugin instantiation (via AvaticaUtils#instantiatePlugin and other methods) initializes arbitrary classes via unrestricted calls to Class.forName(String) which by default triggers initialization. This may lead to the execution of static initializer blocks in arbitrary classes present in the classpath. The instantiation APIs should initialize and instantiate only classes implementing the specified plugin interface passed as input in conjunction with the desired classname. At the moment of writing, there are no well-known or widely used classes with dangerous static initializer blocks so the severity is low.</p><p>This issue affects Apache Calcite Avatica: before 1.29.0.</p><p>Users are recommended to upgrade to version 1.29.0, which fixes the issue.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/07vwvsnbskhf5kvksn5t5l9qjozv2rk4">https://lists.apache.org/thread/07vwvsnbskhf5kvksn5t5l9qjozv2rk4</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>tinyb0y (finder)</li>
+<li>ReturnZero (finder)</li>
+<li>n0mi1k (finder)</li>
+<li>Yan Xu (finder)</li>
+</ul>
 <h2 id="CVE-2026-46718">A user-controled model can load arbitrary classes, leading to code execution</h2>
 <p>CVE-2026-46718 <a href="https://cve.org/CVERecord?id=CVE-2026-46718">[CVE]</a> <a href="./CVE-2026-46718.cve.json">[CVE json]</a> <a href="./CVE-2026-46718.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-06-02T09:17:49.528Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache Calcite from 1.5.0 before 1.42</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-1">Description</h3>
 <p>Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection') vulnerability in Apache Calcite.</p><p>This issue affects Apache Calcite: from 1.5.0 before 1.42.</p><p>Users are recommended to upgrade to version 1.42, which fixes the issue.</p>
-<h3 id="references">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/9s37svo343w5ck1ovh478lkzcqk4949v">https://lists.apache.org/thread/9s37svo343w5ck1ovh478lkzcqk4949v</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>pyn3rd (finder)</li>
 <li>uname (finder)</li>
@@ -131,29 +151,29 @@
 <h2 id="CVE-2022-39135">Apache Calcite: potential XEE attacks</h2>
 <p>CVE-2022-39135 <a href="https://cve.org/CVERecord?id=CVE-2022-39135">[CVE]</a> <a href="./CVE-2022-39135.cve.json">[CVE json]</a> <a href="./CVE-2022-39135.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2023-09-18T12:55:46.886Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache Calcite from Apache Calcite before 1.32.0</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-2">Description</h3>
 <p>Apache Calcite 1.22.0 introduced the SQL operators EXISTS_NODE, EXTRACT_XML, XML_TRANSFORM and EXTRACT_VALUE, which do not restrict XML External Entity references in their configuration, making them vulnerable to a potential XML External Entity (XXE) attack. Therefore any client exposing these operators, typically by using Oracle dialect (the first three) or MySQL dialect (the last one), is affected by this vulnerability (the extent of it will depend on the user under which the application is running).</p>
 <p>From Apache Calcite 1.32.0 onwards, Document Type Declarations and XML External Entity resolution are disabled on the impacted operators.</p>
-<h3 id="references-1">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/ohdnhlgm6jvt3srw8l7spkm2d5vwm082">https://lists.apache.org/thread/ohdnhlgm6jvt3srw8l7spkm2d5vwm082</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-2">Credits</h3>
 <ul>
 <li>Apache Calcite would like to thank David Handermann for reporting this issue</li>
 </ul>
 <h2 id="CVE-2022-36364">Apache Calcite Avatica JDBC driver <code>httpclient_impl</code> connection property can be used as an RCE vector</h2>
 <p>CVE-2022-36364 <a href="https://cve.org/CVERecord?id=CVE-2022-36364">[CVE]</a> <a href="./CVE-2022-36364.cve.json">[CVE json]</a> <a href="./CVE-2022-36364.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-07-28T08:30:13.087Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache Calcite Avatica from Apache Calcite Avatica before 1.22.0</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>Apache Calcite Avatica JDBC driver creates HTTP client instances based on class names provided via <code>httpclient_impl</code> connection property; however, the driver does not verify if the class implements the expected interface before instantiating it, which can lead to code execution loaded via arbitrary classes and in rare cases remote code execution.</p>
 <p>To exploit the vulnerability:</p>
 <ol>
@@ -161,11 +181,11 @@
 <li>and there should be a vulnerable class (constructor with URL parameter and ability to execute code) in the classpath.</li>
 </ol>
 <p>From Apache Calcite Avatica 1.22.0 onwards, it will be verified that the class implements the expected interface before invoking its constructor.</p>
-<h3 id="references-2">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/5csdj8bv4h3hfgw27okm84jh1j2fyw0c">https://lists.apache.org/thread/5csdj8bv4h3hfgw27okm84jh1j2fyw0c</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-3">Credits</h3>
 <ul>
 <li>Apache Calcite Avatica would like to thank Peter M (<a href="https://twitter.com/h1pmnh">https://twitter.com/h1pmnh</a>) for reporting this issue</li>
 </ul>
