@@ -210,7 +210,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=BuildStream)
   - Advisories (experimental):\
-    none so far
+    [security.apache.org](/projects/buildstream/)
 - **Apache Burr (Incubating)**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Burr%20%28Incubating%29)
@@ -887,11 +887,6 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 
 ## M {.panel-letter}
 
-- <img class="project-logo" src="https://www.apache.org/logos/res/madlib/default.png" alt="" loading="lazy"> **Apache MADlib**
-  - **Security contact:**\
-    [security@apache.org](mailto:security@apache.org?subject=MADlib)
-  - Advisories (experimental):\
-    none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/magpie/default.png" alt="" loading="lazy"> **Apache Magpie**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Magpie)

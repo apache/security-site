@@ -18,6 +18,34 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Unrestricted class initialization when instantiating plugins ## { #CVE-2026-70410 }
+
+CVE-2026-70410 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-70410) [\[CVE json\]](./CVE-2026-70410.cve.json) [\[OSV json\]](./CVE-2026-70410.osv.json)
+
+
+
+_Last updated: 2026-09-22T15:39:44.908Z_
+
+### Affected
+
+* Apache Calcite Avatica before 1.29.0
+
+
+### Description
+
+<p>Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection') vulnerability in Apache Calcite Avatica. Plugin instantiation (via AvaticaUtils#instantiatePlugin and other methods) initializes arbitrary classes via unrestricted calls to Class.forName(String) which by default triggers initialization. This may lead to the execution of static initializer blocks in arbitrary classes present in the classpath. The instantiation APIs should initialize and instantiate only classes implementing the specified plugin interface passed as input in conjunction with the desired classname. At the moment of writing, there are no well-known or widely used classes with dangerous static initializer blocks so the severity is low.</p><p>This issue affects Apache Calcite Avatica: before 1.29.0.</p><p>Users are recommended to upgrade to version 1.29.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/07vwvsnbskhf5kvksn5t5l9qjozv2rk4
+
+
+### Credits
+* tinyb0y (finder)
+* ReturnZero (finder)
+* n0mi1k (finder)
+* Yan Xu (finder)
+
+
 ## A user-controled model can load arbitrary classes, leading to code execution ## { #CVE-2026-46718 }
 
 CVE-2026-46718 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-46718) [\[CVE json\]](./CVE-2026-46718.cve.json) [\[OSV json\]](./CVE-2026-46718.osv.json)

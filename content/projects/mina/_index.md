@@ -13,6 +13,33 @@ Do you want disclose a potential security issue for Apache MINA? Send your repor
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## CVE-2026-47065 resolveProxyClass fix missing from 2.0.X and 2.1.X branches (2.0.30 / 2.1.14) ZDRES-232 ## { #CVE-2026-94301 }
+
+CVE-2026-94301 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-94301) [\[CVE json\]](./CVE-2026-94301.cve.json) [\[OSV json\]](./CVE-2026-94301.osv.json)
+
+
+
+_Last updated: 2026-09-21T14:35:58.595Z_
+
+### Affected
+
+* Apache MINA from 2.0.0 before 2.0.31
+* Apache MINA from 2.1.0 before 2.1.15
+
+
+### Description
+
+<div><div>The fix for CVE-2026-47065/ZDRES-232 ("resolveProxyClass Not Overridden - acceptMatchers Filter Bypass via java.lang.reflect.Proxy"), released on 2026-06-02 and announced as "Fully addressed" in MINA 2.2.8, 2.1.13 and 2.0.29, was committed to the<br>&nbsp;2.2.X branch only. The 2.0.X and 2.1.X maintenance branches never received the resolveProxyClass() override, so the 2.0.29 and 2.1.13 artifacts listed as fixed -- and every later release on those lines, up to and including the current 2.0.30 and 2.1.14 -- remain vulnerable to the exact allow-list bypass that CVE-2026-47065 was meant to close.</div></div>
+
+### References
+* https://lists.apache.org/thread/rzos6zds5x7obl8trkvznt1djw4f996p
+* https://lists.apache.org/thread/x4667tn5ozbvkc3wz87lhzogbfl0dczj
+
+
+### Credits
+* tonghuaroot (finder)
+
+
 ## Remote execution of JGit commands can write files on the server ## { #CVE-2026-58624 }
 
 CVE-2026-58624 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58624) [\[CVE json\]](./CVE-2026-58624.cve.json) [\[OSV json\]](./CVE-2026-58624.osv.json)
@@ -141,6 +168,34 @@ _Last updated: 2026-06-01T08:37:39.905Z_
 
 ### Credits
 * j0hndo (dohyun4466@gmail.com) (finder)
+
+
+## Unbounded Decompression Amplification DoS in Zlib.inflate ## { #CVE-2026-47321 }
+
+CVE-2026-47321 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-47321) [\[CVE json\]](./CVE-2026-47321.cve.json) [\[OSV json\]](./CVE-2026-47321.osv.json)
+
+
+
+_Last updated: 2026-09-21T07:40:33.290Z_
+
+### Affected
+
+* Apache MINA from 2.2.0 before 2.2.8
+* Apache MINA from 2.1.0 before 2.1.13
+* Apache MINA from 2.0.0 before 2.0.29
+
+
+### Description
+
+<div>The CompressionFilter class uses ZLib to deflate and inflate data sent and received. When we inflate incoming data, the filter does not control the resulting size, and create a buffer no matter what.</div><div>Some compressed data may have a compression ration greater than 1 thousand, leading to an exhaustion of the application memory, as we don't control the deflated size.</div><div><br></div><div>The fix adds such a control by allowing the application developer to provide a fixed size limit, which when reached throws an exception. It also allows the user to provide a compression ratio that should not be exceeded, protected the application from small inflated files that inflate in gigantic files, but with a grace limit for the resulting size (1Mb) to avoid false positive (like a very small file inflating with a high ratio, but resulting with a acceptable size, like a few thousands bytes)</div><div><br></div><div>For application using this feature, it is highly recommended to create the&nbsp;CompressionFilter and to pass the maximum limit as a forth constructor parameter, maxDecompressedSize:</div><div><br></div><blockquote>public <span>CompressionFilter</span>(final boolean compressInbound, final boolean compressOutbound, final int compressionLevel, final int maxDecompressedSize)</blockquote><div>Optionally one can also provide a&nbsp;<span><span><span>maxDecompressRatio</span></span></span>&nbsp;fifth parameter, and a <span><span><span>decompressRatioMinSize</span></span></span>&nbsp;sixth parameter to allow small inflated files with a high compression ratio to still be accepted.</div><div><br></div><div>Here are the additional constructor:</div><div><br></div><div><div><div><blockquote><p>public CompressionFilter(final boolean compressInbound, final boolean compressOutbound,</p><p>            final int compressionLevel, final int maxDecompressedSize,</p><p>            final long maxDecompressRatio, final long <span>decompressRatioMinSize</span>)</p></blockquote></div></div><br></div><div>Also note that a fluent API has been added to spare the users the pain to call a constructor with that many parameters:</div><div><br></div><div></div><blockquote><div> CompressionFilter compressionFilter = new CompressionFilter()</div><div>                                                .setCompressionLevel(Zlib.<span><span><span>COMPRESSION_MAX</span></span></span>)</div><div>&nbsp;                                               .<span><span>setMaxDecompressedSize</span></span>(1_000_000)</div><div>&nbsp;                                               .<span><span>setMaxDecompressRatio</span></span>(100).</div><div>&nbsp;                                               .<span><span>setDecompressRatioMinSize</span></span>(100_000);&nbsp;</div><div></div></blockquote><div></div><div><br></div><div>
+Applications using Apache MINA are advised to upgrade and configure their CompressionFilter instance.</div>
+
+### References
+* https://lists.apache.org/thread/y7xj1bl8qo47p9bktb11hg5v6k1d4dyj
+
+
+### Credits
+* Venkatraman Kumar, SecurIn (finder)
 
 
 ## Critical Deserialization Allow-list Bypass via resolveProxyClass - ZDRES-232 ## { #CVE-2026-47065 }

@@ -46,6 +46,33 @@ Apache Airflow Apache Kafka provider versions 1.15.0 before 2.0.0 resolve dotted
 * Christos Bisias (remediation developer)
 
 
+## Logout ignores a presented Authorization bearer token, leaving it revocable only by expiry ## { #CVE-2026-86473 }
+
+CVE-2026-86473 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86473) [\[CVE json\]](./CVE-2026-86473.cve.json) [\[OSV json\]](./CVE-2026-86473.osv.json)
+
+
+
+_Last updated: 2026-09-21T14:33:41.347Z_
+
+### Affected
+
+* Apache Airflow from 3.0.0 before 3.3.2
+
+
+### Description
+
+Apache Airflow: the Core API logout endpoint revokes only a session token presented as the _token cookie. When a client logs out presenting its credential as an Authorization bearer header instead, the endpoint returns its normal logout response but revokes nothing, so the token remains valid until it expires. An attacker who already holds a copy of that token keeps the victim's access after the victim has logged out and believes the session ended; the default token lifetime is 24 hours and is configurable.<br><br>Affects API clients that authenticate with a bearer token rather than the browser session cookie. The attacker must already possess a copy of a valid token; obtaining one is outside the scope of this issue, and no privileges beyond the victim's own are gained.<br><br>Users of apache-airflow are recommended to upgrade to apache-airflow version 3.3.2 or later, which fixes the issue.
+
+### References
+* https://github.com/apache/airflow/pull/72649
+* https://lists.apache.org/thread/k9z1p0q1ng8m68nlnv9d1fqzscrfm7vr
+
+
+### Credits
+* OpenSec Intelligence (finder)
+* Jarek Potiuk (remediation developer)
+
+
 ## FAB Authentik provider: id_token issuer/audience not validated ## { #CVE-2026-86466 }
 
 CVE-2026-86466 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86466) [\[CVE json\]](./CVE-2026-86466.cve.json) [\[OSV json\]](./CVE-2026-86466.osv.json)
@@ -132,6 +159,34 @@ Apache Airflow FAB provider: changing a user&#x27;s password through the Admin u
 
 ### Credits
 * OpenSec Intelligence (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## Session cookie silently overrides explicit Authorization bearer header, enabling session fixation ## { #CVE-2026-82355 }
+
+CVE-2026-82355 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82355) [\[CVE json\]](./CVE-2026-82355.cve.json) [\[OSV json\]](./CVE-2026-82355.osv.json)
+
+
+
+_Last updated: 2026-09-21T14:32:02.334Z_
+
+### Affected
+
+* Apache Airflow from 3.3.0 before 3.3.2
+
+
+### Description
+
+When a request to the Airflow core API carries both a session cookie and an explicit `Authorization: Bearer` token, Airflow resolves the caller from the cookie and ignores the bearer token, inverting the intended precedence of bearer over cookie. The request then executes -- and is recorded in the audit log -- as the cookie's principal rather than the identity the client explicitly presented.<br><br>Only Apache Airflow 3.3.0 and 3.3.1 are affected. Earlier releases do not contain the code path that caches the cookie-derived user, and are not vulnerable.<br><br>Exploiting this requires an attacker to first place a valid session cookie of their own into the victim's browser or client: for example by cookie tossing from a sibling subdomain, through cross-site scripting in a separate application sharing a parent domain, or via a shared workstation. Deployments that host the Airflow UI on a domain shared with other applications are therefore the most exposed; a deployment on a dedicated domain with no co-hosted applications is not reachable this way. The consequence is principal confusion and misattributed audit records rather than a direct privilege escalation.<br><br>Users of 3.3.0 or 3.3.1 should upgrade to Apache Airflow 3.3.2 or later, which resolves the caller from the explicitly supplied credential whenever one is present.
+
+### References
+* https://github.com/apache/airflow/pull/72225
+* https://github.com/apache/airflow/pull/72723
+* https://lists.apache.org/thread/3p7zpdvv40tn01m0xk5mt2rxg88mw8w1
+
+
+### Credits
+* Claude Security Scans (tool)
 * Jarek Potiuk (remediation developer)
 
 
@@ -245,6 +300,33 @@ Apache Airflow Keycloak provider: from Airflow 3.3 the Keycloak auth manager tak
 
 ### Credits
 * Claude Security Scans (tool)
+* Jarek Potiuk (remediation developer)
+
+
+## Assets events API returns asset events for every Dag with no per-Dag authorization filter ## { #CVE-2026-75158 }
+
+CVE-2026-75158 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-75158) [\[CVE json\]](./CVE-2026-75158.cve.json) [\[OSV json\]](./CVE-2026-75158.osv.json)
+
+
+
+_Last updated: 2026-09-21T14:32:46.741Z_
+
+### Affected
+
+* Apache Airflow before 3.3.2
+
+
+### Description
+
+Apache Airflow's `/assets/events` API returned asset events for every Dag in the deployment, with no filter restricting them to the Dags the caller is authorized to read. Any authenticated user holding asset-read access could therefore enumerate asset events — including the source Dag ID, task ID, run ID and event timestamps — for Dags they have no permission to see. Because the filter was also absent from the count query, `total_entries` and pagination disclosed the existence of hidden Dags even without inspecting individual rows. Deployments are affected whenever per-Dag access control is used to separate teams or tenants; no special configuration is required. Upgrade to apache-airflow 3.3.2 or later.
+
+### References
+* https://github.com/apache/airflow/pull/71741
+* https://lists.apache.org/thread/rx5lg86l0qkjl2s7dtmpqxjq0xplr4fy
+
+
+### Credits
+* n0mi1k (finder)
 * Jarek Potiuk (remediation developer)
 
 

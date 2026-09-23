@@ -21,6 +21,131 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Remote policy fetch lacks a total timeout, allowing a slow server to hang the request indefinitely ## { #CVE-2026-91867 }
+
+CVE-2026-91867 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-91867) [\[CVE json\]](./CVE-2026-91867.cve.json) [\[OSV json\]](./CVE-2026-91867.osv.json)
+
+
+
+_Last updated: 2026-09-21T11:27:43.899Z_
+
+### Affected
+
+* Apache Neethi before 3.2.4
+
+
+### Description
+
+When Neethi fetches a remote policy reference, it only limits the time per read, not the whole transfer, so a server that trickles bytes slowly can keep the fetch alive indefinitely and tie up the calling thread (denial of service).<br>Users are recommended to upgrade to version 3.2.4, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/dsr2ktf199mqhw2jtlbklyz7tzd86ycd
+
+
+### Credits
+* This issue was found using Claude agents to study the security of open-source projects (finder)
+
+
+## Crafted policies cause unbounded work during intersection leading to denial of service ## { #CVE-2026-91866 }
+
+CVE-2026-91866 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-91866) [\[CVE json\]](./CVE-2026-91866.cve.json) [\[OSV json\]](./CVE-2026-91866.osv.json)
+
+
+
+_Last updated: 2026-09-21T11:27:14.661Z_
+
+### Affected
+
+* Apache Neethi before 3.2.4
+
+
+### Description
+
+A specially crafted pair of WS-Policy documents can force Neethi's policy-intersection to do exponential amounts of work, pinning the CPU for a long time (denial of service).<br>Users are recommended to upgrade to version 3.2.4, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/zbfxnomgvbmqchqjgc6lk5h0z76k3gh4
+
+
+### Credits
+* This issue was found using Claude agents to study the security of open-source projects (finder)
+
+
+## Crafted policy references cause exponential expansion during normalization leading to denial of service ## { #CVE-2026-91865 }
+
+CVE-2026-91865 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-91865) [\[CVE json\]](./CVE-2026-91865.cve.json) [\[OSV json\]](./CVE-2026-91865.osv.json)
+
+
+
+_Last updated: 2026-09-21T11:26:51.403Z_
+
+### Affected
+
+* Apache Neethi before 3.2.4
+
+
+### Description
+
+A small WS-Policy document using repeated policy references can force Neethi to re-expand the same references exponentially during normalization, consuming huge amounts of CPU and memory (denial of service).<br>Users are recommended to upgrade to version 3.2.4, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/l48btqh02rlpsgf5p6r5ltqk1cb69dtc
+
+
+### Credits
+* This issue was found using Claude agents to study the security of open-source projects (finder)
+
+
+## Crafted WS-Policy documents bypass element/attribute limits causing memory exhaustion ## { #CVE-2026-91864 }
+
+CVE-2026-91864 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-91864) [\[CVE json\]](./CVE-2026-91864.cve.json) [\[OSV json\]](./CVE-2026-91864.osv.json)
+
+
+
+_Last updated: 2026-09-21T11:26:18.944Z_
+
+### Affected
+
+* Apache Neethi before 3.2.4
+
+
+### Description
+
+A specially crafted WS-Policy document can pack unlimited content inside a policy assertion, which Neethi copies into memory without counting it against its size limits, exhausting the heap (denial of service).<br>Users are recommended to upgrade to version 3.2.4, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/400kbynbyhqhsjkv1yz251jm9wdz8z69
+
+
+### Credits
+* This issue was found using Claude agents to study the security of open-source projects (finder)
+
+
+## Uncontrolled recursion while parsing crafted WS-Policy documents allows denial of service ## { #CVE-2026-91863 }
+
+CVE-2026-91863 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-91863) [\[CVE json\]](./CVE-2026-91863.cve.json) [\[OSV json\]](./CVE-2026-91863.osv.json)
+
+
+
+_Last updated: 2026-09-21T11:25:25.043Z_
+
+### Affected
+
+* Apache Neethi before 3.2.4
+
+
+### Description
+
+A specially crafted WS-Policy document with deeply nested policy elements can bypass Neethi's nesting-depth limit and exhaust the thread stack, crashing the parser (denial of service).<br>Users are recommended to upgrade to version 3.2.4, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/72kxj71lvrqqx90xxqqctvpbw0t8mpxw
+
+
+### Credits
+* This issue was found using Claude agents to study the security of open-source projects (finder)
+
+
 ## Remote PolicyReference fetch lacks resource bounds ## { #CVE-2026-66144 }
 
 CVE-2026-66144 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66144) [\[CVE json\]](./CVE-2026-66144.cve.json) [\[OSV json\]](./CVE-2026-66144.osv.json)
