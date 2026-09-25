@@ -12,6 +12,7 @@ Apache Software Foundation produced SBOMs
 ## Ant
 ### Ant
 - 0.1: [1 SBOM](ant/ant-0.1.md)
+- 0.2: [1 SBOM](ant/ant-0.2.md)
 - 1.0.0: [1 SBOM](ant/ant-1.0.0.md)
 - 1.5.0: [1 SBOM](ant/ant-1.5.0.md)
 - 1.10.18: [26 SBOMs](ant/ant-1.10.18.md)
