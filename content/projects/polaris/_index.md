@@ -19,6 +19,31 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Allows authorized table writers to redirect server-side Iceberg FileIO requests to attacker-controlled endpoints using operation-scoped storage credentials ## { #CVE-2026-97395 }
+
+CVE-2026-97395 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97395) [\[CVE json\]](./CVE-2026-97395.cve.json) [\[OSV json\]](./CVE-2026-97395.osv.json)
+
+
+
+_Last updated: 2026-09-29T13:57:28.261Z_
+
+### Affected
+
+* Apache Polaris before 1.8.0
+
+
+### Description
+
+Apache Polaris allows an authenticated principal with permission to create or update Iceberg table properties to set FileIO client settings such as s3.endpoint in table metadata.<div><br></div><div>In versions &lt; 1.8.0, when Polaris performs server-side Iceberg operations, including commits and purges, it may use those settings to construct its (server-side) FileIO client. If the catalog storage configuration does not override the endpoint, Polaris can send storage requests to a host chosen by the table writer, using credentials scoped to the operation.</div><div><br></div><div>This can redirect server-side storage traffic and expose request authentication material to the chosen endpoint. Deployments are affected when table writers are not trusted to configure server-side storage endpoints.</div>
+
+### References
+* https://lists.apache.org/thread.html/nrk339vtlkpsjw3mg4mqw52j0167wyph
+
+
+### Credits
+* vignesh a <imavignesh27@gmail.com> (reporter)
+
+
 ## register endpoint reads attacker-controlled storage location before allowed-locations validation ## { #CVE-2026-64640 }
 
 CVE-2026-64640 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-64640) [\[CVE json\]](./CVE-2026-64640.cve.json) [\[OSV json\]](./CVE-2026-64640.osv.json)

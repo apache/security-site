@@ -13,6 +13,158 @@ Do you want disclose a potential security issue for Apache Qpid? Send your repor
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Missing HTTP-session renewal after successful authentication ## { #CVE-2026-92609 }
+
+CVE-2026-92609 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-92609) [\[CVE json\]](./CVE-2026-92609.cve.json) [\[OSV json\]](./CVE-2026-92609.osv.json)
+
+
+
+_Last updated: 2026-09-25T07:44:08.860Z_
+
+### Affected
+
+* Apache Qpid Broker-J through 10.1.0
+
+
+### Description
+
+<div>Session fixation in HTTP management authentication allows remote&nbsp;attackers to gain unauthorized access to an authenticated management session via reuse of a session identifier retained across successful authentication.</div><div>This issue affects Apache Qpid Broker-J: through 10.1.0.</div><div>Users are recommended to upgrade to version 10.1.1, which fixes the issue.</div>
+
+### References
+* https://lists.apache.org/thread/93w83oro48cqokb24k8tkogyvtlqhqw6
+
+
+### Credits
+* Abhishek Kushwaha (reporter)
+
+
+## Incomplete property conversion handling from AMQP 1.0 to AMQP 0-10 ## { #CVE-2026-92608 }
+
+CVE-2026-92608 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-92608) [\[CVE json\]](./CVE-2026-92608.cve.json) [\[OSV json\]](./CVE-2026-92608.osv.json)
+
+
+
+_Last updated: 2026-09-25T07:44:25.207Z_
+
+### Affected
+
+* Apache Qpid Broker-J through 10.1.0
+
+
+### Description
+
+<div>Improper handling of property-encoding exceptions in AMQP 1.0-to-AMQP 0-10 message conversion allows authenticated message producers to disrupt delivery to AMQP 0-10 consumers via message properties that the target encoder does not handle correctly.</div><div>This issue affects Apache Qpid Broker-J: through 10.1.0.</div><div>Users are recommended to upgrade to version 10.1.1, which fixes the issue.</div>
+
+### References
+* https://lists.apache.org/thread/rklst4cz1g0nkpzkpho7kjmy4gnx1ppc
+
+
+### Credits
+* n0mi1k (reporter)
+
+
+## Uncontrolled resource consumption during AMQP delivery decompression, message conversion and HTTP management JSON rendering ## { #CVE-2026-92573 }
+
+CVE-2026-92573 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-92573) [\[CVE json\]](./CVE-2026-92573.cve.json) [\[OSV json\]](./CVE-2026-92573.osv.json)
+
+
+
+_Last updated: 2026-09-25T08:11:10.361Z_
+
+### Affected
+
+* Apache Qpid Broker-J through 10.1.0
+
+
+### Description
+
+<div>Improper handling of compressed data in the shared GZIP decompressor used for AMQP 0-8/0-9/0-9-1 and AMQP 0-10 message delivery, message conversion and HTTP management JSON rendering allows authenticated message producers to exhaust memory and disrupt broker availability via processing without a decompressed-output limit.</div><div>This issue affects Apache Qpid Broker-J: through 10.1.0.</div><div>Users are recommended to upgrade to version 10.1.1, which fixes the issue.</div>
+
+### References
+* https://lists.apache.org/thread/461lhqt1r4g1mq3oyrcscphxzlhxlv1y
+
+
+### Credits
+* Khaled Suliman of AISLE Research (finder)
+* n0mi1k (reporter)
+
+
+## Unbounded type nesting can lead to stack overflow pre-authentication in AMQP 0-8/0-9/0-9-1 field-table processing ## { #CVE-2026-92564 }
+
+CVE-2026-92564 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-92564) [\[CVE json\]](./CVE-2026-92564.cve.json) [\[OSV json\]](./CVE-2026-92564.osv.json)
+
+
+
+_Last updated: 2026-09-25T07:59:28.765Z_
+
+### Affected
+
+* Apache Qpid Broker-J through 10.1.0
+
+
+### Description
+
+<div>A pre-authentication attacker could leverage type nesting to cause a StackOverflowError potentially leading to denial of service.</div><div>This issue affects Apache Qpid Broker-J: through 10.1.0.</div><div>Users are recommended to upgrade to version 10.1.1, which fixes the issue.</div>
+
+### References
+* https://lists.apache.org/thread/hw4jkngtkzf0dxdj9mv3z2p71mkpjvx4
+
+
+### Credits
+* n0mi1k (reporter)
+
+
+## Type size/count handling can lead to excessive allocation pre-authentication in the AMQP 0-10 decoder ## { #CVE-2026-92560 }
+
+CVE-2026-92560 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-92560) [\[CVE json\]](./CVE-2026-92560.cve.json) [\[OSV json\]](./CVE-2026-92560.osv.json)
+
+
+
+_Last updated: 2026-09-25T08:16:59.991Z_
+
+### Affected
+
+* Apache Qpid Broker-J through 10.1.0
+
+
+### Description
+
+<div>A pre-authentication attacker could leverage type size/count handling to cause excessive allocation leading to potential denial of service.</div><div>This issue affects Apache Qpid Broker-J: through 10.1.0.</div><div>Users are recommended to upgrade to version 10.1.1, which fixes the issue.</div>
+
+### References
+* https://lists.apache.org/thread/dcsjw242n1bxdog29hwlg43r5611dtb7
+
+
+### Credits
+* n0mi1k (reporter)
+
+
+## Type size/count handling can lead to excessive allocation pre-authentication in the AMQP 0-8/0-9/0-9-1 decoder ## { #CVE-2026-92550 }
+
+CVE-2026-92550 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-92550) [\[CVE json\]](./CVE-2026-92550.cve.json) [\[OSV json\]](./CVE-2026-92550.osv.json)
+
+
+
+_Last updated: 2026-09-25T08:17:37.786Z_
+
+### Affected
+
+* Apache Qpid Broker-J through 10.1.0
+
+
+### Description
+
+<div>A pre-authentication attacker could leverage type size/count handling to cause excessive allocation leading to potential denial of service.</div><div>This issue affects Apache Qpid Broker-J: through 10.1.0.</div><div>Users are recommended to upgrade to version 10.1.1, which fixes the issue.</div>
+
+### References
+* https://lists.apache.org/thread/56w1kxz9h23q364ffyvj7cssdhnld5dq
+
+
+### Credits
+* Khaled Suliman of AISLE Research (finder)
+* n0mi1k (reporter)
+
+
 ## Unbounded echo flow responses can lead to denial of service ## { #CVE-2026-68080 }
 
 CVE-2026-68080 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68080) [\[CVE json\]](./CVE-2026-68080.cve.json) [\[OSV json\]](./CVE-2026-68080.osv.json)

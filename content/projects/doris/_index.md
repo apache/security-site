@@ -18,6 +18,31 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## JDBC driver URL validation bypass leads to remote code execution ## { #CVE-2026-96443 }
+
+CVE-2026-96443 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-96443) [\[CVE json\]](./CVE-2026-96443.cve.json) [\[OSV json\]](./CVE-2026-96443.osv.json)
+
+
+
+_Last updated: 2026-09-23T09:35:29.168Z_
+
+### Affected
+
+* Apache Doris from 2.0.5 through 4.1.3
+
+
+### Description
+
+<p>Insufficient validation of the JDBC driver URL in Apache Doris allows a privileged user to achieve remote code execution on the FE.</p>
+
+### References
+* https://lists.apache.org/thread/vv9o8sxpt8kkd7nznhovn9qjojn2wyv9
+
+
+### Credits
+* zhaoyudi (nebula LAB) (finder)
+
+
 ## Authorization bypass allowing a low-privilege user to read/write/drop arbitrary tables ## { #CVE-2026-72524 }
 
 CVE-2026-72524 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-72524) [\[CVE json\]](./CVE-2026-72524.cve.json) [\[OSV json\]](./CVE-2026-72524.osv.json)
@@ -96,6 +121,40 @@ Certain Apache Doris FE HTTP REST administrative APIs were accessible without pr
 
 ### Credits
 * Calvin Kirs, Security Researcher at SelectDB (finder)
+
+
+## Improper Authentication Allows Unauthorized Access to FE Meta Service ## { #CVE-2026-31377 }
+
+CVE-2026-31377 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-31377) [\[CVE json\]](./CVE-2026-31377.cve.json)
+
+_Last updated: 2026-09-23T09:04:37.058Z_
+
+### Affected
+
+* Apache Doris from 2.0.0 before 4.0.8
+* Apache Doris from 4.1.0 before 4.1.4
+* Apache Doris before 2.0.0 unaffected
+* Apache Doris from 4.0.8 before 4.1.0 unaffected
+* Apache Doris from 4.1.4 before * unaffected
+
+
+### Description
+
+An Improper Authentication vulnerability in the Apache Doris Frontend (FE) meta service allows an unauthenticated remote attacker to access internal metadata service endpoints.<br><br><p><span>The affected endpoints relied on client-supplied node information for authentication without providing sufficient authentication of the requesting party. Under certain network configurations, a remote attacker may be able to bypass the intended access control and access internal FE metadata interfaces, potentially exposing sensitive cluster information.</span></p><p><span>This issue affects Apache Doris: from 2.0.0 through 2.0.*, from 2.1.0 through 2.1.*, from 3.0.0 through 3.0.*, from 3.1.0 through 3.1.*, from 4.0.0 before 4.0.8, and from 4.1.0 before 4.1.4. Versions 1.2.x and earlier are not affected by this header-trust vulnerability.</span><br></p><p>Users are recommended to upgrade to a fixed release (4.0.8 or 4.1.4), which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/rf4ocqmzxvnwnxpsooj2lkzjl68b1m9q
+
+
+### Credits
+* Mapta / BugBunny_ai (reporter)
+* Calvin Kirs, Security Researcher at SelectDB (reporter)
+* Vlary (Huntree Security Team) (reporter)
+* Vladimir Tokarev (g1nd1l4) (reporter)
+* lalalala5678 (reporter)
+* 4ra2n (A code security AI agent) (reporter)
+* Fakile Emmanuel (reporter)
+* Fried Chicken (reporter)
 
 
 ## SQL injection leading the authentication bypass ## { #CVE-2025-66336 }

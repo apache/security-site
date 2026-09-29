@@ -18,6 +18,217 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Command Injection in the Alert Script Plugin ## { #CVE-2026-82804 }
+
+CVE-2026-82804 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82804) [\[CVE json\]](./CVE-2026-82804.cve.json) [\[OSV json\]](./CVE-2026-82804.osv.json)
+
+
+
+_Last updated: 2026-09-29T13:01:10.479Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.3
+
+
+### Description
+
+<p>The scriptPath parameter is incorporated into a /bin/sh -c command without sufficient neutralization of shell metacharacters, allowing shell command substitution and execution.<br><br>An authenticated user can exploit this behavior by creating a resource whose filename contains shell command substitution syntax, such as $(...), and subsequently supplying the resulting path to the Alert Script plugin's /test-send endpoint. When the alert script is executed, the shell interprets the injected command, resulting in arbitrary command execution with the privileges of the DolphinScheduler service process.</p><p>This issue affects Apache DolphinScheduler: before 3.4.3.</p><p>Users are recommended to upgrade to version 3.4.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/mwzbs5qdhs7nblfz70jgs0z54qx3phql
+
+
+### Credits
+* youyi.mr (finder)
+
+
+## Improper Authorization in Sub-Workflow Tasks Allows Unauthorized Workflow Execution ## { #CVE-2026-81569 }
+
+CVE-2026-81569 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-81569) [\[CVE json\]](./CVE-2026-81569.cve.json) [\[OSV json\]](./CVE-2026-81569.osv.json)
+
+
+
+_Last updated: 2026-09-29T13:05:15.070Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.3
+
+
+### Description
+
+<p>An improper authorization vulnerability exists in the handling of sub-workflow tasks. An authenticated user who does not have permission to access a target project can reference and invoke a workflow belonging to that project through a sub-workflow task.</p><p>The system does not properly verify whether the user has permission to execute the referenced workflow or access its project. As a result, the user can bypass project-level authorization controls and cause workflows in unauthorized projects to be executed.</p><p>Successful exploitation may allow unauthorized execution of workflow tasks and access to the resources or data available to the target workflow.</p><p>This issue affects Apache DolphinScheduler: before 3.4.3.</p><p>Users are recommended to upgrade to version 3.4.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/2dlzoz0vd5onovxxmylmgb2lvrsj0ot6
+
+
+### Credits
+* Meng Qingwei (finder)
+
+
+## Actuator Endpoint Authentication Bypass via Percent-Encoded Paths ## { #CVE-2026-78214 }
+
+CVE-2026-78214 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-78214) [\[CVE json\]](./CVE-2026-78214.cve.json) [\[OSV json\]](./CVE-2026-78214.osv.json)
+
+
+
+_Last updated: 2026-09-29T13:07:19.825Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.3
+
+
+### Description
+
+<p>An authentication bypass vulnerability exists in the protection of Actuator endpoints. The application determines whether authentication is required by matching the incoming request path against protected Actuator paths. By sending a specially crafted request containing a percent-encoded path, a remote unauthenticated attacker can cause the security check to fail to recognize the request as targeting a protected endpoint.</p><p>As a result, the attacker may bypass authentication and access otherwise restricted Actuator endpoints. Successful exploitation may expose operational or configuration information and, depending on the enabled endpoints and application configuration, allow access to sensitive management functionality.</p><p>This issue affects Apache DolphinScheduler: before 3.4.3.</p><p>Users are recommended to upgrade to version 3.4.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/88g4v2sjd9j2xgn64gnm7k4ocnj4rlob
+
+
+### Credits
+* Xmirror Security Team (finder)
+
+
+## Missing Authorization in query-dynamic-sub-workflows API Leads to Information Disclosure ## { #CVE-2026-71899 }
+
+CVE-2026-71899 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-71899) [\[CVE json\]](./CVE-2026-71899.cve.json) [\[OSV json\]](./CVE-2026-71899.osv.json)
+
+
+
+_Last updated: 2026-09-29T13:09:23.453Z_
+
+### Affected
+
+* Apache DolphinScheduler from 3.2.0 before 3.4.3
+
+
+### Description
+
+<p>A missing authorization vulnerability exists in the <code>`query-dynamic-sub-workflows`</code> API of Apache DolphinScheduler. The API does not properly verify whether the authenticated user has permission to access the workflows being queried.</p><p>An authenticated user who does not have permission to access a specific project can invoke the API with parameters referencing workflows belonging to that project and retrieve workflow information. This allows users to access workflow data outside their authorized project scope, resulting in unauthorized information disclosure.</p><p>This issue affects Apache DolphinScheduler: from 3.2.0 before 3.4.3.</p><p>Users are recommended to upgrade to version 3.4.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/qcork1j6q52xsp419vgb5dsstp9mxk09
+
+
+### Credits
+* yansong (finder)
+* MopMonk AI (finder)
+
+
+## Improper Authorization Allows Project Read-Only Users to Execute Workflows and Tamper with Workflow Definitions ## { #CVE-2026-71898 }
+
+CVE-2026-71898 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-71898) [\[CVE json\]](./CVE-2026-71898.cve.json) [\[OSV json\]](./CVE-2026-71898.osv.json)
+
+
+
+_Last updated: 2026-09-29T13:11:09.954Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.3
+
+
+### Description
+
+<p>An incorrect authorization check in Apache DolphinScheduler allows an authenticated user with only read permission for a project to modify a workflow instance in that project through the <code>PUT /projects/{projectCode}/workflow-instances/{id}</code> endpoint. The endpoint does not enforce the write permission required for this operation, allowing the user to make unauthorized changes to workflow instances.</p><p>This issue affects Apache DolphinScheduler: before 3.4.3.</p><p>Users are recommended to upgrade to version 3.4.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/lt35p8xc1w7ovgq68g4zz1c8vnk5ow6o
+
+
+### Credits
+* Dipak Panchal (finder)
+
+
+## Allows unauthorized workflow operations through batch-copy and batch-move endpoints ## { #CVE-2026-71897 }
+
+CVE-2026-71897 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-71897) [\[CVE json\]](./CVE-2026-71897.cve.json) [\[OSV json\]](./CVE-2026-71897.osv.json)
+
+
+
+_Last updated: 2026-09-29T13:14:01.224Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.3
+
+
+### Description
+
+<p>An improper authorization check in Apache DolphinScheduler allows an authenticated user to use the batch-copy and batch-move endpoints to operate on workflows in projects for which they lack the required permissions. This may allow the user to copy or move workflows from unauthorized projects.</p><p>This issue affects Apache DolphinScheduler: before 3.4.3.</p><p>Users are recommended to upgrade to version 3.4.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/ksnowtbpd9t4mbtvvq2c9777j42784dv
+
+
+### Credits
+* n0mi1k (finder)
+* Yeonoh Park (finder)
+
+
+## Unauthorized Disclosure of Data Source Information via /datasources/unauth-datasource ## { #CVE-2026-66083 }
+
+CVE-2026-66083 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66083) [\[CVE json\]](./CVE-2026-66083.cve.json) [\[OSV json\]](./CVE-2026-66083.osv.json)
+
+
+
+_Last updated: 2026-09-29T11:46:39.338Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.3
+
+
+### Description
+
+<p>The <code>/datasources/unauth-datasource</code> endpoint does not properly enforce data source authorization. An authenticated user can invoke this endpoint to obtain information about data sources they are not authorized to access. This may expose data source configuration and other sensitive metadata, depending on the fields returned by the endpoint.</p><p>This issue affects Apache DolphinScheduler: before 3.4.3.</p><p>Users are recommended to upgrade to version 3.4.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/b6brfom0jmy9kdt40qrn6dq0x4v2wxdr
+
+
+### Credits
+* n0mi1k (finder)
+* meifukun (finder)
+* Mingsheng Lin (finder)
+* Thành Nguyễn (finder)
+* Raphael Zanarelli (finder)
+* geo-chen (finder)
+
+
+## Missing Authorization in Task Group APIs Allows Unauthorized Cross-Project Operations ## { #CVE-2026-57590 }
+
+CVE-2026-57590 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-57590) [\[CVE json\]](./CVE-2026-57590.cve.json) [\[OSV json\]](./CVE-2026-57590.osv.json)
+
+
+
+_Last updated: 2026-09-24T09:13:44.464Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.3
+
+
+### Description
+
+<p>A missing authorization vulnerability exists in the Task Group APIs of Apache DolphinScheduler. The affected APIs do not properly verify whether the authenticated user has permission to access the project associated with the target Task Group.</p><p>This issue affects Apache DolphinScheduler: before 3.4.3.</p><p>Users are recommended to upgrade to version 3.4.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/3ncvptkjw9h6s8mjxlwwo30bxxgol6ry
+
+
+### Credits
+* Meng Qingwei (finder)
+* Thành Nguyễn (finder)
+* Yeonoh Park (finder)
+* tonghuaroot (finder)
+* George Chen (finder)
+
+
 ## General user can mint admin access tokens via /access-tokens ## { #CVE-2026-49050 }
 
 CVE-2026-49050 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49050) [\[CVE json\]](./CVE-2026-49050.cve.json) [\[OSV json\]](./CVE-2026-49050.osv.json)
