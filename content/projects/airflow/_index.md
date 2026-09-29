@@ -18,6 +18,64 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## HashiCorp Vault secrets backend: team-scope guard bypass via user-controlled key ## { #CVE-2026-97636 }
+
+CVE-2026-97636 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97636) [\[CVE json\]](./CVE-2026-97636.cve.json) [\[OSV json\]](./CVE-2026-97636.osv.json)
+
+
+
+_Last updated: 2026-09-24T21:54:56.271Z_
+
+### Affected
+
+* Apache Airflow HashiCorp provider from 4.6.0 before 4.8.0
+
+
+### Description
+
+Apache Airflow HashiCorp provider: the HashiCorp Vault secrets backend's team-scope guard can be bypassed with a user-controlled key. In a multi-team deployment, a Dag author scoped to one team can supply a Variable key containing a path separator that causes the backend to resolve a secret belonging to a different team, because after the team-scoped lookup misses the backend falls back to a team-agnostic path concatenated from the unvalidated key. The Execution API Variables route accepts a path-shaped key, so this is reachable from ordinary Dag code.<br><br>Affects multi-team deployments using the HashiCorp Vault secrets backend. Single-team deployments are not affected, as there is no cross-team boundary to cross. This is the same class as CVE-2026-86465, CVE-2026-68870, CVE-2026-68871 and CVE-2026-68872 in the Akeyless, Azure Key Vault, Yandex Lockbox and Amazon secrets backends.<br><br>Users of apache-airflow-providers-hashicorp are recommended to upgrade to version 4.8.0 or later, which fixes the issue.
+
+### References
+* https://github.com/apache/airflow/pull/70006
+* https://lists.apache.org/thread/l0fogo9dh5v07vnsxnhoh3c74othkr51
+* https://www.cve.org/CVERecord?id=CVE-2026-68870
+* https://www.cve.org/CVERecord?id=CVE-2026-68871
+* https://www.cve.org/CVERecord?id=CVE-2026-68872
+* https://www.cve.org/CVERecord?id=CVE-2026-86465
+
+
+### Credits
+* ReturnZero (finder)
+* Bas Harenslak (remediation developer)
+
+
+## SQL injection via unvalidated Dag Params in the compute-cluster example Dag ## { #CVE-2026-86843 }
+
+CVE-2026-86843 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86843) [\[CVE json\]](./CVE-2026-86843.cve.json) [\[OSV json\]](./CVE-2026-86843.osv.json)
+
+
+
+_Last updated: 2026-09-29T08:57:19.134Z_
+
+### Affected
+
+* Apache Airflow Teradata provider before 3.7.0
+
+
+### Description
+
+The Apache Airflow Teradata provider&#x27;s compute-cluster example Dag declared every one of its Dag Params as unconstrained free text and templated them straight into the compute-cluster operators, which interpolate those values into Teradata DDL. A user who is permitted to trigger that Dag - a lower-trust role than the Dag author, and one that needs no Teradata credentials of its own - could therefore supply SQL fragments that execute under the connection the task runs as, and could additionally redirect the task at any other connection defined in the deployment, because the connection id was itself a free-text Param. Only deployments that run this example Dag, or a Dag copied from it, are affected; the provider&#x27;s operator code is unchanged. Users of apache-airflow-providers-teradata are recommended to upgrade to version 3.7.0 or later, whose example constrains the Params to validated identifiers and a closed value set and removes connection selection and free-form option strings from trigger-time input. Upgrading does not change a Dag already copied from the example; users who copied it should apply the same constraints to their copy.
+
+### References
+* https://github.com/apache/airflow/pull/72714
+* https://lists.apache.org/thread/js9pmhj1j6552gpn1j8wdz579pb46t0d
+
+
+### Credits
+* Andrew Rukin (Arenadata) (finder)
+* Jarek Potiuk (remediation developer)
+
+
 ## Connection-editor remote code execution on the Scheduler via Kafka connection callback configuration ## { #CVE-2026-86792 }
 
 CVE-2026-86792 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86792) [\[CVE json\]](./CVE-2026-86792.cve.json) [\[OSV json\]](./CVE-2026-86792.osv.json)
@@ -244,6 +302,87 @@ Apache Airflow FAB provider: deactivating a user account does not stop tokens is
 
 ### Credits
 * Mayank Jangid (OpenSec) (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## Unvalidated account field redirects SQL API bearer token off-domain ## { #CVE-2026-81930 }
+
+CVE-2026-81930 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-81930) [\[CVE json\]](./CVE-2026-81930.cve.json) [\[OSV json\]](./CVE-2026-81930.osv.json)
+
+
+
+_Last updated: 2026-09-29T08:57:17.400Z_
+
+### Affected
+
+* Apache Airflow Snowflake provider before 6.18.0
+
+
+### Description
+
+Apache Airflow&#x27;s Snowflake provider did not validate the connection&#x27;s `account` and `region` fields before interpolating them into request URLs. The SQL API endpoint is built as `https://{account}.snowflakecomputing.com/api/v2/statements`, so an `account` value containing `/`, `?` or `#` demotes the intended domain to a path, query or fragment and leaves the attacker in control of the request host.<br><br>The provider sends that request with an `Authorization: Bearer` header carrying a JWT minted from the connection&#x27;s private key, or the configured OAuth or programmatic access token. A user who can edit the Snowflake connection but cannot read its secrets — Airflow gives connection-configuration users write-only access to stored credentials, and a `private_key_file` lives on the worker rather than in the connection — can therefore cause a valid token for the account to be delivered to a host of their choosing and replay it against the genuine Snowflake endpoint. No Dag-authoring ability is required: the attacker edits the connection and waits for an existing Dag to use it. The same unvalidated value was also used to build the OAuth token-request URL and the Cortex Agent base URL.<br><br>Affects deployments where Snowflake connections are editable by users who are not trusted with the connection&#x27;s credentials. Users are advised to upgrade to `apache-airflow-providers-snowflake` `6.18.0` or later, which rejects `account` and `region` values containing anything other than letters, digits, `.`, `_` and `-` in every URL the provider builds from them.
+
+### References
+* https://github.com/apache/airflow/pull/72174
+* https://lists.apache.org/thread/324jm2mxd5x4nq85jfw1ostz94xwzrmk
+
+
+### Credits
+* Claude Security Scans (tool)
+* Jarek Potiuk (remediation developer)
+
+
+## Google Drive query injection via unescaped file and folder names ## { #CVE-2026-81914 }
+
+CVE-2026-81914 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-81914) [\[CVE json\]](./CVE-2026-81914.cve.json) [\[OSV json\]](./CVE-2026-81914.osv.json)
+
+
+
+_Last updated: 2026-09-29T08:57:15.653Z_
+
+### Affected
+
+* Apache Airflow Google provider before 22.6.0
+
+
+### Description
+
+Apache Airflow&#x27;s Google provider built Google Drive search expressions by interpolating file and folder names directly into single-quoted string literals, without escaping the quote character that delimits them. A name containing an apostrophe therefore terminated the literal early and appended clauses of the attacker&#x27;s choosing to the query.<br><br>The names are frequently not written by the Dag author. In a wildcard `gcs_to_gdrive` transfer they come from the source bucket listing, so anyone able to create objects in that bucket controls them — typically an external data producer or an ingest-only service account, a different trust principal from the Dag author. An injected clause can broaden the match and so steer which file or folder the hook resolves: an upload can be directed into a folder the attacker named, and, because downloads select the most recently modified match, a download can return a file they placed rather than the one the Dag asked for.<br><br>Affects deployments passing externally-sourced names to the Google Drive hook, including wildcard `gcs_to_gdrive` transfers from buckets writable by less-trusted principals. Users are advised to upgrade to `apache-airflow-providers-google` `22.6.0` or later, which escapes quote and backslash characters in every value interpolated into a Drive query.
+
+### References
+* https://github.com/apache/airflow/pull/72166
+* https://lists.apache.org/thread/90osv795jrqds051y7v3lcdzhsospooo
+
+
+### Credits
+* Claude Security Scans (tool)
+* Jarek Potiuk (remediation developer)
+
+
+## Teradata transfer operators embed cloud storage credentials in SQL text, task logs and Teradata query logs ## { #CVE-2026-81862 }
+
+CVE-2026-81862 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-81862) [\[CVE json\]](./CVE-2026-81862.cve.json) [\[OSV json\]](./CVE-2026-81862.osv.json)
+
+
+
+_Last updated: 2026-09-29T08:57:13.929Z_
+
+### Affected
+
+* Apache Airflow Teradata provider before 3.7.0
+
+
+### Description
+
+Apache Airflow&#x27;s Teradata provider embedded cloud storage credentials directly into SQL statements. `S3ToTeradataOperator` and `AzureBlobStorageToTeradataOperator` interpolate the source bucket&#x27;s credentials as plain string literals into the `CREATE MULTISET TABLE ... LOCATION` statement whenever the bucket is private and no `teradata_authorization_name` is configured — which is the default credential path for both operators. The statement is then logged and executed, so the credentials reach two places outside the operator&#x27;s control.<br><br>The two operators expose different credentials through different channels, and deployments should check both. `S3ToTeradataOperator` takes its values from `s3_hook.get_credentials()`, which under an instance profile or IRSA returns runtime AWS credentials that were never registered with Airflow&#x27;s secrets masker — and the STS session token is runtime-generated and therefore unmasked even when an AWS connection is configured. Those credentials appear **in the Airflow task log**, readable by any user with log-view permission on the Dag. `AzureBlobStorageToTeradataOperator` takes its storage account key from the connection, so the masker usually redacts the task-log copy; its exposure is the Teradata side. **Both** operators write the credentials into Teradata&#x27;s DBQL query logs and live monitoring views, where Airflow&#x27;s masking never applies and the values persist for that system&#x27;s log retention period.<br><br>Affects deployments using either operator against a private bucket or container without a Teradata `AUTHORIZATION` object. Users are advised to upgrade to `apache-airflow-providers-teradata` `3.7.0` or later, which keeps the credential-bearing statement out of the Airflow task log. Upgrading does not remove the credentials from Teradata&#x27;s query logs and monitoring views, which Airflow cannot redact: users should configure `teradata_authorization_name` with a Teradata `AUTHORIZATION` object so that credentials are never inlined, and should rotate any credentials previously used through the inline path.
+
+### References
+* https://github.com/apache/airflow/pull/72176
+* https://lists.apache.org/thread/0vfpoh6l8gz0dpbc9z50dmkc3z07o83l
+
+
+### Credits
+* Claude Security Scans (tool)
 * Jarek Potiuk (remediation developer)
 
 

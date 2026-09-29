@@ -284,6 +284,81 @@ Apache Neethi is vulnerable to a Denial of Service attack through algorithmic co
 * https://lists.apache.org/thread/p826j0phhmr9f83wzpmys1y0bdfrr2q4
 
 
+## Denial of service through cyclic schema definitions in the schema walker ## { #CVE-2026-102497 }
+
+CVE-2026-102497 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-102497) [\[CVE json\]](./CVE-2026-102497.cve.json) [\[OSV json\]](./CVE-2026-102497.osv.json)
+
+
+
+_Last updated: 2026-09-29T11:34:15.228Z_
+
+### Affected
+
+* Apache XMLSchema before 2.3.3
+
+
+### Description
+
+<p>The Apache XmlSchema walker (xmlschema-walker) doesn't detect cycles in type derivation, substitution groups, model groups or attribute groups. A malicious schema with such a cycle can make the walker recurse until the stack overflows, causing a denial of service.<br><br>Users are recommended to upgrade to version 2.3.3, which fixes this issue.</p>
+
+### References
+* https://lists.apache.org/thread/1cj02tobjyhjqq723bvg78yxkqt1lk7k
+
+
+### Credits
+* This issue was found using Claude agents to study the security of open-source projects (finder)
+
+
+## Denial of service through deeply nested schema structures ## { #CVE-2026-102496 }
+
+CVE-2026-102496 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-102496) [\[CVE json\]](./CVE-2026-102496.cve.json) [\[OSV json\]](./CVE-2026-102496.osv.json)
+
+
+
+_Last updated: 2026-09-29T11:34:02.943Z_
+
+### Affected
+
+* Apache XMLSchema before 2.3.3
+
+
+### Description
+
+Apache XmlSchema doesn't limit how deeply schema structures can be nested when it builds its schema model, so a malicious schema can make parsing recurse until the stack overflows. This causes a denial of service.<br>Users are recommended to upgrade to version 2.3.3, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/9z1vg8wmvwpfw748fb2nb55w4hgbnxol
+
+
+### Credits
+* This issue was found using Claude agents to study the security of open-source projects (finder)
+
+
+## Denial of service through unbounded recursion when resolving schema imports and includes ## { #CVE-2026-102495 }
+
+CVE-2026-102495 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-102495) [\[CVE json\]](./CVE-2026-102495.cve.json) [\[OSV json\]](./CVE-2026-102495.osv.json)
+
+
+
+_Last updated: 2026-09-29T11:33:50.143Z_
+
+### Affected
+
+* Apache XMLSchema before 2.3.3
+
+
+### Description
+
+Apache XmlSchema doesn't limit how deeply schema imports and includes can be nested, so a malicious schema can make parsing recurse until the stack overflows. This causes a denial of service.<br>Users are recommended to upgrade to version 2.3.3, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/l339q3oldm0cd2lph4b6f93fd07x9g6s
+
+
+### Credits
+* This issue was found using Claude agents to study the security of open-source projects (finder)
+
+
 ## Apache SOAP allows unauthenticated users to potentially invoke arbitrary code ## { #CVE-2022-45378 }
 
 CVE-2022-45378 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-45378) [\[CVE json\]](./CVE-2022-45378.cve.json)
