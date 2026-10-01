@@ -18,6 +18,191 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Openid-connect introspection validation issue ## { #CVE-2026-94276 }
+
+CVE-2026-94276 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-94276) [\[CVE json\]](./CVE-2026-94276.cve.json) [\[OSV json\]](./CVE-2026-94276.osv.json)
+
+
+
+_Last updated: 2026-10-01T11:02:40.499Z_
+
+### Affected
+
+* Apache APISIX from 3.12.0 through 3.18.0
+
+
+### Description
+
+<p>Improper Authentication vulnerability in Apache APISIX.</p>On a route using openid-connect plugin with remote introspection against an authorization server that serves multiple issuers, a token that introspects as active for one issuer may get<span>&nbsp;accepted on a route restricted to another.&nbsp;</span><span>This issue affects Apache APISIX: from 3.12.0 through 3.18.0.</span><p>Users are recommended to upgrade to version 3.19.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/txn3br25kl657fh15rwcy1oht1xbpyyk
+
+
+### Credits
+* sec-reex (reporter)
+* shreemaan-abhishek (coordinator)
+* shreemaan-abhishek (remediation developer)
+
+
+## Servlet-style normalization creates a route/upstream authorization mismatch ## { #CVE-2026-94269 }
+
+CVE-2026-94269 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-94269) [\[CVE json\]](./CVE-2026-94269.cve.json) [\[OSV json\]](./CVE-2026-94269.osv.json)
+
+
+
+_Last updated: 2026-10-01T11:02:19.076Z_
+
+### Affected
+
+* Apache APISIX from 2.14.1 through 3.18.0
+
+
+### Description
+
+<p>Use of Non-Canonical URL paths for authorization decisions vulnerability in Apache APISIX.</p><p>In some configurations where a permissive route overlaps a protected one, a crafted encoded path can reach an upstream endpoint that the matched route's policies were never meant to cover. A&nbsp;request that should have been rejected is served instead, giving unauthenticated access to a protected upstream endpoint. This issue affects Apache APISIX: from 2.14.1 through 3.18.0.</p><p>Users are recommended to upgrade to version 3.19.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/6p7glm8jtkjrn12t7z2ybn6bplm22tns
+
+
+### Credits
+* Ziyue (reporter)
+* shreemaan-abhishek (coordinator)
+* shreemaan-abhishek (remediation developer)
+
+
+## Batch response aggregation can exhaust worker memory ## { #CVE-2026-94250 }
+
+CVE-2026-94250 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-94250) [\[CVE json\]](./CVE-2026-94250.cve.json) [\[OSV json\]](./CVE-2026-94250.osv.json)
+
+
+
+_Last updated: 2026-10-01T11:01:40.297Z_
+
+### Affected
+
+* Apache APISIX from 1.3.0 through 3.18.0
+
+
+### Description
+
+<p>Allocation of resources without limits or throttling vulnerability in batch-requests plugin in Apache APISIX.</p><p>An unauthenticated caller can drive a gateway worker into OOM via a route where the batch-requests plugin is used and the&nbsp;batch endpoint is publicly exposed. This issue affects Apache APISIX: from 1.3.0 through 3.18.0.</p><p>Users are recommended to upgrade to version 3.19.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/l7o9w8pw3w3f12vf9ybm7xtfzoo6qct4
+
+
+### Credits
+* Ziyue (reporter)
+* shreemaan-abhishek (remediation developer)
+* shreemaan-abhishek (coordinator)
+
+
+## session fixation issue in feishu-auth and dingtalk-auth plugin ## { #CVE-2026-94220 }
+
+CVE-2026-94220 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-94220) [\[CVE json\]](./CVE-2026-94220.cve.json) [\[OSV json\]](./CVE-2026-94220.osv.json)
+
+
+
+_Last updated: 2026-10-01T11:01:25.519Z_
+
+### Affected
+
+* Apache APISIX from 3.17.0 through 3.18.0
+
+
+### Description
+
+<p>Cross-Site request forgery (CSRF) vulnerability in feishu-auth and dingtalk-auth plugins in Apache APISIX.</p><p>An attacker who can get a user to click a crafted link may cause that user's browser session on a protected route to be established under the attacker's identity instead of their own. Any work the user then performs in that session, including uploads, form submissions, and account bindings, lands in the attacker's account.&nbsp;This issue affects Apache APISIX: from 3.17.0 through 3.18.0.</p><p>Users are recommended to upgrade to version 3.19.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/bf5q45ddyr2hf3hxkt56dzjlttgpdg78
+
+
+### Credits
+* MopMonk-AI (reporter)
+* shreemaan-abhishek (coordinator)
+* shreemaan-abhishek (remediation developer)
+
+
+## unauthenticated impersonation issue in saml-auth ## { #CVE-2026-94212 }
+
+CVE-2026-94212 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-94212) [\[CVE json\]](./CVE-2026-94212.cve.json) [\[OSV json\]](./CVE-2026-94212.osv.json)
+
+
+
+_Last updated: 2026-10-01T11:01:10.730Z_
+
+### Affected
+
+* Apache APISIX from 3.17.0 through 3.18.0
+
+
+### Description
+
+<p>Improper verification of cryptographic signature vulnerability in Apache APISIX.</p><p><span>Any unauthenticated attacker could impersonate any user on every route protected by the </span><span>saml</span><span>-auth plugin under default configuration.&nbsp;</span>This issue affects Apache APISIX: from 3.17.0 through 3.18.0.</p><p>Users are recommended to upgrade to version 3.19.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/1230fnojnmc7bfz3n0nkt7tkcld9d1sc
+
+
+### Credits
+* LucasFutures (reporter)
+* shreemaan-abhishek (coordinator)
+* shreemaan-abhishek (remediation developer)
+
+
+## cross-request permission pollution via static permission list mutation ## { #CVE-2026-82806 }
+
+CVE-2026-82806 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82806) [\[CVE json\]](./CVE-2026-82806.cve.json) [\[OSV json\]](./CVE-2026-82806.osv.json)
+
+
+
+_Last updated: 2026-10-01T10:58:31.207Z_
+
+### Affected
+
+* Apache APISIX from 2.3.0 before 3.7.0
+
+
+### Description
+
+<p>Exposure of data element to wrong session vulnerability in Apache APISIX.</p><p>This issue affects Apache APISIX: from 2.3.0 before 3.7.0.</p><p>Under a supported authz-keycloak configuration, a request's authorization scope could persist into later requests on the same route, leading to unintended authorization expansion and inconsistent access-control decisions.</p><p>Users are recommended to upgrade to version 3.7.0 or higher, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/wvkv2b4oy2fh9v79d30gtsy0bhqmzcdd
+
+
+### Credits
+* Lok (reporter)
+
+
+## data-mask may fail to redact request headers in logger output ## { #CVE-2026-78242 }
+
+CVE-2026-78242 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-78242) [\[CVE json\]](./CVE-2026-78242.cve.json) [\[OSV json\]](./CVE-2026-78242.osv.json)
+
+
+
+_Last updated: 2026-10-01T10:58:12.134Z_
+
+### Affected
+
+* Apache APISIX at 3.17.0
+
+
+### Description
+
+<p>Insertion of sensitive information into log file vulnerability in Apache APISIX.</p><p><span>This vulnerability can cause the unmasked header value to be written to the log sink under a certain response structure.&nbsp;</span></p><p><span>This issue affects Apache APISIX: 3.17.0.</span></p><p><span>Users are recommended to upgrade to version 3.18.0, which fixes the issue.</span></p>
+
+### References
+* https://lists.apache.org/thread.html/qxzsyw1pbgxg4sqkc4t2g8h4w2q0mvsn
+
+
+### Credits
+* Jonas Schültke (reporter)
+
+
 ## ldap-auth plugin cross-subtree identity impersonation ## { #CVE-2026-75020 }
 
 CVE-2026-75020 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-75020) [\[CVE json\]](./CVE-2026-75020.cve.json) [\[OSV json\]](./CVE-2026-75020.osv.json)

@@ -40,6 +40,224 @@ _Last updated: 2026-09-21T14:35:58.595Z_
 * tonghuaroot (finder)
 
 
+## LDAP injection in sshd-ldap ## { #CVE-2026-94053 }
+
+CVE-2026-94053 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-94053) [\[CVE json\]](./CVE-2026-94053.cve.json) [\[OSV json\]](./CVE-2026-94053.osv.json)
+
+
+
+_Last updated: 2026-09-30T09:43:39.340Z_
+
+### Affected
+
+* Apache MINA SSHD from 1.2.0 before 2.20.0
+* Apache MINA SSHD from 3.0.0-M1 before 3.0.0-M6
+
+
+### Description
+
+<div>Authentication bypass via LDAP injection in component sshd-ldap in Apache MINA SSHD versions 1.2.0 to 2.19.0 and 3.0.0-M1 to 3.0.0-M5.</div><div><br></div><div>Apache MINA SSHD is a&nbsp;Java library for client-side and server-side SSH. 
+The optional sshd-ldap component provides support for integrating 
+password and publickey authentication on the server side with an LDAP 
+server.</div><div><br></div><div>sshd-ldap is an optional component. SSH servers implemented with Apache 
+MINA SSHD are affected only if they use sshd-ldap and do configure it to be used for password of public key authentication.</div><div>Other Apache MINA SSHD servers are not affected.</div><div><br></div><div>Lack of escaping LDAP filter metacharacters enabled successful authentication with username "*" and password "*".</div><div><br></div>Users are recommended to upgrade affected applications to version 2.20.0 or 3.0.0-M6, which fix this issue by properly escaping filter parameters according to RFC 4515.
+
+### References
+* https://lists.apache.org/thread.html/cyrxkdzl3c70rrqs3klqphqz1hwm7p41
+
+
+### Credits
+* Dilrevx (finder)
+* Ho1aAs <xxy010605@gmail.com> (finder)
+
+
+## LDAP password authentication ineffective ## { #CVE-2026-94052 }
+
+CVE-2026-94052 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-94052) [\[CVE json\]](./CVE-2026-94052.cve.json) [\[OSV json\]](./CVE-2026-94052.osv.json)
+
+
+
+_Last updated: 2026-09-30T09:34:24.935Z_
+
+### Affected
+
+* Apache MINA SSHD from 1.2.0 before 2.20.0
+* Apache MINA SSHD from 3.0.0-M1 before 3.0.0-M6
+
+
+### Description
+
+<div>A missing check in LdapPasswordAuthenticator in component sshd-ldap in Apache MINA SSHD versions 1.2.0 to 2.19.0 or 3.0.0-M1 to 3.0.0-M5 bypassed authentication checks.</div><div><br></div><div>Apache MINA SSHD is a&nbsp;Java library for client-side and server-side SSH. The optional sshd-ldap component provides support for integrating password and publickey authentication on the server side with an LDAP server.</div><div><br></div><div>sshd-ldap is an optional component. SSH servers implemented with Apache MINA SSHD are affected only if they use sshd-ldap and do configure an LdapPasswordAuthenticator to be used for password authentication. Normal password authentication via the built-in mechanisms in sshd-core is _not_ affected by this vulnerability, which concerns only LdapPasswordAuthenticator.</div><div><br></div>Users are recommended to upgrade affected applications to version 2.20.0 or 3.0.0-M6, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/qch5kdwwms13y6bylb7c6qqzq718wn24
+
+
+### Credits
+* Dilrevx (finder)
+* Ho1aAs <xxy010605@gmail.com> (finder)
+
+
+## Memory exhaustion in SFTP v6 check-file-name/check-file-handle extension ## { #CVE-2026-94029 }
+
+CVE-2026-94029 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-94029) [\[CVE json\]](./CVE-2026-94029.cve.json) [\[OSV json\]](./CVE-2026-94029.osv.json)
+
+
+
+_Last updated: 2026-09-30T09:35:48.603Z_
+
+### Affected
+
+* Apache MINA SSHD from 1.0.0 before 2.20.0
+* Apache MINA SSHD from 3.0.0-M1 before 3.0.0-M6
+
+
+### Description
+
+<div>Server-side memory exhaustion in Apache MINA SSHD 1.0.0 to 2.19.0 and 3.0.0-M1 to 3.0.0-M5, component sshd-sftp, in the SFTP v6 check-file-name/check-file-handle extension.&nbsp;Apache MINA SSHD is a Java library for client-side and server-side SSH.</div><div><br></div><div>Using a very small "block size" (for instance 256, which is the minimum) on a huge file generates many (file size / block size) hashes. The resulting SFTP reply message was accumulated fully in memory server-side, which could, with a suitably large&nbsp;(possibly sparse)&nbsp;file exhaust the server-side memory, taking down the server.</div><div><br></div>Users are recommended to upgrade to version 2.20.0 or 3.0.0-M6, which fix this issue by imposing a maximum limit on the size of the reply. Many SFTP implementations have a general limit on the size of SFTP messages anyway; typically 256kB as in OpenSSH or also in Apache MINA SSHD.
+
+### References
+* https://lists.apache.org/thread.html/ytbl4rwby62xl7llm3wp7k975wwdx99t
+
+
+### Credits
+* Ho1aAs <xxy010605@gmail.com> (finder)
+
+
+## Memory exhaustion in SFTP client via unsolicited SFTP replies ## { #CVE-2026-94002 }
+
+CVE-2026-94002 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-94002) [\[CVE json\]](./CVE-2026-94002.cve.json) [\[OSV json\]](./CVE-2026-94002.osv.json)
+
+
+
+_Last updated: 2026-09-30T09:36:58.383Z_
+
+### Affected
+
+* Apache MINA SSHD from 0.9.0 before 2.20.0
+* Apache MINA SSHD from 3.0.0-M1 before 3.0.0-M6
+
+
+### Description
+
+<div>Possible memory exhaustion in SFTP clients (DefaultSftpClient) in component sshd-sftp in Apache MINA SSHD versions 0.9.0 to 2.19.0 and 3.0.0-M1 to 3.0.0-M5.</div><div><br></div><div>Apache 
+MINA SSHD is a Java library for client-side and server-side SSH. The sshd-sftp component provides support for SFTP.</div><div><br></div><div>The SFTP client implementation, when receiving a reply, did not check that this reply corresponded to a request sent earlier. Unsolicited replies would be stored but never consumed. A malicious server could keep sending unsolicited replies until available memory in the client was exhausted.</div><div><br></div>Users are recommended to upgrade to version 2.20.0 or 3.0.0-M6, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/x2cb00kh4qvsq145tj2w4g3toy8cybld
+
+
+### Credits
+* Ho1aAs <xxy010605@gmail.com> (finder)
+
+
+## Memory exhaustion DoS via unbounded SCP command line read ## { #CVE-2026-93996 }
+
+CVE-2026-93996 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-93996) [\[CVE json\]](./CVE-2026-93996.cve.json) [\[OSV json\]](./CVE-2026-93996.osv.json)
+
+
+
+_Last updated: 2026-09-30T09:37:40.534Z_
+
+### Affected
+
+* Apache MINA SSHD before 2.20.0
+* Apache MINA SSHD from 3.0.0-M1 before 3.0.0-M6
+
+
+### Description
+
+<div>Uncontrolled resource consumption in component ssd-scp in Apache MINA SSHD versions up to 2.19.0 or 3.0.0-M1 to 3.0.0-M5. Apache MINA SSHD is a Java library for client-side and server-side SSH.</div><div><br></div><div>Component sshd-scp of Apache MINA SSHD provides a Java implementation of SCP. The SCP command protocol is line-oriented with LF-terminated lines. The protocol handler in sshd-scp did not impose any limit on the length of such protocol lines. A malicious peer just sending a junk command containing a never-ending sequence of characters but never a LF would cause the receiver to allocate memory to store this whole junk command, exhausting memory and crashing the application with an OutOfMemoryError.</div><div><br></div>Users are recommended to upgrade to version 2.20.0 or 3.0.0-M6, which fix this issue by enforcing an upper limit on the length of SCP protocol lines.
+
+### References
+* https://lists.apache.org/thread.html/xwk8vogkpphcpm01hrt9tb6mgnpjzp35
+
+
+### Credits
+* Ho1aAs <xxy010605@gmail.com> (finder)
+
+
+## Remote execution of JGit "archive -o=file.zip" can write file on the server ## { #CVE-2026-93995 }
+
+CVE-2026-93995 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-93995) [\[CVE json\]](./CVE-2026-93995.cve.json) [\[OSV json\]](./CVE-2026-93995.osv.json)
+
+
+
+_Last updated: 2026-09-30T09:38:42.017Z_
+
+### Affected
+
+* Apache MINA SSHD before 2.20.0
+* Apache MINA SSHD from 3.0.0-M1 before 3.0.0-M6
+
+
+### Description
+
+<div><div>Improper input validation in sshd-git in Apache MINA SSHD, versions up to 2.19.0 and 3.0.0-M1 to 3.0.0-M5. Apache 
+MINA SSHD is a Java library for client-side and server-side SSH.</div><div><br></div><div>Component org.apache.sshd:sshd-git provides though class GitPgmCommandFactory a way to configure an Apache MINA SSHD server such 
+that authenticated SSH clients can remotely execute git commands via the JGit library 
+on git repositories stored on the server. In&nbsp;CVE-2026-58624 this mechanism was restricted to only a few git commands, including "git archive" without "--output" or "-o" options such that the resulting archive would not be written on the server but instead sent back to the client over the SSH connection.</div><br></div><div>The fix done for&nbsp;CVE-2026-58624 was insufficient as it missed removing the single-argument "-o=file.zip"&nbsp;version of the command parameter&nbsp;from the "archive" command.</div><div><br></div>Users are recommended to upgrade to version 2.20.0 or 3.0.0-M6, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/k13ox2xlry38h9gh6rhmh1d9zs345clk
+
+
+### Credits
+* Ho1aAs <xxy010605@gmail.com> (finder)
+
+
+## Repeated-publickey policy bypass on server ## { #CVE-2026-93994 }
+
+CVE-2026-93994 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-93994) [\[CVE json\]](./CVE-2026-93994.cve.json) [\[OSV json\]](./CVE-2026-93994.osv.json)
+
+
+
+_Last updated: 2026-09-30T09:45:30.162Z_
+
+### Affected
+
+* Apache MINA SSHD before 2.20.0
+* Apache MINA SSHD from 3.0.0-M1 before 3.0.0-M6
+
+
+### Description
+
+<div><div>Apache MINA SSHD is a Java library for client-side and server-side SSH. SSH servers can be configured to require multi-authentication schemes, for instance two different public keys, not just one. In OpenSSH, this would be done by setting in sshd_config AuthenticationMethods "publickey,publickey". Apache MINA SSHD provides an equivalent configuration mechanism.</div><div><br></div><div>In Apache MINA SSHD versions up to 2.19.0 and 3.0.0-M1 to 3.0.0-M5 the server code in component sshd-core does not enforce that the two public keys presented are different. A user can thus successfully authenticate with only one of the two key pairs required by presenting this single key twice. This is a partial authentication bypass.</div><div><br></div></div>Users are recommended to upgrade to version 2.20.0 or 3.0.0-M6, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/9t3vsm8rnvwdv9779mlg1lq2fbwojdwp
+
+
+### Credits
+* Abhishek Kushwaha (finder)
+
+
+## Asynchronous authentication can bypass signature verification ## { #CVE-2026-77185 }
+
+CVE-2026-77185 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-77185) [\[CVE json\]](./CVE-2026-77185.cve.json) [\[OSV json\]](./CVE-2026-77185.osv.json)
+
+
+
+_Last updated: 2026-09-30T09:46:50.498Z_
+
+### Affected
+
+* Apache MINA SSHD from 2.0.0 before 2.20.0
+* Apache MINA SSHD from 3.0.0-M1 before 3.0.0-M6
+
+
+### Description
+
+<div>Authentication bypass in sshd-core in Apache MINA SSHD versions 2.0.0 to 2.19.0 and 3.0.0-M1 to 3.0.0-M5 for a certain (presumed rare) way to implement an SSH server.</div><div><br></div><div>Apache MINA SSHD is a Java library for client- and server-side SSH. In the server part of the library, a mechanism to perform "asynchronous authentication" exists. A server implemented with Apache MINA SSHD must contain explicit code to make use of this feature. The implementation of this feature was flawed and could potentially lead to skipping checking the signature in public-key or hostbased authentication, or returning a wrong result.</div><div><br></div><div>Users are recommended to upgrade to&nbsp;Apache MINA SSHD 2.20.0 or 3.0.0-M6, which fix the logic error and which additionally forbid the use of this "asynchronous authentication" mechanism with the public-key or hostbased authentication schemes: if used, the SSH session will be closed and the server will log an entry indicating that asynchronous authentication may be used only with password or keyboard-interactive authentication.</div>
+
+### References
+* https://lists.apache.org/thread.html/t8pn812yq8ndokxyfxztg8tovov1284n
+
+
+### Credits
+* Chris Jarret-Davies, OpenAI Security Research Team (finder)
+
+
 ## Remote execution of JGit commands can write files on the server ## { #CVE-2026-58624 }
 
 CVE-2026-58624 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58624) [\[CVE json\]](./CVE-2026-58624.cve.json) [\[OSV json\]](./CVE-2026-58624.osv.json)

@@ -21,6 +21,83 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Unauthenticated denial of service via integer overflow in DER parsing of X.509 certificate extensions ## { #CVE-2026-95616 }
+
+CVE-2026-95616 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-95616) [\[CVE json\]](./CVE-2026-95616.cve.json) [\[OSV json\]](./CVE-2026-95616.osv.json)
+
+
+
+_Last updated: 2026-09-30T12:25:24.410Z_
+
+### Affected
+
+* Apache WSS4J from 4.0.0 before 4.0.2
+* Apache WSS4J from 3.0.0 before 3.0.6
+* Apache WSS4J before 2.4.4
+
+
+### Description
+
+An integer overflow in WSS4J's DER bounds check lets an oversized allocation pass validation. An unauthenticated attacker can send a SOAP message carrying an X.509 certificate whose SubjectKeyIdentifier extension declares a length of <code>0x7FFFFFFF</code>; WSS4J decodes this while resolving the signature's key reference, before the message is authenticated, so an eleven-byte extension triggers a 2 GB allocation. Repeated requests exhaust server memory.<br>Users are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/sdf0fsphkg4qbj7nh2brjgwvcmd67hct
+
+
+## UsernameToken replay protection bypassed by re-encoding the Nonce ## { #CVE-2026-92899 }
+
+CVE-2026-92899 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-92899) [\[CVE json\]](./CVE-2026-92899.cve.json) [\[OSV json\]](./CVE-2026-92899.osv.json)
+
+
+
+_Last updated: 2026-09-30T12:02:37.412Z_
+
+### Affected
+
+* Apache WSS4J from 4.0.0 before 4.0.2
+* Apache WSS4J from 3.0.0 before 3.0.6
+* Apache WSS4J before 2.4.4
+
+
+### Description
+
+<p>Apache WSS4J remembers the Nonce of each UsernameToken it accepts, so a captured token cannot be reused. It stored the Nonce as raw base64 text, but authentication decodes that text and uses the bytes.<span>The same bytes can be written as base64 in several ways. An attacker who captured an authenticated request could re-send it with a space added to the Nonce: the password digest still verified, but the token no longer matched the remembered one, so the replay was accepted. Since a UsernameToken does not cover the message body, the captured token could then be reused on requests of the attacker's choosing until it expired. Affects deployments with a nonce replay cache configured, as Apache CXF has by default, and only tokens using a password digest. The cache is now keyed on the decoded Nonce.&nbsp;</span><span>Users are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4, which fix this issue.</span></p>
+
+### References
+* https://lists.apache.org/thread.html/nrzngsz1xm2lztq3t873663xx9wnrwm7
+
+
+### Credits
+* Reported by n0mi1k (finder)
+
+
+## WS-SecurityPolicy signature checks skipped in the streaming code after an STR-Transform reference ## { #CVE-2026-92121 }
+
+CVE-2026-92121 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-92121) [\[CVE json\]](./CVE-2026-92121.cve.json) [\[OSV json\]](./CVE-2026-92121.osv.json)
+
+
+
+_Last updated: 2026-09-30T12:01:51.419Z_
+
+### Affected
+
+* Apache WSS4J from 4.0.0 before 4.0.2
+* Apache WSS4J from 3.0.0 before 3.0.6
+* Apache WSS4J before 2.4.4
+
+
+### Description
+
+In the WSS4J streaming (StAX) code, a signature reference using the WS-Security STR-Transform leaves an internal "inside signed content" flag permanently set. The WS-SecurityPolicy enforcer uses that flag to decide whether an element needs checking, so it stops evaluating <code>SignedParts</code> and <code>SignedElements</code> for the rest of the message. A policy requiring the SOAP Body to be signed is then satisfied even when the Body carries no signature, removing the protection against XML Signature Wrapping. Signature verification itself is unaffected. The DOM code is not affected.&nbsp;<br>Users are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4 which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/oop9p4hpl5o9byosb1qg3z7q1sgnn4pc
+
+
+### Credits
+* Reported by n0mi1k (finder)
+
+
 ## Remote policy fetch lacks a total timeout, allowing a slow server to hang the request indefinitely ## { #CVE-2026-91867 }
 
 CVE-2026-91867 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-91867) [\[CVE json\]](./CVE-2026-91867.cve.json) [\[OSV json\]](./CVE-2026-91867.osv.json)
@@ -144,6 +221,114 @@ A specially crafted WS-Policy document with deeply nested policy elements can by
 
 ### Credits
 * This issue was found using Claude agents to study the security of open-source projects (finder)
+
+
+## WSS4J EncryptedHeader child confusion causing wrong protected-header selection ## { #CVE-2026-89238 }
+
+CVE-2026-89238 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-89238) [\[CVE json\]](./CVE-2026-89238.cve.json) [\[OSV json\]](./CVE-2026-89238.osv.json)
+
+
+
+_Last updated: 2026-09-30T11:59:03.446Z_
+
+### Affected
+
+* Apache WSS4J from 4.0.0 before 4.0.2
+* Apache WSS4J from 3.0.0 before 3.0.6
+* Apache WSS4J before 2.4.4
+
+
+### Description
+
+WSS4J EncryptedHeader child confusion could promote an attacker-controlled plaintext element as the decrypted header, leading to incorrect confidentiality coverage and possible policy bypass.<br>Users are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/1lv4hpl8kon1ns5txjnhn2m2sh9rl22w
+
+
+### Credits
+* Reported by n0mi1k (finder)
+
+
+## SAML Sender-Vouches Authentication Bypass ## { #CVE-2026-88920 }
+
+CVE-2026-88920 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-88920) [\[CVE json\]](./CVE-2026-88920.cve.json) [\[OSV json\]](./CVE-2026-88920.osv.json)
+
+
+
+_Last updated: 2026-09-30T11:57:51.366Z_
+
+### Affected
+
+* Apache WSS4J from 4.0.0 before 4.0.2
+* Apache WSS4J from 3.0.0 before 3.0.6
+* Apache WSS4J before 2.4.4
+
+
+### Description
+
+An authentication bypass in the DOM security processor in Apache WSS4J allows unauthenticated remote attackers to forge authenticated SOAP messages via a crafted unsigned SAML sender-vouches assertion containing an attacker-controlled key.<br><br>Users are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/grt43m3bgbzz0mk0cnho3rcybb1j01z9
+
+
+### Credits
+* Reported by n0mi1k (finder)
+
+
+## Streaming WS-SecurityPolicy validation may skip element-protection checks. ## { #CVE-2026-87830 }
+
+CVE-2026-87830 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-87830) [\[CVE json\]](./CVE-2026-87830.cve.json) [\[OSV json\]](./CVE-2026-87830.osv.json)
+
+
+
+_Last updated: 2026-09-30T11:56:54.179Z_
+
+### Affected
+
+* Apache WSS4J from 4.0.0 before 4.0.2
+* Apache WSS4J from 3.0.0 before 3.0.6
+* Apache WSS4J before 2.4.4
+
+
+### Description
+
+In the StAX streaming WS-SecurityPolicy validator, certain relative or unsupported XPath expressions can be converted into paths that never match the actual XML element path. A remote SOAP peer may therefore send a required element without the expected signature or encryption.<div><br>Users are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4, which fix this issue.</div>
+
+### References
+* https://lists.apache.org/thread.html/lwlozb1x20d16f9dnyvoygc9rrhzq2vn
+
+
+### Credits
+* Reported by n0mi1k (finder)
+
+
+## Insufficient Validation of Derived-Key Parameters ## { #CVE-2026-85532 }
+
+CVE-2026-85532 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85532) [\[CVE json\]](./CVE-2026-85532.cve.json) [\[OSV json\]](./CVE-2026-85532.osv.json)
+
+
+
+_Last updated: 2026-09-30T11:55:32.052Z_
+
+### Affected
+
+* Apache WSS4J from 4.0.0 before 4.0.2
+* Apache WSS4J from 3.0.0 before 3.0.6
+* Apache WSS4J before 2.4.4
+
+
+### Description
+
+Apache WSS4J accepted attacker-controlled derived-key lengths and offsets without adequate bounds. This could permit cryptographically weak keys or excessive CPU and memory consumption when processing crafted WS-Security messages. The fixes enforce a minimum key length of 16 bytes, a maximum length of 512 bytes, and a maximum offset of 4096 bytes.<div><br>Users are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4, which fix this issue.</div>
+
+### References
+* https://lists.apache.org/thread.html/7jllcpbf4nbzhdp2vchz5yplnl5w6vd6
+
+
+### Credits
+* This issue was independently reported by Ho1aAs (GitHub: @HolaAsuka) and also found using Claude agents to study the security of open-source projects (finder)
 
 
 ## Remote PolicyReference fetch lacks resource bounds ## { #CVE-2026-66144 }
