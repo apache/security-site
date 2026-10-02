@@ -225,7 +225,7 @@ layout: single
 """ % (p['name'], p['name']))
     models = security_models(p)
     project_page.write('# Reporting\n\n')
-    project_page.write('Do you want disclose a potential security issue for %s? ' % p['name'])
+    project_page.write('Do you want to disclose a potential security issue for %s? ' % p['name'])
     project_page.write('Send your report to the ')
     quoted_subject = quote(display_name(p['name']))
     if not 'contact' in p.keys() or p['contact'] == 'security@apache.org':
