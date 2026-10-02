@@ -67,7 +67,7 @@ Relative Path Traversal in the ISA-Tab parser in Apache Software Foundation Apac
 
 ### Credits
 * Reported by BugQore, who supplied a patch in PR #2873. (finder)
-* Independently reported with proposed fix by Rui Heng Koh. (finder)
+* Independently reported with proposed fix by n0mi1k. (finder)
 
 
 ## Update to CVE-2025-54988 to expand scope of artifacts affected ## { #CVE-2025-66516 }

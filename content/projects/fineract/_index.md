@@ -105,6 +105,7 @@ A SQL Injection vulnerability exists in Apache Fineract's Report Execution API (
 * Terence Monteiro (@terencemo) (remediation developer)
 * Ádám Sághy (@adamsaghy) (remediation reviewer)
 * Aleksandar Vidakovic (@vidakovic) (remediation reviewer)
+* Sanskaar Pathak (reporter)
 
 
 ## IDOR via self-service API ## { #CVE-2025-58137 }

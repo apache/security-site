@@ -55,7 +55,7 @@ _Last updated: 2026-08-06T10:08:34.789Z_
 
 ### Affected
 
-* Apache Zeppelin from 0.6.0 before 0.12.1
+* Apache Zeppelin from 0.6.0 before 0.12.2
 
 
 ### Description
@@ -65,6 +65,7 @@ LDAP injection vulnerability in Apache Zeppelin. ActiveDirectoryGroupRealm const
 ### References
 * https://github.com/apache/zeppelin/pull/5226
 * https://lists.apache.org/thread/p6llqpvcszpg1wc8kx5ncfkdbms3g0rn
+* https://github.com/apache/zeppelin/pull/5384
 
 
 ### Credits

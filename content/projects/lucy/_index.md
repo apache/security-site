@@ -23,12 +23,13 @@ _Last updated: 2026-09-04T15:55:45.726Z_
 
 ### Affected
 
-* Apache Lucy through *
+* Apache Lucy before 0.8.0
 
 
 ### Description
 
-<p>** UNSUPPORTED WHEN ASSIGNED ** Stack-based Buffer Overflow vulnerability in Apache Lucy.</p><p>This issue affects Apache Lucy: all versions.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+<p>** UNSUPPORTED WHEN ASSIGNED ** Stack-based Buffer Overflow vulnerability in Apache Lucy.</p><p>This issue affects Apache Lucy: all versions.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>Lucy is now maintained outside of the ASF 
+at&nbsp;https://github.com/lucysearch . This issue has been fixed in 0.8.0 there.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
 
 ### References
 * https://lists.apache.org/thread/z88yv1z19ppsd4td4nqtg7q72fvqh01b
@@ -65,12 +66,12 @@ _Last updated: 2026-09-04T15:54:47.949Z_
 
 ### Affected
 
-* Apache Lucy before *
+* Apache Lucy before 0.8.0
 
 
 ### Description
 
-<p>** UNSUPPORTED WHEN ASSIGNED ** Deserialization of Untrusted Data vulnerability in Apache Lucy.</p><p>This issue affects Apache Lucy: all versions.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+<p>** UNSUPPORTED WHEN ASSIGNED ** Deserialization of Untrusted Data vulnerability in Apache Lucy.</p><p>This issue affects Apache Lucy: all versions.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>Lucy is now maintained outside of the ASF at&nbsp;https://github.com/lucysearch . 0.8.0 is no longer affected by this issue, because the offending feature has been removed there.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
 
 ### References
 * https://lists.apache.org/thread/942t3pwgz2nrhnklrtyt5zr7g4wqc9cb
@@ -86,12 +87,13 @@ _Last updated: 2026-09-04T15:53:36.291Z_
 
 ### Affected
 
-* Apache Lucy through *
+* Apache Lucy before 0.8.0
 
 
 ### Description
 
-<p>** UNSUPPORTED WHEN ASSIGNED ** Uncontrolled Recursion vulnerability in Apache Lucy.</p><p>This issue affects Apache Lucy: all versions.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+<p>** UNSUPPORTED WHEN ASSIGNED ** Uncontrolled Recursion vulnerability in Apache Lucy.</p><p>This issue affects Apache Lucy: all versions.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the ASF. Lucy is now maintained outside of the ASF at&nbsp;https://github.com/lucysearch</p>
 
 ### References
 * https://lists.apache.org/thread/ltp8320c0nsy45bpzm8342jd7yj05z1h
+* https://github.com/lucysearch

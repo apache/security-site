@@ -571,8 +571,8 @@ Apache Airflow&#x27;s Task SDK did not mask the contents of a Variable whose JSO
 
 ### References
 * https://github.com/apache/airflow/pull/70891
-* https://www.cve.org/CVERecord?id=CVE-2026-59244
 * https://lists.apache.org/thread/kkrlnbsk47oght4h38mcd3h2kcb8dt28
+* https://www.cve.org/CVERecord?id=CVE-2026-59244
 
 
 ### Credits
@@ -599,13 +599,13 @@ Apache Airflow wrote Variable values and Connection `extra` contents to the audi
 
 ### References
 * https://github.com/apache/airflow/pull/70890
-* https://www.cve.org/CVERecord?id=CVE-2026-50204
 * https://lists.apache.org/thread/p3jr90jgp2brto4vwcrx680f3x11y70c
+* https://www.cve.org/CVERecord?id=CVE-2026-50204
 
 
 ### Credits
-* Jarek Potiuk (remediation developer)
 * Harish Kolla (@Har1sh-k) (finder)
+* Jarek Potiuk (remediation developer)
 
 
 ## Authorization bypass in the Backfill API through conflicting interpretations of the backfill id ## { #CVE-2026-68968 }
@@ -631,8 +631,8 @@ Apache Airflow&#x27;s Backfill API authorized a request against a Dag id supplie
 
 
 ### Credits
-* Jarek Potiuk (remediation developer)
 * Harish Kolla (@Har1sh-k) (finder)
+* Jarek Potiuk (remediation developer)
 
 
 ## amazon SSM / Secrets Manager backends: team-scope guard bypass resolves another team's Connection or Variable ## { #CVE-2026-68872 }
@@ -763,6 +763,7 @@ Apache Airflow&#x27;s environment-variable secrets backend resolved a team-scope
 
 ### References
 * https://github.com/apache/airflow/pull/70736
+* https://github.com/apache/airflow/pull/70886
 * https://github.com/apache/airflow/pull/70902
 * https://lists.apache.org/thread/v4mc51dgmrc1t82mhzsngsgzo2gxsf2l
 
@@ -791,9 +792,9 @@ Apache Airflow&#x27;s Task SDK rebuilt a `Callback` object from serialized data 
 
 ### References
 * https://github.com/apache/airflow/pull/70704
+* https://lists.apache.org/thread/o00ww4n69qojvsckb464dtwd2nhzy6t0
 * https://www.cve.org/CVERecord?id=CVE-2026-58076
 * https://www.cve.org/CVERecord?id=CVE-2026-67260
-* https://lists.apache.org/thread/o00ww4n69qojvsckb464dtwd2nhzy6t0
 
 
 ### Credits
@@ -820,8 +821,8 @@ Apache Airflow 3.3.0 moved human-in-the-loop tasks from the triggerer to a new `
 
 ### References
 * https://github.com/apache/airflow/pull/70685
-* https://www.cve.org/CVERecord?id=CVE-2026-58076
 * https://lists.apache.org/thread/vygr0fh82cjzjp5k4vtfmboxryvm3lyn
+* https://www.cve.org/CVERecord?id=CVE-2026-58076
 
 
 ### Credits
@@ -848,9 +849,9 @@ Apache Airflow&#x27;s Config API did not mask team-scoped sensitive configuratio
 
 ### References
 * https://github.com/apache/airflow/pull/70755
+* https://lists.apache.org/thread/kykn94kjf0tntx4wywtvjowh5bzdgf38
 * https://www.cve.org/CVERecord?id=CVE-2026-48828
 * https://www.cve.org/CVERecord?id=CVE-2026-48892
-* https://lists.apache.org/thread/kykn94kjf0tntx4wywtvjowh5bzdgf38
 
 
 ### Credits
@@ -985,8 +986,8 @@ Apache Airflow&#x27;s serialization layer reconstructed exception nodes by calli
 
 ### References
 * https://github.com/apache/airflow/pull/68511
-* https://www.cve.org/CVERecord?id=CVE-2026-33264
 * https://lists.apache.org/thread/t81p688t15jozxsng8521o60nh2kfsos
+* https://www.cve.org/CVERecord?id=CVE-2026-33264
 
 
 ### Credits
@@ -1018,6 +1019,7 @@ The Apache Airflow Git provider runs its git-over-SSH operations with `StrictHos
 
 ### Credits
 * Siyang Wu (independent researcher) (finder)
+* Leowsy-Hashblue (https://dbugs.ptsecurity.com/researchers/Leowsy-Hashblue) (finder)
 * Ephraim Anierobi (remediation developer)
 
 
@@ -1040,8 +1042,8 @@ Apache Airflow&#x27;s secrets masker hides values stored under sensitive key nam
 
 ### References
 * https://github.com/apache/airflow/pull/68422
-* https://www.cve.org/CVERecord?id=CVE-2026-42358
 * https://lists.apache.org/thread/z5mrdq6c60f2wyx4cc64cj8nv0dxd9lo
+* https://www.cve.org/CVERecord?id=CVE-2026-42358
 
 
 ### Credits
@@ -1313,8 +1315,8 @@ A bug in Apache Airflow&#x27;s `/ui/dependencies` scheduling graph endpoint appl
 
 ### References
 * https://github.com/apache/airflow/pull/67627
-* https://www.cve.org/CVERecord?id=CVE-2026-28563
 * https://lists.apache.org/thread/wzc8nflg94rq6w8f5tvtlo0o3g4wjrfl
+* https://www.cve.org/CVERecord?id=CVE-2026-28563
 
 
 ### Credits
@@ -1801,7 +1803,7 @@ _Last updated: 2026-05-29T08:45:19.890Z_
 
 ### Description
 
-Apache Airflow's SMTP provider `SmtpHook` called Python's `smtplib.SMTP.starttls()` without an SSL context, so no certificate validation was performed on the TLS upgrade. A man-in-the-middle between the Airflow worker and the SMTP server could present a self-signed certificate, complete the STARTTLS upgrade, and capture the SMTP credentials sent during the subsequent `login()` call. Users are advised to upgrade to the `apache-airflow-providers-smtp` version that contains the fix.
+Apache Airflow&#x27;s SMTP provider `SmtpHook` called Python&#x27;s `smtplib.SMTP.starttls()` without an SSL context, so no certificate validation was performed on the TLS upgrade. A man-in-the-middle between the Airflow worker and the SMTP server could present a self-signed certificate, complete the STARTTLS upgrade, and capture the SMTP credentials sent during the subsequent `login()` call. Users are advised to upgrade to the `apache-airflow-providers-smtp` version that contains the fix.
 
 ### References
 * https://github.com/apache/airflow/pull/65346

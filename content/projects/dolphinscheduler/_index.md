@@ -252,6 +252,9 @@ _Last updated: 2026-08-25T06:32:16.645Z_
 
 ### Credits
 * George Chen(https://github.com/geo-chen) (finder)
+* Qingteng(73Lab) (finder)
+* Securin (finder)
+* Venkatraman Kumar (finder)
 
 
 ## An incorrect authorization vulnerability allows authenticated users to access alert instances associated with alert groups they do not have permission to access. ## { #CVE-2026-47340 }
@@ -354,6 +357,7 @@ _Last updated: 2026-08-21T08:22:51.583Z_
 ### Credits
 * b0b0haha (603571786@qq.com) (finder)
 * j311yl0v3u (2439839508@qq.com) (finder)
+* spingARbor (2027282750@qq.com) (finder)
 
 
 ## DataSource API Missing Authorization Check Leads to Arbitrary Data Source Metadata Disclosure ## { #CVE-2026-32966 }

@@ -28,7 +28,7 @@ _Last updated: 2026-07-14T09:56:45.149Z_
 
 ### Description
 
-<p>** UNSUPPORTED WHEN ASSIGNED ** Incorrect Authorization vulnerability in Apache Submarine Server Core.</p><p>This issue affects Apache Submarine Server Core: from 0.8.0.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+<p>** UNSUPPORTED WHEN ASSIGNED ** Incorrect Authorization vulnerability in Apache Submarine Server Core.</p><p>This issue affects Apache Submarine Server Core: from 0.8.0.</p><p>An attacker can bypass authentication by sending specially crafted REST requests.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
 
 ### References
 * https://lists.apache.org/thread/prckhhst19qxof064hsm8cccxtofvflz
