@@ -18,6 +18,102 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## ADS discovery accepts spoofed responses and derives the connection target from them ## { #CVE-2026-102511 }
+
+CVE-2026-102511 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-102511) [\[CVE json\]](./CVE-2026-102511.cve.json)
+
+_Last updated: 2026-09-30T08:02:52.752Z_
+
+### Affected
+
+* Apache PLC4X from 0.11.0 before 1.0.0
+* Apache PLC4X at 1.0.0 unaffected
+* Apache PLC4X from 0.10.0 before 1.0.0
+* Apache PLC4X at 1.0.0 unaffected
+* Apache PLC4X from 0.10.0 before 1.0.0
+* Apache PLC4X at 1.0.0 unaffected
+* Apache PLC4X from 0.11.0 before 1.0.0
+* Apache PLC4X at 1.0.0 unaffected
+
+
+### Description
+
+<div><pre>Improper Verification of Source of a Communication Channel in the ADS discovery of the Go implementation of Apache PLC4X (PLC4Go) allows an attacker able to send UDP datagrams to the discovering host to redirect subsequent connections to an arbitrary, attacker-chosen address. The discovery result's connection <br>address was derived from the AmsNetId claimed in the response body rather than from the datagram's actual source address. One spoofed discovery response can therefore insert an inventory entry pointing at any host, including hosts outside the local network, and an application that connects to discovered devices<br>will open its ADS session, including any configured route credentials, to that host.<br><br>Additionally, discovery listeners in both implementations can be disabled by a single malformed datagram:<br>- In PLC4Go ADS discovery, a short version block causes a panic that ends the listener for the rest of the discovery call, so legitimate devices answering afterwards are not reported.<br>- In PLC4J, the ADS and EtherNet/IP discoverers stop on an unhandled exception from a malformed response.<br>- The PLC4J Modbus discoverer can be made to spin indefinitely, consuming a CPU core, by a scanned host that sends a partial response.<br><br>Exploitation requires the application to invoke the discovery API, which is opt-in, and for the connection redirect, to act on the discovered items.<br><br>This issue affects Apache PLC4X: PLC4Go from 0.11.0 before 1.0.0; PLC4J ADS and Modbus drivers from 0.10.0 before 1.0.0; PLC4J EtherNet/IP driver from 0.11.0 before 1.0.0. PLC4Go is consumed as the Go module github.com/apache/plc4x/plc4go; versions refer to the corresponding Apache PLC4X releases.<br><br>Users are recommended to upgrade to version 1.0.0, which fixes the issue. Version 1.0.0 derives the connection address from the datagram's source address and logs a warning when the claimed AmsNetId disagrees with it.</pre></div>
+
+### References
+* https://lists.apache.org/thread.html/g692j4fklrbo80stjr5ll8xghrwszthf
+
+
+## Go binding: unbounded allocation and framing failures on wire-controlled lengths ## { #CVE-2026-102510 }
+
+CVE-2026-102510 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-102510) [\[CVE json\]](./CVE-2026-102510.cve.json)
+
+_Last updated: 2026-09-30T08:01:33.908Z_
+
+### Affected
+
+* Apache PLC4X from 0.11.0 before 1.0.0
+* Apache PLC4X at 1.0.0 unaffected
+
+
+### Description
+
+<div><pre>Integer Overflow, Improper Validation of Array Index, Uncontrolled Recursion and Memory Allocation with Excessive Size Value in the Go implementation of Apache PLC4X (PLC4Go) allow a malicious device, or an attacker able to inject network traffic, to crash or exhaust the memory of the client application,<br>causing a denial of service.<br><br>The individual defects are:<br>- Generated parsers pre-allocate arrays with the element count claimed on the wire (0.13.0 through 0.13.1).<br>- Transport read helpers allocate buffers of the size claimed on the wire without an upper bound.<br>- ADS and KNXnet/IP response handling indexes into received data without checking its length, causing a panic.<br>- ADS and EIP frame-length handling accepts, or arithmetically wraps to, a length of zero, breaking message framing.<br>- Recursive protocol types are parsed without a nesting-depth limit. The same defect in the Java implementation is covered by <a href="https://cveprocess.apache.org/cve5/CVE-2026-102509">CVE-2026-102509</a>.<br><br>Additionally, length and position arithmetic in generated serializers was performed in 16-bit integers. If an application forwards attacker-influenced payloads larger than 8 KB, the length field wraps, and the remainder of the payload may be interpreted by the receiving device (for example, an ADS PLC) as <br>additional, independent protocol messages.<br><br>This issue affects Apache PLC4X: from 0.11.0 before 1.0.0. PLC4Go is consumed as the Go module github.com/apache/plc4x/plc4go; versions refer to the corresponding Apache PLC4X releases.<br><br>Users are recommended to upgrade to version 1.0.0, which fixes the issue.</pre></div>
+
+### References
+* https://lists.apache.org/thread.html/lw66k49p1jf7w0p7h6yg6jqvysborxrs
+
+
+## Pre-authentication resource exhaustion in the OPC UA driver and the Java SPI parser ## { #CVE-2026-102509 }
+
+CVE-2026-102509 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-102509) [\[CVE json\]](./CVE-2026-102509.cve.json)
+
+_Last updated: 2026-09-30T08:00:24.079Z_
+
+### Affected
+
+* Apache PLC4X from 0.10.0 before 1.0.0
+* Apache PLC4X at 1.0.0 unaffected
+* Apache PLC4X from 0.10.0 before 1.0.0
+* Apache PLC4X at 1.0.0 unaffected
+
+
+### Description
+
+<div><pre>Memory Allocation with Excessive Size Value, Allocation of Resources Without Limits, and Uncontrolled Recursion in the Java implementation of Apache PLC4X (PLC4J) allow a malicious or impersonated device to exhaust the memory or stack of the client application, causing a denial of service.<br><br>In the OPC UA driver these defects are reachable before authentication: the offending data is parsed while the secure channel and session are being established, before the server's identity has been bound to it. Configuring a trusted server therefore does not prevent exploitation by an attacker who can <br>impersonate it.<br><br>The individual defects are:<br>- Length-prefixed byte strings are allocated at the size claimed on the wire before the length is checked against the data actually received (0.10.0 through 0.13.1).<br>- Array fields in generated protocol parsers pre-allocate a list with the element count claimed on the wire, allowing a single count field to trigger a multi-gigabyte allocation. This parser is shared by all PLC4J drivers; the OPC UA driver is the verified pre-authentication path (0.10.0 through 0.13.1).<br>- The OPC UA driver accumulates message chunks without enforcing the negotiated maximum chunk count and message size (0.12.0 through 0.13.1).<br>- The OPC UA driver pre-allocates collections using element counts received from the server (0.10.0 through 0.13.1).<br>- Recursive protocol types are parsed without a nesting-depth limit. The same defect in the Go implementation is covered by <a href="https://cveprocess.apache.org/cve5/CVE-2026-102510">CVE-2026-102510</a>.<br><br>This issue affects Apache PLC4X: from 0.10.0 before 1.0.0.<br><br>Users are recommended to upgrade to version 1.0.0, which fixes the issue.</pre></div>
+
+### References
+* https://lists.apache.org/thread.html/qngc85qhnlj7kpk3z58z0xlxhz2tn6gp
+
+
+### Credits
+* Abhinav Agarwal (finder)
+
+
+## OPC UA secure channel: integrity bypass, unverifiable server certificate, and silent downgrade ## { #CVE-2026-102508 }
+
+CVE-2026-102508 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-102508) [\[CVE json\]](./CVE-2026-102508.cve.json)
+
+_Last updated: 2026-09-30T07:42:15.685Z_
+
+### Affected
+
+* Apache PLC4X from 0.9.0 before 1.0.0
+* Apache PLC4X at 1.0.0 unaffected
+
+
+### Description
+
+<div><pre>Improper Verification of Cryptographic Signature and Improper Certificate Validation in the OPC UA driver of Apache PLC4X (PLC4J) allows an attacker in a network position between client and server to impersonate the OPC UA server and to read, forge or modify secure-channel traffic, including user credential ssent by the client.<br><br>The defect manifests differently depending on the version:<br>- In 0.9.0 through 0.11.0 a failed message-signature check is only logged and never enforced, and there is no mechanism to verify the server certificate: it is taken from the unauthenticated GetEndpoints discovery response and used to encrypt the user's password.<br>- In 0.12.0 through 0.13.1 the signature check is inverted (valid signatures are rejected, invalid ones accepted), and server certificates are accepted without a trust anchor by default.<br>- In all affected versions the default security policy is None. Starting with 0.12.0 the driver additionally continues silently at a weaker security policy than the one configured, and starting with 0.13.0 endpoint selection prefers the weakest matching endpoint.<br><br>Users checking only for one of these mechanisms may wrongly conclude they are unaffected.<br><br>This issue affects Apache PLC4X: from 0.9.0 before 1.0.0.<br><br>Users are recommended to upgrade to version 1.0.0, which fixes the issue. Version 1.0.0 verifies message signatures correctly, refuses to connect unless the server certificate can be verified against a configured trust store or pinned certificate, defaults to Basic256Sha256 with SignAndEncrypt, and fails the<br>connection if the negotiated security policy is weaker than the configured one.</pre></div>
+
+### References
+* https://lists.apache.org/thread.html/o076mcnsx6wnqpdy780m7s6hddbbnjfw
+
+
+### Credits
+* Abhinav Agarwal (finder)
+
+
 ## Apache PLC4X 0.9.0 Buffer overflow in PLC4C via crafted server response ## { #CVE-2021-43083 }
 
 CVE-2021-43083 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2021-43083) [\[CVE json\]](./CVE-2021-43083.cve.json) [\[OSV json\]](./CVE-2021-43083.osv.json)

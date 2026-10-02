@@ -266,7 +266,7 @@ known to be affected: from 8.5.88 through 8.5.100. Other unsupported versions ma
 
 CVE-2026-77762 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-77762) [\[CVE json\]](./CVE-2026-77762.cve.json)
 
-_Last updated: 2026-09-23T11:19:33.427Z_
+_Last updated: 2026-09-30T14:50:00.335Z_
 
 ### Affected
 
@@ -316,7 +316,7 @@ CVE-2026-76183 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-76183) [\[CVE jso
 
 
 
-_Last updated: 2026-09-23T12:19:53.548Z_
+_Last updated: 2026-09-30T14:54:20.446Z_
 
 ### Affected
 
@@ -373,7 +373,7 @@ known to be affected: from 8.5.0 through 8.5.100. Other unsupported versions may
 
 CVE-2026-73581 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73581) [\[CVE json\]](./CVE-2026-73581.cve.json)
 
-_Last updated: 2026-09-23T11:08:51.579Z_
+_Last updated: 2026-09-30T14:53:46.318Z_
 
 ### Affected
 

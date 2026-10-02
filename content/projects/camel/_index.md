@@ -23,6 +23,31 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Camel Quarkus: Forced Xalan TransformerFactory drops upstream external-DTD/stylesheet hardening ## { #CVE-2026-88789 }
+
+CVE-2026-88789 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-88789) [\[CVE json\]](./CVE-2026-88789.cve.json)
+
+_Last updated: 2026-10-01T10:51:21.371Z_
+
+### Affected
+
+* Apache Camel Quarkus from 3.2.0 before 3.33.3
+* Apache Camel Quarkus from 3.34.0 before 3.40.0
+* Apache Camel Quarkus at 3.33.3 unaffected
+* Apache Camel Quarkus at 3.40.0 unaffected
+
+
+### Description
+
+Improper Restriction of XML External Entity Reference in the XSLT support extension (camel-quarkus-support-xalan) in Apache Camel Quarkus from 3.2.0 before 3.33.3 and from 3.34.0 before 3.40.0 on all platforms allows an attacker who supplies the XML document being transformed to read local files or issue requests to internal network locations via an external entity declaration in that document.<br><br>The extension supplies its own Xalan-backed TransformerFactory to the xslt component and registers it as the JAXP default. Xalan-J 2.7.x predates JAXP 1.5 and does not honour javax.xml.XMLConstants.ACCESS_EXTERNAL_DTD or ACCESS_EXTERNAL_STYLESHEET, so the external access restrictions Apache Camel applies to the TransformerFactory it creates were not in effect. On the xslt component path this affects message bodies that reach the transformer already as a javax.xml.transform.Source; bodies of other types are converted to a SAXSource by Apache Camel with external entities and external DTD loading disabled, and are not affected. Because the factory is also the JAXP default, other code in the application obtaining one through TransformerFactory.newInstance() loses the same restrictions without error.<br><br>Applications are affected if they use any of camel-quarkus-xslt, camel-quarkus-xslt-saxon, camel-quarkus-tika or camel-quarkus-xmlsecurity, each of which brings the XSLT support extension onto the classpath. For all but camel-quarkus-xslt, the exposure is limited to the JAXP default factory, since those extensions do not perform XSLT transformations themselves.<br><br>Users are recommended to upgrade to version 3.33.3 or 3.40.0, which fixes this issue.
+
+### References
+* https://github.com/apache/camel-quarkus/commit/9a570b64977b0e24f85d67c2b2220aeac9fa5274
+* https://github.com/apache/camel-quarkus/commit/9dd11779580cd88e4ab01b23717cd0167f26155c
+* https://github.com/apache/camel-quarkus/issues/9115
+* https://camel.apache.org/security/CVE-2026-88789.html
+
+
 ## Camel K Builder trait mavenProfiles ValueSources resolve tenant-named secrets in operator namespace ## { #CVE-2026-80354 }
 
 CVE-2026-80354 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-80354) [\[CVE json\]](./CVE-2026-80354.cve.json) [\[OSV json\]](./CVE-2026-80354.osv.json)
