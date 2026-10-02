@@ -346,12 +346,13 @@ _Last updated: 2026-08-07T11:18:25.630Z_
 ### Affected
 
 * Apache CXF from 4.2.0 before 4.2.2
-* Apache CXF before 4.1.7
+* Apache CXF from 4.0.0 before 4.1.7
+* Apache CXF before 3.6.12
 
 
 ### Description
 
-There is no restriction on the amount of attachment headers that a message can contain when being deserialized by Apache CXF, which can lead to uncontrolled resource consumption or a denial of service attack.&nbsp;Users are recommended to upgrade to versions 4.2.2 or 4.1.7, which fix this issue by imposing a maximum default of 500 attachments per message.<br><br>
+There is no restriction on the amount of attachment headers that a message can contain when being deserialized by Apache CXF, which can lead to uncontrolled resource consumption or a denial of service attack.&nbsp;Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fix this issue by imposing a maximum default of 500 attachments per message.<br><br>
 
 ### References
 * https://lists.apache.org/thread/24zb7cqcvykhwm0j797dmdq25s61mj93

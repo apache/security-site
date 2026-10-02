@@ -24,7 +24,7 @@ CVE-2026-93546 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-93546) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T16:19:28.453Z_
+_Last updated: 2026-10-01T18:09:41.128Z_
 
 ### Affected
 
@@ -51,7 +51,7 @@ CVE-2026-79768 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-79768) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T16:18:53.716Z_
+_Last updated: 2026-10-01T18:09:32.928Z_
 
 ### Affected
 
@@ -76,7 +76,7 @@ CVE-2026-73637 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73637) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T16:18:26.310Z_
+_Last updated: 2026-10-01T18:10:04.383Z_
 
 ### Affected
 
@@ -102,7 +102,7 @@ CVE-2026-73636 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73636) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T16:17:55.618Z_
+_Last updated: 2026-10-01T18:08:43.949Z_
 
 ### Affected
 
@@ -127,7 +127,7 @@ CVE-2026-63718 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63718) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T16:17:02.467Z_
+_Last updated: 2026-10-01T18:08:35.939Z_
 
 ### Affected
 
@@ -152,7 +152,7 @@ CVE-2026-63686 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63686) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T16:20:09.491Z_
+_Last updated: 2026-10-01T18:09:49.175Z_
 
 ### Affected
 
@@ -178,7 +178,7 @@ CVE-2026-63292 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63292) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T16:11:43.801Z_
+_Last updated: 2026-10-01T18:08:30.015Z_
 
 ### Affected
 
@@ -204,7 +204,7 @@ CVE-2026-63045 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-63045) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T16:09:03.566Z_
+_Last updated: 2026-10-01T18:07:46.383Z_
 
 ### Affected
 
@@ -233,7 +233,7 @@ CVE-2026-59797 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59797) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T16:08:27.390Z_
+_Last updated: 2026-10-01T18:07:39.858Z_
 
 ### Affected
 
@@ -263,7 +263,7 @@ CVE-2026-59685 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59685) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T16:07:47.053Z_
+_Last updated: 2026-10-01T18:13:29.530Z_
 
 ### Affected
 
@@ -289,7 +289,7 @@ CVE-2026-58415 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58415) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T16:07:16.276Z_
+_Last updated: 2026-10-01T18:07:17.155Z_
 
 ### Affected
 
@@ -315,7 +315,7 @@ CVE-2026-57941 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-57941) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T16:06:48.131Z_
+_Last updated: 2026-10-01T18:07:11.886Z_
 
 ### Affected
 
@@ -342,7 +342,7 @@ CVE-2026-56449 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-56449) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T16:06:07.733Z_
+_Last updated: 2026-10-01T18:05:40.043Z_
 
 ### Affected
 
@@ -367,7 +367,7 @@ CVE-2026-56154 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-56154) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T16:03:48.404Z_
+_Last updated: 2026-10-01T18:05:30.919Z_
 
 ### Affected
 
@@ -392,7 +392,7 @@ CVE-2026-56153 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-56153) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T16:03:23.517Z_
+_Last updated: 2026-10-01T18:04:42.654Z_
 
 ### Affected
 
@@ -468,7 +468,7 @@ CVE-2026-48005 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48005) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T16:01:31.372Z_
+_Last updated: 2026-10-01T18:04:23.159Z_
 
 ### Affected
 
@@ -494,7 +494,7 @@ CVE-2026-47360 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-47360) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T16:00:47.581Z_
+_Last updated: 2026-10-01T18:03:21.063Z_
 
 ### Affected
 
@@ -519,7 +519,7 @@ CVE-2026-46729 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-46729) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T15:55:22.079Z_
+_Last updated: 2026-10-01T18:03:13.719Z_
 
 ### Affected
 
@@ -735,7 +735,7 @@ CVE-2026-42528 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-42528) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T15:52:47.109Z_
+_Last updated: 2026-10-01T18:03:01.309Z_
 
 ### Affected
 
@@ -760,7 +760,7 @@ CVE-2026-42356 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-42356) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T15:54:31.730Z_
+_Last updated: 2026-10-01T18:03:08.120Z_
 
 ### Affected
 

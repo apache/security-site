@@ -273,7 +273,7 @@ _Last updated: 2026-09-30T14:50:00.335Z_
 * Apache Tomcat from 11.0.0-M1 through 11.0.25
 * Apache Tomcat from 10.1.0-M1 through 10.1.59
 * Apache Tomcat from 9.0.39 through 9.0.121
-* Apache Tomcat from 8.56.59 through 8.5.100
+* Apache Tomcat from 8.5.59 through 8.5.100
 * Apache Tomcat through 7.0.109 unaffected
 
 
@@ -312,9 +312,7 @@ known to be affected: from 8.5.67 through 8.5.100. Other unsupported versions ma
 
 ## Bypass of security constraints for WebSocket endpoints ## { #CVE-2026-76183 }
 
-CVE-2026-76183 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-76183) [\[CVE json\]](./CVE-2026-76183.cve.json) [\[OSV json\]](./CVE-2026-76183.osv.json)
-
-
+CVE-2026-76183 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-76183) [\[CVE json\]](./CVE-2026-76183.cve.json)
 
 _Last updated: 2026-09-30T14:54:20.446Z_
 
@@ -325,7 +323,7 @@ _Last updated: 2026-09-30T14:54:20.446Z_
 * Apache Tomcat from 9.0.0.M1 through 9.0.121
 * Apache Tomcat from 8.5.0 through 8.5.100
 * Apache Tomcat from 7.0.43 through 7.0.109
-* Apache Tomcat before 7.0.43
+* Apache Tomcat before 7.0.43 unaffected
 
 
 ### Description
@@ -380,13 +378,13 @@ _Last updated: 2026-09-30T14:53:46.318Z_
 * Apache Tomcat from 11.0.0-M1 through 11.0.25
 * Apache Tomcat from 10.1.0-M1 through 10.1.59
 * Apache Tomcat from 9.0.0.M1 through 9.0.121
-* Apache Tomcat from 8.5.0 through 8.50.100
-* Apache Tomcat through 8.5.0 unaffected
+* Apache Tomcat from 8.5.0 through 8.5.100
+* Apache Tomcat before 8.5.0 unaffected
 
 
 ### Description
 
-<p>Improper Check for Certificate Revocation vulnerability in Apache Tomcat. Both the OpenSSL and OpenSSL-FFM TLS implementations ignore CRLs when certificate uses a keystore.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.25, from 10.1.0-M1 through 10.1.58, from 9.0.0-M1 through 9.0.121.</p><p>The following versions were EOL at the time the CVE was created but are 
+<p>Improper Check for Certificate Revocation vulnerability in Apache Tomcat. Both the OpenSSL and OpenSSL-FFM TLS implementations ignore CRLs when certificate uses a keystore.</p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.25, from 10.1.0-M1 through 10.1.59, from 9.0.0-M1 through 9.0.121.</p><p>The following versions were EOL at the time the CVE was created but are 
 known to be affected: from 8.5.0 through 8.5.100.&nbsp;Other unsupported versions may also be affected.</p><p>Users are recommended to upgrade to version 11.0.26, 10.1.59, 9.0.122, which fixes the issue.</p>
 
 ### References
@@ -466,7 +464,7 @@ _Last updated: 2026-09-21T11:06:10.114Z_
 * Apache Tomcat from 10.1.0-M1 through 10.1.57
 * Apache Tomcat from 9.0.0.M1 through 9.0.120
 * Apache Tomcat from 8.5.0 through 8.5.100
-* Apache Tomcat from 7.0.0 through 70.109
+* Apache Tomcat from 7.0.0 through 7.0.109
 * Apache Tomcat before 7.0.0 unknown
 
 

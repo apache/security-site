@@ -281,7 +281,7 @@ _Last updated: 2026-08-21T20:11:10.266Z_
 
 ### Description
 
-<p>Hostname verification bypass issue in Apache Ranger NiFiRegistryClient/NiFiClient is reported in Apache Ranger versions &lt;= 2.7.0.</p>Users are recommended to upgrade to version 2.8.0, which fixes this issue.
+<p>Hostname verification bypass issue in Apache Ranger NiFiRegistryClient is reported in Apache Ranger versions &lt;= 2.7.0.</p>Users are recommended to upgrade to version 2.8.0, which fixes this issue.
 
 ### References
 * https://lists.apache.org/thread/c4plx81z3xs86vgl3fd95y3q7hhtff05

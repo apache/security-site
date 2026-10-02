@@ -65,7 +65,7 @@ _Last updated: 2026-08-13T08:52:34.618Z_
 
 
 ### Credits
-* Yu Bao <by111@126.com> (finder)
+* Yu Bao from PayPal Cyber Security Team (finder)
 
 
 ## HPackDecoder Unlimited Header List Size Before SETTINGS ACK ## { #CVE-2026-54428 }
