@@ -112,264 +112,393 @@
 </ul>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-95616">Unauthenticated denial of service via integer overflow in DER parsing of X.509 certificate extensions</h2>
+<p>CVE-2026-95616 <a href="https://cve.org/CVERecord?id=CVE-2026-95616">[CVE]</a> <a href="./CVE-2026-95616.cve.json">[CVE json]</a> <a href="./CVE-2026-95616.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-30T12:25:24.410Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache WSS4J from 4.0.0 before 4.0.2</li>
+<li>Apache WSS4J from 3.0.0 before 3.0.6</li>
+<li>Apache WSS4J before 2.4.4</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>An integer overflow in WSS4J&rsquo;s DER bounds check lets an oversized allocation pass validation. An unauthenticated attacker can send a SOAP message carrying an X.509 certificate whose SubjectKeyIdentifier extension declares a length of <code>0x7FFFFFFF</code>; WSS4J decodes this while resolving the signature&rsquo;s key reference, before the message is authenticated, so an eleven-byte extension triggers a 2 GB allocation. Repeated requests exhaust server memory.<br>Users are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4, which fix this issue.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/sdf0fsphkg4qbj7nh2brjgwvcmd67hct">https://lists.apache.org/thread.html/sdf0fsphkg4qbj7nh2brjgwvcmd67hct</a></li>
+</ul>
+<h2 id="CVE-2026-92899">UsernameToken replay protection bypassed by re-encoding the Nonce</h2>
+<p>CVE-2026-92899 <a href="https://cve.org/CVERecord?id=CVE-2026-92899">[CVE]</a> <a href="./CVE-2026-92899.cve.json">[CVE json]</a> <a href="./CVE-2026-92899.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-30T12:02:37.412Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache WSS4J from 4.0.0 before 4.0.2</li>
+<li>Apache WSS4J from 3.0.0 before 3.0.6</li>
+<li>Apache WSS4J before 2.4.4</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Apache WSS4J remembers the Nonce of each UsernameToken it accepts, so a captured token cannot be reused. It stored the Nonce as raw base64 text, but authentication decodes that text and uses the bytes.<span>The same bytes can be written as base64 in several ways. An attacker who captured an authenticated request could re-send it with a space added to the Nonce: the password digest still verified, but the token no longer matched the remembered one, so the replay was accepted. Since a UsernameToken does not cover the message body, the captured token could then be reused on requests of the attacker's choosing until it expired. Affects deployments with a nonce replay cache configured, as Apache CXF has by default, and only tokens using a password digest. The cache is now keyed on the decoded Nonce.&nbsp;</span><span>Users are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4, which fix this issue.</span></p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/nrzngsz1xm2lztq3t873663xx9wnrwm7">https://lists.apache.org/thread.html/nrzngsz1xm2lztq3t873663xx9wnrwm7</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Reported by n0mi1k (finder)</li>
+</ul>
+<h2 id="CVE-2026-92121">WS-SecurityPolicy signature checks skipped in the streaming code after an STR-Transform reference</h2>
+<p>CVE-2026-92121 <a href="https://cve.org/CVERecord?id=CVE-2026-92121">[CVE]</a> <a href="./CVE-2026-92121.cve.json">[CVE json]</a> <a href="./CVE-2026-92121.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-30T12:01:51.419Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache WSS4J from 4.0.0 before 4.0.2</li>
+<li>Apache WSS4J from 3.0.0 before 3.0.6</li>
+<li>Apache WSS4J before 2.4.4</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>In the WSS4J streaming (StAX) code, a signature reference using the WS-Security STR-Transform leaves an internal &ldquo;inside signed content&rdquo; flag permanently set. The WS-SecurityPolicy enforcer uses that flag to decide whether an element needs checking, so it stops evaluating <code>SignedParts</code> and <code>SignedElements</code> for the rest of the message. A policy requiring the SOAP Body to be signed is then satisfied even when the Body carries no signature, removing the protection against XML Signature Wrapping. Signature verification itself is unaffected. The DOM code is not affected. <br>Users are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4 which fix this issue.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/oop9p4hpl5o9byosb1qg3z7q1sgnn4pc">https://lists.apache.org/thread.html/oop9p4hpl5o9byosb1qg3z7q1sgnn4pc</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Reported by n0mi1k (finder)</li>
+</ul>
 <h2 id="CVE-2026-91867">Remote policy fetch lacks a total timeout, allowing a slow server to hang the request indefinitely</h2>
 <p>CVE-2026-91867 <a href="https://cve.org/CVERecord?id=CVE-2026-91867">[CVE]</a> <a href="./CVE-2026-91867.cve.json">[CVE json]</a> <a href="./CVE-2026-91867.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-09-21T11:27:43.899Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache Neethi before 3.2.4</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>When Neethi fetches a remote policy reference, it only limits the time per read, not the whole transfer, so a server that trickles bytes slowly can keep the fetch alive indefinitely and tie up the calling thread (denial of service).<br>Users are recommended to upgrade to version 3.2.4, which fixes this issue.</p>
-<h3 id="references">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/dsr2ktf199mqhw2jtlbklyz7tzd86ycd">https://lists.apache.org/thread/dsr2ktf199mqhw2jtlbklyz7tzd86ycd</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-2">Credits</h3>
 <ul>
 <li>This issue was found using Claude agents to study the security of open-source projects (finder)</li>
 </ul>
 <h2 id="CVE-2026-91866">Crafted policies cause unbounded work during intersection leading to denial of service</h2>
 <p>CVE-2026-91866 <a href="https://cve.org/CVERecord?id=CVE-2026-91866">[CVE]</a> <a href="./CVE-2026-91866.cve.json">[CVE json]</a> <a href="./CVE-2026-91866.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-09-21T11:27:14.661Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-4">Affected</h3>
 <ul>
 <li>Apache Neethi before 3.2.4</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-4">Description</h3>
 <p>A specially crafted pair of WS-Policy documents can force Neethi&rsquo;s policy-intersection to do exponential amounts of work, pinning the CPU for a long time (denial of service).<br>Users are recommended to upgrade to version 3.2.4, which fixes this issue.</p>
-<h3 id="references-1">References</h3>
+<h3 id="references-4">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/zbfxnomgvbmqchqjgc6lk5h0z76k3gh4">https://lists.apache.org/thread/zbfxnomgvbmqchqjgc6lk5h0z76k3gh4</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-3">Credits</h3>
 <ul>
 <li>This issue was found using Claude agents to study the security of open-source projects (finder)</li>
 </ul>
 <h2 id="CVE-2026-91865">Crafted policy references cause exponential expansion during normalization leading to denial of service</h2>
 <p>CVE-2026-91865 <a href="https://cve.org/CVERecord?id=CVE-2026-91865">[CVE]</a> <a href="./CVE-2026-91865.cve.json">[CVE json]</a> <a href="./CVE-2026-91865.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-09-21T11:26:51.403Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-5">Affected</h3>
 <ul>
 <li>Apache Neethi before 3.2.4</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-5">Description</h3>
 <p>A small WS-Policy document using repeated policy references can force Neethi to re-expand the same references exponentially during normalization, consuming huge amounts of CPU and memory (denial of service).<br>Users are recommended to upgrade to version 3.2.4, which fixes this issue.</p>
-<h3 id="references-2">References</h3>
+<h3 id="references-5">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/l48btqh02rlpsgf5p6r5ltqk1cb69dtc">https://lists.apache.org/thread/l48btqh02rlpsgf5p6r5ltqk1cb69dtc</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-4">Credits</h3>
 <ul>
 <li>This issue was found using Claude agents to study the security of open-source projects (finder)</li>
 </ul>
 <h2 id="CVE-2026-91864">Crafted WS-Policy documents bypass element/attribute limits causing memory exhaustion</h2>
 <p>CVE-2026-91864 <a href="https://cve.org/CVERecord?id=CVE-2026-91864">[CVE]</a> <a href="./CVE-2026-91864.cve.json">[CVE json]</a> <a href="./CVE-2026-91864.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-09-21T11:26:18.944Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-6">Affected</h3>
 <ul>
 <li>Apache Neethi before 3.2.4</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-6">Description</h3>
 <p>A specially crafted WS-Policy document can pack unlimited content inside a policy assertion, which Neethi copies into memory without counting it against its size limits, exhausting the heap (denial of service).<br>Users are recommended to upgrade to version 3.2.4, which fixes this issue.</p>
-<h3 id="references-3">References</h3>
+<h3 id="references-6">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/400kbynbyhqhsjkv1yz251jm9wdz8z69">https://lists.apache.org/thread/400kbynbyhqhsjkv1yz251jm9wdz8z69</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits-5">Credits</h3>
 <ul>
 <li>This issue was found using Claude agents to study the security of open-source projects (finder)</li>
 </ul>
 <h2 id="CVE-2026-91863">Uncontrolled recursion while parsing crafted WS-Policy documents allows denial of service</h2>
 <p>CVE-2026-91863 <a href="https://cve.org/CVERecord?id=CVE-2026-91863">[CVE]</a> <a href="./CVE-2026-91863.cve.json">[CVE json]</a> <a href="./CVE-2026-91863.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-09-21T11:25:25.043Z</em></p>
-<h3 id="affected-4">Affected</h3>
+<h3 id="affected-7">Affected</h3>
 <ul>
 <li>Apache Neethi before 3.2.4</li>
 </ul>
-<h3 id="description-4">Description</h3>
+<h3 id="description-7">Description</h3>
 <p>A specially crafted WS-Policy document with deeply nested policy elements can bypass Neethi&rsquo;s nesting-depth limit and exhaust the thread stack, crashing the parser (denial of service).<br>Users are recommended to upgrade to version 3.2.4, which fixes this issue.</p>
-<h3 id="references-4">References</h3>
+<h3 id="references-7">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/72kxj71lvrqqx90xxqqctvpbw0t8mpxw">https://lists.apache.org/thread/72kxj71lvrqqx90xxqqctvpbw0t8mpxw</a></li>
 </ul>
-<h3 id="credits-4">Credits</h3>
+<h3 id="credits-6">Credits</h3>
 <ul>
 <li>This issue was found using Claude agents to study the security of open-source projects (finder)</li>
+</ul>
+<h2 id="CVE-2026-89238">WSS4J EncryptedHeader child confusion causing wrong protected-header selection</h2>
+<p>CVE-2026-89238 <a href="https://cve.org/CVERecord?id=CVE-2026-89238">[CVE]</a> <a href="./CVE-2026-89238.cve.json">[CVE json]</a> <a href="./CVE-2026-89238.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-30T11:59:03.446Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache WSS4J from 4.0.0 before 4.0.2</li>
+<li>Apache WSS4J from 3.0.0 before 3.0.6</li>
+<li>Apache WSS4J before 2.4.4</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>WSS4J EncryptedHeader child confusion could promote an attacker-controlled plaintext element as the decrypted header, leading to incorrect confidentiality coverage and possible policy bypass.<br>Users are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4, which fix this issue.</p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/1lv4hpl8kon1ns5txjnhn2m2sh9rl22w">https://lists.apache.org/thread.html/1lv4hpl8kon1ns5txjnhn2m2sh9rl22w</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>Reported by n0mi1k (finder)</li>
+</ul>
+<h2 id="CVE-2026-88920">SAML Sender-Vouches Authentication Bypass</h2>
+<p>CVE-2026-88920 <a href="https://cve.org/CVERecord?id=CVE-2026-88920">[CVE]</a> <a href="./CVE-2026-88920.cve.json">[CVE json]</a> <a href="./CVE-2026-88920.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-30T11:57:51.366Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache WSS4J from 4.0.0 before 4.0.2</li>
+<li>Apache WSS4J from 3.0.0 before 3.0.6</li>
+<li>Apache WSS4J before 2.4.4</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>An authentication bypass in the DOM security processor in Apache WSS4J allows unauthenticated remote attackers to forge authenticated SOAP messages via a crafted unsigned SAML sender-vouches assertion containing an attacker-controlled key.<br><br>Users are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4, which fix this issue.</p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/grt43m3bgbzz0mk0cnho3rcybb1j01z9">https://lists.apache.org/thread.html/grt43m3bgbzz0mk0cnho3rcybb1j01z9</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>Reported by n0mi1k (finder)</li>
+</ul>
+<h2 id="CVE-2026-87830">Streaming WS-SecurityPolicy validation may skip element-protection checks.</h2>
+<p>CVE-2026-87830 <a href="https://cve.org/CVERecord?id=CVE-2026-87830">[CVE]</a> <a href="./CVE-2026-87830.cve.json">[CVE json]</a> <a href="./CVE-2026-87830.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-30T11:56:54.179Z</em></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache WSS4J from 4.0.0 before 4.0.2</li>
+<li>Apache WSS4J from 3.0.0 before 3.0.6</li>
+<li>Apache WSS4J before 2.4.4</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<p>In the StAX streaming WS-SecurityPolicy validator, certain relative or unsupported XPath expressions can be converted into paths that never match the actual XML element path. A remote SOAP peer may therefore send a required element without the expected signature or encryption.<div><br>Users are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4, which fix this issue.</div></p>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/lwlozb1x20d16f9dnyvoygc9rrhzq2vn">https://lists.apache.org/thread.html/lwlozb1x20d16f9dnyvoygc9rrhzq2vn</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>Reported by n0mi1k (finder)</li>
+</ul>
+<h2 id="CVE-2026-85532">Insufficient Validation of Derived-Key Parameters</h2>
+<p>CVE-2026-85532 <a href="https://cve.org/CVERecord?id=CVE-2026-85532">[CVE]</a> <a href="./CVE-2026-85532.cve.json">[CVE json]</a> <a href="./CVE-2026-85532.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-09-30T11:55:32.052Z</em></p>
+<h3 id="affected-11">Affected</h3>
+<ul>
+<li>Apache WSS4J from 4.0.0 before 4.0.2</li>
+<li>Apache WSS4J from 3.0.0 before 3.0.6</li>
+<li>Apache WSS4J before 2.4.4</li>
+</ul>
+<h3 id="description-11">Description</h3>
+<p>Apache WSS4J accepted attacker-controlled derived-key lengths and offsets without adequate bounds. This could permit cryptographically weak keys or excessive CPU and memory consumption when processing crafted WS-Security messages. The fixes enforce a minimum key length of 16 bytes, a maximum length of 512 bytes, and a maximum offset of 4096 bytes.<div><br>Users are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4, which fix this issue.</div></p>
+<h3 id="references-11">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/7jllcpbf4nbzhdp2vchz5yplnl5w6vd6">https://lists.apache.org/thread.html/7jllcpbf4nbzhdp2vchz5yplnl5w6vd6</a></li>
+</ul>
+<h3 id="credits-10">Credits</h3>
+<ul>
+<li>This issue was independently reported by Ho1aAs (GitHub: @HolaAsuka) and also found using Claude agents to study the security of open-source projects (finder)</li>
 </ul>
 <h2 id="CVE-2026-66144">Remote PolicyReference fetch lacks resource bounds</h2>
 <p>CVE-2026-66144 <a href="https://cve.org/CVERecord?id=CVE-2026-66144">[CVE]</a> <a href="./CVE-2026-66144.cve.json">[CVE json]</a> <a href="./CVE-2026-66144.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-07-24T12:08:26.736Z</em></p>
-<h3 id="affected-5">Affected</h3>
+<h3 id="affected-12">Affected</h3>
 <ul>
 <li>Apache Neethi before 3.2.3</li>
 </ul>
-<h3 id="description-5">Description</h3>
+<h3 id="description-12">Description</h3>
 <p>Although remote policy references are not retrieved during policy normalization, if they are manually retrieved via the API it can cause a denial of service attack if a huge policy is retrieved. Users are recommended to upgrade to version 3.2.3, which fixes this issue by imposing a default maximum size on data read from remote policy references.</p>
-<h3 id="references-5">References</h3>
+<h3 id="references-12">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/80xwwbhkqvbwkkmco6yl6fr5xkpdysjf">https://lists.apache.org/thread/80xwwbhkqvbwkkmco6yl6fr5xkpdysjf</a></li>
 </ul>
-<h3 id="credits-5">Credits</h3>
+<h3 id="credits-11">Credits</h3>
 <ul>
 <li>Reported by LTSHFWJT (finder)</li>
 </ul>
 <h2 id="CVE-2026-66143">Missing global alternative-output budget across policy computation paths</h2>
 <p>CVE-2026-66143 <a href="https://cve.org/CVERecord?id=CVE-2026-66143">[CVE]</a> <a href="./CVE-2026-66143.cve.json">[CVE json]</a> <a href="./CVE-2026-66143.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-07-24T12:07:51.381Z</em></p>
-<h3 id="affected-6">Affected</h3>
+<h3 id="affected-13">Affected</h3>
 <ul>
 <li>Apache Neethi before 3.2.3</li>
 </ul>
-<h3 id="description-6">Description</h3>
+<h3 id="description-13">Description</h3>
 <p>It is possible to bypass the <span style="background-color: rgb(255, 255, 255);">maximum number of normalized policy alternatives that was introduced in Apache Neethi 3.2.2 via certain crafted policies, which may lead to a denial of service attack via resource consumption. </span>Users are recommended to upgrade to version 3.2.3, which fixes this issue.</p>
-<h3 id="references-6">References</h3>
+<h3 id="references-13">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/s6o6p5pvcbcsk54dlg6j699t5gxol28w">https://lists.apache.org/thread/s6o6p5pvcbcsk54dlg6j699t5gxol28w</a></li>
 </ul>
-<h3 id="credits-6">Credits</h3>
+<h3 id="credits-12">Credits</h3>
 <ul>
 <li>Reported by LTSHFWJT (finder)</li>
 </ul>
 <h2 id="CVE-2026-66142">Uncontrolled recursion in policy processing</h2>
 <p>CVE-2026-66142 <a href="https://cve.org/CVERecord?id=CVE-2026-66142">[CVE]</a> <a href="./CVE-2026-66142.cve.json">[CVE json]</a> <a href="./CVE-2026-66142.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-07-24T12:07:24.609Z</em></p>
-<h3 id="affected-7">Affected</h3>
+<h3 id="affected-14">Affected</h3>
 <ul>
 <li>Apache Neethi before 3.2.3</li>
 </ul>
-<h3 id="description-7">Description</h3>
+<h3 id="description-14">Description</h3>
 <p>Apache Neethi is vulnerable to uncontrolled recursion when parsing policies that lack policy Ids or with deeply nested structures, which may lead to a denial of service attack when parsing policies due to runtime memory exhaustion. Users are recommended to upgrade to version 3.2.3, which fixes this issue.</p>
-<h3 id="references-7">References</h3>
+<h3 id="references-14">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/fomwtwt4pzzhxn4fyn3skykto913vfzt">https://lists.apache.org/thread/fomwtwt4pzzhxn4fyn3skykto913vfzt</a></li>
 </ul>
-<h3 id="credits-7">Credits</h3>
+<h3 id="credits-13">Credits</h3>
 <ul>
 <li>Reported by LTSHFWJT (finder)</li>
 </ul>
 <h2 id="CVE-2026-42404">Unrestricted HTTP Redirect Following in Policy References</h2>
 <p>CVE-2026-42404 <a href="https://cve.org/CVERecord?id=CVE-2026-42404">[CVE]</a> <a href="./CVE-2026-42404.cve.json">[CVE json]</a> <a href="./CVE-2026-42404.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-01T09:46:48.474Z</em></p>
-<h3 id="affected-8">Affected</h3>
+<h3 id="affected-15">Affected</h3>
 <ul>
 <li>Apache Neethi before 3.2.2</li>
 </ul>
-<h3 id="description-8">Description</h3>
+<h3 id="description-15">Description</h3>
 <p>Apache Neethi does not impose any restrictions on URIs when manually fetching remote policy references through the PolicyReference API. When an application explicitly calls the API to retrieve a policy from a remote URI, an outbound request is made for arbitrary protocols and internal IP adddresses. From 3.2.2, only http or https URIs are allowed, and link-local/multicast/any-local addresses are forbidden.<br><br>Users are recommended to upgrade to version 3.2.2, which fixes this issue.</p>
-<h3 id="references-8">References</h3>
+<h3 id="references-15">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/zdspnt64zznyjyn648553kptx69w23oq">https://lists.apache.org/thread/zdspnt64zznyjyn648553kptx69w23oq</a></li>
 </ul>
 <h2 id="CVE-2026-42403">Circular Policy Reference Infinite Loop</h2>
 <p>CVE-2026-42403 <a href="https://cve.org/CVERecord?id=CVE-2026-42403">[CVE]</a> <a href="./CVE-2026-42403.cve.json">[CVE json]</a> <a href="./CVE-2026-42403.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-01T09:36:06.796Z</em></p>
-<h3 id="affected-9">Affected</h3>
+<h3 id="affected-16">Affected</h3>
 <ul>
 <li>Apache Neethi before 3.2.2</li>
 </ul>
-<h3 id="description-9">Description</h3>
+<h3 id="description-16">Description</h3>
 <p>Apache Neethi does not properly detect circular references in policy definitions. When a WS-Policy document contains circular policy references (where Policy A references Policy B which references Policy A), the policy normalization process can enter an infinite loop or cause excessive recursion, leading to a stack overflow or application hang. An attacker can craft malicious policy documents with circular references to cause a Denial of Service condition<br><br>Users are recommended to upgrade to version 3.2.2, which fixes this issue.</p>
-<h3 id="references-9">References</h3>
+<h3 id="references-16">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/zm6t8skkkskjwk1881l4m4n0l7dqclzo">https://lists.apache.org/thread/zm6t8skkkskjwk1881l4m4n0l7dqclzo</a></li>
 </ul>
 <h2 id="CVE-2026-42402">Policy Normalization Unbounded Resource Allocation DoS</h2>
 <p>CVE-2026-42402 <a href="https://cve.org/CVERecord?id=CVE-2026-42402">[CVE]</a> <a href="./CVE-2026-42402.cve.json">[CVE json]</a> <a href="./CVE-2026-42402.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-01T09:35:22.670Z</em></p>
-<h3 id="affected-10">Affected</h3>
+<h3 id="affected-17">Affected</h3>
 <ul>
 <li>Apache Neethi before 3.2.2</li>
 </ul>
-<h3 id="description-10">Description</h3>
+<h3 id="description-17">Description</h3>
 <p>Apache Neethi is vulnerable to a Denial of Service attack through algorithmic complexity in policy normalization. Specially crafted WS-Policy documents can trigger an exponential Cartesian cross-product expansion during the normalization process, causing unbounded memory allocation that exhausts the JVM heap. This occurs when the normalization process generates an excessive number of policy alternatives without bounds, leading to runtime memory exhaustion.<br><br>Users should upgrade to 3.2.2 which limits the maximum number of normalized policy alternatives.</p>
-<h3 id="references-10">References</h3>
+<h3 id="references-17">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/p826j0phhmr9f83wzpmys1y0bdfrr2q4">https://lists.apache.org/thread/p826j0phhmr9f83wzpmys1y0bdfrr2q4</a></li>
 </ul>
 <h2 id="CVE-2026-102497">Denial of service through cyclic schema definitions in the schema walker</h2>
 <p>CVE-2026-102497 <a href="https://cve.org/CVERecord?id=CVE-2026-102497">[CVE]</a> <a href="./CVE-2026-102497.cve.json">[CVE json]</a> <a href="./CVE-2026-102497.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-09-29T11:34:15.228Z</em></p>
-<h3 id="affected-11">Affected</h3>
+<h3 id="affected-18">Affected</h3>
 <ul>
 <li>Apache XMLSchema before 2.3.3</li>
 </ul>
-<h3 id="description-11">Description</h3>
+<h3 id="description-18">Description</h3>
 <p>The Apache XmlSchema walker (xmlschema-walker) doesn't detect cycles in type derivation, substitution groups, model groups or attribute groups. A malicious schema with such a cycle can make the walker recurse until the stack overflows, causing a denial of service.<br><br>Users are recommended to upgrade to version 2.3.3, which fixes this issue.</p>
-<h3 id="references-11">References</h3>
+<h3 id="references-18">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/1cj02tobjyhjqq723bvg78yxkqt1lk7k">https://lists.apache.org/thread/1cj02tobjyhjqq723bvg78yxkqt1lk7k</a></li>
 </ul>
-<h3 id="credits-8">Credits</h3>
+<h3 id="credits-14">Credits</h3>
 <ul>
 <li>This issue was found using Claude agents to study the security of open-source projects (finder)</li>
 </ul>
 <h2 id="CVE-2026-102496">Denial of service through deeply nested schema structures</h2>
 <p>CVE-2026-102496 <a href="https://cve.org/CVERecord?id=CVE-2026-102496">[CVE]</a> <a href="./CVE-2026-102496.cve.json">[CVE json]</a> <a href="./CVE-2026-102496.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-09-29T11:34:02.943Z</em></p>
-<h3 id="affected-12">Affected</h3>
+<h3 id="affected-19">Affected</h3>
 <ul>
 <li>Apache XMLSchema before 2.3.3</li>
 </ul>
-<h3 id="description-12">Description</h3>
+<h3 id="description-19">Description</h3>
 <p>Apache XmlSchema doesn&rsquo;t limit how deeply schema structures can be nested when it builds its schema model, so a malicious schema can make parsing recurse until the stack overflows. This causes a denial of service.<br>Users are recommended to upgrade to version 2.3.3, which fixes this issue.</p>
-<h3 id="references-12">References</h3>
+<h3 id="references-19">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/9z1vg8wmvwpfw748fb2nb55w4hgbnxol">https://lists.apache.org/thread/9z1vg8wmvwpfw748fb2nb55w4hgbnxol</a></li>
 </ul>
-<h3 id="credits-9">Credits</h3>
+<h3 id="credits-15">Credits</h3>
 <ul>
 <li>This issue was found using Claude agents to study the security of open-source projects (finder)</li>
 </ul>
 <h2 id="CVE-2026-102495">Denial of service through unbounded recursion when resolving schema imports and includes</h2>
 <p>CVE-2026-102495 <a href="https://cve.org/CVERecord?id=CVE-2026-102495">[CVE]</a> <a href="./CVE-2026-102495.cve.json">[CVE json]</a> <a href="./CVE-2026-102495.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-09-29T11:33:50.143Z</em></p>
-<h3 id="affected-13">Affected</h3>
+<h3 id="affected-20">Affected</h3>
 <ul>
 <li>Apache XMLSchema before 2.3.3</li>
 </ul>
-<h3 id="description-13">Description</h3>
+<h3 id="description-20">Description</h3>
 <p>Apache XmlSchema doesn&rsquo;t limit how deeply schema imports and includes can be nested, so a malicious schema can make parsing recurse until the stack overflows. This causes a denial of service.<br>Users are recommended to upgrade to version 2.3.3, which fixes this issue.</p>
-<h3 id="references-13">References</h3>
+<h3 id="references-20">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/l339q3oldm0cd2lph4b6f93fd07x9g6s">https://lists.apache.org/thread/l339q3oldm0cd2lph4b6f93fd07x9g6s</a></li>
 </ul>
-<h3 id="credits-10">Credits</h3>
+<h3 id="credits-16">Credits</h3>
 <ul>
 <li>This issue was found using Claude agents to study the security of open-source projects (finder)</li>
 </ul>
 <h2 id="CVE-2022-45378">Apache SOAP allows unauthenticated users to potentially invoke arbitrary code</h2>
 <p>CVE-2022-45378 <a href="https://cve.org/CVERecord?id=CVE-2022-45378">[CVE]</a> <a href="./CVE-2022-45378.cve.json">[CVE json]</a></p>
 <p><em>Last updated: 2022-11-14T14:06:51.577Z</em></p>
-<h3 id="affected-14">Affected</h3>
+<h3 id="affected-21">Affected</h3>
 <ul>
 <li>Apache SOAP at 2.3</li>
 <li>Apache SOAP from Apache SOAP before 2.3 unknown</li>
 </ul>
-<h3 id="description-14">Description</h3>
+<h3 id="description-21">Description</h3>
 <p>In the default configuration of Apache SOAP, an RPCRouterServlet is available without authentication. This gives an attacker the possibility to invoke methods on the classpath that meet certain criteria. Depending on what classes are available on the classpath this might even lead to arbitrary remote code execution. NOTE: This vulnerability only affects products that are no longer supported by the maintainer</p>
-<h3 id="references-14">References</h3>
+<h3 id="references-21">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/g4l64s283njhnph2otx7q4gs2j952d31">https://lists.apache.org/thread/g4l64s283njhnph2otx7q4gs2j952d31</a></li>
 </ul>
-<h3 id="credits-11">Credits</h3>
+<h3 id="credits-17">Credits</h3>
 <ul>
 <li>Apache would like to thank TsungShu Chiu (CHT Security) for reporting this issue</li>
 </ul>
 <h2 id="CVE-2022-40705">Apache SOAP: XML External Entity Injection (XXE) allows unauthenticated users to read arbitrary files via HTTP</h2>
 <p>CVE-2022-40705 <a href="https://cve.org/CVERecord?id=CVE-2022-40705">[CVE]</a> <a href="./CVE-2022-40705.cve.json">[CVE json]</a> <a href="./CVE-2022-40705.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-09-22T08:11:36.490Z</em></p>
-<h3 id="affected-15">Affected</h3>
+<h3 id="affected-22">Affected</h3>
 <ul>
 <li>Apache SOAP from 2.2 before Apache SOAP*</li>
 </ul>
-<h3 id="description-15">Description</h3>
+<h3 id="description-22">Description</h3>
 <p>An Improper Restriction of XML External Entity Reference vulnerability in RPCRouterServlet of Apache SOAP allows an attacker to read arbitrary files over HTTP. This issue affects Apache SOAP version 2.2 and later versions. It is unknown whether previous versions are also affected.  NOTE: This vulnerability only affects products that are no longer supported by the maintainer</p>
-<h3 id="references-15">References</h3>
+<h3 id="references-22">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/02yo04w93rdjmllz4454lvodn5xzhwhl">https://lists.apache.org/thread/02yo04w93rdjmllz4454lvodn5xzhwhl</a></li>
 </ul>
-<h3 id="credits-12">Credits</h3>
+<h3 id="credits-18">Credits</h3>
 <ul>
 <li>Apache would like to thank TsungShu Chiu (CHT Security) for reporting this issue</li>
 </ul>
