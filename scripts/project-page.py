@@ -263,7 +263,7 @@ layout: single
             "dataType": cve['dataType'],
             "dataVersion": cve['dataVersion'],
           }
-          json.dump(cve_doc, cveFile, ensure_ascii=True, indent=2)
+          json.dump(cve_doc, cveFile, ensure_ascii=True, indent=2, sort_keys=True)
 
         has_osv = True
         if subprocess.call(['./cve2osv.py', staticdir + cve_id + '.cve.json', staticdir + cve_id + '.osv.json']) != 0:
