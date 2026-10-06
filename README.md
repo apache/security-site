@@ -42,3 +42,17 @@ continuously generate and serve the website on `localhost:1313`.
 ## Publish the website
 
 A [Jenkins job](https://ci-builds.apache.org/job/Security/job/site/job/main/) automatically builds all merges to `main` and commits the generated site to the `asf-site` branch.
+
+## Scripts
+
+The `scripts/` directory contains the tools used to generate the project pages and advisories.
+Run them from the `scripts/` directory; `nix-shell` (see `scripts/shell.nix`) provides their dependencies.
+
+- `fetch-data.sh` downloads the CVE advisory index from `cveprocess.apache.org` and project metadata from `projects.apache.org`.
+- `project-page.py` generates the project pages in `content/projects/` and the CVE and OSV records in `static/projects/`.
+  It combines the downloaded data with the hand-maintained `project-coordinates.json`.
+- `cve2osv.py` converts a CVE JSON 5 record to OSV; `project-page.py` calls it for each advisory.
+- `check-coordinates-with-doap.py` cross-checks `project-coordinates.json` against the projects' DOAP files.
+- `fetch-osv-dev.py` downloads the [osv.dev](https://osv.dev/) versions of our CVE records into `osv-dev/` (not committed),
+  to compare them with our own OSV records.
+  It runs standalone with `uv run scripts/fetch-osv-dev.py scripts/publicjson`.
