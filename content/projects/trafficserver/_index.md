@@ -56,14 +56,14 @@ _Last updated: 2026-09-29T16:43:31.911Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server drops the per-stream buffer cap when dechunking HTTP/2 or HTTP/3 responses, letting a slow client exhaust server memory.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server drops the per-stream buffer cap when dechunking HTTP/2 or HTTP/3 responses, letting a slow client exhaust server memory.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -84,14 +84,14 @@ _Last updated: 2026-09-29T16:43:09.773Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server updates the HTTP/2 HPACK dynamic table before confirming the header block encoded successfully, so an encode failure leaves the encoder out of sync with the peer decoder and corrupts subsequent header blocks on the connection.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server updates the HTTP/2 HPACK dynamic table before confirming the header block encoded successfully, so an encode failure leaves the encoder out of sync with the peer decoder and corrupts subsequent header blocks on the connection.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -138,14 +138,14 @@ _Last updated: 2026-09-29T16:42:43.453Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server allows redirect-limit bypass when plugins reset the retry counter, enabling SSRF amplification.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server allows redirect-limit bypass when plugins reset the retry counter, enabling SSRF amplification.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -165,14 +165,14 @@ _Last updated: 2026-09-29T16:42:22.058Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Several Apache Traffic Server experimental plugins have memory-safety and limit-bypass errors.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Several Apache Traffic Server experimental plugins have memory-safety and limit-bypass errors.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -194,14 +194,14 @@ _Last updated: 2026-09-29T16:41:59.659Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>The Apache Traffic Server multiplexer plugin overruns its chunk-decode buffer on upstream input, enabling denial of service.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>The Apache Traffic Server multiplexer plugin overruns its chunk-decode buffer on upstream input, enabling denial of service.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -221,14 +221,14 @@ _Last updated: 2026-09-29T16:41:39.382Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>The Apache Traffic Server webp_transform plugin can decode unsafely and serve mislabeled, cacheable responses.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>The Apache Traffic Server webp_transform plugin can decode unsafely and serve mislabeled, cacheable responses.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -248,14 +248,14 @@ _Last updated: 2026-09-29T16:41:06.668Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>The Apache Traffic Server intercept plugin has a use-after-free.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>The Apache Traffic Server intercept plugin has a use-after-free.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -275,14 +275,14 @@ _Last updated: 2026-09-29T16:40:34.663Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>The Apache Traffic Server header_rewrite plugin can crash or corrupt memory during cookie operations and CIDR condition matching.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>The Apache Traffic Server header_rewrite plugin can crash or corrupt memory during cookie operations and CIDR condition matching.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -302,14 +302,14 @@ _Last updated: 2026-09-29T16:40:09.571Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>The Apache Traffic Server prefetch plugin can crash when processing attacker-influenced input.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>The Apache Traffic Server prefetch plugin can crash when processing attacker-influenced input.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -329,14 +329,14 @@ _Last updated: 2026-09-29T16:39:52.643Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>The Apache Traffic Server ts_lua plugin mishandles initialization, transform context, and per-instance state.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>The Apache Traffic Server ts_lua plugin mishandles initialization, transform context, and per-instance state.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -356,14 +356,14 @@ _Last updated: 2026-09-29T16:39:12.964Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>The Apache Traffic Server uri_signing and url_sig plugins can exhaust the stack or crash on attacker input.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>The Apache Traffic Server uri_signing and url_sig plugins can exhaust the stack or crash on attacker input.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -384,14 +384,14 @@ _Last updated: 2026-09-29T16:37:52.686Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>The Apache Traffic Server txn_box plugin overflows the stack from attacker-controlled input.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>The Apache Traffic Server txn_box plugin overflows the stack from attacker-controlled input.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -411,14 +411,14 @@ _Last updated: 2026-09-29T16:36:51.153Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>The Apache Traffic Server regex_remap plugin overflows the stack and integers from substitution input.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>The Apache Traffic Server regex_remap plugin overflows the stack and integers from substitution input.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -438,14 +438,14 @@ _Last updated: 2026-09-29T16:36:28.241Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>The Apache Traffic Server ESI plugin can recurse without bound and fetch attacker-controlled URLs.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>The Apache Traffic Server ESI plugin can recurse without bound and fetch attacker-controlled URLs.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -491,14 +491,14 @@ _Last updated: 2026-09-29T16:35:58.454Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server leaks memory when handling HostDB SRV records.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server leaks memory when handling HostDB SRV records.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -518,14 +518,14 @@ _Last updated: 2026-09-29T16:35:33.295Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server has use-after-free and time-of-check/time-of-use errors in remap configuration handling.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server has use-after-free and time-of-check/time-of-use errors in remap configuration handling.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -546,14 +546,14 @@ _Last updated: 2026-09-29T16:35:06.934Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server mishandles on-disk cache fields and object lifetimes, corrupting state or crashing.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server mishandles on-disk cache fields and object lifetimes, corrupting state or crashing.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -574,14 +574,14 @@ _Last updated: 2026-09-29T16:34:41.376Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>The Apache Traffic Server certifier plugin generates certificates based on attacker-controlled client SNI.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>The Apache Traffic Server certifier plugin generates certificates based on attacker-controlled client SNI.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -601,14 +601,14 @@ _Last updated: 2026-09-29T16:34:19.491Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server can crash from null dereferences and dangling references in TLS and SNI handling.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server can crash from null dereferences and dangling references in TLS and SNI handling.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -628,14 +628,14 @@ _Last updated: 2026-09-29T16:33:58.059Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server reads out of bounds while parsing DNS answers.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server reads out of bounds while parsing DNS answers.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -656,14 +656,14 @@ _Last updated: 2026-09-29T16:33:36.493Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server can bypass IP access controls on UDS listeners and through ACL matching errors.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server can bypass IP access controls on UDS listeners and through ACL matching errors.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -684,14 +684,14 @@ _Last updated: 2026-09-29T16:33:12.618Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server mishandles PROXY protocol input, truncating ports and overflowing the stack.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server mishandles PROXY protocol input, truncating ports and overflowing the stack.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -711,14 +711,14 @@ _Last updated: 2026-09-29T16:32:46.940Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server can reuse server sessions and tunnels improperly, exposing data across client connections.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server can reuse server sessions and tunnels improperly, exposing data across client connections.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -739,14 +739,14 @@ _Last updated: 2026-09-29T16:32:24.701Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server mis-parses ports in URLs and userinfo, allowing port-based access-control bypass.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server mis-parses ports in URLs and userinfo, allowing port-based access-control bypass.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -767,14 +767,14 @@ _Last updated: 2026-09-29T16:31:42.332Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server truncates over-long header names, allowing header aliasing, request smuggling, and policy bypass.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server truncates over-long header names, allowing header aliasing, request smuggling, and policy bypass.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -794,14 +794,14 @@ _Last updated: 2026-09-29T16:31:17.247Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server can write out of bounds or overflow integers while parsing MIME and HTTP headers.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server can write out of bounds or overflow integers while parsing MIME and HTTP headers.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -849,14 +849,14 @@ _Last updated: 2026-09-29T16:30:57.712Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server mishandles integers while decoding HPACK/XPACK headers, corrupting memory.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server mishandles integers while decoding HPACK/XPACK headers, corrupting memory.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -877,14 +877,14 @@ _Last updated: 2026-09-29T16:30:29.044Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server can be crashed or driven to resource exhaustion by abusive HTTP/2 framing and flow-control.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server can be crashed or driven to resource exhaustion by abusive HTTP/2 framing and flow-control.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -905,14 +905,14 @@ _Last updated: 2026-09-29T16:30:02.135Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server does not reject Transfer-Encoding in HTTP/2 requests, allowing downgrade request smuggling.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server does not reject Transfer-Encoding in HTTP/2 requests, allowing downgrade request smuggling.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -932,14 +932,14 @@ _Last updated: 2026-09-29T16:29:35.748Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server allows request smuggling if chunked messages are malformed.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server allows request smuggling if chunked messages are malformed.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
@@ -988,14 +988,14 @@ _Last updated: 2026-09-29T16:28:46.132Z_
 
 ### Affected
 
-* Apache Traffic Server from 8.0.0 through 8.1.9
+* Apache Traffic Server from 8.0.0 through 8.1.11
 * Apache Traffic Server from 9.0.0 through 9.2.14
 * Apache Traffic Server from 10.0.0 through 10.1.3
 
 
 ### Description
 
-<p>Apache Traffic Server copies the client Host header into a fixed-size stack buffer without a bound during redirect handling, so an over-long Host header overflows the stack when redirect following is enabled.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
+<p>Apache Traffic Server copies the client Host header into a fixed-size stack buffer without a bound during redirect handling, so an over-long Host header overflows the stack when redirect following is enabled.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.</p><p>Users are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.</p>
 
 ### References
 * https://lists.apache.org/thread/5prl9glcm9g2swnq9hqxvnokylm1gr6d
