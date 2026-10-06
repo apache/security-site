@@ -1214,6 +1214,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Roller)
   - Advisories (experimental):\
     [security.apache.org](/projects/roller/)
+  - Security model:
+    - [Apache Roller security model](https://github.com/apache/roller/blob/master/docs/security-model.md)
 - <img class="project-logo" src="https://www.apache.org/logos/res/royale/default.png" alt="" loading="lazy"> **Apache Royale**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Royale)
