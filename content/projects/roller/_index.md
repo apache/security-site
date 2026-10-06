@@ -206,7 +206,7 @@ CVE-2026-82384 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82384) [\[CVE jso
 
 
 
-_Last updated: 2026-09-28T07:47:42.534Z_
+_Last updated: 2026-10-06T07:32:55.393Z_
 
 ### Affected
 

@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Hop? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Hop).
+Do you want to disclose a potential security issue for Apache Hop? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Hop).
 
 You can read more about the security policy on:
 

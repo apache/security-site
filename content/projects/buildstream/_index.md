@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache BuildStream? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=BuildStream).
+Do you want to disclose a potential security issue for Apache BuildStream? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=BuildStream).
 
 # Advisories
 
@@ -15,14 +15,15 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## tar source extraction escape ## { #CVE-2026-82331 }
 
-CVE-2026-82331 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82331) [\[CVE json\]](./CVE-2026-82331.cve.json)
+CVE-2026-82331 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82331) [\[CVE json\]](./CVE-2026-82331.cve.json) [\[OSV json\]](./CVE-2026-82331.osv.json)
 
-_Last updated: 2026-09-23T06:58:07.253Z_
+
+
+_Last updated: 2026-10-05T12:06:14.531Z_
 
 ### Affected
 
 * Apache BuildStream through 2.8.0
-* Apache BuildStream at 2.8.1 unaffected
 
 
 ### Description

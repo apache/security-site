@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Qpid? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Qpid).
+Do you want to disclose a potential security issue for Apache Qpid? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Qpid).
 
 # Advisories
 

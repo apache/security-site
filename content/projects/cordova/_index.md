@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Cordova? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Cordova).
+Do you want to disclose a potential security issue for Apache Cordova? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Cordova).
 
 # Advisories
 

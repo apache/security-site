@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache SpamAssassin? Send your report to the [Apache SpamAssassin Security Team](mailto:security@spamassassin.apache.org?subject=SpamAssassin).
+Do you want to disclose a potential security issue for Apache SpamAssassin? Send your report to the [Apache SpamAssassin Security Team](mailto:security@spamassassin.apache.org?subject=SpamAssassin).
 
 You can read more about the security policy on:
 

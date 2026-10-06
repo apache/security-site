@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Jackrabbit? Send your report to the [Apache Jackrabbit Security Team](mailto:security@jackrabbit.apache.org?subject=Jackrabbit).
+Do you want to disclose a potential security issue for Apache Jackrabbit? Send your report to the [Apache Jackrabbit Security Team](mailto:security@jackrabbit.apache.org?subject=Jackrabbit).
 
 You can read more about the security policy on:
 

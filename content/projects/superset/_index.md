@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Superset? Send your report to the [Apache Superset Security Team](mailto:security@superset.apache.org?subject=Superset).
+Do you want to disclose a potential security issue for Apache Superset? Send your report to the [Apache Superset Security Team](mailto:security@superset.apache.org?subject=Superset).
 
 You can read more about the security policy on:
 

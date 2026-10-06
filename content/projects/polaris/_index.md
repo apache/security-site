@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Polaris? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Polaris).
+Do you want to disclose a potential security issue for Apache Polaris? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Polaris).
 
 You can read more about the security policy on:
 

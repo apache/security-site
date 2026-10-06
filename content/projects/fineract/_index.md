@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Fineract? Send your report to the [Apache Fineract Security Team](mailto:security@fineract.apache.org?subject=Fineract).
+Do you want to disclose a potential security issue for Apache Fineract? Send your report to the [Apache Fineract Security Team](mailto:security@fineract.apache.org?subject=Fineract).
 
 You can read more about the security policy on:
 

@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache DolphinScheduler? Send your report to the [Apache DolphinScheduler Security Team](mailto:security@dolphinscheduler.apache.org?subject=DolphinScheduler).
+Do you want to disclose a potential security issue for Apache DolphinScheduler? Send your report to the [Apache DolphinScheduler Security Team](mailto:security@dolphinscheduler.apache.org?subject=DolphinScheduler).
 
 You can read more about the security policy on:
 
