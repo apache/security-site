@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache PDFBox? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=PDFBox).
+Do you want to disclose a potential security issue for Apache PDFBox? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=PDFBox).
 
 You can read more about the security policy on:
 
@@ -24,7 +24,7 @@ CVE-2026-33929 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-33929) [\[CVE jso
 
 
 
-_Last updated: 2026-09-18T12:07:53.868Z_
+_Last updated: 2026-10-06T08:41:02.764Z_
 
 ### Affected
 
@@ -49,43 +49,6 @@ has been changed accordingly and is available in the project repository.</p>
 
 ### Credits
 * Kaixuan Li (finder)
-
-
-## Path Traversal in PDFBox ExtractEmbeddedFiles Example Code ## { #CVE-2026-23907 }
-
-CVE-2026-23907 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-23907) [\[CVE json\]](./CVE-2026-23907.cve.json) [\[OSV json\]](./CVE-2026-23907.osv.json)
-
-
-
-_Last updated: 2026-09-18T12:05:48.881Z_
-
-### Affected
-
-* Apache PDFBox Examples from 2.0.24 through 2.0.35
-* Apache PDFBox Examples from 3.0.0 through 3.0.6
-
-
-### Description
-
-<p>This issue affects the 
-ExtractEmbeddedFiles example in&nbsp;Apache PDFBox: from 2.0.24 through 2.0.35, from 3.0.0 through 3.0.6.</p><p>
-The ExtractEmbeddedFiles example contains a path traversal vulnerability (CWE-22) because 
-the filename that is obtained from 
-PDComplexFileSpecification.getFilename() is appended to the extraction path.
-<br>Users who have copied this example into their production code should 
-review it to ensure that the extraction path is acceptable. The example 
-has been changed accordingly, now the initial path and the extraction 
-paths are converted into canonical paths and it is verified that 
-extraction path contains the initial path. The documentation has also 
-been adjusted.</p>
-
-### References
-* https://github.com/JoakimBulow/
-* https://lists.apache.org/thread/gyfq5tcrxfv7rx0z2yyx4hb3h53ndffw
-
-
-### Credits
-* Joakim Bülow (Neo4j Security Team) (finder)
 
 
 ## A carefully crafted PDF file can trigger an infinite loop while loading the file ## { #CVE-2021-31812 }

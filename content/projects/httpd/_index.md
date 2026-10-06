@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache HTTP Server? Send your report to the [Apache HTTP Server Security Team](mailto:security@httpd.apache.org?subject=HTTP%20Server).
+Do you want to disclose a potential security issue for Apache HTTP Server? Send your report to the [Apache HTTP Server Security Team](mailto:security@httpd.apache.org?subject=HTTP%20Server).
 
 You can read more about the security policy on:
 
@@ -342,16 +342,16 @@ CVE-2026-56449 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-56449) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T18:05:40.043Z_
+_Last updated: 2026-10-05T08:51:17.706Z_
 
 ### Affected
 
-* Apache HTTP Server from 2.4.0 through 2.4.68
+* Apache HTTP Server at 2.4.68
 
 
 ### Description
 
-<p>Out-of-bounds Write vulnerability in Apache HTTP Server's mod_proxy_html with crafted HTTP response bodies.</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.</p>
+<p>Out-of-bounds Write vulnerability in Apache HTTP Server's mod_proxy_html with crafted HTTP response bodies.</p><p>This issue affects Apache HTTP Server version 2.4.68.</p>
 
 ### References
 * https://httpd.apache.org/security/vulnerabilities_24.html

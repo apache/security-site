@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Zeppelin? Send your report to the [Apache Zeppelin Security Team](mailto:security@zeppelin.apache.org?subject=Zeppelin).
+Do you want to disclose a potential security issue for Apache Zeppelin? Send your report to the [Apache Zeppelin Security Team](mailto:security@zeppelin.apache.org?subject=Zeppelin).
 
 You can read more about the security policy on:
 

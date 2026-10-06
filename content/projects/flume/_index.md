@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Flume? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Flume).
+Do you want to disclose a potential security issue for Apache Flume? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Flume).
 
 # Advisories
 

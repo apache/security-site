@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Thrift? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Thrift).
+Do you want to disclose a potential security issue for Apache Thrift? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Thrift).
 
 You can read more about the security policy on:
 

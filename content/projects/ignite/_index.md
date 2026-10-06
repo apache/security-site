@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Ignite? Send your report to the [Apache Ignite Security Team](mailto:security@ignite.apache.org?subject=Ignite).
+Do you want to disclose a potential security issue for Apache Ignite? Send your report to the [Apache Ignite Security Team](mailto:security@ignite.apache.org?subject=Ignite).
 
 You can read more about the security policy on:
 

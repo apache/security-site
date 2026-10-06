@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache SeaTunnel? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=SeaTunnel).
+Do you want to disclose a potential security issue for Apache SeaTunnel? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=SeaTunnel).
 
 You can read more about the security policy on:
 

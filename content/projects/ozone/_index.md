@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Ozone? Send your report to the [Apache Ozone Security Team](mailto:security@ozone.apache.org?subject=Ozone).
+Do you want to disclose a potential security issue for Apache Ozone? Send your report to the [Apache Ozone Security Team](mailto:security@ozone.apache.org?subject=Ozone).
 
 You can read more about the security policy on:
 

@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache FreeMarker? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=FreeMarker).
+Do you want to disclose a potential security issue for Apache FreeMarker? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=FreeMarker).
 
 You can read more about the security policy on:
 
@@ -21,16 +21,16 @@ This section is experimental: it provides advisories since 2023 and may lag behi
 
 ## A malformed locale may be exploitable for path traversal attacks ## { #CVE-2026-84939 }
 
-CVE-2026-84939 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-84939) [\[CVE json\]](./CVE-2026-84939.cve.json)
+CVE-2026-84939 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-84939) [\[CVE json\]](./CVE-2026-84939.cve.json) [\[OSV json\]](./CVE-2026-84939.osv.json)
 
-_Last updated: 2026-09-10T05:06:51.774Z_
+
+
+_Last updated: 2026-10-06T06:41:52.487Z_
 
 ### Affected
 
 * Apache FreeMarker from 2.2.0 through 2.3.34
-* Apache FreeMarker at 2.3.35 unaffected
 * Apache FreeMarker from 2.2.0 through 2.3.34
-* Apache FreeMarker at 2.3.35 unaffected
 
 
 ### Description

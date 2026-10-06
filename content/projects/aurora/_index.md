@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Aurora? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Aurora).
+Do you want to disclose a potential security issue for Apache Aurora? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=Aurora).
 
 # Advisories
 

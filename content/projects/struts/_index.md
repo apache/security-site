@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache Struts? Send your report to the [Apache Struts Security Team](mailto:security@struts.apache.org?subject=Struts).
+Do you want to disclose a potential security issue for Apache Struts? Send your report to the [Apache Struts Security Team](mailto:security@struts.apache.org?subject=Struts).
 
 You can read more about the security policy on:
 
@@ -148,6 +148,117 @@ Exposure of data element to wrong session vulnerability in the JSON plugin of Ap
 
 ### Credits
 * g0w6y (https://github.com/g0w6y) (finder)
+
+
+## Shared message formatter exposes date and time values across concurrent requests ## { #CVE-2026-104714 }
+
+CVE-2026-104714 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-104714) [\[CVE json\]](./CVE-2026-104714.cve.json) [\[OSV json\]](./CVE-2026-104714.osv.json)
+
+
+
+_Last updated: 2026-10-05T07:13:29.603Z_
+
+### Affected
+
+* Apache Struts from 2.0.0 through 2.3.37
+* Apache Struts from 2.5.0 through 2.5.33
+* Apache Struts from 6.0.0 through 6.11.0
+* Apache Struts from 7.0.0 through 7.3.0
+
+
+### Description
+
+Concurrent execution using shared resource with improper synchronization ('race condition') vulnerability in Apache Struts. Where a localized message formats a date or time argument, the formatter retained for that message by the application-wide text provider is used by concurrently served requests without isolation, so a value belonging to one user can appear in another user's response, or the rendering can fail and surface as a server error. Applications whose localized messages format no date or time arguments are not affected.<br><br>This issue affects Apache Struts: from 2.0.0 through 2.3.37, from 2.5.0 through 2.5.33, from 6.0.0 through 6.11.0, from 7.0.0 through 7.3.0.<br><br>Users are recommended to upgrade to version 6.12.0 or 7.4.0, which fixes the issue.
+
+### References
+* https://cwiki.apache.org/confluence/display/WW/S2-078
+
+
+### Credits
+* n0mi1k (finder)
+
+
+## Unbounded request body read in the REST plugin ## { #CVE-2026-104713 }
+
+CVE-2026-104713 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-104713) [\[CVE json\]](./CVE-2026-104713.cve.json) [\[OSV json\]](./CVE-2026-104713.osv.json)
+
+
+
+_Last updated: 2026-10-05T07:13:06.346Z_
+
+### Affected
+
+* Apache Struts from 2.1.8 through 2.3.37
+* Apache Struts from 2.5.0 through 2.5.33
+* Apache Struts from 6.0.0 through 6.11.0
+* Apache Struts from 7.0.0 through 7.3.0
+
+
+### Description
+
+Allocation of resources without limits or throttling vulnerability in the Apache Struts REST plugin. A request body is read into memory without any bound on how much will be accepted, so a single request can cause the server to allocate memory in proportion to its size, exhausting the Java heap and denying service to other users. No additional setting has to be enabled. Applications that do not use the REST plugin are not affected.<br><br>This issue affects Apache Struts: from 2.1.8 through 2.3.37, from 2.5.0 through 2.5.33, from 6.0.0 through 6.11.0, from 7.0.0 through 7.3.0.<br><br>Users are recommended to upgrade to version 6.12.0 or 7.4.0, which fixes the issue.
+
+### References
+* https://cwiki.apache.org/confluence/display/WW/S2-077
+
+
+### Credits
+* n0mi1k (finder)
+
+
+## Disproportionate response size when rendering BigDecimal request parameters ## { #CVE-2026-104712 }
+
+CVE-2026-104712 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-104712) [\[CVE json\]](./CVE-2026-104712.cve.json) [\[OSV json\]](./CVE-2026-104712.osv.json)
+
+
+
+_Last updated: 2026-10-05T07:12:31.778Z_
+
+### Affected
+
+* Apache Struts from 2.5.14 through 2.5.33
+* Apache Struts from 6.0.0 through 6.11.0
+* Apache Struts from 7.0.0 through 7.3.0
+
+
+### Description
+
+Asymmetric resource consumption (amplification) vulnerability in Apache Struts. When a request parameter is bound to an arbitrary-precision decimal (java.math.BigDecimal) property that is then rendered through the Struts tag library, the framework can produce a response many orders of magnitude larger than the request, allowing an unauthenticated remote attacker to exhaust server CPU and outbound network capacity with sustained low-volume traffic. Applications that do not bind request parameters to BigDecimal properties, or never render such a property through the Struts tag library, are not affected.<br><br>This issue affects Apache Struts: from 2.5.14 through 2.5.33, from 6.0.0 through 6.11.0, from 7.0.0 through 7.3.0.<br><br>Users are recommended to upgrade to version 6.12.0 or 7.4.0, which fixes the issue.
+
+### References
+* https://cwiki.apache.org/confluence/display/WW/S2-076
+
+
+### Credits
+* 0xCc.zhang (finder)
+
+
+## OGNL injection in the legacy RESTful action mapper ## { #CVE-2026-104711 }
+
+CVE-2026-104711 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-104711) [\[CVE json\]](./CVE-2026-104711.cve.json) [\[OSV json\]](./CVE-2026-104711.osv.json)
+
+
+
+_Last updated: 2026-10-05T07:11:49.275Z_
+
+### Affected
+
+* Apache Struts from 2.0.0 through 2.3.37
+* Apache Struts from 2.5.0 through 2.5.33
+* Apache Struts from 6.0.0 through 6.11.0
+* Apache Struts from 7.0.0 through 7.3.0
+
+
+### Description
+
+Improper neutralization of special elements used in an expression language statement ('Expression Language Injection') vulnerability in Apache Struts. If the application is configured to use the legacy RESTful action mapper, a crafted request can inject an OGNL expression that may lead to remote code execution. Struts 7 is affected only when the OGNL allowlist is disabled; it is enabled by default. Applications using the default action mapper, the restful2 mapper, or the Struts REST plugin are not affected.<br><br>This issue affects Apache Struts: from 2.0.0 through 2.3.37, from 2.5.0 through 2.5.33, from 6.0.0 through 6.11.0, from 7.0.0 through 7.3.0.<br><br>Users are recommended to upgrade to version 6.12.0 or 7.4.0, which fixes the issue.
+
+### References
+* https://cwiki.apache.org/confluence/display/WW/S2-075
+
+
+### Credits
+* LeaveSong (finder)
 
 
 ## XXE vulnerability in outdated XWork component ## { #CVE-2025-68493 }

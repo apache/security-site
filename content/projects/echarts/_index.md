@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache ECharts? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=ECharts).
+Do you want to disclose a potential security issue for Apache ECharts? Send your report to the [Apache Security Team](mailto:security@apache.org?subject=ECharts).
 
 You can read more about the security policy on:
 

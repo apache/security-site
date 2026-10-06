@@ -6,7 +6,7 @@ layout: single
 
 # Reporting
 
-Do you want disclose a potential security issue for Apache OpenOffice? Send your report to the [Apache OpenOffice Security Team](mailto:security@openoffice.apache.org?subject=OpenOffice).
+Do you want to disclose a potential security issue for Apache OpenOffice? Send your report to the [Apache OpenOffice Security Team](mailto:security@openoffice.apache.org?subject=OpenOffice).
 
 You can read more about the security policy on:
 
@@ -17,6 +17,36 @@ You can read more about the security policy on:
 
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
+
+## Opening a malicious document can lead to system takeover ## { #CVE-2026-59265 }
+
+CVE-2026-59265 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59265) [\[CVE json\]](./CVE-2026-59265.cve.json) [\[OSV json\]](./CVE-2026-59265.osv.json)
+
+
+
+_Last updated: 2026-10-02T18:02:37.660Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.16
+* Apache OpenOffice before 95923fd437e06edd38a4f0e139a27c755a6f3ba6
+* Apache OpenOffice before 181421139242694b309751fb666406eddc203c50
+
+
+### Description
+
+<p>A code execution issue in the Java integration in Apache OpenOffice v4.1.16 and earlier allows a crafted untrusted document to trigger executing arbitrary (even remote) code when opened by the user.</p><p>This issue is expected to be fixed in version 4.1.17, which is in the release candidate phase.</p><p>Until then, users can mitigate this issue by disabling Java runtime integration in the Preferences dialog. This prevents the attack. If this is not possible, or as an extra precaution, you can avoid opening&nbsp;open untrusted files entirely.&nbsp;Once 4.1.17 is released, upgrade to that version to fix the issue.</p>
+
+### References
+* https://github.com/apache/openoffice/commit/c699bed3f75e79bd64ddec9dec49f9e210eed281.patch
+* https://github.com/apache/openoffice/commit/95923fd437e06edd38a4f0e139a27c755a6f3ba6.patch
+* https://lists.apache.org/thread.html/svfdc1jtpqlw7mo6lgg9fthcmf754pl5
+
+
+### Credits
+* Thomas Rinsma and Edoardo Geraci from Codean Labs (finder)
+* Rick de Jager of the V12 security team (finder)
+
 
 ## URL fetching can be used to exfiltrate arbitrary INI file values and environment variables ## { #CVE-2025-64407 }
 
