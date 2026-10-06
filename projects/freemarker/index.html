@@ -102,7 +102,7 @@
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache FreeMarker? Send your report to the <a href="mailto:security@apache.org?subject=FreeMarker">Apache Security Team</a>.</p>
+<p>Do you want to disclose a potential security issue for Apache FreeMarker? Send your report to the <a href="mailto:security@apache.org?subject=FreeMarker">Apache Security Team</a>.</p>
 <p>You can read more about the security policy on:</p>
 <ul>
 <li><a href="https://github.com/apache/freemarker/security/policy">Apache FreeMarker security model</a></li>
@@ -111,14 +111,12 @@
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
 <h2 id="CVE-2026-84939">A malformed locale may be exploitable for path traversal attacks</h2>
-<p>CVE-2026-84939 <a href="https://cve.org/CVERecord?id=CVE-2026-84939">[CVE]</a> <a href="./CVE-2026-84939.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2026-09-10T05:06:51.774Z</em></p>
+<p>CVE-2026-84939 <a href="https://cve.org/CVERecord?id=CVE-2026-84939">[CVE]</a> <a href="./CVE-2026-84939.cve.json">[CVE json]</a> <a href="./CVE-2026-84939.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-10-06T06:41:52.487Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
 <li>Apache FreeMarker from 2.2.0 through 2.3.34</li>
-<li>Apache FreeMarker at 2.3.35 unaffected</li>
 <li>Apache FreeMarker from 2.2.0 through 2.3.34</li>
-<li>Apache FreeMarker at 2.3.35 unaffected</li>
 </ul>
 <h3 id="description">Description</h3>
 <p>Path traversal vulnerability in Apache FreeMarker template loading mechanism, if the attacker can specify an arbitrary malformed locale identifier to FreeMarker, and the localized lookup configuration setting is enabled (it&rsquo;s by default enabled).<br><br>This issue affects Apache FreeMarker from 2.2.0 through 2.3.34.<br><br>Users are recommended to upgrade to version 2.3.35. Disabling localized lookup in previous versions also mitigates this.<br><br>Note that even in versions affected by this vulnerability, the files that can be loaded remain restricted by the <code>TemplateLoader</code> that FreeMarker is configured to use. In particular, <code>FileTemplateLoader</code> prevents attempts to traverse outside the <code>baseDir</code> specified in its constructor. Other <code>TemplateLoader</code> implementations may allow access outside their designated base directory, but they are still constrained by the underlying storage mechanism—for example, a loader wrapping a Java class loader can only access resources that the class loader can load, while one wrapping a web application context can only access resources available through that context.</p>

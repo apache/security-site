@@ -102,16 +102,15 @@
 <div id="project">
 
  <h1 id="reporting">Reporting</h1>
-<p>Do you want disclose a potential security issue for Apache BuildStream? Send your report to the <a href="mailto:security@apache.org?subject=BuildStream">Apache Security Team</a>.</p>
+<p>Do you want to disclose a potential security issue for Apache BuildStream? Send your report to the <a href="mailto:security@apache.org?subject=BuildStream">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
 <h2 id="CVE-2026-82331">tar source extraction escape</h2>
-<p>CVE-2026-82331 <a href="https://cve.org/CVERecord?id=CVE-2026-82331">[CVE]</a> <a href="./CVE-2026-82331.cve.json">[CVE json]</a></p>
-<p><em>Last updated: 2026-09-23T06:58:07.253Z</em></p>
+<p>CVE-2026-82331 <a href="https://cve.org/CVERecord?id=CVE-2026-82331">[CVE]</a> <a href="./CVE-2026-82331.cve.json">[CVE json]</a> <a href="./CVE-2026-82331.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-10-05T12:06:14.531Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
 <li>Apache BuildStream through 2.8.0</li>
-<li>Apache BuildStream at 2.8.1 unaffected</li>
 </ul>
 <h3 id="description">Description</h3>
 <p>Improper link resolution before file access (&rsquo;link following&rsquo;) vulnerability in the <code>tar</code> source plugin of Apache BuildStream running on Python &lt; 3.12 allows malicious source tarballs to write files on the host, with the privileges of the user running BuildStream, via symlinks as part of source fetching.<br><div>The impact of this issue is mitigated by:</div>* BuildStream projects should only use trusted sources in their elements as otherwise the build output can also not be trusted<br>* Tracking a source tarball pins its SHA256 hash, which prevents MITM attacks of users that are fetching an already tracked project<br>* When running on Python &gt;= 3.12, BuildStream &gt;= 2.3.0 already makes use of the Python <code>tarfile</code> filter functionality, which blocks the symlink escape<br><br>Users are recommended to upgrade to version 2.8.1, which fixes this issue.</p>
