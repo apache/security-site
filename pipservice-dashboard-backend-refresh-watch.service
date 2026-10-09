@@ -1,0 +1,16 @@
+[Unit]
+Description=Refresh ASF Security Dashboard Backend watch
+
+[Service]
+Environment=PYTHONUNBUFFERED=1
+Environment=UV_PYTHON=/usr/bin/python3
+Environment=UV_PYTHON_DOWNLOADS=never
+Environment=HOME=/root
+Type=oneshot
+WorkingDirectory=/opt/dashboard-backend-watch-changes
+ExecStart=/usr/local/bin/uv run --frozen security-dashboard-backend-refresh-watch.py
+Restart=none
+TemporaryFileSystem=/
+BindReadOnlyPaths=/usr /opt/dashboard-backend-watch-changes /opt/pipx/venvs/uv /lib /lib64 /bin /sbin /etc/resolv.conf /etc/nsswitch.conf /etc/ssl/certs
+
+[Install]
