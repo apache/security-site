@@ -49,6 +49,119 @@ Apache Airflow HashiCorp provider: the HashiCorp Vault secrets backend's team-sc
 * Bas Harenslak (remediation developer)
 
 
+## Keycloak auth manager: logout does not invalidate the session — JWTMiddleware mints an unrevoked replacement token ## { #CVE-2026-96806 }
+
+CVE-2026-96806 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-96806) [\[CVE json\]](./CVE-2026-96806.cve.json) [\[OSV json\]](./CVE-2026-96806.osv.json)
+
+
+
+_Last updated: 2026-10-16T03:46:19.700Z_
+
+### Affected
+
+* Apache Airflow Keycloak provider before 0.11.1
+
+
+### Description
+
+The Apache Airflow Keycloak auth manager did not end the session on logout: the logout route revoked the presented token, but `KeycloakJWTMiddleware` then issued a new, unrevoked token on the same response, so the user stayed logged in. Deployments using the Keycloak auth manager are affected: after a user logs out, anyone with later access to the same browser (for example on a shared workstation) can continue to act as that user.<br><br>Users of apache-airflow-providers-keycloak are recommended to upgrade to apache-airflow-providers-keycloak 0.11.1 or later.
+
+### References
+* https://github.com/apache/airflow/pull/73695
+* https://lists.apache.org/thread/7vwjg3wn8wxkprg6csxcvs6wkh301r0t
+
+
+### Credits
+* JelyFishhhhhh (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## Async SFTP hook disables host-key verification by default ## { #CVE-2026-94135 }
+
+CVE-2026-94135 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-94135) [\[CVE json\]](./CVE-2026-94135.cve.json) [\[OSV json\]](./CVE-2026-94135.osv.json)
+
+
+
+_Last updated: 2026-10-16T03:46:18.843Z_
+
+### Affected
+
+* Apache Airflow SFTP provider before 7.0.0
+
+
+### Description
+
+The Apache Airflow SFTP provider's deferrable code paths (`SFTPTrigger`, `SFTPHookAsync`, `SFTPClientPool`) disable SSH host-key verification by default unless the connection explicitly sets `no_host_key_check` to false. Deployments that run SFTP sensors or operators in deferrable mode are affected. An attacker in a machine-in-the-middle position between the triggerer and the SFTP server can impersonate the server and capture the credentials or data exchanged.<br><br>Users of apache-airflow-providers-sftp are recommended to upgrade to apache-airflow-providers-sftp 7.0.0 or later. This is a separate defect from CVE-2026-94134 (the synchronous SSH hook default, which also affects the SFTP hook); users who applied the fix for one also need this release for the other - apache-airflow-providers-sftp 7.0.0 fixes both.
+
+### References
+* https://github.com/apache/airflow/pull/73419
+* https://www.cve.org/CVERecord?id=CVE-2026-94134
+* https://lists.apache.org/thread/jbzs97t9y1zd1yp5rvxzjbx90mqz82kf
+
+
+### Credits
+* Claude Security Scans (tool)
+* Igor Stepansky, OX Security (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## SSH hook disables host-key verification by default ## { #CVE-2026-94134 }
+
+CVE-2026-94134 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-94134) [\[CVE json\]](./CVE-2026-94134.cve.json) [\[OSV json\]](./CVE-2026-94134.osv.json)
+
+
+
+_Last updated: 2026-10-16T03:46:17.947Z_
+
+### Affected
+
+* Apache Airflow SSH provider before 7.0.0
+* Apache Airflow SFTP provider before 7.0.0
+
+
+### Description
+
+The Apache Airflow SSH provider hook disables SSH host-key verification by default: unless `host_key` is configured or `no_host_key_check` is explicitly set to false, it accepts any server key. This affects SSH and SFTP connections that rely on the default. An attacker in a machine-in-the-middle position between the worker and the SSH or SFTP server can impersonate the server and capture the credentials or data a task sends.<br><br>Users of apache-airflow-providers-ssh and apache-airflow-providers-sftp are recommended to upgrade to apache-airflow-providers-ssh 7.0.0 and apache-airflow-providers-sftp 7.0.0 or later. The deferrable SFTP code paths had the same default and are covered separately by CVE-2026-94135; apache-airflow-providers-sftp 7.0.0 fixes both.
+
+### References
+* https://github.com/apache/airflow/pull/73419
+* https://www.cve.org/CVERecord?id=CVE-2026-94135
+* https://lists.apache.org/thread/ksr1lztvd3zr74f8xd1hzch1ssl0l3lj
+
+
+### Credits
+* Claude Security Scans (tool)
+* Igor Stepansky, OX Security (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## Keycloak multi-team provisioning grants every team role global audit-log read ## { #CVE-2026-92228 }
+
+CVE-2026-92228 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-92228) [\[CVE json\]](./CVE-2026-92228.cve.json) [\[OSV json\]](./CVE-2026-92228.osv.json)
+
+
+
+_Last updated: 2026-10-16T03:46:20.522Z_
+
+### Affected
+
+* Apache Airflow Keycloak provider before 0.11.1
+
+
+### Description
+
+The Apache Airflow Keycloak provider's multi-team provisioning (`_attach_team_permissions`) granted every team role global read access to audit logs. Deployments that enable multi-team mode with the Keycloak auth manager and provision teams through it are affected: any authenticated member of one team could read other teams' audit events through the UI or the event-log API.<br><br>Users of apache-airflow-providers-keycloak are recommended to upgrade to apache-airflow-providers-keycloak 0.11.1 or later.
+
+### References
+* https://github.com/apache/airflow/pull/73696
+* https://lists.apache.org/thread/b8wb6bogvnpfzo9do5w6d1lb8fxl5s79
+
+
+### Credits
+* OpenSec Intelligence (finder)
+* Jarek Potiuk (remediation developer)
+
+
 ## SQL injection via unvalidated Dag Params in the compute-cluster example Dag ## { #CVE-2026-86843 }
 
 CVE-2026-86843 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86843) [\[CVE json\]](./CVE-2026-86843.cve.json) [\[OSV json\]](./CVE-2026-86843.osv.json)
