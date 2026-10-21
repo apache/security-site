@@ -170,6 +170,144 @@ _Last updated: 2026-09-29T13:14:01.224Z_
 * Yeonoh Park (finder)
 
 
+## Missing Authorization Checks Allow Unauthorized Disclosure of User Account Information ## { #CVE-2026-71896 }
+
+CVE-2026-71896 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-71896) [\[CVE json\]](./CVE-2026-71896.cve.json) [\[OSV json\]](./CVE-2026-71896.osv.json)
+
+
+
+_Last updated: 2026-10-08T08:39:17.585Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.3
+
+
+### Description
+
+<p>An authorization vulnerability in Apache DolphinScheduler allows authenticated users to retrieve other users' account information through the <code>/dolphinscheduler/users/list-all</code> endpoint without the required permissions.</p><p>The endpoint fails to enforce the necessary authorization checks before returning user account information. As a result, an authenticated user can access account information they are not authorized to view.</p><p>Successful exploitation may expose sensitive user information and facilitate account enumeration.</p><p>This issue affects Apache DolphinScheduler: before 3.4.3.</p><p>Users are recommended to upgrade to version 3.4.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/f2c2rc1xhkxng3y1yo74yj21o11qydjb
+
+
+### Credits
+* n0mi1k (finder)
+* lemi9090 (finder)
+
+
+## Missing Authorization Checks Allow Non-Admin Users to Retrieve Kubernetes Credentials ## { #CVE-2026-71895 }
+
+CVE-2026-71895 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-71895) [\[CVE json\]](./CVE-2026-71895.cve.json) [\[OSV json\]](./CVE-2026-71895.osv.json)
+
+
+
+_Last updated: 2026-10-08T08:37:17.664Z_
+
+### Affected
+
+* Apache DolphinScheduler from 3.1.0 before 3.4.3
+
+
+### Description
+
+<p>An authorization vulnerability in Apache DolphinScheduler allows authenticated non-admin users to retrieve Kubernetes configuration data intended for administrator-managed cluster configuration. The exposed kubeconfig data contains credentials that may allow users to authenticate directly to the Kubernetes API outside DolphinScheduler.</p><p>The impact depends on the permissions granted to the disclosed credentials. If the kubeconfig provides cluster-admin or broadly privileged service-account access, an attacker may read Kubernetes Secrets, create pods, and establish persistent access to the cluster.</p><p>This issue affects Apache DolphinScheduler: from 3.2.0 before 3.4.3.</p><p>Users are recommended to upgrade to version 3.4.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/8g6p34cf0m7fnox5qpm99r50g8rbt0fp
+
+
+### Credits
+* h1ei1 (finder)
+* n0mi1k (finder)
+* Влад Рящиков (finder)
+* meifukun (finder)
+* Wanxin Yin (finder)
+
+
+## Missing Authorization Checks Allow Disclosure of Data Source Information and Passwords ## { #CVE-2026-71183 }
+
+CVE-2026-71183 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-71183) [\[CVE json\]](./CVE-2026-71183.cve.json) [\[OSV json\]](./CVE-2026-71183.osv.json)
+
+
+
+_Last updated: 2026-10-08T08:34:44.582Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.3
+
+
+### Description
+
+<p>An authorization vulnerability in Apache DolphinScheduler allows authenticated users to obtain information about data sources they are not authorized to access through the <code>/unauth-datasource</code> and <code>/authed-datasource</code> endpoints.</p><p>These endpoints fail to enforce the required data source access controls and return sensitive connection information, including data source passwords. As a result, an authenticated user without permission to access a data source can retrieve its connection details and credentials.</p><p>Successful exploitation exposes sensitive data source information and may enable unauthorized access to the underlying databases using the disclosed credentials.</p><p>This issue affects Apache DolphinScheduler: before 3.4.3.</p><p>Users are recommended to upgrade to version 3.4.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/9g0fx2kdqv9nj20k759shhly3vpg96mw
+
+
+### Credits
+* Raphael Zanarelli (finder)
+
+
+## Project Authorization Bypass in the Task instance stop/savepoint Endpoint ## { #CVE-2026-66087 }
+
+CVE-2026-66087 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66087) [\[CVE json\]](./CVE-2026-66087.cve.json) [\[OSV json\]](./CVE-2026-66087.osv.json)
+
+
+
+_Last updated: 2026-10-08T08:29:39.531Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.3
+
+
+### Description
+
+<p>An authorization bypass vulnerability in Apache DolphinScheduler allows authenticated users to operate task instance in projects they are not authorized to access through the&nbsp;</p><p></p><ul><li>/dolphinscheduler/projects/{projectCode}/task-instances/{taskInstanceId}/stop</li><li>/dolphinscheduler/projects/{projectCode}/task-instances/{taskInstanceId}/savepoint</li></ul><p></p><p>This issue affects Apache DolphinScheduler: before 3.4.3.</p><p>Users are recommended to upgrade to version 3.4.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/pghhb42sbyv5dhx6clcj4hllxnh7c0dn
+
+
+### Credits
+* Meng Qingwei (finder)
+* h1ei1 (finder)
+* meifukun (finder)
+* yansong (finder)
+* Omar Mousa — Red Team & Security Researcher (finder)
+
+
+## Project Authorization Bypass in the Task Definition with-upstream Endpoint ## { #CVE-2026-66084 }
+
+CVE-2026-66084 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66084) [\[CVE json\]](./CVE-2026-66084.cve.json) [\[OSV json\]](./CVE-2026-66084.osv.json)
+
+
+
+_Last updated: 2026-10-08T08:18:14.768Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.3
+
+
+### Description
+
+<p>An authorization bypass vulnerability in Apache DolphinScheduler allows authenticated users to modify task definitions in projects they are not authorized to access through the <code>/dolphinscheduler/projects/{projectCode}/task-definition/{code}/with-upstream</code> endpoint.</p><p>The endpoint fails to verify that the task definition identified by <code>code</code> belongs to the project specified by <code>projectCode</code>. An authenticated user can supply the code of a project they are authorized to access together with a task definition code from another project, bypassing project access restrictions and modifying the target task definition and its upstream dependencies.</p><p><span>This vulnerability can compromise workflow integrity and disrupt task execution in unauthorized projects.</span><span>This issue affects Apache DolphinScheduler: before 3.4.3.</span></p><p>Users are recommended to upgrade to version 3.4.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/cn6v1m8pfnjn7rsqkq1xow8v63pw27w2
+
+
+### Credits
+* Han, JunGyu (finder)
+* Thành Nguyễn (finder)
+* Yeonoh Park @ CIS Lab, SeoulTech (finder)
+* h1ei1 (finder)
+* n0mi1k (finder)
+
+
 ## Unauthorized Disclosure of Data Source Information via /datasources/unauth-datasource ## { #CVE-2026-66083 }
 
 CVE-2026-66083 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66083) [\[CVE json\]](./CVE-2026-66083.cve.json) [\[OSV json\]](./CVE-2026-66083.osv.json)
@@ -198,6 +336,36 @@ _Last updated: 2026-09-29T11:46:39.338Z_
 * Thành Nguyễn (finder)
 * Raphael Zanarelli (finder)
 * geo-chen (finder)
+
+
+## Cross-project authorization bypasses in DolphinScheduler API (schedule / workflow） ## { #CVE-2026-66082 }
+
+CVE-2026-66082 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66082) [\[CVE json\]](./CVE-2026-66082.cve.json) [\[OSV json\]](./CVE-2026-66082.osv.json)
+
+
+
+_Last updated: 2026-10-08T08:16:28.061Z_
+
+### Affected
+
+* Apache DolphinScheduler before 3.4.3
+
+
+### Description
+
+<p>An authorization bypass vulnerability in Apache DolphinScheduler allows authenticated users to perform unauthorized operations on workflow schedules, workflow definitions, and task instances in other projects.</p><p>The affected endpoints check permissions against the supplied <code>projectCode</code> but fail to verify that the target resource belongs to that project. An authenticated user with the required permissions in one project can supply that project's code together with a resource identifier from another project, bypassing the target project's access restrictions.</p><p>The affected endpoints include:</p><ul><li><p><code>POST /projects/{projectCode}/schedules/{id}/online</code> and <code>/offline</code>: Activate or deactivate workflow schedules in another project.</p></li><li><p><code>POST /projects/{projectCode}/workflow-definition/{code}/release</code>: Change the ONLINE/OFFLINE state of workflow definitions in another project.</p></li></ul><p>Successful exploitation allows users to alter workflow availability and interfere with task execution in projects they are not authorized to access.</p><p>This issue affects Apache DolphinScheduler: before 3.4.3.</p><p>Users are recommended to upgrade to version 3.4.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/lp124m92t6gfocqkm1h338674j2so9yc
+
+
+### Credits
+* Aisle Research (finder)
+* Meng Qingwei (finder)
+* Yeonoh Park @ CIS Lab, SeoulTech (finder)
+* tonghuaroot (finder)
+* meifukun (finder)
+* Thành Nguyễn (finder)
 
 
 ## Missing Authorization in Task Group APIs Allows Unauthorized Cross-Project Operations ## { #CVE-2026-57590 }

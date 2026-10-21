@@ -1086,6 +1086,375 @@ _Last updated: 2026-07-29T07:18:58.921Z_
 * Apache Community (reporter)
 
 
+## Nullptr dereference in net_write_io on a POST half-close with chunked response ## { #CVE-2026-112381 }
+
+CVE-2026-112381 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-112381) [\[CVE json\]](./CVE-2026-112381.cve.json) [\[OSV json\]](./CVE-2026-112381.osv.json)
+
+
+
+_Last updated: 2026-10-21T19:20:37.134Z_
+
+### Affected
+
+* Apache Traffic Server at 9.2.15
+* Apache Traffic Server at 10.1.4
+* Apache Traffic Server at 10.2.0
+
+
+### Description
+
+<p>Apache Traffic Server can crash with a null pointer dereference when a client POST request is torn down via half-close while a chunked origin response is being reparsed from a reentrant write-ready callback, a timing-dependent race introduced by the CVE-2021-32564 flow-control backports.</p><p>This issue affects Apache Traffic Server: 9.2.15, 10.1.4, 10.2.0.</p><p>Users are recommended to upgrade to version 9.2.16, 10.1.5, or 10.2.1, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/r95dq29ywcd1f4x30snxlqmb12z4s4kc
+
+
+### Credits
+* Masaori Koshiba (reporter)
+
+
+## Dropping chunked trailers stalls a passthrough transfer until timeout ## { #CVE-2026-111817 }
+
+CVE-2026-111817 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111817) [\[CVE json\]](./CVE-2026-111817.cve.json) [\[OSV json\]](./CVE-2026-111817.osv.json)
+
+
+
+_Last updated: 2026-10-21T19:19:58.726Z_
+
+### Affected
+
+* Apache Traffic Server at 8.1.11
+* Apache Traffic Server from 9.2.5 through 9.2.15
+* Apache Traffic Server from 10.0.0 through 10.1.4
+* Apache Traffic Server at 10.2.0
+
+
+### Description
+
+<p>Apache Traffic Server can stall a chunked transfer that it passes through with its trailers removed (proxy.config.http.drop_chunked_trailers) until the connection times out, because it waits for the trailer bytes it has already dropped. Trailer dropping is on by default in 10.x. In 8.1.11 and 9.2.x it is off by default, and those versions are affected only if it is enabled.</p><p>This issue affects Apache Traffic Server: 8.1.11, from 9.2.5 through 9.2.15, from 10.0.0 through 10.1.4, 10.2.0.</p><p>Users are recommended to upgrade to version 10.1.5 or 10.2.1, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/r95dq29ywcd1f4x30snxlqmb12z4s4kc
+
+
+### Credits
+* Omkhar Arasaratnam (reporter)
+
+
+## A malformed 302 response bypasses parse-error rejection through the Transfer-Encoding: chunked carve-out ## { #CVE-2026-111816 }
+
+CVE-2026-111816 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111816) [\[CVE json\]](./CVE-2026-111816.cve.json) [\[OSV json\]](./CVE-2026-111816.osv.json)
+
+
+
+_Last updated: 2026-10-21T18:26:31.301Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.11
+* Apache Traffic Server from 9.0.0 through 9.2.15
+* Apache Traffic Server from 10.0.0 through 10.1.4
+* Apache Traffic Server at 10.2.0
+
+
+### Description
+
+<p>Apache Traffic Server forwarded a malformed 302 response that should have been rejected as a parse error, because the Transfer-Encoding: chunked carve-out bypassed the rejection path. A response that two peers can read differently is then stored and served, allowing cache poisoning and response-framing desync.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.15, from 10.0.0 through 10.1.4, 10.2.0.</p><p>Users are recommended to upgrade to version 9.2.16, 10.1.5, or 10.2.1, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/r95dq29ywcd1f4x30snxlqmb12z4s4kc
+
+
+### Credits
+* Apache Community (reporter)
+* OneZ3r0 (reporter)
+
+
+## TLS session ticket resumption bypasses per-SNI verify_client STRICT enforcement ## { #CVE-2026-111815 }
+
+CVE-2026-111815 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111815) [\[CVE json\]](./CVE-2026-111815.cve.json) [\[OSV json\]](./CVE-2026-111815.osv.json)
+
+
+
+_Last updated: 2026-10-21T19:13:53.970Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.11
+* Apache Traffic Server from 9.0.0 through 9.2.15
+* Apache Traffic Server from 10.0.0 through 10.1.4
+* Apache Traffic Server at 10.2.0
+
+
+### Description
+
+<p>Apache Traffic Server can resume a TLS session across SNI virtual hosts without re-verifying a client certificate required by the resumed host's verify_client STRICT policy.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.15, from 10.0.0 through 10.1.4, 10.2.0.</p><p>Users are recommended to upgrade to version 9.2.16, 10.1.5, or 10.2.1, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/r95dq29ywcd1f4x30snxlqmb12z4s4kc
+
+
+### Credits
+* Yonghwa Lee, Xint by Theori (reporter)
+
+
+## Default server_session_sharing.match omits MASK_CERT, allowing pooled mTLS identity confusion at the origin ## { #CVE-2026-111814 }
+
+CVE-2026-111814 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111814) [\[CVE json\]](./CVE-2026-111814.cve.json) [\[OSV json\]](./CVE-2026-111814.osv.json)
+
+
+
+_Last updated: 2026-10-21T19:13:05.635Z_
+
+### Affected
+
+* Apache Traffic Server from 9.0.0 through 9.2.15
+* Apache Traffic Server from 10.0.0 through 10.1.4
+* Apache Traffic Server at 10.2.0
+
+
+### Description
+
+<p>Apache Traffic Server's default outbound session-sharing policy can reuse a pooled TLS session authenticated with one client certificate for a transaction configured to present a different one.</p><p>This issue affects Apache Traffic Server: from 9.0.0 through 9.2.15, from 10.0.0 through 10.1.4, 10.2.0.</p><p>Users are recommended to upgrade to version 9.2.16, 10.1.5, or 10.2.1, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/r95dq29ywcd1f4x30snxlqmb12z4s4kc
+
+
+### Credits
+* Craig Taylor (reporter)
+
+
+## magick plugin passes client query strings unfiltered to ImageMagick convert in the default configuration ## { #CVE-2026-111813 }
+
+CVE-2026-111813 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111813) [\[CVE json\]](./CVE-2026-111813.cve.json) [\[OSV json\]](./CVE-2026-111813.osv.json)
+
+
+
+_Last updated: 2026-10-21T18:20:30.450Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.1 through 8.1.11
+* Apache Traffic Server from 9.0.0 through 9.2.15
+* Apache Traffic Server from 10.0.0 through 10.1.4
+* Apache Traffic Server at 10.2.0
+
+
+### Description
+
+<p>Apache Traffic Server's experimental magick plugin lets an unauthenticated client control ImageMagick convert arguments in its default (unsigned) configuration.</p><p>This issue affects Apache Traffic Server: from 8.0.1 through 8.1.11, from 9.0.0 through 9.2.15, from 10.0.0 through 10.1.4, 10.2.0.</p><p>Users are recommended to upgrade to version 9.2.16, 10.1.5, or 10.2.1, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/r95dq29ywcd1f4x30snxlqmb12z4s4kc
+
+
+### Credits
+* Apache Community (reporter)
+* The ASF (reporter)
+* Abraxas Labs (reporter)
+
+
+## origin_server_auth signs client-controlled AWS headers under the proxy's IAM credentials ## { #CVE-2026-111812 }
+
+CVE-2026-111812 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111812) [\[CVE json\]](./CVE-2026-111812.cve.json) [\[OSV json\]](./CVE-2026-111812.osv.json)
+
+
+
+_Last updated: 2026-10-21T19:18:17.934Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.11
+* Apache Traffic Server from 9.0.0 through 9.2.15
+* Apache Traffic Server from 10.0.0 through 10.1.4
+* Apache Traffic Server at 10.2.0
+
+
+### Description
+
+<p>Apache Traffic Server's origin_server_auth plugin lets a client force signing of attacker-chosen AWS request headers under the proxy's own credentials.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.15, from 10.0.0 through 10.1.4, 10.2.0.</p><p>Users are recommended to upgrade to version 9.2.16, 10.1.5, or 10.2.1, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/r95dq29ywcd1f4x30snxlqmb12z4s4kc
+
+
+### Credits
+* Apache Community (reporter)
+
+
+## tsmemcache plugin exposes the shared proxy cache over the network with no authentication ## { #CVE-2026-111811 }
+
+CVE-2026-111811 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111811) [\[CVE json\]](./CVE-2026-111811.cve.json) [\[OSV json\]](./CVE-2026-111811.osv.json)
+
+
+
+_Last updated: 2026-10-21T19:17:29.523Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.11
+* Apache Traffic Server from 9.0.0 through 9.2.15
+* Apache Traffic Server from 10.0.0 through 10.1.4
+* Apache Traffic Server at 10.2.0
+
+
+### Description
+
+<p>Apache Traffic Server's experimental tsmemcache plugin allows unauthenticated network read, write, and deletion of the shared proxy cache.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.15, from 10.0.0 through 10.1.4, 10.2.0.</p><p>Users are recommended to upgrade to version 9.2.16, 10.1.5, or 10.2.1, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/r95dq29ywcd1f4x30snxlqmb12z4s4kc
+
+
+### Credits
+* Apache Community (reporter)
+
+
+## Unthrottled per-header diagnostic logging enables a log-flood denial of service ## { #CVE-2026-111810 }
+
+CVE-2026-111810 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111810) [\[CVE json\]](./CVE-2026-111810.cve.json) [\[OSV json\]](./CVE-2026-111810.osv.json)
+
+
+
+_Last updated: 2026-10-21T19:14:46.629Z_
+
+### Affected
+
+* Apache Traffic Server at 9.2.15
+* Apache Traffic Server at 10.1.4
+* Apache Traffic Server at 10.2.0
+
+
+### Description
+
+<p>Apache Traffic Server 9.2.15, 10.1.4 and 10.2.0 write one unthrottled diagnostic log line for every internal @ header they strip, so a request carrying many such headers makes the proxy write far more log data than the request contains.</p><p>This issue affects Apache Traffic Server: 9.2.15, 10.1.4, 10.2.0.</p><p>Users are recommended to upgrade to version 9.2.16, 10.1.5, or 10.2.1, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/r95dq29ywcd1f4x30snxlqmb12z4s4kc
+
+
+### Credits
+* Apache Community (reporter)
+
+
+## HEAD requests carrying Content-Length or Transfer-Encoding enable request smuggling ## { #CVE-2026-111809 }
+
+CVE-2026-111809 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111809) [\[CVE json\]](./CVE-2026-111809.cve.json) [\[OSV json\]](./CVE-2026-111809.osv.json)
+
+
+
+_Last updated: 2026-10-21T19:16:14.315Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.11
+* Apache Traffic Server from 9.0.0 through 9.2.15
+* Apache Traffic Server from 10.0.0 through 10.1.4
+* Apache Traffic Server at 10.2.0
+
+
+### Description
+
+<p>Apache Traffic Server allows request smuggling via HEAD requests that carry Content-Length or Transfer-Encoding.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.15, from 10.0.0 through 10.1.4, 10.2.0.</p><p>Users are recommended to upgrade to version 9.2.16, 10.1.5, or 10.2.1, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/r95dq29ywcd1f4x30snxlqmb12z4s4kc
+
+
+### Credits
+* Apache Community (reporter)
+
+
+## HTTP/2 DATA frame padding underflow lets a client trigger backend worker-pool exhaustion ## { #CVE-2026-111808 }
+
+CVE-2026-111808 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111808) [\[CVE json\]](./CVE-2026-111808.cve.json) [\[OSV json\]](./CVE-2026-111808.osv.json)
+
+
+
+_Last updated: 2026-10-21T19:11:57.822Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.11
+* Apache Traffic Server from 9.0.0 through 9.2.15
+* Apache Traffic Server from 10.0.0 through 10.1.4
+* Apache Traffic Server at 10.2.0
+
+
+### Description
+
+<p>Apache Traffic Server can be used to exhaust an HTTP/1.1 origin's worker pool via a malformed padded HTTP/2 DATA frame.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.15, from 10.0.0 through 10.1.4, 10.2.0.</p><p>Users are recommended to upgrade to version 9.2.16, 10.1.5, or 10.2.1, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/r95dq29ywcd1f4x30snxlqmb12z4s4kc
+
+
+### Credits
+* Khalilov Moe (LeetProtect) (reporter)
+* The ASF (reporter)
+
+
+## HTTP/2 Content-Length truncation lets a client trigger backend worker-pool exhaustion ## { #CVE-2026-111805 }
+
+CVE-2026-111805 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111805) [\[CVE json\]](./CVE-2026-111805.cve.json) [\[OSV json\]](./CVE-2026-111805.osv.json)
+
+
+
+_Last updated: 2026-10-21T19:10:43.875Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.11
+* Apache Traffic Server from 9.0.0 through 9.2.15
+* Apache Traffic Server from 10.0.0 through 10.1.4
+* Apache Traffic Server at 10.2.0
+
+
+### Description
+
+<p>Apache Traffic Server can be used to exhaust an HTTP/1.1 origin's worker pool via a truncated HTTP/2 Content-Length value.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.15, from 10.0.0 through 10.1.4, 10.2.0.</p><p>Users are recommended to upgrade to version 9.2.16, 10.1.5, or 10.2.1, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/r95dq29ywcd1f4x30snxlqmb12z4s4kc
+
+
+### Credits
+* matrix_cain (YakLang) (reporter)
+* Alieldeen Khaled Ali (reporter)
+* Jesse Yang (reporter)
+* Alex Williams (Pellera Technologies) (reporter)
+* VulnCheck (coordinator)
+* The ASF (reporter)
+
+
+## wasm plugin has a use-after-free and forwards unvalidated guest metric IDs ## { #CVE-2026-111804 }
+
+CVE-2026-111804 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111804) [\[CVE json\]](./CVE-2026-111804.cve.json) [\[OSV json\]](./CVE-2026-111804.osv.json)
+
+
+
+_Last updated: 2026-10-21T18:21:30.735Z_
+
+### Affected
+
+* Apache Traffic Server from 10.0.0 through 10.1.4
+* Apache Traffic Server at 10.2.0
+
+
+### Description
+
+<p>Apache Traffic Server's experimental wasm plugin has a use-after-free in its transaction-close handler and forwards unvalidated guest-supplied metric IDs to the internal stats API.</p><p>This issue affects Apache Traffic Server: from 10.0.0 through 10.1.4, 10.2.0.</p><p>Users are recommended to upgrade to version 10.1.5 or 10.2.1, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/r95dq29ywcd1f4x30snxlqmb12z4s4kc
+
+
+### Credits
+* Omkhar Arasaratnam (reporter)
+* Apache Community (reporter)
+
+
 ## SNI to Host header matching policy is not properly enforced ## { #CVE-2026-102795 }
 
 CVE-2026-102795 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-102795) [\[CVE json\]](./CVE-2026-102795.cve.json) [\[OSV json\]](./CVE-2026-102795.osv.json)
@@ -1162,6 +1531,34 @@ _Last updated: 2026-04-10T15:53:47.491Z_
 * https://lists.apache.org/thread/2s11roxlv1j8ph6q52rqo1klvl01n14q
 
 
+## An unread Expect: 100-continue request body is framed as a new request ## { #CVE-2025-55702 }
+
+CVE-2025-55702 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-55702) [\[CVE json\]](./CVE-2025-55702.cve.json) [\[OSV json\]](./CVE-2025-55702.osv.json)
+
+
+
+_Last updated: 2026-10-21T18:24:19.643Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.11
+* Apache Traffic Server from 9.0.0 through 9.2.15
+* Apache Traffic Server from 10.0.0 through 10.1.4
+* Apache Traffic Server at 10.2.0
+
+
+### Description
+
+<p>When a client sends a POST with Expect: 100-continue and the origin answers before reading the body, Apache Traffic Server parses the unread body left on the client connection as the next request. An attacker behind a front-end proxy that shares connections to Traffic Server can use this to smuggle requests past the front end and desynchronize responses for other users.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.15, from 10.0.0 through 10.1.4, 10.2.0.</p><p>Users are recommended to upgrade to version 9.2.16, 10.1.5, or 10.2.1, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/r95dq29ywcd1f4x30snxlqmb12z4s4kc
+
+
+### Credits
+* Sebastiano Sartor (reporter)
+
+
 ## Remote DoS via memory exhaustion in ESI Plugin ## { #CVE-2025-49763 }
 
 CVE-2025-49763 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-49763) [\[CVE json\]](./CVE-2025-49763.cve.json) [\[OSV json\]](./CVE-2025-49763.osv.json)
@@ -1186,6 +1583,35 @@ _Last updated: 2025-06-19T10:07:13.563Z_
 
 ### Credits
 * Yohann Sillam (reporter)
+
+
+## Origin connection still owed a request body is reused, enabling request smuggling ## { #CVE-2025-31699 }
+
+CVE-2025-31699 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-31699) [\[CVE json\]](./CVE-2025-31699.cve.json) [\[OSV json\]](./CVE-2025-31699.osv.json)
+
+
+
+_Last updated: 2026-10-21T18:22:20.198Z_
+
+### Affected
+
+* Apache Traffic Server from 8.0.0 through 8.1.11
+* Apache Traffic Server from 9.0.0 through 9.2.15
+* Apache Traffic Server from 10.0.0 through 10.1.4
+* Apache Traffic Server at 10.2.0
+
+
+### Description
+
+<p>Apache Traffic Server can return an origin connection to the shared pool while the origin is still waiting on a request body the client declared but never fully sent, including when the client used Expect: 100-continue. The origin then reads a later request on that connection as leftover body data, which lets an attacker smuggle requests past ATS access controls, disrupt other users' requests, or poison the cache.</p><p>This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.15, from 10.0.0 through 10.1.4, 10.2.0.</p><p>Users are recommended to upgrade to version 9.2.16, 10.1.5, or 10.2.1, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread/r95dq29ywcd1f4x30snxlqmb12z4s4kc
+
+
+### Credits
+* Martin van Kervel Smedshammer (reporter)
+* Nick Muerdter (reporter)
 
 
 ## Client IP address from PROXY protocol is not used for ACL ## { #CVE-2025-31698 }

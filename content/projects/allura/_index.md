@@ -18,6 +18,81 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Oauth1 Replay Attack ## { #CVE-2026-92120 }
+
+CVE-2026-92120 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-92120) [\[CVE json\]](./CVE-2026-92120.cve.json) [\[OSV json\]](./CVE-2026-92120.osv.json)
+
+
+
+_Last updated: 2026-10-12T20:08:03.303Z_
+
+### Affected
+
+* Apache Allura through 1.21.0
+
+
+### Description
+
+<p><span>OAuth1 Request Replay Attack&nbsp;</span>vulnerability in Apache Allura.</p><p>This issue affects Apache Allura: through 1.21.0.</p><p>Users are recommended to upgrade to version 1.22.0 which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/xpo1wbh1m18tvn9ow3h599wgcswbvn5x
+
+
+### Credits
+* CyberLeo (reporter)
+
+
+## REST API Mass Assignment ## { #CVE-2026-92119 }
+
+CVE-2026-92119 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-92119) [\[CVE json\]](./CVE-2026-92119.cve.json) [\[OSV json\]](./CVE-2026-92119.osv.json)
+
+
+
+_Last updated: 2026-10-12T20:06:41.002Z_
+
+### Affected
+
+* Apache Allura through 1.21.0
+
+
+### Description
+
+<p>REST API Mass Assignment&nbsp;vulnerability in Apache Allura.</p><p>This issue affects Apache Allura: through 1.21.0.</p><p>Users are recommended to upgrade to version 1.22.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/oc6dd1zx94t5wdwwgg5nh3jppom4qmvc
+
+
+### Credits
+* CyberLeo (reporter)
+
+
+## OAuth1 missing callback validation ## { #CVE-2026-92116 }
+
+CVE-2026-92116 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-92116) [\[CVE json\]](./CVE-2026-92116.cve.json) [\[OSV json\]](./CVE-2026-92116.osv.json)
+
+
+
+_Last updated: 2026-10-12T20:04:17.252Z_
+
+### Affected
+
+* Apache Allura through 1.21.0
+
+
+### Description
+
+<p>OAuth1 callback validation&nbsp;vulnerability in Apache Allura.</p><p>This issue affects Apache Allura: through 1.21.0.</p><p>Users are recommended to upgrade to version 1.22.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/d716zfvgpnrjlsc7bmysv4sxbnh2b57f
+
+
+### Credits
+* MopMonk AI (reporter)
+
+
 ## Information exposure via search ## { #CVE-2026-81270 }
 
 CVE-2026-81270 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-81270) [\[CVE json\]](./CVE-2026-81270.cve.json) [\[OSV json\]](./CVE-2026-81270.osv.json)

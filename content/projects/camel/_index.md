@@ -23,6 +23,104 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Camel-FOP Resolves External DTDs and Entities From Untrusted XSL-FO Input When a Third-Party JAXP TransformerFactory Is Present ## { #CVE-2026-91858 }
+
+CVE-2026-91858 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-91858) [\[CVE json\]](./CVE-2026-91858.cve.json) [\[OSV json\]](./CVE-2026-91858.osv.json)
+
+
+
+_Last updated: 2026-10-19T10:47:46.661Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+
+
+### Description
+
+<p>FopProducer transforms the incoming XSL-FO message body by creating a javax.xml.transform.TransformerFactory through TransformerFactory.newInstance() and enabling only FEATURE_SECURE_PROCESSING before running an identity transform over the body. On the JDK's built-in transformer, that feature alone already empties the accessExternalDTD and accessExternalStylesheet limits, so an external DTD or entity is refused. When a third-party JAXP TransformerFactory such as Saxon-HE is on the classpath, for example because the application also uses camel-xslt-saxon or camel-saxon, TransformerFactory.newInstance() returns that implementation instead, and FEATURE_SECURE_PROCESSING on its own does not restrict external resource access on it. A DOCTYPE with an external subset, or an external general entity, declared in the XSL-FO document is then resolved and expanded while the body is transformed. An external sender whose XSL-FO reaches a fop producer could therefore read files readable by the Camel process and cause the process to issue requests to hosts the document names. camel-fop does not bring such a factory itself, and excludes Xalan, so a default deployment using the JDK transformer is not affected; the issue is reachable only where another component has placed an alternative JAXP TransformerFactory on the classpath. Releases on the 4.14.x line and earlier reached end of life before this issue was resolved and do not receive a fix.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-91858.html
+* https://issues.apache.org/jira/browse/CAMEL-24605
+* https://github.com/apache/camel/pull/26108
+* https://github.com/apache/camel/pull/26168
+* https://github.com/apache/camel/pull/26169
+
+
+### Credits
+* Andrea Cosentino (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Smooks XML External Entity Processing, external entities resolved by default ## { #CVE-2026-88901 }
+
+CVE-2026-88901 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-88901) [\[CVE json\]](./CVE-2026-88901.cve.json) [\[OSV json\]](./CVE-2026-88901.osv.json)
+
+
+
+_Last updated: 2026-10-19T10:44:06.011Z_
+
+### Affected
+
+* Apache Camel from 4.7.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+
+
+### Description
+
+<p>Improper Restriction of XML External Entity Reference vulnerability in Apache Camel.</p><p>This issue affects Apache Camel: from 4.7.0 before 4.18.5, from 4.19.0 before 4.22.1.</p><p>Improper Restriction of XML External Entity Reference in the Smooks component (camel-smooks) in Apache Camel allows an attacker who supplies the XML message body to read local files or issue requests to internal network locations via an external entity declaration in that body. This issue affects Apache Camel: from 4.7.0 before 4.18.5, from 4.19.0 before 4.22.1. The Smooks data format (.unmarshal().smooks(...)) and the Smooks component (smooks:) parse the incoming XML body with the reader Smooks resolves by default, which is the Woodstox SAX parser. That reader resolves external general and parameter entities and loads external DTDs, and camel-smooks applied none of the parser hardening that the other Camel XML components apply. A DOCTYPE with an external subset, or an external general entity, declared in the XML document is therefore resolved and expanded while the body is unmarshalled, and the resolved content is bound into the unmarshalled result and returned on InOut routes. An external sender whose XML reaches a camel-smooks data format or endpoint could therefore read files readable by the Camel process and cause the process to issue requests to hosts the document names. No non-default option is required, since resolving external entities was the default behaviour. Configurations that declare their own reader - EDI, CSV, JSON, or a custom reader - do not use the XML reader and are not affected. Users are recommended to upgrade to version 4.18.5, 4.22.1 or 4.23.0, which fixes the issue.</p><p>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. camel-smooks now parses the XML body with a javax.xml.parsers.DocumentBuilder that does not resolve external general or parameter entities and does not load external DTDs, and hands Smooks the resulting document, matching the secure XML processing configuration used by org.apache.camel.converter.jaxp.XmlConverter and the other Camel XML components. This hardening is applied only when the Smooks configuration parses XML with its default reader, so EDI, CSV, JSON and custom-reader configurations, and the marshalling direction, are unchanged. A new allowExternalEntities option, disabled by default, restores the previous behaviour for trusted legacy configurations that rely on external entity resolution. The camel-4.14.x releases stream and earlier reached end of life before this issue was resolved and will not receive a fix, so deployments on those lines must move to a supported release. For deployments that cannot upgrade immediately, do not apply camel-smooks to XML received from untrusted senders.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-88901.html
+* https://issues.apache.org/jira/browse/CAMEL-24677
+* https://github.com/apache/camel/pull/26270
+* https://github.com/apache/camel/pull/26327
+* https://github.com/apache/camel/pull/26329
+
+
+### Credits
+* h1ei1 (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-JGroups: Unsafe Java Deserialization of Cluster Messages in the JGroups Consumer Can Lead to Remote Code Execution ## { #CVE-2026-88900 }
+
+CVE-2026-88900 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-88900) [\[CVE json\]](./CVE-2026-88900.cve.json) [\[OSV json\]](./CVE-2026-88900.osv.json)
+
+
+
+_Last updated: 2026-10-19T11:07:29.585Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+
+
+### Description
+
+<p>Deserialization of Untrusted Data vulnerability in Apache Camel Camel-Jgroups component.</p><p>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.</p><p>JGroupsEndpoint.createExchange(Message), which CamelJGroupsReceiver calls for every message the jgroups consumer receives before the exchange is routed, set the exchange body from org.jgroups.Message.getObject(). For an ObjectMessage, which is the message type the Camel jgroups producer sends, JGroups Java-deserializes the payload through an ObjectInputStream on its own receive thread as the message arrives, and getObject() returns the resulting object. No java.io.ObjectInputFilter was applied on that path unless the deployment had set a JVM-wide serialization filter: camel-jgroups installed none, and the JGroups versions shipped with the affected releases apply none of their own, so any serializable class on the application classpath could be instantiated and its deserialization callbacks run. Unless a channel or the channelProperties option is configured, the consumer creates its channel with new JChannel(), the stock JGroups protocol stack, which multicasts over UDP without the AUTH protocol and without encryption, so any host able to reach the cluster's multicast group or bind port can join the cluster and send messages to the consumer without credentials. Such a host could send a crafted serialized object that leads to remote code execution in the Camel process when a usable deserialization gadget chain is present on the classpath, and no non-default option was required on the consumer. Because JGroups materializes the object before Camel's receiver runs, a check performed by Camel can only inspect the deserialized result and cannot stop code that runs during deserialization, so closing the issue also requires a control that applies before the payload is read, as described in the mitigation. Exploitation requires network access to the cluster's multicast group or bind port, which with the default UDP multicast transport means a host on an adjacent network, and a usable gadget chain on the classpath, which is why the severity is assessed as high rather than critical.</p><p>Users are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.1. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The 4.14.x releases stream and earlier, and the 4.15.x to 4.17.x and 4.19.x to 4.21.x release lines, reached end of life before this issue was resolved and will not receive a fix, so deployments on those lines must move to a supported release.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-88900.html
+* https://issues.apache.org/jira/browse/CAMEL-24676
+* https://issues.apache.org/jira/browse/CAMEL-25223
+* https://github.com/apache/camel/pull/26267
+* https://github.com/apache/camel/pull/26281
+* https://github.com/apache/camel/pull/26283
+* https://github.com/apache/camel/pull/27205
+* https://github.com/apache/camel/pull/26282
+* https://github.com/apache/camel/pull/26326
+* https://camel.apache.org/security/CVE-2026-40860.html
+
+
+### Credits
+* h1ei1 (finder)
+* Andrea Cosentino (remediation developer)
+
+
 ## Camel Quarkus: Forced Xalan TransformerFactory drops upstream external-DTD/stylesheet hardening ## { #CVE-2026-88789 }
 
 CVE-2026-88789 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-88789) [\[CVE json\]](./CVE-2026-88789.cve.json)
@@ -46,6 +144,805 @@ Improper Restriction of XML External Entity Reference in the XSLT support extens
 * https://github.com/apache/camel-quarkus/commit/9dd11779580cd88e4ab01b23717cd0167f26155c
 * https://github.com/apache/camel-quarkus/issues/9115
 * https://camel.apache.org/security/CVE-2026-88789.html
+
+
+## Camel-HTTP OAuth2 Token Confusion via an Under-Keyed JVM-Global Token Cache ## { #CVE-2026-85317 }
+
+CVE-2026-85317 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85317) [\[CVE json\]](./CVE-2026-85317.cve.json)
+
+_Last updated: 2026-10-19T10:43:38.051Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Use of Cache Containing Sensitive Information vulnerability in Apache Camel HTTP component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>The OAuth2 client token cache is global to the JVM, and its key omitted several of the fields that determine what a token actually authorises: the requested scope, the resource indicator, and the token endpoint the token was obtained from. Two endpoints differing only in those fields therefore shared a cache entry, and an endpoint could be served a token minted for a different scope, a different resource, or by a different authorization server. The consequence is a request carrying broader authority than the endpoint was configured for, or a token presented to a party it was not issued for. Reaching it requires a deployment that configures more than one OAuth2 endpoint differing in exactly those fields, which is why the severity is assessed low.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. The cache key now includes every field that shapes the token, so entries are no longer shared between endpoints that differ in any of them. For deployments that cannot upgrade immediately, run endpoints that differ in scope, resource indicator or token endpoint in separate JVMs so that they do not share the cache.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85317.html
+* https://issues.apache.org/jira/browse/CAMEL-24456
+* https://github.com/apache/camel/pull/25834
+* https://github.com/apache/camel/pull/25937
+* https://github.com/apache/camel/pull/25938
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Platform-HTTP Unintended Proxy Mode via Prefix Path Matching ## { #CVE-2026-85316 }
+
+CVE-2026-85316 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85316) [\[CVE json\]](./CVE-2026-85316.cve.json)
+
+_Last updated: 2026-10-19T10:42:59.099Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Insufficient Granularity of Access Control vulnerability in Apache Camel Platform HTTP component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>The component decided whether an endpoint ran in proxy mode by testing whether its configured path started with the string proxy, rather than by matching the path exactly. Any endpoint whose path merely begins with those characters - proxyStatus, proxy-config, proxying and so on - therefore became a proxy endpoint without the route author asking for it. A proxy endpoint forwards requests onward, so an endpoint that was intended to serve its own content instead relays traffic on behalf of whoever calls it, which is both a request forgery primitive and an exposure of whatever the forwarding path can reach.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. Proxy mode is now selected by an exact path match rather than by prefix. For deployments that cannot upgrade immediately, rename any endpoint path that begins with proxy but is not intended to be a proxy.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85316.html
+* https://issues.apache.org/jira/browse/CAMEL-24455
+* https://github.com/apache/camel/pull/25833
+* https://github.com/apache/camel/pull/25940
+* https://github.com/apache/camel/pull/25942
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-gRPC Information Disclosure via Unmuted Consumer Exceptions ## { #CVE-2026-85315 }
+
+CVE-2026-85315 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85315) [\[CVE json\]](./CVE-2026-85315.cve.json)
+
+_Last updated: 2026-10-19T10:42:08.903Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Generation of Error Message Containing Sensitive Information vulnerability in Apache Camel gRPC component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>When a route behind a gRPC consumer failed, the exception's message was placed into the gRPC status description. Unlike the status cause, which stays local to the server, the description is transmitted to the calling client, so an external caller able to provoke a failure could read the internal error message. What that discloses depends on the exception, and in practice includes class and package names, paths, host names and connection detail carried in messages. This is the gRPC member of the same unmuted-consumer-exception family as the knative, mina and CXF advisories published alongside it.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. A muteException consumer option, defaulting to true, puts a generic description in the status instead of the route exception's message. Set muteException=false to restore the previous output. For deployments that cannot upgrade immediately, map failures onto an explicit status in an onException handler so the framework never copies the exception message into the description.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85315.html
+* https://issues.apache.org/jira/browse/CAMEL-24478
+* https://github.com/apache/camel/pull/25839
+* https://github.com/apache/camel/pull/25934
+* https://github.com/apache/camel/pull/25935
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Mail Header Injection via Unfiltered mail.smtp Headers in the MimeMultipart Data Format (Incomplete Fix of CVE-2026-46584) ## { #CVE-2026-85314 }
+
+CVE-2026-85314 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85314) [\[CVE json\]](./CVE-2026-85314.cve.json)
+
+_Last updated: 2026-10-19T10:41:43.984Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache Camel Mail component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>CVE-2026-46584 addressed mail headers reaching the Exchange without passing through a header filter, but the MimeMultipart data format retained an unfiltered path: unmarshalling a multipart message mapped mail.smtp headers onto the Exchange with no filter applied. Those names sit outside the Camel namespace that consumer filters block, so a message crafted by an external sender could still set them, and the mail.smtp namespace influences how a downstream mail producer connects and sends. This is an incomplete fix of CVE-2026-46584 rather than a new class of defect: a deployment that applied that advisory and considered camel-mail settled remained exposed on this path.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. The MimeMultipart data format now applies the header filter on unmarshal, closing the path CVE-2026-46584 left open. For deployments that cannot upgrade immediately, strip the namespace after the data format with removeHeaders("mail.smtp*") before any mail producer.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85314.html
+* https://issues.apache.org/jira/browse/CAMEL-24419
+* https://github.com/apache/camel/pull/25568
+* https://github.com/apache/camel/pull/25765
+* https://github.com/apache/camel/pull/25766
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Jetty Cross-Origin Credential Exposure via Allow-All CrossOriginFilter Defaults When enableCORS Is Set ## { #CVE-2026-85313 }
+
+CVE-2026-85313 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85313) [\[CVE json\]](./CVE-2026-85313.cve.json)
+
+_Last updated: 2026-10-19T10:40:55.681Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Permissive Cross-domain Policy with Untrusted Domains vulnerability in Apache Camel Jetty component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>Setting enableCORS on a Jetty endpoint installed Jetty's CrossOriginFilter with its stock defaults, which accept every origin and allow credentials. An operator asking for CORS therefore obtained a policy that lets a page on any origin make credentialed cross-origin requests to the endpoint and read the responses, without any indication that turning the option on had chosen an allow-all policy rather than an empty one to be filled in. This is the same defect class as the platform-http-vertx advisory published alongside it, in a different component.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. enableCORS no longer grants credentials to an origin the operator did not name. A deployment that relied on any origin being accepted must now list its origins explicitly. For deployments that cannot upgrade immediately, configure the CrossOriginFilter parameters explicitly rather than relying on what enableCORS installs, naming the allowed origins.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85313.html
+* https://issues.apache.org/jira/browse/CAMEL-24450
+* https://github.com/apache/camel/pull/25829
+* https://github.com/apache/camel/pull/25937
+* https://github.com/apache/camel/pull/25938
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Core Saga Participation Hijacking via the Unfiltered Long-Running-Action Header ## { #CVE-2026-85312 }
+
+CVE-2026-85312 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85312) [\[CVE json\]](./CVE-2026-85312.cve.json)
+
+_Last updated: 2026-10-19T10:40:29.240Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache Camel Core component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>The saga processor consulted a header named Long-Running-Action to decide which saga an exchange belonged to. The name carries no Camel prefix, so it sits outside the namespace that consumer header filters block, and an external sender could supply it on an inbound message. That let the sender name the saga the exchange joined, attaching their request to a long-running action started by someone else, or causing compensation to be associated with an action they did not initiate. The header is only consulted by a saga service that uses it, which bounds the exposure to deployments running sagas over an LRA coordinator.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. The header is now consulted only for a saga service that actually uses it, rather than on every exchange. For deployments that cannot upgrade immediately, strip the header at the trust boundary with removeHeaders("Long-Running-Action") on every consumer that accepts messages from an untrusted sender.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85312.html
+* https://issues.apache.org/jira/browse/CAMEL-24449
+* https://github.com/apache/camel/pull/25828
+* https://github.com/apache/camel/pull/25940
+* https://github.com/apache/camel/pull/25942
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Keycloak Issuer Validation Bypass When the Introspection Response Omits the iss Claim ## { #CVE-2026-85301 }
+
+CVE-2026-85301 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85301) [\[CVE json\]](./CVE-2026-85301.cve.json)
+
+_Last updated: 2026-10-19T10:39:44.385Z_
+
+### Affected
+
+* Apache Camel from 4.15.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Improper Authentication vulnerability in Apache Camel Keycloak component.<br><br>This issue affects Apache Camel: from 4.15.0 before 4.18.5, from 4.19.0 before 4.22.1.</p><p><br>The security processor validated the issuer of an introspected token only when the introspection response actually carried an iss claim. When the claim was absent the check was skipped rather than treated as a failure, so a token that the configured issuer did not mint could be accepted provided the introspection endpoint answered without naming an issuer. Reaching this requires an introspection endpoint that omits iss and accepts tokens from more than one issuer, which is not the default Keycloak arrangement, hence the low severity; where that arrangement exists the consequence is that the deployment authenticates a caller it should have rejected.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. An absent iss claim is now treated as a validation failure rather than as a reason to skip the check. For deployments that cannot upgrade immediately, ensure the introspection endpoint returns the iss claim, and that it serves exactly one issuer.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85301.html
+* https://issues.apache.org/jira/browse/CAMEL-24448
+* https://github.com/apache/camel/pull/25827
+* https://github.com/apache/camel/pull/25858
+* https://github.com/apache/camel/pull/25859
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-PQC Private Key Disclosure via Key Material Written with Default File Permissions ## { #CVE-2026-85300 }
+
+CVE-2026-85300 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85300) [\[CVE json\]](./CVE-2026-85300.cve.json)
+
+_Last updated: 2026-10-19T10:40:03.699Z_
+
+### Affected
+
+* Apache Camel from 4.12.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Incorrect Default Permissions vulnerability in Apache Camel PQC component.<br><br>This issue affects Apache Camel: from 4.12.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>When the component wrote generated key material to disk it did so with the permissions the process default umask produced, rather than restricting the file to its owner. On a host whose umask allows group or world read, the private key was therefore readable by other local accounts. The exposure is to a local party rather than to the remote sender that the Camel threat model treats as the primary adversary, which is why the severity is assessed low, but the consequence where it applies is complete: possession of the private key defeats every signature and key exchange the deployment performs with it.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. Key material is now written with owner-only permissions. For deployments that cannot upgrade immediately, place the key directory on a path only the service account can traverse, and tighten the process umask. Key material already written with permissive permissions should be treated as exposed and rotated.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85300.html
+* https://issues.apache.org/jira/browse/CAMEL-24447
+* https://github.com/apache/camel/pull/25826
+* https://github.com/apache/camel/pull/25856
+* https://github.com/apache/camel/pull/25857
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-AS2 Cross-Partner Signing Key Confusion via Shared Per-Request State ## { #CVE-2026-85296 }
+
+CVE-2026-85296 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85296) [\[CVE json\]](./CVE-2026-85296.cve.json)
+
+_Last updated: 2026-10-19T10:38:10.220Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Exposure of Data Element to Wrong Session vulnerability in Apache Camel AS2 component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>Signing material belonging to an individual request was stored in state that is shared across requests rather than confined to the request being processed. Where a deployment serves more than one trading partner, concurrent or successive requests could therefore observe each other's material, and a Message Disposition Notification could be signed with the key of a partner other than the one the receipt was for. The result is cross-partner key confusion: a receipt attributable to the wrong partner, and one partner's signing material used while handling another partner's exchange. AS2 deployments are typically multi-partner by design, so the condition is reached by ordinary concurrent traffic rather than by anything the attacker must arrange.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. Per-request signing keys are now confined to the request being processed in ResponseMDN. For deployments that cannot upgrade immediately, run a separate Camel context per trading partner so that no signing material is shared between them.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85296.html
+* https://issues.apache.org/jira/browse/CAMEL-24429
+* https://github.com/apache/camel/pull/25641
+* https://github.com/apache/camel/pull/25869
+* https://github.com/apache/camel/pull/25870
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-MLLP Protected Health Information Disclosure to Logs by Default ## { #CVE-2026-85260 }
+
+CVE-2026-85260 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85260) [\[CVE json\]](./CVE-2026-85260.cve.json)
+
+_Last updated: 2026-10-19T10:37:41.859Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Insertion of Sensitive Information into Log File vulnerability in Apache Camel MLLP component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>The camel-mllp component carries a logPhi option that governs whether HL7 payload content may be written to the log. It defaulted to true, so a deployment that did nothing logged protected health information out of the box. Two further paths wrote payload content to the log regardless of the setting, so even an operator who had turned logPhi off was still exposed on those paths. MLLP is used to carry HL7 clinical messages, so the content concerned is patient data, and it reached ordinary application logs where it is subject to whatever retention, aggregation and access the deployment applies to logs generally rather than to clinical records.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. logPhi now defaults to false and is honoured on the paths that previously ignored it. This is a changed default: a deployment that relied on payload logging must now set logPhi=true explicitly. Because the upgrade guide for a change like this lives on the main branch only, operators upgrading within the 4.18.x or 4.22.x lines should treat this advisory as the notice of that change. For deployments that cannot upgrade immediately, set logPhi=false and be aware that two paths will continue to log payload content until the fix is applied; restrict access to the logs accordingly.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85260.html
+* https://issues.apache.org/jira/browse/CAMEL-24454
+* https://github.com/apache/camel/pull/25832
+* https://github.com/apache/camel/pull/25944
+* https://github.com/apache/camel/pull/25946
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-CXF Information Disclosure via Unmuted Consumer Exceptions ## { #CVE-2026-85257 }
+
+CVE-2026-85257 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85257) [\[CVE json\]](./CVE-2026-85257.cve.json)
+
+_Last updated: 2026-10-19T10:37:13.645Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Generation of Error Message Containing Sensitive Information vulnerability in Apache Camel CXF component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>When a route behind a CXF SOAP consumer failed with an exception the service contract does not declare, the exception was described back to the SOAP client in the fault: CXF copies the message into the SOAP faultstring, and can be configured to place the stack trace in the fault detail. An external caller able to provoke a failure could therefore read internal detail about the deployment - class and package names, and whatever the exception message carries. Declared faults, annotated @WebFault, are a different matter: those are part of the published contract that clients are written against, and suppressing them would break the service rather than protect anything.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. A muteException consumer option, defaulting to true, replaces an undeclared route failure with a generic fault carrying no class name, message or stack trace. Faults the contract declares are reported exactly as before. Set muteException=false to restore the previous output. For deployments that cannot upgrade immediately, declare the exceptions the service is allowed to report and map every other failure onto one of them in an onException handler, so no undeclared exception reaches the fault.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85257.html
+* https://issues.apache.org/jira/browse/CAMEL-24477
+* https://github.com/apache/camel/pull/25742
+* https://github.com/apache/camel/pull/25934
+* https://github.com/apache/camel/pull/25935
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Platform-HTTP Request-Header Echo Suppression Bypassed by Header-Name Casing ## { #CVE-2026-85254 }
+
+CVE-2026-85254 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85254) [\[CVE json\]](./CVE-2026-85254.cve.json)
+
+_Last updated: 2026-10-19T10:36:45.497Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Improper Handling of Case Sensitivity vulnerability in Apache Camel Platform HTTP component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>The guard that prevents a request header being reflected into the response compared header names case sensitively, while HTTP header names are case insensitive. A caller could therefore defeat the suppression simply by varying the case of the header name. HTTP/2 makes the problem unconditional rather than optional: the protocol requires header names to be lowercase on the wire, so the comparison never matched and the suppression was inert for every request on an HTTP/2 connection. The consequence is that content the caller chose is echoed back in the response, which is the basis for response-splitting and cache-poisoning style attacks against whatever sits in front of the Camel endpoint.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. Request header names are now compared case insensitively, so the suppression holds regardless of casing and works under HTTP/2. For deployments that cannot upgrade immediately, strip the headers in question in front of the Camel endpoint, or remove them from the response in the route rather than relying on the built-in suppression.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85254.html
+* https://issues.apache.org/jira/browse/CAMEL-24453
+* https://github.com/apache/camel/pull/25831
+* https://github.com/apache/camel/pull/25940
+* https://github.com/apache/camel/pull/25942
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-HTTP Credential Disclosure to Cross-Host Redirect Targets ## { #CVE-2026-85251 }
+
+CVE-2026-85251 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85251) [\[CVE json\]](./CVE-2026-85251.cve.json)
+
+_Last updated: 2026-10-19T10:36:08.345Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Camel HTTP component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>Two paths handed credentials to a redirect target, which is a host chosen by the remote server rather than by the route, once followRedirects=true. OAuth2ClientConfigurer registers its interceptor with addRequestInterceptorFirst, and HttpClient runs protocol-level request interceptors inside ProtocolExec, which sits below RedirectExec in the exec chain; the interceptor therefore ran again for every redirect hop and re-attached Authorization: Bearer  to whatever host the Location header named. Separately, credentials were registered against an AuthScope matching any host, so basic and digest credentials were presented to a redirect target as well. A remote endpoint - or anyone who can influence its responses - could therefore collect the bearer token or the configured credentials simply by answering with a redirect to a host it controls.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. Credentials are now sent only to the authority the endpoint was configured with, and are not re-attached when a redirect crosses to another host. For deployments that cannot upgrade immediately, set followRedirects=false on endpoints that carry credentials, and handle any redirect explicitly in the route so that the destination is chosen by the route rather than by the remote server.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85251.html
+* https://issues.apache.org/jira/browse/CAMEL-24452
+* https://github.com/apache/camel/pull/25830
+* https://github.com/apache/camel/pull/25937
+* https://github.com/apache/camel/pull/25938
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-XPath XML External Entity Processing and File Disclosure via the documentType=InputSource Option ## { #CVE-2026-85250 }
+
+CVE-2026-85250 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85250) [\[CVE json\]](./CVE-2026-85250.cve.json)
+
+_Last updated: 2026-10-19T10:35:20.691Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Improper Restriction of XML External Entity Reference vulnerability in Apache Camel XPath component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>With documentType set to InputSource, XPathBuilder handed the payload straight to javax.xml.xpath, which builds a DocumentBuilder of its own using the JDK defaults. The hardening applied to Camel's default document type was therefore bypassed: a DOCTYPE declaration that is refused on the default type was accepted here, and the external entity it declared was resolved and expanded into the evaluated document. An external sender whose XML reaches such an expression could read files readable by the Camel process and cause the process to issue requests to hosts it names. The two document types disagreeing on parser configuration is what made this reachable, since a deployment choosing InputSource for streaming reasons had no indication it was also choosing a weaker parser.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. The InputSource document type now goes through the same hardened parser as the default type, so a DOCTYPE is refused. Note that it also shares that type's documented escape hatch: the same DocumentBuilderFactory system properties that relax the default type relax this one, so a deployment that has set them remains unprotected by design. For deployments that cannot upgrade immediately, do not use documentType=InputSource on expressions evaluated over untrusted XML; the default document type already refuses a DOCTYPE.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85250.html
+* https://issues.apache.org/jira/browse/CAMEL-24475
+* https://github.com/apache/camel/pull/25683
+* https://github.com/apache/camel/pull/25940
+* https://github.com/apache/camel/pull/25942
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Tika Header Injection via Unfiltered Document Metadata ## { #CVE-2026-85249 }
+
+CVE-2026-85249 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85249) [\[CVE json\]](./CVE-2026-85249.cve.json)
+
+_Last updated: 2026-10-19T10:34:38.658Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Improper Input Validation vulnerability in Apache Camel Tika component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>The Tika producer mapped every metadata key parsed out of the submitted document onto the Exchange as a header, with no filter applied. Document metadata is attacker-controlled content: the party that supplies the file chooses the metadata keys it carries. A crafted document could therefore set Exchange headers that the rest of the route depends on, including headers in the Camel namespace such as CamelFileName, which downstream components use to decide where content is written. The pattern is the same header-injection class as the consumer advisories published previously, reached here through parsed file content rather than through a protocol header.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. Parsed document metadata is now filtered through a HeaderFilterStrategy before it is mapped onto the Exchange. A route that was reading a metadata-derived header the filter now blocks will see it missing. For deployments that cannot upgrade immediately, strip the Camel namespace after the Tika producer with removeHeaders("Camel*") before any component that acts on those headers.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85249.html
+* https://issues.apache.org/jira/browse/CAMEL-24423
+* https://github.com/apache/camel/pull/25819
+* https://github.com/apache/camel/pull/25940
+* https://github.com/apache/camel/pull/25942
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-PQC Signature Verification Bypass via a Shared Unsynchronized Signature Instance ## { #CVE-2026-85248 }
+
+CVE-2026-85248 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85248) [\[CVE json\]](./CVE-2026-85248.cve.json)
+
+_Last updated: 2026-10-19T10:34:15.128Z_
+
+### Affected
+
+* Apache Camel from 4.12.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') vulnerability in Apache Camel PQC component.<br><br>This issue affects Apache Camel: from 4.12.0 before 4.18.5, from 4.19.0 before 4.22.1.</p><p><br>The producer held a single java.security.Signature instance and used it for every exchange without synchronizing access. Signature is stateful and is not thread safe: update() accumulates the data to be signed or verified, and verify() consumes that accumulated state. With concurrent exchanges sharing one instance the update and verify calls of different messages interleave, so a verification can complete against data that belongs to another exchange, or against a partially accumulated buffer. The outcome is non-deterministic and includes a verification reporting success for a message whose signature was never actually checked, which defeats the guarantee the component exists to provide. Reaching it requires concurrent traffic through the same endpoint, which is the ordinary condition for a Camel route under load.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. The Signature instance is no longer shared across concurrent exchanges. For deployments that cannot upgrade immediately, restrict the affected route to a single concurrent consumer so that no two exchanges use the instance at once.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85248.html
+* https://issues.apache.org/jira/browse/CAMEL-24445
+* https://github.com/apache/camel/pull/25825
+* https://github.com/apache/camel/pull/25850
+* https://github.com/apache/camel/pull/25851
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Knative Improper Certificate Validation When SSL Is Enabled Without a Truststore ## { #CVE-2026-85247 }
+
+CVE-2026-85247 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85247) [\[CVE json\]](./CVE-2026-85247.cve.json)
+
+_Last updated: 2026-10-19T10:33:38.575Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Improper Certificate Validation vulnerability in Apache Camel Knative component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>When SSL was enabled on the Knative HTTP client but no truststore was configured, the client options fell back to trusting every presented certificate rather than to the JVM's default trust anchors. A deployment that switched TLS on without also configuring a truststore therefore obtained an encrypted connection with no peer authentication, which an attacker positioned on the network path can terminate and read. The dangerous state is reached by omission rather than by an explicit opt-in, which is what makes it a framework defect: turning TLS on should not be the thing that turns certificate validation off.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. With no truststore configured the trust options are now left unset so the JVM default trust anchors apply, the same fallback SSLContextParameters and the rest of Camel use. Trusting every certificate is now reached only by asking for it explicitly through the trust.all property, which remains available for development against a cluster with a self-signed certificate. For deployments that cannot upgrade immediately, configure a truststore explicitly wherever SSL is enabled. After upgrading, a deployment that was relying on the implicit trust-all behaviour must either configure a truststore or set the trust.all property deliberately.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85247.html
+* https://issues.apache.org/jira/browse/CAMEL-24443
+* https://github.com/apache/camel/pull/25824
+* https://github.com/apache/camel/pull/25944
+* https://github.com/apache/camel/pull/25946
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Mina Information Disclosure via Unmuted Consumer Exceptions ## { #CVE-2026-85246 }
+
+CVE-2026-85246 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85246) [\[CVE json\]](./CVE-2026-85246.cve.json)
+
+_Last updated: 2026-10-19T10:33:15.346Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Generation of Error Message Containing Sensitive Information vulnerability in Apache Camel Mina component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>When processing of an exchange failed, the Mina consumer wrote exchange.getException() straight back over the socket to the remote peer. Over a textline codec that hands the peer the exception's class name and message; over the object codec it hands over the serialised exception, cause chain included. A remote peer able to provoke a failure could therefore read internal detail about the deployment - class and package names, and whatever a message or nested cause happens to carry, which in practice can include paths, host names and connection detail. The consumer had no option to suppress this, unlike the HTTP-family consumers aligned by CAMEL-23651.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. A muteException consumer option, defaulting to true, replaces the route exception with a generic one carrying no class name, message or stack trace, while still writing a reply so that a synchronous peer is not left to time out. Set muteException=false to restore the previous behaviour. For deployments that cannot upgrade immediately, add an onException handler that sets the reply body explicitly, so the framework never writes the exception back to the peer.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85246.html
+* https://issues.apache.org/jira/browse/CAMEL-24476
+* https://github.com/apache/camel/pull/25741
+* https://github.com/apache/camel/pull/25934
+* https://github.com/apache/camel/pull/25935
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Thrift Cross-Exchange Data Disclosure via a Shared Deserialization Target ## { #CVE-2026-85245 }
+
+CVE-2026-85245 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85245) [\[CVE json\]](./CVE-2026-85245.cve.json)
+
+_Last updated: 2026-10-19T10:32:43.154Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Exposure of Data Element to Wrong Session vulnerability in Apache Camel Thrift component.</p><p>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>The Thrift data format unmarshalled incoming data into the shared defaultInstance of the target type rather than into a fresh copy, and returned that shared object as the exchange body. Because the instance is shared process-wide, state written while unmarshalling one message stayed on the object and was visible to every later message that used the same type. Fields absent from a later payload retained the previous message's values, so content belonging to one sender could be read while processing another sender's message, and concurrent exchanges could observe each other's partially written state. In a deployment that serves more than one tenant or user through the same route, that is disclosure of one party's data to another.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. Unmarshalling now deserializes into a copy, so each exchange gets its own instance and no state carries between messages. For deployments that cannot upgrade immediately, copy the unmarshalled body into a new instance immediately after the data format runs, and do not retain references to the returned object.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85245.html
+* https://issues.apache.org/jira/browse/CAMEL-24442
+* https://github.com/apache/camel/pull/25823
+* https://github.com/apache/camel/pull/25940
+* https://github.com/apache/camel/pull/25942
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Crypto-PGP Integrity Verification Downgrade via Attacker-Controlled Message Structure ## { #CVE-2026-85243 }
+
+CVE-2026-85243 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85243) [\[CVE json\]](./CVE-2026-85243.cve.json)
+
+_Last updated: 2026-10-19T10:32:20.254Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Improper Validation of Integrity Check Value vulnerability in Apache Camel Crypto PGP component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>unmarshal() verified the modification detection code only when the message was an OpenPGP symmetrically encrypted integrity protected data packet. The older symmetrically encrypted data packet carries no such code, and OpenPGP's CFB mode is malleable without one, so a message using that packet skipped the check altogether. The packet type is chosen by whoever produced the message, which left the sender - or anyone able to rewrite the message in transit - deciding whether the integrity check applied at all. The existing integrity option governs marshalling only and had no decrypt-side counterpart, so a deployment could not require integrity protection on the messages it accepted.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. A requireIntegrityProtection option, defaulting to true, now rejects a message that is not integrity protected. Note that signatureVerificationOption still defaults to optional, so a message carrying no signature is accepted; the two options together are what give a decrypted message authenticity and not only confidentiality. For deployments that cannot upgrade immediately, reject messages that do not use the integrity protected packet before they reach the data format. Routes that must interoperate with a sender still emitting the legacy packet should set requireIntegrityProtection=false after upgrading, and treat the decrypted content as unauthenticated.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-85243.html
+* https://issues.apache.org/jira/browse/CAMEL-24441
+* https://github.com/apache/camel/pull/25848
+* https://github.com/apache/camel/pull/25944
+* https://github.com/apache/camel/pull/25946
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Shiro Authentication Bypass via Skipped Credential Verification on Subject Reuse ## { #CVE-2026-84181 }
+
+CVE-2026-84181 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-84181) [\[CVE json\]](./CVE-2026-84181.cve.json)
+
+_Last updated: 2026-10-19T10:31:40.614Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Improper Authentication vulnerability in Apache Camel Shiro component.</p><p>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>The Shiro security processor skipped credential verification when the subject already bound to the current thread carried the same principal as the incoming exchange. Because the thread that carries a Camel exchange is drawn from a pool and reused across exchanges, a subject left bound by an earlier authenticated exchange could satisfy the check for a later one that presented no valid credentials of its own. The password on the incoming exchange was, in that case, never verified. The condition depends on thread reuse and on the principal matching, which is why it is not reached on every request, but it requires nothing of the attacker beyond sending a request naming a principal that is in active use.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. The processor now verifies the presented credentials on every exchange rather than accepting a subject already bound to the thread. Setting alwaysReauthenticate=false restores the previous behaviour for deployments that depend on it. For deployments that cannot upgrade immediately, ensure the Shiro subject is cleared from the thread at the end of every exchange so that no subject can be inherited by a later one.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-84181.html
+* https://issues.apache.org/jira/browse/CAMEL-24439
+* https://github.com/apache/camel/pull/25822
+* https://github.com/apache/camel/pull/25944
+* https://github.com/apache/camel/pull/25946
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Knative Information Disclosure via Unmuted Consumer Exceptions ## { #CVE-2026-84180 }
+
+CVE-2026-84180 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-84180) [\[CVE json\]](./CVE-2026-84180.cve.json)
+
+_Last updated: 2026-10-19T10:31:07.820Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Generation of Error Message Containing Sensitive Information vulnerability in Apache Camel Knative component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>When processing of an exchange failed on the consumer side, the Knative HTTP consumer wrote the resulting exception back to the remote caller as the response body, including its class name, message and stack trace. An external sender could therefore provoke a failure and read internal detail about the deployment: class and package names, file system or host names carried in exception messages, and the shape of the route. That detail is useful for building a more targeted attack, and where an exception message embeds configuration or connection strings it is disclosure in its own right. camel-knative was the remaining HTTP-family consumer that had not been aligned with the muteException behaviour established for the other HTTP consumers by CAMEL-23651.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. The consumer now honours a muteException option that defaults to true, so a route failure returns an empty body with the error status rather than the exception. Set muteException=false to restore the previous output. For deployments that cannot upgrade immediately, add an onException handler that sets the response body explicitly, so that the framework never writes the exception back to the caller.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-84180.html
+* https://issues.apache.org/jira/browse/CAMEL-24428
+* https://github.com/apache/camel/pull/25685
+* https://github.com/apache/camel/pull/25835
+* https://github.com/apache/camel/pull/25836
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-OAuth Login Cross-Site Request Forgery via Missing State Binding in the Authorization Code Flow ## { #CVE-2026-84178 }
+
+CVE-2026-84178 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-84178) [\[CVE json\]](./CVE-2026-84178.cve.json) [\[OSV json\]](./CVE-2026-84178.osv.json)
+
+
+
+_Last updated: 2026-10-19T10:30:41.056Z_
+
+### Affected
+
+* Apache Camel from 4.11.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+
+
+### Description
+
+<p>Cross-Site Request Forgery (CSRF) vulnerability in Apache Camel OAuth component.</p><p>This issue affects Apache Camel: from 4.11.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>The authorization code callback did not carry a state parameter binding it to the authorization request that started the flow, and the callback did not verify one. An authorization code obtained in any browser could therefore be redeemed at the callback and associated with whichever session presented it, which is login cross-site request forgery: a victim can be silently signed in as an identity the attacker controls, so that actions the victim then performs, and data they then submit, land in the attacker's account. The same unvalidated callback handling also allowed the post-authentication redirect target to be influenced, giving an open redirect from a trusted origin. The state check runs before the authorization code is redeemed, so these paths are reachable without any interaction with the identity provider.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. The authorization request now issues a state value bound to the session, and the callback rejects a request whose state is absent or does not match, stopping the route with a 400 response. For deployments that cannot upgrade immediately, terminate the authorization code flow in a component that performs its own state binding rather than relying on the Camel callback. Note that after upgrading, a deployment behind a proxy that drops or rewrites the callback query string will begin to see 400 responses, because the state parameter must survive the round trip.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-84178.html
+* https://issues.apache.org/jira/browse/CAMEL-24437
+* https://github.com/apache/camel/pull/25821
+* https://github.com/apache/camel/pull/25944
+* https://github.com/apache/camel/pull/25946
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Platform-HTTP-Vertx Cross-Origin Credential Exposure via Wildcard Origin Reflection ## { #CVE-2026-84176 }
+
+CVE-2026-84176 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-84176) [\[CVE json\]](./CVE-2026-84176.cve.json)
+
+_Last updated: 2026-10-19T10:29:59.843Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Permissive Cross-domain Policy with Untrusted Domains vulnerability in Apache Camel Platform HTTP Vertx component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.</p><p><br>createCorsHandler() set Access-Control-Allow-Credentials: true outside the origin check, so the header went out on every response to a request carrying an Origin header, including responses to origins the handler had just decided not to allow. When camel.server.cors.origins is unset, the handler treats every origin as allowed and echoes the caller's own Origin back as Access-Control-Allow-Origin. Together those produce the credentialed any-origin configuration that the fetch specification refuses to express as a literal wildcard, which is precisely why reflecting the origin is the usual way around that rule. A page on any origin could therefore make credentialed cross-origin requests to the Camel endpoint and read the responses.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. Access-Control-Allow-Credentials is now sent only when the request origin matched an origin the operator actually configured. With no origin list the origin is still reflected, as before, but credentials are not granted, and Vary: Origin is now set whenever the origin is reflected so that a shared cache cannot serve one origin's response to another. For deployments that cannot upgrade immediately, set camel.server.cors.origins to the explicit list of origins that need access rather than leaving it unset.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-84176.html
+* https://issues.apache.org/jira/browse/CAMEL-24436
+* https://github.com/apache/camel/pull/25820
+* https://github.com/apache/camel/pull/25937
+* https://github.com/apache/camel/pull/25938
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Dynamic-Router Control Endpoint Compiles Predicate Expressions Supplied by Control Messages ## { #CVE-2026-83531 }
+
+CVE-2026-83531 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-83531) [\[CVE json\]](./CVE-2026-83531.cve.json) [\[OSV json\]](./CVE-2026-83531.osv.json)
+
+
+
+_Last updated: 2026-10-19T10:29:32.109Z_
+
+### Affected
+
+* Apache Camel from 4.4.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+
+
+### Description
+
+<p>Improper Control of Generation of Code ('Code Injection'), Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection') vulnerability in Apache Camel.</p><p>This issue affects Apache Camel: from 4.4.0 before 4.18.5, from 4.19.0 before 4.22.1.</p><p>The dynamic-router-control endpoint, introduced in 4.4.0, lets routing participants manage Dynamic Router subscriptions by sending control messages. When it handled a subscribe or update request, DynamicRouterControlProducer took the subscription predicate and the name of the language used to compile it from the incoming message, either from the predicate and expressionLanguage fields of a DynamicRouterControlMessage body or from the CamelDynamicRouterPredicate and CamelDynamicRouterExpressionLanguage headers. DynamicRouterControlService then resolved that language from the CamelContext and compiled the expression into a Predicate, with no allow-list and no opt-in. The compiled predicate was added to the channel's rule base and evaluated against every exchange routed through the corresponding dynamic-router endpoint for as long as the subscription existed. A route that forwards messages from an external transport to the control endpoint, as shown in the component documentation for routing participants in other JVMs or applications, therefore let any actor able to send a message on that transport supply an expression of their choosing, which was evaluated with the privileges of the Camel process. Any expression language available on the classpath could be selected, including the simple language, which is always present and was the default on the header path, so removing optional expression languages from the classpath did not prevent the issue. Exploitation requires the ability to send a message on a transport whose route forwards it to a dynamic-router-control endpoint; no other authentication or user interaction is needed. Releases before 4.4.0 are not affected, because their control channel took predicate expressions only from the endpoint URI configured by the route author.</p><p>Users are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.1. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The 4.14.x releases stream and earlier reached end of life before this issue was resolved and will not receive a fix, so deployments on those lines must move to a supported release. After upgrading, a control message that carries a predicate expression or an expression language is rejected unless the new allowPredicateFromMessage option is enabled on the dynamic-router-control endpoint; enable it only when every sender of control messages is trusted. For deployments that cannot upgrade immediately, do not forward messages from untrusted or shared transports to a dynamic-router-control endpoint. Where control messages must cross such a transport, authenticate the sender and make sure the predicate and expression language of each subscription are set by the route rather than taken from the incoming message, for example by removing the CamelDynamicRouterPredicate and CamelDynamicRouterExpressionLanguage headers and clearing the predicate and expressionLanguage fields of a DynamicRouterControlMessage before it reaches the endpoint. Removing optional expression languages from the classpath is not a sufficient workaround. As defence in depth, restrict who can send to the transports that feed the control endpoint, and on 4.23.0 and 4.22.1 set the allowedSchemes option of the dynamic-router endpoint to limit which endpoints a subscription's destinationUri may name.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-83531.html
+* https://issues.apache.org/jira/browse/CAMEL-24576
+* https://github.com/apache/camel/pull/25992
+* https://github.com/apache/camel/pull/26018
+* https://github.com/apache/camel/pull/26019
+* https://github.com/apache/camel/pull/26020
+
+
+### Credits
+* Leon Zlobecki (finder)
+* Andrea Cosentino (remediation developer)
 
 
 ## Camel K Builder trait mavenProfiles ValueSources resolve tenant-named secrets in operator namespace ## { #CVE-2026-80354 }
@@ -114,6 +1011,234 @@ _Last updated: 2026-09-10T07:42:56.372Z_
 * https://camel.apache.org/security/CVE-2026-80351.html
 
 
+## Camel-AS2 Server-Side Request Forgery and Credential Disclosure via Asynchronous MDN Delivery Address ## { #CVE-2026-80344 }
+
+CVE-2026-80344 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-80344) [\[CVE json\]](./CVE-2026-80344.cve.json)
+
+_Last updated: 2026-10-19T10:28:47.454Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Server-Side Request Forgery (SSRF) vulnerability in Apache Camel AS2 component.<br><br>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.<br><br>In the AS2 protocol the sender of a message may request that the Message Disposition Notification be returned asynchronously to an address the sender supplies. camel-as2 took that address from the inbound message and used it as the destination for the outgoing receipt without constraining it to anything the deployment had configured. A remote partner therefore chose the host the Camel instance would connect to when delivering the MDN. That gives server-side request forgery from the position of the AS2 receiver, including reaching hosts that are only routable from inside the deployment's network, and where the outbound connection carries credentials configured for MDN delivery those credentials are presented to the attacker-chosen destination.<br><br>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. The asynchronous MDN destination is now constrained rather than taken verbatim from the inbound message. For deployments that cannot upgrade immediately, restrict outbound connectivity from the AS2 receiver to the partner endpoints it legitimately delivers receipts to, and do not attach credentials to MDN delivery that are valid for any host other than those partners.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-80344.html
+* https://issues.apache.org/jira/browse/CAMEL-24417
+* https://github.com/apache/camel/pull/25637
+* https://github.com/apache/camel/pull/25763
+* https://github.com/apache/camel/pull/25764
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Netty-HTTP Security Constraint Bypass via Case-Sensitive Context-Path Matching ## { #CVE-2026-80343 }
+
+CVE-2026-80343 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-80343) [\[CVE json\]](./CVE-2026-80343.cve.json)
+
+_Last updated: 2026-10-19T10:27:57.678Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Improper Handling of Case Sensitivity vulnerability in Apache Camel Netty HTTP component.</p><p>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.</p><p>The camel-netty-http security constraint compared the request path against the configured context path using a case-sensitive match, while the routing that dispatches the request to the endpoint did not apply the same rule. The two comparisons therefore disagreed for any path whose case differed from the configured value. An external caller could alter the case of a character in a path segment so that the security constraint no longer recognised the path as protected, while the request still dispatched to the same endpoint. The result is that the constraint is skipped and the protected route is reached without satisfying it. No credential, prior access or special configuration is required beyond being able to send a request to the consumer.</p><p>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. The constraint now matches the request path with the same case rules the dispatch uses, so the two can no longer disagree. For deployments that cannot upgrade immediately, place the authorization decision in front of the Camel consumer, for example in a reverse proxy that normalises the request path before forwarding.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-80343.html
+* https://issues.apache.org/jira/browse/CAMEL-24412
+* https://github.com/apache/camel/pull/25578
+* https://github.com/apache/camel/pull/25761
+* https://github.com/apache/camel/pull/25762
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-OAuth Authentication Bypass via Fail-Open Processors ## { #CVE-2026-80312 }
+
+CVE-2026-80312 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-80312) [\[CVE json\]](./CVE-2026-80312.cve.json)
+
+_Last updated: 2026-10-19T10:27:32.910Z_
+
+### Affected
+
+* Apache Camel from 4.11.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Improper Authentication vulnerability in Apache Camel OAuth component.</p><p>This issue affects Apache Camel: from 4.11.0 before 4.18.5, from 4.19.0 before 4.22.1.</p><p>The camel-oauth processors that guard a route did not stop the exchange when authentication could not be completed. Where a failure to establish an authenticated session should have terminated routing and returned an error to the caller, the processors fell through and returned control to the route, so the request continued to the protected endpoint as though authentication had succeeded. The effect is a fail-open authentication guard: an unauthenticated caller reached whatever the route did next. The condition is reached on the ordinary request path of a route configured to require OAuth, and needs no special configuration or prior access on the caller's part.</p><p>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. The processors now stop the exchange and set the appropriate error status whenever an authenticated session cannot be established, so a failed authentication no longer reaches the protected part of the route. For deployments that cannot upgrade immediately, place an explicit authorization check after the OAuth processor rather than relying on it to halt the exchange, and verify that the route stops on failure.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-80312.html
+* https://issues.apache.org/jira/browse/CAMEL-24411
+* https://github.com/apache/camel/pull/25567
+* https://github.com/apache/camel/pull/25575
+* https://github.com/apache/camel/pull/25576
+
+
+### Credits
+* Claude Security (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## camel-azure-files resolved the remote path of a polled file from the name reported in the server directory listing without constraining it to the directory being polled, so a listing entry containing traversal segments could be moved outside ## { #CVE-2026-79986 }
+
+CVE-2026-79986 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-79986) [\[CVE json\]](./CVE-2026-79986.cve.json)
+
+_Last updated: 2026-10-19T10:25:56.231Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache Camel Azure Files component.</p><p>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.</p><p>The Camel remote-file consumers poll a directory on a remote server and build the absolute remote path of each file by concatenating the configured directory with the file name reported in the server's directory listing. That concatenation (FtpUtils.absoluteFilePath and GenericFileConsumer) applied no lexical normalization and no check that the result stayed inside the directory being polled, and the resulting path became the operand for every subsequent remote operation on the file: retrieval (FtpOperations.retrieveFile / SftpOperations, reached from GenericFileConsumer where the retrieve name is taken verbatim from GenericFile.getAbsoluteFilePath), deletion when delete=true (GenericFileDeleteProcessStrategy), and renaming when move, preMove, moveFailed or readLock=rename is configured (GenericFileProcessStrategySupport and GenericFileRenameExclusiveReadLockStrategy). Neither isValidFile nor isMatched performed any containment check. A listing entry that is not a single path segment therefore resolved to a path outside the configured polling directory, causing Camel to read, delete or rename files outside it using the endpoint's own credentials. A listing name is not route-controlled data. It is supplied by the remote server, and the FTP control channel carries no integrity protection at all, so an on-path attacker can rewrite a LIST response without holding any credentials; a compromised, malicious or multi-tenant server, or a server backed by a virtual filesystem, can emit such a name directly. Retrieval is reachable in a default consumer configuration, since the remote consumers download every listed file; deletion and renaming additionally require one of the disposition options above, all of which are common. Escape from the directory Camel was configured to poll is unconditional, while escape from the server's own account boundary additionally depends on whether that server confines the account. The jailStartingDirectory option, which is documented as restricting Camel to the starting directory and is enabled by default, governed producer writes and, since the localWorkDirectory containment work, consumer downloads to the local work directory - but it did not constrain this remote operand, so its name and description claimed a boundary that was not enforced here. The same entry point had already been recognised on the local side: the localWorkDirectory download path was constrained so that a remote file name containing parent-directory segments could not resolve outside the local work directory. The remote operand was the remaining half of that surface. This artifact provides the azure-files scheme. Its consumer derives from the same RemoteFileConsumer base class and composed the remote path through a plain concatenation helper, so it inherited the same unconstrained resolution. Reaching it requires a listing name that is not a single path segment, which the Azure Files REST service does not normally return; the exposure was corrected on the same basis as the other remote-file consumers rather than from a demonstrated proof of concept against this scheme.</p><p>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.22.x releases stream should upgrade to 4.22.1. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. The 4.14.x stream reached end of life and does not receive this fix; users on it should move to a supported releases stream.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-79986.html
+* https://issues.apache.org/jira/browse/CAMEL-24487
+* https://github.com/apache/camel/pull/25730
+* https://github.com/apache/camel/pull/25745
+* https://github.com/apache/camel/pull/25746
+* https://github.com/apache/camel/pull/25747
+
+
+### Credits
+* Dilrevx, NSSL, SJTU (reporter)
+* Andrea Cosentino (remediation developer)
+
+
+## camel-smb resolved the remote path of a polled file from the name reported in the server directory listing without constraining it to the directory being polled, so a listing entry containing traversal segments could be moved outside ## { #CVE-2026-79985 }
+
+CVE-2026-79985 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-79985) [\[CVE json\]](./CVE-2026-79985.cve.json)
+
+_Last updated: 2026-10-19T10:16:13.175Z_
+
+### Affected
+
+* Apache Camel from 4.2.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache Camel SMB component.</p><p>This issue affects Apache Camel: from 4.2.0 before 4.18.5, from 4.19.0 before 4.22.1.</p><p>The Camel remote-file consumers poll a directory on a remote server and build the absolute remote path of each file by concatenating the configured directory with the file name reported in the server's directory listing. That concatenation (FtpUtils.absoluteFilePath and GenericFileConsumer) applied no lexical normalization and no check that the result stayed inside the directory being polled, and the resulting path became the operand for every subsequent remote operation on the file: retrieval (FtpOperations.retrieveFile / SftpOperations, reached from GenericFileConsumer where the retrieve name is taken verbatim from GenericFile.getAbsoluteFilePath), deletion when delete=true (GenericFileDeleteProcessStrategy), and renaming when move, preMove, moveFailed or readLock=rename is configured (GenericFileProcessStrategySupport and GenericFileRenameExclusiveReadLockStrategy). Neither isValidFile nor isMatched performed any containment check. A listing entry that is not a single path segment therefore resolved to a path outside the configured polling directory, causing Camel to read, delete or rename files outside it using the endpoint's own credentials. A listing name is not route-controlled data. It is supplied by the remote server, and the FTP control channel carries no integrity protection at all, so an on-path attacker can rewrite a LIST response without holding any credentials; a compromised, malicious or multi-tenant server, or a server backed by a virtual filesystem, can emit such a name directly. Retrieval is reachable in a default consumer configuration, since the remote consumers download every listed file; deletion and renaming additionally require one of the disposition options above, all of which are common. Escape from the directory Camel was configured to poll is unconditional, while escape from the server's own account boundary additionally depends on whether that server confines the account. The jailStartingDirectory option, which is documented as restricting Camel to the starting directory and is enabled by default, governed producer writes and, since the localWorkDirectory containment work, consumer downloads to the local work directory - but it did not constrain this remote operand, so its name and description claimed a boundary that was not enforced here. The same entry point had already been recognised on the local side: the localWorkDirectory download path was constrained so that a remote file name containing parent-directory segments could not resolve outside the local work directory. The remote operand was the remaining half of that surface. This artifact provides the smb scheme. Its consumer walks the share listing on its own rather than through RemoteFileConsumer, skipping only the exact "." and ".." entries, so a name carrying traversal segments in any other form was concatenated unchecked. Reaching it requires a server that emits a listing name which is not a single path segment, which a conforming SMB2 implementation does not do; the exposure was corrected on the same basis as the other remote-file consumers rather than from a demonstrated proof of concept against this scheme.</p><p>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.22.x releases stream should upgrade to 4.22.1. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. The 4.14.x stream reached end of life and does not receive this fix; users on it should move to a supported releases stream.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-79985.html
+* https://issues.apache.org/jira/browse/CAMEL-24487
+* https://github.com/apache/camel/pull/25730
+* https://github.com/apache/camel/pull/25745
+* https://github.com/apache/camel/pull/25746
+* https://github.com/apache/camel/pull/25747
+
+
+### Credits
+* Dilrevx, NSSL, SJTU (reporter)
+* Andrea Cosentino (remediation developer)
+
+
+## camel-mina-sftp resolved the remote path of a polled file from the name reported in the server directory listing without constraining it to the directory being polled, so a listing entry containing traversal segments could be moved outside ## { #CVE-2026-79984 }
+
+CVE-2026-79984 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-79984) [\[CVE json\]](./CVE-2026-79984.cve.json)
+
+_Last updated: 2026-10-19T10:15:37.112Z_
+
+### Affected
+
+* Apache Camel from 4.18.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache Camel Mina SFTP component.</p><p>This issue affects Apache Camel: from 4.18.0 before 4.18.5, from 4.19.0 before 4.22.1.</p><p>The Camel remote-file consumers poll a directory on a remote server and build the absolute remote path of each file by concatenating the configured directory with the file name reported in the server's directory listing. That concatenation (FtpUtils.absoluteFilePath and GenericFileConsumer) applied no lexical normalization and no check that the result stayed inside the directory being polled, and the resulting path became the operand for every subsequent remote operation on the file: retrieval (FtpOperations.retrieveFile / SftpOperations, reached from GenericFileConsumer where the retrieve name is taken verbatim from GenericFile.getAbsoluteFilePath), deletion when delete=true (GenericFileDeleteProcessStrategy), and renaming when move, preMove, moveFailed or readLock=rename is configured (GenericFileProcessStrategySupport and GenericFileRenameExclusiveReadLockStrategy). Neither isValidFile nor isMatched performed any containment check. A listing entry that is not a single path segment therefore resolved to a path outside the configured polling directory, causing Camel to read, delete or rename files outside it using the endpoint's own credentials. A listing name is not route-controlled data. It is supplied by the remote server, and the FTP control channel carries no integrity protection at all, so an on-path attacker can rewrite a LIST response without holding any credentials; a compromised, malicious or multi-tenant server, or a server backed by a virtual filesystem, can emit such a name directly. Retrieval is reachable in a default consumer configuration, since the remote consumers download every listed file; deletion and renaming additionally require one of the disposition options above, all of which are common. Escape from the directory Camel was configured to poll is unconditional, while escape from the server's own account boundary additionally depends on whether that server confines the account. The jailStartingDirectory option, which is documented as restricting Camel to the starting directory and is enabled by default, governed producer writes and, since the localWorkDirectory containment work, consumer downloads to the local work directory - but it did not constrain this remote operand, so its name and description claimed a boundary that was not enforced here. The same entry point had already been recognised on the local side: the localWorkDirectory download path was constrained so that a remote file name containing parent-directory segments could not resolve outside the local work directory. The remote operand was the remaining half of that surface. This artifact provides the mina-sftp scheme, an alternative SFTP implementation whose consumer derives from the same RemoteFileConsumer base class and therefore inherited the same unconstrained resolution.</p><p>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.22.x releases stream should upgrade to 4.22.1. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. The 4.14.x stream reached end of life and does not receive this fix; users on it should move to a supported releases stream.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-79984.html
+* https://issues.apache.org/jira/browse/CAMEL-24487
+* https://github.com/apache/camel/pull/25730
+* https://github.com/apache/camel/pull/25745
+* https://github.com/apache/camel/pull/25746
+* https://github.com/apache/camel/pull/25747
+
+
+### Credits
+* Dilrevx, NSSL, SJTU (reporter)
+* Andrea Cosentino (remediation developer)
+
+
+## camel-ftp resolved the remote path of a polled file from the name reported in the server directory listing without constraining it to the directory being polled, so a listing entry containing traversal segments could be moved outside ## { #CVE-2026-79983 }
+
+CVE-2026-79983 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-79983) [\[CVE json\]](./CVE-2026-79983.cve.json)
+
+_Last updated: 2026-10-19T10:08:46.456Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache Camel FTP component.</p><p>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.</p><p>The Camel remote-file consumers poll a directory on a remote server and build the absolute remote path of each file by concatenating the configured directory with the file name reported in the server's directory listing. That concatenation (FtpUtils.absoluteFilePath and GenericFileConsumer) applied no lexical normalization and no check that the result stayed inside the directory being polled, and the resulting path became the operand for every subsequent remote operation on the file: retrieval (FtpOperations.retrieveFile / SftpOperations, reached from GenericFileConsumer where the retrieve name is taken verbatim from GenericFile.getAbsoluteFilePath), deletion when delete=true (GenericFileDeleteProcessStrategy), and renaming when move, preMove, moveFailed or readLock=rename is configured (GenericFileProcessStrategySupport and GenericFileRenameExclusiveReadLockStrategy). Neither isValidFile nor isMatched performed any containment check. A listing entry that is not a single path segment therefore resolved to a path outside the configured polling directory, causing Camel to read, delete or rename files outside it using the endpoint's own credentials. A listing name is not route-controlled data. It is supplied by the remote server, and the FTP control channel carries no integrity protection at all, so an on-path attacker can rewrite a LIST response without holding any credentials; a compromised, malicious or multi-tenant server, or a server backed by a virtual filesystem, can emit such a name directly. Retrieval is reachable in a default consumer configuration, since the remote consumers download every listed file; deletion and renaming additionally require one of the disposition options above, all of which are common. Escape from the directory Camel was configured to poll is unconditional, while escape from the server's own account boundary additionally depends on whether that server confines the account. The jailStartingDirectory option, which is documented as restricting Camel to the starting directory and is enabled by default, governed producer writes and, since the localWorkDirectory containment work, consumer downloads to the local work directory - but it did not constrain this remote operand, so its name and description claimed a boundary that was not enforced here. The same entry point had already been recognised on the local side: the localWorkDirectory download path was constrained so that a remote file name containing parent-directory segments could not resolve outside the local work directory. The remote operand was the remaining half of that surface. This artifact provides the ftp, ftps and sftp schemes, all of which are affected. The reporter demonstrated the issue end to end against an ftp endpoint, driving a Camel route with a malicious server whose LIST response named a file outside the polled directory.</p><p>Upgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.22.x releases stream should upgrade to 4.22.1. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. The 4.14.x stream reached end of life and does not receive this fix; users on it should move to a supported releases stream.&nbsp;</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-79983.html
+* https://issues.apache.org/jira/browse/CAMEL-24487
+* https://github.com/apache/camel/pull/25730
+* https://github.com/apache/camel/pull/25745
+* https://github.com/apache/camel/pull/25746
+* https://github.com/apache/camel/pull/25747
+
+
+### Credits
+* Dilrevx, NSSL, SJTU (reporter)
+* Andrea Cosentino (remediation developer)
+
+
 ## Camel-Undertow: the endpoint discarded the undertow-specific header filter strategy in favour of the base HTTP one, so the undertow filtering never ran on endpoint-configured routes ## { #CVE-2026-78329 }
 
 CVE-2026-78329 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-78329) [\[CVE json\]](./CVE-2026-78329.cve.json) [\[OSV json\]](./CVE-2026-78329.osv.json)
@@ -141,6 +1266,160 @@ _Last updated: 2026-08-24T16:22:14.568Z_
 * Andrea Cosentino from Apache Software Foundation (finder)
 * Barak Srour from Apiiro (finder)
 * Andrea Cosentino from Apache Software Foundation (remediation developer)
+
+
+## Camel-Spring-Redis Unfiltered Java Deserialization of Redis Payloads ## { #CVE-2026-78165 }
+
+CVE-2026-78165 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-78165) [\[CVE json\]](./CVE-2026-78165.cve.json)
+
+_Last updated: 2026-10-19T10:08:16.093Z_
+
+### Affected
+
+* Apache Camel from 2.11.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Deserialization of Untrusted Data vulnerability in Apache Camel Spring Redis component.</p><p>This issue affects Apache Camel: from 2.11.0 before 4.18.5, from 4.19.0 before 4.22.1.</p><p>RedisConfiguration.getSerializer lazily built a bare JdkSerializationRedisSerializer whenever no serializer option was configured, and that instance was used for every read the component performs. Spring's implementation delegates through DeserializingConverter to DefaultDeserializer, which reads the bytes with a ConfigurableObjectInputStream and installs no java.io.ObjectInputFilter on the stream, so an arbitrary serialized class graph was materialised and its readObject method executed. RedisConsumer.setBody applied that serializer to the raw bytes of every message published to the subscribed channels, before the Exchange was constructed and therefore before any route logic could inspect the message, so an actor able to issue PUBLISH on a subscribed channel reached the deserialization sink directly. The same default serializer backed the RedisTemplate built by RedisConfiguration.createDefaultTemplate, so the producer read commands GET, HGET, HGETALL and HVALS deserialized whatever was stored in the Redis keyspace, and SpringRedisIdempotentRepository shared that template. Configuring a custom redisTemplate did not close the consumer path, because RedisConsumer.setBody reads getSerializer directly rather than the serializer attached to the template, so a deployment that had wired a String serializer into its own template remained exposed on the consumer side unless it also set the serializer option. The component never constructed a java.io.ObjectInputStream itself, which is why earlier passes over the Camel codebase for unfiltered Java deserialization did not reach it. The behaviour dates back to the introduction of the component, first released in 2.11.0, and was unchanged until this fix.</p><p>Users are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.1. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The 4.14.x releases stream and earlier reached end of life before this issue was resolved and will not receive a fix, so deployments on those lines must move to a supported release. For deployments that cannot upgrade immediately, set the JVM-wide jdk.serialFilter system property, which the affected code path honours because it reads through a java.io.ObjectInputStream, for example -Djdk.serialFilter=!java.net.**;java.**;javax.**;org.apache.camel.**;!* ; or set the serializer endpoint option to a serializer that does not use Java serialization, such as StringRedisSerializer, noting that this must be set as the serializer option and not only on a custom redisTemplate. As defence in depth, require authentication on the Redis instance and restrict which clients may publish to the subscribed channels, and do not expose a Redis instance consumed by Camel to untrusted networks.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-78165.html
+* https://issues.apache.org/jira/browse/CAMEL-24421
+* https://github.com/apache/camel/pull/25587
+* https://github.com/apache/camel/pull/25588
+* https://github.com/apache/camel/pull/25589
+* https://github.com/apache/camel/pull/25734
+
+
+### Credits
+* Leon Zlobecki (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## HTTP producers resolve property placeholders in message-supplied URI override headers ## { #CVE-2026-78164 }
+
+CVE-2026-78164 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-78164) [\[CVE json\]](./CVE-2026-78164.cve.json)
+
+_Last updated: 2026-10-19T10:07:38.792Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+* Apache Camel from 4.15.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+* Apache Camel from 4.15.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+* Apache Camel from 4.15.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+* Apache Camel from 4.15.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements Used in a Template Engine and Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Camel HTTP, Netty HTTP, Undertow and Vert.x HTTP components.</p><p>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.</p><p>The Camel HTTP producer families let an inbound message override the endpoint URI through the CamelHttpUri and CamelRestHttpUri headers, and then passed that message-supplied string through CamelContext.resolvePropertyPlaceholders() before using it. Property-placeholder resolution is a configuration-resolution facility, not a URI-parsing step: it reaches operating-system environment variables, JVM system properties, every PropertiesFunction registered on the classpath - including the AWS, Azure, GCP, HashiCorp, IBM, CyberArk and Kubernetes secret functions - and, through camel-bean, the invocation of a no-argument method on any bean in the registry. Applying it to Exchange content therefore turned a URI string into a configuration- and bean-evaluation context. A route author opted into none of this: a plain static to("http://backend/api") was sufficient. Seven call sites were affected: HttpHelper.createURL and HttpHelper.createMethod in camel-http-common, HttpMethodHelper.createMethod in camel-http, VertxHttpHelper.resolveHttpURI in camel-vertx-http, UndertowHelper.createURL and UndertowHelper.createMethod in camel-undertow, and NettyHttpHelper.createURL in camel-netty-http. The bridgeEndpoint option did not bound the exposure: it suppresses the CamelHttpUri override in the createURL family but not in the createMethod family, so a route using the documented bridging configuration still resolved placeholders taken from the header, and CamelRestHttpUri was consumed before any bridgeEndpoint check in all four components. Only camel-http offered an opt-out, skipControlHeaders, which defaults to false. Reaching the headers did not always require header injection, because several Camel HTTP consumers populate CamelHttpUri from the request line themselves as a documented reverse-proxy feature. An unresolvable placeholder additionally produced a RuntimeExchangeException whose message echoed the URI, which distinguishes a set from an unset configuration key even where no outbound request is made. The behaviour predates the 4.x line; it dates back to the camel-http4 and camel-netty4 components. This advisory continues the alignment CAMEL-24282 applied to the toD and enrich dynamic-URI EIPs in 4.22.0, extending the same build-time-resolution contract to the HTTP producer components.</p><p>Users are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.1. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The 4.14.x releases stream and earlier reached end of life before this issue was resolved and will not receive a fix, so deployments on those lines must move to a supported release. For deployments that cannot upgrade immediately, strip the override headers at the trust boundary before the producer with removeHeader("CamelHttpUri") and removeHeader("CamelRestHttpUri"), or set skipControlHeaders=true on camel-http endpoints, which is the only component offering that option. Note that bridgeEndpoint=true is not a workaround: it suppresses the header override when the outbound URL is built but not when the header is re-parsed for the query string. Percent-encoding the placeholder delimiters is likewise not a mitigation for camel-netty-http, whose binding decodes the request path before the value reaches the header, so proxy or WAF rules written against the raw delimiters do not help there. As defence in depth, ensure consumers exposed to untrusted senders apply a strict inbound HeaderFilterStrategy over the Camel namespace, and resolve secrets through a vault rather than through environment variables or system properties that a placeholder can name.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-78164.html
+* https://issues.apache.org/jira/browse/CAMEL-24418
+* https://github.com/apache/camel/pull/25571
+* https://github.com/apache/camel/commit/ba5aced7f6a1c38a963020575676ad4c76b492cf
+* https://github.com/apache/camel/commit/9f8a185e315ce9e120889c4106be3dbf4688e507
+* https://github.com/apache/camel/commit/7cec534c66969015d85e56631143174dd150ed94
+
+
+### Credits
+* 1428265354@qq.com (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Docling Unvalidated Message Body Input Source Enables Server-Side Request Forgery and Local File Disclosure ## { #CVE-2026-78163 }
+
+CVE-2026-78163 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-78163) [\[CVE json\]](./CVE-2026-78163.cve.json)
+
+_Last updated: 2026-10-19T10:07:05.722Z_
+
+### Affected
+
+* Apache Camel from 4.15.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Server-Side Request Forgery (SSRF), Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') and Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Camel Docling component.</p><p>This issue affects Apache Camel: from 4.15.0 before 4.18.5, from 4.19.0 before 4.22.1.</p><p>DoclingProducer decided what a String message body meant by inspecting its prefix. A body starting with http:// or https:// was handed to Docling as a remote URL to fetch, a body starting with / or containing a backslash was read from the local filesystem, and anything else was written to a temporary file and converted as document content. The mode was chosen implicitly and no endpoint option allowed a route author to pin the component to a single interpretation, so a route that means convert whatever text arrives in the body silently became a fetcher of remote resources or a reader of local files whenever the text happened to begin with one of those prefixes. The only guard applied to the derived value was a size check, and that check was wrapped in an existence test, so a path that resolved to nothing, or to a pseudo-file reporting a size of zero, passed without being checked at all. Five call sites reached the two sinks: the CLI mode appended the value as the final positional argument of the docling subprocess, and the docling-serve mode passed it either to HttpSource for the backend to fetch or to Files.readAllBytes so that the content could be base64-encoded and uploaded. Because the exchange body is never filtered by a HeaderFilterStrategy, unlike the Camel header namespace, a sender able to place text in a message that a route forwards into a docling endpoint could reach both sinks without any opt-in from the deployment.</p><p>Users are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.1. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The 4.14.x releases stream and earlier reached end of life before this issue was resolved and will not receive a fix, so deployments on those lines must move to a supported release. For deployments that cannot upgrade immediately, do not route message bodies that originate outside the deployment into a docling endpoint, and pass the document through a typed body such as File, byte[] or InputStream, or through the CamelDoclingInputFilePath header, so that the body is never subject to prefix interpretation.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-78163.html
+* https://issues.apache.org/jira/browse/CAMEL-24422
+* https://github.com/apache/camel/pull/25596
+* https://github.com/apache/camel/pull/25733
+* https://github.com/apache/camel/pull/25744
+
+
+### Credits
+* Li Zhiyao (BUPT) (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Hazelcast Managed Instances Missing Java Deserialization Filter (Incomplete Fix for CVE-2026-43865) ## { #CVE-2026-78162 }
+
+CVE-2026-78162 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-78162) [\[CVE json\]](./CVE-2026-78162.cve.json)
+
+_Last updated: 2026-10-19T10:03:55.708Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.1
+* Apache Camel at 4.18.5 unaffected
+* Apache Camel at 4.22.1 unaffected
+* Apache Camel at 4.23.0 unaffected
+
+
+### Description
+
+<p>Deserialization of Untrusted Data vulnerability in Apache Camel.</p><p>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.</p><p>The camel-hazelcast component applies a default Hazelcast JavaSerializationFilterConfig to the instances it creates from its own configuration, a protection introduced by CVE-2026-43865. That change did not reach two of the configuration paths Camel builds itself, so those paths continued to create Hazelcast instances whose Java deserialization is unrestricted. ReplicatedHazelcastAggregationRepository extends HazelcastAggregationRepository but overrides doStart() without calling super.doStart(), keeping its own copy of the bootstrap block, and therefore never received the filter: a route using it without supplying a hazelcastInstance starts a Hazelcast member that deserializes values read from the backing ReplicatedMap with no class restriction. HazelcastDefaultComponent#getOrCreateHzClientInstance() builds its own ClientConfig when hazelcastMode=client is selected and neither a referenced ClientConfig nor hazelcastConfigUri is supplied, and likewise applied no filter, so client-mode endpoints behaved differently from node-mode endpoints for an otherwise identical configuration. In both cases an attacker able to publish into the Hazelcast cluster that the affected instance is attached to can cause a serialized Java object of their choosing to be deserialized inside Hazelcast's own serialization layer, before Camel processes the exchange, resulting in remote code execution. Hazelcast clusters have neither authentication nor TLS enabled by default. Selecting client mode is a topology choice rather than a security option, so neither path required the deployment to opt in to unsafe behaviour.</p><p>Users are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.1. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The 4.14.x releases stream and earlier reached end of life before this issue was resolved and will not receive a fix, so deployments on those lines must move to a supported release. For deployments that cannot upgrade immediately, supply an explicit Hazelcast configuration carrying a JavaSerializationFilterConfig, or inject a pre-built HazelcastInstance, since a user-supplied configuration is never overwritten by Camel. Alternatively set the JVM-wide filter -Djdk.serialFilter=!java.net.;java.;javax.;org.apache.camel.;!* and enable Hazelcast cluster authentication and TLS to restrict who can reach the cluster.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-78162.html
+* https://issues.apache.org/jira/browse/CAMEL-24413
+* https://issues.apache.org/jira/browse/CAMEL-24420
+* https://github.com/apache/camel/pull/25566
+* https://github.com/apache/camel/pull/25595
+* https://github.com/apache/camel/pull/25599
+* https://github.com/apache/camel/pull/25600
+* https://camel.apache.org/security/CVE-2026-43865.html
+
+
+### Credits
+* cattier from TCBS (finder)
+* Leon Zlobecki (finder)
+* Andrea Cosentino (remediation developer)
 
 
 ## Camel-Atmosphere-Websocket: WebSocket dispatch header injection ## { #CVE-2026-71300 }
@@ -1631,6 +2910,62 @@ _Last updated: 2026-02-22T15:55:13.482Z_
 ### Credits
 * Andrea Cosentino (finder)
 * Andrea Cosentino (remediation developer)
+
+
+## unvalidated Kubernetes resources applied from a project's kubernetes.yaml ## { #CVE-2026-103413 }
+
+CVE-2026-103413 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-103413) [\[CVE json\]](./CVE-2026-103413.cve.json) [\[OSV json\]](./CVE-2026-103413.osv.json)
+
+
+
+_Last updated: 2026-10-09T12:53:54.572Z_
+
+### Affected
+
+* Apache Camel Karavan from 4.0.0 before 4.22.1
+
+
+### Description
+
+<p>Improper input validation vulnerability in Apache Camel Karavan.</p><p>When a deployment was started, Karavan unmarshalled a project's `kubernetes.yaml` and applied every resource it contained to the cluster without restricting the resource kinds, without rejecting security-sensitive pod options, and without pinning the target namespace. An authenticated user of any role could therefore have Karavan apply arbitrary Kubernetes resources within the reach of its service account, including pods requesting hostNetwork, hostPID, hostIPC, hostPath volumes, host ports, privileged containers, privilege escalation or added capabilities.</p><p>This issue affects Apache Camel Karavan: from 4.0.0 before 4.22.1.</p><p>Users are recommended to upgrade to version 4.22.1, which fixes the issue.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-103413.html
+* https://github.com/apache/camel-karavan/commit/a773db372eab9f180110ad6129d58004a1bce571
+
+
+### Credits
+* MopMonk-AI (reporter)
+* Marat Gubaidullin (remediation developer)
+* Andrea Cosentino (coordinator)
+
+
+## project file name path traversal when committing a project to Git ## { #CVE-2026-103412 }
+
+CVE-2026-103412 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-103412) [\[CVE json\]](./CVE-2026-103412.cve.json) [\[OSV json\]](./CVE-2026-103412.osv.json)
+
+
+
+_Last updated: 2026-10-09T12:53:10.953Z_
+
+### Affected
+
+* Apache Camel Karavan from 3.18.0 before 4.22.1
+
+
+### Description
+
+<p>Improper limitation of a pathname to a restricted directory ('path traversal') vulnerability in Apache Camel Karavan.</p><p>A project file name supplied through the project file API was used verbatim as a path segment when the project was written to the working copy for a Git commit, so a name containing `../` sequences caused the file content to be written outside the project directory, to any location writable by the Karavan process. An authenticated user of any role could use this to overwrite application configuration or files on the application classpath and so execute code in the Karavan container.</p><p>This issue affects Apache Camel Karavan: from 3.18.0 before 4.22.1.</p><p>Users are recommended to upgrade to version 4.22.1, which fixes the issue.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-103412.html
+* https://github.com/apache/camel-karavan/commit/5e4252494817af0cd2697216bd02f361037fedcf
+
+
+### Credits
+* CyberLeo (reporter)
+* Marat Gubaidullin (remediation developer)
+* Andrea Cosentino (coordinator)
 
 
 ## Cypher injection vulnerability in Camel-Neo4j component ## { #CVE-2025-66169 }

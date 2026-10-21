@@ -18,6 +18,307 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Reaction API authorization bypass for restricted content ## { #CVE-2026-90910 }
+
+CVE-2026-90910 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90910) [\[CVE json\]](./CVE-2026-90910.cve.json) [\[OSV json\]](./CVE-2026-90910.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:35:53.657Z_
+
+### Affected
+
+* Apache Answer through 2.0.2
+
+
+### Description
+
+<p>Missing authentication for critical function vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.2.</p><p>The reaction API did not enforce content visibility controls, allowing unauthorized users to read reaction metadata from restricted content or add and remove their own reactions.</p><p>Users are recommended to upgrade to version 2.0.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/bhw80mvmnt9206wyqz80rcbwx1znv1p3
+
+
+### Credits
+* Maksim Hayder (reporter)
+
+
+## User Center integration does not revoke first-login sessions after central account suspension ## { #CVE-2026-86589 }
+
+CVE-2026-86589 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86589) [\[CVE json\]](./CVE-2026-86589.cve.json) [\[OSV json\]](./CVE-2026-86589.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:35:25.843Z_
+
+### Affected
+
+* Apache Answer through 2.0.2
+
+
+### Description
+
+<p>Incorrect implementation of authentication algorithm vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.2.</p><p>A flaw in the User Center login integration can cause a newly created external user session to omit its external identity, allowing subsequent requests to bypass central account suspension or deletion checks until the session<br>  expires or is revoked.</p><p>Users are recommended to upgrade to version 2.0.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/t8mbzfolzlqz4z5hcwq3v0lnwjqb2tl5
+
+
+### Credits
+* ascanner (reporter)
+
+
+## Missing Authorization Allows Mutations of Non-Public Content ## { #CVE-2026-79633 }
+
+CVE-2026-79633 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-79633) [\[CVE json\]](./CVE-2026-79633.cve.json) [\[OSV json\]](./CVE-2026-79633.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:35:04.330Z_
+
+### Affected
+
+* Apache Answer through 2.0.2
+
+
+### Description
+
+<p> vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.2.</p><p>Missing authorization checks allowed authenticated users to perform actions on non-public content they were not permitted to access.</p><p>Users are recommended to upgrade to version 2.0.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/m301yrn0fwgr957q8qzfzt8tpjklocv9
+
+
+### Credits
+* Luigi Colluto (reporter)
+
+
+## Stale Visit Tokens Retain Access to Private Uploads After Session Revocation ## { #CVE-2026-79624 }
+
+CVE-2026-79624 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-79624) [\[CVE json\]](./CVE-2026-79624.cve.json) [\[OSV json\]](./CVE-2026-79624.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:34:39.031Z_
+
+### Affected
+
+* Apache Answer through 2.0.2
+
+
+### Description
+
+<p>Insufficient session expiration vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.2.</p><p>Insufficient session invalidation allowed revoked users to continue accessing known private uploaded files with a stale visit token.</p><p>Users are recommended to upgrade to version 2.0.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/lpwc1hpnt3fkfwkh00v5j0dvpzqmnoqk
+
+
+### Credits
+* Maksim Hayder (reporter)
+
+
+## Improper Authorization Allows Disclosure of Non-Public Question Metadata ## { #CVE-2026-79620 }
+
+CVE-2026-79620 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-79620) [\[CVE json\]](./CVE-2026-79620.cve.json) [\[OSV json\]](./CVE-2026-79620.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:34:09.974Z_
+
+### Affected
+
+* Apache Answer through 2.0.2
+
+
+### Description
+
+<p>Exposure of sensitive information through data queries vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.2.</p><p>An improper authorization check in the similar-question search allowed authenticated users to view metadata of non-public questions.</p><p>Users are recommended to upgrade to version 2.0.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/p6oqj9b27o4nppc0kv00rn7yb7n2l6o8
+
+
+### Credits
+* n0mi1k (reporter)
+
+
+## Exposure of Hidden Question Metadata Through Public Answer Profiles ## { #CVE-2026-76994 }
+
+CVE-2026-76994 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-76994) [\[CVE json\]](./CVE-2026-76994.cve.json) [\[OSV json\]](./CVE-2026-76994.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:33:12.978Z_
+
+### Affected
+
+* Apache Answer through 2.0.2
+
+
+### Description
+
+<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.2.</p>Unauthenticated attackers could obtain metadata associated with hidden questions through public answer profiles.<div><br><p>Users are recommended to upgrade to version 2.0.3, which fixes the issue.</p></div>
+
+### References
+* https://lists.apache.org/thread/b9whow167cr0lkhqk6xzk0c2bb86srhy
+
+
+### Credits
+* sec-reex (reporter)
+
+
+## MCP Answer Retrieval Exposes Content from Non-Public Questions ## { #CVE-2026-71563 }
+
+CVE-2026-71563 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-71563) [\[CVE json\]](./CVE-2026-71563.cve.json) [\[OSV json\]](./CVE-2026-71563.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:32:39.465Z_
+
+### Affected
+
+* Apache Answer through 2.0.2
+
+
+### Description
+
+<p>Missing Authorization vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.2.</p>An authorization flaw in the MCP answer retrieval tool allows holders of a global API key to access answer content associated with hidden, deleted, or pending-review questions.<div><br><p>Users are recommended to upgrade to version 2.0.3, which fixes the issue.</p></div>
+
+### References
+* https://lists.apache.org/thread/msodd7g2r6xdn9wpkpdp04m9g1jb2xtl
+
+
+### Credits
+* Han, JunGyu (reporter)
+* VK, AzeFox Foundations (reporter)
+
+
+## Improper Authorization in Question Invite User Lookup ## { #CVE-2026-68482 }
+
+CVE-2026-68482 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68482) [\[CVE json\]](./CVE-2026-68482.cve.json) [\[OSV json\]](./CVE-2026-68482.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:31:49.451Z_
+
+### Affected
+
+* Apache Answer through 2.0.2
+
+
+### Description
+
+<p>Missing Authorization vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.2.</p>An unauthenticated or unauthorized user can retrieve the invited-user list associated with a non-public question due to missing visibility authorization checks.<div><br><p>Users are recommended to upgrade to version 2.0.3, which fixes the issue.</p></div>
+
+### References
+* https://lists.apache.org/thread/m2tbvdv12hmr9sw6ft53rjnww8hqzds0
+
+
+### Credits
+* Yash Shendge (reporter)
+
+
+## Email Code Purpose Confusion May Allow Account Takeover ## { #CVE-2026-67249 }
+
+CVE-2026-67249 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-67249) [\[CVE json\]](./CVE-2026-67249.cve.json) [\[OSV json\]](./CVE-2026-67249.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:31:19.395Z_
+
+### Affected
+
+* Apache Answer through 2.0.2
+
+
+### Description
+
+<p>A vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.2.</p>A verification code issued for one email-based workflow could be accepted by another sensitive workflow because the code purpose was not properly enforced.<div><br><p>Users are recommended to upgrade to version 2.0.3, which fixes the issue.</p></div>
+
+### References
+* https://lists.apache.org/thread/kbdgj9vzd24zb4r2d9ydqyr6f70rpg0v
+
+
+### Credits
+* Arpit Jain (reporter)
+
+
+## Incorrect permission mapping allows users with only the unpin permission to hide/show questions ## { #CVE-2026-64945 }
+
+CVE-2026-64945 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-64945) [\[CVE json\]](./CVE-2026-64945.cve.json) [\[OSV json\]](./CVE-2026-64945.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:30:50.536Z_
+
+### Affected
+
+* Apache Answer through 2.0.2
+
+
+### Description
+
+<p>A vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.2.</p>The question operation controller gates hide/show operations on the wrong permission check result (the unpin permission instead of the hide permission), so in custom role configurations that separate these permissions, a user granted only question.unpin can hide or restore questions without holding question.hide or question.show.<div><br><p>Users are recommended to upgrade to version 2.0.3, which fixes the issue.</p></div>
+
+### References
+* https://lists.apache.org/thread/3wdqq1vp449bty5ovs02f0894km07wmz
+
+
+### Credits
+* meifukun (reporter)
+
+
+## Stored XSS via unsanitized HTML in imported question content ## { #CVE-2026-64944 }
+
+CVE-2026-64944 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-64944) [\[CVE json\]](./CVE-2026-64944.cve.json) [\[OSV json\]](./CVE-2026-64944.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:26:51.147Z_
+
+### Affected
+
+* Apache Answer through 2.0.2
+
+
+### Description
+
+<p>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.2.</p>The importer stores imported question bodies as raw HTML without passing them through the normal Markdown-to-HTML sanitization path, so attacker-controlled HTML embedded in an imported data source is persisted and rendered to all viewers (including privileged users) as stored XSS.<div><br><p>Users are recommended to upgrade to version 2.0.3, which fixes the issue.</p></div>
+
+### References
+* https://lists.apache.org/thread/2cjdm4pdrrvj0t6cgcfyo3hot9vq72kb
+
+
+### Credits
+* meifukun (reporter)
+
+
+## API keys logged in plaintext during authentication ## { #CVE-2026-64943 }
+
+CVE-2026-64943 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-64943) [\[CVE json\]](./CVE-2026-64943.cve.json) [\[OSV json\]](./CVE-2026-64943.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:26:12.414Z_
+
+### Affected
+
+* Apache Answer through 2.0.2
+
+
+### Description
+
+<p>Insertion of Sensitive Information into Log File vulnerability in Apache Answer.</p><p>This issue affects Apache Answer: through 2.0.2.</p>Full API keys are written to application logs on every authenticated request, allowing anyone with log-read access to recover and replay active bearer credentials.<div><br><p>Users are recommended to upgrade to version 2.0.3, which fixes the issue.</p></div>
+
+### References
+* https://lists.apache.org/thread/gczojx5ypncn1x1pg9z1cphb54t23zzg
+
+
+### Credits
+* meifukun (reporter)
+
+
 ## Residual Administrative API Key Access After Role or Account Revocation ## { #CVE-2026-60053 }
 
 CVE-2026-60053 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-60053) [\[CVE json\]](./CVE-2026-60053.cve.json) [\[OSV json\]](./CVE-2026-60053.osv.json)

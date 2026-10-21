@@ -18,6 +18,31 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Management REST API: Insertion of Sensitive Information into Log File ## { #CVE-2026-103371 }
+
+CVE-2026-103371 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-103371) [\[CVE json\]](./CVE-2026-103371.cve.json) [\[OSV json\]](./CVE-2026-103371.osv.json)
+
+
+
+_Last updated: 2026-10-07T18:46:34.466Z_
+
+### Affected
+
+* Apache Geode from 2.0.0 before 2.0.3
+
+
+### Description
+
+<p>Insertion of Sensitive Information into Log File in Apache Geode Web Management.</p><p>This issue affects Apache Geode: from 2.0.0 before 2.0.3.</p><p>Users are recommended to upgrade to version 2.0.3, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/fdkxh4z718pjp74skvgfsbhcby59lzog
+
+
+### Credits
+* Wanxin Yin / yaklang.io (finder)
+
+
 ## CSRF attacks through GET requests to the Management and Monitoring REST API that can execute gfsh commands on the target system ## { #CVE-2025-47410 }
 
 CVE-2025-47410 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-47410) [\[CVE json\]](./CVE-2025-47410.cve.json) [\[OSV json\]](./CVE-2025-47410.osv.json)

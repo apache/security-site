@@ -21,6 +21,34 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Class repositories cache class files under their self-declared names, enabling cache poisoning ## { #CVE-2026-94114 }
+
+CVE-2026-94114 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-94114) [\[CVE json\]](./CVE-2026-94114.cve.json) [\[OSV json\]](./CVE-2026-94114.osv.json)
+
+
+
+_Last updated: 2026-10-08T05:24:24.834Z_
+
+### Affected
+
+* Apache Commons BCEL before 6.13.0
+* Apache Commons BCEL before 14890bf2b9014df25f9b4de86f29b5e917e5656b
+
+
+### Description
+
+<p>Symbolic name not mapping to correct class.</p><p>BCEL caches attacker-controlled classes under their self-declared names without validating the requested name, allowing subsequent lookups and name-keyed verification results to refer to a different class.</p><p>This issue affects Apache Commons BCEL: before 6.13.0.</p><p>Users are recommended to upgrade to version 6.13.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/commons-bcel/commit/14890bf2b9014df25f9b4de86f29b5e917e5656b.patch
+* https://lists.apache.org/thread.html/co1wfk2lyrmpnfhn49o370pvfl978rw6
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
+
+
 ## StackOverflowError for YAML input with cycles ## { #CVE-2026-45205 }
 
 CVE-2026-45205 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-45205) [\[CVE json\]](./CVE-2026-45205.cve.json) [\[OSV json\]](./CVE-2026-45205.osv.json)
@@ -45,6 +73,34 @@ _Last updated: 2026-05-14T11:22:48.661Z_
 
 ### Credits
 * Erichen, Institute of Computing Technology, Chinese Academy of Sciences (reporter)
+
+
+## Class2HTML emits unescaped class strings, enabling stored XSS ## { #CVE-2026-105111 }
+
+CVE-2026-105111 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105111) [\[CVE json\]](./CVE-2026-105111.cve.json) [\[OSV json\]](./CVE-2026-105111.osv.json)
+
+
+
+_Last updated: 2026-10-07T11:33:54.365Z_
+
+### Affected
+
+* Apache Commons BCEL before 6.13.0
+* Apache Commons BCEL before fb72c225cbc6ec3d94060ed6edb269f07428d504
+
+
+### Description
+
+<p>Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in Apache Commons BCEL.</p><p>This only happens when you're using <code>Class2HTML</code> to generate webpages for possibly-attacker-controlled class files, where <code>Class2HTML</code> emitters write attacker class-file strings into HTML unescaped (stored XSS in reports).</p><p>This issue affects Apache Commons BCEL: before 6.13.0.</p><p>Users are recommended to upgrade to version 6.13.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/commons-bcel/commit/fb72c225cbc6ec3d94060ed6edb269f07428d504.patch
+* https://lists.apache.org/thread.html/d87nxx7nb5bombqggxhxo9lz16nwtsf9
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
 
 
 ## Expression Injection leading to RCE ## { #CVE-2025-53192 }

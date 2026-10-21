@@ -49,7 +49,7 @@ CVE-2022-44730 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-44730) [\[CVE jso
 
 
 
-_Last updated: 2023-08-22T14:04:18.758Z_
+_Last updated: 2026-10-20T07:35:03.123Z_
 
 ### Affected
 
@@ -71,7 +71,7 @@ CVE-2022-44729 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2022-44729) [\[CVE jso
 
 
 
-_Last updated: 2023-08-22T14:12:19.621Z_
+_Last updated: 2026-10-20T07:35:30.269Z_
 
 ### Affected
 

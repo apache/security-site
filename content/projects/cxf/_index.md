@@ -19,6 +19,195 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## STSTokenValidator can accept untrusted SAML assertions because it shares validation state between requests ## { #CVE-2026-97791 }
+
+CVE-2026-97791 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97791) [\[CVE json\]](./CVE-2026-97791.cve.json) [\[OSV json\]](./CVE-2026-97791.osv.json)
+
+
+
+_Last updated: 2026-10-09T10:19:25.091Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.4
+* Apache CXF from 4.0.0 before 4.1.9
+* Apache CXF before 3.6.13
+
+
+### Description
+
+In Apache CXF, <code>STSTokenValidator</code> checks whether a SAML assertion is signed by a trusted certificate before deciding to send it to the STS. That result was stored in one object shared by all requests, so one request could read another's result. A remote, unauthenticated attacker could send a forged assertion signed with an untrusted certificate while legitimate requests were being processed, and it could be accepted as trusted without ever reaching the STS. Only services that use <code>STSTokenValidator</code> to validate SAML tokens without <code>alwaysValidateToSts</code> set are affected.&nbsp;<br>Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/ssdr417qgms9fjl0m8802xd8170wnk1l
+
+
+### Credits
+* MopMonk-AI (finder)
+
+
+## Authentication bypass via weak cache keys for validated STS tokens ## { #CVE-2026-97468 }
+
+CVE-2026-97468 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97468) [\[CVE json\]](./CVE-2026-97468.cve.json) [\[OSV json\]](./CVE-2026-97468.osv.json)
+
+
+
+_Last updated: 2026-10-09T10:18:55.407Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.4
+* Apache CXF from 4.0.0 before 4.1.9
+* Apache CXF before 3.6.13
+
+
+### Description
+
+Apache CXF's STSTokenValidator and Security Token Service (STS) cached validated security tokens under a non-cryptographic 32-bit hash of the token (Java <code>Arrays.hashCode</code>/<code>hashCode()</code>), and treated a cache hit as proof that the presented token had already been validated. An attacker could craft a token (for example a UsernameToken or a self-signed SAML Assertion) whose hash collides with a cached entry. The token would then be accepted without password validation, signature trust verification or a call to the STS. This could let the attacker authenticate as another user and, through STS token validation or renewal, obtain STS-signed tokens for that identity.<br>Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/qthbnsyhqsxhl9p2h9v5dg4mnwv1b9r6
+
+
+### Credits
+* MopMonk-AI (finder)
+
+
+## FIQL Query Parser Denial of Service ## { #CVE-2026-86463 }
+
+CVE-2026-86463 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86463) [\[CVE json\]](./CVE-2026-86463.cve.json) [\[OSV json\]](./CVE-2026-86463.osv.json)
+
+
+
+_Last updated: 2026-10-09T10:18:40.606Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.4
+* Apache CXF from 4.0.0 before 4.1.9
+* Apache CXF before 3.6.13
+
+
+### Description
+
+Apache CXF's FIQL query parser has a vulnerability in how it searches for operators in query expressions. The search pattern can get stuck trying many combinations when it encounters a long string without an operator, causing the parser to consume excessive CPU time. An attacker can send a crafted query to make the server use up CPU resources, potentially slowing down or stopping other requests. The fix was to limit FIQL expressions to 4 KiB by default, preventing attackers from sending extremely long inputs while still allowing normal queries.<br><br><div>Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fix this issue.</div>
+
+### References
+* https://lists.apache.org/thread.html/mv5qfmd27gkbvt3k6by9db5bolrsbgy1
+
+
+### Credits
+* Mike Read (github.com/Michael-JRead) (finder)
+
+
+## OIDC RP Open Redirect ## { #CVE-2026-79650 }
+
+CVE-2026-79650 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-79650) [\[CVE json\]](./CVE-2026-79650.cve.json) [\[OSV json\]](./CVE-2026-79650.osv.json)
+
+
+
+_Last updated: 2026-10-09T10:18:20.747Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.4
+* Apache CXF from 4.0.0 before 4.1.9
+* Apache CXF before 3.6.13
+
+
+### Description
+
+<p>Apache CXF’s OIDC relying-party component could redirect users to an attacker-controlled URL after successful authentication.&nbsp;<span>The issue occurs because attacker-controlled </span><code>state</code><span> parameters are preserved and later used as redirect targets without validating that the final decoded URI belongs to the RP’s origin. Both directly encoded and double-encoded external URLs can trigger the issue, depending on which validation path is used.&nbsp;</span><span>Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fix this issue.</span></p>
+
+### References
+* https://lists.apache.org/thread.html/xj0x1r617j1z8jtyypngvwhckb3o205h
+
+
+### Credits
+* Guanping Zhang reported this vulnerability (finder)
+
+
+## Unbounded DEFLATE Decompression in CXF JOSE/JWE and SAML Processing (Decompression Bomb) ## { #CVE-2026-78384 }
+
+CVE-2026-78384 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-78384) [\[CVE json\]](./CVE-2026-78384.cve.json) [\[OSV json\]](./CVE-2026-78384.osv.json)
+
+
+
+_Last updated: 2026-10-09T10:17:59.477Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.4
+* Apache CXF from 4.0.0 before 4.1.9
+* Apache CXF before 3.6.13
+
+
+### Description
+
+CompressionUtils.inflate() decompressed attacker-controlled DEFLATE data with no output-size cap. A small (~KB) crafted payload could expand to gigabytes on the heap. Reachable via JWE decryption when zip=DEF (e.g. JoseSessionTokenProvider with RSA-OAEP key wrap) and via SAML redirect/POST binding token inflation — in both cases decompression happens before/independent of trust validation.<br><br>Fix: Added a configurable maximum inflated-size cap (default 10 MiB, org.apache.cxf.compression-max-inflated-size system property) to CompressionUtils.inflate(); aborts with DataFormatException once exceeded.<br>Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/xoh63rlxn0m9koft5j4jxrfd0hf81v3q
+
+
+### Credits
+* Guanping Zhang reported this vulnerability. (finder)
+
+
+## JPA authorization-code consume is non-atomic ## { #CVE-2026-73179 }
+
+CVE-2026-73179 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73179) [\[CVE json\]](./CVE-2026-73179.cve.json) [\[OSV json\]](./CVE-2026-73179.osv.json)
+
+
+
+_Last updated: 2026-10-09T10:17:39.708Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.4
+* Apache CXF from 4.0.0 before 4.1.9
+* Apache CXF before 3.6.13
+
+
+### Description
+
+Improper enforcement of single-use authorization code semantics in the JPA OAuth2 authorization code grant provider in Apache CXFallows a remote attacker to obtain multiple valid access tokens from a single authorization code via concurrent token exchange requests that race the non-atomic find-then-delete operation against a shared relational database under READ_COMMITTED isolation. Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/6msbm601o6ogfgdzdbtbrmgspmz50nxk
+
+
+### Credits
+* Guanping Zhang reported this vulnerability (finder)
+
+
+## Inoperative max_age authentication-freshness check in OidcClientCodeRequestFilter ## { #CVE-2026-71575 }
+
+CVE-2026-71575 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-71575) [\[CVE json\]](./CVE-2026-71575.cve.json) [\[OSV json\]](./CVE-2026-71575.osv.json)
+
+
+
+_Last updated: 2026-10-09T10:17:17.235Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.4
+* Apache CXF from 4.0.0 before 4.1.9
+* Apache CXF before 3.6.13
+
+
+### Description
+
+The max_age authentication-freshness check in OidcClientCodeRequestFilter was inoperative due to a milliseconds/seconds unit mismatch and an inverted comparison polarity. Any relying party using setMaxAgeOffset to enforce re-authentication would silently accept sessions of any age, bypassing step-up authentication policies. Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fix this issue.
+
+### References
+* https://lists.apache.org/thread/p1r9t4xl8ny7rg8wmj8nrygx35ds6vcs
+
+
+### Credits
+* Guanping Zhang reported this vulnerability (finder)
+
+
 ## Revocation bypass in DefaultEncryptingOAuthDataProvider ## { #CVE-2026-68481 }
 
 CVE-2026-68481 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68481) [\[CVE json\]](./CVE-2026-68481.cve.json) [\[OSV json\]](./CVE-2026-68481.osv.json)
@@ -706,6 +895,114 @@ The fix for&nbsp;CVE-2025-48913: Apache CXF: Untrusted JMS configuration can lea
 
 ### Credits
 * Github / twitter - https://github.com/exploitintel / @exploit_intel (finder)
+
+
+## Prevent unbounded XML document size in StaxUtils by adding default element and character limits ## { #CVE-2026-108039 }
+
+CVE-2026-108039 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108039) [\[CVE json\]](./CVE-2026-108039.cve.json) [\[OSV json\]](./CVE-2026-108039.osv.json)
+
+
+
+_Last updated: 2026-10-09T10:22:34.187Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.4
+* Apache CXF from 4.0.0 before 4.1.9
+* Apache CXF before 3.6.13
+
+
+### Description
+
+By default, StaxUtils placed no limit on the total number of elements or the total number of characters in an XML document. A very large request could therefore use a lot of memory and CPU during parsing, especially where CXF builds a DOM from the input (for example SAAJ or WS-Security), and could cause a denial of service when no request size limit was configured. Both limits now have defaults: the maximum element count is 100 × maxChildElements (5,000,000 by default), and the maximum document size is 256M characters. Applications that process larger documents can raise the limits with the org.apache.cxf.stax.maxElementCount and org.apache.cxf.stax.maxXMLCharacters properties.<br>Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/ms2gbpof609o0v1bjlzb1rn7fwh61l1j
+
+
+### Credits
+* Wanxin Yin (yaklang.io) <yhellow123456@gmail.com> (finder)
+
+
+## The Netty HTTP client transport does not perform TLS hostname verification. ## { #CVE-2026-107938 }
+
+CVE-2026-107938 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-107938) [\[CVE json\]](./CVE-2026-107938.cve.json) [\[OSV json\]](./CVE-2026-107938.osv.json)
+
+
+
+_Last updated: 2026-10-09T10:20:10.058Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.4
+* Apache CXF from 4.0.0 before 4.1.9
+* Apache CXF before 3.6.13
+
+
+### Description
+
+In Apache CXF, the Netty-based HTTP client transport (<code>cxf-rt-transports-http-netty-client</code>) did not verify that the hostname in the server’s TLS certificate matched the host being called. This applied over both HTTP/1.1 and HTTP/2, even when <code>disableCNCheck</code> was left at its default value of <code>false</code>. The certificate chain was validated against the configured trust store, but the endpoint’s identity was not. A network attacker able to intercept traffic could present any certificate trusted by the client, such as a publicly issued certificate for a domain they control, and impersonate the target service. They could then read or modify the exchanged messages, including credentials.&nbsp;<br>Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/ljsjsq1foyjy1v5o22oncw80twx7k2tc
+
+
+### Credits
+* This issue was found using Claude agents to study the security of open-source projects (finder)
+
+
+## The attachment header size and count limits can be bypassed, which allows denial of service through memory exhaustion. ## { #CVE-2026-107937 }
+
+CVE-2026-107937 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-107937) [\[CVE json\]](./CVE-2026-107937.cve.json) [\[OSV json\]](./CVE-2026-107937.osv.json)
+
+
+
+_Last updated: 2026-10-09T10:19:52.285Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.4
+* Apache CXF from 4.0.0 before 4.1.9
+* Apache CXF before 3.6.13
+
+
+### Description
+
+In Apache CXF, the parser for multipart/MTOM attachment part headers did not fully enforce the configured <code>attachment-max-header-size</code> (default 300 characters) and <code>attachment-headers-max-count</code> (default 500) limits. The size limit was applied only to each physical line, not to a header value built from continuation lines or to the combined values of a repeated header. The count limit was checked against the number of distinct header names, not the total number of header lines. A remote, unauthenticated attacker could send a multipart request with very large folded or repeated part headers. The server would then allocate memory without bound, causing a denial of service.&nbsp;<br>Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/x9twtpv3d04qj83t6w9xkh9y2q28zztj
+
+
+### Credits
+* This issue was found using Claude agents to study the security of open-source projects and independently by Mike Read (github.com/Michael-JRead) (finder)
+
+
+## XML Signature wrapping in JAX-RS XML Security ## { #CVE-2026-100227 }
+
+CVE-2026-100227 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-100227) [\[CVE json\]](./CVE-2026-100227.cve.json) [\[OSV json\]](./CVE-2026-100227.osv.json)
+
+
+
+_Last updated: 2026-10-09T10:19:39.573Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.4
+* Apache CXF from 4.0.0 before 4.1.9
+* Apache CXF before 3.6.13
+
+
+### Description
+
+Improper Verification of Cryptographic Signature vulnerability in Apache CXF's JAX-RS XML Security module. The JAX-RS XML Signature interceptors (XmlSigInHandler, XmlSigInInterceptor and the streaming XmlSecInInterceptor) did not ensure that the XML passed to the application was covered by the signature. An attacker with any document signed by a trusted key could wrap it in unsigned content, which the application would then treat as signed.<br>Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/pst2oopnwt2rwhvkvmt5gdgwn36kq05m
+
+
+### Credits
+* This issue was found using Claude agents to study the security of open-source projects and independently by Guanping Zhang (finder)
 
 
 ## Untrusted JMS configuration can lead to RCE ## { #CVE-2025-48913 }

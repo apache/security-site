@@ -18,6 +18,430 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Improper Validation of Package Name Components Allows Cross-Tenant Package Access in Filesystem Package Storage ## { #CVE-2026-105945 }
+
+CVE-2026-105945 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105945) [\[CVE json\]](./CVE-2026-105945.cve.json) [\[OSV json\]](./CVE-2026-105945.osv.json)
+
+
+
+_Last updated: 2026-10-21T18:18:24.232Z_
+
+### Affected
+
+* Apache Pulsar from 2.10.0 before 4.0.14
+* Apache Pulsar from 4.1.0 before 4.2.5
+
+
+### Description
+
+The Pulsar Packages Management Service can be configured to store packages on the local filesystem of the broker by using the filesystem storage provider. Package names consist of a type, tenant, namespace, name and version. Authorization of package operations is based only on the tenant and namespace, while the storage location of a package is derived from all of these components. The version component of a package name was not validated, so it could contain URL-encoded path separators and parent directory references. The filesystem storage provider resolved such a version to a location belonging to a package in a different tenant or namespace. Because that location is inside the configured storage directory, the containment check that the filesystem storage provider performs in recent releases did not prevent the access.<br><br>An authenticated user who has the packages permission on any namespace could use this to download, overwrite or delete packages stored in other tenants or namespaces for which the user has no permission. Packages overwritten or deleted in this way may be used by Pulsar Functions, Sources or Sinks, so the issue can affect the integrity and availability of these components. If authentication is disabled, the operations are available to any client that can reach the broker's admin REST API.<br><br>This issue only affects deployments in which package management is enabled with the broker setting enablePackagesManagement and the filesystem storage provider (FileSystemPackagesStorageProvider) is configured with the setting packagesManagementStorageProvider. Package management is disabled by default, and the default storage provider, which stores packages in Apache BookKeeper, is not affected.<br><br>This issue affects Apache Pulsar versions from 2.10.0 before 4.0.14 and from 4.1.0 before 4.2.5.<br><br>- 4.0.x version users should upgrade to at least 4.0.14.<br>- 4.1.x and 4.2.x version users should upgrade to at least 4.2.5.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.<br><br>The currently supported Apache Pulsar release lines are 4.0.x and 5.0.x. The supported versions schedule is available at https://pulsar.apache.org/contribute/release-policy/.
+
+### References
+* https://pulsar.apache.org/security/CVE-2026-105945/
+* https://lists.apache.org/thread.html/o5jt8zrg1qxqdrqlb06jjmj4lzydfm2k
+
+
+### Credits
+* n0mi1k (finder)
+* GSIeaves (finder)
+
+
+## Missing authentication and authorization and disclosure of the Pulsar admin credential; end of life ## { #CVE-2026-105944 }
+
+CVE-2026-105944 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105944) [\[CVE json\]](./CVE-2026-105944.cve.json) [\[OSV json\]](./CVE-2026-105944.osv.json)
+
+
+
+_Last updated: 2026-10-21T18:17:35.954Z_
+
+### Affected
+
+* Apache Pulsar Manager from 0.1.0 through 0.4.0
+
+
+### Description
+
+Apache Pulsar Manager is a web console for administering Apache Pulsar clusters. It has its own user accounts and login, and it can be configured with an HTTP authentication credential, such as a token, that it uses to call the Pulsar admin API on behalf of its users. Pulsar Manager has the following security issues:<br><br>- The operation for creating the initial administrator (superuser) account is available without authentication, and it remains available after the instance has been initialized. Anyone who can reach Pulsar Manager can create an additional administrator account at any time and log in with it. This issue affects versions 0.3.0 and later.<br>- Requests to the Pulsar admin API that Pulsar Manager proxies to the configured Pulsar cluster are not subject to Pulsar Manager's authentication. Version 0.2.0 checks the caller's permissions for some of these requests, but not for all of them. An unauthenticated user can therefore use Pulsar Manager to send requests to the Pulsar admin API, which the cluster processes with the credential configured in Pulsar Manager.<br>- The destination of a proxied request can be chosen by the requester, and Pulsar Manager attaches its configured Pulsar admin credential to the request. An unauthenticated user can make Pulsar Manager send this credential to a host of the user's choosing, and the credential can then be used directly against the Pulsar cluster.<br>- In versions 0.3.0 and later, Pulsar Manager does not distinguish between privilege levels of its accounts. Every account, including one created through the first issue, effectively has full administrative privileges in Pulsar Manager.<br><br>The impact depends on the version and the deployment. In versions 0.3.0 and later, any user who can reach Pulsar Manager over the network can take full control of Pulsar Manager. In all versions, when Pulsar Manager is configured with an HTTP authentication credential for a Pulsar cluster, any user who can reach Pulsar Manager can perform the Pulsar admin operations that this credential permits and can obtain the credential itself. When Pulsar Manager is configured with the token signing key of a Pulsar cluster, an administrator of Pulsar Manager can create tokens for the cluster.<br><br>Apache Pulsar Manager is no longer maintained and is completely unsupported. The Apache Pulsar PMC has retired it. There are no supported versions, and no further releases, fixes or security updates will be made for any version. These issues will not be fixed.<br><br>Using Pulsar Manager is not recommended. Users should stop using Pulsar Manager, remove existing deployments, and move to one of the alternatives described in the Administration UI documentation (https://pulsar.apache.org/docs/administration-ui). Users who have exposed Pulsar Manager configured with a Pulsar credential or token signing key should also consider replacing that credential or key.<br><br>Until a deployment is removed, users should not expose Pulsar Manager to untrusted networks, and should restrict network access to it to trusted administrators.
+
+### References
+* https://pulsar.apache.org/security/CVE-2026-105944/
+* https://pulsar.apache.org/docs/administration-ui
+* https://lists.apache.org/thread.html/hol3z7fzhjntwvrv8xqqwx4l4d2jx796
+
+
+### Credits
+* Aleksandar Djordjevic (finder)
+* Mike Read (finder)
+
+
+## Original principal of proxied requests authorized with the proxy's authentication data, allowing privilege escalation ## { #CVE-2026-105942 }
+
+CVE-2026-105942 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105942) [\[CVE json\]](./CVE-2026-105942.cve.json) [\[OSV json\]](./CVE-2026-105942.osv.json)
+
+
+
+_Last updated: 2026-10-21T18:14:34.143Z_
+
+### Affected
+
+* Apache Pulsar from 2.8.1 before 4.0.14
+* Apache Pulsar from 4.1.0 before 4.2.5
+
+
+### Description
+
+When a configured proxy role sends a request to the broker on behalf of another user (the original principal), the broker is designed to authorize both the proxy role and the original principal and to allow the request only if both are authorized, so that the original principal cannot exceed its own permissions. Two flaws weakened this check.<br><br>First, the original principal was authorized with the proxy's authentication data instead of its own. On the admin REST API of the broker and the functions worker, this applied to every proxied request. On the Pulsar binary protocol, it applied when the proxy did not forward the client's credentials to the broker, which was the default of the Pulsar proxy in the affected versions. Authorization providers that resolve permissions from the role name only, such as the default authorization provider, are not affected by this flaw. The multi-role token authorization provider (MultiRolesTokenAuthorizationProvider), added in Apache Pulsar 2.8.1, resolves roles from the role claim of the token in the authentication data it is given. When a proxy authenticates to the broker with its own token, the original principal was therefore authorized with all roles in the proxy's token. If any of those roles is a superuser or tenant admin role, any user whose requests are forwarded by that proxy can perform operations that need those permissions without holding them. Custom authorization providers that use the authentication data could be affected in a similar way.<br><br>Second, independently of the authorization provider, the tenant admin check of a proxied admin REST API request succeeded without checking the original principal when the proxy role was itself an admin role of the tenant. In deployments where a proxy role is a tenant admin, including with the default authorization provider, any user whose requests are forwarded by that proxy could perform tenant administration operations on that tenant. This behavior is present from 2.8.4 in the 2.8.x releases, from 2.9.3 in the 2.9.x releases, and from 2.10.1 onwards.<br><br>Deployments that use neither the multi-role token authorization provider nor a custom provider that uses the authentication data are not affected by the first flaw, and with the multi-role token authorization provider, neither are deployments whose proxies do not authenticate to the broker with a token. Deployments in which no proxy role is listed as an admin role of a tenant are not affected by the second flaw. A proxy role that is a superuser but is not listed as a tenant admin does not trigger it, because the tenant admin check of the built-in authorization providers only considers the tenant's admin roles; this can differ for custom authorization providers that treat superusers as tenant admins.<br><br>In fixed versions, both the proxy role and the original principal are authorized for each proxied request, and the original principal is authorized only with its own authentication data. With the multi-role token authorization provider, the roles of a forwarded token are used for the original principal only when that token authenticates as the original principal; otherwise only the original principal's role name is used. For tenant admin checks, the proxy role and the original principal must each be a superuser or a tenant admin of the tenant.<br><br>This issue affects Apache Pulsar versions from 2.8.1 before 4.0.14 and from 4.1.0 before 4.2.5.<br><br>- 4.0.x version users should upgrade to at least 4.0.14.<br>- 4.1.x and 4.2.x version users should upgrade to at least 4.2.5.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.<br><br>The currently supported Apache Pulsar release lines are 4.0.x and 5.0.x. The supported versions schedule is available at https://pulsar.apache.org/contribute/release-policy/.
+
+### References
+* https://pulsar.apache.org/security/CVE-2026-105942/
+* https://lists.apache.org/thread.html/4jmsbztr1fwws5fmxk36q5326wvjlwx4
+
+
+## Subscription authorization policies not enforced by namespace-level backlog and unsubscribe operations and by topic expire-all ## { #CVE-2026-105938 }
+
+CVE-2026-105938 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105938) [\[CVE json\]](./CVE-2026-105938.cve.json) [\[OSV json\]](./CVE-2026-105938.osv.json)
+
+
+
+_Last updated: 2026-10-21T18:13:33.466Z_
+
+### Affected
+
+* Apache Pulsar from 2.8.0 before 4.0.14
+* Apache Pulsar from 4.1.0 before 4.2.5
+
+
+### Description
+
+Apache Pulsar namespaces can restrict which roles may use a subscription, either with the Prefix subscription authentication mode, which requires a subscription name to start with the role name, or by granting permission on a subscription to specific roles. Topic-level subscription operations, such as consuming, skipping messages, resetting a cursor or deleting a subscription, apply these subscription policies. Several admin REST API operations that act on subscriptions did not apply them:<br><br>- the namespace-level and bundle-level clear backlog operations, both for a named subscription and for all subscriptions;<br>- the namespace-level and bundle-level unsubscribe operations;<br>- the topic-level operation that expires messages for all subscriptions of a topic.<br><br>With the default authorization provider, the namespace-level operations require only consume permission granted on the namespace, and the expire-all operation requires only consume permission on the topic. As a result, when authentication and authorization are enabled and a namespace uses the Prefix subscription authentication mode or subscription permissions, an authenticated user with such consume permission can clear the backlog of, expire messages of, or delete a subscription that the policies would deny to that user. Tenant admin or superuser access is not required. The clear backlog operations can also be applied to the cursors used for geo-replication, so that messages not yet replicated to a remote cluster are skipped. Deployments that do not configure the Prefix subscription authentication mode or subscription permissions (the defaults) are not affected by this bypass, because consume permission on the namespace or topic already allows these operations there. This impact analysis assumes that Pulsar has been configured with the default authorization provider. For custom authorization providers, the impact could be different.<br><br>The impact is on the integrity of subscription state. Clearing or expiring the backlog moves the subscription's cursor forward, so unacknowledged messages are no longer delivered to the subscription's consumers. The unsubscribe operation deletes a subscription that has no connected consumers. Skipped messages can be permanently deleted once no other subscription or the namespace's retention policy keeps them. The issue does not allow reading message contents, changing permissions or policies, or accessing other namespaces, and it does not affect the availability of the broker.<br><br>In fixed versions, the namespace-level and bundle-level operations for a named subscription apply the subscription policies to that subscription, and the operations for all subscriptions, when requested by a user who is not a tenant admin or superuser, only act on the subscriptions that the user may access. Clearing the backlog of geo-replication cursors requires tenant admin or superuser access. Topic-level subscription operations apply the subscription policies for all types of authentication data, including that of the anonymous user role.<br><br>This issue affects Apache Pulsar versions from 2.8.0 before 4.0.14 and from 4.1.0 before 4.2.5.<br><br>- 4.0.x version users should upgrade to at least 4.0.14.<br>- 4.1.x and 4.2.x version users should upgrade to at least 4.2.5.<br><br>All brokers in a cluster must be upgraded before relying on the namespace-level restrictions, because brokers that have not been upgraded do not apply them when they receive the internal per-bundle requests.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.<br><br>The currently supported Apache Pulsar release lines are 4.0.x and 5.0.x. The supported versions schedule is available at https://pulsar.apache.org/contribute/release-policy/.<br><br>Users who cannot upgrade immediately can reduce exposure by restricting network access to the broker's admin REST API to trusted administrative clients.
+
+### References
+* https://pulsar.apache.org/security/CVE-2026-105938/
+* https://lists.apache.org/thread.html/zhc6wjydybdd1msnlcxmmbg8oj0kjmog
+
+
+### Credits
+* Omar Mousa (finder)
+
+
+## Missing authorization of the shadow topic source allows cross-tenant message disclosure and deletion of source topic data ## { #CVE-2026-105937 }
+
+CVE-2026-105937 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105937) [\[CVE json\]](./CVE-2026-105937.cve.json) [\[OSV json\]](./CVE-2026-105937.osv.json)
+
+
+
+_Last updated: 2026-10-21T18:12:49.928Z_
+
+### Affected
+
+* Apache Pulsar from 3.0.0 before 4.0.14
+* Apache Pulsar from 4.1.0 before 4.2.5
+
+
+### Description
+
+Apache Pulsar shadow topics (PIP-180) are topics that read the stored messages of a source topic from that topic's managed ledger. The source topic is selected by setting the reserved topic property PULSAR.SHADOW_SOURCE. The admin REST API accepts this property when creating a non-partitioned or partitioned topic and when updating the properties of an existing topic. On these paths the broker authorizes the caller only against the topic being created or updated. It does not authorize the caller against the source topic named in the property. The existing authorization for shadow topic configuration (the SHADOW_TOPIC topic policy on the source topic) is applied only to the source-side shadow topics admin API, not to these paths.<br><br>As a result, an authenticated user who is allowed to create topics or update topic properties in one tenant can bind a topic in that tenant to a persistent topic in any other tenant. With the default authorization provider, these operations require the tenant admin role for the user's own tenant. The user does not need any permission on the source topic, its namespace or its tenant. This impact analysis assumes that Pulsar has been configured with the default authorization provider. For custom authorization providers, the impact could be different.<br><br>The user can then consume from the shadow topic, using only permissions on their own topic, and receive retained messages that were published to the source topic in the other tenant. Exposure is limited to messages that are still retained and readable in the source topic's ledgers; messages protected with client-side end-to-end encryption cannot be decrypted without the encryption keys. A producer on the shadow topic can also register a new schema version under the source topic's schema, subject to the schema compatibility settings; existing schema versions are not replaced.<br><br>In addition, the shadow topic's managed ledger applies its own retention, trimming, offloading and deletion to the source topic's ledgers. This can permanently delete the source topic's ledger data from BookKeeper and from tiered storage, regardless of the source topic's own subscriptions and retention policy, including messages that have not yet been acknowledged. Deleting the shadow topic can also delete the source topic's ledgers. This data loss can also affect shadow topics that were configured intentionally by administrators.<br><br>This issue affects Apache Pulsar versions from 3.0.0 before 4.0.14 and from 4.1.0 before 4.2.5. Apache Pulsar 2.x releases do not contain the shadow topic implementation.<br><br>- 4.0.x version users should upgrade to at least 4.0.14.<br>- 4.1.x and 4.2.x version users should upgrade to at least 4.2.5.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.<br><br>The currently supported Apache Pulsar release lines are 4.0.x and 5.0.x. The supported versions schedule is available at https://pulsar.apache.org/contribute/release-policy/.<br><br>In the fixed versions, shadow topics are disabled by default and are controlled by the new broker configuration setting enableShadowTopics (default false). While it is disabled, the broker rejects creating shadow topics, setting the PULSAR.SHADOW_SOURCE property, and loading or replicating to existing shadow topics. Deployments that use shadow topics must set enableShadowTopics=true in the broker configuration of all brokers after upgrading; otherwise existing shadow topics will not be loaded. When shadow topics are enabled, binding a shadow topic to a source topic in a different tenant requires the superuser role. The fixed versions also prevent a shadow topic from deleting or trimming the ledgers and offloaded data of its source topic.<br><br>Affected versions provide no configuration option to disable shadow topics. Users who cannot upgrade immediately can reduce exposure by granting the tenant admin role only to trusted principals.
+
+### References
+* https://pulsar.apache.org/security/CVE-2026-105937/
+* https://lists.apache.org/thread.html/80foc311bwn839skc1p7fh89pgsrhyoj
+
+
+### Credits
+* Elias Hasas (finder)
+* Mike Read (finder)
+* Omar Mousa (finder)
+
+
+## Functions connectors list endpoint does not apply the super-user check of the worker connectors endpoint ## { #CVE-2026-105936 }
+
+CVE-2026-105936 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105936) [\[CVE json\]](./CVE-2026-105936.cve.json) [\[OSV json\]](./CVE-2026-105936.osv.json)
+
+
+
+_Last updated: 2026-10-21T18:11:17.900Z_
+
+### Affected
+
+* Apache Pulsar from 2.4.1 before 4.0.14
+* Apache Pulsar from 4.1.0 before 4.2.5
+
+
+### Description
+
+The Pulsar Functions worker REST API provides two endpoints that return the catalog of Pulsar IO connectors installed on the functions worker: the worker connectors endpoint (/admin/v2/worker/connectors) and the deprecated functions connectors endpoint (/admin/v2/functions/connectors and /admin/v3/functions/connectors). When authorization is enabled, the worker connectors endpoint requires super-user access. The functions connectors endpoint, served both by the functions worker and by a broker running the functions worker, returns the same catalog without this check.<br><br>As a result, when authentication and authorization are enabled, any authenticated client can read the connector catalog through the functions connectors endpoint, regardless of the permissions granted to its role and without super-user access. Unauthenticated requests are rejected unless anonymous access is configured with an anonymous user role.<br><br>The catalog contains the connector type definitions installed in the functions worker's connectors directory: the connector name, its description, and the source, sink and configuration class names. It does not contain configured source or sink instances, their configuration values or credentials, and an installed connector type does not indicate that a connector is configured or running. The impact is limited to disclosure of this metadata, which can include the names and descriptions of custom connectors installed by the operator. The issue does not allow modifying the catalog or managing connectors. Connector definitions that have a source or sink class are also returned by the built-in sources and sinks endpoints to authenticated clients.<br><br>In fixed versions, the functions connectors endpoint applies the same checks as the worker connectors endpoint, so that it requires super-user access when authorization is enabled. Clients that are not super-users can use the built-in sources and sinks endpoints to list the available connector types.<br><br>This issue affects Apache Pulsar versions from 2.4.1 before 4.0.14 and from 4.1.0 before 4.2.5.<br><br>- 4.0.x version users should upgrade to at least 4.0.14.<br>- 4.1.x and 4.2.x version users should upgrade to at least 4.2.5.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.<br><br>The currently supported Apache Pulsar release lines are 4.0.x and 5.0.x. The supported versions schedule is available at https://pulsar.apache.org/contribute/release-policy/.
+
+### References
+* https://pulsar.apache.org/security/CVE-2026-105936/
+* https://lists.apache.org/thread.html/dn0cg4l3yolw90f8rjyvv4dl7k340jkz
+
+
+### Credits
+* Mingsheng Lin of Institute of Information Engineering, CAS (finder)
+* Xingchen Chen of Institute of Information Engineering, CAS (finder)
+* Qixu Liu of Institute of Information Engineering, CAS (finder)
+
+
+## Function trigger publishes to the input topic without checking the caller's produce permission ## { #CVE-2026-105935 }
+
+CVE-2026-105935 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105935) [\[CVE json\]](./CVE-2026-105935.cve.json) [\[OSV json\]](./CVE-2026-105935.osv.json)
+
+
+
+_Last updated: 2026-10-21T18:10:22.178Z_
+
+### Affected
+
+* Apache Pulsar from 2.0.0-rc1-incubating before 4.0.14
+* Apache Pulsar from 4.1.0 before 4.2.5
+
+
+### Description
+
+The Pulsar Functions Worker provides a REST API endpoint for triggering a function, which publishes a caller-supplied value to one of the function's configured input topics. The Functions Worker performs this publish with its own broker client, which authenticates with the Worker's configured broker-client credentials rather than the credentials of the API caller.<br><br>When authorization is enabled, in Apache Pulsar 2.4.0 and later versions, the trigger endpoint checks only that the caller is authorized to perform function operations in the function's namespace. It does not check that the caller is authorized to produce to the input topic that the message is published to. Versions before 2.4.0 do not perform a caller authorization check for the trigger endpoint at all. Function input topics are not restricted to the function's own tenant or namespace, and registering a function does not require produce permission on its input topics.<br><br>As a result, an authenticated user who is authorized to manage functions in a namespace, for example a role granted the functions permission on that namespace, can cause the Functions Worker to publish messages with caller-controlled content to a topic that the user is not authorized to produce to, including topics in other tenants. These messages are published under the identity of the Functions Worker. The issue does not require any function instance to be running or any function code to be executed. It requires that the Functions Worker's broker-client identity is itself authorized to produce to the target topic and, in Apache Pulsar 2.3.0 and later versions, to list the subscriptions of the target topic, as is the case when that identity is a superuser. The impact is on the integrity of the data in the affected topics: consumers of those topics may receive messages from a user who is not permitted to publish them. This concerns the Functions Worker REST API as called by an external, authenticated client; it does not change the security model for function code, which must be fully trusted.<br><br>In fixed versions, when authorization is enabled, triggering a function additionally requires the caller to be authorized to produce to the selected input topic before any message is published.<br><br>This issue affects Apache Pulsar versions from 2.0.0-rc1-incubating before 4.0.14 and from 4.1.0 before 4.2.5.<br><br>- 4.0.x version users should upgrade to at least 4.0.14.<br>- 4.1.x and 4.2.x version users should upgrade to at least 4.2.5.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.<br><br>The currently supported Apache Pulsar release lines are 4.0.x and 5.0.x. The supported versions schedule is available at https://pulsar.apache.org/contribute/release-policy/.<br><br>Users of Apache Pulsar 2.4.0 and later versions with authorization enabled who cannot upgrade immediately can limit the permission to manage functions to trusted roles. Users of versions before 2.4.0 should restrict access to the Functions Worker REST API to trusted callers, because in these versions the trigger endpoint does not check the caller's permission to manage functions.
+
+### References
+* https://pulsar.apache.org/security/CVE-2026-105935/
+* https://lists.apache.org/thread.html/nrk7hkyzgo447gm58ry6n8ohl8z5j6nl
+
+
+### Credits
+* Omar Mousa (finder)
+
+
+## Missing tenant admin authorization check when truncating a partitioned topic ## { #CVE-2026-105934 }
+
+CVE-2026-105934 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105934) [\[CVE json\]](./CVE-2026-105934.cve.json) [\[OSV json\]](./CVE-2026-105934.osv.json)
+
+
+
+_Last updated: 2026-10-21T18:08:40.052Z_
+
+### Affected
+
+* Apache Pulsar from 2.8.0 before 4.0.14
+* Apache Pulsar from 4.1.0 before 4.2.5
+
+
+### Description
+
+The Apache Pulsar broker admin REST API provides a truncate operation for persistent topics (DELETE /admin/v2/persistent/{tenant}/{namespace}/{topic}/truncate). Truncating a topic moves all subscription cursors of the topic to the end of the topic and deletes the topic's inactive ledgers. Truncating a non-partitioned topic, or a single partition addressed by its partition name, correctly requires the tenant admin role or the superuser role. When the operation is requested for the name of a partitioned topic, the broker does not apply this tenant admin check to the caller. Instead, it truncates each partition using the broker's own internal admin client, which authenticates with the broker's configured client credentials rather than the caller's identity. Each per-partition truncate request is still checked for the tenant admin role or the superuser role, but against the broker's internal identity instead of the caller. The partitions are therefore truncated only when the broker's configured client role is a superuser or an admin of the target tenant, which is the usual configuration when authorization is enabled.<br><br>As a result, when that condition holds, an authenticated user who is not a tenant admin can truncate any partitioned topic on which the user has lookup permission. Caller authentication and lookup permission alone are not sufficient: if the broker's internal identity lacks tenant admin or superuser authorization for the target tenant, the per-partition requests are rejected. With the default authorization provider, lookup permission is granted by produce or consume permission on the topic or its namespace. A user with no permissions on the topic cannot trigger the issue. This impact analysis assumes that Pulsar has been configured with the default authorization provider. For custom authorization providers, the impact could be different.<br><br>Truncating a partitioned topic this way moves the cursors of all subscriptions on every partition to the end of the topic, so any unacknowledged backlog is skipped and is no longer delivered to consumers. It also deletes eligible older ledgers of each partition regardless of the namespace's configured retention policy, so messages stored in those ledgers can be permanently lost. The ledger currently being written is not deleted by the truncate operation. The issue does not allow reading message contents or changing permissions or configuration, and it does not give access to topics on which the user has no lookup permission.<br><br>This issue affects Apache Pulsar versions from 2.8.0 before 4.0.14 and from 4.1.0 before 4.2.5.<br><br>- 4.0.x version users should upgrade to at least 4.0.14.<br>- 4.1.x and 4.2.x version users should upgrade to at least 4.2.5.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.<br><br>The currently supported Apache Pulsar release lines are 4.0.x and 5.0.x. The supported versions schedule is available at https://pulsar.apache.org/contribute/release-policy/.<br><br>Users who cannot upgrade immediately can reduce exposure by restricting network access to the broker's admin REST API (/admin/v2) to trusted administrative clients.
+
+### References
+* https://pulsar.apache.org/security/CVE-2026-105934/
+* https://lists.apache.org/thread.html/ox0vy41jlb41y2l04y7b6h2srlyqoj8o
+
+
+### Credits
+* Mingsheng Lin of Institute of Information Engineering, CAS (finder)
+* Xingchen Chen of Institute of Information Engineering, CAS (finder)
+* Qixu Liu of Institute of Information Engineering, CAS (finder)
+
+
+## Namespace encryption requirement not enforced after a failure during topic initialization ## { #CVE-2026-105933 }
+
+CVE-2026-105933 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105933) [\[CVE json\]](./CVE-2026-105933.cve.json) [\[OSV json\]](./CVE-2026-105933.osv.json)
+
+
+
+_Last updated: 2026-10-21T18:07:42.573Z_
+
+### Affected
+
+* Apache Pulsar from 1.22.0-incubating before 4.0.14
+* Apache Pulsar from 4.1.0 before 4.2.5
+
+
+### Description
+
+Apache Pulsar allows an administrator to require end-to-end message encryption for all topics in a namespace by setting the encryption_required namespace policy. When this policy is set, the broker rejects messages that are published without encryption.<br><br>When the broker loads a persistent topic, it reads the namespace policies and the topic-level policies as part of topic initialization. If a step of this initialization fails, for example because of an error reading from the metadata store, a failure loading the topic-level policies or a failure in a later initialization step, the broker logs a warning, disables the encryption requirement for that topic, and completes the topic load as if it had succeeded. The topic is then served with encryption_required not enforced, even though the namespace policy requires it. Topic-level policies that could not be loaded are also not applied.<br><br>While the encryption requirement is not enforced, an authenticated client with permission to produce to the affected topic can publish messages that are not encrypted, and the broker accepts and stores them. This applies both to producers created after the topic was loaded and to producers that were already connected. Messages published with encryption remain encrypted; the issue does not expose the content of encrypted messages or the encryption keys.<br><br>The condition is not limited to transient failures. If the cause of the initialization failure persists, the encryption requirement is disabled again each time the topic is loaded, for example after a topic unload, a namespace bundle reassignment or a broker restart. An update to the namespace policies restores enforcement on a loaded topic, but only until the topic is loaded again. Enforcement is reliably restored only once the underlying cause of the failure has been resolved and the topic has been loaded again. The broker logs a warning when the encryption requirement is disabled, but the topic load is reported as successful and the state of the encryption requirement is not shown in the topic statistics.<br><br>In fixed versions, a failure during topic initialization causes the topic load to fail so that it can be retried, instead of loading the topic with the encryption requirement disabled.<br><br>This issue affects Apache Pulsar versions from 1.22.0-incubating before 4.0.14 and from 4.1.0 before 4.2.5.<br><br>- 4.0.x version users should upgrade to at least 4.0.14.<br>- 4.1.x and 4.2.x version users should upgrade to at least 4.2.5.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.<br><br>The currently supported Apache Pulsar release lines are 4.0.x and 5.0.x. The supported versions schedule is available at https://pulsar.apache.org/contribute/release-policy/.<br><br>Users who rely on encryption_required and cannot upgrade immediately can monitor the broker logs for warnings containing "isEncryptionRequired will be set to false" (the exact wording of the message differs between releases), resolve the underlying cause of the failure, and then reload the affected topic and confirm that the warning does not recur.
+
+### References
+* https://pulsar.apache.org/security/CVE-2026-105933/
+* https://lists.apache.org/thread.html/f9xdlh72zf7got2y3vxww5fv4rxvmjbq
+
+
+### Credits
+* Sepuri Sai Krishna (finder)
+
+
+## Missing topic policy authorization on non-persistent topic entry filter endpoints ## { #CVE-2026-105932 }
+
+CVE-2026-105932 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105932) [\[CVE json\]](./CVE-2026-105932.cve.json) [\[OSV json\]](./CVE-2026-105932.osv.json)
+
+
+
+_Last updated: 2026-10-21T18:06:57.429Z_
+
+### Affected
+
+* Apache Pulsar from 3.3.0 before 4.0.14
+* Apache Pulsar from 4.1.0 before 4.2.5
+
+
+### Description
+
+The Apache Pulsar broker admin REST API provides endpoints to read, set and remove the topic-level entry filter policy of a topic. For persistent topics these endpoints check that the caller is authorized for the entry filters topic policy operation. The corresponding endpoints for non-persistent topics (/admin/v2/non-persistent/{tenant}/{namespace}/{topic}/entryFilters) do not perform this authorization check. The only authorization check these endpoints perform is an indirect lookup permission check, made while the topic's partition metadata is retrieved; it is present in all affected versions.<br><br>As a result, when authentication and authorization are enabled, an authenticated user who has been granted produce or consume permission on a non-persistent topic, or on its namespace, but not permission to manage the topic's policies can read, replace or remove the topic-level entry filter policy of that topic. These operations should be restricted to users with the tenant admin role or the superuser role. This impact analysis assumes that Pulsar has been configured with the default authorization provider. For custom authorization providers, the impact could be slightly different.<br><br>The practical impact is limited by two broker configuration requirements, neither of which is met by default:<br><br>- Entry filters must have been installed by the operator. Entry filter implementations are loaded only at broker startup from the broker's entry filters directory, which is empty by default. A request can only select among entry filters the operator has already deployed; setting any other filter name is rejected. The issue does not allow a caller to install or load entry filter code or to run arbitrary code in the broker.<br>- Topic-level entry filter policies must be allowed to override the broker-level configuration (allowOverrideEntryFilters, which is disabled by default). When this setting is disabled, the topic-level entry filter policy has no effect on message dispatch.<br><br>In deployments where both conditions are met, an unauthorized user can remove the topic-level entry filter policy of a non-persistent topic, for example one used to restrict which messages are delivered to consumers, or apply a different installed entry filter that withholds messages from subscriptions of that topic. Removing it makes the topic fall back to the namespace-level or broker-level entry filters, which are not removed. A changed policy affects only subscription dispatchers created after the change, for example for new subscriptions or when a subscription is re-created after all of its consumers have disconnected; dispatchers that already exist keep the entry filters they were created with. Because non-persistent topics do not store messages, messages withheld by an entry filter are not delivered. Reading the policy discloses only the names of the configured entry filters. The issue does not allow reading message contents, and entry filters cannot modify message payloads. Persistent topics and namespace-level entry filter policies are not affected. Apache Pulsar versions before 3.3.0 are not affected, because in those versions the entry filters topic policy check is made in code shared by the persistent and non-persistent endpoints.<br><br>This issue affects Apache Pulsar versions from 3.3.0 before 4.0.14 and from 4.1.0 before 4.2.5.<br><br>- 3.3.x and 4.0.x version users should upgrade to at least 4.0.14.<br>- 4.1.x and 4.2.x version users should upgrade to at least 4.2.5.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.<br><br>The currently supported Apache Pulsar release lines are 4.0.x and 5.0.x. The supported versions schedule is available at https://pulsar.apache.org/contribute/release-policy/.<br><br>Users who cannot upgrade immediately and have deployed entry filters should keep allowOverrideEntryFilters at its default value of false, so that topic-level entry filter policies do not affect message dispatch.
+
+### References
+* https://pulsar.apache.org/security/CVE-2026-105932/
+* https://lists.apache.org/thread.html/y30v2pv2gyj3kn4p1xxmgzfv73x6v1mo
+
+
+### Credits
+* yangxi739 (finder)
+* n0mi1k (finder)
+* Mingsheng Lin of Institute of Information Engineering, CAS (finder)
+* Xingchen Chen of Institute of Information Engineering, CAS (finder)
+* Qixu Liu of Institute of Information Engineering, CAS (finder)
+* sec-reex (finder)
+
+
+## Missing authorization on transaction admin endpoints exposes transaction coordinator and transaction statistics of other tenants ## { #CVE-2026-105931 }
+
+CVE-2026-105931 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105931) [\[CVE json\]](./CVE-2026-105931.cve.json) [\[OSV json\]](./CVE-2026-105931.osv.json)
+
+
+
+_Last updated: 2026-10-21T18:02:28.784Z_
+
+### Affected
+
+* Apache Pulsar from 2.8.0 before 4.0.14
+* Apache Pulsar from 4.1.0 before 4.2.5
+
+
+### Description
+
+The Apache Pulsar broker exposes a transaction administration REST API under /admin/v3/transactions. When authentication and authorization are enabled, most of the read endpoints of this API verify only that the request is authenticated and that the broker serves the requested topic or transaction coordinator. They do not check whether the caller is permitted to access the tenant, namespace or topic whose data is returned. The endpoints that modify state, which abort a transaction or scale the transaction coordinators, correctly require super-user access and are not affected.<br><br>As a result, any authenticated user, including one that has been granted no permissions, can read transaction coordinator and transaction information belonging to other tenants. This includes the list of transaction coordinators with the broker service URLs that serve them, transaction coordinator statistics and internal statistics, transaction metadata including the names of the topics and subscriptions a transaction involves and the principal that opened it, the list of long-running transactions on a transaction coordinator, transaction buffer and pending acknowledgement statistics and internal statistics for any topic and subscription, and whether a given message position of a subscription is currently held in a pending transactional acknowledgement.<br><br>The disclosure of transaction metadata and statistics can only occur when transaction support is enabled in the broker (transactionCoordinatorEnabled, which is disabled by default). When transaction support is disabled, these endpoints return no transaction data; the only residual effect is that one endpoint's error response can reveal whether a named topic exists in another tenant.<br><br>The impact is limited to disclosure of transaction-related metadata and statistics across tenant boundaries. The issue does not allow reading message contents, modifying or aborting transactions, or changing any configuration.<br><br>This issue affects Apache Pulsar versions from 2.8.0 before 4.0.14 and from 4.1.0 before 4.2.5.<br><br>- 4.0.x version users should upgrade to at least 4.0.14.<br>- 4.1.x and 4.2.x version users should upgrade to at least 4.2.5.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.<br><br>The currently supported Apache Pulsar release lines are 4.0.x and 5.0.x. The supported versions schedule is available at https://pulsar.apache.org/contribute/release-policy/.<br><br>Users who cannot upgrade immediately and do not use Pulsar transactions should keep transaction support disabled. Where transactions are required, restricting network access to the broker's admin HTTP endpoints to trusted administrative clients reduces the exposure.
+
+### References
+* https://pulsar.apache.org/security/CVE-2026-105931/
+* https://lists.apache.org/thread.html/82g78kf9q7gmf9m8fvsryq78g4chwktz
+
+
+### Credits
+* n0mi1k (finder)
+* Mingsheng Lin of Institute of Information Engineering, CAS (finder)
+* Xingchen Chen of Institute of Information Engineering, CAS (finder)
+* Qixu Liu of Institute of Information Engineering, CAS (finder)
+* MopMonk-AI (finder)
+* Wanxin Yin (finder)
+
+
+## Improper Authorization of Function, Source and Sink Package URLs Allows Cross-Tenant Package Download ## { #CVE-2026-105930 }
+
+CVE-2026-105930 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105930) [\[CVE json\]](./CVE-2026-105930.cve.json) [\[OSV json\]](./CVE-2026-105930.osv.json)
+
+
+
+_Last updated: 2026-10-21T18:01:27.995Z_
+
+### Affected
+
+* Apache Pulsar from 2.8.0 before 4.0.14
+* Apache Pulsar from 4.1.0 through 4.1.3
+* Apache Pulsar from 4.2.0 before 4.2.5
+
+
+### Description
+
+When package management is enabled, Pulsar Functions, Sources and Sinks can be registered or updated from a package stored in the Pulsar Packages Management Service by supplying a package URL. The Pulsar Functions worker authorized these requests only against the namespace in which the component was being registered or updated. It did not check whether the requesting user was permitted to access packages in the namespace that the package URL refers to, and it retrieved the package from the broker using the worker's own credentials. The permission check of the Packages Management Service was therefore applied to the worker's identity instead of the requesting user's. Package URLs of transform functions supplied when registering or updating a sink were handled in the same way.<br><br>An authenticated user who is permitted to register or update functions, sources or sinks in any namespace of their own tenant could use this to obtain the contents of a package stored in a namespace of another tenant, without having the packages permission on that namespace. The impact is limited to disclosure of package contents, which may include application code, business logic or embedded credentials. The issue does not allow packages to be modified or deleted and does not affect availability.<br><br>This issue only affects deployments that have authentication and authorization enabled and in which package management has been enabled: the broker setting enablePackagesManagement and, in current releases, the functions worker setting functionsWorkerEnablePackageManagement. Both settings are disabled by default.<br><br>This issue affects Apache Pulsar versions from 2.8.0 before 4.0.14, from 4.1.0 through 4.1.3, and from 4.2.0 before 4.2.5.<br><br>- 4.0.x version users should upgrade to at least 4.0.14.<br>- 4.1.x and 4.2.x version users should upgrade to at least 4.2.5.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.<br><br>The currently supported Apache Pulsar release lines are 4.0.x and 5.0.x. The supported versions schedule is available at https://pulsar.apache.org/contribute/release-policy/.
+
+### References
+* https://pulsar.apache.org/security/CVE-2026-105930/
+* https://lists.apache.org/thread.html/dqschrfvb7l0sdhj4sx1qccyywbfp4jg
+
+
+### Credits
+* Han, JunGyu (finder)
+
+
+## Improper authorization of WebSocket consumer dead letter topic allows writes without PRODUCE permission ## { #CVE-2026-105927 }
+
+CVE-2026-105927 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105927) [\[CVE json\]](./CVE-2026-105927.cve.json) [\[OSV json\]](./CVE-2026-105927.osv.json)
+
+
+
+_Last updated: 2026-10-21T18:00:30.269Z_
+
+### Affected
+
+* Apache Pulsar from 2.3.0 before 4.0.14
+* Apache Pulsar from 4.1.0 before 4.2.5
+
+
+### Description
+
+The Apache Pulsar WebSocket service allows a WebSocket consumer to configure a dead letter policy through query parameters of the consumer endpoint, including the deadLetterTopic parameter that names the topic to which messages are written after the maximum number of redeliveries is exceeded. When authorization is enabled, the WebSocket service checks only that the connecting user holds the CONSUME permission on the subscribed topic. It does not check whether the user holds the PRODUCE permission on the topic named in deadLetterTopic. The dead letter messages are then written by the WebSocket service using its own broker client identity rather than the identity of the connecting user.<br><br>As a result, an authenticated user who holds the CONSUME permission on at least one topic can cause messages to be written to a topic of their choosing in any existing namespace, including namespaces belonging to other tenants, provided the role used by the WebSocket service to connect to the brokers is authorized to produce to that topic and the topic accepts a producer that registers no schema. The dead letter producer created by the WebSocket service registers no schema, so it is rejected when the target topic has a schema and schema validation is enforced for that topic or its namespace; this setting is not enabled by default. The same user is refused when attempting to produce to that topic directly. Where automatic topic creation is enabled, which is the default, the named topic is created if it does not already exist. The issue can only be triggered when the WebSocket service is enabled, either in the broker (webSocketServiceEnabled, which is disabled by default) or as a standalone WebSocket proxy.<br><br>The impact is unauthorized injection of messages into topics the user is not permitted to produce to. The user can determine the content of the injected messages when they also control the messages on the subscribed topic. The issue does not allow reading, modifying or deleting existing messages in the target topic. Injected messages carry the dead letter message properties and a dead letter producer name, so they can be distinguished from messages produced normally; however, the values of these properties are not authenticated and should not be relied upon to establish the origin of a message. Whether an injected message has further consequences depends on how the applications consuming the target topic process it. Repeated injection also consumes storage and backlog capacity in the target namespace.<br><br>This issue affects Apache Pulsar versions from 2.3.0 before 4.0.14 and from 4.1.0 before 4.2.5.<br><br>- 4.0.x version users should upgrade to at least 4.0.14.<br>- 4.1.x and 4.2.x version users should upgrade to at least 4.2.5.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.<br><br>The currently supported Apache Pulsar release lines are 4.0.x and 5.0.x. The supported versions schedule is available at https://pulsar.apache.org/contribute/release-policy/.<br><br>Users who cannot upgrade immediately and do not require the WebSocket service should disable it. Where the WebSocket service is required, restricting network access to it and limiting the permissions granted to the role the WebSocket service uses to connect to the brokers to the namespaces WebSocket clients are intended to access reduces the exposure.
+
+### References
+* https://pulsar.apache.org/security/CVE-2026-105927/
+* https://lists.apache.org/thread.html/1577zmjsxssb9zkg34sjzcl71om145bd
+
+
+### Credits
+* MopMonk-AI (finder)
+* tim (finder)
+
+
+## Missing Topic Authorization on Binary Protocol GetSchema and GetOrCreateSchema Commands ## { #CVE-2026-105926 }
+
+CVE-2026-105926 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105926) [\[CVE json\]](./CVE-2026-105926.cve.json) [\[OSV json\]](./CVE-2026-105926.osv.json)
+
+
+
+_Last updated: 2026-10-21T17:59:49.302Z_
+
+### Affected
+
+* Apache Pulsar from 2.2.0 before 4.0.14
+* Apache Pulsar from 4.1.0 through 4.1.3
+* Apache Pulsar from 4.2.0 before 4.2.5
+
+
+### Description
+
+The Pulsar broker serves two schema commands on its binary protocol: GetSchema, which returns the schema registered for a topic, and GetOrCreateSchema, which registers a new schema version for an existing topic. The broker handled both commands after checking only that the client connection was authenticated. Unlike the broker's other topic commands, such as those for creating producers and consumers or for looking up topics, these two commands did not check whether the authenticated client was authorized for the target topic. The Pulsar REST API endpoints for schemas were not affected.<br><br>An authenticated client without any permission on the target topic, namespace or tenant could use these commands to:<br><br>- read the schema registered for a topic in another namespace or tenant, disclosing the schema definition such as record field names and types. Message payloads are not disclosed.<br>- register a new schema version on an existing topic in another namespace or tenant. The topic's schema compatibility and schema auto-update policies still apply. The issue does not allow message data to be read or modified, but a registered schema version can cause legitimate producers and consumers of that topic to fail with schema incompatibility errors until the schema is corrected by an administrator.<br><br>The standard Pulsar client performs an authorized topic lookup before it sends these commands, so the missing check could not be observed when testing with the standard client. A client that implements the binary protocol directly is not required to perform that lookup first.<br><br>This issue is relevant only to deployments that have authentication and authorization enabled. The GetSchema command is affected from Apache Pulsar 2.2.0, and the GetOrCreateSchema command from Apache Pulsar 2.5.0. After the fix, the broker requires the lookup permission on the topic for GetSchema and the produce permission on the topic for GetOrCreateSchema. This impact analysis assumes that Pulsar has been configured with the default authorization provider. For custom authorization providers, the impact could be slightly different.<br><br>This issue affects Apache Pulsar versions from 2.2.0 before 4.0.14, from 4.1.0 through 4.1.3, and from 4.2.0 before 4.2.5.<br><br>- 4.0.x version&nbsp;users should upgrade to at least 4.0.14.<br>- 4.1.x and 4.2.x version&nbsp;users should upgrade to at least 4.2.5.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.<br><br>The currently supported Apache Pulsar release lines are 4.0.x and 5.0.x. The supported versions schedule is available at https://pulsar.apache.org/contribute/release-policy/.
+
+### References
+* https://pulsar.apache.org/security/CVE-2026-105926/
+* https://lists.apache.org/thread.html/45y22fqoqyfpc2hdmoct8cmgslz8ogkh
+
+
+### Credits
+* Claude and Ada Logics (finder)
+* n0mi1k (finder)
+* MopMonk-AI (finder)
+
+
+## MultiRolesTokenAuthorizationProvider uses roles from unverified tokens for HTTP requests that fall back to the anonymous user role ## { #CVE-2026-105869 }
+
+CVE-2026-105869 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105869) [\[CVE json\]](./CVE-2026-105869.cve.json) [\[OSV json\]](./CVE-2026-105869.osv.json)
+
+
+
+_Last updated: 2026-10-21T17:58:51.755Z_
+
+### Affected
+
+* Apache Pulsar from 2.8.1 before 4.0.14
+* Apache Pulsar from 4.1.0 before 4.2.5
+
+
+### Description
+
+Apache Pulsar's MultiRolesTokenAuthorizationProvider authorizes a client with all roles listed in a claim of its JSON Web Token (JWT). The provider is intended for use with token authentication, which verifies the token before authorization. The provider did not verify the token itself: it parsed the token's claims with the signature removed and trusted that authentication had already checked it.<br><br>When authentication and authorization are enabled with a non-empty anonymousUserRole setting, some HTTP requests whose credentials fail authentication are not rejected, but are handled as requests of the anonymous user role. For the broker's HTTP endpoints, such as the admin REST API, this fallback applies to requests that do not name an authentication method and requires strictAuthMethod to be false (the default) where that setting is available. For the WebSocket API, failed credentials can also fall back to the anonymous user role; this path does not enforce strictAuthMethod. The authentication data kept for such a request still contained the request's Authorization header. MultiRolesTokenAuthorizationProvider then read the bearer token from that header without verifying its signature and authorized the request with the roles in the token's role claim.<br><br>As a result, in deployments that use MultiRolesTokenAuthorizationProvider together with a non-empty anonymousUserRole and that permit this fallback, an unauthenticated client can send an HTTP request, for example to the admin REST API or the WebSocket API, with a forged or unsigned token that lists arbitrary roles, and be authorized with those roles. The impact can include super-user access when the token lists a role configured in superUserRoles, allowing the client to read and change tenants, namespaces, topics, permissions and broker configuration. No valid credentials are required.<br><br>Deployments are not affected if they use the default authorization provider (PulsarAuthorizationProvider) or another authorization provider, or if anonymousUserRole is not set (the default). Requests that authenticate successfully with a valid token are not affected, because the token that MultiRolesTokenAuthorizationProvider reads is the token that authentication verified. Connections that use the Pulsar binary protocol are not affected by this issue, because the broker does not keep client authentication data for connections that it assigns to the anonymous user role.<br><br>In fixed versions, MultiRolesTokenAuthorizationProvider obtains roles only from tokens that the configured token authentication provider has verified, using its configured keys and validation settings. Broker HTTP requests that are assigned to the anonymous user role are authorized only as that role, and invalid tokens cannot supply additional roles to WebSocket requests. The broker fails to start if MultiRolesTokenAuthorizationProvider is configured with authorization enabled but without a token authentication provider.<br><br>This issue affects Apache Pulsar versions from 2.8.1 before 4.0.14 and from 4.1.0 before 4.2.5.<br><br>- 4.0.x version users should upgrade to at least 4.0.14.<br>- 4.1.x and 4.2.x version users should upgrade to at least 4.2.5.<br><br>Users operating versions prior to those listed above should upgrade to the aforementioned patched versions or newer versions.<br><br>The currently supported Apache Pulsar release lines are 4.0.x and 5.0.x. The supported versions schedule is available at https://pulsar.apache.org/contribute/release-policy/.<br><br>Users who cannot upgrade immediately can remove the anonymousUserRole setting from the broker and WebSocket service configurations, or restrict network access to the HTTP endpoints of these services to trusted clients.
+
+### References
+* https://pulsar.apache.org/security/CVE-2026-105869/
+* https://lists.apache.org/thread.html/lf36z1tlcsokp4gv97obkdjtt74ngmrw
+
+
+### Credits
+* George Chen (finder)
+
+
 ## Sensitive information logged in Pulsar's Apache Kafka Connectors ## { #CVE-2025-30677 }
 
 CVE-2025-30677 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-30677) [\[CVE json\]](./CVE-2025-30677.cve.json) [\[OSV json\]](./CVE-2025-30677.osv.json)
