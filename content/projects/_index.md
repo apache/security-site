@@ -1525,6 +1525,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=TsFile)
   - Advisories (experimental):\
     none so far
+  - Security model:
+    - [Apache TsFile security model](https://github.com/apache/tsfile/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/turbine/default.png" alt="" loading="lazy"> **Apache Turbine**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Turbine)
