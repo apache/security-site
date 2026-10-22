@@ -125,6 +125,30 @@
 <ul>
 <li>Xu Han (finder)</li>
 </ul>
+<h2 id="CVE-2026-107460">UrlImageConverter SSRF protection bypass via DNS rebinding</h2>
+<p>CVE-2026-107460 <a href="https://cve.org/CVERecord?id=CVE-2026-107460">[CVE]</a> <a href="./CVE-2026-107460.cve.json">[CVE json]</a> <a href="./CVE-2026-107460.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-10-13T14:16:01.206Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Fesod (Incubating) at 2.0.2-incubating</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Server-Side Request Forgery (SSRF) protection in the UrlImageConverter component of Apache Fesod (Incubating) fesod-sheet 2.0.2-incubating can be bypassed through DNS rebinding. When an application accepts an attacker-controlled image URL for spreadsheet writing, the converter checks the hostname&rsquo;s resolved IP addresses and then opens a separate connection that can resolve the hostname again. An attacker who controls DNS responses for the URL hostname may cause the connection to reach a restricted address after validation. CVE-2026-49328 covers SSRF in releases before 2.0.2-incubating; this issue is a DNS rebinding bypass of the protection in 2.0.2-incubating. Apache Fesod (Incubating) 2.1.0-incubating addresses the reported default-fetch scenario by disabling remote URL image fetching by default and requiring an explicit exact-host allowlist when the feature is enabled. Users should upgrade to 2.1.0-incubating. Applications enabling remote URL image fetching should allowlist only hostnames whose DNS and HTTP services are trusted.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://github.com/apache/fesod/pull/1035">https://github.com/apache/fesod/pull/1035</a></li>
+<li><a href="https://github.com/apache/fesod/releases/tag/2.1.0-incubating">https://github.com/apache/fesod/releases/tag/2.1.0-incubating</a></li>
+<li><a href="https://cve.org/CVERecord?id=CVE-2026-49328">https://cve.org/CVERecord?id=CVE-2026-49328</a></li>
+<li><a href="https://lists.apache.org/thread/oh706yhm32hmw8vx4kh1948h952pfr83">https://lists.apache.org/thread/oh706yhm32hmw8vx4kh1948h952pfr83</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Venkatraman Kumar (reporter)</li>
+<li>Wenhao Zeng (reporter)</li>
+<li>Wanxin Yin (reporter)</li>
+<li>George Chen (reporter)</li>
+<li>Zeka Irving (Thresh) (reporter)</li>
+</ul>
 
   
 </div>
