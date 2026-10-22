@@ -374,7 +374,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=DataSketches)
   - Advisories (experimental):\
-    none so far
+    [security.apache.org](/projects/datasketches/)
 - <img class="project-logo" src="https://www.apache.org/logos/res/db/default.png" alt="" loading="lazy"> **Apache DB**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=DB)
@@ -1654,7 +1654,7 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
   - **Security contact:**\
     [security@yunikorn.apache.org](mailto:security@yunikorn.apache.org?subject=YuniKorn)
   - Advisories (experimental):\
-    none so far
+    [security.apache.org](/projects/yunikorn/)
 
 </section>
 <section class="project-tab-panel" role="tabpanel" data-letter="Z">

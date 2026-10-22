@@ -13,6 +13,106 @@ Do you want to disclose a potential security issue for Apache Cocoon? Send your 
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Unauthenticated access to diagnostic interfaces ## { #CVE-2026-108089 }
+
+CVE-2026-108089 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108089) [\[CVE json\]](./CVE-2026-108089.cve.json) [\[OSV json\]](./CVE-2026-108089.osv.json)
+
+
+
+_Last updated: 2026-10-20T10:25:52.945Z_
+
+### Affected
+
+* Apache Cocoon through *
+
+
+### Description
+
+<p>** UNSUPPORTED WHEN ASSIGNED ** Exposure of sensitive system information to an unauthorized control sphere vulnerability in Apache Cocoon. An unauthenticated user could gain access to diagnostic interfaces, including triggering of cache, exposure of (verbose) debug logging and profile information.</p><p>This issue affects Apache Cocoon: all versions.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+
+### References
+* https://lists.apache.org/thread/fo6wh59zg4zmsnt3ohpc8pblyotn4zw7
+
+
+### Credits
+* Tiago Abreu (finder)
+
+
+## Cross-user cache poisoning ## { #CVE-2026-108088 }
+
+CVE-2026-108088 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108088) [\[CVE json\]](./CVE-2026-108088.cve.json) [\[OSV json\]](./CVE-2026-108088.osv.json)
+
+
+
+_Last updated: 2026-10-20T10:25:32.068Z_
+
+### Affected
+
+* Apache Cocoon through *
+
+
+### Description
+
+<p>** UNSUPPORTED WHEN ASSIGNED ** Use of cache containing sensitive information vulnerability in Apache Cocoon. When using the cache on a multi-user application, cached values for one user could be used when serving content for other users.</p><p>This issue affects Apache Cocoon: all versions.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+
+### References
+* https://lists.apache.org/thread/30vg3mht5vsm9vsmrdnx80zp5fw536st
+
+
+### Credits
+* Tiago Abreu (finder)
+
+
+## SQL Injection ## { #CVE-2026-108087 }
+
+CVE-2026-108087 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108087) [\[CVE json\]](./CVE-2026-108087.cve.json) [\[OSV json\]](./CVE-2026-108087.osv.json)
+
+
+
+_Last updated: 2026-10-20T10:25:11.609Z_
+
+### Affected
+
+* Apache Cocoon through *
+
+
+### Description
+
+<p>** UNSUPPORTED WHEN ASSIGNED ** Improper neutralization of special elements used in an SQL command ('SQL injection') vulnerability in Apache Cocoon.</p><p>This issue affects Apache Cocoon: all versions.</p><p>Missing input sanitation would allow arbitrary SQL injection through&nbsp;the SQL processor or sql:/esql: logicsheets.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+
+### References
+* https://lists.apache.org/thread/ty85v7t2vgrtvdj6btvoxm5jj2xv48kt
+
+
+### Credits
+* Tiago Abreu (finder)
+
+
+## XEE could lead to SSRF and information disclosure ## { #CVE-2026-108086 }
+
+CVE-2026-108086 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108086) [\[CVE json\]](./CVE-2026-108086.cve.json) [\[OSV json\]](./CVE-2026-108086.osv.json)
+
+
+
+_Last updated: 2026-10-20T10:24:52.101Z_
+
+### Affected
+
+* Apache Cocoon through *
+
+
+### Description
+
+<p>** UNSUPPORTED WHEN ASSIGNED ** Improper restriction of recursive entity references in DTDs ('XML entity expansion') vulnerability in Apache Cocoon.</p><p>This issue affects Apache Cocoon: all versions. XEE in the&nbsp;fp: form processor could lead to SSRF, including exposing files from the server to an untrusted external system</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+
+### References
+* https://lists.apache.org/thread/mt0h1cpjzps76nq6op7714rmnq6pbtht
+
+
+### Credits
+* Tiago Abreu (finder)
+
+
 ## continuations may not be private ## { #CVE-2025-24783 }
 
 CVE-2025-24783 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-24783) [\[CVE json\]](./CVE-2025-24783.cve.json) [\[OSV json\]](./CVE-2025-24783.osv.json)

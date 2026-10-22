@@ -18,6 +18,31 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Canopy does not enforce readonly-role restrictions on the /monitoring/* proxy ## { #CVE-2026-85499 }
+
+CVE-2026-85499 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85499) [\[CVE json\]](./CVE-2026-85499.cve.json) [\[OSV json\]](./CVE-2026-85499.osv.json)
+
+
+
+_Last updated: 2026-10-12T11:04:41.900Z_
+
+### Affected
+
+* Apache SkyWalking BanyanDB from 0.11.0 before 0.11.1
+
+
+### Description
+
+<p>Improper Authorization vulnerability in Apache SkyWalking BanyanDB.</p><p>The Canopy includes incomplete proof-of-concept role and monitoring-proxy functionality.&nbsp;<span>Under a </span><span>non-default configuration with a readonly Canopy user and a reachable&nbsp;</span><span>monitoring target, that user can send non-read requests through the&nbsp;</span><span>monitoring proxy.</span></p><p>This issue affects Apache SkyWalking BanyanDB: from 0.11.0 before 0.11.1.</p><p>Users are recommended to upgrade to version 0.11.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/qz1ogm6b37gfqq04y0lkdj8x1zr5cb4r
+
+
+### Credits
+* @CyberLeo (Independent Security Researcher) (reporter)
+
+
 ## CWE-79 stored XSS in Booster UI dashboard widgets (incomplete fix of CVE-2025-54057) ## { #CVE-2026-85229 }
 
 CVE-2026-85229 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85229) [\[CVE json\]](./CVE-2026-85229.cve.json) [\[OSV json\]](./CVE-2026-85229.osv.json)

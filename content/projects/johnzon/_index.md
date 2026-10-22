@@ -18,6 +18,34 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## ClassConverter loads & static-initializes an attacker-named class from untrusted JSON ## { #CVE-2026-71253 }
+
+CVE-2026-71253 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-71253) [\[CVE json\]](./CVE-2026-71253.cve.json) [\[OSV json\]](./CVE-2026-71253.osv.json)
+
+
+
+_Last updated: 2026-10-19T10:36:35.470Z_
+
+### Affected
+
+* Apache Johnzon from 2.0.0 before 2.2.0
+* Apache Johnzon from 1.0.0 before 1.3.1
+
+
+### Description
+
+<p>Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection') vulnerability in Apache Johnzon.</p><p>ClassConverter loads &amp; static-initializes an attacker-named class from untrusted JSON.<br></p><p>This issue affects Apache Johnzon: from 1.0.0 before 2.2.0.</p><p>Users are recommended to upgrade to version 1.3.1 (javax namespace) or 2.2.0 (jakarta specification namespace), which fixes the issue.</p>
+
+### References
+* https://github.com/apache/johnzon/commit/dd3d00634c746a2173a2518e882e85e8a151bf30
+* https://github.com/apache/johnzon/commit/91e7b0d21d08d138944e2570691939739422a3d6
+* https://lists.apache.org/thread.html/3vgm1yo2sn9yhkvvs9lc4ro01vl3zt68
+
+
+### Credits
+* n0mi1k Security (finder)
+
+
 ## Prevent inefficient internal conversion from BigDecimal at large scale ## { #CVE-2023-33008 }
 
 CVE-2023-33008 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-33008) [\[CVE json\]](./CVE-2023-33008.cve.json) [\[OSV json\]](./CVE-2023-33008.osv.json)

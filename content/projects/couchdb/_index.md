@@ -13,6 +13,158 @@ Do you want to disclose a potential security issue for Apache CouchDB? Send your
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Auth bypass in prefixed _users and _replicator databases ## { #CVE-2026-90800 }
+
+CVE-2026-90800 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90800) [\[CVE json\]](./CVE-2026-90800.cve.json) [\[OSV json\]](./CVE-2026-90800.osv.json)
+
+
+
+_Last updated: 2026-10-20T15:40:46.476Z_
+
+### Affected
+
+* Apache CouchDB before 3.5.3
+
+
+### Description
+
+Missing authorisation checks in chttpd in Apache CouchDB 3.5.2 and below on all platforms allows any request to read the full contents of a prefixed _user or _replicator database via an unauthorised API endpoint.<div><br></div><div>The use of prefixed system databases is very rare.<br><br><div>Users are recommended to upgrade to version 3.5.3, which fixes this issue.</div></div>
+
+### References
+* https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f
+* https://lists.apache.org/thread/vng8vqjwgy1qlrv14wzrgs7pv4gj7gwr
+
+
+### Credits
+* Qing Xu & ZeroVuln Labs reported this issue independently (reporter)
+
+
+## Atom-table exhaustion in _changes sequences and _search bookmarks with specially crafted sequence values ## { #CVE-2026-90799 }
+
+CVE-2026-90799 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90799) [\[CVE json\]](./CVE-2026-90799.cve.json) [\[OSV json\]](./CVE-2026-90799.osv.json)
+
+
+
+_Last updated: 2026-10-20T15:40:15.444Z_
+
+### Affected
+
+* Apache CouchDB before 3.5.3
+
+
+### Description
+
+Unsafe binary deserialisation in chttpd in Apache CouchDB 3.5.2 and below on all platforms allows an authenticated user to cause a denial of service via memory exhaustion.<br><br><div>Users are recommended to upgrade to version 3.5.3, which fixes this issue.</div>
+
+### References
+* https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f
+* https://lists.apache.org/thread/bqxkm19hw8985t7opz675b29hs1zl4z9
+
+
+### Credits
+* Piotr Karwasz & ZeroVuln Labs reported this issue independently (finder)
+
+
+## Replicator follows redirects indefinitely ## { #CVE-2026-90798 }
+
+CVE-2026-90798 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90798) [\[CVE json\]](./CVE-2026-90798.cve.json) [\[OSV json\]](./CVE-2026-90798.osv.json)
+
+
+
+_Last updated: 2026-10-20T15:39:50.951Z_
+
+### Affected
+
+* Apache CouchDB before 3.5.3
+
+
+### Description
+
+A missing circuit-breaker in the replicator in Apache CouchDB 3.5.2 and below on all platforms allows the owner of a replication source or target to cause a denial of service via creating an infinite HTTP redirect loop.<br><br><div>Users are recommended to upgrade to version 3.5.3, which fixes this issue.</div>
+
+### References
+* https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f
+* https://lists.apache.org/thread/m6d526fj57pvq5pswm2lp1shbdz3f417
+
+
+### Credits
+* The Apache CouchDB Team (finder)
+
+
+## Pre-authentication gzip decompression bomb via POST /_session ## { #CVE-2026-90797 }
+
+CVE-2026-90797 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90797) [\[CVE json\]](./CVE-2026-90797.cve.json) [\[OSV json\]](./CVE-2026-90797.osv.json)
+
+
+
+_Last updated: 2026-10-20T15:39:22.336Z_
+
+### Affected
+
+* Apache CouchDB before 3.5.3
+
+
+### Description
+
+An unlimited gzip decompression routine in chttpd in Apache CouchDB 3.5.2 and below on all platforms allows any remote client to cause a denial of service via memory exhaustion.<div><br>Users are recommended to upgrade to version 3.5.3, which fixes this issue.</div>
+
+### References
+* https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f
+* https://lists.apache.org/thread/gsbotof0qn8x6zlpd7t568ny4053jo0n
+
+
+### Credits
+* ZeroVuln labs (reporter)
+
+
+## Admin credentials leading to code execution as operating system user ## { #CVE-2026-86471 }
+
+CVE-2026-86471 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86471) [\[CVE json\]](./CVE-2026-86471.cve.json) [\[OSV json\]](./CVE-2026-86471.osv.json)
+
+
+
+_Last updated: 2026-10-20T15:38:08.323Z_
+
+### Affected
+
+* Apache CouchDB before 3.5.3
+
+
+### Description
+
+An unvalidated runtime configuration value in Apache CouchDB 3.5.2 and below on all platforms allows a CouchDB server admin to run arbitrary shell commands as the CouchDB operating system user.<br><br><div>Users are recommended to upgrade to version 3.5.3, which fixes this issue.</div>
+
+### References
+* https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f
+* https://lists.apache.org/thread/c8p73gswgogtnzvk7hpw8jb8d4mnosdp
+
+
+## Credential Disclosure to Non-Owner Members via Object-Form Replication Endpoint URLs ## { #CVE-2026-107755 }
+
+CVE-2026-107755 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-107755) [\[CVE json\]](./CVE-2026-107755.cve.json) [\[OSV json\]](./CVE-2026-107755.osv.json)
+
+
+
+_Last updated: 2026-10-20T15:41:21.272Z_
+
+### Affected
+
+* Apache CouchDB before 3.5.3
+
+
+### Description
+
+Insufficient filtering of credentials in the _replicator database in Apache CouchDB 3.5.2 and below on all platforms allows an authenticated user to read replication credentials of other users’ replications, not just their own.<br><br><div>Users are recommended to upgrade to version 3.5.3, which fixes this issue.</div>
+
+### References
+* https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f
+* https://lists.apache.org/thread/ro57p4r2lhxn2n4712ppx7r11oqq900n
+
+
+### Credits
+* Sakil Ahamed Gayen (reporter)
+
+
 ## Privilege Escalation Using _design Documents ## { #CVE-2023-45725 }
 
 CVE-2023-45725 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2023-45725) [\[CVE json\]](./CVE-2023-45725.cve.json) [\[OSV json\]](./CVE-2023-45725.osv.json)

@@ -315,7 +315,7 @@ CVE-2026-57941 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-57941) [\[CVE jso
 
 
 
-_Last updated: 2026-10-01T18:07:11.886Z_
+_Last updated: 2026-10-12T09:07:36.431Z_
 
 ### Affected
 
@@ -342,7 +342,7 @@ CVE-2026-56449 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-56449) [\[CVE jso
 
 
 
-_Last updated: 2026-10-05T08:51:17.706Z_
+_Last updated: 2026-10-20T15:44:59.115Z_
 
 ### Affected
 

@@ -18,6 +18,35 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Parquet file-controlled KMS URL is forwarded to pluggable KmsClient that skips host validation ## { #CVE-2026-92287 }
+
+CVE-2026-92287 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-92287) [\[CVE json\]](./CVE-2026-92287.cve.json)
+
+_Last updated: 2026-10-20T08:15:12.414Z_
+
+### Affected
+
+* Apache Arrow C++ from 4.0.0 before 26.0.0
+* Apache Arrow C++ at 26.0.0 unaffected
+* PyArrow from 8.0.0 before 26.0.0
+* PyArrow at 26.0.0 unaffected
+
+
+### Description
+
+<div>Pass-through of unvalidated KMS URLs to KMS clients in Apache C++ Parquet and PyArrow versions 4.0.0 to 25.0.1.</div><div><br></div><div>This affects users who read Parquet files and configure Parquet decryption properties with a KmsClient implementation.</div><div><br></div><div>On the reader side, the KMS URL can be application-controlled (specified in the&nbsp;KmsConnectionConfig) or file-controlled.
+If the user does not leverage application control for this parameter, a file-controlled KMS URL is forwarded to a pluggable KmsClient implementation. 
+If the KMS implementation does not perform host validation and makes use of the provided KMS URL, a KMS token can be sent to a malicious host set by an attacker in the file.&nbsp;</div><div><br></div><div>Users are recommended to upgrade to version 26.0.0, which disables this behavior by default and requires that users opt-in to it by enabling the&nbsp;read_kms_url flag in the&nbsp;DecryptionConfiguration. Users of affected versions are recommended to either specify the KMS URL in the&nbsp;KmsConnectionConfig when reading files, or ensure any KmsClient implementations validate received KMS URLs. Users that opt-in to file-controlled KMS URLs in version 26.0.0 and later must ensure KmsClients validate KMS URLs.</div>
+
+### References
+* https://github.com/apache/arrow/issues/51349
+* https://lists.apache.org/thread/0t6vry0msbk9dpsd0xv395ov5b84hj57
+
+
+### Credits
+* n0mi1k (finder)
+
+
 ## Potential use-after-free when reading IPC file with pre-buffering ## { #CVE-2026-25087 }
 
 CVE-2026-25087 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-25087) [\[CVE json\]](./CVE-2026-25087.cve.json)

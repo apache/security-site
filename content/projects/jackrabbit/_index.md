@@ -20,6 +20,68 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## DavEx client runs Class.forName + (String)-constructor on server-controlled error bodies ## { #CVE-2026-92415 }
+
+CVE-2026-92415 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-92415) [\[CVE json\]](./CVE-2026-92415.cve.json) [\[OSV json\]](./CVE-2026-92415.osv.json)
+
+
+
+_Last updated: 2026-10-07T15:47:28.752Z_
+
+### Affected
+
+* Apache Jackrabbit from 2.23.0 through 2.23.5
+* Apache Jackrabbit from 2.22.0 through 2.22.4
+* Apache Jackrabbit from 2.20.0 through 2.20.17
+
+
+### Description
+
+<p>— Use of Externally-Controlled Input to Select Classes or Code vulnerability in Apache Jackrabbit's WebDAV/Davex client.<br><br>A malicious WebDAV/DavEx server, or an attacker able to intercept the connection, can cause the client to instantiate arbitrary classes from its classpath, which can lead to arbitrary file creation or truncation.<br><br>Only applications that use jackrabbit-spi2dav (directly or through jackrabbit-jcr2dav) to connect to a remote repository are affected. Jackrabbit servers are not affected.<br><br>Category: unsafe reflection on wire data (HIGH).</p><p>This issue affects Apache Jackrabbit: from 2.23.0 through 2.23.5, from 2.22.0 through 2.22.4, from 2.20.0 through 2.20.17.</p><p>Users are recommended to upgrade to versions 2.23.6, 2.22.5, or 2.20.18 which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/hcrxm4jp1mtk56xb8p1dtryz7hl08kmr
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Julian Reschke (analyst)
+* Claude Security (tool)
+
+
+## Pre-auth hijack of cached sessions via derivable WebDAV lock tokens ## { #CVE-2026-92414 }
+
+CVE-2026-92414 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-92414) [\[CVE json\]](./CVE-2026-92414.cve.json) [\[OSV json\]](./CVE-2026-92414.osv.json)
+
+
+
+_Last updated: 2026-10-07T15:46:35.583Z_
+
+### Affected
+
+* Apache Jackrabbit from 2.23.0 through 2.23.5
+* Apache Jackrabbit from 2.22.0 through 2.22.4
+* Apache Jackrabbit from 2.20.0 through 2.20.17
+
+
+### Description
+
+<p>: Session Fixation / Session Reuse across Users vulnerability in Apache Jackrabbit.</p><p>Jackrabbit WebDAV server attaches a cached authenticated session on any Lock-Token/TransactionId/SubscriptionId/If-header field token match with<br>
+no credential check.</p><p>This issue affects Apache Jackrabbit: from 2.23.0 through 2.23.5, from 2.22.0 through 2.22.4, from 2.20.0 through 2.20.17.</p><p>
+</p><p></p><p>Users are recommended to upgrade to versions 2.23.6, 2.22.5, or 2.20.18 which fix the issue.</p>
+
+
+
+### References
+* https://lists.apache.org/thread.html/gmbsmrs2lycl9nld7rd0h1r1fc4t75qr
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Julian Reschke (analyst)
+* Claude Security (tool)
+
+
 ## JNDI injection risk with JndiRepositoryFactory ## { #CVE-2025-58782 }
 
 CVE-2025-58782 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-58782) [\[CVE json\]](./CVE-2025-58782.cve.json) [\[OSV json\]](./CVE-2025-58782.osv.json)

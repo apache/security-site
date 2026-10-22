@@ -244,6 +244,34 @@ Apache Airflow: the Core API logout endpoint revokes only a session token presen
 * Jarek Potiuk (remediation developer)
 
 
+## AWS auth manager: SAML login CSRF logs users into the attacker's account ## { #CVE-2026-86467 }
+
+CVE-2026-86467 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86467) [\[CVE json\]](./CVE-2026-86467.cve.json) [\[OSV json\]](./CVE-2026-86467.osv.json)
+
+
+
+_Last updated: 2026-10-20T02:37:06.110Z_
+
+### Affected
+
+* Apache Airflow Amazon provider before 9.38.0
+
+
+### Description
+
+Apache Airflow Amazon provider: the AWS auth manager's SAML login flow does not bind the authentication response to the browser that began it. The login handler discards the AuthnRequest ID and the callback validates the assertion without requiring a matching InResponseTo, so an unauthenticated attacker who can cause a victim to load a page can complete a SAML login in the victim's browser using the attacker's own assertion, silently logging the victim into the attacker's Airflow account. Subsequent work the victim performs lands in a session the attacker controls.<br><br>Affects deployments using the AWS auth manager with SAML authentication. The victim needs only to visit an attacker-controlled page; no Airflow account or credential is required of the attacker. This is the same login-CSRF class fixed in the Keycloak auth manager as CVE-2026-40948.<br><br>Users of apache-airflow-providers-amazon are recommended to upgrade to version 9.38.0, which fixes the issue.
+
+### References
+* https://github.com/apache/airflow/pull/73698
+* https://lists.apache.org/thread/xr9d2jyk9qpglsmromt6vjl4s9jb5qn8
+* https://www.cve.org/CVERecord?id=CVE-2026-40948
+
+
+### Credits
+* Andrew Rukin (Arenadata) (finder)
+* Jarek Potiuk (remediation developer)
+
+
 ## FAB Authentik provider: id_token issuer/audience not validated ## { #CVE-2026-86466 }
 
 CVE-2026-86466 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86466) [\[CVE json\]](./CVE-2026-86466.cve.json) [\[OSV json\]](./CVE-2026-86466.osv.json)

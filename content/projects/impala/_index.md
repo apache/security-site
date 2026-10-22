@@ -18,6 +18,81 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Impala Executor Webserver Auth Bypass ## { #CVE-2026-97720 }
+
+CVE-2026-97720 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97720) [\[CVE json\]](./CVE-2026-97720.cve.json) [\[OSV json\]](./CVE-2026-97720.osv.json)
+
+
+
+_Last updated: 2026-10-07T08:46:43.939Z_
+
+### Affected
+
+* Apache Impala from 4.1.0 through 4.5.2
+
+
+### Description
+
+Incorrect implementation of JWT/OAuth authentication in Impala executors in Apache Impala versions up to and including 4.5.2 which allows attacked to access resources served by the executor's webserver when that webserver is configured to accept JWT/OAuth tokens.&nbsp; Bearer token (JWT) signatures are not validated resulting in the webserver accepting any valid JWT.<div><br>Users are recommended to either disable JWT/OAuth auth for Impala executors or upgrade to version 4.5.3, which fixes this issue.</div>
+
+### References
+* https://lists.apache.org/thread.html/q2qkrnko9hdv2mhqy6prm06f65n2g3h2
+
+
+### Credits
+* Andrew Rukin (Arenadata) (finder)
+
+
+## Stored XSS in Impala query plans ## { #CVE-2026-93684 }
+
+CVE-2026-93684 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-93684) [\[CVE json\]](./CVE-2026-93684.cve.json) [\[OSV json\]](./CVE-2026-93684.osv.json)
+
+
+
+_Last updated: 2026-10-07T08:48:43.956Z_
+
+### Affected
+
+* Apache Impala from 2.7.0 through 4.5.2
+
+
+### Description
+
+An SQL user using Impala up to and including version 4.5.2 with only SELECT permission can put JavaScript in a table alias and make it run in another user's browser when that user opens the query plan in Impala's Web UI. This is&nbsp;stored&nbsp;XSS (CWE-79). Users are recommended to upgrade to version 4.5.3.
+
+### References
+* https://lists.apache.org/thread.html/qxjj5n3vsttxbvq2n75xcy2qcrhtxowx
+
+
+### Credits
+* Andrew Rukin (Arenadata) (finder)
+
+
+## Path traversal executes JARs outside trusted paths ## { #CVE-2026-90466 }
+
+CVE-2026-90466 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90466) [\[CVE json\]](./CVE-2026-90466.cve.json) [\[OSV json\]](./CVE-2026-90466.osv.json)
+
+
+
+_Last updated: 2026-10-07T08:47:11.426Z_
+
+### Affected
+
+* Apache Impala from 4.5.2 before 4.5.3
+
+
+### Description
+
+<div>Path traversal of 'trusted_jar_paths' in Impala 4.5.2 allows an attacker-controlled JAR to be loaded via a relative path where the prefix matches a path specified in 'trusted_jar_paths'.</div><div><br></div><div>The startup flag 'trusted_jar_paths' references URIs for loading files from local or remote filesystems. Path traversal can't override the schema, but can result in loading a JAR that has been uploaded to a different location in that filesystem via Impala DDLs such as CREATE DATA SOURCE and CREATE TABLE. Path traversal can only be used if a trusted path exists, so this attack<span>&nbsp;requires 'trusted_jar_paths' have a non-empty value configured by the Impala admin.</span></div><div><br></div><div>Users are recommended to upgrade to version 4.5.3, which fixes this issue.</div><br>
+
+### References
+* https://lists.apache.org/thread.html/m7qbho4j1g4v7kx7pbk4z2n8p9nx6bqn
+
+
+### Credits
+* Andrew Rukin (Arenadata) (reporter)
+
+
 ## RCE via External Data Source Class Loading ## { #CVE-2026-65181 }
 
 CVE-2026-65181 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-65181) [\[CVE json\]](./CVE-2026-65181.cve.json) [\[OSV json\]](./CVE-2026-65181.osv.json)
