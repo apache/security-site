@@ -600,6 +600,58 @@ applying the classname allowlist earlier.</div><div><br></div><div>Affected are 
 * Venkatraman Kumar, Securin (reporter)
 
 
+## Authorization bypass ## { #CVE-2026-115748 }
+
+CVE-2026-115748 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-115748) [\[CVE json\]](./CVE-2026-115748.cve.json) [\[OSV json\]](./CVE-2026-115748.osv.json)
+
+
+
+_Last updated: 2026-10-26T15:01:39.384Z_
+
+### Affected
+
+* Apache Vysper through *
+
+
+### Description
+
+<div>**UNSUPPORTED WHEN ASSIGNED**&nbsp;&nbsp;Authorization bypass in Apache Vysper, all versions.</div><div><br></div><div>Apache Vysper is an XMPP (Jabber) server library. Its XEP-0077 (In-Band Registration) implementation is missing an authentication check, allowing any authenticated user to compromise other accounts.</div><div><br></div><span>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative.</span>
+
+### References
+* https://mina.apache.org/vysper-project/
+* https://lists.apache.org/thread.html/979n9lzg10vc7tdrrlgy4lh5yrsw8wsj
+
+
+### Credits
+* Ho1aAs <xxy010605@gmail.com> (finder)
+
+
+## Unbounded allocation ## { #CVE-2026-115721 }
+
+CVE-2026-115721 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-115721) [\[CVE json\]](./CVE-2026-115721.cve.json) [\[OSV json\]](./CVE-2026-115721.osv.json)
+
+
+
+_Last updated: 2026-10-26T15:01:16.916Z_
+
+### Affected
+
+* Apache Vysper through *
+
+
+### Description
+
+<div>**UNSUPPORTED WHEN ASSIGNED**&nbsp;&nbsp;Unbounded allocation in XML parsing in Apache Vysper; all versions, may lead to an out of memory condition.</div><div><br></div><div>This issue affects all versions of Apache Vysper.&nbsp;<span>Apache Vysper is an XMPP (Jabber) server library.</span></div><div><span><br></span></div><div><span>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative.</span></div>
+
+### References
+* https://mina.apache.org/vysper-project/
+* https://lists.apache.org/thread.html/d0bx15hjcs69gktk9tt25vgvk121c9vm
+
+
+### Credits
+* Gjoko Krstic (Zero Science Lab) (finder)
+
+
 ## MINA applications using unbounded deserialization may allow RCE ## { #CVE-2024-52046 }
 
 CVE-2024-52046 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-52046) [\[CVE json\]](./CVE-2024-52046.cve.json)
