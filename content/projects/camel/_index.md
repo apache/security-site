@@ -23,6 +23,172 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Camel-AWS2-S3 Producer Evaluates Untrusted S3 Object Keys From the CamelAwsS3Key Header as Simple Expressions ## { #CVE-2026-95664 }
+
+CVE-2026-95664 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-95664) [\[CVE json\]](./CVE-2026-95664.cve.json) [\[OSV json\]](./CVE-2026-95664.osv.json)
+
+
+
+_Last updated: 2026-10-26T08:40:29.466Z_
+
+### Affected
+
+* Apache Camel from 4.8.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.2
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection') vulnerability in Apache Camel AWS2-s3 component.</p><p>This issue affects Apache Camel: from 4.8.0 before 4.18.5, from 4.19.0 before 4.22.2.</p><p>For the object it uploads, reads or deletes, the camel-aws2-s3 producer takes the key from the CamelAwsS3Key message header and falls back to the keyName option configured on the endpoint only when that header is absent. Since 4.8.0, AWS2S3Utils.determineKey() also passed the resulting value to the Simple language whenever it contained ${ or $simple{, so that a route could use a dynamic key, and the evaluation applied to a value taken from the header as well as to the configured option. The header is not route configuration, however: the aws2-s3 consumer sets CamelAwsS3Key on the exchanges it creates to the key of the object it read, that is, the name of the object in the bucket. In a route that does nothing more than consume from one aws2-s3 endpoint and produce to another, the name of each consumed object therefore reached the producer, and a name containing either marker was evaluated as an expression, although the route author never asked for any evaluation, and configuring keyName on the producer did not prevent it, because the header took precedence. A key that a route copied into the header from other message content was evaluated in the same way. Anyone able to choose the name of an object in a bucket that such a route consumes, typically a principal allowed to upload to that bucket, could therefore have Simple expressions of their choosing evaluated in the Camel process. The Simple language can read JVM system properties, environment variables and configuration properties, which commonly carry credentials, and, where camel-bean is on the classpath, invoke methods on beans in the registry. The evaluated result became the key the producer used, so reading a value back additionally required the ability to see object names in the destination bucket, while a method invocation took effect without it; together with the need to name an object in a consumed bucket, this is why the severity is assessed medium. The bucket name went through the same evaluation, but the consumer only ever places the bucket configured on its own endpoint in a bucket header, never a value derived from a remote object, so the bucket name was not reachable in this way. Releases before 4.8.0 used the key from the header as given and are not affected.</p><p>Users are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.2. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The 4.8.x to 4.17.x and 4.19.x to 4.21.x release lines reached end of life before this issue was resolved and will not receive a fix, so deployments on them must move to a supported release. After upgrading, a key or bucket name supplied through a message header is used literally, so a route that put an unevaluated Simple expression in the CamelAwsS3Key or CamelAwsS3OverrideBucketName header must evaluate it in the route instead, for example with setHeader and simple(), or configure it as the keyName or bucketName option of the endpoint. For deployments that cannot upgrade immediately, do not let a key derived from an object name or from other untrusted message content reach an aws2-s3 producer unchecked: in routes that pass exchanges from an aws2-s3 consumer to an aws2-s3 producer, either remove the CamelAwsS3Key header before the producer with removeHeader(“CamelAwsS3Key”), so that the keyName configured on the endpoint is used, or reject exchanges whose CamelAwsS3Key header contains ${ or $simple{. Configuring keyName alone is not a workaround, because the header takes precedence over it. As defence in depth, allow only trusted principals to write to buckets that Camel routes consume.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-95664.html
+* https://issues.apache.org/jira/browse/CAMEL-24901
+* https://github.com/apache/camel/pull/26746
+* https://github.com/apache/camel/pull/26840
+* https://github.com/apache/camel/pull/26842
+* https://github.com/apache/camel/pull/26841
+* https://github.com/apache/camel/pull/26889
+* https://issues.apache.org/jira/browse/CAMEL-20971
+* https://camel.apache.org/security/CVE-2026-78164.html
+* https://camel.apache.org/security/CVE-2026-83531.html
+* https://camel.apache.org/security/CVE-2025-27636.html
+
+
+### Credits
+* Andrea Cosentino from Apache Software Foundation (finder)
+* Andrea Cosentino from Apache Software Foundation (remediation developer)
+
+
+## Camel-Keycloak Security Policy Accepts Expired Access Tokens Because Cached Token Introspection Results Are Not Bounded by the Token Expiry ## { #CVE-2026-95663 }
+
+CVE-2026-95663 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-95663) [\[CVE json\]](./CVE-2026-95663.cve.json) [\[OSV json\]](./CVE-2026-95663.osv.json)
+
+
+
+_Last updated: 2026-10-26T08:42:12.055Z_
+
+### Affected
+
+* Apache Camel from 4.16.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.2
+
+
+### Description
+
+<p>Insufficient Session Expiration vulnerability in Apache Camel Keycloak component.</p><p>This issue affects Apache Camel: from 4.16.0 before 4.18.5, from 4.19.0 before 4.22.2.</p><p>When token introspection is enabled on the camel-keycloak KeycloakSecurityPolicy (useTokenIntrospection=true), the security processor validates the access token of a request by sending it to Keycloak's OAuth 2.0 token introspection endpoint, and accepts the token while the response reports it as active. The introspection endpoint reports a token as inactive once its exp (expiration) time has passed, so on this path the active flag is what enforces token expiry. Introspection results are cached by default (introspectionCacheEnabled=true, introspectionCacheTtl=60 seconds), and both cache implementations shipped with the component, ConcurrentMapTokenCache and CaffeineTokenCache, expired an entry a fixed time after it was inserted, without bounding that lifetime by the exp claim that the cached response already carried. KeycloakSecurityProcessor in turn checked only the active flag of the result, on every path that uses introspection, and never compared exp with the current time. A response cached shortly before the token expired was therefore served to later requests carrying the same token for up to the configured time-to-live after the token's expiry, and those requests were admitted with the roles and permissions the expired token had carried, although RFC 7662, which defines token introspection, states that a response containing exp must not be cached beyond that time. The access token is supplied by the caller with each request, typically as a bearer token in the Authorization header, so a caller holding a token that was valid moments earlier could keep using it after it expired, for as long as the cached entry lived. The window is bounded by introspectionCacheTtl, which is 60 seconds by default and 300 to 600 seconds where the documentation's recommendation for internal services was followed, and it opens only for a token that the same Camel process introspected and cached while the token was still active. The issue grants nothing beyond what the token already carried: it allows no token forgery and no privilege escalation, and token introspection is not enabled by default, which is why the severity is assessed medium. The local JWT verification path, used when introspection is disabled, is not affected by this issue.</p><p>Users are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.2. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The 4.16.x, 4.17.x and 4.19.x to 4.21.x release lines reached end of life before this issue was resolved and will not receive a fix, so deployments on them must move to a supported release. For deployments that cannot upgrade immediately, set introspectionCacheEnabled=false on the KeycloakSecurityPolicy, so that every request is checked against the introspection endpoint, which reports an expired token as inactive, at the cost of one introspection call per request. Lowering introspectionCacheTtl only narrows the window and does not close it.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-95663.html
+* https://issues.apache.org/jira/browse/CAMEL-24902
+* https://github.com/apache/camel/pull/26747
+* https://github.com/apache/camel/pull/27182
+* https://github.com/apache/camel/pull/27183
+* https://camel.apache.org/security/CVE-2026-46455.html
+* https://camel.apache.org/security/CVE-2026-85301.html
+
+
+### Credits
+* Andrea Cosentino from Apache Software Foundation (finder)
+* Andrea Cosentino from Apache Software Foundation (remediation developer)
+
+
+## Camel-Docling Unvalidated Output Path Header Enables Writing Conversion Output to an Arbitrary Directory ## { #CVE-2026-95629 }
+
+CVE-2026-95629 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-95629) [\[CVE json\]](./CVE-2026-95629.cve.json) [\[OSV json\]](./CVE-2026-95629.osv.json)
+
+
+
+_Last updated: 2026-10-26T08:44:20.378Z_
+
+### Affected
+
+* Apache Camel from 4.15.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.2
+
+
+### Description
+
+<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache Camel Docling component.</p><p>This issue affects Apache Camel: from 4.15.0 before 4.18.5, from 4.19.0 before 4.22.2.</p><p>DoclingProducer runs the external docling tool in CLI mode, the default, and tells it where to write the converted document through the --output flag. When the CamelDoclingOutputFilePath header was set, addOutputDirectoryArguments handed its value to that flag verbatim: the value was not normalized, an absolute path or a path containing .. segments was accepted as given, and no endpoint option could confine it to a directory. The custom-argument validation added by the fix for CVE-2026-40047 refuses the --output and -o flags in the CamelDoclingCustomArguments header and tells callers to choose the output directory with this header instead, so the one value that decides where docling writes reached the command line without any of the checks applied to custom arguments. Docling writes the conversion result, as Markdown, HTML, JSON or text, into that directory, naming the file after the input file, and the producer afterwards removes only its own temporary directory, so the file is left in place. A party able to set the header could therefore have conversion output created in any directory the Camel process can write to. The content of such a file is the conversion of the document carried by the message, so it is shaped by whoever supplies that document without being written byte for byte, and when the document content arrives in the message body the producer stores it under a random temporary name, which the output file then carries. The header belongs to the Camel header namespace, which consumers applying Camel's default header filtering, such as the JMS and Kafka consumers, remove from incoming messages, so the issue is reached where a route forwards externally influenced values into the header or where a consumer maps incoming headers without that filtering. The docling-serve mode does not use the header.</p><p>Users are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.2. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The fix adds an outputBaseDirectory endpoint option that is unset by default, so after upgrading, set it on every docling endpoint whose CamelDoclingOutputFilePath header can carry a value influenced from outside the deployment; without it the header is normalized but can still name any directory. The 4.15.x to 4.17.x and 4.19.x to 4.21.x release lines reached end of life before this issue was resolved and will not receive a fix, so deployments on them must move to a supported release. For deployments that cannot upgrade immediately, do not build the CamelDoclingOutputFilePath header from values that originate outside the deployment, remove that header from messages that arrive from outside before they reach a docling endpoint, and make sure that consumers which map incoming message headers drop the Camel header namespace, so that only the route itself chooses the output directory.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-95629.html
+* https://issues.apache.org/jira/browse/CAMEL-24894
+* https://github.com/apache/camel/pull/26737
+* https://github.com/apache/camel/pull/27365
+* https://github.com/apache/camel/pull/27362
+* https://camel.apache.org/security/CVE-2026-40047.html
+* https://camel.apache.org/security/CVE-2026-78163.html
+
+
+### Credits
+* Zhixi "Jace" Sun, independent security researcher (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Docling Custom CLI Argument Path Validation Does Not Reject Absolute Paths (Incomplete Fix of CVE-2026-40047) ## { #CVE-2026-95628 }
+
+CVE-2026-95628 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-95628) [\[CVE json\]](./CVE-2026-95628.cve.json) [\[OSV json\]](./CVE-2026-95628.osv.json)
+
+
+
+_Last updated: 2026-10-26T08:48:46.102Z_
+
+### Affected
+
+* Apache Camel from 4.15.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.2
+
+
+### Description
+
+<p>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache Camel Docling component.</p><p>This issue affects Apache Camel: from 4.15.0 before 4.18.5, from 4.19.0 before 4.22.2.</p><p>DoclingProducer builds the command line of the external docling tool and appends to it the custom arguments supplied in the CamelDoclingCustomArguments header, a list of strings whose flags the fix for CVE-2026-40047 restricted to an allowlist. That fix also introduced validatePathSafety to keep path-like argument values inside the intended directory, but the method only looked for relative traversal: it rejected a value containing a traversal sequence such as ../ and a value whose normalized form still held a .. element. It never checked whether a value was an absolute path, and an absolute path without traversal segments contains neither, so it passed unchanged. Every path-like value went through this check, whether it was a separate list element following its flag or was attached to the flag after an equals sign, so an absolute path was accepted in either form, for example as the directory given to the allowlisted --artifacts-path flag, which tells docling where to find its model artifacts. Such a value reached the docling command line as given, so a party able to choose the custom arguments could point the docling process at any directory the Camel process can access, outside the working directory that the check was meant to keep path values in, which is the outcome the CVE-2026-40047 fix set out to prevent. Only the CLI mode, which is the default, passes custom arguments to docling. The header belongs to the Camel header namespace, which consumers applying Camel's default header filtering, such as the JMS and Kafka consumers, remove from incoming messages, so the issue is reached where a route forwards externally influenced values into the header or where a consumer maps incoming headers without that filtering.</p><p>Users are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.2. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The 4.15.x to 4.17.x and 4.19.x to 4.21.x release lines reached end of life before this issue was resolved and will not receive a fix, so deployments on them must move to a supported release. For deployments that cannot upgrade immediately, do not build the CamelDoclingCustomArguments header from values that originate outside the deployment, remove that header from messages that arrive from outside before they reach a docling endpoint, and make sure that consumers which map incoming message headers drop the Camel header namespace, so that only the route itself chooses the custom arguments.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-95628.html
+* https://issues.apache.org/jira/browse/CAMEL-24893
+* https://github.com/apache/camel/pull/26738
+* https://github.com/apache/camel/pull/26743
+* https://github.com/apache/camel/pull/26744
+* https://camel.apache.org/security/CVE-2026-40047.html
+* https://camel.apache.org/security/CVE-2026-78163.html
+
+
+### Credits
+* Zhixi "Jace" Sun, independent security researcher (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-OAuth Cross-Scope Token Reuse via an Under-Keyed JVM-Global Client Credentials Token Cache ## { #CVE-2026-94386 }
+
+CVE-2026-94386 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-94386) [\[CVE json\]](./CVE-2026-94386.cve.json) [\[OSV json\]](./CVE-2026-94386.osv.json)
+
+
+
+_Last updated: 2026-10-26T14:46:09.977Z_
+
+### Affected
+
+* Apache Camel from 4.19.0 before 4.22.2
+
+
+### Description
+
+<p>Use of Cache Containing Sensitive Information vulnerability in Apache Camel Oauth component.</p><p>This issue affects Apache Camel: from 4.19.0 before 4.22.2.</p><p>OAuthClientCredentialsTokenResolver obtains OAuth 2.0 bearer tokens through the client credentials grant on behalf of the components that authenticate their outbound calls with a named OAuth profile, such as camel-openai, camel-langchain4j-agent, camel-huggingface, camel-docling, camel-a2a, camel-spring-ai-chat and the IBM watsonx components, and of applications that call the OAuthClientAuthenticationFactory SPI directly. It kept the tokens it obtained in a static cache shared by every resolver instance and every CamelContext in the JVM, and keyed that cache on the token endpoint and the client ID only, although the token request also carries the client secret and the requested scope. Two profiles that share a token endpoint and a client ID but request different scopes, or authenticate with different client secrets, therefore mapped to the same cache entry: the profile that resolved a token first populated the entry, and the other profile was then handed that token, with no token request made under its own configuration, for as long as the token remained valid. Token caching is enabled by default, and pointing several profiles at one identity provider client is an ordinary use of the profile support rather than an opt-in to an insecure setting. The outcome is an outbound request that carries a token issued for another profile's scope, which can grant broader authority than the calling profile was configured for, or reach a service the token was not issued for; with identity providers that derive a token's audience from the requested scope, a different scope can mean a token for a different service altogether. A profile configured with a different client secret was likewise served the token obtained with the other secret, without authenticating with its own. The profiles are configured by the deployment, which is trusted, so no untrusted input reaches the cache: the party that gains is the service that receives a token it was not meant to receive, which, if hostile or compromised, can replay that token within its scope. Reaching the issue requires a deployment that defines more than one profile sharing a token endpoint and client ID while differing in scope or client secret.</p><div>Users are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.2. The 4.19.x to 4.21.x release lines reached end of life before this issue was resolved and will not receive a fix, so deployments on them must move to a supported release. For deployments that cannot upgrade immediately, disable token caching on every OAuth profile that shares a token endpoint and client ID with another profile, by setting camel.oauth.NAME.cache-tokens=false for a named profile or camel.oauth.cache-tokens=false for the default one, so that each resolution requests a token with that profile’s own scope and client secret, at the cost of a token request on every resolution. Alternatively, register a separate client at the identity provider for each profile that needs a different scope or client secret, so that no two such profiles share a client ID.</div>
+
+### References
+* https://camel.apache.org/security/CVE-2026-94386.html
+* https://issues.apache.org/jira/browse/CAMEL-24872
+* https://github.com/apache/camel/pull/26681
+* https://github.com/apache/camel/pull/27779
+* https://camel.apache.org/security/CVE-2026-85317.html
+
+
+### Credits
+* Andrea Cosentino from Apache Software Foundation (finder)
+* Andrea Cosentino from Apache Software Foundation (remediation developer)
+
+
 ## Camel-FOP Resolves External DTDs and Entities From Untrusted XSL-FO Input When a Third-Party JAXP TransformerFactory Is Present ## { #CVE-2026-91858 }
 
 CVE-2026-91858 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-91858) [\[CVE json\]](./CVE-2026-91858.cve.json) [\[OSV json\]](./CVE-2026-91858.osv.json)
@@ -51,6 +217,38 @@ _Last updated: 2026-10-19T10:47:46.661Z_
 
 ### Credits
 * Andrea Cosentino (finder)
+* Andrea Cosentino (remediation developer)
+
+
+## Camel-Saxon XML External Entity Processing - XQueryBuilder Parsed a Message Body That Was Already a javax.xml.transform.Source With Saxon's Default Parser Settings, so an External Entity Declared in That Body Was Resolved ## { #CVE-2026-90885 }
+
+CVE-2026-90885 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90885) [\[CVE json\]](./CVE-2026-90885.cve.json) [\[OSV json\]](./CVE-2026-90885.osv.json)
+
+
+
+_Last updated: 2026-10-26T14:47:01.918Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.2
+
+
+### Description
+
+<p>Improper Restriction of XML External Entity Reference vulnerability in Apache Camel Saxon component.</p><p>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.2.</p><p>XQueryBuilder in camel-saxon, which evaluates expressions for the xquery language and the xquery component, built its default Saxon Configuration with parse options that set only a whitespace stripping rule, leaving the XML parser at its defaults, under which a DOCTYPE declaration is accepted and external entities are resolved. A message body of type String or byte[], or any body read as an InputStream, is first turned into a javax.xml.transform.Source by Camel's own XML type converters, which configure the parser against external entities, so those bodies were not affected. A body that was already a Source, however, was handed to Saxon unchanged, and when that Source still had to be parsed, as a stream-based Source does, Saxon parsed it with that Configuration, bypassing the protection applied to the other body types. Such a body arises, for example, after a route converts the message with convertBodyTo(Source.class), or when a component or processor earlier in the route sets the body to a stream-based Source. A DOCTYPE with an external subset, or an external entity, declared in that body was therefore resolved and expanded into the document the expression was evaluated against. An external sender whose XML reaches an XQuery expression or an xquery endpoint in that form could read files readable by the Camel process and cause the process to issue requests to hosts the document names. No non-default option is required, since the default Configuration is used whenever the route does not supply one of its own.</p><p>Users are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.2. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The 4.14.x releases stream and earlier, as well as the 4.15.x to 4.17.x and 4.19.x to 4.21.x release lines, reached end of life before this issue was resolved and will not receive a fix, so deployments on them must move to a supported release. For deployments that cannot upgrade immediately, do not evaluate XQuery over a message body that is already a javax.xml.transform.Source when that body carries XML from an untrusted sender, or set the configuration option of the xquery endpoint or language to a Saxon Configuration whose parse options refuse a DOCTYPE declaration and disable external entities and external DTD loading, which is what the fixed releases now apply by default.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-90885.html
+* https://issues.apache.org/jira/browse/CAMEL-24691
+* https://github.com/apache/camel/pull/26344
+* https://github.com/apache/camel/pull/26728
+* https://github.com/apache/camel/pull/26730
+* https://camel.apache.org/security/CVE-2026-85250.html
+
+
+### Credits
+* Leon Zlobecki (finder)
 * Andrea Cosentino (remediation developer)
 
 
@@ -2966,6 +3164,41 @@ _Last updated: 2026-10-09T12:53:10.953Z_
 * CyberLeo (reporter)
 * Marat Gubaidullin (remediation developer)
 * Andrea Cosentino (coordinator)
+
+
+## Camel-CoAP Information Disclosure via Unmuted Consumer Exceptions ## { #CVE-2026-101259 }
+
+CVE-2026-101259 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-101259) [\[CVE json\]](./CVE-2026-101259.cve.json) [\[OSV json\]](./CVE-2026-101259.osv.json)
+
+
+
+_Last updated: 2026-10-26T08:36:31.157Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.2
+
+
+### Description
+
+<p>Generation of Error Message Containing Sensitive Information vulnerability in Apache Camel CoAP component.</p><p>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.2.</p><p>When the CoAP consumer could not build its response once the route had completed, CamelCoapResource caught the resulting exception and sent its message back to the CoAP client as the payload of a 5.00 Internal Server Error response. The typical case is a type conversion failure: the consumer converts the final message body to the byte[] payload, and the CamelCoapMaxAge and CamelCoapETag headers to their types, after the route has returned, and therefore outside the route's error handler. On the affected releases the message of such a failure names the class of the value being converted, carries the value's string form, and ends with the class name and message of the underlying cause, so a remote CoAP client could read internal detail about the deployment: class and package names, the string form of the value, such as the path of a file body, and whatever the cause carries, which in practice can include paths, host names and connection detail of a backend. The consumer had no option to suppress this, unlike the HTTP consumers, which offer a muteException option for that purpose. The exception raised by a failing route was not sent: the consumer did not check whether the exchange had failed, and answered a route failure with 2.05 Content and whatever body the message held at that point. Reaching the disclosure therefore requires a route whose completed response a remote client can make unconvertible, which depends on how the route is written.</p><p>Users are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.2. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The 4.14.x releases stream and earlier, and the 4.15.x to 4.17.x and 4.19.x to 4.21.x release lines, reached end of life before this issue was resolved and will not receive a fix, so deployments on them must move to a supported release. The upgrade is enough on its own: the new muteException consumer option defaults to true on all three fixed release lines, so the error response carries no payload without any configuration change. For deployments that cannot upgrade immediately, make sure the response can always be built once the route has completed: convert the body to byte[] or String as the last step of each route that consumes from a coap endpoint, for example with convertBodyTo, give the CamelCoapMaxAge and CamelCoapETag headers only values of their own types, and add an onException handler that marks the failure as handled and sets the response body explicitly, so that a conversion failure is raised and replaced inside the route rather than in the consumer.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-101259.html
+* https://issues.apache.org/jira/browse/CAMEL-25087
+* https://github.com/apache/camel/pull/26994
+* https://github.com/apache/camel/pull/27046
+* https://github.com/apache/camel/pull/27048
+* https://camel.apache.org/security/CVE-2026-84180.html
+* https://camel.apache.org/security/CVE-2026-85246.html
+* https://camel.apache.org/security/CVE-2026-85257.html
+* https://camel.apache.org/security/CVE-2026-85315.html
+
+
+### Credits
+* Zhixi "Jace" Sun, independent security researcher (finder)
+* Andrea Cosentino (remediation developer)
 
 
 ## Cypher injection vulnerability in Camel-Neo4j component ## { #CVE-2025-66169 }

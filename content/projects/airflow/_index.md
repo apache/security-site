@@ -2666,6 +2666,34 @@ Apache Airflow versions 3.1.0 through 3.1.6 contain an authorization flaw that c
 * Shubham Raj (remediation developer)
 
 
+## SSHRemoteJobOperator: `environment` values are executed as shell on the remote host ## { #CVE-2026-111422 }
+
+CVE-2026-111422 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111422) [\[CVE json\]](./CVE-2026-111422.cve.json) [\[OSV json\]](./CVE-2026-111422.osv.json)
+
+
+
+_Last updated: 2026-10-26T23:27:54.285Z_
+
+### Affected
+
+* Apache Airflow SSH provider from 4.3.0 before 7.0.1
+
+
+### Description
+
+In apache-airflow-providers-ssh before 7.0.1, SSHRemoteJobOperator quoted the values of its templated `environment` parameter only once, although they are placed inside an already-quoted wrapper script, so shell syntax such as `$(...)` in a value was executed on the remote SSH host. In a Dag that passes trigger-time input such as `params` or `dag_run.conf` into `environment`, a user who can trigger that Dag but cannot author Dags could run arbitrary commands on the remote host as the SSH connection&#x27;s user. Users are advised to upgrade apache-airflow-providers-ssh to 7.0.1 or later.
+
+### References
+* https://github.com/apache/airflow/pull/74810
+* https://lists.apache.org/thread/k159xrq1tbgmkvl24j63g12qh0mczk79
+* https://airflow.apache.org/docs/apache-airflow-providers-ssh/7.0.1/changelog.html
+
+
+### Credits
+* Enrico Maria Carmona, Serasoft S.r.l. (finder)
+* Kaxil Naik (remediation developer)
+
+
 ## Unsafe Pickle Deserialization in apache-airflow-providers-http leading to RCE via HttpOperator ## { #CVE-2025-69219 }
 
 CVE-2025-69219 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-69219) [\[CVE json\]](./CVE-2025-69219.cve.json) [\[OSV json\]](./CVE-2025-69219.osv.json)
