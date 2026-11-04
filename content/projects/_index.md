@@ -177,6 +177,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Beam)
   - Advisories (experimental):\
     none so far
+  - Security model:
+    - [Apache Beam security model](https://beam.apache.org/security/)
 - **Apache BifroMQ (Incubating)**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=BifroMQ%20%28Incubating%29)
