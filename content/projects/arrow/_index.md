@@ -72,6 +72,35 @@ _Last updated: 2026-02-20T09:56:40.992Z_
 * Emi Galle (reporter)
 
 
+## Improper validation of RunEndEncoded arrays allows out of bounds reads ## { #CVE-2026-111959 }
+
+CVE-2026-111959 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111959) [\[CVE json\]](./CVE-2026-111959.cve.json) [\[OSV json\]](./CVE-2026-111959.osv.json)
+
+
+
+_Last updated: 2026-11-02T13:34:15.921Z_
+
+### Affected
+
+* Apache Arrow Rust from 60.0.0 before 60.1.0
+* Apache Arrow Rust from 59.0.0 through 59.3.1
+* Apache Arrow Rust from 58.0.0 through 58.4.0
+* Apache Arrow Rust from 33.0.0 through 57.3.1
+
+
+### Description
+
+<p>Out-of-bounds read vulnerability in Apache Arrow Rust (`arrow` crate), from version 33.0.0 through to versions 57.3.1, 58.4.0, 59.3.1 and 60.0.0.</p><p>Improper validation of RunEndEncoded arrays in the ArrayData interface can allow reading data beyond the bounds of the child values array.</p><p>Users are recommended to upgrade to versions 60.1.0, 59.3.2, 58.4.1, 57.3.2 which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/hnlrdk4w99b188w1zgjlctpwpg7y55o4
+
+
+### Credits
+* Adam Korczynski of Ada Logics (reporter)
+* Anthropic (finder)
+
+
 ## Arbitrary code execution when loading a malicious data file ## { #CVE-2024-52338 }
 
 CVE-2024-52338 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-52338) [\[CVE json\]](./CVE-2024-52338.cve.json) [\[OSV json\]](./CVE-2024-52338.osv.json)

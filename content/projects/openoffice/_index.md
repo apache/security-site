@@ -18,6 +18,258 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Out-of-bounds write when importing encrypted PDF files ## { #CVE-2026-90634 }
+
+CVE-2026-90634 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90634) [\[CVE json\]](./CVE-2026-90634.cve.json) [\[OSV json\]](./CVE-2026-90634.osv.json)
+
+
+
+_Last updated: 2026-11-04T11:04:36.913Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.16
+
+
+### Description
+
+An uncontrolled memory access in the PDF import code of Apache OpenOffice versions through 4.1.16 allows a crafted PDF to cause an out-of-bounds memory write, causing program crash or memory corruption.<br>Users are recommended to upgrade to version 4.1.17, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/1c0lropx46w8ozwk29p5yw1xlq4wnbll
+
+
+### Credits
+* Anonymous working with TrendAI Zero Day Initiative (finder)
+
+
+## Local file inclusion via GStreamer plugin ## { #CVE-2026-90632 }
+
+CVE-2026-90632 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90632) [\[CVE json\]](./CVE-2026-90632.cve.json) [\[OSV json\]](./CVE-2026-90632.osv.json)
+
+
+
+_Last updated: 2026-11-04T11:04:59.711Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.16
+
+
+### Description
+
+<div>Apache OpenOffice documents can include multimedia content (audio, video, etc.)</div><div>A crafted document could exploit the GStreamer multimedia component of Apache OpenOffice version through 4.1.16 to load the contents of any local file, and include them when the document is saved or exported, for example as PDF.</div>Users are recommended to upgrade to version 4.1.17, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/9rrjtmlnmg47m6soyrl83rz28dbsyqvk
+
+
+### Credits
+* Edoardo Geraci and Thomas Rinsma of Codean Labs (finder)
+
+
+## Remote document loaded without prompt, possibiy leaking environment variables ## { #CVE-2026-90631 }
+
+CVE-2026-90631 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90631) [\[CVE json\]](./CVE-2026-90631.cve.json) [\[OSV json\]](./CVE-2026-90631.osv.json)
+
+
+
+_Last updated: 2026-11-04T11:04:27.889Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.16
+
+
+### Description
+
+<p>Apache OpenOffice documents can contain links. A missing Authorization vulnerability in Apache OpenOffice allowed an attacker to craft a document that would cause external links 
+to be loaded without prompt, possibly transferring the contents of environment variables in the process.</p><p>This issue affects Apache OpenOffice: through 4.1.16.</p><p>Users are recommended to upgrade to version 4.1.17, which fixes the issue.</p><br>
+
+### References
+* https://lists.apache.org/thread.html/j19rrk8jwrlg41tj6rfdcccj8cyyxhz9
+
+
+### Credits
+* Edoardo Geraci and Thomas Rinsma of Codean Labs (finder)
+
+
+## Out of bounds memory access during WMF import ## { #CVE-2026-90629 }
+
+CVE-2026-90629 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90629) [\[CVE json\]](./CVE-2026-90629.cve.json) [\[OSV json\]](./CVE-2026-90629.osv.json)
+
+
+
+_Last updated: 2026-11-04T11:04:05.916Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.16
+
+
+### Description
+
+An uncontrolled memory access in the WMF import code of Apache OpenOffice versions through 4.1.16 allows a crafted WMF file to cause an invalid memory access, causing program crash or memory corruption.<br>Users are recommended to upgrade to version 4.1.17, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/lbmfms02205zbpwq3pm39qrx4m1czy2k
+
+
+### Credits
+* Anthropic and Ada Logics (finder)
+
+
+## Stack overflow in CFF hint handling ## { #CVE-2026-90628 }
+
+CVE-2026-90628 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90628) [\[CVE json\]](./CVE-2026-90628.cve.json) [\[OSV json\]](./CVE-2026-90628.osv.json)
+
+
+
+_Last updated: 2026-11-04T11:03:40.199Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.16
+
+
+### Description
+
+<div>An uncontrolled memory access in the PDF export code of Apache OpenOffice versions through 4.1.16 allows a crafted CFF font to cause a stack overflow problem, causing program crash or memory corruption, or even running other code.</div>Users are recommended to upgrade to version 4.1.17, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/15onpdrzqny5y5qtmdv4lnvptxlvmg05
+
+
+### Credits
+* Anthropic and Ada Logics (finder)
+
+
+## Local file inclusion via SQL provider and flat file database references ## { #CVE-2026-90627 }
+
+CVE-2026-90627 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90627) [\[CVE json\]](./CVE-2026-90627.cve.json) [\[OSV json\]](./CVE-2026-90627.osv.json)
+
+
+
+_Last updated: 2026-11-04T11:03:28.895Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.16
+
+
+### Description
+
+The flat file database driver in Apache Openoffice versions through 4.1.16 allows a crafted document to read the contents of any local file without asking the user.<br>Users are recommended to upgrade to version 4.1.17, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/s7y9fspdysqojnr1z7ppltxtc48b4ljf
+
+
+### Credits
+* Edoardo Geraci and Thomas Rinsma of Codean Labs (finder)
+
+
+## Out-of-bounds write when importing encrypted PDF files ## { #CVE-2026-90626 }
+
+CVE-2026-90626 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90626) [\[CVE json\]](./CVE-2026-90626.cve.json) [\[OSV json\]](./CVE-2026-90626.osv.json)
+
+
+
+_Last updated: 2026-11-04T11:03:16.894Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.16
+
+
+### Description
+
+An uncontrolled memory access in the PDF import code of Apache OpenOffice versions through 4.1.16 allows a crafted PDF to cause an out-of-bounds memory write, causing program crash or memory corruption.<br>Users are recommended to upgrade to version 4.1.17, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/n2qgb44t8lom9s9z4xwqs3dt3mx0cggy
+
+
+### Credits
+* Anthropic and Ada Logics (finder)
+
+
+## PDF File Parsing Heap based Buffer-Overflow-Remote Code Execution Vulnerability ## { #CVE-2026-90624 }
+
+CVE-2026-90624 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90624) [\[CVE json\]](./CVE-2026-90624.cve.json) [\[OSV json\]](./CVE-2026-90624.osv.json)
+
+
+
+_Last updated: 2026-11-04T11:03:05.239Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.16
+
+
+### Description
+
+An unchecked memory access in the PDF import code of Apache OpenOffice versions through 4.1.16 on allows a crafted PDF to execute an out-of-bounds memory write. This could crash the program or cause memory corruption.<br>Users are recommended to upgrade to version 4.1.17, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/w1047xm52vyfjt79kw2n0d3ln6sq9g5s
+
+
+### Credits
+* Anonymous working with TrendAI Zero Day Initiative (finder)
+* Anthropic and Ada Logics (finder)
+
+
+## Heap out-of-bounds write in WW8 PLCF reader ## { #CVE-2026-59268 }
+
+CVE-2026-59268 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59268) [\[CVE json\]](./CVE-2026-59268.cve.json) [\[OSV json\]](./CVE-2026-59268.osv.json)
+
+
+
+_Last updated: 2026-11-04T11:02:52.848Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.16
+
+
+### Description
+
+<div>An out-of-bounds Write vulnerability in Apache OpenOffice versions through 4.1.16 could allow an attacker to craft a Microsoft Word document that would crash the program, or otherwise corrupt other memory areas.</div>Users are recommended to upgrade to version 4.1.17, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/xw6x0y35f3qlk4pqsc1pf0sv7481yvlk
+
+
+### Credits
+* Yukihiro Nakamura (reporter)
+
+
+## Heap Buffer Overflow in DXF LWPOLYLINE import could cause memory corruption ## { #CVE-2026-59267 }
+
+CVE-2026-59267 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59267) [\[CVE json\]](./CVE-2026-59267.cve.json) [\[OSV json\]](./CVE-2026-59267.osv.json)
+
+
+
+_Last updated: 2026-11-04T11:05:58.448Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.16
+
+
+### Description
+
+A crafted DXF document causes a heap buffer overflow in Draw in Apache OpenOffice 4.1.16 and earlier. This could cause a crash or otherwise a corruption of memory areas.<br>Users are recommended to upgrade to version 4.1.17, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/pwcm02dq2cy42qq2owzlvf48s8258499
+
+
+### Credits
+* Trail of Bits, in collaboration with Anthropic (reporter)
+
+
 ## Opening a malicious document can lead to system takeover ## { #CVE-2026-59265 }
 
 CVE-2026-59265 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59265) [\[CVE json\]](./CVE-2026-59265.cve.json) [\[OSV json\]](./CVE-2026-59265.osv.json)
@@ -46,6 +298,56 @@ _Last updated: 2026-10-02T18:02:37.660Z_
 ### Credits
 * Thomas Rinsma and Edoardo Geraci from Codean Labs (finder)
 * Rick de Jager of the V12 security team (finder)
+
+
+## Uncontrolled search path element vulnerability in Windows installer ## { #CVE-2026-59264 }
+
+CVE-2026-59264 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59264) [\[CVE json\]](./CVE-2026-59264.cve.json) [\[OSV json\]](./CVE-2026-59264.osv.json)
+
+
+
+_Last updated: 2026-11-04T11:02:40.422Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.16
+
+
+### Description
+
+The Windows installers of Apache OpenOffice 4.1.16 and earlier allow an already manipulated system to run external code with elevated access.<br>Users are recommended to upgrade to version 4.1.17, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/d4n33sjk8jgrr78jj5cq5r51fvxv6nnv
+
+
+### Credits
+* Kazuma Matsumoto, from GMO Cybersecurity by IERAE, Inc. (reporter)
+
+
+## Carefully crafted documents could display different data when opened with different programs, instead of being reported as corrupt. ## { #CVE-2026-59263 }
+
+CVE-2026-59263 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59263) [\[CVE json\]](./CVE-2026-59263.cve.json) [\[OSV json\]](./CVE-2026-59263.osv.json)
+
+
+
+_Last updated: 2026-11-04T11:01:50.194Z_
+
+### Affected
+
+* Apache OpenOffice through 4.1.16
+
+
+### Description
+
+A manipulated document opened in Apache OpenOffice 4.1.16 or earlier may allow substituted content to be displayed manipulating the user. Such documents are corrupt and should not be opened.<br>Users are recommended to upgrade to version 4.1.17, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/drr0ss9wrkq0omlrwjhcm8738pjx3xgd
+
+
+### Credits
+* Yufan You from Tsinghua University (finder)
 
 
 ## URL fetching can be used to exfiltrate arbitrary INI file values and environment variables ## { #CVE-2025-64407 }

@@ -787,6 +787,136 @@ _Last updated: 2026-04-08T15:44:44.530Z_
 * Dawei Wang (finder)
 
 
+## ActiveMQ retains write access after live ACL revocation ## { #CVE-2026-111822 }
+
+CVE-2026-111822 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111822) [\[CVE json\]](./CVE-2026-111822.cve.json) [\[OSV json\]](./CVE-2026-111822.osv.json)
+
+
+
+_Last updated: 2026-11-04T10:12:06.986Z_
+
+### Affected
+
+* Apache ActiveMQ from 6.0.0 before 6.3.3
+* Apache ActiveMQ before 5.19.12
+* Apache ActiveMQ Runtime Config from 6.0.0 before 6.3.3
+* Apache ActiveMQ Runtime Config before 5.19.12
+
+
+### Description
+
+<p>Improper invalidation of cached authorizations vulnerability in Apache ActiveMQ, Apache ActiveMQ Runtime Config.</p><p>After the runtime configuration plugin removes a principal's write grant on a destination, an authenticated connection opened before the change can keep sending to that destination, including through a new anonymous producer, while fresh connections and new explicit producers are denied.</p><p><span>This issue affects Apache ActiveMQ: from 6.0.0 before 6.3.3, before 5.19.12; Apache ActiveMQ Runtime Config: from 6.0.0 before 6.3.3, before 5.19.12.</span></p><p>Users are recommended to upgrade to version 6.4.0, 6.3.3 or 5.19.12, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/b5gop0kwsm4sr1pgdrfcd14q8hx942j5
+
+
+### Credits
+* hataehoon (finder)
+
+
+## Repeated rejected temporary destination consumer requests can lead to broker OOM ## { #CVE-2026-108949 }
+
+CVE-2026-108949 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108949) [\[CVE json\]](./CVE-2026-108949.cve.json) [\[OSV json\]](./CVE-2026-108949.osv.json)
+
+
+
+_Last updated: 2026-11-04T10:09:30.448Z_
+
+### Affected
+
+* Apache ActiveMQ from 6.0.0 before 6.3.3
+* Apache ActiveMQ before 5.19.12
+* ActiveMQ Broker from 6.0.0 before 6.3.3
+* ActiveMQ Broker before 5.19.12
+
+
+### Description
+
+<p>Denial of Service via OOM vulnerability in Apache ActiveMQ, ActiveMQ Broker.</p><p>An authenticated OpenWire client that sends a ConsumerInfo for a temporary queue/topic owned by another connection is rejected with InvalidDestinationException, but the rejected Subscription is left behind in the region's subscriptions map. Repeating the request&nbsp;<span>leaks broker heap until OOM because the broker does not clean up the rejected subscriptions in the map.</span></p><p>This issue affects Apache ActiveMQ: from 6.0.0 before 6.3.3, before 5.19.12; ActiveMQ Broker: from 6.0.0 before 6.3.3, before 5.19.12.</p><p>Users are recommended to upgrade to version 6.4.0, 6.3.3, or 5.19.12, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/2l1jbc8j88w1n9bd44vm9bjtj9t3o80n
+
+
+## The broker does not verify user provided connection id matches connection ## { #CVE-2026-108946 }
+
+CVE-2026-108946 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108946) [\[CVE json\]](./CVE-2026-108946.cve.json) [\[OSV json\]](./CVE-2026-108946.osv.json)
+
+
+
+_Last updated: 2026-11-04T10:14:04.951Z_
+
+### Affected
+
+* Apache ActiveMQ from 6.0.0 before 6.3.3
+* Apache ActiveMQ before 5.19.12
+* ActiveMQ Broker from 6.0.0 before 6.3.3
+* ActiveMQ Broker before 5.19.12
+
+
+### Description
+
+<p>Improper input validation vulnerability in Apache ActiveMQ, Apache ActiveMQ KahaDB.</p><p>The ActiveMQ broker resolves connection, session and consumer state from ids that are user provided and in some scenarios does not validate that they ids are bound to that user. This allows an authenticated client to spoof another user's ids. This allows:</p><p></p><ul><li>&nbsp;an authenticated client consumes from another connection's temporary queue/topic by putting the victim's connection id in its own ConsumerId, bypassing the broker-side ownership check.&nbsp;</li><li>a duplicate ConsumerId registration is only logged, after which the attacker's RemoveInfo or disconnect tears down the victim's live subscription</li><li>a forged MessageAck for the victim's ConsumerId permanently deletes an in-flight, unacknowledged message.</li></ul><p></p><p><span>This issue affects Apache ActiveMQ: from 6.0.0 before 6.3.3, before 5.19.12; Apache ActiveMQ KahaDB: from 6.0.0 before 6.3.3, before 5.19.12.</span></p><p>Users are recommended to upgrade to version 6.4.0, 6.3.3, or 5.19.12, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/0spj0m846vhw3cjyfmzsy3l8vxh6f5t6
+
+
+### Credits
+* zerovuln labs <zerovulnlabs@outlook.com> (finder)
+
+
+## LDAPAuthorizationMap allows authorization bypass via DN injection ## { #CVE-2026-108500 }
+
+CVE-2026-108500 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108500) [\[CVE json\]](./CVE-2026-108500.cve.json)
+
+_Last updated: 2026-11-04T10:37:54.254Z_
+
+### Affected
+
+* Apache ActiveMQ from 6.3.0 before 6.3.3
+* Apache ActiveMQ from 5.19.0 before 5.19.12
+* Apache ActiveMQ at 6.4.0 unaffected
+
+
+### Description
+
+<p>Input validation vulnerability in Apache ActiveMQ configured to use the LDAPAuthorizationMapPlugin allows&nbsp;<span>an authenticated attacker to</span><span>&nbsp;create or address a destination with a crafted name containing LDAP DN</span><span>&nbsp;special characters (such as comma, plus, equals, backslash) can manipulate</span><span>&nbsp;the LDAP search base used for ACL lookups.</span></p><p>This issue affects Apache ActiveMQ: from 6.3.0 before 6.3.3, from 5.19.0 before 5.19.12.</p><p>Users are recommended to upgrade to version 6.4.0, 6.3.3 or 5.19.12, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/0oh4k4ty6hv56d4sydjp26l95f4bsnxt
+
+
+### Credits
+* Rishabh Soni (Azmendus) <rishabhv704@gmail.com> (finder)
+
+
+## Unbounded/Unvalidated Length Fields in Apache.NMS.OpenWire Unmarshalling (DoS) ## { #CVE-2026-103582 }
+
+CVE-2026-103582 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-103582) [\[CVE json\]](./CVE-2026-103582.cve.json) [\[OSV json\]](./CVE-2026-103582.osv.json)
+
+
+
+_Last updated: 2026-11-04T10:16:44.161Z_
+
+### Affected
+
+* Apache ActiveMQ NMS OpenWire Client Library through 2.2.0
+
+
+### Description
+
+<p>Unbounded memory allocation and missing frame size validation in Apache NMS ActiveMQ (the .NET OpenWire client, package Apache.NMS.ActiveMQ) before 2.3.0.</p><p>The OpenWire unmarshalling code trusted the frame size and the length and count fields read from the network. It did not enforce a maximum frame size, and it did not check that decoded lengths fit within the frame being read. A malicious or compromised broker, or an attacker able to intercept and modify an unencrypted connection, could send a crafted OpenWire frame with an oversized or negative length. This could cause the client to attempt very large memory allocations, leading to excessive memory consumption, an OutOfMemoryException or an uncaught exception, and a denial of service of the client application.</p><p>Users are recommended to upgrade to version 2.3.0, which enforces a configurable maximum frame size and validates lengths against the size of the frame being read.&nbsp;</p>
+
+### References
+* https://lists.apache.org/thread/vgn9pnsc7g9dhcctt804kd50tvs0ndq0
+
+
+### Credits
+* Biswajeet Ray (finder)
+
+
 ## MQTT control packet remaining length field is not properly validated ## { #CVE-2025-66168 }
 
 CVE-2025-66168 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66168) [\[CVE json\]](./CVE-2025-66168.cve.json) [\[OSV json\]](./CVE-2025-66168.osv.json)

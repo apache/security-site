@@ -507,7 +507,7 @@ _Last updated: 2026-10-20T13:36:44.418Z_
 
 CVE-2026-73581 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73581) [\[CVE json\]](./CVE-2026-73581.cve.json)
 
-_Last updated: 2026-09-30T14:53:46.318Z_
+_Last updated: 2026-10-29T10:01:31.500Z_
 
 ### Affected
 
@@ -528,7 +528,7 @@ known to be affected: from 8.5.0 through 8.5.100.&nbsp;Other unsupported version
 
 
 ### Credits
-* arpitjain099 (https://github.com/arpitjain099) (finder)
+* Arpit Jain (GitHub handle: arpitjain099) (finder)
 
 
 ## Authenticated WebSocket session survives end of HTTP session ## { #CVE-2026-73180 }

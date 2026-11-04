@@ -19,7 +19,7 @@ CVE-2026-110748 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-110748) [\[CVE j
 
 
 
-_Last updated: 2026-10-26T14:32:07.621Z_
+_Last updated: 2026-10-31T20:04:51.254Z_
 
 ### Affected
 
@@ -35,7 +35,7 @@ _Last updated: 2026-10-26T14:32:07.621Z_
 
 
 ### Credits
-* n0mi1k Security (finder)
+* n0mi1k (finder)
 * Ho1aAs <xxy010605@gmail.com> (finder)
 
 

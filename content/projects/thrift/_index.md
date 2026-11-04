@@ -2211,6 +2211,32 @@ _Last updated: 2026-04-28T09:19:05.731Z_
 * 김범수 (finder)
 
 
+## Java TProtocolUtil.skip() does not limit the recursion depth by default ## { #CVE-2026-120135 }
+
+CVE-2026-120135 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-120135) [\[CVE json\]](./CVE-2026-120135.cve.json) [\[OSV json\]](./CVE-2026-120135.osv.json)
+
+
+
+_Last updated: 2026-10-31T20:32:57.846Z_
+
+### Affected
+
+* Apache Thrift before 0.24.0
+
+
+### Description
+
+<p>Uncontrolled Recursion vulnerability in Apache Thrift Java bindings.</p><p>This issue affects Apache Thrift: before 0.24.0.</p><p>Users are recommended to upgrade to version 0.24.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9
+* https://lists.apache.org/thread/2zzkm3mfhfg79ohjo37pg1gms5nto588
+
+
+### Credits
+* Yu Bao – yubao@paypal.com, who works for paypal.com (finder)
+
+
 ## Specially crafted input can crash a c_glib Thrift server with invalid pointer error. ## { #CVE-2025-48431 }
 
 CVE-2025-48431 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-48431) [\[CVE json\]](./CVE-2025-48431.cve.json) [\[OSV json\]](./CVE-2025-48431.osv.json)

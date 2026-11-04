@@ -473,7 +473,7 @@ CVE-2026-50222 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50222) [\[CVE jso
 
 
 
-_Last updated: 2026-08-21T08:29:16.822Z_
+_Last updated: 2026-10-29T20:02:40.505Z_
 
 ### Affected
 
@@ -495,6 +495,8 @@ _Last updated: 2026-08-21T08:29:16.822Z_
 * Łukasz Bawolski <Lukasz.Bawolski@exea.pl> (reporter)
 * George Chen (GitHub: geo-chen) (reporter)
 * KQ Wu <kqmailbox@163.com> (reporter)
+* n0mi1k (nomilksec@gmail.com) (reporter)
+* meifukun (https://github.com/meifukun) (reporter)
 
 
 ## RCE and SSRF in direct download, metalink and NFS templates ## { #CVE-2026-50112 }

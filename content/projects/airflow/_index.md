@@ -223,7 +223,7 @@ CVE-2026-86473 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86473) [\[CVE jso
 
 
 
-_Last updated: 2026-09-21T14:33:41.347Z_
+_Last updated: 2026-11-03T04:29:17.436Z_
 
 ### Affected
 
@@ -367,7 +367,7 @@ CVE-2026-82355 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82355) [\[CVE jso
 
 
 
-_Last updated: 2026-09-21T14:32:02.334Z_
+_Last updated: 2026-11-03T04:29:16.317Z_
 
 ### Affected
 
@@ -589,11 +589,12 @@ CVE-2026-75158 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-75158) [\[CVE jso
 
 
 
-_Last updated: 2026-09-21T14:32:46.741Z_
+_Last updated: 2026-11-03T04:29:15.186Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.2
 
 
 ### Description
@@ -616,11 +617,12 @@ CVE-2026-75157 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-75157) [\[CVE jso
 
 
 
-_Last updated: 2026-09-18T07:51:21.855Z_
+_Last updated: 2026-11-03T04:29:14.057Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.2
 
 
 ### Description
@@ -672,11 +674,12 @@ CVE-2026-68971 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68971) [\[CVE jso
 
 
 
-_Last updated: 2026-09-16T14:46:20.610Z_
+_Last updated: 2026-11-03T04:29:12.942Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.1
 
 
 ### Description
@@ -699,11 +702,12 @@ CVE-2026-68970 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68970) [\[CVE jso
 
 
 
-_Last updated: 2026-09-16T14:47:05.846Z_
+_Last updated: 2026-11-03T04:29:11.784Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.1
 
 
 ### Description
@@ -727,11 +731,12 @@ CVE-2026-68969 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68969) [\[CVE jso
 
 
 
-_Last updated: 2026-09-16T14:47:04.500Z_
+_Last updated: 2026-11-03T04:29:10.688Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.1
 
 
 ### Description
@@ -755,11 +760,12 @@ CVE-2026-68968 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68968) [\[CVE jso
 
 
 
-_Last updated: 2026-09-16T14:47:02.989Z_
+_Last updated: 2026-11-03T04:29:09.584Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.1
 
 
 ### Description
@@ -891,11 +897,12 @@ CVE-2026-68076 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68076) [\[CVE jso
 
 
 
-_Last updated: 2026-09-16T15:05:05.218Z_
+_Last updated: 2026-11-03T04:29:08.471Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.1
 
 
 ### Description
@@ -920,7 +927,7 @@ CVE-2026-67587 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-67587) [\[CVE jso
 
 
 
-_Last updated: 2026-09-16T14:46:59.901Z_
+_Last updated: 2026-11-03T04:29:07.365Z_
 
 ### Affected
 
@@ -949,7 +956,7 @@ CVE-2026-67260 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-67260) [\[CVE jso
 
 
 
-_Last updated: 2026-09-16T14:46:57.273Z_
+_Last updated: 2026-11-03T04:29:06.241Z_
 
 ### Affected
 
@@ -977,7 +984,7 @@ CVE-2026-65017 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-65017) [\[CVE jso
 
 
 
-_Last updated: 2026-09-16T14:47:01.247Z_
+_Last updated: 2026-11-03T04:29:05.100Z_
 
 ### Affected
 
@@ -1033,11 +1040,12 @@ CVE-2026-59244 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59244) [\[CVE jso
 
 
 
-_Last updated: 2026-09-16T14:46:03.573Z_
+_Last updated: 2026-11-03T04:29:03.988Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.1
 
 
 ### Description
@@ -1087,11 +1095,12 @@ CVE-2026-59242 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59242) [\[CVE jso
 
 
 
-_Last updated: 2026-09-16T14:45:57.373Z_
+_Last updated: 2026-11-03T04:29:02.689Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.1
 
 
 ### Description
@@ -1114,7 +1123,7 @@ CVE-2026-58076 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58076) [\[CVE jso
 
 
 
-_Last updated: 2026-09-16T14:46:54.580Z_
+_Last updated: 2026-11-03T04:29:01.495Z_
 
 ### Affected
 
@@ -1170,11 +1179,12 @@ CVE-2026-54183 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-54183) [\[CVE jso
 
 
 
-_Last updated: 2026-09-16T14:46:55.864Z_
+_Last updated: 2026-11-03T04:29:00.373Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.1
 
 
 ### Description
@@ -1253,11 +1263,12 @@ CVE-2026-49487 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49487) [\[CVE jso
 
 
 
-_Last updated: 2026-09-16T14:45:52.041Z_
+_Last updated: 2026-11-03T04:28:59.142Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.0
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.0
 
 
 ### Description
@@ -1307,11 +1318,12 @@ CVE-2026-49298 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49298) [\[CVE jso
 
 
 
-_Last updated: 2026-06-01T07:34:31.163Z_
+_Last updated: 2026-11-03T06:21:06.987Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.2
 
 
 ### Description
@@ -1362,7 +1374,7 @@ CVE-2026-49296 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49296) [\[CVE jso
 
 
 
-_Last updated: 2026-09-16T14:45:50.190Z_
+_Last updated: 2026-11-03T04:28:58.026Z_
 
 ### Affected
 
@@ -1389,11 +1401,12 @@ CVE-2026-49267 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49267) [\[CVE jso
 
 
 
-_Last updated: 2026-06-01T07:53:11.785Z_
+_Last updated: 2026-11-03T06:21:05.826Z_
 
 ### Affected
 
-* Apache Airflow from 2.0.0 before 3.2.2
+* Apache Airflow from 2.0.0 before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.2
 
 
 ### Description
@@ -1416,11 +1429,12 @@ CVE-2026-48892 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48892) [\[CVE jso
 
 
 
-_Last updated: 2026-09-16T14:45:44.357Z_
+_Last updated: 2026-11-03T04:28:55.780Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.0
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.0
 
 
 ### Description
@@ -1443,11 +1457,12 @@ CVE-2026-48891 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48891) [\[CVE jso
 
 
 
-_Last updated: 2026-09-16T14:45:48.267Z_
+_Last updated: 2026-11-03T04:28:54.677Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.0
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.0
 
 
 ### Description
@@ -1471,11 +1486,12 @@ CVE-2026-48828 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48828) [\[CVE jso
 
 
 
-_Last updated: 2026-09-16T14:45:42.320Z_
+_Last updated: 2026-11-03T04:28:53.571Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.0
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.0
 
 
 ### Description
@@ -1498,11 +1514,12 @@ CVE-2026-48726 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-48726) [\[CVE jso
 
 
 
-_Last updated: 2026-06-01T07:35:18.096Z_
+_Last updated: 2026-11-03T06:21:04.683Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.2
 
 
 ### Description
@@ -1526,11 +1543,12 @@ CVE-2026-46764 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-46764) [\[CVE jso
 
 
 
-_Last updated: 2026-06-01T07:45:46.820Z_
+_Last updated: 2026-11-03T06:21:03.531Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.2
 
 
 ### Description
@@ -1580,7 +1598,7 @@ CVE-2026-45426 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-45426) [\[CVE jso
 
 
 
-_Last updated: 2026-06-01T07:47:13.162Z_
+_Last updated: 2026-11-03T06:21:02.351Z_
 
 ### Affected
 
@@ -1634,11 +1652,12 @@ CVE-2026-45360 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-45360) [\[CVE jso
 
 
 
-_Last updated: 2026-06-01T07:48:10.959Z_
+_Last updated: 2026-11-03T06:21:01.212Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.2
 
 
 ### Description
@@ -1660,11 +1679,12 @@ CVE-2026-45192 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-45192) [\[CVE jso
 
 
 
-_Last updated: 2026-06-01T06:51:50.457Z_
+_Last updated: 2026-11-03T06:21:00.059Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.2
 
 
 ### Description
@@ -1741,11 +1761,12 @@ CVE-2026-42360 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-42360) [\[CVE jso
 
 
 
-_Last updated: 2026-06-01T07:50:36.896Z_
+_Last updated: 2026-11-03T06:20:58.876Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.2
 
 
 ### Description
@@ -1768,7 +1789,7 @@ CVE-2026-42359 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-42359) [\[CVE jso
 
 
 
-_Last updated: 2026-06-01T15:13:25.919Z_
+_Last updated: 2026-11-03T06:20:57.712Z_
 
 ### Affected
 
@@ -1798,11 +1819,12 @@ CVE-2026-42358 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-42358) [\[CVE jso
 
 
 
-_Last updated: 2026-06-01T07:49:56.426Z_
+_Last updated: 2026-11-03T06:20:56.563Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.2
 
 
 ### Description
@@ -1827,7 +1849,7 @@ CVE-2026-42252 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-42252) [\[CVE jso
 
 
 
-_Last updated: 2026-06-01T07:51:17.651Z_
+_Last updated: 2026-11-03T06:20:55.419Z_
 
 ### Affected
 
@@ -1854,7 +1876,7 @@ CVE-2026-41084 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-41084) [\[CVE jso
 
 
 
-_Last updated: 2026-06-01T07:51:55.264Z_
+_Last updated: 2026-11-03T06:20:54.258Z_
 
 ### Affected
 
@@ -1908,7 +1930,7 @@ CVE-2026-41017 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-41017) [\[CVE jso
 
 
 
-_Last updated: 2026-06-01T07:52:32.340Z_
+_Last updated: 2026-11-03T06:20:53.107Z_
 
 ### Affected
 
@@ -1929,13 +1951,13 @@ Apache Airflow&#x27;s `JWTRefreshMiddleware` set the JWT auth cookie without the
 * Jarek Potiuk (remediation developer)
 
 
-## No certificate validation on SMTP STARTTLS connections (SMTP provider — split from #265) ## { #CVE-2026-41016 }
+## No certificate validation on SMTP STARTTLS connections in SMTP provider ## { #CVE-2026-41016 }
 
 CVE-2026-41016 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-41016) [\[CVE json\]](./CVE-2026-41016.cve.json) [\[OSV json\]](./CVE-2026-41016.osv.json)
 
 
 
-_Last updated: 2026-05-29T08:45:19.890Z_
+_Last updated: 2026-11-03T08:34:26.197Z_
 
 ### Affected
 
@@ -1944,7 +1966,7 @@ _Last updated: 2026-05-29T08:45:19.890Z_
 
 ### Description
 
-Apache Airflow&#x27;s SMTP provider `SmtpHook` called Python&#x27;s `smtplib.SMTP.starttls()` without an SSL context, so no certificate validation was performed on the TLS upgrade. A man-in-the-middle between the Airflow worker and the SMTP server could present a self-signed certificate, complete the STARTTLS upgrade, and capture the SMTP credentials sent during the subsequent `login()` call. Users are advised to upgrade to the `apache-airflow-providers-smtp` version that contains the fix.
+Apache Airflow's SMTP provider `SmtpHook` called Python's `smtplib.SMTP.starttls()` without an SSL context, so no certificate validation was performed on the TLS upgrade. A man-in-the-middle between the Airflow worker and the SMTP server could present a self-signed certificate, complete the STARTTLS upgrade, and capture the SMTP credentials sent during the subsequent `login()` call. Users are advised to upgrade to the `apache-airflow-providers-smtp` version that contains the fix.
 
 ### References
 * https://github.com/apache/airflow/pull/65346
@@ -1962,7 +1984,7 @@ CVE-2026-41014 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-41014) [\[CVE jso
 
 
 
-_Last updated: 2026-06-01T07:53:50.879Z_
+_Last updated: 2026-11-03T06:20:51.911Z_
 
 ### Affected
 
@@ -1989,7 +2011,7 @@ CVE-2026-40963 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40963) [\[CVE jso
 
 
 
-_Last updated: 2026-06-01T07:54:32.443Z_
+_Last updated: 2026-11-03T06:20:50.781Z_
 
 ### Affected
 
@@ -2016,7 +2038,7 @@ CVE-2026-40961 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40961) [\[CVE jso
 
 
 
-_Last updated: 2026-06-01T07:55:03.222Z_
+_Last updated: 2026-11-03T06:20:49.648Z_
 
 ### Affected
 
@@ -2070,11 +2092,12 @@ CVE-2026-40861 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40861) [\[CVE jso
 
 
 
-_Last updated: 2026-06-01T07:55:36.142Z_
+_Last updated: 2026-11-03T06:20:48.514Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.2
 
 
 ### Description
@@ -2098,11 +2121,12 @@ CVE-2026-40690 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-40690) [\[CVE jso
 
 
 
-_Last updated: 2026-04-24T12:35:28.702Z_
+_Last updated: 2026-11-03T06:20:47.344Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.1
 
 
 ### Description
@@ -2125,11 +2149,12 @@ CVE-2026-38743 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-38743) [\[CVE jso
 
 
 
-_Last updated: 2026-04-24T12:36:37.917Z_
+_Last updated: 2026-11-03T06:20:46.173Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.1
 
 
 ### Description
@@ -2152,7 +2177,7 @@ CVE-2026-34538 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-34538) [\[CVE jso
 
 
 
-_Last updated: 2026-04-09T09:09:19.260Z_
+_Last updated: 2026-11-03T06:20:45.029Z_
 
 ### Affected
 
@@ -2179,7 +2204,7 @@ CVE-2026-33858 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-33858) [\[CVE jso
 
 
 
-_Last updated: 2026-04-13T14:36:29.251Z_
+_Last updated: 2026-11-03T06:20:43.856Z_
 
 ### Affected
 
@@ -2206,11 +2231,12 @@ CVE-2026-33264 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-33264) [\[CVE jso
 
 
 
-_Last updated: 2026-07-07T12:25:55.676Z_
+_Last updated: 2026-11-03T06:20:42.721Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.0
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.0
 
 
 ### Description
@@ -2265,7 +2291,7 @@ CVE-2026-32690 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-32690) [\[CVE jso
 
 
 
-_Last updated: 2026-04-18T02:36:09.517Z_
+_Last updated: 2026-11-03T06:20:41.553Z_
 
 ### Affected
 
@@ -2292,7 +2318,7 @@ CVE-2026-32228 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-32228) [\[CVE jso
 
 
 
-_Last updated: 2026-04-18T02:42:30.328Z_
+_Last updated: 2026-11-03T06:20:40.403Z_
 
 ### Affected
 
@@ -2320,7 +2346,7 @@ CVE-2026-31987 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-31987) [\[CVE jso
 
 
 
-_Last updated: 2026-04-16T17:49:35.608Z_
+_Last updated: 2026-11-03T06:20:39.274Z_
 
 ### Affected
 
@@ -2350,11 +2376,12 @@ CVE-2026-30912 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-30912) [\[CVE jso
 
 
 
-_Last updated: 2026-04-18T02:41:53.492Z_
+_Last updated: 2026-11-03T06:20:38.131Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.0
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.0
 
 
 ### Description
@@ -2377,7 +2404,7 @@ CVE-2026-30911 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-30911) [\[CVE jso
 
 
 
-_Last updated: 2026-03-17T10:53:00.535Z_
+_Last updated: 2026-11-03T06:20:36.992Z_
 
 ### Affected
 
@@ -2404,11 +2431,12 @@ CVE-2026-30898 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-30898) [\[CVE jso
 
 
 
-_Last updated: 2026-04-18T02:40:37.049Z_
+_Last updated: 2026-11-03T06:20:35.826Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.0
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.0
 
 
 ### Description
@@ -2431,7 +2459,7 @@ CVE-2026-28779 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-28779) [\[CVE jso
 
 
 
-_Last updated: 2026-03-17T10:43:18.236Z_
+_Last updated: 2026-11-03T06:20:34.656Z_
 
 ### Affected
 
@@ -2458,7 +2486,7 @@ CVE-2026-28563 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-28563) [\[CVE jso
 
 
 
-_Last updated: 2026-03-17T10:54:55.864Z_
+_Last updated: 2026-11-03T06:20:33.514Z_
 
 ### Affected
 
@@ -2513,7 +2541,7 @@ CVE-2026-26929 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-26929) [\[CVE jso
 
 
 
-_Last updated: 2026-03-17T10:54:03.388Z_
+_Last updated: 2026-11-03T06:20:32.358Z_
 
 ### Affected
 
@@ -2539,11 +2567,12 @@ CVE-2026-25917 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-25917) [\[CVE jso
 
 
 
-_Last updated: 2026-04-17T20:19:53.511Z_
+_Last updated: 2026-11-03T06:20:31.228Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.0
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.0
 
 
 ### Description
@@ -2592,11 +2621,12 @@ CVE-2026-25219 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-25219) [\[CVE jso
 
 
 
-_Last updated: 2026-04-15T13:14:51.470Z_
+_Last updated: 2026-11-03T06:20:30.072Z_
 
 ### Affected
 
-* Apache Airflow before 3.1.8
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.1.8
 
 
 ### Description
@@ -2619,7 +2649,7 @@ CVE-2026-24098 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24098) [\[CVE jso
 
 
 
-_Last updated: 2026-03-10T18:13:52.941Z_
+_Last updated: 2026-11-03T06:20:28.903Z_
 
 ### Affected
 
@@ -2645,7 +2675,7 @@ CVE-2026-22922 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-22922) [\[CVE jso
 
 
 
-_Last updated: 2026-02-09T10:33:48.256Z_
+_Last updated: 2026-11-03T06:20:27.721Z_
 
 ### Affected
 
@@ -2728,12 +2758,12 @@ CVE-2025-68675 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-68675) [\[CVE jso
 
 
 
-_Last updated: 2026-02-24T05:48:09.000Z_
+_Last updated: 2026-11-03T06:20:26.542Z_
 
 ### Affected
 
-* Apache Airflow from 3.0.0 before 3.1.6
 * Apache Airflow before 2.11.1
+* Apache Airflow from 3.0.0 before 3.1.6
 
 
 ### Description
@@ -2756,7 +2786,7 @@ CVE-2025-68438 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-68438) [\[CVE jso
 
 
 
-_Last updated: 2026-01-16T10:06:05.336Z_
+_Last updated: 2026-11-03T06:20:25.358Z_
 
 ### Affected
 
@@ -2808,7 +2838,7 @@ CVE-2025-66388 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66388) [\[CVE jso
 
 
 
-_Last updated: 2025-12-15T11:30:42.649Z_
+_Last updated: 2026-11-03T06:20:24.188Z_
 
 ### Affected
 
@@ -2835,7 +2865,7 @@ CVE-2025-66236 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66236) [\[CVE jso
 
 
 
-_Last updated: 2026-04-13T14:20:35.201Z_
+_Last updated: 2026-11-03T06:20:23.049Z_
 
 ### Affected
 
@@ -2862,12 +2892,12 @@ CVE-2025-65995 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-65995) [\[CVE jso
 
 
 
-_Last updated: 2026-03-08T19:08:56.440Z_
+_Last updated: 2026-11-03T06:20:21.899Z_
 
 ### Affected
 
-* Apache Airflow from 3.0.0 before 3.1.4
 * Apache Airflow before 2.11.1
+* Apache Airflow from 3.0.0 before 3.1.4
 
 
 ### Description
@@ -2917,7 +2947,7 @@ CVE-2025-62402 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-62402) [\[CVE jso
 
 
 
-_Last updated: 2025-10-30T09:14:24.818Z_
+_Last updated: 2026-11-03T06:20:20.762Z_
 
 ### Affected
 
@@ -2942,7 +2972,7 @@ CVE-2025-57735 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-57735) [\[CVE jso
 
 
 
-_Last updated: 2026-04-09T11:12:40.266Z_
+_Last updated: 2026-11-03T06:20:19.587Z_
 
 ### Affected
 
@@ -2971,11 +3001,11 @@ CVE-2025-54941 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-54941) [\[CVE jso
 
 
 
-_Last updated: 2025-10-30T09:45:25.170Z_
+_Last updated: 2026-11-03T06:20:18.451Z_
 
 ### Affected
 
-* Apache Airflow from 3.0.0 before < 3.0.5
+* Apache Airflow from 3.0.0 before 3.0.5
 
 
 ### Description
@@ -2996,7 +3026,7 @@ CVE-2025-54831 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-54831) [\[CVE jso
 
 
 
-_Last updated: 2025-09-26T07:28:57.402Z_
+_Last updated: 2026-11-03T06:20:17.333Z_
 
 ### Affected
 
@@ -3019,11 +3049,12 @@ CVE-2025-54550 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-54550) [\[CVE jso
 
 
 
-_Last updated: 2026-04-19T23:47:06.426Z_
+_Last updated: 2026-11-03T06:20:16.158Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.0
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.0
 
 
 ### Description
