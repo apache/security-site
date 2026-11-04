@@ -528,7 +528,7 @@ known to be affected: from 8.5.0 through 8.5.100.&nbsp;Other unsupported version
 
 
 ### Credits
-* arpitjain099 (https://github.com/arpitjain099) (finder)
+* Arpit Jain (GitHub handle: arpitjain099) (finder)
 
 
 ## Authenticated WebSocket session survives end of HTTP session ## { #CVE-2026-73180 }

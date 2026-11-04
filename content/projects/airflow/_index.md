@@ -593,7 +593,8 @@ _Last updated: 2026-11-03T04:29:15.186Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.2
 
 
 ### Description
@@ -620,7 +621,8 @@ _Last updated: 2026-11-03T04:29:14.057Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.2
 
 
 ### Description
@@ -676,7 +678,8 @@ _Last updated: 2026-11-03T04:29:12.942Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.1
 
 
 ### Description
@@ -703,7 +706,8 @@ _Last updated: 2026-11-03T04:29:11.784Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.1
 
 
 ### Description
@@ -731,7 +735,8 @@ _Last updated: 2026-11-03T04:29:10.688Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.1
 
 
 ### Description
@@ -759,7 +764,8 @@ _Last updated: 2026-11-03T04:29:09.584Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.1
 
 
 ### Description
@@ -895,7 +901,8 @@ _Last updated: 2026-11-03T04:29:08.471Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.1
 
 
 ### Description
@@ -1037,7 +1044,8 @@ _Last updated: 2026-11-03T04:29:03.988Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.1
 
 
 ### Description
@@ -1091,7 +1099,8 @@ _Last updated: 2026-11-03T04:29:02.689Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.1
 
 
 ### Description
@@ -1174,7 +1183,8 @@ _Last updated: 2026-11-03T04:29:00.373Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.1
 
 
 ### Description
@@ -1257,7 +1267,8 @@ _Last updated: 2026-11-03T04:28:59.142Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.0
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.0
 
 
 ### Description
@@ -1311,7 +1322,8 @@ _Last updated: 2026-11-03T06:21:06.987Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.2
 
 
 ### Description
@@ -1393,7 +1405,8 @@ _Last updated: 2026-11-03T06:21:05.826Z_
 
 ### Affected
 
-* Apache Airflow from 2.0.0 before 3.2.2
+* Apache Airflow from 2.0.0 before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.2
 
 
 ### Description
@@ -1420,7 +1433,8 @@ _Last updated: 2026-11-03T04:28:55.780Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.0
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.0
 
 
 ### Description
@@ -1447,7 +1461,8 @@ _Last updated: 2026-11-03T04:28:54.677Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.0
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.0
 
 
 ### Description
@@ -1475,7 +1490,8 @@ _Last updated: 2026-11-03T04:28:53.571Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.0
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.0
 
 
 ### Description
@@ -1502,7 +1518,8 @@ _Last updated: 2026-11-03T06:21:04.683Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.2
 
 
 ### Description
@@ -1530,7 +1547,8 @@ _Last updated: 2026-11-03T06:21:03.531Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.2
 
 
 ### Description
@@ -1638,7 +1656,8 @@ _Last updated: 2026-11-03T06:21:01.212Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.2
 
 
 ### Description
@@ -1664,7 +1683,8 @@ _Last updated: 2026-11-03T06:21:00.059Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.2
 
 
 ### Description
@@ -1745,7 +1765,8 @@ _Last updated: 2026-11-03T06:20:58.876Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.2
 
 
 ### Description
@@ -1802,7 +1823,8 @@ _Last updated: 2026-11-03T06:20:56.563Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.2
 
 
 ### Description
@@ -1944,7 +1966,7 @@ _Last updated: 2026-11-03T08:34:26.197Z_
 
 ### Description
 
-Apache Airflow&#x27;s SMTP provider `SmtpHook` called Python&#x27;s `smtplib.SMTP.starttls()` without an SSL context, so no certificate validation was performed on the TLS upgrade. A man-in-the-middle between the Airflow worker and the SMTP server could present a self-signed certificate, complete the STARTTLS upgrade, and capture the SMTP credentials sent during the subsequent `login()` call. Users are advised to upgrade to the `apache-airflow-providers-smtp` version that contains the fix.
+Apache Airflow's SMTP provider `SmtpHook` called Python's `smtplib.SMTP.starttls()` without an SSL context, so no certificate validation was performed on the TLS upgrade. A man-in-the-middle between the Airflow worker and the SMTP server could present a self-signed certificate, complete the STARTTLS upgrade, and capture the SMTP credentials sent during the subsequent `login()` call. Users are advised to upgrade to the `apache-airflow-providers-smtp` version that contains the fix.
 
 ### References
 * https://github.com/apache/airflow/pull/65346
@@ -2074,7 +2096,8 @@ _Last updated: 2026-11-03T06:20:48.514Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.2
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.2
 
 
 ### Description
@@ -2102,7 +2125,8 @@ _Last updated: 2026-11-03T06:20:47.344Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.1
 
 
 ### Description
@@ -2129,7 +2153,8 @@ _Last updated: 2026-11-03T06:20:46.173Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.1
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.1
 
 
 ### Description
@@ -2210,7 +2235,8 @@ _Last updated: 2026-11-03T06:20:42.721Z_
 
 ### Affected
 
-* Apache Airflow before 3.3.0
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.3.0
 
 
 ### Description
@@ -2354,7 +2380,8 @@ _Last updated: 2026-11-03T06:20:38.131Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.0
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.0
 
 
 ### Description
@@ -2408,7 +2435,8 @@ _Last updated: 2026-11-03T06:20:35.826Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.0
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.0
 
 
 ### Description
@@ -2543,7 +2571,8 @@ _Last updated: 2026-11-03T06:20:31.228Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.0
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.0
 
 
 ### Description
@@ -2596,7 +2625,8 @@ _Last updated: 2026-11-03T06:20:30.072Z_
 
 ### Affected
 
-* Apache Airflow before 3.1.8
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.1.8
 
 
 ### Description
@@ -2732,8 +2762,8 @@ _Last updated: 2026-11-03T06:20:26.542Z_
 
 ### Affected
 
-* Apache Airflow from 3.0.0 before 3.1.6
 * Apache Airflow before 2.11.1
+* Apache Airflow from 3.0.0 before 3.1.6
 
 
 ### Description
@@ -2866,8 +2896,8 @@ _Last updated: 2026-11-03T06:20:21.899Z_
 
 ### Affected
 
-* Apache Airflow from 3.0.0 before 3.1.4
 * Apache Airflow before 2.11.1
+* Apache Airflow from 3.0.0 before 3.1.4
 
 
 ### Description
@@ -2975,7 +3005,7 @@ _Last updated: 2026-11-03T06:20:18.451Z_
 
 ### Affected
 
-* Apache Airflow from 3.0.0 before < 3.0.5
+* Apache Airflow from 3.0.0 before 3.0.5
 
 
 ### Description
@@ -3023,7 +3053,8 @@ _Last updated: 2026-11-03T06:20:16.158Z_
 
 ### Affected
 
-* Apache Airflow before 3.2.0
+* Apache Airflow before 3.0.0
+* Apache Airflow from 3.0.0 before 3.2.0
 
 
 ### Description
