@@ -600,6 +600,37 @@ applying the classname allowlist earlier.</div><div><br></div><div>Affected are 
 * Venkatraman Kumar, Securin (reporter)
 
 
+## Unsafe Deserialization (CWE-502) in JavaNativeMessageDecoder ## { #CVE-2026-118636 }
+
+CVE-2026-118636 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-118636) [\[CVE json\]](./CVE-2026-118636.cve.json) [\[OSV json\]](./CVE-2026-118636.osv.json)
+
+
+
+_Last updated: 2026-10-31T20:17:07.969Z_
+
+### Affected
+
+* Apache MINA from 3.0.0 through 3.0.0-M2
+
+
+### Description
+
+<div>**UNSUPPORTED WHEN ASSIGNED**&nbsp;</div><div>JavaNativeMessageDecoder in the MINA 3.0 codec module calls ObjectInputStream.readObject() on frame bytes with no class filter, so an
+application that puts it in front of an untrusted peer is open to gadget-chain RCE.
+
+As the 3.0.0 branch is inactive, we do not plan to release a version that fixes this issue. 
+
+Users are recommended to use the latest Apache MINA 2.2.X branch.</div>
+
+### References
+* https://www.cve.org/CVERecord?id=CVE-2026-118636
+* https://lists.apache.org/thread.html/h76nwcrkvsffhsk2kq6cjzc6srtnty7x
+
+
+### Credits
+* Nguyen Cuong (cuongbeo090704@gmail.com) (reporter)
+
+
 ## Authorization bypass ## { #CVE-2026-115748 }
 
 CVE-2026-115748 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-115748) [\[CVE json\]](./CVE-2026-115748.cve.json) [\[OSV json\]](./CVE-2026-115748.osv.json)

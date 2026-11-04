@@ -473,7 +473,7 @@ CVE-2026-50222 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-50222) [\[CVE jso
 
 
 
-_Last updated: 2026-08-21T08:29:16.822Z_
+_Last updated: 2026-10-29T20:02:40.505Z_
 
 ### Affected
 

@@ -13,6 +13,175 @@ Do you want to disclose a potential security issue for Apache James? Send your r
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Denial of service upon MIME parsing ## { #CVE-2026-85111 }
+
+CVE-2026-85111 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85111) [\[CVE json\]](./CVE-2026-85111.cve.json) [\[OSV json\]](./CVE-2026-85111.osv.json)
+
+
+
+_Last updated: 2026-10-28T20:08:26.422Z_
+
+### Affected
+
+* Apache James before 3.9.1
+
+
+### Description
+
+<div>Allocation of Resources Without Limits or Throttling in Apache James Mime4J library prior version 0.8.15 allows Denial of Service upon parsing Mime messages.<br>Users are recommended to upgrade to Apache James server 3.9.1 that relies on fixed MIME4J 0.8.15 which addresses the issue.<br><br>See&nbsp;CVE-2026-85108 in Apache James MIME4J library.</div>
+
+### References
+
+
+### Credits
+* Mike Read (finder)
+
+
+## Apache James MIME4J: Denial of service due to Allocation of Resources Without Limits or Throttling ## { #CVE-2026-85108 }
+
+CVE-2026-85108 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-85108) [\[CVE json\]](./CVE-2026-85108.cve.json) [\[OSV json\]](./CVE-2026-85108.osv.json)
+
+
+
+_Last updated: 2026-10-28T20:08:21.170Z_
+
+### Affected
+
+* Apache James Mime4J Core before 0.8.15
+* Apache James Mime4J Dom before 0.8.15
+
+
+### Description
+
+<div>Allocation of Resources Without Limits or Throttling in Apache James Mime4J library prior version 0.8.15 allows Denial of Service upon parsing Mime messages.<br>Users are recommended to upgrade to version 0.8.15 which fixes the issue by enforcing new limits and providing better defaults.</div>
+
+### References
+
+
+### Credits
+* Mike Read (finder)
+
+
+## SSRF filter bypass in the JMAP PushSubscription web-push client ## { #CVE-2026-76171 }
+
+CVE-2026-76171 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-76171) [\[CVE json\]](./CVE-2026-76171.cve.json) [\[OSV json\]](./CVE-2026-76171.osv.json)
+
+
+
+_Last updated: 2026-10-28T20:07:57.430Z_
+
+### Affected
+
+* Apache James from 3.9.0 before 3.9.1
+
+
+### Description
+
+In Apache James server prior version 3.9.1 improper validation in JMAP webPush SSRF validation did lead to the possibility to reach internal addresses.<br>Users are recommended to upgrade to version 3.9.1 which fixes this issue.<br>
+
+### References
+
+
+### Credits
+* n0mi1k (finder)
+
+
+## ManageSieve file implementation cross-user path traversal ## { #CVE-2026-76168 }
+
+CVE-2026-76168 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-76168) [\[CVE json\]](./CVE-2026-76168.cve.json) [\[OSV json\]](./CVE-2026-76168.osv.json)
+
+
+
+_Last updated: 2026-10-28T20:00:56.892Z_
+
+### Affected
+
+* Apache James before 3.9.1
+
+
+### Description
+
+In Apache James server prior version 3.9.1 relying on the SieveFileRepository incorect validation of file paths can result in path transversal, allowing to set arbitrary SIEVE scripts for other users.<br>This allows a logged in attacker  to set arbitrary SIEVE scripts for other users, resulting in denial of service or even traffic capture.<br>Users are recommended to upgrade to version 3.9.1 which fixes this issue.
+
+### References
+
+
+### Credits
+* n0mi1k Security (finder)
+
+
+## WebAdmin exposed without authentication on official Docker default ## { #CVE-2026-74756 }
+
+CVE-2026-74756 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-74756) [\[CVE json\]](./CVE-2026-74756.cve.json) [\[OSV json\]](./CVE-2026-74756.osv.json)
+
+
+
+_Last updated: 2026-10-28T20:00:51.302Z_
+
+### Affected
+
+* Apache James before 3.9.1
+
+
+### Description
+
+Some docker-compose shipped by the project exposes by default Webadmin REST API publically without proper authentication setup.<br>Version 3.9.1 onward sets a random credential by default on unprotected webadmin endpoints to prevent this while retain convenience.
+
+### References
+
+
+### Credits
+* Wanxin Yin (finder)
+
+
+## Negative IMAP ACL administer authorization bypass through JMAP protocol ## { #CVE-2026-49939 }
+
+CVE-2026-49939 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-49939) [\[CVE json\]](./CVE-2026-49939.cve.json) [\[OSV json\]](./CVE-2026-49939.osv.json)
+
+
+
+_Last updated: 2026-10-29T10:09:41.217Z_
+
+### Affected
+
+* Apache James from 3.9.0 before 3.9.1
+
+
+### Description
+
+In Apache James server prior version 3.9.1 improper Access Control List processing is exposed by the JMAP protocol which do not account for negative rules positionned by IMAP protocol.<br><br>This results in users being able to administer folders in JMAP despite having being explicitly denied the right to do so in IMAP.<br><br>Users are recommended to upgrade to version 3.9.1 which fixes this issue.
+
+### References
+
+
+### Credits
+* Thanks mitchell from revampstudio.com.au for the report (finder)
+
+
+## SASL OAUTHBEARER do not validate aud in JWT payload if misconfigred ## { #CVE-2025-66621 }
+
+CVE-2025-66621 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66621) [\[CVE json\]](./CVE-2025-66621.cve.json) [\[OSV json\]](./CVE-2025-66621.osv.json)
+
+
+
+_Last updated: 2026-10-28T20:00:43.957Z_
+
+### Affected
+
+* Apache James from 3.9.0 before 3.9.1
+
+
+### Description
+
+Apache James SASL OAuthBearer/XOAUTH2 prior versions 3.9.1 fails to validate correctly AUD claim of JWT payloads when introspection is not configured.<br><br>This allows an attacker with valid credentials to access the mail server even if they are not authorized to do so.<br><br>We recommend users to upgrade to non vulnerable version that forces explicit configuration of aud claims and forces introspection.
+
+### References
+
+
+### Credits
+* The Apache James PMC would like to thanks Felix Auringer for this report (finder)
+
+
 ## Apache James: denial of service through JMAP HTML to text conversion ## { #CVE-2024-45626 }
 
 CVE-2024-45626 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-45626) [\[CVE json\]](./CVE-2024-45626.cve.json) [\[OSV json\]](./CVE-2024-45626.osv.json)

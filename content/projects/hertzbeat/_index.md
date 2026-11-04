@@ -39,6 +39,35 @@ _Last updated: 2026-02-09T15:07:42.730Z_
 * https://lists.apache.org/thread/b2k3jqwffrbo2sy6bl4n0f68kp8bfo1n
 
 
+## incomplete XPath expression validation in aliasFields ## { #CVE-2026-114442 }
+
+CVE-2026-114442 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-114442) [\[CVE json\]](./CVE-2026-114442.cve.json)
+
+_Last updated: 2026-11-03T10:21:04.827Z_
+
+### Affected
+
+* Apache HertzBeat at 1.7.1
+* Apache HertzBeat at 1.7.2
+* Apache HertzBeat at 1.7.3
+* Apache HertzBeat at 1.8.0
+* Apache HertzBeat at 1.9.0
+* Apache HertzBeat at 1.9.1 unaffected
+
+
+### Description
+
+<p>Apache HertzBeat versions 1.7.1, 1.7.2, 1.7.3, 1.8.0, and 1.9.0 have incomplete XPath expression validation in the HTTP collector XML parsing path. An authenticated user with permission to create monitor templates can supply XPath expressions through metrics.aliasFields that are evaluated without the validation applied to parseScript. When processing a crafted XML response, repeated evaluation may consume excessive CPU resources and impair collector availability. This is a follow-up to the incomplete fix for CVE-2026-24343. The fix is included in Apache HertzBeat 1.9.1. Users should upgrade to 1.9.1 or a later version.</p>
+
+### References
+* https://github.com/apache/hertzbeat/pull/4481
+* https://lists.apache.org/thread.html/5hmlvklmmw0hl9rb629hr6vxvq3pmspf
+
+
+### Credits
+* xutao (finder)
+
+
 ## Jmx JNDI injection vulnerability ## { #CVE-2025-48208 }
 
 CVE-2025-48208 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-48208) [\[CVE json\]](./CVE-2025-48208.cve.json) [\[OSV json\]](./CVE-2025-48208.osv.json)

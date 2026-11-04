@@ -18,6 +18,35 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Incorrect boolean operator in FetchSnapshot RPC handler allows authenticated network clients to crash the KRaft controller via a malformed request. ## { #CVE-2026-83525 }
+
+CVE-2026-83525 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-83525) [\[CVE json\]](./CVE-2026-83525.cve.json) [\[OSV json\]](./CVE-2026-83525.osv.json)
+
+
+
+_Last updated: 2026-10-28T16:47:03.979Z_
+
+### Affected
+
+* Apache Kafka from 2.8.0 before 4.2.2
+* Apache Kafka from 4.3.0 before 4.3.2
+
+
+### Description
+
+Incorrect operator (CWE-480) in the FetchSnapshot RPC handler<br>in Apache Kafka from 2.8.0 before 4.2.2, and from 4.3.0 before 4.3.2<br>on all platforms allows an authenticated attacker with<br>CLUSTER_ACTION privilege to cause a denial of service<br>(controller process termination) via a crafted<br>FetchSnapshotRequest with an empty topics array or a topic<br>with no partitions.<br><br>Users are recommended to upgrade to version 4.2.2, 4.3.2, or<br>4.4.0, which fix this issue. Users on unsupported branches<br>(4.1.x and earlier) should upgrade to 4.2.2 or later.
+
+### References
+* https://github.com/apache/kafka/pull/23185
+* https://kafka.apache.org/cve-list
+* https://lists.apache.org/thread/bqxl2q0lvwnhhzswn4x5c436r7lgqt9n
+
+
+### Credits
+* Mike Read (GitHub: Michael-JRead) (reporter)
+* Kevin Wu <kwu@confluent.io> (remediation developer)
+
+
 ## Improper Authorization in CONSUMER_GROUP_DESCRIBE API ## { #CVE-2026-41115 }
 
 CVE-2026-41115 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-41115) [\[CVE json\]](./CVE-2026-41115.cve.json) [\[OSV json\]](./CVE-2026-41115.osv.json)
@@ -137,6 +166,350 @@ _Last updated: 2026-04-18T14:14:44.004Z_
 
 ### Credits
 * Павел Романов <promanov1994@gmail.com> (finder)
+
+
+## Kafka Connect configuration provider values exposed via validation REST API endpoint ## { #CVE-2026-116593 }
+
+CVE-2026-116593 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-116593) [\[CVE json\]](./CVE-2026-116593.cve.json) [\[OSV json\]](./CVE-2026-116593.osv.json)
+
+
+
+_Last updated: 2026-10-29T17:20:36.677Z_
+
+### Affected
+
+* Apache Kafka from 2.4.0 before 4.2.2
+* Apache Kafka from 4.3.0 before 4.3.2
+
+
+### Description
+
+Apache Kafka Connect has the /connector-plugins/{connector-type}/config/validate endpoint on its REST API to validate connector configurations.<br>Apache Kafka Connect also support Configuration Providers which enable to hide the values of sensitive configuration and only resolve them at runtime.&nbsp;<br><br>An attacker with access to the validate endpoint can use it to resolve and return plaintext values via any of the configuration providers installed on a Connect worker.<br><br>Users are recommended to upgrade to version 4.2.2, 4.3.2, 4.4.0 or above, which fix this issue.
+
+### References
+* https://kafka.apache.org/cve-list
+* https://lists.apache.org/thread/ylblfrfk1bspy9zh2j6dz8o2pkn6s9g0
+
+
+### Credits
+* Hyunwoo Kim <imv4bel@gmail.com> (reporter)
+* Sudhanshu Chauhan <sudhanshu@redhuntlabs.com>, RedHunt Labs (reporter)
+* Bartłomiej Dmitruk <bartek@striga.ai>, Striga (reporter)
+* Andrew MacPherson <andrew@andrewmohawk.com> (reporter)
+* Mickael Maison <mickael.maison@gmail.com> (remediation developer)
+* Liran Neduva <neduvaliran@gmail.com> (reporter)
+
+
+## Connect Admin REST API Authentication Bypass via Unapplied REST Extensions ## { #CVE-2026-115644 }
+
+CVE-2026-115644 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-115644) [\[CVE json\]](./CVE-2026-115644.cve.json) [\[OSV json\]](./CVE-2026-115644.osv.json)
+
+
+
+_Last updated: 2026-10-28T16:54:36.236Z_
+
+### Affected
+
+* Apache Kafka from 2.4.0 before 4.2.2
+* Apache Kafka from 4.3.0 before 4.3.2
+
+
+### Description
+
+<div>Apache Kafka Connect contains an authentication bypass vulnerability affecting the admin REST API when admin.listeners is configured with a separate listener from the main listeners property.</div><div>When operators isolate the admin REST API by explicitly configuring the "admin.listeners" property, REST extensions specified via rest.extension.classes (such as BasicAuthSecurityRestExtension) are not registered or applied to the admin resource configuration.<br><br>While the primary REST API listener (configured via listeners) enforces configured authentication and authorization filters, endpoints mounted under the separate admin listener (/admin/loggers) fail to inherit or instantiate these extension filters. As a result, the admin logger endpoint accepts unauthenticated read and write requests even when security extensions are active on the main listener.</div><div>Impact:</div><div>An unauthenticated attacker with network access to the admin listener can:<br><br>  1. Read the complete set of logger names and levels, disclosing loaded class names and which security extensions are in use.<br>  2. Write logger levels, including with scope=cluster which propagates the change to all workers in the Connect cluster. This can be used to suppress<br>     logging (setting root to OFF) or generate excessive log output (setting root to TRACE), potentially impacting availability and observability.</div><div>Mitigation:<br><br>  Users who cannot upgrade immediately can remove the admin.listeners configuration (or leave it unset). When unset, admin resources share the regular listener and inherit its security extensions.</div><div>Resolution:</div><div><br><div>From Apache Kafka 4.2.2, 4.3.2, and 4.4.0, we make sure the&nbsp;REST extensions specified via "rest.extension.classes" will also apply to&nbsp;"admin.listeners".</div></div>
+
+### References
+* https://kafka.apache.org/cve-list
+* https://lists.apache.org/thread/4y3674flvwpx12fsx4nlcx6lpfqpdmml
+
+
+### Credits
+* Bartłomiej Dmitruk <bartek@striga.ai>, Striga (reporter)
+* Mickael Maison <mickael.maison@gmail.com> (remediation developer)
+
+
+## Denial of service via unbounded memory allocation when decoding compressed record batches ## { #CVE-2026-114349 }
+
+CVE-2026-114349 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-114349) [\[CVE json\]](./CVE-2026-114349.cve.json) [\[OSV json\]](./CVE-2026-114349.osv.json)
+
+
+
+_Last updated: 2026-10-29T13:39:56.769Z_
+
+### Affected
+
+* Apache Kafka from 0.11.0.0 before 2.5.0
+* Apache Kafka from 0.11.0.0 before 4.0.0
+* Apache Kafka from 2.4.0 through 4.1.2
+* Apache Kafka from 4.2.0 through 4.2.1
+* Apache Kafka from 4.3.0 through 4.3.1
+
+
+### Description
+
+<br><div>When a broker decodes a compressed record batch, the per-record decoder reads a declared body&nbsp;<span>size from the decompressed stream and allocates a buffer of that size before validating it&nbsp;</span><span>against the bytes available or any configured limit. The size is attacker-controlled, and the&nbsp;</span><span>batch CRC does not constrain it, so a small (around 90-byte), CRC-valid compressed produce&nbsp;</span><span>request can declare a body size of up to about 2 GiB and force the broker to attempt that&nbsp;</span><span>allocation, raising OutOfMemoryError. The record size limit (max.message.bytes), the request&nbsp;</span><span>size limit, and client/broker quotas bound only the compressed wire size, not the declared&nbsp;</span><span>decompressed size.</span></div><br><div>Impact:</div><div>An authenticated principal with Write on a topic can crash broker request-handler threads&nbsp;<span>(reached when a batch's codec differs from the topic's compression.type and records are&nbsp;</span><span>re-encoded) and any consumer that fetches the record, denying service. On brokers started&nbsp;</span><span>with -XX:+ExitOnOutOfMemoryError, a common hardening, a single crafted request terminates the&nbsp;</span><span>broker JVM. More seriously, a&nbsp;crafted record&nbsp;&nbsp;</span><span>is accepted at ingest and written to disk; when the log-cleaner later reads it&nbsp;</span><span>on a compacted topic, the OutOfMemoryError (an Error, not an Exception) terminates the cleaner&nbsp;</span><span>thread, which is not restarted. With the default of a single cleaner thread, log compaction&nbsp;</span><span>then stops for the entire broker, including the internal __consumer_offsets and&nbsp;</span><span>__transaction_state topics, and the condition persists across restarts until the offending&nbsp;</span><span>record is removed. The impact is availability only; no data is disclosed or altered.</span></div><br><div>Mitigation:</div><div>Upgrade to Apache Kafka 4.2.2, 4.3.2, or 4.4.0, and set max.decompressed.message.bytes (at the&nbsp;<span>broker and/or topic level) to a bounded value appropriate for your workload. Upgrading alone is&nbsp;</span><span>not sufficient: for backward compatibility this configuration defaults to an effectively&nbsp;</span><span>unlimited value (about 2 GiB), so a broker remains exposed until the limit is set. Choose a&nbsp;</span><span>value at or slightly above the largest legitimate decompressed record your applications&nbsp;</span><span>produce, and comfortably below the broker heap divided by the number of request-handler and&nbsp;</span><span>cleaner threads. Until you can upgrade and configure the limit, restrict Write access to&nbsp;</span><span>trusted producers; quotas and max.message.bytes do not mitigate this issue.</span></div><br><div>Resolution:</div><div>From Apache Kafka 4.2.2, 4.3.2, and 4.4.0: the broker validates a record's declared decompressed&nbsp;<span>body size against max.decompressed.message.bytes before allocating, on the produce-validation,&nbsp;</span><span>log-compaction, and timestamp-lookup paths, and rejects oversized or negative sizes with&nbsp;</span><span>InvalidRecordException. Operators must set this configuration to a bounded value to be protected,&nbsp;</span><span>as its default is effectively unlimited.</span></div>
+
+### References
+* https://kafka.apache.org/cve-list
+* https://lists.apache.org/thread/hdy56hrd1h9btf30jb1noswsx32l17dq
+
+
+### Credits
+* Peyton Kennedy <pkennedy@endor.ai> (reporter)
+* Trung Nguyen <trungnh@cystack.net>, CyStack (reporter)
+* Bartłomiej Dmitruk <bartek@striga.ai>, Striga (reporter)
+* 임성민 <at_haemil@naver.com> (reporter)
+* Mike Read (GitHub: Michael-JRead) (reporter)
+* Salman Aljardan <salman1aljardan@gmail.com> (reporter)
+* Yuchao Zhang <ndaugoing@gmail.com> (reporter)
+* Yu Bao <yubao@paypal.com>, PayPal Cyber Security Team (reporter)
+* Vamsi K <xh081ix@gmail.com> (reporter)
+* Srinivas Akhil Mallela <srinivasakhil@gmail.com> (remediation developer)
+* Ashish Modi, OpenLogic by Perforce (reporter)
+
+
+## Unauthorized principal can read arbitrary broker files via IncrementalAlterConfigs ## { #CVE-2026-112375 }
+
+CVE-2026-112375 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-112375) [\[CVE json\]](./CVE-2026-112375.cve.json) [\[OSV json\]](./CVE-2026-112375.osv.json)
+
+
+
+_Last updated: 2026-10-28T16:55:44.569Z_
+
+### Affected
+
+* Apache Kafka from 3.2.0 through 4.1.2
+* Apache Kafka from 4.2.0 through 4.2.1
+* Apache Kafka from 4.3.0 through 4.3.1
+
+
+### Description
+
+<div>An authenticated Kafka principal with no authorization grants (not even ALTER_CONFIGS) can&nbsp;<span>make a broker read a file or an environment variable from the broker host and return its&nbsp;</span><span>contents. An IncrementalAlterConfigs (or AlterConfigs) request targeting a BROKER resource&nbsp;</span><span>reaches the broker's configuration validation before any authorization check is applied to&nbsp;</span><span>that path. Validation resolves configuration variables such as ${file:/path:key} or ${env:VAR}&nbsp;</span><span>using a ConfigProvider named in the request, and this resolution bypasses the&nbsp;</span><span>org.apache.kafka.automatic.config.providers allowlist that was added as the mitigation for&nbsp;</span><span>CVE-2024-31141. An arbitrary ConfigProvider (for example FileConfigProvider or&nbsp;</span><span>EnvVarConfigProvider) is therefore instantiated and the referenced file or environment&nbsp;</span><span>variable is read, and a type-validation error returns the resolved content to the caller.</span></div><br><div>Impact:</div><div>On a cluster with an authorizer enabled, an authenticated principal with no authorization&nbsp;<span>grants can read the contents of files accessible to the broker process, and the broker's&nbsp;</span><span>environment variables, exposing credentials, keystores, or other secrets, defeating the&nbsp;</span><span>CVE-2024-31141 allowlist. The read is bounded by the broker process's file permissions. The&nbsp;</span><span>brokers and the cluster remain available; the issue is disclosure of file and environment-&nbsp;</span><span>variable contents. Clusters with no authorizer configured are not affected in practice,&nbsp;</span><span>because every principal already holds ALTER_CONFIGS there.</span></div><br><div>Mitigation:</div><div>Upgrade to Apache Kafka 4.2.2, 4.3.2, or 4.4.0. As defense in depth, run brokers under a&nbsp;<span>least-privileged operating-system account so that sensitive files are not readable by the&nbsp;</span><span>broker process.</span></div><br><div>Resolution:</div><div>From Apache Kafka 4.2.2, 4.3.2, and 4.4.0: broker configuration changes are authorized&nbsp;<span>(ALTER_CONFIGS on the cluster) before the configuration is validated, and configuration-&nbsp;</span><span>variable resolution enforces the config-providers allowlist.</span></div>
+
+### References
+* https://kafka.apache.org/cve-list
+* https://lists.apache.org/thread/wlsls47wfhmz5hjx3qj35m2j8m4ovdqr
+
+
+### Credits
+* Arthur Chan <arthur.chan@adalogics.com>, Ada Logics and Anthropic Research (reporter)
+* OpenAI Codex Security - Amy Burnett and Khai Tran (reporter)
+* Mickael Maison <mickael.maison@gmail.com> (remediation developer)
+* Manikumar Reddy <manikumar.reddy@gmail.com> (remediation developer)
+* Chia-Ping Tsai <chia7712@gmail.com> (remediation developer)
+
+
+## Denial of service in Kafka Streams and client deserializers via unbounded memory allocation ## { #CVE-2026-111551 }
+
+CVE-2026-111551 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111551) [\[CVE json\]](./CVE-2026-111551.cve.json) [\[OSV json\]](./CVE-2026-111551.osv.json)
+
+
+
+_Last updated: 2026-10-28T16:53:58.233Z_
+
+### Affected
+
+* Apache Kafka from 0.10.0.0 through 4.1.2
+* Apache Kafka from 4.2.0 through 4.2.1
+* Apache Kafka from 4.3.0 through 4.3.1
+* Apache Kafka from 0.10.0.0 through 4.1.2
+* Apache Kafka from 4.2.0 through 4.2.1
+* Apache Kafka from 4.3.0 through 4.3.1
+
+
+### Description
+
+<div>Several Kafka deserialization paths read a size or count field from input data and use it directly&nbsp;<span>to allocate an array, collection, or byte buffer, with no check against the bytes actually&nbsp;</span><span>available. A small crafted input can therefore declare a very large size and force a&nbsp;</span><span>multi-gigabyte allocation. The affected paths are, in Kafka Streams, ProcessorRecordContext&nbsp;</span><span>(header count), ChangedDeserializer (varint value length), CombinedKeySchema (foreign-key length,&nbsp;</span><span>which could also produce a negative size), ProcessorMetadata (key length), and AssignmentInfo&nbsp;</span><span>group-assignment decoding; and, in the clients library, ListDeserializer (used by ListSerde).</span></div><br><div>Impact:</div><div>An attacker can trigger the oversized allocation and raise an OutOfMemoryError that crashes the&nbsp;<span>affected consumer or Kafka Streams thread; the broker and the rest of the cluster are unaffected.&nbsp;</span><span>The reachable surface depends on the path: writing a crafted record to a Streams application's&nbsp;</span><span>internal changelog or repartition topics, or committing crafted offset metadata to its consumer&nbsp;</span><span>group (Streams internal paths); writing a crafted record to any topic that a consumer reads with&nbsp;</span><span>ListSerde (ListDeserializer); or, as a member of a Streams consumer group, returning crafted&nbsp;</span><span>assignment data when elected leader (AssignmentInfo). Because a crafted record remains in its&nbsp;</span><span>topic, the error can recur on restart. The record size limit (max.message.bytes) does not help,&nbsp;</span><span>because the allocation is driven by a size field rather than by the input's length.</span></div><br><div>Mitigation:</div><div>Upgrade to Apache Kafka 4.2.2, 4.3.2, or 4.4.0. Where authorization is enabled, restrict write&nbsp;<span>access to each application's internal topics and consumer group to its own principal, and restrict&nbsp;</span><span>who can produce to topics that are consumed with ListSerde.</span></div><br><div>Resolution:</div><div>From Apache Kafka 4.2.2, 4.3.2, and 4.4.0: these deserialization paths validate the declared size&nbsp;<span>against the remaining input before allocating and reject input that fails the check.</span></div>
+
+### References
+* https://kafka.apache.org/cve-list
+* https://lists.apache.org/thread/zgnzl1gh98j66wcvtctlxhvgfc3v7lcj
+
+
+### Credits
+* Peyton Kennedy <pkennedy@endor.ai> (reporter)
+* Bartlomiej Dmitruk <bartek@striga.ai> (reporter)
+* Mike Read (GitHub: Michael-JRead) (reporter)
+* Matthias J. Sax <matthias@confluent.io> (remediation developer)
+* Lucy Liu <lucliu@confluent.io> (remediation developer)
+
+
+## Kafka Streams StreamThread hang from integer overflow in stream-time punctuation ## { #CVE-2026-111496 }
+
+CVE-2026-111496 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111496) [\[CVE json\]](./CVE-2026-111496.cve.json) [\[OSV json\]](./CVE-2026-111496.osv.json)
+
+
+
+_Last updated: 2026-10-28T16:53:13.320Z_
+
+### Affected
+
+* Apache Kafka from 1.1.0 through 4.1.2
+* Apache Kafka from 4.2.0 through 4.2.1
+* Apache Kafka from 4.3.0 through 4.3.1
+
+
+### Description
+
+<div>Kafka Streams derives its stream-time clock from record timestamps. PunctuationSchedule.next()&nbsp;<span>computed the next punctuation time as timestamp + (intervalsMissed + 1) * interval with no&nbsp;</span><span>overflow check. A record with a timestamp at or near Long.MAX_VALUE advances stream time to that&nbsp;</span><span>value, so the next stream-time punctuation overflows to a negative time. PunctuationQueue then&nbsp;</span><span>re-queues that time and loops on it indefinitely while holding a lock, stalling the StreamThread.</span></div><br><div>Impact:</div><div>A single record is enough. The affected StreamThread stops processing, and because the record&nbsp;<span>stays in the topic the hang returns on restart; an application whose partitions are all affected&nbsp;</span><span>becomes unresponsive. Only the Streams application is affected, not the brokers or the cluster.&nbsp;</span><span>Triggering it needs write access to a source topic whose topology uses stream-time punctuation,&nbsp;</span><span>and a broker that stores the record: brokers from Apache Kafka 4.0.0 reject such a timestamp by&nbsp;</span><span>default (log.message.timestamp.after.max.ms, one hour), so it is reachable only on older brokers&nbsp;</span><span>or where that bound has been relaxed.</span></div><br><div>Mitigation:</div><div>Upgrade Kafka Streams to 4.2.2, 4.3.2, or 4.4.0. As defense in depth, keep&nbsp;<span>log.message.timestamp.after.max.ms bounded on source topics and restrict write access to them.</span></div><br><div>Resolution:</div><div>From Apache Kafka 4.2.2, 4.3.2, and 4.4.0: the next punctuation time is computed with&nbsp;<span>overflow-checked arithmetic (clamped to Long.MAX_VALUE), and a rescheduled punctuation is&nbsp;</span><span>re-queued only when its time moves forward.</span></div>
+
+### References
+* https://kafka.apache.org/cve-list
+* https://lists.apache.org/thread/nrt86l2mv52o7db0bg6pl2h3nthzxbfb
+
+
+### Credits
+* Mike Read (GitHub: Michael-JRead) (reporter)
+* Matthias J. Sax <matthias@confluent.io> (remediation developer)
+
+
+## Broker OutOfMemoryError via tagged-field allocation amplification in flexible protocol request parsing ## { #CVE-2026-111115 }
+
+CVE-2026-111115 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111115) [\[CVE json\]](./CVE-2026-111115.cve.json) [\[OSV json\]](./CVE-2026-111115.osv.json)
+
+
+
+_Last updated: 2026-10-28T16:52:37.055Z_
+
+### Affected
+
+* Apache Kafka from 2.4.0 through 4.1.2
+* Apache Kafka from 4.2.0 through 4.2.1
+* Apache Kafka from 4.3.0 through 4.3.1
+
+
+### Description
+
+<div><div><span>Apache Kafka's code-generated readers for flexible protocol versions read a tagged-field count&nbsp;</span><span>declared by the sender and retain a RawTaggedField object for each unknown field. That count&nbsp;</span><span>was bounded only by the outer request frame size (socket.request.max.bytes); it was not checked&nbsp;</span><span>against the remaining buffer bytes or capped. Because each entry can be encoded in as little as&nbsp;</span><span>two bytes (unknown tag 0, size 0), a modest request can declare tens of millions of tagged&nbsp;</span><span>fields and force one object allocation per declared field. Flexible request headers (header&nbsp;</span><span>version 2, used by flexible APIs such as ApiVersions v3) are parsed this way, so the&nbsp;</span><span>amplification applies to the request header itself.</span></div><div><br>Impact:<br>The flexible request header is parsed on the network thread before authorization, request dispatch, and request-time quota accounting. A client can send a request of a few tens of megabytes whose header declares about 20 million tagged fields, forcing roughly that many RawTaggedField allocations and exhausting broker heap or inducing process-wide GC stalls, denying broker service. Because the header is parsed for pre-authentication APIs such as ApiVersions (v3), the allocation can occur before authentication; no Kafka resource ACL or quota is required.<br><br>Mitigation:<br>Upgrade to Apache Kafka 4.2.2, 4.3.2, or 4.4.0. Until then, lowering socket.request.max.bytes and restricting network access to broker listeners reduces, but does not remove, exposure.<br><br>Resolution:<br>From Apache Kafka 4.2.2, 4.3.2, and 4.4.0: generated readers bounds-check the tagged-field count for flexible-versioned messages, rejecting a negative count, a count exceeding the remaining buffer bytes, or a count exceeding a fixed maximum (10,000), before any per-field allocation.</div></div>
+
+### References
+* https://kafka.apache.org/cve-list
+* https://lists.apache.org/thread/psbn6v7tf3ggb3hlfdhwh63brqdpmhm9
+
+
+### Credits
+* Mufeed VH  <mufeed@winfunc.com> (finder)
+* Vivek R <vivek@winfunc.com> (finder)
+* Shay Elkin <selkin@confluent.io> (remediation developer)
+
+
+## Broker OutOfMemoryError via array allocation amplification in code-generated protocol readers ## { #CVE-2026-111108 }
+
+CVE-2026-111108 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111108) [\[CVE json\]](./CVE-2026-111108.cve.json) [\[OSV json\]](./CVE-2026-111108.osv.json)
+
+
+
+_Last updated: 2026-10-28T16:51:37.282Z_
+
+### Affected
+
+* Apache Kafka from 3.3.0 through 4.1.2
+* Apache Kafka from 4.2.0 through 4.2.1
+* Apache Kafka from 4.3.0 through 4.3.1
+
+
+### Description
+
+<div>Apache Kafka's code-generated protocol readers pre-size an array's collection from the element&nbsp;<span>count declared by the sender. That count is checked only against the bytes remaining in the&nbsp;</span><span>request buffer, which assumes about one byte per element; because most elements need several&nbsp;</span><span>bytes, a request can declare far more elements than the buffer holds and still pass. For a&nbsp;</span><span>keyed array the reader then allocates an ImplicitLinkedHashCollection of capacity (2 * count +</span><span>1), so a request of a few tens of megabytes can force a heap allocation several times larger&nbsp;</span><span>before any element is read. The pattern is emitted into every generated reader, so it affects&nbsp;</span><span>all Kafka API types with an array field.&nbsp;</span></div><br><div>Impact:</div><div>Request parsing happens before any authorization check. On a listener that does not require&nbsp;<span>authentication (for example PLAINTEXT), an unauthenticated attacker can send a few concurrent&nbsp;</span><span>requests that each declare a very large=</span></div><div><span>array length and allocate many times their wire size&nbsp;</span><span>in broker heap, crashing the broker with an OutOfMemoryError. The reporter demonstrated three&nbsp;</span><span>concurrent ~90 MB ProduceRequest (v3) connections exhausting a 1 GB heap (~8x amplification).&nbsp;</span><span>On listeners that require authentication, the attacker needs valid credentials but no specific ACL,&nbsp;</span><span>since parsing precedes authorization.</span><span>.</span></div><br><div>Mitigation:</div><div>Upgrade to Apache Kafka 4.2.2, 4.3.2, or 4.4.0. Until then, lowering socket.request.max.bytes&nbsp;<span>and restricting network access to broker listeners reduces, but does not remove, exposure.</span></div><br><div>Resolution:</div><div>From Apache Kafka 4.2.2, 4.3.2, and 4.4.0: generated readers cap the initial array&nbsp;<span>pre-allocation at MessageUtil.MAX_PREALLOCATED_ARRAY_CAPACITY (1000) and grow it on demand,&nbsp;</span><span>and reject a declared array length above MessageUtil.MAX_ARRAY_LENGTH (1,000,000).</span></div>
+
+### References
+* https://kafka.apache.org/cve-list
+* https://lists.apache.org/thread/xqm6wb84pc20xwcsvsk8rzpmnf7tkg3q
+
+
+### Credits
+* Mike Read (GitHub: Michael-JRead) (reporter)
+* Izzy Harker <iharker@confluent.io> (remediation developer)
+* Alyssa Huang <ahuang@confluent.io> (remediation developer)
+* Truc Nguyen  <trnguyen@confluent.io> (remediation developer)
+
+
+## PushTelemetry (KIP-714) metrics payloads are decompressed without a size limit, allowing a broker out-of-memory denial of service ## { #CVE-2026-111073 }
+
+CVE-2026-111073 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111073) [\[CVE json\]](./CVE-2026-111073.cve.json) [\[OSV json\]](./CVE-2026-111073.osv.json)
+
+
+
+_Last updated: 2026-10-28T16:50:50.904Z_
+
+### Affected
+
+* Apache Kafka from 3.7.0 through 4.1.2
+* Apache Kafka from 4.2.0 through 4.2.1
+* Apache Kafka at 4.3.0
+
+
+### Description
+
+<div>The broker-side PushTelemetry API (KIP-714) validates only the compressed size of&nbsp;<span>a client's metrics payload against telemetry.max.bytes (default 1 MB) before decompressing&nbsp;</span><span>it. ClientTelemetryUtils.decompress() then decompresses the payload with no limit on the&nbsp;</span><span>decompressed output size, growing a heap buffer until the compressed input is exhausted. A&nbsp;</span><span>small, highly compressible payload (for example gzip-compressed zeros) can therefore expand&nbsp;</span><span>to hundreds of megabytes of broker heap.</span></div><br><div>Impact:</div><br><div>An authenticated client can send a PushTelemetry request with a small compressed payload that&nbsp;<span>decompresses to a very large size, consuming broker heap out of proportion to the request&nbsp;</span><span>size. Repeated or concurrent requests can exhaust the broker heap and cause an&nbsp;</span><span>OutOfMemoryError, degrading or crashing the broker; a client that targets multiple brokers&nbsp;</span><span>can affect cluster availability. PushTelemetry is available to any authenticated client and is&nbsp;</span><span>not gated by an ACL.</span></div><br><div>Mitigation:</div><br><div>Upgrade to Apache Kafka 4.2.2, 4.3.1, or 4.4.0. On affected versions there is no configuration that fully&nbsp;<span>prevents the amplification, because telemetry.max.bytes bounds only the compressed size;&nbsp;</span><span>lowering telemetry.max.bytes reduces the worst-case decompressed size proportionally and is a&nbsp;</span><span>partial mitigation.</span></div><br><div>Resolution:</div><br><div>- From Apache Kafka 4.2.2, 4.3.1, and 4.4.0: ClientTelemetryUtils.decompress() enforces a maximum decompressed&nbsp;<span>size equal to telemetry.max.bytes (default 1 MB). Decompression reads in bounded chunks and&nbsp;</span><span>aborts with a TelemetryTooLargeException once the decompressed total exceeds the limit, so an&nbsp;</span><span>over-large or highly compressible payload is rejected instead of being fully expanded in&nbsp;</span><span>heap. The decompressed size is therefore bounded by default.&nbsp;</span></div>
+
+### References
+* https://kafka.apache.org/cve-list
+* https://lists.apache.org/thread/k8g1xkx84jzoswwsw8698mcdqk19yjow
+
+
+### Credits
+* Dawit Jeong <dev.d4v1d@gmail.com> (reporter)
+* Apoorv Mittal <apoorvmittal10@gmail.com> (remediation developer)
+* Andrew Schofield <aschofield@confluent.io> (remediation reviewer)
+
+
+## Broker silently skips JWT signature verification for SASL/OAUTHBEARER when the JWKS endpoint URL is not configured ## { #CVE-2026-110985 }
+
+CVE-2026-110985 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-110985) [\[CVE json\]](./CVE-2026-110985.cve.json) [\[OSV json\]](./CVE-2026-110985.osv.json)
+
+
+
+_Last updated: 2026-10-28T16:49:51.683Z_
+
+### Affected
+
+* Apache Kafka from 4.1.0 through 4.1.2
+* Apache Kafka from 4.2.0 through 4.2.1
+* Apache Kafka at 4.3.0
+
+
+### Description
+
+<div>A Kafka broker using SASL/OAUTHBEARER with the default validator&nbsp;<span>(sasl.oauthbearer.jwt.validator.class=DefaultJwtValidator) selects its implementation from&nbsp;</span><span>configuration. When sasl.oauthbearer.jwks.endpoint.url is set, the validator verifies the&nbsp;</span><span>JWT signature. When that URL is unset (the default) and no verification key resolver is&nbsp;</span><span>supplied, DefaultJwtValidator silently falls back to ClientJwtValidator, which does not&nbsp;</span><span>verify the JWT signature, algorithm, or issuer - and the broker starts with no warning or&nbsp;</span><span>error. This is the residual of CVE-2026-33557, whose fix restored signature verification&nbsp;</span><span>only on the path where the JWKS endpoint URL is set.</span></div><br><div>Impact:</div><div>A broker in this state accepts any structurally valid JWT, including "alg":"none" tokens. An&nbsp;<span>unauthenticated remote attacker who can reach the listener can forge a token asserting any&nbsp;</span><span>principal - including configured superusers - and gain full access to the cluster. Only&nbsp;</span><span>brokers that enable SASL/OAUTHBEARER validation without a JWKS endpoint URL (and without a&nbsp;</span><span>custom verification key resolver) are affected; brokers that set the URL verify signatures&nbsp;</span><span>and are not affected. Unlike CVE-2026-110952 (issuer/audience not enforced by default), here&nbsp;</span><span>no signature is verified at all.</span></div><br><div>Mitigation (all affected versions, no upgrade required):</div><div><div>Set sasl.oauthbearer.jwks.endpoint.url for every listener/mechanism that uses&nbsp;<span>OAuthBearerValidatorCallbackHandler, or configure a signature-verifying&nbsp;</span><span>sasl.oauthbearer.jwt.validator.class.<br></span><span><br>Resolution:</span></div><div><span>From Apache Kafka 4.2.2, 4.3.1, and 4.4.0: a broker that would fall back to the&nbsp;</span><span>non-verifying ClientJwtValidator fails to start with a ConfigException instead of running&nbsp;</span><span>without signature verification (secure by default).&nbsp;</span></div></div>
+
+### References
+* https://kafka.apache.org/cve-list
+* https://lists.apache.org/thread/704qcoyqffbsnqy3xxhxqcbj1wgtftzl
+
+
+### Credits
+* San Zhang <falaxe1642@gmail.com> (reporter)
+* Kaixuan Li <kaixuanli0131@gmail.com> (reporter)
+* Evan Zhou <ezhou@confluent.io> (remediation developer)
+
+
+## Broker does not enforce JWT issuer and audience validation for SASL/OAUTHBEARER by default ## { #CVE-2026-110952 }
+
+CVE-2026-110952 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-110952) [\[CVE json\]](./CVE-2026-110952.cve.json) [\[OSV json\]](./CVE-2026-110952.osv.json)
+
+
+
+_Last updated: 2026-10-28T16:48:19.584Z_
+
+### Affected
+
+* Apache Kafka from 3.1.0 before 4.4.0
+
+
+### Description
+
+<div></div><div><p>A Kafka broker that authenticates clients with SASL/OAUTHBEARER using the bundled JWKS-backed validator always verifies the JWT signature, but two further checks are only performed when explicitly configured:<br><br>- The issuer (iss) claim is verified only when sasl.oauthbearer.expected.issuer is set. When it is unset, a validly-signed token carrying the expected audience is accepted regardless of which issuer minted it.<br>- An audience (aud) claim is required only when sasl.oauthbearer.expected.audience is set. When it is unset, a validly-signed token that omits the aud claim is accepted. (A token that carries an aud claim is<br>  still rejected when no expected audience is configured.)<br><br>Both options default to unset and have been documented as optional (Importance LOW) since KIP-768 (3.1.0).<br><br>Impact:<br>  The exposure is realizable mainly in deployments whose JWKS endpoint serves signing keys for more than one issuer (a multi-tenant identity provider, an aggregated/shared JWKS, or shared signing keys): a token<br>  minted for a different issuer, or a token lacking an audience, may be accepted to authenticate — potentially as a higher-privileged principal. In a single-issuer deployment where the provider controls the iss<br>  claim and issues audience-scoped tokens, exposure is limited. The signature trust anchor remains enforced in all cases. This is distinct from CVE-2026-33557 (acceptance of unsigned/unvalidated tokens); here the<br>  signature is validated and only the issuer/audience checks are not enforced by default.<br><br>Mitigation (all affected versions, no upgrade required):<br>  Set both sasl.oauthbearer.expected.issuer (to your provider's exact iss value) and sasl.oauthbearer.expected.audience (to the audience(s) your brokers expect), per listener. Brokers that set these perform<br>  exact-match issuer/audience checks and are not affected. Both have been available since 3.1.0.<br><br>Resolution:<br>  - From Apache Kafka 4.4.0: a broker configured with a JWKS endpoint fails to start unless both sasl.oauthbearer.expected.issuer and sasl.oauthbearer.expected.audience are set (secure by default). Deployments that<br>  intentionally do not restrict the issuer and/or audience may opt out per axis with sasl.oauthbearer.allow.unverified.issuer=true and/or sasl.oauthbearer.allow.unverified.audience=true.</p></div>
+
+### References
+* https://kafka.apache.org/cve-list
+* https://lists.apache.org/thread/20wyf37mx05n4ytol69kq64kfj1gy6p4
+
+
+### Credits
+* Kai Aizen <kai.aizen.dev@gmail.com>, SnailSploit (reporter)
+* Evan Zhou <ezhou@confluent.io> (remediation developer)
 
 
 ## Possible RCE/Denial of service attack via SASL JAAS JndiLoginModule configuration ## { #CVE-2025-27819 }

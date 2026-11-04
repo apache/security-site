@@ -13,6 +13,31 @@ Do you want to disclose a potential security issue for Apache Pinot? Send your r
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Incorrect authorization in the single-stage query engine allows reading unauthorized dimension tables via lookup() ## { #CVE-2026-73322 }
+
+CVE-2026-73322 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73322) [\[CVE json\]](./CVE-2026-73322.cve.json) [\[OSV json\]](./CVE-2026-73322.osv.json)
+
+
+
+_Last updated: 2026-10-30T18:10:05.184Z_
+
+### Affected
+
+* Apache Pinot from 0.7.0 before 1.6.0
+
+
+### Description
+
+Incorrect Authorization vulnerability in the single-stage query engine of Apache Pinot.<br><br>When broker access control is enabled, the single-stage query engine authorizes only the table named in the query's FROM clause. The lookup() transform function identifies its dimension table with a string literal argument rather than through the FROM clause, so that table was never included in the authorization check. An authenticated user who is authorized for at least one table can therefore read columns from any dimension table in the cluster, including tables they have no access to, and can retrieve arbitrary rows of it by supplying primary key values directly. Per-principal row-level security filters configured on the dimension table are likewise not applied.<br><br>The multi-stage query engine is not affected.<br><br>This issue affects Apache Pinot: through 1.5.1<br><br>Users are recommended to upgrade to version 1.6.0, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/xy3f4m6ton96c2t83pr5bd8hwppvbvsn
+
+
+### Credits
+* n0mi1k Security (finder)
+
+
 ## Authentication bypass issue. If the path does not contain / and contain . authentication is not required ## { #CVE-2024-56325 }
 
 CVE-2024-56325 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-56325) [\[CVE json\]](./CVE-2024-56325.cve.json) [\[OSV json\]](./CVE-2024-56325.osv.json)

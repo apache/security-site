@@ -507,7 +507,7 @@ _Last updated: 2026-10-20T13:36:44.418Z_
 
 CVE-2026-73581 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-73581) [\[CVE json\]](./CVE-2026-73581.cve.json)
 
-_Last updated: 2026-09-30T14:53:46.318Z_
+_Last updated: 2026-10-29T10:01:31.500Z_
 
 ### Affected
 

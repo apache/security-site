@@ -891,6 +891,142 @@ _Last updated: 2026-02-03T15:15:22.918Z_
 * Karin Taliga (finder)
 
 
+## SQL injection via unsanitized opEvent in Audit Events search ## { #CVE-2026-114364 }
+
+CVE-2026-114364 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-114364) [\[CVE json\]](./CVE-2026-114364.cve.json) [\[OSV json\]](./CVE-2026-114364.osv.json)
+
+
+
+_Last updated: 2026-11-02T13:12:23.722Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.8
+* Apache Syncope from 4.1.0-M0 through 4.1.3
+
+
+### Description
+
+<p>Improper neutralization of special elements used in an SQL command ('SQL injection') vulnerability in Apache Syncope.</p><p>This CVE covers an incomplete fix for CVE-2026-77051: an administrator with adequate entitlements can achieve execution of arbitrary SQL via stacked queries, leveraging unsanitized opEvent parameters.<br>Reference: https://cve.org/CVERecord?id=CVE-2026-77051<br><br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.8, from 4.1.0-M0 through 4.1.3.</p><p>Users are recommended to upgrade to version 4.0.9 / 4.1.4, which fix this issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/j65oo441q5gpr4d0ljb644r9mdro2slm
+
+
+### Credits
+* Alex Palinkash (finder)
+
+
+## RCE via ProcessGroovyMethodsSandbox bypass ## { #CVE-2026-113687 }
+
+CVE-2026-113687 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-113687) [\[CVE json\]](./CVE-2026-113687.cve.json) [\[OSV json\]](./CVE-2026-113687.osv.json)
+
+
+
+_Last updated: 2026-11-02T13:10:09.590Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.8
+* Apache Syncope from 4.1.0-M0 through 4.1.3
+
+
+### Description
+
+<p>Improper isolation or compartmentalization vulnerability in Apache Syncope.</p><p>An administrator with adequate entitlements for Implementations can create a malicious Groovy class running untrusted code on a separate Thread, thus bypassing the Groovy security sandbox.</p><p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.8, from 4.1.0-M0 through 4.1.3.</p><p>Users are recommended to upgrade to version 4.0.9 / 4.1.4, which fix this issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/xxfmworgxt6bf1got05b5pqbb679zjp0
+
+
+### Credits
+* Alex Palinkash (finder)
+
+
+## Delegated administration boundaries can be bypassed for Realm update ## { #CVE-2026-113511 }
+
+CVE-2026-113511 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-113511) [\[CVE json\]](./CVE-2026-113511.cve.json) [\[OSV json\]](./CVE-2026-113511.osv.json)
+
+
+
+_Last updated: 2026-11-02T13:08:08.302Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.8
+* Apache Syncope from 4.1.0-M0 through 4.1.3
+
+
+### Description
+
+<p>Authorization bypass through User-Controlled key vulnerability in Apache Syncope.</p><p>A delegated administrator can relocate a Realm subtree across administrative realm boundaries without permission for&nbsp;the destination<br>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.8, from 4.1.0-M0 through 4.1.3.</p><p>Users are recommended to upgrade to version 4.0.9 / 4.1.4, which fix this issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/gn7y6k37xgody4wt4o981cywcovgw106
+
+
+### Credits
+* Muted Cybersecurity (finder)
+
+
+## AuthProfile value escalation via self-service update ## { #CVE-2026-110535 }
+
+CVE-2026-110535 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-110535) [\[CVE json\]](./CVE-2026-110535.cve.json) [\[OSV json\]](./CVE-2026-110535.osv.json)
+
+
+
+_Last updated: 2026-11-02T13:05:56.226Z_
+
+### Affected
+
+* Apache Syncope from 3.0.12 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.8
+* Apache Syncope from 4.1.0-M0 through 4.1.3
+
+
+### Description
+
+<p>Improper Privilege Management vulnerability in Apache Syncope.</p><p>AuthProfile self-updates allow non-admin users to configure impersonation for WA surrogate authentication.<br>This issue affects Apache Syncope: from 3.0.12 through 3.0.16, from 4.0.0-M0 through 4.0.8, from 4.1.0-M0 through 4.1.3.</p><p>Users are recommended to upgrade to version 4.0.9 / 4.1.4, which fix this issue.<br></p>
+
+### References
+* https://lists.apache.org/thread.html/25vbq0pvj8svk8gl8pjld1j0nzrdxy26
+
+
+### Credits
+* Yallea (finder)
+
+
+## Remote Code Execution via Flowable JUEL expression ## { #CVE-2026-109083 }
+
+CVE-2026-109083 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-109083) [\[CVE json\]](./CVE-2026-109083.cve.json) [\[OSV json\]](./CVE-2026-109083.osv.json)
+
+
+
+_Last updated: 2026-11-02T13:04:11.397Z_
+
+### Affected
+
+* Apache Syncope from 3.0.0-M0 through 3.0.16
+* Apache Syncope from 4.0.0-M0 through 4.0.8
+* Apache Syncope from 4.1.0 through 4.1.3
+
+
+### Description
+
+<p>Improper isolation or compartmentalization vulnerability in Apache Syncope.<br><br>An administrator with adequate entitlements can import arbitrary BPMN process definitions via the REST API and then start the process. When a BPMN process containing a JUEL expression is imported and started, the expression is executed directly on the server, with no sandbox.</p><p>This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.8, from 4.1.0 through 4.1.3.</p><p>Users are recommended to upgrade to version 4.0.9 / 4.1.4, which fix this issue by rejecting BPMN definitions including expression attributes.</p>
+
+### References
+* https://lists.apache.org/thread.html/zmzxzxv7wjzn071jgn069y2rqjpcrt3s
+
+
+### Credits
+* Josh Bressers (coordinator)
+* Yll Berisha (finder)
+
+
 ## Default AES key used for internal password encryption ## { #CVE-2025-65998 }
 
 CVE-2025-65998 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-65998) [\[CVE json\]](./CVE-2025-65998.cve.json) [\[OSV json\]](./CVE-2025-65998.osv.json)

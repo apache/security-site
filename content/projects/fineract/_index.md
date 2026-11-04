@@ -18,6 +18,63 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## SQL injection via ORDER BY parameters in the Center and datatables endpoints ## { #CVE-2026-65874 }
+
+CVE-2026-65874 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-65874) [\[CVE json\]](./CVE-2026-65874.cve.json) [\[OSV json\]](./CVE-2026-65874.osv.json)
+
+
+
+_Last updated: 2026-10-30T04:56:57.050Z_
+
+### Affected
+
+* Apache Fineract through 1.15.0
+
+
+### Description
+
+This issue affects Apache Fineract versions up to and including 1.15.0. The Center read endpoint (<code>GET /api/v1/centers</code>) and the datatable entry read endpoints (<code>GET /api/v1/datatables/{datatable}/{apptableId}</code> and <code>GET /api/v1/datatables/{datatable}/{apptableId}/{datatableId}</code>) concatenate caller-supplied ordering parameters (<code>orderBy</code>, <code>sortOrder</code>, <code>order</code>) directly into the SQL <code>ORDER BY</code> clause. The existing regex-based input validation can be bypassed, allowing time-based blind SQL injection by any authenticated user with read access to centers or to the targeted datatable.<br><br>Users are recommended to upgrade to 1.16.1 which fixes the issue.
+
+### References
+* https://github.com/apache/fineract/pull/6230
+* https://github.com/apache/fineract/pull/6277
+* https://lists.apache.org/thread/c4q539mkm5blnp5vdb72tzq6r9qg7bdh
+
+
+### Credits
+* Abdullah Kareem @cyberkareem (finder)
+* Louis Van der Walt of Lateran Technologies @SuperUserDone (reporter)
+* Terence Monteiro @terencemo (remediation developer)
+* Victor Romero @iohacker (remediation reviewer)
+
+
+## SQL injection vulnerability in Search API ## { #CVE-2026-64618 }
+
+CVE-2026-64618 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-64618) [\[CVE json\]](./CVE-2026-64618.cve.json) [\[OSV json\]](./CVE-2026-64618.osv.json)
+
+
+
+_Last updated: 2026-10-30T04:56:21.555Z_
+
+### Affected
+
+* Apache Fineract through 1.15.0
+
+
+### Description
+
+Improper Neutralization of Special Elements used in an SQL Command ("SQL Injection") vulnerability exists in Apache Fineract (through version 1.15.0). The vulnerability affects the <code>outStandingAmountPercentageCondition</code>&nbsp;parameter of the <code>/fineract-provider/api/v1/search/advance</code>&nbsp;HTTP API endpoint, allowing SQL injection due to insufficient input neutralization. Users are recommended to upgrade to version <code>1.16.1</code>, which will fix the issue.
+
+### References
+* https://github.com/apache/fineract/pull/6153
+* https://lists.apache.org/thread/s8orckszcd9x4d1qsloc046ppf5q9oc7
+
+
+### Credits
+* thiscodecc of MoyunSec Vlab and Bing (finder)
+* Adam Saghy (@adamsaghy) (remediation developer)
+
+
 ## Office list: SQL Injection via Subquery in orderBy ## { #CVE-2026-57821 }
 
 CVE-2026-57821 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-57821) [\[CVE json\]](./CVE-2026-57821.cve.json)
