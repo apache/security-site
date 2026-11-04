@@ -667,10 +667,102 @@ property into an HTTP response header without any validation. This can allow ove
 <ul>
 <li>Dawei Wang (finder)</li>
 </ul>
+<h2 id="CVE-2026-111822">ActiveMQ retains write access after live ACL revocation</h2>
+<p>CVE-2026-111822 <a href="https://cve.org/CVERecord?id=CVE-2026-111822">[CVE]</a> <a href="./CVE-2026-111822.cve.json">[CVE json]</a> <a href="./CVE-2026-111822.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-04T10:12:06.986Z</em></p>
+<h3 id="affected-25">Affected</h3>
+<ul>
+<li>Apache ActiveMQ from 6.0.0 before 6.3.3</li>
+<li>Apache ActiveMQ before 5.19.12</li>
+<li>Apache ActiveMQ Runtime Config from 6.0.0 before 6.3.3</li>
+<li>Apache ActiveMQ Runtime Config before 5.19.12</li>
+</ul>
+<h3 id="description-25">Description</h3>
+<p>Improper invalidation of cached authorizations vulnerability in Apache ActiveMQ, Apache ActiveMQ Runtime Config.</p><p>After the runtime configuration plugin removes a principal's write grant on a destination, an authenticated connection opened before the change can keep sending to that destination, including through a new anonymous producer, while fresh connections and new explicit producers are denied.</p><p><span>This issue affects Apache ActiveMQ: from 6.0.0 before 6.3.3, before 5.19.12; Apache ActiveMQ Runtime Config: from 6.0.0 before 6.3.3, before 5.19.12.</span></p><p>Users are recommended to upgrade to version 6.4.0, 6.3.3 or 5.19.12, which fixes the issue.</p>
+<h3 id="references-25">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/b5gop0kwsm4sr1pgdrfcd14q8hx942j5">https://lists.apache.org/thread/b5gop0kwsm4sr1pgdrfcd14q8hx942j5</a></li>
+</ul>
+<h3 id="credits-23">Credits</h3>
+<ul>
+<li>hataehoon (finder)</li>
+</ul>
+<h2 id="CVE-2026-108949">Repeated rejected temporary destination consumer requests can lead to broker OOM</h2>
+<p>CVE-2026-108949 <a href="https://cve.org/CVERecord?id=CVE-2026-108949">[CVE]</a> <a href="./CVE-2026-108949.cve.json">[CVE json]</a> <a href="./CVE-2026-108949.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-04T10:09:30.448Z</em></p>
+<h3 id="affected-26">Affected</h3>
+<ul>
+<li>Apache ActiveMQ from 6.0.0 before 6.3.3</li>
+<li>Apache ActiveMQ before 5.19.12</li>
+<li>ActiveMQ Broker from 6.0.0 before 6.3.3</li>
+<li>ActiveMQ Broker before 5.19.12</li>
+</ul>
+<h3 id="description-26">Description</h3>
+<p>Denial of Service via OOM vulnerability in Apache ActiveMQ, ActiveMQ Broker.</p><p>An authenticated OpenWire client that sends a ConsumerInfo for a temporary queue/topic owned by another connection is rejected with InvalidDestinationException, but the rejected Subscription is left behind in the region's subscriptions map. Repeating the request&nbsp;<span>leaks broker heap until OOM because the broker does not clean up the rejected subscriptions in the map.</span></p><p>This issue affects Apache ActiveMQ: from 6.0.0 before 6.3.3, before 5.19.12; ActiveMQ Broker: from 6.0.0 before 6.3.3, before 5.19.12.</p><p>Users are recommended to upgrade to version 6.4.0, 6.3.3, or 5.19.12, which fixes the issue.</p>
+<h3 id="references-26">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/2l1jbc8j88w1n9bd44vm9bjtj9t3o80n">https://lists.apache.org/thread/2l1jbc8j88w1n9bd44vm9bjtj9t3o80n</a></li>
+</ul>
+<h2 id="CVE-2026-108946">The broker does not verify user provided connection id matches connection</h2>
+<p>CVE-2026-108946 <a href="https://cve.org/CVERecord?id=CVE-2026-108946">[CVE]</a> <a href="./CVE-2026-108946.cve.json">[CVE json]</a> <a href="./CVE-2026-108946.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-04T10:14:04.951Z</em></p>
+<h3 id="affected-27">Affected</h3>
+<ul>
+<li>Apache ActiveMQ from 6.0.0 before 6.3.3</li>
+<li>Apache ActiveMQ before 5.19.12</li>
+<li>ActiveMQ Broker from 6.0.0 before 6.3.3</li>
+<li>ActiveMQ Broker before 5.19.12</li>
+</ul>
+<h3 id="description-27">Description</h3>
+<p>Improper input validation vulnerability in Apache ActiveMQ, Apache ActiveMQ KahaDB.</p><p>The ActiveMQ broker resolves connection, session and consumer state from ids that are user provided and in some scenarios does not validate that they ids are bound to that user. This allows an authenticated client to spoof another user's ids. This allows:</p><p></p><ul><li>&nbsp;an authenticated client consumes from another connection's temporary queue/topic by putting the victim's connection id in its own ConsumerId, bypassing the broker-side ownership check.&nbsp;</li><li>a duplicate ConsumerId registration is only logged, after which the attacker's RemoveInfo or disconnect tears down the victim's live subscription</li><li>a forged MessageAck for the victim's ConsumerId permanently deletes an in-flight, unacknowledged message.</li></ul><p></p><p><span>This issue affects Apache ActiveMQ: from 6.0.0 before 6.3.3, before 5.19.12; Apache ActiveMQ KahaDB: from 6.0.0 before 6.3.3, before 5.19.12.</span></p><p>Users are recommended to upgrade to version 6.4.0, 6.3.3, or 5.19.12, which fixes the issue.</p>
+<h3 id="references-27">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/0spj0m846vhw3cjyfmzsy3l8vxh6f5t6">https://lists.apache.org/thread/0spj0m846vhw3cjyfmzsy3l8vxh6f5t6</a></li>
+</ul>
+<h3 id="credits-24">Credits</h3>
+<ul>
+<li>zerovuln labs <a href="mailto:zerovulnlabs@outlook.com">zerovulnlabs@outlook.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2026-108500">LDAPAuthorizationMap allows authorization bypass via DN injection</h2>
+<p>CVE-2026-108500 <a href="https://cve.org/CVERecord?id=CVE-2026-108500">[CVE]</a> <a href="./CVE-2026-108500.cve.json">[CVE json]</a></p>
+<p><em>Last updated: 2026-11-04T10:37:54.254Z</em></p>
+<h3 id="affected-28">Affected</h3>
+<ul>
+<li>Apache ActiveMQ from 6.3.0 before 6.3.3</li>
+<li>Apache ActiveMQ from 5.19.0 before 5.19.12</li>
+<li>Apache ActiveMQ at 6.4.0 unaffected</li>
+</ul>
+<h3 id="description-28">Description</h3>
+<p>Input validation vulnerability in Apache ActiveMQ configured to use the LDAPAuthorizationMapPlugin allows&nbsp;<span>an authenticated attacker to</span><span>&nbsp;create or address a destination with a crafted name containing LDAP DN</span><span>&nbsp;special characters (such as comma, plus, equals, backslash) can manipulate</span><span>&nbsp;the LDAP search base used for ACL lookups.</span></p><p>This issue affects Apache ActiveMQ: from 6.3.0 before 6.3.3, from 5.19.0 before 5.19.12.</p><p>Users are recommended to upgrade to version 6.4.0, 6.3.3 or 5.19.12, which fixes the issue.</p>
+<h3 id="references-28">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/0oh4k4ty6hv56d4sydjp26l95f4bsnxt">https://lists.apache.org/thread/0oh4k4ty6hv56d4sydjp26l95f4bsnxt</a></li>
+</ul>
+<h3 id="credits-25">Credits</h3>
+<ul>
+<li>Rishabh Soni (Azmendus) <a href="mailto:rishabhv704@gmail.com">rishabhv704@gmail.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2026-103582">Unbounded/Unvalidated Length Fields in Apache.NMS.OpenWire Unmarshalling (DoS)</h2>
+<p>CVE-2026-103582 <a href="https://cve.org/CVERecord?id=CVE-2026-103582">[CVE]</a> <a href="./CVE-2026-103582.cve.json">[CVE json]</a> <a href="./CVE-2026-103582.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-04T10:16:44.161Z</em></p>
+<h3 id="affected-29">Affected</h3>
+<ul>
+<li>Apache ActiveMQ NMS OpenWire Client Library through 2.2.0</li>
+</ul>
+<h3 id="description-29">Description</h3>
+<p>Unbounded memory allocation and missing frame size validation in Apache NMS ActiveMQ (the .NET OpenWire client, package Apache.NMS.ActiveMQ) before 2.3.0.</p><p>The OpenWire unmarshalling code trusted the frame size and the length and count fields read from the network. It did not enforce a maximum frame size, and it did not check that decoded lengths fit within the frame being read. A malicious or compromised broker, or an attacker able to intercept and modify an unencrypted connection, could send a crafted OpenWire frame with an oversized or negative length. This could cause the client to attempt very large memory allocations, leading to excessive memory consumption, an OutOfMemoryException or an uncaught exception, and a denial of service of the client application.</p><p>Users are recommended to upgrade to version 2.3.0, which enforces a configurable maximum frame size and validates lengths against the size of the frame being read.&nbsp;</p>
+<h3 id="references-29">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/vgn9pnsc7g9dhcctt804kd50tvs0ndq0">https://lists.apache.org/thread/vgn9pnsc7g9dhcctt804kd50tvs0ndq0</a></li>
+</ul>
+<h3 id="credits-26">Credits</h3>
+<ul>
+<li>Biswajeet Ray (finder)</li>
+</ul>
 <h2 id="CVE-2025-66168">MQTT control packet remaining length field is not properly validated</h2>
 <p>CVE-2025-66168 <a href="https://cve.org/CVERecord?id=CVE-2025-66168">[CVE]</a> <a href="./CVE-2025-66168.cve.json">[CVE json]</a> <a href="./CVE-2025-66168.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-04-10T10:52:26.234Z</em></p>
-<h3 id="affected-25">Affected</h3>
+<h3 id="affected-30">Affected</h3>
 <ul>
 <li>Apache ActiveMQ before 5.19.2</li>
 <li>Apache ActiveMQ from 6.0.0 before 6.1.9</li>
@@ -682,82 +774,82 @@ property into an HTTP response header without any validation. This can allow ove
 <li>Apache ActiveMQ MQTT Module from 6.0.0 before 6.1.9</li>
 <li>Apache ActiveMQ MQTT Module from 6.2.0 before 6.2.1</li>
 </ul>
-<h3 id="description-25">Description</h3>
+<h3 id="description-30">Description</h3>
 <p><span style="background-color: rgb(255, 255, 255);"><b>WARNING:</b><br><br></span><span style="background-color: rgb(239, 250, 102);">Users of 6.x should upgrade to 6.2.4 or later as the fix was missed in previous 6.x releases.</span><span style="background-color: rgb(255, 255, 255);"><br><br>See the&nbsp; following for more details:<br><a target="_blank" rel="nofollow" href="https://activemq.apache.org/security-advisories.data/CVE-2026-40046-announcement.txt">https://activemq.apache.org/security-advisories.data/CVE-2026-40046-announcement.txt</a><br><a target="_blank" rel="nofollow" href="https://www.cve.org/CVERecord?id=CVE-2026-40046">https://www.cve.org/CVERecord?id=CVE-2026-40046</a><br></span><span style="background-color: rgb(255, 255, 255);"><br></span></p><p><span style="background-color: rgb(255, 255, 255);"><b>Original Report:</b></span></p><p><span style="background-color: rgb(255, 255, 255);">Apache ActiveMQ does not properly validate the remaining length field which may lead to an overflow during the decoding of malformed packets.&nbsp;</span><span style="background-color: rgb(255, 255, 255);">When this integer overflow occurs, ActiveMQ may incorrectly compute the total Remaining Length and subsequently misinterpret the payload as multiple MQTT control packets which makes<span style="background-color: rgb(255, 255, 255);">&nbsp;the broker susceptible to unexpected behavior when interacting with non-compliant clients.</span>&nbsp;</span><span style="background-color: rgb(255, 255, 255);">This behavior violates the MQTT v3.1.1 specification, which restricts Remaining Length to a maximum of 4 bytes.</span>&nbsp;The scenario occurs on established connections after the authentication process. Brokers that are not enabling mqtt transport connectors are not impacted.</p><p>This issue affects Apache ActiveMQ: before 5.19.2, 6.0.0 to 6.1.8, and 6.2.0</p><p>Users are recommended to upgrade to version 5.19.2, 6.1.9, or 6.2.1, which fixes the issue.</p>
-<h3 id="references-25">References</h3>
+<h3 id="references-30">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/13n8mkrb2jf2y6yyhpgrkmpqcm7djyto">https://lists.apache.org/thread/13n8mkrb2jf2y6yyhpgrkmpqcm7djyto</a></li>
 <li><a href="https://www.cve.org/CVERecord?id=CVE-2026-40046">https://www.cve.org/CVERecord?id=CVE-2026-40046</a></li>
 <li><a href="https://activemq.apache.org/security-advisories.data/CVE-2026-40046-announcement.txt">https://activemq.apache.org/security-advisories.data/CVE-2026-40046-announcement.txt</a></li>
 </ul>
-<h3 id="credits-23">Credits</h3>
+<h3 id="credits-27">Credits</h3>
 <ul>
 <li>Gai Tanaka <a href="mailto:641.work123@gmail.com">641.work123@gmail.com</a> (finder)</li>
 </ul>
 <h2 id="CVE-2025-54539">Deserialization of Untrusted Data</h2>
 <p>CVE-2025-54539 <a href="https://cve.org/CVERecord?id=CVE-2025-54539">[CVE]</a> <a href="./CVE-2025-54539.cve.json">[CVE json]</a> <a href="./CVE-2025-54539.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-10-16T08:26:04.874Z</em></p>
-<h3 id="affected-26">Affected</h3>
+<h3 id="affected-31">Affected</h3>
 <ul>
 <li>Apache ActiveMQ NMS AMQP Client through 2.3.0</li>
 </ul>
-<h3 id="description-26">Description</h3>
+<h3 id="description-31">Description</h3>
 <p>A Deserialization of Untrusted Data vulnerability exists in the Apache ActiveMQ NMS AMQP Client.<br><br>This issue affects all versions of Apache ActiveMQ NMS AMQP up to and including 2.3.0, when establishing connections to untrusted AMQP servers. Malicious servers could exploit unbounded deserialization logic present in the client to craft responses that may lead to arbitrary code execution on the client side.<br><br>Although version 2.1.0 introduced a mechanism to restrict deserialization via allow/deny lists, the protection was found to be bypassable under certain conditions.<br><br>In line with Microsoft’s deprecation of binary serialization in .NET 9, the project is evaluating the removal of .NET binary serialization support from the NMS API entirely in future releases.<br><br>Mitigation and Recommendations:<br>Users are strongly encouraged to upgrade to version 2.4.0 or later, which resolves the issue. Additionally, projects depending on NMS-AMQP should migrate away from .NET binary serialization as part of a long-term hardening strategy.</p>
-<h3 id="references-26">References</h3>
+<h3 id="references-31">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/9k684j07ljrshy3hxwhj5m0xjmkz1g2n">https://lists.apache.org/thread/9k684j07ljrshy3hxwhj5m0xjmkz1g2n</a></li>
 </ul>
-<h3 id="credits-24">Credits</h3>
+<h3 id="credits-28">Credits</h3>
 <ul>
 <li>Security Research Team @ Endor Labs (finder)</li>
 </ul>
 <h2 id="CVE-2025-29953">deserialization allowlist bypass</h2>
 <p>CVE-2025-29953 <a href="https://cve.org/CVERecord?id=CVE-2025-29953">[CVE]</a> <a href="./CVE-2025-29953.cve.json">[CVE json]</a> <a href="./CVE-2025-29953.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-04-18T15:23:28.244Z</em></p>
-<h3 id="affected-27">Affected</h3>
+<h3 id="affected-32">Affected</h3>
 <ul>
 <li>Apache ActiveMQ NMS OpenWire Client before 2.1.1</li>
 </ul>
-<h3 id="description-27">Description</h3>
+<h3 id="description-32">Description</h3>
 <p>Deserialization of Untrusted Data vulnerability in Apache ActiveMQ NMS OpenWire Client.</p><p>This issue affects Apache ActiveMQ NMS OpenWire Client before 2.1.1 when performing connections to untrusted servers. Such servers could abuse the unbounded deserialization in the client to provide malicious responses that may eventually cause arbitrary code execution on the client. Version 2.1.0 introduced a allow/denylist feature to restrict deserialization, but this feature could be bypassed.</p><p>The .NET team has deprecated the built-in .NET binary serialization feature starting with .NET 9 and suggests migrating away from binary serialization. The project is considering to follow suit and drop this part of the NMS API altogether.</p><p>Users are recommended to upgrade to version 2.1.1, which fixes the issue. We also recommend to migrate away from relying on .NET binary serialization as a hardening method for the future.</p>
-<h3 id="references-27">References</h3>
+<h3 id="references-32">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/vc1sj9y3056d3kkhcvrs9fyw5w8kpmlx">https://lists.apache.org/thread/vc1sj9y3056d3kkhcvrs9fyw5w8kpmlx</a></li>
 </ul>
-<h3 id="credits-25">Credits</h3>
+<h3 id="credits-29">Credits</h3>
 <ul>
 <li>g7shot working with Trend Zero Day Initiative (finder)</li>
 </ul>
 <h2 id="CVE-2025-27533">Unchecked buffer length can cause excessive memory allocation</h2>
 <p>CVE-2025-27533 <a href="https://cve.org/CVERecord?id=CVE-2025-27533">[CVE]</a> <a href="./CVE-2025-27533.cve.json">[CVE json]</a> <a href="./CVE-2025-27533.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-05-07T08:58:58.430Z</em></p>
-<h3 id="affected-28">Affected</h3>
+<h3 id="affected-33">Affected</h3>
 <ul>
 <li>Apache ActiveMQ from 6.0.0 before 6.1.6</li>
 <li>Apache ActiveMQ from 5.18.0 before 5.18.7</li>
 <li>Apache ActiveMQ from 5.17.0 before 5.17.7</li>
 <li>Apache ActiveMQ from 5.16.0 before 5.16.8</li>
 </ul>
-<h3 id="description-28">Description</h3>
+<h3 id="description-33">Description</h3>
 <p>Memory Allocation with Excessive Size Value vulnerability in Apache ActiveMQ.</p><span style="background-color: rgb(255, 255, 255);">During unmarshalling of OpenWire commands the size value of buffers was not properly validated which could lead to excessive memory allocation and be exploited to cause a denial of service (DoS) by depleting process memory, thereby affecting applications and services that rely on the availability of the ActiveMQ broker when not using mutual TLS connections.</span><br><p>This issue affects Apache ActiveMQ: from 6.0.0 before 6.1.6, from 5.18.0 before 5.18.7, from 5.17.0 before 5.17.7, before 5.16.8. ActiveMQ 5.19.0 is not affected.</p><p>Users are recommended to upgrade to version 6.1.6+, 5.19.0+,  5.18.7+, 5.17.7, or 5.16.8 or which fixes the issue.</p><p>Existing users may implement mutual TLS to mitigate the risk on affected brokers.</p>
-<h3 id="references-28">References</h3>
+<h3 id="references-33">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/8hcm25vf7mchg4zbbhnlx2lc5bs705hg">https://lists.apache.org/thread/8hcm25vf7mchg4zbbhnlx2lc5bs705hg</a></li>
 </ul>
 <h2 id="CVE-2025-27427">Address routing-type can be updated by user without the createAddress permission</h2>
 <p>CVE-2025-27427 <a href="https://cve.org/CVERecord?id=CVE-2025-27427">[CVE]</a> <a href="./CVE-2025-27427.cve.json">[CVE json]</a> <a href="./CVE-2025-27427.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-04-01T07:26:53.803Z</em></p>
-<h3 id="affected-29">Affected</h3>
+<h3 id="affected-34">Affected</h3>
 <ul>
 <li>Apache ActiveMQ Artemis from 2.0.0 through 2.39.0</li>
 </ul>
-<h3 id="description-29">Description</h3>
+<h3 id="description-34">Description</h3>
 <p>A vulnerability exists in Apache ActiveMQ Artemis whereby a user with the createDurableQueue or createNonDurableQueue permission on an address can augment the routing-type supported by that address even if said user doesn't have the createAddress permission for that particular address. When combined with the send permission and automatic queue creation a user could successfully send a message with a routing-type not supported by the address when that message should actually be rejected on the basis that the user doesn't have permission to change the routing-type of the address.</p><p>This issue affects Apache ActiveMQ Artemis from 2.0.0 through 2.39.0.</p><p>Users are recommended to upgrade to version 2.40.0 which fixes the issue.</p>
-<h3 id="references-29">References</h3>
+<h3 id="references-34">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/8dzlm2vkqphyrnkrby8r8kzndsm5o6x8">https://lists.apache.org/thread/8dzlm2vkqphyrnkrby8r8kzndsm5o6x8</a></li>
 </ul>
-<h3 id="credits-26">Credits</h3>
+<h3 id="credits-30">Credits</h3>
 <ul>
 <li>Eojin Lee <a href="mailto:djwls7179@gmail.com">djwls7179@gmail.com</a> (reporter)</li>
 <li>Dain Lee <a href="mailto:ledain5094@gmail.com">ledain5094@gmail.com</a> (finder)</li>
@@ -768,61 +860,61 @@ property into an HTTP response header without any validation. This can allow ove
 <h2 id="CVE-2025-27391">Passwords leaking from broker properties in the debug log</h2>
 <p>CVE-2025-27391 <a href="https://cve.org/CVERecord?id=CVE-2025-27391">[CVE]</a> <a href="./CVE-2025-27391.cve.json">[CVE json]</a> <a href="./CVE-2025-27391.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-04-09T14:42:30.509Z</em></p>
-<h3 id="affected-30">Affected</h3>
+<h3 id="affected-35">Affected</h3>
 <ul>
 <li>Apache ActiveMQ Artemis from 1.5.1 before 2.40.0</li>
 </ul>
-<h3 id="description-30">Description</h3>
+<h3 id="description-35">Description</h3>
 <p>Insertion of Sensitive Information into Log File vulnerability in Apache ActiveMQ Artemis. All the values of the broker properties are&nbsp;logged when the org.apache.activemq.artemis.core.config.impl.ConfigurationImpl <span style="background-color: rgb(255, 255, 255);">logger has the&nbsp;</span>debug level enabled.</p><p>This issue affects Apache ActiveMQ Artemis: from 1.5.1 before 2.40.0. It can be mitigated by restricting log access to only trusted users.</p><p>Users are recommended to upgrade to version 2.40.0, which fixes the issue.</p>
-<h3 id="references-30">References</h3>
+<h3 id="references-35">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/25p96cvzl1mkt29lwm2d8knklkoqolps">https://lists.apache.org/thread/25p96cvzl1mkt29lwm2d8knklkoqolps</a></li>
 </ul>
-<h3 id="credits-27">Credits</h3>
+<h3 id="credits-31">Credits</h3>
 <ul>
 <li>Rafael Yanez Illescas <a href="mailto:ryanezil@redhat.com">ryanezil@redhat.com</a> (finder)</li>
 </ul>
 <h2 id="CVE-2024-32114">Jolokia and REST API were not secured with default configuration</h2>
 <p>CVE-2024-32114 <a href="https://cve.org/CVERecord?id=CVE-2024-32114">[CVE]</a> <a href="./CVE-2024-32114.cve.json">[CVE json]</a> <a href="./CVE-2024-32114.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-05-01T16:07:22.140Z</em></p>
-<h3 id="affected-31">Affected</h3>
+<h3 id="affected-36">Affected</h3>
 <ul>
 <li>Apache ActiveMQ from 6.0.0 through 6.1.1</li>
 </ul>
-<h3 id="description-31">Description</h3>
+<h3 id="description-36">Description</h3>
 <p>In Apache ActiveMQ 6.x, the default configuration doesn&rsquo;t secure the API web context (where the Jolokia JMX REST API and the Message REST API are located).<br>It means that anyone can use these layers without any required authentication. Potentially, anyone can interact with the broker (using Jolokia JMX REST API) and/or produce/consume messages or purge/delete destinations (using the Message REST API).<br><br>To mitigate, users can update the default conf/jetty.xml configuration file to add authentication requirement:<br><blockquote><pre>&lt;bean id=&ldquo;securityConstraintMapping&rdquo; class=&ldquo;org.eclipse.jetty.security.ConstraintMapping&rdquo;&gt;
   &lt;property name=&ldquo;constraint&rdquo; ref=&ldquo;securityConstraint&rdquo; /&gt;
   &lt;property name=&ldquo;pathSpec&rdquo; value=&quot;/&quot; /&gt;
 &lt;/bean&gt;</pre></blockquote>Or we encourage users to upgrade to Apache ActiveMQ 6.1.2 where the default configuration has been updated with authentication by default.<br></p>
-<h3 id="references-31">References</h3>
+<h3 id="references-36">References</h3>
 <ul>
 <li><a href="https://activemq.apache.org/security-advisories.data/CVE-2024-32114-announcement.txt">https://activemq.apache.org/security-advisories.data/CVE-2024-32114-announcement.txt</a></li>
 </ul>
-<h3 id="credits-28">Credits</h3>
+<h3 id="credits-32">Credits</h3>
 <ul>
 <li>Martin Zeissig (finder)</li>
 </ul>
 <h2 id="CVE-2023-50780">Authenticated users could perform RCE via Jolokia MBeans</h2>
 <p>CVE-2023-50780 <a href="https://cve.org/CVERecord?id=CVE-2023-50780">[CVE]</a> <a href="./CVE-2023-50780.cve.json">[CVE json]</a> <a href="./CVE-2023-50780.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-10-14T16:03:33.323Z</em></p>
-<h3 id="affected-32">Affected</h3>
+<h3 id="affected-37">Affected</h3>
 <ul>
 <li>Apache ActiveMQ Artemis before 2.29.0</li>
 </ul>
-<h3 id="description-32">Description</h3>
+<h3 id="description-37">Description</h3>
 <p>Apache ActiveMQ Artemis allows access to diagnostic information and controls through MBeans, which are also exposed through the authenticated Jolokia endpoint. Before version 2.29.0, this also included the Log4J2 MBean. This MBean is not meant for exposure to non-administrative users. This could eventually allow an authenticated attacker to write arbitrary files to the filesystem and indirectly achieve RCE.<br></p><p>Users are recommended to upgrade to version 2.29.0 or later, which fixes the issue.</p>
-<h3 id="references-32">References</h3>
+<h3 id="references-37">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/63b78shqz312phsx7v1ryr7jv7bprg58">https://lists.apache.org/thread/63b78shqz312phsx7v1ryr7jv7bprg58</a></li>
 </ul>
-<h3 id="credits-29">Credits</h3>
+<h3 id="credits-33">Credits</h3>
 <ul>
 <li>Matei &ldquo;Mal&rdquo; Badanoiu (finder)</li>
 </ul>
 <h2 id="CVE-2023-46604">Unbounded deserialization causes ActiveMQ to be vulnerable to a remote code execution (RCE) attack</h2>
 <p>CVE-2023-46604 <a href="https://cve.org/CVERecord?id=CVE-2023-46604">[CVE]</a> <a href="./CVE-2023-46604.cve.json">[CVE json]</a> <a href="./CVE-2023-46604.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2023-11-28T15:02:26.708Z</em></p>
-<h3 id="affected-33">Affected</h3>
+<h3 id="affected-38">Affected</h3>
 <ul>
 <li>Apache ActiveMQ from 5.18.0 before 5.18.3</li>
 <li>Apache ActiveMQ from 5.17.0 before 5.17.6</li>
@@ -833,7 +925,7 @@ property into an HTTP response header without any validation. This can allow ove
 <li>Apache ActiveMQ Legacy OpenWire Module from 5.16.0 before 5.16.7</li>
 <li>Apache ActiveMQ Legacy OpenWire Module from 5.8.0 before 5.15.16</li>
 </ul>
-<h3 id="description-33">Description</h3>
+<h3 id="description-38">Description</h3>
 <div>The Java OpenWire protocol marshaller is vulnerable to Remote Code 
 Execution. This vulnerability may allow a remote attacker with network 
 access to either a Java-based OpenWire broker or client to run arbitrary
@@ -842,7 +934,7 @@ protocol to cause either the client or the broker (respectively) to
 instantiate any class on the classpath.</div><div><br></div><div>Users are recommended to upgrade
  both brokers and clients to version 5.15.16, 5.16.7, 5.17.6, or 5.18.3 
 which fixes this issue.</div>
-<h3 id="references-33">References</h3>
+<h3 id="references-38">References</h3>
 <ul>
 <li><a href="https://activemq.apache.org/security-advisories.data/CVE-2023-46604-announcement.txt">https://activemq.apache.org/security-advisories.data/CVE-2023-46604-announcement.txt</a></li>
 <li><a href="https://www.openwall.com/lists/oss-security/2023/10/27/5">https://www.openwall.com/lists/oss-security/2023/10/27/5</a></li>
@@ -850,21 +942,21 @@ which fixes this issue.</div>
 <li><a href="https://packetstormsecurity.com/files/175676/Apache-ActiveMQ-Unauthenticated-Remote-Code-Execution.html">https://packetstormsecurity.com/files/175676/Apache-ActiveMQ-Unauthenticated-Remote-Code-Execution.html</a></li>
 <li><a href="https://lists.debian.org/debian-lts-announce/2023/11/msg00013.html">https://lists.debian.org/debian-lts-announce/2023/11/msg00013.html</a></li>
 </ul>
-<h3 id="credits-30">Credits</h3>
+<h3 id="credits-34">Credits</h3>
 <ul>
 <li><a href="mailto:yejie@threatbook.cn">yejie@threatbook.cn</a> (finder)</li>
 </ul>
 <h2 id="CVE-2022-41678">Insufficient API restrictions on Jolokia allow authenticated users to perform RCE</h2>
 <p>CVE-2022-41678 <a href="https://cve.org/CVERecord?id=CVE-2022-41678">[CVE]</a> <a href="./CVE-2022-41678.cve.json">[CVE json]</a></p>
 <p><em>Last updated: 2024-05-31T08:42:39.786Z</em></p>
-<h3 id="affected-34">Affected</h3>
+<h3 id="affected-39">Affected</h3>
 <ul>
 <li>Apache ActiveMQ before 5.16.6</li>
 <li>Apache ActiveMQ from 5.17.0 before 5.17.4</li>
 <li>Apache ActiveMQ at 5.18.0 unaffected</li>
 <li>Apache ActiveMQ at 6.0.0 unaffected</li>
 </ul>
-<h3 id="description-34">Description</h3>
+<h3 id="description-39">Description</h3>
 <p><span style="background-color: rgb(255, 255, 255);">Once an user is authenticated on Jolokia, he can potentially trigger arbitrary code execution. <br><br>In details, in ActiveMQ configurations, jetty allows
 org.jolokia.http.AgentServlet to handler request to /api/jolokia<br><br>org.jolokia.http.HttpRequestHandler#handlePostRequest is able to
 create JmxRequest through JSONObject. And calls to
@@ -880,14 +972,14 @@ various mbeans. One example is unrestricted deserialization in jdk.management.jf
 3 Call startRecording.
 <br>
 4 Call copyTo method. The webshell will be written to a .jsp file.<br><br></span>The mitigation is to restrict (by default) the actions authorized on Jolokia, or disable Jolokia.<br>A more restrictive Jolokia configuration has been defined in default ActiveMQ distribution. We encourage users to upgrade to ActiveMQ distributions version including updated Jolokia configuration: 5.16.6, 5.17.4, 5.18.0, 6.0.0.<br></p>
-<h3 id="references-34">References</h3>
+<h3 id="references-39">References</h3>
 <ul>
 <li><a href="https://activemq.apache.org/security-advisories.data/CVE-2022-41678-announcement.txt">https://activemq.apache.org/security-advisories.data/CVE-2022-41678-announcement.txt</a></li>
 <li><a href="https://lists.apache.org/thread/7g17kwbtjl011mm4tr8bn1vnoq9wh4sl">https://lists.apache.org/thread/7g17kwbtjl011mm4tr8bn1vnoq9wh4sl</a></li>
 <li><a href="https://www.openwall.com/lists/oss-security/2023/11/28/1">https://www.openwall.com/lists/oss-security/2023/11/28/1</a></li>
 <li><a href="https://security.netapp.com/advisory/ntap-20240216-0004/">https://security.netapp.com/advisory/ntap-20240216-0004/</a></li>
 </ul>
-<h3 id="credits-31">Credits</h3>
+<h3 id="credits-35">Credits</h3>
 <ul>
 <li><a href="mailto:wangxin@threatbook.cn">wangxin@threatbook.cn</a> (finder)</li>
 <li><a href="mailto:wangzhendong@threatbook.cn">wangzhendong@threatbook.cn</a> (finder)</li>
@@ -897,78 +989,78 @@ various mbeans. One example is unrestricted deserialization in jdk.management.jf
 <h2 id="CVE-2022-35278">HTML Injection in ActiveMQ Artemis Web Console</h2>
 <p>CVE-2022-35278 <a href="https://cve.org/CVERecord?id=CVE-2022-35278">[CVE]</a> <a href="./CVE-2022-35278.cve.json">[CVE json]</a> <a href="./CVE-2022-35278.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-08-18T07:52:49.472Z</em></p>
-<h3 id="affected-35">Affected</h3>
+<h3 id="affected-40">Affected</h3>
 <ul>
 <li>Apache ActiveMQ Artemis from unspecified through 2.23.1</li>
 </ul>
-<h3 id="description-35">Description</h3>
+<h3 id="description-40">Description</h3>
 <p>In Apache ActiveMQ Artemis prior to 2.24.0, an attacker could show malicious content and/or redirect users to a malicious URL in the web console by using HTML in the name of an address or queue.</p>
-<h3 id="references-35">References</h3>
+<h3 id="references-40">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/bh6y81wtotg75337bpvxcjy436zfgf3n">https://lists.apache.org/thread/bh6y81wtotg75337bpvxcjy436zfgf3n</a></li>
 </ul>
-<h3 id="credits-32">Credits</h3>
+<h3 id="credits-36">Credits</h3>
 <ul>
 <li>Apache ActiveMQ would like to thank Yash Pandya (Digital14), Rajatkumar Karmarkar (Digital14), and Likhith Cheekatipalle (Digital14) for reporting this issue.</li>
 </ul>
 <h2 id="CVE-2022-23913">Apache ActiveMQ Artemis DoS</h2>
 <p>CVE-2022-23913 <a href="https://cve.org/CVERecord?id=CVE-2022-23913">[CVE]</a> <a href="./CVE-2022-23913.cve.json">[CVE json]</a> <a href="./CVE-2022-23913.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-02-04T08:26:48.236Z</em></p>
-<h3 id="affected-36">Affected</h3>
+<h3 id="affected-41">Affected</h3>
 <ul>
 <li>Apache ActiveMQ Artemis from 2.19.0 before 2.20.0</li>
 </ul>
-<h3 id="description-36">Description</h3>
+<h3 id="description-41">Description</h3>
 <p>In Apache ActiveMQ Artemis prior to 2.20.0 or 2.19.1, an attacker could partially disrupt availability (DoS) through uncontrolled resource consumption of memory.</p>
-<h3 id="references-36">References</h3>
+<h3 id="references-41">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/fjynj57rd99s814rdn5hzvmx8lz403q2">https://lists.apache.org/thread/fjynj57rd99s814rdn5hzvmx8lz403q2</a></li>
 </ul>
 <h2 id="CVE-2021-26118">Flaw in ActiveMQ Artemis OpenWire support</h2>
 <p>CVE-2021-26118 <a href="https://cve.org/CVERecord?id=CVE-2021-26118">[CVE]</a> <a href="./CVE-2021-26118.cve.json">[CVE json]</a> <a href="./CVE-2021-26118.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2021-01-27T18:47:25.710Z</em></p>
-<h3 id="affected-37">Affected</h3>
+<h3 id="affected-42">Affected</h3>
 <ul>
 <li>Apache ActiveMQ Artemis from unspecified before 2.16.0</li>
 </ul>
-<h3 id="description-37">Description</h3>
+<h3 id="description-42">Description</h3>
 <p>While investigating ARTEMIS-2964 it was found that the creation of advisory messages in the OpenWire protocol head of Apache ActiveMQ Artemis 2.15.0 bypassed policy based access control for the entire session. Production of advisory messages was not subject to access control in error.</p>
-<h3 id="references-37">References</h3>
+<h3 id="references-42">References</h3>
 <ul>
 <li><a href="https://mail-archives.apache.org/mod_mbox/activemq-users/202101.mbox/%3CCAH%2BvQmMUNnkiXv2-d3ucdErWOsdnLi6CgnK%2BVfixyJvTgTuYig%40mail.gmail.com%3E">https://mail-archives.apache.org/mod_mbox/activemq-users/202101.mbox/%3CCAH%2BvQmMUNnkiXv2-d3ucdErWOsdnLi6CgnK%2BVfixyJvTgTuYig%40mail.gmail.com%3E</a></li>
 </ul>
-<h3 id="credits-33">Credits</h3>
+<h3 id="credits-37">Credits</h3>
 <ul>
 <li>Apache ActiveMQ  would like to thank Francesco Marchioni (Red Hat) for reporting this issue.</li>
 </ul>
 <h2 id="CVE-2021-26117">ActiveMQ: LDAP-Authentication does not verify passwords on servers with anonymous bind</h2>
 <p>CVE-2021-26117 <a href="https://cve.org/CVERecord?id=CVE-2021-26117">[CVE]</a> <a href="./CVE-2021-26117.cve.json">[CVE json]</a> <a href="./CVE-2021-26117.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2021-01-27T18:47:20.605Z</em></p>
-<h3 id="affected-38">Affected</h3>
+<h3 id="affected-43">Affected</h3>
 <ul>
 <li>Apache ActiveMQ from Apache ActiveMQ Artemis before 2.16.0</li>
 <li>Apache ActiveMQ from Apache ActiveMQ before 5.16.1</li>
 </ul>
-<h3 id="description-38">Description</h3>
+<h3 id="description-43">Description</h3>
 <p>The optional ActiveMQ LDAP login module can be configured to use anonymous access to the LDAP server. In this case, for Apache ActiveMQ Artemis prior to version 2.16.0 and Apache ActiveMQ prior to versions 5.16.1 and 5.15.14, the anonymous context is used to verify a valid users password in error, resulting in no check on the password.</p>
-<h3 id="references-38">References</h3>
+<h3 id="references-43">References</h3>
 <ul>
 <li><a href="https://mail-archives.apache.org/mod_mbox/activemq-users/202101.mbox/%3cCAH+vQmMeUEiKN4wYX9nLBbqmFZFPXqajNvBKmzb2V8QZANcSTA%40mail.gmail.com%3e">https://mail-archives.apache.org/mod_mbox/activemq-users/202101.mbox/%3cCAH+vQmMeUEiKN4wYX9nLBbqmFZFPXqajNvBKmzb2V8QZANcSTA%40mail.gmail.com%3e</a></li>
 </ul>
-<h3 id="credits-34">Credits</h3>
+<h3 id="credits-38">Credits</h3>
 <ul>
 <li>Apache ActiveMQ would like to thank Gregor Tudan <a href="mailto:gregor.tudan@cofinpro.de">gregor.tudan@cofinpro.de</a> for reporting this issue.</li>
 </ul>
 <h2 id="CVE-2020-13947"></h2>
 <p>CVE-2020-13947 <a href="https://cve.org/CVERecord?id=CVE-2020-13947">[CVE]</a> <a href="./CVE-2020-13947.cve.json">[CVE json]</a> <a href="./CVE-2020-13947.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2021-02-10T09:16:00.641Z</em></p>
-<h3 id="affected-39">Affected</h3>
+<h3 id="affected-44">Affected</h3>
 <ul>
 <li>Apache ActiveMQ from Apache ActiveMQ before 5.15.13</li>
 </ul>
-<h3 id="description-39">Description</h3>
+<h3 id="description-44">Description</h3>
 <p>An instance of a cross-site scripting vulnerability was identified to be present in the web based administration console on the message.jsp page of Apache ActiveMQ versions 5.15.12 through 5.16.0.</p>
-<h3 id="references-39">References</h3>
+<h3 id="references-44">References</h3>
 <ul>
 <li><a href="http://activemq.apache.org/security-advisories.data/CVE-2020-13947-announcement.txt">http://activemq.apache.org/security-advisories.data/CVE-2020-13947-announcement.txt</a></li>
 </ul>

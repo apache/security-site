@@ -109,138 +109,472 @@
 </ul>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-95863">XSS via a component id or markup id written unescaped into generated JavaScript and markup</h2>
+<p>CVE-2026-95863 <a href="https://cve.org/CVERecord?id=CVE-2026-95863">[CVE]</a> <a href="./CVE-2026-95863.cve.json">[CVE json]</a> <a href="./CVE-2026-95863.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T22:30:45.068Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Wicket from 8.0.0 through 8.19.0</li>
+<li>Apache Wicket from 9.0.0 through 9.24.0</li>
+<li>Apache Wicket from 10.0.0 through 10.11.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Improper neutralization of input during web page generation in Apache Wicket.<br><br>Apache Wicket generates JavaScript that refers to the elements it renders, and<br>writes into that JavaScript two values it derives itself: a component&rsquo;s markup<br>id, and the input name of a form component, which is built from component ids.<br>Both are placed inside single-quoted JavaScript string literals without being<br>escaped for that context, so a value containing a single quote or a backslash<br>ends the literal, and what follows is parsed as script and runs in the<br>application&rsquo;s origin when the page loads.<br><br>A markup id is the value passed to org.apache.wicket.Component#setMarkupId(String),<br>or the id attribute written in the component&rsquo;s markup, or an id Wicket<br>generates, in that order. The first two are supplied by the application in an<br>HTML context, where both characters are legal and where Wicket escapes them<br>correctly when it writes the same value into the id attribute of the element; a<br>generated id cannot contain either. An input name is derived from the ids of the<br>components between the form and the form component, and a component id was<br>rejected only for &lsquo;:&rsquo; and &lsquo;~&rsquo;.<br><br>In org.apache.wicket:wicket-core on 9.x and 10.x,<br>org.apache.wicket.markup.head.OnEventHeaderItem#forMarkupId(String, String,<br>CharSequence) quotes the id it is given into a Wicket.Event.add call, and<br>components in both wicket-core and wicket-extensions reach it through<br>#forComponent(Component, String, CharSequence). On every affected version,<br>org.apache.wicket.markup.html.form.Form writes its markup id and the id of its<br>hidden-fields container into such literals,<br>org.apache.wicket.markup.html.form.FormComponentUpdatingBehavior writes an input<br>name, and org.apache.wicket.markup.html.form.upload.MultiFileUploadField writes<br>two markup ids and an input name. On 8.x, Form also writes an input name into the<br>action of a submitting link, and on 8.x and 9.x Form#appendDefaultButtonField<br>writes an input name into a name attribute with no escaping at all, so a value<br>containing a double quote escapes the attribute into markup.<br><br>org.apache.wicket:wicket-extensions is affected in its own right and not only<br>through wicket-core: AjaxEditableLabel, AjaxIndicatorAppender,<br>AjaxDisableComponentListener, UploadProgressBar, KittenCaptchaPanel, Palette,<br>FilterForm and, on 9.x and 10.x, TrapFocusBehavior and AjaxListPanel each build<br>their own JavaScript containing a markup id.<br><br>An application is affected where a markup id or a component id carries one of<br>those characters. Wicket does not put one there itself, so the value comes from<br>the application: an id set on a component, an id attribute in a template, or a<br>component id derived from data. None of those is a JavaScript context from the<br>application&rsquo;s point of view.<br><br>The Content-Security-Policy that Apache Wicket 9.x and 10.x send by default does<br>not prevent this. The generated script is written into a script element carrying<br>the per-response nonce, so the injected code is part of a script the policy<br>admits.<br><br>The fixed versions check an id where it enters instead of escaping each place it<br>is written. A component id and a markup id may no longer contain a quote, a<br>backquote, a backslash, braces, angle brackets, a semicolon, an ampersand or a<br>control character, and a markup id may not contain parentheses or square<br>brackets either; a component constructed with such an id, or given such a markup<br>id, fails with an exception.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.19.0, from 9.0.0 through<br>9.24.0, from 10.0.0 through 10.11.0. Users of Apache Wicket 7.x or older, which<br>are no longer supported, should upgrade to a supported version. Users are<br>recommended to upgrade to version 8.20.0, 9.25.0 or 10.12.0, which fix the issue.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/5wg754b873tlnsc268myrwcoy9lt046v">https://lists.apache.org/thread.html/5wg754b873tlnsc268myrwcoy9lt046v</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Pedro Santos (finder)</li>
+</ul>
+<h2 id="CVE-2026-87718">CSP headers silently omitted for pages served through nested request handler delegates</h2>
+<p>CVE-2026-87718 <a href="https://cve.org/CVERecord?id=CVE-2026-87718">[CVE]</a> <a href="./CVE-2026-87718.cve.json">[CVE json]</a> <a href="./CVE-2026-87718.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T22:28:29.241Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache Wicket at 9.24.0</li>
+<li>Apache Wicket from 10.10.0 through 10.11.0</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Apache Wicket 10.10.0, 10.11.0 and 9.24.0 do not set the Content-Security-Policy headers on a page whose render request handler is wrapped in more than one IRequestHandlerDelegate. The framework unwraps only a single delegate level when deciding whether a request renders a page, so with a deeper chain, for example an application-provided delegating request mapper combined with CryptoMapper, the page is served without any CSP header even though CSP is enabled, and no error or warning is raised. The nonce-based protection Wicket applies to inline scripts and styles, together with any other CSP directives configured by the application, is thereby lost for those pages, exposing them to content injection the policy was meant to prevent. Applications on stock Wicket that do not wrap request handlers themselves are not affected. Versions before 10.10.0 and 9.24.0 handled nested delegates correctly. Users are recommended to upgrade to version 10.12.0 or 9.25.0, which fix the issue.</p>
+<h3 id="references-1">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/fjq8v35zpkbtjwpzwkkpzocwtdgokp1m">https://lists.apache.org/thread.html/fjq8v35zpkbtjwpzwkkpzocwtdgokp1m</a></li>
+</ul>
+<h3 id="credits-1">Credits</h3>
+<ul>
+<li>Hans Schäfer (finder)</li>
+</ul>
+<h2 id="CVE-2026-84231">XSS in ExternalLink via the model URL when the component is bound to a non-anchor tag</h2>
+<p>CVE-2026-84231 <a href="https://cve.org/CVERecord?id=CVE-2026-84231">[CVE]</a> <a href="./CVE-2026-84231.cve.json">[CVE json]</a> <a href="./CVE-2026-84231.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T22:26:16.972Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Wicket from 8.0.0 through 8.19.0</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Improper neutralization of input during web page generation in Apache Wicket.<br><br>org.apache.wicket.markup.html.link.ExternalLink builds a JavaScript click handler and writes it into the tag&rsquo;s onclick attribute whenever the markup tag the component is bound to is not an a, link or area element. The URL held in the component&rsquo;s model is concatenated into a single-quoted JavaScript string literal in that handler without being escaped for that context. The same happens on the neighbouring branch, taken when popup settings are attached, where the value is concatenated into the window.open() call built by org.apache.wicket.markup.html.link.PopupSettings#getPopupJavaScript(). The only escaping applied is the markup escaping that every attribute value receives as the tag is written, which replaces an apostrophe with a character reference. A browser decodes character references in an attribute value before it compiles the event handler, so the apostrophe is restored, closes the string literal, and the rest of the model value is executed as script in the application&rsquo;s origin.<br><br>An application is affected where it binds an ExternalLink to a markup tag that is not an anchor, such as a button or a span, and the URL in the model holds data an attacker can influence, which is the ordinary use of the component rather than a misuse of it. Nothing runs until a user activates the element.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.19.0. Users of Apache Wicket 7.x or older, which are no longer supported, should upgrade to a supported version.<br><br>Users are recommended to upgrade to version 8.20.0, which fixes the issue.<br></p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/39kz9838w25797bpkxn1hvfsm8jtc4zv">https://lists.apache.org/thread.html/39kz9838w25797bpkxn1hvfsm8jtc4zv</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Emond Papegaaij (finder)</li>
+</ul>
+<h2 id="CVE-2026-84177">A component&rsquo;s markup is served as a package resource when its class name contains an underscore</h2>
+<p>CVE-2026-84177 <a href="https://cve.org/CVERecord?id=CVE-2026-84177">[CVE]</a> <a href="./CVE-2026-84177.cve.json">[CVE json]</a> <a href="./CVE-2026-84177.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T22:25:20.375Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Wicket from 8.0.0 through 8.19.0</li>
+<li>Apache Wicket from 9.0.0 through 9.24.0</li>
+<li>Apache Wicket from 10.0.0 through 10.11.0</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Incorrect behavior order in Apache Wicket: a file path is validated before the framework appends the attributes that complete it.<br><br>org.apache.wicket.request.resource.PackageResource asks the configured package resource guard about a path built from the scope class&rsquo; package and the file name in the request URL, and then hands that same path to the resource stream locator together with a style, a variation and a locale. Those three attributes are decoded from the name of the first query parameter and never appear in the string the guard was given. org.apache.wicket.core.util.resource.locator.ResourceNameIterator appends them to that path, each preceded by an underscore, in the order variation, style, locale, before the file extension, so the file that is opened is not the file the guard approved.<br><br>org.apache.wicket.markup.html.PackageResourceGuard decides whether an HTML file is a component&rsquo;s markup template by looking for a class file of the same name beside it, stripping one underscore-delimited suffix at a time as it goes. HTML is on the default allow list, so that check is the only thing separating a static HTML file, which may be served, from a markup template, which may not. Asked about the name of a template, the guard refuses it correctly. Asked about a shorter name for which no class exists, it accepts, and a style supplied in the URL then completes that name into the markup template of a component class, which is written to the response.<br><br>An application is affected if the simple name of any of its component classes contains an underscore and no shorter part of that name is itself a class, such as Report_v2 or Wizard_Step1; an application with no such class name is not affected. No unusual deployment, packaging or configuration is required, and running in deployment rather than development mode does not prevent it. Java naming conventions discourage underscores in class names and no module Wicket ships has one, so no framework markup is exposed; what an application exposes this way is its own. A component whose class name has no underscore is not reachable, and neither is its localized or styled markup, because the guard finds the class file under the base name and refuses the request. The attributes cannot change the file extension and cannot leave the component&rsquo;s package, so nothing beyond HTML files in that package is reachable. Access is read-only, and what is disclosed is developer-authored template content: component structure, developer comments, markup that is rendered only under some conditions, inline script, and the endpoints a template names. No user data, credential or session material is reachable this way. An attacker has to name a class in the target package and the component itself, and Wicket writes fully qualified class names into the URL of every package resource it renders.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.19.0, from 9.0.0 through 9.24.0, from 10.0.0 through 10.11.0. Users of Apache Wicket 7.x or older, which are no longer supported, should upgrade to a supported version. Users are recommended to upgrade to version 8.20.0, 9.25.0 or 10.12.0, which fix the issue.<br></p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/hy089v60t5v36skpnbry96vr2427lw0o">https://lists.apache.org/thread.html/hy089v60t5v36skpnbry96vr2427lw0o</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>Emond Papegaaij (finder)</li>
+</ul>
+<h2 id="CVE-2026-84172">Component markup is served as a package resource when wicket-core has its own class loader</h2>
+<p>CVE-2026-84172 <a href="https://cve.org/CVERecord?id=CVE-2026-84172">[CVE]</a> <a href="./CVE-2026-84172.cve.json">[CVE json]</a> <a href="./CVE-2026-84172.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T22:24:12.693Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Wicket from 8.0.0 through 8.19.0</li>
+<li>Apache Wicket from 9.0.0 through 9.24.0</li>
+<li>Apache Wicket from 10.0.0 through 10.11.0</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Files accessible to external parties in Apache Wicket.<br><br>org.apache.wicket.markup.html.PackageResourceGuard decides whether a file on the classpath may be streamed to a client as a package resource. HTML is on the default allow list, so the only thing that separates a static HTML file, which may be served, from a component&rsquo;s markup template, which may not, is a check for a class file of the same name beside it. That check calls getResource() on the class loader that loaded wicket-core. The resource itself is reached through different class loaders: the scope class is resolved through the application&rsquo;s IClassResolver, which uses the thread context class loader, and org.apache.wicket.core.util.resource.ClassPathResourceFinder#find() then tries the scope class&rsquo; own loader, the context class loader, and the wicket-core loader last.<br><br>Where wicket-core is loaded by a class loader that cannot see the application&rsquo;s classes, the check finds no class file, concludes the file is not a component markup template, and serves it. A request for the package resource URL of a component class then returns that component&rsquo;s markup template with status 200. What is disclosed is developer-authored template content: component structure, developer comments, markup that is rendered only under some conditions, inline script, and the endpoints a template names. Access is read-only, and no user data, credential or session material is reachable this way.<br><br>Such a deployment is rare. The ordinary packaging, a web archive with wicket-core in WEB-INF/lib, puts the framework and the application in one class loader, so the check finds the class file and the template is refused; those deployments are not affected. The exposure is confined to deployments that give wicket-core a class loader which cannot see the application&rsquo;s component classes: wicket-core placed in a servlet container&rsquo;s shared library directory, in an enterprise archive library directory with the application in the web archive, as an application server global module, or as an OSGi bundle, where wicket-core&rsquo;s bundle cannot resolve a class held by an application bundle. Markup shipped by Wicket&rsquo;s own modules, and by any other code sharing a class loader with wicket-core, remains protected. An attacker has to name a component class, and Wicket writes fully qualified class names into the URL of every package resource it renders.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.19.0, from 9.0.0 through 9.24.0, from 10.0.0 through 10.11.0. Users of Apache Wicket 7.x or older, which are no longer supported, should upgrade to a supported version. Users are recommended to upgrade to version 8.20.0, 9.25.0 or 10.12.0, which fix the issue.<br></p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/90mlx42q7nkdccdby1ql1ksl4sxy13x6">https://lists.apache.org/thread.html/90mlx42q7nkdccdby1ql1ksl4sxy13x6</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Emond Papegaaij (finder)</li>
+</ul>
+<h2 id="CVE-2026-84170">Configured upload limits are not enforced by the standalone file upload resource</h2>
+<p>CVE-2026-84170 <a href="https://cve.org/CVERecord?id=CVE-2026-84170">[CVE]</a> <a href="./CVE-2026-84170.cve.json">[CVE json]</a> <a href="./CVE-2026-84170.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T22:22:46.974Z</em></p>
+<h3 id="affected-5">Affected</h3>
+<ul>
+<li>Apache Wicket from 9.14.0 through 9.24.0</li>
+<li>Apache Wicket from 10.0.0 through 10.9.1</li>
+</ul>
+<h3 id="description-5">Description</h3>
+<p>Allocation of resources without limits or throttling in Apache Wicket.<br><br>org.apache.wicket.markup.html.form.upload.resource.AbstractFileUploadResource is the server side of the form-less upload offered by FileUploadToResourceField, which posts the selected files to a separately mounted resource rather than through a Form. The resource is an application-wide singleton with no component to consult, so newResourceResponse() takes the three limits that bound the upload - the total request size, the maximum size of a single part and the maximum number of parts - from the request parameters maxSize, fileMaxSize and fileCountMax, and hands them to the multipart parser as they arrive. Nothing binds those numbers to the field that is supposed to be uploading. A request naming a very large maxSize is therefore parsed with no effective ceiling on the total size, and omitting fileMaxSize and fileCountMax leaves the per-part and part-count limits unset as well. The values the application configured through FileUploadToResourceField#setMaxSize(), #setFileMaxSize() and #setFileCountMax() are consulted only when the client omits the corresponding parameter, so against a client that supplies one they have no effect at all.<br><br>Parts above the parser&rsquo;s in-memory threshold are spooled to the container&rsquo;s temporary directory, and the file parts are then copied into the folder the application&rsquo;s IUploadsFileManager owns, under a sub-folder the request names, where they remain. A part that is not a file is read into the heap in full while the request is parsed. One request, repeatable, can therefore consume as much disk or as much heap as the client chooses to send. The resource carries no authorization annotation and the default authorization strategy permits every resource request, so unless the application authorizes the resource itself the request needs no authentication, no session, no prior page view and no user interaction.<br><br>An application is affected where it uses FileUploadToResourceField, or mounts FileUploadResourceReference itself. This is not the ordinary upload path: the resource is a singleton that has to be created and mounted deliberately. An application that configures no upload limit at all loses nothing, because Wicket applies no total-size limit of its own by default; what the defect removes is a limit the application set. Uploads through Form with FileUploadField, and through AjaxFileDropBehavior, are not affected, because both read their limits from the component rather than from the request. The upload resource does not exist in the 8.x line.<br><br>This issue affects Apache Wicket: from 9.14.0 through 9.24.0, from 10.0.0 through 10.9.1. Users are recommended to upgrade to version 9.25.0 or 10.12.0, which fix the issue.<br></p>
+<h3 id="references-5">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/bw3hn5cch3q7yrsl05m8mvmgyx4m98y7">https://lists.apache.org/thread.html/bw3hn5cch3q7yrsl05m8mvmgyx4m98y7</a></li>
+</ul>
+<h3 id="credits-5">Credits</h3>
+<ul>
+<li>Emond Papegaaij (finder)</li>
+</ul>
+<h2 id="CVE-2026-83594">FileUploadToResourceField accepts a client-asserted upload result and allocates the size it names</h2>
+<p>CVE-2026-83594 <a href="https://cve.org/CVERecord?id=CVE-2026-83594">[CVE]</a> <a href="./CVE-2026-83594.cve.json">[CVE json]</a> <a href="./CVE-2026-83594.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T22:21:11.872Z</em></p>
+<h3 id="affected-6">Affected</h3>
+<ul>
+<li>Apache Wicket from 9.14.0 through 9.24.0</li>
+<li>Apache Wicket from 10.0.0 through 10.11.0</li>
+</ul>
+<h3 id="description-6">Description</h3>
+<p>Memory allocation with an excessive size value in Apache Wicket.<br><br>org.apache.wicket.markup.html.form.upload.resource.FileUploadToResourceField uploads files to a separately mounted resource rather than through a form, and is told the outcome afterwards over its own Ajax callback. That callback reads the request parameter filesInfo, a JSON array carrying a client file name, a size and a content type for each file, and turns it into the list of FileUploadToResourceField.UploadInfo that onUploadSuccess() receives. Nothing binds that JSON to an upload the resource performed and nothing re-derives it from the stored files, so the number of entries and every value in them are whatever the request supplied. The callback URL is rendered into the page, no prior upload is required, and both GET and POST reach it, so any client that can load the page can have the component report files that were never uploaded, without authenticating beyond whatever the page itself requires and without any user interaction.<br><br>UploadInfo#get(), which the class offers as the way to obtain the bytes of an upload, allocates a byte array from UploadInfo#getSize() before it opens the file. The array is therefore sized by the number the request supplied, and the allocation happens even for a file that was never stored. One small request can cost the server close to two gigabytes of heap, and the request is trivially repeatable, so a few of them exhaust the heap for every request the Java virtual machine is serving. A size that the conversion to int turns negative instead throws NegativeArraySizeException, which the exception handler inside that method does not cover, so it escapes into the application.<br><br>An application is affected where it uses FileUploadToResourceField, which is not the ordinary upload path through FileUploadField and Form and has to be extended and mounted deliberately. The allocation additionally requires the application to call UploadInfo#get() rather than reading UploadInfo#getFile() itself. Where the application denies the ENABLE action on the field through its authorization strategy, the callback is refused like any other listener. The 8.x line does not contain this component and is not affected.<br><br>This issue affects Apache Wicket: from 9.14.0 through 9.24.0, from 10.0.0 through 10.11.0. Users are recommended to upgrade to version 9.25.0 or 10.12.0, which fix the issue.<br></p>
+<h3 id="references-6">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/h5lxspxg746pzjd437n3n7mq5t3sfbcb">https://lists.apache.org/thread.html/h5lxspxg746pzjd437n3n7mq5t3sfbcb</a></li>
+</ul>
+<h3 id="credits-6">Credits</h3>
+<ul>
+<li>Emond Papegaaij (finder)</li>
+</ul>
+<h2 id="CVE-2026-83559">JavaScriptUtils#escapeQuotes does not escape the backslash, so its output can leave its string literal</h2>
+<p>CVE-2026-83559 <a href="https://cve.org/CVERecord?id=CVE-2026-83559">[CVE]</a> <a href="./CVE-2026-83559.cve.json">[CVE json]</a> <a href="./CVE-2026-83559.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T22:19:45.878Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache Wicket from 8.0.0 through 8.19.0</li>
+<li>Apache Wicket from 9.0.0 through 9.24.0</li>
+<li>Apache Wicket from 10.0.0 through 10.11.0</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>Improper encoding or escaping of output in Apache Wicket.<br><br>org.apache.wicket.core.util.string.JavaScriptUtils#escapeQuotes() replaces each single quote in its input with a backslash and a single quote, and each double quote with a backslash and a double quote, so that the value can be placed inside a JavaScript string literal. It does not escape the backslash, which is the character that has to be escaped, and escaped first, for the rest of that escaping to hold. A value that already holds a backslash immediately before a quote therefore ends up with two backslashes in front of that quote: the first escapes the second, the quote itself is left unescaped, and it closes the literal. Whatever the value carries after that point is no longer text but JavaScript, and it runs in the application&rsquo;s origin and in the session of the user looking at the page. The method is public, is not deprecated, and its documentation states that its result can be part of a JavaScript call such as an alert; the only limitation it notes concerns JSON values, which need different escaping.<br><br>An application is affected wherever it calls the method itself and places the result inside a JavaScript string literal, from its own code or from a component of its own or of a third party, and the value it escapes holds data an attacker can influence. There is no further condition, and no component of Wicket has to be involved: the application is using the method for what its documentation offers, and the method does not deliver it.<br><br>Two components shipped with Wicket Extensions pass a value through the method. org.apache.wicket.extensions.ajax.markup.html.AjaxEditableLabel writes the editor&rsquo;s first error feedback message into a single-quoted JavaScript string literal in the Ajax response, so an application is affected through that component where the message shown for a failed edit holds data an attacker can influence, whether that is the submitted value itself or another variable the application sets on the validation error. A validation message can carry the submitted value, because input is a message variable that every form component supplies for its own validation errors, and the documentation shows overriding a validator&rsquo;s message to include it; none of the message bundles shipped with Wicket interpolates it, so an application that has not written such a message is not affected through this component. org.apache.wicket.extensions.ajax.markup.html.repeater.AjaxListPanel passes the serialized markup tag of an appended component through the method and is not affected: the tag comes from the panel&rsquo;s own markup file, and a quote in any of its attribute values, the component&rsquo;s markup id included, is written as a character reference by the tag serialization and cannot close the literal.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.19.0, from 9.0.0 through 9.24.0, from 10.0.0 through 10.11.0. Users of Apache Wicket 7.x or older, which are no longer supported, should upgrade to a supported version.<br><br>Users are recommended to upgrade to version 8.20.0, 9.25.0 or 10.12.0, which fix the issue.<br></p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/77kc85ztkxdpp7wg7cv61c4539j9s1g3">https://lists.apache.org/thread.html/77kc85ztkxdpp7wg7cv61c4539j9s1g3</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>Emond Papegaaij (finder)</li>
+</ul>
+<h2 id="CVE-2026-83539">XSS in SmartLinkLabel and SmartLinkMultiLineLabel via a javascript: URL in the model data</h2>
+<p>CVE-2026-83539 <a href="https://cve.org/CVERecord?id=CVE-2026-83539">[CVE]</a> <a href="./CVE-2026-83539.cve.json">[CVE json]</a> <a href="./CVE-2026-83539.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T22:18:11.576Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache Wicket from 8.0.0 through 8.19.0</li>
+<li>Apache Wicket from 9.0.0 through 9.24.0</li>
+<li>Apache Wicket from 10.0.0 through 10.11.0</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>Improper neutralization of input during web page generation in Apache Wicket.<br><br>org.apache.wicket.extensions.markup.html.basic.SmartLinkLabel and org.apache.wicket.extensions.markup.html.basic.SmartLinkMultiLineLabel display a text value and turn any URL they find in it into a hyperlink. Both escape the model value and then hand the escaped text to org.apache.wicket.extensions.markup.html.basic.DefaultLinkParser, which searches it for anything of the form scheme://rest and wraps each match in an anchor whose href is the matched text, copied in as it is. The pattern accepts any scheme, and there is no list of permitted schemes anywhere on the path. A text value naming a scheme that executes script therefore becomes an anchor that executes it, in the application&rsquo;s origin and in the reader&rsquo;s own session, when the reader clicks the link. Rendering the page is not enough on its own; the link has to be activated. Escaping does not prevent this and is not the issue: the characters the payload needs are all valid in a URL and are ones that org.apache.wicket.util.string.Strings#escapeMarkup() leaves alone, and the value ends up in a URL rather than in element text, which is a context that escaping model data does not make safe.<br><br>An application is affected where it renders text it received through either of these two components. That is what they are for: they exist to linkify email addresses and web URLs found in the data an application is displaying, so untrusted input is the purpose of the feature rather than a misuse of it, and no unusual configuration is involved. No other component uses this parser, and an application that uses neither SmartLinkLabel nor SmartLinkMultiLineLabel is not affected.<br><br>On 9.x and 10.x the Content-Security-Policy Wicket sends by default admits script only from a source carrying a per-response nonce, and a URL whose scheme executes script cannot carry one, so that default policy stops the script from running. This is a property of the default policy and not of these components. An application that has weakened or disabled its Content-Security-Policy, for this or for any unrelated reason, is affected in full. Wicket 8.x has no Content-Security-Policy support at all and is affected as it stands.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.19.0, from 9.0.0 through 9.24.0, from 10.0.0 through 10.11.0. Users of Apache Wicket 7.x or older, which are no longer supported, should upgrade to a supported version. Users are recommended to upgrade to version 8.20.0, 9.25.0 or 10.12.0, which fix the issue.<br></p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/xqdymd8g178sc112lmqbp53zlss53cwz">https://lists.apache.org/thread.html/xqdymd8g178sc112lmqbp53zlss53cwz</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>Emond Papegaaij (finder)</li>
+</ul>
+<h2 id="CVE-2026-82956">XSS in AjaxNewWindowNotifyingBehavior via the client-supplied window name</h2>
+<p>CVE-2026-82956 <a href="https://cve.org/CVERecord?id=CVE-2026-82956">[CVE]</a> <a href="./CVE-2026-82956.cve.json">[CVE json]</a> <a href="./CVE-2026-82956.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T22:16:44.102Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache Wicket from 8.0.0 through 8.19.0</li>
+<li>Apache Wicket from 9.0.0 through 9.24.0</li>
+<li>Apache Wicket from 10.0.0 through 10.11.0</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>Improper neutralization of input during web page generation in Apache Wicket.<br><br>org.apache.wicket.ajax.AjaxNewWindowNotifyingBehavior notices that a page instance has been opened in a second browser window or tab. It asks the browser for the value of window.name, which reaches the server as the request parameter windowName, and remembers what the browser reported in a field of the behaviour. That field is part of the page&rsquo;s serialized state, so the remembered value stays in the page store for as long as the page instance does.<br><br>On every later render of that page instance the behaviour builds the precondition of its Ajax call by substituting the remembered value into a single-quoted JavaScript string literal, and Wicket writes that precondition into the page as raw JavaScript, because the precondition of an Ajax call listener is script supplied by the caller and is emitted without quoting or escaping. Nothing on that path escapes the value. The window name is client-supplied and Wicket applies no validation to it, so a remembered name containing a single quote ends the literal and the rest of it runs as script in the application&rsquo;s origin, every time that page instance is rendered.<br><br>An application is affected only where it has explicitly added AjaxNewWindowNotifyingBehavior to a component. No part of the framework installs the behaviour, so an application that does not use it is not affected. The name the behaviour generates for itself, when the browser reports no name at all, is a random UUID and is not client-supplied.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.19.0, from 9.0.0 through 9.24.0, from 10.0.0 through 10.11.0.<br><br>Users are recommended to upgrade to version 8.20.0, 9.25.0 or 10.12.0, which fix the issue.<br></p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/fs3vdddt9bwshdstj952psj49s5w4vqm">https://lists.apache.org/thread.html/fs3vdddt9bwshdstj952psj49s5w4vqm</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>Emond Papegaaij (finder)</li>
+</ul>
+<h2 id="CVE-2026-82898">A cross-origin listener invocation stopped by a login wall is replayed after the user signs in</h2>
+<p>CVE-2026-82898 <a href="https://cve.org/CVERecord?id=CVE-2026-82898">[CVE]</a> <a href="./CVE-2026-82898.cve.json">[CVE json]</a> <a href="./CVE-2026-82898.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T22:14:05.251Z</em></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache Wicket from 9.1.0 through 9.24.0</li>
+<li>Apache Wicket from 10.0.0 through 10.11.0</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<p>Incorrect order of security checks in Apache Wicket.<br><br>org.apache.wicket.protocol.http.ResourceIsolationRequestCycleListener obtains the page a request targets before it consults its resource isolation policies, because those policies are passed that page. Obtaining the page instantiates it, and instantiating a page runs the configured org.apache.wicket.authorization.IAuthorizationStrategy. An application that refuses an unauthenticated visitor by throwing org.apache.wicket.RestartResponseAtInterceptPageException therefore throws it from inside the isolation listener, before any policy has run. That exception replaces the request handler, so the policies are never consulted and a request that came from another origin is not refused.<br><br>The exception&rsquo;s constructor stores the URL of the request it interrupted, so that Component#continueToOriginalDestination() can resume it once the visitor has signed in. The stored URL is the one the policies would have refused. On sign in Wicket redirects to it, and that redirect is same-origin, so the policies allow it and the listener runs in the newly authenticated session. The whole URL is stored, its query string included, so an ordinary org.apache.wicket.markup.html.form.Form is resumed with the field values the original request carried in its query string and Form#onSubmit() runs with values another origin chose. A form POST is not needed for this; a plain top-level navigation carries them.<br><br>An application is affected where it registers ResourceIsolationRequestCycleListener, which is opt-in and is not registered by default, and where it refuses unauthorized access with RestartResponseAtInterceptPageException followed by continueToOriginalDestination(). No application override is involved on that path: IAuthorizationStrategy#isInstantiationAuthorized() documents throwing that exception, org.apache.wicket.authroles.authentication.AuthenticatedWebApplication throws it and org.apache.wicket.authroles.authentication.panel.UsernamePasswordPanel continues to the original destination, and org.apache.wicket.authorization.strategies.page.SimplePageAuthorizationStrategy in wicket-core installs the same pattern. A visitor who is already signed in is not affected, because no interception occurs. Request-body parameters stored alongside the intercepted URL are not applied to the resumed form: the resumption is a redirect, so the resumed request is a GET, and form components read their values from the query string on a GET.<br><br>As a workaround, refuse unauthorized access with org.apache.wicket.RestartResponseException instead, which does not store the original destination; visitors are then not returned to the page they asked for after signing in.<br><br>This issue affects Apache Wicket: from 9.1.0 through 9.24.0, from 10.0.0 through 10.11.0.<br><br>Releases before 9.1.0, which is every 8.x release and 9.0.0, are not affected, because the resource isolation this issue concerns was introduced in 9.1.0. They are not protected either. Their only cross-origin defence is org.apache.wicket.protocol.http.CsrfPreventionRequestCycleListener, which works out where a request came from by reading its Origin header and falling back to its Referer header. Neither header need arrive: a browser does not send Origin on the plain GET a link uses, and the document on the other origin decides through its own referrer policy whether a Referer reaches the application at all. That mechanism therefore never made the guarantee the Fetch Metadata based policy makes, and on those releases a listener invocation from another origin is not reliably refused in the first place. Anyone on a release before 9.1.0 who wants this protection should upgrade to 9.x or 10.x and register ResourceIsolationRequestCycleListener.<br><br>Users are recommended to upgrade to version 9.25.0 or 10.12.0, which fix the issue.<br></p>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/bm4mlwsgftxfg345zvdqj0skg1mktpyp">https://lists.apache.org/thread.html/bm4mlwsgftxfg345zvdqj0skg1mktpyp</a></li>
+</ul>
+<h3 id="credits-10">Credits</h3>
+<ul>
+<li>Emond Papegaaij (finder)</li>
+</ul>
+<h2 id="CVE-2026-82840">The session id is renewed only on the first sign in, not on re-authentication</h2>
+<p>CVE-2026-82840 <a href="https://cve.org/CVERecord?id=CVE-2026-82840">[CVE]</a> <a href="./CVE-2026-82840.cve.json">[CVE json]</a> <a href="./CVE-2026-82840.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T22:05:05.168Z</em></p>
+<h3 id="affected-11">Affected</h3>
+<ul>
+<li>Apache Wicket from 8.18.0 through 8.19.0</li>
+<li>Apache Wicket from 9.23.0 through 9.24.0</li>
+<li>Apache Wicket from 10.9.0 through 10.11.0</li>
+</ul>
+<h3 id="description-11">Description</h3>
+<p>Session fixation in Apache Wicket.<br><br>org.apache.wicket.authroles.authentication.AuthenticatedWebSession is the authentication base class of Wicket&rsquo;s role-based security module, and its signIn(String, String) method is the entry point through which an application authenticates a session. Renewing the container session id at that point is the standard defence against an attacker who has fixed a session id in a victim&rsquo;s browser, and Wicket provides that renewal as org.apache.wicket.Session#changeSessionId(), whose documentation directs callers to invoke it on login for exactly that reason.<br><br>AuthenticatedWebSession#signIn(String, String) calls it inside a guard that succeeds only on the first transition of the session&rsquo;s signed-in flag. The session id is therefore renewed when a session first signs in, and is not renewed when a session that is already signed in authenticates again. signIn(String, String) returns true either way, so neither the caller nor the application can tell that the renewal did not happen.<br><br>An application is affected where it authenticates through AuthenticatedWebSession, which AuthenticatedWebApplication requires and which the shipped UsernamePasswordPanel uses, and where a session that is already signed in can authenticate again: a step-up prompt before a sensitive action, an account switch, or simply a sign-in form that stays reachable once the user is signed in. Nothing in the module hides that form from a signed-in session. Reaching the defect also requires an attacker to place a session id of their choosing in the victim&rsquo;s browser. JSESSIONID is set by the servlet container rather than by Wicket, so that needs a position Wicket does not grant, such as control of a host under the same registrable domain or a container configured to carry the session id in the URL, and the planted session has to be one the attacker has already signed in on, because a session that is not yet signed in does have its id renewed by the victim&rsquo;s authentication. An authentication attempt that fails signs the session out and closes the window. Applications that renew the session id in their own code after a successful authentication are not affected.<br><br>As a workaround, renew the session id from the application&rsquo;s own code on every successful authentication, by calling Session#changeSessionId() at the end of the authenticate(String, String) implementation.<br><br>This issue affects Apache Wicket: from 8.18.0 through 8.19.0, from 9.23.0 through 9.24.0, from 10.9.0 through 10.11.0.<br><br>Users are recommended to upgrade to version 8.20.0, 9.25.0 or 10.12.0, which fix the issue.<br></p>
+<h3 id="references-11">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/q812kjb74x2pt6956w0pcmkc4wwj95l9">https://lists.apache.org/thread.html/q812kjb74x2pt6956w0pcmkc4wwj95l9</a></li>
+</ul>
+<h3 id="credits-11">Credits</h3>
+<ul>
+<li>Emond Papegaaij (finder)</li>
+</ul>
+<h2 id="CVE-2026-82705">The configured authorization strategy is not applied to an IResource embedded in a component</h2>
+<p>CVE-2026-82705 <a href="https://cve.org/CVERecord?id=CVE-2026-82705">[CVE]</a> <a href="./CVE-2026-82705.cve.json">[CVE json]</a> <a href="./CVE-2026-82705.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T22:03:21.250Z</em></p>
+<h3 id="affected-12">Affected</h3>
+<ul>
+<li>Apache Wicket from 8.0.0 through 8.19.0</li>
+<li>Apache Wicket from 9.0.0 through 9.24.0</li>
+<li>Apache Wicket from 10.0.0 through 10.11.0</li>
+</ul>
+<h3 id="description-12">Description</h3>
+<p>Missing authorization in Apache Wicket.<br><br>org.apache.wicket.authorization.IAuthorizationStrategy declares isResourceAuthorized(), and that method has a single enforcement point in the framework: org.apache.wicket.request.handler.resource.ResourceRequestHandler, the handler that serves a resource reached through a mounted or shared ResourceReference. Components that are handed an org.apache.wicket.request.resource.IResource instance instead call IResource#respond() themselves from their own request listener and never construct that handler. In wicket-core these are org.apache.wicket.markup.html.link.ResourceLink, org.apache.wicket.markup.html.image.Image and org.apache.wicket.markup.html.form.ImageButton; in wicket-extensions it is org.apache.wicket.extensions.ajax.AjaxDownloadBehavior. A resource restricted by a custom isResourceAuthorized() implementation, or by an @AuthorizeResource annotation from wicket-auth-roles, is therefore enforced when it is requested through its own resource URL and is not enforced when the same instance is served through the component that holds it.<br><br>Which of the two happens is decided by the constructor the application used, and not by anything the application can see in the rendered page. ResourceLink(String, ResourceReference) renders a resource URL and the request is authorized; ResourceLink(String, IResource) renders a component listener URL and it is not. Image, ImageButton and AjaxDownloadBehavior each offer the same pair of constructors and behave the same way. Image and ImageButton write that listener URL into the src attribute of the tag they render, so a browser requests it without any action by the user, and the resource an Image serves may also come from the component&rsquo;s model.<br><br>An application is affected where it restricts a resource through IAuthorizationStrategy#isResourceAuthorized() or an @AuthorizeResource annotation and then hands that same resource to one of those components as an IResource. An application that does not restrict resources at all is not affected, and neither is a resource that is only mounted or registered as a shared resource. The pattern does not have to be written by the application itself: org.apache.wicket.extensions.markup.html.repeater.data.table.export.ExportToolbar builds each of its export links from an IResource instance, so the exported contents of a data table are served without the resource check in any application that adds that toolbar.<br><br>As a workaround, register the resource in the application&rsquo;s shared resources and pass the resulting ResourceReference to the component instead of the IResource, so that the request is routed through the handler that consults the authorization strategy.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.19.0, from 9.0.0 through 9.24.0, from 10.0.0 through 10.11.0. Users are recommended to upgrade to version 8.20.0, 9.25.0 or 10.12.0, which fix the issue.<br></p>
+<h3 id="references-12">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/t9y3sho3wkqkr1vsf74xn8tzmgdr1tgo">https://lists.apache.org/thread.html/t9y3sho3wkqkr1vsf74xn8tzmgdr1tgo</a></li>
+</ul>
+<h3 id="credits-12">Credits</h3>
+<ul>
+<li>Emond Papegaaij (finder)</li>
+</ul>
+<h2 id="CVE-2026-82704">A listener is invoked on a page instance the request itself created and never configured</h2>
+<p>CVE-2026-82704 <a href="https://cve.org/CVERecord?id=CVE-2026-82704">[CVE]</a> <a href="./CVE-2026-82704.cve.json">[CVE json]</a> <a href="./CVE-2026-82704.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T22:01:45.862Z</em></p>
+<h3 id="affected-13">Affected</h3>
+<ul>
+<li>Apache Wicket from 8.0.0 through 8.19.0</li>
+<li>Apache Wicket from 9.0.0 through 9.24.0</li>
+<li>Apache Wicket from 10.0.0 through 10.11.0</li>
+</ul>
+<h3 id="description-13">Description</h3>
+<p>Missing authorization in Apache Wicket.<br><br>org.apache.wicket.core.request.handler.ListenerRequestHandler invokes an IRequestListener only when org.apache.wicket.Component#canCallListener() allows it, and that method is isEnabledInHierarchy() &amp;&amp; isVisibleInHierarchy(). The visibility half reads a flag that carries the outcome of IAuthorizationStrategy#isActionAuthorized() for the Component.RENDER action, and that flag is written in one place only, Component#configure(), during the render phase. A listener URL built by a subclass of org.apache.wicket.core.request.mapper.AbstractBookmarkableMapper carries the page identifier and the component path in a single parameter, and the page identifier may be empty. When it is, a new page instance is constructed, PageProvider#wasExpired() is false because no identifier was supplied, and PageAndComponentProvider#getComponent() finds the component directly on the new instance, so neither a render pass nor Component#configure() runs before the listener is invoked. The flag therefore still holds its constructor default, the component counts as visible, and the listener of a component the authorization strategy denied RENDER for is executed. The same request also skips Component#onConfigure(), so visibility and enablement an application sets there are not applied either.<br><br>There are two ways to reach this, and neither requires anything but a request. On a page that is stateful, the caller omits the page identifier from a listener URL that would otherwise carry it. On a page that Wicket considers stateless, nothing has to be altered at all: Wicket itself writes listener URLs without a page identifier for such pages, and a component the strategy denies RENDER for is treated as stateless and therefore does not keep the page stateful, so denying RENDER can itself produce the page-id-less form. The second route has never been refused. The ENABLE decision of IAuthorizationStrategy is consulted on every invocation and still refuses, as does a request that supplies the real identifier of a page instance that has already been rendered; a component the application disabled in Component#onConfigure() is protected by neither, because that callback has not run.<br><br>An application is affected where it withholds an individual component from the caller, either by denying the RENDER action through IAuthorizationStrategy, including through the MetaDataRoleAuthorizationStrategy and AuthorizeAction facilities of wicket-auth-roles, or by setting the component&rsquo;s visibility or enabled flag in Component#onConfigure(), the callback Wicket&rsquo;s own documentation directs applications to use for both. The page carrying such a component has to be constructible from a bookmarkable or mounted URL, which requires a public constructor taking either no arguments or a PageParameters argument. Behaviours pass through the same gate, so an AJAX behaviour attached to such a component is equally exposed. Separately, and whether or not any component is withheld, a listener on a page Wicket considers stateful is invoked on an instance the request itself constructed, so it acts on models built from page parameters the caller supplied rather than on the state the application last rendered. Instantiation authorization is unaffected: IAuthorizationStrategy#isInstantiationAuthorized() is still consulted when the new page instance is created, so a guard placed on the page rather than on the individual component continues to hold.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.19.0, from 9.0.0 through 9.24.0, from 10.0.0 through 10.11.0. Users are recommended to upgrade to version 8.20.0, 9.25.0 or 10.12.0, which fix the issue.<br></p>
+<h3 id="references-13">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/yrtov7vfmj7c7wl7j1tt0dsv2t0zwy9b">https://lists.apache.org/thread.html/yrtov7vfmj7c7wl7j1tt0dsv2t0zwy9b</a></li>
+</ul>
+<h3 id="credits-13">Credits</h3>
+<ul>
+<li>Emond Papegaaij (finder)</li>
+</ul>
+<h2 id="CVE-2026-82559">WebSocket messages are processed against an HTTP session snapshot that survives invalidation</h2>
+<p>CVE-2026-82559 <a href="https://cve.org/CVERecord?id=CVE-2026-82559">[CVE]</a> <a href="./CVE-2026-82559.cve.json">[CVE json]</a> <a href="./CVE-2026-82559.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T22:00:22.065Z</em></p>
+<h3 id="affected-14">Affected</h3>
+<ul>
+<li>Apache Wicket from 8.0.0 through 8.19.0</li>
+<li>Apache Wicket from 9.0.0 through 9.24.0</li>
+<li>Apache Wicket from 10.0.0 through 10.11.0</li>
+</ul>
+<h3 id="description-14">Description</h3>
+<p>Insufficient session expiration in Apache Wicket.<br><br>org.apache.wicket.protocol.ws.WebSocketSettings#newWebSocketRequest() wraps the WebSocket upgrade request in an org.apache.wicket.protocol.ws.api.ServletRequestCopy, which is kept for the life of the connection and used to build the request for every frame that arrives on it. Copying the request is deliberate and is documented as such, because the container recycles the upgrade request once the handshake is over. The container session is copied along with it, into an org.apache.wicket.protocol.ws.api.HttpSessionCopy holding the session attributes as they stood when the connection was opened. That second copy is not necessary, because a session, unlike a request, is not discarded at the end of a request. Every frame afterwards resolves its Wicket session through ISessionStore#lookup(), which reads it out of the copy, so the connection is detached from the live container session for as long as it stays open.<br><br>Ending the session through the container therefore does not end the connection. After an idle timeout, an HttpSession#invalidate() call made from a filter or from a security framework, a container-managed logout, or a session replacement, the connection goes on resolving the org.apache.wicket.Session instance that existed when it was opened, together with that session&rsquo;s attributes and, for applications built on wicket-auth-roles, the signed-in state held on that same instance, so an authorization decision taken inside a WebSocket callback is taken against an identity that has already been revoked. The copy is also what the connection writes through: a Session#invalidateNow() issued from inside a WebSocket callback invalidates the copy and leaves the container session valid, and session attributes set over the connection are written to the copy rather than to the session.<br><br>An application is affected where it uses Wicket&rsquo;s native WebSocket support on pages or shared resources that require an authenticated session, and where sessions are ended by the container rather than by Wicket. Session#invalidateNow(), and AuthenticatedWebSession#invalidate() and #signOut() which call it, remain effective for a WebSocketBehavior on a page: they clear the page manager, and the connection can then no longer resolve the page it was opened for. A WebSocketResource is not limited in that way, because a frame naming a resource is served against a throwaway page and never consults the page manager, so such a connection outlives Wicket&rsquo;s own sign-out as well. Some containers close WebSocket connections themselves when the HTTP session they were opened under is destroyed, in which case the connection ends regardless; that is a property of the container rather than of Wicket. Applications that do not use the native WebSocket support are not affected.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.19.0, from 9.0.0 through 9.24.0, from 10.0.0 through 10.11.0. Older, unsupported releases from 6.0.0 onwards are also affected. Users are recommended to upgrade to version 8.20.0, 9.25.0 or 10.12.0, which fix the issue.<br></p>
+<h3 id="references-14">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/5vkw9wz6gf135ccosj928zjs4hqy7bcv">https://lists.apache.org/thread.html/5vkw9wz6gf135ccosj928zjs4hqy7bcv</a></li>
+</ul>
+<h3 id="credits-14">Credits</h3>
+<ul>
+<li>Emond Papegaaij (finder)</li>
+</ul>
+<h2 id="CVE-2026-82558">WebSocketBehavior delivers client messages to a component the client may not invoke</h2>
+<p>CVE-2026-82558 <a href="https://cve.org/CVERecord?id=CVE-2026-82558">[CVE]</a> <a href="./CVE-2026-82558.cve.json">[CVE json]</a> <a href="./CVE-2026-82558.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T21:58:26.545Z</em></p>
+<h3 id="affected-15">Affected</h3>
+<ul>
+<li>Apache Wicket from 8.0.0 through 8.19.0</li>
+<li>Apache Wicket from 9.0.0 through 9.24.0</li>
+<li>Apache Wicket from 10.0.0 through 10.11.0</li>
+</ul>
+<h3 id="description-15">Description</h3>
+<p>Missing authorization in Apache Wicket.<br><br>org.apache.wicket.protocol.ws.api.WebSocketBehavior, through which Wicket&rsquo;s native WebSocket support hands a message sent by the client to the application, calls its onMessage() callbacks without checking whether the client may invoke the component the behavior is attached to. Wicket opens a single WebSocket connection per page, and a message received on it is delivered to every WebSocketBehavior of that page. For an Ajax behavior Wicket makes this check before invoking it, through Behavior#canCallListener(Component), which refuses a component that is not visible or not enabled, including one for which the IAuthorizationStrategy denies the RENDER or ENABLE action. A WebSocketBehavior attached to such a component, or to a child of one, therefore receives the client&rsquo;s text and binary messages, together with a WebSocketRequestHandler that writes back to that client, where an Ajax behavior on the same component would be refused.<br><br>An application is affected where it attaches a WebSocketBehavior that overrides onMessage() to a component that it hides, disables, or restricts through its IAuthorizationStrategy, for example with MetaDataRoleAuthorizationStrategy or the AuthorizeAction annotation. The client needs a session of their own and a page of their own that contains such a component: messages are delivered only to pages in the page store of the client&rsquo;s own session, so this gives no access to another user&rsquo;s session, page or connection. Messages pushed by the server are not affected.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.19.0, from 9.0.0 through 9.24.0, from 10.0.0 through 10.11.0. Older, unsupported releases from 6.0.0 onwards are also affected. Users are recommended to upgrade to version 8.20.0, 9.25.0 or 10.12.0, which fix the issue.<br></p>
+<h3 id="references-15">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/o1ojfn53742ztd13m93336t3kdjw2tq9">https://lists.apache.org/thread.html/o1ojfn53742ztd13m93336t3kdjw2tq9</a></li>
+</ul>
+<h3 id="credits-15">Credits</h3>
+<ul>
+<li>Emond Papegaaij (finder)</li>
+</ul>
+<h2 id="CVE-2026-82557">A disabled or invisible form submitting component is still invoked on a plain form submission</h2>
+<p>CVE-2026-82557 <a href="https://cve.org/CVERecord?id=CVE-2026-82557">[CVE]</a> <a href="./CVE-2026-82557.cve.json">[CVE json]</a> <a href="./CVE-2026-82557.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T21:55:57.905Z</em></p>
+<h3 id="affected-16">Affected</h3>
+<ul>
+<li>Apache Wicket from 10.3.0 through 10.11.0</li>
+</ul>
+<h3 id="description-16">Description</h3>
+<p>Missing authorization in Apache Wicket.<br><br>org.apache.wicket.markup.html.form.Form resolves the component that submitted a form from the request parameters in Form#onRequest() and passes the result directly to Form#onFormSubmitted(IFormSubmitter). The check that the submitting component is visible and enabled in its hierarchy runs only when onFormSubmitted() is given no submitter, so it no longer runs for an ordinary form submission, and it is the only point at which Wicket verifies that the application actually offered the named control to the caller. Form#findSubmitter() matches on the request parameter name alone and applies no visibility or enablement filter, and the request handler checks only the form itself, which is visible and enabled. A request that names a submit button the application withheld therefore reaches that button&rsquo;s onSubmit() and onAfterSubmit(), and its onError() when form validation fails; where the button sets setDefaultFormProcessing(false) it reaches onSubmit() and onAfterSubmit() without any form validation.<br><br>An application is affected where a form submitting component, such as a Button or a SubmitLink, is unavailable to the caller while the enclosing form remains available. How the component was made unavailable does not matter: the component&rsquo;s own setVisible(false), setEnabled(false) or setVisibilityAllowed(false), an overridden isVisible() or isEnabled(), an invisible or disabled parent container anywhere above it, and a RENDER or ENABLE denial from IAuthorizationStrategy — for example through MetaDataRoleAuthorizationStrategy or the AuthorizeAction annotation — are all enforced by that one check, and all of them are bypassed. A component that renders as disabled carries its own input name in the markup the caller already holds. Submissions made through AjaxFormSubmitBehavior, and therefore through AjaxButton and AjaxSubmitLink, are not affected: those are invoked as a behaviour on the button itself, the behaviour&rsquo;s invocation is authorized against that button, and the non-Ajax callbacks of those two classes do nothing. Restrictions applied to the form or to the page rather than to the submitting component are unaffected.<br><br>The 9.x and 8.x release lines, and the unsupported lines before them, are not affected; the behaviour was introduced in 10.3.0.<br><br>This issue affects Apache Wicket: from 10.3.0 through 10.11.0. Users are recommended to upgrade to version 10.12.0, which fixes the issue.<br></p>
+<h3 id="references-16">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/lz4jot6f9ycxfjyhmlr2b4ssynmgpy92">https://lists.apache.org/thread.html/lz4jot6f9ycxfjyhmlr2b4ssynmgpy92</a></li>
+</ul>
+<h3 id="credits-16">Credits</h3>
+<ul>
+<li>Emond Papegaaij (finder)</li>
+</ul>
+<h2 id="CVE-2026-82115">The configured authorization strategy is not applied to a shared WebSocketResource</h2>
+<p>CVE-2026-82115 <a href="https://cve.org/CVERecord?id=CVE-2026-82115">[CVE]</a> <a href="./CVE-2026-82115.cve.json">[CVE json]</a> <a href="./CVE-2026-82115.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T21:42:42.017Z</em></p>
+<h3 id="affected-17">Affected</h3>
+<ul>
+<li>Apache Wicket from 8.0.0 through 8.19.0</li>
+<li>Apache Wicket from 9.0.0 through 9.24.0</li>
+<li>Apache Wicket from 10.0.0 through 10.11.0</li>
+</ul>
+<h3 id="description-17">Description</h3>
+<p>Missing authorization in Apache Wicket.<br><br>org.apache.wicket.protocol.ws.api.WebSocketMessageBroadcastHandler, the request handler Wicket&rsquo;s native WebSocket support uses to deliver an incoming frame, resolves the shared resource named by the client&rsquo;s handshake parameter and calls WebSocketResource#onPayload() on it directly, without consulting IAuthorizationStrategy#isResourceAuthorized(). That method has a single enforcement point in the framework, org.apache.wicket.request.handler.resource.ResourceRequestHandler, which the WebSocket transport does not pass through, and WebSocketResource#respond() is final and empty. No route to a WebSocketResource therefore asks the configured authorization strategy whether the caller may use it, and an @AuthorizeResource annotation on such a class has no effect.<br><br>A caller needs a bound Wicket session and the name of the resource. The name is not a secret: Wicket writes it into the page that opens the connection. No page of the application is otherwise involved, because a request naming a resource is served with a throwaway page. All of the resource&rsquo;s callbacks are reached this way, including onConnect() and both onMessage() overloads, and what a callback pushes back through WebSocketRequestHandler goes to the caller&rsquo;s own connection.<br><br>An application is affected where it registers a WebSocketResource as a shared resource and relies on the authorization strategy to restrict it. What the caller gains is whatever that resource&rsquo;s callbacks do with a text or binary message of the caller&rsquo;s choosing. The connection is registered under the caller&rsquo;s own session, so it gives no access to another user&rsquo;s connection.<br><br>As a workaround, reject unauthorized connections with an IWebSocketConnectionFilter registered through WebSocketSettings#setConnectionFilter(), or repeat the authorization check at the start of each callback.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.19.0, from 9.0.0 through 9.24.0, from 10.0.0 through 10.11.0. Older, unsupported releases from 7.0.0 onwards are also affected. Users are recommended to upgrade to version 8.20.0, 9.25.0 or 10.12.0, which fix the issue.<br></p>
+<h3 id="references-17">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/0lj9og7vp22ps77nrwdj42f64cfb9g4c">https://lists.apache.org/thread.html/0lj9og7vp22ps77nrwdj42f64cfb9g4c</a></li>
+</ul>
+<h3 id="credits-17">Credits</h3>
+<ul>
+<li>Ugur Ozer (finder)</li>
+</ul>
 <h2 id="CVE-2026-76986">XSS in AbstractSingleSelectChoice via getNullValidDisplayValue</h2>
 <p>CVE-2026-76986 <a href="https://cve.org/CVERecord?id=CVE-2026-76986">[CVE]</a> <a href="./CVE-2026-76986.cve.json">[CVE json]</a> <a href="./CVE-2026-76986.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-08-31T13:24:54.231Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-18">Affected</h3>
 <ul>
 <li>Apache Wicket from 8.0.0 through 8.18.0</li>
 <li>Apache Wicket from 9.0.0 through 9.23.0</li>
 <li>Apache Wicket from 10.0.0 through 10.10.0</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-18">Description</h3>
 <p>Improper neutralization of input during web page generation in Apache Wicket.<br><br>org.apache.wicket.markup.html.form.AbstractSingleSelectChoice, the base class of DropDownChoice, writes the body of the default option — the entry shown when no choice is selected — into the markup as it is, while every other option body in the same select is escaped according to the escape-model-strings setting. The body comes from getNullValidDisplayValue() or getNullKeyDisplayValue(), both of which are protected, so what they return is not necessarily the plain text the default implementation reads from a resource bundle.<br><br>An application is affected where it overrides one of those methods and returns a value holding data an attacker can influence, or where its own nullValid or null bundle entry holds such a value. The bundles shipped with Wicket contain plain text. RadioChoice overrides getDefaultChoice to emit no default option and is not affected.<br><br>As a workaround, escape the value in the override.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.18.0, from 9.0.0 through 9.23.0, from 10.0.0 through 10.10.0. Older, unsupported releases from 1.5.0 onwards are also affected. Users are recommended to upgrade to version 8.19.0, 9.24.0 or 10.11.0, which fix the issue.<br></p>
-<h3 id="references">References</h3>
+<h3 id="references-18">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/4qltg6wckqz8wbs1f4jzqlc0yccpgvll">https://lists.apache.org/thread/4qltg6wckqz8wbs1f4jzqlc0yccpgvll</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-18">Credits</h3>
 <ul>
 <li>Emond Papegaaij (finder)</li>
 </ul>
 <h2 id="CVE-2026-76985">XSS in Palette via getAdditionalAttributes</h2>
 <p>CVE-2026-76985 <a href="https://cve.org/CVERecord?id=CVE-2026-76985">[CVE]</a> <a href="./CVE-2026-76985.cve.json">[CVE json]</a> <a href="./CVE-2026-76985.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-08-31T13:22:10.063Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-19">Affected</h3>
 <ul>
 <li>Apache Wicket from 8.0.0 through 8.18.0</li>
 <li>Apache Wicket from 9.0.0 through 9.23.0</li>
 <li>Apache Wicket from 10.0.0 through 10.10.0</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-19">Description</h3>
 <p>Improper neutralization of input during web page generation in Apache Wicket.<br><br>org.apache.wicket.extensions.markup.html.form.palette.component.AbstractOptions, which renders the two option lists of a Palette, escapes the id and the display value of each option according to the escape-model-strings setting, and wrote the attribute names and values returned by getAdditionalAttributes into the &lt;option&gt; tag as they came.<br><br>An application is affected where it overrides Palette.getAdditionalAttributesForChoices, Palette.getAdditionalAttributesForSelection or AbstractOptions.getAdditionalAttributes and returns a value holding data an attacker can influence. These methods return null by default, so an application that does not override them is not affected.<br><br>As a workaround, escape the values in the override.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.18.0, from 9.0.0 through 9.23.0, from 10.0.0 through 10.10.0. Older, unsupported releases from 1.4.0 onwards are also affected. Users are recommended to upgrade to version 8.19.0, 9.24.0 or 10.11.0, which fix the issue.<br></p>
-<h3 id="references-1">References</h3>
+<h3 id="references-19">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/0x2x12x22ff4yq4rhqokb2fjhtsd0f0j">https://lists.apache.org/thread/0x2x12x22ff4yq4rhqokb2fjhtsd0f0j</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-19">Credits</h3>
 <ul>
 <li>Emond Papegaaij (finder)</li>
 </ul>
 <h2 id="CVE-2026-76984">XSS in MetaDataHeaderItem via addTagAttribute</h2>
 <p>CVE-2026-76984 <a href="https://cve.org/CVERecord?id=CVE-2026-76984">[CVE]</a> <a href="./CVE-2026-76984.cve.json">[CVE json]</a> <a href="./CVE-2026-76984.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-08-31T11:56:14.047Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-20">Affected</h3>
 <ul>
 <li>Apache Wicket from 8.0.0 through 8.18.0</li>
 <li>Apache Wicket from 9.0.0 through 9.23.0</li>
 <li>Apache Wicket from 10.0.0 through 10.10.0</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-20">Description</h3>
 <p>Improper neutralization of input during web page generation in Apache Wicket.<br><br>org.apache.wicket.markup.head.MetaDataHeaderItem generates &lt;meta&gt; and &lt;link&gt; header tags. It escaped the attribute names it wrote, but ran the attribute values through a replacement of &quot; with &quot;. A backslash before a double quote means nothing in HTML, so a value containing a double quote ends its own attribute and what follows is parsed as further attributes of the generated tag.<br><br>An application is affected where it supplies an attribute value holding data an attacker can influence, through addTagAttribute or the forMetaTag and forLinkTag factory methods. A value may be given as an IModel, so it is not necessarily a literal.<br><br>There is no setting to change; an application can only avoid supplying a value that contains a double quote. Note that these values have never been escaped effectively: before the change released in 6.24.0, 7.4.0 and 8.0.0 they were written with no escaping at all.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.18.0, from 9.0.0 through 9.23.0, from 10.0.0 through 10.10.0. Older, unsupported releases from 6.17.0 onwards are also affected. Users are recommended to upgrade to version 8.19.0, 9.24.0 or 10.11.0, which fix the issue.<br></p>
-<h3 id="references-2">References</h3>
+<h3 id="references-20">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/jt8yxntfjcxnnntth1qjtdo19gzx5n6v">https://lists.apache.org/thread/jt8yxntfjcxnnntth1qjtdo19gzx5n6v</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-20">Credits</h3>
 <ul>
 <li>Emond Papegaaij (finder)</li>
 </ul>
 <h2 id="CVE-2026-76983">XSS in AutoLabelTextResolver via FormComponent.setLabel</h2>
 <p>CVE-2026-76983 <a href="https://cve.org/CVERecord?id=CVE-2026-76983">[CVE]</a> <a href="./CVE-2026-76983.cve.json">[CVE json]</a> <a href="./CVE-2026-76983.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-08-31T11:56:37.155Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-21">Affected</h3>
 <ul>
 <li>Apache Wicket from 8.0.0 through 8.18.0</li>
 <li>Apache Wicket from 9.0.0 through 9.23.0</li>
 <li>Apache Wicket from 10.0.0 through 10.10.0</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-21">Description</h3>
 <p>Improper neutralization of input during web page generation in Apache Wicket.<br><br>The &lt;wicket:label&gt; tag is provided by org.apache.wicket.markup.html.form.AutoLabelTextResolver, which is registered by default in every WebApplication. The resolver writes the label it finds into the markup as it is, and reads no escaping setting at all, so markup in a label is rendered as markup.<br><br>When the label comes from the labelled component&rsquo;s label model, set through FormComponent#setLabel(IModel), it is written to the markup unescaped. An application is affected where the label of a form component holds data an attacker can influence. Wicket cannot determine where a model value comes from, so whether it reaches the page from a request or from storage is a property of the application.<br><br>There is no workaround. Unlike every other rendering path in Wicket, the resolver never consulted the escape-model-strings setting, so an application had no way to ask for the label to be escaped.<br><br>The body of a &lt;wicket:label&gt; tag is markup by design and is not affected; it remains the supported way to place markup in a label.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.18.0, from 9.0.0 through 9.23.0, from 10.0.0 through 10.10.0. Older, unsupported releases from 1.5.0 onwards are also affected. Users are recommended to upgrade to version 8.19.0, 9.24.0 or 10.11.0, which fix the issue.<br></p>
-<h3 id="references-3">References</h3>
+<h3 id="references-21">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/lfc9s9qkgxhm8ffscp9b7gjfgj47g25h">https://lists.apache.org/thread/lfc9s9qkgxhm8ffscp9b7gjfgj47g25h</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits-21">Credits</h3>
 <ul>
 <li>Ho1aAs (finder)</li>
 </ul>
 <h2 id="CVE-2026-76982">XSS in Button via its model object</h2>
 <p>CVE-2026-76982 <a href="https://cve.org/CVERecord?id=CVE-2026-76982">[CVE]</a> <a href="./CVE-2026-76982.cve.json">[CVE json]</a> <a href="./CVE-2026-76982.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-08-31T11:52:24.884Z</em></p>
-<h3 id="affected-4">Affected</h3>
+<h3 id="affected-22">Affected</h3>
 <ul>
 <li>Apache Wicket from 8.0.0 through 8.18.0</li>
 <li>Apache Wicket from 9.0.0 through 9.23.0</li>
 <li>Apache Wicket from 10.0.0 through 10.10.0</li>
 </ul>
-<h3 id="description-4">Description</h3>
+<h3 id="description-22">Description</h3>
 <p>Improper neutralization of input during web page generation in Apache Wicket.<br><br>org.apache.wicket.markup.html.form.Button clears the escape-model-strings flag in its constructor, so that the value attribute it writes is not encoded twice — ComponentTag already encodes attribute values when it writes the tag. That reasoning holds only for the attribute. When the component is attached to a &lt;button&gt; element rather than an &lt;input&gt;, it writes its model object into the element body instead, and nothing encodes an element body, so markup in the model is rendered as markup.<br><br>An application is affected where it renders a Button on a &lt;button&gt; element and that button&rsquo;s model holds data an attacker can influence. Wicket cannot determine where a model value comes from, so whether it reaches the page from a request or from storage is a property of the application. The subclasses that inherit this constructor — AjaxButton, AjaxFallbackButton and WizardButton — are affected on the same terms.<br><br>As a workaround, calling setEscapeModelStrings(true) on a button that renders as a &lt;button&gt; element escapes the body correctly, and does not cause double encoding, because the value attribute is written only for &lt;input&gt; elements.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.18.0, from 9.0.0 through 9.23.0, from 10.0.0 through 10.10.0. Older, unsupported releases from 6.25.0 and 7.5.0 onwards are also affected.<br><br>Users are recommended to upgrade to version 8.19.0, 9.24.0 or 10.11.0, which fix the issue.<br></p>
-<h3 id="references-4">References</h3>
+<h3 id="references-22">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/bhcfrz61o4bv0olktybvgqft8km9wfrd">https://lists.apache.org/thread/bhcfrz61o4bv0olktybvgqft8km9wfrd</a></li>
 </ul>
-<h3 id="credits-4">Credits</h3>
+<h3 id="credits-22">Credits</h3>
 <ul>
 <li>Emond Papegaaij (finder)</li>
 </ul>
 <h2 id="CVE-2026-75802">XSS in AjaxEditableLabel and its subclasses via IChoiceRenderer and defaultNullLabel</h2>
 <p>CVE-2026-75802 <a href="https://cve.org/CVERecord?id=CVE-2026-75802">[CVE]</a> <a href="./CVE-2026-75802.cve.json">[CVE json]</a> <a href="./CVE-2026-75802.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-08-31T11:52:15.765Z</em></p>
-<h3 id="affected-5">Affected</h3>
+<h3 id="affected-23">Affected</h3>
 <ul>
 <li>Apache Wicket from 8.0.0 through 8.18.0</li>
 <li>Apache Wicket from 9.0.0 through 9.23.0</li>
 <li>Apache Wicket from 10.0.0 through 10.10.0</li>
 </ul>
-<h3 id="description-5">Description</h3>
+<h3 id="description-23">Description</h3>
 <p>AjaxEditableChoiceLabel in wicket-extensions, when constructed with a non-null IChoiceRenderer, writes the display value obtained from that renderer into the label&rsquo;s markup without applying the HTML escaping Wicket performs by default for component model values. An attacker who can influence the choice or model data rendered by such a label can inject HTML or script that executes in the browser of any user who views the page. The same value is correctly escaped when the component&rsquo;s dropdown editor renders it as an option, so only the label rendering is affected.<br><br>AjaxEditableLabel, AjaxEditableChoiceLabel and AjaxEditableMultiLineLabel write the value returned by the protected defaultNullLabel() method into the label&rsquo;s markup the same way when the component&rsquo;s model is empty, while the model value they show otherwise is escaped. The default implementation returns a constant, so an application is affected where it overrides that method and returns a value an attacker can influence.<br><br>Neither value could be escaped by configuration, because escapeModelStrings had no effect on any of the three components: it is read by the label they render with rather than by the component itself, and nothing carried the setting across.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.18.0, from 9.0.0 through 9.23.0, from 10.0.0 through 10.10.0. Older, unsupported releases are also affected; the display value from the renderer since 6.22.0 and the null label since 1.4.0. Users are recommended to upgrade to version 8.19.0, 9.24.0 or 10.11.0, which fix the issue.<br></p>
-<h3 id="references-5">References</h3>
+<h3 id="references-23">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/lrmo7mddb4v4ffl36g5b9x8s40tbmw68">https://lists.apache.org/thread/lrmo7mddb4v4ffl36g5b9x8s40tbmw68</a></li>
 </ul>
-<h3 id="credits-5">Credits</h3>
+<h3 id="credits-23">Credits</h3>
 <ul>
 <li>Ho1aAs (finder)</li>
 </ul>
 <h2 id="CVE-2026-71378">Cross-Site Request Forgery (CSRF) protection bypass in ResourceIsolationRequestCycleListener</h2>
 <p>CVE-2026-71378 <a href="https://cve.org/CVERecord?id=CVE-2026-71378">[CVE]</a> <a href="./CVE-2026-71378.cve.json">[CVE json]</a> <a href="./CVE-2026-71378.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-08-31T11:46:25.079Z</em></p>
-<h3 id="affected-6">Affected</h3>
+<h3 id="affected-24">Affected</h3>
 <ul>
 <li>Apache Wicket from 9.1.0 through 9.23.0</li>
 <li>Apache Wicket from 10.0.0 through 10.10.0</li>
 </ul>
-<h3 id="description-6">Description</h3>
+<h3 id="description-24">Description</h3>
 <p>ResourceIsolationRequestCycleListener protects a Wicket application against cross-site request forgery by rejecting requests that a resource isolation policy judges to come from another origin. Its default policy, FetchMetadataResourceIsolationPolicy, was derived from a reference implementation written to guard static resources, and it inherited two allowances that are unsafe when the thing being guarded is an action on a page:<br><ol><li>Every &ldquo;simple top-level navigation&rdquo; was allowed. Any GET request carrying Sec-Fetch-Mode: navigate whose Sec-Fetch-Dest was neither object nor embed was allowed, whatever Sec-Fetch-Site said — including cross-site. Wicket invokes component listeners (Link.onClick(), form submits, behaviour callbacks) through ordinary GET navigations, so a page under an attacker&rsquo;s control could navigate the victim&rsquo;s browser to a listener URL and have that listener run inside the victim&rsquo;s authenticated session. Browsers send SameSite=Lax cookies — the effective default when no SameSite attribute is set — on cross-site top-level GET navigations, so the victim&rsquo;s session cookie accompanied the request.</li><li>Sec-Fetch-Site: same-site was allowed unconditionally. That value means the same registrable domain and scheme but a different origin — another subdomain or another port. Any sibling origin could therefore invoke any listener by any method, POST form submits included, and cookies are always sent on same-site requests regardless of SameSite. A hostile sibling origin obtained through a subdomain takeover, through delegated user content, or through an XSS elsewhere on the site could act as the authenticated user.</li></ol>Users are recommended to upgrade to version 9.24.0 or 10.11.0, which fix the issue.<br><h2><span>Affected versions</span></h2></p>
 <ul><li><span>Apache Wicket 9.1.0 through 9.23.0</span></li><li><span>Apache Wicket 10.0.0 through 10.10.0</span></li></ul>
 <h2><span>Not affected</span></h2>
 <p><span><span>Any release older than 9.1.0:</span><br><ul><li><span>Apache Wicket 8.x (8.0.0 through 8.17.0). The resource isolation classes do not exist in</span><span> the 8.x line, which offers only the Origin/Referer-based</span><span> CsrfPreventionRequestCycleListener. </span><span>No 8.x release requires a fix.</span></li><li><span>Apache Wicket 9.0.0. ResourceIsolationRequestCycleListener</span><span> and FetchMetadataResourceIsolationPolicy were introduced by WICKET-6786 and first shipped</span><span> in 9.1.0 (released 2020-10-07).</span></li></ul></span></p>
-<h3 id="references-6">References</h3>
+<h3 id="references-24">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/42d22kyz38td5zkqybw9fwdrvyfd5y62">https://lists.apache.org/thread/42d22kyz38td5zkqybw9fwdrvyfd5y62</a></li>
 </ul>
-<h3 id="credits-6">Credits</h3>
+<h3 id="credits-24">Credits</h3>
 <ul>
 <li>Darren Carreras (finder)</li>
 <li>Andre Kropp (Nexory) (finder)</li>
@@ -248,38 +582,38 @@
 <h2 id="CVE-2026-71257">Configured file upload limits are not enforced when the multipart request has already been parsed</h2>
 <p>CVE-2026-71257 <a href="https://cve.org/CVERecord?id=CVE-2026-71257">[CVE]</a> <a href="./CVE-2026-71257.cve.json">[CVE json]</a> <a href="./CVE-2026-71257.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-08-31T11:45:48.350Z</em></p>
-<h3 id="affected-7">Affected</h3>
+<h3 id="affected-25">Affected</h3>
 <ul>
 <li>Apache Wicket from 8.0.0 through 8.18.0</li>
 <li>Apache Wicket from 9.0.0 through 9.23.0</li>
 <li>Apache Wicket from 10.0.0 through 10.10.0</li>
 </ul>
-<h3 id="description-7">Description</h3>
+<h3 id="description-25">Description</h3>
 <p>Apache Wicket enforces the upload limits configured on a form or upload field while parsing a multipart request with Apache Commons FileUpload. If the request body has already been consumed by another component, Commons FileUpload returns no items and Wicket falls back to reading the upload through HttpServletRequest#getParts(). The per-file size limit (for example Form#setFileMaxSize) and the file count limit (Form#setFileCountMax) are not applied to the parts obtained that way, and no exception is raised, so the upload is processed as though those limits had been satisfied. A remote uploader can therefore submit files that are larger, or more numerous, than the application permits, up to whatever the component that parsed the request allows. A part carrying no Content-Type header is additionally read into memory in full during parsing, so the size of that allocation is determined by the request and bounded only by those same external limits.<br><br>The total upload size limit (Form#setMaxSize) is not affected. Commons FileUpload compares the declared Content-Length against it before reading the body, so a request declaring an oversized length is rejected before the fallback is reached.<br><br>The fallback is reached in deployments where a servlet or filter has already parsed the request body — for example a servlet annotated with @MultipartConfig, Spring Boot&rsquo;s multipart resolver, or any filter that calls HttpServletRequest#getParameter() on a multipart request. It applies to the Wicket components that accept uploads on that path, including Form with FileUploadField, FileUploadToResourceField and AjaxFileDropBehavior. Applications that configure neither a per-file nor a file-count limit are not affected, as Wicket applies neither by default.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.18.0, from 9.0.0 through 9.23.0, from 10.0.0 through 10.10.0.<br><br>Users are recommended to upgrade to version 8.19.0, 9.24.0 or 10.11.0, which fix the issue. Users of Apache Wicket 7.x or older, which are no longer supported, should upgrade to a supported version. As a workaround, configure equivalent limits in the component that parses the request — for example spring.servlet.multipart.max-file-size and max-request-size, or maxFileSize and maxRequestSize in @MultipartConfig or in the web.xml &lt;multipart-config&gt; element.</p>
-<h3 id="references-7">References</h3>
+<h3 id="references-25">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/o59f8jz1m09kqdwm73pyyn6hdsxt190q">https://lists.apache.org/thread/o59f8jz1m09kqdwm73pyyn6hdsxt190q</a></li>
 </ul>
-<h3 id="credits-7">Credits</h3>
+<h3 id="credits-25">Credits</h3>
 <ul>
 <li>GitHub: @deprrous (finder)</li>
 </ul>
 <h2 id="CVE-2026-70449">Path traversal in resource style/variation/locale</h2>
 <p>CVE-2026-70449 <a href="https://cve.org/CVERecord?id=CVE-2026-70449">[CVE]</a> <a href="./CVE-2026-70449.cve.json">[CVE json]</a> <a href="./CVE-2026-70449.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-08-31T11:44:41.974Z</em></p>
-<h3 id="affected-8">Affected</h3>
+<h3 id="affected-26">Affected</h3>
 <ul>
 <li>Apache Wicket from 8.0.0 through 8.18.0</li>
 <li>Apache Wicket from 9.0.0 through 9.23.0</li>
 <li>Apache Wicket from 10.0.0 through 10.10.0</li>
 </ul>
-<h3 id="description-8">Description</h3>
+<h3 id="description-26">Description</h3>
 <p>Improper validation of resource URL attributes in Apache Wicket allows an unauthenticated remote attacker to read files from the web application, including files under WEB-INF that the servlet container would not otherwise serve.<br><br>The locale, style and variation attributes decoded from a package resource URL are spliced into the resource lookup path without being checked for path separators. The IPackageResourceGuard — whose rejection of .. is one of the two intended controls — is applied to the resource name before those attributes are appended, and WebApplicationPath rejects only paths literally beginning with WEB-INF/. Neither control ever inspects the attacker-controlled portion of the path. On servlet containers that normalize .. in ServletContext.getResource(), a crafted request therefore escapes the intended package directory.<br><br>The set of readable files is limited to the file extensions permitted by the configured IPackageResourceGuard. The default SecurePackageResourceGuard permits only js, css, png, jpg, jpeg, gif, ico, cur, map, html, txt, swf, bmp, svg, avif, eot, ttf, woff and woff2, which excludes configuration formats. Applications that have added patterns to the guard, or replaced it with the blocklist-based PackageResourceGuard, can additionally disclose configuration files such as web.xml. Independently of the extension, the lookup performed before the guard runs acts as an existence oracle for arbitrary paths.<span><br></span><br>This issue affects Apache Wicket 8.18.0 and before, 9.23.0 and before and 10.10.0 and before.<br><br>Users are recommended to upgrade to version 8.19.0, 9.24.0 or 10.11.0, which fix the issue. Users of Apache Wicket 7.x or older, which are no longer supported, should upgrade to a supported version.</p>
-<h3 id="references-8">References</h3>
+<h3 id="references-26">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/f4pb2q2ksdsfv1o315slp36dx66bf5vg">https://lists.apache.org/thread/f4pb2q2ksdsfv1o315slp36dx66bf5vg</a></li>
 </ul>
-<h3 id="credits-8">Credits</h3>
+<h3 id="credits-26">Credits</h3>
 <ul>
 <li>Michael Mullins (finder)</li>
 <li>n0mi1k (finder)</li>
@@ -287,46 +621,46 @@
 <h2 id="CVE-2026-66391">leaked and missing CSP headers</h2>
 <p>CVE-2026-66391 <a href="https://cve.org/CVERecord?id=CVE-2026-66391">[CVE]</a> <a href="./CVE-2026-66391.cve.json">[CVE json]</a> <a href="./CVE-2026-66391.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-07-28T14:49:40.413Z</em></p>
-<h3 id="affected-9">Affected</h3>
+<h3 id="affected-27">Affected</h3>
 <ul>
 <li>Apache Wicket from 9.0.0 through 9.23.0</li>
 <li>Apache Wicket from 10.0.0 through 10.9.0</li>
 </ul>
-<h3 id="description-9">Description</h3>
+<h3 id="description-27">Description</h3>
 <p>Use of Insufficiently Random Values, Protection Mechanism Failure vulnerability in Apache Wicket.</p><p>This issue affects Apache Wicket: from 9.0.0 through 9.23.0, from 10.0.0 through 10.9.0.</p><p>Users are recommended to upgrade to version 10.10.0, which fixes the issue.</p>
-<h3 id="references-9">References</h3>
+<h3 id="references-27">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/hfzcgjsbmmthzchtb8b8nv47d95scmqk">https://lists.apache.org/thread/hfzcgjsbmmthzchtb8b8nv47d95scmqk</a></li>
 </ul>
 <h2 id="CVE-2026-66390">crafted Link URL strings can break out of the JavaScript sequence</h2>
 <p>CVE-2026-66390 <a href="https://cve.org/CVERecord?id=CVE-2026-66390">[CVE]</a> <a href="./CVE-2026-66390.cve.json">[CVE json]</a> <a href="./CVE-2026-66390.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-07-28T14:49:11.657Z</em></p>
-<h3 id="affected-10">Affected</h3>
+<h3 id="affected-28">Affected</h3>
 <ul>
 <li>Apache Wicket from 9.0.0 through 9.23.0</li>
 <li>Apache Wicket from 10.0.0 through 10.9.0</li>
 </ul>
-<h3 id="description-10">Description</h3>
+<h3 id="description-28">Description</h3>
 <p>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache Wicket.</p><p>This issue affects Apache Wicket: from 9.0.0 through 9.23.0, from 10.0.0 through 10.9.0.</p><p>Users are recommended to upgrade to version 10.10.0, which fixes the issue.</p>
-<h3 id="references-10">References</h3>
+<h3 id="references-28">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/67814fo0zocv3161bk1cr0ypvrkxky43">https://lists.apache.org/thread/67814fo0zocv3161bk1cr0ypvrkxky43</a></li>
 </ul>
 <h2 id="CVE-2026-43975">Possible malicious path traversal in FolderUploadsFileManager</h2>
 <p>CVE-2026-43975 <a href="https://cve.org/CVERecord?id=CVE-2026-43975">[CVE]</a> <a href="./CVE-2026-43975.cve.json">[CVE json]</a> <a href="./CVE-2026-43975.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-06T08:28:37.545Z</em></p>
-<h3 id="affected-11">Affected</h3>
+<h3 id="affected-29">Affected</h3>
 <ul>
 <li>Apache Wicket from 10.0.0 through 10.8.0</li>
 <li>Apache Wicket from 9.0.0 through 9.22.0</li>
 <li>Apache Wicket from 8.0.0 through 8.17</li>
 </ul>
-<h3 id="description-11">Description</h3>
+<h3 id="description-29">Description</h3>
 <p><code>FolderUploadsFileManager</code> in Apache Wicket does not validate or sanitize the <code>uploadFieldId</code> parameter or the <code>clientFileName</code>
  before constructing file paths, allowing an unauthenticated attacker to
  write arbitrary files outside the intended upload directory or read 
 files from arbitrary locations on the server.</p><p>This issue affects Apache Wicket: from 8.0.0 through 8.17.0, from 9.0.0 through 9.22.0, from 10.0.0 through 10.8.0.</p><p>Users are recommended to upgrade to version 10.9.0, which fixes the issue.</p><br>
-<h3 id="references-11">References</h3>
+<h3 id="references-29">References</h3>
 <ul>
 <li><a href="https://github.com/apache/wicket/pull/1432">https://github.com/apache/wicket/pull/1432</a></li>
 <li><a href="https://lists.apache.org/thread/xp2jrdk6ppv1zcmxb4w1mk2lg1dw3hbr">https://lists.apache.org/thread/xp2jrdk6ppv1zcmxb4w1mk2lg1dw3hbr</a></li>
@@ -334,123 +668,142 @@ files from arbitrary locations on the server.</p><p>This issue affects Apache Wi
 <h2 id="CVE-2026-43646">crafted URLs can bypass PackageResourceGuard</h2>
 <p>CVE-2026-43646 <a href="https://cve.org/CVERecord?id=CVE-2026-43646">[CVE]</a> <a href="./CVE-2026-43646.cve.json">[CVE json]</a> <a href="./CVE-2026-43646.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-06T08:31:55.175Z</em></p>
-<h3 id="affected-12">Affected</h3>
+<h3 id="affected-30">Affected</h3>
 <ul>
 <li>Apache Wicket from 8.0.0 through 8.17.0</li>
 <li>Apache Wicket from 9.0.0 through 9.22.0</li>
 <li>Apache Wicket from 10.0.0 through 10.8.0</li>
 </ul>
-<h3 id="description-12">Description</h3>
+<h3 id="description-30">Description</h3>
 <p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Wicket.</p><p>This issue affects Apache Wicket: from 8.0.0 through 8.17.0, from 9.0.0 through 9.22.0, from 10.0.0 through 10.8.0.</p><p>Users are recommended to upgrade to version 10.9.0, which fixes the issue.</p>
-<h3 id="references-12">References</h3>
+<h3 id="references-30">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/6zqcvjyz4lsqty1z2g5hg7pl5fqk88rs">https://lists.apache.org/thread/6zqcvjyz4lsqty1z2g5hg7pl5fqk88rs</a></li>
 </ul>
 <h2 id="CVE-2026-42509">crafted strings can break out of the JavaScript sequence</h2>
 <p>CVE-2026-42509 <a href="https://cve.org/CVERecord?id=CVE-2026-42509">[CVE]</a> <a href="./CVE-2026-42509.cve.json">[CVE json]</a> <a href="./CVE-2026-42509.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-06T08:34:07.745Z</em></p>
-<h3 id="affected-13">Affected</h3>
+<h3 id="affected-31">Affected</h3>
 <ul>
 <li>Apache Wicket from 8.0.0 through 8.17.0</li>
 <li>Apache Wicket from 9.0.0 through 9.22.0</li>
 <li>Apache Wicket from 10.0.0 through 10.8.0</li>
 </ul>
-<h3 id="description-13">Description</h3>
+<h3 id="description-31">Description</h3>
 <p>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache Wicket.</p><p>This issue affects Apache Wicket: from 8.0.0 through 8.17.0, 9.0.0, from 10.0.0 through 10.8.0.</p><p>Users are recommended to upgrade to version 10.9.0, which fixes the issue.</p>
-<h3 id="references-13">References</h3>
+<h3 id="references-31">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/52nrq4tt07gxz4r6sj5gyocz5s6bprjp">https://lists.apache.org/thread/52nrq4tt07gxz4r6sj5gyocz5s6bprjp</a></li>
 </ul>
 <h2 id="CVE-2026-40010">possible session fixation using AuthenticatedWebSession</h2>
 <p>CVE-2026-40010 <a href="https://cve.org/CVERecord?id=CVE-2026-40010">[CVE]</a> <a href="./CVE-2026-40010.cve.json">[CVE json]</a> <a href="./CVE-2026-40010.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-05-06T08:34:37.475Z</em></p>
-<h3 id="affected-14">Affected</h3>
+<h3 id="affected-32">Affected</h3>
 <ul>
 <li>Apache Wicket from 10.0.0 through 10.8.0</li>
 <li>Apache Wicket from 8.0.0 through 8.17.0</li>
 <li>Apache Wicket from 9.0.0 through 9.22.0</li>
 </ul>
-<h3 id="description-14">Description</h3>
+<h3 id="description-32">Description</h3>
 <p>Missing invocation of Servlet http web request method changeSessionId after session binding can be exploited for a&nbsp;session fixation attack in Apache Wicket.</p><p>This issue affects Apache Wicket: from 8.0.0 through 8.17.0, 9.0.0, from 10.0.0 through 10.8.0.</p><p>Users are recommended to upgrade to version 10.9.0, which fixes the issue.</p><br>
-<h3 id="references-14">References</h3>
+<h3 id="references-32">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/61wsc0xdtfd5oozojfx7by9w3jwgkmv1">https://lists.apache.org/thread/61wsc0xdtfd5oozojfx7by9w3jwgkmv1</a></li>
+</ul>
+<h2 id="CVE-2026-111089">XSS via a resource bundle text written unescaped into generated JavaScript and markup</h2>
+<p>CVE-2026-111089 <a href="https://cve.org/CVERecord?id=CVE-2026-111089">[CVE]</a> <a href="./CVE-2026-111089.cve.json">[CVE json]</a> <a href="./CVE-2026-111089.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-01T22:32:05.383Z</em></p>
+<h3 id="affected-33">Affected</h3>
+<ul>
+<li>Apache Wicket from 8.0.0 through 8.19.0</li>
+<li>Apache Wicket from 9.0.0 through 9.24.0</li>
+<li>Apache Wicket from 10.0.0 through 10.11.0</li>
+</ul>
+<h3 id="description-33">Description</h3>
+<p>Apache Wicket reads texts from the application's resource bundles — a localized label, a css class name — and writes some of them into the JavaScript and the markup it generates for a component. Those texts are placed inside single-quoted JavaScript string literals and inside quoted attribute values without being escaped for that context, so a text containing a quote ends the literal or the attribute, and what follows is parsed as script or as markup in the application's origin when the page loads.<br><br>A resource bundle entry is authored for the application and does not say where the framework will write it. The same key is read by the framework into element text, where Wicket escapes it, and into the contexts below, where it did not. A text containing an apostrophe, which is ordinary in several languages, is enough to break the page; a text under the influence of another party is enough to run script.<br><br>In org.apache.wicket:wicket-core, org.apache.wicket.markup.html.form.upload.MultiFileUploadField writes the org.apache.wicket.mfu.delete message into a JavaScript string literal, and org.apache.wicket.markup.html.form.Form writes the hidden-fields css class into the class attribute of the container it renders for its hidden fields; on 8.0.0 through 8.19.0 and 9.0.0 through 9.24.0 Form#appendDefaultButtonField writes the same css class into a second container. In org.apache.wicket:wicket-extensions, UploadProgressBar writes its UploadProgressBar.starting text into a JavaScript string literal, FilterForm writes the hidden-fields css class into the class attribute of its hidden input markup, and on 9.0.0 through 9.24.0 and 10.0.0 through 10.11.0 TrapFocusBehavior writes its current css class into a JavaScript string literal.<br><br>The Content-Security-Policy that Apache Wicket 9.x and 10.x send by default does not prevent the JavaScript cases: the generated script is written into a script element carrying the per-response nonce, so the injected code is part of a script the policy admits. It does prevent an inline event handler injected through the attribute cases.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.19.0, from 9.0.0 through 9.24.0, from 10.0.0 through 10.11.0. Users of Apache Wicket 7.x or older, which are no longer supported, should upgrade to a supported version. Users are recommended to upgrade to version 8.20.0, 9.25.0 or 10.12.0, which fix the issue.</p>
+<h3 id="references-33">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/xyp4sm5mm7s618fktstb22577qxbmqw8">https://lists.apache.org/thread.html/xyp4sm5mm7s618fktstb22577qxbmqw8</a></li>
+</ul>
+<h3 id="credits-27">Credits</h3>
+<ul>
+<li>Pedro Santos (finder)</li>
 </ul>
 <h2 id="CVE-2024-53299">An attacker can intentionally trigger a memory leak</h2>
 <p>CVE-2024-53299 <a href="https://cve.org/CVERecord?id=CVE-2024-53299">[CVE]</a> <a href="./CVE-2024-53299.cve.json">[CVE json]</a> <a href="./CVE-2024-53299.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2025-01-23T08:37:04.162Z</em></p>
-<h3 id="affected-15">Affected</h3>
+<h3 id="affected-34">Affected</h3>
 <ul>
 <li>Apache Wicket from 7.0.0 through 7.18.*</li>
 <li>Apache Wicket from 8.0.0-M1 through 8.16.*</li>
 <li>Apache Wicket from 9.0.0-M1 through 9.18.*</li>
 <li>Apache Wicket from 10.0.0-M1 through 10.2.*</li>
 </ul>
-<h3 id="description-15">Description</h3>
+<h3 id="description-34">Description</h3>
 <p>The request handling in the core in Apache Wicket 7.0.0 on any platform allows an attacker to create a DOS via multiple requests to server resources.<br>Users are recommended to upgrade to versions 9.19.0 or 10.3.0, which fixes this issue.</p>
-<h3 id="references-15">References</h3>
+<h3 id="references-34">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/gyp2ht00c62827y0379lxh5dbx3hhho5">https://lists.apache.org/thread/gyp2ht00c62827y0379lxh5dbx3hhho5</a></li>
 </ul>
-<h3 id="credits-9">Credits</h3>
+<h3 id="credits-28">Credits</h3>
 <ul>
 <li>Pedro Santos (finder)</li>
 </ul>
 <h2 id="CVE-2024-36522">Remote code execution via XSLT injection</h2>
 <p>CVE-2024-36522 <a href="https://cve.org/CVERecord?id=CVE-2024-36522">[CVE]</a> <a href="./CVE-2024-36522.cve.json">[CVE json]</a> <a href="./CVE-2024-36522.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-07-12T12:13:50.122Z</em></p>
-<h3 id="affected-16">Affected</h3>
+<h3 id="affected-35">Affected</h3>
 <ul>
 <li>Apache Wicket from 10.0.0-M1 through 10.0.0</li>
 <li>Apache Wicket from 9.0.0 through 9.17.0</li>
 <li>Apache Wicket from 8.0.0 through 8.15.0</li>
 </ul>
-<h3 id="description-16">Description</h3>
+<h3 id="description-35">Description</h3>
 <p>The default configuration of XSLTResourceStream.java is vulnerable to remote code execution via XSLT injection when <span style="background-color: rgb(255, 255, 255);">processing input from an untrusted source without validation</span>.<br>Users are recommended to upgrade to versions 10.1.0, 9.18.0 or 8.16.0, which fix this issue.</p>
-<h3 id="references-16">References</h3>
+<h3 id="references-35">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/w613qh7yors840pbx00l1pq6wkl9jzkc">https://lists.apache.org/thread/w613qh7yors840pbx00l1pq6wkl9jzkc</a></li>
 </ul>
-<h3 id="credits-10">Credits</h3>
+<h3 id="credits-29">Credits</h3>
 <ul>
 <li>cigar (finder)</li>
 </ul>
 <h2 id="CVE-2024-27439">Possible bypass of CSRF protection</h2>
 <p>CVE-2024-27439 <a href="https://cve.org/CVERecord?id=CVE-2024-27439">[CVE]</a> <a href="./CVE-2024-27439.cve.json">[CVE json]</a> <a href="./CVE-2024-27439.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-03-19T11:07:46.188Z</em></p>
-<h3 id="affected-17">Affected</h3>
+<h3 id="affected-36">Affected</h3>
 <ul>
 <li>Apache Wicket from 9.1.0 through 9.16.0</li>
 <li>Apache Wicket from 10.0.0-M1 before 10.0.0</li>
 </ul>
-<h3 id="description-17">Description</h3>
+<h3 id="description-36">Description</h3>
 <p>An error in the evaluation of the fetch metadata headers could allow a bypass of the CSRF protection in Apache Wicket.<br><p>This issue affects Apache Wicket: from 9.1.0 through 9.16.0, and the milestone releases for the 10.0 series.<br>Apache Wicket 8.x does not support CSRF protection via the fetch metadata headers and as such is not affected.</p><p>Users are recommended to upgrade to version 9.17.0 or 10.0.0, which fixes the issue.</p></p>
-<h3 id="references-17">References</h3>
+<h3 id="references-36">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/o825rvjjtmz3qv21ps5k7m2w9193g1lo">https://lists.apache.org/thread/o825rvjjtmz3qv21ps5k7m2w9193g1lo</a></li>
 </ul>
-<h3 id="credits-11">Credits</h3>
+<h3 id="credits-30">Credits</h3>
 <ul>
 <li>Jo Theunis (finder)</li>
 </ul>
 <h2 id="CVE-2021-23937">DNS proxy and possible amplification attack</h2>
 <p>CVE-2021-23937 <a href="https://cve.org/CVERecord?id=CVE-2021-23937">[CVE]</a> <a href="./CVE-2021-23937.cve.json">[CVE json]</a> <a href="./CVE-2021-23937.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2021-05-25T08:01:09.799Z</em></p>
-<h3 id="affected-18">Affected</h3>
+<h3 id="affected-37">Affected</h3>
 <ul>
 <li>Apache Wicket from Apache Wicket 9.x through 9.2.0</li>
 <li>Apache Wicket from Apache Wicket 8.x through 8.11.0</li>
 <li>Apache Wicket from Apache Wicket 7.x through 7.17.0</li>
 <li>Apache Wicket from 6.2.0 before Apache Wicket 6.x*</li>
 </ul>
-<h3 id="description-18">Description</h3>
+<h3 id="description-37">Description</h3>
 <p>A DNS proxy and possible amplification attack vulnerability in WebClientInfo of Apache Wicket allows an attacker to trigger arbitrary DNS lookups from the server when the X-Forwarded-For header is not properly sanitized. This DNS lookup can be engineered to overload an internal DNS server or to slow down request processing of the Apache Wicket application causing a possible denial of service on either the internal infrastructure or the web application itself.</p>
 <p>This issue affects Apache Wicket Apache Wicket 9.x version 9.2.0 and prior versions; Apache Wicket 8.x version 8.11.0 and prior versions; Apache Wicket 7.x version 7.17.0 and prior versions and Apache Wicket 6.x version 6.2.0 and later versions.</p>
-<h3 id="references-18">References</h3>
+<h3 id="references-37">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread.html/rc2ef22f90793e158cef65a7e370cdbca023c499d1403d65feeca870d%40%3Cusers.wicket.apache.org%3E">https://lists.apache.org/thread.html/rc2ef22f90793e158cef65a7e370cdbca023c499d1403d65feeca870d%40%3Cusers.wicket.apache.org%3E</a></li>
 </ul>
-<h3 id="credits-12">Credits</h3>
+<h3 id="credits-31">Credits</h3>
 <ul>
 <li>Apache Wicket would like to thank Jonathan Juursema from Topicus.Healthcare for reporting this issue.</li>
 </ul>

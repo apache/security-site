@@ -105,14 +105,31 @@
 <p>Do you want to disclose a potential security issue for Apache Pinot? Send your report to the <a href="mailto:security@apache.org?subject=Pinot">Apache Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
+<h2 id="CVE-2026-73322">Incorrect authorization in the single-stage query engine allows reading unauthorized dimension tables via lookup()</h2>
+<p>CVE-2026-73322 <a href="https://cve.org/CVERecord?id=CVE-2026-73322">[CVE]</a> <a href="./CVE-2026-73322.cve.json">[CVE json]</a> <a href="./CVE-2026-73322.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-10-30T18:10:05.184Z</em></p>
+<h3 id="affected">Affected</h3>
+<ul>
+<li>Apache Pinot from 0.7.0 before 1.6.0</li>
+</ul>
+<h3 id="description">Description</h3>
+<p>Incorrect Authorization vulnerability in the single-stage query engine of Apache Pinot.<br><br>When broker access control is enabled, the single-stage query engine authorizes only the table named in the query&rsquo;s FROM clause. The lookup() transform function identifies its dimension table with a string literal argument rather than through the FROM clause, so that table was never included in the authorization check. An authenticated user who is authorized for at least one table can therefore read columns from any dimension table in the cluster, including tables they have no access to, and can retrieve arbitrary rows of it by supplying primary key values directly. Per-principal row-level security filters configured on the dimension table are likewise not applied.<br><br>The multi-stage query engine is not affected.<br><br>This issue affects Apache Pinot: through 1.5.1<br><br>Users are recommended to upgrade to version 1.6.0, which fixes this issue.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/xy3f4m6ton96c2t83pr5bd8hwppvbvsn">https://lists.apache.org/thread.html/xy3f4m6ton96c2t83pr5bd8hwppvbvsn</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>n0mi1k Security (finder)</li>
+</ul>
 <h2 id="CVE-2024-56325">Authentication bypass issue. If the path does not contain / and contain . authentication is not required</h2>
 <p>CVE-2024-56325 <a href="https://cve.org/CVERecord?id=CVE-2024-56325">[CVE]</a> <a href="./CVE-2024-56325.cve.json">[CVE json]</a> <a href="./CVE-2024-56325.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-02-20T16:45:37.070Z</em></p>
-<h3 id="affected">Affected</h3>
+<h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache Pinot before 1.3</li>
 </ul>
-<h3 id="description">Description</h3>
+<h3 id="description-1">Description</h3>
 <p><b>Authentication Bypass Vulnerability in Apache Pinot (CVE-2024-56325)</b></p>
 <p><br></p>
 <p>Apache Pinot versions prior to <b>1.3.0</b> contain an authentication bypass vulnerability affecting REST endpoints in the Controller and Broker components.</p>
@@ -166,11 +183,11 @@
 <p>The fix ensures matrix parameters are stripped from request paths before evaluating authentication requirements.</p>
 <p><br></p>
 Users are strongly encouraged to upgrade to version 1.3.0 or later.<p></p>
-<h3 id="references">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/ksf8qsndr1h66otkbjz2wrzsbw992r8v">https://lists.apache.org/thread/ksf8qsndr1h66otkbjz2wrzsbw992r8v</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>75Acol at Huawei (finder)</li>
 <li>fcgboy at Huawei (finder)</li>
@@ -180,52 +197,52 @@ Users are strongly encouraged to upgrade to version 1.3.0 or later.<p></p>
 <h2 id="CVE-2024-39676">Unauthorized endpoint exposed sensitive information</h2>
 <p>CVE-2024-39676 <a href="https://cve.org/CVERecord?id=CVE-2024-39676">[CVE]</a> <a href="./CVE-2024-39676.cve.json">[CVE json]</a> <a href="./CVE-2024-39676.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-07-24T07:41:07.886Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache Pinot from 0.1 before 1.0.0</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-2">Description</h3>
 <p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Pinot.</p><p>This issue affects Apache Pinot: from 0.1 before 1.0.0.</p><p>Users are recommended to upgrade to version 1.0.0<span style="background-color: rgb(255, 255, 255);">&nbsp;and configure RBAC</span>, which fixes the issue.</p><p><span style="background-color: rgb(255, 255, 255);">Details:&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">When using a request to path “/appconfigs” to the controller, it can lead to the disclosure of sensitive information such as system information (e.g. arch, os version), environment information (e.g. maxHeapSize) and Pinot configurations (e.g. zookeeper path). This issue was addressed by the </span><a target="_blank" rel="nofollow" href="https://docs.pinot.apache.org/operators/tutorials/authentication/basic-auth-access-control"><span style="background-color: rgb(255, 255, 255);">Role-based Access Control</span></a>,<span style="background-color: rgb(255, 255, 255);"> so that /appConfigs` and all other APIs can be access controlled. Only authorized users have access to it. Note the user needs to add the admin role accordingly to the RBAC guide to control access to this endpoint, and in the future version of Pinot, a default admin role is planned to be added.</span></p><br>
-<h3 id="references-1">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/hsm0b2w8qr0sqy4rj1mfnnw286tslpzc">https://lists.apache.org/thread/hsm0b2w8qr0sqy4rj1mfnnw286tslpzc</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-2">Credits</h3>
 <ul>
 <li>Xun Bai <a href="mailto:bbbbear68@gmail.com">bbbbear68@gmail.com</a> (finder)</li>
 </ul>
 <h2 id="CVE-2022-26112">Pinot query endpoint and the realtime ingestion layer has a vulnerability in unprotected environments due to a groovy function support</h2>
 <p>CVE-2022-26112 <a href="https://cve.org/CVERecord?id=CVE-2022-26112">[CVE]</a> <a href="./CVE-2022-26112.cve.json">[CVE json]</a> <a href="./CVE-2022-26112.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-09-23T03:13:43.429Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache Pinot from Apache Pinot through 0.10.0</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>In 0.10.0 or older versions of Apache Pinot, Pinot query endpoint and realtime ingestion layer has a vulnerability in unprotected environments due to a groovy function support. In order to avoid this, we disabled the groovy function support by default from Pinot release 0.11.0. See <a href="https://docs.pinot.apache.org/basics/releases/0.11.0">https://docs.pinot.apache.org/basics/releases/0.11.0</a></p>
-<h3 id="references-2">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/4pb0r12s2b68d78llk04yd8rh3qk5t9h">https://lists.apache.org/thread/4pb0r12s2b68d78llk04yd8rh3qk5t9h</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-3">Credits</h3>
 <ul>
 <li>Apache Pinot would like to thank Haoruo Chen(<a href="mailto:chenhaoruo0128@gmail.com">chenhaoruo0128@gmail.com</a>) for reporting the issue</li>
 </ul>
 <h2 id="CVE-2022-23974">Pinot segment push endpoint has a vulnerability in unprotected environments</h2>
 <p>CVE-2022-23974 <a href="https://cve.org/CVERecord?id=CVE-2022-23974">[CVE]</a> <a href="./CVE-2022-23974.cve.json">[CVE json]</a> <a href="./CVE-2022-23974.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-04-05T19:51:49.065Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-4">Affected</h3>
 <ul>
 <li>Apache Pinot from Apache Pinot through 0.9.3</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-4">Description</h3>
 <p>In 0.9.3 or older versions of Apache Pinot segment upload path allowed segment directories to be imported into pinot tables. In pinot installations that allow open access to the controller a specially crafted request can potentially be exploited to cause disruption in pinot service.</p>
 <p>Pinot release 0.10.0 fixes this. See <a href="https://docs.pinot.apache.org/basics/releases/0.10.0">https://docs.pinot.apache.org/basics/releases/0.10.0</a></p>
-<h3 id="references-3">References</h3>
+<h3 id="references-4">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/3dk8pf1n02p8oj2j3czbtchyjsf8khwr">https://lists.apache.org/thread/3dk8pf1n02p8oj2j3czbtchyjsf8khwr</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits-4">Credits</h3>
 <ul>
 <li>Apache Pinot would like to thank <a href="mailto:bubblegumkk@qq.com">bubblegumkk@qq.com</a>, Kuiplatain@knownsec and FA1C0N@RPO_OFFICIAL for reporting the issue</li>
 </ul>

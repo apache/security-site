@@ -526,6 +526,67 @@
 <ul>
 <li><a href="https://lists.apache.org/thread/dnczt6bgfcq2x6q8ljco177h1qmv59fm">https://lists.apache.org/thread/dnczt6bgfcq2x6q8ljco177h1qmv59fm</a></li>
 </ul>
+<h2 id="CVE-2026-115942">Verifying non compliant TLS wildcard cert can cause stack buffer overflow read</h2>
+<p>CVE-2026-115942 <a href="https://cve.org/CVERecord?id=CVE-2026-115942">[CVE]</a> <a href="./CVE-2026-115942.cve.json">[CVE json]</a> <a href="./CVE-2026-115942.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-10-29T10:19:57.703Z</em></p>
+<h3 id="affected-30">Affected</h3>
+<ul>
+<li>Apache Qpid Proton C through 0.40.0</li>
+</ul>
+<h3 id="description-30">Description</h3>
+<p>A misconfigured wildcard TLS certificate causes a stack read overflow.</p><p>This issue does not affect any wildcard certificate issued to the RFC9525 standard - the fix only accepts certificates that comply to this standard.</p><p>This issue affects Apache Qpid Proton C: through 0.40.0.</p><p>Users are recommended to upgrade to version 0.41.1, which fixes the issue.</p>
+<h3 id="references-30">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/5z8x4c1939rxs5hod7q7gvgdmjd7p7pt">https://lists.apache.org/thread.html/5z8x4c1939rxs5hod7q7gvgdmjd7p7pt</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li><a href="mailto:zhangph@yandex.com">zhangph@yandex.com</a> (finder)</li>
+</ul>
+<h2 id="CVE-2026-114230">Potential authentication bypass: regular AMQP frames can be sent as SASL frames</h2>
+<p>CVE-2026-114230 <a href="https://cve.org/CVERecord?id=CVE-2026-114230">[CVE]</a> <a href="./CVE-2026-114230.cve.json">[CVE json]</a> <a href="./CVE-2026-114230.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-10-29T10:19:14.544Z</em></p>
+<h3 id="affected-31">Affected</h3>
+<ul>
+<li>Apache Qpid Proton C through 0.40.0</li>
+</ul>
+<h3 id="description-31">Description</h3>
+<p>When dispatching SASL frames to authenticate the peer, Proton will also dispatch AMQP frames if they claim to be SASL frames. This allows authentication bypass. However there will be no user name set so the effects depend on how the application deals with this condition - which otherwise means that authentication has not completed yet.</p><p>This issue affects Apache Qpid Proton C: through 0.40.0.</p><p>Users are recommended to upgrade to version 0.41.1, which fixes the issue.</p>
+<h3 id="references-31">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/ob7vo6swpj4wbb2m3zq9q2vkwfg5dg8k">https://lists.apache.org/thread.html/ob7vo6swpj4wbb2m3zq9q2vkwfg5dg8k</a></li>
+</ul>
+<h2 id="CVE-2026-105042">Unbounded recursion in parsing AMQP message bodies can lead to crash</h2>
+<p>CVE-2026-105042 <a href="https://cve.org/CVERecord?id=CVE-2026-105042">[CVE]</a> <a href="./CVE-2026-105042.cve.json">[CVE json]</a> <a href="./CVE-2026-105042.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-10-29T10:17:19.730Z</em></p>
+<h3 id="affected-32">Affected</h3>
+<ul>
+<li>Apache Qpid Proton C through 0.40.0</li>
+</ul>
+<h3 id="description-32">Description</h3>
+<p>A message body that is deeply nested and decoded by pn_message_body() could overflow the stack and cause a crash.</p><p>This issue affects Apache Qpid Proton C: through 0.40.0.</p><p>Users are recommended to upgrade to version 0.41.1, which fixes the issue.</p>
+<h3 id="references-32">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/7v54gx7o1ptxcz3h9549w3h9oxo3ns28">https://lists.apache.org/thread.html/7v54gx7o1ptxcz3h9549w3h9oxo3ns28</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li><a href="mailto:zhangph@yandex.com">zhangph@yandex.com</a> (finder)</li>
+<li>Gjoko Krstic <a href="mailto:gjoko@zeroscience.mk">gjoko@zeroscience.mk</a> (finder)</li>
+</ul>
+<h2 id="CVE-2026-105031">The OpenSSL TLS implementation adds a locally trusted certificate authority to the existing trusted system trust anchors.</h2>
+<p>CVE-2026-105031 <a href="https://cve.org/CVERecord?id=CVE-2026-105031">[CVE]</a> <a href="./CVE-2026-105031.cve.json">[CVE json]</a> <a href="./CVE-2026-105031.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-10-29T10:16:39.931Z</em></p>
+<h3 id="affected-33">Affected</h3>
+<ul>
+<li>Apache Qpid Proton C through 0.40.0</li>
+</ul>
+<h3 id="description-33">Description</h3>
+<p>When using the OpenSSL TLS implementation, both the pn_ssl_domain_set_trusted_ca_db() &amp;&nbsp;pn_tls_config_set_trusted_certs() APIs <b>added</b> to rather than replaced the default system trust anchors. Leading to potentially trusting unexpected peer certificates.</p><p>This can be worked around by setting the SSL_CERT_FILE environment variable for the application to /dev/null.</p><p>This issue does not affect the Win32 SChannel TLS implementation.</p><p>This issue affects Apache Qpid Proton C: through 0.40.0.</p><p>Users are recommended to upgrade to version 0.41.1, which fixes the issue.</p>
+<h3 id="references-33">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/lc10nrjt2dwcjjhrsgoyy5tqkntsnor4">https://lists.apache.org/thread.html/lc10nrjt2dwcjjhrsgoyy5tqkntsnor4</a></li>
+</ul>
 
   
 </div>

@@ -151,14 +151,35 @@ If the KMS implementation does not perform host validation and makes use of the 
 <ul>
 <li>Emi Galle (reporter)</li>
 </ul>
+<h2 id="CVE-2026-111959">Improper validation of RunEndEncoded arrays allows out of bounds reads</h2>
+<p>CVE-2026-111959 <a href="https://cve.org/CVERecord?id=CVE-2026-111959">[CVE]</a> <a href="./CVE-2026-111959.cve.json">[CVE json]</a> <a href="./CVE-2026-111959.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-02T13:34:15.921Z</em></p>
+<h3 id="affected-2">Affected</h3>
+<ul>
+<li>Apache Arrow Rust from 60.0.0 before 60.1.0</li>
+<li>Apache Arrow Rust from 59.0.0 through 59.3.1</li>
+<li>Apache Arrow Rust from 58.0.0 through 58.4.0</li>
+<li>Apache Arrow Rust from 33.0.0 through 57.3.1</li>
+</ul>
+<h3 id="description-2">Description</h3>
+<p>Out-of-bounds read vulnerability in Apache Arrow Rust (`arrow` crate), from version 33.0.0 through to versions 57.3.1, 58.4.0, 59.3.1 and 60.0.0.</p><p>Improper validation of RunEndEncoded arrays in the ArrayData interface can allow reading data beyond the bounds of the child values array.</p><p>Users are recommended to upgrade to versions 60.1.0, 59.3.2, 58.4.1, 57.3.2 which fixes the issue.</p>
+<h3 id="references-2">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/hnlrdk4w99b188w1zgjlctpwpg7y55o4">https://lists.apache.org/thread.html/hnlrdk4w99b188w1zgjlctpwpg7y55o4</a></li>
+</ul>
+<h3 id="credits-2">Credits</h3>
+<ul>
+<li>Adam Korczynski of Ada Logics (reporter)</li>
+<li>Anthropic (finder)</li>
+</ul>
 <h2 id="CVE-2024-52338">Arbitrary code execution when loading a malicious data file</h2>
 <p>CVE-2024-52338 <a href="https://cve.org/CVERecord?id=CVE-2024-52338">[CVE]</a> <a href="./CVE-2024-52338.cve.json">[CVE json]</a> <a href="./CVE-2024-52338.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-11-28T16:31:53.209Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache Arrow R package from 4.0.0 through 16.1.0</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>Deserialization of untrusted data in IPC and Parquet readers in the Apache Arrow R package versions&nbsp;4.0.0 through 16.1.0 allows arbitrary code execution. An application is vulnerable if it 
 reads Arrow IPC, Feather or Parquet data from untrusted sources (for 
 example, user-supplied input files). This vulnerability only affects the arrow R package, not other Apache Arrow 
@@ -166,7 +187,7 @@ implementations or bindings unless those bindings are specifically used via the 
  is recommended that downstream libraries upgrade their dependency 
 requirements to arrow 17.0.0 or later. If using an affected
 version of the package, untrusted data can read into a Table and its internal to_data_frame() method can be used as a workaround (e.g., read_parquet(..., as_data_frame = FALSE)$to_data_frame()).<br></p><p>This issue affects the Apache Arrow R package: from 4.0.0 through 16.1.0.<br></p><p>Users are recommended to upgrade to version 17.0.0, which fixes the issue.</p>
-<h3 id="references-2">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://github.com/apache/arrow/commit/801de2fbcf5bcbce0c019ed4b35ff3fc863b141b">https://github.com/apache/arrow/commit/801de2fbcf5bcbce0c019ed4b35ff3fc863b141b</a></li>
 <li><a href="https://lists.apache.org/thread/0rcbvj1gdp15lvm23zm601tjpq0k25vt">https://lists.apache.org/thread/0rcbvj1gdp15lvm23zm601tjpq0k25vt</a></li>
@@ -174,37 +195,37 @@ version of the package, untrusted data can read into a Table and its internal to
 <h2 id="CVE-2024-41178">AWS WebIdentityToken exposure in log files</h2>
 <p>CVE-2024-41178 <a href="https://cve.org/CVERecord?id=CVE-2024-41178">[CVE]</a> <a href="./CVE-2024-41178.cve.json">[CVE json]</a> <a href="./CVE-2024-41178.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2024-07-23T17:07:57.878Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-4">Affected</h3>
 <ul>
 <li>Apache Arrow Rust Object Store from 0.5.0 through 0.10.1</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-4">Description</h3>
 <p>Exposure of temporary credentials in logs in Apache Arrow Rust Object Store (<code>object_store</code> crate), version 0.10.1 and earlier on all platforms using AWS WebIdentityTokens. <br><br>On certain error conditions, the logs may contain the OIDC token passed to <a target="_blank" rel="nofollow" href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html">AssumeRoleWithWebIdentity</a>. This allows someone with access to the logs to impersonate that identity, including performing their own calls to AssumeRoleWithWebIdentity, until the OIDC token expires. Typically OIDC tokens are valid for up to an hour, although this will vary depending on the issuer.<br><br>Users are recommended to use a different AWS authentication mechanism, disable logging or upgrade to version 0.10.2, which fixes this issue.<br><br>Details:<br><span style="background-color: var(--wht);"><br>When using AWS WebIdentityTokens with the object_store crate, in the event of a failure and automatic retry, </span><span style="background-color: var(--wht);">the underlying reqwest error, including the full URL with the credentials, potentially in the parameters, is written to the logs. <br></span><br>Thanks to <span style="background-color: rgb(255, 255, 255);">Paul </span>Hatcherian for reporting this vulnerability</p>
-<h3 id="references-3">References</h3>
+<h3 id="references-4">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/3t0povdppnt2czv6crlsqhvyko93kcrg">https://lists.apache.org/thread/3t0povdppnt2czv6crlsqhvyko93kcrg</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-3">Credits</h3>
 <ul>
 <li>Paul Hatcherian (finder)</li>
 </ul>
 <h2 id="CVE-2023-47248">Arbitrary code execution when loading a malicious data file</h2>
 <p>CVE-2023-47248 <a href="https://cve.org/CVERecord?id=CVE-2023-47248">[CVE]</a> <a href="./CVE-2023-47248.cve.json">[CVE json]</a> <a href="./CVE-2023-47248.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2023-11-10T14:10:15.590Z</em></p>
-<h3 id="affected-4">Affected</h3>
+<h3 id="affected-5">Affected</h3>
 <ul>
 <li>PyArrow from 0.14.0 through 14.0.0</li>
 <li>PyArrow from 0.14.0 through 14.0.0</li>
 </ul>
-<h3 id="description-4">Description</h3>
+<h3 id="description-5">Description</h3>
 <div>Deserialization of untrusted data in IPC and Parquet readers in PyArrow versions 0.14.0 to 14.0.0 allows arbitrary code execution. An application is vulnerable if it reads Arrow IPC, Feather or Parquet data from untrusted sources (for example user-supplied input files).</div><div><br></div><div>This vulnerability only affects PyArrow, not other Apache Arrow implementations or bindings.<br></div><div><br></div><div>It is recommended that users of PyArrow upgrade to 14.0.1. Similarly, it is recommended that downstream libraries upgrade their dependency requirements to PyArrow 14.0.1 or later. PyPI packages are already available, and we hope that conda-forge packages will be available soon.<br></div><div><br></div><div>If it is not possible to upgrade, we provide a separate package `pyarrow-hotfix` that disables the vulnerability on older PyArrow versions. See <a target="_blank" rel="nofollow" href="https://pypi.org/project/pyarrow-hotfix/">https://pypi.org/project/pyarrow-hotfix/</a> for instructions.<br></div><div><br></div>
-<h3 id="references-4">References</h3>
+<h3 id="references-5">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/yhy7tdfjf9hrl9vfrtzo8p2cyjq87v7n">https://lists.apache.org/thread/yhy7tdfjf9hrl9vfrtzo8p2cyjq87v7n</a></li>
 <li><a href="https://github.com/apache/arrow/commit/f14170976372436ec1d03a724d8d3f3925484ecf">https://github.com/apache/arrow/commit/f14170976372436ec1d03a724d8d3f3925484ecf</a></li>
 <li><a href="https://pypi.org/project/pyarrow-hotfix/">https://pypi.org/project/pyarrow-hotfix/</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits-4">Credits</h3>
 <ul>
 <li>Li Jiakun - laoquanshi (finder)</li>
 </ul>

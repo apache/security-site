@@ -254,7 +254,7 @@
 </ul>
 <h2 id="CVE-2026-86473">Logout ignores a presented Authorization bearer token, leaving it revocable only by expiry</h2>
 <p>CVE-2026-86473 <a href="https://cve.org/CVERecord?id=CVE-2026-86473">[CVE]</a> <a href="./CVE-2026-86473.cve.json">[CVE json]</a> <a href="./CVE-2026-86473.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-21T14:33:41.347Z</em></p>
+<p><em>Last updated: 2026-11-03T04:29:17.436Z</em></p>
 <h3 id="affected-7">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.3.2</li>
@@ -358,7 +358,7 @@
 </ul>
 <h2 id="CVE-2026-82355">Session cookie silently overrides explicit Authorization bearer header, enabling session fixation</h2>
 <p>CVE-2026-82355 <a href="https://cve.org/CVERecord?id=CVE-2026-82355">[CVE]</a> <a href="./CVE-2026-82355.cve.json">[CVE json]</a> <a href="./CVE-2026-82355.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-21T14:32:02.334Z</em></p>
+<p><em>Last updated: 2026-11-03T04:29:16.317Z</em></p>
 <h3 id="affected-12">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.3.0 before 3.3.2</li>
@@ -516,10 +516,11 @@
 </ul>
 <h2 id="CVE-2026-75158">Assets events API returns asset events for every Dag with no per-Dag authorization filter</h2>
 <p>CVE-2026-75158 <a href="https://cve.org/CVERecord?id=CVE-2026-75158">[CVE]</a> <a href="./CVE-2026-75158.cve.json">[CVE json]</a> <a href="./CVE-2026-75158.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-21T14:32:46.741Z</em></p>
+<p><em>Last updated: 2026-11-03T04:29:15.186Z</em></p>
 <h3 id="affected-20">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.3.2</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.3.2</li>
 </ul>
 <h3 id="description-20">Description</h3>
 <p>Apache Airflow&rsquo;s <code>/assets/events</code> API returned asset events for every Dag in the deployment, with no filter restricting them to the Dags the caller is authorized to read. Any authenticated user holding asset-read access could therefore enumerate asset events — including the source Dag ID, task ID, run ID and event timestamps — for Dags they have no permission to see. Because the filter was also absent from the count query, <code>total_entries</code> and pagination disclosed the existence of hidden Dags even without inspecting individual rows. Deployments are affected whenever per-Dag access control is used to separate teams or tenants; no special configuration is required. Upgrade to apache-airflow 3.3.2 or later.</p>
@@ -535,10 +536,11 @@
 </ul>
 <h2 id="CVE-2026-75157">Asset queued-events DELETE endpoints gated on Dag READ instead of Dag EDIT (asset-triggered scheduling suppression)</h2>
 <p>CVE-2026-75157 <a href="https://cve.org/CVERecord?id=CVE-2026-75157">[CVE]</a> <a href="./CVE-2026-75157.cve.json">[CVE json]</a> <a href="./CVE-2026-75157.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-18T07:51:21.855Z</em></p>
+<p><em>Last updated: 2026-11-03T04:29:14.057Z</em></p>
 <h3 id="affected-21">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.3.2</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.3.2</li>
 </ul>
 <h3 id="description-21">Description</h3>
 <p>Apache Airflow&rsquo;s asset queued-events DELETE endpoints checked the caller&rsquo;s Dag-axis permission with <code>READ</code> instead of <code>EDIT</code>. Any authenticated user who could read a Dag could therefore delete that Dag&rsquo;s queued asset events, silently suppressing asset-triggered scheduling for it — a state-changing action gated on a read-only permission. Deployments are affected whenever asset-triggered scheduling is in use and Dag read access is granted more widely than Dag edit access, which is the normal RBAC arrangement; no special configuration is required. Upgrade to apache-airflow 3.3.2 or later.</p>
@@ -575,10 +577,11 @@
 </ul>
 <h2 id="CVE-2026-68971">Cross-team authorization bypass in the asset materialization and dag-run result endpoints</h2>
 <p>CVE-2026-68971 <a href="https://cve.org/CVERecord?id=CVE-2026-68971">[CVE]</a> <a href="./CVE-2026-68971.cve.json">[CVE json]</a> <a href="./CVE-2026-68971.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-16T14:46:20.610Z</em></p>
+<p><em>Last updated: 2026-11-03T04:29:12.942Z</em></p>
 <h3 id="affected-23">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.3.1</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.3.1</li>
 </ul>
 <h3 id="description-23">Description</h3>
 <p>Apache Airflow's asset materialization endpoint (<code>POST /api/v2/assets/{asset_id}/materialize</code>) and the XCom result check on <code>wait_dag_run_until_finished</code> authorized the target Dag without its team, unlike every other authorization site. A team-aware auth manager distinguishes a team-scoped Dag from a global one by that field &ndash; the Keycloak auth manager, for example, checks the <code>DAG</code> resource instead of <code>DAG:&amp;lt;team&amp;gt;</code> &ndash; so the team-scoped permission that should gate the request was never consulted. In a deployment running multi-team mode with a team-aware auth manager, an authenticated user in one team could trigger Dag runs belonging to another team, supplying their own <code>dag_run_id</code> and <code>conf</code>, and could read another team's XCom values. Deployments using the FAB auth manager are unaffected, as it has no multi-team support. Users are advised to upgrade to apache-airflow 3.3.1 or later, which resolves the Dag's team at both sites.</p>
@@ -594,10 +597,11 @@
 </ul>
 <h2 id="CVE-2026-68970">Values of a list-shaped Variable are not masked in task logs and the Rendered Templates UI</h2>
 <p>CVE-2026-68970 <a href="https://cve.org/CVERecord?id=CVE-2026-68970">[CVE]</a> <a href="./CVE-2026-68970.cve.json">[CVE json]</a> <a href="./CVE-2026-68970.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-16T14:47:05.846Z</em></p>
+<p><em>Last updated: 2026-11-03T04:29:11.784Z</em></p>
 <h3 id="affected-24">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.3.1</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.3.1</li>
 </ul>
 <h3 id="description-24">Description</h3>
 <p>Apache Airflow's Task SDK did not mask the contents of a Variable whose JSON value is a list, so secrets stored in that shape appeared in cleartext in task logs and in the Rendered Templates UI. Masking was applied only when the deserialized value was a string or a dict; a list at the top level matched neither and was returned unmasked. Any authenticated user able to read the logs or rendered templates of a task that references such a Variable could recover the values, with no special configuration required. This is the list-shaped counterpart of CVE-2026-59244, whose fix covered the dict case only, so deployments that upgraded in response to that advisory remain affected and must upgrade again. Users are advised to upgrade to apache-airflow 3.3.1 or later.</p>
@@ -614,10 +618,11 @@
 </ul>
 <h2 id="CVE-2026-68969">Bulk Variable and Connection endpoints record secret values in the audit log in cleartext</h2>
 <p>CVE-2026-68969 <a href="https://cve.org/CVERecord?id=CVE-2026-68969">[CVE]</a> <a href="./CVE-2026-68969.cve.json">[CVE json]</a> <a href="./CVE-2026-68969.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-16T14:47:04.500Z</em></p>
+<p><em>Last updated: 2026-11-03T04:29:10.688Z</em></p>
 <h3 id="affected-25">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.3.1</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.3.1</li>
 </ul>
 <h3 id="description-25">Description</h3>
 <p>Apache Airflow wrote Variable values and Connection <code>extra</code> contents to the audit log in cleartext when they were submitted through the bulk endpoints (<code>PATCH /api/v2/variables</code> and <code>PATCH /api/v2/connections</code>). The audit-log masking recognised only top-level request fields, and a bulk request nests its entities two levels below, so no masking was applied to them. Any authenticated user with audit-log read access &ndash; who need not hold Variables or Connections read at all &ndash; could recover those secrets verbatim, and the Connection <code>extra</code> copy is stored unencrypted in the log while the connection table encrypts it. The Airflow UI's <em>Import Variables</em> action posts to this endpoint, so an ordinary operator import wrote every secret in the file to the log. This is a different code path from CVE-2026-50204: that fix shipped in 3.3.0 and covers the single-entity endpoints only, so deployments that upgraded in response to that advisory remain affected and must upgrade again. Users are advised to upgrade to apache-airflow 3.3.1 or later.</p>
@@ -634,10 +639,11 @@
 </ul>
 <h2 id="CVE-2026-68968">Authorization bypass in the Backfill API through conflicting interpretations of the backfill id</h2>
 <p>CVE-2026-68968 <a href="https://cve.org/CVERecord?id=CVE-2026-68968">[CVE]</a> <a href="./CVE-2026-68968.cve.json">[CVE json]</a> <a href="./CVE-2026-68968.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-16T14:47:02.989Z</em></p>
+<p><em>Last updated: 2026-11-03T04:29:09.584Z</em></p>
 <h3 id="affected-26">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.3.1</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.3.1</li>
 </ul>
 <h3 id="description-26">Description</h3>
 <p>Apache Airflow's Backfill API authorized a request against a Dag id supplied by the caller whenever the <code>backfill_id</code> path segment failed to parse. The authorization dependency parsed it with <code>int()</code> while the route handler parsed it as pydantic's <code>NonNegativeInt</code>, which accepts values <code>int()</code> rejects (<code>1.0</code> coerces to <code>1</code>); FastAPI resolves dependencies before endpoint validation, so the two acted on different Dags. An authenticated user holding edit permission on any single Dag could therefore read, pause and cancel backfills belonging to any other Dag, including moving another Dag's queued runs to <code>failed</code>. No non-default configuration is required and backfill ids are sequential, so finding a target is trivial. Users are advised to upgrade to apache-airflow 3.3.1 or later, which parses the backfill id with the same type the routes declare.</p>
@@ -730,10 +736,11 @@
 </ul>
 <h2 id="CVE-2026-68076">Connections test API: team-scope guard bypass resolves another team&rsquo;s environment Connection</h2>
 <p>CVE-2026-68076 <a href="https://cve.org/CVERecord?id=CVE-2026-68076">[CVE]</a> <a href="./CVE-2026-68076.cve.json">[CVE json]</a> <a href="./CVE-2026-68076.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-16T15:05:05.218Z</em></p>
+<p><em>Last updated: 2026-11-03T04:29:08.471Z</em></p>
 <h3 id="affected-31">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.3.1</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.3.1</li>
 </ul>
 <h3 id="description-31">Description</h3>
 <p>Apache Airflow's environment-variable secrets backend resolved a team-scoped Connection or Variable from the wrong team's scope. The guard meant to prevent this only ran when no team scope was supplied, and its pattern could not match a team name containing an underscore, which team names are allowed to contain. When the guard did not apply, the lookup fell through to an unconditional global read that resolved the stored <code>AIRFLOW_CONN__&amp;lt;TEAM&amp;gt;___&amp;lt;ID&amp;gt;</code> variable regardless of which team asked. In multi-team mode an authenticated user of one team could therefore have <code>POST /api/v2/connections/test</code> resolve another team's Connection and authenticate outward with that team's credentials; the endpoint uses the credentials rather than returning them. Exploitation requires <code>[core] multi_team</code> enabled, <code>[core] test_connection</code> set to <code>Enabled</code> (it ships <code>Disabled</code>), team-scoped secrets provisioned as environment variables in the API-server process, and knowledge of the encoded identifier. Redirecting the test at an attacker-controlled host is separately blocked. Users are advised to upgrade to apache-airflow 3.3.1 or later.</p>
@@ -751,7 +758,7 @@
 </ul>
 <h2 id="CVE-2026-67587">DAG-author remote code execution on the Scheduler via a Serde <code>Callback</code> deserialization gadget</h2>
 <p>CVE-2026-67587 <a href="https://cve.org/CVERecord?id=CVE-2026-67587">[CVE]</a> <a href="./CVE-2026-67587.cve.json">[CVE json]</a> <a href="./CVE-2026-67587.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-16T14:46:59.901Z</em></p>
+<p><em>Last updated: 2026-11-03T04:29:07.365Z</em></p>
 <h3 id="affected-32">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.3.0 before 3.3.1</li>
@@ -772,7 +779,7 @@
 </ul>
 <h2 id="CVE-2026-67260">DAG-author remote code execution on the Scheduler via awaiting_input next_kwargs deserialization</h2>
 <p>CVE-2026-67260 <a href="https://cve.org/CVERecord?id=CVE-2026-67260">[CVE]</a> <a href="./CVE-2026-67260.cve.json">[CVE json]</a> <a href="./CVE-2026-67260.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-16T14:46:57.273Z</em></p>
+<p><em>Last updated: 2026-11-03T04:29:06.241Z</em></p>
 <h3 id="affected-33">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.3.0 before 3.3.1</li>
@@ -792,7 +799,7 @@
 </ul>
 <h2 id="CVE-2026-65017">Config API: team-scoped Celery broker secret disclosed to a Viewer (multi-team masking bypass)</h2>
 <p>CVE-2026-65017 <a href="https://cve.org/CVERecord?id=CVE-2026-65017">[CVE]</a> <a href="./CVE-2026-65017.cve.json">[CVE json]</a> <a href="./CVE-2026-65017.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-16T14:47:01.247Z</em></p>
+<p><em>Last updated: 2026-11-03T04:29:05.100Z</em></p>
 <h3 id="affected-34">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.3.0 before 3.3.1</li>
@@ -832,10 +839,11 @@
 </ul>
 <h2 id="CVE-2026-59244">Secrets masker: <code>var.json</code> Variable values not masked in the Rendered Templates UI</h2>
 <p>CVE-2026-59244 <a href="https://cve.org/CVERecord?id=CVE-2026-59244">[CVE]</a> <a href="./CVE-2026-59244.cve.json">[CVE json]</a> <a href="./CVE-2026-59244.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-16T14:46:03.573Z</em></p>
+<p><em>Last updated: 2026-11-03T04:29:03.988Z</em></p>
 <h3 id="affected-36">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.3.1</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.3.1</li>
 </ul>
 <h3 id="description-36">Description</h3>
 <p>Apache Airflow's secrets masker did not mask <code>var.json</code> Variable values whose value is a dict in the Rendered Templates UI — the dict value failed an <code>isinstance(str)</code> guard — so a secret stored as a JSON Variable and referenced in a template via <code>var.json</code> was displayed in cleartext to any user with access to that task's Rendered Templates view. Users are advised to upgrade to apache-airflow 3.3.1 or later, which masks nested Variable values regardless of type.</p>
@@ -870,10 +878,11 @@
 </ul>
 <h2 id="CVE-2026-59242">Arbitrary airflow.* class instantiation on the API server via the XCom deserialize endpoint</h2>
 <p>CVE-2026-59242 <a href="https://cve.org/CVERecord?id=CVE-2026-59242">[CVE]</a> <a href="./CVE-2026-59242.cve.json">[CVE json]</a> <a href="./CVE-2026-59242.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-16T14:45:57.373Z</em></p>
+<p><em>Last updated: 2026-11-03T04:29:02.689Z</em></p>
 <h3 id="affected-38">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.3.1</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.3.1</li>
 </ul>
 <h3 id="description-38">Description</h3>
 <p>Apache Airflow's XCom <code>GET /api/v2/{...}/xcomEntries/{key}?deserialize=true</code> endpoint passed a string-literal payload through <code>BaseXCom.deserialize_value</code> without the <code>_check_forbidden_xcom_keys</code> guard, allowing an authenticated API user with XCom write-and-read access to instantiate arbitrary <code>airflow.*</code> classes on the API server (CWE-502). An authenticated user who can write an XCom value and then read it back with <code>deserialize=true</code> triggers the unsafe instantiation. Users are advised to upgrade to apache-airflow 3.3.1 or later, which rejects reserved XCom serialization keys submitted as JSON string literals.</p>
@@ -889,7 +898,7 @@
 </ul>
 <h2 id="CVE-2026-58076">Unguarded import_string() of airflow_exc_ser / base_exc_ser exception nodes in BaseSerialization.deserialize enables DAG-author RCE on Scheduler / API Server</h2>
 <p>CVE-2026-58076 <a href="https://cve.org/CVERecord?id=CVE-2026-58076">[CVE]</a> <a href="./CVE-2026-58076.cve.json">[CVE json]</a> <a href="./CVE-2026-58076.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-16T14:46:54.580Z</em></p>
+<p><em>Last updated: 2026-11-03T04:29:01.495Z</em></p>
 <h3 id="affected-39">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.3.1</li>
@@ -929,10 +938,11 @@
 </ul>
 <h2 id="CVE-2026-54183">Airflow Variables were not masked in the UI for authenticated users</h2>
 <p>CVE-2026-54183 <a href="https://cve.org/CVERecord?id=CVE-2026-54183">[CVE]</a> <a href="./CVE-2026-54183.cve.json">[CVE json]</a> <a href="./CVE-2026-54183.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-16T14:46:55.864Z</em></p>
+<p><em>Last updated: 2026-11-03T04:29:00.373Z</em></p>
 <h3 id="affected-41">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.3.1</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.3.1</li>
 </ul>
 <h3 id="description-41">Description</h3>
 <p>Apache Airflow's secrets masker hides values stored under sensitive key names when they are displayed in the UI. The masker's recursion-depth limit did not descend into values nested inside a list, tuple, or set beyond that limit, so an Airflow Variable holding such a deeply-nested value was shown unmasked in the Variables UI. The exposure is limited to the UI: any authenticated user who can see the Variable in the UI can already read its full value through the Variables REST API, so this does not disclose data the user could not otherwise obtain — the masking is a shoulder-surfing defense for the UI, not an access-control boundary.<br><br>This is an incomplete-fix follow-up to CVE-2026-42358, whose fix made only the dictionary walk unbounded; lists, tuples, and sets beyond the depth limit remained unmasked in the UI. Deployments that applied the CVE-2026-42358 fix should also upgrade to address this residual case. Upgrade to apache-airflow 3.3.1 or later.</p>
@@ -988,10 +998,11 @@
 </ul>
 <h2 id="CVE-2026-49487">Task-instance API exposes secrets in deferred trigger kwargs</h2>
 <p>CVE-2026-49487 <a href="https://cve.org/CVERecord?id=CVE-2026-49487">[CVE]</a> <a href="./CVE-2026-49487.cve.json">[CVE json]</a> <a href="./CVE-2026-49487.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-16T14:45:52.041Z</em></p>
+<p><em>Last updated: 2026-11-03T04:28:59.142Z</em></p>
 <h3 id="affected-44">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.3.0</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.3.0</li>
 </ul>
 <h3 id="description-44">Description</h3>
 <p>In Apache Airflow before 3.3.0, the REST API task-instance detail and list<br>endpoints returned a deferred task's trigger kwargs without masking. When a<br>deferred operator passed a secret (for example a provider API key) into its<br>trigger, any authenticated user with DAG-scoped task-instance read access for<br>that DAG could read that secret in clear text while the task was deferred.<br>Users should upgrade to apache-airflow 3.3.0 or later, which masks sensitive<br>values in trigger kwargs returned by the API.</p>
@@ -1026,10 +1037,11 @@
 </ul>
 <h2 id="CVE-2026-49298">JWT Token Exposure in KubernetesExecutor Command-Line Arguments</h2>
 <p>CVE-2026-49298 <a href="https://cve.org/CVERecord?id=CVE-2026-49298">[CVE]</a> <a href="./CVE-2026-49298.cve.json">[CVE json]</a> <a href="./CVE-2026-49298.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-01T07:34:31.163Z</em></p>
+<p><em>Last updated: 2026-11-03T06:21:06.987Z</em></p>
 <h3 id="affected-46">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.2.2</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.2.2</li>
 </ul>
 <h3 id="description-46">Description</h3>
 <p>A bug in Apache Airflow's KubernetesExecutor caused JWT tokens used by worker pods to authenticate against the Execution API to be passed to the worker container as command-line arguments visible in the pod spec. An authenticated UI/API user with Kubernetes read-only access to the cluster (e.g. <code>pods/get</code> in the Airflow namespace) could harvest the JWT from <code>kubectl describe pod</code> output and then call state-mutating Execution API endpoints — triggering Dag runs, clearing runs, reading or writing Variables / Connections / XComs — as if they were a running task. Affects deployments using the <code>KubernetesExecutor</code>. Users are advised to upgrade to <code>apache-airflow</code> 3.2.2 or later. This is the airflow-core half of the same vulnerability addressed by <a href="https://www.cve.org/CVERecord?id=CVE-2026-27173">CVE-2026-27173</a>, which shipped the apache-airflow-providers-cncf-kubernetes side of the fix. Deployments that already upgraded <code>apache-airflow-providers-cncf-kubernetes</code> to 10.17.0 or later per the CVE-2026-27173 advisory should additionally upgrade <code>apache-airflow</code> to 3.2.2 or later to close the core-side surface — the two fixes are complementary, not duplicates.</p>
@@ -1065,7 +1077,7 @@
 </ul>
 <h2 id="CVE-2026-49296">Per-DAG read bypass discloses co-located DAGs&rsquo; source via GET /api/v2/dagSources/{dag_id}</h2>
 <p>CVE-2026-49296 <a href="https://cve.org/CVERecord?id=CVE-2026-49296">[CVE]</a> <a href="./CVE-2026-49296.cve.json">[CVE json]</a> <a href="./CVE-2026-49296.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-16T14:45:50.190Z</em></p>
+<p><em>Last updated: 2026-11-03T04:28:58.026Z</em></p>
 <h3 id="affected-48">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.3.0</li>
@@ -1084,10 +1096,11 @@
 </ul>
 <h2 id="CVE-2026-49267">No certificate validation on SMTP STARTTLS connections</h2>
 <p>CVE-2026-49267 <a href="https://cve.org/CVERecord?id=CVE-2026-49267">[CVE]</a> <a href="./CVE-2026-49267.cve.json">[CVE json]</a> <a href="./CVE-2026-49267.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-01T07:53:11.785Z</em></p>
+<p><em>Last updated: 2026-11-03T06:21:05.826Z</em></p>
 <h3 id="affected-49">Affected</h3>
 <ul>
-<li>Apache Airflow from 2.0.0 before 3.2.2</li>
+<li>Apache Airflow from 2.0.0 before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.2.2</li>
 </ul>
 <h3 id="description-49">Description</h3>
 <p>Apache Airflow's EmailOperator and the underlying <code>airflow.utils.email</code> helpers established SMTP STARTTLS connections without verifying the remote certificate when the deployment used <code>[email] smtp_starttls=True</code> without <code>[email] smtp_ssl</code>. An attacker positioned between the worker and the configured SMTP server (network MITM — typical hostile-network attack-surface for environments where the SMTP relay sits outside the worker's trust boundary) could present a self-signed certificate, have the worker complete the STARTTLS handshake silently, and capture the SMTP AUTH credentials and message contents the worker forwarded.<br><br>This CVE covers the <strong>core apache-airflow side</strong> of the same root cause already covered for the SMTP provider by <code>CVE-2026-41016</code> (published 2026-04-27, covering <code>apache-airflow-providers-smtp</code>). Users who already applied the SMTP-provider fix from CVE-2026-41016 should additionally upgrade <code>apache-airflow</code> to 3.2.2 or later to cover the core-side path through <code>airflow.utils.email</code>. Affects deployments configured with <code>smtp_starttls=True</code> and <code>smtp_ssl=False</code> where the SMTP relay is reachable across a less-trusted network segment than the worker.<br><br>Users are advised to upgrade to <code>apache-airflow</code> 3.2.2 or later.</p>
@@ -1103,10 +1116,11 @@
 </ul>
 <h2 id="CVE-2026-48892">Config API leaks per-key secrets backend kwargs - masker bypass on synthetic options</h2>
 <p>CVE-2026-48892 <a href="https://cve.org/CVERecord?id=CVE-2026-48892">[CVE]</a> <a href="./CVE-2026-48892.cve.json">[CVE json]</a> <a href="./CVE-2026-48892.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-16T14:45:44.357Z</em></p>
+<p><em>Last updated: 2026-11-03T04:28:55.780Z</em></p>
 <h3 id="affected-50">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.3.0</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.3.0</li>
 </ul>
 <h3 id="description-50">Description</h3>
 <p>The Config API in Apache Airflow surfaced per-key secrets-backend overrides (environment variables like <code>AIRFLOW__SECRETS__BACKEND_KWARG__SECRET_ID</code> and <code>AIRFLOW__WORKERS__SECRETS_BACKEND_KWARG__SECRET_ID</code>) as synthetic config options whose option names were not in <code>sensitive_config_values</code>, so the masker did not redact them. An authenticated UI/API user with Config read permission could retrieve plaintext secrets-backend credentials (Vault <code>role_id</code> / <code>secret_id</code>, etc.) from the Config API output. Affects deployments that configure secrets backends via per-key environment overrides. Users are advised to upgrade to <code>apache-airflow</code> 3.3.0 or later.</p>
@@ -1122,10 +1136,11 @@
 </ul>
 <h2 id="CVE-2026-48891">/ui/dependencies scheduling graph leaks unreadable Dag identifiers via trigger/sensor dep.source/dep.target</h2>
 <p>CVE-2026-48891 <a href="https://cve.org/CVERecord?id=CVE-2026-48891">[CVE]</a> <a href="./CVE-2026-48891.cve.json">[CVE json]</a> <a href="./CVE-2026-48891.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-16T14:45:48.267Z</em></p>
+<p><em>Last updated: 2026-11-03T04:28:54.677Z</em></p>
 <h3 id="affected-51">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.3.0</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.3.0</li>
 </ul>
 <h3 id="description-51">Description</h3>
 <p>A bug in Apache Airflow's <code>/ui/dependencies</code> scheduling graph endpoint applied the caller's readable-Dag filter to the top-level serialized Dag key but still emitted referenced Dag IDs through the <code>dep.source</code> and <code>dep.target</code> fields of trigger / sensor dependency entries. An authenticated UI user with read permission on some Dags could enumerate the identifiers of other Dags they were not authorized to read by inspecting the dependency graph for trigger / sensor references. Affects deployments that rely on per-Dag read scoping to keep Dag identifiers private across teams. This is a residual gap in the fix for CVE-2026-28563, which filtered the top-level Dag key but did not propagate the filter into the trigger / sensor dep-source / dep-target fields. Users who already upgraded for CVE-2026-28563 should additionally upgrade to <code>apache-airflow</code> 3.3.0 or later to cover the residual trigger / sensor dependency leak.</p>
@@ -1142,10 +1157,11 @@
 </ul>
 <h2 id="CVE-2026-48828">Bulk JSON Variables bypass should_hide_value_for_key - redact() called without the key</h2>
 <p>CVE-2026-48828 <a href="https://cve.org/CVERecord?id=CVE-2026-48828">[CVE]</a> <a href="./CVE-2026-48828.cve.json">[CVE json]</a> <a href="./CVE-2026-48828.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-09-16T14:45:42.320Z</em></p>
+<p><em>Last updated: 2026-11-03T04:28:53.571Z</em></p>
 <h3 id="affected-52">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.3.0</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.3.0</li>
 </ul>
 <h3 id="description-52">Description</h3>
 <p>The Bulk Variables API in Apache Airflow called the redactor without passing the variable's key, so the key-based <code>should_hide_value_for_key</code> check (which triggers on secret-suffixed key names like <code>*_password</code> / <code>*_token</code> / <code>*_secret</code>) could not fire for JSON-decodable variable values. An authenticated UI/API user with bulk Variable read permission could retrieve plaintext values from JSON variables whose key would otherwise trigger redaction. Affects deployments that store sensitive values in JSON-typed Airflow Variables under secret-suffixed key names. Users are advised to upgrade to <code>apache-airflow</code> 3.3.0 or later (the fix landed on <code>main</code> after 3.2.2; no 3.2.x backport).</p>
@@ -1161,10 +1177,11 @@
 </ul>
 <h2 id="CVE-2026-48726">revoke_token() unreachable in FabAuthManager / KeycloakAuthManager logout path</h2>
 <p>CVE-2026-48726 <a href="https://cve.org/CVERecord?id=CVE-2026-48726">[CVE]</a> <a href="./CVE-2026-48726.cve.json">[CVE json]</a> <a href="./CVE-2026-48726.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-01T07:35:18.096Z</em></p>
+<p><em>Last updated: 2026-11-03T06:21:04.683Z</em></p>
 <h3 id="affected-53">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.2.2</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.2.2</li>
 </ul>
 <h3 id="description-53">Description</h3>
 <p>A bug in Apache Airflow's auth manager logout handling left previously-issued JWT tokens valid after the user clicked logout in the UI: the logout flow for <code>FabAuthManager</code> and <code>KeycloakAuthManager</code> did not actually reach the underlying <code>revoke_token()</code> call, so the JWT remained accepted by the API server until its natural expiry. An attacker holding a previously-issued JWT for a logged-out user could continue to make authenticated API calls as that user. Affects deployments configured with <code>FabAuthManager</code> or <code>KeycloakAuthManager</code> (the bug does not affect SimpleAuthManager). This is a residual gap in the fix for CVE-2025-57735, which addressed cookie-side invalidation in PR #57992 / PR #61339 but did not cover the provider-side <code>revoke_token()</code> reachability in the FAB / Keycloak code paths. Users who already upgraded for CVE-2025-57735 should additionally upgrade to <code>apache-airflow</code> 3.2.2 or later to cover the FAB / Keycloak logout paths.</p>
@@ -1181,10 +1198,11 @@
 </ul>
 <h2 id="CVE-2026-46764">Event Log detail endpoint bypasses DAG-scoped event log permission filter</h2>
 <p>CVE-2026-46764 <a href="https://cve.org/CVERecord?id=CVE-2026-46764">[CVE]</a> <a href="./CVE-2026-46764.cve.json">[CVE json]</a> <a href="./CVE-2026-46764.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-01T07:45:46.820Z</em></p>
+<p><em>Last updated: 2026-11-03T06:21:03.531Z</em></p>
 <h3 id="affected-54">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.2.2</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.2.2</li>
 </ul>
 <h3 id="description-54">Description</h3>
 <p>The Event Log detail endpoint <code>GET /api/v2/eventLogs/{event_log_id}</code> in Apache Airflow fetched audit-log rows directly by numeric ID after only the generic Audit Log permission check, while the collection endpoint <code>GET /api/v2/eventLogs</code> applied per-Dag scoping. An authenticated UI/API user with audit-log read permission for one Dag could retrieve audit-log entries for any other Dag by guessing or enumerating the numeric event log ID. Affects deployments that rely on per-Dag audit-log scoping. Users are advised to upgrade to <code>apache-airflow</code> 3.2.2 or later.</p>
@@ -1219,7 +1237,7 @@
 </ul>
 <h2 id="CVE-2026-45426">Log server JWT authorization bypass via Python lstrip() character stripping allows cross-Dag log access</h2>
 <p>CVE-2026-45426 <a href="https://cve.org/CVERecord?id=CVE-2026-45426">[CVE]</a> <a href="./CVE-2026-45426.cve.json">[CVE json]</a> <a href="./CVE-2026-45426.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-01T07:47:13.162Z</em></p>
+<p><em>Last updated: 2026-11-03T06:21:02.351Z</em></p>
 <h3 id="affected-56">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.2.2</li>
@@ -1257,10 +1275,11 @@
 </ul>
 <h2 id="CVE-2026-45360">Arbitrary import in custom deadline-reference deserialization</h2>
 <p>CVE-2026-45360 <a href="https://cve.org/CVERecord?id=CVE-2026-45360">[CVE]</a> <a href="./CVE-2026-45360.cve.json">[CVE json]</a> <a href="./CVE-2026-45360.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-01T07:48:10.959Z</em></p>
+<p><em>Last updated: 2026-11-03T06:21:01.212Z</em></p>
 <h3 id="affected-58">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.2.2</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.2.2</li>
 </ul>
 <h3 id="description-58">Description</h3>
 <p>Apache Airflow's scheduler-side deadline-reference decoder (<code>SerializedCustomReference.deserialize_reference</code>) imported and dispatched arbitrary class paths drawn from DAG-author-controlled serialized state without an allowlist or plugin-registry gate. A DAG author whose code reaches the scheduler — the default on single-host deployments where the DAG bundle is importable from the scheduler process — could embed a custom <code>DeadlineReference</code> whose serialized form named an attacker-controlled module path, causing the scheduler to <code>import_string(...)</code> and instantiate that class with a live SQLAlchemy session attached. Affects deployments where DAG-author code is less trusted than the scheduler process. Users are advised to upgrade to <code>apache-airflow</code> 3.2.2 or later.</p>
@@ -1275,10 +1294,11 @@
 </ul>
 <h2 id="CVE-2026-45192">Incomplete Redaction of Sensitive Fields in Connection Extra API Response</h2>
 <p>CVE-2026-45192 <a href="https://cve.org/CVERecord?id=CVE-2026-45192">[CVE]</a> <a href="./CVE-2026-45192.cve.json">[CVE json]</a> <a href="./CVE-2026-45192.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-01T06:51:50.457Z</em></p>
+<p><em>Last updated: 2026-11-03T06:21:00.059Z</em></p>
 <h3 id="affected-59">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.2.2</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.2.2</li>
 </ul>
 <h3 id="description-59">Description</h3>
 <p>A bug in the GET <code>/api/v2/connections/{connection_id}</code> REST API endpoint in Apache Airflow allowed an authenticated UI/API user with Connection-read permission to retrieve secrets stored in a Connection's <code>extra</code> JSON blob under field names not present in the redaction allowlist (<code>DEFAULT_SENSITIVE_FIELDS</code>) — for example, official Slack-provider credential field names were returned in plaintext. Affects deployments that store credentials in Connection <code>extra</code> blobs and grant Connection-read access to multiple users. Users are advised to upgrade to <code>apache-airflow</code> 3.2.2 or later. As a defense-in-depth mitigation, deployment operators can store sensitive credential values in a secret-backend rather than inlined into the Connection's <code>extra</code> field.</p>
@@ -1332,10 +1352,11 @@
 </ul>
 <h2 id="CVE-2026-42360">Rendered template truncation bypasses nested sensitive-key masking</h2>
 <p>CVE-2026-42360 <a href="https://cve.org/CVERecord?id=CVE-2026-42360">[CVE]</a> <a href="./CVE-2026-42360.cve.json">[CVE json]</a> <a href="./CVE-2026-42360.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-01T07:50:36.896Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:58.876Z</em></p>
 <h3 id="affected-62">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.2.2</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.2.2</li>
 </ul>
 <h3 id="description-62">Description</h3>
 <p>A bug in Apache Airflow's rendered-template field handling caused nested sensitive-key masking (e.g. nested <code>password</code> / <code>token</code> / <code>secret</code> / <code>api_key</code> keys inside a JSON template structure) to be bypassed when the rendered field exceeded <code>[core] max_templated_field_length</code>: Airflow stringified the structure before redaction, losing the nested key context, and persisted the plaintext value into <code>rendered_fields</code>. An authenticated UI/API user with permission to read rendered template fields could harvest secret values intended to be masked. Affects deployments where Dag authors pass structured JSON to operators with nested sensitive keys. This is a variant of <code>CWE-200</code> previously addressed for the user-registered <code>mask_secret()</code> patterns in CVE-2025-68438; that fix did not cover the nested sensitive-keyword allowlist. Users who already upgraded for CVE-2025-68438 should additionally upgrade to <code>apache-airflow</code> 3.2.2 or later to cover the nested-key path.</p>
@@ -1351,7 +1372,7 @@
 </ul>
 <h2 id="CVE-2026-42359">Authenticated RCE via XCom PATCH endpoint — XComUpdateBody missing FORBIDDEN_XCOM_KEYS validator</h2>
 <p>CVE-2026-42359 <a href="https://cve.org/CVERecord?id=CVE-2026-42359">[CVE]</a> <a href="./CVE-2026-42359.cve.json">[CVE json]</a> <a href="./CVE-2026-42359.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-01T15:13:25.919Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:57.712Z</em></p>
 <h3 id="affected-63">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.2.0 before 3.2.2</li>
@@ -1373,10 +1394,11 @@
 </ul>
 <h2 id="CVE-2026-42358">Variable masker depth-limit bypass returns cleartext nested secrets</h2>
 <p>CVE-2026-42358 <a href="https://cve.org/CVERecord?id=CVE-2026-42358">[CVE]</a> <a href="./CVE-2026-42358.cve.json">[CVE json]</a> <a href="./CVE-2026-42358.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-01T07:49:56.426Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:56.563Z</em></p>
 <h3 id="affected-64">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.2.2</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.2.2</li>
 </ul>
 <h3 id="description-64">Description</h3>
 <p>A bug in Apache Airflow's Variable response masker caused nested-key redaction (triggered by secret-suffixed key names like <code>password</code>, <code>token</code>, <code>secret</code>, <code>api_key</code>) to be bypassed when the JSON value's nesting depth exceeded the shared secrets masker's recursion limit: the masker returned the original nested item before checking the sensitive key name. An authenticated UI/API user with Variable read permission could harvest plaintext secret values stored under sensitive keys nested deep enough to exceed the masker's depth cap. Affects deployments that store sensitive values inside deeply-nested JSON Variables. This is a residual gap in the fix for CVE-2026-32690 (which covered shallower nesting via <code>max_depth=1</code>); the depth-limit boundary itself was not raised, so the same key-name bypass pattern reappears beyond the recursion cap. Users who already upgraded for CVE-2026-32690 should additionally upgrade to <code>apache-airflow</code> 3.2.2 or later to cover the deep-nesting path.</p>
@@ -1394,7 +1416,7 @@
 </ul>
 <h2 id="CVE-2026-42252">BashOperator Jinja2 injection via dag_run.conf — low-privilege user pattern</h2>
 <p>CVE-2026-42252 <a href="https://cve.org/CVERecord?id=CVE-2026-42252">[CVE]</a> <a href="./CVE-2026-42252.cve.json">[CVE json]</a> <a href="./CVE-2026-42252.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-01T07:51:17.651Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:55.419Z</em></p>
 <h3 id="affected-65">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.2.2</li>
@@ -1413,7 +1435,7 @@
 </ul>
 <h2 id="CVE-2026-41084">API authorization bypass: bulk TaskInstances allows cross-DAG mutation</h2>
 <p>CVE-2026-41084 <a href="https://cve.org/CVERecord?id=CVE-2026-41084">[CVE]</a> <a href="./CVE-2026-41084.cve.json">[CVE json]</a> <a href="./CVE-2026-41084.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-01T07:51:55.264Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:54.258Z</em></p>
 <h3 id="affected-66">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.2.0 before 3.2.2</li>
@@ -1451,7 +1473,7 @@
 </ul>
 <h2 id="CVE-2026-41017">JWT cookie missing Secure flag in JWTRefreshMiddleware behind HTTPS-terminating proxy</h2>
 <p>CVE-2026-41017 <a href="https://cve.org/CVERecord?id=CVE-2026-41017">[CVE]</a> <a href="./CVE-2026-41017.cve.json">[CVE json]</a> <a href="./CVE-2026-41017.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-01T07:52:32.340Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:53.107Z</em></p>
 <h3 id="affected-68">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.2.2</li>
@@ -1468,15 +1490,15 @@
 <li>Ran (@eddieran) (finder)</li>
 <li>Jarek Potiuk (remediation developer)</li>
 </ul>
-<h2 id="CVE-2026-41016">No certificate validation on SMTP STARTTLS connections (SMTP provider — split from #265) ##</h2>
+<h2 id="CVE-2026-41016">No certificate validation on SMTP STARTTLS connections in SMTP provider</h2>
 <p>CVE-2026-41016 <a href="https://cve.org/CVERecord?id=CVE-2026-41016">[CVE]</a> <a href="./CVE-2026-41016.cve.json">[CVE json]</a> <a href="./CVE-2026-41016.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-05-29T08:45:19.890Z</em></p>
+<p><em>Last updated: 2026-11-03T08:34:26.197Z</em></p>
 <h3 id="affected-69">Affected</h3>
 <ul>
 <li>Apache Airflow Providers SMTP from 2.0.0 before 3.0.0</li>
 </ul>
 <h3 id="description-69">Description</h3>
-<p>Apache Airflow's SMTP provider <code>SmtpHook</code> called Python's <code>smtplib.SMTP.starttls()</code> without an SSL context, so no certificate validation was performed on the TLS upgrade. A man-in-the-middle between the Airflow worker and the SMTP server could present a self-signed certificate, complete the STARTTLS upgrade, and capture the SMTP credentials sent during the subsequent <code>login()</code> call. Users are advised to upgrade to the <code>apache-airflow-providers-smtp</code> version that contains the fix.</p>
+<p>Apache Airflow&rsquo;s SMTP provider <code>SmtpHook</code> called Python&rsquo;s <code>smtplib.SMTP.starttls()</code> without an SSL context, so no certificate validation was performed on the TLS upgrade. A man-in-the-middle between the Airflow worker and the SMTP server could present a self-signed certificate, complete the STARTTLS upgrade, and capture the SMTP credentials sent during the subsequent <code>login()</code> call. Users are advised to upgrade to the <code>apache-airflow-providers-smtp</code> version that contains the fix.</p>
 <h3 id="references-69">References</h3>
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/65346">https://github.com/apache/airflow/pull/65346</a></li>
@@ -1489,7 +1511,7 @@
 </ul>
 <h2 id="CVE-2026-41014">per-DAG RBAC bypass on /ui/partitioned_dag_runs endpoints</h2>
 <p>CVE-2026-41014 <a href="https://cve.org/CVERecord?id=CVE-2026-41014">[CVE]</a> <a href="./CVE-2026-41014.cve.json">[CVE json]</a> <a href="./CVE-2026-41014.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-01T07:53:50.879Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:51.911Z</em></p>
 <h3 id="affected-70">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.2.0 before 3.2.2</li>
@@ -1508,7 +1530,7 @@
 </ul>
 <h2 id="CVE-2026-40963">DAG authorization bypass on /ui/structure/structure_data</h2>
 <p>CVE-2026-40963 <a href="https://cve.org/CVERecord?id=CVE-2026-40963">[CVE]</a> <a href="./CVE-2026-40963.cve.json">[CVE json]</a> <a href="./CVE-2026-40963.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-01T07:54:32.443Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:50.781Z</em></p>
 <h3 id="affected-71">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.2.2</li>
@@ -1527,7 +1549,7 @@
 </ul>
 <h2 id="CVE-2026-40961">Open Redirect Bypass Vulnerability</h2>
 <p>CVE-2026-40961 <a href="https://cve.org/CVERecord?id=CVE-2026-40961">[CVE]</a> <a href="./CVE-2026-40961.cve.json">[CVE json]</a> <a href="./CVE-2026-40961.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-01T07:55:03.222Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:49.648Z</em></p>
 <h3 id="affected-72">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.2.2</li>
@@ -1565,10 +1587,11 @@
 </ul>
 <h2 id="CVE-2026-40861">Arbitrary File Read via Log Symlink following in FileTaskHandler</h2>
 <p>CVE-2026-40861 <a href="https://cve.org/CVERecord?id=CVE-2026-40861">[CVE]</a> <a href="./CVE-2026-40861.cve.json">[CVE json]</a> <a href="./CVE-2026-40861.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-01T07:55:36.142Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:48.514Z</em></p>
 <h3 id="affected-74">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.2.2</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.2.2</li>
 </ul>
 <h3 id="description-74">Description</h3>
 <p>A Dag author could either (a) create a symlink under their task's log directory pointing to an arbitrary file readable by the API server process (read-path attack — e.g. <code>/etc/passwd</code> or <code>airflow.cfg</code>) or (b) supply a <code>task_id</code> containing <code>..</code> sequences accepted by the Task SDK's <code>KEY_REGEX</code> (write-path attack), and in both cases the FileTaskHandler resolves the log path outside the configured <code>base_log_folder</code>, leaking or overwriting arbitrary files. Only affects deployments where the worker log folder is shared with the API server. Users are advised to upgrade to <code>apache-airflow</code> 3.2.2 or later. As a defense-in-depth mitigation, deploy the worker and API server with separate log volumes so that worker-controlled paths cannot reach the API server's filesystem.</p>
@@ -1585,10 +1608,11 @@
 </ul>
 <h2 id="CVE-2026-40690">Assets graph view bypasses DAG level access control displaying unrelated topologies and all DAGs names to unauthorized users</h2>
 <p>CVE-2026-40690 <a href="https://cve.org/CVERecord?id=CVE-2026-40690">[CVE]</a> <a href="./CVE-2026-40690.cve.json">[CVE json]</a> <a href="./CVE-2026-40690.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-04-24T12:35:28.702Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:47.344Z</em></p>
 <h3 id="affected-75">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.2.1</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.2.1</li>
 </ul>
 <h3 id="description-75">Description</h3>
 <p>The asset dependency graph did not restrict nodes by the viewer&rsquo;s DAG read permissions: a user with read access to at least one DAG could browse the asset graph for any other asset in the deployment and learn the existence and names of DAGs and assets outside their authorized scope.<br><br>Users are recommended to upgrade to version 3.2.1, which fixes this issue.<br></p>
@@ -1604,10 +1628,11 @@
 </ul>
 <h2 id="CVE-2026-38743">Dags endpoint might provide access to otherwise inaccessible entities</h2>
 <p>CVE-2026-38743 <a href="https://cve.org/CVERecord?id=CVE-2026-38743">[CVE]</a> <a href="./CVE-2026-38743.cve.json">[CVE json]</a> <a href="./CVE-2026-38743.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-04-24T12:36:37.917Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:46.173Z</em></p>
 <h3 id="affected-76">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.2.1</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.2.1</li>
 </ul>
 <h3 id="description-76">Description</h3>
 <p></p><span style="background-color: rgb(255, 255, 255);">The authenticated </span><code>/ui/dags</code><span style="background-color: rgb(255, 255, 255);">&nbsp;endpoint did not enforce per-DAG access control on embedded Human-in-the-Loop (HITL) and TaskInstance records: a logged-in Airflow user with read access to at least one DAG could retrieve HITL prompts (including their request parameters) and full TaskInstance details for DAGs outside their authorized scope. Because HITL prompts and TaskInstance fields routinely carry operator parameters and free-form context attached to a task, the leak widens visibility of DAG-run data beyond the intended per-DAG RBAC boundary for every authenticated user.<br></span><br>Users are recommended to upgrade to version 3.2.1 , which fixes this issue.
@@ -1623,7 +1648,7 @@
 </ul>
 <h2 id="CVE-2026-34538">Authorization bypass in DagRun wait endpoint (XCom exposure)</h2>
 <p>CVE-2026-34538 <a href="https://cve.org/CVERecord?id=CVE-2026-34538">[CVE]</a> <a href="./CVE-2026-34538.cve.json">[CVE json]</a> <a href="./CVE-2026-34538.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-04-09T09:09:19.260Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:45.029Z</em></p>
 <h3 id="affected-77">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.2.0</li>
@@ -1642,7 +1667,7 @@
 </ul>
 <h2 id="CVE-2026-33858">Unsafe Deserialization via Legacy Serialization Keys (__type/__var) Bypass in XCom API</h2>
 <p>CVE-2026-33858 <a href="https://cve.org/CVERecord?id=CVE-2026-33858">[CVE]</a> <a href="./CVE-2026-33858.cve.json">[CVE json]</a> <a href="./CVE-2026-33858.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-04-13T14:36:29.251Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:43.856Z</em></p>
 <h3 id="affected-78">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.1.8 before 3.2.0</li>
@@ -1661,10 +1686,11 @@
 </ul>
 <h2 id="CVE-2026-33264">DAG author RCE on webserver via unrestricted import_string() in BaseSerialization.deserialize()</h2>
 <p>CVE-2026-33264 <a href="https://cve.org/CVERecord?id=CVE-2026-33264">[CVE]</a> <a href="./CVE-2026-33264.cve.json">[CVE json]</a> <a href="./CVE-2026-33264.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-07-07T12:25:55.676Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:42.721Z</em></p>
 <h3 id="affected-79">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.3.0</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.3.0</li>
 </ul>
 <h3 id="description-79">Description</h3>
 <p>A bug in <code>BaseSerialization.deserialize()</code> allowed unrestricted <code>import_string()</code> of attacker-controlled class paths when the Scheduler / API Server loaded a serialized DAG: a DAG author could embed a malicious trigger into a DAG to gain remote code execution on the API Server / Scheduler process, crossing the Airflow security boundary that DAG-author code must never execute in those processes. Users are advised to upgrade to <code>apache-airflow</code> 3.3.0 or later. As a defense-in-depth mitigation, deployments where DAG-author trust is limited can restrict the <code>[core] allowed_deserialization_classes</code> config to a narrow allowlist.</p>
@@ -1704,7 +1730,7 @@
 </ul>
 <h2 id="CVE-2026-32690">3.x - Nested Variable Secret Values Bypass Redaction via max_depth=1</h2>
 <p>CVE-2026-32690 <a href="https://cve.org/CVERecord?id=CVE-2026-32690">[CVE]</a> <a href="./CVE-2026-32690.cve.json">[CVE json]</a> <a href="./CVE-2026-32690.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-04-18T02:36:09.517Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:41.553Z</em></p>
 <h3 id="affected-81">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.2.0</li>
@@ -1723,7 +1749,7 @@
 </ul>
 <h2 id="CVE-2026-32228">Users with asset materialization permisssions could trigger Dags they had no access to</h2>
 <p>CVE-2026-32228 <a href="https://cve.org/CVERecord?id=CVE-2026-32228">[CVE]</a> <a href="./CVE-2026-32228.cve.json">[CVE json]</a> <a href="./CVE-2026-32228.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-04-18T02:42:30.328Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:40.403Z</em></p>
 <h3 id="affected-82">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.2.0</li>
@@ -1743,7 +1769,7 @@
 </ul>
 <h2 id="CVE-2026-31987">JWT token appearing in logs</h2>
 <p>CVE-2026-31987 <a href="https://cve.org/CVERecord?id=CVE-2026-31987">[CVE]</a> <a href="./CVE-2026-31987.cve.json">[CVE json]</a> <a href="./CVE-2026-31987.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-04-16T17:49:35.608Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:39.274Z</em></p>
 <h3 id="affected-83">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.2.0</li>
@@ -1765,10 +1791,11 @@
 </ul>
 <h2 id="CVE-2026-30912">Exposing stack trace in case of constraint error</h2>
 <p>CVE-2026-30912 <a href="https://cve.org/CVERecord?id=CVE-2026-30912">[CVE]</a> <a href="./CVE-2026-30912.cve.json">[CVE json]</a> <a href="./CVE-2026-30912.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-04-18T02:41:53.492Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:38.131Z</em></p>
 <h3 id="affected-84">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.2.0</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.2.0</li>
 </ul>
 <h3 id="description-84">Description</h3>
 <p>In case of SQL errors, exception/stack trace of errors was exposed in API even if &ldquo;api/expose_stack_traces&rdquo; was set to false. That could lead to exposing additional information to potential attacker. Users are recommended to upgrade to Apache Airflow 3.2.0, which fixes the issue.</p>
@@ -1784,7 +1811,7 @@
 </ul>
 <h2 id="CVE-2026-30911">Execution API HITL Endpoints Missing Per-Task Authorization</h2>
 <p>CVE-2026-30911 <a href="https://cve.org/CVERecord?id=CVE-2026-30911">[CVE]</a> <a href="./CVE-2026-30911.cve.json">[CVE json]</a> <a href="./CVE-2026-30911.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-03-17T10:53:00.535Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:36.992Z</em></p>
 <h3 id="affected-85">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.1.0 before 3.1.8</li>
@@ -1803,10 +1830,11 @@
 </ul>
 <h2 id="CVE-2026-30898">Bad example of BashOperator shell injection via dag_run.conf</h2>
 <p>CVE-2026-30898 <a href="https://cve.org/CVERecord?id=CVE-2026-30898">[CVE]</a> <a href="./CVE-2026-30898.cve.json">[CVE json]</a> <a href="./CVE-2026-30898.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-04-18T02:40:37.049Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:35.826Z</em></p>
 <h3 id="affected-86">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.2.0</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.2.0</li>
 </ul>
 <h3 id="description-86">Description</h3>
 <p>An example of BashOperator in Airflow documentation suggested a way of passing dag_run.conf in the way that could cause unsanitized user input to be used to escalate privileges of UI user to allow execute code on worker. Users should review if any of their own DAGs have adopted this incorrect advice.<br></p>
@@ -1822,7 +1850,7 @@
 </ul>
 <h2 id="CVE-2026-28779">Path of session token in cookie does not consider base_url - session hijacking via co-hosted applications</h2>
 <p>CVE-2026-28779 <a href="https://cve.org/CVERecord?id=CVE-2026-28779">[CVE]</a> <a href="./CVE-2026-28779.cve.json">[CVE json]</a> <a href="./CVE-2026-28779.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-03-17T10:43:18.236Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:34.656Z</em></p>
 <h3 id="affected-87">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.1.8</li>
@@ -1841,7 +1869,7 @@
 </ul>
 <h2 id="CVE-2026-28563">DAG authorization bypass</h2>
 <p>CVE-2026-28563 <a href="https://cve.org/CVERecord?id=CVE-2026-28563">[CVE]</a> <a href="./CVE-2026-28563.cve.json">[CVE json]</a> <a href="./CVE-2026-28563.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-03-17T10:54:55.864Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:33.514Z</em></p>
 <h3 id="affected-88">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.1.8</li>
@@ -1880,7 +1908,7 @@
 </ul>
 <h2 id="CVE-2026-26929">Wildcard DagVersion Listing Bypasses Per‑DAG RBAC and Leaks Metadata</h2>
 <p>CVE-2026-26929 <a href="https://cve.org/CVERecord?id=CVE-2026-26929">[CVE]</a> <a href="./CVE-2026-26929.cve.json">[CVE json]</a> <a href="./CVE-2026-26929.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-03-17T10:54:03.388Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:32.358Z</em></p>
 <h3 id="affected-90">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.1.8</li>
@@ -1898,10 +1926,11 @@
 </ul>
 <h2 id="CVE-2026-25917">API extra-links triggers XCom deserialization/class instantiation (Airflow 3.1.5)</h2>
 <p>CVE-2026-25917 <a href="https://cve.org/CVERecord?id=CVE-2026-25917">[CVE]</a> <a href="./CVE-2026-25917.cve.json">[CVE json]</a> <a href="./CVE-2026-25917.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-04-17T20:19:53.511Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:31.228Z</em></p>
 <h3 id="affected-91">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.2.0</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.2.0</li>
 </ul>
 <h3 id="description-91">Description</h3>
 <p>Dag Authors, who normally should not be able to execute code in the webserver context could craft XCom payload causing the webserver to execute arbitrary code. Since Dag Authors are already highly trusted, severity of this issue is Low.<br><br>Users are recommended to upgrade to Apache Airflow 3.2.0, which fixes the issue.<br></p>
@@ -1935,10 +1964,11 @@
 </ul>
 <h2 id="CVE-2026-25219">Sensitive Azure Service Bus connection string (and possibly other providers) exposed to users with view access</h2>
 <p>CVE-2026-25219 <a href="https://cve.org/CVERecord?id=CVE-2026-25219">[CVE]</a> <a href="./CVE-2026-25219.cve.json">[CVE json]</a> <a href="./CVE-2026-25219.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-04-15T13:14:51.470Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:30.072Z</em></p>
 <h3 id="affected-93">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.1.8</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.1.8</li>
 </ul>
 <h3 id="description-93">Description</h3>
 <p>The <code>access_key</code> and <code>connection_string</code> connection properties were not marked as sensitive names in secrets masker. This means that user with read permission could see the values in Connection UI, as well as when Connection was accidentaly logged to logs, those values could be seen in the logs. Azure Service Bus used those properties to store sensitive values. Possibly other providers could be also affected if they used the same fields to store sensitive data.<br><br>If you used Azure Service Bus connection with those values set or if you have other connections with those values storing sensitve values, you should upgrade Airflow to 3.1.8</p>
@@ -1954,7 +1984,7 @@
 </ul>
 <h2 id="CVE-2026-24098">Assigning single DAG permission leaked all DAGs Import Errors</h2>
 <p>CVE-2026-24098 <a href="https://cve.org/CVERecord?id=CVE-2026-24098">[CVE]</a> <a href="./CVE-2026-24098.cve.json">[CVE json]</a> <a href="./CVE-2026-24098.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-03-10T18:13:52.941Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:28.903Z</em></p>
 <h3 id="affected-94">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.1.7</li>
@@ -1972,7 +2002,7 @@
 </ul>
 <h2 id="CVE-2026-22922">Airflow externalLogUrl Permission Bypass</h2>
 <p>CVE-2026-22922 <a href="https://cve.org/CVERecord?id=CVE-2026-22922">[CVE]</a> <a href="./CVE-2026-22922.cve.json">[CVE json]</a> <a href="./CVE-2026-22922.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-02-09T10:33:48.256Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:27.721Z</em></p>
 <h3 id="affected-95">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.1.0 before 3.1.7</li>
@@ -2031,11 +2061,11 @@
 </ul>
 <h2 id="CVE-2025-68675">proxy credentials for various providers might leak in task logs</h2>
 <p>CVE-2025-68675 <a href="https://cve.org/CVERecord?id=CVE-2025-68675">[CVE]</a> <a href="./CVE-2025-68675.cve.json">[CVE json]</a> <a href="./CVE-2025-68675.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-02-24T05:48:09.000Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:26.542Z</em></p>
 <h3 id="affected-98">Affected</h3>
 <ul>
-<li>Apache Airflow from 3.0.0 before 3.1.6</li>
 <li>Apache Airflow before 2.11.1</li>
+<li>Apache Airflow from 3.0.0 before 3.1.6</li>
 </ul>
 <h3 id="description-98">Description</h3>
 <p>In Apache Airflow versions before 3.1.6, and 2.11.1 the proxies and proxy fields within a Connection may include proxy URLs containing embedded authentication information. These fields were not treated as sensitive by default and therefore were not automatically masked in log output. As a result, when such connections are rendered or printed to logs, proxy credentials embedded in these fields could be exposed.<br><br>Users are recommended to upgrade to 3.1.6 or later for Airflow 3, and 2.11.1 or later for Airflow 2 which fixes this issue</p>
@@ -2051,7 +2081,7 @@
 </ul>
 <h2 id="CVE-2025-68438">Secrets in rendered templates could contain parts of sensitive values when truncated</h2>
 <p>CVE-2025-68438 <a href="https://cve.org/CVERecord?id=CVE-2025-68438">[CVE]</a> <a href="./CVE-2025-68438.cve.json">[CVE json]</a> <a href="./CVE-2025-68438.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-01-16T10:06:05.336Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:25.358Z</em></p>
 <h3 id="affected-99">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.1.0 before 3.1.6</li>
@@ -2087,7 +2117,7 @@
 </ul>
 <h2 id="CVE-2025-66388">Secrets in rendered templates not redacted properly and exposed in the UI</h2>
 <p>CVE-2025-66388 <a href="https://cve.org/CVERecord?id=CVE-2025-66388">[CVE]</a> <a href="./CVE-2025-66388.cve.json">[CVE json]</a> <a href="./CVE-2025-66388.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-12-15T11:30:42.649Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:24.188Z</em></p>
 <h3 id="affected-101">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.1.0 before 3.1.4</li>
@@ -2106,7 +2136,7 @@
 </ul>
 <h2 id="CVE-2025-66236">Secrets from Airflow config file logged in plain text in DAG run logs UI</h2>
 <p>CVE-2025-66236 <a href="https://cve.org/CVERecord?id=CVE-2025-66236">[CVE]</a> <a href="./CVE-2025-66236.cve.json">[CVE json]</a> <a href="./CVE-2025-66236.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-04-13T14:20:35.201Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:23.049Z</em></p>
 <h3 id="affected-102">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.2.0</li>
@@ -2125,11 +2155,11 @@
 </ul>
 <h2 id="CVE-2025-65995">Disclosure of secrets to UI via kwargs</h2>
 <p>CVE-2025-65995 <a href="https://cve.org/CVERecord?id=CVE-2025-65995">[CVE]</a> <a href="./CVE-2025-65995.cve.json">[CVE json]</a> <a href="./CVE-2025-65995.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-03-08T19:08:56.440Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:21.899Z</em></p>
 <h3 id="affected-103">Affected</h3>
 <ul>
-<li>Apache Airflow from 3.0.0 before 3.1.4</li>
 <li>Apache Airflow before 2.11.1</li>
+<li>Apache Airflow from 3.0.0 before 3.1.4</li>
 </ul>
 <h3 id="description-103">Description</h3>
 <p>When a DAG failed during parsing, Airflow’s error-reporting in the UI could include the full kwargs passed to the operators. If those kwargs contained sensitive values (such as secrets), they might be exposed in the UI tracebacks to authenticated users who had permission to view that DAG. <br><br>The issue has been fixed in Airflow 3.1.4 and 2.11.1, and users are strongly advised to upgrade to prevent potential disclosure of sensitive information.</p>
@@ -2164,7 +2194,7 @@
 </ul>
 <h2 id="CVE-2025-62402">Airflow 3 API: /api/v2/dagReports executes DAG Python in API</h2>
 <p>CVE-2025-62402 <a href="https://cve.org/CVERecord?id=CVE-2025-62402">[CVE]</a> <a href="./CVE-2025-62402.cve.json">[CVE json]</a> <a href="./CVE-2025-62402.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-30T09:14:24.818Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:20.762Z</em></p>
 <h3 id="affected-105">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.1.1</li>
@@ -2181,7 +2211,7 @@
 </ul>
 <h2 id="CVE-2025-57735">Airflow Logout Not Invalidating JWT</h2>
 <p>CVE-2025-57735 <a href="https://cve.org/CVERecord?id=CVE-2025-57735">[CVE]</a> <a href="./CVE-2025-57735.cve.json">[CVE json]</a> <a href="./CVE-2025-57735.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-04-09T11:12:40.266Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:19.587Z</em></p>
 <h3 id="affected-106">Affected</h3>
 <ul>
 <li>Apache Airflow from 3.0.0 before 3.2.0</li>
@@ -2202,10 +2232,10 @@
 </ul>
 <h2 id="CVE-2025-54941">Command injection in &ldquo;example_dag_decorator&rdquo;</h2>
 <p>CVE-2025-54941 <a href="https://cve.org/CVERecord?id=CVE-2025-54941">[CVE]</a> <a href="./CVE-2025-54941.cve.json">[CVE json]</a> <a href="./CVE-2025-54941.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-10-30T09:45:25.170Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:18.451Z</em></p>
 <h3 id="affected-107">Affected</h3>
 <ul>
-<li>Apache Airflow from 3.0.0 before &lt; 3.0.5</li>
+<li>Apache Airflow from 3.0.0 before 3.0.5</li>
 </ul>
 <h3 id="description-107">Description</h3>
 <p>An example dag <code>example_dag_decorator</code> had non-validated parameter that allowed the UI user to redirect the example to a malicious server and execute code on worker. This however required that the example dags are enabled in production (not default) or the example dag code copied to build your own similar dag. If you used the <code>example_dag_decorator</code> please review it and apply the changes implemented in Airflow 3.0.5 accordingly.<br><br><br></p>
@@ -2219,7 +2249,7 @@
 </ul>
 <h2 id="CVE-2025-54831">Connection sensitive details exposed to users with READ permissions</h2>
 <p>CVE-2025-54831 <a href="https://cve.org/CVERecord?id=CVE-2025-54831">[CVE]</a> <a href="./CVE-2025-54831.cve.json">[CVE json]</a> <a href="./CVE-2025-54831.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2025-09-26T07:28:57.402Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:17.333Z</em></p>
 <h3 id="affected-108">Affected</h3>
 <ul>
 <li>Apache Airflow at 3.0.3</li>
@@ -2234,10 +2264,11 @@
 </ul>
 <h2 id="CVE-2025-54550">RCE by race condition in example_xcom dag</h2>
 <p>CVE-2025-54550 <a href="https://cve.org/CVERecord?id=CVE-2025-54550">[CVE]</a> <a href="./CVE-2025-54550.cve.json">[CVE json]</a> <a href="./CVE-2025-54550.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-04-19T23:47:06.426Z</em></p>
+<p><em>Last updated: 2026-11-03T06:20:16.158Z</em></p>
 <h3 id="affected-109">Affected</h3>
 <ul>
-<li>Apache Airflow before 3.2.0</li>
+<li>Apache Airflow before 3.0.0</li>
+<li>Apache Airflow from 3.0.0 before 3.2.0</li>
 </ul>
 <h3 id="description-109">Description</h3>
 <p>The example <code>example_xcom</code>&nbsp;that was included in airflow documentation implemented unsafe pattern of reading value<br>from xcom in the way that could be exploited to allow UI user who had access to modify XComs to perform arbitrary<br>execution of code on the worker. Since the UI users are already highly trusted, this is a Low severity vulnerability.</p><p>It does not affect Airflow release - example_dags are not supposed to be enabled in production environment, however<br>users following the example could replicate the bad pattern. Documentation of Airflow 3.2.0 contains version of<br>the example with improved resiliance for that case.</p>Users who followed that pattern are advised to adjust their implementations accordingly.<br><br>
