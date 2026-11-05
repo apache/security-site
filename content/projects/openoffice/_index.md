@@ -24,7 +24,7 @@ CVE-2026-90634 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90634) [\[CVE jso
 
 
 
-_Last updated: 2026-11-04T11:04:36.913Z_
+_Last updated: 2026-11-04T21:14:42.291Z_
 
 ### Affected
 
@@ -37,6 +37,7 @@ An uncontrolled memory access in the PDF import code of Apache OpenOffice versio
 
 ### References
 * https://lists.apache.org/thread.html/1c0lropx46w8ozwk29p5yw1xlq4wnbll
+* https://www.openoffice.org/security/cves/CVE-2026-90634.html
 
 
 ### Credits
@@ -49,7 +50,7 @@ CVE-2026-90632 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90632) [\[CVE jso
 
 
 
-_Last updated: 2026-11-04T11:04:59.711Z_
+_Last updated: 2026-11-04T21:14:26.140Z_
 
 ### Affected
 
@@ -62,6 +63,7 @@ _Last updated: 2026-11-04T11:04:59.711Z_
 
 ### References
 * https://lists.apache.org/thread.html/9rrjtmlnmg47m6soyrl83rz28dbsyqvk
+* https://www.openoffice.org/security/cves/CVE-2026-90632.html
 
 
 ### Credits
@@ -74,7 +76,7 @@ CVE-2026-90631 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90631) [\[CVE jso
 
 
 
-_Last updated: 2026-11-04T11:04:27.889Z_
+_Last updated: 2026-11-04T21:14:07.331Z_
 
 ### Affected
 
@@ -88,6 +90,7 @@ to be loaded without prompt, possibly transferring the contents of environment v
 
 ### References
 * https://lists.apache.org/thread.html/j19rrk8jwrlg41tj6rfdcccj8cyyxhz9
+* https://www.openoffice.org/security/cves/CVE-2026-90631.html
 
 
 ### Credits
@@ -100,7 +103,7 @@ CVE-2026-90629 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90629) [\[CVE jso
 
 
 
-_Last updated: 2026-11-04T11:04:05.916Z_
+_Last updated: 2026-11-04T21:13:40.040Z_
 
 ### Affected
 
@@ -113,6 +116,7 @@ An uncontrolled memory access in the WMF import code of Apache OpenOffice versio
 
 ### References
 * https://lists.apache.org/thread.html/lbmfms02205zbpwq3pm39qrx4m1czy2k
+* https://www.openoffice.org/security/cves/CVE-2026-90629.html
 
 
 ### Credits
@@ -125,7 +129,7 @@ CVE-2026-90628 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90628) [\[CVE jso
 
 
 
-_Last updated: 2026-11-04T11:03:40.199Z_
+_Last updated: 2026-11-04T21:13:20.055Z_
 
 ### Affected
 
@@ -138,6 +142,7 @@ _Last updated: 2026-11-04T11:03:40.199Z_
 
 ### References
 * https://lists.apache.org/thread.html/15onpdrzqny5y5qtmdv4lnvptxlvmg05
+* https://www.openoffice.org/security/cves/CVE-2026-90628.html
 
 
 ### Credits
@@ -150,7 +155,7 @@ CVE-2026-90627 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90627) [\[CVE jso
 
 
 
-_Last updated: 2026-11-04T11:03:28.895Z_
+_Last updated: 2026-11-04T21:13:01.098Z_
 
 ### Affected
 
@@ -163,6 +168,7 @@ The flat file database driver in Apache Openoffice versions through 4.1.16 allow
 
 ### References
 * https://lists.apache.org/thread.html/s7y9fspdysqojnr1z7ppltxtc48b4ljf
+* https://www.openoffice.org/security/cves/CVE-2026-90627.html
 
 
 ### Credits
@@ -175,7 +181,7 @@ CVE-2026-90626 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90626) [\[CVE jso
 
 
 
-_Last updated: 2026-11-04T11:03:16.894Z_
+_Last updated: 2026-11-04T21:12:44.800Z_
 
 ### Affected
 
@@ -188,6 +194,7 @@ An uncontrolled memory access in the PDF import code of Apache OpenOffice versio
 
 ### References
 * https://lists.apache.org/thread.html/n2qgb44t8lom9s9z4xwqs3dt3mx0cggy
+* https://www.openoffice.org/security/cves/CVE-2026-90626.html
 
 
 ### Credits
@@ -200,7 +207,7 @@ CVE-2026-90624 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90624) [\[CVE jso
 
 
 
-_Last updated: 2026-11-04T11:03:05.239Z_
+_Last updated: 2026-11-04T21:12:26.624Z_
 
 ### Affected
 
@@ -213,6 +220,7 @@ An unchecked memory access in the PDF import code of Apache OpenOffice versions 
 
 ### References
 * https://lists.apache.org/thread.html/w1047xm52vyfjt79kw2n0d3ln6sq9g5s
+* https://www.openoffice.org/security/cves/CVE-2026-90624.html
 
 
 ### Credits
@@ -226,7 +234,7 @@ CVE-2026-59268 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59268) [\[CVE jso
 
 
 
-_Last updated: 2026-11-04T11:02:52.848Z_
+_Last updated: 2026-11-04T21:11:51.776Z_
 
 ### Affected
 
@@ -239,6 +247,7 @@ _Last updated: 2026-11-04T11:02:52.848Z_
 
 ### References
 * https://lists.apache.org/thread.html/xw6x0y35f3qlk4pqsc1pf0sv7481yvlk
+* https://www.openoffice.org/security/cves/CVE-2026-59268.html
 
 
 ### Credits
@@ -251,7 +260,7 @@ CVE-2026-59267 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59267) [\[CVE jso
 
 
 
-_Last updated: 2026-11-04T11:05:58.448Z_
+_Last updated: 2026-11-04T21:11:28.037Z_
 
 ### Affected
 
@@ -264,6 +273,7 @@ A crafted DXF document causes a heap buffer overflow in Draw in Apache OpenOffic
 
 ### References
 * https://lists.apache.org/thread.html/pwcm02dq2cy42qq2owzlvf48s8258499
+* https://www.openoffice.org/security/cves/CVE-2026-59267.html
 
 
 ### Credits
@@ -276,7 +286,7 @@ CVE-2026-59265 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59265) [\[CVE jso
 
 
 
-_Last updated: 2026-10-02T18:02:37.660Z_
+_Last updated: 2026-11-04T21:11:01.549Z_
 
 ### Affected
 
@@ -293,6 +303,7 @@ _Last updated: 2026-10-02T18:02:37.660Z_
 * https://github.com/apache/openoffice/commit/c699bed3f75e79bd64ddec9dec49f9e210eed281.patch
 * https://github.com/apache/openoffice/commit/95923fd437e06edd38a4f0e139a27c755a6f3ba6.patch
 * https://lists.apache.org/thread.html/svfdc1jtpqlw7mo6lgg9fthcmf754pl5
+* https://www.openoffice.org/security/cves/CVE-2026-59265.html
 
 
 ### Credits
@@ -306,7 +317,7 @@ CVE-2026-59264 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59264) [\[CVE jso
 
 
 
-_Last updated: 2026-11-04T11:02:40.422Z_
+_Last updated: 2026-11-04T21:10:15.355Z_
 
 ### Affected
 
@@ -319,6 +330,7 @@ The Windows installers of Apache OpenOffice 4.1.16 and earlier allow an already 
 
 ### References
 * https://lists.apache.org/thread.html/d4n33sjk8jgrr78jj5cq5r51fvxv6nnv
+* https://www.openoffice.org/security/cves/CVE-2026-59264.html
 
 
 ### Credits
@@ -331,7 +343,7 @@ CVE-2026-59263 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-59263) [\[CVE jso
 
 
 
-_Last updated: 2026-11-04T11:01:50.194Z_
+_Last updated: 2026-11-04T21:09:30.038Z_
 
 ### Affected
 
@@ -344,6 +356,7 @@ A manipulated document opened in Apache OpenOffice 4.1.16 or earlier may allow s
 
 ### References
 * https://lists.apache.org/thread.html/drr0ss9wrkq0omlrwjhcm8738pjx3xgd
+* https://www.openoffice.org/security/cves/CVE-2026-59263.html
 
 
 ### Credits
