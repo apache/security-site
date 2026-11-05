@@ -199,6 +199,84 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 * Apache Sling would like to thank github user Vectrain51 and n0mi1k for reporting this issue (finder)
 
 
+## Hand-rolled parameter parser diverges from RFC/container parsing, enabling smuggling ## { #CVE-2026-103866 }
+
+CVE-2026-103866 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-103866) [\[CVE json\]](./CVE-2026-103866.cve.json) [\[OSV json\]](./CVE-2026-103866.osv.json)
+
+
+
+_Last updated: 2026-11-05T12:32:57.425Z_
+
+### Affected
+
+* Apache Sling Engine before 3.0.4
+
+
+### Description
+
+<p>Inconsistent interpretation of HTTP requests ('HTTP Request/Response smuggling') vulnerability in Apache Sling Engine.&nbsp;The engine's query/form parser accepts non-standard percent-escapes, wrong charsets, and continues request processing on such errors.</p><p>This issue affects Apache Sling Engine: before 3.0.4.</p><p>Users are recommended to upgrade to version 3.0.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/yoftbty2lc7kmtldmyvj7w0m0n1ncbf6
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Code (tool)
+
+
+## Request-derived values reach log sinks without CR/LF neutralization ## { #CVE-2026-103864 }
+
+CVE-2026-103864 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-103864) [\[CVE json\]](./CVE-2026-103864.cve.json) [\[OSV json\]](./CVE-2026-103864.osv.json)
+
+
+
+_Last updated: 2026-11-05T12:32:22.598Z_
+
+### Affected
+
+* Apache Sling Engine before 3.0.4
+
+
+### Description
+
+<p>Improper output neutralization for logs in Apache Sling Engine.</p><p>This issue affects Apache Sling Engine: before 3.0.4.</p><p>Users are recommended to upgrade to version 3.0.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/bchcm9xhz5zdqwykrdo4kw21j8gz6q55
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Code (tool)
+
+
+## Include-protection mitigations bypassable via uncovered response-wrapper paths ## { #CVE-2026-103863 }
+
+CVE-2026-103863 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-103863) [\[CVE json\]](./CVE-2026-103863.cve.json) [\[OSV json\]](./CVE-2026-103863.osv.json)
+
+
+
+_Last updated: 2026-11-05T12:31:41.449Z_
+
+### Affected
+
+* Apache Sling Engine before 3.0.4
+
+
+### Description
+
+<p>Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in Apache Sling Engine.&nbsp;Content-Type, charset, and redirect changes from an included component evade the &nbsp;protectheaders&nbsp;/&nbsp;checkcontenttype&nbsp; enforcement through setHeader(), repeated calls to setContentType(), the charset APIs, Servlet 6.1 redirect overloads, and stale config - enabling stored XSS despite enabled protections.</p><p>This issue affects Apache Sling Engine before 3.0.4.</p><p>Users are recommended to upgrade to version 3.0.4, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/rll7kjtbpj2lvh4nzmrw5sdmqww64ldg
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Code (tool)
+
+
 ## Malicious code execution via path traversal ## { #CVE-2024-23673 }
 
 CVE-2024-23673 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-23673) [\[CVE json\]](./CVE-2024-23673.cve.json) [\[OSV json\]](./CVE-2024-23673.osv.json)
