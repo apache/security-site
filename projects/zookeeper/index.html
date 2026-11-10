@@ -240,11 +240,11 @@
 </ul>
 <h2 id="CVE-2026-115448">Unbounded recursion in snapshot serialization allows a client to render the server unrecoverable</h2>
 <p>CVE-2026-115448 <a href="https://cve.org/CVERecord?id=CVE-2026-115448">[CVE]</a> <a href="./CVE-2026-115448.cve.json">[CVE json]</a> <a href="./CVE-2026-115448.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-11-04T10:45:42.503Z</em></p>
+<p><em>Last updated: 2026-11-05T19:02:04.553Z</em></p>
 <h3 id="affected-7">Affected</h3>
 <ul>
-<li>Apache ZooKeeper from 3.9.0 through 3.9.7</li>
-<li>Apache ZooKeeper from 3.8.0 through 3.8.8</li>
+<li>Apache ZooKeeper from 3.9.0 through 3.9.6</li>
+<li>Apache ZooKeeper from 3.8.0 through 3.8.7</li>
 </ul>
 <h3 id="description-7">Description</h3>
 <p>Uncontrolled recursion in Apache ZooKeeper. The server serializes its data tree to a snapshot by recursing one stack frame per znode level, with no depth bound. A client permitted to create znodes (the default root ACL is open) can build a chain of nested znodes deep enough that taking a snapshot exhausts the JVM stack and kills the snapshot thread; sizes stay within jute.maxbuffer, so existing limits do not prevent it. This is a denial of service that becomes persistent: on restart the server rebuilds the deep tree from its transaction log and fails again while taking the startup snapshot, so it does not return to service, and recovery can entail data loss. The same log affects a leader and its followers, so it can spread across an ensemble.<br><br>This issue affects Apache ZooKeeper 3.8.0 through 3.8.7 and 3.9.0 through 3.9.6. Users are recommended to upgrade to 3.8.8 or 3.9.7, which fix the issue. As a workaround, use ACLs and authentication to restrict znode creation rather than relying on the default open root ACL.</p>
