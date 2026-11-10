@@ -328,6 +328,31 @@ _Last updated: 2026-08-11T17:03:03.256Z_
 * https://lists.apache.org/thread/9xpltfm6nombd7rdrx5o0hh8kxmm82pb
 
 
+## OAuth1 rebinding ## { #CVE-2026-118196 }
+
+CVE-2026-118196 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-118196) [\[CVE json\]](./CVE-2026-118196.cve.json) [\[OSV json\]](./CVE-2026-118196.osv.json)
+
+
+
+_Last updated: 2026-11-09T10:16:37.300Z_
+
+### Affected
+
+* Apache Allura through 1.22.0
+
+
+### Description
+
+<p>OAuth 1 rebinding vulnerability in Apache Allura.</p><p>This issue affects Apache Allura: through 1.22.0.</p><p>Users are recommended to upgrade to version 1.22.1, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/2x7c9741d50xw3o10h92rk19cr55trof
+
+
+### Credits
+* hataehoon (reporter)
+
+
 ## Stored authenticated XSS ## { #CVE-2024-38379 }
 
 CVE-2024-38379 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2024-38379) [\[CVE json\]](./CVE-2024-38379.cve.json) [\[OSV json\]](./CVE-2024-38379.osv.json)

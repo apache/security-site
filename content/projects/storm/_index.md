@@ -69,6 +69,31 @@ _Last updated: 2026-09-14T13:58:55.224Z_
 * rzo1 (finder)
 
 
+## Submitter-Controlled Class Instantiation in Nimbus via a Fail-Open Scheduler Strategy Allowlist ## { #CVE-2026-82440 }
+
+CVE-2026-82440 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82440) [\[CVE json\]](./CVE-2026-82440.cve.json) [\[OSV json\]](./CVE-2026-82440.osv.json)
+
+
+
+_Last updated: 2026-11-09T10:01:53.223Z_
+
+### Affected
+
+* Apache Storm Nimbus from 3.0.0 before 3.1.0
+
+
+### Description
+
+<b>Description</b><br><br>Nimbus instantiates the class named by a topology's `topology.scheduler.strategy` when scheduling it. The<br>allowlist intended to constrain that choice, `nimbus.scheduler.strategy.class.whitelist`, was treated as<br>"allow any class" when unset, and it had no entry in the shipped `defaults.yaml`, so unset was the shipped<br>state. An authenticated submitter could therefore cause Nimbus to instantiate any class on the Nimbus<br>classpath that has a no-argument constructor.<br><br>Storm's own production artifacts contain classes with side effects suitable for this: instantiating<br>`org.apache.storm.testing.InProcessZookeeper` starts a ZooKeeper server with its own threads and sockets<br>and nothing closes it, and `org.apache.storm.LocalCluster` behaves similarly. Repeated submissions<br>therefore consume threads, sockets and memory in the most privileged daemon in the cluster.<br><br><div><b>Mitigation</b><br><br>Upgrade to 3.1.0, where an unset allowlist means the strategies shipped with Storm rather than any class.<br><br>Note that this is a behaviour change: a cluster running an out-of-tree scheduler strategy without an<br>explicit allowlist will have those topologies refused until the class is added to<br>`nimbus.scheduler.strategy.class.whitelist`. The rejection message names the refused class and the<br>configuration key.<br><br>Users who cannot upgrade immediately should set `nimbus.scheduler.strategy.class.whitelist` explicitly to<br>the strategies they intend to permit.</div>
+
+### References
+* https://lists.apache.org/thread.html/hxcyk1vg9qx8bzos8g3kx91nz8d23jgt
+
+
+### Credits
+* The ASF using Claude Agents (finder)
+
+
 ## Unauthenticated Unbounded Memory Growth in DRPC ## { #CVE-2026-82439 }
 
 CVE-2026-82439 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82439) [\[CVE json\]](./CVE-2026-82439.cve.json) [\[OSV json\]](./CVE-2026-82439.osv.json)
@@ -138,6 +163,31 @@ _Last updated: 2026-09-14T14:05:07.291Z_
 
 ### References
 * https://lists.apache.org/thread/hqyj3spllmbj6vg9vmx29b1tjhzysdkl
+
+
+### Credits
+* The ASF using Claude Agents (finder)
+
+
+## Deserialization of Untrusted Data from the State Store ## { #CVE-2026-82436 }
+
+CVE-2026-82436 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82436) [\[CVE json\]](./CVE-2026-82436.cve.json) [\[OSV json\]](./CVE-2026-82436.osv.json)
+
+
+
+_Last updated: 2026-11-09T10:03:01.808Z_
+
+### Affected
+
+* Apache Storm Client from 3.0.0 before 3.1.0
+
+
+### Description
+
+<b>Description</b><br><br>`DefaultStateSerializer`, used to persist and restore stateful bolt checkpoints, configured Kryo with class<br>registration disabled and an instantiation strategy that constructs objects without invoking their<br>constructors, then deserialized whatever bytes the state store returned. A party able to write to the<br>topology's keyspace in the state store, for example a co-tenant of a shared Redis instance or anyone with<br>network access to it, could therefore place a serialized object graph that executes code inside the worker<br>JVM when the state is restored.<br><br>This requires the Redis-backed state provider, which is not the default. Write access to a state-store key<br>is a data-plane privilege; code execution in the worker JVM is not, so the two are not equivalent.<br><br><b>Mitigation</b><br><br>Upgrade to 3.1.0, where the state serializer requires registered classes.<br><br>Note that this is a behaviour change for existing state: checkpoints written by an affected version may fail<br>to restore, and a migration step may be required. Users who cannot upgrade immediately should restrict<br>network and credential access to the state store to the cluster itself.<br><br><b>Credit</b><br><br>The ASF -- found using Claude agents to study the security of open-source projects, validated and reported by Apache Storm.<br>
+
+### References
+* https://lists.apache.org/thread.html/q5vqclkjdvngwkffcbwbwyym410sp8sc
 
 
 ### Credits

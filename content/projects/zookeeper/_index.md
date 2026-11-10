@@ -209,12 +209,12 @@ CVE-2026-115448 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-115448) [\[CVE j
 
 
 
-_Last updated: 2026-11-04T10:45:42.503Z_
+_Last updated: 2026-11-05T19:02:04.553Z_
 
 ### Affected
 
-* Apache ZooKeeper from 3.9.0 through 3.9.7
-* Apache ZooKeeper from 3.8.0 through 3.8.8
+* Apache ZooKeeper from 3.9.0 through 3.9.6
+* Apache ZooKeeper from 3.8.0 through 3.8.7
 
 
 ### Description

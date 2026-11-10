@@ -50,7 +50,7 @@ CVE-2026-92899 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-92899) [\[CVE jso
 
 
 
-_Last updated: 2026-09-30T12:02:37.412Z_
+_Last updated: 2026-11-06T18:12:52.836Z_
 
 ### Affected
 
