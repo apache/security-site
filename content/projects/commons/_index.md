@@ -75,6 +75,60 @@ _Last updated: 2026-05-14T11:22:48.661Z_
 * Erichen, Institute of Computing Technology, Chinese Academy of Sciences (reporter)
 
 
+## NUL bytes in tree entry names cause Git/SWHID identifier collisions (GitIdentifiers class) ## { #CVE-2026-124077 }
+
+CVE-2026-124077 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-124077) [\[CVE json\]](./CVE-2026-124077.cve.json) [\[OSV json\]](./CVE-2026-124077.osv.json)
+
+
+
+_Last updated: 2026-11-09T20:10:40.509Z_
+
+### Affected
+
+* Apache Commons Codec from 1.22.0 before 1.23.0
+* Apache Commons Codec from 387120c901f4a75c3112dfdf8877dcdec7ae685d before 87f6aa2818836998528ff4b0d1ea35545a800ee5
+
+
+### Description
+
+<p>The <code>GitIdentifiers</code> class in Apache Commons Codec did not reject NUL bytes in tree entry names. Because Git uses a NUL byte to mark the end of each entry name in a tree object, a crafted name could make one tree serialize to the same bytes as a different tree. Two different directory trees could then receive the same Git tree identifier or SWHID.</p><p>The impact is limited: common file systems do not allow NUL bytes in file names, so trees built by walking a file system are not affected. Only applications that build trees from names supplied by other sources, such as entries of archive formats that permit NUL bytes in names (e.g. ZIP) or names passed directly to the API, are exposed.</p><p>This issue affects Apache Commons Codec: from 1.22.0 before 1.23.0.</p><p>Users are recommended to upgrade to version 1.23.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/commons-codec/commit/87f6aa2818836998528ff4b0d1ea35545a800ee5.patch
+* https://lists.apache.org/thread.html/zns7tbnkq685prps9d85q7ct6oobvzsm
+
+
+### Credits
+* Claude Security (tool)
+* Gary D. Gregory (remediation developer)
+
+
+## Blake3 doFinalize is stateless; the documented KDF example derives identical keys ## { #CVE-2026-119078 }
+
+CVE-2026-119078 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-119078) [\[CVE json\]](./CVE-2026-119078.cve.json) [\[OSV json\]](./CVE-2026-119078.osv.json)
+
+
+
+_Last updated: 2026-11-09T20:11:10.226Z_
+
+### Affected
+
+* Apache Commons Codec from 1.16.0 before 1.23.0
+
+
+### Description
+
+<p><span>Apache Commons Codec's </span><code>Blake3</code><span> class documented the output of its </span><code>doFinalize</code><span> methods as depending on any previously finalized bytes, so that consecutive calls would return different output. In fact, </span><code>doFinalize</code><span> does not change the hash state: calling it again without supplying more input returns the same bytes. The key-derivation example in the class Javadoc, shipped since 1.16.0, derives two keys with two consecutive </span><code>doFinalize</code><span> calls. Code that follows it gets identical keys, so the separation between the derived keys is lost. The same applies to any application that calls </span><code>doFinalize</code><span> more than once on one instance and expects new output each time.</span></p><p>This issue affects Apache Commons Codec from 1.16.0 before 1.23.0.</p><p>Version 1.23.0 corrects the documentation, but the behavior of <code>doFinalize</code> is unchanged. Upgrading alone does not fix affected code. Users should check their applications for repeated <code>doFinalize</code> calls on the same Blake3 instance and derive multiple keys by requesting the combined length in one call and splitting the output, as the updated Javadoc shows.</p>
+
+### References
+* https://lists.apache.org/thread.html/ol71kdgopfxwlxgqmkd0jrfcw05wdq5z
+
+
+### Credits
+* Claude Security (tool)
+* Gary D. Gregory (remediation developer)
+
+
 ## Class2HTML emits unescaped class strings, enabling stored XSS ## { #CVE-2026-105111 }
 
 CVE-2026-105111 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105111) [\[CVE json\]](./CVE-2026-105111.cve.json) [\[OSV json\]](./CVE-2026-105111.osv.json)

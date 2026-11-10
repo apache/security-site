@@ -821,7 +821,7 @@ CVE-2026-108949 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108949) [\[CVE j
 
 
 
-_Last updated: 2026-11-04T10:09:30.448Z_
+_Last updated: 2026-11-06T16:20:40.602Z_
 
 ### Affected
 
@@ -837,6 +837,10 @@ _Last updated: 2026-11-04T10:09:30.448Z_
 
 ### References
 * https://lists.apache.org/thread/2l1jbc8j88w1n9bd44vm9bjtj9t3o80n
+
+
+### Credits
+* Yicheng Yu (https://github.com/FHMTT) (finder)
 
 
 ## The broker does not verify user provided connection id matches connection ## { #CVE-2026-108946 }
