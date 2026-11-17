@@ -193,7 +193,7 @@ CVE-2026-83542 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-83542) [\[CVE jso
 
 
 
-_Last updated: 2026-11-05T13:59:21.183Z_
+_Last updated: 2026-11-12T10:41:34.839Z_
 
 ### Affected
 
@@ -202,16 +202,18 @@ _Last updated: 2026-11-05T13:59:21.183Z_
 
 ### Description
 
-Improper Control of Generation of Code ('Code Injection') in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to execute arbitrary code on the server by staging crafted widget XML in a multipart upload and overriding the mainDecoratorLocation used by a manager login route through an anonymous JSON request, causing OFBiz to load the staged XML through its live screen descriptor mechanism and evaluate an unsandboxed Groovy expression while rendering the authentication-failure page. Further validation established the following:<br><br>-- The exploit does not require a malformed or incomplete multipart body: a well-formed multipart request that is kept in flight and then allowed to complete normally is sufficient.<br><br>-- The screen loader reads the widget XML from a live process file descriptor while the upload is streaming, rather than from any file the attacker persists to disk.<br><br>-- The same underlying issue is also reachable through the public, explicitly unauthenticated /sfa/control/editPortalPageColumnWidth route, returning command output directly in an HTTP 200 response — it is not limited to the login-failure rendering path used in the original report.<br><br>Users are recommended to upgrade to version 24.09.08, which fixes this issue.
+Improper Control of Generation of Code ('Code Injection') in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to execute arbitrary code on the server by staging crafted widget XML in a multipart upload and overriding the mainDecoratorLocation used by a manager login route through an anonymous JSON request, causing OFBiz to load the staged XML through its live screen descriptor mechanism and evaluate an unsandboxed Groovy expression while rendering the authentication-failure page. Further validation established the following:<br><br>-- The exploit does not require a malformed or incomplete multipart body: a well-formed multipart request that is kept in flight and then allowed to complete normally is sufficient.<br><br>-- The screen loader reads the widget XML from a live process file descriptor while the upload is streaming, rather than from any file the attacker persists to disk.<br><br>-- The same underlying issue is also reachable through the public, explicitly unauthenticated /sfa/control/editPortalPageColumnWidth route, returning command output directly in an HTTP 200 response — it is not limited to the login-failure rendering path used in the original report.<br><div><br></div><div>The described vulnerability was discovered independantly twice, with each having a CVE assigned. See References.</div><div><br></div>Users are recommended to upgrade to version 24.09.08, which fixes this issue.
 
 ### References
 * https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
+* https://app.opencve.io/cve/CVE-2026-68524
 
 
 ### Credits
 * Jonah Burgess (CryptoCat) (reporter)
 * Krishna Uprit (remediation developer)
 * David Crees, Abstract Shield (reporter)
+* Naoya Takahashi (nakko) (reporter)
 
 
 ## Unauthenticated disclosure through HR, Catalog, and Order Manager helpers ## { #CVE-2026-83538 }
@@ -793,7 +795,7 @@ CVE-2026-68524 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-68524) [\[CVE jso
 
 
 
-_Last updated: 2026-11-05T14:11:31.898Z_
+_Last updated: 2026-11-12T10:41:06.398Z_
 
 ### Affected
 
@@ -802,14 +804,18 @@ _Last updated: 2026-11-05T14:11:31.898Z_
 
 ### Description
 
-<p>An unauthenticated attacker can exploit temporary-file handling, access an open file descriptor, and inject a "file:" URI to cause OFBiz to load an attacker-controlled Screen definition.</p><p>This issue affects Apache OFBiz: before 24.09.08.</p><p>Users are recommended to upgrade to version 24.09.08, which fixes the issue.</p>
+<p>An unauthenticated attacker can exploit temporary-file handling, access an open file descriptor, and inject a "file:" URI to cause OFBiz to load an attacker-controlled Screen definition.</p><p>The described vulnerability was discovered independantly twice, with each having a CVE assigned. See References.</p><p>This issue affects Apache OFBiz: before 24.09.08.</p><p>Users are recommended to upgrade to version 24.09.08, which fixes the issue.</p>
 
 ### References
 * https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
+* https://app.opencve.io/cve/CVE-2026-83542
 
 
 ### Credits
 * Naoya Takahashi (nakko) (reporter)
+* Jonah Burgess (CryptoCat) (reporter)
+* Krishna Uprit (remediation developer)
+* David Crees, Abstract Shield (reporter)
 
 
 ## Authenticated Path Traversal in Catalog Image Management ## { #CVE-2026-66903 }

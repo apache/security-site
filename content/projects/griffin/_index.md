@@ -36,3 +36,28 @@ _Last updated: 2026-09-04T13:39:09.136Z_
 
 ### Credits
 * Firebasky ( https://github.com/firebasky ) (finder)
+
+
+## REST API is unauthenticated ## { #CVE-2026-128841 }
+
+CVE-2026-128841 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-128841) [\[CVE json\]](./CVE-2026-128841.cve.json) [\[OSV json\]](./CVE-2026-128841.osv.json)
+
+
+
+_Last updated: 2026-11-16T09:03:38.838Z_
+
+### Affected
+
+* Apache Griffin Web Service through *
+
+
+### Description
+
+<p>** UNSUPPORTED WHEN ASSIGNED ** Missing authentication for critical function vulnerability in Apache Griffin Web Service. The REST API does not have any authentication. This includes sensitive endpoints, such as job submission when a&nbsp;Livy/Spark backend is configured. The API must be properly secured on the network level, and this fact was arguably not documented as clearly as it could have.</p><p>This issue affects Apache Griffin Web Service: all versions.</p><p>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.</p><p>NOTE: This vulnerability only affects products that are no longer supported by the maintainer.</p>
+
+### References
+* https://lists.apache.org/thread.html/9fls3018wcgl0k0srsfofvlncgskb8jh
+
+
+### Credits
+* Subodh Kumar (reporter)

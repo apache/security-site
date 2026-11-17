@@ -1167,6 +1167,88 @@ _Last updated: 2026-05-04T14:44:27.003Z_
 * Stanislaw Strzalkowski, isec.pl (finder)
 
 
+## mod_http2: heap corruption and RCE in assign_headers ## { #CVE-2026-119618 }
+
+CVE-2026-119618 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-119618) [\[CVE json\]](./CVE-2026-119618.cve.json) [\[OSV json\]](./CVE-2026-119618.osv.json)
+
+
+
+_Last updated: 2026-11-11T15:55:47.106Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.55 through 2.4.70
+
+
+### Description
+
+<p>Concurrent Execution using Shared Resource with Improper Synchronization vulnerability in Apache HTTP Server's mod_http2 in assign_headers() can lead to RCE.<br><span><br>This issue affects Apache HTTP Server: from 2.4.55 through 2.4.70.<br></span><span>Affected releases of mod_h2 from GitHub: from 2.0.8 through 2.0.42.</span></p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Anthropic's OSS Scanner, as vulnerability ANT-2026-MAPKT6MZ (finder)
+* Anthony Weems and Simon Scannell of the Google Cloud Vulnerability Research (finder)
+
+
+## mod_vhost_alias 1 byte stack buffer overwrite (after CVE-2026-63292) ## { #CVE-2026-109163 }
+
+CVE-2026-109163 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-109163) [\[CVE json\]](./CVE-2026-109163.cve.json) [\[OSV json\]](./CVE-2026-109163.osv.json)
+
+
+
+_Last updated: 2026-11-11T14:55:06.948Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.69 through 2.4.70
+
+
+### Description
+
+<p>Stack-based buffer overflow vulnerability in Apache HTTP Server's mod_vhost_alias (after&nbsp;CVE-2026-63292)</p><p>This issue affects Apache HTTP Server: 2.4.69.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* Gustavo Aiello (finder)
+* Charles Vosburgh (the-vibe-dev) (finder)
+* Wojciech Tatarski (CloudLinux / TuxCare) (finder)
+* Oz Kaiser (@tatikoma) (finder)
+* Daisuke Hatakeyama (SYZD Research) (finder)
+
+
+## mod_md NULL pointer dereference leads to child process crash ## { #CVE-2026-106023 }
+
+CVE-2026-106023 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-106023) [\[CVE json\]](./CVE-2026-106023.cve.json) [\[OSV json\]](./CVE-2026-106023.osv.json)
+
+
+
+_Last updated: 2026-11-11T14:55:25.398Z_
+
+### Affected
+
+* Apache HTTP Server from 2.4.30 through 2.4.70
+
+
+### Description
+
+<p>NULL pointer dereference vulnerability in Apache HTTP Server's mod_md during HTTP request processing.</p><p>This issue affects Apache HTTP Server: from 2.4.30 through 2.4.69.</p>
+
+### References
+* https://httpd.apache.org/security/vulnerabilities_24.html
+
+
+### Credits
+* hexb1n, Yang Song, and JiaSheng He of 360 Vulnerability Research Institute, working with 360 TuLongFeng. (finder)
+* Lucian Nitescu (finder)
+* Bartlomiej Dmitruk at striga.ai (finder)
+
+
 ## mod_userdir+suexec bypass via AllowOverride FileInfo ## { #CVE-2025-66200 }
 
 CVE-2025-66200 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-66200) [\[CVE json\]](./CVE-2025-66200.cve.json) [\[OSV json\]](./CVE-2025-66200.osv.json)

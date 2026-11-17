@@ -18,6 +18,91 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Saved form replay may weaken cookie security and expose form data ## { #CVE-2026-88019 }
+
+CVE-2026-88019 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-88019) [\[CVE json\]](./CVE-2026-88019.cve.json) [\[OSV json\]](./CVE-2026-88019.osv.json)
+
+
+
+_Last updated: 2026-11-16T13:25:04.802Z_
+
+### Affected
+
+* Apache Shiro from 2.0.0-alpha-0 before 3.0.2
+
+
+### Description
+
+When Apache Shiro is used with the Jakarta EE integration module, the automatic form saving feature weakens the security of a form that is resubmitted after login.<br>Cookies set by the application during the resubmission could lose their security attributes, such as `Secure` and `SameSite`.<br>In addition, the resubmitted form data and cookies could be sent to an untrusted host.<br>This issue affects Apache Shiro from 2.0.0-alpha through 3.0.1, only when using `shiro-jakarta-ee` integration module with form saving enabled (the default).<br><br>Mitigation: Upgrade to version 3.0.2 or later, which no longer replays the form over the network, and avoids this class of issues entirely.<br>Alternatively, you can set the `org.apache.shiro.form-resubmit-host` (String) and `org.apache.shiro.form-resubmit-port` (Integer) system properties to restrict the host and port that Shiro will connect to when resubmitting a form.
+
+### References
+* https://lists.apache.org/thread/fvlsfo9zoz5rqqn15pz4b72nkjbjmfw7
+
+
+### Credits
+* Joshua Rogers (finder)
+* Wentao He (finder)
+* Lenny Primak <lenny@flowlogix.com> (remediation developer)
+
+
+## Authorization annotations not always enforced, depending on where they are placed ## { #CVE-2026-74763 }
+
+CVE-2026-74763 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-74763) [\[CVE json\]](./CVE-2026-74763.cve.json) [\[OSV json\]](./CVE-2026-74763.osv.json)
+
+
+
+_Last updated: 2026-11-16T13:29:14.053Z_
+
+### Affected
+
+* Apache Shiro before 3.0.2
+* Apache Shiro before 3.0.2
+* Apache Shiro from 2.0.0-alpha-0 before 3.0.2
+* Apache Shiro from 2.0.0-alpha-0 before 3.0.2
+
+
+### Description
+
+Authorization annotations, such as&nbsp;<code>@RequiresRoles</code>&nbsp;and @<code>RequiresPermissions</code>, are not always enforced in some class or interface hierarchies.<br>Annotations declared on an interface were not enforced when using the&nbsp;<code>shiro-guice</code>, <code>shiro-aspectj</code>, <code>shiro-cdi</code>&nbsp;or <code>shiro-jakarta-ee</code>&nbsp;modules.<br>In addition, annotations declared on a class or a superclass were not always enforced when using <code>shiro-guice</code>&nbsp;or <code>shiro-aspectj</code>, allowing an unauthorized caller to invoke methods that should be protected.<br>This issue affects all Apache Shiro versions through 3.0.1, with impact depending on module and where annotations are declared.<br><br>Mitigation: Upgrade to version 3.0.2 or later, which fixes the issue. The annotation closest to the invoked method now takes precedence.<br>Alternatively, declare authorization annotations directly on each protected implementing method.
+
+### References
+* https://lists.apache.org/thread/gfy3dyh5vfocp34l0bc6dy8gbbjgs3pf
+
+
+### Credits
+* n0mi1k (finder)
+* Joshua Rogers (finder)
+* Wentao He (finder)
+* Lenny Primak <lenny@flowlogix.com> (remediation developer)
+
+
+## Possible session fixation with RememberMe ## { #CVE-2026-74762 }
+
+CVE-2026-74762 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-74762) [\[CVE json\]](./CVE-2026-74762.cve.json) [\[OSV json\]](./CVE-2026-74762.osv.json)
+
+
+
+_Last updated: 2026-11-16T13:35:47.058Z_
+
+### Affected
+
+* Apache Shiro before 3.0.1
+* Apache Shiro before 3.0.1
+
+
+### Description
+
+Apache Shiro is vulnerable to session fixation when a user is authenticated via the "Remember me" functionality. In affected versions, when a subject is restored from a "Remember me" cookie, the existing session is not invalidated, nor is a new session created with a new ID.<br>Additionally, session IDs were accepted from the request URL even when session ID URL rewriting was disabled.<br>This issue affects all Apache Shiro versions through 3.0.0, only when RememberMe functionality is enabled.<br><br>Mitigation: Upgrade to version 3.0.1 or later, which fixes the issue by invalidating the existing session and creating a new session with a new ID when a subject is restored from a "Remember me" cookie, and by ignoring session IDs in the URL when URL rewriting is disabled.
+
+### References
+* https://lists.apache.org/thread/s1l44sptkk04ytykojczj95j7tx5kwd3
+
+
+### Credits
+* n0mi1k (finder)
+* Lenny Primak <lenny@flowlogix.com> (remediation developer)
+
+
 ## Server-side POST request may be steered to an alternate host ## { #CVE-2026-58301 }
 
 CVE-2026-58301 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-58301) [\[CVE json\]](./CVE-2026-58301.cve.json) [\[OSV json\]](./CVE-2026-58301.osv.json)
@@ -289,6 +374,137 @@ _Last updated: 2026-02-10T09:25:49.952Z_
 * 4ra1n (finder)
 * Y4tacker (finder)
 * lprimak (remediation developer)
+
+
+## DefaultLdapRealm accepts any password when authentication caching is enabled ## { #CVE-2026-129349 }
+
+CVE-2026-129349 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-129349) [\[CVE json\]](./CVE-2026-129349.cve.json) [\[OSV json\]](./CVE-2026-129349.osv.json)
+
+
+
+_Last updated: 2026-11-15T09:31:46.136Z_
+
+### Affected
+
+* Apache Shiro before 3.0.1
+
+
+### Description
+
+When authentication caching is enabled on <code>DefaultLdapRealm</code>, after a user logs in successfully once, subsequent logins for that user succeed with any password.<br>A cached authentication skips the LDAP bind, and the <code>AllowAllCredentialsMatcher</code>&nbsp;installed by default in <code>DefaultLdapRealm</code>&nbsp;accepts any credentials, allowing an attacker who knows a valid username to authenticate as that user.<br>This issue affects all Apache Shiro versions through 3.0.0, only when using <code>DefaultLdapRealm</code>&nbsp;(or <code>JndiLdapRealm</code>) with <code>authenticationCachingEnabled</code>&nbsp;set to&nbsp;<code>true</code>, which is not the default.<br><br>Mitigation: Upgrade to version 3.0.1 or later, which fixes the issue by no longer installing <code>AllowAllCredentialsMatcher</code>&nbsp;by default.<br>Alternatively, disable authentication caching on the LDAP realm (this is the default), or configure a credentials matcher, such as <code>SimpleCredentialsMatcher</code>, that verifies credentials against the cached authentication info.
+
+### References
+* https://lists.apache.org/thread.html/1whn52ht402lhc782c3s843c9hho8b4y
+
+
+### Credits
+* Joshua Rogers (finder)
+* Lenny Primak <lenny@flowlogix.com> (remediation developer)
+
+
+## PropertiesRealm reload does not remove deleted users or narrowed permissions ## { #CVE-2026-129348 }
+
+CVE-2026-129348 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-129348) [\[CVE json\]](./CVE-2026-129348.cve.json) [\[OSV json\]](./CVE-2026-129348.osv.json)
+
+
+
+_Last updated: 2026-11-16T13:39:22.706Z_
+
+### Affected
+
+* Apache Shiro before 3.0.2
+
+
+### Description
+
+When <code>PropertiesRealm</code>&nbsp;reloads its properties file, removed users and narrowed permissions could remain in effect.<br>This issue affects all Apache Shiro versions through 3.0.1, only when <code>PropertiesRealm</code>`loads its properties from a file, which is reloaded periodically by default.<br><br>Mitigation: Upgrade to version 3.0.2 or later, which fixes the issue.<br>Alternatively, restart the application after removing users or narrowing permissions.
+
+### References
+* https://lists.apache.org/thread/gs6nnn7t10tm5h6rtvwl0c00cwqowt3m
+
+
+### Credits
+* Joshua Rogers (finder)
+* Lenny Primak <lenny@flowlogix.com> (remediation developer)
+
+
+## Empty stored credential matches an empty submitted password ## { #CVE-2026-129347 }
+
+CVE-2026-129347 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-129347) [\[CVE json\]](./CVE-2026-129347.cve.json) [\[OSV json\]](./CVE-2026-129347.osv.json)
+
+
+
+_Last updated: 2026-11-16T13:36:29.172Z_
+
+### Affected
+
+* Apache Shiro before 3.0.2
+
+
+### Description
+
+`DefaultPasswordService` and `SimpleCredentialsMatcher` could treat an empty stored credential as a match for an empty submitted password.<br>This issue affects all Apache Shiro versions through 3.0.1, only when accounts with an empty stored credential exist.<br><br>Mitigation: Upgrade to version 3.0.2 or later, which fixes the issue.<br>Alternatively, avoid storing empty credentials, and reject empty passwords in the application.
+
+### References
+* https://lists.apache.org/thread/hf5n5xyyr0pyqzdxnh30kxt5ry8glgx2
+
+
+### Credits
+* The ASF, found using LLM security scan, validated and reported by Apache Shiro (finder)
+* Lenny Primak <lenny@flowlogix.com> (remediation developer)
+
+
+## Principal tags in Jakarta Pages and Jakarta Faces do not escape output, allowing cross-site scripting ## { #CVE-2026-129320 }
+
+CVE-2026-129320 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-129320) [\[CVE json\]](./CVE-2026-129320.cve.json) [\[OSV json\]](./CVE-2026-129320.osv.json)
+
+
+
+_Last updated: 2026-11-16T13:21:50.484Z_
+
+### Affected
+
+* Apache Shiro before 3.0.2
+* Apache Shiro from 2.0.0-alpha-0 before 3.0.2
+
+
+### Description
+
+The <code>shiro:principal</code>&nbsp;tags in <code>shiro-web</code>&nbsp;(Jakarta Pages) and <code>shiro-jakarta-ee</code>&nbsp;(Jakarta Faces) did not escape their output, which could allow cross-site scripting when a principal value is not fully trusted.<br>This issue affects all Apache Shiro versions through 3.0.1, only when the <code>principal</code>&nbsp;tag is used.<br><br>Mitigation: Upgrade to version 3.0.2 or later, which escapes the output.<br>Alternatively, validate principal values on input.
+
+### References
+* https://lists.apache.org/thread/wjs177lbrzpslkz8zvc31n07lgf7j0n1
+
+
+### Credits
+* The ASF LLM-based security scan (finder)
+* Lenny Primak <lenny@flowlogix.com> (remediation developer)
+
+
+## Incorrect default for case-insensitive path matching in ShiroFilterFactoryBean allows auth bypass for static files ## { #CVE-2026-114737 }
+
+CVE-2026-114737 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-114737) [\[CVE json\]](./CVE-2026-114737.cve.json) [\[OSV json\]](./CVE-2026-114737.osv.json)
+
+
+
+_Last updated: 2026-11-16T13:19:21.229Z_
+
+### Affected
+
+* Apache Shiro from 3.0.1 before 3.0.2
+
+
+### Description
+
+The fix for <a target="_blank" rel="nofollow" href="https://shiro.apache.org/security-reports.html#cve_2026_23903">CVE-2026-23903</a> was incomplete for manually-created&nbsp;<code>ShiroFilterFactoryBean</code>, which still matched paths case-sensitively by default.<br>This issue affects Apache Shiro version 3.0.1, only when <code>ShiroFilterFactoryBean</code>&nbsp;is created manually by the application and static files are served from a case-insensitive filesystem.<br>Applications that let Shiro Spring (Boot) Starter create the bean are not affected.<br><br>Mitigation: Upgrade to version 3.0.2 or later, which fixes the issue.<br>Alternatively, call <code>setCaseInsensitive(true)</code>&nbsp;on the <code>ShiroFilterFactoryBean</code>.
+
+### References
+* https://lists.apache.org/thread/nmqxhw28s09njngncqohq6zy3ohzj1vg
+
+
+### Credits
+* Shinya Murakami (@4n86rakam1) (finder)
+* Lenny Primak <lenny@flowlogix.com> (remediation developer)
 
 
 ## URL Redirection to Untrusted Site ('Open Redirect') vulnerability in FORM authentication feature Apache Shiro. ## { #CVE-2023-46750 }
