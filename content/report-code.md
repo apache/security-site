@@ -26,6 +26,9 @@ In particular, this means that:
   if the project's `dev` mailing list has an open vote thread for a release candidate,
   reply to it with a `-1` and explain the issue.
   A justified `-1` can stop the release before the vulnerability reaches users.
+  Without a CVE there is no advisory to credit you in,
+  but we value catching a problem before it ships even more than fixing it afterwards,
+  and your contribution stays on the public record of the project's mailing list.
 
 We will ignore mail sent to these addresses
 that does not meet these requirements.
