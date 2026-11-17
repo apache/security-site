@@ -18,27 +18,6 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
-## Uncontrolled Resource Consumption via Crafted XPath Expressions ## { #CVE-2026-24343 }
-
-CVE-2026-24343 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24343) [\[CVE json\]](./CVE-2026-24343.cve.json) [\[OSV json\]](./CVE-2026-24343.osv.json)
-
-
-
-_Last updated: 2026-02-09T15:07:42.730Z_
-
-### Affected
-
-* Apache HertzBeat from 1.7.1 before 1.8.0
-
-
-### Description
-
-<p>Improper Neutralization of Data within XPath Expressions ('XPath Injection') vulnerability in Apache HertzBeat.</p><p>This issue affects Apache HertzBeat: from 1.7.1 before 1.8.0.</p><p>Users are recommended to upgrade to version 1.8.0, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread/b2k3jqwffrbo2sy6bl4n0f68kp8bfo1n
-
-
 ## incomplete XPath expression validation in aliasFields ## { #CVE-2026-114442 }
 
 CVE-2026-114442 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-114442) [\[CVE json\]](./CVE-2026-114442.cve.json)
@@ -66,6 +45,27 @@ _Last updated: 2026-11-03T10:21:04.827Z_
 
 ### Credits
 * xutao (finder)
+
+
+## Uncontrolled Resource Consumption via Crafted XPath Expressions ## { #CVE-2026-24343 }
+
+CVE-2026-24343 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-24343) [\[CVE json\]](./CVE-2026-24343.cve.json) [\[OSV json\]](./CVE-2026-24343.osv.json)
+
+
+
+_Last updated: 2026-02-09T15:07:42.730Z_
+
+### Affected
+
+* Apache HertzBeat from 1.7.1 before 1.8.0
+
+
+### Description
+
+<p>Improper Neutralization of Data within XPath Expressions ('XPath Injection') vulnerability in Apache HertzBeat.</p><p>This issue affects Apache HertzBeat: from 1.7.1 before 1.8.0.</p><p>Users are recommended to upgrade to version 1.8.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/b2k3jqwffrbo2sy6bl4n0f68kp8bfo1n
 
 
 ## Jmx JNDI injection vulnerability ## { #CVE-2025-48208 }

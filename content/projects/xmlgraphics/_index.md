@@ -18,6 +18,58 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Temporary files on Unix-like systems are readable by other local users ## { #CVE-2026-126627 }
+
+CVE-2026-126627 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-126627) [\[CVE json\]](./CVE-2026-126627.cve.json) [\[OSV json\]](./CVE-2026-126627.osv.json)
+
+
+
+_Last updated: 2026-11-11T11:23:15.631Z_
+
+### Affected
+
+* Apache XML Graphics FOP through 2.11.0
+
+
+### Description
+
+<p>Creation of Temporary File With Insecure Permissions vulnerability in Apache XML Graphics FOP.</p><p>This issue affects Apache XML Graphics FOP: through 2.11.</p><p>Users are recommended to upgrade to version 2.12, which fixes the issue.</p>
+
+### References
+* https://issues.apache.org/jira/browse/FOP-3284
+* https://lists.apache.org/thread.html/f8mys56y18wjmp1wzg4qmx6hhyjxgo0f
+
+
+### Credits
+* https://github.com/vlsi (finder)
+
+
+## Denial of Service via SVG Element Reference Resolution ## { #CVE-2026-111792 }
+
+CVE-2026-111792 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111792) [\[CVE json\]](./CVE-2026-111792.cve.json) [\[OSV json\]](./CVE-2026-111792.osv.json)
+
+
+
+_Last updated: 2026-11-11T10:46:53.437Z_
+
+### Affected
+
+* Apache XML Graphics Batik through 1.19.0
+
+
+### Description
+
+<p>Uncontrolled Recursion vulnerability in Apache XML Graphics Batik.</p><p>This issue affects Apache XML Graphics Batik: through 1.19.</p><p>Users are recommended to upgrade to version 1.20, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/dn70ltz1o9sg88dd87wcyh4v73fk2tnm
+* https://issues.apache.org/jira/browse/BATIK-1397
+
+
+### Credits
+* MopMonk-AI (finder)
+
+
 ## Harden validation in SAXDocumentFactory ## { #CVE-2026-90993 }
 
 CVE-2026-90993 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90993) [\[CVE json\]](./CVE-2026-90993.cve.json) [\[OSV json\]](./CVE-2026-90993.osv.json)
@@ -147,58 +199,6 @@ _Last updated: 2026-11-11T13:16:12.411Z_
 
 ### References
 * https://lists.apache.org/thread.html/donct9w5lp5rlvl1p7m8cfx380d2wy4c
-
-
-## Temporary files on Unix-like systems are readable by other local users ## { #CVE-2026-126627 }
-
-CVE-2026-126627 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-126627) [\[CVE json\]](./CVE-2026-126627.cve.json) [\[OSV json\]](./CVE-2026-126627.osv.json)
-
-
-
-_Last updated: 2026-11-11T11:23:15.631Z_
-
-### Affected
-
-* Apache XML Graphics FOP through 2.11.0
-
-
-### Description
-
-<p>Creation of Temporary File With Insecure Permissions vulnerability in Apache XML Graphics FOP.</p><p>This issue affects Apache XML Graphics FOP: through 2.11.</p><p>Users are recommended to upgrade to version 2.12, which fixes the issue.</p>
-
-### References
-* https://issues.apache.org/jira/browse/FOP-3284
-* https://lists.apache.org/thread.html/f8mys56y18wjmp1wzg4qmx6hhyjxgo0f
-
-
-### Credits
-* https://github.com/vlsi (finder)
-
-
-## Denial of Service via SVG Element Reference Resolution ## { #CVE-2026-111792 }
-
-CVE-2026-111792 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111792) [\[CVE json\]](./CVE-2026-111792.cve.json) [\[OSV json\]](./CVE-2026-111792.osv.json)
-
-
-
-_Last updated: 2026-11-11T10:46:53.437Z_
-
-### Affected
-
-* Apache XML Graphics Batik through 1.19.0
-
-
-### Description
-
-<p>Uncontrolled Recursion vulnerability in Apache XML Graphics Batik.</p><p>This issue affects Apache XML Graphics Batik: through 1.19.</p><p>Users are recommended to upgrade to version 1.20, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread.html/dn70ltz1o9sg88dd87wcyh4v73fk2tnm
-* https://issues.apache.org/jira/browse/BATIK-1397
-
-
-### Credits
-* MopMonk-AI (finder)
 
 
 ## XML External Entity (XXE) Processing ## { #CVE-2024-28168 }

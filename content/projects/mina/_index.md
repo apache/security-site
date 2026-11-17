@@ -13,6 +13,89 @@ Do you want to disclose a potential security issue for Apache MINA? Send your re
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Unsafe Deserialization (CWE-502) in JavaNativeMessageDecoder ## { #CVE-2026-118636 }
+
+CVE-2026-118636 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-118636) [\[CVE json\]](./CVE-2026-118636.cve.json) [\[OSV json\]](./CVE-2026-118636.osv.json)
+
+
+
+_Last updated: 2026-10-31T20:17:07.969Z_
+
+### Affected
+
+* Apache MINA from 3.0.0 through 3.0.0-M2
+
+
+### Description
+
+<div>**UNSUPPORTED WHEN ASSIGNED**&nbsp;</div><div>JavaNativeMessageDecoder in the MINA 3.0 codec module calls ObjectInputStream.readObject() on frame bytes with no class filter, so an
+application that puts it in front of an untrusted peer is open to gadget-chain RCE.
+
+As the 3.0.0 branch is inactive, we do not plan to release a version that fixes this issue. 
+
+Users are recommended to use the latest Apache MINA 2.2.X branch.</div>
+
+### References
+* https://www.cve.org/CVERecord?id=CVE-2026-118636
+* https://lists.apache.org/thread.html/h76nwcrkvsffhsk2kq6cjzc6srtnty7x
+
+
+### Credits
+* Nguyen Cuong (cuongbeo090704@gmail.com) (reporter)
+
+
+## Authorization bypass ## { #CVE-2026-115748 }
+
+CVE-2026-115748 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-115748) [\[CVE json\]](./CVE-2026-115748.cve.json) [\[OSV json\]](./CVE-2026-115748.osv.json)
+
+
+
+_Last updated: 2026-10-26T15:01:39.384Z_
+
+### Affected
+
+* Apache Vysper through *
+
+
+### Description
+
+<div>**UNSUPPORTED WHEN ASSIGNED**&nbsp;&nbsp;Authorization bypass in Apache Vysper, all versions.</div><div><br></div><div>Apache Vysper is an XMPP (Jabber) server library. Its XEP-0077 (In-Band Registration) implementation is missing an authentication check, allowing any authenticated user to compromise other accounts.</div><div><br></div><span>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative.</span>
+
+### References
+* https://mina.apache.org/vysper-project/
+* https://lists.apache.org/thread.html/979n9lzg10vc7tdrrlgy4lh5yrsw8wsj
+
+
+### Credits
+* Ho1aAs <xxy010605@gmail.com> (finder)
+
+
+## Unbounded allocation ## { #CVE-2026-115721 }
+
+CVE-2026-115721 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-115721) [\[CVE json\]](./CVE-2026-115721.cve.json) [\[OSV json\]](./CVE-2026-115721.osv.json)
+
+
+
+_Last updated: 2026-10-26T15:01:16.916Z_
+
+### Affected
+
+* Apache Vysper through *
+
+
+### Description
+
+<div>**UNSUPPORTED WHEN ASSIGNED**&nbsp;&nbsp;Unbounded allocation in XML parsing in Apache Vysper; all versions, may lead to an out of memory condition.</div><div><br></div><div>This issue affects all versions of Apache Vysper.&nbsp;<span>Apache Vysper is an XMPP (Jabber) server library.</span></div><div><span><br></span></div><div><span>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative.</span></div>
+
+### References
+* https://mina.apache.org/vysper-project/
+* https://lists.apache.org/thread.html/d0bx15hjcs69gktk9tt25vgvk121c9vm
+
+
+### Credits
+* Gjoko Krstic (Zero Science Lab) (finder)
+
+
 ## CVE-2026-47065 resolveProxyClass fix missing from 2.0.X and 2.1.X branches (2.0.30 / 2.1.14) ZDRES-232 ## { #CVE-2026-94301 }
 
 CVE-2026-94301 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-94301) [\[CVE json\]](./CVE-2026-94301.cve.json) [\[OSV json\]](./CVE-2026-94301.osv.json)
@@ -598,89 +681,6 @@ applying the classname allowlist earlier.</div><div><br></div><div>Affected are 
 
 ### Credits
 * Venkatraman Kumar, Securin (reporter)
-
-
-## Unsafe Deserialization (CWE-502) in JavaNativeMessageDecoder ## { #CVE-2026-118636 }
-
-CVE-2026-118636 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-118636) [\[CVE json\]](./CVE-2026-118636.cve.json) [\[OSV json\]](./CVE-2026-118636.osv.json)
-
-
-
-_Last updated: 2026-10-31T20:17:07.969Z_
-
-### Affected
-
-* Apache MINA from 3.0.0 through 3.0.0-M2
-
-
-### Description
-
-<div>**UNSUPPORTED WHEN ASSIGNED**&nbsp;</div><div>JavaNativeMessageDecoder in the MINA 3.0 codec module calls ObjectInputStream.readObject() on frame bytes with no class filter, so an
-application that puts it in front of an untrusted peer is open to gadget-chain RCE.
-
-As the 3.0.0 branch is inactive, we do not plan to release a version that fixes this issue. 
-
-Users are recommended to use the latest Apache MINA 2.2.X branch.</div>
-
-### References
-* https://www.cve.org/CVERecord?id=CVE-2026-118636
-* https://lists.apache.org/thread.html/h76nwcrkvsffhsk2kq6cjzc6srtnty7x
-
-
-### Credits
-* Nguyen Cuong (cuongbeo090704@gmail.com) (reporter)
-
-
-## Authorization bypass ## { #CVE-2026-115748 }
-
-CVE-2026-115748 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-115748) [\[CVE json\]](./CVE-2026-115748.cve.json) [\[OSV json\]](./CVE-2026-115748.osv.json)
-
-
-
-_Last updated: 2026-10-26T15:01:39.384Z_
-
-### Affected
-
-* Apache Vysper through *
-
-
-### Description
-
-<div>**UNSUPPORTED WHEN ASSIGNED**&nbsp;&nbsp;Authorization bypass in Apache Vysper, all versions.</div><div><br></div><div>Apache Vysper is an XMPP (Jabber) server library. Its XEP-0077 (In-Band Registration) implementation is missing an authentication check, allowing any authenticated user to compromise other accounts.</div><div><br></div><span>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative.</span>
-
-### References
-* https://mina.apache.org/vysper-project/
-* https://lists.apache.org/thread.html/979n9lzg10vc7tdrrlgy4lh5yrsw8wsj
-
-
-### Credits
-* Ho1aAs <xxy010605@gmail.com> (finder)
-
-
-## Unbounded allocation ## { #CVE-2026-115721 }
-
-CVE-2026-115721 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-115721) [\[CVE json\]](./CVE-2026-115721.cve.json) [\[OSV json\]](./CVE-2026-115721.osv.json)
-
-
-
-_Last updated: 2026-10-26T15:01:16.916Z_
-
-### Affected
-
-* Apache Vysper through *
-
-
-### Description
-
-<div>**UNSUPPORTED WHEN ASSIGNED**&nbsp;&nbsp;Unbounded allocation in XML parsing in Apache Vysper; all versions, may lead to an out of memory condition.</div><div><br></div><div>This issue affects all versions of Apache Vysper.&nbsp;<span>Apache Vysper is an XMPP (Jabber) server library.</span></div><div><span><br></span></div><div><span>As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative.</span></div>
-
-### References
-* https://mina.apache.org/vysper-project/
-* https://lists.apache.org/thread.html/d0bx15hjcs69gktk9tt25vgvk121c9vm
-
-
-### Credits
-* Gjoko Krstic (Zero Science Lab) (finder)
 
 
 ## MINA applications using unbounded deserialization may allow RCE ## { #CVE-2024-52046 }

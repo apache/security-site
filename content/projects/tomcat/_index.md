@@ -18,6 +18,83 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## AJP response mix-up ## { #CVE-2026-103119 }
+
+CVE-2026-103119 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-103119) [\[CVE json\]](./CVE-2026-103119.cve.json) [\[OSV json\]](./CVE-2026-103119.osv.json)
+
+
+
+_Last updated: 2026-10-20T13:54:21.051Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M25 through 11.0.26
+
+
+### Description
+
+<p>Buffer under-read vulnerability in Apache Tomcat meant that a large non-blocking write could result in the response body being split between the current request and the next request received on that connection leading most likely to failure of the second request and possibly leakage of data from the first response to the second.</p><p>This issue affects Apache Tomcat: from 11.0.0-M25 through 11.0.26.</p><p>Users are recommended to upgrade to version 11.0.27, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/sk2cg4k077fwcqbm6tqz2n700nq06h80
+
+
+### Credits
+* Tuomo Hänninen (finder)
+
+
+## HTTP/2 request/response mix-up after error during async processing ## { #CVE-2026-101356 }
+
+CVE-2026-101356 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-101356) [\[CVE json\]](./CVE-2026-101356.cve.json) [\[OSV json\]](./CVE-2026-101356.osv.json)
+
+
+
+_Last updated: 2026-10-20T13:46:56.958Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.22 through 11.0.26
+* Apache Tomcat from 10.1.55 through 10.1.60
+* Apache Tomcat from 9.0.118 through 9.0.122
+
+
+### Description
+
+<p>Incorrect object recycling and re-use vulnerability in Apache Tomcat affecting HTTP/2 processing of asynchronous servlets can trigger request and/or response mix-up between users.</p><p>This issue affects Apache Tomcat: from 11.0.22 through 11.0.26, from 10.1.55 through 10.1.60, from 9.0.118 through 9.0.122.</p><p>Users are recommended to upgrade to version 11.0.27, 10.1.61 or 9.0.123, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/d1xjt7bbjqw7y7n5mcb4fm815hpfgc27
+
+
+## JNDIRealm bind credential validation fails open for non-GSSAPI SASL mechanisms ## { #CVE-2026-101296 }
+
+CVE-2026-101296 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-101296) [\[CVE json\]](./CVE-2026-101296.cve.json) [\[OSV json\]](./CVE-2026-101296.osv.json)
+
+
+
+_Last updated: 2026-10-21T06:31:51.744Z_
+
+### Affected
+
+* Apache Tomcat from 11.0.0-M1 through 11.0.26
+* Apache Tomcat from 10.1.0-M1 through 10.1.60
+* Apache Tomcat from 9.0.0.M1 through 9.0.122
+* Apache Tomcat from 8.5.0 through 8.5.100
+* Apache Tomcat from 7.0.0 through 7.0.109
+
+
+### Description
+
+<p>A missing critical step in authentication vulnerability in Apache Tomcat when the JNDI realm was configured with with a non GSSAPI SASL authentication mechanism&nbsp;<span>allowed attackers to authenticate without providing the correct password.</span></p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.26, from 10.1.0-M1 through 10.1.60, from 9.0.0.M1 through 9.0.122.</p><p><span>The following versions were EOL at the time the CVE was created but are known to be affected:</span><span>&nbsp;</span>from 8.5.0 through 8.5.100, from 7.0.0 through 7.0.109.&nbsp;<span>Other unsupported versions may also be affected.</span></p><p>Users are recommended to upgrade to version 11.0.27, 10.1.61 or 9.0.123, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/bl52b9go9ckoov8x4v3dt6rkm573cygd
+
+
+### Credits
+* Sai Sreewathsa Kovalluri, Shon Babu, and Kannan K of Innspark Solutions Private Limited (finder)
+
+
 ## Possible TLS 1.3 connection failures ## { #CVE-2026-93446 }
 
 CVE-2026-93446 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-93446) [\[CVE json\]](./CVE-2026-93446.cve.json) [\[OSV json\]](./CVE-2026-93446.osv.json)
@@ -1582,83 +1659,6 @@ sending a (specification invalid) HEAD request using HTTP/0.9.<br></p><p>This is
 
 ### References
 * https://lists.apache.org/thread/6xk3t65qpn1myp618krtfotbjn1qt90f
-
-
-## AJP response mix-up ## { #CVE-2026-103119 }
-
-CVE-2026-103119 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-103119) [\[CVE json\]](./CVE-2026-103119.cve.json) [\[OSV json\]](./CVE-2026-103119.osv.json)
-
-
-
-_Last updated: 2026-10-20T13:54:21.051Z_
-
-### Affected
-
-* Apache Tomcat from 11.0.0-M25 through 11.0.26
-
-
-### Description
-
-<p>Buffer under-read vulnerability in Apache Tomcat meant that a large non-blocking write could result in the response body being split between the current request and the next request received on that connection leading most likely to failure of the second request and possibly leakage of data from the first response to the second.</p><p>This issue affects Apache Tomcat: from 11.0.0-M25 through 11.0.26.</p><p>Users are recommended to upgrade to version 11.0.27, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread.html/sk2cg4k077fwcqbm6tqz2n700nq06h80
-
-
-### Credits
-* Tuomo Hänninen (finder)
-
-
-## HTTP/2 request/response mix-up after error during async processing ## { #CVE-2026-101356 }
-
-CVE-2026-101356 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-101356) [\[CVE json\]](./CVE-2026-101356.cve.json) [\[OSV json\]](./CVE-2026-101356.osv.json)
-
-
-
-_Last updated: 2026-10-20T13:46:56.958Z_
-
-### Affected
-
-* Apache Tomcat from 11.0.22 through 11.0.26
-* Apache Tomcat from 10.1.55 through 10.1.60
-* Apache Tomcat from 9.0.118 through 9.0.122
-
-
-### Description
-
-<p>Incorrect object recycling and re-use vulnerability in Apache Tomcat affecting HTTP/2 processing of asynchronous servlets can trigger request and/or response mix-up between users.</p><p>This issue affects Apache Tomcat: from 11.0.22 through 11.0.26, from 10.1.55 through 10.1.60, from 9.0.118 through 9.0.122.</p><p>Users are recommended to upgrade to version 11.0.27, 10.1.61 or 9.0.123, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread.html/d1xjt7bbjqw7y7n5mcb4fm815hpfgc27
-
-
-## JNDIRealm bind credential validation fails open for non-GSSAPI SASL mechanisms ## { #CVE-2026-101296 }
-
-CVE-2026-101296 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-101296) [\[CVE json\]](./CVE-2026-101296.cve.json) [\[OSV json\]](./CVE-2026-101296.osv.json)
-
-
-
-_Last updated: 2026-10-21T06:31:51.744Z_
-
-### Affected
-
-* Apache Tomcat from 11.0.0-M1 through 11.0.26
-* Apache Tomcat from 10.1.0-M1 through 10.1.60
-* Apache Tomcat from 9.0.0.M1 through 9.0.122
-* Apache Tomcat from 8.5.0 through 8.5.100
-* Apache Tomcat from 7.0.0 through 7.0.109
-
-
-### Description
-
-<p>A missing critical step in authentication vulnerability in Apache Tomcat when the JNDI realm was configured with with a non GSSAPI SASL authentication mechanism&nbsp;<span>allowed attackers to authenticate without providing the correct password.</span></p><p>This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.26, from 10.1.0-M1 through 10.1.60, from 9.0.0.M1 through 9.0.122.</p><p><span>The following versions were EOL at the time the CVE was created but are known to be affected:</span><span>&nbsp;</span>from 8.5.0 through 8.5.100, from 7.0.0 through 7.0.109.&nbsp;<span>Other unsupported versions may also be affected.</span></p><p>Users are recommended to upgrade to version 11.0.27, 10.1.61 or 9.0.123, which fix the issue.</p>
-
-### References
-* https://lists.apache.org/thread.html/bl52b9go9ckoov8x4v3dt6rkm573cygd
-
-
-### Credits
-* Sai Sreewathsa Kovalluri, Shon Babu, and Kannan K of Innspark Solutions Private Limited (finder)
 
 
 ## Client certificate verification bypass due to virtual host mapping ## { #CVE-2025-66614 }

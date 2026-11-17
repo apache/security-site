@@ -221,31 +221,6 @@ SpringEL injection in the server agent in Apache Ambari version 2.7.0 to 2.7.6 a
 * Jecki Go (jecgo@visa.com) (finder)
 
 
-## Stored XSS in Apache Ambari ## { #CVE-2020-1936 }
-
-CVE-2020-1936 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-1936) [\[CVE json\]](./CVE-2020-1936.cve.json) [\[OSV json\]](./CVE-2020-1936.osv.json)
-
-
-
-_Last updated: 2021-03-02T08:54:00.947Z_
-
-### Affected
-
-* Apache Ambari from Apache Ambari before 2.7.4
-
-
-### Description
-
-A cross-site scripting issue was found in Apache Ambari Views.  This was addressed in Apache Ambari 2.7.4.
-
-### References
-* https://lists.apache.org/thread.html/946a9d72e664ad8bc592168d9a2fed88100c6e9f1bdfea08e91a3184%40%3Cuser.ambari.apache.org%3E
-
-
-### Credits
-* Apache Ambari would like to thank Krzysztof Przybylski from STM Solutions
-
-
 ##  ## { #CVE-2020-13924 }
 
 CVE-2020-13924 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-13924) [\[CVE json\]](./CVE-2020-13924.cve.json) [\[OSV json\]](./CVE-2020-13924.osv.json)
@@ -269,3 +244,28 @@ In Apache Ambari versions 2.6.2.2 and earlier, malicious users can construct fil
 
 ### Credits
 * threedr3am
+
+
+## Stored XSS in Apache Ambari ## { #CVE-2020-1936 }
+
+CVE-2020-1936 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2020-1936) [\[CVE json\]](./CVE-2020-1936.cve.json) [\[OSV json\]](./CVE-2020-1936.osv.json)
+
+
+
+_Last updated: 2021-03-02T08:54:00.947Z_
+
+### Affected
+
+* Apache Ambari from Apache Ambari before 2.7.4
+
+
+### Description
+
+A cross-site scripting issue was found in Apache Ambari Views.  This was addressed in Apache Ambari 2.7.4.
+
+### References
+* https://lists.apache.org/thread.html/946a9d72e664ad8bc592168d9a2fed88100c6e9f1bdfea08e91a3184%40%3Cuser.ambari.apache.org%3E
+
+
+### Credits
+* Apache Ambari would like to thank Krzysztof Przybylski from STM Solutions

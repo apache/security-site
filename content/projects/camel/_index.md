@@ -23,6 +23,97 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## unvalidated Kubernetes resources applied from a project's kubernetes.yaml ## { #CVE-2026-103413 }
+
+CVE-2026-103413 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-103413) [\[CVE json\]](./CVE-2026-103413.cve.json) [\[OSV json\]](./CVE-2026-103413.osv.json)
+
+
+
+_Last updated: 2026-10-09T12:53:54.572Z_
+
+### Affected
+
+* Apache Camel Karavan from 4.0.0 before 4.22.1
+
+
+### Description
+
+<p>Improper input validation vulnerability in Apache Camel Karavan.</p><p>When a deployment was started, Karavan unmarshalled a project's `kubernetes.yaml` and applied every resource it contained to the cluster without restricting the resource kinds, without rejecting security-sensitive pod options, and without pinning the target namespace. An authenticated user of any role could therefore have Karavan apply arbitrary Kubernetes resources within the reach of its service account, including pods requesting hostNetwork, hostPID, hostIPC, hostPath volumes, host ports, privileged containers, privilege escalation or added capabilities.</p><p>This issue affects Apache Camel Karavan: from 4.0.0 before 4.22.1.</p><p>Users are recommended to upgrade to version 4.22.1, which fixes the issue.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-103413.html
+* https://github.com/apache/camel-karavan/commit/a773db372eab9f180110ad6129d58004a1bce571
+
+
+### Credits
+* MopMonk-AI (reporter)
+* Marat Gubaidullin (remediation developer)
+* Andrea Cosentino (coordinator)
+
+
+## project file name path traversal when committing a project to Git ## { #CVE-2026-103412 }
+
+CVE-2026-103412 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-103412) [\[CVE json\]](./CVE-2026-103412.cve.json) [\[OSV json\]](./CVE-2026-103412.osv.json)
+
+
+
+_Last updated: 2026-10-09T12:53:10.953Z_
+
+### Affected
+
+* Apache Camel Karavan from 3.18.0 before 4.22.1
+
+
+### Description
+
+<p>Improper limitation of a pathname to a restricted directory ('path traversal') vulnerability in Apache Camel Karavan.</p><p>A project file name supplied through the project file API was used verbatim as a path segment when the project was written to the working copy for a Git commit, so a name containing `../` sequences caused the file content to be written outside the project directory, to any location writable by the Karavan process. An authenticated user of any role could use this to overwrite application configuration or files on the application classpath and so execute code in the Karavan container.</p><p>This issue affects Apache Camel Karavan: from 3.18.0 before 4.22.1.</p><p>Users are recommended to upgrade to version 4.22.1, which fixes the issue.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-103412.html
+* https://github.com/apache/camel-karavan/commit/5e4252494817af0cd2697216bd02f361037fedcf
+
+
+### Credits
+* CyberLeo (reporter)
+* Marat Gubaidullin (remediation developer)
+* Andrea Cosentino (coordinator)
+
+
+## Camel-CoAP Information Disclosure via Unmuted Consumer Exceptions ## { #CVE-2026-101259 }
+
+CVE-2026-101259 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-101259) [\[CVE json\]](./CVE-2026-101259.cve.json) [\[OSV json\]](./CVE-2026-101259.osv.json)
+
+
+
+_Last updated: 2026-10-26T08:36:31.157Z_
+
+### Affected
+
+* Apache Camel from 4.0.0 before 4.18.5
+* Apache Camel from 4.19.0 before 4.22.2
+
+
+### Description
+
+<p>Generation of Error Message Containing Sensitive Information vulnerability in Apache Camel CoAP component.</p><p>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.2.</p><p>When the CoAP consumer could not build its response once the route had completed, CamelCoapResource caught the resulting exception and sent its message back to the CoAP client as the payload of a 5.00 Internal Server Error response. The typical case is a type conversion failure: the consumer converts the final message body to the byte[] payload, and the CamelCoapMaxAge and CamelCoapETag headers to their types, after the route has returned, and therefore outside the route's error handler. On the affected releases the message of such a failure names the class of the value being converted, carries the value's string form, and ends with the class name and message of the underlying cause, so a remote CoAP client could read internal detail about the deployment: class and package names, the string form of the value, such as the path of a file body, and whatever the cause carries, which in practice can include paths, host names and connection detail of a backend. The consumer had no option to suppress this, unlike the HTTP consumers, which offer a muteException option for that purpose. The exception raised by a failing route was not sent: the consumer did not check whether the exchange had failed, and answered a route failure with 2.05 Content and whatever body the message held at that point. Reaching the disclosure therefore requires a route whose completed response a remote client can make unconvertible, which depends on how the route is written.</p><p>Users are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.2. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The 4.14.x releases stream and earlier, and the 4.15.x to 4.17.x and 4.19.x to 4.21.x release lines, reached end of life before this issue was resolved and will not receive a fix, so deployments on them must move to a supported release. The upgrade is enough on its own: the new muteException consumer option defaults to true on all three fixed release lines, so the error response carries no payload without any configuration change. For deployments that cannot upgrade immediately, make sure the response can always be built once the route has completed: convert the body to byte[] or String as the last step of each route that consumes from a coap endpoint, for example with convertBodyTo, give the CamelCoapMaxAge and CamelCoapETag headers only values of their own types, and add an onException handler that marks the failure as handled and sets the response body explicitly, so that a conversion failure is raised and replaced inside the route rather than in the consumer.</p>
+
+### References
+* https://camel.apache.org/security/CVE-2026-101259.html
+* https://issues.apache.org/jira/browse/CAMEL-25087
+* https://github.com/apache/camel/pull/26994
+* https://github.com/apache/camel/pull/27046
+* https://github.com/apache/camel/pull/27048
+* https://camel.apache.org/security/CVE-2026-84180.html
+* https://camel.apache.org/security/CVE-2026-85246.html
+* https://camel.apache.org/security/CVE-2026-85257.html
+* https://camel.apache.org/security/CVE-2026-85315.html
+
+
+### Credits
+* Zhixi "Jace" Sun, independent security researcher (finder)
+* Andrea Cosentino (remediation developer)
+
+
 ## Camel-AWS2-S3 Producer Evaluates Untrusted S3 Object Keys From the CamelAwsS3Key Header as Simple Expressions ## { #CVE-2026-95664 }
 
 CVE-2026-95664 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-95664) [\[CVE json\]](./CVE-2026-95664.cve.json) [\[OSV json\]](./CVE-2026-95664.osv.json)
@@ -3136,97 +3227,6 @@ _Last updated: 2026-02-22T15:55:13.482Z_
 
 ### Credits
 * Andrea Cosentino (finder)
-* Andrea Cosentino (remediation developer)
-
-
-## unvalidated Kubernetes resources applied from a project's kubernetes.yaml ## { #CVE-2026-103413 }
-
-CVE-2026-103413 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-103413) [\[CVE json\]](./CVE-2026-103413.cve.json) [\[OSV json\]](./CVE-2026-103413.osv.json)
-
-
-
-_Last updated: 2026-10-09T12:53:54.572Z_
-
-### Affected
-
-* Apache Camel Karavan from 4.0.0 before 4.22.1
-
-
-### Description
-
-<p>Improper input validation vulnerability in Apache Camel Karavan.</p><p>When a deployment was started, Karavan unmarshalled a project's `kubernetes.yaml` and applied every resource it contained to the cluster without restricting the resource kinds, without rejecting security-sensitive pod options, and without pinning the target namespace. An authenticated user of any role could therefore have Karavan apply arbitrary Kubernetes resources within the reach of its service account, including pods requesting hostNetwork, hostPID, hostIPC, hostPath volumes, host ports, privileged containers, privilege escalation or added capabilities.</p><p>This issue affects Apache Camel Karavan: from 4.0.0 before 4.22.1.</p><p>Users are recommended to upgrade to version 4.22.1, which fixes the issue.</p>
-
-### References
-* https://camel.apache.org/security/CVE-2026-103413.html
-* https://github.com/apache/camel-karavan/commit/a773db372eab9f180110ad6129d58004a1bce571
-
-
-### Credits
-* MopMonk-AI (reporter)
-* Marat Gubaidullin (remediation developer)
-* Andrea Cosentino (coordinator)
-
-
-## project file name path traversal when committing a project to Git ## { #CVE-2026-103412 }
-
-CVE-2026-103412 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-103412) [\[CVE json\]](./CVE-2026-103412.cve.json) [\[OSV json\]](./CVE-2026-103412.osv.json)
-
-
-
-_Last updated: 2026-10-09T12:53:10.953Z_
-
-### Affected
-
-* Apache Camel Karavan from 3.18.0 before 4.22.1
-
-
-### Description
-
-<p>Improper limitation of a pathname to a restricted directory ('path traversal') vulnerability in Apache Camel Karavan.</p><p>A project file name supplied through the project file API was used verbatim as a path segment when the project was written to the working copy for a Git commit, so a name containing `../` sequences caused the file content to be written outside the project directory, to any location writable by the Karavan process. An authenticated user of any role could use this to overwrite application configuration or files on the application classpath and so execute code in the Karavan container.</p><p>This issue affects Apache Camel Karavan: from 3.18.0 before 4.22.1.</p><p>Users are recommended to upgrade to version 4.22.1, which fixes the issue.</p>
-
-### References
-* https://camel.apache.org/security/CVE-2026-103412.html
-* https://github.com/apache/camel-karavan/commit/5e4252494817af0cd2697216bd02f361037fedcf
-
-
-### Credits
-* CyberLeo (reporter)
-* Marat Gubaidullin (remediation developer)
-* Andrea Cosentino (coordinator)
-
-
-## Camel-CoAP Information Disclosure via Unmuted Consumer Exceptions ## { #CVE-2026-101259 }
-
-CVE-2026-101259 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-101259) [\[CVE json\]](./CVE-2026-101259.cve.json) [\[OSV json\]](./CVE-2026-101259.osv.json)
-
-
-
-_Last updated: 2026-10-26T08:36:31.157Z_
-
-### Affected
-
-* Apache Camel from 4.0.0 before 4.18.5
-* Apache Camel from 4.19.0 before 4.22.2
-
-
-### Description
-
-<p>Generation of Error Message Containing Sensitive Information vulnerability in Apache Camel CoAP component.</p><p>This issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.2.</p><p>When the CoAP consumer could not build its response once the route had completed, CamelCoapResource caught the resulting exception and sent its message back to the CoAP client as the payload of a 5.00 Internal Server Error response. The typical case is a type conversion failure: the consumer converts the final message body to the byte[] payload, and the CamelCoapMaxAge and CamelCoapETag headers to their types, after the route has returned, and therefore outside the route's error handler. On the affected releases the message of such a failure names the class of the value being converted, carries the value's string form, and ends with the class name and message of the underlying cause, so a remote CoAP client could read internal detail about the deployment: class and package names, the string form of the value, such as the path of a file body, and whatever the cause carries, which in practice can include paths, host names and connection detail of a backend. The consumer had no option to suppress this, unlike the HTTP consumers, which offer a muteException option for that purpose. The exception raised by a failing route was not sent: the consumer did not check whether the exchange had failed, and answered a route failure with 2.05 Content and whatever body the message held at that point. Reaching the disclosure therefore requires a route whose completed response a remote client can make unconvertible, which depends on how the route is written.</p><p>Users are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.2. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The 4.14.x releases stream and earlier, and the 4.15.x to 4.17.x and 4.19.x to 4.21.x release lines, reached end of life before this issue was resolved and will not receive a fix, so deployments on them must move to a supported release. The upgrade is enough on its own: the new muteException consumer option defaults to true on all three fixed release lines, so the error response carries no payload without any configuration change. For deployments that cannot upgrade immediately, make sure the response can always be built once the route has completed: convert the body to byte[] or String as the last step of each route that consumes from a coap endpoint, for example with convertBodyTo, give the CamelCoapMaxAge and CamelCoapETag headers only values of their own types, and add an onException handler that marks the failure as handled and sets the response body explicitly, so that a conversion failure is raised and replaced inside the route rather than in the consumer.</p>
-
-### References
-* https://camel.apache.org/security/CVE-2026-101259.html
-* https://issues.apache.org/jira/browse/CAMEL-25087
-* https://github.com/apache/camel/pull/26994
-* https://github.com/apache/camel/pull/27046
-* https://github.com/apache/camel/pull/27048
-* https://camel.apache.org/security/CVE-2026-84180.html
-* https://camel.apache.org/security/CVE-2026-85246.html
-* https://camel.apache.org/security/CVE-2026-85257.html
-* https://camel.apache.org/security/CVE-2026-85315.html
-
-
-### Credits
-* Zhixi "Jace" Sun, independent security researcher (finder)
 * Andrea Cosentino (remediation developer)
 
 

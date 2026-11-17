@@ -18,6 +18,205 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Logout token revocation fails open; errors silently swallowed ## { #CVE-2026-113508 }
+
+CVE-2026-113508 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-113508) [\[CVE json\]](./CVE-2026-113508.cve.json) [\[OSV json\]](./CVE-2026-113508.osv.json)
+
+
+
+_Last updated: 2026-11-09T09:46:09.985Z_
+
+### Affected
+
+* Apache Airflow before 3.4.0
+
+
+### Description
+
+Apache Airflow's logout endpoint attempted to revoke the presented token on the server, but any failure during revocation was silently ignored and logout still reported success. When the auth manager redirects logout to an external logout URL (for example the FAB or Keycloak auth managers), server-side revocation is the only thing that invalidates the Airflow token; it failed on database errors and, reliably, for tokens from an external issuer accepted via `[api_auth] trusted_jwks_url` whose token identifier is longer than 32 characters. Anyone holding a copy of a user's token from before logout could keep using it against the Airflow API until it expired. Users are advised to upgrade to apache-airflow 3.4.0 or later.
+
+### References
+* https://github.com/apache/airflow/pull/73562
+* https://github.com/apache/airflow/pull/73788
+* https://lists.apache.org/thread.html/6t892ozodb9f3498jrsc8k0crbdnm7no
+
+
+### Credits
+* Claude Security Scans (tool)
+* Pierre Jeambrun (remediation developer)
+* Jarek Potiuk (remediation developer)
+
+
+## Connections API: async connection test authorizes create at enqueue but overwrites a later-created connection at commit ## { #CVE-2026-111455 }
+
+CVE-2026-111455 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111455) [\[CVE json\]](./CVE-2026-111455.cve.json) [\[OSV json\]](./CVE-2026-111455.osv.json)
+
+
+
+_Last updated: 2026-11-09T09:06:31.180Z_
+
+### Affected
+
+* Apache Airflow from 3.3.0 before 3.4.0
+
+
+### Description
+
+Apache Airflow's asynchronous connection test checked permissions when the test was queued — only create permission when the connection ID did not exist yet — but, when the test completed with `commit_on_success`, wrote the tested connection under that ID. A user allowed to create but not edit connections could overwrite a connection someone else had created in the meantime. Only deployments that enable the non-default `[core] test_connection` setting are affected. Users are advised to upgrade to apache-airflow 3.4.0 or later.
+
+### References
+* https://github.com/apache/airflow/pull/74837
+* https://lists.apache.org/thread.html/j3tqo8wd53mcyvkkw4z5pnt9tckks0j2
+
+
+### Credits
+* Evan Ricafort (@evanricafort) of Invalid Web Security (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## API: asset queuedEvents DELETE checks Dag edit on a ?dag_id query value but deletes rows for every readable Dag ## { #CVE-2026-111453 }
+
+CVE-2026-111453 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111453) [\[CVE json\]](./CVE-2026-111453.cve.json) [\[OSV json\]](./CVE-2026-111453.osv.json)
+
+
+
+_Last updated: 2026-11-09T09:10:56.620Z_
+
+### Affected
+
+* Apache Airflow from 3.3.2 before 3.4.0
+
+
+### Description
+
+Apache Airflow's API endpoint for deleting an asset's queued events checked Dag edit permission against the `dag_id` query parameter, but deleted the queued events of every Dag the caller could read. An authenticated user with edit permission on one Dag and read access to others could suppress asset-triggered runs of Dags they cannot edit. This is an incomplete fix for CVE-2026-75157: users who upgraded to apache-airflow 3.3.2 for that fix are still affected and should upgrade to apache-airflow 3.4.0 or later.
+
+### References
+* https://github.com/apache/airflow/pull/74839
+* https://www.cve.org/CVERecord?id=CVE-2026-75157
+* https://lists.apache.org/thread.html/z212137tkfobdgl0hnos7qg6w6r1mxw5
+
+
+### Credits
+* hataehoon (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## SSHRemoteJobOperator: `environment` values are executed as shell on the remote host ## { #CVE-2026-111422 }
+
+CVE-2026-111422 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111422) [\[CVE json\]](./CVE-2026-111422.cve.json) [\[OSV json\]](./CVE-2026-111422.osv.json)
+
+
+
+_Last updated: 2026-10-26T23:27:54.285Z_
+
+### Affected
+
+* Apache Airflow SSH provider from 4.3.0 before 7.0.1
+
+
+### Description
+
+In apache-airflow-providers-ssh before 7.0.1, SSHRemoteJobOperator quoted the values of its templated `environment` parameter only once, although they are placed inside an already-quoted wrapper script, so shell syntax such as `$(...)` in a value was executed on the remote SSH host. In a Dag that passes trigger-time input such as `params` or `dag_run.conf` into `environment`, a user who can trigger that Dag but cannot author Dags could run arbitrary commands on the remote host as the SSH connection&#x27;s user. Users are advised to upgrade apache-airflow-providers-ssh to 7.0.1 or later.
+
+### References
+* https://github.com/apache/airflow/pull/74810
+* https://lists.apache.org/thread/k159xrq1tbgmkvl24j63g12qh0mczk79
+* https://airflow.apache.org/docs/apache-airflow-providers-ssh/7.0.1/changelog.html
+
+
+### Credits
+* Enrico Maria Carmona, Serasoft S.r.l. (finder)
+* Kaxil Naik (remediation developer)
+
+
+## Execution API: set_xcom skips the reserved-key check, so task-written XComs instantiate airflow.* classes on the API server ## { #CVE-2026-111421 }
+
+CVE-2026-111421 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111421) [\[CVE json\]](./CVE-2026-111421.cve.json) [\[OSV json\]](./CVE-2026-111421.osv.json)
+
+
+
+_Last updated: 2026-11-09T09:15:27.958Z_
+
+### Affected
+
+* Apache Airflow from 3.0.0 before 3.4.0
+
+
+### Description
+
+Apache Airflow's Task Execution API stored XCom values written by a task without the reserved-key check applied elsewhere, so a Dag author's task could write an XCom that, when a user later viewed it through the API with deserialization enabled, made the API server instantiate classes from the `airflow.*` namespace with arguments the Dag author chose. This is an incomplete fix for CVE-2026-59242: users who applied that fix in apache-airflow 3.3.1 remain affected through this route and should upgrade to apache-airflow 3.4.0 or later.
+
+### References
+* https://github.com/apache/airflow/pull/72718
+* https://github.com/apache/airflow/pull/74829
+* https://www.cve.org/CVERecord?id=CVE-2026-59242
+* https://lists.apache.org/thread.html/pwdwx354tv0x3m8wzfhh59r6wyztj2lk
+
+
+### Credits
+* Qi Qin of depthfirst (finder)
+* Hama1cco (finder)
+* Zhixi "Jace" Sun, independent security researcher (finder)
+* Michael Lip (theluckystrike) (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## Reserved serialization keys in Dag run conf crash the scheduler or are rebuilt as objects in the Triggerer via deadline callbacks ## { #CVE-2026-111395 }
+
+CVE-2026-111395 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111395) [\[CVE json\]](./CVE-2026-111395.cve.json) [\[OSV json\]](./CVE-2026-111395.osv.json)
+
+
+
+_Last updated: 2026-11-09T09:18:31.486Z_
+
+### Affected
+
+* Apache Airflow from 3.2.0 before 3.4.0
+
+
+### Description
+
+Apache Airflow did not reject reserved serialization keys inside a Dag run's `conf`. A user allowed to trigger a Dag that uses a deadline alert with an asynchronous callback could pass a `conf` that, once the deadline was missed, either crashed the scheduler repeatedly or was rebuilt into objects inside the Triggerer. Users are advised to upgrade to apache-airflow 3.4.0 or later.
+
+### References
+* https://github.com/apache/airflow/pull/74834
+* https://lists.apache.org/thread.html/qb4qxr40s0q6w9b9t5mfw5qf53pg97p3
+
+
+### Credits
+* Jarek Potiuk (finder)
+* Jarek Potiuk (remediation developer)
+
+
+## Shell command injection in the example_dag_decorator example Dag via an IPv6 zone identifier ## { #CVE-2026-101031 }
+
+CVE-2026-101031 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-101031) [\[CVE json\]](./CVE-2026-101031.cve.json) [\[OSV json\]](./CVE-2026-101031.osv.json)
+
+
+
+_Last updated: 2026-11-09T09:44:37.288Z_
+
+### Affected
+
+* Apache Airflow from 3.0.5 before 3.4.0
+
+
+### Description
+
+The `example_dag_decorator` example Dag shipped with Apache Airflow validated an IP address fetched over HTTP with Python's `ipaddress` module and then placed it into a shell command. `ipaddress` accepts IPv6 zone identifiers containing arbitrary characters, so when example Dags are loaded (`load_examples` enabled), a user who can trigger that Dag with a custom `url` parameter could point it at a server whose response injects shell commands run on the worker. This is an incomplete fix for CVE-2025-54941; users who upgraded for CVE-2025-54941 should upgrade again. Users are advised to upgrade to apache-airflow 3.4.0 or later, or to disable example Dags (`load_examples = False`), which is recommended for production.
+
+### References
+* https://github.com/apache/airflow/pull/73787
+* https://www.cve.org/CVERecord?id=CVE-2025-54941
+* https://lists.apache.org/thread.html/p53zxybld58wv722c7zxk0w8d2rnkfwk
+
+
+### Credits
+* Andrew Rukin (Arenadata) (finder)
+* Jarek Potiuk (remediation developer)
+
+
 ## HashiCorp Vault secrets backend: team-scope guard bypass via user-controlled key ## { #CVE-2026-97636 }
 
 CVE-2026-97636 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97636) [\[CVE json\]](./CVE-2026-97636.cve.json) [\[OSV json\]](./CVE-2026-97636.osv.json)
@@ -2806,205 +3005,6 @@ Apache Airflow versions 3.1.0 through 3.1.6 contain an authorization flaw that c
 ### Credits
 * 34selen (finder)
 * Shubham Raj (remediation developer)
-
-
-## Logout token revocation fails open; errors silently swallowed ## { #CVE-2026-113508 }
-
-CVE-2026-113508 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-113508) [\[CVE json\]](./CVE-2026-113508.cve.json) [\[OSV json\]](./CVE-2026-113508.osv.json)
-
-
-
-_Last updated: 2026-11-09T09:46:09.985Z_
-
-### Affected
-
-* Apache Airflow before 3.4.0
-
-
-### Description
-
-Apache Airflow's logout endpoint attempted to revoke the presented token on the server, but any failure during revocation was silently ignored and logout still reported success. When the auth manager redirects logout to an external logout URL (for example the FAB or Keycloak auth managers), server-side revocation is the only thing that invalidates the Airflow token; it failed on database errors and, reliably, for tokens from an external issuer accepted via `[api_auth] trusted_jwks_url` whose token identifier is longer than 32 characters. Anyone holding a copy of a user's token from before logout could keep using it against the Airflow API until it expired. Users are advised to upgrade to apache-airflow 3.4.0 or later.
-
-### References
-* https://github.com/apache/airflow/pull/73562
-* https://github.com/apache/airflow/pull/73788
-* https://lists.apache.org/thread.html/6t892ozodb9f3498jrsc8k0crbdnm7no
-
-
-### Credits
-* Claude Security Scans (tool)
-* Pierre Jeambrun (remediation developer)
-* Jarek Potiuk (remediation developer)
-
-
-## Connections API: async connection test authorizes create at enqueue but overwrites a later-created connection at commit ## { #CVE-2026-111455 }
-
-CVE-2026-111455 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111455) [\[CVE json\]](./CVE-2026-111455.cve.json) [\[OSV json\]](./CVE-2026-111455.osv.json)
-
-
-
-_Last updated: 2026-11-09T09:06:31.180Z_
-
-### Affected
-
-* Apache Airflow from 3.3.0 before 3.4.0
-
-
-### Description
-
-Apache Airflow's asynchronous connection test checked permissions when the test was queued — only create permission when the connection ID did not exist yet — but, when the test completed with `commit_on_success`, wrote the tested connection under that ID. A user allowed to create but not edit connections could overwrite a connection someone else had created in the meantime. Only deployments that enable the non-default `[core] test_connection` setting are affected. Users are advised to upgrade to apache-airflow 3.4.0 or later.
-
-### References
-* https://github.com/apache/airflow/pull/74837
-* https://lists.apache.org/thread.html/j3tqo8wd53mcyvkkw4z5pnt9tckks0j2
-
-
-### Credits
-* Evan Ricafort (@evanricafort) of Invalid Web Security (finder)
-* Jarek Potiuk (remediation developer)
-
-
-## API: asset queuedEvents DELETE checks Dag edit on a ?dag_id query value but deletes rows for every readable Dag ## { #CVE-2026-111453 }
-
-CVE-2026-111453 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111453) [\[CVE json\]](./CVE-2026-111453.cve.json) [\[OSV json\]](./CVE-2026-111453.osv.json)
-
-
-
-_Last updated: 2026-11-09T09:10:56.620Z_
-
-### Affected
-
-* Apache Airflow from 3.3.2 before 3.4.0
-
-
-### Description
-
-Apache Airflow's API endpoint for deleting an asset's queued events checked Dag edit permission against the `dag_id` query parameter, but deleted the queued events of every Dag the caller could read. An authenticated user with edit permission on one Dag and read access to others could suppress asset-triggered runs of Dags they cannot edit. This is an incomplete fix for CVE-2026-75157: users who upgraded to apache-airflow 3.3.2 for that fix are still affected and should upgrade to apache-airflow 3.4.0 or later.
-
-### References
-* https://github.com/apache/airflow/pull/74839
-* https://www.cve.org/CVERecord?id=CVE-2026-75157
-* https://lists.apache.org/thread.html/z212137tkfobdgl0hnos7qg6w6r1mxw5
-
-
-### Credits
-* hataehoon (finder)
-* Jarek Potiuk (remediation developer)
-
-
-## SSHRemoteJobOperator: `environment` values are executed as shell on the remote host ## { #CVE-2026-111422 }
-
-CVE-2026-111422 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111422) [\[CVE json\]](./CVE-2026-111422.cve.json) [\[OSV json\]](./CVE-2026-111422.osv.json)
-
-
-
-_Last updated: 2026-10-26T23:27:54.285Z_
-
-### Affected
-
-* Apache Airflow SSH provider from 4.3.0 before 7.0.1
-
-
-### Description
-
-In apache-airflow-providers-ssh before 7.0.1, SSHRemoteJobOperator quoted the values of its templated `environment` parameter only once, although they are placed inside an already-quoted wrapper script, so shell syntax such as `$(...)` in a value was executed on the remote SSH host. In a Dag that passes trigger-time input such as `params` or `dag_run.conf` into `environment`, a user who can trigger that Dag but cannot author Dags could run arbitrary commands on the remote host as the SSH connection&#x27;s user. Users are advised to upgrade apache-airflow-providers-ssh to 7.0.1 or later.
-
-### References
-* https://github.com/apache/airflow/pull/74810
-* https://lists.apache.org/thread/k159xrq1tbgmkvl24j63g12qh0mczk79
-* https://airflow.apache.org/docs/apache-airflow-providers-ssh/7.0.1/changelog.html
-
-
-### Credits
-* Enrico Maria Carmona, Serasoft S.r.l. (finder)
-* Kaxil Naik (remediation developer)
-
-
-## Execution API: set_xcom skips the reserved-key check, so task-written XComs instantiate airflow.* classes on the API server ## { #CVE-2026-111421 }
-
-CVE-2026-111421 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111421) [\[CVE json\]](./CVE-2026-111421.cve.json) [\[OSV json\]](./CVE-2026-111421.osv.json)
-
-
-
-_Last updated: 2026-11-09T09:15:27.958Z_
-
-### Affected
-
-* Apache Airflow from 3.0.0 before 3.4.0
-
-
-### Description
-
-Apache Airflow's Task Execution API stored XCom values written by a task without the reserved-key check applied elsewhere, so a Dag author's task could write an XCom that, when a user later viewed it through the API with deserialization enabled, made the API server instantiate classes from the `airflow.*` namespace with arguments the Dag author chose. This is an incomplete fix for CVE-2026-59242: users who applied that fix in apache-airflow 3.3.1 remain affected through this route and should upgrade to apache-airflow 3.4.0 or later.
-
-### References
-* https://github.com/apache/airflow/pull/72718
-* https://github.com/apache/airflow/pull/74829
-* https://www.cve.org/CVERecord?id=CVE-2026-59242
-* https://lists.apache.org/thread.html/pwdwx354tv0x3m8wzfhh59r6wyztj2lk
-
-
-### Credits
-* Qi Qin of depthfirst (finder)
-* Hama1cco (finder)
-* Zhixi "Jace" Sun, independent security researcher (finder)
-* Michael Lip (theluckystrike) (finder)
-* Jarek Potiuk (remediation developer)
-
-
-## Reserved serialization keys in Dag run conf crash the scheduler or are rebuilt as objects in the Triggerer via deadline callbacks ## { #CVE-2026-111395 }
-
-CVE-2026-111395 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111395) [\[CVE json\]](./CVE-2026-111395.cve.json) [\[OSV json\]](./CVE-2026-111395.osv.json)
-
-
-
-_Last updated: 2026-11-09T09:18:31.486Z_
-
-### Affected
-
-* Apache Airflow from 3.2.0 before 3.4.0
-
-
-### Description
-
-Apache Airflow did not reject reserved serialization keys inside a Dag run's `conf`. A user allowed to trigger a Dag that uses a deadline alert with an asynchronous callback could pass a `conf` that, once the deadline was missed, either crashed the scheduler repeatedly or was rebuilt into objects inside the Triggerer. Users are advised to upgrade to apache-airflow 3.4.0 or later.
-
-### References
-* https://github.com/apache/airflow/pull/74834
-* https://lists.apache.org/thread.html/qb4qxr40s0q6w9b9t5mfw5qf53pg97p3
-
-
-### Credits
-* Jarek Potiuk (finder)
-* Jarek Potiuk (remediation developer)
-
-
-## Shell command injection in the example_dag_decorator example Dag via an IPv6 zone identifier ## { #CVE-2026-101031 }
-
-CVE-2026-101031 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-101031) [\[CVE json\]](./CVE-2026-101031.cve.json) [\[OSV json\]](./CVE-2026-101031.osv.json)
-
-
-
-_Last updated: 2026-11-09T09:44:37.288Z_
-
-### Affected
-
-* Apache Airflow from 3.0.5 before 3.4.0
-
-
-### Description
-
-The `example_dag_decorator` example Dag shipped with Apache Airflow validated an IP address fetched over HTTP with Python's `ipaddress` module and then placed it into a shell command. `ipaddress` accepts IPv6 zone identifiers containing arbitrary characters, so when example Dags are loaded (`load_examples` enabled), a user who can trigger that Dag with a custom `url` parameter could point it at a server whose response injects shell commands run on the worker. This is an incomplete fix for CVE-2025-54941; users who upgraded for CVE-2025-54941 should upgrade again. Users are advised to upgrade to apache-airflow 3.4.0 or later, or to disable example Dags (`load_examples = False`), which is recommended for production.
-
-### References
-* https://github.com/apache/airflow/pull/73787
-* https://www.cve.org/CVERecord?id=CVE-2025-54941
-* https://lists.apache.org/thread.html/p53zxybld58wv722c7zxk0w8d2rnkfwk
-
-
-### Credits
-* Andrew Rukin (Arenadata) (finder)
-* Jarek Potiuk (remediation developer)
 
 
 ## Unsafe Pickle Deserialization in apache-airflow-providers-http leading to RCE via HttpOperator ## { #CVE-2025-69219 }

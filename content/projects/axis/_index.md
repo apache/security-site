@@ -20,60 +20,6 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
-## unauthenticated remote class instantiation via SOAP fault exceptionName ## { #CVE-2026-90436 }
-
-CVE-2026-90436 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90436) [\[CVE json\]](./CVE-2026-90436.cve.json) [\[OSV json\]](./CVE-2026-90436.osv.json)
-
-
-
-_Last updated: 2026-11-06T15:52:59.387Z_
-
-### Affected
-
-* Apache Axis 1.x (EOL) through 1.4
-* Apache Axis 1.x (EOL) through 1.4
-* Apache Axis 1.x (EOL) from aac718c6035435d96b39d6aebb9c078a13af7cc8 before 41f3b4e8d04e310ca81f86b92630ab2c11d608bd
-
-
-### Description
-
-<p>** UNSUPPORTED WHEN ASSIGNED ** Deserialization of an inbound SOAP fault in Apache Axis 1.x allows unauthenticated remote class instantiation. When a SOAP &lt;Fault&gt; carries a &lt;detail&gt;&lt;exceptionName&gt; element, Axis loads the named class and, if a String &lt;data&gt; element is also present, instantiates it through its String constructor before checking that it is an AxisFault. Loading alone runs the class's static initializer. With a suitable class on the application's classpath this leads to remote code execution. The fault is parsed while the engine resolves the target service, before any per-service handler chain runs, so authentication handlers configured on a service do not protect against it. This affects all Apache Axis 1.x versions through 1.4.</p><p>As Axis 1 has been EOL we recommend you migrate to a different SOAP engine, such as Apache Axis 2/Java. Alternatively you could use a build of Axis with the patch from https://github.com/apache/axis-axis1-java/commit/41f3b4e8d04e310ca81f86b92630ab2c11d608bd applied. The Apache Axis project does not expect to create an Axis 1.x release fixing this problem.</p>
-
-### References
-* https://github.com/apache/axis-axis1-java/commit/41f3b4e8d04e310ca81f86b92630ab2c11d608bd
-* https://lists.apache.org/thread.html/8slf0j9gz35z56t0glt5h0ncwlbn4bdz
-
-
-### Credits
-* José Apari-Pantigozo from OKIOK (finder)
-
-
-## deserialization of untrusted Data ## { #CVE-2026-66713 }
-
-CVE-2026-66713 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66713) [\[CVE json\]](./CVE-2026-66713.cve.json) [\[OSV json\]](./CVE-2026-66713.osv.json)
-
-
-
-_Last updated: 2026-09-04T13:57:12.851Z_
-
-### Affected
-
-* Apache Axis2/Java through 2.0.0
-
-
-### Description
-
-Deserialization of Untrusted Data (CWE-502) in the Tribes-based clustering component in Apache Software Foundation Apache Axis2/Java through 2.0.0 on Apache Tomcat (only when Tribes clustering is enabled, which is off by default) allows an unauthenticated remote attacker with network access to the clustering port to execute arbitrary code via a crafted serialized Java object delivered to the cluster channel and deserialized in org.apache.axis2.clustering.tribes.Axis2ChannelListener#messageReceived. Users are recommended to upgrade to version 2.0.1, which fixes this issue by removing the clustering feature entirely.
-
-### References
-* https://github.com/apache/axis-axis2-java-core/commit/e6f53b230bddcb40577c84ff290ba51e7265fa15
-* https://lists.apache.org/thread/fgggbv3sjjqw7p6q0j88gspt9b2rb728
-
-
-### Credits
-* liuhuajin of Huawei (finder)
-
-
 ## Out-of-bounds read in the Guththila XML reader wrapper ## { #CVE-2026-124023 }
 
 CVE-2026-124023 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-124023) [\[CVE json\]](./CVE-2026-124023.cve.json) [\[OSV json\]](./CVE-2026-124023.osv.json)
@@ -294,6 +240,60 @@ Allocation of Resources Without Limits or Throttling vulnerability in Apache Axi
 
 ### Credits
 * MopMonk-AI (finder)
+
+
+## unauthenticated remote class instantiation via SOAP fault exceptionName ## { #CVE-2026-90436 }
+
+CVE-2026-90436 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-90436) [\[CVE json\]](./CVE-2026-90436.cve.json) [\[OSV json\]](./CVE-2026-90436.osv.json)
+
+
+
+_Last updated: 2026-11-06T15:52:59.387Z_
+
+### Affected
+
+* Apache Axis 1.x (EOL) through 1.4
+* Apache Axis 1.x (EOL) through 1.4
+* Apache Axis 1.x (EOL) from aac718c6035435d96b39d6aebb9c078a13af7cc8 before 41f3b4e8d04e310ca81f86b92630ab2c11d608bd
+
+
+### Description
+
+<p>** UNSUPPORTED WHEN ASSIGNED ** Deserialization of an inbound SOAP fault in Apache Axis 1.x allows unauthenticated remote class instantiation. When a SOAP &lt;Fault&gt; carries a &lt;detail&gt;&lt;exceptionName&gt; element, Axis loads the named class and, if a String &lt;data&gt; element is also present, instantiates it through its String constructor before checking that it is an AxisFault. Loading alone runs the class's static initializer. With a suitable class on the application's classpath this leads to remote code execution. The fault is parsed while the engine resolves the target service, before any per-service handler chain runs, so authentication handlers configured on a service do not protect against it. This affects all Apache Axis 1.x versions through 1.4.</p><p>As Axis 1 has been EOL we recommend you migrate to a different SOAP engine, such as Apache Axis 2/Java. Alternatively you could use a build of Axis with the patch from https://github.com/apache/axis-axis1-java/commit/41f3b4e8d04e310ca81f86b92630ab2c11d608bd applied. The Apache Axis project does not expect to create an Axis 1.x release fixing this problem.</p>
+
+### References
+* https://github.com/apache/axis-axis1-java/commit/41f3b4e8d04e310ca81f86b92630ab2c11d608bd
+* https://lists.apache.org/thread.html/8slf0j9gz35z56t0glt5h0ncwlbn4bdz
+
+
+### Credits
+* José Apari-Pantigozo from OKIOK (finder)
+
+
+## deserialization of untrusted Data ## { #CVE-2026-66713 }
+
+CVE-2026-66713 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-66713) [\[CVE json\]](./CVE-2026-66713.cve.json) [\[OSV json\]](./CVE-2026-66713.osv.json)
+
+
+
+_Last updated: 2026-09-04T13:57:12.851Z_
+
+### Affected
+
+* Apache Axis2/Java through 2.0.0
+
+
+### Description
+
+Deserialization of Untrusted Data (CWE-502) in the Tribes-based clustering component in Apache Software Foundation Apache Axis2/Java through 2.0.0 on Apache Tomcat (only when Tribes clustering is enabled, which is off by default) allows an unauthenticated remote attacker with network access to the clustering port to execute arbitrary code via a crafted serialized Java object delivered to the cluster channel and deserialized in org.apache.axis2.clustering.tribes.Axis2ChannelListener#messageReceived. Users are recommended to upgrade to version 2.0.1, which fixes this issue by removing the clustering feature entirely.
+
+### References
+* https://github.com/apache/axis-axis2-java-core/commit/e6f53b230bddcb40577c84ff290ba51e7265fa15
+* https://lists.apache.org/thread/fgggbv3sjjqw7p6q0j88gspt9b2rb728
+
+
+### Credits
+* liuhuajin of Huawei (finder)
 
 
 ## Apache Axis 1.x (EOL) may allow SSRF when untrusted input is passed to the service admin HTTP API ## { #CVE-2023-51441 }
