@@ -232,22 +232,24 @@ recommended to upgrade to version 24.09.08, which fixes this issue.<span></span>
 </ul>
 <h2 id="CVE-2026-83542">Unauthenticated RCE via login-page widget injection</h2>
 <p>CVE-2026-83542 <a href="https://cve.org/CVERecord?id=CVE-2026-83542">[CVE]</a> <a href="./CVE-2026-83542.cve.json">[CVE json]</a> <a href="./CVE-2026-83542.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-11-05T13:59:21.183Z</em></p>
+<p><em>Last updated: 2026-11-12T10:41:34.839Z</em></p>
 <h3 id="affected-6">Affected</h3>
 <ul>
 <li>Apache OFBiz before 24.09.08</li>
 </ul>
 <h3 id="description-6">Description</h3>
-<p>Improper Control of Generation of Code (&lsquo;Code Injection&rsquo;) in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to execute arbitrary code on the server by staging crafted widget XML in a multipart upload and overriding the mainDecoratorLocation used by a manager login route through an anonymous JSON request, causing OFBiz to load the staged XML through its live screen descriptor mechanism and evaluate an unsandboxed Groovy expression while rendering the authentication-failure page. Further validation established the following:<br><br>&ndash; The exploit does not require a malformed or incomplete multipart body: a well-formed multipart request that is kept in flight and then allowed to complete normally is sufficient.<br><br>&ndash; The screen loader reads the widget XML from a live process file descriptor while the upload is streaming, rather than from any file the attacker persists to disk.<br><br>&ndash; The same underlying issue is also reachable through the public, explicitly unauthenticated /sfa/control/editPortalPageColumnWidth route, returning command output directly in an HTTP 200 response — it is not limited to the login-failure rendering path used in the original report.<br><br>Users are recommended to upgrade to version 24.09.08, which fixes this issue.</p>
+<p>Improper Control of Generation of Code (&lsquo;Code Injection&rsquo;) in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to execute arbitrary code on the server by staging crafted widget XML in a multipart upload and overriding the mainDecoratorLocation used by a manager login route through an anonymous JSON request, causing OFBiz to load the staged XML through its live screen descriptor mechanism and evaluate an unsandboxed Groovy expression while rendering the authentication-failure page. Further validation established the following:<br><br>&ndash; The exploit does not require a malformed or incomplete multipart body: a well-formed multipart request that is kept in flight and then allowed to complete normally is sufficient.<br><br>&ndash; The screen loader reads the widget XML from a live process file descriptor while the upload is streaming, rather than from any file the attacker persists to disk.<br><br>&ndash; The same underlying issue is also reachable through the public, explicitly unauthenticated /sfa/control/editPortalPageColumnWidth route, returning command output directly in an HTTP 200 response — it is not limited to the login-failure rendering path used in the original report.<br><div><br></div><div>The described vulnerability was discovered independantly twice, with each having a CVE assigned. See References.</div><div><br></div>Users are recommended to upgrade to version 24.09.08, which fixes this issue.</p>
 <h3 id="references-6">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz">https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz</a></li>
+<li><a href="https://app.opencve.io/cve/CVE-2026-68524">https://app.opencve.io/cve/CVE-2026-68524</a></li>
 </ul>
 <h3 id="credits-6">Credits</h3>
 <ul>
 <li>Jonah Burgess (CryptoCat) (reporter)</li>
 <li>Krishna Uprit (remediation developer)</li>
 <li>David Crees, Abstract Shield (reporter)</li>
+<li>Naoya Takahashi (nakko) (reporter)</li>
 </ul>
 <h2 id="CVE-2026-83538">Unauthenticated disclosure through HR, Catalog, and Order Manager helpers</h2>
 <p>CVE-2026-83538 <a href="https://cve.org/CVERecord?id=CVE-2026-83538">[CVE]</a> <a href="./CVE-2026-83538.cve.json">[CVE json]</a> <a href="./CVE-2026-83538.osv.json">[OSV json]</a></p>
@@ -648,20 +650,24 @@ recommended to upgrade to version 24.09.08, which fixes this issue.<span></span>
 </ul>
 <h2 id="CVE-2026-68524">Pre-Authentication Remote Code Execution via Attacker-Controlled Screen Definition Loading</h2>
 <p>CVE-2026-68524 <a href="https://cve.org/CVERecord?id=CVE-2026-68524">[CVE]</a> <a href="./CVE-2026-68524.cve.json">[CVE json]</a> <a href="./CVE-2026-68524.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-11-05T14:11:31.898Z</em></p>
+<p><em>Last updated: 2026-11-12T10:41:06.398Z</em></p>
 <h3 id="affected-29">Affected</h3>
 <ul>
 <li>Apache OFBiz before 24.09.08</li>
 </ul>
 <h3 id="description-29">Description</h3>
-<p>An unauthenticated attacker can exploit temporary-file handling, access an open file descriptor, and inject a "file:" URI to cause OFBiz to load an attacker-controlled Screen definition.</p><p>This issue affects Apache OFBiz: before 24.09.08.</p><p>Users are recommended to upgrade to version 24.09.08, which fixes the issue.</p>
+<p>An unauthenticated attacker can exploit temporary-file handling, access an open file descriptor, and inject a "file:" URI to cause OFBiz to load an attacker-controlled Screen definition.</p><p>The described vulnerability was discovered independantly twice, with each having a CVE assigned. See References.</p><p>This issue affects Apache OFBiz: before 24.09.08.</p><p>Users are recommended to upgrade to version 24.09.08, which fixes the issue.</p>
 <h3 id="references-29">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz">https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz</a></li>
+<li><a href="https://app.opencve.io/cve/CVE-2026-83542">https://app.opencve.io/cve/CVE-2026-83542</a></li>
 </ul>
 <h3 id="credits-29">Credits</h3>
 <ul>
 <li>Naoya Takahashi (nakko) (reporter)</li>
+<li>Jonah Burgess (CryptoCat) (reporter)</li>
+<li>Krishna Uprit (remediation developer)</li>
+<li>David Crees, Abstract Shield (reporter)</li>
 </ul>
 <h2 id="CVE-2026-66903">Authenticated Path Traversal in Catalog Image Management</h2>
 <p>CVE-2026-66903 <a href="https://cve.org/CVERecord?id=CVE-2026-66903">[CVE]</a> <a href="./CVE-2026-66903.cve.json">[CVE json]</a> <a href="./CVE-2026-66903.osv.json">[OSV json]</a></p>

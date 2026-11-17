@@ -416,89 +416,108 @@
 <ul>
 <li><a href="https://lists.apache.org/thread/p826j0phhmr9f83wzpmys1y0bdfrr2q4">https://lists.apache.org/thread/p826j0phhmr9f83wzpmys1y0bdfrr2q4</a></li>
 </ul>
+<h2 id="CVE-2026-115690">Replay protection bypassed by concurrent copies of a message</h2>
+<p>CVE-2026-115690 <a href="https://cve.org/CVERecord?id=CVE-2026-115690">[CVE]</a> <a href="./CVE-2026-115690.cve.json">[CVE json]</a> <a href="./CVE-2026-115690.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-11-16T09:54:19.245Z</em></p>
+<h3 id="affected-18">Affected</h3>
+<ul>
+<li>Apache WSS4J from 4.0.0 before 4.0.3</li>
+<li>Apache WSS4J from 3.0.0 before 3.0.7</li>
+<li>Apache WSS4J before 2.4.5</li>
+</ul>
+<h3 id="description-18">Description</h3>
+<p>Apache WSS4J remembers the UsernameToken Nonce, the Timestamp and signature of a signed message, and the ID of a SAML 2.0 &ldquo;OneTimeUse&rdquo; assertion, so that a captured message cannot be accepted twice. It checked whether a value had already been seen, validated the message, and only then remembered the value, as two separate steps. If several copies of the same message were processed at the same time, they could all pass the check before any of them was remembered, and all be accepted. An attacker who obtained a valid message before the recipient first processed it could send several copies at once, so that the same authenticated request was executed more than once. Where a UsernameToken is not bound to the message by a signature, the copies could carry different message bodies. The attacker needs to obtain the message while it is still in transit; a message captured after it has been accepted cannot be replayed. Affects deployments with a replay cache configured, as Apache CXF has by default. The value is now checked and remembered in a single atomic step. Custom ReplayCache implementations should override the new ReplayCache.addIfAbsent method with an operation that is atomic in their underlying store. Users are recommended to upgrade to versions 4.0.3 or 3.0.7 or 2.4.5, which fix this issue.</p>
+<h3 id="references-18">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/y2gb5of7tbh08zqv8rlh8212720f6tcy">https://lists.apache.org/thread.html/y2gb5of7tbh08zqv8rlh8212720f6tcy</a></li>
+</ul>
+<h3 id="credits-14">Credits</h3>
+<ul>
+<li>This issue was reported independently by Wanxin Yin (MegaVector / yaklang.io) and hataehoon (GitHub: @dpfkdlemtp). (finder)</li>
+</ul>
 <h2 id="CVE-2026-102497">Denial of service through cyclic schema definitions in the schema walker</h2>
 <p>CVE-2026-102497 <a href="https://cve.org/CVERecord?id=CVE-2026-102497">[CVE]</a> <a href="./CVE-2026-102497.cve.json">[CVE json]</a> <a href="./CVE-2026-102497.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-09-29T11:34:15.228Z</em></p>
-<h3 id="affected-18">Affected</h3>
+<h3 id="affected-19">Affected</h3>
 <ul>
 <li>Apache XMLSchema before 2.3.3</li>
 </ul>
-<h3 id="description-18">Description</h3>
+<h3 id="description-19">Description</h3>
 <p>The Apache XmlSchema walker (xmlschema-walker) doesn't detect cycles in type derivation, substitution groups, model groups or attribute groups. A malicious schema with such a cycle can make the walker recurse until the stack overflows, causing a denial of service.<br><br>Users are recommended to upgrade to version 2.3.3, which fixes this issue.</p>
-<h3 id="references-18">References</h3>
+<h3 id="references-19">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/1cj02tobjyhjqq723bvg78yxkqt1lk7k">https://lists.apache.org/thread/1cj02tobjyhjqq723bvg78yxkqt1lk7k</a></li>
 </ul>
-<h3 id="credits-14">Credits</h3>
+<h3 id="credits-15">Credits</h3>
 <ul>
 <li>This issue was found using Claude agents to study the security of open-source projects (finder)</li>
 </ul>
 <h2 id="CVE-2026-102496">Denial of service through deeply nested schema structures</h2>
 <p>CVE-2026-102496 <a href="https://cve.org/CVERecord?id=CVE-2026-102496">[CVE]</a> <a href="./CVE-2026-102496.cve.json">[CVE json]</a> <a href="./CVE-2026-102496.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-09-29T11:34:02.943Z</em></p>
-<h3 id="affected-19">Affected</h3>
+<h3 id="affected-20">Affected</h3>
 <ul>
 <li>Apache XMLSchema before 2.3.3</li>
 </ul>
-<h3 id="description-19">Description</h3>
+<h3 id="description-20">Description</h3>
 <p>Apache XmlSchema doesn&rsquo;t limit how deeply schema structures can be nested when it builds its schema model, so a malicious schema can make parsing recurse until the stack overflows. This causes a denial of service.<br>Users are recommended to upgrade to version 2.3.3, which fixes this issue.</p>
-<h3 id="references-19">References</h3>
+<h3 id="references-20">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/9z1vg8wmvwpfw748fb2nb55w4hgbnxol">https://lists.apache.org/thread/9z1vg8wmvwpfw748fb2nb55w4hgbnxol</a></li>
 </ul>
-<h3 id="credits-15">Credits</h3>
+<h3 id="credits-16">Credits</h3>
 <ul>
 <li>This issue was found using Claude agents to study the security of open-source projects (finder)</li>
 </ul>
 <h2 id="CVE-2026-102495">Denial of service through unbounded recursion when resolving schema imports and includes</h2>
 <p>CVE-2026-102495 <a href="https://cve.org/CVERecord?id=CVE-2026-102495">[CVE]</a> <a href="./CVE-2026-102495.cve.json">[CVE json]</a> <a href="./CVE-2026-102495.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-09-29T11:33:50.143Z</em></p>
-<h3 id="affected-20">Affected</h3>
+<h3 id="affected-21">Affected</h3>
 <ul>
 <li>Apache XMLSchema before 2.3.3</li>
 </ul>
-<h3 id="description-20">Description</h3>
+<h3 id="description-21">Description</h3>
 <p>Apache XmlSchema doesn&rsquo;t limit how deeply schema imports and includes can be nested, so a malicious schema can make parsing recurse until the stack overflows. This causes a denial of service.<br>Users are recommended to upgrade to version 2.3.3, which fixes this issue.</p>
-<h3 id="references-20">References</h3>
+<h3 id="references-21">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/l339q3oldm0cd2lph4b6f93fd07x9g6s">https://lists.apache.org/thread/l339q3oldm0cd2lph4b6f93fd07x9g6s</a></li>
 </ul>
-<h3 id="credits-16">Credits</h3>
+<h3 id="credits-17">Credits</h3>
 <ul>
 <li>This issue was found using Claude agents to study the security of open-source projects (finder)</li>
 </ul>
 <h2 id="CVE-2022-45378">Apache SOAP allows unauthenticated users to potentially invoke arbitrary code</h2>
 <p>CVE-2022-45378 <a href="https://cve.org/CVERecord?id=CVE-2022-45378">[CVE]</a> <a href="./CVE-2022-45378.cve.json">[CVE json]</a></p>
 <p><em>Last updated: 2022-11-14T14:06:51.577Z</em></p>
-<h3 id="affected-21">Affected</h3>
+<h3 id="affected-22">Affected</h3>
 <ul>
 <li>Apache SOAP at 2.3</li>
 <li>Apache SOAP from Apache SOAP before 2.3 unknown</li>
 </ul>
-<h3 id="description-21">Description</h3>
+<h3 id="description-22">Description</h3>
 <p>In the default configuration of Apache SOAP, an RPCRouterServlet is available without authentication. This gives an attacker the possibility to invoke methods on the classpath that meet certain criteria. Depending on what classes are available on the classpath this might even lead to arbitrary remote code execution. NOTE: This vulnerability only affects products that are no longer supported by the maintainer</p>
-<h3 id="references-21">References</h3>
+<h3 id="references-22">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/g4l64s283njhnph2otx7q4gs2j952d31">https://lists.apache.org/thread/g4l64s283njhnph2otx7q4gs2j952d31</a></li>
 </ul>
-<h3 id="credits-17">Credits</h3>
+<h3 id="credits-18">Credits</h3>
 <ul>
 <li>Apache would like to thank TsungShu Chiu (CHT Security) for reporting this issue</li>
 </ul>
 <h2 id="CVE-2022-40705">Apache SOAP: XML External Entity Injection (XXE) allows unauthenticated users to read arbitrary files via HTTP</h2>
 <p>CVE-2022-40705 <a href="https://cve.org/CVERecord?id=CVE-2022-40705">[CVE]</a> <a href="./CVE-2022-40705.cve.json">[CVE json]</a> <a href="./CVE-2022-40705.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2022-09-22T08:11:36.490Z</em></p>
-<h3 id="affected-22">Affected</h3>
+<h3 id="affected-23">Affected</h3>
 <ul>
 <li>Apache SOAP from 2.2 before Apache SOAP*</li>
 </ul>
-<h3 id="description-22">Description</h3>
+<h3 id="description-23">Description</h3>
 <p>An Improper Restriction of XML External Entity Reference vulnerability in RPCRouterServlet of Apache SOAP allows an attacker to read arbitrary files over HTTP. This issue affects Apache SOAP version 2.2 and later versions. It is unknown whether previous versions are also affected.  NOTE: This vulnerability only affects products that are no longer supported by the maintainer</p>
-<h3 id="references-22">References</h3>
+<h3 id="references-23">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/02yo04w93rdjmllz4454lvodn5xzhwhl">https://lists.apache.org/thread/02yo04w93rdjmllz4454lvodn5xzhwhl</a></li>
 </ul>
-<h3 id="credits-18">Credits</h3>
+<h3 id="credits-19">Credits</h3>
 <ul>
 <li>Apache would like to thank TsungShu Chiu (CHT Security) for reporting this issue</li>
 </ul>
