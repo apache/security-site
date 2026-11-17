@@ -109,475 +109,22 @@
 </ul>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2026-94276">Openid-connect introspection validation issue</h2>
-<p>CVE-2026-94276 <a href="https://cve.org/CVERecord?id=CVE-2026-94276">[CVE]</a> <a href="./CVE-2026-94276.cve.json">[CVE json]</a> <a href="./CVE-2026-94276.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-10-01T11:02:40.499Z</em></p>
-<h3 id="affected">Affected</h3>
-<ul>
-<li>Apache APISIX from 3.12.0 through 3.18.0</li>
-</ul>
-<h3 id="description">Description</h3>
-<p>Improper Authentication vulnerability in Apache APISIX.</p>On a route using openid-connect plugin with remote introspection against an authorization server that serves multiple issuers, a token that introspects as active for one issuer may get<span>&nbsp;accepted on a route restricted to another.&nbsp;</span><span>This issue affects Apache APISIX: from 3.12.0 through 3.18.0.</span><p>Users are recommended to upgrade to version 3.19.0, which fixes the issue.</p>
-<h3 id="references">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread.html/txn3br25kl657fh15rwcy1oht1xbpyyk">https://lists.apache.org/thread.html/txn3br25kl657fh15rwcy1oht1xbpyyk</a></li>
-</ul>
-<h3 id="credits">Credits</h3>
-<ul>
-<li>sec-reex (reporter)</li>
-<li>shreemaan-abhishek (coordinator)</li>
-<li>shreemaan-abhishek (remediation developer)</li>
-</ul>
-<h2 id="CVE-2026-94269">Servlet-style normalization creates a route/upstream authorization mismatch</h2>
-<p>CVE-2026-94269 <a href="https://cve.org/CVERecord?id=CVE-2026-94269">[CVE]</a> <a href="./CVE-2026-94269.cve.json">[CVE json]</a> <a href="./CVE-2026-94269.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-10-01T11:02:19.076Z</em></p>
-<h3 id="affected-1">Affected</h3>
-<ul>
-<li>Apache APISIX from 2.14.1 through 3.18.0</li>
-</ul>
-<h3 id="description-1">Description</h3>
-<p>Use of Non-Canonical URL paths for authorization decisions vulnerability in Apache APISIX.</p><p>In some configurations where a permissive route overlaps a protected one, a crafted encoded path can reach an upstream endpoint that the matched route's policies were never meant to cover. A&nbsp;request that should have been rejected is served instead, giving unauthenticated access to a protected upstream endpoint. This issue affects Apache APISIX: from 2.14.1 through 3.18.0.</p><p>Users are recommended to upgrade to version 3.19.0, which fixes the issue.</p>
-<h3 id="references-1">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread.html/6p7glm8jtkjrn12t7z2ybn6bplm22tns">https://lists.apache.org/thread.html/6p7glm8jtkjrn12t7z2ybn6bplm22tns</a></li>
-</ul>
-<h3 id="credits-1">Credits</h3>
-<ul>
-<li>Ziyue (reporter)</li>
-<li>shreemaan-abhishek (coordinator)</li>
-<li>shreemaan-abhishek (remediation developer)</li>
-</ul>
-<h2 id="CVE-2026-94250">Batch response aggregation can exhaust worker memory</h2>
-<p>CVE-2026-94250 <a href="https://cve.org/CVERecord?id=CVE-2026-94250">[CVE]</a> <a href="./CVE-2026-94250.cve.json">[CVE json]</a> <a href="./CVE-2026-94250.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-10-01T11:01:40.297Z</em></p>
-<h3 id="affected-2">Affected</h3>
-<ul>
-<li>Apache APISIX from 1.3.0 through 3.18.0</li>
-</ul>
-<h3 id="description-2">Description</h3>
-<p>Allocation of resources without limits or throttling vulnerability in batch-requests plugin in Apache APISIX.</p><p>An unauthenticated caller can drive a gateway worker into OOM via a route where the batch-requests plugin is used and the&nbsp;batch endpoint is publicly exposed. This issue affects Apache APISIX: from 1.3.0 through 3.18.0.</p><p>Users are recommended to upgrade to version 3.19.0, which fixes the issue.</p>
-<h3 id="references-2">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread.html/l7o9w8pw3w3f12vf9ybm7xtfzoo6qct4">https://lists.apache.org/thread.html/l7o9w8pw3w3f12vf9ybm7xtfzoo6qct4</a></li>
-</ul>
-<h3 id="credits-2">Credits</h3>
-<ul>
-<li>Ziyue (reporter)</li>
-<li>shreemaan-abhishek (remediation developer)</li>
-<li>shreemaan-abhishek (coordinator)</li>
-</ul>
-<h2 id="CVE-2026-94220">session fixation issue in feishu-auth and dingtalk-auth plugin</h2>
-<p>CVE-2026-94220 <a href="https://cve.org/CVERecord?id=CVE-2026-94220">[CVE]</a> <a href="./CVE-2026-94220.cve.json">[CVE json]</a> <a href="./CVE-2026-94220.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-10-01T11:01:25.519Z</em></p>
-<h3 id="affected-3">Affected</h3>
-<ul>
-<li>Apache APISIX from 3.17.0 through 3.18.0</li>
-</ul>
-<h3 id="description-3">Description</h3>
-<p>Cross-Site request forgery (CSRF) vulnerability in feishu-auth and dingtalk-auth plugins in Apache APISIX.</p><p>An attacker who can get a user to click a crafted link may cause that user's browser session on a protected route to be established under the attacker's identity instead of their own. Any work the user then performs in that session, including uploads, form submissions, and account bindings, lands in the attacker's account.&nbsp;This issue affects Apache APISIX: from 3.17.0 through 3.18.0.</p><p>Users are recommended to upgrade to version 3.19.0, which fixes the issue.</p>
-<h3 id="references-3">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread.html/bf5q45ddyr2hf3hxkt56dzjlttgpdg78">https://lists.apache.org/thread.html/bf5q45ddyr2hf3hxkt56dzjlttgpdg78</a></li>
-</ul>
-<h3 id="credits-3">Credits</h3>
-<ul>
-<li>MopMonk-AI (reporter)</li>
-<li>shreemaan-abhishek (coordinator)</li>
-<li>shreemaan-abhishek (remediation developer)</li>
-</ul>
-<h2 id="CVE-2026-94212">unauthenticated impersonation issue in saml-auth</h2>
-<p>CVE-2026-94212 <a href="https://cve.org/CVERecord?id=CVE-2026-94212">[CVE]</a> <a href="./CVE-2026-94212.cve.json">[CVE json]</a> <a href="./CVE-2026-94212.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-10-01T11:01:10.730Z</em></p>
-<h3 id="affected-4">Affected</h3>
-<ul>
-<li>Apache APISIX from 3.17.0 through 3.18.0</li>
-</ul>
-<h3 id="description-4">Description</h3>
-<p>Improper verification of cryptographic signature vulnerability in Apache APISIX.</p><p><span>Any unauthenticated attacker could impersonate any user on every route protected by the </span><span>saml</span><span>-auth plugin under default configuration.&nbsp;</span>This issue affects Apache APISIX: from 3.17.0 through 3.18.0.</p><p>Users are recommended to upgrade to version 3.19.0, which fixes the issue.</p>
-<h3 id="references-4">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread.html/1230fnojnmc7bfz3n0nkt7tkcld9d1sc">https://lists.apache.org/thread.html/1230fnojnmc7bfz3n0nkt7tkcld9d1sc</a></li>
-</ul>
-<h3 id="credits-4">Credits</h3>
-<ul>
-<li>LucasFutures (reporter)</li>
-<li>shreemaan-abhishek (coordinator)</li>
-<li>shreemaan-abhishek (remediation developer)</li>
-</ul>
-<h2 id="CVE-2026-82806">cross-request permission pollution via static permission list mutation</h2>
-<p>CVE-2026-82806 <a href="https://cve.org/CVERecord?id=CVE-2026-82806">[CVE]</a> <a href="./CVE-2026-82806.cve.json">[CVE json]</a> <a href="./CVE-2026-82806.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-10-01T10:58:31.207Z</em></p>
-<h3 id="affected-5">Affected</h3>
-<ul>
-<li>Apache APISIX from 2.3.0 before 3.7.0</li>
-</ul>
-<h3 id="description-5">Description</h3>
-<p>Exposure of data element to wrong session vulnerability in Apache APISIX.</p><p>This issue affects Apache APISIX: from 2.3.0 before 3.7.0.</p><p>Under a supported authz-keycloak configuration, a request's authorization scope could persist into later requests on the same route, leading to unintended authorization expansion and inconsistent access-control decisions.</p><p>Users are recommended to upgrade to version 3.7.0 or higher, which fixes the issue.</p>
-<h3 id="references-5">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread.html/wvkv2b4oy2fh9v79d30gtsy0bhqmzcdd">https://lists.apache.org/thread.html/wvkv2b4oy2fh9v79d30gtsy0bhqmzcdd</a></li>
-</ul>
-<h3 id="credits-5">Credits</h3>
-<ul>
-<li>Lok (reporter)</li>
-</ul>
-<h2 id="CVE-2026-78242">data-mask may fail to redact request headers in logger output</h2>
-<p>CVE-2026-78242 <a href="https://cve.org/CVERecord?id=CVE-2026-78242">[CVE]</a> <a href="./CVE-2026-78242.cve.json">[CVE json]</a> <a href="./CVE-2026-78242.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-10-01T10:58:12.134Z</em></p>
-<h3 id="affected-6">Affected</h3>
-<ul>
-<li>Apache APISIX at 3.17.0</li>
-</ul>
-<h3 id="description-6">Description</h3>
-<p>Insertion of sensitive information into log file vulnerability in Apache APISIX.</p><p><span>This vulnerability can cause the unmasked header value to be written to the log sink under a certain response structure.&nbsp;</span></p><p><span>This issue affects Apache APISIX: 3.17.0.</span></p><p><span>Users are recommended to upgrade to version 3.18.0, which fixes the issue.</span></p>
-<h3 id="references-6">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread.html/qxzsyw1pbgxg4sqkc4t2g8h4w2q0mvsn">https://lists.apache.org/thread.html/qxzsyw1pbgxg4sqkc4t2g8h4w2q0mvsn</a></li>
-</ul>
-<h3 id="credits-6">Credits</h3>
-<ul>
-<li>Jonas Schültke (reporter)</li>
-</ul>
-<h2 id="CVE-2026-75020">ldap-auth plugin cross-subtree identity impersonation</h2>
-<p>CVE-2026-75020 <a href="https://cve.org/CVERecord?id=CVE-2026-75020">[CVE]</a> <a href="./CVE-2026-75020.cve.json">[CVE json]</a> <a href="./CVE-2026-75020.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-08-27T09:14:31.212Z</em></p>
-<h3 id="affected-7">Affected</h3>
-<ul>
-<li>Apache APISIX from 2.11.0 through 3.17.0</li>
-</ul>
-<h3 id="description-7">Description</h3>
-<p>Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection') vulnerability in Apache APISIX.</p>A caller who holds valid credentials for one entry in the LDAP directory can authenticate through APISIX as a consumer mapped to a different entry, one the plugin's configured scope was meant to keep out of reach.<br><p>This issue affects Apache APISIX: from 2.11.0 through 3.17.0.</p><p>Users are recommended to upgrade to version 3.18.0, which fixes the issue.</p>
-<h3 id="references-7">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/d4007wk6dbl9mxy5h05zxwn8fsg13bxt">https://lists.apache.org/thread/d4007wk6dbl9mxy5h05zxwn8fsg13bxt</a></li>
-</ul>
-<h3 id="credits-7">Credits</h3>
-<ul>
-<li>MopMonk AI (reporter)</li>
-</ul>
-<h2 id="CVE-2026-75005">Unauthenticated CPU-exhaustion DoS</h2>
-<p>CVE-2026-75005 <a href="https://cve.org/CVERecord?id=CVE-2026-75005">[CVE]</a> <a href="./CVE-2026-75005.cve.json">[CVE json]</a> <a href="./CVE-2026-75005.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-08-27T09:15:31.332Z</em></p>
-<h3 id="affected-8">Affected</h3>
-<ul>
-<li>Apache APISIX at 3.17.0</li>
-</ul>
-<h3 id="description-8">Description</h3>
-<p>Inefficient Algorithmic Complexity vulnerability in Apache APISIX.<br><br> A single small request can pin a gateway worker at 100% CPU for an extended period in graphql-limit-count routes.<br></p><p>This issue affects Apache APISIX: 3.17.0.</p><p>Users are recommended to upgrade to version 3.18.0, which fixes the issue.</p>
-<h3 id="references-8">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/wfs7c9l8sokrh9hzv84lno12nx2zxpjk">https://lists.apache.org/thread/wfs7c9l8sokrh9hzv84lno12nx2zxpjk</a></li>
-</ul>
-<h3 id="credits-8">Credits</h3>
-<ul>
-<li>Md. Amdadul Bari (reporter)</li>
-</ul>
-<h2 id="CVE-2026-74848">Cross-user response poisoning in serverless plugins</h2>
-<p>CVE-2026-74848 <a href="https://cve.org/CVERecord?id=CVE-2026-74848">[CVE]</a> <a href="./CVE-2026-74848.cve.json">[CVE json]</a> <a href="./CVE-2026-74848.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-08-27T09:16:06.269Z</em></p>
-<h3 id="affected-9">Affected</h3>
-<ul>
-<li>Apache APISIX from 2.12.0 through 3.17.0</li>
-</ul>
-<h3 id="description-9">Description</h3>
-<p>Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling') vulnerability in Apache APISIX.<br><br>An attacker could make other clients receive attacker-chosen or other users' responses on serverless-plugin routes.<br></p><p>This issue affects Apache APISIX: from 2.12.0 through 3.17.0.</p><p>Users are recommended to upgrade to version 3.18.0, which fixes the issue.</p>
-<h3 id="references-9">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/xdgpszmw8dw4wvmfxy043d83m150kx3n">https://lists.apache.org/thread/xdgpszmw8dw4wvmfxy043d83m150kx3n</a></li>
-</ul>
-<h3 id="credits-9">Credits</h3>
-<ul>
-<li>Xclow3n (Rajat Raghav) (reporter)</li>
-</ul>
-<h2 id="CVE-2026-63041">attach-consumer-label does not strip client-supplied consumer-label headers</h2>
-<p>CVE-2026-63041 <a href="https://cve.org/CVERecord?id=CVE-2026-63041">[CVE]</a> <a href="./CVE-2026-63041.cve.json">[CVE json]</a> <a href="./CVE-2026-63041.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-08-26T11:34:58.193Z</em></p>
-<h3 id="affected-10">Affected</h3>
-<ul>
-<li>Apache APISIX from 3.11.0 through 3.17.0</li>
-</ul>
-<h3 id="description-10">Description</h3>
-<p>Reliance on Untrusted Inputs in a Security Decision vulnerability in Apache APISIX.</p>This vulnerability allows an attacker to escalate privilege or perform an authorization bypass by sending certain values that the attach-consumer-label plugin does not sanitise correctly.<br><p>This issue affects Apache APISIX: from 3.11.0 through 3.17.0.</p><p>Users are recommended to upgrade to version 3.18.0, which fixes the issue.</p>
-<h3 id="references-10">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/yg9tgn699rz7kyglw82m1775do8frjr4">https://lists.apache.org/thread/yg9tgn699rz7kyglw82m1775do8frjr4</a></li>
-</ul>
-<h3 id="credits-10">Credits</h3>
-<ul>
-<li>tonghuaroot (reporter)</li>
-</ul>
-<h2 id="CVE-2026-49872">Improper authentication in cas-auth plugin</h2>
-<p>CVE-2026-49872 <a href="https://cve.org/CVERecord?id=CVE-2026-49872">[CVE]</a> <a href="./CVE-2026-49872.cve.json">[CVE json]</a> <a href="./CVE-2026-49872.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-19T13:19:29.418Z</em></p>
-<h3 id="affected-11">Affected</h3>
-<ul>
-<li>Apache APISIX from 3.0.0 through 3.16.0</li>
-</ul>
-<h3 id="description-11">Description</h3>
-<p>Improper Authentication vulnerability in Apache APISIX.</p>When the cas-auth plugin is used in a route, an attacker can possibly authenticate itself with credentials from a different source.<br><p>This issue affects Apache APISIX: from 3.0.0 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
-<h3 id="references-11">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/bzjpo60ygxo7kxdqf7vw3l5zw2lh6m5k">https://lists.apache.org/thread/bzjpo60ygxo7kxdqf7vw3l5zw2lh6m5k</a></li>
-</ul>
-<h3 id="credits-11">Credits</h3>
-<ul>
-<li>lokerxxx (reporter)</li>
-</ul>
-<h2 id="CVE-2026-49871">cas-auth login CSRF / session injection issue</h2>
-<p>CVE-2026-49871 <a href="https://cve.org/CVERecord?id=CVE-2026-49871">[CVE]</a> <a href="./CVE-2026-49871.cve.json">[CVE json]</a> <a href="./CVE-2026-49871.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-19T13:18:27.333Z</em></p>
-<h3 id="affected-12">Affected</h3>
-<ul>
-<li>Apache APISIX from 3.0.0 through 3.16.0</li>
-</ul>
-<h3 id="description-12">Description</h3>
-<p>Cross-Site Request Forgery (CSRF) vulnerability in the cas-auth plugin under default configurations.</p><p><span style="background-color: rgb(255, 255, 255);">This defect allows a</span><span style="background-color: rgb(255, 255, 255);">&nbsp;</span><span style="background-color: rgb(255, 255, 255);">remote attacker that manages to send a victim to a webpage controlled by them can cause the victim's browser to become authenticated as a different identity</span><span style="background-color: rgb(255, 255, 255);">.</span></p><p><span style="background-color: rgb(255, 255, 255);">Actions the victim takes upstream are then attributed to attackers identity.</span><br></p><p>This issue affects Apache APISIX: from 3.0.0 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
-<h3 id="references-12">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/1ozsnss0lof4gpwq763d66oxwxt3sycp">https://lists.apache.org/thread/1ozsnss0lof4gpwq763d66oxwxt3sycp</a></li>
-</ul>
-<h3 id="credits-12">Credits</h3>
-<ul>
-<li>lokerxxx (reporter)</li>
-</ul>
-<h2 id="CVE-2026-49231">Identity spoofing issue in APISIX opa plugin</h2>
-<p>CVE-2026-49231 <a href="https://cve.org/CVERecord?id=CVE-2026-49231">[CVE]</a> <a href="./CVE-2026-49231.cve.json">[CVE json]</a> <a href="./CVE-2026-49231.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-19T13:14:23.085Z</em></p>
-<h3 id="affected-13">Affected</h3>
-<ul>
-<li>Apache APISIX from 3.5.0 through 3.16.0</li>
-</ul>
-<h3 id="description-13">Description</h3>
-<p>Authentication Bypass by Spoofing vulnerability in opa plugin.</p>An attacker could relay spoofed identity headers to upstream capitalising on non-default configuration in opa plugin.<br><br>This could allow the attacker to assume higher privileges on the upstream service.<br><p>This issue affects Apache APISIX: from 3.5.0 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
-<h3 id="references-13">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/s1jd1vxm59p6ghx47xhmpjdk1cobo4hn">https://lists.apache.org/thread/s1jd1vxm59p6ghx47xhmpjdk1cobo4hn</a></li>
-</ul>
-<h3 id="credits-13">Credits</h3>
-<ul>
-<li>lokerxxx (reporter)</li>
-</ul>
-<h2 id="CVE-2026-49230">Authentication bypass in jwe-decrypt</h2>
-<p>CVE-2026-49230 <a href="https://cve.org/CVERecord?id=CVE-2026-49230">[CVE]</a> <a href="./CVE-2026-49230.cve.json">[CVE json]</a> <a href="./CVE-2026-49230.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-19T13:13:32.638Z</em></p>
-<h3 id="affected-14">Affected</h3>
-<ul>
-<li>Apache APISIX from 3.8.0 through 3.16.0</li>
-</ul>
-<h3 id="description-14">Description</h3>
-<p>Improper Validation of Integrity Check Value vulnerability in Apache APISIX.</p>The jwe-decrypt plugin under default configuration is vulnerable to authentication bypass.&nbsp;<br><p>This issue affects Apache APISIX: from 3.8.0 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
-<h3 id="references-14">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/n0blgkpvz38ghh5rrh6wtl476919xj1b">https://lists.apache.org/thread/n0blgkpvz38ghh5rrh6wtl476919xj1b</a></li>
-</ul>
-<h3 id="credits-14">Credits</h3>
-<ul>
-<li>lokerxxx (reporter)</li>
-</ul>
-<h2 id="CVE-2026-48895">Cas-auth Host header influence on CAS service URL</h2>
-<p>CVE-2026-48895 <a href="https://cve.org/CVERecord?id=CVE-2026-48895">[CVE]</a> <a href="./CVE-2026-48895.cve.json">[CVE json]</a> <a href="./CVE-2026-48895.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-19T13:16:18.311Z</em></p>
-<h3 id="affected-15">Affected</h3>
-<ul>
-<li>Apache APISIX from 3.0.0 through 3.16.0</li>
-</ul>
-<h3 id="description-15">Description</h3>
-<p>URL Redirection to Untrusted Site ('Open Redirect') vulnerability in Apache APISIX.</p><p>The attacker could manipulate some client headers to perform an open-redirect, to potentially expose the session token.</p><p>This issue affects Apache APISIX: from 3.0.0 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
-<h3 id="references-15">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/yo1kq93ds69zbgjjopop7dmzm7zhj1gq">https://lists.apache.org/thread/yo1kq93ds69zbgjjopop7dmzm7zhj1gq</a></li>
-</ul>
-<h3 id="credits-15">Credits</h3>
-<ul>
-<li>lokerxxx (reporter)</li>
-</ul>
-<h2 id="CVE-2026-47341">Session replay issue in hmac-auth</h2>
-<p>CVE-2026-47341 <a href="https://cve.org/CVERecord?id=CVE-2026-47341">[CVE]</a> <a href="./CVE-2026-47341.cve.json">[CVE json]</a> <a href="./CVE-2026-47341.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-19T13:17:16.260Z</em></p>
-<h3 id="affected-16">Affected</h3>
-<ul>
-<li>Apache APISIX from 3.11.0 through 3.16.0</li>
-</ul>
-<h3 id="description-16">Description</h3>
-<p>Authentication Bypass by Capture-replay vulnerability in Apache APISIX.</p>Attacker can benefit from certain configurations in hmac-auth to re-use a token forever, bypassing expiry.<br><p>This issue affects Apache APISIX: from 3.11.0 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
-<h3 id="references-16">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/ob6ng9x2hxtyfojs839hs1n0v18xxzf2">https://lists.apache.org/thread/ob6ng9x2hxtyfojs839hs1n0v18xxzf2</a></li>
-</ul>
-<h3 id="credits-16">Credits</h3>
-<ul>
-<li>leon (reporter)</li>
-</ul>
-<h2 id="CVE-2026-47339">authz-casdoor incorrect session sharing</h2>
-<p>CVE-2026-47339 <a href="https://cve.org/CVERecord?id=CVE-2026-47339">[CVE]</a> <a href="./CVE-2026-47339.cve.json">[CVE json]</a> <a href="./CVE-2026-47339.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-19T13:10:09.663Z</em></p>
-<h3 id="affected-17">Affected</h3>
-<ul>
-<li>Apache APISIX from 2.14.1 through 3.16.0</li>
-</ul>
-<h3 id="description-17">Description</h3>
-<p>Incorrect Authorization vulnerability in Apache APISIX.</p>An attacker can capitalise on authz-casdoor plugin under default configuration to authenticate themselves with credentials from a different source.<br><p>This issue affects Apache APISIX: from 2.14.1 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
-<h3 id="references-17">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/lk4q5o855cocc7zq5wh1zlctfmcq6f76">https://lists.apache.org/thread/lk4q5o855cocc7zq5wh1zlctfmcq6f76</a></li>
-</ul>
-<h3 id="credits-17">Credits</h3>
-<ul>
-<li>leon (reporter)</li>
-</ul>
-<h2 id="CVE-2026-44915">Cas-auth plugin open redirect via unsanitized cookie value</h2>
-<p>CVE-2026-44915 <a href="https://cve.org/CVERecord?id=CVE-2026-44915">[CVE]</a> <a href="./CVE-2026-44915.cve.json">[CVE json]</a> <a href="./CVE-2026-44915.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-19T13:12:20.566Z</em></p>
-<h3 id="affected-18">Affected</h3>
-<ul>
-<li>Apache APISIX from 3.0.0 through 3.16.0</li>
-</ul>
-<h3 id="description-18">Description</h3>
-<p>URL Redirection to Untrusted Site ('Open Redirect') vulnerability in Apache APISIX.</p><p>The default configuration of cas-auth in Apache APISIX is vulnerable to p<span style="background-color: rgb(255, 255, 255);">hishing and credential theft.</span></p><p>This issue affects Apache APISIX: from 3.0.0 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
-<h3 id="references-18">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/2syk2kkzjnpzrdh98plbzj8os7wn521c">https://lists.apache.org/thread/2syk2kkzjnpzrdh98plbzj8os7wn521c</a></li>
-</ul>
-<h3 id="credits-18">Credits</h3>
-<ul>
-<li>Qi Deng (reporter)</li>
-<li>lokerxxx (reporter)</li>
-</ul>
-<h2 id="CVE-2026-44087">Openid-connect plugin Identity Header Spoofing</h2>
-<p>CVE-2026-44087 <a href="https://cve.org/CVERecord?id=CVE-2026-44087">[CVE]</a> <a href="./CVE-2026-44087.cve.json">[CVE json]</a> <a href="./CVE-2026-44087.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-19T13:11:08.855Z</em></p>
-<h3 id="affected-19">Affected</h3>
-<ul>
-<li>Apache APISIX from 2.3 through 3.16.0</li>
-</ul>
-<h3 id="description-19">Description</h3>
-<p>Insufficient Verification of Data Authenticity vulnerability in Apache APISIX.</p>The openid-connect plugin under default configuration has an attack surface that allows the attacker to spoof identity headers allowing the attacker to get unauthorized access the protected resources.<br><p>This issue affects Apache APISIX: from 2.3 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
-<h3 id="references-19">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/72ryrgdssk6s2x9d6xn14bxyyl878xfm">https://lists.apache.org/thread/72ryrgdssk6s2x9d6xn14bxyyl878xfm</a></li>
-</ul>
-<h3 id="credits-19">Credits</h3>
-<ul>
-<li>Qi Deng (finder)</li>
-</ul>
-<h2 id="CVE-2026-44046">wolf-rbac plugin Identity Spoofing</h2>
-<p>CVE-2026-44046 <a href="https://cve.org/CVERecord?id=CVE-2026-44046">[CVE]</a> <a href="./CVE-2026-44046.cve.json">[CVE json]</a> <a href="./CVE-2026-44046.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-19T13:08:47.282Z</em></p>
-<h3 id="affected-20">Affected</h3>
-<ul>
-<li>Apache APISIX from 1.2.0 through 3.16.0</li>
-</ul>
-<h3 id="description-20">Description</h3>
-<p>Use of Less Trusted Source vulnerability in Apache APISIX.</p>Attacker can take advantage of wolf-rbac plugin under default configuration to potentially pollute logs with spoofed identity information and exploit IP based access control rules.<br><p>This issue affects Apache APISIX: from 1.2.0 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
-<h3 id="references-20">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/xkshmps51b24yw0qckl5h5ddyv0x6qf9">https://lists.apache.org/thread/xkshmps51b24yw0qckl5h5ddyv0x6qf9</a></li>
-</ul>
-<h3 id="credits-20">Credits</h3>
-<ul>
-<li>Qi Deng (reporter)</li>
-</ul>
-<h2 id="CVE-2026-39999">JWT Algorithm Confusion allows authentication bypass</h2>
-<p>CVE-2026-39999 <a href="https://cve.org/CVERecord?id=CVE-2026-39999">[CVE]</a> <a href="./CVE-2026-39999.cve.json">[CVE json]</a> <a href="./CVE-2026-39999.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-19T13:07:45.459Z</em></p>
-<h3 id="affected-21">Affected</h3>
-<ul>
-<li>Apache APISIX from 2.2 through 3.16.0</li>
-</ul>
-<h3 id="description-21">Description</h3>
-<p>Authentication Bypass by Spoofing vulnerability in Apache APISIX.</p>The attacker can completely bypass authentication capitalising on certain configurations of jwt-auth plugin.<br><p>This issue affects Apache APISIX: from v2.2 through v3.16.0.</p><p>Users are recommended to upgrade to version v3.17.0, which fixes the issue.</p>
-<h3 id="references-21">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/nfopt8cnxd3k0rs1oxtr7lzxrdw4mojq">https://lists.apache.org/thread/nfopt8cnxd3k0rs1oxtr7lzxrdw4mojq</a></li>
-</ul>
-<h3 id="credits-21">Credits</h3>
-<ul>
-<li>Marco Capuano (reporter)</li>
-</ul>
-<h2 id="CVE-2026-39998">Identity Injection via forward-auth Plugin Missing Header Cleanup</h2>
-<p>CVE-2026-39998 <a href="https://cve.org/CVERecord?id=CVE-2026-39998">[CVE]</a> <a href="./CVE-2026-39998.cve.json">[CVE json]</a> <a href="./CVE-2026-39998.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-06-19T13:05:07.084Z</em></p>
-<h3 id="affected-22">Affected</h3>
-<ul>
-<li>Apache APISIX from 2.12.0 through 3.16.0</li>
-</ul>
-<h3 id="description-22">Description</h3>
-<p>Improper Input Validation vulnerability in Apache APISIX.</p>The attacker can take advantage of certain configuration in forward-auth plugin to spoof identity headers.<br><p>This issue affects Apache APISIX: from 2.12.0 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
-<h3 id="references-22">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/vgkvy396010d7g6m0jrn4d3hjf2svlvv">https://lists.apache.org/thread/vgkvy396010d7g6m0jrn4d3hjf2svlvv</a></li>
-</ul>
-<h3 id="credits-22">Credits</h3>
-<ul>
-<li>Fernando Mecozzi (reporter)</li>
-</ul>
-<h2 id="CVE-2026-31924">Plugin tencent-cloud-cls log export uses plaintext HTTP</h2>
-<p>CVE-2026-31924 <a href="https://cve.org/CVERecord?id=CVE-2026-31924">[CVE]</a> <a href="./CVE-2026-31924.cve.json">[CVE json]</a> <a href="./CVE-2026-31924.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-04-14T08:08:04.772Z</em></p>
-<h3 id="affected-23">Affected</h3>
-<ul>
-<li>Apache APISIX from 2.99.0 through 3.15.0</li>
-</ul>
-<h3 id="description-23">Description</h3>
-<p>Cleartext Transmission of Sensitive Information vulnerability in Apache APISIX.</p>tencent-cloud-cls log export uses plaintext HTTP<br><p>This issue affects Apache APISIX: from 2.99.0 through 3.15.0.</p><p>Users are recommended to upgrade to version 3.16.0, which fixes the issue.</p>
-<h3 id="references-23">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/sqxjjlt87c1q28db28ztdxylm5pgwohq">https://lists.apache.org/thread/sqxjjlt87c1q28db28ztdxylm5pgwohq</a></li>
-</ul>
-<h3 id="credits-23">Credits</h3>
-<ul>
-<li>Oleh Konko (finder)</li>
-</ul>
-<h2 id="CVE-2026-31923">Openid-connect <code>tls_verify</code> field is disabled by default</h2>
-<p>CVE-2026-31923 <a href="https://cve.org/CVERecord?id=CVE-2026-31923">[CVE]</a> <a href="./CVE-2026-31923.cve.json">[CVE json]</a> <a href="./CVE-2026-31923.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-04-14T08:38:57.640Z</em></p>
-<h3 id="affected-24">Affected</h3>
-<ul>
-<li>Apache APISIX from 0.7 through 3.15.0</li>
-</ul>
-<h3 id="description-24">Description</h3>
-<p>Cleartext Transmission of Sensitive Information vulnerability in Apache APISIX.</p>This can occur due to `ssl_verify` in openid-connect plugin configuration being set to false by default.<br><p>This issue affects Apache APISIX: from 0.7 through 3.15.0.</p><p>Users are recommended to upgrade to version 3.16.0, which fixes the issue.</p>
-<h3 id="references-24">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/0pjs72l7qj83j3srw1l1toyj24bsgkds">https://lists.apache.org/thread/0pjs72l7qj83j3srw1l1toyj24bsgkds</a></li>
-</ul>
-<h3 id="credits-24">Credits</h3>
-<ul>
-<li>Oleh Konko (reporter)</li>
-</ul>
-<h2 id="CVE-2026-31908">forward auth plugin allows header injection</h2>
-<p>CVE-2026-31908 <a href="https://cve.org/CVERecord?id=CVE-2026-31908">[CVE]</a> <a href="./CVE-2026-31908.cve.json">[CVE json]</a> <a href="./CVE-2026-31908.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-04-14T08:06:15.933Z</em></p>
-<h3 id="affected-25">Affected</h3>
-<ul>
-<li>Apache APISIX from 2.12.0 through 3.15.0</li>
-</ul>
-<h3 id="description-25">Description</h3>
-<p>Header injection vulnerability in Apache APISIX.</p><span style="background-color: rgb(255, 255, 255);">The attacker can take advantage of certain configuration in forward-auth plugin to inject malicious headers.</span><br><p>This issue affects Apache APISIX: from 2.12.0 through 3.15.0.</p><p>Users are recommended to upgrade to version 3.16.0, which fixes the issue.</p>
-<h3 id="references-25">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread/sob643s5lztov7x579j8o0c444t36n6b">https://lists.apache.org/thread/sob643s5lztov7x579j8o0c444t36n6b</a></li>
-</ul>
-<h3 id="credits-25">Credits</h3>
-<ul>
-<li>SeungMyung Lee (reporter)</li>
-</ul>
 <h2 id="CVE-2026-124726">openapi-to-mcp tool call can reach an API path the document does not declare</h2>
 <p>CVE-2026-124726 <a href="https://cve.org/CVERecord?id=CVE-2026-124726">[CVE]</a> <a href="./CVE-2026-124726.cve.json">[CVE json]</a> <a href="./CVE-2026-124726.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-11-13T17:49:20.568Z</em></p>
-<h3 id="affected-26">Affected</h3>
+<h3 id="affected">Affected</h3>
 <ul>
 <li>Apache APISIX from 3.19.0 before 3.20.0</li>
 </ul>
-<h3 id="description-26">Description</h3>
+<h3 id="description">Description</h3>
 <p>Relative Path Traversal, with Unintended Proxy vulnerability in Apache APISIX.</p><p><span>A caller of the MCP endpoint can invoke endpoints the OpenAPI document
 never declared, under the declared tool's HTTP method, using the credentials the
 Route adds. </span>This issue affects Apache APISIX: from 3.19.0 before 3.20.0.</p><p>Users are recommended to upgrade to version 3.20.0, which fixes the issue.</p>
-<h3 id="references-26">References</h3>
+<h3 id="references">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/1kodokhflvr51sc1qv985om3s6mozybg">https://lists.apache.org/thread/1kodokhflvr51sc1qv985om3s6mozybg</a></li>
 </ul>
-<h3 id="credits-26">Credits</h3>
+<h3 id="credits">Credits</h3>
 <ul>
 <li>Javier García Herrera (reporter)</li>
 <li>shreemaan-abhishek (coordinator)</li>
@@ -586,20 +133,20 @@ Route adds. </span>This issue affects Apache APISIX: from 3.19.0 before 3.20.0.<
 <h2 id="CVE-2026-124723">unauthorized access to mTLS protected resources</h2>
 <p>CVE-2026-124723 <a href="https://cve.org/CVERecord?id=CVE-2026-124723">[CVE]</a> <a href="./CVE-2026-124723.cve.json">[CVE json]</a> <a href="./CVE-2026-124723.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-11-13T17:49:42.108Z</em></p>
-<h3 id="affected-27">Affected</h3>
+<h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache APISIX from 3.18.0 through 3.19.0</li>
 </ul>
-<h3 id="description-27">Description</h3>
+<h3 id="description-1">Description</h3>
 <p>Interpretation Conflict, leading to Incorrect Authorization vulnerability in Apache APISIX.</p><p><span>With match_uri_encoded_slash enabled and skip_mtls_uri_regex
 configured, a client without a certificate can reach an upstream
 behind a route that requires one, limited to request paths that decode
 to an exempted URI.&nbsp;</span>This issue affects Apache APISIX: from 3.18.0 through 3.19.0.</p><p>Users are recommended to upgrade to version 3.20.0, which fixes the issue.</p>
-<h3 id="references-27">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/0r8dv4ytw5mkhrozlg7mgb9h6z5y7hpn">https://lists.apache.org/thread/0r8dv4ytw5mkhrozlg7mgb9h6z5y7hpn</a></li>
 </ul>
-<h3 id="credits-27">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>hataehoon (reporter)</li>
 <li>shreemaan-abhishek (remediation developer)</li>
@@ -608,19 +155,19 @@ to an exempted URI.&nbsp;</span>This issue affects Apache APISIX: from 3.18.0 th
 <h2 id="CVE-2026-124719">identity spoofing in openapi-to-mcp</h2>
 <p>CVE-2026-124719 <a href="https://cve.org/CVERecord?id=CVE-2026-124719">[CVE]</a> <a href="./CVE-2026-124719.cve.json">[CVE json]</a> <a href="./CVE-2026-124719.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-11-13T17:50:11.480Z</em></p>
-<h3 id="affected-28">Affected</h3>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache APISIX from 3.19.0 before 3.20.0</li>
 </ul>
-<h3 id="description-28">Description</h3>
+<h3 id="description-2">Description</h3>
 <p>Authentication bypass by spoofing vulnerability in Apache APISIX.</p><p><span>When a Route's configured headers carry a caller identity and the OpenAPI document declares
 the same header, a caller can act as another identity against the
 upstream API.&nbsp;</span>This issue affects Apache APISIX: from 3.19.0 before 3.20.0.</p><p>Users are recommended to upgrade to version 3.20.0, which fixes the issue.</p>
-<h3 id="references-28">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/k7v3vfh09mr1spk4r5k8n1gsjrhk6d8x">https://lists.apache.org/thread/k7v3vfh09mr1spk4r5k8n1gsjrhk6d8x</a></li>
 </ul>
-<h3 id="credits-28">Credits</h3>
+<h3 id="credits-2">Credits</h3>
 <ul>
 <li>Kai (GitHub: ha2fde) (reporter)</li>
 <li>shreemaan-abhishek (coordinator)</li>
@@ -628,17 +175,17 @@ upstream API.&nbsp;</span>This issue affects Apache APISIX: from 3.19.0 before 3
 <h2 id="CVE-2026-124716">authz-keycloak authorization scope mismatch</h2>
 <p>CVE-2026-124716 <a href="https://cve.org/CVERecord?id=CVE-2026-124716">[CVE]</a> <a href="./CVE-2026-124716.cve.json">[CVE json]</a> <a href="./CVE-2026-124716.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-11-13T17:52:42.285Z</em></p>
-<h3 id="affected-29">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache APISIX from 1.4.0 through 3.19.0</li>
 </ul>
-<h3 id="description-29">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>Incorrect Authorization vulnerability in Apache APISIX.</p><p>An authenticated user who holds any one of a route's required permissions or scopes can reach the protected upstream without the others, including HTTP methods the authorization server denied.</p><p>This issue affects Apache APISIX: from 1.4.0 through 3.19.0.</p><p>Users are recommended to upgrade to version 3.20.0, which fixes the issue.</p>
-<h3 id="references-29">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/5kyz1fdbgx9to7lj654wqf72yhzy2po7">https://lists.apache.org/thread/5kyz1fdbgx9to7lj654wqf72yhzy2po7</a></li>
 </ul>
-<h3 id="credits-29">Credits</h3>
+<h3 id="credits-3">Credits</h3>
 <ul>
 <li>Erjey (Independent Security Researcher) (reporter)</li>
 <li>shreemaan-abhishek (coordinator)</li>
@@ -647,19 +194,19 @@ upstream API.&nbsp;</span>This issue affects Apache APISIX: from 3.19.0 before 3
 <h2 id="CVE-2026-124680">Route-level authentication bypass via path normalization mismatch between routing and upstream forwarding</h2>
 <p>CVE-2026-124680 <a href="https://cve.org/CVERecord?id=CVE-2026-124680">[CVE]</a> <a href="./CVE-2026-124680.cve.json">[CVE json]</a> <a href="./CVE-2026-124680.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-11-13T17:51:27.131Z</em></p>
-<h3 id="affected-30">Affected</h3>
+<h3 id="affected-4">Affected</h3>
 <ul>
 <li>Apache APISIX from 0.9 through 3.19.0</li>
 </ul>
-<h3 id="description-30">Description</h3>
+<h3 id="description-4">Description</h3>
 <p>Interpretation Conflict, resulting in (Incorrect Authorization) vulnerability in Apache APISIX.</p><p>An unauthenticated client can reach upstream paths protected
 by a route-level auth plugin when a route without auth exists on the
 same upstream and the upstream does not collapse encoded dot segments.</p><p>This issue affects Apache APISIX: from 0.9 through 3.19.0.</p><p>Users are recommended to upgrade to version 3.20.0, which fixes the issue.</p>
-<h3 id="references-30">References</h3>
+<h3 id="references-4">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/tsr691p4s58572og5f88p831vygbflvz">https://lists.apache.org/thread/tsr691p4s58572og5f88p831vygbflvz</a></li>
 </ul>
-<h3 id="credits-30">Credits</h3>
+<h3 id="credits-4">Credits</h3>
 <ul>
 <li>Uttej Badwane (reporter)</li>
 <li>shreemaan-abhishek (coordinator)</li>
@@ -668,20 +215,20 @@ same upstream and the upstream does not collapse encoded dot segments.</p><p>Thi
 <h2 id="CVE-2026-124679">jwe-decrypt and forward-auth may pass a client-supplied identity header</h2>
 <p>CVE-2026-124679 <a href="https://cve.org/CVERecord?id=CVE-2026-124679">[CVE]</a> <a href="./CVE-2026-124679.cve.json">[CVE json]</a> <a href="./CVE-2026-124679.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-11-13T17:53:05.876Z</em></p>
-<h3 id="affected-31">Affected</h3>
+<h3 id="affected-5">Affected</h3>
 <ul>
 <li>Apache APISIX from 3.18.0 through 3.19.0</li>
 </ul>
-<h3 id="description-31">Description</h3>
+<h3 id="description-5">Description</h3>
 <p>Authentication bypass by spoofing vulnerability in Apache APISIX.</p><p><span>On routes using jwe-decrypt with strict: false and a
 forward_header distinct from the token header an unauthenticated
 client can supply the value the upstream treats as gateway-decrypted
 plaintext. Similar can happen when&nbsp;</span><span>forward-auth is configured with allow_degradation: true, and the auth service is unavailable.</span></p><p><span>This issue affects Apache APISIX: from 3.18.0 through 3.19.0.</span></p><p>Users are recommended to upgrade to version 3.20.0, which fixes the issue.</p>
-<h3 id="references-31">References</h3>
+<h3 id="references-5">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/jmktj1o0rrxf1rdbptk0j3c4h0vdws96">https://lists.apache.org/thread/jmktj1o0rrxf1rdbptk0j3c4h0vdws96</a></li>
 </ul>
-<h3 id="credits-31">Credits</h3>
+<h3 id="credits-5">Credits</h3>
 <ul>
 <li>Siyang Wu (reporter)</li>
 <li>shreemaan-abhishek (coordinator)</li>
@@ -690,21 +237,474 @@ plaintext. Similar can happen when&nbsp;</span><span>forward-auth is configured 
 <h2 id="CVE-2026-124666">Multi-auth preserves client-supplied Wolf identity headers</h2>
 <p>CVE-2026-124666 <a href="https://cve.org/CVERecord?id=CVE-2026-124666">[CVE]</a> <a href="./CVE-2026-124666.cve.json">[CVE json]</a> <a href="./CVE-2026-124666.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-11-13T17:52:08.831Z</em></p>
-<h3 id="affected-32">Affected</h3>
+<h3 id="affected-6">Affected</h3>
 <ul>
 <li>Apache APISIX from 3.8.0 through 3.19.0</li>
 </ul>
-<h3 id="description-32">Description</h3>
+<h3 id="description-6">Description</h3>
 <p>Authentication bypass by spoofing vulnerability in Apache APISIX.</p><p>On a route where multi-auth falls back from wolf-rbac to another successful authenticator, client-supplied Wolf identity headers can remain in the request. A downstream service that relies on those documented headers may therefore receive an identity that was not established by the successful authenticator.</p><p>This issue affects Apache APISIX: from 3.8.0 through 3.19.0.</p><p>Users are recommended to upgrade to version 3.20.0, which fixes the issue.</p>
-<h3 id="references-32">References</h3>
+<h3 id="references-6">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread/1kpvbj2m069bnhod8rwyx0mdz5hkwkml">https://lists.apache.org/thread/1kpvbj2m069bnhod8rwyx0mdz5hkwkml</a></li>
 </ul>
-<h3 id="credits-32">Credits</h3>
+<h3 id="credits-6">Credits</h3>
 <ul>
 <li>Ziyue (reporter)</li>
 <li>shreemaan-abhishek (remediation developer)</li>
 <li>shreemaan-abhishek (coordinator)</li>
+</ul>
+<h2 id="CVE-2026-94276">Openid-connect introspection validation issue</h2>
+<p>CVE-2026-94276 <a href="https://cve.org/CVERecord?id=CVE-2026-94276">[CVE]</a> <a href="./CVE-2026-94276.cve.json">[CVE json]</a> <a href="./CVE-2026-94276.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-10-01T11:02:40.499Z</em></p>
+<h3 id="affected-7">Affected</h3>
+<ul>
+<li>Apache APISIX from 3.12.0 through 3.18.0</li>
+</ul>
+<h3 id="description-7">Description</h3>
+<p>Improper Authentication vulnerability in Apache APISIX.</p>On a route using openid-connect plugin with remote introspection against an authorization server that serves multiple issuers, a token that introspects as active for one issuer may get<span>&nbsp;accepted on a route restricted to another.&nbsp;</span><span>This issue affects Apache APISIX: from 3.12.0 through 3.18.0.</span><p>Users are recommended to upgrade to version 3.19.0, which fixes the issue.</p>
+<h3 id="references-7">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/txn3br25kl657fh15rwcy1oht1xbpyyk">https://lists.apache.org/thread.html/txn3br25kl657fh15rwcy1oht1xbpyyk</a></li>
+</ul>
+<h3 id="credits-7">Credits</h3>
+<ul>
+<li>sec-reex (reporter)</li>
+<li>shreemaan-abhishek (coordinator)</li>
+<li>shreemaan-abhishek (remediation developer)</li>
+</ul>
+<h2 id="CVE-2026-94269">Servlet-style normalization creates a route/upstream authorization mismatch</h2>
+<p>CVE-2026-94269 <a href="https://cve.org/CVERecord?id=CVE-2026-94269">[CVE]</a> <a href="./CVE-2026-94269.cve.json">[CVE json]</a> <a href="./CVE-2026-94269.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-10-01T11:02:19.076Z</em></p>
+<h3 id="affected-8">Affected</h3>
+<ul>
+<li>Apache APISIX from 2.14.1 through 3.18.0</li>
+</ul>
+<h3 id="description-8">Description</h3>
+<p>Use of Non-Canonical URL paths for authorization decisions vulnerability in Apache APISIX.</p><p>In some configurations where a permissive route overlaps a protected one, a crafted encoded path can reach an upstream endpoint that the matched route's policies were never meant to cover. A&nbsp;request that should have been rejected is served instead, giving unauthenticated access to a protected upstream endpoint. This issue affects Apache APISIX: from 2.14.1 through 3.18.0.</p><p>Users are recommended to upgrade to version 3.19.0, which fixes the issue.</p>
+<h3 id="references-8">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/6p7glm8jtkjrn12t7z2ybn6bplm22tns">https://lists.apache.org/thread.html/6p7glm8jtkjrn12t7z2ybn6bplm22tns</a></li>
+</ul>
+<h3 id="credits-8">Credits</h3>
+<ul>
+<li>Ziyue (reporter)</li>
+<li>shreemaan-abhishek (coordinator)</li>
+<li>shreemaan-abhishek (remediation developer)</li>
+</ul>
+<h2 id="CVE-2026-94250">Batch response aggregation can exhaust worker memory</h2>
+<p>CVE-2026-94250 <a href="https://cve.org/CVERecord?id=CVE-2026-94250">[CVE]</a> <a href="./CVE-2026-94250.cve.json">[CVE json]</a> <a href="./CVE-2026-94250.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-10-01T11:01:40.297Z</em></p>
+<h3 id="affected-9">Affected</h3>
+<ul>
+<li>Apache APISIX from 1.3.0 through 3.18.0</li>
+</ul>
+<h3 id="description-9">Description</h3>
+<p>Allocation of resources without limits or throttling vulnerability in batch-requests plugin in Apache APISIX.</p><p>An unauthenticated caller can drive a gateway worker into OOM via a route where the batch-requests plugin is used and the&nbsp;batch endpoint is publicly exposed. This issue affects Apache APISIX: from 1.3.0 through 3.18.0.</p><p>Users are recommended to upgrade to version 3.19.0, which fixes the issue.</p>
+<h3 id="references-9">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/l7o9w8pw3w3f12vf9ybm7xtfzoo6qct4">https://lists.apache.org/thread.html/l7o9w8pw3w3f12vf9ybm7xtfzoo6qct4</a></li>
+</ul>
+<h3 id="credits-9">Credits</h3>
+<ul>
+<li>Ziyue (reporter)</li>
+<li>shreemaan-abhishek (remediation developer)</li>
+<li>shreemaan-abhishek (coordinator)</li>
+</ul>
+<h2 id="CVE-2026-94220">session fixation issue in feishu-auth and dingtalk-auth plugin</h2>
+<p>CVE-2026-94220 <a href="https://cve.org/CVERecord?id=CVE-2026-94220">[CVE]</a> <a href="./CVE-2026-94220.cve.json">[CVE json]</a> <a href="./CVE-2026-94220.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-10-01T11:01:25.519Z</em></p>
+<h3 id="affected-10">Affected</h3>
+<ul>
+<li>Apache APISIX from 3.17.0 through 3.18.0</li>
+</ul>
+<h3 id="description-10">Description</h3>
+<p>Cross-Site request forgery (CSRF) vulnerability in feishu-auth and dingtalk-auth plugins in Apache APISIX.</p><p>An attacker who can get a user to click a crafted link may cause that user's browser session on a protected route to be established under the attacker's identity instead of their own. Any work the user then performs in that session, including uploads, form submissions, and account bindings, lands in the attacker's account.&nbsp;This issue affects Apache APISIX: from 3.17.0 through 3.18.0.</p><p>Users are recommended to upgrade to version 3.19.0, which fixes the issue.</p>
+<h3 id="references-10">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/bf5q45ddyr2hf3hxkt56dzjlttgpdg78">https://lists.apache.org/thread.html/bf5q45ddyr2hf3hxkt56dzjlttgpdg78</a></li>
+</ul>
+<h3 id="credits-10">Credits</h3>
+<ul>
+<li>MopMonk-AI (reporter)</li>
+<li>shreemaan-abhishek (coordinator)</li>
+<li>shreemaan-abhishek (remediation developer)</li>
+</ul>
+<h2 id="CVE-2026-94212">unauthenticated impersonation issue in saml-auth</h2>
+<p>CVE-2026-94212 <a href="https://cve.org/CVERecord?id=CVE-2026-94212">[CVE]</a> <a href="./CVE-2026-94212.cve.json">[CVE json]</a> <a href="./CVE-2026-94212.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-10-01T11:01:10.730Z</em></p>
+<h3 id="affected-11">Affected</h3>
+<ul>
+<li>Apache APISIX from 3.17.0 through 3.18.0</li>
+</ul>
+<h3 id="description-11">Description</h3>
+<p>Improper verification of cryptographic signature vulnerability in Apache APISIX.</p><p><span>Any unauthenticated attacker could impersonate any user on every route protected by the </span><span>saml</span><span>-auth plugin under default configuration.&nbsp;</span>This issue affects Apache APISIX: from 3.17.0 through 3.18.0.</p><p>Users are recommended to upgrade to version 3.19.0, which fixes the issue.</p>
+<h3 id="references-11">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/1230fnojnmc7bfz3n0nkt7tkcld9d1sc">https://lists.apache.org/thread.html/1230fnojnmc7bfz3n0nkt7tkcld9d1sc</a></li>
+</ul>
+<h3 id="credits-11">Credits</h3>
+<ul>
+<li>LucasFutures (reporter)</li>
+<li>shreemaan-abhishek (coordinator)</li>
+<li>shreemaan-abhishek (remediation developer)</li>
+</ul>
+<h2 id="CVE-2026-82806">cross-request permission pollution via static permission list mutation</h2>
+<p>CVE-2026-82806 <a href="https://cve.org/CVERecord?id=CVE-2026-82806">[CVE]</a> <a href="./CVE-2026-82806.cve.json">[CVE json]</a> <a href="./CVE-2026-82806.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-10-01T10:58:31.207Z</em></p>
+<h3 id="affected-12">Affected</h3>
+<ul>
+<li>Apache APISIX from 2.3.0 before 3.7.0</li>
+</ul>
+<h3 id="description-12">Description</h3>
+<p>Exposure of data element to wrong session vulnerability in Apache APISIX.</p><p>This issue affects Apache APISIX: from 2.3.0 before 3.7.0.</p><p>Under a supported authz-keycloak configuration, a request's authorization scope could persist into later requests on the same route, leading to unintended authorization expansion and inconsistent access-control decisions.</p><p>Users are recommended to upgrade to version 3.7.0 or higher, which fixes the issue.</p>
+<h3 id="references-12">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/wvkv2b4oy2fh9v79d30gtsy0bhqmzcdd">https://lists.apache.org/thread.html/wvkv2b4oy2fh9v79d30gtsy0bhqmzcdd</a></li>
+</ul>
+<h3 id="credits-12">Credits</h3>
+<ul>
+<li>Lok (reporter)</li>
+</ul>
+<h2 id="CVE-2026-78242">data-mask may fail to redact request headers in logger output</h2>
+<p>CVE-2026-78242 <a href="https://cve.org/CVERecord?id=CVE-2026-78242">[CVE]</a> <a href="./CVE-2026-78242.cve.json">[CVE json]</a> <a href="./CVE-2026-78242.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-10-01T10:58:12.134Z</em></p>
+<h3 id="affected-13">Affected</h3>
+<ul>
+<li>Apache APISIX at 3.17.0</li>
+</ul>
+<h3 id="description-13">Description</h3>
+<p>Insertion of sensitive information into log file vulnerability in Apache APISIX.</p><p><span>This vulnerability can cause the unmasked header value to be written to the log sink under a certain response structure.&nbsp;</span></p><p><span>This issue affects Apache APISIX: 3.17.0.</span></p><p><span>Users are recommended to upgrade to version 3.18.0, which fixes the issue.</span></p>
+<h3 id="references-13">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/qxzsyw1pbgxg4sqkc4t2g8h4w2q0mvsn">https://lists.apache.org/thread.html/qxzsyw1pbgxg4sqkc4t2g8h4w2q0mvsn</a></li>
+</ul>
+<h3 id="credits-13">Credits</h3>
+<ul>
+<li>Jonas Schültke (reporter)</li>
+</ul>
+<h2 id="CVE-2026-75020">ldap-auth plugin cross-subtree identity impersonation</h2>
+<p>CVE-2026-75020 <a href="https://cve.org/CVERecord?id=CVE-2026-75020">[CVE]</a> <a href="./CVE-2026-75020.cve.json">[CVE json]</a> <a href="./CVE-2026-75020.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-27T09:14:31.212Z</em></p>
+<h3 id="affected-14">Affected</h3>
+<ul>
+<li>Apache APISIX from 2.11.0 through 3.17.0</li>
+</ul>
+<h3 id="description-14">Description</h3>
+<p>Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection') vulnerability in Apache APISIX.</p>A caller who holds valid credentials for one entry in the LDAP directory can authenticate through APISIX as a consumer mapped to a different entry, one the plugin's configured scope was meant to keep out of reach.<br><p>This issue affects Apache APISIX: from 2.11.0 through 3.17.0.</p><p>Users are recommended to upgrade to version 3.18.0, which fixes the issue.</p>
+<h3 id="references-14">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/d4007wk6dbl9mxy5h05zxwn8fsg13bxt">https://lists.apache.org/thread/d4007wk6dbl9mxy5h05zxwn8fsg13bxt</a></li>
+</ul>
+<h3 id="credits-14">Credits</h3>
+<ul>
+<li>MopMonk AI (reporter)</li>
+</ul>
+<h2 id="CVE-2026-75005">Unauthenticated CPU-exhaustion DoS</h2>
+<p>CVE-2026-75005 <a href="https://cve.org/CVERecord?id=CVE-2026-75005">[CVE]</a> <a href="./CVE-2026-75005.cve.json">[CVE json]</a> <a href="./CVE-2026-75005.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-27T09:15:31.332Z</em></p>
+<h3 id="affected-15">Affected</h3>
+<ul>
+<li>Apache APISIX at 3.17.0</li>
+</ul>
+<h3 id="description-15">Description</h3>
+<p>Inefficient Algorithmic Complexity vulnerability in Apache APISIX.<br><br> A single small request can pin a gateway worker at 100% CPU for an extended period in graphql-limit-count routes.<br></p><p>This issue affects Apache APISIX: 3.17.0.</p><p>Users are recommended to upgrade to version 3.18.0, which fixes the issue.</p>
+<h3 id="references-15">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/wfs7c9l8sokrh9hzv84lno12nx2zxpjk">https://lists.apache.org/thread/wfs7c9l8sokrh9hzv84lno12nx2zxpjk</a></li>
+</ul>
+<h3 id="credits-15">Credits</h3>
+<ul>
+<li>Md. Amdadul Bari (reporter)</li>
+</ul>
+<h2 id="CVE-2026-74848">Cross-user response poisoning in serverless plugins</h2>
+<p>CVE-2026-74848 <a href="https://cve.org/CVERecord?id=CVE-2026-74848">[CVE]</a> <a href="./CVE-2026-74848.cve.json">[CVE json]</a> <a href="./CVE-2026-74848.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-27T09:16:06.269Z</em></p>
+<h3 id="affected-16">Affected</h3>
+<ul>
+<li>Apache APISIX from 2.12.0 through 3.17.0</li>
+</ul>
+<h3 id="description-16">Description</h3>
+<p>Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling') vulnerability in Apache APISIX.<br><br>An attacker could make other clients receive attacker-chosen or other users' responses on serverless-plugin routes.<br></p><p>This issue affects Apache APISIX: from 2.12.0 through 3.17.0.</p><p>Users are recommended to upgrade to version 3.18.0, which fixes the issue.</p>
+<h3 id="references-16">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/xdgpszmw8dw4wvmfxy043d83m150kx3n">https://lists.apache.org/thread/xdgpszmw8dw4wvmfxy043d83m150kx3n</a></li>
+</ul>
+<h3 id="credits-16">Credits</h3>
+<ul>
+<li>Xclow3n (Rajat Raghav) (reporter)</li>
+</ul>
+<h2 id="CVE-2026-63041">attach-consumer-label does not strip client-supplied consumer-label headers</h2>
+<p>CVE-2026-63041 <a href="https://cve.org/CVERecord?id=CVE-2026-63041">[CVE]</a> <a href="./CVE-2026-63041.cve.json">[CVE json]</a> <a href="./CVE-2026-63041.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-08-26T11:34:58.193Z</em></p>
+<h3 id="affected-17">Affected</h3>
+<ul>
+<li>Apache APISIX from 3.11.0 through 3.17.0</li>
+</ul>
+<h3 id="description-17">Description</h3>
+<p>Reliance on Untrusted Inputs in a Security Decision vulnerability in Apache APISIX.</p>This vulnerability allows an attacker to escalate privilege or perform an authorization bypass by sending certain values that the attach-consumer-label plugin does not sanitise correctly.<br><p>This issue affects Apache APISIX: from 3.11.0 through 3.17.0.</p><p>Users are recommended to upgrade to version 3.18.0, which fixes the issue.</p>
+<h3 id="references-17">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/yg9tgn699rz7kyglw82m1775do8frjr4">https://lists.apache.org/thread/yg9tgn699rz7kyglw82m1775do8frjr4</a></li>
+</ul>
+<h3 id="credits-17">Credits</h3>
+<ul>
+<li>tonghuaroot (reporter)</li>
+</ul>
+<h2 id="CVE-2026-49872">Improper authentication in cas-auth plugin</h2>
+<p>CVE-2026-49872 <a href="https://cve.org/CVERecord?id=CVE-2026-49872">[CVE]</a> <a href="./CVE-2026-49872.cve.json">[CVE json]</a> <a href="./CVE-2026-49872.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-19T13:19:29.418Z</em></p>
+<h3 id="affected-18">Affected</h3>
+<ul>
+<li>Apache APISIX from 3.0.0 through 3.16.0</li>
+</ul>
+<h3 id="description-18">Description</h3>
+<p>Improper Authentication vulnerability in Apache APISIX.</p>When the cas-auth plugin is used in a route, an attacker can possibly authenticate itself with credentials from a different source.<br><p>This issue affects Apache APISIX: from 3.0.0 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
+<h3 id="references-18">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/bzjpo60ygxo7kxdqf7vw3l5zw2lh6m5k">https://lists.apache.org/thread/bzjpo60ygxo7kxdqf7vw3l5zw2lh6m5k</a></li>
+</ul>
+<h3 id="credits-18">Credits</h3>
+<ul>
+<li>lokerxxx (reporter)</li>
+</ul>
+<h2 id="CVE-2026-49871">cas-auth login CSRF / session injection issue</h2>
+<p>CVE-2026-49871 <a href="https://cve.org/CVERecord?id=CVE-2026-49871">[CVE]</a> <a href="./CVE-2026-49871.cve.json">[CVE json]</a> <a href="./CVE-2026-49871.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-19T13:18:27.333Z</em></p>
+<h3 id="affected-19">Affected</h3>
+<ul>
+<li>Apache APISIX from 3.0.0 through 3.16.0</li>
+</ul>
+<h3 id="description-19">Description</h3>
+<p>Cross-Site Request Forgery (CSRF) vulnerability in the cas-auth plugin under default configurations.</p><p><span style="background-color: rgb(255, 255, 255);">This defect allows a</span><span style="background-color: rgb(255, 255, 255);">&nbsp;</span><span style="background-color: rgb(255, 255, 255);">remote attacker that manages to send a victim to a webpage controlled by them can cause the victim's browser to become authenticated as a different identity</span><span style="background-color: rgb(255, 255, 255);">.</span></p><p><span style="background-color: rgb(255, 255, 255);">Actions the victim takes upstream are then attributed to attackers identity.</span><br></p><p>This issue affects Apache APISIX: from 3.0.0 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
+<h3 id="references-19">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/1ozsnss0lof4gpwq763d66oxwxt3sycp">https://lists.apache.org/thread/1ozsnss0lof4gpwq763d66oxwxt3sycp</a></li>
+</ul>
+<h3 id="credits-19">Credits</h3>
+<ul>
+<li>lokerxxx (reporter)</li>
+</ul>
+<h2 id="CVE-2026-49231">Identity spoofing issue in APISIX opa plugin</h2>
+<p>CVE-2026-49231 <a href="https://cve.org/CVERecord?id=CVE-2026-49231">[CVE]</a> <a href="./CVE-2026-49231.cve.json">[CVE json]</a> <a href="./CVE-2026-49231.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-19T13:14:23.085Z</em></p>
+<h3 id="affected-20">Affected</h3>
+<ul>
+<li>Apache APISIX from 3.5.0 through 3.16.0</li>
+</ul>
+<h3 id="description-20">Description</h3>
+<p>Authentication Bypass by Spoofing vulnerability in opa plugin.</p>An attacker could relay spoofed identity headers to upstream capitalising on non-default configuration in opa plugin.<br><br>This could allow the attacker to assume higher privileges on the upstream service.<br><p>This issue affects Apache APISIX: from 3.5.0 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
+<h3 id="references-20">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/s1jd1vxm59p6ghx47xhmpjdk1cobo4hn">https://lists.apache.org/thread/s1jd1vxm59p6ghx47xhmpjdk1cobo4hn</a></li>
+</ul>
+<h3 id="credits-20">Credits</h3>
+<ul>
+<li>lokerxxx (reporter)</li>
+</ul>
+<h2 id="CVE-2026-49230">Authentication bypass in jwe-decrypt</h2>
+<p>CVE-2026-49230 <a href="https://cve.org/CVERecord?id=CVE-2026-49230">[CVE]</a> <a href="./CVE-2026-49230.cve.json">[CVE json]</a> <a href="./CVE-2026-49230.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-19T13:13:32.638Z</em></p>
+<h3 id="affected-21">Affected</h3>
+<ul>
+<li>Apache APISIX from 3.8.0 through 3.16.0</li>
+</ul>
+<h3 id="description-21">Description</h3>
+<p>Improper Validation of Integrity Check Value vulnerability in Apache APISIX.</p>The jwe-decrypt plugin under default configuration is vulnerable to authentication bypass.&nbsp;<br><p>This issue affects Apache APISIX: from 3.8.0 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
+<h3 id="references-21">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/n0blgkpvz38ghh5rrh6wtl476919xj1b">https://lists.apache.org/thread/n0blgkpvz38ghh5rrh6wtl476919xj1b</a></li>
+</ul>
+<h3 id="credits-21">Credits</h3>
+<ul>
+<li>lokerxxx (reporter)</li>
+</ul>
+<h2 id="CVE-2026-48895">Cas-auth Host header influence on CAS service URL</h2>
+<p>CVE-2026-48895 <a href="https://cve.org/CVERecord?id=CVE-2026-48895">[CVE]</a> <a href="./CVE-2026-48895.cve.json">[CVE json]</a> <a href="./CVE-2026-48895.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-19T13:16:18.311Z</em></p>
+<h3 id="affected-22">Affected</h3>
+<ul>
+<li>Apache APISIX from 3.0.0 through 3.16.0</li>
+</ul>
+<h3 id="description-22">Description</h3>
+<p>URL Redirection to Untrusted Site ('Open Redirect') vulnerability in Apache APISIX.</p><p>The attacker could manipulate some client headers to perform an open-redirect, to potentially expose the session token.</p><p>This issue affects Apache APISIX: from 3.0.0 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
+<h3 id="references-22">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/yo1kq93ds69zbgjjopop7dmzm7zhj1gq">https://lists.apache.org/thread/yo1kq93ds69zbgjjopop7dmzm7zhj1gq</a></li>
+</ul>
+<h3 id="credits-22">Credits</h3>
+<ul>
+<li>lokerxxx (reporter)</li>
+</ul>
+<h2 id="CVE-2026-47341">Session replay issue in hmac-auth</h2>
+<p>CVE-2026-47341 <a href="https://cve.org/CVERecord?id=CVE-2026-47341">[CVE]</a> <a href="./CVE-2026-47341.cve.json">[CVE json]</a> <a href="./CVE-2026-47341.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-19T13:17:16.260Z</em></p>
+<h3 id="affected-23">Affected</h3>
+<ul>
+<li>Apache APISIX from 3.11.0 through 3.16.0</li>
+</ul>
+<h3 id="description-23">Description</h3>
+<p>Authentication Bypass by Capture-replay vulnerability in Apache APISIX.</p>Attacker can benefit from certain configurations in hmac-auth to re-use a token forever, bypassing expiry.<br><p>This issue affects Apache APISIX: from 3.11.0 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
+<h3 id="references-23">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/ob6ng9x2hxtyfojs839hs1n0v18xxzf2">https://lists.apache.org/thread/ob6ng9x2hxtyfojs839hs1n0v18xxzf2</a></li>
+</ul>
+<h3 id="credits-23">Credits</h3>
+<ul>
+<li>leon (reporter)</li>
+</ul>
+<h2 id="CVE-2026-47339">authz-casdoor incorrect session sharing</h2>
+<p>CVE-2026-47339 <a href="https://cve.org/CVERecord?id=CVE-2026-47339">[CVE]</a> <a href="./CVE-2026-47339.cve.json">[CVE json]</a> <a href="./CVE-2026-47339.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-19T13:10:09.663Z</em></p>
+<h3 id="affected-24">Affected</h3>
+<ul>
+<li>Apache APISIX from 2.14.1 through 3.16.0</li>
+</ul>
+<h3 id="description-24">Description</h3>
+<p>Incorrect Authorization vulnerability in Apache APISIX.</p>An attacker can capitalise on authz-casdoor plugin under default configuration to authenticate themselves with credentials from a different source.<br><p>This issue affects Apache APISIX: from 2.14.1 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
+<h3 id="references-24">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/lk4q5o855cocc7zq5wh1zlctfmcq6f76">https://lists.apache.org/thread/lk4q5o855cocc7zq5wh1zlctfmcq6f76</a></li>
+</ul>
+<h3 id="credits-24">Credits</h3>
+<ul>
+<li>leon (reporter)</li>
+</ul>
+<h2 id="CVE-2026-44915">Cas-auth plugin open redirect via unsanitized cookie value</h2>
+<p>CVE-2026-44915 <a href="https://cve.org/CVERecord?id=CVE-2026-44915">[CVE]</a> <a href="./CVE-2026-44915.cve.json">[CVE json]</a> <a href="./CVE-2026-44915.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-19T13:12:20.566Z</em></p>
+<h3 id="affected-25">Affected</h3>
+<ul>
+<li>Apache APISIX from 3.0.0 through 3.16.0</li>
+</ul>
+<h3 id="description-25">Description</h3>
+<p>URL Redirection to Untrusted Site ('Open Redirect') vulnerability in Apache APISIX.</p><p>The default configuration of cas-auth in Apache APISIX is vulnerable to p<span style="background-color: rgb(255, 255, 255);">hishing and credential theft.</span></p><p>This issue affects Apache APISIX: from 3.0.0 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
+<h3 id="references-25">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/2syk2kkzjnpzrdh98plbzj8os7wn521c">https://lists.apache.org/thread/2syk2kkzjnpzrdh98plbzj8os7wn521c</a></li>
+</ul>
+<h3 id="credits-25">Credits</h3>
+<ul>
+<li>Qi Deng (reporter)</li>
+<li>lokerxxx (reporter)</li>
+</ul>
+<h2 id="CVE-2026-44087">Openid-connect plugin Identity Header Spoofing</h2>
+<p>CVE-2026-44087 <a href="https://cve.org/CVERecord?id=CVE-2026-44087">[CVE]</a> <a href="./CVE-2026-44087.cve.json">[CVE json]</a> <a href="./CVE-2026-44087.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-19T13:11:08.855Z</em></p>
+<h3 id="affected-26">Affected</h3>
+<ul>
+<li>Apache APISIX from 2.3 through 3.16.0</li>
+</ul>
+<h3 id="description-26">Description</h3>
+<p>Insufficient Verification of Data Authenticity vulnerability in Apache APISIX.</p>The openid-connect plugin under default configuration has an attack surface that allows the attacker to spoof identity headers allowing the attacker to get unauthorized access the protected resources.<br><p>This issue affects Apache APISIX: from 2.3 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
+<h3 id="references-26">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/72ryrgdssk6s2x9d6xn14bxyyl878xfm">https://lists.apache.org/thread/72ryrgdssk6s2x9d6xn14bxyyl878xfm</a></li>
+</ul>
+<h3 id="credits-26">Credits</h3>
+<ul>
+<li>Qi Deng (finder)</li>
+</ul>
+<h2 id="CVE-2026-44046">wolf-rbac plugin Identity Spoofing</h2>
+<p>CVE-2026-44046 <a href="https://cve.org/CVERecord?id=CVE-2026-44046">[CVE]</a> <a href="./CVE-2026-44046.cve.json">[CVE json]</a> <a href="./CVE-2026-44046.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-19T13:08:47.282Z</em></p>
+<h3 id="affected-27">Affected</h3>
+<ul>
+<li>Apache APISIX from 1.2.0 through 3.16.0</li>
+</ul>
+<h3 id="description-27">Description</h3>
+<p>Use of Less Trusted Source vulnerability in Apache APISIX.</p>Attacker can take advantage of wolf-rbac plugin under default configuration to potentially pollute logs with spoofed identity information and exploit IP based access control rules.<br><p>This issue affects Apache APISIX: from 1.2.0 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
+<h3 id="references-27">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/xkshmps51b24yw0qckl5h5ddyv0x6qf9">https://lists.apache.org/thread/xkshmps51b24yw0qckl5h5ddyv0x6qf9</a></li>
+</ul>
+<h3 id="credits-27">Credits</h3>
+<ul>
+<li>Qi Deng (reporter)</li>
+</ul>
+<h2 id="CVE-2026-39999">JWT Algorithm Confusion allows authentication bypass</h2>
+<p>CVE-2026-39999 <a href="https://cve.org/CVERecord?id=CVE-2026-39999">[CVE]</a> <a href="./CVE-2026-39999.cve.json">[CVE json]</a> <a href="./CVE-2026-39999.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-19T13:07:45.459Z</em></p>
+<h3 id="affected-28">Affected</h3>
+<ul>
+<li>Apache APISIX from 2.2 through 3.16.0</li>
+</ul>
+<h3 id="description-28">Description</h3>
+<p>Authentication Bypass by Spoofing vulnerability in Apache APISIX.</p>The attacker can completely bypass authentication capitalising on certain configurations of jwt-auth plugin.<br><p>This issue affects Apache APISIX: from v2.2 through v3.16.0.</p><p>Users are recommended to upgrade to version v3.17.0, which fixes the issue.</p>
+<h3 id="references-28">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/nfopt8cnxd3k0rs1oxtr7lzxrdw4mojq">https://lists.apache.org/thread/nfopt8cnxd3k0rs1oxtr7lzxrdw4mojq</a></li>
+</ul>
+<h3 id="credits-28">Credits</h3>
+<ul>
+<li>Marco Capuano (reporter)</li>
+</ul>
+<h2 id="CVE-2026-39998">Identity Injection via forward-auth Plugin Missing Header Cleanup</h2>
+<p>CVE-2026-39998 <a href="https://cve.org/CVERecord?id=CVE-2026-39998">[CVE]</a> <a href="./CVE-2026-39998.cve.json">[CVE json]</a> <a href="./CVE-2026-39998.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-06-19T13:05:07.084Z</em></p>
+<h3 id="affected-29">Affected</h3>
+<ul>
+<li>Apache APISIX from 2.12.0 through 3.16.0</li>
+</ul>
+<h3 id="description-29">Description</h3>
+<p>Improper Input Validation vulnerability in Apache APISIX.</p>The attacker can take advantage of certain configuration in forward-auth plugin to spoof identity headers.<br><p>This issue affects Apache APISIX: from 2.12.0 through 3.16.0.</p><p>Users are recommended to upgrade to version 3.17.0, which fixes the issue.</p>
+<h3 id="references-29">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/vgkvy396010d7g6m0jrn4d3hjf2svlvv">https://lists.apache.org/thread/vgkvy396010d7g6m0jrn4d3hjf2svlvv</a></li>
+</ul>
+<h3 id="credits-29">Credits</h3>
+<ul>
+<li>Fernando Mecozzi (reporter)</li>
+</ul>
+<h2 id="CVE-2026-31924">Plugin tencent-cloud-cls log export uses plaintext HTTP</h2>
+<p>CVE-2026-31924 <a href="https://cve.org/CVERecord?id=CVE-2026-31924">[CVE]</a> <a href="./CVE-2026-31924.cve.json">[CVE json]</a> <a href="./CVE-2026-31924.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-04-14T08:08:04.772Z</em></p>
+<h3 id="affected-30">Affected</h3>
+<ul>
+<li>Apache APISIX from 2.99.0 through 3.15.0</li>
+</ul>
+<h3 id="description-30">Description</h3>
+<p>Cleartext Transmission of Sensitive Information vulnerability in Apache APISIX.</p>tencent-cloud-cls log export uses plaintext HTTP<br><p>This issue affects Apache APISIX: from 2.99.0 through 3.15.0.</p><p>Users are recommended to upgrade to version 3.16.0, which fixes the issue.</p>
+<h3 id="references-30">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/sqxjjlt87c1q28db28ztdxylm5pgwohq">https://lists.apache.org/thread/sqxjjlt87c1q28db28ztdxylm5pgwohq</a></li>
+</ul>
+<h3 id="credits-30">Credits</h3>
+<ul>
+<li>Oleh Konko (finder)</li>
+</ul>
+<h2 id="CVE-2026-31923">Openid-connect <code>tls_verify</code> field is disabled by default</h2>
+<p>CVE-2026-31923 <a href="https://cve.org/CVERecord?id=CVE-2026-31923">[CVE]</a> <a href="./CVE-2026-31923.cve.json">[CVE json]</a> <a href="./CVE-2026-31923.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-04-14T08:38:57.640Z</em></p>
+<h3 id="affected-31">Affected</h3>
+<ul>
+<li>Apache APISIX from 0.7 through 3.15.0</li>
+</ul>
+<h3 id="description-31">Description</h3>
+<p>Cleartext Transmission of Sensitive Information vulnerability in Apache APISIX.</p>This can occur due to `ssl_verify` in openid-connect plugin configuration being set to false by default.<br><p>This issue affects Apache APISIX: from 0.7 through 3.15.0.</p><p>Users are recommended to upgrade to version 3.16.0, which fixes the issue.</p>
+<h3 id="references-31">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/0pjs72l7qj83j3srw1l1toyj24bsgkds">https://lists.apache.org/thread/0pjs72l7qj83j3srw1l1toyj24bsgkds</a></li>
+</ul>
+<h3 id="credits-31">Credits</h3>
+<ul>
+<li>Oleh Konko (reporter)</li>
+</ul>
+<h2 id="CVE-2026-31908">forward auth plugin allows header injection</h2>
+<p>CVE-2026-31908 <a href="https://cve.org/CVERecord?id=CVE-2026-31908">[CVE]</a> <a href="./CVE-2026-31908.cve.json">[CVE json]</a> <a href="./CVE-2026-31908.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-04-14T08:06:15.933Z</em></p>
+<h3 id="affected-32">Affected</h3>
+<ul>
+<li>Apache APISIX from 2.12.0 through 3.15.0</li>
+</ul>
+<h3 id="description-32">Description</h3>
+<p>Header injection vulnerability in Apache APISIX.</p><span style="background-color: rgb(255, 255, 255);">The attacker can take advantage of certain configuration in forward-auth plugin to inject malicious headers.</span><br><p>This issue affects Apache APISIX: from 2.12.0 through 3.15.0.</p><p>Users are recommended to upgrade to version 3.16.0, which fixes the issue.</p>
+<h3 id="references-32">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread/sob643s5lztov7x579j8o0c444t36n6b">https://lists.apache.org/thread/sob643s5lztov7x579j8o0c444t36n6b</a></li>
+</ul>
+<h3 id="credits-32">Credits</h3>
+<ul>
+<li>SeungMyung Lee (reporter)</li>
 </ul>
 <h2 id="CVE-2025-62232">basic-auth logs plaintext credentials at info level</h2>
 <p>CVE-2025-62232 <a href="https://cve.org/CVERecord?id=CVE-2025-62232">[CVE]</a> <a href="./CVE-2025-62232.cve.json">[CVE json]</a> <a href="./CVE-2025-62232.osv.json">[OSV json]</a></p>

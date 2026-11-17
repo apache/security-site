@@ -105,109 +105,109 @@
 <p>Do you want to disclose a potential security issue for Apache CouchDB? Send your report to the <a href="mailto:security@couchdb.apache.org?subject=CouchDB">Apache CouchDB Security Team</a>.</p>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2026-90800">Auth bypass in prefixed _users and _replicator databases</h2>
-<p>CVE-2026-90800 <a href="https://cve.org/CVERecord?id=CVE-2026-90800">[CVE]</a> <a href="./CVE-2026-90800.cve.json">[CVE json]</a> <a href="./CVE-2026-90800.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-10-20T15:40:46.476Z</em></p>
+<h2 id="CVE-2026-107755">Credential Disclosure to Non-Owner Members via Object-Form Replication Endpoint URLs</h2>
+<p>CVE-2026-107755 <a href="https://cve.org/CVERecord?id=CVE-2026-107755">[CVE]</a> <a href="./CVE-2026-107755.cve.json">[CVE json]</a> <a href="./CVE-2026-107755.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-10-20T15:41:21.272Z</em></p>
 <h3 id="affected">Affected</h3>
 <ul>
 <li>Apache CouchDB before 3.5.3</li>
 </ul>
 <h3 id="description">Description</h3>
-<p>Missing authorisation checks in chttpd in Apache CouchDB 3.5.2 and below on all platforms allows any request to read the full contents of a prefixed _user or _replicator database via an unauthorised API endpoint.<div><br></div><div>The use of prefixed system databases is very rare.<br><br><div>Users are recommended to upgrade to version 3.5.3, which fixes this issue.</div></div></p>
+<p>Insufficient filtering of credentials in the _replicator database in Apache CouchDB 3.5.2 and below on all platforms allows an authenticated user to read replication credentials of other users’ replications, not just their own.<br><br><div>Users are recommended to upgrade to version 3.5.3, which fixes this issue.</div></p>
 <h3 id="references">References</h3>
+<ul>
+<li><a href="https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f">https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f</a></li>
+<li><a href="https://lists.apache.org/thread/ro57p4r2lhxn2n4712ppx7r11oqq900n">https://lists.apache.org/thread/ro57p4r2lhxn2n4712ppx7r11oqq900n</a></li>
+</ul>
+<h3 id="credits">Credits</h3>
+<ul>
+<li>Sakil Ahamed Gayen (reporter)</li>
+</ul>
+<h2 id="CVE-2026-90800">Auth bypass in prefixed _users and _replicator databases</h2>
+<p>CVE-2026-90800 <a href="https://cve.org/CVERecord?id=CVE-2026-90800">[CVE]</a> <a href="./CVE-2026-90800.cve.json">[CVE json]</a> <a href="./CVE-2026-90800.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-10-20T15:40:46.476Z</em></p>
+<h3 id="affected-1">Affected</h3>
+<ul>
+<li>Apache CouchDB before 3.5.3</li>
+</ul>
+<h3 id="description-1">Description</h3>
+<p>Missing authorisation checks in chttpd in Apache CouchDB 3.5.2 and below on all platforms allows any request to read the full contents of a prefixed _user or _replicator database via an unauthorised API endpoint.<div><br></div><div>The use of prefixed system databases is very rare.<br><br><div>Users are recommended to upgrade to version 3.5.3, which fixes this issue.</div></div></p>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f">https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f</a></li>
 <li><a href="https://lists.apache.org/thread/vng8vqjwgy1qlrv14wzrgs7pv4gj7gwr">https://lists.apache.org/thread/vng8vqjwgy1qlrv14wzrgs7pv4gj7gwr</a></li>
 </ul>
-<h3 id="credits">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>Qing Xu &amp; ZeroVuln Labs reported this issue independently (reporter)</li>
 </ul>
 <h2 id="CVE-2026-90799">Atom-table exhaustion in _changes sequences and _search bookmarks with specially crafted sequence values</h2>
 <p>CVE-2026-90799 <a href="https://cve.org/CVERecord?id=CVE-2026-90799">[CVE]</a> <a href="./CVE-2026-90799.cve.json">[CVE json]</a> <a href="./CVE-2026-90799.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-10-20T15:40:15.444Z</em></p>
-<h3 id="affected-1">Affected</h3>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache CouchDB before 3.5.3</li>
 </ul>
-<h3 id="description-1">Description</h3>
+<h3 id="description-2">Description</h3>
 <p>Unsafe binary deserialisation in chttpd in Apache CouchDB 3.5.2 and below on all platforms allows an authenticated user to cause a denial of service via memory exhaustion.<br><br><div>Users are recommended to upgrade to version 3.5.3, which fixes this issue.</div></p>
-<h3 id="references-1">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f">https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f</a></li>
 <li><a href="https://lists.apache.org/thread/bqxkm19hw8985t7opz675b29hs1zl4z9">https://lists.apache.org/thread/bqxkm19hw8985t7opz675b29hs1zl4z9</a></li>
 </ul>
-<h3 id="credits-1">Credits</h3>
+<h3 id="credits-2">Credits</h3>
 <ul>
 <li>Piotr Karwasz &amp; ZeroVuln Labs reported this issue independently (finder)</li>
 </ul>
 <h2 id="CVE-2026-90798">Replicator follows redirects indefinitely</h2>
 <p>CVE-2026-90798 <a href="https://cve.org/CVERecord?id=CVE-2026-90798">[CVE]</a> <a href="./CVE-2026-90798.cve.json">[CVE json]</a> <a href="./CVE-2026-90798.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-10-20T15:39:50.951Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected-3">Affected</h3>
 <ul>
 <li>Apache CouchDB before 3.5.3</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description-3">Description</h3>
 <p>A missing circuit-breaker in the replicator in Apache CouchDB 3.5.2 and below on all platforms allows the owner of a replication source or target to cause a denial of service via creating an infinite HTTP redirect loop.<br><br><div>Users are recommended to upgrade to version 3.5.3, which fixes this issue.</div></p>
-<h3 id="references-2">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f">https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f</a></li>
 <li><a href="https://lists.apache.org/thread/m6d526fj57pvq5pswm2lp1shbdz3f417">https://lists.apache.org/thread/m6d526fj57pvq5pswm2lp1shbdz3f417</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits-3">Credits</h3>
 <ul>
 <li>The Apache CouchDB Team (finder)</li>
 </ul>
 <h2 id="CVE-2026-90797">Pre-authentication gzip decompression bomb via POST /_session</h2>
 <p>CVE-2026-90797 <a href="https://cve.org/CVERecord?id=CVE-2026-90797">[CVE]</a> <a href="./CVE-2026-90797.cve.json">[CVE json]</a> <a href="./CVE-2026-90797.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-10-20T15:39:22.336Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-4">Affected</h3>
 <ul>
 <li>Apache CouchDB before 3.5.3</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-4">Description</h3>
 <p>An unlimited gzip decompression routine in chttpd in Apache CouchDB 3.5.2 and below on all platforms allows any remote client to cause a denial of service via memory exhaustion.<div><br>Users are recommended to upgrade to version 3.5.3, which fixes this issue.</div></p>
-<h3 id="references-3">References</h3>
+<h3 id="references-4">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f">https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f</a></li>
 <li><a href="https://lists.apache.org/thread/gsbotof0qn8x6zlpd7t568ny4053jo0n">https://lists.apache.org/thread/gsbotof0qn8x6zlpd7t568ny4053jo0n</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits-4">Credits</h3>
 <ul>
 <li>ZeroVuln labs (reporter)</li>
 </ul>
 <h2 id="CVE-2026-86471">Admin credentials leading to code execution as operating system user</h2>
 <p>CVE-2026-86471 <a href="https://cve.org/CVERecord?id=CVE-2026-86471">[CVE]</a> <a href="./CVE-2026-86471.cve.json">[CVE json]</a> <a href="./CVE-2026-86471.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-10-20T15:38:08.323Z</em></p>
-<h3 id="affected-4">Affected</h3>
-<ul>
-<li>Apache CouchDB before 3.5.3</li>
-</ul>
-<h3 id="description-4">Description</h3>
-<p>An unvalidated runtime configuration value in Apache CouchDB 3.5.2 and below on all platforms allows a CouchDB server admin to run arbitrary shell commands as the CouchDB operating system user.<br><br><div>Users are recommended to upgrade to version 3.5.3, which fixes this issue.</div></p>
-<h3 id="references-4">References</h3>
-<ul>
-<li><a href="https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f">https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f</a></li>
-<li><a href="https://lists.apache.org/thread/c8p73gswgogtnzvk7hpw8jb8d4mnosdp">https://lists.apache.org/thread/c8p73gswgogtnzvk7hpw8jb8d4mnosdp</a></li>
-</ul>
-<h2 id="CVE-2026-107755">Credential Disclosure to Non-Owner Members via Object-Form Replication Endpoint URLs</h2>
-<p>CVE-2026-107755 <a href="https://cve.org/CVERecord?id=CVE-2026-107755">[CVE]</a> <a href="./CVE-2026-107755.cve.json">[CVE json]</a> <a href="./CVE-2026-107755.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-10-20T15:41:21.272Z</em></p>
 <h3 id="affected-5">Affected</h3>
 <ul>
 <li>Apache CouchDB before 3.5.3</li>
 </ul>
 <h3 id="description-5">Description</h3>
-<p>Insufficient filtering of credentials in the _replicator database in Apache CouchDB 3.5.2 and below on all platforms allows an authenticated user to read replication credentials of other users’ replications, not just their own.<br><br><div>Users are recommended to upgrade to version 3.5.3, which fixes this issue.</div></p>
+<p>An unvalidated runtime configuration value in Apache CouchDB 3.5.2 and below on all platforms allows a CouchDB server admin to run arbitrary shell commands as the CouchDB operating system user.<br><br><div>Users are recommended to upgrade to version 3.5.3, which fixes this issue.</div></p>
 <h3 id="references-5">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f">https://lists.apache.org/thread.html/pj83174r8f8f64odf47fwhozbfjtot0f</a></li>
-<li><a href="https://lists.apache.org/thread/ro57p4r2lhxn2n4712ppx7r11oqq900n">https://lists.apache.org/thread/ro57p4r2lhxn2n4712ppx7r11oqq900n</a></li>
-</ul>
-<h3 id="credits-4">Credits</h3>
-<ul>
-<li>Sakil Ahamed Gayen (reporter)</li>
+<li><a href="https://lists.apache.org/thread/c8p73gswgogtnzvk7hpw8jb8d4mnosdp">https://lists.apache.org/thread/c8p73gswgogtnzvk7hpw8jb8d4mnosdp</a></li>
 </ul>
 <h2 id="CVE-2023-45725">Privilege Escalation Using _design Documents</h2>
 <p>CVE-2023-45725 <a href="https://cve.org/CVERecord?id=CVE-2023-45725">[CVE]</a> <a href="./CVE-2023-45725.cve.json">[CVE json]</a> <a href="./CVE-2023-45725.osv.json">[OSV json]</a></p>

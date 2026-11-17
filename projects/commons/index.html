@@ -112,60 +112,22 @@
 </ul>
 <h1 id="advisories">Advisories</h1>
 <p class="bg-warning">This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public <a href="/mailinglist">mailinglist</a> or privately on <a href="mailto:security@apache.org">security@apache.org</a></p>
-<h2 id="CVE-2026-94114">Class repositories cache class files under their self-declared names, enabling cache poisoning</h2>
-<p>CVE-2026-94114 <a href="https://cve.org/CVERecord?id=CVE-2026-94114">[CVE]</a> <a href="./CVE-2026-94114.cve.json">[CVE json]</a> <a href="./CVE-2026-94114.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-10-08T05:24:24.834Z</em></p>
-<h3 id="affected">Affected</h3>
-<ul>
-<li>Apache Commons BCEL before 6.13.0</li>
-<li>Apache Commons BCEL before 14890bf2b9014df25f9b4de86f29b5e917e5656b</li>
-</ul>
-<h3 id="description">Description</h3>
-<p>Symbolic name not mapping to correct class.</p><p>BCEL caches attacker-controlled classes under their self-declared names without validating the requested name, allowing subsequent lookups and name-keyed verification results to refer to a different class.</p><p>This issue affects Apache Commons BCEL: before 6.13.0.</p><p>Users are recommended to upgrade to version 6.13.0, which fixes the issue.</p>
-<h3 id="references">References</h3>
-<ul>
-<li><a href="https://github.com/apache/commons-bcel/commit/14890bf2b9014df25f9b4de86f29b5e917e5656b.patch">https://github.com/apache/commons-bcel/commit/14890bf2b9014df25f9b4de86f29b5e917e5656b.patch</a></li>
-<li><a href="https://lists.apache.org/thread.html/co1wfk2lyrmpnfhn49o370pvfl978rw6">https://lists.apache.org/thread.html/co1wfk2lyrmpnfhn49o370pvfl978rw6</a></li>
-</ul>
-<h3 id="credits">Credits</h3>
-<ul>
-<li>The Apache Software Foundation (finder)</li>
-<li>Claude Security (tool)</li>
-</ul>
-<h2 id="CVE-2026-45205">StackOverflowError for YAML input with cycles</h2>
-<p>CVE-2026-45205 <a href="https://cve.org/CVERecord?id=CVE-2026-45205">[CVE]</a> <a href="./CVE-2026-45205.cve.json">[CVE json]</a> <a href="./CVE-2026-45205.osv.json">[OSV json]</a></p>
-<p><em>Last updated: 2026-05-14T11:22:48.661Z</em></p>
-<h3 id="affected-1">Affected</h3>
-<ul>
-<li>Apache Commons Configuration from 2.2 before 2.15.0</li>
-</ul>
-<h3 id="description-1">Description</h3>
-<p>Uncontrolled Recursion vulnerability in Apache Commons.</p>When processing an untrusted configuration file, Commons Configuration will throw a StackOverflowError for YAML input with cycles.<br><p>This issue affects Apache Commons: from 2.2 before 2.15.0.</p><p>Users are recommended to upgrade to version 2.15.0, which fixes the issue.</p>
-<h3 id="references-1">References</h3>
-<ul>
-<li><a href="https://github.com/apache/commons-configuration/pull/634">https://github.com/apache/commons-configuration/pull/634</a></li>
-<li><a href="https://lists.apache.org/thread/q3q3j10ohcqhs6o0rg1v7kz6kk27vtkk">https://lists.apache.org/thread/q3q3j10ohcqhs6o0rg1v7kz6kk27vtkk</a></li>
-</ul>
-<h3 id="credits-1">Credits</h3>
-<ul>
-<li>Erichen, Institute of Computing Technology, Chinese Academy of Sciences (reporter)</li>
-</ul>
 <h2 id="CVE-2026-124077">NUL bytes in tree entry names cause Git/SWHID identifier collisions (GitIdentifiers class)</h2>
 <p>CVE-2026-124077 <a href="https://cve.org/CVERecord?id=CVE-2026-124077">[CVE]</a> <a href="./CVE-2026-124077.cve.json">[CVE json]</a> <a href="./CVE-2026-124077.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-11-09T20:10:40.509Z</em></p>
-<h3 id="affected-2">Affected</h3>
+<h3 id="affected">Affected</h3>
 <ul>
 <li>Apache Commons Codec from 1.22.0 before 1.23.0</li>
 <li>Apache Commons Codec from 387120c901f4a75c3112dfdf8877dcdec7ae685d before 87f6aa2818836998528ff4b0d1ea35545a800ee5</li>
 </ul>
-<h3 id="description-2">Description</h3>
+<h3 id="description">Description</h3>
 <p>The <code>GitIdentifiers</code> class in Apache Commons Codec did not reject NUL bytes in tree entry names. Because Git uses a NUL byte to mark the end of each entry name in a tree object, a crafted name could make one tree serialize to the same bytes as a different tree. Two different directory trees could then receive the same Git tree identifier or SWHID.</p><p>The impact is limited: common file systems do not allow NUL bytes in file names, so trees built by walking a file system are not affected. Only applications that build trees from names supplied by other sources, such as entries of archive formats that permit NUL bytes in names (e.g. ZIP) or names passed directly to the API, are exposed.</p><p>This issue affects Apache Commons Codec: from 1.22.0 before 1.23.0.</p><p>Users are recommended to upgrade to version 1.23.0, which fixes the issue.</p>
-<h3 id="references-2">References</h3>
+<h3 id="references">References</h3>
 <ul>
 <li><a href="https://github.com/apache/commons-codec/commit/87f6aa2818836998528ff4b0d1ea35545a800ee5.patch">https://github.com/apache/commons-codec/commit/87f6aa2818836998528ff4b0d1ea35545a800ee5.patch</a></li>
 <li><a href="https://lists.apache.org/thread.html/zns7tbnkq685prps9d85q7ct6oobvzsm">https://lists.apache.org/thread.html/zns7tbnkq685prps9d85q7ct6oobvzsm</a></li>
 </ul>
-<h3 id="credits-2">Credits</h3>
+<h3 id="credits">Credits</h3>
 <ul>
 <li>Claude Security (tool)</li>
 <li>Gary D. Gregory (remediation developer)</li>
@@ -173,17 +135,17 @@
 <h2 id="CVE-2026-119078">Blake3 doFinalize is stateless; the documented KDF example derives identical keys</h2>
 <p>CVE-2026-119078 <a href="https://cve.org/CVERecord?id=CVE-2026-119078">[CVE]</a> <a href="./CVE-2026-119078.cve.json">[CVE json]</a> <a href="./CVE-2026-119078.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-11-09T20:11:10.226Z</em></p>
-<h3 id="affected-3">Affected</h3>
+<h3 id="affected-1">Affected</h3>
 <ul>
 <li>Apache Commons Codec from 1.16.0 before 1.23.0</li>
 </ul>
-<h3 id="description-3">Description</h3>
+<h3 id="description-1">Description</h3>
 <p><span>Apache Commons Codec's </span><code>Blake3</code><span> class documented the output of its </span><code>doFinalize</code><span> methods as depending on any previously finalized bytes, so that consecutive calls would return different output. In fact, </span><code>doFinalize</code><span> does not change the hash state: calling it again without supplying more input returns the same bytes. The key-derivation example in the class Javadoc, shipped since 1.16.0, derives two keys with two consecutive </span><code>doFinalize</code><span> calls. Code that follows it gets identical keys, so the separation between the derived keys is lost. The same applies to any application that calls </span><code>doFinalize</code><span> more than once on one instance and expects new output each time.</span></p><p>This issue affects Apache Commons Codec from 1.16.0 before 1.23.0.</p><p>Version 1.23.0 corrects the documentation, but the behavior of <code>doFinalize</code> is unchanged. Upgrading alone does not fix affected code. Users should check their applications for repeated <code>doFinalize</code> calls on the same Blake3 instance and derive multiple keys by requesting the combined length in one call and splitting the output, as the updated Javadoc shows.</p>
-<h3 id="references-3">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://lists.apache.org/thread.html/ol71kdgopfxwlxgqmkd0jrfcw05wdq5z">https://lists.apache.org/thread.html/ol71kdgopfxwlxgqmkd0jrfcw05wdq5z</a></li>
 </ul>
-<h3 id="credits-3">Credits</h3>
+<h3 id="credits-1">Credits</h3>
 <ul>
 <li>Claude Security (tool)</li>
 <li>Gary D. Gregory (remediation developer)</li>
@@ -191,22 +153,60 @@
 <h2 id="CVE-2026-105111">Class2HTML emits unescaped class strings, enabling stored XSS</h2>
 <p>CVE-2026-105111 <a href="https://cve.org/CVERecord?id=CVE-2026-105111">[CVE]</a> <a href="./CVE-2026-105111.cve.json">[CVE json]</a> <a href="./CVE-2026-105111.osv.json">[OSV json]</a></p>
 <p><em>Last updated: 2026-10-07T11:33:54.365Z</em></p>
-<h3 id="affected-4">Affected</h3>
+<h3 id="affected-2">Affected</h3>
 <ul>
 <li>Apache Commons BCEL before 6.13.0</li>
 <li>Apache Commons BCEL before fb72c225cbc6ec3d94060ed6edb269f07428d504</li>
 </ul>
-<h3 id="description-4">Description</h3>
+<h3 id="description-2">Description</h3>
 <p>Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in Apache Commons BCEL.</p><p>This only happens when you're using <code>Class2HTML</code> to generate webpages for possibly-attacker-controlled class files, where <code>Class2HTML</code> emitters write attacker class-file strings into HTML unescaped (stored XSS in reports).</p><p>This issue affects Apache Commons BCEL: before 6.13.0.</p><p>Users are recommended to upgrade to version 6.13.0, which fixes the issue.</p>
-<h3 id="references-4">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://github.com/apache/commons-bcel/commit/fb72c225cbc6ec3d94060ed6edb269f07428d504.patch">https://github.com/apache/commons-bcel/commit/fb72c225cbc6ec3d94060ed6edb269f07428d504.patch</a></li>
 <li><a href="https://lists.apache.org/thread.html/d87nxx7nb5bombqggxhxo9lz16nwtsf9">https://lists.apache.org/thread.html/d87nxx7nb5bombqggxhxo9lz16nwtsf9</a></li>
 </ul>
-<h3 id="credits-4">Credits</h3>
+<h3 id="credits-2">Credits</h3>
 <ul>
 <li>The Apache Software Foundation (finder)</li>
 <li>Claude Security (tool)</li>
+</ul>
+<h2 id="CVE-2026-94114">Class repositories cache class files under their self-declared names, enabling cache poisoning</h2>
+<p>CVE-2026-94114 <a href="https://cve.org/CVERecord?id=CVE-2026-94114">[CVE]</a> <a href="./CVE-2026-94114.cve.json">[CVE json]</a> <a href="./CVE-2026-94114.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-10-08T05:24:24.834Z</em></p>
+<h3 id="affected-3">Affected</h3>
+<ul>
+<li>Apache Commons BCEL before 6.13.0</li>
+<li>Apache Commons BCEL before 14890bf2b9014df25f9b4de86f29b5e917e5656b</li>
+</ul>
+<h3 id="description-3">Description</h3>
+<p>Symbolic name not mapping to correct class.</p><p>BCEL caches attacker-controlled classes under their self-declared names without validating the requested name, allowing subsequent lookups and name-keyed verification results to refer to a different class.</p><p>This issue affects Apache Commons BCEL: before 6.13.0.</p><p>Users are recommended to upgrade to version 6.13.0, which fixes the issue.</p>
+<h3 id="references-3">References</h3>
+<ul>
+<li><a href="https://github.com/apache/commons-bcel/commit/14890bf2b9014df25f9b4de86f29b5e917e5656b.patch">https://github.com/apache/commons-bcel/commit/14890bf2b9014df25f9b4de86f29b5e917e5656b.patch</a></li>
+<li><a href="https://lists.apache.org/thread.html/co1wfk2lyrmpnfhn49o370pvfl978rw6">https://lists.apache.org/thread.html/co1wfk2lyrmpnfhn49o370pvfl978rw6</a></li>
+</ul>
+<h3 id="credits-3">Credits</h3>
+<ul>
+<li>The Apache Software Foundation (finder)</li>
+<li>Claude Security (tool)</li>
+</ul>
+<h2 id="CVE-2026-45205">StackOverflowError for YAML input with cycles</h2>
+<p>CVE-2026-45205 <a href="https://cve.org/CVERecord?id=CVE-2026-45205">[CVE]</a> <a href="./CVE-2026-45205.cve.json">[CVE json]</a> <a href="./CVE-2026-45205.osv.json">[OSV json]</a></p>
+<p><em>Last updated: 2026-05-14T11:22:48.661Z</em></p>
+<h3 id="affected-4">Affected</h3>
+<ul>
+<li>Apache Commons Configuration from 2.2 before 2.15.0</li>
+</ul>
+<h3 id="description-4">Description</h3>
+<p>Uncontrolled Recursion vulnerability in Apache Commons.</p>When processing an untrusted configuration file, Commons Configuration will throw a StackOverflowError for YAML input with cycles.<br><p>This issue affects Apache Commons: from 2.2 before 2.15.0.</p><p>Users are recommended to upgrade to version 2.15.0, which fixes the issue.</p>
+<h3 id="references-4">References</h3>
+<ul>
+<li><a href="https://github.com/apache/commons-configuration/pull/634">https://github.com/apache/commons-configuration/pull/634</a></li>
+<li><a href="https://lists.apache.org/thread/q3q3j10ohcqhs6o0rg1v7kz6kk27vtkk">https://lists.apache.org/thread/q3q3j10ohcqhs6o0rg1v7kz6kk27vtkk</a></li>
+</ul>
+<h3 id="credits-4">Credits</h3>
+<ul>
+<li>Erichen, Institute of Computing Technology, Chinese Academy of Sciences (reporter)</li>
 </ul>
 <h2 id="CVE-2025-53192">Expression Injection leading to RCE</h2>
 <p>CVE-2025-53192 <a href="https://cve.org/CVERecord?id=CVE-2025-53192">[CVE]</a> <a href="./CVE-2025-53192.cve.json">[CVE json]</a> <a href="./CVE-2025-53192.osv.json">[OSV json]</a></p>
