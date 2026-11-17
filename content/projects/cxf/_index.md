@@ -19,6 +19,114 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Prevent unbounded XML document size in StaxUtils by adding default element and character limits ## { #CVE-2026-108039 }
+
+CVE-2026-108039 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108039) [\[CVE json\]](./CVE-2026-108039.cve.json) [\[OSV json\]](./CVE-2026-108039.osv.json)
+
+
+
+_Last updated: 2026-10-09T10:22:34.187Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.4
+* Apache CXF from 4.0.0 before 4.1.9
+* Apache CXF before 3.6.13
+
+
+### Description
+
+By default, StaxUtils placed no limit on the total number of elements or the total number of characters in an XML document. A very large request could therefore use a lot of memory and CPU during parsing, especially where CXF builds a DOM from the input (for example SAAJ or WS-Security), and could cause a denial of service when no request size limit was configured. Both limits now have defaults: the maximum element count is 100 × maxChildElements (5,000,000 by default), and the maximum document size is 256M characters. Applications that process larger documents can raise the limits with the org.apache.cxf.stax.maxElementCount and org.apache.cxf.stax.maxXMLCharacters properties.<br>Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/ms2gbpof609o0v1bjlzb1rn7fwh61l1j
+
+
+### Credits
+* Wanxin Yin (yaklang.io) <yhellow123456@gmail.com> (finder)
+
+
+## The Netty HTTP client transport does not perform TLS hostname verification. ## { #CVE-2026-107938 }
+
+CVE-2026-107938 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-107938) [\[CVE json\]](./CVE-2026-107938.cve.json) [\[OSV json\]](./CVE-2026-107938.osv.json)
+
+
+
+_Last updated: 2026-10-09T10:20:10.058Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.4
+* Apache CXF from 4.0.0 before 4.1.9
+* Apache CXF before 3.6.13
+
+
+### Description
+
+In Apache CXF, the Netty-based HTTP client transport (<code>cxf-rt-transports-http-netty-client</code>) did not verify that the hostname in the server’s TLS certificate matched the host being called. This applied over both HTTP/1.1 and HTTP/2, even when <code>disableCNCheck</code> was left at its default value of <code>false</code>. The certificate chain was validated against the configured trust store, but the endpoint’s identity was not. A network attacker able to intercept traffic could present any certificate trusted by the client, such as a publicly issued certificate for a domain they control, and impersonate the target service. They could then read or modify the exchanged messages, including credentials.&nbsp;<br>Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/ljsjsq1foyjy1v5o22oncw80twx7k2tc
+
+
+### Credits
+* This issue was found using Claude agents to study the security of open-source projects (finder)
+
+
+## The attachment header size and count limits can be bypassed, which allows denial of service through memory exhaustion. ## { #CVE-2026-107937 }
+
+CVE-2026-107937 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-107937) [\[CVE json\]](./CVE-2026-107937.cve.json) [\[OSV json\]](./CVE-2026-107937.osv.json)
+
+
+
+_Last updated: 2026-10-09T10:19:52.285Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.4
+* Apache CXF from 4.0.0 before 4.1.9
+* Apache CXF before 3.6.13
+
+
+### Description
+
+In Apache CXF, the parser for multipart/MTOM attachment part headers did not fully enforce the configured <code>attachment-max-header-size</code> (default 300 characters) and <code>attachment-headers-max-count</code> (default 500) limits. The size limit was applied only to each physical line, not to a header value built from continuation lines or to the combined values of a repeated header. The count limit was checked against the number of distinct header names, not the total number of header lines. A remote, unauthenticated attacker could send a multipart request with very large folded or repeated part headers. The server would then allocate memory without bound, causing a denial of service.&nbsp;<br>Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/x9twtpv3d04qj83t6w9xkh9y2q28zztj
+
+
+### Credits
+* This issue was found using Claude agents to study the security of open-source projects and independently by Mike Read (github.com/Michael-JRead) (finder)
+
+
+## XML Signature wrapping in JAX-RS XML Security ## { #CVE-2026-100227 }
+
+CVE-2026-100227 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-100227) [\[CVE json\]](./CVE-2026-100227.cve.json) [\[OSV json\]](./CVE-2026-100227.osv.json)
+
+
+
+_Last updated: 2026-10-09T10:19:39.573Z_
+
+### Affected
+
+* Apache CXF from 4.2.0 before 4.2.4
+* Apache CXF from 4.0.0 before 4.1.9
+* Apache CXF before 3.6.13
+
+
+### Description
+
+Improper Verification of Cryptographic Signature vulnerability in Apache CXF's JAX-RS XML Security module. The JAX-RS XML Signature interceptors (XmlSigInHandler, XmlSigInInterceptor and the streaming XmlSecInInterceptor) did not ensure that the XML passed to the application was covered by the signature. An attacker with any document signed by a trusted key could wrap it in unsigned content, which the application would then treat as signed.<br>Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/pst2oopnwt2rwhvkvmt5gdgwn36kq05m
+
+
+### Credits
+* This issue was found using Claude agents to study the security of open-source projects and independently by Guanping Zhang (finder)
+
+
 ## STSTokenValidator can accept untrusted SAML assertions because it shares validation state between requests ## { #CVE-2026-97791 }
 
 CVE-2026-97791 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97791) [\[CVE json\]](./CVE-2026-97791.cve.json) [\[OSV json\]](./CVE-2026-97791.osv.json)
@@ -895,114 +1003,6 @@ The fix for&nbsp;CVE-2025-48913: Apache CXF: Untrusted JMS configuration can lea
 
 ### Credits
 * Github / twitter - https://github.com/exploitintel / @exploit_intel (finder)
-
-
-## Prevent unbounded XML document size in StaxUtils by adding default element and character limits ## { #CVE-2026-108039 }
-
-CVE-2026-108039 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108039) [\[CVE json\]](./CVE-2026-108039.cve.json) [\[OSV json\]](./CVE-2026-108039.osv.json)
-
-
-
-_Last updated: 2026-10-09T10:22:34.187Z_
-
-### Affected
-
-* Apache CXF from 4.2.0 before 4.2.4
-* Apache CXF from 4.0.0 before 4.1.9
-* Apache CXF before 3.6.13
-
-
-### Description
-
-By default, StaxUtils placed no limit on the total number of elements or the total number of characters in an XML document. A very large request could therefore use a lot of memory and CPU during parsing, especially where CXF builds a DOM from the input (for example SAAJ or WS-Security), and could cause a denial of service when no request size limit was configured. Both limits now have defaults: the maximum element count is 100 × maxChildElements (5,000,000 by default), and the maximum document size is 256M characters. Applications that process larger documents can raise the limits with the org.apache.cxf.stax.maxElementCount and org.apache.cxf.stax.maxXMLCharacters properties.<br>Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fix this issue.
-
-### References
-* https://lists.apache.org/thread.html/ms2gbpof609o0v1bjlzb1rn7fwh61l1j
-
-
-### Credits
-* Wanxin Yin (yaklang.io) <yhellow123456@gmail.com> (finder)
-
-
-## The Netty HTTP client transport does not perform TLS hostname verification. ## { #CVE-2026-107938 }
-
-CVE-2026-107938 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-107938) [\[CVE json\]](./CVE-2026-107938.cve.json) [\[OSV json\]](./CVE-2026-107938.osv.json)
-
-
-
-_Last updated: 2026-10-09T10:20:10.058Z_
-
-### Affected
-
-* Apache CXF from 4.2.0 before 4.2.4
-* Apache CXF from 4.0.0 before 4.1.9
-* Apache CXF before 3.6.13
-
-
-### Description
-
-In Apache CXF, the Netty-based HTTP client transport (<code>cxf-rt-transports-http-netty-client</code>) did not verify that the hostname in the server’s TLS certificate matched the host being called. This applied over both HTTP/1.1 and HTTP/2, even when <code>disableCNCheck</code> was left at its default value of <code>false</code>. The certificate chain was validated against the configured trust store, but the endpoint’s identity was not. A network attacker able to intercept traffic could present any certificate trusted by the client, such as a publicly issued certificate for a domain they control, and impersonate the target service. They could then read or modify the exchanged messages, including credentials.&nbsp;<br>Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fix this issue.
-
-### References
-* https://lists.apache.org/thread.html/ljsjsq1foyjy1v5o22oncw80twx7k2tc
-
-
-### Credits
-* This issue was found using Claude agents to study the security of open-source projects (finder)
-
-
-## The attachment header size and count limits can be bypassed, which allows denial of service through memory exhaustion. ## { #CVE-2026-107937 }
-
-CVE-2026-107937 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-107937) [\[CVE json\]](./CVE-2026-107937.cve.json) [\[OSV json\]](./CVE-2026-107937.osv.json)
-
-
-
-_Last updated: 2026-10-09T10:19:52.285Z_
-
-### Affected
-
-* Apache CXF from 4.2.0 before 4.2.4
-* Apache CXF from 4.0.0 before 4.1.9
-* Apache CXF before 3.6.13
-
-
-### Description
-
-In Apache CXF, the parser for multipart/MTOM attachment part headers did not fully enforce the configured <code>attachment-max-header-size</code> (default 300 characters) and <code>attachment-headers-max-count</code> (default 500) limits. The size limit was applied only to each physical line, not to a header value built from continuation lines or to the combined values of a repeated header. The count limit was checked against the number of distinct header names, not the total number of header lines. A remote, unauthenticated attacker could send a multipart request with very large folded or repeated part headers. The server would then allocate memory without bound, causing a denial of service.&nbsp;<br>Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fix this issue.
-
-### References
-* https://lists.apache.org/thread.html/x9twtpv3d04qj83t6w9xkh9y2q28zztj
-
-
-### Credits
-* This issue was found using Claude agents to study the security of open-source projects and independently by Mike Read (github.com/Michael-JRead) (finder)
-
-
-## XML Signature wrapping in JAX-RS XML Security ## { #CVE-2026-100227 }
-
-CVE-2026-100227 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-100227) [\[CVE json\]](./CVE-2026-100227.cve.json) [\[OSV json\]](./CVE-2026-100227.osv.json)
-
-
-
-_Last updated: 2026-10-09T10:19:39.573Z_
-
-### Affected
-
-* Apache CXF from 4.2.0 before 4.2.4
-* Apache CXF from 4.0.0 before 4.1.9
-* Apache CXF before 3.6.13
-
-
-### Description
-
-Improper Verification of Cryptographic Signature vulnerability in Apache CXF's JAX-RS XML Security module. The JAX-RS XML Signature interceptors (XmlSigInHandler, XmlSigInInterceptor and the streaming XmlSecInInterceptor) did not ensure that the XML passed to the application was covered by the signature. An attacker with any document signed by a trusted key could wrap it in unsigned content, which the application would then treat as signed.<br>Users are recommended to upgrade to versions 4.2.4 or 4.1.9 or 3.6.13, which fix this issue.
-
-### References
-* https://lists.apache.org/thread.html/pst2oopnwt2rwhvkvmt5gdgwn36kq05m
-
-
-### Credits
-* This issue was found using Claude agents to study the security of open-source projects and independently by Guanping Zhang (finder)
 
 
 ## Untrusted JMS configuration can lead to RCE ## { #CVE-2025-48913 }

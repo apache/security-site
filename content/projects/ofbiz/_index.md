@@ -18,6 +18,382 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Janrain Engage Social Login Improperly Binds External Identities to Local Accounts ## { #CVE-2026-114277 }
+
+CVE-2026-114277 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-114277) [\[CVE json\]](./CVE-2026-114277.cve.json) [\[OSV json\]](./CVE-2026-114277.osv.json)
+
+
+
+_Last updated: 2026-11-05T13:33:34.588Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.08
+
+
+### Description
+
+<p>Authentication bypass by Assumed-Immutable data vulnerability in Apache OFBiz.<br><span>Apache OFBiz's optional Janrain Engage Social Login integration in the ecommerce component improperly binds authenticated external identities to local user accounts.<br></span><span>This issue affects Apache OFBiz: before 24.09.08.<br></span><span>Users are recommended to upgrade to version 24.09.08, which fixes the issue.</span></p>
+
+### References
+* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
+
+
+### Credits
+* MUTED CYBERSECURITY (reporter)
+
+
+## Authorization Bypass Through User-Controlled Key in Content Viewing Enables Unauthorized Content Disclosure ## { #CVE-2026-114272 }
+
+CVE-2026-114272 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-114272) [\[CVE json\]](./CVE-2026-114272.cve.json) [\[OSV json\]](./CVE-2026-114272.osv.json)
+
+
+
+_Last updated: 2026-11-05T13:34:01.391Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.08
+
+
+### Description
+
+Authorization Bypass Through User-Controlled Key in the content viewing component in Apache OFBiz 24.09 before 24.09.08 on all platforms allows an authenticated user with role-scoped content view permission to read the data of content they are not authorized to view via a ViewSimpleContent request that combines a contentId they can view with the dataResourceId of other content.<br>Users are recommended to upgrade to version 24.09.08, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
+
+
+### Credits
+* Mathias Conradt (Sonar) (reporter)
+
+
+## Authorization Bypass Through User-Controlled Key in Shopping Lists Enables Cross-Party Shopping List Modification ## { #CVE-2026-114271 }
+
+CVE-2026-114271 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-114271) [\[CVE json\]](./CVE-2026-114271.cve.json) [\[OSV json\]](./CVE-2026-114271.osv.json)
+
+
+
+_Last updated: 2026-11-05T13:34:25.209Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.08
+
+
+### Description
+
+Authorization Bypass Through User-Controlled Key in the shopping list services in Apache OFBiz 24.09 before 24.09.08 on all platforms allows an authenticated low-privileged user, such as a self-registered ecommerce customer, to modify another party's shopping list or take ownership of it, and thereby read its contents, via a request to the shopping list update endpoint that supplies the other party's shopping list ID.<br><br>Users are recommended to upgrade to version 24.09.08, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
+
+
+### Credits
+* Mathias Conradt (Sonar) (reporter)
+
+
+## Direct Request in Order Manager Enables Unauthorized Tracking Number Modification ## { #CVE-2026-114235 }
+
+CVE-2026-114235 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-114235) [\[CVE json\]](./CVE-2026-114235.cve.json) [\[OSV json\]](./CVE-2026-114235.osv.json)
+
+
+
+_Last updated: 2026-11-05T13:35:11.048Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.08
+
+
+### Description
+
+<div><span>Direct Request ('Forced Browsing') in the Order component in Apache OFBiz&nbsp;</span>24.09 before 24.09.08<span>&nbsp;on all platforms allows an authenticated user with only view access to the Order Manager to modify the shipment tracking number of any order via a direct request to the updateTrackingNumber endpoint. Users are recommended to upgrade to version&nbsp;</span>24.09.08<span>, which fixes this issue.</span></div>
+
+### References
+* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
+
+
+### Credits
+* noah (VNCS) (reporter)
+
+
+## Incorrect Privilege Assignment in Order Manager Enables Unauthorized Modification of Approved Orders ## { #CVE-2026-114233 }
+
+CVE-2026-114233 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-114233) [\[CVE json\]](./CVE-2026-114233.cve.json) [\[OSV json\]](./CVE-2026-114233.osv.json)
+
+
+
+_Last updated: 2026-11-05T13:35:44.216Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.08
+
+
+### Description
+
+Incorrect Privilege Assignment in the Order Manager in Apache OFBiz&nbsp;24.09 before 24.09.08&nbsp;on all platforms allows an authenticated user who holds only order view permissions (ORDERMGR_VIEW), without ORDERMGR_UPDATE or any role on the order, to modify approved orders, changing a ship group's shipping address and shipment method or appending items with an overridden price, via the updateShipGroupShipInfo and appendOrderItem services. Users are recommended to upgrade to version&nbsp;24.09.08, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
+
+
+### Credits
+* Javier García Herrera of Muted Cybersecurity (reporter)
+
+
+## Reflected Cross-site Scripting in Catalog Image Viewer Enables Script Execution in a User Session ## { #CVE-2026-114229 }
+
+CVE-2026-114229 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-114229) [\[CVE json\]](./CVE-2026-114229.cve.json) [\[OSV json\]](./CVE-2026-114229.osv.json)
+
+
+
+_Last updated: 2026-11-05T13:36:12.099Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.08
+
+
+### Description
+
+Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') in the Catalog image viewer in Apache OFBiz 24.09 before 24.09.08 on all platforms allows an unauthenticated attacker to execute arbitrary JavaScript in the browser session of a logged-in back-office user via a crafted viewImage URL that the user opens from within the application.<br>Users are recommended to upgrade to version 24.09.08, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
+
+
+### Credits
+* NGUYỄN DUY THẢO | https://github.com/duythao2004 (reporter)
+
+
+## Incorrect Authentication Algorithm Implementation in Password Reset Enables Full Account Takeover ## { #CVE-2026-109928 }
+
+CVE-2026-109928 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-109928) [\[CVE json\]](./CVE-2026-109928.cve.json) [\[OSV json\]](./CVE-2026-109928.osv.json)
+
+
+
+_Last updated: 2026-11-05T13:36:49.154Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.08
+
+
+### Description
+
+Incorrect Implementation of Authentication Algorithm in the password-reset and login JWT validation in Apache OFBiz 24.09 before 24.09.08 on all platforms allows an attacker who has obtained a user's password-reset token (via email interception, log exposure, or a man-in-the-middle on the mail transport) to authenticate as that user and obtain a full, unrestricted session, including administrative access if the targeted account is an administrator, by submitting the token directly to the login endpoint instead of the intended password-change flow. Users are recommended to upgrade to version 24.09.08, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
+
+
+### Credits
+* CyberLeo (Independent Security Researcher) (reporter)
+
+
+## Missing Authorization in Financial Account Services Enables Unauthorized Balance Manipulation ## { #CVE-2026-109856 }
+
+CVE-2026-109856 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-109856) [\[CVE json\]](./CVE-2026-109856.cve.json) [\[OSV json\]](./CVE-2026-109856.osv.json)
+
+
+
+_Last updated: 2026-11-05T13:37:31.894Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.08
+
+
+### Description
+
+Direct Request ('Forced Browsing') to Financial Account services in Apache OFBiz 24.09 before 24.09.08 on all platforms allows an authenticated user with any valid low-privilege account to create, modify, and cancel financial account transactions and balances without appropriate permission via direct requests to the createFinAccount, updateFinAccount, deleteFinAccount, createFinAccountTrans, createFinAccountRole, createFinAccountAuth, setFinAccountTransStatus, and depositWithdrawPayments services.<br><br>Users are recommended to upgrade to version 24.09.08, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
+
+
+### Credits
+* Ho1aAs <xxy010605@gmail.com> (reporter)
+* Mathias Conradt | Sonar (reporter)
+
+
+## Authorization Bypass Through User-Controlled Key in Order Returns Enables Cross-Party OrderItem Association ## { #CVE-2026-109837 }
+
+CVE-2026-109837 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-109837) [\[CVE json\]](./CVE-2026-109837.cve.json) [\[OSV json\]](./CVE-2026-109837.osv.json)
+
+
+
+_Last updated: 2026-11-05T13:38:00.607Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.08
+
+
+### Description
+
+Authorization Bypass Through User-Controlled Key in Order Returns in Apache OFBiz&nbsp;24.09 before 24.09.08&nbsp;on all platforms allows an authenticated user with low-privileged Order Manager access to associate another party's OrderItem with a ReturnItem on a ReturnHeader they control, via the createReturnItem service. Users are recommended to upgrade to version 24.09.08, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
+
+
+### Credits
+* Omar Mousa — Red Team & Security Researcher, LinkedIn: https://www.linkedin.com/in/omar-mousa15 (reporter)
+
+
+## Authorization Bypass Through User-Controlled Key in OrderServices Enables Unauthorized Payment Preference Modification ## { #CVE-2026-109129 }
+
+CVE-2026-109129 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-109129) [\[CVE json\]](./CVE-2026-109129.cve.json) [\[OSV json\]](./CVE-2026-109129.osv.json)
+
+
+
+_Last updated: 2026-11-05T13:38:51.199Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.08
+
+
+### Description
+
+Authorization Bypass Through User-Controlled Key in the Order Manager component in Apache OFBiz 24.09.07 on all platforms allows an authenticated user with only view-level order permissions to modify or create OrderPaymentPreference records belonging to orders outside their authorized scope via the updateOrderPaymentPreference service, by supplying an orderPaymentPreferenceId belonging to a different order.<br>Users are recommended to upgrade to version 24.09.08, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
+
+
+### Credits
+* Omar Mousa — Red Team & Security Researcher, LinkedIn: https://www.linkedin.com/in/omar-mousa15 (reporter)
+
+
+## Missing authorization in updateOrderItems allows view-only users to modify order prices and quantities ## { #CVE-2026-105461 }
+
+CVE-2026-105461 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105461) [\[CVE json\]](./CVE-2026-105461.cve.json) [\[OSV json\]](./CVE-2026-105461.osv.json)
+
+
+
+_Last updated: 2026-11-05T13:39:36.383Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.08
+
+
+### Description
+
+<div>Missing check for&nbsp;&nbsp;<u>ORDERMGR_UPDATE&nbsp;</u>in ordermgr allows user with only ORDERMGR_VIEW permission to update orders.</div><div>Affected versions before : 24.09.08</div>Users are recommended to upgrade to version 24.09.08 which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
+
+
+### Credits
+* Ivan "Steph" Iushkevich (finder)
+
+
+## Use of Hard-coded Cryptographic Key in JWT Token Authentication Enables Unauthenticated Administrative Access ## { #CVE-2026-105330 }
+
+CVE-2026-105330 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105330) [\[CVE json\]](./CVE-2026-105330.cve.json) [\[OSV json\]](./CVE-2026-105330.osv.json)
+
+
+
+_Last updated: 2026-11-05T13:40:01.630Z_
+
+### Affected
+
+* Apache OFBiz from 24.09.06 before 24.09.08
+
+
+### Description
+
+Use of Hard-coded Cryptographic Key in JWT token authentication in Apache OFBiz 24.09.06 and 24.09.07 on all platforms allows an unauthenticated, network-reachable attacker to obtain full administrative access via a forged JWT signed with the factory-default security.token.key value that CVE-2026-31986 removed from newly generated configurations, on a deployment that upgraded from a release predating that fix while retaining its existing security.properties with security.internal.sso.enabled set to true. Users are recommended to upgrade to version 24.09.08. Upgrading alone does not replace an already-configured key: deployments that carried framework/security/config/security.properties forward from a release predating the CVE-2026-31986 fix must also run './gradlew rotateSecretKeys' after upgrading, since the existing generateSecretKeys task leaves an already-set value untouched.
+
+### References
+* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
+
+
+### Credits
+* L1nq (https://github.com/L1nq0) (reporter)
+
+
+## Missing authorization in payment application services allows view-only users to modify payment allocations ## { #CVE-2026-105325 }
+
+CVE-2026-105325 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105325) [\[CVE json\]](./CVE-2026-105325.cve.json) [\[OSV json\]](./CVE-2026-105325.osv.json)
+
+
+
+_Last updated: 2026-11-05T13:40:31.985Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.08
+
+
+### Description
+
+<div>Missing check for&nbsp;&nbsp;<u>ACCOUNTING_UPDATE /&nbsp;</u> <u>ACCOUNTING_CREATE</u>&nbsp;in accounting in allows user with only ACCOUNTING_VIEW permission to update/create PaymentApplication.</div><div>Affected versions before : 24.09.08</div>Users are recommended to upgrade to version 24.09.08 which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
+
+
+### Credits
+* Ivan "Steph" Iushkevich (reporter)
+
+
+## Improper Input Validation in Order Returns Enables Unauthorized Refund Price Manipulation ## { #CVE-2026-100228 }
+
+CVE-2026-100228 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-100228) [\[CVE json\]](./CVE-2026-100228.cve.json) [\[OSV json\]](./CVE-2026-100228.osv.json)
+
+
+
+_Last updated: 2026-11-05T13:43:35.655Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.08
+
+
+### Description
+
+Improper Input Validation in Order Returns in Apache OFBiz 24.09.07 on all platforms allows an authenticated user without the ORDERMGR_CREATE permission to persist an arbitrary price on a return item via the createReturnItem service, bypassing the intended server-computed price ceiling. Users are recommended to upgrade to version 24.09.08, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
+
+
+### Credits
+* Sakil Ahamed (reporter)
+
+
+## Missing Authorization vulnerability ## { #CVE-2026-100168 }
+
+CVE-2026-100168 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-100168) [\[CVE json\]](./CVE-2026-100168.cve.json) [\[OSV json\]](./CVE-2026-100168.osv.json)
+
+
+
+_Last updated: 2026-11-05T13:44:03.331Z_
+
+### Affected
+
+* Apache OFBiz before 24.09.08
+
+
+### Description
+
+Direct Request ('Forced Browsing') in the Content Manager component in Apache OFBiz 24.09.07 on all platforms allows an authenticated user holding only view-only content permissions (OFBTOOLS_VIEW and CONTENTMGR_VIEW) to re-parent content associations they do not own or manage via a direct POST request to the moveContentJson endpoint, which performs no permission check, unlike the equivalent updateContent/createContentAssoc/removeContentAssoc services that require genericContentPermission UPDATE. Users are recommended to upgrade to version 24.09.08, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
+
+
+### Credits
+* Ivan "Steph" Iushkevich (reporter)
+
+
 ## Insufficiently Protected Credentials in ViewFile Enable Authentication Bypass ## { #CVE-2026-97356 }
 
 CVE-2026-97356 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97356) [\[CVE json\]](./CVE-2026-97356.cve.json) [\[OSV json\]](./CVE-2026-97356.osv.json)
@@ -1323,382 +1699,6 @@ Additionally, in the updated version, the "Ecommerce Customer" security group no
 ### Credits
 * Lidor B / thisis0xczar of Novee Security (reporter)
 * Sho Odagiri of GMO Cybersecurity by Ierae, Inc. (reporter)
-
-
-## Janrain Engage Social Login Improperly Binds External Identities to Local Accounts ## { #CVE-2026-114277 }
-
-CVE-2026-114277 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-114277) [\[CVE json\]](./CVE-2026-114277.cve.json) [\[OSV json\]](./CVE-2026-114277.osv.json)
-
-
-
-_Last updated: 2026-11-05T13:33:34.588Z_
-
-### Affected
-
-* Apache OFBiz before 24.09.08
-
-
-### Description
-
-<p>Authentication bypass by Assumed-Immutable data vulnerability in Apache OFBiz.<br><span>Apache OFBiz's optional Janrain Engage Social Login integration in the ecommerce component improperly binds authenticated external identities to local user accounts.<br></span><span>This issue affects Apache OFBiz: before 24.09.08.<br></span><span>Users are recommended to upgrade to version 24.09.08, which fixes the issue.</span></p>
-
-### References
-* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
-
-
-### Credits
-* MUTED CYBERSECURITY (reporter)
-
-
-## Authorization Bypass Through User-Controlled Key in Content Viewing Enables Unauthorized Content Disclosure ## { #CVE-2026-114272 }
-
-CVE-2026-114272 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-114272) [\[CVE json\]](./CVE-2026-114272.cve.json) [\[OSV json\]](./CVE-2026-114272.osv.json)
-
-
-
-_Last updated: 2026-11-05T13:34:01.391Z_
-
-### Affected
-
-* Apache OFBiz before 24.09.08
-
-
-### Description
-
-Authorization Bypass Through User-Controlled Key in the content viewing component in Apache OFBiz 24.09 before 24.09.08 on all platforms allows an authenticated user with role-scoped content view permission to read the data of content they are not authorized to view via a ViewSimpleContent request that combines a contentId they can view with the dataResourceId of other content.<br>Users are recommended to upgrade to version 24.09.08, which fixes this issue.
-
-### References
-* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
-
-
-### Credits
-* Mathias Conradt (Sonar) (reporter)
-
-
-## Authorization Bypass Through User-Controlled Key in Shopping Lists Enables Cross-Party Shopping List Modification ## { #CVE-2026-114271 }
-
-CVE-2026-114271 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-114271) [\[CVE json\]](./CVE-2026-114271.cve.json) [\[OSV json\]](./CVE-2026-114271.osv.json)
-
-
-
-_Last updated: 2026-11-05T13:34:25.209Z_
-
-### Affected
-
-* Apache OFBiz before 24.09.08
-
-
-### Description
-
-Authorization Bypass Through User-Controlled Key in the shopping list services in Apache OFBiz 24.09 before 24.09.08 on all platforms allows an authenticated low-privileged user, such as a self-registered ecommerce customer, to modify another party's shopping list or take ownership of it, and thereby read its contents, via a request to the shopping list update endpoint that supplies the other party's shopping list ID.<br><br>Users are recommended to upgrade to version 24.09.08, which fixes this issue.
-
-### References
-* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
-
-
-### Credits
-* Mathias Conradt (Sonar) (reporter)
-
-
-## Direct Request in Order Manager Enables Unauthorized Tracking Number Modification ## { #CVE-2026-114235 }
-
-CVE-2026-114235 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-114235) [\[CVE json\]](./CVE-2026-114235.cve.json) [\[OSV json\]](./CVE-2026-114235.osv.json)
-
-
-
-_Last updated: 2026-11-05T13:35:11.048Z_
-
-### Affected
-
-* Apache OFBiz before 24.09.08
-
-
-### Description
-
-<div><span>Direct Request ('Forced Browsing') in the Order component in Apache OFBiz&nbsp;</span>24.09 before 24.09.08<span>&nbsp;on all platforms allows an authenticated user with only view access to the Order Manager to modify the shipment tracking number of any order via a direct request to the updateTrackingNumber endpoint. Users are recommended to upgrade to version&nbsp;</span>24.09.08<span>, which fixes this issue.</span></div>
-
-### References
-* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
-
-
-### Credits
-* noah (VNCS) (reporter)
-
-
-## Incorrect Privilege Assignment in Order Manager Enables Unauthorized Modification of Approved Orders ## { #CVE-2026-114233 }
-
-CVE-2026-114233 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-114233) [\[CVE json\]](./CVE-2026-114233.cve.json) [\[OSV json\]](./CVE-2026-114233.osv.json)
-
-
-
-_Last updated: 2026-11-05T13:35:44.216Z_
-
-### Affected
-
-* Apache OFBiz before 24.09.08
-
-
-### Description
-
-Incorrect Privilege Assignment in the Order Manager in Apache OFBiz&nbsp;24.09 before 24.09.08&nbsp;on all platforms allows an authenticated user who holds only order view permissions (ORDERMGR_VIEW), without ORDERMGR_UPDATE or any role on the order, to modify approved orders, changing a ship group's shipping address and shipment method or appending items with an overridden price, via the updateShipGroupShipInfo and appendOrderItem services. Users are recommended to upgrade to version&nbsp;24.09.08, which fixes this issue.
-
-### References
-* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
-
-
-### Credits
-* Javier García Herrera of Muted Cybersecurity (reporter)
-
-
-## Reflected Cross-site Scripting in Catalog Image Viewer Enables Script Execution in a User Session ## { #CVE-2026-114229 }
-
-CVE-2026-114229 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-114229) [\[CVE json\]](./CVE-2026-114229.cve.json) [\[OSV json\]](./CVE-2026-114229.osv.json)
-
-
-
-_Last updated: 2026-11-05T13:36:12.099Z_
-
-### Affected
-
-* Apache OFBiz before 24.09.08
-
-
-### Description
-
-Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') in the Catalog image viewer in Apache OFBiz 24.09 before 24.09.08 on all platforms allows an unauthenticated attacker to execute arbitrary JavaScript in the browser session of a logged-in back-office user via a crafted viewImage URL that the user opens from within the application.<br>Users are recommended to upgrade to version 24.09.08, which fixes this issue.
-
-### References
-* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
-
-
-### Credits
-* NGUYỄN DUY THẢO | https://github.com/duythao2004 (reporter)
-
-
-## Incorrect Authentication Algorithm Implementation in Password Reset Enables Full Account Takeover ## { #CVE-2026-109928 }
-
-CVE-2026-109928 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-109928) [\[CVE json\]](./CVE-2026-109928.cve.json) [\[OSV json\]](./CVE-2026-109928.osv.json)
-
-
-
-_Last updated: 2026-11-05T13:36:49.154Z_
-
-### Affected
-
-* Apache OFBiz before 24.09.08
-
-
-### Description
-
-Incorrect Implementation of Authentication Algorithm in the password-reset and login JWT validation in Apache OFBiz 24.09 before 24.09.08 on all platforms allows an attacker who has obtained a user's password-reset token (via email interception, log exposure, or a man-in-the-middle on the mail transport) to authenticate as that user and obtain a full, unrestricted session, including administrative access if the targeted account is an administrator, by submitting the token directly to the login endpoint instead of the intended password-change flow. Users are recommended to upgrade to version 24.09.08, which fixes this issue.
-
-### References
-* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
-
-
-### Credits
-* CyberLeo (Independent Security Researcher) (reporter)
-
-
-## Missing Authorization in Financial Account Services Enables Unauthorized Balance Manipulation ## { #CVE-2026-109856 }
-
-CVE-2026-109856 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-109856) [\[CVE json\]](./CVE-2026-109856.cve.json) [\[OSV json\]](./CVE-2026-109856.osv.json)
-
-
-
-_Last updated: 2026-11-05T13:37:31.894Z_
-
-### Affected
-
-* Apache OFBiz before 24.09.08
-
-
-### Description
-
-Direct Request ('Forced Browsing') to Financial Account services in Apache OFBiz 24.09 before 24.09.08 on all platforms allows an authenticated user with any valid low-privilege account to create, modify, and cancel financial account transactions and balances without appropriate permission via direct requests to the createFinAccount, updateFinAccount, deleteFinAccount, createFinAccountTrans, createFinAccountRole, createFinAccountAuth, setFinAccountTransStatus, and depositWithdrawPayments services.<br><br>Users are recommended to upgrade to version 24.09.08, which fixes this issue.
-
-### References
-* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
-
-
-### Credits
-* Ho1aAs <xxy010605@gmail.com> (reporter)
-* Mathias Conradt | Sonar (reporter)
-
-
-## Authorization Bypass Through User-Controlled Key in Order Returns Enables Cross-Party OrderItem Association ## { #CVE-2026-109837 }
-
-CVE-2026-109837 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-109837) [\[CVE json\]](./CVE-2026-109837.cve.json) [\[OSV json\]](./CVE-2026-109837.osv.json)
-
-
-
-_Last updated: 2026-11-05T13:38:00.607Z_
-
-### Affected
-
-* Apache OFBiz before 24.09.08
-
-
-### Description
-
-Authorization Bypass Through User-Controlled Key in Order Returns in Apache OFBiz&nbsp;24.09 before 24.09.08&nbsp;on all platforms allows an authenticated user with low-privileged Order Manager access to associate another party's OrderItem with a ReturnItem on a ReturnHeader they control, via the createReturnItem service. Users are recommended to upgrade to version 24.09.08, which fixes this issue.
-
-### References
-* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
-
-
-### Credits
-* Omar Mousa — Red Team & Security Researcher, LinkedIn: https://www.linkedin.com/in/omar-mousa15 (reporter)
-
-
-## Authorization Bypass Through User-Controlled Key in OrderServices Enables Unauthorized Payment Preference Modification ## { #CVE-2026-109129 }
-
-CVE-2026-109129 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-109129) [\[CVE json\]](./CVE-2026-109129.cve.json) [\[OSV json\]](./CVE-2026-109129.osv.json)
-
-
-
-_Last updated: 2026-11-05T13:38:51.199Z_
-
-### Affected
-
-* Apache OFBiz before 24.09.08
-
-
-### Description
-
-Authorization Bypass Through User-Controlled Key in the Order Manager component in Apache OFBiz 24.09.07 on all platforms allows an authenticated user with only view-level order permissions to modify or create OrderPaymentPreference records belonging to orders outside their authorized scope via the updateOrderPaymentPreference service, by supplying an orderPaymentPreferenceId belonging to a different order.<br>Users are recommended to upgrade to version 24.09.08, which fixes this issue.
-
-### References
-* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
-
-
-### Credits
-* Omar Mousa — Red Team & Security Researcher, LinkedIn: https://www.linkedin.com/in/omar-mousa15 (reporter)
-
-
-## Missing authorization in updateOrderItems allows view-only users to modify order prices and quantities ## { #CVE-2026-105461 }
-
-CVE-2026-105461 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105461) [\[CVE json\]](./CVE-2026-105461.cve.json) [\[OSV json\]](./CVE-2026-105461.osv.json)
-
-
-
-_Last updated: 2026-11-05T13:39:36.383Z_
-
-### Affected
-
-* Apache OFBiz before 24.09.08
-
-
-### Description
-
-<div>Missing check for&nbsp;&nbsp;<u>ORDERMGR_UPDATE&nbsp;</u>in ordermgr allows user with only ORDERMGR_VIEW permission to update orders.</div><div>Affected versions before : 24.09.08</div>Users are recommended to upgrade to version 24.09.08 which fixes this issue.
-
-### References
-* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
-
-
-### Credits
-* Ivan "Steph" Iushkevich (finder)
-
-
-## Use of Hard-coded Cryptographic Key in JWT Token Authentication Enables Unauthenticated Administrative Access ## { #CVE-2026-105330 }
-
-CVE-2026-105330 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105330) [\[CVE json\]](./CVE-2026-105330.cve.json) [\[OSV json\]](./CVE-2026-105330.osv.json)
-
-
-
-_Last updated: 2026-11-05T13:40:01.630Z_
-
-### Affected
-
-* Apache OFBiz from 24.09.06 before 24.09.08
-
-
-### Description
-
-Use of Hard-coded Cryptographic Key in JWT token authentication in Apache OFBiz 24.09.06 and 24.09.07 on all platforms allows an unauthenticated, network-reachable attacker to obtain full administrative access via a forged JWT signed with the factory-default security.token.key value that CVE-2026-31986 removed from newly generated configurations, on a deployment that upgraded from a release predating that fix while retaining its existing security.properties with security.internal.sso.enabled set to true. Users are recommended to upgrade to version 24.09.08. Upgrading alone does not replace an already-configured key: deployments that carried framework/security/config/security.properties forward from a release predating the CVE-2026-31986 fix must also run './gradlew rotateSecretKeys' after upgrading, since the existing generateSecretKeys task leaves an already-set value untouched.
-
-### References
-* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
-
-
-### Credits
-* L1nq (https://github.com/L1nq0) (reporter)
-
-
-## Missing authorization in payment application services allows view-only users to modify payment allocations ## { #CVE-2026-105325 }
-
-CVE-2026-105325 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105325) [\[CVE json\]](./CVE-2026-105325.cve.json) [\[OSV json\]](./CVE-2026-105325.osv.json)
-
-
-
-_Last updated: 2026-11-05T13:40:31.985Z_
-
-### Affected
-
-* Apache OFBiz before 24.09.08
-
-
-### Description
-
-<div>Missing check for&nbsp;&nbsp;<u>ACCOUNTING_UPDATE /&nbsp;</u> <u>ACCOUNTING_CREATE</u>&nbsp;in accounting in allows user with only ACCOUNTING_VIEW permission to update/create PaymentApplication.</div><div>Affected versions before : 24.09.08</div>Users are recommended to upgrade to version 24.09.08 which fixes this issue.
-
-### References
-* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
-
-
-### Credits
-* Ivan "Steph" Iushkevich (reporter)
-
-
-## Improper Input Validation in Order Returns Enables Unauthorized Refund Price Manipulation ## { #CVE-2026-100228 }
-
-CVE-2026-100228 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-100228) [\[CVE json\]](./CVE-2026-100228.cve.json) [\[OSV json\]](./CVE-2026-100228.osv.json)
-
-
-
-_Last updated: 2026-11-05T13:43:35.655Z_
-
-### Affected
-
-* Apache OFBiz before 24.09.08
-
-
-### Description
-
-Improper Input Validation in Order Returns in Apache OFBiz 24.09.07 on all platforms allows an authenticated user without the ORDERMGR_CREATE permission to persist an arbitrary price on a return item via the createReturnItem service, bypassing the intended server-computed price ceiling. Users are recommended to upgrade to version 24.09.08, which fixes this issue.
-
-### References
-* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
-
-
-### Credits
-* Sakil Ahamed (reporter)
-
-
-## Missing Authorization vulnerability ## { #CVE-2026-100168 }
-
-CVE-2026-100168 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-100168) [\[CVE json\]](./CVE-2026-100168.cve.json) [\[OSV json\]](./CVE-2026-100168.osv.json)
-
-
-
-_Last updated: 2026-11-05T13:44:03.331Z_
-
-### Affected
-
-* Apache OFBiz before 24.09.08
-
-
-### Description
-
-Direct Request ('Forced Browsing') in the Content Manager component in Apache OFBiz 24.09.07 on all platforms allows an authenticated user holding only view-only content permissions (OFBTOOLS_VIEW and CONTENTMGR_VIEW) to re-parent content associations they do not own or manage via a direct POST request to the moveContentJson endpoint, which performs no permission check, unlike the equivalent updateContent/createContentAssoc/removeContentAssoc services that require genericContentPermission UPDATE. Users are recommended to upgrade to version 24.09.08, which fixes this issue.
-
-### References
-* https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz
-
-
-### Credits
-* Ivan "Steph" Iushkevich (reporter)
 
 
 ## Reflected Cross-site Scripting ## { #CVE-2025-61623 }

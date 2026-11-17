@@ -21,80 +21,6 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
-## Kerberos Pre-Authentication Bypass ## { #CVE-2026-57915 }
-
-CVE-2026-57915 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-57915) [\[CVE json\]](./CVE-2026-57915.cve.json) [\[OSV json\]](./CVE-2026-57915.osv.json)
-
-
-
-_Last updated: 2026-06-26T12:09:53.178Z_
-
-### Affected
-
-* Apache Kerby before 2.1.2
-
-
-### Description
-
-It is possible to bypass the Kerberos pre-authentication check in Apache Kerby by sending a PA-DATA with an unrecognized or unsupported type. Users are recommended to upgrade to version 2.1.2, which fixes this issue.
-
-### References
-* https://lists.apache.org/thread/1y3glgh3kzwoxo5m2lq504cjlh1dsrfh
-
-
-## StackOverflow on parsing deeply nested ASN1 structures ## { #CVE-2026-57914 }
-
-CVE-2026-57914 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-57914) [\[CVE json\]](./CVE-2026-57914.cve.json) [\[OSV json\]](./CVE-2026-57914.osv.json)
-
-
-
-_Last updated: 2026-06-26T11:28:25.784Z_
-
-### Affected
-
-* Apache Kerby before 2.1.2
-
-
-### Description
-
-By sending a deeply nested ASN1 structure to a Apache Kerby client or service, it's possible to trigger a StackOverFlow Exception which can lead to denial of service issues. Users are recommended to upgrade to version 2.1.2, which fixes this issue.
-
-### References
-* https://lists.apache.org/thread/w98h2q8wz0bq97vhz4vf55hqomcb2j1m
-
-
-## LDAP client implementation does not verify if the server certificate matches the intended LDAP hostname ## { #CVE-2026-35563 }
-
-CVE-2026-35563 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-35563) [\[CVE json\]](./CVE-2026-35563.cve.json) [\[OSV json\]](./CVE-2026-35563.osv.json)
-
-
-
-_Last updated: 2026-06-01T07:38:34.650Z_
-
-### Affected
-
-* Apache Directory LDAP API from 2.0.0 through 2.1.7
-
-
-### Description
-
-It was identified that the LDAP client implementation in version 2.1.7 does not verify if the server certificate matches the intended LDAP 
-hostname. While the underlying code validates the certificate chain 
-against a trusted authority, the absence of endpoint identification 
-allows a valid certificate issued for an entirely unrelated host to be 
-improperly accepted. This oversight leaves the connection highly 
-vulnerable to server impersonation and complete connection compromise.<div><br></div><div>The
- root cause of this vulnerability lies in the incomplete TLS server 
-identity verification within the LDAP client implementation.</div><div><br></div><div>The attacker requires MITM capability on the network to exploit this vulnerability. This attacker must be able to present a certificate trusted by the client's configured trust store.</div><div><br></div><div>The hostname verification has been enforced in the new version of the LDAP API</div>
-
-### References
-* https://lists.apache.org/thread/5rc2nzqxp1m9wknyf93r8dnp46fhc1nn
-
-
-### Credits
-* Rafał Łykowski and Łukasz Kollbek of Qualtrics (finder)
-
-
 ## Denial of service via crafted telephone number values ## { #CVE-2026-103885 }
 
 CVE-2026-103885 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-103885) [\[CVE json\]](./CVE-2026-103885.cve.json) [\[OSV json\]](./CVE-2026-103885.osv.json)
@@ -249,6 +175,80 @@ _Last updated: 2026-10-02T09:21:56.550Z_
 ### Credits
 * Claude Security (tool)
 * The Apache Software Foundation (finder)
+
+
+## Kerberos Pre-Authentication Bypass ## { #CVE-2026-57915 }
+
+CVE-2026-57915 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-57915) [\[CVE json\]](./CVE-2026-57915.cve.json) [\[OSV json\]](./CVE-2026-57915.osv.json)
+
+
+
+_Last updated: 2026-06-26T12:09:53.178Z_
+
+### Affected
+
+* Apache Kerby before 2.1.2
+
+
+### Description
+
+It is possible to bypass the Kerberos pre-authentication check in Apache Kerby by sending a PA-DATA with an unrecognized or unsupported type. Users are recommended to upgrade to version 2.1.2, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/1y3glgh3kzwoxo5m2lq504cjlh1dsrfh
+
+
+## StackOverflow on parsing deeply nested ASN1 structures ## { #CVE-2026-57914 }
+
+CVE-2026-57914 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-57914) [\[CVE json\]](./CVE-2026-57914.cve.json) [\[OSV json\]](./CVE-2026-57914.osv.json)
+
+
+
+_Last updated: 2026-06-26T11:28:25.784Z_
+
+### Affected
+
+* Apache Kerby before 2.1.2
+
+
+### Description
+
+By sending a deeply nested ASN1 structure to a Apache Kerby client or service, it's possible to trigger a StackOverFlow Exception which can lead to denial of service issues. Users are recommended to upgrade to version 2.1.2, which fixes this issue.
+
+### References
+* https://lists.apache.org/thread/w98h2q8wz0bq97vhz4vf55hqomcb2j1m
+
+
+## LDAP client implementation does not verify if the server certificate matches the intended LDAP hostname ## { #CVE-2026-35563 }
+
+CVE-2026-35563 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-35563) [\[CVE json\]](./CVE-2026-35563.cve.json) [\[OSV json\]](./CVE-2026-35563.osv.json)
+
+
+
+_Last updated: 2026-06-01T07:38:34.650Z_
+
+### Affected
+
+* Apache Directory LDAP API from 2.0.0 through 2.1.7
+
+
+### Description
+
+It was identified that the LDAP client implementation in version 2.1.7 does not verify if the server certificate matches the intended LDAP 
+hostname. While the underlying code validates the certificate chain 
+against a trusted authority, the absence of endpoint identification 
+allows a valid certificate issued for an entirely unrelated host to be 
+improperly accepted. This oversight leaves the connection highly 
+vulnerable to server impersonation and complete connection compromise.<div><br></div><div>The
+ root cause of this vulnerability lies in the incomplete TLS server 
+identity verification within the LDAP client implementation.</div><div><br></div><div>The attacker requires MITM capability on the network to exploit this vulnerability. This attacker must be able to present a certificate trusted by the client's configured trust store.</div><div><br></div><div>The hostname verification has been enforced in the new version of the LDAP API</div>
+
+### References
+* https://lists.apache.org/thread/5rc2nzqxp1m9wknyf93r8dnp46fhc1nn
+
+
+### Credits
+* Rafał Łykowski and Łukasz Kollbek of Qualtrics (finder)
 
 
 ## LDAP Injection Vulnerability in Apache Kerby ## { #CVE-2023-25613 }

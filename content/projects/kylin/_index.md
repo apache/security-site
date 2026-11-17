@@ -13,6 +13,260 @@ Do you want to disclose a potential security issue for Apache Kylin? Send your r
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Potential computed-column resource exhaustion ## { #CVE-2026-108837 }
+
+CVE-2026-108837 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108837) [\[CVE json\]](./CVE-2026-108837.cve.json) [\[OSV json\]](./CVE-2026-108837.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:22:02.755Z_
+
+### Affected
+
+* Apache Kylin from 4.0.0 through 5.0.4
+
+
+### Description
+
+<p>Allocation of resources without limits or throttling vulnerability in Apache Kylin. Given an attacker has got project admin permission, an cache API maybe used to cause&nbsp;computed-column resource exhaustion.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/qgpgkx6zh37tlys28qlysrffo6pz614v
+
+
+### Credits
+* HRsGIT (https://github.com/HRsGIT) (finder)
+
+
+## default startup profile miss security settings ## { #CVE-2026-108833 }
+
+CVE-2026-108833 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108833) [\[CVE json\]](./CVE-2026-108833.cve.json) [\[OSV json\]](./CVE-2026-108833.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:21:52.936Z_
+
+### Affected
+
+* Apache Kylin from 4.0.0 through 5.0.4
+
+
+### Description
+
+<p>Default startup profile miss security settings&nbsp;in Apache Kylin. Any deployment has security setting profile turned on does not impact.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/lqb36tsyp3fdsg5x4qvz4fy3hkzcr2wz
+
+
+### Credits
+* Hari (Harikrishna KP) (finder)
+
+
+## Potential unauthenticated job metadata replacement ## { #CVE-2026-108823 }
+
+CVE-2026-108823 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108823) [\[CVE json\]](./CVE-2026-108823.cve.json) [\[OSV json\]](./CVE-2026-108823.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:21:29.601Z_
+
+### Affected
+
+* Apache Kylin from 4.0.0 through 5.0.4
+
+
+### Description
+
+<p>Exposure of Sensitive Information to an Unauthorized Actor during job manipulation in Apache Kylin. The impact is minor unless job services are exposed to public network, which is uncommon.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/bhcvh3oxcqcjklxfr2mn1j3f7pzxqz4b
+
+
+### Credits
+* garymao (finder)
+* Wanxin Yin (finder)
+
+
+## Potential JDBC source configuration validation issue ## { #CVE-2026-108780 }
+
+CVE-2026-108780 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108780) [\[CVE json\]](./CVE-2026-108780.cve.json) [\[OSV json\]](./CVE-2026-108780.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:21:18.887Z_
+
+### Affected
+
+* Apache Kylin from 4.0.0 through 5.0.4
+
+
+### Description
+
+<p>Potential JDBC source configuration validation&nbsp;vulnerability in Apache Kylin. The impact is minor, unless the kylin backend services are open to public network.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/vyc83rb5t0f4nyvn1dzggshcqdqf9lj0
+
+
+### Credits
+* An academic team studying incomplete security fixes (finder)
+
+
+## tables/names SparkSQL injection ## { #CVE-2026-108776 }
+
+CVE-2026-108776 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108776) [\[CVE json\]](./CVE-2026-108776.cve.json) [\[OSV json\]](./CVE-2026-108776.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:21:07.955Z_
+
+### Affected
+
+* Apache Kylin from 4.0.0 through 5.0.4
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Kylin. The impact is moderate if kylin service is in query only mode, which is the default and most common mode.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/x3m1k00f6470238mw51jbnpnh642jv0d
+
+
+### Credits
+* MopMonk-AI (finder)
+
+
+## unauthenticated broadcast API and polymorphic deserialization ## { #CVE-2026-108771 }
+
+CVE-2026-108771 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108771) [\[CVE json\]](./CVE-2026-108771.cve.json) [\[OSV json\]](./CVE-2026-108771.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:20:58.077Z_
+
+### Affected
+
+* Apache Kylin from 4.0.0 through 5.0.4
+
+
+### Description
+
+<p>Missing authentication for in-house broadcast and&nbsp;polymorphic deserialization&nbsp;vulnerability in Apache Kylin.&nbsp;Impact most to the kylin services that are directly exposed to public network, which is not common. In-house kylin deployments are mostly not impacted.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/d77s7dh3bxf02l4rjbgb6807g605zskx
+
+
+### Credits
+* MopMonk-AI (finder)
+* Wanxin Yin (finder)
+* Dilrevx (finder)
+
+
+## missing JDBC-config authorization ## { #CVE-2026-108766 }
+
+CVE-2026-108766 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108766) [\[CVE json\]](./CVE-2026-108766.cve.json) [\[OSV json\]](./CVE-2026-108766.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:20:46.793Z_
+
+### Affected
+
+* Apache Kylin from 4.0.0 through 5.0.4
+
+
+### Description
+
+<p>Missing authorization on jdbc source config update in Apache Kylin.&nbsp;Impact most to the kylin services that are directly exposed to public network, which is not common. In-house kylin deployments are mostly not impacted.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/50447hzwyz8r9xwtfbylsphv4ylq9yhj
+
+
+### Credits
+* n0mi1k Security (finder)
+* kta1kri (finder)
+
+
+## delete metadata backup path-confinement bypass ## { #CVE-2026-108762 }
+
+CVE-2026-108762 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108762) [\[CVE json\]](./CVE-2026-108762.cve.json) [\[OSV json\]](./CVE-2026-108762.osv.json)
+
+
+
+_Last updated: 2026-10-19T09:16:24.632Z_
+
+### Affected
+
+* Apache Kylin from 4.0.0 through 5.0.4
+
+
+### Description
+
+<p>Path-confinement bypass&nbsp;during metadata backup deletion in Apache Kylin. Impact most to the kylin services that are directly exposed to public network, which is not common. In-house kylin deployments are mostly not impacted.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/6n1o1t14ssc5x4dg18hlv30crwbhwdpd
+
+
+### Credits
+* n0mi1k Security (finder)
+
+
+## spark job OS command injection ## { #CVE-2026-108743 }
+
+CVE-2026-108743 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108743) [\[CVE json\]](./CVE-2026-108743.cve.json) [\[OSV json\]](./CVE-2026-108743.osv.json)
+
+
+
+_Last updated: 2026-10-16T19:44:36.454Z_
+
+### Affected
+
+* Apache Kylin from 4.0.4 through 5.0.4
+
+
+### Description
+
+<p>Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability in Apache Kylin.&nbsp;Impact most to the kylin services that are directly exposed to public network, which is not common. In-house kylin deployments are mostly not impacted.</p><p>This issue affects Apache Kylin: from 4.0.4 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/6x2v755lrxf72xcrzjq4t2b1sd56ywb7
+
+
+### Credits
+* n0mi1k Security (finder)
+
+
+## Unauthenticated Metadata Broadcast (inside in-house network) ## { #CVE-2026-108709 }
+
+CVE-2026-108709 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108709) [\[CVE json\]](./CVE-2026-108709.cve.json) [\[OSV json\]](./CVE-2026-108709.osv.json)
+
+
+
+_Last updated: 2026-10-16T19:38:20.115Z_
+
+### Affected
+
+* Apache Kylin from 4.0.4 through 5.0.4
+
+
+### Description
+
+<p>Authentication bypass within in-house network in Apache Kylin.&nbsp;Impact most to the kylin services that are directly exposed to public network, which is not common. In-house kylin deployments are mostly not impacted.</p><p>This issue affects Apache Kylin: from 4.0.4 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/okkvcvoj1007f6cxhwp9v6j6t4ynfnwb
+
+
+### Credits
+* RunningSnail (finder)
+
+
 ## Broken Access Control in QuerySQLBlacklistController ## { #CVE-2026-69080 }
 
 CVE-2026-69080 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-69080) [\[CVE json\]](./CVE-2026-69080.cve.json) [\[OSV json\]](./CVE-2026-69080.osv.json)
@@ -351,260 +605,6 @@ _Last updated: 2026-07-14T12:09:39.268Z_
 
 ### Credits
 * 罗鑫 <lx2317103712@gmail.com> (finder)
-
-
-## Potential computed-column resource exhaustion ## { #CVE-2026-108837 }
-
-CVE-2026-108837 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108837) [\[CVE json\]](./CVE-2026-108837.cve.json) [\[OSV json\]](./CVE-2026-108837.osv.json)
-
-
-
-_Last updated: 2026-10-19T09:22:02.755Z_
-
-### Affected
-
-* Apache Kylin from 4.0.0 through 5.0.4
-
-
-### Description
-
-<p>Allocation of resources without limits or throttling vulnerability in Apache Kylin. Given an attacker has got project admin permission, an cache API maybe used to cause&nbsp;computed-column resource exhaustion.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread.html/qgpgkx6zh37tlys28qlysrffo6pz614v
-
-
-### Credits
-* HRsGIT (https://github.com/HRsGIT) (finder)
-
-
-## default startup profile miss security settings ## { #CVE-2026-108833 }
-
-CVE-2026-108833 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108833) [\[CVE json\]](./CVE-2026-108833.cve.json) [\[OSV json\]](./CVE-2026-108833.osv.json)
-
-
-
-_Last updated: 2026-10-19T09:21:52.936Z_
-
-### Affected
-
-* Apache Kylin from 4.0.0 through 5.0.4
-
-
-### Description
-
-<p>Default startup profile miss security settings&nbsp;in Apache Kylin. Any deployment has security setting profile turned on does not impact.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread.html/lqb36tsyp3fdsg5x4qvz4fy3hkzcr2wz
-
-
-### Credits
-* Hari (Harikrishna KP) (finder)
-
-
-## Potential unauthenticated job metadata replacement ## { #CVE-2026-108823 }
-
-CVE-2026-108823 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108823) [\[CVE json\]](./CVE-2026-108823.cve.json) [\[OSV json\]](./CVE-2026-108823.osv.json)
-
-
-
-_Last updated: 2026-10-19T09:21:29.601Z_
-
-### Affected
-
-* Apache Kylin from 4.0.0 through 5.0.4
-
-
-### Description
-
-<p>Exposure of Sensitive Information to an Unauthorized Actor during job manipulation in Apache Kylin. The impact is minor unless job services are exposed to public network, which is uncommon.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread.html/bhcvh3oxcqcjklxfr2mn1j3f7pzxqz4b
-
-
-### Credits
-* garymao (finder)
-* Wanxin Yin (finder)
-
-
-## Potential JDBC source configuration validation issue ## { #CVE-2026-108780 }
-
-CVE-2026-108780 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108780) [\[CVE json\]](./CVE-2026-108780.cve.json) [\[OSV json\]](./CVE-2026-108780.osv.json)
-
-
-
-_Last updated: 2026-10-19T09:21:18.887Z_
-
-### Affected
-
-* Apache Kylin from 4.0.0 through 5.0.4
-
-
-### Description
-
-<p>Potential JDBC source configuration validation&nbsp;vulnerability in Apache Kylin. The impact is minor, unless the kylin backend services are open to public network.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread.html/vyc83rb5t0f4nyvn1dzggshcqdqf9lj0
-
-
-### Credits
-* An academic team studying incomplete security fixes (finder)
-
-
-## tables/names SparkSQL injection ## { #CVE-2026-108776 }
-
-CVE-2026-108776 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108776) [\[CVE json\]](./CVE-2026-108776.cve.json) [\[OSV json\]](./CVE-2026-108776.osv.json)
-
-
-
-_Last updated: 2026-10-19T09:21:07.955Z_
-
-### Affected
-
-* Apache Kylin from 4.0.0 through 5.0.4
-
-
-### Description
-
-<p>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Kylin. The impact is moderate if kylin service is in query only mode, which is the default and most common mode.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread.html/x3m1k00f6470238mw51jbnpnh642jv0d
-
-
-### Credits
-* MopMonk-AI (finder)
-
-
-## unauthenticated broadcast API and polymorphic deserialization ## { #CVE-2026-108771 }
-
-CVE-2026-108771 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108771) [\[CVE json\]](./CVE-2026-108771.cve.json) [\[OSV json\]](./CVE-2026-108771.osv.json)
-
-
-
-_Last updated: 2026-10-19T09:20:58.077Z_
-
-### Affected
-
-* Apache Kylin from 4.0.0 through 5.0.4
-
-
-### Description
-
-<p>Missing authentication for in-house broadcast and&nbsp;polymorphic deserialization&nbsp;vulnerability in Apache Kylin.&nbsp;Impact most to the kylin services that are directly exposed to public network, which is not common. In-house kylin deployments are mostly not impacted.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread.html/d77s7dh3bxf02l4rjbgb6807g605zskx
-
-
-### Credits
-* MopMonk-AI (finder)
-* Wanxin Yin (finder)
-* Dilrevx (finder)
-
-
-## missing JDBC-config authorization ## { #CVE-2026-108766 }
-
-CVE-2026-108766 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108766) [\[CVE json\]](./CVE-2026-108766.cve.json) [\[OSV json\]](./CVE-2026-108766.osv.json)
-
-
-
-_Last updated: 2026-10-19T09:20:46.793Z_
-
-### Affected
-
-* Apache Kylin from 4.0.0 through 5.0.4
-
-
-### Description
-
-<p>Missing authorization on jdbc source config update in Apache Kylin.&nbsp;Impact most to the kylin services that are directly exposed to public network, which is not common. In-house kylin deployments are mostly not impacted.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread.html/50447hzwyz8r9xwtfbylsphv4ylq9yhj
-
-
-### Credits
-* n0mi1k Security (finder)
-* kta1kri (finder)
-
-
-## delete metadata backup path-confinement bypass ## { #CVE-2026-108762 }
-
-CVE-2026-108762 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108762) [\[CVE json\]](./CVE-2026-108762.cve.json) [\[OSV json\]](./CVE-2026-108762.osv.json)
-
-
-
-_Last updated: 2026-10-19T09:16:24.632Z_
-
-### Affected
-
-* Apache Kylin from 4.0.0 through 5.0.4
-
-
-### Description
-
-<p>Path-confinement bypass&nbsp;during metadata backup deletion in Apache Kylin. Impact most to the kylin services that are directly exposed to public network, which is not common. In-house kylin deployments are mostly not impacted.</p><p>This issue affects Apache Kylin: from 4.0.0 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread.html/6n1o1t14ssc5x4dg18hlv30crwbhwdpd
-
-
-### Credits
-* n0mi1k Security (finder)
-
-
-## spark job OS command injection ## { #CVE-2026-108743 }
-
-CVE-2026-108743 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108743) [\[CVE json\]](./CVE-2026-108743.cve.json) [\[OSV json\]](./CVE-2026-108743.osv.json)
-
-
-
-_Last updated: 2026-10-16T19:44:36.454Z_
-
-### Affected
-
-* Apache Kylin from 4.0.4 through 5.0.4
-
-
-### Description
-
-<p>Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability in Apache Kylin.&nbsp;Impact most to the kylin services that are directly exposed to public network, which is not common. In-house kylin deployments are mostly not impacted.</p><p>This issue affects Apache Kylin: from 4.0.4 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread.html/6x2v755lrxf72xcrzjq4t2b1sd56ywb7
-
-
-### Credits
-* n0mi1k Security (finder)
-
-
-## Unauthenticated Metadata Broadcast (inside in-house network) ## { #CVE-2026-108709 }
-
-CVE-2026-108709 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108709) [\[CVE json\]](./CVE-2026-108709.cve.json) [\[OSV json\]](./CVE-2026-108709.osv.json)
-
-
-
-_Last updated: 2026-10-16T19:38:20.115Z_
-
-### Affected
-
-* Apache Kylin from 4.0.4 through 5.0.4
-
-
-### Description
-
-<p>Authentication bypass within in-house network in Apache Kylin.&nbsp;Impact most to the kylin services that are directly exposed to public network, which is not common. In-house kylin deployments are mostly not impacted.</p><p>This issue affects Apache Kylin: from 4.0.4 through 5.0.4.</p><p>Users are recommended to upgrade to version 5.0.5, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread.html/okkvcvoj1007f6cxhwp9v6j6t4ynfnwb
-
-
-### Credits
-* RunningSnail (finder)
 
 
 ## Server-Side Request Forgery ## { #CVE-2025-61735 }

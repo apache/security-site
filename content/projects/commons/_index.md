@@ -21,60 +21,6 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security pages linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
-## Class repositories cache class files under their self-declared names, enabling cache poisoning ## { #CVE-2026-94114 }
-
-CVE-2026-94114 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-94114) [\[CVE json\]](./CVE-2026-94114.cve.json) [\[OSV json\]](./CVE-2026-94114.osv.json)
-
-
-
-_Last updated: 2026-10-08T05:24:24.834Z_
-
-### Affected
-
-* Apache Commons BCEL before 6.13.0
-* Apache Commons BCEL before 14890bf2b9014df25f9b4de86f29b5e917e5656b
-
-
-### Description
-
-<p>Symbolic name not mapping to correct class.</p><p>BCEL caches attacker-controlled classes under their self-declared names without validating the requested name, allowing subsequent lookups and name-keyed verification results to refer to a different class.</p><p>This issue affects Apache Commons BCEL: before 6.13.0.</p><p>Users are recommended to upgrade to version 6.13.0, which fixes the issue.</p>
-
-### References
-* https://github.com/apache/commons-bcel/commit/14890bf2b9014df25f9b4de86f29b5e917e5656b.patch
-* https://lists.apache.org/thread.html/co1wfk2lyrmpnfhn49o370pvfl978rw6
-
-
-### Credits
-* The Apache Software Foundation (finder)
-* Claude Security (tool)
-
-
-## StackOverflowError for YAML input with cycles ## { #CVE-2026-45205 }
-
-CVE-2026-45205 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-45205) [\[CVE json\]](./CVE-2026-45205.cve.json) [\[OSV json\]](./CVE-2026-45205.osv.json)
-
-
-
-_Last updated: 2026-05-14T11:22:48.661Z_
-
-### Affected
-
-* Apache Commons Configuration from 2.2 before 2.15.0
-
-
-### Description
-
-<p>Uncontrolled Recursion vulnerability in Apache Commons.</p>When processing an untrusted configuration file, Commons Configuration will throw a StackOverflowError for YAML input with cycles.<br><p>This issue affects Apache Commons: from 2.2 before 2.15.0.</p><p>Users are recommended to upgrade to version 2.15.0, which fixes the issue.</p>
-
-### References
-* https://github.com/apache/commons-configuration/pull/634
-* https://lists.apache.org/thread/q3q3j10ohcqhs6o0rg1v7kz6kk27vtkk
-
-
-### Credits
-* Erichen, Institute of Computing Technology, Chinese Academy of Sciences (reporter)
-
-
 ## NUL bytes in tree entry names cause Git/SWHID identifier collisions (GitIdentifiers class) ## { #CVE-2026-124077 }
 
 CVE-2026-124077 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-124077) [\[CVE json\]](./CVE-2026-124077.cve.json) [\[OSV json\]](./CVE-2026-124077.osv.json)
@@ -155,6 +101,60 @@ _Last updated: 2026-10-07T11:33:54.365Z_
 ### Credits
 * The Apache Software Foundation (finder)
 * Claude Security (tool)
+
+
+## Class repositories cache class files under their self-declared names, enabling cache poisoning ## { #CVE-2026-94114 }
+
+CVE-2026-94114 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-94114) [\[CVE json\]](./CVE-2026-94114.cve.json) [\[OSV json\]](./CVE-2026-94114.osv.json)
+
+
+
+_Last updated: 2026-10-08T05:24:24.834Z_
+
+### Affected
+
+* Apache Commons BCEL before 6.13.0
+* Apache Commons BCEL before 14890bf2b9014df25f9b4de86f29b5e917e5656b
+
+
+### Description
+
+<p>Symbolic name not mapping to correct class.</p><p>BCEL caches attacker-controlled classes under their self-declared names without validating the requested name, allowing subsequent lookups and name-keyed verification results to refer to a different class.</p><p>This issue affects Apache Commons BCEL: before 6.13.0.</p><p>Users are recommended to upgrade to version 6.13.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/commons-bcel/commit/14890bf2b9014df25f9b4de86f29b5e917e5656b.patch
+* https://lists.apache.org/thread.html/co1wfk2lyrmpnfhn49o370pvfl978rw6
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
+
+
+## StackOverflowError for YAML input with cycles ## { #CVE-2026-45205 }
+
+CVE-2026-45205 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-45205) [\[CVE json\]](./CVE-2026-45205.cve.json) [\[OSV json\]](./CVE-2026-45205.osv.json)
+
+
+
+_Last updated: 2026-05-14T11:22:48.661Z_
+
+### Affected
+
+* Apache Commons Configuration from 2.2 before 2.15.0
+
+
+### Description
+
+<p>Uncontrolled Recursion vulnerability in Apache Commons.</p>When processing an untrusted configuration file, Commons Configuration will throw a StackOverflowError for YAML input with cycles.<br><p>This issue affects Apache Commons: from 2.2 before 2.15.0.</p><p>Users are recommended to upgrade to version 2.15.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/commons-configuration/pull/634
+* https://lists.apache.org/thread/q3q3j10ohcqhs6o0rg1v7kz6kk27vtkk
+
+
+### Credits
+* Erichen, Institute of Computing Technology, Chinese Academy of Sciences (reporter)
 
 
 ## Expression Injection leading to RCE ## { #CVE-2025-53192 }

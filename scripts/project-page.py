@@ -3,7 +3,6 @@
 import html
 import json
 import os.path
-from operator import itemgetter
 from os.path import dirname, realpath
 from collections import defaultdict
 import subprocess
@@ -89,6 +88,12 @@ def fetch_cve(cve_id):
       with open('cache-converted/%s.json' % cve_id, 'r') as d:
         cve = json.loads(d.read())
         return cve
+
+# Sort key for CVE IDs: compare the year and sequence number as integers, since
+# sequence numbers have no fixed width (CVE-2026-114364 is newer than CVE-2026-87802).
+def cve_sort_key(advisory):
+  _, year, number = advisory['ID'].split('-')
+  return int(year), int(number)
 
 # Projects overview page, rendered as Ponymail-style alphabetical tabs.
 def display_name(name):
@@ -252,7 +257,7 @@ layout: single
     project_page.write('on [security@apache.org](mailto:security@apache.org)')
     project_page.write('\n{.bg-warning}')
 
-    for advisory in sorted(advisories[pmc], key=itemgetter('ID'), reverse=True):
+    for advisory in sorted(advisories[pmc], key=cve_sort_key, reverse=True):
         cve_id = advisory['ID']
         cve = fetch_cve(cve_id)
 

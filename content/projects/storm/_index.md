@@ -18,6 +18,56 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## DRPC HTTP doAsUser bypasses the impersonation authorizer ## { #CVE-2026-124496 }
+
+CVE-2026-124496 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-124496) [\[CVE json\]](./CVE-2026-124496.cve.json) [\[OSV json\]](./CVE-2026-124496.osv.json)
+
+
+
+_Last updated: 2026-11-11T12:35:21.306Z_
+
+### Affected
+
+* Apache Storm from 3.0.0 before 3.2.0
+
+
+### Description
+
+The DRPC HTTP endpoint lets an authenticated client act as another user without applying the configured impersonation authorizer. An authenticated user can execute DRPC functions that are restricted to another user. Users are recommended to upgrade to version 3.2.0, which fixes the issue.
+
+### References
+* https://lists.apache.org/thread/z8r5mxcpfgklq820j8krk8ozqxgqdhtr
+
+
+### Credits
+* Javier García Herrera (finder)
+
+
+## Logviewer follows worker symlinks across topology ACLs ## { #CVE-2026-124495 }
+
+CVE-2026-124495 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-124495) [\[CVE json\]](./CVE-2026-124495.cve.json) [\[OSV json\]](./CVE-2026-124495.osv.json)
+
+
+
+_Last updated: 2026-11-11T12:34:49.669Z_
+
+### Affected
+
+* Apache Storm from 3.0.0 before 3.2.0
+
+
+### Description
+
+When workers run as the topology owner, the Logviewer serves files that a worker has placed in its own log directory as links to other files. A user who is allowed to submit topologies can read the worker logs of other users' topologies, and other files the Logviewer process can read. Users are recommended to upgrade to version 3.2.0, which fixes the issue.
+
+### References
+* https://lists.apache.org/thread/q4xbld4n4v14t8d74vb342skx8d0mzz8
+
+
+### Credits
+* Javier García Herrera (finder)
+
+
 ## Supervisor page discloses worker placement of other users' topologies ## { #CVE-2026-94125 }
 
 CVE-2026-94125 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-94125) [\[CVE json\]](./CVE-2026-94125.cve.json) [\[OSV json\]](./CVE-2026-94125.osv.json)
@@ -580,56 +630,6 @@ When processing topology credentials submitted via the Nimbus Thrift API, Storm 
 
 ### Credits
 * K (finder)
-
-
-## DRPC HTTP doAsUser bypasses the impersonation authorizer ## { #CVE-2026-124496 }
-
-CVE-2026-124496 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-124496) [\[CVE json\]](./CVE-2026-124496.cve.json) [\[OSV json\]](./CVE-2026-124496.osv.json)
-
-
-
-_Last updated: 2026-11-11T12:35:21.306Z_
-
-### Affected
-
-* Apache Storm from 3.0.0 before 3.2.0
-
-
-### Description
-
-The DRPC HTTP endpoint lets an authenticated client act as another user without applying the configured impersonation authorizer. An authenticated user can execute DRPC functions that are restricted to another user. Users are recommended to upgrade to version 3.2.0, which fixes the issue.
-
-### References
-* https://lists.apache.org/thread/z8r5mxcpfgklq820j8krk8ozqxgqdhtr
-
-
-### Credits
-* Javier García Herrera (finder)
-
-
-## Logviewer follows worker symlinks across topology ACLs ## { #CVE-2026-124495 }
-
-CVE-2026-124495 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-124495) [\[CVE json\]](./CVE-2026-124495.cve.json) [\[OSV json\]](./CVE-2026-124495.osv.json)
-
-
-
-_Last updated: 2026-11-11T12:34:49.669Z_
-
-### Affected
-
-* Apache Storm from 3.0.0 before 3.2.0
-
-
-### Description
-
-When workers run as the topology owner, the Logviewer serves files that a worker has placed in its own log directory as links to other files. A user who is allowed to submit topologies can read the worker logs of other users' topologies, and other files the Logviewer process can read. Users are recommended to upgrade to version 3.2.0, which fixes the issue.
-
-### References
-* https://lists.apache.org/thread/q4xbld4n4v14t8d74vb342skx8d0mzz8
-
-
-### Credits
-* Javier García Herrera (finder)
 
 
 ## Local Information Disclosure Vulnerability in Storm-core on Unix-Like systems due temporary files ## { #CVE-2023-43123 }

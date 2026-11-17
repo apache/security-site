@@ -13,6 +13,32 @@ Do you want to disclose a potential security issue for Apache Juneau? Send your 
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Path traversal in DirectoryResource allows reading files outside the configured root directory ## { #CVE-2026-121489 }
+
+CVE-2026-121489 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-121489) [\[CVE json\]](./CVE-2026-121489.cve.json) [\[OSV json\]](./CVE-2026-121489.osv.json)
+
+
+
+_Last updated: 2026-11-05T11:55:20.166Z_
+
+### Affected
+
+* Apache Juneau before 9.2.1
+* Apache Juneau before 9.2.1
+
+
+### Description
+
+Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache Juneau.<br><br>The microservice DirectoryResource does not keep request paths inside its configured root directory. When an application enables the resource's view, upload or delete settings (all off by default), a client can read, write or delete files outside the root, anywhere the server process has access.<br><br>This issue affects Apache Juneau: through 9.2.0.<br><br>Users are recommended to upgrade to version 9.2.1, which fixes the issue.
+
+### References
+* https://lists.apache.org/thread.html/j05q7vw08j48o96tdlzcsd4sozx1lyl6
+
+
+### Credits
+* LTSHFWJT (finder)
+
+
 ## Cross-site scripting via unescaped request variables in HTML-doc chrome ## { #CVE-2026-96677 }
 
 CVE-2026-96677 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-96677) [\[CVE json\]](./CVE-2026-96677.cve.json) [\[OSV json\]](./CVE-2026-96677.osv.json)
@@ -190,29 +216,3 @@ Allocation of Resources Without Limits or Throttling vulnerability in Apache Jun
 
 ### Credits
 * n0mi1k (finder)
-
-
-## Path traversal in DirectoryResource allows reading files outside the configured root directory ## { #CVE-2026-121489 }
-
-CVE-2026-121489 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-121489) [\[CVE json\]](./CVE-2026-121489.cve.json) [\[OSV json\]](./CVE-2026-121489.osv.json)
-
-
-
-_Last updated: 2026-11-05T11:55:20.166Z_
-
-### Affected
-
-* Apache Juneau before 9.2.1
-* Apache Juneau before 9.2.1
-
-
-### Description
-
-Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache Juneau.<br><br>The microservice DirectoryResource does not keep request paths inside its configured root directory. When an application enables the resource's view, upload or delete settings (all off by default), a client can read, write or delete files outside the root, anywhere the server process has access.<br><br>This issue affects Apache Juneau: through 9.2.0.<br><br>Users are recommended to upgrade to version 9.2.1, which fixes the issue.
-
-### References
-* https://lists.apache.org/thread.html/j05q7vw08j48o96tdlzcsd4sozx1lyl6
-
-
-### Credits
-* LTSHFWJT (finder)

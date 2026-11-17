@@ -18,6 +18,32 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Java TProtocolUtil.skip() does not limit the recursion depth by default ## { #CVE-2026-120135 }
+
+CVE-2026-120135 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-120135) [\[CVE json\]](./CVE-2026-120135.cve.json) [\[OSV json\]](./CVE-2026-120135.osv.json)
+
+
+
+_Last updated: 2026-10-31T20:32:57.846Z_
+
+### Affected
+
+* Apache Thrift before 0.24.0
+
+
+### Description
+
+<p>Uncontrolled Recursion vulnerability in Apache Thrift Java bindings.</p><p>This issue affects Apache Thrift: before 0.24.0.</p><p>Users are recommended to upgrade to version 0.24.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9
+* https://lists.apache.org/thread/2zzkm3mfhfg79ohjo37pg1gms5nto588
+
+
+### Credits
+* Yu Bao – yubao@paypal.com, who works for paypal.com (finder)
+
+
 ## Erlang thrift_json_protocol reads a whole message with no size bound ## { #CVE-2026-96990 }
 
 CVE-2026-96990 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-96990) [\[CVE json\]](./CVE-2026-96990.cve.json) [\[OSV json\]](./CVE-2026-96990.osv.json)
@@ -2209,32 +2235,6 @@ _Last updated: 2026-04-28T09:19:05.731Z_
 
 ### Credits
 * 김범수 (finder)
-
-
-## Java TProtocolUtil.skip() does not limit the recursion depth by default ## { #CVE-2026-120135 }
-
-CVE-2026-120135 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-120135) [\[CVE json\]](./CVE-2026-120135.cve.json) [\[OSV json\]](./CVE-2026-120135.osv.json)
-
-
-
-_Last updated: 2026-10-31T20:32:57.846Z_
-
-### Affected
-
-* Apache Thrift before 0.24.0
-
-
-### Description
-
-<p>Uncontrolled Recursion vulnerability in Apache Thrift Java bindings.</p><p>This issue affects Apache Thrift: before 0.24.0.</p><p>Users are recommended to upgrade to version 0.24.0, which fixes the issue.</p>
-
-### References
-* https://lists.apache.org/thread/7v3jhgwfbmhx42424phydlnzb109g8b9
-* https://lists.apache.org/thread/2zzkm3mfhfg79ohjo37pg1gms5nto588
-
-
-### Credits
-* Yu Bao – yubao@paypal.com, who works for paypal.com (finder)
 
 
 ## Specially crafted input can crash a c_glib Thrift server with invalid pointer error. ## { #CVE-2025-48431 }

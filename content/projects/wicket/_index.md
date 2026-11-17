@@ -18,6 +18,33 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## XSS via a resource bundle text written unescaped into generated JavaScript and markup ## { #CVE-2026-111089 }
+
+CVE-2026-111089 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111089) [\[CVE json\]](./CVE-2026-111089.cve.json) [\[OSV json\]](./CVE-2026-111089.osv.json)
+
+
+
+_Last updated: 2026-11-01T22:32:05.383Z_
+
+### Affected
+
+* Apache Wicket from 8.0.0 through 8.19.0
+* Apache Wicket from 9.0.0 through 9.24.0
+* Apache Wicket from 10.0.0 through 10.11.0
+
+
+### Description
+
+<p>Apache Wicket reads texts from the application's resource bundles — a localized label, a css class name — and writes some of them into the JavaScript and the markup it generates for a component. Those texts are placed inside single-quoted JavaScript string literals and inside quoted attribute values without being escaped for that context, so a text containing a quote ends the literal or the attribute, and what follows is parsed as script or as markup in the application's origin when the page loads.<br><br>A resource bundle entry is authored for the application and does not say where the framework will write it. The same key is read by the framework into element text, where Wicket escapes it, and into the contexts below, where it did not. A text containing an apostrophe, which is ordinary in several languages, is enough to break the page; a text under the influence of another party is enough to run script.<br><br>In org.apache.wicket:wicket-core, org.apache.wicket.markup.html.form.upload.MultiFileUploadField writes the org.apache.wicket.mfu.delete message into a JavaScript string literal, and org.apache.wicket.markup.html.form.Form writes the hidden-fields css class into the class attribute of the container it renders for its hidden fields; on 8.0.0 through 8.19.0 and 9.0.0 through 9.24.0 Form#appendDefaultButtonField writes the same css class into a second container. In org.apache.wicket:wicket-extensions, UploadProgressBar writes its UploadProgressBar.starting text into a JavaScript string literal, FilterForm writes the hidden-fields css class into the class attribute of its hidden input markup, and on 9.0.0 through 9.24.0 and 10.0.0 through 10.11.0 TrapFocusBehavior writes its current css class into a JavaScript string literal.<br><br>The Content-Security-Policy that Apache Wicket 9.x and 10.x send by default does not prevent the JavaScript cases: the generated script is written into a script element carrying the per-response nonce, so the injected code is part of a script the policy admits. It does prevent an inline event handler injected through the attribute cases.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.19.0, from 9.0.0 through 9.24.0, from 10.0.0 through 10.11.0. Users of Apache Wicket 7.x or older, which are no longer supported, should upgrade to a supported version. Users are recommended to upgrade to version 8.20.0, 9.25.0 or 10.12.0, which fix the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/xyp4sm5mm7s618fktstb22577qxbmqw8
+
+
+### Credits
+* Pedro Santos (finder)
+
+
 ## XSS via a component id or markup id written unescaped into generated JavaScript and markup ## { #CVE-2026-95863 }
 
 CVE-2026-95863 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-95863) [\[CVE json\]](./CVE-2026-95863.cve.json) [\[OSV json\]](./CVE-2026-95863.osv.json)
@@ -883,33 +910,6 @@ _Last updated: 2026-05-06T08:34:37.475Z_
 
 ### References
 * https://lists.apache.org/thread/61wsc0xdtfd5oozojfx7by9w3jwgkmv1
-
-
-## XSS via a resource bundle text written unescaped into generated JavaScript and markup ## { #CVE-2026-111089 }
-
-CVE-2026-111089 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111089) [\[CVE json\]](./CVE-2026-111089.cve.json) [\[OSV json\]](./CVE-2026-111089.osv.json)
-
-
-
-_Last updated: 2026-11-01T22:32:05.383Z_
-
-### Affected
-
-* Apache Wicket from 8.0.0 through 8.19.0
-* Apache Wicket from 9.0.0 through 9.24.0
-* Apache Wicket from 10.0.0 through 10.11.0
-
-
-### Description
-
-<p>Apache Wicket reads texts from the application's resource bundles — a localized label, a css class name — and writes some of them into the JavaScript and the markup it generates for a component. Those texts are placed inside single-quoted JavaScript string literals and inside quoted attribute values without being escaped for that context, so a text containing a quote ends the literal or the attribute, and what follows is parsed as script or as markup in the application's origin when the page loads.<br><br>A resource bundle entry is authored for the application and does not say where the framework will write it. The same key is read by the framework into element text, where Wicket escapes it, and into the contexts below, where it did not. A text containing an apostrophe, which is ordinary in several languages, is enough to break the page; a text under the influence of another party is enough to run script.<br><br>In org.apache.wicket:wicket-core, org.apache.wicket.markup.html.form.upload.MultiFileUploadField writes the org.apache.wicket.mfu.delete message into a JavaScript string literal, and org.apache.wicket.markup.html.form.Form writes the hidden-fields css class into the class attribute of the container it renders for its hidden fields; on 8.0.0 through 8.19.0 and 9.0.0 through 9.24.0 Form#appendDefaultButtonField writes the same css class into a second container. In org.apache.wicket:wicket-extensions, UploadProgressBar writes its UploadProgressBar.starting text into a JavaScript string literal, FilterForm writes the hidden-fields css class into the class attribute of its hidden input markup, and on 9.0.0 through 9.24.0 and 10.0.0 through 10.11.0 TrapFocusBehavior writes its current css class into a JavaScript string literal.<br><br>The Content-Security-Policy that Apache Wicket 9.x and 10.x send by default does not prevent the JavaScript cases: the generated script is written into a script element carrying the per-response nonce, so the injected code is part of a script the policy admits. It does prevent an inline event handler injected through the attribute cases.<br><br>This issue affects Apache Wicket: from 8.0.0 through 8.19.0, from 9.0.0 through 9.24.0, from 10.0.0 through 10.11.0. Users of Apache Wicket 7.x or older, which are no longer supported, should upgrade to a supported version. Users are recommended to upgrade to version 8.20.0, 9.25.0 or 10.12.0, which fix the issue.</p>
-
-### References
-* https://lists.apache.org/thread.html/xyp4sm5mm7s618fktstb22577qxbmqw8
-
-
-### Credits
-* Pedro Santos (finder)
 
 
 ## An attacker can intentionally trigger a memory leak ## { #CVE-2024-53299 }

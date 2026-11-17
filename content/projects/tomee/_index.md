@@ -18,481 +18,6 @@ You can read more about the security policy on:
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. It may also lack details found on the project security page linked above. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
-## Session fixation in embedded HTTP server ## { #CVE-2026-97890 }
-
-CVE-2026-97890 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97890) [\[CVE json\]](./CVE-2026-97890.cve.json) [\[OSV json\]](./CVE-2026-97890.osv.json)
-
-
-
-_Last updated: 2026-11-10T15:31:21.904Z_
-
-### Affected
-
-* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
-* Apache TomEE from 10.0.0-M1 through 10.2.0
-* Apache TomEE at 11.0.0-M1
-
-
-### Description
-
-The embedded HTTP server does not invalidate the previous session identifier when an application changes the session id, e.g. after login. An attacker who can plant a session identifier in a victim's browser can hijack the victim's authenticated session. Users are recommended to block network access to the embedded HTTP server from untrusted clients, or to migrate to the Tomcat based TomEE distributions.
-
-### References
-* https://lists.apache.org/thread/2wx7lvso54j2xp6m7omq12hkcb9tfzjx
-
-
-### Credits
-* The Apache Software Foundation (finder)
-* Claude Security (tool)
-* Markus Jung (remediation developer)
-
-
-## Caller identity leaks across requests in embedded HTTP server ## { #CVE-2026-97888 }
-
-CVE-2026-97888 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97888) [\[CVE json\]](./CVE-2026-97888.cve.json) [\[OSV json\]](./CVE-2026-97888.osv.json)
-
-
-
-_Last updated: 2026-11-10T15:32:07.999Z_
-
-### Affected
-
-* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
-* Apache TomEE from 10.0.0-M1 through 10.2.0
-* Apache TomEE at 11.0.0-M1
-
-
-### Description
-
-The embedded HTTP server does not clear the security identity established during a request before its worker thread handles the next request. A remote unauthenticated attacker can have their request processed with the identity of a previously authenticated user, gaining that user's privileges. Only applications served by the embedded HTTP server that authenticate programmatically or via basic authentication are affected. Users are recommended to block network access to the embedded HTTP server from untrusted clients, or to migrate to the Tomcat based TomEE distributions.
-
-### References
-* https://lists.apache.org/thread/7snc0d5bd2hvk1416v5b34pjgn0mmdvn
-
-
-### Credits
-* The Apache Software Foundation (finder)
-* Claude Security (tool)
-* Markus Jung (remediation developer)
-
-
-## Path traversal in embedded HTTP server static resource handling ## { #CVE-2026-97881 }
-
-CVE-2026-97881 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97881) [\[CVE json\]](./CVE-2026-97881.cve.json) [\[OSV json\]](./CVE-2026-97881.osv.json)
-
-
-
-_Last updated: 2026-11-10T15:32:33.362Z_
-
-### Affected
-
-* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
-* Apache TomEE from 10.0.0-M1 through 10.2.0
-* Apache TomEE at 11.0.0-M1
-
-
-### Description
-
-The embedded OpenEJB HTTP server does not restrict static resource paths to the configured resource directories. A remote unauthenticated attacker can read arbitrary files accessible to the server process. Users are recommended to block network access to the embedded HTTP server from untrusted clients, or to migrate to the Tomcat based TomEE distributions.
-
-### References
-* https://lists.apache.org/thread/pptsyzp963c01nmss9hn7p68pthzdnp9
-
-
-### Credits
-* The Apache Software Foundation (finder)
-* Claude Security (tool)
-* Markus Jung (remediation developer)
-
-
-## Authentication bypass in the embedded HTTP server for endpoints protected by HTTP Basic authentication ## { #CVE-2026-97880 }
-
-CVE-2026-97880 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97880) [\[CVE json\]](./CVE-2026-97880.cve.json) [\[OSV json\]](./CVE-2026-97880.osv.json)
-
-
-
-_Last updated: 2026-11-10T15:33:20.499Z_
-
-### Affected
-
-* Apache TomEE from 4.0.0-beta-1 through 4.7.5
-* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
-* Apache TomEE from 10.0.0-M1 through 10.2.0
-* Apache TomEE at 11.0.0-M1
-
-
-### Description
-
-The embedded OpenEJB HTTP server dispatches some requests to REST endpoints configured for HTTP Basic authentication without verifying credentials. A remote unauthenticated attacker can invoke protected resources, bypassing authentication. Only deployments that use the embedded HTTP server with Basic authentication are affected. Users are recommended to block network access to the embedded HTTP server from untrusted clients, or to migrate to the Tomcat based TomEE distributions.
-
-### References
-* https://lists.apache.org/thread/fm51rhyqmjv2b9hphro608thj4yr4ngx
-
-
-### Credits
-* The Apache Software Foundation (finder)
-* Claude Security (tool)
-* Markus Jung (remediation developer)
-
-
-## Authentication bypass for Hessian endpoints in non-root web applications ## { #CVE-2026-97874 }
-
-CVE-2026-97874 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97874) [\[CVE json\]](./CVE-2026-97874.cve.json) [\[OSV json\]](./CVE-2026-97874.osv.json)
-
-
-
-_Last updated: 2026-11-10T15:33:56.619Z_
-
-### Affected
-
-* Apache TomEE from 4.6.0 through 4.7.5
-* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
-* Apache TomEE from 10.0.0-M1 through 10.2.0
-* Apache TomEE at 11.0.0-M1
-
-
-### Description
-
-When Hessian remoting is configured with BASIC authentication, the authentication check is not applied to Hessian endpoints of applications deployed under a non-root context path. A remote unauthenticated attacker can invoke the exposed EJB methods without credentials. Users are recommended to block network access to Hessian endpoints from untrusted clients, or to migrate to another remoting protocol.
-
-### References
-* https://lists.apache.org/thread/jl8dn3bdz52n8126gvc85nddprkwjhmq
-
-
-### Credits
-* The Apache Software Foundation (finder)
-* Claude Security (tool)
-* Markus Jung (remediation developer)
-
-
-## Authentication bypass of Hessian EJB endpoints due to ignored security settings ## { #CVE-2026-97872 }
-
-CVE-2026-97872 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97872) [\[CVE json\]](./CVE-2026-97872.cve.json) [\[OSV json\]](./CVE-2026-97872.osv.json)
-
-
-
-_Last updated: 2026-11-10T15:34:19.551Z_
-
-### Affected
-
-* Apache TomEE from 4.6.0 through 4.7.5
-* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
-* Apache TomEE from 10.0.0-M1 through 10.2.0
-* Apache TomEE at 11.0.0-M1
-
-
-### Description
-
-When an EJB is exposed over the optional Hessian protocol inside an existing web application, some configured authentication and transport security settings are silently not enforced. A remote unauthenticated attacker can invoke the exposed EJB methods. Only deployments using the Hessian module with such settings are affected. Users are recommended to block network access to Hessian endpoints from untrusted clients, or to migrate to another remoting protocol.
-
-### References
-* https://lists.apache.org/thread/hythwhxfnmghgv21y2pw73s41qt99z72
-
-
-### Credits
-* The Apache Software Foundation (finder)
-* Claude Security (tool)
-* Markus Jung (remediation developer)
-
-
-## Missing authentication for Hessian endpoints in embedded HTTP server ## { #CVE-2026-97870 }
-
-CVE-2026-97870 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97870) [\[CVE json\]](./CVE-2026-97870.cve.json) [\[OSV json\]](./CVE-2026-97870.osv.json)
-
-
-
-_Last updated: 2026-11-10T15:34:48.122Z_
-
-### Affected
-
-* Apache TomEE from 4.6.0 through 4.7.5
-* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
-* Apache TomEE from 10.0.0-M1 through 10.2.0
-* Apache TomEE at 11.0.0-M1
-
-
-### Description
-
-When Hessian remoting endpoints are served by the embedded HTTP server, configured authentication and transport security requirements are silently ignored. A remote unauthenticated attacker can invoke the exposed EJB methods without credentials or over an unencrypted connection. Only deployments that use the embedded HTTP server rather than Tomcat and rely on these settings are affected. Users are recommended to block network access to Hessian endpoints from untrusted clients, or to migrate to another remoting protocol.
-
-### References
-* https://lists.apache.org/thread/hvggn9r4nod9yrww9qrz5vttcrcvomhz
-
-
-### Credits
-* The Apache Software Foundation (finder)
-* Claude Security (tool)
-* Markus Jung (remediation developer)
-
-
-## Database credential disclosure via remote JNDI lookup ## { #CVE-2026-97867 }
-
-CVE-2026-97867 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97867) [\[CVE json\]](./CVE-2026-97867.cve.json) [\[OSV json\]](./CVE-2026-97867.osv.json)
-
-
-
-_Last updated: 2026-11-10T15:35:59.249Z_
-
-### Affected
-
-* Apache TomEE from 4.0.0-beta-1 through 4.7.5
-* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
-* Apache TomEE from 10.0.0-M1 before 10.3.0
-* Apache TomEE from 11.0.0-M1 before 11.0.0-M2
-
-
-### Description
-
-The EJBd remote protocol returns datasource connection details, including database credentials, to remote clients that look up a datasource. A remote client able to reach the EJBd endpoint can obtain the database credentials and connect to the database directly. Users are recommended to upgrade to version 10.3.0 or 11.0.0-M2, which fix the issue.
-
-### References
-* https://lists.apache.org/thread/f6nqckc3wgqnnsrkb1hd640o3k4omfvr
-
-
-### Credits
-* The Apache Software Foundation (finder)
-* Claude Security (tool)
-* Markus Jung (remediation developer)
-
-
-## Derby network service listens on all interfaces ## { #CVE-2026-97849 }
-
-CVE-2026-97849 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97849) [\[CVE json\]](./CVE-2026-97849.cve.json) [\[OSV json\]](./CVE-2026-97849.osv.json)
-
-
-
-_Last updated: 2026-11-10T15:36:29.896Z_
-
-### Affected
-
-* Apache TomEE from 4.0.0-beta-1 through 4.7.5
-* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
-* Apache TomEE from 10.0.0-M1 before 10.3.0
-* Apache TomEE from 11.0.0-M1 before 11.0.0-M2
-
-
-### Description
-
-The embedded Derby network service ignores its configured bind address and listens on all network interfaces. When the service is enabled, a remote attacker with network access can connect to the database server and read or modify data. Users are recommended to upgrade to version 10.3.0 or 11.0.0-M2, which fix the issue.
-
-### References
-* https://lists.apache.org/thread/20fl5wnn3slxs0tq0ktmrc9xv9glffhq
-
-
-### Credits
-* The Apache Software Foundation (finder)
-* Claude Security (tool)
-* Markus Jung (remediation developer)
-
-
-## Missing TLS hostname verification in ejbds client connections ## { #CVE-2026-87758 }
-
-CVE-2026-87758 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-87758) [\[CVE json\]](./CVE-2026-87758.cve.json) [\[OSV json\]](./CVE-2026-87758.osv.json)
-
-
-
-_Last updated: 2026-11-10T15:37:06.712Z_
-
-### Affected
-
-* Apache TomEE from 4.0.0-beta-1 through 4.7.5
-* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
-* Apache TomEE from 10.0.0-M1 before 10.3.0
-* Apache TomEE from 11.0.0-M1 before 11.0.0-M2
-
-
-### Description
-
-The remote EJB client does not verify that the hostname of the server it connects to matches the server's TLS certificate. An attacker able to intercept network traffic between an EJB client and server can impersonate the server and read or modify the traffic, including credentials and invocation data. Users are recommended to upgrade to version 10.3.0 or 11.0.0-M2, which fix the issue.
-
-### References
-* https://lists.apache.org/thread/nzy4n8rmv4zl5wzdz0v0kwrj62tjrd7z
-
-
-### Credits
-* The Apache Software Foundation (finder)
-* Claude Security (tool)
-* Markus Jung (remediation developer)
-
-
-## Missing authorization on internal deployer EJBs in default profile ## { #CVE-2026-87756 }
-
-CVE-2026-87756 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-87756) [\[CVE json\]](./CVE-2026-87756.cve.json) [\[OSV json\]](./CVE-2026-87756.osv.json)
-
-
-
-_Last updated: 2026-11-10T14:57:18.443Z_
-
-### Affected
-
-* Apache TomEE from 4.5.1 through 4.7.5
-* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
-* Apache TomEE from 10.0.0-M1 before 10.3.0
-* Apache TomEE from 11.0.0-M1 before 11.0.0-M2
-
-
-### Description
-
-The internal system EJBs used for remote deployment and configuration did not enforce their administrative role check when the server ran with the default profile. A remote unauthenticated attacker able to reach the remote EJB endpoint could deploy arbitrary applications and execute code. Only installations that enabled the system applications and a remote EJB endpoint are exposed. Users are recommended to upgrade to version 10.3.0 or 11.0.0-M2, which fix the issue.
-
-### References
-* https://lists.apache.org/thread.html/4748mnztpzyfcy840z143ttgj92yl84r
-
-
-### Credits
-* The Apache Software Foundation (finder)
-* Claude Security (tool)
-* Markus Jung (remediation developer)
-
-
-## Stateful session bean hijacking via predictable session identifiers ## { #CVE-2026-87755 }
-
-CVE-2026-87755 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-87755) [\[CVE json\]](./CVE-2026-87755.cve.json) [\[OSV json\]](./CVE-2026-87755.osv.json)
-
-
-
-_Last updated: 2026-11-10T14:56:28.554Z_
-
-### Affected
-
-* Apache TomEE from 4.0.0-beta-1 through 4.7.5
-* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
-* Apache TomEE from 10.0.0-M1 before 10.3.0
-* Apache TomEE from 11.0.0-M1 before 11.0.0-M2
-
-
-### Description
-
-Stateful session bean identifiers are not generated from a cryptographically secure random source. A remote attacker with access to the EJB remote endpoint who holds one valid identifier can derive those of other clients' sessions and invoke methods on their beans, exposing or modifying other users' session state. Users are recommended to upgrade to version 10.3.0 or 11.0.0-M2, which fix the issue.
-
-### References
-* https://lists.apache.org/thread.html/srzp26oyjtb3bwgxwsyhpphv778s17m8
-
-
-### Credits
-* The Apache Software Foundation (finder)
-* Claude Security (tool)
-* Markus Jung (remediation developer)
-
-
-## Path traversal via stateful EJB passivation ## { #CVE-2026-86811 }
-
-CVE-2026-86811 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86811) [\[CVE json\]](./CVE-2026-86811.cve.json) [\[OSV json\]](./CVE-2026-86811.osv.json)
-
-
-
-_Last updated: 2026-11-10T14:55:49.535Z_
-
-### Affected
-
-* Apache TomEE from 4.0.0-beta-1 through 4.7.5
-* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
-* Apache TomEE from 10.0.0-M1 before 10.3.0
-* Apache TomEE from 11.0.0-M1 before 11.0.0-M2
-
-
-### Description
-
-The stateful session bean passivation mechanism derives the on-disk file name from a client-supplied identifier without validating it. A remote attacker with access to the remote EJB service can cause session state to be read from or written to files outside the passivation directory. Users are recommended to upgrade to version 10.3.0 or 11.0.0-M2, which fix the issue.
-
-### References
-* https://lists.apache.org/thread.html/f2x7r654o1nt2z98m39kk0m6x24mz69f
-
-
-### Credits
-* The Apache Software Foundation (finder)
-* Claude Security (tool)
-* Markus Jung (remediation developer)
-
-
-## Username enumeration and timing side channel in JAAS login modules ## { #CVE-2026-86532 }
-
-CVE-2026-86532 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86532) [\[CVE json\]](./CVE-2026-86532.cve.json) [\[OSV json\]](./CVE-2026-86532.osv.json)
-
-
-
-_Last updated: 2026-11-10T14:54:32.864Z_
-
-### Affected
-
-* Apache TomEE from 4.0.0-beta-1 through 4.7.5
-* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
-* Apache TomEE from 10.0.0-M1 before 10.3.0
-* Apache TomEE from 11.0.0-M1 before 11.0.0-M2
-
-
-### Description
-
-The bundled JAAS login modules leak whether a username exists and compare credentials in a non-constant-time manner. A remote unauthenticated attacker can enumerate valid accounts and may infer credential material through timing analysis. Users are recommended to upgrade to version 10.3.0 or 11.0.0-M2, which fix the issue.
-
-### References
-* https://lists.apache.org/thread.html/oohwxbp6xx8dgl18xy1p1y6qjg59dgoh
-
-
-### Credits
-* The Apache Software Foundation (finder)
-* Claude Security (tool)
-* Markus Jung (remediation developer)
-
-
-## DoS via unbounded request body and multipart handling in embedded HTTP server ## { #CVE-2026-86531 }
-
-CVE-2026-86531 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86531) [\[CVE json\]](./CVE-2026-86531.cve.json) [\[OSV json\]](./CVE-2026-86531.osv.json)
-
-
-
-_Last updated: 2026-11-10T15:37:38.210Z_
-
-### Affected
-
-* Apache TomEE from 4.0.0-beta-1 through 4.7.5
-* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
-* Apache TomEE from 10.0.0-M1 through 10.2.0
-* Apache TomEE at 11.0.0-M1
-
-
-### Description
-
-The embedded OpenEJB HTTP server does not limit the size of incoming request bodies or of multipart requests, and does not remove the temporary files it creates for multipart parts. A remote unauthenticated attacker can cause excessive memory or disk usage, leading to denial of service. Deployments using the Tomcat connectors are not affected. Users are recommended to block network access to the embedded HTTP server from untrusted clients, or to migrate to the Tomcat based TomEE distributions.
-
-### References
-* https://lists.apache.org/thread/cm1vdbx03ctl607nrrkdqyshwjscpd2y
-
-
-### Credits
-* The Apache Software Foundation (finder)
-* Claude Security (tool)
-* Markus Jung (remediation developer)
-
-
-## EJB method authorization is silently skipped on JDK 21+ ## { #CVE-2026-86336 }
-
-CVE-2026-86336 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86336) [\[CVE json\]](./CVE-2026-86336.cve.json) [\[OSV json\]](./CVE-2026-86336.osv.json)
-
-
-
-_Last updated: 2026-11-10T15:38:23.784Z_
-
-### Affected
-
-* Apache TomEE from 10.1.1 before 10.3.0
-* Apache TomEE from 11.0.0-M1 before 11.0.0-M2
-
-
-### Description
-
-Apache TomEE running on JDK 21 or later skips EJB method authorization checks, allowing callers to invoke EJB methods without the configured access restrictions being enforced. Users are recommended to upgrade to version 10.3.0 or 11.0.0-M2, which fix the issue.
-
-### References
-* https://lists.apache.org/thread/tv0407xmnpy4qctqm9nzx56lgjln2t4j
-
-
-### Credits
-* The Apache Software Foundation (finder)
-* Claude Security (tool)
-* Markus Jung (remediation developer)
-
-
 ## Authentication bypass on EJB web service endpoints via HTTP method ## { #CVE-2026-111264 }
 
 CVE-2026-111264 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111264) [\[CVE json\]](./CVE-2026-111264.cve.json) [\[OSV json\]](./CVE-2026-111264.osv.json)
@@ -1149,3 +674,478 @@ The optional SSH administration service grants full access to the administration
 * The Apache Software Foundation (finder)
 * Claude Security (tool)
 * Richard Zowalla (remediation developer)
+
+
+## Session fixation in embedded HTTP server ## { #CVE-2026-97890 }
+
+CVE-2026-97890 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97890) [\[CVE json\]](./CVE-2026-97890.cve.json) [\[OSV json\]](./CVE-2026-97890.osv.json)
+
+
+
+_Last updated: 2026-11-10T15:31:21.904Z_
+
+### Affected
+
+* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
+* Apache TomEE from 10.0.0-M1 through 10.2.0
+* Apache TomEE at 11.0.0-M1
+
+
+### Description
+
+The embedded HTTP server does not invalidate the previous session identifier when an application changes the session id, e.g. after login. An attacker who can plant a session identifier in a victim's browser can hijack the victim's authenticated session. Users are recommended to block network access to the embedded HTTP server from untrusted clients, or to migrate to the Tomcat based TomEE distributions.
+
+### References
+* https://lists.apache.org/thread/2wx7lvso54j2xp6m7omq12hkcb9tfzjx
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
+* Markus Jung (remediation developer)
+
+
+## Caller identity leaks across requests in embedded HTTP server ## { #CVE-2026-97888 }
+
+CVE-2026-97888 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97888) [\[CVE json\]](./CVE-2026-97888.cve.json) [\[OSV json\]](./CVE-2026-97888.osv.json)
+
+
+
+_Last updated: 2026-11-10T15:32:07.999Z_
+
+### Affected
+
+* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
+* Apache TomEE from 10.0.0-M1 through 10.2.0
+* Apache TomEE at 11.0.0-M1
+
+
+### Description
+
+The embedded HTTP server does not clear the security identity established during a request before its worker thread handles the next request. A remote unauthenticated attacker can have their request processed with the identity of a previously authenticated user, gaining that user's privileges. Only applications served by the embedded HTTP server that authenticate programmatically or via basic authentication are affected. Users are recommended to block network access to the embedded HTTP server from untrusted clients, or to migrate to the Tomcat based TomEE distributions.
+
+### References
+* https://lists.apache.org/thread/7snc0d5bd2hvk1416v5b34pjgn0mmdvn
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
+* Markus Jung (remediation developer)
+
+
+## Path traversal in embedded HTTP server static resource handling ## { #CVE-2026-97881 }
+
+CVE-2026-97881 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97881) [\[CVE json\]](./CVE-2026-97881.cve.json) [\[OSV json\]](./CVE-2026-97881.osv.json)
+
+
+
+_Last updated: 2026-11-10T15:32:33.362Z_
+
+### Affected
+
+* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
+* Apache TomEE from 10.0.0-M1 through 10.2.0
+* Apache TomEE at 11.0.0-M1
+
+
+### Description
+
+The embedded OpenEJB HTTP server does not restrict static resource paths to the configured resource directories. A remote unauthenticated attacker can read arbitrary files accessible to the server process. Users are recommended to block network access to the embedded HTTP server from untrusted clients, or to migrate to the Tomcat based TomEE distributions.
+
+### References
+* https://lists.apache.org/thread/pptsyzp963c01nmss9hn7p68pthzdnp9
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
+* Markus Jung (remediation developer)
+
+
+## Authentication bypass in the embedded HTTP server for endpoints protected by HTTP Basic authentication ## { #CVE-2026-97880 }
+
+CVE-2026-97880 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97880) [\[CVE json\]](./CVE-2026-97880.cve.json) [\[OSV json\]](./CVE-2026-97880.osv.json)
+
+
+
+_Last updated: 2026-11-10T15:33:20.499Z_
+
+### Affected
+
+* Apache TomEE from 4.0.0-beta-1 through 4.7.5
+* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
+* Apache TomEE from 10.0.0-M1 through 10.2.0
+* Apache TomEE at 11.0.0-M1
+
+
+### Description
+
+The embedded OpenEJB HTTP server dispatches some requests to REST endpoints configured for HTTP Basic authentication without verifying credentials. A remote unauthenticated attacker can invoke protected resources, bypassing authentication. Only deployments that use the embedded HTTP server with Basic authentication are affected. Users are recommended to block network access to the embedded HTTP server from untrusted clients, or to migrate to the Tomcat based TomEE distributions.
+
+### References
+* https://lists.apache.org/thread/fm51rhyqmjv2b9hphro608thj4yr4ngx
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
+* Markus Jung (remediation developer)
+
+
+## Authentication bypass for Hessian endpoints in non-root web applications ## { #CVE-2026-97874 }
+
+CVE-2026-97874 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97874) [\[CVE json\]](./CVE-2026-97874.cve.json) [\[OSV json\]](./CVE-2026-97874.osv.json)
+
+
+
+_Last updated: 2026-11-10T15:33:56.619Z_
+
+### Affected
+
+* Apache TomEE from 4.6.0 through 4.7.5
+* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
+* Apache TomEE from 10.0.0-M1 through 10.2.0
+* Apache TomEE at 11.0.0-M1
+
+
+### Description
+
+When Hessian remoting is configured with BASIC authentication, the authentication check is not applied to Hessian endpoints of applications deployed under a non-root context path. A remote unauthenticated attacker can invoke the exposed EJB methods without credentials. Users are recommended to block network access to Hessian endpoints from untrusted clients, or to migrate to another remoting protocol.
+
+### References
+* https://lists.apache.org/thread/jl8dn3bdz52n8126gvc85nddprkwjhmq
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
+* Markus Jung (remediation developer)
+
+
+## Authentication bypass of Hessian EJB endpoints due to ignored security settings ## { #CVE-2026-97872 }
+
+CVE-2026-97872 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97872) [\[CVE json\]](./CVE-2026-97872.cve.json) [\[OSV json\]](./CVE-2026-97872.osv.json)
+
+
+
+_Last updated: 2026-11-10T15:34:19.551Z_
+
+### Affected
+
+* Apache TomEE from 4.6.0 through 4.7.5
+* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
+* Apache TomEE from 10.0.0-M1 through 10.2.0
+* Apache TomEE at 11.0.0-M1
+
+
+### Description
+
+When an EJB is exposed over the optional Hessian protocol inside an existing web application, some configured authentication and transport security settings are silently not enforced. A remote unauthenticated attacker can invoke the exposed EJB methods. Only deployments using the Hessian module with such settings are affected. Users are recommended to block network access to Hessian endpoints from untrusted clients, or to migrate to another remoting protocol.
+
+### References
+* https://lists.apache.org/thread/hythwhxfnmghgv21y2pw73s41qt99z72
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
+* Markus Jung (remediation developer)
+
+
+## Missing authentication for Hessian endpoints in embedded HTTP server ## { #CVE-2026-97870 }
+
+CVE-2026-97870 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97870) [\[CVE json\]](./CVE-2026-97870.cve.json) [\[OSV json\]](./CVE-2026-97870.osv.json)
+
+
+
+_Last updated: 2026-11-10T15:34:48.122Z_
+
+### Affected
+
+* Apache TomEE from 4.6.0 through 4.7.5
+* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
+* Apache TomEE from 10.0.0-M1 through 10.2.0
+* Apache TomEE at 11.0.0-M1
+
+
+### Description
+
+When Hessian remoting endpoints are served by the embedded HTTP server, configured authentication and transport security requirements are silently ignored. A remote unauthenticated attacker can invoke the exposed EJB methods without credentials or over an unencrypted connection. Only deployments that use the embedded HTTP server rather than Tomcat and rely on these settings are affected. Users are recommended to block network access to Hessian endpoints from untrusted clients, or to migrate to another remoting protocol.
+
+### References
+* https://lists.apache.org/thread/hvggn9r4nod9yrww9qrz5vttcrcvomhz
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
+* Markus Jung (remediation developer)
+
+
+## Database credential disclosure via remote JNDI lookup ## { #CVE-2026-97867 }
+
+CVE-2026-97867 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97867) [\[CVE json\]](./CVE-2026-97867.cve.json) [\[OSV json\]](./CVE-2026-97867.osv.json)
+
+
+
+_Last updated: 2026-11-10T15:35:59.249Z_
+
+### Affected
+
+* Apache TomEE from 4.0.0-beta-1 through 4.7.5
+* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
+* Apache TomEE from 10.0.0-M1 before 10.3.0
+* Apache TomEE from 11.0.0-M1 before 11.0.0-M2
+
+
+### Description
+
+The EJBd remote protocol returns datasource connection details, including database credentials, to remote clients that look up a datasource. A remote client able to reach the EJBd endpoint can obtain the database credentials and connect to the database directly. Users are recommended to upgrade to version 10.3.0 or 11.0.0-M2, which fix the issue.
+
+### References
+* https://lists.apache.org/thread/f6nqckc3wgqnnsrkb1hd640o3k4omfvr
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
+* Markus Jung (remediation developer)
+
+
+## Derby network service listens on all interfaces ## { #CVE-2026-97849 }
+
+CVE-2026-97849 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-97849) [\[CVE json\]](./CVE-2026-97849.cve.json) [\[OSV json\]](./CVE-2026-97849.osv.json)
+
+
+
+_Last updated: 2026-11-10T15:36:29.896Z_
+
+### Affected
+
+* Apache TomEE from 4.0.0-beta-1 through 4.7.5
+* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
+* Apache TomEE from 10.0.0-M1 before 10.3.0
+* Apache TomEE from 11.0.0-M1 before 11.0.0-M2
+
+
+### Description
+
+The embedded Derby network service ignores its configured bind address and listens on all network interfaces. When the service is enabled, a remote attacker with network access can connect to the database server and read or modify data. Users are recommended to upgrade to version 10.3.0 or 11.0.0-M2, which fix the issue.
+
+### References
+* https://lists.apache.org/thread/20fl5wnn3slxs0tq0ktmrc9xv9glffhq
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
+* Markus Jung (remediation developer)
+
+
+## Missing TLS hostname verification in ejbds client connections ## { #CVE-2026-87758 }
+
+CVE-2026-87758 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-87758) [\[CVE json\]](./CVE-2026-87758.cve.json) [\[OSV json\]](./CVE-2026-87758.osv.json)
+
+
+
+_Last updated: 2026-11-10T15:37:06.712Z_
+
+### Affected
+
+* Apache TomEE from 4.0.0-beta-1 through 4.7.5
+* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
+* Apache TomEE from 10.0.0-M1 before 10.3.0
+* Apache TomEE from 11.0.0-M1 before 11.0.0-M2
+
+
+### Description
+
+The remote EJB client does not verify that the hostname of the server it connects to matches the server's TLS certificate. An attacker able to intercept network traffic between an EJB client and server can impersonate the server and read or modify the traffic, including credentials and invocation data. Users are recommended to upgrade to version 10.3.0 or 11.0.0-M2, which fix the issue.
+
+### References
+* https://lists.apache.org/thread/nzy4n8rmv4zl5wzdz0v0kwrj62tjrd7z
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
+* Markus Jung (remediation developer)
+
+
+## Missing authorization on internal deployer EJBs in default profile ## { #CVE-2026-87756 }
+
+CVE-2026-87756 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-87756) [\[CVE json\]](./CVE-2026-87756.cve.json) [\[OSV json\]](./CVE-2026-87756.osv.json)
+
+
+
+_Last updated: 2026-11-10T14:57:18.443Z_
+
+### Affected
+
+* Apache TomEE from 4.5.1 through 4.7.5
+* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
+* Apache TomEE from 10.0.0-M1 before 10.3.0
+* Apache TomEE from 11.0.0-M1 before 11.0.0-M2
+
+
+### Description
+
+The internal system EJBs used for remote deployment and configuration did not enforce their administrative role check when the server ran with the default profile. A remote unauthenticated attacker able to reach the remote EJB endpoint could deploy arbitrary applications and execute code. Only installations that enabled the system applications and a remote EJB endpoint are exposed. Users are recommended to upgrade to version 10.3.0 or 11.0.0-M2, which fix the issue.
+
+### References
+* https://lists.apache.org/thread.html/4748mnztpzyfcy840z143ttgj92yl84r
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
+* Markus Jung (remediation developer)
+
+
+## Stateful session bean hijacking via predictable session identifiers ## { #CVE-2026-87755 }
+
+CVE-2026-87755 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-87755) [\[CVE json\]](./CVE-2026-87755.cve.json) [\[OSV json\]](./CVE-2026-87755.osv.json)
+
+
+
+_Last updated: 2026-11-10T14:56:28.554Z_
+
+### Affected
+
+* Apache TomEE from 4.0.0-beta-1 through 4.7.5
+* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
+* Apache TomEE from 10.0.0-M1 before 10.3.0
+* Apache TomEE from 11.0.0-M1 before 11.0.0-M2
+
+
+### Description
+
+Stateful session bean identifiers are not generated from a cryptographically secure random source. A remote attacker with access to the EJB remote endpoint who holds one valid identifier can derive those of other clients' sessions and invoke methods on their beans, exposing or modifying other users' session state. Users are recommended to upgrade to version 10.3.0 or 11.0.0-M2, which fix the issue.
+
+### References
+* https://lists.apache.org/thread.html/srzp26oyjtb3bwgxwsyhpphv778s17m8
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
+* Markus Jung (remediation developer)
+
+
+## Path traversal via stateful EJB passivation ## { #CVE-2026-86811 }
+
+CVE-2026-86811 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86811) [\[CVE json\]](./CVE-2026-86811.cve.json) [\[OSV json\]](./CVE-2026-86811.osv.json)
+
+
+
+_Last updated: 2026-11-10T14:55:49.535Z_
+
+### Affected
+
+* Apache TomEE from 4.0.0-beta-1 through 4.7.5
+* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
+* Apache TomEE from 10.0.0-M1 before 10.3.0
+* Apache TomEE from 11.0.0-M1 before 11.0.0-M2
+
+
+### Description
+
+The stateful session bean passivation mechanism derives the on-disk file name from a client-supplied identifier without validating it. A remote attacker with access to the remote EJB service can cause session state to be read from or written to files outside the passivation directory. Users are recommended to upgrade to version 10.3.0 or 11.0.0-M2, which fix the issue.
+
+### References
+* https://lists.apache.org/thread.html/f2x7r654o1nt2z98m39kk0m6x24mz69f
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
+* Markus Jung (remediation developer)
+
+
+## Username enumeration and timing side channel in JAAS login modules ## { #CVE-2026-86532 }
+
+CVE-2026-86532 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86532) [\[CVE json\]](./CVE-2026-86532.cve.json) [\[OSV json\]](./CVE-2026-86532.osv.json)
+
+
+
+_Last updated: 2026-11-10T14:54:32.864Z_
+
+### Affected
+
+* Apache TomEE from 4.0.0-beta-1 through 4.7.5
+* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
+* Apache TomEE from 10.0.0-M1 before 10.3.0
+* Apache TomEE from 11.0.0-M1 before 11.0.0-M2
+
+
+### Description
+
+The bundled JAAS login modules leak whether a username exists and compare credentials in a non-constant-time manner. A remote unauthenticated attacker can enumerate valid accounts and may infer credential material through timing analysis. Users are recommended to upgrade to version 10.3.0 or 11.0.0-M2, which fix the issue.
+
+### References
+* https://lists.apache.org/thread.html/oohwxbp6xx8dgl18xy1p1y6qjg59dgoh
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
+* Markus Jung (remediation developer)
+
+
+## DoS via unbounded request body and multipart handling in embedded HTTP server ## { #CVE-2026-86531 }
+
+CVE-2026-86531 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86531) [\[CVE json\]](./CVE-2026-86531.cve.json) [\[OSV json\]](./CVE-2026-86531.osv.json)
+
+
+
+_Last updated: 2026-11-10T15:37:38.210Z_
+
+### Affected
+
+* Apache TomEE from 4.0.0-beta-1 through 4.7.5
+* Apache TomEE from 7.0.0-M1 before 10.0.0-M1
+* Apache TomEE from 10.0.0-M1 through 10.2.0
+* Apache TomEE at 11.0.0-M1
+
+
+### Description
+
+The embedded OpenEJB HTTP server does not limit the size of incoming request bodies or of multipart requests, and does not remove the temporary files it creates for multipart parts. A remote unauthenticated attacker can cause excessive memory or disk usage, leading to denial of service. Deployments using the Tomcat connectors are not affected. Users are recommended to block network access to the embedded HTTP server from untrusted clients, or to migrate to the Tomcat based TomEE distributions.
+
+### References
+* https://lists.apache.org/thread/cm1vdbx03ctl607nrrkdqyshwjscpd2y
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
+* Markus Jung (remediation developer)
+
+
+## EJB method authorization is silently skipped on JDK 21+ ## { #CVE-2026-86336 }
+
+CVE-2026-86336 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-86336) [\[CVE json\]](./CVE-2026-86336.cve.json) [\[OSV json\]](./CVE-2026-86336.osv.json)
+
+
+
+_Last updated: 2026-11-10T15:38:23.784Z_
+
+### Affected
+
+* Apache TomEE from 10.1.1 before 10.3.0
+* Apache TomEE from 11.0.0-M1 before 11.0.0-M2
+
+
+### Description
+
+Apache TomEE running on JDK 21 or later skips EJB method authorization checks, allowing callers to invoke EJB methods without the configured access restrictions being enforced. Users are recommended to upgrade to version 10.3.0 or 11.0.0-M2, which fix the issue.
+
+### References
+* https://lists.apache.org/thread/tv0407xmnpy4qctqm9nzx56lgjln2t4j
+
+
+### Credits
+* The Apache Software Foundation (finder)
+* Claude Security (tool)
+* Markus Jung (remediation developer)
