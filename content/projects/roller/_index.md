@@ -128,7 +128,7 @@ CVE-2026-82387 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82387) [\[CVE jso
 
 
 
-_Last updated: 2026-09-28T07:36:11.303Z_
+_Last updated: 2026-11-16T15:55:03.858Z_
 
 ### Affected
 
@@ -145,6 +145,9 @@ Improper Neutralization of Input During Web Page Generation ('Cross-site Scripti
 
 
 ### Credits
+* Michał Majchrowicz (AFINE) (finder)
+* Paweł Zdunek (AFINE) (finder)
+* Marcin Wyczechowski (AFINE) (finder)
 * m4dn355 (finder)
 
 
@@ -154,7 +157,7 @@ CVE-2026-82386 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82386) [\[CVE jso
 
 
 
-_Last updated: 2026-09-28T07:43:30.531Z_
+_Last updated: 2026-11-13T22:44:38.142Z_
 
 ### Affected
 
@@ -172,6 +175,7 @@ Improper Restriction of XML External Entity Reference in Apache Roller 6.1.5 all
 
 ### Credits
 * n0mi1k (finder)
+* tonghuaroot (finder)
 
 
 ## Weblog template include escapes the Velocity sandbox and reads classpath files ## { #CVE-2026-82385 }
@@ -388,7 +392,7 @@ CVE-2026-82377 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82377) [\[CVE jso
 
 
 
-_Last updated: 2026-09-28T07:45:39.178Z_
+_Last updated: 2026-11-16T15:52:07.446Z_
 
 ### Affected
 
@@ -405,6 +409,9 @@ Missing Authorization in Apache Roller 6.1.5 allows an authenticated user to rea
 
 
 ### Credits
+* Michał Majchrowicz (AFINE) (finder)
+* Paweł Zdunek (AFINE) (finder)
+* Marcin Wyczechowski (AFINE) (finder)
 * meifukun (finder)
 * n0mi1k (finder)
 * Ivan Iushkevich (Steph) (finder)
@@ -416,7 +423,7 @@ CVE-2026-82376 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82376) [\[CVE jso
 
 
 
-_Last updated: 2026-09-28T07:46:09.207Z_
+_Last updated: 2026-11-13T22:45:22.619Z_
 
 ### Affected
 
@@ -434,6 +441,7 @@ Improper Restriction of XML External Entity Reference in Apache Roller 6.1.5 all
 
 ### Credits
 * meifukun (finder)
+* tonghuaroot (finder)
 
 
 ## Server-side request forgery via entry trackback and enclosure URLs ## { #CVE-2026-82375 }
@@ -442,7 +450,7 @@ CVE-2026-82375 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-82375) [\[CVE jso
 
 
 
-_Last updated: 2026-09-28T07:46:47.447Z_
+_Last updated: 2026-11-16T15:50:07.296Z_
 
 ### Affected
 
@@ -460,6 +468,9 @@ Server-Side Request Forgery (SSRF) in Apache Roller 6.1.5 allows an authenticate
 
 
 ### Credits
+* Michał Majchrowicz (AFINE) (finder)
+* Paweł Zdunek (AFINE) (finder)
+* Marcin Wyczechowski (AFINE) (finder)
 * meifukun (finder)
 * n0mi1k (finder)
 
@@ -490,6 +501,429 @@ Authorization Bypass Through User-Controlled Key in Apache Roller 6.1.5 allows a
 * meifukun (finder)
 * n0mi1k (finder)
 * Ivan Iushkevich (Steph) (finder)
+
+
+## Unauthenticated deserialization in the XML-RPC endpoint (releases before 6.1.5) ## { #CVE-2026-129448 }
+
+CVE-2026-129448 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-129448) [\[CVE json\]](./CVE-2026-129448.cve.json) [\[OSV json\]](./CVE-2026-129448.osv.json)
+
+
+
+_Last updated: 2026-11-17T11:03:46.637Z_
+
+### Affected
+
+* Apache Roller from 4.0.0 before 6.1.5
+
+
+### Description
+
+Deserialization of Untrusted Data in Apache Roller versions 4.0.0 through 6.1.4 allows an unauthenticated remote attacker to execute arbitrary code. The XML-RPC endpoint accepts vendor extension types and deserializes them before authenticating the requester.<br><br>This is the same vulnerability as CVE-2026-82384, which listed only Apache Roller 6.1.5 as affected. This issue is being actively exploited.<br><br>Users are recommended to upgrade to Apache Roller 6.1.6 or later, which disables the extension types and rejects XML-RPC requests when the XML-RPC feature is disabled.<br><br>Users who cannot upgrade right away should set "enabledForExtensions" to "false" in WEB-INF/web.xml, or remove the "/roller-services/xmlrpc" servlet mapping, and restart Roller. Disabling XML-RPC in the administration UI is not enough, because older versions deserialize the request before checking that setting.
+
+### References
+* https://github.com/apache/roller/pull/171
+* https://lists.apache.org/thread/cc0jck13nb9vvcmzxzwotr6n16mx28z9
+* https://www.cve.org/CVERecord?id=CVE-2026-82384
+* https://lists.apache.org/thread.html/lnz4s26tv6hdo03wngtdbpfj4hg4gtds
+
+
+### Credits
+* n0mi1k (finder)
+* Matt Raible (reporter)
+
+
+## Deserialization of untrusted data in weblog update ping responses ## { #CVE-2026-123374 }
+
+CVE-2026-123374 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-123374) [\[CVE json\]](./CVE-2026-123374.cve.json) [\[OSV json\]](./CVE-2026-123374.osv.json)
+
+
+
+_Last updated: 2026-11-11T12:41:34.662Z_
+
+### Affected
+
+* Apache Roller from 4.0 through 6.1.6
+
+
+### Description
+
+<p>Deserialization of Untrusted Data vulnerability in Apache Roller. When Roller sends a weblog update ping, its XML-RPC client deserializes Java object data contained in the ping target's response, so a party that controls that response can run code in the Roller server process. This issue affects Apache Roller from 4.0 through 6.1.6. Users are recommended to upgrade to version 6.1.7, which removes the unsafe deserialization.</p>
+
+### References
+* https://github.com/apache/roller/pull/236
+* https://lists.apache.org/thread/577orljt8673gcvcv6nvwo2tnvykyxmt
+
+
+### Credits
+* David Joudelat (finder)
+
+
+## Limited weblog members can remove or change published entries ## { #CVE-2026-122300 }
+
+CVE-2026-122300 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-122300) [\[CVE json\]](./CVE-2026-122300.cve.json) [\[OSV json\]](./CVE-2026-122300.osv.json)
+
+
+
+_Last updated: 2026-11-11T12:41:11.461Z_
+
+### Affected
+
+* Apache Roller from 4.0 through 6.1.6
+
+
+### Description
+
+Missing Authorization vulnerability in Apache Roller 4.0 through 6.1.6 allows a weblog member with the Limited role to remove or change entries that member may only read, including entries published by other members. The entry editor checked the member's weblog role but not whether that role permits work on the entry.<br>Users are recommended to upgrade to Apache Roller 6.1.7 or later.
+
+### References
+* https://github.com/apache/roller/pull/235
+* https://lists.apache.org/thread/s2rmc53o2rdrnq40rxomp1wdfqm3hohs
+
+
+### Credits
+* DT25 (finder)
+
+
+## Stored cross-site scripting through the weblog description ## { #CVE-2026-118414 }
+
+CVE-2026-118414 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-118414) [\[CVE json\]](./CVE-2026-118414.cve.json) [\[OSV json\]](./CVE-2026-118414.osv.json)
+
+
+
+_Last updated: 2026-11-11T12:40:59.310Z_
+
+### Affected
+
+* Apache Roller from 6.1.2 through 6.1.6
+
+
+### Description
+
+Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') in Apache Roller 6.1.2 through 6.1.6 allows a weblog administrator to store script that runs in the browsers of the weblog's members when they open their main menu. The HTML-stripping routine kept a tag that was not closed, and the main menu printed the weblog description without escaping. Users are recommended to upgrade to Apache Roller 6.1.7 or later.
+
+### References
+* https://github.com/apache/roller/pull/228
+* https://lists.apache.org/thread/3grnb7pwlqygxlhpxn4dz4lht4d06v28
+
+
+### Credits
+* DT25, VNCS_Global (finder)
+
+
+## Stored cross-site scripting through imported blogroll links ## { #CVE-2026-118413 }
+
+CVE-2026-118413 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-118413) [\[CVE json\]](./CVE-2026-118413.cve.json) [\[OSV json\]](./CVE-2026-118413.osv.json)
+
+
+
+_Last updated: 2026-11-11T12:40:45.979Z_
+
+### Affected
+
+* Apache Roller from 4.0 through 6.1.6
+
+
+### Description
+
+Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') in Apache Roller 4.0 through 6.1.6 allows a weblog administrator to store script that runs in the browsers of the weblog's visitors. Blogroll links imported from an OPML file were not checked, and the default theme printed them without escaping. Users are recommended to upgrade to Apache Roller 6.1.7 or later, which accepts only web links on import and escapes them on output.
+
+### References
+* https://github.com/apache/roller/pull/221
+* https://lists.apache.org/thread/y6cqvqh5sp31kr47347gmv93mj4r0bwf
+
+
+### Credits
+* Ivan Iushkevich (Steph) (finder)
+
+
+## Disabled accounts can sign in through OpenID ## { #CVE-2026-118412 }
+
+CVE-2026-118412 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-118412) [\[CVE json\]](./CVE-2026-118412.cve.json) [\[OSV json\]](./CVE-2026-118412.osv.json)
+
+
+
+_Last updated: 2026-11-11T12:40:28.424Z_
+
+### Affected
+
+* Apache Roller from 5.1.0 through 6.1.6
+
+
+### Description
+
+Improper Authentication in Apache Roller 5.1.0 through 6.1.6 allows a user whose account an administrator has disabled to sign in again through OpenID and read unpublished entries. The OpenID sign-in path did not check whether the account was enabled. Only sites that enable the non-default OpenID authentication mode are affected; later major versions do not include OpenID 2.0. Users are recommended to upgrade to Apache Roller 6.1.7 or later.
+
+### References
+* https://github.com/apache/roller/pull/224
+* https://lists.apache.org/thread/lmlcrh06ynr0tfgg2f7vwh3h9gr7b1cs
+
+
+### Credits
+* hataehoon (GitHub: dpfkdlemtp) (finder)
+
+
+## Cross-site request forgery through GET requests to administrative actions ## { #CVE-2026-118411 }
+
+CVE-2026-118411 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-118411) [\[CVE json\]](./CVE-2026-118411.cve.json) [\[OSV json\]](./CVE-2026-118411.osv.json)
+
+
+
+_Last updated: 2026-11-16T15:56:30.491Z_
+
+### Affected
+
+* Apache Roller from 5.0.1 through 6.1.6
+
+
+### Description
+
+Cross-Site Request Forgery (CSRF) in Apache Roller 5.0.1 through 6.1.6 allows an unauthenticated attacker to create an administrator account if a logged-in Roller administrator opens a link that the attacker controls. The request-token check applied only to POST requests, and administrative actions also accepted GET requests. Users are recommended to upgrade to Apache Roller 6.1.7 or later, which requires POST and a valid token for actions that change data.
+
+### References
+* https://github.com/apache/roller/pull/227
+* https://lists.apache.org/thread/q2h1r9v5qqofxh8qds58dtqrhf85ll60
+
+
+### Credits
+* Michał Majchrowicz (AFINE) (finder)
+* Paweł Zdunek (AFINE) (finder)
+* Marcin Wyczechowski (AFINE) (finder)
+* hataehoon (GitHub: dpfkdlemtp) (finder)
+
+
+## Unpublished entries remain readable through search after AtomPub unpublish ## { #CVE-2026-118410 }
+
+CVE-2026-118410 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-118410) [\[CVE json\]](./CVE-2026-118410.cve.json) [\[OSV json\]](./CVE-2026-118410.osv.json)
+
+
+
+_Last updated: 2026-11-11T12:39:59.126Z_
+
+### Affected
+
+* Apache Roller from 4.0 through 6.1.6
+
+
+### Description
+
+Exposure of Resource to Wrong Sphere in Apache Roller 4.0 through 6.1.6 allows an unauthenticated visitor to read an entry after its author has withdrawn it to draft through the AtomPub API. The entry was removed from the weblog but stayed in the search index, and public search showed its content. AtomPub is disabled by default. Users are recommended to upgrade to Apache Roller 6.1.7 or later, which shows only published entries in search results.
+
+### References
+* https://github.com/apache/roller/pull/226
+* https://lists.apache.org/thread/oy4wv2d7sy9p9kl9nnvvfsjlgsk8bnco
+
+
+### Credits
+* hataehoon (GitHub: dpfkdlemtp) (finder)
+
+
+## Commenter email addresses recoverable through public search ## { #CVE-2026-118409 }
+
+CVE-2026-118409 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-118409) [\[CVE json\]](./CVE-2026-118409.cve.json) [\[OSV json\]](./CVE-2026-118409.osv.json)
+
+
+
+_Last updated: 2026-11-11T12:39:49.527Z_
+
+### Affected
+
+* Apache Roller from 4.0 through 6.1.6
+
+
+### Description
+
+Exposure of Sensitive Information to an Unauthorized Actor in Apache Roller 4.0 through 6.1.6 allows an unauthenticated visitor to recover the email addresses of people who left approved comments. The search index stored commenter email addresses, and the public weblog search accepted queries on that field, including wildcard queries that confirm an address one character at a time. Users are recommended to upgrade to Apache Roller 6.1.7 or later and rebuild the search index.
+
+### References
+* https://github.com/apache/roller/pull/225
+* https://lists.apache.org/thread/nf6c1qfdclkf61s3h8p8chf4y7ztjlwd
+
+
+### Credits
+* hataehoon (GitHub: dpfkdlemtp) (finder)
+
+
+## Unpublished entries of other weblogs readable through preview ## { #CVE-2026-118408 }
+
+CVE-2026-118408 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-118408) [\[CVE json\]](./CVE-2026-118408.cve.json) [\[OSV json\]](./CVE-2026-118408.osv.json)
+
+
+
+_Last updated: 2026-11-11T12:39:36.450Z_
+
+### Affected
+
+* Apache Roller from 4.0 through 6.1.6
+
+
+### Description
+
+Missing Authorization in Apache Roller 4.0 through 6.1.6 allows any logged-in user to read unpublished entries of a weblog they have no role in. The entry preview checked that the user was logged in, but not that the user had a role in the weblog being previewed. The attacker must know the weblog name and the entry's link name. Users are recommended to upgrade to Apache Roller 6.1.7 or later, which requires a role in the weblog to preview its entries.
+
+### References
+* https://github.com/apache/roller/pull/223
+* https://lists.apache.org/thread/kzm975k5qhdpwztdmbdfwlfwsd6vopw0
+
+
+### Credits
+* hataehoon (GitHub: dpfkdlemtp) (finder)
+
+
+## Exposure of other users' email addresses through the user search ## { #CVE-2026-118405 }
+
+CVE-2026-118405 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-118405) [\[CVE json\]](./CVE-2026-118405.cve.json) [\[OSV json\]](./CVE-2026-118405.osv.json)
+
+
+
+_Last updated: 2026-11-11T12:38:00.264Z_
+
+### Affected
+
+* Apache Roller from 4.0 through 6.1.6
+
+
+### Description
+
+Exposure of Sensitive Information to an Unauthorized Actor in Apache Roller 4.0 through 6.1.6 allows any logged-in user to learn other users' email addresses. The user search in the authoring interface shows only user names, but it also matched the search text against email addresses, so a user could confirm an address one character at a time. Users are recommended to upgrade to Apache Roller 6.1.7 or later, which matches only user names for users who are not administrators.
+
+### References
+* https://github.com/apache/roller/pull/222
+* https://lists.apache.org/thread/9d4nqgq2ox0g88n9gnng8dskshtp3dgo
+
+
+### Credits
+* hataehoon (GitHub: dpfkdlemtp) (finder)
+
+
+## Stored cross-site scripting through custom-theme resource URLs ## { #CVE-2026-111824 }
+
+CVE-2026-111824 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-111824) [\[CVE json\]](./CVE-2026-111824.cve.json) [\[OSV json\]](./CVE-2026-111824.osv.json)
+
+
+
+_Last updated: 2026-11-11T12:39:21.554Z_
+
+### Affected
+
+* Apache Roller at 6.1.6
+
+
+### Description
+
+<p>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') in Apache Roller 6.1.6 allows an authenticated user with the Author role on a weblog that uses a custom theme to store script that runs in the browser of anyone who opens the file's resource URL. The fix for CVE-2026-82387 serves uploaded media as a download unless it is an image, audio, video, PDF or plain text, but media files found through a custom theme were served with the type their path implies, and the upload form let the uploader choose that path. Media uploads are disabled by default. Users are recommended to upgrade to Apache Roller 6.1.7 or later, which serves these files under the same rules as other media and no longer accepts the path from the upload form.</p>
+
+### References
+* https://github.com/apache/roller/pull/217
+* https://lists.apache.org/thread/q0lbzt39tsosb99l25gqvx24d6fn263x
+
+
+### Credits
+* VNCS-dacqu4n (finder)
+
+
+## Stored cross-site scripting through AtomPub entry tags ## { #CVE-2026-108338 }
+
+CVE-2026-108338 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-108338) [\[CVE json\]](./CVE-2026-108338.cve.json) [\[OSV json\]](./CVE-2026-108338.osv.json)
+
+
+
+_Last updated: 2026-11-11T12:39:02.908Z_
+
+### Affected
+
+* Apache Roller from 5.0.1 through 6.1.6
+
+
+### Description
+
+<p>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') in Apache Roller 5.0.1 through 6.1.6 allows an authenticated user with the Author role on a weblog to store script in entry tags submitted through AtomPub. Roller's tag filter allowed HTML characters in tag names, and the bundled gaurav, fauxcoly and frontpage themes and the showEntryTags macro print tag names without escaping, so the script runs in the browser of anyone who views the weblog. This matters when weblog authors are not trusted with script (weblogAdminsUntrusted=true, the default since 6.1.4). AtomPub is disabled by default. Users are recommended to upgrade to Apache Roller 6.1.7 or later, which removes HTML characters from tag names, including names stored earlier.</p>
+
+### References
+* https://github.com/apache/roller/pull/208
+* https://lists.apache.org/thread/xh4kv1zpdzwtpy57hgm7hy576lz758or
+
+
+### Credits
+* dacqu4n (finder)
+
+
+## Cross-site request forgery in Planet administration lets an attacker make the server fetch arbitrary URLs ## { #CVE-2026-105154 }
+
+CVE-2026-105154 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105154) [\[CVE json\]](./CVE-2026-105154.cve.json) [\[OSV json\]](./CVE-2026-105154.osv.json)
+
+
+
+_Last updated: 2026-11-11T12:38:52.947Z_
+
+### Affected
+
+* Apache Roller from 4.0 through 6.1.6
+
+
+### Description
+
+<p>Cross-Site Request Forgery (CSRF) in the Planet feed aggregator administration of Apache Roller 4.0 through 6.1.6 allows an unauthenticated attacker to make the Roller server fetch a URL the attacker chooses, including internal addresses, by inducing a logged-in global administrator to open a crafted web page. The action that adds a Planet subscription can be triggered cross-site; in recent releases it accepts GET requests, which Roller's CSRF token check does not cover. The action fetches the supplied URL and saves the subscription, and any fetched content that parses as a feed is then published without authentication in the aggregated Planet feed. The Planet aggregator is enabled by default. Users are recommended to upgrade to Apache Roller 6.1.7 or later, which requires POST requests with a valid CSRF token for Planet administration changes and turns the Planet aggregator off by default.</p>
+
+### References
+* https://github.com/apache/roller/pull/200
+* https://lists.apache.org/thread/kj131jvv6y30o6q89shw6f4g4s4q5hw2
+
+
+### Credits
+* dacqu4n (finder)
+
+
+## XML external entity processing in AtomPub entry parsing ## { #CVE-2026-105153 }
+
+CVE-2026-105153 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105153) [\[CVE json\]](./CVE-2026-105153.cve.json) [\[OSV json\]](./CVE-2026-105153.osv.json)
+
+
+
+_Last updated: 2026-11-11T12:38:35.207Z_
+
+### Affected
+
+* Apache Roller from 4.0 through 6.1.6
+
+
+### Description
+
+<p>Improper Restriction of XML External Entity Reference in Apache Roller 4.0 through 6.1.6 allows an authenticated user with no weblog permissions to read files readable by the Roller process and cause the server to issue outbound HTTP requests to attacker-chosen destinations, by submitting a crafted Atom entry to the AtomPub endpoint. The entry body is parsed with a parser configuration that permits external parameter entities and external DTD subsets, and the parse happens before any per-weblog authorization check and before any check of whether the AtomPub feature is enabled, so the endpoint is reachable by any authenticated account on a default installation. Users are recommended to upgrade to Apache Roller 6.1.7 or later, which parses AtomPub entries with a hardened XML configuration and rejects AtomPub requests while the feature is disabled.</p>
+
+### References
+* https://github.com/apache/roller/pull/198
+* https://github.com/apache/roller/pull/201
+* https://lists.apache.org/thread/w7dsz19261myrcwx8ssbwr67hc1wfosj
+
+
+### Credits
+* Kaya Emre Arikan (finder)
+
+
+## Weblog template access to wrapped objects exposes another user's password hash ## { #CVE-2026-105152 }
+
+CVE-2026-105152 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-105152) [\[CVE json\]](./CVE-2026-105152.cve.json) [\[OSV json\]](./CVE-2026-105152.osv.json)
+
+
+
+_Last updated: 2026-11-11T12:38:13.606Z_
+
+### Affected
+
+* Apache Roller from 4.0 through 6.1.6
+
+
+### Description
+
+<p>Exposure of Sensitive Information to an Unauthorized Actor in Apache Roller 4.0 through 6.1.6 allows a weblog administrator to read another user's stored password hash by authoring a custom weblog template that reaches the wrapped persistent object behind the template's weblog or entry data, rather than the reduced set of fields the wrapper is meant to expose. Roller treats weblog administrators as untrusted and exposes weblog and entry data to templates only through wrapper classes, but a public accessor on those wrapper classes returned the underlying persistent object directly, including the stored password hash of the weblog's creator and of any author whose entry renders on the page. No non-default configuration is required; this affects any weblog whose administrator can author templates. Users are recommended to upgrade to Apache Roller 6.1.7 or later, which removes template access to the underlying wrapped objects.</p>
+
+### References
+* https://github.com/apache/roller/pull/199
+* https://lists.apache.org/thread/v1zondkgmfoh3y83l0l191qthmstcm39
+
+
+### Credits
+* TungNQ_BMC-VNCSGlobal (finder)
 
 
 ## Insufficient Session Expiration on Password Change ## { #CVE-2025-24859 }

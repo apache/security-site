@@ -199,6 +199,31 @@ An improper neutralization of input during web page generation ('Cross-site Scri
 * Apache Sling would like to thank github user Vectrain51 and n0mi1k for reporting this issue (finder)
 
 
+## xssAPI.getStyleToken() accepts markup in unquoted urls. ## { #CVE-2026-123765 }
+
+CVE-2026-123765 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-123765) [\[CVE json\]](./CVE-2026-123765.cve.json) [\[OSV json\]](./CVE-2026-123765.osv.json)
+
+
+
+_Last updated: 2026-11-12T10:03:01.146Z_
+
+### Affected
+
+* Apache Sling XSS before 2.4.14
+
+
+### Description
+
+<p>Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in Apache Sling XSS. xssAPI.getStyleToken() accepts markup in unquoted urls.</p><p>This issue affects Apache Sling XSS: before 2.4.14.</p><p>Users are recommended to upgrade to version 2.4.14, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread.html/ddvvg034rwqpnsqz8sw0rldyqqoh9c92
+
+
+### Credits
+* Github user @dpfkdlemtp (reporter)
+
+
 ## Hand-rolled parameter parser diverges from RFC/container parsing, enabling smuggling ## { #CVE-2026-103866 }
 
 CVE-2026-103866 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-103866) [\[CVE json\]](./CVE-2026-103866.cve.json) [\[OSV json\]](./CVE-2026-103866.osv.json)

@@ -74,6 +74,34 @@ Deserialization of Untrusted Data (CWE-502) in the Tribes-based clustering compo
 * liuhuajin of Huawei (finder)
 
 
+## Out-of-bounds read in the Guththila XML reader wrapper ## { #CVE-2026-124023 }
+
+CVE-2026-124023 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-124023) [\[CVE json\]](./CVE-2026-124023.cve.json) [\[OSV json\]](./CVE-2026-124023.osv.json)
+
+
+
+_Last updated: 2026-11-12T10:38:27.653Z_
+
+### Affected
+
+* Apache Axis2/C from f2b30c159720cf63ada72f19183828533154c749 before 23110287924e79d05a5b4712298c355d1f05c606
+* Apache Axis2/C through 2.0.0
+
+
+### Description
+
+Out-of-bounds Read vulnerability in the Guththila XML parser wrapper of Apache Axis2/C. On some malformed XML input the Guththila parser returned a raw input byte in place of an event code, and the AXIOM reader wrapper used that value as an index into a ten-entry lookup table without checking its range, reading heap memory past the end of the table. An unauthenticated client could trigger this by sending a crafted XML request to a server built with Guththila, the default parser, causing the request to be parsed incorrectly or, in some cases, the process to crash. The memory read is not returned to the client. This issue affects Apache Axis2/C: through 2.0.0. The fix is available in commits 23110287924e79d05a5b4712298c355d1f05c606 and f01683ec10e8fddb87279ec9351b3239021223e6 and will be included in the next release.<br><br>
+
+### References
+* https://github.com/apache/axis-axis2-c-core/commit/23110287924e79d05a5b4712298c355d1f05c606
+* https://github.com/apache/axis-axis2-c-core/commit/f01683ec10e8fddb87279ec9351b3239021223e6
+* https://lists.apache.org/thread/yzmshl8n819pfy2f3p07r9swgh0b3dfz
+
+
+### Credits
+* Adithyan P (finder)
+
+
 ## exposeServiceMetadata not enforced on all metadata routes ## { #CVE-2026-123779 }
 
 CVE-2026-123779 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-123779) [\[CVE json\]](./CVE-2026-123779.cve.json) [\[OSV json\]](./CVE-2026-123779.osv.json)

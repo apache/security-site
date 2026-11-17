@@ -13,6 +13,86 @@ Do you want to disclose a potential security issue for Apache DataSketches? Send
 This section is experimental: it provides advisories since 2023 and may lag behind the official CVE publications. If you have any feedback on how you would like this data to be provided, you are welcome to reach out on our public [mailinglist](/mailinglist) or privately on [security@apache.org](mailto:security@apache.org)
 {.bg-warning}
 
+## Out-of-bounds write in REQ sketch deserialization allows memory corruption via a crafted sketch ## { #CVE-2026-123338 }
+
+CVE-2026-123338 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-123338) [\[CVE json\]](./CVE-2026-123338.cve.json) [\[OSV json\]](./CVE-2026-123338.osv.json)
+
+
+
+_Last updated: 2026-11-13T10:32:37.055Z_
+
+### Affected
+
+* Apache DataSketches C++ from 3.0.0 through 5.3.0
+
+
+### Description
+
+Out-of-bounds Write vulnerability in Apache DataSketches C++. An<br>  application that deserializes a REQ sketch from an untrusted source<br>  can have heap memory corrupted by a crafted sketch, because the<br>  serialized compactor headers were not validated.<br><br>  This issue affects Apache DataSketches C++: from 3.0.0 through 5.3.0.<br><br>  Users are recommended to upgrade to version 5.3.1, which fixes the<br>  issue.
+
+### References
+* https://lists.apache.org/thread/wjsso4wl0f0nczwh7gd74kc5wckn1635
+* https://github.com/apache/datasketches-cpp/releases/tag/5.3.1
+* https://github.com/apache/datasketches-cpp/commit/9839ffd2ccc038d453e38b545750a5ed2d589dea
+* https://github.com/apache/datasketches-cpp/pull/568
+
+
+## Out-of-bounds write in KLL sketch deserialization allows memory corruption via a crafted sketch ## { #CVE-2026-123274 }
+
+CVE-2026-123274 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-123274) [\[CVE json\]](./CVE-2026-123274.cve.json) [\[OSV json\]](./CVE-2026-123274.osv.json)
+
+
+
+_Last updated: 2026-11-13T10:34:24.297Z_
+
+### Affected
+
+* Apache DataSketches C++ from 1.0.0-incubating through 5.3.0
+
+
+### Description
+
+Out-of-bounds Write vulnerability in Apache DataSketches C++. An<br>  application that deserializes a KLL sketch from an untrusted source<br>  can have heap memory corrupted by a crafted sketch, because the<br>  serialized level boundaries were not validated.<br><br>  This issue affects Apache DataSketches C++: 2.0.0 through 5.3.0.<br><br>  Users are recommended to upgrade to version 5.3.1, which fixes the<br>  issue.
+
+### References
+* https://lists.apache.org/thread/t4rngyg9cbv1b42f1d0crgpgtpby0594
+* https://github.com/apache/datasketches-cpp/releases/tag/5.3.1
+* https://github.com/apache/datasketches-cpp/commit/bb86d439db494e3d362e54cc4f83481893974335
+* https://github.com/apache/datasketches-cpp/pull/568
+
+
+### Credits
+* hataehoon (reporter)
+
+
+## Uncontrolled resource consumption when deserializing crafted sketch images ## { #CVE-2026-122096 }
+
+CVE-2026-122096 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-122096) [\[CVE json\]](./CVE-2026-122096.cve.json) [\[OSV json\]](./CVE-2026-122096.osv.json)
+
+
+
+_Last updated: 2026-11-13T10:37:12.257Z_
+
+### Affected
+
+* Apache DataSketches Java through 9.0.0
+
+
+### Description
+
+<p>Uncontrolled Resource Consumption vulnerability in the sketch deserialization of Apache DataSketches Java.</p><p>Several deserializers trusted sizes and counts declared in the serialized input. A small crafted input could make an application allocate an excessive amount of memory, leading to an OutOfMemoryError. A crafted string passed to FrequentLongsSketch.getInstance(String) could also make deserialization, or a later update, loop indefinitely. Only applications that deserialize sketches from untrusted sources are affected.</p><p>This issue affects Apache DataSketches Java: through 9.0.0.</p><p>Users are recommended to upgrade to version 9.1.0, which fixes the issue.</p>
+
+### References
+* https://github.com/apache/datasketches-java/releases/tag/9.1.0
+* https://github.com/apache/datasketches-java/pull/777
+* https://github.com/apache/datasketches-java/pull/783
+* https://lists.apache.org/thread/9wd7ngmho7hm8x74sq1p2fp1xgjd8kt6
+
+
+### Credits
+* Jaideep Pyne (finder)
+
+
 ## datasketches-cpp: Out-of-bounds read in VarOpt union deserialization allows denial of service via a truncated sketch ## { #CVE-2026-103636 }
 
 CVE-2026-103636 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-103636) [\[CVE json\]](./CVE-2026-103636.cve.json) [\[OSV json\]](./CVE-2026-103636.osv.json)

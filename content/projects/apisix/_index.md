@@ -679,6 +679,206 @@ _Last updated: 2026-04-14T08:06:15.933Z_
 * SeungMyung Lee (reporter)
 
 
+## openapi-to-mcp tool call can reach an API path the document does not declare ## { #CVE-2026-124726 }
+
+CVE-2026-124726 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-124726) [\[CVE json\]](./CVE-2026-124726.cve.json) [\[OSV json\]](./CVE-2026-124726.osv.json)
+
+
+
+_Last updated: 2026-11-13T17:49:20.568Z_
+
+### Affected
+
+* Apache APISIX from 3.19.0 before 3.20.0
+
+
+### Description
+
+<p>Relative Path Traversal, with Unintended Proxy vulnerability in Apache APISIX.</p><p><span>A caller of the MCP endpoint can invoke endpoints the OpenAPI document
+never declared, under the declared tool's HTTP method, using the credentials the
+Route adds. </span>This issue affects Apache APISIX: from 3.19.0 before 3.20.0.</p><p>Users are recommended to upgrade to version 3.20.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/1kodokhflvr51sc1qv985om3s6mozybg
+
+
+### Credits
+* Javier García Herrera (reporter)
+* shreemaan-abhishek (coordinator)
+* shreemaan-abhishek (remediation developer)
+
+
+## unauthorized access to mTLS protected resources ## { #CVE-2026-124723 }
+
+CVE-2026-124723 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-124723) [\[CVE json\]](./CVE-2026-124723.cve.json) [\[OSV json\]](./CVE-2026-124723.osv.json)
+
+
+
+_Last updated: 2026-11-13T17:49:42.108Z_
+
+### Affected
+
+* Apache APISIX from 3.18.0 through 3.19.0
+
+
+### Description
+
+<p>Interpretation Conflict, leading to Incorrect Authorization vulnerability in Apache APISIX.</p><p><span>With match_uri_encoded_slash enabled and skip_mtls_uri_regex
+configured, a client without a certificate can reach an upstream
+behind a route that requires one, limited to request paths that decode
+to an exempted URI.&nbsp;</span>This issue affects Apache APISIX: from 3.18.0 through 3.19.0.</p><p>Users are recommended to upgrade to version 3.20.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/0r8dv4ytw5mkhrozlg7mgb9h6z5y7hpn
+
+
+### Credits
+* hataehoon (reporter)
+* shreemaan-abhishek (remediation developer)
+* shreemaan-abhishek (coordinator)
+
+
+## identity spoofing in openapi-to-mcp ## { #CVE-2026-124719 }
+
+CVE-2026-124719 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-124719) [\[CVE json\]](./CVE-2026-124719.cve.json) [\[OSV json\]](./CVE-2026-124719.osv.json)
+
+
+
+_Last updated: 2026-11-13T17:50:11.480Z_
+
+### Affected
+
+* Apache APISIX from 3.19.0 before 3.20.0
+
+
+### Description
+
+<p>Authentication bypass by spoofing vulnerability in Apache APISIX.</p><p><span>When a Route's configured headers carry a caller identity and the OpenAPI document declares
+the same header, a caller can act as another identity against the
+upstream API.&nbsp;</span>This issue affects Apache APISIX: from 3.19.0 before 3.20.0.</p><p>Users are recommended to upgrade to version 3.20.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/k7v3vfh09mr1spk4r5k8n1gsjrhk6d8x
+
+
+### Credits
+* Kai (GitHub: ha2fde) (reporter)
+* shreemaan-abhishek (coordinator)
+
+
+## authz-keycloak authorization scope mismatch ## { #CVE-2026-124716 }
+
+CVE-2026-124716 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-124716) [\[CVE json\]](./CVE-2026-124716.cve.json) [\[OSV json\]](./CVE-2026-124716.osv.json)
+
+
+
+_Last updated: 2026-11-13T17:52:42.285Z_
+
+### Affected
+
+* Apache APISIX from 1.4.0 through 3.19.0
+
+
+### Description
+
+<p>Incorrect Authorization vulnerability in Apache APISIX.</p><p>An authenticated user who holds any one of a route's required permissions or scopes can reach the protected upstream without the others, including HTTP methods the authorization server denied.</p><p>This issue affects Apache APISIX: from 1.4.0 through 3.19.0.</p><p>Users are recommended to upgrade to version 3.20.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/5kyz1fdbgx9to7lj654wqf72yhzy2po7
+
+
+### Credits
+* Erjey (Independent Security Researcher) (reporter)
+* shreemaan-abhishek (coordinator)
+* shreemaan-abhishek (remediation developer)
+
+
+## Route-level authentication bypass via path normalization mismatch between routing and upstream forwarding ## { #CVE-2026-124680 }
+
+CVE-2026-124680 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-124680) [\[CVE json\]](./CVE-2026-124680.cve.json) [\[OSV json\]](./CVE-2026-124680.osv.json)
+
+
+
+_Last updated: 2026-11-13T17:51:27.131Z_
+
+### Affected
+
+* Apache APISIX from 0.9 through 3.19.0
+
+
+### Description
+
+<p>Interpretation Conflict, resulting in (Incorrect Authorization) vulnerability in Apache APISIX.</p><p>An unauthenticated client can reach upstream paths protected
+by a route-level auth plugin when a route without auth exists on the
+same upstream and the upstream does not collapse encoded dot segments.</p><p>This issue affects Apache APISIX: from 0.9 through 3.19.0.</p><p>Users are recommended to upgrade to version 3.20.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/tsr691p4s58572og5f88p831vygbflvz
+
+
+### Credits
+* Uttej Badwane (reporter)
+* shreemaan-abhishek (coordinator)
+* shreemaan-abhishek (remediation developer)
+
+
+## jwe-decrypt and forward-auth may pass a client-supplied identity header ## { #CVE-2026-124679 }
+
+CVE-2026-124679 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-124679) [\[CVE json\]](./CVE-2026-124679.cve.json) [\[OSV json\]](./CVE-2026-124679.osv.json)
+
+
+
+_Last updated: 2026-11-13T17:53:05.876Z_
+
+### Affected
+
+* Apache APISIX from 3.18.0 through 3.19.0
+
+
+### Description
+
+<p>Authentication bypass by spoofing vulnerability in Apache APISIX.</p><p><span>On routes using jwe-decrypt with strict: false and a
+forward_header distinct from the token header an unauthenticated
+client can supply the value the upstream treats as gateway-decrypted
+plaintext. Similar can happen when&nbsp;</span><span>forward-auth is configured with allow_degradation: true, and the auth service is unavailable.</span></p><p><span>This issue affects Apache APISIX: from 3.18.0 through 3.19.0.</span></p><p>Users are recommended to upgrade to version 3.20.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/jmktj1o0rrxf1rdbptk0j3c4h0vdws96
+
+
+### Credits
+* Siyang Wu (reporter)
+* shreemaan-abhishek (coordinator)
+* shreemaan-abhishek (remediation developer)
+
+
+## Multi-auth preserves client-supplied Wolf identity headers ## { #CVE-2026-124666 }
+
+CVE-2026-124666 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-124666) [\[CVE json\]](./CVE-2026-124666.cve.json) [\[OSV json\]](./CVE-2026-124666.osv.json)
+
+
+
+_Last updated: 2026-11-13T17:52:08.831Z_
+
+### Affected
+
+* Apache APISIX from 3.8.0 through 3.19.0
+
+
+### Description
+
+<p>Authentication bypass by spoofing vulnerability in Apache APISIX.</p><p>On a route where multi-auth falls back from wolf-rbac to another successful authenticator, client-supplied Wolf identity headers can remain in the request. A downstream service that relies on those documented headers may therefore receive an identity that was not established by the successful authenticator.</p><p>This issue affects Apache APISIX: from 3.8.0 through 3.19.0.</p><p>Users are recommended to upgrade to version 3.20.0, which fixes the issue.</p>
+
+### References
+* https://lists.apache.org/thread/1kpvbj2m069bnhod8rwyx0mdz5hkwkml
+
+
+### Credits
+* Ziyue (reporter)
+* shreemaan-abhishek (remediation developer)
+* shreemaan-abhishek (coordinator)
+
+
 ## basic-auth logs plaintext credentials at info level ## { #CVE-2025-62232 }
 
 CVE-2025-62232 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2025-62232) [\[CVE json\]](./CVE-2025-62232.cve.json) [\[OSV json\]](./CVE-2025-62232.osv.json)

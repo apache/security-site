@@ -469,6 +469,33 @@ Apache Neethi is vulnerable to a Denial of Service attack through algorithmic co
 * https://lists.apache.org/thread/p826j0phhmr9f83wzpmys1y0bdfrr2q4
 
 
+## Replay protection bypassed by concurrent copies of a message ## { #CVE-2026-115690 }
+
+CVE-2026-115690 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-115690) [\[CVE json\]](./CVE-2026-115690.cve.json) [\[OSV json\]](./CVE-2026-115690.osv.json)
+
+
+
+_Last updated: 2026-11-16T09:54:19.245Z_
+
+### Affected
+
+* Apache WSS4J from 4.0.0 before 4.0.3
+* Apache WSS4J from 3.0.0 before 3.0.7
+* Apache WSS4J before 2.4.5
+
+
+### Description
+
+Apache WSS4J remembers the UsernameToken Nonce, the Timestamp and signature of a signed message, and the ID of a SAML 2.0 "OneTimeUse" assertion, so that a captured message cannot be accepted twice. It checked whether a value had already been seen, validated the message, and only then remembered the value, as two separate steps. If several copies of the same message were processed at the same time, they could all pass the check before any of them was remembered, and all be accepted. An attacker who obtained a valid message before the recipient first processed it could send several copies at once, so that the same authenticated request was executed more than once. Where a UsernameToken is not bound to the message by a signature, the copies could carry different message bodies. The attacker needs to obtain the message while it is still in transit; a message captured after it has been accepted cannot be replayed. Affects deployments with a replay cache configured, as Apache CXF has by default. The value is now checked and remembered in a single atomic step. Custom ReplayCache implementations should override the new ReplayCache.addIfAbsent method with an operation that is atomic in their underlying store. Users are recommended to upgrade to versions 4.0.3 or 3.0.7 or 2.4.5, which fix this issue.
+
+### References
+* https://lists.apache.org/thread.html/y2gb5of7tbh08zqv8rlh8212720f6tcy
+
+
+### Credits
+* This issue was reported independently by Wanxin Yin (MegaVector / yaklang.io) and hataehoon (GitHub: @dpfkdlemtp). (finder)
+
+
 ## Denial of service through cyclic schema definitions in the schema walker ## { #CVE-2026-102497 }
 
 CVE-2026-102497 [\[CVE\]](https://cve.org/CVERecord?id=CVE-2026-102497) [\[CVE json\]](./CVE-2026-102497.cve.json) [\[OSV json\]](./CVE-2026-102497.osv.json)
