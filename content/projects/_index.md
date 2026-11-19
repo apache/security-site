@@ -393,11 +393,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     none so far
 - <img class="project-logo" src="https://www.apache.org/logos/res/devlake/default.png" alt="" loading="lazy"> **Apache DevLake**
   - **Security contact:**\
-    [security@apache.org](mailto:security@apache.org?subject=DevLake)
+    [security@devlake.apache.org](mailto:security@devlake.apache.org?subject=DevLake)
   - Advisories (experimental):\
     none so far
   - Security model:
-    - [Apache DevLake security model](https://devlake.apache.org/docs/v1.0/GettingStarted/Authentication)
+    - [Apache DevLake security model](https://devlake.apache.org/docs/GettingStarted/Authentication)
 - <img class="project-logo" src="https://www.apache.org/logos/res/directory/default.png" alt="" loading="lazy"> **Apache Directory**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Directory)
