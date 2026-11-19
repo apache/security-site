@@ -114,6 +114,18 @@ In particular, do not forward security scanner findings that report an ASF proje
 <li>The vulnerability must affect an <strong>ASF project</strong>.
 If it affects a dependency of an ASF project instead,
 see <a href="/report-dependency">Reporting security issues in dependencies</a>.</li>
+<li>The vulnerability must affect <strong>released code</strong>.
+Code that has not been released yet,
+such as a development branch, a snapshot, or a nightly build,
+does not put users at risk, so no CVE will be assigned.
+Report such issues on the project&rsquo;s public mailing lists instead.
+This matters most when that code is being released:
+if the project&rsquo;s <code>dev</code> mailing list has an open vote thread for a release candidate,
+reply to it with a <code>-1</code> and explain the issue.
+A justified <code>-1</code> can stop the release before the vulnerability reaches users.
+Without a CVE there is no advisory to credit you in,
+but we value catching a problem before it ships even more than fixing it afterwards,
+and your contribution stays on the public record of the project&rsquo;s mailing list.</li>
 </ul>
 <p>We will ignore mail sent to these addresses
 that does not meet these requirements.</p>
