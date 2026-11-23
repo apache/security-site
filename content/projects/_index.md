@@ -1594,9 +1594,11 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
 
 - <img class="project-logo" src="https://www.apache.org/logos/res/wayang/default.png" alt="" loading="lazy"> **Apache Wayang**
   - **Security contact:**\
-    [security@apache.org](mailto:security@apache.org?subject=Wayang)
+    [security@wayang.apache.org](mailto:security@wayang.apache.org?subject=Wayang)
   - Advisories (experimental):\
     none so far
+  - Security model:
+    - [Apache Wayang security model](https://github.com/apache/wayang/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/ws/default.png" alt="" loading="lazy"> **Apache Web Services**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Web%20Services)
