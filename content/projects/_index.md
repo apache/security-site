@@ -917,6 +917,8 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=ManifoldCF)
   - Advisories (experimental):\
     [security.apache.org](/projects/manifoldcf/)
+  - Security model:
+    - [Apache ManifoldCF security model](https://github.com/apache/manifoldcf/security/policy)
 - <img class="project-logo" src="https://www.apache.org/logos/res/maven/default.png" alt="" loading="lazy"> **Apache Maven**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=Maven)
