@@ -1637,6 +1637,9 @@ Use the tabs below to jump to projects by their initial. Every project lists a s
     [security@apache.org](mailto:security@apache.org?subject=Xerces)
   - Advisories (experimental):\
     [security.apache.org](/projects/xerces/)
+  - Security models:
+    - [Apache Xerces C++ security model](https://xerces.apache.org/xerces-c/secadv.html)
+    - [Apache Xerces2 Java security model](https://xerces.apache.org/xerces2-j/security.html)
 - <img class="project-logo" src="https://www.apache.org/logos/res/xmlgraphics/default.png" alt="" loading="lazy"> **Apache XML Graphics**
   - **Security contact:**\
     [security@apache.org](mailto:security@apache.org?subject=XML%20Graphics)
